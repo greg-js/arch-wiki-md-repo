@@ -109,11 +109,9 @@ Example PKGBUILDs are located in `/usr/share/pacman/`. An explanation of possibl
 
 	This points to the directory where *makepkg* bundles the installed package, which becomes the root directory of your built package.
 
-All of them contain *absolute* paths, which means, you do not have to worry about your working directory if you use these variables properly.
+They contain *absolute* paths, which means you do not have to worry about your working directory if you use these variables properly.
 
 **Note:** *makepkg*, and thus the `build()` and `package()` functions, are intended to be non-interactive. Interactive utilities or scripts called in those functions may break *makepkg*, particularly if it is invoked with build-logging enabled (`-L`). (See [FS#13214](https://bugs.archlinux.org/task/13214).)
-
-**Note:** Apart from the current package Maintainer, there may be previous maintainers listed above as Contributors.
 
 ### PKGBUILD functions
 
@@ -207,11 +205,11 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 
 ## Summary
 
-1.  Download the source tarball of the software you want to package.
+1.  Download the source tarball of the software to package.
 2.  Try compiling the package and installing it into an arbitrary directory.
 3.  Copy over the prototype `/usr/share/pacman/PKGBUILD.proto` and rename it to `PKGBUILD` in a temporary working directory.
 4.  Edit the `PKGBUILD` according to the needs of your package.
-5.  Run `makepkg` and see whether the resulting package is built correctly.
+5.  Run `makepkg` and check whether the package builds correctly.
 6.  If not, repeat the last two steps.
 
 ### Warnings

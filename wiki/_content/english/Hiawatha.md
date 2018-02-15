@@ -48,7 +48,7 @@ Then, the working webservers are defined with `VirtualHost` sections. Hiawatha c
 
 Next, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `hiawatha.service` and point your browser to `http://*my-domain*`. At that stage you should be able to load the website start page.
 
-For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto) and the [hiawatha(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hiawatha.1) manual page.
+For further details see the official [how to](https://www.hiawatha-webserver.org/howto) and the [hiawatha(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hiawatha.1) manual page.
 
 **Note:** Hiawatha supports on-the-fly [gzip content encoding](https://en.wikipedia.org/wiki/HTTP_compression "wikipedia:HTTP compression"). It will gzip the requested file and cache it on disk in `/var/lib/hiawatha/gzipped`. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.
 
@@ -149,18 +149,11 @@ VirtualHost {
 
 ### Self-signed certificate
 
-If you only need a local self-signed certificate for web development eg. you can easily do this with:
-
-```
-# cd /etc/hiawatha/tls
-# openssl req -x509 -nodes -newkey rsa:2048 -keyout *serverkey.pem* -out *serverkey.pem* -days 1095
-# chmod 400 *serverkey.pem*
-
-```
+To get a local self-signed certificate for personal use, testing or web development, the procedure explained in [OpenSSL#Self-signed_certificate](/index.php/OpenSSL#Self-signed_certificate "OpenSSL") to create both a private key and a self-signed certificate can be followed.
 
 Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [#Enable SSL/TLS](#Enable_SSL.2FTLS).
 
-As this solution doesn't use an official certificate authority (CA), you will have to add a security exception the first time you connect to your website.
+As this solution does not use an official certificate authority (CA), a security exception will need to be added the first time the website is visited.
 
 ### Let's Encrypt certificate
 

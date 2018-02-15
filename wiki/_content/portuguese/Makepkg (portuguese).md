@@ -72,7 +72,7 @@ Configure as seguintes variáveis do `makepkg.conf`, se necessário:
 
 **Nota:** A verificação de assinatura implementada no *makepkg* não usa o chaveiro do pacman; em vez disso, depende do chaveiro do usuário.[[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
 
-Se um arquivo de assinatura na forma de `.sig` ou `.asc` é parte do vetor fonte do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), o *makepkg* tenta automaticamente [verificá-la](/index.php/GnuPG#Verify_a_signature "GnuPG"). No caso do chaveiro do usuário não contém a chave pública necessária para verificação de assinatura, o *makepkg* vai abortar a instalação com uma mensagem de que a chave PGP não pôde ser verificada.
+Se um arquivo de assinatura na forma de *.sig* ou *.asc* é parte do vetor fonte do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), o *makepkg* tenta automaticamente [verificá-la](/index.php/GnuPG#Verify_a_signature "GnuPG"). No caso do chaveiro do usuário não contém a chave pública necessária para verificação de assinatura, o *makepkg* vai abortar a instalação com uma mensagem de que a chave PGP não pôde ser verificada.
 
 Se uma chave pública necessária para um pacote está faltando, o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") muito provavelmente vai conter uma entrada [validpgpkeys](/index.php/PKGBUILD_(Portugu%C3%AAs)#validpgpkeys "PKGBUILD (Português)") com os IDs de chaves necessárias. Você pode [importá-la](/index.php/GnuPG#Import_a_public_key "GnuPG") manualmente ou você pode localizá-la [em um servidor de chaves](/index.php/GnuPG#Use_a_keyserver "GnuPG") e importá-la de lá.
 
@@ -173,13 +173,12 @@ $ BUILDDIR=/tmp/makepkg makepkg
 
 ```
 
-**Atenção:** Evite compilar pacotes grandes no tmpfs para evitar ficar sem memória.
-
 Uma configuração persistente pode ser feita no `makepkg.conf` descomentando a opção `BUILDDIR`, que é encontrada no fim da seção `BUILD ENVIRONMENT` no arquivo padrão `/etc/makepkg.conf`. Definir esses valores para, por exemplo, `BUILDDIR=/tmp/makepkg` fará uso do sistema de arquivos temporário `/tmp` padrão do Arch.
 
-**Nota:** * A pasta [tmpfs](/index.php/Tmpfs "Tmpfs") deve ser montada sem a opção `noexec`; do contrário, ela vai impedir que binparios sejam executados.
+**Nota:** * Evite compilar pacotes grandes no tmpfs para evitar ficar sem memória.
 
-*   Tenha em mente que pacotes compilados no [tmpfs](/index.php/Tmpfs "Tmpfs") não persistirá após reinicialização. Considere configurar a opção [PKGDEST](#Sa.C3.ADda_de_pacote) apropriadamente para mover o pacote compilado automaticamente para um diretório persistente.
+*   A pasta tmpfs deve ser montada sem a opção `noexec`; do contrário, ela vai impedir que binparios sejam executados.
+*   Tenha em mente que pacotes compilados no tmpfs não persistirá após reinicialização. Considere configurar a opção [PKGDEST](#Sa.C3.ADda_de_pacote) apropriadamente para mover o pacote compilado automaticamente para um diretório persistente.
 
 #### Usando cache de compilação
 

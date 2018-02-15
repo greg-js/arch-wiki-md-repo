@@ -1001,6 +1001,10 @@ The number of networks supported by these clients is very large but they (like a
 
 	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
 
+*   **Minbif** — IRC gateway to IM networks that uses libpurple.
+
+	[https://symlink.me/projects/minbif/wiki](https://symlink.me/projects/minbif/wiki) || [minbif](https://www.archlinux.org/packages/?name=minbif)
+
 ###### Graphical
 
 *   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
@@ -1190,6 +1194,10 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 
 	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
+
+*   **Vacuum IM** — Full-featured crossplatform XMPP client.
+
+	[https://github.com/Vacuum-IM/vacuum-im](https://github.com/Vacuum-IM/vacuum-im) || [vacuum-im](https://aur.archlinux.org/packages/vacuum-im/)
 
 ##### SIP clients
 
@@ -1489,7 +1497,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **[Canto](https://en.wikipedia.org/wiki/Canto_(news_aggregator) "wikipedia:Canto (news aggregator)")** — Ncurses RSS aggregator.
 
-	[http://codezen.org/canto/](http://codezen.org/canto/) || [canto-next-git](https://aur.archlinux.org/packages/canto-next-git/)
+	[http://codezen.org/canto/](http://codezen.org/canto/) || [canto-curses](https://aur.archlinux.org/packages/canto-curses/)
 
 *   **[Gnus](https://en.wikipedia.org/wiki/Gnus "wikipedia:Gnus")** — Email, NNTP and RSS client for Emacs.
 
@@ -1525,33 +1533,37 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 	[http://liferea.sourceforge.net](http://liferea.sourceforge.net) || [liferea](https://www.archlinux.org/packages/?name=liferea)
 
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") News** — RSS/Atom feed reader for Nextcloud.
+
+	[https://github.com/nextcloud/news](https://github.com/nextcloud/news) || [nextcloud-app-news](https://aur.archlinux.org/packages/nextcloud-app-news/)
+
+*   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
+
+	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+
 *   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
 
 	[https://github.com/martinrotter/rssguard](https://github.com/martinrotter/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
-
-*   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Powerful aggregator for RSS and Atom feeds, written in Java using Eclipse Rich Client Platform and SWT as a widget toolkit.
-
-	[http://boreal.rssowl.org](http://boreal.rssowl.org) || [rssowl](https://aur.archlinux.org/packages/rssowl/)
 
 *   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Email client included in the SeaMonkey suite which also functions as a pretty nice news aggregator.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
+*   **selfoss** — The new multipurpose RSS reader, live stream, mashup, aggregation web application.
+
+	[https://selfoss.aditu.de/](https://selfoss.aditu.de/) || [selfoss](https://aur.archlinux.org/packages/selfoss/)
+
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Email client from Mozilla which also functions as a pretty nice news aggregator.
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
-*   **Tickr (formerly News)** — GTK-based RSS Reader that displays feeds as a smooth scrolling line on your Desktop, as known from TV stations.
+*   **Tickr** — GTK-based RSS Reader that displays feeds as a smooth scrolling line on your desktop, as known from TV stations.
 
 	[https://www.open-tickr.net/](https://www.open-tickr.net/) || [tickr](https://aur.archlinux.org/packages/tickr/)
 
-*   **Urssus** — Cross platform GUI news aggregator.
+*   **Tiny Tiny RSS** — Web-based news feed (RSS/Atom) aggregator.
 
-	[https://code.google.com/archive/p/urssus/](https://code.google.com/archive/p/urssus/) || [urssus](https://aur.archlinux.org/packages/urssus/)
-
-*   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
-
-	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[https://tt-rss.org/](https://tt-rss.org/) || [tt-rss](https://www.archlinux.org/packages/?name=tt-rss)
 
 #### Podcast clients
 

@@ -36,7 +36,7 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 
 ### Kernel
 
-[Install](/index.php/Install "Install") [linux-hardened-apparmor](https://aur.archlinux.org/packages/linux-hardened-apparmor/) or compile the kernel yourself.
+[Install](/index.php/Install "Install") either [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/) or [linux-hardened-apparmor](https://aur.archlinux.org/packages/linux-hardened-apparmor/). As a third option you may as well compile the kernel yourself.
 
 When [compiling the kernel](/index.php/Kernels#Compilation "Kernels"), it is required to at least set the following options:
 
@@ -54,7 +54,7 @@ Instead of setting `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE` and `CONFIG_DEFAUL
 
 ### Userspace Tools
 
-**Note:** Since AppArmor builds and installs a kernel module it must be rebuilt against the current kernel on each update
+**Note:** Since AppArmor builds and installs a kernel module it must be rebuilt against the current kernel on each update.
 
 The userspace tools and libraries to control AppArmor are supplied by the [apparmor](https://aur.archlinux.org/packages/apparmor/) package.
 

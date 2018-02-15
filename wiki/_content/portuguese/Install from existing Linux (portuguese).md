@@ -1,254 +1,362 @@
-Este guia é direcionado a qualquer um que deseja instalar o Arch Linux em outro Linux já existente - - seja através de um LiveCD ou de uma distribuição Linux diferente já existente.
+Artigos relacionados
 
-É util para quem deseja:
+*   [Instalar a partir de SSH](/index.php/Instalar_a_partir_de_SSH "Instalar a partir de SSH")
 
-*   Instalar o Arch Linux de forma remota
-*   Criar uma nova distribuição ou LiveCD baseado no Arch Linux
-*   Criar um ambiente de chroot
+Este documento descreve o processo de inicialização necessário para instalar o Arch Linux a partir de um sistema host Linux em execução. Após o bootstrapping, a instalação prossegue conforme descrito no [guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação").
+
+Instalar o Arch Linux de um Linux existente é útil para:
+
+*   instalar remotamente o Arch Linux, p.ex. um servidor raiz (virtual)
+*   substituir um Linux existente sem um LiveCD (ver [#Substituindo o sistema existente sem um LiveCD](#Substituindo_o_sistema_existente_sem_um_LiveCD))
+*   criar uma nova distribuição ou LiveCD baseado no Arch Linux
+*   criar um ambiente de chroot do Arch Linux, p.ex.: contêiner base de Docker
 *   [rootfs-over-NFS para terminais burros](/index.php/Diskless_network_boot_NFS_root "Diskless network boot NFS root")
 
-Este guia tem como pré-requisito a existência de um ambiente capaz de executar os programas compilados para a arquitetura escolhida no Arch Linux. Neste caso, um host x86_64 é capaz de utilizar o i686-pacman para construir um ambiente de chroot de 32-bits. Veja [Arch64 Install bundled 32bit system](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system"). Contudo, não é algo trivial criar um ambiente 64-bit quando o host em execução está utilizando programas 32-bit.
+O objetivo do procedimento de inicialização é configurar um ambiente a partir do qual os scripts do [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) (como o `pacstrap` e `arch-chroot`) podem ser executados.
 
-**Nota:** Se você já está utilizando o Arch, ao invés de seguir este guia apenas instale o pacote [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) dos repositórios oficiais e siga o [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
+Se o sistema hospedeiro funciona no Arch Linux, isso pode ser conseguido simplesmente instalando [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts). Se o sistema hospedeiro executar outra distribuição Linux, primeiro você precisará configurar um chroot baseado no Arch Linux.
 
-**Este guia adiciona passos ao [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)"). Os passos já descridos no guia de instalação devem ser seguidos sempre que necessários.**
+**Nota:** Este guia exige que o sistema hospedeiro existente seja capaz de executar os novos programas de arquitetura do Arch Linux alvo. Isso significa que tem que ser uma máquina x86_64.
+
+**Atenção:** Certifique-se de compreender cada passo antes de prosseguir. É fácil destruir seu sistema ou perder dados críticos, e seu provedor de serviços provavelmente cobrará muito para ajudá-lo a recuperar.
 
 ## Contents
 
-*   [1 Preparar o sistema](#Preparar_o_sistema)
-*   [2 Configurar o ambiente do Pacman](#Configurar_o_ambiente_do_Pacman)
-    *   [2.1 Método 1: Chroot em uma imagem LiveCD](#M.C3.A9todo_1:_Chroot_em_uma_imagem_LiveCD)
-    *   [2.2 Método 2: Bootstrapping dos scripts de instalação(arch install scripts)](#M.C3.A9todo_2:_Bootstrapping_dos_scripts_de_instala.C3.A7.C3.A3o.28arch_install_scripts.29)
-    *   [2.3 Método 3: Instalando o pacman nativamente em uma distribuição não-arch(avançado)](#M.C3.A9todo_3:_Instalando_o_pacman_nativamente_em_uma_distribui.C3.A7.C3.A3o_n.C3.A3o-arch.28avan.C3.A7ado.29)
-        *   [2.3.1 Download dos fontes e pacotes do pacman](#Download_dos_fontes_e_pacotes_do_pacman)
-    *   [2.4 Dependências de instalação](#Depend.C3.AAncias_de_instala.C3.A7.C3.A3o)
-        *   [2.4.1 Compilação do pacman](#Compila.C3.A7.C3.A3o_do_pacman)
-        *   [2.4.2 Preparação dos arquivos de configuração](#Prepara.C3.A7.C3.A3o_dos_arquivos_de_configura.C3.A7.C3.A3o)
-*   [3 Corrigindo problemas de chaves de assinatura](#Corrigindo_problemas_de_chaves_de_assinatura)
-*   [4 Configure o sistema alvo](#Configure_o_sistema_alvo)
-    *   [4.1 Edite o arquivo FSTAB](#Edite_o_arquivo_FSTAB)
-    *   [4.2 Finalizando a instalação](#Finalizando_a_instala.C3.A7.C3.A3o)
-*   [5 Dicas](#Dicas)
+*   [1 Backup e preparação](#Backup_e_prepara.C3.A7.C3.A3o)
+*   [2 De um host executando o Arch Linux](#De_um_host_executando_o_Arch_Linux)
+*   [3 De um host executando outra distribuição Linux](#De_um_host_executando_outra_distribui.C3.A7.C3.A3o_Linux)
+    *   [3.1 Criando o chroot](#Criando_o_chroot)
+        *   [3.1.1 Método A: Usando a imagem do bootstrap (recomendado)](#M.C3.A9todo_A:_Usando_a_imagem_do_bootstrap_.28recomendado.29)
+        *   [3.1.2 Método B: Usando a imagem LiveCD](#M.C3.A9todo_B:_Usando_a_imagem_LiveCD)
+    *   [3.2 Usando o ambiente chroot](#Usando_o_ambiente_chroot)
+        *   [3.2.1 Inicializando o chaveiro do pacman](#Inicializando_o_chaveiro_do_pacman)
+        *   [3.2.2 Selecionando um espelho e baixando ferramentas básicas](#Selecionando_um_espelho_e_baixando_ferramentas_b.C3.A1sicas)
+    *   [3.3 Dicas de instalação](#Dicas_de_instala.C3.A7.C3.A3o)
+        *   [3.3.1 Host baseado no debian](#Host_baseado_no_debian)
+            *   [3.3.1.1 /dev/shm](#.2Fdev.2Fshm)
+            *   [3.3.1.2 /dev/pts](#.2Fdev.2Fpts)
+            *   [3.3.1.3 lvmetad](#lvmetad)
+        *   [3.3.2 Host baseado no Fedora](#Host_baseado_no_Fedora)
+*   [4 Coisas para verificar antes de reiniciar](#Coisas_para_verificar_antes_de_reiniciar)
+*   [5 Substituindo o sistema existente sem um LiveCD](#Substituindo_o_sistema_existente_sem_um_LiveCD)
+    *   [5.1 Defina a partição antiga de swap como nova partição raiz](#Defina_a_parti.C3.A7.C3.A3o_antiga_de_swap_como_nova_parti.C3.A7.C3.A3o_raiz)
+    *   [5.2 Instalação](#Instala.C3.A7.C3.A3o)
 
-## Preparar o sistema
+## Backup e preparação
 
-Siga as instruções no [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)") até que você tenha ajustado partições, teclado e conexão com a internet.
+Faça backup de todos os seus dados, incluindo correios, servidores web, etc. Tenha todas as informações ao seu alcance. Preserve todas as configurações do seu servidor, hsotnames, etc.
 
-## Configurar o ambiente do Pacman
+Aqui está uma lista de dados que você provavelmente precisará:
 
-Você precisa criar um ambiente onde o *pacman* e os *arch istall scripts* possam rodar em sua distribuição.(Se você escolher o método 1, apenas o pacman será necessário)
+*   Endereço IP
+*   hostname(s), (nota: servidores raiz são principalmente também parte do domínio dos provedores, verifique ou salve seu `/etc/hosts` antes de excluir)
+*   Servidor DNS (verifique `/etc/resolv.conf`)
+*   Chaves SSH (se outras pessoas trabalham no seu servidor, elas terão de aceitar novas chaves, caso contrário. Isso inclui chaves do seu Apache, seus servidores de e-mail, seu servidor SSH e outros.)
+*   Informações de hardware (placa de rede, etc. Consulte o seu `/etc/modules.conf` pré-instalado)
+*   Arquivos de configuração Grub.
 
-A princípio, existem dois métodos diferentes de preparar o ambiente: **instalando o pacman nativamente (método 4 abaixo)** em sua distribuição ou criando um **ambiente de chroot**. A segunda opção tende a ser a mais fácil, e será discutida em seguida:
+Em geral, é uma boa ideia ter uma cópia local do diretório original `/etc` no seu disco rígido local.
 
-Duas são as formas possíveis de se utilizar o método do *chroot*:
+## De um host executando o Arch Linux
 
-*   **Utilizando o chroot como um ambiente de instalação**: O ambiente de chroot Archlinux preparado será utilizado temporariamente para criar a instalação do Archlinux através do *arch-install-scripts*. O trabalho inicial pode ser mais demorado, porém, quando o ambiente estiver pronto, vários sistemas Archlinux podem ser criados com uma facilidade e rapidez imensa. Se você deseja fazer uma instalação única, este método pode parecer desperdício. Você configurará duas vezes o mesmo sistema, terá um grande tráfego de rede e utilizara muito mais RAM, por conta deste processo.
+Instale o pacote [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-*   **Instalar o Archlinux diretamente/Bootstrapping direto**: Graças ao script *arch-bootstrap* criado por tokland, este método é eficiente e muito rápido. Após uma simples linha de código, o sistema base inteiro do Archlinux estará instalado no disco. **Contudo**, se você deseja instalar o Archlinux em diversas máquinas este método será mais demorado, pois requer o re-download de todos os pacotes a cada nova instalação.
+Siga [Guia de instalação#Montar os sistemas de arquivos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Montar_os_sistemas_de_arquivos "Guia de instalação"). Se você já usa o diretório `/mnt` para alguma outra coisa, basta criar outro diretório como `/mnt/install` e usá-lo.
 
-A melhor aplicação do **Bootstrapping direto** é em uma rede com um número reduzido de sistemas. Se você pretende instalar o Archlinux em muitos sistemas, a instalação via **ambiente chroot** ou mesmo o **pacman nativo** pode ser muito mais vantajoso.
+Então, siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instala.C3.A7.C3.A3o "Guia de instalação"). Você pode pular [Guia de instalação#Selecionar os mirrors](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_mirrors "Guia de instalação"), já que o host já deve ter a lista de espelhos correta.
 
-### Método 1: Chroot em uma imagem LiveCD
+**Dica:** Para evitar baixar novamente todos os pacotes, considere seguir [Pacman/Dicas e truques#Cache do pacman compartilhado na rede](/index.php/Pacman/Dicas_e_truques#Cache_do_pacman_compartilhado_na_rede "Pacman/Dicas e truques") ou usara opção `-c` do *pacstrap*.
 
-Este é o método recomendado.
+**Nota:** Se você quiser apenas criar uma cópia exata de uma instalação do Arch existente, também é possível copiar o sistema de arquivos para a nova partição. Com este método, você ainda precisará
 
-É possível montar a imagem da ultima mídia de instalação do Archlinux e então, entrar nela através de chroot. Este método possui a vantagem de dar a você um sistema com todos os requisitos necessários, sem que pacotes adicionais precisem ser instalados.
+*   Criar [`/etc/fstab`](/index.php/Guia_de_instala%C3%A7%C3%A3o#Fstab "Guia de instalação") e editar `/etc/hostname`
+*   Excluir `/etc/machine-id` de forma que um novo, único, será gerado na inicialização
+*   Fazer quaisquer outras alterações apropriadas à mídia de instalação
+*   Instalar o gerenciador de inicialização *(bootloader)*
 
-**Nota:** Antes de iniciar este procedimento, certifique de possuir a última versão do pacote [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) no sistema em execução. Caso contrário, você poderá receber erros como: `FATAL ERROR aborting: uncompress_inode_table: failed to read block`.
+Ao copiar o sistema de arquivos raiz, use alguma coisa como `cp -ax` ou `rsync -axX`. Isso evita copiar conteúdo dos pontos de montagem (`-x`) e preserve os atributos de [capacidades](/index.php/Capabilities "Capabilities") de alguns sistemas binários (`rsync -X`).
 
-*   Baixe a última imagem de instalação de [https://www.archlinux.org/download/](https://www.archlinux.org/download/)
+## De um host executando outra distribuição Linux
 
-*   Monte a imagem LiveCD
+Existem várias ferramentas que automatizam uma grande parte das etapas descritas nas subseções a seguir. Consulte as respectivas páginas para obter instruções detalhadas.
 
- `# mount -o loop archlinux-{date}-dual.iso /mnt` 
+*   [arch-bootstrap](https://github.com/tokland/arch-bootstrap) (Bash)
+*   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
+*   [vps2arch](https://github.com/drizzt/vps2arch) (Bash)
+*   [archcx](https://github.com/m4rienf/ArchCX) (Bash, do Hetzner CX Rescue System)
 
-*   A raiz da imagem possui o [formato squashfs](https://en.wikipedia.org/wiki/Squashfs "wikipedia:Squashfs") dentro do CD. O squashfs não é editável então, você precisa utilizar o unsquash para ter acesso a imagem raiz para aí então, montá-la.
+A maneira manual é apresentada nas seguintes subseções. A ideia é executar um sistema Arch dentro do sistema host, com a instalação real sendo executada a partir do sistema Arch. O sistema aninhado está contido dentro de um chroot.
 
-Para executar um unsquash da imagem de arquitetura x86_64 (ou i686 respectivamente) rode
+### Criando o chroot
 
- `# unsquashfs -d /squashfs-root /mnt/arch/x86_64/root-image.fs.sfs` 
+Dois métodos para configurar e entrar no chroot são apresentados abaixo, do mais fácil ao mais complicado. Selecione apenas um dos dois métodos. Então, continue em [#Usando o ambiente chroot](#Usando_o_ambiente_chroot).
 
-*   Agora, você pode desmontar e remover a imagem iso
+#### Método A: Usando a imagem do bootstrap (recomendado)
+
+Baixe a imagem *bootstrap* de um [espelho](https://www.archlinux.org/download) (*mirror*):
 
 ```
-# umount /mnt
-# rm archlinux-{date}-dual.iso
-
-```
-
-*   Monte a imagem raiz através da opção loop
-
- `# mount -o loop /squashfs-root/root-image.fs /arch` 
-
-*   Antes de executar o [chroot](/index.php/Change_root_(Portugu%C3%AAs) "Change root (Português)") para mudar para o interior da imagem, precisaremos configurar alguns pontos de montagem adicionais,
-
-```
-# mount -t proc none /arch/proc
-# mount -t sysfs none /arch/sys
-# mount -o bind /dev /arch/dev
-# mount -o bind /dev/pts /arch/dev/pts # important for pacman (for signature check)
-
-```
-
-*   Agora tudo está preparado para que você dê um chroot no seu ambiente de instalação do Arch.
-
- `# chroot /arch bash` 
-
-Este chroot está apto a executar os arch install scripts. As partições de destino do chroot deverão sempre ser montadas abaixo da estrutura de diretórios `/mnt`.
-
-### Método 2: Bootstrapping dos scripts de instalação(arch install scripts)
-
-Ao contrário dos outros métodos, **este é um método de um passo apenas**; você só precisará executar o script abaixo e pronto.
-
-Este método pode ser considerado um híbrido entre os métodos 1 e 2\. Provê um ambiente de chroot onde os scripts de instalação serão executados(similar ao método 2), utilizando o script de bootstrapping(similar ao método 1).
-
-O script abaixo criará um diretório chamado `archinstall-pkg` e efetuará o download dos pacotes necessários lá. Então os extrairá para dentro do diretório `archinstall-chroot`. Finalmente, irá preparar os pontos de montagem, configrará o pacman e entrará no chroot
-
-**Nota:** Este é **apenas** um ambiente para executar os arch install scripts: **esta não é sua instalação final**.
-
-Este chroot é capaz de executar os arch install scripts. **As partições destino deve estar montadas abaixo do diretório `/mnt` para este chroot**. Após esta configuração, vá para o próximo passo que é [#Corrigindo problemas de chaves de assinatura](#Corrigindo_problemas_de_chaves_de_assinatura).
-
- `archinstall-bootstrap.sh` 
-```
-#!/bin/bash
-# This script is inspired on the archbootstrap script.
-
-PACKAGES=(acl attr bzip2 curl expat glibc gpgme libarchive libassuan libgpg-error libssh2 openssl pacman xz zlib pacman-mirrorlist coreutils bash grep gawk file tar ncurses readline libcap util-linux pcre arch-install-scripts)
-# Change the mirror as necessary
-MIRROR='http://mirrors.kernel.org/archlinux' 
-# You can set the ARCH variable to i686 or x86_64
-ARCH=`uname -m`
-LIST=`mktemp`
-CHROOT_DIR=archinstall-chroot
-DIR=archinstall-pkg
-mkdir -p "$DIR"
-mkdir -p "$CHROOT_DIR"
-# Create a list with urls for the arch packages
-for REPO in core community extra; do  
-        wget -q -O- "$MIRROR/$REPO/os/$ARCH/" |sed  -n "s|.*href=\"\\([^\"]*\\).*|$MIRROR\\/$REPO\\/os\\/$ARCH\\/\\1|p"|grep -v 'sig$'|uniq >> $LIST  
-done
-# Download and extract each package.
-for PACKAGE in ${PACKAGES[*]}; do
-        URL=`grep "$PACKAGE-[0-9]" $LIST|head -n1`
-        FILE=`echo $URL|sed 's/.*\/\([^\/][^\/]*\)$/\1/'`
-        wget "$URL" -c -O "$DIR/$FILE" 
-        xz -dc "$DIR/$FILE" | tar x -k -C "$CHROOT_DIR"
-done
-# Create mount points
-mkdir -p "$CHROOT_DIR/dev" "$CHROOT_DIR/proc" "$CHROOT_DIR/sys" "$CHROOT_DIR/mnt"
-mount -t proc proc "$CHROOT_DIR/proc/"
-mount -t sysfs sys "$CHROOT_DIR/sys/"
-mount -o bind /dev "$CHROOT_DIR/dev/"
-mkdir -p "$CHROOT_DIR/dev/pts"
-mount -t devpts pts "$CHROOT_DIR/dev/pts/"
-
-# Hash for empty password  Created by doing: openssl passwd -1 -salt ihlrowCo and entering an empty password (just press enter)
-echo 'root:$1$ihlrowCo$sF0HjA9E8up9DYs258uDQ0:10063:0:99999:7:::' > "$CHROOT_DIR/etc/shadow"
-echo "root:x:0:0:root:/root:/bin/bash" > "$CHROOT_DIR/etc/passwd" 
-touch "$CHROOT_DIR/etc/group"
-echo "myhost" > "$CHROOT_DIR/etc/hostname"
-test -e "$CHROOT_DIR/etc/mtab" || echo "rootfs / rootfs rw 0 0" > "$CHROOT_DIR/etc/mtab"
-[ -f "/etc/resolv.conf" ] && cp "/etc/resolv.conf" "$CHROOT_DIR/etc/"
-sed -ni '/^[ \t]*CheckSpace/ !p' "$CHROOT_DIR/etc/pacman.conf"
-sed -i "s/^[ \t]*SigLevel[ \t].*/SigLevel = Never/" "$CHROOT_DIR/etc/pacman.conf"
-echo "Server = $MIRROR/\$repo/os/$ARCH" >> "$CHROOT_DIR/etc/pacman.d/mirrorlist"
-
-chroot $CHROOT_DIR /usr/bin/pacman -Sy 
-chroot $CHROOT_DIR /bin/bash
+# cd /tmp
+# curl -O [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.02.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.02.01-x86_64.tar.gz)
 
 ```
 
-### Método 3: Instalando o pacman nativamente em uma distribuição não-arch(avançado)
+Você também pode baixar a assinatura (mesma URL com `.sig` adicionado) e [verificá-la com GnuPG](/index.php/GnuPG#Verify_a_signature "GnuPG").
 
-**Warning:** Este método é potencialmente difícil, e pode ter variações de distribuição para distribuição. Se você deseja apenas efetuar uma instalação do arch utilizando outra distro e não está interessado em ter o pacman como um programa dentro de tal distro, é melhor utilizar outro método de instalação
-
-Este método abrange a instalação do pacman e os scripts de instalação do arch diretamente em outra distribuição, para que se tornem programas comuns na mesma.
-
-Este método é bastante útil se você planeja utilizar outra distro regularmente para instalar o arch, ou fazer coisas mirabolantes como atualizar os pacotes do arch enquanto utiliza outra distribuição. Este é o único método que não requer a criação de um ambiente chroot para executar o pacman e scripts de instalação. (porém, como parte do processo de instalação inclui entrar em chroot, não existe escapatória)
-
-#### Download dos fontes e pacotes do pacman
-
-Visite a página inicial do pacman: [https://www.archlinux.org/pacman/#_releases](https://www.archlinux.org/pacman/#_releases) e baixe a última versão.
-
-Agora, baixe os seguintes pacotes:
-
-*   pacman-mirrorlist: [https://www.archlinux.org/packages/core/any/pacman-mirrorlist/download/](https://www.archlinux.org/packages/core/any/pacman-mirrorlist/download/)
-*   arch-install-scripts: [https://www.archlinux.org/packages/extra/any/arch-install-scripts/download/](https://www.archlinux.org/packages/extra/any/arch-install-scripts/download/)
-*   pacman (necessário para arquivos de configuração): [https://www.archlinux.org/packages/core/x86_64/pacman/download/](https://www.archlinux.org/packages/core/x86_64/pacman/download/) (altere para x86_64 se necessário)
-
-### Dependências de instalação
-
-Utilizando os mecanismos da sua distribuição, instale os seguintes pacotes que são necessários para o pacman e arch install scripts: libcurl, libarchive, fakeroot, xz, asciidoc, wget, e sed. Obviamente, gcc, make e as variantes "devel" de tais pacotes também são necessários.
-
-#### Compilação do pacman
-
-*   Extraia os fontes do pacman e entre no diretório.
-*   Execute o configure, e adapte os caminhos se necessário: ` ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-doc` 
-
-Caso ocorram erros, são grandes as changes de dependências em falta ou bibliotecas como libcurl, libarchive ou outras são muito antigas. Instale as dependências utilizando suas opções na distribuição em uso, e se estas forem muito antigas, compile-as.
-
-*   Compile `make` 
-*   Se não houver erros, instale com `make install` 
-*   Chame manualmente `ldconfig` para garantir a detecção da libalpm.
-
-#### Preparação dos arquivos de configuração
-
-Agora é a hora de extrair os arquivos de configuração. Altere para x86_64 se necessário
-
-*   Extraia os arquivos pacman.conf e makepkg.conf do pacote do pacman, e desabilite a verificação de assinaturas: `tar xJvf pacman-*-x86_64.pkg.tar.xz etc -C / ; sed -i 's/SigLevel.*/SigLevel = Never/g' /etc/pacman.conf` 
-*   Extraia a lista de arquivos: `tar xJvf pacman-mirrorlist-*-any.pkg.tar.xz -C /` 
-*   Habilite alguns espelhos no arquivo `/etc/pacman.d/mirrorlist`
-*   Extraia o arch-install-scripts `tar xJvf arch-install-scripts-*-any.pkg.tar.xz -C /` 
-
-Outra opção é utilizar a ferramenta `alien` para converter os pacotes `pacman-mirrorlist` e `arch-install-scripts` para o formato utilizado pela sua distribuição. Não converta o `pacman` em si.
-
-## Corrigindo problemas de chaves de assinatura
-
-É necessário inicializar o chaveiro do *pacman* para a verificação das assinaturas.
-
-Execute
+Extraia o tarball:
 
 ```
-# pacman-key --init # leia nota abaixo!
+# tar xzf <caminho-para-imagem-bootstrap>/archlinux-bootstrap-2018.02.01-x86_64.tar.gz
+
+```
+
+Selecione um servidor de repositório editando `/tmp/root.x86_64/etc/pacman.d/mirrorlist`.
+
+Entre no *chroot*
+
+*   Se bash 4 ou posterior estiver instalado, e unshare tiver suporte às opções --fork e --pid:
+
+```
+# /tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
+
+```
+
+*   Do contrário, execute os seguintes comandos:
+
+```
+# mount --bind /tmp/root.x86_64 /tmp/root.x86_64
+# cd /tmp/root.x86_64
+# cp /etc/resolv.conf etc
+# mount -t proc /proc proc
+# mount --make-rslave --rbind /sys sys
+# mount --make-rslave --rbind /dev dev
+# mount --make-rslave --rbind /run run    # (presumindo que /run existe no sistema)
+# chroot /tmp/root.x86_64 /bin/bash
+
+```
+
+#### Método B: Usando a imagem LiveCD
+
+É possível montar a imagem raiz da mídia mais recente de instalação do Arch Linux e, em seguida, fazer *chroot* nela. Este método tem a vantagem de fornecer uma instalação funcional do Arch Linux no direito do sistema host sem a necessidade de prepará-lo instalando pacotes específicos.
+
+**Note:** Antes de prosseguir, verifique se a versão mais recente de [squashfs](http://squashfs.sourceforge.net/) está instalada no sistema host. Caso contrário, esperam-se erros como os a seguir: `FATAL ERROR aborting: uncompress_inode_table: failed to read block`.
+
+*   A imagem raiz pode ser encontrada em um dos [espelhos](https://www.archlinux.org/download) em `arch/x86_64/`. O formato squashfs não é editável, portanto, desfazemos o "squash" na imagem raiz e a montamos.
+
+*   Para fazer um "unsquash" na imagem raiz, execute
+
+ `# unsquashfs airootfs.sfs` 
+
+*   Antes de fazer [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") para ela, precisamos configurar alguns pontos de montagem e copiar o resolv.conf para conectividade.
+
+```
+# mount --bind squashfs-root squashfs-root
+# mount -t proc none squashfs-root/proc
+# mount -t sysfs none squashfs-root/sys
+# mount -o bind /dev squashfs-root/dev
+# mount -o bind /dev/pts squashfs-root/dev/pts  ## importante para o pacman (para verificação de assinatura)
+# cp -L /etc/resolv.conf squashfs-root/etc  ## Isso é necessário para usar conectividade com o chroot
+
+```
+
+*   Agora, tudo está preparado para fazer chroot para dentro do ambiente Arch recém-instalado
+
+ `# chroot squashfs-root bash` 
+
+### Usando o ambiente chroot
+
+O ambiente *bootstrap* é realmente minimalista (sem `nano`, sem `ping`, sem `cryptsetup`, sem `lvm`). Portanto, precisamos configurar o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para baixar o resto da `base` e, se necessário, `base-devel`.
+
+#### Inicializando o chaveiro do pacman
+
+Antes de iniciar a instalação, as chaves do pacman precisam ser configuradas. Antes de executar os dois comandos a seguir, leia [pacman-key (Português)#Inicializando o chaveiro](/index.php/Pacman-key_(Portugu%C3%AAs)#Inicializando_o_chaveiro "Pacman-key (Português)") para entender os requisitos de entropia:
+
+```
+# pacman-key --init
 # pacman-key --populate archlinux
 
 ```
 
-**Contudo**, quando conectado através de SSH você pode sofrer de falta de [entropia](https://pt.wikipedia.org/wiki/Entropia). Neste caso, tente algo similar a:
+**Dica:** A instalação e execução [haveged](https://www.archlinux.org/packages/?name=haveged) deve ser feito no sistema hospedeiro, já que não é possível instalar pacotes antes de inicializar o chaveiro do pacman e porque *systemd* vai detectar que está sendo executado em um *chroot* e [vai ignorar requisição de ativação](https://superuser.com/questions/688733/start-a-systemd-service-inside-chroot). Se você for executar `ls -Ra /` em outro console (TTY, terminal, sessão SSH...), não tenha medo de executá-lo em um loop algumas vezes: cinco ou seis execuções do hospedeiro provou ser suficiente para gerar entropia suficiente em um servidor burro remoto.
+
+#### Selecionando um espelho e baixando ferramentas básicas
+
+Após [selecionar um espelho](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [renove as listas de pacotes](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+
+### Dicas de instalação
+
+Você pode prosseguir agora para [Guia de instalação#Partição dos discos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Parti.C3.A7.C3.A3o_dos_discos "Guia de instalação") e seguir o resto do [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação").
+
+Alguns sistemas hospedeiros ou configurações podem exigir determinadas etapas adicionais. Veja as seções abaixo para obter dicas.
+
+##### Host baseado no debian
+
+###### /dev/shm
+
+Em alguns sistemas baseados no Debian, `pacstrap` pode produzir o seguinte erro:
+
+ `# pacstrap /mnt base` 
+```
+==> Creating install root at /mnt
+mount: mount point /mnt/dev/shm is a symbolic link to nowhere
+==> ERROR: failed to setup API filesystems in new root
 
 ```
-# cat /usr/bin/* > /dev/null &
-# find / > /dev/null &
+
+Isso porque em algumas versões do Debian, `/dev/shm` aponta para `/run/shm` enquanto no chroot baseado no Arch, `/run/shm` não existe e o link está quebrado. Para corrigir esse erro, cria um diretório `/run/shm`:
+
+```
+# mkdir /run/shm
 
 ```
 
-antes de executar `pacman-key --init`.
+###### /dev/pts
 
-Pode levar um tempo. Caso estas opções acima não funcionem, instale o pacote [haveged](https://www.archlinux.org/packages/?name=haveged) e antes de efetuar a inicialização das chaves com `pacman-key --init`, execute:
+Ao instalar `archlinux-2015.07.01-x86_64` a partir de um host Debian 7, o seguinte erro impediu [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) e [arch-chroot](/index.php/Chroot_(Portugu%C3%AAs)#Usando_arch-chroot "Chroot (Português)") de funcionar:
 
+ `# pacstrap -i /mnt` 
 ```
-# /usr/sbin/haveged -w 1024 -v 1
-
-```
-
-## Configure o sistema alvo
-
-Neste ponto, apenas siga os passos do [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)"). Lembre de montar o sistema destino do chroot em `/mnt`.
-
-```
-# pacstrap /mnt base base-devel
-# # ...
+mount: mount point /mnt/dev/pts does not exist
+==> ERROR: failed to setup chroot /mnt
 
 ```
 
-### Edite o arquivo FSTAB
+Aparentemente, é porque esses dois scripts usam uma função em comum. `chroot_setup()`[[1]](https://projects.archlinux.org/arch-install-scripts.git/tree/common#n76) depende em novos recursos do [util-linux](https://www.archlinux.org/packages/?name=util-linux), que são incompatíveis com Debian 7 *userland* (veja [FS#45737](https://bugs.archlinux.org/task/45737)).
 
-Provavelmente o script `genfstab` não funcionará. Neste caso, você terá de editar o `/mnt/etc/fstab` na mão. Utilize o conteúdo do arquivo `/etc/mtab` como referência.
+A solução para *pacstrap* é executar manualmente seus [várias tarefas](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in#n77), mas use o [procedimento regular](/index.php/Chroot_(Portugu%C3%AAs)#Usando_chroot "Chroot (Português)") para montaros sistemas de arquivos do kernel no diretório alvo (`"$newroot"`):
 
-### Finalizando a instalação
+```
+# newroot=/mnt
+# mkdir -m 0755 -p "$newroot"/var/{cache/pacman/pkg,lib/pacman,log} "$newroot"/{dev,run,etc}
+# mkdir -m 1777 -p "$newroot"/tmp
+# mkdir -m 0555 -p "$newroot"/{sys,proc}
+# mount --bind "$newroot" "$newroot"
+# mount -t proc /proc "$newroot/proc"
+# mount --rbind /sys "$newroot/sys"
+# mount --rbind /run "$newroot/run"
+# mount --rbind /dev "$newroot/dev"
+# pacman -r "$newroot" --cachedir="$newroot/var/cache/pacman/pkg" -Sy base base-devel ... ## adicione os pacotes que quiser
+# cp -a /etc/pacman.d/gnupg "$newroot/etc/pacman.d/"       ## copiar chaveiro
+# cp -a /etc/pacman.d/mirrorlist "$newroot/etc/pacman.d/"  ## copiar lista de espelhos
+```
 
-Execute os outros passos normalmente.
+Em vez de usar `arch-chroot` para [Guia de instalação#Chroot](/index.php/Guia_de_instala%C3%A7%C3%A3o#Chroot "Guia de instalação"), basta usar `chroot "$newroot"`.
 
-## Dicas
+###### lvmetad
 
-*   Caso você queira substituir o sistema existente, mas por alguma razão não consegue utilizar um LiveCD devido a limitações físicas(acesso ao computador, ausência de driver de CD, etc) a seguinte dica pode ajudar: Libere ~500MB no seu disco e instale o archlinux lá. Reinicie nesta nova partição criada e execute um [rsync completo](/index.php/Full_system_backup_with_rsync#With_a_single_command "Full system backup with rsync") para a partição primária. Altere as configurações do bootloader e reinicie.
+A tentativa de criar [volumes lógicos](/index.php/LVM#Logical_volumes "LVM") [LVM](/index.php/LVM "LVM") de um ambiente `archlinux-bootstrap-2015.07.01-x86_64` em um host Debian 7 resultaram no seguinte erro:
+
+ `# lvcreate -L 20G lvm -n root` 
+```
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /dev/lvm/root: not found: device not cleared
+  Aborting. Failed to wipe start of new LV.
+```
+
+(A criação de volume físico e grupo de volumes funcionaram apesar de `/run/lvm/lvmetad.socket: connect failed: No such file or directory` estar sendo exibido.)
+
+Isso poderia ser facilmente contornado criando os volumes lógicos fora do chroot (do host Debian). Eles estão disponíveis uma vez que executados chroot novamente.
+
+Também, se o sistema que você está usando tiver lvm, você pode ter a seguinte saída:
+
+ `# grub-install --target=i386-pc --recheck /dev/mapper/main-archroot` 
+```
+Installing for i386-pc platform.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+```
+
+Isso porque o Debian não usa lvmetad por padrão. Você precisa editar `/etc/lvm/lvm.conf` e definir `use_lvmetad` para `0`:
+
+```
+use_lvmetad = 0
+
+```
+
+Isto irá desencadear mais tarde um erro na inicialização no estágio initrd. Portanto, você deve alterá-lo depois da geração grub. Em um software RAID + LVM, as etapas seriam as seguintes:
+
+*   Após instalar o sistema, verifique seu [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e as configurações do gerenciador de inicialização *(boot loader)*. Veja [Category:Boot loaders (Português)](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") para uma lista de gerenciadores de inicialização.
+*   Você pode precisar alterar seu `/etc/mdadm.conf` para refletir suas configurações de [RAID](/index.php/RAID "RAID") (se aplicável).
+*   Você pode precisar alterar seu`HOOKS` e `MODULES` de acordo com seus requisitos de [LVM](/index.php/LVM "LVM") e [RAID](/index.php/RAID "RAID"): `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
+*   Você provavelmente vai precisar gerar novas imagens initrd com mkinitcpio. Veja [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+*   Defina `use_lvmetad = 0` em `/etc/lvm/lvm.conf`.
+*   Atualize as configurações de seu gerenciador de inicialização. Veja a página wiki de seu gerenciador de inicialização para detalhes.
+*   Defina `use_lvmetad = 1` em `/etc/lvm/lvm.conf`.
+
+##### Host baseado no Fedora
+
+On Fedora based hosts and live USBs you may encounter problems when using `genfstab` to generate your [fstab](/index.php/Fstab "Fstab"). Remove duplicate entries and the "seclabel" option where it appears, as this is Fedora-specific and will keep your system from booting normally.
+
+## Coisas para verificar antes de reiniciar
+
+Antes de reiniciar, faça um *chroot* no sistema recém-instalado.
+
+Certifique-se de criar um usuário com senha, para que você possa fazer o login via ssh. O login de root está desabilitado por padrão desde o OpenSSH-7.1p2.
+
+Defina uma senha de root para que você possa alternar para root por meio do su mais tarde:
+
+```
+# passwd
+
+```
+
+Instale o [ssh](/index.php/Ssh "Ssh") e [habilite](/index.php/Habilite "Habilite")-o para iniciar automaticamente na inicialização.
+
+Configure a conexão de [rede](/index.php/Rede "Rede") para iniciar automaticamente na inicialização.
+
+Configure um [gerenciador de inicialização](/index.php/Gerenciador_de_inicializa%C3%A7%C3%A3o "Gerenciador de inicialização") e configure-o para usar a partição swap que você apropriou anteriormente como a partição raiz. Você pode querer configurar seu gerenciador de inicialização para poder inicializar em seu sistema antigo; é útil reutilizar a partição /boot existente do servidor no novo sistema para este propósito.
+
+## Substituindo o sistema existente sem um LiveCD
+
+Encontre ~700 MB de espaço livre em algum lugar do disco, p.ex. particionando uma partição swap. Você pode desativar a partição swap e configurar o seu sistema lá.
+
+### Defina a partição antiga de swap como nova partição raiz
+
+Verifique `cfdisk`, `/proc/swaps` ou `/etc/fstab` para localizar sua partição swap. Presumindo que seu disco rígido esteja localizado em sdaX (X será um número).
+
+Faça o seguinte:
+
+Desabilite o espaço swap:
+
+```
+# swapoff /dev/sdaX
+
+```
+
+Crie um sistema de arquivos nele
+
+```
+# fdisk /dev/sda
+(defina o campo de ID do /dev/sdaX para "Linux" - Hex 83)
+# mke2fs -j /dev/sdaX
+
+```
+
+Crie um diretório para montá-lo nele
+
+```
+# mkdir /mnt/novosis
+
+```
+
+Finalmente, monte o novo diretório para instalar um sistema intermediário.
+
+```
+# mount -t ext4 /dev/sdaX /mnt/novosis
+
+```
+
+### Instalação
+
+Se estiver disponível menos de 700 MB, examine os pacotes na base do grupo e selecione apenas aqueles necessários para que um sistema com conexão à Internet seja executado e executado na partição temporária. Isso significará especificamente especificar pacotes individuais para pacstrap, bem como passá-lo a opção -c, para obter pacotes baixados para o sistema host para evitar o preenchimento de espaço valioso.
+
+Uma vez que o novo sistema Arch Linux esteja instalado, reinicie no sistema recém-criado e faça um [rsync de todo o sistema](/index.php/Rsync#Full_system_backup "Rsync") para a partição primária. Corrija a configuração do gerenciador de inicialização antes de reiniciar.

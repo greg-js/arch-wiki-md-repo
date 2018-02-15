@@ -185,7 +185,7 @@ TLS/SSL 需要密钥和认证，如果你有公开域名，可以使用 [Let's E
 
 **Note:** You will need to add a separate <VirtualHost *:443> section for virtual host SSL support. See [#Managing many virtual hosts](#Managing_many_virtual_hosts) for an example file.
 
-如果需要不止一个主机，在 `/etc/httpd/conf/httpd.conf`中注释掉:
+如果需要不止一个主机，取消 `/etc/httpd/conf/httpd.conf`行的注释:
 
 ```
 Include conf/extra/httpd-vhosts.conf

@@ -1,3 +1,5 @@
+Questo documento tratta gli standard e le linee guida sulla scrittura di [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") per il software [Python](/index.php/Python "Python").
+
 ## Contents
 
 *   [1 Nomenclatura del pacchetto](#Nomenclatura_del_pacchetto)

@@ -109,7 +109,7 @@ After the installation, it is required to reinstall [GRUB](/index.php/GRUB "GRUB
 
 Then, take an example as `/etc/default/grub.silent`, and make necessary changes to `/etc/default/grub`.
 
-Below three lines are necessary :
+Below three lines are necessary:
 
 ```
 GRUB_DEFAULT=0
@@ -117,5 +117,7 @@ GRUB_TIMEOUT=0
 GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
 
 ```
+
+**Note:** If you set `GRUB_TIMEOUT=0` and `GRUB_HIDDEN_TIMEOUT=1` (or any positive value), set `GRUB_RECORDFAIL_TIMEOUT=$GRUB_HIDDEN_TIMEOUT` instead of `GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT`. Otherwise pressing `Esc` on boot to show GRUB menu will not work.
 
 Lastly, regenerate `grub.cfg` file.

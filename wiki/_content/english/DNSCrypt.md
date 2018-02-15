@@ -1,4 +1,4 @@
-**Warning:** This project has been abandoned and is no longer maintained. See [FS#57027](https://bugs.archlinux.org/task/57027). An alternative is [dnscrypt-proxy-go](https://aur.archlinux.org/packages/dnscrypt-proxy-go/) which is a new protocol.
+**Warning:** This project has been abandoned and is no longer maintained. See [FS#57027](https://bugs.archlinux.org/task/57027). An alternative is [dnscrypt-proxy-go](https://aur.archlinux.org/packages/dnscrypt-proxy-go/) which is a new client implementing the same protocol.
 
 [DNSCrypt](http://dnscrypt.info/) encrypts and authenticates DNS traffic between user and DNS resolver. While IP traffic itself is unchanged, it prevents local spoofing of DNS queries, ensuring DNS responses are sent by the server of choice. [[1]](https://www.reddit.com/r/sysadmin/comments/2hn435/dnssec_vs_dnscrypt/ckuhcbu)
 

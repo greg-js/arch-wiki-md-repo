@@ -95,11 +95,11 @@ kernel: psmouse serio1: issuing reconnect request
 
 #### Solution 1
 
-Installing [linux-tp-x1-carbon-5th](https://aur.archlinux.org/packages/linux-tp-x1-carbon-5th/) fixes this, see [https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4](https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4). Note that this only works on the Elantech trackpoint (LEN0073).
+Since kernel v4.14 you can workaround this by adding `psmouse.synaptics_intertouch=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 #### Solution 2
 
-Since kernel v4.14 you can workaround this by adding `psmouse.synaptics_intertouch=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+If you uses a kernel older than 4.14, you can patch it using [https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4](https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4). Note that this only works on the Elantech trackpoint (LEN0073).
 
 ### Bug: System occasionally hanging during startup
 

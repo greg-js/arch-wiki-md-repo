@@ -122,7 +122,7 @@ Para suporte a cores, veja [Color output in console#grep](/index.php/Color_outpu
 
 *find* é parte do pacote [findutils](https://www.archlinux.org/packages/?name=findutils), que pertence ao grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/).
 
-Dica: [fd](https://github.com/sharkdp/fd) é uma alternativa moderna e amigável para usuário para `find`, que tenta melhorar desempenho e oferece padrões mais amigáveis. Por exemplo, `fd PADRÃO` em vez de `find -iname '*PADRÃO*'`. Possui saída colorida (semelhante ao `ls`), pesquisa de casos inteligentes por padrão, ignorar arquivos ocultos e muito mais. [fd-rs](https://www.archlinux.org/packages/?name=fd-rs)
+Dica: [fd](https://github.com/sharkdp/fd) é uma alternativa moderna e amigável para usuário para `find`, que tenta melhorar desempenho e oferece padrões mais amigáveis. Por exemplo, `fd PADRÃO` em vez de `find -iname '*PADRÃO*'`. Possui saída colorida (semelhante ao `ls`), pesquisa de casos inteligentes por padrão, ignorar arquivos ocultos e muito mais. [fd](https://www.archlinux.org/packages/?name=fd)
 
 Provavelmente se esperaria que um comando *find* levasse como argumento um nome de arquivo e pesquisasse no sistema de arquivos para arquivos que correspondessem a esse nome. Para um programa que faz exatamente isso, veja [#locate](#locate) abaixo.
 
@@ -187,13 +187,13 @@ O artigo [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Con
 
 ## locate
 
-[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
+[Instale](/index.php/Instale "Instale") o pacote [mlocate](https://www.archlinux.org/packages/?name=mlocate). O pacote contém uma unidade `updatedb.timer`, que invoca uma atualização do banco de dados a cada dia. O temporizador é ativado logo após a instalação, [inicie](/index.php/Inicie "Inicie") manualmente se você quiser usá-lo antes de reiniciar. Você também pode executar manualmente *updatedb* como root a qualquer momento. Por padrão, os caminhos como `/media` e `/mnt` são ignorados, portanto, *locate* pode não descobrir arquivos em dispositivos externos. Veja a [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) para obter detalhes.
 
-The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
+O comando *locate* é uma ferramenta Unix comum para encontrar rapidamente arquivos pelo nome. Ele oferece melhorias de velocidade ao longo da ferramenta [find](https://en.wikipedia.org/wiki/pt:Find "w:pt:Find") pesquisando um arquivo de banco de dados pré-construído, em vez do sistema de arquivos diretamente. A desvantagem dessa abordagem é que as mudanças feitas desde a construção do arquivo de banco de dados não podem ser detectadas pelo *locate*.
 
-Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
+Antes que o *locate* possa ser usado, o banco de dados precisará ser criado. Para fazer isso, execute `updatedb` como root.
 
-See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
+Veja também [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/) ("Como locate funciona e rescreva-o em um minuto").
 
 ## less
 

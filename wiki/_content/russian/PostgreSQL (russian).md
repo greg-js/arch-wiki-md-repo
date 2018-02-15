@@ -46,6 +46,13 @@ $ sudo su - postgres -c "initdb --locale ru_RU.UTF-8 -E UTF8 -D '/var/lib/postgr
 
 ```
 
+*   Если получили ошибку "Невозможно создать директорию, недостаточно прав", то изменяем владельца PGROOT директории и пробуем еще раз
+
+```
+$ sudo chown -R postgres:postgres /var/lib/postgres/
+
+```
+
 *   Запускаем сервер PostgreSQL
 
 ```

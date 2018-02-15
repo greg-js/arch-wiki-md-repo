@@ -1,3 +1,11 @@
+Related articles
+
+*   [S-nail](/index.php/S-nail "S-nail")
+*   [msmtp](/index.php/Msmtp "Msmtp")
+*   [Mutt](/index.php/Mutt "Mutt")
+*   [Postfix](/index.php/Postfix "Postfix")
+*   [Notmuch](/index.php/Notmuch "Notmuch")
+
 **nmh** (new message handler), is a powerful electronic mail handling system. Following the Unix Philosophy, nmh is made up by a collection of simple programs each of which has a single purpose. This architecture allows the user to intersperse nmh with other commands at the shell prompt and to write scripts tailored to their needs.
 
 ## Contents
@@ -88,8 +96,8 @@ While *nmh* is fully usable from the command-line, several console-based and gra
 ### MH-specific Frontends
 
 *   [MH-V](http://www.hep.wisc.edu/~rader/mh-v/), a console interface to *mh/nmh* with vi- keybindings.
-*   [MH-E](http://www.beedub.com/exmh/), a console interface to *mh/nmh* with Emacs keybindings.
-*   [exmh](http://mh-e.sourceforge.net/), a TK-based mh GUI.
+*   [MH-E](http://mh-e.sourceforge.net/), a console interface to *mh/nmh* with Emacs keybindings.
+*   [exmh](http://www.beedub.com/exmh/), a TK-based mh GUI.
 
 ### MH-compatible Frontends
 

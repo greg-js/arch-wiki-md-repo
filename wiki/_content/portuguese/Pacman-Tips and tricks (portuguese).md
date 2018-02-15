@@ -419,7 +419,7 @@ CleanMethod = KeepCurrent
 
 ### Recriar um pacote do sistema de arquivos
 
-Para recriar um pacote do sistema de arquivos, use *bacman* (incluído no *pacman*). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Rollback Machine](/index.php/Arch_Rollback_Machine_(Portugu%C3%AAs) "Arch Rollback Machine (Português)") para obter alternativas.
+Para recriar um pacote do sistema de arquivos, use *bacman* (incluído no *pacman*). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Linux Archive (Português)](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") para obter alternativas.
 
 **Dica:** *bacman* honra as opções `PACKAGER`, `PKGDEST` e `PKGEXT` do `makepkg.conf`. Opções personalizadas para as ferramentas de compressão podem ser configuradas exportando a variável de ambiente relevante. Por exemplo, `XZ_OPT="-T 0"` vai habilitar compressão paralela para *xz*.
 

@@ -27,7 +27,7 @@ By default Demlo only previews changes. Use the `-p` commandline flag to confirm
 
 Demlo runs a chain of Lua scripts of the files passed as arguments. You can select which scripts from the config file or at run-time.
 
-Each script can access an <t>input</t> table and modify an <t>output</t> table with information such as the path, tags, covers and encoding properties.
+Each script can access an `input` table and modify an `output` table with information such as the path, tags, covers and encoding properties.
 
 Demlo comes with its set of official scripts to choose from.
 

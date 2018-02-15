@@ -306,7 +306,14 @@ A significant amount of programs will not work with self-signed certificates, an
 If a key was already generated as [explained before](#Generating_keys), use this command to sign the new certificate with the aforementioned key:
 
 ```
-$ openssl req -key private/key.pem -x509 -new -days 3650 -out cacert.pem
+$ openssl req -key private/key.pem -x509 -new -days 3650 -out selfcert.pem
+
+```
+
+If a key was not previously generated, to create a new private key and sign the certificate with this new key, use the following:
+
+```
+$ openssl req -nodes -newkey rsa:2048 -keyout newkey.pem -x509 -days 3650 -out selfcert.pem
 
 ```
 

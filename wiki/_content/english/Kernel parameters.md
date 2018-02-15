@@ -177,7 +177,7 @@ This list is not comprehensive. For a complete list of all options, please see t
 | zswap.enabled | Enable [Zswap](/index.php/Zswap "Zswap"). |
 | panic= | Time before automatic reboot on kernel panic. |
 | debug | Enable kernel debugging (events log level). |
-| mem= | Force usage of a specific amount of memory amount of memory to be used. |
+| mem= | Force usage of a specific amount of memory to be used. |
 | maxcpus= | Maximum number of processors that an SMP kernel will bring up during bootup. |
 | selinux= | Disable or enable SELinux at boot time. |
 | netdev= | Network devices parameters. |

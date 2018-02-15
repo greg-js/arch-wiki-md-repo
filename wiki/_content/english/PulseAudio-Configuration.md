@@ -3,9 +3,8 @@
 *   [1 Easy configuration](#Easy_configuration)
 *   [2 Advanced configuration](#Advanced_configuration)
     *   [2.1 Configuration files](#Configuration_files)
-        *   [2.1.1 daemon.conf](#daemon.conf)
-        *   [2.1.2 default.pa](#default.pa)
-        *   [2.1.3 client.conf](#client.conf)
+        *   [2.1.1 default.pa](#default.pa)
+        *   [2.1.2 client.conf](#client.conf)
     *   [2.2 Connection & authentication](#Connection_.26_authentication)
         *   [2.2.1 Environment variables](#Environment_variables)
         *   [2.2.2 X11 properties](#X11_properties)
@@ -14,7 +13,6 @@
     *   [3.2 ALSA](#ALSA)
     *   [3.3 JACK](#JACK)
     *   [3.4 Filters & Routing](#Filters_.26_Routing)
-*   [4 Further resources](#Further_resources)
 
 ## Easy configuration
 
@@ -31,33 +29,9 @@
 
 ## Advanced configuration
 
-While PulseAudio usually runs fine out of the box and requires only minimal configuration, advanced users can change almost every aspect of the daemon by either altering the default configuration file to disable modules or writing your own from scratch. PulseAudio runs as a server daemon that can run either system-wide or on per-user basis using a client/server architecture. The daemon by itself does nothing without its modules except to provide an API and host dynamically loaded modules. The audio routing and processing tasks are all handled by various modules, including Pulse's native protocol itself (provided by [module-native-protocol-unix](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index22h3)). Clients reach the server through one of many protocol modules that will accept audio from external sources, route it through PulseAudio and eventually have it go out through a final other module. The output module does not have to be an actual sound output: it can dump the stream into a file, stream it to a broadcasting server such as [Icecast](/index.php/Icecast "Icecast"), or even just discard it.
-
 ### Configuration files
 
-PulseAudio can be configured in multiple ways depending on your needs and uses multiple different configuration files. Configuration files are read from `~/.config/pulse/` first, then from `/etc/pulse/` for system-wide defaults. People usually change the system-wide version unless they intend to have multiple users with different configurations.
-
-#### daemon.conf
-
-This is the main configuration file to configure the daemon itself. It defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. Most defaults make sense here and are self-explaining, see the [pulse-daemon.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-daemon.conf.5) manpage for additional information. Boolean options accepts any of these: `true`, `yes`, `on` and `1` as well as `false`, `no`, `off` and `0`.
-
-<caption>Notable configuration options</caption>
-| Option | Description |<caption></caption>
-| realtime-scheduling | If your kernel supports realtime scheduling (for instance, [Kernels#-rt](/index.php/Kernels#-rt "Kernels") or [Kernels#-ck](/index.php/Kernels#-ck "Kernels")), set this to `yes` to ensure PulseAudio can deliver low-latency glitch-free playback. You can adjust `realtime-priority` as well to have it use the correct priority, especially when [JACK](/index.php/JACK "JACK") is also running on the system. |<caption></caption>
-| exit-idle-time | If you want to run PulseAudio only when needed and use ALSA otherwise, you can set a delay in seconds after which the daemon will automatically shutdown after all clients are disconnected. Set it to -1 to disable this feature. |<caption></caption>
-| resample-method | When PulseAudio needs to pass audio from one module to another using incompatible sample-rate (for example, playback at 96kHz to a card that only supports a maximum of 48kHz), specifies which resampler to use. You can use the command `$ pulseaudio --dump-resample-methods` to list all available resamplers and choose the best tradeoff between CPU usage and audio quality for your taste.
-**Tip:** One of the major complaint about PulseAudio is its high CPU usage in some use cases. A lot of these cases happens when pulse needs to resample multiple streams (individually). If you intend to mix multiple sample rates often, consider creating an additional sink at the correct sample rate which you can then feed back to your main sink, resampling only once.
- |<caption></caption>
-| enable-remixing | When the input and output have a different channel count (for example, outputting a 6 channel movie into a stereo sink), pulse can either remix all the channels (default, `yes`) or just trivially map the channels by their name (left goes to left, right to right, all others ignored) when `no` |<caption></caption>
-| flat-volumes | If `yes` (default), all input sources have their volume relative to the maximum volume of the entire sound card. This allows each application to individually adjust their volume so for example, raising your VoIP call volume will raise the hardware volume and adjust your music player volume so it stays where it was, avoiding confusion by having to lower manually the music player then raise the global volume.
-**Warning:** Sometimes this can be more confusing than what it solves and some applications unaware of this feature can set their volume at 100% at startup, potentially blowing your speakers or your ears. If unsure, prefer to set this to `no` so pulse will use the classic ALSA behavior instead.
- |<caption></caption>
-| default-fragments | Audio samples are splitted into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded, but will also increase the overall latency. Increase this value if you have issues. |<caption></caption>
-| default-fragment-size-msec | The size in milliseconds of each fragment. This is the amount of data that will be processed at once by the daemon. TODO: Verify |
-
 #### default.pa
-
-This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self explaining, please consult [pulse-cli-syntax(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-cli-syntax.5) for the details of the syntax.
 
 In order to configure the daemon, you will mostly only need the very basic commands:
 
@@ -71,8 +45,6 @@ In order to configure the daemon, you will mostly only need the very basic comma
 There are plenty more commands available that are useful at runtime to control the daemon, see the `pactl` manpage for more details. Everything that an be made in `pavucontrol` can also be made on the command line, useful for bash scripts.
 
 #### client.conf
-
-This is the configuration file read by every PulseAudio client applications. It is used to configure runtime options for individual clients. It can be used to set the configure the default sink and source statically as well as allowing (or disallowing) clients to automatically start the server if not currently running.
 
 <caption>Useful client.conf options</caption>
 | Option | Description |<caption></caption>
@@ -107,5 +79,3 @@ PulseAudio also uses window properties on the root window of the X11 server to h
 ### JACK
 
 ### Filters & Routing
-
-## Further resources

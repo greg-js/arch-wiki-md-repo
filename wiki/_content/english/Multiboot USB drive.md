@@ -214,12 +214,12 @@ Also see [archiso](/index.php/Archiso "Archiso").
 menuentry '[loopback]archlinux-2017.10.01-x86_64.iso' {
 	set isofile='/boot/iso/archlinux-2017.10.01-x86_64.iso'
 	loopback loop $isofile
-	linux (loop)/arch/boot/x86_64/vmlinuz archisodevice=/dev/loop0 img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
+	linux (loop)/arch/boot/x86_64/vmlinuz img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
 	initrd (loop)/arch/boot/x86_64/archiso.img
 }
 ```
 
-**Note:** As of archiso v23 (monthly release 2015.10.01), the parameter `archisodevice=/dev/loop0` is no longer necessary when boot using GRUB and loopback devices.
+See [README.bootparams](https://git.archlinux.org/archiso.git/tree/docs/README.bootparams) for archiso options supported in kernel command line.
 
 #### archboot
 

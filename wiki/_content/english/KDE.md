@@ -2,9 +2,11 @@ Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 *   [Display manager](/index.php/Display_manager "Display manager")
-*   [Dolphin](/index.php/Dolphin "Dolphin")
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Qt](/index.php/Qt "Qt")
+*   [SDDM](/index.php/SDDM "SDDM")
+*   [Dolphin](/index.php/Dolphin "Dolphin")
+*   [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet")
 *   [KDevelop](/index.php/KDevelop "KDevelop")
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
@@ -72,26 +74,29 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.1 Configuration related](#Configuration_related)
         *   [6.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
         *   [6.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
-    *   [6.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
-    *   [6.3 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
-    *   [6.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
-    *   [6.5 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [6.6 Graphical problems](#Graphical_problems)
-        *   [6.6.1 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
-        *   [6.6.2 Disable compositing](#Disable_compositing)
-        *   [6.6.3 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [6.6.4 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
-        *   [6.6.5 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
-    *   [6.7 Sound problems](#Sound_problems)
-        *   [6.7.1 No sound after suspend](#No_sound_after_suspend)
-        *   [6.7.2 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
-        *   [6.7.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [6.8 Inotify folder watch limit](#Inotify_folder_watch_limit)
-    *   [6.9 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [6.10 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
-    *   [6.11 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
-    *   [6.12 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
-    *   [6.13 Backlight control hotkeys stopped working](#Backlight_control_hotkeys_stopped_working)
+    *   [6.2 Graphical problems](#Graphical_problems)
+        *   [6.2.1 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
+        *   [6.2.2 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
+        *   [6.2.3 Disable compositing](#Disable_compositing)
+        *   [6.2.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [6.2.5 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
+        *   [6.2.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
+    *   [6.3 Sound problems](#Sound_problems)
+        *   [6.3.1 No sound after suspend](#No_sound_after_suspend)
+        *   [6.3.2 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
+        *   [6.3.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+    *   [6.4 Power management](#Power_management)
+        *   [6.4.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
+        *   [6.4.2 Backlight control hotkeys stopped working](#Backlight_control_hotkeys_stopped_working)
+    *   [6.5 KMail](#KMail)
+        *   [6.5.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
+        *   [6.5.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
+    *   [6.6 Networking](#Networking)
+        *   [6.6.1 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [6.7 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
+    *   [6.8 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [6.9 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
+    *   [6.10 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -623,40 +628,18 @@ $ rm -rf ~/.cache/*
 
 ```
 
-### Clean akonadi configuration to fix KMail
+### Graphical problems
 
-First, make sure that KMail is not running. Then backup configuration:
+Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications) or [#Disable compositing](#Disable_compositing).
 
-```
-$ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old
-$ cp -a ~/.config/akonadi ~/.config/akonadi-old
+#### Getting current state of KWin for support and debug purposes
 
-```
-
-Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi` and `~/.config/akonadi` - the copies you made ensure that you can back-track if necessary.
-
-Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it work properly.
-
-### Empty IMAP inbox in KMail
-
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders, see [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscription in the kmail account settings.
-
-### Getting current state of KWin for support and debug purposes
-
-This command prints out a wonderful summary of the current state of KWin including used options, used compositing backend and relevant OpenGL driver capabilities. See more on [Martin's blog](https://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/).
+This command prints out a summary of the current state of KWin including used options, used compositing backend and relevant OpenGL driver capabilities. See more on [Martin's blog](https://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/).
 
 ```
 $ qdbus org.kde.KWin /KWin supportInformation
 
 ```
-
-### KF5/Qt5 applications do not display icons in i3/fvwm/awesome
-
-See [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
-
-### Graphical problems
-
-Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications) or [#Disable compositing](#Disable_compositing).
 
 #### Disable desktop effects manually or automatically for defined applications
 
@@ -724,50 +707,61 @@ Go to *System Settings > Multimedia > Phonon* and set the device named `default`
 
 This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via *System Settings > Multimedia > Backend*.
 
-### Inotify folder watch limit
+### Power management
 
-If you get the following error:
+#### No Suspend/Hibernate options
 
-```
-KDE Baloo Filewatch service reached the inotify folder watch limit. File changes may be ignored.
+If your system is able to suspend or hibernate using [systemd](/index.php/Systemd "Systemd") but do not have these options shown in KDE, make sure [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) is installed.
 
-```
+#### Backlight control hotkeys stopped working
 
-Then you will need to increase the inotify folder watch limit:
+It may happen that backlight control hotkeys suddenly stop working (possibly after an update). This may be due to a shortcuts conflict between KDE Daemon and Power Management. If this is the case, go to *Settings > Shortcuts > Global shortcuts* and set the hotkeys shortcuts in the Power management section, overriding KDE daemons.
 
-```
-# echo 524288 > /proc/sys/fs/inotify/max_user_watches
+If this does not help, see [Backlight](/index.php/Backlight "Backlight").
 
-```
+### KMail
 
-To make changes permanent, create `/etc/sysctl.d/40-max-user-watches.conf` with:
+#### Clean akonadi configuration to fix KMail
 
-```
-fs.inotify.max_user_watches=524288
+First, make sure that KMail is not running. Then backup configuration:
 
 ```
+$ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old
+$ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
-### Freezes when using Automount on a NFS volume
+```
+
+Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi` and `~/.config/akonadi` - the copies you made ensure that you can back-track if necessary.
+
+Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it work properly.
+
+#### Empty IMAP inbox in KMail
+
+For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders, see [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscription in the kmail account settings.
+
+### Networking
+
+#### Freezes when using Automount on a NFS volume
 
 Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
 
-### No Suspend/Hibernate options
+### Aggressive QXcbConnection journal logging
 
-If your system is able to suspend or hibernate using systemd but do not have these options shown in KDE, make sure [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) is installed.
+See [Qt#Disable/Change Qt journal logging behaviour](/index.php/Qt#Disable.2FChange_Qt_journal_logging_behaviour "Qt").
+
+### KF5/Qt5 applications do not display icons in i3/fvwm/awesome
+
+See [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
 
 ### Problems with saving credentials and persistently occurring KWallet dialogs
 
-It is not recommended to turn off the KWallet password saving system in the user settings as it is required to save encrypted credentials like WiFi passphrases for each user. Persistently occuring KWallet dialogs can be the consequence of turning it off. In case you find the dialogs to unlock the wallet annoying when applications want to access it, you can let the login managers `SDDM` and `LightDM` unlock the wallet at login automatically, see [KDE Wallet](/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login "KDE Wallet"). The first wallet needs to be generated by KWallet (and not user-generated) in order to be usable for system program credentials. In case you want the wallet credentials not to be opened in memory for every application, you can restrict applications from accessing it with [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) in the KWallet settings. If you do not care for credential encryption at all, you can simply leave the password forms blank when KWallet asks for the password while creating a wallet. In this case, applications can access passwords without having to unlock the wallet first.
+It is not recommended to turn off the [KWallet](/index.php/KWallet "KWallet") password saving system in the user settings as it is required to save encrypted credentials like WiFi passphrases for each user. Persistently occuring KWallet dialogs can be the consequence of turning it off. In case you find the dialogs to unlock the wallet annoying when applications want to access it, you can let the login managers `SDDM` and `LightDM` unlock the wallet at login automatically, see [KDE Wallet](/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login "KDE Wallet"). The first wallet needs to be generated by KWallet (and not user-generated) in order to be usable for system program credentials. In case you want the wallet credentials not to be opened in memory for every application, you can restrict applications from accessing it with [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) in the KWallet settings. If you do not care for credential encryption at all, you can simply leave the password forms blank when KWallet asks for the password while creating a wallet. In this case, applications can access passwords without having to unlock the wallet first.
 
 ### Weird "q" symbol in konsole
 
 If you get a weird "q" symbols in programs such as vim[[7]](https://github.com/vim/vim/issues/2008) or neovim[[8]](https://github.com/neovim/neovim/issues/7002), it is because they use cursor shape changing escape sequences (DECSCUSR) which konsole does not support. See [KDE Bug 347323](https://bugs.kde.org/show_bug.cgi?id=347323).
 
 You will need to disable these escape sequences in the programs that use them. See [neovim FAQ](https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes) for a workaround for neovim.
-
-### Backlight control hotkeys stopped working
-
-It may happen that backlight control hotkeys suddenly stop working (possibly after an update). This may be due to a shortcuts conflict between KDE Daemon and Power Management. If this is the case, go to *Settings > Shortcuts > Global shortcuts* and set the hotkeys shortcuts in the Power management section, overriding KDE Daemon's. If this does not help, please see [Backlight](/index.php/Backlight "Backlight")
 
 ## See also
 

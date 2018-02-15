@@ -132,14 +132,14 @@ $ expac -HM '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base ba
 List all installed packages that are *not* in the specified repository *repo_name*
 
 ```
-$ comm -23 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
+$ comm -23 <(pacman -Qq | sort) <(pacman -Slq *repo_name* | sort)
 
 ```
 
 List all installed packages that are in the *repo_name* repository:
 
 ```
-$ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
+$ comm -12 <(pacman -Qq | sort) <(pacman -Slq *repo_name* | sort)
 
 ```
 

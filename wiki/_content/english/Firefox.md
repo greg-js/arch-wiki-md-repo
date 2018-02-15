@@ -318,9 +318,9 @@ Restart Firefox and see if it solved the problem.
 
 ### Unreadable input fields with dark GTK+ themes
 
-When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
+When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. See [Firefox Bug 1283086](https://bugzilla.mozilla.org/show_bug.cgi?id=1283086).
 
-This can be prevented by setting `browser.display.use_system_colors = false` in `about:config`, which will stop Firefox using your theme's colors in web pages.
+This can be prevented by setting `browser.display.use_system_colors` to `false` in `about:config`, which will stop Firefox using your theme's colors in web pages.
 
 The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
 
@@ -350,9 +350,8 @@ Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
 Another way to change gtk theme for content process only, which keeps dark UI theming, but enforces light theme for rendering webpage itself:
 
 1.  Open `about:config` in the address bar
-2.  Press right mouse button -> New -> String
-3.  Type `widget.content.gtk-theme-override` as config name
-4.  Type light theme tag to use for rendering purposes (`Adwaita:light` for example)
+2.  Create a new string type preference (*right mouse button > New > String*) named `widget.content.gtk-theme-override`
+3.  Set the value to the light theme tag to use for rendering purposes (e.g. `Adwaita:light`)
 
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 

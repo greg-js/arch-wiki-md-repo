@@ -31,7 +31,7 @@ Related articles
 
 [Install](/index.php/Install "Install") [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) or [bubblewrap-git](https://aur.archlinux.org/packages/bubblewrap-git/).
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel per [FS#36969](https://bugs.archlinux.org/task/36969). This prevents the kernel from exposing user namespaces as a means to accomodate separate user information for separate virtualized services. An example would be running *syslog* in a namespace with a UID and GID different than that of the host system.
+**Note:** For information about [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) support in Archlinux kernels see [Security#Sandboxing_applications](/index.php/Security#Sandboxing_applications "Security").
 
 ## Configuration
 

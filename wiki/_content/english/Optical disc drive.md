@@ -210,33 +210,35 @@ $ dd if=*/dev/sr0* bs=1 skip=32808 count=32
 
 ### Creating an ISO image from a CD, DVD, or BD
 
-You should determine the size of the ISO file system before copying it to hard disk. Most media types deliver more data than was written to them with the most recent burn run.
+In order to only copy actual data from the disc and not the empty blocks filling it up, first retrieve its block/sector count and size (2048 most of the time):
 
-Use program *isosize* out of package [util-linux](https://www.archlinux.org/packages/?name=util-linux) to obtain the count of blocks to read:
-
+ `$ isosize -x /dev/sr0` 
 ```
-$ blocks=$(isosize -d 2048 */dev/sr0*)
-
-```
-
-Have a look whether the obtained number of blocks is plausible
-
- `$ echo "That would be $(expr $blocks / 512) MB"` 
-```
-That would be 589 MB
+sector count: 2041796, sector size: 2048
 
 ```
 
-Then copy the determined amount of data from medium to hard disk:
+or alternatively:
+
+ `$ isoinfo -d -i /dev/sr0 | grep -i -E 'block size|volume size'` 
+```
+Logical block size is: 2048
+Volume size is: 2041796
 
 ```
-$ dd if=*/dev/sr0* of=*isoimage.iso* bs=2048 count=$blocks status=progress
+
+**Note:** Do not forget to replace `/dev/sr0` with your optical drive device name.
+
+Then use [dd](/index.php/Dd "Dd") to copy the data using the obtained values:
+
+```
+$ dd if=/dev/sr0 of=discmage.iso bs=*sector_size* count=*sector_count* status=progress
 
 ```
 
-Omit `count=$blocks` if you did not determine the size. You will probably get more data than needed. The resulting file will nevertheless be mountable. It should still fit onto a medium of the same type as the medium from which the image was copied.
+**Tip:** If the medium is damaged, it is preferable to use a dedicated utility such as [ddrescue](https://www.archlinux.org/packages/?name=ddrescue). See [Disk cloning#Using ddrescue](/index.php/Disk_cloning#Using_ddrescue "Disk cloning").
 
-If the original medium was bootable, then the copy will be a bootable image. You may use it as pseudo CD for a virtual machine or burn it onto optical media which should then become bootable.
+If the original medium was bootable, then the copy will be a bootable image. You may use it as a pseudo CD for a virtual machine or burn it onto an optical media which should then become bootable. [[1]](https://askubuntu.com/questions/147800/ripping-dvd-to-iso-accurately#874945)
 
 ### Erasing CD-RW and DVD-RW
 

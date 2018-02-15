@@ -6,7 +6,7 @@ Related articles
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications")
 
-From [MATE homepage](http://mate-desktop.org/):
+From [MATE homepage](https://mate-desktop.org/):
 
 	*The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience.*
 
@@ -69,7 +69,7 @@ MATE is available in the [official repositories](/index.php/Official_repositorie
 *   The [mate](https://www.archlinux.org/groups/x86_64/mate/) group contains the core desktop environment required for the standard MATE experience.
 *   The [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group contains additional utilities and applications that integrate well with the MATE desktop. Installing just the [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group will not pull in the whole [mate](https://www.archlinux.org/groups/x86_64/mate/) group via dependencies. If you want to install all MATE packages then you will need to explicitly install both groups.
 
-The base desktop consists of [marco](https://www.archlinux.org/packages/?name=marco), [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) and [mate-session-manager](https://www.archlinux.org/packages/?name=mate-session-manager),
+The base desktop consists of [marco](https://www.archlinux.org/packages/?name=marco), [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) and [mate-session-manager](https://www.archlinux.org/packages/?name=mate-session-manager).
 
 ### Additional MATE packages
 
@@ -85,7 +85,7 @@ There are a number of other unofficial MATE applications that are contributed to
 
 *   **MATE Menu** — Advanced menu for MATE Panel, a fork of MintMenu.
 
-	[https://bitbucket.org/ubuntu-mate/mate-menu](https://bitbucket.org/ubuntu-mate/mate-menu) || [mate-menu](https://www.archlinux.org/packages/?name=mate-menu)
+	[https://github.com/ubuntu-mate/mate-menu](https://github.com/ubuntu-mate/mate-menu) || [mate-menu](https://www.archlinux.org/packages/?name=mate-menu)
 
 *   **MATE Tweak** — Tweak tool for MATE, a fork of mintDesktop.
 
@@ -165,7 +165,7 @@ See [Backlight#Kernel command-line options](/index.php/Backlight#Kernel_command-
 
 ### Enabling compositing
 
-Compositing is not enabled by default. To enable it navigate to run `System -> Preferences -> Look and Feel -> Windows` and click the tick box alongside **Enable software compositing window manager** in the `General` tab. Alternatively, you can run the following from the terminal:
+Compositing is not enabled by default. To enable it navigate to run *System -> Preferences -> Look and Feel -> Windows -> General* and click the tick box alongside *Enable software compositing window manager*. Alternatively, you can run the following from the terminal:
 
 ```
 $ gsettings set org.mate.Marco.general compositing-manager true
@@ -174,7 +174,7 @@ $ gsettings set org.mate.Marco.general compositing-manager true
 
 ### Enabling new window centering
 
-By default, new windows are placed in the top-left corner. To center new windows on creation navigate to run `System -> Preferences -> Windows` and click the tick box alongside **Center new windows** in the `Placement` tab. Alternatively, you can run the following from the terminal:
+By default, new windows are placed in the top-left corner. To center new windows on creation navigate to run *System -> Preferences -> Windows -> Placement* and click the tick box alongside *Center new windows*. Alternatively, you can run the following from the terminal:
 
 ```
 $ gsettings set org.mate.Marco.general center-new-windows true
@@ -183,7 +183,7 @@ $ gsettings set org.mate.Marco.general center-new-windows true
 
 ### Enabling window snapping
 
-Window snapping is not be enabled by default, to enable it navigate to run `System -> Preferences -> Windows` and click the tick box alongside **Enable side by side tiling** in the `Placement` tab. Alternatively, you can run the following from the terminal:
+Window snapping is not be enabled by default, to enable it navigate to run *System -> Preferences -> Windows -> Placement* and click the tick box alongside *Enable side by side tiling*. Alternatively, you can run the following from the terminal:
 
 ```
 $ gsettings set org.mate.Marco.general side-by-side-tiling true
@@ -192,7 +192,7 @@ $ gsettings set org.mate.Marco.general side-by-side-tiling true
 
 ### Show or hide desktop icons
 
-By default, MATE shows multiple icons on the desktop: The content of your desktop directory, computer, home and network directories, the trash and mounted drives. You can show or hide them individually or all at once using `gsettings`.
+By default, MATE shows multiple icons on the desktop: the content of your desktop directory, computer, home and network directories, the trash and mounted drives. You can show or hide them individually or all at once using `gsettings`.
 
 #### Hide all desktop icons
 
@@ -436,7 +436,7 @@ When logging out or shutting down, you may find that you are presented with an *
 
 ## See also
 
-*   [MATE homepage](http://mate-desktop.org)
-*   [MATE wiki for Arch Linux](http://wiki.mate-desktop.org/archlinux_custom_repo)
-*   [*MATE desktop screenshots*](http://mate-desktop.org/gallery/1.8/)
+*   [MATE homepage](https://mate-desktop.org)
+*   [MATE wiki for Arch Linux](https://wiki.mate-desktop.org/archlinux_custom_repo)
+*   [*MATE desktop screenshots*](https://mate-desktop.org/gallery/1.8/)
 *   [*The MATE Desktop Environment*](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE

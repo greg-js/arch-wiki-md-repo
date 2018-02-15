@@ -306,6 +306,8 @@ $ pacman -Qdt
 
 ```
 
+**Tip:** Add the above command to a pacman post-transaction [hook](#Hooks) to be notified if a transaction orphaned a package. This can be useful for being notified when a package has been dropped from a repository, since any dropped package will also be orphaned on a local installation (unless it was explicitly installed). To avoid any "failed to execute command" errors when no orphans are found, use the following command for `Exec` in your hook: `/usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '=> None found.'"`
+
 To list all packages explicitly installed and not required as dependencies:
 
 ```

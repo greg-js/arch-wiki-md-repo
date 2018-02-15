@@ -106,7 +106,7 @@ You can also download the signature (same URL with `.sig` added) and [verify it 
 Extract the tarball:
 
 ```
-# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2017.12.01-x86_64.tar.gz
+# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2018.02.01-x86_64.tar.gz
 
 ```
 

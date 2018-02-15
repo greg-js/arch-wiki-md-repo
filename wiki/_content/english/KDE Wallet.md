@@ -7,7 +7,7 @@
 *   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 KWalletManager won't run](#KWalletManager_won.27t_run)
+    *   [5.1 Inotify folder watch limit](#Inotify_folder_watch_limit)
 *   [6 See also](#See_also)
 
 ## Unlock KDE Wallet automatically on login
@@ -97,14 +97,25 @@ Chrome/Chromium has built in wallet integration. To enable it, run Chromium with
 
 ## Troubleshooting
 
-### KWalletManager won't run
+### Inotify folder watch limit
 
-Review the configuration in
-
-```
-System Settings > Account Details > KDE Wallet
+If you get the following error:
 
 ```
+KDE Baloo Filewatch service reached the inotify folder watch limit. File changes may be ignored.
+
+```
+
+Then you will need to increase the inotify folder watch limit:
+
+```
+# echo 524288 > /proc/sys/fs/inotify/max_user_watches
+
+```
+
+To make changes permanent, create a `40-max-user-watches.conf` file:
+
+ `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
 
 ## See also
 

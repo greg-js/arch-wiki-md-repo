@@ -5,6 +5,8 @@ Related articles
 
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") PulseAudio is a general purpose sound server intended to run as a middleware between your applications and your hardware devices, either using [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). It also offers easy network streaming accross local devices using [Avahi](/index.php/Avahi "Avahi") if enabled. While its main purpose is to ease audio configuration, its modular design allows more advanced users to configure the daemon precisely to best suit their needs.
 
+**Note:** Some confusion may occur between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes a Linux kernel component with sound card drivers, as well as a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -55,46 +57,48 @@ Related articles
 
 ## Installation
 
-Install the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) package.
+[Install](/index.php/Install "Install") the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) package.
 
-Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseaudio-split/) from the main package and must be installed separately if needed:
+**Note:** Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseaudio-split/) from the main package and must be installed separately if needed.
 
-*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth): [Bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez)
-*   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer): Equalizer sink (qpaeq)
-*   [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf): GConf support (paprefs)
-*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack): [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection
-*   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc): Infrared (LIRC) volume control
-*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): Zeroconf ([Avahi](/index.php/Avahi "Avahi")/DNS-SD) support
-
-**Note:** Some confusion may occur between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes a Linux kernel component with sound card drivers, as well as a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
+*   For PulseAudio to manage [ALSA](/index.php/ALSA "ALSA") as well, install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package, see [#ALSA](#ALSA).
+*   For [bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez), install the [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package, see [bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page.
+*   For equalizer sink (qpaeq), install the [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer) package.
+*   For GConf support (paprefs), install the [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf) package.
+*   For [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection, install the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package.
+*   For infrared (LIRC) volume control, install the [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc) package.
+*   For Zeroconf ([Avahi](/index.php/Avahi "Avahi")/DNS-SD) support, install the [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf) package.
 
 ### Front-ends
 
 There are a number of front-ends available for controlling the PulseAudio daemon:
 
-*   Configuration/volume control (graphical): [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) and [pavucontrol-qt](https://www.archlinux.org/packages/?name=pavucontrol-qt)
-*   General daemon configuration (graphical): [paprefs](https://www.archlinux.org/packages/?name=paprefs)
-*   Volume control via mapped keyboard keys: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
-*   Console (CLI) mixers: [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer](https://www.archlinux.org/packages/?name=pamixer)
-*   Console (curses) mixer: [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
-*   Web volume control: [PaWebControl](https://github.com/Siot/PaWebControl)
-*   System tray icon: [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/), [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/)
+*   For graphical configuration/volume control, install the [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) or [pavucontrol-qt](https://www.archlinux.org/packages/?name=pavucontrol-qt) package.
+*   For graphical general daemon configuration, install the [paprefs](https://www.archlinux.org/packages/?name=paprefs) package.
+*   For console (CLI) mixers, install the [ponymix](https://www.archlinux.org/packages/?name=ponymix) or [pamixer](https://www.archlinux.org/packages/?name=pamixer) package.
+*   For console (curses) mixer, install the [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/) package.
+*   For volume control via mapped keyboard keys, install the [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/) package.
+*   For system tray icon, install the [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/) or [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/) package.
 
 **Tip:** The non-standalone versions of `pasystray` can install both GTK2 and GTK3 versions and requires choosing which during build. The standalone versions install a single version.
 
-*   KF5 plasma applet: [kmix](https://www.archlinux.org/packages/?name=kmix) and [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
-*   Xfce4 plugin: [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
-*   If you want to use Bluetooth headsets or other Bluetooth audio devices with PulseAudio, see the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") article.
+*   For [KDE](/index.php/KDE "KDE") Framework 5 Plasma applet, install the [kmix](https://www.archlinux.org/packages/?name=kmix) and [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) package.
+*   For [Xfce](/index.php/Xfce "Xfce") 4 plugin: [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/) package.
+*   For web volume control, see [PaWebControl](https://github.com/Siot/PaWebControl).
 
 ## Configuration
 
-### Configuration files
-
 By default, PulseAudio is configured to automatically detect all sound cards and manage them. It takes control of all detected ALSA devices and redirects all audio streams to itself, making the PulseAudio daemon the central configuration point. The daemon should work mostly out of the box, only requiring a few minor tweaks.
 
-PulseAudio will first look for configuration files in the home directory `~/.config/pulse`, then system-wide `/etc/pulse`.
+While PulseAudio usually runs fine out of the box and requires only minimal configuration, advanced users can change almost every aspect of the daemon by either altering the default configuration file to disable modules or writing your own from scratch.
 
-PulseAudio runs as a server daemon that can run either system-wide or on per-user basis using a client/server architecture. The daemon by itself does nothing without its **modules** except to provide an API and host dynamically loaded modules. The audio routing and processing tasks are all handled by various modules. You can find a detailed list of all available modules at [Pulseaudio Loadable Modules](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/). To enable them you can just add a line `load-module <module-name-from-list>` to `~/.config/pulse/default.pa`.
+PulseAudio runs as a server daemon that can run either system-wide or on per-user basis using a client/server architecture. The daemon by itself does nothing without its **modules** except to provide an API and host dynamically loaded modules. The audio routing and processing tasks are all handled by various modules, including PulseAudio's native protocol itself (provided by [module-native-protocol-unix](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index22h3)). Clients reach the server through one of many protocol modules that will accept audio from external sources, route it through PulseAudio and eventually have it go out through a final other module. The output module does not have to be an actual sound output: it can dump the stream into a file, stream it to a broadcasting server such as [Icecast](/index.php/Icecast "Icecast"), or even just discard it.
+
+You can find a detailed list of all available modules at [Pulseaudio Loadable Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/). To enable them you can just add a line `load-module <module-name-from-list>` to `~/.config/pulse/default.pa`.
+
+### Configuration files
+
+PulseAudio will first look for configuration files in the home directory `~/.config/pulse`, then system-wide `/etc/pulse`.
 
 **Tip:**
 
@@ -104,23 +108,34 @@ PulseAudio runs as a server daemon that can run either system-wide or on per-use
 
 #### daemon.conf
 
-Defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. The defaults are sensible for most users.
+This is the main configuration file to configure the daemon itself. It defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. The defaults are sensible for most users, see the [pulse-daemon.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-daemon.conf.5) manpage for additional information. Boolean options accepts any of these: `true`, `yes`, `on` and `1` as well as `false`, `no`, `off` and `0`.
 
 **Note:** PulseAudio does not perform tilde expansion on paths in this file. Use absolute paths for any files.
 
 <caption>Notable configuration options</caption>
 | Option | Description |<caption></caption>
-| system-instance | If set to `yes`, run the daemon as a [system-wide](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/SystemWide/) instance. [Highly discouraged](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/WhatIsWrongWithSystemWide/) as it can introduce security issues. Useful on [Multiseat](/index.php/Xorg_multiseat "Xorg multiseat") systems, or headless systems that have no real local users. Defaults to `no`. |<caption></caption>
-| avoid-resampling | With `avoid-resampling = yes`, PulseAudio automatically configures the hardware to the sample rate which the application uses, if the hardware supports this sample rate (needs [PA 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) or higher)
-**Warning:** Enabling this feature might cause audio distortion, therefore it is disabled by default, see the [release notes](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) for more information.
- |<caption></caption>
+| daemonize | Controls whether the server will daemonize itself and return. Set to `no` when debugging so you can see the debugging information on the terminal. |<caption></caption>
 | resample-method | Which resampler to use when audio with incompatible sample rates needs to be passed between modules (e.g. playback of 96kHz audio on hardware which only supports 48kHz). The available resamplers can be listed with `$ pulseaudio --dump-resample-methods`. Choose the best tradeoff between CPU usage and audio quality for the present use-case.
 **Tip:** In some cases PulseAudio will generate a high CPU load. This can happen when multiple streams are resampled (individually). If this is a common use-case in a workflow, it should be considered to create an additional sink at a matching sample rate which can then be fed into the main sink, resampling only once.
  |<caption></caption>
+| avoid-resampling | With `avoid-resampling = yes`, PulseAudio automatically configures the hardware to the sample rate which the application uses, if the hardware supports this sample rate (needs [PA 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) or higher)
+**Warning:** Enabling this feature might cause audio distortion, therefore it is disabled by default, see the [release notes](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) for more information.
+ |<caption></caption>
+| enable-remixing | When the input and output have a different channel count (for example, outputting a 6 channel movie into a stereo sink), pulse can either remix all the channels (default, `yes`) or just trivially map the channels by their name (left goes to left, right to right, all others ignored) when `no` |<caption></caption>
+| system-instance | If set to `yes`, run the daemon as a [system-wide](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/SystemWide/) instance. [Highly discouraged](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/WhatIsWrongWithSystemWide/) as it can introduce security issues. Useful on [Multiseat](/index.php/Xorg_multiseat "Xorg multiseat") systems, or headless systems that have no real local users. Defaults to `no`. |<caption></caption>
 | flat-volumes | `flat-volumes` scales the device-volume with the volume of the "loudest" application. For example, raising the VoIP call volume will raise the hardware volume and adjust the music-player volume so it stays where it was, without having to lower the volume of the music-player manually. Defaults to `yes` upstream, but to `no` within Arch.
 **Note:** The default behavior upstream can sometimes be confusing and some applications, unaware of this feature, can set their volume to 100% at startup, potentially blowing your speakers or your ears. This is why Arch defaults to the classic (ALSA) behavior by setting this to `no`.
  |<caption></caption>
-| default-fragments | Audio samples are split into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded. On the downside this will increase the overall latency. Increase this value if you have issues. |
+| realtime-scheduling | If your kernel supports realtime scheduling (for instance, [Kernels#-rt](/index.php/Kernels#-rt "Kernels") or [Kernels#-ck](/index.php/Kernels#-ck "Kernels")), set this to `yes` to ensure PulseAudio can deliver low-latency glitch-free playback. You can adjust `realtime-priority` as well to have it use the correct priority, especially when [JACK](/index.php/JACK "JACK") is also running on the system. |<caption></caption>
+| nice-level | Since PulseAudio runs in userspace and involves inter-process communication, audio can be subject to dropouts if the daemon doesn't have enough CPU time to process the audio. The default usually is enough, but can be tweaked to give pulse the wanted priority over (or below) other applications. |<caption></caption>
+| exit-idle-time | If you want to run PulseAudio only when needed and use ALSA otherwise, you can set a delay in seconds after which the daemon will automatically shutdown after all clients are disconnected. Set it to -1 to disable this feature. |<caption></caption>
+| log-level | When debugging, you may want to increase the logging level of the daemon to see exactly why a specific module fails to load. High logging levels will sometimes print useful information such as detected minimum latency for the system, which can then be used to tweak `default-fragments` and `default-fragment-size-msec`. |<caption></caption>
+| default-sample-format | Usually doesn't need change, but if your sound card's native format is diffent performance and quality can be improved by setting the right format here. |<caption></caption>
+| default-sample-rate | The default sample rate user by pulse unless overriden at module level. Change this if your sound card doesn't support 44100Hz or if you wish to upsample all audio. See previous note about CPU usage. |<caption></caption>
+| alternate-sample-rate | To fix a common limitation where movies at 48000Hz were needlessly downsampled to 44100Hz, some modules support changing their sample rate dynamically to avoid resampling when possible. See manual for more in-depth information. Usually don't need any change. |<caption></caption>
+| default-channels | The default number of channels when not specified. Usually don't need any change as you can configure more channels on per-module basis. |<caption></caption>
+| default-fragments | Audio samples are split into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded. On the downside this will increase the overall latency. Increase this value if you have issues. |<caption></caption>
+| default-fragment-size-msec | The size in milliseconds of each fragment. This is the amount of data that will be processed at once by the daemon. TODO: Verify |
 
 #### default.pa
 
@@ -656,7 +671,5 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 
 ## See also
 
-*   [.asoundrc on ALSA wiki](http://www.alsa-project.org/main/index.php/Asoundrc)
-*   [PulseAudio official site](http://www.pulseaudio.org/)
-*   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
+*   [PulseAudio official website](https://www.freedesktop.org/wiki/Software/PulseAudio/), including documentation
 *   [Pulseaudio under the hood](https://gavv.github.io/blog/pulseaudio-under-the-hood/)

@@ -157,10 +157,15 @@ Swap:         1537          0       1537
 
 使用 [pkgfile](/index.php/Pkgfile "Pkgfile").
 
+```
+$ pkgfile *file_name*
+
+```
+
 例如，要查看`glxinfo`在哪个包里面：
 
 ```
-$ pkgfile *file_name*
+$ pkgfile *glxinfo*
 
 ```
 

@@ -79,7 +79,9 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 For Skylake and newer processors, some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.14) not enabled by default.
 
-It is necessary to add `i915.enable_guc_loading=1 i915.enable_guc_submission=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable it.
+It is necessary to add `i915.enable_guc_loading=1 i915.enable_guc_submission=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable it. Alternatively, if the initramfs already includes the i915 module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`. E.g.:
+
+ `/etc/modprobe.d/i915.conf`  `options i915 enable_guc_loading=1 enable_guc_submission=1` 
 
 You can verify that it's enabled by checking *dmesg*:
 

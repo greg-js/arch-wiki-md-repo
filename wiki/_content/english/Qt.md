@@ -39,11 +39,12 @@ The Qt framework is emerging as a major development platform and is the basis of
         *   [4.3.8 Lua](#Lua)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Qt programs crash when opening file dialogs under GNOME Wayland](#Qt_programs_crash_when_opening_file_dialogs_under_GNOME_Wayland)
-    *   [5.2 Icon theme is not applied](#Icon_theme_is_not_applied)
-    *   [5.3 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
-    *   [5.4 Qt4 style not respected](#Qt4_style_not_respected)
-    *   [5.5 Applications using QML crash or don't work with Qt 5.8](#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8)
-    *   [5.6 All Qt5-based applications fail to run after Qt5 update](#All_Qt5-based_applications_fail_to_run_after_Qt5_update)
+    *   [5.2 Disable/Change Qt journal logging behaviour](#Disable.2FChange_Qt_journal_logging_behaviour)
+    *   [5.3 Icon theme is not applied](#Icon_theme_is_not_applied)
+    *   [5.4 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
+    *   [5.5 Qt4 style not respected](#Qt4_style_not_respected)
+    *   [5.6 Applications using QML crash or don't work with Qt 5.8](#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8)
+    *   [5.7 All Qt5-based applications fail to run after Qt5 update](#All_Qt5-based_applications_fail_to_run_after_Qt5_update)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -448,6 +449,21 @@ GDK_BACKEND=x11 some_qt_program
 ```
 
 *   Install the latest git snapshot of [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/), which contains a fix. The platform plugin should work automatically under GNOME (3.20 or later); if not, manually set the [environment variable](/index.php/Environment_variables#Using_pam_env "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform` . This also has the effect of [uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+
+### Disable/Change Qt journal logging behaviour
+
+When using [KDE](/index.php/KDE "KDE") and/or any other Qt [desktop environment](/index.php/Desktop_environment "Desktop environment") debug info may be frequently be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
+
+Set `QT_LOGGING_RULES` as [environment variable](/index.php/Environment_variable "Environment variable") to change this behaviour:
+
+ `/etc/environment` 
+```
+// Completely disable any logging
+QT_LOGGING_RULES='*=false'
+
+// Allow debug info to pass
+QT_LOGGING_RULES="*.debug=false"
+```
 
 ### Icon theme is not applied
 

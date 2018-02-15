@@ -166,7 +166,7 @@ As colunas têm o seguinte significado:
 *   *Seguro*: não [carrega](/index.php/Carrega "Carrega") o PKGBUILD por padrão, ou alerta o usuário e oferece a oportunidade de inspecionar o PKGBUILD manualmente antes dele ser carregado. Alguns auxiliares são conhecidos por carregar PKGBUILDs antes do usuário inspecioná-los, **permitindo códigos maliciosos serem executados**. *Opcional* significa que há uma opção de linha de comando ou opção de configuração para evitar o carregamento automático antes de visualizar.
 *   *Compilação limpa*: não exporta novas variáveis que podem evitar um processo de compilação bem-sucedido.
 *   *Analisador confiável*: habilidade de lidar com pacotes complexos usando os metadados fornecidos (RPC/.SRCINFO) em vez de [análise](https://en.wikipedia.org/wiki/pt:An%C3%A1lise_sint%C3%A1tica_(computa%C3%A7%C3%A3o)#Analisador_sint.C3.A1tico "w:pt:Análise sintática (computação)") do PKGBUILD, tal como [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
-*   *Resolvedor confiável*: habilidade para resolver corretamente e compilar cadeias de dependência complexas, tal como [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
+*   *Resolvedor confiável*: habilidade para resolver corretamente e compilar cadeias de dependência complexas, tal como [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
 *   *Pacotes divididos*: habilidade de compilar e instalar corretamente pacotes divididos (*split packages*) de forma independente, tal como [python-virtualfish](https://aur.archlinux.org/packages/python-virtualfish/) e [python2-virtualfish](https://aur.archlinux.org/packages/python2-virtualfish/).
 *   *Git clone*: usa git-clones em vez de baixar tarballs (obsoleto desde o AUR 4).
 *   *Sintaxe*: P significa tipo [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), E para específico.
@@ -176,12 +176,13 @@ As colunas têm o seguinte significado:
 | auracle | C++ | Sim | N/D | Sim | Sim | N/D | Não | N/D | E | Sem compilações automáticas |
 | aurel | Emacs Lisp | Sim | N/D | Sim | N/D | N/D | Não | N/D | E | Integração com o Emacs, sem compilações automáticas |
 | aurget | Bash | Opcional | Sim | Não | Não | Não [[2]](https://github.com/pbrisbin/aurget/issues/40) | Não | bash/zsh | P | ordena por votos |
-| aurutils | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | zsh | E | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/pt:PCRE "w:pt:PCRE"), [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local"), [assinatura de pacote](/index.php/Assinatura_de_pacote "Assinatura de pacote"), suporte a [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") |
+| aurutils | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | zsh | E | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/pt:PCRE "w:pt:PCRE"), [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local"), [assinatura de pacote](/index.php/Assinatura_de_pacote "Assinatura de pacote"), suporte a [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn"), ordena por votos/popularidade |
 | bauerbill | Python | Sim | Sim | Sim | Sim | Sim | Sim | bash/zsh | P/E | Gerenciamento de confiança, Suporte a ABS, estende Powerpill |
 | burgaur | Python/C | Opcional, com [mc](/index.php/Mc "Mc") | Sim | Não | Não | Não | Não | Nenhum | P | Wrapper para *cower* |
-| pacaur [*Precisando de mantenedor!*](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | bash/zsh | P/E | Minimiza interação de usuário, multilíngue, ordena por votos/popularidade |
+| pacaur | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | bash/zsh | P/E | Minimiza interação de usuário, multilíngue, ordena por votos/popularidade |
 | packer | Bash | Não | Sim | Não | Não | Não | Não | Nenhum | P | - |
 | pbget | Python | Sim | N/D | Sim | N/D | N/D | Sim | Nenhum | E | Sem compilações automáticas |
+| pikaur | Python | Sim | Sim | Sim | Sim | Sim | Sim | fish | P | Minimiza interação de usuário, ordena por votos/popularidade |
 | PKGBUILDer | Python | Opcional | Sim | Sim | Sim | Parcial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Sim | Nenhum | P | Compilações automáticas por padrão, use `-F` para desabilitar; multilíngue |
 | prm | Bash | Sim [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/D | Sim | N/D | N/D | Sim | Nenhum | E | Sem compilações automáticas, Suporte a ABS |
 | repoctl | Go | Sim | N/D | Sim [[5]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/D | N/D | Não | zsh | E | Sem compilações automáticas, suporte a repositório local |
@@ -190,7 +191,7 @@ As colunas têm o seguinte significado:
 | wrapaur | Bash | Sim | Sim | Não | Não | Não | Sim | Nenhum | E | Atualiza espelhos (mirror), imprime notícias e comentários do AUR |
 | yaah | Bash | Sim | N/D | Sim | N/D | N/D | Opcional | bash | E | Sem compilações automáticas |
 | yaourt | Bash/C | Não (*yaourt -Si*) [[10]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[11]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | Não [[12]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | Não | Não [[13]](https://github.com/archlinuxfr/yaourt/issues/186) | Não [[14]](https://github.com/archlinuxfr/yaourt/issues/85) | Opcional | bash/zsh/fish | P | Backup, Suporte a ABS, Comentários do AUR, multilíngue |
-| yay | Go | Sim | Sim | Sim | Não | Parcial | Não | bash/zsh/fish | P | ordena por votos |
+| yay | Go | Sim | Sim | Sim | Não | Parcial | Não | bash/zsh/fish | P | Minimiza a interação de usuário, ordena por votos |
 
 **Nota:** [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") 4.2\. introduziu campos específicos para arquitetura. [[15]](http://allanmcrae.com/2014/12/pacman-4-2-released/) Porém, desde 06 de abril de 2016, [AurJson](/index.php/AurJson_(Portugu%C3%AAs) "AurJson (Português)") combina todas as entradas em um único campo: [FS#48796](https://bugs.archlinux.org/task/48796). Auxiliares que dependam do RPC podem usar as soluções de contorno abaixo para obter dependências:
 

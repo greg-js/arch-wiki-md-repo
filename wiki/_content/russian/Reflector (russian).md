@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [Зеркала](/index.php/%D0%97%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D0%B0 "Зеркала")
+*   [Pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
+
 [Reflector](http://xyne.archlinux.ca/projects/reflector/) — скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы [Mirror Status](https://www.archlinux.org/mirrors/status/), фильтрацию из них наиболее обновленных, сортировку по скорости и сохранение в `/etc/pacman.d/mirrorlist`.
 
 ## Contents

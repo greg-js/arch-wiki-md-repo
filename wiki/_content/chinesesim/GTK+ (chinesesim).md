@@ -123,7 +123,7 @@ gtk-font-name = "DejaVu Sans 8"
 [Settings]
 gtk-application-prefer-dark-theme = false
 gtk-theme-name = Zukitwo
-gtk-fallback-icon-theme = gnome
+gtk-icon-theme-name = gnome
 ```
 
 如果还是不起作用，那么删除旧的`{XDG_CONFIG_HOME}/gtk-3.0`目录，并从主题路径复制新的`gtk-3.0`目录。例如：

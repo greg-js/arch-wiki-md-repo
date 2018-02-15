@@ -3,7 +3,14 @@ Related articles
 *   [List of applications/Documents#Vi text editors](/index.php/List_of_applications/Documents#Vi_text_editors "List of applications/Documents")
 *   [Vim](/index.php/Vim "Vim")
 
-Kakoune is a modal text editor. It is inspired by Vim and similar alternatives, but tries to improve the text editing workflow as well as fit better to the Unix philosophy. Besides modal editing, two other main concepts are selection based editing, and multi-cursor editing. It has an interactive help system, and supports many languages.
+[Kakoune](http://kakoune.org/) is a modal text editor. It is inspired by Vim and similar alternatives, but tries to improve the text editing workflow as well as fit better to the Unix philosophy. Besides modal editing, two other main concepts are selection based editing, and multi-cursor editing. It has an interactive help system, and supports many languages.
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+*   [3 Configuration](#Configuration)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -27,3 +34,8 @@ Every `*.kak` file is loaded from `autoload` at startup. If this directory exist
  ln -s /usr/share/kak/autoload $XDG_CONFIG_HOME/kak/autoload/default
 
 ```
+
+## See also
+
+*   [Github repository](https://github.com/mawww/kakoune)
+*   [Github wiki](https://github.com/mawww/kakoune/wiki)

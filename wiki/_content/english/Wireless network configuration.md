@@ -6,6 +6,7 @@ Related articles
 *   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
 *   [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding")
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
+*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
 
 Configuring wireless is a two-part process; the first part is to identify and ensure the correct driver for your wireless device is installed (they are available on the installation media, but often have to be installed explicitly), and to configure the interface. The second is choosing a method of managing wireless connections. This article covers both parts, and provides additional links to wireless management tools.
 

@@ -111,7 +111,7 @@ For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1
 [grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/Ed_(text_editor) "wikipedia:Ed (text editor)")'s *g/re/p*, *global/regular expression/print*) is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to the program's standard output.
 
 *   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
-*   There are *grep* alternatives optimized for VCS source code, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
+*   There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack).
 *   To include file line numbers in the output, use the `-n` option.
 
 **Note:** Some commands send their output to [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
@@ -122,7 +122,7 @@ For color support, see [Color output in console#grep](/index.php/Color_output_in
 
 *find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
 
-Tip: [fd](https://github.com/sharkdp/fd) is a modern and user friendly alternative to `find`, that tries to improve performance, and offer more friendly defaults. For example `fd PATTERN` instead of `find -iname '*PATTERN*'`. It features colorized output (similar to `ls`), smart-case search by default, hidden files ignoring, and more. [fd](https://www.archlinux.org/packages/?name=fd)
+**Tip:** [fd](https://www.archlinux.org/packages/?name=fd) is a simple, fast and user-friendly alternative to `find` that provides more sensible defaults (e.g. ignores hidden files, dirs and `.gitignore`'d files, `fd PATTERN` instead of `find -iname '*PATTERN*'`). It features colorized output (similar to `ls`), unicode awareness, regular expressions and more.
 
 One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
 
@@ -189,7 +189,7 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 [Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
 
-The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
+The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find_(Unix) tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
 
 Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
 

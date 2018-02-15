@@ -615,7 +615,7 @@ For example, in case of 1920x1080
 
 ```
 
-The result must be **rounded up** to the nearest power of two, and since 17.82 is bigger than 16 we should choose 32
+The result must be **rounded up** to the nearest power of two, and since 17.82 is bigger than 16 we should choose 32.
 
 Next create a script to create a shared memory file.
 

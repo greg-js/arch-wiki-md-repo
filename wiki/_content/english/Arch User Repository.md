@@ -133,7 +133,7 @@ $ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*package_name*.tar.
 
 Change directories to the directory containing the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
-**Warning:** **Carefully check all files.** Carefully check the `PKGBUILD` and any `.install` file for malicious commands. `PKGBUILD`s are [bash](/index.php/Bash "Bash") scripts containing functions to be executed by *makepkg*: these functions can contain *any* valid commands or Bash syntax, so it is totally possible for a `PKGBUILD` to contain dangerous commands through malice or ignorance on the part of the author. Since *makepkg* uses *fakeroot* (and should never be run as root), there is some level of protection but you should never count on it. If in doubt, do not build the package and seek advice on the forums or mailing list.
+**Warning:** **Carefully check all files.** Carefully check the `PKGBUILD` and any *.install* file for malicious commands. `PKGBUILD`s are [bash](/index.php/Bash "Bash") scripts containing functions to be executed by *makepkg*: these functions can contain *any* valid commands or Bash syntax, so it is totally possible for a `PKGBUILD` to contain dangerous commands through malice or ignorance on the part of the author. Since *makepkg* uses *fakeroot* (and should never be run as root), there is some level of protection but you should never count on it. If in doubt, do not build the package and seek advice on the forums or mailing list.
 
 ```
 $ cd *package_name*
@@ -267,7 +267,7 @@ The procedure for uploading packages to the AUR is the same for new packages and
 
 **Note:** You need to regenerate the `.SRCINFO` every time you change `PKGBUILD` metadata, such as [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD") updates. Otherwise the AUR will not show the updated version numbers.
 
-To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
+To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like *.install* files or local source files like *.patch*) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
 
 For example:
 
@@ -293,16 +293,14 @@ $ git push
 
 ### Other requests
 
-*   Disownment requests and removal requests can be created by clicking on the "Submit Request" link under "Package Actions" on the right hand side. This automatically sends a notification email to the current package maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will then either accept or reject the request.
-*   Disownment requests will be granted after two weeks if the current maintainer did not react.
-*   Merge requests are for when one package is replacing another one. Users still have to resubmit a package under a new name and may request merging of the old version's comments and votes. This has nothing to do with 'git merge' and is not similar to github's merge requests.
-*   Removal requests require the following information:
-    *   Reason for deletion, at least a short note
-        **Notice:** A package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
-    *   Supporting details, like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc.
-    *   For merge requests: Name of the package base to merge into.
+Orphan, deletion and merge requests can be created by clicking on the "Submit Request" link under "Package Actions" on the right hand side. This automatically sends a notification email to the current package maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will then either accept or reject the request.
 
-Removal requests can be disapproved, in which case you will likely be advised to disown the package for a future packager's reference.
+*   Orphan requests will be granted after two weeks if the current maintainer did not react.
+*   Merge requests are to delete the package base and transfer its votes and comments to another package base. The name of the package base to merge into is required. Note this has nothing to do with 'git merge' or GitHub's merge requests.
+*   Deletion requests require the following information:
+    *   A short note explaining the reason for deletion. Note that a package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
+    *   Supporting details, like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc.
+    *   Deletion requests can be rejected, in which case if you are the maintainer or the package you will likely be advised to disown the package to allow adoption by another packager.
 
 ## Web interface translation
 
@@ -330,13 +328,6 @@ Alternatively, if you have set up [ssh authentication](#Authentication) as above
 
 ```
 ssh aur@aur.archlinux.org vote <PACKAGE_NAME>
-
-```
-
-You can vote for all installed AUR packages with the following.
-
-```
-for i in $(pacman -Qqm); do echo Voting for $i; ssh aur vote $i; done
 
 ```
 

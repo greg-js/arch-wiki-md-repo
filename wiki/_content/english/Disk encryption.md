@@ -142,7 +142,7 @@ The following "block device encryption" solutions are available in Arch Linux:
 
 	TrueCrypt/VeraCrypt
 
-	A highly portable format, supporting encryption of whole disks/partitions or file containers, with compatibility across all major operating systems. [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") was discontinued by its developers in May 2014\. The general consensus among users is to use the actively developed fork VeraCrypt instead, which was audited in 2016.
+	A portable format, supporting encryption of whole disks/partitions or file containers, with compatibility across all major operating systems. [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") was discontinued by its developers in May 2014\. The VeraCrypt fork was audited in 2016.
 
 For practical implications of the chosen layer of operation, see the [comparison table](#Practical_implications) below, as well as the general write up for [eCryptfs](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare). See [Category:Encryption](/index.php/Category:Encryption "Category:Encryption") for the available content of the methods compared below, as well as other tools not included in the table.
 
@@ -156,7 +156,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Type | block device encryption | block device encryption | block device encryption | block device encryption | stacked filesystem encryption | stacked filesystem encryption |
-| Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | actively developed fork of TrueCrypt and de facto replacement | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
+| Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | fork of TrueCrypt | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
 | Availability in Arch Linux | must manually compile custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) [extra] (discontinued) or the backwards-compatible [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) [community] | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) [community] | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
 | License | GPL | GPL | TrueCrypt License 3.1[[1]](#See_also) | Apache License 2.0, parts subject to TrueCrypt License v3.0[[1]](#See_also) | GPL | GPL |
 | 

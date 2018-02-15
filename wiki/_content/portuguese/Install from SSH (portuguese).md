@@ -78,7 +78,7 @@ Last login: Thu Dec 23 08:33:02 2010 from 10.1.10.200
 
 ## Próximos Passos
 
-O céu é o limite. Se você pretende apenas instalar o Arch, siga o [guia de instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)"). Já se o objetivo é editar/manipular uma instalação Linux que está com problemas, siga o artigo [Instalando em um Linux já configurado](/index.php/Install_from_existing_Linux "Install from existing Linux").
+O céu é o limite. Se você pretende apenas instalar o Arch, siga o [guia de instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)"). Já se o objetivo é editar/manipular uma instalação Linux que está com problemas, siga o artigo [Instalar a partir de um Linux existente](/index.php/Instalar_a_partir_de_um_Linux_existente "Instalar a partir de um Linux existente").
 
 Deseja que o [grub2](/index.php/Grub2 "Grub2") utilize disco rígido [GPT](/index.php/GPT "GPT")?
 

@@ -16,6 +16,7 @@ Installation instructions for the Lenovo ThinkPad X140e. Should work for E145 as
 *   [4 Power saving](#Power_saving)
     *   [4.1 Disable Bluetooth](#Disable_Bluetooth)
     *   [4.2 ATI video card powersaving](#ATI_video_card_powersaving)
+    *   [4.3 Issues with suspend](#Issues_with_suspend)
 
 ## Video drivers
 
@@ -61,3 +62,7 @@ See [Power saving#Bluetooth](/index.php/Power_saving#Bluetooth "Power saving").
 ### ATI video card powersaving
 
 For the open-source driver, follow the information in [ATI#Powersaving](/index.php/ATI#Powersaving "ATI").
+
+### Issues with suspend
+
+If your X140e hangs on suspend, use the following: echo 0 > /sys/power/pm_async and try again.

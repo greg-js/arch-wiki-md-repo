@@ -365,7 +365,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://amp.rs](https://amp.rs) || [amp](https://aur.archlinux.org/packages/amp/)
 
-*   **Kakoune** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
+*   **[Kakoune](/index.php/Kakoune "Kakoune")** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
 
 	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune-git](https://aur.archlinux.org/packages/kakoune-git/)
 

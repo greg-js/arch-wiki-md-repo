@@ -2,7 +2,7 @@ Related articles
 
 *   [Window manager](/index.php/Window_manager "Window manager")
 
-[FVWM](https://github.com/fvwmorg/fvwm) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmM4.1), [C](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmCpp.1), and [Perl](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmPerl.1) preprocessing. FVWM also has a [Perl library](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm-perllib.1) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager with the preferred interpretation being that the F does not stand for anything in particular [[1]](http://fvwmforums.org/wiki/Irc/FvwmHistory/).
+[FVWM](http://www.fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmM4.1), [C](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmCpp.1), and [Perl](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmPerl.1) preprocessing. FVWM also has a [Perl library](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm-perllib.1) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager with the preferred interpretation being that the F does not stand for anything in particular [[1]](http://fvwmforums.org/wiki/Irc/FvwmHistory/).
 
 **Note:** As of November 2016 there are plans to switch the development focus to [FVWM3](https://github.com/fvwmorg/fvwm3), a successor to FVWM2 which will have new features but will not be compatible with FVWM2\. [[2]](https://www.mail-archive.com/fvwm-workers@fvwm.org/msg04516.html)
 
@@ -625,7 +625,7 @@ With the function appropriately configured, ensure that FvwmEvent is started and
 
 *   [FVWM on GitHub](https://github.com/fvwmorg).
 *   [FVWM beginners guide](http://zensites.net/fvwm/guide/) - Zensites.
-*   [FVWM Homepage](http://fvwm.org/) - includes documentation and a FAQ (unreachable as of January 2018).
+*   [FVWM Homepage](http://fvwm.org/) - includes documentation and a FAQ.
 *   [FVWM Wiki](http://fvwmforums.org/wiki/).
 *   [FVWM Forums](http://www.fvwmforums.org).
 *   [FVWM Man Page](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1).

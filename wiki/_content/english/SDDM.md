@@ -27,6 +27,7 @@ From Wikipedia:
     *   [2.5 Rotate display](#Rotate_display)
     *   [2.6 Configuration GUI](#Configuration_GUI)
     *   [2.7 DPI settings](#DPI_settings)
+    *   [2.8 Enable HiDPI](#Enable_HiDPI)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
@@ -155,6 +156,18 @@ For example:
 ServerArguments=-nolisten tcp -dpi 94
 ```
 
+### Enable HiDPI
+
+**Note:** HiDPI support seems to be broken since version 0.15.[[3]](https://github.com/sddm/sddm/issues/894)
+
+Create the following file:
+
+ `/etc/sddm.conf.d/hidpi.conf` 
+```
+[General]
+EnableHiDPI=true
+```
+
 ## Troubleshooting
 
 ### Hangs after login
@@ -211,16 +224,7 @@ See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
 
 ### Screen resolution is too low
 
-Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[3]](https://github.com/sddm/sddm/issues/692)
-
-Try disabling HiDPI:
-
- `/etc/sddm.conf.d/hidpi.conf` 
-```
-[General]
-# Enable Qt's automatic high-DPI scaling
-EnableHiDPI=false
-```
+Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[4]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
 
 If even the above fails, you can try setting your screen size in a Xorg conf file:
 

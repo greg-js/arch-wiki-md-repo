@@ -164,7 +164,7 @@ export LC_ALL="zh_CN.UTF-8"
 
 *   安装思源的简体中文字体部分如[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)而非中日韩（CJK)整包，或者在aur中安装[noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/)。(推荐，此方法最简单）
 
-*   在 locale.conf 中设置中文为默认语言LANG=zh_{CN,HK,SG,TW}.UTF-8，则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。
+*   ~~在 locale.conf 中设置中文为默认语言LANG=zh_{CN,HK,SG,TW}.UTF-8，则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。~~ [Gtk-WARNING **:Locale not supported by C Library. Using the fallback 'C' locale]
 *   手动调整 prefer，即，将中文字形调整到日文字形之前。[[3]](http://tieba.baidu.com/p/4879946717)
 
 以noto-fonts-cjk 为例，修改文件 /etc/fonts/conf.avail/64-language-selector-prefer.conf 如下，无此文件则创建：

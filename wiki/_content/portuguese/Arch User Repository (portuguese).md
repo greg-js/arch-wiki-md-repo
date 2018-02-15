@@ -90,6 +90,8 @@ A instalação de pacotes do AUR é um processo relativamente simples. Essencial
 2.  Certifique-se de que o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e os arquivos que o acompanham não são maliciosos ou duvidosos.
 3.  Execute `makepkg -si` no diretório onde os arquivos foram salvos. Isso vai baixar o código, resolver as dependências com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), compilá-lo, empacotá-lo e instalar o pacote.
 
+**Nota:** O AUR não possui suporte, então qualquer pacote que você instalar é *sua responsabilidade* atualizar, e não do pacman. Se os pacotes nos repositórios oficiais forem atualizados, você precisará recompilar quaisquer pacotes do AUR que dependam daquelas bibliotecas.
+
 ### Pré-requisitos
 
 Primeiro, certifique-se de que as ferramentas necessárias estão instaladas, [instalando](/index.php/Instale "Instale") o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), o qual inclui [make](https://www.archlinux.org/packages/?name=make) e outras ferramentas necessárias para a compilação do código-fonte.
@@ -329,13 +331,6 @@ ssh aur@aur.archlinux.org vote <NOME_PACOTE>
 
 ```
 
-Você pode votar para todos os pacotes AUR instalados com o seguinte:
-
-```
-for i in $(pacman -Qqm); do echo Votando para $i; ssh aur vote $i; done
-
-```
-
 ### O que é um Trusted User / TU?
 
 Um [(Trusted User)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)"), abreviado como TU, é uma pessoa que é escolhida para supervisionar o AUR e o repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Eles são os que mantêm PKGBUILDs populares no *community* e de forma geral mantêm o AUR funcionando.
@@ -397,6 +392,8 @@ Muitos pacotes AUR são apresentados nas versões regulares ("estáveis") e de d
 Veja também [Manutenção do sistema#Use pacotes de software aprovados](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Use_pacotes_de_software_aprovados "Manutenção do sistema").
 
 ### Por que foo desapareceu do AUR?
+
+É possível que o pacote tenha sido adotado por um TU e agora esteja no repositório [community](/index.php/Community "Community").
 
 Pacotes podem ter sido excluídos, se eles não preencherem as [#Regras de envio](#Regras_de_envio). Veja os [histórico do aur-requests](https://lists.archlinux.org/pipermail/aur-requests/) pelo motivo da exclusão.
 

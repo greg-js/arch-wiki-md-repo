@@ -75,6 +75,8 @@ O que se segue é apenas uma pequena amostra das operações que o *pacman* pode
 
 **Nota:** Alguns pacotes muitas vezes têm uma série de [dependências opcionais](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)") de pacotes que fornecem funcionalidades adicionais para a aplicação, embora não seja estritamente necessário para executá-lo. Ao instalar um pacote, o *pacman* irá listar suas dependências opcionais entre as mensagens de saída, porém elas não serão encontrados no arquivo `pacman.log`: utilize o comando [pacman -Si](#Consultando_base_de_dados_de_pacotes) para visualizar as dependências opcionais de um pacote, juntamente com uma breve descrição das funcionalidades de cada um.
 
+**Nota:** Ao instalar um pacote que requer apenas uma dependência (opcional) de algum outro pacote (isto é, necessário por você), é recomendado usar a opção `--asdeps`. Para detalhes, veja [Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o).
+
 **Atenção:** Ao instalar pacotes no Arch, evite atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (por exemplo, quando um [pacote não é encontrado](#Pacotes_n.C3.A3o_podem_ser_obtidos_na_instala.C3.A7.C3.A3o) nos repositórios oficiais). Na prática, **não** execute o comando `pacman -Sy *nome_pacote*`, pois isso poderia levar para problemas de dependências. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "Manutenção do sistema") e [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### Instalando pacotes específicos
@@ -441,6 +443,8 @@ Ao instalar um pacote, é possível forçar o motivo da instalação da *depend�
 
 ```
 
+**Dica:** A instalação de dependências opcionais com `--asdeps` fará com que, se você [remover pacotes órfãos](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29 "Pacman/Dicas e truques"), o *pacman* também removerá as dependências opcionais.
+
 Ao **re**instalar um pacote, o motivo dessa instalação atual é preservado por padrão.
 
 A lista de pacotes instalados explicitamente pode ser vista com `pacman -Qe`, enquanto a lista de dependências instaladas pode ser vista com `pacman -Qd`.
@@ -453,8 +457,6 @@ Para alterar o motivo da instalação de um pacote já instalado, execute:
 ```
 
 Use `--asexplicit` para a operação oposta.
-
-**Dica:** A instalação de dependências opcionais com o `--asdeps` o causará de tal forma que, se você [remover pacotes órfãos](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29 "Pacman/Dicas e truques"), o *pacman* também removerá as dependências opcionais.
 
 ### Pesquisar por um pacote que contenha um arquivo específico
 

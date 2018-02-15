@@ -551,13 +551,14 @@ $hello->show;
 import gi
 gi.require_version('Gio', '2.0')
 from gi.repository import Gio
-Application=Gio.Application.new ("hello.world", Gio.ApplicationFlags.FLAGS_NONE);
-Application.register ();
-Notification=Gio.Notification.new ("Hello world");
-Notification.set_body ("This is an example notification.");
-Icon=Gio.ThemedIcon.new ("dialog-information");
-Notification.set_icon (Icon);
-Application.send_notification (None, Notification);
+Application = Gio.Application.new("hello.world",
+                                  Gio.ApplicationFlags.FLAGS_NONE)
+Application.register()
+Notification = Gio.Notification.new("Hello world")
+Notification.set_body("This is an example notification.")
+Icon = Gio.ThemedIcon.new("dialog-information")
+Notification.set_icon(Icon)
+Application.send_notification(None, Notification)
 ```
 
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) (or [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) for Python 2)
@@ -569,7 +570,9 @@ import gi
 gi.require_version('Notify', '0.7')
 from gi.repository import Notify
 Notify.init("Hello world")
-Hello=Notify.Notification.new("Hello world", "This is an example notification.", "dialog-information")
+Hello = Notify.Notification.new("Hello world",
+                                "This is an example notification.",
+                                "dialog-information")
 Hello.show()
 ```
 

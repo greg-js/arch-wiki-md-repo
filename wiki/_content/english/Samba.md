@@ -438,7 +438,7 @@ The mounted share is likely to be present at `/run/user/*your_UID*/gvfs` or `~/.
 
 #### KDE
 
-KDE has the ability to browse Samba shares built in. To use a GUI in the KDE System Settings, you will need to install the [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) package from the official repositories.
+KDE has the ability to browse Samba shares built in. To use a GUI in the KDE System Settings, you will need to install the [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) package.
 
 If you get a "Time Out" Error when navigating with Dolphin, you should uncomment and edit the following line in smb.conf: `name resolve order = lmhosts bcast host wins` 
 

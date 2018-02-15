@@ -1,3 +1,8 @@
+Related articles
+
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
+
 **Libcanberra** is a simple abstract interface for playing event sounds. It implements the [XDG Sound Theme and Naming Specifications](http://freedesktop.org/wiki/Specifications/sound-theme-spec) for generating event sounds on free desktops, such as GNOME. Further description [here](http://0pointer.de/lennart/projects/libcanberra/)
 
 ## Contents
@@ -194,9 +199,9 @@ from gi.repository import GLib, GSound
 
 hello = GSound.Context()
 hello.init()
-hello.play_simple({ GSound.ATTR_EVENT_ID : "phone-incoming-call",
-                    GSound.ATTR_EVENT_DESCRIPTION : "hello world" })
-GLib.usleep (2000000);
+hello.play_simple({GSound.ATTR_EVENT_ID: "phone-incoming-call",
+                   GSound.ATTR_EVENT_DESCRIPTION: "hello world"})
+GLib.usleep(2000000)
 ```
 
 **Ruby**
