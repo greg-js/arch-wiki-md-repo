@@ -1,19 +1,28 @@
-[Anki](http://ankisrs.net/) is an [SRS](https://en.wikipedia.org/wiki/Spaced_repetition "wikipedia:Spaced repetition") (Spaced Repetition System), a program which allows you to create, manage and review [flashcards](https://en.wikipedia.org/wiki/Flashcard "wikipedia:Flashcard"). Anki is very flexible and also allows the creation of templates. Android and iOS apps are available and synchronization between devices is supported.
+[Anki](http://ankisrs.net/) is an [SRS](https://en.wikipedia.org/wiki/Spaced_repetition "wikipedia:Spaced repetition") (Spaced Repetition System), a program which allows you to create, manage and review [flashcards](https://en.wikipedia.org/wiki/Flashcard "wikipedia:Flashcard"). Anki is very flexible and also allows the creation of templates. Apps for Android and iOS as well as a web interface can be used to interact with the user's flashcard database. Anki supports [addons](https://ankiweb.net/shared/addons/), written in [python](/index.php/Python "Python").
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Older versions](#Older_versions)
-*   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Kanji stroke support](#Kanji_stroke_support)
-    *   [2.2 Asian language support](#Asian_language_support)
-*   [3 See also](#See_also)
+*   [2 Flashcards](#Flashcards)
+    *   [2.1 Older versions](#Older_versions)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Kanji stroke support](#Kanji_stroke_support)
+    *   [3.2 Asian language support](#Asian_language_support)
+*   [4 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [anki](https://www.archlinux.org/packages/?name=anki) package.
+[Install](/index.php/Install "Install") the [anki](https://www.archlinux.org/packages/?name=anki) package. Or, for the development version, install the [anki-git](https://aur.archlinux.org/packages/anki-git/) package.
 
-For the development version, install the [anki-git](https://aur.archlinux.org/packages/anki-git/) package.
+By default, cards are synchronized using anki's web server, but you can use your own [anki-sync-server](https://aur.archlinux.org/packages/anki-sync-server/).
+
+## Flashcards
+
+Flashcards can be obtained by:
+
+*   Creating them inside Anki, organized in decks and possibly tagged. Cards can contain audio, pictures and even [TeX](/index.php/TeX_Live "TeX Live") formulas;
+*   Downloading them, grouped in an existing [shared deck](https://ankiweb.net/shared/decks/) (e.g. top 1000 words in a language);
+*   Generating them as a [csv file](https://en.wikipedia.org/wiki/Comma-separated_values) that will be imported in Anki.
 
 ### Older versions
 

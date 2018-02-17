@@ -255,6 +255,8 @@ On systems with many, or untrusted users, it is important to limit the number of
 
 ```
 
+The current number of threads for each user can be found with `ps --no-headers -Leo user | sort | uniq -c`. This may help with determining appropriate values for the limits.
+
 ### Run Xorg rootless
 
 [Xorg](/index.php/Xorg "Xorg") often is considered as insecure. Thus it is recommended to avoid running Xorg as root, like it is usually the default configuration.

@@ -49,14 +49,13 @@
     *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux.2FPlayOnMac)
     *   [5.3 PyWinery](#PyWinery)
     *   [5.4 Q4wine](#Q4wine)
-    *   [5.5 Wine-staging](#Wine-staging)
 *   [6 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
 
 ## 安装
 
 **警告:** 如果您的账户能浏览某些文件或资源，Wine运行的程序也可以。Wine不是[沙箱](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)")。如果很重视安全，请考虑使用[虚拟化](https://en.wikipedia.org/wiki/Virtualization "wikipedia:Virtualization")。
 
-通过 [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 从[官方仓库](/index.php/Official_repositories "Official repositories")安装软件包 [wine](https://www.archlinux.org/packages/?name=wine) 即可获取 Wine 模拟器。 对于64位系统，需要启用 [Multilib](/index.php/Multilib "Multilib") 仓库。
+Wine可通过开启[Multilib](/index.php/Multilib "Multilib")仓库来安装[wine](https://www.archlinux.org/packages/?name=wine)(稳定版本)or[wine-staging](https://www.archlinux.org/packages/?name=wine-staging)(测试版本)。[Wine-Staging](http://www.wine-staging.com/)包括目前上游未采纳的补丁，专门为wine开发者在向上游打补丁前测试。
 
 另外，您可能需要安装 [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) 和 [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) 软件包。它们分别用于运行依赖于 Internet Explorer 和 .NET 的程序。不过，也可以随后通过 Wine 在需要时下载安装这些组件。但如果提前下载安装，您就可以离线使用它们，而且 Wine 不必为了每一个 WINEPREFIX 都单独下载。
 
@@ -654,10 +653,6 @@ REGEDIT4
 ### Q4wine
 
 [Q4Wine](http://q4wine.brezblock.org.ua/) 是一个图形界面的系统目录（wine-prefix）管理器。它的特色是可以把 QT 主题导入 Wine 配置，使两者完美整合。[q4wine](https://aur.archlinux.org/packages/q4wine/) 软件包在 [[multilib](/index.php/Multilib "Multilib")] 仓库中提供。
-
-### Wine-staging
-
-[Wine-Staging](http://www.wine-staging.com/) (formerly wine-compholio) is a special wine version containing bug fixes and features, which are not yet available in regular wine versions. The idea of Wine Staging is to provide new features faster to end users and to give developers the possibility to discuss and improve their patches before they are sent upstream. Available via the [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) package or directly via the wine-staging [Arch Linux repo](https://github.com/wine-compholio/wine-staging/wiki/Installation#-arch-linux).
 
 ## 相关链接
 

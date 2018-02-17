@@ -9,7 +9,7 @@ Related articles
 
 This page is a starting point for a basic OpenLDAP installation and a sanity check.
 
-**Tip:** Directory services are an enormous topic. Configuration can therefore be complex. If you are totally new to those concepts, [this](http://www.brennan.id.au/20-Shared_Address_Book_LDAP.html) is an good introduction that is easy to understand and that will get you started, even if you are new to everything LDAP.
+**Tip:** Directory services are an enormous topic. Configuration can therefore be complex. If you are totally new to those concepts, [this](http://www.brennan.id.au/20-Shared_Address_Book_LDAP.html) is a good introduction that is easy to understand and that will get you started, even if you are new to LDAP.
 
 ## Contents
 
@@ -265,7 +265,7 @@ TLSCipherSuite HIGH:MEDIUM:-SSLv2:-SSLv3
 
 ```
 
-The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. **NOTE:** DEFAULT is a wildcard. See [ciphers(1ssl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ciphers.1ssl) for description of ciphers, wildcards and options supported.
+The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. **NOTE:** DEFAULT is a wildcard. See [ciphers(1ssl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ciphers.1ssl) for description of ciphers, wildcards and options supported.
 
 **Note:** To see which ciphers are supported by your local OpenSSL installation, type the following: `openssl ciphers -v ALL:COMPLEMENTOFALL`. Always test which ciphers will actually be enabled by TLSCipherSuite by providing it to OpenSSL command, like this: `openssl ciphers -v 'DEFAULT'`
 

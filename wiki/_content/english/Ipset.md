@@ -74,8 +74,15 @@ or
 Add any IP address that you'd like to block to the set.
 
 ```
-# ipset add myset 1.1.1.1
-# ipset -A myset 2.2.2.2
+# ipset add myset-ip 1.1.1.1
+# ipset -A myset-ip 2.2.2.2
+
+```
+
+Finally, configure [iptables](/index.php/Iptables "Iptables") to block any address in that set.
+
+```
+# iptables -I INPUT -m set --match-set myset-ip src -j DROP
 
 ```
 

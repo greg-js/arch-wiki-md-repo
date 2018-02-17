@@ -65,6 +65,8 @@ conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
 
+**Warning:** Se già usi dnsmasq, dalla versione 3.0 di Pi-hole FTL è richiesto il parametro `log-queries=extra`.
+
 Abilita `dnsmasq.service` e ri/avvia il servizio.
 
 #### Web Server
@@ -139,7 +141,13 @@ Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 
 #### FTL
 
-FTL è parte del progetto Pi-hole. E' un interfaccia simil-database/fornitore di API sul log delle richieste DNS di Pi-hole. FTL è l'unico modo in cui l'interfaccia web di Pi-hole accede ai dati raccolti sull'uso di dnsmasq ed è quindi una dipendenza.
+FTL è un interfaccia simil-database/fornitore di API che si occupa di conservare a lungo termine le interrogazioni che l'utente potrà consultare attraverso la sezione "long-term data" dell'interfaccia web. Per essere chiari, i dati vengono raccolti e conservati in due posti:
+
+1.  I dati giornalieri vengono conservati in RAM e sono catturati in tempo reale dal file `/run/log/pihole/pihole.log`
+2.  I dati storici (i.e. di diversi giorni/settimane/mesi) sono conservati sul filesystem `/etc/pihole/pihole-FTL.db` aggiornati ad un intervallo deciso dall'utente.
+
+**Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per minimizzare le scritture sul database.
+
 E' possibile configurare FTL modificando il file `/etc/pihole/pihole-FTL.conf` con i seguenti parametri (la prima opzione è la predefinita):
 
 *   SOCKET_LISTENING=localonly|all (Ascoltare solamente connessioni locali o tutte)
@@ -151,8 +159,7 @@ E' possibile configurare FTL modificando il file `/etc/pihole/pihole-FTL.conf` c
 *   RESOLVE_IPV4=yes|no (FTL deve provare di risolvere gli indirizzi IPv4?)
 *   DBINTERVAL=1.0 (Quanto spesso devono essere scritte le richieste nel database FTL [minuti]?)
 *   DBFILE=/etc/pihole/pihole-FTL.db (Specifica percorso e nome del database SQLite a lungo termine di FTL. Impostandolo a DBFILE= disabilita il database)
-
-**Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per prolungarne la vita.
+*   MAXLOGAGE=24.0 (Quante ore di richieste devono essere importate dal database e dai log? Massimo 744 (31 giorni))
 
 `pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
 

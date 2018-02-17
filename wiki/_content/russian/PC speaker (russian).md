@@ -17,6 +17,7 @@ Related articles
     *   [1.1 Глобально](#.D0.93.D0.BB.D0.BE.D0.B1.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE)
     *   [1.2 Xorg](#Xorg)
     *   [1.3 Терминал](#.D0.A2.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB)
+        *   [1.3.1 Постраничный вывод утилитой Less](#.D0.9F.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.BD.D1.8B.D0.B9_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D0.BE.D0.B9_Less)
     *   [1.4 ALSA](#ALSA)
     *   [1.5 GNOME](#GNOME)
     *   [1.6 Cinnamon](#Cinnamon)
@@ -67,10 +68,22 @@ setterm -blength 0
 
 ```
 
-Другой способ - это добавить или раскомментировать строку в `/etc/inputrc` или `~/.inputrc`:
+Другой способ - это раскомментировать или добавить строку в `/etc/inputrc` или `~/.inputrc`:
 
 ```
 set bell-style none
+
+```
+
+#### Постраничный вывод утилитой Less
+
+Для отключения PC speaker при использовании утилиты [less](https://www.archlinux.org/packages/?name=less), вы можете запустить её с параметром `less -q`, чтобы заглушить PC speaker по достижении конца постраничного вывода, или `less -Q` чтобы отключить повсеместно. Для получения [справки](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)"), выполните `man -P "less -Q"` или настройте [переменные окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `$MANPAGER` или `$PAGER`.
+
+Также, вы можете добавить следующие строки в ваш `~/[.bashrc](/index.php/.bashrc ".bashrc")`:
+
+```
+alias less='less -Q'
+alias man 'man -P "less -Q"'
 
 ```
 

@@ -330,23 +330,23 @@ localhost
 
 ### On the client
 
-With the server now only accepting connection from the localhost, connect to the box via ssh using X-forwarding and the -L switch to enable tunnels. For more on this feature, see the manpage for ssh itself. For example:
+With the server now only accepting connection from the localhost, [forward](/index.php/Secure_Shell#Forwarding_other_ports "Secure Shell") local port 5901 to the remote server 5901 port (10.1.10.2 in this example) with ssh. For more on this feature, see the [manpage](/index.php/Manpage "Manpage") for ssh itself. For example:
 
 ```
-$ ssh -X 10.1.10.2 -L 5901:localhost:5901
-
-```
-
-This forwards the server port 5901 to the client box also on port 5901\. Note that one does not have to match the port numbers on the server and client. For example:
-
-```
-$ ssh -X 10.1.10.2 -L 8900:localhost:5901
+$ ssh 10.1.10.2 -L 5901:localhost:5901
 
 ```
 
-This forwards the server port 5901 to the client box on port 8900\.
+Note that one does not have to match the port numbers on the server and client. For example:
 
-Once connected via SSH, leave that xterm or shell window open since it is acting as the secured tunnel to/from server. To connect via this encrypted tunnel, simply point the vncviewer to the client port on the localhost.
+```
+$ ssh 10.1.10.2 -L 8900:localhost:5901
+
+```
+
+This forwards the client port 8900 to the server port 5901\.
+
+Once connected via SSH, leave that shell window open since it is acting as the secured tunnel to/from server (or just tell ssh to run in background with the `-f` option). On the client, to connect via this encrypted tunnel, simply point the vncviewer to the forwarded client port on the localhost.
 
 Using the matched ports on the server/client:
 

@@ -27,7 +27,7 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
     *   [4.2 Winetricks](#Winetricks)
-    *   [4.3 CSMT patch](#CSMT_patch)
+    *   [4.3 CSMT](#CSMT)
     *   [4.4 Unregister existing Wine file associations](#Unregister_existing_Wine_file_associations)
     *   [4.5 Prevent new Wine file associations](#Prevent_new_Wine_file_associations)
     *   [4.6 Execute Windows binaries with wine implicitly](#Execute_Windows_binaries_with_wine_implicitly)
@@ -304,13 +304,11 @@ $ winetricks
 
 ```
 
-### CSMT patch
+### CSMT
 
-Since 2013 Wine developers have been experimenting with [stream/worker thread optimizations](http://www.winehq.org/pipermail/wine-devel/2013-September/101106.html). You may experience an enormous performance improvement by using this experimental patched Wine versions. Many games may run as fast as on Windows or even faster. This Wine patch is known as CSMT patch and works with NVidia and AMD graphics cards.
+Since 2013 Wine developers have been experimenting with [stream/worker thread optimizations](http://www.winehq.org/pipermail/wine-devel/2013-September/101106.html). You may experience an enormous performance improvement by using this experimental tweak. Many games may run as fast as on Windows or even faster. This Wine tweak is known as CSMT and works with NVidia and AMD graphics cards.
 
-[Wine-staging](http://www.wine-staging.com/) includes CSMT support (included again since [version 1.9.10](http://www.wine-staging.com/news/2016-05-18-release-1.9.10.html)), and can be installed with the [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) package.
-
-CSMT support needs to be enabled in `winecfg` (Staging tab) before it can be used.
+CSMT support needs to be enabled manually. For vanilla wine run `wine regedit` and set the DWORD value for *Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
 
 Further information:
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Flatpak](/index.php/Flatpak "Flatpak")
+
 [snapd](https://github.com/snapcore/snapd) is a REST API daemon for managing snap packages ("snaps"). Users can interact with it by using the *snap* client, which is part of the same package.
 
 ## Contents

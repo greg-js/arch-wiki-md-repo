@@ -110,31 +110,71 @@ See [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) for
 
 #### UEFI Shell
 
-Some UEFI implementations make it difficult to modify the NVRAM successfully using efibootmgr. If efibootmgr cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2.
+Some UEFI implementations make it difficult to modify the NVRAM successfully using efibootmgr. If efibootmgr cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2 (i.e., from the Arch Linux live iso).
+
+First, find out the device number where your [ESP](/index.php/ESP "ESP") resides by using:
+
+```
+Shell> map
+
+```
+
+In this example, `1` is used as the device number. To list the contents of the [ESP](/index.php/ESP "ESP") do:
+
+```
+Shell> ls fs1:
+
+```
+
+To view the current boot entries do:
+
+```
+Shell> bcfg boot dump
+
+```
 
 To add an entry for your kernel, use:
 
 ```
-Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux "Arch Linux"
+Shell> bcfg boot add *N* fs1:\vmlinuz-linux "Arch Linux"
 
 ```
 
-where `N` is the priority (0 is top priority) and `V` is the volume number representing your EFI partition. If you don't know which volume number you should use, use the map command to list file systems, and the ls command to list their contents:
+where `*N*` is the location where the entry will be added in the boot menu. 0 is the first menu item. Menu items already existing will be shifted in the menu without being discarded.
+
+To add the necessary kernel options, first create a file on your ESP:
 
 ```
-Shell> map
-Shell> ls fs0:
-
-```
-
-To add the bare minimum necessary kernel options, use:
-
-```
-Shell> bcfg boot -opt **N** "root=**/dev/sdX#** rw initrd=\initramfs-linux.img"
+Shell> edit fs1:\options.txt
 
 ```
 
-where `N` is the priority number you selected in the first step, and `/dev/sdX#` represents your root partition.
+In the file add the boot line. For example:
+
+```
+root=/dev/sda2 ro initrd=/initramfs-linux.img
+
+```
+
+**Note:** Add extra spaces in the beginning of the line in the file. There is a byte order mark at the beginning of the line that will squash any character next to it which will cause an error when booting.
+
+Press `F2` to save and then `F3` to exit.
+
+To add these options to your previous entry do:
+
+```
+Shell> bcfg boot -opt *N* fs1:\options.txt
+
+```
+
+Repeat this process for any additional entries.
+
+To remove a previously added item do:
+
+```
+Shell> bcfg boot rm *N*
+
+```
 
 #### Using a startup.nsh script
 

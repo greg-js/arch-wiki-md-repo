@@ -638,7 +638,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 
 `~/.steampath` `~/.steampid`
 
- | [[133]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) |
+ | [[133]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
 | [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[134]](https://bugzil.la/735285) |

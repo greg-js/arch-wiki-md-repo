@@ -1,6 +1,6 @@
 Artigos relacionados
 
-*   [Environment variables](/index.php/Environment_variables "Environment variables")
+*   [Variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente")
 
 Locales, por vezes chamados em português de *localidades*, são usados pelo [glibc](https://www.archlinux.org/packages/?name=glibc) e outros programas ou bibliotecas conscientes de locales para renderizar texto, exibindo corretamente valores monetários regionais, formatos de hora e data, idiossincrasias alfabéticas e outros padrões específicas para locales.
 
@@ -70,7 +70,7 @@ $ locale
 
 ```
 
-O locale a ser usado, escolhido dentre os previamente gerados, é configurado em arquivos `locale.conf`. Cada um desses arquivos deve conter uma lista, separada por nova linha, de atribuições de [variáveis de ambiente](/index.php/Environment_variable "Environment variable"), tendo o mesmo formato que a saída de *locale*.
+O locale a ser usado, escolhido dentre os previamente gerados, é configurado em arquivos `locale.conf`. Cada um desses arquivos deve conter uma lista, separada por nova linha, de atribuições de [variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente"), tendo o mesmo formato que a saída de *locale*.
 
 Para listar os locales disponíveis que foram gerados previamente, execute:
 
@@ -125,7 +125,7 @@ $ LANG= source /etc/profile.d/locale.sh
 
 ### Outros usos
 
-As variáveis de locale também podem ser definidas com os métodos padrão como explicado em [Environment variables](/index.php/Environment_variables "Environment variables").
+As variáveis de locale também podem ser definidas com os métodos padrão como explicado em [Variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente").
 
 Por exemplo, para testar ou depurar um aplicativo em particular durante o desenvolvimento, ele poderia ser iniciado com alguma coisa como:
 
@@ -222,7 +222,7 @@ Você precisa iniciar esses aplicativos a partir de um locale UTF-8 ou eles não
 
 ### Meu sistema ainda está usando o idioma errado
 
-É possível que as variáveis de ambiente sejam redefinidas em outros arquivos além de `locale.conf`, por exemplo `~/.pam_environment`. Veja [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables") para detalhes.
+É possível que as variáveis de ambiente sejam redefinidas em outros arquivos além de `locale.conf`, por exemplo `~/.pam_environment`. Veja [Variáveis de ambiente#Definindo variáveis](/index.php/Vari%C3%A1veis_de_ambiente#Definindo_vari.C3.A1veis "Variáveis de ambiente") para detalhes.
 
 Se você está usando um ambiente gráfico, como o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), suas configurações de idioma podem estar sobrescrevendo as configurações em `locale.conf`.
 

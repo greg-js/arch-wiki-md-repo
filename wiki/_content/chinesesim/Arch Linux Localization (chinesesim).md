@@ -160,12 +160,13 @@ export LC_ALL="zh_CN.UTF-8"
 
 安装的Noto Sans CJK 或 adobe source han sans otc fonts（思源黑体） 或 adobe source han serif otc fonts（思源宋体）后，在某些情况下（框架未定义地区）汉字字形与标准形态不符，例如门、关、复等字字形与规范中文不符。这是因为每个程序中可以设置不同的默认字体，比如Arial或者Tohamo，而这些字体的属性由fontconfig控制，其使用顺序是据地区代码以A-Z字母表顺序成默认排序，由于 ja-JP 在 zh_{CN,HK,SG,TW} 之前，故优先显示日文字形。
 
+**提示：** 若欲解决Chromium/Chrome中的异体字形问题，应首先在chrome://settings/fonts中将几个字体选项调成Noto xxx CJK SC。如无效再尝试下述三种方案 [[3]](http://tieba.baidu.com/p/4879946717)
+
 解决方法任选一种：
 
 *   安装思源的简体中文字体部分如[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)而非中日韩（CJK)整包，或者在aur中安装[noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/)。(推荐，此方法最简单）
-
-*   ~~在 locale.conf 中设置中文为默认语言LANG=zh_{CN,HK,SG,TW}.UTF-8，则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。~~ [Gtk-WARNING **:Locale not supported by C Library. Using the fallback 'C' locale]
-*   手动调整 prefer，即，将中文字形调整到日文字形之前。[[3]](http://tieba.baidu.com/p/4879946717)
+*   在 locale.conf 中设置中文为默认语言LANG=zh_{CN,HK,SG,TW}.UTF-8，则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。
+*   手动调整 prefer，即，将中文字形调整到日文字形之前。[[4]](http://tieba.baidu.com/p/4879946717)
 
 以noto-fonts-cjk 为例，修改文件 /etc/fonts/conf.avail/64-language-selector-prefer.conf 如下，无此文件则创建：
 
@@ -219,7 +220,7 @@ fontconfig的设置文件是`~/.fonts.conf`（用户）或者`/etc/fonts/conf.d`
 
 *   [fontconfig用户手册](http://www.chinalinuxpub.com/read.php?wid=634)
 *   [Debian中文支持](http://wiki.linux.org.hk/w/Make_Debian_support_Chinese)
-*   [[4]](http://www.higherorder.org/wiki/Fontconfig)
+*   [[5]](http://www.higherorder.org/wiki/Fontconfig)
 
 ### 中文输入法
 
@@ -321,7 +322,7 @@ mplayer xxx.avi -sub xxxxx.srt
 
 #### xine
 
-xine也可以显示中文字幕，但需要制作自己的中文字体。具体可以参考：[[5]](http://forum.ubuntu.org.cn/about2760.html)。
+xine也可以显示中文字幕，但需要制作自己的中文字体。具体可以参考：[[6]](http://forum.ubuntu.org.cn/about2760.html)。
 
 #### gstreamer
 
@@ -329,7 +330,7 @@ xine也可以显示中文字幕，但需要制作自己的中文字体。具体�
 
 ### LaTeX
 
-首先需要安装CJK包，然后需要安装合适的字体。具体可以参考：[[6]](http://www.ctex.org)。
+首先需要安装CJK包，然后需要安装合适的字体。具体可以参考：[[7]](http://www.ctex.org)。
 
 ## 乱码问题
 

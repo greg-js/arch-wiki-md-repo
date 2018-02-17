@@ -37,6 +37,8 @@ Version 4.x can open, fill, save and submit PDF forms. In effect it provides the
 
 Changes are preserved on saved files and can be modified again in Master PDF Editor. However, when opening the saved file with Evince 3.2x, due to bugs in Evince one would get blank parts instead of form elements created or edited with Master PDF. Okular 1.1 shows the form elements correctly but has other general bugs in filling/using form elements.
 
+Note that it cannot properly handle select boxes yet in forms.
+
 The package can be [installed](/index.php/Install "Install") with [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/) and gives the executable pdfeditor.
 
 ### LibreOffice Draw

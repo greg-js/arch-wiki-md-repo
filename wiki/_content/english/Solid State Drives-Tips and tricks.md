@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Solid State Drives](/index.php?title=Solid_State_Drives&redirect=no "Solid State Drives")
+*   [Solid State Drive](/index.php/Solid_State_Drive "Solid State Drive")

@@ -70,10 +70,10 @@ $ bluetoothctl
 to be greeted by its internal command prompt. Then enter:
 
 ```
-(bluetoothctl) power on
-(bluetoothctl) agent on
-(bluetoothctl) default-agent
-(bluetoothctl) scan on
+[bluetooth]# power on
+[bluetooth]# agent on
+[bluetooth]# default-agent
+[bluetooth]# scan on
 
 ```
 
@@ -87,14 +87,14 @@ Now make sure that your headset is in pairing mode. It should be discovered shor
 shows a device that calls itself *"Lasmex LBT10"* and has MAC address *"00:1D:43:6D:03:26"*. We will now use that MAC address to initiate the pairing:
 
 ```
-(bluetoothctl) pair 00:1D:43:6D:03:26
+[bluetooth]# pair 00:1D:43:6D:03:26
 
 ```
 
 After pairing, you also need to explicitly connect the device (every time?):
 
 ```
-(bluetoothctl) connect 00:1D:43:6D:03:26
+[bluetooth]# connect 00:1D:43:6D:03:26
 
 ```
 
@@ -102,7 +102,7 @@ If you're getting a connection error `org.bluez.Error.Failed` retry by killing e
 
 ```
 $ pulseaudio -k
-(bluetoothctl) connect 00:1D:43:6D:03:26
+[bluetooth]# connect 00:1D:43:6D:03:26
 
 ```
 
@@ -115,8 +115,8 @@ You can now redirect any audio through that device using the "Playback" and "Rec
 You can now disable scanning again and exit the program:
 
 ```
-(bluetoothctl) scan off
-(bluetoothctl) exit
+[bluetooth]# scan off
+[bluetooth]# exit
 
 ```
 
@@ -140,7 +140,7 @@ bluetoothd[487]: Access denied: org.bluez.Error.Rejected
 ```
 
 ```
-(bluetoothctl) trust 00:1D:43:6D:03:26
+[bluetooth]# trust 00:1D:43:6D:03:26
 
 ```
 
@@ -190,7 +190,7 @@ If pairing fails, you can try [disabling SSPMode](https://stackoverflow.com/ques
 You might see the following error in *bluetoothctl*:
 
 ```
-(bluetoothctl) connect 00:1D:43:6D:03:26
+[bluetooth]# connect 00:1D:43:6D:03:26
 Attempting to connect to 00:1D:43:6D:03:26
 Failed to connect: org.bluez.Error.Failed
 
@@ -745,7 +745,7 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 As of Pulseaudio 10.0, when connecting to headset via Bluedevil or similar, A2DP profile is unavailable. As mentioned in [bug 92102](https://bugs.freedesktop.org/show_bug.cgi?id=92102) discussion, a workaround is connecting to a headset via `bluetoothctl`:
 
 ```
-(bluetoothctl) connect *[headset MAC here]*
+[bluetooth]# connect *[headset MAC here]*
 
 ```
 

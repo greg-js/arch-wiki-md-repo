@@ -80,7 +80,11 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 1
 
 #### Rotating touch screen
 
-Since kernel 4.9.2, rotating X session will automatically rotate touch screen (so far, only tested with gnome-control-center). If not able to rotate, running the following command might work for you, but results seems to differ for people.
+Since kernel 4.9.2, rotating X session will automatically rotate touch screen (so far, only tested with gnome-control-center).
+
+**Note:** Gnome will apply the rotation properly, even when using a third party application to change orientation of the display, such as arandr. XFCE, as it stands on 2018-02-16, does not auto-rotate the touch coordinates.
+
+If your configuration does not auto-rotate touch, running the following command might work for you, but results seem to differ for people.
 
 ```
 xinput set-prop 'Goodix Capacitive TouchScreen' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1

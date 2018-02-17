@@ -34,7 +34,7 @@ $ env EDITOR=vim xterm
 
 ```
 
-The [Bash](/index.php/Bash "Bash") builtin *set* allows you to change the values of shell options and set the positional parameters, or to display the names and values of shell variables. For more information, see the *set* documentation: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
+The [Bash](/index.php/Bash "Bash") builtin *set* allows you to change the values of shell options and set the positional parameters, or to display the names and values of shell variables. For more information, see [the set builtin documentation](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
 
 Each process stores their environment in the `/proc/$PID/environ` file. This file contained each key value pair delimited by a nul character (`\x0`). A more human readable format can be obtained with [sed](/index.php/Sed "Sed"), e.g. `sed 's:\x0:
 :g' /proc/$PID/environ`.
@@ -69,7 +69,7 @@ fi
 
 You do not always want to define an environment variable globally. For instance, you might want to add `/home/my_user/bin` to the `PATH` variable but do not want all other users on your system to have that in their `PATH` too. Local environment variables can be defined in many different files:
 
-*   `~/.pam_environment` is the user specific equivalent of `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), used by pam_env module. See [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) and [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for details.
+*   `~/.pam_environment` is the user specific equivalent of `/etc/security/pam_env.conf` [[1]](https://github.com/linux-pam/linux-pam/issues/6), used by pam_env module. See [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) and [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for details.
 *   User configuration files of your [shell](/index.php/Shell "Shell"), for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 *   `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 
@@ -171,7 +171,7 @@ http_proxy="http://192.168.0.1:80"
 
 **Note:** In `/etc/profile`, there is a comment that states "Man is much better than us at figuring this out", so this variable should generally be left as default, i.e. `/usr/share/man:/usr/local/share/man`
 
-*   `INFODIR` contains a colon-separated list of directories in which the info command searches for the info pages, e.g., `/usr/share/info:/usr/local/share/info`
+*   `INFODIR` contains a colon-separated list of directories in which the *info* command searches for the info pages, e.g., `/usr/share/info:/usr/local/share/info`
 
 *   `TZ` can be used to to set a time zone different to the system zone for a user. The zones listed in `/usr/share/zoneinfo/` can be used as reference, for example `TZ="/usr/share/zoneinfo/Pacific/Fiji"`
 

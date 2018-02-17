@@ -20,17 +20,15 @@ The *minimum* requirements to becoming a TU are as follows:
 *   know Google-Fu
 *   a general idea of the kind of packages you want to maintain (basically, why do you want to become TU?)
 
-Even though you could become a TU by merely fulfilling those minimum requirements, the people judging you [during voting](https://aur.archlinux.org/trusted-user/TUbylaws.html#_standard_voting_procedure) might expect more of you. Such as:
+Even though you could become a TU by merely fulfilling those minimum requirements, the people judging you during the [Standard Voting Procedure](https://aur.archlinux.org/trusted-user/TUbylaws.html#_standard_voting_procedure) might expect more from you. Such as:
 
 *   involvement in the bug tracker (reporting, research, info)
 *   patches for Arch projects
 *   involvement in a few open-source projects (even if they are your own)
 
-In case you still feel up to becoming a TU after reading these lists, you should find another TU to sponsor you and write a witty application signed with your GPG key to the aur-general mailing list.
+If you still feel up to becoming a TU after reading these lines, the first step is to find a TU who agrees to sponsor you. Should the TU you contact decline to sponsor your application, you should make this fact known if you seek sponsorship from another TU. Once sponsored, you should write a witty application signed with your GPG key to the aur-general mailing list.
 
-**Note:** Should the TU you contact decline to sponsor your application, you should make this fact known if you seek sponsorship from another TU.
-
-For more information, please see [Trusted User Bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) and [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines").
+For more information, see [Trusted User Bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) and [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines").
 
 ## Active Trusted Users
 

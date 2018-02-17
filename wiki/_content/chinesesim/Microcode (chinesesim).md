@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [Microcode](/index.php/Microcode "Microcode") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=Microcode&diff=0&oldid=438585)可以查看翻译后英文页面的改动。
 
-处理器厂商会发布 [microcode](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode") 以增强系统稳定性和解决安全问题。Microcode 可以通过 BIOS 更新，Linux 内核也支持启动时应用新的 Microcode。没有这些更新，可能会遇到一些很难查的的死机或崩溃问题。
+处理器厂商会发布 [微码](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode") 以增强系统稳定性和解决安全问题。微码可以通过 BIOS 更新，Linux 内核也支持启动时应用新的微码。没有这些更新，可能会遇到一些很难查的的死机或崩溃问题。
 
-建议所有 Intel 用户使用新的微代码。Intel Haswell 和 Broadwell 处理器家族的用户请务必使用最新的微代码。
+建议所有 Intel 用户使用新的微码。Intel Haswell 和 Broadwell 处理器家族的用户请务必使用最新的微码。
 
 ## Contents
 
@@ -12,7 +12,8 @@
     *   [2.2 systemd-boot](#systemd-boot)
     *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_.2F_EFI_handover)
     *   [2.4 rEFInd](#rEFInd)
-        *   [2.4.1 Syslinux](#Syslinux)
+    *   [2.5 Syslinux](#Syslinux)
+    *   [2.6 LILO](#LILO)
 *   [3 验证微指令已在启动时更新](#.E9.AA.8C.E8.AF.81.E5.BE.AE.E6.8C.87.E4.BB.A4.E5.B7.B2.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E6.9B.B4.E6.96.B0)
 *   [4 哪些 CPU 可以接受微指令更新](#.E5.93.AA.E4.BA.9B_CPU_.E5.8F.AF.E4.BB.A5.E6.8E.A5.E5.8F.97.E5.BE.AE.E6.8C.87.E4.BB.A4.E6.9B.B4.E6.96.B0)
     *   [4.1 检查可用微指令更新](#.E6.A3.80.E6.9F.A5.E5.8F.AF.E7.94.A8.E5.BE.AE.E6.8C.87.E4.BB.A4.E6.9B.B4.E6.96.B0)
@@ -50,7 +51,7 @@ Intel 微代码必须被启动加载器加载。因为用户的启动配置有�
 
 ```
 
-**警告:** 这个文件会被 `/usr/bin/grub-mkconfig` 自动覆盖，并且这些更新会消除你的修改。所以建议用 `/etc/grub.d/` 中的配置文件管理启动配置。
+**注意:** 这个文件会被 `/usr/bin/grub-mkconfig` 自动覆盖，并且这些更新会消除你的修改。所以建议用 `/etc/grub.d/` 中的配置文件管理启动配置。
 
 每个启动项都需要修改.
 
@@ -75,7 +76,7 @@ options ...
 
  `initrd=/intel-ucode.img initrd=/initramfs-linux.img` 
 
-For kernels that have been generated as a single file containing all initrd, cmdline and kernel, first generate the initrd to integrate by creating a new one as follows:
+对于要创建包含全部initrd和命令行的内核，首先集成两个镜像：
 
 ```
 cat /boot/intel-ucode.img /boot/initramfs-linux.img > my_new_initrd
@@ -93,7 +94,7 @@ objcopy ... --add-section .initrd=my_new_initrd
 
 如果你在 `/boot/refind.conf` 中使用 [手动配置](/index.php/REFInd#Manual_boot_stanzas "REFInd") 定义所要引导的内核，那么简单地依需求添加 initrd=/intel-ucode.img 或 /boot/intel-ucode.img 到选项行，并不需要修改节的主干部分。
 
-#### Syslinux
+### Syslinux
 
 **Note:** 在 `intel-ucode` 和 `initramfs-linux` initrd 文件间不要用空格，下面的点不是省略号，`INITRD` 行必须和下面示例中一样。
 
@@ -105,6 +106,47 @@ LABEL arch
     LINUX ../vmlinuz-linux
     INITRD ../intel-ucode.img,../initramfs-linux.img
     APPEND ...
+```
+
+### LILO
+
+LILO和其他的老版本启动引导器可能不支持多个initrd镜像，所以`intel-ucode` 和 `initramfs-linux` 需要被合并成一个镜像。
+
+**警告:** 每次更新内核后都要重新合并！
+
+**注意:** 多出的镜像，`intel-ucode`，不能被压缩，否则内核会提示有多余的无用数据并不能启动。
+
+`intel-ucode.img` 应是一个cpio存档。建议每次微码更新后检查存档是否被压缩，因为不能保证以后它会不会被压缩。检查是否被压缩：
+
+```
+$ file /boot/intel-ucode.img 
+/boot/intel-ucode.img: ASCII cpio archive (SVR4 with no CRC)
+
+```
+
+**注意:** 顺序很重要。原来的 `initramfs-linux` 必须在 `intel-ucode`**之后**。
+
+合并两个镜像并生成 `initramfs-merged.img`：
+
+```
+# cat /boot/intel-ucode.img /boot/initramfs-linux.img > /boot/initramfs-merged.img
+
+```
+
+现在编辑 `/etc/lilo.conf` 装载新的镜像：
+
+```
+...
+initrd=/boot/initramfs-merged.img
+...
+
+```
+
+以root运行`lilo`：
+
+```
+# lilo
+
 ```
 
 ## 验证微指令已在启动时更新
@@ -166,20 +208,21 @@ $ dmesg | grep microcode
 *   [AMD 操作系统研发中心](http://www.amd64.org/microcode.html).
 *   [Intel 下载中心](https://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=24290&lang=eng).
 
-#### 检查可用微指令更新
+### 检查可用微指令更新
 
 可以通过 [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/) 来检查 intel-ucode.img 是否包含适用于你 CPU 的微指令映像。
 
-*   安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) （检测并不需要修改 initrd）
-*   从 AUR 安装 [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)
-*   `# modprobe cpuid`
-*   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
-    （解开微指令映像，并根据你的 cpuid 搜索是否适用）
-*   如果有更新可用，它应该会在 *selected microcodes* 之下显示
+1.  安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) （检测并不需要修改 initrd）
+2.  从 AUR 安装 [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)
+3.  `# modprobe cpuid` 
+4.  解包微指令映像，并根据你的 cpuid 搜索是否适用：
+     `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS - ` 
+5.  如果有更新可用，它应该会在 *selected microcodes* 之下显示
+6.  微码可能已经在你的BIOS里，所以不会在dmesg里出现。和正在运行的微码对比：`grep microcode /proc/cpuinfo`
 
 ## 在自定义内核中启用微代码加载
 
-启用 "CPU microcode loading support" 才能在启动早起加载微代码，必须编译到内核中，而不是编译为模块。然后将 "Early load microcode" 设置为 "Y".
+启用 “CPU microcode loading support” 才能在启动早期加载微代码，必须编译到内核中，而不是编译为模块。然后将 “Early load microcode” 设置为 “Y”。
 
 ```
 CONFIG_MICROCODE=y

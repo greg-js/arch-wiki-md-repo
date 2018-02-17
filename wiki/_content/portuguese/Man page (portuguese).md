@@ -168,7 +168,7 @@ $ man -H free
 
 ```
 
-Isso vai ler sua [variável de ambiente](/index.php/Environment_variable "Environment variable") `BROWSER` para determinar o navegador. Você pode sobrepor isso passando o executável para a opção `-H`.
+Isso vai ler sua [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `BROWSER` para determinar o navegador. Você pode sobrepor isso passando o executável para a opção `-H`.
 
 #### roffit
 

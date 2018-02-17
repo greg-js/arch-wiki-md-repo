@@ -17,8 +17,8 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
         *   [1.3.1 What modes are there ?](#What_modes_are_there_.3F)
         *   [1.3.2 What does a mode do ?](#What_does_a_mode_do_.3F)
         *   [1.3.3 Which mode is used?](#Which_mode_is_used.3F)
-        *   [1.3.4 How do I read the enabled (activated) modes ?](#How_do_I_read_the_enabled_.28activated.29_modes_.3F)
-        *   [1.3.5 How do I set the enabled (activated) modes ?](#How_do_I_set_the_enabled_.28activated.29_modes_.3F)
+        *   [1.3.4 Get enabled modes](#Get_enabled_modes)
+        *   [1.3.5 Set the enabled modes](#Set_the_enabled_modes)
     *   [1.4 Two Slots](#Two_Slots)
         *   [1.4.1 Configuration of the slots](#Configuration_of_the_slots)
     *   [1.5 The LED](#The_LED)
@@ -35,8 +35,7 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
 *   [3 Challenge-Response](#Challenge-Response)
     *   [3.1 Function and Application of Challenge-Response](#Function_and_Application_of_Challenge-Response)
     *   [3.2 Setup the slot](#Setup_the_slot)
-    *   [3.3 Use the slot - get a Response for a Challenge](#Use_the_slot_-_get_a_Response_for_a_Challenge)
-    *   [3.4 Use-Cases](#Use-Cases)
+    *   [3.3 Use the slot - get a response for a challenge](#Use_the_slot_-_get_a_response_for_a_challenge)
 *   [4 U2F](#U2F)
     *   [4.1 Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
         *   [4.1.1 Chromium/Chrome](#Chromium.2FChrome)
@@ -179,7 +178,7 @@ When you plug in your YubiKey one, connection mode will be chosen. The order of 
 *   Otherwise (so CCID deactivated and) if the **U2F mode** is activated, this mode will be chosen.
 *   Otherwise (so CCID and U2F deactivated and) if the **OTP mode** is activated, this mode will be chosen.
 
-#### How do I read the enabled (activated) modes ?
+#### Get enabled modes
 
 `ykman mode` will tell you what modes are currently activated/enabled/available. This could output something like
 
@@ -187,7 +186,7 @@ When you plug in your YubiKey one, connection mode will be chosen. The order of 
 
 Meaning that currently the OTP, U2F and CCID subsystem of the key are enabled .
 
-#### How do I set the enabled (activated) modes ?
+#### Set the enabled modes
 
 `ykman mode <MODE>` will allow you to define which modes should be activated/enabled/available.
 
@@ -320,7 +319,7 @@ So you can either:
 
 This technic can be used to authenticate.
 
-A Challenge is sent to the YubiKey and a response is (auto-magically) calculated and send back. This calcucation needs a secret (e.g. an AES key in case of the Yubico OTP mode) The same Challenge always results in the same Response. Without the secret this calculation is not meant to be feasable. Even if in the possesion of many (TODO:reference!?) Challenge-Response pairs.
+A challenge is sent to the YubiKey and a response is (auto-magically) calculated and send back. This calcucation needs a secret (e.g. an AES key in case of the Yubico OTP mode) The same challenge always results in the same response. Without the secret this calculation is not meant to be feasable. Even if in the possesion of many (TODO:reference!?) challenge-response pairs.
 
 This can be used for:
 
@@ -330,7 +329,7 @@ This can be used for:
 *   semi 2-factor (posession and knowledge) authentication:
     The challenge can be public. Only with the possession of the YubiKey hardware the response can be generated. This can be used to create a "sort-of" 2-factor authentication (posession and knowledge): If you combine the response (posession factor) with a password (knowledge factor) and use the result for instance as passphrase for cryptsetup.
 
-This functionality will consume one slot. And it is used via API-Calls to the YubiKey. So you usually use some tool to communicate the Challenge to your YubiKey and get back the response.
+This functionality will consume one slot. And it is used via API calls to the YubiKey. So you usually use some tool to communicate the challenge to your YubiKey and get back the response.
 
 There are two Challenge-Response modes:
 
@@ -344,16 +343,11 @@ In order to setup slot 2 in challenge-response HMAC mode you probably want to ru
  `ykpersonalize -v -2 -ochal-resp -ochal-hmac -ohmac-lt64 -ochal-btn-trig -oserial-api-visible` 
 **Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#The Initial configuration](#The_Initial_configuration).
 
-### Use the slot - get a Response for a Challenge
+### Use the slot - get a response for a challenge
 
 To use a Challenge-Response slot (no matter which mode):
 
  `ykchalresp -2 <CHALLENGE>` 
-
-### Use-Cases
-
-*   allowing semi-2-factor authentication with cryptsetup, see [#YubiKey and cryptsetup encrypted partition/disk](#YubiKey_and_cryptsetup_encrypted_partition.2Fdisk).
-*   allowing semi-2-factor authentication to open a keepass database, see [#keepassxC](#keepassxC)
 
 ## U2F
 
@@ -361,7 +355,7 @@ To use a Challenge-Response slot (no matter which mode):
 
 #### Chromium/Chrome
 
-In order for the U2F functionality to work with Chromium you need to install the [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) library. This provides the [udev rules](https://github.com/Yubico/libu2f-host/blob/master/70-u2f.rules) required to enable access to the Yubikey as a user. Yubikey is by default only accessible by root, and without these rules Chromium will give an error.
+[Chromium/Tips and tricks#U2F authentication](/index.php/Chromium/Tips_and_tricks#U2F_authentication "Chromium/Tips and tricks")
 
 #### Firefox
 
@@ -377,11 +371,7 @@ Please see [#How do I set the enabled (activated) modes ?](#How_do_I_set_the_en
 
 ### Use OpenPGP smartcard mode
 
-These steps will allow you to use the OpenPGP functionality of your YubiKey (once the CCID mode is enabled).
-
-1.  Install [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools), [ccid](https://www.archlinux.org/packages/?name=ccid) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat)
-2.  [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `pcscd.service`
-3.  To verify that your YubiKey is ready to be used run `pcsc_scan` which will provide some informations about the connected device. Further you can use `gpg --card-status` to verify that GPG can interact with the card.
+See [GnuPG#Smartcards](/index.php/GnuPG#Smartcards "GnuPG")
 
 ## Usecases - putting your YubiKey to good use
 

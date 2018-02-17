@@ -590,6 +590,8 @@ To disable audio post processing, change the value of the following preferences 
 
 ### Fido U2F authentication
 
+Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for the required udev rules to allow Firefox to communicate with the U2F key.
+
 Since version 57, Firefox supports Fido U2F authentication protocol. However, it's disabled by default. To enable it set the following settings to `true` in `about:config`.
 
 *   `security.webauth.u2f`

@@ -680,7 +680,7 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 #### No sound after suspend
 
-If there is no sound after suspending and if KMix doesn't show audio devices which should be there, restarting plasmeshell and pulseaudio may help:
+If there is no sound after suspending and if KMix does not show audio devices which should be there, restarting plasmashell and pulseaudio may help:
 
 ```
 $ killall plasmashell

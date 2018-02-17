@@ -16,32 +16,36 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
-    *   [3.1 Local repository](#Local_repository)
-        *   [3.1.1 Staging operations](#Staging_operations)
-        *   [3.1.2 Commit changes](#Commit_changes)
-        *   [3.1.3 View changes](#View_changes)
-        *   [3.1.4 Branch a repository](#Branch_a_repository)
-    *   [3.2 Collaboration](#Collaboration)
-        *   [3.2.1 Adopting a good etiquette](#Adopting_a_good_etiquette)
-        *   [3.2.2 Clone a repository](#Clone_a_repository)
-        *   [3.2.3 Pull requests](#Pull_requests)
-        *   [3.2.4 Using remotes](#Using_remotes)
-        *   [3.2.5 Push to a repository](#Push_to_a_repository)
-        *   [3.2.6 Dealing with merges](#Dealing_with_merges)
-        *   [3.2.7 Send patch to mailing list](#Send_patch_to_mailing_list)
-    *   [3.3 History and versioning](#History_and_versioning)
-        *   [3.3.1 Searching the history](#Searching_the_history)
-        *   [3.3.2 Versioning for release](#Versioning_for_release)
-        *   [3.3.3 Organizing commits](#Organizing_commits)
+    *   [3.1 Getting a Git repository](#Getting_a_Git_repository)
+        *   [3.1.1 Initializing a repository](#Initializing_a_repository)
+        *   [3.1.2 Cloning a repository](#Cloning_a_repository)
+    *   [3.2 Recording changes](#Recording_changes)
+        *   [3.2.1 Staging changes](#Staging_changes)
+        *   [3.2.2 Committing changes](#Committing_changes)
+        *   [3.2.3 Viewing changes](#Viewing_changes)
+    *   [3.3 Undoing things](#Undoing_things)
+    *   [3.4 Branching](#Branching)
+    *   [3.5 Collaboration](#Collaboration)
+        *   [3.5.1 Pull requests](#Pull_requests)
+        *   [3.5.2 Using remotes](#Using_remotes)
+        *   [3.5.3 Push to a repository](#Push_to_a_repository)
+        *   [3.5.4 Dealing with merges](#Dealing_with_merges)
+    *   [3.6 History and versioning](#History_and_versioning)
+        *   [3.6.1 Searching the history](#Searching_the_history)
+        *   [3.6.2 Tagging](#Tagging)
+        *   [3.6.3 Organizing commits](#Organizing_commits)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Using git-config](#Using_git-config)
-    *   [4.2 Speeding up authentication](#Speeding_up_authentication)
-    *   [4.3 Protocol Defaults](#Protocol_Defaults)
-    *   [4.4 Bash completion](#Bash_completion)
-    *   [4.5 Git prompt](#Git_prompt)
-    *   [4.6 Visual representation](#Visual_representation)
-    *   [4.7 Commit tips](#Commit_tips)
-    *   [4.8 Working with a non-master branch](#Working_with_a_non-master_branch)
+    *   [4.2 Adopting a good etiquette](#Adopting_a_good_etiquette)
+    *   [4.3 Speeding up authentication](#Speeding_up_authentication)
+    *   [4.4 Protocol Defaults](#Protocol_Defaults)
+    *   [4.5 Bash completion](#Bash_completion)
+    *   [4.6 Git prompt](#Git_prompt)
+    *   [4.7 Visual representation](#Visual_representation)
+    *   [4.8 Commit tips](#Commit_tips)
+    *   [4.9 Signing commits](#Signing_commits)
+    *   [4.10 Working with a non-master branch](#Working_with_a_non-master_branch)
+    *   [4.11 Directly sending patches to a mailing list](#Directly_sending_patches_to_a_mailing_list)
 *   [5 Git server](#Git_server)
     *   [5.1 SSH](#SSH)
     *   [5.2 Smart HTTP](#Smart_HTTP)
@@ -65,140 +69,72 @@ $ git config --global user.email "*johndoe@example.com*"
 
 ```
 
+See [Getting Started - First-Time Git Setup](https://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup).
+
 See [#Tips and tricks](#Tips_and_tricks) for more settings.
 
 ## Usage
 
-This tutorial teaches how to use Git for basic distributed revision control of a project.
+A Git repository is contained in a `.git` directory, which holds the revision history and other metadata. The directory tracked by the repository, by default the parent directory, is called the working directory. Changes in the working tree need to be staged before they can be recorded (committed) to the repository. Git also lets you restore, previously committed, working tree files.
 
-Git is a distributed version control system, which means that the entire history of changes to a repository is stored locally, in a directory called `./.git` in the project directory. The project files which are visible to the user constitute the *working tree*. These files can be updated to match revisions stored in `./.git` using `git` commands (e.g. `git checkout`), and new revisions can be created in turn by editing these files and running the appropriate `git` commands (e.g. `git commit`).
+See [Getting Started - Git Basics](https://git-scm.com/book/en/Getting-Started-Git-Basics).
 
-See [gitglossary(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7) for more complete definitions of the terms used in this tutorial.
+### Getting a Git repository
 
-A typical Git work-flow is:
+#### Initializing a repository
 
-1.  Create a new project or clone a remote one.
-2.  Create a branch to make changes; then commit those changes.
-3.  Consolidate commits for better organization/understanding.
-4.  Merge commits back into the main branch.
-5.  (Optional) Push changes to a remote server.
-
-### Local repository
-
-#### Staging operations
-
-**Initialize** a new repository. This creates and initializes `./.git`:
+To start tracking a directory with Git, go to that directory and run:
 
 ```
-$ cd (your project)/
 $ git init
 
 ```
 
-To record the changes to the repository, they must first be added to the *index*, or *staging area*, with an operation often also referred to as *staging*. When you commit changes using `git commit`, it is the contents of the index which are committed to the current branch, not the contents of the working tree.
+This creates an empty Git repository in the `.git` subdirectory.
 
-**Note:** The index is actually a binary file `.git/index`, which can be queried with `git ls-files --stage`.
+#### Cloning a repository
 
-To **add files** to the index from the working tree:
-
-```
-$ git add *file1* *file2*
+Copying an existing repository is done using:
 
 ```
-
-This records the current state of the files. If the files are subsequently modified, you can run `git add` again to "add" the new versions to the index.
-
-**Add all** files:
-
-```
-$ git add .
+$ git clone *location*
 
 ```
 
-**Tip:** To **ignore** some files from, e.g. `git add .`, create a `.gitignore` file (or files): `.gitignore` 
-```
-# File I'll likely delete
-test-script
+`*location*` can be either a path or network address. Also, when cloning is done, the location is recorded so just a `git pull` will be needed later.
 
-# Ignore all .html files, except 'important.html'
-*.html
-!important.html
+### Recording changes
 
-# Ignore all files recursively in 'DoNotInclude'
-DoNotInclude/**
+With Git you do not directly commit changes in the working tree to the repository. Instead there is a staging area (also called index file or cache) in between to which you firstly have to add your changes. The `commit` Git command then records changes from the staging area.
 
-```
+#### Staging changes
 
-See [gitignore(5)](http://git-scm.com/docs/gitignore) for details.
+`git add <pathspec>` to add working tree changes to the index, see [git-add(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1).
 
-**Remove** a file from staging (`--cached` preserves the actual file(s)):
+To remove changes from the index, use `git reset HEAD <pathspec>`. If there are no commits yet, you have to use `git rm --cached <pathspec>`.
 
-```
-$ git rm *(--cached)* *file*
+`git status` shows changes to be committed, unstaged changes and untracked files, see [git-status(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-status.1).
+
+You can tell Git to ignore certain untracked files using `.gitignore` files, see [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5).
+
+Git does not track file movement. Move detection during merges is based only on content similarity. The `git mv` command is just there for convenience and is equivalent to:
 
 ```
-
-**Remove all** files:
-
-```
-$ git rm --cached -r .
+$ mv -i foo bar
+$ git rm foo
+$ git add bar
 
 ```
 
-Or:
+#### Committing changes
 
-```
-$ git reset HEAD -- .
+The `git commit` command records the staged changes to the repository, see [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1).
 
-```
+*   The `-m` option lets you specify the commit message on the command-line, if you omit it Git will let you compose your commit message in your default text editor.
+*   The `-a` option tells Git to automatically stage files that have been modified or deleted.
+*   The `--amend` option lets you redo the last commit, amending the commit message or the committed files.
 
-Here, `HEAD` is a "symbolic reference" to the current revision.
-
-**Rename** a file:
-
-```
-$ git mv *file1* *file2*
-
-```
-
-**Note:** `git mv` is a convenience command, roughly equivalent to `mv file1 file2` followed by `git rm file1` and `git add file2`. Rename detection during merges is based only on content similarity, and ignores the actual commands used to rename files. The broader rationale for this approach, which distinguishes Git from patch-based systems like [Darcs](/index.php/Darcs "Darcs"), can be found [here](http://permalink.gmane.org/gmane.comp.version-control.git/217).
-
-**List** files:
-
-```
-$ git ls-files
-
-```
-
-By default this shows files in the staging area (`--cached` files).
-
-#### Commit changes
-
-Once the content to be recorded is *staged*, **commit** them with:
-
-```
-$ git commit -m "*First commit.*"
-
-```
-
-The `-m (*--message)*` option is for a short message: if omitted, the preset editor will be spawned to allow entering a longer message.
-
-**Tip:**
-
-*   Always commit small changes frequently and with meaningful messages.
-*   To **add** all the modified files to the index, **and commit** them in a single command (`-a` stands for `--all`):
-
-```
-$ git commit -am "*First commit.*"
-
-```
-
-**Edit** the commit message for the last commit. This also amends the commit with any files which have been newly staged:
-
-```
-$ git commit --amend -m "*Message.*"
-
-```
+**Tip:** Always commit small changes frequently and with meaningful messages.
 
 Many of the commands in this article take commits as arguments. A commit can be identified by any of the following:
 
@@ -207,9 +143,9 @@ Many of the commands in this article take commits as arguments. A commit can be 
 *   The label `HEAD` always refers to the currently checked-out commit (usually the head of the branch, unless you used *git checkout* to jump back in history to an old commit)
 *   Any of the above plus `~` to refer to previous commits. For example, `HEAD~` refers to one commit before `HEAD` and `HEAD~5` refers to five commits before `HEAD`.
 
-#### View changes
+#### Viewing changes
 
-**Show differences** between commits:
+Show differences between commits:
 
 ```
 $ git diff HEAD HEAD~3
@@ -223,53 +159,52 @@ $ git diff
 
 ```
 
-**Get** a general **overview** of the changes:
-
-```
-$ git status
-
-```
-
-**View history** of changes (where "*-N*" is the number of latest commits):
+View history of changes (where "*-N*" is the number of latest commits):
 
 ```
 $ git log -p *(-N)*
 
 ```
 
-#### Branch a repository
+### Undoing things
+
+*   `git reset` - reset current HEAD to the specified state, see [git-reset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-reset.1)
+
+*   `git checkout` - to restore working tree files, see [git-checkout(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-checkout.1)
+
+### Branching
 
 Fixes and new features are usually tested in branches. When changes are satisfactory they can merged back into the default (master) branch.
 
-**Create** a branch, whose name accurately reflects its purpose:
+Create a branch, whose name accurately reflects its purpose:
 
 ```
 $ git branch *help-section-addition*
 
 ```
 
-**List** branches:
+List branches:
 
 ```
 $ git branch
 
 ```
 
-**Switch** branches:
+Switch branches:
 
 ```
 $ git checkout *branch*
 
 ```
 
-**Create and switch**:
+Create and switch:
 
 ```
 $ git checkout -b *branch*
 
 ```
 
-**Merge** a branch back to the master branch:
+Merge a branch back to the master branch:
 
 ```
 $ git checkout master
@@ -279,7 +214,7 @@ $ git merge *branch*
 
 The changes will be merged if they do not conflict. Otherwise, Git will print an error message, and annotate files in the working tree to record the conflicts. The annotations can be displayed with `git diff`. Conflicts are resolved by editing the files to remove the annotations, and committing the final version. See [#Dealing with merges](#Dealing_with_merges) below.
 
-When done with a branch, **delete** it with:
+When done with a branch, delete it with:
 
 ```
 $ git branch -d *branch*
@@ -288,29 +223,19 @@ $ git branch -d *branch*
 
 ### Collaboration
 
-#### Adopting a good etiquette
+A typical Git work-flow is:
 
-*   When considering contributing to an existing project, read and understand its license, as it may excessively limit your ability to change the code. Some licenses can generate disputes over the ownership of the code.
-*   Think about the project's community and how well you can fit into it. To get a feeling of the direction of the project, read any documentation and even the [log](#History_and_versioning) of the repository.
-*   When requesting to pull a commit, or submit a patch, keep it small and well documented; this will help the maintainers understand your changes and decide whether to merge them or ask you to make some amendments.
-*   If a contribution is rejected, do not get discouraged, it is their project after all. If it is important, discuss the reasoning for the contribution as clearly and as patiently as possible: with such an approach a resolution may eventually be possible.
-
-#### Clone a repository
-
-To begin contributing to a project, **clone** its repository:
-
-```
-$ git clone *location* *folder*
-
-```
-
-`*location*` can be either a path or network address. Also, when cloning is done, the location is recorded so just a `git pull` will be needed later.
+1.  Create a new repository or clone a remote one.
+2.  Create a branch to make changes; then commit those changes.
+3.  Consolidate commits for better organization/understanding.
+4.  Merge commits back into the main branch.
+5.  (Optional) Push changes to a remote server.
 
 #### Pull requests
 
 After making and committing some changes, the contributor can ask the original author to merge them. This is called a *pull request*.
 
-To **pull**:
+To pull:
 
 ```
 $ git pull *location* master
@@ -319,7 +244,7 @@ $ git pull *location* master
 
 The *pull* command combines both *fetching* and *merging*. If there are conflicts (e.g. the original author made changes in the same time span), then it will be necessary to manually fix them.
 
-Alternatively, the original author can **pick** the **changes** wanting to be incorporated. Using the *fetch* option (and *log* option with a special `FETCH_HEAD` symbol), the contents of the pull request can be viewed before deciding what to do:
+Alternatively, the original author can pick the changes wanting to be incorporated. Using the *fetch* option (and *log* option with a special `FETCH_HEAD` symbol), the contents of the pull request can be viewed before deciding what to do:
 
 ```
 $ git fetch *location* master
@@ -332,28 +257,28 @@ $ git merge *location* master
 
 Remotes are aliases for tracked remote repositories. A *label* is created defining a location. These labels are used to identify frequently accessed repositories.
 
-**Create** a remote:
+Create a remote:
 
 ```
 $ git remote add *label* *location*
 
 ```
 
-**Fetch** a remote:
+Fetch a remote:
 
 ```
 $ git fetch *label*
 
 ```
 
-**Show differences** between master and a remote master:
+Show differences between master and a remote master:
 
 ```
 $ git log -p master..*label*/master
 
 ```
 
-**View** remotes for the current repository:
+View remotes for the current repository:
 
 ```
 $ git remote -v
@@ -364,7 +289,7 @@ When defining a remote that is a parent of the fork (the project lead), it is de
 
 #### Push to a repository
 
-After being given rights from the original authors, **push** changes with:
+After being given rights from the original authors, push changes with:
 
 ```
 $ git push *location* *branch*
@@ -373,7 +298,7 @@ $ git push *location* *branch*
 
 When *git clone* is performed, it records the original location and gives it a remote name of `origin`.
 
-So what **typically** is done is this:
+So what *typically* is done is this:
 
 ```
 $ git push origin master
@@ -386,61 +311,36 @@ If the `-u` (`--set-upstream-to`) option is used, the location is recorded so th
 
 See [Basic Merge Conflicts](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts) in the Git Book for a detailed explanation on how to resolve merge conflicts. Merges are generally reversible. If wanting to back out of a merge one can usually use the `--abort` command (e.g. `git merge --abort` or `git pull --abort`).
 
-#### Send patch to mailing list
-
-If you want to send patches directly to a mailing list, you have to install the following packages: [perl-authen-sasl](https://www.archlinux.org/packages/?name=perl-authen-sasl), [perl-net-smtp-ssl](https://www.archlinux.org/packages/?name=perl-net-smtp-ssl) and [perl-mime-tools](https://www.archlinux.org/packages/?name=perl-mime-tools).
-
-Make sure you have configured your username and e-mail address, see [#Configuration](#Configuration).
-
-**Configure** your **e-mail** settings:
-
-```
-$ git config --global sendemail.smtpserver *smtp.gmail.com*
-$ git config --global sendemail.smtpserverport *587*
-$ git config --global sendemail.smtpencryption *tls*
-$ git config --global sendemail.smtpuser *foobar@gmail.com*
-
-```
-
-Now you should be able to **send** the **patch** to the mailing list (see also [OpenEmbedded:How to submit a patch to OpenEmbedded#Sending patches](http://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded#Sending_patches)):
-
-```
-$ git add *filename*
-$ git commit -s
-$ git send-email --to=*openembedded-core@lists.openembedded.org* --confirm=always -M -1
-
-```
-
 ### History and versioning
 
 #### Searching the history
 
 `git log` will give the history with a commit checksum, author, date, and the short message. The *checksum* is the "object name" of a commit object, typically a 40-character SHA-1 hash.
 
-For **history** with a **long message** (where the "*checksum*" can be truncated, as long as it is unique):
+For history with a long message (where the "*checksum*" can be truncated, as long as it is unique):
 
 ```
 $ git show (*checksum*)
 
 ```
 
-**Search** for *pattern* in tracked files:
+Search for *pattern* in tracked files:
 
 ```
 $ git grep *pattern*
 
 ```
 
-**Search** in **`.c`** and **`.h`** files:
+Search in `.c` and `.h` files:
 
 ```
 $ git grep *pattern* -- '*.[ch]'
 
 ```
 
-#### Versioning for release
+#### Tagging
 
-**Tag** commits for versioning:
+Tag commits for versioning:
 
 ```
 $ git tag 2.14 *checksum*
@@ -449,28 +349,28 @@ $ git tag 2.14 *checksum*
 
 *Tagging* is generally done for [releasing/versioning](https://www.drupal.org/node/1066342) but it can be any string. Generally annotated tags are used, because they get added to the Git database.
 
-**Tag** the **current** commit with:
+Tag the current commit with:
 
 ```
 $ git tag -a 2.14 -m "Version 2.14"
 
 ```
 
-**List** tags:
+List tags:
 
 ```
 $ git tag -l
 
 ```
 
-**Delete** a tag:
+Delete a tag:
 
 ```
 $ git tag -d 2.08
 
 ```
 
-**Update remote** tags:
+Update remote tags:
 
 ```
 $ git push --tags
@@ -479,7 +379,7 @@ $ git push --tags
 
 #### Organizing commits
 
-Before submitting a pull request it may be desirable to **consolidate/organize** the commits. This is done with the *git rebase* `--interactive` option:
+Before submitting a pull request it may be desirable to consolidate/organize the commits. This is done with the *git rebase* `--interactive` option:
 
 ```
 $ git rebase -i *checksum*
@@ -511,11 +411,11 @@ The commits can be re-ordered or erased from the history (but be very careful wi
 
 ### Using git-config
 
-Git reads its configuration from a few INI-type configuration files:
+Git reads its configuration from three INI-type configuration files:
 
-*   Each repository contains a `.git/config` file for specific configuration.
-*   Each user has a `$HOME/.gitconfig` file for fallback values.
-*   `/etc/gitconfig` is used for system-wide defaults.
+*   `/etc/gitconfig` for system-wide defaults
+*   `~/.gitconfig` for user-specific configuration
+*   `.git/config` for repository-specific configuration
 
 These files can be edited directly, but the usual method is to use *git config*, as shown in the examples below.
 
@@ -547,7 +447,14 @@ $ git config --global diff.tool vimdiff
 
 ```
 
-See [git-config(1)](https://www.kernel.org/pub/software/scm/git/docs/git-config.html) and [Git Configuration](http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for more information.
+See [git-config(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-config.1) and [Git Configuration](http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for more information.
+
+### Adopting a good etiquette
+
+*   When considering contributing to an existing project, read and understand its license, as it may excessively limit your ability to change the code. Some licenses can generate disputes over the ownership of the code.
+*   Think about the project's community and how well you can fit into it. To get a feeling of the direction of the project, read any documentation and even the [log](#History_and_versioning) of the repository.
+*   When requesting to pull a commit, or submit a patch, keep it small and well documented; this will help the maintainers understand your changes and decide whether to merge them or ask you to make some amendments.
+*   If a contribution is rejected, do not get discouraged, it is their project after all. If it is important, discuss the reasoning for the contribution as clearly and as patiently as possible: with such an approach a resolution may eventually be possible.
 
 ### Speeding up authentication
 
@@ -634,12 +541,10 @@ $ git remote set-url origin git@*address*:*user*/*repo*.git
 
 ```
 
-**Note:** To use pinentry curses for gpg signing make sure to `export GPG_TTY=$(tty)` (alternatively use pinentry-tty) otherwise the signing step will fail if gpg is currently in a locked state (since it can't prompt for pin)
-
 Signed-off-by line append (a name-email signature is added to the commit which is required by some projects):
 
 ```
- $ git commit -s
+$ git commit -s
 
 ```
 
@@ -654,6 +559,19 @@ Commit specific parts of files that have changed. This is useful if there are a 
 
 ```
 $ git add -p
+
+```
+
+### Signing commits
+
+Git allows commits and tags to be signed using [GnuPG](/index.php/GnuPG "GnuPG"), see [Signing Your Work](https://git-scm.com/book/en/Git-Tools-Signing-Your-Work).
+
+**Note:** To use [pinentry](https://www.archlinux.org/packages/?name=pinentry) curses for GPG signing make sure to `export GPG_TTY=$(tty)` (alternatively use pinentry-tty) otherwise the signing step will fail if GPG is currently in a locked state (since it cannot prompt for pin).
+
+To configure Git to automatically sign commits:
+
+```
+$ git config --global commit.gpgSign true
 
 ```
 
@@ -673,6 +591,31 @@ Now edit normally; however to keep the repository tree in sync be sure to use bo
 ```
 $ git pull --all
 $ git push --all
+
+```
+
+### Directly sending patches to a mailing list
+
+If you want to send patches directly to a mailing list, you have to install the following packages: [perl-authen-sasl](https://www.archlinux.org/packages/?name=perl-authen-sasl), [perl-net-smtp-ssl](https://www.archlinux.org/packages/?name=perl-net-smtp-ssl) and [perl-mime-tools](https://www.archlinux.org/packages/?name=perl-mime-tools).
+
+Make sure you have configured your username and e-mail address, see [#Configuration](#Configuration).
+
+Configure your e-mail settings:
+
+```
+$ git config --global sendemail.smtpserver *smtp.example.com*
+$ git config --global sendemail.smtpserverport *587*
+$ git config --global sendemail.smtpencryption *tls*
+$ git config --global sendemail.smtpuser *foobar@example.com*
+
+```
+
+Now you should be able to send the patch to the mailing list (see also [OpenEmbedded:How to submit a patch to OpenEmbedded#Sending patches](http://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded#Sending_patches)):
+
+```
+$ git add *filename*
+$ git commit -s
+$ git send-email --to=*openembedded-core@lists.openembedded.org* --confirm=always -M -1
 
 ```
 
@@ -767,11 +710,12 @@ For fine-grained access management, refer to [gitolite](/index.php/Gitolite "Git
 
 ## See also
 
-*   Miscallaneous man pages available in the [git](https://www.archlinux.org/packages/?name=git) package: [gittutorial(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gittutorial.7), [giteveryday(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/giteveryday.7), [gitworkflows(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitworkflows.7)
-*   [Pro Git book](http://git-scm.com/book)
-*   [Git Reference](http://gitref.org/)
-*   [https://www.kernel.org/pub/software/scm/git/docs/](https://www.kernel.org/pub/software/scm/git/docs/)
-*   [Git overall](https://gun.io/blog/how-to-github-fork-branch-and-pull-request)
-*   [Git overall2](http://nathanhoad.net/git-workflow-forks-remotes-and-pull-requests)
-*   [https://wiki.videolan.org/Git](https://wiki.videolan.org/Git)
-*   [A comparison of protocols offered by GitHub](https://gist.github.com/grawity/4392747)
+*   Miscallaneous man pages available in the [git](https://www.archlinux.org/packages/?name=git) package: [gittutorial(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gittutorial.7), [giteveryday(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/giteveryday.7), [gitworkflows(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitworkflows.7), [gitglossary(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7)
+*   [Pro Git book](https://git-scm.com/book/en/)
+*   [git(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git.1)
+
+*   [Git workflow: Forks, remotes, and pull requests](http://nathanhoad.net/git-workflow-forks-remotes-and-pull-requests)
+*   [VideoLAN wiki article](https://wiki.videolan.org/Git)
+*   [A comparison of protocols GitHubGist](https://gist.github.com/grawity/4392747)
+*   [How to GitHub](https://gun.io/blog/how-to-github-fork-branch-and-pull-request)
+*   [Git Reference](http://gitref.org/) (GitHub removed the site)

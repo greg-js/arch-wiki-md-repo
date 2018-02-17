@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Solid State Drives/Memory cell clearing](/index.php?title=Solid_State_Drives/Memory_cell_clearing&redirect=no "Solid State Drives/Memory cell clearing")
+*   [Solid State Drive/Memory cell clearing](/index.php/Solid_State_Drive/Memory_cell_clearing "Solid State Drive/Memory cell clearing")

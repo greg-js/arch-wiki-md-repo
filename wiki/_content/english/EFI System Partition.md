@@ -36,7 +36,7 @@ According to a Microsoft note[[2]](https://docs.microsoft.com/en-us/windows-hard
 
 **Choose one** of the following methods to create an ESP for a GPT partitioned disk:
 
-*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `EF00` in *gdisk*). Proceed to [#Format the partition](#Format_the_partition) section below.
+*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI (FAT-12/16/32)` in *fdisk* or `EF00` in *gdisk*). Proceed to [#Format the partition](#Format_the_partition) section below.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a FAT32 partition and in Parted set/activate the `boot` flag (**not** `legacy_boot` flag) on that partition. Proceed to [#Mount the partition](#Mount_the_partition) section below.
 
 ### MBR partitioned disks

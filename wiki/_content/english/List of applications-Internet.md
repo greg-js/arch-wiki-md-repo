@@ -70,6 +70,8 @@
             *   [1.6.1.1 Console](#Console_8)
             *   [1.6.1.2 Graphical](#Graphical_8)
         *   [1.6.2 Podcast clients](#Podcast_clients)
+            *   [1.6.2.1 Console](#Console_9)
+            *   [1.6.2.2 Graphical](#Graphical_9)
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
         *   [1.6.4 Blog engines](#Blog_engines)
         *   [1.6.5 Microblogging clients](#Microblogging_clients)
@@ -1513,13 +1515,17 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **Snownews** — Text mode RSS news reader.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
+	[https://github.com/kouya/snownews](https://github.com/kouya/snownews) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 ##### Graphical
 
 *   **[Akregator](https://en.wikipedia.org/wiki/Kontact#News_Feed_Aggregator "wikipedia:Kontact")** — News aggregator for KDE, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
 	[https://www.kde.org/applications/internet/akregator/](https://www.kde.org/applications/internet/akregator/) || [akregator](https://www.archlinux.org/packages/?name=akregator)
+
+*   **Alduin** — RSS, Atom and JSON feed aggregator. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://alduinapp.github.io/](https://alduinapp.github.io/) || [alduin](https://aur.archlinux.org/packages/alduin/)
 
 *   **[Evolution](/index.php/Evolution "Evolution") RSS** — Plugin for Evolution Mail that enables reading of RSS/RDF/ATOM feeds.
 
@@ -1531,7 +1537,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
 
-	[http://liferea.sourceforge.net](http://liferea.sourceforge.net) || [liferea](https://www.archlinux.org/packages/?name=liferea)
+	[https://lzone.de/liferea/](https://lzone.de/liferea/) || [liferea](https://www.archlinux.org/packages/?name=liferea)
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud") News** — RSS/Atom feed reader for Nextcloud.
 
@@ -1561,15 +1567,17 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 	[https://www.open-tickr.net/](https://www.open-tickr.net/) || [tickr](https://aur.archlinux.org/packages/tickr/)
 
-*   **Tiny Tiny RSS** — Web-based news feed (RSS/Atom) aggregator.
+*   **[Tiny Tiny RSS](https://en.wikipedia.org/wiki/Tiny_Tiny_RSS "wikipedia:Tiny Tiny RSS")** — Web-based news feed (RSS/Atom) aggregator.
 
 	[https://tt-rss.org/](https://tt-rss.org/) || [tt-rss](https://www.archlinux.org/packages/?name=tt-rss)
 
 #### Podcast clients
 
-*   **gPodder** — A podcast client and feed aggregator (GTK+ and CLI interface).
+##### Console
 
-	[http://gpodder.org/](http://gpodder.org/) || [gpodder3](https://aur.archlinux.org/packages/gpodder3/)
+*   **cashget** — Simple, command-line RSS enclosure downloader, primarily intended for automatic, unattended downloading of podcasts.
+
+	[http://castget.johndal.com/](http://castget.johndal.com/) || [cashget](https://www.archlinux.org/packages/?name=cashget)
 
 *   **Greg** — A command-line podcast aggregator.
 
@@ -1579,9 +1587,23 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 	[https://github.com/rafaelmartins/marrie/](https://github.com/rafaelmartins/marrie/) || [marrie-git](https://aur.archlinux.org/packages/marrie-git/)
 
+##### Graphical
+
+*   **gPodder** — A podcast client and feed aggregator (GTK+ and CLI interface).
+
+	[http://gpodder.org/](http://gpodder.org/) || [gpodder3](https://aur.archlinux.org/packages/gpodder3/)
+
+*   **[Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox")** — Music playback and management application for GNOME with podcast support.
+
+	[https://wiki.gnome.org/Rhythmbox](https://wiki.gnome.org/Rhythmbox) || [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox)
+
+*   **[VLC media player](/index.php/VLC_media_player "VLC media player")** — Middleweight video player with support for podcasts.
+
+	[https://www.videolan.org/vlc/](https://www.videolan.org/vlc/) || [vlc](https://www.archlinux.org/packages/?name=vlc)
+
 *   **Vocal** — Simple Podcast Client for the Modern Desktop (GTK+).
 
-	[https://launchpad.net/vocal](https://launchpad.net/vocal) || [vocal](https://aur.archlinux.org/packages/vocal/)
+	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://aur.archlinux.org/packages/vocal/)
 
 #### Usenet newsreaders & newsgrabbers
 

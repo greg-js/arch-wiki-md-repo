@@ -38,7 +38,7 @@ Support for the additional features available in RDP 5.1 and RDP 6 (including mu
 
 ## Usage
 
-For a complete listing of options see [rdesktop(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rdesktop.1). Here is a typical line:
+For a complete listing of options see [rdesktop(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rdesktop.1). Here is a typical line:
 
 ```
 $ rdesktop -g 1440x900 -P -z -x l -r sound:off -u windowsuser 98.180.102.33:3389
@@ -66,9 +66,9 @@ In order to automatically scale the geometry to fit the screen, pass
 
 ```
 
-to the rdesktop command lines.
+to the rdesktop command.
 
-Another options is to use is to use the "-g" flag
+Another options is to use the "-g" flag
 
 ```
  $ rdesktop -g 100% -P -z 98.180.102.33:3389

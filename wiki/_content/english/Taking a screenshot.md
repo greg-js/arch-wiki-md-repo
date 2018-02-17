@@ -57,6 +57,10 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)
 
+*   **KShare** — A ShareX inspired cross platform utility written with Qt.
+
+	[https://kshare.arsenarsen.com](https://kshare.arsenarsen.com) || [kshare](https://aur.archlinux.org/packages/kshare/)
+
 *   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
 
 	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)

@@ -85,7 +85,7 @@ If you want to use a graphical frontend or program that integrates with GnuPG, s
 
 `$GNUPGHOME` is used by GnuPG to point to the directory where its configuration files are stored. By default `$GNUPGHOME` is not set and your `$HOME` is used instead; thus, you will find a `~/.gnupg` directory right after installation.
 
-To change the default location, either run gpg this way `$ gpg --homedir *path/to/file*` or set `GNUPGHOME` in one of your regular [startup files](/index.php/Startup_files "Startup files").
+To change the default location, either run gpg this way `$ gpg --homedir *path/to/file*` or set the `GNUPGHOME` [environment variable](/index.php/Environment_variable "Environment variable").
 
 ### Configuration files
 
@@ -572,10 +572,7 @@ fi
 
 ```
 
-**Note:**
-
-*   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
-*   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[5]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
+**Note:** The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[5]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
 #### Configure pinentry to use the correct TTY
 

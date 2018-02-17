@@ -161,7 +161,7 @@ Enable Wake-on-LAN by magic packet on that connection:
 
 ```
 
-Then reboot, possibly two times.
+Then reboot, possibly two times. To disable Wake-on-Lan, substitute `magic` with `ignore`.
 
 From version 1.2.0 Wake-on-LAN settings can be changed graphically using [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor).
 

@@ -197,17 +197,17 @@ Veja também [How locate works and rewrite it in one minute](http://jvns.ca/blog
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) and [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
+[less](https://en.wikipedia.org/wiki/pt:less "w:pt:less") é um programa paginador de terminal usado para visualizar os conteúdos de um arquivo texto uma tela por vez. Embora parecido com outros paginadores, como o [more](https://en.wikipedia.org/wiki/pt:more_(comando) "w:pt:more (comando)") e [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* oferece uma interface mais avançada e um [conjunto de recursos](http://www.greenwoodsoftware.com/less/faq.html) mais completo.
 
-See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
+Veja [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") para alternativas.
 
 ### Vim como alternativa de paginador
 
-[Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries and directories. Add the following line to your shell configuration file to use it as a pager:
+[Vim](/index.php/Vim "Vim") inclui um script para visualizar o conteúdo de arquivos texto, arquivos comprimidos, binários e diretórios. Adicione a seguinte linha para o arquivo de configuração do seu shell para usá-lo como paginador:
 
  `~/.bashrc`  `alias less='/usr/share/vim/vim80/macros/less.sh'` 
 
-There is also an alternative to the *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
+Há também uma alternativa para a macro *less.sh*, que pode funcionar como a variável de ambiente `PAGER`. Instale [vimpager](https://www.archlinux.org/packages/?name=vimpager) e adicione o seguinte para o arquivo de configuração do seu shell:
 
  `~/.bashrc` 
 ```
@@ -215,57 +215,57 @@ export PAGER='vimpager'
 alias less=$PAGER
 ```
 
-Now programs that use the `PAGER` environment variable, like [git](/index.php/Git "Git"), will use *vim* as pager.
+Agora, programas que usam a variável de ambiente `PAGER`, como o [git](/index.php/Git "Git"), vão usar *vim* como paginador.
 
 ## ls
 
-[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
+[ls](https://en.wikipedia.org/wiki/pt:ls "w:pt:ls") lista conteúdos de diretório.
 
-See `info ls` or [the online manual](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
+Veja `info ls` ou [o manual online](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) para mais informações.
 
-[exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. [exa](https://www.archlinux.org/packages/?name=exa)
+[exa](https://the.exa.website) é uma alternativa moderna e mais amigável para o `ls` e `tree`, que possui mais recursos, tal como exibir modificações [Git](/index.php/Git "Git") junto com nomes de arquivos, colorizando diferentemente cada coluna no modo `--long`, ou exibindo no modo `--long` metadados junto com uma visão `tree`. [exa](https://www.archlinux.org/packages/?name=exa)
 
 ### Formato longo
 
-The `-l` option displays some metadata, for example:
+A opção `-l` exibe alguns metadados, por exemplo:
 
- `$ ls -l */path/to/directory*` 
+ `$ ls -l */caminho/para/diretório*` 
 ```
 total 128
-drwxr-xr-x 2 archie users  4096 Jul  5 21:03 Desktop
-drwxr-xr-x 6 archie users  4096 Jul  5 17:37 Documents
+drwxr-xr-x 2 archie users  4096 Jul  5 21:03 'Área de trabalho'
+drwxr-xr-x 6 archie users  4096 Jul  5 17:37 Documentos
 drwxr-xr-x 2 archie users  4096 Jul  5 13:45 Downloads
--rw-rw-r-- 1 archie users  5120 Jun 27 08:28 customers.ods
--rw-r--r-- 1 archie users  3339 Jun 27 08:28 todo
--rwxr-xr-x 1 archie users  2048 Jul  6 12:56 myscript.sh
+-rw-rw-r-- 1 archie users  5120 Jun 27 08:28 clientes.ods
+-rw-r--r-- 1 archie users  3339 Jun 27 08:28 'a fazer'
+-rwxr-xr-x 1 archie users  2048 Jul  6 12:56 meuscript.sh
 
 ```
 
-The `total` value represents the total disk allocation for the files in the directory, by default in number of blocks.
+O valor `total` representa a alocação de disco total para os arquivos no diretório, por padrão em número de blocos.
 
-Below, each file and subdirectory is represented by a line divided into 7 metadata fields, in the following order:
+Abaixo, cada arquivo e subdiretório está representado por uma linha dividida em 7 campos de metadados, na ordem a seguir:
 
-*   type and permissions:
-    *   the first character is the entry type, see `info ls -n "What information is listed"` for an explanation of all the possible types; for example:
-        *   `-` denotes a normal file;
-        *   `d` denotes a directory, i.e. a folder containing other files or folders;
-        *   `p` denotes a named pipe (aka FIFO);
-        *   `l` denotes a symbolic link;
-    *   the remaining characters are the entry's [permissions](/index.php/Permissions "Permissions");
-*   number of [hard links](https://en.wikipedia.org/wiki/Hard_link "wikipedia:Hard link") for the entity; files will have at least 1, i.e. the showed reference itself; folders will have at least 2: the showed reference, the self-referencing `.` entry, and then a `..` entry in each of its subfolders;
-*   owner [user](/index.php/User "User") name;
-*   [group](/index.php/Group "Group") name;
-*   size;
-*   last modification timestamp;
-*   entity name.
+*   tipo e permissões:
+    *   o primeiro caractere é o tipo de entrada, veja `info ls -n "What information is listed"` para uma explicação de todos os tipos possíveis; por exemplo:
+        *   `-` denota um arquivo normal;
+        *   `d` denota um diretório, isto é, uma pasta contendo outros arquivos ou pastas;
+        *   `p` denota um pipe dado (também conhecido como FIFO);
+        *   `l` denota um link simbólico;
+    *   os caracteres restantes são [permissões](/index.php/Permissions "Permissions") da entrada;
+*   número de [links absolutos](https://en.wikipedia.org/wiki/Hard_link "wikipedia:Hard link") para a entidade; arquivos serão pelo menos 1, isto é, a própria referência mostrada; as pastas terão pelo menos 2: a referência mostrada, entrada `.` autorreferenciada, e então uma entrada `..` em cada uma dessas subpastas;
+*   nome do [usuário](/index.php/Usu%C3%A1rio "Usuário") dono;
+*   nome do [grupo](/index.php/Grupo "Grupo");
+*   tamanho;
+*   marca de tempo da última modificação;
+*   nome da entidade.
 
 ### Nomes de arquivos contendo espaços envoltos por aspas
 
-By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
+Por padrão, nomes de arquivos e diretórios que contêm espaços são exibidos envoltos por aspas simples. Para alterar esse comportamento, use as opções `-N` ou `--quoting-style=literal`. Alternativamente, defina a [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `QUOTING_STYLE` para `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 
 ## lsblk
 
-[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) will show all available [block devices](https://en.wikipedia.org/wiki/Device_file#Block_devices "w:Device file") along with their partitioning schemes, for example:
+[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) vai mostrar todos os [dispositivos de blocos](https://en.wikipedia.org/wiki/pt:Arquivo_de_dispositivo#Dispositivos_de_bloco "w:pt:Arquivo de dispositivo") disponíveis junto com seus esquemas de particionamento, por exemplo:
 
  `$ lsblk -f` 
 ```
@@ -277,141 +277,141 @@ sda
 
 ```
 
-The beginning of the device name specifies the type of block device. Most modern storage devices (e.g. hard disks, [SSDs](/index.php/SSD "SSD") and USB flash drives) are recognised as SCSI disks (`sd`). The type is followed by a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on each device will be listed with a number starting from `1` for the first partition (`sda1`), `2` for the second (`sda2`), and so on. In the example above, only one device is available (`sda`), and that device has three partitions (`sda1` to `sda3`), each with a different [file system](/index.php/File_system "File system").
+O início do nome do dispositivo especifica o tipo de dispositivo de bloco. A maioria dos dispositivos de armazenamento modernos (por exemplo, discos rígidos, [SSDs](/index.php/SSD "SSD") e unidades flash USB) é reconhecida como disco SCSI (`sd`). O tipo é seguido por uma letra minúscula a partir de `a` para o primeiro dispositivo (`sda`), `b` para o segundo dispositivo (`sdb`), e assim por diante. As partições "existentes" em cada dispositivo serão listadas com um número a partir de `1` para a primeira partição (`sda1`), `2` para a segunda (`sda2`), e assim por diante. No exemplo acima, apenas um dispositivo está disponível (`sda`) e esse dispositivo possui três partições (`sda1` para `sda3`), cada uma com um [sistema de arquivo](/index.php/File_system "File system").
 
-Other common block device types include for example `mmcblk` for memory cards and `nvme` for [NVMe](/index.php/NVMe "NVMe") devices. Unknown types can be searched in the [kernel documentation](https://www.kernel.org/doc/Documentation/devices.txt).
+Outros tipos comuns de dispositivos de blocos incluem, por exemplo, `mmcblk` para cartões de memória e `nvme` para dispositivos [NVMe](/index.php/NVMe "NVMe"). Tipos desconhecidos podem ser pesquisados na [documentação do kernel](https://web.archive.org/web/20161221203124/https://www.kernel.org/doc/Documentation/devices.txt).
 
 ## mkdir
 
-[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") makes directories.
+[mkdir](https://en.wikipedia.org/wiki/pt:mkdir "w:pt:mkdir") cria diretórios.
 
-To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
+Para criar um diretório e toda sua hierarquia, a opção `-p` é usada; do contrário, um erro é impresso. Como os usuários devem saber o que eles querem, a opção `-p` pode ser usada como padrão:
 
 ```
 alias mkdir='mkdir -p -v'
 
 ```
 
-The `-v` switch make it verbose.
+A opção `-v` o torna verboso.
 
-Changing mode of a just created directory using *chmod* is not necessary as the `-m` option lets you define the access permissions.
+Alterar o modo de um diretório recém-criado usando *chmod* não é necessário como a opção `-m` permite que você defina as permissões de acesso.
 
-**Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -p`.
+**Dica:** Se você já quer um diretório temporário, uma alternativa melhor pode ser o [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -p`.
 
 ## mv
 
-[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") moves and renames files and directories.
+[mv](https://en.wikipedia.org/wiki/pt:mv_(Unix) "w:pt:mv (Unix)") move e renomeia arquivos e diretórios.
 
-To limit potential damage caused by the command, use an alias:
+Para limitar dano potencial causado pelo comando, use um alias:
 
 ```
 alias mv='timeout 8 mv -iv'
 
 ```
 
-This alias suspends *mv* after eight seconds, asks for confirmation before overwriting any existing files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
+Esse alias suspende *mv* após 8 segundos, pede confirmação antes de sobrescrever quaisquer arquivos existentes, lista as operações em progresso e não armazena ele mesmo no arquivo de histórico do shell se o shell estiver configurado para ignorar comandos iniciando com espaço.
 
 ## od
 
-The [od](https://en.wikipedia.org/wiki/od_(Unix) (*o*ctal *d*ump) command is useful for visualizing data that is not in a human-readable format, like the executable code of a program, or the contents of an unformatted device. See the [manual](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html#od-invocation) for more information.
+O comando [od](https://en.wikipedia.org/wiki/od_(Unix) (*o*ctal *d*ump) é útil para visualizar dados que não estejam em um formato legível por humanos, como o código executável de um programa, ou o conteúdo de um dispositivo não formatado. Veja o [manual](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html#od-invocation) para mais informações.
 
 ## pv
 
-You can use [pv](https://www.archlinux.org/packages/?name=pv) (*pipe viewer*) to monitor the progress of data through a pipeline, for example:
+Você pode usar [pv](https://www.archlinux.org/packages/?name=pv) (*pipe viewer*) para monitorar o progresso de dados por meio de um *pipeline*, por exemplo:
 
 ```
-# dd if=*/source/filestream* | pv -*monitor_options* -s *size_of_file* | dd of=*/destination/filestream*
+# dd if=*/origem/fluxo_arquivo* | pv -*opções_monitoramento* -s *tam_de_arquivo* | dd of=*/destino/fluxo_arquivo*
 
 ```
 
-In most cases `pv` functions as a drop-in replacement for `cat`.
+Na maioria dos casos, `pv` funciona como um substituto para `cat`.
 
 ## rm
 
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) removes files or directories.
+[rm](https://en.wikipedia.org/wiki/pt:rm_(Unix) "w:pt:rm (Unix)") remove arquivos ou diretórios.
 
-To limit potential damage caused by the command, use an alias:
+Para limitar danos potenciais causados pelo comando, use um alias:
 
 ```
 alias rm='timeout 3 rm -Iv --one-file-system'
 
 ```
 
-This alias suspends *rm* after three seconds, asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems and does not store itself in the shell history file if the shell is configured to ignore space starting commands. Substitute `-I` with `-i` if you prefer to confirm even for one file.
+Este alias suspende *rm* após três segundos, solicita confirmação para excluir três ou mais arquivos, lista as operações em andamento, não envolve mais de um sistema de arquivos e não se armazena no arquivo de histórico de shell se o shell estiver configurado para ignorar os comandos iniciais do espaço. Substitua `-I` por `-i` se preferir confirmar mesmo para um arquivo.
 
-Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
+Usuários do zsh podem querer colocar `noglob` antes de `timeout` para evitar expansões implícitas.
 
-To remove directories believed to be empty, use *rmdir* as it fails if there are files inside the target.
+Para remover diretórios que se acredita estarem vazios, use *rmdir*, pois ele falha se houver arquivos dentro do alvo.
 
 ## sed
 
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") is stream editor for filtering and transforming text.
+[sed](https://en.wikipedia.org/wiki/pt:sed "w:pt:sed") é um editor do fluxo para filtrar e transformar texto.
 
-Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-liners examples.
+Aqui está uma [lista](http://sed.sourceforge.net/sed1line.txt) útil de exemplos de um só linha com *sed*.
 
-**Tip:** More powerful alternatives are [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") and the [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") language.
+**Dica:** Alternativas mais poderosa são [AWK](https://en.wikipedia.org/wiki/pt:AWK "w:pt:AWK") e o idioma [Perl](https://en.wikipedia.org/wiki/pt:Perl "w:pt:Perl").
 
 ## seq
 
-*seq* prints a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+*seq* imprime uma sequência de números. Alternativas embutidas em shell estão disponíveis, então é de boa prática usá-las como explicado no [wikipédia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
 
 ## ss
 
-*ss* is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package in the [base](https://www.archlinux.org/groups/x86_64/base/) group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
+*ss* é um utilitário par investigar portas de rede e é parte do pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2) no grupo [base](https://www.archlinux.org/groups/x86_64/base/). Tem uma funcionalidade similar ao utilitário [obsoleto](http://www.archlinux-br.org/noticias/155/) netstat.
 
-Common usage includes:
+Uso comum inclui:
 
-Display all TCP Sockets with service names:
+Exiba todos os soquetes TCP com nomes de serviços:
 
 ```
 $ ss -at
 
 ```
 
-Display all TCP Sockets with port numbers:
+Exiba todos os soquetes TCP com números de portas:
 
 ```
 $ ss -atn
 
 ```
 
-Display all UDP Sockets:
+Exiba todos os soquetes UDP:
 
 ```
 $ ss -au
 
 ```
 
-For more information see [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or `ss.html` from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+Para mais informações, veja [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) ou `ss.html` do pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
 ## tar
 
-As an early Unix archiving format, .tar files—known as "tarballs"—are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are compressed tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") *tar* program by default.
+Como um formato de arquivamento antigo do Unix, arquivos .tar – conhecidos como "tarballs" – são amplamente usados para empacotamento nos sistema operacionais tipo Unix. Os pacotes de tanto o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") quanto [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") são comprimidos em tarballs, e o Arch usa o programa *tar* do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") por padrão.
 
-For .tar archives, *tar* by default will extract the file according to its extension:
-
-```
-$ tar xvf *file.EXTENSION*
+Para pacotes .tar, *tar* por padrão vai extrair o arquivo conforme sua extensão:
 
 ```
+$ tar xvf *arquivo.EXTENSÃO*
 
-Forcing a given format:
+```
 
-| File Type | Extraction Command |
-| `*file*.tar` | `tar xvf *file*.tar` |
-| `*file*.tgz` | `tar xvzf *file*.tgz` |
-| `*file*.tar.gz` | `tar xvzf *file*.tar.gz` |
-| `*file*.tar.bz` | `bzip -cd *file*.bz | tar xvf -` |
-| `*file*.tar.bz2` | `tar xvjf *file*.tar.bz2`
-`bzip2 -cd *file*.bz2 | tar xvf -` |
-| `*file*.tar.xz` | `tar xvJf *file*.tar.xz`
-`xz -cd *file*.xz | tar xvf -` |
+Forçando um formato dado:
 
-The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
+| Tipo de arquivo | Comando de extração |
+| `*arquivo*.tar` | `tar xvf *arquivo*.tar` |
+| `*arquivo*.tgz` | `tar xvzf *arquivo*.tgz` |
+| `*arquivo*.tar.gz` | `tar xvzf *arquivo*.tar.gz` |
+| `*arquivo*.tar.bz` | `bzip -cd *arquivo*.bz | tar xvf -` |
+| `*arquivo*.tar.bz2` | `tar xvjf *arquivo*.tar.bz2`
+`bzip2 -cd *arquivo*.bz2 | tar xvf -` |
+| `*arquivo*.tar.xz` | `tar xvJf *arquivo*.tar.xz`
+`xz -cd *arquivo*.xz | tar xvf -` |
+
+A construção de alguns dos argumentos do *tar* podem ser considerado legado, mas eles ainda são úteis ao realizar operações específicas. Veja [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) para detalhes.
 
 ## which
 
-[which](https://en.wikipedia.org/wiki/Which_(Unix) shows the full path of shell commands. In the following example the full path of `ssh` is used as an argument for `journalctl`:
+[which](https://en.wikipedia.org/wiki/Which_(Unix) mostra o caminho completo de comandos shells. No exemplo a seguir, o caminho completo de `ssh` é usado como argumento para `journalctl`:
 
 ```
 # journalctl $(which sshd)
@@ -420,11 +420,11 @@ The construction of some of these *tar* arguments may be considered legacy, but 
 
 ## wipefs
 
-*wipefs* can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
+*wipefs* pode listar ou apagar assinaturas de [sistema de arquivos](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") ou [tabela de partições](/index.php/Partition "Partition") (strings mágicas) do dispositivo específico. Ela não apaga os sistemas de arquivos em si nem quaisquer outros dados do dispositivo.
 
-See [wipefs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) for more information.
+Veja [wipefs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) para mais informações.
 
-For example, to erase all signatures from the device `/dev/sdb` and create a signature backup `~/wipefs-sdb-*offset*.bak` file for each signature:
+Por exemplo, para apagar todas as assinaturas do dispositivo `/dev/sdb` e criar uma arquivo backup de assinatura `~/wipefs-sdb-*deslocamento*.bak` para cada assinatura:
 
 ```
 # wipefs --all --backup /dev/sdb
@@ -433,6 +433,6 @@ For example, to erase all signatures from the device `/dev/sdb` and create a sig
 
 ## Veja também
 
-*   [A sampling of coreutils](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, part 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, part 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Overview of commands in coreutils
-*   [GNU Coreutils online documentation](https://www.gnu.org/software/coreutils/manual/coreutils.html)
-*   [Learn the DD command](https://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
+*   [Uma amostra do coreutils](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, parte 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, parte 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Visão geral de comandos no coreutils
+*   [Documentação online do GNU Coreutils](https://www.gnu.org/software/coreutils/manual/coreutils.html)
+*   [Aprenda o comando DD](https://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)

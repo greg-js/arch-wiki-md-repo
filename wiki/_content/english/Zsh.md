@@ -133,7 +133,7 @@ To prevent your `$PATH` being overwritten, set it in `~/.zprofile`.
  `~/.zprofile` 
 ```
 typeset -U path
-path=(*~/bin* */other/things/in/path* $path[@])
+path=(*~/.local/bin* */other/things/in/path* $path[@])
 ```
 
 See also [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and the note in [#Startup/Shutdown files](#Startup.2FShutdown_files).

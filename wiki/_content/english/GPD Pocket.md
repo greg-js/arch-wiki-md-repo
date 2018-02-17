@@ -60,9 +60,9 @@ During install append the following to /etc/pacman.conf:
  `/etc/pacman.conf` 
 ```
 ...
-[gpd-pocket] 
-SigLevel = Optional TrustAll 
-Server = https://github.com/njkli/$repo/releases/download/$arch
+[gpd-pocket-arch]
+SigLevel = Never
+Server = https://github.com/joshskidmore/gpd-pocket-arch/raw/master
 ...
 
 ```

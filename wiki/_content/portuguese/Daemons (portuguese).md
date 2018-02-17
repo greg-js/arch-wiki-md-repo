@@ -20,7 +20,7 @@ A coluna do *Pacote* contem um link para a Wiki relacionada daquele daemon(ou pa
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | bluetooth | bluetooth.service | Protocolo, framework, pilha e subsistema Bluetooth. |
 | [Chrony](/index.php/Chrony "Chrony") | chrony | chrony.service | Cliente e servidor NTP leve. |
 | [CDemu](/index.php/CDemu "CDemu") | cdemud | cdemu-daemon.service | Emulador de CD/DVD-ROM. |
-| [ClamAV](/index.php/ClamAV "ClamAV") | clamav | clamd.service
+| [ClamAV](/index.php/ClamAV_(Portugu%C3%AAs) "ClamAV (Português)") | clamav | clamd.service
 freshclamd.service | Anti-virus para Unix. |
 | [ConnMan](/index.php/ConnMan "ConnMan") | connmand | connman.service | Gerenciador de redes sem fio. |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Configura governador de [frequência de cpu](/index.php/Cpufreq "Cpufreq") e outros parâmetros de inicialização. |

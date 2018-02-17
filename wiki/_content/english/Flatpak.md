@@ -1,4 +1,14 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/flatpak "wikipedia:flatpak"): "[Flatpak](http://flatpak.org), named xdg-app until May 2016, is a system for application virtualization for Linux desktop computer environments."
+Related articles
+
+*   [Snapd](/index.php/Snapd "Snapd")
+
+From the project [README](https://github.com/flatpak/flatpak/blob/master/README.md): "*[Flatpak](http://flatpak.org) is a system for building, distributing and running sandboxed desktop applications on Linux.*"
+
+From [`man flatpak`](https://manned.org/flatpak.1):
+
+	*flatpak is a tool for managing applications and the runtimes they use. In the flatpak model, applications can be built and distributed independently from the host system they are used on, and they are isolated from the host system ('sandboxed') to some degree, at runtime.*
+
+	*flatpak uses [OSTree](https://ostree.readthedocs.io/en/latest/) to distribute and deploy data. The repositories it uses are OSTree repositories and can be manipulated with the ostree utility. Installed runtimes and applications are OSTree checkouts.*
 
 ## Contents
 
@@ -7,13 +17,14 @@ From [Wikipedia](https://en.wikipedia.org/wiki/flatpak "wikipedia:flatpak"): "[F
     *   [2.1 Add a repository](#Add_a_repository)
     *   [2.2 Delete a repository](#Delete_a_repository)
 *   [3 Managing runtimes and applications](#Managing_runtimes_and_applications)
-    *   [3.1 List available runtimes and applications](#List_available_runtimes_and_applications)
-    *   [3.2 Install a runtime or application](#Install_a_runtime_or_application)
-    *   [3.3 List installed runtimes and applications](#List_installed_runtimes_and_applications)
-    *   [3.4 Run applications](#Run_applications)
-    *   [3.5 Update a runtime or application](#Update_a_runtime_or_application)
-    *   [3.6 Uninstall a runtime or application](#Uninstall_a_runtime_or_application)
-    *   [3.7 Adding Flatpak .desktop files to your menu](#Adding_Flatpak_.desktop_files_to_your_menu)
+    *   [3.1 Search for a remote runtime or application](#Search_for_a_remote_runtime_or_application)
+    *   [3.2 List all available runtimes and applications](#List_all_available_runtimes_and_applications)
+    *   [3.3 Install a runtime or application](#Install_a_runtime_or_application)
+    *   [3.4 List installed runtimes and applications](#List_installed_runtimes_and_applications)
+    *   [3.5 Run applications](#Run_applications)
+    *   [3.6 Update a runtime or application](#Update_a_runtime_or_application)
+    *   [3.7 Uninstall a runtime or application](#Uninstall_a_runtime_or_application)
+    *   [3.8 Adding Flatpak .desktop files to your menu](#Adding_Flatpak_.desktop_files_to_your_menu)
 *   [4 Creating a custom base runtime](#Creating_a_custom_base_runtime)
     *   [4.1 Creating apps with pacman](#Creating_apps_with_pacman)
 *   [5 See also](#See_also)
@@ -21,8 +32,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/flatpak "wikipedia:flatpak"): "[F
 ## Installation
 
 [Install](/index.php/Install "Install") the [flatpak](https://www.archlinux.org/packages/?name=flatpak) package.
-
-If you want to have desktop integration using [portals](https://github.com/flatpak/flatpak/wiki/Portals) you can install the [xdg-desktop-portal-gtk](https://www.archlinux.org/packages/?name=xdg-desktop-portal-gtk) package.
 
 **Note:** If you want to build flatpaks with `flatpak-builder` you will need to install the optional dependencies of [elfutils](https://www.archlinux.org/packages/?name=elfutils) and [patch](https://www.archlinux.org/packages/?name=patch).
 
@@ -39,6 +48,13 @@ $ flatpak remote-add *name* *location*
 
 where *name* is the name for the new remote, and *location* is the path or URL for the repository.
 
+For example to add the official [Flathub repository](https://flathub.org/):
+
+```
+$ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+```
+
 ### Delete a repository
 
 To delete a remote flatpak repository do:
@@ -52,9 +68,29 @@ where *name* is the name of the remote repository to be deleted.
 
 ## Managing runtimes and applications
 
-### List available runtimes and applications
+### Search for a remote runtime or application
 
-To list available runtimes and applications in a remote repository named *remote* do:
+Before being able to search for a runtime or application in a newly added remote repository, we need to retrieve the appstream data for it:
+
+ `$ flatpak update` 
+```
+Looking for updates...
+Updating appstream data for remote *name*
+
+```
+
+Then we can proceed to search for a package with `flatpak search *packagename*`, *e.g.* to look for the package `libreoffice` with the `flathub` remote configured:
+
+ `$ flatpak search libreoffice` 
+```
+Application ID              Version Branch Remotes Description                       
+org.libreoffice.LibreOffice         stable flathub The LibreOffice productivity suite
+
+```
+
+### List all available runtimes and applications
+
+To list all available runtimes and applications in a remote repository named *remote* do:
 
 ```
 $ flatpak remote-ls *remote*
@@ -299,5 +335,6 @@ $ flatpak run org.gnome.gedit
 
 *   [Official website](http://flatpak.org)
 *   [Official Github wiki](https://github.com/flatpak/flatpak/wiki)
+*   [Wikipedia page](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak")
 *   [Gnome SandboxedApps](https://wiki.gnome.org/Projects/SandboxedApps)
 *   [KDE Testing Runtime and Applications](https://community.kde.org/Guidelines_and_HOWTOs/Flatpak)

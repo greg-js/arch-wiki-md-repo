@@ -25,14 +25,14 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [3.1 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
     *   [3.2 Use openresolv](#Use_openresolv)
     *   [3.3 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
-    *   [3.4 Write-protect /etc/resolv.conf](#Write-protect_.2Fetc.2Fresolv.conf)
+    *   [3.4 Write-protect resolv.conf](#Write-protect_resolv.conf)
     *   [3.5 Limit lookup time](#Limit_lookup_time)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Local domain names](#Local_domain_names)
 
 ## DNS in Linux
 
-Your ISP (usually) provides working [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") servers, and a router may also add an extra DNS server in case it has its own cache server. Switching between DNS servers does not represent a problem for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could be the reason why you are getting a delay.
+ISPs usually provide working [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") servers. A router may also add an extra DNS server in case it has its own cache server. Switching between DNS servers is transparent for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could be the reason why you are getting a delay.
 
 ### Testing
 
@@ -94,9 +94,9 @@ nameserver 2a05:dfc7:5::5353
 
 ```
 
-For an automated renewal of your DNS servers with the most responsive OpenNIC servers, the script [nm-opennic](https://github.com/kewlfft/nm-opennic/) can be used if you have [NetworkManager](/index.php/NetworkManager "NetworkManager").
+For an automated renewal of your DNS servers with the most responsive OpenNIC servers, the script [opennic-up](https://github.com/kewlfft/opennic-up/) can be used if you have [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
-**Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (.o, .libre, .dyn...)
+**Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (*.o*, *.libre*, *.dyn*...)
 
 ### DNS.WATCH
 
@@ -254,6 +254,8 @@ dns=none
 
 The configuration is done in `/etc/resolvconf.conf` and running `resolvconf -u` will generate `/etc/resolv.conf`.
 
+Note that *NetworkManager* can be configured to use *openresolv*, see [NetworkManager#Configure NetworkManager resolv.conf management mode to use resolvconf](/index.php/NetworkManager#Configure_NetworkManager_resolv.conf_management_mode_to_use_resolvconf "NetworkManager").
+
 ### Modify the dhcpcd config
 
 *dhcpcd'*s configuration file may be edited to prevent the *dhcpcd* daemon from overwriting `/etc/resolv.conf`. To do this, add the following to the last section of `/etc/dhcpcd.conf`:
@@ -279,7 +281,7 @@ static domain_name_servers=8.8.8.8 8.8.4.4
 
 ```
 
-### Write-protect /etc/resolv.conf
+### Write-protect resolv.conf
 
 Another way to protect your `/etc/resolv.conf` from being modified by anything is setting the immutable (write-protection) attribute:
 

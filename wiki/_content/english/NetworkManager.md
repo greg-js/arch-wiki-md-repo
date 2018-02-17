@@ -80,6 +80,7 @@ Related articles
     *   [6.9 Configuring MAC Address Randomization](#Configuring_MAC_Address_Randomization)
     *   [6.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
     *   [6.11 Working with wired connections](#Working_with_wired_connections)
+    *   [6.12 Configure NetworkManager resolv.conf management mode to use resolvconf](#Configure_NetworkManager_resolv.conf_management_mode_to_use_resolvconf)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -925,6 +926,17 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
 By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring `no-auto-default` (see [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5)), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
 
 You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
+
+### Configure NetworkManager resolv.conf management mode to use resolvconf
+
+To configure NetworkManager to run resolvconf, edit `/etc/NetworkManager/NetworkManager.conf` and add the following in the `[main]` section:
+
+```
+rc-manager=resolvconf
+
+```
+
+Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 ## See also
 

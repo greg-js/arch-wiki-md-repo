@@ -221,7 +221,7 @@ Descomente `pt_BR.UTF-8 UTF-8` e qualquer outra [localização](/index.php/Local
 
 ```
 
-Defina a [variável](/index.php/Variable "Variable") `LANG` em [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) adequadamente, por exemplo:
+Defina a [variável](/index.php/Vari%C3%A1vel "Variável") `LANG` em [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) adequadamente, por exemplo:
 
  `/etc/locale.conf`  `LANG=*pt_BR.UTF-8*` 
 

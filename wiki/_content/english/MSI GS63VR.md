@@ -18,9 +18,11 @@ The GS series of MSI laptops is considered to be a thin gaming laptop. Although 
 
 This issue was discussed in this thread: [https://bbs.archlinux.org/viewtopic.php?id=230541](https://bbs.archlinux.org/viewtopic.php?id=230541)
 
+As of 2018, the patch is now part of the mainstream kernel. Intel driver (i915) works, but without power management. It is only possible to run a graphical environment with the nvidia card ON. In order to get the maximum performance out of this notebook, it is recommended to use [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun-git). Bumblebee is not working on the 2017 model.
+
 | **Device** | **GS63 (2016)** | **GS63 (2017)** | **GS73 (2016)** |
 | [Display](/index.php?title=Display&action=edit&redlink=1 "Display (page does not exist)") | -- | Full HD 120Hz/3ms | -- |
-| [Intel IGU](/index.php?title=Intel_IGU&action=edit&redlink=1 "Intel IGU (page does not exist)") | Yes | (with patch) i915 |  ?? |
+| [Intel IGU](/index.php?title=Intel_IGU&action=edit&redlink=1 "Intel IGU (page does not exist)") | Yes | Yes i915 |  ?? |
 | [Nvidia GPU](/index.php?title=Nvidia_GPU&action=edit&redlink=1 "Nvidia GPU (page does not exist)") | Yes | Yes nvidia |  ?? |
 | [Network](/index.php/Network "Network") | Yes | Yes |  ?? |
 | Atheros Wireless | Yes | Yes |  ?? |

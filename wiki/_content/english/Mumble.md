@@ -32,7 +32,7 @@ To use the Mumble overlay with 32-bit games, install [lib32-libmumble](https://a
 
 When you first launch the client, a configuration wizard will take you through the setup process. Settings can be changed later through the menu.
 
-For a discussion of advanced settings, see the [official documentation](http://mumble.sourceforge.net/). The [Mumbleguide](http://mumble.sourceforge.net/Mumbleguide) is a good starting point.
+For a discussion of advanced settings, see the [official documentation](https://wiki.mumble.info/wiki/). The [Mumbleguide](https://wiki.mumble.info/wiki/Mumbleguide) is a good starting point.
 
 ## Server
 

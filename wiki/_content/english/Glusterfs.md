@@ -1,3 +1,7 @@
+Related articles
+
+*   [Ceph](/index.php/Ceph "Ceph")
+
 [Glusterfs](https://www.gluster.org/) is a scalable network [filesystem](/index.php/Filesystem "Filesystem").
 
 ## Installation
@@ -49,6 +53,14 @@ Glusterfs can be setup to run in many different configurations depending operati
 
 ```
  # gluster volume start gv0
+
+```
+
+*   Mount the volume
+
+```
+ # mkdir -p /mnt/glusterClientMount
+ # mount -t glusterfs gluster1:/gv0 /mnt/glusterClientMount
 
 ```
 

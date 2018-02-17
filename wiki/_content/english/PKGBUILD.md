@@ -189,7 +189,7 @@ optdepends=('cups: printing support'
 
 An array of packages that are **only** required to build the software. The minimum dependency version can be specified in the same format as in the `depends` array. The packages in the `depends` array are implicitly required to build the package, they should not be duplicated here.
 
-**Tip:** The following can be used to see if a particular package is either in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group or pulled in by a member of the group:
+**Tip:** The following can be used to check whether a particular package is either in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group or is pulled in by a member of the group:
 ```
 $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups *:.*base-devel"
 
@@ -211,7 +211,7 @@ An array of packages that the software depends on to run its test suite, but are
 
 An array of additional packages that the software provides the features of (or a virtual package such as `cron` or `sh`). Packages providing the same item can be installed side-by-side, unless at least one of them uses a `conflicts` array.
 
-**Warning:** A version that the package provides should be mentioned (`pkgver` and perhaps the `pkgrel`), if packages needing the software may require one. For instance, a modified *qt* package version 3.3.8, named *qt-foobar*, should use `provides=('qt=3.3.8')`; using `provides=('qt')` would cause the dependencies that require a specific version of *qt* to fail. Do not add `pkgname` to the `provides` array, as it is done automatically.
+**Note:** The version that the package provides should be mentioned (`pkgver` and potentially the `pkgrel`), in case packages referencing the software require one. For instance, a modified *qt* package version 3.3.8, named *qt-foobar*, should use `provides=('qt=3.3.8')`; omitting the version number would cause the dependencies that require a specific version of *qt* to fail. Do not add `pkgname` to the `provides` array, as it is done automatically.
 
 ### conflicts
 
@@ -224,8 +224,8 @@ However, there is an exception to this rule. Defining conflicting packages in al
 This is why, in this context, if your package `provides` a feature and another package `provides` the same feature, you do not need to specify that conflicting package in your `conflicts` array. Let us take a concrete example:
 
 *   [netbeans](https://www.archlinux.org/packages/?name=netbeans) provides `netbeans`
-*   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) provides `netbeans` and conflicts `netbeans`
-*   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) provides `netbeans` and conflicts `netbeans` but does not need to conflicts [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) since pacman is smart enough to figure out these packages are incompatible as they provide the same feature and are in conflict with it.
+*   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) provides `netbeans` and conflicts with `netbeans`
+*   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) provides `netbeans` and conflicts with `netbeans` but does not need to conflicts with [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) since pacman is smart enough to figure out these packages are incompatible as they provide the same feature and are in conflict with it.
 
 	The same applies in the reverse order: [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) does not need to conflict with [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/), because they provide the same feature.
 
@@ -253,7 +253,7 @@ The full list of the available options can be found in [PKGBUILD(5)](https://jlk
 
 ### install
 
-The name of the `.install` script to be included in the package. This should be the same as `pkgname`. *pacman* has the ability to store and execute a package-specific script when it installs, removes or upgrades a package. The script contains the following functions which run at different times:
+The name of the *.install* script to be included in the package. This should be the same as `pkgname`. *pacman* has the ability to store and execute a package-specific script when it installs, removes or upgrades a package. The script contains the following functions which run at different times:
 
 *   `pre_install` — The script is run right before files are extracted. One argument is passed: new package version.
 *   `post_install` — The script is run right after files are extracted. One argument is passed: new package version.
@@ -266,7 +266,7 @@ Each function is run [chrooted](/index.php/Chroot "Chroot") inside the *pacman* 
 
 **Tip:**
 
-*   A prototype `.install` is provided at [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
+*   A prototype *.install* is provided at [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
 *   [pacman#Hooks](/index.php/Pacman#Hooks "Pacman") provide similar functionality.
 
 **Note:** Do not end the script with `exit`. This would prevent the contained functions from executing.

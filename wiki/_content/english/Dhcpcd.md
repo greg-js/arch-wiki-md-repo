@@ -29,7 +29,9 @@ Related articles
     *   [6.3 Problems with noncompliant routers](#Problems_with_noncompliant_routers)
     *   [6.4 dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces)
     *   [6.5 Timeout delay](#Timeout_delay)
-*   [7 See also](#See_also)
+*   [7 Known issues](#Known_issues)
+    *   [7.1 dhcpcd@.service causes slow startup](#dhcpcd.40.service_causes_slow_startup)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -67,6 +69,8 @@ If you need to add a static route client-side, add it to `/etc/dhcpcd.exit-hook`
 ip route add 10.11.12.0/24 via 192.168.192.5
 
 ```
+
+You can add multiple routes to this file.
 
 ### DHCP Client Identifier
 
@@ -292,6 +296,21 @@ Restart=always
 ```
 
 After making changes, [reload the configuration](/index.php/Systemd#Editing_provided_units "Systemd").
+
+## Known issues
+
+### dhcpcd@.service causes slow startup
+
+By default the `dhcpcd@.service` waits to get an IP address before forking into the background via the `-w` flag for *dhcpcd*. If the unit is enabled, this may cause the boot to wait for an IP address before continuing. To fix this, [edit](/index.php/Edit "Edit") the unit with the following:
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dhcpcd -b -q %I
+
+```
+
+See also [FS#49685](https://bugs.archlinux.org/task/49685).
 
 ## See also
 

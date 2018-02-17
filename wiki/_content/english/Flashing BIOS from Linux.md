@@ -113,7 +113,7 @@ To use the biosdisk utility to create a BIOS flash image, first download the lat
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [flashrom](https://www.archlinux.org/packages/?name=flashrom) or [flashrom-svn](https://aur.archlinux.org/packages/flashrom-svn/) package.
+[Install](/index.php/Install "Install") the [flashrom](https://www.archlinux.org/packages/?name=flashrom) or [flashrom-git](https://aur.archlinux.org/packages/flashrom-git/) package.
 
 ### Usage
 

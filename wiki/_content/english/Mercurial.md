@@ -19,7 +19,7 @@ At the minimum you should configure your username or mercurial will most likely 
  `~/.hgrc` 
 ```
 [ui]
-username = John Smith
+username = John Smith <johnsmith@domain.tld>
 ```
 
 To use the graphical browser **hgk** aka. **hg view**, add the following to `~/.hgrc` (see [forum thread](https://bbs.archlinux.org/viewtopic.php?id=31999)):
@@ -32,7 +32,10 @@ hgk=
 
 You will need to install [tk](https://www.archlinux.org/packages/?name=tk) before running **hg view** to avoid the rather cryptic error message:
 
- `/usr/bin/env: wish: No such file or directory` 
+```
+/usr/bin/env: wish: No such file or directory
+
+```
 
 To remove Mercurial warnings of unverified certificate fingerprints, add the following to `~/.hgrc` (see [Mercurial wiki](http://mercurial.selenic.com/wiki/CACertificates)):
 
@@ -62,7 +65,10 @@ delay = 1.5
 
 All mercurial commands are initiated with the *hg* prefix. To see a list of some of the common commands, run
 
- `$ hg help` 
+```
+$ hg help
+
+```
 
 You can either work with a pre-existing repository (collection of code or files), or create your own to share.
 
@@ -72,6 +78,7 @@ To work with a pre-existing repository, you must clone it to a directory of your
 $ mkdir mercurial
 $ cd mercurial
 $ hg clone [http://hg.serpentine.com/tutorial/](http://hg.serpentine.com/tutorial/)
+
 ```
 
 To create you own, change to the directory you wish to share and initiate a mercurial project
@@ -79,17 +86,24 @@ To create you own, change to the directory you wish to share and initiate a merc
 ```
 $ cd myfiles
 $ hg init myfiles
+
 ```
 
 ### Dotfiles Repo
 
 If you intend on creating a repo of all your `~/.` files, you simply initiate the project in your home folder:
 
- `$ hg init` 
+```
+$ hg init
+
+```
 
 It is then just a case of adding the specific files you wish to track:
 
- `$ hg add ` 
+```
+$ hg add |file1 file2 file3
+
+```
 
 You can then create a `~/.hgignore` to ensure that only the files you wish to include in the repository are tracked by mercurial.
 
@@ -101,4 +115,3 @@ You can then create a `~/.hgignore` to ensure that only the files you wish to in
 *   [hginit.com](http://hginit.com/) - a tutorial by Joel Spolsky
 *   [Mercurial Kick-Start](http://mercurial.aragost.com/kick-start/en/) one more tutorial by Aragost.
 *   [Bitbucket](http://bitbucket.org) - free and commercial hosting of mercurial repositories
-*   [Intuxication](http://mercurial.intuxication.org/) - free mercurial hosting

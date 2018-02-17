@@ -156,7 +156,7 @@ $ gcc -march=native -v -Q --help=target
 
 #### Compilação paralela
 
-O sistema de compilação do [make](https://www.archlinux.org/packages/?name=make) usa a [variável de ambiente](/index.php/Environment_variable "Environment variable") `MAKEFLAGS` para especificar opções adicionais para o *make*. A variável também pode ser definida no arquivo `makepkg.conf`.
+O sistema de compilação do [make](https://www.archlinux.org/packages/?name=make) usa a [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `MAKEFLAGS` para especificar opções adicionais para o *make*. A variável também pode ser definida no arquivo `makepkg.conf`.
 
 Os usuários com sistemas multi-core/multiprocessados podem especificar o número de trabalhos a serem executados simultaneamente. Isso pode ser realizado com o uso de *nproc* para determinar o número de processadores disponíveis, ex. `MAKEFLAGS="-j$(nproc)"`. Alguns [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") substituem especificamente isso com `-j1`, devido a condições de corrida em certas versões ou simplesmente porque não é suportado em primeiro lugar. Os pacotes que não conseguem ser compilados devido a isso devem ser [relatados](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro") no rastreador de erros (ou no caso dos pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), ao mantenedor do pacote) depois de ter certeza de que o erro está sendo realmente causado pelo seu `MAKEFLAGS`.
 

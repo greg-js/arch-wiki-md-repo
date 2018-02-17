@@ -243,9 +243,8 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 *   **rsync.net** — Cloud storage for offsite backups.
     *   ZFS filesystem, accessible with any SSH/SFTP/SCP tool, running on a UNIX system.
     *   Simple rsync synchronization with daily automatic ZFS snapshots.
-    *   [Special discounted price](http://www.rsync.net/products/attic.html) if used with borg or attic.
 
-	[http://www.rsync.net/](http://www.rsync.net/) || [rsync](/index.php/Rsync "Rsync")/[SSH](/index.php/SSH "SSH"), [borg](https://www.archlinux.org/packages/?name=borg)/[attic](https://aur.archlinux.org/packages/attic/)
+	[http://www.rsync.net/](http://www.rsync.net/) || [rsync](/index.php/Rsync "Rsync")/[SSH](/index.php/SSH "SSH"), [borg](https://www.archlinux.org/packages/?name=borg)
 
 *   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak")** — An online backup tool for Windows, Mac and Linux users to back up, share, sync, access and store their data.
     *   Free account holds 2GB as a 60-day trial.

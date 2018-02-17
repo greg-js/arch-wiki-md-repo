@@ -53,7 +53,7 @@ $ xdg-user-dirs-update --set DOWNLOAD ~/Internet
 
 ## Querying configured directories
 
-Once set, any user directory can be viewed with [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs). For example, the following command will specify the location of the `Templates` directory, which of course corresponds to the `XDG_TEMPLATES_DIR` variable in the local configuration file:
+Once set, any user directory can be viewed with [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs). For example, the following command will show the location of the `Templates` directory, which of course corresponds to the `XDG_TEMPLATES_DIR` variable in the local configuration file:
 
 ```
 $ xdg-user-dir TEMPLATES

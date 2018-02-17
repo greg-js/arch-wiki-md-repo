@@ -24,6 +24,7 @@ The following tips and tricks should work for both Chromium and Chrome unless ex
     *   [1.12 Forcing specific GPU](#Forcing_specific_GPU)
     *   [1.13 Import bookmarks from Firefox](#Import_bookmarks_from_Firefox)
     *   [1.14 Enabling native notifications](#Enabling_native_notifications)
+    *   [1.15 U2F authentication](#U2F_authentication)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
@@ -199,6 +200,10 @@ The procedure is pretty much the same. You need to go to `chrome://settings/impo
 ### Enabling native notifications
 
 Go to `chrome://flags#enable-native-notifications` and select *Enabled*.
+
+### U2F authentication
+
+In order for the U2F functionality to work with Chromium you need to install the [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) library. This provides the [udev rules](https://github.com/Yubico/libu2f-host/blob/master/70-u2f.rules) required to enable access to the U2F key as a user. U2F keys are by default only accessible by root, and without these rules Chromium will give an error.
 
 ## Profile maintenance
 
