@@ -385,7 +385,7 @@ If you have enabled *scan-path*, again, the order in cgitrc matters. *source-fil
 
 ## References
 
-*   [http://git.zx2c4.com/cgit/](http://git.zx2c4.com/cgit/)
-*   [http://git.zx2c4.com/cgit/about/](http://git.zx2c4.com/cgit/about/)
-*   [http://git.zx2c4.com/cgit/tree/README](http://git.zx2c4.com/cgit/tree/README)
-*   [http://git.zx2c4.com/cgit/tree/cgitrc.5.txt](http://git.zx2c4.com/cgit/tree/cgitrc.5.txt)
+*   [https://git.zx2c4.com/cgit/](https://git.zx2c4.com/cgit/)
+*   [https://git.zx2c4.com/cgit/about/](https://git.zx2c4.com/cgit/about/)
+*   [https://git.zx2c4.com/cgit/tree/README](https://git.zx2c4.com/cgit/tree/README)
+*   [https://git.zx2c4.com/cgit/tree/cgitrc.5.txt](https://git.zx2c4.com/cgit/tree/cgitrc.5.txt)

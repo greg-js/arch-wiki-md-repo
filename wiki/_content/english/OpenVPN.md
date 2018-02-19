@@ -355,67 +355,43 @@ rtt min/avg/max/mdev = 157.426/158.278/158.940/0.711 ms
 
 ### Configure the MTU with Fragment and MSS
 
-**Note:** If you do not configure MTU, then you will notice that small packets like ping and DNS will work, however web browsing will not work.
+If experiencing issues when using (remote) services over OpenVPN (e.g. web browsing, [DNS](/index.php/DNS "DNS"), [NFS](/index.php/NFS "NFS")), it may be needed to set a MTU value manually.
 
-Now it is time to configure the maximum segment size (MSS). In order to do this we need to discover what is the smallest MTU along the path between the client and server. In order to do this you can ping the server and disable fragmentation. Then specify the max packet size.
+The following message may indicate the MTU value should be adjusted:
 
- `# ping -c5 -M do -s 1500 elmer.acmecorp.org` 
 ```
-PING elmer.acmecorp.org (99.88.77.66) 1500(1528) bytes of data.
-From 1.2.3.4 (99.88.77.66) icmp_seq=1 Frag needed and DF set (mtu = 576)
-From 1.2.3.4 (99.88.77.66) icmp_seq=1 Frag needed and DF set (mtu = 576)
-From 1.2.3.4 (99.88.77.66) icmp_seq=1 Frag needed and DF set (mtu = 576)
-From 1.2.3.4 (99.88.77.66) icmp_seq=1 Frag needed and DF set (mtu = 576)
-From 1.2.3.4 (99.88.77.66) icmp_seq=1 Frag needed and DF set (mtu = 576)
+read UDPv4 [EMSGSIZE Path-MTU=1407]: Message too long (code=90)
 
---- core.myrelay.net ping statistics ---
-0 packets transmitted, 0 received, +5 errors
 ```
 
-We received an ICMP message telling us the MTU is 576 bytes. The means we need to fragment the UDP packets smaller then 576 bytes to allow for some UDP overhead.
+In order to get the maximum segment size (MSS), the client needs to discover the smallest MTU along the path to the server. In order to do this ping the server and disable fragmentation, then specify the maximum packet size [[4]](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn):
 
- `# ping -c5 -M do -s 548 elmer.acmecorp.org` 
 ```
-PING elmer.acmecorp.org (99.88.77.66) 548(576) bytes of data.
-556 bytes from 99.88.77.66: icmp_seq=1 ttl=48 time=206 ms
-556 bytes from 99.88.77.66: icmp_seq=2 ttl=48 time=224 ms
-556 bytes from 99.88.77.66: icmp_seq=3 ttl=48 time=206 ms
-556 bytes from 99.88.77.66: icmp_seq=4 ttl=48 time=207 ms
-556 bytes from 99.88.77.66: icmp_seq=5 ttl=48 time=208 ms
+# ping -M do -s 1500 -c 1 example.com
 
---- myrelay.net ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4001ms
-rtt min/avg/max/mdev = 206.027/210.603/224.158/6.832 ms
 ```
 
-After some trial and error..., we discover that we need to fragment packets on 548 bytes. In order to do this we specify this fragment size in the configuration and instruct OpenVPN to fix the Maximum Segment Size (MSS).
+Decrease the 1500 value by 10 each time, until the ping succeeds.
+
+**Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://forums.openvpn.net/topic13201.html#p31156)) are not able to connect to a server that uses the `fragment` directive. See `mtu-test` as alternative solution.
+
+Update the client configuration to use the succeeded MTU value, e.g.:
 
  `/etc/openvpn/client/client.conf` 
 ```
-remote elmer.acmecorp.org 1194
+remote example.com 1194
 ...
-fragment 548
-mssfix 548
-...
-```
-
-We also need to tell the server about the fragmentation. Note that "mssfix" is NOT needed in the server configuration.
-
-**Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://forums.openvpn.net/topic13201.html#p31156)) are not able to connect to a server that uses the 'fragment' directive. To support such clients, skip this section and configure the clients with the 'mtu-test' directive described below.
- `/etc/openvpn/server/server.conf` 
-```
-...
-fragment 548
+tun-mtu 1500
+fragment 1300
+mssfix # will take its default max parameter from the --fragment max option
 
 ```
 
-**Note:** The following will add about 3 minutes to OpenVPN start time. It is advisable to configure the fragment size unless your client is a laptop that will be connecting over many different networks and the bottle neck is on the client side.
-
-You can also allow OpenVPN to do this for you by having OpenVPN do the ping testing every time the client connects to the VPN. Be patient, since your client may not inform you about the test being run and the connection may appear as nonfunctional until finished.
+OpenVPN may be instructed to test the MTU every time on client connect. Be patient, since your client may not inform about the test being run and the connection may appear as nonfunctional until finished. The following will add about 3 minutes to OpenVPN start time. It is advisable to configure the fragment size unless a client will be connecting over many different networks and the bottle neck is not on the server side:
 
  `/etc/openvpn/client/client.conf` 
 ```
-remote elmer.acmecorp.org 1194
+remote example.com 1194
 ...
 mtu-test
 ...
@@ -495,7 +471,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -556,14 +532,14 @@ Lastly, reload UFW:
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[6]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[6]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[7]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 

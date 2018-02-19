@@ -70,7 +70,7 @@ If that does not work immediately, you may need to change the icon set that is i
 
 ### Firefox themes
 
-LibreOffice is able to use Firefox themes. Enter LibreOffice options and choose *Personalization > Select Theme*, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
+LibreOffice can use Firefox themes. Enter LibreOffice options and choose *Personalization > Select Theme*, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
 
 Themes can be found on [Mozilla's theme repository](https://addons.mozilla.org/firefox/themes/).
 
@@ -218,7 +218,7 @@ If embedded videos are just gray boxes, make sure to have installed the [GStream
 
 ### Default paper size in Writer and Draw
 
-If the default paper size in blank Writer and Draw documents is persistently incorrect for your locale, try installing the [libpaper](https://www.archlinux.org/packages/?name=libpaper) optional dependency and either updating `/etc/papersize` (for a system-wide change) or exporting the `PAPERSIZE` environment variable (for a user change) with your preferred paper size. See [papersize(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
+If the default paper size in blank Writer and Draw documents is persistently incorrect for your locale, try installing the [libpaper](https://www.archlinux.org/packages/?name=libpaper) optional dependency and either updating `/etc/papersize` (for a system-wide change) or exporting the `PAPERSIZE` environment variable (for a user change) with your preferred paper size. See [papersize(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
@@ -232,11 +232,11 @@ As an alternative workaround, run *libreoffice* with a light theme (e.g. with en
 
 ### LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme
 
-If you do not want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in Tools > Options > LibreOffice > View > Icon Style to a readable one provided by LibreOffice.
+If you do not want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in *Tools > Options > LibreOffice > View > Icon Style* to a readable one provided by LibreOffice.
 
 Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK+](/index.php/GTK%2B "GTK+"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), and, if using a LibreOffice version < 5.3.0, the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
 
-Just enable "Breeze Dark" or another readable icon style in Tools > Options > LibreOffice > View > Icon Style then.
+Just enable "Breeze Dark" or another readable icon style in *Tools > Options > LibreOffice > View > Icon Style* then.
 
 If that is not enough, ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
 

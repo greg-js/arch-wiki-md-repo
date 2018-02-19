@@ -2,21 +2,22 @@ The Lenovo ThinkPad X220 is a small-form-factor laptop with Intel Mobile i5/i7 C
 
 ## Contents
 
-*   [1 Setup](#Setup)
+*   [1 Configuration](#Configuration)
     *   [1.1 Battery](#Battery)
     *   [1.2 Fingerprint reader](#Fingerprint_reader)
     *   [1.3 Graphics](#Graphics)
     *   [1.4 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
     *   [1.5 Dock](#Dock)
-*   [2 Issues](#Issues)
+*   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Boot fails (UEFI/GPT)](#Boot_fails_.28UEFI.2FGPT.29)
     *   [2.2 Reboot loop after resume from suspend](#Reboot_loop_after_resume_from_suspend)
     *   [2.3 Microphone](#Microphone)
     *   [2.4 Multi-monitor setups with X](#Multi-monitor_setups_with_X)
     *   [2.5 Backlight](#Backlight)
+    *   [2.6 X220 Touchpad cursor jump/imprecise](#X220_Touchpad_cursor_jump.2Fimprecise)
 *   [3 See also](#See_also)
 
-## Setup
+## Configuration
 
 ### Battery
 
@@ -38,7 +39,7 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 See [dockd](/index.php/Dockd "Dockd").
 
-## Issues
+## Troubleshooting
 
 ### Boot fails (UEFI/GPT)
 
@@ -97,12 +98,25 @@ Since `linux 3.16`, some backlight-related kernel parameter defaults have been c
 
 in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). More details can be found on [the Backlight page](/index.php/Backlight#Kernel_command-line_options "Backlight").
 
+### X220 Touchpad cursor jump/imprecise
+
+If the touchpad is jumpy/imprecise, copy the two lines below into a new file:
+
+ `/etc/udev/hwdb.d/90-libinput-x220-touchpad-fw81.hwdb` 
+```
+libinput:name:SynPS/2 Synaptics TouchPad:dmi:*svnLENOVO:*:pvrThinkPadX220*
+ LIBINPUT_MODEL_LENOVO_X220_TOUCHPAD_FW81=1
+```
+
+then run `udevadm hwdb --update` and reboot.
+
+See [Fedora bug #1264453](https://bugzilla.redhat.com/show_bug.cgi?id=1264453) for more details.
+
 ## See also
 
 *   Arch user blogs about the X220
     *   [Thinkpad X220 model 4287CTO](http://natalian.org/archives/2011/11/10/Thinkpad_X220/) using a msata SSD for 64 bit Archlinux
     *   [X220 i5](http://blog.jamiek.it/2011/10/arch-linux-on-thinkpad-x220.html)
 *   [Thinkwiki X220 reference](http://www.thinkwiki.org/wiki/Category:X220)
-*   ["Arch By Hand" UEFI GPT SSD LUKS Install Script](https://bbs.archlinux.org/viewtopic.php?id=129885), built on an x220 tablet with an SSD.
 *   [Power saving options for the X220 - Notebook Review Forum](http://forum.notebookreview.com/lenovo-ibm/575569-linux-x220-29.html#post8075286)
 *   [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/) for ThinkPad X220 Tablet rotation, docking, etc scripts

@@ -94,7 +94,7 @@ nameserver 2a05:dfc7:5::5353
 
 ```
 
-For an automated renewal of your DNS servers with the most responsive OpenNIC servers, the script [opennic-up](https://github.com/kewlfft/opennic-up/) can be used if you have [NetworkManager](/index.php/NetworkManager "NetworkManager").
+[opennic-up](https://aur.archlinux.org/packages/opennic-up/) automates the renewal of the DNS servers with the most responsive OpenNIC servers using [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 **Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (*.o*, *.libre*, *.dyn*...)
 

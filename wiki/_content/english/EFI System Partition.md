@@ -28,20 +28,24 @@ The following two sections show how to create an EFI System Partition (ESP).
 
 **Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI/MBR boot.
 
-To avoid potential problems with some EFIs, ESP size should be at least 512 MiB. 550 MiB is recommended to avoid confusion with FAT16 [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html), although larger sizes are fine.
+To avoid potential problems with some EFIs, ESP size should be at least 512 MiB. 550 MiB is recommended to avoid MiB/MB confusion and accidentally creating FAT16 [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html), although larger sizes are fine.
 
 According to a Microsoft note[[2]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules), the minimum size for the EFI System Partition (ESP) would be 100 MiB, though this is not stated in the UEFI Specification. Note that for [Advanced Format](/index.php/Advanced_Format "Advanced Format") 4K Native drives (4-KiB-per-sector) drives, the size is at least 256 MiB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KiB) x 65527 = 256 MiB), due to a limitation of the FAT32 file format.
 
 ### GPT partitioned disks
 
+EFI System Partition on GPT has the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
+
 **Choose one** of the following methods to create an ESP for a GPT partitioned disk:
 
-*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI (FAT-12/16/32)` in *fdisk* or `EF00` in *gdisk*). Proceed to [#Format the partition](#Format_the_partition) section below.
+*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `EF00` in *gdisk*). Proceed to [#Format the partition](#Format_the_partition) section below.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a FAT32 partition and in Parted set/activate the `boot` flag (**not** `legacy_boot` flag) on that partition. Proceed to [#Mount the partition](#Mount_the_partition) section below.
 
 ### MBR partitioned disks
 
-Create a partition with partition type *EFI System* using fdisk. Proceed to [#Format the partition](#Format_the_partition).
+EFI System Partition on MBR has the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") `EF`.
+
+Create a partition with partition type `EFI (FAT-12/16/32)` using fdisk. Proceed to [#Format the partition](#Format_the_partition).
 
 ## Format the partition
 

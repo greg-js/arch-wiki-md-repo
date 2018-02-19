@@ -929,11 +929,12 @@ You can also edit the connection (and persist it to disk) or delete it. NetworkM
 
 ### Configure NetworkManager resolv.conf management mode to use resolvconf
 
-To configure NetworkManager to run resolvconf, edit `/etc/NetworkManager/NetworkManager.conf` and add the following in the `[main]` section:
+To configure NetworkManager to run resolvconf, set the `rc-manager` option to `resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
+ `/etc/NetworkManager/conf.d./rc-manager.conf` 
 ```
+[main]
 rc-manager=resolvconf
-
 ```
 
 Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).

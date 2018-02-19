@@ -246,7 +246,7 @@ In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokL
 
 *   It is advised to read [Rod Smith's Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html).
 *   You can use `cryptboot-efikeys` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified creating keys, enrolling keys, signing bootloader and verifying signatures.
-*   Note that [cryptboot](https://aur.archlinux.org/packages/cryptboot/) requires the encrypted boot partition to be specified in /etc/crypttab before it runs, and if you are using it in combination with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), sbupdate expects the `/boot/efikeys/db.*` files created by cryptboot to be capitalized like `DB.*`. Users who do not use systemd to handle encryption may not have anything in their /etc/crypttab file and would need to create an entry.
+*   Note that [cryptboot](https://aur.archlinux.org/packages/cryptboot/) requires the encrypted `/boot` partition to be specified in `/etc/crypttab` before it runs, and if you are using it in combination with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), *sbupdate* expects the `/boot/efikeys/db.*` files created by *cryptboot* to be capitalized like `DB.*` unless otherwise configured in `/etc/default/sbupdate`. Users who do not use systemd to handle encryption may not have anything in their `/etc/crypttab` file and would need to create an entry.
 
 Secure Boot implementations use these keys:
 

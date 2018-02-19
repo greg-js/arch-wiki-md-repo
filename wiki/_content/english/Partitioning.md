@@ -88,7 +88,7 @@ At the start of a GUID Partition Table disk there is a [protective Master Boot R
 
 ### Choosing between GPT and MBR
 
-GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
+GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools, it is equally easy to get good dependability and performance for GPT or MBR.
 
 **Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") is required.
 
@@ -169,7 +169,7 @@ A separate `/boot` partition is needed if installing a software RAID0 (stripe) s
 
 **Note:** If booting using UEFI [boot loaders](/index.php/Boot_loaders "Boot loaders") that do not have drivers for other file systems it is recommended to mount [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") to `/boot`. See [EFI System Partition#Mount the partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") for more information.
 
-A suggested size for `/boot` is 200 MiB unless you are using EFI System Partition as `/boot`, in which case refer to [EFI System Partition#Create the partition](/index.php/EFI_System_Partition#Create_the_partition "EFI System Partition") for the recommended size.
+A suggested size for `/boot` is 200 MiB unless you are using [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") as `/boot`, in which case at least 550 MiB is recommended.
 
 #### /home
 
@@ -206,7 +206,7 @@ Historically, the general rule for swap partition size was to allocate twice the
 #### UEFI/GPT example layout
 
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table") | Suggested size |
-| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | [550 MiB](/index.php/EFI_System_Partition#Create_the_partition "EFI System Partition") |
+| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | 550 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |

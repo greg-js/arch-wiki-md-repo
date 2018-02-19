@@ -328,8 +328,8 @@ After doing the edit, restart PulseAudio.
 Connect speakers to front analog output and headphones to rear output. It would be useful to split front/rear to separate sinks. Add to `/etc/pulse/default.pa`:
 
 ```
- load-module module-remap-sink sink_name=speakers remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=front-left,front-right channel_map=front-left,front-right
- load-module module-remap-sink sink_name=headphones remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=rear-left,rear-right channel_map=front-left,front-right
+ load-module module-remap-sink sink_name=speakers properties="device.description='Speakers'" remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=front-left,front-right channel_map=front-left,front-right
+ load-module module-remap-sink sink_name=headphones properties="device.description='Headphones'" remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=rear-left,rear-right channel_map=front-left,front-right
 
 ```
 

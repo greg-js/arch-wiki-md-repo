@@ -367,7 +367,7 @@ This has been tested to work with Logitech MX1000.
 
 [easystroke is a gesture-recognition application for X11](http://sourceforge.net/projects/easystroke/)
 
-easystroke is a mouse gesture application, but it can be used to manage mouse buttons as well. It's main advantage o-ver btnx is that it's more versatile. On the other hand, it's user-based, so any user has to configure it to reflect his own needs.
+easystroke is a mouse gesture application, but it can be used to manage mouse buttons as well. Its main advantage over btnx is that it's more versatile. On the other hand, it's user-based, so any user has to configure it to reflect his own needs.
 
 In order to set up easystroke to manage your extra mouse buttons, you will need to do this (example features Back/Forward mouse buttons) : run:
 

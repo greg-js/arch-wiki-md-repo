@@ -18,7 +18,7 @@ Related articles
 
 **Warning:** Radicale got a major release change. You need to export old version 1.x calendars *before* you install version 2.x. Please, [read](http://radicale.org/1to2/).
 
-[Install](/index.php/Install "Install") the [radicale](https://aur.archlinux.org/packages/radicale/) package.
+[Install](/index.php/Install "Install") the [radicale](https://www.archlinux.org/packages/?name=radicale) package.
 
 ## Configuration
 

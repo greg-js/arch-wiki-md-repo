@@ -232,36 +232,36 @@ Install [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap). Enable an
  `/etc/nginx/sites-available/backuppc` 
 ```
 server {
-  listen <your_server_port>;
-  server_name <your_server_name>;
+    listen <your_server_port>;
+    server_name <your_server_name>;
 
-  root  /usr/share/backuppc/html;
-  index /index.cgi;
+    root  /usr/share/backuppc/html;
+    index /index.cgi;
 
-  access_log  /var/log/nginx/backuppc.access.log;
-  error_log   /var/log/nginx/backuppc.error.log;
+    access_log  /var/log/nginx/backuppc.access.log;
+    error_log   /var/log/nginx/backuppc.error.log;
 
-  location / {
-      allow 127.0.0.1/32;
-      # allow 192.168.0.0/24;
-      deny all;
+    location / {
+        allow 127.0.0.1/32;
+        # allow 192.168.0.0/24;
+        deny all;
 
-      # auth_basic "Backup";
-      # auth_basic_user_file conf/backuppc.users;
-  }
+        # auth_basic "Backup";
+        # auth_basic_user_file conf/backuppc.users;
 
-  location /backuppc {
-      alias /usr/share/backuppc/html/;
-  }
+        location /backuppc {
+            alias /usr/share/backuppc/html;
+        }
 
-  location  ~\.cgi$ {
-      include fastcgi_params;
-      fastcgi_pass unix:/run/fcgiwrap.sock;
+        location ~ \.cgi$ {
+            include fastcgi_params;
+            fastcgi_pass unix:/run/fcgiwrap.sock;
 
-      fastcgi_param REMOTE_ADDR     $remote_addr;
-      fastcgi_param REMOTE_USER     $remote_user;
-      fastcgi_param SCRIPT_FILENAME /usr/share/backuppc/cgi-bin/BackupPC_Admin;
-  }
+            fastcgi_param REMOTE_ADDR     $remote_addr;
+            fastcgi_param REMOTE_USER     $remote_user;
+            fastcgi_param SCRIPT_FILENAME /usr/share/backuppc/cgi-bin/BackupPC_Admin;
+        }
+    }
 }
 
 ```
@@ -274,6 +274,8 @@ And symlink to sites-enabled:
 ```
 
 Change fcgiwrap executing user in systemd fcgiwrap.service file to user: backuppc
+
+If you want to use basic authentication, uncomment the corresponding lines above and create the file `/etc/nginx/conf/backuppc.users` containing all allowed users.
 
 ## Alternative lighttpd configuration
 

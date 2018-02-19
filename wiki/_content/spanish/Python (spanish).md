@@ -1,3 +1,9 @@
+Related articles
+
+*   [Python Package Guidelines](/index.php/Python_Package_Guidelines "Python Package Guidelines")
+*   [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv")
+*   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
+
 De la [Wikipedia](https://es.wikipedia.org/wiki/Python):
 
 	*Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.*

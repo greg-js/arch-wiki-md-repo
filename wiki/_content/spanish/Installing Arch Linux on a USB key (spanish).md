@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Beginners' Guide (Español)](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)")
+*   [Installation Guide (Español)](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)")
+*   [General Recommendations (Español)](/index.php/General_Recommendations_(Espa%C3%B1ol) "General Recommendations (Español)")
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+
 Esta página describe cómo realizar una instalación normal de Arch en una llave USB (o «unidad flash»). A diferencia de un [USB como soporte de instalación](/index.php/USB_Installation_Media_(Espa%C3%B1ol) "USB Installation Media (Español)"), el liveusb daría como resultado la instalación de un sistema de forma permanente en unidad flash USB idéntica a una instalación normal sobre un disco duro.
 
 ## Contents

@@ -11,35 +11,36 @@
     *   [1.2 Word processors](#Word_processors)
     *   [1.3 Document markup languages](#Document_markup_languages)
     *   [1.4 Spreadsheets](#Spreadsheets)
-    *   [1.5 Scientific documents](#Scientific_documents)
-    *   [1.6 Translation and localization](#Translation_and_localization)
-    *   [1.7 Text editors](#Text_editors)
-        *   [1.7.1 Console](#Console)
-            *   [1.7.1.1 Vi text editors](#Vi_text_editors)
-        *   [1.7.2 Graphical](#Graphical)
-            *   [1.7.2.1 Collaborative text editors](#Collaborative_text_editors)
-    *   [1.8 Readers and Viewers](#Readers_and_Viewers)
-        *   [1.8.1 E-book applications](#E-book_applications)
-        *   [1.8.2 PDF and DjVu](#PDF_and_DjVu)
-            *   [1.8.2.1 Console](#Console_2)
-            *   [1.8.2.2 Graphical](#Graphical_2)
-        *   [1.8.3 Terminal pagers](#Terminal_pagers)
-        *   [1.8.4 CHM](#CHM)
-        *   [1.8.5 Comic book (comix/manga)](#Comic_book_.28comix.2Fmanga.29)
-    *   [1.9 Scanning software](#Scanning_software)
-    *   [1.10 OCR software](#OCR_software)
-        *   [1.10.1 Engines](#Engines)
-        *   [1.10.2 Layout analyzers and user interfaces](#Layout_analyzers_and_user_interfaces)
-    *   [1.11 Note taking organizers](#Note_taking_organizers)
-        *   [1.11.1 Console](#Console_3)
-        *   [1.11.2 Graphical](#Graphical_3)
-    *   [1.12 Mind-mapping tools](#Mind-mapping_tools)
-    *   [1.13 Character Selector](#Character_Selector)
-    *   [1.14 Stylus notes taking](#Stylus_notes_taking)
-    *   [1.15 Bibliographic reference managers](#Bibliographic_reference_managers)
-    *   [1.16 Barcode generators and readers](#Barcode_generators_and_readers)
-        *   [1.16.1 Console](#Console_4)
-        *   [1.16.2 Graphical](#Graphical_4)
+    *   [1.5 Database editors](#Database_editors)
+    *   [1.6 Scientific documents](#Scientific_documents)
+    *   [1.7 Translation and localization](#Translation_and_localization)
+    *   [1.8 Text editors](#Text_editors)
+        *   [1.8.1 Console](#Console)
+            *   [1.8.1.1 Vi text editors](#Vi_text_editors)
+        *   [1.8.2 Graphical](#Graphical)
+            *   [1.8.2.1 Collaborative text editors](#Collaborative_text_editors)
+    *   [1.9 Readers and Viewers](#Readers_and_Viewers)
+        *   [1.9.1 E-book applications](#E-book_applications)
+        *   [1.9.2 PDF and DjVu](#PDF_and_DjVu)
+            *   [1.9.2.1 Console](#Console_2)
+            *   [1.9.2.2 Graphical](#Graphical_2)
+        *   [1.9.3 Terminal pagers](#Terminal_pagers)
+        *   [1.9.4 CHM](#CHM)
+        *   [1.9.5 Comic book (comix/manga)](#Comic_book_.28comix.2Fmanga.29)
+    *   [1.10 Scanning software](#Scanning_software)
+    *   [1.11 OCR software](#OCR_software)
+        *   [1.11.1 Engines](#Engines)
+        *   [1.11.2 Layout analyzers and user interfaces](#Layout_analyzers_and_user_interfaces)
+    *   [1.12 Note taking organizers](#Note_taking_organizers)
+        *   [1.12.1 Console](#Console_3)
+        *   [1.12.2 Graphical](#Graphical_3)
+    *   [1.13 Mind-mapping tools](#Mind-mapping_tools)
+    *   [1.14 Character Selector](#Character_Selector)
+    *   [1.15 Stylus notes taking](#Stylus_notes_taking)
+    *   [1.16 Bibliographic reference managers](#Bibliographic_reference_managers)
+    *   [1.17 Barcode generators and readers](#Barcode_generators_and_readers)
+        *   [1.17.1 Console](#Console_4)
+        *   [1.17.2 Graphical](#Graphical_4)
 
 ## Documents and texts
 
@@ -178,6 +179,24 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 *   **sc-im** — spreadsheet program based on sc.
 
 	[https://github.com/andmarti1424/sc-im/](https://github.com/andmarti1424/sc-im/) || [sc-im](https://aur.archlinux.org/packages/sc-im/)
+
+### Database editors
+
+*   **[LibreOffice Base](/index.php/LibreOffice "LibreOffice")** — Full-featured desktop database front end, designed to meet the needs of a broad array of users.
+
+	[https://www.libreoffice.org/discover/base/](https://www.libreoffice.org/discover/base/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
+
+*   **DB Browser for SQLite** — High quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
+
+	[http://sqlitebrowser.org/](http://sqlitebrowser.org/) || [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser)
+
+*   **[Kexi](https://en.wikipedia.org/wiki/Kexi "wikipedia:Kexi")** — Visual database applications creator tool by KDE, designed to fill the gap between spreadsheets and database solutions requiring more sophisticated development.
+
+	[http://www.kexi-project.org/](http://www.kexi-project.org/) || [kexi](https://www.archlinux.org/packages/?name=kexi)
+
+*   **Symphytum** — Personal database software for everyone who desires to manage and organize data in an easy and intuitive way, without having to study complex database languages and software user interfaces.
+
+	[https://giowck.github.io/symphytum/](https://giowck.github.io/symphytum/) || [symphytum](https://aur.archlinux.org/packages/symphytum/)
 
 ### Scientific documents
 

@@ -28,7 +28,6 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
     *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE.27s_Touchpad_KCM)
     *   [4.3 Touchpad not detected at all](#Touchpad_not_detected_at_all)
-    *   [4.4 X220 Touchpad cursor jump/imprecise](#X220_Touchpad_cursor_jump.2Fimprecise)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -211,9 +210,12 @@ To change the pressure at which the touchpad is registered, follow [this article
 
 ### Disable touchpad
 
-To disable the touchpad, first get its NAME with `xinput list` and then disable it with `xinput disable *NAME*`.
+To disable the touchpad, first get its name with `xinput list` and then disable it with `xinput disable *name*`.
 
-**Tip:** It is more robust to disable it by name than by ID number. The devices may be renumbered. It will be necessary to quote the name if it contains spaces.
+**Tip:**
+
+*   It is more robust to disable it by name than by ID number. The devices may be renumbered.
+*   It will be necessary to quote the name if it contains spaces.
 
 To make it permanent, see [Autostarting](/index.php/Autostarting "Autostarting").
 
@@ -268,27 +270,6 @@ If a touchpad device is not detected and shown as a device at all, a possible so
 i8042.noloop i8042.nomux i8042.nopnp i8042.reset
 
 ```
-
-### X220 Touchpad cursor jump/imprecise
-
-If the touchpad is jumpy/imprecise, copy the two lines below into a new file:
-
- `/etc/udev/hwdb.d/90-libinput-x220-touchpad-fw81.hwdb` 
-```
-libinput:name:SynPS/2 Synaptics TouchPad:dmi:*svnLENOVO:*:pvrThinkPadX220*
- LIBINPUT_MODEL_LENOVO_X220_TOUCHPAD_FW81=1
-```
-
-then run
-
-```
-udevadm hwdb --update 
-
-```
-
-and reboot.
-
-See [bug #1264453 for more details](https://bugzilla.redhat.com/show_bug.cgi?id=1264453).
 
 ## See also
 

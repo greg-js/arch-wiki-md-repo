@@ -509,7 +509,7 @@ Run the game with `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes`.
 
 ### Civilization V
 
-Run the game with `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'%`.[[3]](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
+Run the game with `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%`.[[3]](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
 #### Stuttering sound with PulseAudio
 

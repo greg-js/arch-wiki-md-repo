@@ -167,7 +167,7 @@ VFAT 只有挂载参数为'discard'(而不是fstrim)时才支持 TRIM 。
 
 在 `/etc/lvm/lvm.conf`里把`issue_discards` 选项的值由 0 改为 1。
 
-**注意:** 启用该选项会使得当逻辑卷不再使用物理卷的空间(如 lvremove, lvreduce, 等等)时，将discard发给逻辑卷的底层物理卷" (见 [lvm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) 和/或 `/etc/lvm/lvm.conf` 中的注释内容)。 因此，它似乎并不需要为“常规”TRIM请求（文件系统内的文件删除）来发挥作用。
+**注意:** 启用该选项会使得当逻辑卷不再使用物理卷的空间(如 lvremove, lvreduce, 等等)时，将discard发给逻辑卷的底层物理卷" (见 [lvm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) 和/或 `/etc/lvm/lvm.conf` 中的注释内容)。 因此，它似乎并不需要为“常规”TRIM请求（文件系统内的文件删除）来发挥作用。
 
 #### 为dm-crypt启用TRIM
 
@@ -300,7 +300,7 @@ Security:
 
 使用 [iotop](https://www.archlinux.org/packages/?name=iotop) 以及 sort 对硬盘写入排序来观察程序对硬盘写的量及频率。
 
-**提示：** *iotop* 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 [iotop(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iotop.8)。
+**提示：** *iotop* 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 [iotop(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iotop.8)。
 ```
 # iotop -boqqq
 

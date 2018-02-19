@@ -1111,7 +1111,7 @@ $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
 
 *   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more. [Enable](/index.php/Enable "Enable") `spice-vdagentd.service` after installation.
-*   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
+*   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl): Xorg X11 qxl video driver
 *   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
 
 ##### Password authentication with SPICE

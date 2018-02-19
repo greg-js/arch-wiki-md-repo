@@ -4,21 +4,21 @@ This article deals with setting up an svn-server on your machine. There are two 
 
 ## Contents
 
-*   [1 Apache Subversion Setup](#Apache_Subversion_Setup)
+*   [1 Apache Subversion setup](#Apache_Subversion_setup)
     *   [1.1 Goals](#Goals)
     *   [1.2 Installation](#Installation)
-    *   [1.3 Subversion Configuration](#Subversion_Configuration)
+    *   [1.3 Subversion configuration](#Subversion_configuration)
         *   [1.3.1 Edit /etc/httpd/conf/httpd.conf](#Edit_.2Fetc.2Fhttpd.2Fconf.2Fhttpd.conf)
         *   [1.3.2 To SSL or not to SSL?](#To_SSL_or_not_to_SSL.3F)
         *   [1.3.3 Create /home/svn/.svn-policy-file](#Create_.2Fhome.2Fsvn.2F.svn-policy-file)
         *   [1.3.4 Create /home/svn/.svn-auth-file](#Create_.2Fhome.2Fsvn.2F.svn-auth-file)
-        *   [1.3.5 Create a Repository](#Create_a_Repository)
-        *   [1.3.6 Set Permissions](#Set_Permissions)
-    *   [1.4 Create a Project](#Create_a_Project)
+        *   [1.3.5 Create a repository](#Create_a_repository)
+        *   [1.3.6 Set permissions](#Set_permissions)
+    *   [1.4 Create a project](#Create_a_project)
         *   [1.4.1 Directory structure for project](#Directory_structure_for_project)
-        *   [1.4.2 Populate Directory](#Populate_Directory)
-        *   [1.4.3 Import the Project](#Import_the_Project)
-        *   [1.4.4 Test SVN Checkout](#Test_SVN_Checkout)
+        *   [1.4.2 Populate directory](#Populate_directory)
+        *   [1.4.3 Import the project](#Import_the_project)
+        *   [1.4.4 Test SVN checkout](#Test_SVN_checkout)
 *   [2 Svnserve setup](#Svnserve_setup)
     *   [2.1 Install the package](#Install_the_package)
     *   [2.2 Create a repository](#Create_a_repository_2)
@@ -29,16 +29,16 @@ This article deals with setting up an svn-server on your machine. There are two 
 *   [4 Subversion clients](#Subversion_clients)
 *   [5 See also](#See_also)
 
-## Apache Subversion Setup
+## Apache Subversion setup
 
 ### Goals
 
 The goal of this how to is to setup Subversion, with Apache. Why use Apache for Subversion? Well, quite simply, it provides features that the standalone `svnserve` does not have...
 
-*   You get the ability to use https protocol. This is more secure than the md5 authentication used by svnserve.
-*   You get fine-grained access controls. You can use Apache auth to limit permissions by directory. This means you can grant read access to everything, but commit access only to trunk for instance, while have another group with commit access to tags or branches.
-*   You get a free repository viewer. While not very exciting, it does work.
-*   The Subversion team is working on seamless webdav integration. At some point you should be able to use any webdav interface to update files in the repository.
+*   HTTPS support. This is more secure than the MD5 authentication used by svnserve.
+*   fine-grained access controls. You can use Apache auth to limit permissions by directory. This means you can grant read access to everything, but commit access only to trunk for instance, while have another group with commit access to tags or branches.
+*   a free repository viewer
+*   The Subversion team is working on seamless WebDAV integration. At some point you should be able to use any WebDAV interface to update files in the repository.
 
 ### Installation
 
@@ -46,7 +46,7 @@ Install [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
 
 Besides Apache, you will only need to install the [subversion](https://www.archlinux.org/packages/?name=subversion) package.
 
-### Subversion Configuration
+### Subversion configuration
 
 Create a directory for your repositories:
 
@@ -134,14 +134,14 @@ To add additional users, leave off the (`-c`) flag.
 
 ```
 
-#### Create a Repository
+#### Create a repository
 
 ```
 # svnadmin create /home/svn/repositories/REPO_NAME
 
 ```
 
-#### Set Permissions
+#### Set permissions
 
 The Apache user needs permissions over the new repository.
 
@@ -150,7 +150,7 @@ The Apache user needs permissions over the new repository.
 
 ```
 
-### Create a Project
+### Create a project
 
 #### Directory structure for project
 
@@ -161,7 +161,7 @@ $ mkdir -p ~/svn-import/{branches,tags,trunk}
 
 ```
 
-#### Populate Directory
+#### Populate directory
 
 Copy or move your project source files into the created trunk directory.
 
@@ -170,14 +170,14 @@ $ cp -R /my/existing/project/* ~/svn-import/trunk
 
 ```
 
-#### Import the Project
+#### Import the project
 
 ```
 $ svn import -m "Initial import" ~/svn-import [https://yourdomain.net/svn/REPO_NAME/](https://yourdomain.net/svn/REPO_NAME/)
 
 ```
 
-#### Test SVN Checkout
+#### Test SVN checkout
 
 ```
 $ svn checkout [https://yourdomain.net/svn/REPO_NAME/](https://yourdomain.net/svn/REPO_NAME/) /my/svn/working/copy
@@ -185,8 +185,6 @@ $ svn checkout [https://yourdomain.net/svn/REPO_NAME/](https://yourdomain.net/sv
 ```
 
 If everything worked out, you should now have a working, checked out copy of your freshly created SVN repo.
-
-Enjoy!
 
 ## Svnserve setup
 
@@ -345,7 +343,7 @@ chmod -R g+w /path/to/reponame/db/
 
 ```
 
-Ok these repos should be all setup.
+These repositories should now be all setup.
 
 ## Subversion clients
 

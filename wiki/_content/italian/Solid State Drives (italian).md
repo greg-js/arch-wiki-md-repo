@@ -1,5 +1,10 @@
 **Attenzione:** Questa pagina è in fase di revisione e potrebbe non essere aggiornata. Seguite per ora le istruzioni della versione inglese.
 
+Articoli correlati
+
+*   [SSD Benchmarking](/index.php/SSD_Benchmarking "SSD Benchmarking")
+*   [SSD Memory Cell Clearing](/index.php/SSD_Memory_Cell_Clearing "SSD Memory Cell Clearing")
+
 Questo articolo copre molti aspetti degli SSD (drive a stato solido) in relazione a Linux ; comunque, i principi di base e gli insegnamenti chiave presentati sono abbastanza generali per essere applicati anche agli utenti che utilizzano SSD con altri sistemi operativi come la famiglia dei prodotti Windows o quelli MacOS X. A parte le informazioni appena menzionate gli utenti Linux potranno beneficiare delle ottimizzazioni qui presentate.
 
 ## Contents

@@ -1065,5 +1065,6 @@ You can use the following website to get your device's coordinates along with a 
 -6.776242,-79.839255 "Joaking" # Chiclayo, Peru
 55.395959,10.388148 "Perrito" # Odense, Denmark 
 30.444298, -91.150546 "acdw" # Baton Rouge, LA, USA
+10.215677, -68.020392 "Oswald" # Valencia, Carabobo, Venezuela
 
 ```

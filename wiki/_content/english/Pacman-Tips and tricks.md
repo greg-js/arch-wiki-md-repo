@@ -143,6 +143,13 @@ $ comm -12 <(pacman -Qq | sort) <(pacman -Slq *repo_name* | sort)
 
 ```
 
+List all packages on the Arch Linux ISO that are not in the base group:
+
+```
+$ comm -23 <(wget -q -O - https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
+
+```
+
 #### Development packages
 
 To list all development/unstable packages, run:

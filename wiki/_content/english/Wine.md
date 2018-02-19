@@ -47,7 +47,9 @@ Related articles
 
 ## Installation
 
-Wine can be installed by enabling the [Multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features (e.g. [CSMT patch](#CSMT_patch)), which have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
+Wine can be installed by enabling the [Multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features that have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
+
+**Note:** The original wine-staging maintainers have stepped down and as of 17 February 2018 the project's status is unclear. [[1]](https://www.phoronix.com/scan.php?page=news_item&px=Wine-Staging-No-More)
 
 Consider installing [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that depend on Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 

@@ -1,3 +1,10 @@
+相关文章
+
+*   [GNOME](/index.php/GNOME "GNOME")
+*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 **MATE 桌面环境** 是 GNOME 2 的一个分支,旨在使用传统的方式，为Linux用户提供一个有吸引力的和直观的桌面. 更多信息, 请看 [this forum thread.](https://bbs.archlinux.org/viewtopic.php?id=121162)
 
 ## Contents

@@ -24,11 +24,12 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
     *   [5.2 Driver options](#Driver_options)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
-    *   [6.2 Incorrect screen position on HDMI](#Incorrect_screen_position_on_HDMI)
-    *   [6.3 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
-    *   [6.4 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
+*   [6 Enable GPU display scaling](#Enable_GPU_display_scaling)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
+    *   [7.2 Incorrect screen position on HDMI](#Incorrect_screen_position_on_HDMI)
+    *   [7.3 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+    *   [7.4 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
 
 ## Selecting the right driver
 
@@ -151,6 +152,31 @@ Option "DRI" "3"
 
 ```
 Option "TearFree" "true"
+
+```
+
+## Enable GPU display scaling
+
+To avoid the usage of the scaler which is built in the display, and use the GPU own scaler instead, when not using the native resolution of the monitor, execute:
+
+```
+$ xrandr --output "<output>" --set "scaling mode" "<scaling mode>"
+
+```
+
+Possible values for `"scaling mode"` are: `None, Full, Center, Full aspect`
+
+*   To show the available outputs and settings, execute:
+
+```
+$ xrandr --prop
+
+```
+
+*   To set `scaling mode = Full aspect` for just every available output, execute:
+
+```
+$ for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
 
 ```
 

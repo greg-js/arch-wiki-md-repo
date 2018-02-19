@@ -51,7 +51,7 @@ Follow the scanner part of the [scanner calibration](https://blog.simon-dreher.d
 
 ### Printer calibration
 
-See [cups-calibrate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cups-calibrate.8).
+See [cups-calibrate(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cups-calibrate.8).
 
 ### File transfer
 
@@ -214,7 +214,7 @@ You can easily use one of these loaders to apply the color profile in early boot
 ## Applications that support ICC profiles
 
 *   [Xsane](http://www.xsane.org/doc/sane-xsane-color-management-doc.html) can use ICC profiles for color-corrected scanning.
-*   [CUPS](/index.php/CUPS "CUPS") can use ICC profiles for color-corrected printing using [Colord](https://www.freedesktop.org/software/colord/faq.html#cups)
+*   [CUPS](/index.php/CUPS "CUPS") can use ICC profiles for color-corrected printing using [Colord](https://www.freedesktop.org/software/colord/faq.html#cups), but the actual implementation and usability is [unclear](https://lists.cups.org/pipermail/cups/2016-December/056399.html).
 *   [GIMP](/index.php/GIMP "GIMP") can use ICC profiles for display of the image being edited. The use of the installed ICC profile has to be explicitly enabled in the settings dialog, though.
 *   [mpv](/index.php/Mpv "Mpv") can take an ICC profile into account when playing a video. The command line argument is: `--icc-profile=/path/to/profile.icc` or `--icc-profile-auto`. Only `--vo=opengl` does color management; other VO drivers will silently ignore the ICC profile options.
 *   [Firefox](/index.php/Firefox "Firefox"), by default, uses the system-wide ICC profile only when displaying images that are already tagged with an ICC profile. To assume that untagged images use sRGB and apply color correction also to them, set the `gfx.color_management.mode` preference to 1.

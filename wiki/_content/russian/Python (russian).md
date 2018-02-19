@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
+*   [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment")
+*   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Python](/index.php/Python "Python"). Дата последней синхронизации: 2 июня 2017‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Python&diff=0&oldid=479061).
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Python "wikipedia:ru:Python"):

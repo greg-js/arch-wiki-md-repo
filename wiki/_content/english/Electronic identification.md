@@ -42,4 +42,4 @@ If you updated your certificates due to [https://www.id.ee/?lang=en&id=38241](ht
 
 ### Sweden
 
-[BankID](https://www.bankid.com/en/om-bankid/detta-ar-bankid) is the leading electronic identification in Sweden, see [BankId on Linux](/index.php/BankId_on_Linux "BankId on Linux")
+[BankID](https://www.bankid.com/en/om-bankid/detta-ar-bankid) is the leading electronic identification in Sweden.

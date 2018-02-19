@@ -169,7 +169,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Game Boy emulator with Game Boy Advance, Game Boy Color, and Super Game Boy support.
 
-	[http://vba.ngemu.com/](http://vba.ngemu.com/) || [vbam-gtk](https://www.archlinux.org/packages/?name=vbam-gtk)
+	[http://vba.ngemu.com/](http://vba.ngemu.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
 
 *   **ZSNES** — Highly compatible Super Nintendo emulator.
 

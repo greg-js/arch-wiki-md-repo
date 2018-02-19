@@ -36,7 +36,7 @@ To create .slrnrc from a sample startup file for slrn:
 After creating .slrnrc you should [configure the user account](#User_account) and then create .jnewsrc:
 
 ```
-# slrn -f /home/your_username/.jnewsrc --create
+# slrn -f ~/.jnewsrc --create
 
 ```
 

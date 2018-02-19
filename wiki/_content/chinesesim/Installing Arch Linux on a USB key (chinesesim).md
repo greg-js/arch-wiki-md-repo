@@ -1,3 +1,9 @@
+相关文章
+
+*   [安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")
+*   [一般建议](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+
 **翻译状态：** 本文是英文页面 [Installing_Arch_Linux_on_a_USB_key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-9-9，点击[这里](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=398959)可以查看翻译后英文页面的改动。
 
 本页讨论如何在U盘(闪存盘)上安装一个常规的 Arch，这里的系统是指一个可以升级和使用的系统，而不是一个用来引导系统启动的[USB 安装媒介](/index.php/USB_Installation_Media_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "USB Installation Media (简体中文)")。

@@ -758,7 +758,7 @@ For more information, see: [Linux Mint topic](http://forums.linuxmint.com/viewto
 
 ### Choppy sound with analog surround sound setup
 
-The low-frequency effects (LFE) channel is not remixed per default. To enable it the following needs to be set in `/etc/pulse/daemon.conf` :
+The low-frequency effects (LFE) or Subwoofer channel is not remixed per default. To enable it the following needs to be set in `/etc/pulse/daemon.conf` :
 
  `/etc/pulse/daemon.conf` 
 ```
@@ -1231,13 +1231,7 @@ Also check user autostart files and directories, such as [xinitrc](/index.php/Xi
 
 Known issue: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099)
 
-To fix this, must edit `/etc/pulse/daemon.conf` and enable `enable-lfe-remixing` :
-
- `/etc/pulse/daemon.conf` 
-```
-enable-lfe-remixing = yes
-
-```
+To fix this, `enable-lfe-remixing = yes` must be set as described in [#Choppy_sound_with_analog_surround_sound_setup](#Choppy_sound_with_analog_surround_sound_setup).
 
 ### Unable to select surround configuration other than "Surround 4.0"
 

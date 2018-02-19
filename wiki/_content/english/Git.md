@@ -17,12 +17,11 @@ Related articles
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
     *   [3.1 Getting a Git repository](#Getting_a_Git_repository)
-        *   [3.1.1 Initializing a repository](#Initializing_a_repository)
-        *   [3.1.2 Cloning a repository](#Cloning_a_repository)
     *   [3.2 Recording changes](#Recording_changes)
         *   [3.2.1 Staging changes](#Staging_changes)
         *   [3.2.2 Committing changes](#Committing_changes)
-        *   [3.2.3 Viewing changes](#Viewing_changes)
+        *   [3.2.3 Revision selection](#Revision_selection)
+        *   [3.2.4 Viewing changes](#Viewing_changes)
     *   [3.3 Undoing things](#Undoing_things)
     *   [3.4 Branching](#Branching)
     *   [3.5 Collaboration](#Collaboration)
@@ -81,39 +80,31 @@ See [Getting Started - Git Basics](https://git-scm.com/book/en/Getting-Started-G
 
 ### Getting a Git repository
 
-#### Initializing a repository
+*   Initialize a repository
 
-To start tracking a directory with Git, go to that directory and run:
+	`git init`, see [git-init(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-init.1)
 
-```
-$ git init
+*   Clone an existing repository
 
-```
-
-This creates an empty Git repository in the `.git` subdirectory.
-
-#### Cloning a repository
-
-Copying an existing repository is done using:
-
-```
-$ git clone *location*
-
-```
-
-`*location*` can be either a path or network address. Also, when cloning is done, the location is recorded so just a `git pull` will be needed later.
+	`git clone *repository*`, see [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1)
 
 ### Recording changes
 
-With Git you do not directly commit changes in the working tree to the repository. Instead there is a staging area (also called index file or cache) in between to which you firstly have to add your changes. The `commit` Git command then records changes from the staging area.
+Git projects have a staging area, which is an `index` file in your Git directory, that stores the changes that will go into your next commit. To record a modified file you therefore firstly need to add it to the index (stage it). The `git commit` command then stores the current index in a new commit.
 
 #### Staging changes
 
-`git add <pathspec>` to add working tree changes to the index, see [git-add(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1).
+*   Add working tree changes to the index
 
-To remove changes from the index, use `git reset HEAD <pathspec>`. If there are no commits yet, you have to use `git rm --cached <pathspec>`.
+	`git add *pathspec*`, see [git-add(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1)
 
-`git status` shows changes to be committed, unstaged changes and untracked files, see [git-status(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-status.1).
+*   Remove changes from the index
+
+	`git reset *pathspec*`, see [git-reset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-reset.1)
+
+*   Show changes to be committed, unstaged changes and untracked files
+
+	`git status`, see [git-status(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-status.1)
 
 You can tell Git to ignore certain untracked files using `.gitignore` files, see [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5).
 
@@ -121,7 +112,7 @@ Git does not track file movement. Move detection during merges is based only on 
 
 ```
 $ mv -i foo bar
-$ git rm foo
+$ git reset -- foo
 $ git add bar
 
 ```
@@ -130,15 +121,19 @@ $ git add bar
 
 The `git commit` command records the staged changes to the repository, see [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1).
 
-*   The `-m` option lets you specify the commit message on the command-line, if you omit it Git will let you compose your commit message in your default text editor.
-*   The `-a` option tells Git to automatically stage files that have been modified or deleted.
-*   The `--amend` option lets you redo the last commit, amending the commit message or the committed files.
+*   `-m` – supply the commit message as an argument, instead of composing it in your default text editor
+*   `-a` – automatically stage files that have been modified or deleted (does not add untracked files)
+*   `--amend` – redo the last commit, amending the commit message or the committed files
 
 **Tip:** Always commit small changes frequently and with meaningful messages.
 
-Many of the commands in this article take commits as arguments. A commit can be identified by any of the following:
+#### Revision selection
 
-*   Its 40-digit SHA-1 hash (the first 7 digits are usually sufficient to identify it uniquely)
+Git offers multiple ways to specify revisions, see [gitrevisions(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitrevisions.7) and [Revision Selection](https://git-scm.com/book/tr/v2/Git-Tools-Revision-Selection).
+
+Many Git commands take revisions as arguments. A commit can be identified by any of the following:
+
+*   SHA-1 hash of the commit (the first 7 digits are usually sufficient to identify it uniquely)
 *   Any commit label such as a branch or tag name
 *   The label `HEAD` always refers to the currently checked-out commit (usually the head of the branch, unless you used *git checkout* to jump back in history to an old commit)
 *   Any of the above plus `~` to refer to previous commits. For example, `HEAD~` refers to one commit before `HEAD` and `HEAD~5` refers to five commits before `HEAD`.
@@ -651,7 +646,7 @@ Connecting on a port other than 22 can be configured on a per-host basis in `/et
     url = ssh://*user*@*foobar*.com:443/~*my_repository*/repo.git
 ```
 
-You are able to secure the SSH user account even more allowing only push and pull commands on this user account. This is done by replacing the default login shell by git-shell. Described in [https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server)
+You are able to secure the SSH user account even more allowing only push and pull commands on this user account. This is done by replacing the default login shell by git-shell. Described in [Setting Up the Server](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server).
 
 ### Smart HTTP
 
@@ -704,18 +699,16 @@ $ git clone git://*location*/*repository*.git
 
 ### Setting access rights
 
-To restrict read and/or write access, use standard Unix permissions. Refer to [http://sitaramc.github.com/gitolite/doc/overkill.html](http://sitaramc.github.com/gitolite/doc/overkill.html) ([archive.org mirror](https://web.archive.org/web/20111004134500/http://sitaramc.github.com/gitolite/doc/overkill.html)) for more information.
+To restrict read and/or write access, use standard Unix permissions. Refer to [when gitolite is overkill](https://github.com/sitaramc/gitolite/blob/d74e58b5de8c78bddd29b009ba2d606f7fcb4f2d/doc/overkill.mkd) for more information.
 
 For fine-grained access management, refer to [gitolite](/index.php/Gitolite "Gitolite") and [gitosis](/index.php/Gitosis "Gitosis").
 
 ## See also
 
-*   Miscallaneous man pages available in the [git](https://www.archlinux.org/packages/?name=git) package: [gittutorial(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gittutorial.7), [giteveryday(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/giteveryday.7), [gitworkflows(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitworkflows.7), [gitglossary(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7)
+*   Git man pages, see [git(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git.1)
 *   [Pro Git book](https://git-scm.com/book/en/)
-*   [git(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git.1)
-
+*   [Git Reference](https://git.github.io/git-reference/) by GitHub
 *   [Git workflow: Forks, remotes, and pull requests](http://nathanhoad.net/git-workflow-forks-remotes-and-pull-requests)
 *   [VideoLAN wiki article](https://wiki.videolan.org/Git)
 *   [A comparison of protocols GitHubGist](https://gist.github.com/grawity/4392747)
 *   [How to GitHub](https://gun.io/blog/how-to-github-fork-branch-and-pull-request)
-*   [Git Reference](http://gitref.org/) (GitHub removed the site)

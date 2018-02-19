@@ -23,11 +23,14 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [3.2 T470 model 20JN](#T470_model_20JN)
         *   [3.2.1 lspci](#lspci_2)
         *   [3.2.2 lsusb](#lsusb_2)
+    *   [3.3 T470 model 20HD,20HE](#T470_model_20HD.2C20HE)
+        *   [3.3.1 lspci](#lspci_3)
+        *   [3.3.2 lsusb](#lsusb_3)
 *   [4 See also](#See_also)
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.43\. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
+As of writing, the current BIOS version is 1.46\. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
 
 ## Kernel and hardware support
 
@@ -135,6 +138,42 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 002 Device 002: ID 0bda:0316 Realtek Semiconductor Corp. 
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 003: ID 8087:0a2b Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+### T470 model 20HD,20HE
+
+#### lspci
+
+```
+00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers (rev 02)
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 620 (rev 02)
+00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller (rev 21)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-LP Thermal subsystem (rev 21)
+00:15.0 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller #0 (rev 21)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-LP CSME HECI #1 (rev 21)
+00:1c.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #1 (rev f1)
+00:1c.6 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #7 (rev f1)
+00:1d.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #9 (rev f1)
+00:1d.2 PCI bridge: Intel Corporation Device 9d1a (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-LP LPC Controller (rev 21)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC (rev 21)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-LP HD Audio (rev 21)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus (rev 21)
+00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (4) I219-V (rev 21)
+04:00.0 Network controller: Intel Corporation Wireless 8265 / 8275 (rev 78)
+3e:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller SM961/PM961
+
+```
+
+#### lsusb
+
+```
+Bus 002 Device 003: ID 0bda:0316 Realtek Semiconductor Corp. 
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 5986:111c Acer, Inc 
+Bus 001 Device 002: ID 8087:0a2b Intel Corp. 
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```

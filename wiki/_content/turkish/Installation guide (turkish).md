@@ -1,4 +1,4 @@
-Bu doküman, Arch Linux'u resmi kurulumunun canlı sistemlere yüklemek için bir kılavuzdur. Kurulumdan önce, Sıkça sorulan sorulara bakmanız önerilir [FAQ](/index.php/FAQ "FAQ"). Bu belgede kullanılan lisanslar için, bakınız [Help:Reading](/index.php/Help:Reading "Help:Reading").
+Bu doküman, Arch Linux'u yüklemek için kullanılan canlı sistem kılavuzudur. Kurulumdan önce, [Sıkça sorulan sorulara](/index.php/Frequently_asked_questions_(T%C3%BCrk%C3%A7e) "Frequently asked questions (Türkçe)") bakmanız önerilmektedir. Bu belgede kullanılan lisanslar için, bakınız [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
 Daha ayrıntılı talimatlar için, Bu kılavuzdan sırasıyla [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") makalelerine ya da çeşitli programlarının olduğu linklere' [man pages](/index.php/Man_page "Man page"), bakınız. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 

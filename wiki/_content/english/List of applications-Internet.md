@@ -72,9 +72,13 @@
         *   [1.6.2 Podcast clients](#Podcast_clients)
             *   [1.6.2.1 Console](#Console_9)
             *   [1.6.2.2 Graphical](#Graphical_9)
-        *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
+        *   [1.6.3 Usenet newsreaders](#Usenet_newsreaders)
+            *   [1.6.3.1 Console](#Console_10)
+            *   [1.6.3.2 Graphical](#Graphical_10)
         *   [1.6.4 Blog engines](#Blog_engines)
         *   [1.6.5 Microblogging clients](#Microblogging_clients)
+            *   [1.6.5.1 Console](#Console_11)
+            *   [1.6.5.2 Graphical](#Graphical_11)
     *   [1.7 Remote desktop](#Remote_desktop)
         *   [1.7.1 Remote desktop clients](#Remote_desktop_clients)
         *   [1.7.2 Remote desktop servers](#Remote_desktop_servers)
@@ -677,7 +681,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **[aria2](/index.php/Aria2 "Aria2")** — Lightweight download utility that supports simultaneous adaptive downloading via HTTP(S), FTP, BitTorrent (DHT, PEX, MSE/PE) protocols and Metalink. It can run as a daemon controlled via a built-in JSON-RPC or XML-RPC interface.
 
-	[http://aria2.sourceforge.net/](http://aria2.sourceforge.net/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
+	[https://aria2.github.io/](https://aria2.github.io/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
 *   **btpd** — The BitTorrent Protocol Daemon.
 
@@ -846,6 +850,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 *   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
 
 	[http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
+
+*   **[NeoMutt](/index.php/Mutt#NeoMutt "Mutt")** — Command line mail reader (or MUA). It's a fork of Mutt with added features.
+
+	[https://www.neomutt.org/](https://www.neomutt.org/) || [neomutt](https://www.archlinux.org/packages/?name=neomutt)
 
 *   **[nmh](/index.php/Nmh "Nmh")** — A modular mail handling system.
 
@@ -1493,7 +1501,9 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 #### News aggregators
 
-[RSS](https://en.wikipedia.org/wiki/RSS aggregators. See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wiki/Comparison_of_feed_aggregators "wikipedia:Comparison of feed aggregators").
+[RSS](https://en.wikipedia.org/wiki/RSS aggregators. Some [email clients](#Email_clients) are also able to act as news aggregator: [Claws Mail](https://en.wikipedia.org/wiki/Claws_Mail "wikipedia:Claws Mail") RSSyl plugin, [Evolution](/index.php/Evolution "Evolution") RSS plugin, [SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey"), [Thunderbird](/index.php/Thunderbird "Thunderbird").
+
+See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wiki/Comparison_of_feed_aggregators "wikipedia:Comparison of feed aggregators").
 
 ##### Console
 
@@ -1527,10 +1537,6 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 	[https://alduinapp.github.io/](https://alduinapp.github.io/) || [alduin](https://aur.archlinux.org/packages/alduin/)
 
-*   **[Evolution](/index.php/Evolution "Evolution") RSS** — Plugin for Evolution Mail that enables reading of RSS/RDF/ATOM feeds.
-
-	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://www.archlinux.org/packages/?name=evolution-rss)
-
 *   **FeedReader** — Modern desktop application designed to complement existing web-based RSS accounts.
 
 	[http://jangernert.github.io/FeedReader/](http://jangernert.github.io/FeedReader/) || [feedreader](https://aur.archlinux.org/packages/feedreader/)
@@ -1551,17 +1557,9 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 	[https://github.com/martinrotter/rssguard](https://github.com/martinrotter/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
 
-*   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Email client included in the SeaMonkey suite which also functions as a pretty nice news aggregator.
-
-	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
-
 *   **selfoss** — The new multipurpose RSS reader, live stream, mashup, aggregation web application.
 
 	[https://selfoss.aditu.de/](https://selfoss.aditu.de/) || [selfoss](https://aur.archlinux.org/packages/selfoss/)
-
-*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Email client from Mozilla which also functions as a pretty nice news aggregator.
-
-	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
 *   **Tickr** — GTK-based RSS Reader that displays feeds as a smooth scrolling line on your desktop, as known from TV stations.
 
@@ -1573,11 +1571,15 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 #### Podcast clients
 
+Some media players are also able to act as podcast client: [Amarok](/index.php/Amarok "Amarok"), [Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)"), Cantata, [Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)"), [Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox"), [VLC media player](/index.php/VLC_media_player "VLC media player").
+
+See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_podcatchers "wikipedia:List of podcatchers").
+
 ##### Console
 
-*   **cashget** — Simple, command-line RSS enclosure downloader, primarily intended for automatic, unattended downloading of podcasts.
+*   **castget** — Simple, command-line RSS enclosure downloader, primarily intended for automatic, unattended downloading of podcasts.
 
-	[http://castget.johndal.com/](http://castget.johndal.com/) || [cashget](https://www.archlinux.org/packages/?name=cashget)
+	[http://castget.johndal.com/](http://castget.johndal.com/) || [castget](https://www.archlinux.org/packages/?name=castget)
 
 *   **Greg** — A command-line podcast aggregator.
 
@@ -1593,43 +1595,25 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 	[http://gpodder.org/](http://gpodder.org/) || [gpodder3](https://aur.archlinux.org/packages/gpodder3/)
 
-*   **[Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox")** — Music playback and management application for GNOME with podcast support.
-
-	[https://wiki.gnome.org/Rhythmbox](https://wiki.gnome.org/Rhythmbox) || [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox)
-
-*   **[VLC media player](/index.php/VLC_media_player "VLC media player")** — Middleweight video player with support for podcasts.
-
-	[https://www.videolan.org/vlc/](https://www.videolan.org/vlc/) || [vlc](https://www.archlinux.org/packages/?name=vlc)
-
 *   **Vocal** — Simple Podcast Client for the Modern Desktop (GTK+).
 
 	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://aur.archlinux.org/packages/vocal/)
 
-#### Usenet newsreaders & newsgrabbers
+#### Usenet newsreaders
 
-Some [email clients](#Email_clients) also support NNTP. This section mainly lists NNTP-only client.
+Some [email clients](#Email_clients) are also able to act as Usenet newsreader: [Claws Mail](https://en.wikipedia.org/wiki/Claws_Mail "wikipedia:Claws Mail"), [Evolution](/index.php/Evolution "Evolution"), [NeoMutt](/index.php/Mutt#NeoMutt "Mutt"), [SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey"), [Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed"), [Thunderbird](/index.php/Thunderbird "Thunderbird").
 
 See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Wikipedia:Comparison of Usenet newsreaders](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
-*   **lottanzb** — A *SABnzbd* (Usenet binary downloader) GUI front-end written in PyGTK
+##### Console
 
-	[https://launchpad.net/lottanzb/](https://launchpad.net/lottanzb/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
-
-*   **nn** — Alternative more user-friendly(curses-based) Usenet newsreader for UNIX.
+*   **[nn](https://en.wikipedia.org/wiki/nn_(newsreader) "wikipedia:nn (newsreader)")** — Alternative more user-friendly (curses-based) Usenet newsreader for UNIX.
 
 	[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)
 
-*   **[NZBGet](/index.php/NZBGet "NZBGet")** — Usenet binary downloader for .nzb files with web and CLI interface.
+*   **[slrn](https://en.wikipedia.org/wiki/slrn "wikipedia:slrn")** — Text-based news client.
 
-	[https://nzbget.net/](https://nzbget.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
-
-*   **[pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — A GTK2 Usenet newsreader that's good at both text and binaries.
-
-	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
-
-*   **[SABnzbd](/index.php/SABnzbd "SABnzbd")** — An open-source binary newsreader written in Python.
-
-	[https://sabnzbd.org/](https://sabnzbd.org/) || [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/)
+	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://aur.archlinux.org/packages/slrn/)
 
 *   **[tin](https://en.wikipedia.org/wiki/Tin_(newsreader) "wikipedia:Tin (newsreader)")** — A cross-platform threaded NNTP and spool based UseNet newsreader.
 
@@ -1639,7 +1623,25 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 	[http://trn.sourceforge.net/](http://trn.sourceforge.net/) || [trn](https://aur.archlinux.org/packages/trn/)
 
-*   **xrn** — Usenet newsreader for X Window System.
+##### Graphical
+
+*   **LottaNZB** — A *SABnzbd* (Usenet binary downloader) GUI front-end written in PyGTK
+
+	[https://launchpad.net/lottanzb/](https://launchpad.net/lottanzb/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
+
+*   **[NZBGet](/index.php/NZBGet "NZBGet")** — Usenet binary downloader for .nzb files with web and CLI interface.
+
+	[https://nzbget.net/](https://nzbget.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
+
+*   **[Pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — GTK+ Usenet newsreader that's good at both text and binaries.
+
+	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
+
+*   **[SABnzbd](/index.php/SABnzbd "SABnzbd")** — An open-source binary newsreader webapp written in Python.
+
+	[https://sabnzbd.org/](https://sabnzbd.org/) || [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/)
+
+*   **XRN** — Usenet newsreader for X Window System.
 
 	[http://www.mit.edu/people/jik/software/xrn.html](http://www.mit.edu/people/jik/software/xrn.html) || [xrn](https://aur.archlinux.org/packages/xrn/)
 
@@ -1689,6 +1691,22 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 See also [Wikipedia:List of Twitter services and applications](https://en.wikipedia.org/wiki/List_of_Twitter_services_and_applications "wikipedia:List of Twitter services and applications").
 
+##### Console
+
+*   **oysttyer** — (official fork of ttytter) An interactive console text-based command-line Twitter client written in Perl.
+
+	[https://github.com/oysttyer/oysttyer](https://github.com/oysttyer/oysttyer) || [oysttyer-git](https://aur.archlinux.org/packages/oysttyer-git/)
+
+*   **Rainbowstream** — A powerful and fully-featured console Twitter client written in Python.
+
+	[https://github.com/orakaro/rainbowstream](https://github.com/orakaro/rainbowstream) || [rainbowstream](https://aur.archlinux.org/packages/rainbowstream/)
+
+*   **turses** — Twitter client for the console based off *tyrs* with major improvements.
+
+	[https://github.com/louipc/turses](https://github.com/louipc/turses) || [turses](https://aur.archlinux.org/packages/turses/)
+
+##### Graphical
+
 *   **Birdie** — A beautiful Twitter client for GNU/Linux.
 
 	[http://birdieapp.github.io/](http://birdieapp.github.io/) || [birdie-git](https://aur.archlinux.org/packages/birdie-git/)
@@ -1713,21 +1731,9 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa-git](https://aur.archlinux.org/packages/pumpa-git/)
 
-*   **Rainbowstream** — A powerful and fully-featured console Twitter client written in Python.
-
-	[https://github.com/orakaro/rainbowstream](https://github.com/orakaro/rainbowstream) || [rainbowstream](https://aur.archlinux.org/packages/rainbowstream/)
-
-*   **oysttyer** — (official fork of ttytter) An interactive console text-based command-line Twitter client written in Perl.
-
-	[https://github.com/oysttyer/oysttyer](https://github.com/oysttyer/oysttyer) || [oysttyer-git](https://aur.archlinux.org/packages/oysttyer-git/)
-
 *   **Turpial** — Multi-interface Twitter client written in Python.
 
-	[https://github.com/satanas/Turpial](https://github.com/satanas/Turpial) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)
-
-*   **turses** — Twitter client for the console based off *tyrs* with major improvements.
-
-	[http://turses.rtfd.org/](http://turses.rtfd.org/) || [turses](https://aur.archlinux.org/packages/turses/)
+	[http://turpial.org.ve/](http://turpial.org.ve/) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)
 
 ### Remote desktop
 
@@ -1739,7 +1745,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
 
-*   **GVncViewer** — Simple VNC Client on Gtk-VNC.
+*   **GVncViewer** — Simple VNC Client on Gtk-VNC. Run with `gvncviewer`.
 
 	[https://wiki.gnome.org/Projects/gtk-vnc](https://wiki.gnome.org/Projects/gtk-vnc) || [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc)
 
@@ -1763,7 +1769,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[https://wiki.gnome.org/Apps/Vinagre](https://wiki.gnome.org/Apps/Vinagre) || [vinagre](https://www.archlinux.org/packages/?name=vinagre)
 
-*   **xfreerdp** — FreeRDP X11 client.
+*   **xfreerdp** — FreeRDP X11 client. Run with `xfreerdp`.
 
 	[http://www.freerdp.com/](http://www.freerdp.com/) || [freerdp](https://www.archlinux.org/packages/?name=freerdp)
 

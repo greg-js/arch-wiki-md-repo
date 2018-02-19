@@ -161,7 +161,7 @@ VFAT поддерживает TRIM только с помощью флага м�
 
 Измените значение опции `issue_discards` с 0 на 1 в файле `/etc/lvm/lvm.conf`.
 
-**Примечание:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. lvremove, lvreduce, etc)" (смотрите [lvm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) и/или вписанные комментарии в `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
+**Примечание:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. lvremove, lvreduce, etc)" (смотрите [lvm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) и/или вписанные комментарии в `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
 
 #### Включение TRIM для dm-crypt
 

@@ -12,7 +12,7 @@
 *   [6 Varrendo por vírus](#Varrendo_por_v.C3.ADrus)
 *   [7 Usando o milter](#Usando_o_milter)
 *   [8 OnAccessScan](#OnAccessScan)
-*   [9 Troubleshooting](#Troubleshooting)
+*   [9 Solução de programas](#Solu.C3.A7.C3.A3o_de_programas)
     *   [9.1 Erro: Clamd was NOT notified](#Erro:_Clamd_was_NOT_notified)
     *   [9.2 Erro: No supported database files found](#Erro:_No_supported_database_files_found)
     *   [9.3 Erro: Can't create temporary directory](#Erro:_Can.27t_create_temporary_directory)
@@ -141,7 +141,7 @@ Usar a opção `-l /caminho/para/arquivo` vai imprimir os logs do `clamscan` par
 
 ## Usando o milter
 
-Milter will scan your sendmail server for email containing virus. Copy `/etc/clamav/clamav-milter.conf.sample` to `/etc/clamav/clamav-milter.conf` and adjust it to your needs. For example:
+Milter vai realizar um scan em seu servidor sendmail por e-mail contendo vírus. Copie `/etc/clamav/clamav-milter.conf.sample` para `/etc/clamav/clamav-milter.conf` e ajuste-o às suas necessidades. Por exemplo:
 
  `/etc/clamav/clamav-milter.conf` 
 ```
@@ -157,7 +157,7 @@ LogInfected Basic
 
 ```
 
-Create `/etc/systemd/system/clamav-milter.service`:
+Crie `/etc/systemd/system/clamav-milter.service`:
 
  `/etc/systemd/system/clamav-milter.service` 
 ```
@@ -174,51 +174,51 @@ WantedBy=multi-user.target
 
 ```
 
-Enable and start the service.
+Habilite e inicie o serviço.
 
 ## OnAccessScan
 
-On-access scanning requires the kernel to be compiled with the *fanotify* kernel module (kernel >= 3.8). Check if *fanotify* has been enabled before enabling on-access scanning.
+A varredura no acesso (*on-access scan*) requer que o kernel seja compilado com o módulo kernel *fanotify* (kernel >= 3.8). Verifique se *fanotify* foi ativado antes de ativar a varredura no acesso.
 
 ```
 $ cat /proc/config.gz | gunzip | grep FANOTIFY=y
 
 ```
 
-On-access scanning will scan the file while reading, writing or executing it.
+A varredura no acesso digitalizará o arquivo ao ler, escrever ou executá-lo.
 
-First, edit the `/etc/clamav/clamd.conf` configuration file by adding the following to the end of the file (you can also change the individual options):
+Primeiro, edite o arquivo de configuração `/etc/clamav/clamd.conf`, adicionando o seguinte ao final do arquivo (você também pode alterar as opções individuais):
 
  `/etc/clamav/clamd.conf` 
 ```
-# Enables on-access scan, requires clamd service running
+# Ativa varredura no acesso, exige que o serviço clamd esteja em execução
 ScanOnAccess true
 
-# Set the mount point where to recursively perform the scan,
-# this could be every path or multiple path (one line for path)
+# Define o ponto de montagem onde deve-se realizar recursivamente a varredura,
+# isso poderia ser todo caminho ou vários caminho (uma linha por caminho)
 OnAccessMountPath /usr
 OnAccessMountPath /home/
 OnAccessExcludePath /var/log/
 
-# Flag fanotify to block any events on monitored files to perform the scan
+# Sinaliza fanotify para bloquear quaisquer eventos em arquivos monitorados para realizar a varredura
 OnAccessPrevention false
 
-# Perform scans on newly created, moved, or renamed files
+# Realiza a varredura em arquivos recém-criados, movidos ou renomeados
 OnAccessExtraScanning true
 
-# Check the UID from the event of fanotify
+# Verifica o UID do evento do fanotify
 OnAccessExcludeUID 0
 
-# Specify an action to perform when clamav detects a malicious file
-# it is possible to specify an inline command too
+# Especifica uma ação para realizar quando o clamav detecta um arquivo malicioso
+# é possível especificar um comando em linha também
 VirusEvent /etc/clamav/detected.zsh
 
-# WARNING: clamd should run as root
+# AVISO: clamd deve ser executado como root
 User root
 
 ```
 
-Next, create the file `/etc/clamav/detected.zsh` and add the following. This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
+Em seguida, crie o arquivo `/etc/clamav/detected.zsh` e adicione o conteúdo a seguir. Isso permite que você altere/especifique a mensagem de depuração quando um vírus tiver sido detectado pelo dispositivo de varredura no acesso do clamd:
 
  `/etc/clamav/detected.sh` 
 ```
@@ -227,15 +227,15 @@ PATH=/usr/bin
 
 alert="Signature detected: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
 
-# Send the alert to systemd logger if exist, othewise to /var/log
+# Envia o alerta para o systemd logger se existir, do contrário para /var/log
 if [[ -z $(command -v systemd-cat) ]]; then
 	echo "$(date) - $alert" >> /var/log/clamav/infected.log
 else
-	# as "emerg", this could cause your DE to show a visual alert. Happen in Plasma. but the next visual alert is much nicer
+	# como "emerg", isso poderia fazer com que seu DE mostre um alerta virtual. Acontece no plasma, mas o próximo alerta visual é muito melhor
 	echo "$alert" | /usr/bin/systemd-cat -t clamav -p emerg
 fi
 
-#send an alrt to all graphical user
+# Envia um alerta para todos os usuários gráficos
 XUSERS=($(who|awk '{print $1$NF}'|sort -u))
 
 for XUSER in $XUSERS; do
@@ -251,22 +251,22 @@ done
 
 ```
 
-If you are using [AppArmor](/index.php/AppArmor "AppArmor"), it is also necessary to allow clamd to run as root:
+Se você está usando [AppArmor](/index.php/AppArmor "AppArmor"), também é necessário permitir que o clamd execute como root:
 
 ```
 # aa-complain clamd
 
 ```
 
-Restart/start the service with `systemctl restart clamd.service`.
+Reinicie/inicie o serviço com `systemctl restart clamd.service`.
 
-Source: [http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html](http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html)
+Fonte: [http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html](http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html)
 
-## Troubleshooting
+## Solução de programas
 
 ### Erro: Clamd was NOT notified
 
-If you get the following messages after running freshclam:
+Se você receber as seguintes mensagens após executar freshclam:
 
 ```
 WARNING: Clamd was NOT notified: Cannot connect to clamd through 
@@ -274,7 +274,7 @@ WARNING: Clamd was NOT notified: Cannot connect to clamd through
 
 ```
 
-Add a sock file for ClamAV:
+Adicione um arquivo sock ao ClamAV:
 
 ```
 # touch /var/lib/clamav/clamd.sock
@@ -282,18 +282,18 @@ Add a sock file for ClamAV:
 
 ```
 
-Then, edit `/etc/clamav/clamd.conf` - uncomment this line:
+Então, edite `/etc/clamav/clamd.conf` - descomente essa linha:
 
 ```
 LocalSocket /var/lib/clamav/clamd.sock
 
 ```
 
-Save the file and [restart the daemon](/index.php/Daemons "Daemons") with `systemctl restart clamd.service`.
+Salve o arquivo e [reinicie o daemon](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)") com `systemctl restart clamd.service`.
 
 ### Erro: No supported database files found
 
-If you get the next error when starting the daemon:
+Se você receber o erro abaixo quando iniciar o daemon:
 
 ```
 LibClamAV Error: cli_loaddb(): No supported database files found
@@ -301,20 +301,22 @@ in /var/lib/clamav ERROR: Not supported data format
 
 ```
 
-This happens because of mismatch between `/etc/freshclam.conf` setting `DatabaseDirectory` and `/etc/clamd.conf` setting `DatabaseDirectory`. `/etc/freshclam.conf` pointing to `/var/lib/clamav`, but `/etc/clamd.conf` (default directory) pointing to `/usr/share/clamav`, or other directory. Edit in `/etc/clamd.conf` and replace with the same DatabaseDirectory like in `/etc/freshclam.conf`. After that clamav will start up succesfully.
+Isso acontece por causa de incompatibilidade entre a configuração `DatabaseDirectory` do `/etc/freshclam.conf` e `DatabaseDirectory` do `/etc/clamd.conf`. `/etc/freshclam.conf` apontando para `/var/lib/clamav`, mas `/etc/clamd.conf` (diretório padrão) apontando para `/usr/share/clamav`, ou outro diretório. Edite `/etc/clamd.conf` e substituta com o mesmo DatabaseDirectory como no `/etc/freshclam.conf`. Após isso, clamav vai iniciar com sucesso.
 
 ### Erro: Can't create temporary directory
 
-If you get the following error, along with a 'HINT' containing a UID and a GID number:
+Se você obtiver o erro a seguir, junto com um 'HINT' contendo um número de UID e um de GID:
 
 ```
 # can't create temporary directory
 
 ```
 
-Correct permissions:
+Corrija as permissões:
 
 ```
-# chown UID:GID /var/lib/clamav & chmod 755 /var/lib/clamav
+# chown *UID*:*GID* /var/lib/clamav & chmod 755 /var/lib/clamav
 
 ```
+
+sendo *UID* e *GID* o informado na dica acima

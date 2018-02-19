@@ -28,8 +28,9 @@ Related articles
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Error /net/connman/technology/wifi: Not supported](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_Not_supported)
     *   [4.2 Error /net/connman/technology/wifi: No carrier](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_No_carrier)
-    *   [4.3 Error Failed to set hostname/domainname](#Error_Failed_to_set_hostname.2Fdomainname)
-    *   [4.4 Unknown route on connection](#Unknown_route_on_connection)
+    *   [4.3 "Not registered", or "Method "Connect" with signature ... doesn't exist"](#.22Not_registered.22.2C_or_.22Method_.22Connect.22_with_signature_..._doesn.27t_exist.22)
+    *   [4.4 Error Failed to set hostname/domainname](#Error_Failed_to_set_hostname.2Fdomainname)
+    *   [4.5 Unknown route on connection](#Unknown_route_on_connection)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -360,6 +361,28 @@ $ connmanctl enable wifi
 If wireless scanning leads to above error, this may be due to an unresolved bug.[[3]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
 
 This may also simply be caused by the wireless interface being blocked by [rfkill](/index.php/Rfkill "Rfkill"), which can occur after restarting wpa_supplicant. Use `rfkill list` to check.
+
+### "Not registered", or "Method "Connect" with signature ... doesn't exist"
+
+When issuing commands, you may see errors like the following:
+
+From a `connmanctl` prompt:
+
+```
+connmanctl> connect <service_id>
+Error /net/connman/service/<SSID>: Method "Connect" with signature "" on interface "net.connman.Service" doesn't exist
+
+```
+
+From the shell:
+
+```
+# connmanctl connect <service_id>
+Error /net/connman/service/<service_id>: Not registered
+
+```
+
+These errors are produced because the agent is not running. Start the agent from a `connmanctl` prompt with `agent on`, and try again.
 
 ### Error Failed to set hostname/domainname
 

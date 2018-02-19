@@ -39,7 +39,7 @@ You also should set up the following files correctly.
 
 You need to tell hadoop your JAVA_HOME in `/etc/hadoop/hadoop-env.sh` because it doesn't assume the location where it's installed to in Arch Linux by itself:
 
- `/etc/hadoop/hadoop-env.sh`  `export JAVA_HOME=/usr/lib/jvm/java-7-openjdk/` 
+ `/etc/hadoop/hadoop-env.sh`  `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/` 
 
 ## Single Node Setup
 
@@ -55,7 +55,7 @@ The following example copies the unpacked conf directory to use as input and the
 $ HADOOP_CONF_DIR=/usr/lib/hadoop/orig_etc/hadoop/
 $ mkdir input
 $ cp /etc/hadoop/*.xml input
-$ hadoop jar /usr/lib/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar grep input output 'dfs[a-z.]+'
+$ hadoop jar /usr/lib/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0.jar grep input output 'dfs[a-z.]+'
 $ cat output/*
 
 ```

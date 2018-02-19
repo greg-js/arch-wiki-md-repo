@@ -92,21 +92,33 @@ Adjust the options in *hostapd* configuration file if necessary. Especially, cha
 interface=wlan0_ap
 bridge=br0
 
-ssid=YourWiFiName     # SSID to be used in IEEE 802.11 management frames
-driver=nl80211        # Driver interface type (hostap/wired/none/nl80211/bsd)
-country_code=US       # Country code (ISO/IEC 3166-1)
+# SSID to be used in IEEE 802.11 management frames
+ssid=YourWiFiName
+# Driver interface type (hostap/wired/none/nl80211/bsd)
+driver=nl80211
+# Country code (ISO/IEC 3166-1)
+country_code=US
 
-hw_mode=g             # Operation mode (a = IEEE 802.11a (5 GHz), b = IEEE 802.11b (2.4 GHz)
-channel=7             # Channel number
-max_num_sta=5         # Maximum number of stations allowed
+# Operation mode (a = IEEE 802.11a (5 GHz), b = IEEE 802.11b (2.4 GHz)
+hw_mode=g
+# Channel number
+channel=7
+# Maximum number of stations allowed
+max_num_sta=5
 
-wpa=2                 # Bit field: bit0 = WPA, bit1 = WPA2
-auth_algs=1           # Bit field: 1=wpa, 2=wep, 3=both
-rsn_pairwise=CCMP     # Set of accepted cipher suites
-wpa_key_mgmt=WPA-PSK  # Set of accepted key management algorithms
+# Bit field: bit0 = WPA, bit1 = WPA2
+wpa=2
+# Bit field: 1=wpa, 2=wep, 3=both
+auth_algs=1
+
+# Set of accepted cipher suites
+rsn_pairwise=CCMP
+# Set of accepted key management algorithms
+wpa_key_mgmt=WPA-PSK
 wpa_passphrase=Somepassphrase
 
-logger_stdout=-1      # hostapd event logger configuration
+# hostapd event logger configuration
+logger_stdout=-1
 logger_stdout_level=2
 
 ```

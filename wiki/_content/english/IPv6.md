@@ -187,7 +187,7 @@ IPv6.privacy=preferred
 
 ## Static address
 
-Sometime using static address can improve security. For example, if your local router uses Neighbor Discovery or radvd ([RFC 2461](http://www.apps.ietf.org/rfc/rfc2461.html)), your interface will automatically be assigned an address based its MAC address (using IPv6's Stateless Autoconfiguration). This may be less than ideal for security since it allows a system to be tracked even if the network portion of the IP address changes.
+Sometimes, using a static address can improve security. For example, if your local router uses Neighbor Discovery or radvd ([RFC 2461](http://www.apps.ietf.org/rfc/rfc2461.html)), your interface will automatically be assigned an address based on its MAC address (using IPv6's Stateless Autoconfiguration). This may be less than ideal for security since it allows a system to be tracked even if the network portion of the IP address changes.
 
 To assign a static IP address using [netctl](/index.php/Netctl "Netctl"), look at the example profile in `/etc/netctl/examples/ethernet-static`. The following lines are important:
 
@@ -201,12 +201,12 @@ Gateway6='1234:0:123::abcd'
 
 ```
 
-**Note:** If you are connected IPv6-only, than you need to determine ipv6 dns server. For example
+**Note:** If you are connected IPv6-only, then you need to determine your IPv6 DNS server. For example:
 ```
 DNS=('6666:6666::1' '6666:6666::2')
 
 ```
-If your provider did not give you ipv6 dns and you are not running your own, you can choose from [resolv.conf](/index.php/Resolv.conf "Resolv.conf") article.
+If your provider did not give you IPv6 DNS and you are not running your own, you can choose from the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") article.
 
 ## IPv6 and PPPoE
 

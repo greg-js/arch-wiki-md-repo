@@ -24,7 +24,7 @@ From [gitfs](https://www.presslabs.com/gitfs/docs/):
 gitfs enables to mount a remote git repository as a [FUSE](/index.php/Fuse "Fuse") filesystem, for example:
 
 ```
-$ gitfs http://your.repository.org/repository.git */mount/directory*
+$ gitfs http://example.com/repository.git */mount/directory*
 
 ```
 

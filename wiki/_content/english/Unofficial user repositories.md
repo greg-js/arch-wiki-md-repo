@@ -361,13 +361,13 @@ Server = https://pkgbuild.com/~bgyorgy/$repo/os/$arch
 
 *   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
 *   **Description:** AUR packages with random software. Supporting package deltas and package and database signing.
-*   **Upstream page:** [https://www.coderkun.de/arch](https://www.coderkun.de/arch)
-*   **Key-ID:** A6BEE374
-*   **Keyfile:** [https://www.coderkun.de/coderkun.asc](https://www.coderkun.de/coderkun.asc)
+*   **Upstream page:** [https://www.suruatoel.xyz/arch](https://www.suruatoel.xyz/arch)
+*   **Key-ID:** 39E27199A6BEE374
+*   **Keyfile:** [https://www.suruatoel.xyz/coderkun.asc](https://www.suruatoel.xyz/coderkun.asc)
 
 ```
 [coderkun-aur]
-Server = http://arch.coderkun.de/$repo/$arch/
+Server = http://arch.suruatoel.xyz/$repo/$arch/
 
 ```
 
@@ -375,13 +375,13 @@ Server = http://arch.coderkun.de/$repo/$arch/
 
 *   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
 *   **Description:** AUR packages with audio-related (realtime kernels, lv2-plugins, …) software. Supporting package deltas and package and database signing.
-*   **Upstream page:** [https://www.coderkun.de/arch](https://www.coderkun.de/arch)
-*   **Key-ID:** A6BEE374
-*   **Keyfile:** [https://www.coderkun.de/coderkun.key](https://www.coderkun.de/coderkun.key)
+*   **Upstream page:** [https://www.suruatoel.xyz/arch](https://www.suruatoel.xyz/arch)
+*   **Key-ID:** 39E27199A6BEE374
+*   **Keyfile:** [https://www.suruatoel.xyz/coderkun.key](https://www.suruatoel.xyz/coderkun.key)
 
 ```
 [coderkun-aur-audio]
-Server = http://arch.coderkun.de/$repo/$arch/
+Server = http://arch.suruatoel.xyz/$repo/$arch/
 
 ```
 

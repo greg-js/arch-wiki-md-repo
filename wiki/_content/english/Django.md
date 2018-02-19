@@ -16,7 +16,10 @@ Two packages of Django are currently available in the [official repositories](/i
 
 ### Database driver
 
-If you intend to use a [MySQL](/index.php/MySQL "MySQL")/MariaDB database as backend, also install the [python-mysqlclient](https://aur.archlinux.org/packages/python-mysqlclient/) package.
+There are different DB backends available for Django:
+
+*   For a [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") backend install [python-psycopg2](https://www.archlinux.org/packages/?name=python-psycopg2) package,
+*   If you intend to use a [MySQL](/index.php/MySQL "MySQL")/MariaDB database as backend, install the [python-mysqlclient](https://aur.archlinux.org/packages/python-mysqlclient/) package.
 
 ## Usage
 
