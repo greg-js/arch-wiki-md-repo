@@ -294,7 +294,7 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 #### Notes & Troubleshooting
 
-*   **ADB** can also be installed via [platform tools](#Android_SDK_platform_API)(usually available in `/opt/android-sdk/platform-tools/`), so it might not be necessary to install [android-tools](https://www.archlinux.org/packages/?name=android-tools) (available in `/usr/bin/`).
+*   **ADB** can also be installed via [platform tools](#Android_SDK_platform_API) (usually available in `/opt/android-sdk/platform-tools/`), so it might not be necessary to install [android-tools](https://www.archlinux.org/packages/?name=android-tools) (available in `/usr/bin/`).
 
 *   If you are getting an empty list (your device is not there), it may be because you have not enabled USB debugging on your device. You can do that by going to *Settings > Applications > Development* and enabling USB debugging. On Android 4.2 (Jelly Bean) the Development menu is hidden; to enable it go to *Settings > About phone* and tap Build number 7 times.
 
@@ -306,7 +306,7 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 ```
 
-*   On moto e it could happen to have a different vendor/product id while you are on sideload or fastboot, verify again lsusb if you get no permission.
+*   On Moto E, the device could have a different vendor/product ID in the sideload and fastboot modes; if you get the "no permission" error, verify the device's ID with `lsusb`.
 
 ### NVIDIA Tegra platform
 
@@ -449,10 +449,10 @@ The build takes a very long time.
 
 **Note:**
 
-*   Make sure you have enough RAM. Android will use the /tmp directory heavily. By default the size of the partition the /tmp folder is mounted on is half the size of your RAM. If it fills up, the build will fail. 4GB of RAM or more is recommended. Alternatively, you can get rid of the tmpfs from [fstab](/index.php/Fstab "Fstab") all together.
+*   Make sure you have enough RAM. Android will use the `/tmp` directory heavily. By default the size of the partition the `/tmp` folder is mounted on is half the size of your RAM. If it fills up, the build will fail. 4GB of RAM or more is recommended. Alternatively, you can get rid of the tmpfs from [fstab](/index.php/Fstab "Fstab") all together.
 *   From the [Android Building and Running guide](https://source.android.com/source/building#build-the-code):
 
-"GNU make can handle parallel tasks with a -jN argument, and it's common to use a number of tasks N that's between 1 and 2 times the number of hardware threads on the computer being used for the build. E.g. on a dual-E5520 machine (2 CPUs, 4 cores per CPU, 2 threads per core), the fastest builds are made with commands between make -j16 and make -j32."
+"GNU make can handle parallel tasks with a `-jN` argument, and it's common to use a number of tasks N that's between 1 and 2 times the number of hardware threads on the computer being used for the build. E.g. on a dual-E5520 machine (2 CPUs, 4 cores per CPU, 2 threads per core), the fastest builds are made with commands between `make -j16` and `make -j32`."
 
 ### Testing the build
 
@@ -624,7 +624,7 @@ QObject::~QObject: Timers cannot be stopped from another thread
 
 ```
 
-You can try to install glxinfo (Its [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)) but if your computer has enough power you could simply use software to render graphics. To do so, go to *Tools > Android > AVD Manager*, edit the *AVD* (click the pencil icon), then select *Software - GLES 2.0* for *Emulated Performance > Graphics*.
+You can try to install glxinfo ([mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)) but if your computer has enough power you could simply use software to render graphics. To do so, go to *Tools > Android > AVD Manager*, edit the *AVD* (click the pencil icon), then select *Software - GLES 2.0* for *Emulated Performance > Graphics*.
 
 ### Android Emulator: no keyboard input in xfwm4
 

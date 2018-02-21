@@ -24,11 +24,10 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
     *   [4.3 Passing aliases](#Passing_aliases)
     *   [4.4 Root password](#Root_password)
     *   [4.5 Disable root login](#Disable_root_login)
-    *   [4.6 Disable sudo password at console](#Disable_sudo_password_at_console)
-    *   [4.7 gksu](#gksu)
-    *   [4.8 kdesu](#kdesu)
-    *   [4.9 Harden with Sudo Example](#Harden_with_Sudo_Example)
-    *   [4.10 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_.2Fetc.2Fsudoers.d)
+        *   [4.5.1 gksu](#gksu)
+        *   [4.5.2 kdesu](#kdesu)
+    *   [4.6 Harden with Sudo Example](#Harden_with_Sudo_Example)
+    *   [4.7 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_.2Fetc.2Fsudoers.d)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSH TTY Problems](#SSH_TTY_Problems)
     *   [5.2 Permissive umask](#Permissive_umask)
@@ -121,6 +120,8 @@ To allow members of group `wheel` sudo access:
 
 To disable asking for a password for user `USER_NAME`:
 
+**Warning:** This will let any process running with your user name to use sudo without asking for permission.
+
 ```
 Defaults:USER_NAME      !authenticate
 
@@ -133,7 +134,7 @@ USER_NAME HOST_NAME=/usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/pac
 
 ```
 
-**Note:** the most customized option should go at the end of the file, as the later lines overrides the previous ones. In particular such a line should be after the `%wheel` line if your user is in this group.
+**Note:** The most customized option should go at the end of the file, as the later lines overrides the previous ones. In particular such a line should be after the `%wheel` line if your user is in this group.
 
 Enable explicitly defined commands only for user `USER_NAME` on host `HOST_NAME` without password:
 
@@ -250,16 +251,7 @@ $ sudo passwd root
 
 **Tip:** To get to an interactive root prompt, even after disabling the *root* account, use `sudo -i`.
 
-### Disable sudo password at console
-
-If nobody but you has physical access to the console, you may not want to bother with requiring the sudo password there. Adding this line to /etc/pam.d/sudo will make the server not prompt you for a sudo password at console (while still requiring it for SSH/remote sessions):
-
-```
-auth	sufficient	pam_succeed_if.so	tty = /dev/tty1
-
-```
-
-### gksu
+#### gksu
 
 **Warning:** *gksu* has been deprecated since 2011[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014.
 
@@ -270,7 +262,7 @@ $ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
 
 ```
 
-### kdesu
+#### kdesu
 
 kdesu may be used under KDE to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.config/kdesurc` (or `~/.kde4/share/config/kdesurc` for the kde4 version of kdesu):
 
@@ -413,7 +405,7 @@ The files in `/etc/sudoers.d/` directory are parsed in lexicographical order, fi
 
 ### SSH TTY Problems
 
-SSH does not allocate a tty by default when running a remote command. Without a tty, sudo cannot disable echo when prompting for a password. You can use ssh's `-tt` option to force it to allocate a tty (or `-t` twice).
+SSH does not allocate a tty by default when running a remote command. Without a tty, sudo cannot disable echo when prompting for a password. You can use ssh's `-t` option to force it to allocate a tty (.
 
 The `Defaults` option `requiretty` only allows the user to run sudo if they have a tty.
 

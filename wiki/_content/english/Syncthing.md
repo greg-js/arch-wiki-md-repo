@@ -169,7 +169,7 @@ ExecStart=/bin/bash -c 'set -o pipefail; /usr/bin/syncthing -no-browser -no-rest
 
 ### Run in VirtualBox
 
-It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine (VM) while keeping its network adapter in the [standard NAT](https://www.virtualbox.org/manual/ch06.html#network_nat) mode (as opposed to [bridged networking](https://www.virtualbox.org/manual/ch06.html#network_bridged) attached to the host computer's adapter).
+It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine (*VM*) while keeping its network adapter in the [standard NAT](https://www.virtualbox.org/manual/ch06.html#network_nat) mode (as opposed to [bridged networking](https://www.virtualbox.org/manual/ch06.html#network_bridged) attached to the host computer's adapter).
 
 To enable this mode, Syncthing should listen to a port in the VM different from the listening port already used by the host. For example, if the default 22000 port is used by the host, one could use 22001 in the VM. The listening port in the VM can be changed through Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the GUI *Settings*.
 

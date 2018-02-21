@@ -39,9 +39,9 @@ From Wikipedia:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [sddm](https://www.archlinux.org/packages/?name=sddm) package.
+[Install](/index.php/Install "Install") the [sddm](https://www.archlinux.org/packages/?name=sddm) package. Optionally install [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) for the KDE Config Module.
 
-Then follow [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager") to start SDDM at boot.
+Follow [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager") to start SDDM at boot.
 
 ## Configuration
 

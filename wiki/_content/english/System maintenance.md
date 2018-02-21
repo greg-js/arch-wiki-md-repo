@@ -22,6 +22,7 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [3.4 Act on alerts during an upgrade](#Act_on_alerts_during_an_upgrade)
     *   [3.5 Deal promptly with new configuration files](#Deal_promptly_with_new_configuration_files)
     *   [3.6 Revert broken updates](#Revert_broken_updates)
+    *   [3.7 Check for orphans and dropped packages](#Check_for_orphans_and_dropped_packages)
 *   [4 Use the package manager to install software](#Use_the_package_manager_to_install_software)
     *   [4.1 Choose open-source drivers](#Choose_open-source_drivers)
     *   [4.2 Be careful with unofficial packages](#Be_careful_with_unofficial_packages)
@@ -143,6 +144,14 @@ If a package update is expected/known to cause problems, packagers will ensure t
 **Tip:** You can use a log viewer such as [wat-git](https://aur.archlinux.org/packages/wat-git/) to search the pacman logs.
 
 At this point, only after ensuring there is no information available through pacman, there is no relative news on [https://www.archlinux.org/](https://www.archlinux.org/), and there are no forum posts regarding the update, consider seeking help on the [forum](https://bbs.archlinux.org), over [IRC](/index.php/IRC "IRC"), or by [downgrading](/index.php/Downgrading "Downgrading") the offending package.
+
+### Check for orphans and dropped packages
+
+After upgrading you may now have packages that are no longer needed or that are no longer in the official repositories.
+
+Use `pacman -Qtd` to check for packages that were installed as a dependency but now, no other packages depend on them. If an orphaned package is still needed, it is recommended to change the [installation reason](/index.php/Pacman#Installation_reason "Pacman") to explicit. Otherwise, if the package is no longer needed, it can be removed.
+
+Additionally, some packages may no longer be in the remote repositories, but they still may be on your local system. To list all foreign packages use `pacman -Qm`. Note that this list will include packages that have been installed manually (e.g., from the [AUR](/index.php/AUR "AUR")).
 
 ## Use the package manager to install software
 

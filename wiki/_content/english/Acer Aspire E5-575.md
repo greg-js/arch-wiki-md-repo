@@ -1,19 +1,21 @@
 ## Contents
 
-*   [1 Booting and startup](#Booting_and_startup)
-    *   [1.1 Booting from Arch Linux ISO](#Booting_from_Arch_Linux_ISO)
-    *   [1.2 Add entries to UEFI menu](#Add_entries_to_UEFI_menu)
-    *   [1.3 Use Secure Boot with trusted EFI executables](#Use_Secure_Boot_with_trusted_EFI_executables)
+*   [1 Booting from Arch Linux ISO](#Booting_from_Arch_Linux_ISO)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Function keys](#Function_keys)
-*   [3 Trusted Platform Module](#Trusted_Platform_Module)
-*   [4 Hardware identification](#Hardware_identification)
+    *   [2.1 Add entries to UEFI menu](#Add_entries_to_UEFI_menu)
+    *   [2.2 Use Secure Boot with trusted EFI executables](#Use_Secure_Boot_with_trusted_EFI_executables)
+    *   [2.3 Function keys](#Function_keys)
+*   [3 Hardware identification](#Hardware_identification)
+*   [4 Known issues](#Known_issues)
+    *   [4.1 Trusted Platform Module](#Trusted_Platform_Module)
+    *   [4.2 i915 errors in journal](#i915_errors_in_journal)
+    *   [4.3 Not a Dell system error](#Not_a_Dell_system_error)
 
-## Booting and startup
-
-### Booting from Arch Linux ISO
+## Booting from Arch Linux ISO
 
 In order to boot from the Arch Linux ISO, hit `F2` to enter UEFI settings (InsydeH20 settings v5.0). Then set the supervisor password. From there you can disable Secure Boot and boot from any media.
+
+## Configuration
 
 ### Add entries to UEFI menu
 
@@ -24,8 +26,6 @@ In order to boot from the Arch Linux ISO, hit `F2` to enter UEFI settings (Insyd
 You can use Secure Boot and mark EFI executables as trusted through the UEFI settings. The executables must end with `.efi`. For example, if you use [EFISTUB](/index.php/EFISTUB "EFISTUB") to boot the Linux kernel directly, you must copy `vmlinuz-linux` to `vmlinuz-linux.efi` and then mark that file as trusted in the UEFI settings. Whenever the executable is updated, it must be removed from the trusted list and then re-added as trusted in the UEFI settings. It is only possible to remove all trusted entries at once, not individually.
 
 See [Secure Boot](/index.php/Secure_Boot "Secure Boot") for other options.
-
-## Configuration
 
 ### Function keys
 
@@ -49,18 +49,6 @@ Other function keys are exposed as media keys and can be added as [keyboard shor
 | `Page Up` | `XF86AudioStop` |
 | `Page Down` | `XF86AudioPrev` |
 | `End` | `XF86AudioNext` |
-
-## Trusted Platform Module
-
-You may have the following entries in your systemd journal.
-
-```
-Feb 17 09:58:29 kernel: platform MSFT0101:00: failed to claim resource 1: [mem 0xfed40000-0xfed40fff]
-Feb 17 09:58:29 kernel: acpi MSFT0101:00: platform device creation failed: -16
-
-```
-
-These are related to the Trusted Platform Module (TPM), which can be safely disabled in the UEFI settings if you do not use TPM.
 
 ## Hardware identification
 
@@ -119,3 +107,41 @@ L3 cache:            3072K
 NUMA node0 CPU(s):   0-3
 Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp
 ```
+
+## Known issues
+
+### Trusted Platform Module
+
+You may have the following entries in your systemd journal.
+
+```
+Feb 17 09:58:29 kernel: platform MSFT0101:00: failed to claim resource 1: [mem 0xfed40000-0xfed40fff]
+Feb 17 09:58:29 kernel: acpi MSFT0101:00: platform device creation failed: -16
+
+```
+
+These are related to the Trusted Platform Module (TPM), which can be safely disabled in the UEFI settings if you do not use TPM.
+
+### i915 errors in journal
+
+You may have the following error message in your journal:
+
+```
+Failed to release pages: bind_count=1, pages_pin_count=1, pin_global=0
+
+```
+
+This is usually followed by further error messages. Removing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) will remove the error since it is related to the [Intel](/index.php/Intel "Intel") driver.
+
+See [the upstream bug](https://bugs.freedesktop.org/show_bug.cgi?id=104512) for more information.
+
+### Not a Dell system error
+
+You may get the following error in your journal:
+
+```
+dell_smbios: Unable to run on non-Dell system
+
+```
+
+To remove this error, blacklist the `dell_laptop` kernel module.

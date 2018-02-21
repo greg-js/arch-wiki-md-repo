@@ -23,7 +23,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [3.2 T470 model 20JN](#T470_model_20JN)
         *   [3.2.1 lspci](#lspci_2)
         *   [3.2.2 lsusb](#lsusb_2)
-    *   [3.3 T470 model 20HD,20HE](#T470_model_20HD.2C20HE)
+    *   [3.3 T470 model 20HD,20HE(Campus model)](#T470_model_20HD.2C20HE.28Campus_model.29)
         *   [3.3.1 lspci](#lspci_3)
         *   [3.3.2 lsusb](#lsusb_3)
 *   [4 See also](#See_also)
@@ -142,7 +142,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
-### T470 model 20HD,20HE
+### T470 model 20HD,20HE(Campus model)
 
 #### lspci
 
@@ -172,6 +172,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 Bus 002 Device 003: ID 0bda:0316 Realtek Semiconductor Corp. 
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 005: ID 138a:0097 Validity Sensors, Inc. 
 Bus 001 Device 003: ID 5986:111c Acer, Inc 
 Bus 001 Device 002: ID 8087:0a2b Intel Corp. 
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

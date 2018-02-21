@@ -71,7 +71,7 @@ UEFI does not launch any boot code in the MBR whether it exists or not. Instead 
 
 If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot process will verify authenticity of the EFI binary by signature.
 
-**Note:** On some (poorly-designed) UEFI systems the only way to boot is using a disk boot entry with the fallback UEFI application path.
+**Nota:** On some (poorly-designed) UEFI systems the only way to boot is using a disk boot entry with the fallback UEFI application path.
 
 ### Multiboot no UEFI
 

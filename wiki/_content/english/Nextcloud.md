@@ -28,6 +28,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
             *   [3.4.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
 *   [4 Initialize](#Initialize)
     *   [4.1 Create storage directories](#Create_storage_directories)
+    *   [4.2 Optimize your instance](#Optimize_your_instance)
 *   [5 Security Hardening](#Security_Hardening)
     *   [5.1 Let's Encrypt](#Let.27s_Encrypt)
         *   [5.1.1 nginx](#nginx_2)
@@ -240,7 +241,7 @@ Uncomment `env[PATH] = /usr/local/bin:/usr/bin:/bin` in `/etc/php/php-fpm.d/www.
 
 ## Initialize
 
-Open the address where you have installed Nextcloud in a web browser (e.g., [https://www.examples.com/nextcloud](https://www.examples.com/nextcloud)).
+Open the address where you have installed Nextcloud in a web browser (e.g., [https://www.example.com/nextcloud](https://www.example.com/nextcloud)).
 
 ### Create storage directories
 
@@ -283,6 +284,69 @@ Next edit the configuration file at `/etc/webapps/nextcloud/config/config.php` a
 Refresh the page and the error should be gone.
 
 From there follow the instructions in adding an administrator account as well as selecting the database you created earlier.
+
+### Optimize your instance
+
+By now you should have a working Nextcloud instance, but if you navigate to your instance settings (e.g, [https://cloud.example.com/settings/admin](https://cloud.example.com/settings/admin)), you will see that a lot of errors and notices are given. This section should fix all of them on a default install.
+
+To get rid of OPcache warnings, uncomment/edit the following extension and lines in /etc/php/php.ini [as per Nextcloud documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-opcache):
+
+```
+ zend_extension=opcache.so
+ opcache.enable=1
+ opcache.enable_cli=1
+ opcache.interned_strings_buffer=8
+ opcache.max_accelerated_files=10000
+ opcache.memory_consumption=128
+ opcache.save_comments=1
+ opcache.revalidate_freq=1
+
+```
+
+To get rid of memory cache warnings, you need to implement a memory cache - [this example will use Redis as per documentation](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/caching_configuration.html#id3):
+
+Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis.so`. Then in `config.php` add the following changes(with your own secure password):
+
+```
+ 'memcache.local' => '\OC\Memcache\Redis',
+ 'redis' => array(
+      'host' => '/run/redis/redis.sock',
+      'port' => 0,
+      'dbindex' => 0,
+      'password' => 'supersecretpassword',
+      'timeout' => 1.5,
+       ),
+ 'memcache.locking' => '\OC\Memcache\Redis',
+
+```
+
+Add group redis to your webserver user
+
+```
+ # usermod -a -G redis http 
+
+```
+
+And edit the redis config file /etc/redis.conf
+
+```
+ port 0
+ unixsocket /run/redis/redis.sock
+ unixsocketperm 770
+ requirepass supersecretpassword
+
+```
+
+and finally [start/enable](/index.php/Start/enable "Start/enable") `redis.service`, and restart `php-fpm.service` if you use nginx.
+
+To get rid of HSTS warnings, [follow the documentation](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html#enable-http-strict-transport-security) (for nginx the config is already there just commented out). Make absolutely sure you understand the ramifications of HSTS before implementing it.
+
+To get rid of warnings about environment variables, uncomment the following line in /etc/php/php-fpm.d/www.conf [as per Nextcloud documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-fpm):
+
+```
+ env[PATH] = /usr/local/bin:/usr/bin:/bin
+
+```
 
 ## Security Hardening
 

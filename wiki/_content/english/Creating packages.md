@@ -91,9 +91,9 @@ This is a good time to make sure the program is working correctly.
 
 ## Creating a PKGBUILD
 
-When you run `makepkg`, it will look for a `PKGBUILD` file in the present working directory. If a `PKGBUILD` file is found it will download the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file that can be installed with `pacman -U *<package file>*`.
+When `makepkg` is run, it looks for a `PKGBUILD` file in the present working directory. If it finds one, it downloads the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file. The newly created package can be installed by simply using `makepkg --install` which will call pacman in the background, or by directly using `pacman -U *pkgname.pkg.tar.xz*`.
 
-To begin with a new package, you should first create an empty working directory, change into that directory, and create a `PKGBUILD` file. You can either copy the prototype PKGBUILD from the `/usr/share/pacman/` directory to your working directory or copy a `PKGBUILD` from a similar package. The latter may be useful if you only need to change a few options.
+To start building a new package, first create a new directory for the package and change current directory into this one. Then, a `PKGBUILD` file needs to be created: a prototype PKGBUILD found in `/usr/share/pacman/` can be used or you can start from a `PKGBUILD` from another package. The latter may be a good choice if a similar package already exists.
 
 ### Defining PKGBUILD variables
 

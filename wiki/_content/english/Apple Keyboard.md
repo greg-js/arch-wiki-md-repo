@@ -48,7 +48,7 @@ Unpair the keyboard and then re-pair it. The trick is to hold down the power but
 If your `F<num>` keys do not work, this is probably because the kernel driver for the keyboard has defaulted to using the media keys and requiring you to use the `Fn` key to get to the `F<num>` keys. To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `2` to `/sys/module/hid_apple/parameters/fnmode`.
 
 ```
-echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
+echo "2" | sudo tee /sys/module/hid_apple/parameters/fnmode
 
 ```
 
@@ -56,7 +56,7 @@ To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_opt
 
 ```
 echo "options hid_apple fnmode=2" | sudo tee /etc/modprobe.d/hid_apple.conf
-echo "FILES=\"/etc/modprobe.d/hid_apple.conf\"" | sudo tee >> /etc/mkinitcpio.conf
+echo 'FILES="$FILES:/etc/modprobe.d/hid_apple.conf"' | sudo tee -a /etc/mkinitcpio.conf
 
 ```
 

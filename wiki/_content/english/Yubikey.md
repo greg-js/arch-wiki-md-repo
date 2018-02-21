@@ -1,6 +1,4 @@
-This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, how you can use it. And there is plenty of usage. Enjoy. Please start by reading the [#Introduction](#Introduction).
-
-A small section of this article also works for *Fido U2F* USB keys : [#Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
+This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, how you can use it. And there is plenty of usage. Enjoy.
 
 **Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#The Initial configuration](#The_Initial_configuration).
 
@@ -22,7 +20,7 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
     *   [1.4 Two Slots](#Two_Slots)
         *   [1.4.1 Configuration of the slots](#Configuration_of_the_slots)
     *   [1.5 The LED](#The_LED)
-    *   [1.6 The Initial configuration](#The_Initial_configuration)
+    *   [1.6 Initial configuration](#Initial_configuration)
     *   [1.7 Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"](#Limitations_of_the_passwords_typed_by_YubiKey_via_USB-keyboard_--_or_.22Why_do_my_password_look_so_weak_.3F.22)
 *   [2 OneTimePasswords (OTP)](#OneTimePasswords_.28OTP.29)
     *   [2.1 Yubico OTP mode](#Yubico_OTP_mode)
@@ -44,7 +42,7 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
 *   [6 CCID Smartcard](#CCID_Smartcard)
     *   [6.1 Enable the CCID mode](#Enable_the_CCID_mode)
     *   [6.2 Use OpenPGP smartcard mode](#Use_OpenPGP_smartcard_mode)
-*   [7 Usecases - putting your YubiKey to good use](#Usecases_-_putting_your_YubiKey_to_good_use)
+*   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 YubiKey and cryptsetup encrypted partition/disk](#YubiKey_and_cryptsetup_encrypted_partition.2Fdisk)
     *   [7.2 Yubikey and KeePass](#Yubikey_and_KeePass)
         *   [7.2.1 keepassx2](#keepassx2)
@@ -242,7 +240,7 @@ The possible messages are:
 **Note:** If the CCID mode is turned on, then the LED of the key is always shortly flashing every two-three seconds once inserted.
 You can turn the blinking off by disabling the CCID mode. This slow blinking just shows that the device has power, alternatively it shows a need for a button press. On Windows this behavior will typically stop once drivers are installed and it is ready for use. Mac and Linux systems will keep blinking; here [the best current workaround](https://github.com/Yubico/yubikey-manager/issues/20#issuecomment-326496204) to get the LED to blink less is to disable CCID.
 
-### The Initial configuration
+### Initial configuration
 
 On a new YubiKey the Yubico OTP is preconfigured on slot 1\.
 
@@ -367,13 +365,13 @@ To use a Challenge-Response slot (no matter which mode):
 
 ### Enable the CCID mode
 
-Please see [#How do I set the enabled (activated) modes ?](#How_do_I_set_the_enabled_.28activated.29_modes_.3F). And make sure to enable the ccid mode (among possible other modes you want).
+Please see [#Set the enabled modes](#Set_the_enabled_modes). Enable at least the CCID mode.
 
 ### Use OpenPGP smartcard mode
 
 See [GnuPG#Smartcards](/index.php/GnuPG#Smartcards "GnuPG")
 
-## Usecases - putting your YubiKey to good use
+## Tips and tricks
 
 ### YubiKey and cryptsetup encrypted partition/disk
 

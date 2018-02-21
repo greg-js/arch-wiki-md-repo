@@ -17,7 +17,7 @@ Aqui são alguns links onde você pode baixar ponteiros:
 
 Alguns temas também estão disponíveis no [AUR](https://aur.archlinux.org/packages.php?O=0&L=0&C=17&K=cursor&SeB=nd&SB=n&SO=a&PP=50&do_Search=Go)
 
-**Note:** O X já vem com os temas 'redglass' e 'whiteglass' em `/usr/X11R6/lib/icons ou /usr/share/icons.`
+**Nota:** O X já vem com os temas 'redglass' e 'whiteglass' em `/usr/X11R6/lib/icons ou /usr/share/icons.`
 
 ## Instalando os Temas para o Ponteiro do Mouse
 
@@ -53,7 +53,7 @@ Instalação na pasta do Sistema (global):
 
 ```
 
-**Note:** Para simplificar o nome do tema, o nome inicial usado ao criar os diretório(s) acima é 'foobar' ao invés de 'FooBar-AweSoMe-Cursors-v2.98beta'.
+**Nota:** Para simplificar o nome do tema, o nome inicial usado ao criar os diretório(s) acima é 'foobar' ao invés de 'FooBar-AweSoMe-Cursors-v2.98beta'.
 
 **Copiando os arquivos do ponteiro para um diretório apropriado:**
 
@@ -182,7 +182,7 @@ $ man Xcursor
 
 ```
 
-**Note:** Se as animações estão piscando em sua placa nvidia, adicione a seguinte linha dentro da seção nvidia device em seu arquivo `/etc/X11/xorg.conf` para resolver esse problema:
+**Nota:** Se as animações estão piscando em sua placa nvidia, adicione a seguinte linha dentro da seção nvidia device em seu arquivo `/etc/X11/xorg.conf` para resolver esse problema:
 
 ```
 Option "HWCursor" "off"

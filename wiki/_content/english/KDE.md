@@ -87,7 +87,6 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.3.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [6.4 Power management](#Power_management)
         *   [6.4.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
-        *   [6.4.2 Backlight control hotkeys stopped working](#Backlight_control_hotkeys_stopped_working)
     *   [6.5 KMail](#KMail)
         *   [6.5.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
         *   [6.5.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
@@ -712,12 +711,6 @@ This can be solved by installing the GStreamer libav plugin (package [gst-libav]
 #### No Suspend/Hibernate options
 
 If your system is able to suspend or hibernate using [systemd](/index.php/Systemd "Systemd") but do not have these options shown in KDE, make sure [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) is installed.
-
-#### Backlight control hotkeys stopped working
-
-It may happen that backlight control hotkeys suddenly stop working (possibly after an update). This may be due to a shortcuts conflict between KDE Daemon and Power Management. If this is the case, go to *Settings > Shortcuts > Global shortcuts* and set the hotkeys shortcuts in the Power management section, overriding KDE daemons.
-
-If this does not help, see [Backlight](/index.php/Backlight "Backlight").
 
 ### KMail
 

@@ -80,7 +80,7 @@ When the nvidia card is not needed, bbswitch can be used to turn it off. The nvi
 *   Load bbswitch module on boot
 
 ```
- # echo 'bbswitch ' > /etc/modules-load.d/bbswitch
+ # echo 'bbswitch ' > /etc/modules-load.d/bbswitch.conf
 
 ```
 

@@ -281,3 +281,11 @@ First check `/etc/tomcat7/tomcat-users.xml` for any syntax error. If everything 
 ```
 
 Finally [restart](/index.php/Restart "Restart") `tomcat7` and `httpd` services.
+
+If you have no solution and you are in a VM, it can help to delete /dev/random and create it again (cf. [Solution: FUTEX_WAIT hangs Java on Linux / Ubuntu in vmware or virtual box](https://www.nofluffjuststuff.com/blog/pratik_patel/2010/01/solution_futex_wait_hangs_java_on_linux__ubuntu_in_vmware_or_virtual_box)):
+
+```
+rm /dev/random 
+mknod -m 644 /dev/random c 1 9
+
+```

@@ -40,6 +40,8 @@ Below commands will demonstrate how to setup a basic tunel between two peers wit
 | Internal IP address | 10.0.0.1/24 | 10.0.0.2/24 |
 | wireguard listening port | UDP/48574 | UDP/39814 |
 
+The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the `ip` commands below and will be shared internally within the new WireGuard network. The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
+
 #### Peer A setup
 
 This peer will listen on UDP port 48574 and will accept connection from peer B by linking its public key with both its inner and outer IPs addresses.
@@ -52,6 +54,8 @@ $ wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0
 $ ip link set wg0 up
 
 ```
+
+`[Peer B public key]` should have the same format as `EsnHH9m6RthHSs+sd9uM6eCHe/mMVFaRh93GYadDDnM=`. `allowed-ips` is a list of addresses that peer A will be able to send traffic to. `allowed-ips 0.0.0.0/0` would allow sending traffic to any address.
 
 #### Peer B setup
 

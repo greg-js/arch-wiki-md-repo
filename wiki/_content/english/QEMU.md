@@ -767,7 +767,7 @@ See [Internet sharing](/index.php/Internet_sharing "Internet sharing") as a refe
 
 There you can find what is needed to share the network between devices, included tap and tun ones. The following just hints further on some of the host configurations required. As indicated in the reference above, the client needs to be configured for a static IP, using the IP assigned to the tap interface as the gateway. The caveat is that the DNS servers on the client might need to be manually edited if they change when changing from one host device connected to the network to another.
 
-To allow IP forwarding on every boot, one need to add the following lines to sysctl configuration file inside /etc/sysctl.d:
+To allow IP forwarding on every boot, one need to add the following lines to sysctl configuration file inside `/etc/sysctl.d`:
 
 ```
 net.ipv4.ip_forward = 1
@@ -1806,7 +1806,7 @@ If you encounter the following error:
 
 ```
 
-Systemd 234 assign it a dynamic id to group kvm (see [bug](https://bugs.archlinux.org/task/54943)). A workground for avoid this error, you need edit the file /etc/libvirt/qemu.conf and change the line:
+Systemd 234 assign it a dynamic id to group kvm (see [bug](https://bugs.archlinux.org/task/54943)). A workground for avoid this error, you need edit the file `/etc/libvirt/qemu.conf` and change the line:
 
 ```
  group = "78"

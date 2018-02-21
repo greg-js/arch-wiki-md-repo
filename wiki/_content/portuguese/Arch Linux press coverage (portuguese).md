@@ -1,6 +1,6 @@
 Veja também [Wikipedia:pt:Arch Linux](https://en.wikipedia.org/wiki/pt:Arch_Linux "wikipedia:pt:Arch Linux") e [Arch Linux no DistroWatch](http://distrowatch.com/table.php?distribution=arch).
 
-**Note:** Aqui você encontra publicações em português sobre o Arch Linux. Para publicações em inglês, veja [a versão em inglês desta página](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
+**Nota:** Aqui você encontra publicações em português sobre o Arch Linux. Para publicações em inglês, veja [a versão em inglês desta página](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
 
 ## Contents
 

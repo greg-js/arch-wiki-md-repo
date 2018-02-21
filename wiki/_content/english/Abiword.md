@@ -33,7 +33,7 @@ Other styles in `/usr/share/abiword-3.0/templates/` can be modified as well.
 
 ## Grammar checking
 
-Enable grammar checking from *Edit -> Preferences -> Spell Checking -> Automatic grammar checking*.
+Enable grammar checking from *Edit > Preferences > Spell Checking > Automatic grammar checking*.
 
 ## Change keybindings
 

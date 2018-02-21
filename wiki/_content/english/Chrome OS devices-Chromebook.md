@@ -252,6 +252,15 @@ Arch Linux ARM](http://archlinuxarm.org/platforms/armv7/rockchip/hisense-chromeb
 on ARM | [Supported by
 Arch Linux ARM](https://archlinuxarm.org/platforms/armv7/rockchip/asus-chromebook-flip-c100p)<small>
 [notes](/index.php/User_talk:Pierro78/Asus_chromebook_flip "User talk:Pierro78/Asus chromebook flip")</small> |
+| Jan 2016 | Acer | [CB3-131-C8GZ
+(Chromebook 11)](/index.php/Acer_CB3-131_Chromebook "Acer CB3-131 Chromebook") | 2.16 GHz
+Intel Celeron CPU N2840
+(Baytrail) | 4GB
+DDR3 | 16GB
+eMMC | No | 11.6 in
+(29.5 cm) | 1366x768
+(16:9) | Requires writing
+SeaBIOS |
 | Oct 2017 | Google | [Pixelbook](/index.php?title=Pixelbook&action=edit&redlink=1 "Pixelbook (page does not exist)") | Intel Core i5-7Y57
 Intel Core i5-7Y57
 Intel Core i7-7Y75 | 8GB DDR3

@@ -130,7 +130,7 @@ Depois, adicione o grupo **nopasswdlogin** no seu sistema. Você pode realizar p
 
 Agora, quando acessar em Sitemas > Administração > Usuários e Grupos (como root) e definir seu usuário para "Senha: não pediu no login" (você criou a opção "Nâo perguntar mas a senha de login"), seu usuário adicionou automaticamente no grupo "nopasswdlogin", agora simplesmente terá que clicar no seu nome de usuário e registrará a senha que vai ser ignorada totalmente!
 
-**Warning:** <u>NÃO FAÇA</u> COM A CONTA DE ***ROOT***!
+**Atenção:** <u>NÃO FAÇA</u> COM A CONTA DE ***ROOT***!
 
 ### GDM legacy
 

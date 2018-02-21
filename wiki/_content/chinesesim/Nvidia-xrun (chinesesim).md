@@ -82,14 +82,14 @@ EndSection
 *   在启动时载入bbswitch模块
 
 ```
- # echo 'bbswitch ' > /etc/modules-load.d/bbswitch
+ # echo 'bbswitch ' > /etc/modules-load.d/bbswitch.conf
 
 ```
 
 *   关闭nvidia显卡的选项
 
 ```
- # echo 'options bbswitch load_state=0' > /etc/modprobe.d/bbswitch.conf 
+ # echo 'options bbswitch load_state=0 unload_state=1' > /etc/modprobe.d/bbswitch.conf 
 
 ```
 
@@ -97,7 +97,7 @@ EndSection
 
 ```
  $ lsmod | grep nvidia | cut -d ' ' -f 1 > /tmp/nvidia
- $ lsmod | grep  nouveau | cut -d ' ' -f 1 > > /tmp/nvidia
+ $ lsmod | grep  nouveau | cut -d ' ' -f 1 >> /tmp/nvidia
  $ sort -n /tmp/nvidia | uniq >  /tmp/nvidia.conf#去重
  $ sed -i 's/^\w*$/blacklist &/g' /tmp/nvidia.conf  #添加blacklist
  # cp /tmp/nvidia.conf /etc/modprobe.d/nvidia.conf  #移动

@@ -139,7 +139,7 @@ Entre no *chroot*
 
 É possível montar a imagem raiz da mídia mais recente de instalação do Arch Linux e, em seguida, fazer *chroot* nela. Este método tem a vantagem de fornecer uma instalação funcional do Arch Linux no direito do sistema host sem a necessidade de prepará-lo instalando pacotes específicos.
 
-**Note:** Antes de prosseguir, verifique se a versão mais recente de [squashfs](http://squashfs.sourceforge.net/) está instalada no sistema host. Caso contrário, esperam-se erros como os a seguir: `FATAL ERROR aborting: uncompress_inode_table: failed to read block`.
+**Nota:** Antes de prosseguir, verifique se a versão mais recente de [squashfs](http://squashfs.sourceforge.net/) está instalada no sistema host. Caso contrário, esperam-se erros como os a seguir: `FATAL ERROR aborting: uncompress_inode_table: failed to read block`.
 
 *   A imagem raiz pode ser encontrada em um dos [espelhos](https://www.archlinux.org/download) em `arch/x86_64/`. O formato squashfs não é editável, portanto, desfazemos o "squash" na imagem raiz e a montamos.
 

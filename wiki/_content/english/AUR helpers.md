@@ -57,6 +57,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/falconindy/cower](https://github.com/falconindy/cower) || [cower](https://aur.archlinux.org/packages/cower/)
 
+*   **naaman** — An AUR helper written in Python 3.
+
+	[https://github.com/enckse/naaman](https://github.com/enckse/naaman) || [naaman](https://aur.archlinux.org/packages/naaman/)
+
 *   **pacaur** — An AUR helper that minimizes user interaction. ([Forum page](https://bbs.archlinux.org/viewtopic.php?pid=937423))
 
 	[https://github.com/rmarquis/pacaur](https://github.com/rmarquis/pacaur) || [pacaur](https://aur.archlinux.org/packages/pacaur/)
@@ -167,7 +171,7 @@ The columns have the following meaning:
 *   *Clean build*: does not export new variables that can prevent a successful build process.
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
-*   *Split packages*: ability to correctly build and install split packages independently, such as [python-virtualfish](https://aur.archlinux.org/packages/python-virtualfish/) and [python2-virtualfish](https://aur.archlinux.org/packages/python2-virtualfish/).
+*   *Split packages*: ability to correctly build and install split packages independently, such as [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) and [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 *   *Syntax*: P stands for [Pacman](/index.php/Pacman "Pacman")-like, S for specific.
 
@@ -179,6 +183,7 @@ The columns have the following meaning:
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support, sort by votes/popularity |
 | bauerbill | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
+| naaman | Python | No | Yes | No | No | No | Yes | bash | P/S | - |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual, sort by votes/popularity |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
