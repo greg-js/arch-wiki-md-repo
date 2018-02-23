@@ -1,10 +1,10 @@
-The Arch Testing Team is a group within the Arch community in charge of making sure that packages submitted to the testing repositories are functional. This includes, making sure that the package installs correctly, that it doesn't cause breakage with packages of which it depends on, among others.
+The Arch Testing Team is a group within the Arch community in charge of making sure that packages submitted to the [testing](/index.php/Testing "Testing") repositories are functional. This includes, making sure that the package installs correctly, that it doesn't cause breakage with packages of which it depends on, among others.
 
 Arch Testers sign off packages after vouching for their correctness so that they can be moved from the testing repositories into the core, extra or community repositories.
 
 ## Contributing
 
-You can apply to be an official Arch tester by contacting [Florian Pritz](https://www.archlinux.org/people/developers/#bluewind) via [email](mailto:bluewind@xinu.at) and requesting a tester account.
+You can apply to be an official Arch tester by contacting [Florian Pritz](https://www.archlinux.org/people/developers/#bluewind) via [email](mailto:bluewind@xinu.at) and requesting a [tester account](https://lists.archlinux.org/pipermail/arch-dev-public/2016-July/028191.html).
 
 If you're given a tester account, you should be able to log in into [archweb](https://www.archlinux.org/devel) and see a *signoffs* tab on it. The *signoffs* tab will contain a list of packages that are currently in the testing repositories and need at least two *signoffs* (i.e., a rubber-stamp vouching for the correctness of a package).
 

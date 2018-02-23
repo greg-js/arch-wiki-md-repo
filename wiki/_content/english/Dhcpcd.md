@@ -287,7 +287,7 @@ ExecStart=
 ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
 ```
 
-To have it wait indefinetely, let the unit restart after it exited:
+To have it wait indefinitely, let the unit restart after it exited:
 
  `/etc/systemd/system/dhcpcd@.service.d/dhcpcdrestart.conf` 
 ```

@@ -59,7 +59,7 @@ Initially, Spotify was unavailable for Linux and the workaround was to run it un
 
 *   **Librespot** — An open source client library for Spotify. It enables applications to use Spotify's service (streaming), without using the official closed-source *libspotify*.
 
-	[https://github.com/plietar/librespot](https://github.com/plietar/librespot) || [librespot-git](https://aur.archlinux.org/packages/librespot-git/)
+	[https://github.com/librespot-org/librespot](https://github.com/librespot-org/librespot) || [librespot-git](https://aur.archlinux.org/packages/librespot-git/)
 
 *   **Tomahawk** — A Music Player App written in C++/Qt
 

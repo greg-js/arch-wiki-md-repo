@@ -153,7 +153,7 @@ $ cat /proc/cpuinfo
 
 ### Broadcom BCM4312
 
-We have to use commercial dirver. More in this wiki: [Broadcom BCM4312](/index.php/Broadcom_BCM4312 "Broadcom BCM4312")
+We have to use the commercial driver. More in this wiki: [Broadcom BCM4312](/index.php/Broadcom_BCM4312 "Broadcom BCM4312")
 
 ### Audio
 

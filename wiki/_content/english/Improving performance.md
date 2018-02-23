@@ -50,7 +50,7 @@ This article provides information on basic system diagnostics relating to perfor
     *   [3.5 irqbalance](#irqbalance)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
-    *   [4.2 Driconf](#Driconf)
+    *   [4.2 DRIconf](#DRIconf)
 *   [5 RAM and swap](#RAM_and_swap)
     *   [5.1 Clock frequency and timings](#Clock_frequency_and_timings)
     *   [5.2 Root on RAM overlay](#Root_on_RAM_overlay)
@@ -358,9 +358,11 @@ As with CPUs, overclocking can directly improve performance, but is generally re
 
 Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI") and [Intel](/index.php/Intel "Intel") articles. Improper settings may stop Xorg from working, so caution is advised.
 
-### Driconf
+### DRIconf
 
 [driconf](https://www.archlinux.org/packages/?name=driconf) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
+
+[adriconf](https://aur.archlinux.org/packages/adriconf/) (**A**dvanced **DRI** **CONF**igurator) is an improved version of DRIconf, with refreshed interface and better handling of options to set.
 
 ## RAM and swap
 

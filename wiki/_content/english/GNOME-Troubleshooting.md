@@ -269,6 +269,10 @@ Enabling the [Xorg Intel TearFree option](/index.php/Intel_graphics#Tear-free_vi
 
 GNOME Shell's Mutter compositor has a tweak known to address tearing problems (see [the original suggestion for this fix](https://bugzilla.gnome.org/show_bug.cgi?id=657071#c1) and its mention in [the Freedesktop bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c59)). To enable this tweak, append the following line to `/etc/environment`: `CLUTTER_PAINT=disable-clipped-redraws:disable-culling`. Then restart the Xorg server.
 
+	Disable Fullscreen Unredirect
+
+Gnome Shell does by default unredirect fullscreen applications. This may result in tearing. You can disable this with the gnome shell extension [gnome-shell-extension-disable-unredirect](https://aur.archlinux.org/packages/gnome-shell-extension-disable-unredirect/).
+
 ## Window opens behind other windows when using multiple monitors
 
 This is possibly a bug in GNOME Shell which causes new windows to open behind others. To fix this issue, one can run the following command:

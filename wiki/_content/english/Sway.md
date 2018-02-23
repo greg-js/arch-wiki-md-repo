@@ -19,6 +19,7 @@
     *   [4.7 .Xresources](#.Xresources)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Automatically start on login](#Automatically_start_on_login)
+    *   [5.2 dmenu replacement](#dmenu_replacement)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
     *   [6.2 Using VirtualBox](#Using_VirtualBox)
@@ -205,6 +206,10 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 ```
+
+### dmenu replacement
+
+As dmenu runs on XWayland, the applicions tends to become unresponsive if the focus is moved elsewhere, requiring a sway restart, to fix the broken, always visible and unresponsive dmenu. Rofi is a nice option, yet, to automatically focus rofi as a menu, it needs to be run from urxvt or other non-wayland-native virtual terminal. Invoking it as menu in sway will not focus on the menu (you have to hover the mouse on rofi, for rofi to grab your input) One of the best workarounds could be found [https://github.com/swaywm/sway/issues/1367#issuecomment-332910152](https://github.com/swaywm/sway/issues/1367#issuecomment-332910152) :
 
 ## Known issues
 

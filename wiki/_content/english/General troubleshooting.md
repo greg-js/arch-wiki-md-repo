@@ -192,7 +192,7 @@ A *kernel panic* occurs when the Linux kernel enters an unrecoverable failure st
 
 **Note:** Kernel panics are sometimes referred to as *oops* or *kernel oops*. While both panics and oops occur as the result of a failure state, an *oops* is more general in that it does not *necessarily* result in a deadlocked machine--sometimes the kernel can recover from an oops by killing the offending task and carrying on.
 
-**Tip:** Pass the kernel parameter `oops=panic` at boot or write `1` to `/proc/sys/kernel/panic_on_oops` to force a recoverable oops to issue a panic instead. This is advisable is you are concerned about the small chance of system instability resulting from an oops recovery which may make future errors difficult to diagnose.
+**Tip:** Pass the kernel parameter `oops=panic` at boot or write `1` to `/proc/sys/kernel/panic_on_oops` to force a recoverable oops to issue a panic instead. This is advisable if you are concerned about the small chance of system instability resulting from an oops recovery which may make future errors difficult to diagnose.
 
 ### Examine panic message
 

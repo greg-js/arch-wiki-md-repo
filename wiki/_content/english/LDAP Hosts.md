@@ -1,3 +1,8 @@
+Related articles
+
+*   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
+*   [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication")
+
 This document will allow you to put your /etc/hosts into your LDAP server. At first make sure you have an LDAP server up and running (take [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") as an introduction). Next you need to create a proper ldif file from /etc/hosts. Actually mine is like:
 
 ```
@@ -72,7 +77,7 @@ Now change the /etc/hosts in that way that only localhost, the LDAP server and t
 
 ```
 
-On the LDAP server you can ignore every workstation. Finally you need to edit hosts entry in your /etc/nsswitch.conf:
+On the LDAP server you can ignore every workstation. Finally you need to edit the hosts entry in your /etc/nsswitch.conf:
 
 ```
 hosts:          files dns ldap
@@ -93,7 +98,7 @@ $ getent hosts
 
 ```
 
-The first 3 lines are from /etc/hosts, the last 4 lines are from your LDAP server. Finally to get ping work with LDAP you need to start nscd:
+The first 3 lines are from /etc/hosts, the last 4 lines are from your LDAP server. Finally to get ping working with LDAP you need to start nscd:
 
 ```
 $ mkdir -p /var/db/nscd

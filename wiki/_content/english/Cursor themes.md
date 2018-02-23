@@ -11,6 +11,7 @@ The display server is accompanied by a *cursor theme* that helps various aspects
     *   [2.3 Desktop environments](#Desktop_environments)
         *   [2.3.1 GNOME](#GNOME)
         *   [2.3.2 MATE](#MATE)
+        *   [2.3.3 XFCE](#XFCE)
     *   [2.4 X resources](#X_resources)
     *   [2.5 Environment variable](#Environment_variable)
     *   [2.6 Display managers](#Display_managers)
@@ -74,20 +75,20 @@ This method applies to both [X11](/index.php/X11 "X11") and [Wayland](/index.php
 
 For *user-specific* configuration, create or edit `~/.icons/default/index.theme`; for *system-wide* configuration, one can edit `/usr/share/icons/default/index.theme`.
 
-Define the theme directory name:
+The `Inherits` option in the `[icon theme]` section must be set to the xcursor theme directory name `*cursor_theme_name*`, for example `xcursor-breeze-snow`:
 
  `~/.icons/default/index.theme` 
 ```
 [icon theme] 
-Inherits=*theme-name*
+Inherits=*cursor_theme_name*
 ```
 
-You should then edit `~/.config/gtk-3.0/settings.ini`. Edit the following line and replace the `*theme-name*` with the theme directory name:
+You should then edit `~/.config/gtk-3.0/settings.ini`, replacing the `*cursor_theme_name*` with the chosen one:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
 [Settings]
-gtk-cursor-theme-name=*theme-name*
+gtk-cursor-theme-name=*cursor_theme_name*
 ```
 
 Re-login for the changes to take effect.
@@ -105,14 +106,14 @@ Re-login for the changes to take effect.
 To change the theme in [GNOME](/index.php/GNOME "GNOME"), use [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) or set the configuration directly with:
 
 ```
-gsettings set org.gnome.desktop.interface cursor-theme *theme-name*
+gsettings set org.gnome.desktop.interface cursor-theme *cursor_theme_name*
 
 ```
 
 Change the cursor size with (depending on the theme, sizes are 24, 32, 48, 64):
 
 ```
-gsettings set org.gnome.desktop.interface cursor-size *cursor-size*
+gsettings set org.gnome.desktop.interface cursor-size *cursor_theme_size*
 
 ```
 
@@ -121,7 +122,7 @@ gsettings set org.gnome.desktop.interface cursor-size *cursor-size*
 In MATE one can use mate-control-center or gsettings. To change the theme:
 
 ```
-gsettings set org.mate.peripherals-mouse cursor-theme *theme-name*
+gsettings set org.mate.peripherals-mouse cursor-theme *cursor_theme_name*
 
 ```
 
@@ -129,6 +130,22 @@ To change the size:
 
 ```
 gsettings set org.mate.peripherals-mouse *theme-size*
+
+```
+
+#### XFCE
+
+To change the xcursor theme, use:
+
+```
+xfconf-query --channel xsettings --property /Gtk/CursorThemeName --set *cursor_theme_name*
+
+```
+
+To change the size:
+
+```
+xfconf-query --channel xsettings --property /Gtk/CursorThemeSize --set *cursor_theme_size*
 
 ```
 

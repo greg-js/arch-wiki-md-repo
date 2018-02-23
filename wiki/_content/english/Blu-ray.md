@@ -29,6 +29,7 @@ This article is designed to help Linux users to play the Blu-ray discs they have
         *   [2.4.2 Revoked Host key/certificate](#Revoked_Host_key.2Fcertificate)
         *   [2.4.3 Using aacskeys](#Using_aacskeys)
             *   [2.4.3.1 If aacskeys is not able to generate the key](#If_aacskeys_is_not_able_to_generate_the_key)
+        *   [2.4.4 If you have the corresponding VUK but the Blu-ray won't play](#If_you_have_the_corresponding_VUK_but_the_Blu-ray_won.27t_play)
 *   [3 See also](#See_also)
 
 ## How it works
@@ -245,6 +246,12 @@ Try to generate the VolumeID with [DumpVID](http://forum.doom9.org/showthread.ph
  `Usage: aacskeys [options] <mountpath> [volume id / binding nonce]` 
 
 Note: the DumpVID does not seem to be available anymore, so an alternative is to use makemkv or other shareware applications. makemkv apparently has an official (or maybe stolen) decryption key and is able to generate decrypted MKV files.
+
+#### If you have the corresponding VUK but the Blu-ray won't play
+
+Some drives need the sg module loaded.
+
+ `sudo modprobe sg` 
 
 ## See also
 

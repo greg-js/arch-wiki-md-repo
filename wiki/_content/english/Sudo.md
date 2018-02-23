@@ -405,7 +405,7 @@ The files in `/etc/sudoers.d/` directory are parsed in lexicographical order, fi
 
 ### SSH TTY Problems
 
-SSH does not allocate a tty by default when running a remote command. Without a tty, sudo cannot disable echo when prompting for a password. You can use ssh's `-t` option to force it to allocate a tty (.
+SSH does not allocate a tty by default when running a remote command. Without a tty, sudo cannot disable echo when prompting for a password. You can use ssh's `-t` option to force it to allocate a tty.
 
 The `Defaults` option `requiretty` only allows the user to run sudo if they have a tty.
 

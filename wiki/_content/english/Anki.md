@@ -16,6 +16,8 @@
 
 By default, cards are synchronized using anki's web server, but you can use your own [anki-sync-server](https://aur.archlinux.org/packages/anki-sync-server/).
 
+**Warning:** Due to the deprecation of QtWebKit for Qt 4, the anki package uses an unstable 2.1 beta build.
+
 ## Flashcards
 
 Flashcards can be obtained by:

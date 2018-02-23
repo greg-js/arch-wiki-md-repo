@@ -76,7 +76,7 @@ Start the `bluetoothctl` interactive command. There one can input `help` to get 
 *   Turn the power to the controller on by entering `power on`. It is off by default and will turn off again each reboot, see [#Auto power-on after boot](#Auto_power-on_after_boot).
 *   Enter `devices` to get the MAC Address of the device with which to pair.
 *   Enter device discovery mode with `scan on` command if device is not yet on the list.
-*   Turn the agent on with `agent on`.
+*   Turn the agent on with `agent on` or choose a specific agent: if you press tab twice after `agent` you should see a list of available agents, e.g. DisplayOnly KeyboardDisplay NoInputNoOutput DisplayYesNo KeyboardOnly off on.
 *   Enter `pair *MAC Address*` to do the pairing (tab completion works).
 *   If using a device without a PIN, one may need to manually trust the device before it can reconnect successfully. Enter `trust *MAC Address*` to do so.
 *   Finally, use `connect *MAC_address*` to establish a connection.

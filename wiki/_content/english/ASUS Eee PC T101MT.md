@@ -242,7 +242,7 @@ Launch xbindkeys in gnome3 via gnome-session-properties. Add it as a launcher ap
 
 ### On Screen Keyboard
 
-Install kvkbd with from the Arch user repository (if using packer : packer -S kvkbd). Make sure you have some sort of system tray (I used tint2) and edit '~/.config/openbox/autostart' to include the following statement:
+Install kvkbd with from the [AUR](/index.php/AUR "AUR"). Make sure you have some sort of system tray (I used tint2) and edit '~/.config/openbox/autostart' to include the following statement:
 
 ```
 kvkbd &

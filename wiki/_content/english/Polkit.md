@@ -32,7 +32,7 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
 
 ## Installation
 
-Install the [polkit](https://www.archlinux.org/packages/?name=polkit) package.
+[Install](/index.php/Install "Install") the [polkit](https://www.archlinux.org/packages/?name=polkit) package.
 
 ### Authentication agents
 

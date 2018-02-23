@@ -162,7 +162,7 @@ menuentry "Archboot Memdisk" {
 
 	cfdisk is a nice tool but is too limited to be the standard partitioner anymore.
 
-	cfdisk is still included but has to be run in an other terminal.
+	cfdisk is still included but has to be run in another terminal.
 
 ### History
 

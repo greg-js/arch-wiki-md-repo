@@ -664,7 +664,7 @@ Do not forget to run:
 
 ### Drag and drop, copy/paste
 
-**Tip:** There is an unspecified relationship between it and *gtkmm* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
+**Tip:** There is an unspecified relationship between it and *gtkmm3* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
 
 The drag-and-drop (copy/paste) feature requires both [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) and [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) packages to be installed in order to work.
 

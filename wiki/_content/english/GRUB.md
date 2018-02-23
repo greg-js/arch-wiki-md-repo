@@ -10,7 +10,7 @@ Related articles
 *   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
 *   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
 
-[GRUB](https://www.gnu.org/software/grub/) — not to be confused with [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") — is the next generation of the GRand Unified Bootloader. GRUB is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the next generation of what is now GRUB Legacy. GRUB has been rewritten from scratch to clean up everything and provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1).
+[GRUB](https://www.gnu.org/software/grub/) — not to be confused with [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") — is the next generation of the GRand Unified Bootloader. GRUB is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of GRUB Legacy. GRUB has been rewritten from scratch to clean up everything and provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1).
 
 ## Contents
 
@@ -127,7 +127,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 
 ### Check if you have GPT and an ESP
 
-An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is needed on every disk you want to boot using EFI. GPT is not strictly necessary, but it is highly recommended and is the only method currently supported in this article. If you are installing Arch Linux on an EFI-capable computer with an already-working operating system, like Windows 8 for example, it is very likely that you already have an ESP. To check for GPT and for an ESP, use `parted` as root to print the partition table of the disk you want to boot from.
+An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is needed on every disk you want to boot using EFI. GPT is not strictly necessary, but it is highly recommended and is the only method currently supported in this article. If you are installing Arch Linux on an EFI-capable computer with an already-working operating system, like Windows 10 for example, it is very likely that you already have an ESP. To check for GPT and for an ESP, use `parted` as root to print the partition table of the disk you want to boot from.
 
 ```
 # parted /dev/sd*x* print
@@ -148,20 +148,20 @@ Make sure you are in a [bash](/index.php/Bash "Bash") shell.
 
 [Install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* is the bootloader, *efibootmgr* creates bootable `.efi` stub entries used by the GRUB installation script.
 
-The following steps install the GRUB UEFI application to `*esp*/EFI/grub`, install its modules to `/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `*esp*/EFI/grub`.
+The following steps install the GRUB UEFI application to `*esp*/EFI/grub`, install its modules to `/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `*esp*/EFI/**arch**`.
 
 First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. Mount the ESP partition to e.g. `/boot` or `/boot/efi` and in the following change `*esp_mount*` to that mount point (usually `/boot`):
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=*esp_mount* --bootloader-id=**grub**
+# grub-install --target=x86_64-efi --efi-directory=*esp_mount* --bootloader-id=**arch**
 
 ```
 
-The `--bootloader-id` is what appears in the boot options to identify the GRUB EFI boot option; make sure this is something you will recognize later. The install will create a directory of the same name under `*esp*/EFI/` where the EFI binary bootloader will be placed.
+The `--bootloader-id` is what appears in the boot options to identify the GRUB EFI boot option; make sure this is something you will recognize later. The install will create a directory of the same name under `*esp*/EFI/` where the EFI binary bootloader `grubx64.efi` will be placed.
 
-**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a folder called boot inside the EFI folder of the EFI partition, but the only purpose this serves is to recreate the EFI boot option for Windows.
+**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a `boot` folder inside the EFI folder of the EFI partition, but its only purpose is to recreate the EFI boot option for Windows.
 
-After the above install finished the main GRUB directory is located at `/boot/grub/`.
+After the above install completed the main GRUB directory is located at `/boot/grub/`.
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
@@ -756,7 +756,7 @@ This error may occur when you try installing GRUB in a VMware container. Read mo
 
 #### Drop to rescue shell
 
-If GRUB loads but drops you into the rescue shell with no errors, it may be because of a missing or misplaced `grub.cfg`. This will happen if GRUB UEFI was installed with `--boot-directory` and `grub.cfg` is missing OR if the partition number of the boot partition changed (which is hard-coded into the `grubx64.efi` file).
+If GRUB loads but drops you into the rescue shell with no errors, it may be because of a missing or misplaced `grub.cfg`. This will happen if GRUB UEFI was installed with `--boot-directory` and `grub.cfg` is missing, or if the boot partition, which is hard-coded into the `grubx64.efi` file, changed.
 
 #### GRUB UEFI not loaded
 

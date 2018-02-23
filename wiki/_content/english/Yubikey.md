@@ -365,7 +365,7 @@ To use a Challenge-Response slot (no matter which mode):
 
 ### Enable the CCID mode
 
-Please see [#Set the enabled modes](#Set_the_enabled_modes). Enable at least the CCID mode.
+Please see [#Set the enabled modes](#Set_the_enabled_modes). Enable at least the CCID mode. CCID mode should be enabled by default on all Yubikeys shipped since November 2015 [[1]](https://www.yubico.com/support/knowledge-base/categories/articles/use-yubikey-yubikey-windows-hello-app/).
 
 ### Use OpenPGP smartcard mode
 

@@ -16,6 +16,4 @@ If you do not want to wait for a reboot cycle, you can manually [start](/index.p
 
 Statistics are available at [https://www.archlinux.de/?page=Statistics](https://www.archlinux.de/?page=Statistics).
 
-The following open source project allows you to get the statistics data as JSON: [ArchLinuxPkgStatsScraper](https://github.com/chrissound/ArchLinuxPkgStatsScraper)
-
-You can read the official [forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431) for more info.
+The following open source project allows you to get the statistics data as JSON: [ArchLinuxPkgStatsScraper](https://github.com/chrissound/ArchLinuxPkgStatsScraper), as well as a web front end to compare the data is available: [https://trycatchchris.co.uk/archpackagecompare/](https://trycatchchris.co.uk/archpackagecompare/comparePackage/gnome-terminal/lxterminal/rxvt/rxvt-unicode/st/terminator/termite/xterm). You can read the official [forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431) for more info.

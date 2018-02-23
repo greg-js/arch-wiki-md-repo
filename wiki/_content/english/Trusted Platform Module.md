@@ -17,7 +17,7 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
 
 ## Versions
 
-**Note:** Support for TPM 2.0 is still incomplete (both on the kernel and in userspace), and no known workflow for TPM2 exists at the moment.
+**Note:** Support for TPM 2.0 is lacking.
 
 Current attempts to run `tcsd` on a system with TPM 2.0 will result in the following:
 
@@ -146,7 +146,7 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 
 ### tcsd.service failed to start
 
-The `tcsd.service` service may not start correctly due to permission issues.[[1]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3). It is possible to fix this using:
+The `tcsd.service` service may not start correctly due to permission issues.[[2]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3). It is possible to fix this using:
 
 ```
 $ chown tss:tss /dev/tpm*

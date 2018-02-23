@@ -931,7 +931,7 @@ You can also edit the connection (and persist it to disk) or delete it. NetworkM
 
 To configure NetworkManager to run resolvconf, set the `rc-manager` option to `resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
- `/etc/NetworkManager/conf.d./rc-manager.conf` 
+ `/etc/NetworkManager/conf.d/rc-manager.conf` 
 ```
 [main]
 rc-manager=resolvconf

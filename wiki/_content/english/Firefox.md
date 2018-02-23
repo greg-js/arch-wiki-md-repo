@@ -351,7 +351,8 @@ Another way to change gtk theme for content process only, which keeps dark UI th
 
 1.  Open `about:config` in the address bar
 2.  Create a new string type preference (*right mouse button > New > String*) named `widget.content.gtk-theme-override`
-3.  Set the value to the light theme tag to use for rendering purposes (e.g. `Adwaita:light`)
+3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`)
+4.  Restart Firefox
 
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 

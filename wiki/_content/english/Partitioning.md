@@ -128,7 +128,7 @@ See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_resto
 
 It may be possible to recover a destroyed MBR partition table with [gpart](https://www.archlinux.org/packages/?name=gpart). See [gpart(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpart.8) for instructions.
 
-For GPT it is possible to restore the primary GPT header (located at the start of the partition table) from the secondary GPT header (located at the end of the partition table) or vice versa. See [gdisk#Recover GPT header](/index.php/Gdisk#Recover_GPT_header "Gdisk").
+For GPT it is possible to restore the primary GPT header (located at the start of the disk) from the secondary GPT header (located at the end of the disk) or vice versa. See [gdisk#Recover GPT header](/index.php/Gdisk#Recover_GPT_header "Gdisk").
 
 ## Partition scheme
 

@@ -165,7 +165,7 @@ See [Backlight#Kernel command-line options](/index.php/Backlight#Kernel_command-
 
 ### Enabling compositing
 
-Compositing is not enabled by default. To enable it navigate to run *System -> Preferences -> Look and Feel -> Windows -> General* and click the tick box alongside *Enable software compositing window manager*. Alternatively, you can run the following from the terminal:
+Compositing is not enabled by default. To enable it navigate to run *System > Preferences > Look and Feel > Windows > General* and click the tick box alongside *Enable software compositing window manager*. Alternatively, you can run the following from the terminal:
 
 ```
 $ gsettings set org.mate.Marco.general compositing-manager true
@@ -174,7 +174,7 @@ $ gsettings set org.mate.Marco.general compositing-manager true
 
 ### Enabling new window centering
 
-By default, new windows are placed in the top-left corner. To center new windows on creation navigate to run *System -> Preferences -> Windows -> Placement* and click the tick box alongside *Center new windows*. Alternatively, you can run the following from the terminal:
+By default, new windows are placed in the top-left corner. To center new windows on creation navigate to run *System > Preferences > Windows > Placement* and click the tick box alongside *Center new windows*. Alternatively, you can run the following from the terminal:
 
 ```
 $ gsettings set org.mate.Marco.general center-new-windows true
@@ -183,7 +183,7 @@ $ gsettings set org.mate.Marco.general center-new-windows true
 
 ### Enabling window snapping
 
-Window snapping is not be enabled by default, to enable it navigate to run *System -> Preferences -> Windows -> Placement* and click the tick box alongside *Enable side by side tiling*. Alternatively, you can run the following from the terminal:
+Window snapping is not be enabled by default, to enable it navigate to run *System > Preferences > Windows > Placement* and click the tick box alongside *Enable side by side tiling*. Alternatively, you can run the following from the terminal:
 
 ```
 $ gsettings set org.mate.Marco.general side-by-side-tiling true

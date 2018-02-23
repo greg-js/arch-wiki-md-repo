@@ -17,9 +17,8 @@ This article details the installation and usage of [private-internet-access-vpn]
         *   [3.1.3 Advanced options](#Advanced_options)
     *   [3.2 Example configuration](#Example_configuration)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Installing from pacaur](#Installing_from_pacaur)
-    *   [4.2 Using NetworkManager's applet](#Using_NetworkManager.27s_applet)
-    *   [4.3 DNS Leaks](#DNS_Leaks)
+    *   [4.1 Using NetworkManager's applet](#Using_NetworkManager.27s_applet)
+    *   [4.2 DNS Leaks](#DNS_Leaks)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -118,12 +117,6 @@ hosts = US East, US West, Japan, UK London, UK Southampton
 ```
 
 ## Troubleshooting
-
-### Installing from pacaur
-
-If you are using [pacaur](https://aur.archlinux.org/packages/pacaur/) and continue to have issues with upgrading the package, then you may need to remove the pacaur cache (thanks [@Gelmo](https://aur.archlinux.org/account/Gelmo)):
-
- ` rm -rf ~/.cache/pacaur/*` 
 
 ### Using NetworkManager's applet
 

@@ -48,6 +48,8 @@ If you want to be able to run docker as a regular user, add yourself to the `doc
 
 **Warning:** Anyone added to the `docker` group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](https://docs.docker.com/engine/security/security/).
 
+**Note:** As of [linux](https://www.archlinux.org/packages/?name=linux) 4.15.0-1 *vsyscalls*, which are required by certain programs in containers (such as *apt-get*), have been disabled by default in kernel configuration. To enable them again, add the `vsyscall=emulate` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). More information in [FS#57336](https://bugs.archlinux.org/task/57336).
+
 ## Configuration
 
 ### Storage driver

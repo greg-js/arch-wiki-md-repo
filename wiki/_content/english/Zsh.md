@@ -149,15 +149,7 @@ compinit
 
 ```
 
-The above configuration includes ssh/scp/sftp hostnames completion but in order for this feature to work, users need to prevent ssh from hashing hosts names in `~/.ssh/known_hosts`.
-
-**Warning:** This makes the computer vulnerable to ["Island-hopping" attacks](http://blog.rootshell.be/2010/11/03/bruteforcing-ssh-known_hosts-files/). In that intention, comment the following line or set the value to `no`: `/etc/ssh/ssh_config` 
-```
-#HashKnownHosts yes
-
-```
-
-And move `~/.ssh/known_hosts` somewhere else so that ssh creates a new one with un-hashed hostnames (previously known hosts will thus be lost). For more information, see the SSH readme for [hashed-hosts](http://nms.lcs.mit.edu/projects/ssh/README.hashed-hosts).
+The above configuration includes ssh/scp/sftp hostnames completion but in order for this feature to work, users must not enable ssh's hostname hashing (i.e. option `HashKnownHosts` in ssh client configuration).
 
 For autocompletion with an arrow-key driven interface, add the following to:
 

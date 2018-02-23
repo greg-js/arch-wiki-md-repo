@@ -249,17 +249,19 @@
         *   [4.114.1 No audio](#No_audio_6)
         *   [4.114.2 Blank screen](#Blank_screen)
     *   [4.115 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-    *   [4.116 Worms W.M.D](#Worms_W.M.D)
-    *   [4.117 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-        *   [4.117.1 Game does not start](#Game_does_not_start_12)
-    *   [4.118 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [4.119 World of Goo](#World_of_Goo)
-        *   [4.119.1 Changing resolution](#Changing_resolution)
-    *   [4.120 X3: Terran Conflict](#X3:_Terran_Conflict)
-        *   [4.120.1 Game crashes on startup](#Game_crashes_on_startup)
-    *   [4.121 XCOM](#XCOM)
-        *   [4.121.1 Hangs on startup](#Hangs_on_startup)
-        *   [4.121.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+    *   [4.116 We Were Here](#We_Were_Here)
+        *   [4.116.1 Stuck on black screen or logo on launch](#Stuck_on_black_screen_or_logo_on_launch)
+    *   [4.117 Worms W.M.D](#Worms_W.M.D)
+    *   [4.118 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+        *   [4.118.1 Game does not start](#Game_does_not_start_12)
+    *   [4.119 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [4.120 World of Goo](#World_of_Goo)
+        *   [4.120.1 Changing resolution](#Changing_resolution)
+    *   [4.121 X3: Terran Conflict](#X3:_Terran_Conflict)
+        *   [4.121.1 Game crashes on startup](#Game_crashes_on_startup)
+    *   [4.122 XCOM](#XCOM)
+        *   [4.122.1 Hangs on startup](#Hangs_on_startup)
+        *   [4.122.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Introduction
 
@@ -1991,6 +1993,12 @@ with:
 
  `LD_PRELOAD_ADDITIONS="/usr/lib64/libasound.so.2:${LD_PRELOAD_ADDITIONS}"` 
 
+### We Were Here
+
+#### Stuck on black screen or logo on launch
+
+Add `-screen-fullscreen 0` to launch options. [[14]](https://steamcommunity.com/app/582500/discussions/1/1470840994974091613/)
+
 ### Worms W.M.D
 
 The game includes several workarounds in the `Run.sh` script, however these may not work and it is easy to get the game running without this script.
@@ -2002,7 +2010,7 @@ $ ln -s ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/*dbu
 
 ```
 
-Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[14]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[15]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
+Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[15]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[16]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
 
 On some systems there are terrain bugs where holes in terrain are not rendered properly and worms can fall through terrain unexpectedly. These bugs can make the game unplayable in many situations and there is no known fix for them.
 

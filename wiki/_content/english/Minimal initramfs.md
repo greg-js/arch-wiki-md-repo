@@ -1,3 +1,7 @@
+Related articles
+
+*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
+
 This article shows how to create a slim, minimal initramfs for a system with a specific, known and static hardware configuration. The procedure is expounded from [Optimizing Bootup With mkinitcpio](http://blog.falconindy.com/articles/optmizing-bootup-with-mkinitcpio.html) by Falconindy (Dave Reisner).
 
 ## Contents
@@ -52,13 +56,15 @@ The quickest way to find out what modules you need is to reboot your system with
 Once your system reboots, run the following command to see what modules you need:
 
 ```
-lsmod | grep -v ' [a-z]'
+lsmod | awk 'NF==3{print $1}{}'
 
 ```
 
-**Note:** The `grep` command is used to filter out modules that were loaded as dependencies of other modules. Arch's `mkinitcpio` takes care of bringing in module dependencies.
+**Note:** The `awk` command returns only the first field, using `{print $1}` , of every line with exactly 3 fields, enforced by `NF==3`. Module dependencies include the 4th field to show which module pulled in the dependency, thus being filtered out due to that fourth field. Arch's `mkinitcpio` takes care of dependencies for legitimate values included in the arrays `MODULES=()`, `FILES=()`, and `BINARIES=()`.
 
 Write down the modules that were loaded and type `exit` to continue booting.
+
+Alternatively, [Install](/index.php/Install "Install") the package [hwdetect](https://www.archlinux.org/packages/?name=hwdetect) to help determine necessary modules. Though unmaintained, it can provide valuable information. Also, see [Kernel modules](/index.php/Kernel_modules "Kernel modules") to get started with the native tools.
 
 ## Initial edit of mkinitcpio.conf
 

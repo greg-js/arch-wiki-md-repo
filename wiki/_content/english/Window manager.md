@@ -55,7 +55,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[AfterStep](https://en.wikipedia.org/wiki/AfterStep "wikipedia:AfterStep")** — Window manager for the Unix X Window System. Originally based on the look and feel of the NeXTStep interface, it provides end users with a consistent, clean, and elegant desktop. The goal of AfterStep development is to provide for flexibility of desktop configuration, improving aesthetics, and efficient use of system resources.
 
-	[http://www.afterstep.org/](http://www.afterstep.org/) || [afterstep](https://aur.archlinux.org/packages/afterstep/)
+	[http://www.afterstep.org/](http://www.afterstep.org/) || [afterstep-git](https://aur.archlinux.org/packages/afterstep-git/)
 
 *   **[Blackbox](/index.php/Blackbox "Blackbox")** — Fast, lightweight window manager for the X Window System, without all those annoying library dependencies. Blackbox is built with C++ and contains completely original code (even though the graphics implementation is similar to that of WindowMaker).
 
@@ -95,7 +95,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Gala](http://elementaryos.org/journal/meet-gala-window-manager)** — A beautiful Window Manager from elementaryos, part of [Pantheon](/index.php/Pantheon "Pantheon"). Also as a compositing manager, based on libmutter.
 
-	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/)
+	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala](https://aur.archlinux.org/packages/gala/), [gala-git](https://aur.archlinux.org/packages/gala-git/)
 
 *   **Goomwwm** — X11 window manager implemented in C as a cleanroom software project. It manages windows in a minimal floating layout, while providing flexible keyboard-driven controls for window switching, sizing, moving, tagging, and tiling. It is also fast, lightweight, modeless, Xinerama-aware, and EWMH compatible wherever possible.
 
