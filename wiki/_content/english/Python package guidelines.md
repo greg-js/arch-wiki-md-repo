@@ -38,13 +38,13 @@ However, for managing Python packages from within PKGBUILDs, the standard-provid
 A *distutils* example PKGBUILD can be found [here](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto). It follows the form:
 
 ```
-*<python version>* setup.py install --root="$pkgdir/" --optimize=1
+*python* setup.py install --root="$pkgdir/" --optimize=1
 
 ```
 
 where:
 
-*   *<python version>* is replaced with the proper binary, `python` or `python2`
+*   *python* is replaced with the proper binary, `python` or `python2`
 *   `--root="$pkgdir/"` prevents trying to directly install in the host system instead of inside the package file, which would result in a permission error
 *   `--optimize=1` compiles `.pyo` files so they can be tracked by [pacman](/index.php/Pacman "Pacman").
 

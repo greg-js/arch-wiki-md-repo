@@ -318,18 +318,6 @@ rpc-passwd=rpcpass
 
 	[http://sourceforge.net/projects/aria2fe/](http://sourceforge.net/projects/aria2fe/) || [aria2fe](https://aur.archlinux.org/packages/aria2fe/)
 
-*   **Diana** — Command line tool for aria2
-
-	[https://github.com/baskerville/diana](https://github.com/baskerville/diana) || [diana-git](https://aur.archlinux.org/packages/diana-git/)
-
-*   **downloadm** — A download accelerator/manager which uses aria2c as a backend.
-
-	[http://sourceforge.net/projects/downloadm/](http://sourceforge.net/projects/downloadm/) || [downloadm](https://aur.archlinux.org/packages/downloadm/)
-
-*   **eatmonkey** — Download manager for Xfce that works with aria2.
-
-	[http://goodies.xfce.org/projects/applications/eatmonkey](http://goodies.xfce.org/projects/applications/eatmonkey) || [eatmonkey](https://aur.archlinux.org/packages/eatmonkey/)
-
 *   **karia2** — QT4 interface for aria2 download mananger.
 
 	[http://sourceforge.net/projects/karia2/](http://sourceforge.net/projects/karia2/) || [karia2-svn](https://aur.archlinux.org/packages/karia2-svn/)
@@ -337,10 +325,6 @@ rpc-passwd=rpcpass
 *   **uGet** — Feature-rich GTK+/CLI download manager which can use aria2 as a back-end by enabling a built-in plugin.
 
 	[http://ugetdm.com](http://ugetdm.com) || [uget](https://www.archlinux.org/packages/?name=uget)
-
-*   **yaner** — GTK+ interface for aria2 download mananger.
-
-	[http://iven.github.com/Yaner](http://iven.github.com/Yaner) || [yaner-git](https://aur.archlinux.org/packages/yaner-git/)
 
 ## Tips and tricks
 

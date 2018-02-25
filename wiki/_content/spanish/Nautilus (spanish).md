@@ -80,7 +80,7 @@ Algunos programas pueden añadir funcionalidad extra a Nautilus. Aquí hay algun
 
 *   **Nautilus Actions** — Programas configurados para ser lanzados cuando los archivos se seleccionan en Nautilus
 
-	[http://gnome.org](http://gnome.org) || [nautilus-actions](https://www.archlinux.org/packages/?name=nautilus-actions)
+	[http://gnome.org](http://gnome.org) || [filemanager-actions](https://www.archlinux.org/packages/?name=filemanager-actions)
 
 *   **Nautilus Terminal** — Terminal integrado en Nautilus. Siempre está abierto en la carpeta actual, y sigue la navegación.
 
@@ -124,7 +124,7 @@ Nautilus cuenta con el paquete [gvfs-smb](https://www.archlinux.org/packages/?na
 
 ### Nautilus no puede ver los recursos compartidos de red de apple
 
-Nautilus depende de [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp) y [avahi](https://www.archlinux.org/packages/?name=avahi) para esta funcionalidad, que puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Tenga en cuenta que, además de instalar [Avahi](/index.php/Avahi "Avahi"), necesita iniciarlo también, utilizando:
+Nautilus depende de [gvfs](https://www.archlinux.org/packages/?name=gvfs) y [avahi](https://www.archlinux.org/packages/?name=avahi) para esta funcionalidad, que puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Tenga en cuenta que, además de instalar [Avahi](/index.php/Avahi "Avahi"), necesita iniciarlo también, utilizando:
 
  `systemctl start avahi-daemon` 
 

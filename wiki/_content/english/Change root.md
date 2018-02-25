@@ -109,7 +109,7 @@ First, mount the temporary api filesystems:
 
 ```
 # cd */location/of/new/root*
-# mount -t proc proc proc/
+# mount -t proc /proc proc/
 # mount --rbind /sys sys/
 # mount --rbind /dev dev/
 

@@ -244,3 +244,4 @@ You can easily rotate screen with xrandr, however it does not rotate touchscreen
 *   The LinLap site has some good information - see [[1]](http://www.linlap.com/lenovo_ideapad_yoga_2_pro);
 *   a good Review of Arch Linux on a HiDPI Lenovo Yoga 2 Pro by KeithCU with useful comments [[2]](http://keithcu.com/wordpress/?p=3270);
 *   an installation guide written by Ubuntu users: [[3]](http://askubuntu.com/questions/367963/ubuntu-on-lenovo-yoga-2-pro).
+*   color profile for fixing the mustard-yellow issue: [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=70721#c16)

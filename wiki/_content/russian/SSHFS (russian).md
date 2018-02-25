@@ -6,6 +6,8 @@
 *   [Secure Shell (Русский)](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Secure Shell (Русский)")
 *   [sftpman](/index.php/Sftpman "Sftpman")
 
+**Состояние перевода:** На этой странице представлен перевод статьи [SSHFS](/index.php/SSHFS "SSHFS"). Дата последней синхронизации: 23 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=SSHFS&diff=0&oldid=499981).
+
 [SSHFS](https://github.com/libfuse/sshfs) - клиент файловой системы на основе FUSE для монтирования удаленных каталогов через подключение [SSH](/index.php/SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH (Русский)").
 
 ## Contents
@@ -64,14 +66,14 @@ SSH запросит пароль, если необходимо. Если вы 
 Чтобы размонтировать удаленную систему:
 
 ```
-$ fusermount -u *mountpoint*
+$ fusermount3 -u *mountpoint*
 
 ```
 
 Например:
 
 ```
-$ fusermount -u /local/path
+$ fusermount3 -u /local/path
 
 ```
 

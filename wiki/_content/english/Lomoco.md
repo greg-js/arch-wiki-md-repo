@@ -14,6 +14,8 @@ Lomoco is a small program for some Logitech mice, for configuring resolution and
 
 [Install](/index.php/Install "Install") the [lomoco](https://aur.archlinux.org/packages/lomoco/) package.
 
+**Warning:** This software stopped being updated 10 years ago, will give segmentation fault using for instance a G502 mouse
+
 ## Configuration
 
 ### Finding mouse information

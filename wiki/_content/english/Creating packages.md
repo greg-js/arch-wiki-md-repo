@@ -61,9 +61,9 @@ The advantage of a meta package, compared to a group, is that any new member pac
 
 ### Prerequisite software
 
-First ensure that the necessary tools are installed. [Installing](/index.php/Install "Install") the package group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) should be sufficient; it includes **make** and additional tools needed for compiling from source.
+First, ensure that the necessary tools are [installed](/index.php/Install "Install"): the package group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) should be sufficient, it includes **make** and additional tools needed for compiling from source.
 
-One of the key tools for building packages is [makepkg](/index.php/Makepkg "Makepkg") (provided by [pacman](https://www.archlinux.org/packages/?name=pacman)), which does the following:
+The key tool for building packages is [makepkg](/index.php/Makepkg "Makepkg") (provided by [pacman](https://www.archlinux.org/packages/?name=pacman)), which does the following:
 
 1.  Checks if package dependencies are installed.
 2.  Downloads the source file(s) from the specified server(s).

@@ -16,7 +16,7 @@ The users' buddies appear as normal IRC users in a channel and conversations use
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [bitlbee](https://www.archlinux.org/packages/?name=bitlbee) package. Alternatively, install the development version, [bitlbee-git](https://aur.archlinux.org/packages/bitlbee-git/).
+[Install](/index.php/Install "Install") the [bitlbee](https://www.archlinux.org/packages/?name=bitlbee) package.
 
 ## Configuration
 

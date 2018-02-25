@@ -67,7 +67,7 @@ O si está usando POP3:
 ### Notas
 
 *   Si sólo necesita los métodos de atenticación LOGIN y PLAIN, estos se satisfacen con la dependencia [libsasl](https://www.archlinux.org/packages/?name=libsasl).
-*   Si quiere (o necesita) usar CRAM-MD5, GSSAPI o DIGEST-MD5, instale también el paquete [cyrus-sasl-plugins](https://www.archlinux.org/packages/?name=cyrus-sasl-plugins) y listo.
+*   Si quiere (o necesita) usar CRAM-MD5, GSSAPI o DIGEST-MD5, instale también el paquete [cyrus-sasl-gssapi](https://www.archlinux.org/packages/?name=cyrus-sasl-gssapi) y listo.
 *   Si está usando Gmail como su servidor de smtp, puede que necesite instalar el paquete [cyrus-sasl](https://www.archlinux.org/packages/?name=cyrus-sasl).
 
 ## Configuración
@@ -276,7 +276,7 @@ Sin importar si usa POP o IMAP para recibir correo probablemente enviará correo
 
 #### Usando el soporte nativo de SMTP
 
-La version pacman de Mutt está compilada con soporte de SMTP. Consulte el manual en línea [muttrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) para mayor información.
+La version pacman de Mutt está compilada con soporte de SMTP. Consulte el manual en línea [muttrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) para mayor información.
 
 Por ejemplo:
 

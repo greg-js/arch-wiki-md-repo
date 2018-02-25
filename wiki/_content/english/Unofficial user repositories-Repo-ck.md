@@ -2,7 +2,7 @@ Related articles
 
 *   [Linux-ck](/index.php/Linux-ck "Linux-ck")
 
-*Repo-ck* is an unofficial Arch Linux repository hosting generic and CPU-optimized kernels and support packages, featuring [MuQSS](http://ck-hack.blogspot.com) (pronounced mux) and rest of the ck patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas"). It has been in operation since 2011 and is maintained by [graysky](/index.php/User:Graysky "User:Graysky").
+[Repo-ck](http://repo-ck.com/) is an unofficial Arch Linux repository hosting generic and CPU-optimized kernels and support packages, featuring [MuQSS](http://ck-hack.blogspot.com) (pronounced mux) and rest of the ck patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas"). It has been in operation since 2011 and is maintained by [graysky](/index.php/User:Graysky "User:Graysky").
 
 ## Contents
 
@@ -21,7 +21,28 @@ Related articles
 
 ## Setup
 
-Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial user repositories") repository to `pacman.conf` and [sign](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") [graysky](http://repo-ck.com/)'s key.
+Add the repo to `/etc/pacman.conf` under the Arch [official repositories](/index.php/Official_repositories "Official repositories"):
+
+ `pacman.conf` 
+```
+[repo-ck]
+Server = http://repo-ck.com/$arch
+
+```
+
+Add and [sign](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") graysky's key:
+
+```
+$ pacman-key -r 5EE46C4C && pacman-key --lsign-key 5EE46C4C
+
+```
+
+Update your sync database:
+
+```
+$ pacman -Syy
+
+```
 
 ## Kernels and related packages
 
@@ -95,7 +116,7 @@ Extensive testing comparing the effect of GCC compile options show varying resul
 
 ## BFQ I/O scheduler
 
-See [Linux-ck#How to enable the BFQ I/O Scheduler](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck").
+See [Improving_performance#Input.2Foutput_schedulers](/index.php/Improving_performance#Input.2Foutput_schedulers "Improving performance").
 
 ## Repository statistics
 

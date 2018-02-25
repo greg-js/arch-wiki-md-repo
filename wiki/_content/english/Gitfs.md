@@ -1,4 +1,4 @@
-From [gitfs](https://www.presslabs.com/gitfs/docs/):
+From [gitfs](https://www.presslabs.org/gitfs/docs/):
 
 	gitfs is a FUSE file system that fully integrates with git. You can mount a remote repository’s branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
 

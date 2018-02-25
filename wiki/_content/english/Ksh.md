@@ -19,7 +19,7 @@ More implementations are provided in the [Arch User Repository](/index.php/Arch_
 
 *   **loksh** — A Linux port of OpenBSD's ksh
 
-	[https://github.com/dimkr/loksh](https://github.com/dimkr/loksh) || [loksh](https://aur.archlinux.org/packages/loksh/)
+	[https://github.com/dimkr/loksh](https://github.com/dimkr/loksh) || [loksh-git](https://aur.archlinux.org/packages/loksh-git/)
 
 *   **Public Domain Korn Shell** — Clone of the AT&T Korn shell. At the moment, it has most of the ksh88 features, not much of the ksh93 features, and a number of its own features.
 

@@ -31,7 +31,7 @@ Related articles
 
 [Install](/index.php/Install "Install") [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) or [bubblewrap-git](https://aur.archlinux.org/packages/bubblewrap-git/).
 
-**Note:** For information about [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) support in Archlinux kernels see [Security#Sandboxing_applications](/index.php/Security#Sandboxing_applications "Security").
+**Note:** For information about [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) support in Archlinux kernels see [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security").
 
 ## Configuration
 

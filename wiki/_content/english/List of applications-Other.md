@@ -179,7 +179,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 *   **khal** — Command-line (non-interactive) and ncurses (interactive) calendar system (supports CalDAV)
 
-	[https://github.com/pimutils/khal](https://github.com/pimutils/khal) || [khal](https://aur.archlinux.org/packages/khal/)
+	[https://github.com/pimutils/khal](https://github.com/pimutils/khal) || [khal](https://www.archlinux.org/packages/?name=khal)
 
 *   **todoman** — Command-line To-do list manager (supports CalDAV)
 

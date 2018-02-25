@@ -116,7 +116,7 @@ See [#RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file
 
 ### Copy-on-Write (CoW)
 
-By default, Btrfs uses [Wikipedia:copy-on-write](https://en.wikipedia.org/wiki/copy-on-write "wikipedia:copy-on-write") for all files all the time. See the [Btrfs Sysadmin Guide section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Copy_on_Write_.28CoW.29) for implementation details, as well as advantages and disadvantages.
+By default, Btrfs uses [copy-on-write](https://en.wikipedia.org/wiki/copy-on-write "wikipedia:copy-on-write") for all files all the time. See the [Btrfs Sysadmin Guide section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Copy_on_Write_.28CoW.29) for implementation details, as well as advantages and disadvantages.
 
 #### Disabling CoW
 

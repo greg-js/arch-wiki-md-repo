@@ -92,7 +92,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[GAP](https://en.wikipedia.org/wiki/GAP_(computer_algebra_system) "wikipedia:GAP (computer algebra system)")** — Sistema de álgebra computacional para álgebra discreta computacional con especial énfasis en la teoría de grupos computacionales.
 
-	[http://www.gap-system.org](http://www.gap-system.org) || [gap-math](https://aur.archlinux.org/packages/gap-math/)
+	[http://www.gap-system.org](http://www.gap-system.org) || [gap](https://www.archlinux.org/packages/?name=gap)
 
 *   **[Mathomatic](https://en.wikipedia.org/wiki/Mathomatic "wikipedia:Mathomatic")** — Aplicaciones generales para el sistema de álgebra computacional escrito en C.
 
@@ -297,7 +297,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Tabla periódica de los elementos con editor de moléculas y resolución de ecuaciones del escritorio [KDE](/index.php/KDE "KDE").
 
-	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kdeedu-kalzium](https://www.archlinux.org/packages/?name=kdeedu-kalzium)
+	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
 
 #### Bioquímica
 

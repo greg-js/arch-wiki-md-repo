@@ -26,15 +26,6 @@ Create certificates for the server+client, default values were used
 Update the plugins and vulnerability data:
 
 ```
-# openvas-nvt-sync
-# openvas-scapdata-sync
-# openvas-certdata-sync
-
-```
-
-As of openvas-manager-7.0.2 & openvas-scanner-5.1.1 - greenbone-gvm-tools drive nvt, scap and cert plugins and vulnerability data sync through the following commands :-
-
-```
 # greenbone-nvt-sync
 # greenbone-scapdata-sync
 # greenbone-certdata-sync

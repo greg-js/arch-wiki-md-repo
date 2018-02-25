@@ -1,7 +1,3 @@
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-
 Web is the default web browser for [GNOME](/index.php/GNOME "GNOME"). Web provides a simple and minimalist interface for accessing the internet. Whilst it is developed primarily for GNOME, Web works acceptably in other [desktop environments](/index.php/Desktop_environments "Desktop environments") as well.
 
 **Note:** Web was known as [Epiphany](http://projects.gnome.org/epiphany/) prior to version 3.4\. The application was given new descriptive names, one for each supported language. The name *Epiphany* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
@@ -52,7 +48,9 @@ Web can create web applications out of websites and add them to desktop menu. To
 
 ### Plugins
 
-See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+Web uses NPAPI plugins, see the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+
+**Note:** Epiphany doesn't support 'windowed plugins', which use X11 calls under wayland [[1]](https://wiki.gnome.org/Apps/Web/Docs/FrequentlyAskedQuestions#Does_Epiphany_support_plugins.3F).
 
 To find out what plugins are installed/enabled, enter `about:plugins` in the address bar.
 

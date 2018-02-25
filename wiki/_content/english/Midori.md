@@ -1,3 +1,10 @@
+Related articles
+
+*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
+*   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
+*   [UZBL-Browser](/index.php/UZBL-Browser "UZBL-Browser")
+*   [Dillo](/index.php/Dillo "Dillo")
+
 [Midori](http://midori-browser.org) is a lightweight Webkit-based web browser developed by Christian Dywan. It is part of the [Xfce](/index.php/Xfce "Xfce") Goodies project.
 
 Some of its features are:
@@ -72,14 +79,13 @@ For manual installation, you have to create the folder `~/.local/share/midori/sc
 
 To get the Flash plugin working in Midori you can install the [midori-flash](https://aur.archlinux.org/packages/midori-flash/) package.
 
-Alternatively, install the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the main repository, and add `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` to your [.bashrc](https://www.archlinux.org/packages/?name=.bashrc), [.xprofile](https://www.archlinux.org/packages/?name=.xprofile), or corresponding shell configuration file.
+Alternatively, install the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the main repository, and add `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` to your `.bashrc`, `.xprofile`, or corresponding shell configuration file.
 
 #### Pepper Flash
 
 To use Pepper flash in midori install [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) or [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/), and additionally install one of the following:
 
 *   [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash)
-*   [chromium-pepper-flash-standalone](https://aur.archlinux.org/packages/chromium-pepper-flash-standalone/)
 *   [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 *   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
 *   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)

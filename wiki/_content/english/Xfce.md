@@ -268,7 +268,7 @@ $ xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false
 
 ```
 
-Then navigate to *Applications* -> *Settings* -> *Session and Startup* -> *Sessions* and click the *Clear saved sessions* button.
+Then navigate to *Applications > Settings > Session and Startup > Sessions* and click the *Clear saved sessions* button.
 
 **Tip:** If the command above does not change the setting persistently, use the following command instead: `xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
 
@@ -469,7 +469,7 @@ Xfce has no native support for colour management. [[4]](https://bugzilla.xfce.or
 
 ### Multiple monitors
 
-Xfce has support for multiple monitors. Settings can be configured in the *Applications* -> *Settings* -> *Display* dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
+Xfce has support for multiple monitors. Settings can be configured in the *Applications > Settings > Display* dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
 
 ### SSH agents
 
@@ -553,7 +553,7 @@ Image editing programs like [GIMP](/index.php/GIMP "GIMP") can be used to conver
 
 This happens if icons for some actions (Suspend, Hibernate) are missing from the icon theme, or do not have the expected names. To fix this, install an icon theme which has the necessary icons already added; see [Icons#Xfce icons](/index.php/Icons#Xfce_icons "Icons").
 
-Then, you can switch to that icon theme using Applications -> Settings -> Appearance -> Icons.
+Then, you can switch to that icon theme using *Applications > Settings > Appearance > Icons*.
 
 Alternatively you can use the required icons provided by the icon theme you installed in your current icon theme. To do so, you first need to find out what the currently used icon theme is called. You can do so by using the command below:
 

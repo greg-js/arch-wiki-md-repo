@@ -512,7 +512,7 @@ Installare [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) e [
 
 ### Ricevere le notifiche per gli aggiornamenti software
 
-Installare [apper](https://aur.archlinux.org/packages/apper/) per ottenere le notifiche sugli aggiornamenti dei pacchetti nella barra delle applicazioni di KDE e di una GUI semplice per la gestione dei pacchetti. Vedere il [PackageKit sito](http://www.packagekit.org) per ulteriori informazioni.
+Installare [apper](https://www.archlinux.org/packages/?name=apper) per ottenere le notifiche sugli aggiornamenti dei pacchetti nella barra delle applicazioni di KDE e di una GUI semplice per la gestione dei pacchetti. Vedere il [PackageKit sito](http://www.packagekit.org) per ulteriori informazioni.
 
 ### Configurare KWin per utilizzare le OpenGL ES
 

@@ -14,89 +14,74 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
 ## Contents
 
 *   [1 Adding your repository to this page](#Adding_your_repository_to_this_page)
-*   [2 Any](#Any)
-    *   [2.1 Signed](#Signed)
-        *   [2.1.1 ivasilev](#ivasilev)
-        *   [2.1.2 pkgbuilder](#pkgbuilder)
-        *   [2.1.3 xyne-any](#xyne-any)
-    *   [2.2 Unsigned](#Unsigned)
-        *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
-*   [3 x86_64](#x86_64)
-    *   [3.1 Signed](#Signed_2)
-        *   [3.1.1 arcanisrepo](#arcanisrepo)
-        *   [3.1.2 ArchHaskell](#ArchHaskell)
-        *   [3.1.3 archlinuxcn](#archlinuxcn)
-        *   [3.1.4 archsec](#archsec)
-        *   [3.1.5 archstrike](#archstrike)
-        *   [3.1.6 archzfs](#archzfs)
-        *   [3.1.7 ashleyis](#ashleyis)
-        *   [3.1.8 aurpackages](#aurpackages)
-        *   [3.1.9 aur-archlinux](#aur-archlinux)
-        *   [3.1.10 blackeagle-pre-community](#blackeagle-pre-community)
-        *   [3.1.11 boyska64](#boyska64)
-        *   [3.1.12 catalyst](#catalyst)
-        *   [3.1.13 catalyst-hd234k](#catalyst-hd234k)
-        *   [3.1.14 city](#city)
-        *   [3.1.15 coderkun-aur](#coderkun-aur)
-        *   [3.1.16 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [3.1.17 decryptedepsilon](#decryptedepsilon)
-        *   [3.1.18 eatabrick](#eatabrick)
-        *   [3.1.19 eschwartz](#eschwartz)
-        *   [3.1.20 gustawho](#gustawho)
-        *   [3.1.21 herecura](#herecura)
-        *   [3.1.22 holo](#holo)
-        *   [3.1.23 icinga2](#icinga2)
-        *   [3.1.24 ivasilev](#ivasilev_2)
-        *   [3.1.25 jlk](#jlk)
-        *   [3.1.26 jrpi](#jrpi)
-        *   [3.1.27 jrpi-haskell](#jrpi-haskell)
-        *   [3.1.28 llvm-svn](#llvm-svn)
-        *   [3.1.29 markzz](#markzz)
-        *   [3.1.30 miffe](#miffe)
-        *   [3.1.31 mikelpint](#mikelpint)
-        *   [3.1.32 mobile](#mobile)
-        *   [3.1.33 qt-debug](#qt-debug)
-        *   [3.1.34 quarry](#quarry)
-        *   [3.1.35 repo-ck](#repo-ck)
-        *   [3.1.36 seblu](#seblu)
-        *   [3.1.37 seiichiro](#seiichiro)
-        *   [3.1.38 sergej-repo](#sergej-repo)
-        *   [3.1.39 siosm-aur](#siosm-aur)
-        *   [3.1.40 subtitlecomposer](#subtitlecomposer)
-        *   [3.1.41 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.42 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-        *   [3.1.43 xyne-x86_64](#xyne-x86_64)
-    *   [3.2 Unsigned](#Unsigned_2)
-        *   [3.2.1 andrwe](#andrwe)
-        *   [3.2.2 alucryd](#alucryd)
-        *   [3.2.3 alucryd-multilib](#alucryd-multilib)
-        *   [3.2.4 archgeotux](#archgeotux)
-        *   [3.2.5 archlinuxfr](#archlinuxfr)
-        *   [3.2.6 archlinuxgr](#archlinuxgr)
-        *   [3.2.7 archlinuxgr-kde4](#archlinuxgr-kde4)
-        *   [3.2.8 arsch](#arsch)
-        *   [3.2.9 heftig](#heftig)
-        *   [3.2.10 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
-        *   [3.2.11 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.12 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.13 home_post-factum_kernels_Arch](#home_post-factum_kernels_Arch)
-        *   [3.2.14 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.15 home-thaodan](#home-thaodan)
-        *   [3.2.16 jkanetwork](#jkanetwork)
-        *   [3.2.17 matrixim](#matrixim)
-        *   [3.2.18 mesa-git](#mesa-git)
-        *   [3.2.19 mingw-w64](#mingw-w64)
-        *   [3.2.20 neo_chen](#neo_chen)
-        *   [3.2.21 noware](#noware)
-        *   [3.2.22 ownstuff](#ownstuff)
-        *   [3.2.23 pantheon](#pantheon)
-        *   [3.2.24 pietma](#pietma)
-        *   [3.2.25 pnsft-pur](#pnsft-pur)
-        *   [3.2.26 QOwnNotes](#QOwnNotes)
-        *   [3.2.27 rakudo](#rakudo)
-        *   [3.2.28 rust-git](#rust-git)
-        *   [3.2.29 trinity](#trinity)
-        *   [3.2.30 zrootfs](#zrootfs)
+*   [2 Signed](#Signed)
+    *   [2.1 arcanisrepo](#arcanisrepo)
+    *   [2.2 ArchHaskell](#ArchHaskell)
+    *   [2.3 archlinuxcn](#archlinuxcn)
+    *   [2.4 archsec](#archsec)
+    *   [2.5 archstrike](#archstrike)
+    *   [2.6 archzfs](#archzfs)
+    *   [2.7 ashleyis](#ashleyis)
+    *   [2.8 aur-archlinux](#aur-archlinux)
+    *   [2.9 aurpackages](#aurpackages)
+    *   [2.10 blackeagle-pre-community](#blackeagle-pre-community)
+    *   [2.11 boyska64](#boyska64)
+    *   [2.12 catalyst](#catalyst)
+    *   [2.13 catalyst-hd234k](#catalyst-hd234k)
+    *   [2.14 city](#city)
+    *   [2.15 coderkun-aur](#coderkun-aur)
+    *   [2.16 coderkun-aur-audio](#coderkun-aur-audio)
+    *   [2.17 eatabrick](#eatabrick)
+    *   [2.18 eschwartz](#eschwartz)
+    *   [2.19 herecura](#herecura)
+    *   [2.20 holo](#holo)
+    *   [2.21 icinga2](#icinga2)
+    *   [2.22 ivasilev](#ivasilev)
+    *   [2.23 jlk](#jlk)
+    *   [2.24 llvm-svn](#llvm-svn)
+    *   [2.25 markzz](#markzz)
+    *   [2.26 miffe](#miffe)
+    *   [2.27 mikelpint](#mikelpint)
+    *   [2.28 mobile](#mobile)
+    *   [2.29 pkgbuilder](#pkgbuilder)
+    *   [2.30 qt-debug](#qt-debug)
+    *   [2.31 quarry](#quarry)
+    *   [2.32 repo-ck](#repo-ck)
+    *   [2.33 seblu](#seblu)
+    *   [2.34 seiichiro](#seiichiro)
+    *   [2.35 sergej-repo](#sergej-repo)
+    *   [2.36 siosm-aur](#siosm-aur)
+    *   [2.37 subtitlecomposer](#subtitlecomposer)
+    *   [2.38 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.39 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.40 xyne-x86_64](#xyne-x86_64)
+*   [3 Unsigned](#Unsigned)
+    *   [3.1 alucryd](#alucryd)
+    *   [3.2 alucryd-multilib](#alucryd-multilib)
+    *   [3.3 andrwe](#andrwe)
+    *   [3.4 archgeotux](#archgeotux)
+    *   [3.5 archlinuxfr](#archlinuxfr)
+    *   [3.6 archlinuxgr](#archlinuxgr)
+    *   [3.7 archlinuxgr-kde4](#archlinuxgr-kde4)
+    *   [3.8 fusion809](#fusion809)
+    *   [3.9 heftig](#heftig)
+    *   [3.10 home-thaodan](#home-thaodan)
+    *   [3.11 jkanetwork](#jkanetwork)
+    *   [3.12 mesa-git](#mesa-git)
+    *   [3.13 Minerva W Science](#Minerva_W_Science)
+    *   [3.14 mingw-w64](#mingw-w64)
+    *   [3.15 neo_chen](#neo_chen)
+    *   [3.16 ownstuff](#ownstuff)
+    *   [3.17 pantheon](#pantheon)
+    *   [3.18 pietma](#pietma)
+    *   [3.19 Pival81 arch xapps](#Pival81_arch_xapps)
+    *   [3.20 pnsft-pur](#pnsft-pur)
+    *   [3.21 post-factum kernels](#post-factum_kernels)
+    *   [3.22 QOwnNotes](#QOwnNotes)
+    *   [3.23 rakudo](#rakudo)
+    *   [3.24 rust-git](#rust-git)
+    *   [3.25 trinity](#trinity)
+    *   [3.26 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -109,76 +94,11 @@ If you have your own repository, please add it to this page, so that all the oth
 *   If there is a page (either on ArchWiki or external) containing more information about the repository, include a link to it.
 *   If possible, avoid using comments in code blocks. The formatted description is much more readable. Users who want some comments in their `pacman.conf` can easily create it on their own.
 
-## Any
-
-"Any" repositories are architecture-independent. In other words, they can be used on x86_64, but also on i686 and ARM systems.
-
-### Signed
-
-#### ivasilev
-
-*   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
-*   **Description:** A variety of packages, mostly my own software and AUR builds.
-*   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
-*   **Key-ID:** [17DAB671](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xB77A3C8832838F1F80ADFD7E1D0507B417DAB671)
-
-**Note:** I maintain **any** and **x86_64** repos. **x86_64** includes packages from **any**. **$arch** can be overridden by both.
-
-```
-[ivasilev]
-Server = https://ivasilev.net/pacman/any
-# Server = https://ivasilev.net/pacman/$arch
-
-```
-
-#### pkgbuilder
-
-*   **Maintainer:** [Chris Warrick](https://chriswarrick.com/)
-*   **Description:** A repository for PKGBUILDer, a Python AUR helper.
-*   **Upstream page:** [https://github.com/Kwpolska/pkgbuilder](https://github.com/Kwpolska/pkgbuilder)
-*   **Key-ID:** 5EAAEA16
-
-```
-[pkgbuilder]
-Server = https://pkgbuilder-repo.chriswarrick.com/
-
-```
-
-#### xyne-any
-
-*   **Maintainer:** [Xyne](https://www.archlinux.org/people/trusted-users/#xyne)
-*   **Description:** A repository for Xyne's own projects containing packages for "any" architecture.
-*   **Upstream page:** [https://xyne.archlinux.ca/projects/](https://xyne.archlinux.ca/projects/)
-*   **Key-ID:** Not needed, as maintainer is a TU
-
-**Note:** Use this repository only if there is no matching `[xyne-*]` repository for your architecture.
-
-```
-[xyne-any]
-Server = https://xyne.archlinux.ca/repos/xyne/
-
-```
-
-### Unsigned
-
-#### archlinuxgr-any
-
-*   **Maintainer:**
-*   **Description:** The Hellenic (Greek) unofficial Arch Linux repository with many interesting packages.
-
-```
-[archlinuxgr-any]
-Server = https://archlinuxgr.tiven.org/archlinux/any
-
-```
-
-## x86_64
-
 Some repositories may also have packages for architectures beside x86_64\. The `$arch` variable will be set automatically by pacman.
 
-### Signed
+## Signed
 
-#### arcanisrepo
+### arcanisrepo
 
 *   **Maintainer:** [arcanis](https://www.archlinux.org/people/trusted-users/#arcanis)
 *   **Description:** A repository with some AUR packages including packages from VCS
@@ -192,11 +112,13 @@ Server = https://repo.arcanis.me/repo/$arch
 
 (It is also available via FTP with the same url.)
 
-#### ArchHaskell
+### ArchHaskell
+
+Unofficial repositories for Haskell packages.
 
 See [/ArchHaskell](/index.php/Unofficial_user_repositories/ArchHaskell "Unofficial user repositories/ArchHaskell").
 
-#### archlinuxcn
+### archlinuxcn
 
 *   **Maintainers:** [Phoenix Nemo (phoenixlzx)](https://plus.google.com/+PhoenixNemo/), [Felix Yan (felixonmars, dev)](https://www.archlinux.org/people/developers/#fyan), [lilydjwg](https://twitter.com/lilydjwg), [farseerfc (TU)](https://www.archlinux.org/people/trusted-users/#farseerfc), and [others](https://github.com/archlinuxcn/repo/graphs/contributors)
 *   **Description:** Packages by the Chinese Arch Linux community, all signed. Be aware that i686 packages are not fully maintained and tested, create an issue if you find some problems.
@@ -215,7 +137,7 @@ Server = http://repo.archlinuxcn.org/$arch
 
 ```
 
-#### archsec
+### archsec
 
 *   **Maintainer:** [The ArchSec Team](https://archsec.info)
 *   **Description:** A repository of binaries compiled from a hardened toolchain
@@ -230,7 +152,7 @@ Server = https://archsec.info/$repo/$arch
 
 ```
 
-#### archstrike
+### archstrike
 
 *   **Maintainer:** [The ArchStrike Team](https://archstrike.org/team)
 *   **Description:** A repository for security professionals and enthusiasts
@@ -245,7 +167,7 @@ Server = https://mirror.archstrike.org/$arch/$repo
 
 ```
 
-#### archzfs
+### archzfs
 
 *   **Maintainer:** [Jesus Alvarez (demizer)](http://archzfs.com)
 *   **Description:** Packages for ZFS on Arch Linux.
@@ -258,7 +180,7 @@ Server = http://archzfs.com/$repo/x86_64
 
 ```
 
-#### ashleyis
+### ashleyis
 
 *   **Maintainer:** Ashley Towns ([ashleyis](https://aur.archlinux.org/account/ashleyis/))
 *   **Description:** Debug versions of SDL, chipmunk, libtmx and other misc game libraries. also swift-lang and some other AUR packages
@@ -270,19 +192,7 @@ Server = http://arch.ashleytowns.id.au/repo/$arch
 
 ```
 
-#### aurpackages
-
-*   **Maintainer:** Mark Vainomaa <mikroskeem@mikroskeem.eu>
-*   **Description:** AUR packages I tend to use every day. Will be updated weekly
-*   **Key-ID:** 2A07EF8371AFC028
-
-```
-[aurpackages]
-Server = https://r.mikroskeem.eu
-
-```
-
-#### aur-archlinux
+### aur-archlinux
 
 *   **Maintainer:** Marc Mettke <marc@itmettke.de>
 *   **Description:** Auto Build of Most Popular AUR Packages
@@ -296,7 +206,19 @@ Server = https://repo.itmettke.de/aur/$repo/$arch
 
 ```
 
-#### blackeagle-pre-community
+### aurpackages
+
+*   **Maintainer:** Mark Vainomaa <mikroskeem@mikroskeem.eu>
+*   **Description:** AUR packages I tend to use every day. Will be updated weekly
+*   **Key-ID:** 2A07EF8371AFC028
+
+```
+[aurpackages]
+Server = https://r.mikroskeem.eu
+
+```
+
+### blackeagle-pre-community
 
 *   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
 *   **Description:** testing of the by me maintaned packages before moving to *community* repository
@@ -308,7 +230,7 @@ Server = https://repo.herecura.be/$repo/$arch
 
 ```
 
-#### boyska64
+### boyska64
 
 *   **Maintainer:** boyska
 *   **Description:** Personal repository: cryptography, sdr, mail handling and misc; don't expect packages to be upgraded promptly, I am a zealot of slackness
@@ -320,7 +242,7 @@ Server = http://boyska.degenerazione.xyz/archrepo
 
 ```
 
-#### catalyst
+### catalyst
 
 *   **Maintainer:** [Vi0l0](/index.php/User:Vi0L0 "User:Vi0L0")
 *   **Description:** ATI Catalyst proprietary drivers.
@@ -332,7 +254,7 @@ Server = https://mirror.hactar.xyz/Vi0L0/catalyst/$arch
 
 ```
 
-#### catalyst-hd234k
+### catalyst-hd234k
 
 *   **Maintainer:** [Vi0l0](/index.php/User:Vi0L0 "User:Vi0L0")
 *   **Description:** ATI Catalyst proprietary drivers.
@@ -344,7 +266,7 @@ Server = https://mirror.hactar.xyz/Vi0L0/catalyst-hd234k/$arch
 
 ```
 
-#### city
+### city
 
 *   **Maintainer:** [Balló György](https://www.archlinux.org/people/trusted-users/#bgyorgy)
 *   **Description:** Experimental/unpopular packages.
@@ -357,7 +279,7 @@ Server = https://pkgbuild.com/~bgyorgy/$repo/os/$arch
 
 ```
 
-#### coderkun-aur
+### coderkun-aur
 
 *   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
 *   **Description:** AUR packages with random software. Supporting package deltas and package and database signing.
@@ -371,7 +293,7 @@ Server = http://arch.suruatoel.xyz/$repo/$arch/
 
 ```
 
-#### coderkun-aur-audio
+### coderkun-aur-audio
 
 *   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
 *   **Description:** AUR packages with audio-related (realtime kernels, lv2-plugins, …) software. Supporting package deltas and package and database signing.
@@ -385,21 +307,7 @@ Server = http://arch.suruatoel.xyz/$repo/$arch/
 
 ```
 
-#### decryptedepsilon
-
-*   **Maintainer:** [decryptedepsilon](https://aur.archlinux.org/account/decryptedepsilon/)
-*   **Description:** AUR packages that I usually install (dropbox, jdk, atom, spotify, tor-browser-en, paper-icon-theme-git)
-*   **Upstream page:** [http://www.decryptedepsilon.bl.ee/repo/x86_64](http://www.decryptedepsilon.bl.ee/repo/x86_64)
-*   **Key-ID:** 60442BA4
-*   **Keyfile:** [http://www.decryptedepsilon.bl.ee/decryptedepsilon.asc](http://www.decryptedepsilon.bl.ee/decryptedepsilon.asc)
-
-```
-[decryptedepsilon]
-Server = http://decryptedepsilon.bl.ee/repo/$arch/
-
-```
-
-#### eatabrick
+### eatabrick
 
 *   **Maintainer:** bentglasstube
 *   **Description:** Packages for software written by (and a few just compiled by) bentglasstube.
@@ -410,7 +318,7 @@ Server = http://repo.eatabrick.org/$arch
 
 ```
 
-#### eschwartz
+### eschwartz
 
 *   **Maintainer:** [Eli Schwartz](https://www.archlinux.org/people/trusted-users/#eschwartz)
 *   **Description:** Personal repo with AUR packages and some core packages from git (including glibc and pacman). Contains debug packages.
@@ -422,21 +330,7 @@ Server = https://pkgbuild.com/~eschwartz/repo/$arch
 
 ```
 
-#### gustawho
-
-*   **Maintainer:** [Gustavo Castro](https://twitter.com/gustawho) <gustawho@openmailbox.com>
-*   **Description:** Scientific tools (mostly physics/math) and AUR packages that take long to build (such as [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)).
-*   **Package list:** [https://gustawho.com/pacman](https://gustawho.com/pacman)
-*   **Upstream page:** [https://gustawho.com](https://gustawho.com)
-*   **Key-ID:** [76578671](https://gustawho.com/repo/gustawho.key)
-
-```
-[gustawho]
-Server = https://gustawho.com/repo/$arch
-
-```
-
-#### herecura
+### herecura
 
 *   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
 *   **Description:** additional packages not found in the *community* repository
@@ -448,7 +342,7 @@ Server = https://repo.herecura.be/$repo/$arch
 
 ```
 
-#### holo
+### holo
 
 *   **Maintainer:** Stefan Majewsky <holo-pacman@posteo.de> (please prefer to report issues at [Github](https://github.com/majewsky/holo-pacman-repo/issues))
 *   **Description:** Packages for [Holo configuration management](https://holocm.org), including compatible plugins and tools.
@@ -462,7 +356,7 @@ Server = https://repo.holocm.org/archlinux/x86_64
 
 ```
 
-#### icinga2
+### icinga2
 
 *   **Maintainer:** Josef Stautner <archwiki@veloc1ty.de>
 *   **Description:** Unofficial packages for [Icinga 2](https://www.icinga.com/products/icinga-2/)
@@ -477,7 +371,7 @@ Server = https://icinga2.mirror.veloc1ty.de/
 
 ```
 
-#### ivasilev
+### ivasilev
 
 *   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
 *   **Description:** A variety of packages, mostly my own software and AUR builds.
@@ -492,7 +386,7 @@ Server = https://ivasilev.net/pacman/$arch
 
 ```
 
-#### jlk
+### jlk
 
 *   **Maintainer:** [Jakub Klinkovský](/index.php/User:Lahwaacz "User:Lahwaacz")
 *   **Description:** Various packages from the ABS and AUR. Modified packages are in the `modified` group.
@@ -505,35 +399,7 @@ Server = http://jlk.fjfi.cvut.cz/arch/repo
 
 ```
 
-#### jrpi
-
-*   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
-*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositories](https://jrpi.mooo.com/Programação?lang=en#Repositories)
-*   **Description:** Some packages from the AUR, patched official packages and old packages.
-*   **Package list:** [https://jrpi.mooo.com/Repositórios/principal/](https://jrpi.mooo.com/Repositórios/principal/)
-*   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
-
-```
-[jrpi]
-Server = https://jrpi.mooo.com/Repositórios/principal/
-
-```
-
-#### jrpi-haskell
-
-*   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
-*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositories](https://jrpi.mooo.com/Programação?lang=en#Repositories)
-*   **Description:** Haskell packages (created with cblrepo but not available in haskell-core).
-*   **Package list:** [https://jrpi.mooo.com/Repositórios/haskell/](https://jrpi.mooo.com/Repositórios/haskell/)
-*   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
-
-```
-[jrpi-haskell]
-Server = https://jrpi.mooo.com/Repositórios/haskell/
-
-```
-
-#### llvm-svn
+### llvm-svn
 
 *   **Maintainer:** [Luchesar V. ILIEV (kerberizer)](/index.php/User:Kerberizer "User:Kerberizer")
 *   **Description:** [llvm-svn](https://aur.archlinux.org/pkgbase/llvm-svn) and [lib32-llvm-svn](https://aur.archlinux.org/pkgbase/lib32-llvm-svn) from AUR: the LLVM compiler infrastructure, the Clang frontend, and the tools associated with it
@@ -545,7 +411,7 @@ Server = https://repos.uni-plovdiv.net/archlinux/$repo/$arch
 
 ```
 
-#### markzz
+### markzz
 
 *   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
 *   **Description:** Packages that markzz maintains or uses on the AUR; this includes Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)), and packages to maintain a Debian package repository.
@@ -559,7 +425,7 @@ Server = https://repo.markzz.com/arch/$repo/$arch
 
 ```
 
-#### miffe
+### miffe
 
 *   **Maintainer:** [miffe](https://bbs.archlinux.org/profile.php?id=4059)
 *   **Description:** AUR packages maintained by miffe, e.g. linux-mainline
@@ -571,7 +437,7 @@ Server = https://arch.miffe.org/$arch/
 
 ```
 
-#### mikelpint
+### mikelpint
 
 *   **Maintainer:** [Mikel Pintado (Mikelpint)](/index.php/User:Mikelpint "User:Mikelpint")
 *   **Description:** Packages that mikelpint maintains in the AUR.
@@ -583,7 +449,7 @@ Server = https://mikelpint.github.io/repository/archlinux/repo
 
 ```
 
-#### mobile
+### mobile
 
 *   **Maintainer:** [farwayer](https://keybase.io/farwayer)
 *   **Description:** React Native and Android development
@@ -596,7 +462,20 @@ Server = https://farwayer.keybase.pub/arch/$repo
 
 ```
 
-#### qt-debug
+### pkgbuilder
+
+*   **Maintainer:** [Chris Warrick](https://chriswarrick.com/)
+*   **Description:** A repository for PKGBUILDer, a Python AUR helper.
+*   **Upstream page:** [https://github.com/Kwpolska/pkgbuilder](https://github.com/Kwpolska/pkgbuilder)
+*   **Key-ID:** 5EAAEA16
+
+```
+[pkgbuilder]
+Server = https://pkgbuilder-repo.chriswarrick.com/
+
+```
+
+### qt-debug
 
 *   **Maintainer:** [The Compiler](http://blog.the-compiler.org/?page_id=36)
 *   **Description:** Qt/PyQt builds with debug symbols
@@ -605,11 +484,11 @@ Server = https://farwayer.keybase.pub/arch/$repo
 
 ```
 [qt-debug]
-Server = http://qutebrowser.org/qt-debug/$arch
+Server = https://qutebrowser.org/qt-debug/$arch
 
 ```
 
-#### quarry
+### quarry
 
 *   **Maintainer:** [anatolik](https://www.archlinux.org/people/developers/#anatolik)
 *   **Description:** Arch binary repository for [Rubygems](http://rubygems.org/) packages. See [forum announcement](https://bbs.archlinux.org/viewtopic.php?id=182729) for more information.
@@ -622,21 +501,13 @@ Server = https://pkgbuild.com/~anatolik/quarry/x86_64/
 
 ```
 
-#### repo-ck
+### repo-ck
 
-*   **Maintainer:** [graysky](/index.php/User:Graysky "User:Graysky")
-*   **Description:** Kernel and modules with Brain Fuck Scheduler and all the goodies in the ck1 patch set.
-*   **Upstream page:** [repo-ck.com](http://repo-ck.com)
-*   **Wiki:** [/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck")
-*   **Key-ID:** 5EE46C4C
+Kernel and modules with Brain Fuck Scheduler and all the goodies in the ck1 patch set.
 
-```
-[repo-ck]
-Server = http://repo-ck.com/$arch
+See [/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck").
 
-```
-
-#### seblu
+### seblu
 
 *   **Maintainer:** [Sébastien Luttringer](https://www.archlinux.org/people/developers/#seblu)
 *   **Description:** All seblu useful pre-built packages, some homemade (virtualbox-ext-oracle, linux-seblu-meta, bedup).
@@ -648,7 +519,7 @@ Server = http://al.seblu.net/$repo/$arch
 
 ```
 
-#### seiichiro
+### seiichiro
 
 *   **Maintainer:** [Stefan Brand (seiichiro0185)](https://www.seiichiro0185.org)
 *   **Description:** AUR-packages I use frequently
@@ -660,7 +531,7 @@ Server = https://www.seiichiro0185.org/repo/$arch
 
 ```
 
-#### sergej-repo
+### sergej-repo
 
 *   **Maintainer:** [Sergej Pupykin](https://www.archlinux.org/people/trusted-users/#spupykin)
 *   **Description:** psi-plus, owncloud-git, ziproxy, android, MySQL, and other stuff. Some packages also available for armv7h.
@@ -672,7 +543,7 @@ Server = http://repo.p5n.pp.ru/$repo/os/$arch
 
 ```
 
-#### siosm-aur
+### siosm-aur
 
 *   **Maintainer:** [Timothee Ravier](https://tim.siosm.fr/about/)
 *   **Description:** packages also available in the Arch User Repository, sometimes with minor fixes
@@ -685,7 +556,7 @@ Server = http://siosm.fr/repo/$repo/
 
 ```
 
-#### subtitlecomposer
+### subtitlecomposer
 
 *   **Maintainer:** Mladen Milinkovic (maxrd2)
 *   **Description:** Subtitle Composer stable and nightly builds
@@ -698,7 +569,7 @@ Server = http://smoothware.net/$repo/$arch
 
 ```
 
-#### tredaelli-systemd
+### tredaelli-systemd
 
 *   **Maintainer:** [Timothy Redaelli](https://www.archlinux.org/people/trusted-users/#tredaelli)
 *   **Description:** systemd rebuilt with unofficial OpenVZ patch (kernel < 2.6.32-042stab111.1)
@@ -712,7 +583,7 @@ Server = https://pkgbuild.com/~tredaelli/repo/systemd/$arch
 
 ```
 
-#### Webkit2Gtk-unstable
+### Webkit2Gtk-unstable
 
 *   **Maintainer:** [Mariusz Wojcik](/index.php/User:Mrmariusz "User:Mrmariusz")
 *   **Description:** Latest Webkit2Gtk build for early adopters.
@@ -725,14 +596,12 @@ Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$a
 
 ```
 
-#### xyne-x86_64
+### xyne-x86_64
 
 *   **Maintainer:** [Xyne](https://www.archlinux.org/people/trusted-users/#xyne)
-*   **Description:** A repository for Xyne's own projects containing packages for the "x86_64" architecture.
+*   **Description:** A repository for Xyne's own projects.
 *   **Upstream page:** [http://xyne.archlinux.ca/projects/](http://xyne.archlinux.ca/projects/)
 *   **Key-ID:** Not required, as maintainer is a TU
-
-**Note:** This includes all packages in [[xyne-any]](#xyne-any).
 
 ```
 [xyne-x86_64]
@@ -740,11 +609,33 @@ Server = https://xyne.archlinux.ca/repos/xyne
 
 ```
 
-### Unsigned
+## Unsigned
 
 **Note:** Users will need to add the following to these entries: `SigLevel = PackageOptional`
 
-#### andrwe
+### alucryd
+
+*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
+*   **Description:** Various packages Maxime Gauduin maintains (or not) in the AUR.
+
+```
+[alucryd]
+Server = https://pkgbuild.com/~alucryd/$repo/x86_64
+
+```
+
+### alucryd-multilib
+
+*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
+*   **Description:** Various packages needed to run Steam without its runtime environment.
+
+```
+[alucryd-multilib]
+Server = https://pkgbuild.com/~alucryd/$repo/x86_64
+
+```
+
+### andrwe
 
 *   **Maintainer:** Andrwe Lord Weber
 *   **Description:** contains programs I'm using on many systems
@@ -756,29 +647,7 @@ Server = http://repo.andrwe.org/$arch
 
 ```
 
-#### alucryd
-
-*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
-*   **Description:** Various packages Maxime Gauduin maintains (or not) in the AUR.
-
-```
-[alucryd]
-Server = https://pkgbuild.com/~alucryd/$repo/x86_64
-
-```
-
-#### alucryd-multilib
-
-*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
-*   **Description:** Various packages needed to run Steam without its runtime environment.
-
-```
-[alucryd-multilib]
-Server = https://pkgbuild.com/~alucryd/$repo/x86_64
-
-```
-
-#### archgeotux
+### archgeotux
 
 *   **Maintainer:** Samuel Mesa
 *   **Description:** Geospatial and geographic information system applications
@@ -790,7 +659,7 @@ Server = https://downloads.sourceforge.net/project/archgeotux/$arch
 
 ```
 
-#### archlinuxfr
+### archlinuxfr
 
 *   **Maintainer:**
 *   **Description:**
@@ -802,10 +671,10 @@ Server = http://repo.archlinux.fr/$arch
 
 ```
 
-#### archlinuxgr
+### archlinuxgr
 
 *   **Maintainer:**
-*   **Description:**
+*   **Description:** many interesting packages provided by the Hellenic (Greek) Arch Linux community
 
 ```
 [archlinuxgr]
@@ -813,7 +682,7 @@ Server = http://archlinuxgr.tiven.org/archlinux/$arch
 
 ```
 
-#### archlinuxgr-kde4
+### archlinuxgr-kde4
 
 *   **Maintainer:**
 *   **Description:** KDE4 packages (plasmoids, themes etc) provided by the Hellenic (Greek) Arch Linux community
@@ -824,30 +693,7 @@ Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
 
 ```
 
-#### arsch
-
-*   **Maintainer:**
-*   **Description:** From users of orgizm.net
-
-```
-[arsch]
-Server = http://arsch.orgizm.net/$arch
-
-```
-
-#### heftig
-
-*   **Maintainer:** [Jan Steffens](https://www.archlinux.org/people/developers/#heftig)
-*   **Description:** Includes pulseaudio-git, pavucontrol-git, and firefox-developer-edition
-*   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
-
-```
-[heftig]
-Server = https://pkgbuild.com/~heftig/repo/$arch
-
-```
-
-#### home_fusion809_Arch_Extra
+### fusion809
 
 *   **Maintainer:** [Brenton Horne](/index.php?title=User:Fusion809&action=edit&redlink=1 "User:Fusion809 (page does not exist)") (brentonhorne77 at gmail dot com).
 
@@ -859,52 +705,19 @@ Server = https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$
 
 ```
 
-#### home_Minerva_W_Science_Arch_Extra
+### heftig
 
-*   **Maintainer:**
-*   **Description:** [OpenFOAM](/index.php/OpenFOAM "OpenFOAM") packages.
-
-```
-[home_Minerva_W_Science_Arch_Extra]
-Server = https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
+*   **Maintainer:** [Jan Steffens](https://www.archlinux.org/people/developers/#heftig)
+*   **Description:** Includes pulseaudio-git, pavucontrol-git, and firefox-developer-edition
+*   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
 
 ```
-
-#### home_Pival81_arch_xapps_Arch_Extra
-
-*   **Maintainer:** Valerio Pizzi ([Pival81](https://github.com/Pival81) <pival801@gmail.com>)
-*   **Description:** [XApps](https://github.com/linuxmint/xapps) packages.
-
-```
-[home_Pival81_arch_xapps_Arch_Extra]
-Server = https://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
+[heftig]
+Server = https://pkgbuild.com/~heftig/repo/$arch
 
 ```
 
-#### home_post-factum_kernels_Arch
-
-*   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
-*   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
-*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by its developer, post-factum
-
-```
-[home_post-factum_kernels_Arch]
-Server = https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/$arch
-
-```
-
-#### home_tarakbumba_archlinux_Arch_Extra_standard
-
-*   **Maintainer:**
-*   **Description:** Contains a few pre-built AUR packages (zemberek, etc.)
-
-```
-[home_tarakbumba_archlinux_Arch_Extra_standard]
-Server = https://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/Arch_Extra_standard/$arch
-
-```
-
-#### home-thaodan
+### home-thaodan
 
 *   **Maintainer**: [Thaodan](https://aur.archlinux.org/account/Thaodan)
 *   **Upstream page**: [https://gitlab.com/Thaodan/linux-pf](https://gitlab.com/Thaodan/linux-pf)
@@ -916,7 +729,7 @@ Server = https://thaodan.de/home/bidar/home-thaodan/$arch
 
 ```
 
-#### jkanetwork
+### jkanetwork
 
 *   **Maintainer:** kprkpr <kevin01010 at gmail dot com>
 *   **Maintainer:** Joselucross <jlgarrido97 at gmail dot com>
@@ -929,18 +742,7 @@ Server = http://repo.jkanetwork.com/repo/$repo/
 
 ```
 
-#### matrixim
-
-*   **Maintainer:** [Iru Cai](https://aur.archlinux.org/account/mytbk)
-*   **Description:** Packages related to [Matrix](https://matrix.org) messaging protocol, and software run on [https://matrixim.cc](https://matrixim.cc) -- my website and Matrix homeserver.
-
-```
-[matrixim]
-Server = https://repo.matrixim.cc/$repo/$arch
-
-```
-
-#### mesa-git
+### mesa-git
 
 *   **Maintainer:** [Laurent Carlier](https://www.archlinux.org/people/trusted-users/#lcarlier)
 *   **Description:** Mesa git builds for the *testing* and *multilib-testing* repositories
@@ -951,7 +753,18 @@ Server = https://pkgbuild.com/~lcarlier/$repo/$arch
 
 ```
 
-#### mingw-w64
+### Minerva W Science
+
+*   **Maintainer:**
+*   **Description:** [OpenFOAM](/index.php/OpenFOAM "OpenFOAM") packages.
+
+```
+[home_Minerva_W_Science_Arch_Extra]
+Server = https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
+
+```
+
+### mingw-w64
 
 *   **Maintainer:** [Philip](https://aur.archlinux.org/account/ant32) and [Jeromy](https://aur.archlinux.org/account/nic96) Reimer
 *   **Description:** Almost all mingw-w64 packages in the AUR.
@@ -965,7 +778,7 @@ Server = https://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 
 ```
 
-#### neo_chen
+### neo_chen
 
 *   **Maintainer:** Kolei Chen (Neo_Chen) <chenkolei@gmail.com>
 *   **Description:** Some uncommon AUR Package
@@ -980,20 +793,7 @@ Server = http://sl-sgp.asn.yt/~neo_chen_repo/
 
 ```
 
-#### noware
-
-**Note:** As of August 2017 both website and repositories at [http://direct.noware.systems](http://direct.noware.systems) are down due to server-side hardware problems. This might be resolved at some point in the future.
-
-*   **Maintainer:** Alexandru Thirtheu (alex_giusi_tiri2@yahoo.com) ([Forums](https://bbs.archlinux.org/profile.php?id=65036)) ([Wiki](/index.php?title=User:AGT&action=edit&redlink=1 "User:AGT (page does not exist)")) ([Web Site](http://direct.noware.systems.:2))
-*   **Description:** Software which I prefer being present in a repository, than being compiled each time. It eases software maintenance, I find. Almost anything goes.
-
-```
-[noware]
-Server = http://direct.$repo.systems.:2/repository/arch/$arch
-
-```
-
-#### ownstuff
+### ownstuff
 
 *   **Maintainer:** [Martchus](https://aur.archlinux.org/account/Martchus)
 *   **Description:** A lot of packages from the AUR, eg. a great number of mingw-w64 packages, fonts, tools like [Tag Editor](https://aur.archlinux.org/packages/tageditor), [Syncthing Tray](https://aur.archlinux.org/packages/syncthingtray) and [Subtitle Composer](https://aur.archlinux.org/packages/subtitlecomposer)
@@ -1005,7 +805,7 @@ Server = http://martchus.no-ip.biz/repo/arch/$repo/os/$arch
 
 ```
 
-#### pantheon
+### pantheon
 
 *   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
 *   **Description:** Repository containing Pantheon-related packages
@@ -1016,7 +816,7 @@ Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 
-#### pietma
+### pietma
 
 *   **Maintainer:** MartiMcFly <martimcfly@autorisation.de>
 *   **Description:** Arch User Repository packages [I create or maintain.](https://aur.archlinux.org/packages/?K=martimcfly&SeB=m).
@@ -1028,7 +828,18 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-#### pnsft-pur
+### Pival81 arch xapps
+
+*   **Maintainer:** Valerio Pizzi ([Pival81](https://github.com/Pival81) <pival801@gmail.com>)
+*   **Description:** [XApps](https://github.com/linuxmint/xapps) packages.
+
+```
+[home_Pival81_arch_xapps_Arch_Extra]
+Server = https://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
+
+```
+
+### pnsft-pur
 
 *   **Maintainer:**
 *   **Description:** Japanese input method packages Mozc (vanilla) and libkkc
@@ -1039,7 +850,19 @@ Server = https://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
 
 ```
 
-#### QOwnNotes
+### post-factum kernels
+
+*   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
+*   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
+*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by its developer, post-factum
+
+```
+[home_post-factum_kernels_Arch]
+Server = https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/$arch
+
+```
+
+### QOwnNotes
 
 *   **Maintainer:** [http://www.qownnotes.org](http://www.qownnotes.org)
 *   **Description:** QOwnNotes is a open source notepad and todo list manager with markdown support and [ownCloud](/index.php/OwnCloud "OwnCloud") integration.
@@ -1050,7 +873,7 @@ Server = https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_E
 
 ```
 
-#### rakudo
+### rakudo
 
 *   **Maintainer:** spider-mario <spidermario@free.fr>
 *   **Description:** Rakudo Perl6
@@ -1061,7 +884,7 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 
 ```
 
-#### rust-git
+### rust-git
 
 *   **Maintainer:** Tatsuyuki Ishi <ishitatsuyuki@gmail.com>
 *   **Description:** Packages of rust-git and others. Normally updated weekly.
@@ -1072,7 +895,7 @@ Server = https://tatsuyuki.kdns.info/archlinux/$repo/$arch
 
 ```
 
-#### trinity
+### trinity
 
 *   **Maintainer:** Michael Manley <mmanley@nasutek.com>
 *   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
@@ -1083,7 +906,7 @@ Server = http://repo.nasutek.com/arch/contrib/trinity/x86_64
 
 ```
 
-#### zrootfs
+### zrootfs
 
 *   **Maintainer:** Isabell Cowan <isabellcowan@gmail.com>
 *   **Description:** For Haswell and Broadwell architecture processors with size in mind.

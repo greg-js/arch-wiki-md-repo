@@ -11,7 +11,7 @@ The [Ethereum Project](https://ethereum.org/) provides an open-source, distribut
 
 ### Go Ethereum
 
-[Go Ethereum](https://geth.ethereum.org/), the official Go implementation of the Ethereum protocol, is available as the [geth](https://www.archlinux.org/packages/?name=geth) package.
+[Go Ethereum](https://geth.ethereum.org/), the official Go implementation of the Ethereum protocol, is available as the [go-ethereum](https://www.archlinux.org/packages/?name=go-ethereum) package.
 
 Create an account with `geth account new`.
 

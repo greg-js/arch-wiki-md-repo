@@ -122,9 +122,6 @@
 *   Christian Hesse
 *   Christian Rebischke
     *   Security team
-*   Daniel Micay
-    *   Packaging (including grsecurity/PaX which is a lot of work)
-    *   Wiki administration, but only with occasional bursts of activity now
 *   David Runge
     *   Packaging (mainly pro-audio)
 *   Evgeniy Alekseev

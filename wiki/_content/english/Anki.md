@@ -24,7 +24,7 @@ Flashcards can be obtained by:
 
 *   Creating them inside Anki, organized in decks and possibly tagged. Cards can contain audio, pictures and even [TeX](/index.php/TeX_Live "TeX Live") formulas;
 *   Downloading them, grouped in an existing [shared deck](https://ankiweb.net/shared/decks/) (e.g. top 1000 words in a language);
-*   Generating them as a [csv file](https://en.wikipedia.org/wiki/Comma-separated_values) that will be imported in Anki.
+*   Generating them as a [csv file](https://en.wikipedia.org/wiki/Comma-separated_values "wikipedia:Comma-separated values") that will be imported in Anki.
 
 ### Older versions
 

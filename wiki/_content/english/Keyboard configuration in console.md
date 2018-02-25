@@ -57,7 +57,7 @@ $ find /usr/share/kbd/keymaps/ -type f
 
 ### Persistent configuration
 
-A persistent keymap can be set in `/etc/vconsole.conf`, which is read by [systemd](/index.php/Systemd "Systemd") on start-up. The `KEYMAP` variable is used for specifying the keymap. If the variable is empty or not set, the `us` keymap is used as default value. See [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for all options. For example:
+A persistent keymap can be set in `/etc/vconsole.conf`, which is read by [systemd](/index.php/Systemd "Systemd") on start-up. The `KEYMAP` variable is used for specifying the keymap. If the variable is empty or not set, the `us` keymap is used as default value. See [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for all options. For example:
 
  `/etc/vconsole.conf` 
 ```
@@ -73,7 +73,7 @@ $ localectl set-keymap --no-convert *keymap*
 
 ```
 
-The `--no-convert` option can be used to prevent `localectl` from automatically changing the [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") to the nearest match. See [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) for more information.
+The `--no-convert` option can be used to prevent `localectl` from automatically changing the [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") to the nearest match. See [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) for more information.
 
 ### Temporary configuration
 
@@ -86,7 +86,7 @@ The *loadkeys* tool is used for this purpose, it is used internally by [systemd]
 
 ```
 
-See [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) details.
+See [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) details.
 
 ## Adjusting typematic delay and rate
 

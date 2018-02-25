@@ -7,7 +7,7 @@
 
 ## General instructions for Chromebooks
 
-For basic information on how to enable developer mode, see [Chrome_OS_devices](/index.php/Chrome_OS_devices "Chrome OS devices").
+For basic information on how to enable developer mode, see [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices").
 
 ## Platform Information
 

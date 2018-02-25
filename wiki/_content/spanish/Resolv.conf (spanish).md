@@ -23,7 +23,7 @@ El archivo de configuración para los resolvers de DNS es `/etc/resolv.conf`. De
 
 Su proveedor de internet (por lo general) le ofrecerá servidores [DNS](https://en.wikipedia.org/wiki/es:Domain_Name_System "wikipedia:es:Domain Name System") funcionales, y un router, que también puede agregar un servidor DNS adicional, en caso de que tenga su propio servidor caché. El cambio entre los servidores DNS no representa un problema para los usuarios de Windows, ya que si un servidor DNS es lento o no funciona, pasará de inmediato a otro mejor. Sin embargo, Linux, por lo general, toma más tiempo para realizar este proceso, lo que podría ser la razón por la que puede estar apreciando cierto retraso.
 
-Utilice *dig* (proporcionado por el paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)) antes de realizar cualquier cambio, repítalo después de hacer los ajustes en la sección de abajo, y compare el tiempo(s) de consulta:
+Utilice *dig* (proporcionado por el paquete [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)) antes de realizar cualquier cambio, repítalo después de hacer los ajustes en la sección de abajo, y compare el tiempo(s) de consulta:
 
 ```
 $ dig www5.yahoo.com
@@ -145,7 +145,7 @@ nameserver 77.88.8.3
 
 ### Utilizar openresolv
 
-[openresolv](https://www.archlinux.org/packages/?name=openresolv) proporciona una utilidad *resolvconf* , que es una infraestructura para la gestión de múltiples configuraciones DNS. Vea [resolvconf(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) y [resolvconf.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) para obtener más información.
+[openresolv](https://www.archlinux.org/packages/?name=openresolv) proporciona una utilidad *resolvconf* , que es una infraestructura para la gestión de múltiples configuraciones DNS. Vea [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) y [resolvconf.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) para obtener más información.
 
 La configuración se realiza en `/etc/resolvconf.conf`, que al ejecutar `resolvconf -u` generará `/etc/resolv.conf`.
 

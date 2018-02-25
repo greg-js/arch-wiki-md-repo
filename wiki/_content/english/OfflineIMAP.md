@@ -18,7 +18,7 @@ Related articles
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Running offlineimap in the background](#Running_offlineimap_in_the_background)
-        *   [4.1.1 systemd service](#systemd_service)
+        *   [4.1.1 systemd timer](#systemd_timer)
     *   [4.2 Automatic mailbox generation for mutt](#Automatic_mailbox_generation_for_mutt)
     *   [4.3 Gmail configuration](#Gmail_configuration)
     *   [4.4 Password management](#Password_management)
@@ -162,29 +162,28 @@ keepalive = 60
 # connection open, set this to true. This setting has no effect if autorefresh
 # is not set.
 holdconnectionopen = yes
-
 ```
 
-#### systemd service
+To start the daemon automatically on login, [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") the [systemd/User](/index.php/Systemd/User "Systemd/User") service `offlineimap.service` using the `--user` flag.
 
-Instead of setting OfflineIMAP as a daemon, it can be managed with the packages's provided [systemd/User](/index.php/Systemd/User "Systemd/User") timer. To use it, [start/enable](/index.php/Start/enable "Start/enable") the user timer `offlineimap.timer` using the `--user` flag.
+#### systemd timer
+
+Alternatively, it's possible to manage OfflineIMAP completely using systemd-user [timers](/index.php/Systemd/Timers "Systemd/Timers"), start/enable `offlineimap-oneshot.timer` with the `--user` flag.
 
 This timer by default runs OfflineIMAP every 15 minutes. This can be easily changed by creating a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"). For example, the following modifies the timer to check every 5 minutes:
 
- `~/.config/systemd/user/offlineimap.timer.d/timer.conf` 
+ `~/.config/systemd/user/offlineimap-oneshot.timer.d/timer.conf` 
 ```
 [Timer]
 OnUnitInactiveSec=5m
-
 ```
 
 For more robust solution it is possible to set a watchdog which will kill OfflineIMAP in case of freeze:
 
- `~/.config/systemd/user/offlineimap.service.d/service.conf` 
+ `~/.config/systemd/user/offlineimap-oneshot.service.d/service.conf` 
 ```
 [Service]
 WatchdogSec=300
-
 ```
 
 ### Automatic mailbox generation for mutt

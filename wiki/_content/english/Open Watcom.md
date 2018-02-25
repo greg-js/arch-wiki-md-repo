@@ -35,7 +35,7 @@ Open Watcom comes with its own make utility (wmake). On Windows hosts, [CMake](h
 
 ## Using the Open Watcom package in Wine
 
-The [openwatcom-v2-git](https://aur.archlinux.org/packages/openwatcom-v2-git/) package builds executables for all supported host platforms by default. This can be quite handy sometimes if one for example wants to debug a cross-compiled binary using the watcom debugger **wd**. In principle, the same could be done also with DOS emulators for example. Steps to set up a WINEPREFIX to use the already existing Watcom install:
+The [openwatcom-v2](https://aur.archlinux.org/packages/openwatcom-v2/) package includes executables for all supported host platforms by default. This can be quite handy sometimes if one for example wants to debug a cross-compiled binary using the watcom debugger **wd**. In principle, the same could be done also with DOS emulators for example. Steps to set up a WINEPREFIX to use the already existing Watcom install:
 
 *   create a fresh WINEPREFIX (for example $HOME/.watcom) by WINEPREFIX=$HOME/.watcom winecfg
 *   cd to $WINEPREFIX/drive_c and make a symlink to /opt/watcom named watcom (ln -s /opt/watcom watcom)

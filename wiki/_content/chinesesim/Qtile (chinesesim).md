@@ -24,7 +24,7 @@ From [Qtile web site](http://qtile.org/):
 
 安装下列包之一：
 
-*   [qtile](https://aur.archlinux.org/packages/qtile/) 最后正式版，基于 Python 3。
+*   [qtile](https://www.archlinux.org/packages/?name=qtile) 最后正式版，基于 Python 3。
 *   [qtile-python2](https://aur.archlinux.org/packages/qtile-python2/) 最后正式版，基于 Python 2。
 *   [qtile-python3-git](https://aur.archlinux.org/packages/qtile-python3-git/) 最后开发版，基于 Python 3。
 *   [qtile-git](https://aur.archlinux.org/packages/qtile-git/) 最后开发版，基于 Python 2。

@@ -41,7 +41,7 @@ This article explains some methods for general troubleshooting. For application 
 
 ### Attention to detail
 
-In order to resolve an issue that you are having, it is *absolutely crucial* to have a firm basic understanding of how that specific subsystem functions. How does it work, and what does it need to run without error? If you cannot comfortably answer these question then you would best review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the subsystem that you are having trouble with. Once you feel like you've understood it, it will be easier for you to pinpoint the cause of the problem.
+In order to resolve an issue that you are having, it is *absolutely crucial* to have a firm basic understanding of how that specific subsystem functions. How does it work, and what does it need to run without error? If you cannot comfortably answer these question then you would best review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the subsystem that you are having trouble with. Once you feel like you have understood it, it will be easier for you to pinpoint the cause of the problem.
 
 ### Questions/checklist
 
@@ -89,7 +89,7 @@ If you require any additional support, it can be found on [the forums](https://b
 
 When asking for support post the **complete** output/logs, not just what you think are the significant sections. Sources of information include:
 
-*   Full output of any command involved - don't just select what you think is relevant.
+*   Full output of any command involved - do not just select what you think is relevant.
 *   Output from systemd's `journalctl`. For more extensive output, use the `systemd.log_level=debug` boot parameter.
 *   Log files (have a look in `/var/log`)
 *   Relevant configuration files
@@ -188,7 +188,7 @@ See [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_i
 
 ## Kernel panics
 
-A *kernel panic* occurs when the Linux kernel enters an unrecoverable failure state. The state typically originates from buggy hardware drivers resulting in the machine being deadlocked, non-responsive, and requiring a reboot. Just prior to deadlock, a diagnostic message is generated, consisting of: the *machine state* when the failure ocurred, a *call trace* leading to the kernel function that recognized the failure, and a listing of currently loaded modules. Thankfully, kernel panics don't happen very often using *mainline* versions of the kernel--such as those supplied by the official repositories--but when they do happen, you need to know how to deal with them.
+A *kernel panic* occurs when the Linux kernel enters an unrecoverable failure state. The state typically originates from buggy hardware drivers resulting in the machine being deadlocked, non-responsive, and requiring a reboot. Just prior to deadlock, a diagnostic message is generated, consisting of: the *machine state* when the failure ocurred, a *call trace* leading to the kernel function that recognized the failure, and a listing of currently loaded modules. Thankfully, kernel panics do not happen very often using *mainline* versions of the kernel--such as those supplied by the official repositories--but when they do happen, you need to know how to deal with them.
 
 **Note:** Kernel panics are sometimes referred to as *oops* or *kernel oops*. While both panics and oops occur as the result of a failure state, an *oops* is more general in that it does not *necessarily* result in a deadlocked machine--sometimes the kernel can recover from an oops by killing the offending task and carrying on.
 
@@ -266,7 +266,7 @@ We can surmise then, that the panic occurred during the initialization routine o
 
 ### Reboot into root shell and fix problem
 
-You'll need a root shell to make changes to the system so the panic no longer occurs. If the panic occurs on boot, there are several strategies to obtain a root shell before the machine deadlocks:
+You will need a root shell to make changes to the system so the panic no longer occurs. If the panic occurs on boot, there are several strategies to obtain a root shell before the machine deadlocks:
 
 *   Reboot with the kernel parameter `emergency`, `rd.emergency`, or `-b` to receive a prompt to login just after the root filesystem is mounted and `systemd` is started.
 

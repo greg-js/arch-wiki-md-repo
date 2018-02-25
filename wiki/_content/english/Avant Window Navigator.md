@@ -29,7 +29,7 @@ The most of the applets require some additional packages, which are listed in op
 | battery | [upower](https://www.archlinux.org/packages/?name=upower) |
 | comics | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) [python2-rsvg](https://aur.archlinux.org/packages/python2-rsvg/) |
 | cairo-clock | [python2-rsvg](https://aur.archlinux.org/packages/python2-rsvg/) | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) |
-| calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://aur.archlinux.org/packages/python2-vobject/) |
+| calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://www.archlinux.org/packages/?name=python2-vobject) |
 | cpufreq | [gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets) |
 | dialect | [python-xklavier](https://aur.archlinux.org/packages/python-xklavier/) |
 | feeds | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |

@@ -10,6 +10,7 @@ The goal of this how to is to setup a simple WebDAV configuration using a [web s
 *   [2 Client](#Client)
     *   [2.1 Cadaver](#Cadaver)
     *   [2.2 Thunar](#Thunar)
+    *   [2.3 Nautilus](#Nautilus)
 *   [3 Authentication](#Authentication)
     *   [3.1 Apache](#Apache_2)
 
@@ -69,7 +70,7 @@ Check the permissions of DavLockDB's directory and ensure it is writable by the 
 
 ### Nginx
 
-Install the mainline variant of [nginx](/index.php/Nginx "Nginx") and [nginx-mainline-mod-dav-ext](https://aur.archlinux.org/packages/nginx-mainline-mod-dav-ext/).
+Install [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) (the mainline variant of [nginx](/index.php/Nginx "Nginx")) and [nginx-mainline-mod-dav-ext](https://aur.archlinux.org/packages/nginx-mainline-mod-dav-ext/).
 
 At the top of your `/etc/nginx/nginx.conf` and outside any blocks, add
 
@@ -88,7 +89,7 @@ location /dav {
     dav_ext_methods PROPFIND OPTIONS;
 
     # Adjust as desired:
-    dav_access all:rw;
+    dav_access user:rw group:rw all:r;
     client_max_body_size 0;
     create_full_put_path on;
     client_body_temp_path /srv/client-temp;
@@ -128,6 +129,15 @@ In [Thunar](/index.php/Thunar "Thunar") just press `Ctrl+l` and enter the addres
 
 ```
 davs://webdav.yandex.ru
+
+```
+
+### Nautilus
+
+In [Nautilus](/index.php/Nautilus "Nautilus") just choose "connect to server" and enter the address:
+
+```
+dav://127.0.0.1/dav
 
 ```
 
@@ -194,7 +204,7 @@ If you want to permit everybody to read, you could use this in your httpd.conf
 
 ```
 
-Do not forget to restart apache after making changes!
+Do not forget to restart apache after making changes:
 
 ```
 # systemctl restart httpd

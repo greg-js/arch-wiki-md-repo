@@ -230,7 +230,7 @@ Otras mixer soportados por OSS:
 
 *   **Kmix** — para [KDE](/index.php/KDE "KDE").
 
-	[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix)
+	[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kmix](https://www.archlinux.org/packages/?name=kmix)
 
 *   **VolWheel** — para [LXDE](/index.php/LXDE "LXDE").
 

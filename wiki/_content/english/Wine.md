@@ -126,7 +126,7 @@ By default sound issues may arise when running Wine applications. Ensure only on
 *   If you want to use the [OSS](/index.php/OSS "OSS") driver in Wine, you will need to install the [lib32-alsa-oss](https://www.archlinux.org/packages/?name=lib32-alsa-oss) package. The OSS driver in the kernel will not suffice.
 *   Games that use advanced sound systems (*e.g.* TESV: Skyrim) may additionally require installations of [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 
-If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](https://www.winehq.org/docs/wineusr-guide/using-regedit#Configuring_Sound). For example, in a case where the microphone wasn't working in a 32-bit Windows application on a 64-bit stock install of wine-1.9.7, this provided full access to the sound hardware (sound playback and mic): open *regedit*, look for the key HKEY_CURRENT_USER → Software → Wine → Drivers, and add a string called *Audio* and give it the value *alsa*. Also, it may help to [recreate the prefix](#WINEARCH).
+If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](https://www.winehq.org/docs/wineusr-guide/using-regedit#Configuring_Sound). For example, in a case where the microphone was not working in a 32-bit Windows application on a 64-bit stock install of wine-1.9.7, this provided full access to the sound hardware (sound playback and mic): open *regedit*, look for the key HKEY_CURRENT_USER → Software → Wine → Drivers, and add a string called *Audio* and give it the value *alsa*. Also, it may help to [recreate the prefix](#WINEARCH).
 
 #### MIDI support
 
@@ -357,7 +357,7 @@ Please note Wine will still create new file associations and even recreate the f
 
 ### Prevent new Wine file associations
 
-To prevent wine from creating any file associations edit your `$WINEPREFIX/system.reg` file, Search for `winemenubuilder` and remove `-a`, so you'll get:
+To prevent wine from creating any file associations edit your `$WINEPREFIX/system.reg` file, Search for `winemenubuilder` and remove `-a`, so you will get:
 
  `$WINEPREFIX/system.reg` 
 ```
@@ -376,7 +376,7 @@ $ export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 ### Execute Windows binaries with wine implicitly
 
-The wine package installs a binfmt file which will allow you to run Windows programs directly (e.g. `./myprogram.exe` will launch as if you had typed `wine ./myprogram.exe`). All you have to do in order to use this is to [enable](/index.php/Enable "Enable") and/or [start](/index.php/Start "Start") `systemd-binfmt.service` after installing the wine package.
+The wine package installs a binfmt file which will allow you to run Windows programs directly (e.g. `./myprogram.exe` will launch as if you had typed `wine ./myprogram.exe`). All you have to do in order to use this is to [start/enable](/index.php/Start/enable "Start/enable") `systemd-binfmt.service` after installing the wine package.
 
 ### Dual Head with different resolutions
 

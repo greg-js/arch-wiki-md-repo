@@ -938,6 +938,10 @@ See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_manager
 
 ### Colour pickers
 
+*   **Chameleon** — A simple color picker for X11 which outputs colors to stdout.
+
+	[https://github.com/seebye/chameleon](https://github.com/seebye/chameleon) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **Cinnamon Color Picker** — An applet for the Cinnamon desktop.
 
 	[https://cinnamon-spices.linuxmint.com/applets/view/179](https://cinnamon-spices.linuxmint.com/applets/view/179) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>

@@ -270,7 +270,7 @@ Related articles
 
 *   **[Qtile](/index.php/Qtile "Qtile")** — Full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It's easy to write your own layouts, widgets, and built-in commands.It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
 
-	[https://github.com/qtile/qtile](https://github.com/qtile/qtile) || [qtile](https://aur.archlinux.org/packages/qtile/)
+	[https://github.com/qtile/qtile](https://github.com/qtile/qtile) || [qtile](https://www.archlinux.org/packages/?name=qtile)
 
 *   **[wmii](/index.php/Wmii "Wmii")** — Small, dynamic window manager for X11\. It is scriptable, has a 9P filesystem interface and supports classic and tiling (Acme-like) window management. It aims to maintain a small and clean (read hackable and beautiful) codebase. The default configuration is in bash and [rc (the Plan 9 shell)](http://rc.cat-v.org), but programs exist written in ruby, and any program that can work with text can configure it. It has a status bar and launcher built in, and also an optional system tray (`witray`).
 

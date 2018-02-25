@@ -991,7 +991,7 @@ $ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -chardev spicevm
 
 ```
 
-Conéctese al invitado utilizando un cliente SPICE. En este momento se recomienda [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3), sin embargo otros [clientes](http://www.spice-space.org/download.html), incluyendo otras plataformas, están disponibles:
+Conéctese al invitado utilizando un cliente SPICE. En este momento se recomienda [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk), sin embargo otros [clientes](http://www.spice-space.org/download.html), incluyendo otras plataformas, están disponibles:
 
 ```
 $ spicy -h 127.0.0.1 -p 5930

@@ -43,7 +43,7 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 *   **Flameshot** — QT5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
 
-	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://aur.archlinux.org/packages/flameshot/)
+	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://www.archlinux.org/packages/?name=flameshot)
 
 *   **gnome-screenshot** — Despite its name its dependencies are only dconf, gtk3, and libcanberra.
 

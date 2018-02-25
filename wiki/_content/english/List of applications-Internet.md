@@ -1191,7 +1191,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based XMPP client with audio/video support.
 
-	[https://psi-im.org/](https://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
+	[https://psi-im.org/](https://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
 *   **[Spark](https://en.wikipedia.org/wiki/Spark_(XMPP_client) "wikipedia:Spark (XMPP client)")** — Cross-platform real-time XMPP collaboration client optimized for business and organizations.
 
@@ -1243,7 +1243,7 @@ See also [Matrix](/index.php/Matrix "Matrix").
 
 *   **Fractal** — Matrix client for GNOME written in Rust.
 
-	[https://wiki.gnome.org/Fractal](https://wiki.gnome.org/Fractal) || [fractal](https://www.archlinux.org/packages/?name=fractal)
+	[https://wiki.gnome.org/Apps/Fractal](https://wiki.gnome.org/Apps/Fractal) || [fractal](https://www.archlinux.org/packages/?name=fractal)
 
 *   **nheko** — Desktop client for the Matrix protocol.
 

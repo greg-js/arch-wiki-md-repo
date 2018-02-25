@@ -628,7 +628,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Psi](https://en.wikipedia.org/wiki/ru:Psi клиент Jabber
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
 *   **Psi+** — Расширенная версия клиента Psi с большим количеством новых [возможностей](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version)
 
@@ -786,7 +786,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Psi](https://en.wikipedia.org/wiki/ru:Psi "wikipedia:ru:Psi")** — Основанный на Qt клиент Jabber, поддерживающий видеоконференции (начиная с версии 0.13)
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Приложение VoIP, которое позволяет вам бесплатно совершать голосовые и видео звонки с компьютера на компьютер и объединить все ваши IM-контакты в одном месте (прежнее название - Wengo Phone)
 

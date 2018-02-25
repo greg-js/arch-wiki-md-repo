@@ -283,11 +283,11 @@ $ pihole -g
 
 ```
 
-or, server package only, via web interface ([http://pi.hole](http://pi.hole)) go to **Tools/Update Lists** and execute **Update Lists**.
+or, server package only, via web interface ([http://pi.hole](http://pi.hole)) go to *Tools/Update Lists* and execute *Update Lists*.
 
 ### Temporarily disable Pi-hole
 
-Pi-hole can be easily paused through its web interface ([http://pi.hole](http://pi.hole)): go to **Disable** and choose the suspension option that best suits your case. It is possible via CLI too by executing
+Pi-hole can be easily paused through its web interface ([http://pi.hole](http://pi.hole)): go to *Disable* and choose the suspension option that best suits your case. It is possible via CLI too by executing
 
 ```
 $ pihole disable [time]
@@ -308,7 +308,7 @@ $ pihole enable
 
 ```
 
-or, via web interface, clicking on **Enable**.
+or, via web interface, clicking on *Enable*.
 
 ## See also
 

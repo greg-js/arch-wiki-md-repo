@@ -1,3 +1,7 @@
+相关文章
+
+*   [GNOME (简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Avant_Window_Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-11-16，点击[这里](https://wiki.archlinux.org/index.php?title=Avant_Window_Navigator&diff=0&oldid=235592)可以查看翻译后英文页面的改动。
 
 [Avant Window Navigator](https://launchpad.net/awn) (AWN) 是用 C 语言书写的轻量级 dock 程序。它支持启动器、任务列表和第三方 applets。
@@ -28,7 +32,7 @@
 | battery | [upower](https://www.archlinux.org/packages/?name=upower) |
 | comics | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) [python2-rsvg](https://aur.archlinux.org/packages/python2-rsvg/) |
 | cairo-clock | [python2-rsvg](https://aur.archlinux.org/packages/python2-rsvg/) | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) |
-| calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://aur.archlinux.org/packages/python2-vobject/) |
+| calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://www.archlinux.org/packages/?name=python2-vobject) |
 | cpufreq | [gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets) |
 | dialect | [python-xklavier](https://aur.archlinux.org/packages/python-xklavier/) |
 | feeds | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |

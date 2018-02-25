@@ -1,3 +1,8 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 [GNOME Flashback](https://wiki.gnome.org/Projects/GnomeFlashback) (previously called *GNOME fallback mode*) is a shell for GNOME 3\. The desktop layout and the underlying technology is similar to GNOME 2\. It doesn't use 3D acceleration at all, so it's generally faster and less CPU intensive than GNOME Shell with llvmpipe.
 
 ## Contents

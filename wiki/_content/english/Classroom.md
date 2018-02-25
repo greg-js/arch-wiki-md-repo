@@ -44,7 +44,7 @@ If you are interested in taking a class on a particular topic, list it below.
 
 *   programming: bash scripting basics, AWK/GAWK, C++, Python, Ruby, Rust, Java 8, Haskell, makefiles or other build systems, debugging
 *   VCS: Git basics, Mercurial, Darcs, Subversion, introduction VCS and general concepts
-*   security: using GPG (basic concepts, etc.), how to configure SELinux/AppArmor/TOMOYO/Grsecurity, managing SSH keys
+*   security: using GPG (basic concepts, etc.), how to configure SELinux/AppArmor/TOMOYO, managing SSH keys
 *   shell: prompt creation, zsh or bash configuration, zsh or bash completions
 *   Pacman - An Introduction
 *   Using [ABS](/index.php/ABS "ABS") - For new users of Arch.

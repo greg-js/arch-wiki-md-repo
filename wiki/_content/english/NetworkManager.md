@@ -619,7 +619,11 @@ IPv6 push host name:
 
 If you want to explicitly set the DHCP client used by NetworkManager, it can be set in the global configuration:
 
- `/etc/NetworkManager/conf.d/dhcp-client.conf`  `dhcp=internal` 
+ `/etc/NetworkManager/conf.d/dhcp-client.conf` 
+```
+[main]
+dhcp=internal
+```
 
 The alternative `dhcp=dhclient` is used per default, if this option is not set.
 

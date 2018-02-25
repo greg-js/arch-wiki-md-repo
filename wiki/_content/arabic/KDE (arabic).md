@@ -480,7 +480,7 @@ exec openbox-kde-session
 
 ### الحصول على الإخطارات لتحديثات البرمجيات
 
-ثبّت [apper](https://aur.archlinux.org/packages/apper/) لتحصل على الإخطارات حول تحديثات الحزم في صينية نظام كدي وأيضًا لواجهة رسومية بسيطة لمدير الحزم. طالع [موقع عُدَّة الحزم](http://www.packagekit.org/index.html) لمعلومات أكثر.
+ثبّت [apper](https://www.archlinux.org/packages/?name=apper) لتحصل على الإخطارات حول تحديثات الحزم في صينية نظام كدي وأيضًا لواجهة رسومية بسيطة لمدير الحزم. طالع [موقع عُدَّة الحزم](http://www.packagekit.org/index.html) لمعلومات أكثر.
 
 ### ضبط KWin لاستخدام OpenGL ES
 

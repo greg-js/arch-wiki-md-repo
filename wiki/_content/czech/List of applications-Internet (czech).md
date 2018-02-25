@@ -195,7 +195,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP clients](https:
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Jabber klient používající Qt toolkit
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
 *   **Psi+** — Vylepšená verze Psi s mnoha novými [funkcemi](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version)
 
@@ -319,7 +319,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt Jabber klient podporující video konference (od verze 0.13)
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietární VoIP aplikace zaměřená na hráče
 

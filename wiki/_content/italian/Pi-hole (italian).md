@@ -52,7 +52,7 @@ conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
 
-**Warning:** Se già usi dnsmasq, dalla versione 3.0 di Pi-hole FTL è richiesto il parametro `log-queries=extra`.
+**Note:** Se già usi dnsmasq, dalla versione 3.0 di Pi-hole FTL è richiesto il parametro `log-queries=extra`.
 
 Abilita `dnsmasq.service` e ri/avvia il servizio.
 
@@ -207,9 +207,7 @@ La variante Standalone di Pi-hole per Archlinux è nata dalla necessità di usar
 
 ### Installazione
 
-Installa il pacchetto [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/).
-Il pacchetto Pi-hole standalone installa un timer (e relativo service) staticamente abilitato che aggiornerà settimanalmente la lista nera dei server di Pi-hole. Se non dovessi essere d'accordo con le temporizzazioni predefinite del timer (ereditata dal progetto principale) puoi, ovviamente, modificarlo o evitare che venga eseguito mascherandolo.
-Devi far partire manualmente `pi-hole-gravity.timer` o semplicemente riavvia a configurazione terminata.
+Installa il pacchetto [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/). Il pacchetto Pi-hole standalone installa un timer (e relativo service) staticamente abilitato che aggiornerà settimanalmente la lista nera dei server di Pi-hole. Se non dovessi essere d'accordo con le temporizzazioni predefinite del timer (ereditata dal progetto principale) puoi, ovviamente, modificarlo o evitare che venga eseguito mascherandolo. Devi far partire manualmente `pi-hole-gravity.timer` o semplicemente riavvia a configurazione terminata.
 
 ### Configurazione iniziale
 
@@ -275,7 +273,7 @@ $ pihole -a setdns *server*
 
 You can specify multiple DNS servers by separating their addresses with commas.
 
-Per il solo pacchetto server, puoi fare la stessa cosa via interfaccia web ([http://pi.hole](http://pi.hole)) andando su **Settings** e aggiungendo i server DNS desiderati nella sezione **Upstream DNS Servers**. **Save** per applicare i cambiamenti.
+Per il solo pacchetto server, puoi fare la stessa cosa via interfaccia web ([http://pi.hole](http://pi.hole)) andando su *Settings* e aggiungendo i server DNS desiderati nella sezione *Upstream DNS Servers*. *Save* per applicare i cambiamenti.
 
 ### Aggiornamento forzato della lista dei domini pubblicitari
 
@@ -286,11 +284,11 @@ pihole -g
 
 ```
 
-o, sul solo pacchetto server, via interfaccia web ([http://pi.hole](http://pi.hole)) vai su **Tools/Update Lists** ed esegui **Update Lists**.
+o, sul solo pacchetto server, via interfaccia web ([http://pi.hole](http://pi.hole)) vai su *Tools/Update Lists* ed esegui *Update Lists*.
 
 ### Disabilitare temporaneamente Pi-hole
 
-Pi-hole può venire facilmente messo in pausa attraverso la sua intefaccia web ([http://pi.hole](http://pi.hole)): vai su **Disable** e scegli l'opzione di disabilitazione che preferisci.
+Pi-hole può venire facilmente messo in pausa attraverso la sua intefaccia web ([http://pi.hole](http://pi.hole)): vai su *Disable* e scegli l'opzione di disabilitazione che preferisci.
 E' possibile anche via CLI eseguendo
 
 ```
@@ -313,11 +311,11 @@ pihole enable
 
 ```
 
-o, via interfaccia web, cliccando su **Enable**.
+o, via interfaccia web, cliccando su *Enable*.
 
 ## Risorse
 
-*   [Pi-hole homepage](https://pi-hole.net/)
-*   [Pi-hole GitHub page](https://github.com/pi-hole/pi-hole)
-*   [Pi-hole FTL GitHub page](https://github.com/pi-hole/FTL)
-*   [Sky-Hole, the basic idea under Pi-hole standalone](http://dlaa.me/blog/post/skyhole)
+*   [Homepage di Pi-hole](https://pi-hole.net/)
+*   [Pagina GitHub di Pi-hole](https://github.com/pi-hole/pi-hole)
+*   [Pagina GitHub di Pi-hole FTL](https://github.com/pi-hole/FTL)
+*   [Sky-Hole, l'idea di base sotto Pi-hole standalone](http://dlaa.me/blog/post/skyhole)

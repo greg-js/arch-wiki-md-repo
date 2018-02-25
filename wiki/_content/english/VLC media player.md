@@ -20,9 +20,7 @@ From the project [home page](https://www.videolan.org/vlc/):
     *   [6.2 Segmentation fault](#Segmentation_fault)
     *   [6.3 Missing icons in dropdown menus](#Missing_icons_in_dropdown_menus)
     *   [6.4 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
-    *   [6.5 Video output overlaps the desktop, does not scale nor position properly](#Video_output_overlaps_the_desktop.2C_does_not_scale_nor_position_properly)
-    *   [6.6 No playback via SFTP of media files names containing spaces](#No_playback_via_SFTP_of_media_files_names_containing_spaces)
-    *   [6.7 Screen Tearing](#Screen_Tearing)
+    *   [6.5 No playback via SFTP of media files names containing spaces](#No_playback_via_SFTP_of_media_files_names_containing_spaces)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -33,12 +31,6 @@ Notable variants are:
 
 *   [vlc-git](https://aur.archlinux.org/packages/vlc-git/) - Development branch.
 *   [vlc-nox](https://aur.archlinux.org/packages/vlc-nox/) - Without X support.
-*   [vlc-qt5](https://aur.archlinux.org/packages/vlc-qt5/) - With Qt5 interface.
-
-Notable optional dependencies are:
-
-*   [qt4](https://www.archlinux.org/packages/?name=qt4) - for the GUI
-*   [libcdio](https://www.archlinux.org/packages/?name=libcdio)- for audio CD playback support
 
 ## Language
 
@@ -94,7 +86,7 @@ Edit `/usr/share/vlc/lua/http/.hosts` to allow remote connections. You will need
 
 ### Twitch.tv streaming over VLC
 
-See [Livestreamer#Twitch](/index.php/Livestreamer#Twitch "Livestreamer").
+See [Streamlink#Twitch](/index.php/Streamlink#Twitch "Streamlink").
 
 ### Playing streamed content from a local DLNA server
 
@@ -200,10 +192,6 @@ See [Hardware video acceleration#Failed to open VDPAU backend](/index.php/Hardwa
 
 Since your system probably doesn't support VDPAU you should tell VLC to use VA-API instead, see [#Hardware acceleration support](#Hardware_acceleration_support).
 
-### Video output overlaps the desktop, does not scale nor position properly
-
-This happens at least on Intel cards, and a fix that reportedly solves the problem is setting the output in the video settings to *OpenGL GLX (XCB)* and the *Input/Codecs* decoding to *VA-API* (any of them).
-
 ### No playback via SFTP of media files names containing spaces
 
 If VLC does not play any videos or audio files over SFTP make sure you have [sshfs](https://www.archlinux.org/packages/?name=sshfs) installed.
@@ -223,10 +211,6 @@ Exec=/usr/bin/vlc --started-from-file %F
 ```
 
 [[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
-
-### Screen Tearing
-
-If you experience screen tearing while playing video, try setting Video output from Automatic to OpenGL Video Output (XCB) in preferences.
 
 ## See also
 

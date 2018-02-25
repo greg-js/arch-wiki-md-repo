@@ -76,7 +76,7 @@ The client is the user interface that will be used to manage and access the virt
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) is a graphical user interface for managing virtual machines.
 *   [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) is a lightweight interface for interacting with the graphical display of virtualized guest OS.
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes) is a simple GNOME 3 application to access remote or virtual systems.
-*   [virt-manager-qt5](https://aur.archlinux.org/packages/virt-manager-qt5/)
+*   [qt-virt-manager](https://aur.archlinux.org/packages/qt-virt-manager/)
 *   [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/) is an application sandbox toolkit.
 
 A list of libvirt-compatible software can be found [here](http://libvirt.org/apps.html).

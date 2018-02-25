@@ -17,6 +17,7 @@
         *   [3.3.3 Disable reading from canvas](#Disable_reading_from_canvas)
         *   [3.3.4 Disable WebGL](#Disable_WebGL)
     *   [3.4 dwb-like session handling](#dwb-like_session_handling)
+    *   [3.5 Disable websites](#Disable_websites)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -177,6 +178,10 @@ Set `content.webgl` to `false` to disable WebGL.
 ### dwb-like session handling
 
 To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option (multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser). It uses `--basedir` to separate data, cache and runtime for each session, while keeping the configuration shared.
+
+### Disable websites
+
+Put `c.content.host_blocking.lists.append( str(config.configdir) + "/blockedHosts")` in your `config.py`, and create a `blockedHosts` file in the same directory as the config file. Enter websites you want to block one by one; `127.0.0.1 www.youtube.com` for example. This will keep the built-in adblock list while adding the websites in. Restart qutebrowser, and run `:adblock-update`.
 
 ## See also
 

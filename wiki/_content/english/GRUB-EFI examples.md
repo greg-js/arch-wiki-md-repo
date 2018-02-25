@@ -18,6 +18,7 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [4.1 PowerEdge T30](#PowerEdge_T30)
 *   [5 MSI](#MSI)
     *   [5.1 B250M PRO-VH](#B250M_PRO-VH)
+    *   [5.2 B250 PC MATE](#B250_PC_MATE)
 *   [6 HP](#HP)
     *   [6.1 EliteBook 840 G1](#EliteBook_840_G1)
 *   [7 Intel](#Intel)
@@ -103,7 +104,7 @@ You first need to boot the machine with EFI and then create the boot entry. This
 
 **Note:** If you get the message WARNING: Not enough clusters for a 32 bit FAT!, reduce cluster size with mkfs.vfat -s2 -F32 ... otherwise the partition may be unreadable by UEFI.
 
-**FROM WITHIN THE CHROOT**
+**Within chroot**
 
 ```
 # mount -t vfat /dev/sdXY /boot/efi
@@ -126,7 +127,7 @@ The EFI partition should be contain just two files:
 *   Using the arrow keys, move to the 'exit' menu and drop down to the EFI shell.
 *   Add an entry for Arch to the menu. Below is an example, see the [UEFI#Launching UEFI Shell](/index.php/UEFI#Launching_UEFI_Shell "UEFI") article for more.
 
-**FROM WITHIN THE EFI SHELL**
+**Within EFI shell**
 
 ```
 Shell> bcfg boot dump -v
@@ -227,17 +228,25 @@ The Dell UEFI implementation needs the [UEFI firmware workaround](/index.php/GRU
 
 ## MSI
 
+These MSI motherboards seem to want the EFI program to exist in a different location from where GRUB installs it. Do one of the following after following the instructions for installing [GRUB](/index.php/GRUB "GRUB"):
+
 ### B250M PRO-VH
 
-This MSI motherboard seems to want the EFI program to exist in a different location from where GRUB installs it. Do the following after following the instructions for installing [GRUB](/index.php/GRUB "GRUB"):
-
 ```
-# mkdir /boot/EFI/BOOT
-# cp /boot/EFI/grub/grubx64.efi /boot/EFI/BOOT/shellx64.efi
+# mkdir *esp*/EFI/BOOT
+# cp *esp*/EFI/grub/grubx64.efi *esp*/EFI/BOOT/shellx64.efi
 
 ```
 
-**Note:** The procedure above probably also works for other MSI motherboards.
+### B250 PC MATE
+
+```
+# mkdir *esp*/EFI/Boot
+# cp *esp*/EFI/grub/grubx64.efi *esp*/EFI/Boot/bootx64.efi
+
+```
+
+**Note:** The procedures above probably also work for other MSI motherboards.
 
 ## HP
 

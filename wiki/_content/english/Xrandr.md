@@ -193,7 +193,7 @@ done
 
 ```
 
-[xrasengan](https://github.com/geyslan/xrasengan) is an xrandr wrapper with this workaround built in.
+[xrasengan](https://aur.archlinux.org/packages/xrasengan/) is an xrandr wrapper with this workaround built in.
 
 ```
 $ xrasengan --force -on DisplayPort-0 -off HDMI-0
