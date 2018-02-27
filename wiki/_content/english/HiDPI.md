@@ -79,6 +79,13 @@ $ xrandr --output eDP1 --scale 1.25x1.25
 
 **Note:** To allow the mouse to reach the whole screen, you may need to use the `--panning` option as explained in [#Side display](#Side_display).
 
+Example scaling with panning for 1920x1080px native display
+
+```
+$ xrandr --output eDP1 --primary --scale 1.5x1.5 --fb 2880x1620+0+0 --panning 2880x1620+0+0
+
+```
+
 GNOME ignores X settings due to its xsettings Plugin in Gnome Settings Daemon, where DPI setting is hard coded. There is blog entry for [recompiling Gnome Settings Daemon](http://blog.drtebi.com/2012/12/changing-dpi-setting-on-gnome-34.html). In the source documentation there is another way mentioned to set X settings DPI:
 
 You can use the dconf Editor and navigate to key

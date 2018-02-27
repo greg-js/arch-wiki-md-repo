@@ -32,7 +32,7 @@ A instalação pode ser feita usando os repositórios community. Uma outra forma
 
 ## Através do Repositório Community
 
-Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios_e_mirrors "Pacman (Português)"), pode-se instalar o compiz com o comando:
+Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios_e_espelhos "Pacman (Português)"), pode-se instalar o compiz com o comando:
 
 ### Todos os Pacotes
 

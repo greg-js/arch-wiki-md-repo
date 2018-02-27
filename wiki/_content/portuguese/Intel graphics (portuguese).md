@@ -41,10 +41,10 @@ Para uma lista abrangente dos modelos de GPU Intel e processadores, veja [essa c
     *   [6.9 Desabilitando a compressão do frame buffer](#Desabilitando_a_compress.C3.A3o_do_frame_buffer)
     *   [6.10 Corrupção/Falta de Resposta no Chromium e Firefox](#Corrup.C3.A7.C3.A3o.2FFalta_de_Resposta_no_Chromium_e_Firefox)
     *   [6.11 Kernel crashing com kernels 4.0+ em placas Broadwell/Core-M](#Kernel_crashing_com_kernels_4.0.2B_em_placas_Broadwell.2FCore-M)
-*   [7 = Suporte à Skylake](#.3D_Suporte_.C3.A0_Skylake)
-    *   [7.1 Lag em convidados do Windows (Máquinas Virtuais)](#Lag_em_convidados_do_Windows_.28M.C3.A1quinas_Virtuais.29)
-    *   [7.2 Tela piscando](#Tela_piscando)
-*   [8 Veja também](#Veja_tamb.C3.A9m)
+    *   [6.12 Suporte à Skylake](#Suporte_.C3.A0_Skylake)
+    *   [6.13 Lag em convidados do Windows (Máquinas Virtuais)](#Lag_em_convidados_do_Windows_.28M.C3.A1quinas_Virtuais.29)
+    *   [6.14 Tela piscando](#Tela_piscando)
+*   [7 Veja também](#Veja_tamb.C3.A9m)
 
 ## Instalação
 
@@ -407,7 +407,7 @@ i915.enable_execlists=0
 
 Isso é conhecido por ser quebrado para pelo menos kernel 4.0.5.
 
-## = Suporte à Skylake
+### Suporte à Skylake
 
 The i915 DRM driver is known to cause various GPU hangs, crashes and even full system freezes. It might be necessary to disable hardware acceleration to workaround these issues. One solution is to use the following Xorg configuration.
 

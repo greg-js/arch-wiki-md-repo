@@ -91,7 +91,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **prm** — An AUR and ABS helper.
 
-	[https://git.fleshless.org/prm/](https://git.fleshless.org/prm/) || [PKGBUILD](https://pkg.fleshless.org/prm/plain/PKGBUILD)
+	[https://git.fleshless.org/u/fbt/prm/](https://git.fleshless.org/u/fbt/prm/) || [PKGBUILD](https://pkg.fleshless.org/prm/plain/PKGBUILD)
 
 *   **repoctl** — Tool to help manage local repositories (AUR support).
 
@@ -184,7 +184,7 @@ The columns have the following meaning:
 | auracle | C++ | Yes | N/A | Yes | Yes | N/A | No | N/A | S | No automatic builds |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | sort by votes |
-| aurman | Python | Yes | Yes | Yes | Yes | Yes | Yes | None | P | batch inspection, fetch needed pgp keys |
+| aurman | Python | Yes | Yes | Yes | Yes | Yes | Yes | None | P | batch inspection, fetch needed pgp keys, sort by popularity |
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support, sort by votes/popularity, batch inspection |
 | bauerbill | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |

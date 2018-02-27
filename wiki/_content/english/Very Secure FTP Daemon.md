@@ -41,7 +41,7 @@ Enable connections `/etc/hosts.allow`:
 ```
 # Allow all connections
 vsftpd: ALL
-# IP adress range
+# IP address range
 vsftpd: 10.0.0.0/255.255.255.0
 
 ```

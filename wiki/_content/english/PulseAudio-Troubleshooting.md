@@ -1231,7 +1231,7 @@ Also check user autostart files and directories, such as [xinitrc](/index.php/Xi
 
 Known issue: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099)
 
-To fix this, `enable-lfe-remixing = yes` must be set as described in [#Choppy_sound_with_analog_surround_sound_setup](#Choppy_sound_with_analog_surround_sound_setup).
+To fix this, `enable-lfe-remixing = yes` must be set as described in [#Choppy sound with analog surround sound setup](#Choppy_sound_with_analog_surround_sound_setup).
 
 ### Unable to select surround configuration other than "Surround 4.0"
 

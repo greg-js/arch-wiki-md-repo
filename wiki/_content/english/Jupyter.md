@@ -14,7 +14,7 @@
 
 ## Installation
 
-To install Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook), [jupyter-nbconvert](https://www.archlinux.org/packages/?name=jupyter-nbconvert) and [python-ipywidgets](https://www.archlinux.org/packages/?name=python-ipywidgets) packages.
+To install Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) package.
 
 ## Running
 

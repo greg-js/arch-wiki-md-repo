@@ -1,7 +1,5 @@
 [Telnet](https://en.wikipedia.org/wiki/Telnet "wikipedia:Telnet") is the traditional protocol for making remote console connections over TCP. Telnet is **not secure** and is mainly used to connect to legacy equipment nowadays. Telnet traffic is easily sniffed for passwords and connections should never be made over any untrusted network including the Internet unless encrypted with [SSH](/index.php/SSH "SSH") or tunneled though a VPN. For a secure alternative see [SSH](/index.php/SSH "SSH").
 
-Follow these instructions to configure an Arch Linux machine for telnet.
-
 ## Installation
 
 To use the telnet client to connect to other machines, [install](/index.php/Install "Install") [inetutils](https://www.archlinux.org/packages/?name=inetutils).

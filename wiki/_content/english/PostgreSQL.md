@@ -16,13 +16,12 @@ Related articles
     *   [4.3 Change default data directory](#Change_default_data_directory)
     *   [4.4 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
 *   [5 Administration tools](#Administration_tools)
-*   [6 Setup HHVM to work with PostgreSQL](#Setup_HHVM_to_work_with_PostgreSQL)
-*   [7 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
-    *   [7.1 Manual dump and reload](#Manual_dump_and_reload)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
-    *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
-    *   [8.3 Cannot connect to database through pg_connect()](#Cannot_connect_to_database_through_pg_connect.28.29)
+*   [6 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
+    *   [6.1 Manual dump and reload](#Manual_dump_and_reload)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
+    *   [7.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
+    *   [7.3 Cannot connect to database through pg_connect()](#Cannot_connect_to_database_through_pg_connect.28.29)
 
 ## Installing PostgreSQL
 
@@ -84,11 +83,14 @@ initializing pg_authid ... ok
 
 If these are the kind of lines you see, then the process succeeded. Return to the regular user using `exit`.
 
-As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `postgresql.service`. See [#Upgrading PostgreSQL](#Upgrading_PostgreSQL) for necessary steps before installing new versions of the PostgreSQL packages.
+As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`. See [#Upgrading PostgreSQL](#Upgrading_PostgreSQL) for necessary steps before installing new versions of the PostgreSQL packages.
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to [edit](/index.php/Edit "Edit") the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
-**Warning:** If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any database. If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
+**Warning:**
+
+*   If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
+*   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
 
 ## Create your first database/user
 
@@ -197,12 +199,12 @@ See the documentation for [pg_hba.conf](https://www.postgresql.org/docs/current/
 
 After this you should [restart](/index.php/Restart "Restart") `postgresql.service` for the changes to take effect.
 
-**Note:** PostgreSQL uses port `5432` by default for remote connections. Make sure this port is open and able to receive incoming connections.
+**Note:** PostgreSQL uses port `5432` by default for remote connections. Make sure this port is open in your [firewall](/index.php/Firewall "Firewall") and able to receive incoming connections.
 
 For troubleshooting take a look in the server log file:
 
 ```
-$ journalctl -u postgresql
+$ journalctl -u postgresql.service
 
 ```
 
@@ -221,7 +223,7 @@ host   all   all   *my_remote_client_ip_address*/32   pam
 The PostgreSQL server is however running without root privileges and will not be able to access `/etc/shadow`. We can work around that by allowing the postgres group to access this file:
 
 ```
-setfacl -m g:postgres:r /etc/shadow
+# setfacl -m g:postgres:r /etc/shadow
 
 ```
 
@@ -339,45 +341,6 @@ template1 | postgres | UTF8      | C         | C     |
 
 	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
 
-## Setup HHVM to work with PostgreSQL
-
-```
-$ git clone [https://github.com/PocketRent/hhvm-pgsql.git](https://github.com/PocketRent/hhvm-pgsql.git)
-$ cd hhvm-pgsql
-
-```
-
-If you do not use a nightly build, then run this command (verified on HHVM 3.6.1) to avoid compile errors:
-
-```
-$ git checkout tags/3.6.0
-
-```
-
-Then build the extension (if you do not need an improved support for Hack language, then remove -DHACK_FRIENDLY=ON):
-
-```
-$ hphpize
-$ cmake -DHACK_FRIENDLY=ON .
-$ make
-
-```
-
-Then copy the built extension:
-
-```
-# cp pgsql.so /etc/hhvm/
-
-```
-
-Add to /etc/hhvm/server.ini:
-
-```
-extension_dir = /etc/hhvm
-hhvm.extensions[pgsql] = pgsql.so
-
-```
-
 ## Upgrading PostgreSQL
 
 Upgrading major PostgreSQL versions requires some extra maintenance.
@@ -402,7 +365,7 @@ There are two main ways to upgrade your PostgreSQL database. Read the official d
 
 For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL.
 
-When you are ready, upgrade the following packages: [postgresql](https://www.archlinux.org/packages/?name=postgresql), [postgresql-libs](https://www.archlinux.org/packages/?name=postgresql-libs), and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade). Note that the data directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new database must be initialized, as described near the top of this page.
+When you are ready, upgrade the following packages: [postgresql](https://www.archlinux.org/packages/?name=postgresql), [postgresql-libs](https://www.archlinux.org/packages/?name=postgresql-libs), and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade). Note that the data directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new database must be initialized, as described in the [#Installing PostgreSQL](#Installing_PostgreSQL) section.
 
 ```
 # systemctl stop postgresql.service

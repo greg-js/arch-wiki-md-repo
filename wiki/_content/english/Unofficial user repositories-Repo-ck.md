@@ -116,7 +116,7 @@ Extensive testing comparing the effect of GCC compile options show varying resul
 
 ## BFQ I/O scheduler
 
-See [Improving_performance#Input.2Foutput_schedulers](/index.php/Improving_performance#Input.2Foutput_schedulers "Improving performance").
+See [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input.2Foutput_schedulers "Improving performance").
 
 ## Repository statistics
 

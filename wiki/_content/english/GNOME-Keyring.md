@@ -22,6 +22,7 @@
     *   [6.1 Passwords are not remembered](#Passwords_are_not_remembered)
 *   [7 Known issues](#Known_issues)
     *   [7.1 Cannot handle ECDSA and Ed25519 keys](#Cannot_handle_ECDSA_and_Ed25519_keys)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -249,3 +250,7 @@ Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) pa
 ### Cannot handle ECDSA and Ed25519 keys
 
 As of January 2018, GNOME Keyring doesn't handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) nor Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
+
+## See also
+
+*   [GNOME wiki](https://wiki.gnome.org/action/show/Projects/GnomeKeyring)

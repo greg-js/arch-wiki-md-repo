@@ -8,7 +8,7 @@ Related articles
 
 *   [1 Genel](#Genel)
     *   [1.1 Arch Linux nedir?](#Arch_Linux_nedir.3F)
-    *   [1.2 Neden Arch Linux kullanmak istemeyeyim ?](#Neden_Arch_Linux_kullanmak_istemeyeyim_.3F)
+    *   [1.2 Arch Linux'u neden kullanmak istemeyeyim ?](#Arch_Linux.27u_neden_kullanmak_istemeyeyim_.3F)
     *   [1.3 Arch ARM mimarili işlemcileri destekliyor mu ?](#Arch_ARM_mimarili_i.C5.9Flemcileri_destekliyor_mu_.3F)
     *   [1.4 Arch Linux FHS'yi takip ediyor mu?](#Arch_Linux_FHS.27yi_takip_ediyor_mu.3F)
     *   [1.5 GNU/Linux için tamamen acemiyim. Gerçekten Arch Linux kullanmalımıyım ?](#GNU.2FLinux_i.C3.A7in_tamamen_acemiyim._Ger.C3.A7ekten_Arch_Linux_kullanmal.C4.B1m.C4.B1y.C4.B1m_.3F)
@@ -47,7 +47,7 @@ Related articles
 
 Detaylı bilgi için [Arch Linux](/index.php/Arch_Linux "Arch Linux") sayfasını ziyaret edin.
 
-### Neden Arch Linux kullanmak istemeyeyim ?
+### Arch Linux'u neden kullanmak istemeyeyim ?
 
 Arch Linux'u kullanmak **istemiyeceğiniz** durumlar olabilir, bunlardan bazıları:
 

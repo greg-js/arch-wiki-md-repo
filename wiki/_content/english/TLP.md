@@ -11,6 +11,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 *   [1 Installation](#Installation)
     *   [1.1 ThinkPads only](#ThinkPads_only)
+    *   [1.2 Graphical interface](#Graphical_interface)
 *   [2 Configuration](#Configuration)
     *   [2.1 Btrfs](#Btrfs)
     *   [2.2 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
@@ -36,6 +37,10 @@ For advanced battery functions, i.e. charge thresholds and recalibration, instal
 *   [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) – acpi-call is needed for battery charge thresholds and recalibration on Sandy Bridge and newer models (X220/T420, X230/T430 et al.)
 
 See the TLP FAQ, section ["Which kernel module?"](http://linrunner.de/en/tlp/docs/tlp-faq.html#kernmod), for details.
+
+### Graphical interface
+
+[TLPUI](https://github.com/d4nj1/TLPUI) is a GTK user interface for TLP written in Python. Software is currently in beta.
 
 ## Configuration
 

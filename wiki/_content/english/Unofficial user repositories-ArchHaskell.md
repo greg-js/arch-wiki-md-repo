@@ -32,12 +32,14 @@ Membership is not required at all in order to contribute. Just fork the relevant
 
 There are currently two people with commit rights to the ArchHaskell repository at GitHub:
 
-*   Magnus Therning
 *   Leif Warner
+*   ~~Magnus Therning~~ (in the process of leaving the group)
 
 ## Available repositories
 
 ### haskell-core
+
+**Note:** The *haskell-core* repository is currently not actively maintained. If you wish to help, please send a mail to the list or use the IRC channel.
 
 The *haskell-core* repository is the base repository of packages maintained by the ArchHaskell team. *haskell-core* can be accessed by adding the following entry to `/etc/pacman.conf` (above [community], to ensure the correct **ghc** package is picked):
 

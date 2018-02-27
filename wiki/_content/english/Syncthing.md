@@ -43,7 +43,7 @@ Run the `syncthing` binary manually from a terminal. The multiple optional param
 
 ### Autostarting Syncthing
 
-Syncthing can be installed as a [systemd](/index.php/Systemd "Systemd") system-wide service or as a [user service](/index.php/Systemd/User "Systemd/User") to run automatically at startup.
+Syncthing can either be installed as a [systemd system-wide](/index.php/Systemd "Systemd") service or as a [systemd user](/index.php/Systemd/User "Systemd/User") service to run automatically at startup.
 
 #### System service
 
@@ -51,7 +51,7 @@ Running Syncthing as a system service ensures that it is running at startup even
 
 #### User service
 
-Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. To use the user service, [start/enable](/index.php/Start/enable "Start/enable") the user unit `syncthing.service` (i.e. with the `--user` flag).
+Running Syncthing as a *systemd user* service ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. To use the user service, [start/enable](/index.php/Start/enable "Start/enable") the user unit `syncthing.service` (i.e. with the `--user` flag).
 
 **Tip:** It's also possible to run the sytemd-user service at boot (i.e. without logging in) using [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 

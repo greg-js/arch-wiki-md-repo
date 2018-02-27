@@ -149,7 +149,7 @@ VirtualHost {
 
 ### Self-signed certificate
 
-To get a local self-signed certificate for personal use, testing or web development, the procedure explained in [OpenSSL#Self-signed_certificate](/index.php/OpenSSL#Self-signed_certificate "OpenSSL") to create both a private key and a self-signed certificate can be followed.
+To get a local self-signed certificate for personal use, testing or web development, the procedure explained in [OpenSSL#Self-signed certificate](/index.php/OpenSSL#Self-signed_certificate "OpenSSL") to create both a private key and a self-signed certificate can be followed.
 
 Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [#Enable SSL/TLS](#Enable_SSL.2FTLS).
 

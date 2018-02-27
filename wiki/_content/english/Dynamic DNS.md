@@ -31,7 +31,7 @@ Some of the compatible services are listed below, but you can also check the [ex
 
 <caption>ddclient compatible services</caption>
 | Service | Cost | Available Records | Hostname Limit | Config Notes | Alternative tools |
-| [Now-DNS](http://now-dns.com/) | Free | A, AAAA | unlimited | Use protocol `dyndns2`, server `now-dns.com/update` |
+| [Now-DNS](http://now-dns.com/) | Free | A, AAAA | unlimited | [example](https://now-dns.com/client/ddclient.conf) |
 | [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#changeip) |
 | [DNSdynamic](http://www.dnsdynamic.org/) | Free | [example](https://www.dnsdynamic.org/api.php) |
 | [Duck DNS](https://www.duckdns.org/) | Free | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#duckdns) | [duckdns](https://aur.archlinux.org/packages/duckdns/) |

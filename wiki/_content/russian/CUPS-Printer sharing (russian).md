@@ -136,20 +136,20 @@ http://*hostname*:631/printers/*printer_name*
  `/etc/samba/smb.conf` 
 ```
 [global]
-    workgroup=Heroes
-    server string=Arch Linux Print Server
-    security=user
+workgroup=Heroes
+server string=Arch Linux Print Server
+security=user
 
 [printers]
     comment=All Printers
     path=/var/spool/samba
     browseable=yes
-    # to allow user 'guest account' to print.
+    # разрешите это, чтобы пользователь 'гостевой учетной записи' мог пользоваться печатью.
     guest ok=no
     writable=no
     printable=yes
     create mode=0700
-    write list=@adm root yourusername
+    write list=@adm root ваше_имя_пользователя
 ```
 
 Этого должно быть достаточно для организации совместного доступа, но все-таки рекомендуется добавить для принтера отдельную запись:
@@ -162,29 +162,24 @@ http://*hostname*:631/printers/*printer_name*
     path=/var/spool/samba
     printing=cups
     printable=yes
-    printer admin=@admin root yourusername
+    printer admin=@admin root ваше_имя_пользователя
     user client driver=yes
-    # to allow user 'guest account' to print.
+    # разрешите это, чтобы пользователь 'гостевой учетной записи' мог пользоваться печатью.
     guest ok=no
     writable=no
-    write list=@adm root yourusername
-    valid users=@adm root yourusername
+    write list=@adm root ваше_имя_пользователя
+    valid users=@adm root ваше_имя_пользователя
 ```
 
 Учтите, что при таких настройках, должна существовать учетная запись с правами доступа к принтеру. Для публичного принтера установите *guest ok* в *yes*, и удалите строку *valid users*. Для добавления учетных записей, создайте действующую учетную запись GNU/Linux, а затем установите на Samba-сервере пароль. Например:
 
 ```
-# useradd yourusername
-# smbpasswd -a yourusername
+# useradd ваше_имя_пользователя
+# smbpasswd -a ваше_имя_пользователя
 
 ```
 
 Затем перезапустите демон Samba:
-
-```
-# /etc/rc.d/samba restart
-
-```
 
 Естественно, имеется множество дополнительных настроек сервера печати Samba, поэтому, для получения дополнительной информации, следует обратиться к справочной документации Samba и CUPS. Образцы и примеры можно посмотреть в файле `smb.conf.example`.
 

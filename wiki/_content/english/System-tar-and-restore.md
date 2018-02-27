@@ -8,7 +8,7 @@ If you plan to use the gui, install [gtkdialog-svn](https://aur.archlinux.org/pa
 
 ## Installation
 
-Install [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/) from the [AUR](/index.php/AUR "AUR") or from [archlinuxgr-any](/index.php/Unofficial_user_repositories#archlinuxgr-any "Unofficial user repositories") repo.
+Install [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/).
 
 ## Usage
 

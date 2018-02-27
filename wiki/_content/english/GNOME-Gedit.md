@@ -1,7 +1,3 @@
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-
 ## Contents
 
 *   [1 Installing](#Installing)
@@ -36,7 +32,7 @@ To enable this behaviour, access gedit's Preferences panel (for GNOME Shell user
 
 ## Spell Checking
 
-In order to use spell checking in *gedit* you need an *aspell* dictionary. See the [aspell](/index.php/Aspell "Aspell") article.
+In order to use spell checking in gedit you need an [aspell](/index.php/Aspell "Aspell") dictionary.
 
 ## Plugins
 
@@ -44,7 +40,7 @@ Some plugins are available in the [gedit-plugins](https://www.archlinux.org/pack
 
 ### Adding and making custom plugins
 
-A plugin that shows errors while you type for languages like C, C++, etc, available in the [extra](#extra) repository: [gedit-code-assistance](#extra).
+A plugin that shows errors while you type for languages like C, C++, etc, is available as [gedit-code-assistance](https://www.archlinux.org/packages/?name=gedit-code-assistance).
 
 ## See also
 

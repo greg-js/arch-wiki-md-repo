@@ -8,13 +8,13 @@ More information at dedicated pages by [Google](http://www.google.com/intl/en/ch
 
 ## Contents
 
-*   [1 Article Preface](#Article_Preface)
+*   [1 Preface](#Preface)
 *   [2 Installing Arch Linux ARM](#Installing_Arch_Linux_ARM)
-*   [3 Stop Here If You're Not 100% Sure](#Stop_Here_If_You.27re_Not_100.25_Sure)
-*   [4 Booting from SD](#Booting_from_SD)
+*   [3 Stop here if you're not 100% sure](#Stop_here_if_you.27re_not_100.25_sure)
+*   [4 Booting from SD-card](#Booting_from_SD-card)
 *   [5 Related Links](#Related_Links)
 
-## Article Preface
+## Preface
 
 This article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
 
@@ -32,13 +32,13 @@ You can install to:
 
 To install to SD or USB, follow the instructions linked above. To install to eMMC, install to one of the prior medias, then install to /dev/mmcblk0, a simple edit from the install instructions from SD. You must boot onto a different media prior to this however.
 
-## Stop Here If You're Not 100% Sure
+## Stop here if you're not 100% sure
 
 **Installation to the eMMC can be removed via the USB Restore method that is a part of all Chromebook devices, when installing with official method.**
 
 **Flashing of non-verified uboot is *not required* for eMMC install.**
 
-## Booting from SD
+## Booting from SD-card
 
 If you ever screw things up by burning a wrong bootloader, there is a recovery mechanism. The SoC built-in bootloader (known as BL0 and BL1) can be configured to boot from SPI, USB, SD and probably other options. This is known because of the Arndale development board (and previous Exynos models behave the same as well).
 

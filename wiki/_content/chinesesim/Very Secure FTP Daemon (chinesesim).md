@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-21，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=505315)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=512150)可以查看翻译后英文页面的改动。
 
-[vsftpd](https://security.appspot.com/vsftpd.html) (Very Secure FTP Daemon) 是一个为UNIX类系统开发的轻量,稳定和安全的FTP服务器端.
+[vsftpd](https://security.appspot.com/vsftpd.html) (Very Secure FTP Daemon) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
 
 ## Contents
 
@@ -18,7 +18,7 @@
     *   [2.10 端口配置](#.E7.AB.AF.E5.8F.A3.E9.85.8D.E7.BD.AE)
     *   [2.11 配置 iptables](#.E9.85.8D.E7.BD.AE_iptables)
 *   [3 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [3.1 虚拟用户的PAM认证](#.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E7.9A.84PAM.E8.AE.A4.E8.AF.81)
+    *   [3.1 虚拟用户的 PAM 认证](#.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E7.9A.84_PAM_.E8.AE.A4.E8.AF.81)
         *   [3.1.1 为虚拟用户创建私有目录](#.E4.B8.BA.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.9B.AE.E5.BD.95)
 *   [4 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
     *   [4.1 vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service](#vsftpd:_no_connection_.28Error_500.29_with_recent_kernels_.283.5_and_newer.29_and_.service)
@@ -36,21 +36,21 @@
 
 ## 配置
 
-vsftpd 的大多数配置都可以通过编辑 `/etc/vsftpd.conf` 文件实现。 该文件本身自带大量注释说明，所以这一章节只就一些重要的配置予以说明。 有关所有可用选项和文档，请参阅 vsftpd.conf(5) 或 [在线查看](https://security.appspot.com/vsftpd/vsftpd_conf.html) 手册页。默认情况下，由 `/srv/ftp` 提供文件。
+vsftpd 的大多数配置都可以通过编辑 `/etc/vsftpd.conf` 文件实现。 该文件本身自带大量注释说明，所以这一章节只就一些重要的配置予以说明。有关所有可用选项和文档，请参阅 vsftpd.conf(5) 或 [在线查看](https://security.appspot.com/vsftpd/vsftpd_conf.html) 手册页。默认情况下，由 `/srv/ftp` 提供文件。
 
 允许的连接 `/etc/hosts.allow`：
 
 ```
 # 允许所有连接
 vsftpd: ALL
-# IP地址范围
+# IP 地址范围
 vsftpd: 10.0.0.0/255.255.255.0
 
 ```
 
 ### 允许上传
 
-需要将 `/etc/vsftpd.conf` 中的 `write_enable` 值设为YES，以便允许修改文件系统（如上传）:
+需要将 `/etc/vsftpd.conf` 中的 `write_enable` 值设为 YES，以便允许修改文件系统（如上传）：
 
 ```
 write_enable=YES
@@ -73,15 +73,15 @@ local_enable=YES
  `/etc/vsftpd.conf` 
 ```
 ...
-# 允许匿名FTP？ （当心 - 默认情况下允许除非您将其注释）。
+# 允许匿名 FTP？ （当心 - 默认情况下允许除非您将其注释）。
 anonymous_enable=YES
 ...
-# 取消注释以允许匿名FTP用户上传文件。
+# 取消注释以允许匿名 FTP 用户上传文件。
 # 只有上述全局写入被激活，才会有效果。
-# 另外，你显然需要创建FTP用户有写权限的目录。
+# 另外，你显然需要创建 FTP 用户有写权限的目录。
 # anon_upload_enable=YES
 #
-# 如果您希望匿名FTP用户能够创建新目录，请取消注释。
+# 如果您希望匿名 FTP 用户能够创建新目录，请取消注释。
 # anon_mkdir_write_enable=YES
 ...
 ```
@@ -155,9 +155,9 @@ max_per_ip=2 # 每个 IP 允许的最大连接数
 
 ### 使用 xinetd
 
-Xinetd提供增强的监控和控制连接功能。对于基本的可以工作的 vsftpd-server 是不必要的
+Xinetd 提供增强的监控和控制连接功能。对于基本的可以工作的 vsftpd-server 是不必要的
 
-安装 vsftpd 将会添加必要的服务文件 `/etc/xinetd.d/vsftpd`， 默认情况下，服务被禁用。
+安装 vsftpd 将会添加必要的服务文件 `/etc/xinetd.d/vsftpd`，默认情况下，服务被禁用。
 
 启用ftp服务：
 
@@ -175,7 +175,7 @@ service ftp
 
 ```
 
-如果您将vsftpd守护程序设置为以独立模式运行，而不是启动 vsftpd 守护程序和 [enable](/index.php/Enable "Enable") `xinetd.service`，请在 `/etc/vsftpd.conf` 中进行以下更改：
+如果您将 vsftpd 守护程序设置为以独立模式运行，而不是启动 vsftpd 守护程序和 [启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `xinetd.service`，请在 `/etc/vsftpd.conf` 中进行以下更改：
 
 ```
 listen=NO
@@ -221,7 +221,7 @@ force_local_logins_ssl=YES
 
 # 如果启用SSL，则至少应启用 TLS v1
 ssl_tlsv1=YES
-# 这些选项将允许或阻止 SSL v2 和 v3 协议连接。 TLS v1连接是首选。
+# 这些选项将允许或阻止 SSL v2 和 v3 协议连接。TLS v1 连接是首选。
 ssl_sslv2=NO
 ssl_sslv3=YES
 # 给出您的 *.pem 文件的正确路径
@@ -232,7 +232,7 @@ rsa_private_key_file=/etc/ssl/certs/vsftpd.pem
 
 ### 在被动模式下解析主机名
 
-要覆盖 vsftpd 在被动模式下通过服务器的主机名发布的IP地址，并在启动时解析DNS，在 `/etc/vsftpd.conf` 中增加以下两行：
+要覆盖 vsftpd 在被动模式下通过服务器的主机名发布的 IP 地址，并在启动时解析 DNS，在 `/etc/vsftpd.conf` 中增加以下两行：
 
 ```
 pasv_addr_resolve=YES
@@ -263,16 +263,16 @@ pasv_max_port=5003
 
 ### 配置 iptables
 
-通常，运行FTP守护进程的服务器受 [Iptables (简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)") 防火墙的保护。要允许访问FTP服务器，需要打开相应的端口，如：
+通常，运行FTP守护进程的服务器受 [iptables](/index.php?title=Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%EF%BC%89&action=edit&redlink=1 "Iptables (简体中文） (page does not exist)") 防火墙的保护。要允许访问FTP服务器，需要打开相应的端口，如：
 
 ```
 # iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT
 
 ```
 
-本文不会提供有关如何设置iptables的任何说明，但这里是一个例子：[Simple stateful firewall (简体中文)](/index.php/Simple_stateful_firewall_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Simple stateful firewall (简体中文)")。
+本文不会提供有关如何设置iptables的任何说明，但这里是一个例子：[Simple stateful firewall](/index.php/Simple_stateful_firewall_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Simple stateful firewall (简体中文)")。
 
-有一些内核模块需要在这里引用的 iptables 正确的处理 FTP 连接。 其中特别是 *nf_conntrack_ftp*。这是需要的，因为FTP使用给定的 *listen_port*（默认为21） 仅用于命令; 所有的数据传输都是通过不同的端口完成的。 这些端口由FTP守护程序为每个会话随机选择（也取决于是使用主动还是被动模式）。要告诉 iptables 应该接受端口上的数据包，需要 *nf_conntrack_ftp*。要在启动时自动加载，请在 `/etc/modules-load.d` 中创建新文件，例如：
+有一些内核模块需要在这里引用的 iptables 正确的处理 FTP 连接。 其中特别是 *nf_conntrack_ftp*。这是需要的，因为 FTP 使用给定的 *listen_port*（默认为21） 仅用于命令，所有的数据传输都是通过不同的端口完成的。这些端口由 FTP 守护程序为每个会话随机选择（也取决于是使用主动还是被动模式）。要告诉 iptables 应该接受端口上的数据包，需要 *nf_conntrack_ftp*。要在启动时自动加载，请在 `/etc/modules-load.d` 中创建新文件，例如：
 
 ```
 # echo nf_conntrack_ftp > /etc/modules-load.d/nf_conntrack_ftp.conf
@@ -295,9 +295,9 @@ pasv_max_port=5003
 
 ## 小技巧
 
-### 虚拟用户的PAM认证
+### 虚拟用户的 PAM 认证
 
-由于 [PAM (简体中文)](/index.php/PAM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PAM (简体中文)") 不再提供 `pam_userdb.so` 另一个简单的方法是使用 [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/)。对于具有许多用户的环境，另一个选项可能是 [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/) 。但是，本节仅限于解释如何通过 `pam_pwdfile.so` 配置chroot环境和身份验证。
+由于 [PAM (简体中文)](/index.php/PAM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PAM (简体中文)") 不再提供 `pam_userdb.so` 另一个简单的方法是使用 [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/)。对于具有许多用户的环境，另一个选项可能是 [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/) 。但是，本节仅限于解释如何通过 `pam_pwdfile.so` 配置 chroot 环境和身份验证。
 
 在此示例中，我们创建目录 `vsftpd`：
 
@@ -329,7 +329,7 @@ username2:hashed_password2
 
 ```
 
-接下来，您需要使用 `pam_pwdfile.so` 和生成的 `/etc/vsftpd/.passwd` 文件创建PAM服务。在本例中，我们为 *vsftpd* 创建了一个PAM策略，其中包含以下内容：
+接下来，您需要使用 `pam_pwdfile.so` 和生成的 `/etc/vsftpd/.passwd` 文件创建 PAM 服务。在本例中，我们为 *vsftpd* 创建了一个 PAM 策略，其中包含以下内容：
 
  `/etc/pam.d/vsftpd` 
 ```
@@ -337,7 +337,7 @@ auth required pam_pwdfile.so pwdfile /etc/vsftpd/.passwd
 account required pam_permit.so
 ```
 
-现在是为虚拟用户创建一个 home 的时候了。在示例中，决定用 `/srv/ftp` 为虚拟用户托管数据，这也反映了Arch的默认目录结构。首先创建 virtual 用户并使 `/srv/ftp` 成为它的 home：
+现在是为虚拟用户创建一个 home 的时候了。在示例中，决定用 `/srv/ftp` 为虚拟用户托管数据，这也反映了 Arch 的默认目录结构。首先创建 virtual 用户并使 `/srv/ftp` 成为它的 home：
 
 ```
 # useradd -d /srv/ftp virtual
@@ -354,7 +354,7 @@ account required pam_permit.so
 一个基本的没有私人文件夹配置的 /etc/vsftpd，默认的虚拟用户的 home 文件夹:
 
 ```
-# 指向正确的PAM服务文件
+# 指向正确的 PAM 服务文件
 pam_service_name=vsftpd
 write_enable=YES
 hide_ids=YES
@@ -371,14 +371,14 @@ virtual_use_local_privs=YES
 
 ```
 
-您自己的设置可能不需要一些参数。如果您希望chroot环境可写，您将需要将以下内容添加到配置文件中：
+您自己的设置可能不需要一些参数。如果您希望 chroot 环境可写，您将需要将以下内容添加到配置文件中：
 
 ```
 allow_writeable_chroot = YES
 
 ```
 
-否则 vsftpd 的默认安全设置会抱怨，如果它检测到chroot是可写的。
+否则 vsftpd 的默认安全设置会抱怨，如果它检测到 chroot 是可写的。
 
 [Start](/index.php/Start "Start") `vsftpd.service`。
 
@@ -395,7 +395,7 @@ allow_writeable_chroot = YES
 
 ```
 
-随后, 在`/etc/vsftpd.conf`增加如下行:
+随后, 在 `/etc/vsftpd.conf` 增加如下行:
 
 ```
 local_root=/srv/ftp/$USER
@@ -435,7 +435,7 @@ local_root=/srv/ftp/user
 
 如果你必须这么做：
 
-您可以将其放入您的 `/etc/vsftpd.conf` 以解决此安全性增强（自vsftpd 3.0.0;从[Fixing 500 OOPS: vsftpd: refusing to run with writable root inside chroot ()](http://www.benscobie.com/fixing-500-oops-vsftpd-refusing-to-run-with-writable-root-inside-chroot/))：
+您可以将其放入您的 `/etc/vsftpd.conf` 以解决此安全性增强（自vsftpd 3.0.0；来自 [Fixing 500 OOPS: vsftpd: refusing to run with writable root inside chroot ()](http://www.benscobie.com/fixing-500-oops-vsftpd-refusing-to-run-with-writable-root-inside-chroot/))：
 
 ```
 allow_writeable_chroot=YES
@@ -453,7 +453,7 @@ allow_writable_chroot=YES
 
 ### FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL
 
-vsftpd 尝试在 SSL 会话中显示纯文本错误消息。 为了进行调试，暂时禁用加密，您将看到正确的错误消息。[[1]](http://ramblings.linkerror.com/?p=45) [[2]](https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15)
+vsftpd 尝试在 SSL 会话中显示纯文本错误消息。为了进行调试，暂时禁用加密，您将看到正确的错误消息。[[1]](http://ramblings.linkerror.com/?p=45) [[2]](https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15)
 
 ### vsftpd.service fails to run on boot
 

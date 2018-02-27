@@ -477,7 +477,7 @@ Server = https://pkgbuilder-repo.chriswarrick.com/
 
 ### qt-debug
 
-*   **Maintainer:** [The Compiler](http://blog.the-compiler.org/?page_id=36)
+*   **Maintainer:** [The Compiler](https://aur.archlinux.org/account/The-Compiler)
 *   **Description:** Qt/PyQt builds with debug symbols
 *   **Upstream page:** [https://github.com/qutebrowser/qt-debug-pkgbuild](https://github.com/qutebrowser/qt-debug-pkgbuild)
 *   **Key-ID:** D6A1C70FE80A0C82

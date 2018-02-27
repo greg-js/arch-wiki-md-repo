@@ -22,7 +22,7 @@ Web can be installed by [installing](/index.php/Install "Install") the [epiphany
 
 ### Blocking advertisements
 
-Enabled by default, you can disable it by unchecking **Try blocking ads** in **Preferences**. EasyList, EasyPrivacy and Fanboy-annoyance are default blocking lists. All lists are periodically refreshed.
+Enabled by default, you can disable it by unchecking *Try blocking ads* in *Preferences*. EasyList, EasyPrivacy and Fanboy-annoyance are default blocking lists. All lists are periodically refreshed.
 
 **Note:** Due to some missing features, for example element hiding, Web misses to block/hide some ads. See the [related bugreport](https://bugzilla.gnome.org/show_bug.cgi?id=757824) for progress.
 

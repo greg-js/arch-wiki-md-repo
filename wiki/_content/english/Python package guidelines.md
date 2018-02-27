@@ -9,7 +9,6 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 ## Contents
 
 *   [1 Package naming](#Package_naming)
-    *   [1.1 Versioned packages](#Versioned_packages)
 *   [2 Installation methods](#Installation_methods)
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
@@ -19,13 +18,11 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 ## Package naming
 
-For Python 3 libraries use `python-*modulename*`. Also use the prefix if the package provides a program that is strongly coupled to the Python ecosystem (e.g. pip or tox). For other applications, use only the program name. In either case, the package name should be entirely lowercase.
-
-The same applies to Python 2 only that the prefix (if needed) is `python2-`.
-
-### Versioned packages
+For [Python 3](/index.php/Python#Python_3 "Python") modules, use the systematic naming `python-*modulename*`, if the package is for [Python 2](/index.php/Python#Python_2 "Python"), use instead the prefix `python2-`.
 
 If you need to add a versioned package then use `python-*modulename*-*version*`, e.g. `python-colorama-0.2.5`. So python dependency `colorama==0.2.5` will turn into `python-colorama-0.2.5` Arch package.
+
+**Note:** The package name should be entirely lowercase.
 
 ## Installation methods
 

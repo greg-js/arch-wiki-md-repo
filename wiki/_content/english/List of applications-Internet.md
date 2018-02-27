@@ -153,6 +153,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
 
+*   **[Bitmask](/index.php?title=Bitmask&action=edit&redlink=1 "Bitmask (page does not exist)")** — Secured and encrypted communication using various service providers
+
+	[https://bitmask.net/](https://bitmask.net/) || [bitmask](https://aur.archlinux.org/packages/bitmask/)
+
 #### Anonymizing networks
 
 *   **[Freenet](/index.php/Freenet "Freenet")** — An encrypted network without censorship.

@@ -51,7 +51,7 @@ For more details on how TrueCrypt compares to other disk encryption solution, se
 
 ## Installation
 
-**Note:** For opening and accessing an existing TrueCrypt container [cryptsetup](#Accessing_a_TrueCrypt_container_using_cryptsetup) is the preferred way, since it is well integrated with the rest of the system. Creating a new TrueCrypt container can be done using `truecrypt`, after which it can be opened using `cryptsetup`.
+**Note:** For opening and accessing an existing TrueCrypt container [cryptsetup](#Accessing_a_TrueCrypt_or_VeraCrypt_container_using_cryptsetup) is the preferred way, since it is well integrated with the rest of the system. Creating a new TrueCrypt container can be done using `truecrypt`, after which it can be opened using `cryptsetup`.
 
 [Install](/index.php/Install "Install") [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you use any kernel other than [linux](https://www.archlinux.org/packages/?name=linux) install the corresponding kernel module.
 

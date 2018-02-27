@@ -114,6 +114,10 @@ A generic importer tool from other password managers.
 
 An easy flow for updating passwords.
 
+*   [pass-audit](https://github.com/roddhjav/pass-audit) ([pass-audit](https://aur.archlinux.org/packages/pass-audit/))
+
+An extension for auditing a password repository.
+
 ## Advanced usage
 
 [Environment variables](/index.php/Environment_variables "Environment variables") can be used to alter where *pass* looks to do store and git operations via:

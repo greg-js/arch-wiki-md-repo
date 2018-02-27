@@ -1,6 +1,6 @@
 This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, how you can use it. And there is plenty of usage. Enjoy.
 
-**Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#The Initial configuration](#The_Initial_configuration).
+**Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#Initial configuration](#Initial_configuration).
 
 ## Contents
 
@@ -272,7 +272,7 @@ The Yubico OTP mode is AES symmetric key based. On a new YubiKey the Yubico OTP 
 
 The initial configuration and AES key stored in slot 1 can of course be overwritten.
 
-**Warning:** Please read [#The Initial configuration](#The_Initial_configuration) before you overwrite the intial configuration of slot 1 that your YubiKey comes shipped with.
+**Warning:** Please read [#Initial configuration](#Initial_configuration) before you overwrite the intial configuration of slot 1 that your YubiKey comes shipped with.
 
 #### How does it work
 
@@ -339,7 +339,7 @@ There are two Challenge-Response modes:
 In order to setup slot 2 in challenge-response HMAC mode you probably want to run something like:
 
  `ykpersonalize -v -2 -ochal-resp -ochal-hmac -ohmac-lt64 -ochal-btn-trig -oserial-api-visible` 
-**Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#The Initial configuration](#The_Initial_configuration).
+**Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#Initial configuration](#Initial_configuration).
 
 ### Use the slot - get a response for a challenge
 
@@ -357,7 +357,7 @@ To use a Challenge-Response slot (no matter which mode):
 
 #### Firefox
 
-[Firefox/Tweaks#Fido_U2F_authentication](/index.php/Firefox/Tweaks#Fido_U2F_authentication "Firefox/Tweaks")
+[Firefox/Tweaks#Fido U2F authentication](/index.php/Firefox/Tweaks#Fido_U2F_authentication "Firefox/Tweaks")
 
 ## Static Password
 

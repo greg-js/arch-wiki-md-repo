@@ -50,7 +50,7 @@ Related articles
 
 rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, and NTFS. Additionally rEFInd can use drivers from the UEFI firmware i.e. FAT (or HFS+ on Macs or ISO-9660 on some systems).
 
-**Note:** Your kernel and initramfs need to reside on a file system which rEFInd can read.
+**Note:** Your kernel and initramfs must reside on a file system that rEFInd can read.
 
 To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](http://www.rodsbooks.com/refind/drivers.html#finding).
 
@@ -88,7 +88,7 @@ By default, rEFInd will scan all of your drives (that it has drivers for) and ad
 
 **Tip:** It is always a good idea to edit the default config `*esp*/EFI/refind/refind.conf` to ensure that the default options work for you.
 
-**Warning:** When refind-install is run in chroot (e.g. in live system when installing Arch Linux) `/boot/refind_linux.conf` is populated with kernel options from the live system not the one on which it is installed. You need to adjust kernel options in `/boot/refind_linux.conf` manually.
+**Warning:** When refind-install is run in chroot (e.g. in live system when installing Arch Linux) `/boot/refind_linux.conf` is populated with kernel options from the live system not the one on which it is installed. You will need to edit `/boot/refind_linux.conf` and adjust the kernel options manually. See [#For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd) for an example.
 
 #### Secure Boot
 
@@ -105,11 +105,11 @@ Execute `refind-install` with the option `--preloader */path/to/preloader*`
 
 ```
 
-Next time you boot with Secure Boot enabled, HashTool will launch and you will need to enrol the hash of rEFInd (`loader.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel.
+Next time you boot with Secure Boot enabled, HashTool will launch and you will need to enroll the hash of rEFInd (`loader.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel (e.g. `vmlinuz-linux`).
 
 See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) for more information.
 
-**Tip:** The signed *HashTool* is only capable of accessing the partition it was launched from. This means if your kernel is not on the ESP, you will not be able to enrol its hash from *HashTool*. You can workaround this by using [#KeyTool](#KeyTool), since it is capable of enrolling a hash in MokList and is not limited to one partition. Remember to enrol *KeyTool'*s hash before before using it.
+**Tip:** The signed *HashTool* is only capable of accessing the partition it was launched from. This means if your kernel is not on the ESP, you will not be able to enroll its hash from *HashTool*. You can workaround this by using [#KeyTool](#KeyTool), since it is capable of enrolling a hash in MokList and is not limited to one partition. Remember to enroll *KeyTool'*s hash before before using it.
 
 ##### Using shim
 
@@ -122,7 +122,7 @@ To use only hashes with *shim*, execute `refind-install` with the option `--shim
 
 ```
 
-Next time you boot with Secure Boot enabled, MokManager will launch and you will need to enrol the hash of rEFInd (`grubx64.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel.
+Next time you boot with Secure Boot enabled, MokManager will launch and you will need to enroll the hash of rEFInd (`grubx64.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel (e.g. `vmlinuz-linux`).
 
 To sign rEFInd with a Machine Owner Key, install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
@@ -263,9 +263,9 @@ If rEFInd automatically detects your kernel, you can place a `refind_linux.conf`
 
  `/boot/refind_linux.conf` 
 ```
-"Boot using default options"     "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
-"Boot using fallback initramfs"  "root=PARTUUID=XXXXXXXX rw add_efi_memmap initrd=/boot/initramfs-linux-fallback.img"
-"Boot to terminal"               "root=PARTUUID=XXXXXXXX rw add_efi_memmap systemd.unit=multi-user.target"
+"Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap"
+"Boot using fallback initramfs"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/initramfs-linux-fallback.img"
+"Boot to terminal"               "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap systemd.unit=multi-user.target"
 ```
 
 Alternatively, try running:
@@ -306,7 +306,7 @@ menuentry "Arch Linux" {
 	volume   "Arch Linux"
 	loader   /boot/vmlinuz-linux
 	initrd   /boot/initramfs-linux.img
-	options  "root=PARTUUID=*XXXXXXXX* rw add_efi_memmap"
+	options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap"
 	submenuentry "Boot using fallback initramfs" {
 		initrd /boot/initramfs-linux-fallback.img
 	}
@@ -416,18 +416,18 @@ To allow kernel auto detection on a Btrfs subvolume uncomment and edit `also_sca
  `*esp*/EFI/refind/refind.conf` 
 ```
 ...
-also_scan_dirs *subvolume*/boot
+also_scan_dirs +,*subvolume*/boot
 ...
 
 ```
 
 Next add `subvol=*subvolume*` to `rootflags` in `refind_linux.conf` and then prepend `*subvolume*` to the initrd path.
 
- `/boot/refind_linux.conf`  `"Boot using standard options"  "root=PARTUUID=XXXXXXXX rootflags=rw,subvol=*subvolume* initrd=*subvolume*/boot/initramfs-linux.img"` 
+ `/boot/refind_linux.conf`  `"Boot using standard options"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw **rootflags=subvol=*subvolume*** initrd=***subvolume***/boot/initramfs-linux.img"` 
 
 #### Manual boot stanza
 
-If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
+If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=*root_subvolume*`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
  `*esp*/EFI/refind/refind.conf` 
 ```
@@ -437,7 +437,7 @@ menuentry "Arch Linux" {
         volume   "Arch Linux"
         loader   /boot/vmlinuz-linux
         initrd   /boot/initramfs-linux.img
-        options  "root=PARTUUID=*XXXXXXXX* rw **rootflags=subvol=ROOT**"
+        options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw **rootflags=subvol=ROOT**"
 ...
 }
 ```

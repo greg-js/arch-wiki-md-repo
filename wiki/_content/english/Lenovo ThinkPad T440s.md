@@ -55,7 +55,11 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 ### Touchpad
 
-*   [Good configuration for touchpad](http://rscircus.org/post/72978821261/t440s-clickpad-fix-which-feels-good)
+Most responsive configuration is obtained through [xinput](/index.php/Xinput "Xinput").
+
+Decent Synaptics configuration, utilizing sane settings for the X1-Carbon:
+
+*   ["R's Circus" Synaptics configuration](http://rscircus.org/post/72978821261/t440s-clickpad-fix-which-feels-good)
 
 ## Updating the BIOS
 

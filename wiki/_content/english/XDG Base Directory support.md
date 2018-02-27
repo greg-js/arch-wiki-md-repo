@@ -163,6 +163,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 `$ mkdir -p "$XDG_DATA_HOME"/newsbeuter "$XDG_CONFIG_HOME"/newsbeuter`
 
  |
+| [NVIDIA](/index.php/NVIDIA "NVIDIA") | `~/.nv` |
 | [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") | `~/.offlineimaprc` | [5150de5](https://github.com/OfflineIMAP/offlineimap/commit/5150de5) | [[36]](https://github.com/OfflineIMAP/offlineimap/issues/32) |
 | [opentyrian](https://bitbucket.org/opentyrian/opentyrian/wiki/Home) | `~/.opentyrian` | [8d45ff2](https://bitbucket.org/opentyrian/opentyrian/commits/8d45ff2) | [[37]](https://web.archive.org/web/20140815181350/http://code.google.com/p/opentyrian/issues/detail?id=125) |
 | [pcsx2](http://pcsx2.net/) | `~/.pcsx2` | [87f1e8f77](https://github.com/PCSX2/pcsx2/commit/87f1e8f77) [a9020c606](https://github.com/PCSX2/pcsx2/commit/a9020c606)
@@ -195,6 +196,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [rclone](https://www.archlinux.org/packages/?name=rclone) | `~/.rclone.conf` | [9d362589](https://github.com/ncw/rclone/commit/9d362589) | [[47]](https://github.com/ncw/rclone/issues/868) |
 | [retroarch](http://www.libretro.com/) |
 | [rr](http://rr-project.org/) | `~/.rr` | [02e7d41e](https://github.com/mozilla/rr/commit/02e7d41e) | [[48]](https://github.com/mozilla/rr/issues/1455) |
+| [rTorrent](/index.php/RTorrent "RTorrent") | `~/.rtorrent.rc` | [6a8d332b](https://github.com/rakshasa/rtorrent/commit/6a8d332b) |
 | [Skype](https://www.skype.com/) | `~/.Skype` | 8.0 |
 | [Snes9x](http://www.snes9x.com/) | `~/.snes9x` | [19864677](https://github.com/snes9xgit/snes9x/commit/93b5f11641fa22d4518f251d6e3db99219864677) | [[49]](https://github.com/snes9xgit/snes9x/issues/194) | By default configuration is blank, is intended that the user fill it at they will (throw the gui or manually) before launch a rom |
 | [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/) | Cache is placed in `$XDG_CONFIG_HOME/sublime-text-3/Cache` instead of expected `$XDG_CACHE_HOME/sublime-text-3`. |
@@ -259,6 +261,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 `$ export CRAWL_DIR="$XDG_DATA_HOME"/crawl/`
 
  |
+| [CUDA](/index.php/CUDA "CUDA") | `~/.nv` | `$ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv` |
 | [dict](/index.php/Dict "Dict") | `~/.dictrc` | `$ dict -c "$XDG_CONFIG_HOME"/dict/dictrc` |
 | [ELinks](/index.php/ELinks "ELinks") | `~/.elinks` | `$ export ELINKS_CONFDIR="$XDG_CONFIG_HOME"/elinks` |
 | [emscripten](http://kripken.github.io/emscripten-site/) | `~/.emscripten`
@@ -351,6 +354,7 @@ Be wary setting this too restrictively, e.g. [gdm](https://www.archlinux.org/pac
 `$ mocp -O MOCDir="$XDG_CONFIG_HOME"/moc`
 
  |
+| [most](https://www.jedsoft.org/most/) | `~/.mostrc` | `$ export MOST_INITFILE="$XDG_CONFIG_HOME"/mostrc` |
 | [MPlayer](/index.php/MPlayer "MPlayer") | `~/.mplayer` | `$ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer` |
 | [msmtp](/index.php/Msmtp "Msmtp") | `~/.msmtprc` | `$ msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc` |
 | [MySQL](/index.php/MySQL "MySQL") | `~/.mysql_history` | `$ export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history` |
@@ -383,11 +387,6 @@ init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
 ```
 
 `prefix` is unnecessary (and unsupported) if Node.js is installed by [nvm](https://aur.archlinux.org/packages/nvm/).
-
- |
-| [NVIDIA](/index.php/NVIDIA "NVIDIA"), [CUDA](/index.php/CUDA "CUDA") | `~/.nv` | `$ export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/nv`
-
-`$ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv`
 
  |
 | [nvidia-settings](https://github.com/NVIDIA/nvidia-settings) | `~/.nvidia-settings-rc` | `$ nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings` |

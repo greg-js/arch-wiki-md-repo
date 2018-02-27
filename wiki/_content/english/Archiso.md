@@ -351,7 +351,7 @@ First, follow the [Installation guide](/index.php/Installation_guide "Installati
 Instead of installing the packages with `pacstrap` (which would try to download from the remote repositories), copy *everything* in the live environment to the new root:
 
 ```
-# time cp -ax / /mnt
+# cp -ax / /mnt
 
 ```
 

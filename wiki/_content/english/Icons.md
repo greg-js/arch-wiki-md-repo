@@ -14,7 +14,6 @@ The freedesktop project provides the [Icon Theme Specification](http://standards
         *   [1.3.1 From a package](#From_a_package)
         *   [1.3.2 Manually](#Manually)
 *   [2 fstab / gvfs](#fstab_.2F_gvfs)
-*   [3 Xfce icons](#Xfce_icons)
 
 ## Installation
 
@@ -72,15 +71,3 @@ According to this [document](https://github.com/GNOME/gvfs/blob/master/monitor/u
 hostname:/ /mnt/ nfs4 defaults,_netdev,user,rw,exec,comment=x-gvfs-show,x-gvfs-name=Network%20Attached%20Storage,x-gvfs-icon=network-server,x-gvfs-symbolic-icon=network-server,timeo=14,noatime 0 0
 
 ```
-
-## Xfce icons
-
-Not all icon themes provide a complete set of icons for the [Xfce](/index.php/Xfce "Xfce") environment. Listed below are a number of icon themes that do.
-
-*   [faenza-icon-theme](https://www.archlinux.org/packages/?name=faenza-icon-theme) and [faience-icon-theme](https://www.archlinux.org/packages/?name=faience-icon-theme) (depends on faenza)
-*   [rave-x-colors](https://aur.archlinux.org/packages/rave-x-colors/) - An icon theme based on Faenza with fully colored folders and support for dark panels.
-*   [vibrancy-colors](https://aur.archlinux.org/packages/vibrancy-colors/) - A flat, modern icon theme with fully colored folders and support for dark panels.
-*   [gnome-colors-icon-theme](https://aur.archlinux.org/packages/gnome-colors-icon-theme/) - a set of icons, similar to the [GNOME](/index.php/GNOME "GNOME") icon theme, with good Xfce support.
-*   [echo-icon-theme-git](https://aur.archlinux.org/packages/echo-icon-theme-git/) - previously the default icon theme for Fedora. The non git version does not contain all of the Xfce icons.
-*   [gnome-icon-theme-xfce](https://aur.archlinux.org/packages/gnome-icon-theme-xfce/) - a package which adds the missing icons to the [GNOME](/index.php/GNOME "GNOME") icon theme.
-*   [elementary-xfce-icons-git](https://aur.archlinux.org/packages/elementary-xfce-icons-git/) - Elementary icons forked from upstream, extended and maintained for Xfce.

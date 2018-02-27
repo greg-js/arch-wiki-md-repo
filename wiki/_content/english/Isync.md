@@ -157,7 +157,7 @@ WantedBy=timers.target
 
 Once those two files are created, [reload](/index.php/Reload "Reload") systemd, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mbsync.timer`, adding the `--user` flag to `systemctl`.
 
-**Tip:** The mbsync service now only runs after login. It's also possible to launch the systemd-user instances after boot if you configure [Systemd/User#Automatic_start-up_of_systemd_user_instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
+**Tip:** The mbsync service now only runs after login. It's also possible to launch the systemd-user instances after boot if you configure [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
 #### Integration with notmuch
 

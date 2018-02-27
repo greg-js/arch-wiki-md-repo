@@ -206,7 +206,7 @@ Alternatively, firmware updates can be installed by copying the MS-DOS executabl
 
 ## Fingerprint reader
 
-The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. There currently is no Linux driver but an open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+The fingerprint reader is a Validity/Synaptics model with USB id `138a:0091`. There currently is no Linux driver but according to the person(s) working on drivers for various other related readers, one would be fairly easy to implement as none of the traffic to or from the device appears to be encrypted. [[1]](https://github.com/nmikhailov/Validity90)
 
 ## Troubleshooting
 

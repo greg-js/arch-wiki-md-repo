@@ -53,21 +53,20 @@ Related articles
     *   [4.12 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
     *   [4.13 Adding Profile Pictures](#Adding_Profile_Pictures)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Action buttons are missing icons](#Action_buttons_are_missing_icons)
-    *   [5.2 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
-    *   [5.3 GTK themes not working with multiple monitors](#GTK_themes_not_working_with_multiple_monitors)
-    *   [5.4 Icons do not appear in right-click menus](#Icons_do_not_appear_in_right-click_menus)
-    *   [5.5 Keyboard settings are not saved in xkb-plugin](#Keyboard_settings_are_not_saved_in_xkb-plugin)
-    *   [5.6 NVIDIA and xfce4-sensors-plugin](#NVIDIA_and_xfce4-sensors-plugin)
-    *   [5.7 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
-    *   [5.8 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
-    *   [5.9 Restore default settings](#Restore_default_settings)
-    *   [5.10 Session failure](#Session_failure)
-    *   [5.11 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
-    *   [5.12 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
-    *   [5.13 Power Manager Plugin shows battery time and remaining percentage](#Power_Manager_Plugin_shows_battery_time_and_remaining_percentage)
-    *   [5.14 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
-    *   [5.15 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
+    *   [5.1 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
+    *   [5.2 GTK themes not working with multiple monitors](#GTK_themes_not_working_with_multiple_monitors)
+    *   [5.3 Icons do not appear in right-click menus](#Icons_do_not_appear_in_right-click_menus)
+    *   [5.4 Keyboard settings are not saved in xkb-plugin](#Keyboard_settings_are_not_saved_in_xkb-plugin)
+    *   [5.5 NVIDIA and xfce4-sensors-plugin](#NVIDIA_and_xfce4-sensors-plugin)
+    *   [5.6 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
+    *   [5.7 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
+    *   [5.8 Restore default settings](#Restore_default_settings)
+    *   [5.9 Session failure](#Session_failure)
+    *   [5.10 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
+    *   [5.11 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
+    *   [5.12 Power Manager Plugin shows battery time and remaining percentage](#Power_Manager_Plugin_shows_battery_time_and_remaining_percentage)
+    *   [5.13 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
+    *   [5.14 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -549,44 +548,6 @@ Image editing programs like [GIMP](/index.php/GIMP "GIMP") can be used to conver
 
 ## Troubleshooting
 
-### Action buttons are missing icons
-
-This happens if icons for some actions (Suspend, Hibernate) are missing from the icon theme, or do not have the expected names. To fix this, install an icon theme which has the necessary icons already added; see [Icons#Xfce icons](/index.php/Icons#Xfce_icons "Icons").
-
-Then, you can switch to that icon theme using *Applications > Settings > Appearance > Icons*.
-
-Alternatively you can use the required icons provided by the icon theme you installed in your current icon theme. To do so, you first need to find out what the currently used icon theme is called. You can do so by using the command below:
-
-```
-$ xfconf-query -c xsettings -p /Net/IconThemeName
-
-```
-
-Then set the following variable:
-
-```
-$ icontheme=/usr/share/icons/*theme-name*
-
-```
-
-where *theme-name* is the name of the current icon theme.
-
-Then create symbolic links from the current icon theme into the icon theme providing the icons (this example assumes the icons are being provided by the [elementary-xfce-icons](https://aur.archlinux.org/packages/elementary-xfce-icons/) theme.)
-
-```
-ln -s /usr/share/icons/elementary-xfce/apps/16/system-suspend.svg           ${icontheme}/16x16/actions/system-suspend.svg
-ln -s /usr/share/icons/elementary-xfce/apps/16/system-suspend-hibernate.svg ${icontheme}/16x16/actions/system-hibernate.svg
-ln -s /usr/share/icons/elementary-xfce/apps/22/system-suspend.svg           ${icontheme}/22x22/actions/system-suspend.svg
-ln -s /usr/share/icons/elementary-xfce/apps/22/system-suspend-hibernate.svg ${icontheme}/22x22/actions/system-hibernate.svg
-ln -s /usr/share/icons/elementary-xfce/apps/24/system-suspend.svg           ${icontheme}/24x24/actions/system-suspend.svg
-ln -s /usr/share/icons/elementary-xfce/apps/24/system-suspend-hibernate.svg ${icontheme}/24x24/actions/system-hibernate.svg
-ln -s /usr/share/icons/elementary-xfce/apps/48/system-suspend.svg           ${icontheme}/48x48/actions/system-suspend.svg
-ln -s /usr/share/icons/elementary-xfce/apps/48/system-suspend-hibernate.svg ${icontheme}/48x48/actions/system-hibernate.svg
-
-```
-
-Log out and in again, and you should see icons for all actions.
-
 ### Desktop icons rearrange themselves
 
 At certain events (such as opening the panel settings dialog) icons on the desktop rearrange themselves. This is because icon positions are determined by files in the `~/.config/xfce4/desktop/` directory. Each time a change is made to the desktop (icons are added or removed or change position) a new file is generated in this directory and these files can conflict.
@@ -620,7 +581,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -628,7 +589,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 ### Panel applets keep being aligned on the left
 
-Add a separator someplace before the right end and set its "expand" property. [[7]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+Add a separator someplace before the right end and set its "expand" property. [[6]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
 
 ### Preferred Applications preferences have no effect
 
@@ -704,7 +665,7 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 
 ```
 
-**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[8]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
+**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[7]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
 
 ### Power Manager Plugin shows battery time and remaining percentage
 

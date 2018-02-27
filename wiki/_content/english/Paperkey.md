@@ -15,7 +15,7 @@ Related articles
 
 ## Installation
 
-Install [paperkey](https://aur.archlinux.org/packages/paperkey/) from the [AUR](/index.php/Arch_User_Repository "Arch User Repository").
+Install [paperkey](https://aur.archlinux.org/packages/paperkey/) from the [AUR](/index.php/AUR "AUR").
 
 ## Usage
 

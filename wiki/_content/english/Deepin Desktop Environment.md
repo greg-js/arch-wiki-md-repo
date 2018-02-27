@@ -11,7 +11,6 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Launching Deepin Desktop Environment](#Launching_Deepin_Desktop_Environment)
     *   [2.1 Via a Display Manager](#Via_a_Display_Manager)
-    *   [2.2 Using xinitrc](#Using_xinitrc)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
 *   [4 Bug Reporting](#Bug_Reporting)
@@ -38,20 +37,6 @@ greeter-session=lightdm-deepin-greeter
 ```
 
 Note that a valid home directory must exist for a user other than root for the greeter to work.
-
-### Using xinitrc
-
-*See the [xinitrc](/index.php/Xinitrc "Xinitrc") page for more information.*
-
- `~/.xinitrc` 
-```
-exec startdde
-
-```
-
-Execute `startx` or `xinit` to start DDE.
-
-**Note:** If you want to start Xorg at boot, please read the [Start X at login](/index.php/Start_X_at_login "Start X at login") article.
 
 ## Troubleshooting
 

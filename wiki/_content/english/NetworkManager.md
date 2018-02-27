@@ -398,7 +398,7 @@ Trying to connect with the above script may still fail with `NetworkManager-disp
 
 1: One of them requires editing the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/*name of your VPN connection*` and change the `password-flags` and `secret-flags` from `1` to `0`.
 
-If that alone doesn't work, you may have to create a `passwd-file` in a safe location with the same permissions and ownership as the dispatcher script, containing the following:
+If that alone does not work, you may have to create a `passwd-file` in a safe location with the same permissions and ownership as the dispatcher script, containing the following:
 
  `/path/to/passwd-file` 
 ```
@@ -601,7 +601,7 @@ Copy the example configuration file:
 
 ```
 
-Take a look at the file - there will only really be one line we want to keep and *dhclient* will use it's defaults (as it has been using if you did not have this file) for the other options. This is the important line:
+Take a look at the file - there will only really be one line we want to keep and *dhclient* will use its defaults (as it has been using if you did not have this file) for the other options. This is the important line:
 
  `/etc/dhclient.conf`  `send host-name = pick-first-value(gethostname(), "ISC-dhclient");` 
 
@@ -628,8 +628,6 @@ dhcp=internal
 The alternative `dhcp=dhclient` is used per default, if this option is not set.
 
 Then [restart](/index.php/Restart "Restart") `NetworkManager.service`.
-
-**Note:** Support for [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) has been [disabled](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/networkmanager&id=a1df79cbcebaec0c043789eb31965e57d17b6cdb) in [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)-1.0.0-2 (2015-02-14).
 
 ### Missing default route
 
@@ -830,7 +828,7 @@ Log out and log back in to complete.
 
 ### Automatically unlock keyring after login
 
-NetworkManager requires access to the login keyring to connect to networks requiring a secret. Under most circumstances, this keyring is unlocked automatically at login, but if it isn't, and NetworkManager isn't connecting on login, you can try the following.
+NetworkManager requires access to the login keyring to connect to networks requiring a secret. Under most circumstances, this keyring is unlocked automatically at login, but if it is not, and NetworkManager is not connecting on login, you can try the following.
 
 #### GNOME
 
