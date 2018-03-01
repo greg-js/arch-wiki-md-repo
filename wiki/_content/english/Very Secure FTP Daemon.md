@@ -1,4 +1,4 @@
-[vsftpd](https://security.appspot.com/vsftpd.html) (Very Secure FTP Daemon) is a lightweight, stable and secure FTP server for UNIX-like systems.
+[vsftpd](https://security.appspot.com/vsftpd.html) (*Very Secure FTP Daemon*) is a lightweight, stable and secure FTP server for UNIX-like systems.
 
 ## Contents
 
@@ -34,7 +34,7 @@ To use [xinetd](https://en.wikipedia.org/wiki/xinetd "wikipedia:xinetd") for mon
 
 ## Configuration
 
-Most of the settings in vsftpd are done by editing the file `/etc/vsftpd.conf`. The file itself is well-documented, so this section only highlights some important changes you may want to modify. For all available options and documentation, see the man page for vsftpd.conf (5), or [view it online](https://security.appspot.com/vsftpd/vsftpd_conf.html). Files are served by default from `/srv/ftp`.
+Most of the settings in vsftpd are done by editing the file `/etc/vsftpd.conf`. The file itself is well-documented, so this section only highlights some important changes you may want to modify. For all available options and documentation, see the [vsftpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5) man page. Files are served by default from `/srv/ftp`.
 
 Enable connections `/etc/hosts.allow`:
 
@@ -207,23 +207,27 @@ Then, edit the configuration file:
 ```
 ssl_enable=YES
 
-#choose what you like, if you accept anonymous connections, you may want to enable this
-# allow_anon_ssl=NO
+# if you accept anonymous connections, you may want to enable this setting
+#allow_anon_ssl=NO
 
-#by default all non anonymous logins and forced to use SSL to send and receive password and data, set to NO to allow non secure connections
+# by default all non anonymous logins and forced to use SSL to send and receive password and data, set to NO to allow non secure connections
 force_local_logins_ssl=NO
 force_local_data_ssl=NO
 
-#you should at least enable TLS v1 if you enable SSL
-ssl_tlsv1=YES
-#these options will permit or prevent SSL v2 and v3 protocol connections. TLS v1 connections are preferred. 
-ssl_sslv2=NO
-ssl_sslv3=YES
+# TLS v1 protocol connections are preferred and this mode is enabled by default while SSL v2 and v3 are disabled
+# the settings below are the default ones and do not need to be changed unless you specifically need SSL
+#ssl_tlsv1=YES
+#ssl_sslv2=NO
+#ssl_sslv3=NO
 
-#give the correct path to your .pem file
+# provide the path of your certificate and of your private key
+# note that both can be contained in the same file or in different files
 rsa_cert_file=/etc/ssl/certs/vsftpd.pem
-#the .pem file also contains the private key
 rsa_private_key_file=/etc/ssl/certs/vsftpd.pem
+
+# this setting is set to YES by default and requires all data connections exhibit session reuse which proves they know the secret of the control channel.
+# this is more secure but is not supported by many FTP clients, set to NO for better compatibility
+require_ssl_reuse=NO
 ```
 
 ### Resolve hostname in passive mode

@@ -299,6 +299,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase) or [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/)
 
+*   **minisign** — Simple program that only inplements key signing
+
+	[https://github.com/jedisct1/minisign](https://github.com/jedisct1/minisign) || [minisign](https://www.archlinux.org/packages/?name=minisign)
+
 *   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — *a simple interface for GnuPG* for KDE.
 
 	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
@@ -357,7 +361,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://sourceforge.net/projects/mypasswords7/](https://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-*   **[pass](/index.php/Pass "Pass")** — Simple console based password manager
+*   **[pass](/index.php/Pass "Pass")** — Simple console based password manager, using GnuPG encryption.
 
 	[https://www.passwordstore.org/](https://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
 

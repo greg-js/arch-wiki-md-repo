@@ -76,7 +76,7 @@ The key tool for building packages is [makepkg](/index.php/Makepkg "Makepkg") (p
 
 ### Download and test the installation
 
-Download the source tarball of the software you want to package, extract it, and follow the author's steps to install the program. Make a note of all commands and/or steps needed to compile and install it. You will be repeating those same commands in the *PKGBUILD* file.
+Download the source tarball of the software you want to package, extract it, and follow the author's steps to install the program. Make a note of all commands and/or steps needed to compile and install it. You will be repeating those same commands in the `PKGBUILD` file.
 
 Most software authors stick to the 3-step build cycle:
 

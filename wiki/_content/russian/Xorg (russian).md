@@ -1,16 +1,20 @@
 Ссылки по теме
 
-*   [Запуск X при входе](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5 "Запуск X при входе")
 *   [Autostarting (Русский)](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)")
 *   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
-*   [Среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола")
 *   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
 *   [Font configuration (Русский)](/index.php/Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Font configuration (Русский)")
 *   [Темы курсора](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0 "Темы курсора")
-*   [Wayland](/index.php/Wayland "Wayland")
-*   [Xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)")
+*   [Среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола")
+*   [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)")
+*   [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)")
+*   [xrandr (Русский)](/index.php/Xrandr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xrandr (Русский)")
 
-**Xorg** - свободная открытая реализация оконной системы X11\. Xorg очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. Более подробную информацию смотрите в [статье о Xorg в Википедии](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") или [на wiki X.org](http://wiki.x.org/wiki/)
+C [http://www.x.org/wiki/](http://www.x.org/wiki/):
+
+	Проект X.Org представляет свободную реализацию [оконной системы X](https://en.wikipedia.org/wiki/ru:X.Org_Server "w:ru:X.Org Server") с открытым исходным кодом. Разработка осуществляется X.Org Foundation, которая является образовательной некоммерческой организацией, совместно с сообществом freedesktop.org.
+
+**Xorg** (обычно называемый просто **X**) очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. Для более подробной информации смотрите статью [Xorg](https://en.wikipedia.org/wiki/ru:X.Org_Server "w:ru:X.Org Server") в Википедии или посетите [веб-сайт Xorg](http://www.x.org/wiki/).
 
 ## Contents
 
@@ -76,11 +80,13 @@
 
 ## Установка
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакет [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xorg-server](https://www.archlinux.org/packages/?name=xorg-server).
 
-В дополнение к нему, могут понадобиться пакеты из мета-пакета [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) для некоторых способов настроек. О них рассказано в соответствующих разделах. Другие полезные пакеты находятся в группе [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/).
+В дополнение к нему, могут понадобиться пакеты из группы [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) для некоторых способов настроек. О них рассказано в соответствующих разделах.
 
-**Совет:** Вам, скорее всего, понадобится установить [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер") или [среду рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") для X.
+К тому же имеется группа [xorg](https://www.archlinux.org/groups/x86_64/xorg/), которая включает пакеты оконной системы Xorg и пакеты из группы [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/), а также шрифты.
+
+**Совет:** Вам, скорее всего, понадобится [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер") или [среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола") в дополнение к X.
 
 ### Установка драйвера
 
@@ -100,20 +106,25 @@ $ pacman -Ss xf86-video
 
 ```
 
-Стандартный графический драйвер — [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), который поддерживает огромное число чипсетов, но не включает в себя ни 2D, ни 3D ускорение. Если более подходящий драйвер отсутствует или не загружается, X будет использовать *vesa*.
+Xorg автоматически ищет установленные драйверы:
+
+*   Если он не может найти установленным необходимый драйвер для оборудования (перечислены ниже), тогда он сначала ищет драйвер *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
+*   Если и он не найден, тогда Xorg ищет общий драйвер *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), который поддерживает большое количество чипсетов, но не включает 2D или 3D ускорение.
+*   А если и *vesa* не найден, тогда X обратится к режиму [KMS](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"), который включает ускорение GLAMOR (смотрите [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
 
 Для того, чтобы ускорение видео работало, и часто для того, чтобы разблокировать все режимы, в которых может работать GPU, требуется правильный видеодрайвер:
 
-**Примечание:** Если Вы пользуетесь ноутбуком с разрешённым NVIDIA Optimus, который использует интегрированную видеокарту вместе с дискретной видеокартой, обратитесь к статье [Bumblebee](/index.php/Bumblebee "Bumblebee").
+| Бренд | Тип | Драйвер | OpenGL | OpenGL ([Multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)")) | Документация |
+| **AMD/
+ATI** | Свободный | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)") |
+| [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") |
+| Проприетарный | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [catalyst-libgl](https://aur.archlinux.org/packages/catalyst-libgl/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst (Русский)](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMD Catalyst (Русский)") |
+| **Intel** | Свободный | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)") |
+| **Nvidia** | Свободный | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)") |
+| Проприетарный | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") |
+| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 
-| Бренд | Тип | Драйвер | [Multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)") | Документация |
-| **AMD/ATI** | Свободный | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") |
-| Проприетарный | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| **Intel** | Свободный | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)") |
-| **Nvidia** | Свободный | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)") |
-| Проприетарный | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) | [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") |
-| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) |
-| [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl) |
+**Примечание:** Если Вы пользуетесь ноутбуком с поддержкой NVIDIA Optimus, который использует интегрированную видеокарту вместе с дискретной видеокартой, обратитесь к статье [NVIDIA Optimus (Русский)](/index.php/NVIDIA_Optimus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA Optimus (Русский)") или [Bumblebee (Русский)](/index.php/Bumblebee_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bumblebee (Русский)").
 
 Другие видео драйверы можно найти в группе [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
 

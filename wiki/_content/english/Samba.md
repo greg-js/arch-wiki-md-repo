@@ -479,7 +479,7 @@ server min protocol = SMB2
         nt pipe support = no
 ```
 
-**Warning:** nt pipe support = no breaks some windows functionality.
+**Warning:** `nt pipe support = no` breaks some windows functionality.
 
 ### Disable printer share
 

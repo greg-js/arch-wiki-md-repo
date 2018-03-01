@@ -38,7 +38,7 @@ Open [Google Maps](https://maps.google.com/) in your browser:
 
 ### HTML5 Geolocation
 
-You can use the following website to get your device's coordinates along with a map showing the location: [http://meskarune.com/demos/map/](http://meskarune.com/demos/map/) The source code is available here: [https://gist.github.com/meskarune/9590484](https://gist.github.com/meskarune/9590484)
+You can use the following website to get your device's coordinates along with a map showing the location: [https://www.whataremycoordinates.com/](https://www.whataremycoordinates.com/)
 
 ## List
 
@@ -536,7 +536,6 @@ You can use the following website to get your device's coordinates along with a 
 67.8289,20.393585 "chairmeleon" # Gallivare, Sweden
 45.4928,9.2066 "eaZy" # Milan, Italy
 60.64803,17.31925 "HCS" # Furuvik, Sweden
-49.389028,8.578106 "tuxfusion" # Schwetzingen, Germany
 50.0305,14.5263 "Dragonlord" # Praha, Czech Republic
 47.7667,8.8333 "n8schicht" # Singen am Hohentwiel, Germany
 52.2713,0.0235 "gazj" # Chatteris, Cambs, England, United Kingdom
@@ -1067,5 +1066,6 @@ You can use the following website to get your device's coordinates along with a 
 30.444298, -91.150546 "acdw" # Baton Rouge, LA, USA
 10.215677, -68.020392 "Oswald" # Valencia, Carabobo, Venezuela
 4.599795, -74.129656 "frealgagu" # Bogotá, Colombia
+37.348667, -121.93664499999998 "Taigrr" # California, USA
 
 ```

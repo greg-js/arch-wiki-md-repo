@@ -87,9 +87,9 @@ Hiawatha supports two different methods to send information to the FastCGI proce
 
 ### Enable SSL/TLS
 
-First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt certificate](#Let.27s_Encrypt_certificate) certificate authority.
+First, a *X.509 SSL/TLS* certificate is required to use TLS. If you do not have one, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt certificate](#Let.27s_Encrypt_certificate) authority.
 
-The order of the items in the certificate file is important and has to be as follows:
+The order of the items in the certificate file must be as follows:
 
  `serverkey.pem` 
 ```
@@ -149,7 +149,7 @@ VirtualHost {
 
 ### Self-signed certificate
 
-To get a local self-signed certificate for personal use, testing or web development, the procedure explained in [OpenSSL#Self-signed certificate](/index.php/OpenSSL#Self-signed_certificate "OpenSSL") to create both a private key and a self-signed certificate can be followed.
+To get a local self-signed certificate for personal use, testing or web development, the procedure in [OpenSSL#Self-signed certificate](/index.php/OpenSSL#Self-signed_certificate "OpenSSL") to create both a private key and a self-signed certificate can be followed.
 
 Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [#Enable SSL/TLS](#Enable_SSL.2FTLS).
 
@@ -179,7 +179,7 @@ The following command can be used to renew the certificate and restart the serve
 
 ```
 
-The certificate will be renewed whenever it has less than 7 days to go and written to the directory indicated in `HIAWATHA_CERT_DIR`. The number of days before renewal is controlled via the `RENEWAL_EXPIRE_THRESHOLD` setting if necessary.
+By default, the certificate will be renewed whenever it has less than 7 days to go and it will be written in the directory indicated in `HIAWATHA_CERT_DIR`. The number of days before renewal can be controlled via the `RENEWAL_EXPIRE_THRESHOLD` setting.
 
 A daily schedule of this script is appropriate as no action will be taken anyway before the threshold is reached. This daily automation can be achieved using either [cron](/index.php/Cron "Cron") or [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"):
 

@@ -289,6 +289,10 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
 
+*   **[Falkon](https://en.wikipedia.org/wiki/Falkon "wikipedia:Falkon")** — Web browser based on QtWebEngine, written in Qt framework.
+
+	[https://qupzilla.com/](https://qupzilla.com/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
+
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and Qt WebEngine (or KHTML layout engine), part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
 	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
@@ -300,10 +304,6 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 *   **Qt WebBrowser** — Browser for embedded devices developed using the capabilities of Qt and Qt WebEngine.
 
 	[http://doc.qt.io/QtWebBrowser/](http://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
-
-*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on QtWebEngine, written in Qt framework.
-
-	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebEngine.
 

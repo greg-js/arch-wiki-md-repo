@@ -43,6 +43,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
+    *   [5.3 execv(...) failed: Permission denied](#execv.28....29_failed:_Permission_denied)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -433,6 +434,17 @@ Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container
 ### Unable to upgrade some packages on the container
 
 It can sometimes be impossible to upgrade some packages on the container, [filesystem](https://www.archlinux.org/packages/?name=filesystem) being a perfect example. The issue is due to `/sys` being mounted as Read Only. The workaround is to remount the directory in Read Write when running `mount -o remount,rw -t sysfs sysfs /sys`, do the upgrade then reboot the container.
+
+### execv(...) failed: Permission denied
+
+When trying to boot the container via `systemd-nspawn -bD /path/to/container` (or executing something in the container), and the following error comes up:
+
+```
+execv(/usr/lib/systemd/systemd, /lib/systemd/systemd, /sbin/init) failed: Permission denied
+
+```
+
+even though the permissions of the files in question (i.e. /lib/systemd/systemd) are correct, this can be the result of having mounted the file system on which the container is stored as non-root user. For example, if you mount your disk manually with an entry in `/etc/fstab` that has the options `noauto,user,...`, systemd-nspawn will not allow executing the files even if they are owned by root.
 
 ## See also
 

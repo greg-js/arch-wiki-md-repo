@@ -343,7 +343,15 @@ If you happen to run several Arch boxes on your LAN, you can share packages so t
 
 #### Read-only cache
 
-If you are looking for a quick and dirty solution, you can simply run a standalone webserver which other computers can use as a first mirror: `darkhttpd /var/cache/pacman/pkg`. Just add this server at the top of your mirror list. Be aware that you might get a lot of 404 errors, due to cache misses, depending on what you do, but *pacman* will try the next (real) mirrors when that happens.
+If you are looking for a quick solution, you can simply run a standalone webserver which other computers can use as a first mirror:
+
+```
+# ln -s /var/lib/pacman/sync/*.db /var/cache/pacman/pkg
+$ sudo -u http darkhttpd /var/cache/pacman/pkg --no-server-id
+
+```
+
+You could also run darkhttpd as a systemd service for convenience. Just add this server at the top of your `/etc/pacman.d/mirrorlist` in client machines with `Server = http://mymirror:8080`. Make sure to keep your mirror updated.
 
 #### Distributed read-only cache
 

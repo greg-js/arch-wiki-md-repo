@@ -40,6 +40,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [5.3 Display size and DPI](#Display_size_and_DPI)
         *   [5.3.1 Setting DPI manually](#Setting_DPI_manually)
             *   [5.3.1.1 Proprietary NVIDIA driver](#Proprietary_NVIDIA_driver)
+            *   [5.3.1.2 Manual DPI Setting Caveat](#Manual_DPI_Setting_Caveat)
     *   [5.4 Display Power Management](#Display_Power_Management)
 *   [6 Composite](#Composite)
     *   [6.1 List of composite managers](#List_of_composite_managers)
@@ -378,6 +379,17 @@ Option              "UseEdidDpi" "False"
 Option              "DPI" "96 x 96"
 
 ```
+
+##### Manual DPI Setting Caveat
+
+GTK very often overrides the server's DPI via the optional Xresource `Xft.dpi`. To find out whether this is happening to you, check with:
+
+```
+$ xrdb -query | grep dpi
+
+```
+
+With GTK library versions since 3.16, when this variable is not otherwise explicitly set, GTK sets it to 96\. To have GTK apps obey the server DPI you may need to explictly set Xft.dpi to the same value as the server. The Xft.dpi resource is the method by which some desktop environments optionally force DPI to a particular value in personal settings. Among these are KDE and TDE.
 
 ### Display Power Management
 

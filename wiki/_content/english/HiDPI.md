@@ -49,7 +49,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.15 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
-    *   [7.2 Mirroring](#Mirroring)
+    *   [7.2 Multiple external monitors](#Multiple_external_monitors)
+    *   [7.3 Mirroring](#Mirroring)
 *   [8 Linux console](#Linux_console)
 *   [9 See also](#See_also)
 
@@ -78,13 +79,6 @@ $ xrandr --output eDP1 --scale 1.25x1.25
 ```
 
 **Note:** To allow the mouse to reach the whole screen, you may need to use the `--panning` option as explained in [#Side display](#Side_display).
-
-Example scaling with panning for 1920x1080px native display
-
-```
-$ xrandr --output eDP1 --primary --scale 1.5x1.5 --fb 2880x1620+0+0 --panning 2880x1620+0+0
-
-```
 
 GNOME ignores X settings due to its xsettings Plugin in Gnome Settings Daemon, where DPI setting is hard coded. There is blog entry for [recompiling Gnome Settings Daemon](http://blog.drtebi.com/2012/12/changing-dpi-setting-on-gnome-34.html). In the source documentation there is another way mentioned to set X settings DPI:
 
@@ -308,9 +302,25 @@ Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings. However, the suggested `GDK_SCALE` suggestion doesn't consistently scale the entirety of Firefox, and doesn't work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead.
 
-To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also doesn't consistently scale the entirety of Firefox.
+To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also doesn't consistently scale the entirety of Firefox. If Firefox is not scaling fonts, you may want to create `userChrome.css` and add appropriate styles to it. More information about `userChrome.css` at [mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css).
 
-If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/)add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
+ `~/.mozilla/firefox/*<profile>*/chrome/userChrome.css` 
+```
+@namespace url("[http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul](http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul)");
+
+/* #tabbrowser-tabs, #navigator-toolbox, menuitem, menu, ... */
+* {
+    font-size: 15px !important;
+}
+
+/* exception for badge on adblocker */
+.toolbarbutton-badge {
+    font-size: 8px !important;
+}
+
+```
+
+If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
 
 #### Chromium / Google Chrome
 
@@ -497,6 +507,17 @@ xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
 **Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[5]](https://askubuntu.com/a/979551/763549).
+
+### Multiple external monitors
+
+There might be some problems in scaling more than one external monitors which have lower dpi than the built-in HiDPI display. In that case, you may want to try downscaling the HiDPI display instead, with e.g.
+
+```
+xrandr --output eDP1 --scale 0.5x0.5 --output DP2 --right-of eDP1 --output HDMI1 --right-of DP2
+
+```
+
+In addition, when you downscale the HiDPI display, the font on the HiDPI display will be slightly blurry, but it's a different kind of bluriness compared with the one introduced by upscaling the external displays. You may compare and see which kind of bluriness is less problematic for you.
 
 ### Mirroring
 

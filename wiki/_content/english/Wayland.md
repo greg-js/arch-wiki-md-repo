@@ -292,7 +292,7 @@ See details on the [official website](http://wayland.freedesktop.org/toolkits.ht
 
 ### GTK+ 3
 
-The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Wayland backend enabled. GTK+ will default to the X11 backend, but this can be overridden by modifying an environment variable: `GDK_BACKEND=wayland`.
+The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Wayland backend enabled. GTK+ will default to the Wayland backend, but it is possible to override it to Xwayland by modifying an environment variable: `GDK_BACKEND=x11`.
 
 ### Qt 5
 

@@ -184,15 +184,15 @@ The columns have the following meaning:
 | auracle | C++ | Yes | N/A | Yes | Yes | N/A | No | N/A | S | No automatic builds |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | sort by votes |
-| aurman | Python | Yes | Yes | Yes | Yes | Yes | Yes | None | P | batch inspection, fetch needed pgp keys, sort by popularity |
-| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support, sort by votes/popularity, batch inspection |
+| aurman | Python | Yes | Yes | Yes | Yes | Yes | Yes | None | P | batch interaction, fetch needed pgp keys, sort by popularity |
+| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support, sort by votes/popularity |
 | bauerbill | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
 | naaman | Python | No | Yes | No | No | No | Yes | bash | P/S | - |
-| pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | multilingual, sort by votes/popularity, batch inspection |
+| pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | multilingual, sort by votes/popularity, batch interaction |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
-| pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/fish | P | sort by votes/popularity, batch inspection |
+| pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/fish | P | [systemd dynamic users isolation](http://0pointer.net/blog/dynamic-users-with-systemd.html), sort by votes/popularity, batch interaction |
 | PKGBUILDer | Python | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
 | prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
 | repoctl | Go | Yes | N/A | Yes [[5]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |
@@ -201,7 +201,7 @@ The columns have the following meaning:
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | S | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | S | No automatic builds |
 | yaourt | Bash/C | No (*yaourt -Si*) [[10]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[11]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | No [[12]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[13]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[14]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
-| yay | Go | Yes | Yes | Yes | No | Partial | No | bash/zsh/fish | P | sort by votes, batch inspection |
+| yay | Go | Yes | Yes | Yes | No | Partial | No | bash/zsh/fish | P | sort by votes, batch interaction |
 
 **Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. introduced architecture specific fields. [[15]](http://allanmcrae.com/2014/12/pacman-4-2-released/) However, as of 06 April 2016, [AurJson](/index.php/AurJson "AurJson") combines all entries in a single field: [FS#48796](https://bugs.archlinux.org/task/48796). Helpers relying on the RPC may use the below workarounds to retrieve dependencies:
 

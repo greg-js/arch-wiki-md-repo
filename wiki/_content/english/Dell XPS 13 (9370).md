@@ -24,3 +24,7 @@ The video should work with the `i915` driver of the current [linux](https://www.
 If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
 
 Note that the 'enable_psr=1' option appears not to work properly, at least on the touchscreen model.
+
+## Wifi
+
+Wifi should work out of the box with the `ath10k_pci` driver in recent [linux](https://www.archlinux.org/packages/?name=linux) kernels. (In my case) the Wifi firmware sometimes crashes when waking up from suspend. (firmware version `WLAN.RM.4.4.1-00051-QCARMSWP-1`; [dmesg](https://gist.github.com/dsprenkels/eb1c7095385fe16ee9b128ab0834be21))

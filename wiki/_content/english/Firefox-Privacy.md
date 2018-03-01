@@ -68,7 +68,7 @@ Firefox gained an option for [tracking protection](https://support.mozilla.org/e
 
 Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
 
-Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet#Firefox_spin-offs "List of applications/Internet").
+Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet#Firefox_spin-offs "List of applications/Internet"). If you are already running such an ad blocker with the correct lists, tracking protection might be redundant.
 
 ### Change browser time zone
 
@@ -87,7 +87,10 @@ You can override Firefox's user agent with the `general.useragent.override` pref
 
 The value for the key is your browser's user agent. Select a known common one.
 
-**Tip:** The value `Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0` is used as the user agent for the Tor browser, thus being very common.
+**Tip:**
+
+*   The value `Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0` is used as the user agent for the Tor browser, thus being very common.
+*   The [#Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting) option also enables the Tor browser user agent automatically and changes your browser platform automatically.
 
 **Warning:** Changing the user agent without changing to a corresponding platform will make your browser nearly unique.
 
@@ -214,7 +217,7 @@ From the preferences for Cookie Monster select "Block All Cookies". Once this is
 
 ### Cookie AutoDelete
 
-[Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. (Support for clearing LocalStorage was added in version 2.1, but only for Firefox versions 58+. The same release added support for first part isolation, but only for Firefox versions 59+).
+[Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. (Support for clearing LocalStorage was added in version 2.1, but only for Firefox versions 58+. The same release added support for first party isolation, but only for Firefox versions 59+).
 
 ### RefControl
 
@@ -251,6 +254,8 @@ To do this open RefControl's preferences and change the setting for "Default for
 ### Stop Fingerprinting
 
 [Stop Fingerprinting](https://addons.mozilla.org/firefox/addon/stop-fingerprinting/) disables / modifies some browser APIs that would otherwise allow browser fingerprinting. However, this addon is not compatible with newer versions of Firefox (57+).
+
+**Note:** Firefox now has a native config option to prevent fingerprinting, see [#Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting).
 
 ## Remove system-wide hidden extensions
 

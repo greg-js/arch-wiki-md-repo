@@ -15,7 +15,7 @@
 
 Si tu contraseña de KDE Wallet es la misma que tu contraseña de usuario, puedes desbloquear automáticamente tu cartera al iniciar la sesión.
 
-Instala [pam_kwallet-git](https://aur.archlinux.org/packages/pam_kwallet-git/) desde el [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)").
+Instala [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam).
 
 Después, edita `/etc/pam.d/kde` y añade estas dos líneas bajo las secciones correspondientes:
 

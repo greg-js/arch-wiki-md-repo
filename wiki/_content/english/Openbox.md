@@ -407,7 +407,7 @@ This type of menu is in essence a script that provides dynamic, refreshed lists 
 *   [obdevicemenu](https://aur.archlinux.org/packages/obdevicemenu/): Management of removable media with [Udisks](/index.php/Udisks "Udisks")
 *   [wifi pipe menu](https://bbs.archlinux.org/viewtopic.php?pid=1345031): Wireless networking using [Netctl](/index.php/Netctl "Netctl")
 
-[Openbox.org](http://openbox.org/download-pipemenus.php) also provides a further list of pipe menus.
+[Openbox.org](http://openbox.org/wiki/Openbox:Pipemenus) also provides a further list of pipe menus.
 
 ### Generators
 

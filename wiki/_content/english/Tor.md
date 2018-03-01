@@ -255,7 +255,9 @@ To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOC
 
 ## Web browsing
 
-The Tor Project currently only supports web browsing with tor through the [Tor Browser](https://aur.archlinux.org/packages/?K=tor-browser), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers, but this is [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser) by the Tor Project.
+The Tor Project currently only supports web browsing with tor through the [Tor Browser](https://aur.archlinux.org/packages/?K=tor-browser), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers.
+
+**Warning:** Tor Project strongly recommends only using the Tor browser if you want to stay anonymous [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser).
 
 **Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Use a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG").
 
@@ -388,7 +390,7 @@ Advantages:
 
 Disadvantages:
 
-*   Longer updates times due to Longer latency and lower throughput. This can be a big security risk if/when the updates needs to be done as fast as possible, especially on machines directly connected to the Internet. That is the case when there is a huge security flaw, and that the flaws are fast to probe, easy to exploit, and that attackers have already started targeting as many systems as they can before the systems are updated.
+*   Longer updates times due to longer latency and lower throughput. This can be a big security risk if/when the updates needs to be done as fast as possible, especially on machines directly connected to the Internet. That is the case when there is a huge security flaw, and that the flaws are fast to probe, easy to exploit, and that attackers have already started targeting as many systems as they can before the systems are updated.
 
 Reliability with Tor:
 
@@ -774,16 +776,10 @@ See [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8).
 
 **Note:**
 
-iptables-restore: unable to initialize table 'nat'
-
-Requires:
+If you get this error: `iptables-restore: unable to initialize table 'nat'`, you have to load the appropriate kernel modules:
 
 ```
-modprobe ip_tables
-modprobe iptable_nat
-modprobe ip_conntrack
-modprobe iptable-filter
-modprobe ipt_state
+# modprobe ip_tables iptable_nat ip_conntrack iptable-filter ipt_state
 
 ```
 
@@ -831,7 +827,7 @@ COMMIT
 This file also works for ip6tables-restore, so you may symlink it:
 
 ```
-ln -s /etc/iptables/iptables.rules /etc/iptables/ip6tables.rules
+# ln -s /etc/iptables/iptables.rules /etc/iptables/ip6tables.rules
 
 ```
 

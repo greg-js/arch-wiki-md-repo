@@ -1,3 +1,9 @@
+相关文章
+
+*   [Mirroring](/index.php/Mirroring "Mirroring")
+*   [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
+*   [reflector](/index.php/Reflector "Reflector")
+
 本页面说明如何选择和配置镜像，以及列出可用的镜像。
 
 ## Contents
@@ -73,7 +79,7 @@ pacman 会首先尝试链接这个镜像。如果需要的话，可以继续修�
 
 ```
 
-传入两次`--refresh`或`-y`将强制更新所有软件包列表，即使系统认为它们已经是最新。**每次修改镜像之后都应该使用`pacman -Syy`**。
+传入两次`--refresh`或`-y`将强制更新所有软件包列表，即使系统认为它们已经是最新。**每次修改镜像之后都应该使用`pacman -Syyu`**。
 
 ## 镜像状态
 

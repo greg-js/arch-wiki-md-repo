@@ -7,13 +7,11 @@
     *   [2.1 Compression](#Compression)
     *   [2.2 Decompression](#Decompression)
 *   [3 Details](#Details)
-*   [4 Benchmarks](#Benchmarks)
-*   [5 FAQ](#FAQ)
-*   [6 Repository and issue tracker](#Repository_and_issue_tracker)
+*   [4 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [lrzip](https://www.archlinux.org/packages/?name=lrzip), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [lrzip](https://www.archlinux.org/packages/?name=lrzip) package.
 
 ## Usage
 
@@ -85,14 +83,7 @@ The major disadvantages are:
 
 The unique feature of lrzip is that it tries to make the most of the available ram in your system at all times for maximum benefit. It does this by default, choosing the largest sized window possible without running out of memory. It also has a unique "sliding mmap" feature which makes it possible to even use a compression window larger than your ramsize, if the file is that large. It does this (with the `-U` option) by implementing one large mmap buffer as per normal, and a smaller moving buffer to track which part of the file is currently being examined, emulating a much larger single mmapped buffer. Unfortunately, this mode can be many times slower.
 
-## Benchmarks
+## See also
 
-See the [README.benchmarks](http://ck.kolivas.org/apps/lrzip/README.benchmarks) included in the source/docs.
-
-## FAQ
-
-See the [README](http://ck.kolivas.org/apps/lrzip/README) included with the source package.
-
-## Repository and issue tracker
-
-On [https://github.com/ckolivas/lrzip](https://github.com/ckolivas/lrzip)
+*   [GitHub repository](https://github.com/ckolivas/lrzip)
+*   [Benchmarks (from the author)](http://ck.kolivas.org/apps/lrzip/README.benchmarks)

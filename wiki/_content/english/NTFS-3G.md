@@ -20,7 +20,8 @@ The Linux kernel only supports reading Microsoft's NTFS file system. [NTFS-3G](h
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
     *   [6.2 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache.2C_refused_to_mount)
-    *   [6.3 Mount failure](#Mount_failure)
+    *   [6.3 Deleting Windows hibernate metadata](#Deleting_Windows_hibernate_metadata)
+    *   [6.4 Mount failure](#Mount_failure)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -211,6 +212,17 @@ powercfg /h off
 ```
 
 You can check the current settings on *Control Panel > Hardware and Sound > Power Options > System Setting > Choose what the power buttons do*. The box *Turn on fast startup* should either be disabled or missing.
+
+### Deleting Windows hibernate metadata
+
+As an alternative to above clean shutdown method, there is a way to completely destroy NTFS metadata that was saved after hibernating. This method is only feasible if you're not able or unwilling to boot into Windows and shut it down completely. This is by placing **remove_hiberfile** option when you're mounting your NTFS file system using ntfs-3g.
+
+```
+# mount -t ntfs-3g -o remove_hiberfile /dev/*your_NTFS_partition* */mount/point*
+
+```
+
+**Warning:** Please note that this method means that the saved Windows session will be completely lost. Use this option under your own responsibility.
 
 ### Mount failure
 

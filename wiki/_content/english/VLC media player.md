@@ -168,13 +168,6 @@ When starting VLC you can get a segfault, and ruling out general factors such as
 
 Then reinstall VLC.
 
-Another workaround can be reinstalling vlc within an `LD_PRELOAD` environment:
-
-```
-# LD_PRELOAD=/usr/lib/libgobject-2.0.so.0 pacman -S vlc
-
-```
-
 ### Missing icons in dropdown menus
 
 This can happen under XFCE, there will be no more icons in dropdown menus, like the PCI card icon.

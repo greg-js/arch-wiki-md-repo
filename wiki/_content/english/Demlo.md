@@ -102,4 +102,4 @@ See `demlo -h` and the [demlo manual](https://godoc.org/bitbucket.org/ambrevar/d
 ## See also
 
 *   [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?id=186890)
-*   [Development page](https://bitbucket.org/ambrevar/demlo)
+*   [Development page](https://github.com/Ambrevar/demlo)

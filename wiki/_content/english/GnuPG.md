@@ -44,6 +44,7 @@ According to the [official website](https://www.gnupg.org/):
         *   [6.5.1 Set SSH_AUTH_SOCK](#Set_SSH_AUTH_SOCK)
         *   [6.5.2 Configure pinentry to use the correct TTY](#Configure_pinentry_to_use_the_correct_TTY)
         *   [6.5.3 Add SSH keys](#Add_SSH_keys)
+        *   [6.5.4 Use GPG key as SSH key](#Use_GPG_key_as_SSH_key)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
     *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_.28PCSC_Lite.29)
@@ -56,6 +57,7 @@ According to the [official website](https://www.gnupg.org/):
     *   [8.5 Hide all recipient id's](#Hide_all_recipient_id.27s)
     *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
     *   [8.7 Always show long ID's and fingerprints](#Always_show_long_ID.27s_and_fingerprints)
+    *   [8.8 Custom capabilities](#Custom_capabilities)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
     *   [9.2 su](#su)
@@ -461,7 +463,7 @@ If a file as been encrypted in addition to being signed, simply [decrypt](#Encry
 *   The `gpg-agent-ssh.socket` can be used by [SSH](/index.php/SSH "SSH") to cache [SSH keys](/index.php/SSH_keys "SSH keys") added by the *ssh-add* program. See [#SSH agent](#SSH_agent) for the necessary configuration.
 *   The `dirmngr.socket` starts a GnuPG daemon handling connections to keyservers.
 
-**Note:** If you use non-default GnuPG [#Directory location](#Directory_location), you will need to [edit](/index.php/Edit "Edit") all socket files to use the path in the socket directory that `gpgconf --create-socketdir` creates.
+**Note:** If you use non-default GnuPG [#Directory location](#Directory_location), you will need to [edit](/index.php/Edit "Edit") all socket files to use the values of `gpgconf --list-dirs`.
 
 ### Configuration
 
@@ -601,6 +603,17 @@ max-cache-ttl-ssh 10800
 
 ```
 
+#### Use GPG key as SSH key
+
+If you use *gpg-agent* as an SSH agent, you can use your GnuPG key as an SSH key. This reduces key maintenance and you can store your SSH key on a [#Keycard](#Keycards). You have to create a key with the authentication capability (see [#Custom capabilities](#Custom_capabilities)). GnuPG will automatically use this key, if necessary. To check whether the key is added run:
+
+```
+$ ssh-add -l
+
+```
+
+The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`*.*
+
 ## Smartcards
 
 GnuPG uses *scdaemon* as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") for details.
@@ -718,6 +731,26 @@ To send the signatures to their owners you need a working [MTA](https://en.wikip
 ### Always show long ID's and fingerprints
 
 To always show long key ID's add `keyid-format 0xlong` to your configuration file. To always show full fingerprints of keys, add `with-fingerprint` to your configuration file.
+
+### Custom capabilities
+
+For further customization also possible to set custom capabilities to your keys. The following capabilities are available:
+
+*   Certify (only for master keys) - allows the key to create subkeys, mandatory for master keys.
+*   Sign - allows the key to create cryptographic signatures that others can verify with the public key.
+*   Encrypt - allows anyone to encrypt data with the public key, that only the private key can decrypt.
+*   Authenticate - allows the key to authenticate with various non-GnuPG programs. The key can be used as e.g. an SSH key.
+
+It's possible to specify the capabilities of the master key, by running:
+
+```
+$ gpg --full-generate-key --expert
+
+```
+
+And select an option that allows you to set your own capabilities.
+
+Comparably, to specify custom capabilities for subkeys, add the `--expert` flag to `gpg --edit-key`, see [#Edit your key](#Edit_your_key) for more information.
 
 ## Troubleshooting
 

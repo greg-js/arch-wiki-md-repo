@@ -23,17 +23,18 @@ The font rendering packages on Arch Linux includes support for *freetype2* with 
         *   [2.3.1 Byte-Code Interpreter (BCI)](#Byte-Code_Interpreter_.28BCI.29)
         *   [2.3.2 Autohinter](#Autohinter)
         *   [2.3.3 Hintstyle](#Hintstyle)
-    *   [2.4 Subpixel rendering](#Subpixel_rendering)
-        *   [2.4.1 LCD filter](#LCD_filter)
-        *   [2.4.2 Advanced LCD filter specification](#Advanced_LCD_filter_specification)
-    *   [2.5 Disable auto-hinter for bold fonts](#Disable_auto-hinter_for_bold_fonts)
-    *   [2.6 Replace or set default fonts](#Replace_or_set_default_fonts)
-    *   [2.7 Whitelisting and blacklisting fonts](#Whitelisting_and_blacklisting_fonts)
-    *   [2.8 Disable bitmap fonts](#Disable_bitmap_fonts)
-    *   [2.9 Disable scaling of bitmap fonts](#Disable_scaling_of_bitmap_fonts)
-    *   [2.10 Create bold and italic styles for incomplete fonts](#Create_bold_and_italic_styles_for_incomplete_fonts)
-    *   [2.11 Change rule overriding](#Change_rule_overriding)
-    *   [2.12 Query the current settings](#Query_the_current_settings)
+    *   [2.4 Pixel alignment](#Pixel_alignment)
+    *   [2.5 Subpixel rendering](#Subpixel_rendering)
+        *   [2.5.1 LCD filter](#LCD_filter)
+        *   [2.5.2 Advanced LCD filter specification](#Advanced_LCD_filter_specification)
+    *   [2.6 Disable auto-hinter for bold fonts](#Disable_auto-hinter_for_bold_fonts)
+    *   [2.7 Replace or set default fonts](#Replace_or_set_default_fonts)
+    *   [2.8 Whitelisting and blacklisting fonts](#Whitelisting_and_blacklisting_fonts)
+    *   [2.9 Disable bitmap fonts](#Disable_bitmap_fonts)
+    *   [2.10 Disable scaling of bitmap fonts](#Disable_scaling_of_bitmap_fonts)
+    *   [2.11 Create bold and italic styles for incomplete fonts](#Create_bold_and_italic_styles_for_incomplete_fonts)
+    *   [2.12 Change rule overriding](#Change_rule_overriding)
+    *   [2.13 Query the current settings](#Query_the_current_settings)
 *   [3 Applications without fontconfig support](#Applications_without_fontconfig_support)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Distorted fonts](#Distorted_fonts)
@@ -198,11 +199,9 @@ Hintstyle is the amount of font reshaping done to line up to the grid. Hinting v
 
 **Note:** Some applications, like [GNOME](/index.php/GNOME "GNOME") may [override default hinting settings.](#Troubleshooting)
 
-### Subpixel rendering
+### Pixel alignment
 
 Most monitors manufactured today use the Red, Green, Blue (RGB) specification. Fontconfig will need to know your monitor type to be able to display your fonts correctly. Monitors are either: **RGB** (most common), **BGR**, **V-RGB** (vertical), or **V-BGR**. A monitor test can be found [here](http://www.lagom.nl/lcd-test/subpixel.php).
-
-To enable subpixel rendering:
 
 ```
   <match target="font">
@@ -213,7 +212,15 @@ To enable subpixel rendering:
 
 ```
 
-**Note:** Subpixel rendering effectively triples the horizontal (or vertical) resolution for fonts by making use of subpixels. The default autohinter and subpixel rendering are not designed to work together, hence you will want to enable the subpixel autohinter. Prior to [freetype2](https://www.archlinux.org/packages/?name=freetype2) 2.7, the subpixel hinting mode was configurable with the `FT2_SUBPIXEL_HINTING` [environment variable](/index.php/Environment_variable "Environment variable"). Possible values were `0` (disabled), `1` (Infinality) and `2` (minimal). From [freetype2](https://www.archlinux.org/packages/?name=freetype2) 2.7, subpixel hinting uses upstream's configuration method, which has a different syntax. Subpixel hinting mode configured in the file `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode/2.6 default), `truetype:interpreter-version=38` ("Infinality" mode), `truetype:interpreter-version=40` (minimal mode/2.7 default).
+**Note:** Without subpixel rendering (see below), freetype will only care about the alignment (vertical or horizontal) of the subpixels. There is no difference between **RGB** and **BGR**, for example.
+
+### Subpixel rendering
+
+[Subpixel rendering](https://en.wikipedia.org/wiki/Subpixel_rendering "wikipedia:Subpixel rendering") is a technique to improve sharpness of font rendering by effectively tripling the horizontal (or vertical) resolution through the use of subpixels. On Windows machines, this technique is called "ClearType". Subpixel rendering is covered by Microsoft patents and **disabled** by default on Arch Linux. To enable it, you have to re-compile [freetype2](https://www.archlinux.org/packages/?name=freetype2) and define the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro, or use e.g. the AUR package [freetype2-cleartype](https://aur.archlinux.org/packages/freetype2-cleartype/).
+
+To enable subpixel rendering, make sure that correct pixel alignment (see above) is configured.
+
+**Note:** The default autohinter and subpixel rendering are not designed to work together, hence you will want to enable the subpixel autohinter. Subpixel hinting mode configured in the file `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode/2.6 default), `truetype:interpreter-version=38` ("Infinality" mode), `truetype:interpreter-version=40` (minimal mode/2.7 default). For details, also see [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html)
 
 #### LCD filter
 
@@ -251,7 +258,9 @@ $ makepkg -o
 
 ```
 
-Edit the file `src/freetype-VERSION/src/base/ftlcdfil.c` and look up the definition of the constant `default_filter[5]`:
+Enable subpixel rendering by editing the file `src/freetype-VERSION/include/freetype/config/ftoption.h` and uncommenting the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro.
+
+Then, edit the file `src/freetype-VERSION/src/base/ftlcdfil.c` and look up the definition of the constant `default_filter[5]`:
 
 ```
 static const FT_Byte  default_filter[5] =
@@ -602,7 +611,7 @@ You may also experience similar problem when you open a PDF which requires Helve
 
 ### FreeType Breaking Bitmap Fonts
 
-Some users are reporting problems ([FS#52502](https://bugs.archlinux.org/task/52502)) with bitmap fonts having changed names after upgrading [freetype2](https://www.archlinux.org/packages/?name=freetype2) to version 2.7.1, creating havok in terminal emulators and several other programs such as [dwm](https://aur.archlinux.org/packages/dwm/) or [dmenu](https://www.archlinux.org/packages/?name=dmenu) by falling back to another (different) font. This was caused by the changes to the PCF font family format, which is described in their *release notes* [[2]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Users transitioning from the old format might want to create a *font alias* to remedy the problems, like the solution which is described in [[3]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), given here too:
+Some users are reporting problems ([FS#52502](https://bugs.archlinux.org/task/52502)) with bitmap fonts having changed names after upgrading [freetype2](https://www.archlinux.org/packages/?name=freetype2) to version 2.7.1, creating havok in terminal emulators and several other programs such as [dwm](https://aur.archlinux.org/packages/dwm/) or [dmenu](https://www.archlinux.org/packages/?name=dmenu) by falling back to another (different) font. This was caused by the changes to the PCF font family format, which is described in their *release notes* [[3]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Users transitioning from the old format might want to create a *font alias* to remedy the problems, like the solution which is described in [[4]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), given here too:
 
 Assume we want to create an alias for [terminus-font](https://www.archlinux.org/packages/?name=terminus-font), which was renamed from `Terminus` to `xos4 Terminus` in the previously described [freetype2](https://www.archlinux.org/packages/?name=freetype2) update:
 

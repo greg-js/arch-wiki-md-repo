@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=512150)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=512246)可以查看翻译后英文页面的改动。
 
-[vsftpd](https://security.appspot.com/vsftpd.html) (Very Secure FTP Daemon) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
+[vsftpd](https://security.appspot.com/vsftpd.html) (“Very Secure FTP Daemon“) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
 
 ## Contents
 
@@ -208,8 +208,7 @@ listen=NO
 ```
 ssl_enable=YES
 
-# 选择你想要的
-# 如果你接受匿名连接你可能要启用这个
+# 如果你接受匿名连接你可能要启用这个设置
 # allow_anon_ssl=NO
 
 # 默认情况下所有非匿名登录被迫使用 SSL 发送和接收密码和数据，设置为 NO，以允许不安全的连接
@@ -219,15 +218,16 @@ force_local_data_ssl=NO
 # 选择你想要的
 force_local_logins_ssl=YES
 
-# 如果启用SSL，则至少应启用 TLS v1
-ssl_tlsv1=YES
-# 这些选项将允许或阻止 SSL v2 和 v3 协议连接。TLS v1 连接是首选。
-ssl_sslv2=NO
-ssl_sslv3=YES
-# 给出您的 *.pem 文件的正确路径
+# TLS v1 协议连接是首选，默认情况下启用此模式，而禁用 SSL v2 和 v3 时，以下设置是默认设置，不需要更改，除非您特别需要 SSL
+# ssl_tlsv1=YES
+# ssl_sslv2=NO
+# ssl_sslv3=NO
+# 提供您的证书和私钥注释的路径，它们可以包含在同一个文件中或不同的文件中
 rsa_cert_file=/etc/ssl/certs/vsftpd.pem
-# .pem 文件也包含私钥
 rsa_private_key_file=/etc/ssl/certs/vsftpd.pem
+
+# 此设置默认设置为 YES，并要求所有数据连接都显示会话重用，这证明他们知道控制通道的秘密。这种方式更安全，但不受许多 FTP 客户端的支持，为了更好的兼容性而设置为 NO
+require_ssl_reuse=NO
 ```
 
 ### 在被动模式下解析主机名

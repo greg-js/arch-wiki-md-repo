@@ -69,30 +69,30 @@ For some devices it might be necessary to set a higher value for the `nvme_core.
 For the Toshiba 512GB SSD used in some models of the XPS 13 the value to enable all PS-States is 170000 (the combined latency of entering and leaving the highest power state, add `nvme_core.default_ps_max_latency_us=170000` to your kernel command line). For the 1TB SSD this valued should be increased to 180000 instead. To check if all states are enabled you can use the [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) package, which provides the `nvme-cli` command:
 
 ```
- # nvme get-feature -f 0x0c -H /dev/nvme0
- get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
-   Autonomous Power State Transition Enable (APSTE): Enabled
-   Auto PST Entries  .................
-   Entry[ 0]   
-   .................
-   Idle Time Prior to Transition (ITPT): 1500 ms
-   Idle Transition Power State   (ITPS): 3
-   .................
-   Entry[ 1]   
-   .................
-   Idle Time Prior to Transition (ITPT): 1500 ms
-   Idle Transition Power State   (ITPS): 3
-   .................
-   Entry[ 2]   
-   .................
-   Idle Time Prior to Transition (ITPT): 1500 ms
-   Idle Transition Power State   (ITPS): 3
-   .................
-   Entry[ 3]   
-   .................
-   Idle Time Prior to Transition (ITPT): 8500 ms
-   Idle Transition Power State   (ITPS): 4
-   .................
+# nvme get-feature -f 0x0c -H /dev/nvme0
+get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
+Autonomous Power State Transition Enable (APSTE): Enabled
+Auto PST Entries  .................
+Entry[ 0]   
+.................
+Idle Time Prior to Transition (ITPT): 1500 ms
+Idle Transition Power State   (ITPS): 3
+.................
+Entry[ 1]   
+.................
+Idle Time Prior to Transition (ITPT): 1500 ms
+Idle Transition Power State   (ITPS): 3
+.................
+Entry[ 2]   
+.................
+Idle Time Prior to Transition (ITPT): 1500 ms
+Idle Transition Power State   (ITPS): 3
+.................
+Entry[ 3]   
+.................
+Idle Time Prior to Transition (ITPT): 8500 ms
+Idle Transition Power State   (ITPS): 4
+.................
 
 ```
 
@@ -192,7 +192,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
 | [Apple 87W USB-C Power Adapter](https://www.apple.com/uk/shop/product/MNF82B/A/87w-usb-c-power-adapter?fnode=8b) | USB-C Power | Working |
 | [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
-| [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI (Got it to work on Alienware 13) | Maybe |
+| [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Working |
 | [ARP USB 3.1 C - DVI](https://www.arp.ch/fr/adaptateur-arp-usb-3-1-c-dvi-4044821-5115074) | DVI | Working |
 | [Aukey USB-C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
 | [Belkin USB-C to VGA Adapter](http://www.belkin.com/us/p/P-F2CU037/) | VGA | Working |
@@ -286,18 +286,18 @@ The touchpad has no explicit buttons. The buttons are built into the pads surfac
 If `dmesg | grep -i psmouse` returns an error, but your touchpad still works, then it might be a good idea to disable `psmouse`. First create a config file:
 
 ```
-   # nano /etc/modprobe.d/modprobe.conf
+# nano /etc/modprobe.d/modprobe.conf
 
-   blacklist psmouse
+blacklist psmouse
 
 ```
 
 Then add this file to `/etc/mkinitcpio.conf`:
 
 ```
-   ...
-   FILES=(/etc/modprobe.d/modprobe.conf)
-   ...
+...
+FILES=(/etc/modprobe.d/modprobe.conf)
+...
 
 ```
 
@@ -320,14 +320,14 @@ See [Firefox/Tweaks#Pixel-perfect trackpad scrolling](/index.php/Firefox/Tweaks#
 By default, the keyboard backlight turns off after 10 seconds of inactivity. Some users might find this too short and annoying. The delay can be increased (or decreased) by editing this file:
 
 ```
-  /sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout
+/sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout
 
 ```
 
 You can also change the brightness (0-2) by editing the following file. This is identical to pressing F10 on your keyboard:
 
 ```
-   /sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/brightness
+/sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/brightness
 
 ```
 
@@ -399,32 +399,32 @@ Open alsamixer and set "Headphone Mic Boost" gain to 10 dB (See discussion on [r
 You may also run the equivalent command:
 
 ```
-   $ amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1
+$ amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1
 
 ```
 
 PulseAudio will rewrite these ALSA settings. So if you use PulseAudio you should change its config to make them permanent:
 
 ```
-   # vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf
+# vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf
 
-   [Element Headphone Mic Boost]
-   required-any = any
-   switch = select
-   # Replace "volume = merge" by:
-   volume = 1
-   override-map.1 = all
-   override-map.2 = all-left,all-right
-
-```
+[Element Headphone Mic Boost]
+required-any = any
+switch = select
+# Replace "volume = merge" by:
+volume = 1
+override-map.1 = all
+override-map.2 = all-left,all-right
 
 ```
-   # vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf
 
-   [Element Headphone Mic Boost]
-   switch = off
-   # Replace "volume = off" by:
-   volume = 1
+```
+# vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf
+
+[Element Headphone Mic Boost]
+switch = off
+# Replace "volume = off" by:
+volume = 1
 
 ```
 

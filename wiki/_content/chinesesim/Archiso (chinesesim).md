@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-04，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=509507)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-04，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=512164)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -362,7 +362,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 复制 Live 环境的*所有文件*到新的根目录，而不是使用 `pacstrap`(这将尝试从远程存储库下载)：
 
 ```
- # time cp -ax / /mnt
+ # cp -ax / /mnt
 
 ```
 

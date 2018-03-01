@@ -89,7 +89,7 @@ Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) 
 
 ### DRM kernel mode setting
 
-**Warning:** Enabling KMS causes [GDM](/index.php/GDM "GDM") and [GNOME](/index.php/GNOME "GNOME") to default to [Wayland](/index.php/Wayland "Wayland"), which currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284). A workaround is to use the *GNOME on Xorg* session instead.
+**Warning:** Enabling KMS causes [GDM](/index.php/GDM "GDM") and [GNOME](/index.php/GNOME "GNOME") to default to [Wayland](/index.php/Wayland "Wayland"), which currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284). A workaround is to configure GDM to use Wayland (see [GDM#Use Xorg backend](/index.php/GDM#Use_Xorg_backend "GDM")) or to use the *GNOME on Xorg* session instead.
 
 **Note:** The NVIDIA driver does **not** provide an `fbdev` driver for the high-resolution console for the kernel compiled-in `vesafb` module. However, the kernel compiled-in `efifb` module supports a high-resolution console on EFI systems. This method requires GRUB and is described in [NVIDIA/Tips and tricks#Fixing terminal resolution](/index.php/NVIDIA/Tips_and_tricks#Fixing_terminal_resolution "NVIDIA/Tips and tricks").[[1]](http://forums.fedoraforum.org/showthread.php?t=306271)[[2]](https://www.reddit.com/r/archlinux/comments/4gwukx/nvidia_drivers_and_high_resolution_tty_possible/).
 

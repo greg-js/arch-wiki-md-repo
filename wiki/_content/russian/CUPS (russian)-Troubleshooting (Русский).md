@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 25 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=508445).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 12 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=510517).
 
 Ссылки по теме
 
@@ -47,7 +47,6 @@
 *   [6 Другие](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5)
     *   [6.1 Принтер "приостановлен - "Paused"" или "Остановлен" cо статусом "Рендеринг завершен"](#.D0.9F.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.22.D0.BF.D1.80.D0.B8.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD_-_.22Paused.22.22_.D0.B8.D0.BB.D0.B8_.22.D0.9E.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.22_c.D0.BE_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.BE.D0.BC_.22.D0.A0.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3_.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.22)
         *   [6.1.1 Низкий уровень чернил](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B8.D0.B9_.D1.83.D1.80.D0.BE.D0.B2.D0.B5.D0.BD.D1.8C_.D1.87.D0.B5.D1.80.D0.BD.D0.B8.D0.BB)
-        *   [6.1.2 Разрешение проблемы](#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_2)
     *   [6.2 Завершение печати из-за ошибок авторизации](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.D0.B8.D0.B7-.D0.B7.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_.D0.B0.D0.B2.D1.82.D0.BE.D1.80.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8)
     *   [6.3 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
     *   [6.4 Ошибка задания для печати (Print-Job) client-error-document-format-not-supported](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.28Print-Job.29_client-error-document-format-not-supported)
@@ -362,7 +361,20 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 ### hp-setup просит указать PPD-файл для обнаруженного принтера
 
-Установите и запустите CUPS перед запуском hp-setup.
+Кроме того, при выборе файла PPD в графическом режиме hp-setup поле не обновляется и сообщение об ошибке не отображается.
+
+Или, если вы используете интерактивный (консольный) режим, можно столкнуться с чем-то похожим на это даже при введении правильного пути к файлу ppd:
+
+```
+ Please enter the full filesystem path to the PPD file to use (q=quit) :/usr/share/ppd/HP/hp-deskjet_2050_j510_series.ppd.gz
+ Traceback (most recent call last):
+   File "/usr/bin/hp-setup", line 536, in <module>
+     desc = nickname_pat.search(nickname).group(1)
+ TypeError: cannot use a string pattern on a bytes-like object
+
+```
+
+Решение заключается в установке и запуске [cups](https://www.archlinux.org/packages/?name=cups) перед запуском `hp-setup`.
 
 ### hp-setup: "Qt/PyQt 4 initialization failed"
 
@@ -381,14 +393,6 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 При низком уровне чернил некоторые принтеры зависают со статусом "Рендеринг завершен" ("Rendering completed"), и, если это сетевой принтер, принтер может даже стать недоступным для CUPS, несмотря на то, что он правильно подключен к сети. Замена картриджа (картриджей) с низким уровнем чернил в этом случае вернет принтер в статус "Готов" ("Ready") и, если он - сетевой принтер, то он станет снова доступным для CUPS.
 
 **Примечание:** Если вы используете сторонние чернильные картриджи, то принтер может сообщать неточную информацию о уровне чернил. Если вы используете сторонние картриджи, и ваш принтер работал нормально, но теперь завис со статусом "Рендеринг завершен" ("Rendering completed"), замените чернильные картриджи, независимо от уровня отображаемых чернил, перед тем, как пробовать другие решения проблемы.
-
-#### Разрешение проблемы
-
-До [cups](https://www.archlinux.org/packages/?name=cups) версии 2.0.0-2, если группа, установленная в директиве `Group`, также указана в директиве `SystemGroup` в `/etc/cups/cups-files.conf`, тогда `cupsd` будет вместо нужной группы запускать любые вспомогательные программы с группой `nobody`. Однако, вспомогательные программы могут нуждаться в записи информации в принтер, которые созданы пользователем `root` и группой `lp`, но они не смогут ничего записать из-за того, что они были запущены с группой `nobody`. В результате этого задания получат статус "приостановлен - "Paused"" или "Остановлено".
-
-Чтобы исправить это, убедитесь, что директива `Group` установлена в `lp`, а директива `SystemGroup` не включает `lp`.
-
-Исправлено в Arch с [обновлением](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=c20b22f4f996cb08b1aa856d4c8991e869459eb2).
 
 ### Завершение печати из-за ошибок авторизации
 

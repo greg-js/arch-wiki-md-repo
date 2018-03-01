@@ -196,9 +196,9 @@ export no_proxy="127.0.0.1"
 
 ```
 
-*   If it is run as a service, you must define the variables in the service configuration file as follows:
+*   If it is run as a service, you must define the variables in the service configuration as follows:
 
- `/etc/systemd/system/multi-user.target.wants/syncthing@*myusername*.service` 
+ `/etc/systemd/system/syncthing@*myusername*.service.d/override.conf` 
 ```
 [Service]
 Environment="all_proxy=socks5://*proxy_address*:*proxy_port*"

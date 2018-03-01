@@ -10,72 +10,32 @@ This article aims on providing information on flashing your system BIOS under Li
 ## Contents
 
 *   [1 fwupd](#fwupd)
-    *   [1.1 Installation](#Installation)
-    *   [1.2 Usage](#Usage)
 *   [2 BiosDisk](#BiosDisk)
-    *   [2.1 Installation](#Installation_2)
-    *   [2.2 Usage](#Usage_2)
+    *   [2.1 Installation](#Installation)
+    *   [2.2 Usage](#Usage)
 *   [3 Flashrom](#Flashrom)
-    *   [3.1 Installation](#Installation_3)
-    *   [3.2 Usage](#Usage_3)
+    *   [3.1 Installation](#Installation_2)
+    *   [3.2 Usage](#Usage_2)
 *   [4 FreeDOS](#FreeDOS)
     *   [4.1 Unetbootin](#Unetbootin)
     *   [4.2 Gentoo](#Gentoo)
     *   [4.3 Prebuilt images](#Prebuilt_images)
     *   [4.4 Using a FreeDOS-provided Disk Image + USB stick](#Using_a_FreeDOS-provided_Disk_Image_.2B_USB_stick)
     *   [4.5 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
-    *   [4.6 Usage](#Usage_4)
+    *   [4.6 Usage](#Usage_3)
 *   [5 Bootable optical disk emulation](#Bootable_optical_disk_emulation)
-    *   [5.1 Installation](#Installation_4)
-    *   [5.2 Usage](#Usage_5)
+    *   [5.1 Installation](#Installation_3)
+    *   [5.2 Usage](#Usage_4)
 
 ## fwupd
 
-fwupd is a simple daemon to allow session software to update device firmware on your local machine. It's designed for desktops, but this project is also usable on phones, tablets and on headless servers. You can either use a GUI software manager like GNOME Software to view and apply updates or the command-line tool fwupdmgr.
+fwupd is a simple daemon to allow session software to update device firmware on your local machine.
 
 Large vendors including Dell and Logitech use this way to distribute firmware updates to Linux.
 
-A list of hardware currently available in stable tree can be viewed [here](https://fwupd.org/lvfs/devicelist).
+fwupd only supports flashing BIOS updates in UEFI mode.
 
-fwupd currently only supports flashing BIOS updates in UEFI mode.
-
-### Installation
-
-[Install](/index.php/Install "Install") [fwupd](https://www.archlinux.org/packages/?name=fwupd).
-
-**Be sure to pay attention to post installation steps.** You'll need to load the bootloader to your EFI system partition manually.
-
-### Usage
-
-To check if your machine is supported you can look at supported devices with fwupdmgr:
-
-```
-# fwupdmgr get-devices
-
-```
-
-If you don't see a UEFI entry but are installed in UEFI mode, check BIOS setup for an option to turn on UEFI capsule updates.
-
-To refresh metadata:
-
-```
-# fwupdmgr refresh
-
-```
-
-To check which devices have updates:
-
-```
-# fwupdmgr get-updates
-
-```
-
-To install updates:
-
-```
-# fwupdmgr update
-
-```
+See [fwupd](/index.php/Fwupd "Fwupd") for further information about installation and usage.
 
 ## BiosDisk
 

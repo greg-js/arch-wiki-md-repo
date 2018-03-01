@@ -296,7 +296,7 @@ The `-v` switch make it verbose.
 
 Changing mode of a just created directory using *chmod* is not necessary as the `-m` option lets you define the access permissions.
 
-**Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -p`.
+**Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -d`
 
 ## mv
 

@@ -56,7 +56,7 @@ You can successfully install *systemd-boot* if booted with in BIOS mode. However
 
 If you can do it, the installation is easier: go into your EFI Shell or your firmware configuration interface and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` ( or `systemd-bootia32.efi` depending if your system firmware is 32 bit).
 
-**Note:** the firmware interface of Dell Latitude series provides everything you need to setup EFI boot but the EFI Shell won't be able to write to the computer's ROM.
+**Note:** The firmware interface of Dell Latitude series provides everything you need to setup EFI boot but the EFI Shell won't be able to write to the computer's ROM.
 
 ### Updating
 
@@ -103,6 +103,8 @@ Exec = /usr/bin/bootctl update
 
 ### Basic configuration
 
+**Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl/loader.conf`.
+
 The basic configuration is stored in `*esp*/loader/loader.conf` file and it is composed by three options:
 
 *   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`.
@@ -120,8 +122,6 @@ editor   0
 ```
 
 **Note:** The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
-
-**Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl/loader.conf`.
 
 ### Adding boot entries
 

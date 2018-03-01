@@ -419,6 +419,8 @@ libgthread-2.0.so
 
 Make it so that these symlinks are pointing to your system glib libraries instead of versions located in `matlabroot/R2017b/cefclient/sys/os/glnxa64`. On a standard arch install the local files reside in `/usr/lib/`.
 
+Do not forget to update the `*.0` links as well.
+
 Relinking of "libfreetype.so.6" is also necessary to open these interfaces. This is found in `matlabroot/R2017b/bin/glnxa64/`.
 
 If the window opens but is blank, consider switching the html renderer to: " webutils.htmlrenderer('basic');" as described in [#Help browser](#Help_browser).

@@ -94,13 +94,13 @@ If the *dhcpcd* default configuration fails to obtain an IP, the following optio
 *   `iaid <interface>` derives the IAID to use for DHCP discovery. It has to be used in an interface block (started by `interface <interface>`, see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1388376#p1388376)), but more frequently the next option is used:
 *   `duid` triggers using a combination of DUID and IAID as identifier.
 
-The DUID value is set in `/etc/dhcpcd.duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](https://tools.ietf.org/html/rfc4361#section-6.1)).
+The DUID value is set in `/var/lib/dhcpcd/duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](https://tools.ietf.org/html/rfc4361#section-6.1)).
 
 Care must be taken on a network running [Dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") to ensure that all three IDs are unique. If duplicate DUID values are presented to the DNS server, e.g. in the case where a virtual machine has been cloned and the hostname and MAC have been made unique but the DUID has not been changed, then the result will be that as each client with the duplicated DUID requests a lease the server will remove the predecessor from the DNS record.
 
 ### Static profile
 
-Required settings are explained in [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"). These typically include the [device name](/index.php/Network_configuration#Device_names "Network configuration"), *IP address*, *router address*, and *name server*.
+Required settings are explained in [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"). These typically include the [device name](/index.php/Network_configuration#Network_interfaces "Network configuration"), *IP address*, *router address*, and *name server*.
 
 Configure a static profile for *dhcpcd* in `/etc/dhcpcd.conf`, for example:
 
@@ -189,7 +189,7 @@ This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described 
 
 The file `/var/lib/dhcpcd/dhcpcd-*interface*.lease`, where `*interface*` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
 
-If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping *dhcpcd* and removing or renaming `/etc/dhcpcd.duid`. *dhcpcd* will generate a new one on next run.
+If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping *dhcpcd* and removing or renaming `/var/lib/dhcpcd/duid`. *dhcpcd* will generate a new one on next run.
 
 Keep in mind that the DUID is intended as persistent machine identifier across reboots and interfaces. If you are transferring the system to new computer, preserving this file should make it appear as old one.
 

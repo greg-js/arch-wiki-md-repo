@@ -58,7 +58,7 @@
 | <small>3.6.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |
 | <small>3.7.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(3) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>3.8.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
-| <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small> |
+| <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(3)</small> |
 | <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |

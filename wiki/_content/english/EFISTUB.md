@@ -22,7 +22,7 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
 
 ## Setting up EFISTUB
 
-After creating the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"), you must choose how it will be mounted. The simplest option is to mount it at `/boot` since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB). See [EFI System Partition#Mount the partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") for all available ESP mounting options options.
+After creating the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"), you must choose how it will be mounted. The simplest option is to mount it at `/boot` since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB). See [EFI System Partition#Mount the partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") for all available ESP mounting options.
 
 **Tip:** You can keep kernel and initramfs out of ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. [rEFInd](/index.php/REFInd "REFInd").
 
@@ -99,7 +99,7 @@ More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI
 
 #### efibootmgr with .efi file
 
-If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable .efi image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the .efi file:
+If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable *.efi* image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the *.efi* file:
 
 ```
 # efibootmgr --create --disk /dev/sdX --part *partition_number* --label "*label*" --loader "EFI\*folder*\*file*.efi"

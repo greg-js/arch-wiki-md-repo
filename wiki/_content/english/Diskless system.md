@@ -189,7 +189,7 @@ You will then need to append `nbd` to your `HOOKS` array after `net`; `net` will
 
 ## Client configuration
 
-In addition to the setup mentioned here, you should also set up your [hostname](/index.php/HOSTNAME#Set_the_host_name "HOSTNAME"), [timezone](/index.php/Timezone#Time_Zone "Timezone"), [locale](/index.php/Locale#Setting_the_system_locale "Locale"), and [keymap](/index.php/Keymap "Keymap"), and follow any other relevant parts of the [Installation guide](/index.php/Installation_guide "Installation guide").
+In addition to the setup mentioned here, you should also set up your [hostname](/index.php/Hostname "Hostname"), [timezone](/index.php/Timezone "Timezone"), [locale](/index.php/Locale#Setting_the_system_locale "Locale"), and [keymap](/index.php/Keymap "Keymap"), and follow any other relevant parts of the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### Bootloader
 

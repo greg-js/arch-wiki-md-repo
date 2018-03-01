@@ -86,6 +86,10 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[https://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin) || [xfce4-clipman-plugin](https://www.archlinux.org/packages/?name=xfce4-clipman-plugin)
 
+*   **ClipManager** — Cross-platform clipboard manager written in Python and Qt.
+
+	[https://github.com/scottwernervt/clipmanager](https://github.com/scottwernervt/clipmanager) || [clipmanager](https://aur.archlinux.org/packages/clipmanager/)
+
 *   **Clipmenu** — Dmenu based clipboard manager
 
 	[https://github.com/cdown/clipmenu/](https://github.com/cdown/clipmenu/) || [clipmenu](https://aur.archlinux.org/packages/clipmenu/)
