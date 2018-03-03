@@ -29,7 +29,7 @@ Since you'll be using [makepkg](/index.php/Makepkg "Makepkg"), follow the best p
 You need a clean kernel to start your customization from. Fetch the kernel package files from ABS into your build directory by running:
 
 ```
-$ ASPROOT=. asp checkout linux
+$ asp checkout linux
 
 ```
 

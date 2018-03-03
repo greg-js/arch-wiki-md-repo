@@ -10,7 +10,7 @@ Related articles
 *   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
 *   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
 
-[GRUB](https://www.gnu.org/software/grub/) — not to be confused with [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") — is the next generation of the GRand Unified Bootloader. GRUB is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of GRUB Legacy. GRUB has been rewritten from scratch to clean up everything and provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1).
+[GRUB](https://www.gnu.org/software/grub/) (*GRand Unified Bootloader*) is a multi-boot loader. It is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of what is now known as [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). The latter had become too difficult to maintain and GRUB was rewritten from scratch with the aim to provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). The current GRUB is also referred to as GRUB 2 while GRUB Legacy corresponds to versions 0.9x.
 
 ## Contents
 
@@ -73,7 +73,7 @@ Related articles
 
 A [boot loader](/index.php/Boot_loader "Boot loader") is the first software program that runs when a computer starts. It is responsible for selecting, loading and transferring control to an operating system kernel. The kernel, in turn, initializes the rest of the operating system. The name *GRUB* officially refers to version *2* of the software. If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 
-GRUB has a few root file system-specific limitations:
+**Warning:** GRUB has a few root file system-specific limitations:
 
 *   [F2FS](/index.php/F2FS "F2FS") is not supported
 

@@ -51,6 +51,10 @@ Many [plugins and extensions](http://keepass.info/plugins.html) are available fo
 
 ### Plugin Installation
 
+**Tip:** Starting from KeePassXC version 2.3, an [official plugin is available](https://keepassxc.org/docs/keepassxc-browser-migration/) that supports [Chrome](/index.php/Chrome "Chrome"), [Chromium](/index.php/Chromium "Chromium"), [Firefox](/index.php/Firefox "Firefox") and [Vivaldi](/index.php/Vivaldi "Vivaldi") - which replaces KeePassHTTP.
+
+**Note:** KeePassX does not support plugins on its master branch. An alternative is to use global autotype feature.
+
 KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to a plugins sub-directory under the KeePass installation directory as demonstrated below:
 
 ```
@@ -59,11 +63,7 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 
 ```
 
-**Note:** KeePassX does not support plugins on its master branch (at the moment of writing KeePassX version is 0.4.4 and KeePassX2 version is 2.0.2). An alternative is to use global autotype feature. If plugins are absolutely necessary, [keepassxc](https://www.archlinux.org/packages/?name=keepassxc) supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as [ChromeIPass](https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) and [PassIFox](https://addons.mozilla.org/en-US/firefox/addon/passifox/).
-
-**Warning:** Upstream strongly advises to disable KeePassHTTP because of security issues. For more information see, [pfn/keepasshttp/issues](https://github.com/pfn/keepasshttp/issues/258) and [keepassxreboot/keepassxc/issues](https://github.com/keepassxreboot/keepassxc/issues/147).
-
-**Note:** To [mitigate the impact](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274669750) of the KeePassHTTP flaw, KeePassXC has [issued a hotfix](https://github.com/keepassxreboot/keepassxc/pull/196) as of version 2.1.1\. Some users consider the improvement good enough ([1](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274682664), [2](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274669042)) for practical purposes, as long as the system is not compromised. However, as there is still [some risk](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274671861) involved, KeePassHTTP support is [no longer enabled by default](https://github.com/keepassxreboot/keepassxc/blob/2.1.1/README.md#note-about-keepasshttp) in KeePassXC.
+**Warning:** Upstream strongly advises to disable KeePassHTTP because of security issues. For more information see, [pfn/keepasshttp/issues](https://github.com/pfn/keepasshttp/issues/258) and [keepassxreboot/keepassxc/issues](https://github.com/keepassxreboot/keepassxc/issues/147). To [mitigate the impact](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274669750) of the KeePassHTTP flaw, KeePassXC has [issued a hotfix](https://github.com/keepassxreboot/keepassxc/pull/196) as of version 2.1.1\. Some users consider the improvement good enough ([1](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274682664), [2](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274669042)) for practical purposes, as long as the system is not compromised. However, as there is still [some risk](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274671861) involved, KeePassHTTP support is [no longer enabled by default](https://github.com/keepassxreboot/keepassxc/blob/2.1.1/README.md#note-about-keepasshttp) in KeePassXC.
 
 ### Firefox
 
@@ -79,6 +79,10 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 
 	Modifies window title to assist autotype feature.
 
+*   [KeePassXC-Browser](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/)
+
+	Official browser plugin for the KeePassXC password manager (Firefox version).
+
 ### Chrome/Chromium
 
 *   [ChromeIPass](https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) ([KeepassHTTP plugin](https://github.com/pfn/keepasshttp/))
@@ -88,6 +92,10 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 *   [Url in title](https://chrome.google.com/webstore/detail/url-in-title/ignpacbgnbnkaiooknalneoeladjnfgb)
 
 	Modifies window title to assist autotype feature. Similar to KeePass Helper for Firefox in function.
+
+*   [KeePassXC-Browser](https://chrome.google.com/webstore/detail/url-in-title/oboonakemofpalcgghocfoadofidjkkk)
+
+	Official browser plugin for the KeePassXC password manager (Chrome/Chromium version).
 
 ### Nextcloud
 

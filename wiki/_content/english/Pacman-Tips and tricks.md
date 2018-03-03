@@ -449,7 +449,7 @@ $ pacman -Qqe > pkglist.txt
 
 ```
 
-**Note:** If you used `-Qqet`, when reinstalling the list all the non-top-level packages would be set as dependencies.
+**Note:** When using option `-t`, when reinstalling the list all the non-top-level packages would be set as dependencies. With opion `-n`, foreign packages (e.g. from AUR) are ommited from the list.
 
 To install packages from the list backup, run:
 
@@ -478,6 +478,21 @@ To remove all the packages on your system that are not mentioned in the list:
 ```
 
 **Tip:** These tasks can be automated. See [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/), and [pug](https://aur.archlinux.org/packages/pug/) for examples.
+
+If you would like to keep an up-to-date list of explicitly installed packages (e.g. in combination with a versioned `/etc/`), you can set up a [hook](/index.php/Pacman#Hooks "Pacman"). Example:
+
+```
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+When = PostTransaction
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/packages.txt'
+
+```
 
 ### Listing all changed files from packages
 

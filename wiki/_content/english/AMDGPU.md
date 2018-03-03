@@ -26,10 +26,8 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
     *   [5.2 Driver options](#Driver_options)
 *   [6 Enable GPU display scaling](#Enable_GPU_display_scaling)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
-    *   [7.2 Incorrect screen position on HDMI](#Incorrect_screen_position_on_HDMI)
-    *   [7.3 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
-    *   [7.4 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
+    *   [7.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+    *   [7.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
 
 ## Selecting the right driver
 
@@ -182,14 +180,6 @@ $ for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr -
 
 ## Troubleshooting
 
-### No HDMI/DP Audio
-
-The open source AMDGPU driver relies on the [DC](#Enable_AMD_DC_on_pre-Vega_cards) (formerly *DAL*) code that was [pulled into the 4.15 kernel](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted). Until 4.15 Kernel is available in [official repositories](/index.php/Official_repositories "Official repositories"), audio support for HDMI and DisplayPort will not be available, unless using 4.15 [kernel](/index.php/Kernel "Kernel"), for example from [AUR](/index.php/AUR "AUR"). Another way to get HDMI and DisplayPort audio is to install the [AMDGPU PRO](#AMDGPU_PRO) driver or the [linux-amd-staging-drm-next-git](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git/) (or really any linux-amd-*) kernel.
-
-### Incorrect screen position on HDMI
-
-Use `amdgpu.audio=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to prevent the (incomplete) HDMI audio-support from being enabled [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=195737).
-
 ### Xorg or applications won't start
 
 *   "(EE) AMDGPU(0): [DRI2] DRI2SwapBuffers: drawable has no back or front?" error after opening glxgears, can open Xorg server but OpenGL apps crash.
@@ -212,6 +202,6 @@ EndSection
 
 If you have screen artifacts when setting your screen frequency up to 120+Hz your "Memory Clock" and "GPU Clock" are certainly too low to handle the screen request.
 
-A workaround [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
+A workaround [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
 
-There is a GUI solution [[3]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
+There is a GUI solution [[2]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).

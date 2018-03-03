@@ -1,4 +1,8 @@
-**翻译状态：** 本文是英文页面 [Vim](/index.php/Vim "Vim") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-3-5，点击[这里](https://wiki.archlinux.org/index.php?title=Vim&diff=0&oldid=468006)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [List of applications/Documents#Vi_text_editors](/index.php/List_of_applications/Documents#Vi_text_editors "List of applications/Documents")
+
+**翻译状态：** 本文是英文页面 [Vim](/index.php/Vim "Vim") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-3-1，点击[这里](https://wiki.archlinux.org/index.php?title=Vim&diff=0&oldid=468006)可以查看翻译后英文页面的改动。
 
 [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)")是一个终端文本编辑器。作为[Vi](https://en.wikipedia.org/wiki/Vi "wikipedia:Vi")的一个扩展版本，它具有以下附加功能：语法突出显示，全面的帮助系统，本地脚本（vimscript），文本选择的可视模式和文件比较（vimdiff）。
 
@@ -22,8 +26,9 @@
     *   [5.6 gVim窗口底部的空格](#gVim.E7.AA.97.E5.8F.A3.E5.BA.95.E9.83.A8.E7.9A.84.E7.A9.BA.E6.A0.BC)
 *   [6 插件](#.E6.8F.92.E4.BB.B6)
     *   [6.1 安装](#.E5.AE.89.E8.A3.85_2)
-        *   [6.1.1 使用插件管理器](#.E4.BD.BF.E7.94.A8.E6.8F.92.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8)
-        *   [6.1.2 使用Arch软件库](#.E4.BD.BF.E7.94.A8Arch.E8.BD.AF.E4.BB.B6.E5.BA.93)
+        *   [6.1.1 使用内置包管理器](#.E4.BD.BF.E7.94.A8.E5.86.85.E7.BD.AE.E5.8C.85.E7.AE.A1.E7.90.86.E5.99.A8)
+        *   [6.1.2 使用插件管理器](#.E4.BD.BF.E7.94.A8.E6.8F.92.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8)
+        *   [6.1.3 使用Arch软件库](#.E4.BD.BF.E7.94.A8Arch.E8.BD.AF.E4.BB.B6.E5.BA.93)
     *   [6.2 cscope](#cscope)
         *   [6.2.1 Taglist](#Taglist)
 *   [7 参阅](#.E5.8F.82.E9.98.85)
@@ -93,18 +98,22 @@ autocmd FileType python set breakindentopt=shift:4
 
 ### 使用鼠标
 
-Vim可以使用鼠标，但只在某些终端上起作用：Linux上的[xterm](/index.php/Xterm "Xterm")和带有[gpm](https://www.archlinux.org/packages/?name=gpm)的Linux控制台（更多细节请参阅[Console mouse support](/index.php/Console_mouse_support "Console mouse support")），还有PuTTY。
+Vim可以使用鼠标，但只在某些终端上起作用：
 
-开启这个功能，将下面这行代码加入`~/.vimrc`中：
+*   基于[xterm](/index.php/Xterm "Xterm")/[urxvt](/index.php/Urxvt "Urxvt")的终端模拟器
+*   带有[gpm](https://www.archlinux.org/packages/?name=gpm)的Linux控制台（更多细节请参阅[Console mouse support](/index.php/Console_mouse_support "Console mouse support")）
+*   [PuTTY](/index.php/PuTTY "PuTTY")。
+
+要开启这个功能，将下面这行代码加入`~/.vimrc`中：
 
 ```
 set mouse=a
 
 ```
 
-`mouse=a` 选项在 `defaults.vim` 中设置，如果没有 `~/.vimrc`，则会使用 `defaults.vim` 的设置。
+`mouse=a` 选项在 `defaults.vim` 中设置。
 
-**注意:** 当在终端中启用鼠标时，如果可以访问X服务器，则复制/粘贴将使用`"*` 寄存器。通过按住shift键还可以使用xterm处理鼠标按钮。还可以参考`clipboard` 选项。
+{{注意| 如果可以访问X服务器，复制/粘贴将使用`"*` 寄存器，参见[#Clipboard](#Clipboard)。按住`shift key`键可以使用xterm处理鼠标按钮。
 
 ### 跨行移动光标
 
@@ -220,9 +229,13 @@ set guiheadroom=0
 
 ### 安装
 
+#### 使用内置包管理器
+
+Vim 8增加了加载原生第三方插件的可能性。可以通过在〜/.vim/pack/foo中存储第三方软件包来使用此功能。
+
 #### 使用插件管理器
 
-插件管理器允许以类似的方式安装和管理插件，而与在何种平台上运行Vim无关。它本身是一个插件，其功能是作为其他Vim插件的包管理器。
+插件管理器允许以类似的方式安装和管理插件，而与在何种平台上运行Vim无关。它本身是一个插件，其功能是作为其他Vim插件包管理器。
 
 *   [Vundle](https://github.com/gmarik/Vundle.vim)是现在最流行的Vim插件管理器。
 *   [Vim-plug](https://github.com/junegunn/vim-plug)是一个极简的Vim插件管理器，有许多的特性，比如按需插件加载和并行升级。
@@ -316,7 +329,7 @@ nnoremap <C-l> :TlistToggle<CR>
 
 *   [中文版《A Byte of Vim》](http://www.swaroopch.com/notes/Vim_zh-cn)
 *   [vi教程和参考指南](http://usalug.org/vi.html)
-*   [vim Tutorial and Primer](http://www.danielmiessler.com/study/vim/)
+*   [vim Tutorial and Primer](https://www.danielmiessler.com/study/vim/)
 *   [vi Tutorial and Reference Guide](http://usalug.org/vi.html)
 *   [Graphical vi-Vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 *   [Vim Introduction and Tutorial](http://blog.interlinked.org/tutorials/vim_tutorial.html)
@@ -344,7 +357,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Bart Trojanowski](http://www.jukie.net/~bart/conf/vimrc)
 *   [Steve Francia's Vim Distribution](https://github.com/spf13/spf13-vim)
 *   [W4RH4WK's Vim configuration](https://github.com/W4RH4WK/dotVim)
-*   [Fast vimrc/colorscheme from askapache](http://www.askapache.com/linux/fast-vimrc.html)
+*   [Fast vimrc/colorscheme from askapache](https://www.askapache.com/linux/fast-vimrc/)
 *   [Basic .vimrc](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 *   [Usevim](http://www.usevim.com/)
 

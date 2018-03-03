@@ -65,7 +65,7 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 ## Headphones audio is too low
 
-You may notice that the audio through the headphones is too low ([upstream bug](https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183)).
+Linux kernel version 4.14 and earlier has a bug, where you may notice that the audio through the headphones is too low ([upstream bug](https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183)). In kernel version 4.15 you have to pull out and plug in back your headset after resume in order to fix the low audio.
 
 In order to fix it, install [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) or [hda-verb](https://aur.archlinux.org/packages/hda-verb/) and create the file:
 
@@ -116,18 +116,18 @@ During boot you might get the message `[Firmware Bug]: TSC_DEADLINE disabled due
 It is likely that it's one of these issues:
 
 *   You used a power management application (especially [Powertop](/index.php/Powertop "Powertop")). See [bumblebee#Broken power management with kernel 4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") for more information.
-*   You suspended your laptop and resumed, and are now unable to start your GPU. This can be fixed by rebooting the system, or by using `lspci` to find your NVIDIA card's bus id (usually `01:00.0`), then executing the following commands (with the driver unloaded) to remove and rescan the graphics card: `sudo tee /sys/bus/pci/devices/0000:<busid>/remove <<<1; sudo tee /sys/bus/pci/rescan <<<1`, replacing `<busid>` with the bus id from earlier.
+*   You suspended your laptop and resumed, and are now unable to start your GPU, see [Bumblebee#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28Bumblebee_daemon_reported:_error:_.5BXORG.5D_.28EE.29_NVIDIA.28GPU-0.29.29](/index.php/Bumblebee#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28Bumblebee_daemon_reported:_error:_.5BXORG.5D_.28EE.29_NVIDIA.28GPU-0.29.29 "Bumblebee").
 
 ## Headset Microphone
 
-You may encounter an issue in which your headset microphone is not detected. The solution is to append
+You may encounter an issue where your headset microphone is not being detected. To fix this, create this file and restart your system:
 
+ `/etc/modprobe.d/fix_headset_microphone.conf` 
 ```
+# Fix an issue where your headset microphone is not being detected:
 options snd-hda-intel model=dell-headset-multi
 
 ```
-
-to a file in `/etc/modprobe.d/`.
 
 # Tips and tricks
 

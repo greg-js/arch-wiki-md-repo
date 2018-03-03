@@ -28,7 +28,7 @@ $ gitfs http://example.com/repository.git */mount/directory*
 
 ```
 
-See its documentation for [options](https://www.presslabs.com/gitfs/docs/arguments/).
+See its documentation for [options](https://www.presslabs.org/gitfs/docs/arguments/).
 
 ## Troubleshooting
 
@@ -53,7 +53,7 @@ sudo gitfs -h
 
 ### Options for use with ssh key
 
-Gitfs (and pygit2 on which it relies) seems to be under heavy development and options change. Although [the official docs](https://www.presslabs.com/gitfs/docs/arguments/) state that the option `-o key=` can be used to change the key, it turns out that version 0.4.1-1 from AUR requires the use of `-o ssh_key=`. Note that gitfs will not ask for a passphrase, if the key is passphrase protected. It simply returns with the error:
+Gitfs (and pygit2 on which it relies) seems to be under heavy development and options change. Although [the official docs](https://www.presslabs.org/gitfs/docs/arguments/) state that the option `-o key=` can be used to change the key, it turns out that version 0.4.1-1 from AUR requires the use of `-o ssh_key=`. Note that gitfs will not ask for a passphrase, if the key is passphrase protected. It simply returns with the error:
 
 ```
 _pygit2.GitError: Failed to authenticate SSH session: Callback returned error

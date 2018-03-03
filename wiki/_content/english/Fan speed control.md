@@ -190,6 +190,8 @@ For an unofficial GUI [install](/index.php/Install "Install") [fancontrol-gui](h
 
 ## NBFC
 
+**Note:** Due to upstream bugs [#451](https://github.com/hirschmann/nbfc/issues/451) and [#453](https://github.com/hirschmann/nbfc/issues/453) you might not be able to get nbfc running on your system.
+
 NBFC is a cross-platform fan control solution for notebooks. It comes with a powerful configuration system, which allows to adjust it to many different notebook models, including some of the latest ones.
 
 ### Installation

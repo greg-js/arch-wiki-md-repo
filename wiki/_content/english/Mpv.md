@@ -302,7 +302,7 @@ Even with hardware decoding enabled, it will only be used for some codecs by def
 
 Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
 
-To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of any on-screen decorations (controls, progress bar, elapsed time and total duration...) due to Wayland security features[[2]](https://github.com/mpv-player/mpv/pull/4556#issuecomment-311593370).
+To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
 
 ### Save position on quit
 

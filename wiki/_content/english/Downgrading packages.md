@@ -60,7 +60,7 @@ Exit the chroot (with `exit`), reboot and you should be done.
 
 The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") is a daily snapshot of the [official repositories](/index.php/Official_repositories "Official repositories").
 
-The *ALA* can be used to install a previous package version, or restore the system to an earlier date.
+The *ALA* can be used to [install a previous package version](/index.php/Arch_Linux_Archive#How_to_downgrade_one_package "Arch Linux Archive"), or [restore the system to an earlier date](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
 
 ### Rebuild the package
 

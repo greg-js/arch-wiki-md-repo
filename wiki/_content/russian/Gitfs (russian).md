@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Gitfs](/index.php/Gitfs "Gitfs"). Дата последней синхронизации: 21 августа 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Gitfs&diff=0&oldid=447200).
 
-From [gitfs](https://www.presslabs.com/gitfs/docs/):
+From [gitfs](https://www.presslabs.org/gitfs/docs/):
 
 	gitfs is a FUSE file system that fully integrates with git. You can mount a remote repository’s branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
 
@@ -30,7 +30,7 @@ $ gitfs http://your.repository.org/repository.git */mount/directory*
 
 ```
 
-See its documentation for [options](https://www.presslabs.com/gitfs/docs/arguments/).
+See its documentation for [options](https://www.presslabs.org/gitfs/docs/arguments/).
 
 ## Troubleshooting
 
@@ -55,7 +55,7 @@ sudo gitfs -h
 
 ### Options for use with ssh key
 
-Gitfs (and pygit2 on which it relies) seems to be under heavy development and options change. Although [the official docs](https://www.presslabs.com/gitfs/docs/arguments/) state that the option `-o key=` can be used to change the key, it turns out that version 0.4.1-1 from AUR requires the use of `-o ssh_key=`. Note that gitfs will not ask for a passphrase, if the key is passphrase protected. It simply returns with the error:
+Gitfs (and pygit2 on which it relies) seems to be under heavy development and options change. Although [the official docs](https://www.presslabs.org/gitfs/docs/arguments/) state that the option `-o key=` can be used to change the key, it turns out that version 0.4.1-1 from AUR requires the use of `-o ssh_key=`. Note that gitfs will not ask for a passphrase, if the key is passphrase protected. It simply returns with the error:
 
 ```
 _pygit2.GitError: Failed to authenticate SSH session: Callback returned error

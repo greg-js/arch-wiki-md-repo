@@ -42,10 +42,9 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.9 Backlight is not adjustable](#Backlight_is_not_adjustable)
     *   [6.10 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
     *   [6.11 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.12 Skylake support](#Skylake_support)
-    *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
-    *   [6.14 Screen flickering](#Screen_flickering)
-    *   [6.15 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
+    *   [6.12 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.13 Screen flickering](#Screen_flickering)
+    *   [6.14 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -442,26 +441,6 @@ i915.enable_execlists=0
 ```
 
 This is known to be broken to at least kernel 4.0.5.
-
-### Skylake support
-
-The i915 DRM driver is known to cause various GPU hangs, crashes and even full system freezes. It might be necessary to disable hardware acceleration to workaround these issues. One solution is to use the following Xorg configuration.
-
- `/etc/X11/xorg.conf.d/20-intel.conf` 
-```
-Section "Device"
-	Identifier  "Intel Graphics"
-	Driver      "intel"
-	Option	    "DRI"	"false"
-EndSection
-
-```
-
-Otherwise, specific applications such as Chromium and Firefox browsers can be instructed to disable hardware rendering directly.
-
-Another option that seems to work for some users is to add the `i915.enable_rc6=0` kernel boot parameter, which will cause the CPU/GPU to remain in high-power modes, but seems to resolve most cases of GPU hangs and system freezes.
-
-**Note:** If the system appears to hang after "Loading Initial Ramdisk", make sure that the IGD aperture size in BIOS is less than 4GB.
 
 ### Lag in Windows guests
 

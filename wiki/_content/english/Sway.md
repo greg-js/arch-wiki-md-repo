@@ -183,8 +183,8 @@ swaymsg -t get_outputs
  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
- bindsym XF86MonBrightnessDown exec dsplight down 5
- bindsym XF86MonBrightnessUp exec dsplight up 5
+ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
 ```
 

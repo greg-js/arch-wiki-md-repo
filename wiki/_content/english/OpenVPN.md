@@ -719,7 +719,7 @@ down /etc/openvpn/update-resolv-conf
 
 **Note:** If manually placing the script on the filesystem, be sure to have [openresolv](https://www.archlinux.org/packages/?name=openresolv) installed.
 
-Now, when your launch your OpenVPN connection, you should find that your resolv.conf file is updated accordingly, and also returns to normal when your close the connection.
+Now, when you launch your OpenVPN connection, you should find that your `resolv.conf` file is updated accordingly, and also returns to normal when you close the connection.
 
 **Note:** When using `openresolv` with the *-p* or *-x* options in a script (as both the included `client.up` and `update-resolv-conf` scripts currently do), a DNS resolver like [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) or [unbound](https://www.archlinux.org/packages/?name=unbound) is required for `openresolv` to correctly update `/etc/resolv.conf`. In contrast, when using the default DNS resolution from `libc` the *-p* and *-x* options must be removed in order for `/etc/resolv.conf` to be correctly updated by `openresolv`. For example, if the script contains a command like `resolvconf -p -a` and the default DNS resolver from `libc` is being used, change the command in the script to be `resolvconf -a` .
 

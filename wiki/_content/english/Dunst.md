@@ -81,7 +81,7 @@ Dunst can be configured to run scripts based on certain notification content. He
 
 When using dunst without a Display Manager, the `DISPLAY` environment variable might not be correctly set.[[2]](https://github.com/dunst-project/dunst/issues/347)
 
-To fix this, add the following to your `.xinirc`:
+To fix this, add the following to your `.xinitrc`:
 
 ```
 systemctl --user import-environment DISPLAY

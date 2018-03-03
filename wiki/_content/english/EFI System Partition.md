@@ -1,3 +1,8 @@
+Related articles
+
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+*   [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
+
 The [EFI System Partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition") (also called ESP or EFISYS) is a FAT32 formatted physical partition (in the main partition table of the disk, not under LVM or software RAID etc.) from where the [UEFI](/index.php/UEFI "UEFI") firmware launches the UEFI bootloader and application.
 
 It is an OS independent partition that acts as the storage place for the EFI bootloaders and applications to be launched by the EFI firmware. It is mandatory for UEFI boot.
@@ -91,7 +96,7 @@ Instead of mounting the ESP itself to `/boot`, you can mount a directory of the 
 
 **Note:**
 
-*   This requires a kernel and bootloader compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot/`). See the forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
+*   This requires a [kernel](/index.php/FAT#Kernel_configurations "FAT") and [bootloader](/index.php/Bootloader "Bootloader") compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot/`). See the forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
 *   You *must* use the `root=` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
 
 Just like in [#Alternative mount points](#Alternative_mount_points), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot`. Then bind mount the directory:

@@ -24,6 +24,7 @@ Related articles
     *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
         *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
         *   [2.1.2 Manual boot stanzas](#Manual_boot_stanzas)
+        *   [2.1.3 Without configuration](#Without_configuration)
 *   [3 Installation alongside an existing UEFI Windows installation](#Installation_alongside_an_existing_UEFI_Windows_installation)
 *   [4 Tools](#Tools)
     *   [4.1 UEFI shell](#UEFI_shell)
@@ -175,14 +176,13 @@ First, copy the executable to the ESP:
 
 ```
 
-**Tip:** If you want to install rEFInd to the default/fallback boot path, copy rEFInd executable to `*esp*/EFI/BOOT/bootx64.efi`:
+If you want to install rEFInd to the default/fallback boot path replace `*esp*/EFI/refind/` with `*esp*/EFI/BOOT/` in the following instructions and copy rEFInd executable to `*esp*/EFI/BOOT/bootx64.efi`:
+
 ```
 # mkdir -p *esp*/EFI/BOOT
 # cp /usr/share/refind/refind_x64.efi *esp*/EFI/BOOT/bootx64.efi
 
 ```
-
-Replace `*esp*/EFI/refind/` with `*esp*/EFI/BOOT/` in the following instructions.
 
 Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
 
@@ -319,6 +319,12 @@ menuentry "Arch Linux" {
 It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label. If `volume` is not specified it defaults to volume from which rEFInd was launched (typically EFI System Partition).
 
 **Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
+
+#### Without configuration
+
+As a fallback mechanism rEFInd relies on `/etc/fstab` and/or [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) to specify kernel options `root` and `ro` or `rw`.
+
+**Note:** rEFInd doesn't support escape codes (e.g. for [spaces](/index.php/Fstab#Filepath_spaces "Fstab")) in `/etc/fstab`.
 
 ## Installation alongside an existing UEFI Windows installation
 

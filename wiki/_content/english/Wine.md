@@ -308,7 +308,7 @@ $ winetricks
 
 Since 2013 Wine developers have been experimenting with [stream/worker thread optimizations](http://www.winehq.org/pipermail/wine-devel/2013-September/101106.html). You may experience an enormous performance improvement by using this experimental tweak. Many games may run as fast as on Windows or even faster. This Wine tweak is known as CSMT and works with NVidia and AMD graphics cards.
 
-CSMT support needs to be enabled manually. For vanilla wine run `wine regedit` and set the DWORD value for *Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
+Since Wine 3.3, CSMT is enabled by default. For versions lower than 3.3, CSMT support needs to be enabled manually. For vanilla wine run `wine regedit` and set the DWORD value for *Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
 
 Further information:
 

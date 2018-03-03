@@ -21,6 +21,30 @@
 
 **Notes:**
 
+#### Migration Notes
+
+Steps taken to migrate from luna to apollo (the commands are not the exact commands used or are high level steps):
+
+1.  ~~Change the TTL of the wiki.archlinux.org DNS record to 300 to aid the migration/rollback.~~
+2.  ~~Put the wiki on luna in maintenance mode. We have a template page that is used for that.~~
+3.  ~~Create a database dump using mysqldump archwiki | gzip > dump.sql~~
+4.  ~~Create a tar file containing the cache, sessions and uploads dir: tar zcvf wiki-files.tar.gz cache sessions uploads~~
+5.  ~~Push the mariadb role to apollo (need to restart mysqld)~~
+6.  ~~Restart mysql and take the bugs.archlinux.org out of maintenance mode~~
+7.  ~~Push the php-fom role to apollo (new extensions)~~
+8.  ~~Push the wiki role to apollo~~
+9.  ~~Manually disable the wiki services/timers (there's no DB for them to run)~~
+10.  ~~Change the DNS record to point to apollo (CNAME)~~
+11.  ~~Manually change the nginx config again to put the wiki on maintenance mode on apollo as well~~
+12.  ~~Copy the DB dump and files from luna to apollo and extract them (use checksums)~~
+13.  ~~Run mysqldump db_name < dump.sql (this takes a long time)~~
+14.  ~~Extract the files to their respective directories (the role creates them)~~
+15.  ~~Fix the permissions with chown -R archwiki~~
+16.  ~~Run the wiki role again to take it out of maintenance and also re-enable/restart the services~~
+17.  ~~Copied the missing files under /srv/http/vhosts/wiki.archlinux.org/public/images (they were on .gitignore). Copied them to the respective directory on apollo.~~
+18.  ~~Check if the services are running~~
+19.  Change the TTL of the wiki.archlinux.org DNS record back to the default
+
 ## Forum
 
 **Description:** Web forum

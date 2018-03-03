@@ -46,4 +46,4 @@ Go to it's directory and run:
 
  `# watch --difference=permanent cat unload_heads` 
 
-Lift you laptop into free space and simulate free fall while holding it firmly with your hands. About 10 cm should be enough. If the disk protection works then you should hear your HDD making "click" sound, see one of your laptop's LEDs flashing and the watch value's background should permanently turn black.
+Lift your laptop into free space and simulate a free fall while holding it firmly with your hands (~10 cm should be enough). If the disk protection works, you should hear your HDD making "click" sound and see one of your laptop's LEDs flashing. The watch value's background should also permanently turn black.

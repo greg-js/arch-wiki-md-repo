@@ -78,7 +78,7 @@ If using PulseAudio (more info [here](/index.php/Xbindkeys#Volume_control "Xbind
 
 ```
 
-If you prefer to get a visual feedback on how the volume level changes you could use the following lines instead (Might work in GNOME too but I have only tested on KDE)
+If you prefer to get a visual feedback on how the volume level changes you could use the following lines instead (Tested in GNOME and KDE)
 
 ```
 # thumb wheel up => increase volume

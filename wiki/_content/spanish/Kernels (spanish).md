@@ -62,7 +62,7 @@ Se va a usar [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), 
 Se necesita un kernel limpio para poder hacer la personalización. Descargue los archivos del kernel desde ABS en su directorio *build*, ejecute:
 
 ```
-$ ASPROOT=. asp checkout linux
+$ asp checkout linux
 
 ```
 

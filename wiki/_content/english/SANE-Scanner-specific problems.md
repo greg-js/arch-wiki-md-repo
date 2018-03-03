@@ -53,13 +53,13 @@ firmware /usr/share/sane/snapscan/u176v046.bin
 
 ## Brother
 
-In order to install a Brother scanner or printer/scanner combo you need the right driver. To find the right one, search for your model at the [Brother Linux scanner page](http://support.brother.com/g/s/id/linux/en/download_scn.html).
+In order to install a Brother scanner or printer/scanner combo you need the right driver. To find the right one, search for your model at the [Brother Linux scanner page](http://support.brother.com/g/s/id/linux/en/download_scn.html), or see the information below for scanners that aren't listed on that page.
 
 Then, install the appropriate package:
 
 *   [brscan2](https://aur.archlinux.org/packages/brscan2/)
 *   [brscan3](https://aur.archlinux.org/packages/brscan3/)
-*   [brscan4](https://aur.archlinux.org/packages/brscan4/)
+*   [brscan4](https://aur.archlinux.org/packages/brscan4/) (MFC-J5620DW)
 *   [libsane-dsseries](https://aur.archlinux.org/packages/libsane-dsseries/)
 
 Now, the scanner should be recognized by SANE.

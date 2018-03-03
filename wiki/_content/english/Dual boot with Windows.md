@@ -225,3 +225,4 @@ Then, write the new boot sector (boot record):
 ## See also
 
 *   [Booting Windows from a desktop shortcut](https://bbs.archlinux.org/viewtopic.php?id=140049)
+*   [One-time boot into Windows partition from desktop shortcut](https://github.com/kaipee/grub-reboot2win)

@@ -1,9 +1,11 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 28 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=512264).
+
 Ссылки по теме
 
-*   [Autostarting (Русский)](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)")
+*   [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск")
 *   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
 *   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
-*   [Font configuration (Русский)](/index.php/Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Font configuration (Русский)")
+*   [Настройка шрифтов](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2 "Настройка шрифтов")
 *   [Темы курсора](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0 "Темы курсора")
 *   [Среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола")
 *   [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)")
@@ -20,63 +22,63 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
     *   [1.1 Установка драйвера](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0)
+    *   [1.2 AMD](#AMD)
 *   [2 Запуск](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
+    *   [2.1 Экранный менеджер](#.D0.AD.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80)
+    *   [2.2 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
 *   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [3.1 Устройства ввода](#.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
-        *   [3.1.1 Synaptics Touchpad](#Synaptics_Touchpad)
-        *   [3.1.2 Отключение горячего подключения](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B3.D0.BE_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [3.2 Настройки клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-        *   [3.2.1 Задержка и скорость повтора](#.D0.97.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D1.8C_.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.B0)
-        *   [3.2.2 Просмотр настроек клавиатуры](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-        *   [3.2.3 Переключение раскладок средствами X.org](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D1.81.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.B0.D0.BC.D0.B8_X.org)
-        *   [3.2.4 Включение pointerkeys](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_pointerkeys)
-        *   [3.2.5 Модель клавиатуры](#.D0.9C.D0.BE.D0.B4.D0.B5.D0.BB.D1.8C_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [3.3 InputClasses](#InputClasses)
-*   [4 Графика](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.B0)
-    *   [4.1 Установка драйвера](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0_2)
-    *   [4.2 Настройка монитора](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
-        *   [4.2.1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
-        *   [4.2.2 Несколько мониторов](#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
-            *   [4.2.2.1 NVIDIA](#NVIDIA)
-            *   [4.2.2.2 Более одной видеокарты](#.D0.91.D0.BE.D0.BB.D0.B5.D0.B5_.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
-            *   [4.2.2.3 Скрипт для переключения внутреннего/внешнего мониторов для ноутбуков](#.D0.A1.D0.BA.D1.80.D0.B8.D0.BF.D1.82_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2.D0.BD.D1.83.D1.82.D1.80.D0.B5.D0.BD.D0.BD.D0.B5.D0.B3.D0.BE.2F.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B5.D0.B3.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2_.D0.B4.D0.BB.D1.8F_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.BE.D0.B2)
-    *   [4.3 Размер дисплея/DPI](#.D0.A0.D0.B0.D0.B7.D0.BC.D0.B5.D1.80_.D0.B4.D0.B8.D1.81.D0.BF.D0.BB.D0.B5.D1.8F.2FDPI)
-    *   [4.4 DPMS](#DPMS)
-    *   [4.5 Monitor](#Monitor)
-        *   [4.5.1 Строчная синхронизация (horizontal sync)](#.D0.A1.D1.82.D1.80.D0.BE.D1.87.D0.BD.D0.B0.D1.8F_.D1.81.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.28horizontal_sync.29)
-        *   [4.5.2 Частота обновления](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE.D1.82.D0.B0_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [4.6 Screen](#Screen)
-        *   [4.6.1 Глубина цветовой гаммы](#.D0.93.D0.BB.D1.83.D0.B1.D0.B8.D0.BD.D0.B0_.D1.86.D0.B2.D0.B5.D1.82.D0.BE.D0.B2.D0.BE.D0.B9_.D0.B3.D0.B0.D0.BC.D0.BC.D1.8B)
-        *   [4.6.2 Разрешение](#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5)
-    *   [4.7 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
-    *   [4.8 Примеры файлов xorg.conf](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_xorg.conf)
-*   [5 Усовершенствование загрузки X](#.D0.A3.D1.81.D0.BE.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D1.81.D1.82.D0.B2.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_X)
-*   [6 Изменения в модульном Xorg](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_Xorg)
-    *   [6.1 Самые распространённые пакеты](#.D0.A1.D0.B0.D0.BC.D1.8B.D0.B5_.D1.80.D0.B0.D1.81.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
-    *   [6.2 OpenGL 3D ускорение](#OpenGL_3D_.D1.83.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5)
-    *   [6.3 glxgears и glxinfo](#glxgears_.D0.B8_glxinfo)
-*   [7 Tips & tricks](#Tips_.26_tricks)
-    *   [7.1 Закрытие приложение по хоткею](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D1.85.D0.BE.D1.82.D0.BA.D0.B5.D1.8E)
-*   [8 Проблемы](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B)
-    *   [8.1 Если вместо всех шрифтов квадратики](#.D0.95.D1.81.D0.BB.D0.B8_.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.BE_.D0.B2.D1.81.D0.B5.D1.85_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D0.BA.D0.B2.D0.B0.D0.B4.D1.80.D0.B0.D1.82.D0.B8.D0.BA.D0.B8)
-    *   [8.2 Быстрое решение конфликта с Bitstream-Vera](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D0.B0_.D1.81_Bitstream-Vera)
-    *   [8.3 Быстрое решение конфликтов файлов в /usr/include](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D0.BE.D0.B2_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B2_.2Fusr.2Finclude)
-    *   [8.4 Конфликты с libgl-dri](#.D0.9A.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D1.8B_.D1.81_libgl-dri)
-    *   [8.5 НЕработающее колесо мыши](#.D0.9D.D0.95.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.B5_.D0.BA.D0.BE.D0.BB.D0.B5.D1.81.D0.BE_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [8.6 Дополнительные кнопки на мыши перестали работать](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BD.D0.B0_.D0.BC.D1.8B.D1.88.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C)
-    *   [8.7 Проблемы с клавиатурой](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BE.D0.B9)
-        *   [8.7.1 AltGR (Compose клавиша) не работает правильно](#AltGR_.28Compose_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0.29_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
-        *   [8.7.2 Невозможно установить раскладку командой setxkbmap](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D1.83_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BE.D0.B9_setxkbmap)
-        *   [8.7.3 Настройка франко-канадской раскладки (бывшая ca_enhanced)](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.84.D1.80.D0.B0.D0.BD.D0.BA.D0.BE-.D0.BA.D0.B0.D0.BD.D0.B0.D0.B4.D1.81.D0.BA.D0.BE.D0.B9_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.28.D0.B1.D1.8B.D0.B2.D1.88.D0.B0.D1.8F_ca_enhanced.29)
-    *   [8.8 Отсутствующие библиотеки](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8)
-    *   [8.9 Некоторые пакеты не собираются, жалуясь на отсутствующие X11 includes](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D1.8E.D1.82.D1.81.D1.8F.2C_.D0.B6.D0.B0.D0.BB.D1.83.D1.8F.D1.81.D1.8C_.D0.BD.D0.B0_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_X11_includes)
-    *   [8.10 Невозможно загрузить шрифт '(null)'](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82.D1.8C_.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27)
-    *   [8.11 Иконки KDE в панели задач и на Десктопе не работают](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_KDE_.D0.B2_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87_.D0.B8_.D0.BD.D0.B0_.D0.94.D0.B5.D1.81.D0.BA.D1.82.D0.BE.D0.BF.D0.B5_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
-    *   [8.12 Обновление с testing до current (отсутствующие файлы)](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_testing_.D0.B4.D0.BE_current_.28.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B.29)
-    *   [8.13 Проблемы с MIME типами в различных DE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_MIME_.D1.82.D0.B8.D0.BF.D0.B0.D0.BC.D0.B8_.D0.B2_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_DE)
-    *   [8.14 DRI перестало работать с картами Matrox](#DRI_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox)
-    *   [8.15 Не выставляется нужное разрешение экрана](#.D0.9D.D0.B5_.D0.B2.D1.8B.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
-*   [9 Полезные ссылки](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
+    *   [3.1 Через файлы .conf](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.conf)
+    *   [3.2 Через файл xorg.conf](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D1.84.D0.B0.D0.B9.D0.BB_xorg.conf)
+*   [4 Устройства ввода](#.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
+    *   [4.1 Ускорение мыши](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D1.8B.D1.88.D0.B8)
+    *   [4.2 Дополнительные кнопки мыши](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BC.D1.8B.D1.88.D0.B8)
+    *   [4.3 Touchpad](#Touchpad)
+    *   [4.4 Touchscreen](#Touchscreen)
+    *   [4.5 Настройка клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+*   [5 Настройка монитора](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
+    *   [5.1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
+    *   [5.2 Несколько мониторов](#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
+        *   [5.2.1 Более одной видеокарты](#.D0.91.D0.BE.D0.BB.D0.B5.D0.B5_.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
+    *   [5.3 Размер дисплея/DPI](#.D0.A0.D0.B0.D0.B7.D0.BC.D0.B5.D1.80_.D0.B4.D0.B8.D1.81.D0.BF.D0.BB.D0.B5.D1.8F.2FDPI)
+        *   [5.3.1 Настройка DPI вручную](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_DPI_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
+            *   [5.3.1.1 Проприетарный драйвер NVIDIA](#.D0.9F.D1.80.D0.BE.D0.BF.D1.80.D0.B8.D0.B5.D1.82.D0.B0.D1.80.D0.BD.D1.8B.D0.B9_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_NVIDIA)
+            *   [5.3.1.2 Настройка DPI вручную. Предостережение](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_DPI_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E._.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [5.4 DPMS](#DPMS)
+    *   [5.5 Monitor](#Monitor)
+        *   [5.5.1 Строчная синхронизация (horizontal sync)](#.D0.A1.D1.82.D1.80.D0.BE.D1.87.D0.BD.D0.B0.D1.8F_.D1.81.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.28horizontal_sync.29)
+        *   [5.5.2 Частота обновления](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE.D1.82.D0.B0_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [5.6 Screen](#Screen)
+        *   [5.6.1 Глубина цветовой гаммы](#.D0.93.D0.BB.D1.83.D0.B1.D0.B8.D0.BD.D0.B0_.D1.86.D0.B2.D0.B5.D1.82.D0.BE.D0.B2.D0.BE.D0.B9_.D0.B3.D0.B0.D0.BC.D0.BC.D1.8B)
+        *   [5.6.2 Разрешение](#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [5.7 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
+    *   [5.8 Примеры файлов xorg.conf](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_xorg.conf)
+*   [6 Усовершенствование загрузки X](#.D0.A3.D1.81.D0.BE.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D1.81.D1.82.D0.B2.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_X)
+*   [7 Изменения в модульном Xorg](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_Xorg)
+    *   [7.1 Самые распространённые пакеты](#.D0.A1.D0.B0.D0.BC.D1.8B.D0.B5_.D1.80.D0.B0.D1.81.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
+    *   [7.2 OpenGL 3D ускорение](#OpenGL_3D_.D1.83.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [7.3 glxgears и glxinfo](#glxgears_.D0.B8_glxinfo)
+*   [8 Tips & tricks](#Tips_.26_tricks)
+    *   [8.1 Закрытие приложение по хоткею](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D1.85.D0.BE.D1.82.D0.BA.D0.B5.D1.8E)
+*   [9 Проблемы](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B)
+    *   [9.1 Если вместо всех шрифтов квадратики](#.D0.95.D1.81.D0.BB.D0.B8_.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.BE_.D0.B2.D1.81.D0.B5.D1.85_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D0.BA.D0.B2.D0.B0.D0.B4.D1.80.D0.B0.D1.82.D0.B8.D0.BA.D0.B8)
+    *   [9.2 Быстрое решение конфликта с Bitstream-Vera](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D0.B0_.D1.81_Bitstream-Vera)
+    *   [9.3 Быстрое решение конфликтов файлов в /usr/include](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D0.BE.D0.B2_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B2_.2Fusr.2Finclude)
+    *   [9.4 Конфликты с libgl-dri](#.D0.9A.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D1.8B_.D1.81_libgl-dri)
+    *   [9.5 НЕработающее колесо мыши](#.D0.9D.D0.95.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.B5_.D0.BA.D0.BE.D0.BB.D0.B5.D1.81.D0.BE_.D0.BC.D1.8B.D1.88.D0.B8)
+    *   [9.6 Дополнительные кнопки на мыши перестали работать](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BD.D0.B0_.D0.BC.D1.8B.D1.88.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C)
+    *   [9.7 Проблемы с клавиатурой](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BE.D0.B9)
+        *   [9.7.1 AltGR (Compose клавиша) не работает правильно](#AltGR_.28Compose_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0.29_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
+        *   [9.7.2 Невозможно установить раскладку командой setxkbmap](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D1.83_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BE.D0.B9_setxkbmap)
+        *   [9.7.3 Настройка франко-канадской раскладки (бывшая ca_enhanced)](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.84.D1.80.D0.B0.D0.BD.D0.BA.D0.BE-.D0.BA.D0.B0.D0.BD.D0.B0.D0.B4.D1.81.D0.BA.D0.BE.D0.B9_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.28.D0.B1.D1.8B.D0.B2.D1.88.D0.B0.D1.8F_ca_enhanced.29)
+    *   [9.8 Отсутствующие библиотеки](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8)
+    *   [9.9 Некоторые пакеты не собираются, жалуясь на отсутствующие X11 includes](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D1.8E.D1.82.D1.81.D1.8F.2C_.D0.B6.D0.B0.D0.BB.D1.83.D1.8F.D1.81.D1.8C_.D0.BD.D0.B0_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_X11_includes)
+    *   [9.10 Невозможно загрузить шрифт '(null)'](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82.D1.8C_.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27)
+    *   [9.11 Иконки KDE в панели задач и на Десктопе не работают](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_KDE_.D0.B2_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87_.D0.B8_.D0.BD.D0.B0_.D0.94.D0.B5.D1.81.D0.BA.D1.82.D0.BE.D0.BF.D0.B5_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
+    *   [9.12 Обновление с testing до current (отсутствующие файлы)](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_testing_.D0.B4.D0.BE_current_.28.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B.29)
+    *   [9.13 Проблемы с MIME типами в различных DE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_MIME_.D1.82.D0.B8.D0.BF.D0.B0.D0.BC.D0.B8_.D0.B2_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_DE)
+    *   [9.14 DRI перестало работать с картами Matrox](#DRI_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox)
+    *   [9.15 Не выставляется нужное разрешение экрана](#.D0.9D.D0.B5_.D0.B2.D1.8B.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
+*   [10 Полезные ссылки](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
 
 ## Установка
 
@@ -130,211 +132,108 @@ ATI** | Свободный | [xf86-video-amdgpu](https://www.archlinux.org/packa
 
 Во избежание проблем X следует запускать без драйверов с закрытым исходным кодом, которые обычно требуются только для расширенных возможностей, таких, как быстрый 3D рендеринг в играх.
 
+### AMD
+
+| Архитектура GPU | Карты Radeon | Драйвер с открытым исходным кодом | Проприетарный драйвер |
+| GCN 4
+и новее | [варианты](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%BE%D0%B2_AMD "w:ru:Список графических процессоров AMD") | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)") | [AMDGPU PRO (Русский)](/index.php/AMDGPU_PRO_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU PRO (Русский)") |
+| GCN 3 | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)") | [Catalyst (Русский)](/index.php/Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Catalyst (Русский)") /
+[AMDGPU PRO (Русский)](/index.php/AMDGPU_PRO_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU PRO (Русский)") |
+| GCN 2 | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)")* / [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") | [Catalyst (Русский)](/index.php/Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Catalyst (Русский)") |
+| GCN 1 | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)")* / [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") | [Catalyst (Русский)](/index.php/Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Catalyst (Русский)") |
+| TeraScale 2&3 | HD 5000 - HD 6000 | [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") | [Catalyst (Русский)](/index.php/Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Catalyst (Русский)") |
+| TeraScale 1 | HD 2000 - HD 4000 | устаревший [Catalyst (Русский)](/index.php/Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Catalyst (Русский)") |
+| Старые | X1000 и старше | *недоступен* |
+
+	*: Экспериментальный
+
 ## Запуск
 
-*См. также: [Запуск X при загрузке](/index.php/Start_X_at_Boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Start X at Boot (Русский)")*
+### Экранный менеджер
 
-**Совет:** Самый простой способ запустить X — воспользоваться [экранным менеджером](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), например [GDM](/index.php/GDM "GDM") или [SLiM](/index.php/SLiM "SLiM").
+Использование [экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для запуска X удобно, но для этого требуется дополнительное приложение и некоторые зависимости для него.
 
-Если вы хотите запустить X без менеджера дисплея, установите пакет [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Можно установить [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) и [xterm](https://www.archlinux.org/packages/?name=xterm), чтобы запустилась среда, установленная по умолчанию.
+### Вручную
 
-Команды `startx` и `xinit` запустят X-сервер и клиенты (Команда `startx` — просто интерфейс для более универсальной команды `xinit`). Для определения клиента `startx`/`xinit` читают файл `~/.xinitrc`. При его отсутствии читается `/etc/X11/xinit/xinitrc`, который запустит оконный менеджер [Twm](/index.php/Twm "Twm"), [Xclock](https://en.wikipedia.org/wiki/Xclock "wikipedia:Xclock") и [Xterm](/index.php/Xterm "Xterm").
-
-Более подробная информация доступна в статье [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
-
-**Примечание:**
-
-*   Если возникают проблемы, почитайте журнал в `/var/log/Xorg.0.log`. Строчки, начинающиеся с `(EE)` сообщают об ошибках, `(WW)` — предупреждения.
-*   Если файл `~/.xinitrc` *пустой*, нужно удалить или [отредактировать его](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), чтобы запустить X правильно. Если этого не сделать, X покажет пустой экран без ошибок в `Xorg.0.log`. Удаление этого файла запустит среду по умолчанию.
+Чтобы запустить X без экранного менеджера, смотрите статью [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
 
 ## Настройка
 
-Xorg можно настроить через `/etc/X11/xorg.conf`, `/etc/xorg.conf` или файлы, находящиеся в каталоге `/etc/X11/xorg.conf.d/`. Обычно никаких настроек не требуется. Вы можете создавать новые файлы конфигурации в `/etc/X11/xorg.conf.d/`, но их имена должны начинаться с `XX-`, где XX — номер, и оканчиваться на `.conf` (например, файл, начинающийся на 10, запускается раньше 20).
+**Примечание:** Arch предоставляет файлы конфигурации по умолчанию в `/usr/share/X11/xorg.conf.d`. Большинству пользователей никакая дополнительная настройка не нужна.
 
-Кроме того, драйвер может поставляться с инструментами для настройки Xorg. Например, для NVIDIA запустите nvidia-xconfig, для ATI — aticonfig.
+Xorg можно настроить через `xorg.conf` и через файлы, заканчивающие на `.conf`: полный список каталог, где можно найти эти файлы есть в [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) вместе с подробным объяснением всех доступных опций.
 
-### Устройства ввода
+### Через файлы .conf
 
-#### Synaptics Touchpad
+Каталог `/etc/X11/xorg.conf.d/` хранит конфигурацию, специфичную для хоста (вашего компьютера). Вы можете свободно добавлять конфигурационные файлы сюда, но они обязательно должны оканчиваться на `.conf`: файлы читаются в кодировке ASCII и по соглашению их имена должны начинаться с `*XX*-` (две цифры и дефис, так, например, файл, начинающийся на 10, читается раньше 20). Эти файлы анализируются x-сервером при запуске и рассматриваются как часть традиционного конфигурационного файла `xorg.conf`. Обратите внимание, что при конфликтующей настройки *последний* прочитанный файл будет обработан. Поэтому наиболее общие файлы конфигурации должны быть упорядочены по имени. Конфигурационные записи в `xorg.conf` обрабатываются в конце.
 
-*Основная статья: [Touchpad Synaptics](/index.php/Touchpad_Synaptics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Touchpad Synaptics (Русский)")*
+Смотрите примеры настройки на [вики fedora](http://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
 
-Если у вас ноутбук, [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") драйвер тачпада из пакета [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), доступного в [официальном репозитории](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+### Через файл xorg.conf
 
-После установки вы можете обнаружить файл `10-synaptics.conf` в `/etc/X11/xorg.conf.d`. Можете закомментировать или удалить строчки `InputClass`, связанные с тачпадом, в файле `10-evdev.conf`.
-
-#### Отключение горячего подключения
-
-С версии **1.8** Xorg-server использует udev для определения устройств. Эта настройка отключает его использование.
+Xorg также можно настраивать через `/etc/X11/xorg.conf` или `/etc/xorg.conf`. Чтобы сгенерировать основу файла `xorg.conf`:
 
 ```
-Section "ServerFlags"
-    Option          "AutoAddDevices" "False"
-EndSection
+# Xorg :0 -configure
 
 ```
 
-**Важно:** Это отключит горячее подключения для **всех** устройств ввода. Гораздо удобнее, чтобы udev сам подключал устройства. **Отключение горячего подключения не рекомендуется!**
+Это создает файл `xorg.conf.new` в `/root/`, который можно скопировать в `/etc/X11/xorg.conf`.
 
-### Настройки клавиатуры
+**Совет:** Если вы уже запустили X, тогда используйте другой дисплей, например `Xorg :2 -configure`.
 
-Xorg может определить клавиатуру неправильно, что может дать проблемы с раскладкой.
+Кроме того, ваш проприетарный видеодрайвер может поставляться с инструментом для автоматической настройки Xorg: смотрите статьи [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") или [AMD Catalyst (Русский)](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMD Catalyst (Русский)") для подробностей.
 
-Чтобы увидеть полный список поддерживаемых моделей клавиатур и раскладок, откройте `/usr/share/X11/xkb/rules/xorg.lst`.
+**Примечание:** Ключевые слова файла конфигурации не учитывают регистр, а символы "_" игнорируются. Большинство строк (включая имена опций) также нечувствительны к регистру и к пробелам, да к символам "_".
 
-Установка раскладки для текущего сеанса Xorg:
+## Устройства ввода
+
+Для устройств ввода в X по умолчанию используют драйвер libinput ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)), но также можно использовать драйвер [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) и другие соответствующие драйверы.[[1]](https://www.archlinux.org/news/xorg-server-1191-is-now-in-extra/)
+
+[Udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)"), являющий зависимостью systemd, обнаруживает аппаратное обеспечение, и поэтому оба драйвера будут работать в режиме горячего подключения устройств ввода практически для всех устройств, как определенно в стандарных конфигурационных файлах `10-quirks.conf` и `40-libinput.conf` в каталоге `/usr/share/X11/xorg.conf.d/`.
+
+После запуска оконной системы X, в лог-файле будет записываться информация об используемом драйвере для каждого подключенного устройства (обратите внимание, что имя последнего лог-файла может отличаться):
 
 ```
-# setxkbmap dvorak
-
-```
-
-#### Задержка и скорость повтора
-
-Используйте команду `xset r rate DELAY RATE` для изменения, потом запишите команду в `~/.xinitrc`, чтобы сохранить настройки.
-
-#### Просмотр настроек клавиатуры
-
- `$ setxkbmap -print -verbose 10` 
-```
-
- Setting verbose level to 10
- locale is C
- Applied rules from evdev:
- model:      evdev
- layout:     us
- options:    terminate:ctrl_alt_bksp
- Trying to build keymap using the following components:
- keycodes:   evdev+aliases(qwerty)
- types:      complete
- compat:     complete
- symbols:    pc+us+inet(evdev)+terminate(ctrl_alt_bksp)
- geometry:   pc(pc104)
- xkb_keymap {
-         xkb_keycodes  { include "evdev+aliases(qwerty)" };
-         xkb_types     { include "complete"      };
-         xkb_compat    { include "complete"      };
-         xkb_symbols   { include "pc+us+inet(evdev)+terminate(ctrl_alt_bksp)"    };
-         xkb_geometry  { include "pc(pc104)"     };
- };
+$ grep -e "Using input driver " Xorg.0.log
 
 ```
 
-В связи с выходом X.org 1.8, HAL больше не отвечает за переключение раскладок клавиатуры.
+Если оба драйвера не поддерживают конкретное устройство, установите необходимый драйвер из группы [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/). То же самое относится, если вы желаете использовать другой драйвер.
 
-#### Переключение раскладок средствами X.org
+Чтобы изменить поведение горячего подключения (hotplugging), смотрите статью [#Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
 
-**Примечание:** Установите [xorg-xkbevd](https://www.archlinux.org/packages/?name=xorg-xkbevd) и добавьте `xkbevd` в секцию DAEMONS файла `/etc/rc.conf`.
+Для получения конкретных инструкций, смотрите статью [libinput](/index.php/Libinput "Libinput"), следующие страницы ниже, или записи в [википедии Fedora](https://fedoraproject.org/wiki/Input_device_configuration).
 
-Для настройки переключения раскладок нужно создать новый файл в `/etc/X11/xorg.conf.d/`, например, `20-keyboard-layout.conf` со следующим содержанием:
+### Ускорение мыши
 
-```
-Section "InputClass"
-	Identifier             "keyboard-layout"
-	MatchIsKeyboard        "on"
-	Option "XkbLayout" "us,ru"
-	Option "XkbOptions" "grp:caps_toggle,grp_led:scroll"
-EndSection
-```
+Смотрите [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration").
 
-За комбинацию клавиш переключения между двумя раскладками отвечает опция XkbOptions. Например, если вы хотите настроить переключение по Caps Lock:
+### Дополнительные кнопки мыши
 
-```
-Option "XkbOptions" "grp:caps_toggle"
+Смотрите [кнопки мыши](/index.php/%D0%9A%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8_%D0%BC%D1%8B%D1%88%D0%B8 "Кнопки мыши").
 
-```
+### Touchpad
 
-Или переключение по Ctrl+Shift:
+Смотрите [libinput](/index.php/Libinput "Libinput") или [Touchpad Synaptics (Русский)](/index.php/Touchpad_Synaptics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Touchpad Synaptics (Русский)").
 
-```
-Option "XkbOptions" "grp:ctrl_shift_toggle"
+### Touchscreen
 
-```
+Смотрите [Touchscreen](/index.php/Touchscreen "Touchscreen").
 
-Опция "grp_led:scroll" отвечает за включение индикатора Scroll Lock при смене на вторую раскладку (в данном случае - ru(winkeys)). Можно использовать вместо Scroll Lock и Caps Lock, и Num Lock.
+### Настройка клавиатуры
 
-Также вместо редактирования настроек можно добавить следующую команду в `~/.xinitrc`:
+Смотрите [конфигурация клавиатуры в Xorg](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_Xorg "Конфигурация клавиатуры в Xorg").
 
-```
-setxkbmap -layout "us,ru" -option "grp:caps_toggle,grp_led:scroll"
-
-```
-
-#### Включение pointerkeys
-
-[Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "wikipedia:Mouse keys") теперь по умолчанию отключены, и их нужно включать вручную:
-
- `/etc/X11/xorg.conf.d/20-enable-pointerkeys.conf` 
-```
-Section "InputClass"
-    Identifier             "Keyboard Defaults"
-    MatchIsKeyboard        "yes"
-    Option                 "XkbOptions" "keypad:pointerkeys"
-EndSection
-```
-
-Также можно запустить:
-
-```
-$ setxkbmap -option keypad:pointerkeys
-
-```
-
-Both will make the `Shift+Num Lock` shortcut toggle mouse keys.
-
-#### Модель клавиатуры
-
-Чтобы изменить модель клавиатуры, используйте опцию XkbModel в разделе InputDevice клавиатуры. Например, если у вас клавиатура Microsoft Wireless Multimedia Keyboard:
-
-```
-Option "XkbModel" "microsoftmult"
-
-```
-
-### InputClasses
-
-## Графика
-
-### Установка драйвера
-
-Графическим драйвером по умолчанию является vesa ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), поддерживаемый почти всеми видеокартами, но в нем нет поддержки 2D или 3D ускорения, для включения которого вам потребуется установить драйвер специально для вашей видеокарты.
-
-Для начала определите ее:
-
-```
-$ lspci | grep VGA
-
-```
-
-После этого установите соответствующий драйвер. Вы можете поискать их с помощью команды:
-
-```
-$ pacman -Ss xf86-video
-
-```
-
-Доступные открытые драйверы:
-
-*   NVIDIA: [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) (см. [Nouveau](/index.php/Nouveau "Nouveau"))
-*   Intel: [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (см. [Intel](/index.php/Intel "Intel"))
-*   ATI: [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) (см. [ATI](/index.php/ATI "ATI"))
-
-Проприетарные драйверы:
-
-*   NVIDIA: [nvidia](https://www.archlinux.org/packages/?name=nvidia) (см. [NVIDIA](/index.php/NVIDIA "NVIDIA"))
-*   ATI: [catalyst](https://aur.archlinux.org/packages/catalyst/) (см. [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst"))
-
-Xorg должен работать гладко и без проприетарных драйверов, которые обычно нужны только для «продвинутых» функций, таких как быстрое 3D-ускорение, настройка нескольких экранов и ТВ-выход.
-
-### Настройка монитора
+## Настройка монитора
 
 #### Начало работы
 
-**Примечание:** Эти настройки необязательны, и не следует что-либо менять, если вы не знаете, что делаете.
-Но нужно выполнять настройку при использовании двух мониторов и драйвера nouveau. См. [Nouveau#Configuration](/index.php/Nouveau#Configuration "Nouveau").
+**Примечание:** Новые версии Xorg автоматически все настраивают, поэтому вам не следует что-либо менять тем более, если вы не знаете, что делаете.
 
-Создайте новый файл конфигурации, например `/etc/X11/xorg.conf.d/10-monitor.conf`. Вставьте в него следующий код:
+Создайте новый файл конфигурации, например `/etc/X11/xorg.conf.d/10-monitor.conf`.
 
+ `/etc/X11/xorg.conf.d/10-monitor.conf` 
 ```
 Section "Monitor"
     Identifier             "Monitor0"
@@ -342,31 +241,38 @@ EndSection
 
 Section "Device"
     Identifier             "Device0"
-    Driver                 "vesa" #Choose the driver used for this monitor
+    Driver                 "vesa" #Выберите драйвер для этого монитора
 EndSection
 
 Section "Screen"
     Identifier             "Screen0"  #Collapse Monitor and Device section to Screen section
     Device                 "Device0"
     Monitor                "Monitor0"
-    DefaultDepth            16 #Choose the depth (16||24)
+    DefaultDepth           16 #Выберите глубину (16||24)
     SubSection             "Display"
-        Depth               16
-        Modes              "1024x768_75.00" #Choose the resolution
+        Depth              16
+        Modes              "1024x768_75.00" #Выберите разрешение
     EndSubSection
 EndSection
 
 ```
 
-#### Несколько мониторов
+**Примечание:** По умолчанию Xorg должен иметь возможность обнаружить монитор, иначе он не запустится вовсе. Обходной путь заключается в создании файла конфигурации, такого как указано выше, и, таким образом, мы избежим автоматическую настройку. Часто это необходимо, когда Х запускаются автоматически и система используется без монитора, либо, если [вход в систему](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83 "Автозапуск X при входе в систему") осуществляется через [виртуальную консоль](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console"), или из [экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер").
 
-##### NVIDIA
+### Несколько мониторов
 
-*См. [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")*
+Смотрите главную статью [Multihead](/index.php/Multihead "Multihead") для получения общей информации.
 
-##### Более одной видеокарты
+Также смотрите специфичные инструкции для GPU:
 
-Вы должны определить нужный драйвер для использования и поставить bus ID нужной видеокарты.
+*   [NVIDIA (Русский)#Несколько мониторов](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2 "NVIDIA (Русский)")
+*   [Nouveau (Русский)#DualHead](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#DualHead "Nouveau (Русский)")
+*   [AMD Catalyst (Русский)#Два экрана (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.94.D0.B2.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst (Русский)")
+*   [ATI#Multihead setup](/index.php/ATI#Multihead_setup "ATI")
+
+#### Более одной видеокарты
+
+Вы должны определить нужный драйвер для использования и ввести ID шины (BusID) нужной видеокарты.
 
 ```
 Section "Device"
@@ -383,112 +289,118 @@ EndSection
 
 ```
 
-Чтобы узнать bus ID:
+Чтобы узнать ID шины:
 
+ `$ lspci | grep VGA` 
 ```
-$ lspci | grep VGA
 01:00.0 VGA compatible controller: nVidia Corporation G96 [GeForce 9600M GT] (rev a1)
 
 ```
 
-bus ID здесь 1:0:0.
-
-##### Скрипт для переключения внутреннего/внешнего мониторов для ноутбуков
-
-```
-#!/bin/bash
-
-IN="LVDS1"
-EXT="VGA1"
-
-if (xrandr | grep "$EXT" | grep "+")
-    then
-    xrandr --output $EXT --off --output $IN --auto
-    else
-        if (xrandr | grep "$EXT" | grep " connected")
-            then
-            xrandr --output $IN --off --output $EXT --auto
-        fi
-fi
-
-```
-
-Узнать имена мониторов можно с помощью команды:
-
-```
-# xrandr -q
-
-```
-
-Если у вас нет `xrandr`, [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
+ID шины здесь 1:0:0.
 
 ### Размер дисплея/DPI
 
-Для того чтобы выбрать правильный размер шрифтов, размер дисплея должен быть установлен для предпочитаемого DPI.
+DPI оконной системы X устанавливается следующими способами:
 
-Сначала можно попробовать - настроить Xorg на автоопределение DPI и размеров экрана с помощью [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel").
-В `/etc/X11/xorg.conf` :
+1.  Параметр командной строки -dpi имеет наивысший приоритет.
+2.  Если он не используется, параметр DisplaySize в файле конфигурации X используется для получения DPI, учитывая разрешение экрана.
+3.  Если параметр DisplaySize не задан, значения размера монитора используются из [DDC](https://en.wikipedia.org/wiki/ru:Display_Data_Channel "w:ru:Display Data Channel") для получения DPI с учетом разрешения экрана.
+4.  Если DDC не определяет размер, по умолчанию используется 75 DPI.
+
+Чтобы получить правильные точки на дюйм (DPI), разрешение дисплея должно быть распознано или установлено. Наличие правильного DPI особенно необходимо, когда требуются точные детали (например, рендеринг шрифтов). Ранее производители пытались создать стандарт для 96 DPI (монитор с диагональю размером 10,3 дюйма был бы 800x600, 13,2-дюймовый монитор - 1024x768). Сейчас DPI экраном отличаются и могут быть не равными по горизонтали и по вертикали. Например, 19-дюймовый широкоэкранный ЖК-дисплей с разрешением 1440x900 может иметь DPI 89х87\. Чтобы установить DPI, сервер Xorg пытается автоматически определить физическое разрешение вашего монитора с помощью видеокарты с DDC. ~~Когда Xorg знает физическое разрешение экрана, он сможет установить правильный DPI в зависимости от размера этого разрешения.~~
+
+Чтобы убедиться, что разрешение вашего дисплея и DPI обнаружены/правильно рассчитаны:
 
 ```
-...
-Section "Module"
-# support for Data Display Channel. Allows to query the monitor capabilities via the video card
-Load  "ddc"
-# serial bus over which you speak the ddc protocol to get info from the monitor
-Load "i2c"
-...
-Section Screen
-...
-DefaultColorDepth 24
-SubSection "Display"
- Depth     24
- Modes "1280x1024" "1152x864" "1024x768" "800x600" "640x480"
-EndSubSection
-...
+$ xdpyinfo | grep -B2 resolution
 
 ```
 
-Не прописывайте Modeline и DisplaySize. Иногда это работает, если нет можно всё настроить вручную.
+Убедитесь, что выведенное разрешение соответствует настоящему разрешению вашего монитора. Если Xorg не может правильно рассчитать разрешение экрана, он по умолчанию установит значение 75x75 DPI. Поэтому вам придется самому рассчитать его.
 
-В секции `"Monitor"` пропишите размер дисплея в миллиметрах:
+Если у вас есть в спецификации физическое разрешение экрана, его можно ввести в конфигурационный файл Xorg так, чтобы был рассчитан правильный DPI:
 
 ```
 Section "Monitor"
-   ...
- DisplaySize 336 252 # 96 DPI @ 1280x960
-   ...
+    Identifier             "Monitor0"
+    DisplaySize             286 179    # В миллиметрах
 EndSection
 
 ```
 
-Формула, рассчитывающая значение DisplaySize такова Ширина x 25.4 / DPI и Высота x 25.4 / DPI. Например, если вы запускаете Xorg с разрешением 1024x768 и хотите DPI, равное 96, используйте 1024 x 25.4 / 96 и 768 x 25.4 / 96\. Округлённые значения приведены ниже.
+Если вы только хотите ввести спецификацию вашего монитора **без** создания полного xorg.conf, тогда создайте новый конфигурационный файл. Например, (`/etc/X11/xorg.conf.d/90-monitor.conf`):
 
 ```
-# calc: (x|y)pixels * 25.4 / dpi
-# DisplaySize 168 126 # 96 DPI @ 640x480
-# DisplaySize 210 157 # 96 DPI @ 800x600
-# DisplaySize 269 201 # 96 DPI @ 1024x768
-# DisplaySize 302 227 # 96 DPI @ 1152x864
-# DisplaySize 336 252 # 96 DPI @ 1280x960
-# DisplaySize 336 269 # 96 DPI @ 1280x1024 (соотношение сторон не 4:3)
-# DisplaySize 420 315 # 96 DPI @ 1600x1200
+Section "Monitor"
+    Identifier             "<default monitor>"
+    DisplaySize            286 179    # В миллиметрах
+EndSection
 
 ```
 
-Для nVidia драйверов вы, возможно, захотите отключить автоматическое определение DPI и поставить его вручную. Существует также более простой способ настройки DPI на этих картах. Любая или обе из следующих строк могут быть вставлены в секцию Device для вашей nVidia карты.
+Если у вас нет в спецификации ширины и высоты монитора (сейчас в большинстве спецификаций указывается только размер диагонали), вы можете использовать родное разрешение монитора (или соотношение сторон) и размер диагонали для вычисления горизонтальных и вертикальных размеров. Используя теорему Пифагора для монитора с диагональю 13,3" и с родным разрешением 1280x800 (или соотношением сторон 16:10):
 
 ```
-  Option   "UseEdidDpi" "false"
-  Option   "DPI" "96 x 96"
+$ echo 'scale=5;sqrt(1280^2+800^2)' | bc  # 1509.43698
 
 ```
 
-Результат может быть проверен с помощью следующей команды, которая должна вернуть 96x96 точек на дюйм, если вы установили DPI на 96.
+Вы получите размер диагонали в пикселях. С помощью него можно узнать ширину и высоту монитора в дюймах (а затем перевести их в миллиметры):
 
 ```
-xdpyinfo | grep -B1 dot
+$ echo 'scale=5;(13.3/1509)*1280*25.4' | bc  # 286.43072
+$ echo 'scale=5;(13.3/1509)*800*25.4'  | bc  # 179.01920
 
 ```
+
+**Примечание:** Эти вычисления работают для мониторов с квадратными пикселями; однако, иногда встречаются мониторы, сжимающие соотношение сторон (например, разрешение изображения на мониторе с 16:10 до 16:9). В этом случае, придется измерить разрешение монитора вручную.
+
+#### Настройка DPI вручную
+
+**Примечание:** Сейчас вы можете установить любой dpi, который вам нравится, и тогда приложения, использующие Qt и GTK, будут масштабироваться соответственно. Рекомендуется установить dpi в 96, 120 (на 25% больше), 144 (на 50% больше), 168 (на 75% болше), 192 (на 100% больше) и т.д., для уменьшения масштабирования артефактов в приложениях с GUI, использующие растровые изображения. Уменьшение точек на дюйм (dpi) ниже 96 может не снижать размер графический элементов GUI. Обычно, наименьшее количество dpi, на которое сделаны значки, равно 96.
+
+Для RandR-совместимых драйверов (например, драйвер ATI с открытым исходным кодом) вы можете установить dpi так:
+
+```
+$ xrandr --dpi 144
+
+```
+
+**Примечание:** Для уже запущенных приложений настройка не применяется сразу, поэтому вы должны перезапустить их.
+
+Чтобы сделать его постоянным, посмотрите [запуск команд после запуска X](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5_%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0_X "Запуск команд после запуска X").
+
+##### Проприетарный драйвер NVIDIA
+
+DPI можно установить вручную, если вы планируете использовать только одно разрешение экрана ([калькулятор DPI](http://pxcalc.com/)):
+
+```
+Section "Monitor"
+    Identifier             "Monitor0"
+    Option                 "DPI" "96 x 96"
+EndSection
+
+```
+
+Вы можете установить DPI вручную, добавив параметры ниже в `/etc/X11/xorg.conf.d/20-nvidia.conf` (внутри раздела **Device**):
+
+```
+Option              "UseEdidDpi" "False"
+Option              "DPI" "96 x 96"
+
+```
+
+##### Настройка DPI вручную. Предостережение
+
+GTK очень часто переопределяет DPI сервера через опциональный файл Xresource `Xft.dpi`. Чтобы выяснить происходит ли это у вас, введите:
+
+```
+$ xrdb -query | grep dpi
+
+```
+
+Начиная с версии GTK 3.16, если эта переменная явно не задана, GTK устанавливает ее в 96\. Чтобы приложения GTK работали с DPI сервера, вам может потребоваться явно установить Xft.dpi на то же значение, что и сервер. С помощью файла ресурсов Xft.dpi некоторые среды рабочего стола опциональный приводят DPI к определенному значению в личных настройках. Среди них KDE и TDE.
 
 ### DPMS
 

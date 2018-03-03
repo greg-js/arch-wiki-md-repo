@@ -108,7 +108,7 @@ A header with one single default 256 bit size keyslot is 1024KB in size. It is a
 For zero offset use:
 
 ```
-# head -c 1052672 /dev/urandom > /dev/sda1; sync
+# head -c 1052672 /dev/urandom > /dev/sdX1; sync
 
 ```
 
@@ -117,7 +117,7 @@ For 512 bit key length (e.g. for aes-xts-plain with 512 bit key) the header is 2
 If in doubt, just be generous and overwrite the first 10MB or so.
 
 ```
-# dd if=/dev/urandom of=/dev/sda1 bs=512 count=20480
+# dd if=/dev/urandom of=/dev/sdX1 bs=512 count=20480
 
 ```
 

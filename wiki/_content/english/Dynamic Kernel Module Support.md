@@ -112,7 +112,7 @@ or simply:
 
 ```
 
-If the package [dkms](https://www.archlinux.org/packages/?name=dkms) is removed the information regarding previous module build files is lost. If this is the case, go through `/usr/lib/modules/KERNELVERSION-ARCH` and delete or files and directories no longer in use.
+If the package [dkms](https://www.archlinux.org/packages/?name=dkms) is removed the information regarding previous module build files is lost. If this is the case, go through `/usr/lib/modules/KERNELVERSION-ARCH` and delete all files and directories no longer in use.
 
 ## DKMS package creation
 

@@ -30,7 +30,7 @@
 首先需要一个原始内核作为自定义的基础，从 ABS 获取内核包文件，并放到编译目录：
 
 ```
-$ ASPROOT=. asp checkout linux
+$ asp checkout linux
 
 ```
 

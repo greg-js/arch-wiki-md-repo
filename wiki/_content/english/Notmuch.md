@@ -57,7 +57,7 @@ The default frontend for notmuch is Emacs. It is developed by the same people th
 
 ### Vim
 
-There's a vim interface available and included in notmuch. To start it, type:
+There is a vim interface available and included in the [notmuch-vim](https://www.archlinux.org/packages/?name=notmuch-vim) package. To start it, type:
 
 ```
 vim -c NotMuch
@@ -158,6 +158,7 @@ Next, make mutt aware of your virtual mailboxes by enabling virtual spoolfile an
  `~/.muttrc` 
 ```
 set virtual_spoolfile=yes
+set folder=*notmuch-root-folder*
 source ~/.mailboxes
 ```
 

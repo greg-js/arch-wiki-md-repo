@@ -20,6 +20,7 @@ The Linux kernel's implementation of KMS enables native resolution in the frameb
     *   [3.1 My fonts are too tiny](#My_fonts_are_too_tiny)
     *   [3.2 Problem upon bootloading and dmesg](#Problem_upon_bootloading_and_dmesg)
 *   [4 Forcing modes and EDID](#Forcing_modes_and_EDID)
+    *   [4.1 Forcing modes](#Forcing_modes)
 *   [5 Disabling modesetting](#Disabling_modesetting)
 
 ## Background
@@ -77,18 +78,13 @@ If you see an error code of `0x00000010 (2)` while booting up, (you will get abo
 
 ## Forcing modes and EDID
 
-In case that your monitor/TV is not sending the appropriate [EDID](https://en.wikipedia.org/wiki/EDID "wikipedia:EDID") or similar problems, you will notice that the native resolution is not automatically configured or no display at all. The kernel has a provision to load the binary EDID data, and provides as well data to set four of the most typical resolutions.
+If your native resolution is not automatically configured or no display at all is detected, then your monitor might send none or just a skewed [EDID](https://en.wikipedia.org/wiki/EDID "wikipedia:EDID") file. The kernel will try to catch this case and will set one of the most typical resolutions.
 
-If you have the EDID file for your monitor the process is easy. If you do not have, you can either use one of the built-in resolution-EDID binaries (or generate one during kernel compilation, [more info here](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/EDID/HOWTO.txt)) or build your own EDID.
+In case you have the EDID file for your monitor you merely not to explicitly enforce it (see below). However most often one does not have direct access to sane file and it is necessary to either extract an existing one and fix it or to generate a new one.
 
-In case you have an EDID file (e.g. extracted from Windows drivers for your monitor or using `get-edid` command from [read-edid](https://www.archlinux.org/packages/?name=read-edid)), create a dir `edid` under `/usr/lib/firmware`:
+Generating new EDID binaries for various resolutions and configurations is possible during kernel compilation by following the [upstream documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt) (also see [here](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html) for a short guide). Other solutions are outlined in detail this [article](https://kodi.wiki/view/Creating_and_using_edid.bin_via_xorg.conf). Extracting an existing one is in most cases easier, e.g. if your monitor works fine under Windows you might have luck extracting the EDID from the corresponding driver, or if a similar monitor works which has the same settings you may use `get-edid` from the [read-edid](https://www.archlinux.org/packages/?name=read-edid) package.
 
-```
-# mkdir /usr/lib/firmware/edid
-
-```
-
-and then copy your binary into the `/usr/lib/firmware/edid` directory.
+After having prepared your EDID place it in a folder, e.g. called `edid` under `/usr/lib/firmware` and copy your binary into it.
 
 To load it at boot, specify the following in the [kernel command line](/index.php/Kernel_command_line "Kernel command line"):
 
@@ -97,23 +93,23 @@ drm_kms_helper.edid_firmware=edid/your_edid.bin
 
 ```
 
-Since Linux 4.15, one can also enforce the edid information on a lower level:
+or alternatively (since kernel 4.15), one may also enforce the EDID information on a lower level, using:
 
 ```
 drm.edid_firmware=edid/your_edid.bin
 
 ```
 
-You can also specify it only for a specified connection:
+In order to apply it only to a specific monitor use:
 
 ```
 drm_kms_helper.edid_firmware=VGA-1:edid/your_edid.bin
 
 ```
 
-For the built-in resolutions, see table below for the name to specify:
+For the built-in resolutions, refer to the table below. The **Name** column specifies the name which one is supposed to use in order to enforce its usage.
 
-| **Resolution** | **Name to specify** |
+| **Resolution** | **Name** |
 | 800x600 | edid/800x600.bin |
 | 1024x768 | edid/1024x768.bin |
 | 1280x1024 | edid/1280x1024.bin |
@@ -121,15 +117,15 @@ For the built-in resolutions, see table below for the name to specify:
 | 1680x1050 | edid/1680x1050.bin |
 | 1920x1080 | edid/1920x1080.bin |
 
-If you are doing early KMS, you must include the custom EDID file in the [initramfs](#Early_KMS_start) or you will run into problems.
+If you are doing early [KMS](/index.php/KMS "KMS"), you must include the custom EDID file in the [initramfs](#Early_KMS_start) otherwise you will run into problems.
 
-You can also construct your own EDID with the makefile included in the `Documentation/EDID` sources of the kernel. The full information can be read [here](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt) and [there](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html).
+### Forcing modes
 
-**Warning:** The method described below is somehow incomplete because e.g. Xorg does not take into account the resolution specified, so users are encouraged to use the method described above; however, specifying resolution with `video=` command line may be useful in some scenarios
+**Warning:** The method described below is somehow incomplete because e.g. [Xorg](/index.php/Xorg "Xorg") does not take into account the resolution specified, so users are encouraged to use the method described above. However, specifying resolution with `video=` command line may be useful in some scenarios.
 
 From [the nouveau wiki](http://nouveau.freedesktop.org/wiki/KernelModeSetting):
 
-A mode can be forced on the kernel command line. Unfortunately, the command line option video is poorly documented in the DRM case. Bits and pieces on how to use it can be found in
+	A mode can be forced on the kernel command line. Unfortunately, the command line option video is poorly documented in the DRM case. Bits and pieces on how to use it can be found in
 
 *   [http://cgit.freedesktop.org/nouveau/linux-2.6/tree/Documentation/fb/modedb.txt](http://cgit.freedesktop.org/nouveau/linux-2.6/tree/Documentation/fb/modedb.txt)
 *   [http://cgit.freedesktop.org/nouveau/linux-2.6/tree/drivers/gpu/drm/drm_fb_helper.c](http://cgit.freedesktop.org/nouveau/linux-2.6/tree/drivers/gpu/drm/drm_fb_helper.c)
@@ -141,19 +137,19 @@ video=<conn>:<xres>x<yres>[M][R][-<bpp>][@<refresh>][i][m][eDd]
 
 ```
 
-*   <conn>: Connector, e.g. DVI-I-1, see `/sys/class/drm/` for available connectors
-*   <xres> x <yres>: resolution
-*   M: compute a CVT mode?
-*   R: reduced blanking?
-*   -<bpp>: color depth
-*   @<refresh>: refresh rate
-*   i: interlaced (non-CVT mode)
-*   m: margins?
-*   e: output forced to on
-*   d: output forced to off
-*   D: digital output forced to on (e.g. DVI-I connector)
+*   `<conn>`: Connector, e.g. DVI-I-1, see `/sys/class/drm/` for available connectors
+*   `<xres> x <yres>`: resolution
+*   `M`: compute a CVT mode?
+*   `R`: reduced blanking?
+*   `-<bpp>`: color depth
+*   `@<refresh>`: refresh rate
+*   `i`: interlaced (non-CVT mode)
+*   `m`: margins?
+*   `e`: output forced to on
+*   `d`: output forced to off
+*   `D`: digital output forced to on (e.g. DVI-I connector)
 
-You can override the modes of several outputs using "video" several times, for instance, to force DVI to 1024x768 at 85 Hz and TV-out off:
+You can override the modes of several outputs using `video=` several times, for instance, to force `DVI` to *1024x768* at *85 Hz* and `TV-out` off:
 
 ```
 video=DVI-I-1:1024x768@85 video=TV-1:d
@@ -164,7 +160,6 @@ To get the name and current status of connectors, you can use the following shel
 
  `$ for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n "${con#*/card?-}: "; cat $p; done` 
 ```
-
 DVI-I-1: connected
 HDMI-A-1: disconnected
 VGA-1: disconnected

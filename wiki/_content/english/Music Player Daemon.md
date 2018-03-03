@@ -234,7 +234,7 @@ All you have to do is [start/enable](/index.php/Start/enable "Start/enable") the
 
 #### Scripted configuration
 
-You can use a [script](https://gist.githubusercontent.com/kurobeats/1c92c0a43f93ba49d798/raw/3a2661f071bcd3ed0b8c8c6560fc20a723dbbc45/mpdsetup.sh) to create the proper directory structure, configuration files and prompt for the location of the user's Music directory.
+You can use a [script](https://53280.de/dl/mpdsetup.sh) to create the proper directory structure, configuration files and prompt for the location of the user's Music directory.
 
 #### Scripted configuration for bit perfect playback
 

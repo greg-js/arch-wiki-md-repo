@@ -18,9 +18,8 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 
 ## Contents
 
-*   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
-*   [2 NVM Express SSD](#NVM_Express_SSD)
-    *   [2.1 NVME Power Saving Patch](#NVME_Power_Saving_Patch)
+*   [1 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)
+*   [2 NVM Express SSD Power Saving](#NVM_Express_SSD_Power_Saving)
 *   [3 Video](#Video)
     *   [3.1 Module-based Powersaving Options](#Module-based_Powersaving_Options)
     *   [3.2 Blank screen issue after booting](#Blank_screen_issue_after_booting)
@@ -52,21 +51,15 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [14 Fingerprint sensor](#Fingerprint_sensor)
 *   [15 See Also](#See_Also)
 
-## Content adaptive brightness control
+## Content Adaptive Brightness Control
 
-In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightness embedded in the panel firmware, this "content adaptive brightness control" (usually referred to as CABC or DBC) will adjust the screen brightness depending on the content displayed on the screen and will generally be found undesirable, especially for Linux users who are likely to be switching between dark and light screen content. Dell has issued a fix for this however it is only available to run in Windows. The fix is available directly from [Dell](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=312K3&lwp=rt).
+In the XPS 13 the display panels (both FHD and QHD+) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) embedded in the panel firmware - it adjusts the screen brightness depending on the content displayed on the screen. While it saves a bit of power, it is generally undesirable, especially for Linux users who are likely to be switching between dark and light screen content. Dell has issued a fix for this, however it is only available to run in Windows. The fix is available [directly from Dell](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=312K3&lwp=rt).
 
-## NVM Express SSD
-
-### NVME Power Saving Patch
-
-Andy Lutomirski has created a patchset which fixes power saving for NVME devices in linux. The patch was merged into mainline and manually compiling the kernel is not necessary anymore. Nevertheless the [AUR](/index.php/AUR "AUR") package is still available for further use if desired. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME power saving APST.
-
-	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
+## NVM Express SSD Power Saving
 
 For some devices it might be necessary to set a higher value for the `nvme_core.default_ps_max_latency_us` parameter to enable all power saving states. This parameter has to be set on the [kernel command line](/index.php/Kernel_command_line "Kernel command line").
 
-For the Toshiba 512GB SSD used in some models of the XPS 13 the value to enable all PS-States is 170000 (the combined latency of entering and leaving the highest power state, add `nvme_core.default_ps_max_latency_us=170000` to your kernel command line). For the 1TB SSD this valued should be increased to 180000 instead. To check if all states are enabled you can use the [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) package, which provides the `nvme-cli` command:
+For the Toshiba 512GB SSD used in some models of the XPS 13 the value to enable all states is 170000 (the combined latency of entering and leaving the highest power state, add `nvme_core.default_ps_max_latency_us=170000` to your kernel command line). For the 1TB SSD this valued should be increased to 180000 instead. To check if all states are enabled you can use the [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) package, which provides the `nvme-cli` command:
 
 ```
 # nvme get-feature -f 0x0c -H /dev/nvme0
@@ -170,6 +163,14 @@ Call Trace:
   ? irq_finalize_oneshot.part.35+0xe0/0xe0
 
 ```
+
+As of February 2018, Dell support suggests to update the firmware of the network adapter in the following way:
+
+1.  Confirm that you have QCA6174 checking the output of `sudo lspci`
+2.  [Download](https://codeload.github.com/kvalo/ath10k-firmware/zip/master) the latest firmware and extract the contents from [git](https://github.com/kvalo/ath10k-firmware)
+3.  Substitute the `QCA6174` folder in `/lib/firmware/ath10k/` with the one downloaded
+4.  Inside the new folder, rename `firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1` to `firmware-4.bin`
+5.  Reboot and test the new Killer Wi-Fi firmware
 
 ## Bluetooth
 
@@ -382,7 +383,7 @@ Some users experienced a weird crackling, white noise sound when the display is 
 
 This issue should be patched as of the 4.14.15 kernel.
 
-If you're still encountering this issue, try manually applying this patch[[2]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
+If you're still encountering this issue, try manually applying this patch[[1]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
 
 ### Coil Whine
 
@@ -430,7 +431,7 @@ volume = 1
 
 ## Fingerprint sensor
 
-Dell officially does not support fingerprint reader functionality [[3]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[4]](https://github.com/nmikhailov/Validity90).
+Dell officially does not support fingerprint reader functionality [[2]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[3]](https://github.com/nmikhailov/Validity90).
 
 ## See Also
 

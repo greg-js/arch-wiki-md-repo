@@ -1,8 +1,9 @@
-[KDE Wallet Manager](http://utils.kde.org/projects/kwalletmanager/) is a tool to manage the passwords on your KDE Plasma system. By using the KWallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with KWallet.
+[KDE Wallet Manager](http://utils.kde.org/projects/kwalletmanager/) is a tool to manage passwords on the [KDE](/index.php/KDE "KDE") Plasma system. By using the KWallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with KWallet.
 
 ## Contents
 
 *   [1 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
+    *   [1.1 Configure Display Manager](#Configure_Display_Manager)
 *   [2 Using the KDE Wallet to store ssh key passhprases](#Using_the_KDE_Wallet_to_store_ssh_key_passhprases)
 *   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
@@ -12,16 +13,28 @@
 
 ## Unlock KDE Wallet automatically on login
 
-If your KWallet password is the same as your username password, you can unlock your wallet automatically on login.
+**Note:**
 
-[Install](/index.php/Install "Install") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) package. Then edit your login manager pam file and add the lines under their corresponding sections:
+*   The chosen KWallet password must be the same as the current [user](/index.php/User "User") password.
+*   [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) is not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, the KDE Wallet must use the standard `blowfish` encryption.
+*   The wallet must be named `kdewallet` (default name). It doesn't unlock any other wallet(s).
+
+[Install](/index.php/Install "Install") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) for the [PAM](/index.php/PAM "PAM") compatible module.
+
+### Configure Display Manager
+
+The following lines must be present under their corresponding sections:
 
 ```
 auth            optional        pam_kwallet5.so
 session         optional        pam_kwallet5.so auto_start
 ```
 
-For [LightDM](/index.php/LightDM "LightDM"), for example, edit `/etc/pam.d/lightdm` and `/etc/pam.d/lightdm-greeter` files:
+It may be needed to edit the [Display Manager](/index.php/Display_Manager "Display Manager") configuration:
+
+*   For [SDDM](/index.php/SDDM "SDDM") no further edits should be needed because the lines are already present in `/etc/pam.d/sddm`.
+*   For [GDM](/index.php/GDM "GDM") edit `/etc/pam.d/gdm-password` accordingly.
+*   For [LightDM](/index.php/LightDM "LightDM") edit `/etc/pam.d/lightdm` and `/etc/pam.d/lightdm-greeter` files:
 
  `/etc/pam.d/lightdm` 
 ```
@@ -37,21 +50,13 @@ session         include         system-login
 **session         optional        pam_kwallet5.so auto_start**
 ```
 
-For [GDM](/index.php/GDM "GDM"), edit `/etc/pam.d/gdm-password` accordingly.
-
-For [SDDM](/index.php/SDDM "SDDM"), the right lines should already be present in `/etc/pam.d/sddm`.
-
-After restarting your wallet should unlock automatically if your user password is the same as your KWallet password.
-
-**Note:** Currently, kwallet-pam has at least two limitations: first, it's not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, so KDE Wallet must use the standard blowfish encryption. Also, the wallet name must be "kdewallet" (that's the default name). If, for some reason, you create a new wallet, you need to use this name (so you will probably need to rename the old wallet too).
-
 ## Using the KDE Wallet to store ssh key passhprases
 
-First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") running.
+**Note:** A [SSH agent](/index.php/SSH_agent "SSH agent") should be up and running.
 
-[Install](/index.php/Install "Install") the [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
+[Install](/index.php/Install "Install") [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
 
-[Create](/index.php/Create "Create") an autostart file and mark it executable with [chmod](/index.php/Chmod "Chmod"):
+[Create](/index.php/Create "Create") an [autostart script file](/index.php/KDE#Autostarting_applications "KDE") and mark it as [executable](/index.php/Executable "Executable"):
 
  `~/.config/autostart-scripts/ssh-add.sh` 
 ```
@@ -87,9 +92,9 @@ and append the key to the list of keys in `~/.config/autostart-scripts/ssh-add.s
 
 ## KDE Wallet for Firefox
 
-There is an addon to make Firefox store passwords with [KDE5 Wallet](https://addons.mozilla.org/addon/kde5-wallet-password-integrati/).
+**Note:** As of Firefox 57 this addon is not supported anymore. Use Firefox ESR if wanting to use this addon.
 
-**Note:** As of Firefox 57 this addon is not supported anymore. Make sure to set up a masterpassword in order to get a basic protection for your stored passwords.
+There is an unofficial [Firefox](/index.php/Firefox "Firefox") addon for [KDE5 Wallet](https://addons.mozilla.org/addon/kde5-wallet-password-integrati/) integration.
 
 ## KDE Wallet for Chrome and Chromium
 

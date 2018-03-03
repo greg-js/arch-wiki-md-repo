@@ -13,20 +13,22 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
     *   [4.2 With systemd](#With_systemd)
     *   [4.3 With a KDE module](#With_a_KDE_module)
 *   [5 Tablet mode](#Tablet_mode)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 CellWriter](#CellWriter)
-    *   [6.2 Easystroke](#Easystroke)
-        *   [6.2.1 Launch CellWriter under pen](#Launch_CellWriter_under_pen)
-        *   [6.2.2 Gestures for the Alphabet](#Gestures_for_the_Alphabet)
-    *   [6.3 Xournal](#Xournal)
-    *   [6.4 Disable gksu grab mode](#Disable_gksu_grab_mode)
-    *   [6.5 Gnome-screensaver](#Gnome-screensaver)
-    *   [6.6 GDM](#GDM)
-    *   [6.7 LightDM](#LightDM)
-    *   [6.8 Touchegg](#Touchegg)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Wacom Drivers](#Wacom_Drivers)
-    *   [7.2 Screen Rotation](#Screen_Rotation)
+*   [6 Desktop Environments / Window Managers](#Desktop_Environments_.2F_Window_Managers)
+    *   [6.1 i3](#i3)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 CellWriter](#CellWriter)
+    *   [7.2 Easystroke](#Easystroke)
+        *   [7.2.1 Launch CellWriter under pen](#Launch_CellWriter_under_pen)
+        *   [7.2.2 Gestures for the Alphabet](#Gestures_for_the_Alphabet)
+    *   [7.3 Xournal](#Xournal)
+    *   [7.4 Disable gksu grab mode](#Disable_gksu_grab_mode)
+    *   [7.5 Gnome-screensaver](#Gnome-screensaver)
+    *   [7.6 GDM](#GDM)
+    *   [7.7 LightDM](#LightDM)
+    *   [7.8 Touchegg](#Touchegg)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Wacom Drivers](#Wacom_Drivers)
+    *   [8.2 Screen Rotation](#Screen_Rotation)
 
 ## Models
 
@@ -225,6 +227,12 @@ For automatic touch screen rotation edit `/usr/bin/orientation-helper` script, c
 ## Tablet mode
 
 If your laptop-tablet convertible has 2 accelerometers, you can try to use [https://github.com/alesguzik/linux_detect_tablet_mode](https://github.com/alesguzik/linux_detect_tablet_mode) to configure laptop and tablet modes (e.g. enable/disable keyboard/touchpad/trackpoint, start/kill on-screen keyboard etc.)
+
+## Desktop Environments / Window Managers
+
+### i3
+
+Using a tiling window manager like [i3](/index.php/I3 "I3") makes a lot of sense for a tablet, where screen space is limited. While that may seem unintuitive at first -- think about it: Android, iOS and Windows 10's tablet mode all use tiling window managers. Thus, [i3](/index.php/I3 "I3") is an excellent window managers for tablets running Arch. The problem is that [i3](/index.php/I3 "I3") is designed to be used with a keyboard, without a mouse, so there are no touch controls built in. For the most part, users will need to build their own, though touch gestures (see [#Tips and tricks](#Tips_and_tricks)) or by adding touch button controls to a status bar or panel. Users of the [polybar](https://github.com/jaagr/polybar/) status bar can try [i3touchmenu](https://github.com/ssmolkin1/i3touchmenu/).
 
 ## Tips and tricks
 

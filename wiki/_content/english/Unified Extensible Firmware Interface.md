@@ -1,7 +1,6 @@
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
 *   [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
@@ -11,7 +10,7 @@ Related articles
 
 The [Unified Extensible Firmware Interface](http://www.uefi.org/) (EFI or UEFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
 
-It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI Boot Loaders, see [Boot loaders](/index.php/Boot_loaders "Boot loaders").
+It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI Boot Loaders, see [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders").
 
 ## Contents
 

@@ -294,7 +294,7 @@ A possible solution is to switch to "Work Offline" select "Don't Synchronize” 
 
 ### Stuck at 'saving user interface' on startup
 
-This is a known problem and relates to glibc not Evolution hence cannot be fixed. To workaround the problem, before Evolution is closed put the application in 'offline mode' either by clicking on plug and socket icon (in bottom left) or from File menu > Work offline. Next time Evolution is run, put it to online mode to sync all emails. Problem of being stuck at 'saving user interface' will not repeat.
+This is a known problem and relates to glibc not Evolution hence cannot be fixed. To workaround the problem, before Evolution is closed put the application in 'offline mode' either by clicking on plug and socket icon (in bottom left) or from *File > Work offline*. Next time Evolution is run, put it to online mode to sync all emails. Problem of being stuck at 'saving user interface' will not repeat.
 
 ## References
 

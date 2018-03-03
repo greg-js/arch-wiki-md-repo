@@ -187,7 +187,7 @@ This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described 
 
 ### Remove old DHCP lease
 
-The file `/var/lib/dhcpcd/dhcpcd-*interface*.lease`, where `*interface*` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
+The file `/var/lib/dhcpcd/*interface*.lease`, where `*interface*` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. For a wireless interface, the filename is `/var/lib/dhcpcd/*interface*-*ssid*.lease`, where `*ssid*` is the name of the wireless network. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
 
 If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping *dhcpcd* and removing or renaming `/var/lib/dhcpcd/duid`. *dhcpcd* will generate a new one on next run.
 

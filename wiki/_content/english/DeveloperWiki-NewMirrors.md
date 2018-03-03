@@ -52,7 +52,7 @@ All other mirrors should sync from one of tier 1 mirrors. Syncing from archlinux
 *   [rsync](/index.php/Rsync "Rsync") support
 *   Proven reliability (be a tier 2 mirror for a while and have reasonable uptime, response to out-of-sync notifications etc.)
 
-You can use rsync directly or [this script](https://git.server-speed.net/users/flo/bin/tree/syncrepo.sh) as a starting point. Please note that the script tries to minimize load and bandwidth used (about 5MiB as of 2014-01-21) in case there are no changes. Feel free to remove this check if you don't sync very often or your upstream mirror does not provide the lastupdate file.
+You can use rsync directly or [this script](https://git.server-speed.net/users/flo/bin/tree/syncrepo.sh) as a starting point. Please note that the script tries to minimize load and bandwidth used (about 3MiB of metadata for each rsync run as of 2018-03-01) in case there are no changes. Feel free to remove this check if you don't sync very often or your upstream mirror does not provide the lastupdate file.
 
 ### Create a feature-request
 
@@ -83,18 +83,18 @@ If you want to reach the Arch Linux staff for questions, you can either use the 
 
 ## Mirror size
 
-To give you an impression how much space will be needed for a mirror here are some numbers (as of 2016-10-25):
+To give you an impression how much space will be needed for a mirror here are some numbers (as of 2018-03-01):
 
 Mandatory:
 
-*   pool (all packages) - 48GB
-*   repositories (core, community, extra, testing, gnome-unstable, kde-unstable, multilib) - total ~200MB
+*   pool (all packages) - 42GB
+*   repositories (core, community, extra, testing, gnome-unstable, kde-unstable, multilib) - total ~100MB
 
 Optional:
 
-*   iso - 9GB (encouraged)
+*   iso - 7GB (encouraged)
 *   archive - 15GB (permanently frozen)
-*   other - 13GB
+*   other - 17GB
 *   sources - 50GB
 
 Most mirrors do not sync archive, other and sources directories, but sync everything else (including temporary repositories), so usually you will need about 50GB reserved for Arch Linux mirror.

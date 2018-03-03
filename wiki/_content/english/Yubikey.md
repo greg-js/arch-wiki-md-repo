@@ -5,23 +5,24 @@ This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, h
 ## Contents
 
 *   [1 Introduction](#Introduction)
-    *   [1.1 Understanding the YubiKey](#Understanding_the_YubiKey)
-        *   [1.1.1 Possible Inputs](#Possible_Inputs)
-        *   [1.1.2 Possible Outputs](#Possible_Outputs)
-    *   [1.2 The Button](#The_Button)
-        *   [1.2.1 Effects of pressing the button](#Effects_of_pressing_the_button)
-        *   [1.2.2 Two different ways to press the button](#Two_different_ways_to_press_the_button)
-    *   [1.3 The (USB Connection/Transport) Modes of the YubiKey](#The_.28USB_Connection.2FTransport.29_Modes_of_the_YubiKey)
-        *   [1.3.1 What modes are there ?](#What_modes_are_there_.3F)
-        *   [1.3.2 What does a mode do ?](#What_does_a_mode_do_.3F)
-        *   [1.3.3 Which mode is used?](#Which_mode_is_used.3F)
-        *   [1.3.4 Get enabled modes](#Get_enabled_modes)
-        *   [1.3.5 Set the enabled modes](#Set_the_enabled_modes)
-    *   [1.4 Two Slots](#Two_Slots)
-        *   [1.4.1 Configuration of the slots](#Configuration_of_the_slots)
-    *   [1.5 The LED](#The_LED)
-    *   [1.6 Initial configuration](#Initial_configuration)
-    *   [1.7 Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"](#Limitations_of_the_passwords_typed_by_YubiKey_via_USB-keyboard_--_or_.22Why_do_my_password_look_so_weak_.3F.22)
+    *   [1.1 Packages](#Packages)
+    *   [1.2 Understanding the YubiKey](#Understanding_the_YubiKey)
+        *   [1.2.1 Possible Inputs](#Possible_Inputs)
+        *   [1.2.2 Possible Outputs](#Possible_Outputs)
+    *   [1.3 The Button](#The_Button)
+        *   [1.3.1 Effects of pressing the button](#Effects_of_pressing_the_button)
+        *   [1.3.2 Two different ways to press the button](#Two_different_ways_to_press_the_button)
+    *   [1.4 The (USB Connection/Transport) Modes of the YubiKey](#The_.28USB_Connection.2FTransport.29_Modes_of_the_YubiKey)
+        *   [1.4.1 What modes are there ?](#What_modes_are_there_.3F)
+        *   [1.4.2 What does a mode do ?](#What_does_a_mode_do_.3F)
+        *   [1.4.3 Which mode is used?](#Which_mode_is_used.3F)
+        *   [1.4.4 Get enabled modes](#Get_enabled_modes)
+        *   [1.4.5 Set the enabled modes](#Set_the_enabled_modes)
+    *   [1.5 Two Slots](#Two_Slots)
+        *   [1.5.1 Configuration of the slots](#Configuration_of_the_slots)
+    *   [1.6 The LED](#The_LED)
+    *   [1.7 Initial configuration](#Initial_configuration)
+    *   [1.8 Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"](#Limitations_of_the_passwords_typed_by_YubiKey_via_USB-keyboard_--_or_.22Why_do_my_password_look_so_weak_.3F.22)
 *   [2 OneTimePasswords (OTP)](#OneTimePasswords_.28OTP.29)
     *   [2.1 Yubico OTP mode](#Yubico_OTP_mode)
         *   [2.1.1 How does it work](#How_does_it_work)
@@ -84,6 +85,12 @@ The Yubikey is a small [USB Security token](https://en.wikipedia.org/wiki/Securi
 It is manufactured by [Yubico](http://www.yubico.com/). The current top models are YubiKey 4 (yk4) and YubiKey NEO. The main difference: yk4 has no NFC support, NEO does.
 
 One of its strengths is that it emulates a USB keyboard to send the OTP as text, and thus requires only USB HID drivers found on practically all desktop computers.
+
+### Packages
+
+The main manager package is [yubikey-manager](https://www.archlinux.org/packages/?name=yubikey-manager) from the [official repositories](/index.php/Official_repositories "Official repositories"), and provides the `ykman` interface.
+
+You can also install [yubikey-personalization](https://www.archlinux.org/packages/?name=yubikey-personalization) and [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui) to access further options
 
 ### Understanding the YubiKey
 

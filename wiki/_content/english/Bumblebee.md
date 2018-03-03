@@ -35,8 +35,9 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.3 [ERROR]Cannot access secondary GPU: No devices detected](#.5BERROR.5DCannot_access_secondary_GPU:_No_devices_detected)
         *   [6.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA.280.29:_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
         *   [6.3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
-        *   [6.3.3 Could not load GPU driver](#Could_not_load_GPU_driver)
-        *   [6.3.4 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
+        *   [6.3.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (Bumblebee daemon reported: error: [XORG] (EE) NVIDIA(GPU-0))](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28Bumblebee_daemon_reported:_error:_.5BXORG.5D_.28EE.29_NVIDIA.28GPU-0.29.29)
+        *   [6.3.4 Could not load GPU driver](#Could_not_load_GPU_driver)
+        *   [6.3.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
     *   [6.4 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
     *   [6.5 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
     *   [6.6 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
@@ -46,7 +47,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.10 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
     *   [6.11 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
     *   [6.12 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
-    *   [6.13 Optirun doesn't work, no debug output](#Optirun_doesn.27t_work.2C_no_debug_output)
+    *   [6.13 Optirun does not work, no debug output](#Optirun_does_not_work.2C_no_debug_output)
     *   [6.14 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
     *   [6.15 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
     *   [6.16 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
@@ -66,7 +67,7 @@ It tries to mimic the Optimus technology behavior; using the dedicated GPU for r
 
 ## Installation
 
-Before installing Bumblebee, check your BIOS and activate Optimus (older laptops call it "switchable graphics") if possible (BIOS doesn't have to provide this option). If neither "Optimus" or "switchable" is in the bios, still make sure both gpu's will be enabled and that the integrated graphics (igfx) is initial display (primary display). The display should be connected to the onboard integrated graphics, not the discrete graphics card. If integrated graphics had previously been disabled and discrete graphics drivers installed, be sure to remove `/etc/X11/xorg.conf` or the conf file in `/etc/X11/xorg.conf.d` related to the discrete graphics card.
+Before installing Bumblebee, check your BIOS and activate Optimus (older laptops call it "switchable graphics") if possible (BIOS does not have to provide this option). If neither "Optimus" or "switchable" is in the bios, still make sure both gpu's will be enabled and that the integrated graphics (igfx) is initial display (primary display). The display should be connected to the onboard integrated graphics, not the discrete graphics card. If integrated graphics had previously been disabled and discrete graphics drivers installed, be sure to remove `/etc/X11/xorg.conf` or the conf file in `/etc/X11/xorg.conf.d` related to the discrete graphics card.
 
 [Install](/index.php/Install "Install"):
 
@@ -238,7 +239,7 @@ $ optirun -b primus glxgears
 
 ```
 
-Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you won't have to specify it on the command line.
+Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you will not have to specify it on the command line.
 
 **Tip:** Refer to [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29) if you want to disable `VSYNC`. It can also remove mouse input delay lag and slightly increase the performance.
 
@@ -505,7 +506,7 @@ In this case, you will need to move the file `/etc/X11/xorg.conf.d/20-intel.conf
 
 It could be also necessary to comment the driver line in `/etc/X11/xorg.conf.d/10-monitor.conf`.
 
-If you're using the `nouveau` driver you could try switching to the `nvidia` driver.
+If you are using the `nouveau` driver you could try switching to the `nvidia` driver.
 
 You might need to define the NVIDIA card somewhere (e.g. file `/etc/bumblebee/xorg.conf.nvidia`), using the correct `BusID` according to `lspci` output:
 
@@ -548,6 +549,32 @@ Option "ConnectedMonitor" "CRT"
 
 Add `rcutree.rcu_idle_gp_delay=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") of the [bootloader](/index.php/Bootloader "Bootloader") configuration (see also the original [BBS post](https://bbs.archlinux.org/viewtopic.php?id=169742) for a configuration example).
 
+#### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (Bumblebee daemon reported: error: [XORG] (EE) NVIDIA(GPU-0))
+
+You might encounter an issue when after resume from sleep, `primusrun` or `optirun` command does not work anymore. there are two ways to fix this issue - reboot your system or execute the following command:
+
+```
+# echo 1 > /sys/bus/pci/rescan
+
+```
+
+And try to test if `primusrun` or `optirun` works.
+
+If the above command did not help, try finding your NVIDIA card's bus ID:
+
+```
+$ lspci | grep NVIDIA
+
+```
+
+For example, above command showed `01:00.0` so we use following commands with this bus ID:
+
+```
+# echo 1 > /sys/bus/pci/devices/0000:**01:00.0**/remove
+# echo 1 > /sys/bus/pci/rescan
+
+```
+
 #### Could not load GPU driver
 
 If the console output is:
@@ -565,7 +592,7 @@ modprobe: ERROR: could not insert 'nvidia': Exec format error
 
 ```
 
-This could be because the nvidia driver is out of sync with the Linux kernel, for example if you installed the latest nvidia driver and haven't updated the kernel in a while. A full system update might resolve the issue. If the problem persists you should try manually compiling the nvidia packages against your current kernel, for example with [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) or by compiling [nvidia](https://www.archlinux.org/packages/?name=nvidia) from the [ABS](/index.php/ABS "ABS").
+This could be because the nvidia driver is out of sync with the Linux kernel, for example if you installed the latest nvidia driver and have not updated the kernel in a while. A full system update might resolve the issue. If the problem persists you should try manually compiling the nvidia packages against your current kernel, for example with [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) or by compiling [nvidia](https://www.archlinux.org/packages/?name=nvidia) from the [ABS](/index.php/ABS "ABS").
 
 #### NOUVEAU(0): [drm] failed to set drm interface version
 
@@ -589,7 +616,7 @@ You probably want to start a 32-bit application with bumblebee on a 64-bit syste
 
 ### Fatal IO error 11 (Resource temporarily unavailable) on X server
 
-Change `KeepUnusedXServer` in `/etc/bumblebee/bumblebee.conf` from `false` to `true`. Your program forks into background and bumblebee don't know anything about it.
+Change `KeepUnusedXServer` in `/etc/bumblebee/bumblebee.conf` from `false` to `true`. Your program forks into background and bumblebee do not know anything about it.
 
 ### Video tearing
 
@@ -619,14 +646,14 @@ or (for 32 bit):
 
  `$ optirun glxspheres32` 
 ```
-[ 1648.179533] [ERROR]You've no permission to communicate with the Bumblebee daemon. Try adding yourself to the 'bumblebee' group
+[ 1648.179533] [ERROR]You have no permission to communicate with the Bumblebee daemon. Try adding yourself to the 'bumblebee' group
 [ 1648.179628] [ERROR]Could not connect to bumblebee daemon - is it running?
 
 ```
 
 If you are already in the `bumblebee` group (`$ groups | grep bumblebee`), you may try [removing the socket](https://bbs.archlinux.org/viewtopic.php?pid=1178729#p1178729) `/var/run/bumblebeed.socket`.
 
-Another reason for this error could be that you haven't actually turned on both gpu's in your bios, and as a result, the Bumblebee daemon is in fact not running. Check the bios settings carefully and be sure intel graphics (integrated graphics - may be abbreviated in bios as something like igfx) has been enabled or set to auto, and that it's the primary gpu. Your display should be connected to the onboard integrated graphics, not the discrete graphics card.
+Another reason for this error could be that you have not actually turned on both gpu's in your bios, and as a result, the Bumblebee daemon is in fact not running. Check the bios settings carefully and be sure intel graphics (integrated graphics - may be abbreviated in bios as something like igfx) has been enabled or set to auto, and that it's the primary gpu. Your display should be connected to the onboard integrated graphics, not the discrete graphics card.
 
 If you mistakenly had the display connected to the discrete graphics card and intel graphics was disabled, you probably installed Bumblebee after first trying to run Nvidia alone. In this case, be sure to remove the /etc/X11/xorg.conf or .../20-nvidia... configuration files. If Xorg is instructed to use Nvidia in a conf file, X will fail.
 
@@ -670,7 +697,7 @@ This makes primus display the previously rendered frame.
 
 In some systems, it can happens that the nvidia module is loaded after resuming from standby. The solution for this, is to install the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) and [acpi](https://www.archlinux.org/packages/?name=acpi) package.
 
-### Optirun doesn't work, no debug output
+### Optirun does not work, no debug output
 
 Users are reporting that in some cases, even though Bumblebee was installed correctly, running
 

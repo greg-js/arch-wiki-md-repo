@@ -38,7 +38,6 @@ Related articles
 *   [12 Running a Tor server](#Running_a_Tor_server)
     *   [12.1 Running a Tor bridge](#Running_a_Tor_bridge)
         *   [12.1.1 Configuration](#Configuration_2)
-        *   [12.1.2 Troubleshooting](#Troubleshooting)
     *   [12.2 Running a Tor relay](#Running_a_Tor_relay)
         *   [12.2.1 Configuration](#Configuration_3)
     *   [12.3 Running a Tor exit node](#Running_a_Tor_exit_node)
@@ -56,8 +55,9 @@ Related articles
 *   [13 TorDNS](#TorDNS)
     *   [13.1 Using TorDNS for all DNS queries](#Using_TorDNS_for_all_DNS_queries)
 *   [14 Torsocks](#Torsocks)
-*   [15 Transparent Torification](#Transparent_Torification)
-*   [16 Troubleshooting](#Troubleshooting_2)
+*   [15 Tips and tricks](#Tips_and_tricks)
+    *   [15.1 Kernel capabilities](#Kernel_capabilities)
+*   [16 Troubleshooting](#Troubleshooting)
     *   [16.1 Problem with user value](#Problem_with_user_value)
 *   [17 See also](#See_also)
 
@@ -161,7 +161,6 @@ User=root
 ExecStart=
 ExecStart=/usr/bin/sh -c "chroot --userspec=tor:tor /opt/torchroot /usr/bin/tor -f /etc/tor/torrc"
 KillSignal=SIGINT
-
 ```
 
 ## Running Tor in a systemd-nspawn container with a virtual network interface
@@ -218,7 +217,6 @@ Create a Dropin directory for the container service:
 ExecStart=
 ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=guest --network-macvlan=$INTERFACE --private-network --directory=/var/lib/container/%i
 LimitNOFILE=32768
-
 ```
 
 `--network-macvlan=$INTERFACE --private-network` automagically creates a macvlan named `mv-$INTERFACE` inside the container, which is not visible from the host. `--private-network` is implied by `--network-macvlan=` according to [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). This is advisable for security as it will allow you to give a private IP to the container, and it won't know what your machine's IP is. This can help obscure DNS requests.
@@ -257,13 +255,13 @@ To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOC
 
 The Tor Project currently only supports web browsing with tor through the [Tor Browser](https://aur.archlinux.org/packages/?K=tor-browser), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers.
 
-**Warning:** Tor Project strongly recommends only using the Tor browser if you want to stay anonymous [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser).
+**Warning:** The Tor Project strongly recommends only using the Tor browser if you want to stay anonymous. [[2]](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser)
 
 **Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Use a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG").
 
 ### Firefox
 
-In *Preferences > General > Network Proxy > Settings* select "Manual proxy configuration" and enter SOCKS host `localhost` with port `9050` (SOCKS v5). To channel all DNS requests through TOR's socks proxy, also select "Proxy DNS when using SOCKS v5".
+In *Preferences > General > Network Proxy > Settings* select *Manual proxy configuration* and enter SOCKS host `localhost` with port `9050` (SOCKS v5). To channel all DNS requests through TOR's socks proxy, also select *Proxy DNS when using SOCKS v5*.
 
 **Note:** When using Firefox 55 or earlier (e.g. 52 ESR), the settings are located in *Preferences > Advanced > Network > Settings* instead.
 
@@ -278,7 +276,7 @@ $ chromium --proxy-server="socks5://myproxy:8080" --host-resolver-rules="MAP * ~
 
 The `--proxy-server="socks5://myproxy:8080"` flag tells Chrome to send all `http://` and `https://` URL requests through the SOCKS proxy server `"myproxy:8080"`, using version 5 of the SOCKS protocol. The hostname for these URLs will be resolved by the proxy server, and not locally by Chrome.
 
-**Warning:** Proxying of `ftp://` URLs through a SOCKS proxy is not yet implemented[[2]](https://www.chromium.org/developers/design-documents/network-stack/socks-proxy).
+**Warning:** Proxying of `ftp://` URLs through a SOCKS proxy is not yet implemented[[3]](https://www.chromium.org/developers/design-documents/network-stack/socks-proxy).
 
 The `--proxy-server` flag applies to URL loads only. There are other components of Chrome which may issue DNS resolves directly and hence bypass this proxy server. The most notable such component is the "DNS prefetcher". Hence if DNS prefetching is not disabled in Chrome then you will still see local DNS requests being issued by Chrome despite having specified a SOCKS v5 proxy server. Disabling DNS prefetching would solve this problem, however it is a fragile solution since once needs to be aware of all the areas in Chrome which issue raw DNS requests. To address this, the next flag, `--host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE myproxy"`, is a catch-all to prevent Chrome from sending any DNS requests over the network. It says that all DNS resolves are to be simply mapped to the (invalid) address `~NOTFOUND` (think of it as `0.0.0.0`). The `"EXCLUDE"` clause make an exception for `"myproxy"`, because otherwise Chrome would be unable to resolve the address of the SOCKS proxy server itself, and all requests would necessarily fail with `PROXY_CONNECTION_FAILED`.
 
@@ -333,7 +331,7 @@ In order to use an IM client with tor, we do not need an http proxy like [polipo
 
 ### Pidgin
 
-You can set up Pidgin to use Tor globally, or per account. To use Tor globally, go to Tools -> Preferences -> Proxy. To use Tor for specific accounts, go to *Accounts > Manage Accounts*, select the desired account, click Modify, then go to the Proxy tab. The proxy settings are as follows:
+You can set up Pidgin to use Tor globally, or per account. To use Tor globally, go to *Tools -> Preferences -> Proxy*. To use Tor for specific accounts, go to *Accounts > Manage Accounts*, select the desired account, click Modify, then go to the Proxy tab. The proxy settings are as follows:
 
 ```
 Proxy type SOCKS5
@@ -360,7 +358,7 @@ Set your identification to nickserv, which will be read when connecting. Support
 
 ```
 
-Disable CTCP and DCC and set a different hostname to prevent information disclosure: [[3]](https://encrypteverything.ca/IRC_Anonymity_Guide)
+Disable CTCP and DCC and set a different hostname to prevent information disclosure: [[4]](https://encrypteverything.ca/IRC_Anonymity_Guide)
 
 ```
 /ignore * CTCPS
@@ -401,12 +399,12 @@ Reliability with Tor:
 
 Note on gpg:
 
-On stock arch, pacman only trust keys which are either signed by you (That can be done with pacman-key --lsign-key) or signed by 2 of 5 Arch master keys. If a malicious exit node replaces packages with ones signed by its key, pacman will not let the user install the package.
+On stock arch, pacman only trust keys which are either signed by you (That can be done with pacman-key --lsign-key) or signed by 3 of 5 Arch master keys. If a malicious exit node replaces packages with ones signed by its key, pacman will not let the user install the package.
 **Warning:** This might not be true for other distributions derived from ARCH, for non-official repositories and for AUR
  `/etc/pacman.conf` 
 ```
 ...
-XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
+XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
 ...
 ```
 
@@ -429,10 +427,6 @@ According to [https://www.torproject.org/docs/bridges](https://www.torproject.or
    Exitpolicy reject *:*
 
 ```
-
-#### Troubleshooting
-
-If you get "Could not bind to 0.0.0.0:443: Permission denied" errors on startup, you will need to pick a higher ORPort (e.g. 8080), or perhaps [forward the port](http://www.portforward.com/) in your router.
 
 ### Running a Tor relay
 
@@ -500,7 +494,6 @@ To handle more than 8192 connections `LimitNOFILE` can be raised to 32768 as per
 ```
 [Service]
 LimitNOFILE=32768
-
 ```
 
 To succesfully raise `nofile` limit, you may also have to append the following:
@@ -525,7 +518,6 @@ To bind Tor to privileged ports the service must be started as root. Please spec
 ```
 [Service]
 User=root
-
 ```
 
 ###### Tor configuration
@@ -546,15 +538,15 @@ ORPort 443                                        ## Service must be started as 
 Address $IP                                       ## IP or FQDN
 Nickname $NICKNAME                                ## Nickname displayed in [Onionoo](https://onionoo.torproject.org/)
 
-RelayBandwidthRate 500 Mbits                      ## bytes|KBytes|MBytes|GBytes|KBits|MBits|GBits
-RelayBandwidthBurst 1000 MBits                    ## bytes|KBytes|MBytes|GBytes|KBits|MBits|GBits
+RelayBandwidthRate 500 Mbits                      ## bytes/KBytes/MBytes/GBytes/KBits/MBits/GBits
+RelayBandwidthBurst 1000 MBits                    ## bytes/KBytes/MBytes/GBytes/KBits/MBits/GBits
 
 ContactInfo $E-MAIL - $BTC-ADDRESS                ## See [OnionTip](https://oniontip.com/)
 
 DirPort 80                                        ## Service must be started as root
 DirPortFrontPage /etc/tor/tor-exit-notice.html    ## Original: [https://gitweb.torproject.org/tor.git/plain/contrib/operator-tools/tor-exit-notice.html](https://gitweb.torproject.org/tor.git/plain/contrib/operator-tools/tor-exit-notice.html)
 
-MyFamily $($KEYID),$($KEYID)...                   ## Remember $ in front of keyid(s) ;)
+MyFamily $($KEYID),$($KEYID)...                   ## Remember $ in front of keyid(s) ;)
 
 ExitPolicy reject XXX.XXX.XXX.XXX/XX:*            ## Block domain of public IP in addition to std. exit policy
 
@@ -567,7 +559,6 @@ AvoidDiskWrites 1                                 ## Reduce wear on SSD
 DisableAllSwap 1                                  ## Service must be started as root
 HardwareAccel 1                                   ## Look for OpenSSL hardware cryptographic support
 NumCPUs 2                                         ## Only start two threads
-
 ```
 
 This configuration is based on the [Tor Manual](https://www.torproject.org/docs/tor-manual.html.en).
@@ -582,7 +573,7 @@ Tor opens a socks proxy on port 9050 by default -- even if you do not configure 
 
 `AvoidDiskWrites 1` reduces disk writes and wear on SSD. `DisableAllSwap 1` "will attempt to lock all current and future memory pages, so that memory cannot be paged out".
 
-If `# cat /proc/cpuinfo | grep aes` returns that your CPU supports AES instructions and `# lsmod | grep aes` returns that the module is loaded, you can specify `HardwareAccel 1` which tries "to use built-in (static) crypto hardware acceleration when available", see [http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration](http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration).
+If `# cat /proc/cpuinfo` returns that your CPU supports AES instructions and `# lsmod` returns that the module is loaded, you can specify `HardwareAccel 1` which tries "to use built-in (static) crypto hardware acceleration when available", see [http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration](http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration).
 
 `ORPort 443`, `DirPort 80` and `DisableAllSwap 1` require that you start the Tor service as `root` as described in [#Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports). Use the `User tor` option to properly reduce Tor’s privileges.
 
@@ -605,14 +596,13 @@ COMMIT
 :INPUT DROP [0:0]
 :FORWARD DROP [0:0]
 :OUTPUT ACCEPT [0:0]
--A INPUT -p tcp ! --syn -j ACCEPT
+-A INPUT -p tcp ! --syn -j ACCEPT
 -A INPUT -p udp -j ACCEPT
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -p tcp --dport 443 -j ACCEPT
 -A INPUT -p tcp --dport 80 -j ACCEPT
 -A INPUT -i lo -j ACCEPT
 COMMIT
-
 ```
 
 `-A PREROUTING -j NOTRACK` and `-A OUTPUT -j NOTRACK` disables connection tracking in the `raw` table.
@@ -662,7 +652,6 @@ server {
     preset=off;                         ## Assume server is down before uptest.
  }
 ...
-
 ```
 
 This configuration stub shows how to cache queries to your normal DNS recursor locally and increase pdnsd cache size to 100MB.
@@ -685,7 +674,7 @@ AutomapHostsSuffixes .exit,.onion
 
 This will allow Tor to accept DNS requests (listening on port 9053 in this example) like a regular DNS server, and resolve the domain via the Tor network. A downside is that it is only able to resolve DNS queries for A-records; MX and NS queries are never answered. For more information see this [Debian-based introduction](https://techstdout.boum.org/TorDns/).
 
-DNS queries can also be performed through a command line interface by using `tor-resolve`. For example:
+DNS queries can also be performed through a command line interface by using `tor-resolve` For example:
 
 ```
 $ tor-resolve archlinux.org
@@ -747,13 +736,11 @@ Usage example:
 
 ```
 $ torsocks elinks checkip.dyndns.org
-$ torsocks wget -qO- https://check.torproject.org/ | grep -i congratulations
+$ torsocks wget -qO- [https://check.torproject.org/](https://check.torproject.org/) | grep -i congratulations== Transparent Torification ==
 
 ```
 
-## Transparent Torification
-
-In some cases it is more secure and often easier to transparently torify an entire system instead of configuring individual applications to use Tor's socks port, not to mention preventing DNS leaks. Transparent torification can be done with [iptables](/index.php/Iptables "Iptables") in such a way that all outbound packets are redirected through Tor's *TransPort*, except the Tor traffic itself. Once in place, applications do not need to be configured to use Tor, though Tor's *SocksPort* will still work. This also works for DNS via Tor's *DNSPort*, but realize that Tor only supports TCP, thus UDP packets other than DNS cannot be sent through Tor and therefore must be blocked entirely to prevent leaks. Using iptables to transparently torify a system affords comparatively strong leak protection, but it is not a substitute for virtualized torification applications such as Whonix, or TorVM [[4]](https://www.whonix.org/wiki/Comparison_with_Others). Transparent torification also will not protect against fingerprinting attacks on its own, so it is recommended to use it in conjunction with the Tor Browser (search the AUR for the version you want: [https://aur.archlinux.org/packages/?K=tor-browser](https://aur.archlinux.org/packages/?K=tor-browser)) or to use an amnesic solution like [Tails](http://tails.boum.org/) instead. Applications can still learn your computer's hostname, MAC address, serial number, timezone, etc. and those with root privileges can disable the firewall entirely. In other words, transparent torification with iptables protects against accidental connections and DNS leaks by misconfigured software, it is not sufficient to protect against malware or software with serious security vulnerabilities.
+In some cases it is more secure and often easier to transparently torify an entire system instead of configuring individual applications to use Tor's socks port, not to mention preventing DNS leaks. Transparent torification can be done with [iptables](/index.php/Iptables "Iptables") in such a way that all outbound packets are redirected through Tor's *TransPort*, except the Tor traffic itself. Once in place, applications do not need to be configured to use Tor, though Tor's *SocksPort* will still work. This also works for DNS via Tor's *DNSPort*, but realize that Tor only supports TCP, thus UDP packets other than DNS cannot be sent through Tor and therefore must be blocked entirely to prevent leaks. Using iptables to transparently torify a system affords comparatively strong leak protection, but it is not a substitute for virtualized torification applications such as Whonix, or TorVM [[5]](https://www.whonix.org/wiki/Comparison_with_Others). Transparent torification also will not protect against fingerprinting attacks on its own, so it is recommended to use it in conjunction with the Tor Browser (search the AUR for the version you want: [https://aur.archlinux.org/packages/?K=tor-browser](https://aur.archlinux.org/packages/?K=tor-browser)) or to use an amnesic solution like [Tails](http://tails.boum.org/) instead. Applications can still learn your computer's hostname, MAC address, serial number, timezone, etc. and those with root privileges can disable the firewall entirely. In other words, transparent torification with iptables protects against accidental connections and DNS leaks by misconfigured software, it is not sufficient to protect against malware or software with serious security vulnerabilities.
 
 To enable transparent torification, use the following file for `iptables-restore` and `ip6tables-restore` (internally used by [systemd](/index.php/Systemd "Systemd")'s `iptables.service` and `ip6tables.service`).
 
@@ -834,6 +821,36 @@ This file also works for ip6tables-restore, so you may symlink it:
 Then make sure Tor is running, and [start/enable](/index.php/Start/enable "Start/enable") the `iptables` and `ip6tables` systemd units.
 
 You may want to add `Requires=iptables.service` and `Requires=ip6tables.service` to whatever systemd unit logs your user in (most likely a [display manager](/index.php/Display_manager "Display manager")), to prevent any user processes from being started before the firewall up. See [systemd](/index.php/Systemd "Systemd").
+
+## Tips and tricks
+
+#### Kernel capabilities
+
+If you want to run tor as a non-root user, and use a port lower than 1024 you can use kernel capabilities to allow `/usr/bin/tor` to bind to ports lower than 1024:
+
+```
+# setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/tor
+
+```
+
+**Note:** Any upgrade to the tor package will reset the permissions, consider using [pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), to automatically set the permissions after upgrades.
+
+If you use the systemd service, it is also possible to use systemd to give the tor process the appropriate permissions. This has the benefit that permissions do not need to be reapplied after every tor upgrade:
+
+```
+/etc/systemd/system/tor.service.d/netcap.conf
+
+```
+
+```
+[Service]
+CapabilityBoundingSet=
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+```
+
+Refer to [superuser.com](https://superuser.com/questions/710253/allow-non-root-process-to-bind-to-port-80-and-443) for further explanations.
 
 ## Troubleshooting
 
