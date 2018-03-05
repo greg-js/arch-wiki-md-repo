@@ -66,17 +66,21 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
 ## Preparation
 
-The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) include support for Btrfs. If you want to boot from a Btrfs file system, check if your [boot loader](/index.php/Boot_loader "Boot loader") supports Btrfs.
+The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) include support for Btrfs.
 
-User space utilities are available by [installing](/index.php/Installing "Installing") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package.
+For user space utilities [install](/index.php/Install "Install") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package, which is not part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, and is required for basic operations.
+
+If you need to boot from a Btrfs file system (i.e., your kernel and initramfs reside on a Btrfs partition), check if your [boot loader](/index.php/Boot_loader "Boot loader") supports Btrfs.
 
 ## File system creation
 
-The following shows how to create a new Btrfs file system. To convert an ext3/4 partition to Btrfs, see [#Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion). To use a partitionless setup, see [#Partitionless Btrfs disk](#Partitionless_Btrfs_disk).
+The following shows how to create a new Btrfs [file system](/index.php/File_system "File system"). To convert an ext3/4 partition to Btrfs, see [#Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion). To use a partitionless setup, see [#Partitionless Btrfs disk](#Partitionless_Btrfs_disk).
+
+See [mkfs.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) for more information.
 
 ### File system on a single device
 
-To format a partition do:
+To create a Btrfs filesystem on partition `/dev/*partition*`:
 
 ```
 # mkfs.btrfs -L *mylabel* /dev/*partition*
@@ -92,23 +96,22 @@ The Btrfs default blocksize is 16KB. To use a larger blocksize for data/metadata
 
 ### Multi-device file system
 
-**Warning:**
+**Warning:** The RAID 5 and RAID 6 modes of Btrfs are fatally flawed, and should not be used for "anything but testing with throw-away data." See [the Btrfs page on RAID5 and RAID6](https://btrfs.wiki.kernel.org/index.php/RAID56) for status updates.
 
-*   The RAID 5, RAID 6 mode of Btrfs is considered *fatally flawed*, and should not be used for "anything but testing with throw-away data." See [the Btrfs page on RAID5 and RAID6](https://btrfs.wiki.kernel.org/index.php/RAID56) for status updates.
-*   Some [boot loaders](/index.php/Boot_loaders "Boot loaders") such as [Syslinux](/index.php/Syslinux "Syslinux") do not support multi-device file systems.
-
-Multiple devices can be entered to create a RAID. Supported RAID levels include RAID 0, RAID 1, RAID 10, RAID 5 and RAID 6\. The RAID levels can be configured separately for data and metadata using the `-d` and `-m` options respectively. By default the data is striped (`raid0`) and the metadata is mirrored (`raid1`). See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information about how to create a Btrfs RAID volume as well as the manpage for `mkfs.btrfs`.
+Multiple devices can be used to create a RAID. Supported RAID levels include RAID 0, RAID 1, RAID 10, RAID 5 and RAID 6\. The RAID levels can be configured separately for data and metadata using the `-d` and `-m` options respectively. By default the data is striped (`raid0`) and the metadata is mirrored (`raid1`). See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information about how to create a Btrfs RAID volume.
 
 ```
 # mkfs.btrfs -d raid0 -m raid1 /dev/*part1* /dev/*part2* ...
 
 ```
 
-You **must** include either the `udev` hook or the `btrfs` hook in `/etc/mkinitcpio.conf` in order to use multiple btrfs devices in a pool. See the [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") article for more information.
+You must include either the `udev` hook or the `btrfs` hook in `/etc/mkinitcpio.conf` in order to use multiple Btrfs devices in a pool. See the [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") article for more information.
 
-**Note:** If the disks in your multi-disk array have different sizes, this may not use the full capacity of all drives. In order to utilize the full capacity of all disks, use `-d single` instead of `-d raid0 -m raid1` (metadata mirrored, data not mirrored and not striped)
+**Note:**
 
-**Note:** Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
+*   If the disks in your multi-disk array have different sizes, this may not use the full capacity of all drives. In order to utilize the full capacity of all disks, use `-d single` instead of `-d raid0 -m raid1` (metadata mirrored, data not mirrored and not striped)
+*   Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
+*   Some [boot loaders](/index.php/Boot_loaders "Boot loaders") such as [Syslinux](/index.php/Syslinux "Syslinux") do not support multi-device file systems.
 
 See [#RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.
 
@@ -227,6 +230,8 @@ Subvolumes can be mounted like file system partitions using the `subvol=*/path/t
 **Note:** "Most mount options apply to the **whole filesystem**, and only the options for the first subvolume to be mounted will take effect. This is due to lack of implementation and may change in the future." [[2]](https://btrfs.wiki.kernel.org/index.php/Mount_options) See the [Btrfs Wiki FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ#Can_I_mount_subvolumes_with_different_mount_options.3F) for which mount options can be used per subvolume.
 
 See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
+
+See [btrfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5) for a full list of btrfs-specific mount options.
 
 #### Changing the default sub-volume
 

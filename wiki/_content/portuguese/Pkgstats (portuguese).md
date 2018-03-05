@@ -16,6 +16,6 @@ Se você não deseja esperar por um ciclo de reinicialização, você pode [inic
 
 Estatísticas estão disponíveis em [https://www.archlinux.de/?page=Statistics](https://www.archlinux.de/?page=Statistics).
 
-O projeto código aberto a seguir permite que você obtenha dados estatísticos como JSON: [ArchLinuxPkgStatsScraper](https://github.com/chrissound/ArchLinuxPkgStatsScraper)
+O projeto código aberto a seguir permite que você obtenha dados estatísticos como JSON: [ArchLinuxPkgStatsScraper](https://github.com/chrissound/ArchLinuxPkgStatsScraper), bem como um front-end web para comparar os dados está disponível: [https://trycatchchris.co.uk/archpackagecompare/](https://trycatchchris.co.uk/archpackagecompare/comparePackage/gnome-terminal/lxterminal/rxvt/rxvt-unicode/st/terminator/termite/xterm).
 
 Você pode ler a [discussão oficial no fórum](https://bbs.archlinux.org/viewtopic.php?id=105431) para mais informações.

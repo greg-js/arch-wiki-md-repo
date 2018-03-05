@@ -32,9 +32,8 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 ## Active
 
 *   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/)
-*   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1)
+*   [Anarchy Linux](https://anarchy-linux.org/)
 *   [Antergos](https://sourceforge.net/projects/antergos/)
-*   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [ArchEX](https://sourceforge.net/projects/archex/)
 *   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/)
 *   [Arch Linux 32](https://archlinux32.org/)
@@ -43,14 +42,12 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/)
 *   [Artix Linux](https://sourceforge.net/projects/artix-linux/)
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
-*   [Audiophile Linux](http://www.ap-linux.com/)
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
 *   [BlackArch Linux](https://blackarch.org/)
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)
 *   [Chakra](https://sourceforge.net/projects/chakra/)
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/)
 *   [Ctlos Linux](https://ctlos.github.io/)
-*   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Hyperbola](http://hyperbola.info/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [LinHES](http://linhes.org/)
@@ -60,7 +57,6 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
 *   [Namib](https://sourceforge.net/projects/namib-gnu-linux/)
 *   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/)
-*   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Obarun](https://web.obarun.org/)
 *   [PacBSD](https://www.pacbsd.org/)
 *   [Parabola](https://www.parabola.nu/)
@@ -79,9 +75,14 @@ These distributions are no longer developed, but show some of the history surrou
 
 ### 2017
 
+*   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1)
+*   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [Arch Linux WSL Edition](https://github.com/alwsl/alwsl)
 *   [Archphile](https://sourceforge.net/projects/archphile/)
+*   [Audiophile Linux](http://www.ap-linux.com/)
+*   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Feliz](https://sourceforge.net/projects/feliz/)
+*   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](https://nurunner.mkxt.net/)
 
 ### 2016

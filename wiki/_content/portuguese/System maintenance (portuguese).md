@@ -22,6 +22,7 @@ Manutenção de sistema regular é necessário para o correto funcionamento do A
     *   [3.4 Aja em alertas durante uma atualização](#Aja_em_alertas_durante_uma_atualiza.C3.A7.C3.A3o)
     *   [3.5 Lide prontamente com os novos arquivos de configuração](#Lide_prontamente_com_os_novos_arquivos_de_configura.C3.A7.C3.A3o)
     *   [3.6 Reverta atualizações quebradas](#Reverta_atualiza.C3.A7.C3.B5es_quebradas)
+    *   [3.7 Verifique por pacotes órfãos ou abandonados](#Verifique_por_pacotes_.C3.B3rf.C3.A3os_ou_abandonados)
 *   [4 Use o gerenciador de pacotes para instalar softwares](#Use_o_gerenciador_de_pacotes_para_instalar_softwares)
     *   [4.1 Escolha drivers código aberto](#Escolha_drivers_c.C3.B3digo_aberto)
     *   [4.2 Tenha cuidado com pacotes não oficiais](#Tenha_cuidado_com_pacotes_n.C3.A3o_oficiais)
@@ -143,6 +144,14 @@ Se uma atualização de pacote é esperada/sabido causar problemas, empacotadore
 **Dica:** Você pode usar um visualização de log como o [wat-git](https://aur.archlinux.org/packages/wat-git/) para pesquisar por logs do pacman.
 
 A esse ponto, somente após garantir que não haja informações disponíveis pelo pacman, que não há notícia relacionada no [https://www.archlinux.org/](https://www.archlinux.org/) e que não haja tópicos no fórum sobre a atualização, considere pedir ajuda no [fórum](https://bbs.archlinux.org), pelo [IRC](/index.php/IRC "IRC") ou [fazendo downgrade](/index.php/Fazendo_downgrade "Fazendo downgrade") da versão do pacote danoso.
+
+### Verifique por pacotes órfãos ou abandonados
+
+Após a atualização, você pode agora ter pacotes que não são mais necessários ou que não estão mais nos repositórios oficiais.
+
+Use `pacman -Qtd` para verificar se os pacotes foram instalados como uma dependência, mas agora, nenhum outro pacote depende deles. Se um pacote órfão ainda for necessário, é recomendável alterar o [motivo de instalação](/index.php/Motivo_de_instala%C3%A7%C3%A3o "Motivo de instalação") para explícito. Caso contrário, se o pacote não for mais necessário, ele pode ser removido.
+
+Além disso, alguns pacotes podem não estar nos repositórios remotos, mas eles ainda podem estar no seu sistema local. Para listar todos os pacotes externos use `pacman -Qm`. Observe que esta lista incluirá pacotes que foram instalados manualmente (p. ex., a partir do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")).
 
 ## Use o gerenciador de pacotes para instalar softwares
 

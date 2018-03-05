@@ -10,74 +10,66 @@ Related articles
 *   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
 *   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
 
-[GRUB](https://www.gnu.org/software/grub/) (*GRand Unified Bootloader*) is a multi-boot loader. It is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of what is now known as [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). The latter had become too difficult to maintain and GRUB was rewritten from scratch with the aim to provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). The current GRUB is also referred to as GRUB 2 while GRUB Legacy corresponds to versions 0.9x.
+[GRUB](https://www.gnu.org/software/grub/) (GRand Unified Bootloader) is a multi-boot loader. It is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of what is now known as [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). The latter had become too difficult to maintain and GRUB was rewritten from scratch with the aim to provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). The current GRUB is also referred to as GRUB 2 while GRUB Legacy corresponds to versions 0.9x.
+
+A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that runs when a computer starts. It is responsible for selecting, loading and transferring control to an operating system kernel. The kernel, in turn, initializes the rest of the operating system.
 
 ## Contents
 
-*   [1 Preface](#Preface)
-*   [2 BIOS systems](#BIOS_systems)
-    *   [2.1 GUID Partition Table (GPT) specific instructions](#GUID_Partition_Table_.28GPT.29_specific_instructions)
-    *   [2.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
-    *   [2.3 Installation](#Installation)
-*   [3 UEFI systems](#UEFI_systems)
-    *   [3.1 Check if you have GPT and an ESP](#Check_if_you_have_GPT_and_an_ESP)
-    *   [3.2 Installation](#Installation_2)
-*   [4 Generate the main configuration file](#Generate_the_main_configuration_file)
-*   [5 Configuration](#Configuration)
-    *   [5.1 Additional arguments](#Additional_arguments)
-    *   [5.2 Dual-booting](#Dual-booting)
-        *   [5.2.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
-        *   [5.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
-        *   [5.2.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
-        *   [5.2.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-        *   [5.2.5 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
-        *   [5.2.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
-    *   [5.3 LVM](#LVM)
-    *   [5.4 RAID](#RAID)
-    *   [5.5 Multiple entries](#Multiple_entries)
-    *   [5.6 Encryption](#Encryption)
-        *   [5.6.1 Root partition](#Root_partition)
-        *   [5.6.2 Boot partition](#Boot_partition)
-    *   [5.7 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
-*   [6 Using the command shell](#Using_the_command_shell)
-    *   [6.1 Pager support](#Pager_support)
-    *   [6.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
-        *   [6.2.1 Chainloading a partition](#Chainloading_a_partition)
-        *   [6.2.2 Chainloading a disk/drive](#Chainloading_a_disk.2Fdrive)
-        *   [6.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows.2FLinux_installed_in_UEFI_mode)
-        *   [6.2.4 Normal loading](#Normal_loading)
-    *   [6.3 Using the rescue console](#Using_the_rescue_console)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
-        *   [7.1.1 MBR](#MBR)
-        *   [7.1.2 EFI path](#EFI_path)
-    *   [7.2 Enable debug messages](#Enable_debug_messages)
-    *   [7.3 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
-    *   [7.4 msdos-style error message](#msdos-style_error_message)
-    *   [7.5 UEFI](#UEFI)
-        *   [7.5.1 Common installation errors](#Common_installation_errors)
-        *   [7.5.2 Drop to rescue shell](#Drop_to_rescue_shell)
-        *   [7.5.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
-    *   [7.6 Invalid signature](#Invalid_signature)
-    *   [7.7 Boot freezes](#Boot_freezes)
-    *   [7.8 Arch not found from other OS](#Arch_not_found_from_other_OS)
-    *   [7.9 Warning when installing in chroot](#Warning_when_installing_in_chroot)
-    *   [7.10 GRUB loads slowly](#GRUB_loads_slowly)
-    *   [7.11 error: unknown filesystem](#error:_unknown_filesystem)
-    *   [7.12 grub-reboot not resetting](#grub-reboot_not_resetting)
-    *   [7.13 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
-    *   [7.14 Windows 8/10 not found](#Windows_8.2F10_not_found)
-*   [8 See also](#See_also)
-
-## Preface
-
-A [boot loader](/index.php/Boot_loader "Boot loader") is the first software program that runs when a computer starts. It is responsible for selecting, loading and transferring control to an operating system kernel. The kernel, in turn, initializes the rest of the operating system. The name *GRUB* officially refers to version *2* of the software. If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
-
-**Warning:** GRUB has a few root file system-specific limitations:
-
-*   [F2FS](/index.php/F2FS "F2FS") is not supported
-
-If your root partition is on an unsupported file system, you must create a separate `/boot` partition with a supported file system. In some cases, the development version of GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) has native support.
+*   [1 BIOS systems](#BIOS_systems)
+    *   [1.1 GUID Partition Table (GPT) specific instructions](#GUID_Partition_Table_.28GPT.29_specific_instructions)
+    *   [1.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
+    *   [1.3 Installation](#Installation)
+*   [2 UEFI systems](#UEFI_systems)
+    *   [2.1 Check if you have a GPT disk layout and an EFI System Partition](#Check_if_you_have_a_GPT_disk_layout_and_an_EFI_System_Partition)
+    *   [2.2 Installation](#Installation_2)
+*   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Additional arguments](#Additional_arguments)
+    *   [4.2 Dual-booting](#Dual-booting)
+        *   [4.2.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
+        *   [4.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
+        *   [4.2.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
+        *   [4.2.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
+        *   [4.2.5 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
+        *   [4.2.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
+    *   [4.3 LVM](#LVM)
+    *   [4.4 RAID](#RAID)
+    *   [4.5 Multiple entries](#Multiple_entries)
+    *   [4.6 Encryption](#Encryption)
+        *   [4.6.1 Root partition](#Root_partition)
+        *   [4.6.2 Boot partition](#Boot_partition)
+    *   [4.7 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
+*   [5 Using the command shell](#Using_the_command_shell)
+    *   [5.1 Pager support](#Pager_support)
+    *   [5.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
+        *   [5.2.1 Chainloading a partition](#Chainloading_a_partition)
+        *   [5.2.2 Chainloading a disk/drive](#Chainloading_a_disk.2Fdrive)
+        *   [5.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows.2FLinux_installed_in_UEFI_mode)
+        *   [5.2.4 Normal loading](#Normal_loading)
+    *   [5.3 Using the rescue console](#Using_the_rescue_console)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
+    *   [6.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
+        *   [6.2.1 MBR](#MBR)
+        *   [6.2.2 EFI path](#EFI_path)
+    *   [6.3 Enable debug messages](#Enable_debug_messages)
+    *   [6.4 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
+    *   [6.5 msdos-style error message](#msdos-style_error_message)
+    *   [6.6 UEFI](#UEFI)
+        *   [6.6.1 Common installation errors](#Common_installation_errors)
+        *   [6.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
+        *   [6.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
+    *   [6.7 Invalid signature](#Invalid_signature)
+    *   [6.8 Boot freezes](#Boot_freezes)
+    *   [6.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
+    *   [6.10 Warning when installing in chroot](#Warning_when_installing_in_chroot)
+    *   [6.11 GRUB loads slowly](#GRUB_loads_slowly)
+    *   [6.12 error: unknown filesystem](#error:_unknown_filesystem)
+    *   [6.13 grub-reboot not resetting](#grub-reboot_not_resetting)
+    *   [6.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
+    *   [6.15 Windows 8/10 not found](#Windows_8.2F10_not_found)
+*   [7 See also](#See_also)
 
 ## BIOS systems
 
@@ -125,18 +117,21 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 *   It is recommended to read and understand the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages.
 *   When installing to use UEFI it is important to start the install with your machine in UEFI mode. The Arch Linux install media must be UEFI bootable.
 
-### Check if you have GPT and an ESP
+### Check if you have a GPT disk layout and an EFI System Partition
 
-An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is needed on every disk you want to boot using EFI. GPT is not strictly necessary, but it is highly recommended and is the only method currently supported in this article. If you are installing Arch Linux on an EFI-capable computer with an already-working operating system, like Windows 10 for example, it is very likely that you already have an ESP. To check for GPT and for an ESP, use `parted` as root to print the partition table of the disk you want to boot from.
+To boot from a disk using EFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an EFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
+
+To find out the disk partition scheme and the system partition, use `parted` as root on the disk you want to boot from:
 
 ```
 # parted /dev/sd*x* print
 
 ```
 
-For GPT, you are looking for "Partition Table: gpt". For EFI, you are looking for a small (512 MiB or less) partition with a vfat/fat32 file system and the *boot* flag enabled. On it, there should be a directory named "EFI". If these criteria are met, this is your ESP. Make note of the partition number. You will need to know which one it is, so you can mount it later on while installing GRUB to it. In the following of this section `*esp*` must be substituted by it in commands.
+*   The disk partition layout is returned, if the disk is GPT, it indicates "Partition Table: gpt".
+*   The list of partition is returned. The ESP is a small (512 MiB or less) partition with a *vfat* or *fat32* file system and the *boot* and possibly *esp* flags enabled. To confirm this is the ESP, mount it and check if it contains a directory named "EFI", if it does this is definitely the ESP.
 
-If you do not have an ESP, you will need to create one. See [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+Once the ESP is found, take note of the partition number, it will be required for the GRUB installation. In the following of this section `*esp*` must be substituted by it in commands. If you do not have an ESP, you will need to create one. See [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 ### Installation
 
@@ -398,7 +393,7 @@ To install grub when using RAID1 as the `/boot` partition (or using `/boot` hous
 
 Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
 
-**Note:** GRUB currently (Sep 2015) supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
+**Note:** GRUB supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
 
 ### Multiple entries
 
@@ -622,6 +617,10 @@ After successfully booting the Arch Linux installation, users can correct `grub.
 To reinstall GRUB and fix the problem completely, changing `/dev/sda` if needed. See [#Installation](#Installation) for details.
 
 ## Troubleshooting
+
+### F2FS and other unsupported file systems
+
+GRUB does not support [F2FS](/index.php/F2FS "F2FS") file system. In case the root partition is on an unsupported file system, an alternative `/boot` partition with a supported file system must be created. In some cases, the development version of GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) may have native support for the file system.
 
 ### Intel BIOS not booting GPT
 

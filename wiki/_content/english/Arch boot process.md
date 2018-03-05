@@ -47,7 +47,7 @@ UEFI has support for reading both the partition table as well as understanding f
 
 The commonly used UEFI firmwares support both MBR and GPT [partition table](/index.php/Partition_table "Partition table"). EFI in Apple-Intel Macs are known to also support Apple Partition Map besides MBR and GPT. Most UEFI firmwares have support for accessing FAT12 (floppy disks), FAT16 and FAT32 filesystems in HDDs and ISO9660 (and UDF) in CD/DVDs. EFI in Intel Macs can also access HFS/HFS+ filesystems, in addition to the mentioned ones.
 
-UEFI does not launch any boot code in the MBR whether it exists or not. Instead it uses a special partition in the partition table called **EFI System Partition** in which files required to be launched by the firmware are stored. Each vendor can store its files under `<EFI SYSTEM PARTITION>/EFI/<VENDOR NAME>/` folder and can use the firmware or its shell (UEFI shell) to launch the boot program. An EFI System Partition is usually formatted as FAT32 or (less commonly) FAT16.
+UEFI does not launch any boot code in the MBR whether it exists or not. Instead it uses a special partition in the partition table called [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") in which files required to be launched by the firmware are stored. Each vendor can store its files under `<EFI SYSTEM PARTITION>/EFI/<VENDOR NAME>/` folder and can use the firmware or its shell ([UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")) to launch the boot program. An EFI System Partition is usually formatted as [FAT32](/index.php/FAT32 "FAT32") or (less commonly) FAT16.
 
 ## System initialization
 
@@ -67,7 +67,7 @@ UEFI does not launch any boot code in the MBR whether it exists or not. Instead 
 4.  Firmware launches the UEFI application.
     *   This could be the Arch kernel itself (since [EFISTUB](/index.php/EFISTUB "EFISTUB") is enabled by default).
     *   It could be some other application such as a shell or a graphical boot manager.
-    *   Or the boot entry could simply be a disk. In this case the firmware looks for an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") on that disk and tries to run the fallback UEFI application `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on 32-bit systems). This is how UEFI bootable thumb drives work.
+    *   Or the boot entry could simply be a disk. In this case the firmware looks for an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") on that disk and tries to run the fallback UEFI application `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on [32-bit EFI systems](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). This is how UEFI bootable thumb drives work.
 
 If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot process will verify authenticity of the EFI binary by signature.
 

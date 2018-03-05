@@ -11,7 +11,8 @@
     *   [1.6 Special plugins](#Special_plugins)
 *   [2 Usage](#Usage)
     *   [2.1 Bash](#Bash)
-    *   [2.2 Other plugins](#Other_plugins)
+    *   [2.2 Zsh](#Zsh)
+    *   [2.3 Other plugins](#Other_plugins)
 
 ## Installation
 
@@ -79,6 +80,16 @@ POWERLINE_BASH_SELECT=1
 ```
 
 Close and reopen your terminal and it should be working. If not, check the [Powerline bash prompt](https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#bash-prompt) usage instructions to ensure that it has not changed.
+
+### Zsh
+
+After installing [powerline](https://www.archlinux.org/packages/?name=powerline) and [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts). Add the following to your **~/.zshrc**:
+
+```
+powerline-daemon -q
+. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+
+```
 
 ### Other plugins
 

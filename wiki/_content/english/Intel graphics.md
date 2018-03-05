@@ -82,7 +82,7 @@ It is necessary to add `i915.enable_guc_loading=1 i915.enable_guc_submission=1` 
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_guc_loading=1 enable_guc_submission=1` 
 
-You can verify that it's enabled by checking *dmesg*:
+You can verify that it is enabled by checking *dmesg*:
 
 ```
 [    2.142029] [drm] GuC loaded (firmware i915/skl_guc_ver6_1.bin [version 6.1])
@@ -100,8 +100,6 @@ Alternatively, check:
 ## Xorg configuration
 
 There is no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
-
-**Note:** The latest generation of integrated GPUs (Skylake/HD 530 for instance) may require additional configuration, see [#Skylake support](#Skylake_support)
 
 However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
 

@@ -16,7 +16,7 @@ Ruby is a dynamic, interpreted, open source programming language with a focus on
 
 ## Installing Ruby
 
-For the latest version of Ruby, [install](/index.php/Install "Install") the [ruby](https://www.archlinux.org/packages/?name=ruby) package. It includes [RubyGems](#RubyGems).
+For the latest version of Ruby, [install](/index.php/Install "Install") the [ruby](https://www.archlinux.org/packages/?name=ruby) package.
 
 ### Multiple versions
 
@@ -28,7 +28,7 @@ To make documentation available through the included `ri` command-line tool, ins
 
 ## RubyGems
 
-RubyGems is a package manager for Ruby modules (called *gems*), somewhat comparable to what [pacman](/index.php/Pacman "Pacman") is to Arch Linux. It is included in the [ruby](https://www.archlinux.org/packages/?name=ruby) package.
+RubyGems is a package manager for Ruby modules (called *gems*), somewhat comparable to what [pacman](/index.php/Pacman "Pacman") is to Arch Linux. It can be installed with the [rubygems](https://www.archlinux.org/packages/?name=rubygems) package, which is automatically installed when installing [ruby](https://www.archlinux.org/packages/?name=ruby).
 
 ### Setup
 

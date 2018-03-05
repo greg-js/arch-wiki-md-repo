@@ -1,6 +1,13 @@
+Related articles
+
+*   [LAMP](/index.php/LAMP "LAMP")
+*   [RTorrent](/index.php/RTorrent "RTorrent")
+
 **[ruTorrent](https://github.com/Novik/ruTorrent)** is a [PHP](/index.php/PHP "PHP") frontend/web interface to [rTorrent](/index.php/RTorrent "RTorrent") (a console based BitTorrent client). It uses rTorrent's built-in XML-RPC server to communicate with it.
 
 It is lightweight, highly extensible, and is designed to look similar to uTorrent.
+
+**Warning:** **SECURITY** The config snippets given on this page are **insecure** (specifically using unprotected /RPC2 mounts). It needs an in-depth review, and fixing.
 
 ## Contents
 

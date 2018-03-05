@@ -302,7 +302,7 @@ Even with hardware decoding enabled, it will only be used for some codecs by def
 
 Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
 
-To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
+To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
 
 ### Save position on quit
 
@@ -312,7 +312,7 @@ To automatically save the current playback position on quit, start *mpv* with `-
 
 ### Volume is too low
 
-Set `volume-max=*value*` in your configuration file to a reasonable amount, such as `volume-max=600`. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=acompressor`.
+Set `volume-max=*value*` in your configuration file to a reasonable amount, such as `volume-max=150`, which then allows you to increase your volume up to 150%, which is more than twice as loud. Increasing your volume too high will result in clipping artefacts. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=acompressor`.
 
 ### Play a DVD
 

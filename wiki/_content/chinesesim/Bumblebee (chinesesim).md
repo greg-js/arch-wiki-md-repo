@@ -73,7 +73,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 对于32位程序 (必须启用[Multilib](/index.php/Multilib "Multilib")）在64位机器上的支持，安装:
 
 *   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - 为32位应用提供的渲染/显示桥。
-*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) - 和64位的包相对应。
+*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) 或者 [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)（和64位对应）。
 
 要使用 Bumblebee，请确保添加你的用户到 `bumblebee` 组：
 

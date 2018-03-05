@@ -40,6 +40,7 @@ Related articles
     *   [4.7 Use ClickToFocus](#Use_ClickToFocus)
     *   [4.8 Window tiling](#Window_tiling)
     *   [4.9 Transfer focus on page or desk switch](#Transfer_focus_on_page_or_desk_switch)
+    *   [4.10 Toggle window decorations](#Toggle_window_decorations)
 *   [5 See also](#See_also)
 
 ## Installing
@@ -619,6 +620,18 @@ With the function appropriately configured, ensure that FvwmEvent is started and
 * FvwmEvent: new_page "Focus-Previous CurrentPage NoWarp"
 * FvwmEvent: new_desk "Focus-Previous CurrentDesk"
 
+```
+
+### Toggle window decorations
+
+Window decorations (borders and titlebars) can be toggled on or off for a selected window using the function defined below.
+
+```
+DestroyFunc UndecorateWin
+AddToFunc UndecorateWin
+I ThisWindow (HasHandles) WindowStyle !Title, !Borders
+I TestRc (Match) Break
+I ThisWindow (!HasHandles) WindowStyle Title, Borders
 ```
 
 ## See also

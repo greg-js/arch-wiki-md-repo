@@ -108,7 +108,7 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 **Nota:** Para obter uma lista de pacotes instalados como dependências, mas não mais exigidos para qualquer pacote instalado, veja [#Removendo pacotes não usados (órfãos)](#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29).
 
-Listar os pacotes instalados explicitamente que não estejam no grupo [base](https://www.archlinux.org/groups/x86_64/base/) nem no [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
+Listar explicitamente os pacotes instalados explicitamente que não estejam no grupo [base](https://www.archlinux.org/groups/x86_64/base/) nem no [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
 ```
 $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
@@ -132,14 +132,21 @@ $ expac -HM '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base ba
 Listar todos os pacotes instalados que *não* estão no repositório especificado *nome_repo*
 
 ```
-$ comm -23 <(pacman -Qtq | sort) <(pacman -Slq *nome_repo* | sort)
+$ comm -23 <(pacman -Qq | sort) <(pacman -Slq *nome_repo* | sort)
 
 ```
 
 Listar todos os pacotes instalados que estão no repositório *nome_repo*:
 
 ```
-$ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *nome_repo* | sort)
+$ comm -12 <(pacman -Qq | sort) <(pacman -Slq *nome_repo* | sort)
+
+```
+
+Listar todos os pacotes na ISO do Arch Linux que não estão no grupo base:
+
+```
+$ comm -23 <(wget -q -O - https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
 
 ```
 
@@ -336,7 +343,15 @@ Se você tiver várias máquinas com Arch na sua rede local, você pode comparti
 
 #### Cache de somente leitura
 
-Se você está procurando uma solução rápida e ruim, você pode simplesmente executar um servidor web autônomo que outros computadores possam usar como um primeiro espelho: `darkhttpd /var/cache/pacman/pkg`. Basta adicionar este servidor no topo da sua lista de espelhos. Esteja ciente de que você pode obter um monte de erros 404, devido a falta de cache, dependendo do que você faz, mas o *pacman* tentará os seguintes espelhos (reais) quando isso acontecer.
+Se você está procurando uma solução rápida, você pode simplesmente executar um servidor web autônomo que outros computadores possam usar como um primeiro espelho:
+
+```
+# ln -s /var/lib/pacman/sync/*.db /var/cache/pacman/pkg
+$ sudo -u http darkhttpd /var/cache/pacman/pkg --no-server-id
+
+```
+
+Você também poderia executar darkhttpd como um serviço systemd por conveniência. Basta adicionar esse servidor no topo de seu `/etc/pacman.d/mirrorlist` em máquinas clientes com `Server = http://meuespelho:8080`. Certifique-se de manter seu espelho atualizado.
 
 #### Cache somente leitura distribuído
 
@@ -434,7 +449,7 @@ $ pacman -Qqe > pkglist.txt
 
 ```
 
-**Nota:** Se você usou `-Qqet`, ao reinstalar a lista, todos os pacotes de nível superior não seriam definidos como dependências.
+**Nota:** Ao usar a opção `-t`, ao reinstalar a lista, todos os pacotes de nível superior não seriam definidos como dependências. Com a opção `-n`, pacotes externos (p. ex., do AUR) são omitidos da lista.
 
 Para instalar pacotes da lista backup, execute:
 
@@ -463,6 +478,24 @@ Para remover todos os pacotes em seu sistema que não são mencionados na lista:
 ```
 
 **Dica:** Essas tarefas podem ser automatizadas. Veja [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) e[pug](https://aur.archlinux.org/packages/pug/) para exemplos.
+
+Se você gostaria de manter uma lista atualizada de pacotes instalados explicitamente (p. ex., em combinação com um `/etc/` versionado), você pode configurar um [hook](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)"). Por exemplo:
+
+```
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+```
+
+```
+[Action]
+When = PostTransaction
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/packages.txt'
+
+```
 
 ### Listando todos os arquivos alterados de pacotes
 

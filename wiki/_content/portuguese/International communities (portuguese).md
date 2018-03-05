@@ -74,6 +74,7 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Fórum: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/)
 *   Wiki: [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)")
 *   Planet: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org)
+*   ArchlinuxLatinoamerica: [https://ArchlinuxLatinoamerica.wordpress.com](https://ArchlinuxLatinoamerica.wordpress.com)
 
 ### França
 

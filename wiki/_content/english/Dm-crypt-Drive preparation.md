@@ -101,23 +101,23 @@ The partitions formatted with dm-crypt/LUKS contain a header with the cipher and
 
 Wiping the LUKS header will delete the PBKDF2-encrypted (AES) master key, salts and so on.
 
-**Note:** It is crucial to write to the LUKS encrypted partition (`/dev/sda**1**` in this example) and not directly to the disks device node. Setups with encryption as a device-mapper layer on top of others, e.g. LVM on LUKS on RAID should then write to RAID respectively.
+**Note:** It is crucial to write to the LUKS encrypted partition (`/dev/sdX**1**` in this example) and not directly to the disks device node. Setups with encryption as a device-mapper layer on top of others, e.g. LVM on LUKS on RAID should then write to RAID respectively.
 
-A header with one single default 256 bit size keyslot is 1024KB in size. It is advised to also overwrite the first 4KB written by dm-crypt, so 1028KB have to be wiped. That is `1052672` Byte.
+A header with one single default 256 bit size keyslot is 1024KiB in size. It is advised to also overwrite the first 4KiB written by dm-crypt, so 1028KiB have to be wiped. That is `1052672` Byte.
 
 For zero offset use:
 
 ```
-# head -c 1052672 /dev/urandom > /dev/sdX1; sync
+# head -c 1052672 /dev/urandom > */dev/sdX1*; sync
 
 ```
 
-For 512 bit key length (e.g. for aes-xts-plain with 512 bit key) the header is 2MB.
+For 512 bit key length (e.g. for aes-xts-plain with 512 bit key) the header is 2MiB. LUKS2 header is 4MiB.
 
-If in doubt, just be generous and overwrite the first 10MB or so.
+If in doubt, just be generous and overwrite the first 10MiB or so.
 
 ```
-# dd if=/dev/urandom of=/dev/sdX1 bs=512 count=20480
+# dd if=/dev/urandom of=*/dev/sdX1* bs=512 count=20480
 
 ```
 

@@ -60,7 +60,7 @@ Saia do chroot (com `exit`), reinicie e agora deve funcionar.
 
 O [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") é um *snapshot* diário dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
-O *ALA* pode ser usado para instalar uma versão anterior de um pacote ou restaurar o sistema para uma data anterior.
+O *ALA* pode ser usado para [instalar uma versão anterior de um pacote](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs)#Como_fazer_downgrade_de_um_pacote "Arch Linux Archive (Português)") ou [restaurar o sistema para uma data anterior](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs)#Como_restaurar_todos_os_pacotes_para_uma_data_espec.C3.ADfica "Arch Linux Archive (Português)").
 
 ### Recompilar o pacote
 

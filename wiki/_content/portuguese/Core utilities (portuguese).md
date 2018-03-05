@@ -111,7 +111,7 @@ Para mais informações, veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man
 [grep](https://en.wikipedia.org/wiki/pt:grep "w:pt:grep") (de *g/re/p*, *global/regular expression/print*, do [ed](https://en.wikipedia.org/wiki/pt:Ed_(software) "w:pt:Ed (software)")) é um utilitário de pesquisa de texto de linha de comando originalmente escrito para Unix. O comando *grep* pesquisa arquivos ou entrada padrão para linhas correspondendo a uma expressão regular dada, e imprime essas linhas para a saída padrão do programa.
 
 *   Lembre-se que *grep* trata de arquivos, então um construto como `cat *arquivo* | grep *padrão*` pode ser substituído com `grep *padrão* *arquivo*`
-*   Há alternativas ao *grep* otimizadas para código fonte em VCS, tal como [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) e [ack](https://www.archlinux.org/packages/?name=ack).
+*   Há alternativas ao *grep* otimizadas para código fonte em VCS, tal como [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) e [ack](https://www.archlinux.org/packages/?name=ack).
 *   Para incluir números de linha de arquivo na saída, use a opção `-n`.
 
 **Nota:** Alguns comandos enviam suas saídas para [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) e o grep não tem aparente efeito. Neste caso, redirecione *stderr* para *stdout* com `*comando* 2>&1 | grep *args*` ou (par Bash 4) `*comando* |& grep *args*`. Veja também [Redirecionamento de E/S](http://www.tldp.org/LDP/abs/html/io-redirection.html) (inglês).
@@ -122,7 +122,7 @@ Para suporte a cores, veja [Color output in console#grep](/index.php/Color_outpu
 
 *find* é parte do pacote [findutils](https://www.archlinux.org/packages/?name=findutils), que pertence ao grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/).
 
-Dica: [fd](https://github.com/sharkdp/fd) é uma alternativa moderna e amigável para usuário para `find`, que tenta melhorar desempenho e oferece padrões mais amigáveis. Por exemplo, `fd PADRÃO` em vez de `find -iname '*PADRÃO*'`. Possui saída colorida (semelhante ao `ls`), pesquisa de casos inteligentes por padrão, ignorar arquivos ocultos e muito mais. [fd](https://www.archlinux.org/packages/?name=fd)
+**Tip:** [fd](https://www.archlinux.org/packages/?name=fd) é uma alternativa simples, rápida e amigável ao `find` que fornece mais padrões sensíveis (p. ex., ignora arquivos ocultos, dirs e arquivos listados no `.gitignore`, `fd PADRÃO` em vez de `find -iname '*PADRÃO*'`). Possui saída colorida (semelhante ao `ls`), suporte a Unicode, expressões regulares e muito mais.
 
 Provavelmente se esperaria que um comando *find* levasse como argumento um nome de arquivo e pesquisasse no sistema de arquivos para arquivos que correspondessem a esse nome. Para um programa que faz exatamente isso, veja [#locate](#locate) abaixo.
 
@@ -296,7 +296,7 @@ A opção `-v` o torna verboso.
 
 Alterar o modo de um diretório recém-criado usando *chmod* não é necessário como a opção `-m` permite que você defina as permissões de acesso.
 
-**Dica:** Se você já quer um diretório temporário, uma alternativa melhor pode ser o [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -p`.
+**Dica:** Se você já quer um diretório temporário, uma alternativa melhor pode ser o [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -d`.
 
 ## mv
 

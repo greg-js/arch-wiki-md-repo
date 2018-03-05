@@ -181,7 +181,7 @@ optdepends=('cups: printing support'
 
 Um vetor de pacotes que são necessários **apenas** para compilar o software. A versão mínima de dependência pode ser especificada no mesmo formato que no vetor `depends`. Os pacotes no vetor `depends` são implicitamente necessários para compilar o pacote, então eles não devem ser duplicados aqui.
 
-**Dica:** O comando a seguir pode ser usado para ver se um pacote em particular está no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) ou obtido por um membro do grupo:
+**Dica:** O comando a seguir pode ser usado para verificar se um pacote em particular está no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) ou é obtido por um membro do grupo:
 ```
 $ LC_ALL=C pacman -Si $(pactree -rl ''pacote'') 2>/dev/null | grep -q "^Groups *:.*base-devel"
 
@@ -203,7 +203,7 @@ Um vetor de pacotes dos quais o software depende para executar sua suíte de tes
 
 Um vetor de pacotes adicionais dos quais o software fornece as funcionalidades (ou um pacote virtual como o `cron` ou `sh`). Pacotes fornecendo o mesmo item podem ser instalados lado a lado, a menos que um deles use um vetor `conflicts`.
 
-**Atenção:** Uma versão que aquele pacote fornece deve ser mencionada (`pkgver` e talvez o `pkgrel`), se pacotes precisando do software exigirem uma. Por exemplo, um pacote modificado do *qt* na versão 3.3.8, chamado *qt-foobar*, deve usar `provides=('qt=3.3.8')`; usando `provides=('qt')` causaria as dependências a exigir uma versão específica do *qt* falharia. Não adicione `pkgname` ao vetor `provides`, pois isso é feito automaticamente.
+**Nota:** A versão que aquele pacote fornece deve ser mencionada (`pkgver` e potencialmente o `pkgrel`), no caso de pacotes referenciando software que exigem uma. Por exemplo, um pacote modificado do *qt* na versão 3.3.8, chamado *qt-foobar*, deve usar `provides=('qt=3.3.8')`; omitir o número de versão causaria as dependências a exigir uma versão específica do *qt* falharia. Não adicione `pkgname` ao vetor `provides`, pois isso é feito automaticamente.
 
 ### conflicts
 
@@ -218,8 +218,6 @@ Porém, há uma exceção a isso. Se seu pacote fornece um nome de pacote e os o
 *   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) fornece `netbeans` e conflita com `netbeans`, mas não precisa conflitar com [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) já que o pacman é suficientemente inteligente para descobrir que esses pacotes são incompatíveis, já que eles fornecem as mesmas funcionalidades e estão em conflito com isso.
 
 	O mesmo se aplica no inverso: [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) também não precisa conflitar com [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/), porque eles fornecem o mesmo pacote.
-
-Apesar de isso não ser recomendado, na prática, colocar os pacotes conflitantes em todas as direções não é sempre aplicável especialmente se todos esses pacotes forem mantidos por pessoas diferentes. Essa exceção é útil e, portanto, é conveniente. Dessa forma você sabe que você não precisa contatar todos os mantenedores com os quais seu pacote conflita para solicitar que eles incluam o nome do seu pacote no vetor `conflicts` dos pacotes deles.
 
 ### replaces
 
@@ -245,7 +243,7 @@ A lista completa das opções disponíveis podem ser localizadas em [PKGBUILD(5)
 
 ### install
 
-O nome do script `.install` a ser incluído no pacote. Este deve ser o mesmo que `pkgname`. *pacman* possui a habilidade de armazenar e executar um script específico por pacote durante a instalação, remoção ou atualização de um pacote. O script contém as seguintes funções que são executadas em momentos diferentes:
+O nome do script *.install* a ser incluído no pacote. Este deve ser o mesmo que `pkgname`. *pacman* possui a habilidade de armazenar e executar um script específico por pacote durante a instalação, remoção ou atualização de um pacote. O script contém as seguintes funções que são executadas em momentos diferentes:
 
 *   `pre_install` — O script é executado logo antes dos arquivos serem extraídos. Um argumento é passado: nova versão do pacote.
 *   `post_install` — O script é executado logo após os arquivos serem extraídos. Um argumento é passado: nova versão do pacote.
@@ -258,7 +256,7 @@ Cada função é executada em [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroo
 
 **Dica:**
 
-*   Um protótipo de `.install` é fornecido em [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
+*   Um protótipo de *.install* é fornecido em [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
 *   [Hooks do pacman](/index.php/Pacman#Hooks "Pacman") fornecem funcionalidade similar.
 
 **Nota:** Não termine o script com `exit`. Isso evitaria as funções contidas de serem executadas.

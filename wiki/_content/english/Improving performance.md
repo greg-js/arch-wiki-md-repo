@@ -152,7 +152,7 @@ Other mount options are filesystem specific, therefore see the relevant articles
 *   [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4")
 *   [JFS Filesystem#Optimizations](/index.php/JFS_Filesystem#Optimizations "JFS Filesystem")
 *   [XFS](/index.php/XFS "XFS")
-*   [Btrfs#Defragmentation](/index.php/Btrfs#Defragmentation "Btrfs") and [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs")
+*   [Btrfs#Defragmentation](/index.php/Btrfs#Defragmentation "Btrfs"), [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs"), and [btrfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5)
 *   [ZFS#Tuning](/index.php/ZFS#Tuning "ZFS")
 
 ##### Reiserfs
@@ -491,7 +491,7 @@ or use:
 
 After you disabled watchdogs, you can *optionally* avoid the loading of the module responsible of the hardware watchdog, too. Do it by [blacklisting](/index.php/Blacklisting "Blacklisting") the related module, e.g. `iTCO_wdt`.
 
-**Note:** Some users [reported](https://bbs.archlinux.org/viewtopic.php?id=221239) the `nowatchdog` parameter doesn't work as expected but they have successfully disabled the watchdog (at least the hardware one) by blacklisting the above-mentioned module.
+**Note:** Some users [reported](https://bbs.archlinux.org/viewtopic.php?id=221239) the `nowatchdog` parameter does not work as expected but they have successfully disabled the watchdog (at least the hardware one) by blacklisting the above-mentioned module.
 
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](/index.php/Power_management#Disabling_NMI_watchdog "Power management").
 

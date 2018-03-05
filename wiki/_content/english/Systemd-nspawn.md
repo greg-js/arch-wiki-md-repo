@@ -437,14 +437,14 @@ It can sometimes be impossible to upgrade some packages on the container, [files
 
 ### execv(...) failed: Permission denied
 
-When trying to boot the container via `systemd-nspawn -bD /path/to/container` (or executing something in the container), and the following error comes up:
+When trying to boot the container via `systemd-nspawn -bD */path/to/container*` (or executing something in the container), and the following error comes up:
 
 ```
 execv(/usr/lib/systemd/systemd, /lib/systemd/systemd, /sbin/init) failed: Permission denied
 
 ```
 
-even though the permissions of the files in question (i.e. /lib/systemd/systemd) are correct, this can be the result of having mounted the file system on which the container is stored as non-root user. For example, if you mount your disk manually with an entry in `/etc/fstab` that has the options `noauto,user,...`, systemd-nspawn will not allow executing the files even if they are owned by root.
+even though the permissions of the files in question (i.e. `/lib/systemd/systemd`) are correct, this can be the result of having mounted the file system on which the container is stored as non-root user. For example, if you mount your disk manually with an entry in [fstab](/index.php/Fstab "Fstab") that has the options `noauto,user,...`, *systemd-nspawn* will not allow executing the files even if they are owned by root.
 
 ## See also
 

@@ -9,7 +9,6 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
 ## Contents
 
 *   [1 Nome do pacote](#Nome_do_pacote)
-    *   [1.1 Pacotes versionados](#Pacotes_versionados)
 *   [2 Métodos de instalação](#M.C3.A9todos_de_instala.C3.A7.C3.A3o)
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
@@ -19,11 +18,7 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
 
 ## Nome do pacote
 
-Para bibliotecas Python 3 use `python-*nomemódulo*`. Use também o prefixo se o pacote fornecer um programa fortemente acoplado ao ecossistema Python (por exemplo, pip ou tox). Para outros aplicativos, use apenas o nome do programa. Em ambos os casos, o nome do pacote deve ser completamente minúsculo.
-
-O mesmo se aplica a somente Python 2, mas o prefixo (se necessário) é `python2-`.
-
-### Pacotes versionados
+Para módulos de [Python 3](/index.php/Python#Python_3 "Python"), use a sistemática de nome `python-*nomemódulo*`; se o pacote é para [Python 2](/index.php/Python#Python_2 "Python"), use o prefixo `python2-`.
 
 Se você precisar adicionar um pacote versionado, use `python-*nomemódulo*-*versão*` (ex.: `python-colorama-0.2.5`). Então, uma dependência python `colorama==0.2.5` vai se tornar em um pacote Arch `python-colorama-0.2.5`.
 
@@ -38,13 +33,13 @@ No entanto, para gerenciar pacotes Python dentro de PKGBUILDs, o [distutils](htt
 Um exemplo de PKGBUILD com *distutils* pode ser encontrado [aqui](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto). Ele segue a forma:
 
 ```
-*<versão python>* setup.py install --root="$pkgdir/" --optimize=1
+python setup.py install --root="$pkgdir/" --optimize=1
 
 ```
 
 sendo que:
 
-*   *<versão python>* é substituído com o binário correto, `python` ou `python2`
+*   python é substituído com o binário correto, `python` ou `python2`
 *   `--root="$pkgdir/"` evita a tentativa de instalar diretamente no sistema hospedeiro em vez do arquivo de pacote, que resultaria em um erro de permissão
 *   `--optimize=1` compila arquivos `.pyo` de forma que eles possam ser rastreados pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 

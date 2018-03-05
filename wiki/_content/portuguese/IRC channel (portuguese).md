@@ -16,7 +16,7 @@ Artigos relacionados
 
 ## Canais principais
 
-**Atenção:** Estatísticas de canal são registrados para [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Fale com [demize](/index.php/User:Kyrias "User:Kyrias") (#archlinux) ou dunz0r (#archlinux-offtopic) se você gostaria de se retirar permanentemente.
+**Atenção:** Estatísticas de canal são registrados para [#archlinux-offtopic](https://yeah.nah.nz/aotstats/). Fale com [demize](/index.php/User:Kyrias "User:Kyrias") (#archlinux) ou *bq/phillid* (#archlinux-offtopic) se você gostaria de se retirar permanentemente.
 
 Essa seção é sobre [#archlinux](ircs://chat.freenode.net/archlinux), o canal [IRC](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat") principal do Arch Linux, e [#archlinux-offtopic](ircs://chat.freenode.net/archlinux-offtopic), o canal social principal do Arch Linux, ambos disponíveis na rede [Freenode](https://freenode.net/).
 

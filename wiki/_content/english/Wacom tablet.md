@@ -72,7 +72,7 @@ For this to work you do not need any `xorg.conf` file, any configurations are ma
 
 With the arrival of Xorg 1.8 support for HAL was dropped in favor of [udev](/index.php/Udev "Udev") which might break auto-detection for some tablets as fitting udev rules might not exist yet, so you may need to write your own.
 
-The *xf86-input-wacom* driver was designed to work with the Xorg server so there maybe problems if your running your desktop environment in Wayland (The default for Gnome).
+The *xf86-input-wacom* driver was designed to work with the Xorg server so there may be problems if you're running your desktop environment in Wayland (The default for Gnome).
 
 ### Manual setup
 

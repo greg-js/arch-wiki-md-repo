@@ -324,7 +324,7 @@ It is likely that you will need to change `volume` to match either a filesystem'
 
 As a fallback mechanism rEFInd relies on `/etc/fstab` and/or [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) to specify kernel options `root` and `ro` or `rw`.
 
-**Note:** rEFInd doesn't support escape codes (e.g. for [spaces](/index.php/Fstab#Filepath_spaces "Fstab")) in `/etc/fstab`.
+**Note:** rEFInd does not support escape codes (e.g. for [spaces](/index.php/Fstab#Filepath_spaces "Fstab")) in `/etc/fstab`.
 
 ## Installation alongside an existing UEFI Windows installation
 

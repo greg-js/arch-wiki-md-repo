@@ -247,6 +247,10 @@ Eventually, you want to be able to browse the `.snapshots` directory with a user
 
 There are a couple of packages used for automatically creating snapshots upon a pacman transaction:
 
+*   **pacupg** — "Script that wraps package and AUR upgrades in btrfs snapshots and provides an easy way to roll them back."
+
+	[https://github.com/crossroads1112/bin/tree/master/pacupg](https://github.com/crossroads1112/bin/tree/master/pacupg) || [pacupg](https://aur.archlinux.org/packages/pacupg/)
+
 *   **snap-pac** — "Makes pacman automatically use snapper to create [#Pre/post snapshots](#Pre.2Fpost_snapshots) like openSUSE's YaST". Uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
@@ -255,9 +259,9 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 	[snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub/) || [snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub/)
 
-*   **pacupg** — "Script that wraps package and AUR upgrades in btrfs snapshots and provides an easy way to roll them back."
+*   **snp** — wrap any shell command in a snapper pre-post snapshot, e.g. `$ snp pacman -Syyu`
 
-	[https://github.com/crossroads1112/bin/tree/master/pacupg](https://github.com/crossroads1112/bin/tree/master/pacupg) || [pacupg](https://aur.archlinux.org/packages/pacupg/)
+	[https://gist.github.com/erikw/5229436](https://gist.github.com/erikw/5229436) ||
 
 #### Backup non-btrfs boot partition on pacman transactions
 
@@ -283,6 +287,10 @@ Exec = /usr/bin/rsync -a --delete /boot /.bootbackup
 
 The following packages use `btrfs send` and `btrfs receive` to send backups incrementally to an external drive. Refer to their documenation to see differences in implementation, features, and requirements.
 
+*   **buttersink** — "Buttersink is like rsync for btrfs snapshots."
+
+	[https://github.com/AmesCornish/buttersink.git](https://github.com/AmesCornish/buttersink.git) || [buttersink-git](https://aur.archlinux.org/packages/buttersink-git/)
+
 *   **snap-sync** — "Use snapper snapshots to backup to external drive."
 
 	[https://github.com/wesbarnett/snap-sync.git](https://github.com/wesbarnett/snap-sync.git) || [snap-sync](https://aur.archlinux.org/packages/snap-sync/)
@@ -290,10 +298,6 @@ The following packages use `btrfs send` and `btrfs receive` to send backups incr
 *   **snapsync** — "A synchronization tool for snapper"
 
 	[https://github.com/doudou/snapsync](https://github.com/doudou/snapsync) || [ruby-snapsync](https://aur.archlinux.org/packages/ruby-snapsync/)
-
-*   **buttersink** — "Buttersink is like rsync for btrfs snapshots."
-
-	[https://github.com/AmesCornish/buttersink.git](https://github.com/AmesCornish/buttersink.git) || [buttersink-git](https://aur.archlinux.org/packages/buttersink-git/)
 
 ### Suggested filesystem layout
 

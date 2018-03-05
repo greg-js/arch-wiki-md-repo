@@ -109,7 +109,7 @@ Primeiro, monte os sistemas de arquivos de api temporários:
 
 ```
 # cd */local/da/nova/raiz*
-# mount -t proc proc proc/
+# mount -t proc /proc proc/
 # mount --rbind /sys sys/
 # mount --rbind /dev dev/
 

@@ -47,7 +47,7 @@ Esse último é comparável com `pacman -Ql` (veja [pacman (Português)#Consulta
 
 ## Comando não localizado
 
-Veja [Bash#Command not found](/index.php/Bash#Command_not_found "Bash") e [Zsh#The "command not found" hook](/index.php/Zsh#The_.22command_not_found.22_hook "Zsh").
+Veja [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#The "command not found" hook](/index.php/Zsh#The_.22command_not_found.22_hook "Zsh") e [Fish#The "command not found" hook](/index.php/Fish#The_.22command_not_found.22_hook "Fish").
 
 ## Atualizações automáticas
 

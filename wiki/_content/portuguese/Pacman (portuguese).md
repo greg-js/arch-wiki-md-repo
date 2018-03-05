@@ -306,6 +306,8 @@ $ pacman -Qdt
 
 ```
 
+**Dica:** Adicione o comando acima para um [hook](#Hooks) pós-transação do pacman para ser notificado se uma transação tornou um pacote órfão. Isso pode ser útil para ser notificado quando um pacote foi retirado de um repositório, desde que qualquer pacote retirado também seja tornado órfão em uma instalação local (a menos que tenha sido instalado explicitamente). Para evitar quaisquer erros "falha ao executar o comando" quando nenhum órfão é encontrado, use o seguinte comando para `Exec` em seu hook: `/usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '=> Nenhum encontrado.'"`
+
 Para listar todos os pacotes explicitamente instalados e que não são necessários como dependências:
 
 ```

@@ -224,7 +224,7 @@ OnUnitActiveSec=10m
 
 ```
 
-See [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5) for additional options.
+See [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5) for additional options.
 
 ## FAQ
 

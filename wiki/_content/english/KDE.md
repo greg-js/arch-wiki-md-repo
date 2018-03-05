@@ -429,9 +429,9 @@ By default every removable device is blacklisted. You just have to remove your d
 
 	[https://konqueror.org/](https://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
-*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — A Qt web browser with Plasma integration features. It uses Qt WebEngine.
+*   **[Falkon](https://en.wikipedia.org/wiki/Falkon "wikipedia:Falkon")** — A Qt web browser with Plasma integration features, previously known as Qupzilla. It uses Qt WebEngine.
 
-	[https://www.qupzilla.com/](https://www.qupzilla.com/) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
+	[https://userbase.kde.org/Falkon/](https://userbase.kde.org/Falkon/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
 
 *   **[Chromium](/index.php/Chromium "Chromium")** — Chromium and its proprietary variant Google Chrome have limited Plasma integration. [They can use KWallet](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") and KDE Open/Save windows.
 

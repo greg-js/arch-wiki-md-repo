@@ -34,6 +34,7 @@ First, to give an overview of the overall directory structure of Hiawatha, the h
 *   `/etc/hiawatha` - program configuration files
 *   `/etc/hiawatha/tls` - website TLS certificate
 *   `/srv/http/hiawatha` - root for the default blank website associated with the IP address
+*   `/var/lib/hiawatha` - cache for http compression and uploads
 *   `/var/log/hiawatha` - log files for the program and the default website
 *   `/srv/http/*my-domain*/public` - website root
 *   `/srv/http/*my-domain*/log` - website log files

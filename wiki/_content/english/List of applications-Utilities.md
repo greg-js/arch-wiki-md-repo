@@ -726,17 +726,25 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 ### Disk cleaning
 
-*   **rmlint** — Tool to quickly find (and optionally remove) duplicate files and other lint
-
-	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
-
 *   **[BleachBit](https://en.wikipedia.org/wiki/BleachBit "wikipedia:BleachBit")** — It frees disk space and guards your privacy; frees cache, deletes cookies, clears Internet history, shreds temporary files, deletes logs, and discards junk you didn't know was there.
 
 	[http://bleachbit.sourceforge.net/](http://bleachbit.sourceforge.net/) || [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) [bleachbit-git](https://aur.archlinux.org/packages/bleachbit-git/)
 
+*   **[fdupes](https://en.wikipedia.org/wiki/fdupes "wikipedia:fdupes")** — a program for identifying or deleting duplicate files residing within specified directories
+
+	[https://github.com/adrianlopezroche/fdupes](https://github.com/adrianlopezroche/fdupes) || [fdupes](https://www.archlinux.org/packages/?name=fdupes)
+
+*   **[fslint](http://www.pixelbeat.org/fslint/)** — A utility to find and clean various forms of lint on a filesystem
+
+	[https://github.com/pixelb/fslint](https://github.com/pixelb/fslint) || [fslint](https://aur.archlinux.org/packages/fslint/)
+
 *   **gconf-cleaner** — cleans up the unknown/invalid gconf keys that still sitting down on your gconf database
 
 	[https://code.google.com/archive/p/gconf-cleaner/](https://code.google.com/archive/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
+
+*   **rmlint** — Tool to quickly find (and optionally remove) duplicate files and other lint
+
+	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
 ### Disk usage display
 

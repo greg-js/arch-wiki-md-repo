@@ -34,7 +34,7 @@ $ env EDITOR=vim xterm
 
 ```
 
-O comando *set*, embutido no [Bash](/index.php/Bash "Bash"), permite alterar as variáveis de opções shell e definir os parâmetros posicionais, ou para exibir os nomes das variáveis de shell. Para mais informações, veja a documentação do *set*: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
+O comando *set*, embutido no [Bash](/index.php/Bash "Bash"), permite alterar as variáveis de opções shell e definir os parâmetros posicionais, ou para exibir os nomes das variáveis de shell. Para mais informações, veja [a documentação do *set*](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
 
 Cada processo armazena seu ambiente no arquivo `/proc/$PID/environ`. Esse arquivo contém um par de chave-valor delimitado por um caractere nulo (`\x0`). Um formato mais legível para humanos pode ser obtido com o [sed](/index.php/Utilit%C3%A1rios_principais#sed "Utilitários principais"), p.ex. `sed 's:\x0:
 :g' /proc/$PID/environ`.
@@ -70,7 +70,7 @@ fi
 
 Nem sempre você deseja definir uma variável de ambiente globalmente. Por exemplo, você pode querer adicionar `/home/meu_usuário/bin` à variável `PATH`, mas não deseja que todos os outros usuários em seu sistema tenham isso em seus `PATH` também. Variáveis de ambiente locais pode ser definidos em muitos arquivos diferentes:
 
-*   `~/.pam_environment` é o equivalente específico de usuário de `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), usado pelo módulo pam_env. Veja [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) e [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) para detalhes.
+*   `~/.pam_environment` é o equivalente específico de usuário de `/etc/security/pam_env.conf` [[1]](https://github.com/linux-pam/linux-pam/issues/6), usado pelo módulo pam_env. Veja [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) e [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) para detalhes.
 *   Arquivos de configuração de usuário de seu [shell](/index.php/Command-line_shell_(Portugu%C3%AAs) "Command-line shell (Português)"), por exemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 *   `~/.profile` é usado por muitos shells como reserva, veja [Wikipedia:pt:Shell do Unix#Arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
 

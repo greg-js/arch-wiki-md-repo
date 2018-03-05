@@ -45,6 +45,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [3.5 Choppy sound with analog surround sound setup](#Choppy_sound_with_analog_surround_sound_setup)
     *   [3.6 Laggy sound](#Laggy_sound)
     *   [3.7 Choppy/distorted sound](#Choppy.2Fdistorted_sound)
+    *   [3.8 Sound stuttering when streaming over network](#Sound_stuttering_when_streaming_over_network)
 *   [4 Hardware and Cards](#Hardware_and_Cards)
     *   [4.1 No HDMI sound output after some time with the monitor turned off](#No_HDMI_sound_output_after_some_time_with_the_monitor_turned_off)
     *   [4.2 No HDMI sound using a headless server](#No_HDMI_sound_using_a_headless_server)
@@ -805,6 +806,24 @@ Setting the PCM volume above 0 dB can cause [clipping](https://en.wikipedia.org/
  `/etc/pulse/default.pa`  `load-module module-udev-detect ignore_dB=1` 
 
 and restart the PulseAudio server. See also [#No sound below a volume cutoff](#No_sound_below_a_volume_cutoff).
+
+### Sound stuttering when streaming over network
+
+When streaming over Wi-Fi using module-native-protocol-tcp you can experience periodic sound stuttering with buffer underruns. As a workaround you can try to use rtp protocol. On sender side create rtp sink:
+
+ `/etc/pulse/default.pa` 
+```
+load-module module-null-sink sink_name=rtp
+load-module module-rtp-send source=rtp.monitor
+```
+
+and switch to it:
+
+ `/etc/pulse/default.pa`  `set-default-sink rtp` 
+
+On receiver side load rtp module:
+
+ `/etc/pulse/default.pa`  `load-module module-rtp-recv` 
 
 ## Hardware and Cards
 

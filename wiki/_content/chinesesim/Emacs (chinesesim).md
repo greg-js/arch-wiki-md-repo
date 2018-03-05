@@ -1,8 +1,6 @@
-**翻译状态：** 本文是英文页面 [Emacs](/index.php/Emacs "Emacs") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-12-08，点击[这里](https://wiki.archlinux.org/index.php?title=Emacs&diff=0&oldid=229169)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Emacs](/index.php/Emacs "Emacs") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-04，点击[这里](https://wiki.archlinux.org/index.php?title=Emacs&diff=0&oldid=229169)可以查看翻译后英文页面的改动。
 
-[Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs")是一个扩展方便，定制能力强，文档丰富的动态交互编辑器。Emacs的核心构建在[Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp")解释器之上，其中Emacs Lisp是大部分Emacs的内建函数和拓展模块的实现语言。Emacs可以在命令行界面下(CLI)工作良好，在图形界面系统下，使用GTK作为默认的图形界面构建工具。在文本编辑能力上，Emacs常常拿来和[vim](/index.php/Vim "Vim")比较。
-
-**Note:** 入门建议直接使用starterkit扩展。本文档实际帮助不大
+[Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs")是一个可扩展、可定制、自文档化的实时显示编辑器。Emacs的核心构建在[Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp")解释器之上，Emacs Lisp是大部分Emacs内建函数和拓展模块的实现语言。在图形界面系统下，Emacs使用GTK作为默认的X工具，在命令行界面下(CLI)，Emacs也可以工作良好。在文本编辑能力上，Emacs常被拿来和[vim](/index.php/Vim "Vim")比较。
 
 ## Contents
 
@@ -11,47 +9,48 @@
     *   [2.1 没有颜色](#.E6.B2.A1.E6.9C.89.E9.A2.9C.E8.89.B2)
     *   [2.2 作为守护进程](#.E4.BD.9C.E4.B8.BA.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
     *   [2.3 作为systemd单元](#.E4.BD.9C.E4.B8.BAsystemd.E5.8D.95.E5.85.83)
-*   [3 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [3.1 TRAMP](#TRAMP)
-    *   [3.2 键盘宏和寄存器](#.E9.94.AE.E7.9B.98.E5.AE.8F.E5.92.8C.E5.AF.84.E5.AD.98.E5.99.A8)
-    *   [3.3 正则表达式](#.E6.AD.A3.E5.88.99.E8.A1.A8.E8.BE.BE.E5.BC.8F)
-*   [4 定制](#.E5.AE.9A.E5.88.B6)
-    *   [4.1 多种配置](#.E5.A4.9A.E7.A7.8D.E9.85.8D.E7.BD.AE)
-    *   [4.2 加载扩展程序](#.E5.8A.A0.E8.BD.BD.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F)
-    *   [4.3 Local and custom variables](#Local_and_custom_variables)
-    *   [4.4 Custom colors and theme](#Custom_colors_and_theme)
-    *   [4.5 SyncTeX support](#SyncTeX_support)
-*   [5 Documentation](#Documentation)
-    *   [5.1 Contextual help](#Contextual_help)
-    *   [5.2 The manuals](#The_manuals)
-*   [6 拓展模块](#.E6.8B.93.E5.B1.95.E6.A8.A1.E5.9D.97)
-*   [7 疑难杂症](#.E7.96.91.E9.9A.BE.E6.9D.82.E7.97.87)
-    *   [7.1 彩色输出的问题](#.E5.BD.A9.E8.89.B2.E8.BE.93.E5.87.BA.E7.9A.84.E9.97.AE.E9.A2.98)
-    *   [7.2 菜单显示为空](#.E8.8F.9C.E5.8D.95.E6.98.BE.E7.A4.BA.E4.B8.BA.E7.A9.BA)
-    *   [7.3 X 窗口下的字符显示问题](#X_.E7.AA.97.E5.8F.A3.E4.B8.8B.E7.9A.84.E5.AD.97.E7.AC.A6.E6.98.BE.E7.A4.BA.E9.97.AE.E9.A2.98)
-    *   [7.4 启动速度慢](#.E5.90.AF.E5.8A.A8.E9.80.9F.E5.BA.A6.E6.85.A2)
-        *   [7.4.1 错误的网络配置](#.E9.94.99.E8.AF.AF.E7.9A.84.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
-        *   [7.4.2 初始化文件加载慢](#.E5.88.9D.E5.A7.8B.E5.8C.96.E6.96.87.E4.BB.B6.E5.8A.A0.E8.BD.BD.E6.85.A2)
-    *   [7.5 不能打开配置文件: ...](#.E4.B8.8D.E8.83.BD.E6.89.93.E5.BC.80.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6:_...)
-    *   [7.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
-    *   [7.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
-    *   [7.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
-    *   [7.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
-    *   [7.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
-*   [8 替代方案](#.E6.9B.BF.E4.BB.A3.E6.96.B9.E6.A1.88)
-    *   [8.1 mg](#mg)
-    *   [8.2 zile](#zile)
-    *   [8.3 uemacs](#uemacs)
-    *   [8.4 remacs](#remacs)
-*   [9 资源](#.E8.B5.84.E6.BA.90)
+*   [3 使用](#.E4.BD.BF.E7.94.A8)
+*   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
+    *   [4.1 TRAMP](#TRAMP)
+    *   [4.2 键盘宏和寄存器](#.E9.94.AE.E7.9B.98.E5.AE.8F.E5.92.8C.E5.AF.84.E5.AD.98.E5.99.A8)
+    *   [4.3 正则表达式](#.E6.AD.A3.E5.88.99.E8.A1.A8.E8.BE.BE.E5.BC.8F)
+*   [5 定制](#.E5.AE.9A.E5.88.B6)
+    *   [5.1 多种配置](#.E5.A4.9A.E7.A7.8D.E9.85.8D.E7.BD.AE)
+    *   [5.2 加载扩展程序](#.E5.8A.A0.E8.BD.BD.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F)
+    *   [5.3 Local and custom variables](#Local_and_custom_variables)
+    *   [5.4 Custom colors and theme](#Custom_colors_and_theme)
+    *   [5.5 SyncTeX support](#SyncTeX_support)
+*   [6 Documentation](#Documentation)
+    *   [6.1 Contextual help](#Contextual_help)
+    *   [6.2 The manuals](#The_manuals)
+*   [7 拓展模块](#.E6.8B.93.E5.B1.95.E6.A8.A1.E5.9D.97)
+*   [8 疑难杂症](#.E7.96.91.E9.9A.BE.E6.9D.82.E7.97.87)
+    *   [8.1 彩色输出的问题](#.E5.BD.A9.E8.89.B2.E8.BE.93.E5.87.BA.E7.9A.84.E9.97.AE.E9.A2.98)
+    *   [8.2 菜单显示为空](#.E8.8F.9C.E5.8D.95.E6.98.BE.E7.A4.BA.E4.B8.BA.E7.A9.BA)
+    *   [8.3 X 窗口下的字符显示问题](#X_.E7.AA.97.E5.8F.A3.E4.B8.8B.E7.9A.84.E5.AD.97.E7.AC.A6.E6.98.BE.E7.A4.BA.E9.97.AE.E9.A2.98)
+    *   [8.4 启动速度慢](#.E5.90.AF.E5.8A.A8.E9.80.9F.E5.BA.A6.E6.85.A2)
+        *   [8.4.1 错误的网络配置](#.E9.94.99.E8.AF.AF.E7.9A.84.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
+        *   [8.4.2 初始化文件加载慢](#.E5.88.9D.E5.A7.8B.E5.8C.96.E6.96.87.E4.BB.B6.E5.8A.A0.E8.BD.BD.E6.85.A2)
+    *   [8.5 不能打开配置文件: ...](#.E4.B8.8D.E8.83.BD.E6.89.93.E5.BC.80.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6:_...)
+    *   [8.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
+    *   [8.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
+    *   [8.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
+    *   [8.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
+    *   [8.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
+*   [9 替代方案](#.E6.9B.BF.E4.BB.A3.E6.96.B9.E6.A1.88)
+    *   [9.1 mg](#mg)
+    *   [9.2 zile](#zile)
+    *   [9.3 uemacs](#uemacs)
+    *   [9.4 remacs](#remacs)
+*   [10 资源](#.E8.B5.84.E6.BA.90)
 
 ## 安装
 
-Emacs有众多变体发行版本（有时候称作*emacsen*）。 最常见的莫过于 [GNU Emacs](http://www.gnu.org/software/emacs/)，在[Official repositories](/index.php/Official_repositories "Official repositories")可以找到。
+Emacs有众多发行版本（有时候称作*emacsen*）。 最常见的莫过于 [GNU Emacs](http://www.gnu.org/software/emacs/)。
 
-在 [official repositories](/index.php/Official_repositories "Official repositories") 中可以安装 [emacs](https://www.archlinux.org/packages/?name=emacs) 。如果你经常使用命令行，你可能更喜欢没有GTK+支持的 [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)（也没有声音或其它有趣的东西）。 值得注意的是文字模式的Emacs有一些缺点：它支持更少的颜色和字体设置功能（实时改变字体大小，单文档多字体等等）。而且emacs-nox存在一些高级功能上的缺陷，比如Speedbar和GUD（调试环境），处理复杂的外观（face）的时候速度也会变慢。
+在 [official repositories](/index.php/Official_repositories "Official repositories") 中可以[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [emacs](https://www.archlinux.org/packages/?name=emacs) 。如果你经常使用命令行，你可能更喜欢没有GTK+支持的 [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)（也没有声音或其它花哨的东西）。值得注意的是，文字模式的Emacs有一些缺点：它支持的颜色和字体设置功能都要更少（实时改变字体大小，单文档多字体，等等）。而且emacs-nox存在一些高级功能上的缺陷，比如Speedbar和GUD（调试环境），处理复杂的外观（face，文本在Emacs中呈现的样子）的时候速度也会变慢。
 
-如果你想体验Emacs的所有扩展功能而不用装一堆依赖的话，你可以使用PKGBUILD来按你的需求定制Emacs。不使用 `gtk3` 可以让Emacs避免使用gconf。图像和声音的支持也可以去除。在Emacs的源代码目录下运行 `./configure --help` 可以看看有哪些配置选项。
+如果你想体验Emacs的所有扩展功能而不用安装大量依赖项的话，可以使用PKGBUILD来按你的需求定制Emacs。不使用 `gtk3`， 可以让Emacs避免使用gconf。图像和声音的支持也可以禁用。在Emacs源目录下运行 `./configure --help` 可以列出所有可用选项。
 
  `PKGBUILD` 
 ```
@@ -65,7 +64,7 @@ Emacs有众多变体发行版本（有时候称作*emacsen*）。 最常见的�
 
 ## 运行Emacs
 
-启动Emacs之前，你应该知道怎样关掉它（特别是你在终端里运行时）：使用 `Ctrl+x``Ctrl+c` 。
+启动Emacs之前，你应该知道怎样关掉它（特别是你在终端里运行时）：使用 `Ctrl+x``Ctrl+c` 按键顺序。
 
 启动Emacs：
 
@@ -90,7 +89,7 @@ $ emacs -Q -nw
 
 如果你安装的是nox版本，'emacs' 和 'emacs -nw' 效果是一样的。
 
-可以直接打开文件：
+可以提供文件名直接打开文件：
 
 ```
 $ emacs filename.txt
@@ -99,18 +98,20 @@ $ emacs filename.txt
 
 ### 没有颜色
 
-默认情况下Emacs启动时会将超链接显示为深蓝色。不使用任何颜色主题：
+默认情况下，Emacs以颜色主题开始，显示超链接为深蓝色。
+
+以文本模式，不使用任何颜色主题启动Emacs：
 
 ```
 $ emacs -nw --color=no
 
 ```
 
-这样一来所有文字都是白色了。
+这将导致所有的文本采用终端的字体颜色 –– 通常是黑色背景之上的白色文本，或白色背景上的黑色文本。
 
 ### 作为守护进程
 
-不想让Emacs每次启动都读取一次配置文件的话，可以将Emacs以守护进程运行：
+如过不想让Emacs每次启动都读取配置文件的话，可以以守护进程运行Emacs：
 
 ```
 $ emacs --daemon
@@ -124,15 +125,13 @@ $ emacsclient -nc
 
 ```
 
-这个命令创建一个新的frame `-c`（使用 `-t` 如果你更喜欢文字模式）并且不独占终端 `-n` （`--no-wait`）。有的程序例如Mutt和Git（为了提交信息）会等待编辑器完成编辑，所以不能使用 `-n` 参数。如果你的默认编辑器是Emacs，你需要为那些程序指定一个替代编辑器（比如 `emacsclient -a "" -t`）。
+这个命令会创建一个新的frame `-c`（如果你更喜欢文字模式，使用 `-t` ）并且不会独占终端 `-n` （`--no-wait`）。 有的程序，如Mutt和Git，（为了提交信息）会等待编辑器完成编辑，所以不能使用 `-n` 参数。 如果你的默认编辑器是默认使用`-n`，你需要为那些程序指定一个替代编辑器（比如 `emacsclient -a "" -t`）。
 
 ### 作为systemd单元
 
-The old system unit method had some caveats. It gave a limited shell environment which restricted shell calls, so we will be using a user unit, which tends to work a lot better than naively calling *emacs --daemon*.
+旧的systemd单元方法有一些需要注意的地方。 它给了一个限制shell调用的有限的shell环境，所以我们需要使用一个user单元，它往往比调用*emacs --daemon*好得多。 为Emacs创建一个systemd单元：
 
-为Emacs创建一个systemd单元：
-
-**Note:** Such a unit file is planned for inclusion in Emacs 26.1, see [emacs bug 16507](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=16507).
+**注意:** 这样一个单元文件将会包含在Emacs 26.1中， 参见 [emacs bug 16507](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=16507).
  `~/.config/systemd/user/emacs.service` 
 ```
 [Unit]
@@ -149,18 +148,30 @@ WantedBy=default.target
 
 ```
 
-You need to start and enable the unit so that it gets started on every boot (note - DO *NOT* run this as root - we want them for our user, not for the root user):
+需要启动并启用该单元，以便其在每次电脑启动时启动（请注意 - 请勿“以root运行” - 我们希望它以user，而不是根root user运行）：
 
 ```
 $ systemctl --user enable --now emacs
 
 ```
 
-Note that systemd user units do not inherit environment variables from a login shell (like `~/.bash_profile`), so you may want to set the variables in `~/.pam_environment` instead. See [Systemd/User](/index.php/Systemd/User "Systemd/User") for more information.
+请注意，systemd user单元不会从登录shell（例如`〜/.bash_profile`）继承环境变量，因此你可能需要在`〜/.pam_environment`中设置变量。有关更多信息，请参见[Systemd/User](/index.php/Systemd/User "Systemd/User")。
 
-If you start emacs as a daemon, you may want to set the `VISUAL` and `EDITOR` environment variables to `emacsclient` so that programs that start an editor use emacsclient instead of starting a new full instance of the editor. Programs that use an external editor include email programs (for editing the message), Git (for editing the commit message), and less (the `v` command for editing the displayed file). Do not use the `-n` (`--nowait`) option to emacsclient, since programs typically expect editing to be finished when the editor exits.
+如启动emacs作为守护程序，你可能会想把`VISUAL`和`EDITOR`环境变量设置为`emacsclient`，以便启动编辑器的程序使用emacsclient而不是一个完整的编辑器。使用外部编辑器的程序，包括电子邮件程序（用于编辑消息），Git（用于编辑提交消息）和less（用于编辑显示文件的`v`命令）。 不要对emacsclient使用`-n`（`--nowait`）选项，因为程序通常要求在编辑器退出时编辑完成。
 
-It is also recommended to change any GUI start menu entries (or equivalent) for Emacs to point to emacsclient instead of emacs, so that the emacs daemon is used instead of starting a new emacs process.
+建议将Emacs的任何GUI开始菜单条目（或等效条目）更改为指向emacsclient而不是emacs，以便使用emacs守护程序而不是启动新的emacs进程。
+
+## 使用
+
+尽管Emacs很复杂，但了解定制和可扩展性带来的好处并不需要很长时间。此外，已有的各种扩展允许将其转变为针对几乎任何形式的强大文本编辑环境。
+
+Emacs有一个很好的内置教程，可以通过点击启动画面上的第一个链接进行访问; 通过从菜单中选择*帮助-> Emacs 教程*或按'F1'然后按't'。
+
+Emacs设计为自文档化。 因此，大量的信息可用于确定特定命令的名称或其按键绑定。 使用**C-h C-h**查看所有当前环境绑定。
+
+Emacs还包含一组参考卡，对初学者和专家都很有用，请参阅`/usr/share/emacs/<version>/etc/refcards/`（用您的emacs版本替换<version>）。
+
+Emacs为用户提供了大量的功能，其中包括：键盘宏，矩形区域，空白清理，书签，桌面会话，各种shell，拼写检查，表格，语义分析...
 
 ## 提示和技巧
 
@@ -861,9 +872,10 @@ But, this will break other key combinations. To fix them, put the following in y
 ## 资源
 
 *   [GNU Emacs home page](http://www.gnu.org/software/emacs/)
-*   [GNU Emacs Manual](http://www.gnu.org/software/emacs/manual/emacs.html)
+*   [GNU Emacs manual](http://www.gnu.org/software/emacs/manual/emacs.html)
 *   [Emacs Wiki](http://www.emacswiki.org/cgi-bin/wiki/)
-*   [WikEmacs - a more readable, but less complete Emacs Wiki](http://wikemacs.org)
+*   [WikEmacs - a more readable, but less complete Emacs wiki](http://wikemacs.org)
 *   [Useful introduction to Emacs and its shortcuts](http://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html)
-*   [The Church of Emacs](http://www.dina.kvl.dk/~abraham/religion/)
-*   [Official reference card](http://repo.or.cz/w/emacs.git/blob/HEAD:/etc/refcards/refcard.pdf)
+*   [The Church of Emacs (via Google drive)](https://d0edfcdc0ccc1cd13cdab5eb986fb92e8660dbef.googledrive.com/host/0B6LMD0u8OhYYZEotN2QyR1hwR1k/)
+*   [Official reference card](http://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
+*   [EXWM](/index.php/EXWM "EXWM"), the Emacs X Window Manager
