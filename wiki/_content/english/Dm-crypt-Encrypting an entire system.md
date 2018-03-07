@@ -197,7 +197,10 @@ This example covers a full system encryption with *dmcrypt* + LUKS in a simple p
 +--------------------+--------------------------+--------------------------+
 |Boot partition      |LUKS encrypted system     |Optional free space       |
 |                    |partition                 |for additional partitions |
-|/dev/sdaY           |/dev/sdaX                 |or swap to be setup later |
+|                    |                          |or swap to be setup later |
+|/boot               |/                         |                          |
+|                    |                          |                          |
+|/dev/sdaY           |/dev/sdaX                 |                          |
 +--------------------+--------------------------+--------------------------+
 
 ```
@@ -282,8 +285,11 @@ The disk layout in this example is:
 
 ```
 +-----------------------------------------------------------------------+ +----------------+
-| Logical volume1       | Logical volume2       | Logical volume3       | |                |
-|/dev/mapper/MyVol-swap |/dev/mapper/MyVol-root |/dev/mapper/MyVol-home | | Boot partition |
+| Logical volume1       | Logical volume2       | Logical volume3       | | Boot partition |
+|                       |                       |                       | |                |
+|[SWAP]                 |/                      |/home                  | | /boot          |
+|                       |                       |                       | |                |
+|/dev/mapper/MyVol-swap |/dev/mapper/MyVol-root |/dev/mapper/MyVol-home | |                |
 |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
 |                                                                       | | other device)  |
 |                        LUKS encrypted partition                       | |                |
@@ -348,7 +354,7 @@ Create all your logical volumes on the volume group:
 
 ```
 # lvcreate -L 8G MyVol -n swap
-# lvcreate -L 15G MyVol -n root
+# lvcreate -L 32G MyVol -n root
 # lvcreate -l 100%FREE MyVol -n home
 
 ```
@@ -434,13 +440,16 @@ Partitioning scheme:
 
 ```
 +----------------+-----------------------------------------------------------------------+
-|                | LUKS encrypted volume | LUKS encrypted volume | LUKS encrypted volume |
+| Boot partition | LUKS encrypted volume | LUKS encrypted volume | LUKS encrypted volume |
+|                |                       |                       |                       |
+| /boot          | [SWAP]                | /                     | /home                 |
+|                |                       |                       |                       |
 |                | /dev/mapper/swap      | /dev/mapper/root      | /dev/mapper/home      |
 |                |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|
 |                | Logical volume1       | Logical volume2       | Logical volume3       |
 |                |/dev/mapper/MyVol-swap |/dev/mapper/MyVol-root |/dev/mapper/MyVol-home |
 |                |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|
-| Boot partition |                                                                       |
+|                |                                                                       |
 |   /dev/sda1    |                               /dev/sda2                               |
 +----------------+-----------------------------------------------------------------------+
 
@@ -453,7 +462,7 @@ Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on 
 ```
 # pvcreate /dev/sda2
 # vgcreate MyVol /dev/sda2
-# lvcreate -L 10G -n lvroot MyVol
+# lvcreate -L 32G -n lvroot MyVol
 # lvcreate -L 500M -n swap MyVol
 # lvcreate -L 500M -n tmp MyVol
 # lvcreate -l 100%FREE -n home MyVol
@@ -461,7 +470,7 @@ Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on 
 ```
 
 ```
-# cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/mapper/MyVol-lvroot
+# cryptsetup luksFormat --type luks2 /dev/mapper/MyVol-lvroot
 # cryptsetup open /dev/mapper/MyVol-lvroot root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
@@ -534,7 +543,7 @@ Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, ea
 The logical volume is encrypted with it:
 
 ```
-# cryptsetup luksFormat --type luks2 -v -s 512 /dev/mapper/MyVol-home /etc/luks-keys/home
+# cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVol-home /etc/luks-keys/home
 # cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-home home
 # mkfs.ext4 /dev/mapper/home
 # mount /dev/mapper/home /home
@@ -620,7 +629,7 @@ And repeat above for the HDD (`/dev/sdc1` in this example).
 Set up encryption for `/dev/md0`:
 
 ```
-# cryptsetup -y -v luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/md0
+# cryptsetup -y -v luksFormat --type luks2 /dev/md0
 # cryptsetup open /dev/md0 cryptroot
 # mkfs.ext4 /dev/mapper/cryptroot
 # mount /dev/mapper/cryptroot /mnt
@@ -630,7 +639,7 @@ Set up encryption for `/dev/md0`:
 And repeat for the HDD:
 
 ```
-# cryptsetup -y -v luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/sdc1
+# cryptsetup -y -v luksFormat --type luks2 /dev/sdc1
 # cryptsetup open /dev/sdc1 cryptdata
 # mkfs.ext4 /dev/mapper/cryptdata
 # mkdir -p /mnt/mnt/data
@@ -714,15 +723,15 @@ The scenario uses two USB sticks:
 The disk layout is:
 
 ```
-+--------------------+------------------+--------------------+ +---------------+ +---------------+
-|Volume 1:           |Volume 2:         |Volume 3:           | |Boot device    | |Encryption key |
-|                    |                  |                    | |               | |file storage   |
-|root                |swap              |home                | |/boot          | |(unpartitioned |
-|                    |                  |                    | |               | |in example)    |
-|/dev/store/root     |/dev/store/swap   |/dev/store/home     | |/dev/sdY1      | |/dev/sdZ       |
-|--------------------+------------------+--------------------| |---------------| |---------------|
-|disk drive /dev/sdaX encrypted using plain mode and LVM     | |USB stick 1    | |USB stick 2    |
-+------------------------------------------------------------+ +---------------+ +---------------+
++---------------------------+-------------------------+---------------------------+ +---------------+ +---------------+
+|Volume 1:                  |Volume 2:                |Volume 3:                  | |Boot device    | |Encryption key |
+|                           |                         |                           | |               | |file storage   |
+|/                          |[SWAP]                   |/home                      | |/boot          | |(unpartitioned |
+|                           |                         |                           | |               | |in example)    |
+|/dev/mapper/store-root     |/dev/mapper/store-swap   |/dev/mapper/store-home     | |/dev/sdY1      | |/dev/sdZ       |
+|---------------------------+-------------------------+---------------------------| |---------------| |---------------|
+|disk drive /dev/sdaX encrypted using plain mode and LVM                          | |USB stick 1    | |USB stick 2    |
++---------------------------------------------------------------------------------+ +---------------+ +---------------+
 
 ```
 
@@ -759,7 +768,7 @@ Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device.
 ```
 # pvcreate /dev/mapper/enc
 # vgcreate store /dev/mapper/enc
-# lvcreate -L 20G store -n root
+# lvcreate -L 32G store -n root
 # lvcreate -L 10G store -n swap
 # lvcreate -l 100%FREE store -n home
 
@@ -768,13 +777,13 @@ Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device.
 We format and mount them and activate swap. See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for further details:
 
 ```
-# mkfs.ext4 /dev/store/root
-# mkfs.ext4 /dev/store/home
-# mount /dev/store/root /mnt
+# mkfs.ext4 /dev/mapper/store-root
+# mkfs.ext4 /dev/mapper/store-home
+# mount /dev/mapper/store-root /mnt
 # mkdir /mnt/home
-# mount /dev/store/home /mnt/home
-# mkswap /dev/store/swap
-# swapon /dev/store/swap
+# mount /dev/mapper/store-home /mnt/home
+# mkswap /dev/mapper/store-swap
+# swapon /dev/mapper/store-swap
 
 ```
 
@@ -844,15 +853,15 @@ This setup utilizes the same partition layout and configuration for the system's
 The disk layout in this example is:
 
 ```
-+---------------------+---------------+----------------+----------------+----------------+----------------+
-|BIOS boot partition: |ESP partition: |Boot partition: |Volume 1:       |Volume 2:       |Volume 3:       |
-|                     |               |                |                |                |                |
-|                     |/boot/efi      |/boot           |root            |swap            |home            |
-|                     |               |                |                |                |                |
-|                     |               |                |/dev/store/root |/dev/store/swap |/dev/store/home |
-|/dev/sdaW            |/dev/sdaX      |/dev/sdaY       +----------------+----------------+----------------+
-|**un**encrypted          |**un**encrypted    |LUKS encrypted  |/dev/sdaZ encrypted using LVM on LUKS             |
-+---------------------+---------------+----------------+--------------------------------------------------+
++---------------------+---------------+----------------+-----------------------+-----------------------+-----------------------+
+|BIOS boot partition: |ESP partition: |Boot partition: |Volume 1:              |Volume 2:              |Volume 3:              |
+|                     |               |                |                       |                       |                       |
+|                     |/boot/efi      |/boot           |/root                  |[SWAP]                 |/home                  |
+|                     |               |                |                       |                       |                       |
+|                     |               |                |/dev/mapper/store-root |/dev/mapper/store-swap |/dev/mapper/store-home |
+|/dev/sdaW            |/dev/sdaX      |/dev/sdaY       +-----------------------+-----------------------+-----------------------+
+|**un**encrypted          |**un**encrypted    |LUKS encrypted  |/dev/sdaZ encrypted using LVM on LUKS                                  |
++---------------------+---------------+----------------+-----------------------------------------------------------------------+
 
 ```
 
@@ -1063,7 +1072,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 |ESP                       |System partition          |Swap partition            |
 |**un**encrypted               |LUKS-encrypted            |plain-encrypted           |
 |                          |                          |                          |
-|/boot/efi                 |/                         |                          |
+|/boot/efi                 |/                         |[SWAP]                    |
 |/dev/sda*Y*                 |/dev/sda*X*                 |/dev/sda*Z*                 |
 |--------------------------+--------------------------+--------------------------+
 

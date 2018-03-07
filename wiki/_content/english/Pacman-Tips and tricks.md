@@ -679,7 +679,11 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 ### Graphical front-ends
 
-**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
+**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) or [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) [[3]](https://github.com/manjaro/pamac/blob/master/data/systemd/pamac-mirrorlist.service#L9) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
+
+*   **Aarchup** — Fork of archup. Has the same options as archup plus a few other features. For differences between both please check [changelog](https://bbs.archlinux.org/viewtopic.php?id=119129).
+
+	[https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/) || [aarchup](https://aur.archlinux.org/packages/aarchup/)
 
 *   **Arch-Update** — Update indicator for Gnome-Shell.
 
@@ -705,13 +709,13 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
 
-*   **pamac** — A DBus daemon and Gtk3 frontend for libalpm written in Vala.
-
-	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
-
 *   **pcurses** — Package management in a curses frontend
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
+
+*   **PkgBrowser** — Application for searching and browsing Arch packages, showing details on selected packages.
+
+	[https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home](https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
 
 *   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
 

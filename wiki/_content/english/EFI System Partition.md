@@ -5,9 +5,9 @@ Related articles
 
 The [EFI System Partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition") (also called ESP or EFISYS) is a FAT32 formatted physical partition (in the main partition table of the disk, not under LVM or software RAID etc.) from where the [UEFI](/index.php/UEFI "UEFI") firmware launches the UEFI bootloader and application.
 
-It is an OS independent partition that acts as the storage place for the EFI bootloaders and applications to be launched by the EFI firmware. It is mandatory for UEFI boot.
+It is an OS independent partition that acts as the storage place for the EFI bootloaders and applications to be launched by the UEFI firmware. It is mandatory for UEFI boot.
 
-**Warning:** If [dual-booting](/index.php/Dual_boot_with_Windows "Dual boot with Windows") with an existing installation of Windows on a UEFI/GPT system, avoid reformatting the UEFI partition, as this includes the Windows *.efi* file required to boot it. In other words, use the existing partition as is and simply [#Mount the partition](#Mount_the_partition).
+**Warning:** If [dual-booting](/index.php/Dual_boot_with_Windows "Dual boot with Windows") with an existing installation of Windows on a UEFI/GPT system, avoid reformatting the ESP, as this includes the Windows *.efi* file required to boot it. In other words, use the existing partition as is and simply [#Mount the partition](#Mount_the_partition).
 
 ## Contents
 

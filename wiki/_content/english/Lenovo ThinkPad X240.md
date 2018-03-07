@@ -20,21 +20,21 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
 
 **Tip:** Below were the tested configurations at the current time.
 
-| Feature | X240 | X240 (20AMS4SM00) | X240 (20ALA0K-WIG) |
-| CPU | Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz | Intel(R) Core(TM) i5-4210U CPU @ 2.7GHz | Inter(R) Core(TM) i5-4200U CPU @ 1.6 GHz |
-| Graphics | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT |
-| Ram | 8 GB | 8 GB | 4 GB |
-| Disk | Samsung 5120 SSD | Seagate ST500LM000-SSHD-8GB | WDC WD10JPVX-08JC3T5 |
-| Display | 12.5" IPS FHD (1920x1080) | 12.5" IPS FHD (1920x1080) | 12.5" IPS 1366x768 |
-| Wireless | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 |
-| Built-in Battery | 9 Cell | 9 Cell | Not Tested |
-| Additional Plugable Battery | 6 Cell 19+ | 6 Cell 19+ | 6 Cell 19+ |
-| Backlight Keyboard | Yes | Yes | Yes |
-| ThinkLight | No | No | No |
-| Fingerprint Scanner | Yes | Yes | Yes |
-| Bluetooth | Yes | Yes | Yes |
-| Camera | Yes | Yes | Yes |
-| NFC | No | - | - |
+| Feature | X240 | X240 (20AMS4SM00) | X240 (20ALA0K-WIG) | X240 (20ALCTO1WW) |
+| CPU | Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz | Intel(R) Core(TM) i5-4210U CPU @ 2.7GHz | Inter(R) Core(TM) i5-4200U CPU @ 1.6 GHz | Inter(R) Core(TM) i5-4300U CPU @ 1.9 GHz |
+| Graphics | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT |
+| Ram | 8 GB | 8 GB | 4 GB | 4 GB |
+| Disk | Samsung 5120 SSD | Seagate ST500LM000-SSHD-8GB | WDC WD10JPVX-08JC3T5 | Samsung 840 Evo |
+| Display | 12.5" IPS FHD (1920x1080) | 12.5" IPS FHD (1920x1080) | 12.5" IPS 1366x768 | 12.5" IPS FHD 1920x1080 |
+| Wireless | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 |
+| Built-in Battery | 9 Cell | 9 Cell | Not Tested | 3 Cell |
+| Additional Plugable Battery | 6 Cell 19+ | 6 Cell 19+ | 6 Cell 19+ | 3 Cell |
+| Backlight Keyboard | Yes | Yes | Yes | - |
+| ThinkLight | No | No | No | - |
+| Fingerprint Scanner | Yes | Yes | Yes | Yes |
+| Bluetooth | Yes | Yes | Yes | Yes |
+| Camera | Yes | Yes | Yes | Yes |
+| NFC | No | - | - | - |
 
 ### System Configuration
 

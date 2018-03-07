@@ -116,7 +116,7 @@ If a file is modified, these applications store only its changed *parts* at the 
 
 | Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Maintained | Specificity |
 | [Areca Backup](http://areca.sourceforge.net/) | [areca](https://aur.archlinux.org/packages/areca/) | Java | Zip, Zip64 | AES128, AES256 | Yes | Yes | Yes | No | Pausing only | No | Yes | Yes | GPLv2 | Windows | Yes |
-| [BorgBackup](http://borgbackup.readthedocs.org/en/stable/) | [borg](https://www.archlinux.org/packages/?name=borg) | Python (Attic fork) | lz4, zlib, lzma, zstd | AES256 | Yes | SSH | Yes[[20]](http://borgbackup.readthedocs.org/en/stable/faq.html#which-file-types-attributes-etc-are-preserved) | Yes[[21]](http://borgbackup.readthedocs.org/en/stable/usage.html#borg-mount) | Yes[[22]](http://borgbackup.readthedocs.org/en/stable/faq.html#if-a-backup-stops-mid-way-does-the-already-backed-up-data-stay-there) | Yes | Yes | third party | BSD | *BSD, macOS | Yes | Deduplication based on variable length chunks |
+| [BorgBackup](http://borgbackup.readthedocs.org/en/stable/) | [borg](https://www.archlinux.org/packages/?name=borg) | Python, C (Cython) | lz4, zlib, lzma, zstd | AES256 | Yes | SSH | Yes[[20]](http://borgbackup.readthedocs.org/en/stable/faq.html#which-file-types-attributes-etc-are-preserved) | Yes[[21]](http://borgbackup.readthedocs.org/en/stable/usage.html#borg-mount) | Yes[[22]](http://borgbackup.readthedocs.org/en/stable/faq.html#if-a-backup-stops-mid-way-does-the-already-backed-up-data-stay-there) | Yes | Yes | third party | BSD | *BSD, macOS | Yes (Attic fork) | Deduplication based on variable length chunks; support both local and SSH-based remote backup destination |
 | [btar](http://viric.name/cgi-bin/btar) | [btar](https://aur.archlinux.org/packages/btar/) | C | Yes | Yes | Yes | Yes |  ? | No |  ? |  ? | Yes | No | GPLv3 | Yes | Redundancy, indexed extraction, multicore compression, input and output serialisation, tolerance to partial archive errors. |
 | [bup](https://bup.github.io/) | [bup](https://www.archlinux.org/packages/?name=bup) [bup-git](https://aur.archlinux.org/packages/bup-git/) | C, Python, git | Yes | No | Yes | Yes | Immature | Yes[[23]](https://bup.github.io/man/bup-fuse.html) | pick up where you left off [[24]](https://github.com/bup/bup/blob/master/README.md#reasons-bup-is-awesome) | Yes | Yes | third party | GPLv2 | NetBSD, Windows, macOS | Yes | Same storage format as git |
 | [bups](https://github.com/emersion/bups) | [bups](https://aur.archlinux.org/packages/bups/) | bup frontend | Yes | No | Yes | Yes | Immature | Yes | pick up where you left off [[25]](https://github.com/bup/bup/blob/master/README.md#reasons-bup-is-awesome) | Yes | Yes | GTK 3 | MIT | Yes |
@@ -179,7 +179,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **Amazon S3** — Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web. With Amazon S3, you pay only for the storage you actually use. There is no minimum fee and no setup cost.
 
-	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
+	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd) (high-level operations), [python-boto3](https://www.archlinux.org/packages/?name=python-boto3) (low-level API)
 
 *   **[CrashPlan](/index.php/CrashPlan "CrashPlan")** — An online/offsite backup solution.
     *   Unlimited online space for very reasonable pricing.
@@ -241,8 +241,9 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 	[https://onedrive.com](https://onedrive.com) || [onedrive-git](https://aur.archlinux.org/packages/onedrive-git/)
 
 *   **rsync.net** — Cloud storage for offsite backups.
-    *   ZFS filesystem, accessible with any SSH/SFTP/SCP tool, running on a UNIX system.
+    *   ZFS filesystem, accessible with any SSH/SFTP/SCP/rsync tool, running on a UNIX system with [jailed shell access](http://www.rsync.net/resources/howto/remote_commands.html).
     *   Simple rsync synchronization with daily automatic ZFS snapshots.
+    *   Native support for Attic and [borg](https://www.archlinux.org/packages/?name=borg) clients: [http://rsync.net/products/attic.html](http://rsync.net/products/attic.html)
 
 	[http://www.rsync.net/](http://www.rsync.net/) || [rsync](/index.php/Rsync "Rsync")/[SSH](/index.php/SSH "SSH"), [borg](https://www.archlinux.org/packages/?name=borg)
 

@@ -136,4 +136,12 @@ Follow [#Usage](#Usage), but take care of the two following points.
 
 **Note:** If you don’t see an UEFI entry but are in UEFI mode, check BIOS setup for an option to turn on UEFI capsule updates.
 
-**Warning:** If your ESP is not mounted at `/boot/efi` (e.g. at `/boot`), you need to wait for a future fwupd release to support this case.
+**Warning:** If your ESP is not mounted at `/boot/efi` (e.g. at `/boot`), you specify your *esp* mount point as follow: `/etc/fwupd/uefi.conf` 
+```
+[uefi]
+
+# For fwupdate 10+ allow overriding
+# the compiled EFI system partition path
+OverrideESPMountPoint=*esp*
+
+```

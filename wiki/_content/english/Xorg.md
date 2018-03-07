@@ -308,11 +308,11 @@ $ xdpyinfo | grep -B2 resolution
 
 Check that the dimensions match your display size. If the Xorg server is not able to correctly calculate the screen size, it will default to 75x75 DPI and you will have to calculate it yourself.
 
-If you have specifications on the physical size of the screen, they can be entered in the Xorg configuration file so that the proper DPI is calculated:
+If you have specifications on the physical size of the screen, they can be entered in the Xorg configuration file so that the proper DPI is calculated (adjust identifier to your xrandr output) :
 
 ```
 Section "Monitor"
-    Identifier             "Monitor0"
+    Identifier             "DVI-D-0"
     DisplaySize             286 179    # In millimeters
 EndSection
 

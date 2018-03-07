@@ -2,7 +2,7 @@ Greenclip[[1]](https://github.com/erebe/greenclip) is a simple clipboard manager
 
 ## Installation
 
-[Install](/index.php/Install "Install") [greenclip](https://aur.archlinux.org/packages/greenclip/) from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [rofi-greenclip](https://aur.archlinux.org/packages/rofi-greenclip/) from [AUR](/index.php/AUR "AUR").
 
 To integrate the daemon start-up on boot is it possibile to create a service:
 

@@ -38,7 +38,7 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
 
 ## Setup
 
-sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the systemd journal for failed login attempts. For each failed attempt, the offending host is banned from further communication for a limited amount of time. The default amount of time the offender is banned starts at 120 seconds, and is increases by a factor of 1.5 every time it fails another login. sshguard can be configured to permanently ban a host with too many failed attempts.
+sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the [systemd journal](/index.php/Systemd#Journal "Systemd") for failed login attempts. For each failed attempt, the offending host is banned from further communication for a limited amount of time. The default amount of time the offender is banned starts at 120 seconds, and is increases by a factor of 1.5 every time it fails another login. sshguard can be configured to permanently ban a host with too many failed attempts.
 
 Both temporary and permanent bans are done by adding an entry into the "sshguard" chain in iptables that drops all packets from the offender. The ban is then logged to syslog and ends up in `/var/log/auth.log`, or the systemd journal if the latter is being used.
 
@@ -133,7 +133,7 @@ ExecStartPre=
 
 ```
 
-When you [start/enable](/index.php/Start/enable "Start/enable") the `sshguard.service`, two new tables named `sshguard` in the `ip` and `ip6` address families are added which filter incoming traffic through sshguard's list of IP addresses. The chains in the `sshguard` table have a priority of -10 and will be processed before other rules of lower priority. See [sshguard-setup(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshguard-setup.7) and [nftables](/index.php/Nftables "Nftables") for more information.
+When you [start/enable](/index.php/Start/enable "Start/enable") the `sshguard.service`, two new tables named `sshguard` in the `ip` and `ip6` address families are added which filter incoming traffic through sshguard's list of IP addresses. The chains in the `sshguard` table have a priority of -10 and will be processed before other rules of lower priority. See [sshguard-setup(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshguard-setup.7) and [nftables](/index.php/Nftables "Nftables") for more information.
 
 ## Usage
 
@@ -171,7 +171,7 @@ Finally [restart](/index.php/Restart "Restart") `sshguard.service`
 
 ### Moderate banning example
 
-A slightly more aggressive banning rule than the default one is proposed here to illustrate various options. It monitors [sshd](/index.php/Sshd "Sshd") and [vsftpd](/index.php/Vsftpd "Vsftpd") via logs from systemd journal. It blocks attackers after 2 attempts for 180 sec, subsequent blocks increase by a factor of 1.5\. The attackers are remembered up to 3600 sec and permanently blacklisted after 10 attempts. It blocks not only the attacker's IP but all the IPv4 subnet 24 ([CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") notation).
+A slightly more aggressive banning rule than the default one is proposed here to illustrate various options. It monitors [sshd](/index.php/Sshd "Sshd") and [vsftpd](/index.php/Vsftpd "Vsftpd") via logs from the *systemd journal*. It blocks attackers after 2 attempts for 180 sec with subsequent block time longer by a factor of 1.5\. Note that this multiplicative delay feature is internal and not controlled by the below settings. The attackers are remembered for up to 3600 sec and permanently blacklisted after 10 attempts (10 attempts having each a cost of 10, explaining the "100" parameter in the blacklist setting). It blocks not only the attacker's IP but all the IPv4 subnet 24 ([CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") notation).
 
 ```
 BACKEND="/usr/lib/sshguard/sshg-fw-iptables"

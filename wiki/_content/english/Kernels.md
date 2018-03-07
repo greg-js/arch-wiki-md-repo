@@ -37,7 +37,7 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-*   **[ZEN Kernel](https://liquorix.net/)** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems.
+*   **[ZEN Kernel](https://github.com/zen-kernel/zen-kernel)** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. See [Liquorix](https://liquorix.net) website for the full list of features provided by ZEN Kernel.
 
 	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
@@ -101,10 +101,6 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 *   **Git** — Linux kernel and modules built using sources from Linus Torvalds' Git repository
 
 	[https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git) || [linux-git](https://aur.archlinux.org/packages/linux-git/)
-
-*   **[Kpatch](/index.php/Kernel_live_patching "Kernel live patching")** — The Linux kernel with live patching support.
-
-	[https://github.com/dynup/kpatch](https://github.com/dynup/kpatch) || [linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
 
 *   **Libre** — The Linux Kernels without "binary blobs".
 

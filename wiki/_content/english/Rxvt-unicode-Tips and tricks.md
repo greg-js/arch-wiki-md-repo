@@ -429,6 +429,13 @@ The following example will use [ALSA](/index.php/ALSA "ALSA")'s `aplay` command 
 
 ```
 
+The following example will use [libcanberra](/index.php/Libcanberra "Libcanberra")'s `canberra-gtk-play` command to play the bell sound of your current sound theme:
+
+```
+ URxvt.bell-command: canberra-gtk-play -i bell
+
+```
+
 And the next setting will pop a visual notification:
 
 ```

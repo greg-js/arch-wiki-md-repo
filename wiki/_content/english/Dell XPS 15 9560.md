@@ -40,7 +40,9 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [4.3 Proprietary driver with bumblebee](#Proprietary_driver_with_bumblebee)
     *   [4.4 Proprietary driver with PRIME output offloading](#Proprietary_driver_with_PRIME_output_offloading)
 *   [5 Touchpad](#Touchpad)
-    *   [5.1 Configure middle button](#Configure_middle_button)
+    *   [5.1 libinput Driver Configuration](#libinput_Driver_Configuration)
+    *   [5.2 Synaptics Driver Configuration](#Synaptics_Driver_Configuration)
+        *   [5.2.1 Configure middle button](#Configure_middle_button)
 *   [6 Firmware updates](#Firmware_updates)
 *   [7 Fingerprint reader](#Fingerprint_reader)
 *   [8 Troubleshooting](#Troubleshooting)
@@ -164,9 +166,26 @@ With this setup the discrete GPU is used for all rendering and the integrated GP
 
 ## Touchpad
 
-Touchpad works of the box. It's a Synaptics touchpad, so you can use `synclient` to list its capabilities and change them for the session.
+The Synaptics Touchpad's basic functionality works out of the box. Some [Desktop Environments](/index.php/Desktop_Environment "Desktop Environment") ship with [libinput](/index.php/Libinput "Libinput") and others with the [xf86-input-synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") driver. You can see which package is installed by running:
 
-### Configure middle button
+```
+pacman -Qn libinput xf86-input-synaptics
+
+```
+
+Depending on which package handles your touchpad input, the methods to extend the functionality varies.
+
+### libinput Driver Configuration
+
+The full documentation for [libinput](/index.php/Libinput "Libinput") seemed to work quite well for this touchpad. While the driver already contains logic to process advanced multi-touch events like swipe and pinch gestures, the Desktop environment or Window manager might not have implemented actions for all of them yet.
+
+To get some three and four-touch gestures to work you may need to use the documentation at [libinput-gestures](https://github.com/bulletmark/libinput-gestures) and install the [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) package.
+
+### Synaptics Driver Configuration
+
+You can use `synclient` to list the touchpad's capabilities and change them for the session.
+
+#### Configure middle button
 
 The touchpad has a big click zone in the bottom that can be disabled or configured for 1, 2 or 3 buttons. For example, to have most of the touchpad seen as "button 1" but the middle lower zone (middle button) and the right lower zone (right button), create `/etc/X11/xorg.conf.d/50-synaptics.conf` with content:
 

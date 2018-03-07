@@ -19,14 +19,15 @@ Related articles
     *   [1.5 Bug: System occasionally hanging during startup](#Bug:_System_occasionally_hanging_during_startup)
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
-    *   [2.2 Display](#Display)
-    *   [2.3 Backlight Control](#Backlight_Control)
-    *   [2.4 TrackPoint Scrolling](#TrackPoint_Scrolling)
-    *   [2.5 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
-        *   [2.5.1 Ethernet](#Ethernet)
-        *   [2.5.2 USB](#USB)
-    *   [2.6 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
-    *   [2.7 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_.28USB_Type_C.29)
+    *   [2.2 Special buttons](#Special_buttons)
+    *   [2.3 Display](#Display)
+    *   [2.4 Backlight Control](#Backlight_Control)
+    *   [2.5 TrackPoint Scrolling](#TrackPoint_Scrolling)
+    *   [2.6 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
+        *   [2.6.1 Ethernet](#Ethernet)
+        *   [2.6.2 USB](#USB)
+    *   [2.7 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
+    *   [2.8 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_.28USB_Type_C.29)
 
 ## Model description
 
@@ -127,6 +128,32 @@ ExecStartPre=/bin/sleep 2
 *   Fn+K sends Scroll_Lock
 *   Fn+Space toggles the keyboard backlight
 *   Fn by itself sends XF86WakeUp (wakes computer from sleep by default)
+
+### Special buttons
+
+Some special buttons are not supported by X server due to keycode number limit.
+
+| Key combination | Scancode | Keycode |
+| `Fn+F11` | `0x49` | `374` `KEY_KEYBOARD` |
+| `Fn+F12` | `0x45` | `364` `KEY_FAVORITES` |
+
+You can remap unsupported keys using [udev hwdb](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes"):
+
+ `/etc/udev/hwdb.d/90-thinkpad-keyboard.hwdb` 
+```
+evdev:name:ThinkPad Extra Buttons:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*
+ KEYBOARD_KEY_45=prog1
+ KEYBOARD_KEY_49=prog2
+
+```
+
+Update hwdb after editing the rule.
+
+```
+# udevadm hwdb --update
+# udevadm trigger --sysname-match="event*"
+
+```
 
 ### Display
 

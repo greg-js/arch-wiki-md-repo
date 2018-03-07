@@ -41,9 +41,9 @@ Microsoft imposes limitations on which firmware boot mode and partitioning style
 
 In case of pre-installed Systems:
 
-*   All systems pre-installed with Windows XP, Vista or 7 32-bit, irrespective of Service Pack level, bitness, edition (SKU) or presence of UEFI support in firmware, boot in BIOS-MBR mode by default.
-*   MOST of the systems pre-installed with Windows 7 x86_64, irrespective of Service Pack level, bitness or edition (SKU), boot in BIOS-MBR mode by default. Very few recent systems pre-installed with Windows 7 are known to boot in x86_64 UEFI-GPT mode by default.
-*   ALL systems pre-installed with Windows 8/8.1 boot in UEFI-GPT mode. The firmware bitness matches the bitness of Windows, ie. x86_64 Windows 8/8.1 boot in x86_64 UEFI mode and 32-bit Windows 8/8.1 boot in IA32 UEFI mode.
+*   All systems pre-installed with Windows XP, Vista or 7 32-bit, irrespective of Service Pack level, bitness, edition (SKU) or presence of UEFI support in firmware, boot in BIOS/MBR mode by default.
+*   MOST of the systems pre-installed with Windows 7 x86_64, irrespective of Service Pack level, bitness or edition (SKU), boot in BIOS/MBR mode by default. Very few recent systems pre-installed with Windows 7 are known to boot in x86_64 UEFI/GPT mode by default.
+*   ALL systems pre-installed with Windows 8/8.1 boot in UEFI/GPT mode. The firmware bitness matches the bitness of Windows, ie. x86_64 Windows 8/8.1 boot in x86_64 UEFI mode and 32-bit Windows 8/8.1 boot in IA32 UEFI mode.
 
 The best way to detect the boot mode of Windows is to do the following (info from [here](http://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html)):
 
@@ -51,11 +51,11 @@ The best way to detect the boot mode of Windows is to do the following (info fro
 *   Press Win key and 'R' to start the Run dialog
 *   In the Run dialog type "msinfo32" and press Enter
 *   In the **System Information** windows, select **System Summary** on the left and check the value of **BIOS mode** item on the right
-*   If the value is **UEFI**, Windows boots in UEFI-GPT mode. If the value is **Legacy**, Windows boots in BIOS-MBR mode.
+*   If the value is **UEFI**, Windows boots in UEFI/GPT mode. If the value is **Legacy**, Windows boots in BIOS/MBR mode.
 
-In general, Windows forces type of partitioning depending on the firmware mode used, i.e. if Windows is booted in UEFI mode, it can be installed only to a GPT disk. If the Windows is booted in Legacy BIOS mode, it can be installed only to a MBR (also called **msdos** style partitioning) disk. This is a limitation enforced by Windows installer, and as of April 2014 there is no officially (Microsoft) supported way of installing Windows in UEFI-MBR or BIOS-GPT configuration. Thus Windows only supports either UEFI-GPT boot or BIOS-MBR configuration.
+In general, Windows forces type of partitioning depending on the firmware mode used, i.e. if Windows is booted in UEFI mode, it can be installed only to a GPT disk. If the Windows is booted in Legacy BIOS mode, it can be installed only to a MBR (also called **msdos** style partitioning) disk. This is a limitation enforced by Windows installer, and as of April 2014 there is no officially (Microsoft) supported way of installing Windows in UEFI/MBR or BIOS/GPT configuration. Thus Windows only supports either UEFI/GPT boot or BIOS/MBR configuration.
 
-Such a limitation is not enforced by the Linux kernel, but can depend on which bootloader is used and/or how the bootloader is configured. The Windows limitation should be considered if the user wishes to boot Windows and Linux from the same disk, since installation procedure of bootloader depends on the firmware type and disk partitioning configuration. In case where Windows and Linux dual boot from the same disk, it is advisable to follow the method used by Windows, ie. either go for UEFI-GPT boot or BIOS-MBR boot. See [http://support.microsoft.com/kb/2581408](http://support.microsoft.com/kb/2581408) for more info.
+Such a limitation is not enforced by the Linux kernel, but can depend on which bootloader is used and/or how the bootloader is configured. The Windows limitation should be considered if the user wishes to boot Windows and Linux from the same disk, since installation procedure of bootloader depends on the firmware type and disk partitioning configuration. In case where Windows and Linux dual boot from the same disk, it is advisable to follow the method used by Windows, ie. either go for UEFI/GPT boot or BIOS/MBR boot. See [http://support.microsoft.com/kb/2581408](http://support.microsoft.com/kb/2581408) for more info.
 
 ### Install media limitations
 
@@ -63,17 +63,17 @@ Intel Atom System-on-Chip Tablets (Clover trail and Bay Trail) provide only IA32
 
 ### Bootloader UEFI vs BIOS limitations
 
-Most of the linux bootloaders installed for one firmware type cannot launch or chainload bootloaders of other firmware type. That is, if Arch is installed in UEFI-GPT or UEFI-MBR mode in one disk and Windows is installed in BIOS-MBR mode in another disk, the UEFI bootloader used by Arch cannot chainload the BIOS installed Windows in the other disk. Similarly if Arch is installed in BIOS-MBR or BIOS-GPT mode in one disk and Windows is installed in UEFI-GPT in another disk , the BIOS bootloader used by Arch cannot chainload UEFI installed Windows in the other disk.
+Most of the linux bootloaders installed for one firmware type cannot launch or chainload bootloaders of other firmware type. That is, if Arch is installed in UEFI/GPT or UEFI/MBR mode in one disk and Windows is installed in BIOS/MBR mode in another disk, the UEFI bootloader used by Arch cannot chainload the BIOS installed Windows in the other disk. Similarly if Arch is installed in BIOS/MBR or BIOS/GPT mode in one disk and Windows is installed in UEFI/GPT in another disk , the BIOS bootloader used by Arch cannot chainload UEFI installed Windows in the other disk.
 
-The only exceptions to this are grub(2) in Apple Macs in which EFI installed grub(2) can boot BIOS installed OS via **appleloader** command (does not work in non-Apple systems), and rEFInd which technically supports booting legacy BIOS OS from UEFI systems, but [does not always work in non-Apple UEFI systems](http://rodsbooks.com/refind/using.html#legacy) as per its author Rod Smith.
+The only exceptions to this are [GRUB](/index.php/GRUB "GRUB") in Apple Macs in which EFI installed grub(2) can boot BIOS installed OS via **appleloader** command (does not work in non-Apple systems), and [rEFInd](/index.php/REFInd "REFInd") which technically supports booting legacy BIOS OS from UEFI systems, but [does not always work in non-Apple UEFI systems](http://rodsbooks.com/refind/using.html#legacy) as per its author Rod Smith.
 
-However if Arch is installed in BIOS-GPT in one disk and Windows is installed in BIOS-MBR mode in another disk, then the BIOS bootloader used by Arch CAN boot the Windows in the other disk, if the bootloader itself has the ability to chainload from another disk.
+However if Arch is installed in BIOS/GPT in one disk and Windows is installed in BIOS/MBR mode in another disk, then the BIOS bootloader used by Arch CAN boot the Windows in the other disk, if the bootloader itself has the ability to chainload from another disk.
 
 **Note:** If Arch and Windows are dual-booting from same disk, then Arch SHOULD follow the same firmware boot mode and partitioning combination used by the installed Windows in the disk.
 
 ### UEFI Secure Boot
 
-All pre-installed Windows 8/8.1 systems by default boot in UEFI-GPT mode and have UEFI Secure Boot enabled by default. This is mandated by Microsoft for all OEM pre-installed systems.
+All pre-installed Windows 8/8.1 systems by default boot in UEFI/GPT mode and have UEFI Secure Boot enabled by default. This is mandated by Microsoft for all OEM pre-installed systems.
 
 Arch Linux install media currently supports Secure Boot. See [Secure Boot#Booting archiso](/index.php/Secure_Boot#Booting_archiso "Secure Boot").
 
@@ -103,7 +103,7 @@ Windows also puts [certain characters off limits](http://msdn.microsoft.com/en-u
 
 These are limitations of Windows and not NTFS: any other OS using the NTFS partition will be fine. Windows will fail to detect these files and running `chkdsk` will most likely cause them to be deleted. This can lead to potential data-loss.
 
-**NTFS-3G** applies Windows restrictions to new file names through the [windows_filenames](http://www.tuxera.com/community/ntfs-3g-manual/#4) option (see [fstab](/index.php/Fstab "Fstab")).
+[NTFS-3G](/index.php/NTFS-3G "NTFS-3G") applies Windows restrictions to new file names through the [windows_filenames](http://www.tuxera.com/community/ntfs-3g-manual/#4) option (see [fstab](/index.php/Fstab "Fstab")).
 
 ## Installation
 
@@ -160,7 +160,7 @@ Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map
 
 ### UEFI systems
 
-If you already have Windows installed, it will already have created some partitions (on a [GPT](/index.php/GPT "GPT")-formatted disk):
+If you already have Windows installed, it will already have created some partitions on a [GPT](/index.php/GPT "GPT")-formatted disk:
 
 *   a partition of type `ef00 EFI System` and filesystem `FAT32`,
 *   a partition of type `0c01 Microsoft reserved`, generally of size `128 MiB`,
@@ -171,7 +171,7 @@ Using the Disk Management utility in Windows, check how the partitions are label
 
 You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI System Partition, since it already exists (see above): when required, [mount](/index.php/Mount "Mount") this to `/boot`, install your [bootloader](/index.php/Bootloader "Bootloader") to it and save the entry in `/etc/[fstab](/index.php/Fstab "Fstab")`.
 
-Concerning bootloaders, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [rEFInd](/index.php/REFInd "REFInd") autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). Syslinux (as of version 6.02 and 6.03-pre9) and ELILO do not support chainloading other EFI applications, so they cannot be used to boot `\EFI\Microsoft\Boot\bootmgfw.efi`.
+[rEFInd](/index.php/REFInd "REFInd") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). The bootloader needs to support chainloading other EFI applications to do dual boot windows / linux.
 
 Computers that come with newer versions of Windows often have [Secure Boot](/index.php/Secure_Boot "Secure Boot") enabled. You will need to take extra steps to either disable Secure Boot or to make your installation media compatible with secure boot (see above and in the linked page).
 

@@ -84,7 +84,7 @@ net.core.netdev_max_backlog = 65536
 
 ```
 
-**Note:** In real time application like SIP routers, this option requires an high speed CPU otherwise the data in the queue will be out of date.
+**Note:** In real time application like SIP routers, this option requires a high speed CPU otherwise the data in the queue will be out of date.
 
 Increase the maximum ancillary buffer size allowed per socket.
 

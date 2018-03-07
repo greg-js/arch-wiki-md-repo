@@ -306,7 +306,7 @@ This section contains frequently-sought "eye candy" tweaks for an aesthetically 
 
 ### Fonts
 
-You may wish to install a set of TrueType fonts, as only unscalable bitmap fonts are included in a basic Arch system. The [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) package provides a set of high quality, general-purpose fonts with good [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode") coverage.
+You may wish to install a set of TrueType fonts, as only unscalable bitmap fonts are included in a basic Arch system. There are several general-purpose [font families](/index.php/Fonts#Families "Fonts") providing large [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode") coverage and even [metric compatibility](/index.php/Metric-compatible_fonts "Metric-compatible fonts") with fonts from other operating systems.
 
 A plethora of information on the subject can be found in the [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") articles.
 

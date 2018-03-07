@@ -36,7 +36,7 @@ These updates must be enabled by adding `/boot/intel-ucode.img` as the **first i
 
 #### Automatic method
 
-*grub-mkconfig* will automatically detect the microcode update and configure [GRUB](/index.php/GRUB "GRUB") appropriately. After installing the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, users are directed to regenerate the GRUB config to activate loading the microcode update by running:
+*grub-mkconfig* will automatically detect the microcode update and configure [GRUB](/index.php/GRUB "GRUB") appropriately. After installing the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, regenerate the GRUB config to activate loading the microcode update by running:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg

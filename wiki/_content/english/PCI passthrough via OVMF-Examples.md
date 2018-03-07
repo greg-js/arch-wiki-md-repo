@@ -13,6 +13,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.6 droserasprout poor man's setup](#droserasprout_poor_man.27s_setup)
     *   [1.7 prauat: 2xIntel(R) Xeon(R) CPU E5-2609 v4, 2xGigabyte GeForce GTX 1060 6GB G1 Gaming, Intel S2600CWTR](#prauat:_2xIntel.28R.29_Xeon.28R.29_CPU_E5-2609_v4.2C_2xGigabyte_GeForce_GTX_1060_6GB_G1_Gaming.2C_Intel_S2600CWTR)
     *   [1.8 Dinkonin's virtual gaming/work setup](#Dinkonin.27s_virtual_gaming.2Fwork_setup)
+    *   [1.9 pauledd's unexeptional setup](#pauledd.27s_unexeptional_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -240,6 +241,22 @@ vfio-pci 0000:01:00.0: Invalid PCI ROM header signature: expecting 0xaa55, got 0
 ```
 
 *   Single monitor setup, implemented full software KVM(for host and guest) described here: [https://rokups.github.io/#!pages/full-software-kvm-switch.md](https://rokups.github.io/#!pages/full-software-kvm-switch.md)
+
+### pauledd's unexeptional setup
+
+Hardware:
+
+*   **CPU**: Intel Core i7 6700K
+*   **Motherboard**: Gigabyte GA-Z170N-WIFI Retail (Revision 1.0 , BIOS/UEFI Version: F20)
+*   **GPU**: 8GB Palit GeForce GTX 1070 Dual Aktiv PCIe 3.0 x16 (Retail)
+*   **RAM**: 16GB G.Skill RipJaws V DDR4-3200 DIMM CL16 Dual Kit
+
+Configuration:
+
+*   **Kernel**: 4.15.2-gentoo
+*   Using **libvirt/QEMU**: libvirt-4.0.0, qemu-2.11.1, [https://github.com/pauledd/GPU-Passthrough/blob/master/win10-2.xml](https://github.com/pauledd/GPU-Passthrough/blob/master/win10-2.xml) , using vfio kernel module
+*   Had to dump VBIOS in at the host while GPU was normally attached (and drivers loaded) (see [https://stackoverflow.com/a/42441234](https://stackoverflow.com/a/42441234)), had to set CPU settings manually according to my cpu (host-passthrough, sockets 1, cores: 4, threads: 2 ) or some games will regularly crash, see my xml how to insert vbios, still have audio clicking/lag with pulseaudio but thats ok for me, no further patching etc.. works out of the box without any issues.
+*   3DMark Results Time Spy Graphic Score: Native Windows 10: 5564 , GPU-Passthrough: 5541
 
 ## Adding your own setup
 

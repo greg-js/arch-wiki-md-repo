@@ -117,7 +117,8 @@ The precedence of these `locale.conf` files is defined in `/etc/profile.d/locale
 Once system and user `locale.conf` files have been created or edited, their new values will take effect for new sessions at login. To have the current environment use the new settings unset `LANG` and source `/etc/profile.d/locale.sh`:
 
 ```
-$ LANG= source /etc/profile.d/locale.sh
+$ unset LANG
+$ source /etc/profile.d/locale.sh
 
 ```
 

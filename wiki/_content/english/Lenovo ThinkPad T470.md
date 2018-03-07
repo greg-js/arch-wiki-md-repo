@@ -16,6 +16,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.1 Screen backlight](#Screen_backlight)
     *   [2.2 Thunderbolt 3](#Thunderbolt_3)
     *   [2.3 UEFI boot](#UEFI_boot)
+    *   [2.4 Special buttons](#Special_buttons)
 *   [3 PCI and USB devices](#PCI_and_USB_devices)
     *   [3.1 T470 model 20HD](#T470_model_20HD)
         *   [3.1.1 lspci](#lspci)
@@ -59,6 +60,32 @@ With the latest kernel (4.12.12 as of writing), the *Alpine Ridge* thunderbolt 3
 After configuring the BIOS setup to allow UEFI boot (either *UEFI only* or *both*), it works flawlessly.
 
 **Note:** I was unable to boot with a GPT + BIOS configuration, and therefore switch to GPT + EFI. However, until another confirmation, it is quite probable that was caused by some bad configuration from my side.
+
+### Special buttons
+
+Some special buttons are not supported by X server due to keycode number limit.
+
+| Key combination | Scancode | Keycode |
+| `Fn+F11` | `0x49` | `374` `KEY_KEYBOARD` |
+| `Fn+F12` | `0x45` | `364` `KEY_FAVORITES` |
+
+You can remap unsupported keys using [udev hwdb](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes"):
+
+ `/etc/udev/hwdb.d/90-thinkpad-keyboard.hwdb` 
+```
+evdev:name:ThinkPad Extra Buttons:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*
+ KEYBOARD_KEY_45=prog1
+ KEYBOARD_KEY_49=prog2
+
+```
+
+Update hwdb after editing the rule.
+
+```
+# udevadm hwdb --update
+# udevadm trigger --sysname-match="event*" 
+
+```
 
 ## PCI and USB devices
 

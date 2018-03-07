@@ -12,6 +12,7 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
     *   [4.1 With a script](#With_a_script)
     *   [4.2 With systemd](#With_systemd)
     *   [4.3 With a KDE module](#With_a_KDE_module)
+    *   [4.4 With Screen Rotator](#With_Screen_Rotator)
 *   [5 Tablet mode](#Tablet_mode)
 *   [6 Desktop Environments / Window Managers](#Desktop_Environments_.2F_Window_Managers)
     *   [6.1 i3](#i3)
@@ -223,6 +224,14 @@ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power am
 Install [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) and [kded-rotation-git](https://aur.archlinux.org/packages/kded-rotation-git/), then restart your kde session. Screen rotation should now just work.
 
 For automatic touch screen rotation edit `/usr/bin/orientation-helper` script, changing the hardcoded input device name to match the one you have (choose from the output of `xinput list`).
+
+### With Screen Rotator
+
+**Note:** [ScreenRotator](https://github.com/GuLinux/screenrotator) is in early development stages.
+
+Install [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) and [screenrotator-git](https://aur.archlinux.org/packages/screenrotator-git/). It will start automatically at each session, but you can also launch it from the Applications menu (system section).
+
+Screen rotator has no configuration, it will automatically detect orientation changes and rotate both your screen and touchscreen orientation accordingly.
 
 ## Tablet mode
 

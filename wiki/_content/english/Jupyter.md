@@ -1,4 +1,6 @@
-[Jupyter](http://jupyter.org/) is a browser-based interactive notebook for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
+[Jupyter](http://jupyter.org/) is a project which produces browser-based interactive environments for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
+
+Jupyter Notebook is the traditional and most stable application. [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) has a new interface and is more suitable for working with larger projects consisting of multiple files. JupyterLab is in beta as of February 2018.
 
 ## Contents
 
@@ -14,7 +16,9 @@
 
 ## Installation
 
-To install Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) package.
+For Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) package.
+
+For JupyterLab, [install](/index.php/Install "Install") the [jupyterlab](https://aur.archlinux.org/packages/jupyterlab/) package.
 
 ## Running
 
@@ -22,6 +26,13 @@ To start the notebook server, e.g. from a directory containing some *.ipynb* not
 
 ```
 $ jupyter notebook
+
+```
+
+To start JupyterLab, run:
+
+```
+$ jupyter lab
 
 ```
 

@@ -227,7 +227,7 @@ Set the permissions on `/etc/X11/xinit/xinitrc.d/01_touchegg`
 
 With the latest kernel your fan should work out of the box.
 
-{{Note|If you are having issues with your fan not functioning as intended - try the following:
+**Note:** If you are having issues with your fan not functioning as intended - try the following:
 
 ```
 # modprobe -r gpd-pocket-fan

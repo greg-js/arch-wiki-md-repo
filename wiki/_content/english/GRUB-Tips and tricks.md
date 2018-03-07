@@ -578,7 +578,7 @@ Configuration is otherwise the same.
 
 ### UEFI firmware workaround
 
-Some UEFI firmware requires that the bootable `.efi` stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
+Some UEFI firmware requires that the bootable *.efi* stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
 
 To do so, first create the necessary directory, and then copy across the grub `.efi` stub, renaming it in the process:
 

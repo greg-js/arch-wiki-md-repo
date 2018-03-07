@@ -14,6 +14,8 @@ Related articles
 
 A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that runs when a computer starts. It is responsible for selecting, loading and transferring control to an operating system kernel. The kernel, in turn, initializes the rest of the operating system.
 
+**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
+
 ## Contents
 
 *   [1 BIOS systems](#BIOS_systems)
@@ -21,7 +23,7 @@ A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that 
     *   [1.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
     *   [1.3 Installation](#Installation)
 *   [2 UEFI systems](#UEFI_systems)
-    *   [2.1 Check if you have a GPT disk layout and an EFI System Partition](#Check_if_you_have_a_GPT_disk_layout_and_an_EFI_System_Partition)
+    *   [2.1 Check for GPT disk layout and an EFI System Partition](#Check_for_GPT_disk_layout_and_an_EFI_System_Partition)
     *   [2.2 Installation](#Installation_2)
 *   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
 *   [4 Configuration](#Configuration)
@@ -81,7 +83,7 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](htt
 
 *   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [GUID partition tables](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
-*   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [ESP](/index.php/ESP "ESP").
+*   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 Create a mebibyte partition (`+1M` with [fdisk](/index.php/Fdisk "Fdisk") or [gdisk](/index.php/Gdisk "Gdisk")) on the disk with no file system and with partition type BIOS boot. Select `BIOS boot` and partition type number `4` for *fdisk*, `ef02` for *gdisk*, and `bios_grub` for *parted*. This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
 
@@ -108,7 +110,7 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on
 
 **Tip:** See [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") for other ways to install GRUB, such as to a USB stick.
 
-See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [[2]](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) for more details on the *grub-install* command.
+See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [GRUB Manual](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) for more details on the *grub-install* command.
 
 ## UEFI systems
 
@@ -117,7 +119,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 *   It is recommended to read and understand the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages.
 *   When installing to use UEFI it is important to start the install with your machine in UEFI mode. The Arch Linux install media must be UEFI bootable.
 
-### Check if you have a GPT disk layout and an EFI System Partition
+### Check for GPT disk layout and an EFI System Partition
 
 To boot from a disk using EFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an EFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
 
@@ -128,43 +130,42 @@ To find out the disk partition scheme and the system partition, use `parted` as 
 
 ```
 
-*   The disk partition layout is returned, if the disk is GPT, it indicates "Partition Table: gpt".
-*   The list of partition is returned. The ESP is a small (512 MiB or less) partition with a *vfat* or *fat32* file system and the *boot* and possibly *esp* flags enabled. To confirm this is the ESP, mount it and check if it contains a directory named "EFI", if it does this is definitely the ESP.
+The command returns:
 
-Once the ESP is found, take note of the partition number, it will be required for the GRUB installation. In the following of this section `*esp*` must be substituted by it in commands. If you do not have an ESP, you will need to create one. See [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   The disk partition layout: if the disk is GPT, it indicates `Partition Table: gpt`.
+*   The list of partitions on the disk: Look for the ESP in the list, it is a small (512 MiB or less) partition with a *vfat* or *fat32* file system and with the flags *boot* and possibly *esp* enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+
+Once it is found, **take note of the ESP partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") article.
 
 ### Installation
 
-**Note:** UEFI firmware are not implemented consistently by hardware manufacturers. The installation examples provided are intended to work on the widest range of UEFI systems possible. Those experiencing problems despite applying these methods are encouraged to share detailed information for their hardware-specific cases, especially where solving these problems. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
+**Note:** UEFI firmware are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the turnarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
 
-This section assumes you are installing GRUB for x86_64 systems (x86_64-efi). For 32-bit EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
+First, [install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr): *GRUB* is the bootloader while *efibootmgr* creates bootable *.efi* stub entries used by the GRUB installation script.
 
-Make sure you are in a [bash](/index.php/Bash "Bash") shell.
+Then follow the below steps to install GRUB:
 
-[Install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* is the bootloader, *efibootmgr* creates bootable `.efi` stub entries used by the GRUB installation script.
-
-The following steps install the GRUB UEFI application to `*esp*/EFI/grub`, install its modules to `/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `*esp*/EFI/**arch**`.
-
-First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. Mount the ESP partition to e.g. `/boot` or `/boot/efi` and in the following change `*esp_mount*` to that mount point (usually `/boot`):
+1.  [Mount the EFI System Partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") to either `/boot` or `/boot/efi` and in the remainder of this section, substitute `*esp*` with that mount point.
+2.  Choose a bootloader identifier, here named `***arch***`. A directory of that name will be created to store the EFI binary bootloader in the ESP and this is the name that will appear in the EFI boot menu to identify the GRUB boot entry.
+3.  Execute the following command to install the GRUB UEFI application to `*esp*/EFI/grub/`, install its modules to `/boot/grub/x86_64-efi/`, and place the EFI binary bootloader `grubx64.efi` in `*esp*/EFI/***arch***/`.
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=*esp_mount* --bootloader-id=**arch**
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=***arch***
 
 ```
-
-The `--bootloader-id` is what appears in the boot options to identify the GRUB EFI boot option; make sure this is something you will recognize later. The install will create a directory of the same name under `*esp*/EFI/` where the EFI binary bootloader `grubx64.efi` will be placed.
-
-**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a `boot` folder inside the EFI folder of the EFI partition, but its only purpose is to recreate the EFI boot option for Windows.
 
 After the above install completed the main GRUB directory is located at `/boot/grub/`.
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
+**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a `BOOT` folder inside the `EFI` folder of the EFI partition, but its only purpose is to recreate the EFI boot option for Windows.
+
 **Note:**
 
 *   While some distributions require a `/boot/efi` or `/boot/EFI` directory, Arch does not.
-*   `--efi-directory` and `--bootloader-id` are specific to GRUB UEFI. `--efi-directory` specifies the mountpoint of the ESP. It replaces `--root-directory`, which is deprecated.
-*   You might note the absence of a <device_path> option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any <device_path> provided will be ignored by the GRUB install script, as UEFI bootloaders do not use a MBR or partition boot sector at all.
+*   `--efi-directory` and `--bootloader-id` are specific to GRUB UEFI, `--efi-directory` replaces `--root-directory` which is deprecated.
+*   You might note the absence of a *device_path* option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any *device_path* provided will be ignored by the GRUB UEFI install script. Indeed, UEFI bootloaders do not use a MBR or partition boot sector at all.
+*   The section assumes you are installing GRUB for x86_64 systems (x86_64-efi). For 32-bit EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
 See [UEFI troubleshooting](#UEFI) in case of problems. Additionally see [GRUB/Tips and tricks#UEFI further reading](/index.php/GRUB/Tips_and_tricks#UEFI_further_reading "GRUB/Tips and tricks").
 
@@ -292,15 +293,15 @@ where `$hints_string` and `$fs_uuid` are obtained with the following two command
 
 The `$fs_uuid` command determines the UUID of the EFI partition:
 
- `# grub-probe --target=fs_uuid $esp/EFI/Microsoft/Boot/bootmgfw.efi`  `1ce5-7f28` 
+ `# grub-probe --target=fs_uuid *esp*/EFI/Microsoft/Boot/bootmgfw.efi`  `1ce5-7f28` 
 
 Alternatively one can run `blkid` (as root) and read the UUID of the EFI partition from there.
 
 The `$hints_string` command will determine the location of the EFI partition, in this case harddrive 0:
 
- `# grub-probe --target=hints_string $esp/EFI/Microsoft/Boot/bootmgfw.efi`  `--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1` 
+ `# grub-probe --target=hints_string *esp*/EFI/Microsoft/Boot/bootmgfw.efi`  `--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1` 
 
-These two commands assume the ESP Windows uses is mounted at `$esp`. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
+These two commands assume the ESP Windows uses is mounted at `*esp*`. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
 
 #### Windows installed in BIOS-MBR mode
 
@@ -443,7 +444,7 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 *   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
 
- `# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
+ `# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
 
 ### Chainloading an Arch Linux .efi file
 
@@ -682,7 +683,7 @@ Booting however
 
 Then you need to initialize GRUB graphical terminal (`gfxterm`) with proper video mode (`gfxmode`) in GRUB. This video mode is passed by GRUB to the linux kernel via 'gfxpayload'. In case of UEFI systems, if the GRUB video mode is not initialized, no kernel boot messages will be shown in the terminal (atleast until KMS kicks in).
 
-Copy `/usr/share/grub/unicode.pf2` to ${GRUB_PREFIX_DIR} (`/boot/grub/` in case of BIOS and UEFI systems). If GRUB UEFI was installed with `--boot-directory=$esp/EFI` set, then the directory is `$esp/EFI/grub/`:
+Copy `/usr/share/grub/unicode.pf2` to ${GRUB_PREFIX_DIR} (`/boot/grub/` in case of BIOS and UEFI systems). If GRUB UEFI was installed with `--boot-directory=*esp*/EFI` set, then the directory is `*esp*/EFI/grub/`:
 
 ```
 # cp /usr/share/grub/unicode.pf2 ${GRUB_PREFIX_DIR}
@@ -823,11 +824,11 @@ GRUB can take a long time to load when disk space is low. Check if you have suff
 
 ### error: unknown filesystem
 
-GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) is located outside the first 2TB of the drive [[3]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2TB, then reinstall and reconfigure GRUB.
+GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) is located outside the first 2TB of the drive [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2TB, then reinstall and reconfigure GRUB.
 
 ### grub-reboot not resetting
 
-GRUB seems to be unable to write to root BTRFS partitions [[4]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (do not forget `grub-mkconfig -o /boot/grub/grub.cfg`).
+GRUB seems to be unable to write to root BTRFS partitions [[3]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (do not forget `grub-mkconfig -o /boot/grub/grub.cfg`).
 
 ### Old BTRFS prevents installation
 

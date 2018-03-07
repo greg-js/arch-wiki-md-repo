@@ -213,6 +213,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [StarTech TB32DP2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
 | [StarTech TBT3TBTADAP - Thunderbolt 3 to Thunderbolt Adapter](https://www.amazon.com/StarTech-com-Thunderbolt-Adapter-Compatible-DisplayPort/dp/B019FPJDQ2) | Thunderbolt 2, Thunderbolt | Working |
 | [Tripp Lite USB-C to DVI External Video Adapter](https://www.amazon.com/Tripp-Lite-External-Charging-U444-06N-DGU-C/dp/B01LYQB1XI) | DVI, Gbit Ethernet, USB-A, USB-C PD Charging Port | Working |
+| [UCOUSO USB-C Aluminium HDMI Adapter mit HDMI (4K@30HZ) und 3 USB 3.0 Ports](https://www.amazon.de/gp/product/B075H85W43) | HDMI, 3x USB 3.0 | Working |
 | [Xiaomi USB Type-C to HDMI Multifunction Adapter](https://xiaomi-mi.com/accessories-for-laptops/xiaomi-usb-type-c-to-hdmi-multifunction-adapter/) | 4K HDMI, 1x USB 3.0, USB-C Power | Working |
 
 ### Thunderbolt Firmware updates

@@ -38,7 +38,19 @@ To switch to a different console—for example, to view this guide with [ELinks]
 
 ### Set the keyboard layout
 
-The default [console keymap](/index.php/Console_keymap "Console keymap") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). To list available layouts, run `ls /usr/share/kbd/keymaps/**/*.map.gz`. To modify the layout, append a corresponding file name to [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitting path and file extension. For example, run `loadkeys de-latin1` to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout.
+The default [console keymap](/index.php/Console_keymap "Console keymap") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Available layouts can be listed with:
+
+```
+# ls /usr/share/kbd/keymaps/**/*.map.gz
+
+```
+
+To modify the layout, append a corresponding file name to [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitting path and file extension. For example, to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout:
+
+```
+# loadkeys de-latin1
+
+```
 
 [Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
@@ -77,7 +89,7 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-When recognized by the live system, disks are assigned to a *block device* such as `/dev/*sda*`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk*.
+When recognized by the live system, disks are assigned to a [block device](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "w:Device file") such as `/dev/sda` or `/dev/nvme0n1`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk*.
 
 ```
 # fdisk -l
@@ -86,7 +98,7 @@ When recognized by the live system, disks are assigned to a *block device* such 
 
 Results ending in `rom`, `loop` or `airoot` may be ignored.
 
-The following *partitions* (shown with a numerical suffix) are **required** for a chosen device:
+The following *partitions* are **required** for a chosen device:
 
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").

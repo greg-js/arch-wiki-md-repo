@@ -127,12 +127,7 @@ As of version 5.2.2, [libreoffice-fresh](https://www.archlinux.org/packages/?nam
 
 If you intend to use macros, you must have a Java Runtime Environment enabled. A Java Runtime Environment is enabled by default, but disabling it [speeds up the program](#Speed_up_LibreOffice).
 
-The default path for macros in Arch Linux is different from most Linux distributions. Its location is:
-
-```
-~/.config/libreoffice/4/user/Scripts/
-
-```
+The default path for macros in Arch Linux is different from most Linux distributions. Its location is: `~/.config/libreoffice/4/user/Scripts/`.
 
 ## Speed up LibreOffice
 

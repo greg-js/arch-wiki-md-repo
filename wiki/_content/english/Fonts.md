@@ -326,7 +326,7 @@ For more monospaced fonts see [#Bitmap](#Bitmap) and [#Families](#Families).
 *   Fantasque Sans Mono ([ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/))
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – designed for Firefox OS
 *   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
-*   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack))
+*   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - an open source monospaced font, used as the default in KDE Plasma
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - inspired by Consolas
 *   [Inconsolata-g](https://leonardo-m.livejournal.com/77079.html) ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - adds some programmer-friendly modifications
 *   [Lucida Typewriter](https://en.wikipedia.org/wiki/Lucida_Typewriter "wikipedia:Lucida Typewriter") (included in package [jre](https://aur.archlinux.org/packages/jre/))
@@ -537,42 +537,6 @@ A section of the Unicode standard is designated for pictographic characters call
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Twitter's open-sourced emoji glyphs.
 
 [Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
-
-To enable emoji fonts add 'Emoji' generic family as fallback for main font families by adding this to your [Font configuration](/index.php/Font_configuration "Font configuration"):
-
- `/etc/fonts/local.conf` 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <match>
-    <test name="family">
-      <string>serif</string>
-    </test>
-    <edit name="family" mode="prepend" binding="weak">
-      <string>Emoji</string>
-    </edit>
-  </match>
-
-  <match>
-    <test name="family">
-      <string>sans-serif</string>
-    </test>
-    <edit name="family" mode="prepend" binding="weak">
-      <string>Emoji</string>
-    </edit>
-  </match>
-
-  <match>
-    <test name="family">
-      <string>monospace</string>
-    </test>
-    <edit name="family" mode="prepend" binding="weak">
-      <string>Emoji</string>
-    </edit>
-  </match>
-</fontconfig>
-```
 
 ### Math
 
