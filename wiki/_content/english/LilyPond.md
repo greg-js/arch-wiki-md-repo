@@ -56,8 +56,8 @@ Now when you edit a `*.ly` file you can compile your code with `F5` button, open
 
 Click-and-point using evince. [[2]](https://github.com/markk/textedit-ly)
 
-*   [Frescobaldi](https://aur.archlinux.org/packages/frescobaldi/)
-*   [Denemo](https://aur.archlinux.org/packages/denemo)
+*   [frescobaldi](https://aur.archlinux.org/packages/frescobaldi/)
+*   [denemo](https://aur.archlinux.org/packages/denemo/)
 
 You can find both in the [AUR](/index.php/AUR "AUR").
 

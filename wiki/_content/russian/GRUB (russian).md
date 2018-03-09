@@ -1001,7 +1001,7 @@ menuentry "FreeDOS" {
 
 ##### Memtest86+
 
-Тест памяти [Memtest86+](https://www.archlinux.org/packages/extra/any/memtest86+/) (запускается только в режиме BIOS):
+Тест памяти [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) (запускается только в режиме BIOS):
 
 ```
 menuentry "Memtest86+" {

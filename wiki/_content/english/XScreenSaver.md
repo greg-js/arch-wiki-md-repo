@@ -147,6 +147,8 @@ heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 
 There is no native way to disable XScreenSaver for [Flash](/index.php/Flash "Flash") or HTML5 fullscreen video, but there is a script named [lightsonplus](https://github.com/devkral/lightsonplus) with support for Firefox's Flash plugin, Chromium's Flash plugin, HTML5 fullscreen video in Firefox and Chromium, MPlayer, and VLC.
 
+Another script based solution would be [firefox-dpms-git](https://aur.archlinux.org/packages/firefox-dpms-git/) which makes use of PulseAudio output detection of Firefox and thus also works in windowed mode (but not without audio playback).
+
 ### Animated wallpaper
 
 One can run `xscreensaver` in the background, just like a wallpaper. First, kill any process that is controlling the background (the root window).

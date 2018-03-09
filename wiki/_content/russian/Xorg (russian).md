@@ -47,7 +47,13 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
 *   [6 Композит](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82)
     *   [6.1 Список композитных менеджеров](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.BE.D0.B2)
 *   [7 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [7.1 Закрытие приложение по хоткею](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D1.85.D0.BE.D1.82.D0.BA.D0.B5.D1.8E)
+    *   [7.1 Настройка X при запуске (startx)](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_X_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.28startx.29)
+    *   [7.2 Вложенная X-сессия](#.D0.92.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_X-.D1.81.D0.B5.D1.81.D1.81.D0.B8.D1.8F)
+    *   [7.3 Запуск программ с GUI удаленно](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC_.D1.81_GUI_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE)
+    *   [7.4 Отключение и включение при необходимости устройств ввода](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BD.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
+    *   [7.5 Закрытие приложения с помощью горячей клавиши](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B9_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
+    *   [7.6 Блокирование доступа к TTY](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BA_TTY)
+    *   [7.7 Запрет пользователю закрывать, перезапускать X](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8E_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D1.8C.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.82.D1.8C_X)
 *   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [8.1 Если вместо всех шрифтов квадратики](#.D0.95.D1.81.D0.BB.D0.B8_.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.BE_.D0.B2.D1.81.D0.B5.D1.85_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D0.BA.D0.B2.D0.B0.D0.B4.D1.80.D0.B0.D1.82.D0.B8.D0.BA.D0.B8)
     *   [8.2 Быстрое решение конфликта с Bitstream-Vera](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D0.B0_.D1.81_Bitstream-Vera)
@@ -417,9 +423,98 @@ $ xrdb -query | grep dpi
 
 ## Советы и рекомендации
 
-### Закрытие приложение по хоткею
+### Настройка X при запуске (startx)
 
-Привяжите скрипт к хоткею:
+Чтобы получить справку о опциях X, выполните:
+
+```
+$ man Xserver
+
+```
+
+Следующие параметры нужно добавлять к переменной `"defaultserverargs"` в файле `/usr/bin/startx`:
+
+*   Включить отложенную загрузку глифов для 16-битных шрифтов:
+
+```
+-deferglyphs 16
+
+```
+
+**Примечание:** Если вы запускаете X через kdm, скрипт startx может оказаться не исполняемым. Параметры X нужно добавлять к переменной `ServerArgsLocal` в файле `/usr/share/config/kdm/kdmrc`.
+
+### Вложенная X-сессия
+
+Для запуска вложенного сеанса другой среды рабочего стола:
+
+```
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+
+```
+
+Это запустит сеанс Window Maker в окне 1024 на 768 в рамках текущей X-сессии.
+
+Для этого необходим установленный пакет [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest).
+
+### Запуск программ с GUI удаленно
+
+Смотрите основную статью: [Secure Shell (Русский)#Проброс X11](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.BE.D0.B1.D1.80.D0.BE.D1.81_X11 "Secure Shell (Русский)").
+
+### Отключение и включение при необходимости устройств ввода
+
+С помощью *xinput* вы можете временно отключить или включить устройства ввода. Это полезно, например, на системах, имеющих несколько мышек, таких как ThinkPads и, если вам хотелось бы использовать только одну, чтобы избежать нежелательные нажатия.
+
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput).
+
+Найдите имя или ID устройства, которое вы хотите отключить:
+
+```
+$ xinput
+
+```
+
+Например для ноутбука Lenovo ThinkPad T500 вывод выглядит следующим образом:
+
+ `$ xinput` 
+```
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ TPPS/2 IBM TrackPoint                     id=11   [slave  pointer  (2)]
+⎜   ↳ SynPS/2 Synaptics TouchPad                id=10   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=8    [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=9    [slave  keyboard (3)]
+    ↳ ThinkPad Extra Buttons                    id=12   [slave  keyboard (3)]
+
+```
+
+Отключить устройство можно командой `xinput --disable *устройство*`, где *устройство* это ID устройства или имя устройства, которое вы хотите отключить. В следующем примере мы отключим тачпад Synaptics с ID 10:
+
+```
+$ xinput --disable 10
+
+```
+
+Чтобы снова включить устройство, просто выполните противоположную команду:
+
+```
+$ xinput --enable 10
+
+```
+
+Так выглядит команда для выключения устройства (здесь тачпада) через его имя:
+
+```
+$ xinput --disable "SynPS/2 Synaptics TouchPad"
+
+```
+
+### Закрытие приложения с помощью горячей клавиши
+
+Привяжите скрипт к горячей клавише:
 
 ```
 #!/bin/bash
@@ -430,6 +525,26 @@ kill -9 $pid
 ```
 
 Зависимости: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+
+### Блокирование доступа к TTY
+
+Чтобы запретить доступ к tty в X, добавьте следующее в файл [xorg.conf](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0):
+
+```
+Section "ServerFlags"
+    Option "DontVTSwitch" "True"
+EndSection
+```
+
+### Запрет пользователю закрывать, перезапускать X
+
+Чтобы запретить пользователю закрывать, перезапускать запущенный Xorg, добавьте следующее в файл [xorg.conf](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0):
+
+```
+Section "ServerFlags"
+    Option "DontZap"      "True"
+EndSection
+```
 
 ## Решение проблем
 

@@ -96,6 +96,7 @@ The specified action for each event can be one of `ignore`, `poweroff`, `reboot`
 | `HandleHibernateKey` | Triggered when the hibernate key/button is pressed. | `hibernate` |
 | `HandleLidSwitch` | Triggered when the lid is closed, except in the cases below. | `suspend` |
 | `HandleLidSwitchDocked` | Triggered when the lid is closed if the system is inserted in a docking station, or more than one display is connected. | `ignore` |
+| `HandleLidSwitchExternalPower` | Triggered when the lid is closed if the system is connected to external power. | action set for `HandleLidSwitch` |
 
 To apply any changes, [restart](/index.php/Restart "Restart") the `systemd-logind` daemon (be warned that this will terminate all login sessions that might still be open).
 

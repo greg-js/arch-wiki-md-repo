@@ -110,6 +110,10 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[https://github.com/Keruspe/GPaste](https://github.com/Keruspe/GPaste) || [gpaste](https://www.archlinux.org/packages/?name=gpaste)
 
+*   **Greenclip** — Simple clipboard manager to be integrated with rofi
+
+	[https://github.com/erebe/greenclip](https://github.com/erebe/greenclip) || [rofi-greenclip](https://aur.archlinux.org/packages/rofi-greenclip/)
+
 *   **Keepboard** — Cross-platform clipboard manager. Saves text, image and file clipboard items.
 
 	[https://sourceforge.net/projects/keepboard/](https://sourceforge.net/projects/keepboard/) ||

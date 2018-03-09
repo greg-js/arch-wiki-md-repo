@@ -3,13 +3,11 @@
 ## Contents
 
 *   [1 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
-    *   [1.1 Configure Display Manager](#Configure_Display_Manager)
+    *   [1.1 Configure display manager](#Configure_display_manager)
 *   [2 Using the KDE Wallet to store ssh key passhprases](#Using_the_KDE_Wallet_to_store_ssh_key_passhprases)
 *   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Inotify folder watch limit](#Inotify_folder_watch_limit)
-*   [6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Unlock KDE Wallet automatically on login
 
@@ -21,7 +19,7 @@
 
 [Install](/index.php/Install "Install") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) for the [PAM](/index.php/PAM "PAM") compatible module.
 
-### Configure Display Manager
+### Configure display manager
 
 The following lines must be present under their corresponding sections:
 
@@ -30,7 +28,7 @@ auth            optional        pam_kwallet5.so
 session         optional        pam_kwallet5.so auto_start
 ```
 
-It may be needed to edit the [Display Manager](/index.php/Display_Manager "Display Manager") configuration:
+It may be needed to edit the [display manager](/index.php/Display_manager "Display manager") configuration:
 
 *   For [SDDM](/index.php/SDDM "SDDM") no further edits should be needed because the lines are already present in `/etc/pam.d/sddm`.
 *   For [GDM](/index.php/GDM "GDM") edit `/etc/pam.d/gdm-password` accordingly.
@@ -99,28 +97,6 @@ There is an unofficial [Firefox](/index.php/Firefox "Firefox") addon for [KDE5 W
 ## KDE Wallet for Chrome and Chromium
 
 Chrome/Chromium has built in wallet integration. To enable it, run Chromium with the `--password-store=kwallet` or `--password-store=detect` argument. To make the change persistent, see [Chromium/Tips and tricks#Making flags persistent](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"). (Setting CHROMIUM_USER_FLAGS will not work.)
-
-## Troubleshooting
-
-### Inotify folder watch limit
-
-If you get the following error:
-
-```
-KDE Baloo Filewatch service reached the inotify folder watch limit. File changes may be ignored.
-
-```
-
-Then you will need to increase the inotify folder watch limit:
-
-```
-# echo 524288 > /proc/sys/fs/inotify/max_user_watches
-
-```
-
-To make changes permanent, create a `40-max-user-watches.conf` file:
-
- `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
 
 ## See also
 

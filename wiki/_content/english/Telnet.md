@@ -8,7 +8,7 @@ A telnet server can be configured with [systemd](/index.php/Systemd "Systemd") s
 
 ## Configuration
 
-To enable telnet server connections in systemd, [enable](/index.php/Enable "Enable") `telnet.socket` if the telnet server should be started on every boot, and [start](/index.php/Start "Start") `telnet.socket` to test connectivity.
+To enable telnet server connections in systemd, [enable](/index.php/Enable "Enable") `telnet.socket` (if the telnet server should be started on every boot), and [start](/index.php/Start "Start") `telnet.socket` to test connectivity.
 
 To enable telnet server connections in xinetd, edit `/etc/xinetd.d/telnet`, change `disable = yes` to `disable = no` and restart the xinetd service.
 
@@ -25,4 +25,6 @@ $ telnet localhost
 
 Try a root login to see if your configuration permits it and the security implications that implies.
 
-**Tip:** If you receive junk codes form a remote telnet server sending non-ascii chars with a non-unicode encoding, you might want to try [xorg-luit](https://www.archlinux.org/packages/?name=xorg-luit) to solve this problem.
+If the session disconnects before you receive a login prompt, try installing [inetutils-git](https://aur.archlinux.org/packages/inetutils-git/) in place of the current inetutils and restarting telnet.socket.
+
+**Tip:** If you receive junk codes from a remote telnet server sending non-ascii chars with a non-unicode encoding, you might want to try [xorg-luit](https://www.archlinux.org/packages/?name=xorg-luit) to solve this problem.

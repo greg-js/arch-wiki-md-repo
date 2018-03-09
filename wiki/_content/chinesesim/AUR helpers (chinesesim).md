@@ -224,7 +224,7 @@ srcman is a pacman/makepkg wrapper written in Bash, which transparently handles 
 | [Cower](#cower) | C | 是 | 否 | 是 | 如 `cower -h` |
 | [Makeaur](#makeaur) | Bash | 否 | 否 | 已经被 fork | makeaur <pkgname> |
 | [Owl](#owl) | Dash | 是 | 是 | 是 | Run `owl` without arguments |
-| [Pacaur](#pacaur) | Bash, backend in C (cower) | 是 | 是 | 是 | 与 pacman 一致, and/or AUR specific arguments . See also `pacaur -h`. |
+| [Pacaur](#pacaur) | Bash, backend in C (cower) | 是 | 是 | 否 | 与 pacman 一致, and/or AUR specific arguments . See also `pacaur -h`. |
 | [Packer](#packer) | Bash | 是 | 是 | 是 | 与 pacman 一致 (e.g., packer -S <pkgname>) |
 | [pacmoon](#pacmoon) | Zsh | 是 | 是 | 是 | Similar to emerge from portage e.g. pacmoon -av <pkgname> |
 | [Paktahn](#paktahn) | Lisp | 是 | 是 | 是 | 与 pacman 一致 (e.g., pak -S <pkgname>) |

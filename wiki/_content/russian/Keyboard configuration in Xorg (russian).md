@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 22 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=497914).
+
 Ссылки по теме
 
 *   [Конфигурация клавиатуры в консоли](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8 "Конфигурация клавиатуры в консоли")
@@ -5,44 +7,42 @@
 *   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
 *   [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=482781).
-
-This article's purpose is to detail basic Xorg server keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") or [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") respectively.
+Цель этой статьи описать основные настройки клавиатуры в Xorg. Для расширенных тем, таких как изменение раскладки клавиатуры или дополнительные сопоставления клавиш, смотрите статьи [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") или [Дополнительные клавиши](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8 "Дополнительные клавиши") соответственно.
 
 ## Contents
 
-*   [1 Overview](#Overview)
-*   [2 Viewing keyboard settings](#Viewing_keyboard_settings)
-    *   [2.1 Third party utilities](#Third_party_utilities)
-*   [3 Setting keyboard layout](#Setting_keyboard_layout)
-    *   [3.1 Using setxkbmap](#Using_setxkbmap)
-    *   [3.2 Using X configuration files](#Using_X_configuration_files)
-        *   [3.2.1 Using localectl](#Using_localectl)
-*   [4 Frequently used XKB options](#Frequently_used_XKB_options)
-    *   [4.1 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
-    *   [4.2 Terminating Xorg with Ctrl+Alt+Backspace](#Terminating_Xorg_with_Ctrl.2BAlt.2BBackspace)
-    *   [4.3 Swapping Caps Lock with Left Control](#Swapping_Caps_Lock_with_Left_Control)
-    *   [4.4 Enabling mouse keys](#Enabling_mouse_keys)
+*   [1 Обзор](#.D0.9E.D0.B1.D0.B7.D0.BE.D1.80)
+*   [2 Просмотр настроек клавиатуры](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [2.1 Сторонние утилиты](#.D0.A1.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
+*   [3 Настройка раскладки клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [3.1 Через setxkbmap](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_setxkbmap)
+    *   [3.2 Через конфигурационные файлы X](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_X)
+        *   [3.2.1 С помощью localectl](#.D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_localectl)
+*   [4 Часто используемые опции XKB](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B8_XKB)
+    *   [4.1 Переключение раскладок клавиатуры](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [4.2 Завершение Xorg по сочетанию клавиш Ctrl+Alt+Backspace](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_Xorg_.D0.BF.D0.BE_.D1.81.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8E_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88_Ctrl.2BAlt.2BBackspace)
+    *   [4.3 Блокировка клавиши Caps Lock нажатием левого Control](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Caps_Lock_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D0.B5.D0.BC_.D0.BB.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_Control)
+    *   [4.4 Включение кнопок мышки](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.BC.D1.8B.D1.88.D0.BA.D0.B8)
     *   [4.5 Configuring compose key](#Configuring_compose_key)
-        *   [4.5.1 Key combinations](#Key_combinations)
-    *   [4.6 Currency sign on other key](#Currency_sign_on_other_key)
-    *   [4.7 Switching state immediately when Caps Lock is pressed](#Switching_state_immediately_when_Caps_Lock_is_pressed)
-        *   [4.7.1 Workaround](#Workaround)
-*   [5 Регулировка typematic задержки и скорости](#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_typematic_.D0.B7.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8)
+        *   [4.5.1 Сочетания клавиш](#.D0.A1.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
+    *   [4.6 Значки валют на других кнопках](#.D0.97.D0.BD.D0.B0.D1.87.D0.BA.D0.B8_.D0.B2.D0.B0.D0.BB.D1.8E.D1.82_.D0.BD.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0.D1.85)
+    *   [4.7 Переключение состояния сразу после нажатия клавиши Caps Lock](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_.D1.81.D1.80.D0.B0.D0.B7.D1.83_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Caps_Lock)
+        *   [4.7.1 Временное решение](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5)
+*   [5 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
     *   [5.1 Using xset](#Using_xset)
     *   [5.2 Using XServer startup options](#Using_XServer_startup_options)
     *   [5.3 Using XServer options](#Using_XServer_options)
 *   [6 See also](#See_also)
 
-## Overview
+## Обзор
 
 The Xorg server uses the [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) to define keyboard layouts. Optionally, [xmodmap](/index.php/Xmodmap "Xmodmap") can be used to access the internal keymap table directly, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s *localectl* can be used to define the keyboard layout for both the Xorg server and the virtual console.
 
-**Note:** XKB options can be overridden by the tools provided by some desktop environments such as [GNOME (XkbOptions)](/index.php/GNOME#XkbOptions_keyboard_options "GNOME") and [KDE (set keyboard)](/index.php/KDE#Set_keyboard "KDE").
+**Примечание:** XKB options can be overridden by the tools provided by some desktop environments such as [GNOME (XkbOptions)](/index.php/GNOME#XkbOptions_keyboard_options "GNOME") and [KDE (set keyboard)](/index.php/KDE#Set_keyboard "KDE").
 
-## Viewing keyboard settings
+## Просмотр настроек клавиатуры
 
-You can use the following command to see the actual XKB settings:
+Вы можете использовать следующую команду, чтобы просмотреть настройки XKB:
 
  `$ setxkbmap -print -verbose 10` 
 ```
@@ -68,9 +68,9 @@ xkb_keymap {
 
 ```
 
-### Third party utilities
+### Сторонние утилиты
 
-There are some "unofficial" utilities which allow to print specific information about the currently used keyboard layout.
+Здесь приведены некоторые "неофициальные" утилиты, которые позволяют выводить специфичную информацию о используемой в настоящее время раскладке клавиатуры.
 
 *   [xkb-switch-git](https://aur.archlinux.org/packages/xkb-switch-git/):
 
@@ -80,95 +80,95 @@ There are some "unofficial" utilities which allow to print specific information 
 
  `$ xkblayout-state print "%s"`  `de` 
 
-## Setting keyboard layout
+## Настройка раскладки клавиатуры
 
-Keyboard layout in Xorg can be set in multiple ways. Here is an explanation of used options:
+Раскладку клавиатуры можно настроить разными способами в Xorg. Вот объяснение используемых параметров:
 
-*   `XkbModel` selects the keyboard model. This has an influence only for some extra keys your keyboard might have. The safe fallback are `pc104` or `pc105`. But for instance laptops usually have some extra keys, and sometimes you can make them work by simply setting a proper model.
-*   `XkbLayout` selects the keyboard layout. Multiple layouts may be specified in a comma-separated list, e.g. if you want to quickly switch between layouts.
-*   `XkbVariant` selects a specific layout variant. For instance, the default `sk` variant is `qwertz`, but you can manually specify `qwerty`, etc.
-*   `XkbOptions` contains some extra options. Used for specifying layout switching, notification LED, compose mode etc. See the [#Frequently used XKB options](#Frequently_used_XKB_options) section for examples.
+*   `XkbModel` устанавливает модель клавиатуры. Это влияет только на некоторые дополнительные клавиши. Для большиства клавиатур подходят модели `pc104` или `pc105`. Но, например, ноутбуки обычно имеют дополнительные клавиши, чтобы заставить их работать иногда достаточно только выбрать правильную модель клавиатуры.
+*   `XkbLayout` устанавливает раскладку клавиатуры. Несколько раскладок могут быть указаны в списке, разделенном запятыми, если, например, вам нужно быстро переключаться между ними.
+*   `XkbVariant` устанавливает специфичое расположение клавиш для раскладки. Например, вариант по умолчанию для `sk` - `qwertz`, но его можно изменить вручную на другой, например, `qwerty`.
+*   `XkbOptions` устанавливает некоторые дополнительные опции. Используется для указания клавиш для смены раскладки, уведомления светодиодом, режима compose и др. Смотрите раздел [#Часто используемые опции XKB](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B8_XKB) для примеров.
 
-**Note:** You must specify as many variants as the number of specified layouts. If you want the default variant, specify an empty string as the variant (the comma must stay). For example, to have the default `us` layout as primary and the `dvorak` variant of `us` layout as secondary, specify `us,us` as `XkbLayout` and `,dvorak` as `XkbVariant`.
+**Примечание:** Необходимо указывать варианты для каждой установленной раскладки. Если вам нужен стандартный вариант, укажите пустую строку, как вариант (запятая должна оставаться). Например, имеется первичная стандартная раскладка `us` и вторичная раскладка `us` с вариантом расположения клавиш `dvorak`, тогда укажите `us,us` как `XkbLayout` и `,dvorak` как `XkbVariant`.
 
-The layout name is usually a [2-letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2"). To see a full list of keyboard models, layouts, variants and options, along with a short description, open `/usr/share/X11/xkb/rules/base.lst`. Alternatively, you may use one of the following commands to see a list without a description:
+Имя раскладки, как правило, состоиз из [2-буквенного кода страны](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2"). Чтобы посмотреть полный список моделей клавиатур, раскладок, вариантов и опций вместе с коротким описанием, откройте файл `/usr/share/X11/xkb/rules/base.lst`. Кроме того, вы можете использовать одну из следующих команд для просмотра раскладки и т.д., но без описания:
 
 *   `localectl list-x11-keymap-models`
 *   `localectl list-x11-keymap-layouts`
 *   `localectl list-x11-keymap-variants [*layout*]`
 *   `localectl list-x11-keymap-options`
 
-Examples in the following subsections will have the same effect, they will set `pc104` model, `cz` as primary layout, `us` as secondary layout, `dvorak` variant for `us` layout and the `Alt+Shift` combination for switching between layouts. See [xkeyboard-config(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xkeyboard-config.7) for more detailed information.
+Примеры в следующих подразделах будут делать одно и то же. Они устанавливают модель клавиатуры `pc105`, первичной раскладкой `us`, `ru` - вторичной раскладкой, вариант расположения клавиш `dvorak` для раскладки `us` и комбинацию клавиш `Alt+Shift` для переключения между раскладками. Для получения дополнительной информации смотрите [xkeyboard-config(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xkeyboard-config.7).
 
-### Using setxkbmap
+### Через setxkbmap
 
-*setxkbmap* sets the keyboard layout for the current X session only, but can be made persistent in [xinitrc](/index.php/Xinitrc "Xinitrc") or [xprofile](/index.php/Xprofile "Xprofile"). This overrides system-wide configuration specified following [#Using X configuration files](#Using_X_configuration_files).
+*setxkbmap* настраивает раскладку клавиатуры только для текущей сессии X, но ее можно сделать постоянной в [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") или [xprofile](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)"). Это переопределяет общесистемные настройки, указанные в [#Через конфигурационные файлы X](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_X).
 
-The usage is as follows (see [setxkbmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1)):
+Используйте следующим образом (смотрите [setxkbmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1)):
 
 ```
 $ setxkbmap [-model *xkb_model*] [-layout *xkb_layout*] [-variant *xkb_variant*] [-option *xkb_options*]
 
 ```
 
-To change just the layout (`-layout` is the default flag):
+Чтобы изменить раскладку введите (`-layout` - стандартный флаг):
 
 ```
 $ setxkbmap *xkb_layout*
 
 ```
 
-For multiple customizations:
+Для нескольких настроек:
 
 ```
-$ setxkbmap -model pc104 -layout cz,us -variant ,dvorak -option grp:alt_shift_toggle
+$ setxkbmap -model pc105 -layout us,ru -variant dvorak, -option grp:alt_shift_toggle
 
 ```
 
-### Using X configuration files
+### Через конфигурационные файлы X
 
-**Note:** `xorg.conf` is parsed by the X server at start-up. To apply changes, restart X.
+**Примечание:** `xorg.conf` анализируется X-сервером при запуске. Чтобы применить изменения, перезапустите X.
 
-The syntax of X configuration files is explained in [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg"). This method creates system-wide configuration which is persistent across reboots.
+Синтакс конфигурационных файлов X объяснен в [Xorg (Русский)#Настройка](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Xorg (Русский)"). Этот способ создает постоянные общесистемные настройки.
 
-Here is an example:
+Вот пример:
 
  `/etc/X11/xorg.conf.d/00-keyboard.conf` 
 ```
 Section "InputClass"
         Identifier "system-keyboard"
         MatchIsKeyboard "on"
-        Option "XkbLayout" "cz,us"
-        Option "XkbModel" "pc104"
-        Option "XkbVariant" ",dvorak"
+        Option "XkbLayout" "us,ru"
+        Option "XkbModel" "pc105"
+        Option "XkbVariant" "dvorak,"
         Option "XkbOptions" "grp:alt_shift_toggle"
 EndSection
 
 ```
 
-#### Using localectl
+#### С помощью localectl
 
-For convenience, the tool *localectl* may be used instead of manually editing X configuration files. It will save the configuration in `/etc/X11/xorg.conf.d/00-keyboard.conf`, this file should not be manually edited, because *localectl* will overwrite the changes on next start.
+Для удобства можно использовать инструмент *localectl* вместо ручного редактирования конфигурационных файлов X. Он сохраняет настройки в файл `/etc/X11/xorg.conf.d/00-keyboard.conf`, который не следует редактировать вручную, потому что *localectl* перепишет его при следующем запуске.
 
-The usage is as follows:
-
-```
-$ localectl [--no-convert] set-x11-keymap *layout* [*model* [*variant* [*options*]]]
+Используйте следующим образом:
 
 ```
-
-To set a *model*, *variant* or *options*, all preceding fields need to be specified, but the preceding fields can be skipped by passing an empty string with `""`. Unless the `--no-convert` option is passed, the specified keymap is also converted to the closest matching console keymap and applied to the [console configuration](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") in `vconsole.conf`. See [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) for more information.
-
-To create a `/etc/X11/xorg.conf.d/00-keyboard.conf` like the above:
-
-```
-$ localectl --no-convert set-x11-keymap cz,us pc104 ,dvorak grp:alt_shift_toggle
+$ localectl [--no-convert] set-x11-keymap *раскладка* [*модель* [*вариант* [*опции*]]]
 
 ```
 
-## Frequently used XKB options
+Чтобы установить *модель*, *вариант* или *опции*, нужно указать все эти поля, но их можно пропустить, передав пустую строку `""`. Если параметр `--no-convert` не передан, тогда указанная клавиатура преобразуется в ближайшую соответствующую раскладку для консоли и прописывается в [настройках консоли](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8 "Конфигурация клавиатуры в консоли") в файле `vconsole.conf`. Для получения дополнительной информации смотрите [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1).
 
-### Switching between keyboard layouts
+Чтобы создать файл `/etc/X11/xorg.conf.d/00-keyboard.conf`, как указано выше:
+
+```
+$ localectl --no-convert set-x11-keymap us,ru pc105 dvorak, grp:alt_shift_toggle
+
+```
+
+## Часто используемые опции XKB
+
+### Переключение раскладок клавиатуры
 
 To be able to easily switch keyboard layouts, first specify multiple layouts between which you want to switch (the first one is the default). Then specify a key (or key combination), which will be used for switching. For example, to switch between a US and a Swedish layout using the `CapsLock` key, use `us,se` as an argument of `XkbLayout` and `grp:caps_toggle` as an argument of `XkbOptions`.
 
@@ -179,11 +179,11 @@ $ grep "grp:.*toggle" /usr/share/X11/xkb/rules/base.lst
 
 ```
 
-### Terminating Xorg with Ctrl+Alt+Backspace
+### Завершение Xorg по сочетанию клавиш Ctrl+Alt+Backspace
 
 By default, the key combination `Ctrl+Alt+Backspace` is disabled. You can enable it by passing `terminate:ctrl_alt_bksp` to `XkbOptions`. This can also be done by binding a key to `Terminate_Server` in `xmodmap` (which undoes any existing `XkbOptions` setting). In order for either method to work, one also needs to have `DontZap` set to "off" in `ServerFlags`; however, from at least version R6.8.0 (year 2004) [[1]](https://www.x.org/archive/X11R6.8.0/doc/xorg.conf.5.html) this is the default.
 
-### Swapping Caps Lock with Left Control
+### Блокировка клавиши Caps Lock нажатием левого Control
 
 To swap Caps Lock with Left Control key, add `ctrl:swapcaps` to `XkbOptions`. Run the following command to see similar options along with their descriptions:
 
@@ -192,7 +192,7 @@ $ grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
 
 ```
 
-### Enabling mouse keys
+### Включение кнопок мышки
 
 [Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is disabled by default and has to be manually enabled by passing `keypad:pointerkeys` to `XkbOptions`. This will make the `Shift+NumLock` shortcut toggle mouse keys.
 
@@ -213,7 +213,7 @@ $ grep "compose:" /usr/share/X11/xkb/rules/base.lst
 
 If the desired mapping is not found in that file, an alternative is to use [xmodmap](/index.php/Xmodmap "Xmodmap") to map the desired key to the `Multi_key` keysym, which acts as a compose key by default (note that *xmodmap* settings are reset by *setxkbmap*).
 
-#### Key combinations
+#### Сочетания клавиш
 
 The default combinations for the compose keys depend on the [locale](/index.php/Locale "Locale") configured for the session and are stored in `/usr/share/X11/locale/*used_locale*/Compose`, where `*used_locale*` is for example `en_US.UTF-8`.
 
@@ -221,23 +221,23 @@ You can define your own compose key combinations by copying the default file to 
 
 However, GTK does not use [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") by default and therefore does not follow `~/.XCompose` keys. This can be fixed by forcing GTK to use XIM by adding `export GTK_IM_MODULE=xim` and/or `export XMODIFIERS="@im=none"` to `~/.xprofile`.
 
-**Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](/index.php?title=Smart_Common_Input_Method&action=edit&redlink=1 "Smart Common Input Method (page does not exist)"), [uim](https://en.wikipedia.org/wiki/Uim "wikipedia:Uim"), [IBus](/index.php/IBus "IBus"), etc. See [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization") for details.
+**Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](/index.php/SCIM "SCIM"), [UIM](/index.php/UIM "UIM"), [IBus](/index.php/IBus "IBus"), etc. See [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization") for details.
 
 **Note:** XIM will prevent insertion of Unicode characters with the `Ctrl+Shift+u` combination.
 
-### Currency sign on other key
+### Значки валют на других кнопках
 
 Most European keyboards have a Euro sign (€) printed on on the `5` key. For example, to access it with `Alt+5`, use the `lv3:lalt_switch` and `eurosign:5` options.
 
 The Rupee sign (₹) can be used the same way with `rupeesign:4`.
 
-### Switching state immediately when Caps Lock is pressed
+### Переключение состояния сразу после нажатия клавиши Caps Lock
 
 Those who prefer typing capital letters with the Caps Lock key may experience a short delay when Caps Lock state is switched, resulting in two or more capital letters (e.g. *THe*, *ARch LInux*). This behaviour [stems from typewriters](https://en.wikipedia.org/wiki/Caps_lock#History "wikipedia:Caps lock").
 
 Some more popular operating systems have removed this behaviour, either voluntarily (as it can be confusing to some) or by mistake, however this is a question of preference. Bug reports have been filed on the Xserver bug tracker, as there is currently no easy way to switch to the behaviour reflected by those other operating systems. For anyone who would like to follow up the issue, bug reports and latest working progress can be found at [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=27903) and [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=56491).
 
-#### Workaround
+#### Временное решение
 
 First, export your keyboard configurations to a file:
 
@@ -274,7 +274,7 @@ $ xkbcomp -w 0 xkbmap $DISPLAY
 
 Consider making it a service launching after X starts, since reloaded configurations do not survive a system reboot.
 
-## Регулировка typematic задержки и скорости
+## Adjusting typematic delay and rate
 
 The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed and held in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. Note that these settings are configured seperately for Xorg and [for the virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console").
 

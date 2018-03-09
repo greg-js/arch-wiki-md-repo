@@ -154,7 +154,7 @@ Then follow the below steps to install GRUB:
 
 ```
 
-After the above install completed the main GRUB directory is located at `/boot/grub/`.
+After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `***arch***` in the above example.
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
@@ -448,7 +448,7 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 
 ### Chainloading an Arch Linux .efi file
 
-If you have an .efi file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, `/etc/grub.d/40_custom` can be edited to add a new menu entry before regenerating `grub.cfg` with `grub-mkconfig`.
+If you have an *.efi* file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, `/etc/grub.d/40_custom` can be edited to add a new menu entry before regenerating `grub.cfg` with `grub-mkconfig`.
 
  `/etc/grub.d/40_custom` 
 ```
@@ -750,13 +750,16 @@ This error may occur when you try installing GRUB in a VMware container. Read mo
 
 #### Common installation errors
 
-*   If you have a problem when running grub-install with sysfs or procfs and it says you must run `modprobe efivars`, try [Unified Extensible Firmware Interface#Mount efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
+*   If you have a problem when running *grub-install* with *sysfs* or *procfs* and it says you must run `modprobe efivars`, try [Unified Extensible Firmware Interface#Mount efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
 *   Without `--target` or `--directory` option, grub-install cannot determine for which firmware to install. In such cases `grub-install` will print `source_dir does not exist. Please specify --target or --directory`.
 *   If after running grub-install you are told your partition does not look like an EFI partition then the partition is most likely not `Fat32`.
 
 #### Drop to rescue shell
 
-If GRUB loads but drops you into the rescue shell with no errors, it may be because of a missing or misplaced `grub.cfg`. This will happen if GRUB UEFI was installed with `--boot-directory` and `grub.cfg` is missing, or if the boot partition, which is hard-coded into the `grubx64.efi` file, changed.
+If GRUB loads but drops into the rescue shell with no errors, it can be due to one of these two reasons:
+
+*   It may be because of a missing or misplaced `grub.cfg`. This will happen if GRUB UEFI was installed with `--boot-directory` and `grub.cfg` is missing,
+*   It also happens if the boot partition, which is hardcoded into the `grubx64.efi` file, has changed.
 
 #### GRUB UEFI not loaded
 

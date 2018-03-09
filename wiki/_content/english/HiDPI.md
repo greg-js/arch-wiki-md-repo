@@ -46,7 +46,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.12 Java applications](#Java_applications)
     *   [6.13 Mono applications](#Mono_applications)
     *   [6.14 MATLAB](#MATLAB)
-    *   [6.15 Unsupported applications](#Unsupported_applications)
+    *   [6.15 VirtualBox](#VirtualBox)
+    *   [6.16 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Multiple external monitors](#Multiple_external_monitors)
@@ -445,6 +446,19 @@ Recent versions (R2017b) of [Matlab](/index.php/Matlab "Matlab") allow to set th
 
 The settings take effect after MATLAB is restarted.
 
+### VirtualBox
+
+**Note:** This ony applies to KDE with scaling enabled.
+
+VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[4]](https://www.virtualbox.org/ticket/16604)).
+
+This can be worked around by calculating the inverse of your scaling factor and manually setting this new scaling factor for the VirtualBox execution, e.g.
+
+```
+$ QT_SCALE_FACTOR=0.5 VirtualBox --startvm vm-name
+
+```
+
 ### Unsupported applications
 
 [run_scaled-git](https://aur.archlinux.org/packages/run_scaled-git/) can be used to scale applications (which uses [xpra](https://aur.archlinux.org/packages/xpra/) internally).
@@ -506,7 +520,7 @@ xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[5]](https://askubuntu.com/a/979551/763549).
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[6]](https://askubuntu.com/a/979551/763549).
 
 ### Multiple external monitors
 

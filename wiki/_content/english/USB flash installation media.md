@@ -199,27 +199,27 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 ```
 
-*   **Note:** The following step is not required when using [Archboot](/index.php/Archboot "Archboot") instead of [Archiso](/index.php/Archiso "Archiso").
-    To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2017**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2017**XX**` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
-
+**Note:** The following step is not required when using [Archboot](/index.php/Archboot "Archboot") instead of [Archiso](/index.php/Archiso "Archiso").
+To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2017**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2017**XX**` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
-*   Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
-    *   Overwrite the existing Syslinux modules (`*.c32` files) present in the USB (from the ISO) with the ones from the syslinux package (found in */usr/lib/syslinux/bios*). This is necessary to avoid boot failure because of a possible version mismatch.
+Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
+
+*   Overwrite the existing Syslinux modules (`*.c32` files) present in the USB (from the ISO) with the ones from the syslinux package (found in */usr/lib/syslinux/bios*). This is necessary to avoid boot failure because of a possible version mismatch.
 
 ```
 # cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux
 
 ```
 
-*   *   Run:
+*   Run:
 
 ```
 # extlinux --install /mnt/usb/arch/boot/syslinux
 
 ```
 
-*   *   Unmount the partition (`umount /mnt/usb`).
+*   Unmount the partition (`umount /mnt/usb`).
 
 *   Mark the partition as active (or “bootable”).
 

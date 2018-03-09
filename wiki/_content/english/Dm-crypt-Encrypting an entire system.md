@@ -194,14 +194,16 @@ If you anticipate to protect the system's data not only against physical theft, 
 This example covers a full system encryption with *dmcrypt* + LUKS in a simple partition layout:
 
 ```
-+--------------------+--------------------------+--------------------------+
-|Boot partition      |LUKS encrypted system     |Optional free space       |
-|                    |partition                 |for additional partitions |
-|                    |                          |or swap to be setup later |
-|/boot               |/                         |                          |
-|                    |                          |                          |
-|/dev/sdaY           |/dev/sdaX                 |                          |
-+--------------------+--------------------------+--------------------------+
++-----------------------+-----------------------+-----------------------+
+| Boot partition        | LUKS encrypted system | Optional free space   |
+|                       | partition             | for additional        |
+|                       |                       | partitions or swap    |
+| /boot                 | /                     | to be setup later     |
+|                       |                       |                       |
+|                       | /dev/mapper/cryptroot |                       |
+|                       |-----------------------|                       |
+| /dev/sdaY             | /dev/sdaX             |                       |
++-----------------------+-----------------------+-----------------------+
 
 ```
 
@@ -284,17 +286,17 @@ The straight-forward method is to set up [LVM](/index.php/LVM "LVM") on top of t
 The disk layout in this example is:
 
 ```
-+-----------------------------------------------------------------------+ +----------------+
-| Logical volume1       | Logical volume2       | Logical volume3       | | Boot partition |
-|                       |                       |                       | |                |
-|[SWAP]                 |/                      |/home                  | | /boot          |
-|                       |                       |                       | |                |
-|/dev/mapper/MyVol-swap |/dev/mapper/MyVol-root |/dev/mapper/MyVol-home | |                |
-|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
-|                                                                       | | other device)  |
-|                        LUKS encrypted partition                       | |                |
-|                          /dev/sdaX                                    | | /dev/sdbY      |
-+-----------------------------------------------------------------------+ +----------------+
++--------------------------------------------------------------------------+ +----------------+
+| Logical volume1        | Logical volume2        | Logical volume3        | | Boot partition |
+|                        |                        |                        | |                |
+| [SWAP]                 | /                      | /home                  | | /boot          |
+|                        |                        |                        | |                |
+| /dev/mapper/MyVol-swap | /dev/mapper/MyVol-root | /dev/mapper/MyVol-home | |                |
+|_ _ _ _ _ __ _ _ _ _ _ _|__ _ _ _ _ _ _ _ _ _ _ _|__ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
+|                                                                          | | other device)  |
+|                         LUKS encrypted partition                         | |                |
+|                           /dev/sdaX                                      | | /dev/sdbY      |
++--------------------------------------------------------------------------+ +----------------+
 
 ```
 
@@ -303,7 +305,7 @@ The disk layout in this example is:
 **Tip:** Three variants of this setup:
 
 *   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
-*   Instructions at [Pavel Kogan's blog](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
+*   Instructions at [Pavel Kogan's blog](https://web.archive.org/web/20180103175714/http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
 *   Instructions at [Dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
 
 ### Preparing the disk
@@ -439,19 +441,19 @@ The following short example creates a LUKS on LVM setup and mixes in the use of 
 Partitioning scheme:
 
 ```
-+----------------+-----------------------------------------------------------------------+
-| Boot partition | LUKS encrypted volume | LUKS encrypted volume | LUKS encrypted volume |
-|                |                       |                       |                       |
-| /boot          | [SWAP]                | /                     | /home                 |
-|                |                       |                       |                       |
-|                | /dev/mapper/swap      | /dev/mapper/root      | /dev/mapper/home      |
-|                |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|
-|                | Logical volume1       | Logical volume2       | Logical volume3       |
-|                |/dev/mapper/MyVol-swap |/dev/mapper/MyVol-root |/dev/mapper/MyVol-home |
-|                |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|
-|                |                                                                       |
-|   /dev/sda1    |                               /dev/sda2                               |
-+----------------+-----------------------------------------------------------------------+
++----------------+--------------------------------------------------------------------------+
+| Boot partition | LUKS encrypted volume  | LUKS encrypted volume  | LUKS encrypted volume  |
+|                |                        |                        |                        |
+| /boot          | [SWAP]                 | /                      | /home                  |
+|                |                        |                        |                        |
+|                | /dev/mapper/swap       | /dev/mapper/root       | /dev/mapper/home       |
+|                |_ _ _ _ _ _ _ _ _ _  _ _|_ _ _ _ _ _ _ _ _ _  _ _|_ _ _ _ _ _ _ _ _ __ _ _|
+|                | Logical volume 1       | Logical volume 2       | Logical volume 3       |
+|                | /dev/mapper/MyVol-swap | /dev/mapper/MyVol-root | /dev/mapper/MyVol-home |
+|                |_ _ _ _ _ _ _ _ _ __ _ _|_ _ _ _ _ _ _ _ _ __ _ _|_ _ _ _ _ _ _ _ __ _ _ _|
+|                |                                                                          |
+|   /dev/sda1    |                               /dev/sda2                                  |
++----------------+--------------------------------------------------------------------------+
 
 ```
 
@@ -723,15 +725,15 @@ The scenario uses two USB sticks:
 The disk layout is:
 
 ```
-+---------------------------+-------------------------+---------------------------+ +---------------+ +---------------+
-|Volume 1:                  |Volume 2:                |Volume 3:                  | |Boot device    | |Encryption key |
-|                           |                         |                           | |               | |file storage   |
-|/                          |[SWAP]                   |/home                      | |/boot          | |(unpartitioned |
-|                           |                         |                           | |               | |in example)    |
-|/dev/mapper/store-root     |/dev/mapper/store-swap   |/dev/mapper/store-home     | |/dev/sdY1      | |/dev/sdZ       |
-|---------------------------+-------------------------+---------------------------| |---------------| |---------------|
-|disk drive /dev/sdaX encrypted using plain mode and LVM                          | |USB stick 1    | |USB stick 2    |
-+---------------------------------------------------------------------------------+ +---------------+ +---------------+
++---------------------------+-------------------------+---------------------------+ +----------------+ +----------------+
+| Logical volume 1          | Logical volume 2        | Logical volume 3          | | Boot device    | | Encryption key |
+|                           |                         |                           | |                | | file storage   |
+| /                         | [SWAP]                  | /home                     | | /boot          | | (unpartitioned |
+|                           |                         |                           | |                | | in example)    |
+| /dev/mapper/store-root    | /dev/mapper/store-swap  | /dev/mapper/store-home    | | /dev/sdY1      | | /dev/sdZ       |
+|---------------------------+-------------------------+---------------------------| |----------------| |----------------|
+| disk drive /dev/sdaX encrypted using plain mode and LVM                         | | USB stick 1    | | USB stick 2    |
++---------------------------------------------------------------------------------+ +----------------+ +----------------+
 
 ```
 
@@ -853,15 +855,15 @@ This setup utilizes the same partition layout and configuration for the system's
 The disk layout in this example is:
 
 ```
-+---------------------+---------------+----------------+-----------------------+-----------------------+-----------------------+
-|BIOS boot partition: |ESP partition: |Boot partition: |Volume 1:              |Volume 2:              |Volume 3:              |
-|                     |               |                |                       |                       |                       |
-|                     |/boot/efi      |/boot           |/root                  |[SWAP]                 |/home                  |
-|                     |               |                |                       |                       |                       |
-|                     |               |                |/dev/mapper/store-root |/dev/mapper/store-swap |/dev/mapper/store-home |
-|/dev/sdaW            |/dev/sdaX      |/dev/sdaY       +-----------------------+-----------------------+-----------------------+
-|**un**encrypted          |**un**encrypted    |LUKS encrypted  |/dev/sdaZ encrypted using LVM on LUKS                                  |
-+---------------------+---------------+----------------+-----------------------------------------------------------------------+
++---------------------+---------------+----------------+------------------------+------------------------+------------------------+
+| BIOS boot partition | ESP partition | Boot partition | Logical volume 1       | Logical volume 2       | Logical volume 3       |
+|                     |               |                |                        |                        |                        |
+|                     | /boot/efi     | /boot          | /root                  | [SWAP]                 | /home                  |
+|                     |               |                |                        |                        |                        |
+|                     |               |                | /dev/mapper/store-root | /dev/mapper/store-swap | /dev/mapper/store-home |
+| /dev/sdaW           | /dev/sdaX     | /dev/sdaY      +------------------------+------------------------+------------------------+
+| **un**encrypted         | **un**encrypted   | LUKS encrypted | /dev/sdaZ encrypted using LVM on LUKS                                    |
++---------------------+---------------+----------------+--------------------------------------------------------------------------+
 
 ```
 
@@ -1019,7 +1021,7 @@ Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_
 
 ```
 
-[install GRUB](/index.php/GRUB#Installation "GRUB") and to the disk's MBR and BIOS boot partition for BIOS booting:
+[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk and the BIOS boot partition for BIOS booting:
 
 ```
 # grub-install --target=i386-pc --recheck /dev/sda

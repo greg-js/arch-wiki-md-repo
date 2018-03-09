@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [VA-API (Русский)](/index.php/VA-API_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VA-API (Русский)")
+*   [XvMC](/index.php/XvMC "XvMC")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [VDPAU](/index.php/VDPAU "VDPAU"). Дата последней синхронизации: 12 декабря 2015‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=VDPAU&diff=0&oldid=411185).
 
 **[Video Decode and Presentation API for Unix](http://http.download.nvidia.com/XFree86/vdpau/doxygen/html/)** — открытая библиотека и API для выполнения задач декодирования и постобработки видео на аппаратных ускорителях.
@@ -75,7 +80,7 @@
 
  | GeForce 8 и новее |
 
-*   Поддерживается пакетом [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). Инструкция и важная информация доступна на странице [Intel graphics#H.264 decoding on GMA 4500](/index.php/Intel_graphics#H.264_decoding_on_GMA_4500 "Intel graphics").
+*   Поддерживается пакетом [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). Инструкция и важная информация доступна на странице [Intel graphics#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel_graphics#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel graphics").
 *   Драйвер VA GL не поддерживает другие аппаратные декодеры помимо H.264 (на состояние 21 июня 2014 года, ветка master, версия 0.3.x).
 *   [За исключением](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Except GeForce GTX 970 and GTX 980.

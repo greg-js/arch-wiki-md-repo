@@ -125,7 +125,7 @@
     *   [4.53 Hatoful Boyfriend](#Hatoful_Boyfriend)
         *   [4.53.1 Japanese text invisible](#Japanese_text_invisible)
     *   [4.54 HuniePop](#HuniePop)
-        *   [4.54.1 Game upon launch](#Game_upon_launch)
+        *   [4.54.1 Game crashes upon launch](#Game_crashes_upon_launch)
     *   [4.55 Hyper Light Drifter](#Hyper_Light_Drifter)
         *   [4.55.1 The controller does not work](#The_controller_does_not_work)
         *   [4.55.2 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found)
@@ -1121,7 +1121,7 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 
 ### HuniePop
 
-#### Game upon launch
+#### Game crashes upon launch
 
 Install [lsb-release](https://www.archlinux.org/packages/?name=lsb-release).
 

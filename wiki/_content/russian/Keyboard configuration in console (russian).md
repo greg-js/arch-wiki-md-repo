@@ -59,7 +59,7 @@ $ find /usr/share/kbd/keymaps/ -type f
 
 ### Постоянная конфигурация
 
-Постоянную комбинацию клавиш можно установить в `/etc/vconsole.conf`, которая считывается [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") при запуске. Для указания раскладки используется переменная `KEYMAP`. Если переменная пуста или не установлена, в качестве значения по умолчанию используется комбинация клавиш `us`. Смотрите [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) для получения информации обо всех параметрах. Например:
+Постоянную комбинацию клавиш можно установить в `/etc/vconsole.conf`, которая считывается [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") при запуске. Для указания раскладки используется переменная `KEYMAP`. Если переменная пуста или не установлена, в качестве значения по умолчанию используется комбинация клавиш `us`. Смотрите [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) для получения информации обо всех параметрах. Например:
 
  `/etc/vconsole.conf` 
 ```
@@ -75,7 +75,7 @@ $ localectl set-keymap --no-convert *keymap*
 
 ```
 
-Опцию `--no-convert` можно использовать для предотвращения `localectl` автоматического изменения [раскладки клавиатуры Xorg](/index.php/Keyboard_configuration_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Keyboard configuration in Xorg (Русский)") до ближайшего совпадения. Для получения допольнительной информации смотрите [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1).
+Опцию `--no-convert` можно использовать для предотвращения `localectl` автоматического изменения [раскладки клавиатуры Xorg](/index.php/Keyboard_configuration_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Keyboard configuration in Xorg (Русский)") до ближайшего совпадения. Для получения допольнительной информации смотрите [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1).
 
 ### Временная конфигурация
 
@@ -88,7 +88,7 @@ $ localectl set-keymap --no-convert *keymap*
 
 ```
 
-Для получения допольнительной информации смотрите [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1).
+Для получения допольнительной информации смотрите [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1).
 
 ## Регулировка typematic задержки и скорости
 

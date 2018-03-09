@@ -132,7 +132,7 @@ Check out [FreeDOS Flash Drive](https://wiki.gentoo.org/wiki/BIOS_Update#FreeDOS
 
 ### Prebuilt images
 
-Yet another simple solution: [FreeDOS prebuilt bootable USB flash drive image by Christian Taube](http://chtaube.eu/computers/freedos/bootable-usb/)
+Yet another simple solution: [FreeDOS prebuilt bootable USB flash drive image by Christian Taube](https://web.archive.org/web/20161022000203/https://www.chtaube.eu/computers/freedos/bootable-usb/) (web.archive.org)
 
 ### Using a FreeDOS-provided Disk Image + USB stick
 

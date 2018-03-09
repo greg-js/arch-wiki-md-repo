@@ -142,7 +142,7 @@ $ cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
 
 ```
 
-如果您的私钥文件为 `~/.ssh/id_rsa.pub`，您只需要输入命令
+如果您的公钥文件为 `~/.ssh/id_rsa.pub`，您只需要输入命令
 
 ```
 $ ssh-copy-id remote-server.org
@@ -156,7 +156,7 @@ $ ssh-copy-id username@remote-server.org
 
 ```
 
-如果您的私钥文件名不是默认的，您会得到错误 `/usr/bin/ssh-copy-id: ERROR: No identities found`。这种情况下，您需要修改命令为
+如果您的公钥文件名不是默认的，您会得到错误 `/usr/bin/ssh-copy-id: ERROR: No identities found`。这种情况下，您需要修改命令为
 
 ```
 $ ssh-copy-id -i ~/.ssh/id_ecdsa.pub username@remote-server.org

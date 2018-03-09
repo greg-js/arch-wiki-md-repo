@@ -38,7 +38,7 @@ In the context of the scheduler, latency is the time that passes from the occurr
 
 There can be many varied causes for high scheduling latencies. Some worth mentioning (in no particular order) are: a misconfigured system, bad hardware, badly programmed kernel modules, CPU power management, faulty hardware timers, [SMIs](https://en.wikipedia.org/wiki/System_Management_Mode#Entering_SMM "wikipedia:System Management Mode") and [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading "wikipedia:Simultaneous multithreading").
 
-When trying to determine a system's maximum scheduling latency, the system needs to be put under load. A busy system will tend to experience greater latencies than an idle one. To sufficiently characterize latencies of interest, tt would be prudent to run tests for a long time and under a variety of nominal and worst-case load conditions. Further, since many subsystems such as disks, network devices, USB and graphics may be used sparsely after a system is brought online, care should be taken to characterize latency with these subsystems active as well.
+When trying to determine a system's maximum scheduling latency, the system needs to be put under load. A busy system will tend to experience greater latencies than an idle one. To sufficiently characterize latencies of interest, it would be prudent to run tests for a long time and under a variety of nominal and worst-case load conditions. Further, since many subsystems such as disks, network devices, USB and graphics may be used sparsely after a system is brought online, care should be taken to characterize latency with these subsystems active as well.
 
 ## Latency testing utilities
 

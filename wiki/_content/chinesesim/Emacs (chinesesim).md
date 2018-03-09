@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Emacs](/index.php/Emacs "Emacs") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-04，点击[这里](https://wiki.archlinux.org/index.php?title=Emacs&diff=0&oldid=229169)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Emacs](/index.php/Emacs "Emacs") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-07，点击[这里](https://wiki.archlinux.org/index.php?title=Emacs&diff=0&oldid=229169)可以查看翻译后英文页面的改动。
 
 [Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs")是一个可扩展、可定制、自文档化的实时显示编辑器。Emacs的核心构建在[Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp")解释器之上，Emacs Lisp是大部分Emacs内建函数和拓展模块的实现语言。在图形界面系统下，Emacs使用GTK作为默认的X工具，在命令行界面下(CLI)，Emacs也可以工作良好。在文本编辑能力上，Emacs常被拿来和[vim](/index.php/Vim "Vim")比较。
 
@@ -10,10 +10,13 @@
     *   [2.2 作为守护进程](#.E4.BD.9C.E4.B8.BA.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
     *   [2.3 作为systemd单元](#.E4.BD.9C.E4.B8.BAsystemd.E5.8D.95.E5.85.83)
 *   [3 使用](#.E4.BD.BF.E7.94.A8)
+    *   [3.1 手册](#.E6.89.8B.E5.86.8C)
 *   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
     *   [4.1 TRAMP](#TRAMP)
-    *   [4.2 键盘宏和寄存器](#.E9.94.AE.E7.9B.98.E5.AE.8F.E5.92.8C.E5.AF.84.E5.AD.98.E5.99.A8)
-    *   [4.3 正则表达式](#.E6.AD.A3.E5.88.99.E8.A1.A8.E8.BE.BE.E5.BC.8F)
+    *   [4.2 使用Emacs作为git mergetool](#.E4.BD.BF.E7.94.A8Emacs.E4.BD.9C.E4.B8.BAgit_mergetool)
+    *   [4.3 使用大写锁定作为控制键](#.E4.BD.BF.E7.94.A8.E5.A4.A7.E5.86.99.E9.94.81.E5.AE.9A.E4.BD.9C.E4.B8.BA.E6.8E.A7.E5.88.B6.E9.94.AE)
+    *   [4.4 键盘宏和寄存器](#.E9.94.AE.E7.9B.98.E5.AE.8F.E5.92.8C.E5.AF.84.E5.AD.98.E5.99.A8)
+    *   [4.5 正则表达式](#.E6.AD.A3.E5.88.99.E8.A1.A8.E8.BE.BE.E5.BC.8F)
 *   [5 定制](#.E5.AE.9A.E5.88.B6)
     *   [5.1 多种配置](#.E5.A4.9A.E7.A7.8D.E9.85.8D.E7.BD.AE)
     *   [5.2 加载扩展程序](#.E5.8A.A0.E8.BD.BD.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F)
@@ -22,7 +25,6 @@
     *   [5.5 SyncTeX support](#SyncTeX_support)
 *   [6 Documentation](#Documentation)
     *   [6.1 Contextual help](#Contextual_help)
-    *   [6.2 The manuals](#The_manuals)
 *   [7 拓展模块](#.E6.8B.93.E5.B1.95.E6.A8.A1.E5.9D.97)
 *   [8 疑难杂症](#.E7.96.91.E9.9A.BE.E6.9D.82.E7.97.87)
     *   [8.1 彩色输出的问题](#.E5.BD.A9.E8.89.B2.E8.BE.93.E5.87.BA.E7.9A.84.E9.97.AE.E9.A2.98)
@@ -173,13 +175,26 @@ Emacs还包含一组参考卡，对初学者和专家都很有用，请参阅`/u
 
 Emacs为用户提供了大量的功能，其中包括：键盘宏，矩形区域，空白清理，书签，桌面会话，各种shell，拼写检查，表格，语义分析...
 
-## 提示和技巧
+### 手册
 
-前面的部分给出了基本编辑命令的概述，没有给出Emacs的一个指示。这个部分讲述一些高级的技巧和功能。
+如果你真的想要掌握Emacs，最推荐的文档来源仍然是官方手册：
+
+*   Emacs：完整的Emacs用户手册。
+*   Emacs 常见问题。
+*   Emacs Lisp简介：如果你以前从未使用任何编程语言。
+*   Elisp：如果你已经熟悉一门编程语言。
+
+通过内置'info'阅读器，你可以从GNU.org将其作为PDF查看或直接从Emacs本身访问：C-h i。按m选择相应章节。
+
+有些用户更喜欢使用'info'来阅读章节，因为它具有方便的快捷方式，其段落会适应窗口宽度，字体会适应当前屏幕分辨率。有些人觉得这样不那么刺激眼睛。最后，你可以轻松地将章节中的内容复制到任何Emacs缓冲区，甚至可以直接从示例中执行Lisp代码片段。
+
+你可能想要阅读信息手册以了解更多信息：C-h i m info <RET>。 按 ？ 在info模式下可以快速查看快捷键列表。
+
+## 提示和技巧
 
 ### TRAMP
 
-TRAMP (Transparent Remote Access, Multiple Protocols) ，顾名思义，是一个可以通过很多协议透明访问远程文件的一个扩展。当提示输入一个文件名，输入特定的格式就可以使用TRAMPP。比如：
+TRAMP (Transparent Remote Access, Multiple Protocols) ，顾名思义，是一个可以通过很多协议透明访问远程文件的一个扩展。当提示输入文件名时，输入特定的格式就可以使用TRAMPP。比如：
 
 在打开`/etc/hosts`文件之前提示输入root的密码以获取root权限：
 
@@ -188,14 +203,81 @@ C-x C-f /su::/etc/hosts
 
 ```
 
-要通过SSH使用'myuser'用户名登录'myhost'主机并打开文件`~/example.txt`：
+要通过SSH使用'you'用户名登录'remotehost'主机打开文件`~/example.txt`：
 
 ```
-C-x C-f /ssh:myuser@myhost:~/example.txt
+C-x C-f /ssh:you@remotehost:~/example.txt
 
 ```
 
-TRAMP的路径一般是这种格式'/[protocol]:[[user@]host]:<file>'。TRAMP支持的不只上面的两个简单例子。请查看Emacs里面的TRAMPP info手册了解更多的信息。
+TRAMP的路径一般是这种格式'/[protocol]:[[user@]host]:<file>'。
+
+作为用户'you'连接至'myhost'并以sudo编辑`／etc/hosts`：
+
+```
+/ssh:you@remotehost|sudo:remotehost:/etc/hosts
+
+```
+
+TRAMP支持的不只上面的两个简单例子。请查看Emacs里面的TRAMPP info手册了解更多的信息。
+
+### 使用Emacs作为git mergetool
+
+默认情况下，Git支持使用Emacs的Emerge模式作为合并工具。但是你可能更喜欢Ediff模式。不幸的是，由于技术原因，这种模式不被git支持。通过在emacs调用时对一些elisp代码赋值，仍然有一种方法可以使用Ediff。
+
+ `.gitconfig` 
+```
+[mergetool.ediff]
+    cmd = emacs --eval \" (progn (defun ediff-write-merge-buffer () (let ((file ediff-merge-store-file)) (set-buffer ediff-buffer-C) (write-region (point-min) (point-max) file) (message \\\"Merge buffer saved in: %s\\\" file) (set-buffer-modified-p nil) (sit-for 1))) (setq ediff-quit-hook 'kill-emacs ediff-quit-merge-hook 'ediff-write-merge-buffer) (ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\"))\" 
+
+[merge]
+	tool = ediff
+
+```
+
+请注意，该命令必须在同一行上。在上面的例子中，我们启动了一个Emacs的新实例。你可能想要使用emacsclient更快地启动; 不建议这样做，因为Ediff调用不是很干净：它可能会打断当前的Emacs会话。
+
+如果你想要一个即时启动，可以使用-q参数。如果想在保留至少一部分配置的情况下快速启动Emacs，则可以这样使用Emacs：
+
+```
+emacs -q -l ~/.emacs-light
+
+```
+
+light配置文件仅加载Ediff所需的内容。
+
+关于这个技巧的细节和Ediff问题，参见[kerneltrap.org](http://kerneltrap.org/mailarchive/git/2007/7/1/250424)和 [stackoverflow](http://stackoverflow.com/questions/1817370/using-ediff-as-git-mergetool)。
+
+### 使用大写锁定作为控制键
+
+一些用户喜欢这种个修改，以避免所谓的'emacs pinky'。如果你想在X上试用它，运行
+
+```
+$ setxkbmap -option 'ctrl:nocaps'
+
+```
+
+或者，**交换**键值，运行
+
+```
+$ setxkbmap -option 'ctrl:swapcaps'
+
+```
+
+要永久更改它，请考虑将其添加到.xinitrc文件中。
+
+如果要将一个区域变为大写，只需使用默认的C-x C-u键绑定，调用upcase-region函数。
+
+参见[[1]](http://ergoemacs.org/emacs/swap_CapsLock_Ctrl.html)了解另一种方法。
+
+如果缺少Caps Lock功能，请同时将其映射为“Shift”。
+
+```
+$ setxkbmap -option "shift:both_capslock"
+
+```
+
+某些桌面环境包含图形工具以简化键盘重新映射。 例如，在[Plasma 5](/index.php/Plasma "Plasma")中打开系统设置并点击输入设备。选择键盘，然后在高级选项卡中会看到Caps Lock设置，可以在其中选择Caps Lock也是一个Ctrl。
 
 ### 键盘宏和寄存器
 
@@ -582,21 +664,6 @@ Emacs is self-documenting by design. As such, a great deal of information is ava
 **C-h w**        Find which key(s) a command is bound to.
 
 ```
-
-### The manuals
-
-If you really want to master Emacs, the most recommanded source of documentation remains the official manuals:
-
-*   Emacs: the complete Emacs user manual.
-*   Emacs FAQ.
-*   Emacs Lisp Intro: if you never used any programming language before.
-*   Elisp: if you are already familiar with a programming language.
-
-You can access it as PDFs from [GNU.org](http://www.gnu.org/software/emacs/manual/) or directly from Emacs itself thanks to the embedded 'info' reader: **C-h i**. Press **m** to choose a book.
-
-Some users prefer to read books using 'info' because of its convenient shortcuts, its paragraphs adapting to window width and the font adapted to current screen resolution. Some find it less irritating to the eyes. Finally you can easily copy content from the book to any Emacs buffer, and you can even execute Lisp code snippets directly from the examples.
-
-You may want to read the **Info** book to know more about it: **C-h i m info <RET>**. Press **?** while in info mode for a quick list of shortcuts.
 
 ## 拓展模块
 

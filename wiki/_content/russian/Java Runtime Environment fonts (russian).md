@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Шрифты](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B "Шрифты")
+*   [Настройка шрифтов](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2 "Настройка шрифтов")
+*   [Шрифты Microsoft](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B_Microsoft "Шрифты Microsoft")
+*   [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "Java Runtime Environment fonts"). Дата последней синхронизации: 4 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Java_Runtime_Environment_fonts&diff=0&oldid=403025).
 
 Некоторые пользователи могут заметить, что шрифты в приложениях Java отображаются неприятно. Доступно несколько методов, чтобы улучшить отображение шрифтов в Oracle Java Runtime Environment (JRE). Эти методы могут использоваться по отдельности, но многие пользователи предпочтут использовать их вместе, чтобы получить лучший результат.

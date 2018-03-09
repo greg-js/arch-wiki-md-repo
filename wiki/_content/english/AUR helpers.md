@@ -1,4 +1,7 @@
-**Warning:** AUR helpers are not [officially](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) supported by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
+**Warning:**
+
+*   AUR helpers are **not** [supported](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
+*   AUR helpers can replicate [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) usage for the [official repositories](/index.php/Official_repositories "Official repositories"), such as `pacman -Syu`. This usage may deviate from *pacman* in various ways; it is thus **not** supported or recommended.
 
 AUR helpers are written to automate certain tasks for the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
@@ -128,6 +131,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 ## Maintenance
 
+*   **aur-out-of-date** — Uses hoster APIs to check AUR packages for upstream changes
+
+	[https://github.com/simon04/aur-out-of-date](https://github.com/simon04/aur-out-of-date) || [aur-out-of-date](https://aur.archlinux.org/packages/aur-out-of-date/)
+
 *   **pkgbuild-watch** — Looks for changes on the upstream web pages
 
 	[http://kmkeen.com/pkgbuild-watch](http://kmkeen.com/pkgbuild-watch) || [pkgbuild-watch](https://aur.archlinux.org/packages/pkgbuild-watch/)
@@ -163,7 +170,7 @@ The columns have the following meaning:
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
 *   *Split packages*: ability to correctly build and install split packages independently, such as [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) and [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
-*   *Git clone*: uses git clones (instead of downloading tarballs which is deprecated).
+*   *Git clone*: uses [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1) instead of downloading tarballs which is deprecated.
 *   *Maintained*: A project is considered maintained if it fullfills **all** of the following criteria:
 
 	– it is not discontinued by the author in favor of a different project or otherwise;
@@ -188,7 +195,7 @@ The columns have the following meaning:
 | pacaur | Bash/C | No [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | P/S | multilingual, sort by votes/popularity, batch interaction |
 | packer | Bash | No | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python | Yes | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
-| pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash, fish, zsh | P/S | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), sort by votes/popularity, batch interaction |
+| pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash, fish, zsh | P/S | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), multilingual, sort by votes/popularity, batch interaction |
 | PKGBUILDer | Python | Yes | Optional | Yes | Yes | Yes | Partial [[6]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
 | prm | Bash | No | Yes [[7]](https://git.fleshless.org/u/fbt/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
 | repoctl | Go | Yes | Yes | N/A | Yes [[8]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |

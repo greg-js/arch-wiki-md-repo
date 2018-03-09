@@ -54,6 +54,7 @@ Edit **config** (for 32-bit systems) or **config.x86_64** (for 64-bit systems), 
 *   CONFIG_DEBUG_INFO=y
 *   CONFIG_DEBUG_INFO_REDUCED=n
 *   CONFIG_X86_DECODER_SELFTEST=n
+*   CONFIG_DEBUG_INFO_VTA=y
 
 By default only *CONFIG_DEBUG_INFO* and *CONFIG_DEBUG_INFO_REDUCED* are not set.
 

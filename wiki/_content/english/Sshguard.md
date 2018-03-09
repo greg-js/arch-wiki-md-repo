@@ -38,7 +38,7 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
 
 ## Setup
 
-sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the [systemd journal](/index.php/Systemd#Journal "Systemd") for failed login attempts. For each failed attempt, the offending host is banned from further communication for a limited amount of time. The default amount of time the offender is banned starts at 120 seconds, and is increases by a factor of 1.5 every time it fails another login. sshguard can be configured to permanently ban a host with too many failed attempts.
+sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the [systemd journal](/index.php/Systemd_journal "Systemd journal") for failed login attempts. For each failed attempt, the offending host is banned from further communication for a limited amount of time. The default amount of time the offender is banned starts at 120 seconds, and is increases by a factor of 1.5 every time it fails another login. sshguard can be configured to permanently ban a host with too many failed attempts.
 
 Both temporary and permanent bans are done by adding an entry into the "sshguard" chain in iptables that drops all packets from the offender. The ban is then logged to syslog and ends up in `/var/log/auth.log`, or the systemd journal if the latter is being used.
 

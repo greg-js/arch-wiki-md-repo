@@ -80,16 +80,18 @@ Tunnel=he-ipv6
 
 ## Using the tunneling with dynamic IPv4 IP
 
-The simplest way of using tunelling with a dynamic IPv4 IP is to set up a cronjob that is going to periodically update your current address. To do that open `crontab -e` and add, in a new line:
+The simplest way of using tunelling with a dynamic IPv4 IP is to set up a cronjob that is going to periodically update your current address. The example URL and an *Update Key* can be found in the *Advanced* tab of the *Tunnel Details* page.
+
+To check if the update works, run the following command (replace `*USERNAME*`, `*UPDATEKEY*` and `*TUNNELID*` by the details of your account and tunnel):
 
 ```
-*/10 * * * * wget -O /dev/null https://USERNAME:PASSWORD@ipv4.tunnelbroker.net/ipv4_end.php?tid=TUNNELID >> /dev/null 2>&1
+$ wget -O - https://*USERNAME*:*UPDATEKEY*@ipv4.tunnelbroker.net/nic/update?hostname=*TUNNELID*
 
 ```
 
-Which should also make wget quiet and not bothering you with emails about its activity. Please replace USERNAME, PASSWORD and TUNNELID by the details of your account and tunnel. I would recommend running the command on its own first, to check if it works. To do that run:
+If it works, create a cronjob by opening `crontab -e` and adding a new line:
 
 ```
-wget https://USERNAME:PASSWORD@ipv4.tunnelbroker.net/ipv4_end.php?tid=TUNNELID
+*/10 * * * * wget -q -O /dev/null https://*USERNAME*:*UPDATEKEY*@ipv4.tunnelbroker.net/nic/update?hostname=*TUNNELID*
 
 ```

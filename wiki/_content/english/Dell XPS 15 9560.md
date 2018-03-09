@@ -166,7 +166,7 @@ With this setup the discrete GPU is used for all rendering and the integrated GP
 
 ## Touchpad
 
-The Synaptics Touchpad's basic functionality works out of the box. Some [Desktop Environments](/index.php/Desktop_Environment "Desktop Environment") ship with [libinput](/index.php/Libinput "Libinput") and others with the [xf86-input-synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") driver. You can see which package is installed by running:
+The Synaptics Touchpad's basic functionality works out of the box. Some [desktop environments](/index.php/Desktop_environment "Desktop environment") ship with [libinput](/index.php/Libinput "Libinput") and others with the [xf86-input-synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") driver. You can see which package is installed by running:
 
 ```
 pacman -Qn libinput xf86-input-synaptics
@@ -177,7 +177,7 @@ Depending on which package handles your touchpad input, the methods to extend th
 
 ### libinput Driver Configuration
 
-The full documentation for [libinput](/index.php/Libinput "Libinput") seemed to work quite well for this touchpad. While the driver already contains logic to process advanced multi-touch events like swipe and pinch gestures, the Desktop environment or Window manager might not have implemented actions for all of them yet.
+The full documentation for [libinput](/index.php/Libinput "Libinput") seemed to work quite well for this touchpad. While the driver already contains logic to process advanced multi-touch events like swipe and pinch gestures, the desktop environment or window manager might not have implemented actions for all of them yet.
 
 To get some three and four-touch gestures to work you may need to use the documentation at [libinput-gestures](https://github.com/bulletmark/libinput-gestures) and install the [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) package.
 

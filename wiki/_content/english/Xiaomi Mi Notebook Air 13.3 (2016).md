@@ -22,12 +22,10 @@ The installation should be going without any problems, if you follow the followi
     *   [3.1 Touchpad](#Touchpad)
     *   [3.2 Fn-Keys](#Fn-Keys)
 *   [4 Display Calibration](#Display_Calibration)
-*   [5 NVM Express SSD](#NVM_Express_SSD)
-    *   [5.1 linux-nvme](#linux-nvme)
-*   [6 Hardware information](#Hardware_information)
-*   [7 Troubleshoothing](#Troubleshoothing)
-    *   [7.1 Backlight](#Backlight)
-    *   [7.2 WiFi](#WiFi)
+*   [5 Hardware information](#Hardware_information)
+*   [6 Troubleshoothing](#Troubleshoothing)
+    *   [6.1 Backlight](#Backlight)
+    *   [6.2 WiFi](#WiFi)
 
 ## Pre-Installation System Settings
 
@@ -110,16 +108,6 @@ Most Fn-keys return the correct keycodes. Here is a table containing that inform
 ## Display Calibration
 
 Factory display calibration is poor. In lieu of a colorimeter, try the [ICC profiles](/index.php/ICC_profiles "ICC profiles") at [tlvince/xiaomi-mi-notebook-air-13](https://github.com/tlvince/xiaomi-mi-notebook-air-13/tree/master/display-calibration).
-
-## NVM Express SSD
-
-### linux-nvme
-
-Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in Linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR or repository linked below.
-
-**linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
-
-	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
 
 ## Hardware information
 

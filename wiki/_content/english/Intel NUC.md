@@ -7,7 +7,6 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
 *   [1 Installation](#Installation)
     *   [1.1 NVMe](#NVMe)
     *   [1.2 Graphics](#Graphics)
-        *   [1.2.1 Skylake](#Skylake)
     *   [1.3 Wireless](#Wireless)
     *   [1.4 LEDs](#LEDs)
 *   [2 Performance](#Performance)
@@ -32,17 +31,11 @@ It is highly recommended to update the board BIOS prior to installation. See [of
 
 Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
 
-**Note:** If the M.2 connector is not working, verify that it is enabled in BIOS.
-
 **Tip:** If supported by the NVMe and/or other devices connected to the PCIe-slot, you may want to **enable** *Native ACPI OS PCIe Support* in the *Power* section to allow power saving and possible cooling the device in idle.
 
 ### Graphics
 
 Most NUCs use integrated [Intel graphics](/index.php/Intel_graphics "Intel graphics"). See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to enjoy it on supported NUC models.
-
-#### Skylake
-
-Skylake support is stable on recent kernels, no further action should be required. See [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics") for more details.
 
 ### Wireless
 

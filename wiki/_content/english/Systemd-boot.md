@@ -123,11 +123,18 @@ editor   0
 
 **Note:** The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
 
+Additional options available since systemd v239:
+
+*   `auto-entries` (boolean, default "1") – show automatic entries for Windows, EFI Shell, and Default Loader;
+*   `auto-firmware` (boolean, default "1") – show entry for rebooting into firmware settings (UEFI);
+*   `console-mode` (int/enum, default "keep") – change UEFI console mode (`0` for 80x25, `1` for 80x50, `2` and above for vendor modes, `auto` for reasonable available mode, `max` for highest available mode, `keep` to do nothing).
+
 ### Adding boot entries
 
 **Note:**
 
 *   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) at boot time, as well as specially prepared kernel files found in `\EFI\Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be automatically generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
+*   As of systemd v239, the automatic entries may be hidden using `auto-entries no` and `auto-firmware no` loader.conf options.
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
 *   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable.
 *   You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.

@@ -384,7 +384,7 @@ The upgrade invocation will likely look something like the following. **Do not r
 
 ```
 
-pg_upgrade will perform the upgrade and create some scripts in `/var/lib/postgres/tmp`. Follow the instructions given on screen and act accordingly. You may delete `/var/lib/postgres/tmp` directory once the upgrade is completely over.
+`pg_upgrade` will perform the upgrade and create some scripts in `/var/lib/postgres/tmp/`. Follow the instructions given on screen and act accordingly. You may delete the `/var/lib/postgres/tmp` directory once the upgrade is completely over.
 
 ### Manual dump and reload
 

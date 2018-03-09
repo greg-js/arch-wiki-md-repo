@@ -93,7 +93,7 @@ An important distinction of *LUKS* to note at this point is that the key is used
 
 *Cryptsetup* supports different encryption operating modes to use with *dm-crypt*. The most common (and default) is
 
-*   `--type LUKS`
+*   `--type luks`
 
 The other ones are
 

@@ -1,3 +1,8 @@
+相关文章
+
+*   [VDPAU](/index.php/VDPAU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VDPAU (简体中文)")
+*   [XvMC](/index.php/XvMC_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XvMC (简体中文)")
+
 **翻译状态：** 本文是英文页面 [VA-API](/index.php/VA-API "VA-API") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-01-27，点击[这里](https://wiki.archlinux.org/index.php?title=VA-API&diff=0&oldid=294616)可以查看翻译后英文页面的改动。
 
 Hardware video acceleration makes it possible for the video card to decode/encode video, thus offloading the CPU and saving power.

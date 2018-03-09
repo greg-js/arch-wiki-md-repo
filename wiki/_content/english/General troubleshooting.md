@@ -154,7 +154,7 @@ Other parameters you can add that might be useful in certain situations are:
 *   `earlyprintk=vga,keep` prints kernel messages very early in the boot process, in case the kernel would crash before output is shown. You must change `vga` to `efi` for [EFI](/index.php/EFI "EFI") systems
 *   `log_buf_len=16M` allocates a larger (16MB) kernel message buffer, to ensure that debug output is not overwritten
 
-There are also a number of separate debug parameters for enabling debugging in specific subsystems e.g. `bootmem_debug`, `sched_debug`. Check the [kernel parameter documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for specific information.
+There are also a number of separate debug parameters for enabling debugging in specific subsystems e.g. `bootmem_debug`, `sched_debug`. Check the [kernel parameter documentation](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) for specific information.
 
 **Note:** If you cannot scroll back far enough to view the desired boot output, you should increase the size of the [scrollback buffer](#Scrollback).
 

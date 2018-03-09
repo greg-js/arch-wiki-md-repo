@@ -488,33 +488,15 @@ Forcefully optimize all tables, automatically fixing table errors that may come 
 
 ### OS error 22 when running on ZFS
 
-If you are using [ZFS](/index.php/ZFS "ZFS") and get the following error:
+If using MySQL databases on [ZFS](/index.php/ZFS "ZFS"), the error **InnoDB: Operating system error number 22 in a file operation** may occur.
 
-```
-InnoDB: Operating system error number 22 in a file operation.
+A workaround is to disable *aio_writes* in `/etc/mysql/my.cnf`:
 
-```
-
-You need to disable aio_writes by adding a line to the mysqld-section in /etc/mysql/my.cnf
-
+ `/etc/mysql/my.cnf` 
 ```
 [mysqld]
-...
 innodb_use_native_aio = 0
-
 ```
-
-However, if the post install scripts failed because of the above issue, MySQL/MariaDB might be in an invalid state. To recover from this state, execute the following:
-
-```
-rm -rf /var/lib/mysql/*
-mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-chown -R mysql:mysql /var/lib/mysql &>/dev/null
-/usr/bin/systemd-tmpfiles --create mysql.conf
-
-```
-
-After which MySQL/MariaDB should be installed correctly.
 
 ### Cannot login through CLI, but phpmyadmin works well
 

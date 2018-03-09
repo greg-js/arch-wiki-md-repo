@@ -698,8 +698,8 @@ Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
 ### fusion809
 
 *   **Maintainer:** [Brenton Horne](/index.php?title=User:Fusion809&action=edit&redlink=1 "User:Fusion809 (page does not exist)") (brentonhorne77 at gmail dot com).
-
-*   **Description:** Provides a few AUR and other packages I like. Like CodeLite, bleeding-edge (latest release within 1 day of its release) GVim (GTK+2 interface) and Sway (specifically release candidates when they're available).
+*   **Description:** Provides a few AUR and other packages I like. Like CodeLite and bleeding-edge (latest release within 1 day of its release) GVim (GTK+2 interface).
+*   **Package list:** [http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/](http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/)
 
 ```
 [home_fusion809_Arch_Extra]

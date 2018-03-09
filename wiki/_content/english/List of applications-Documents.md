@@ -919,7 +919,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://www.adebenham.com/old-stuff/gournal/](http://www.adebenham.com/old-stuff/gournal/) || [gournal](https://aur.archlinux.org/packages/gournal/)
 
-*   **Xournal** — An application for notetaking, sketching, keeping a journal using a stylus.
+*   **Xournal** — An application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF-files as well.
 
 	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
 

@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [VDPAU (Русский)](/index.php/VDPAU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VDPAU (Русский)")
+*   [XvMC](/index.php/XvMC "XvMC")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [VA-API](/index.php/VA-API "VA-API"). Дата последней синхронизации: 12 декабря 2015‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=VA-API&diff=0&oldid=411159).
 
 **[Video Acceleration API](http://www.freedesktop.org/wiki/Software/vaapi)** — спецификация и открытая библиотека, созданная с целью предоставить возможность аппаратного кодирования и декодирования видео.
@@ -70,7 +75,7 @@
 
  |
 
-Поддерживается пакетом [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). Инструкция и важная информация доступна на странице [Intel graphics#H.264 decoding on GMA 4500](/index.php/Intel_graphics#H.264_decoding_on_GMA_4500 "Intel graphics").
+Поддерживается пакетом [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). Инструкция и важная информация доступна на странице [Intel graphics#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel_graphics#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel graphics").
 
 Чтобы проверить, какие профили (возможности) поддерживаются вашей видеокартой, обратитесь к секции [#Проверка](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0)
 

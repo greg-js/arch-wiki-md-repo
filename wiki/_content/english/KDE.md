@@ -56,11 +56,9 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [4.4 PIM](#PIM)
         *   [4.4.1 Akonadi](#Akonadi)
             *   [4.4.1.1 Installation](#Installation_2)
+                *   [4.4.1.1.1 PostgreSQL](#PostgreSQL)
+                *   [4.4.1.1.2 SQLite](#SQLite)
             *   [4.4.1.2 Disabling Akonadi](#Disabling_Akonadi)
-            *   [4.4.1.3 Database configuration](#Database_configuration)
-                *   [4.4.1.3.1 MariaDB/MySQL (using ZFS)](#MariaDB.2FMySQL_.28using_ZFS.29)
-                *   [4.4.1.3.2 PostgreSQL](#PostgreSQL)
-                *   [4.4.1.3.3 SQLite](#SQLite)
     *   [4.5 KDE Telepathy](#KDE_Telepathy)
         *   [4.5.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
     *   [4.6 Integrate Android](#Integrate_Android)
@@ -87,15 +85,19 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.3.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [6.4 Power management](#Power_management)
         *   [6.4.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
-    *   [6.5 KMail](#KMail)
-        *   [6.5.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
-        *   [6.5.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
-    *   [6.6 Networking](#Networking)
-        *   [6.6.1 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [6.7 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
-    *   [6.8 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [6.9 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
-    *   [6.10 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
+    *   [6.5 Baloo](#Baloo_2)
+        *   [6.5.1 Inotify folder watch limit error](#Inotify_folder_watch_limit_error)
+    *   [6.6 Akonadi](#Akonadi_2)
+        *   [6.6.1 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
+    *   [6.7 KMail](#KMail)
+        *   [6.7.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
+        *   [6.7.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
+    *   [6.8 Networking](#Networking)
+        *   [6.8.1 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [6.9 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
+    *   [6.10 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [6.11 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
+    *   [6.12 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -455,25 +457,11 @@ Akonadi does not store any data by itself: the storage format depends on the nat
 
 Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons).
 
-**Note:** If you wish to use a database engine other than MariaDB/MySQL, then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies: `# pacman -S akonadi --assume-installed mariadb` 
-
-##### Disabling Akonadi
-
-See this [section in the KDE userbase](https://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem).
-
-##### Database configuration
-
-###### MariaDB/MySQL (using ZFS)
-
-If your home directory is on a ZFS pool, you will need to create `~/.config/akonadi/mysql-local.conf` with the following contents:
+**Note:** If you wish to use a database engine other than [MariaDB](/index.php/MariaDB "MariaDB") or [MySQL](/index.php/MySQL "MySQL"), then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies:
+```
+# pacman -S akonadi --assume-installed mariadb
 
 ```
-[mysqld]
-innodb_use_native_aio = 0
-
-```
-
-Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL")
 
 ###### PostgreSQL
 
@@ -515,6 +503,10 @@ Driver=QSQLITE3
 [QSQLITE3]
 Name=/home/*username*/.local/share/akonadi/akonadi.db
 ```
+
+##### Disabling Akonadi
+
+See this [section in the KDE userbase](https://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem).
 
 ### KDE Telepathy
 
@@ -711,6 +703,42 @@ This can be solved by installing the GStreamer libav plugin (package [gst-libav]
 #### No Suspend/Hibernate options
 
 If your system is able to suspend or hibernate using [systemd](/index.php/Systemd "Systemd") but do not have these options shown in KDE, make sure [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) is installed.
+
+### Baloo
+
+#### Inotify folder watch limit error
+
+If you get the following error:
+
+```
+KDE Baloo Filewatch service reached the inotify folder watch limit. File changes may be ignored.
+
+```
+
+Then you will need to increase the inotify folder watch limit:
+
+```
+# echo 524288 > /proc/sys/fs/inotify/max_user_watches
+
+```
+
+To make changes permanent, create a `40-max-user-watches.conf` file:
+
+ `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
+
+### Akonadi
+
+##### OS error 22 when running on ZFS
+
+If your home directory is on a [ZFS](/index.php/ZFS "ZFS") pool, create a `~/.config/akonadi/mysql-local.conf` file with the following contents:
+
+```
+[mysqld]
+innodb_use_native_aio = 0
+
+```
+
+See [MySQL#OS error 22 when running on ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
 
 ### KMail
 

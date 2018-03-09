@@ -5,7 +5,7 @@
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | hid_multitouch |
 | Webcam | Working | uvcvideo |
-| USB-C / Thunderbolt 3 | Unknown |  ? |
+| USB-C / Thunderbolt 3 | Working |  ? |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
 
