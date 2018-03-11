@@ -1,8 +1,12 @@
+Related articles
+
+*   [tmux](/index.php/Tmux "Tmux")
+
 [tmuxp](https://tmuxp.git-pull.com) is a session manager for the [tmux](/index.php/Tmux "Tmux") terminal multiplexer. Compare to [tmuxinator](https://github.com/tmuxinator/tmuxinator) or [teamocil](https://github.com/remiprev/teamocil).
 
 ## Installation
 
-Install the [tmuxp](https://aur.archlinux.org/packages/tmuxp/) package.
+Install the [tmuxp](https://www.archlinux.org/packages/?name=tmuxp) package.
 
 *tmuxp* can also be installed via [pip](https://pip.pypa.io) like this:
 

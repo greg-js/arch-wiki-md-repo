@@ -118,7 +118,7 @@ Other considerations in this category include:
 
 #### Arch Linux distribution support *only*
 
-Arch-based distributions have their own support fora and users of those distributions should be actively encouraged to seek support there. These distributions often use different packages, package versions, repositories, and make custom system configurations silently, practically rendering support for such projects within Arch Linux impossible. Community technical support shall only be provided for the Arch Linux distribution and the Arch User Repository. Issues with, and requesting support for, derivate distributions, or operating systems other than Arch Linux are prohibited.
+Arch-based distributions have their own support fora and users of those distributions should be actively encouraged to seek support there. These distributions often use different packages, package versions, repositories, or make custom system configurations silently, practically rendering support for such projects within Arch Linux impossible. Community technical support shall only be provided for the Arch Linux distribution and the Arch User Repository. Posting issues with, and requesting support for, derivative distributions or operating systems other than Arch Linux are prohibited.
 
 #### Personal topics/rants
 

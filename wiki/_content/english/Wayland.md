@@ -25,7 +25,7 @@ Related articles
     *   [3.5 GLFW](#GLFW)
     *   [3.6 GLEW](#GLEW)
     *   [3.7 EFL](#EFL)
-*   [4 Window managers and desktop shells](#Window_managers_and_desktop_shells)
+*   [4 Compositors](#Compositors)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Running graphical applications as root](#Running_graphical_applications_as_root)
     *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
@@ -322,7 +322,7 @@ To use GLEW with the Wayland backend, install the [glew-wayland](https://www.arc
 
 EFL has complete Wayland support. To run a EFL application on Wayland, see Wayland [project page](http://wayland.freedesktop.org/efl.html).
 
-## Window managers and desktop shells
+## Compositors
 
 | Name | Type | Description |
 | GNOME | Stacking | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |

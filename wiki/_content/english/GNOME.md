@@ -36,12 +36,13 @@ Related articles
 *   [5 Configuration](#Configuration)
     *   [5.1 System settings](#System_settings)
         *   [5.1.1 Color](#Color)
-        *   [5.1.2 Date & time](#Date_.26_time)
-        *   [5.1.3 Default applications](#Default_applications)
-        *   [5.1.4 Mouse and touchpad](#Mouse_and_touchpad)
-        *   [5.1.5 Network](#Network)
-        *   [5.1.6 Online accounts](#Online_accounts)
-        *   [5.1.7 Search](#Search)
+        *   [5.1.2 Night Light](#Night_Light)
+        *   [5.1.3 Date & time](#Date_.26_time)
+        *   [5.1.4 Default applications](#Default_applications)
+        *   [5.1.5 Mouse and touchpad](#Mouse_and_touchpad)
+        *   [5.1.6 Network](#Network)
+        *   [5.1.7 Online accounts](#Online_accounts)
+        *   [5.1.8 Search](#Search)
     *   [5.2 Advanced settings](#Advanced_settings)
         *   [5.2.1 Appearance](#Appearance)
             *   [5.2.1.1 GTK+ themes and icon themes](#GTK.2B_themes_and_icon_themes)
@@ -199,6 +200,15 @@ The configuration is usually performed user-specific, this section does not cove
 #### Color
 
 The daemon `colord` reads the display's EDID and extracts the appropriate color profile. Most color profiles are accurate and no setup is required; however for those that are not accurate, or for older displays, color profiles can be put in `~/.local/share/icc/` and directed to.
+
+#### Night Light
+
+GNOME comes with a built-in blue light filter similar to [Redshift](/index.php/Redshift "Redshift"). You can enable and customise the time you want to enable Night Light from the display settings menu. Furthermore, you can tweak the kelvin temperature with the following [dconf](https://www.archlinux.org/packages/?name=dconf) setting, where 5000 is an example value:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 5000
+
+```
 
 #### Date & time
 
@@ -415,7 +425,7 @@ You can disable the top left hot corner with the [gnome-shell-extension-no-tople
 
 #### Extensions
 
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/) and the appropriate browser extension.
+**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) and the appropriate browser extension.
 
 GNOME Shell can be customized with extensions per user or system-wide.
 

@@ -728,7 +728,7 @@ To make changes permanent, create a `40-max-user-watches.conf` file:
 
 ### Akonadi
 
-##### OS error 22 when running on ZFS
+#### OS error 22 when running on ZFS
 
 If your home directory is on a [ZFS](/index.php/ZFS "ZFS") pool, create a `~/.config/akonadi/mysql-local.conf` file with the following contents:
 

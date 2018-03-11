@@ -1,10 +1,10 @@
-The AIF-NG configuration file is in [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML"). While not perhaps the most "human-readable" format, it is well-structured (unlike JSON), can be parsed by python 3 with no additional modules (unlike YAML), supports nesting (unlike INI), supports commenting (unlike JSON/simple YAML), and supports data validation (unlike both JSON and YAML).
-
 ## Contents
 
 *   [1 By hand](#By_hand)
 *   [2 Generating via aif-config](#Generating_via_aif-config)
 *   [3 Validating](#Validating)
+
+The AIF-NG configuration file is in [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML"). While not perhaps the most "human-readable" format, it is well-structured (unlike JSON), can be parsed by python 3 with no additional modules (unlike YAML), supports nesting (unlike INI), supports commenting (unlike JSON/simple YAML), and supports data validation (unlike both JSON and YAML).
 
 ## By hand
 

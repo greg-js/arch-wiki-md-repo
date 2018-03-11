@@ -26,6 +26,7 @@ It is well known that different motherboard manufactures implement UEFI differen
 *   [8 Lenovo](#Lenovo)
     *   [8.1 K450 IdeaCentre](#K450_IdeaCentre)
     *   [8.2 M92p ThinkCentre](#M92p_ThinkCentre)
+    *   [8.3 X270 Thinkpad](#X270_Thinkpad)
 *   [9 VirtualBox](#VirtualBox)
 
 ## Apple Macs
@@ -290,6 +291,17 @@ This system whitelists efi labels. It will only boot from a label called "Red Ha
 
 ```
  # grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id="Red Hat Enterprise Linux" --recheck --debug
+
+```
+
+### X270 Thinkpad
+
+The [efi path workaround](/index.php/GRUB#EFI_path "GRUB") ([also here](/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround "GRUB/Tips and tricks")) seems to be needed for the X270.
+
+```
+ # grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub
+ # mkdir /boot/efi/EFI/boot
+ # cp /boot/efi/EFI/arch_grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
 
 ```
 

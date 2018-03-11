@@ -43,8 +43,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
         *   [8.2.2 Panel Self Refresh](#Panel_Self_Refresh)
         *   [8.2.3 Frame Buffer Compression](#Frame_Buffer_Compression)
         *   [8.2.4 GuC](#GuC)
-    *   [8.3 Linux kernel 4.3 or earlier](#Linux_kernel_4.3_or_earlier)
-    *   [8.4 Linux kernel 4.5 or earlier](#Linux_kernel_4.5_or_earlier)
+    *   [8.3 Linux kernel 4.5 or earlier](#Linux_kernel_4.5_or_earlier)
 *   [9 Touchpad](#Touchpad)
     *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
     *   [9.2 Gestures](#Gestures)
@@ -209,10 +208,6 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 [GuC](https://01.org/linuxgraphics/intel-linux-graphics-firmwares) loading with `i915.enable_guc_loading=1 i915.enable_guc_submission=1` seems stable too.
 
-### Linux kernel 4.3 or earlier
-
-If you are using an older kernel 4.3 or earlier, you also require the kernel parameter `i915.preliminary_hw_support=1`, see [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"). (For later kernels 4.3+ or [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) the parameter is unnecessary.)
-
 ### Linux kernel 4.5 or earlier
 
 If you have the newer i7-6560 CPU with Iris 540 graphics, the GPU hangs every few minutes with kernel versions before 4.6\. This is probably due to this bug [https://bugs.freedesktop.org/show_bug.cgi?id=94161](https://bugs.freedesktop.org/show_bug.cgi?id=94161) and can be countered by either disabling DRI in your Xorg configuration:
@@ -336,7 +331,7 @@ Originally the Dell XPS 13 (9350) shipped with TPM 1.2 - the TPM chip was config
 
 To install the update one can follow the instructions on the above mentioned firmware update page to clear and reset the TPM chip and initiate the update. Users intending to later use the device in Linux, can skip the last steps 11 & 12 from section "Disable TPM Auto Provisioning in Windows". Another option is to just clear the TPM following [this guide](http://www.dell.com/support/article/uk/en/ukbsdt1/SLN155219/en) and just run the `.exe` file from Windows.
 
-Once the update succeeds, the Linux kernel should automatically recognise the newly configured TPM device and enable it automatically on next boot. To make use of the now TPM 2.0 chip a couple of packages are worth installing - [tpm2.0-tss-git](https://aur.archlinux.org/packages/tpm2.0-tss-git/) and [tpm2.0-tools-git](https://aur.archlinux.org/packages/tpm2.0-tools-git/). To make the TSS resource manager work on boot, a handy systemd service is provided and its variants discussed [here](https://github.com/01org/TPM2.0-TSS/issues/321).
+Once the update succeeds, the Linux kernel should automatically recognise the newly configured TPM device and enable it automatically on next boot. To make use of the now TPM 2.0 chip a couple of packages are worth installing - [tpm2-tss-git](https://aur.archlinux.org/packages/tpm2-tss-git/) and [tpm2-tools-git](https://aur.archlinux.org/packages/tpm2-tools-git/). To make the TSS resource manager work on boot, a handy systemd service is provided and its variants discussed [here](https://github.com/01org/TPM2.0-TSS/issues/321).
 
 ## CPU slowdown after resume from suspend
 

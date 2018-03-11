@@ -135,7 +135,7 @@ where the offset is in bytes and the size in bits. Example: `cryptkey=/dev/sdZ:0
 
 **Tip:** If the device path you want to access contains the character `:`, you have to escape it with three backslash `\`. In that case the cryptkey parameter would be as follow: `cryptkey=/dev/disk/by-id/usb-123456-0\\\:0:0:512` for a usb key with the id `usb-123456-0:0`.
 
-For a file [included](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") in the initramfs the format is[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/encrypt_hook?h=packages/cryptsetup#n14):
+For a file [included](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") in the initramfs the format is[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n14):
 
 ```
 cryptkey=rootfs:*path*
@@ -144,7 +144,7 @@ cryptkey=rootfs:*path*
 
 Example: `cryptkey=rootfs:/secretkey`
 
-Also note that if `cryptkey` is not specified, it defaults to `/crypto_keyfile.bin` (in the initramfs).[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/encrypt_hook?h=packages/cryptsetup#n8)
+Also note that if `cryptkey` is not specified, it defaults to `/crypto_keyfile.bin` (in the initramfs).[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
 
 See also [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
 

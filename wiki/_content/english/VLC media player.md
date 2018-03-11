@@ -15,6 +15,7 @@ From the project [home page](https://www.videolan.org/vlc/):
     *   [5.4 Preventing multiple instances](#Preventing_multiple_instances)
     *   [5.5 Hardware acceleration support](#Hardware_acceleration_support)
     *   [5.6 systemd service](#systemd_service)
+    *   [5.7 Chromecast support](#Chromecast_support)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Video broken or other issue after upgrade](#Video_broken_or_other_issue_after_upgrade)
     *   [6.2 Segmentation fault](#Segmentation_fault)
@@ -149,6 +150,10 @@ WantedBy=multi-user.target
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `vlc.service`. Log in to http://*yourmachine*:8090/ with no username and with the password you put in the service file.
 
+### Chromecast support
+
+Starting with 3.0 release (*Vetinari* branch), VLC can stream to chromecast devices on the same wireless network. Install the [libmicrodns](https://www.archlinux.org/packages/?name=libmicrodns) package and in the VLC GUI, choose the chromecast device (instead of *<Local>*) from *Playback > Renderer*.
+
 ## Troubleshooting
 
 ### Video broken or other issue after upgrade
@@ -167,6 +172,13 @@ When starting VLC you can get a segfault, and ruling out general factors such as
 ```
 
 Then reinstall VLC.
+
+If that does not work, VLC has a segfault issue with `plugins.dat` (see [FS#57777](https://bugs.archlinux.org/task/57777)), simply remove the file:
+
+```
+# rm /usr/lib/vlc/plugins/plugins.dat
+
+```
 
 ### Missing icons in dropdown menus
 

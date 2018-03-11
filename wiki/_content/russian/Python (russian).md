@@ -110,9 +110,6 @@ $ which python
 
 *   Python 3.5: [python35](https://aur.archlinux.org/packages/python35/)
 *   Python 3.4: [python34](https://aur.archlinux.org/packages/python34/)
-*   Python 3.3: [python33](https://aur.archlinux.org/packages/python33/)
-*   Python 3.2: [python32](https://aur.archlinux.org/packages/python32/)
-*   Python 3.0: [python30](https://aur.archlinux.org/packages/python30/)
 *   Python 2.6: [python26](https://aur.archlinux.org/packages/python26/)
 *   Python 2.5: [python25](https://aur.archlinux.org/packages/python25/)
 *   Python 1.5: [python15](https://aur.archlinux.org/packages/python15/)

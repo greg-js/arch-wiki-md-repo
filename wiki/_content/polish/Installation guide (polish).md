@@ -56,7 +56,7 @@ Jeśli tryb UEFI jest uruchomiony na płycie głównej [UEFI](/index.php/UEFI "U
 
 ```
 
-Jeśli ten folder nie istnieje, system może być uruchomiony w [w:BIOS|BIOSie]] lub trybie CSM. Odnieś się do podręcznika twojej płyty głównej dla detali.
+Jeśli ten folder nie istnieje, system może być uruchomiony w [BIOSie](https://en.wikipedia.org/wiki/BIOS "w:BIOS") lub trybie CSM. Odnieś się do podręcznika twojej płyty głównej dla detali.
 
 ### Połącz się z Internetem
 

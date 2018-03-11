@@ -174,6 +174,7 @@ This will only create a `network` section. A configuration file with some more c
 ctrl_interface=/run/wpa_supplicant
 ctrl_interface_group=wheel
 update_config=1
+country=US # ISO/IEC alpha2 country code
 ap_scan=1
 
 network={

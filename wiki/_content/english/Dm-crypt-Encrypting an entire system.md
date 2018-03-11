@@ -202,7 +202,7 @@ This example covers a full system encryption with *dmcrypt* + LUKS in a simple p
 |                       |                       |                       |
 |                       | /dev/mapper/cryptroot |                       |
 |                       |-----------------------|                       |
-| /dev/sdaY             | /dev/sdaX             |                       |
+| /dev/sda1             | /dev/sda2             |                       |
 +-----------------------+-----------------------+-----------------------+
 
 ```
@@ -213,15 +213,15 @@ The first steps can be performed directly after booting the Arch Linux install i
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-Then create the needed partitions, at least one for `/` (e.g. `/dev/sdaX`) and `/boot` (`/dev/sdaY`). See [Partitioning](/index.php/Partitioning "Partitioning").
+Then create the needed partitions, at least one for `/` (e.g. `/dev/sda2`) and `/boot` (`/dev/sda1`). See [Partitioning](/index.php/Partitioning "Partitioning").
 
 ### Preparing non-boot partitions
 
 The following commands create and mount the encrypted root partition. They correspond to the procedure described in detail in [Dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (which, despite the title, *can* be applied to root partitions, as long as [mkinitcpio](#Configuring_mkinitcpio) and the [boot loader](#Configuring_the_boot_loader) are correctly configured). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
 
 ```
-# cryptsetup -y -v luksFormat --type luks2 /dev/sdaX
-# cryptsetup open /dev/sdaX cryptroot
+# cryptsetup -y -v luksFormat --type luks2 /dev/sda2
+# cryptsetup open /dev/sda2 cryptroot
 # mkfs.ext4 /dev/mapper/cryptroot
 # mount /dev/mapper/cryptroot /mnt
 
@@ -232,7 +232,7 @@ Check the mapping works as intended:
 ```
 # umount /mnt
 # cryptsetup close cryptroot
-# cryptsetup open /dev/sdaX cryptroot
+# cryptsetup open /dev/sda2 cryptroot
 # mount /dev/mapper/cryptroot /mnt
 
 ```
@@ -246,9 +246,9 @@ Note that each blockdevice requires its own passphrase. This may be inconvenient
 What you do have to setup is a non-encrypted `/boot` partition, which is needed for a encrypted root. For a standard [MBR/non-EFI](/index.php/EFI "EFI") `/boot` partition, for example, execute:
 
 ```
-# mkfs.ext4 /dev/sdaY
+# mkfs.ext4 /dev/sda1
 # mkdir /mnt/boot
-# mount /dev/sdaY /mnt/boot
+# mount /dev/sda1 /mnt/boot
 
 ```
 
@@ -271,13 +271,13 @@ Depending on which other hooks are used, the order may be relevant. See [dm-cryp
 In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*<device-UUID>*:cryptroot root=/dev/mapper/cryptroot
+cryptdevice=UUID=*device-UUID*:cryptroot root=/dev/mapper/cryptroot
 
 ```
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
-The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+The `*device-UUID*` refers to the UUID of `/dev/sda2`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
 ## LVM on LUKS
 
@@ -287,7 +287,7 @@ The disk layout in this example is:
 
 ```
 +--------------------------------------------------------------------------+ +----------------+
-| Logical volume1        | Logical volume2        | Logical volume3        | | Boot partition |
+| Logical volume 1       | Logical volume 2       | Logical volume 3       | | Boot partition |
 |                        |                        |                        | |                |
 | [SWAP]                 | /                      | /home                  | | /boot          |
 |                        |                        |                        | |                |
@@ -295,7 +295,7 @@ The disk layout in this example is:
 |_ _ _ _ _ __ _ _ _ _ _ _|__ _ _ _ _ _ _ _ _ _ _ _|__ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
 |                                                                          | | other device)  |
 |                         LUKS encrypted partition                         | |                |
-|                           /dev/sdaX                                      | | /dev/sdbY      |
+|                           /dev/sda1                                      | | /dev/sdb1      |
 +--------------------------------------------------------------------------+ +----------------+
 
 ```
@@ -321,7 +321,7 @@ Create a partition of type `8E00`, which will later contain the encrypted contai
 Create the LUKS encrypted container at the "system" partition. Enter the chosen password twice.
 
 ```
-# cryptsetup luksFormat --type luks2 /dev/*sdaX*
+# cryptsetup luksFormat --type luks2 /dev/sda1
 
 ```
 
@@ -330,25 +330,25 @@ For more information about the available cryptsetup options see the [LUKS encryp
 Open the container:
 
 ```
-# cryptsetup open /dev/*sdaX* cryptolvm
+# cryptsetup open /dev/sda1 cryptlvm
 
 ```
 
-The decrypted container is now available at `/dev/mapper/cryptolvm`.
+The decrypted container is now available at `/dev/mapper/cryptlvm`.
 
 ### Preparing the logical volumes
 
 Create a physical volume on top of the opened LUKS container:
 
 ```
-# pvcreate /dev/mapper/cryptolvm
+# pvcreate /dev/mapper/cryptlvm
 
 ```
 
 Create the volume group named `MyVol` (or whatever you want), adding the previously created physical volume to it:
 
 ```
-# vgcreate MyVol /dev/mapper/cryptolvm
+# vgcreate MyVol /dev/mapper/cryptlvm
 
 ```
 
@@ -387,7 +387,7 @@ The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), 
 Create an Ext2 filesystem on the partition intended for `/boot`. Any filesystem that can be read by the bootloader is eligible.
 
 ```
-# mkfs.ext2 /dev/*sdbY*
+# mkfs.ext2 /dev/sdb1
 
 ```
 
@@ -401,7 +401,7 @@ Create the directory `/mnt/boot`:
 Mount the partition to `/mnt/boot`:
 
 ```
-# mount /dev/*sdbY* /mnt/boot
+# mount /dev/sdb1 /mnt/boot
 
 ```
 
@@ -420,11 +420,11 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameter needs to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*device-UUID*:cryptolvm root=/dev/mapper/MyVol-root
+cryptdevice=UUID=*device-UUID*:cryptlvm root=/dev/mapper/MyVol-root
 
 ```
 
-The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+The `*device-UUID*` refers to the UUID of `/dev/sda1`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
@@ -441,19 +441,19 @@ The following short example creates a LUKS on LVM setup and mixes in the use of 
 Partitioning scheme:
 
 ```
-+----------------+--------------------------------------------------------------------------+
-| Boot partition | LUKS encrypted volume  | LUKS encrypted volume  | LUKS encrypted volume  |
-|                |                        |                        |                        |
-| /boot          | [SWAP]                 | /                      | /home                  |
-|                |                        |                        |                        |
-|                | /dev/mapper/swap       | /dev/mapper/root       | /dev/mapper/home       |
-|                |_ _ _ _ _ _ _ _ _ _  _ _|_ _ _ _ _ _ _ _ _ _  _ _|_ _ _ _ _ _ _ _ _ __ _ _|
-|                | Logical volume 1       | Logical volume 2       | Logical volume 3       |
-|                | /dev/mapper/MyVol-swap | /dev/mapper/MyVol-root | /dev/mapper/MyVol-home |
-|                |_ _ _ _ _ _ _ _ _ __ _ _|_ _ _ _ _ _ _ _ _ __ _ _|_ _ _ _ _ _ _ _ __ _ _ _|
-|                |                                                                          |
-|   /dev/sda1    |                               /dev/sda2                                  |
-+----------------+--------------------------------------------------------------------------+
++----------------+-----------------------------------------------------------------------------------------+
+| Boot partition | LUKS encrypted volume       | LUKS encrypted volume       | LUKS encrypted volume       |
+|                |                             |                             |                             |
+| /boot          | [SWAP]                      | /                           | /home                       |
+|                |                             |                             |                             |
+|                | /dev/mapper/swap            | /dev/mapper/root            | /dev/mapper/home            |
+|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+|                | Logical volume 1            | Logical volume 2            | Logical volume 3            |
+|                | /dev/mapper/MyVol-cryptswap | /dev/mapper/MyVol-cryptroot | /dev/mapper/MyVol-crypthome |
+|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+|                |                                                                                         |
+|   /dev/sda1    |                               /dev/sda2                                                 |
++----------------+-----------------------------------------------------------------------------------------+
 
 ```
 
@@ -464,16 +464,16 @@ Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on 
 ```
 # pvcreate /dev/sda2
 # vgcreate MyVol /dev/sda2
-# lvcreate -L 32G -n lvroot MyVol
-# lvcreate -L 500M -n swap MyVol
-# lvcreate -L 500M -n tmp MyVol
-# lvcreate -l 100%FREE -n home MyVol
+# lvcreate -L 32G -n cryptroot MyVol
+# lvcreate -L 500M -n cryptswap MyVol
+# lvcreate -L 500M -n crypttmp MyVol
+# lvcreate -l 100%FREE -n crypthome MyVol
 
 ```
 
 ```
-# cryptsetup luksFormat --type luks2 /dev/mapper/MyVol-lvroot
-# cryptsetup open /dev/mapper/MyVol-lvroot root
+# cryptsetup luksFormat --type luks2 /dev/mapper/MyVol-cryptroot
+# cryptsetup open /dev/mapper/MyVol-cryptroot root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
 
@@ -506,7 +506,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=/dev/mapper/MyVol-lvroot:root root=/dev/mapper/root
+cryptdevice=/dev/mapper/MyVol-cryptroot:root root=/dev/mapper/root
 
 ```
 
@@ -527,9 +527,8 @@ The following [crypttab](/index.php/Crypttab "Crypttab") options will re-encrypt
 
  `/etc/crypttab` 
 ```
-swap	/dev/mapper/MyVol-swap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
-tmp	/dev/mapper/MyVol-tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
-
+swap	/dev/mapper/MyVol-cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
+tmp	/dev/mapper/MyVol-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
 ```
 
 ### Encrypting logical volume /home
@@ -545,8 +544,8 @@ Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, ea
 The logical volume is encrypted with it:
 
 ```
-# cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVol-home /etc/luks-keys/home
-# cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-home home
+# cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVol-crypthome /etc/luks-keys/home
+# cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-crypthome home
 # mkfs.ext4 /dev/mapper/home
 # mount /dev/mapper/home /home
 
@@ -556,7 +555,7 @@ The encrypted mount is configured in [crypttab](/index.php/Crypttab "Crypttab"):
 
  `/etc/crypttab` 
 ```
-home	/dev/mapper/MyVol-home   /etc/luks-keys/home
+home	/dev/mapper/MyVol-crypthome   /etc/luks-keys/home
 
 ```
  `/etc/fstab` 
@@ -594,7 +593,7 @@ Be sure to substitue them with the appropriate device designations for your setu
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a BIOS Boot Partition as explained in [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB"). For this setup, this includes a 1M partition for "BIOS boot" at `/dev/sda1` and the remaining space on the drive being partitioned for "Linux RAID" at `/dev/sda2`.
+When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition"). For this setup, this includes a 1 MiB partition for "BIOS boot" at `/dev/sda1` and the remaining space on the drive being partitioned for "Linux RAID" at `/dev/sda2`.
 
 Once partitions have been created on `/dev/sda`, the following commands can be used to clone them to `/dev/sdb`.
 
@@ -730,9 +729,9 @@ The disk layout is:
 |                           |                         |                           | |                | | file storage   |
 | /                         | [SWAP]                  | /home                     | | /boot          | | (unpartitioned |
 |                           |                         |                           | |                | | in example)    |
-| /dev/mapper/store-root    | /dev/mapper/store-swap  | /dev/mapper/store-home    | | /dev/sdY1      | | /dev/sdZ       |
+| /dev/mapper/MyVol-root    | /dev/mapper/MyVol-swap  | /dev/mapper/MyVol-home    | | /dev/sdb1      | | /dev/sdc       |
 |---------------------------+-------------------------+---------------------------| |----------------| |----------------|
-| disk drive /dev/sdaX encrypted using plain mode and LVM                         | | USB stick 1    | | USB stick 2    |
+| disk drive /dev/sda encrypted using plain mode and LVM                          | | USB stick 1    | | USB stick 2    |
 +---------------------------------------------------------------------------------+ +----------------+ +----------------+
 
 ```
@@ -752,13 +751,16 @@ See [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt
 
 See [Dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") for details.
 
-Using the device `/dev/sd*X*`, with the twofish-xts cipher with a 512 bit key size and using a keyfile we have the following options for this scenario:
+Using the device `/dev/sda`, with the twofish-xts cipher with a 512 bit key size and using a keyfile we have the following options for this scenario:
 
- `# cryptsetup --hash=sha512 --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc` 
+```
+# cryptsetup --hash=sha512 --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sdc --key-size=512 open --type=plain /dev/sda cryptlvm
+
+```
 
 Unlike encrypting with LUKS, the above command must be executed *in full* whenever the mapping needs to be re-established, so it is important to remember the cipher, hash and key file details.
 
-We can now check a mapping entry has been made for `/dev/mapper/enc`:
+We can now check a mapping entry has been made for `/dev/mapper/cryptlvm`:
 
 ```
 # fdisk -l
@@ -768,24 +770,24 @@ We can now check a mapping entry has been made for `/dev/mapper/enc`:
 Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device. See [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") for further details:
 
 ```
-# pvcreate /dev/mapper/enc
-# vgcreate store /dev/mapper/enc
-# lvcreate -L 32G store -n root
-# lvcreate -L 10G store -n swap
-# lvcreate -l 100%FREE store -n home
+# pvcreate /dev/mapper/cryptlvm
+# vgcreate MyVol /dev/mapper/cryptlvm
+# lvcreate -L 32G MyVol -n root
+# lvcreate -L 10G MyVol -n swap
+# lvcreate -l 100%FREE MyVol -n home
 
 ```
 
 We format and mount them and activate swap. See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for further details:
 
 ```
-# mkfs.ext4 /dev/mapper/store-root
-# mkfs.ext4 /dev/mapper/store-home
-# mount /dev/mapper/store-root /mnt
+# mkfs.ext4 /dev/mapper/MyVol-root
+# mkfs.ext4 /dev/mapper/MyVol-home
+# mount /dev/mapper/MyVol-root /mnt
 # mkdir /mnt/home
-# mount /dev/mapper/store-home /mnt/home
-# mkswap /dev/mapper/store-swap
-# swapon /dev/mapper/store-swap
+# mount /dev/mapper/MyVol-home /mnt/home
+# mkswap /dev/mapper/MyVol-swap
+# swapon /dev/mapper/MyVol-swap
 
 ```
 
@@ -796,9 +798,9 @@ The `/boot` partition can be installed on the standard vfat partition of a USB s
 We choose a non-journalling file system to preserve the flash memory of the `/boot` partition, if not already formatted as vfat:
 
 ```
-# mkfs.ext2 /dev/sd*Y*1
+# mkfs.ext2 /dev/sdb1
 # mkdir /mnt/boot
-# mount /dev/sd*Y*1 /mnt/boot
+# mount /dev/sdb1 /mnt/boot
 
 ```
 
@@ -815,15 +817,17 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to boot the encrypted root partition, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=/dev/sd*X*:enc cryptkey=/dev/sd*Z*:0:512 crypto=sha512:twofish-xts-plain64:512:0:
+cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:512 crypto=sha512:twofish-xts-plain64:512:0:
 
 ```
+
+The `*disk-ID-of-**disk***` refers to the id of the referenced disk. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
 
 **Tip:** If using GRUB, you can install it on the same USB as the `/boot` partition with:
 ```
-# grub-install --recheck /dev/sd*Y*
+# grub-install --recheck /dev/sdb
 
 ```
 
@@ -833,8 +837,8 @@ You may wish to remove the USB sticks after booting. Since the `/boot` partition
 
  `/etc/fstab` 
 ```
-# /dev/sd*Yn*
-/dev/sd*Yn* /boot ext2 **noauto**,rw,noatime 0 2
+# /dev/sdb1
+/dev/sdb1 /boot ext2 **noauto**,rw,noatime 0 2
 
 ```
 
@@ -860,9 +864,9 @@ The disk layout in this example is:
 |                     |               |                |                        |                        |                        |
 |                     | /boot/efi     | /boot          | /root                  | [SWAP]                 | /home                  |
 |                     |               |                |                        |                        |                        |
-|                     |               |                | /dev/mapper/store-root | /dev/mapper/store-swap | /dev/mapper/store-home |
-| /dev/sdaW           | /dev/sdaX     | /dev/sdaY      +------------------------+------------------------+------------------------+
-| **un**encrypted         | **un**encrypted   | LUKS encrypted | /dev/sdaZ encrypted using LVM on LUKS                                    |
+|                     |               |                | /dev/mapper/MyVol-root | /dev/mapper/MyVol-swap | /dev/mapper/MyVol-home |
+| /dev/sda1           | /dev/sda2     | /dev/sda3      +------------------------+------------------------+------------------------+
+| **un**encrypted         | **un**encrypted   | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                                    |
 +---------------------+---------------+----------------+--------------------------------------------------------------------------+
 
 ```
@@ -887,7 +891,7 @@ Create a partition of type `8E00`, which will later contain the encrypted contai
 Create the LUKS encrypted container at the "system" partition.
 
 ```
-# cryptsetup luksFormat --type luks2 /dev/*sdaZ*
+# cryptsetup luksFormat --type luks2 /dev/sda4
 
 ```
 
@@ -908,11 +912,11 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 Open the container:
 
 ```
-# cryptsetup open /dev/*sdaZ* lvm
+# cryptsetup open /dev/sda4 cryptlvm
 
 ```
 
-The decrypted container is now available at `/dev/mapper/lvm`.
+The decrypted container is now available at `/dev/mapper/cryptlvm`.
 
 ### Preparing the logical volumes
 
@@ -927,14 +931,14 @@ The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), 
 First, create the LUKS container where the files will be located and installed into:
 
 ```
-# cryptsetup luksFormat /dev/sda*Y*
+# cryptsetup luksFormat /dev/sda3
 
 ```
 
 Next, open it:
 
 ```
-# cryptsetup open /dev/sda*Y* cryptboot
+# cryptsetup open /dev/sda3 cryptboot
 
 ```
 
@@ -963,7 +967,7 @@ Create a mountpoint for the [EFI System Partition](/index.php/EFI_System_Partiti
 
 ```
 # mkdir /mnt/boot/efi
-# mount /dev/*sdaX* /mnt/boot/efi
+# mount /dev/sda2 /mnt/boot/efi
 
 ```
 
@@ -1001,11 +1005,11 @@ Configure GRUB to recognize the LUKS encrypted `/boot` partition and unlock the 
 
  `/etc/default/grub` 
 ```
-GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*<device-UUID>*:lvm ..."
+GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*device-UUID*:cryptlvm ..."
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*<device-UUID>*` refers to the UUID of `/dev/sdaZ` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda4` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file:
 
@@ -1040,14 +1044,14 @@ If you used the *genfstab* script during installation, it will have generated `/
 
  `/etc/crypttab` 
 ```
-cryptboot  /dev/sdaY      none        luks
+cryptboot  /dev/sda3      none        luks
 
 ```
 
 will make the system ask for the passphrase again (i.e. you have to enter it twice at boot: once for GRUB and once for systemd init). To avoid the double entry for unlocking `/boot`, follow the instructions at [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to:
 
 1.  Create a [randomtext keyfile](/index.php/Dm-crypt/Device_encryption#Storing_the_keyfile_on_a_filesystem "Dm-crypt/Device encryption"),
-2.  Add the keyfile to the (`/dev/sdaY`) [boot partition's LUKS header](/index.php/Dm-crypt/Device_encryption#Configuring_LUKS_to_make_use_of_the_keyfile "Dm-crypt/Device encryption") and
+2.  Add the keyfile to the (`/dev/sda3`) [boot partition's LUKS header](/index.php/Dm-crypt/Device_encryption#Configuring_LUKS_to_make_use_of_the_keyfile "Dm-crypt/Device encryption") and
 3.  Check the `/etc/fstab` entry and add the `/etc/crypttab` line to [unlock it automatically at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
 
 If for some reason the keyfile fails to unlock the boot partition, systemd will fallback to ask for a passphrase to unlock and, in case that is correct, continue booting.
@@ -1061,7 +1065,7 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 
 The following example creates a full system encryption with LUKS using [Btrfs](/index.php/Btrfs "Btrfs") subvolumes to [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
-If using UEFI, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda*Y*` and is mounted at `/boot/efi`. `/boot` itself is located on the system partition, `/dev/sda*X*`.
+If using UEFI, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda3` and is mounted at `/boot/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
 
 Since `/boot` resides on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
 
@@ -1075,7 +1079,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 |**un**encrypted               |LUKS-encrypted            |plain-encrypted           |
 |                          |                          |                          |
 |/boot/efi                 |/                         |[SWAP]                    |
-|/dev/sda*Y*                 |/dev/sda*X*                 |/dev/sda*Z*                 |
+|/dev/sda1                 |/dev/sda2                 |/dev/sda3                 |
 |--------------------------+--------------------------+--------------------------+
 
 ```
@@ -1086,13 +1090,13 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
 
-Create the needed partitions, at least one for `/` (e.g. `/dev/sda*X*`). See the [Partitioning](/index.php/Partitioning "Partitioning") article.
+Create the needed partitions, at least one for `/` (e.g. `/dev/sda2`). See the [Partitioning](/index.php/Partitioning "Partitioning") article.
 
 ### Preparing the system partition
 
 #### Create LUKS container
 
-Follow [dm-crypt/Device encryption#Encrypting devices with LUKS mode](/index.php/Dm-crypt/Device_encryption#Encrypting_devices_with_LUKS_mode "Dm-crypt/Device encryption") to setup `/dev/sda*X*` for LUKS. See the [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before doing so for a list of encryption options.
+Follow [dm-crypt/Device encryption#Encrypting devices with LUKS mode](/index.php/Dm-crypt/Device_encryption#Encrypting_devices_with_LUKS_mode "Dm-crypt/Device encryption") to setup `/dev/sda2` for LUKS. See the [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before doing so for a list of encryption options.
 
 #### Unlock LUKS container
 
@@ -1100,7 +1104,7 @@ Now follow [Dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with th
 
 #### Format mapped device
 
-Proceed to format the mapped device as described in [Btrfs#File system on a single device](/index.php/Btrfs#File_system_on_a_single_device "Btrfs"), where `*/dev/partition*` is the name of the mapped device (i.e., `cryptroot`) and **not** `/dev/sda*X*`.
+Proceed to format the mapped device as described in [Btrfs#File system on a single device](/index.php/Btrfs#File_system_on_a_single_device "Btrfs"), where `*/dev/partition*` is the name of the mapped device (i.e., `cryptroot`) and **not** `/dev/sda2`.
 
 #### Mount mapped device
 
@@ -1115,7 +1119,7 @@ Finally, [mount](/index.php/Mount "Mount") the now-formatted mapped device (i.e.
 [Subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") will be used to simulate partitions, but other (nested) subvolumes will also be created. Here is a partial representation of what the following example will generate:
 
 ```
-subvolid=5 (/dev/sda*X*)
+subvolid=5 (/dev/sda2)
    |
    ├── @ (mounted as /)
    |       |
@@ -1184,7 +1188,7 @@ At the [pacstrap](/index.php/Installation_guide#Install_the_base_packages "Insta
 
 #### Create keyfile
 
-In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile embedded in the initramfs. Follow [Dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") making sure to add the key to `/dev/sda*X*` at the *luksAddKey* step.
+In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile embedded in the initramfs. Follow [Dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") making sure to add the key to `/dev/sda2` at the *luksAddKey* step.
 
 #### Edit mkinitcpio.conf
 

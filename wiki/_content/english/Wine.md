@@ -21,8 +21,7 @@ Related articles
     *   [2.7 Desktop launcher menus](#Desktop_launcher_menus)
         *   [2.7.1 Creating menu entries for Wine utilities](#Creating_menu_entries_for_Wine_utilities)
         *   [2.7.2 Removing menu entries](#Removing_menu_entries)
-    *   [2.8 Mono and Gecko](#Mono_and_Gecko)
-    *   [2.9 Printing](#Printing)
+    *   [2.8 Printing](#Printing)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
@@ -42,6 +41,7 @@ Related articles
     *   [4.15 Microsoft Office](#Microsoft_Office)
     *   [4.16 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
     *   [4.17 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
+    *   [4.18 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -162,6 +162,7 @@ After running such programs, kill all Wine servers and run `winecfg`. Fonts shou
 If the fonts look somehow smeared, import the following text file into the Wine registry with [regedit](https://wiki.winehq.org/FAQ#How_do_I_edit_the_Wine_registry.3F):
 
 ```
+Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
 "ClientSideWithRender"="N"
 
@@ -257,17 +258,6 @@ $ rm ~/.local/share/mime/application/x-wine-extension*
 
 ```
 
-### Mono and Gecko
-
-when initializing a new wineprefix wine will ask to install mono and gecko. or if the packages [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) and [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) are installed wine will silently copy about 450 mb of mono and gecko files in the wineprefix.
-
-to prevent wine from asking to install mono and gecko start wine like this:
-
-```
-WINEDLLOVERRIDES=mscoree=d;mshtml=d wine somewineapp
-
-```
-
 ### Printing
 
 In order to use your installed printers (both local and network) with wine applications in *win32 prefixes* (e.g. MS Word), install the [lib32-libcups](https://www.archlinux.org/packages/?name=lib32-libcups) package, reboot wine (*wineboot*) and restart your wine application.
@@ -308,7 +298,7 @@ $ winetricks
 
 Since 2013 Wine developers have been experimenting with [stream/worker thread optimizations](http://www.winehq.org/pipermail/wine-devel/2013-September/101106.html). You may experience an enormous performance improvement by using this experimental tweak. Many games may run as fast as on Windows or even faster. This Wine tweak is known as CSMT and works with NVidia and AMD graphics cards.
 
-Since Wine 3.3, CSMT is enabled by default. For versions lower than 3.3, CSMT support needs to be enabled manually. For vanilla wine run `wine regedit` and set the DWORD value for *Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
+Since Wine 3.3, CSMT is enabled by default. For versions lower than 3.3, CSMT support needs to be enabled manually. For vanilla wine run `wine regedit` and set the DWORD value for *HKEY_CURRENT_USER -> Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
 
 Further information:
 
@@ -463,7 +453,7 @@ Some virtual drive tools do not handle these metadata, like fuse-based virtual d
 
 ### Force OpenGL mode in games
 
-Many games have an OpenGL mode which *may* perform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
+Some games might have an OpenGL mode which *may* perform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
 
 ```
 $ wine /path/to/3d_game.exe -opengl
@@ -540,6 +530,10 @@ $ rm -r ~/.wine/drive_c/users/$USER/Temp
 $ ln -s /tmp/ ~/.wine/drive_c/users/$USER/Temp
 
 ```
+
+### Prevent installing Mono/Gecko
+
+If Gecko and/or Mono are not present on the system nor in the Wine prefix, Wine will prompt to download them from the internet. If you do not need Gecko and/or Mono, you might want to disable this dialog, by setting the `WINEDLLOVERRIDES` [environment variable](/index.php/Environment_variable "Environment variable") to `mscoree=d;mshtml=d`.
 
 ## Third-party applications
 

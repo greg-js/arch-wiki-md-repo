@@ -1397,7 +1397,14 @@ See [[8]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#
 
 ### Natural Selection 2
 
-[sndio](https://aur.archlinux.org/packages/sndio/) is required.
+[sndio](https://aur.archlinux.org/packages/sndio/) is required, furthermore, you must also execute
+
+```
+$ ln -s /usr/lib/libsndio.so x64/libsndio.so.6.1
+
+```
+
+within the root of the NS2 directory. This is because NS2 uses an older outdated version of sndio, but it is still compatible with the new version, thankfully.
 
 The environment variable `SDL_VIDEODRIVER` must not be set to `wayland`. Try setting `SDL_VIDEODRIVER` to `x11` if it still does not work.
 

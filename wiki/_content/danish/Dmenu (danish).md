@@ -26,7 +26,7 @@ $ dmenu_run
 
 ## Konfiguration
 
-Nu vil du formentlig gerne forbinde kommandoen `dmenu_run` til en kombination af tastetryk, altså oprette en genvejstast til programstarteren. Dette kan gøres gennem konfiguration af din window manager eller dit desktop environment, eller ved hjælp af et program som [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys). Se [Hotkeys](/index.php/Hotkeys "Hotkeys") artiklen for mere information og undersøg eventuelt også artiklen hørende til din window manager eller dit desktop environment. Derudover er det rart at have dmenu [Prelink](/index.php/Prelink "Prelink")'et.
+Nu vil du formentlig gerne forbinde kommandoen `dmenu_run` til en kombination af tastetryk, altså oprette en genvejstast til programstarteren. Dette kan gøres gennem konfiguration af din window manager eller dit desktop environment, eller ved hjælp af et program som [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys). Se [Hotkeys](/index.php/Hotkeys "Hotkeys") artiklen for mere information og undersøg eventuelt også artiklen hørende til din window manager eller dit desktop environment.
 
 ## Mærkelig segmenteringsfejl (segfault)
 

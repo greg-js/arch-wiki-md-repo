@@ -381,9 +381,8 @@ Update the client configuration to use the succeeded MTU value, e.g.:
 ```
 remote example.com 1194
 ...
-tun-mtu 1500
-fragment 1300
-mssfix # will take its default max parameter from the --fragment max option
+tun-mtu 1400 
+mssfix 1360
 
 ```
 

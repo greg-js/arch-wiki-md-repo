@@ -33,7 +33,7 @@ For more info see [RFC 6376](http://tools.ietf.org/html/rfc6376)
 
 The main configuration file for the signing service is `/etc/opendkim/opendkim.conf`.
 
-*   Copy/move the sample configuration file `/etc/opendkim/opendkim.conf.sample` to `/etc/opendkim/opendkim.conf` and change the following options:
+*   Copy/move the sample configuration file `/etc/opendkim/opendkim.conf.sample` (or `/usr/share/doc/opendkim/opendkim.conf.sample`) to `/etc/opendkim/opendkim.conf` and change the following options:
 
  `/etc/opendkim/opendkim.conf` 
 ```

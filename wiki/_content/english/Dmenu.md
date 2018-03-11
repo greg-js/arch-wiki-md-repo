@@ -1,3 +1,7 @@
+Related articles
+
+*   [List of applications/Other#Application launchers](/index.php/List_of_applications/Other#Application_launchers "List of applications/Other")
+
 [dmenu](http://tools.suckless.org/dmenu) is a fast and lightweight dynamic menu for X. It reads arbitrary text from stdin, and creates a menu with one item for each line. The user can then select an item, through the arrow keys or typing a part of the name, and the line is printed to stdout. dmenu_run is a wrapper that ships with the dmenu distribution that allows its use as an application launcher.
 
 ## Contents
@@ -30,7 +34,7 @@ $ dmenu_run
 
 ## Configuration
 
-Now, you will want to attach the `dmenu_run` command to a keystroke combination. This can be done either via your window manager or desktop environment configuration, or with a program like [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys). See the [Hotkeys](/index.php/Hotkeys "Hotkeys") article for more information. Also, it is helpful to [Prelink](/index.php/Prelink "Prelink") *dmenu*.
+Now, you will want to attach the `dmenu_run` command to a keystroke combination. This can be done either via your window manager or desktop environment configuration, or with a program like [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys). See the [Hotkeys](/index.php/Hotkeys "Hotkeys") article for more information.
 
 ### Displaying Custom Items
 

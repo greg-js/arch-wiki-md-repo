@@ -220,7 +220,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **Tilix** — A tiling terminal emulator for Linux using GTK+ 3
 
-	[https://github.com/gnunn1/tilix](https://github.com/gnunn1/tilix) || [tilix](https://aur.archlinux.org/packages/tilix/) [tilix-git](https://aur.archlinux.org/packages/tilix-git/)
+	[https://github.com/gnunn1/tilix](https://github.com/gnunn1/tilix) || [tilix](https://www.archlinux.org/packages/?name=tilix) [tilix-git](https://aur.archlinux.org/packages/tilix-git/)
 
 *   **tinyterm** — Very lightweight terminal emulator based on VTE.
 
@@ -409,6 +409,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **Last File Manager** — Powerful file manager written in Python 3 with a curses interface.
 
 	[https://inigo.katxi.org/devel/lfm/](https://inigo.katxi.org/devel/lfm/) || [lfm](https://aur.archlinux.org/packages/lfm/)
+
+*   **lf** — Terminal file manager written in Go using server/client architecture.
+
+	[https://github.com/gokcehan/lf](https://github.com/gokcehan/lf) || [lf-git](https://aur.archlinux.org/packages/lf-git/)
 
 *   **[Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")** — Console-based, dual-paneled file manager.
 

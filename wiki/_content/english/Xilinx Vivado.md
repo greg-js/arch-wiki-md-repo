@@ -17,7 +17,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
 
 ## Prerequisites
 
-Xilinx Vivado can be downloaded from its official website [[1]](http://www.xilinx.com/products/design-tools/vivado.html). It's recommended to download "Vivado HLx 2015.4: Full Installer For Linux Single File Download Image Including SDK" tarball, but make sure not to be in a hurry, as it's a large download (near 9 GB). Update tarballs can also be downloaded and installed later.
+Xilinx Vivado can be downloaded from its official website [[1]](http://www.xilinx.com/products/design-tools/vivado.html). It's recommended to download "Vivado HLx 2017.4: Full Installer For Linux Single File Download Image Including SDK" tarball, but make sure not to be in a hurry, as it's a large download (near 17 GB). Update tarballs can also be downloaded and installed later.
 
 ### Dependencies
 
@@ -28,6 +28,8 @@ Installer needs ncurses5 libs, and will not work with ncurses 6 available at off
 You must install the main package, and it is also recommended to install the latest update patch.
 
 ### Vivado and SDK
+
+**Warning:** The patch below is not longer needed in the 2017.4 version. Just unpack and run the xsetup file.
 
 Once downloaded and unpacked the tarball, the install script must be patched to be able to properly detect the machine architecture. You can do it by going to the directory where installer is extracted and running:
 
@@ -47,6 +49,8 @@ It is recommended to install the suite at the default location `/opt/Xilinx`, as
 
 ### Update patch
 
+**Warning:** The patch below is not longer needed in the 2017.4 version.
+
 It is recommended to install the latest update patch, and repeat the process each time a new patch is released. Note that update patches cannot be applied to WebPACK installs. If you installed Vivado WebPACK, skip this section.
 
 To install the update, repeat the same hack used to install the suite. Once downloaded and unpacked, go to the directory containing the extracted tarball, patch the install script and run it:
@@ -58,6 +62,8 @@ $ sed -i.original 's/uname -i/uname -m/' xsetup
 ```
 
 ### Licensing
+
+**Warning:** In the 2017.4 Webpack version there is not longer required download an explicit license file, it just works.
 
 If you already have a license file, you can load it using Vivado License Manager. Unfortunately, if you want to obtain a WebPack license, further steps are needed. Vivado installs old stdc++ libraries, causing problems when spawning programs not included with Vivado Suite (like your default browser). To fix this, do the following steps:
 
@@ -98,8 +104,8 @@ To ease launching programs, you can create the following .desktop files for Viva
 Version=1.0
 Type=Application
 Name=Xilinx Vivado IDE
-Exec=sh -c "unset LANG && unset QT_PLUGIN_PATH && source /opt/Xilinx/Vivado/2015.4/settings64.sh && vivado"
-Icon=/opt/Xilinx/Vivado/2015.4/doc/images/vivado_logo.png
+Exec=sh -c "unset LANG && unset QT_PLUGIN_PATH && source /opt/Xilinx/Vivado/2017.4/settings64.sh && vivado"
+Icon=/opt/Xilinx/Vivado/2017.4/doc/images/vivado_logo.png
 Categories=Development;
 Comment=Vivado Integrated Development Environment
 ```
@@ -110,8 +116,8 @@ Comment=Vivado Integrated Development Environment
 Version=1.0
 Type=Application
 Name=Xilinx SDK
-Exec=sh -c "unset LANG && unset QT_PLUGIN_PATH && source /opt/Xilinx/SDK/2015.4/settings64.sh && xsdk"
-Icon=/opt/Xilinx/SDK/2015.4/data/sdk/images/sdk_logo.png
+Exec=sh -c "unset LANG && unset QT_PLUGIN_PATH && source /opt/Xilinx/SDK/2017.4/settings64.sh && xsdk"
+Icon=/opt/Xilinx/SDK/2017.4/data/sdk/images/sdk_logo.png
 Categories=Development;
 Comment=Xilinx Software Development Kit
 ```

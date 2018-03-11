@@ -13,8 +13,14 @@
         *   [3.1.5 Tweak the pending connection handling](#Tweak_the_pending_connection_handling)
         *   [3.1.6 Change TCP keepalive parameters](#Change_TCP_keepalive_parameters)
         *   [3.1.7 Enable MTU probing](#Enable_MTU_probing)
-        *   [3.1.8 Turn timestamps off](#Turn_timestamps_off)
+        *   [3.1.8 TCP Timestamps](#TCP_Timestamps)
     *   [3.2 TCP/IP stack hardening](#TCP.2FIP_stack_hardening)
+        *   [3.2.1 TCP SYN cookie protection](#TCP_SYN_cookie_protection)
+        *   [3.2.2 TCP rfc1337](#TCP_rfc1337)
+        *   [3.2.3 Reverse path filtering](#Reverse_path_filtering)
+        *   [3.2.4 Log martian packets](#Log_martian_packets)
+        *   [3.2.5 Ignore echo broadcast requests](#Ignore_echo_broadcast_requests)
+        *   [3.2.6 ICMP routing and redirecting](#ICMP_routing_and_redirecting)
 *   [4 Virtual memory](#Virtual_memory)
 *   [5 MDADM](#MDADM)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -138,11 +144,11 @@ net.ipv4.tcp_fastopen = 3
 
 #### Tweak the pending connection handling
 
-`tcp_max_syn_backlog` is the maximum queue length of pending connections 'Waiting Acknowledgment'
+`tcp_max_syn_backlog` is the maximum queue length of pending connections 'Waiting Acknowledgment'.
 
 In the event of a synflood DOS attack, this queue can fill up pretty quickly, at which point tcp_syncookies will kick in allowing your system to continue to respond to legitimate traffic, and allowing you to gain access to block malicious IPs.
 
-If the server suffers from overloads at peak times, you may want to increase this value a little bit.
+If the server suffers from overloads at peak times, you may want to increase this value a little bit:
 
 ```
 net.ipv4.tcp_max_syn_backlog = 65536
@@ -153,7 +159,7 @@ net.ipv4.tcp_max_syn_backlog = 65536
 
 After reaching this number the system will start destroying the socket that are in this state.
 
-Increase this to prevent simple DOS attacks
+Increase this to prevent simple DOS attacks:
 
 ```
 net.ipv4.tcp_max_tw_buckets = 65536
@@ -162,7 +168,7 @@ net.ipv4.tcp_max_tw_buckets = 65536
 
 `tcp_slow_start_after_idle` sets whether TCP should start at the default window size only for new connections or also for existing connections that have been idle for too long.
 
-This setting kills persistent single connection performance and should be turned off.
+This setting kills persistent single connection performance and could be turned off:
 
 ```
 net.ipv4.tcp_slow_start_after_idle = 0
@@ -171,17 +177,24 @@ net.ipv4.tcp_slow_start_after_idle = 0
 
 `tcp_tw_reuse` sets whether TCP should reuse an existing connection in the TIME-WAIT state for a new outgoing connection if the new timestamp is strictly bigger than the most recent timestamp recorded for the previous connection.
 
-This helps avoid from running out of available network sockets.
+This helps avoid from running out of available network sockets:
 
 ```
 net.ipv4.tcp_tw_reuse = 1
 
 ```
 
-Fast-fail FIN connections which are useless.
+Fast-fail FIN connections which are useless:
 
 ```
 net.ipv4.tcp_fin_timeout = 15
+
+```
+
+The TCP window scale option is an option to increase the receive window size allowed in Transmission Control Protocol above its former maximum value of 65,535 bytes:
+
+```
+net.ipv4.tcp_window_scaling = 1
 
 ```
 
@@ -211,72 +224,81 @@ net.ipv4.tcp_mtu_probing = 1
 
 ```
 
-#### Turn timestamps off
+#### TCP Timestamps
 
-Disabling timestap generation will reduce performance spikes related to timestamp generation.
+TCP timestamps protect against wrapping sequence numbers (at gigabit speeds) and round trip time calculation implemented in TCP.
+
+Disabling timestamp generation will reduce spikes and may give a performance boost on gigabit networks:
 
 ```
 net.ipv4.tcp_timestamps = 0
 
 ```
-
-*   You can use [http://www.speedtest.net](http://www.speedtest.net) to benchmark internetwork performance before/after the change
 
 ### TCP/IP stack hardening
 
 The following specifies a parameter set to tighten network security options of the kernel for the IPv4 protocol and related IPv6 parameters where an equivalent exists.
 
-For some usecases, for example using the system as a [router](/index.php/Router "Router"), other parameters may be useful or required as well.
+For some use-cases, for example using the system as a [router](/index.php/Router "Router"), other parameters may be useful or required as well.
 
- `/etc/sysctl.d/51-net.conf` 
+#### TCP SYN cookie protection
+
+Helps protect against SYN flood attacks. Only kicks in when `net.ipv4.tcp_max_syn_backlog` is reached:
+
 ```
-#### ipv4 networking and equivalent ipv6 parameters ####
-
-## TCP SYN cookie protection (default)
-## helps protect against SYN flood attacks
-## only kicks in when net.ipv4.tcp_max_syn_backlog is reached
 net.ipv4.tcp_syncookies = 1
 
-## protect against tcp time-wait assassination hazards
-## drop RST packets for sockets in the time-wait state
-## (not widely supported outside of linux, but conforms to RFC)
+```
+
+#### TCP rfc1337
+
+Protect against tcp time-wait assassination hazards, drop RST packets for sockets in the time-wait state. Not widely supported outside of Linux, but conforms to RFC:
+
+```
 net.ipv4.tcp_rfc1337 = 1
 
-## sets the kernels reverse path filtering mechanism to value 1 (on)
-## will do source validation of the packet's recieved from all the interfaces on the machine
-## protects from attackers that are using ip spoofing methods to do harm (default) 
+```
+
+#### Reverse path filtering
+
+Sets the kernels reverse path filtering mechanism to value 1 (on). Will do source validation of the packet's received from all the interfaces on the machine. Protects from attackers that are using ip spoofing methods to do harm (default):
+
+```
 net.ipv4.conf.default.rp_filter = 1
 net.ipv4.conf.all.rp_filter = 1
 
-## tcp timestamp
-## + protect against wrapping sequence numbers (at gigabit speeds)
-## + round trip time calculation implemented in TCP
-## - causes extra overhead and allows uptime detection by scanners like nmap
-## enable @ gigabit speeds
-net.ipv4.tcp_timestamps = 0
-#net.ipv4.tcp_timestamps = 1
+```
 
-## log martian packets
+#### Log martian packets
+
+```
 net.ipv4.conf.default.log_martians = 1
 net.ipv4.conf.all.log_martians = 1
 
-## ignore echo broadcast requests to prevent being part of smurf attacks (default)
+```
+
+#### Ignore echo broadcast requests
+
+Prevent being part of smurf attacks:
+
+```
 net.ipv4.icmp_echo_ignore_broadcasts = 1
 
-## ignore bogus icmp errors (default)
+```
+
+#### ICMP routing and redirecting
+
+```
 net.ipv4.icmp_ignore_bogus_error_responses = 1
-
-## send redirects (not a router, disable it)
-net.ipv4.conf.default.send_redirects = 0
-net.ipv4.conf.all.send_redirects = 0
-
-## ICMP routing redirects (only secure)
 #net.ipv4.conf.default.secure_redirects = 1 (default)
 #net.ipv4.conf.all.secure_redirects = 1 (default)
+net.ipv4.conf.default.send_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
 net.ipv4.conf.default.accept_redirects = 0
 net.ipv4.conf.all.accept_redirects = 0
 net.ipv6.conf.default.accept_redirects = 0
 net.ipv6.conf.all.accept_redirects = 0
+
 ```
 
 ## Virtual memory

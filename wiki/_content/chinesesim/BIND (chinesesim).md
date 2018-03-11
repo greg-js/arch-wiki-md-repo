@@ -1,3 +1,11 @@
+Related articles
+
+*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
+*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [Unbound](/index.php/Unbound "Unbound")
+*   [PowerDNS](/index.php/PowerDNS "PowerDNS")
+
 **翻译状态：** 本文是英文页面 [BIND](/index.php/BIND "BIND") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-07，点击[这里](https://wiki.archlinux.org/index.php?title=BIND&diff=0&oldid=474888)可以查看翻译后英文页面的改动。
 
 伯克利互联网名称服务 (Berkeley Internet Name Daemon，简称 [BIND](https://www.isc.org/downloads/bind/)) 是 DNS 协议的一个参考实现。
@@ -7,7 +15,7 @@
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 Configuration](#Configuration)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 只允许本地访问](#.E5.8F.AA.E5.85.81.E8.AE.B8.E6.9C.AC.E5.9C.B0.E8.AE.BF.E9.97.AE)
     *   [2.2 DNS 转发](#DNS_.E8.BD.AC.E5.8F.91)
 *   [3 权威 DNS 服务器](#.E6.9D.83.E5.A8.81_DNS_.E6.9C.8D.E5.8A.A1.E5.99.A8)
@@ -29,11 +37,11 @@
 
 [开始/启用](/index.php/Start/enable "Start/enable") `named.service` 服务。
 
-## Configuration
+## 配置
 
 BIND 的配置文件是 `/etc/named.conf`. `named.conf` man 手册页介绍了所有选项。
 
-[Reload](/index.php/Reload "Reload") the `named.service` unit to apply configuration changes.
+[Reload](/index.php/Reload "Reload") the `named.service` unit 以应用配置变更.
 
 ### 只允许本地访问
 

@@ -184,7 +184,7 @@ class HelloWorld
 
 ### D
 
-*   Dependency: [gtkd](https://aur.archlinux.org/packages/gtkd/)
+*   Dependency: [gtkd](https://www.archlinux.org/packages/?name=gtkd)
 *   Makedependency: [dmd](https://www.archlinux.org/packages/?name=dmd)
 *   Build with: `dmd hello_world $(pkg-config --cflags --libs gtkd-2)`
 

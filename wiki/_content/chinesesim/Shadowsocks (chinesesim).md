@@ -1,5 +1,3 @@
-**翻译状态：** 本文是英文页面 [Shadowsocks](/index.php/Shadowsocks "Shadowsocks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-1-25，点击[这里](https://wiki.archlinux.org/index.php?title=Shadowsocks&diff=0&oldid=472909)可以查看翻译后英文页面的改动。
-
 **提示：** 由于shadowsocks多为中文用户使用，该中文页面大量内容领先于英文页面。
 
 [Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，最初用 Python 编写。
@@ -163,7 +161,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 *   Chrome/Chromium
 
-使用插件如[switchomega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)(使用方法参看[SwitchyOmega-wiki](https://github.com/FelisCatus/SwitchyOmega/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+使用插件如[SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)(使用方法参看[SwitchyOmega-wiki](https://github.com/FelisCatus/SwitchyOmega/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
 
 ### 服务端
 
@@ -220,7 +218,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 #### 多端口运行
 
-**注意:** [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)和[shadowsocks-go-server](https://aur.archlinux.org/packages/shadowsocks-go-server/)等支持多端口，而[shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)不支持，可到[Configure-Multiple-Users](https://github.com/shadowsocks/shadowsocks/wiki/Configure-Multiple-Users)查看哪些版本支持多端口。
+**注意:** [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks), [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)和[shadowsocks-go-server](https://aur.archlinux.org/packages/shadowsocks-go-server/)等均支持多端口，可到[Configure-Multiple-Users](https://github.com/shadowsocks/shadowsocks/wiki/Configure-Multiple-Users)查看哪些版本支持多端口。
 
 将配置文件中的`server_port`和`password`配置删去，添加上`"port_password"`字段配置端口及其密码，示例：
 
@@ -253,41 +251,39 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 #### 加密方法
 
-**注意:** 默认加密方法`table`速度很快，但很不安全。请不要使用`rc4`，它不安全。
+**注意:** 默认加密方法`table`速度很快，但很不安全。请不要使用`rc4`，它不安全。推荐使用AEAD加密
 
 **提示：** 安装`M2Crypto`可略微提升加密速度，对于Python2来说，安装[python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto)即可。
 
+AEAD加密:
+
+| Name | Alias | Key Size | Salt Size | Nonce Size | Tag Size |
+| AEAD_CHACHA20_POLY1305 | chacha20-ietf-poly1305 | 32 | 32 | 12 | 16 |
+| AEAD_AES_256_GCM | aes-256-gcm | 32 | 32 | 12 | 16 |
+| AEAD_AES_192_GCM | aes-192-gcm | 24 | 24 | 12 | 16 |
+| AEAD_AES_128_GCM | aes-128-gcm | 16 | 16 | 12 | 16 |
+
 可选的加密方式：
 
-*   aes-256-cfb（Shadowsocks经典、传统的加密算法，也是Shadowsocks的作者推荐过的加密算法，移动平台可能开销稍高）
-*   aes-128-cfb
-*   aes-192-cfb
-*   aes-256-ofb
-*   aes-128-ofb
-*   aes-192-ofb
-*   aes-128-ctr
-*   aes-192-ctr
-*   aes-256-ctr
-*   aes-128-cfb8
-*   aes-192-cfb8
-*   aes-256-cfb8
-*   aes-128-cfb1
-*   aes-192-cfb1
-*   aes-256-cfb1
-*   aes-256-gcm
-*   aes-128-gcm
-*   aes-192-gcm
-*   bf-cfb
-*   camellia-128-cfb
-*   camellia-192-cfb
-*   camellia-256-cfb
-*   cast5-cfb
-*   chacha20
-*   idea-cfb
-*   rc2-cfb
-*   rc4-md5
-*   salsa20
-*   seed-cfb
+| Name | Key Size | IV Length |
+| aes-128-ctr | 16 | 16 |
+| aes-192-ctr | 24 | 16 |
+| aes-256-ctr | 32 | 16 |
+| aes-128-cfb | 16 | 16 |
+| aes-192-cfb | 24 | 16 |
+| aes-256-cfb | 32 | 16 |
+| camellia-128-cfb | 16 | 16 |
+| camellia-192-cfb | 24 | 16 |
+| camellia-256-cfb | 32 | 16 |
+| chacha20-ietf | 32 | 12 |
+
+不推荐加密方式：
+
+| Name | Key Size | IV Length |
+| bf-cfb | 16 | 8 |
+| chacha20 | 32 | 8 |
+| salsa20 | 32 | 8 |
+| rc4-md5 | 16 | 16 |
 
 **注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
 

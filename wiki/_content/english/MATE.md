@@ -186,7 +186,7 @@ $ gsettings set org.mate.Marco.general center-new-windows true
 Window snapping is not be enabled by default, to enable it navigate to run *System > Preferences > Windows > Placement* and click the tick box alongside *Enable side by side tiling*. Alternatively, you can run the following from the terminal:
 
 ```
-$ gsettings set org.mate.Marco.general side-by-side-tiling true
+$ gsettings set org.mate.Marco.general allow-tiling true
 
 ```
 
@@ -428,7 +428,7 @@ If this has no effect, increase the delay duration.
 
 A feature of the MATE panel window list is that windows can be scrolled through using the mouse or touchpad. This feature may be troublesome for some as there is potential for accidental, unintended scrolling through windows.
 
-Whilst there is no way of disabling this feature through MATE's settings, this feature can be disabled by patching [libwnck](https://www.archlinux.org/packages/?name=libwnck) using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"); in this case, rebuild libwnck with the following [patch](http://pastebin.com/raw.php?i=Bj0AnH1c). For more information on rebuilding packages with patches applied, see [Patching in ABS#Applying patches](/index.php/Patching_in_ABS#Applying_patches "Patching in ABS").
+Whilst there is no way of disabling this feature through MATE's settings, this feature can be disabled by patching [libwnck3](https://www.archlinux.org/packages/?name=libwnck3) using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"); in this case, rebuild libwnck3 with the following [patch](https://pastebin.com/raw/q66p3dtj). For more information on rebuilding packages with patches applied, see [Patching in ABS#Applying patches](/index.php/Patching_in_ABS#Applying_patches "Patching in ABS").
 
 ### Logout/shutdown delayed by at-spi-registryd
 

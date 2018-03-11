@@ -10,6 +10,8 @@ When *pacman* removes a package that has a configuration file, it normally creat
     *   [3.2 .pacsave](#.pacsave)
 *   [4 Locating .pac* files](#Locating_.pac.2A_files)
 *   [5 Managing .pacnew files](#Managing_.pacnew_files)
+    *   [5.1 pacdiff](#pacdiff)
+    *   [5.2 Third-party utilities](#Third-party_utilities)
 *   [6 See also](#See_also)
 
 ## Why these files are created
@@ -94,7 +96,11 @@ Pacman does not deal with *.pacnew* files automatically: you will need to mainta
 
 ## Managing .pacnew files
 
+### pacdiff
+
 Pacman includes the simple *pacdiff* tool for managing pacnew/pacsave files. It will search all `pacnew` and `pacsave` files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=your_editor pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
+
+### Third-party utilities
 
 A few third-party utilities providing various levels of automation for these tasks are available from the [AUR](/index.php/AUR "AUR").
 

@@ -650,7 +650,7 @@ $ pacman -Q $(pactree -u pacman)
 but you may only need to update a few of them depending on your issue. An example of extracting a package is
 
 ```
-# tar -xvpwf *package.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL
+# tar -xvpwf *package.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL --exclude .MTREE --exclude .BUILDINFO
 
 ```
 

@@ -25,7 +25,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [dolphin](https://www.archlinux.org/packages/?name=dolphin) package.
 
-For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins).
+For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). To enable the relevant plugin go to *Control > Configure Dolphin... > Services*.
 
 ### Compare files
 

@@ -46,7 +46,7 @@ Just let it run without using the system.
 
 ## Preload
 
-**preload** is a program written by Behdad Esfahbod which runs as a [daemon](/index.php/Daemon "Daemon") and records statistics about usage of programs using Markov chains; files of more frequently-used programs are, during a computer's spare time, loaded into memory. This results in faster startup times as less data needs to be fetched from disk. *preload* is often paired with [prelink](/index.php/Prelink "Prelink").
+**preload** is a program written by Behdad Esfahbod which runs as a [daemon](/index.php/Daemon "Daemon") and records statistics about usage of programs using Markov chains; files of more frequently-used programs are, during a computer's spare time, loaded into memory. This results in faster startup times as less data needs to be fetched from disk.
 
 ### Installation
 

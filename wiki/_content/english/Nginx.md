@@ -234,33 +234,24 @@ If you need to create a CSR, follow these instructions instead of the above:
 
 **Note:** For more *openssl* options, read its [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse its [extensive documentation](https://www.openssl.org/docs/).
 
-Example of a `nginx.conf` using SSL:
+Basic example of `/etc/nginx/nginx.conf` using SSL:
 
  `/etc/nginx/nginx.conf` 
 ```
 http {
-        ...
-        ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_prefer_server_ciphers on;
-        ssl_session_cache shared:SSL:10m;
-        add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
-        add_header X-Frame-Options DENY;
-        add_header X-Content-Type-Options nosniff;
-        ssl_session_tickets off;
-        ssl_stapling on;
-        ssl_stapling_verify on;
-        resolver 8.8.8.8 8.8.4.4 valid=300s; # Google DNS Servers
-        resolver_timeout 5s;
+    ...
+    ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ..
 
-# Redirect to HTTPS
-server {
+    # Redirect to HTTPS
+    server {
         listen 80;
         server_name localhost;
         return 301 https://$host$request_uri;
-}
+    }
 
-server {
+    server {
         #listen 80; # Uncomment to also listen for HTTP requests
         listen 443 ssl http2; # HTTP/2 is only possible when using SSL
         server_name localhost;
@@ -272,7 +263,7 @@ server {
         location / {
             index index.html index.htm;
         }
-}
+    }
 }
 
 ```

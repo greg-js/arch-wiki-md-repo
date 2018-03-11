@@ -6,7 +6,7 @@
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(13)</small> |
 | <small>1.2.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.3.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
-| <small>1.4.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(31)</small> |
+| <small>1.4.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(29)</small> |
 | <small>1.5.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(21)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small> |
@@ -82,7 +82,7 @@
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(50)</small> |
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
-| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(81)</small> |
+| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(82)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |
 | <small>4.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(6)</small> |
 | <small>4.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(11)</small> |
@@ -126,7 +126,7 @@
 | <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(18) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>5.17.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(5)</small> |
 | <small>5.18.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(7)</small> |
-| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(24)</small> |
+| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(23)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(31)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |

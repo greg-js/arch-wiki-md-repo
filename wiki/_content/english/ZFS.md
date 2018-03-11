@@ -907,6 +907,8 @@ archzfs-linux
 
 Complete [Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso") to finally build the iso.
 
+**Note:** If you later have problems running modprobe zfs, you should include the linux-headers in the packages.x86_64\.
+
 ### Encryption in ZFS using dm-crypt
 
 The stable release version of ZFS on Linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.

@@ -605,7 +605,7 @@ max-cache-ttl-ssh 10800
 
 #### Use GPG key as SSH key
 
-If you use *gpg-agent* as an SSH agent, you can use your GnuPG key as an SSH key. This reduces key maintenance and you can store your SSH key on a [#Keycard](#Keycards). You have to create a key with the authentication capability (see [#Custom capabilities](#Custom_capabilities)). GnuPG will automatically use this key, if necessary. To check whether the key is added run:
+If you use *gpg-agent* as an SSH agent, you can use your GnuPG key as an SSH key. This reduces key maintenance and you can store your SSH key on a keycard. have to create a key with the authentication capability (see [#Custom capabilities](#Custom_capabilities)). GnuPG will automatically use this key, if necessary. To check whether the key is added run:
 
 ```
 $ ssh-add -l

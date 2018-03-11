@@ -147,14 +147,14 @@ Then follow the below steps to install GRUB:
 
 1.  [Mount the EFI System Partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") to either `/boot` or `/boot/efi` and in the remainder of this section, substitute `*esp*` with that mount point.
 2.  Choose a bootloader identifier, here named `***arch***`. A directory of that name will be created to store the EFI binary bootloader in the ESP and this is the name that will appear in the EFI boot menu to identify the GRUB boot entry.
-3.  Execute the following command to install the GRUB UEFI application to `*esp*/EFI/grub/`, install its modules to `/boot/grub/x86_64-efi/`, and place the EFI binary bootloader `grubx64.efi` in `*esp*/EFI/***arch***/`.
+3.  Execute the following command to install the GRUB UEFI application to `*esp*/EFI/grub/`, install its modules to `/boot/grub/x86_64-efi/`, and place the EFI binary bootloader `grubx64.efi` in `*esp*/EFI/***arch_grub***/`.
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=***arch***
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=***arch_grub***
 
 ```
 
-After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `***arch***` in the above example.
+After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `***arch_grub***` in the above example.
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
@@ -827,7 +827,7 @@ GRUB can take a long time to load when disk space is low. Check if you have suff
 
 ### error: unknown filesystem
 
-GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) is located outside the first 2TB of the drive [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2TB, then reinstall and reconfigure GRUB.
+GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) is located outside the first 2 TiB of the drive [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2 TiB, then reinstall and reconfigure GRUB.
 
 ### grub-reboot not resetting
 

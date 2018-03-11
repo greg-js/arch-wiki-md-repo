@@ -197,14 +197,9 @@ Para usar estos con Python, puedes necesitar instalar los *kits* de *widgets* as
 
 Las versiones antiguas de Python están disponibles en el [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") y pueden ser útiles como curiosidad histórica, para ejecutar aplicaciones viejas que no funcionen con las versiones actuales, o para probar programas en Python que se deban ejecutar en distribuciones que incluyan versiones antiguas de Python (p. ej. RHEL 5.x tiene Python 2.4, y Ubuntu 12.04 tiene Python 3.1):
 
-*   [python15](https://aur.archlinux.org/packages/python15/): Python 1.5.2
-*   [python24](https://aur.archlinux.org/packages/python24/): Python 2.4.6
-*   [python25](https://aur.archlinux.org/packages/python25/): Python 2.5.6
-*   [python26](https://aur.archlinux.org/packages/python26/): Python 2.6.9
-*   [python30](https://aur.archlinux.org/packages/python30/): Python 3.0.1
-*   [python31](https://aur.archlinux.org/packages/python31/): Python 3.1.5
-*   [python32](https://aur.archlinux.org/packages/python32/): Python 3.2.5
-*   [python33](https://aur.archlinux.org/packages/python33/): Python 3.3.5
+*   [python15](https://aur.archlinux.org/packages/python15/)
+*   [python25](https://aur.archlinux.org/packages/python25/)
+*   [python26](https://aur.archlinux.org/packages/python26/)
 
 Desde Julio de 2014, Python oficialmente solo soporta Python 2.7, 3.2, 3.3 y 3.4 para correcciones de seguridad. El uso de versiones más antiguas para aplicaciones expuestas a Internet o para código inseguro puede ser peligroso y no se recomienda.
 

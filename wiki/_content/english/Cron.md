@@ -522,9 +522,11 @@ A *cron* job can be defined in a crontab-like file in the `/etc/cron.d` director
 
 *Anacron* works similarly, by executing the files in the `/etc/cron.daily`, `/etc/cron.weekly` and `/etc/cron.monthly` directories, placed there depending on the desired job frequency. The cron job `/etc/cron.hourly/0anacron` makes sure that *anacron* is run once daily to perform its pending tasks.
 
-**Note:** cronie uses `run-parts` to carry out scripts in the different directories. The filenames should not include any dot (.) since `run-parts` in its default mode will silently ignore them (see [run-parts(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)). The names must consist only of upper and lower-case letters, digits, underscores and minus-hyphens.
+**Note:**
 
-**Note:** the output of `systemctl status cronie` might show a message such as `CAN'T OPEN (/etc/crontab): No such file or directory`. However, this can be ignored since cronie does not require one.
+*   Cronie uses `run-parts` to carry out scripts in the different directories. The filenames should not include any dot (.) since `run-parts` in its default mode will silently ignore them (see [run-parts(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)). The names must consist only of upper and lower-case letters, digits, underscores and minus-hyphens.
+*   The output of `systemctl status cronie` might show a message such as `CAN'T OPEN (/etc/crontab): No such file or directory`. However, this can be ignored since cronie does not require one.
+*   Cronie is particular about the permissions for `/etc/cron.d/0hourly`. None of the tasks in `/etc/cron.d/{hourly,weekly,daily} ... etc` will be run (including the anacron launcher) if `/etc/cron.d/0hourly` is damaged or has improper permissions. `pacman -Qkk cronie` can show if you have any such issues.
 
 **Tip:** To prevent the sending of output and stop email alert, add `>/dev/null 2>&1` at the end of the line for each cron job to redirect output to /dev/null.
 ```

@@ -31,31 +31,45 @@
 
 ### 官方支持
 
-[Cinnamon](/index.php/Cinnamon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Cinnamon (简体中文)")：Cinnamon 致力于提供传统的用户体验。Cinnamon 是一个fork GNOME 3的项目。[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/)[cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
+*   **[Budgie](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie 是一款专为现代用户而设计的桌面环境，它专注于简单和优雅。
 
-	[E17](/index.php/E17_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "E17 (简体中文)")
+	[https://budgie-desktop.org/](https://budgie-desktop.org/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
 
-	E17，即Enlightenment桌面环境，基于Enlightenment库，该桌面环境提供了高效又美观的窗口管理器。同时还附带了文件管理器、桌面图标、桌面部件等必备组件。它提供了高级的美化功能，同时又适用于旧机器和嵌入式设备。
+*   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — Cinnamon 致力于提供传统的用户体验。Cinnamon 是一个 fork GNOME 3 的项目。
 
-	[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")
+	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
 
-	GNOME计划带来了两个东西：一是很好很强大的GNOME桌面环境，是目前最主流的桌面环境之一；二是GNOME开发平台，帮助开发整合于用户桌面的实用程序。GNOME是自由的、易用的、国际化的、面向开发者的、有强力支持的。
+*   **[Deepin](/index.php/Deepin "Deepin")** — Deepin 桌面界面和应用程序功能的直观和优雅的设计。四处移动，共享和搜索等已经成为一个简单的愉悦体验。
 
-	[KDE Plasma](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")
+	[https://www.deepin.org/](https://www.deepin.org/) || [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
 
-	KDE Plasma桌面是一个熟悉的工作环境。Plasma Desktop桌面提供了一个现代桌面计算体验所需的所有工具，这样你就可以从一开始就有生产力。
+*   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — Enlightenment desktop shell 提供了基于 Enlightenment Foundation Libraries 的高效窗口管理器以及其他基本桌面组件，如文件管理器，桌面图标和小部件。它支持主题，并能够在较旧的硬件或嵌入式设备上执行。
 
-	[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")
+	[https://www.enlightenment.org/](https://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
-	正如其名，LXDE（Lightweight X11 Desktop Environment，轻量X11桌面环境）是一个快速、简洁、轻量的桌面环境。它由来自全球各地的开发者维护，具有界面美观、多语言支持、键盘快捷键等诸多实用特性。比起其他桌面环境，LXDE占用更少的CPU、内存，是为上网本、移动设备、旧机器特别设计的轻量桌面环境。
+*   **[GNOME](/index.php/GNOME "GNOME")** — GNOME桌面环境是一个既具有现代（'GNOME'）又有经典（'GNOME Classic'）会话的迷人而直观的桌面。
 
-	[LXQt](/index.php/LXQt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXQt (简体中文)")
+	[https://www.gnome.org/gnome-3/](https://www.gnome.org/gnome-3/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
-	LXQt 是轻量级桌面环境 LXDE 的下一代产品，基于 Qt 开发。 它是合并的LXDE Qt和Razor-qt项目之间的产品: 一个轻量级，模块化，速度极快的和用户友好的桌面环境。[http://lxqt.org/](http://lxqt.org/)[lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
+*   **[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")** — GNOME Flashback 是 GNOME 3的一个 shell ，最初称为 GNOME 后备模式。桌面布局和底层技术与 GNOME 2 类似。
 
-	[MATE](/index.php/MATE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MATE (简体中文)")
+	[https://wiki.gnome.org/Projects/GnomeFlashback](https://wiki.gnome.org/Projects/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
-	Mate 使用传统方式为 Linux 用户提供了直观和有吸引力的桌面。操作方式和Gnome2几乎一样。
+*   **[KDE Plasma](/index.php/KDE_Plasma "KDE Plasma")** — KDE Plasma桌面环境是一个熟悉的工作环境。Plasma 提供了现代桌面计算体验所需的所有工具，因此您可以从一开始就提高生产力。
+
+	[https://www.kde.org/plasma-desktop](https://www.kde.org/plasma-desktop) || [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
+
+*   **[LXDE](/index.php/LXDE "LXDE")** — 轻量级X11桌面环境是一个快速和节能的桌面环境。它配备了现代界面，多语言支持，标准键盘快捷键和附加功能，如标签式文件浏览。 LXDE的基本设计是轻量级的，其努力比其他环境更少地占用CPU和内存。
+
+	[http://lxde.org/](http://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
+
+*   **[LXQt](/index.php/LXQt "LXQt")** — LXQt 是轻量级桌面环境 LXDE 的下一代产品，基于 Qt 开发。 它是合并的LXDE Qt和Razor-qt项目之间的产品: 一个轻量级，模块化，速度极快的和用户友好的桌面环境。
+
+	[http://lxqt.org/](http://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
+
+*   **[MATE](/index.php/MATE "MATE")** — Mate为使用传统隐喻的Linux用户提供了一个直观而有吸引力的桌面。 MATE最初是GNOME 2的一个分支，但现在使用GTK + 3。
+
+	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 
 *   **[Sugar](/index.php/Sugar "Sugar")** — Sugar是一个为5-12岁孩子提供学习帮助的桌面环境，并且集成了多媒体的活动。在为全世界每一位孩子提供素质教育机会的计划中，Sugar是其核心组成部分 — 目前全世界有将近一百万小孩使用该桌面环境，他们讲着25种语言，来自40多个国家。在Sugar的帮助下，他们有机会接受素质教育，从而成就自己的人生。
 
@@ -69,27 +83,11 @@
 
 	ROX是一个高效、友好的桌面环境。它的核心是文件浏览器，秉承传统Unix的“一切皆文件”理念，而非把一切都放在菜单、向导什么的里面。ROX致力于打造设计完善且功能清晰的桌面环境，把一些小型程序结合在一起（而不是搞整合的万能软件）。
 
-	[Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Deepin Desktop Environment (简体中文)")
-
-	Deepin桌面界面和应用程序功能的直观和优雅的设计。四处移动，共享和搜索等已经成为一个简单的愉悦体验。[http://www.deepin.org/](http://www.deepin.org/)
-
-	[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")
-
-	Budgie 是一个轻量级桌面环境，它的设计着重于简洁和漂亮，充分考虑了现代用户。此外，它的桌面布局类似于 Chrome/ Chromium OS。[https://budgie-desktop.org/](https://budgie-desktop.org/)
-
 ### 非官方支持
 
 *   **[CDE](/index.php/CDE "CDE")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 
 	[http://sourceforge.net/projects/cdesktopenv/](http://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)
-
-*   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — “Equinox桌面环境”是一个DE设计简单,非常轻,快。
-
-	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)
-
-*   **[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")** — GNOME Flashback is a shell for GNOME 3 which was initially called GNOME fallback mode. The desktop layout and the underlying technology is similar to GNOME 2.
-
-	[https://wiki.gnome.org/GnomeFlashback](https://wiki.gnome.org/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
 *   **[Liri](/index.php/Liri "Liri")** — Liri 是具有现代设计和功能的桌面环境。合并了 [Hawaii](http://hawaiios.org/), [Papyros](http://papyros.io/) 和 [Liri Project](https://github.com/liri-project)。实验版本。
 
@@ -105,11 +103,7 @@
 
 *   **[Pantheon](/index.php/Pantheon "Pantheon")** — Pantheon 是elementary OS 操作系统的默认桌面环境。它是从头开始使用 Vala和GTK3工具包写。至于易用性和外观，桌面与GNOME Shell和Mac OS X有一些相似之处。
 
-	[http://elementaryos.org/](http://elementaryos.org/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
-
-*   **[ROX](/index.php/ROX "ROX")** — ROX is a fast, user friendly desktop which makes extensive use of drag-and-drop. The interface revolves around the file manager, following the traditional UNIX view that 'everything is a file' rather than trying to hide the filesystem beneath start menus, wizards, or druids. The aim is to make a system that is well designed and clearly presented. The ROX style favors using several small programs together instead of creating all-in-one mega-applications.
-
-	[http://rox.sourceforge.net/desktop/](http://rox.sourceforge.net/desktop/) || [rox](https://www.archlinux.org/packages/?name=rox)
+	[https://elementary.io/](https://elementary.io/) || [pantheon-session-git](https://aur.archlinux.org/packages/pantheon-session-git/)
 
 *   **theShell** — theShell is a desktop environment that tries to be as transparent as possible. It uses Qt 5 as its widget toolkit and KWin as its window manager. It also incorporates a personal assistant.
 

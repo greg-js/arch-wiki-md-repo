@@ -31,7 +31,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.46\. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
+As of writing, the current BIOS version is 1.47\. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
 
 ## Kernel and hardware support
 
