@@ -15,13 +15,12 @@
     *   [4.3 Firefox](#Firefox)
     *   [4.4 slock](#slock)
     *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.6 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
-    *   [4.7 Flicker](#Flicker)
-    *   [4.8 Fullscreen tearing](#Fullscreen_tearing)
-    *   [4.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [4.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.11 Tabbed windows](#Tabbed_windows)
-    *   [4.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [4.6 Flicker](#Flicker)
+    *   [4.7 Fullscreen tearing](#Fullscreen_tearing)
+    *   [4.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [4.9 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.10 Tabbed windows](#Tabbed_windows)
+    *   [4.11 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -233,10 +232,6 @@ focus-exclude = "id = 0x1800001";
 ### Corrupted screen contents with Intel graphics
 
 On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.freedesktop.org/show_bug.cgi?id=97916) for compton when the display resolution is changed or a new monitor is connected. This can happen with either the `intel` or `modesetting` driver. A workaround is to [disable DRI3](/index.php/Intel_graphics#DRI3_issues "Intel graphics").
-
-### Errors while trying to daemonize with nvidia drivers
-
-If you get error `main(): Failed to create new session.` while trying to start compton in background you should try [compton-garnetius-git](https://aur.archlinux.org/packages/compton-garnetius-git/). It also provides a few pulls from upstream that aren't merged yet.
 
 ### Flicker
 

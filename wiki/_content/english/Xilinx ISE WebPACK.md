@@ -343,6 +343,8 @@ ERROR:sim - Failed executing Tcl generator.
 
 ```
 
+*   Solution #1
+
 If that happens, make sure you don't have _JAVA_OPTIONS set in your environment. If you normally run coregen with
 
 ```
@@ -357,7 +359,9 @@ $ unset _JAVA_OPTIONS && source /opt/Xilinx/14.7/ISE_DS/settings64.sh && coregen
 
 ```
 
-**Note:** This fix no longer works due to: coregen's bundled java fails to start. Workaround force using ISE bundled java6 instead of java5
+*   Solution #2
+
+Solution #1 no longer works due to: coregen's bundled java fails to start. Workaround force using ISE bundled java6 instead of java5.
 
 Backup old version
 
@@ -370,5 +374,14 @@ Add symbolic link to java6
 
 ```
 $ ln -s /opt/Xilinx/14.7/ISE_DS/ISE/java6/lin64/jre/bin/java /opt/Xilinx/14.7/ISE_DS/ISE/java/lin64/jre/bin/java
+
+```
+
+*   Solution #3
+
+If the previous methods fail, try to run the 32-bit version of coregen:
+
+```
+$ unset _JAVA_OPTIONS && source /opt/Xilinx/14.7/ISE_DS/settings32.sh && coregen
 
 ```

@@ -7,39 +7,41 @@
     *   [2.1 No Colors](#No_Colors)
     *   [2.2 As a daemon](#As_a_daemon)
     *   [2.3 As a systemd unit](#As_a_systemd_unit)
-*   [3 Usage](#Usage)
+*   [3 Getting Help](#Getting_Help)
     *   [3.1 The manuals](#The_manuals)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 TRAMP](#TRAMP)
-    *   [4.2 Using Emacs as git mergetool](#Using_Emacs_as_git_mergetool)
-    *   [4.3 Using Caps Lock as Control key](#Using_Caps_Lock_as_Control_key)
-    *   [4.4 Multiplexing emacs and emacsclient](#Multiplexing_emacs_and_emacsclient)
-    *   [4.5 Multiple configurations](#Multiple_configurations)
-    *   [4.6 Local and custom variables](#Local_and_custom_variables)
-    *   [4.7 Custom colors and theme](#Custom_colors_and_theme)
-    *   [4.8 SyncTeX support](#SyncTeX_support)
-    *   [4.9 Syntax highlighting for systemd Files](#Syntax_highlighting_for_systemd_Files)
-    *   [4.10 Clipboard support for emacs-nox](#Clipboard_support_for_emacs-nox)
-*   [5 Extensions](#Extensions)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Emacs fails to start with the error message 'Undefined color: "WINDOW_FOREGROUND"'](#Emacs_fails_to_start_with_the_error_message_.27Undefined_color:_.22WINDOW_FOREGROUND.22.27)
-    *   [6.2 Colored output issues](#Colored_output_issues)
-    *   [6.3 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
-    *   [6.4 Slow startup](#Slow_startup)
-    *   [6.5 Cannot open load file: ...](#Cannot_open_load_file:_...)
-    *   [6.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
-    *   [6.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
-    *   [6.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
-    *   [6.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
-    *   [6.10 Weirds escaped numbers(utf-8) displaying in emacs terminal](#Weirds_escaped_numbers.28utf-8.29_displaying_in_emacs_terminal)
-    *   [6.11 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
-    *   [6.12 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
-*   [7 Alternatives](#Alternatives)
-    *   [7.1 mg](#mg)
-    *   [7.2 zile](#zile)
-    *   [7.3 uemacs](#uemacs)
-    *   [7.4 remacs](#remacs)
-*   [8 See also](#See_also)
+*   [4 Customization](#Customization)
+    *   [4.1 Configuration file](#Configuration_file)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 TRAMP](#TRAMP)
+    *   [5.2 Using Emacs as git mergetool](#Using_Emacs_as_git_mergetool)
+    *   [5.3 Using Caps Lock as Control key](#Using_Caps_Lock_as_Control_key)
+    *   [5.4 Multiplexing emacs and emacsclient](#Multiplexing_emacs_and_emacsclient)
+    *   [5.5 Multiple configurations](#Multiple_configurations)
+    *   [5.6 Local and custom variables](#Local_and_custom_variables)
+    *   [5.7 Custom colors and theme](#Custom_colors_and_theme)
+    *   [5.8 SyncTeX support](#SyncTeX_support)
+    *   [5.9 Syntax highlighting for systemd Files](#Syntax_highlighting_for_systemd_Files)
+    *   [5.10 Clipboard support for emacs-nox](#Clipboard_support_for_emacs-nox)
+*   [6 Extensions](#Extensions)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Emacs fails to start with the error message 'Undefined color: "WINDOW_FOREGROUND"'](#Emacs_fails_to_start_with_the_error_message_.27Undefined_color:_.22WINDOW_FOREGROUND.22.27)
+    *   [7.2 Colored output issues](#Colored_output_issues)
+    *   [7.3 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
+    *   [7.4 Slow startup](#Slow_startup)
+    *   [7.5 Cannot open load file: ...](#Cannot_open_load_file:_...)
+    *   [7.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
+    *   [7.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
+    *   [7.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
+    *   [7.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
+    *   [7.10 Weirds escaped numbers(utf-8) displaying in emacs terminal](#Weirds_escaped_numbers.28utf-8.29_displaying_in_emacs_terminal)
+    *   [7.11 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
+    *   [7.12 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
+*   [8 Alternatives](#Alternatives)
+    *   [8.1 mg](#mg)
+    *   [8.2 zile](#zile)
+    *   [8.3 uemacs](#uemacs)
+    *   [8.4 remacs](#remacs)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -158,17 +160,13 @@ If you start emacs as a daemon, you may want to set the `VISUAL` and `EDITOR` en
 
 It is also recommended to change any GUI start menu entries (or equivalent) for Emacs to point to emacsclient instead of emacs, so that the emacs daemon is used instead of starting a new emacs process.
 
-## Usage
+## Getting Help
 
-Although Emacs is complex, it will not take long to begin to understand the benefits which the level of customization and extensibility bring. Furthermore, the comprehensive variety of extensions already available allows it to be transformed into a powerful environment for almost any form of text-editing.
-
-Emacs has an excellent built-in tutorial which can be accessed by clicking the first link on the splash screen; by selecting *Help->Emacs Tutorial* from the menu or by pressing 'F1' followed by 't'.
+Emacs has a built-in tutorial which can be accessed by clicking the first link on the splash screen and selecting *Help->Emacs Tutorial* from the menu or by pressing `C-h t`.
 
 Emacs is self-documenting by design. As such, a great deal of information is available to determine the name of a specific command or its keybinding, for example. See all contextual help bindings with **C-h C-h**.
 
 Emacs also includes a set of reference cards, useful for beginners and experts alike, see `/usr/share/emacs/<version>/etc/refcards/` (substitute <version> for your version of emacs).
-
-Emacs empowers the users with a tremendous amount of features, including: keyboards macros, rectangular regions, whitespace cleanup, bookmarks, desktop session, various shells, spell checking, tables, semantic analysis...
 
 ### The manuals
 
@@ -179,11 +177,19 @@ If you really want to master Emacs, the most recommended source of documentation
 *   Emacs Lisp Intro: if you never used any programming language before.
 *   Elisp: if you are already familiar with a programming language.
 
-You can access it as PDFs from [GNU.org](http://www.gnu.org/software/emacs/manual/) or directly from Emacs itself thanks to the embedded 'info' reader: **C-h i**. Press **m** to choose a book.
+You can access them as PDFs from [GNU.org](http://www.gnu.org/software/emacs/manual/) or directly from Emacs itself thanks to the embedded 'info' reader: **C-h i**. Press **m** to choose a book.
 
 Some users prefer to read books using 'info' because of its convenient shortcuts, its paragraphs adapting to window width and the font adapted to current screen resolution. Some find it less irritating to the eyes. Finally you can easily copy content from the book to any Emacs buffer, and you can even execute Lisp code snippets directly from the examples.
 
 You may want to read the **Info** book to know more about it: **C-h i m info <RET>**. Press **?** while in info mode for a quick list of shortcuts.
+
+## Customization
+
+One of Emacs's main features is its extensibility and the ease of configuration. Emacs has a built-in customization engine. You can do `M-x customize` which displays a list of customization options. For how to use this interface, see the Easy Customization info node: `(info "(emacs) Easy Customization")`. You can set customization opens just for one Emacs session or save them into a [#Configuration file](#Configuration_file) so that they are saved across Emacs sessions. Note that this is what the customization interface does if you select "Apply and Save."
+
+### Configuration file
+
+When Emacs is started, it normally tries to load a Lisp program from an “initialization file”, or “init file” for short. This file, if it exists, specifies how to initialize Emacs for you. Emacs looks for your init file using the filenames ‘~/.emacs’, ‘~/.emacs.el’, or ‘~/.emacs.d/init.el’. See the info node "Init File" for more: `(info "(emacs) Init File")`
 
 ## Tips and tricks
 

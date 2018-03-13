@@ -152,7 +152,7 @@ $ grep -E --color=auto 'vmx|svm' /proc/cpuinfo
 
 ### Enabling huge pages
 
-You may also want to enable hugepages to improve the performance of your virtual machine. With an up to date Arch Linux and a running KVM you probably already have everything you need. Check if you have the directory `/dev/hugepages`. If not, create it. Now we need the right permissions to use this directory. The default permission is root's uid and gid with 0755, but we want anyone in the kmv group to have access to hugepages.
+You may also want to enable hugepages to improve the performance of your virtual machine. With an up to date Arch Linux and a running KVM you probably already have everything you need. Check if you have the directory `/dev/hugepages`. If not, create it. Now we need the right permissions to use this directory. The default permission is root's uid and gid with 0755, but we want anyone in the kvm group to have access to hugepages.
 
 Add to your `/etc/fstab`:
 

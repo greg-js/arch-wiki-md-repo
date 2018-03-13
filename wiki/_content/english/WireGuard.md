@@ -47,11 +47,11 @@ The external addresses should already exist. For example, peer A should be able 
 This peer will listen on UDP port 48574 and will accept connection from peer B by linking its public key with both its inner and outer IPs addresses.
 
 ```
-$ ip link add dev wg0 type wireguard
-$ ip addr add 10.0.0.1/24 dev wg0
-$ wg set wg0 listen-port 48574 private-key ./privatekey
-$ wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
-$ ip link set wg0 up
+# ip link add dev wg0 type wireguard
+# ip addr add 10.0.0.1/24 dev wg0
+# wg set wg0 listen-port 48574 private-key ./privatekey
+# wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
+# ip link set wg0 up
 
 ```
 
@@ -62,11 +62,11 @@ $ ip link set wg0 up
 As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 and accept connection from peer A only.
 
 ```
-$ ip link add dev wg0 type wireguard
-$ ip addr add 10.0.0.2/24 dev wg0
-$ wg set wg0 listen-port 39814 private-key ./privatekey
-$ wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
-$ ip link set wg0 up
+# ip link add dev wg0 type wireguard
+# ip addr add 10.0.0.2/24 dev wg0
+# wg set wg0 listen-port 39814 private-key ./privatekey
+# wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
+# ip link set wg0 up
 
 ```
 
@@ -101,8 +101,8 @@ At this point one could reach the end of the tunnel:
 The config can be saved by utilizing `showconf`
 
 ```
-$ wg showconf wg0 > /etc/wireguard/wg0.conf
-$ wg setconf wg0 /etc/wireguard/wg0.conf
+# wg showconf wg0 > /etc/wireguard/wg0.conf
+# wg setconf wg0 /etc/wireguard/wg0.conf
 
 ```
 

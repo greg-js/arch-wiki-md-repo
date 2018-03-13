@@ -43,7 +43,7 @@ Steps taken to migrate from luna to apollo (the commands are not the exact comma
 16.  ~~Run the wiki role again to take it out of maintenance and also re-enable/restart the services~~
 17.  ~~Copied the missing files under /srv/http/vhosts/wiki.archlinux.org/public/images (they were on .gitignore). Copied them to the respective directory on apollo.~~
 18.  ~~Check if the services are running~~
-19.  Change the TTL of the wiki.archlinux.org DNS record back to the default
+19.  ~~Change the TTL of the wiki.archlinux.org DNS record back to the default~~
 
 ## Forum
 

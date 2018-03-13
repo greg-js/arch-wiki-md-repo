@@ -32,6 +32,8 @@ Related articles
 
 ## Installation
 
+**Warning:** [openrc](https://aur.archlinux.org/packages/openrc/) depends (implicitly) on [sysvinit](https://aur.archlinux.org/packages/sysvinit/), which conflicts with [systemd-sysvinit](https://www.archlinux.org/packages/?name=systemd-sysvinit). Therefore the system boots with plain sysvinit by default (not OpenRC or systemd), be sure to add a correct `init=*some-init*` kernel parameter.
+
 OpenRC and accompanying packages are available in the [AUR](/index.php/AUR "AUR"). For details on init components, see [Init](/index.php/Init "Init").
 
 Install either the [openrc](https://aur.archlinux.org/packages/openrc/) or [openrc-git](https://aur.archlinux.org/packages/openrc-git/) package. From version 0.25 onward, OpenRC provides its own init at `/usr/bin/openrc-init`. Optionally, you can use other inits from, e.g., [busybox](https://www.archlinux.org/packages/?name=busybox) or [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/). Note that when `openrc-init` is used, it must be paired with `openrc-shutdown`, and *not* the `shutdown` or `reboot` commands from other packages, otherwise you will encounter errors.

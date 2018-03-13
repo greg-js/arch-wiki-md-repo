@@ -1406,6 +1406,8 @@ $ ln -s /usr/lib/libsndio.so x64/libsndio.so.6.1
 
 within the root of the NS2 directory. This is because NS2 uses an older outdated version of sndio, but it is still compatible with the new version, thankfully.
 
+For a more minimal solution, one can attempt to set the audio driver used through the environment variable `SDL_AUDIODRIVER`. For example, `SDL_AUDIODRIVER=sndio` or `SDL_AUDIODRIVER=alsa`.
+
 The environment variable `SDL_VIDEODRIVER` must not be set to `wayland`. Try setting `SDL_VIDEODRIVER` to `x11` if it still does not work.
 
 ### Nuclear Throne

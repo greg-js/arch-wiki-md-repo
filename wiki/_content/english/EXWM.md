@@ -6,7 +6,6 @@ EXWM is a [window manager](/index.php/Window_manager "Window manager") based on 
 *   [2 Configuration](#Configuration)
     *   [2.1 Multi-monitor](#Multi-monitor)
     *   [2.2 System tray](#System_tray)
-    *   [2.3 Compositing manager](#Compositing_manager)
 *   [3 Embedding within LXDE](#Embedding_within_LXDE)
     *   [3.1 lxsession-logout](#lxsession-logout)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -77,20 +76,6 @@ EXWM supports a system tray, but it is not enabled by default. To enable it, put
 ```
 
 You may need to adjust the height afterwards; this can be adjusted with the `exwm-systemtray-height` variable.
-
-### Compositing manager
-
-**Note:** The compositing manager may cause issues. If EXWM slows to a crawl, try turning off the cm
-
-EXWM includes a compositing manager, but it is not enabled by default. To enable it, load the followng:
-
-```
-(require 'exwm-cm)
-(exwm-cm-enable)
-
-```
-
-Alternatively, you may start/stop the compositing manager manually by omitting `(exwm-cm-enable)` and instead calling `exwm-cm-start` or `exwm-cm-stop` manually.
 
 ## Embedding within LXDE
 

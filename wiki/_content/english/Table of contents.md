@@ -82,7 +82,7 @@
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(50)</small> |
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
-| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(82)</small> |
+| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(83)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |
 | <small>4.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(6)</small> |
 | <small>4.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(11)</small> |

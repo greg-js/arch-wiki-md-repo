@@ -73,6 +73,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.23 Windows 8.x error code 0x000000C4](#Windows_8.x_error_code_0x000000C4)
     *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
     *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
+    *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
 *   [6 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -880,6 +881,17 @@ If you are running at 16-bit color depth, then the icons may appear fuzzy/choppy
 ```
 
 Then update the color depth in the "desktop properties" window. If nothing happens, force the screen to redraw through some method (i.e. `Host+f` to redraw/enter full screen).
+
+### Windows: Screen flicker if 3D acceleration enabled
+
+VirtualBox > 4.3.14 has a regression in which Windows guests with 3D acceleration flicker. Since r120678 a patch has been implemented to recognize an [environment variable](/index.php/Environment_variable "Environment variable") setting, launch VirtualBox like this:
+
+```
+$ CR_RENDER_FORCE_PRESENT_MAIN_THREAD=0 VirtualBox
+
+```
+
+Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](https://www.virtualbox.org/ticket/13653).
 
 ## See also
 

@@ -83,13 +83,19 @@ http://192.168.0.1/goform/goform_process?goformId=MODE_SWITCH&switchCmd=FACTORY
 
 ```
 
-After switching to **FACTORY mode** you can issues commands via PuTTY:
+You may then need to run the following command (as root) in order to access the AT command serial port:
 
 ```
-putty /dev/ttyUSB0
-AT+ZCDRUN=8 - switch to 1403 mode (RNDIS)
-AT+ZCDRUN=9 - switch to 1225 mode (default)
-AT+ZCDRUN=F - exit DOWNLOAD mode and switch to selected mode (RNDIS or default)
+# echo 0x19d2 0x16 > /sys/module/usbserial/drivers/usb-serial:generic/new_id
+
+```
+
+The port should appear as `/dev/ttyUSB<var>n</var>`, e.g. `/dev/ttyUSB1`. When you discover the command port, you can use your favourite serial terminal emulation program to control the device. The commands below may be especially useful (here shown with [modem-cmd](//github.com/imZack/modem-cmd)):
+
+```
+# modem-cmd /dev/ttyUSB1 AT+ZCDRUN=8     # switch to 1403 mode (RNDIS)
+# modem-cmd /dev/ttyUSB1 AT+ZCDRUN=9     # switch to 1225 mode (default)
+# modem-cmd /dev/ttyUSB1 AT+ZCDRUN=F     # exit DOWNLOAD mode and switch to selected mode (RNDIS or default)
 
 ```
 

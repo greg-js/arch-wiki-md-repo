@@ -262,7 +262,7 @@ $ systemctl hybrid-sleep
 
 ## Writing unit files
 
-The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/systemd/man/systemd.unit.html) is inspired by XDG Desktop Entry Specification *.desktop* files, which are in turn inspired by Microsoft Windows *.ini* files. Unit files are loaded from two locations. From lowest to highest precedence they are:
+The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/systemd/man/systemd.unit.html) is inspired by XDG Desktop Entry Specification *.desktop* files, which are in turn inspired by Microsoft Windows *.ini* files. Unit files are loaded from multiple locations (to see the full list, run `systemctl show --property=UnitPath`), but the main ones are (listed from lowest to highest precedence):
 
 *   `/usr/lib/systemd/system/`: units provided by installed packages
 *   `/etc/systemd/system/`: units installed by the system administrator

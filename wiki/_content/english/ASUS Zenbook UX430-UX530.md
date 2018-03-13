@@ -29,6 +29,7 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [2.4 Microcode](#Microcode)
     *   [2.5 Nvidia issues with Bumblebee](#Nvidia_issues_with_Bumblebee)
     *   [2.6 Headset Microphone](#Headset_Microphone)
+    *   [2.7 No sound](#No_sound)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Power saving and performance](#Power_saving_and_performance)
     *   [3.2 Extract Windows 10 license key](#Extract_Windows_10_license_key)
@@ -128,6 +129,10 @@ You may encounter an issue where your headset microphone is not being detected. 
 options snd-hda-intel model=dell-headset-multi
 
 ```
+
+## No sound
+
+There seems to be a bug in the firmware that prevents the embedded sound card from working in Arch after Windows has been restarted. A complete shutdown of the laptop is required to get the sound card working again.
 
 # Tips and tricks
 

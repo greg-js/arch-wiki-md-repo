@@ -22,7 +22,7 @@
 | <small>6.4.3.</small> [Security](/index.php/Category:Security_(Polski) "Category:Security (Polski)") <small>(0)</small> |
 | <small>6.4.3.1.</small> [Encryption](/index.php/Category:Encryption_(Polski) "Category:Encryption (Polski)") <small>(1)</small> |
 | <small>7.</small> [Software](/index.php/Category:Software_(Polski) "Category:Software (Polski)") <small>(0)</small> |
-| <small>7.1.</small> [Desktop environments](/index.php/Category:Desktop_environments_(Polski) "Category:Desktop environments (Polski)") <small>(7)</small> |
+| <small>7.1.</small> [Desktop environments](/index.php/Category:Desktop_environments_(Polski) "Category:Desktop environments (Polski)") <small>(8)</small> |
 | <small>7.1.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Polski) "Category:Stacking WMs (Polski)") <small>(2)</small> |
 | <small>7.2.</small> [File systems](/index.php/Category:File_systems_(Polski) "Category:File systems (Polski)") <small>(5)</small> |
 | <small>7.3.</small> [General](/index.php/Category:General_(Polski) "Category:General (Polski)") <small>(1)</small> |

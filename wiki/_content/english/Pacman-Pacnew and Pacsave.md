@@ -56,7 +56,7 @@ Note that the path must not start with a slash.
 
 ### .pacnew
 
-For each `backup` file in a package being upgraded, pacman cross-compares three [md5sums](https://en.wikipedia.org/wiki/Md5sum "wikipedia:Md5sum") generated from the file's contents: one sum for the version originally installed by the package, one for the version currently in the filesystem, and one for the version in the new package. If the version of the file currently in the filesystem has been modified from the version originally installed by the package, pacman cannot know how to merge those changes with the new version of the file. Therefore, instead of overwriting the modified file when upgrading, pacman saves the new version with a *.pacnew* extension and leaves the modified version untouched.
+For each of the [#Package backup files](#Package_backup_files) being upgraded, pacman cross-compares three [md5sums](https://en.wikipedia.org/wiki/Md5sum "wikipedia:Md5sum") generated from the file's contents: one sum for the version originally installed by the package, one for the version currently in the filesystem, and one for the version in the new package. If the version of the file currently in the filesystem has been modified from the version originally installed by the package, pacman cannot know how to merge those changes with the new version of the file. Therefore, instead of overwriting the modified file when upgrading, pacman saves the new version with a *.pacnew* extension and leaves the modified version untouched.
 
 Going into further detail, the 3-way MD5 sum comparison results in one of the following outcomes:
 
@@ -88,11 +88,11 @@ If the user has modified one of the files specified in `backup` then that file w
 
 ## Locating .pac* files
 
-Pacman does not deal with *.pacnew* files automatically: you will need to maintain these yourself. A few tools are presented in the next section. To do this manually, first you will need to locate them. When upgrading or removing a large number of packages, updated `*.pac*` files may be missed. To discover whether any `*.pac*` files have been installed, use one of the following:
+Pacman does not deal with *.pacnew* files automatically: you will need to maintain these yourself. A few tools are presented in the next section. To do this manually, first you will need to locate them. When upgrading or removing a large number of packages, updated *.pac** files may be missed. To discover whether any *.pac** files have been installed, use one of the following:
 
 *   To just search where most global configurations are stored: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` or the entire disk: `$ find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` 
 *   Use [locate](/index.php/Locate "Locate") if you have installed it. First re-index the database: `# updatedb` Then: `$ locate --existing --regex "\.pac(new|save)$"` 
-*   Use pacman's log to find them: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of which files are currently in the filesystem nor of which files have already been removed; the above command will list all `*.pac*` files that have ever existed on your system. Use the `tail` command to get the 10 most recent `*.pac*` files: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log | tail` 
+*   Use pacman's log to find them: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of which files are currently in the filesystem nor of which files have already been removed; the above command will list all *.pac** files that have ever existed on your system. Use the `tail` command to get the 10 most recent *.pac** files: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log | tail` 
 
 ## Managing .pacnew files
 
@@ -114,7 +114,11 @@ You can use one of the following tools:
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
-*   **pacmarge** — A tool for automatically merging .pacnew files
+*   **etc-update-git** — Same as the above but based the latest version on GitHub of the *etc-update* script from Gentoo.
+
+	[https://github.com/gentoo/portage/blob/master/bin/etc-update](https://github.com/gentoo/portage/blob/master/bin/etc-update) || [etc-update-git](https://aur.archlinux.org/packages/etc-update-git/)
+
+*   **pacmarge** — A tool for automatically merging *.pacnew* files
 
 	[https://github.com/foutrelis/pacmarge](https://github.com/foutrelis/pacmarge) || [pacmarge](https://aur.archlinux.org/packages/pacmarge/)
 

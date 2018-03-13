@@ -1,3 +1,8 @@
+Related articles
+
+*   [lm sensors](/index.php/Lm_sensors "Lm sensors")
+*   [Conky](/index.php/Conky "Conky")
+
 [hddtemp](https://savannah.nongnu.org/projects/hddtemp/) is a small utility (with daemon) that gives the hard-drive temperature via [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") (for drives supporting this feature).
 
 ## Contents
@@ -5,6 +10,7 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Daemon](#Daemon)
+    *   [3.1 Override default disk](#Override_default_disk)
 *   [4 Monitors](#Monitors)
 *   [5 Solid State Drives](#Solid_State_Drives)
 
@@ -14,43 +20,31 @@
 
 ## Usage
 
-Hddtemp requires root privileges. The command `hddtemp` must be followed by at least one drive's location, with several directories separated by spaces:
+Hddtemp requires root privileges. The command `hddtemp` must be followed by at least one drive's location. You can list several drives separated by spaces:
 
 ```
 # hddtemp /dev/sd*X1* /dev/sd*X2* ... /dev/sd*Xn*
 
 ```
 
+**Note:** Block device naming under `/dev/`, like `/dev/sdX`, is inconsistent. See [Persistent_block_device_naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for information on using persistent device paths.
+
+Further usage information is available in the manpage:
+
+```
+$ man hddtemp
+
+```
+
 ## Daemon
 
-Running the daemon allows to access the temperature via TCP/IP, to use for example with scripts.
+Running the daemon allows access to the temperature information via TCP/IP as a regular user. This is useful for scripts and system monitors.
 
 The daemon is [controlled](/index.php/Systemd#Using_units "Systemd") by `hddtemp.service`.
 
-**Note:** Arguments to `hddtemp` are directly given in `/usr/lib/systemd/system/hddtemp.service`. This is especially important with multiple disks, as the default configuration only monitors `/dev/sda`. Change `ExecStart` [to override](/index.php/Systemd#Editing_provided_units "Systemd") `hddtemp.service`:
+To get the temperature, connect to the daemon which listens on port 7634.
 
-*   Create a directory in `/etc/systemd/system`:
-
-```
-# mkdir /etc/systemd/system/hddtemp.service.d
-
-```
-
-*   Create `customexec.conf` inside and add the drives you want to monitor, e.g.:
-
- `/etc/systemd/system/hddtemp.service.d/customexec.conf` 
-```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/hddtemp -dF /dev/sda /dev/sdb /dev/sdc
-```
-
-You can also use the [auto-generate](https://github.com/AndyCrowd/auto-generate-configuration-files/blob/master/gen-customexec.conf-hddtemp.sh) script that detects with help of [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) all supported by [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) hard-drives and generates to the stdout the `customexec.conf` pattern file.
-
-*   [Reload](/index.php/Reload "Reload") *systemd'*s unit files.
-*   [Restart](/index.php/Restart "Restart") the `hddtemp` service.
-
-To get the temperature, connect to the daemon which listens on port 7634\. With [inetutils](https://www.archlinux.org/packages/?name=inetutils):
+With [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
 $ telnet localhost 7634
@@ -80,16 +74,37 @@ For a better looking statistic:
 /dev/sdb 36 C
 ```
 
-Refer to the manpage for more information:
+### Override default disk
+
+The default hddtemp daemon only monitors `/dev/sda`. If you have multiple disks, you need to [override](/index.php/Systemd#Editing_provided_units "Systemd") the default configuration to monitor them.
+
+You will need to know which hard drives support monitoring. You can check with [smartmontools](https://www.archlinux.org/packages/?name=smartmontools).
+
+First run this command which will open your default text editor:
 
 ```
-$ man hddtemp
+# systemctl edit hddtemp.service
 
 ```
+
+Add the following text:
+
+ `/etc/systemd/system/hddtemp.service.d/<temp file>` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/hddtemp -dF /dev/sda /dev/sdb /dev/sdc
+```
+
+Change the device names to the ones you want to monitor.
+
+After editing, save the file and [reload](/index.php/Reload "Reload") *systemd'*s unit files then [restart](/index.php/Restart "Restart") the `hddtemp` service
+
+You can also use the [auto-generate](https://github.com/AndyCrowd/auto-generate-configuration-files/blob/master/gen-customexec.conf-hddtemp.sh) script will detect supported hard drives using [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) and print to the stdout.
 
 ## Monitors
 
-Hddtemp can be integrated with [system monitors](/index.php/List_of_applications#System_monitoring "List of applications").
+Hddtemp can be integrated with [system monitors](/index.php/List_of_applications#System_monitoring "List of applications"). [Conky](/index.php/Conky "Conky") has built in support for hddtemp in daemon mode. You just need to add `$hddtemp °C` to your conky configuration file.
 
 ## Solid State Drives
 

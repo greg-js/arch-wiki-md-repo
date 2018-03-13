@@ -15,8 +15,6 @@
 
 Install the [couchdb](https://www.archlinux.org/packages/?name=couchdb) package.
 
-By default, the package depends on [erlang-nox](https://www.archlinux.org/packages/?name=erlang-nox) without GTK, for headless servers. You can also install the standard version, [erlang](https://www.archlinux.org/packages/?name=erlang), that does require GTK.
-
 After installation [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `couchdb.service` daemon and visit: [http://127.0.0.1:5984/_utils/#setup](http://127.0.0.1:5984/_utils/#setup) to setup the database and admin user account. If you select single node setup you might need to create few databases manually via http api:
 
 ```

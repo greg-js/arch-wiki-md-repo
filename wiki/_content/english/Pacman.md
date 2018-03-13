@@ -637,7 +637,7 @@ Even if *pacman* is terribly broken, you can fix it manually by downloading the 
 1.  Determine dependencies to install
 2.  Download each package from a mirror of your choice
 3.  Extract each package to root
-4.  Reinstall these packages with `pacman -Sf` to update the package database accordingly
+4.  Reinstall these packages with `pacman -S --force` to update the package database accordingly
 5.  Do a full system upgrade
 
 If you have a healthy Arch system on hand, you can see the full list of dependencies with

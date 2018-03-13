@@ -81,9 +81,11 @@ Bug: [https://bugzilla.redhat.com/show_bug.cgi?id=1151757](https://bugzilla.redh
 
 ### QHD+ Pentile Display
 
-Some models include a 3200x1800 (faux-3200x1800 RG/BW Pentile) screen, which displays very tiny characters, and can make them difficult to read due to its incomplete subpixel matrix.
+Some models include a 3200x1800 (faux-3200x1800 RG/BW Pentile) QHD+ screen, which displays very tiny characters, and can make them difficult to read due to its incomplete subpixel matrix.
 
-For Firefox and Thunderbird, add the below property in the about:config area
+Desktop Environments that have native Hi-DPI support such as GNOME 3 should automatically scale text and applications to the appropriate factor of 200% (x2.0).
+
+If you experience scaling issues (specifically with text) in Firefox and Thunderbird, add the below property in the about:config area
 
 ```
  layout.css.devPixelsPerPx=2.

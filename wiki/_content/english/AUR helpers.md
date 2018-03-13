@@ -85,6 +85,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/keenerd/packer](https://github.com/keenerd/packer) || [packer](https://aur.archlinux.org/packages/packer/)
 
+*   **pakku** — Pacman wrapper with AUR support.
+
+	[https://github.com/kitsunyan/pakku](https://github.com/kitsunyan/pakku) || [pakku](https://aur.archlinux.org/packages/pakku/)
+
 *   **pbget** — Retrieve source files from the Arch SVN and CVS web interface, the AUR, and the ABS rsync server.
 
 	[http://xyne.archlinux.ca/projects/pbget](http://xyne.archlinux.ca/projects/pbget) || [pbget](https://aur.archlinux.org/packages/pbget/)
@@ -169,7 +173,14 @@ The columns have the following meaning:
 *   *Clean build*: does not export new variables that can prevent a successful build process.
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
-*   *Split packages*: ability to correctly build and install split packages independently, such as [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) and [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
+*   *Split packages*: A project is considered to support split packages if it has the ability to correctly build and install:
+
+	– Multiple packages from the same package base, without rebuilding or reinstalling multiple times, such as [clion](https://aur.archlinux.org/packages/clion/)
+
+	– Split packages which depend on a package from the same package base, such as [libc++](https://aur.archlinux.org/packages/libc%2B%2B/) and [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/).
+
+	– Split packages independently, such as [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) and [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
+
 *   *Git clone*: uses [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1) instead of downloading tarballs which is deprecated.
 *   *Maintained*: A project is considered maintained if it fullfills **all** of the following criteria:
 
@@ -194,6 +205,7 @@ The columns have the following meaning:
 | naaman | Python | No | No | Yes | No | No | No | Yes | bash | P/S | - |
 | pacaur | Bash/C | No [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | P/S | multilingual, sort by votes/popularity, batch interaction |
 | packer | Bash | No | No | Yes | No | No | No | No | None | P | - |
+| pakku | Nim | Yes | Yes | No | Yes | Yes | Yes | Yes | bash | P | Pacman-like user interface |
 | pbget | Python | Yes | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
 | pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash, fish, zsh | P/S | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), multilingual, sort by votes/popularity, batch interaction |
 | PKGBUILDer | Python | Yes | Optional | Yes | Yes | Yes | Partial [[6]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |

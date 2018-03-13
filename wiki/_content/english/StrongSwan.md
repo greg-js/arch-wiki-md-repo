@@ -24,6 +24,7 @@ They are typically implemented in userspace daemons on the server side. [strongS
 *   [6 Starting](#Starting)
     *   [6.1 Running Strongswan in a Container](#Running_Strongswan_in_a_Container)
 *   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Routing issues](#Routing_issues)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -298,6 +299,17 @@ ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-
 ```
 
 ## Troubleshooting
+
+### Routing issues
+
+If you are having troubles with routing traffic from client (road warrior) to the remote network, try disabling the `bypass-lan` plugin on the server. This plugin is enabled by default in the official Arch package since version 5.6.0\. See the associated [issue](https://wiki.strongswan.org/issues/2462) in strongswan bugtracker.
+
+ `/etc/strongswan.d/charon/bypass-lan.conf` 
+```
+# Whether to load the plugin. Can also be an integer to increase the
+# priority of this plugin.
+load = no
+```
 
 ## See also
 

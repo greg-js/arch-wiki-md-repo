@@ -26,9 +26,10 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [3.2 Use openresolv](#Use_openresolv)
     *   [3.3 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
     *   [3.4 Write-protect resolv.conf](#Write-protect_resolv.conf)
-    *   [3.5 Limit lookup time](#Limit_lookup_time)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Local domain names](#Local_domain_names)
+    *   [4.1 Limit lookup time](#Limit_lookup_time)
+    *   [4.2 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
+    *   [4.3 Local domain names](#Local_domain_names)
 
 ## DNS in Linux
 
@@ -248,6 +249,8 @@ dns=none
 
 `/etc/resolv.conf` might be a broken symlink that you will need to remove after doing that. Then, just create a new `/etc/resolv.conf` file.
 
+*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
+
 ### Use openresolv
 
 [openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility *resolvconf*, which is a framework for managing multiple DNS configurations. See [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) and [resolvconf.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) for more information.
@@ -290,6 +293,8 @@ Another way to protect your `/etc/resolv.conf` from being modified by anything i
 
 ```
 
+## Tips and tricks
+
 ### Limit lookup time
 
 If you are confronted with a very long hostname lookup (may it be in [pacman](/index.php/Pacman "Pacman") or while browsing), it often helps to define a small timeout after which an alternative nameserver is used. To do so, put the following in `/etc/resolv.conf`.
@@ -299,7 +304,14 @@ options timeout:1
 
 ```
 
-## Tips and tricks
+### Hostname lookup delayed with IPv6
+
+If you experience a 5 second delay when resolving hostnames it might be due to a DNS-server/Firewall misbehaving and only giving one reply to a parallel A and AAAA request ([source](http://udrepper.livejournal.com/20948.html)). You can fix that by setting the following option in `/etc/resolv.conf`:
+
+```
+options single-request
+
+```
 
 ### Local domain names
 

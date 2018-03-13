@@ -579,7 +579,7 @@ To check the blacklisting works as intended, you may re-open your preferred brow
 
 ## Follow NVD/CVE alerts
 
-Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](https://nvd.nist.gov/download.cfm). The [Arch Linux Security Tracker](https://security.archlinux.org/) serves as a particularly useful resource in that it combines Arch Linux Security Advisory (ASA), Arch Linux Vulnerability Group (AVG) and CVE data sets in tabular format. See also [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team").
+Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](https://nvd.nist.gov/download.cfm). The [Arch Linux Security Tracker](https://security.archlinux.org/) serves as a particularly useful resource in that it combines Arch Linux Security Advisory (ASA), Arch Linux Vulnerability Group (AVG) and CVE data sets in tabular format. See also [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team").
 
 **Warning:** Do not be tempted to perform [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), as they are not supported by Arch Linux and may cause instability: the whole system should be upgraded when upgrading a component. Also note that infrequent system updates can complicate the update process.
 

@@ -382,6 +382,8 @@ Flags:          allow-discards
 
 ## The encrypt hook and multiple disks
 
+**Tip:** `sd-encrypt` hook supports unlocking multiple devices. They can be specified on the kernel command line or in `/etc/crypttab.initramfs`. See [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
+
 The `encrypt` hook only allows for a **single** `cryptdevice=` entry ([FS#23182](https://bugs.archlinux.org/task/23182)). In system setups with multiple drives this may be limiting, because *dm-crypt* has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
 
 The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM.

@@ -201,9 +201,9 @@ It is highly recommended to partition the disks to be used in the array. Since m
 
 #### GUID Partition Table
 
-*   After created, the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") should be `A19D880F-05FC-4D3B-A006-743F0F84911E` (it can be assigned by selecting partition type `Linux RAID` in *fdisk* or `FD00` in *gdisk*).
+*   After creating the partitions, their [partition type GUIDs](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") should be `A19D880F-05FC-4D3B-A006-743F0F84911E` (it can be assigned by selecting partition type `Linux RAID` in *fdisk* or `FD00` in *gdisk*).
 *   If a larger disk array is employed, consider assigning [fylesystem labels](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") or [partition labels](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") to make it easier to identify an individual disk later.
-*   Creating partitions that are of the same size on each of the devices is preferred.
+*   Creating partitions that are of the same size on each of the devices is recommended.
 
 #### Master Boot Record
 
@@ -218,7 +218,7 @@ See [Linux Raid Wiki:Partition Types](https://raid.wiki.kernel.org/index.php/Par
 
 Use `mdadm` to build the array. See [mdadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mdadm.8) for supported options. Several examples are given below.
 
-**Warning:** Do not simply copy/paste the examples below; use your brain and substitute the correct options/drive letters!
+**Warning:** Do not simply copy/paste the examples below; make sure you use substitute the correct options and drive letters.
 
 **Note:**
 
@@ -241,7 +241,7 @@ The following example shows building a RAID5 array with 4 active devices and 1 s
 
 ```
 
-**Tip:** `--chunk` was used in the previous example to change the chunk size from the default value. See [Chunks: the hidden key to RAID performance](http://www.zdnet.com/article/chunks-the-hidden-key-to-raid-performance/) for more on chunk size optimisation.
+**Tip:** `--chunk` is used to change the chunk size from the default value. See [Chunks: the hidden key to RAID performance](http://www.zdnet.com/article/chunks-the-hidden-key-to-raid-performance/) for more on chunk size optimisation.
 
 The following example shows building a RAID10,far2 array with 2 devices:
 
@@ -261,12 +261,17 @@ $ cat /proc/mdstat
 
 By default, most of `mdadm.conf` is commented out, and it contains just the following:
 
- `/etc/mdadm.conf`  `DEVICE partitions` 
-
-This directive tells mdadm to examine the devices referenced by `/proc/partitions` and assemble as many arrays as possible. This is fine if you really do want to start all available arrays and are confident that no unexpected superblocks will be found (such as after installing a new storage device). A more precise approach is as follows:
+ `/etc/mdadm.conf` 
+```
+...
+DEVICE partitions
+...
 
 ```
-# echo 'DEVICE partitions' > /etc/mdadm.conf
+
+This directive tells mdadm to examine the devices referenced by `/proc/partitions` and assemble as many arrays as possible. This is fine if you really do want to start all available arrays and are confident that no unexpected superblocks will be found (such as after installing a new storage device). A more precise approach is to explicitly add the arrays to `/etc/mdadm.conf`:
+
+```
 # mdadm --detail --scan >> /etc/mdadm.conf
 
 ```
@@ -275,7 +280,9 @@ This results in something like the following:
 
  `/etc/mdadm.conf` 
 ```
+...
 DEVICE partitions
+...
 ARRAY /dev/md/myraid1array metadata=1.2 name=pine:myraid1array UUID=27664f0d:111e493d:4d810213:9f291abe
 ```
 
@@ -294,7 +301,7 @@ Once the configuration file has been updated the array can be assembled using md
 
 ### Format the RAID filesystem
 
-The array can now be formatted like any other disk, just keep in mind that:
+The array can now be formatted with a [file system](/index.php/File_system "File system") like any other partition, just keep in mind that:
 
 *   Due to the large volume size not all filesystems are suited (see: [Wikipedia:Comparison of file systems#Limits](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits "wikipedia:Comparison of file systems")).
 *   The filesystem should support growing and shrinking while online (see: [Wikipedia:Comparison of file systems#Features](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Features "wikipedia:Comparison of file systems")).

@@ -1,6 +1,4 @@
-The Arch Security Team is a group of volunteers whose goal is to track security issues with Arch Linux packages. All issues are tracked on the [Arch Linux security tracker](https://security.archlinux.org/).
-
-It was formerly known as the Arch CVE Monitoring Team.
+The Arch Security Team is a group of volunteers whose goal is to track security issues with Arch Linux packages. All issues are tracked on the [Arch Linux security tracker](https://security.archlinux.org/). The team was formerly known as the *Arch CVE Monitoring Team*.
 
 ## Contents
 
@@ -9,7 +7,7 @@ It was formerly known as the Arch CVE Monitoring Team.
 *   [3 Procedure](#Procedure)
 *   [4 Resources](#Resources)
     *   [4.1 RSS](#RSS)
-    *   [4.2 Mailing Lists](#Mailing_Lists)
+    *   [4.2 Mailing lists](#Mailing_lists)
     *   [4.3 Other Distributions](#Other_Distributions)
     *   [4.4 Other](#Other)
     *   [4.5 More](#More)
@@ -17,41 +15,34 @@ It was formerly known as the Arch CVE Monitoring Team.
 
 ## Contribute
 
-Anyone can contribute to the Security Team and improve the security of Arch Linux. The most important job is to find and track issues assigned a [Common Vulnerabilites and Exposure](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures "wikipedia:Common Vulnerabilities and Exposures") (CVE) number. Following the recommended mailing lists for new CVEs, along with other sources if required, is a good idea to stay updated on new issues.
+Anyone can help the Arch Security Team in their mission and contribute to the improvement of the security of Arch Linux. The most important duty is to find and track issues assigned a [Common Vulnerabilities and Exposure](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures "wikipedia:Common Vulnerabilities and Exposures") (CVE). A CVE is public, it is identified by a unique ID of the form *CVE-YYYY-number*. In order to be warned early about new issues, one can monitor the recommended [#Mailing lists](#Mailing_lists) for new CVEs, along with other sources if required. The IRC channel is the main communication medium for reporting and discussing CVEs, packages affected and first fixed package version.
 
-Advisories are published on the IRC channel for peer-review, and needs two acknowledgments from team members before being published. We encourage volunteers in the channel to look over the advisories for mistakes, questions, or comments about the advisory.
+An *Arch Linux Security Advisory* (ASA) is an Arch-specific warning disseminated to Arch users. ASAs are scheduled in the tracker for peer-review, and need two acknowledgments from team members before being published. We encourage volunteers in the IRC channel to look over the advisories for mistakes, questions, or comments about the advisory.
 
-The Arch Linux security tracker is a platform used by the Security Team to track packages, add CVEs and generate advisory text. Contributing code to the [project](https://github.com/archlinux/arch-security-tracker) is a great way to contribute to the team.
+The *Arch Linux security tracker* is a platform used by the Arch Security Team to track packages, add CVEs and generate advisory text. Contributing code to the [project](https://github.com/archlinux/arch-security-tracker) is a great way to contribute to the team.
 
 Derivative distributions that rely on Arch Linux package repositories are encouraged to contribute. This helps the security of all the users.
+
+**Note:** An *Arch Linux Vulnerability Group* (AVG) is a group of CVEs related to a set of packages within the same *pkgbase*.
 
 ## Guidelines
 
 Follow the [#archlinux-security](irc://irc.freenode.net/archlinux-security) IRC channel.
 
-Subscribe to the following mailing lists:
+Subscribe to the mailing lists [arch-security](https://lists.archlinux.org/listinfo/arch-security) and [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security).
 
-*   [arch-security](https://lists.archlinux.org/listinfo/arch-security)
-*   [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security)
-
-Packages qualified for an advisory has to be part of the following repositories:
-
-*   *core*
-*   *extra*
-*   *community*
-*   *multilib*
+Packages qualified for an advisory must be part of the *core*, *extra*, *community* or *multilib* repository.
 
 ## Procedure
 
-A security vulnerability has been found in a software package within the Arch Linux official repositories. A Security Team member picks up this information.
+A security vulnerability has been found in a software package within the Arch Linux official repositories.
 
-*   In order to assure vulnerability, verify the report against the current package version (including possible patches), and collect as much information (also via search engines) as possible.
-    *   Enter the IRC channel if you need help verifying the security issue.
-*   If upstream released a new version that corrects the issue, the Security Team member should flag the package out-of-date.
+*   Reach out an Arch Security Team member via your preferred channel to ensure the issue has been brought to the attention of the team.
+*   In order to substantiate the vulnerability, verify the CVE report against the current package version (including possible patches), and collect as much information as possible on the issue, including via search engines. If you need help to investigate the security issue, ask for advice or support on the IRC channel.
+*   If **upstream released a new version** that fixes the issue, the Security Team member should flag the package out-of-date.
     *   If the package has not been updated after a long delay, a bug report should be filed about the vulnerability.
-    *   If this is an important (critical) security issue, a bug report must be filed immediately after flagging the package out-of-date.
-    *   If there is no upstream release available, a bug report must be filed including the patches for mitigation.
-*   If a bug report has been created, the following information is mandatory:
+    *   If this is a critical security issue, a bug report must be filed immediately after flagging the package out-of-date.
+*   If there is **no upstream release** available, a bug report must be filed including the patches for mitigation. The following information must be provided in the bug report:
     *   Description about the security issue and its impact
     *   Links to the CVE-IDs and (upstream) report
     *   If no release is available, links to the upstream patches (or attachments) that mitigate the issue
@@ -70,7 +61,7 @@ If you have a private bug to report, contact [security@archlinux.org](https://ma
 
 	All fully analyzed CVE vulnerabilities: [https://nvd.nist.gov/download/nvd-rss-analyzed.xml](https://nvd.nist.gov/download/nvd-rss-analyzed.xml)
 
-### Mailing Lists
+### Mailing lists
 
 	oss-sec
 

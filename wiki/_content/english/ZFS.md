@@ -1,7 +1,7 @@
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
-*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
+*   [ZFS/Virtual disks](/index.php/ZFS/Virtual_disks "ZFS/Virtual disks")
 *   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
 
 [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") is an advanced filesystem created by [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems "wikipedia:Sun Microsystems") (now owned by Oracle) and released for OpenSolaris in November 2005\.

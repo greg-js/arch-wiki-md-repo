@@ -9,59 +9,43 @@ STATA is a general-purpose statistical software package for *nix, Windows and Ma
 
 ## Needed libraries
 
-You need to install a series of libraries to run Stata. Stata uses the GTK+ framework.
+Stata depends on [libpng12](https://www.archlinux.org/packages/?name=libpng12). Stata also uses the GTK+ framework.
 
-If you use GNOME, [install](/index.php/Install "Install") [libgtksourceviewmm](https://aur.archlinux.org/packages/libgtksourceviewmm/) and [libgnomeprint](https://aur.archlinux.org/packages/libgnomeprint/).
-
-If you are running STATA 14 and get a message about missing libncurses.so.5 [install](/index.php/Install "Install") [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
+If you are running STATA 14/15 and get a message about missing libncurses.so.5 [install](/index.php/Install "Install") [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
 
 ## Installing Stata
 
-After you have installed these packages, you need to insert your STATA DVD and mount it.
-
-If you have been provided an ISO rather than a physical DVD you can mount it with the following command
+After you have installed these packages, you should extract the installation files to the folder, where you want to put Stata. Stata recommends putting it under `/usr/local/`. For example:
 
 ```
-# mount -o loop /path/to/file.iso /mnt
-
-```
-
-If you have been provided a DVD and it is not automatically mounted, you can use the following command to mount it to `/mnt`
-
-```
-# mount -t iso9660 -o ro /dev/cdrom /mnt
-
-```
-
-You then need to create a directory for Stata. Stata recommends putting it under `/usr/local/`. For example:
-
-```
-# mkdir /usr/local/stata12
+# mkdir /usr/local/stata15
 
 ```
 
 Once you have created the directory, change into it:
 
 ```
-$ cd /usr/local/stata12
+$ cd /usr/local/stata15
 
 ```
 
-and run the installer from the directory you mounted the CD into (`/mnt` in this guide):
+Then from the directory, extract the installation file
 
 ```
-# /mnt/installer
+# tar xvf /path/to/Stata15Linux64.tar.gz
+
+```
+
+And run the installation file:
+
+```
+# ./install
 
 ```
 
 Follow the instructions and you will end up with Stata installed.
 
-After you have installed Stata, change the permissions on `/usr/local/stata12` so you can execute it as a normal user:
-
-```
-# chmod -R 755 /usr/local/stata12
-
-```
+On a default installation of Arch Linux, icons will not show up if it starts. This is due to Stata being built against older versions of libraries. See the troubleshooting section for how to fix it.
 
 ## Tips and tricks
 

@@ -133,7 +133,10 @@ Snaps can be removed by executing:
 
 Some snaps (e.g. Skype and Pycharm) use classic confinement. However, classic confinement requires the `/snap` directory, which is not FHS-compliant. Therefore, the snapd package doesn't ship this directory. However, if the user wants to, he can manually create a symlink from `/var/lib/snapd/snap` to `/snap`, to allow the installation of classic snaps:
 
- `ln -s /var/lib/snapd/snap /snap` 
+```
+# ln -s /var/lib/snapd/snap /snap
+
+```
 
 ## Support
 

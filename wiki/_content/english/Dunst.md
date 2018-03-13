@@ -17,8 +17,6 @@ Related articles
 
 [Install](/index.php/Install "Install") the [dunst](https://www.archlinux.org/packages/?name=dunst) package. There is no need to start or enable dunst; it is called by systemd when programs send notifications through dbus.
 
-If you're using [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) you have to put `exec --no-startup-id dunst` into your i3 config.
-
 An example configuration file is included at `/usr/share/dunst/dunstrc`.
 
 Copy this file to `~/.config/dunst/dunstrc` and edit it accordingly.

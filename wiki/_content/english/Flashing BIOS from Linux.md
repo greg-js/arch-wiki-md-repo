@@ -19,7 +19,7 @@ This article aims on providing information on flashing your system BIOS under Li
 *   [4 FreeDOS](#FreeDOS)
     *   [4.1 Unetbootin](#Unetbootin)
     *   [4.2 Gentoo](#Gentoo)
-    *   [4.3 Prebuilt images](#Prebuilt_images)
+    *   [4.3 Pre-built images](#Pre-built_images)
     *   [4.4 Using a FreeDOS-provided Disk Image + USB stick](#Using_a_FreeDOS-provided_Disk_Image_.2B_USB_stick)
     *   [4.5 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
     *   [4.6 Usage](#Usage_3)
@@ -130,9 +130,9 @@ You should format a pendrive with FAT16 and flag it as "boot" (you may do this t
 
 Check out [FreeDOS Flash Drive](https://wiki.gentoo.org/wiki/BIOS_Update#FreeDOS_environment "gentoo:BIOS Update") on the Gentoo Wiki if you want to create a bootable FreeDOS Flash drive.
 
-### Prebuilt images
+### Pre-built images
 
-Yet another simple solution: [FreeDOS prebuilt bootable USB flash drive image by Christian Taube](https://web.archive.org/web/20161022000203/https://www.chtaube.eu/computers/freedos/bootable-usb/) (web.archive.org)
+Yet another simple solution: [FreeDOS pre-built bootable USB flash drive image by Christian Taube](http://myhq.it/sites/myhq.it/files/FreeDOS-1.1-memstick-2-2048M.img.bz2). Instructions can be found [here](https://archive.is/6QPXD).
 
 ### Using a FreeDOS-provided Disk Image + USB stick
 

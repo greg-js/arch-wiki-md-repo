@@ -2,87 +2,78 @@
 
 ## Contents
 
-*   [1 Installation and configuration](#Installation_and_configuration)
-    *   [1.1 AUR packages](#AUR_packages)
-*   [2 Tips and tricks](#Tips_and_tricks)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
     *   [2.1 Config file syntax changed](#Config_file_syntax_changed)
-    *   [2.2 Enable real transparency](#Enable_real_transparency)
-    *   [2.3 Autostart](#Autostart)
-    *   [2.4 Prevent flickering](#Prevent_flickering)
-    *   [2.5 Custom colors](#Custom_colors)
-    *   [2.6 Dual screen](#Dual_screen)
-    *   [2.7 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
-    *   [2.8 Integrate with GNOME Shell](#Integrate_with_GNOME_Shell)
-    *   [2.9 Display package update information](#Display_package_update_information)
-    *   [2.10 Display weather forecast](#Display_weather_forecast)
-    *   [2.11 Display a countdown timer](#Display_a_countdown_timer)
-    *   [2.12 Display RSS feeds](#Display_RSS_feeds)
-    *   [2.13 Display rTorrent stats](#Display_rTorrent_stats)
-    *   [2.14 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-    *   [2.15 Display number of new emails](#Display_number_of_new_emails)
-        *   [2.15.1 Gmail](#Gmail)
-            *   [2.15.1.1 method 1](#method_1)
-            *   [2.15.1.2 method 2](#method_2)
-            *   [2.15.1.3 method 3](#method_3)
-            *   [2.15.1.4 method 4](#method_4)
-        *   [2.15.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
-        *   [2.15.3 IMAP using PHP](#IMAP_using_PHP)
-    *   [2.16 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
-    *   [2.17 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
-*   [3 User-contributed configuration examples](#User-contributed_configuration_examples)
-    *   [3.1 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
-*   [4 A note about symbolic fonts](#A_note_about_symbolic_fonts)
-*   [5 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
-*   [6 See also](#See_also)
+*   [3 Fonts](#Fonts)
+    *   [3.1 Symbolic Fonts](#Symbolic_Fonts)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Autostart](#Autostart)
+    *   [4.2 Prevent flickering](#Prevent_flickering)
+    *   [4.3 Dual screen](#Dual_screen)
+    *   [4.4 Display package update information](#Display_package_update_information)
+    *   [4.5 Display weather forecast](#Display_weather_forecast)
+    *   [4.6 Display a countdown timer](#Display_a_countdown_timer)
+    *   [4.7 Display RSS feeds](#Display_RSS_feeds)
+    *   [4.8 Display rTorrent stats](#Display_rTorrent_stats)
+    *   [4.9 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
+    *   [4.10 Display number of new emails](#Display_number_of_new_emails)
+        *   [4.10.1 Gmail](#Gmail)
+            *   [4.10.1.1 method 1](#method_1)
+            *   [4.10.1.2 method 2](#method_2)
+            *   [4.10.1.3 method 3](#method_3)
+        *   [4.10.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
+        *   [4.10.3 IMAP using PHP](#IMAP_using_PHP)
+    *   [4.11 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
+    *   [4.12 Display log files](#Display_log_files)
+*   [5 User-contributed configuration examples](#User-contributed_configuration_examples)
+    *   [5.1 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
+*   [6 Trouble Shooting](#Trouble_Shooting)
+    *   [6.1 Conky starts and doesn't display anything on the screen](#Conky_starts_and_doesn.27t_display_anything_on_the_screen)
+    *   [6.2 Transparency](#Transparency)
+        *   [6.2.1 Pseudo-transparency](#Pseudo-transparency)
+        *   [6.2.2 Enable real transparency](#Enable_real_transparency)
+    *   [6.3 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
+    *   [6.4 Integrate with GNOME Shell](#Integrate_with_GNOME_Shell)
+    *   [6.5 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
+*   [7 See also](#See_also)
 
-## Installation and configuration
+## Installation
 
-[Install](/index.php/Install "Install") the [conky](https://www.archlinux.org/packages/?name=conky) package. For alternative packages with more features, see [#AUR packages](#AUR_packages).
+[Install](/index.php/Install "Install") the [conky](https://www.archlinux.org/packages/?name=conky) package. There are also alternative packages you can install from [AUR](/index.php/AUR "AUR") with extra compile options enabled:
 
-Create a local configuration file:
+*   [conky-cli](https://aur.archlinux.org/packages/conky-cli/) - conky without X11 dependencies
+*   [conky-lua](https://aur.archlinux.org/packages/conky-lua/) - with Lua support
+*   [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/) - with both Lua and Nvidia support
+*   [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/) - with Nvidia support
 
-```
-$ mkdir -p ~/.config/conky
-$ conky -C > ~/.config/conky/conky.conf
+Some built in variables in conky require additional packages to be installed in order to be utilized, for example [Hddtemp](/index.php/Hddtemp "Hddtemp") for hard drive tempurature and [mpd](/index.php/Mpd "Mpd") for music.
 
-```
+## Configuration
 
-Now you can edit `~/.config/conky/conky.conf` to customize conky as you wish. For a few example configuration files, see [this page](https://github.com/brndnmtthws/conky/wiki/User-Configs).
-
-When editing your config file, you will see immediately the effect of any change as soon as you save it. There is no need to log out/log in your X session. So best is to test all kind of options, one by one, save the configuration file and see the change on your *conky* window, and correct if your change is inappropriate.
-
-One of the nice features of *conky* is to pipe to your desktop some `/var/log/` files to read all kinds of log messages. Most of these files can only be read by `root`, but running *conky* as `root` is not recommended, so you will need to add `*username*` to the `log` group:
-
-```
-# usermod -aG log *username*
+By default conky uses a configuration file located at `~/.conkyrc`. You can print out an example configuration with:
 
 ```
+$ conky -C
 
-### AUR packages
+```
 
-In addition to the basic *conky* package, there are various [AUR](/index.php/AUR "AUR") packages available with extra compile options enabled:
+If you do not want to have a dotfile in home, you can create a file elsewhere and tell conky to use it using arguments.
 
-*   **conky-cli** — *Conky* without X11 dependencies
+For example to tell conky to use a file located in the user's configuration directory:
 
-	|| [conky-cli](https://aur.archlinux.org/packages/conky-cli/)
+```
+$ conky -c ~/.config/conky/conky.conf
 
-*   **conky-lua** — *Conky* with Lua support
+```
 
-	|| [conky-lua](https://aur.archlinux.org/packages/conky-lua/)
+Additional example configuration files are available at [this page](https://github.com/brndnmtthws/conky/wiki/User-Configs).
 
-*   **conky-lua-nv** — *Conky* with both Lua and Nvidia support
-
-	|| [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)
-
-*   **conky-nvidia** — *Conky* with Nvidia support
-
-	|| [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)
-
-## Tips and tricks
+When editing your config file while conky is running, conky will update with the new changes every time you write to the file.
 
 ### Config file syntax changed
 
-Since Conky 1.10, configuration files have been written with Lua syntax, like so:
+Since Conky 1.10, configuration files have been written with a new Lua syntax, like so:
 
 ```
  conky.config = {
@@ -109,27 +100,24 @@ Some examples below may still use the old syntax, which looks like this:
 
 A Lua script is available to convert from the old syntax to the new Lua syntax [here](https://github.com/brndnmtthws/conky/blob/master/extras/convert.lua).
 
-If in doubt, or something doesn't work at all, you can start with the default config file:
+## Fonts
+
+For displaying Unicode pictures and emoji with conky you will need a [font](/index.php/Fonts#Emoji_and_symbols "Fonts") that supports this and then configure conky to use the font with the Unicode you want to display. For example:
 
 ```
- $ conky -C > conky.conf.default
-
-```
-
-### Enable real transparency
-
-To enable real transparency, add this line to `conky.conf`:
-
-```
-own_window_transparent = true,
+ ${font Symbola:size=48}☺${font} 
 
 ```
 
-The above option is not desired with the `own_window_argb_visual = true` option.
+### Symbolic Fonts
 
-If transparency doesn't work you might need to follow [#Universal method to enable true transparency](#Universal_method_to_enable_true_transparency).
+Symbolic fonts are also very commonly used in more decorated conky configurations, some of the more popular ones include;
 
-**Note:** [Xfce](/index.php/Xfce "Xfce") requires enabled compositing, see [[1]](https://forum.xfce.org/viewtopic.php?pid=25939).
+*   [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/) - PizzaDude Bullet's font
+*   [otf-font-awesome-5-free](https://aur.archlinux.org/packages/otf-font-awesome-5-free/) - Font awesome icon from from [http://fontawesome.com/](http://fontawesome.com/)
+*   [ttf-weather-icons](https://aur.archlinux.org/packages/ttf-weather-icons/) - Erik flowers weather icon font with 222 glyphs
+
+## Tips and tricks
 
 ### Autostart
 
@@ -175,18 +163,6 @@ To enable double buffering, add the following option to `conky.conf`:
 
 ```
 
-### Custom colors
-
-Aside the classic preset colors (white, black, yellow...), you can set your own custom color using the color name code. To determine the code of a color, use a color selector app. The basic [gcolor2](https://www.archlinux.org/packages/?name=gcolor2) package in the [official repositories](/index.php/Official_repositories "Official repositories") will give you the color name. It is made of six hexadecimal digits (0-9, A-F). Add this line in your configuration file for a custom color:
-
-```
- color0 = 'white', --convention for standard named colors
- color1 = '00CC00', --convention for hex colors: no pound sign
-
-```
-
-Then, when editing the `TEXT` section, use custom color number previously defined, for example `${color3}` .
-
 ### Dual screen
 
 When using a dual screen configuration, you will need to play with a few options to place your *conky* window.
@@ -206,47 +182,6 @@ The `alignment` option is self-explanatory, the `gap_X` is the distance, in pixe
 ```
 alignment = 'top_right',
 xinerama_head = 2,
-
-```
-
-### Do not minimize on Show Desktop
-
-**Using Compiz:** If the 'Show Desktop' button or key-binding minimizes Conky along with all other windows, start the Compiz configuration settings manager, go to "General Options" and uncheck the "Hide Skip Taskbar Windows" option.
-
-If you do not use Compiz, try editing `conky.conf` and adding/changing the following line:
-
-```
-own_window_type = 'override',
-
-```
-
-or
-
-```
-own_window_type = 'desktop',
-
-```
-
-Refer to *conky*s man page for the exact differences. But the latter option enables you to snap windows to *conky*s border using resize key-binds in e.g. Openbox, which the first one does not.
-
-### Integrate with GNOME Shell
-
-Some have experienced problems with *conky* showing up under [GNOME](/index.php/GNOME "GNOME").
-
-Add these lines to `conky.conf`:
-
-```
-own_window = true,
-own_window_type = 'desktop',
-
-```
-
-For transparency, also add these:
-
-```
-own_window_transparent = true,
-own_window_argb_visual = true,
-own_window_argb_value = 255,
 
 ```
 
@@ -291,6 +226,43 @@ See [this thread](https://bbs.archlinux.org/viewtopic.php?id=67304).
 This can be achieved by using the in python written extension named [ConkyPress](http://evilshit.wordpress.com/2013/04/20/conkypress-a-wordpress-stats-visualization-tool-for-your-desktop/).
 
 ### Display number of new emails
+
+Conky has built in support for IMAP and POP3, but does not have support for access over ssl. Conky's FAQ recommends using [stunnel](https://www.archlinux.org/packages/?name=stunnel) for this and has an example configuration [here](http://conky.sourceforge.net/faq.html#Conky's-built-in-IMAP-and-POP3-doesn't-support-SSL-or-TLS/).
+
+Modify `/etc/stunnel/stunnel.conf` as follows, and then [start](/index.php/Start "Start") `stunnel.service`:
+
+1.  Service-level configuration for TLS server
+
+```
+[imap]
+client = yes
+accept  = 143
+connect = imap.gmail.com:143
+protocol = imap
+sslVersion = TLSv1
+# Service-level configuration for SSL server
+[imaps]
+client = yes
+accept  = 993
+connect = imap.gmail.com:993
+
+```
+
+Then add the following to `conky.conf`:
+
+```
+conky.config = {
+    imap = "localhost username password [-i 120] [-f 'inbox'] [-p 993]",
+}
+
+```
+
+```
+conky.text {
+    Inbox: ${imap_unseen}/${imap_messages}
+}
+
+```
 
 #### Gmail
 
@@ -390,41 +362,6 @@ curl -s -u **email**:**password** https://mail.google.com/mail/feed/atom | grep 
 ```
 
 replace *email* and *password* with your data.
-
-##### method 4
-
-Alternatively, you can use [stunnel](http://www.stunnel.org/) which is provided by the [stunnel](https://www.archlinux.org/packages/?name=stunnel) package.
-
-The following configuration is taken from [Conky's FAQ](https://github.com/brndnmtthws/conky/wiki/FAQ)
-
-Modify `/etc/stunnel/stunnel.conf` as follows, and then [start](/index.php/Start "Start") `stunnel.service`:
-
-```
-# Service-level configuration for TLS server
-[imap]
-client = yes
-accept  = 143
-connect = imap.gmail.com:143
-protocol = imap
-sslVersion = TLSv1
-# Service-level configuration for SSL server
-[imaps]
-client = yes
-accept  = 993
-connect = imap.gmail.com:993
-
-```
-
-The only thing left is our `conky.conf`:
-
-```
-imap localhost username * -i 120 -p 993
-TEXT
-Inbox: ${imap_unseen}/${imap_messages}
-
-```
-
-Here I used `*` as the password for *conky* to ask for it at start, but you do **not** have to do it.
 
 #### IMAP + SSL using Perl
 
@@ -554,60 +491,97 @@ This is the expected result :
 
 [http://i.imgur.com/pQQbsP6.png](http://i.imgur.com/pQQbsP6.png)
 
-### Fix scrolling with UTF-8 multibyte characters
+### Display log files
 
-The current version of *conky* (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
+One of the nice features of *conky* is to pipe to your desktop some `/var/log/` files to read all kinds of log messages. Most of these files can only be read by `root`, but running *conky* as `root` is not recommended, so you will need to add `*username*` to the `log` group:
+
+```
+# usermod -aG log *username*
+
+```
 
 ## User-contributed configuration examples
 
 ### A sample rings script with nvidia support
 
-See [[2]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
+See [[1]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
 
-## A note about symbolic fonts
+## Trouble Shooting
 
-Many of the more decorated `conky.conf`'s use the PizzaDude Bullets font. Install it with the [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/) package.
+These are known issues people have with conky and their solutions.
 
-## Universal method to enable true transparency
+### Conky starts and doesn't display anything on the screen
 
-Transparency is a strange beast in *conky*, but there is a way to universally apply true transparency with any environment or window manager by using *xcompmgr* and *transset-df*. [Install](/index.php/Pacman#Installing_specific_packages "Pacman") [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr) and [transset-df](https://www.archlinux.org/packages/?name=transset-df).
+First check for syntax errors in your configuration file's text variable. Then double check that your user has permission to run every command inside your configuration file and that all needed packages are installed.
 
-**Note:** This may conflict with any other compositing manager you are already using.
+### Transparency
 
-Check *xcompmgr* documentation to help you decide which compositing options you would like to enable. The following is a common standard command.
+Conky supports two different types of transparency. Pseudo-transparency and real transparency that requires a [composite manager](/index.php/Xorg#Composite "Xorg") to be installed and running. If you enable real transparency and don't have a composite manager running your conky will not be alpha transparent with transparency enabled for fonts and images as well as the background.
 
-```
-$ xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
+#### Pseudo-transparency
 
-```
+Pseudo-transparency is enabled by default in conky. Pseudo-transparency works by copying the background image from the root window and using the relevant section as the background for conky. Some window managers set the background wallpaper to a level above the root window which can cause conky to have a grey background. To fix this issue you need to set it manually with feh.
 
-Make sure *conky* is running with `conky &`. Use *transset-df* to enable transparency on the *conky* window. Set '.5' to any value in the range 0 - 1.
-
-```
-$ transset-df .5 -n Conky
+In `~/.xinitrc`:
 
 ```
-
-This should give your *conky* window true transparency. If you get an error like:
-
-```
-No Window matching Conky exists!
+ sleep 1 && feh --bg-center ~/background.png &
 
 ```
 
-verify that *conky* is running, and use *xprop* and click on the *conky* window to find the name you should pass to `transset-df`.
+#### Enable real transparency
 
- `$ xprop | grep WM_NAME`  `WM_NAME(STRING) = "Conky (ArchitectLinux)"` 
-
-In this case, *conky* is right, but for you it may be different, so be sure to use your output instead. If `conky.conf` has an option `own_window_type` set to `panel`, then this *xprop* invocation may show no output. Try using `dock`, `normal`, `override` or `desktop` instead.
-
-Use this in `~/.xinitrc` to have transparent *conky* after [X](/index.php/X "X") starts up:
+To enable real transparency, you must have a [composite manager](/index.php/Xorg#Composite "Xorg") running and the following lines added to `.conkyrc` inside the conky.config array:
 
 ```
-xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
-conky -d; sleep 1 && transset-df .5 -n Conky
+ conky.config = {
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = desktop,
+ }
 
 ```
+
+If window type "desktop" does not work try changing it to `normal`. If that does not work try the other options: `dock`, `panel`, or `override` instead.
+
+**Note:** [Xfce](/index.php/Xfce "Xfce") requires enabled compositing, see [[2]](https://forum.xfce.org/viewtopic.php?pid=25939).
+
+### Do not minimize on Show Desktop
+
+**Using Compiz:** If the 'Show Desktop' button or key-binding minimizes Conky along with all other windows, start the Compiz configuration settings manager, go to "General Options" and uncheck the "Hide Skip Taskbar Windows" option.
+
+If you do not use Compiz, try editing `conky.conf` and adding/changing the following line:
+
+```
+own_window_type = 'override',
+
+```
+
+or
+
+```
+own_window_type = 'desktop',
+
+```
+
+Refer to *conky*s man page for the exact differences. But the latter option enables you to snap windows to *conky*s border using resize key-binds in e.g. Openbox, which the first one does not.
+
+### Integrate with GNOME Shell
+
+Some have experienced problems with *conky* showing up under [GNOME](/index.php/GNOME "GNOME").
+
+Add these lines to `conky.conf`:
+
+```
+own_window = true,
+own_window_type = 'desktop',
+
+```
+
+### Fix scrolling with UTF-8 multibyte characters
+
+The current version of *conky* (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
 
 ## See also
 

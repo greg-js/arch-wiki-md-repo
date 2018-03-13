@@ -70,7 +70,7 @@ Log file is /home/facade/.vnc/mars:1.log
 
 Notice the :1 trailing the hostname. This is indicating the TCP port number on which the virtual vncserver is running. In this case, :1 is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in :2 as above.
 
-**Note:** Linux systems can have as many VNC servers as physical memory allows, all of which running in parallel to each other.
+**Note:** Linux systems can have as many VNC servers as physical memory allows, all of which will be running in parallel to each other.
 
 Shutdown the vncserver by using the -kill switch:
 

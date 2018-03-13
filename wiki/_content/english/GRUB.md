@@ -54,7 +54,7 @@ A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that 
     *   [6.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
     *   [6.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
         *   [6.2.1 MBR](#MBR)
-        *   [6.2.2 EFI path](#EFI_path)
+        *   [6.2.2 EFI default/fallback boot path](#EFI_default.2Ffallback_boot_path)
     *   [6.3 Enable debug messages](#Enable_debug_messages)
     *   [6.4 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
     *   [6.5 msdos-style error message](#msdos-style_error_message)
@@ -645,17 +645,22 @@ With recent version of parted, you can use `disk_toggle pmbr_boot` option. After
 
 More information is available [here](http://www.rodsbooks.com/gdisk/bios.html)
 
-#### EFI path
+#### EFI default/fallback boot path
 
-Some UEFI firmwares require a bootable file at a known location before they will show UEFI NVRAM boot entries. If this is the case, `grub-install` will claim `efibootmgr` has added an entry to boot GRUB, however the entry will not show up in the VisualBIOS boot order selector. The solution is to place a file at one of the known locations. Assuming the EFI partition is at `/boot/efi/` this will work:
-
-```
-mkdir /boot/efi/EFI/boot
-cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
+Some UEFI firmwares require a bootable file at a known location before they will show UEFI NVRAM boot entries. If this is the case, `grub-install` will claim `efibootmgr` has added an entry to boot GRUB, however the entry will not show up in the VisualBIOS boot order selector. The solution is to install GRUB at the default/fallback boot path:
 
 ```
+# grub-install --target=x86_64-efi --efi-directory=*esp* **--removable**
 
-This solution worked for an Intel DH87MC motherboard with firmware dated Jan 2014.
+```
+
+Alternatively you can move an already installed GRUB EFI executable to the default/fallback path:
+
+```
+# mv *esp*/EFI/grub *esp*/EFI/BOOT
+# mv *esp*/EFI/BOOT/grubx64.efi *esp*/EFI/BOOT/BOOTX64.EFI
+
+```
 
 ### Enable debug messages
 
