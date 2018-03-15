@@ -724,11 +724,15 @@ Now, when you launch your OpenVPN connection, you should find that your `resolv.
 
 ### Update systemd-resolved script
 
-Since systemd-229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")'s `systemd-resolved.service` has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if you are using `resolve` instead of `dns` in your `/etc/nsswitch.conf` file. The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script is another alternative and links OpenVPN with `systemd-resolved` via DBus to update the DNS records.
+Since [systemd](/index.php/Systemd "Systemd") 229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if you are using `resolve` instead of `dns` in your `/etc/nsswitch.conf` file. The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script is another alternative and links OpenVPN with `systemd-resolved` via DBus to update the DNS records.
 
-If you copy the script into `/etc/openvpn` and mark as executable with [chmod](/index.php/Chmod "Chmod"), or install it via the AUR package ([openvpn-update-systemd-resolved](https://aur.archlinux.org/packages/openvpn-update-systemd-resolved/)), you can add lines like the following into your OpenVPN client configuration file:
+Copy the script into `/etc/openvpn` and mark as [executable](/index.php/Executable "Executable"), or [install](/index.php/Install "Install") [openvpn-update-systemd-resolved](https://aur.archlinux.org/packages/openvpn-update-systemd-resolved/), and [append](/index.php/Append "Append") the following lines into the OpenVPN client configuration file:
 
+ `/etc/openvpn/client/client.conf` 
 ```
+client
+remote example.com 1194 udp
+..
 script-security 2
 setenv PATH /usr/bin
 up /etc/openvpn/scripts/update-systemd-resolved

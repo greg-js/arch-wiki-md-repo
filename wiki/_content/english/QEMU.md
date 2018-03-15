@@ -265,20 +265,12 @@ To start QEMU in KVM mode, append `-enable-kvm` to the additional start options.
 
 ### Enabling IOMMU (Intel VT-d/AMD-Vi) support
 
-Using IOMMU opens to features like PCI passthrough and memory protection from faulty or malicious devices, see [wikipedia:Input-output memory management unit#Advantages](https://en.wikipedia.org/wiki/Input-output_memory_management_unit#Advantages "wikipedia:Input-output memory management unit") and [Memory Management (computer programming): Could you explain IOMMU in plain English?](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
+First enable IOMMU, see [PCI passthrough via OVMF#Setting up IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF").
 
-To enable IOMMU:
-
-1.  Ensure that AMD-Vi/Intel VT-d is supported by the CPU and is enabled in the BIOS settings.
-2.  Set the correct [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") based on the CPU-vendor:
-    *   Intel - `intel_iommu=on`
-    *   AMD - `amd_iommu=on`
-3.  If you want IOMMU *only* for PCI passthrough, also add the `iommu=pt` parameter. This will make Linux only enable IOMMU for devices that can be passed through, and will avoid affecting the performance of other devices on the system. The CPU vendor-specific parameter (see above) is still required to be `on`.
-4.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
-5.  Add `-device intel-iommu` to create the IOMMU device:
+Add `-device intel-iommu` to create the IOMMU device:
 
 ```
-$ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time ..
+$ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host ..
 
 ```
 
@@ -1612,14 +1604,16 @@ Both `spicy` from [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk
 
 Kernel Samepage Merging (KSM) is a feature of the Linux kernel that allows for an application to register with the kernel to have its pages merged with other processes that also register to have their pages merged. The KSM mechanism allows for guest virtual machines to share pages with each other. In an environment where many of the guest operating systems are similar, this can result in significant memory savings.
 
-To enable KSM, simply run
+**Note:** Although KSM may reduce memory usage, it may increase CPU usage. Also note some security issues may occur, see [Wikipedia:Kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_same-page_merging "wikipedia:Kernel same-page merging").
+
+To enable KSM:
 
 ```
 # echo 1 > /sys/kernel/mm/ksm/run
 
 ```
 
-To make it permanent, you can use [systemd's temporary files](/index.php/Systemd#Temporary_files "Systemd"):
+To make it permanent, use [systemd's temporary files](/index.php/Systemd#Temporary_files "Systemd"):
 
  `/etc/tmpfiles.d/ksm.conf` 
 ```

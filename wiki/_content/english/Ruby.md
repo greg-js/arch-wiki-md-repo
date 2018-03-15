@@ -24,7 +24,7 @@ If you want to run multiple versions on the same system (e.g. 2.0.0-p0 and 1.9.3
 
 ### Documentation
 
-To make documentation available through the included `ri` command-line tool, install [ruby-docs](https://www.archlinux.org/packages/?name=ruby-docs). You can then query the docs with: `ri Array`, `ri Array.pop` etc. (much like man-pages)
+To make documentation available through the `ri` command-line tool, install [ruby-rdoc](https://www.archlinux.org/packages/?name=ruby-rdoc) and [ruby-docs](https://www.archlinux.org/packages/?name=ruby-docs) for the documentation itself. You can then query the docs with: `ri Array`, `ri Array.pop` etc. (much like man-pages)
 
 ## RubyGems
 

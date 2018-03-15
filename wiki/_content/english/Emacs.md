@@ -660,7 +660,14 @@ If you are using Emacs daemon, then you should know that input is blocking. If o
 
 ### Emacs-nox output gets messy
 
-When working in a terminal, the color, indentation, or anything related to the output might become crazy. This is (probably?) because Emacs was sent a special character at some point which may conflict with the current terminal. There is not much to be done but restarting emacs. If someone has a workaround or a more detailed explanation on the issue, feel free to contribute.
+When working in a terminal, the color, indentation, or anything related to the output might become crazy. This is (probably?) because Emacs was sent a special character at some point which may conflict with the current terminal. If this happens you can do `M-x redraw-display`, which will redraw the terminal's display. If this problem happens frequently, you might want to bind the command to a key, e.g. by putting something like
+
+```
+(global-set-key (kbd "<f7>") 'redraw-display)
+
+```
+
+in your .emacs file.
 
 Graphical Emacs does not suffer from this issue.
 

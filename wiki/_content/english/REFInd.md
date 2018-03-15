@@ -12,7 +12,7 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Scripted installation](#Scripted_installation)
+    *   [1.1 Installation with refind-install script](#Installation_with_refind-install_script)
         *   [1.1.1 Secure Boot](#Secure_Boot)
             *   [1.1.1.1 Using PreLoader](#Using_PreLoader)
             *   [1.1.1.2 Using shim](#Using_shim)
@@ -55,7 +55,7 @@ rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+
 
 To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](http://www.rodsbooks.com/refind/drivers.html#finding).
 
-### Scripted installation
+### Installation with refind-install script
 
 The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations. See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8). For many systems it should be sufficient to simply run:
 

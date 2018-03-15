@@ -223,6 +223,10 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 	[http://www.jungledisk.com/](http://www.jungledisk.com/) ||
 
+*   **[Mail.ru Cloud](https://en.wikipedia.org/wiki/Mail.Ru "wikipedia:Mail.Ru")** — Free cloud storage service created by Mail.ru.
+
+	[https://cloud.mail.ru/](https://cloud.mail.ru/) || [mailru-cloud](https://aur.archlinux.org/packages/mailru-cloud/)
+
 *   **[MEGA](https://en.wikipedia.org/wiki/Mega_(website) "wikipedia:Mega (website)")** — Successor to the MegaUpload file-sharing service.
     *   Free accounts are 50GB with paid plans available for more space.
     *   Offers encryption and de-duplication.

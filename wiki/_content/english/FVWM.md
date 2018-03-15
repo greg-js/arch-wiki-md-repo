@@ -630,7 +630,6 @@ Window decorations (borders and titlebars) can be toggled on or off for a select
 DestroyFunc UndecorateWin
 AddToFunc UndecorateWin
 I ThisWindow (HasHandles) WindowStyle !Title, !Borders
-I TestRc (Match) Break
 I ThisWindow (!HasHandles) WindowStyle Title, Borders
 ```
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
+*   [Bash](/index.php/Bash "Bash")
+
 [DASH (Debian Almquist shell)](https://en.wikipedia.org/wiki/Debian_Almquist_shell "wikipedia:Debian Almquist shell") is a modern POSIX-compliant implementation of [`/bin/sh` (sh, Bourne shell)](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
 
 DASH is not [Bash](/index.php/Bash "Bash") compatible, but Bash tries to be mostly compatible with POSIX, and thus Dash.
@@ -54,22 +59,15 @@ Once you have verified that it won't break any functionality, it should be safe 
 
 ```
 
-Updates of Bash will overwrite `/bin/sh` with the default symlink. To prevent this, use the following [pacman hook](/index.php/Pacman#Hooks "Pacman"), which will relink `/bin/sh` after every affected update:
+Updates of Bash will overwrite `/bin/sh` with the default symlink. To prevent this, configure pacman to skip extracting `/usr/bin/sh`:
 
+ `/etc/pacman.conf` 
 ```
-[Trigger]
-Type = Package
-Operation = Install
-Operation = Upgrade
-Target = bash
-
-[Action]
-Description = Re-pointing /bin/sh symlink to dash...
-When = PostTransaction
-Exec = /usr/bin/ln -sfT dash /usr/bin/sh
-Depends = dash
-
+NoUpgrade   = usr/bin/sh
+NoExtract   = usr/bin/sh
 ```
+
+**Note:** The `NoUpgrade` statement is necessary, because if it is ommited, pacman will remove `/bin/sh` during a bash upgrade, since it is owned by the bash package. However, it will not create a new symlink in `/bin/sh` either, leaving you without any `/bin/sh` and breaking all scripts that rely on it.
 
 ## See also
 

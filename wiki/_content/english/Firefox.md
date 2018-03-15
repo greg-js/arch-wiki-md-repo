@@ -175,7 +175,7 @@ The same procedure can be used to associate video downloaders such as *youtube-d
 
 Install the [hunspell](https://www.archlinux.org/packages/?name=hunspell) package. You also need to install dictionaries for your language, such as [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr) (for the French language) or [hunspell-he](https://www.archlinux.org/packages/?name=hunspell-he) (for Hebrew).
 
-By default, Firefox will try to symlink all your hunspell dictionaries in `/usr/lib/firefox/dictionaries`. If you want to have less dictionaries offered to you in Firefox, you can remove some of those links. Be aware that it may not stand an upgrade of Firefox.
+By default, Firefox will try to symlink all your hunspell dictionaries in `/usr/lib/firefox/dictionaries/`. If you want to have less dictionaries offered to you in Firefox, you can remove some of those links. Be aware that it may not stand an upgrade of Firefox.
 
 To enable spell checking for a specific language right click on any text field and check the *Check Spelling* box. To select a language for spell checking to you have right click again and select your language from the *Languages* sub-menu.
 

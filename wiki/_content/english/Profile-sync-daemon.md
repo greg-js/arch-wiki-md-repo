@@ -108,9 +108,7 @@ BROWSERS="chromium opera"
 
 ```
 
-Beginning with version 5.54 of psd, native support for overlayfs is included. Uncomment the **USE_OVERLAYFS="yes"** line to enable it rather than the default full copy to reduce the memory costs and to improve sync/unsync operations.
-
-**Note:** This feature requires a Linux kernel version of 3.18.0 or greater to work.
+Beginning with version 5.54 of psd, native support for [overlayfs](#What_is_overlayfs_mode.3F) is included. This feature requires at least a Linux kernel version of 3.18.0 or greater.
 
 ## Supported browsers
 
@@ -230,14 +228,14 @@ See [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.
 
 ### What is overlayfs mode?
 
-Overlayfs is a simple union file-system mainlined in the Linux kernel version 3.18.0\. Starting with psd version 5.54, overlayfs can be used to reduce the memory footprint of psd's tmpfs space and to speed up sync and unsync operations. The magic is in how the overlay mount only writes out data that has changed rather than the entire profile. The same recovery features psd uses in its default mode are also active when running in overlayfs mode. Overlayfs mode is enabled by uncommenting the USE_OVERLAYFS="yes" line in `$XDG_CONFIG_HOME/psd/psd.conf` followed by a restart of the daemon.
+**Note:** There are several versions of overlayfs available to the Linux kernel in production in various distros. Versions 22 and lower have a module called 'overlayfs' while newer versions (23 and higher) have a module called 'overlay' -- note the lack of the 'fs' in the newer version. Psd will automatically detect the overlayfs available to your kernel if it is configured to use one of them.
 
-There are several versions of overlayfs available to the Linux kernel in production in various distros. Versions 22 and lower have a module called 'overlayfs' while newer versions (23 and higher) have a module called 'overlay' -- note the lack of the 'fs' in the newer version. Psd will automatically detect the overlayfs available to your kernel if it is configured to use one of them.
+Overlayfs is a simple union file-system mainlined in the Linux kernel version 3.18.0\. Starting with psd version 5.54, overlayfs can be used to reduce the memory footprint of psd's tmpfs space and to speed up sync and unsync operations. The magic is in how the overlay mount only writes out data that has changed rather than the entire profile. The same recovery features psd uses in its default mode are also active when running in overlayfs mode. Overlayfs mode is enabled by uncommenting the *USE_OVERLAYFS="yes*" line in `$XDG_CONFIG_HOME/psd/psd.conf` followed by a [restart](/index.php/Restart "Restart") of the daemon.
 
-Since version 6.05 of psd, users wanting to take advantage of this mode MUST have sudo rights (without password prompt) to `/usr/bin/psd-overlay-helper` or global sudo rights. The following line in `/etc/sudoers` will supply your user with these rights. Add it using `/usr/bin/visudo` as root:
+Since version 6.05 of psd, users wanting to take advantage of this mode MUST have [sudo](/index.php/Sudo "Sudo") rights (without password prompt) to `/usr/bin/psd-overlay-helper` or global sudo rights. The following line in `/etc/sudoers` will supply an [user](/index.php/User "User") with these rights. Add it using [visudo](/index.php/Sudo#Using_visudo "Sudo"):
 
 ```
-foo ALL=(ALL) NOPASSWD: /usr/bin/psd-overlay-helper
+user ALL=(ALL) NOPASSWD: /usr/bin/psd-overlay-helper
 
 ```
 

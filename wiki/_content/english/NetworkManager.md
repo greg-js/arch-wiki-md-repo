@@ -886,19 +886,19 @@ See [dnsmasq#NetworkManager](/index.php/Dnsmasq#NetworkManager "Dnsmasq") to ena
 
 ### Configuring MAC Address Randomization
 
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
 NetworkManager supports two types MAC Address Randomization: randomization during scanning, and for network connections. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf` or by creating a separate configuration file in `/etc/NetworkManager/conf.d` which is recommended since the aforementioned config file may be overwritten by NetworkManager.
 
-Randomization during Wi-Fi scanning is enabled by default, but it may be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf` or a dedicated configuration file under `/etc/NetworkManager/conf.d`. This results in a randomly generated MAC address being used when probing for wireless networks.
+Randomization during Wi-Fi scanning is enabled by default, but it may be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf` or a dedicated configuration file under `/etc/NetworkManager/conf.d`:
 
 ```
 [device]
 wifi.scan-rand-mac-address=no
 
 ```
-
-**Tip:** Disabling MAC address randomization may be needed for stable connection. See [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101).
 
 MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
 
@@ -917,7 +917,7 @@ wifi.cloned-mac-address=stable
 
 ```
 
-You can read more about it [here](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
+See the following [GNOME blogpost](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details.
 
 ### Enable IPv6 Privacy Extensions
 

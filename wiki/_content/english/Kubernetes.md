@@ -6,7 +6,7 @@ There are several AUR packages for Kubernetes on Arch Linux:
 
 *   [kubernetes](https://aur.archlinux.org/packages/kubernetes/): It builds the go-source code of Kubernetes from the GitHub.
 
-*   [kubernetes-built](https://aur.archlinux.org/packages/kubernetes-built/): It installs the pre-built binaries and configurations of the kubernetes package without requiring to build them.
+*   [kubernetes-bin](https://aur.archlinux.org/packages/kubernetes-bin/): It installs the pre-built binaries and configurations of the kubernetes package without requiring to build them.
 
 ## Basic Configuration of Kubernetes for Arch Linux VMs
 

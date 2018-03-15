@@ -167,7 +167,7 @@ If using a ffmpeg variant from the AUR, be sure that you have upgraded it as wel
 When starting VLC you can get a segfault, and ruling out general factors such as [Microcode](/index.php/Microcode "Microcode"), a possible workaround to this is running the following:
 
 ```
-# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
+# /usr/lib/vlc/vlc-cache-gen /usr/lib/vlc/plugins
 
 ```
 

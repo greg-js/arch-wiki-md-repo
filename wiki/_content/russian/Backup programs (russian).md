@@ -399,6 +399,10 @@
 
 	[http://www.jungledisk.com/](http://www.jungledisk.com/) || [nautilus-jungledisk](https://aur.archlinux.org/packages/nautilus-jungledisk/)
 
+*   **[Облако Mail.Ru](https://en.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE_Mail.Ru "wikipedia:Облако Mail.Ru")** — Облачное хранилище данных российской компании Mail.Ru Group.
+
+	[https://cloud.mail.ru/](https://cloud.mail.ru/) || [mailru-cloud](https://aur.archlinux.org/packages/mailru-cloud/)
+
 *   **[MEGA](https://en.wikipedia.org/wiki/ru:Mega "wikipedia:ru:Mega")** — Преемник сервиса обмена данными MegaUpload.
     *   На бесплатном аккаунте предоставлено 50GB, воспользуйтесь платным чтобы получить больше места.
     *   Шифрование и де-дубликация данных.

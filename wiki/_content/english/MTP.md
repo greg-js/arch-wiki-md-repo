@@ -32,7 +32,7 @@ Linux MTP support is provided by [installing](/index.php/Installing "Installing"
 
 These packages to choose from all implement a [Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace"):
 
-*   [mtpfs](https://www.archlinux.org/packages/?name=mtpfs)
+*   [mtpfs](https://www.archlinux.org/packages/?name=mtpfs) - is reported to cause a critical error which prevents mounting
 *   [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/) - is reported to work well for newer Android 4+ devices
 *   [go-mtpfs-git](https://aur.archlinux.org/packages/go-mtpfs-git/) - is reported to work well for newer Android 3+ devices
 *   [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/)

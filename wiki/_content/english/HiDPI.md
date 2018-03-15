@@ -289,7 +289,7 @@ Convert the font to a format that GRUB can utilize:
 Edit `/etc/default/grub` to set the new font as shown in [GRUB/Tips and tricks#Background image and bitmap fonts](/index.php/GRUB/Tips_and_tricks#Background_image_and_bitmap_fonts "GRUB/Tips and tricks"):
 
 ```
-GRUB_FONT="/grubfont.pf2"
+GRUB_FONT="/boot/grubfont.pf2"
 
 ```
 

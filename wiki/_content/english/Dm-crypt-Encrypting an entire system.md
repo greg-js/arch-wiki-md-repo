@@ -384,10 +384,10 @@ Mount your filesystems:
 
 The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), and its own configuration files from the `/boot` directory. This directory must be located on a separate unencrypted filesystem.
 
-Create an Ext2 filesystem on the partition intended for `/boot`. Any filesystem that can be read by the bootloader is eligible.
+Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition intended for `/boot`. Any filesystem that can be read by the bootloader is eligible.
 
 ```
-# mkfs.ext2 /dev/sdb1
+# mkfs.ext4 /dev/sdb1
 
 ```
 
@@ -795,10 +795,10 @@ We format and mount them and activate swap. See [File systems#Create a file syst
 
 The `/boot` partition can be installed on the standard vfat partition of a USB stick, if required. But if manual partitioning is needed, then a small 200 MiB partition is all that is required. Create the partition using a [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning") of your choice.
 
-We choose a non-journalling file system to preserve the flash memory of the `/boot` partition, if not already formatted as vfat:
+Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition intended for `/boot`, if it is not already formatted as vfat:
 
 ```
-# mkfs.ext2 /dev/sdb1
+# mkfs.ext4 /dev/sdb1
 # mkdir /mnt/boot
 # mount /dev/sdb1 /mnt/boot
 
@@ -838,7 +838,7 @@ You may wish to remove the USB sticks after booting. Since the `/boot` partition
  `/etc/fstab` 
 ```
 # /dev/sdb1
-/dev/sdb1 /boot ext2 **noauto**,rw,noatime 0 2
+/dev/sdb1 /boot ext4 **noauto**,rw,noatime 0 2
 
 ```
 
@@ -945,7 +945,7 @@ Next, open it:
 Create a filesystem on the partition intended for `/boot`. Any filesystem that can be read by the bootloader is eligible:
 
 ```
-# mkfs.ext2 /dev/mapper/*cryptboot*
+# mkfs.ext4 /dev/mapper/*cryptboot*
 
 ```
 

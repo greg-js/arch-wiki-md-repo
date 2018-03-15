@@ -41,7 +41,7 @@
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(19)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(3)</small> |
-| <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(12)</small> |
+| <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(19)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>2.18.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(30) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |

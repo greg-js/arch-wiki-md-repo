@@ -29,6 +29,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
         *   [7.2.3 Visual Studio Code](#Visual_Studio_Code)
         *   [7.2.4 Vim](#Vim)
         *   [7.2.5 Emacs](#Emacs)
+        *   [7.2.6 Kate](#Kate)
 *   [8 See also](#See_also)
 
 ### Rust Core Library
@@ -231,6 +232,10 @@ Vim support for Rust is enabled via the official [rust.vim](https://github.com/r
 #### Emacs
 
 Emacs support for Rust is enabled via the offical [rust-mode](https://github.com/rust-lang/rust-mode) plugin or the [emacs-rust-mode](https://aur.archlinux.org/packages/emacs-rust-mode/) package.
+
+#### Kate
+
+Kate support for Rust is enabled via the official [kate](https://github.com/rust-lang/kate-config) plugin. It is installed by defaut by the [kate](https://www.archlinux.org/packages/?name=kate) package, require the installation of [racer](https://www.archlinux.org/packages/?name=racer) and manual activation.
 
 ## See also
 

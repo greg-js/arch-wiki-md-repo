@@ -138,7 +138,7 @@ i3 управляет окнами в виде древовидной струк
 
 	[https://github.com/acrisci/i3-style](https://github.com/acrisci/i3-style) || [nodejs-i3-style](https://aur.archlinux.org/packages/nodejs-i3-style/)
 
-*   **j4-make-config** — Объединяет ваш файл настроек с коллекцией тем или персональных частей настроек, например настройка host-specific, позволяет быстро и гибко измененять темы, динамически кустомизировать настройки.
+*   **j4-make-config** — Объединяет ваш файл настроек с коллекцией тем или персональных частей настроек, например настройка host-specific, позволяет быстро и гибко измененять темы, динамически кастомизировать настройки.
 
 	[https://github.com/okraits/j4-make-config](https://github.com/okraits/j4-make-config) || [j4-make-config-git](https://aur.archlinux.org/packages/j4-make-config-git/)
 

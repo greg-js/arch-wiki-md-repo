@@ -58,13 +58,14 @@ According to the [official website](https://www.gnupg.org/):
     *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
     *   [8.7 Always show long ID's and fingerprints](#Always_show_long_ID.27s_and_fingerprints)
     *   [8.8 Custom capabilities](#Custom_capabilities)
+    *   [8.9 Cache passwords](#Cache_passwords)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
     *   [9.2 su](#su)
     *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
     *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
     *   [9.5 GNOME on Wayland overrides SSH agent socket](#GNOME_on_Wayland_overrides_SSH_agent_socket)
-    *   [9.6 mutt and gpg](#mutt_and_gpg)
+    *   [9.6 mutt](#mutt)
     *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
     *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
@@ -614,6 +615,8 @@ $ ssh-add -l
 
 The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`*.*
 
+**Note:** GnuPG might not add your GnuPG key to `$GNUPGHOME/sshcontrol`, where "normal" SSH keys are listed.
+
 ## Smartcards
 
 GnuPG uses *scdaemon* as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") for details.
@@ -752,6 +755,19 @@ And select an option that allows you to set your own capabilities.
 
 Comparably, to specify custom capabilities for subkeys, add the `--expert` flag to `gpg --edit-key`, see [#Edit your key](#Edit_your_key) for more information.
 
+### Cache passwords
+
+To be asked for your GnuPG password only once per session, set `max-cache-ttl` and `default-cache-ttl` to something very high, for instance:
+
+ `gpg-agent.conf` 
+```
+max-cache-ttl 60480000
+default-cache-ttl 60480000
+
+```
+
+See [#gpg-agent](#gpg-agent).
+
 ## Troubleshooting
 
 ### Not enough random bytes available
@@ -816,9 +832,11 @@ SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 GSM_SKIP_SSH_AGENT_WORKAROUND	DEFAULT="true"
 ```
 
-### mutt and gpg
+### mutt
 
-To be asked for your GnuPG password only once per session, see [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821).
+Mutt might not use *gpg-agent* correctly, you need to set an [environment variable](/index.php/Environment_variable "Environment variable") `GPG_AGENT_INFO` (the content doesn't matter) when running mutt. Be also sure to enable password caching correctly, see [#Cache passwords](#Cache_passwords).
+
+See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821)
 
 ### "Lost" keys, upgrading to gnupg version 2.1
 

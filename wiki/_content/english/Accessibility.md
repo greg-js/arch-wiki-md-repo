@@ -1,3 +1,7 @@
+Related articles
+
+*   [TalkingArch](/index.php/TalkingArch "TalkingArch")
+
 There are many different methods of providing accessibility to users that suffer from a physical or visual handicap. However, unless a [desktop environment](/index.php/Desktop_environment "Desktop environment") is used, the configuration might require some tinkering until one gets it right.
 
 ## Contents
@@ -70,7 +74,7 @@ keycode 97 = SCtrl
 
 Here, the letter "S" in front of a modifier key denotes that we want the sticky version of that key.
 
-**Note:** The following step will change you key mapping in all TTYs. Ensure the correctness of your keycodes, for else you might loose the ability to use certain important keys.
+**Note:** The following step will change your key mapping in all TTYs. Ensure the correctness of your keycodes, or you might lose the ability to use certain important keys.
 
 Load your new mapping by running the following command:
 

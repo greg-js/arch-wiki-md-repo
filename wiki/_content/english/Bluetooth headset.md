@@ -4,7 +4,7 @@ Related articles
 
 Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio playback with the default installation.
 
-**Note:** Bluez5 dropped the direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio"). If you do not want to use PulseAudio, you have to use use [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), as ALSA plugin.
+**Note:** Bluez5 dropped the direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio"). If you do not want to use PulseAudio, you have to use [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), as ALSA plugin.
 
 ## Contents
 

@@ -45,7 +45,7 @@ CONFIGURATION
        except for \x00 and the special value disabled are allowed here.
 ```
 
-Here is an example configuration file. See [pianobar(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pianobar.1) for more configuration options.
+Here is an example configuration file. See [pianobar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pianobar.1) for more configuration options.
 
  `$ ~/.config/pianobar/config` 
 ```
@@ -83,20 +83,9 @@ If you are experiencing sound/quality issues when running pianobar, and you are 
 
 ### Network Error
 
-If you are receiving the "Network error: TLS fingerprint mismatch" error when running pianobar the following fixes may be useful.
+If you are receiving the "Network error: Peer certificate cannot be authenticated with given CA certificates", try adding the following line to your .config/pianobar/config file:
 
-1.  obtain the current tls_fingerprint by running the following command:
-     `# openssl s_client -connect tuner.pandora.com:443 < /dev/null 2> /dev/null | openssl x509 -noout -fingerprint | tr -d ':' | cut -d'=' -f2` 
-2.  add this output to ~/.config/pianobar/config:
-
-    ```
-    ~/.config/pianobar/config
-
-    audio_quality = high
-    password = password
-    user = email address
-    tls_fingerprint = 13CC51AC0C31CD96C55015C76914360F7AC41A00
-    ```
+ `ca_bundle = /etc/ca-certificates/extracted/tls-ca-bundle.pem` 
 
 ## See also
 

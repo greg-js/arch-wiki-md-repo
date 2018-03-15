@@ -213,7 +213,7 @@ See [Phoronix article](https://www.phoronix.com/scan.php?page=article&item=amd_p
 
 ### Gallium Heads-Up Display
 
-The radeonsi driver supports the activation of a heads-up display (HUD) which can draw transparent graphs and text on top of applications that are rendering, such as games. These can show values such as the current frame rate or the CPU load for each CPU core or an average of all of them. The HUD is controlled by the GALLIUM_HUD environment variable, and can be passed the following list of parameters among others:
+The radeon driver supports the activation of a heads-up display (HUD) which can draw transparent graphs and text on top of applications that are rendering, such as games. These can show values such as the current frame rate or the CPU load for each CPU core or an average of all of them. The HUD is controlled by the GALLIUM_HUD environment variable, and can be passed the following list of parameters among others:
 
 *   "fps" - displays current frames per second
 *   "cpu" - displays the average CPU load

@@ -19,7 +19,8 @@ ssmtp is unmaintained. Consider using something like [msmtp](/index.php/Msmtp "M
 
 To configure SSMTP, you will have to edit its configuration file (`/etc/ssmtp/ssmtp.conf`) and enter your account settings.
 
-If your Gmail account is secured with two-factor authentication, you need to generate a unique [App Password](https://support.google.com/mail/answer/185833) to use in `ssmtp.conf`. You can do so on your [App Passwords](https://security.google.com/settings/security/apppasswords) page. Use the generated 16-character password in the `AuthPass` line. Spaces in the password can be omitted.
+*   If your Gmail account is secured with two-factor authentication, you need to generate a unique [App Password](https://support.google.com/mail/answer/185833) to use in `ssmtp.conf`. You can do so on your [App Passwords](https://myaccount.google.com/apppasswords) page. Use the generated 16-character password in the `AuthPass` line. Spaces in the password can be omitted.
+*   If you do *not* use two-factor authentication, you need to [allow access to unsecure apps](https://support.google.com/accounts/answer/6010255). You can do so on your [Less Secure Apps](https://myaccount.google.com/lesssecureapps) page.
 
  `/etc/ssmtp/ssmtp.conf` 
 ```
@@ -64,7 +65,6 @@ mainuser:username@gmail.com:smtp.gmail.com:587
 To test whether the Gmail server will properly forward your email:
 
  `$ echo test | mail -v -s "testing ssmtp setup" tousername@somedomain.com` 
-**Note:**Gmail has recently started blocking emails from senders that do not authenticate using OAuth. To allow SSMTP to use gmail's SMTP server, you need to [allow access to unsecure apps](https://support.google.com/accounts/answer/6010255).
 
 Change the 'From' text by editing `/etc/passwd` to receive mail from 'root at myhost' instead of just 'root'.
 
@@ -75,91 +75,15 @@ Change the 'From' text by editing `/etc/passwd` to receive mail from 'root at my
 
 Which changes `/etc/passwd` to:
 
- `$ grep myhostname /etc/passwd` 
+ `$ grep myhost /etc/passwd` 
 ```
-root:x:0:0:root@myhostname,,,:/root:/bin/bash
-mainuser:x:1000:1000:mainuser@myhostname,,,:/home/mainuser:/bin/bash
+root:x:0:0:root at myhost,,,:/root:/bin/bash
+mainuser:x:1000:1000:mainuser at myhost,,,:/home/mainuser:/bin/bash
 ```
 
 ## Security
 
-Because your email password is stored as cleartext in `/etc/ssmtp/ssmtp.conf`, it is important to secure the file. Securing ssmtp.conf will ensure that:
-
-*   if any users have unprivileged access to your system, they cannot read the file and see your email password, while still letting them send out email
-*   if your user account is ever compromised, the hacker cannot read the `ssmtp.conf` file, and therefore your email password, unless he gains access to the root account as well
-
-To secure `ssmtp.conf`, do this:
-
-Create an `ssmtp` group:
-
-```
-# groupadd ssmtp
-
-```
-
-Set ssmtp.conf group owner to the new `ssmtp` group:
-
-```
-# chown :ssmtp /etc/ssmtp/ssmtp.conf
-
-```
-
-Set the group owner of the *ssmtp* binary to the new `ssmtp` group:
-
-```
-# chown :ssmtp /usr/bin/ssmtp
-
-```
-
-Make sure only root, and the `ssmtp` group can access `ssmtp.conf`:
-
-```
-# chmod 640 /etc/ssmtp/ssmtp.conf
-
-```
-
-Set the SGID bit on the *ssmtp* binary.
-
-```
-# chmod g+s /usr/bin/ssmtp
-
-```
-
-Finally add a pacman hook to always set the file permissions on `/usr/bin/ssmtp` after the package has been upgraded:
-
- `/root/bin/ssmtp-set-permissions` 
-```
-#!/bin/bash
-
-chown :ssmtp /usr/bin/ssmtp
-chmod g+s /usr/bin/ssmtp
-
-```
-
-Make the file executable:
-
-```
-# chmod u+x /root/bin/ssmtp-set-permissions
-
-```
-
-Now add the pacman hook:
-
- `/usr/share/libalpm/hooks/ssmtp-set-permissions.hook` 
-```
-[Trigger]
-Operation = Install
-Operation = Upgrade
-Type = Package
-Target = ssmtp
-
-[Action]
-Description = Set ssmtp permissions for security
-When = PostTransaction
-Exec = /root/bin/set-ssmtp-permissions
-```
-
-Now, all the regular users can still send email using the terminal, but none can read the `ssmtp.conf` file.
+Because your email password is stored as cleartext in `/etc/ssmtp/ssmtp.conf`, it is important that this file is secure. By default, the entire `/etc/ssmtp` directory is accessible only by root and the mail group. The `/usr/bin/ssmtp` binary runs as the mail group and can read this file. There is no reason to add yourself or other users to the mail group.
 
 ## Sending email
 

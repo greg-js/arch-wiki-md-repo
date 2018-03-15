@@ -23,9 +23,13 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 
 ## Installation
 
+Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/) or [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) for the beta version.
+
 **Warning:** The Unity package is **huge**. For a successful installation you'll need about 17GiB of free space for the package building, and another 8GiB for it to install.
 
-Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/) or [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) for the beta version.
+**Note:** When installing using [AUR helpers](/index.php/AUR_helpers "AUR helpers") such as [yaourt](https://aur.archlinux.org/packages/yaourt/) it might be useful to specify alternative temporary files location with higher capacity than `/tmp`, e.g. `yaourt -S unity-editor --tmp ~/tmp`.
+
+**Note:** By default the PKGBUILD redirects all the output of the installer, which downloads and processes about 2GB of data. As this process can be very long it might be useful to monitor it by using `tail -f /tmp/Unity.log`
 
 ## Android Remote
 

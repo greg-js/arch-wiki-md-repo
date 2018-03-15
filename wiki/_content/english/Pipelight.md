@@ -30,7 +30,7 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 
 ## Installation
 
-**Warning:** Pipelight requires a browser with NPAPI support. NPAPI support is **not** present in Chrome/Chromium, Firefox or Opera.
+**Note:** Pipelight requires a browser with NPAPI support. NPAPI support is **not** present in Chrome/Chromium, Firefox or Opera.
 
 **Warning:** Pipelight project itself is discontinued, which means no security fixes will be released which can make your system vulnerable.
 
@@ -80,7 +80,7 @@ $ pipelight-plugin --enable *plugin*
 
 ### Plug-in(s) not visible in Mozilla Firefox
 
-**Note:** Pipelight only works in Firefox ESR ([firefox-esr](https://aur.archlinux.org/packages/firefox-esr/)). The regular release doesn't as it doesn't support NPAPI plugins.
+**Note:** Pipelight is a NPAPI-only plugin and doesn't work in the regular Firefox. It still works in [Firefox ESR 52](/index.php/Firefox#Installing "Firefox"), which is supported until August 2018.
 
 If upon starting [Firefox](/index.php/Firefox "Firefox") the enabled plugin doesn't appear under `about:plugins`, try running the following command before starting Mozilla Firefox:
 

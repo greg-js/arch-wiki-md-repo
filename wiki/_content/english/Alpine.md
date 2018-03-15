@@ -60,7 +60,7 @@ Feature List                      =
 
 ```
 
-Press `E` to exit config. From the main menu, navigate the collectionLists page by pressing (`S` then `L`) to configure folders. Press enter to edit the folders on mailserver.org, and optionall set a nickname. The Server line uses the same fomat as the SMTP Server line above, except that this is for retrieving rather than sending mail. The following example is for an IMAP server:
+Press `E` to exit config. From the main menu, navigate the collectionLists page by pressing (`S` then `L`) to configure folders. Press enter to edit the folders on mailserver.org, and optionally set a nickname. The Server line uses the same format as the SMTP Server line above, except that this is for retrieving rather than sending mail. The following example is for an IMAP server:
 
 ```
 mailserver.org:143/user=jimbob123/tls

@@ -50,7 +50,7 @@ To start ranger, launch a [terminal](/index.php/List_of_applications#Terminal_em
 After startup, *ranger* creates a directory `~/.config/ranger`. To copy the default configuration to this directory issue the following command:
 
 ```
-ranger --copy-config=all
+$ ranger --copy-config=all
 
 ```
 

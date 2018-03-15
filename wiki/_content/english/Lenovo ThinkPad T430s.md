@@ -20,6 +20,8 @@ The following are known problems and workarounds for the Lenovo Thinkpad T430s, 
 
 *   The system sometimes does not properly resume after being put into a suspended state. To fix configure [GRUB](/index.php/GRUB "GRUB")'s use of ACPI sleep functionality by adding "acpi_sleep=nonvs" in GRUB_CMDLINE_LINUX in /etc/default/grub
 
+*   The brightness can't always be adjusted by default. Adding `acpi_osi\='!Windows 2012'` to `/etc/default/grub` under `GRUB_CMDLINE_LINUX_DEFAULT` and reconfiguring the grub config file fixes this.
+
 ### Fixed
 
 *   Fixed accurately setting the brightness levels with the Fn + brightness up/down shortcut keys. The problem comes from Intel graphics, and the solution can be found from [here](/index.php/Intel#Backlight_not_fully_adjusting.2C_or_adjusting_at_all.2C_after_resume. "Intel").

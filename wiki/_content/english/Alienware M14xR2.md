@@ -230,7 +230,7 @@ modprobe snd_hda_intel position_fix=1
 
 ```
 
-If you loose sound after system wake you can recover it by rebooting into Windows and booting Linux again. I believe this has to do with a firmware problem. There's also no headphone detection.
+If you lose sound after system wake you can recover it by rebooting into Windows and booting Linux again. This may have to do with a firmware problem. There's also no headphone detection.
 
 In kernel 3.9 firmware problem seems to be fixed and headphone detection is working (If speakers don't automute go to alsamixer and unmute HP/Speaker Auto Detect). A lot of channels and fx were added to alsa. Automute only works with the one headphone and microphone jack and not with the earphones jack. This should be reported.
 

@@ -1,7 +1,8 @@
 Related articles
 
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
-*   [polkit](/index.php/Polkit "Polkit")
+*   [Sudo](/index.php/Sudo "Sudo")
+*   [Polkit](/index.php/Polkit "Polkit")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
 Users and groups are used on GNU/Linux for [access control](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control")—that is, to control access to the system's files, directories, and peripherals. Linux offers relatively simple/coarse access control mechanisms by default. For more advanced options, see [ACL](/index.php/ACL "ACL") and [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").

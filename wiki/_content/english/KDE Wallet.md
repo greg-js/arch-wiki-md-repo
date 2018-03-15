@@ -13,12 +13,14 @@
 
 **Note:**
 
-*   The chosen KWallet password must be the same as the current [user](/index.php/User "User") password.
 *   [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) is not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, the KDE Wallet must use the standard `blowfish` encryption.
+*   The chosen KWallet password must be the same as the current [user](/index.php/User "User") password.
 *   The wallet must be named `kdewallet` (default name). It does not unlock any other wallet(s).
-*   It is not possible to unlock KWallet with autologin enabled.
+*   It may be needed to remove the default created wallet first, thus removing all stored entries.
 
 [Install](/index.php/Install "Install") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) for the [PAM](/index.php/PAM "PAM") compatible module.
+
+Optional [install](/index.php/Install "Install") [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) for the wallet management tool. This tool can be used to create a KDE Wallet with `blowfish` encryption and more settings not provided by the *kcm-module*.
 
 ### Configure display manager
 

@@ -17,7 +17,6 @@ Related articles
     *   [7.1 Support](#Support)
     *   [7.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
     *   [7.3 Error: signature from graysky is unknown trust](#Error:_signature_from_graysky_is_unknown_trust)
-    *   [7.4 Error: could not parse package description file '*something*/desc' from db 'repo-ck'](#Error:_could_not_parse_package_description_file_.27something.2Fdesc.27_from_db_.27repo-ck.27)
 
 ## Setup
 
@@ -129,7 +128,7 @@ Repo [statistics](http://repo-ck.com/stats.pdf) are available (package and CPU p
 There are two mirrors available now:
 
 *   [https://mirror.archlinux.no/repo-ck](https://mirror.archlinux.no/repo-ck) (Very low uptime)
-*   [https://archd.hkno.it](https://archd.hkno.it)
+*   [https://archd.hkno.it](https://archd.hkno.it) (Unavailable)
 
 ## Troubleshooting
 
@@ -158,7 +157,3 @@ See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1422475#p14224
 ### Error: signature from graysky is unknown trust
 
 Users must import and sign graysky's gpg key. Instructions along with his key ID are located at [repo-ck.com](http://repo-ck.com/). See also [Pacman/Package signing#Adding unofficial keys](/index.php/Pacman/Package_signing#Adding_unofficial_keys "Pacman/Package signing").
-
-### Error: could not parse package description file '*something*/desc' from db 'repo-ck'
-
-Due to the repository of [Graysky](https://aur.archlinux.org/account/graysky) is HTTP only, neither rsync nor ftp is available to completely clone the mirror, the old script running "[https://archd.hkno.it](https://archd.hkno.it)" is unable to remove the old versions of package, causing such error and possibly prohibits/blocks the update. As of current, the issue has been fixed, to prevent incidents like blocking the update sequence. By using `pacman -Syy` will allow pacman to update the repository correspondingly; Please kindly notify [lifehome](https://aur.archlinux.org/account/lifehome) if you still encounter similar issues.

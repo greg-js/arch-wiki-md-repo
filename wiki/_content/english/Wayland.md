@@ -329,7 +329,7 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
 | Enlightenment | Stacking | [More Info](https://www.enlightenment.org/about-wayland) |
 | KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
-| Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland. |
+| Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is an abandonned tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
@@ -431,18 +431,22 @@ This change in input grabbing breaks current applications' behavior, meaning:
 *   Hotkey combinations and modifiers will be caught by the compositor and won't be sent to remote desktop and virtual machine windows.
 *   The mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window of the virtual machine or remote desktop is displaced from the host's mouse pointer.
 
-Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to Wayland compositors, XWayland and in the case of native Wayland clients to widget toolkits (e.g GTK, QT) and probably also to the applications themselves.
+Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to Wayland compositors, and in the case of native Wayland clients to widget toolkits (e.g GTK, QT) and probably also to the applications themselves.
 
 The related extensions are:
 
-*   [XWayland keyboard grabbing protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/xwayland-keyboard-grab/xwayland-keyboard-grab-unstable-v1.xml), added in [wayland-protocols 1.9](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034459.html), XWayland support [already been added](https://lists.x.org/archives/xorg-devel/2017-August/054231.html) to xorg-server 1.20 development tree.
-*   [Compositor shortcuts inhibit protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/keyboard-shortcuts-inhibit/keyboard-shortcuts-inhibit-unstable-v1.xml) (native Wayland only), added in [wayland-protocols 1.9](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034459.html)
-*   [Relative pointer protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml), added in [wayland-protocols 1.1](https://lists.freedesktop.org/archives/wayland-devel/2016-February/027029.html), XWayland support [already been added](https://lists.x.org/archives/xorg-devel/2016-September/050975.html) in [xorg-server 1.19](https://lists.x.org/archives/xorg-announce/2016-October/002734.html)
-*   [Pointer constraints protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml), added in [wayland-protocols 1.1](https://lists.freedesktop.org/archives/wayland-devel/2016-February/027029.html), XWayland support [already been added](https://lists.x.org/archives/xorg-devel/2016-September/050975.html) in [xorg-server 1.19](https://lists.x.org/archives/xorg-announce/2016-October/002734.html)
+*   [XWayland keyboard grabbing protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/xwayland-keyboard-grab/xwayland-keyboard-grab-unstable-v1.xml), XWayland support [has been added](https://lists.x.org/archives/xorg-devel/2017-August/054231.html) to xorg-server 1.20 development tree
+*   [Compositor shortcuts inhibit protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/keyboard-shortcuts-inhibit/keyboard-shortcuts-inhibit-unstable-v1.xml)
+*   [Relative pointer protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml)
+*   [Pointer constraints protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml)
 
 Supporting Wayland compositors:
 
-*   Mutter, development tree of future 3.28 release [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=783342)[[3]](https://git.gnome.org/browse/mutter/commit/?id=072afa5)[[4]](https://git.gnome.org/browse/mutter/commit/src/wayland/meta-wayland-inhibit-shortcuts.c?id=2ca087172451380d63dbd47e6980f93aa68be12f). Gnome 3.28 expected to fully support these extensions, and maybe even 3.27.4, its next development release.
+*   Mutter, [GNOME's](/index.php/GNOME "GNOME") compositor [since release 3.28](https://bugzilla.gnome.org/show_bug.cgi?id=783342).
+
+Supporting widget toolkits:
+
+*   GTK since release 3.22.18.
 
 ## See also
 

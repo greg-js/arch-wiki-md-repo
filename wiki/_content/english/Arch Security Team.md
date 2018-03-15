@@ -5,6 +5,9 @@ The Arch Security Team is a group of volunteers whose goal is to track security 
 *   [1 Contribute](#Contribute)
 *   [2 Guidelines](#Guidelines)
 *   [3 Procedure](#Procedure)
+    *   [3.1 Information sharing and investigation phase](#Information_sharing_and_investigation_phase)
+    *   [3.2 Upstream situation and bug reporting](#Upstream_situation_and_bug_reporting)
+    *   [3.3 Tracking and publishing](#Tracking_and_publishing)
 *   [4 Resources](#Resources)
     *   [4.1 RSS](#RSS)
     *   [4.2 Mailing lists](#Mailing_lists)
@@ -27,29 +30,43 @@ Derivative distributions that rely on Arch Linux package repositories are encour
 
 ## Guidelines
 
-Follow the [#archlinux-security](irc://irc.freenode.net/archlinux-security) IRC channel.
+To get involved in the identification of the vulnerabilities, it is recommended to:
 
-Subscribe to the mailing lists [arch-security](https://lists.archlinux.org/listinfo/arch-security) and [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security).
+*   Follow the [#archlinux-security](irc://irc.freenode.net/archlinux-security) IRC channel.
 
-Packages qualified for an advisory must be part of the *core*, *extra*, *community* or *multilib* repository.
+*   Subscribe to the mailing lists [arch-security](https://lists.archlinux.org/listinfo/arch-security) and [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security).
+
+**Note:** Packages qualified for an advisory must be part of the *core*, *extra*, *community* or *multilib* repository.
 
 ## Procedure
 
-A security vulnerability has been found in a software package within the Arch Linux official repositories.
+The procedure to follow whenever a security vulnerability has been found in a software packaged within the Arch Linux official repositories is the following:
+
+### Information sharing and investigation phase
 
 *   Reach out an Arch Security Team member via your preferred channel to ensure the issue has been brought to the attention of the team.
 *   In order to substantiate the vulnerability, verify the CVE report against the current package version (including possible patches), and collect as much information as possible on the issue, including via search engines. If you need help to investigate the security issue, ask for advice or support on the IRC channel.
-*   If **upstream released a new version** that fixes the issue, the Security Team member should flag the package out-of-date.
+
+### Upstream situation and bug reporting
+
+Two situations may arise:
+
+*   If upstream released a new version that fixes the issue, the Security Team member should flag the package out-of-date.
     *   If the package has not been updated after a long delay, a bug report should be filed about the vulnerability.
     *   If this is a critical security issue, a bug report must be filed immediately after flagging the package out-of-date.
-*   If there is **no upstream release** available, a bug report must be filed including the patches for mitigation. The following information must be provided in the bug report:
+*   If there is no upstream release available, a bug report must be filed including the patches for mitigation. The following information must be provided in the bug report:
     *   Description about the security issue and its impact
     *   Links to the CVE-IDs and (upstream) report
     *   If no release is available, links to the upstream patches (or attachments) that mitigate the issue
+
+### Tracking and publishing
+
+The following tasks must be performed by team members:
+
 *   A team member will create an advisory on the [security tracker](https://security.archlinux.org/) and add the CVEs for tracking.
 *   A team member with access to [arch-security](https://lists.archlinux.org/listinfo/arch-security) will generate an ASA from the tracker and publish it.
 
-If you have a private bug to report, contact [security@archlinux.org](https://mailman.archlinux.org/pipermail/arch-security/2014-June/000088.html). Please note that the address for private bug reporting is *security*, not *arch-security*. A private bug is one that is too sensitive to post where anyone can read and exploit it, e.g. vulnerabilities in the Arch Linux infrastructure.
+**Note:** If you have a private bug to report, contact [security@archlinux.org](https://mailman.archlinux.org/pipermail/arch-security/2014-June/000088.html). Please note that the address for private bug reporting is *security*, not *arch-security*. A private bug is one that is too sensitive to post where anyone can read and exploit it, e.g. vulnerabilities in the Arch Linux infrastructure.
 
 ## Resources
 

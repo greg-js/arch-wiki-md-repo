@@ -133,9 +133,7 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 
 ### Пользователям VAIO
 
-Добавьте`
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-`параметр ядра в ваш загрузчик и возьмите себе с полки пирожок!
+Добавьте **acpi_sleep=nonvs** параметр ядра в ваш загрузчик и возьмите себе с полки пирожок!
 
 ### Ждущий/Спящий режим не работает или сбоит
 

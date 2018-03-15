@@ -329,6 +329,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://als.regnet.cz/fpm2/](https://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)
 
+*   **gopass** — Advanced console based password manager, supporting GnuPG and other backends.
+
+	[https://github.com/justwatchcom/gopass](https://github.com/justwatchcom/gopass) || [gopass](https://www.archlinux.org/packages/?name=gopass)
+
 *   **GPass** — Password manegement software for GNOME2 desktop.
 
 	[https://github.com/raffael-sfm/gpass](https://github.com/raffael-sfm/gpass) || [gpass](https://aur.archlinux.org/packages/gpass/)

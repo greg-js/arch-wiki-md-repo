@@ -79,7 +79,7 @@ You may need to adjust the height afterwards; this can be adjusted with the `exw
 
 ## Embedding within LXDE
 
-EXWM can be used in place of openbox, allowing you to still use LXDE session management tools.
+EXWM can be used in place of openbox, allowing you to still use [LXDE](/index.php/LXDE "LXDE") session management tools.
 
 Before doing this, make sure you have your init file for emacs already set up to run EXWM (see above)
 

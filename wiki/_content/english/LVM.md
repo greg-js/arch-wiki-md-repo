@@ -84,7 +84,7 @@ Basic building blocks of LVM:
 
 	Physical extent (PE)
 
-	The smallest size in the physical volume that can be assigned to a logical volume (default 4MiB). Think of physical extents as parts of disks that can be allocated to any partition.
+	The smallest size in the physical volume that can be assigned to a logical volume (default 4 MiB). Think of physical extents as parts of disks that can be allocated to any partition.
 
 Example:
 
@@ -92,16 +92,16 @@ Example:
 **Physical disks**
 
   Disk1 (/dev/sda):
-     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-    |Partition1 50GB (Physical volume) |Partition2 80GB (Physical volume)     |
-    |/dev/sda1                         |/dev/sda2                             |
-    |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
+     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    |Partition1 50 GiB (Physical volume) |Partition2 80 GiB (Physical volume)     |
+    |/dev/sda1                           |/dev/sda2                               |
+    |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
 
   Disk2 (/dev/sdb):
-     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-    |Partition1 120GB (Physical volume)                 |
-    |/dev/sdb1                                          |
-    | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _|
+     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    |Partition1 120 GiB (Physical volume)                 |
+    |/dev/sdb1                                            |
+    |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
 
 ```
 
@@ -109,10 +109,10 @@ Example:
 **LVM logical volumes**
 
   Volume Group1 (/dev/MyStorage/ = /dev/sda1 + /dev/sda2 + /dev/sdb1):
-     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-    |Logical volume1 15GB  |Logical volume2 35GB      |Logical volume3 200GB               |
-    |/dev/MyStorage/rootvol|/dev/MyStorage/homevol    |/dev/MyStorage/mediavol             |
-    |_ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
+     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    |Logical volume1 15 GiB  |Logical volume2 35 GiB      |Logical volume3 200 GiB              |
+    |/dev/MyStorage/rootvol  |/dev/MyStorage/homevol      |/dev/MyStorage/mediavol              |
+    |_ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
 
 ```
 
@@ -138,11 +138,13 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 
 You should create your LVM Volumes between the [partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the [installation procedure](/index.php/Installation_guide "Installation guide"). Instead of directly formatting a partition to be your root file system, the file system will be created inside a logical volume (LV).
 
-Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Pacman "Pacman").
+Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Installed "Installed").
 
 Quick overview:
 
-*   Create partition(s) where your PV(s) will reside. Set the partition type to 'Linux LVM', which is 8e if you use MBR, 8e00 for GPT.
+*   Create [partition(s)](/index.php/Partitioning "Partitioning") where your PV(s) will reside.
+    *   If you use Master Boot Record partition table, set the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") to `8e` (partition type `Linux LVM` in *fdisk*).
+    *   If you use GUID Partition Table, set the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") to `E6D6D379-F507-44C2-A23C-238F2A3DF928` (partition type `Linux LVM` in *fdisk* and `8e00` in *gdisk*).
 *   Create your physical volumes (PVs). If you have one disk it is best to just create one PV in one large partition. If you have multiple disks you can create partitions on each of them and create a PV on each partition.
 *   Create your volume group (VG) and add all PVs to it.
 *   Create logical volumes (LVs) inside that VG.
@@ -189,7 +191,7 @@ You can track created physical volumes with:
 
 ```
 
-**Note:** If using a SSD without partitioning it first, use `pvcreate --dataalignment 1m /dev/sda` (for erase block size < 1MiB), see e.g. [here](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
+**Note:** If using a SSD without partitioning it first, use `pvcreate --dataalignment 1m /dev/sda` (for erase block size < 1 MiB), see e.g. [here](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
 ### Create volume group
 
@@ -478,21 +480,21 @@ Last, you need to shrink the partition with your favorite [partitioning tool](/i
 
 **Warning:** While enlarging a file system can often be done on-line (*i.e.* while it is mounted), even for the root partition, shrinking will nearly always require to first unmount the file system so as to prevent data loss. Make sure your FS supports what you are trying to do.
 
-Extend logical volume *lv1* within volume group *vg1* by 2GB *without* touching its file system:
+Extend logical volume *lv1* within volume group *vg1* by 2 GiB *without* touching its file system:
 
 ```
 # lvresize -L +2G vg1/lv1
 
 ```
 
-Reduce the size of `vg1/lv1` by 500MB *without* resizing its file system (make sure it is [already shrunk](#Resizing_the_file_system_separately) in that case):
+Reduce the size of `vg1/lv1` by 500 MiB *without* resizing its file system (make sure it is [already shrunk](#Resizing_the_file_system_separately) in that case):
 
 ```
 # lvresize -L -500M vg1/lv1
 
 ```
 
-Set `vg1/lv1` to 15GB and resize its file system *all at once*:
+Set `vg1/lv1` to 15 GiB and resize its file system *all at once*:
 
 ```
 # lvresize -L 15G -r vg1/lv1
@@ -514,7 +516,7 @@ See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for mor
 
 **Warning:** Not all file systems support resizing without loss of data and/or resizing online.
 
-Extend the logical volume *home* in *volume-group* with 10GB
+Extend the logical volume *home* in *volume-group* with 10 GiB
 
 ```
 # lvresize -L +10G /dev/*volume-group*/*home* --resizefs
@@ -533,7 +535,7 @@ Note: *xfs_growfs* takes a mount point as argument. See [xfs_growfs(8)](https://
 
 ##### Resizing the file system separately
 
-If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using a file system unsupported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) ([Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")...), you need to manually resize the FS before shrinking the LV or after expanding it.
+If not using the `-r, --resizefs` option to `lvresize`, `lvextend` or `lvreduce`, or using a file system unsupported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (e.g. [Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")), you need to manually resize the file system before shrinking the LV or after expanding it.
 
 **Warning:** Not all file systems support resizing without loss of data and/or resizing online.
 
@@ -673,7 +675,7 @@ Besides simple logical volumes, LVM supports snapshots, logical volume caching, 
 
 ### Snapshots
 
-LVM allows you to take a snapshot of your system in a much more efficient way than a traditional backup. It does this efficiently by using a COW (copy-on-write) policy. The initial snapshot you take simply contains hard-links to the inodes of your actual data. So long as your data remains unchanged, the snapshot merely contains its inode pointers and not the data itself. Whenever you modify a file or directory that the snapshot points to, LVM automatically clones the data, the old copy referenced by the snapshot, and the new copy referenced by your active system. Thus, you can snapshot a system with 35GB of data using just 2GB of free space so long as you modify less than 2GB (on both the original and snapshot). In order to be able to create snapshots you need to have unallocated space in your volume group. Snapshot like any other volume will take up space in the volume group. So, if you plan to use snapshots for backing up your root partition do not allocate 100% of your volume group for root logical volume.
+LVM allows you to take a snapshot of your system in a much more efficient way than a traditional backup. It does this efficiently by using a COW (copy-on-write) policy. The initial snapshot you take simply contains hard-links to the inodes of your actual data. So long as your data remains unchanged, the snapshot merely contains its inode pointers and not the data itself. Whenever you modify a file or directory that the snapshot points to, LVM automatically clones the data, the old copy referenced by the snapshot, and the new copy referenced by your active system. Thus, you can snapshot a system with 35 GiB of data using just 2 GiB of free space so long as you modify less than 2 GiB (on both the original and snapshot). In order to be able to create snapshots you need to have unallocated space in your volume group. Snapshot like any other volume will take up space in the volume group. So, if you plan to use snapshots for backing up your root partition do not allocate 100% of your volume group for root logical volume.
 
 #### Configuration
 
@@ -689,7 +691,7 @@ With that volume, you may modify less than 100M of data, before the snapshot vol
 Reverting the modified 'pv' logical volume to the state when the 'snap01' snapshot was taken can be done with
 
 ```
-# lvconvert --merge /dev/vg0/snap01
+# lvconvert --merge /dev/mapper/vg0-snap01
 
 ```
 
@@ -832,9 +834,9 @@ The `use_lvmetad = 1` must be set in `/etc/lvm/lvm.conf`. This is the default no
 
 The `dm_mod` module should be automatically loaded. In case it does not, you can try:
 
- `/etc/mkinitcpio.conf:`  `MODULES=(dm_mod ...)` 
+ `/etc/mkinitcpio.conf`  `MODULES=(dm_mod ...)` 
 
-You will need to [rebuild](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") the initramfs to commit any changes you made.
+You will need to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") to commit any changes you made.
 
 *   Try preceding commands with *lvm* like this:
 

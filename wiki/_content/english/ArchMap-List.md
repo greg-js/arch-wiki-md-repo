@@ -24,7 +24,7 @@ Please add yourself to the end of the list using the following format:
     *   The country must be separated by a comma.
     *   The line should not end with a period.
 
-Anything that satisfies [this regular expression](https://github.com/guyfawcus/ArchMap/blob/55b91daa1010fa190ac5af5d0cf26bcb1d07ca95/archmap.py#L95-L113) will work. You can test it out using [this webiste](http://regexr.com/3h3u2) to be sure but please try to keep to the format defined above.
+Anything that satisfies [this regular expression](https://github.com/guyfawcus/ArchMap/blob/55b91daa1010fa190ac5af5d0cf26bcb1d07ca95/archmap.py#L95-L113) will work. You can test it out using [this website](http://regexr.com/3h3u2) to be sure but please try to keep to the format defined above.
 
 ## How to get your coordinates
 
@@ -1067,5 +1067,6 @@ You can use the following website to get your device's coordinates along with a 
 10.215677, -68.020392 "Oswald" # Valencia, Carabobo, Venezuela
 4.599795, -74.129656 "frealgagu" # Bogotá, Colombia
 37.348667, -121.93664499999998 "Taigrr" # California, USA
+15.3896076, 73.88307 "Rushikesh" # BITS Pilani, K K Birla Goa Campus, Goa, India
 
 ```

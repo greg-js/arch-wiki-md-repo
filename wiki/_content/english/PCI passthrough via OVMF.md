@@ -78,17 +78,20 @@ You will probably want to have a spare monitor or one with multiple input ports 
 
 ## Setting up IOMMU
 
-IOMMU is a system specific IO mapping mechanism and can be used with most devices. IOMMU is a generic name for Intel VT-d and AMD-Vi.
+**Note:** IOMMU is a generic name for Intel VT-d and AMD-Vi.
 
-Before you enable IOMMU, you might have to first enable (non-IOMMU) virtualisation (Intel VT-x/"Vanderpool" or AMD-V/"Pacifica") in your BIOS settings.
+Using IOMMU opens to features like PCI passthrough and memory protection from faulty or malicious devices, see [wikipedia:Input-output memory management unit#Advantages](https://en.wikipedia.org/wiki/Input-output_memory_management_unit#Advantages "wikipedia:Input-output memory management unit") and [Memory Management (computer programming): Could you explain IOMMU in plain English?](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
 
 ### Enabling IOMMU
 
-Ensure that AMD-Vi/Intel VT-d is enabled in your BIOS settings. Both normally show up alongside other CPU features (meaning they could be in an overclocking-related menu) either with their actual names ("VT-d" or "AMD-Vi") or in more ambiguous terms such as "Virtualization technology", which may or may not be explained in the manual.
+Ensure that AMD-Vi/Intel VT-d is support by the CPU and enabled in the BIOS settings. Both normally show up alongside other CPU features (meaning they could be in an overclocking-related menu) either with their actual names ("VT-d" or "AMD-Vi") or in more ambiguous terms such as "Virtualization technology", which may or may not be explained in the manual.
 
-You will also have to enable iommu support in the kernel itself through a [bootloader kernel option](/index.php/Kernel_parameters "Kernel parameters"). Depending on your type of CPU, use either `intel_iommu=on` for Intel CPUs (VT-d) or `amd_iommu=on` for AMD CPUs (AMD-Vi).
+Enable IOMMU support by setting the correct [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") depending on the type of CPU in use:
 
-You should also append the `iommu=pt` parameter. This will prevent Linux from touching devices which cannot be passed through.
+*   For Intel CPUs (VT-d) set `intel_iommu=on`
+*   For AMD CPUs (AMD-Vi) set `amd_iommu=on`
+
+You should also [append](/index.php/Append "Append") the `iommu=pt` parameter. This will prevent Linux from touching devices which cannot be passed through.
 
 After rebooting, check dmesg to confirm that IOMMU has been correctly enabled:
 

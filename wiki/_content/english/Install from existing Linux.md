@@ -81,9 +81,10 @@ When copying the filesystem root, use something like `cp -ax` or `rsync -axX`. T
 There are multiple tools which automate a large part of the steps described in the following subsections. See their respective homepages for detailed instructions.
 
 *   [arch-bootstrap](https://github.com/tokland/arch-bootstrap) (Bash)
+*   [archcx](https://github.com/m4rienf/ArchCX) (Bash, from Hetzner CX Rescue System)
+*   [digitalocean-debian-to-arch](https://github.com/gh2o/digitalocean-debian-to-arch) (repartition disk, DigitalOCean specific)
 *   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
 *   [vps2arch](https://github.com/drizzt/vps2arch) (Bash)
-*   [archcx](https://github.com/m4rienf/ArchCX) (Bash, from Hetzner CX Rescue System)
 
 The manual way is presented in the following subsections. The idea is to run an Arch system inside the host system, with the actual installation being executed from the Arch system. The nested system is contained inside a chroot.
 

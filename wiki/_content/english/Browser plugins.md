@@ -26,7 +26,7 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
 *   [2 PDF viewer](#PDF_viewer)
     *   [2.1 PDF.js](#PDF.js)
     *   [2.2 External PDF viewers](#External_PDF_viewers)
-*   [3 Online payment in China](#Online_payment_in_China)
+*   [3 UnionPay Online Pay](#UnionPay_Online_Pay)
 *   [4 Citrix](#Citrix)
 *   [5 Java (IcedTea)](#Java_.28IcedTea.29)
 *   [6 Pipelight](#Pipelight)
@@ -158,11 +158,11 @@ When using Firefox, you may need to change 2 values in `about:config`:
 
 Restart and it should work like a charm!
 
-## Online payment in China
+## UnionPay Online Pay
 
-Third-party online payment sites in China tend to use a "security plugin" for the password field. They are not supported anymore in Firefox 52+. You could try [palemoon](https://aur.archlinux.org/packages/palemoon/) for NPAPI support.
+**Note:** This plugin is NPAPI only. It should work in the [palemoon](https://aur.archlinux.org/packages/palemoon/) browser.
 
-*   [upeditor](https://aur.archlinux.org/packages/upeditor/) for UnionPay Online Pay (银联在线支付).
+[Install](/index.php/Install "Install") [upeditor](https://aur.archlinux.org/packages/upeditor/) package for the "security plugin" used by UnionPay Online Pay (银联在线支付).
 
 ## Citrix
 
@@ -170,7 +170,7 @@ See [Citrix](/index.php/Citrix "Citrix").
 
 ## Java (IcedTea)
 
-**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium, Opera and Firefox [52 and newer](https://support.mozilla.org/t5/Problems-with-add-ons-plugins-or/Why-do-Java-Silverlight-Adobe-Acrobat-and-other-plugins-no/ta-p/31069). [Firefox ESR](/index.php/Firefox#Installing "Firefox") will continue supporting NPAPI plugins until August 2018.
+**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium, Opera and Firefox. They still work in [Firefox ESR 52](/index.php/Firefox#Installing "Firefox"), which is supported until August 2018.
 
 To enable [Java](/index.php/Java "Java") support in your browser, you have two options: the open-source [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK "wikipedia:OpenJDK") (recommended) or Oracle's proprietary version. For details about why OpenJDK is recommended see [[1]](https://mailman.archlinux.org/pipermail/arch-general/2011-August/021671.html).
 
