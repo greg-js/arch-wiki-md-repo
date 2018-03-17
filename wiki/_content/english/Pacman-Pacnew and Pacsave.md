@@ -1,10 +1,9 @@
-When *pacman* removes a package that has a configuration file, it normally creates a backup copy of that config file and appends *.pacsave* to the name of the file. Likewise, when *pacman* upgrades a package which includes a new config file created by the maintainer differing from the currently installed file, it writes a *.pacnew* config file. *pacman* provides notice when these files are written.
+When *pacman* removes a package that has a configuration file, it normally creates a backup copy of that config file and appends *.pacsave* to the name of the file. Likewise, when *pacman* upgrades a package which includes a new config file created by the maintainer differing from the currently installed file, it saves a *.pacnew* file with the new configuration. *pacman* provides notice when these files are written.
 
 ## Contents
 
 *   [1 Why these files are created](#Why_these_files_are_created)
 *   [2 Package backup files](#Package_backup_files)
-    *   [2.1 Systemwide backup files](#Systemwide_backup_files)
 *   [3 Types explained](#Types_explained)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
@@ -16,7 +15,7 @@ When *pacman* removes a package that has a configuration file, it normally creat
 
 ## Why these files are created
 
-A *.pacnew* file may be created during a package upgrade (`pacman -Syu`, `pacman -Su` or `pacman -U`) to avoid overwriting a file which already exists and was previously modified by the user. When this happens a message like the following will appear in the output of pacman:
+A *.pacnew* file may be created during a package upgrade (`pacman -Syu`, `pacman -Su` or `pacman -U`) to avoid overwriting a file which already exists and was previously modified by the user. When this happens a message like the following will appear in the output of *pacman*:
 
 ```
 warning: /etc/pam.d/usermod installed as /etc/pam.d/usermod.pacnew
@@ -41,16 +40,7 @@ backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 ```
 
-### Systemwide backup files
-
-To prevent any package from overwriting a certain file, add the following line to `/etc/pacman.conf`:
-
-```
-NoUpgrade = absolute/path/to/file
-
-```
-
-Note that the path must not start with a slash.
+To prevent any package from overwriting a certain file, see [Pacman#Skip file from being upgraded](/index.php/Pacman#Skip_file_from_being_upgraded "Pacman").
 
 ## Types explained
 
@@ -88,11 +78,11 @@ If the user has modified one of the files specified in `backup` then that file w
 
 ## Locating .pac* files
 
-Pacman does not deal with *.pacnew* files automatically: you will need to maintain these yourself. A few tools are presented in the next section. To do this manually, first you will need to locate them. When upgrading or removing a large number of packages, updated *.pac** files may be missed. To discover whether any *.pac** files have been installed, use one of the following:
+Pacman does not deal with *.pacnew* files automatically: you must maintain these yourself. A few tools are presented in the next section. To do this manually, you will first need to locate them. When upgrading or removing a large number of packages, updated *.pac** files may be missed. To discover whether any *.pac** files have been installed, use one of the following:
 
-*   To just search where most global configurations are stored: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` or the entire disk: `$ find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` 
-*   Use [locate](/index.php/Locate "Locate") if you have installed it. First re-index the database: `# updatedb` Then: `$ locate --existing --regex "\.pac(new|save)$"` 
-*   Use pacman's log to find them: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of which files are currently in the filesystem nor of which files have already been removed; the above command will list all *.pac** files that have ever existed on your system. Use the `tail` command to get the 10 most recent *.pac** files: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log | tail` 
+*   To search within `/etc` where most global configurations are stored: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` or to search within the entire disk replacing `/etc` by `/` in the command above.
+*   If installed, [locate](/index.php/Locate "Locate") can also be used. First re-index the database: `# updatedb` Then run: `$ locate --existing --regex "\.pac(new|save)$"` 
+*   Use pacman's log to find them: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of the files currently in the filesystem nor the ones that have already been removed; the above command will list all *.pac** files that have ever existed on your system. In order to only get the 10 most recent *.pac** files, pipe the result to `tail`.
 
 ## Managing .pacnew files
 
@@ -113,10 +103,6 @@ You can use one of the following tools:
 *   **etc-update** — Arch port of Gentoo's *etc-update* utility, providing a simple CLI to view, merge and interactively edit changes. Trivial changes (such as comments) can be merged automatically.
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
-
-*   **etc-update-git** — Same as the above but based the latest version on GitHub of the *etc-update* script from Gentoo.
-
-	[https://github.com/gentoo/portage/blob/master/bin/etc-update](https://github.com/gentoo/portage/blob/master/bin/etc-update) || [etc-update-git](https://aur.archlinux.org/packages/etc-update-git/)
 
 *   **pacmarge** — A tool for automatically merging *.pacnew* files
 

@@ -27,7 +27,7 @@ Generate a certificate (this will be valid for 1 years, after which it needs to 
 
 ```
 # openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /var/lib/quassel/quasselCert.pem -out /var/lib/quassel/quasselCert.pem
-# chmod 444 /var/lib/quassel/quasselCert.pem
+# chown quassel:quassel /var/lib/quassel/quasselCert.pem
 
 ```
 
@@ -50,13 +50,15 @@ Now set up your IRC-servers and IRC-nicknames on the core.
 
 **Note:** As this is the first time you connected to the core, you should see a wizard where you can set up the first user-account. If you do not get this wizard, your settings might be messed up, see troubleshooting below.
 
-If you choose to use PostgreSQL as backend you will need to create a database and user for quasselcore.
+If you choose to use [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as backend you will need to create a database and user for quasselcore.
 
 ```
-[postgres]$ createdb quassel
-[postgres]$ psql -c "CREATE USER quassel WITH PASSWORD 'myPassword';"
+[postgres]$ psql -c "CREATE USER quassel WITH PASSWORD '*myPassword*';"
+[postgres]$ psql -c "CREATE DATABASE quassel WITH OWNER quassel ENCODING 'UTF8';"
 
 ```
+
+See also [PostgreSQL instruction on Quassel wiki](https://bugs.quassel-irc.org/projects/quassel-irc/wiki/PostgreSQL).
 
 Once it all works, you can [enable](/index.php/Enable "Enable") `quassel.service` to start automatically on system boot.
 

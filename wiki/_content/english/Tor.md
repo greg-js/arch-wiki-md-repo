@@ -55,11 +55,12 @@ Related articles
 *   [13 TorDNS](#TorDNS)
     *   [13.1 Using TorDNS for all DNS queries](#Using_TorDNS_for_all_DNS_queries)
 *   [14 Torsocks](#Torsocks)
-*   [15 Tips and tricks](#Tips_and_tricks)
-    *   [15.1 Kernel capabilities](#Kernel_capabilities)
-*   [16 Troubleshooting](#Troubleshooting)
-    *   [16.1 Problem with user value](#Problem_with_user_value)
-*   [17 See also](#See_also)
+*   [15 Transparent Torification](#Transparent_Torification)
+*   [16 Tips and tricks](#Tips_and_tricks)
+    *   [16.1 Kernel capabilities](#Kernel_capabilities)
+*   [17 Troubleshooting](#Troubleshooting)
+    *   [17.1 Problem with user value](#Problem_with_user_value)
+*   [18 See also](#See_also)
 
 ## Introduction
 
@@ -736,9 +737,11 @@ Usage example:
 
 ```
 $ torsocks elinks checkip.dyndns.org
-$ torsocks wget -qO- [https://check.torproject.org/](https://check.torproject.org/) | grep -i congratulations== Transparent Torification ==
+$ torsocks wget -qO- [https://check.torproject.org/](https://check.torproject.org/) | grep -i congratulations
 
 ```
+
+## Transparent Torification
 
 In some cases it is more secure and often easier to transparently torify an entire system instead of configuring individual applications to use Tor's socks port, not to mention preventing DNS leaks. Transparent torification can be done with [iptables](/index.php/Iptables "Iptables") in such a way that all outbound packets are redirected through Tor's *TransPort*, except the Tor traffic itself. Once in place, applications do not need to be configured to use Tor, though Tor's *SocksPort* will still work. This also works for DNS via Tor's *DNSPort*, but realize that Tor only supports TCP, thus UDP packets other than DNS cannot be sent through Tor and therefore must be blocked entirely to prevent leaks. Using iptables to transparently torify a system affords comparatively strong leak protection, but it is not a substitute for virtualized torification applications such as Whonix, or TorVM [[5]](https://www.whonix.org/wiki/Comparison_with_Others). Transparent torification also will not protect against fingerprinting attacks on its own, so it is recommended to use it in conjunction with the Tor Browser (search the AUR for the version you want: [https://aur.archlinux.org/packages/?K=tor-browser](https://aur.archlinux.org/packages/?K=tor-browser)) or to use an amnesic solution like [Tails](http://tails.boum.org/) instead. Applications can still learn your computer's hostname, MAC address, serial number, timezone, etc. and those with root privileges can disable the firewall entirely. In other words, transparent torification with iptables protects against accidental connections and DNS leaks by misconfigured software, it is not sufficient to protect against malware or software with serious security vulnerabilities.
 

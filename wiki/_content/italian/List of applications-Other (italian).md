@@ -719,7 +719,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **PCSXR** — Emulatore della PlayStation; Fork Debian dell'abbandonato progetto originale PCSX
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — Emulatore per PlayStation 2\. É ancora mantenuto e sviluppato.
 

@@ -82,10 +82,6 @@ The base desktop consists of [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_S
 
 These packages are not in the above mentioned groups:
 
-*   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — A simple user interface to access [libvirt](/index.php/Libvirt "Libvirt") virtual machines.
-
-	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
-
 *   **GNOME Initial Setup** — A simple, easy, and safe way to prepare a new system.
 
 	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
@@ -93,10 +89,6 @@ These packages are not in the above mentioned groups:
 *   **GNOME MultiWriter** — Write an ISO file to multiple USB devices at once.
 
 	[https://wiki.gnome.org/Apps/MultiWriter](https://wiki.gnome.org/Apps/MultiWriter) || [gnome-multi-writer](https://www.archlinux.org/packages/?name=gnome-multi-writer)
-
-*   **Recipes** — Recipe management application for GNOME.
-
-	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
 
 ## GNOME Sessions
 

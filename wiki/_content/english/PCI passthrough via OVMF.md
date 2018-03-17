@@ -281,7 +281,7 @@ OVMF is an open-source UEFI firmware for QEMU virtual machines. While it's possi
 
 [Libvirt](/index.php/Libvirt "Libvirt") is a wrapper for a number of virtualization utilities that greatly simplifies the configuration and deployment process of virtual machines. In the case of KVM and QEMU, the frontend it provides allows us to avoid dealing with the permissions for QEMU and make it easier to add and remove various devices on a live VM. Its status as a wrapper, however, means that it might not always support all of the latest qemu features, which could end up requiring the use of a wrapper script to provide some extra arguments to QEMU.
 
-After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf](https://www.archlinux.org/packages/?name=ovmf), [firewalld](https://www.archlinux.org/packages/?name=firewalld), and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager), add the path to your OVMF firmware image and runtime variables template to your libvirt config so `virt-install` or `virt-manager` can find those later on.
+After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf](https://www.archlinux.org/packages/?name=ovmf), and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager), add the path to your OVMF firmware image and runtime variables template to your libvirt config so `virt-install` or `virt-manager` can find those later on.
 
  `/etc/libvirt/qemu.conf` 
 ```
@@ -881,7 +881,7 @@ If your issue is not mentioned below, you may want to browse [QEMU#Troubleshooti
 *   This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers.
 *   This may also fix problems under linux guests.
 
-Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '123456789ab') as opposed to longer or shorter strings.
+Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '1234567890ab') as opposed to longer or shorter strings.
 
  `$ virsh edit [vmname]` 
 ```

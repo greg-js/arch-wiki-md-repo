@@ -253,7 +253,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium).
 
-	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/) or [iridium-bin](https://aur.archlinux.org/packages/iridium-bin/)
+	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
 
 *   **[Opera](/index.php/Opera "Opera")** — Proprietary browser developed by Opera Software.
 

@@ -1,3 +1,9 @@
+Related articles
+
+*   [AUR](/index.php/AUR "AUR")
+*   [ZFS](/index.php/ZFS "ZFS")
+*   [Fluxbox](/index.php/Fluxbox "Fluxbox")
+
 **Warning:** Lumina DE is primarily targeted at FreeBSD, not Linux.
 
 The Lumina Desktop Environment (Lumina for short) is a lightweight, XDG-compliant, BSD-licensed desktop environment that focuses specifically on streamlining the ability to get work done while minimizing system overhead. As of version 0.8.0+, it requres Qt 5, the Fluxbox window manager, and uses a small number of X utilities for various tasks, such as numlockx and xscreensaver.
@@ -8,7 +14,7 @@ Lumina's features include:
 
 *   Intelligent "favorites" system for creating quick shortcuts to applications, files, and directories.
 
-*   ZFS file restore functionality through the "Insight" file manager.
+*   [ZFS](/index.php/ZFS "ZFS") file restore functionality through the "Insight" file manager.
 
 *   Desktop system is plugin-based, which is similar to Android or other modern operating systems.
 

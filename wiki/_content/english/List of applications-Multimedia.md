@@ -762,6 +762,10 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
 
+*   **soundKonverter** — Qt-based GUI front-end to various audio converters.
+
+	[soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **XCFA** — Tool to extract the contens of audio CDs and convert them to various formats.
 
 	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)

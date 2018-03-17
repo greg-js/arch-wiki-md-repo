@@ -123,6 +123,15 @@ $ go-mtpfs ~/mnt
 
 ```
 
+To unmount the device:
+
+```
+$ fusermount -u ~/mnt
+
+```
+
+**Note:** When using multiple devices you may want to use the `-d` flag to specify a device (id can be found by running `mtp-detect`)
+
 ### mtpfs
 
 **Note:** The following is likely to not work and you might have to resort to [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").

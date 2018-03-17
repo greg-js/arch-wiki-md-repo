@@ -9,6 +9,7 @@ ssmtp is unmaintained. Consider using something like [msmtp](/index.php/Msmtp "M
 *   [3 Security](#Security)
 *   [4 Sending email](#Sending_email)
     *   [4.1 Attachments](#Attachments)
+    *   [4.2 Mail to Local Users](#Mail_to_Local_Users)
 *   [5 References](#References)
 
 ## Installation
@@ -64,7 +65,9 @@ mainuser:username@gmail.com:smtp.gmail.com:587
 
 To test whether the Gmail server will properly forward your email:
 
- `$ echo test | mail -v -s "testing ssmtp setup" tousername@somedomain.com` 
+ `$ echo -n 'Subject: test
+
+Testing ssmtp' | sendmail -v tousername@example.com` 
 
 Change the 'From' text by editing `/etc/passwd` to receive mail from 'root at myhost' instead of just 'root'.
 
@@ -90,24 +93,30 @@ Because your email password is stored as cleartext in `/etc/ssmtp/ssmtp.conf`, i
 To send email from the terminal, do:
 
 ```
-$ echo "this is the body" | mail -s "Subject" username@somedomain.com
+$ echo -e "Subject: this is the subject
+
+this is the body" | mail user@example.com
 
 ```
 
 or interactively as:
 
 ```
-$ mail username@somedomain.com
+$ sendmail username@example.com
+Subject: this is my subject
+CC: optional@example.com
+
+Now I can type the body here
 
 ```
 
-**Note:** When using mail interactively, after typing the Subject and hitting enter, you type the body. Hit `Ctrl`+`d` on a blank line to end your message and automatically send it out.
+**Note:** When using mail interactively, after typing the *Subject: subject* and other headers, hit enter twice, and then type the body. Hit `Ctrl`+`d` on a blank line to end your message and automatically send it out.
 
 An alternate method for sending emails is to create a text file and send it with *ssmtp* or *mail*
 
  `test-mail.txt` 
 ```
-To:username@somedomain.com
+To:username@example.com
 From:youraccount@gmail.com
 Subject: Test
 
@@ -117,20 +126,48 @@ This is a test mail.
 Send the `test-mail.txt` file
 
 ```
-$ mail username@somedomain.com < test-mail.txt
+$ sendmail -t < test-mail.txt
 
 ```
+
+Some users might prefer the syntax of *mail* from [s-nail](https://www.archlinux.org/packages/?name=s-nail), [mailutils](https://www.archlinux.org/packages/?name=mailutils), or other *mailx* providers instead. For example, *mail* has options to provide the subject as an argument. *mail* requires *sendmail* and can use [ssmtp](https://www.archlinux.org/packages/?name=ssmtp) as *sendmail*.
 
 ### Attachments
 
 If you need to be able to add attachments, install and configure [Mutt](/index.php/Mutt "Mutt") and [Msmtp](/index.php/Msmtp "Msmtp") and then go see the tip at [nixcraft](http://www.cyberciti.biz/tips/sending-mail-with-attachment.html).
 
-Alternatively, you can attach using *uuencode*:
+Alternatively, you can attach using *uuencode* from [sharutils](https://www.archlinux.org/packages/?name=sharutils). To attach 'file.txt' as 'myfile.txt':
 
 ```
-$ uuencode file.txt file.txt | mail user@domain.com
+$ uuencode file.txt myfile.txt | sendmail user@example.com
 
 ```
+
+### Mail to Local Users
+
+Messages sent to local users (or any other address not ending in *@fqdn* are treated in one of two ways
+
+*   destination user has UID < 1000 - The address is replaced by the address defined by `root=user@fqdn` in `/etc/ssmtp/ssmtp.conf`
+*   destination user has UID ≥ 1000 or the user is unknown - The the value from `rewriteDomain=` in `/etc/ssmtp/ssmtp.conf` is appended to the end of the user id.
+
+This can lead to problems if local users on your system aren't also valid users at your `rewriteDomain`, but are receiving mail from system services, esp if your rewrite domain is a public service like `gmail.com`.
+
+To work around this, you can use *mail* from [s-nail](https://www.archlinux.org/packages/?name=s-nail). The *mail* command can read aliases defined in `/etc/mail.rc`. Example:
+
+ `$ grep alias /etc/mail.rc` 
+```
+alias git git<username@example.com>
+alias archuser 'My Name'<someone@example.com>
+```
+
+You can then pipe messages into *mail* instead of into *sendmail*.
+
+```
+$ echo -e "Hey archuser." | mail archuser
+
+```
+
+**Note:** You might be tempted to symlink *sendmail* to `/bin/mail`. Don't do this. *sendmail* and *mail* have different syntax for both arguments and standard input. It is better to find the processes that are using sendmail directly and configure them to use mail instead.
 
 ## References
 

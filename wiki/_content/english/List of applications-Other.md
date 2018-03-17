@@ -227,7 +227,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 	[https://wiki.gnome.org/Apps/Calendar](https://wiki.gnome.org/Apps/Calendar) || [gnome-calendar](https://www.archlinux.org/packages/?name=gnome-calendar)
 
-*   **Clocks** — Clocks application for GNOME.
+*   **Clocks** — Clocks application for GNOME, including alarm, stopwatch and timer functionality.
 
 	[https://wiki.gnome.org/Apps/Clocks](https://wiki.gnome.org/Apps/Clocks) || [gnome-clocks](https://www.archlinux.org/packages/?name=gnome-clocks)
 

@@ -40,9 +40,10 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
         *   [2.1.1 Comparing versions before updating](#Comparing_versions_before_updating)
         *   [2.1.2 Skip package from being upgraded](#Skip_package_from_being_upgraded)
         *   [2.1.3 Skip package group from being upgraded](#Skip_package_group_from_being_upgraded)
-        *   [2.1.4 Skip files from being installed to system](#Skip_files_from_being_installed_to_system)
-        *   [2.1.5 Maintain several configuration files](#Maintain_several_configuration_files)
-        *   [2.1.6 Hooks](#Hooks)
+        *   [2.1.4 Skip file from being upgraded](#Skip_file_from_being_upgraded)
+        *   [2.1.5 Skip files from being installed to system](#Skip_files_from_being_installed_to_system)
+        *   [2.1.6 Maintain several configuration files](#Maintain_several_configuration_files)
+        *   [2.1.7 Hooks](#Hooks)
     *   [2.2 Repositories and mirrors](#Repositories_and_mirrors)
         *   [2.2.1 Package security](#Package_security)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -354,7 +355,7 @@ The `depends` file lists the packages this package depends on, while `desc` has 
 
 ### Cleaning the package cache
 
-*Pacman* stores its downloaded packages in `/var/cache/pacman/pkg/` and does not remove the old or uninstalled versions automatically, therefore it is necessary to deliberately clean up that folder periodically to prevent such folder to grow indefinitely in size.
+*Pacman* stores its downloaded packages in `/var/cache/pacman/pkg/` and does not remove the old or uninstalled versions automatically. Therefore, it is necessary to deliberately clean up that folder periodically to prevent such folder to grow indefinitely in size.
 
 The built-in option to remove all the cached packages that are not currently installed is:
 
@@ -370,7 +371,7 @@ The built-in option to remove all the cached packages that are not currently ins
 
 Because of the above limitations, consider an alternative for more control over which packages, and how many, are deleted from the cache:
 
-The *paccache* script, provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package itself, deletes all cached versions of each package regardless of whether they're installed or not, except for the most recent 3, by default:
+The *paccache* script, provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package itself, deletes all cached versions of each package regardless of whether they are installed or not, except for the most recent 3, by default:
 
 ```
 # paccache -r
@@ -531,6 +532,17 @@ As with packages, skipping a whole package group is also possible:
 IgnoreGroup=gnome
 
 ```
+
+#### Skip file from being upgraded
+
+All files listed with a `NoUpgrade` directive will never be touched during a package install/upgrade, and the new files will be installed with a *.pacnew* extension.
+
+```
+NoUpgrade=*path/to/file*
+
+```
+
+**Note:** The path refers to files in the package archive. Therefore, do not include the leading slash.
 
 #### Skip files from being installed to system
 

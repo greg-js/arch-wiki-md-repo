@@ -1068,5 +1068,6 @@ You can use the following website to get your device's coordinates along with a 
 4.599795, -74.129656 "frealgagu" # Bogotá, Colombia
 37.348667, -121.93664499999998 "Taigrr" # California, USA
 15.3896076, 73.88307 "Rushikesh" # BITS Pilani, K K Birla Goa Campus, Goa, India
+40.70872222, -73.60250000 "pigeoncapo" # Hempstead, New York, USA
 
 ```

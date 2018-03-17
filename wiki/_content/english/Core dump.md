@@ -23,12 +23,12 @@ Users may wish to disable automatic core dumps for a number of reasons:
 
 [sysctl](/index.php/Sysctl "Sysctl") can be used to set the `kernel.core_pattern` to nothing to disable core dump handling. Create this file[[1]](https://github.com/systemd/systemd/issues/659#issuecomment-328372788):
 
- `/usr/lib/sysctl.d/51-coredump-disable.conf`  `kernel.core_pattern=|/bin/false` 
+ `/etc/sysctl.d/50-coredump.conf`  `kernel.core_pattern=|/bin/false` 
 
 To apply the setting immediately, use `systctl`:
 
 ```
-# sysctl -p /usr/lib/sysctl.d/51-coredump-disable.conf
+# sysctl -p /etc/sysctl.d/50-coredump.conf
 
 ```
 

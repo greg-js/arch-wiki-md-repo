@@ -127,7 +127,7 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 *   Resize/create/delete logical and physical volumes online. File systems on them still need to be resized, but some (such as ext4) support online resizing.
 *   Online/live migration of LV being used by services to different disks without having to restart services.
 *   Snapshots allow you to backup a frozen copy of the file system, while keeping service downtime to a minimum.
-*   Support for various device-mapper targets, including transparent filesystem encryption and caching of frequently used data. This allows creating a system with (one or more) physical disks (encrypted with LUKS) and [LVM on top](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") to allow for easy resizing and management of separate volumes for */*, */home*,*/backup*, etc. without the hassle of entering a key multiple times on boot.
+*   Support for various device-mapper targets, including transparent filesystem encryption and caching of frequently used data. This allows creating a system with (one or more) physical disks (encrypted with LUKS) and [LVM on top](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") to allow for easy resizing and management of separate volumes (e.g. for `/`, `/home`, `/backup`, etc.) without the hassle of entering a key multiple times on boot.
 
 ## Disadvantages
 
@@ -474,7 +474,7 @@ Last, you need to shrink the partition with your favorite [partitioning tool](/i
 
 #### Logical volumes
 
-**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r, --resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
+**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r`/`--resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
 
 ##### Growing or shrinking with lvresize
 
@@ -535,7 +535,7 @@ Note: *xfs_growfs* takes a mount point as argument. See [xfs_growfs(8)](https://
 
 ##### Resizing the file system separately
 
-If not using the `-r, --resizefs` option to `lvresize`, `lvextend` or `lvreduce`, or using a file system unsupported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (e.g. [Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")), you need to manually resize the file system before shrinking the LV or after expanding it.
+If not using the `-r`/`--resizefs` option to `lvresize`, `lvextend` or `lvreduce`, or using a file system unsupported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (e.g. [Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")), you need to manually resize the file system before shrinking the LV or after expanding it.
 
 **Warning:** Not all file systems support resizing without loss of data and/or resizing online.
 
@@ -686,7 +686,7 @@ You create snapshot logical volumes just like normal ones.
 
 ```
 
-With that volume, you may modify less than 100M of data, before the snapshot volume fills up.
+With that volume, you may modify less than 100 MiB of data, before the snapshot volume fills up.
 
 Reverting the modified 'pv' logical volume to the state when the 'snap01' snapshot was taken can be done with
 
@@ -791,7 +791,7 @@ For example:
 
 ```
 
-will create a 20GiB mirrored logical volume named "myraid1vol" in VolGroup00 on `/dev/sda2` and `/dev/sdb2`.
+will create a 20 GiB mirrored logical volume named "myraid1vol" in VolGroup00 on `/dev/sda2` and `/dev/sdb2`.
 
 #### Configure mkinitcpio for RAID
 

@@ -540,7 +540,7 @@
 
 *   **PCSXR** — Эмулятор PlayStation; Debian-форк заброшенного оригинального PCSX
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — Эмулятор PlayStation 2\. До сих пор поддерживается и разрабатывается. Требует наличия файлов BIOS
 

@@ -388,7 +388,7 @@ For more information see [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8
 
 As an early Unix archiving format, .tar files—known as "tarballs"—are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are compressed tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") *tar* program by default.
 
-For .tar archives, *tar* by default will extract the file according to its extension:
+For *.tar* archives, *tar* by default will extract the file according to its extension:
 
 ```
 $ tar xvf *file.EXTENSION*
@@ -406,6 +406,7 @@ Forcing a given format:
 `bzip2 -cd *file*.bz2 | tar xvf -` |
 | `*file*.tar.xz` | `tar xvJf *file*.tar.xz`
 `xz -cd *file*.xz | tar xvf -` |
+| `*file*.tar.zst` | `tar -I zstd xvf *file*.tar.zst` |
 
 The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
 

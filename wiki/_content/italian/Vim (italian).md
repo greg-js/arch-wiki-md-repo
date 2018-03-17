@@ -163,7 +163,7 @@ Per salvare e/o uscire, sarà necessario usare la modalità *Ex*. I comandi dell
 
 ## Configurazione
 
-Il file di configurazione personale di vim si trova nella cartella home dell'utente `~/.vimrc`. Gli utenti esperti di vim tendono a tenere un `~/.vimrc` molto ben strutturato. La configurazione globale di vim è situata in `/etc/vimrc`. La variabile di ripiego `$VIM` è definita come `/usr/share/vim/`. Ad esempio per creare uno schema di colori globale il file `*.vim` dello shema di colori dovrebbe essere salvato in `/usr/share/vim/vimfiles/`.
+Il file di configurazione personale di vim si trova nella cartella home dell'utente `~/.vimrc`. Gli utenti esperti di vim tendono a tenere un `~/.vimrc` molto ben strutturato. La configurazione globale di vim è situata in `/etc/vimrc`. La variabile di ripiego `$VIM` è definita come `/usr/share/vim/`. Ad esempio per creare uno schema di colori globale il file `*.vim` dello schema di colori dovrebbe essere salvato in `/usr/share/vim/vimfiles/`.
 
 Correntemente, la configurazione globale di vim in Arch Linux è molto basilare a differenza delle configurazioni di default di vim nelle altre distribuzioni. Per ottenere i comportamenti comunemente utilizzati (come evidenziare la sintassi, il ritorno alla linea dell'ultima modifica...), utilizzare il file di configurazione d'esempio:
 
@@ -175,7 +175,7 @@ cp /usr/share/vim/vim73/vimrc_example.vim /etc/vimrc
 
 ### File di backup
 
-Vim per default crea un backup di un file modificato nella stesa cartella del file chiamandolo `nomefile~`. Per evitare di ingombrare, alcuni utenti impostano vim per utilizzare una apposita cartella per i backup:
+Vim per default crea un backup di un file modificato nella stessa cartella del file chiamandolo `nomefile~`. Per evitare di ingombrare, alcuni utenti impostano vim per utilizzare una apposita cartella per i backup:
 
 ```
 set backupdir=~/.vim/backup,/tmp

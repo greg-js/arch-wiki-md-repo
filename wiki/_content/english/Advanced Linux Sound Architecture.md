@@ -54,6 +54,10 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
     *   [7.2 Simultaneous output](#Simultaneous_output)
     *   [7.3 Keyboard volume control](#Keyboard_volume_control)
     *   [7.4 Virtual sound device using snd-aloop](#Virtual_sound_device_using_snd-aloop)
+    *   [7.5 Debugging ALSA](#Debugging_ALSA)
+        *   [7.5.1 Retrieving the driver state](#Retrieving_the_driver_state)
+        *   [7.5.2 Reconfiguring input/output ports](#Reconfiguring_input.2Foutput_ports)
+        *   [7.5.3 Resetting codecs](#Resetting_codecs)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -924,6 +928,29 @@ mplayer -ao alsa:device=hw=2,0,0 "_tmp.wav";
 rm "_tmp.wav";
 
 ```
+
+### Debugging ALSA
+
+#### Retrieving the driver state
+
+The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package also contains the `alsa-info.sh` command, which can be used to gather detailed data on the ALSA driver and user-space state.
+
+See [ALSA bug tracking](http://alsa-project.org/main/index.php/Bug_Tracking) for more info.
+
+#### Reconfiguring input/output ports
+
+The [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package contains the `hdajackretask` tool, which can be used (on Intel HDA cards) to reconfigure the sound card input/output ports; for instance, to turn a microphone jack into a headphone jack.
+
+#### Resetting codecs
+
+The ALSA driver can fully reconfigure attached codecs (the parts of the sound system that actually process audio streams), by doing:
+
+```
+# echo 1 > /sys/class/sound/*card*/reconfig
+
+```
+
+Before doing this, all processes using the ALSA driver (such as [Pulseaudio](/index.php/Pulseaudio#Running "Pulseaudio") or [JACK](/index.php/JACK "JACK")) must be stopped.
 
 ## See also
 

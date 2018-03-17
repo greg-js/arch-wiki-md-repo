@@ -268,7 +268,7 @@ An emulator is a program which serves to replicate the functions of another plat
 **Note:** disable "frame skipping" to avoid flickering in games
 
 *   [PCSX2](http://www.pcsx2.net/) - PlayStation 2 emulator it is still being maintained and developed.
-*   **PCSXR** - Debian fork of the abandoned original PCSX. [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+*   **PCSXR** - Debian fork of the abandoned original PCSX. [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 *   **ScummVM** - Virtual machine for old school adventures, available in extra. [scummvm](https://www.archlinux.org/packages/?name=scummvm)
 *   [MAME](http://mamedev.org/) - Multiple Arcade Machine Emulator (MAME). Can be obtained using pacman, [sdlmame](https://www.archlinux.org/packages/?name=sdlmame).
 *   [snes-9x](http://www.snes9x.com/) - portable, freeware Super Nintendo Entertainment System (SNES) emulator.

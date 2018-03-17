@@ -36,7 +36,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [6.2 systemd service configuration](#systemd_service_configuration)
     *   [6.3 Letting NetworkManager start a connection](#Letting_NetworkManager_start_a_connection)
     *   [6.4 Gnome configuration](#Gnome_configuration)
-*   [7 Routing all client traffic through the server](#Routing_all_client_traffic_through_the_server)
+*   [7 Routing client traffic through the server](#Routing_client_traffic_through_the_server)
     *   [7.1 Firewall configuration](#Firewall_configuration)
         *   [7.1.1 ufw](#ufw)
         *   [7.1.2 iptables](#iptables)
@@ -466,41 +466,49 @@ See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/
 
 If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The client config profile](#The_client_config_profile), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
 
-## Routing all client traffic through the server
+## Routing client traffic through the server
 
-**Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
-
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
-push "dhcp-option DNS 8.8.8.8"
 
 ```
 
-Change `8.8.8.8` to your preferred DNS IP address if configured to run on the same box as the server or else leave it at 8.8.8.8 to use google's DNS.
-
-If you have problems with non responsive DNS after connecting to server, install [BIND](/index.php/BIND "BIND") as simple DNS forwarder and push the IP address of the OpenVPN server as DNS to clients.
-
-After setting up the configuration file, one must [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") on the server. Additionally, the server's firewall will need to be set up to allow VPN traffic through it, which is described below for both [ufw](/index.php/Ufw "Ufw") and [iptables](/index.php/Iptables "Iptables").
-
-To allow clients to be able to reach other (private) subnets behind the server, you may want to use the `push "route <address pool> <subnet>"` option:
+Use the `push "route <address pool> <subnet>"` option to allow clients reaching other subnets/devices behind the server:
 
 ```
-push "route 172.10.142.0 255.255.255.0"
-push "route 172.20.142.0 255.255.255.0"
+push "route 192.168.1.0 255.255.255.0"
+push "route 192.168.2.0 255.255.255.0"
 
 ```
+
+You may want to push local [DNS](/index.php/DNS "DNS") settings to clients (e.g. the DNS-server of the router and domain prefix *.internal*):
+
+**Note:** You may need to use a simple [DNS](/index.php/DNS "DNS") forwarder like [BIND](/index.php/BIND "BIND") and push the IP address of the OpenVPN server as DNS to clients.
+
+```
+push "dhcp-option DNS 192.168.1.1"
+push "dhcp-option DOMAIN internal"
+
+```
+
+After setting up the configuration file, [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") on the server. Additionally, the server's [firewall](/index.php/Firewall "Firewall") needs to be adjusted to allow VPN traffic, which is described below for both [ufw](#ufw) and [iptables](#iptables).
+
+**Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
 ### Firewall configuration
 
 #### ufw
 
-In order to configure your ufw settings for VPN traffic first add the following to `/etc/default/ufw`:
+In order to allow [ufw](/index.php/Ufw "Ufw") forwarding (VPN) traffic [append](/index.php/Append "Append") the following to `/etc/default/ufw`:
 
  `/etc/default/ufw`  `DEFAULT_FORWARD_POLICY="ACCEPT"` 
 
-Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Do not forget to change the IP/subnet mask to match the one in `/etc/openvpn/server/server.conf`. The adapter ID in the example is generically called `eth0` so edit it for your system accordingly.
+Change `/etc/ufw/before.rules`, and [append](/index.php/Append "Append") the following code after the header and before the "*filter" line:
+
+*   Change the IP/subnet mask to match the `server` set in the OpenVPN server configuration.
+*   Change the [network interface](/index.php/Network_configuration#Check_the_connection "Network configuration") to the connection used by OpenVPN server.
 
  `/etc/ufw/before.rules` 
 ```
@@ -508,21 +516,25 @@ Now change `/etc/ufw/before.rules`, and add the following code after the header 
 *nat
 :POSTROUTING ACCEPT [0:0]
 
-# Allow traffic from clients to eth0
--A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+# Allow traffic from clients to the interface
+-A POSTROUTING -s 10.8.0.0/24 -o *interface* -j MASQUERADE
 
 # do not delete the "COMMIT" line or the NAT table rules above will not be processed
 COMMIT
+
+# Don't delete these required lines, otherwise there will be errors
+*filter
+..
 ```
 
-Open OpenVPN port 1194:
+Make sure to open the chosen OpenVPN port (default 1194/udp):
 
 ```
-# ufw allow 1194
+# ufw allow 1194 udp
 
 ```
 
-Lastly, reload UFW:
+To apply the changes. [reload](/index.php/Reload "Reload")/[restart](/index.php/Restart "Restart") ufw:
 
 ```
 # ufw reload
@@ -531,7 +543,7 @@ Lastly, reload UFW:
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[6]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your [iptables](/index.php/Iptables "Iptables") firewall of your server, first create an iptables rule for NAT forwarding [[6]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
@@ -667,7 +679,13 @@ route 192.168.4.0 255.255.255.0
 
 ### Connect clients and client LANs
 
-By default clients will not see each other. To allow IP packets to flow between clients and/or client LANs, add a client-to-client directive to the server configuration file: `/etc/openvpn/server/server.conf`  `client-to-client` 
+By default clients will not see each other. To allow IP packets to flow between clients and/or client LANs, add a client-to-client directive to the server configuration file:
+
+ `/etc/openvpn/server/server.conf` 
+```
+client-to-client
+
+```
 
 In order for another client or client LAN to see a specific client LAN, you will need to add a push directive for each client subnet to the server configuration file (this will make the server announce the available subnet(s) to other clients):
 
@@ -676,12 +694,11 @@ In order for another client or client LAN to see a specific client LAN, you will
 client-to-client
 push "route 192.168.4.0 255.255.255.0"
 push "route 192.168.5.0 255.255.255.0"
-.
-.
+..
 
 ```
 
-**Note:** As always, make sure that the routing is properly configured.
+**Note:** You may need to adjust the [firewall](#Firewall_configuration) to allowing client traffic passing through the VPN server.
 
 ## DNS
 

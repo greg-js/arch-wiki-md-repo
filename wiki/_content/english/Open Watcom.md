@@ -161,3 +161,5 @@ One area where GCC is stronger than Open Watcom is language support. To mitigate
 ## See also
 
 The Open Watcom community is relatively small, with moderate activity on [Reddit](http://www.reddit.com/r/OpenWatcom/). The primary discussions are done on the "contributors" and "users.c_cpp" groups on the Open Watcom [newsgroups](news://news.openwatcom.org/) a third option is the user forums on [sourceforge](http://sourceforge.net/p/openwatcom/discussion/).
+
+For continously up-to-date info, check out the Open Watcom v2 [wiki](https://github.com/open-watcom/open-watcom-v2/wiki) on Github.

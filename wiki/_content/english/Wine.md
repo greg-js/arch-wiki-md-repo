@@ -32,16 +32,15 @@ Related articles
     *   [4.6 Execute Windows binaries with wine implicitly](#Execute_Windows_binaries_with_wine_implicitly)
     *   [4.7 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
     *   [4.8 Changing the language](#Changing_the_language)
-    *   [4.9 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
-    *   [4.10 16-bit programs](#16-bit_programs)
-    *   [4.11 Burning optical media](#Burning_optical_media)
-    *   [4.12 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.13 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
-    *   [4.14 Show FPS overlay in games](#Show_FPS_overlay_in_games)
-    *   [4.15 Microsoft Office](#Microsoft_Office)
-    *   [4.16 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
-    *   [4.17 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
-    *   [4.18 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
+    *   [4.9 16-bit programs](#16-bit_programs)
+    *   [4.10 Burning optical media](#Burning_optical_media)
+    *   [4.11 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
+    *   [4.12 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
+    *   [4.13 Show FPS overlay in games](#Show_FPS_overlay_in_games)
+    *   [4.14 Microsoft Office](#Microsoft_Office)
+    *   [4.15 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
+    *   [4.16 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
+    *   [4.17 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -296,14 +295,11 @@ $ winetricks
 
 ### CSMT
 
-Since 2013 Wine developers have been experimenting with [stream/worker thread optimizations](http://www.winehq.org/pipermail/wine-devel/2013-September/101106.html). You may experience an enormous performance improvement by using this experimental tweak. Many games may run as fast as on Windows or even faster. This Wine tweak is known as CSMT and works with NVidia and AMD graphics cards.
-
-Since Wine 3.3, CSMT is enabled by default. For versions lower than 3.3, CSMT support needs to be enabled manually. For vanilla wine run `wine regedit` and set the DWORD value for *HKEY_CURRENT_USER -> Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
+CSMT is a technology used by Wine to use a separate thread for the OpenGL calls to improve performance noticeably. Since Wine 3.3, CSMT is enabled by default. However, CSMT support needs to be enabled manually for Wine versions lower than 3.3\. For vanilla Wine run `wine regedit` and set the DWORD value for *HKEY_CURRENT_USER -> Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
 
 Further information:
 
 *   [Phoronix Forum discussion](http://www.phoronix.com/forums/showthread.php?93967-Wine-s-Big-Command-Stream-D3D-Patch-Set-Updated/page3&s=7775d7c3d4fa698089d5492bb7b1a435) with the CSMT developer Stefan Dösinger
-*   [Here](https://www.youtube.com/playlist?list=PL0P2a_sII2eTd8uq-azTNpQjiFLqBhDjg) you find some game videos running with CSMT enabled
 
 ### Unregister existing Wine file associations
 
@@ -347,13 +343,16 @@ Please note Wine will still create new file associations and even recreate the f
 
 ### Prevent new Wine file associations
 
-To prevent wine from creating any file associations edit your `$WINEPREFIX/system.reg` file, Search for `winemenubuilder` and remove `-a`, so you will get:
+Prevent wine from creating any file associations by editing the registry:
 
- `$WINEPREFIX/system.reg` 
+ `associations.reg` 
 ```
-[Software\\Microsoft\\Windows\\CurrentVersion\\RunServices]
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices]
 "winemenubuilder"="C:\\windows\\system32\\winemenubuilder.exe -r"
 ```
+
+Add this to your Wine registry, by running `wine regedit associations.reg`, or alternatively by running `wine regedit` and importing it from the menu in *Registry > Import Registry File*.
 
 This has to be done for each WINEPREFIX which should not update file associations.
 
@@ -366,7 +365,9 @@ $ export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 ### Execute Windows binaries with wine implicitly
 
-The wine package installs a binfmt file which will allow you to run Windows programs directly (e.g. `./myprogram.exe` will launch as if you had typed `wine ./myprogram.exe`). All you have to do in order to use this is to [start/enable](/index.php/Start/enable "Start/enable") `systemd-binfmt.service` after installing the wine package.
+The [wine](https://www.archlinux.org/packages/?name=wine) package installs a *binfmt* file which will allow you to run Windows programs directly, e.g. `*./myprogram.exe*` will launch as if you had typed `wine *./myprogram.exe*`. All you have to do in order to use this is to [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `systemd-binfmt.service`.
+
+**Note:** Make sure the Windows binary is executable, otherwise the binary will not be executed: e.g. run `chmod +x *windows-binary*`.
 
 ### Dual Head with different resolutions
 
@@ -389,35 +390,6 @@ For instance
 $ LC_ALL=it_IT.UTF-8 wine */path/to/program*
 
 ```
-
-### Using Wine as an interpreter for Win16/Win32 binaries
-
-It is also possible to tell the kernel to use Wine as an interpreter for all Win16/Win32 binaries:
-
-```
-# echo ':DOSWin:M::MZ::/usr/bin/wine:' > /proc/sys/fs/binfmt_misc/register
-
-```
-
-To make the setting permanent, create the `/etc/binfmt.d/wine.conf` file with the following content:
-
- `/etc/binfmt.d/wine.conf` 
-```
-# Start WINE on Windows executables
-:DOSWin:M::MZ::/usr/bin/wine:
-```
-
-[systemd](/index.php/Systemd "Systemd") automatically mounts the `/proc/sys/fs/binfmt_misc` filesystem using `proc-sys-fs-binfmt_misc.mount` (and automount) and runs the `systemd-binfmt.service` to load your settings.
-
-Try it out by running a Windows program:
-
-```
-$ chmod +x *exefile.exe*
-$ ./*exefile.exe*
-
-```
-
-If all went well, *exefile.exe* should run.
 
 ### 16-bit programs
 
@@ -558,6 +530,10 @@ These have their own communities and websites, and are **not supported** by grea
 *   **Q4Wine** — Graphical prefix manager for Wine. Can export [Qt](/index.php/Qt "Qt") themes into the Wine configuration for better integration.
 
 	[q4wine](https://aur.archlinux.org/packages/q4wine/) || [https://sourceforge.net/projects/q4wine/](https://sourceforge.net/projects/q4wine/)
+
+*   **Lutris** — Gaming launcher for all types of games, including Wine games (with prefix management), native Linux games and emulators.
+
+	[lutris](https://aur.archlinux.org/packages/lutris/) || [https://lutris.net/](https://lutris.net/)
 
 ## See also
 

@@ -16,11 +16,11 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev) or [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks).
+[Install](/index.php/Install "Install") the package [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)(c++) or [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)(python).
 
 ## Setup
 
-Shadowsocks configuration may be done with a JSON formatted file. The following example configuration is included in the package:
+Shadowsocks configuration may be done with a JSON formatted file. Example configuration:
 
  `/etc/shadowsocks/example.json` 
 ```
@@ -52,6 +52,8 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
 | method | see [Encryption](https://github.com/shadowsocks/shadowsocks/wiki/Encryption) |
 | fast_open | use [TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open), true / false |
 | workers | number of workers |
+
+**Tip:** refer to CONFIG FILE section of [shadowsocks-libev(8)](https://manpages.debian.org/testing/shadowsocks-libev/shadowsocks-libev.8.en.html#CONFIG_FILE) for JSON syntax
 
 ### Client
 
@@ -155,5 +157,5 @@ To use [Salsa20](https://en.wikipedia.org/wiki/Salsa20 "wikipedia:Salsa20") or *
 
 *   [Shadowsocks website](http://shadowsocks.org)
 *   [Python package](https://pypi.python.org/pypi/shadowsocks)
-*   [GitHub wiki](https://github.com/shadowsocks/shadowsocks/wiki)
+*   [GitHub wiki](https://github.com/shadowsocks/shadowsocks/wiki) (some suggestions for optimization)
 *   [Backup GitHub project](https://github.com/shadowsocks-backup/shadowsocks) (the original project has been "removed according to regulations" in August 2015)

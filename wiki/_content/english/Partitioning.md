@@ -15,7 +15,7 @@ The required information is stored in a [#Partition table](#Partition_table) sch
 
 Partition tables are created and modified using one of many [#Partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
-Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") ([swap](/index.php/Swap "Swap") excepted) before data can be written to it.
+Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") before data can be written to it.
 
 ## Contents
 
@@ -129,6 +129,8 @@ See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_resto
 It may be possible to recover a destroyed MBR partition table with [gpart](https://www.archlinux.org/packages/?name=gpart). See [gpart(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpart.8) for instructions.
 
 For GPT it is possible to restore the primary GPT header (located at the start of the disk) from the secondary GPT header (located at the end of the disk) or vice versa. See [gdisk#Recover GPT header](/index.php/Gdisk#Recover_GPT_header "Gdisk").
+
+Another option is [TestDisk](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery"), which supports recovering lost partitions on both MBR and GPT.
 
 ## Partition scheme
 

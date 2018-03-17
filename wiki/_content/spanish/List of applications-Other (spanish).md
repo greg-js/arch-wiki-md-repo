@@ -609,7 +609,7 @@ Vea también [Emuladores de videojuegos](https://en.wikipedia.org/wiki/es:Anexo:
 
 *   **PCSXR** — Emulador de PlayStation; bifurcación de Debian del proyecto original PCSX que fue abandonado
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — Emulador de PlayStation 2\. Todavía es mantenido y desarrollado. Requiere los archivos BIOS.
 

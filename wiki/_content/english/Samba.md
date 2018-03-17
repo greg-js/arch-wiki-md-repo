@@ -85,9 +85,9 @@ The `workgroup` specified in `smb.conf` has to match the in use Windows workgrou
 
 ### Starting services
 
-To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smbd.service` and/or `nmbd.service` services. See the [smbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbd.8) and [nmbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmbd.8) man pages for details, as the `nmbd.service` service may not always be required.
+**Note:** In [samba](https://www.archlinux.org/packages/?name=samba) 4.8.0-1, the units were renamed from `smbd.service` and `nmbd.service` to `smb.service` and `nmb.service`.
 
-**Tip:** Instead of having the service running since boot, you can enable `smbd.socket` so the daemon is started on the first incoming connection. Do not forget to disable `smbd.service`.
+To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smb.service` and/or `nmb.service` services. See the [smbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbd.8) and [nmbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmbd.8) man pages for details, as the `nmb.service` service may not always be required.
 
 ### Creating usershare path
 
@@ -143,7 +143,7 @@ Add your user to the *sambashare* group. Replace `*your_username*` with the name
 
 ```
 
-Restart `smbd.service` and `nmbd.service` services.
+Restart `smb.service` and `nmb.service` services.
 
 Log out and log back in. You should now be able to configure your samba share using GUI. For example, in [Thunar](/index.php/Thunar "Thunar") you can right click on any directory and share it on the network. If you want to share paths inside your home directory you must make it listable for the group others.
 
@@ -221,7 +221,7 @@ Where the options are `-b` (`--broadcast`) to use broadcast instead of using the
 
 ### NetBIOS/WINS host names
 
-You may need to [start/enable](/index.php/Start/enable "Start/enable") winbindd in order to resolve host names with e.g., mount.cifs
+You may need to start *winbindd* in order to resolve host names with e.g., mount.cifs
 
 The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add “wins” to the “hosts” line in /etc/nsswitch.conf.
 
@@ -357,7 +357,7 @@ domain master = auto
 
 ```
 
-Now [restart](/index.php/Restart "Restart") `smbd.service` and `nmbd.service`.
+Now [restart](/index.php/Restart "Restart") `smb.service` and `nmb.service`.
 
 If everything works as expected, [install](/index.php/Pacman#Installing_specific_packages "Pacman") [smbnetfs](https://www.archlinux.org/packages/?name=smbnetfs) from the official repositories.
 
@@ -728,7 +728,7 @@ Of course, modifications to the PKGBUILD will also be necessary: libcups will ha
 
 ### Failed to start Samba SMB/CIFS server
 
-Check if the permissions are set correctly for `/var/cache/samba/` and restart the `smbd.service` or `smbd.socket`:
+Check if the permissions are set correctly for `/var/cache/samba/` and restart `smb.service`:
 
 ```
 # chmod 0755 /var/cache/samba/msg
@@ -788,7 +788,7 @@ disable spoolss = Yes
 
 ```
 
-[Restart](/index.php/Restart "Restart") the samba service, `smbd.service`, and then check your logs:
+[Restart](/index.php/Restart "Restart") the samba service, `smb.service`, and then check your logs:
 
  `cat /var/log/samba/smbd.log` 
 

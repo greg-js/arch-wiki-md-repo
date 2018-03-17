@@ -1,3 +1,7 @@
+Related articles
+
+*   [PPTP Client](/index.php/PPTP_Client "PPTP Client")
+
 [Point-to-Point Tunneling Protocol](https://en.wikipedia.org/wiki/PPTP "wikipedia:PPTP") (PPTP) is a method for implementing virtual private networks. PPTP uses a control channel over TCP and a GRE tunnel operating to encapsulate PPP packets.
 
 This entry will show you on how to create a PPTP server in Arch.
@@ -28,7 +32,8 @@ A typical configuration may look like:
 
  `/etc/pptpd.conf` 
 ```
-# See man pptpd.conf to get more information about this file
+# Read man pptpd.conf, see samples in /usr/share/doc/pptpd
+# and write your pptpd configuration here
 
 # pppd options file. By default, /etc/ppp/options is used
 option /etc/ppp/options.pptpd
@@ -85,8 +90,9 @@ Now create credentials file for authenticating users:
 
  `/etc/ppp/chap-secrets` 
 ```
-# <username> <server name> <password> <ip addresses>
-user2    pptpd    123    *
+# Secrets for authentication using CHAP
+# client	server	secret			IP addresses
+  user2         pptpd   123                     *
 
 ```
 
@@ -123,7 +129,7 @@ iptables -A OUTPUT -p 47 -j ACCEPT
 iptables -F FORWARD
 iptables -A FORWARD -j ACCEPT
 
-# Enable NAT for eth0 и ppp* interfaces
+# Enable NAT for eth0 on ppp* interfaces
 iptables -A POSTROUTING -t nat -o eth0 -j MASQUERADE
 iptables -A POSTROUTING -t nat -o ppp+ -j MASQUERADE
 
@@ -135,6 +141,13 @@ Now save the new iptables rules with:
 
 ```
 # iptables-save > /etc/iptables/iptables.rules
+
+```
+
+To load /etc/iptables/iptables.rules automatically after boot, [enable](/index.php/Enable "Enable") the `iptables.service` unit.
+
+```
+# systemctl enable iptables.service
 
 ```
 

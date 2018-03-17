@@ -1,6 +1,7 @@
 Related articles
 
 *   [ATI](/index.php/ATI "ATI")
+*   [AMDGPU](/index.php/AMDGPU "AMDGPU")
 *   [Xorg](/index.php/Xorg "Xorg")
 
 Owners of ATI/AMD video cards have a choice between AMD's proprietary driver ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source driver ([ATI](/index.php/ATI "ATI") for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the proprietary driver.

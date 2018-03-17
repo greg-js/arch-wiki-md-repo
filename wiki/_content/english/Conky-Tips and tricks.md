@@ -11,17 +11,18 @@ Go back to [Conky](/index.php/Conky "Conky").
 *   [3 Display weather forecast](#Display_weather_forecast)
 *   [4 Display a countdown timer](#Display_a_countdown_timer)
 *   [5 Display RSS feeds](#Display_RSS_feeds)
-*   [6 Display rTorrent stats](#Display_rTorrent_stats)
-*   [7 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-*   [8 Display number of new emails](#Display_number_of_new_emails)
-    *   [8.1 Gmail](#Gmail)
-        *   [8.1.1 method 1](#method_1)
-        *   [8.1.2 method 2](#method_2)
-        *   [8.1.3 method 3](#method_3)
-        *   [8.1.4 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
-        *   [8.1.5 IMAP using PHP](#IMAP_using_PHP)
-*   [9 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
-*   [10 User-contributed configuration examples](#User-contributed_configuration_examples)
+*   [6 Display a calendar for the current month](#Display_a_calendar_for_the_current_month)
+*   [7 Display rTorrent stats](#Display_rTorrent_stats)
+*   [8 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
+*   [9 Display number of new emails](#Display_number_of_new_emails)
+    *   [9.1 Gmail](#Gmail)
+        *   [9.1.1 method 1](#method_1)
+        *   [9.1.2 method 2](#method_2)
+        *   [9.1.3 method 3](#method_3)
+        *   [9.1.4 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
+        *   [9.1.5 IMAP using PHP](#IMAP_using_PHP)
+*   [10 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
+*   [11 User-contributed configuration examples](#User-contributed_configuration_examples)
 
 ## Display package update information
 
@@ -63,6 +64,81 @@ ${rss [https://bbs.archlinux.org/extern.php?action=feed&type=rss](https://bbs.ar
 ```
 
 where 1 is in minutes the refresh interval (15 mn is default),4 the number of items you wish to show.
+
+## Display a calendar for the current month
+
+You can use the following lua script to display a calendar. It uses `color1` and the default color from your configuration. It looks best with a monospace font.
+
+```
+ #!/usr/bin/env lua
+
+ conky_color = "${color1}%2d${color}"
+
+ t = os.date('*t', os.time())
+ year, month, currentday = t.year, t.month, t.day
+
+ daystart = os.date("*t",os.time{year=year,month=month,day=01}).wday
+
+ month_name = os.date("%B")
+
+ days_in_month = {
+     31, 28, 31, 30, 31, 30, 
+     31, 31, 30, 31, 30, 31
+ }
+
+ -- check for leap year
+ -- Any year that is evenly divisible by 4 is a leap year
+ -- Any year that is evenly divisible by 100 is a leap year if
+ -- it is also evenly divisible by 400.
+ LeapYear = function (year)
+     return year % 4 == 0 and (year % 100 ~= 0 or year % 400 == 0)
+ end
+
+ if LeapYear(year) then
+     days_in_month[2] = 29
+ end
+
+ title_start = (20 - (string.len(month_name) + 5)) / 2
+
+ title = string.rep(" ", math.floor(title_start+0.5)) .. -- add padding to center the title
+         (" %s %s
+ Su Mo Tu We Th Fr Sa
+"):format(month_name, year)
+
+ io.write(title)
+
+ function seq(a,b)
+     if a > b then
+         return
+     else
+         return a, seq(a+1,b)
+     end 
+ end
+
+ days = days_in_month[month]
+
+ io.write(
+     string.format(
+         string.rep("   ", daystart-1) ..
+         string.rep(" %2d", days), seq(1,days)
+     ):gsub(string.rep(".",21),"%0
+")
+      :gsub(("%2d"):format(currentday),
+            (conky_color):format(currentday)
+      ) .. "
+"
+ )
+
+```
+
+Inside your `conky.conf` you can then place the following, making sure the path matches where you saved the script.
+
+```
+ conky.text = [[
+ ${execpi 3600 ~/.config/conky/cal.lua}
+ ]]
+
+```
 
 ## Display rTorrent stats
 

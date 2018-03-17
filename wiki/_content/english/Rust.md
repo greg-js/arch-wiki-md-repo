@@ -235,7 +235,7 @@ Emacs support for Rust is enabled via the offical [rust-mode](https://github.com
 
 #### Kate
 
-Kate support for Rust is enabled via the official [kate](https://github.com/rust-lang/kate-config) plugin. It is installed by defaut by the [kate](https://www.archlinux.org/packages/?name=kate) package, require the installation of [racer](https://www.archlinux.org/packages/?name=racer) and manual activation.
+Kate support for Rust is enabled via the official [kate](https://github.com/rust-lang/kate-config) plugin. It is installed by defaut by the [kate](https://www.archlinux.org/packages/?name=kate) package, require the installation of [racer](https://aur.archlinux.org/packages/racer/) and manual activation.
 
 ## See also
 

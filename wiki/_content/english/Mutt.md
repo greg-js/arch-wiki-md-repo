@@ -1078,7 +1078,7 @@ When composing an email message within mutt, `Tab` will now search your Google c
 
 #### Khard
 
-[khard](https://aur.archlinux.org/packages/khard/) is a command-line addressbook that is able to sync with CardDAV-servers.
+[khard](https://www.archlinux.org/packages/?name=khard) is a command-line addressbook that is able to sync with CardDAV-servers.
 
 ### Manage multiple sender accounts
 

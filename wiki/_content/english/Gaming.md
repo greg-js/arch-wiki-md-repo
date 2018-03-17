@@ -153,7 +153,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **[PCSXR](/index.php/PCSX-Reloaded "PCSX-Reloaded")** — PlayStation emulator; Debian fork of the abandoned original PCSX
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — PlayStation 2 emulator. It is still being maintained and developed. It requires BIOS files.
 

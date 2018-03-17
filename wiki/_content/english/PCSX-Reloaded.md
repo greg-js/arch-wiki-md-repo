@@ -21,7 +21,7 @@ Being a plugin based emulator allows more configurability, including setting scr
 
 ## Installation
 
-Install the stable [pcsxr](https://www.archlinux.org/packages/?name=pcsxr) package or alternately the [pcsxr-git](https://aur.archlinux.org/packages/pcsxr-git/) for the development version.
+Install the stable [pcsxr](https://aur.archlinux.org/packages/pcsxr/) package or alternately the [pcsxr-git](https://aur.archlinux.org/packages/pcsxr-git/) for the development version.
 
 Additionally, you can also install the [pcsxr-gtk2](https://aur.archlinux.org/packages/pcsxr-gtk2/) package for the GTK2 version, which allows to run GTK based plugin interfaces without having to install [lib32-gtk](https://aur.archlinux.org/packages/lib32-gtk/) from the [AUR](/index.php/AUR "AUR").
 
@@ -72,7 +72,7 @@ Load a state by clicking `Emulator > Load States` and selecting a state previous
 
 ### wrong ELF class: ELFCLASS32
 
-You installed a 64 bit version of the emulator and is trying to run a 32 bit plugin. Install the 32 bit version of [pcsxr](https://www.archlinux.org/packages/?name=pcsxr) found on the [Multilib](/index.php/Multilib "Multilib") repository
+You installed a 64 bit version of the emulator and is trying to run a 32 bit plugin. Install the 32 bit version of [pcsxr](https://aur.archlinux.org/packages/pcsxr/) found on the [Multilib](/index.php/Multilib "Multilib") repository
 
 ### cfgPeteXGL2, cfgPeteMesaGL or cfgPeopsOSS not found
 
