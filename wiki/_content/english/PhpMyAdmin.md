@@ -32,11 +32,11 @@ Install the [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin) pa
 You need to enable the `mysqli` extension in PHP by editing `/etc/php/php.ini` and uncommenting the following line:
 
 ```
-extension=mysqli.so
+extension=mysqli
 
 ```
 
-Optionally you can enable `bz2.so` and `zip.so` for compression support.
+Optionally you can enable `extension=bz2` and `extension=zip` for compression support.
 
 **Note:** *If* you use `open_basedir` (it is not set by default), make sure that PHP can access `/etc/webapps` by adding it to `open_basedir` in `/etc/php/php.ini`.
 

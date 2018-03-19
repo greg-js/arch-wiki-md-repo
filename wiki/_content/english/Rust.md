@@ -6,31 +6,37 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
 
 ## Contents
 
-*   [1 Rust Core Library](#Rust_Core_Library)
-*   [2 Rust Standard Library](#Rust_Standard_Library)
-*   [3 Release Cycle](#Release_Cycle)
-*   [4 Installation](#Installation)
-    *   [4.1 Native Installation](#Native_Installation)
-    *   [4.2 Official Rustup Installation](#Official_Rustup_Installation)
-    *   [4.3 Test your installation](#Test_your_installation)
-*   [5 Cross Compiling](#Cross_Compiling)
-    *   [5.1 Using rustup](#Using_rustup)
-    *   [5.2 Windows](#Windows)
-    *   [5.3 Unofficial packages](#Unofficial_packages)
-*   [6 Cargo](#Cargo)
-    *   [6.1 Usage](#Usage)
-*   [7 IDE Support](#IDE_Support)
-    *   [7.1 Tools](#Tools)
-        *   [7.1.1 Racer](#Racer)
-        *   [7.1.2 Clippy](#Clippy)
-    *   [7.2 Editors](#Editors)
-        *   [7.2.1 Atom](#Atom)
-        *   [7.2.2 IntelliJ IDEA](#IntelliJ_IDEA)
-        *   [7.2.3 Visual Studio Code](#Visual_Studio_Code)
-        *   [7.2.4 Vim](#Vim)
-        *   [7.2.5 Emacs](#Emacs)
-        *   [7.2.6 Kate](#Kate)
-*   [8 See also](#See_also)
+*   [1 Core language](#Core_language)
+    *   [1.1 Rust Core Library](#Rust_Core_Library)
+    *   [1.2 Rust Standard Library](#Rust_Standard_Library)
+    *   [1.3 Release Cycle](#Release_Cycle)
+*   [2 Installation](#Installation)
+    *   [2.1 Native Installation](#Native_Installation)
+    *   [2.2 Rustup](#Rustup)
+        *   [2.2.1 Upstream installation script](#Upstream_installation_script)
+        *   [2.2.2 Arch Linux package](#Arch_Linux_package)
+        *   [2.2.3 Usage](#Usage)
+    *   [2.3 Test your installation](#Test_your_installation)
+*   [3 Cross Compiling](#Cross_Compiling)
+    *   [3.1 Using rustup](#Using_rustup)
+    *   [3.2 Windows](#Windows)
+    *   [3.3 Unofficial packages](#Unofficial_packages)
+*   [4 Cargo](#Cargo)
+    *   [4.1 Usage](#Usage_2)
+*   [5 IDE Support](#IDE_Support)
+    *   [5.1 Tools](#Tools)
+        *   [5.1.1 Racer](#Racer)
+        *   [5.1.2 Clippy](#Clippy)
+    *   [5.2 Editors](#Editors)
+        *   [5.2.1 Atom](#Atom)
+        *   [5.2.2 IntelliJ IDEA](#IntelliJ_IDEA)
+        *   [5.2.3 Visual Studio Code](#Visual_Studio_Code)
+        *   [5.2.4 Vim](#Vim)
+        *   [5.2.5 Emacs](#Emacs)
+        *   [5.2.6 Kate](#Kate)
+*   [6 See also](#See_also)
+
+## Core language
 
 ### Rust Core Library
 
@@ -52,28 +58,49 @@ To [install](/index.php/Install "Install") the latest stable version of Rust fro
 
 There's also development version of the Rust compiler available from [AUR](/index.php/AUR "AUR"). Use [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) for prebuilt generic binaries or [rust-git](https://aur.archlinux.org/packages/rust-git/) to build the compiler with system libraries. Prebuilt, periodically updated rust-git packages are also available from the [unofficial repo](/index.php/Unofficial_user_repositories#rust-git "Unofficial user repositories").
 
-### Official Rustup Installation
+### Rustup
 
 The official and recommended method of installing Rust for the purpose of developing software is to use the [Rustup toolchain manager](https://www.rustup.rs/), written in Rust.
 
 The benefits to using the Rustup toolchain manager instead of the standalone prepackaged Rust in the software repository is the ability to install multiple toolchains (stable, beta, nightly) for multiple targets (windows, mac, android) and architectures (x86, x86_64, arm). It is also important to note that tools such as [Clippy](https://github.com/Manishearth/rust-clippy) require compiler plugin support, which is only supported in nightly builds of Rust.
 
-One has 2 choices for a rustup installation, one is officially supported by Rust, while the other is supported by archlinux wiki
+One has 2 choices for a rustup installation, one is officially supported by Rust, while the other is supported by Arch Linux.
 
-1.  Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `vim ./rust.sh`, and run the script `./rust.sh` to start rustup installation. The script makes PATH changes only to login shell [configuration files](/index.php/Bash#Invocation "Bash"). You need to `source $HOME/.cargo/env` until you logout and login back into the system.
-2.  To update rustup afterwards, run `rustup self update`.
-3.  [rustup](https://www.archlinux.org/packages/?name=rustup) is also available on the Arch Linux software repository. Note that `rustup self update` will **not** work when installed this way, the package needs to be updated by pacman.
+#### Upstream installation script
 
-By default, only the stable channel from your architecture will be installed. It will however not be usable right away, you need to specify the installed stable channel as default for it to work.
+Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `less ./rust.sh`, and run the script `./rust.sh` to start rustup installation. The script makes PATH changes only to login shell [configuration files](/index.php/Bash#Invocation "Bash"). You need to `source $HOME/.cargo/env` until you logout and login back into the system. To update rustup afterwards, run `rustup self update`.
 
-**Note:** Please make sure that you have added the $HOME/.cargo/bin to your PATH before you run the rustup command.
+The script installs and activates the default toolchain by default (the one used by the [rust](https://www.archlinux.org/packages/?name=rust) package, so there is no need to manually install it to start using Rust.
+
+**Warning:** Running `curl *some-url* | sh`, as the Rust documentation suggests, is considered as a security risk by some, because it executes unknown and/or untrusted code, that might even be corrupted during the download. Therefore it is recommended to manually download the script and check it, before executing it.
+
+**Note:** Please make sure that `$HOME/.cargo/bin` is in your `PATH` when you run `rustup`.
+
+#### Arch Linux package
+
+[rustup](https://www.archlinux.org/packages/?name=rustup) is also available on the Arch Linux software repository. Note that `rustup self update` will **not** work when installed this way, the package needs to be updated by pacman.
+
+This package has the advantage that the various Rust executables live in `/usr/bin`, instead of `~/.cargo/bin`, removing the need to add another directory to your `PATH`.
+
+**Note:** The [rustup](https://www.archlinux.org/packages/?name=rustup) package does **not** install a toolchain by default. The user needs to install a toolchain manually, for the Rust commands to do anything.
+
+#### Usage
+
+You might need to manually install a toolchain, e.g. `stable`, `beta`, `nightly` or `1.23.0`. You also need to do this if you want to use/test another toolchain.
 
 ```
-$ rustup default stable
+$ rustup install *toolchain*
 
 ```
 
-Then checking rust's version using `rustc -V` :
+You can now run the Rust commands by running, `rustup run *toolchain* *command*`. However, to use these commands directly, you need to activate the toolchain:
+
+```
+$ rustup default *toolchain*
+
+```
+
+Check the installed Rust version using `rustc -V`:
 
  `$ rustc -V ` 
 ```
@@ -81,20 +108,7 @@ rustc 1.9.0 (e4e8b6668 2016-05-18)
 
 ```
 
-If you wish to install and use nightly, you can do like so :
-
-```
-$ rustup install nightly
-$ rustup default nightly
-
-```
- `$ rustc -V ` 
-```
-rustc 1.11.0-nightly (01411937f 2016-07-01)
-
-```
-
-Rust is now fired up for nightly !
+**Note:** Rustup does not install some Rust commands that the [rust](https://www.archlinux.org/packages/?name=rust) package does include, such as `rustfmt` and `rls`. They are not included because this allows the Rust maintainers to ship a nightly of Rust with a broken `rustfmt`/`rls`. To install them, run `rustup component add rls-preview` and `rustup component add rustfmt-preview` respectively. This will also suspend updates of the nightly channel, if they break `rustfmt`/`rls`.
 
 ### Test your installation
 

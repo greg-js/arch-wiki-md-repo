@@ -18,6 +18,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
     *   [3.5 Moving packages from [community] to unsupported](#Moving_packages_from_.5Bcommunity.5D_to_unsupported)
     *   [3.6 Moving packages from [community-testing] to [community]](#Moving_packages_from_.5Bcommunity-testing.5D_to_.5Bcommunity.5D)
     *   [3.7 Deleting packages from unsupported](#Deleting_packages_from_unsupported)
+    *   [3.8 Remote build on PKGBUILD.com](#Remote_build_on_PKGBUILD.com)
 *   [4 TODO list retiring a Trusted User](#TODO_list_retiring_a_Trusted_User)
 *   [5 See also](#See_also)
 
@@ -149,6 +150,104 @@ ssh nymeria.archlinux.org /srv/repos/svn-community/dbscripts/db-move community-t
 ### Deleting packages from unsupported
 
 There is no point in removing dummy packages, because they will be re-created in an attempt to track dependencies. If someone uploads a real package then all dependents will point to the correct place.
+
+### Remote build on PKGBUILD.com
+
+Trusted users and developers can connect to [PKGBUILD.com](http://pkgbuild.com/) via SSH to, among others, build packages using the devtools. This has numerous advantages over a local setup:
+
+*   Builds are fast and network speed is high.
+*   The environment needs setup only once.
+*   Your local system need not be Arch Linux.
+
+The process is similar to that of a local setup with devtools. Your GnuPG private is required for signing but you don't want to upload it to soyuz for obvious security reasons. As such, you'll need to forward the GnuPG agent socket from your local machine to the server: this will allow you to sign packages on soyuz without communicating your key. This also means that we need to disable the agent on the server before we can run anything.
+
+First, connect to soyuz and disable
+
+```
+ $ ssh soyuz.archlinux.org
+
+```
+
+$ systemctl --user mask gpg-agent.service
+
+Make sure gpg-agent is not running (`systemctl --user stop gpg-agent.service`). At this point, make sure that no sockets exist in the folder pointed by `gpgconf --list-dir socketdir`. If they do, remove them or log out and in again. If you have a custom $GNUPGHOME (eg. to move it to ~/.config/gnupg), you'll need to unset that, as it is not possible in gnupg to set the homedir without setting the socketdir. On soyuz, *StreamLocalBindUnlink yes* is set in *sshd_config*, therefore removing the sockets manually on logout is not necessary.
+
+While the PGP private keys remain on your local machine, the public keys **must** be on soyuz. Export your public ring to soyuz, e.g. from you local machine
+
+```
+ $ scp ~/.gnupg/pubring.gpg soyuz.archlinux.org:~/.gnupg/pubring.gpg
+
+```
+
+SSH is required to checkout and commit to the SVN repository. You can either set up a new SSH key pair on the server (it's highly discouraged to put your local private key on soyuz for security reasons) or reuse your local keys via socket forwarding. If you opt for the latter, make sure to disable ssh-agent on soyuz if you had enabled it previously (it's not running by default).
+
+Configure you build environment on soyuz:
+
+ `~/.makepkg.conf` 
+```
+PACKAGER="John Doe <john@doe.example>"
+## Optional
+PKGDEST="/home/johndoe/packages"
+SRCDEST="/home/johndoe/sources"
+SRCPKGDEST="/home/johndoe/srcpackages"
+LOGDEST="/home/johndoe/logs"
+## If your PGP key is not the default, specify the right fingerprint:
+GPGKEY="ABCD1234..."
+```
+
+You might need to enable gpg-agent extra socket on the local system. (This is the default on Arch Linux.) At the user level on a systemd distribution, you can use
+
+```
+ $ systemctl --user enable gpg-agent-extra.socket
+ $ systemctl --user start gpg-agent-extra.socket
+
+```
+
+You might also want to enable
+
+```
+ $ systemctl --user enable dirmngr.service
+
+```
+
+Connect with
+
+```
+ $ ssh -R $REMOTE_SSH_AUTH_SOCK:$SSH_AUTH_SOCK -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.extra soyuz.archlinux.org
+
+```
+
+or, if using GnuPG as your SSH agent:
+
+```
+ $ ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent.ssh:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.extra soyuz.archlinux.org
+
+```
+
+Replace *$REMOTE_UID* and *$LOCAL_UID* by your user identifier as returned by `id -u` on soyuz and locally, respectively. If using ssh-agent, replace *$REMOTE_SSH_AUTH_SOCK* by the path to the SSH socket on the remote host (it can be anything).
+
+You can make the forwarding permanent for that host. For instance with gpg-agent.ssh:
+
+ `~/.ssh/config` 
+```
+Host soyuz.archlinux.org
+  RemoteForward /run/user/$REMOTE_UID/gnupg/S.gpg-agent /run/user/$LOCAL_UID/gnupg/S.gpg-agent.extra
+  RemoteForward /run/user/$REMOTE_UID/gnupg/S.gpg-agent.ssh /run/user/$LOCAL_UID/gnupg/S.gpg-agent.ssh
+
+```
+
+Again, replace *$REMOTE_UID* and *$LOCAL_UID* with their respective values.
+
+From then on, the procedure should be exactly the same as a local build:
+
+```
+ $ ssh soyuz.archlinux.org
+ $ svn checkout -N svn+[ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn](ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn) svn-community
+ $ ...
+
+```
+
+**Note:** pinentry-curses might not work with socket forwarding. If it fails for you, try using a different pinentry.
 
 ## TODO list retiring a Trusted User
 

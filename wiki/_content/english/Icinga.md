@@ -181,9 +181,9 @@ Edit `/etc/php.ini`
 
 ```
  open_basedir = ...:/usr/share/icinga-web:/var/cache/icinga-web:/var/log/icinga
- extension=pdo_mysql.so
- extension=xsl.so
- extension=sockets.so
+ extension=pdo_mysql
+ extension=xsl
+ extension=sockets
 
 ```
 

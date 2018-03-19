@@ -658,7 +658,7 @@ Also make sure that the relevant folders in `$HOME` are owned by the user starti
 
 ### Laptop lid settings ignored
 
-You may find that the lid close settings in Xfce4 Power Manager are ignored, meaning that the laptop will always suspend on lid close, no matter what settings are chosen in the power manager. This is because the power manager is not set to handle lid close events by default. Instead, logind handles the lid close event. To change this behavior so that the the power manager handles lid close events, execute the following command:
+You may find that the lid close settings in Xfce4 Power Manager are ignored, meaning that the laptop will always suspend on lid close, no matter what settings are chosen in the power manager. This is because the power manager is not set to handle lid close events by default. Instead, logind handles the lid close event. To change this behavior so that the power manager handles lid close events, execute the following command:
 
 ```
 $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s false

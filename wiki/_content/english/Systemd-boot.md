@@ -12,13 +12,12 @@ It is simple to configure but it can only start EFI executables such as the Linu
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 EFI boot](#EFI_boot)
-    *   [1.2 BIOS boot](#BIOS_boot)
-    *   [1.3 Updating](#Updating)
-        *   [1.3.1 Manually](#Manually)
-        *   [1.3.2 Automatically](#Automatically)
+    *   [1.1 Installing the EFI boot loader](#Installing_the_EFI_boot_loader)
+    *   [1.2 Updating the EFI boot loader](#Updating_the_EFI_boot_loader)
+        *   [1.2.1 Manual update](#Manual_update)
+        *   [1.2.2 Automatic update](#Automatic_update)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Basic configuration](#Basic_configuration)
+    *   [2.1 Loader configuration](#Loader_configuration)
     *   [2.2 Adding boot entries](#Adding_boot_entries)
         *   [2.2.1 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
     *   [2.3 Preparing kernels for EFI\Linux](#Preparing_kernels_for_EFI.5CLinux)
@@ -26,52 +25,46 @@ It is simple to configure but it can only start EFI executables such as the Linu
     *   [2.5 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
-    *   [4.2 Menu does not appear after Windows upgrade](#Menu_does_not_appear_after_Windows_upgrade)
+    *   [4.1 Installing after BIOS boot](#Installing_after_BIOS_boot)
+    *   [4.2 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
+    *   [4.3 Menu does not appear after Windows upgrade](#Menu_does_not_appear_after_Windows_upgrade)
 *   [5 See also](#See_also)
 
 ## Installation
 
-### EFI boot
+### Installing the EFI boot loader
 
-1.  Make sure you are booted in UEFI mode.
-2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Mount your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
-    **Note:** *systemd-boot* cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. In case you want to separate `/boot` from the ESP see [#Manually](#Manually) for more information.
+To install the *systemd-boot* EFI boot loader, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list`.
 
-4.  If the ESP is **not** mounted at `/boot`, then copy your kernel and initramfs onto that ESP.
-    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at [EFI System Partition#Using systemd](/index.php/EFI_System_Partition#Using_systemd "EFI System Partition") for some systemd units that can be adapted. If your EFI System Partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
+It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). To keep the kernel updated it is simpler and therefore **recommended** to mount the ESP to `/boot`. If the ESP is **not** mounted to `/boot`, the kernel and initramfs must be copied onto that ESP. This process can be automated by watching kernel files for change using some systemd units as proposed in [EFI System Partition#Using systemd](/index.php/EFI_System_Partition#Using_systemd "EFI System Partition").
 
-5.  Type the following command to install *systemd-boot*: `# bootctl --path=*esp* install` It will copy the *systemd-boot* binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` – both of which are identical – on x86-64 systems) and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
-6.  Finally you must [configure](#Configuration) the boot loader to function properly.
+`*esp*` will be used throughout this page to denote the ESP mountpoint, i.e. `/boot`.
 
-### BIOS boot
+With the ESP mounted to `*esp*`, use [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1) to install *systemd-boot* into the EFI system partition by running:
 
-**Warning:** This is not recommended.
+```
+# bootctl --path=*esp* install
 
-You can successfully install *systemd-boot* if booted with in BIOS mode. However, this process requires you to tell firmware to launch *systemd-boot'*s EFI file at boot, usually via two ways:
+```
 
-*   you have a working EFI Shell somewhere else.
-*   your firmware interface provides a way of properly setting the EFI file that needs to be loaded at boot time.
+This will copy the *systemd-boot* boot loader to the EFI partition: on a x64 architecture system the two identical binaries `*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` will be transferred to the ESP. It will then set *systemd-boot* as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
-If you can do it, the installation is easier: go into your EFI Shell or your firmware configuration interface and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` ( or `systemd-bootia32.efi` depending if your system firmware is 32 bit).
+Then, go to the [#Configuration](#Configuration) section: the loader must be configured and boot entries added for *systemd-boot* to function properly at boot time.
 
-**Note:** The firmware interface of Dell Latitude series provides everything you need to setup EFI boot but the EFI Shell won't be able to write to the computer's ROM.
+### Updating the EFI boot loader
 
-### Updating
+Whenever there is a new version of *systemd-boot*, the boot loader must be updated by the user. This can be performed manually or the update can be automatically triggered using pacman hooks. The two approaches are described thereafter.
 
-Unlike the previous separate *gummiboot* package, which updated automatically on a new package release with a `post_install` script, updates of new *systemd-boot* versions must now be done manually by the user. However the procedure can be automated using pacman hooks.
+#### Manual update
 
-#### Manually
-
-*systemd-boot* ([bootctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1)) assumes that your EFI System Partition is mounted on `/boot`.
+*bootctl* must be used to update *systemd-boot*. If the `path` parameter is not specified, `/efi`, `/boot`, and `/boot/efi` are checked in turn.
 
 ```
 # bootctl update
 
 ```
 
-If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For example:
+If the ESP is mounted on a different location, the `path` option can be passed as follows:
 
 ```
 # bootctl --path=*esp* update
@@ -80,7 +73,7 @@ If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For exam
 
 **Note:** This is also the command to use when migrating from *gummiboot*, before removing that package. If that package has already been removed, however, run `bootctl --path=*esp* install`.
 
-#### Automatically
+#### Automatic update
 
 The [AUR](/index.php/AUR "AUR") package [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) provides a [Pacman hook](/index.php/Pacman#Hooks "Pacman") to automate the update process. [Installing](/index.php/Install "Install") the package will add a hook which will be executed every time the [systemd](https://www.archlinux.org/packages/?name=systemd) package is upgraded.
 
@@ -101,15 +94,19 @@ Exec = /usr/bin/bootctl update
 
 ## Configuration
 
-### Basic configuration
+### Loader configuration
 
-**Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl/loader.conf`.
+The loader configuration is stored in the file `*esp*/loader/loader.conf` and it is composed of the following options:
 
-The basic configuration is stored in `*esp*/loader/loader.conf` file and it is composed by three options:
-
-*   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`.
+*   `default` – default entry to select (without the *.conf* suffix); can be a wildcard like `arch-*`.
 *   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
 *   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
+
+Additional options available starting with systemd **v239**:
+
+*   `auto-entries` (*boolean*, default is `1`) – shows automatic entries for Windows, EFI Shell, and Default Loader;
+*   `auto-firmware` (*boolean*, default is `1`) – shows entry for rebooting into UEFI firmware settings;
+*   `console-mode` (*int/enum*, default is `keep`) – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for vendor modes, `auto` for reasonable available mode, `max` for highest available mode, `keep` to do nothing.
 
 Example:
 
@@ -121,23 +118,18 @@ editor   0
 
 ```
 
-**Note:** The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
+**Note:** The first two options can be changed in the boot menu itself and changes will be stored as EFI variables.
 
-Additional options available since systemd v239:
-
-*   `auto-entries` (boolean, default "1") – show automatic entries for Windows, EFI Shell, and Default Loader;
-*   `auto-firmware` (boolean, default "1") – show entry for rebooting into firmware settings (UEFI);
-*   `console-mode` (int/enum, default "keep") – change UEFI console mode (`0` for 80x25, `1` for 80x50, `2` and above for vendor modes, `auto` for reasonable available mode, `max` for highest available mode, `keep` to do nothing).
+**Tip:** A basic loader configuration file is located at `/usr/share/systemd/bootctl/loader.conf`.
 
 ### Adding boot entries
 
 **Note:**
 
-*   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) at boot time, as well as specially prepared kernel files found in `\EFI\Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be automatically generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
-*   As of systemd v239, the automatic entries may be hidden using `auto-entries no` and `auto-firmware no` loader.conf options.
+*   *bootctl* will automatically check at boot time for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`), as well as specially prepared kernel files found in `\EFI\Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be automatically generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
-*   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable.
-*   You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.
+*   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
+*   The root partition can be identified with its `LABEL` or its `PARTUUID`. The latter can be found with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only to identify the root partition, not the `*esp*`.
 
 *bootctl* searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
 
@@ -149,9 +141,11 @@ Additional options available since systemd v239:
 
 For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initramfs*`; this will be automatically translated to `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
-**Tip:** The available boot entries which have been configured can be listed with the command `bootctl list`.
+**Tip:**
 
-An example entry file is located at `/usr/share/systemd/bootctl/arch.conf`. The [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for scenarios such as [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/LUKS "LUKS") or [dm-crypt](/index.php/Dm-crypt "Dm-crypt") can be found on the relevant pages.
+*   The available boot entries which have been configured can be listed with the command `bootctl list`.
+*   An example entry file is located at `/usr/share/systemd/bootctl/arch.conf`.
+*   The [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for scenarios such as [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/LUKS "LUKS") or [dm-crypt](/index.php/Dm-crypt "Dm-crypt") can be found on the relevant pages.
 
 #### EFI Shells or other EFI apps
 
@@ -229,6 +223,19 @@ These hotkeys will, when pressed inside the menu or during bootup, directly boot
 
 ## Troubleshooting
 
+### Installing after BIOS boot
+
+**Warning:** This is not recommended.
+
+If booted in BIOS mode, you can still install *systemd-boot*, however this process requires you to tell firmware to launch *systemd-boot'*s EFI file at boot, usually via two ways:
+
+*   you have a working EFI Shell somewhere else.
+*   your firmware interface provides a way of properly setting the EFI file that needs to be loaded at boot time.
+
+If you can do it, the installation is easier: go into your EFI Shell or your firmware configuration interface and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` ( or `systemd-bootia32.efi` depending if your system firmware is 32 bit).
+
+**Note:** The firmware interface of Dell Latitude series provides everything you need to setup EFI boot but the EFI Shell won't be able to write to the computer's ROM.
+
 ### Manual entry using efibootmgr
 
 If the `bootctl install` command failed, you can create a EFI boot entry manually using [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr):
@@ -249,3 +256,4 @@ See [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_order
 ## See also
 
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
+*   [https://github.com/systemd/systemd/tree/master/src/boot/efi](https://github.com/systemd/systemd/tree/master/src/boot/efi)

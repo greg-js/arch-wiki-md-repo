@@ -42,7 +42,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Be sure to install the optional dependencies listed by pacman that apply to your specific use-case. All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
+The official stable release can be installed via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to install the optional dependencies listed by pacman that apply to your specific use-case. All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 
 **Note:** Users of Arch ARM should be aware that several different kodi packages with specific hardware support are available.
 
@@ -60,8 +60,6 @@ Setting up the system and running the standalone binary is advantageous for seve
 1.  An unprivileged user cannot access a shell by definition.
 2.  Running without a full blown DE is lighter and more simplistic.
 3.  When paired with a systemd unit (or equivalent, see below), this setup makes the box on which kodi is running more like an appliance and very robust.
-
-There are several methods achieve this described below.
 
 **Warning:** Select **only one** of the methods listed below.
 

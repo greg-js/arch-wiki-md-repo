@@ -1853,7 +1853,21 @@ Arch es la raja
 	Spanish (Uruguay)
 
 ```
-Arch la rompe!
+¡Arch la rompe!
+
+```
+
+	Spanish (Venezuela, standard)
+
+```
+Marico, Arch es la vaina más arrecha.
+
+```
+
+	Spanish (Venezuela, maracucho)
+
+```
+Que molleja de bueno es Arch.
 
 ```
 

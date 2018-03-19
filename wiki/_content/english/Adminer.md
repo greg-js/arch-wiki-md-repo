@@ -17,7 +17,7 @@ It's a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). 
 
 When using the [adminer](https://aur.archlinux.org/packages/adminer/) package, Adminer will be installed as `/usr/share/webapps/adminer/index.php`.
 
-Ensure the correct extensions in `/etc/php/php.ini` are uncommented, e.g. `extension=pdo_mysql.so` should provide [MySQL](/index.php/MySQL "MySQL") database management.
+Ensure the correct extensions in `/etc/php/php.ini` are uncommented, e.g. `extension=pdo_mysql` should provide [MySQL](/index.php/MySQL "MySQL") database management.
 
 ## Configuration
 

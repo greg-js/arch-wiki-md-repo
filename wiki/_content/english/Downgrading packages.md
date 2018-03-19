@@ -40,27 +40,18 @@ Once the package is reverted, temporarily add it to the [IgnorePkg section](/ind
 
 ### Downgrading the kernel
 
-If you are unable to boot after a kernel update, then you can downgrade the kernel via a live CD. Use a fairly recent Arch Linux installation medium. Once it has booted, mount the partition where your system is installed to `/mnt`, and if you have `/boot` or `/var` on separate partitions, mount them there as well (e.g. `mount /dev/sdc3 /mnt/boot`). Then [chroot](/index.php/Chroot "Chroot") into the system:
+In case of issue with a new kernel, the Linux packages can be downgraded to the last working ones [#using the pacman cache](#using_the_pacman_cache). Go into the directory `/var/cache/pacman/pkg` and downgrade at least [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) and any kernel modules. For example:
 
 ```
-# arch-chroot /mnt /bin/bash
-
-```
-
-Here you can go to `/var/cache/pacman/pkg` and downgrade the packages. At least downgrade [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) and any kernel modules. For example:
-
-```
-# pacman -U linux-3.5.6-1-x86_64.pkg.tar.xz linux-headers-3.5.6-1-x86_64.pkg.tar.xz virtualbox-host-modules-4.2.0-5-x86_64.pkg.tar.xz
+# pacman -U linux-4.15.8-1-x86_64.pkg.tar.xz linux-headers-4.15.8-1-x86_64.pkg.tar.xz virtualbox-host-modules-arch-5.2.8-4-x86_64.pkg.tar.xz
 
 ```
 
-Exit the chroot (with `exit`), reboot and you should be done.
+**Tip:** If you are unable to boot after a kernel update, you can downgrade the kernel [chrooting](/index.php/Change_root "Change root") into the system. Boot using an Arch Linux [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") and mount the partition where your system is installed to `/mnt`. If you have `/boot` or `/var` on separate partitions, also mount them to `/mnt` (e.g. `mount /dev/sdc3 /mnt/boot`). Then *chroot* into the system using: `# arch-chroot /mnt /bin/bash` Now you can go into the *pacman* cache directory and downgrade the Linux packages using the command indicated above. Once done, exit the chroot (with `exit`) and reboot.
 
 ### Arch Linux Archive
 
-The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") is a daily snapshot of the [official repositories](/index.php/Official_repositories "Official repositories").
-
-The *ALA* can be used to [install a previous package version](/index.php/Arch_Linux_Archive#How_to_downgrade_one_package "Arch Linux Archive"), or [restore the system to an earlier date](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
+The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") is a daily snapshot of the [official repositories](/index.php/Official_repositories "Official repositories"). It can be used to [install a previous package version](/index.php/Arch_Linux_Archive#How_to_downgrade_one_package "Arch Linux Archive"), or [restore the system to an earlier date](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
 
 ### Rebuild the package
 

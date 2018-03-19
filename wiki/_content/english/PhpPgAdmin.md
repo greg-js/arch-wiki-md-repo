@@ -1,3 +1,7 @@
+Related articles
+
+*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+
 [phpPgAdmin](http://phppgadmin.sourceforge.net/) is a web-based tool to help manage PostgreSQL databases using an PHP frontend.
 
 ## Contents
@@ -27,7 +31,7 @@ Install the [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin) pa
 You need to enable the `pgsql` extension in PHP by editing `/etc/php/php.ini` and uncommenting the following line:
 
 ```
-extension=pgsql.so
+extension=pgsql
 
 ```
 

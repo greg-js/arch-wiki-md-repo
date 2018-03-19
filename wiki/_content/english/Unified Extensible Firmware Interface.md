@@ -127,7 +127,7 @@ Retrieved from [https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/
 UEFI defines variables through which an operating system can interact with the firmware. UEFI Boot Variables are used by the boot-loader and used by the OS only for early system start-up. UEFI Runtime Variables allow an OS to manage certain settings of the firmware like the UEFI Boot Manager or managing the keys for UEFI Secure Boot Protocol etc. You can get the list using
 
 ```
-$ efivar -l
+$ efivar --list
 
 ```
 

@@ -169,8 +169,8 @@ log_errors = On
 *   Enable MySQL support(uncomment the following options):
 
 ```
-extension=pdo_mysql.so
-extension=mysqli.so
+extension=pdo_mysql
+extension=mysqli
 
 ```
 

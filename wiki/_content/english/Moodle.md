@@ -74,15 +74,15 @@ Install [php-intl](https://www.archlinux.org/packages/?name=php-intl) and [php-g
 Uncomment the following lines in `/etc/php/php.ini` (remove the semicolon from the start of the line):
 
 ```
-extension=curl.so
-extension=gd.so
-extension=gettext.so
-extension=iconv.so
-extension=intl.so
-extension=mysqli.so
-extension=soap.so
-extension=xmlrpc.so
-extension=zip.so
+extension=curl
+extension=gd
+extension=gettext
+extension=iconv
+extension=intl
+extension=mysqli
+extension=soap
+extension=xmlrpc
+extension=zip
 
 ```
 

@@ -32,7 +32,7 @@ When the database is setup, you must manually populate it:
 
 ```
 
-Make sure you enable the **pgsql.so** (or whatever database you used) and **iconv.so** extension in php.ini.
+Make sure you enable the `extension=pgsql` (or whatever database you used) and `extension=iconv` extension in `php.ini`.
 
 Edit the configuration files `/etc/webapps/agendav/{config,caldav,database}.php` to your liking.
 

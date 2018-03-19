@@ -58,3 +58,4 @@ Alternative unofficial clients:
 
 *   [Arch Linux News](https://telegram.me/archlinuxnews) - Latest news form Arch web site.
 *   [Planet Arch](https://telegram.me/archplanet) - Latest posts from Planet Arch web site.
+*   [Arch Linux](https://telegram.me/archlinuxgroup) - Unofficial group for discussing everything about Arch Linux.

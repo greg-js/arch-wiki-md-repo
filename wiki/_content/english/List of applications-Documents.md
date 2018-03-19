@@ -190,6 +190,10 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 	[http://sqlitebrowser.org/](http://sqlitebrowser.org/) || [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser)
 
+*   **[DBeaver](https://en.wikipedia.org/wiki/DBeaver "wikipedia:DBeaver")** — Java-based graphical database editor with support for many database types.
+
+	[https://dbeaver.jkiss.org/](https://dbeaver.jkiss.org/) || [dbeaver](https://www.archlinux.org/packages/?name=dbeaver)
+
 *   **[Kexi](https://en.wikipedia.org/wiki/Kexi "wikipedia:Kexi")** — Visual database applications creator tool by KDE, designed to fill the gap between spreadsheets and database solutions requiring more sophisticated development.
 
 	[http://www.kexi-project.org/](http://www.kexi-project.org/) || [kexi](https://www.archlinux.org/packages/?name=kexi)

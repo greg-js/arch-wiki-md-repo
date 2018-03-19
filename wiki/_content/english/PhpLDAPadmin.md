@@ -48,17 +48,11 @@ By default, everyone can see the phpLDAPadmin page, to change this, edit `/etc/h
 
 ### PHP
 
-You need to enable the `ldap` extension in PHP by editing `/etc/php/php.ini` and uncommenting the line
+You need to enable the `ldap` and `gettext` extensions in PHP by editing `/etc/php/php.ini` and uncommenting the following lines:
 
 ```
-;extension=ldap.so
-
-```
-
-You also need to enable the `gettext` extension so that PHP can use the bindtextdomain() function
-
-```
-;extension=gettext.so
+extension=ldap
+extension=gettext
 
 ```
 

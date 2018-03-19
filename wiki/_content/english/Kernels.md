@@ -37,13 +37,13 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-*   **[ZEN Kernel](https://github.com/zen-kernel/zen-kernel)** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. See [Liquorix](https://liquorix.net) website for the full list of features provided by ZEN Kernel.
+*   **[ZEN Kernel](https://github.com/zen-kernel/zen-kernel)** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. Some more details can be found on [https://liquorix.net](https://liquorix.net) (which provides kernel binaries based on ZEN for Debian).
 
 	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
 ## Compilation
 
-Arch Linux provides for several methods of kernel compilation.
+Arch Linux provides two methods of kernel compilation.
 
 ### Using Arch Build System
 
@@ -59,7 +59,7 @@ See [Kernels/Traditional compilation](/index.php/Kernels/Traditional_compilation
 
 ## Patches and patchsets
 
-There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features such as reiser4 file system support. Other reasons might include fun and to see how it is done and what the improvements are.
+There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features such as [reiser4](/index.php/Reiser4 "Reiser4") file system support. Other reasons might include fun and to see how it is done and what the improvements are.
 
 However, it is important to note that the best way to increase the speed of your system is to first tailor your kernel to your system, especially the architecture and processor type. For this reason using pre-packaged versions of custom kernels with generic architecture settings is not recommended or really worth it. A further benefit is that you can reduce the size of your kernel (and therefore build time) by not including support for things you do not have or use. For example, you might start with the stock kernel config when a new kernel version is released and remove support for things like bluetooth, video4linux, 1000Mbit ethernet, etc.; functionality you know you will not require for your specific machine. Although this page is not about customizing your kernel config, it is recommended as a first step--before moving on to using a patchset once you have grasped the fundamentals involved.
 
@@ -106,13 +106,13 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 
 	[https://www.fsfla.org/ikiwiki/selibre/linux-libre/](https://www.fsfla.org/ikiwiki/selibre/linux-libre/) || [linux-libre](https://aur.archlinux.org/packages/linux-libre/)
 
-*   **Liquorix** — Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
+*   **Liquorix** — Kernel replacement built using Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
 
 	[https://liquorix.net](https://liquorix.net) || [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
 
-*   **Longterm 3.10** — Long-term support (LTS) Linux 3.10 kernel and modules.
+*   **Longterm 4.4** — Long-term support (LTS) Linux 4.4 kernel and modules.
 
-	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts44](https://aur.archlinux.org/packages/linux-lts44/)
 
 *   **Mainline** — The Mainline Linux Kernel and modules.
 

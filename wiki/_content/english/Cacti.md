@@ -22,10 +22,10 @@ Cacti uses PHP, an SQL database (MySQL or MariaDB) and SNMP, so enable the requi
 
  `/etc/php/php.ini` 
 ```
-extension=mysqli.so
-extension=sockets.so
-extension=pdo_mysql.so
-extension=snmp.so
+extension=mysqli
+extension=sockets
+extension=pdo_mysql
+extension=snmp
 ```
 
 PHP scripts are, by default, permitted only to open files in specific directories. Configure (or comment out) `open_basedir` in `/etc/php/php.ini`. When misconfigured, errors such as `PHP Warning: include(): open_basedir restriction in effect.` will appear in the webserver log file.

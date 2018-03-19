@@ -354,7 +354,9 @@ Note: To match the configuration in this file, config.inc.php should contain the
 
 ### Roundcube
 
-Make sure that both the `pdo_mysql.so` extension and `iconv.so` extension are uncommented in your `php.ini` file. Also check the `.htaccess` for access restrictions. Assuming that localhost is your current host, navigate a browser to `[http://localhost/roundcube/installer/](http://localhost/roundcube/installer/)` and follow the instructions.
+Make sure that both `extension=pdo_mysql` and`
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+`are uncommented in your `php.ini` file. Also check the `.htaccess` for access restrictions. Assuming that localhost is your current host, navigate a browser to `[http://localhost/roundcube/installer/](http://localhost/roundcube/installer/)` and follow the instructions.
 
 Roundcube needs a separate database to work. You should not use the same database for Roundcube and PostfixAdmin. Create a second database `roundcube_db` and a new user named `roundcube_user`.
 

@@ -32,7 +32,7 @@ Related articles
 
 ## Installation
 
-**Warning:** [openrc](https://aur.archlinux.org/packages/openrc/) depends (implicitly) on [sysvinit](https://aur.archlinux.org/packages/sysvinit/), which conflicts with [systemd-sysvinit](https://www.archlinux.org/packages/?name=systemd-sysvinit). Therefore the system boots with plain sysvinit by default (not OpenRC or systemd), be sure to add a correct `init=*some-init*` kernel parameter.
+**Warning:** [openrc](https://aur.archlinux.org/packages/openrc/) depends (implicitly) on [sysvinit](https://aur.archlinux.org/packages/sysvinit/), which conflicts with [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat). Therefore the system boots with plain sysvinit by default (not OpenRC or systemd), be sure to add a correct `init=*some-init*` kernel parameter.
 
 OpenRC and accompanying packages are available in the [AUR](/index.php/AUR "AUR"). For details on init components, see [Init](/index.php/Init "Init").
 

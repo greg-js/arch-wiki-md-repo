@@ -144,11 +144,11 @@ php-set = session.gc_probability  1
 php-set = post_max_size=64M
 php-set = upload_max_filesize=64M
 php-set = always_populate_raw_post_data=-1
-php-set = extension=curl.so
-php-set = extension=gd.so
-php-set = extension=imagick.so
-php-set = extension=intl.so
-php-set = extension=mysqli.so
+php-set = extension=curl
+php-set = extension=gd
+php-set = extension=imagick
+php-set = extension=intl
+php-set = extension=mysqli
 
 ```
 

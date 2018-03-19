@@ -347,7 +347,7 @@ Alternatively, you can use stunnel as shown above: [#Gmail](#Gmail)
 
 #### IMAP using PHP
 
-Another alternative using PHP. PHP needs to be installed and `extension=imap.so` must be uncommented in `/etc/php/php.ini`.
+Another alternative using PHP. PHP needs to be installed and `extension=imap` must be uncommented in `/etc/php/php.ini`.
 
 Then create a file named `imap.php` in a location to be read by *conky* (for example in `~/.scripts/`). Make the file executable:
 

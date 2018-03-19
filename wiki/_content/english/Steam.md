@@ -8,7 +8,7 @@ Related articles
 
 [Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
 
-Steam for Linux only supports Ubuntu 12.04 LTS and newer.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus do not turn to Valve for support when running into issues with Steam on Arch Linux.
+Steam for Linux only supports Ubuntu 12.04 LTS and newer [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366). Valve does not offer any support when running into issues with Steam on Arch Linux.
 
 ## Contents
 
@@ -35,17 +35,18 @@ Steam for Linux only supports Ubuntu 12.04 LTS and newer.[[1]](https://support.s
 
 Enable the [Multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
 
-The following fixes are needed to get Steam functioning properly on Arch Linux:
+The following requirements must be fulfilled in order to run Steam on Arch Linux:
 
-*   Install the 32-bit version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg") (the package in the *OpenGL (Multilib)* column).
-*   Make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")), otherwise, the Steam client won't start with an invalid pointer error.
-*   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
+*   Installed 32-bit version [OpenGL graphics driver](/index.php/Xorg#Driver_installation "Xorg").
+*   Generated [en_US.UTF-8](/index.php/Locale#Generating_locales "Locale") locale, preventing invalid pointer error.
+*   The GUI heavily uses the Arial font. See [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts"). An alternative is to use [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting") instead.
+*   [Install](/index.php/Install "Install") [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to add support for Asian languages.
 
 ### SteamCMD
 
-For the [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD), a command-line version of the Steam client, that is primarily used to install and update dedicated servers, [install](/index.php/Install "Install") the [steamcmd](https://aur.archlinux.org/packages/steamcmd/) package.
+[Install](/index.php/Install "Install") [steamcmd](https://aur.archlinux.org/packages/steamcmd/) for the command-line version of the [Steam](https://developer.valvesoftware.com/wiki/SteamCMD).
 
-**Note:** The AUR package installs files owned by root, so you must be root to update SteamCMD itself.
+**Note:** This package installs files under *root*, so you must run SteamCMD as *root*.
 
 ### Alternative Flatpak installation
 

@@ -13,17 +13,21 @@
 
 ## Booting from Arch Linux ISO
 
-In order to boot from the Arch Linux ISO, hit `F2` to enter UEFI settings (InsydeH20 settings v5.0). Then set the supervisor password. From there you can disable Secure Boot and boot from any media.
+In order to boot from the Arch Linux ISO, hit `F2` to enter UEFI settings (InsydeH20 Setup Utility rev. 5.0). Then set the supervisor password. From there you can disable Secure Boot and boot from any media.
 
 ## Configuration
 
 ### Add entries to UEFI menu
 
-[UEFI](/index.php/UEFI "UEFI") will not boot from menu entries created by *efibootmgr*. Use [bcfg](/index.php/Bcfg "Bcfg") in the UEFI Shell (v.2) to add an entry. Boot from the Arch Linux ISO to get a UEFI Shell.
+[UEFI](/index.php/UEFI "UEFI") will not boot from menu entries created by *efibootmgr*. Instead, use [bcfg](/index.php/Bcfg "Bcfg") in the UEFI Shell (v.2) to add an entry.
+
+**Tip:** To get a UEFI Shell (v.2), boot from the Arch Linux ISO and select it from the menu.
 
 ### Use Secure Boot with trusted EFI executables
 
-You can use Secure Boot and mark EFI executables as trusted through the UEFI settings. The executables must end with `.efi`. For example, if you use [EFISTUB](/index.php/EFISTUB "EFISTUB") to boot the Linux kernel directly, you must copy `vmlinuz-linux` to `vmlinuz-linux.efi` and then mark that file as trusted in the UEFI settings. Whenever the executable is updated, it must be removed from the trusted list and then re-added as trusted in the UEFI settings. It is only possible to remove all trusted entries at once, not individually.
+You can use Secure Boot and mark EFI executables as trusted through the UEFI settings. The executables must end with `.efi`. For example, if you use [EFISTUB](/index.php/EFISTUB "EFISTUB") to boot the Linux kernel directly, you must copy `vmlinuz-linux` to `vmlinuz-linux.efi` and then mark that file as trusted in the UEFI settings.
+
+Whenever the executable is updated, it might have to be removed from the trusted list and then re-added as trusted in the UEFI settings. It is only possible to remove all trusted entries at once, not individually.
 
 See [Secure Boot](/index.php/Secure_Boot "Secure Boot") for other options.
 
@@ -31,7 +35,7 @@ See [Secure Boot](/index.php/Secure_Boot "Secure Boot") for other options.
 
 Many function keys work without any need for changing settings. Suspend (`Fn+F4`), blanking the screen (`Fn+F6`), touchpad disable/enable (`Fn-F7`), and keyboard backlight disable/enable (`Fn+F9`) all work. Additionally `Fn+Del` is mapped to `Ins` correctly, as well as `Fn+12` to `Scroll Lock`.
 
-To add functionality for brightness keys (`Fn+Left` and `Fn+Right`) append the following parameters to your kernel boot line:
+To add functionality for brightness keys, `Fn+Left` and `Fn+Right`, append the following parameters to your kernel boot line:
 
 ```
 acpi_osi=Linux acpi_backlight=vendor

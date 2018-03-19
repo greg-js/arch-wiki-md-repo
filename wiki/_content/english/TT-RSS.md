@@ -41,11 +41,11 @@ Or create a user and database in PostgreSQL, e.g.:
 In `/etc/php/php.ini`, enable the following modules:
 
 ```
-extension=curl.so
-extension=iconv.so
-extension=mysqli.so # for MySQL; extension=pdo_mysql.so might be an alternative
-extension=pgsql.so # for PostgreSQL; extension=pdo_pgsql.so might be an alternative
-extension=soap.so
+extension=curl
+extension=iconv
+extension=pdo_mysql # for MySQL
+extension=pdo_pgsql # for PostgreSQL
+extension=soap
 
 ```
 

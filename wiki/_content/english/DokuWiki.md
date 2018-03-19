@@ -50,7 +50,7 @@ Also uncomment the following line.
 
  `/etc/php/php.ini` 
 ```
-extension=gd.so
+extension=gd
 
 ```
 

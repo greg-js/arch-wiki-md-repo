@@ -1,3 +1,9 @@
+Related articles
+
+*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [RemoteBox](/index.php/RemoteBox "RemoteBox")
+
 **phpVirtualBox** is an open source, AJAX implementation of the [VirtualBox](/index.php/VirtualBox "VirtualBox") user interface written in [PHP](/index.php/PHP "PHP"). As a modern web interface, it allows you to access and control remote VirtualBox instances. Much of its verbage and some of its code is based on the (inactive) vboxweb project. phpVirtualBox was designed to allow users to administer VirtualBox in a headless environment - mirroring the VirtualBox GUI through its web interface.
 
 ## Contents
@@ -92,10 +98,10 @@ or just reboot your system for automatically create.
 
 ### Web interface
 
-Edit `/etc/php/php.ini`, make sure the following line is uncommented.
+Edit `/etc/php/php.ini`, uncomment the following line:
 
 ```
-extension=soap.so
+extension=soap
 
 ```
 

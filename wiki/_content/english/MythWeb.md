@@ -83,7 +83,7 @@ Edit the [PHP](/index.php/PHP "PHP") configuration file `/etc/php/php.ini`
 Uncomment the following lines in the *Dynamic extensions* section.
 
 ```
-extension=mysqli.so
+extension=mysqli
 
 ```
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Samba](/index.php/Samba "Samba")
+
 [Greyhole](http://www.greyhole.net/) is an application that uses [Samba](/index.php/Samba "Samba") to create a storage pool of all your available hard drives (whatever their size, however they are connected), and allows you to create redundant copies of the files you store, in order to prevent data loss when part of your hardware fails.
 
 ## Contents
@@ -163,21 +167,9 @@ For each of your shares, add a '`dfree command`' and '`vfs objects`' lines, as s
     vfs objects = greyhole
 ```
 
-Restart Samba
+[Restart](/index.php/Restart "Restart") `smb.service`.
 
-```
-# systemctl restart smbd
-
-```
-
-2\. Setup the database If using MySQL: Ensure MySQL is running
-
-```
-# systemctl start mysqld
-# mysql -u root -p -e "create database greyhole; grant all on greyhole.* to greyhole_user@localhost identified by '89y63jdwe';"
-# mysql -u greyhole_user -p89y63jdwe greyhole < /usr/share/greyhole/schema-mysql.sql
-
-```
+2\. Setup and start MySQL as described in [MySQL](/index.php/MySQL "MySQL").
 
 3\. Customize the greyhole configuration at `/etc/greyhole.conf`
 
@@ -195,28 +187,6 @@ Those files will be used to differentiate an empty mount from a now-gone mount. 
 
 ```
 
-6\. Configure PHP Open /etc/php/php.ini in your favorite editor. Change the line
+6\. Configure PHP Open /etc/php/php.ini in your favorite editor. Set `date.timezone` and uncomment `extension=pdo_mysql`.
 
- `open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/` 
-
-to
-
- `open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/` 
-
-Set date.timezone to your time zone. Use the same time zone set in /etc/rc.conf or PHP will complain.
-
- `date.timezone = America/Chicago` 
-
-Finally, uncomment
-
-```
-extension=pdo_mysql.so
-
-```
-
-7\. Start the Greyhole service
-
-```
-# systemctl start greyhole
-
-```
+7\. [Start](/index.php/Start "Start") `greyhole.service`.

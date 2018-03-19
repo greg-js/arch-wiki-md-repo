@@ -442,6 +442,7 @@ Below are some example configurations from fellow xmonad users. Feel free to add
 *   vicfryzel :: Beautiful and usable xmonad configuration, along with xmobar configuration, xinitrc, dmenu, and other scripts that make xmonad more usable. :: [git repository](https://github.com/vicfryzel/xmonad-config), [screenshot](https://github.com/vicfryzel/xmonad-config/raw/master/screenshot.png).
 *   vogt :: Check out adamvo's config and many others in the official [Xmonad/Config archive](http://wiki.haskell.org/Xmonad/Config_archive)
 *   wulax :: Example of using xmonad inside Xfce. Contains two layouts for GIMP. :: [xmonad.hs](https://gist.github.com/jsjolund/94f6821b248ff79586ba), [screenshot](https://i.imgur.com/at9AbOl.png).
+*   alex-courtis :: Clean xmonad, xmobar, media keys, screenshot, j4/dmenu; fonts rendered at the DPI reported by the monitor :: [xmonad.hs](https://github.com/alex-courtis/arch/blob/master/home/.xmonad/xmonad.hs), [screenshot](https://raw.githubusercontent.com/alex-courtis/arch/master/ss.png).
 
 ## Troubleshooting
 

@@ -1,3 +1,15 @@
+Related articles
+
+*   [LAMP](/index.php/LAMP "LAMP")
+*   [LAPP](/index.php/LAPP "LAPP")
+*   [LASP](/index.php/LASP "LASP")
+*   [MySQL](/index.php/MySQL "MySQL")
+*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+*   [SQLite](/index.php/SQLite "SQLite")
+*   [Sendmail](/index.php/Sendmail "Sendmail")
+*   [PostFix](/index.php/PostFix "PostFix")
+*   [Exim](/index.php/Exim "Exim")
+
 "Drupal is a free and open source content management system (CMS) and Content Management framework (CMF) written in PHP and distributed under the GNU General Public License." - [Wikipedia](https://en.wikipedia.org/wiki/Drupal "wikipedia:Drupal")
 
 This article describes how to setup Drupal and configure [Apache](/index.php/Apache "Apache"), [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [PHP](/index.php/PHP "PHP"), and [Postfix](/index.php/Postfix "Postfix") to work with it. It is assumed that you have some sort of [LAMP](/index.php/LAMP "LAMP") (Linux, Apache, MySQL, PHP), LAPP (Linux, Apache, PostgreSQL, PHP) or LASP (Linux, Apache, SQLite, PHP) server already setup.
@@ -29,13 +41,13 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
 
 Edit `/etc/php/php.ini`:
 
-*   To enable support for image manipulation uncomment the line `extension=gd.so`
+*   To enable support for image manipulation uncomment the line `extension=gd`
 
 For database support enable a PDO extension for your database
 
-*   To enable support for [SQLite](/index.php/SQLite "SQLite") uncomment the line `extension=pdo_sqlite.so`
-*   To enable support for [MySQL](/index.php/MySQL "MySQL") uncomment the line `extension=pdo_mysql.so`
-*   To enable support for [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") uncomment the line `extension=pdo_pgsql.so`
+*   To enable support for [SQLite](/index.php/SQLite "SQLite") uncomment the line `extension=pdo_sqlite`
+*   To enable support for [MySQL](/index.php/MySQL "MySQL") uncomment the line `extension=pdo_mysql`
+*   To enable support for [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") uncomment the line `extension=pdo_pgsql`
 
 ### Apache
 
@@ -101,7 +113,7 @@ First, install the [php-pear](https://aur.archlinux.org/packages/php-pear/) pack
 Finally, add to `/etc/php/php.ini`
 
 ```
-extension=uploadprogress.so
+extension=uploadprogress
 
 ```
 

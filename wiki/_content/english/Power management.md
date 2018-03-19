@@ -27,7 +27,7 @@ In Arch Linux, power management consists of two main parts:
         *   [2.1.2 xss-lock](#xss-lock)
     *   [2.2 Suspend and hibernate](#Suspend_and_hibernate)
         *   [2.2.1 Hybrid sleep](#Hybrid_sleep)
-        *   [2.2.2 Always do hybrid-sleep instead of suspend or hibernation](#Always_do_hybrid-sleep_instead_of_suspend_or_hibernation)
+        *   [2.2.2 Hybrid-sleep on suspend or hibernation request](#Hybrid-sleep_on_suspend_or_hibernation_request)
     *   [2.3 Sleep hooks](#Sleep_hooks)
         *   [2.3.1 Suspend/resume service files](#Suspend.2Fresume_service_files)
         *   [2.3.2 Combined Suspend/resume service file](#Combined_Suspend.2Fresume_service_file)
@@ -121,17 +121,17 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ### Suspend and hibernate
 
-*systemd* provides commands for suspend to RAM, hibernate and a hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.
-
-**Note:** *systemd* can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
+*systemd* provides commands for suspend to RAM, hibernate and a hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post- suspend actions.
 
 `systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
+
+**Note:** *systemd* can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
 
 #### Hybrid sleep
 
 `systemctl hybrid-sleep` both hibernates and suspends at the same time. This combines some of the benefits and drawbacks of suspension and hibernation. This is useful in case a computer were to suddenly lose power (AC disconnection or battery depletion) since upon powerup it will resume from hibernation. If there is no power loss, then it will resume from suspension, which is much faster than resuming from hibernation. However, since "hybrid-sleep" has to dump memory to swap in order for hibernation to work, it is slower to enter sleep than a plain `systemctl suspend`. An alternative is a [delayed hibernation service file](#Delayed_hibernation_service_file).
 
-#### Always do hybrid-sleep instead of suspend or hibernation
+#### Hybrid-sleep on suspend or hibernation request
 
 It is possible to configure systemd to always do a *hybrid-sleep* even on a *suspend* or *hibernation* request.
 

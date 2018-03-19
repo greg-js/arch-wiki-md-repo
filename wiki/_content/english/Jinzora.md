@@ -24,11 +24,11 @@ Follow the wiki tutorial for installing Apache, PHP and MySQL: [LAMP](/index.php
 
 ### Configure PHP
 
-Jinzora can make use of the GD and iconv library. It is recommend you enable these. Uncomment gd.so and iconv.so in `/etc/php/php.ini`.
+Jinzora can make use of the GD and iconv library. It is recommend you enable these. Uncomment the following lines in `/etc/php/php.ini`:
 
 ```
-extension=gd.so
-extension=iconv.so
+extension=gd
+extension=iconv
 
 ```
 

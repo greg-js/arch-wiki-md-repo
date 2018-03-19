@@ -72,7 +72,7 @@ If it does not happen, then:
 
 [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by Intel chipsets that use the i915 DRM driver and is mandatory and enabled by default.
 
-Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for instuctions on how to enable KMS as soon as possible at the boot process.
+Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for instructions on how to enable KMS as soon as possible at the boot process.
 
 ### Enable GuC / HuC firmware loading
 

@@ -84,7 +84,7 @@ These formats can also be gzipped. See [#Bitmap](#Bitmap) for the available bitm
 
 ### Outline formats
 
-*   [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts") by Adobe – has various formats, e.g: Printer Font ASCII (PFA) and Printer Font Binary (PPB)
+*   [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts") by Adobe – has various formats, e.g: Printer Font ASCII (PFA) and Printer Font Binary (PFB)
 *   [TrueType](https://en.wikipedia.org/wiki/TrueType "wikipedia:TrueType") by Apple and Microsoft (file extension: `ttf`)
 *   [OpenType](https://en.wikipedia.org/wiki/OpenType "wikipedia:OpenType") by Microsoft, built on TrueType (file extensions: `otf`, `ttf`)
 

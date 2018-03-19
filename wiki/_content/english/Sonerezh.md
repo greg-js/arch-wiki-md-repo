@@ -10,14 +10,7 @@ Install [sonerezh-git](https://aur.archlinux.org/packages/sonerezh-git/). You wi
 
 ## Configuration
 
-Make sure to adjust following variables to these minimal values in your `php.ini`:
-
- `/etc/php/php.ini` 
-```
-extension=gd.so
-
-date.timezone = UTC
-```
+In `/etc/php/php.ini`, uncomment `extension=gd` and set your timezone as described in [PHP#Configuration](/index.php/PHP#Configuration "PHP").
 
 In this configuration, we will configure the [Nginx](/index.php/Nginx "Nginx") web server to serve Sonerezh on localhost in the root location without SSL enabled (even though it's recommended to use it with SSL). First, place a copy of the Sonerezh Nginx configuration.
 

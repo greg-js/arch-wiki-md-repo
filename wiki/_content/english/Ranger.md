@@ -12,9 +12,10 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Defining commands](#Defining_commands)
-    *   [3.2 Color schemes](#Color_schemes)
-    *   [3.3 File association](#File_association)
+    *   [3.1 Move to trash](#Move_to_trash)
+    *   [3.2 Defining commands](#Defining_commands)
+    *   [3.3 Color schemes](#Color_schemes)
+    *   [3.4 File association](#File_association)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Archives](#Archives)
         *   [4.1.1 Archive extraction](#Archive_extraction)
@@ -65,14 +66,25 @@ from ranger.api.commands import *
 
 ```
 
+See [ranger(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1) for general configuration.
+
+### Move to trash
+
 To add a keybind that moves files to your trash directory `~/.local/share/Trash/files/` with `DD`, add to `~/.config/ranger/rc.conf`:
 
 ```
-map DD shell mv /home/${USER}/.local/share/Trash/files/ %s
+map DD shell mv %s /home/${USER}/.local/share/Trash/files/
 
 ```
 
-See [ranger(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1) for general configuration.
+Alternatively, use GIO commandline tool provided by [glib2](https://www.archlinux.org/packages/?name=glib2) package:
+
+```
+map DD shell gio trash %s
+
+```
+
+Inspecting and emptying the "Trashcan" is normally supported by graphical file managers such as [nautilus](https://www.archlinux.org/packages/?name=nautilus), but you can also see the trash with the command `gio list trash://`, and empty it with: `gio trash --empty`.
 
 ### Defining commands
 

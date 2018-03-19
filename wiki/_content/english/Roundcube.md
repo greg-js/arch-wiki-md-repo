@@ -92,7 +92,7 @@ date.timezone = "UTC"
 and uncomment
 
 ```
-extension=iconv.so
+extension=iconv
 
 ```
 

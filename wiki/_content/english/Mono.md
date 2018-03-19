@@ -12,6 +12,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Mono_(software) "wikipedia:Mono (
     *   [5.1 I get an error "cannot execute "path/to/your/binary" file name has not been set."](#I_get_an_error_.22cannot_execute_.22path.2Fto.2Fyour.2Fbinary.22_file_name_has_not_been_set..22)
     *   [5.2 I get an error when I try to run Mono binaries directly: "cannot execute binary file"](#I_get_an_error_when_I_try_to_run_Mono_binaries_directly:_.22cannot_execute_binary_file.22)
     *   [5.3 I get an TLS handshake (or similar certificate based) error](#I_get_an_TLS_handshake_.28or_similar_certificate_based.29_error)
+    *   [5.4 I get an error when building fsharp: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"](#I_get_an_error_when_building_fsharp:_.22System.TypeInitializationException:_The_type_initializer_for_.27System.Console.27_threw_an_exception.22)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -85,6 +86,10 @@ To fix this, [restart](/index.php/Daemon "Daemon") the `systemd-binfmt` service.
 ### I get an TLS handshake (or similar certificate based) error
 
 Try `mozroots --import --ask-remove` which should update monos certificates. `mozroots` is part of the mono package.
+
+### I get an error when building fsharp: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"
+
+There is a recent bug in mcs that is used to build fsharp. A workaround is to use `export TERM=xterm`, as detailed here [[1]](https://github.com/mono/mono/issues/6752)
 
 ## See also
 

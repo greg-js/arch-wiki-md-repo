@@ -7,7 +7,7 @@ Related articles
 [LightDM](http://www.freedesktop.org/wiki/Software/LightDM) is a cross-desktop [display manager](/index.php/Display_manager "Display manager"). Its key features are:
 
 *   Cross-desktop - supports different desktop technologies.
-*   Supports different display technologies (X, Mir, ...).
+*   Supports different display technologies (X, Mir, Wayland ...).
 *   Lightweight - low memory usage and high performance.
 *   Supports guest sessions.
 *   Supports remote login (incoming - XDMCP, VNC, outgoing - XDMCP, pluggable).

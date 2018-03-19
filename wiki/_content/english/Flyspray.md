@@ -10,7 +10,7 @@ Related articles
 
 ### Apache Setup
 
-**Note:** You will need to have [Apache](/index.php/Apache "Apache") configured to run with [PHP](/index.php/PHP "PHP"). Check the [LAMP#PHP](/index.php/LAMP#PHP "LAMP") page for instructions. Make sure to enable the `mysqli.so` extension.
+**Note:** You will need to have [Apache](/index.php/Apache "Apache") configured to run with [PHP](/index.php/PHP "PHP"). Check [Apache#PHP](/index.php/Apache#PHP "Apache") for instructions. Make sure to uncomment `extension=mysqli` in `/etc/php/php.ini`.
 
 You will need to create a config file for apache to find your Flyspray install. Create the following file:
 

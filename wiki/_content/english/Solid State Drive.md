@@ -253,7 +253,7 @@ Intel has a Linux live system based [Firmware Update Tool](https://downloadcente
 
 ### Kingston
 
-Kingston has a Linux utility to update the firmware of Sandforce controller based drives: [SSD support page](https://www.kingston.com/en/support/technical/category/ssd). Click the images on the page to go to a support page for your SSD model. Support specifically for, e.g. the SH100S3 SSD, can be found on [HyperX support page](https://www.hyperxgaming.com/us/support/technical/products?model=sh100s3).
+KFU tool is available on the AUR for the Sandforce based drives, [kingston_fw_updater](https://aur.archlinux.org/packages/kingston_fw_updater/).
 
 ### Mushkin
 

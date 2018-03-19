@@ -50,11 +50,11 @@ $ ln -s /usr/share/webapps/zabbix /srv/http/zabbix
 Make sure to adjust following variables to these minimal values in your `/etc/php/php.ini`:
 
 ```
-extension=bcmath.so
-extension=gd.so
-extension=sockets.so
-extension=mysqli.so
-extension=php_gettext.so
+extension=bcmath
+extension=gd
+extension=sockets
+extension=mysqli
+extension=gettext
 post_max_size = 16M
 max_execution_time = 300
 max_input_time = 300

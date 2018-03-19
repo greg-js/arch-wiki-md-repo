@@ -273,7 +273,7 @@ If they are not there, go ahead and add them (replace the other listing for port
 
 To use PostfixAdmin, you need a working Apache/MySQL/PHP setup as described in [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server").
 
-For IMAP functionality, you will need to install [php-imap](https://www.archlinux.org/packages/?name=php-imap) and uncomment imap.so in /etc/php/php.ini
+For IMAP functionality, you will need to install [php-imap](https://www.archlinux.org/packages/?name=php-imap) and uncomment `extension=imap` in `/etc/php/php.ini`.
 
 Next, [install](/index.php/Install "Install") [postfixadmin](https://www.archlinux.org/packages/?name=postfixadmin).
 

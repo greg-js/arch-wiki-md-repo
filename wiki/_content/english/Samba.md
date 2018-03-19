@@ -12,7 +12,7 @@ Related articles
     *   [1.1 smb.conf](#smb.conf)
     *   [1.2 Creating a share](#Creating_a_share)
     *   [1.3 Starting services](#Starting_services)
-    *   [1.4 Creating usershare path](#Creating_usershare_path)
+    *   [1.4 Enable usershares](#Enable_usershares)
     *   [1.5 Adding a user](#Adding_a_user)
     *   [1.6 Listing users](#Listing_users)
     *   [1.7 Changing Samba user's password](#Changing_Samba_user.27s_password)
@@ -89,16 +89,16 @@ The `workgroup` specified in `smb.conf` has to match the in use Windows workgrou
 
 To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smb.service` and/or `nmb.service` services. See the [smbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbd.8) and [nmbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmbd.8) man pages for details, as the `nmb.service` service may not always be required.
 
-### Creating usershare path
+### Enable usershares
 
 **Note:** This is an optional feature. Skip this section if you do not need it.
 
-"Usershare" is a feature that gives non-root users the capability to add, modify, and delete their own share definitions.
+"Usershares" is a feature that gives non-root users the capability to add, modify, and delete their own share definitions.
 
-This creates the usershare directory in `/var/lib/samba`:
+This creates the usershares directory in `/var/lib/samba`:
 
 ```
-# mkdir -p /var/lib/samba/usershare
+# mkdir -p /var/lib/samba/usershares
 
 ```
 
@@ -112,14 +112,14 @@ This creates the group sambashare:
 This changes the owner of the directory to root and the group to sambashare:
 
 ```
-# chown root:sambashare /var/lib/samba/usershare
+# chown root:sambashare /var/lib/samba/usershares
 
 ```
 
-This changes the permissions of the usershare directory so that users in the group sambashare can read, write and execute files:
+This changes the permissions of the usershares directory so that users in the group sambashare can read, write and execute files:
 
 ```
-# chmod 1770 /var/lib/samba/usershare
+# chmod 1770 /var/lib/samba/usershares
 
 ```
 
@@ -129,7 +129,7 @@ Set the following parameters in the `smb.conf` configuration file:
 ```
 ...
 [global]
-  usershare path = /var/lib/samba/usershare
+  usershare path = /var/lib/samba/usershares
   usershare max shares = 100
   usershare allow guests = yes
   usershare owner only = yes

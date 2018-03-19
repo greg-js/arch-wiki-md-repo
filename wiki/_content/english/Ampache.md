@@ -29,7 +29,7 @@ PHP is installed as a dependency of Ampache. You need to edit the PHP configurat
 Uncomment (remove the initial semi-colon from) the following line in the `php.ini` file:
 
 ```
-;extension=iconv.so
+extension=iconv
 
 ```
 

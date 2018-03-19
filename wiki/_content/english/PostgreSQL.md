@@ -425,4 +425,4 @@ PostgreSQL periodically updates its internal "statistics" file. By default, this
 
 ### Cannot connect to database through pg_connect()
 
-Install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) and edit the `php.ini` file uncommenting the lines `extension=pdo_pgsql.so` and `extension=pgsql.so`, then restart `httpd`.
+Install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) and edit the `php.ini` file uncommenting the lines `extension=pdo_pgsql` and `extension=pgsql`, then restart `httpd`.

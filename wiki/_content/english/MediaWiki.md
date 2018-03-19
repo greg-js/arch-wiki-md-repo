@@ -41,16 +41,17 @@ First, adjust the `open_basedir` in `/etc/php/php.ini` to include the mediawiki 
 Then, also in `/etc/php/php.ini`, uncomment the following lines: (in the `Dynamic Extensions` section)
 
 ```
-extension=gd.so
-extension=intl.so
-extension=iconv.so
+extension=gd
+extension=intl
+extension=iconv
 
 ```
 
 **Note:**
 
-*   If you would like to use SQLite as database, also uncomment `extension=pdo_sqlite.so`.
-*   If you would like to use MariaDB as database, also uncomment `extension=mysqli.so`.
+*   If you would like to use MariaDB as database, also uncomment `extension=mysqli`.
+*   If you would like to use PostgreSQL as database, also uncomment `extension=pgsql`.
+*   If you would like to use SQLite as database, also uncomment `extension=pdo_sqlite`.
 
 Second, tweak the session handling or you might get a fatal error (`PHP Fatal error: session_start(): Failed to initialize storage module[...]`) by finding the `session.save_path` path. A good choice can be `/var/lib/php/sessions` or `/tmp/`.
 

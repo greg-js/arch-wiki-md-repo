@@ -428,7 +428,7 @@ Some virtual drive tools do not handle these metadata, like fuse-based virtual d
 Some games might have an OpenGL mode which *may* perform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
 
 ```
-$ wine /path/to/3d_game.exe -opengl
+$ wine */path/to/3d_game.exe* -opengl
 
 ```
 
@@ -519,6 +519,10 @@ These have their own communities and websites, and are **not supported** by grea
 
 	[exe-thumbnailer](https://aur.archlinux.org/packages/exe-thumbnailer/) || [https://github.com/exe-thumbnailer/exe-thumbnailer](https://github.com/exe-thumbnailer/exe-thumbnailer)
 
+*   **Lutris** — Gaming launcher for all types of games, including Wine games (with prefix management), native Linux games and emulators.
+
+	[lutris](https://aur.archlinux.org/packages/lutris/) || [https://lutris.net/](https://lutris.net/)
+
 *   **PlayOnLinux** — Graphical prefix manager for Wine. Contains scripts to assist with program installation and configuration.
 
 	[playonlinux](https://www.archlinux.org/packages/?name=playonlinux) || [https://www.playonlinux.com/](https://www.playonlinux.com/)
@@ -530,10 +534,6 @@ These have their own communities and websites, and are **not supported** by grea
 *   **Q4Wine** — Graphical prefix manager for Wine. Can export [Qt](/index.php/Qt "Qt") themes into the Wine configuration for better integration.
 
 	[q4wine](https://aur.archlinux.org/packages/q4wine/) || [https://sourceforge.net/projects/q4wine/](https://sourceforge.net/projects/q4wine/)
-
-*   **Lutris** — Gaming launcher for all types of games, including Wine games (with prefix management), native Linux games and emulators.
-
-	[lutris](https://aur.archlinux.org/packages/lutris/) || [https://lutris.net/](https://lutris.net/)
 
 ## See also
 
