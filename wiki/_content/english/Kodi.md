@@ -29,10 +29,10 @@
     *   [4.6 Using ALSA](#Using_ALSA)
     *   [4.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
     *   [4.8 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
-        *   [4.8.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [4.8.2 USB DAC not working](#USB_DAC_not_working)
+    *   [4.9 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+    *   [4.10 USB DAC not working](#USB_DAC_not_working)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Accessing kodi logs](#Accessing_kodi_logs)
+    *   [5.1 Accessing Kodi logs](#Accessing_Kodi_logs)
     *   [5.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
     *   [5.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
     *   [5.4 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
@@ -44,7 +44,7 @@
 
 The official stable release can be installed via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to install the optional dependencies listed by pacman that apply to your specific use-case. All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 
-**Note:** Users of Arch ARM should be aware that several different kodi packages with specific hardware support are available.
+**Note:** Users of Arch Linux ARM should be aware that several different Kodi packages with specific hardware support are available.
 
 ## Running
 
@@ -416,11 +416,11 @@ If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try 
 
 ### Raspberry Pi (all generations)
 
-Kodi runs smoothly on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips to consider:
+Kodi is available on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips to consider:
 
 *   [Install](/index.php/Install "Install") either the *kodi-rbp* (stable) or *kodi-rbp-git* (dev) package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
-*   This package ships with a systemd service to run in standalone mode.
-*   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended for RPi version 1 while a value of 256 is recommended for RPi2 and 3.
+*   All packages provide a [systemd](/index.php/Systemd "Systemd") service to run in standalone mode.
+*   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase the value of the `gpu_mem` in `/boot/config.txt`. A value of at least 128 MB is recommended for RPi version 1 while a value of at least 256 MB is recommended for RPi2 and 3.
 *   For CEC support [Install](/index.php/Install "Install") the *libcec-rpi* instead of *libcec* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 
 ### TV is not detected unless powered on first
@@ -432,7 +432,7 @@ Some TVs (LG brand for example) only report their capabilities via EDID through 
 
 Both conditions are easily fixed. See: [Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first](http://kodi.wiki/view/Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first).
 
-#### Run kodi in a window manager
+### Run kodi in a window manager
 
 Users running kodi in a [Window manager](/index.php/Window_manager "Window manager") may see a black screen at exit. To fix this, try switching to another tty. A possible solution is to run kodi with this script (running as the root user):
 
@@ -454,7 +454,7 @@ To make sure that [sudo](/index.php/Sudo "Sudo") does not ask for password for `
 
 ```
 
-#### USB DAC not working
+### USB DAC not working
 
 Users of USB DAC/sound cards may experience distorted sound/clicks/pops or no sound at all when selecting it from Audio settings. A possible fix:
 
@@ -474,7 +474,7 @@ to
 
 ## Troubleshooting
 
-### Accessing kodi logs
+### Accessing Kodi logs
 
 In case of an error the first point to start investigation can be `~/.kodi/temp/kodi.log`.
 

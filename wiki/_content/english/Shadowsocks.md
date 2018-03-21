@@ -40,7 +40,7 @@ Shadowsocks configuration may be done with a JSON formatted file. Example config
 
 **Tip:** To specify multiple server IPs, the following syntax can be used `"server":["1.1.1.1","2.2.2.2"],`
 
-**Tip:** To find out the fastest method running on your machine, you can benchmark with the script[[1]](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)
+**Tip:** To find out the fastest method running on your machine, you can benchmark with the script [iperf.sh](https://raw.githubusercontent.com/shadowsocks/shadowsocks-libev/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)
 
 | Name | Explanation |
 | server | the address your server listens |
@@ -57,7 +57,7 @@ Shadowsocks configuration may be done with a JSON formatted file. Example config
 
 ### Client
 
-**Warning:** The [udns](https://www.archlinux.org/packages/?name=udns) package is used as a stub resolver for DNS. In order to prevent DNS request leaking of client applications (like browsers), further applications must be employed. For example, [privoxy](/index.php/Privoxy "Privoxy") or a full DNS resolver on the client.[[2]](https://github.com/shadowsocks/shadowsocks-libev/issues/1542) [[3]](https://github.com/shadowsocks/shadowsocks-libev/issues/1641)
+**Warning:** The [udns](https://www.archlinux.org/packages/?name=udns) package is used as a stub resolver for DNS. In order to prevent DNS request leaking of client applications (like browsers), further applications must be employed. For example, [privoxy](/index.php/Privoxy "Privoxy") or a full DNS resolver on the client.[[1]](https://github.com/shadowsocks/shadowsocks-libev/issues/1542) [[2]](https://github.com/shadowsocks/shadowsocks-libev/issues/1641)
 
 #### From the command line
 

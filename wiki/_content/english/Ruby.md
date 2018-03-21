@@ -76,24 +76,24 @@ $ gem spec *gem_name*
 
 ```
 
-By default, `gem list` and `gem spec` use the `--local` option, which forces *gem* to search only the local system. This can be overridden with the `--remote` flag. Thus, to search for the mysql gem:
+By default, `gem list` and `gem spec` use the `--local` option, which forces *gem* to search only the local system. This can be overridden with the `--remote` flag. Thus, to search for the mysql2 gem:
 
 ```
-$ gem list --remote mysql
+$ gem list --remote mysql2
 
 ```
 
 To install a gem:
 
 ```
-$ gem install mysql
+$ gem install mysql2
 
 ```
 
 The process can be sped up somewhat if you do not need local documentation:
 
 ```
-$ gem install mysql --no-document
+$ gem install mysql2 --no-document
 
 ```
 
@@ -148,7 +148,7 @@ Then edit `Gemfile` in the current directory (created by bundle init) and list y
  `Gemfile` 
 ```
 gem "rails", "3.2.9"
-gem "mysql"
+gem "mysql2"
 
 ```
 

@@ -5,25 +5,18 @@ Related articles
 *   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
 *   [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau")
 *   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
-*   [ATI#Dual Head setup](/index.php/ATI#Dual_Head_setup "ATI")
-
+*   [ATI#Multihead setup](/index.php/ATI#Multihead_setup "ATI")
 *   [Extreme Multihead](/index.php/Extreme_Multihead "Extreme Multihead")
 
-**翻译状态：** 本文是英文页面 [Multihead](/index.php/Multihead "Multihead") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-22，点击[这里](https://wiki.archlinux.org/index.php?title=Multihead&diff=0&oldid=482215)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Multihead](/index.php/Multihead "Multihead") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-21，点击[这里](https://wiki.archlinux.org/index.php?title=Multihead&diff=0&oldid=510306)可以查看翻译后英文页面的改动。
 
 **多头（Multi-head）**、**多屏（multi-screen）**、**多显（multi-display）**或**多监视器（multi-monitor）**是指同一台计算机上连接了多个显示设备的配置场景。本文提供多种多头的配置方式，并给出若干设置实例。
 
-**注意:** 为避免混淆，下列名词在本文中有各自专属的含义：
-
-*   **监视器（Monitor）**专指某个物理显示设备，如液晶平板显示器。
-*   **屏幕（Screen）**专指一个 X-窗口屏幕（既是说：一个**监视器（monitor）**连接到一个**显示区（display）（原文如此，疑应为 Screen）**）。
-*   **显示区（Display）**专指一组 **屏幕（screens）**，它们各自同时展示同一个桌面的某一部分（可以在同一个**显示区（display）**的所有**屏幕（screens）**之间拖动窗口）。
-
 ## Contents
 
-*   [1 历史背景](#.E5.8E.86.E5.8F.B2.E8.83.8C.E6.99.AF)
-*   [2 独立的屏幕](#.E7.8B.AC.E7.AB.8B.E7.9A.84.E5.B1.8F.E5.B9.95)
-*   [3 双显（TwinView）](#.E5.8F.8C.E6.98.BE.EF.BC.88TwinView.EF.BC.89)
+*   [1 名词定义](#.E5.90.8D.E8.AF.8D.E5.AE.9A.E4.B9.89)
+*   [2 历史背景](#.E5.8E.86.E5.8F.B2.E8.83.8C.E6.99.AF)
+*   [3 独立的屏幕](#.E7.8B.AC.E7.AB.8B.E7.9A.84.E5.B1.8F.E5.B9.95)
 *   [4 RandR](#RandR)
     *   [4.1 用 xrandr 设置](#.E7.94.A8_xrandr_.E8.AE.BE.E7.BD.AE)
         *   [4.1.1 HDMI1 设定于最佳分辨率且 VGA1 位于它左面](#HDMI1_.E8.AE.BE.E5.AE.9A.E4.BA.8E.E6.9C.80.E4.BD.B3.E5.88.86.E8.BE.A8.E7.8E.87.E4.B8.94_VGA1_.E4.BD.8D.E4.BA.8E.E5.AE.83.E5.B7.A6.E9.9D.A2)
@@ -32,18 +25,35 @@ Related articles
         *   [4.2.1 Example: dualhead configuration using relative coordinates](#Example:_dualhead_configuration_using_relative_coordinates)
         *   [4.2.2 Example: dualhead configuration using relative coordinates with custom resolutions](#Example:_dualhead_configuration_using_relative_coordinates_with_custom_resolutions)
         *   [4.2.3 Example: dualhead configuration using absolute coordinates](#Example:_dualhead_configuration_using_absolute_coordinates)
-*   [5 Xinerama](#Xinerama)
-*   [6 应用程序支持](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.94.AF.E6.8C.81)
-    *   [6.1 窗口管理器](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [6.2 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [6.3 全屏幕游戏](#.E5.85.A8.E5.B1.8F.E5.B9.95.E6.B8.B8.E6.88.8F)
-*   [7 See also](#See_also)
+*   [5 双显（TwinView）](#.E5.8F.8C.E6.98.BE.EF.BC.88TwinView.EF.BC.89)
+*   [6 Xinerama](#Xinerama)
+*   [7 应用程序支持](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.94.AF.E6.8C.81)
+    *   [7.1 窗口管理器](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [7.2 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [7.3 全屏幕游戏](#.E5.85.A8.E5.B1.8F.E5.B9.95.E6.B8.B8.E6.88.8F)
+*   [8 See also](#See_also)
+
+## 名词定义
+
+为避免混淆，下列名词在本文中有各自专属的含义：
+
+	监视器（Monitor）
+
+	物理显示设备，如液晶平板显示器。
+
+	屏幕（Screen）
+
+	窗口屏幕，是已经连接到一个**显示区（display)的** 监视器（monitor）**。**
+
+	显示区（Display）
+
+	一组**屏幕（screens）**，各自同时展示同一桌面的某一部分。用户可以在同一个**显示区（display）**的所有**屏幕（screens）**之间拖动窗口。
 
 ## 历史背景
 
 X Window System is the underlying graphical interface of most if not all Unix/Linux computers providing a GUI. It was developed in 1984 at MIT. After about 35 years of development, tweaking and adding of new features and ideas, it is generally acknowledged to be a bit of a beast. It should be remembered that the common configuration at time of development was a single running X providing individual views to Xterminals in a [time-sharing](https://en.wikipedia.org/wiki/Time-sharing "wikipedia:Time-sharing") system. Nowadays the standard is X providing a single screen on a desktop or laptop.
 
-**Note:** There is still a rare configuration often called [Zaphod display](https://en.wikipedia.org/wiki/Multiseat_configuration "wikipedia:Multiseat configuration"), which allows multiple users of a single computer to each have an independent set of display, mouse, and keyboard, as though they were using separate computers, but at a lower per-seat cost.
+**Note:** There is still a rare configuration often called [Zaphod display](/index.php/Xorg_multiseat "Xorg multiseat"), which allows multiple users of a single computer to each have an independent set of display, mouse, and keyboard, as though they were using separate computers, but at a lower per-seat cost.
 
 All of this means that there are many ways of achieving the same thing and many slightly different things that can meet the same purpose. In modern X versions sometimes you can get away with limited or no configuration. In the last few years the boast is that X is self configuring. Certainly the best practice rule of thumb is less configuration is better - that is *only configure what is wrong*.
 
@@ -64,16 +74,6 @@ $ DISPLAY=:0.1 urxvt &
 Alternatively if you have a terminal on each screen launching programs will inherit the `DISPLAY` value and appear on the same screen they were launched on. But moving an application between screens involves closing it and reopening it again on the other screen.
 
 Working this way does have certain advantages, such as windows popping up on one screen won't steal the focus away from you if you are working on another screen - each screen is quite independent.
-
-## 双显（TwinView）
-
-TwinView is nVidia's extension which makes two monitors attached to a video card appear as a single screen. TwinView provides Xinerama extensions so that applications are aware there are two monitors connected, and thus it is incompatible with Xinerama. However if you only have two monitors and they are both connected to the same nVidia card, there is little difference between TwinView and Xinerama (although in this situation TwinView may offer slightly better performance.)
-
-If you wish to attach more than two monitors or monitors attached to other video cards, you will need to use Xinerama instead of TwinView. Likewise as of April 2012, both monitors must be in the same orientation - you cannot have one in landscape and the other in portrait mode.
-
-In the past, TwinView was the only way to get OpenGL acceleration with nVidia cards while being able to drag windows between screens. However modern versions of the nVidia closed-source driver are able to provide OpenGL acceleration even when using Xinerama.
-
-See [NVIDIA#TwinView](/index.php/NVIDIA#TwinView "NVIDIA") for an example configuration.
 
 ## RandR
 
@@ -210,6 +210,16 @@ There are no negative coordinates, the setup's leftmost and highest possibly tar
 +---------------------++------------+
 
 ```
+
+## 双显（TwinView）
+
+TwinView is nVidia's extension which makes two monitors attached to a video card appear as a single screen. TwinView provides Xinerama extensions so that applications are aware there are two monitors connected, and thus it is incompatible with Xinerama. However if you only have two monitors and they are both connected to the same nVidia card, there is little difference between TwinView and Xinerama (although in this situation TwinView may offer slightly better performance.)
+
+If you wish to attach more than two monitors or monitors attached to other video cards, you will need to use Xinerama instead of TwinView. Likewise as of April 2012, both monitors must be in the same orientation - you cannot have one in landscape and the other in portrait mode.
+
+In the past, TwinView was the only way to get OpenGL acceleration with nVidia cards while being able to drag windows between screens. However modern versions of the nVidia closed-source driver are able to provide OpenGL acceleration even when using Xinerama.
+
+See [NVIDIA#TwinView](/index.php/NVIDIA#TwinView "NVIDIA") for an example configuration.
 
 ## Xinerama
 
@@ -371,7 +381,7 @@ This section lists window managers and how they cope with multiple monitors.
 
 ### 显示管理器
 
-[GDM](/index.php/GDM "GDM") is not configured by gnome display settings, resulting in the login screen not being displayed on the primary monitor. A workaround is explained [here](https://bbs.archlinux.org/viewtopic.php?pid=1262282#p1262282). It just consists in copying the user monitor configuration file to gdm's.
+[GDM](/index.php/GDM "GDM"): 请参考[GDM#Setup default monitor settings](/index.php/GDM#Setup_default_monitor_settings "GDM").
 
 Users may prefer to use `startx` and `~/.xinitrc` instead of a display manager due to the lack of working support with multiple displays.
 
@@ -414,3 +424,4 @@ Note that:
 ## See also
 
 *   ['How I got Dual Monitors with Nouveau Driver' forums thread](https://bbs.archlinux.org/viewtopic.php?pid=652861)
+*   [Six-headed, Six-user Linux System](http://linuxgazette.net/124/smith.html)

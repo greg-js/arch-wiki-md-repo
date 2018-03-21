@@ -63,7 +63,7 @@ Updating is very analogous. Obtain the newest version of the package and build i
 And update the database schema:
 
 ```
- $ bin/bundle exec rake db:migrate
+ $ RAILS_ENV=production bin/bundle exec rake db:migrate
 
 ```
 
@@ -72,7 +72,7 @@ Exit and restart **diaspora** systemd service.
 If you notice [missing icons or layout issues](https://wiki.diasporafoundation.org/FAQ_for_pod_maintainers#I_installed_diaspora.2A_on_my_machine.2C_but_when_I_load_the_site_there_are_no_images_and_the_layout_looks_horrible.21) after restarting the service, switch to the diaspora user again and run:
 
 ```
- $ bin/bundle exec rake assets:precompile
+ $ RAILS_ENV=production bin/bundle exec rake assets:precompile
 
 ```
 

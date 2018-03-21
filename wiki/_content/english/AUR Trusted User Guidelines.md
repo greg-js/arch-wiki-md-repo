@@ -165,12 +165,11 @@ First, connect to soyuz and disable
 
 ```
  $ ssh soyuz.archlinux.org
+ $ systemctl --user mask gpg-agent.service
 
 ```
 
-$ systemctl --user mask gpg-agent.service
-
-Make sure gpg-agent is not running (`systemctl --user stop gpg-agent.service`). At this point, make sure that no sockets exist in the folder pointed by `gpgconf --list-dir socketdir`. If they do, remove them or log out and in again. If you have a custom $GNUPGHOME (eg. to move it to ~/.config/gnupg), you'll need to unset that, as it is not possible in gnupg to set the homedir without setting the socketdir. On soyuz, *StreamLocalBindUnlink yes* is set in *sshd_config*, therefore removing the sockets manually on logout is not necessary.
+Make sure gpg-agent is not running (`systemctl --user stop gpg-agent.service`). At this point, make sure that no sockets exist in the folder pointed by `gpgconf --list-dir socketdir`. If they do, remove them or log out and in again. If you have a custom $GNUPGHOME (eg. to move it to `~/.config/gnupg`), you'll need to unset that, as it is not possible in gnupg to set the homedir without setting the socketdir. On soyuz, *StreamLocalBindUnlink yes* is set in *sshd_config*, therefore removing the sockets manually on logout is not necessary.
 
 While the PGP private keys remain on your local machine, the public keys **must** be on soyuz. Export your public ring to soyuz, e.g. from you local machine
 
@@ -195,7 +194,7 @@ LOGDEST="/home/johndoe/logs"
 GPGKEY="ABCD1234..."
 ```
 
-You might need to enable gpg-agent extra socket on the local system. (This is the default on Arch Linux.) At the user level on a systemd distribution, you can use
+You might need to enable `gpg-agent-extra.socket` on the local system. (This is the default on Arch Linux.) At the user level on a systemd distribution, you can use:
 
 ```
  $ systemctl --user enable gpg-agent-extra.socket
@@ -203,14 +202,14 @@ You might need to enable gpg-agent extra socket on the local system. (This is th
 
 ```
 
-You might also want to enable
+You might also want to enable:
 
 ```
  $ systemctl --user enable dirmngr.service
 
 ```
 
-Connect with
+Connect with:
 
 ```
  $ ssh -R $REMOTE_SSH_AUTH_SOCK:$SSH_AUTH_SOCK -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.extra soyuz.archlinux.org

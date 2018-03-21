@@ -66,7 +66,7 @@ ReadOnlyDirectories=/
 ReadWriteDirectories=/var/lib/plex /tmp
 ```
 
-**Note:** Those mechanisms are currently limited, see [DeveloperWiki:Security#ReadOnly/ReadWrite](/index.php/DeveloperWiki:Security#ReadOnly.2FReadWrite "DeveloperWiki:Security"). For instance, ReadOnlyDirectories do not apply to any submount, you have to list them as well.
+**Note:** Those mechanisms are currently limited. For instance, `ReadOnlyDirectories` do not apply to any submount, you have to list them as well.
 
 ### Resource Management
 

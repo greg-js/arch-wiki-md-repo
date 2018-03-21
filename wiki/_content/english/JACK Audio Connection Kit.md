@@ -232,7 +232,7 @@ Another approach, using ALSA loopback device (more complex but probably more rob
 
 ### gstreamer
 
-gstreamer requires the [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) package to work with JACK. It contains the plugin that adds JACK support.
+gstreamer requires the [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) package to work with JACK. It contains the plugin that adds JACK support.
 
 Use whatever gnome application settings manager you prefer (gconf2, gconf-editor, gstreamer-properties, etc.)
 

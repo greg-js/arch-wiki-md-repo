@@ -13,7 +13,7 @@ The article makes use of subpages for instructions specific for languages:
 *   [2 Locale](#Locale)
 *   [3 Keyboard layouts](#Keyboard_layouts)
 *   [4 Input methods in Xorg](#Input_methods_in_Xorg)
-    *   [4.1 GTK immodule](#GTK_immodule)
+    *   [4.1 GTK IM-module](#GTK_IM-module)
         *   [4.1.1 Disabling GTK IM modules (without uninstalling)](#Disabling_GTK_IM_modules_.28without_uninstalling.29)
     *   [4.2 QT immodule (> QT 4.0.0)](#QT_immodule_.28.3E_QT_4.0.0.29)
         *   [4.2.1 Disabling QT IM modules (without uninstalling)](#Disabling_QT_IM_modules_.28without_uninstalling.29)
@@ -75,7 +75,7 @@ See also: [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "w
 
 	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-### GTK immodule
+### GTK IM-module
 
 *   [scim](/index.php/Scim "Scim") with the socket FrontEnd module binds to the GTK Im-Module
 *   [uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim") (Japanese)

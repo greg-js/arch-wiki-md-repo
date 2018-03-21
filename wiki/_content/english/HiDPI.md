@@ -136,32 +136,7 @@ A workaround for this is to:
 
 #### Tray icons with fixed size
 
-If the tray icons are not scaled with the rest of the desktop, the size can be set in the Plasma configuration. System-wide configuration is located in the file `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/config/main.xml`, where the dimension of icons can be controlled by editing the default value for *iconSize* (a value of 2 should be fine):
-
- `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/config/main.xml` 
-```
-<entry name="iconSize" type="Int">
-    <label>Default icon size for the systray icons, it's an enum which values mean, 
-           Small, SmallMedium, Medium, Large, Huge, Enormous respectively. On low 
-           DPI systems they correspond to 16, 22, 32, 48, 64, 128 pixels. On high
-           DPI systems those values would be scaled up, depending on the DPI.</label>                    
-    <default>**2**</default>
-</entry>
-
-```
-
-User configuration is located in the file `~/.config/plasma-org.kde.plasma.desktop-appletsrc`. The section containing the settings for the tray bar should look similar to this; if the `iconSize` field is not present, add it.
-
- `~/.config/plasma-org.kde.plasma.desktop-appletsrc` 
-```
-[Containments][47][General]
-extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier
-hiddenItems=org.kde.ktp-contactlist,org.kde.plasma.battery
-knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier
-shownItems=org.kde.plasma.notifications,org.kde.plasma.clipboard
-**iconSize=2**
-
-```
+The tray icons are not scaled with the rest of the desktop, since Plasma ignores the Qt scaling settings by default. To make Plasma respect the Qt settings, set `PLASMA_USE_QT_SCALING` to `1`.
 
 ### Xfce
 

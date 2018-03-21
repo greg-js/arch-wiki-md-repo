@@ -128,7 +128,13 @@ You can play MIDI files in [deadbeef](https://www.archlinux.org/packages/?name=d
 
 You can play MIDI files on GNOME Videos and all other players using gstreamer as backend after having installed [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) (which provides [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) as a dependency) and installed a soundfont ([soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid) for example). See [FluidSynth](/index.php/FluidSynth "FluidSynth") for more info.
 
-If you choose to use [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid), the default search strategy will probably select FluidR3_GS.sf2 rather than FluidR3_GM.sf2\. There can be no audio if that's the case. To prevent it, you can create a symlink /usr/share/sounds/sf2/FluidR3_GM.sf2 pointing to /usr/share/sounds/sf2/FluidR3_GM.sf2.
+If you choose to use [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid), the default search strategy will probably select FluidR3_GS.sf2 rather than FluidR3_GM.sf2\. There can be no audio if that's the case. To prevent this, you can use a symlink:
+
+```
+# mv /usr/share/soundfonts/FluidR3_GS.sf2 /usr/share/soundfonts/FluidR3_GS.sf2_backup
+# ln -sf /usr/share/soundfonts/FluidR3_GM.sf2 /usr/share/soundfonts/FluidR3_GS.sf2
+
+```
 
 #### VLC
 

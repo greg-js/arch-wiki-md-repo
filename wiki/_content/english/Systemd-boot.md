@@ -36,7 +36,9 @@ It is simple to configure but it can only start EFI executables such as the Linu
 
 To install the *systemd-boot* EFI boot loader, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list`.
 
-It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). To keep the kernel updated it is simpler and therefore **recommended** to mount the ESP to `/boot`. If the ESP is **not** mounted to `/boot`, the kernel and initramfs must be copied onto that ESP. This process can be automated by watching kernel files for change using some systemd units as proposed in [EFI System Partition#Using systemd](/index.php/EFI_System_Partition#Using_systemd "EFI System Partition").
+It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`.
+
+If the ESP is **not** mounted to `/boot`, the kernel and initramfs files must be copied onto that ESP. They will also need to be replaced regularly every time there is a kernel upgrade. The copy process can be automated by watching the kernel files for change using some systemd units as proposed in [EFI System Partition#Using systemd](/index.php/EFI_System_Partition#Using_systemd "EFI System Partition").
 
 `*esp*` will be used throughout this page to denote the ESP mountpoint, i.e. `/boot`.
 
@@ -98,11 +100,11 @@ Exec = /usr/bin/bootctl update
 
 The loader configuration is stored in the file `*esp*/loader/loader.conf` and it is composed of the following options:
 
-*   `default` – default entry to select (without the *.conf* suffix); can be a wildcard like `arch-*`.
+*   `default` – default entry to select as defined in [#Adding boot entries](#Adding_boot_entries); it is given without the *.conf* suffix and it can be a wildcard like `arch-*`.
 *   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
 *   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
 
-Additional options available starting with systemd **v239**:
+Additional options are available starting with systemd **v239**:
 
 *   `auto-entries` (*boolean*, default is `1`) – shows automatic entries for Windows, EFI Shell, and Default Loader;
 *   `auto-firmware` (*boolean*, default is `1`) – shows entry for rebooting into UEFI firmware settings;

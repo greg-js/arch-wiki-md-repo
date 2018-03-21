@@ -34,7 +34,7 @@ KMSCON 能作为 Linux 内核内置终端的一个完整替代，它具有以下
 
 虽然名字里带有 KMS，kmscon 并非硬性依赖 KMS。Kmscon 支持的视频后端如下：fbdev（Linux fbdev 视频后端），drm2d（Linux DRM 软解后端），drm3d（Linux DRM 硬解后端）。请确保你的系统中有其中之一。
 
-你可以从[官方仓库](/index.php/Official_repositories "Official repositories")安装 [kmscon](https://aur.archlinux.org/packages/kmscon/) 也可以从 [AUR](/index.php/AUR "AUR") 安装 [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/)。
+你可以从 [AUR](/index.php/AUR "AUR") 安装 [kmscon](https://aur.archlinux.org/packages/kmscon/) 或者 [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/)。
 
 出于保守的策略，你可以继续在 tty1 上使用传统的 getty 而只在其他虚拟终端上运行 kmscon ，或者你可以用 kmscon 替换 getty。
 

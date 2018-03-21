@@ -124,6 +124,12 @@
     *   Security team
 *   David Runge
     *   Packaging (mainly pro-audio)
+*   Eli Schwartz
+    *   Bug tracker basic triage, sorting, correction, and assigning
+    *   dbscripts maintainer
+    *   various hacking on pacman/makepkg, devtools
+    *   Packaging
+    *   AUR requests
 *   Evgeniy Alekseev
     *   Packaging (mostly scientific packages and Qt applications)
     *   AUR requests
@@ -189,6 +195,8 @@
     *   Wiki administration
 *   Doug Newgard
     *   Bug tracker basic triage, sorting, correction, and assigning
+*   Eli Schwartz
+    *   See above (TU)
 *   Eric Waller
     *   Forum Administration and Moderation
 *   Jakob Wadsager

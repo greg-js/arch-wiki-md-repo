@@ -608,6 +608,10 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[https://legacy.xmms2.org/](https://legacy.xmms2.org/) || [xmms](https://aur.archlinux.org/packages/xmms/)
 
+*   **[Sonic Visualiser](https://en.wikipedia.org/wiki/Sonic_Visualiser "wikipedia:Sonic Visualiser")** — Advanced player with waveform and spectrogram visualiser, playback speed control and selection looping. Very useful for transcribing.
+
+	[https://www.sonicvisualiser.org/](https://www.sonicvisualiser.org/) || [sonic-visualiser](https://www.archlinux.org/packages/?name=sonic-visualiser)
+
 #### Volume managers
 
 *   **GVolWheel** — An audio mixer which lets you control the volume through a tray icon.

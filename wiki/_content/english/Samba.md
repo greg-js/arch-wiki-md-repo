@@ -488,10 +488,10 @@ If you do not have printers to be shared, use the following setting to save some
  `/etc/samba/smb.conf` 
 ```
 [global]
-        load printers = No
-        printcap name = /dev/null
-        disable spoolss = Yes
+        load printers = no
 ```
+
+Options `printcap name = /dev/null` and `disable spools = yes` might save a few additional resources, depending on the Samba version used.
 
 ### Block certain file extensions on Samba share
 

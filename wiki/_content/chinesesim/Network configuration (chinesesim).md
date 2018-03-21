@@ -257,7 +257,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 #### dhcpcd
 
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") 是 Arch Linux 安装 ISO 上默认的 DHCP 客户的，功能强大，有多种客户端配置选项。启用方式请参考 [dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")。
+[dhcpcd](/index.php/Dhcpcd "Dhcpcd") 是 Arch Linux 安装 ISO 上默认的 DHCP 客户端，功能强大，有多种客户端配置选项。启用方式请参考 [dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")。
 
 #### netctl
 

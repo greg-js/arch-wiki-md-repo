@@ -27,6 +27,7 @@ Packages in the official repositories are constantly upgraded: when a package is
         *   [1.5.3 gnome-unstable](#gnome-unstable)
         *   [1.5.4 kde-unstable](#kde-unstable)
         *   [1.5.5 Disabling testing repositories](#Disabling_testing_repositories)
+    *   [1.6 staging](#staging)
 *   [2 Historical background](#Historical_background)
 
 ## Repositories
@@ -137,6 +138,14 @@ If you enabled testing repositories, but later on decided to disable them, you s
 2.  Perform a `# pacman -Syuu` to "rollback" your updates from these repositories.
 
 The second item is optional, but keep it in mind if you notice any problems.
+
+### staging
+
+**Warning:** Do not enable the *staging* repositories for any reason. Your system will unquestionably break after performing an update. This repository is only meant for backend developer use.
+
+This repository contains broken packages and is used solely by developers during rebuilds of many packages at once. In order to rebuild packages that depend on, for example, a new shared library, the shared library itself must first be built and uploaded to the staging repositories to be made available to other developers. As soon as all dependent packages are rebuilt, the group of packages is then moved to testing or to the main repositories, whichever is more appropriate.
+
+See [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2010-August/017579.html) for more historical details.
 
 ## Historical background
 

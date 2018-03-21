@@ -67,9 +67,14 @@ rofi -show run -modi run -location 1 -width 100 \
 
 ## Custom Themes
 
-1.  Requires the [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) package.
-2.  Add your customisations to your [.Xresources file](/index.php/X_resources "X resources") (see below for examples).
-3.  Reload .Xresources with `xrdb -load ~/.Xresources`.
+You can preview and apply themes for rofi with
+
+```
+ rofi-theme-selector
+
+```
+
+Customizations may be saved to your [.Xresources file](/index.php/X_resources "X resources") (requires the [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) package). To apply changes reload .Xresources with `xrdb -load ~/.Xresources`.
 
 ### Contributed Themes
 

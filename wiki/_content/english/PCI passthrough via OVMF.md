@@ -1,4 +1,4 @@
-The Open Virtual Machine Firmware ([OVMF](https://github.com/tianocore/tianocore.github.io/wiki/OVMF)) is a project to enable UEFI support for virtual machines. Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful for graphic-intensive tasks.
+The Open Virtual Machine Firmware ([OVMF](https://github.com/tianocore/tianocore.github.io/wiki/OVMF)) is a project to enable UEFI support for virtual machines. Starting with Linux 3.9 and recent versions of [QEMU](/index.php/QEMU "QEMU"), it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful for graphic-intensive tasks.
 
 Provided you have a desktop computer with a spare GPU you can dedicate to the host (be it an integrated GPU or an old OEM card, the brands do not even need to match) and that your hardware supports it (see [#Prerequisites](#Prerequisites)), it is possible to have a VM of any OS with its own dedicated GPU and near-native performance. For more information on techniques see the background [presentation (pdf)](https://www.linux-kvm.org/images/b/b3/01x09b-VFIOandYou-small.pdf).
 
@@ -54,7 +54,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.2 UEFI (OVMF) Compatability in VBIOS](#UEFI_.28OVMF.29_Compatability_in_VBIOS)
     *   [10.3 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
     *   [10.4 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-    *   [10.5 X doesn't start after enabling vfio_pci](#X_doesn.27t_start_after_enabling_vfio_pci)
+    *   [10.5 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
     *   [10.6 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
     *   [10.7 VM only uses one core](#VM_only_uses_one_core)
     *   [10.8 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
@@ -487,7 +487,7 @@ See [this reddit comment](https://www.reddit.com/r/VFIO/comments/6vgtpx/high_dpc
 
 Previously, Nested Page Tables (NPT) had to be disabled on AMD systems running KVM to improve GPU performance because of a [very old bug](https://sourceforge.net/p/kvm/bugs/230/), but the trade off was decreased CPU performance, including stuttering.
 
-There is a [kernel patch](https://patchwork.kernel.org/patch/10027525/) that resolves this issue, which was accepted into kernel 4.14-stable and 4.9-stable. If you're running the official [linux](https://www.archlinux.org/packages/?name=linux) or [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel the patch has already been applied (make sure you're on the latest). If you're running another kernel you might need to manually patch yourself.
+There is a [kernel patch](https://patchwork.kernel.org/patch/10027525/) that resolves this issue, which was accepted into kernel 4.14-stable and 4.9-stable. If you are running the official [linux](https://www.archlinux.org/packages/?name=linux) or [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel the patch has already been applied (make sure you are on the latest). If you are running another kernel you might need to manually patch yourself.
 
 **Note:** Several Ryzen users (see [this Reddit thread](https://www.reddit.com/r/VFIO/comments/78i3jx/possible_fix_for_the_npt_issue_discussed_on_iommu/)) have tested the patch, and can confirm that it works, bringing GPU passthrough performance up to near native quality.
 
@@ -669,7 +669,7 @@ $ looking-glass-client
 
 ```
 
-If you don't want to use Spice to control the guest mouse and keyboard you can disable the Spice server
+If you do not want to use Spice to control the guest mouse and keyboard you can disable the Spice server
 
 ```
 $ looking-glass-client -s
@@ -1114,7 +1114,7 @@ In order to fix the issues enabling MSI on the 0 function of a nVidia card (`01:
 
 If after enabling `intel_iommu` the HDMI output device of Intel GPU becomes unusable on the host then setting the option `igfx_off` (i.e. `intel_iommu=on,igfx_off`) might bring the audio back, please read `Graphics Problems?` in [Intel-IOMMU.txt](https://www.kernel.org/doc/Documentation/Intel-IOMMU.txt) for details about setting `igfx_off`.
 
-### X doesn't start after enabling vfio_pci
+### X does not start after enabling vfio_pci
 
 This is related to the host GPU being detected as a secondary GPU, which causes X to fail/crash when it tries to load a driver for the guest GPU. To circumvent this, a Xorg configuration file specifying the BusID for the host GPU is required. The correct BusID can be acquired from lspci or the Xorg log. [Source →](https://www.redhat.com/archives/vfio-users/2016-August/msg00025.html)
 

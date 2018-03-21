@@ -33,6 +33,7 @@ Related articles
     *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
     *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
     *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
+    *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some.2Fpath.2Fto.2Ffile:_No_space_left_on_device)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -343,6 +344,23 @@ Error starting daemon: error initializing graphdriver: devmapper: Device docker-
 ```
 
 Then, try the following steps to resolve the error. Stop the service, back up `/var/lib/docker/` (if desired), remove the contents of `/var/lib/docker/`, and try to start the service. See the open [GitHub issue](https://github.com/docker/docker/issues/21304) for details.
+
+### Failed to create some/path/to/file: No space left on device
+
+If you are getting an error message like this:
+
+```
+ERROR: Failed to create some/path/to/file: No space left on device
+
+```
+
+when building or running a Docker image, even though you do have enough disk space available, make sure:
+
+*   [Tmpfs](/index.php/Tmpfs "Tmpfs") is disabled or has enough memory allocation. Docker might be trying to write files into `/tmp` but fails due to restrictions in memory usage and not disk space.
+*   If you are using [XFS](/index.php/XFS "XFS"), you might want to remove the `noquota` mount option from the relevant entries in `/etc/fstab` (usually where `/tmp` and/or `/var/lib/docker` reside). Refer to [Disk quota](/index.php/Disk_quota "Disk quota") for more information, especially if you plan on using and resizing `overlay2` Docker storage driver.
+*   XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
+
+**Note:** There are some differences of XFS Quota compared to standard Linux [Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) may be worth reading.
 
 ## See also
 

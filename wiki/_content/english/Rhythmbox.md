@@ -70,11 +70,7 @@ c) start it [Start/enable](/index.php/Start/enable "Start/enable") `avahi-daemon
 
 ### "Unknown Playback Error" when streaming or playing from regular files
 
-Rhythmbox may display this error when it does not have the correct codec to play that stream. You will need to identify what format the stream is (by looking at the command line error messages that Rhythmbox displays) and then install the correct Gstreamer codec for that particular audio stream.
-
-For mp3-files install [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) and/or [gstreamer0.10-ugly-plugins](https://aur.archlinux.org/packages/gstreamer0.10-ugly-plugins/) depending on wheter you use the current and/or legacy version (see [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer")). You will also need [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).
-
-If you do not know which gstreamer plugin servers what audio formats, ask on IRC or just google it. For a full setup of rhythmbox, have a look at its optional dependencies: [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox).
+Rhythmbox may display this error when it does not have the correct codec to play that stream. You will need to identify what format the stream is (by looking at the command line error messages that Rhythmbox displays) and then install the correct GStreamer codec for that particular audio stream: see [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer").
 
 ### "Error, impossible to activate plugin 'Audio CD Recorder'" shows up every time I start Rhythmbox
 

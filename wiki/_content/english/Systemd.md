@@ -436,15 +436,6 @@ Alternatively, you may leave the bootloader alone and change `default.target`. T
 
 ```
 
-To be able to override the previously set `default.target`, use the force option:
-
-```
-# systemctl set-default -f multi-user.target
-
-```
-
-The effect of this command is output by *systemctl*; a symlink to the new default target is made at `/etc/systemd/system/default.target`.
-
 ## Temporary files
 
 "*systemd-tmpfiles* creates, deletes and cleans up volatile and temporary files and directories." It reads configuration files in `/etc/tmpfiles.d/` and `/usr/lib/tmpfiles.d/` to discover which actions to perform. Configuration files in the former directory take precedence over those in the latter directory.
