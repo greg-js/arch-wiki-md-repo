@@ -23,16 +23,16 @@ Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bi
 *   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
 *   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
 
-You will need to be in the games group to run Dwarf Fortress. If you are not in the games group, add yourself, then log out and back in again:
+You will need to be in the `games` [group](/index.php/Group "Group") to run Dwarf Fortress. If you are not in the `games` group, add yourself, then log out and back in again:
 
 ```
-# gpasswd -a USERNAME games
+# gpasswd -a *USERNAME* games
 
 ```
 
 ## Troubleshooting
 
-If you get an error stating 'The file "index" must be in the "data" folder' then you may find a solution [here](http://robertqualls.com/2013/06/24/getting-dwarf-fortress-to-work-on-linux.html).
+If you get an error stating *The file "index" must be in the "data" folder* then you may find a solution [here](http://robertqualls.com/2013/06/24/getting-dwarf-fortress-to-work-on-linux.html).
 
 ## Tools
 
@@ -65,6 +65,8 @@ Alternatively, you can just give that permission to dwarftherapist:
 
 ```
 
+**Note:** The permissions will reset after an update to Dwarf Therapist. Consider using [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") to automatically configure the permissions after an update.
+
 ### SoundSense
 
 [SoundSense](http://dwarffortresswiki.org/index.php/DF2014:Utilities#SoundSense) ([soundsense](https://aur.archlinux.org/packages/soundsense/) in [AUR](/index.php/AUR "AUR")) adds various sound effects and music via analysing the gamelog.txt.
@@ -72,9 +74,6 @@ Alternatively, you can just give that permission to dwarftherapist:
 ### quickfort
 
 [Quickfort](http://www.joelpt.net/quickfort/) is a utility for Dwarf Fortress that helps you build fortresses from "blueprint" .CSV, .XLS, and .XLSX files.
-
-*   [quickfort](https://aur.archlinux.org/packages/quickfort/)
-*   [quickfort-git](https://aur.archlinux.org/packages/quickfort-git/)
 
 ### StoneSense
 

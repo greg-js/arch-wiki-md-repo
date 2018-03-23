@@ -1,5 +1,12 @@
 [Tiny Tiny RSS](https://tt-rss.org/) is an open source web-based news feed (RSS/Atom) aggregator, designed to allow you to read news from any location, while feeling as close to a real desktop application as possible.
 
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Set up php and database](#Set_up_php_and_database)
+    *   [1.2 Pacman hook](#Pacman_hook)
+    *   [1.3 Set up an update daemon](#Set_up_an_update_daemon)
+
 ## Installation
 
 Install [tt-rss](https://www.archlinux.org/packages/?name=tt-rss) from the [official repositories](/index.php/Official_repositories "Official repositories").
@@ -75,6 +82,28 @@ With PostgreSQL run:
 $ psql ttrss -U ttrss -f /usr/share/webapps/tt-rss/schema/ttrss_schema_pgsql.sql
 
 ```
+
+### Pacman hook
+
+To do tt-rss database upgrades automatically you may set up pacman post upgrade hook based on following example:
+
+```
+ [Trigger]
+ Operation = Install
+ Operation = Upgrade
+ Type = Package
+ Target = tt-rss
+
+ [Action]
+ Description = Updating TT-RSS Database
+ When = PostTransaction
+ Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/tt-rss/update.php --update-schema
+
+```
+
+You need to put it into /etc/pacman.d/hooks/tt-rss.hook if you did not customize HookDir in pacman.conf.
+
+See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 ### Set up an update daemon
 

@@ -64,7 +64,9 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.15 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
     *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
     *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
-*   [4 See also](#See_also)
+*   [4 Understanding](#Understanding)
+    *   [4.1 What happens during package install](#What_happens_during_package_install)
+*   [5 See also](#See_also)
 
 ## Usage
 
@@ -572,6 +574,8 @@ where `*/path/to/common/settings*` file contains the same options for both confi
 
 *Pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`. Hook file names must be suffixed with *.hook*.
 
+Pacman hooks are used, for example, in combination with `systemd-sysusers` and `systemd-tmpfiles` to automatically create system users and files during the installation of packages. For example, package `tomcat8` specifies that it wants a system user called `tomcat8` and certain directories owned by this user. The pacman hooks `systemd-sysusers.hook` and `systemd-tmpfiles.hook` invoke `systemd-sysusers` and `systemd-tmpfiles` when pacman determines that package `tomcat8` contains files specifying users and tmp files.
+
 For more information on alpm hooks, see [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
 ### Repositories and mirrors
@@ -770,6 +774,22 @@ Some issues have been reported regarding network problems that prevent *pacman* 
 ### Failed retrieving file 'core.db' from mirror
 
 If you receive this error message with correct [mirrors](/index.php/Mirrors "Mirrors"), try setting a different [name server](/index.php/Resolv.conf "Resolv.conf").
+
+## Understanding
+
+### What happens during package install
+
+(From [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1775592), may be incomplete/incorrect so far)
+
+When successfully installing a new package, pacman performs for the following high-level steps:
+
+1.  pacman obtains the to-be installed package file
+2.  pacman performs various checks that the package can likely be installed
+3.  if the package has an install script, its `pre_install` function is executed
+4.  if pacman `PreTransaction` hooks apply, they are executed
+5.  pacman untars the package and dumps its files into the file system
+6.  if pacman `PostTransaction` hooks apply, they are executed
+7.  if the package has an install script, its `post_install` function is executed
 
 ## See also
 

@@ -112,7 +112,9 @@ Arch defaults to consider anybody in the `wheel` group as an administrator: this
 
 **Tip:** If you want to configure passwordless authentication, see [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
 
-As of libvirt 1.2.16 (commit:[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)), members of the `libvirt` group have passwordless access to the RW daemon socket by default. The easiest way to ensure your user has access is to ensure the libvirt group exists and they are a member of it. If you wish to change the group authorized to access the RW daemon socket to be the kvm group, create the following file:
+As of libvirt 1.2.16 (commit:[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)), members of the `libvirt` group have passwordless access to the RW daemon socket by default. The easiest way to ensure your user has access is to ensure the libvirt group exists and they are a member of it.
+
+You may change the group authorized to access the RW daemon socket. As an example, to authorize the `kvm` group, create the following file:
 
  `/etc/polkit-1/rules.d/50-libvirt.rules` 
 ```

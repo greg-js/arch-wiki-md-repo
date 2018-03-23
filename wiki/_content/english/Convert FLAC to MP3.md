@@ -137,7 +137,7 @@ For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the 
 
 *   **[WinFF](https://en.wikipedia.org/wiki/FFmpeg#Projects_using_FFmpeg "wikipedia:FFmpeg")** — A GUI for the powerful multimedia converter FFmpeg. Features dedicated profiles for audio transcoding.
 
-	[http://code.google.com/p/winff/](http://code.google.com/p/winff/) || [winff](https://aur.archlinux.org/packages/winff/)
+	[https://github.com/WinFF/winff//](https://github.com/WinFF/winff//) || [winff](https://aur.archlinux.org/packages/winff/)
 
 ## See also
 

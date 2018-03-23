@@ -28,8 +28,8 @@ If you would like to try other clients, a minimal client with manual certificate
 
 Plugins are available for automated configuration and installation of the issued certificates in web servers:
 
-*   The experimental plugin for [Nginx](/index.php/Nginx "Nginx") is provided with the [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) package.
-*   Automated installation using the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") is enabled via the [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) package.
+*   The [Nginx](/index.php/Nginx "Nginx") plugin can be installed with the [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) package.
+*   The [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") plugin can be installed with the [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) package.
 
 ## Configuration
 

@@ -166,6 +166,10 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://photoqt.org/](http://photoqt.org/) || [photoqt](https://aur.archlinux.org/packages/photoqt/)
 
+*   **qimgv** — Fast and easy to use Qt5 image viewer. Supports webm/mp4 playback via mpv.
+
+	[https://github.com/easymodo/qimgv/](https://github.com/easymodo/qimgv/) || [qimgv-git](https://aur.archlinux.org/packages/qimgv-git/)
+
 *   **Quick Image Viewer** — Very small and fast image viewer based on GTK+ and imlib2.
 
 	[http://spiegl.de/qiv/](http://spiegl.de/qiv/) || [qiv](https://www.archlinux.org/packages/?name=qiv)

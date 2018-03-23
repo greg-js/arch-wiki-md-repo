@@ -29,6 +29,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [15 Custom GNOME sessions](#Custom_GNOME_sessions)
 *   [16 Redirect certain URLs to specific web browsers](#Redirect_certain_URLs_to_specific_web_browsers)
 *   [17 Removing film holes/film strip from video thumbnails in Nautilus](#Removing_film_holes.2Ffilm_strip_from_video_thumbnails_in_Nautilus)
+*   [18 Prevent GNOME software from downloading updates](#Prevent_GNOME_software_from_downloading_updates)
 
 ## Keyboard
 
@@ -412,3 +413,12 @@ rm -r ~/.cache/thumbnails
 ```
 
 Log out and back in to your session and you should no longer have the film holes/film strip effect on your thumbnails in Nautilus.
+
+## Prevent GNOME software from downloading updates
+
+By default GNOME Software will download updated packages from the Arch Linux repositories. This forces GNOME Software to refresh the package lists for pacman automatically. This is the equivalent to `pacman -Sy`. If the user ignores the GNOME software update prompt, but does install a new package, that will result in [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), which are **unsupported**. To prevent GNOME Software from refreshing the package lists set the following dconf setting:
+
+```
+$ gsettings set org.gnome.software download-updates false
+
+```

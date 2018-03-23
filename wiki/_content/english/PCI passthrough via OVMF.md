@@ -202,9 +202,9 @@ You can then add those vendor-device ID pairs to the default parameters passed t
  `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
 **Note:** If, as noted in [#Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
 
-This, however, does not guarantee that vfio-pci will be loaded before other graphics drivers. To ensure that, we need to statically bind it in the kernel image alongside with its dependencies. That means adding, in this order, `vfio`, `vfio_iommu_type1`, `vfio_pci` and `vfio_virqfd` to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"):
+This, however, does not guarantee that vfio-pci will be loaded before other graphics drivers. To ensure that, we need to statically bind it in the kernel image alongside with its dependencies. That means adding, in this order, `vfio_pci`, `vfio`, `vfio_iommu_type1`, and `vfio_virqfd` to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"):
 
- `/etc/mkinitcpio.conf`  `MODULES=(... vfio vfio_iommu_type1 vfio_pci vfio_virqfd ...)` 
+ `/etc/mkinitcpio.conf`  `MODULES=(... vfio_pci vfio vfio_iommu_type1 vfio_virqfd ...)` 
 **Note:** If you also have another driver loaded this way for [early modesetting](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") (such as `nouveau`, `radeon`, `amdgpu`, `i915`, etc.), all of the aforementioned VFIO modules must precede it.
 
 Also, ensure that the modconf hook is included in the HOOKS list of `mkinitcpio.conf`:

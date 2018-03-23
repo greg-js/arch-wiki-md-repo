@@ -149,7 +149,7 @@ $ makepkg -si
 
 ```
 
-*   `-s`/`--syncdeps` automatically resolves and install any dependencies with [pacman](/index.php/Pacman "Pacman") before building. If the package depends on other AUR packages, you will need to manually install them first.
+*   `-s`/`--syncdeps` automatically resolves and installs any dependencies with [pacman](/index.php/Pacman "Pacman") before building. If the package depends on other AUR packages, you will need to manually install them first.
 *   `-i`/`--install` installs the package if it is built successfully. Alternatively the built package can be installed with `pacman -U *package*.pkg.tar.xz`.
 
 Other useful flags are

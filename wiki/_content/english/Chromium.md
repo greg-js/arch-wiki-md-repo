@@ -26,6 +26,7 @@ Related articles
     *   [4.5 Password prompt on every start with GNOME Keyring](#Password_prompt_on_every_start_with_GNOME_Keyring)
     *   [4.6 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
     *   [4.7 Losing cookies and passwords when switching between desktop environments](#Losing_cookies_and_passwords_when_switching_between_desktop_environments)
+    *   [4.8 Hang on startup when Google Sync enabled](#Hang_on_startup_when_Google_Sync_enabled)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -143,6 +144,12 @@ You will need to enable the Media Router Component Extension in `chrome://flags/
 ### Losing cookies and passwords when switching between desktop environments
 
 If you see the message `Failed to decrypt token for service AccountId-*` in the terminal when you start Chromium, it might try to use the wrong password storage backend. This might happen when you switch between Desktop Environments.
+
+See [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
+
+### Hang on startup when Google Sync enabled
+
+Try launching Chrome with `--password-store=basic` or another appropriate password store.
 
 See [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
 

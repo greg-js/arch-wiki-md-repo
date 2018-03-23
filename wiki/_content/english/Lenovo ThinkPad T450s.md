@@ -197,11 +197,19 @@ START_CHARGE_THRESH_BAT1=60
 STOP_CHARGE_THRESH_BAT1=70
 ```
 
+NB: with the version 4.17 of the kernel tlp should not be necessary anymore to set up the thresholds:
+
+```
+/sys/class/power_supply/BAT{0-1}/charge_start_threshold
+/sys/class/power_supply/BAT{0-1}/charge_stop_threshold
+
+```
+
 To enable power save mode on the audio:
 
  `/etc/modprobe.d/audio_powersave.conf`  `options snd_hda_intel power_save=1` 
 
-To enable decrease the consumption of the intel chipset add **i915.enable_psr=1** to your kernel parameters ([details here](https://hansdegoede.livejournal.com/18653.html)).
+To decrease the consumption of the intel chipset add **i915.enable_psr=1** to your kernel parameters ([details here](https://hansdegoede.livejournal.com/18653.html)).
 
 ### SSD
 

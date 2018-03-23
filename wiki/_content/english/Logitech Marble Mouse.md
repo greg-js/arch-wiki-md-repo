@@ -284,6 +284,8 @@ The following lines are appended to **`/etc/X11/xorg.conf.d/10-evdev.conf`**
 
 **Note:** *Users of other Linux distributions may find the configuration file in another location. Ubuntu uses /usr/share/X11/xorg.conf.d/10-evdev.conf*
 
+**Note:** Scrolling described below does not work on Cinnamon as of March 2018 - but the libinput configuration given later works.
+
 This example is set up for right-hand placement with horizontal scrolling disabled.
 
 ```
@@ -346,17 +348,11 @@ EndSection
 
 Changes made to xorg configuration files do not take effect until the X session is restarted. To restart the X session, simply log out from your window manager and log back in.
 
-Or, depending on what display manager you use, you can use one of the following commands:
-
-Default Ubuntu (with LightDM) : `sudo restart lightdm`
-
-Gnome (with GDM) : `sudo restart gdm`
-
-KDE (with KDM) : `sudo restart kdm`
-
 ## Minimal configuration
 
 ### Using evdev
+
+**Note:** Scrolling described below does not work on Cinnamon as of March 2018 - but the libinput configuration given later works.
 
 At times it can be useful to start with the absolute minimum and build from there. This is one facet of [The Arch Way](/index.php/The_Arch_Way "The Arch Way"). In this spirit, I decided to see how few lines I might use to create a usable Marble Mouse configuration.
 

@@ -584,6 +584,7 @@ If the bridge is given an IP address and traffic destined for it is allowed, but
 **Tip:**
 
 *   If you want to set up IP masquerading, e.g. NAT for virtual machines, see the [Internet sharing#Enable NAT](/index.php/Internet_sharing#Enable_NAT "Internet sharing") page.
+*   See [Network bridge](/index.php/Network_bridge "Network bridge") for information on creating bridge.
 *   You may want to have a DHCP server running on the bridge interface to service the virtual network. For example, to use the `172.20.0.1/16` subnet with [dnsmasq](/index.php/Dnsmasq "Dnsmasq") as the DHCP server:
 
 ```

@@ -1,10 +1,10 @@
 Bu doküman, Arch Linux'u yüklemek için kullanılan canlı sistem kılavuzudur. Kurulumdan önce, [Sıkça sorulan sorulara](/index.php/Frequently_asked_questions_(T%C3%BCrk%C3%A7e) "Frequently asked questions (Türkçe)") bakmanız önerilmektedir. Bu belgede kullanılan lisanslar için, bakınız [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-Daha ayrıntılı talimatlar için, Bu kılavuzdan sırasıyla [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") makalelerine ya da çeşitli programlarının olduğu linklere' [man pages](/index.php/Man_page "Man page"), bakınız. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
+Daha ayrıntılı talimatlar için, bu kılavuzdan sırasıyla [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") makalelerine ya da çeşitli programların olduğu linklere' [man pages](/index.php/Man_page "Man page"), bakınız. İnteraktif yardım için, [IRC kanalını](https://wiki.archlinux.org/index.php/IRC_channel) ve [forumu](https://bbs.archlinux.org/) kullanabilirsiniz.
 
 ## Contents
 
-*   [1 Pre-installation](#Pre-installation)
+*   [1 Kurulum Öncesi](#Kurulum_.C3.96ncesi)
     *   [1.1 Set the keyboard layout](#Set_the_keyboard_layout)
     *   [1.2 Verify the boot mode](#Verify_the_boot_mode)
     *   [1.3 Connect to the Internet](#Connect_to_the_Internet)
@@ -28,13 +28,13 @@ Daha ayrıntılı talimatlar için, Bu kılavuzdan sırasıyla [ArchWiki](/index
 *   [4 Reboot](#Reboot)
 *   [5 Post-installation](#Post-installation)
 
-## Pre-installation
+## Kurulum Öncesi
 
-Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, a working internet connection is required.
+Arch Linux en az 512 MB RAM'e sahip olan herhangi bir [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") uyumlu makinede çalışır. [base](https://www.archlinux.org/groups/x86_64/base/) grubundaki tüm paketleri içeren basit bir kurulum 800 megabyte'tan az bir disk alanı kaplar. Kurulum esnasında paketlerin veri havuzundan indirilmesi gerektiğinden, çalışan bir internet bağlantısı gereklidir.
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Yükleme medyasını [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") sayfasında açıklandığı gibi indiriniz ve önyükleyiniz. İlk sanal konsola root kullanıcısı olarak giriş yapacaksınız ve [Zsh](/index.php/Zsh "Zsh") komut istemiyle karşılaşacaksınız. [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) gibi yaygın komutlar [Tab tuşuyla tamamlanabilir.](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")
 
-To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
+Farklı bir konsola geçmek için, örneğin kurulum esnasında bu rehberi [ELinks](/index.php/ELinks "ELinks") ile görüntülemek için, `Alt+*ok tuşu*` [kısayolunu](/index.php/Keyboard_shortcuts "Keyboard shortcuts") kullanabilirsiniz. Yapılandırma dosyalarını [düzenlemek](/index.php/Textedit "Textedit") için, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") veya [vim](/index.php/Vim#Usage "Vim") kullanılabilir.
 
 ### Set the keyboard layout
 

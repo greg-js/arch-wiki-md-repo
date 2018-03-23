@@ -15,7 +15,7 @@
 
 ### Installation
 
-Download [[1]](http://www.privateinternetaccess.com/openvpn/openvpn-strong.zip). Unzip the file and move all files to `/etc/openvpn/client`. Ensure the files have `root` as the owner.
+Download [[1]](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip). Unzip the file and move all files to `/etc/openvpn/client`. Ensure the files have `root` as the owner.
 
 **Tip:** Rename the `.opvn` extensions to `.conf` and remove or replace spaces in configuration file names to be able to use [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 

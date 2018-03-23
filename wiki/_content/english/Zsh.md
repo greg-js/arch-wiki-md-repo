@@ -273,7 +273,7 @@ RPROMPT='[%F{yellow}%?%f]'
 
 ```
 
-And here's how it will be displayed:
+And here is how it will be displayed:
 
 ```
 username@host ~ %                                                         [0]

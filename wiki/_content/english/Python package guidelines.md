@@ -53,7 +53,7 @@ If the resulting package includes executables which [import the `pkg_resources` 
 
 ### pip
 
-If you need to use *pip* (provided by [python-pip](https://www.archlinux.org/packages/?name=python-pip) and [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)), *e.g.* for installing [wheel](https://bitbucket.org/pypa/wheel/) packages, remember to pass the following flags:
+If you need to use *pip* (provided by [python-pip](https://www.archlinux.org/packages/?name=python-pip) and [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)), *e.g.* for installing [wheel](https://github.com/pypa/wheel) packages, remember to pass the following flags:
 
 ```
 PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-installed --no-deps *.whl

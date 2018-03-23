@@ -87,7 +87,7 @@ X /var/tmp/systemd-private-*/tmp
 
 ### Opening symlinks in tmpfs as root fails
 
-Considering `/tmp` is using tmpfs, change the current directory to `/tmp`, then create a file and create a symlink to that file in the same `/tmp` directory. Permission denied errors are to be expected when attempting to read the symlink due to `/tmp` [https://wiki.ubuntu.com/Security/Features#Symlink_restrictions](https://wiki.ubuntu.com/Security/Features#Symlink_restrictions) has the sticky bit set].
+Considering `/tmp` is using tmpfs, change the current directory to `/tmp`, then create a file and create a symlink to that file in the same `/tmp` directory. Permission denied errors are to be expected when attempting to read the symlink due to `/tmp` [having the sticky bit set](https://wiki.ubuntu.com/Security/Features#Symlink_restrictions).
 
 This behavior can be controlled via `/proc/sys/fs/protected_symlinks` or simply via sysctl: `sysctl -w fs.protected_symlinks=0`. See [Sysctl#Configuration](/index.php/Sysctl#Configuration "Sysctl") to make this permanent.
 

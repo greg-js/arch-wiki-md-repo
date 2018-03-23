@@ -13,15 +13,24 @@ Both of them are supported out-the-box by [GNOME](/index.php/GNOME "GNOME") and 
 
 **Note:** Some modern ThinkPads with exotic [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics like the Quadro M2200 might not work with dockd because the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver is buggy and causes a kernel crash. See [Issue #3](https://github.com/libthinkpad/dockd/issues/3) on Github
 
+## Contents
+
+*   [1 Using dockd](#Using_dockd)
+*   [2 Installing](#Installing)
+*   [3 Dock and undock hooks](#Dock_and_undock_hooks)
+*   [4 See also](#See_also)
+
 ## Using dockd
 
 To handle docks outside [KDE](/index.php/KDE "KDE") and [GNOME](/index.php/GNOME "GNOME") you will need to install a dock daemon that will auto-switch the monitors. [dockd](https://aur.archlinux.org/packages/dockd/) is a dock daemon that was developed for light desktops and will auto switch the monitor configuration.
 
+**Warning:** dockd is not Coreboot/Libreboot compatible.
+
+## Installing
+
 [Install](/index.php/Install "Install") the [dockd](https://aur.archlinux.org/packages/dockd/) package.
 
 **Note:** If your current desktop environment switches the displays automatically you do *not* need this program.
-
-**Warning:** A dependency of dockd called [libthinkpad](https://aur.archlinux.org/packages/libthinkpad/) requires [acpid](/index.php/Acpid "Acpid") to be running, so after the install of dockd do not forget to [enable](/index.php/Enable "Enable") and start acpid.
 
 The daemon needs to know your current display configuration when the laptop is docked and undocked, so we need to configure the daemon first before using it.
 

@@ -55,24 +55,20 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [7.6 Блокирование доступа к TTY](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BA_TTY)
     *   [7.7 Запрет пользователю закрывать, перезапускать X](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8E_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D1.8C.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.82.D1.8C_X)
 *   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [8.1 Если вместо всех шрифтов квадратики](#.D0.95.D1.81.D0.BB.D0.B8_.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.BE_.D0.B2.D1.81.D0.B5.D1.85_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D0.BA.D0.B2.D0.B0.D0.B4.D1.80.D0.B0.D1.82.D0.B8.D0.BA.D0.B8)
-    *   [8.2 Быстрое решение конфликта с Bitstream-Vera](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D0.B0_.D1.81_Bitstream-Vera)
-    *   [8.3 Быстрое решение конфликтов файлов в /usr/include](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D0.BE.D0.B2_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B2_.2Fusr.2Finclude)
-    *   [8.4 Конфликты с libgl-dri](#.D0.9A.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82.D1.8B_.D1.81_libgl-dri)
-    *   [8.5 НЕработающее колесо мыши](#.D0.9D.D0.95.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.B5_.D0.BA.D0.BE.D0.BB.D0.B5.D1.81.D0.BE_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [8.6 Дополнительные кнопки на мыши перестали работать](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BD.D0.B0_.D0.BC.D1.8B.D1.88.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C)
-    *   [8.7 Проблемы с клавиатурой](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BE.D0.B9)
-        *   [8.7.1 AltGR (Compose клавиша) не работает правильно](#AltGR_.28Compose_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0.29_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
-        *   [8.7.2 Невозможно установить раскладку командой setxkbmap](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D1.83_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BE.D0.B9_setxkbmap)
-        *   [8.7.3 Настройка франко-канадской раскладки (бывшая ca_enhanced)](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.84.D1.80.D0.B0.D0.BD.D0.BA.D0.BE-.D0.BA.D0.B0.D0.BD.D0.B0.D0.B4.D1.81.D0.BA.D0.BE.D0.B9_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.28.D0.B1.D1.8B.D0.B2.D1.88.D0.B0.D1.8F_ca_enhanced.29)
-    *   [8.8 Отсутствующие библиотеки](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8)
-    *   [8.9 Некоторые пакеты не собираются, жалуясь на отсутствующие X11 includes](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D1.8E.D1.82.D1.81.D1.8F.2C_.D0.B6.D0.B0.D0.BB.D1.83.D1.8F.D1.81.D1.8C_.D0.BD.D0.B0_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_X11_includes)
-    *   [8.10 Невозможно загрузить шрифт '(null)'](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82.D1.8C_.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27)
-    *   [8.11 Иконки KDE в панели задач и на Десктопе не работают](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_KDE_.D0.B2_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87_.D0.B8_.D0.BD.D0.B0_.D0.94.D0.B5.D1.81.D0.BA.D1.82.D0.BE.D0.BF.D0.B5_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
-    *   [8.12 Обновление с testing до current (отсутствующие файлы)](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_testing_.D0.B4.D0.BE_current_.28.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B.29)
-    *   [8.13 Проблемы с MIME типами в различных DE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_MIME_.D1.82.D0.B8.D0.BF.D0.B0.D0.BC.D0.B8_.D0.B2_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_DE)
-    *   [8.14 DRI перестало работать с картами Matrox](#DRI_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox)
-    *   [8.15 Не выставляется нужное разрешение экрана](#.D0.9D.D0.B5_.D0.B2.D1.8B.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
+    *   [8.1 Общее](#.D0.9E.D0.B1.D1.89.D0.B5.D0.B5)
+    *   [8.2 Черный экран, протокол не указан.., Ресурс временно недоступен для всех или некоторых пользователей](#.D0.A7.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.2C_.D0.BF.D1.80.D0.BE.D1.82.D0.BE.D0.BA.D0.BE.D0.BB_.D0.BD.D0.B5_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D0.BD...2C_.D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B5.D0.BD_.D0.B4.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9)
+    *   [8.3 Правый CTRL не работает на раскладке oss](#.D0.9F.D1.80.D0.B0.D0.B2.D1.8B.D0.B9_CTRL_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B5_oss)
+    *   [8.4 DRI с картами Matrox перестает работать](#DRI_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.B5.D1.82_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C)
+    *   [8.5 Проблемы с режимом Фреймбуфер](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.BE.D0.BC_.D0.A4.D1.80.D0.B5.D0.B9.D0.BC.D0.B1.D1.83.D1.84.D0.B5.D1.80)
+    *   [8.6 Запуск разных сеансов X с проприентарным драйвером NVIDIA на Xorg 1.16](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.80.D0.B0.D0.B7.D0.BD.D1.8B.D1.85_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.BE.D0.B2_X_.D1.81_.D0.BF.D1.80.D0.BE.D0.BF.D1.80.D0.B8.D0.B5.D0.BD.D1.82.D0.B0.D1.80.D0.BD.D1.8B.D0.BC_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.BC_NVIDIA_.D0.BD.D0.B0_Xorg_1.16)
+    *   [8.7 Программа требует "шрифт '(null)'"](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D1.82_.22.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27.22)
+    *   [8.8 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
+    *   [8.9 Клиент X запускается с ошибкой "su"](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82_X_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.BE.D0.B9_.22su.22)
+    *   [8.10 не удалось запустить X: Ошибка инициализация клавиатуры](#.D0.BD.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D1.8C_X:_.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B8.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [8.11 Rootless Xorg](#Rootless_Xorg)
+        *   [8.11.1 Broken redirection](#Broken_redirection)
+    *   [8.12 Зеленый экран при попытке просмотра видео](#.D0.97.D0.B5.D0.BB.D0.B5.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE)
+    *   [8.13 Ошибка SocketCreateListener](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_SocketCreateListener)
 *   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
@@ -548,290 +544,202 @@ EndSection
 
 ## Решение проблем
 
-### Если вместо всех шрифтов квадратики
+### Общее
 
-1.  pango-querymodules > /etc/pango/pango.modules
+Если произошла какая-то проблема с X, посмотрите лог (журнал), хранящийся в `/var/log/` или для пользователей без рут-доступа в `~/.local/share/xorg/` (по умолчанию с версии 1.16). Пользователям [GDM](/index.php/GDM "GDM") следует проверить журнал [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). [[2]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
-### Быстрое решение конфликта с Bitstream-Vera
+Файлы журналов имеют следующий вид `Xorg.n.log`, где `n` - номер монитора. Для одного пользовательского компьютера с настройками по умолчанию имя нужного журнала обычно `Xorg.0.log`, но для остальных оно может отличаться. Чтобы убедиться, что выбранный вами файл правильный, посмотрите временную отметку запуска сеанса X сервера и из какой консоли он был запущен. Например:
 
-Если вы видите сообщение о конфликте ttf-bitstream-vera conflicts и xorg:
-
-1.  Выйдите из pacman'а, ответив no.
-2.  Run `pacman -Rd xorg`
-3.  Run `pacman -Syu`
-4.  Run `pacman -S xorg`
-5.  Обновите пути в файле /etc/X11/xorg.conf
-
-### Быстрое решение конфликтов файлов в /usr/include
-
-Если вы видите сообщения о конфликтах файлов в /usr/include/X11 и /usr/include/GL:
-
-1.  выполните `rm /usr/include/{GL,X11}`
-2.  выполните `pacman -Su`
-
-Каталоги, на которые были созданы символические ссылки будут удаленыи заменены реальными каталогами в новом пакете xorg, который и вызвал конфликт у файлов.
-
-### Конфликты с libgl-dri
-
-Если вы видите сообщение типа:
-
+ `$ grep -e Log -e tty Xorg.0.log` 
 ```
-:: libgl-dri conflicts with nvidia-legacy. Remove nvidia-legacy? [Y/n]
-
+[    40.623] (==) Log file: "/home/archuser/.local/share/xorg/Xorg.0.log", Time: Thu Aug 28 12:36:44 2014
+[    40.704] (--) controlling tty is VT number 1, auto-enabling KeepTty
 ```
 
-это проиходит из-за нескольких реализаций OpenGL, объяснённых в разделе OpenGL выше - pacman пытается установить libgl-dri для удовлетворения зависимостей, но ещё и хочет обновить ваш видеодрайвер, а они конфликтуют. Для разрешения проблемы попробуйте:
+*   При посмотре журнала будьте внимательны к строкам начинающим с `(EE)`, которые обозначают ошибки, и к строкам - `(WW)`, которые предупреждают об возможных других проблемах.
 
-*   обновить видеодрайвер перед полным обновлением системы:
+*   Если файл `.xinitrc` *пустой* в `$HOME`, то его необходимо или удалить, или изменить для правильной загрузки X. Не сделав этого, вы получите пустой экран, а в журнале возможно `Xorg.0.log` не будет ошибок. Просто удалив его, у вас будет запускаться стандартное окружение X.
+*   Если экран становиться черным, вы все еще можете попытаться переключиться на другую виртуальную консоль (например, `Ctrl+Alt+F2`), и слепо войти в систему как root. Чтобы сделать это, введите `root` (нажмите `Enter` после ввода), а потом введите пароль суперпользователя (root) (снова нажмите `Enter` после ввода).
 
-```
-pacman -S nvidia-legacy
-pacman -Syu
+	Вы можете попытаться завершить X сервер через:
 
-```
+	 `# pkill X` 
 
-или, если это не работает:
+	Если это не сработало, просто перезагрузитесь:
 
-*   Удалить существующий видеодрайвер, обновиться, потом переустановить драйвер:
+	 `# reboot` 
 
-```
-$ pacman -Rd nvidia-legacy
-$ pacman -Syu
-$ pacman -S nvidia-legacy
-:: nvidia-legacy conflicts with libgl-dri. Remove libgl-dri? [Y/n] **Y**
+*   Если у вас проблемы с устройствами ввода (клавиатурой, мышкой, тачпадом, и т.д.), смотрите страницы в [Category:Input devices (Русский)](/index.php/Category:Input_devices_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Input devices (Русский)").
+*   Смотрите также решение проблем в статьях [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)"), [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)") и [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)").
 
-```
+### Черный экран, протокол не указан.., Ресурс временно недоступен для всех или некоторых пользователей
 
-### НЕработающее колесо мыши
+X создает конфигурационные и временные файлы в текущем домашнем каталоге пользователя. Убедитесь в наличии свободного места на разделе, в котором находится домашний каталог. К сожаления, X сервер в этом случае не представляет очевидную информацию о недостатке места.
 
-Протокол "Auto" не работает правильно в Xorg 7\. В секции InputDevice для мыши, измените:
+### Правый CTRL не работает на раскладке oss
+
+Отредактируйте с правами суперпользователя файл `/usr/share/X11/xkb/symbols/fr`, изменив строку:
 
 ```
-Option         "Protocol" "auto"
+include "level5(rctrl_switch)"
 
 ```
 
 на
 
 ```
-Option         "Protocol" "IMPS/2"
+// include "level5(rctrl_switch)"
 
 ```
 
-или
+Затем перезапустите X, перезапустите или включите
 
 ```
-Option         "Protocol" "ExplorerPS/2"
-
-```
-
-### Дополнительные кнопки на мыши перестали работать
-
-Пользователи USB мышей должны прочитать [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
-
-Пользователи Intellimouse (ExplorerPS/2) могут столкнуться с неработающим скроллом и боковыми кнопками. Раньше была запись в xorg.conf:
-
-```
-Option      "Buttons" "7"
-Option      "ZAxisMapping" "6 7"
+setxkbmap fr oss
 
 ```
 
-и пользователи также запускали xmodmap, чтобы боковые кнопки работали, командой типа:
+### DRI с картами Matrox перестает работать
 
-```
-xmodmap -e "pointer = 1 2 3 6 7 4 5"
-
-```
-
-Теперь xmodmap не нужен. Вместо этого исправьте xorg.conf так:
-
-```
-Option      "Buttons" "5"
-Option      "ZAxisMapping" "4 5"
-Option      "ButtonMapping" "1 2 3 6 7"
-
-```
-
-и боковые кнопки 7-кнопочной Intellimouse будут работать, как и прежде, без запуска xmodmap.
-
-### Проблемы с клавиатурой
-
-Некоторые раскладки клавиатуры изменились. Стало невозможным:
-
-*   использовать Ctrl+Alt+Fx для переключения между консолями
-*   переключаться по раскладкам
-*   использовать знак £ для локали gb
-
-Проблема заключается в том, что некоторые раскладки (например, *sk_qwerty*, *uk*) перестали существовать. Следует заменить
-
-```
-Option         "XkbLayout" "us,sk_qwerty"
-
-```
-
-на
-
-```
-Option         "XkbLayout" "us,sk"
-Option         "XkbVariant" ",qwerty"
-
-```
-
-Также обратите внимание на следующие строки:
-
-```
-Option "XkbRules"   "xfree86"    #должно быть "xorg"
-Option "XkbVariant" "nodeadkeys" #эта строчка может вызывать описанные выше проблемы, попробуйте её закомментировать.
-
-```
-
-#### AltGR (Compose клавиша) не работает правильно
-
-Если после обновления вы не можете использовать клавишу altGr, как раньше её использовали, попробуйте добавить эту строку в раздел клавиатуры:
-
-```
-Option      "XkbOptions" "compose:ralt"
-
-```
-
-Это не совсем правильный вариант активирования клавиши AltGr на немецкой клавиатуре (например, чтобы использовать знаки '|' и '@'). Просто выберите верный keyboard variant, чтобы клавиша снова заработала, например (для немецкой клавиатуры):
-
-```
-Option      "XkbLayout" "de"
-Option      "XkbVariant" "nodeadkeys"
-
-```
-
-Вышеуказанные решения не работают, если у вас итальянская клавиатура. Для того чтобы активировать клавишу AltGr на итальянской клавиатуре, проверьте правильность следующих строк:
-
-```
- Driver          "kbd"
- Option          "XkbRules"      "xorg"
- Option          "XkbVariant"    ""
-
-```
-
-#### Невозможно установить раскладку командой setxkbmap
-
-После обновления некоторые qwerty раскладки были удалены, например sk_qwerty. Если вы хотите переключить имеющуюся раскладку на другую qwerty, используйте следующую команду:
-
-```
-setxkbmap NAME_OF_THE_LAYOUT qwerty
-
-```
-
-например, для sk_qwerty вводите:
-
-```
-setxkbmap sk qwerty
-
-```
-
-Может так получиться, что после обновления и вышеприведённой команды будет сообщение: "Error loading new keyboard description". Оказывается, xserver не имеет прав записи, исполнения и чтения в /var/tmp Просто дайте права на эту директорию и перезапустите xserver!
-
-#### Настройка франко-канадской раскладки (бывшая ca_enhanced)
-
-В Xorg7 "ca_enhanced" более не существует. Для получения той раскладки, которая была, придётся использовать маленький трюк. Измените
-
-```
-       Option          "XkbLayout"     "ca_enhanced"
-
-```
-
-на
-
-```
-       Option          "XkbLayout"     "ca"
-       Option          "XkbVariant"    "fr"
-
-```
-
-То же самое, видимо, и с другими подобными раскладками. Вы можете обратиться к Gentoo HowTo по этому вопросу: [http://www.gentoo.org/proj/en/desktop/x/x11/modular-x-howto.xml](http://www.gentoo.org/proj/en/desktop/x/x11/modular-x-howto.xml)
-
-### Отсутствующие библиотеки
-
-*   **Помогите! Постоянно вываливается окно с сообщением об ошибке запуска моей любимой программы: "libXчто-то" не существует!**
-
-В большинстве случаев всё, что вам нужно сделать, - это взять имя библиотеки (например,libXau.so.1), перевести название в нижний регистр и установить её:
-
-```
-pacman -S libxau
-
-```
-
-### Некоторые пакеты не собираются, жалуясь на отсутствующие X11 includes
-
-Просто переустановите пакеты xproto и libx11, даже если они уже установлены.
-
-### Невозможно загрузить шрифт '(null)'
-
-*   **Некоторые программы не работают и говорят, что не могут загрузить шрифт `(null)'.**
-
-Эти пакеты хотят каких-то дополнительных шрифтов. Некоторые программы работают только с bitmap шрифтами. Доступны два больших пакета, содержащих bitmap шрифты, xorg-fonts-75dpi и xorg-fonts-100dpi. Вам не нужны оба, достаточно и одного. Чтобы найти, какой вам подходит больше, попробуйте команду:
-
-```
-xdpyinfo | grep resolution
-
-```
-
-и выберите, что ближе (75 или 100 вместо XX)
-
-```
-pacman -S xorg-fonts-XXdpi
-
-```
-
-### Иконки KDE в панели задач и на Десктопе не работают
-
-*   **Панель задач KDEне работает и исчезли иконки на рабочем столе**
-
-Установите пакеты libxcomposite и libxss:
-
-```
-pacman -S libxcomposite libxss
-
-```
-
-### Обновление с testing до current (отсутствующие файлы)
-
-Если вы обновились с Xorg 7 из testing до Xorg 7 из current и обнаружили, что много файлов отсутствуют (включая startx, /usr/share/X11/rgb.txt и другие), потеря могла произойти из-за того, что пакет xorg-clients был разбит на много мелких пакетов.
-
-Вам необходимо переустановить пакеты, которые являются зависимостями xorg-clients:
-
-```
-pacman -S xorg-apps xorg-font-utils xorg-res-utils xorg-server-utils \
-          xorg-twm xorg-utils xorg-xauth xorg-xdm xorg-xfs xorg-xfwp \
-          xorg-xinit xorg-xkb-utils xorg-xsm
-
-```
-
-Это должно разрешить проблему.
-
-### Проблемы с MIME типами в различных DE
-
-Если вы заметили недостающие иконки и вы не можете открывать файлы по щелчку мыши в вашем DE, добавьте следующие строчки в /etc/profile или предпочитаемый скрипт загрузки и перезагрузитесь.
-
-```
-XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share
-export XDG_DATA_DIRS
-
-```
-
-### DRI перестало работать с картами Matrox
-
-Если вы используете карту Matrox и DRI не работает после обновления до xorg7, попробуйте добавить строку
+Если вы используете карту Matrox и DRI перестал работать после обновления Xorg, попробуйте добавить строку:
 
 ```
 Option "OldDmaInit" "On"
 
 ```
 
-в секцию Device, описывающую видеокарту в xorg.conf.
+в раздел Device, который ссылается на видео карту в `xorg.conf`.
 
-### Не выставляется нужное разрешение экрана
+### Проблемы с режимом Фреймбуфер
 
-Если Xorg запускается разрешением экрана, не соответствующим максимально возможному для вашего монитора - попробуйте расширить диапазон частот **VertRefresh** в секции **Monitor**. Некоторые мониторы не могут воспроизводить картинку своего максимального разрешения на максимальной частоте.
+Если X не запускается со следующим сообщением в журнале,
+
+```
+(WW) Falling back to old probe method for fbdev
+(II) Loading sub module "fbdevhw"
+(II) LoadModule: "fbdevhw"
+(II) Loading /usr/lib/xorg/modules/linux//libfbdevhw.so
+(II) Module fbdevhw: vendor="X.Org Foundation"
+       compiled for 1.6.1, module version=0.0.2
+       ABI class: X.Org Video Driver, version 5.0
+(II) FBDEV(1): using default device
+
+Fatal server error:
+Cannot run in framebuffer mode. Please specify busIDs for all framebuffer devices
+
+```
+
+[Удалите](/index.php/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D0%B5 "Удалите") пакет [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev).
+
+### Запуск разных сеансов X с проприентарным драйвером NVIDIA на Xorg 1.16
+
+Когда пытаетесь запустить сеансы X в разных tty на Xorg 1.16, вы можете столкнуться с сообщением в журнале, что никакие драйвера не были найдены. Временное решение для этого заключается в принудительном указание X, что мы хочем использовать драйвер 'nvidia'.
+
+`/etc/X11/xorg.conf.d/20-nvidia.conf`
+
+```
+Section "Device"
+    Identifier "Device0"
+    Driver     "nvidia"
+    VendorName "NVIDIA Corporation"
+    Option     "NoLogo" "True"
+EndSection
+
+```
+
+### Программа требует "шрифт '(null)'"
+
+*   Сообщение об ошибке: "*unable to load font `(null)'.*"
+
+Некоторые программы работают только с растровыми шрифтами. Имеется два крупных пакета с растровыми шрифтами [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) и [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). Вам не нужны оба; одного будет достаточно. Чтобы выяснить какой будет лучше в вашем случае, попробуйте утилиту `xdpyinfo` из пакета [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) таким образом:
+
+```
+$ xdpyinfo | grep resolution
+
+```
+
+и используйте шрифт тот, у которого dpi ближе к показанному значению.
+
+### Recovery: disabling Xorg before GUI login
+
+If Xorg is set to boot up automatically and for some reason you need to prevent it from starting up before the login/display manager appears (if the system is wrongly configured and Xorg does not recognize your mouse or keyboard input, for instance), you can accomplish this task with two methods.
+
+*   Change default target to rescue.target. See [systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd").
+*   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Follow the [installation guide](/index.php/Installation_guide#Format_the_partitions "Installation guide") about how to mount and chroot into the installed Arch Linux. Alternatively try to switch into another [tty](/index.php/Tty "Tty") with `Ctrl+Alt` + function key (usually from `F1` to `F7` depending on which is not used by X), login as root and follow steps below.
+
+Depending on setup, you will need to do one or more of these steps:
+
+*   [Disable](/index.php/Disable "Disable") the [display manager](/index.php/Display_manager "Display manager").
+*   Disable the [automatic start of the X](/index.php/Start_X_at_login "Start X at login").
+*   Rename the `~/.xinitrc` or comment out the `exec` line in it.
+
+### Клиент X запускается с ошибкой "su"
+
+Если вы получаете сообщение "Client is not authorized to connect to server" (Клиент не авторизован для подключения к серверу), попробуйте добавить строку:
+
+```
+session        optional        pam_xauth.so
+
+```
+
+в `/etc/pam.d/su` и `/etc/pam.d/su-l`. Затем `pam_xauth` правильно установит переменные среды и обработает ключи `xauth`.
+
+### не удалось запустить X: Ошибка инициализация клавиатуры
+
+Если файловая система (в частности `/tmp`) заполнена, `startx` не запустится. В конце журнала `/var/log/Xorg.0.log` будет:
+
+```
+(EE) Error compiling keymap (server-0)
+(EE) XKB: Could not compile keymap
+(EE) XKB: Failed to load keymap. Loading default keymap instead.
+(EE) Error compiling keymap (server-0)
+(EE) XKB: Could not compile keymap
+XKB: Failed to compile keymap
+Keyboard initialization failed. This could be a missing or incorrect setup of xkeyboard-config.
+Fatal server error:
+Failed to activate core devices.
+Please consult the The X.Org Foundation support at http://wiki.x.org
+for help.
+Please also check the log file at "/var/log/Xorg.0.log" for additional information.
+(II) AIGLX: Suspending AIGLX clients for VT switch
+
+```
+
+Освободите место на соответствующей файловой системе, и X сервер запустится.
+
+### Rootless Xorg
+
+Xorg may run with standard user privileges with the help of `logind`. The requirements for this are:
+
+*   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
+
+If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
+
+ `/etc/X11/Xwrapper.config`  `needs_root_rights = *yes*` 
+
+See also [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
+
+[GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used.
+
+#### Broken redirection
+
+While user Xorg logs are stored in `~/.local/share/xorg/Xorg.log`, they do not include the output from the X session. To re-enable redirection, start X with the `-keeptty` flag:
+
+```
+exec startx -- -keeptty > ~/.xorg.log 2>&1
+
+```
+
+Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+
+### Зеленый экран при попытке просмотра видео
+
+У вас неправильно установлена цветовая глубина. Например, требуется 24 вместо 16.
+
+### Ошибка SocketCreateListener
+
+Если X завершаются с сообщением об ошибке "SocketCreateListener() failed", вам необходимо удалить файлы сокета в `/tmp/.X11-unix`. Это может происходить после того, как вы ранее запускали Xorg с правами суперпользователя (например, для создания `xorg.conf`).
 
 ## Смотрите также
 

@@ -74,7 +74,7 @@ This way, with Secure Boot enabled, you will be able to boot your kernel wheneve
 
 Although in latest kernel you have basic support for the touchpad, the screen, etc. the cameras are not yet supported by the kernel. A github repo to track the support of the Surface Pro 3 in Archlinux was created: [[1]](https://github.com/nuclearsandwich/surface3-archlinux), where you can check for the status.
 
-The easiest way for Arch Linux users is to use a Surface Pro 3 specific package available in the AUR [linux-surfacepro3](https://aur.archlinux.org/packages/linux-surfacepro3/). You can check there the support for the different modules available, or take the patch from upstream[GitHub](https://github.com/matthewwardrop/linux-surfacepro3).
+The easiest way for Arch Linux users is to use a Surface Pro 3 specific package available in the AUR [linux-surfacepro3-git](https://aur.archlinux.org/packages/linux-surfacepro3-git/). You can check there the support for the different modules available, or take the patch from upstream[GitHub](https://github.com/matthewwardrop/linux-surfacepro3).
 
 ### Compile Kernel with Patches
 

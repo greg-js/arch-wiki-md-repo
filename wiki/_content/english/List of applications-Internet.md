@@ -637,6 +637,10 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
 
+*   **[ftp](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation)** — Simple ftp client provided by GNU Inetutils
+
+	[https://www.gnu.org/software/inetutils/](https://www.gnu.org/software/inetutils/) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
+
 *   **ncftp** — A set of free application programs implementing FTP.
 
 	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
@@ -659,6 +663,10 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 	[http://bftpd.sourceforge.net/](http://bftpd.sourceforge.net/) || [bftpd](https://www.archlinux.org/packages/?name=bftpd)
 
+*   **[ftpd](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation)** — Simple ftp server provided by GNU Inetutils
+
+	[https://www.gnu.org/software/inetutils/](https://www.gnu.org/software/inetutils/) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
+
 *   **[proFTPd](/index.php/Proftpd "Proftpd")** — A secure and configurable FTP server
 
 	[http://www.proftpd.org/](http://www.proftpd.org/) || [proftpd](https://aur.archlinux.org/packages/proftpd/)
@@ -667,13 +675,13 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
 
-*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
-
-	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
-
 *   **[SSH](/index.php/SSH "SSH")** — SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream.
 
 	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
+
+*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
+
+	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
 
 #### BitTorrent clients
 

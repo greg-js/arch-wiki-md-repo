@@ -20,12 +20,12 @@ It is simple to configure but it can only start EFI executables such as the Linu
     *   [2.1 Loader configuration](#Loader_configuration)
     *   [2.2 Adding boot entries](#Adding_boot_entries)
         *   [2.2.1 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
-    *   [2.3 Preparing kernels for EFI\Linux](#Preparing_kernels_for_EFI.5CLinux)
+    *   [2.3 Preparing kernels for /EFI/Linux](#Preparing_kernels_for_.2FEFI.2FLinux)
     *   [2.4 Support hibernation](#Support_hibernation)
     *   [2.5 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Installing after BIOS boot](#Installing_after_BIOS_boot)
+    *   [4.1 Installing after booting in BIOS mode](#Installing_after_booting_in_BIOS_mode)
     *   [4.2 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
     *   [4.3 Menu does not appear after Windows upgrade](#Menu_does_not_appear_after_Windows_upgrade)
 *   [5 See also](#See_also)
@@ -128,7 +128,7 @@ editor   0
 
 **Note:**
 
-*   *bootctl* will automatically check at boot time for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`), as well as specially prepared kernel files found in `\EFI\Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be automatically generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
+*   *bootctl* will automatically check at boot time for "**Windows Boot Manager**" (`/EFI/Microsoft/Boot/Bootmgfw.efi`), "**EFI Shell**" (`/shellx64.efi`) and "**EFI Default Loader**" (`/EFI/BOOT/bootx64.efi`), as well as specially prepared kernel files found in `/EFI/Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
 *   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
 *   The root partition can be identified with its `LABEL` or its `PARTUUID`. The latter can be found with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only to identify the root partition, not the `*esp*`.
@@ -138,10 +138,12 @@ editor   0
 *   `title` – operating system name. **Required.**
 *   `version` – kernel version, shown only when multiple entries with same title exist. Optional.
 *   `machine-id` – machine identifier from `/etc/machine-id`, shown only when multiple entries with same title and version exist. Optional.
-*   `efi` – EFI program to start, relative to your ESP (`*esp*`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
+*   `efi` – EFI program to start, relative to your ESP (`*esp*`); e.g. `/vmlinuz-linux`. **Either** this parameter or `linux` (see below) is **required**.
 *   `options` – command line options to pass to the EFI program or [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
 
-For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initramfs*`; this will be automatically translated to `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
+For Linux boot, you can also use instead of `efi` and `options` the following syntax:
+
+*   `linux` and `initrd` followed by the relative path of the corresponding files in the ESP; e.g. `/vmlinuz-linux`; this will be automatically translated into `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
 **Tip:**
 
@@ -164,9 +166,9 @@ title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi
 ```
 
-### Preparing kernels for EFI\Linux
+### Preparing kernels for /EFI/Linux
 
-*EFI\Linux* is searched for specially prepared kernel files, which bundle the kernel, the initrd, the kernel command line and `/etc/os-release` into one file. This file can be easily signed for secure boot.
+*/EFI/Linux* is searched for specially prepared kernel files, which bundle the kernel, the init RAM disk (initrd), the kernel command line and `/etc/os-release` into one single file. This file can be easily signed for secure boot.
 
 **Note:** `systemd-boot` requires that the `os-release` file contain either `VERSION_ID` or `BUILD_ID` to generate an ID and automatically add the entry, which the Arch `os-release` does not. Either maintain your own copy with one of them, or make your bundling script generate it automatically.
 
@@ -184,7 +186,7 @@ objcopy \
 
 Optionally sign *linux.efi* now (e.g. using *sbsigntools* from AUR).
 
-Copying *linux.efi* into `*esp*\EFI\Linux`.
+Copy *linux.efi* into `*esp*/EFI/Linux`.
 
 ### Support hibernation
 
@@ -225,7 +227,7 @@ These hotkeys will, when pressed inside the menu or during bootup, directly boot
 
 ## Troubleshooting
 
-### Installing after BIOS boot
+### Installing after booting in BIOS mode
 
 **Warning:** This is not recommended.
 

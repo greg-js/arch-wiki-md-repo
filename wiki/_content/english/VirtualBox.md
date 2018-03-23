@@ -167,7 +167,7 @@ Once the system and the boot loader are installed, VirtualBox will first attempt
 *   Create a script named `startup.nsh` at the ESP root containing the path to the boot loader application, e.g. `\EFI\grub\grubx64.efi`.
 *   Boot directly from the ESP partition using a [startup.nsh script](/index.php/EFISTUB#Using_a_startup.nsh_script "EFISTUB").
 
-Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot), as it is buggy and incomplete. It doesn't store efivars set interactively. Therefore, EFI entries added to it manually in the firmware (accessed with `F12` at boot time) or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
+Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot), as it is buggy and incomplete. It does not store efivars set interactively. Therefore, EFI entries added to it manually in the firmware (accessed with `F12` at boot time) or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
 
 See also [UEFI VirtualBox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
 
@@ -336,7 +336,7 @@ $ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
 
 #### Mount at boot
 
-You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `noauto,x-systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd read fstab and mount the partitions.
+You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `noauto,x-systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd reads fstab and mounts the partitions.
 
 ```
 *sharedFolderName*  */path/to/mntPtOnGuestMachine*  vboxsf  uid=*user*,gid=*group*,rw,dmode=700,fmode=600,noauto,x-systemd.automount 
@@ -356,7 +356,7 @@ As of 2012-08-02, mount.vboxsf does not support the *nofail* option:
 
 ### SSH from host to guest
 
-The network tab of the virtual machine settings contains, in "Advanced", a tool to create port forwarding. It is possible to use it to forward the Guest ssh port 22 to a Host port, let's say 3022\. Then :
+The network tab of the virtual machine settings contains, in "Advanced", a tool to create port forwarding. It is possible to use it to forward the Guest ssh port `22` to a Host port, e.g. `3022` :
 
 ```
 user@host$ ssh -p 3022 $USER@localhost
@@ -367,7 +367,7 @@ will establish a connection from Host to Guest.
 
 #### SSHFS as alternative to the shared folder
 
-Using this port forwarding and sshfs, it is straightforward to mount the Guest filesystem onto the Host one :
+Using this port forwarding and sshfs, it is straightforward to mount the Guest filesystem onto the Host one:
 
 ```
 user@host$ sshfs -p 3022 $USER@localhost:$HOME ~/shared_folder
@@ -491,7 +491,7 @@ Boot your virtual machine and remove all bloat manually or by using cleaning too
 Wiping free space with zeroes can be achieved with several tools:
 
 *   If you were previously using Bleachbit, check the checkbox *System > Free disk space* in the GUI, or use `bleachbit -c system.free_disk_space` in CLI;
-*   On UNIX-based systems, by using `dd` or preferably [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (see [here](http://superuser.com/a/355322) to learn the differences) :
+*   On UNIX-based systems, by using `dd` or preferably [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (see [here](http://superuser.com/a/355322) to learn the differences):
 
 	 `# dcfldd if=/dev/zero of=*/fillfile* bs=4M` 
 
@@ -736,7 +736,7 @@ On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome 
 
 ### Host freezes on virtual machine start
 
-Possible causes/solutions :
+Possible causes/solutions:
 
 *   SMAP
 

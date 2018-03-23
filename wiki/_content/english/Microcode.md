@@ -61,19 +61,18 @@ Repeat it for each menu entry.
 
 ### systemd-boot
 
-Use the `initrd` option twice as follows:
+Use the `initrd` option to load the microcode, before the initial ramdisk, as follows:
 
  `/boot/loader/entries/*entry*.conf` 
 ```
 title   Arch Linux
 linux   /vmlinuz-linux
-initrd  /intel-ucode.img
+**initrd  /intel-ucode.img**
 initrd  /initramfs-linux.img
-options ...
-
+...
 ```
 
-If your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is not mounted at `/boot`, you need to copy `/boot/intel-ucode.img` to your ESP every time [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated.
+The latest microcode `intel-ucode.img` must be available at boot time in your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/intel-ucode.img` to your ESP at every update of *intel-ucode*.
 
 ### EFI boot stub / EFI handover
 
