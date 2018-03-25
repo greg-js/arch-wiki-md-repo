@@ -65,7 +65,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
     *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
 *   [4 Understanding](#Understanding)
-    *   [4.1 What happens during package install](#What_happens_during_package_install)
+    *   [4.1 What happens during package install/upgrade/removal](#What_happens_during_package_install.2Fupgrade.2Fremoval)
 *   [5 See also](#See_also)
 
 ## Usage
@@ -777,19 +777,19 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 
 ## Understanding
 
-### What happens during package install
+### What happens during package install/upgrade/removal
 
-(From [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1775592), may be incomplete/incorrect so far)
+When successfully completing a package transaction, pacman performs for the following high-level steps:
 
-When successfully installing a new package, pacman performs for the following high-level steps:
-
-1.  pacman obtains the to-be installed package file
-2.  pacman performs various checks that the package can likely be installed
-3.  if the package has an install script, its `pre_install` function is executed
-4.  if pacman `PreTransaction` hooks apply, they are executed
-5.  pacman untars the package and dumps its files into the file system
-6.  if pacman `PostTransaction` hooks apply, they are executed
-7.  if the package has an install script, its `post_install` function is executed
+1.  pacman obtains the to-be installed package file for all packages queued in a transaction
+2.  pacman performs various checks that the packages can likely be installed
+3.  if pre-existing pacman `PreTransaction` hooks apply, they are executed
+4.  Each package is installed/upgraded/removed in turn
+    1.  if the package has an install script, its `pre_install` function is executed (or `pre_upgrade` or `pre_remove` in the case of an upgraded or removed package)
+    2.  pacman deletes all the files from a pre-existing version of the package (in the case of an upgraded or removed package)
+    3.  pacman untars the package and dumps its files into the file system (in the case of an installed or upgraded package)
+    4.  if the package has an install script, its `post_install` function is executed (or `post_upgrade` or `post_remove` in the case of an upgraded or removed package)
+5.  if pacman `PostTransaction` hooks that exist at the end of the transaction apply, they are executed
 
 ## See also
 

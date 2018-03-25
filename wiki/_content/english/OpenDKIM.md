@@ -48,7 +48,7 @@ UserID                  opendkim
 *   To generate a secret signing key, you need to specify the domain used to send mails and a selector which is used to refer to the key. You may choose anything you like, see the RFC for details, but alpha-numeric strings should be OK:
 
 ```
-$ opendkim-genkey -r -s myselector -d example.com
+$ opendkim-genkey -r -s myselector -b 2048 -d example.com
 
 ```
 

@@ -50,7 +50,7 @@ Related articles
 
 ## Exploring Android device
 
-When you connect a modern Android device via USB to a computer you can use [MTP](/index.php/MTP "MTP") to transfer files and [#Android Debug Bridge](#Android_Debug_Bridge) to debug it.
+When you connect a modern Android device via USB to a computer you can use the [Media Transfer Protocol](/index.php/Media_Transfer_Protocol "Media Transfer Protocol") to transfer files and [#Android Debug Bridge](#Android_Debug_Bridge) to debug it.
 
 Files can generally be transferred with various protocols ([SSH](/index.php/SSH "SSH"), [FTP](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"), [Samba](/index.php/Samba "Samba"), HTTP). You just need to setup a client and a server (via apps Android can act as either one).
 
@@ -72,7 +72,7 @@ The official IDE for Android is [#Android Studio](#Android_Studio), which comes 
 
 [Android Studio](https://developer.android.com/studio/index.html) is the official Android development environment based on [IntelliJ Idea](https://www.jetbrains.com/idea/). It provides integrated Android developer tools for development and debugging.
 
-You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API) above.
+You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API).
 
 **Note:**
 

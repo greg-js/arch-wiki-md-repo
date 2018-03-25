@@ -41,6 +41,8 @@ Related articles
     *   [4.15 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
     *   [4.16 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
     *   [4.17 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
+    *   [4.18 DXVK](#DXVK)
+    *   [4.19 Vulkan](#Vulkan)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -404,14 +406,14 @@ aborting
 
 ```
 
-In this case, running the following may fix it:
+If you need to run these programs under Wine, you will have to [compile and install a custom kernel](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") (unless bug [FS#57408](https://bugs.archlinux.org/task/57408) is fixed). Your kernel config will need the following options:
 
 ```
-# echo 1 > /proc/sys/abi/ldt16
+CONFIG_X86_16BIT=y
+CONFIG_X86_ESPFIX64=y
+CONFIG_MODIFY_LDT_SYSCALL=y
 
 ```
-
-Source: [Fedora Mailing List](http://www.spinics.net/linux/fedora/fedora-users/msg450821.html)
 
 ### Burning optical media
 
@@ -506,6 +508,25 @@ $ ln -s /tmp/ ~/.wine/drive_c/users/$USER/Temp
 ### Prevent installing Mono/Gecko
 
 If Gecko and/or Mono are not present on the system nor in the Wine prefix, Wine will prompt to download them from the internet. If you do not need Gecko and/or Mono, you might want to disable this dialog, by setting the `WINEDLLOVERRIDES` [environment variable](/index.php/Environment_variable "Environment variable") to `mscoree=d;mshtml=d`.
+
+### DXVK
+
+[DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
+
+To use it, configure Wine to use [#Vulkan](#Vulkan), and install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official biniaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
+
+```
+$ WINEPREFX=*your-prefix* setup_dxvk64
+
+```
+
+Use `setup_dxvk32` for 32-bit applications.
+
+**Warning:** DXVK overrides the DirectX 11 DLLS, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
+
+### Vulkan
+
+Since Wine 3.3 Vulkan support is included. This replaces the old inplementation in older versions of Wine Staging. You have to configure Vulkan manually for now, although the process should become easier in the future. Follow step 2-4 on the author's [GitHub page](https://github.com/roderickc/wine-vulkan) to configure Vulkan.
 
 ## Third-party applications
 

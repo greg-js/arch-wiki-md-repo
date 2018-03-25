@@ -119,7 +119,7 @@ ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?na
 
 Other video drivers can be found in the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group.
 
-Xorg should run smoothly without closed source drivers, which are typically needed only for advanced features such as fast 3D-accelerated rendering for games.
+Xorg should run smoothly without closed source drivers, which are typically needed only for advanced features such as fast 3D-accelerated rendering for games. The exceptions to this rule are recent GPUs (especially Nvidia GPUs), that are not supported by the open source drivers.
 
 ### AMD
 

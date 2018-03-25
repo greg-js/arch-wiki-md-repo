@@ -98,9 +98,9 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
 
-*   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *Adwaita-dark*, *HighContrast*
+*   **GNOME Extra Themes** — Extra themes for the GNOME desktop. Includes: *Adwaita*, *Adwaita-dark*, *HighContrast*
 
-	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
+	[https://gitlab.gnome.org/GNOME/gnome-themes-extra](https://gitlab.gnome.org/GNOME/gnome-themes-extra) || [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra)
 
 *   **MATE Themes** — Default themes for the MATE desktop. Includes: *BlackMATE*, *Blue-Submarine*, *BlueMenta*, *ContrastHighInverse*, *Green-Submarine*, *GreenLaguna*, *Menta*, *TraditionalGreen*, *TraditionalOk*
 

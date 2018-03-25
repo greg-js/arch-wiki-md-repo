@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 28 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=512264).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 6 марта 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=512894).
 
 Ссылки по теме
 
@@ -62,11 +62,11 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [8.5 Проблемы с режимом Фреймбуфер](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.BE.D0.BC_.D0.A4.D1.80.D0.B5.D0.B9.D0.BC.D0.B1.D1.83.D1.84.D0.B5.D1.80)
     *   [8.6 Запуск разных сеансов X с проприентарным драйвером NVIDIA на Xorg 1.16](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.80.D0.B0.D0.B7.D0.BD.D1.8B.D1.85_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.BE.D0.B2_X_.D1.81_.D0.BF.D1.80.D0.BE.D0.BF.D1.80.D0.B8.D0.B5.D0.BD.D1.82.D0.B0.D1.80.D0.BD.D1.8B.D0.BC_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.BC_NVIDIA_.D0.BD.D0.B0_Xorg_1.16)
     *   [8.7 Программа требует "шрифт '(null)'"](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D1.82_.22.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27.22)
-    *   [8.8 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
+    *   [8.8 Восстановление: отключение Xorg перед входом в GUI](#.D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5:_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_Xorg_.D0.BF.D0.B5.D1.80.D0.B5.D0.B4_.D0.B2.D1.85.D0.BE.D0.B4.D0.BE.D0.BC_.D0.B2_GUI)
     *   [8.9 Клиент X запускается с ошибкой "su"](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82_X_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.BE.D0.B9_.22su.22)
-    *   [8.10 не удалось запустить X: Ошибка инициализация клавиатуры](#.D0.BD.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D1.8C_X:_.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B8.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [8.11 Rootless Xorg](#Rootless_Xorg)
-        *   [8.11.1 Broken redirection](#Broken_redirection)
+    *   [8.10 Не удалось запустить X: Ошибка инициализация клавиатуры](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D1.8C_X:_.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B8.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [8.11 Использование Xorg без прав суперпользователя](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Xorg_.D0.B1.D0.B5.D0.B7_.D0.BF.D1.80.D0.B0.D0.B2_.D1.81.D1.83.D0.BF.D0.B5.D1.80.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+        *   [8.11.1 Неработающее перенаправление](#.D0.9D.D0.B5.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
     *   [8.12 Зеленый экран при попытке просмотра видео](#.D0.97.D0.B5.D0.BB.D0.B5.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE)
     *   [8.13 Ошибка SocketCreateListener](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_SocketCreateListener)
 *   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
@@ -310,11 +310,11 @@ $ xdpyinfo | grep -B2 resolution
 
 Убедитесь, что выведенное разрешение соответствует настоящему разрешению вашего монитора. Если Xorg не может правильно рассчитать разрешение экрана, он по умолчанию установит значение 75x75 DPI. Поэтому вам придется самому рассчитать его.
 
-Если у вас есть в спецификации физическое разрешение экрана, его можно ввести в конфигурационный файл Xorg так, чтобы был рассчитан правильный DPI:
+Если у вас есть в спецификации физическое разрешение экрана, его можно ввести в конфигурационный файл Xorg так, чтобы был рассчитан правильный DPI (регулируете идентификатор для вашего вывода xrandr):
 
 ```
 Section "Monitor"
-    Identifier             "Monitor0"
+    Identifier              "DVI-D-0"
     DisplaySize             286 179    # В миллиметрах
 EndSection
 
@@ -660,18 +660,18 @@ $ xdpyinfo | grep resolution
 
 и используйте шрифт тот, у которого dpi ближе к показанному значению.
 
-### Recovery: disabling Xorg before GUI login
+### Восстановление: отключение Xorg перед входом в GUI
 
-If Xorg is set to boot up automatically and for some reason you need to prevent it from starting up before the login/display manager appears (if the system is wrongly configured and Xorg does not recognize your mouse or keyboard input, for instance), you can accomplish this task with two methods.
+Если Xorg настроен на автозапуск и по какой-то причине вам нужно предотвратить его запуск до менеджера входа/экранного менеджера (например, если ваша система неправильно настроена и Xorg не распознает ввод с помощью мыши или клавиатуры), вы можете решить эту задачу двумя способами.
 
-*   Change default target to rescue.target. See [systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd").
-*   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Follow the [installation guide](/index.php/Installation_guide#Format_the_partitions "Installation guide") about how to mount and chroot into the installed Arch Linux. Alternatively try to switch into another [tty](/index.php/Tty "Tty") with `Ctrl+Alt` + function key (usually from `F1` to `F7` depending on which is not used by X), login as root and follow steps below.
+*   Изменить цель по умолчанию на rescue.target. Для получения дополнительной информации смотрите [systemd (Русский)#Изменение цели загрузки по умолчанию](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.86.D0.B5.D0.BB.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E "Systemd (Русский)").
+*   Если у вас не только не исправная система, которая делает Xorg непригодным для использования, но также задержка меню GRUB установлено в ноль, или не как иначе нельзя использовать GRUB для предотвращения загрузки Xorg, вы можете использовать live CD Arch Linux. Следуйте [руководство по установке](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2 "Installation guide (Русский)"), где монтируется система и используется chroot в установленный Arch Linux. Кроме того, попытайтесь переключиться на другую [tty](/index.php/Tty "Tty") с помощью сочетания клавиш `Ctrl+Alt` + функциональная клавиша (обычно от `F1` до `F7` в зависимости от того, какая не используется X), войдите как root и следуйте шагам ниже.
 
-Depending on setup, you will need to do one or more of these steps:
+В зависимости от настройки, вам необходимо выполнить один или более шагов:
 
-*   [Disable](/index.php/Disable "Disable") the [display manager](/index.php/Display_manager "Display manager").
-*   Disable the [automatic start of the X](/index.php/Start_X_at_login "Start X at login").
-*   Rename the `~/.xinitrc` or comment out the `exec` line in it.
+*   [Отключите](/index.php/%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Отключите") [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер").
+*   Отключите [автозапуск X при входе в систему](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83 "Автозапуск X при входе в систему").
+*   Переименуйте файл `~/.xinitrc` или закомментируйте линии с `exec` в нем.
 
 ### Клиент X запускается с ошибкой "su"
 
@@ -684,7 +684,7 @@ session        optional        pam_xauth.so
 
 в `/etc/pam.d/su` и `/etc/pam.d/su-l`. Затем `pam_xauth` правильно установит переменные среды и обработает ключи `xauth`.
 
-### не удалось запустить X: Ошибка инициализация клавиатуры
+### Не удалось запустить X: Ошибка инициализация клавиатуры
 
 Если файловая система (в частности `/tmp`) заполнена, `startx` не запустится. В конце журнала `/var/log/Xorg.0.log` будет:
 
@@ -707,31 +707,31 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 
 Освободите место на соответствующей файловой системе, и X сервер запустится.
 
-### Rootless Xorg
+### Использование Xorg без прав суперпользователя
 
-Xorg may run with standard user privileges with the help of `logind`. The requirements for this are:
+Xorg может запускаться со стандартными привилегиями пользователя через `logind`. Для этого необходимо:
 
-*   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
-*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
+*   Запустить X через [xinit](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"); экранный менеджер не поддерживается
+*   [KMS](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"); реализации в проприетарных драйверах монитора не допускает [автообнаружение](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222), поэтому необходимо вручную настроить `needs_root_rights = no` в `/etc/X11/Xwrapper.config`.
 
-If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
+Если вам не удовлетворяют эти требования, повторно включите права суперпользователя в `/etc/X11/Xwrapper.config`:
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = *yes*` 
 
-See also [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
+Для получения дополнительной информации смотрите [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) и [systemd/User (Русский)#Xorg как служба systemd пользователь](/index.php/Systemd/User_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Xorg_.D0.BA.D0.B0.D0.BA_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C "Systemd/User (Русский)").
 
-[GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used.
+Также [GDM](/index.php/GDM "GDM") запускает Xorg без привилегий суперпользователя по умолчанию, когда используется [KMS](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)").
 
-#### Broken redirection
+#### Неработающее перенаправление
 
-While user Xorg logs are stored in `~/.local/share/xorg/Xorg.log`, they do not include the output from the X session. To re-enable redirection, start X with the `-keeptty` flag:
+Пока журналы пользователя Xorg хранятся в `~/.local/share/xorg/Xorg.log`, они не включают вывод X-сессии. Чтобы повторно включить перенаправление, запустите X с флагом `-keeptty`:
 
 ```
 exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Или скопируйте `/etc/X11/xinit/xserverrc` в `~/.xserverrc` и добавьте `-keeptty`. Для получения дополнительной информации смотрите [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
 ### Зеленый экран при попытке просмотра видео
 
@@ -743,22 +743,4 @@ Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See
 
 ## Смотрите также
 
-*   [Добавление экранного менеджера входа в систему (GDM или XDM) в автозагрузку](/index.php?title=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0_%D0%B2%D1%85%D0%BE%D0%B4%D0%B0_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83_(GDM_%D0%B8%D0%BB%D0%B8_XDM)_%D0%B2_%D0%B0%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83&action=edit&redlink=1 "Добавление экранного менеджера входа в систему (GDM или XDM) в автозагрузку (page does not exist)")
-*   [Запуск X при загрузке](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B5 "Запуск X при загрузке")
-*   [Xorg Font Configuration (Русский)](/index.php/Xorg_Font_Configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg Font Configuration (Русский)")
-*   Проприетарные видеодрайверы
-    *   [ATI wiki](/index.php/ATI "ATI")
-    *   [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)")
-*   [Среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)")
-    *   [KDE](/index.php/KDE "KDE")
-    *   [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")
-    *   [MATE](/index.php/MATE "MATE")
-    *   [Xfce](/index.php/Xfce "Xfce")
-    *   [Enlightenment](/index.php/Enlightenment "Enlightenment")
-    *   [Fluxbox](/index.php/Fluxbox "Fluxbox")
-*   [Compiz](/index.php/Compiz "Compiz")
-
-Внешние ссылки:
-
-*   [X.org Wikipedia Article](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server")
-*   [X.org](http://wiki.x.org/wiki/)
+*   [Xplain](https://magcius.github.io/xplain/article/) - Подробное объяснение системы X Window

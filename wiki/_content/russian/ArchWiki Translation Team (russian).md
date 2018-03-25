@@ -206,6 +206,7 @@
 | [Vim (Русский)](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Xcompmgr (Русский)](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
+| [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Xprofile (Русский)](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [X resources (Русский)](/index.php/X_resources_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "X resources (Русский)") | [Ресурсы Х](/index.php/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B_%D0%A5 "Ресурсы Х") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Zsh (Русский)](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zsh (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |

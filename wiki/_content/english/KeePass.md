@@ -41,6 +41,10 @@ Other lesser-known alternatives can be found in the AUR:
 
 	[https://sourceforge.net/projects/kpcli/](https://sourceforge.net/projects/kpcli/) || [kpcli](https://aur.archlinux.org/packages/kpcli/)
 
+*   **keepmenu** — Dmenu/Rofi frontend for Keepass database files.
+
+	[https://github.com/firecat53/keepmenu](https://github.com/firecat53/keepmenu) || [python-keepmenu-git](https://aur.archlinux.org/packages/python-keepmenu-git/)
+
 *   **keeweb** — A web app (online / Electron) compatible with KeePass 2.x.
 
 	[https://keeweb.info](https://keeweb.info) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/) [nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/)

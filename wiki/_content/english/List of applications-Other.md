@@ -177,17 +177,25 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 	[http://calcurse.org/](http://calcurse.org/) || [calcurse](https://www.archlinux.org/packages/?name=calcurse)
 
+*   **DevTodo** — Is a small command line application for maintaining lists of tasks.
+
+	[http://swapoff.org/devtodo1.html](http://swapoff.org/devtodo1.html) || [devtodo](https://aur.archlinux.org/packages/devtodo/)
+
 *   **khal** — Command-line (non-interactive) and ncurses (interactive) calendar system (supports CalDAV)
 
 	[https://github.com/pimutils/khal](https://github.com/pimutils/khal) || [khal](https://www.archlinux.org/packages/?name=khal)
 
-*   **todoman** — Command-line To-do list manager (supports CalDAV)
+*   **mail2rem** — Small script for importing *.ics calendars from Maildir to Remind calendar.
 
-	[https://github.com/pimutils/todoman](https://github.com/pimutils/todoman) || [todoman](https://aur.archlinux.org/packages/todoman/)
+	[https://github.com/esovetkin/mail2rem](https://github.com/esovetkin/mail2rem) || [mail2rem-git](https://aur.archlinux.org/packages/mail2rem-git/)
 
 *   **Pal** — Very lightweight calendar with both interactive and non-interactive interfaces.
 
 	[http://palcal.sourceforge.net/](http://palcal.sourceforge.net/) || [pal](https://aur.archlinux.org/packages/pal/)
+
+*   **pcal** — A tool to create pdf calendars from pcal input which can be exported by some calendar programs.
+
+	[https://sourceforge.net/projects/pcal/](https://sourceforge.net/projects/pcal/) || [pcal](https://aur.archlinux.org/packages/pcal/)
 
 *   **[Remind](/index.php/Remind "Remind")** — Highly sophisticated text-based calendaring and notification system.
 
@@ -201,6 +209,10 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 	[http://ginatrapani.github.com/todo.txt-cli/](http://ginatrapani.github.com/todo.txt-cli/) || [todotxt](https://aur.archlinux.org/packages/todotxt/)
 
+*   **todoman** — Command-line To-do list manager (supports CalDAV)
+
+	[https://github.com/pimutils/todoman](https://github.com/pimutils/todoman) || [todoman](https://aur.archlinux.org/packages/todoman/)
+
 *   **TuDu** — Ncurses-based hierarchical To-do list manager with vim-like keybindings.
 
 	[http://code.meskio.net/tudu/](http://code.meskio.net/tudu/) || [tudu](https://aur.archlinux.org/packages/tudu/)
@@ -212,14 +224,6 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 *   **Wyrd** — Text-based front-end to Remind, a calendar and alarm program used on UNIX and Linux computers.
 
 	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://aur.archlinux.org/packages/wyrd/)
-
-*   **mail2rem** — Small script for importing *.ics calendars from Maildir to Remind calendar.
-
-	[https://github.com/esovetkin/mail2rem](https://github.com/esovetkin/mail2rem) || [mail2rem-git](https://aur.archlinux.org/packages/mail2rem-git/)
-
-*   **DevTodo** — Is a small command line application for maintaining lists of tasks.
-
-	[http://swapoff.org/devtodo1.html](http://swapoff.org/devtodo1.html) || [devtodo](https://aur.archlinux.org/packages/devtodo/)
 
 #### Graphical
 
@@ -591,9 +595,9 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[http://www.eterm.org/](http://www.eterm.org/) || [esetroot](https://aur.archlinux.org/packages/esetroot/)
 
-*   **[Feh](/index.php/Feh "Feh")** — A lightweight and powerful image viewer that can also be used to manage the desktop wallpaper.
+*   **[feh](/index.php/Feh "Feh")** — A lightweight and powerful image viewer that can also be used to manage the desktop wallpaper.
 
-	[http://linuxbrit.co.uk/software/feh/](http://linuxbrit.co.uk/software/feh/) || [feh](https://www.archlinux.org/packages/?name=feh)‎
+	[https://feh.finalrewind.org/](https://feh.finalrewind.org/) || [feh](https://www.archlinux.org/packages/?name=feh)‎
 
 *   **habak** — A background changing app.
 
@@ -673,6 +677,6 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 	[http://artha.sourceforge.net/wiki/index.php/Home](http://artha.sourceforge.net/wiki/index.php/Home) || [artha](https://aur.archlinux.org/packages/artha/)
 
-*   **sdcv** — A command line dictionary. It provides access to dictionaries in StarDict's format.
+*   **[sdcv](/index.php/Sdcv "Sdcv")** — A command line dictionary. It provides access to dictionaries in StarDict's format.
 
-	[https://wiki.archlinux.org/index.php/Sdcv](https://wiki.archlinux.org/index.php/Sdcv) || [sdcv](https://www.archlinux.org/packages/?name=sdcv)
+	[http://dushistov.github.io/sdcv/](http://dushistov.github.io/sdcv/) || [sdcv](https://www.archlinux.org/packages/?name=sdcv)

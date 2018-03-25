@@ -9,8 +9,8 @@
 | Webcam | Working |  ? |
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working | intel_hid |
-| Function/Multimedia Keys | Modify |  ? |
-| Power Management | Buggy | ... |
+| Function/Multimedia Keys | Working |
+| Power Management | Modify |
 
 This page covers the current status of hardware support on Arch, pre-installation system configuration tweaks, as well as post-installation recommendations to improve the usability of the system.
 
@@ -27,13 +27,13 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [3.2 Optimus Configuration (Hybrid Intel and Nvidia)](#Optimus_Configuration_.28Hybrid_Intel_and_Nvidia.29)
 *   [4 Touchpad](#Touchpad)
     *   [4.1 Gestures](#Gestures)
-*   [5 Keyboard](#Keyboard)
-*   [6 Power Management](#Power_Management)
-    *   [6.1 Suspend & Hibernate](#Suspend_.26_Hibernate)
-    *   [6.2 Battery](#Battery)
-*   [7 Bluetooth](#Bluetooth)
-*   [8 Thunderbolt 3 Docks](#Thunderbolt_3_Docks)
-*   [9 USB-C / Thunderbolt 3 Compatibility Chart](#USB-C_.2F_Thunderbolt_3_Compatibility_Chart)
+*   [5 Power Management](#Power_Management)
+    *   [5.1 Suspend & Hibernate](#Suspend_.26_Hibernate)
+    *   [5.2 Battery](#Battery)
+*   [6 Bluetooth](#Bluetooth)
+*   [7 Thunderbolt 3 Docks](#Thunderbolt_3_Docks)
+*   [8 USB-C / Thunderbolt 3 Compatibility Chart](#USB-C_.2F_Thunderbolt_3_Compatibility_Chart)
+*   [9 BIOS/firmware Updates](#BIOS.2Ffirmware_Updates)
 
 ## Pre-Installation System Settings
 
@@ -49,6 +49,8 @@ Prior to installation, access the system UEFI firmware by pressing F2 during boo
 Installation of Arch can proceed normally. Refer to the [Installation guide](/index.php/Installation_guide "Installation guide") for more info.
 
 ## Boot Parameters
+
+**The following is only required on older kernels - these issues have been fixed by more recent kernels and by BIOS updates:**
 
 Use the following for your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to fix a number of issues:
 
@@ -120,33 +122,6 @@ You can configure custom gestures using the [libinput-gestures](https://aur.arch
 
 ```
 
-## Keyboard
-
-The special touch keys are strangely mapped by default. One changes brightness, one does next track. They seem to be linked to the same key sequences as the Fn+F# keys that do the same job. To fix this, make this new file:
-
- `/opt/dell_touchkeys_keymap` 
-```
-0x90 previoussong # Previous song
-0xA2 playpause # Play/Pause
-0x99 nextsong # Next song
-0xDB computer # First touch key, Dell apparently uses a key sequence here where 0xDB is a modifer, 0x2D stands for the touch key and 0x19 for the monitor toggle
-0x85 prog1 # Second touch key
-0x84 media # Third touch key
-
-```
-
-and add this to /etc/rc.local:
-
- `/etc/rc.local` 
-```
-…
-# Fix touch keys
-/usr/lib/udev/keymap input/event0 /opt/dell_touchkeys_keymap
-
-```
-
-[Source](https://bbs.archlinux.org/viewtopic.php?id=131886)
-
 ## Power Management
 
 ### Suspend & Hibernate
@@ -176,8 +151,6 @@ On bios version 1.4.0 the USB and Ethernet peripherals will not work unless Thun
 
 It should also be noted that the TB16 dock will crash when hot plugged on all BIOS versions after 1.2.18 (Still the case as of version 1.4.0).
 
-You can update your bios either [manually](http://www.dell.com/support/article/hr/en/hrdhs1/SLN171755/en) or by using fwupdmgr although if you installed arch by just bundling everything into /boot as some guides suggest then your only option is to update manually util this [issue](https://github.com/rhinstaller/fwupdate/issues/58) is resolved.
-
 ## USB-C / Thunderbolt 3 Compatibility Chart
 
 | **Device** | **Ports** | **Status** |
@@ -186,3 +159,7 @@ You can update your bios either [manually](http://www.dell.com/support/article/h
 | [CHOETECH USB-C to DisplayPort Cable (4K@60Hz)](https://www.amazon.co.uk/DisplayPort-CHOETECH-Thunderbolt-Compatible-ChromeBook/dp/B01N5RFAI4) | DisplayPort | Working |
 
 [This chart](/index.php/Dell_XPS_13_(9360)#USB-C_Compatibility_Chart "Dell XPS 13 (9360)") may also be helpful.
+
+## BIOS/firmware Updates
+
+You can update your BIOS either [manually](http://www.dell.com/support/article/hr/en/hrdhs1/SLN171755/en), or with [fwupdmgr](/index.php/Fwupd "Fwupd") (recommended). Recent BIOSes fix the screen flickering issue previously worked around with the `i915.edp_vswing=2` kernel parameter.

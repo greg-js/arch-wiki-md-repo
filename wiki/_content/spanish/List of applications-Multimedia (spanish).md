@@ -263,7 +263,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — Programa CAD/CAE, basado en OpenCascade, Qt y Python con funciones como grabación de macros, bancos de trabajo y la capacidad de funcionar como servidor.
 
-	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://www.archlinux.org/packages/?name=freecad)
+	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://aur.archlinux.org/packages/freecad/)
 
 *   **LeoCAD** — Programa CAD para crear modelos LEGO virtuales. Cuenta con una interfaz fácil de usar y, en la actualidad, con más de 6.000 piezas diferentes creadas por la comunidad LDraw.
 

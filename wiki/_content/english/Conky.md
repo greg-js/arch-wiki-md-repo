@@ -166,7 +166,7 @@ First check for syntax errors in your configuration file's text variable. Then d
 
 ### Transparency
 
-Conky supports two different types of transparency. Pseudo-transparency and real transparency that requires a [composite manager](/index.php/Xorg#Composite "Xorg") to be installed and running. If you enable real transparency and don't have a composite manager running your conky will not be alpha transparent with transparency enabled for fonts and images as well as the background.
+Conky supports two different types of transparency. Pseudo-transparency and real transparency that requires a [composite manager](/index.php/Composite_manager "Composite manager") to be installed and running. If you enable real transparency and don't have a composite manager running your conky will not be alpha transparent with transparency enabled for fonts and images as well as the background.
 
 #### Pseudo-transparency
 
@@ -181,7 +181,7 @@ In `~/.xinitrc`:
 
 #### Enable real transparency
 
-To enable real transparency, you must have a [composite manager](/index.php/Xorg#Composite "Xorg") running and the following lines added to `.conkyrc` inside the conky.config array:
+To enable real transparency, you must have a [composite manager](/index.php/Composite_manager "Composite manager") running and the following lines added to `.conkyrc` inside the conky.config array:
 
 ```
  conky.config = {

@@ -48,7 +48,7 @@ If you want to use both cards, or cannot disable the card you do not want, see t
 
 ## Using nvidia
 
-The proprietary NVIDIA driver does not support dynamic switching like the nouveau driver (meaning it can only use the NVIDIA device). It also has notable screen-tearing issues that NVIDIA recognizes but has not fixed. However, it does allow use of the discrete GPU and has (as of October 2013) a marked edge in performance over the nouveau driver.
+The proprietary NVIDIA driver does not support dynamic switching like the nouveau driver (meaning it can only use the NVIDIA device). It also has notable screen-tearing issues that NVIDIA recognizes but has not fixed. However, it does allow use of the discrete GPU and has (as of [January 2017](https://www.phoronix.com/scan.php?page=article&item=nouveau-410-blob&num=1)) a marked edge in performance over the nouveau driver.
 
 First, [install](/index.php/Install "Install") the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Then, configure `xorg.conf`. You will need to know the PCI address of the NVIDIA card, which you can find by issuing
 

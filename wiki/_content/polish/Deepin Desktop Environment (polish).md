@@ -26,7 +26,7 @@ Aby uzyskać podstawowe środowisko graficzne, należy zainstalować grupę [dee
 
 Grupa [deepin-extra](https://www.archlinux.org/groups/x86_64/deepin-extra/) zawiera dodatkowe aplikacje dostępne do instalacji w każdej chwili w celu uzupełnienia funkcjonalności środowiska podstawowego.
 
-W celu użycia zintegrowanej w środowisko Deepin obsługi sieci, pakiet [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) jest wymagany, a usługa `NetworkManager.service`[[1]](https://wiki.archlinux.org/index.php/Systemd#Using_units) musi być włączona i uruchomiona.
+W celu użycia zintegrowanej w środowisko Deepin obsługi sieci, pakiet [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) jest wymagany, a usługa `NetworkManager.service`[Systemd#Using units](/index.php/Systemd#Using_units "Systemd") musi być włączona i uruchomiona.
 
 ## Uruchamianie środowiska graficznego Deepin
 
@@ -47,7 +47,7 @@ Uwaga - użytkownik(wykluczając konto administratora - root) musi dysponować w
 
 ### Brak tła po powrocie ze stanu wstrzymania
 
-Ze względu na to jak sterowniki NVIDIA przechowują FBO [[2]](https://devtalk.nvidia.com/default/topic/787748/linux/-nvidia340xx-archlinux64-gnome3-14-the-background-of-desktop-and-lockscreen-mess-after-resume-from-/post/4367179/#4367179), zdarza się, że po powrocie ze stanu wstrzymania tło nagle znika, zostawiając tylko białe pole. Błąd wydaje się na naprawiony w środowisku graficznym Gnome. Deepin jednak dalej cierpi na ową przypadłość.
+Ze względu na to jak sterowniki NVIDIA przechowują FBO [[1]](https://devtalk.nvidia.com/default/topic/787748/linux/-nvidia340xx-archlinux64-gnome3-14-the-background-of-desktop-and-lockscreen-mess-after-resume-from-/post/4367179/#4367179), zdarza się, że po powrocie ze stanu wstrzymania tło nagle znika, zostawiając tylko białe pole. Błąd wydaje się na naprawiony w środowisku graficznym Gnome. Deepin jednak dalej cierpi na ową przypadłość.
 
 Możliwym obejściem problemu jest restartowanie menadżera okien za każdym razem gdy komputer powraca ze stanu wstrzymania. Aby to zrobić należy stworzyć następującą usługę w systemd:
 

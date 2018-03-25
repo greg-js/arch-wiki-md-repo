@@ -39,7 +39,7 @@ This example assumes that the pre-existing disk is `/dev/sda`, which contains on
 
 The first step is creating the [partition](/index.php/Partition "Partition") on the new disk, `/dev/sdb1`, that will be used as the mirror for the RAID array. In general, in this step it is not needed to recreate the exact partitioning scheme of the pre-existing drive; RAID can even be configured on whole disks, and [partitions](https://raid.wiki.kernel.org/index.php/Partitioning_RAID_/_LVM_on_RAID#Partitions%20on%20a%20RAID%20device) or [logical volumes](/index.php/LVM "LVM") created later.
 
-Make sure that the partition type is set as `FD`. See [RAID#Prepare the Devices](/index.php/RAID#Prepare_the_Devices "RAID") and [RAID#Create the Partition Table (GPT)](/index.php/RAID#Create_the_Partition_Table_.28GPT.29 "RAID") for more information.
+Make sure that the partition type is set as `FD`. See [RAID#Prepare the devices](/index.php/RAID#Prepare_the_devices "RAID") and [RAID#Create the Partition Table (GPT)](/index.php/RAID#Create_the_Partition_Table_.28GPT.29 "RAID") for more information.
 
 ### Create the RAID device
 

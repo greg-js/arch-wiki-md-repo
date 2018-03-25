@@ -95,7 +95,7 @@ For max. performance on SSD, partitioons are aligned to 1 GB and 64 GB, respecti
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics") for HD4400 graphics card.
 *   [Wireless#iwlwifi](/index.php/Wireless#iwlwifi "Wireless") for Intel 7260 wifi card.
 *   [Synaptics](/index.php/Synaptics "Synaptics") for Touchpad
-*   [Fan speed control#Dell_laptops](/index.php/Fan_speed_control#Dell_laptops "Fan speed control") to control fan speed. There is only one fan on this laptop, detected on the right. Don't forget to disable BIOS fan speed control to be able to use custom fan speed config.
+*   [Fan speed control#Dell laptops](/index.php/Fan_speed_control#Dell_laptops "Fan speed control") to control fan speed. There is only one fan on this laptop, detected on the right. Don't forget to disable BIOS fan speed control to be able to use custom fan speed config.
 
 ## What does not work
 

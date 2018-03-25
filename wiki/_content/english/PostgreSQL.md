@@ -355,7 +355,7 @@ Upgrading major PostgreSQL versions requires some extra maintenance.
 It is recommended to add the following to your `/etc/pacman.conf` file:
 
 ```
-IgnorePkg = postgresql postgresql-libs
+IgnorePkg = postgresql*
 
 ```
 
@@ -365,10 +365,30 @@ There are two main ways to upgrade your PostgreSQL database. Read the official d
 
 For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL.
 
-When you are ready, upgrade the following packages: [postgresql](https://www.archlinux.org/packages/?name=postgresql), [postgresql-libs](https://www.archlinux.org/packages/?name=postgresql-libs), and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade). Note that the data directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new database must be initialized, as described in the [#Installing PostgreSQL](#Installing_PostgreSQL) section.
+**Do not run the following commands blindly without understanding what they do!** Reference the [upstream pg_upgrade documentation](https://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
+
+Note that the databases cluster directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new databases cluster must be initialized, as described in the [#Installing PostgreSQL](#Installing_PostgreSQL) section.
+
+When you are ready, stop the postgresql service, upgrade the following packages: [postgresql](https://www.archlinux.org/packages/?name=postgresql), [postgresql-libs](https://www.archlinux.org/packages/?name=postgresql-libs), and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade). Finally upgrade the databases cluster.
+
+Stop and make sure PostgreSQL is stopped:
 
 ```
-# systemctl stop postgresql.service
+# systemctl stop postgresql
+# systemctl status postgresql
+
+```
+
+Upgrade the packages:
+
+```
+# pacman -S postgresql postgresql-lib postgresql-old-upgrade
+
+```
+
+Rename the databases cluster directory, and create an empty one:
+
+```
 # mv /var/lib/postgres/data /var/lib/postgres/olddata
 # mkdir /var/lib/postgres/data /var/lib/postgres/tmp
 # chown postgres:postgres /var/lib/postgres/data /var/lib/postgres/tmp
@@ -376,7 +396,7 @@ When you are ready, upgrade the following packages: [postgresql](https://www.arc
 
 ```
 
-The upgrade invocation will likely look something like the following. **Do not run this command blindly without understanding what it does!** Reference the [upstream pg_upgrade documentation](https://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
+Upgrade the cluster:
 
 ```
 [postgres]$ cd /var/lib/postgres/tmp
@@ -385,6 +405,13 @@ The upgrade invocation will likely look something like the following. **Do not r
 ```
 
 `pg_upgrade` will perform the upgrade and create some scripts in `/var/lib/postgres/tmp/`. Follow the instructions given on screen and act accordingly. You may delete the `/var/lib/postgres/tmp` directory once the upgrade is completely over.
+
+Start the cluster:
+
+```
+# systemctl start postgresql
+
+```
 
 ### Manual dump and reload
 

@@ -2,28 +2,37 @@ This is a quick blurb for setting or converting your keymaps to dvorak instead o
 
 ## Contents
 
-*   [1 Setting dvorak layout](#Setting_dvorak_layout)
+*   [1 Setting Dvorak Layout](#Setting_Dvorak_Layout)
 *   [2 For international users](#For_international_users)
     *   [2.1 Swedish](#Swedish)
     *   [2.2 Spanish](#Spanish)
     *   [2.3 United Kingdom](#United_Kingdom)
 *   [3 Typing tutors](#Typing_tutors)
 
-## Setting dvorak layout
+## Setting Dvorak Layout
 
 See [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") or [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for configuration details.
 
-These variants are available in both console and Xorg:
+For the virtual terminal, dvorak and the regional keyboard are combined into one keymap. But Xorg lists dvorak as varian of your regional keymap.
 
-*   `dvorak`, standard dvorak layout
-*   `dvorak-l`, left-handed dvorak layout
-*   `dvorak-r`, right-handed dvorak layout
+The `us` Dvorak keymaps for the virtual terminal are:
+
+*   `dvorak`, Standard
+*   `dvorak-l`, Left handed Dvorak
+*   `dvorak-r`, Right handed Dvorak
+*   `dvorak-programmer`, Programmer Dvorak
+
+The `us` Dvorak keymaps for Xorg are:
+
+*   `dvorak`, Standard
+*   `dvorak-l`, Left Handed Dvorak
+*   `dvorak-r`, Right Handed Dvorak
+*   `dvp`, Programmer Dvorak
+*   `dvorak-intl`, International Dvorak
+*   `dvorak-classic`
+*   `dvorak-alt-intl`
 
 **Note:** For console, these are standalone keymaps, but for Xorg these are variants of the `us` layout, you need to pass them to `XkbVariant` variable. See [Keyboard configuration in Xorg#Setting keyboard layout](/index.php/Keyboard_configuration_in_Xorg#Setting_keyboard_layout "Keyboard configuration in Xorg") for an explanation.
-
-The following variants are available only in Xorg:
-
-*   `dvorak-intl`, international layout with dead keys
 
 ## For international users
 

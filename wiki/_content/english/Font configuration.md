@@ -171,6 +171,8 @@ Using BCI hinting, instructions in TrueType fonts are rendered according to Free
 
 ```
 
+**Note:** You can switch BCI implementations by editing `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode/2.6 default/≈ Windows 98), `truetype:interpreter-version=38` ("Infinality" subpixel mode), `truetype:interpreter-version=40` (minimal subpixel mode/2.7 default). Subpixel rendering should use a subpixel BCI. For details, also see [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html)
+
 #### Autohinter
 
 The autohinter attempts to do automatic hinting and disregards any existing hinting information. Originally it was the default because TrueType2 fonts were patent-protected but now that these patents have expired there is very little reason to use it. It does work better with fonts that have broken or no hinting information but it will be strongly sub-optimal for fonts with good hinting information. Generally common fonts are of the later kind so autohinter will not be useful. Autohinter is **disabled** by default. To enable it:
@@ -184,9 +186,11 @@ The autohinter attempts to do automatic hinting and disregards any existing hint
 
 ```
 
+`hintslight`, as described by the next section, implicitly uses the autohinter in a vertical-only mode in favor of font-native information for non-CFF (*.otf) fonts.
+
 #### Hintstyle
 
-Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape, while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. **`hintslight`** is the default setting. To change it:
+Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape (see [[2]](https://www.freetype.org/freetype2/docs/text-rendering-general.html)), while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. **`hintslight`** is the default setting. To change it:
 
 ```
   <match target="font">
@@ -219,8 +223,6 @@ Most monitors manufactured today use the Red, Green, Blue (RGB) specification. F
 [Subpixel rendering](https://en.wikipedia.org/wiki/Subpixel_rendering "wikipedia:Subpixel rendering") is a technique to improve sharpness of font rendering by effectively tripling the horizontal (or vertical) resolution through the use of subpixels. On Windows machines, this technique is called "ClearType". Subpixel rendering is covered by Microsoft patents and **disabled** by default on Arch Linux. To enable it, you have to re-compile [freetype2](https://www.archlinux.org/packages/?name=freetype2) and define the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro, or use e.g. the AUR package [freetype2-cleartype](https://aur.archlinux.org/packages/freetype2-cleartype/).
 
 To enable subpixel rendering, make sure that correct pixel alignment (see above) is configured.
-
-**Note:** The default autohinter and subpixel rendering are not designed to work together, hence you will want to enable the subpixel autohinter. Subpixel hinting mode configured in the file `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode/2.6 default), `truetype:interpreter-version=38` ("Infinality" mode), `truetype:interpreter-version=40` (minimal mode/2.7 default). For details, also see [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html)
 
 #### LCD filter
 
@@ -611,7 +613,7 @@ You may also experience similar problem when you open a PDF which requires Helve
 
 ### FreeType Breaking Bitmap Fonts
 
-Some users are reporting problems ([FS#52502](https://bugs.archlinux.org/task/52502)) with bitmap fonts having changed names after upgrading [freetype2](https://www.archlinux.org/packages/?name=freetype2) to version 2.7.1, creating havok in terminal emulators and several other programs such as [dwm](https://aur.archlinux.org/packages/dwm/) or [dmenu](https://www.archlinux.org/packages/?name=dmenu) by falling back to another (different) font. This was caused by the changes to the PCF font family format, which is described in their *release notes* [[3]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Users transitioning from the old format might want to create a *font alias* to remedy the problems, like the solution which is described in [[4]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), given here too:
+Some users are reporting problems ([FS#52502](https://bugs.archlinux.org/task/52502)) with bitmap fonts having changed names after upgrading [freetype2](https://www.archlinux.org/packages/?name=freetype2) to version 2.7.1, creating havok in terminal emulators and several other programs such as [dwm](https://aur.archlinux.org/packages/dwm/) or [dmenu](https://www.archlinux.org/packages/?name=dmenu) by falling back to another (different) font. This was caused by the changes to the PCF font family format, which is described in their *release notes* [[4]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Users transitioning from the old format might want to create a *font alias* to remedy the problems, like the solution which is described in [[5]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), given here too:
 
 Assume we want to create an alias for [terminus-font](https://www.archlinux.org/packages/?name=terminus-font), which was renamed from `Terminus` to `xos4 Terminus` in the previously described [freetype2](https://www.archlinux.org/packages/?name=freetype2) update:
 

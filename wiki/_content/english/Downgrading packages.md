@@ -40,7 +40,7 @@ Once the package is reverted, temporarily add it to the [IgnorePkg section](/ind
 
 ### Downgrading the kernel
 
-In case of issue with a new kernel, the Linux packages can be downgraded to the last working ones [#using the pacman cache](#using_the_pacman_cache). Go into the directory `/var/cache/pacman/pkg` and downgrade at least [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) and any kernel modules. For example:
+In case of issue with a new kernel, the Linux packages can be downgraded to the last working ones [#Using the pacman cache](#Using_the_pacman_cache). Go into the directory `/var/cache/pacman/pkg` and downgrade at least [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) and any kernel modules. For example:
 
 ```
 # pacman -U linux-4.15.8-1-x86_64.pkg.tar.xz linux-headers-4.15.8-1-x86_64.pkg.tar.xz virtualbox-host-modules-arch-5.2.8-4-x86_64.pkg.tar.xz

@@ -27,7 +27,7 @@ Hddtemp requires root privileges. The command `hddtemp` must be followed by at l
 
 ```
 
-**Note:** Block device naming under `/dev/`, like `/dev/sdX`, is inconsistent. See [Persistent_block_device_naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for information on using persistent device paths.
+**Note:** Block device naming under `/dev/`, like `/dev/sdX`, is inconsistent. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for information on using persistent device paths.
 
 Further usage information is available in the manpage:
 

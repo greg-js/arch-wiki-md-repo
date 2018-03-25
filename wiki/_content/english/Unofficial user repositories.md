@@ -38,23 +38,24 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.21 icinga2](#icinga2)
     *   [2.22 ivasilev](#ivasilev)
     *   [2.23 jlk](#jlk)
-    *   [2.24 llvm-svn](#llvm-svn)
-    *   [2.25 markzz](#markzz)
-    *   [2.26 miffe](#miffe)
-    *   [2.27 mikelpint](#mikelpint)
-    *   [2.28 mobile](#mobile)
-    *   [2.29 pkgbuilder](#pkgbuilder)
-    *   [2.30 qt-debug](#qt-debug)
-    *   [2.31 quarry](#quarry)
-    *   [2.32 repo-ck](#repo-ck)
-    *   [2.33 seblu](#seblu)
-    *   [2.34 seiichiro](#seiichiro)
-    *   [2.35 sergej-repo](#sergej-repo)
-    *   [2.36 siosm-aur](#siosm-aur)
-    *   [2.37 subtitlecomposer](#subtitlecomposer)
-    *   [2.38 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.39 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.40 xyne-x86_64](#xyne-x86_64)
+    *   [2.24 linux-macbook](#linux-macbook)
+    *   [2.25 llvm-svn](#llvm-svn)
+    *   [2.26 markzz](#markzz)
+    *   [2.27 miffe](#miffe)
+    *   [2.28 mikelpint](#mikelpint)
+    *   [2.29 mobile](#mobile)
+    *   [2.30 pkgbuilder](#pkgbuilder)
+    *   [2.31 qt-debug](#qt-debug)
+    *   [2.32 quarry](#quarry)
+    *   [2.33 repo-ck](#repo-ck)
+    *   [2.34 seblu](#seblu)
+    *   [2.35 seiichiro](#seiichiro)
+    *   [2.36 sergej-repo](#sergej-repo)
+    *   [2.37 siosm-aur](#siosm-aur)
+    *   [2.38 subtitlecomposer](#subtitlecomposer)
+    *   [2.39 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.40 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.41 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -398,6 +399,19 @@ Server = https://ivasilev.net/pacman/$arch
 ```
 [jlk]
 Server = http://jlk.fjfi.cvut.cz/arch/repo
+
+```
+
+### linux-macbook
+
+*   **Maintainer:** [Tony Lambiris](https://aur.archlinux.org/account/m3thodic)
+*   **Description:** AUR builds for the linux-macbook kernel by its developer, m3thodic
+*   **Upstream page:** [https://aur.archlinux.org/pkgbase/linux-macbook/](https://aur.archlinux.org/pkgbase/linux-macbook/)
+*   **Key-ID:** A55A1B6C098962D84AE9B57016A33C9959A40DED
+
+```
+[linux-macbook]
+Server = http://libpcap.net/repo/linux-macbook
 
 ```
 

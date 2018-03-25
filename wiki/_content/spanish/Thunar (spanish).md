@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Xfce](/index.php/Xfce "Xfce")
+
 Desde la [página principal](http://docs.xfce.org/xfce/thunar/start) del proyecto:
 
 	*Thunar es un nuevo administrador de archivos moderno para el entorno de escritorio Xfce. Thunar ha sido diseñado desde cero para ser rápido y fácil de usar. Su interfaz de usuario es limpia e intuitiva, y no incluye opciones confusas o inútiles por defecto. Thunar es rápido y sensible, con un buen tiempo de arranque y de carga de carpetas.*

@@ -8,34 +8,49 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting dwm](#Starting_dwm)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Customization](#Customization)
-    *   [3.2 Patches](#Patches)
-    *   [3.3 Status bar](#Status_bar)
-    *   [3.4 Use pacman](#Use_pacman)
-    *   [3.5 Applying changes](#Applying_changes)
-*   [4 Basic usage](#Basic_usage)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 st keybindings conflict](#st_keybindings_conflict)
-    *   [5.2 Statusbar configuration](#Statusbar_configuration)
-        *   [5.2.1 Conky statusbar](#Conky_statusbar)
-    *   [5.3 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
-    *   [5.4 Make the right Alt key work as if it were Mod4 (Windows Key)](#Make_the_right_Alt_key_work_as_if_it_were_Mod4_.28Windows_Key.29)
-    *   [5.5 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
-    *   [5.6 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
-    *   [5.7 Make some windows start floating](#Make_some_windows_start_floating)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Fixing misbehaving Java applications](#Fixing_misbehaving_Java_applications)
-    *   [6.2 Fixing the extra topbar that does not disappear when changing resolution/monitors](#Fixing_the_extra_topbar_that_does_not_disappear_when_changing_resolution.2Fmonitors)
-    *   [6.3 Fixing gaps around terminal windows](#Fixing_gaps_around_terminal_windows)
+    *   [1.1 Download sources](#Download_sources)
+    *   [1.2 Configuration](#Configuration)
+        *   [1.2.1 Status bar](#Status_bar)
+    *   [1.3 Create package](#Create_package)
+*   [2 Starting](#Starting)
+*   [3 Usage](#Usage)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Statusbar configuration](#Statusbar_configuration)
+        *   [4.1.1 Conky statusbar](#Conky_statusbar)
+    *   [4.2 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
+    *   [4.3 Make the right Alt key work as if it were Mod4 (Windows Key)](#Make_the_right_Alt_key_work_as_if_it_were_Mod4_.28Windows_Key.29)
+    *   [4.4 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
+    *   [4.5 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
+    *   [4.6 Make some windows start floating](#Make_some_windows_start_floating)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Fixing misbehaving Java applications](#Fixing_misbehaving_Java_applications)
+    *   [5.2 Fixing the extra topbar that does not disappear when changing resolution/monitors](#Fixing_the_extra_topbar_that_does_not_disappear_when_changing_resolution.2Fmonitors)
+    *   [5.3 Fixing gaps around terminal windows](#Fixing_gaps_around_terminal_windows)
+*   [6 Known issues](#Known_issues)
+    *   [6.1 Crashes due to emoji's in some fonts](#Crashes_due_to_emoji.27s_in_some_fonts)
 *   [7 See also](#See_also)
 
 ## Installation
 
-Download the [dwm](https://aur.archlinux.org/packages/dwm/) or [dwm-git](https://aur.archlinux.org/packages/dwm-git/) (for the development version) package, and make any required configuration changes before building. See [#Configuration](#Configuration) for more information.
+### Download sources
 
-## Starting dwm
+Download the [dwm](https://aur.archlinux.org/packages/dwm/) or [dwm-git](https://aur.archlinux.org/packages/dwm-git/) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") sources, and make any required [#Configuration](#Configuration) changes before building and installing.
+
+### Configuration
+
+dwm is configured at compile-time by editing some of its source files, specifically `config.h`. For detailed information on these settings see the included, well-commented `config.def.h` as well as the [customisation section](https://dwm.suckless.org/customisation/) on the dwm website.
+
+The official website has a number of [patches](http://dwm.suckless.org/patches/) that can add extra functionality to dwm. These patches primarily make changes to the `dwm.c` file but also make changes to the `config.h` file where appropriate. For information on applying patches, see the [Patching packages](/index.php/Patching_packages "Patching packages") article.
+
+#### Status bar
+
+See the [dwmstatus](https://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration](#Statusbar_configuration) section.
+
+### Create package
+
+You should [create a package](/index.php/Create_a_package "Create a package") using a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") so that [pacman](/index.php/Pacman "Pacman") is aware of the package. Then [install](/index.php/Install "Install") the package.
+
+## Starting
 
 Select *Dwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
@@ -46,37 +61,11 @@ exec dwm
 
 ```
 
-## Configuration
-
-### Customization
-
-dwm is configured at compile-time by editing some of its source files, namely `config.h`. For detailed information on these settings see the included, well commented `config.def.h` as well as the [customisation section](https://dwm.suckless.org/customisation/) on the dwm website.
-
-### Patches
-
-The official website has a number of [patches](http://dwm.suckless.org/patches/) that can add extra functionality to dwm. These patches primarily make changes to the `dwm.c` file but also make changes to the `config.h` file where appropriate. For information on applying patches, see [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS").
-
-### Status bar
-
-See the [dwmstatus](https://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration](#Statusbar_configuration) section.
-
-### Use pacman
-
-You should [create a package](/index.php/Create_a_package "Create a package") using a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") so that [pacman](/index.php/Pacman "Pacman") is aware of the package.
-
-### Applying changes
-
-After making any desired changes and installing the updated package, restart dwm in order to apply the changes.
-
-## Basic usage
+## Usage
 
 Consult the [dwm tutorial](https://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see [dwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dwm.1).
 
 ## Tips and tricks
-
-### st keybindings conflict
-
-The default terminal for *dwm* is [st](/index.php/St "St"). Be default, *st* uses `Mod1+Ctrl+C` for copy, but *dwm* uses this same key combination to kill a program. You should change this shortcut in either *dwm* or *st* such that *st* is not killed when attempting to copy text.
 
 ### Statusbar configuration
 
@@ -229,7 +218,7 @@ Try setting `export _JAVA_AWT_WM_NONREPARENTING=1`. Also see the [Java](/index.p
 
 ### Fixing the extra topbar that does not disappear when changing resolution/monitors
 
-**Note:** this patch is intended for dwm-6.0 which is currently in the [official repositories](/index.php/Official_repositories "Official repositories"). The development version of dwm has already implemented this.
+**Note:** This patch is intended for dwm-6.0\. The development version of dwm has already implemented this.
 
 When resizing or connecting/disconnecting different monitors there may be a remnant of the topbar stuck on the screen which cannot be removed. To fix this bug, rebuild dwm with [this patch](http://ix.io/fea).
 
@@ -238,6 +227,26 @@ When resizing or connecting/disconnecting different monitors there may be a remn
 If there are empty gaps of desktop space outside terminal windows, it is likely due to the terminal's font size. Either adjust the size until finding the ideal scale that closes the gap, or toggle `resizehints` to *0* in `config.h`.
 
 This will cause dwm to ignore resize requests from all client windows, not just terminals. The downside to this workaround is that some terminals may suffer redraw anomalies, such as ghost lines and premature line wraps, among others.
+
+## Known issues
+
+### Crashes due to emoji's in some fonts
+
+Emoji's in title bars may cause dwm to crash with an error similar to the following:
+
+```
+dwm: fatal error: request code=140, error code=16
+X Error of failed request: BadLength (poly request too large or internal Xlib length error)
+  Major opcode of failed request: 140 (RENDER)
+  Minor opcode of failed request: 20 (RenderAddGlyphs)
+  Serial number of failed request: 4319
+  Current serial number in output stream: 4331
+
+```
+
+This only occurs with some fonts, such as [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) and [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont). See [[1]](https://lists.suckless.org/dev/1608/30245.html), [[2]](https://lists.suckless.org/dev/1610/30710.html), [[3]](https://bbs.archlinux.org/viewtopic.php?id=226928), and [[4]](https://www.reddit.com/r/archlinux/comments/703ayu/anyone_with_dwm_and_notofontsemoji/). To workaround this uninstall the problematic font or use a different font for dwm.
+
+Alternatively see [[5]](https://lists.suckless.org/dev/1610/30720.html) for a possible fix.
 
 ## See also
 

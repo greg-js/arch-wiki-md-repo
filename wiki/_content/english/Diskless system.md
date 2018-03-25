@@ -160,14 +160,14 @@ Now the initramfs needs to be constructed.
 Trivial modifications to the `net` hook are required in order for NFSv4 mounting to work (not supported by `nfsmount`--the default for the `net` hook).
 
 ```
-# sed s/nfsmount/mount.nfs4/ "$root/usr/lib/initcpio/hooks/net" > "$root/usr/lib/initcpio/hooks/net_nfs4"
-# cp $root/usr/lib/initcpio/install/net{,_nfs4}
+# sed s/nfsmount/mount.nfs4/ "$root/usr/lib/initcpio/hooks/net" > "$root/usr/lib/initcpio/hooks/netnfs4"
+# cp $root/usr/lib/initcpio/install/net{,nfs4}
 
 ```
 
 The copy of `net` is unfortunately needed so it does not get overwritten when [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is updated on the client installation.
 
-Edit `$root/etc/mkinitcpio.conf` and add `nfsv4` to `MODULES`, `net_nfs4` to `HOOKS`, and `/usr/bin/mount.nfs4` to `BINARIES`.
+Edit `$root/etc/mkinitcpio.conf` and add `nfsv4` to `MODULES`, `netnfs4` to `HOOKS`, and `/usr/bin/mount.nfs4` to `BINARIES`.
 
 Next, we [chroot](/index.php/Chroot "Chroot") our installation and run *mkinitcpio*:
 

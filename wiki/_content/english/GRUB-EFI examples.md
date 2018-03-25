@@ -296,7 +296,7 @@ This system whitelists efi labels. It will only boot from a label called "Red Ha
 
 ### X270 Thinkpad
 
-The [efi path workaround](/index.php/GRUB#EFI_path "GRUB") ([also here](/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround "GRUB/Tips and tricks")) seems to be needed for the X270.
+The [efi path workaround](/index.php/GRUB#EFI_default.2Ffallback_boot_path "GRUB") ([also here](/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround "GRUB/Tips and tricks")) seems to be needed for the X270.
 
 ```
  # grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub

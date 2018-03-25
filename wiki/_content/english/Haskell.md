@@ -80,9 +80,9 @@ Unfortunately, if your project depends on any of the `haskell-*` packages that y
 
 To work around this problem, you can install [ghc-pristine](https://aur.archlinux.org/packages/ghc-pristine/), which wraps over an existing GHC installation to create a separate GHC distribution in `/usr/share/ghc-pristine`, with a package database that contains only boot libraries. Then, to build software with static linking, one simply needs to invoke the wrapped compiler `/usr/share/ghc-pristine/bin/ghc`. For Cabal, this amounts to the following configuration:
 
- `cabal configure --with-compiler=/usr/share/ghc-pristine` 
+ `cabal configure --with-compiler=/usr/share/ghc-pristine/bin/ghc` 
 
-This can be made permanent by editing `~/.cabal/config`. Be aware that you still need `ghc-static`.
+This can be made permanent by editing `~/.cabal/config` (it can be created using `cabal user-config init`). Be aware that you still need `ghc-static`.
 
 Alternatives to `ghc-pristine`:
 

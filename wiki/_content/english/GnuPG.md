@@ -71,7 +71,6 @@ According to the [official website](https://www.gnupg.org/):
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
     *   [9.10 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
     *   [9.11 gpg: ..., IPC connect call failed](#gpg:_....2C_IPC_connect_call_failed)
-    *   [9.12 Error: [key] could not be locally signed or gpg: No default secret key: No public key](#Error:_.5Bkey.5D_could_not_be_locally_signed_or_gpg:_No_default_secret_key:_No_public_key)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -545,17 +544,9 @@ $ gpg --pinentry-mode loopback ...
 
 *gpg-agent* has OpenSSH agent emulation. If you already use the GnuPG suite, you might consider using its agent to also cache your [SSH keys](/index.php/SSH_keys "SSH keys"). Additionally, some users may prefer the PIN entry dialog GnuPG agent provides as part of its passphrase management.
 
-To start using GnuPG agent for your SSH keys, enable SSH support in the `~/.gnupg/gpg-agent.conf` file:
-
- `~/.gnupg/gpg-agent.conf` 
-```
-enable-ssh-support
-
-```
-
 #### Set SSH_AUTH_SOCK
 
-Then set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*. To make sure each process can find your *gpg-agent* instance regardless of e.g. the type of shell it is child of use [pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables").
+You have to set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*. To make sure each process can find your *gpg-agent* instance regardless of e.g. the type of shell it is child of use [pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables").
 
  `~/.pam_environment` 
 ```
@@ -563,16 +554,16 @@ SSH_AGENT_PID	DEFAULT=
 SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 ```
 
+**Note:** If you set your `SSH_AUTH_SOCK` manually (such as in this pam_env example), keep in mind that your socket location may be different if you are using a custom `GNUPGHOME`. You can use the following bash example, or change `SSH_AUTH_SOCK` to the value of `gpgconf --list-dirs agent-ssh-socket`.
+
 Alternatively, depend on Bash. This works for non-standard socket locations as well:
 
  `~/.bashrc` 
 ```
-# Set SSH to use gpg-agent
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
-
 ```
 
 **Note:** The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[5]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
@@ -902,10 +893,6 @@ socket=/dev/shm/S.gpg-agent.ssh
 ```
 
 Test that gpg-agent starts successfully with `gpg-agent --daemon`.
-
-### Error: [key] could not be locally signed or gpg: No default secret key: No public key
-
-Occurs when attempting to sign keys on a non-standard keyring while a yubikey is plugged in, e.g. as [Pacman](/index.php/Pacman/Package_signing "Pacman/Package signing") does in `pacman-key --populate archlinux`. The solution is to remove the offending yubikey and start over.
 
 ## See also
 

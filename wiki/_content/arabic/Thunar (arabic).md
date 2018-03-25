@@ -1,3 +1,8 @@
+Related articles
+
+*   [Xfce](/index.php/Xfce "Xfce")
+*   [GNOME#Nautilus](/index.php/GNOME#Nautilus "GNOME")
+
 **ثونَر** [Thunar](http://thunar.xfce.org/index.html) عبارة عن مدير ملفات صمم ليكون سريعاً خفيفاً وسهل الاستخدام، يمكن تثبيته منفصلاً أو ضمن حزمة [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
 ## Contents

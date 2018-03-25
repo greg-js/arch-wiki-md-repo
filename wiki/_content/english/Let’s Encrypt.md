@@ -2,7 +2,7 @@
 
 It is recommended to start with the **certbot** client, which allows to request valid X.509 certificates straight from the command line.
 
-If you would like to try other clients, a minimal client with manual certificate signing request *(CSR)* creation is available at [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/). Clients suitable for scripts are [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
+If you would like to try other clients, a minimal client with manual certificate signing request *(CSR)* creation is available at [acme-tiny](https://www.archlinux.org/packages/?name=acme-tiny). Clients suitable for scripts are [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
 
 ## Contents
 

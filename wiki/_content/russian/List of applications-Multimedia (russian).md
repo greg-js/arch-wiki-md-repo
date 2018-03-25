@@ -289,7 +289,7 @@
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/ru:FreeCAD_(Juergen_Riegel%27s) "wikipedia:ru:FreeCAD (Juergen Riegel's)")** — Программа САПР/CAE, основанная на OpenCascade, Qt и Python, с такими возможностями, как записи макросов, верстка и способность работать в качестве сервера
 
-	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://www.archlinux.org/packages/?name=freecad)
+	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://aur.archlinux.org/packages/freecad/)
 
 *   **LeoCAD** — Программа САПР для создания виртуальных моделей LEGO. Имеет простой в использовании интерфейс и, на данный момент, около 6000 различных кубиков, созданных сообществом LDraw
 

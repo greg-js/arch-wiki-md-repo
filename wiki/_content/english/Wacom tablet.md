@@ -651,7 +651,7 @@ It remaps
 
 ### GIMP
 
-To enabled proper usage, and pressure sensitive painting in [GIMP](http://www.gimp.org), just go to *Edit → Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
+To enable proper usage, and pressure sensitive painting in [GIMP](http://www.gimp.org), just go to *Edit → Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
 
 *   Please take note that if present, the *pad* **device** should be kept disabled as I do not think GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
 

@@ -31,7 +31,7 @@ A *user* is anyone who uses a computer. In this case, we are describing the name
 
 Managing users is done for the purpose of security by limiting access in certain specific ways. The [superuser](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser") (root) has complete access to the operating system and its configuration; it is intended for administrative use only. Unprivileged users can use the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") programs for controlled privilege escalation.
 
-Any individual may have more than one account, as long as they use a different name for each account they create. Further, there are some reserved names which may not be used such as "root".
+Any individual may have more than one account as long as they use a different name for each account they create. Further, there are some reserved names which may not be used such as "root".
 
 Users may be grouped together into a "group", and users may be added to an existing group to utilize the privileged access it grants.
 
@@ -144,7 +144,7 @@ On a typical desktop system, use the following command to add a new user named `
 
 ```
 
-Although it is not required to protect the newly created user `archie` with a password, it is highly recommend to do so:
+Although it is not required to protect the newly created user `archie` with a password, it is highly recommended to do so:
 
 ```
 # passwd archie

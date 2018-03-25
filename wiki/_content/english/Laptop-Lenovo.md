@@ -56,7 +56,7 @@ install CD version
 | Lenovo ThinkPad Edge E420s | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA | SDcard (Yes), Webcam (Yes), Trackpoint (No) |
 | [Lenovo ThinkPad Edge E430](/index.php/Lenovo_ThinkPad_Edge_E430 "Lenovo ThinkPad Edge E430") | Yes | Yes | Yes* | Yes* | Not tested | Yes | NA | NA | SD card (yes) |
 | [Lenovo ThinkPad Edge E455](/index.php/Lenovo_ThinkPad_Edge_E455 "Lenovo ThinkPad Edge E455") | 2015.04.01 | Yes* | Yes | Yes | Yes | Yes | Yes | NA |
-| [Lenovo ThinkPad Edge E470](/index.php?title=Lenovo_ThinkPad_Edge_E470&action=edit&redlink=1 "Lenovo ThinkPad Edge E470 (page does not exist)") | 2017.09.01 | Yes | Yes | Yes | Yes | Not tested | NA | NA | trackpoint (yes) |
+| Lenovo ThinkPad Edge E470 | 2017.09.01 | Yes | Yes | Yes | Yes | Not tested | NA | NA | trackpoint (yes) |
 | Lenovo ThinkPad Edge E530 | Yes | Yes | Yes* | Yes* | Yes | Yes | NA | NA | SD card (yes), Finger Print (not tested) |
 | Lenovo ThinkPad Edge E531 | Yes | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD card (yes), Touch Pad/Trackpoint (yes), Webcam (yes) | WiFi only works with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) |
 | Lenovo ThinkPad Edge E540 | 2015.08.01 | Yes | Yes | Yes | Yes | Yes | Yes* | NA | SD card (yes), Finger Print (yes), touch pad and trackpoint (yes), Webcam (yes) |
@@ -104,7 +104,7 @@ install CD version
 | [Lenovo ThinkPad T25](/index.php/Lenovo_ThinkPad_T25 "Lenovo ThinkPad T25") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner; Touchscreen |
 | [Lenovo ThinkPad T470](/index.php/Lenovo_ThinkPad_T470 "Lenovo ThinkPad T470") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T470s](/index.php/Lenovo_ThinkPad_T470s "Lenovo ThinkPad T470s") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
-| [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; Thunderbolt 3 (USB-C) | For [video h/w acceleration](https://wiki.archlinux.org/index.php/Hardware_video_acceleration) install [chrome-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) and ensure to enable acceleration in `about:flags`. Check everything is working in `about:gpu`. |
+| [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; Thunderbolt 3 (USB-C) | For [video h/w acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") install [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) and ensure to enable acceleration in `about:flags`. Check everything is working in `about:gpu`. |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -169,6 +169,7 @@ install CD version
 | [Lenovo IdeaPad Z580](/index.php/Lenovo_IdeaPad_Z580 "Lenovo IdeaPad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | Lenovo IdeaPad 720s | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | Fingerprint reader not tested but most likely not working |
 | [Lenovo IdeaPad 720s (Ryzen)](/index.php/Lenovo_IdeaPad_720s_(Ryzen) "Lenovo IdeaPad 720s (Ryzen)") | 2018.02.01 | Not tested | Not tested | Yes* | No | Not tested | Not tested | NA | Fingerprint reader not tested but most likely not working | *requires USB or USB C dongle |
+| Lenovo Ideapad 320 | 2018.03.01 | Not tested | Not tested | Yes | Not tested | Not tested | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
 
 ### B series
 
@@ -253,7 +254,7 @@ With packages [linux](https://www.archlinux.org/packages/?name=linux) 4.6.1-2 an
 
 When you install an SSD in the place of the plate HDD drive and you want to have your HDD still inside the laptop, it is possible to install it in the place of the optical drive in a special "HDD caddy". The optical drive is of 9 mm height, but a 9,5 mm caddy (ultra slim) fits in the slot. A caddy with a SATA interface is needed. It is difficult to separate the front bezel from the original optical drive (and opening its case does not help, but brings a danger of making a mess in the opening mechanism; the only option is just to pull the bezel using a bit of force, but you risk breaking the latches).
 
-While the HDD installed instead of the optical drive operates flawlessly in Windows, it wasn't going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (*SATA link down* entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a *libata.force=* kernel parameter. See [[1]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
+While the HDD installed instead of the optical drive operates flawlessly in Windows, it was not going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (*SATA link down* entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a *libata.force=* kernel parameter. See [[1]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
 
 ### Lenovo K450e
 

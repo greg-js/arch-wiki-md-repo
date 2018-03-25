@@ -1,6 +1,6 @@
 [Let’s Encrypt](https://letsencrypt.org/) бесплатный, автоматизированный, открытый центр сертификации использующий [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") протокол.
 
-Официальный клиент называется 'Certbot', который позволяет запрашивать действительные сертификаты X.509 прямо из командной строки. Минимальный клиент с ручным созданием CSR доступен в [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/), клиенты, подходящие для скриптов, - это [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) и [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
+Официальный клиент называется 'Certbot', который позволяет запрашивать действительные сертификаты X.509 прямо из командной строки. Минимальный клиент с ручным созданием CSR доступен в [acme-tiny](https://www.archlinux.org/packages/?name=acme-tiny), клиенты, подходящие для скриптов, - это [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) и [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
 
 ## Contents
 

@@ -59,6 +59,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.7 VM only uses one core](#VM_only_uses_one_core)
     *   [10.8 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
     *   [10.9 virt-manager has permission issues](#virt-manager_has_permission_issues)
+    *   [10.10 Host Lockup After VM Shutdown](#Host_Lockup_After_VM_Shutdown)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -1153,6 +1154,10 @@ user="*user*"
 ```
 
 If that does not work make sure your user account is added to the kvm and libvirt [groups](/index.php/Groups "Groups").
+
+### Host Lockup After VM Shutdown
+
+This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: The host will experience multiple CPU core lockups (see [https://bbs.archlinux.org/viewtopic.php?id=206050&p=2](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found here ([https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/)).
 
 ## See also
 

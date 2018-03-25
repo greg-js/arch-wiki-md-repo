@@ -1,3 +1,10 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
+*   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
+*   [ZFS on FUSE](/index.php/ZFS_on_FUSE "ZFS on FUSE")
+
 [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") ZFS，一个文件系统，拥有逻辑卷管理功能，最早源自于太阳微系统为Solaris操作系统开发的文件系统。ZFS是一个具有高存储容量、文件系统与卷管理概念集成、崭新的磁盘逻辑结构的轻量级文件系统，同时也是一个便捷的存储池管理系统。ZFS是一个使用通用开发与散布许可证授权的开源项目，这个商标名称现由甲骨文公司拥有。 ZFS的特性包括: 存储池 (不同于传统文件系统需要驻留于单独设备或者需要一个卷管理系统去使用一个以上的设备，ZFS创建在虚拟的，被称为“zpools”的存储池之上), [写时拷贝事务模型](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [快照与克隆](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), 数据自动校验与恢复(, [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"),ZFS是一个128位的文件系统，这意味着它能存储1800亿亿（18.4 × 1018）倍于当前64位文件系统的数据。ZFS的设计如此超前以至于这个极限就当前现实实际可能永远无法遇到。
 
 ZOL是一个由[Lawrence Livermore National Laboratory](https://www.llnl.gov/)赞助的项目，诣在开发用于Linux计算机的ZFS阵列。
@@ -142,7 +149,7 @@ In order to mount zfs pools automatically on boot you need to enable the followi
 
 Use `# parted --list` to see a list of all available drives. It is not necessary nor recommended to partition the drives before creating the zfs filesystem.
 
-**Note:** If some or all device have been used in a software RAID set it is paramount to erase any old RAID configuration information. ([Mdadm#Prepare the Devices](/index.php/Mdadm#Prepare_the_Devices "Mdadm"))
+**Note:** If some or all device have been used in a software RAID set it is paramount to erase any old RAID configuration information. ([Mdadm#Prepare the devices](/index.php/Mdadm#Prepare_the_devices "Mdadm"))
 
 **Warning:** For Advanced Format Disks with 4KB sector size, an ashift of 12 is recommended for best performance. Advanced Format disks emulate a sector size of 512 bytes for compatibility with legacy systems, this causes ZFS to sometimes use an ashift option number that is not ideal. Once the pool has been created, the only way to change the ashift option is to recreate the pool. Using an ashift of 12 would also decrease available capacity. See [1.10 What’s going on with performance?](https://github.com/zfsonlinux/zfs/wiki/faq#performance-considerations), [1.15 How does ZFS on Linux handle Advanced Format disks?](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks), and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
 

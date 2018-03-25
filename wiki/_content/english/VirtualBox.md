@@ -484,7 +484,7 @@ If the partition nodes are not propagated try using `partprobe /dev/nbd0`; other
 
 ### Compact virtual disks
 
-Compacting virtual disks only works with `.vdi` files and basically consists of the following steps.
+Compacting virtual disks only works with *.vdi* files and basically consists of the following steps.
 
 Boot your virtual machine and remove all bloat manually or by using cleaning tools like [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) which is [available for Windows systems too](http://bleachbit.sourceforge.net/download/windows).
 
@@ -521,7 +521,7 @@ The next time you boot your virtual machine, it is recommended to do a filesyste
 *   either `chkdsk *c:* /F` where `*c:*` needs to be replaced by each disk you need to scan and fix errors;
 *   or `FsckDskAll` [from here](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) which is basically the same software as `chkdsk`, but without the need to repeat the command for all drives;
 
-Now, remove the zeros from the `vdi` file with [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi):
+Now, remove the zeros from the *.vdi* file with [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi):
 
 ```
 $ VBoxManage modifyhd *your_disk.vdi* --compact

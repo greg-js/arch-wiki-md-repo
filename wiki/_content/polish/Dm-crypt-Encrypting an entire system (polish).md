@@ -25,28 +25,28 @@ Poniżej przedstawiono przykłady typowych scenariuszy pełnego szyfrowania syst
     *   [4.6 Konfigurowanie fstab i crypttab](#Konfigurowanie_fstab_i_crypttab)
     *   [4.7 Szyfrowanie woluminu logicznego /home](#Szyfrowanie_woluminu_logicznego_.2Fhome)
 *   [5 LUKS na programowym RAID](#LUKS_na_programowym_RAID)
-    *   [5.1 Przygotowanie dyskus](#Przygotowanie_dyskus)
+    *   [5.1 Przygotowanie dysku](#Przygotowanie_dysku_4)
     *   [5.2 Budowanie macierzy RAID](#Budowanie_macierzy_RAID)
     *   [5.3 Przygotowanie urządzeń blokowych](#Przygotowanie_urz.C4.85dze.C5.84_blokowych)
     *   [5.4 Konfiguracja boot loadera](#Konfiguracja_boot_loadera)
     *   [5.5 Tworzenie plików kluczy](#Tworzenie_plik.C3.B3w_kluczy)
     *   [5.6 Konfigurowanie systemu](#Konfigurowanie_systemu)
 *   [6 Zwykły dm-crypt](#Zwyk.C5.82y_dm-crypt)
-    *   [6.1 Przygotowanie dysku](#Przygotowanie_dysku_4)
+    *   [6.1 Przygotowanie dysku](#Przygotowanie_dysku_5)
     *   [6.2 Przygotowywanie partycji, które nie są uruchomione](#Przygotowywanie_partycji.2C_kt.C3.B3re_nie_s.C4.85_uruchomione)
     *   [6.3 Przygotowanie partycji rozruchowej](#Przygotowanie_partycji_rozruchowej_4)
     *   [6.4 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio_4)
     *   [6.5 Konfiguracja bootloadera](#Konfiguracja_bootloadera)
     *   [6.6 Po instalacji](#Po_instalacji)
 *   [7 Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_.28GRUB.29)
-    *   [7.1 Przygotowanie dysku](#Przygotowanie_dysku_5)
+    *   [7.1 Przygotowanie dysku](#Przygotowanie_dysku_6)
     *   [7.2 Przygotowywanie woluminów logicznych](#Przygotowywanie_wolumin.C3.B3w_logicznych_3)
     *   [7.3 Przygotowanie partycji rozruchowej](#Przygotowanie_partycji_rozruchowej_5)
     *   [7.4 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio_5)
     *   [7.5 Konfiguracja botladera](#Konfiguracja_botladera)
     *   [7.6 Konfigurowanie fstab i crypttab](#Konfigurowanie_fstab_i_crypttab_2)
 *   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
-    *   [8.1 Przygotowanie dysku](#Przygotowanie_dysku_6)
+    *   [8.1 Przygotowanie dysku](#Przygotowanie_dysku_7)
     *   [8.2 Przygotowanie partycji systemowej](#Przygotowanie_partycji_systemowej)
         *   [8.2.1 Utwórz kontener LUKS](#Utw.C3.B3rz_kontener_LUKS)
         *   [8.2.2 Odblokuj kontener LUKS](#Odblokuj_kontener_LUKS)
@@ -212,7 +212,7 @@ Następnie utwórz potrzebne partycje, przynajmniej jedną dla `/` (e.g. `/dev/s
 
 ### Preparing non-boot partitions
 
-Następujące polecenia tworzą i montują zaszyfrowaną partycję root. Odpowiadają one procedurze opisanej szczegółowo w [Dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (which, despite the title, *can* be applied to root partitions, as long as [mkinitcpio](#Configuring_mkinitcpio) and the [boot loader](#Configuring_the_boot_loader) are correctly configured). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
+Następujące polecenia tworzą i montują zaszyfrowaną partycję root. Odpowiadają one procedurze opisanej szczegółowo w [Dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (which, despite the title, *can* be applied to root partitions, as long as [mkinitcpio](#Konfigurowanie_mkinitcpio) and the [boot loader](#Configuring_the_boot_loader) are correctly configured). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
 
 (który, pomimo tytułu, może być zastosowany do partycji root, o ile mkinitcpio i program ładujący są poprawnie skonfigurowane). Jeśli chcesz użyć określonych, innych niż domyślne opcji szyfrowania (np. Szyfr, długość klucza), zobacz [opcje szyfrowania](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") przed wykonaniem pierwszego polecenia:
 
@@ -431,7 +431,7 @@ See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_confi
 
 Aby użyć szyfrowania na [LVM](/index.php/LVM "LVM"), woluminy LVM są najpierw konfigurowane, a następnie wykorzystywane jako baza dla zaszyfrowanych partycji. W ten sposób możliwa jest również kombinacja zaszyfrowanych i nieszyfrowanych woluminów partycji.
 
-**Tip:** Unlike [#LVM on LUKS](#LVM_on_LUKS), this method allows normally spanning the logical volumes over multiple disks.
+**Tip:** Unlike [#LVM na LUKS](#LVM_na_LUKS), this method allows normally spanning the logical volumes over multiple disks.
 
 Poniższy krótki przykład tworzy LUKS na instalacji LVM i miesza się w użyciu pliku klucza dla partycji / home i tymczasowych woluminów krypt dla / tmp i / swap. Ten ostatni jest uważany za pożądany z punktu widzenia bezpieczeństwa, ponieważ żadne potencjalnie wrażliwe dane tymczasowe nie przeżywają ponownego uruchomienia komputera, gdy szyfrowanie zostanie ponownie zainicjowane. Jeśli masz doświadczenie z LVM, będziesz mógł zignorować / zastąpić LVM i inne szczegóły zgodnie z twoim planem. Jeśli chcesz rozłożyć wolumin logiczny na wielu dyskach podczas konfiguracji, procedura do tego została opisana w [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
@@ -592,7 +592,7 @@ W celu wykonania poniższych instrukcji stosuje się następujące urządzenia b
 
 Pamiętaj, aby zastąpić je odpowiednimi oznaczeniami urządzeń do konfiguracji, ponieważ mogą się one różnić.
 
-### Przygotowanie dyskus
+### Przygotowanie dysku
 
 Przed utworzeniem jakichkolwiek partycji powinieneś powinnaś wiedzieć o znaczeniu i metodach bezpiecznego usuwania dysku, opisanych w [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
@@ -854,7 +854,7 @@ Jednakże, gdy wymagana jest aktualizacja jądra lub programu ładującego, part
 
 ## Szyfrowana partycja rozruchowa (GRUB)
 
-Ta konfiguracja wykorzystuje ten sam układ i konfigurację partycji dla partycji głównej systemu, co poprzednia sekcja #[#LVM on LUKS](#LVM_on_LUKS), z dwiema wyraźnymi różnicami:
+Ta konfiguracja wykorzystuje ten sam układ i konfigurację partycji dla partycji głównej systemu, co poprzednia sekcja #[#LVM na LUKS](#LVM_na_LUKS), z dwiema wyraźnymi różnicami:
 
 1.  Konfiguracja jest przeprowadzana dla systemu [UEFI](/index.php/UEFI "UEFI") i
 2.  Specjalna funkcja programu bodladera GRUB służy do dodatkowego szyfrowania partycji rozruchowej `/boot`. Zobacz też [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB").
@@ -874,7 +874,7 @@ Układ dysku w tym przykładzie to:
 
 ```
 
-**Tip:** Wszystkie scenariusze mają służyć jako przykłady. Możliwe jest oczywiście zastosowanie obu powyższych dwóch etapów instalacji również w innych scenariuszach. Zobacz także warianty połączone w [#LVM on LUKS](#LVM_on_LUKS).
+**Tip:** Wszystkie scenariusze mają służyć jako przykłady. Możliwe jest oczywiście zastosowanie obu powyższych dwóch etapów instalacji również w innych scenariuszach. Zobacz także warianty połączone w [#LVM na LUKS](#LVM_na_LUKS).
 
 **Note:** You can use `cryptboot` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified encrypted boot management (mounting, unmounting, upgrading packages) and as a defense against [Evil Maid](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html) attacks with [UEFI Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"). For more informations and limitations see [cryptboot project](https://github.com/xmikos/cryptboot) page.
 

@@ -173,7 +173,7 @@ Now copy the ISO image file to the device. The `dd` command is similar to its Li
 
 ```
 
-After completion, macOS may complain that "The disk you inserted was not readable by this computer". Select 'Ignore'. The USB device will be bootable.
+Note `diskX` here should not include the `s1` suffix, or else the USB device will only be bootable in UEFI mode and not legacy. After completion, macOS may complain that "The disk you inserted was not readable by this computer". Select 'Ignore'. The USB device will be bootable.
 
 ### Using manual formatting
 

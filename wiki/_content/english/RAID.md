@@ -193,7 +193,7 @@ or if a particular partition on a drive is to be deleted:
 
 ### Partition the devices
 
-It is highly recommended to partition the disks to be used in the array. Since most RAID users are selecting disk drives larger than 2 TiB, GPT is required and recommended. See [Partitioning](/index.php/Partitioning "Partitioning") for the more information on partitioning and the available [partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
+It is highly recommended to partition the disks to be used in the array. Since most RAID users are selecting disk drives larger than 2 TiB, GPT is required and recommended. See [Partitioning](/index.php/Partitioning "Partitioning") for the more information on partitioning and the available [partitioning tools](/index.php/Partitioning_tools "Partitioning tools").
 
 **Note:** It is also possible to create a RAID directly on the raw disks (without partitions), but not recommended because it can cause problems when swapping a failed disk.
 

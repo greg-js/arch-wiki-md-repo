@@ -489,7 +489,7 @@ User=root
 
 ###### Konfiguracja Tora
 
-Aby nasłuchiwać na portach 80 i 443, usługa musi być uruchomiona jako `root`, jak opisano w [#Start tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Start_tor.service_jako_root.2C_aby_powi.C4.85za.C4.87_Tora_z_portami_uprzywilejowanymi). Użyj opcji User tor w `/etc/tor/torrc`, aby właściwie zmniejszyć uprawnienia Tora.
+Aby nasłuchiwać na portach 80 i 443, usługa musi być uruchomiona jako `root`, jak opisano w [#Uruchom tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Uruchom_tor.service_jako_root.2C_aby_powi.C4.85za.C4.87_Tora_z_portami_uprzywilejowanymi). Użyj opcji User tor w `/etc/tor/torrc`, aby właściwie zmniejszyć uprawnienia Tora.
 
  `/etc/tor/torrc` 
 ```

@@ -228,6 +228,8 @@ Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hs
 
 **Tip:** For some LCD screens (e.g. Samsung 2343NW, Acer XB280HK), the command `cvt -r` (= with reduced blanking) is to be used.
 
+**Tip:** If you find that the screen goes blank when the modeline is applied, try lower refresh rate (e.g. 30 or 45 instead of 60). The refresh rate should be passed as the third argument: `cvt 2560 1440 45`
+
 **Note:** If the Intel video driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) is used, it may report the desired resolution along with its properties in `/var/log/Xorg.0.log` — use that first if it is different from the output of `gtf` or `cvt`. For instance, the log and its use with xrandr:
 ```
 [    45.063] (II) intel(0): clock: 241.5 MHz   Image Size:  597 x 336 mm

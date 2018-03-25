@@ -894,7 +894,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **inxi** — A script to get system information.
 
-	[https://github.com/smxi/inxi](https://github.com/smxi/inxi) || [inxi](https://www.archlinux.org/packages/?name=inxi)
+	[https://github.com/smxi/inxi](https://github.com/smxi/inxi) || [inxi](https://aur.archlinux.org/packages/inxi/)
 
 *   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
 

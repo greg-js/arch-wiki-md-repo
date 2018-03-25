@@ -149,7 +149,7 @@ Mire [Ext3 Filesystem Tips](/index.php/Ext3_Filesystem_Tips "Ext3 Filesystem Tip
 
 #### Ext4
 
-Mire [Ext4 wiki page](/index.php/Ext4#Impact_on_performance "Ext4").
+Mire [Ext4 wiki page](/index.php/Ext4#Improving_performance "Ext4").
 
 #### JFS
 

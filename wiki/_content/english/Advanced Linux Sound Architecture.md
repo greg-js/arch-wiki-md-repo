@@ -950,7 +950,7 @@ The ALSA driver can fully reconfigure attached codecs (the parts of the sound sy
 
 ```
 
-Before doing this, all processes using the ALSA driver (such as [Pulseaudio](/index.php/Pulseaudio#Running "Pulseaudio") or [JACK](/index.php/JACK "JACK")) must be stopped.
+Before doing this, all processes using the ALSA driver (such as [Pulseaudio](/index.php/PulseAudio#Running "PulseAudio") or [JACK](/index.php/JACK "JACK")) must be stopped.
 
 ## See also
 

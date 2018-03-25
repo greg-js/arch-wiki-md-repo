@@ -71,6 +71,7 @@ This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, h
     *   [9.1 Yubikey not acting as HID device](#Yubikey_not_acting_as_HID_device)
     *   [9.2 ykman fails to connect to the Yubikey](#ykman_fails_to_connect_to_the_Yubikey)
     *   [9.3 Yubikey fails to bind within a guest VM](#Yubikey_fails_to_bind_within_a_guest_VM)
+    *   [9.4 Error: [key] could not be locally signed or gpg: No default secret key: No public key](#Error:_.5Bkey.5D_could_not_be_locally_signed_or_gpg:_No_default_secret_key:_No_public_key)
 
 ## Introduction
 
@@ -623,3 +624,7 @@ To unbind the device, use the result from the previous command (i.e. `/sys/bus/u
 # echo 'X-Y.Z:1.0' > /sys/bus/usb/drivers/<DRIVER>/unbind
 
 ```
+
+### Error: [key] could not be locally signed or gpg: No default secret key: No public key
+
+Occurs when attempting to sign keys on a non-standard keyring while a yubikey is plugged in, e.g. as [Pacman](/index.php/Pacman/Package_signing "Pacman/Package signing") does in `pacman-key --populate archlinux`. The solution is to remove the offending yubikey and start over.
