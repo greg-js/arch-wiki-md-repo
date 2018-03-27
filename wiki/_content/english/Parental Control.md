@@ -22,7 +22,7 @@ Several methods exist to protect and limit child activity on a computer.
 
 *   **logkeys** — A daemon that logs keypresses into a logfile for later inspection. The log file resides by default in `/var/log`, but it is recommended to move it to an encrypted partition; it will for example contain every password entered in the system. Use the --keymap option if using a localized, non-US keyboard. For supervision purposes, the `--no-func-keys` option is recommended.
 
-	[https://github.com/kernc/logkeys](https://github.com/kernc/logkeys) || [logkeys-git](https://aur.archlinux.org/packages/logkeys-git/)
+	[https://github.com/kernc/logkeys](https://github.com/kernc/logkeys) || [logkeys](https://aur.archlinux.org/packages/logkeys/)
 
 *   [DansGuardian](/index.php/DansGuardian "DansGuardian"). If you wish, you might even set up an Arch based router running DansGuardian and enforce all other devices in your physical network to connect to the internet through this router.
 

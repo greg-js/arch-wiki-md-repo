@@ -1,4 +1,4 @@
-From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use and free chat client used by millions. Connect to AIM, Google Talk, ICQ, IRC, XMPP, and more chat networks all at once."
+[Pidgin](http://www.pidgin.im/) is an easy to use and free chat client used by millions. Connect to AIM, Google Talk, ICQ, IRC, XMPP, and more chat networks all at once.
 
 ## Contents
 

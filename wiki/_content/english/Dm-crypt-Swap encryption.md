@@ -75,7 +75,7 @@ With this, `/dev/sdX#` now can easily be identified either by UUID or LABEL, reg
  `/etc/crypttab` 
 ```
 # <name> <device>         <password>    <options>
-swap     LABEL=*cryptswap*  /dev/urandom  swap,offset=2048,cipher=aes-xts-plain64,size=256
+swap     LABEL=*cryptswap*  /dev/urandom  swap,offset=2048,cipher=aes-xts-plain64,size=512
 ```
 
 Note the offset: it's 2048 sectors of 512 bytes, thus 1 MiB. This way the encrypted swap will not affect the filesystem LABEL/UUID, and data alignment works out as well.

@@ -51,7 +51,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
         *   [10.1.1 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_cannot_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
-    *   [10.2 UEFI (OVMF) Compatability in VBIOS](#UEFI_.28OVMF.29_Compatability_in_VBIOS)
+    *   [10.2 UEFI (OVMF) Compatibility in VBIOS](#UEFI_.28OVMF.29_Compatibility_in_VBIOS)
     *   [10.3 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
     *   [10.4 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
     *   [10.5 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
@@ -976,7 +976,7 @@ Before starting VM run following lines replacing IDs with actual from previous o
 
 **Note:** Probably setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `video=efifb:off` is required as well. [Source](https://pve.proxmox.com/wiki/Pci_passthrough#BAR_3:_can.27t_reserve_.5Bmem.5D_error)
 
-### UEFI (OVMF) Compatability in VBIOS
+### UEFI (OVMF) Compatibility in VBIOS
 
 With respect to [this article](https://pve.proxmox.com/wiki/Pci_passthrough#How_to_known_if_card_is_UEFI_.28ovmf.29_compatible):
 
@@ -1157,7 +1157,7 @@ If that does not work make sure your user account is added to the kvm and libvir
 
 ### Host Lockup After VM Shutdown
 
-This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: The host will experience multiple CPU core lockups (see [https://bbs.archlinux.org/viewtopic.php?id=206050&p=2](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found here ([https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/)).
+This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: the host will experience multiple CPU core lockups (see [[1]](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found in [[2]](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/).
 
 ## See also
 

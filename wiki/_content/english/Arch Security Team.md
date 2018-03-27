@@ -2,8 +2,8 @@ The Arch Security Team is a group of volunteers whose goal is to track security 
 
 ## Contents
 
-*   [1 Contribute](#Contribute)
-*   [2 Guidelines](#Guidelines)
+*   [1 Mission](#Mission)
+*   [2 Contribute](#Contribute)
 *   [3 Procedure](#Procedure)
     *   [3.1 Information sharing and investigation phase](#Information_sharing_and_investigation_phase)
     *   [3.2 Upstream situation and bug reporting](#Upstream_situation_and_bug_reporting)
@@ -16,27 +16,36 @@ The Arch Security Team is a group of volunteers whose goal is to track security 
     *   [4.5 More](#More)
 *   [5 Team Members](#Team_Members)
 
+## Mission
+
+The mission of the Arch Security Team is to contribute to the improvement of the security of Arch Linux.
+
+The most important duty of the team is to find and track issues assigned a [Common Vulnerabilities and Exposure](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures "wikipedia:Common Vulnerabilities and Exposures") (CVE). A CVE is public, it is identified by a unique ID of the form *CVE-YYYY-number*.
+
+They publish ASAs (*Arch Linux Security Advisory*) which is an Arch-specific warning disseminated to Arch users. ASAs are scheduled in the tracker for peer-review, and need two acknowledgments from team members before being published.
+
+The *Arch Linux security tracker* is a platform used by the Arch Security Team to track packages, add CVEs and generate advisory text.
+
+**Note:**
+
+*   An *Arch Linux Vulnerability Group* (AVG) is a group of CVEs related to a set of packages within the same *pkgbase*.
+*   Packages qualified for an advisory must be part of the *core*, *extra*, *community* or *multilib* repository.
+
 ## Contribute
-
-Anyone can help the Arch Security Team in their mission and contribute to the improvement of the security of Arch Linux. The most important duty is to find and track issues assigned a [Common Vulnerabilities and Exposure](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures "wikipedia:Common Vulnerabilities and Exposures") (CVE). A CVE is public, it is identified by a unique ID of the form *CVE-YYYY-number*. In order to be warned early about new issues, one can monitor the recommended [#Mailing lists](#Mailing_lists) for new CVEs, along with other sources if required. The IRC channel is the main communication medium for reporting and discussing CVEs, packages affected and first fixed package version.
-
-An *Arch Linux Security Advisory* (ASA) is an Arch-specific warning disseminated to Arch users. ASAs are scheduled in the tracker for peer-review, and need two acknowledgments from team members before being published. We encourage volunteers in the IRC channel to look over the advisories for mistakes, questions, or comments about the advisory.
-
-The *Arch Linux security tracker* is a platform used by the Arch Security Team to track packages, add CVEs and generate advisory text. Contributing code to the [project](https://github.com/archlinux/arch-security-tracker) is a great way to contribute to the team.
-
-Derivative distributions that rely on Arch Linux package repositories are encouraged to contribute. This helps the security of all the users.
-
-**Note:** An *Arch Linux Vulnerability Group* (AVG) is a group of CVEs related to a set of packages within the same *pkgbase*.
-
-## Guidelines
 
 To get involved in the identification of the vulnerabilities, it is recommended to:
 
-*   Follow the [#archlinux-security](irc://irc.freenode.net/archlinux-security) IRC channel.
+*   Follow the [#archlinux-security](irc://irc.freenode.net/archlinux-security) IRC channel. It is the main communication medium for reporting and discussing CVEs, packages affected and first fixed package version.
+
+*   In order to be warned early about new issues, one can monitor the recommended [#Mailing lists](#Mailing_lists) for new CVEs, along with other sources if required.
+
+*   We encourage volunteers to look over the advisories for mistakes, questions, or comments and report in the IRC channel.
 
 *   Subscribe to the mailing lists [arch-security](https://lists.archlinux.org/listinfo/arch-security) and [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security).
 
-**Note:** Packages qualified for an advisory must be part of the *core*, *extra*, *community* or *multilib* repository.
+*   Contributing code to the [project](https://github.com/archlinux/arch-security-tracker) is a great way to contribute to the team.
+
+*   Derivative distributions that rely on Arch Linux package repositories are encouraged to contribute. This helps the security of all the users.
 
 ## Procedure
 

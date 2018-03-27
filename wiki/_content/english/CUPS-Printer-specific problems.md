@@ -270,18 +270,18 @@ E515dw
 | EP-50V | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | EP-879A |
 | EP-880A |
-| ET-2700 |
+| ET-2700 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | ET-2750 |
-| ET-3700 |
+| ET-3700 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | ET-3750 |
 | ET-4750 |
-| EW-M571T |
-| EW-M670FT |
+| EW-M571T | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
+| EW-M670FT | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L380 | [epson-inkjet-printer-201601w](https://aur.archlinux.org/packages/epson-inkjet-printer-201601w/) |
 | L382 |
-| L4150 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
+| L4150 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | L4160 |
-| L6160 |
+| L6160 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L6170 |
 | L6190 |
 | LP-S5000 | This printer requires a [custom driver from Avasys](#Avasys). |
@@ -292,8 +292,10 @@ E515dw
 | PX-M7070FX |
 | PX-M780F |
 | PX-M781F |
+| PX-M884F |
 | PX-S5080 |
 | PX-S7070X |
+| PX-S884 |
 | TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
 | WF-3720 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | WF-4720 |
@@ -304,9 +306,10 @@ E515dw
 | WF-7720 |
 | WF-C869R |
 | XP-446 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
-| XP-15000 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
+| XP-5100 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | XP-6000 |
 | XP-8500 |
+| XP-15000 |
 | Printer | Driver/filter | Notes |
 
 ### Utilities

@@ -148,7 +148,7 @@ Most settings for KDE applications are stored in `~/.config`. However, configuri
 
 ##### Themes
 
-[Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
+[Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme).
 
 The easiest way to install themes is by going through the *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
 
@@ -182,7 +182,7 @@ Plasmoids are little scripted (plasmoid scripts) or coded (plasmoid binaries) KD
 
 The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*. This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
-Many Plasmoid binaries are available from the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&PP=50&SO=d&SB=v).
+Many Plasmoid binaries are available from the [AUR](https://aur.archlinux.org/packages.php?K=plasmoid).
 
 ##### Sound applet in the system tray
 
@@ -228,7 +228,7 @@ $ kcmshell5 autostart
 
 [Window decorations](https://store.kde.org/browse/cat/114/) can be changed in *System Settings > Application Style > Window Decorations*.
 
-There you can also directly download and install more themes with one click, and some are available in the [AUR](https://aur.archlinux.org/packages.php?O=0&K=kdestyle&do_Search=Go&PP=25&SO=d&SB=v).
+There you can also directly download and install more themes with one click, and some are available in the [AUR](https://aur.archlinux.org/packages.php?K=kde+window+decoration).
 
 #### Icon themes
 
@@ -276,7 +276,7 @@ You can also configure printers in *System Settings > Printers*. To use this met
 
 If you want to have access to Windows services, install [Samba](/index.php/Samba "Samba") (package [samba](https://www.archlinux.org/packages/?name=samba)).
 
-The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Creating usershare path](/index.php/Samba#Creating_usershare_path "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
+The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Enable usershares](/index.php/Samba#Enable_usershares "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
 
 Plasma's abilities to access SMB shares are limited, though. Writing to Windows shares is problematic and opening files from such shares, e.g. large videos, makes Plasma copying the whole file to the local system first. To workaround this, you can install a GTK based file browser like [thunar](https://www.archlinux.org/packages/?name=thunar) with [gvfs](https://www.archlinux.org/packages/?name=gvfs) and [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) (and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) for saving login credentials) to access SMB shares in a more able way. Another possible workaround is to [mount](/index.php/Mount "Mount") a Samba share via [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to make it look to Plasma like if the SMB share was just a normal local folder and thus can be accessed normally. The mount command could look like the following for write access to a public share:
 

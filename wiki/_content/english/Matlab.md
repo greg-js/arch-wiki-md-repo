@@ -44,6 +44,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.15 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
     *   [5.16 Not starting - licensing error](#Not_starting_-_licensing_error)
     *   [5.17 MATLAB crashes with "Failure loading desktop class" on startup](#MATLAB_crashes_with_.22Failure_loading_desktop_class.22_on_startup)
+    *   [5.18 Unable to type in text fields of interfaces based on MATLABWindow](#Unable_to_type_in_text_fields_of_interfaces_based_on_MATLABWindow)
 *   [6 Matlab in a systemd-nspawn](#Matlab_in_a_systemd-nspawn)
 
 ## Overview
@@ -384,6 +385,8 @@ If Matlab (R2016a or earlier) stops working after upgrading [ncurses](https://ww
 
 In newer versions (e.g. R2017b), the issue could also be due to a font display failing to load. Try moving the libfreetype.so.6 font display file in $MATLAB/bin/glnxa64/ to an 'exclude' directory; see [BBS#231299](https://bbs.archlinux.org/viewtopic.php?id=231299).
 
+ncurses compatibility layer is not required anymore for R2018a.
+
 ### Hangs on rendering or exiting with Intel graphics
 
 Some users have reported issues with DRI3 enabled on Intel Graphics chips. A possible workaround is to disable DRI3 and run MATLAB with hardware rendering on DRI2; to do so, launch MATLAB with the environment variable LIBGL_DRI3_DISABLE set to 1:
@@ -404,7 +407,9 @@ See [[6]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[7]](https:/
 
 ### Addon manager not working
 
-Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work. (in Matlab 2017b)
+This section is relevant for both R2017b and R2018a.
+
+Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work.
 
 Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. [[8]](https://bugs.archlinux.org/task/54257) A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in `matlabroot/R2017b/cefclient/sys/os/glnxa64`, namely, as of R2017b:
 
@@ -475,9 +480,11 @@ At least Matlab 2016b doesn't recognize webcams or imaq adapters correctly witho
 
 Since MATLAB R2017a, Image Acqusition Toolbox is using GStreamer library version 1.0\. It previously used version 0.10.
 
+In general, USB Webcam Support Package does a better job working with UVC and built-in cameras than OS Generic Video Interface Support Package.
+
 ### MATLAB hangs for several minutes when closing Help Browser
 
-Since upgrade of glibc from 2.24 to 2.25, MATLAB (at least R2017a) hangs when closing Help Browser. The issue is related to the particular version of jxbrowser-chromium shipped with MATLAB. This issue is still present with glibc 2.26 and MATLAB R2017b.
+Since upgrade of glibc from 2.24 to 2.25, MATLAB (at least R2017a) hangs when closing Help Browser. The issue is related to the particular version of jxbrowser-chromium shipped with MATLAB. This issue is still present with glibc 2.26 and MATLAB R2017b and R2018a.
 
 To fix this issue, download the [latest jxbrowser](https://www.teamdev.com/jxbrowser) and replace the following jars from MATLAB:
 
@@ -590,6 +597,12 @@ export _JAVA_OPTIONS=
 ```
 
 to your MATLAB launcher script. Optionally re-add other Java options.
+
+### Unable to type in text fields of interfaces based on MATLABWindow
+
+Since R2018a, it is not possible to type text in interfaces based on MATLABWindow - like Signal Editor, Add-Ons Explorer and others. MATLABWindow and MATLAB's webwindow infrastructure is based on Chromium Embedded Framework, and it looks like a known and long standing bug: [https://bitbucket.org/chromiumembedded/cef/issues/2026/multiple-major-keyboard-focus-issues-on](https://bitbucket.org/chromiumembedded/cef/issues/2026/multiple-major-keyboard-focus-issues-on)
+
+One possible workaround is to switch focus from the MATLABWindow to another window and then switch back - so that you can type.
 
 ## Matlab in a systemd-nspawn
 

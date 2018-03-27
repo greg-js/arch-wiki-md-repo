@@ -313,7 +313,7 @@ Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A 
 
 **Note:** These menuentries will work only in Legacy BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
-*In both examples* 69B235F6749E84CE *is the partition UUID which can be found with command* lsblk --fs*.*
+*In both examples* 69B235F6749E84CE *is the filesystem UUID which can be found with command* lsblk --fs*.*
 
 For Windows Vista/7/8/8.1/10:
 
@@ -410,9 +410,9 @@ If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/gr
 
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"` 
 
-If using the `sd-encrypt` hook, add `luks.uuid`:
+If using the `sd-encrypt` hook, add `rd.luks.uuid`:
 
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="luks.uuid=*UUID*"` 
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="rd.luks.uuid=*UUID*"` 
 
 where *UUID* is the UUID of the LUKS-encrypted device.
 

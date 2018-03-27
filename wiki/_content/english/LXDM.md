@@ -1,6 +1,11 @@
+Related articles
+
+*   [LXDE](/index.php/LXDE "LXDE")
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 LXDM is a lightweight [display manager](/index.php/Display_manager "Display manager") for the [LXDE](/index.php/LXDE "LXDE") [desktop environment](/index.php/Desktop_environment "Desktop environment"). The UI is implemented with [GTK+](/index.php/GTK%2B "GTK+") 2.
 
-LXDM does not support the XDMCP protocol. An alternative that does is [LightDM](/index.php/LightDM "LightDM").
+LXDM does not support the [XDMCP](/index.php/XDMCP "XDMCP") protocol. An alternative that does is [LightDM](/index.php/LightDM "LightDM").
 
 ## Contents
 

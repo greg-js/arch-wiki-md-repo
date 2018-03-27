@@ -71,7 +71,7 @@ Installa [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) e abi
 [...]
 extension=pdo_sqlite
 [...]
-extension=sockets.so
+extension=sockets
 extension=sqlite3
 [...]
 ```

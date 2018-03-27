@@ -156,7 +156,7 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ### Hinting
 
-[Font hinting](https://en.wikipedia.org/wiki/Font_hinting "wikipedia:Font hinting") (also known as instructing) is the use of mathematical instructions to adjust the display of an outline font so that it lines up with a rasterized grid, (i.e. the pixel grid of the display). Its intended effect is to make fonts appear more crisp so that they are more readable. Fonts will line up correctly without hinting when displays have around 300 [DPI](https://en.wikipedia.org/wiki/Dots_per_inch "wikipedia:Dots per inch").
+[Font hinting](https://en.wikipedia.org/wiki/Font_hinting "wikipedia:Font hinting") (also known as instructing) is the use of mathematical instructions to adjust the display of an outline font so that it lines up with a rasterized grid (i.e. the pixel grid of the display). Its intended effect is to make fonts appear more crisp so that they are more readable. Fonts will line up correctly without hinting when displays have around 300 [DPI](https://en.wikipedia.org/wiki/Dots_per_inch "wikipedia:Dots per inch").
 
 #### Byte-Code Interpreter (BCI)
 
@@ -171,7 +171,7 @@ Using BCI hinting, instructions in TrueType fonts are rendered according to Free
 
 ```
 
-**Note:** You can switch BCI implementations by editing `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode/2.6 default/≈ Windows 98), `truetype:interpreter-version=38` ("Infinality" subpixel mode), `truetype:interpreter-version=40` (minimal subpixel mode/2.7 default). Subpixel rendering should use a subpixel BCI. For details, also see [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html)
+**Note:** You can switch BCI implementations by editing `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode, emulates Windows 98; 2.6 default), `truetype:interpreter-version=38` ("Infinality" subpixel mode), `truetype:interpreter-version=40` (minimal subpixel mode; 2.7 default). Subpixel rendering should use a subpixel BCI. For details, see [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html).
 
 #### Autohinter
 
@@ -186,11 +186,11 @@ The autohinter attempts to do automatic hinting and disregards any existing hint
 
 ```
 
-`hintslight`, as described by the next section, implicitly uses the autohinter in a vertical-only mode in favor of font-native information for non-CFF (*.otf) fonts.
-
 #### Hintstyle
 
-Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape (see [[2]](https://www.freetype.org/freetype2/docs/text-rendering-general.html)), while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. **`hintslight`** is the default setting. To change it:
+Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape (see [[2]](https://www.freetype.org/freetype2/docs/text-rendering-general.html)), while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. `hintslight` implicitly uses the autohinter in a vertical-only mode in favor of font-native information for non-CFF (*.otf*) fonts.
+
+**`hintslight`** is the default setting. To change it:
 
 ```
   <match target="font">

@@ -1,3 +1,14 @@
+Related articles
+
+*   [dm-crypt (Polski)](/index.php/Dm-crypt_(Polski) "Dm-crypt (Polski)")
+*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
+*   [eCryptfs](/index.php/ECryptfs "ECryptfs")
+*   [EncFS](/index.php/EncFS "EncFS")
+*   [Tomb](/index.php/Tomb "Tomb")
+*   [tcplay](/index.php/Tcplay "Tcplay")
+*   [GnuPG](/index.php/GnuPG "GnuPG")
+*   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
+
 W tym artykule omówiono wspólne techniki szyfowania dostępne w Arch Linux do kryptograficznej ochrony logicznej części dysku twardego (folder, partycja, cały dysk, ...), dzięki czemu wszystkie zapisane w nim dane są automatycznie szyfrowane i odszyfrowywane w locie po ponownym odczytaniu.
 
 Dyski do przechowywania "w tym kontekście mogą być dyskami twardymi komputera, urządzeniami zewnętrznymi, takimi jak dyski flash USB lub dyski DVD, a także dyskami wirtualnymi, takimi jak urządzenia loop-back devices lub Chmura publiczna. (o ile Arch Linux może go adresować jako urządzenie blokowe lub system plików).

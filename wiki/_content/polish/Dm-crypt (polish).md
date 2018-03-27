@@ -1,3 +1,8 @@
+Powiązane artykuły
+
+*   [Szyfrowanie dysku](/index.php/Disk_encryption_(Polski) "Disk encryption (Polski)")
+*   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
+
 Z projektu cryptsetup [wiki](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt):
 
 	Device-mapper to infrastruktura jądra Linux 2.6 i 3.x, która zapewnia ogólny sposób tworzenia wirtualnych warstw urządzeń blokowych. Cel kryptografu Device-mapper zapewnia transparentne szyfrowanie urządzeń blokowych za pomocą interfejsu API kryptograficznego jądra. Użytkownik może zasadniczo określić jeden z szyfrów symetrycznych, tryb szyfrowania, klucz (o dowolnym dozwolonym rozmiarze), tryb generowania iv, a następnie użytkownik może utworzyć nowe urządzenie blokowe w / dev. Zapis do tego urządzenia będzie szyfrowany i odszyfrowywany. Możesz zamontować na nim swój system plików lub zawiesić urządzenie dm-crypt innym urządzeniem, takim jak wolumen RAID lub LVM. Podstawowa dokumentacja tabeli mapowania dm-crypt pochodzi ze źródła jądra, a najnowsza wersja jest dostępna w repozytorium git.

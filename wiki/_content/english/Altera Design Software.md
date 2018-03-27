@@ -32,8 +32,9 @@ This tutorial shows how to download, install, and configure the following softwa
     *   [2.2 Compatibility with Archlinux](#Compatibility_with_Archlinux)
         *   [2.2.1 With the kernel 4.x and Upwards](#With_the_kernel_4.x_and_Upwards)
         *   [2.2.2 With freetype2 2.5.0.1-1](#With_freetype2_2.5.0.1-1)
-        *   [2.2.3 With ncurses 5.9](#With_ncurses_5.9)
-        *   [2.2.4 lib32-glibc 2.23-1](#lib32-glibc_2.23-1)
+        *   [2.2.3 With fontconfig 2.12.6](#With_fontconfig_2.12.6)
+        *   [2.2.4 With ncurses 5.9](#With_ncurses_5.9)
+        *   [2.2.5 lib32-glibc 2.23-1](#lib32-glibc_2.23-1)
     *   [2.3 Application Menu Entry - ModelSim-Altera Edition](#Application_Menu_Entry_-_ModelSim-Altera_Edition)
     *   [2.4 Troubleshooting](#Troubleshooting_2)
         *   [2.4.1 Resolving the "ModelSim Failed to access library 'work'" error](#Resolving_the_.22ModelSim_Failed_to_access_library_.27work.27.22_error)
@@ -448,6 +449,17 @@ export LD_LIBRARY_PATH=${dir}/../lib32
 **Note:** The quartus script will need to have write permissions added to it.
 
 When ModelSim is launched directly from Quartus the error may persist. In this case, add the same line to `quartus/bin/quartus_sh`.
+
+#### With fontconfig 2.12.6
+
+Similar as the problem with freetype above, the upgrade from fontconfig 2.12.6+5+g665584a-1 to fontconfig 2.13.0+10+g58f5285 causes ModelSim to not start anymore because that fontconfig version would need a newer freetype version. It yields the following error message:
+
+```
+modelsim_ase/bin/../linux/vish: symbol lookup error: /usr/lib32/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var
+
+```
+
+So, in addition to libfreetype, you also have to supply a downgraded version of libfontconfig to successfully start ModelSim.
 
 #### With ncurses 5.9
 

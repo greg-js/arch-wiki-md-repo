@@ -187,7 +187,7 @@ $ timedatectl list-timezones
 
 ```
 
-To change your time zone:
+To set your time zone:
 
 ```
 # timedatectl set-timezone *Zone*/*SubZone*

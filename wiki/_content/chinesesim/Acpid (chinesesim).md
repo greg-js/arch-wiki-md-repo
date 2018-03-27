@@ -1,3 +1,8 @@
+相关文章
+
+*   [ACPI modules](/index.php/ACPI_modules "ACPI modules")
+*   [DSDT](/index.php/DSDT "DSDT")
+
 **翻译状态：** 本文是英文页面 [Acpid](/index.php/Acpid "Acpid") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-18，点击[这里](https://wiki.archlinux.org/index.php?title=Acpid&diff=0&oldid=463489)可以查看翻译后英文页面的改动。
 
 [acpid2](http://acpid2.sourceforge.net/)是用于处理电源相关事件的守护进程，它非常灵活且易于扩展。当某个事件发生时，执行相关程序来处理该事件。这些事件是由某些动作触发的，比如：
@@ -236,5 +241,4 @@ done
 ## 参考
 
 *   [http://acpid.sourceforge.net/](http://acpid.sourceforge.net/) - acpid 主页
-*   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)
-*   [ACPI 热键](/index.php/ACPI_hotkeys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ACPI hotkeys (简体中文)")
+*   [Gentoo wiki](https://wiki.gentoo.org/wiki/ACPI#Configuration)

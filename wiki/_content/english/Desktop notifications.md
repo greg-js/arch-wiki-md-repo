@@ -12,6 +12,32 @@ Desktop notifications are small, passive popup dialogs that notify the user of p
     *   [2.1 Built-in](#Built-in)
     *   [2.2 Standalone](#Standalone)
 *   [3 Usage in programming](#Usage_in_programming)
+    *   [3.1 Bash](#Bash)
+    *   [3.2 Boo](#Boo)
+    *   [3.3 C](#C)
+    *   [3.4 C++](#C.2B.2B)
+    *   [3.5 C#](#C.23)
+    *   [3.6 Cobra](#Cobra)
+    *   [3.7 F#](#F.23)
+    *   [3.8 Genie](#Genie)
+    *   [3.9 Go](#Go)
+    *   [3.10 Groovy](#Groovy)
+    *   [3.11 Haskell](#Haskell)
+    *   [3.12 IronPython](#IronPython)
+    *   [3.13 Java](#Java)
+    *   [3.14 JavaScript](#JavaScript)
+    *   [3.15 JRuby](#JRuby)
+    *   [3.16 Jython](#Jython)
+    *   [3.17 Lua](#Lua)
+    *   [3.18 Nemerle](#Nemerle)
+    *   [3.19 Pascal](#Pascal)
+    *   [3.20 Perl](#Perl)
+    *   [3.21 Python](#Python)
+    *   [3.22 Ruby](#Ruby)
+    *   [3.23 Rust](#Rust)
+    *   [3.24 Scala](#Scala)
+    *   [3.25 Vala](#Vala)
+    *   [3.26 Visual Basic .NET](#Visual_Basic_.NET)
 *   [4 See also](#See_also)
 
 ## Libnotify
@@ -98,7 +124,7 @@ You can write your own libnotify display messages easily in many programming lan
 
 The following examples display simple a "Hello world" notification.
 
-**Bash**
+### Bash
 
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 
@@ -113,7 +139,7 @@ notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-info
 *   An overview on the available icons can be found [here](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html).
 *   To send desktop notification from a background script running as root (replace `*X_user*` and `*X_userid*` with the user and userid running X respectively): `# sudo -u *X_user* DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/*X_userid*/bus notify-send 'Hello world!' 'This is an example notification.'` 
 
-**Boo**
+### Boo
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3) ([boo](https://aur.archlinux.org/packages/boo/))
 *   Makedependency: [boo](https://aur.archlinux.org/packages/boo/)
@@ -130,7 +156,7 @@ Hello.IconName = "dialog-information"
 Hello.Show()
 ```
 
-**C**
+### C
 
 *   Dependency: [glib2](https://www.archlinux.org/packages/?name=glib2)
 *   Build with: `gcc -o hello_world `pkg-config --cflags --libs gio-2.0` hello_world.c`
@@ -169,7 +195,7 @@ int main() {
 }
 ```
 
-**C++**
+### C++
 
 *   Dependency: [glibmm](https://www.archlinux.org/packages/?name=glibmm)
 *   Build with: `g++ -o hello_world `pkg-config --cflags --libs giomm-2.4` hello_world.cc`
@@ -203,7 +229,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-**C#**
+### C#
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
 *   Build with: `mcs -pkg:notify-sharp-3.0 hello_world.cs`
@@ -223,7 +249,7 @@ public class HelloWorld {
 }
 ```
 
-**Cobra**
+### Cobra
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
 *   Makedependency: [cobra](https://aur.archlinux.org/packages/cobra/)
@@ -243,7 +269,7 @@ class HelloWorld
         hello.show
 ```
 
-**F#**
+### F#
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
 *   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)
@@ -260,7 +286,7 @@ Hello.IconName <- "dialog-information"
 Hello.Show()
 ```
 
-**Genie**
+### Genie
 
 *   Dependency: [glib2](https://www.archlinux.org/packages/?name=glib2)
 *   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
@@ -296,7 +322,7 @@ init
 	Hello.show ()
 ```
 
-**Go**
+### Go
 
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 *   Makedependency: [go-notify-git](https://aur.archlinux.org/packages/go-notify-git/)
@@ -315,7 +341,7 @@ func main() {
 }
 ```
 
-**Groovy**
+### Groovy
 
 *   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/)
 *   Build with: `groovyc -cp /usr/share/java/gtk.jar HelloWorld.groovy && jar cfe HelloWorld.jar HelloWorld HelloWorld.class`
@@ -332,7 +358,7 @@ def Hello = new Notification("Hello world!", "This is an example notification.",
 Hello.show()
 ```
 
-**Haskell**
+### Haskell
 
 *   Makedependency: [haskell-fdo-notify](https://www.archlinux.org/packages/?name=haskell-fdo-notify)
 *   Build with: `ghc hello_world`
@@ -349,7 +375,7 @@ main = do
          return 0
 ```
 
-**IronPython**
+### IronPython
 
 *   Dependencies: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3), [ironpython](https://aur.archlinux.org/packages/ironpython/)
 *   Run with: `ipy hello_world.py`
@@ -366,7 +392,7 @@ Hello.IconName = "dialog-information"
 Hello.Show()
 ```
 
-**Java**
+### Java
 
 *   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/)
 *   Makedependency: java-environment
@@ -390,7 +416,7 @@ public class HelloWorld
 }
 ```
 
-**JavaScript**
+### JavaScript
 
 *   Dependency: [gjs](https://www.archlinux.org/packages/?name=gjs)
 
@@ -421,7 +447,7 @@ var Hello=new Notify.Notification ({summary: "Hello world!",
 Hello.show ();
 ```
 
-**JRuby**
+### JRuby
 
 *   Dependencies: [java-gnome](https://aur.archlinux.org/packages/java-gnome/), [jruby](https://www.archlinux.org/packages/?name=jruby)
 *   Build with: `jrubyc hello_world.rb && jar cfe hello_world.jar hello_world hello_world.class`
@@ -440,7 +466,7 @@ Hello = Notification.new("Hello world!", "This is an example notification.", "di
 Hello.show
 ```
 
-**Jython**
+### Jython
 
 *   Dependencies: [java-gnome](https://aur.archlinux.org/packages/java-gnome/), [jython](https://www.archlinux.org/packages/?name=jython)
 *   Run with: `jython -Dpython.path=/usr/share/java/gtk.jar hello_world.py`
@@ -455,7 +481,7 @@ Hello=Notification("Hello world!", "This is an example notification.", "dialog-i
 Hello.show()
 ```
 
-**Lua**
+### Lua
 
 *   Dependency: [lua-lgi](https://www.archlinux.org/packages/?name=lua-lgi)
 
@@ -485,7 +511,7 @@ Hello=Notify.Notification.new("Hello world","This is an example notification.","
 Hello:show()
 ```
 
-**Nemerle**
+### Nemerle
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
 *   Makedependency: [nemerle](https://aur.archlinux.org/packages/nemerle/)
@@ -506,7 +532,7 @@ public class HelloWorld {
 }
 ```
 
-**Pascal**
+### Pascal
 
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 *   Makedependency: [fpc](https://www.archlinux.org/packages/?name=fpc), [libnotify binding](https://github.com/ik5/libnotify-fpc)
@@ -524,7 +550,7 @@ begin
 end.
 ```
 
-**Perl**
+### Perl
 
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [perl-glib-object-introspection](https://aur.archlinux.org/packages/perl-glib-object-introspection/)
 
@@ -541,7 +567,7 @@ my $hello = Notify::Notification->new("Hello world!", "This is an example notifi
 $hello->show;
 ```
 
-**Python**
+### Python
 
 *   Dependency: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) (or [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) for Python 2)
 
@@ -551,8 +577,7 @@ $hello->show;
 import gi
 gi.require_version('Gio', '2.0')
 from gi.repository import Gio
-Application = Gio.Application.new("hello.world",
-                                  Gio.ApplicationFlags.FLAGS_NONE)
+Application = Gio.Application.new("hello.world", Gio.ApplicationFlags.FLAGS_NONE)
 Application.register()
 Notification = Gio.Notification.new("Hello world")
 Notification.set_body("This is an example notification.")
@@ -570,13 +595,11 @@ import gi
 gi.require_version('Notify', '0.7')
 from gi.repository import Notify
 Notify.init("Hello world")
-Hello = Notify.Notification.new("Hello world",
-                                "This is an example notification.",
-                                "dialog-information")
+Hello = Notify.Notification.new("Hello world", "This is an example notification.", "dialog-information")
 Hello.show()
 ```
 
-**Ruby**
+### Ruby
 
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [ruby-gir_ffi](https://aur.archlinux.org/packages/ruby-gir_ffi/)
 
@@ -590,7 +613,7 @@ Hello = Notify::Notification.new("Hello world!", "This is an example notificatio
 Hello.show
 ```
 
-**Rust**
+### Rust
 
 Using [notify-rust](https://crates.io/crates/notify-rust).
 
@@ -620,7 +643,7 @@ fn main(){
 }
 ```
 
-**Scala**
+### Scala
 
 *   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/) (and [scala](https://www.archlinux.org/packages/?name=scala))
 *   Makedependency: [scala](https://www.archlinux.org/packages/?name=scala)
@@ -642,7 +665,7 @@ object HelloWorld {
 }
 ```
 
-**Vala**
+### Vala
 
 *   Dependency: [glib2](https://www.archlinux.org/packages/?name=glib2)
 *   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
@@ -680,7 +703,7 @@ public class HelloWorld {
 }
 ```
 
-**Visual Basic .NET**
+### Visual Basic .NET
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
 *   Makedependency: [mono-basic](https://aur.archlinux.org/packages/mono-basic/)
@@ -705,4 +728,5 @@ End Class
 
 *   [Libnotify Reference Manual](http://developer.gnome.org/libnotify/)
 *   [C example](http://milky.manishsinha.net/2009/03/29/working-with-libnotify/)
-*   [Python example](http://hashbang.fr/tutoriel-notify.html) (french article)
+*   [Python notification examples](https://www.devdungeon.com/content/desktop-notifications-linux-python)
+*   [Python notify example](http://hashbang.fr/tutoriel-notify.html) (french article)

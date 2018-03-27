@@ -69,7 +69,7 @@ To share files with Samba, [install](/index.php/Install "Install") the [samba](h
 
 ### smb.conf
 
-Samba is configured in `/etc/samba/smb.conf`, if this file doesn't exist smbd will fail to start.
+Samba is configured in `/etc/samba/smb.conf`, if this file does not exist smbd will fail to start.
 
 To get started you can copy the default config file from [samba git repository](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) to `/etc/samba/smb.conf`.
 
@@ -236,13 +236,16 @@ Create a mount point for the share:
 
 Mount the share using `mount.cifs` as `type`. Not all the options listed below are needed or desirable:
 
- `# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o user=*username*,password=*password*,uid=*username*,gid=*group*,workgroup=*workgroup*,ip=*serverip*,iocharset=*utf8*` 
+```
+# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o user=*username*,password=*password*,uid=*username*,gid=*group*,workgroup=*workgroup*,ip=*serverip*,iocharset=*utf8*
+
+```
 
 To allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home, append the `users` mount option.
 
 **Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually *user*; sans the "**s**".
 
-**Warning:** Using `uid` and/or `gid` as mount options may cause I/O errors, it's recommended to set/check the [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") instead.
+**Warning:** Using `uid` and/or `gid` as mount options may cause I/O errors, it is recommended to set/check the [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") instead.
 
 *SERVER*
 
@@ -266,7 +269,7 @@ To allow users to mount it as long as the mount point resides in a directory con
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
 *   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown "WPA supplicant").
 
-##### Storing Share Passwords
+#### Storing Share Passwords
 
 Storing passwords in a world readable file is not recommended. A safer method is to create a credentials file:
 
@@ -304,9 +307,7 @@ To speed up the service on boot, add the `x-systemd.automount` option to the ent
 
 Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount`.
 
-**Note:** Make sure the filename corresponds to the mountpoint you want to use.
-
-E.g. the unit name `mnt-myshare.mount` can only be used if are going to mount the share under `/mnt/myshare`. Otherwise the following error might occur: "*systemd[1]: mnt-myshare.mount: `Where=` setting doesn't match unit name. Refusing.*"
+**Note:** Make sure the filename corresponds to the mountpoint you want to use. E.g. the unit name `mnt-myshare.mount` can only be used if are going to mount the share under `/mnt/myshare`. Otherwise the following error might occur: `systemd[1]: mnt-myshare.mount: Where= setting does not match unit name. Refusing.`.
 
 `Requires=` replace (if needed) with your [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration").
 
@@ -316,7 +317,7 @@ E.g. the unit name `mnt-myshare.mount` can only be used if are going to mount th
 
 `Options=` share mounting options
 
-**Note:** If you want to use a hostname for the server you want to share (instead of an IP address), add `systemd-resolved.service` to `After` and `Wants`. This might avoid mount errors at boot time that don't arise when testing the unit.
+**Note:** If you want to use a hostname for the server you want to share (instead of an IP address), add `systemd-resolved.service` to `After` and `Wants`. This might avoid mount errors at boot time that do not arise when testing the unit.
  `/etc/systemd/system/mnt-myshare.mount` 
 ```
 [Unit]
@@ -524,11 +525,7 @@ If nothing is known about other systems on the local network, and automated tool
 
 In this case, a scan on the 192.168.1.* IP address range and port 139 has been performed, resulting in:
 
-```
-$ nmap -sT "192.168.1.*"
-
-```
-
+ `$ nmap -sT "192.168.1.*"` 
 ```
 Starting nmap 3.78 ( [http://www.insecure.org/nmap/](http://www.insecure.org/nmap/) ) at 2005-02-15 11:45 PHT
 Interesting ports on 192.168.1.1:
@@ -550,11 +547,7 @@ The first result is another system; the second happens to be the client from whe
 
 3\. Now that systems with port 139 open are revealed, use [nmblookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmblookup.1) to check for NetBIOS names:
 
-```
-$ nmblookup -A 192.168.1.1
-
-```
-
+ `$ nmblookup -A 192.168.1.1` 
 ```
 Looking up status of 192.168.1.1
         PUTER           <00> -         B <ACTIVE>
@@ -572,11 +565,7 @@ Regardless of the output, look for **<20>**, which shows the host with open serv
 
 4\. Use `smbclient` to list which services are shared on *PUTER*. If prompted for a password, pressing enter should still display the list:
 
-```
-$ smbclient -L \\PUTER
-
-```
-
+ `$ smbclient -L \\PUTER` 
 ```
 Sharename       Type      Comment
 ---------       ----      -------
@@ -627,15 +616,24 @@ $ net rpc
 
 Edit `/etc/samba/smb.conf` and add the following line:
 
- `map to guest = Bad User` 
+```
+map to guest = Bad User
+
+```
 
 After this line:
 
- `security = user` 
+```
+security = user
+
+```
 
 Restrict the shares data to a specific interface replace:
 
- `;   interfaces = 192.168.12.2/24 192.168.13.2/24` 
+```
+;   interfaces = 192.168.12.2/24 192.168.13.2/2
+
+```
 
 with:
 
@@ -646,15 +644,24 @@ bind interfaces only = true
 
 Optionally edit the account that access the shares, edit the following line:
 
- `;   guest account = nobody` 
+```
+;   guest account = nobody
+
+```
 
 For example:
 
- `   guest account = pcguest` 
+```
+   guest account = pcguest
+
+```
 
 And do something in the likes of:
 
- `# useradd -c "Guest User" -d /dev/null -s /bin/false pcguest` 
+```
+# useradd -c "Guest User" -d /dev/null -s /bin/false pcguest
+
+```
 
 Then setup a "" password for user pcguest.
 
@@ -670,7 +677,7 @@ writable = no
 
 ```
 
-**Note:** Make sure the guest also has permission to visit /path, /path/to and /path/to/public, according to [http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory](http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory)
+**Note:** Make sure the guest also has permission to visit `/path`, `/path/to` and `/path/to/public`, according to [http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory](http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory).
 
 #### Sample Passwordless Configuration
 
@@ -790,7 +797,10 @@ disable spoolss = Yes
 
 [Restart](/index.php/Restart "Restart") the samba service, `smb.service`, and then check your logs:
 
- `cat /var/log/samba/smbd.log` 
+```
+# cat /var/log/samba/smbd.log
+
+```
 
 and the error should now no longer be appearing.
 
@@ -803,11 +813,12 @@ It means that while you are sharing a folder from *Dolphin* (file manager) and e
 
 ```
 
-To fix it, enable usershare as described in [#Creating usershare path](#Creating_usershare_path).
+To fix it, enable usershare as described in [#Enable usershares](#Enable_usershares).
 
 ### "Browsing" network fails with "Failed to retrieve share list from server"
 
 And you are using a firewall (iptables) because you do not trust your local (school, university, hotel) network. This may be due to the following: When the smbclient is browsing the local network it sends out a broadcast request on udp port 137\. The servers on the network then reply to your client but as the source address of this reply is different from the destination address iptables saw when sending the request for the listing out, iptables will not recognize the reply as being "ESTABLISHED" or "RELATED", and hence the packet is dropped. A possible solution is to add:
+
 ```
 iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
 
@@ -911,7 +922,7 @@ The latter approach (using catia or fruit) has the drawback of filtering files w
 
 This section presupposes:
 
-1.  Usershares are configured following [previous section](#Creating_usershare_path)
+1.  Usershares are configured following [previous section](#Enable_usershares)
 2.  A shared folder has been created as a non-root user from GUI
 3.  Guests access has been set to shared folder during creation
 4.  Samba service has been restarted at least once since last `/etc/samba/smb.conf` file modification
@@ -934,7 +945,7 @@ $ testparm
 
 If everything is fine among output lines you may read
 
-`Press enter to see a dump of your service definitions`
+`Press <code>Enter` to see a dump of your service definitions</code>
 
 If it is not, please correct file accordingly to command error notifications.
 
@@ -943,7 +954,6 @@ Press the Enter key in order to dump samba configuration. The following options 
  `/etc/samba/smb.conf` 
 ```
 [global]
-
    ... some options here ...
 
         usershare max shares = 100
@@ -1007,11 +1017,17 @@ $ smbclient -N //localhost/MySharedFiles
 
 If everything is fine samba client prompt will be displayed:
 
-`smb: \>`
+```
+smb: \>
+
+```
 
 From samba prompt verify guest can list directory contents:
 
-`smb: \> ls`
+```
+smb: \> ls
+
+```
 
 If `NTFS_STATUS_ACCESS_DENIED` error displayed, probably there is something to be solved at directory permission level.
 

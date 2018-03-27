@@ -32,22 +32,24 @@ Source-based distributions are highly portable, giving the advantage of controll
 
 ### CRUX
 
-*   Before creating Arch, Judd Vinet admired and used CRUX; a minimalist distribution created by Per Lidén. Originally inspired by ideas in common with CRUX and BSD, Arch was built from scratch, and [pacman](/index.php/Pacman "Pacman") was then coded in C.
+*   [CRUX](https://crux.nu/) is a lightweight distribution that focuses on the [KISS](/index.php/Arch_terminology#KISS "Arch terminology") principle. CRUX inspired Judd Vinet to create Arch.
+*   CRUX uses BSD-style init scripts, whereas Arch uses systemd.
+*   While Arch uses a rolling release system, CRUX has more or less yearly releases.
 *   Both ship with ports-like systems, and, like *BSD, both provide a base environment to build upon.
 *   Arch features pacman, which handles binary system package management and works seamlessly with the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). CRUX uses a community contributed system called *prt-get*, which, in combination with its own ports system, handles dependency resolution, but builds all packages from source (though the CRUX base installation is binary).
 *   Both Arch and CRUX officially support only the x86_64 architecture.
-*   Arch uses a rolling-release system and features a large array of binary package repositories as well as the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). CRUX provides a more slimmed-down officially supported ports system in addition to a comparatively modest community repository.
+*   Arch features a large array of binary package repositories as well as the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). CRUX provides a more slimmed-down officially supported ports system in addition to a comparatively modest community repository.
 
 ### LFS
 
-*   LFS, (or Linux From Scratch) exists simply as documentation. The book instructs the user on obtaining the source code for a minimal base package set for a functional GNU/Linux system, and how to manually compile, patch and configure it from scratch. LFS is as minimal as it gets, and offers an excellent and educational process of building and customizing a base system.
+*   [LFS](http://www.linuxfromscratch.org/lfs/), (or Linux From Scratch) exists simply as documentation. The book instructs the user on obtaining the source code for a minimal base package set for a functional GNU/Linux system, and how to manually compile, patch and configure it from scratch. LFS is as minimal as it gets, and offers an excellent and educational process of building and customizing a base system.
 *   LFS provides no online repositories; sources are manually obtained, compiled and installed with *make*. (Several manual methods of package management exist, and are mentioned in LFS Hints).
 *   Arch provides these very same packages, plus [systemd](/index.php/Systemd "Systemd"), a few extra tools and the powerful [pacman](/index.php/Pacman "Pacman") package manager as its base system, already compiled for x86_64\. Along with the minimal Arch base system, the Arch community and developers provide and maintain many thousands of binary packages installable via pacman as well as [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") build scripts for use with the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Arch also includes the [makepkg](/index.php/Makepkg "Makepkg") tool for expediently building or customizing *.pkg.tar.xz* packages, readily installable by pacman.
 *   Judd Vinet built Arch from scratch, and then wrote pacman in C. Historically, Arch was sometimes humorously described simply as "Linux, with a nice package manager."
 
 ### Gentoo/Funtoo Linux
 
-*   Both Arch Linux and Gentoo Linux are rolling release systems, making packages available to the distribution a short time after they are released upstream.
+*   Both Arch Linux and [Gentoo Linux](https://gentoo.org/) are rolling release systems, making packages available to the distribution a short time after they are released upstream.
 *   The Gentoo packages and base system are built directly from source code according to user-specified *USE flags*. Arch provides a ports-like system for building packages from source, though the Arch base system is designed to be installed as pre-built x86_64 binary. This generally makes Arch quicker to build and update, and allows Gentoo to be more systemically customizable.
 *   Arch only supports x86_64 while Gentoo officially supports x86 (i486/i686), x86_64, PPC/PPC64, SPARC, Alpha, ARM, MIPS, HPPA, S/390 and Itanium architectures.
 *   Gentoo's official package and system management tools tend to be rather more complex and "powerful" than those provided by Arch, and certain features which are at the very heart of Gentoo *([USE flags](https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE), [SLOTs](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Portage#Terminology), etc.)* do not have any direct Arch Linux equivalent. Some of that is due to the fact that Arch is primarily a binary distro, but differences in [design philosophy](/index.php/Arch_Linux#Principles "Arch Linux") also play a big role, with Arch taking a more principled stance in favor of architectural simplicity and avoiding over-engineering.
@@ -77,7 +79,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 ### Fedora
 
-*   Fedora is community developed, yet corporately backed by Red Hat; it is often presented as a testbed release system. Fedora packages and projects migrate to RHEL and some eventually become adopted by other distributions. Arch has no fixed releases, and does not serve as a testing branch for another distribution.
+*   [Fedora](https://getfedora.org/) is community developed, yet corporately backed by Red Hat; it is often presented as a testbed release system. Fedora packages and projects migrate to RHEL and some eventually become adopted by other distributions. Arch has no fixed releases, and does not serve as a testing branch for another distribution.
 
 *   Fedora packages use the RPM format with the DNF package manager. Arch uses [pacman](/index.php/Pacman "Pacman") to manage tar.xz packages.
 
@@ -97,7 +99,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 ### Slackware
 
-*   Slackware uses BSD-style init scripts, whereas Arch uses [systemd](/index.php/Systemd "Systemd").
+*   [Slackware](http://www.slackware.com/) uses BSD-style init scripts, whereas Arch uses [systemd](/index.php/Systemd "Systemd").
 
 *   Arch supplies a package management system in [pacman](/index.php/Pacman "Pacman") which, unlike Slackware's standard tools, offers automatic dependency resolution and allows for more automated system upgrades. Slackware users typically prefer their method of manual dependency resolution, citing the level of system control it grants them, as well as Slackware's excellent supply of pre-installed libraries and dependencies.
 
@@ -113,7 +115,7 @@ Sometimes called "newbie distros", the beginner-friendly distributions share a l
 
 ### Ubuntu
 
-*   Ubuntu is a popular Debian-based distribution commercially sponsored by Canonical Ltd., while Arch is an independently developed system built from scratch.
+*   [Ubuntu](https://www.ubuntu.com/) is a popular Debian-based distribution commercially sponsored by Canonical Ltd., while Arch is an independently developed system built from scratch.
 
 *   The two projects have very different goals and are targeted at a different user base. Arch is designed for users who desire a do-it-yourself approach, whereas Ubuntu provides a preconfigured system. Arch presents a simpler design from the base installation onward, relying on the user to customize it to their own specific needs. Many Arch users have started on Ubuntu and eventually migrated to Arch.
 
@@ -127,14 +129,14 @@ Sometimes called "newbie distros", the beginner-friendly distributions share a l
 
 ### Linux Mint
 
-*   [Linux Mint](http://www.linuxmint.com/) was born as an [Ubuntu](#Ubuntu) derivative, and later added the LMDE (Linux Mint Debian Edition) that is instead based on [#Debian](#Debian). On the other hand, Arch is an independent distribution that relies on its own [build system](/index.php/ABS "ABS") and [repositories](/index.php/Repositories "Repositories").
+*   [Linux Mint](https://www.linuxmint.com/) was born as an [Ubuntu](#Ubuntu) derivative, and later added the LMDE (Linux Mint Debian Edition) that is instead based on [#Debian](#Debian). On the other hand, Arch is an independent distribution that relies on its own [build system](/index.php/ABS "ABS") and [repositories](/index.php/Repositories "Repositories").
 *   Mint includes several graphical tools for easier maintenance, called *MintTools*. Arch only provides simple command-line tools like [pacman](/index.php/Pacman "Pacman") and leaves system management to be organized by the user.
 *   Mint mainly ships with [Cinnamon](/index.php/Cinnamon "Cinnamon") or [MATE](/index.php/MATE "MATE") as its GUI, and alternatively [KDE](/index.php/KDE "KDE") or [Xfce4](/index.php/Xfce4 "Xfce4").
 *   New versions of Mint are released every six months, about a month after Ubuntu. Each release is based on the most recent Ubuntu LTS and is supported for five years. Linux Mint Debian Edition (LMDE) is based on Debian Stable and only receives updates in Mint packages and security updates. Arch is instead a full rolling-release distribution.
 
 ### openSUSE
 
-openSUSE is centered around the RPM package format and its well-regarded YaST2 GUI-driven configuration tool. Arch does not offer such a facility. openSUSE, may therefore be more appropriate for users who want a more GUI-driven environment, automatic configuration, or expected functionality out of the box while still allowing depth of customization.
+[openSUSE](https://www.opensuse.org/) is centered around the RPM package format and its well-regarded YaST2 GUI-driven configuration tool. Arch does not offer such a facility. openSUSE, may therefore be more appropriate for users who want a more GUI-driven environment, automatic configuration, or expected functionality out of the box while still allowing depth of customization.
 
 ### Mandriva/Mageia
 
@@ -152,5 +154,5 @@ Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of ma
 
 ## See also
 
-*   [DistroWatch](http://distrowatch.com/) - Linux distributions news and reviews
-*   [The Live CD List](http://www.livecdlist.com) - List of Live operating systems images
+*   [DistroWatch](https://distrowatch.com/) - Linux distributions news and reviews
+*   [The Live CD List](https://www.livecdlist.com) - List of Live operating systems images

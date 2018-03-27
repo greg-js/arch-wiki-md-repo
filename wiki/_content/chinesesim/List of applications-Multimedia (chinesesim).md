@@ -94,7 +94,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[Feh](/index.php/Feh "Feh")** — 使用imlib2的轻量级图像查看器
 
-	[http://linuxbrit.co.uk/feh/](http://linuxbrit.co.uk/feh/) || [feh](https://www.archlinux.org/packages/?name=feh)
+	[https://feh.finalrewind.org/](https://feh.finalrewind.org/) || [feh](https://www.archlinux.org/packages/?name=feh)
 
 *   **meh** — meh is a small, simple, super fast image viewer using raw XLib.
 

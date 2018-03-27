@@ -67,6 +67,7 @@ This article explains how to create/manage a software RAID array using mdadm.
 Despite redundancy implied by most RAID levels, RAID does not guarantee that data is safe. A RAID will not protect data if there is a fire, the computer is stolen or multiple hard drives fail at once. Furthermore, installing a system with RAID is a complex process that may destroy data.
 
 **Tip:** Users considering a RAID array for data storage/redundancy should also consider RAIDZ which is implemented via [ZFS](/index.php/ZFS "ZFS"), a more modern and powerful alternative to software RAID.
+**Warning**: **[ZFS](/index.php/ZFS "ZFS") USES OUT-OF-TREE [KERNEL MODULES](/index.php?title=KERNEL_MODULES&action=edit&redlink=1 "KERNEL MODULES (page does not exist)")** because the Linux [kernel](/index.php/Kernel "Kernel") (GPL2) cannot accept CDDL into the codebase. **Packages are also not provided officially**, so are found in the [AUR](/index.php/AUR "AUR") or through 3rd party repos. Official kernel module packages are always rebuilt against the current kernel-headers, and released together. This ***synchronization is up to the administrator with unofficial modules***, so **use caution** if opting for [ZFS](/index.php/ZFS "ZFS") over a native feature like [mdadm](/index.php/Mdadm "Mdadm") software RAID.
 
 ### Standard RAID levels
 

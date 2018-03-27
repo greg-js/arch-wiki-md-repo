@@ -8,30 +8,31 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [4 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
 *   [5 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
 *   [6 Empathy does not use GNOME Online Accounts](#Empathy_does_not_use_GNOME_Online_Accounts)
-*   [7 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
-*   [8 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
-*   [9 Extensions do not work after GNOME 3 update](#Extensions_do_not_work_after_GNOME_3_update)
-*   [10 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
-*   [11 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
-*   [12 Consistent cursor theme](#Consistent_cursor_theme)
-*   [13 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
-*   [14 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
-*   [15 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
-*   [16 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
-*   [17 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
-*   [18 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
-*   [19 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
-*   [20 Mouse cursor missing](#Mouse_cursor_missing)
-*   [21 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
-*   [22 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
-*   [23 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
-*   [24 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
-*   [25 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
-*   [26 No suspend on LID closure](#No_suspend_on_LID_closure)
-*   [27 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
-*   [28 Low OpenGL performance and stuttering on proprietary NVIDIA driver](#Low_OpenGL_performance_and_stuttering_on_proprietary_NVIDIA_driver)
-*   [29 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
-*   [30 gnome-control-center is empty and does not list any categories](#gnome-control-center_is_empty_and_does_not_list_any_categories)
+*   [7 GNOME Online Accounts settings page does not show properly](#GNOME_Online_Accounts_settings_page_does_not_show_properly)
+*   [8 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
+*   [9 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
+*   [10 Extensions do not work after GNOME 3 update](#Extensions_do_not_work_after_GNOME_3_update)
+*   [11 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
+*   [12 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
+*   [13 Consistent cursor theme](#Consistent_cursor_theme)
+*   [14 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
+*   [15 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
+*   [16 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
+*   [17 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
+*   [18 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
+*   [19 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
+*   [20 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
+*   [21 Mouse cursor missing](#Mouse_cursor_missing)
+*   [22 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
+*   [23 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
+*   [24 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
+*   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
+*   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
+*   [27 No suspend on LID closure](#No_suspend_on_LID_closure)
+*   [28 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
+*   [29 Low OpenGL performance and stuttering on proprietary NVIDIA driver](#Low_OpenGL_performance_and_stuttering_on_proprietary_NVIDIA_driver)
+*   [30 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
+*   [31 gnome-control-center is empty and does not list any categories](#gnome-control-center_is_empty_and_does_not_list_any_categories)
 
 ## Shell freezes
 
@@ -157,6 +158,10 @@ Empathy, the engine behind integrated messaging, GNOME Online Accounts, and all 
 ## Empathy does not use GNOME Online Accounts
 
 After adding a Gnome Online Account, it may be necessary to log out and log back in for it to be used by Empathy.
+
+## GNOME Online Accounts settings page does not show properly
+
+In some cases, due to interactions with Alacarte (menu editor), Gnome Online accounts settings page would not show. If that happens, "Restore System Configuration" in Alacarte can restore missing functions to gnome-control-center. (See [https://bugzilla.redhat.com/show_bug.cgi?id=1520431](https://bugzilla.redhat.com/show_bug.cgi?id=1520431).)
 
 ## Cannot change settings in dconf-editor
 

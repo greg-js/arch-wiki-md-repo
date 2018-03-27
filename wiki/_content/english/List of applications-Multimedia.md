@@ -538,7 +538,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Lollypop** — A GNOME music player.
 
-	[https://gnumdk.github.io/lollypop-web/](https://gnumdk.github.io/lollypop-web/) || [lollypop](https://www.archlinux.org/packages/?name=lollypop)
+	[https://wiki.gnome.org/Apps/Lollypop](https://wiki.gnome.org/Apps/Lollypop) || [lollypop](https://www.archlinux.org/packages/?name=lollypop)
 
 *   **LXMusic** — A minimalist xmms2-based music player.
 
@@ -902,7 +902,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 #### DVD ripping
 
-See [Optical disc drive#DVD 2](/index.php/Optical_disc_drive#DVD_2 "Optical disc drive").
+See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Optical disc drive").
 
 #### Video editors
 

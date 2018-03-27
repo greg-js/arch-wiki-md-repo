@@ -33,8 +33,6 @@ $ dict
 
 ```
 
-**Note:** After new dictionaries are installed, the `dictd.services` must be restarted in order to refresh the list of available dictionaries. In other words, a
-
 **Tip:** A list of all the available dictionaries can be queried by executing:
 ```
 $ dict -I

@@ -13,11 +13,11 @@ This wiki page covers a basic setup of the smokeping daemon and the CGI webinter
     *   [2.3 Start and enable daemon](#Start_and_enable_daemon)
 *   [3 Setup web frontend](#Setup_web_frontend)
     *   [3.1 Apache](#Apache)
-    *   [3.2 Nginx](#Nginx)
+    *   [3.2 Caddy](#Caddy)
+    *   [3.3 Nginx](#Nginx)
 *   [4 Advanced Configuration](#Advanced_Configuration)
-*   [5 Troubleshooting](#Troubleshooting)
-*   [6 Notes](#Notes)
-    *   [6.1 Smoketrace (Tr.cgi)](#Smoketrace_.28Tr.cgi.29)
+*   [5 Notes](#Notes)
+    *   [5.1 Smoketrace (Tr.cgi)](#Smoketrace_.28Tr.cgi.29)
 
 ## Installation
 
@@ -271,6 +271,31 @@ Check that [http://localhost/smokeping/smokeping.fcgi](http://localhost/smokepin
 
 If the fonts in the graphs are unreadable, you may need to install the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) package.
 
+### Caddy
+
+Thanks to the [Caddy community](https://caddy.community/t/smokeping-caddyfile/3560/8) and with this config file [/etc/smokeping/config](https://s.natalian.org/2018-03-27/config) and with `sudo systemctl enable fcgiwrap.socket`
+
+ `/etc/caddy/caddy.conf.d/smokeping.conf` 
+```
+smokeping.example.com {
+
+        log stdout
+        errors
+
+        tls john@example.com
+        root /srv/http/smokeping
+
+        fastcgi / unix:/var/run/fcgiwrap.sock {
+                env SCRIPT_FILENAME /srv/http/smokeping/smokeping.fcgi.dist
+        }
+}
+
+smokeping.example.com/cache {
+        root /var/cache/smokeping
+}
+
+```
+
 ### Nginx
 
 Ensure that `fcgiwrap.socket` and `nginx.service` are both running via systemctl.
@@ -304,17 +329,6 @@ Verify that your config is fine via `# nginx -t` and reload the configuration vi
 ## Advanced Configuration
 
 Smokeping is a powerful tool that can be configured in many ways. You can setup many different types of probes. You can setup slave smokeping servers that can send their statistics and show you probes from other servers. You can also create your custom probes in perl. These options are currently not covered by this guide, please consult the documentation on the [Smokeping website](http://oss.oetiker.ch/smokeping/index.en.html) instead.
-
-## Troubleshooting
-
-The smokeping package is currently broken in several ways. To get the service to run as a daemon, you'll need to modify the provided systemd unit file to have this parameter:
-
-```
-type=forking
-
-```
-
-Smokemail is also not included even though it is required for smokeping to run. You'll need to download the file and add it manually from [smokeping's github](https://github.com/oetiker/SmokePing/blob/master/etc/smokemail.dist).
 
 ## Notes
 

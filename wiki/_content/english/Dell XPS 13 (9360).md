@@ -192,6 +192,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Anker USB-C to HDMI Adapter](https://www.amazon.com/Anker-Adapter-Supports-Macbook-Chromebook/dp/B01MYUCWOK/) | 4K@60Hz HDMI | Working |
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
 | [Apple 87W USB-C Power Adapter](https://www.apple.com/uk/shop/product/MNF82B/A/87w-usb-c-power-adapter?fnode=8b) | USB-C Power | Working |
+| [Apple 61W USB-C Power Adapter](https://www.apple.com/uk/shop/product/MNF72B/A/61w-usb%E2%80%91c-power-adapter?fnode=8b) | USB-C Power | Working |
 | [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
 | [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Working |
 | [ARP USB 3.1 C - DVI](https://www.arp.ch/fr/adaptateur-arp-usb-3-1-c-dvi-4044821-5115074) | DVI | Working |
@@ -201,6 +202,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI (max. 1920x1080), VGA | Working |
 | [Dell TB16](https://www.amazon.com/Dell-3GMVT-Thunderbolt-Dock-black/dp/B06XN6XWD7/) | USB-C Power, VGA, mDP, HDMI, DP, Thunderbolt, Ethernet (only 100Mbit Mode), 2x USB 2.0, 3x USB 3.0 (Disable Thunderbolt Security in BIOS) | Working |
 | [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
+| [dodocool DC58 45W USB Type-C Wall Charger Power Adapter](https://www.dodocool.com/p-dc58weu.html) | USB-C Power | Working |
 | [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
 | [i-Tec USB-C Low Profile Docking Station](https://www.i-tec-europe.eu/?lng=en&t=3&v=437) | HDMI 4K@30Hz, SD Card Reader, Gigabit Ethernet, 3x USB-A, USB-C, USB-PD@60W | Working |
 | [i-tec USB-C 4K Travel Docking Station Multi Adapter](https://www.amazon.de/gp/product/B074Z1YWHR/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1) | 4K HDMI, Gigabit Ethernet (RTL8153), 2x USB 3.0, 1x USB-C Power, 1x USB-C | Working |
@@ -214,7 +216,9 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [StarTech TBT3TBTADAP - Thunderbolt 3 to Thunderbolt Adapter](https://www.amazon.com/StarTech-com-Thunderbolt-Adapter-Compatible-DisplayPort/dp/B019FPJDQ2) | Thunderbolt 2, Thunderbolt | Working |
 | [Tripp Lite USB-C to DVI External Video Adapter](https://www.amazon.com/Tripp-Lite-External-Charging-U444-06N-DGU-C/dp/B01LYQB1XI) | DVI, Gbit Ethernet, USB-A, USB-C PD Charging Port | Working |
 | [UCOUSO USB-C Aluminium HDMI Adapter mit HDMI (4K@30HZ) und 3 USB 3.0 Ports](https://www.amazon.de/gp/product/B075H85W43) | HDMI, 3x USB 3.0 | Working |
+| [UGREEN USB Type-C 30W Wall Charger With Power Delivery](https://ugreen.com/product/1258-en.html) | USB-C Power | Not Working |
 | [Xiaomi USB Type-C to HDMI Multifunction Adapter](https://xiaomi-mi.com/accessories-for-laptops/xiaomi-usb-type-c-to-hdmi-multifunction-adapter/) | 4K HDMI, 1x USB 3.0, USB-C Power | Working |
+| [Xiaomi USB Type-C Clip On Car Charger Expansion](https://item.mi.com/1172800036.html?cfrom=list) | USB-C Power | Working |
 
 ### Thunderbolt Firmware updates
 
