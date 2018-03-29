@@ -3,7 +3,7 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting Fluxbox](#Starting_Fluxbox)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 Menu management](#Menu_management)
         *   [3.1.1 fluxbox-generate_menu](#fluxbox-generate_menu)
@@ -33,22 +33,9 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
 
 [Install](/index.php/Install "Install") the [fluxbox](https://www.archlinux.org/packages/?name=fluxbox) package.
 
-## Starting Fluxbox
+## Starting
 
-**Graphical login**
-
-Just choose the *fluxbox* option from the session menu of your favourite [display manager](/index.php/Display_manager "Display manager").
-
-**Manually**
-
-Edit `~/.xinitrc` and add the following line:
-
-```
-exec startfluxbox
-
-```
-
-See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the logind session.
+Run `startfluxbox` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 

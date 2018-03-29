@@ -1778,6 +1778,20 @@ Arch c'est le plus meilleure du monde!
 
 ```
 
+	Rövarspråket (English)
+
+```
+Arorcochoh isos tothohe bobesostot.
+
+```
+
+	Rövarspråket (Swedish)
+
+```
+Arorcochoh äror bobäsostot!
+
+```
+
 	Serbian
 
 ```

@@ -14,8 +14,9 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Common options](#Common_options)
-    *   [2.2 Graphical tools](#Graphical_tools)
+    *   [2.1 Via xinput](#Via_xinput)
+    *   [2.2 Via Xorg configuration file](#Via_Xorg_configuration_file)
+    *   [2.3 Graphical tools](#Graphical_tools)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Button re-mapping](#Button_re-mapping)
     *   [3.2 Manual button re-mapping](#Manual_button_re-mapping)
@@ -44,6 +45,8 @@ For [Wayland](/index.php/Wayland "Wayland"), there is no libinput configuration 
 
 For [Xorg](/index.php/Xorg "Xorg"), a default configuration file for the wrapper is installed to `/usr/share/X11/xorg.conf.d/40-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
 
+### Via xinput
+
 First, execute:
 
 ```
@@ -55,7 +58,7 @@ It will output the devices on the system and their respective features supported
 
 After a [restart](/index.php/Restart "Restart") of the graphical environment, the devices should be managed by libinput with default configuration, if no other drivers are configured to take precedence.
 
-See [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for general options to set. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
+See [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for general options to set and information about allowable values. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
 
 ```
 $ xinput list
@@ -79,9 +82,11 @@ $ xinput set-prop *device* *option-number* *setting*
 to change a setting. For example, to set both options of libinput Click Method Enabled (303), the following is issued:
 
 ```
-# xinput set-prop 14 303 {1 1}
+$ xinput set-prop 14 303 {1 1}
 
 ```
+
+### Via Xorg configuration file
 
 See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Button re-mapping](#Button_re-mapping) illustrate examples.
 
@@ -112,11 +117,9 @@ is a notebook without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. d
 
 Of course you can elect to use an alternative driver for one device and libinput for others. A number of factors may influence which driver to use. For example, in comparison to [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the libinput driver has fewer options to customize touchpad behaviour to one's own taste, but far more programmatic logic to process multitouch events (e.g. palm detection as well). Hence, it makes sense to try the alternative, if you are experiencing problems on your hardware with one driver or the other.
 
-### Common options
-
 Custom configuration files should be placed in `/etc/X11/xorg.conf.d/` and following a widely used naming schema `30-touchpad.conf` is often chosen as filename.
 
-**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/40-libinput.conf` for guidance and refer to the [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) manual page for a detailed description of available configuration options.
+**Tip:** Have a look at CONFIGURATION DETAILS in `/usr/share/X11/xorg.conf.d/40-libinput.conf` for guidance and refer to the [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) manual page for a detailed description of available configuration options.
 
 A basic configuration should have the following structure:
 
@@ -130,14 +133,21 @@ EndSection
 
 ```
 
-You may define as many sections as you like in a single configuration file. To configure the device of your choice specify a filter by using `MatchIsPointer "on"`, `MatchIsKeyboard "on"`, `MatchIsTouchpad "on"` or `MatchIsTouchscreen "on"` and add your desired option. See [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for more details. Common options include:
+You may define as many sections as you like in a single configuration file (usually one per input device). To configure the device of your choice specify a filter by using one of the filters in the INPUTCLASS SECTION [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), e.g.
 
-*   `"Tapping" "on"`: tapping a.k.a. tap-to-click
-*   `"ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
-*   `"NaturalScrolling" "true"`: natural (reverse) scrolling
-*   `"ScrollMethod" "edge"`: edge (vertical) scrolling
+*   `MatchIsPointer "on"` (trackpoint)
+*   `MatchIsKeyboard "on"`
+*   `MatchIsTouchpad "on"`
+*   `MatchIsTouchscreen "on"`
 
-Bear in mind that some of them may only apply to certain devices.
+The input device can then be configured with any of the lines in the CONFIGURATION DETAILS section of [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4). Common options include:
+
+*   `Option "Tapping" "on"`: tapping a.k.a. tap-to-click
+*   `Option "ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
+*   `Option "NaturalScrolling" "true"`: natural (reverse) scrolling
+*   `Option "ScrollMethod" "edge"`: edge (vertical) scrolling
+
+Bear in mind that some of them may only apply to certain devices and you'll need to restart X for changes to take effect.
 
 ### Graphical tools
 

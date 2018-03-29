@@ -31,26 +31,28 @@ The columns have the following meaning:
 
 	– Split packages independently, such as [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) and [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
 
-*   *Git clone*: uses [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1) instead of downloading tarballs which is deprecated.
-*   *Pacman wrap*: when used as replacement for [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) commands such as `pacman -Syu`, the following are obeyed *by default*:
+*   *Git clone*: uses [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1) by default to retrieve build files from the AUR.
+*   *Native pacman*: when used as replacement for [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) commands such as `pacman -Syu`, the following are obeyed *by default*:
 
 	– do not separate commands, for example `pacman -Syu` is not split to `pacman -Sy` and `pacman -S *packages*`;
 
 	– use *pacman* directly instead of manual database manipulation or usage of [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3).
 
-	In addition, unsupported commands such as `pacman -Ud`, `pacman -Rdd` or `pacman --force` are not used.
+	In addition, unsupported commands such as `pacman -Ud`, `pacman -Rdd` or `pacman --force` are **not** used.
 
 *   *Shell completion*: [tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") is available for the listed [shells](/index.php/Shell "Shell").
 
-**Note:** Table rows are sorted by column values, where *Yes* or *N/A* take precedence over *Partial* or *Optional* and *No*, or alphabetically if values are equal.
+**Note:**
+
+*   Table rows are sorted by column values, where *Yes* or *N/A* take precedence over *Partial* or *Optional* and *No*, or alphabetically if values are equal.
+*   *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it deviates from the given criteria in a minor way.
 
 ### Active
 
-| Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Pacman wrap | Shell completion | Specificity |
+| Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Native pacman | Shell completion | Specificity |
 | [aurman](https://aur.archlinux.org/packages/aurman/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash | batch interaction, fetch pgp keys, sort by popularity, [deep search](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | N/A | zsh | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support, sort by votes/popularity |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | Trust management, ABS support, extends Powerpill |
-| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | N/A | Yes | N/A | N/A | Yes | N/A | None | No automatic builds |
 | [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Yes | Yes [[1]](https://github.com/kitsunyan/pakku/commit/864cc0373fd6095295f68cc44d1657bd17269732) | Yes | Yes | Yes | Yes | Partial [[2]](https://github.com/kitsunyan/pakku/wiki/Pacman-Wrap-Explanation) | bash | AUR comments, batch interaction, fetch PGP keys |
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Yes | Yes | Yes | Yes | Yes [[3]](https://github.com/actionless/pikaur/commit/d409b958b4ff403d4fda06681231061854d32b3c) | Yes | Partial [[4]](https://github.com/actionless/pikaur/issues/81) | bash, fish, zsh | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), multilingual, sort by votes/popularity, batch interaction |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Optional | Yes | Yes | Yes | Partial [[5]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | Yes [[6]](https://github.com/Kwpolska/pkgbuilder/blob/master/docs/wrapper.rst) | None | Automatic builds by default, use `-F` to disable; multilingual |
@@ -58,7 +60,7 @@ The columns have the following meaning:
 | [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | N/A | No [[7]](https://github.com/archlinuxfr/package-query/issues/135) | N/A | N/A | N/A | N/A | None | No automatic builds |
 | [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | N/A | Yes [[8]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | N/A | zsh | No automatic builds, local repository support |
 | [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Yes | Yes | Yes [[9]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Yes | Yes [[10]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | Yes [[11]](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | No [[12]](https://github.com/trizen/trizen/commit/ba687bc3c3e306e6f3942e95f825ed6a55d3ad69) | bash, zsh | AUR comments |
-| [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | Yes | Yes | Yes | Yes | No [[13]](https://github.com/Jguer/yay/pull/130) | No [[14]](https://github.com/Jguer/yay/issues/146#issuecomment-365358542) | bash, zsh, fish | sort by votes, batch interaction |
+| [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | Yes | Yes | Yes | Yes | No [[13]](https://github.com/Jguer/yay/pull/130) | Partial [[14]](https://github.com/Jguer/yay/commit/98ea801004fc63b5a294f46392910e85286ffd98) | bash, zsh, fish | sort by votes, batch interaction, fetch PGP keys, [prompt architecture](https://github.com/Jguer/yay/pull/260) |
 | [naaman](https://aur.archlinux.org/packages/naaman/) | Python | Optional | Yes | Yes | No | No | Yes | N/A | bash | Automatic builds by default, use `--fetch` to disable |
 | [aura](https://aur.archlinux.org/packages/aura/) | Haskell | Yes | Yes | Yes [[15]](https://github.com/aurapm/aura/commit/7848e9830cd880215f1d12a1c0294992428ea778) | No | No [[16]](https://github.com/aurapm/aura/issues/353) | No [[17]](https://github.com/aurapm/aura/pull/346) | Yes [[18]](https://github.com/aurapm/aura/blob/master/aura/src/Aura/Pacman.hs) | bash, zsh | Downgrade, [ABS](/index.php/ABS "ABS"), [powerpill](/index.php/Powerpill "Powerpill") support, multilingual, requires [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
 
@@ -70,7 +72,8 @@ A project is considered *inactive* if it fullfills **any** of the following crit
 *   it has seen no general activity in the last 6 months;
 *   existing issues on security and clean build have been ignored in the last 6 months.
 
-| Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Pacman wrap | Shell completion | Specificity |
+| Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Native pacman | Shell completion | Specificity |
+| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | N/A | Yes | N/A | N/A | Yes | N/A | None | No automatic builds |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | N/A | Yes | N/A | N/A | Optional | N/A | bash | No automatic builds |
 | [aurel-git](https://aur.archlinux.org/packages/aurel-git/) [[19]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | N/A | Emacs integration, no automatic builds |
 | [cower](https://aur.archlinux.org/packages/cower/) [[20]](https://github.com/falconindy/auracle#what-is-auracle) | C | Yes | N/A | Yes | N/A | N/A | No | N/A | bash/zsh | No automatic builds, regex support, sort by votes/popularity |

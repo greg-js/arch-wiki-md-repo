@@ -139,7 +139,7 @@ If you do not have an Xorg configuration file, you can create one for your prese
 
 ### Multi-monitor
 
-For multi-monitor setup you will need to specify `ForceCompositionPipleline=On` for each display. For example:
+For multi-monitor setup you will need to specify `ForceCompositionPipeline=On` for each display. For example:
 
 ```
 $ nvidia-settings --assign CurrentMetaMode="DP-2: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}, DP-4: nvidia-auto-select +3840+0 {ForceCompositionPipeline=On}"

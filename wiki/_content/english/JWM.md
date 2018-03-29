@@ -1,4 +1,4 @@
-**JWM** (Joe's Window Manager) is a featherweight [window manager](/index.php/Window_manager "Window manager") for [Xorg](/index.php/Xorg "Xorg") written in [C](https://en.wikipedia.org/wiki/C_(programming_language) "wikipedia:C (programming language)"). It is under active development and maintained by [Joe Wingbermuehle](http://joewing.net/about.shtml). It is the default window manager base for distributions such as [Puppy Linux](http://www.puppylinux.org/) and [Damn Small Linux](http://damnsmalllinux.org/).
+**JWM** (Joe's Window Manager) is a lightweight [window manager](/index.php/Window_manager "Window manager") for [Xorg](/index.php/Xorg "Xorg") written in [C](https://en.wikipedia.org/wiki/C_(programming_language) "wikipedia:C (programming language)"). It is under active development and maintained by [Joe Wingbermuehle](http://joewing.net/about.shtml). It is the default window manager base for distributions such as [Puppy Linux](http://www.puppylinux.org/) and [Damn Small Linux](http://damnsmalllinux.org/).
 
 JWM uses approximately 5 MB of resident memory under normal operating conditions. As of January 2009, the size of the version present in the [official Arch Linux repositories](/index.php/Official_repositories "Official repositories") is under 76 KB packaged (compare to [dwm](/index.php/Dwm "Dwm") at under 17 KB) and under 171 KB installed (compare to dwm at 68 KB). A minimally compiled version consumes approximately 136 KB of disk space and occupies under 1500 KB of resident memory.
 
@@ -7,7 +7,7 @@ Configuration is done via a single [XML](https://en.wikipedia.org/wiki/XML "wiki
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting JWM](#Starting_JWM)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 Overview of selected tags](#Overview_of_selected_tags)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -30,16 +30,9 @@ Configuration is done via a single [XML](https://en.wikipedia.org/wiki/XML "wiki
 
 **Warning:** Recent SVN snapshots (e.g. 500) have migrated to Mod key masks (e.g. `H` to `4`).
 
-## Starting JWM
+## Starting
 
-Run the xinit program to start the X server and the JWM client program:
-
-```
-$ xinit /usr/bin/jwm
-
-```
-
-Alternatively, add `exec /usr/bin/jwm` to your [Xinitrc](/index.php/Xinitrc "Xinitrc"). See also [Start X at Boot](/index.php/Start_X_at_Boot "Start X at Boot").
+Run `jwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 

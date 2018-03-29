@@ -1,20 +1,17 @@
+Catwm is a small, lightweight tiling window manager created by pyknite. It was first announced in [an Arch Linux forum post](https://bbs.archlinux.org/viewtopic.php?id=100215).
+
 ## Contents
 
-*   [1 About](#About)
-*   [2 Installation](#Installation)
-    *   [2.1 Method 1](#Method_1)
-    *   [2.2 Method 2](#Method_2)
-    *   [2.3 Starting catwm when X is started](#Starting_catwm_when_X_is_started)
+*   [1 Installation](#Installation)
+    *   [1.1 Method 1](#Method_1)
+    *   [1.2 Method 2](#Method_2)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 Add Custom Keybindings](#Add_Custom_Keybindings)
     *   [3.2 Set Volume Up/Down Hotkeys](#Set_Volume_Up.2FDown_Hotkeys)
     *   [3.3 Set Next/Previous Song Hotkeys](#Set_Next.2FPrevious_Song_Hotkeys)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 My volume hotkeys do not work!](#My_volume_hotkeys_do_not_work.21)
-
-## About
-
-Catwm is a small, lightweight tiling window manager created by pyknite. It was first announced in this ([https://bbs.archlinux.org/viewtopic.php?id=100215](https://bbs.archlinux.org/viewtopic.php?id=100215)) forum post.
 
 ## Installation
 
@@ -39,11 +36,9 @@ Then, run the following as root:
 # make clean
 ```
 
-### Starting catwm when X is started
+## Starting
 
-Add the following to your ~/.xinitrc:
-
- `exec /usr/bin/catwm` 
+Run `catwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 

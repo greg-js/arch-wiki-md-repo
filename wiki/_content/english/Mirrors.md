@@ -152,7 +152,7 @@ There are multiple scripts automating the update of the mirrorlist from the rank
 Can be useful to automate update of the mirror list only for a specific countries instead of making a speed test each time. Assumed that `mirrorlist.pacnew` exist, the file creates after installation of the [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) update.
 
 ```
-awk '/^## China$/ {f=1} f==0 {next} /^$/ {exit} {print substr($0, 2)}' \
+awk '/^## China$/ {f=1} f==0 {next} /^$/ {exit} {print substr($0, 1)}' \
     /etc/pacman.d/mirrorlist.pacnew
 ```
 

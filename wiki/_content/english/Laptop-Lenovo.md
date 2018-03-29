@@ -80,6 +80,12 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo ThinkPad P50](/index.php/Lenovo_ThinkPad_P50 "Lenovo ThinkPad P50") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 | [Lenovo ThinkPad P70](/index.php/Lenovo_ThinkPad_P70 "Lenovo ThinkPad P70") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
+| Lenovo ThinkPad P51 | Unknown | Yes | Yes | Yes | Yes | Yes | Yes | Yes (No GNSS/GPS) | 
+
+*   Working: SD card, Webcam, Express card, Smartcard reader
+*   Not working: Fingerprint Reader, TPM, Color calibrator, UEFI flash
+
+ | HDMI audio requires nvhda module |
 
 #### T series
 

@@ -9,7 +9,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"):
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting IceWM](#Starting_IceWM)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 Autostarting](#Autostarting)
     *   [3.2 Generating menu entries](#Generating_menu_entries)
@@ -29,29 +29,9 @@ IceWM can be [installed](/index.php/Installed "Installed") with the [icewm](http
 
 A forked version of IceWM exists on [GitHub](https://github.com/bbidulock/icewm). It can be installed from either of the following: [icewm2](https://aur.archlinux.org/packages/icewm2/), [icewm-git](https://aur.archlinux.org/packages/icewm-git/).
 
-## Starting IceWM
+## Starting
 
-**Graphical login**
-
-Just select *IceWM* from the session menu of your favourite [display manager](/index.php/Display_manager "Display manager").
-
-**Manually**
-
-For a basic session, append the following to `~/.xinitrc`
-
-```
-exec icewm
-
-```
-
-To run icewm, icewmbg and icewmtray with your IceWM session, append the following to `~/.xinitrc`
-
-```
-exec icewm-session
-
-```
-
-See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the logind session.
+With [xinit](/index.php/Xinit "Xinit") run `icewm`, or `icewm-session` to also run icewmbg and icewmtray.
 
 ## Configuration
 

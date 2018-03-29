@@ -187,7 +187,7 @@ Proveďte [chroot](/index.php/Chroot "Chroot") do nově nainstalovaného systém
 Nastavte [časové pásmo](/index.php/Time_zone "Time zone") vytvořením symlinku `/etc/localtime` na `/usr/share/zoneinfo/Zóna/Podzóna`. Nahraďte `Zóna` a `Podzóna` podle svého gusta. Například:
 
 ```
-# ln -s /usr/share/zoneinfo/Europe/Prague /etc/localtime
+# ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
 
 ```
 
@@ -207,11 +207,24 @@ Odkomentujte vybrané locale v `/etc/locale.gen` a vygenerujte je:
 
 ```
 
-Zapište předvolenou lokalizaci ve formátu `LANG=*your_locale*` do `/etc/locale.conf`. Pokud chcete, nastavte [konzolové rozložení klávesnice](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") a [konzolový font](/index.php/Fonts#Console_fonts "Fonts") v `/etc/vconsole.conf`
+Zapište předvolenou lokalizaci ve formátu `LANG=*your_locale*` do `/etc/locale.conf`. Například:
+
+```
+LANG=cs_CZ.UTF-8 
+
+```
+
+Pokud chcete, nastavte [konzolové rozložení klávesnice](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") a [konzolový font](/index.php/Fonts#Console_fonts "Fonts") v `/etc/vconsole.conf`
 
 ### Hostname
 
-Zapište [hostname](/index.php/Hostname "Hostname") do `/etc/hostname` a `/etc/hosts`.
+Zapište [hostname](/index.php/Hostname "Hostname") do `/etc/hostname` a `/etc/hosts`. Například:
+
+```
+# echo mojezarizeni > /etc/hostname
+# echo 127.0.0.1   mojezarizeni.localdomain  mojezarizeni >> /etc/hosts
+
+```
 
 ### Nastavení síte
 
@@ -244,7 +257,7 @@ Nastavte heslo pro užívatele root:
 
 ### Boot loader
 
-Nainstalujte a nakonfigurujte [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders") (zavaděč). Na výběr jsou např. [GRUB](/index.php/GRUB "GRUB") (BIOS/UEFI), [rEFInd](/index.php/REFInd "REFInd"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (pouze UEFI) a [syslinux](/index.php/Syslinux "Syslinux") (pouze BIOS).
+Nainstalujte a nakonfigurujte [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders") (zavaděč). Na výběr jsou např. [GRUB_(Česky)](/index.php/GRUB_(%C4%8Cesky) "GRUB (Česky)") (BIOS/UEFI), [rEFInd](/index.php/REFInd "REFInd"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (pouze UEFI) a [syslinux](/index.php/Syslinux "Syslinux") (pouze BIOS).
 
 Pokud máte procesor Intel, nainstalujte i balíček [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) a [povolte aktualizace mikrokódu.](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 

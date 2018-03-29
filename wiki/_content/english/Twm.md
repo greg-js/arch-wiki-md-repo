@@ -1,4 +1,4 @@
-Twm is a window manager for X11\. It is a small program, being built against Xlib rather than using a widget library, and as such, it is very light on system resources. Though simple, it is highly configurable; fonts, colours, border widths, title bar buttons, etc. can all be set by the user.
+Twm is a window manager for [Xorg](/index.php/Xorg "Xorg"). It is a small program, being built against Xlib rather than using a widget library, and as such, it is very light on system resources. Though simple, it is highly configurable; fonts, colours, border widths, title bar buttons, etc. can all be set by the user.
 
 Twm was written by Tom LaStrange, a developer who was frustrated by the limitations of [uwm (Ultrix Window Manager)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")[[[1]](http://www.linuxplanet.com/linuxplanet/reports/3000/2/), the only window manager around when X11 was first released. Twm supplanted uwm as the default window manager supplied with X11 from the X11R4 release in 1989, [wikipedia:UWM_(computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)").
 
@@ -7,7 +7,7 @@ Twm has stood for *Tom's Window Manager*, *Tab Window Manager* and more recently
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Start twm with X](#Start_twm_with_X)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Patched version](#Patched_version)
@@ -19,20 +19,11 @@ Twm has stood for *Tom's Window Manager*, *Tab Window Manager* and more recently
 
 Twm is provided by the package [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm).
 
-## Start twm with X
+## Starting
 
-In order for twm to be run as your window manager, edit [xinitrc](/index.php/Xinitrc "Xinitrc") so the final line is:
+Run `twm` with [xinit](/index.php/Xinit "Xinit").
 
-```
-exec twm
-
-```
-
-Then start [X](/index.php/X "X") as normal.
-
-**Note:**
-
-*   After executing `startx`, there is only a black screen. Try to move your mouse and **left click** to get a twm menu to make sure that twm actually works.
+**Note:** On startup there is only a black screen. Try to move your mouse and left click to get a twm menu to make sure that twm actually works.
 
 ## Configuration
 

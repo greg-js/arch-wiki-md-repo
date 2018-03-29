@@ -9,7 +9,7 @@ Subtle is configured with [Ruby](/index.php/Ruby "Ruby") for [Xorg](/index.php/X
 ## Contents
 
 *   [1 Installing](#Installing)
-*   [2 Starting Subtle](#Starting_Subtle)
+*   [2 Starting](#Starting)
 *   [3 Basic function](#Basic_function)
 *   [4 Configuration](#Configuration)
 *   [5 Sublets](#Sublets)
@@ -21,9 +21,11 @@ Subtle is configured with [Ruby](/index.php/Ruby "Ruby") for [Xorg](/index.php/X
 
 [Install](/index.php/Install "Install") the [subtle-git](https://aur.archlinux.org/packages/subtle-git/) package.
 
-## Starting Subtle
+## Starting
 
-To start Subtle add `exec subtle` to your `.xinitrc` file and launch Xorg. Remember that Subtle does not provide any icons or menus, and the only predefined key binding that opens a terminal is `Super+Enter`, which will open [URxvt](/index.php/URxvt "URxvt"). So if you do not have URxvt, either install it or change the configuration file before starting. If you need to exit Subtle press `Super+Ctrl+q`.
+Run `subtle` with [xinit](/index.php/Xinit "Xinit").
+
+Remember that Subtle does not provide any icons or menus, and the only predefined key binding that opens a terminal is `Super+Enter`, which will open [URxvt](/index.php/URxvt "URxvt"). So if you do not have URxvt, either install it or change the configuration file before starting. If you need to exit Subtle press `Super+Ctrl+q`.
 
 ## Basic function
 

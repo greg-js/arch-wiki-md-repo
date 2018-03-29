@@ -9,7 +9,7 @@
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
 
-**翻译状态：** 本文是英文页面 [Secure Shell](/index.php/Secure_Shell "Secure Shell") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-27，点击[这里](https://wiki.archlinux.org/index.php?title=Secure+Shell&diff=0&oldid=514713)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Secure Shell](/index.php/Secure_Shell "Secure Shell") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-29，点击[这里](https://wiki.archlinux.org/index.php?title=Secure+Shell&diff=0&oldid=515156)可以查看翻译后英文页面的改动。
 
 **Secure Shell** (**SSH**) 是一个允许两台电脑之间通过安全的连接进行数据交换的网络协议。加密保证了数据的保密性和完整性。SSH采用公钥加密技术来验证远程主机，以及(必要时)允许远程主机验证用户。
 
@@ -156,7 +156,7 @@ AllowGroups   *group1 group2*
 
 ```
 
-公钥和私钥在 *sshd* [service 文件](#.E7.AE.A1.E7.90.86_sshd_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B) 安装的时候就已经生成在 `/etc/ssh` 里面了，秘钥对由四种算法生成： [dsa、rsa、ecdsa 和 ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys")。如果你需要使用一组特定的秘钥，可以如下手动配置：
+公钥和私钥在 *sshd* [service 文件](#.E7.AE.A1.E7.90.86_sshd_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B) 安装的时候就自动生成在 `/etc/ssh` 里面了，四个秘钥对分别由四种算法生成： [dsa、rsa、ecdsa 和 ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys")。要让 sshd 使用一组特定的密钥，请指定以下选项：
 
 ```
  HostKey /etc/ssh/ssh_host_rsa_key
@@ -170,11 +170,11 @@ AllowGroups   *group1 group2*
 
 ```
 
-参考 [TCP 和 UDP 端口号列表](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers") 和本地的 `/etc/services` 文件来选择一个未被常用服务占用的端口。尽管 ssh 的运行端口可以被像 nmap 这样的端口扫描器侦测到，但改变它可以减少由于自动验证的尝试造成的登录日志条目，更多信息请参考 [Port knocking](/index.php/Port_knocking "Port knocking")。
+**Tip:**
 
-**注意:** OpenSSH 可以监听多个端口，只需在配置文件中加入多行`Port *port_number*`即可。
-
-完全取消密码登录方式可以极大的增强安全性，请查看[#强制公钥验证](#.E5.BC.BA.E5.88.B6.E5.85.AC.E9.92.A5.E9.AA.8C.E8.AF.81)。查看[#安全防护](#.E5.AE.89.E5.85.A8.E9.98.B2.E6.8A.A4)了解更多增强安全性的手段。
+*   参考 [TCP 和 UDP 端口号列表](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers") 和本地的 `/etc/services` 文件来选择一个未被常用服务占用的端口。把端口从默认的 22 改成别的可以减少由于端口扫描器尝试自动登录造成的登录日志条目，更多信息请参考 [Port knocking](/index.php/Port_knocking "Port knocking")。
+*   完全取消密码登录方式可以极大的增强安全性，请查看[#强制公钥验证](#.E5.BC.BA.E5.88.B6.E5.85.AC.E9.92.A5.E9.AA.8C.E8.AF.81)。查看[#安全防护](#.E5.AE.89.E5.85.A8.E9.98.B2.E6.8A.A4)了解更多增强安全性的手段。
+*   OpenSSH 可以监听多个端口，只需在配置文件中加入多行`Port *port_number*`即可。
 
 #### 管理 sshd 守护进程
 

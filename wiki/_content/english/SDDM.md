@@ -22,20 +22,18 @@ From Wikipedia:
         *   [2.3.2 Editing themes](#Editing_themes)
         *   [2.3.3 Testing (Previewing) a Theme](#Testing_.28Previewing.29_a_Theme)
         *   [2.3.4 Mouse cursor](#Mouse_cursor)
-        *   [2.3.5 Changing your avatar](#Changing_your_avatar)
+        *   [2.3.5 Avatar](#Avatar)
     *   [2.4 Numlock](#Numlock)
     *   [2.5 Rotate display](#Rotate_display)
-    *   [2.6 Configuration GUI](#Configuration_GUI)
-    *   [2.7 DPI settings](#DPI_settings)
-    *   [2.8 Enable HiDPI](#Enable_HiDPI)
+    *   [2.6 DPI settings](#DPI_settings)
+    *   [2.7 Enable HiDPI](#Enable_HiDPI)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
     *   [3.3 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
     *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
-    *   [3.5 No user Icon](#No_user_Icon)
-    *   [3.6 Screen resolution is too low](#Screen_resolution_is_too_low)
-    *   [3.7 SDDM takes long time to load when your home directory is encrypted](#SDDM_takes_long_time_to_load_when_your_home_directory_is_encrypted)
+    *   [3.5 Screen resolution is too low](#Screen_resolution_is_too_low)
+    *   [3.6 Long load time on autofs home directory](#Long_load_time_on_autofs_home_directory)
 
 ## Installation
 
@@ -47,7 +45,9 @@ Follow [Display manager#Loading the display manager](/index.php/Display_manager#
 
 The default configuration file for SDDM can be found at `/usr/lib/sddm/sddm.conf.d/sddm.conf`. For any changes, create configuration file(s) in `/etc/sddm.conf.d/`. See [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
 
-On systems controlled by [systemd](/index.php/Systemd "Systemd"), everything should work out of the box, since SDDM defaults to using `systemd-logind` for session management. The configuration file will therefore not be created at package installation time. SDDM offers a command for generating a sample configuration file with the default settings if you really want one:
+The [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package (included in the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) provides a GUI to configure SDDM in Plasma's system settings. There is also a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) available in the [AUR](/index.php/AUR "AUR").
+
+Everything should work out of the box, since Arch Linux uses [systemd](/index.php/Systemd "Systemd") and SDDM defaults to using `systemd-logind` for session management. The configuration file will therefore not be created at package installation time. SDDM offers a command for generating a sample configuration file with the default settings if you really want one:
 
 ```
 # sddm --example-config > /etc/sddm.conf.d/sddm.conf
@@ -84,7 +84,7 @@ See [KDE Wallet#Unlock KDE Wallet automatically on login](/index.php/KDE_Wallet#
 
 ### Theme settings
 
-Theme settings can be changed in the `[Theme]` section.
+Theme settings can be changed in the `[Theme]` section. If you use Plasma's system settings, themes may show previews.
 
 Set to `breeze` for the default Plasma theme.
 
@@ -117,7 +117,7 @@ To set the mouse cursor theme, set `CursorTheme` to your preferred cursor theme.
 
 Valid [Plasma](/index.php/Plasma "Plasma") mouse cursor theme names are `breeze_cursors`, `Breeze_Snow` and `breeze-dark`.
 
-#### Changing your avatar
+#### Avatar
 
 You can simply put a png image named `username.face.icon` into the default directory `/usr/share/sddm/faces/`. Alternatively you can change the default directory to match your desires:
 
@@ -129,7 +129,13 @@ FacesDir=/var/lib/AccountsService/icons/
 
 You can also put a png image named `.face.icon` at the root of your home directory. However, you need to make sure that `sddm` user can read that file.
 
-**Note:** If avatar images are symlinks, you need to set proper file permissions to the target files.
+**Note:** If avatar images are symlinks, you need to set proper file permissions to the target files. For example, run:
+```
+$ setfacl -m u:sddm:x ~/
+$ setfacl -m u:sddm:r ~/.face.icon
+
+```
+See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
 
 ### Numlock
 
@@ -138,11 +144,6 @@ If you want to enforce Numlock to be enabled, set `Numlock=on` in the `[General]
 ### Rotate display
 
 See [Xrandr#Configuration](/index.php/Xrandr#Configuration "Xrandr").
-
-### Configuration GUI
-
-*   KDE Frameworks' System Settings contains an SDDM configuration module. Install [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package to use it.
-*   There is a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) in the AUR.
 
 ### DPI settings
 
@@ -208,20 +209,6 @@ MinimumUid=500 #My UID is 501
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
-### No user Icon
-
-SDDM reads user icon from either `~/.face.icon` or `*FacesDir*/username.face.icon`. The user icon must be saved in PNG format.
-
-You need to make sure that SDDM user have permissions to read those files.
-
-```
-$ setfacl -m u:sddm:x /home/username
-$ setfacl -m u:sddm:r /home/username/.face.icon
-
-```
-
-See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
-
 ### Screen resolution is too low
 
 Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[4]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
@@ -236,6 +223,14 @@ Section "Monitor"
 EndSection
 ```
 
-### SDDM takes long time to load when your home directory is encrypted
+### Long load time on autofs home directory
 
-See [Dm-crypt/Mounting at login#SDDM](/index.php/Dm-crypt/Mounting_at_login#SDDM "Dm-crypt/Mounting at login").
+SDDM by default tries to display avatars of users by accessing `~/.face.icon` file. If your home directory is an *autofs*, for example if you use [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), this will make it wait for 60 seconds, until autofs reports that the directory cannot be mounted.
+
+You can disable avatars by editing `/etc/sddm.conf`:
+
+ `/etc/sddm.conf` 
+```
+[Theme]
+EnableAvatars=false
+```

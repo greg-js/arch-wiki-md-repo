@@ -23,12 +23,13 @@ There are many UPnP or DLNA-compliant server and you can use Mpd too. Some of th
 *   [Emby](/index.php/Emby "Emby")
 *   [Universal Media Server](/index.php/Universal_Media_Server "Universal Media Server")
 *   [Serviio](http://serviio.org/) ([serviio](https://aur.archlinux.org/packages/serviio/))
-*   [Coherence](http://coherence.beebits.net) ([coherence](https://aur.archlinux.org/packages/coherence/))
+*   [Gerbera](https://gerbera.io/) ([gerbera](https://aur.archlinux.org/packages/gerbera/), [gerbera-git](https://aur.archlinux.org/packages/gerbera-git/))
 
 And here is a list of DLNA controller applications. These can be used to control a DLNA renderer and server:
 
 *   [Upplay](http://www.lesbonscomptes.com/upplay/) ([upplay](https://aur.archlinux.org/packages/upplay/))
 *   [Universal Media Server](/index.php/Universal_Media_Server "Universal Media Server") - the web interface allows pushing content to DLNA renderers
+*   [Coherence](http://coherence.beebits.net) ([coherence](https://aur.archlinux.org/packages/coherence/))
 
 #### Deprecated / No Longer in Development
 

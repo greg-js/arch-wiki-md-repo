@@ -199,8 +199,8 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 ```
 
-**Note:** The following step is not required when using [Archboot](/index.php/Archboot "Archboot") instead of [Archiso](/index.php/Archiso "Archiso").
 To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2017**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2017**XX**` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
+
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
 Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
@@ -239,15 +239,13 @@ Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it co
 
 *   Partition and format the USB drive using [Rufus USB partitioner](http://rufus.akeo.ie/). Select partition scheme option as **MBR for BIOS and UEFI** and File system as **FAT32**. Uncheck "Create a bootable disk using ISO image" and "Create extended label and icon files" options.
 
-*   Change the **Volume Label** of the USB flash drive `X:` to match the LABEL mentioned in the `archisolabel=` part in `<ISO>\loader\entries\archiso-x86_64.conf`. This step is required for Official ISO ([Archiso](/index.php/Archiso "Archiso")) but not required for [Archboot](/index.php/Archboot "Archboot"). This step can be also performed using Rufus, during the prior "partition and format" step.
+*   Change the **Volume Label** of the USB flash drive `X:` to match the LABEL mentioned in the `archisolabel=` part in `<ISO>\loader\entries\archiso-x86_64.conf`. This step is required for Official ISO ([Archiso](/index.php/Archiso "Archiso")). This step can be also performed using Rufus, during the prior "partition and format" step.
 
 *   Extract the ISO (similar to extracting ZIP archive) to the USB flash drive (using [7-Zip](http://7-zip.org/).
 
 *   Download official Syslinux 6.xx binaries (zip file) from [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) and extract it. The version of Syslinux should be the same version used in the ISO image.
 
 *   Run the following command (in Windows cmd prompt, as admin):
-
-**Note:** Use `X:\boot\syslinux\` for Archboot iso.
 
 ```
 > cd bios\
@@ -257,8 +255,6 @@ Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it co
 ```
 
 *   Install Syslinux to the USB by running (use `win64\syslinux64.exe` for x64 Windows):
-
-**Note:** Use `-d /boot/syslinux` for Archboot iso.
 
 ```
 > cd bios\

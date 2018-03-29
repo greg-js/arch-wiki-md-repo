@@ -19,11 +19,11 @@ Herbstluftwm can be [installed](/index.php/Installed "Installed") with the packa
 
 ## First steps
 
-Carefully read the herbstluftwm and herbstclient man pages in your favorite terminal emulator or online ([herbstluftwm](http://herbstluftwm.org/herbstluftwm.html), [herbstclient](http://herbstluftwm.org/herbstclient.html)). Take your time to read through the whole documentation, they contain a lot of information from an explanation of the binary tree in which the layout is kept to config file options and possible values.
+Read the [herbstluftwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/herbstluftwm.1) and [herbstclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/herbstclient.1) man pages, they contain a lot of information from an explanation of the binary tree in which the layout is kept to config file options and possible values.
 
 ## Configuration
 
-Copy `/etc/xdg/herbstluftwm/autostart` file to `$HOME/.config/herbstluftwm/autostart`. You can edit that file for your needs. Make sure the autostart file is executable, else you will probably end up without keybindings!
+Copy `/etc/xdg/herbstluftwm/autostart` file to `~/.config/herbstluftwm/autostart`. You can edit that file for your needs. Make sure the autostart file is executable, else you will probably end up without keybindings!
 
 The configuration of herbstluftwm is updated on-the-fly by issuing `herbstclient reload` (See Commands section), or having a keybinding for the reload command. Autostart is called on each reload, therefore within autostart you typically unmap all existing configuration first.
 

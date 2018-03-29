@@ -61,7 +61,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [4.4.1.2 Disabling Akonadi](#Disabling_Akonadi)
     *   [4.5 KDE Telepathy](#KDE_Telepathy)
         *   [4.5.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
-    *   [4.6 Integrate Android](#Integrate_Android)
+    *   [4.6 KDE Connect](#KDE_Connect)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Using an alternative window manager](#Using_an_alternative_window_manager)
         *   [5.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
@@ -522,9 +522,9 @@ The configuration through the GUI may be tricky: if the phone number is not acce
 
 **Note:** The configuration file should be edited manually when KDE Telepathy is not running, e.g. when there is no KDE desktop session active, otherwise manual changes may be overwritten by the software.
 
-### Integrate Android
+### KDE Connect
 
-[KDE Connect](https://community.kde.org/KDEConnect) provides several features for you:
+[KDE Connect](https://community.kde.org/KDEConnect) provides several features to connect your Android phone with your Linux desktop:
 
 *   Share files and URLs to/from KDE from/to any app, without wires.
 *   Touchpad emulation: Use your phone screen as your computer's touchpad.
@@ -554,8 +554,9 @@ And then make it executable :
 
 The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a session for using KDE with [Openbox](/index.php/Openbox "Openbox"). To make use of this session, select *KDE/Openbox* from the [display manager](/index.php/Display_manager "Display manager") menu.
 
-For those starting the session manually, add the following line to your `.xinitrc` file:
+For those starting the session manually, add the following line to your [xinit](/index.php/Xinit "Xinit") configuration:
 
+ `~/.xinitrc` 
 ```
 exec openbox-kde-session
 

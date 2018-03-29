@@ -16,7 +16,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
     *   [1.1 0.9 series](#0.9_series)
     *   [1.2 0.8 series](#0.8_series)
     *   [1.3 Extras](#Extras)
-*   [2 Starting Compiz](#Starting_Compiz)
+*   [2 Starting](#Starting)
     *   [2.1 Enabling important plugins](#Enabling_important_plugins)
         *   [2.1.1 Window decoration](#Window_decoration)
     *   [2.2 Compiz startup](#Compiz_startup)
@@ -125,7 +125,7 @@ Optional:
 
 	[https://github.com/compiz-reloaded/simple-ccsm](https://github.com/compiz-reloaded/simple-ccsm) || [simple-ccsm](https://aur.archlinux.org/packages/simple-ccsm/)
 
-## Starting Compiz
+## Starting
 
 ### Enabling important plugins
 

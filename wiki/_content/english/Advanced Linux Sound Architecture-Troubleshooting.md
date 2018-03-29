@@ -343,7 +343,7 @@ options snd_hda_intel power_save=0
 
 ```
 
-or:
+The power_save_controller option if set to 'Y' will switch the audio card controller off to conserve power, but it can cause issues when the controller resumes. Setting it to N may reduce the severity of other issues as well.
 
 ```
 options snd_hda_intel power_save=0 power_save_controller=N

@@ -288,20 +288,9 @@ DISTCC_ARGS="--allow 192.168.0.0/24 --log-level error --log-file /tmp/distccd.lo
 
 ### Limit HDD/SSD usage by relocating $HOME/.distcc
 
-By default, distcc creates `$HOME/.distcc` which stores transient relevant info as it serves up work for nodes to compile. Create a directory named *.distcc* in RAM such as /tmp and soft link to it in $HOME. This will avoid needless HDD read/writes and is particularly important for SSDs.
+By default, distcc creates `$HOME/.distcc` which stores transient relevant info as it serves up work for nodes to compile. This will avoid needless HDD read/writes and is particularly important for SSDs.
 
 ```
-$ mv $HOME/.distcc /tmp
-$ ln -s /tmp/.distcc $HOME/.distcc
-
-```
-
-Use systemd to re-create this directory on a reboot (the soft link will remain until it is manually removed like any other file):
-
-Create the following tmpfile.
-
- `/etc/tmpfiles.d/tmpfs-create.conf` 
-```
-d /tmp/.distcc 0755 <username> users -
+$ export DISTCC_DIR=/tmp/distcc
 
 ```

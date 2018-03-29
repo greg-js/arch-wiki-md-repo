@@ -4,7 +4,7 @@ Related articles
 
 From the project [README](https://github.com/flatpak/flatpak/blob/master/README.md): "*[Flatpak](http://flatpak.org) is a system for building, distributing and running sandboxed desktop applications on Linux.*"
 
-From [`man flatpak`](https://manned.org/flatpak.1):
+From [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
 
 	*flatpak is a tool for managing applications and the runtimes they use. In the flatpak model, applications can be built and distributed independently from the host system they are used on, and they are isolated from the host system ('sandboxed') to some degree, at runtime.*
 

@@ -3,42 +3,37 @@ Related articles
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
 
-**bspwm** is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
+[bspwm](https://github.com/baskerville/bspwm) is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [Extended Window Manager Hints](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Note for multi-monitor setups](#Note_for_multi-monitor_setups)
-    *   [2.2 Rules](#Rules)
-    *   [2.3 Panels](#Panels)
-        *   [2.3.1 Using lemonbar](#Using_lemonbar)
-        *   [2.3.2 Using yabar](#Using_yabar)
-    *   [2.4 Scratchpad](#Scratchpad)
-    *   [2.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
-    *   [2.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Help! I get a blank screen and my keybindings don't work!](#Help.21_I_get_a_blank_screen_and_my_keybindings_don.27t_work.21)
-    *   [3.2 Window box larger than the actual application!](#Window_box_larger_than_the_actual_application.21)
-    *   [3.3 Problems with Java applications](#Problems_with_Java_applications)
-    *   [3.4 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
-    *   [3.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_.22Could_not_grab_key_43_with_modfield_68.22_on_start)
-    *   [3.6 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
-*   [4 See also](#See_also)
+*   [2 Starting](#Starting)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Note for multi-monitor setups](#Note_for_multi-monitor_setups)
+    *   [3.2 Rules](#Rules)
+    *   [3.3 Panels](#Panels)
+        *   [3.3.1 Using lemonbar](#Using_lemonbar)
+        *   [3.3.2 Using yabar](#Using_yabar)
+    *   [3.4 Scratchpad](#Scratchpad)
+    *   [3.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
+    *   [3.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Help! I get a blank screen and my keybindings don't work!](#Help.21_I_get_a_blank_screen_and_my_keybindings_don.27t_work.21)
+    *   [4.2 Window box larger than the actual application!](#Window_box_larger_than_the_actual_application.21)
+    *   [4.3 Problems with Java applications](#Problems_with_Java_applications)
+    *   [4.4 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
+    *   [4.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_.22Could_not_grab_key_43_with_modfield_68.22_on_start)
+    *   [4.6 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
+*   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [bspwm](https://www.archlinux.org/packages/?name=bspwm) and [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), or the development versions: [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) and [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/). Sxhkd is a simple X hotkey daemon used to communicate with bspwm through `bspc` as well as launch your applications of choice.
+[Install](/index.php/Install "Install") [bspwm](https://www.archlinux.org/packages/?name=bspwm), or [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) for the development version. Bspwm does not handle any keyboard input and instead provides the `bspc` program as its interface. For keyboard shortcuts you will have to setup a hotkey daemon like [sxhkd](https://www.archlinux.org/packages/?name=sxhkd) ([sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/) for the development version).
 
-To start bspwm on login, add the following to `~/.xinitrc` or `~/.xprofile` (depending on how you launch X/your display manager):
+## Starting
 
-```
-sxhkd &
-exec bspwm
-
-```
-
-The first line should be omitted if you have a command for running sxhkd in your bspwmrc config file (it is this way in the example config).
+Run `bspwm` using [xinit](/index.php/Xinit "Xinit"). Note that sxhkd needs to be started either in your `~/.xinitrc` or your bspwmrc config.
 
 ## Configuration
 

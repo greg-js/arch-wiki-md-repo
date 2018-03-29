@@ -149,7 +149,9 @@ It is possible to get video, audio, Ethernet and USB devices working by updating
 
 On bios version 1.4.0 the USB and Ethernet peripherals will not work unless Thunderbolt security and Thunderbolt Boot support options are disabled.
 
-It should also be noted that the TB16 dock will crash when hot plugged on all BIOS versions after 1.2.18 (Still the case as of version 1.4.0).
+Using [bolt](https://aur.archlinux.org/packages/bolt/) allows to use all features of the dock with Thunderbolt security activated.
+
+It should also be noted that the TB16 dock will crash when hot plugged on all BIOS versions after 1.2.18 (Still the case as of version 1.4.0, but no longer as of version 1.8.1).
 
 ## USB-C / Thunderbolt 3 Compatibility Chart
 

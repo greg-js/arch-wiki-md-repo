@@ -1,21 +1,19 @@
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 [Blackbox](http://blackboxwm.sourceforge.net/) is a lightweight [stacking window manager](/index.php/Window_managers#Stacking_window_managers "Window managers"). It was last updated November 3, 2005 with no plans for future releases, however its design has inspired many forks and spiritual successors.
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Starting](#Starting)
+*   [3 Utilities](#Utilities)
+*   [4 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") [blackbox](https://www.archlinux.org/packages/?name=blackbox).
 
-To start Blackbox with [Xinitrc](/index.php/Xinitrc "Xinitrc"), use the following line:
+## Starting
 
-```
-exec blackbox
-
-```
+Run `blackbox` with [xinit](/index.php/Xinit "Xinit").
 
 ## Utilities
 

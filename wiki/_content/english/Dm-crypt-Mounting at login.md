@@ -11,14 +11,6 @@ This tutorial assumes you have already created your encrypted partition, as desc
 *   You need to use the same password for your user account and for LUKS.
 *   In all the examples, replace `*YOURNAME*` with your username, `*1000*` with your user ID and `*PARTITION*` with the name of your encrypted partition's device.
 
-## Contents
-
-*   [1 Mounting at login](#Mounting_at_login)
-*   [2 Unmouting at logout](#Unmouting_at_logout)
-    *   [2.1 Locking](#Locking)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 SDDM](#SDDM)
-
 ## Mounting at login
 
 *pam_exec* can be used to unlock the device at login. Edit `/etc/pam.d/system-login` and add the line below emphasized in bold after `auth include system-auth`:
@@ -95,17 +87,3 @@ RequiredBy=dev-mapper-home\x2d*YOURNAME*.device
 ```
 
 **Note:** `dev-*PARTITION*` is the result of `systemd-escape -p /dev/*PARTITION*`
-
-## Tips and tricks
-
-### SDDM
-
-[SDDM](/index.php/SDDM "SDDM") by default tries to display avatars of users by accessing `~/.face.icon` file. As your home directory is an *autofs*, this will make it wait for 60 seconds, until autofs reports that the directory cannot be mounted.
-
-You can disable avatars by editing `/etc/sddm.conf`:
-
- `/etc/sddm.conf` 
-```
-[Theme]
-EnableAvatars=false
-```

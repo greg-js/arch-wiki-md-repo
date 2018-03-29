@@ -3,9 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Start](#Start)
-    *   [2.1 Display manager](#Display_manager)
-    *   [2.2 xinitrc](#xinitrc)
+*   [2 Starting](#Starting)
 *   [3 Configuring PekWM](#Configuring_PekWM)
     *   [3.1 Menus](#Menus)
         *   [3.1.1 MenuMaker](#MenuMaker)
@@ -28,20 +26,9 @@
 
 [Install](/index.php/Install "Install") [pekwm](https://www.archlinux.org/packages/?name=pekwm).
 
-## Start
+## Starting
 
-### Display manager
-
-[Install](/index.php/Install "Install") and enable a [Display manager](/index.php/Display_manager "Display manager"). PekWM will be added to the session types. Select PekWM from the session menu before logging in.
-
-### xinitrc
-
-Add the following to [xinitrc](/index.php/Xinitrc "Xinitrc"):
-
-```
-exec pekwm
-
-```
+Run `pekwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuring PekWM
 

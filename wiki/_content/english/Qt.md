@@ -175,7 +175,7 @@ Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or sty
 
 Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a DE independent Qt5 QPA and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the environment variable `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications. Alternatively, use `--platformtheme qt5ct` as argument to the Qt5 application.
 
-To automatically set `QT_QPA_PLATFORMTHEME` for user session, add the following line to `~/.profile`.
+To automatically set `QT_QPA_PLATFORMTHEME` for user session, add the following line to `~/.xprofile`.
 
 ```
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"

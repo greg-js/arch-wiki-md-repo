@@ -20,7 +20,9 @@ This page explains how to setup Arch to use a US Department of Defense [Common A
 
 Install [ccid](https://www.archlinux.org/packages/?name=ccid) and [opensc](https://www.archlinux.org/packages/?name=opensc) from [official repositories](/index.php/Official_repositories "Official repositories").
 
-There are two places in `/etc/opensc.conf` that comment out `enable_pinpad = false`. If your card reader does not have a pin pad, uncomment these lines.
+If your card reader does not have a pin pad, uncomment `enable_pinpad = false` in `/etc/opensc.conf`.
+
+Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle to identify the proper driver for CAC, instead it may choose PIV or something else. You can force the CAC driver by editing `/etc/opensc.conf` for `card_drivers = cac` and `force_card_driver = cac`
 
 ## Enable pcscd
 

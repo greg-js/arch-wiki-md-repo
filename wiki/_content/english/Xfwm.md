@@ -10,34 +10,29 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Starting Xfwm](#Starting_Xfwm)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Composite manager](#Composite_manager)
-    *   [2.2 Window roll-up](#Window_roll-up)
-    *   [2.3 Window tiling](#Window_tiling)
-    *   [2.4 Extra settings provided by the xfce settings manager](#Extra_settings_provided_by_the_xfce_settings_manager)
-    *   [2.5 Additional Themes](#Additional_Themes)
-*   [3 Tips & Tricks](#Tips_.26_Tricks)
-    *   [3.1 Hide the titlebar when window is maximized](#Hide_the_titlebar_when_window_is_maximized)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 No icons shown in browser for downloaded items](#No_icons_shown_in_browser_for_downloaded_items)
-    *   [4.2 Number of workspaces changes unexpectedly](#Number_of_workspaces_changes_unexpectedly)
-    *   [4.3 Video tearing](#Video_tearing)
-    *   [4.4 Horizontal line above dock windows](#Horizontal_line_above_dock_windows)
-*   [5 See also](#See_also)
+*   [2 Starting](#Starting)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Composite manager](#Composite_manager)
+    *   [3.2 Window roll-up](#Window_roll-up)
+    *   [3.3 Window tiling](#Window_tiling)
+    *   [3.4 Extra settings provided by the xfce settings manager](#Extra_settings_provided_by_the_xfce_settings_manager)
+    *   [3.5 Additional Themes](#Additional_Themes)
+*   [4 Tips & Tricks](#Tips_.26_Tricks)
+    *   [4.1 Hide the titlebar when window is maximized](#Hide_the_titlebar_when_window_is_maximized)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 No icons shown in browser for downloaded items](#No_icons_shown_in_browser_for_downloaded_items)
+    *   [5.2 Number of workspaces changes unexpectedly](#Number_of_workspaces_changes_unexpectedly)
+    *   [5.3 Video tearing](#Video_tearing)
+    *   [5.4 Horizontal line above dock windows](#Horizontal_line_above_dock_windows)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [xfwm4](https://www.archlinux.org/packages/?name=xfwm4) package.
 
-### Starting Xfwm
+## Starting
 
-To run xfwm as stand-alone, edit [Xinitrc](/index.php/Xinitrc "Xinitrc") and add the following line:
-
-```
-exec xfwm4
-
-```
+Run `xfwm4` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 

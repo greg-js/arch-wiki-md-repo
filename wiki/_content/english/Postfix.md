@@ -452,11 +452,9 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-Finally, you'll need to modify your Spamassassin systemd service file so that it knows to restart itself to read the new rules. Copy the bundled service file to a custom service file:
+Finally, you'll need to modify your Spamassassin systemd service file so that it knows to restart itself to read the new rules.
 
- `# cp /usr/lib/systemd/system/spamassassin.service /etc/systemd/system` 
-
-And edit the newly created `/etc/systemd/system/spamassassin.service` to include:
+Create the drop-in configuration directory `/etc/systemd/system/spamassassin.service.d` and create the file `/etc/systemd/system/spamassassin.service.d/update.conf` with the following contents:
 
 ```
 [Unit]

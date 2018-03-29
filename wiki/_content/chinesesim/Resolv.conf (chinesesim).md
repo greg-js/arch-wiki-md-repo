@@ -10,8 +10,17 @@ DNS 解析的配置文件是 `/etc/resolv.conf`，根据[resolv.conf(5) 手册�
 
 *   [1 DNS 解析](#DNS_.E8.A7.A3.E6.9E.90)
 *   [2 选择其它 DNS 服务器](#.E9.80.89.E6.8B.A9.E5.85.B6.E5.AE.83_DNS_.E6.9C.8D.E5.8A.A1.E5.99.A8)
-    *   [2.1 给/etc/resolv.conf添加写保护](#.E7.BB.99.2Fetc.2Fresolv.conf.E6.B7.BB.E5.8A.A0.E5.86.99.E4.BF.9D.E6.8A.A4)
-    *   [2.2 使用 timeout 选项减少主机名查找时间](#.E4.BD.BF.E7.94.A8_timeout_.E9.80.89.E9.A1.B9.E5.87.8F.E5.B0.91.E4.B8.BB.E6.9C.BA.E5.90.8D.E6.9F.A5.E6.89.BE.E6.97.B6.E9.97.B4)
+    *   [2.1 OpenNIC](#OpenNIC)
+    *   [2.2 OpenDNS](#OpenDNS)
+    *   [2.3 Google](#Google)
+    *   [2.4 Comodo](#Comodo)
+    *   [2.5 Yandex](#Yandex)
+    *   [2.6 UncensoredDNS](#UncensoredDNS)
+*   [3 保护 DNS 设置](#.E4.BF.9D.E6.8A.A4_DNS_.E8.AE.BE.E7.BD.AE)
+    *   [3.1 修改dhcpcd配置](#.E4.BF.AE.E6.94.B9dhcpcd.E9.85.8D.E7.BD.AE)
+    *   [3.2 使用resolv.conf.head](#.E4.BD.BF.E7.94.A8resolv.conf.head)
+    *   [3.3 给/etc/resolv.conf添加写保护](#.E7.BB.99.2Fetc.2Fresolv.conf.E6.B7.BB.E5.8A.A0.E5.86.99.E4.BF.9D.E6.8A.A4)
+    *   [3.4 使用 timeout 选项减少主机名查找时间](#.E4.BD.BF.E7.94.A8_timeout_.E9.80.89.E9.A1.B9.E5.87.8F.E5.B0.91.E4.B8.BB.E6.9C.BA.E5.90.8D.E6.9F.A5.E6.89.BE.E6.97.B6.E9.97.B4)
 
 ## DNS 解析
 
@@ -31,7 +40,127 @@ $ dig @ip.of.name.server www5.yahoo.com
 
 ## 选择其它 DNS 服务器
 
-要使用 DNS 服务器，请编辑 `/etc/resolv.conf.head`例子:
+要使用 DNS 服务器，请编辑 `/etc/resolv.conf`，把要使用的服务器放到文件的开头，修改是立即生效的。
+
+### OpenNIC
+
+[OpenNIC](http://www.opennicproject.org/) 提供了不受监管的域名解析服务。
+
+**Tip:** OpenNIC 在不同的国家提供了[多个域名服务器](http://wiki.opennicproject.org/Tier2)，可以在 [最新的域名服务器](http://www.opennicproject.org/nearest-servers/) 列表中选择。
+
+```
+# OpenNIC IPv4 nameservers (US)
+nameserver 107.170.95.180
+nameserver 75.127.14.107
+
+```
+
+### OpenDNS
+
+[OpenDNS](https://opendns.com) 提供了可选的域名解析服务器:
+
+```
+# OpenDNS IPv4 nameservers
+nameserver 208.67.222.222
+nameserver 208.67.220.220
+
+```
+
+```
+# OpenDNS IPv6 nameservers
+nameserver 2620:0:ccc::2
+nameserver 2620:0:ccd::2
+
+```
+
+### Google
+
+[Google 域名服务器](https://developers.google.com/speed/public-dns/):
+
+```
+# Google IPv4 nameservers
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+```
+
+```
+# Google IPv6 nameservers
+nameserver 2001:4860:4860::8888
+nameserver 2001:4860:4860::8844
+
+```
+
+### Comodo
+
+[Comodo](http://securedns.dnsbycomodo.com/) 提供了IPv4 解析，付费版还可以进行网络过滤(它会劫持查询).
+
+```
+# Comodo nameservers 
+nameserver 8.26.56.26 
+nameserver 8.20.247.20
+
+```
+
+### Yandex
+
+[Yandex.DNS](http://dns.yandex.ru/) 有三种模式：
+
+```
+# Basic Yandex.DNS - Quick and reliable DNS
+nameserver 77.88.8.8
+nameserver 77.88.8.1
+
+```
+
+```
+# Safe Yandex.DNS - 屏蔽病毒和不安全网站
+nameserver 77.88.8.88
+nameserver 77.88.8.2
+
+```
+
+```
+# Family Yandex.DNS - 屏蔽成人网站
+nameserver 77.88.8.7
+nameserver 77.88.8.3
+
+```
+
+### UncensoredDNS
+
+[UncensoredDNS](http://censurfridns.dk) 是一个免费的非监控 DNS 解析服务，如果您的防火墙屏蔽了端口 53,可以在端口 5353 进行应答。
+
+```
+# censurfridns.dk IPv4 nameservers
+nameserver 91.239.100.100    ## anycast.censurfridns.dk
+nameserver 89.233.43.71      ## ns1.censurfridns.dk
+
+```
+
+```
+# censurfridns.dk IPv6 nameservers
+nameserver 2001:67c:28a4::             ## anycast.censurfridns.dk
+nameserver 2002:d596:2a92:1:71:53::    ## ns1.censurfridns.dk
+
+```
+
+## 保护 DNS 设置
+
+[dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), [NetworkManager](/index.php/NetworkManager "NetworkManager"), 已经许多别的程序能够覆盖 `/etc/resolv.conf`里的内容. 这样的行为通常是可取的, 但是有些时候DNS设置需要手动配置(比如使用静态IP时). 有几种方法可以实现. 如果你使用NetworkManager, 参见 [this thread](https://bbs.archlinux.org/viewtopic.php?id=45394) .
+
+### 修改dhcpcd配置
+
+可以修改dhcpcd的配置文件以避免dhcpcd进程修改`/etc/resolv.conf`. 只需要在`/etc/dhcpcd.conf`最后添加:
+
+```
+nohook resolv.conf
+
+```
+
+### 使用resolv.conf.head
+
+另外, 可以创建文件`/etc/resolv.conf.head` 并在其中包含DNS信息. dhcpcd将把这个文件插入到`/etc/resolv.conf`文件头. 使用[OpenDNS](/index.php/OpenDNS "OpenDNS")的{ic|/etc/resolv.conf.head}}例子:
 
 ```
 # OpenDNS servers

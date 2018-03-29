@@ -3,12 +3,13 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 cfg_ion.lua](#cfg_ion.lua)
-    *   [2.2 cfg_bindings.lua](#cfg_bindings.lua)
-    *   [2.3 cfg_menus.lua](#cfg_menus.lua)
-    *   [2.4 cfg_ionws.lua](#cfg_ionws.lua)
-    *   [2.5 look.lua](#look.lua)
+*   [2 Starting](#Starting)
+*   [3 Configuration](#Configuration)
+    *   [3.1 cfg_ion.lua](#cfg_ion.lua)
+    *   [3.2 cfg_bindings.lua](#cfg_bindings.lua)
+    *   [3.3 cfg_menus.lua](#cfg_menus.lua)
+    *   [3.4 cfg_ionws.lua](#cfg_ionws.lua)
+    *   [3.5 look.lua](#look.lua)
 
 ## Installation
 
@@ -21,14 +22,9 @@ cp /etc/ion3/* ~/.ion3
 
 ```
 
-To start Ion3 just append the following line in `~/.xinitrc`:
+## Starting
 
-```
-exec ion3
-
-```
-
-Now you are ready to begin to configure Ion as described below.
+Run `ion3` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 

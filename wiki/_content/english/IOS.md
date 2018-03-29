@@ -37,6 +37,8 @@ Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or
 
 Traditional iPods are accessed just like a normal USB storage device containing a vfat file system (in rare cases `hfsplus`), and can be [accessed as such](/index.php/USB_storage_devices "USB storage devices"). See the [USB storage devices](/index.php/USB_storage_devices "USB storage devices") article for detailed instructions.
 
+**Tip:** If you cannot see the vfat file system, it is likely that your iPod is `hfsplus` formatted. For convenience, as Arch kernel is built with no support for that filesystem, you might want to restore your iPod using iTunes on Windows. This will erase all data on your iPod, and format it as a vfat filesystem
+
 If udisks2 is running, it will mount an attached iPod to `/run/media/*$USER*/*iPod_name*`.
 
 If the volume label of your iPod is long, or contains a mixture of spaces, and/or lower-case and capital letters, it may present an inconvenience. You may easily change the volume label for more expedient access using `dosfslabel` from the [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) package:

@@ -139,7 +139,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Common Applications (简体中文)](/index.php/Common_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Common Applications (简体中文)") | 部分翻译 | DavidChen | 翻译中 |
 | [Common Applications/Science (简体中文)](/index.php/Common_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Common Applications/Science (简体中文)") | drop maintain | 更新，翻译中 |
 | [Compiz (简体中文)](/index.php/Compiz_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compiz (简体中文)") | 翻译中 | xiii_1991 | 20140813开始 |
-| [Core utilities (简体中文)](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)") | 翻译中 | rentaro | 同步翻译至2014年7月23日08:13英文页面，完善中 |
+| [Core utilities (简体中文)](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)") | 完成 | rentaro, Arisaka | 无 |
 | [Clover (简体中文)](/index.php/Clover_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Clover (简体中文)") | 完成 | Yume Kankawa | 无 |
 | [Disk cloning (简体中文)](/index.php/Disk_cloning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disk cloning (简体中文)") | 翻译中 | _spaike97 | 无 |
 | [Dynamic Kernel Module Support (简体中文)](/index.php/Dynamic_Kernel_Module_Support_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dynamic Kernel Module Support (简体中文)") | 完成 | Mithrandir | 完善中 |
@@ -162,7 +162,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [ranger (简体中文)](/index.php/Ranger_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ranger (简体中文)") | 完成 | Jason Zhang | 完善中 |
 | [Raspberry Pi (简体中文)](/index.php/Raspberry_Pi_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Raspberry Pi (简体中文)") | 翻译中 | Mithrandir |
 | [Reporting bug guidelines (简体中文)](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)") | 完成 | 无 | 无 |
-| [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") | 完成 | Arisaka | 等待校对 |
+| [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") | 完成 | Arisaka | 无 |
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
 | [Systemd-timesyncd (简体中文)‎‎](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | 无 | 无 |
 | [Tomcat (简体中文)](/index.php/Tomcat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tomcat (简体中文)") | 完成 | Starwing117 | 持续更新中 |

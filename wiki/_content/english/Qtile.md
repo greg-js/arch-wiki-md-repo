@@ -32,7 +32,9 @@ From [Qtile web site](http://qtile.org/):
 
 ## Starting
 
-To start Qtile add `exec qtile` to your [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") and launch [Xorg](/index.php/Xorg "Xorg"). The [default configuration](http://docs.qtile.org/en/latest/manual/config/default.html#key-bindings) includes the shortcut `Super+Enter` to open a new *xterm* terminal, and `Super+Ctrl+q` to quit Qtile.
+Run `qtile` with [xinit](/index.php/Xinit "Xinit").
+
+The [default configuration](http://docs.qtile.org/en/latest/manual/config/default.html#key-bindings) includes the shortcut `Super+Enter` to open a new *xterm* terminal, and `Super+Ctrl+q` to quit Qtile.
 
 ## Configuration
 

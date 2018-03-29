@@ -3,9 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting Window Maker](#Starting_Window_Maker)
-    *   [2.1 Graphically](#Graphically)
-    *   [2.2 Manually](#Manually)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 Files](#Files)
     *   [3.2 Styles](#Styles)
@@ -28,24 +26,9 @@
 
 [Install](/index.php/Install "Install") the [windowmaker](https://aur.archlinux.org/packages/windowmaker/) package. You may also wish to install the [windowmaker-extra](https://aur.archlinux.org/packages/windowmaker-extra/) package which contains a number of extra icons and themes.
 
-## Starting Window Maker
+## Starting
 
-### Graphically
-
-Select the *windowmaker* session from the display manager's session menu.
-
-### Manually
-
-Once installed, create or edit the file [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") as follows:
-
-```
-exec wmaker
-
-```
-
-To start Window Maker:
-
- `$ startx` 
+Run `wmaker` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 

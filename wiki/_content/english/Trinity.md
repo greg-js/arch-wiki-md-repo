@@ -1,9 +1,8 @@
 Related articles
 
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [pacman tips](/index.php/Pacman_tips "Pacman tips")
+*   [KDE](/index.php/KDE "KDE")
 
-The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a fork of [KDE](/index.php/KDE "KDE") 3.5 aiming to retain the traditional desktop style.
+The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a fork of KDE 3.5 aiming to retain the traditional desktop style.
 
 TDE still depends on an old version of Qt, which they now maintain themselves, since it is deprecated. The Trinity applications and applets should also work with other desktop environments.
 

@@ -27,4 +27,4 @@ The KDevelop Parser Generator ([kdevelop-pg-qt](https://www.archlinux.org/packag
 
 ### KDevCMakeManager
 
-If you get an error saying that project management plugin could not be loaded ("Could not load project management plugin KDevCMakeManager.") make sure [cmake](https://www.archlinux.org/packages/?name=cmake) is installed.
+Make sure [cmake](https://www.archlinux.org/packages/?name=cmake) is installed if you get this error: "*Could not load project management plugin KDevCMakeManager*".

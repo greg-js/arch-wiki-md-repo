@@ -5,8 +5,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Starting 2bwm](#Starting_2bwm)
+*   [2 Starting](#Starting)
 *   [3 Using 2bwm](#Using_2bwm)
     *   [3.1 General commands](#General_commands)
     *   [3.2 Window controls](#Window_controls)
@@ -24,32 +23,9 @@
 
 [Install](/index.php/Install "Install") the [2bwm](https://aur.archlinux.org/packages/2bwm/) package. Although the installation process can be automatic, if directly building from the AUR, it is highly recommended to read and edit the `config.h` file in the source directory.
 
-## Configuration
+## Starting
 
-### Starting 2bwm
-
-2bwm generally starts from a script, either from [startx](/index.php/Startx "Startx") or from a [display manager](/index.php/Display_manager "Display manager") such as [XDM](/index.php/XDM "XDM").
-
-If it starts from the console, a .xinitrc file is needed. Here is a complete example:
-
-```
- #!/bin/sh
-
- # Set a nice background.
- xsetroot -solid grey20
-
- # Load resources.
- xrdb -load ~/.Xresources
-
- # Start window manager in the background. If it dies, X still lives.
- 2bwm &
-
- # Start a terminal in the foreground. If this dies, X dies.
- exec urxvt
-
-```
-
-2bwm used to have startup options. They have been removed because editing the config file was more convenient.
+Run `2bwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## Using 2bwm
 
@@ -121,7 +97,25 @@ You may change the keyboard mappings from config.h.
 
 ### Starting 2bwm over a terminal
 
-It is wise, if starting 2bwm like in the later .xinitrc, where we background the wm and *exec* a terminal emulator (such as [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode")), to immediately make the terminal that maintain the X session unkillable (Super+a by default). It will diminish the chance of killing this terminal and the X session at the same time. Putting a window in unkillable mode will also change the outer border colour and make it noticeable from other normal window. Beware that with some configurations, in urxvt, the outer border will not appear. A user reported the issue to be related to the following line in his *.Xresources* (or *.Xdefaults*) file:
+It is wise, if starting 2bwm like in the later .xinitrc, where we background the wm and *exec* a terminal emulator (such as [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode")), to immediately make the terminal that maintain the X session unkillable (Super+a by default).
+
+```
+#!/bin/sh
+# Set a nice background.
+xsetroot -solid grey20
+
+# Load resources.
+xrdb -load ~/.Xresources
+
+# Start window manager in the background. If it dies, X still lives.
+2bwm &
+
+# Start a terminal in the foreground. If this dies, X dies.
+exec urxvt
+
+```
+
+It will diminish the chance of killing this terminal and the X session at the same time. Putting a window in unkillable mode will also change the outer border colour and make it noticeable from other normal window. Beware that with some configurations, in urxvt, the outer border will not appear. A user reported the issue to be related to the following line in his *.Xresources* (or *.Xdefaults*) file:
 
 ```
 URxvt.depth: 32

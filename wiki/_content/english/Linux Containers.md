@@ -96,11 +96,10 @@ Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install
 
 Users wishing to run *unprivileged* containers need to complete several additional setup steps.
 
-Firstly, a kernel is required that has support for **User Namespaces**. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user. You have multiple options to use a kernel with `CONFIG_USER_NS` and thereby create *unprivileged* containers:
+Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user. You have multiple options to create *unprivileged* containers:
 
-*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) or [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) and start your unprivileged containers only as *root*
-*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) or [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) and enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5)
-*   Compile and install your own custom kernel with `CONFIG_USER_NS` enabled. See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") for more information on compiling a custom kernel.
+*   Start your unprivileged containers only as *root*.
+*   Enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5).
 
 Secondly, modify `/etc/lxc/default.conf` to contain the following lines:
 
@@ -125,7 +124,7 @@ root:100000:65536
 
 ### Host network configuration
 
-LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)). A bridge device on the host is required for most types of virtual networking.
+LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lxc.container.conf.5)). A bridge device on the host is required for most types of virtual networking.
 
 LXC comes with its own NAT Bridge (lxcbr0).
 
@@ -181,28 +180,11 @@ lxc.net.0.flags = up
 lxc.net.0.hwaddr = 00:16:3e:xx:xx:xx
 ```
 
-You also need to install [Dnsmasq](/index.php/Dnsmasq "Dnsmasq") which is a dependency for lxcbr0.
+You also need to [install](/index.php/Install "Install") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) which is a dependency for lxcbr0.
 
-```
-pacman -S dnsmasq
+[Enable](/index.php/Enable "Enable") and/or [start](/index.php/Start "Start") `lxc-net.service` to use the bridge:
 
-```
-
-Then we can start the bridge:
-
-```
-systemctl start lxc-net
-
-```
-
-If you want the bridge to start at boot-time
-
-```
-systemctl enable lxc-net
-
-```
-
-For further information including Host bridges users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article.
+See [Network bridge](/index.php/Network_bridge "Network bridge") for more information.
 
 ### Container creation
 
@@ -251,7 +233,6 @@ System resources to be virtualized/isolated when a process is using the containe
 lxc.rootfs.path = /var/lib/lxc/playtime/rootfs
 lxc.uts.name = playtime
 lxc.arch = x86_64
-lxc.include = /usr/share/lxc/config/archlinux.common.conf
 
 ## network
 lxc.net.0.type = veth

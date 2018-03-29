@@ -43,14 +43,15 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [5.1 libinput Driver Configuration](#libinput_Driver_Configuration)
     *   [5.2 Synaptics Driver Configuration](#Synaptics_Driver_Configuration)
         *   [5.2.1 Configure middle button](#Configure_middle_button)
-*   [6 Firmware updates](#Firmware_updates)
-*   [7 Fingerprint reader](#Fingerprint_reader)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 xorg freezes at startup](#xorg_freezes_at_startup)
-    *   [8.2 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
-    *   [8.3 lspci causes CPU lockups](#lspci_causes_CPU_lockups)
-*   [9 Notes](#Notes)
-*   [10 External links](#External_links)
+*   [6 Thunderbolt docks](#Thunderbolt_docks)
+*   [7 Firmware updates](#Firmware_updates)
+*   [8 Fingerprint reader](#Fingerprint_reader)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 xorg freezes at startup](#xorg_freezes_at_startup)
+    *   [9.2 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
+    *   [9.3 lspci causes CPU lockups](#lspci_causes_CPU_lockups)
+*   [10 Notes](#Notes)
+*   [11 External links](#External_links)
 
 ## UEFI
 
@@ -216,6 +217,10 @@ Section "InputClass"
 EndSection
 
 ```
+
+## Thunderbolt docks
+
+TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://aur.archlinux.org/packages/bolt/) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.
 
 ## Firmware updates
 

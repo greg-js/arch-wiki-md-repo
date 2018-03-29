@@ -3,9 +3,8 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Starting evilwm](#Starting_evilwm)
-    *   [2.2 Startup options](#Startup_options)
+*   [2 Starting](#Starting)
+    *   [2.1 Startup options](#Startup_options)
 *   [3 Using evilwm](#Using_evilwm)
     *   [3.1 Keyboard controls](#Keyboard_controls)
     *   [3.2 Mouse controls](#Mouse_controls)
@@ -24,26 +23,11 @@
 
 [Install](/index.php/Install "Install") the [evilwm](https://aur.archlinux.org/packages/evilwm/) package.
 
-## Configuration
+## Starting
 
-### Starting evilwm
+Run `evilwm` with [xinit](/index.php/Xinit "Xinit").
 
-To start evilwm (without any options) via *startx*, ensure your `~/.xinitrc` file contains:
-
-```
-exec evilwm
-
-```
-
-evilwm doesn't control the desktop background or mouse cursor, so you may want to also specify these in your `~/.xinitrc` file. For example, to provide a solid color background and use the left pointer of your current mouse theme:
-
-```
-xsetroot -solid \#3f3f3f
-xsetroot -cursor_name left_ptr
-
-```
-
-For other options, please consult *man xsetroot*.
+evilwm does not control the desktop background or mouse cursor, so you may want to use [xsetroot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xsetroot.1).
 
 ### Startup options
 

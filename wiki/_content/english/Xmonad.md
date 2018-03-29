@@ -11,7 +11,7 @@ Layouts are applied dynamically, and different layouts may be used on each works
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting xmonad](#Starting_xmonad)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 A base desktop configuration](#A_base_desktop_configuration)
 *   [4 Exiting xmonad](#Exiting_xmonad)
@@ -56,11 +56,11 @@ Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-gi
 
 **Note:** Remember to run `xmonad --recompile` after you upgrade xmonad, otherwise it might have problems finding shared libraries the next time you start it.
 
-## Starting xmonad
+## Starting
 
-Select *Xmonad* from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
+Run `xmonad` with [xinit](/index.php/Xinit "Xinit").
 
-Alternatively, append `exec xmonad` to the `~/.xinitrc` file and then start the session by executing *startx*.
+Alternatively, select *Xmonad* from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
 Make sure you have the [Xterm](/index.php/Xterm "Xterm") package installed or have changed the terminal emulator in the configuration. Otherwise you will not be able to do anything in Xmonad.
 

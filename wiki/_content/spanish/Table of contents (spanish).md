@@ -35,7 +35,8 @@
 | <small>3.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(8)</small> |
 | <small>3.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>3.2.</small> [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)") <small>(4)</small> |
-| <small>3.3.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2)</small> |
+| <small>3.3.</small> [Version Control System](/index.php/Category:Version_Control_System_(Espa%C3%B1ol) "Category:Version Control System (Español)") <small>(1)</small> |
+| <small>3.4.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)") <small>(2)</small> |
 | <small>4.1.</small> [Bluetooth](/index.php/Category:Bluetooth_(Espa%C3%B1ol) "Category:Bluetooth (Español)") <small>(1)</small> |
 | <small>4.2.</small> [CPU](/index.php/Category:CPU_(Espa%C3%B1ol) "Category:CPU (Español)") <small>(3)</small> |

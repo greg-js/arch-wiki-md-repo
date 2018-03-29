@@ -152,7 +152,7 @@ Banner /etc/issue
 
 ```
 
-Public and private host keys are generated at installation in `/etc/ssh` by the *sshd* [service files](#Daemon_management). The key pairs provided are generated with four algorithms: [dsa, rsa, ecdsa and ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys"). If you want sshd to use a particular key, you can configure it manually:
+Public and private host keys are automatically generated at installation in `/etc/ssh` by the *sshd* [service files](#Daemon_management). Four key pairs are provided based on the algorithms [dsa, rsa, ecdsa and ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys"). To have sshd use a particular key, specify the following option:
 
 ```
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -166,11 +166,11 @@ Port 39901
 
 ```
 
-To help select an alternative port that is not already assigned to a common service, review the [list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers"). You can also find port information locally in `/etc/services`. A port change from default port 22 will reduce the number of log entries caused by automated authentication attempts - not eliminate them. See [Port knocking](/index.php/Port_knocking "Port knocking") for related information.
+**Tip:**
 
-**Note:** OpenSSH can listen to multiple ports simply by having multiple `Port *port_number*` lines in the config file.
-
-It is also recommended to disable password logins entirely. This will greatly increase security, see [#Force public key authentication](#Force_public_key_authentication) for more information. See [#Protection](#Protection) for more recommend security methods.
+*   To help select an alternative port that is not already assigned to a common service, review the [list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers"). You can also find port information locally in `/etc/services`. A port change from default port 22 will reduce the number of log entries caused by automated authentication attempts but will not eliminate them. See [Port knocking](/index.php/Port_knocking "Port knocking") for related information.
+*   It is recommended to disable password logins entirely. This will greatly increase security, see [#Force public key authentication](#Force_public_key_authentication) for more information. See [#Protection](#Protection) for more recommend security methods.
+*   OpenSSH can listen to multiple ports simply by having multiple `Port *port_number*` lines in the config file.
 
 #### Daemon management
 
