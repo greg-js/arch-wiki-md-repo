@@ -1,3 +1,10 @@
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+*   [EFISTUB](/index.php/EFISTUB "EFISTUB")
+
 [Clover EFI](https://sourceforge.net/projects/cloverefiboot/) is a bootloader developed to boot OS X (Hackintoshes), Windows and Linux in legacy or UEFI mode.
 
 The main advantages of Clover are:
@@ -34,8 +41,8 @@ For details please reference [their wiki](http://clover-wiki.zetam.org/Home), fo
       <key>Entries</key>
       <array>
          <dict>
-            <key>AddArguments</key>
-            <string>root=UUID=d4f1e3b7-b466-4c1b-991c-90fa99cafbc6 rw add_efi_memmap initrd=/initramfs-linux.img</string>
+            <key>Arguments</key>
+            <string>initrd=/initramfs-linux.img root=UUID=d4f1e3b7-b466-4c1b-991c-90fa99cafbc6 rw add_efi_memmap</string>
             <key>Disabled</key>
             <false/>
             <key>FullTitle</key>

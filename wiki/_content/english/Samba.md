@@ -61,6 +61,7 @@ Related articles
         *   [4.15.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
         *   [4.15.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
         *   [4.15.3 Verify folder access by guest](#Verify_folder_access_by_guest)
+    *   [4.16 Mount error: Host is down](#Mount_error:_Host_is_down)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -1040,6 +1041,10 @@ Run the following commands as root to set correct permissions for folders:
 ```
 
 Access shared folder again as guest to be sure guest read access error has been solved.
+
+### Mount error: Host is down
+
+This error might be seen when mounting shares of Synology NAS servers. Use the mount option `vers=1.0` to solve it.
 
 ## See also
 

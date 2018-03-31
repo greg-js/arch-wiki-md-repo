@@ -36,7 +36,7 @@ Extra utilities related to GNOME keyring include:
 
 *   **gnome-keyring-query** — Provides a simple command-line tool for querying passwords from the password store of the GNOME Keyring. (uses the deprecated [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
 
-	[http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases](http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases) || [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)
+	|| [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)
 
 *   **gkeyring** — Query passwords from the command line. (uses the deprecated [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
 

@@ -15,6 +15,7 @@ Related articles
     *   [2.1 Suspend-to-RAM (S3) not supported by default](#Suspend-to-RAM_.28S3.29_not_supported_by_default)
     *   [2.2 S0i3 support](#S0i3_support)
     *   [2.3 BIOS configurations](#BIOS_configurations)
+*   [3 Power Management/Throttling issues](#Power_Management.2FThrottling_issues)
 
 ## Model description
 
@@ -56,3 +57,9 @@ echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
 ### BIOS configurations
 
 *   Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled". When disabled, on Linux, power usage appears to be significantly higher because of a substantial number of CPU wakeups during s2idle.
+
+## Power Management/Throttling issues
+
+Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
+
+There is a post in the official Lenovo forum ([https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489)) to inform Lenovo about this issue.

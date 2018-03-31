@@ -25,7 +25,7 @@ The audit framework works by listening to the event reported by the kernel and l
 
 ## Installation
 
-Install a custom kernel with `CONFIG_AUDIT` enabled.
+Install a custom kernel with `CONFIG_AUDIT` enabled. You can also install [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package and add `audit=1` to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") instead.
 
 Install [audit](https://www.archlinux.org/packages/?name=audit) and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `auditd.service`.
 
@@ -96,9 +96,9 @@ auditctl -a entry,always -S chmod
 
 ```
 
-For a list of all syscalls: [syscalls(2)](http://jlk.fjfi.cvut.cz/arch/manpages/man/syscalls.2)
+For a list of all syscalls: [syscalls(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/syscalls.2)
 
-A lot of rules and posibilities are available, see [auditctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8) and [audit.rules(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/audit.rules.7).
+A lot of rules and posibilities are available, see [auditctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8) and [audit.rules(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/audit.rules.7).
 
 ## Search the logs
 
@@ -144,13 +144,13 @@ The easiest way to use `aureport` is :
 
 ```
 
-aureport can be used to generate custom reports, see [aureport(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aureport.8).
+aureport can be used to generate custom reports, see [aureport(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aureport.8).
 
 ## Which files or syscalls are worth-auditing ?
 
 Keep in mind that each audit rule added will generate logs, so you must be ready to treat this amount of information. Basically, each security-related event/file must be monitored, like ids, ips, anti-rootkits etc. On the other side, it's totally useless to track every write syscall, the smallest compilation will fill your logs with this event.
 
-More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, see [auditctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8).
+More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, see [auditctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8).
 
 ## Gather logs from different hosts
 

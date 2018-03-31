@@ -6,7 +6,8 @@
 *   [2 Activation and Autostart](#Activation_and_Autostart)
 *   [3 Configuration](#Configuration)
     *   [3.1 Using incrontab](#Using_incrontab)
-*   [4 Incrontab format](#Incrontab_format)
+    *   [3.2 Incrontab format](#Incrontab_format)
+        *   [3.2.1 Mask types](#Mask_types)
 
 ## Installation
 
@@ -57,7 +58,7 @@ $ incrontab -u *user*
 
 ```
 
-## Incrontab format
+### Incrontab format
 
 Each row in an incrotab file is a table that the dameon runs when an event happens to a certain directory or file.
 
@@ -71,3 +72,56 @@ The basic format for an incrontab is:
 *   *path* is the directory or file that *incrond* will monitor for changes.
 *   *mask* is the type of filesystem event that incrond will monitor for. This paramter can be seperated by commas.
 *   *command* is the commmand to be run after the specified filesystem event(s) occur.
+
+#### Mask types
+
+Incrontab uses mask types to specify which file system event to monitor for.
+
+To trigger an command if a file is accessed or read:
+
+```
+**IN_ACCESS**
+
+```
+
+To trigger an command if file attributes change (e.g. *timestamps*, *permissons*):
+
+```
+**IN_ATTRIB**
+
+```
+
+To trigger a command if a file opened for writing is closed:
+
+```
+**IN_CLOSE_WRITE**
+
+```
+
+To trigger a command if a file or directory open for writing is closed:
+
+```
+**IN_CLOSE_NOWRITE**
+
+```
+
+To trigger a command if a file is created in a watched directory:
+
+```
+**IN_CREATE**
+
+```
+
+To trigger a command if a file or directory is deleted from the watched directory:
+
+```
+**IN_DELETE**
+
+```
+
+To tirgger a command if a file was modified:
+
+```
+**IN_MODIFY**
+
+```

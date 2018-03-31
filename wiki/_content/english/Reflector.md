@@ -10,10 +10,11 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Examples](#Examples)
-    *   [2.2 Pacman Hook](#Pacman_Hook)
-    *   [2.3 Systemd Service](#Systemd_Service)
-    *   [2.4 Systemd Timer](#Systemd_Timer)
-        *   [2.4.1 AUR package](#AUR_package)
+*   [3 Automation](#Automation)
+    *   [3.1 Pacman hook](#Pacman_hook)
+    *   [3.2 Systemd service](#Systemd_service)
+    *   [3.3 Systemd timer](#Systemd_timer)
+    *   [3.4 Reflector-timer package](#Reflector-timer_package)
 
 ## Installation
 
@@ -56,9 +57,11 @@ Select the HTTPS mirrors synchronized within the last 12 hours and located in th
 
 ```
 
-### Pacman Hook
+## Automation
 
-You can also create a pacman hook that will run *reflector* and remove the `.pacnew` file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
+### Pacman hook
+
+You can also create a [pacman hook](/index.php/Pacman#Hooks "Pacman") that will run *reflector* and remove the *.pacnew* file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
 
  `/etc/pacman.d/hooks/mirrorupgrade.hook` 
 ```
@@ -79,28 +82,15 @@ Make sure to substitute in your desired arguments for *reflector*.
 
 See [User:Allan/Pacman Hooks](/index.php/User:Allan/Pacman_Hooks "User:Allan/Pacman Hooks") and [DeveloperWiki:Pacman Hooks](/index.php/DeveloperWiki:Pacman_Hooks "DeveloperWiki:Pacman Hooks") for more info on pacman hooks.
 
-### Systemd Service
+### Systemd service
+
+This is an example of service unit that waits for the network to be up and online before running reflector:
 
  `/etc/systemd/system/reflector.service` 
 ```
 [Unit]
 Description=Pacman mirrorlist update
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/reflector --protocol https --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
-
-```
-
-Then [starting](/index.php/Start "Start") `reflector.service` will update your mirrorlist.
-
-To update your mirrorlist every time your computer boots you can enable the following service definition.
-
- `/etc/systemd/system/reflector.service` 
-```
-[Unit]
-Description=Pacman mirrorlist update
-Requires=network-online.target
+Wants=network-online.target
 After=network-online.target
 
 [Service]
@@ -109,12 +99,13 @@ ExecStart=/usr/bin/reflector --protocol https --latest 30 --number 20 --sort rat
 
 [Install]
 RequiredBy=multi-user.target
-
 ```
 
-Make sure you [activate the appropriate services](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) so that `network.target` really reflects your network status.
+[starting](/index.php/Start "Start") `reflector.service` will update the mirrorlist. To update the mirrorlist every time the computer boots, [enable](/index.php/Enable "Enable") the service.
 
-### Systemd Timer
+**Note:** In the above example, ensure the right [network-wait service](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) is enabled depending on your network configuration so that `network-online.target` reflects well your network status.
+
+### Systemd timer
 
 If you want to run `reflector.service` on a weekly basis:
 
@@ -124,22 +115,21 @@ If you want to run `reflector.service` on a weekly basis:
 Description=Run reflector weekly
 
 [Timer]
-OnCalendar=weekly
-RandomizedDelaySec=12h
+OnCalendar=Mon *-*-* 7:00:00
+RandomizedDelaySec=15h
 Persistent=true
 
 [Install]
 WantedBy=timers.target
-
 ```
 
 And then just [start](/index.php/Start "Start") the `reflector.timer`.
 
-#### AUR package
+### Reflector-timer package
 
-[Install](/index.php/Install "Install") the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/) package to run *reflector* weekly.
+[Install](/index.php/Install "Install") [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/) to run *reflector* weekly.
 
-The default configuration is:
+The default configuration, which can be edited to fit one's needs, is:
 
  `/usr/share/reflector-timer/reflector.conf` 
 ```
@@ -148,15 +138,11 @@ COUNTRY=Germany
 LATEST=30
 NUMBER=20
 SORT=rate
-
-```
-
-To override this configuration, edit `/etc/conf.d/reflector.conf`:
-
- `/etc/conf.d/reflector.conf` 
-```
-COUNTRY=US
-
+### remove an entry if you don't want it as available protocol
+PROTOCOL1='-p http'
+PROTOCOL2='-p https'
+PROTOCOL3='-p ftp'
+PROTOCOL4='-p rsync'
 ```
 
 Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.

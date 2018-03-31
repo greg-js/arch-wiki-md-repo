@@ -69,7 +69,7 @@ The followin errors are encountred on boot since the version 4.10 of the kernel
 
 <tt>ACPI Error: Needed type [Reference], found [Integer]</tt>
 
-Using <tt>linux-lts</tt> get you rid of these errors.
+Add loglevel=0 to your kernel parameter to hide these errors.
 
 ### Intel ucode
 

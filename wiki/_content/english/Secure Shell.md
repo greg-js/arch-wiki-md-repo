@@ -217,7 +217,7 @@ PasswordAuthentication no
 
 ##### Two-factor authentication and public keys
 
-Since OpenSSH 6.2, you can add your own chain to authenticate with using the `AuthenticationMethods` option. This enables you to use public keys as well as a two-factor authorization.
+SSH can be set up to require multiple ways of authentication, you can tell which authentication methods are required using the `AuthenticationMethods` option. This enables you to use public keys as well as a two-factor authorization.
 
 See [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") to set up Google Authenticator.
 
@@ -237,7 +237,7 @@ If, on the other hand, you want to authenticate the user on both a publickey **a
  `/etc/ssh/sshd_config` 
 ```
 ChallengeResponseAuthentication yes
-AuthenticationMethods publickey,keyboard-interactive:pam
+AuthenticationMethods publickey**,**keyboard-interactive:pam
 
 ```
 

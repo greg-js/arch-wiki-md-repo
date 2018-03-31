@@ -19,7 +19,7 @@ See also [Wikipedia:GNUnet](https://en.wikipedia.org/wiki/GNUnet "wikipedia:GNUn
 
 ## Installation
 
-GNUnet can be [installed](/index.php/Installed "Installed") with the [gnunet](https://www.archlinux.org/packages/?name=gnunet) package. If you also want to use the graphical interface, install [gnunet-gtk](https://www.archlinux.org/packages/?name=gnunet-gtk).
+GNUnet can be [installed](/index.php/Installed "Installed") with the [gnunet](https://www.archlinux.org/packages/?name=gnunet) package. If you also want to use the graphical interface, install [gnunet-gtk](https://www.archlinux.org/packages/?name=gnunet-gtk). Alternatively, for the most recent experimental version, the git versions are available on AUR as well, under [gnunet-git](https://aur.archlinux.org/packages/gnunet-git/) and [gnunet-gtk-git](https://aur.archlinux.org/packages/gnunet-gtk-git/) respectively.
 
 ## Configuration
 
@@ -32,7 +32,7 @@ Alternatively, to start the peer immediately in a terminal:
 
 ```
 
-See also [How to start and stop a GNUnet peer](https://gnunet.org/how-start-and-stop-gnunet-peer).
+See also [How to start and stop a GNUnet peer](https://gnunet.org/how-start-and-stop-gnunet-respectivelypeer).
 
 ## Usage
 

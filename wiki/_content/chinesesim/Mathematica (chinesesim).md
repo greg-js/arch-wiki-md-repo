@@ -4,7 +4,7 @@
 *   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
 *   [Matlab (简体中文)](/index.php/Matlab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Matlab (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Mathematica](/index.php/Mathematica "Mathematica") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-27，点击[这里](https://wiki.archlinux.org/index.php?title=Mathematica&diff=0&oldid=495458)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Mathematica](/index.php/Mathematica "Mathematica") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-30，点击[这里](https://wiki.archlinux.org/index.php?title=Mathematica&diff=0&oldid=515047)可以查看翻译后英文页面的改动。
 
 [Mathematica](http://www.wolfram.com/mathematica/) 是用于科学，工程和数学领域的商业软件。在这里我们说明如何安装它。
 
@@ -19,7 +19,7 @@
     *   [1.3 Mathematica 8](#Mathematica_8)
     *   [1.4 Mathematica 10](#Mathematica_10)
     *   [1.5 Mathematica 11](#Mathematica_11)
-*   [2 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+*   [2 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [2.1 "Missing symbols" 错误](#.22Missing_symbols.22_.E9.94.99.E8.AF.AF)
     *   [2.2 HiDPI / Retina 屏幕](#HiDPI_.2F_Retina_.E5.B1.8F.E5.B9.95)
 *   [3 参阅](#.E5.8F.82.E9.98.85)
@@ -102,7 +102,7 @@ Mathematica 8 的一个问题是执行 WolframAlpha[ ] 函数时会出现崩溃�
 
 Mathematica 11 在 [$UserDocumentsDirectory](https://reference.wolfram.com/language/ref/$UserDocumentsDirectory.html) 自动创建 'Wolfram Mathematica' 文件夹，Mathematica 根据 [XDG user directories](/index.php/XDG_user_directories "XDG user directories") 自动设置了这个变量。
 
-## 疑难解答
+## 故障排除
 
 #### "Missing symbols" 错误
 

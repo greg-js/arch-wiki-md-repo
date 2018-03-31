@@ -38,6 +38,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [4.3 Rootless Xorg](#Rootless_Xorg)
     *   [4.4 Use Xorg backend](#Use_Xorg_backend)
     *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
+    *   [4.6 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_.28GNOME_3.28.29)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -528,6 +529,16 @@ To remove this warning, login as root and delete the primary user "gdm" and then
 ```
 
 Verify that gdm is successfully removed via `pwck` and `grpck`. To round it off, you may want to double-check no [unowned files](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks") for gdm remain.
+
+### GDM auto-suspend (GNOME 3.28)
+
+GDM uses a separate dconf database to control power management. You can make GDM behave the same way as user sessions by copying the user settings to GDM's dconf database.
+
+ `fish shell syntax` 
+```
+$ for x in (sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); eval "sudo -u gdm dbus-launch gsettings set $x"; end
+
+```
 
 ## See also
 

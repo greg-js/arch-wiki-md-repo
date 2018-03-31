@@ -93,7 +93,7 @@ The laptop has a Realtek ALC295 Codec with a 4 speaker system built in. Currentl
 
 ### Mute Button
 
-Most of the media keys work without configuration in Gnome, but in order to get the Mute button to function properly, you must add the following line to `/etc/modprobe.d/alsa-base.conf` (create `alsa-base.conf` if it doesn't exist) and then reboot. The button should now work and allow feedback of the mute state to Gnome.
+Most of the media keys work without configuration in Gnome, but in order to get the Mute button to function properly, you must add the following line to `/etc/modprobe.d/alsa-base.conf` (create `alsa-base.conf` if it doesn't exist) and then reboot. The button should now work and allow feedback of the mute state to Gnome, however the LED within the mute button does not illuminate.
 
 ```
 options snd-hda-intel model=hp-led-gpio

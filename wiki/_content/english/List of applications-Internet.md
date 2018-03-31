@@ -1019,7 +1019,7 @@ The number of networks supported by these clients is very large but they (like a
 
 	[http://en.ekg2.org/](http://en.ekg2.org/) || [ekg2](https://aur.archlinux.org/packages/ekg2/)
 
-*   **[Finch](/index.php/Pidgin "Pidgin")** — Ncurses-based chat client that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
+*   **Finch** — Ncurses-based chat client that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
 	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
 

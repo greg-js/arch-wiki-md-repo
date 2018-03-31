@@ -40,6 +40,7 @@ Then run:
 ```
 sudo pacman -Syu
 sudo pacman -S liri-shell-git
+sudo pacman -S liri-settings-git liri-terminal-git liri-files-git liri-appcenter-git
 
 ```
 

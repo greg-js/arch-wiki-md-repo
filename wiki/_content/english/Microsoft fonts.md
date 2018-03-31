@@ -25,7 +25,9 @@ This article explains how to install TrueType Microsoft fonts and emulate Window
 
 If there is a Windows partition mounted, its fonts can be used by linking to them.
 
-*For example, if the Windows C:\ partition is mounted at `/windows`:*
+**Note:** Users of [google-chrome](https://aur.archlinux.org/packages/google-chrome/) should opt to copy as symlinked fonts cause Chrome to crash.
+
+For example, if the Windows C:\ partition is mounted at `/windows`:
 
 ```
 # ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts

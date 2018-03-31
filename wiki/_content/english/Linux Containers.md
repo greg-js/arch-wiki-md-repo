@@ -233,6 +233,7 @@ System resources to be virtualized/isolated when a process is using the containe
 lxc.rootfs.path = /var/lib/lxc/playtime/rootfs
 lxc.uts.name = playtime
 lxc.arch = x86_64
+lxc.include = /usr/share/lxc/config/common.conf
 
 ## network
 lxc.net.0.type = veth
@@ -473,7 +474,7 @@ The error may happen when you type a basic command (*ls*, *cat*, etc.) on an att
 
 ## See also
 
-*   [LXC 1.0 Blog Post Series](https://www.stgraber.org/2013/12/20/lxc-1-0-blog-post-series/)
+*   [LXD 2.0: Blog post series](https://stgraber.org/2016/03/11/lxd-2-0-blog-post-series-012/)
 *   [LXC@developerWorks](http://www.ibm.com/developerworks/linux/library/l-lxc-containers/)
 *   [Docker Installation on ArchLinux](http://docs.docker.io/en/latest/installation/archlinux/)
 *   [LXC articles on l3net](http://l3net.wordpress.com/tag/lxc/)

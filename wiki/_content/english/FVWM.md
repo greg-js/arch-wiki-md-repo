@@ -26,6 +26,7 @@ Related articles
         *   [3.7.1 FvwmPager](#FvwmPager)
         *   [3.7.2 FvwmButtons](#FvwmButtons)
         *   [3.7.3 FvwmEvent](#FvwmEvent)
+        *   [3.7.4 FvwmIdent](#FvwmIdent)
     *   [3.8 Colors](#Colors)
         *   [3.8.1 Colorsets](#Colorsets)
     *   [3.9 Fonts](#Fonts)
@@ -41,7 +42,9 @@ Related articles
     *   [4.8 Window tiling](#Window_tiling)
     *   [4.9 Transfer focus on page or desk switch](#Transfer_focus_on_page_or_desk_switch)
     *   [4.10 Toggle window decorations](#Toggle_window_decorations)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Window start position changes on launch](#Window_start_position_changes_on_launch)
+*   [6 See also](#See_also)
 
 ## Installing
 
@@ -456,6 +459,10 @@ where `windowshade` is the event and `Lower` is the command to be executed when 
 
 For a full list of events, see [FvwmEvent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmEvent.1).
 
+#### FvwmIdent
+
+FvwmIdent is a module which can display many items of information about a particular window that it is called on, such as the window's class name, resource name, layer, geometry and more. This information is displayed in a separate window which is created by the module. FvwmIdent can be started using the `Module FvwmIdent` command. This could be bound to a menu entry or a hotkey. When an FvwmIdent is started in the context of a window, that window's information will be displayed. Otherwise, the user will be prompted to select a window manually.
+
 ### Colors
 
 FVWM color styles can take a number of color code types such as hexcolors (`#ffffff` for instance), rbg colors (`rgb:ff/ff/ff` for instance) as well as the pre-defined [X11 colors](https://en.wikipedia.org/wiki/X11_color_names "wikipedia:X11 color names").
@@ -632,6 +639,37 @@ AddToFunc UndecorateWin
 I ThisWindow (HasHandles) WindowStyle !Title, !Borders
 I ThisWindow (!HasHandles) WindowStyle Title, Borders
 ```
+
+## Troubleshooting
+
+### Window start position changes on launch
+
+You may find that with some progams such as Chromium, VirtualBox and VLC, the starting position of its window changes every time the program is launched. For instance, in the case of Chromium the starting position of the window may shift downwards on each launch. In the case of programs such as VLC and VirtualBox VM, where the application windows often automatically resize themselves, the act of resizing the window can cause the window's current position to change, so affecting the window's start position when the program is next launched.
+
+This is typically due to *PPosition* (program position) or *USPosition* (user specified position) hints which applications can set and which FVWM respects by default. For troublesome windows, you can configure FVWM to ignore the hints that are causing the problem. The first step is to get the class name or resource name of the window in question - use the [#FvwmIdent](#FvwmIdent) module for this. Then try disabling either the PPosition or USPosition hints for the window. For example:
+
+```
+Style chromium !UsePPosition, !UseTransientPPosition
+
+```
+
+or
+
+```
+Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
+
+```
+
+For windows whose position is affected by resizing, such as a VLC window, this can typically be fixed by setting the FixedPPosition style on the window which causes FVWM to ignore attempts by the window to change its position. This can be set in conjunction with ignoring USPosition hints if necessary, see below:
+
+```
+Style vlc !UseUSPosition, !UseTransientUSPosition, FixedPPosition
+
+```
+
+Once the hints that cause the problem are ignored, FVWM will place the window according to the placement algorithm that is in effect - this is *TileCascadePlacement* by default.
+
+**Tip:** If you prefer, you can ignore PPosition and/or USPosition hints globally by using '*' as the window class name. Bear in mind however that this means remembered window positions will be ignored which may be sub-optimal for programs with floating window layouts such as GIMP.
 
 ## See also
 

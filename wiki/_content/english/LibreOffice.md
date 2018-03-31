@@ -62,7 +62,7 @@ gtk3 > gtk > kde4 > generic
 
 ```
 
-To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde4`, `SAL_USE_VCLPLUGIN=gtk` or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`.
+To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde4`, `SAL_USE_VCLPLUGIN=gtk` or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`; note that this has no effect using [LXDE](/index.php/LXDE "LXDE") desktop environment since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment.
 
 However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
 

@@ -51,7 +51,7 @@
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(46)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
-| <small>3.2.</small> [Framework](/index.php/Category:Framework "Category:Framework") <small>(3)</small> |
+| <small>3.2.</small> [Framework](/index.php/Category:Framework "Category:Framework") <small>(4)</small> |
 | <small>3.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>3.4.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(24)</small> |
 | <small>3.5.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |

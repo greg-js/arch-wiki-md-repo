@@ -145,7 +145,7 @@ The official [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/
 There are multiple scripts automating the update of the mirrorlist from the ranking server:
 
 *   [Reflector](/index.php/Reflector "Reflector") retrieves the latest mirrorlist from the [MirrorStatus](https://www.archlinux.org/mirrors/status/) page, filters the most up-to-date mirrors, sorts them by speed and overwrites the `/etc/pacman.d/mirrorlist` file.
-*   [armrr](https://github.com/Gen2ly/armrr) downloads a ranked mirrorlist for a specific country from the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) and creates a backup of the previous mirrorlist.
+*   [armrr (GitHub)](https://github.com/spurge/armrr) downloads a ranked mirrorlist for a specific country from the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) and creates a backup of the previous mirrorlist.
 
 ### List mirrors only for a specific country
 

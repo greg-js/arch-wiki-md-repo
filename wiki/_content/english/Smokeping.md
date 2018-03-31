@@ -290,6 +290,14 @@ smokeping.example.com {
         }
 }
 
+smokeping.example.com/js {
+        root /srv/http/smokeping/js
+}
+
+smokeping.example.com/css {
+        root /srv/http/smokeping/css
+}
+
 smokeping.example.com/cache {
         root /var/cache/smokeping
 }

@@ -197,11 +197,9 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 SWAP -> ../../sda4
 
 **Note:** This method only concerns disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table").
 
-Like [GPT partition labels](#by-partlabel), GPT partition UUID are defined in the partition entry on GPT disks.
+Like [GPT partition labels](#by-partlabel), GPT partition UUIDs are defined in the partition entry on GPT disks. See also [Wikipedia:GUID Partition Table#Partition entries](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table").
 
-See also [Wikipedia:GUID Partition Table#Partition entries](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table").
-
-The dynamic directory is similar to other methods and, like [UUID filesystems](#by-uuid), using UUIDs is prefered over labels.
+The dynamic directory is similar to other methods and, like [filesystem UUIDs](#by-uuid), using UUIDs is preferred over labels.
 
  `ls -l /dev/disk/by-partuuid/` 
 ```
@@ -262,14 +260,14 @@ root=UUID=*1234-5678*
 
 ```
 
-Persistent device naming using the PARTUUID and the `PARTUUID=` format.
+Persistent device naming using GPT partition UUID and the `PARTUUID=` format.
 
 ```
 root=PARTUUID=*1234-5678*
 
 ```
 
-Persistent device naming using the PARTLABEL and the `PARTLABEL=` format.
+Persistent device naming using GPT partition label and the `PARTLABEL=` format.
 
 ```
 root=PARTLABEL=*root_myhost*

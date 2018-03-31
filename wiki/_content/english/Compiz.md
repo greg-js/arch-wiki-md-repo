@@ -69,7 +69,7 @@ There are two versions of Compiz available, the 0.8 series which is written in C
 
 *   **Compiz** — OpenGL compositing window manager with CCSM, Plugins and GTK Window Decorator.
 
-	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
+	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/), [compiz-bzr](https://aur.archlinux.org/packages/compiz-bzr/)
 
 ### 0.8 series
 

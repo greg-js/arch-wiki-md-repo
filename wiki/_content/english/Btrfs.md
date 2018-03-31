@@ -163,22 +163,25 @@ See the man page on [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) for
 
 ### Compression
 
-Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but also [improves performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in particular if using the [lzo algorithm](http://www.phoronix.com/scan.php?page=article&item=btrfs_lzo_2638&num=1), in some specific use cases (e.g. single thread with heavy file IO), while obviously harming performance on other cases (e.g. multithreaded and/or cpu intensive tasks with large file IO).
+Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but can also [improve performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in some specific use cases (e.g. single thread with heavy file I/O), while obviously harming performance in other cases (e.g. multithreaded and/or cpu intensive tasks with large file I/O). Better performance is generally achieved with the fastest compress algorithms, *zstd* and *lzo*, and some [benchmarks](https://www.phoronix.com/scan.php?page=article&item=btrfs-zstd-compress) provide detailed comparisons.
 
 Compression is enabled using the `compress` mount option, which can be set to `zlib`, `lzo`, `zstd`, or `no` (for no compression). Only files created or modified after the mount option is added will be compressed.
 
-**Note:** Systems using older kernels or [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) without `zstd` support may be unable to read or repair your filesystem if you use this option.
-
-To apply compression to existing files, use the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib`, `lzo` or `zstd`. For example, in order to re-compress the whole file system with [lzo](https://www.archlinux.org/packages/?name=lzo), run the following command:
+To apply compression to existing files, use the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib`, `lzo` or `zstd`. For example, in order to re-compress the whole file system with [zstd](https://www.archlinux.org/packages/?name=zstd), run the following command:
 
 ```
-# btrfs filesystem defragment -r -v -clzo /
+# btrfs filesystem defragment -r -v -czstd /
 
 ```
+
+To enable compression when installing Arch to an empty Btrfs partition, use the `compress` option when [mounting](/index.php/Mounting "Mounting") the file system: `mount -o compress=zstd /dev/sd*xY* /mnt/`. During configuration, add `compress=zstd` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
 
 **Tip:** Compression can also be enabled per-file without using the `compress` mount option; to do so apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
 
-To enable compression when installing Arch to an empty Btrfs partition, use the `compress` option when [mounting](/index.php/Mounting "Mounting") the file system: `mount -o compress=lzo /dev/sd*xY* /mnt/`. During configuration, add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
+**Note:**
+
+*   Systems using older kernels or [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) without `zstd` support may be unable to read or repair your filesystem if you use this option.
+*   [GRUB](/index.php/GRUB "GRUB") and [rEFInd](/index.php/REFInd "REFInd") currently lack support for *zstd*, either use a separate boot partition without *zstd* or reset compression of boot files to something supported using for example the command: `$ btrfs filesystem defragment -v -clzo /boot/*` 
 
 ### Subvolumes
 

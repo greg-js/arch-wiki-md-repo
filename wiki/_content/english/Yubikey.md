@@ -344,9 +344,22 @@ There are two Challenge-Response modes:
 
 ### Setup the slot
 
-In order to setup slot 2 in challenge-response HMAC mode you probably want to run something like:
+In order to setup slot `2` in challenge-response mode you may run:
 
- `ykpersonalize -v -2 -ochal-resp -ochal-hmac -ohmac-lt64 -ochal-btn-trig -oserial-api-visible` 
+ `ykpersonalize -v -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible -ochal-btn-trig` 
+
+Above arguments mean:
+
+*   Verbose output (`-v`)
+*   Use slot 2 (`-2`)
+*   Set challenge-response mode (`-ochal-resp`)
+*   Generate HMAC-SHA1 challenge responses (`-ochal-hmac`)
+*   Calculate HMAC on less than 64 bytes input (`-ohmac-lt64`)
+*   Allow Yubikey serial number to be read using an API call (`-oserial-api-visible`)
+*   Require touching Yubikey before issue response (`-ochal-btn-trig`)
+
+You may also enable challenge-response mode using graphical interface through [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui)
+
 **Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#Initial configuration](#Initial_configuration).
 
 ### Use the slot - get a response for a challenge

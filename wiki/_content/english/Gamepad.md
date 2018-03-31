@@ -82,7 +82,7 @@ Both interfaces are also supported in wine and reported as separate devices. You
 
 ### Joystick API
 
-There are a lot of applications that can test this old API, `jstest` from the [joyutils](https://www.archlinux.org/packages/?name=joyutils) package is the simplest one. If the output is unreadable because the line printed is too long you can also use graphical tools. KDE4 has a built in one in Input Devices panel in System Settings or [jstest-gtk-git](https://aur.archlinux.org/packages/jstest-gtk-git/) is an alternative.
+There are a lot of applications that can test this old API, `jstest` from the [joyutils](https://www.archlinux.org/packages/?name=joyutils) package is the simplest one. If the output is unreadable because the line printed is too long you can also use graphical tools. Plasma has a built in one in Input Devices panel in System Settings or [jstest-gtk-git](https://aur.archlinux.org/packages/jstest-gtk-git/) is an alternative.
 
 Use of `jstest` is fairly simple, you just run `jstest /dev/input/js0` and it will print a line with state of all the axes (normalised to {-32767,32767}) and buttons.
 

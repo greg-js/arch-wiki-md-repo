@@ -15,3 +15,4 @@ install CD version
 | Macbook Mid2006 | i686 2014.10.01 | Yes | Yes | Yes | Yes | Yes, with HID to HCI conversion | Out of the box | N/A | The synaptics driver allows triple click, a feature unavailable in OSX. | Everything except webcam, use isight-firmware-tools |
 | Macbook Pro mid-2009 | x86_64 2016.08.01 | Yes | Yes | Yes | Yes | Yes | Unknown | N/A | Virtual console does not display when switching from a graphical session with proprietary nvidia drivers. This does not happen on nouveau drivers. | Everything except iSight works out of the box |
 | Macbook Pro mid-2010 | x86_64 2017.04.01 | Yes | Yes | Yes | Yes | Yes | Unknown | N/A | Everything seemed to work. However, there were some unresolved heat issues. | broadcom-wl drives were used for wifi |
+| MacBook Pro (Mid-2012) | x86_64 2018.03.01 | Yes | Yes | Yes | Yes | Yes | laptop-mode-tools | N/A | - | - |

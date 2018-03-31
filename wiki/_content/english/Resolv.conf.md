@@ -77,7 +77,7 @@ To use alternative DNS servers, edit `/etc/resolv.conf` and add them at the top 
 
 [OpenNIC](http://www.opennicproject.org/) provides free uncensored nameservers located in multiple countries. The full list of public servers is available at [servers.opennic.org](https://servers.opennic.org/) and a shortlist of nearest nameservers for optimal performance is generated on their [home page](https://www.opennic.org/).
 
-To retrieve a list of nearest nameservers, an API is also available and returns, based on the [URL parameters](https://wiki.opennic.org/api/geoip) provided, a list of nameservers in the desired format. For example to get the 200 nearest IPv4 servers, one can use [https://api.opennicproject.org/geoip/?list&ipv=4&res=200&adm=0&bl&wl](https://api.opennicproject.org/geoip/?list&ipv=4&res=200&adm=0&bl&wl).
+To retrieve a list of nearest nameservers, an [API](https://wiki.opennic.org/api/geoip) is also available and returns, based on the [URL parameters](https://wiki.opennic.org/api/geoip#url_parameters) provided, a list of nameservers in the desired format. For example to get the 200 nearest IPv4 servers, one can use [https://api.opennicproject.org/geoip/?list&ipv=4&res=200&adm=0&bl&wl](https://api.opennicproject.org/geoip/?list&ipv=4&res=200&adm=0&bl&wl).
 
 Alternatively, the anycast servers below can be used; while reliable their latency [fluctuates a lot](https://wiki.opennic.org/opennic/dont_anycast).
 

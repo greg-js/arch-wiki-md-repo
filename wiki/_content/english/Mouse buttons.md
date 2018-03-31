@@ -250,7 +250,7 @@ To do this we need to map keystrokes to the desired mouse buttons and install [x
 
 In most modern applications which use back/forward features, XF86Back is mapped to back and XF86Forward is mapped to forward by default. On most MX mice the thumb buttons resolve to 8 & 9\. If your mouse is different, check button numbers using xev and replace the numbers used in the example (b:8 & b:9).
 
-So if you have an MX mouse you would create the file ~/.xbindkeysrc, containing:
+So if you have an MX mouse you would create the file `~/.xbindkeysrc`, containing:
 
 ```
 # Mouse Buttons
@@ -274,7 +274,7 @@ The above info and more help may be found in the [MX1000 Buttons](/index.php/MX1
 
 **Note:** None of the below is necessary with evdev, but it's here for non-evdev users. Unless something does not work on your mouse, ignore this whole section!
 
-If you use .xinitrc to load X, then add this to `.xinitrc` (change for the number of buttons you have):
+It may prove to be more comfortable for some to change the ordering of button codes, as the case may be for left-handed people. Depending on the environment you use, the button codes can be configured in two different ways. If you use `.xinitrc` to load X, then add this to `.xinitrc` (change for the number of buttons you have):
 
 ```
  xmodmap -e "pointer = 1 2 3 6 7 8 9 10 11 12 4 5" &
@@ -283,18 +283,18 @@ If you use .xinitrc to load X, then add this to `.xinitrc` (change for the numbe
 
 Note that buttons 4 and 5 **must go on the end** or else your scroll wheel will not work.
 
-If you use GDM/XDM/KDM instead of .xinitrc, then create the file `~/.Xmodmap` and add this to it (change for the number of buttons you have):
+If you use GDM/XDM/KDM instead of `.xinitrc`, then create the file `~/.Xmodmap` and add this to it (change for the number of buttons you have):
 
 ```
  pointer = 1 2 3 6 7 8 9 10 11 12 4 5
 
 ```
 
-*   GDM/XDM/KDM read the `~/.Xmodmap` file if it's present, whereas `startx` does not. Another solution would be to add this to your ~/.xinitrc: `xmodmap ~/.Xmodmap`. This would allow you to use *DM and `startx` while only having to edit `~/.Xmodmap` when you need to make changes.
+*   GDM/XDM/KDM read the `~/.Xmodmap` file if it's present, whereas `startx` does not. Another solution would be to add this to your `~/.xinitrc`: `xmodmap ~/.Xmodmap`. This would allow you to use *DM and `startx` while only having to edit `~/.Xmodmap` when you need to make changes.
 
 You may have to play with these numbers a bit to get your desired behavior. Some mice use buttons 6 and 7 for the scroll wheel, in which case those buttons would have to be the last numbers. Keep playing with it until it works!
 
-You can also check to see which buttons are being read with a program called 'xev', which is part of XOrg. When xev is run, it will show a box on your desktop that you can put the cursor into and click buttons to find out what buttons have been mapped.
+You can also check to see which buttons are being read with a program called *xev*, which is part of XOrg. When *xev* is run, it will show a box on your desktop that you can put the cursor into and click buttons to find out what buttons have been mapped.
 
 ### xinput tweaking
 

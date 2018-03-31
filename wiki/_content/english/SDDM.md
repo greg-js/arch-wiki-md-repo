@@ -209,9 +209,11 @@ MinimumUid=500 #My UID is 501
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
+SDDM may also incorrectly display the layout as US but will immediately change to the correct layout after you start typing your password [[4]](https://github.com/sddm/sddm/issues/202#issuecomment-76001543). This seems to not be a bug in SDDM but in [libxcb](https://www.archlinux.org/packages/?name=libxcb) (version 1.13-1 as of 2018) [[5]](https://github.com/sddm/sddm/issues/202#issuecomment-133628462).
+
 ### Screen resolution is too low
 
-Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[4]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
+Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[6]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
 
 If even the above fails, you can try setting your screen size in a Xorg conf file:
 

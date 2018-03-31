@@ -73,7 +73,7 @@ For more information, see [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/ma
 
 ### Configuration examples
 
-All configurations in this section are stored as `foo.network` in `/etc/systemd/network`. For a full listing of options and processing order, see [#Configuration files](#Configuration_files) and [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
+All configurations in this section are stored as `foo.network` in `/etc/systemd/network/`. For a full listing of options and processing order, see [#Configuration files](#Configuration_files) and [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
 
 Systemd/udev automatically assigns predictable, stable network interface names for all local Ethernet, WLAN, and WWAN interfaces. Use `networkctl list` to list the devices on the system.
 
@@ -164,7 +164,7 @@ RouteMetric=20
 
 #### Renaming an interface
 
-Instead of [editing udev rules](/index.php/Network_configuration#Change_device_name "Network configuration"), a .link file can be used to rename an interface. A useful example is to set a predictable interface name for a USB-to-Ethernet adapter based on its MAC address, as those adapters are usually given different names depending on which USB port they are plugged into.
+Instead of [editing udev rules](/index.php/Network_configuration#Change_device_name "Network configuration"), a *.link* file can be used to rename an interface. A useful example is to set a predictable interface name for a USB-to-Ethernet adapter based on its MAC address, as those adapters are usually given different names depending on which USB port they are plugged into.
 
  `/etc/systemd/network/10-ethusb0.link` 
 ```
@@ -176,7 +176,7 @@ Description=USB to Ethernet Adapter
 Name=ethusb0
 ```
 
-**Note:** Any user-supplied .link **must** have a lexically earlier file name than the default config `99-default.link` in order to be considered at all. For example, name the file `10-ethusb0.link` and not `ethusb0.link`.
+**Note:** Any user-supplied *.link* **must** have a lexically earlier file name than the default config `99-default.link` in order to be considered at all. For example, name the file `10-ethusb0.link` and not `ethusb0.link`.
 
 ## Configuration files
 
@@ -184,9 +184,9 @@ Configuration files are located in `/usr/lib/systemd/network`, the volatile runt
 
 There are three types of configuration files. They all use a format similar to [systemd unit files](/index.php/Systemd#Writing_unit_files "Systemd").
 
-*   **.network** files. They will apply a network configuration for a *matching* device
-*   **.netdev** files. They will create a *virtual network device* for a *matching* environment
-*   **.link** files. When a network device appears, [udev](/index.php/Udev "Udev") will look for the first *matching* **.link** file
+*   ***.network*** files. They will apply a network configuration for a *matching* device
+*   ***.netdev*** files. They will create a *virtual network device* for a *matching* environment
+*   ***.link*** files. When a network device appears, [udev](/index.php/Udev "Udev") will look for the first *matching* *.link* file
 
 They all follow the same rules:
 
@@ -205,7 +205,7 @@ They all follow the same rules:
 
 These files are aimed at setting network configuration variables, especially for servers and containers.
 
-`.network` files have the following sections: `[Match]`, `[Link]`, `[Network]`, `[Address]`, `[Route]`, and `[DHCP]`. Below are commonly configured keys for each section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for more information and examples.
+*.network* files have the following sections: `[Match]`, `[Link]`, `[Network]`, `[Address]`, `[Route]`, and `[DHCP]`. Below are commonly configured keys for each section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for more information and examples.
 
 #### [Match]
 
@@ -264,7 +264,7 @@ Most common keys are:
 
 These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears. They have two sections: `[Match]` and `[Link]`. Below are commonly configured keys for each section. See [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for more information and examples.
 
-**Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with `.link` files.
+**Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with *.link* files.
 
 #### [Match] section
 
@@ -293,7 +293,7 @@ Note that if you want to take advantage of automatic DNS configuration from DHCP
 Before you start to configure your container network, it is useful to:
 
 *   disable all your [netctl](/index.php/Netctl "Netctl") (host and container), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (host and container), <a class="mw-selflink selflink">systemd-networkd</a> (container only) and `systemd-nspawn@.service` (host only) services to avoid potential conflicts and to ease debugging
-*   make sure [packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") is enabled if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
+*   make sure [packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") is enabled if you want to let containers access the internet. Make sure that your *.network* file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
 *   make sure you do not have any [iptables](/index.php/Iptables "Iptables") rules which can block traffic
 *   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
 
@@ -568,7 +568,7 @@ If running services like [Samba](/index.php/Samba "Samba")/[NFS](/index.php/NFS 
 
 ### systemd-resolve not searching the local domain
 
-systemd-resolved may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate `.network` file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
+systemd-resolved may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate *.network* file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
 
 *   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
 *   Switch to using fully-qualified domain names

@@ -5,7 +5,7 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") |
-| Fingerprint Sensor |
+| Fingerprint Sensor | No |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") |
 | Smartcard Reader |
@@ -70,6 +70,10 @@ Bus 001 Device 005: ID 046d:c246 Logitech, Inc. Gaming Mouse G300
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+### Fingerprint reader
+
+Fingerprint sensor 06cb:009a is not supported by libfprint right now. There is a project to reverse enginer windows driver - [https://github.com/nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) .
 
 ## See also
 

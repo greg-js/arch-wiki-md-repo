@@ -710,7 +710,7 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 	[https://github.com/jangler/taffy](https://github.com/jangler/taffy) || [taffy](https://aur.archlinux.org/packages/taffy/)
 
-*   **Tag Editor** — A tag editor with Qt 5 GUI and command-line interface supporting MP4/AAC (iTunes), ID3v1, ID3v2, Ogg/Vorbis and Matroska.
+*   **Tag Editor** — A tag editor with Qt GUI and command-line interface supporting MP4/M4A/AAC (iTunes), ID3v1/ID3v2, Vorbis, Opus, FLAC and Matroska.
 
 	[https://github.com/Martchus/tageditor](https://github.com/Martchus/tageditor) || [tageditor](https://aur.archlinux.org/packages/tageditor/)
 

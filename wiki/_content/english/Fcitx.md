@@ -63,9 +63,9 @@ Depending on the language you wish to type, other input method engines are avail
 
 #### Japanese
 
-*   [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy), a popular Japanese input engine. However, it is not actively developed anymore.
 *   [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc), based on [Mozc](/index.php/Mozc "Mozc"), the Open Source Edition of Google Japanese Input.
-*   [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc), a new Japanese Kana Kanji input engine, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
+*   [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc), a Japanese Kana Kanji input engine, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
+*   [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy), a popular Japanese input engine. However, it is not actively developed anymore.
 
 #### Other languages
 
@@ -94,11 +94,11 @@ Others packages (including git version) are also available in the [AUR](/index.p
 
 ## Usage
 
-**Note:** You need to have [east Asian fonts](/index.php/Fonts_FAQ#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese "Fonts FAQ") installed if you want to enter Chinese, Japanese, Korean or Vietnamese characters.
+**Note:** You need to have [Chinese, Japanese, Korean or Vietnamese font](/index.php/Fonts#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese "Fonts") installed to be able to enter the corresponding characters.
 
 ### Desktop Environment
 
-If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you relogin, the autostart should work out of box. If not run the *fcitx* executable. To see if fcitx is working correctly, open an application and press `Ctrl+Space` (the default shortcut for switching the input method) to invoke fcitx and input some words.
+If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you re-login, the autostart should work out of box. If not run the *fcitx* executable. To see if fcitx is working correctly, open an application and press `Ctrl+Space` (the default shortcut for switching the input method) to invoke fcitx and input some words.
 
 If fcitx failed to start with your desktop automatically or if you want to change the parameters to start fcitx, configure [autostart](/index.php/Autostarting#Graphical "Autostarting") or edit the `fcitx-autostart.desktop` file in your `~/.config/autostart/` directory (copy it from `/etc/xdg/autostart/` if it doesn't exist yet).
 
@@ -215,7 +215,7 @@ If starting emacs daemon from [systemd](/index.php/Systemd "Systemd"), [set](/in
 
 ### Firefox popup menu not work
 
-For [Firefox](/index.php/Firefox "Firefox") above version 13, the popup menu may fail to work due to xim, make sure that [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2) along with a latest version fcitx are installed.
+For [Firefox](/index.php/Firefox "Firefox") above version 13, the popup menu may fail to work due to xim, make sure that [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3) along with a latest version fcitx are installed.
 
 ### Ctrl+Space fail to work in GTK programs
 
