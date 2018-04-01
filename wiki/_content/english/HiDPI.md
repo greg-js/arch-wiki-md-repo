@@ -10,6 +10,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
+        *   [1.1.1 Fractional Scaling](#Fractional_Scaling)
     *   [1.2 KDE](#KDE)
         *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
@@ -59,7 +60,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 
 ### GNOME
 
-To enable HiDPI, use gsettings:
+To enable HiDPI, Settings > Devices > Displays，or use gsettings:
 
 ```
 $ gsettings set org.gnome.desktop.interface scaling-factor 2
@@ -68,7 +69,22 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 **Note:** `scaling-factor` only allows whole numbers to be set. 1 = 100%, 2 = 200%, etc...
 
+#### Fractional Scaling
+
 A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets).
+
+*   wayland
+
+Enable fractional Scaling experimental-feature:
+
+```
+$ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
+```
+
+then open Settings > Devices > Displays
+
+*   xorg
 
 You can achieve any non-integer scale factor by using a combination of GNOME's `scaling-factor` and [xrandr](/index.php/Xrandr "Xrandr"). This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone. You specify zoom-in factor with `gsettings` and zoom-out factor with [xrandr](/index.php/Xrandr "Xrandr").
 

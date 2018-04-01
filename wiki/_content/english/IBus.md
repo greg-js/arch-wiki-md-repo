@@ -1,3 +1,9 @@
+Related articles
+
+*   [Fcitx](/index.php/Fcitx "Fcitx")
+*   [SCIM](/index.php/SCIM "SCIM")
+*   [UIM](/index.php/UIM "UIM")
+
 **IBus** (*Intelligent Input Bus*) is an [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method"), a system for entering foreign characters. IBus functions similarly to [Fcitx](/index.php/Fcitx "Fcitx"), [SCIM](/index.php/SCIM "SCIM") and [UIM](/index.php/UIM "UIM").
 
 ## Contents
@@ -49,7 +55,7 @@ You will need at least one input method, corresponding to the language you wish 
 To see all available input methods:
 
 ```
-$ pacman -Ss ^ibus-*
+$ pacman -Ss '^ibus-*'
 
 ```
 

@@ -152,7 +152,7 @@ You can add/remove input methods in the GUI tools. Set the first item to Keyboar
 
 ### Change default UI
 
-Fcitx support kimpanel protocol to provide bettter desktop intergation.
+Fcitx support kimpanel protocol to provide better desktop integration.
 
 *   Gnome-Shell: You can install kimpanel from extensions.gnome.org or [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/), which provides a similar user experience as ibus-gjs.
 *   KDE: [kimtoy](https://www.archlinux.org/packages/?name=kimtoy) could use skin from Sogou and fcitx.

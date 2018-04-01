@@ -41,8 +41,8 @@ $ rvm install 2.3.3
 Switch to this version and install `xapian-ruby` and `sup`
 
 ```
-$ gem install xapian-ruby
-$ gem install sup
+$ rvm 2.3.3 do gem install xapian-ruby
+$ rvm 2.3.3 do gem install sup
 
 ```
 

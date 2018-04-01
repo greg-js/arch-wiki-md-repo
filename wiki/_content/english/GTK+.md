@@ -166,7 +166,7 @@ Most major [desktop environments](/index.php/Desktop_environments "Desktop envir
 
 *   If you use [Cinnamon](/index.php/Cinnamon "Cinnamon"), use Themes tool (*cinnamon-settings themes*): go to *System Settings > Themes*.
 *   If you use [Enlightenment](/index.php/Enlightenment "Enlightenment"): go to *Settings > All > Look > Application Theme*.
-*   If you use [GNOME](/index.php/GNOME "GNOME"), use GNOME Tweak Tool (*gnome-tweak-tool*): install [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+*   If you use [GNOME](/index.php/GNOME "GNOME"), use GNOME Tweaks (*gnome-tweaks*): install [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 *   If you use [MATE](/index.php/MATE "MATE"), use the Appearance Preferences tool (*mate-appearance-properties*): go to *System > Settings > Appearance*.
 *   If you use [Xfce](/index.php/Xfce "Xfce"), use the Appearance tool: go to *Settings > Appearance*.
 

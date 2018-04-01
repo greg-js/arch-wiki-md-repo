@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [mount (Русский)](/index.php/Mount_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mount (Русский)")
+
 [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) — свободная реализация файловой системы NTFS с поддержкой записи и чтения данных. Для упрощения разработки и обеспечения лучшей переносимости NTFS-3G использует драйвер файловой системы FUSE.
 
 ## Contents

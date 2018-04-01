@@ -1,5 +1,9 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [EncFS](/index.php/EncFS "EncFS"). Дата последней синхронизации: 14 марта 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=EncFS&diff=0&oldid=470680).
 
+Ссылки по теме
+
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+
 **EncFS** is a userspace stackable cryptographic file-system similar to [eCryptfs](/index.php/ECryptfs "ECryptfs"), and aims to secure data with the minimum hassle. It uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") to mount an encrypted directory onto another directory specified by the user. It does not use a loopback system like some other comparable systems such as [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 EncFS is definitely the simplest software if you want to try disk encryption on Linux.

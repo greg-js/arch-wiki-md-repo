@@ -285,7 +285,7 @@ See [[4]](https://github.com/chjj/compton/issues/208) for more information.
 
 When windows with transparency are tabbed, the underlying tabbed windows are still visible because of transparency. Each tabbed window also draws its own shadow resulting in multiple shadows.
 
-Removing the multiple shadows issue can be done by adding the following to the already existing [`shadow-exclude` list](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80):
+Removing the multiple shadows issue can be done by adding the following to the already existing [shadow-exclude list](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80):
 
 ```
 "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
@@ -302,7 +302,7 @@ opacity-rule = [
 
 ```
 
-Note that `URxvt` is the Xorg class name of your terminal. Change this if you use a different terminal.
+Note that `URxvt` is the Xorg class name of your terminal. Change this if you use a different terminal. You can query a window's class by running the command `xprop WM_CLASS` and clicking the window.
 
 See [[5]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overlaying_shadows_and_windows_in/) for more information.
 

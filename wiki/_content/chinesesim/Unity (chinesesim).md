@@ -1,3 +1,7 @@
+相关文章
+
+*   [GNOME](/index.php/GNOME "GNOME")
+
 **翻译状态：** 本文是英文页面 [Unity](/index.php/Unity "Unity") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-11-08，点击[这里](https://wiki.archlinux.org/index.php?title=Unity&diff=0&oldid=234364)可以查看翻译后英文页面的改动。
 
 [Unity](http://unity.ubuntu.com/) is an alternative shell for the GNOME desktop environment, developed by Canonical in its Ayatana project. It consists of several components including the Launcher, Dash, lenses, Panel, indicators, Notify OSD and Overlay Scrollbar. Unity used to available in two implementations: 'Unity' is the 3D accelerated version, which uses Compiz window manager and Nux toolkit; and 'Unity 2D' is a lighter alternative, which uses Metacity window manager and Qt toolkit. Unity 2D is already dropped by Canonical from Ubuntu 12.10\. Instead a version powered by Gallium3D llvmpipe alternative is used.

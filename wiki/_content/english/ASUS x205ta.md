@@ -361,3 +361,5 @@ On older kernel versions, out of the box, the only keysyms correctly sent are th
 ## See also
 
 [Distro-Agnostic Installation Guide for the X205TA](http://ubuntuforums.org/showthread.php?t=2254322&p=13414345#post13414345)
+
+[Ifran's ASUS x205ta Installation Guide](https://ifranali.blogspot.com/2015/04/installing-arch-linux-on-asus-x205ta.html)

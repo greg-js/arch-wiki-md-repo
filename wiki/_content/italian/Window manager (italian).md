@@ -200,7 +200,7 @@ Notion è un fork di Ion3.
 
 **[wmii](/index.php/Wmii "Wmii")** — wmii è un piccolo window manager dinamico per X11\. Supporta gli script, ha un interfaccia filesystem 9P e supporta la gestione delle finestre sia "classic" che "tiling" (Acme-like). Punta a mantenere un codice di base contenuto e pulito. La configurazione di default è in bash e [rc (la shell Plan 9)](http://rc.cat-v.org), ma esistono programmi scritti in Ruby, e qualsiasi programma in grado di lavorare con il testo può essere configurato. Ha una barra di stato, un launcher integrato, ed anche un vassoio di sistema opzionale (`witray`).
 
-	[http://wmii.suckless.org/](http://wmii.suckless.org/) || [wmii](https://www.archlinux.org/packages/?name=wmii)
+	[http://wmii.suckless.org/](http://wmii.suckless.org/) || [wmii](https://aur.archlinux.org/packages/wmii/)
 
 <center>**Dynamic window managers**</center>
 

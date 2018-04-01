@@ -553,7 +553,7 @@ You can also force using scalable fonts at all sizes by [disabling embedded bitm
 
 ### Applications overriding hinting
 
-Some applications or desktop environments may override default fontconfig hinting and anti-aliasing settings. This may happen with [GNOME](/index.php/GNOME "GNOME") 3, for example while you are using Qt applications like [vlc](https://www.archlinux.org/packages/?name=vlc) or [smplayer](https://www.archlinux.org/packages/?name=smplayer). Use the specific configuration program for the application in such cases. For GNOME, try [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+Some applications or desktop environments may override default fontconfig hinting and anti-aliasing settings. This may happen with [GNOME](/index.php/GNOME "GNOME") 3, for example while you are using Qt applications like [vlc](https://www.archlinux.org/packages/?name=vlc) or [smplayer](https://www.archlinux.org/packages/?name=smplayer). Use the specific configuration program for the application in such cases. For GNOME, try [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
 ### Applications not picking up hinting from DE's settings
 

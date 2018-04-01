@@ -327,11 +327,11 @@ The menu is disabled when the key is false, enabled when it is true.
 
 ### Keyboard layout
 
-See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
+The system keyboard layout will be applied to GDM. See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
 
 **Tip:** See [Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 "wikipedia:ISO 3166-1") for a list of keymaps.
 
-Alternatively, if the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a graphical frontend. Start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. Then, in the header bar, hit the *Login Screen* toggle button to configure the keyboard layout for GDM specifically.
+If a system has multiple users, it is possible to specify a keyboard layout for GDM to use which is different from the system keyboard layout. Firstly, ensure the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. In the header bar, hit the *Login Screen* toggle button and then choose a keyboard layout from the list. Note that the *Login Screen* button will not be visible in the header bar unless multiple users are present on the system [[5]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
 
 Users of GDM 2.x (legacy GDM) may need to edit `~/.dmrc` as shown below:
 
@@ -344,7 +344,7 @@ Layout=de   nodeadkeys # change to your keyboard layout
 
 ### Change the language
 
-To change the GDM language, ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start *gnome-control-center* and choose *Region & Language*. In the header bar, check the *Login Screen* toggle button. Finally, click on *Language* and choose your language from the list. You will be prompted for your root password.
+The system language will be applied to GDM. If a system has multiple users, it is possible to set a language for GDM different to the system language. In this case, firstly ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start *gnome-control-center* and choose *Region & Language*. In the header bar, check the *Login Screen* toggle button. Finally, click on *Language* and choose your language from the list. You will be prompted for your root password. Note that the *Login Screen* button will not be visible in the header bar unless multiple users are present on the system [[6]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
 
 **Tip:** By adding 2 different input languages, logging out then selecting your default language GDM will remember your choice once the second option is removed.
 
@@ -534,9 +534,9 @@ Verify that gdm is successfully removed via `pwck` and `grpck`. To round it off,
 
 GDM uses a separate dconf database to control power management. You can make GDM behave the same way as user sessions by copying the user settings to GDM's dconf database.
 
- `fish shell syntax` 
 ```
-$ for x in (sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); eval "sudo -u gdm dbus-launch gsettings set $x"; end
+$ IFS=$'
+'; for x in $(sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
 
 ```
 

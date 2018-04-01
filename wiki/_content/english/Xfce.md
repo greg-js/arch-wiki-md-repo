@@ -464,7 +464,7 @@ MiscMiddleClickOpensUri=TRUE
 
 ### Colour management
 
-Xfce has no native support for colour management. [[4]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
+Xfce has no native support for colour management. [[3]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
 
 ### Multiple monitors
 
@@ -581,7 +581,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[4]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -589,7 +589,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 ### Panel applets keep being aligned on the left
 
-Add a separator someplace before the right end and set its "expand" property. [[6]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+Add a separator someplace before the right end and set its "expand" property. [[5]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
 
 ### Preferred Applications preferences have no effect
 
@@ -665,7 +665,7 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 
 ```
 
-**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[7]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
+**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
 
 ### Power Manager Plugin shows battery time and remaining percentage
 

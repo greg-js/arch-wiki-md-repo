@@ -80,18 +80,7 @@ Files is simple to configure graphically, but not all options are available in t
 
 ### Desktop Icons
 
-Files, by default, no longer manages the desktop window in GNOME Shell. However, Files does have the ability to provide desktop icons if they are desired. Files achieves this by drawing a transparent window (containing the icons) which sits on top of the desktop window.
-
-To enable desktop icons, in [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), choose: *Desktop > Icons on Desktop > ON*. You may have to restart Files by running `killall nautilus; nautilus` or if you are running [GNOME](/index.php/GNOME "GNOME"), press `ALT+F2`, type `r`, and press `Enter` (this restarts GNOME Shell).
-
-Alternatively, run the following command which will achieve the same effect:
-
-```
-$ gsettings set org.gnome.desktop.background show-desktop-icons true
-
-```
-
-**Note:** Sessions such as GNOME Classic call the *nautilus-classic* desktop entry which will ensure that desktop icons are always enabled.
+See [GNOME#Icons on the Desktop](/index.php/GNOME#Icons_on_the_Desktop "GNOME").
 
 ### Change default item view
 

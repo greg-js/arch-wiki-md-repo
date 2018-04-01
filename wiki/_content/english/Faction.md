@@ -19,7 +19,7 @@ The library provides several C macros to make writing tests quicker.
 
 *   FI represents Faction Initialization
 *   FT denotes a Faction Test
-*   FC represent Faction Close
+*   FC represents Faction Close
 
 Using the FT macro, three fields are required.
 
@@ -27,7 +27,7 @@ Using the FT macro, three fields are required.
 *   SPEC() takes a single double-quotation surrounded test specification description
 *   A C boolean expression (just like when using C assert macros)
 
-Convention dictates that Faction tests are to be written at the bottom of the source file containing the code that will be tested. Tests are to be surrounded by a FACTION macro guard (see below example) so that they can be enabled at compile time. C compilers such as the GNU C Compiler (GCC) offer a way to enable macros on the command-line (i.e. the `-D` flag)
+Convention dictates that Faction tests are to be written at the bottom of the source file containing the code that will be tested. Tests are to be surrounded by a FACTION macro guard (see below example) so that they can be enabled/disabled at compile time. C compilers such as the GNU C Compiler (GCC) offer a way to enable macros on the command-line (i.e. the `-D` flag)
 
 ## Example
 

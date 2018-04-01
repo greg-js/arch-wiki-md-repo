@@ -254,7 +254,7 @@
 
 *   **[wmii](/index.php/Wmii "Wmii")** — wmii مدير نوافذ ديناميكي للخادم إكس. هو سكريبتي,لديه واجهة 9P و يدعم الطريقة الكلاسيكية و التبليط (Acme-شبيه) . يهد مطوروه إلى الحفاظ عليه صغير ونظيف (قابل للتغيير و جميل) . الاعدادات الافتراضية مصنوعة ب الباش [rc (the Plan 9 shell)](http://rc.cat-v.org), لكنه مكتوب بـ ruby,فأي برنامج يمكنه العمل مع النص يمكن تغييره. لديه شريط المعلومات و مطلق التطبيقات, و كذلك شريط المهام (`witray`).
 
-	[http://wmii.suckless.org/](http://wmii.suckless.org/) || [wmii](https://www.archlinux.org/packages/?name=wmii)
+	[http://wmii.suckless.org/](http://wmii.suckless.org/) || [wmii](https://aur.archlinux.org/packages/wmii/)
 
 *   **[xmonad](/index.php/Xmonad "Xmonad")** — xmonad هو مدير نوافذ تبليطي ديناميكي كتب واعد في Haskell. ,كنت تنفق نصف وقتك في البحث عن النوافذ. xmonad يجعل العمل سهل , و اتوماتكيا . و لكل تغييرات في الاعدادات يجب إعادة ترجمة , xmonad إذان المترجم Haskell (اكثر 100MB) يجب ان يكون منصب . [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) يوفر العديد من الميزات الإضافية
 

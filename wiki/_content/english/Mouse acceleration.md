@@ -12,7 +12,7 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
 *   and configuration interfaces common in [desktop environments](/index.php/Desktop_environments "Desktop environments").
 
 *   If you are using [Wayland](/index.php/Wayland "Wayland"), the events are controlled via [libinput](/index.php/Libinput "Libinput"). It is the compositor's job to expose the settings brought by libinput. There is currently no standard way to change settings across compositors.[[1]](https://www.reddit.com/r/gnome/comments/3upay2/wayland_where_are_the_mouse_acceleration_options/)
-*   [GNOME](/index.php/GNOME "GNOME") manages mouse acceleration by itself. A choice between "adaptive" and "flat" profiles can be chosen by installing [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) and editing the value in org/gnome/desktop/peripherals/mouse/acceleration-profile. Alternatively, [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) can also be used to edit the org/gnome/desktop/peripherals/mouse/acceleration-profile.
+*   [GNOME](/index.php/GNOME "GNOME") manages mouse acceleration by itself. A choice between "adaptive" and "flat" profiles can be chosen by installing [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) and editing the value in org/gnome/desktop/peripherals/mouse/acceleration-profile. Alternatively, [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) can also be used to edit the org/gnome/desktop/peripherals/mouse/acceleration-profile.
 
 ## Contents
 
@@ -62,13 +62,13 @@ EndSection
 
 ```
 
-For further options see [libinput(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4).
+For further options see [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4).
 
 ## Setting mouse acceleration
 
 ### In Xorg configuration
 
-See [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) for details.
+See [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) for details.
 
 Examples:
 
@@ -140,7 +140,7 @@ $ xset m default
 
 ```
 
-For more info see [xset(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1).
+For more info see [xset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1).
 
 Commands may be stored in [Xinitrc](/index.php/Xinitrc "Xinitrc") or [Xprofile](/index.php/Xprofile "Xprofile"). Alternatively, create a [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `.config/autostart`:
 

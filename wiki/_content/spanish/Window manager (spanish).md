@@ -262,7 +262,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 *   **[wmii](/index.php/Wmii "Wmii")** — wmii es un gestor pequeño, de ventanas dinámicas para X11\. Admite secuencias de comandos (scripts), tiene una interfaz de sistema de archivos 9P y soporta la gestión de ventanas a modo "clásico" o "mosaico" (Acme-like) . Su objetivo es mantener un código base pequeño y limpio (leible, mejorable y precioso) . La configuración por defecto es en bash y [rc (la shell Plan 9)](http://rc.cat-v.org), pero existen programas escritos en Ruby, y cualquier programa que pueda trabajar con el texto puede configurarlo. Cuenta con una barra de estado y el lanzador incorporado, y también una bandeja de sistema opcional (`witray`).
 
-	[http://wmii.suckless.org/](http://wmii.suckless.org/) || [wmii](https://www.archlinux.org/packages/?name=wmii)
+	[http://wmii.suckless.org/](http://wmii.suckless.org/) || [wmii](https://aur.archlinux.org/packages/wmii/)
 
 *   **[xmonad](/index.php/Xmonad "Xmonad")** — xmonad es un gestor de ventanas dinámico de tipo mosaico para X11 que se escribe y se configura en Haskell. En un WM normal, se pasa mucho tiempo buscando y alineando las ventanas. xmonad facilita el trabajo, mediante la automatización de ésto. Para todos los cambios que se realicen en la configuración, xmonad debe volver a compilarse, por lo que el compilador Haskell (más de 100 MB), debe estar instalado. Una gran biblioteca llamada [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) ofrece muchas características adicionales
 

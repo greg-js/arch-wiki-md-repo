@@ -10,7 +10,7 @@ Plank is a lightweight and minimal dock. Plank will not work if you are using Wa
 
 ## Installation
 
-Install [plank](https://www.archlinux.org/packages/?name=plank) from the official repositories or [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/) from the AUR.
+Install [plank](https://www.archlinux.org/packages/?name=plank) from the official repositories or [plank-git](https://aur.archlinux.org/packages/plank-git/) from the AUR.
 
 ### Running Plank
 

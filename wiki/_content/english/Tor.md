@@ -258,7 +258,7 @@ The Tor Project currently only supports web browsing with tor through the [Tor B
 
 **Warning:** The Tor Project strongly recommends only using the Tor browser if you want to stay anonymous. [[2]](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser)
 
-**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Use a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG").
+**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently D1483FA6C3C07136) as explained in [GnuPG#Use a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG").
 
 ### Firefox
 

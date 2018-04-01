@@ -139,7 +139,7 @@ ExecStart=/usr/bin/mbsync -Va
 
 **Note:** It's possible this service could trigger without an internet connection. A solution is to add the following into the Unit section: `After=network.target network-online.target dbus.socket`
 
-The following timer configures `mbsync` to be started every 2 hours:
+The following timer configures `mbsync` to be started 2 minutes after boot, and then every 5 minutes:
 
  `~/.config/systemd/user/mbsync.timer` 
 ```
@@ -147,8 +147,8 @@ The following timer configures `mbsync` to be started every 2 hours:
 Description=Mailbox synchronization timer
 
 [Timer]
-OnCalendar=*-*-* 00/2:00:00
-Persistent=true
+OnBootSec=2m
+OnUnitActiveSec=5m
 Unit=mbsync.service
 
 [Install]

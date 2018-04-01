@@ -99,7 +99,7 @@ ACTION=="add|change", KERNEL=="sd[b-z]", ATTR{queue/rotational}=="1", RUN+="/usr
 
 ### Putting a drive to sleep directly after boot
 
-A device which is rarely needed can be put to sleep directly at the end of the boot process. This does not work with the above udev rule because it happens too early. In order to issue the command when the boot is completed, just create a [systemd](/index.php/Systemd "Systemd") service.
+A device which is rarely needed can be put to sleep directly at the end of the boot process. This does not work with the above udev rule because it happens too early. In order to issue the command when the boot is completed, just create a [systemd](/index.php/Systemd "Systemd") service and [enable](/index.php/Enable "Enable") it:
 
  `/etc/systemd/system/hdparm.service` 
 ```
@@ -113,8 +113,6 @@ ExecStart=/usr/bin/hdparm -q -S 120 -y /dev/sdb
 [Install]
 WantedBy=multi-user.target
 ```
-
-Then [enable](/index.php/Enable "Enable") it.
 
 ### Working with unsupported hardware
 

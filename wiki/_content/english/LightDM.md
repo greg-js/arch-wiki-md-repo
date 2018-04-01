@@ -216,17 +216,19 @@ GreetMessage=Welcome to %hostname%
 
 **Tip:** If you are using KDE, you can change your avatar in KDE System Settings.
 
-First, make sure the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package from the [official repositories](/index.php/Official_repositories "Official repositories") is installed, then set it up as follows, replacing `*username*` with the desired user's login name. The *.png* file extension should not be included in the filename.
+First, make sure the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package from the [official repositories](/index.php/Official_repositories "Official repositories") is installed, then set it up as follows, replacing `*username*` with the desired user's login name.
 
-*   Edit or create the file `/var/lib/AccountsService/users/*username*`, and add the lines
+*   Create the file `/var/lib/AccountsService/icons/*username*.png` using a 96x96 PNG image file. Different image file formats are possible too, e.g., JPEG.
+
+*   Edit or create the account settings file `/var/lib/AccountsService/users/*username*`, and add the lines
 
 ```
 [User]
-Icon=/var/lib/AccountsService/icons/*username*
+Icon=/var/lib/AccountsService/icons/*username*.png
 
 ```
 
-*   Create the file `/var/lib/AccountsService/icons/*username*` using a 96x96 PNG image file.
+The filename here should point to the icon created in the first step, so adjust the filename extension if necessary.
 
 **Note:** Make sure that both created files have 644 permissions, use [chmod](/index.php/Chmod "Chmod") to correct them.
 

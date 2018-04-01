@@ -20,6 +20,7 @@ Related articles
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Fonts](#Fonts)
         *   [4.1.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
+        *   [4.1.2 Font rendering issues of UTF characters](#Font_rendering_issues_of_UTF_characters)
     *   [4.2 Force 3D acceleration](#Force_3D_acceleration)
     *   [4.3 WebGL](#WebGL)
     *   [4.4 Zoomed-in GUI](#Zoomed-in_GUI)
@@ -110,6 +111,10 @@ See the main article: [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tr
 #### Font rendering issues in PDF plugin
 
 To fix the font rendering in some PDFs one has to install the [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) package, otherwise the substituted font causes text to run into other text. This was [reported on the chromium bug tracker](https://code.google.com/p/chromium/issues/detail?id=369991) by an Arch user.
+
+#### Font rendering issues of UTF characters
+
+UTF characters may render as boxes (e.g. simplified Chinese characters). Installing [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) will allow for the characters to be rendered as expected.
 
 ### Force 3D acceleration
 

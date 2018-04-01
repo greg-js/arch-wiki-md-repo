@@ -291,6 +291,8 @@ extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
 
 ```
 
+**Note:** rEFInd only supports detecting one initramfs image per kernel, meaning it will not detect fallback initramfs nor Intel [microcode](/index.php/Microcode "Microcode") images. Specifying `initrd=` in `/boot/refind_linux.conf` will prevent you from using the same kernel options for multiple kernels.
+
 #### Manual boot stanzas
 
 If your kernel is not autodetected, or if you simply want more control over the options for a menu entry, you can manually create boot entries using stanzas in `refind.conf`. Ensure that `scanfor` includes `manual` or these entries will not appear in rEFInd's menu. Kernel parameters are set with the `options` keyword. rEFInd will append the `initrd=` parameter using the file specified by the `initrd` keyword in the stanza. If you need additional initrds (e.g. for [Microcode](/index.php/Microcode "Microcode")), you can specify them in `options` (and the one specified by the `initrd` keyword will be added to the end).
