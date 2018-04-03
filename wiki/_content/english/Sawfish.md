@@ -3,7 +3,7 @@ Sawfish is a highly customizable [window manager](/index.php/Window_manager "Win
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting Sawfish](#Starting_Sawfish)
+*   [2 Starting](#Starting)
 *   [3 Customization](#Customization)
     *   [3.1 Themes](#Themes)
         *   [3.1.1 Adding new](#Adding_new)
@@ -15,16 +15,9 @@ Sawfish is a highly customizable [window manager](/index.php/Window_manager "Win
 
 Sawfish can be [installed](/index.php/Installed "Installed") with the [sawfish](https://aur.archlinux.org/packages/sawfish/) package.
 
-## Starting Sawfish
+## Starting
 
-If you use [startx](/index.php/Startx "Startx"), just put
-
-```
- exec sawfish
-
-```
-
-at the end of your `~/.xinitrc`.
+Start `sawfish` with [xinit](/index.php/Xinit "Xinit").
 
 ## Customization
 

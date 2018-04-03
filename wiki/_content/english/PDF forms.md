@@ -1,15 +1,24 @@
-This article is meant to guide (Arch)linux users to use PDF forms. Some of the information here is from [this](https://bbs.archlinux.org/viewtopic.php?id=52084) thread.
+This article is meant to guide (Arch)linux users to use PDF forms. Go to this [list of PDF applications](https://wiki.archlinux.org/index.php/List_of_applications#PDF_and_DjVu), this page is not being kept up to date. Some of the information here is from [this](https://bbs.archlinux.org/viewtopic.php?id=52084) thread.
 
 ## Contents
 
 *   [1 Usage](#Usage)
-    *   [1.1 flpsed](#flpsed)
-    *   [1.2 Inkscape](#Inkscape)
-    *   [1.3 Master PDF Editor](#Master_PDF_Editor)
-    *   [1.4 LibreOffice Draw](#LibreOffice_Draw)
-    *   [1.5 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
+    *   [1.1 Evince](#Evince)
+    *   [1.2 flpsed](#flpsed)
+    *   [1.3 Inkscape](#Inkscape)
+    *   [1.4 Master PDF Editor](#Master_PDF_Editor)
+    *   [1.5 LibreOffice Draw](#LibreOffice_Draw)
+    *   [1.6 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
 
 ## Usage
+
+### Evince
+
+**[Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince")** — Document viewer for multiple document formats. Supports PDF, PostScript, DjVu, TIFF and DVI.
+
+	[https://wiki.gnome.org/Apps/Evince](https://wiki.gnome.org/Apps/Evince) || [evince](https://www.archlinux.org/packages/?name=evince)
+
+Easy to use GUI
 
 ### flpsed
 

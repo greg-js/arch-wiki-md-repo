@@ -2,8 +2,6 @@ Related articles
 
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
-[https://awesomewm.org/apidoc/documentation/90-FAQ.md.html](https://awesomewm.org/apidoc/documentation/90-FAQ.md.html)
-
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")

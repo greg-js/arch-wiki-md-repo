@@ -13,14 +13,15 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
 *   [1 DNS in Linux](#DNS_in_Linux)
     *   [1.1 Testing](#Testing)
 *   [2 Alternative DNS servers](#Alternative_DNS_servers)
-    *   [2.1 OpenNIC](#OpenNIC)
-    *   [2.2 DNS.WATCH](#DNS.WATCH)
-    *   [2.3 UncensoredDNS](#UncensoredDNS)
-    *   [2.4 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
+    *   [2.1 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
+    *   [2.2 Cloudflare](#Cloudflare)
+    *   [2.3 Comodo](#Comodo)
+    *   [2.4 DNS.WATCH](#DNS.WATCH)
     *   [2.5 Google](#Google)
-    *   [2.6 Comodo](#Comodo)
-    *   [2.7 Yandex](#Yandex)
-    *   [2.8 Quad9](#Quad9)
+    *   [2.6 OpenNIC](#OpenNIC)
+    *   [2.7 Quad9](#Quad9)
+    *   [2.8 UncensoredDNS](#UncensoredDNS)
+    *   [2.9 Yandex](#Yandex)
 *   [3 Preserve DNS settings](#Preserve_DNS_settings)
     *   [3.1 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
     *   [3.2 Use openresolv](#Use_openresolv)
@@ -73,6 +74,82 @@ To use alternative DNS servers, edit `/etc/resolv.conf` and add them at the top 
 
 **Tip:** If you require more flexibility, e.g. more than three nameservers, you can use a local DNS resolver like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [unbound](/index.php/Unbound "Unbound"). In this case the nameserver IP address will likely be `127.0.0.1`.
 
+### Cisco Umbrella (formerly OpenDNS)
+
+[OpenDNS](https://www.opendns.com/home-internet-security/) provided free alternative nameservers, was [bought by Cisco in Nov. 2016](https://umbrella.cisco.com/products/features/opendns-cisco-umbrella) and continues to offer OpenDNS as end-user product of its "Umbrella" product suite with focus on Security Enforcement, Security Intelligence and Web Filtering. The old nameservers [still work](https://www.opendns.com/setupguide/) but are [pre-configured to block adult content](https://www.opendns.com/home-internet-security/):
+
+```
+# OpenDNS IPv4 nameservers
+nameserver 208.67.222.222
+nameserver 208.67.220.220
+
+```
+
+```
+# OpenDNS IPv6 nameservers
+nameserver 2620:0:ccc::2
+nameserver 2620:0:ccd::2
+
+```
+
+### Cloudflare
+
+[Cloudflare](https://1.1.1.1/) provides a service committed to never writing the querying IP addresses to disk and wiping all logs within 24 hours.
+
+```
+# IPv4 nameservers: 
+nameserver 1.1.1.1
+nameserver 1.0.0.1
+
+```
+
+```
+# IPv6 nameservers:
+nameserver 2606:4700:4700::1111
+nameserver 2606:4700:4700::1001
+
+```
+
+### Comodo
+
+[Comodo](http://securedns.dnsbycomodo.com/) provides another IPv4 set, with optional (non-free) web-filtering. Implied in this feature is that the service hijacks the queries.
+
+```
+# Comodo nameservers 
+nameserver 8.26.56.26 
+nameserver 8.20.247.20
+
+```
+
+### DNS.WATCH
+
+[DNS.WATCH](https://dns.watch/) focuses on neutrality and security and provides two servers located in Germany with no logging and with DNSSEC enabled. Note they welcome commercial sponsorship.
+
+```
+# dns.watch IPv4 nameservers
+nameserver 84.200.69.80    # resolver1.dns.watch 
+nameserver 84.200.70.40    # resolver2.dns.watch
+
+```
+
+### Google
+
+[Google's nameservers](https://developers.google.com/speed/public-dns/) can be used as an alternative:
+
+```
+# Google IPv4 nameservers
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+```
+
+```
+# Google IPv6 nameservers
+nameserver 2001:4860:4860::8888
+nameserver 2001:4860:4860::8844
+
+```
+
 ### OpenNIC
 
 [OpenNIC](http://www.opennicproject.org/) provides free uncensored nameservers located in multiple countries. The full list of public servers is available at [servers.opennic.org](https://servers.opennic.org/) and a shortlist of nearest nameservers for optimal performance is generated on their [home page](https://www.opennic.org/).
@@ -99,14 +176,21 @@ nameserver 2a05:dfc7:5::5353
 
 **Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (*.o*, *.libre*, *.dyn*...)
 
-### DNS.WATCH
+### Quad9
 
-[DNS.WATCH](https://dns.watch/) focuses on neutrality and security and provides two servers located in Germany with no logging and with DNSSEC enabled. Note they welcome commercial sponsorship.
+[Quad9](https://quad9.net/#/) is a free DNS service founded by [IBM](https://www.ibm.com/security), [Packet Clearing House](https://www.pch.net) and [Global Cyber Alliance](https://www.globalcyberalliance.org); its primary unique feature is a blocklist which avoids resolving known malicious domains. The addresses below are worldwide anycast.
 
 ```
-# dns.watch IPv4 nameservers
-nameserver 84.200.69.80    # resolver1.dns.watch 
-nameserver 84.200.70.40    # resolver2.dns.watch
+# Quad9 IPv4 nameservers
+nameserver 9.9.9.9    ## "secure", with blocklist and DNSSEC
+nameserver 9.9.9.10    ## no blocklist, no DNSSEC
+
+```
+
+```
+# Quad9 IPv6 nameservers
+nameserver 2620:fe::fe    ## "secure", with blocklist and DNSSEC
+nameserver 2620:fe::10    ## no blocklist, no DNSSEC
 
 ```
 
@@ -129,53 +213,6 @@ nameserver 2a01:3a0:53:53::  ## unicast.censurfridns.dk
 ```
 
 **Note:** Its servers listen to port 5353 as well as the standard port 53\. This can be used in case your ISP hijacks port 53.
-
-### Cisco Umbrella (formerly OpenDNS)
-
-[OpenDNS](https://www.opendns.com/home-internet-security/) provided free alternative nameservers, was [bought by Cisco in Nov. 2016](https://umbrella.cisco.com/products/features/opendns-cisco-umbrella) and continues to offer OpenDNS as end-user product of its "Umbrella" product suite with focus on Security Enforcement, Security Intelligence and Web Filtering. The old nameservers [still work](https://www.opendns.com/setupguide/) but are [pre-configured to block adult content](https://www.opendns.com/home-internet-security/):
-
-```
-# OpenDNS IPv4 nameservers
-nameserver 208.67.222.222
-nameserver 208.67.220.220
-
-```
-
-```
-# OpenDNS IPv6 nameservers
-nameserver 2620:0:ccc::2
-nameserver 2620:0:ccd::2
-
-```
-
-### Google
-
-[Google's nameservers](https://developers.google.com/speed/public-dns/) can be used as an alternative:
-
-```
-# Google IPv4 nameservers
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-
-```
-
-```
-# Google IPv6 nameservers
-nameserver 2001:4860:4860::8888
-nameserver 2001:4860:4860::8844
-
-```
-
-### Comodo
-
-[Comodo](http://securedns.dnsbycomodo.com/) provides another IPv4 set, with optional (non-free) web-filtering. Implied in this feature is that the service hijacks the queries.
-
-```
-# Comodo nameservers 
-nameserver 8.26.56.26 
-nameserver 8.20.247.20
-
-```
 
 ### Yandex
 
@@ -212,24 +249,6 @@ nameserver 2a02:6b8:0:1::feed:a11 # Alternate IPv6 DNS
 ```
 
 Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no traffic filtering. In *Safe* mode, protection from infected and fraudulent sites is provided. *Family* mode enables protection from dangerous sites and blocks sites with adult content.
-
-### Quad9
-
-[Quad9](https://quad9.net/#/) is a free DNS service founded by [IBM](https://www.ibm.com/security), [Packet Clearing House](https://www.pch.net) and [Global Cyber Alliance](https://www.globalcyberalliance.org); its primary unique feature is a blocklist which avoids resolving known malicious domains. The addresses below are worldwide anycast.
-
-```
-# Quad9 IPv4 nameservers
-nameserver 9.9.9.9    ## "secure", with blocklist and DNSSEC
-nameserver 9.9.9.10    ## no blocklist, no DNSSEC
-
-```
-
-```
-# Quad9 IPv6 nameservers
-nameserver 2620:fe::fe    ## "secure", with blocklist and DNSSEC
-nameserver 2620:fe::10    ## no blocklist, no DNSSEC
-
-```
 
 ## Preserve DNS settings
 

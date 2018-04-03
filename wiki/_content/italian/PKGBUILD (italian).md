@@ -1,3 +1,14 @@
+Related articles
+
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [Category:Package development](/index.php/Category:Package_development "Category:Package development")
+*   [Pacman tips](/index.php/Pacman_tips "Pacman tips")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman "Pacman")
+
 Un `PKGBUILD` è un file di descrizione della costruzione di pacchetti di Arch Linux (è in effetti uno script da shell), usato durante la [creazione dei pacchetti](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)"). Questo articolo descrive le possibili variabili del `PKGBUILD`.
 
 I pacchetti in Arch Linux sono costruiti utilizzando il comando [makepkg](/index.php/Makepkg "Makepkg") e le informazioni sono memorizzate in un file `PKGBUILD`. Quando `makepkg` viene eseguito, cerca un `PKGBUILD` nella directory corrente e segue le istruzioni ivi contenute sia per compilare che per acquisire i file necessari al confezionamento di un pacchetto (`pkgname.pkg.tar.xz`). Il pacchetto risultante contiene i file binari e le istruzioni di installazione e può essere facilmente installato tramite [pacman](/index.php/Pacman "Pacman").
@@ -116,7 +127,7 @@ Il gruppo al quale appartiene il pacchetto. Per esempio, quando si installa il p
 
 ### depends
 
-Un array di nomi dei pacchetti che devono essere installati per poter poi lanciare questo software. Se il software richiede una versione minima di una dipendenza, si dovrebbe usare l'operatore `>=` per sottolinearlo, ad esempio: `depends=('foobar>=1.8.0')`. Non è necessario elencare i pacchetti che il software richiede come dipendenza se questi sono già richiesti come tale dagli altri pacchetti elencati nell'array. Per esempio, [gtk2](https://www.archlinux.org/packages/?name=gtk2) dipende da [glib2](https://www.archlinux.org/packages/?name=glib2) e [glibc](https://www.archlinux.org/packages/?name=glibc). Tuttavia, [glibc](https://www.archlinux.org/packages/?name=glibc) non è necessita di essere elencato come dipendenza per [gtk2](https://www.archlinux.org/packages/?name=gtk2) visto che è dipendenza per [glib2](https://www.archlinux.org/packages/?name=glib2).
+Un array di nomi dei pacchetti che devono essere installati per poter poi lanciare questo software. Se il software richiede una versione minima di una dipendenza, si dovrebbe usare l'operatore `>=` per sottolinearlo, ad esempio: `depends=('foobar>=1.8.0')`. Non è necessario elencare i pacchetti che il software richiede come dipendenza se questi sono già richiesti come tale dagli altri pacchetti elencati nell'array. Per esempio, [gtk2](https://www.archlinux.org/packages/?name=gtk2) dipende da [glib2](https://www.archlinux.org/packages/?name=glib2) e [glibc](https://www.archlinux.org/packages/?name=glibc). Tuttavia, [glibc](https://www.archlinux.org/packages/?name=glibc) non necessita di essere elencato come dipendenza per [gtk2](https://www.archlinux.org/packages/?name=gtk2) visto che è dipendenza per [glib2](https://www.archlinux.org/packages/?name=glib2).
 
 ### optdepends
 
@@ -210,7 +221,7 @@ un array di file che sono necessari per compilare il pacchetto. Deve contenere l
 
 ### noextract
 
-Un array di file elencati nell'array `source` che non dovrebbero essere estratti dal loro archivio da `makepkg`. Per lo più si applica a certi archivi che non possono essere gestiti da `/usr/bin/bsdtar` visto che [libarchive](https://www.archlinux.org/packages/?name=libarchive) processa tutti i file come flussi piuttosto che ad accesso casuale come fa [unzip](https://www.archlinux.org/packages/?name=unzip). In queste situazioni si dovrebbero aggiungere gli strumenti di decompressione alternativi (ad esempio `unzip`, `p7zip`, etc.) all'array `makedepends` e le prime linee della funzione [prepare()](/index.php/Creating_packages_(Italiano)#La_funzione_prepare.28.29 "Creating packages (Italiano)") dovrebbero estrarre l0'archivio di sorgenti manualmente; ad esempio:
+Un array di file elencati nell'array `source` che non dovrebbero essere estratti dal loro archivio da `makepkg`. Per lo più si applica a certi archivi che non possono essere gestiti da `/usr/bin/bsdtar` visto che [libarchive](https://www.archlinux.org/packages/?name=libarchive) processa tutti i file come flussi piuttosto che ad accesso casuale come fa [unzip](https://www.archlinux.org/packages/?name=unzip). In queste situazioni si dovrebbero aggiungere gli strumenti di decompressione alternativi (ad esempio `unzip`, `p7zip`, etc.) all'array `makedepends` e le prime linee della funzione [prepare()](/index.php/Creating_packages_(Italiano)#La_funzione_prepare.28.29 "Creating packages (Italiano)") dovrebbero estrarre l'archivio di sorgenti manualmente; ad esempio:
 
 ```
 unzip [source].zip

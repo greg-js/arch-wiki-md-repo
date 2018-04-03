@@ -155,6 +155,7 @@ There are different GUI tools:
 
 *   [GNOME](/index.php/GNOME "GNOME"):
     *   Control center has a basic UI. See [GNOME#Mouse and touchpad](/index.php/GNOME#Mouse_and_touchpad "GNOME").
+    *   [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) offers some additional settings.
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon"):
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:

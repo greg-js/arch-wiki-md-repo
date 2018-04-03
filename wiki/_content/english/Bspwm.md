@@ -3,7 +3,7 @@ Related articles
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
 
-[bspwm](https://github.com/baskerville/bspwm) is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [Extended Window Manager Hints](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
+[bspwm](https://github.com/baskerville/bspwm) is a tiling window manager that represents windows as the leaves of a full binary tree. bspwm supports multiple monitors and is configured and controlled through messages. [EWMH](https://standards.freedesktop.org/wm-spec/wm-spec-latest.html) is partially supported.
 
 ## Contents
 
@@ -19,8 +19,8 @@ Related articles
     *   [3.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
     *   [3.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Help! I get a blank screen and my keybindings don't work!](#Help.21_I_get_a_blank_screen_and_my_keybindings_don.27t_work.21)
-    *   [4.2 Window box larger than the actual application!](#Window_box_larger_than_the_actual_application.21)
+    *   [4.1 Blank screen and keybindings don't work](#Blank_screen_and_keybindings_don.27t_work)
+    *   [4.2 Window box larger than the actual application](#Window_box_larger_than_the_actual_application)
     *   [4.3 Problems with Java applications](#Problems_with_Java_applications)
     *   [4.4 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
     *   [4.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_.22Could_not_grab_key_43_with_modfield_68.22_on_start)
@@ -33,19 +33,17 @@ Related articles
 
 ## Starting
 
-Run `bspwm` using [xinit](/index.php/Xinit "Xinit"). Note that sxhkd needs to be started either in your `~/.xinitrc` or your bspwmrc config.
+Run `bspwm` using [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 
-Example configuration is found at `/usr/share/doc/bspwm/examples/` and on [GitHub](https://github.com/baskerville/bspwm/blob/master/examples/).
-
 **Important:** Make sure your environment variable $XDG_CONFIG_HOME is set or your bspwmrc will not be found. This can be done by adding `XDG_CONFIG_HOME="$HOME/.config"` and `export XDG_CONFIG_HOME` to your `~/.profile`.
 
-Create `~/.config/bspwm/` and `~/.config/sxhkd/`, then copy `/usr/share/doc/bspwm/examples/bspwmrc` to `~/.config/bspwm/` and `/usr/share/doc/bspwm/examples/sxhkdrc` to `~/.config/sxhkd/`. Make bspwmrc executable with `chmod +x ~/.config/bspwm/bspwmrc`.
+The example configuration is located in `/usr/share/doc/bspwm/examples/`. Copy `bspwmrc` from there into `~/.config/bspwm/` and `sxhkdrc` into `~/.config/sxhkd/`.
 
-These two files are where you will be setting wm settings and keybindings, respectively. See [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations") for annotated examples.
+These two files are where you will be setting wm settings and keybindings, respectively.
 
-See also the [bspwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) and [sxhkd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1) manuals for detailed documentation.
+See the [bspwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) and [sxhkd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1) manuals for detailed documentation.
 
 #### Note for multi-monitor setups
 
@@ -200,34 +198,14 @@ Put this script somewhere in your $PATH and call it from .xinitrc or similar (wi
 
 ## Troubleshooting
 
-### Help! I get a blank screen and my keybindings don't work!
+### Blank screen and keybindings don't work
 
-There are a few ways to debug this. First, a blank screen is good. That means bspwm is running.
+*   Make sure you are starting sxhkd (in the background as it is blocking).
+*   Make sure `~/.config/bspwm/bspwmrc` is executable.
 
-I would confirm that your xinitrc looks something like
+### Window box larger than the actual application
 
-```
-sxhkd &
-exec bspwm
-
-```
-
-The ampersand is important. Next, try spawning a terminal in your xinitrc to see if its getting positioned properly. It should appear somewhat "centered" on the screen. To do this, use this .xinitrc:
-
-```
-sxhkd &
-urxvt &
-exec bspwm
-
-```
-
-If nothing shows up, that means you probably forgot to install urxvt. If it shows up but isn't centered or taking up most of your screen, that means BSPWM isn't getting started properly. Make sure that you've `chmod +x ~/.config/bspwm/bspwmrc` .
-
-Next, type `pidof sxhkd` in that terminal you spawned. It should return a number. If it doesn't, that means sxhd isn't running. Try to be explicit and run `sxhkd -c ~/.config/sxhkd/sxhkdrc` . You could also try changing the Super key to something like Alt in your sxhkdrc and see if that helps. Another common problem is copying the text from the example files instead of physically copying the file over. Copying / pasting code usually leads to indentation issues which sxhkd can be sensitive to.
-
-### Window box larger than the actual application!
-
-This can happen if you are using GTK3 apps and usually for dialog windows. The fix is to create or add the below to a gtk3 theme file (~/.config/gtk-3.0/gtk.css).
+This can happen if you are using GTK3 apps and usually for dialog windows. The fix is to create or add the below to a gtk3 theme file (`~/.config/gtk-3.0/gtk.css`).
 
 ```
 .window-frame, .window-frame:backdrop {

@@ -81,7 +81,8 @@ You can set the default greeter by changing the `[Seat:*]` section of the LightD
 ```
 [Seat:*]
 ...
-greeter-session=lightdm-yourgreeter-greeter
+greeter-session=lightdm-*yourgreeter*-greeter
+...
 ```
 
 Which greeters are available? What values may be assigned to the `greeter-session` option? Each `.desktop` file in the `/usr/share/xgreeters` directory denotes an available greeter. In this example, the `lightdm-gtk-greeter` and `lightdm-kde-greeter` greeters are available:

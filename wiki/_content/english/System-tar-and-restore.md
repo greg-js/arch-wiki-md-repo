@@ -4,7 +4,7 @@
 
 *   **Restore/Transfer**: Restore mode uses the above created archive to extract it in desired partition(s). Transfer mode transfers your system in desired partition(s) using [rsync](https://www.archlinux.org/packages/?name=rsync). Then, in both cases, the script generates the target system's fstab, rebuilds initramfs for every available kernel, generates locales and finally installs and configures the selected bootloader.
 
-If you plan to use the gui, install [gtkdialog-svn](https://aur.archlinux.org/packages/gtkdialog-svn/) from the [AUR](/index.php/AUR "AUR").
+If you plan to use the gui, install [gtkdialog](https://aur.archlinux.org/packages/gtkdialog/) from the [AUR](/index.php/AUR "AUR").
 
 ## Installation
 

@@ -3,19 +3,24 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 First steps](#First_steps)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Multi-Monitor Support](#Multi-Monitor_Support)
-*   [4 Commands](#Commands)
-*   [5 Scripts and Hooks](#Scripts_and_Hooks)
-    *   [5.1 Script to switch to the next empty tag](#Script_to_switch_to_the_next_empty_tag)
-    *   [5.2 Script to cycle though paddings (or other settings)](#Script_to_cycle_though_paddings_.28or_other_settings.29)
-    *   [5.3 Script to change decoration per-tag](#Script_to_change_decoration_per-tag)
-*   [6 See also](#See_also)
+*   [2 Starting](#Starting)
+*   [3 First steps](#First_steps)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Multi-Monitor Support](#Multi-Monitor_Support)
+*   [5 Commands](#Commands)
+*   [6 Scripts and Hooks](#Scripts_and_Hooks)
+    *   [6.1 Script to switch to the next empty tag](#Script_to_switch_to_the_next_empty_tag)
+    *   [6.2 Script to cycle though paddings (or other settings)](#Script_to_cycle_though_paddings_.28or_other_settings.29)
+    *   [6.3 Script to change decoration per-tag](#Script_to_change_decoration_per-tag)
+*   [7 See also](#See_also)
 
 ## Installation
 
 Herbstluftwm can be [installed](/index.php/Installed "Installed") with the package [herbstluftwm](https://www.archlinux.org/packages/?name=herbstluftwm) or the package [herbstluftwm-git](https://aur.archlinux.org/packages/herbstluftwm-git/).
+
+## Starting
+
+Run `herbstluftwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## First steps
 
@@ -25,7 +30,7 @@ Read the [herbstluftwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/herbstluft
 
 Copy `/etc/xdg/herbstluftwm/autostart` file to `~/.config/herbstluftwm/autostart`. You can edit that file for your needs. Make sure the autostart file is executable, else you will probably end up without keybindings!
 
-The configuration of herbstluftwm is updated on-the-fly by issuing `herbstclient reload` (See Commands section), or having a keybinding for the reload command. Autostart is called on each reload, therefore within autostart you typically unmap all existing configuration first.
+The configuration of herbstluftwm can be updated on-the-fly by running `herbstclient reload` (See [#Commands](#Commands)). Autostart is called on each reload, therefore within autostart you typically unmap all existing configuration first.
 
 ### Multi-Monitor Support
 
@@ -168,7 +173,7 @@ close HOOKS or die "unfinished love story: $! $?"; # happens on hlwm crash
 ## See also
 
 *   [The herbstluftwm homepage](http://herbstluftwm.org)
-*   [The herbstluftwm thread](https://bbs.archlinux.org/viewtopic.php?id=128646)
+*   [Arch Linux BBS thread](https://bbs.archlinux.org/viewtopic.php?id=128646)
 *   `/usr/share/doc/herbstluftwm/examples/` - various scripts
 *   `/usr/share/doc/herbstluftwm/BUGS` - bugs
 *   [A herbstluftwm thread on the CrunchBang Forums](http://crunchbang.org/forums/viewtopic.php?pid=204358%23p204358#p204358k)

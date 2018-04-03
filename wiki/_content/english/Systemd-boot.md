@@ -99,14 +99,14 @@ Exec = /usr/bin/bootctl update
 The loader configuration is stored in the file `*esp*/loader/loader.conf` and it is composed of the following options:
 
 *   `default` – default entry to select as defined in [#Adding boot entries](#Adding_boot_entries); it is given without the *.conf* suffix and it can be a wildcard like `arch-*`.
-*   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
+*   `timeout` – menu timeout in seconds before the default entry is booted. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
 *   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
 
 Additional options are available starting with systemd **v239**:
 
-*   `auto-entries` (*boolean*, default is `1`) – shows automatic entries for Windows, EFI Shell, and Default Loader;
-*   `auto-firmware` (*boolean*, default is `1`) – shows entry for rebooting into UEFI firmware settings;
-*   `console-mode` (*int/enum*, default is `keep`) – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for vendor modes, `auto` for reasonable available mode, `max` for highest available mode, `keep` to do nothing.
+*   `auto-entries` – shows automatic entries for Windows, EFI Shell, and Default Loader if set to `1` (default), `0` to hide;
+*   `auto-firmware` – shows entry for rebooting into UEFI firmware settings if set to `1` (default), `0` to hide;
+*   `console-mode` – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for non-standard modes provided by the device firmware, if any, `auto` picks a suitable mode automatically, `max` for highest available mode, `keep` (default) for the firmware selected mode.
 
 Example:
 
@@ -118,18 +118,12 @@ editor   0
 
 ```
 
-**Note:** The first two options can be changed in the boot menu itself and changes will be stored as EFI variables.
+**Tip:**
 
-**Tip:** A basic loader configuration file is located at `/usr/share/systemd/bootctl/loader.conf`.
+*   `default` and `timeout` can be changed in the boot menu itself and changes will be stored as EFI variables, overriding these options.
+*   A basic loader configuration file is located at `/usr/share/systemd/bootctl/loader.conf`.
 
 ### Adding boot entries
-
-**Note:**
-
-*   *bootctl* will automatically check at boot time for "**Windows Boot Manager**" (`/EFI/Microsoft/Boot/Bootmgfw.efi`), "**EFI Shell**" (`/shellx64.efi`) and "**EFI Default Loader**" (`/EFI/BOOT/bootx64.efi`), as well as specially prepared kernel files found in `/EFI/Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
-*   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
-*   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
-*   The root partition can be identified with its `LABEL` or its `PARTUUID`. The latter can be found with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only to identify the root partition, not the `*esp*`.
 
 *bootctl* searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
 
@@ -142,6 +136,14 @@ editor   0
 For Linux boot, you can also use instead of `efi` and `options` the following syntax:
 
 *   `linux` and `initrd` followed by the relative path of the corresponding files in the ESP; e.g. `/vmlinuz-linux`; this will be automatically translated into `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
+
+*bootctl* will automatically check at boot time for **Windows Boot Manager** at the location `/EFI/Microsoft/Boot/Bootmgfw.efi`, **EFI Shell** `/shellx64.efi` and **EFI Default Loader** `/EFI/BOOT/bootx64.efi`, as well as specially prepared kernel files found in `/EFI/Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
+
+**Note:**
+
+*   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
+*   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
+*   The root partition can be identified with its `LABEL` or its `PARTUUID`. The latter can be found with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only to identify the root partition, not the `*esp*`.
 
 **Tip:**
 

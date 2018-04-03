@@ -38,11 +38,6 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.6 Module Issues](#Module_Issues)
         *   [5.6.1 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
         *   [5.6.2 /dev/vmci not found](#.2Fdev.2Fvmci_not_found)
-        *   [5.6.3 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
-        *   [5.6.4 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
-        *   [5.6.5 Kernel modules fail to build on Linux 4.13](#Kernel_modules_fail_to_build_on_Linux_4.13)
-        *   [5.6.6 Kernel modules fail to build on Linux 4.14](#Kernel_modules_fail_to_build_on_Linux_4.14)
-        *   [5.6.7 Failed to lock page for guest RAM on Linux 4.13](#Failed_to_lock_page_for_guest_RAM_on_Linux_4.13)
     *   [5.7 Installer Fails to Start](#Installer_Fails_to_Start)
         *   [5.7.1 User interface initialization failed](#User_interface_initialization_failed)
     *   [5.8 VMware Fails to Start](#VMware_Fails_to_Start)
@@ -394,99 +389,6 @@ Try to recompile VMware kernel modules with:
 
 ```
 
-#### Kernel modules fail to build after Linux 4.9
-
-On VMware Workstation Pro 12.5.2, the module source needs to be modified to be successfully compiled under kernel 4.9 [[1]](http://rglinuxtech.com/?p=1847).
-
-```
-# cd /usr/lib/vmware/modules/source
-# tar xf vmmon.tar
-# mv vmmon.tar vmmon.old.tar
-# sed -i 's/uvAddr, numPages, 0, 0/uvAddr, numPages, 0/g' vmmon-only/linux/hostif.c
-# tar cf vmmon.tar vmmon-only
-# rm -r vmmon-only
-
-```
-
-```
-# tar xf vmnet.tar
-# mv vmnet.tar vmnet.old.tar
-# sed -i 's/addr, 1, 1, 0/addr, 1, 0/g' vmnet-only/userif.c
-# tar cf vmnet.tar vmnet-only
-# rm -r vmnet-only
-
-```
-
-#### vmware modules fail to build on kernel 4.11+ and GCC 7
-
-Running vmware-modconfig yields:
-
-```
-Failed to get gcc information.
-
-```
-
-The actual error can be found in the logs:
-
-```
-modconfig| I125: Got gcc version "6.3.1".
-modconfig| I125: GCC major version 6 does not match Kernel GCC major version 7.
-modconfig| I125: The GCC compiler "/sbin/gcc" cannot be used for the target kernel.
-
-```
-
-To skip the check, use this workaround:
-
-```
-# sed 's/gcc version 6/gcc version 7/' /proc/version > /tmp/version
-# mount --bind /tmp/version /proc/version
-# vmware-modconfig --console --install-all
-# umount /proc/version && rm /tmp/version
-
-```
-
-#### Kernel modules fail to build on Linux 4.13
-
-On VMware Workstation Pro 12.5.7, the module source needs to be modified to be successfully compiled under kernel 4.13 [[2]](https://communities.vmware.com/thread/568089).
-
-```
-# cd /usr/lib/vmware/modules/source
-# tar xf vmnet.tar
-# mv vmnet.tar vmnet.old.tar
-# sed -i 's/atomic_inc(&clone->users);/clone = skb_get(clone);/g' vmnet-only/bridge.c
-# tar cf vmnet.tar vmnet-only
-# rm -r vmnet-only
-
-```
-
-#### Kernel modules fail to build on Linux 4.14
-
-In kernel 4.14 the name of a function was changed for no reason [[3]](https://patchwork.kernel.org/patch/9874655/)[[4]](https://github.com/mkubecek/vmware-host-modules/commit/770c7ffe611520ac96490d235399554c64e87d9f?diff=unified).
-
-```
-# cd /usr/lib/vmware/modules/source
-# tar xf vmmon.tar
-# mv vmmon.tar vmmon.old.tar
-# wget [https://github.com/mkubecek/vmware-host-modules/commit/770c7ffe611520ac96490d235399554c64e87d9f.diff](https://github.com/mkubecek/vmware-host-modules/commit/770c7ffe611520ac96490d235399554c64e87d9f.diff)
-# patch vmmon-only/linux/hostif.c 770c7ffe611520ac96490d235399554c64e87d9f.diff
-# tar cf vmmon.tar vmmon-only
-# rm -r vmmon-only 770c7ffe611520ac96490d235399554c64e87d9f.diff
-
-```
-
-#### Failed to lock page for guest RAM on Linux 4.13
-
-VMware Workstation Pro versions from 12.5 up to 14.0 can lock up both guest and host systems while running a virtual machine under kernel 4.13 without a patch to the `vmmon` module due to the virtual machine being unable to reserve memory on the host machine. The VM-specific log files show the following errors:
-
-```
-I125: [msg.monitorInit.mem.lockFailed] The virtual machine is unable to reserve memory.
-...
-E105: PANIC: Failed to lock page for guest RAM!
-
-```
-
-A readily patched `vmmon` source code can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/tree/b50848c985f1a6c0a341187346d77f0119d0a835). The host module can also be patched using [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
-
 ### Installer Fails to Start
 
 If you just get back to the prompt when opening the `.bundle`, then you probably have a deprecated or broken version of the VMware installer and it should removed (you may also refer to the [uninstallation](#Uninstallation) section of this article):
@@ -532,7 +434,7 @@ See [Microcode](/index.php/Microcode "Microcode") for how to update the microcod
 
 #### vmplayer/vmware fails to start from version 12.5.4
 
-As per [[5]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
+As per [[1]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
 
 An easier workaround is to make VMWare use the system's version of zlib instead of its own one:
 
@@ -577,15 +479,6 @@ Also there is a workaround:
 
 ```
 
-If it happens on **12.5.7** and moving `icudt44l.dat` or setting `VMWARE_USE_SHIPPED_LIBS` to `yes` has no effect or if executing `vmplayer` on terminal shows no message, try as root:
-
-```
-# cd /usr/lib/vmware/lib/libz.so.1
-# mv libz.so.1 libz.so.1.old
-# ln -s /usr/lib/libz.so.1 .
-
-```
-
 Despite setting the VMWARE_USE_SHIPPED_LIBS variable, VMWare may still fail to find certain libraries. An example is the libfontconfig.so.1 library. Check vmware logs in the tmp directory to see which libraries are still not found. Copy them to the appropriate path with libraries existing on the system:
 
 ```
@@ -597,6 +490,19 @@ Instead of copying all these files manually, you may want to try exporting an ad
 
 ```
 # export VMWARE_USE_SYSTEM_LIBS='yes'
+
+```
+
+On systems with fontconfig version **2.13.0** and above, it may be needed to replace the shipped libfontconfig file with version **2.12.6** library file and force VMware to use that file instead of the newer system file. This applies for at least VMware version **12.5.9**. As root do:
+
+```
+# cd /usr/lib/vmware/lib/libfontconfig.so.1
+# wget [https://archive.archlinux.org/packages/f/fontconfig/fontconfig-2.12.6-1-x86_64.pkg.tar.xz](https://archive.archlinux.org/packages/f/fontconfig/fontconfig-2.12.6-1-x86_64.pkg.tar.xz)
+# tar -xvf fontconfig-2.12.6-1-x86_64.pkg.tar.xz usr/lib/libfontconfig.so.1.10.1
+# mv libfontconfig.so.1 libfontconfig.so.1.old
+# mv ./usr/lib/libfontconfig.so.1.10.1 ./libfontconfig.so.1
+# rm -r ./usr ./fontconfig-2.12.6-1-x86_64.pkg.tar.xz
+# export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libfontconfig.so.1:$LD_LIBRARY_PATH
 
 ```
 
@@ -641,7 +547,7 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 #### Networking on Guests not available after system restart
 
-This is likely due to the `vmnet` module not being loaded [[6]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
+This is likely due to the `vmnet` module not being loaded [[2]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
 
 ## Uninstallation
 

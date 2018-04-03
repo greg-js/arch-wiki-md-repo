@@ -970,6 +970,10 @@ See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_manager
 
 	[https://github.com/RonnyDo/ColorPicker](https://github.com/RonnyDo/ColorPicker) || [color-picker-git](https://aur.archlinux.org/packages/color-picker-git/)
 
+*   **xcolor** — Lightweight color picker for X11
+
+	[https://github.com/Soft/xcolor](https://github.com/Soft/xcolor) || [xcolor](https://aur.archlinux.org/packages/xcolor/)
+
 ### Package management
 
 See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").

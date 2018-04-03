@@ -29,20 +29,18 @@ Related articles
     *   [4.3 CSMT](#CSMT)
     *   [4.4 Unregister existing Wine file associations](#Unregister_existing_Wine_file_associations)
     *   [4.5 Prevent new Wine file associations](#Prevent_new_Wine_file_associations)
-    *   [4.6 Execute Windows binaries with wine implicitly](#Execute_Windows_binaries_with_wine_implicitly)
+    *   [4.6 Execute Windows binaries with Wine implicitly](#Execute_Windows_binaries_with_Wine_implicitly)
     *   [4.7 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
-    *   [4.8 Changing the language](#Changing_the_language)
-    *   [4.9 16-bit programs](#16-bit_programs)
-    *   [4.10 Burning optical media](#Burning_optical_media)
-    *   [4.11 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.12 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
-    *   [4.13 Show FPS overlay in games](#Show_FPS_overlay_in_games)
-    *   [4.14 Microsoft Office](#Microsoft_Office)
-    *   [4.15 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
-    *   [4.16 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
-    *   [4.17 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
-    *   [4.18 DXVK](#DXVK)
-    *   [4.19 Vulkan](#Vulkan)
+    *   [4.8 16-bit programs](#16-bit_programs)
+    *   [4.9 Burning optical media](#Burning_optical_media)
+    *   [4.10 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
+    *   [4.11 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
+    *   [4.12 Show FPS overlay in games](#Show_FPS_overlay_in_games)
+    *   [4.13 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
+    *   [4.14 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
+    *   [4.15 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
+    *   [4.16 DXVK](#DXVK)
+    *   [4.17 Vulkan](#Vulkan)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -65,7 +63,7 @@ Configuring Wine is typically accomplished using:
 
 By default, Wine stores its configuration files and installed Windows programs in `~/.wine`. This directory is commonly called a "Wine prefix" or "Wine bottle". It is created/updated automatically whenever you run a Windows program or one of Wine's bundled programs such as *winecfg*. The prefix directory also contains a tree which your Windows programs will see as `C:` (the C-drive).
 
-You can override the location Wine uses for a prefix with the `WINEPREFIX` environment variable. This is useful if you want to use separate configurations for different Windows programs. The first time a program is run with a new Wine prefix, Wine will automatically create a directory with a bare C-drive and registry.
+You can override the location Wine uses for a prefix with the `WINEPREFIX` [environment variable](/index.php/Environment_variable "Environment variable"). This is useful if you want to use separate configurations for different Windows programs. The first time a program is run with a new Wine prefix, Wine will automatically create a directory with a bare C-drive and registry.
 
 For example, if you run one program with `$ env WINEPREFIX=~/.win-a wine program-a.exe`, and another with `$ env WINEPREFIX=~/.win-b wine program-b.exe`, the two programs will each have a separate C-drive and separate registries.
 
@@ -80,7 +78,7 @@ $ env WINEPREFIX=~/.customprefix wineboot -u
 
 ### WINEARCH
 
-Wine will start an 64-bit environment by default. You can change this behavior using the `WINEARCH` environment variable. Rename your `~/.wine` directory and create a new Wine environment by running `$ WINEARCH=win32 winecfg`. This will get you a 32-bit Wine environment. Not setting `WINEARCH` will get you a 64-bit one.
+Wine will start an 64-bit environment by default. You can change this behavior using the `WINEARCH` [environment variable](/index.php/Environment_variable "Environment variable"). Rename your `~/.wine` directory and create a new Wine environment by running `$ WINEARCH=win32 winecfg`. This will get you a 32-bit Wine environment. Not setting `WINEARCH` will get you a 64-bit one.
 
 You can combine this with `WINEPREFIX` to make a separate `win32` and `win64` environment:
 
@@ -94,14 +92,6 @@ You can also use `WINEARCH` in combination with other Wine programs, such as *wi
 
 ```
 WINEARCH=win32 WINEPREFIX=~/.local/share/wineprefixes/steam winetricks steam
-
-```
-
-To have them permanently defined for [bash configuration ~/.bashrc](/index.php/Bash#Shell_and_environment_variables "Bash") do:
-
-```
-export WINEPREFIX=$HOME/.config/wine/
-export WINEARCH=win32
 
 ```
 
@@ -365,7 +355,7 @@ $ export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 ```
 
-### Execute Windows binaries with wine implicitly
+### Execute Windows binaries with Wine implicitly
 
 The [wine](https://www.archlinux.org/packages/?name=wine) package installs a *binfmt* file which will allow you to run Windows programs directly, e.g. `*./myprogram.exe*` will launch as if you had typed `wine *./myprogram.exe*`. All you have to do in order to use this is to [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `systemd-binfmt.service`.
 
@@ -376,22 +366,6 @@ The [wine](https://www.archlinux.org/packages/?name=wine) package installs a *bi
 If you have issues with dual-head setups and different display resolutions you are probably missing [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr).
 
 Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib32-libxinerama) might fix dual-head issues with wine.
-
-### Changing the language
-
-Some programs may not offer a language selection, they will guess the desired language upon the system locales. Wine will transfer the current environment (including the locales) to the application, so it should work out of the box. If you want to force a program to run in a specific locale (which is fully [generated](/index.php/Locale "Locale") on your system), you can call Wine with the following setting:
-
-```
-$ LC_ALL=*xx_XX.encoding* wine */path/to/program*
-
-```
-
-For instance
-
-```
-$ LC_ALL=it_IT.UTF-8 wine */path/to/program*
-
-```
 
 ### 16-bit programs
 
@@ -439,12 +413,6 @@ You should of course refer to your application's documentation and Wine's [AppDB
 ### Show FPS overlay in games
 
 Wine features an embedded FPS monitor which works for all graphical applications if the environment variable `WINEDEBUG=fps` is set. This will output the framerate to stdout. You can display the FPS on top of the window thanks to `osd_cat` from the [xosd](https://www.archlinux.org/packages/?name=xosd) package. See [winefps.sh](https://gist.github.com/anonymous/844aefd70bb50bf72b35) for a helper script.
-
-### Microsoft Office
-
-[Install](/index.php/Install "Install") the [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) [samba](https://www.archlinux.org/packages/?name=samba) and [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2) packages.
-
-See [Wine AppDB page](https://appdb.winehq.org/objectManager.php?sClass=application&iId=31) for more information.
 
 ### Running Wine under a separate user account
 
@@ -513,7 +481,7 @@ If Gecko and/or Mono are not present on the system nor in the Wine prefix, Wine 
 
 [DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
 
-To use it, configure Wine to use [#Vulkan](#Vulkan), and install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official biniaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
+To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official biniaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
 
 ```
 $ WINEPREFX=*your-prefix* setup_dxvk64
@@ -522,11 +490,15 @@ $ WINEPREFX=*your-prefix* setup_dxvk64
 
 Use `setup_dxvk32` for 32-bit applications.
 
+**Note:** For now [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) is still at version 3.4, this means that you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine) and [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) work out of the box.
+
 **Warning:** DXVK overrides the DirectX 11 DLLS, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
 
 ### Vulkan
 
-Since Wine 3.3 Vulkan support is included. This replaces the old inplementation in older versions of Wine Staging. You have to configure Vulkan manually for now, although the process should become easier in the future. Follow step 2-4 on the author's [GitHub page](https://github.com/roderickc/wine-vulkan) to configure Vulkan.
+Vulkan support is included, since Wine 3.3\. The default Wine Vulkan ICD loader works fine for most applications, but does not support advanced features, like Vulkan layers. To use these features, you have to install the official Vulkan SDK, see step 2-4 on the original Vulkan patches author's [GitHub page](https://github.com/roderickc/wine-vulkan).
+
+**Note:** The Wine ICD loader was added in Wine 3.5, you need to install the official Vulkan SDK to use Vulkan in Wine 3.3 and 3.4
 
 ## Third-party applications
 

@@ -9,7 +9,7 @@ Spectrwm is written in C and configured with a text configuration file. It was p
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Keybindings configuration](#Keybindings_configuration)
-*   [3 Starting spectrwm](#Starting_spectrwm)
+*   [3 Starting](#Starting)
 *   [4 Multiple monitors (Xinerama)](#Multiple_monitors_.28Xinerama.29)
 *   [5 Statusbar configuration](#Statusbar_configuration)
     *   [5.1 Bash scripts](#Bash_scripts)
@@ -49,16 +49,9 @@ Default keybindings are in `/etc/spectrwm/spectrwm_<<keyboard layout>>.conf`. In
 
 *   Copy-paste the contents of `/etc/spectrwm/spectrwm_<<keyboard layout>>.conf` to the end of your `~/.spectrwm.conf`.
 
-## Starting spectrwm
+## Starting
 
-Select *spectrwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
-
-Alternatively, to start spectrwm with `startx` or the [SLiM](/index.php/SLiM "SLiM") login manager, simply append the following to `~/.xinitrc`:
-
-```
-exec spectrwm
-
-```
+Run `spectrwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## Multiple monitors (Xinerama)
 
@@ -260,7 +253,7 @@ Meta+Shift+q: exit spectrwm
 
 ### Help, I just logged in and all I see is a blank screen
 
-Press `Shift+WinKey+Return` and an xterm will start. See [spectrwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/spectrwm.1) for other default key bindings. Also check your configuration file.
+Press `Shift+WinKey+Return` and an xterm will start. See [spectrwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/spectrwm.1) for other default key bindings. Also check your configuration file.
 
 ### Why does my window open in a desktop other then the current active one?
 

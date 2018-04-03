@@ -47,7 +47,7 @@ In case of issue with a new kernel, the Linux packages can be downgraded to the 
 
 ```
 
-**Tip:** If you are unable to boot after a kernel update, you can downgrade the kernel [chrooting](/index.php/Change_root "Change root") into the system. Boot using an Arch Linux [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") and mount the partition where your system is installed to `/mnt`. If you have `/boot` or `/var` on separate partitions, also mount them to `/mnt` (e.g. `mount /dev/sdc3 /mnt/boot`). Then *chroot* into the system using: `# arch-chroot /mnt /bin/bash` Now you can go into the *pacman* cache directory and downgrade the Linux packages using the command indicated above. Once done, exit the chroot (with `exit`) and reboot.
+**Tip:** If you are unable to boot after a kernel update, you can downgrade the kernel [chrooting](/index.php/Change_root "Change root") into the system. Boot using an Arch Linux [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") and mount the partition where your system is installed to `/mnt`. If you have `/boot` or `/var` on separate partitions, also mount them to `/mnt` (e.g. `mount /dev/sdc3 /mnt/boot`). Then *chroot* into the system using: `# arch-chroot /mnt /bin/bash` Now you can go into the *pacman* cache directory and downgrade the Linux packages using the command indicated above. Once done, exit the chroot (with `exit`) and reboot. A more detailed tutorial can be found at [https://www.soimort.org/notes/170407/](https://www.soimort.org/notes/170407/)
 
 ### Arch Linux Archive
 

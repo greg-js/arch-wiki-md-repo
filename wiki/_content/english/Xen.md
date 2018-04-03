@@ -1,3 +1,8 @@
+Related articles
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
+
 From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 
 	*Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source. Xen is used as the basis for a number of different commercial and open source applications, such as: server virtualization, Infrastructure as a Service (IaaS), desktop virtualization, security applications, embedded and hardware appliances.*
@@ -239,7 +244,7 @@ Each *domU* requires a separate configuration file that is used to create the vi
 
 ```
 name = "domU"
-memory = 256
+memory = 512
 disk = [ "file:/path/to/ISO,sdb,r", "phy:/path/to/partition,sda1,w" ]
 vif = [ 'mac=00:16:3e:XX:XX:XX,bridge=xenbr0' ]
 
@@ -269,7 +274,7 @@ A minimal configuration file for a HVM Arch *domU* is:
 ```
 name = 'HVM_domU'
 builder = 'hvm'
-memory = 256
+memory = 512
 vcpus = 2
 disk = [ 'phy:/dev/mapper/vg0-hvm_arch,xvda,w', 'file:/path/to/ISO,hdc:cdrom,r' ]
 vif = [ 'mac=00:16:3e:00:00:00,bridge=xenbr0' ]
@@ -304,7 +309,7 @@ name = "PV_domU"
 kernel = "/mnt/arch/boot/x86_64/vmlinuz"
 ramdisk = "/mnt/arch/boot/x86_64/archiso.img"
 extra = "archisobasedir=arch archisolabel=ARCH_201301"
-memory = 256
+memory = 512
 disk = [ "phy:/path/to/partition,sda1,w", "file:/path/to/ISO,sdb,r" ]
 vif = [ 'mac=00:16:3e:XX:XX:XX,bridge=xenbr0' ]
 

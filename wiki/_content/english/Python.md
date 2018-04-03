@@ -31,7 +31,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 
 ### Python 3
 
-Python 3 is the latest version of the language, and is incompatible with Python 2\. The language is mostly the same, but many details, especially how built-in objects like dictionaries and strings work, have changed considerably, and a lot of deprecated features have finally been removed. Also, the standard library has been reorganized in a few prominent places. For an overview of the differences, visit [Python2orPython3](https://wiki.python.org/moin/Python2orPython3) and their relevant [chapter](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) in Dive into Python 3.
+Python 3 is the latest version of the language, and is incompatible with Python 2\. The language is mostly the same, but many details, especially how built-in objects like dictionaries and strings work, have changed considerably, and a lot of deprecated features have finally been removed. Also, the standard library has been reorganized in a few prominent places. For an overview of the differences, visit [Python2orPython3](https://wiki.python.org/moin/Python2orPython3) and the relevant [chapter](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) in Dive into Python 3.
 
 To install the latest version of Python 3, [install](/index.php/Install "Install") the [python](https://www.archlinux.org/packages/?name=python) package.
 

@@ -188,30 +188,27 @@ See [Network bridge](/index.php/Network_bridge "Network bridge") for more inform
 
 ### Container creation
 
-For *privileged* containers, simply select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
+Containers are built using `lxc-create`. With the release of lxc-3.0.0-1, upstream has deprecated locally stored templates.
 
-*   Debian-based: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap)
-*   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/)
-
-Run `lxc-create` to create the container, which installs the root filesystem of the LXC to `/var/lib/lxc/CONTAINER_NAME/rootfs` by default. Example creating an Arch Linux LXC named "playtime":
+To build an Arch container, invoke like this:
 
 ```
-# lxc-create -n playtime -t /usr/share/lxc/templates/lxc-archlinux
+# lxc-create -n playtime -t download -- --dist archlinux --release current --arch amd64
 
 ```
 
-Users wishing to run *unprivileged* containers should use the -t download directive and select from the images that are displayed. For example:
+For other distros, invoke like this and select options from the supported distros displayed in the list:
 
 ```
 # lxc-create -n playtime -t download
 
 ```
 
-Alternatively, create a *privileged* container, and see: [#Converting a privileged container to an unprivileged container](#Converting_a_privileged_container_to_an_unprivileged_container).
-
 **Tip:** Users may optionally install [haveged](https://www.archlinux.org/packages/?name=haveged) and [start](/index.php/Start "Start") `haveged.service` to avoid a perceived hang during the setup process while waiting for system entropy to be seeded. Without it, the generation of private/GPG keys can add a lengthy wait to the process.
 
 **Tip:** Users of [Btrfs](/index.php/Btrfs "Btrfs") can append `-B btrfs` to create a Btrfs subvolume for storing containerized rootfs. This comes in handy if cloning containers with the help of `lxc-clone` command. [ZFS](/index.php/ZFS "ZFS") users may use `-B zfs`, correspondingly.
+
+**Note:** Users wanting the legacy templates can find them in [lxc-templates](https://aur.archlinux.org/packages/lxc-templates/) or alternatively, users can build their own templates with [distrobuilder](https://aur.archlinux.org/packages/distrobuilder/).
 
 ### Container configuration
 
@@ -474,6 +471,7 @@ The error may happen when you type a basic command (*ls*, *cat*, etc.) on an att
 
 ## See also
 
+*   [LXC 1.0 Blog Post Series](https://www.stgraber.org/2013/12/20/lxc-1-0-blog-post-series/)
 *   [LXD 2.0: Blog post series](https://stgraber.org/2016/03/11/lxd-2-0-blog-post-series-012/)
 *   [LXC@developerWorks](http://www.ibm.com/developerworks/linux/library/l-lxc-containers/)
 *   [Docker Installation on ArchLinux](http://docs.docker.io/en/latest/installation/archlinux/)

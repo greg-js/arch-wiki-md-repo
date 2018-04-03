@@ -45,28 +45,25 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 *   [6 Composite](#Composite)
     *   [6.1 List of composite managers](#List_of_composite_managers)
 *   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 X startup tweaking (startx)](#X_startup_tweaking_.28startx.29)
-    *   [7.2 Nested X session](#Nested_X_session)
-    *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
-    *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
-    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
-    *   [7.6 Block TTY access](#Block_TTY_access)
-    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
+    *   [7.1 Nested X session](#Nested_X_session)
+    *   [7.2 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
+    *   [7.3 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
+    *   [7.4 Killing application with hotkey](#Killing_application_with_hotkey)
+    *   [7.5 Block TTY access](#Block_TTY_access)
+    *   [7.6 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 General](#General)
     *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
-    *   [8.3 CTRL right key does not work with oss keymap](#CTRL_right_key_does_not_work_with_oss_keymap)
-    *   [8.4 DRI with Matrox cards stopped working](#DRI_with_Matrox_cards_stopped_working)
-    *   [8.5 Frame-buffer mode problems](#Frame-buffer_mode_problems)
-    *   [8.6 Launching multiple X sessions with proprietary NVIDIA on Xorg 1.16](#Launching_multiple_X_sessions_with_proprietary_NVIDIA_on_Xorg_1.16)
-    *   [8.7 Program requests "font '(null)'"](#Program_requests_.22font_.27.28null.29.27.22)
-    *   [8.8 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
-    *   [8.9 X clients started with "su" fail](#X_clients_started_with_.22su.22_fail)
-    *   [8.10 X failed to start: Keyboard initialization failed](#X_failed_to_start:_Keyboard_initialization_failed)
-    *   [8.11 Rootless Xorg](#Rootless_Xorg)
-        *   [8.11.1 Broken redirection](#Broken_redirection)
-    *   [8.12 A green screen whenever trying to watch a video](#A_green_screen_whenever_trying_to_watch_a_video)
-    *   [8.13 SocketCreateListener error](#SocketCreateListener_error)
+    *   [8.3 DRI with Matrox cards stopped working](#DRI_with_Matrox_cards_stopped_working)
+    *   [8.4 Frame-buffer mode problems](#Frame-buffer_mode_problems)
+    *   [8.5 Program requests "font '(null)'"](#Program_requests_.22font_.27.28null.29.27.22)
+    *   [8.6 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
+    *   [8.7 X clients started with "su" fail](#X_clients_started_with_.22su.22_fail)
+    *   [8.8 X failed to start: Keyboard initialization failed](#X_failed_to_start:_Keyboard_initialization_failed)
+    *   [8.9 Rootless Xorg](#Rootless_Xorg)
+        *   [8.9.1 Broken redirection](#Broken_redirection)
+    *   [8.10 A green screen whenever trying to watch a video](#A_green_screen_whenever_trying_to_watch_a_video)
+    *   [8.11 SocketCreateListener error](#SocketCreateListener_error)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -419,26 +416,6 @@ Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment]
 
 ## Tips and tricks
 
-### X startup tweaking (startx)
-
-For X's option reference see:
-
-```
-$ man Xserver
-
-```
-
-The following options have to be appended to the variable `"defaultserverargs"` in the `/usr/bin/startx` file:
-
-*   Enable deferred glyph loading for 16 bit fonts:
-
-```
--deferglyphs 16
-
-```
-
-**Note:** If you start X with kdm, the startx script does not seem to be executed. X options must be appended to the variable `ServerArgsLocal` in the `/usr/share/config/kdm/kdmrc` file.
-
 ### Nested X session
 
 To run a nested session of another desktop environment:
@@ -576,29 +553,6 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 
 X creates configuration and temporary files in current user's home directory. Make sure there is free disk space available on the partition your home directory resides in. Unfortunately, X server does not provide any more obvious information about lack of disk space in this case.
 
-### CTRL right key does not work with oss keymap
-
-Edit as root `/usr/share/X11/xkb/symbols/fr`, and change the line:
-
-```
-include "level5(rctrl_switch)"
-
-```
-
-to
-
-```
-// include "level5(rctrl_switch)"
-
-```
-
-Then restart X, reboot or run
-
-```
-setxkbmap fr oss
-
-```
-
 ### DRI with Matrox cards stopped working
 
 If you use a Matrox card and DRI stopped working after upgrading to Xorg, try adding the line:
@@ -630,22 +584,6 @@ Cannot run in framebuffer mode. Please specify busIDs for all framebuffer device
 ```
 
 [Uninstall](/index.php/Uninstall "Uninstall") the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package.
-
-### Launching multiple X sessions with proprietary NVIDIA on Xorg 1.16
-
-When attempting to launch X sessions in multiple ttys on Xorg 1.16, you may be rejected with a log indicating that no drivers were found. I found that a workaround for this was to specifically tell X that we'd like to use the 'nvidia' driver.
-
-`/etc/X11/xorg.conf.d/20-nvidia.conf`
-
-```
-Section "Device"
-    Identifier "Device0"
-    Driver     "nvidia"
-    VendorName "NVIDIA Corporation"
-    Option     "NoLogo" "True"
-EndSection
-
-```
 
 ### Program requests "font '(null)'"
 

@@ -100,22 +100,22 @@ Now after successful compilation you just need to gzip and copy it over for your
 If you are replacing some existing module you will need to overwrite it (and remember that reinstalling [linux](https://www.archlinux.org/packages/?name=linux) will replace it with default module)
 
 ```
-$ gzip fs/btrfs/btrfs.ko
-# cp -f fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/kernel/fs/btrfs/
+$ xz fs/btrfs/btrfs.ko
+# cp -f fs/btrfs/btrfs.ko.xz /usr/lib/modules/`uname -r`/kernel/fs/btrfs/
 
 ```
 
 Or alternatively, you can place the updated module in the updates folder (create it if it doesn't already exist).
 
 ```
-$ cp fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/updates
+$ cp fs/btrfs/btrfs.ko.xz /usr/lib/modules/`uname -r`/updates
 
 ```
 
 However if you are adding a new module you can just copy it to extramodules (note, this is just example as btrfs will not get loaded from here)
 
 ```
-# cp fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/extramodules/
+# cp fs/btrfs/btrfs.ko.xz /usr/lib/modules/`uname -r`/extramodules/
 
 ```
 

@@ -206,7 +206,7 @@ $ PKGEXT='.pkg.tar' makepkg
 
 ```
 
-As another example, the following uses the lzop algorithm, with the [lzo](https://www.archlinux.org/packages/?name=lzo) package required:
+As another example, the following uses the lzop algorithm, with the [lzop](https://www.archlinux.org/packages/?name=lzop) package required:
 
 ```
 $ PKGEXT='.pkg.tar.lzo' makepkg

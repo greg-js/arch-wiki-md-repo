@@ -188,7 +188,7 @@ Create the `/etc/profile.d/kwin.sh` file:
 
  `/etc/profile.d/kwin.sh`  `export KWIN_TRIPLE_BUFFER=1` 
 
-Use **OpenGL 2.0 or later** as rendering backend under *Systemsettings*, *Display and Monitor*, *Compositor*.
+Use **OpenGL 2.0 or later** as rendering backend under *System Settings > Display and Monitor > Compositor*.
 
 ## Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8
 

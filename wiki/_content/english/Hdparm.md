@@ -43,7 +43,7 @@ hdparm can be used for [Benchmarking#hdparm](/index.php/Benchmarking#hdparm "Ben
 
 ### Power management configuration
 
-Modern hard drives support numerous power management features, the most common ones are summarized in the following table. See `hdparm(8)` for the complete list.
+Modern hard drives support numerous power management features, the most common ones are summarized in the following table. See [hdparm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hdparm.8) for the complete list.
 
 **Warning:** Overly aggressive power management can reduce the lifespan of hard drives due to frequent parking and spindowns.
 

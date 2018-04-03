@@ -80,7 +80,7 @@ Using the **dconf-editor**, navigate to the key named `org.gnome.desktop.input-s
 
 See `/usr/share/X11/xkb/rules/xorg` for all XkbOptions and `/usr/share/X11/xkb/symbols/*` for the respective descriptions.
 
-**Note:** To enable the `Ctrl+Alt+Backspace` combination to terminate Xorg, use the [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool). Within the **Tweak Tool**, navigate to *Typing > Key sequence to kill the X server* and select the option `Ctrl+Alt+Backspace` from the dropdown menu.
+**Note:** To enable the `Ctrl+Alt+Backspace` combination to terminate Xorg, use [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks). Within the **Tweak Tool**, navigate to *Typing > Key sequence to kill the X server* and select the option `Ctrl+Alt+Backspace` from the dropdown menu.
 
 ### De-bind Windows key
 

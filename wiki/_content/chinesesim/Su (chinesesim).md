@@ -1,87 +1,94 @@
-**翻译状态：** 本文是英文页面 [su](/index.php/Su "Su") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-17，点击[这里](https://wiki.archlinux.org/index.php?title=su&diff=0&oldid=465608)可以查看翻译后英文页面的改动。
+相关文章
 
-The **su** command (**s**ubstitute **u**ser) is used to assume the identity of another user on the system, normally root. This saves having to logout and log back in as the user you want to be. Instead, you may login as another user **during** your session by starting a sort of "sub-session", and then logout back to your own session when done.
+*   [Users and groups (简体中文)](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")
+*   [sudo (简体中文)](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")
+
+**翻译状态：** 本文是英文页面 [su](/index.php/Su "Su") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-03，点击[这里](https://wiki.archlinux.org/index.php?title=su&diff=0&oldid=502924)可以查看翻译后英文页面的改动。
+
+**su** 命令 (**s**ubstitute **u**ser) 用来切换当前用户身份到其他用户身份，默认切换成 root。
+
+参阅 [PAM](/index.php/PAM "PAM") 可以找到配置 **su** 其他特性的方法。
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-*   [3 Security](#Security)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Login shell](#Login_shell)
-    *   [4.2 su and wheel](#su_and_wheel)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 用法](#.E7.94.A8.E6.B3.95)
+*   [3 另一个选择：Sudo](#.E5.8F.A6.E4.B8.80.E4.B8.AA.E9.80.89.E6.8B.A9.EF.BC.9ASudo)
+*   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
+    *   [4.1 “登录至”其他用户](#.E2.80.9C.E7.99.BB.E5.BD.95.E8.87.B3.E2.80.9D.E5.85.B6.E4.BB.96.E7.94.A8.E6.88.B7)
+    *   [4.2 su 和 wheel 用户组](#su_.E5.92.8C_wheel_.E7.94.A8.E6.88.B7.E7.BB.84)
 
-## Installation
+## 安装
 
-su is part of [util-linux](https://www.archlinux.org/packages/?name=util-linux) package, which is installed by default in Arch as member of [base](https://www.archlinux.org/groups/x86_64/base/) group.
+su 是 [util-linux](https://www.archlinux.org/packages/?name=util-linux) 包的一部分，默认已经作为 [base](https://www.archlinux.org/groups/x86_64/base/) 组的一部分安装到 Arch 中了。
 
-## Usage
+## 用法
 
-To assume the login of another user, pass the username that you want to become to su, as in:
+要切换到其他用户身份，将要切换的用户名传递给 su，像这样：
 
 ```
 # su *username*
 
 ```
 
-You will be prompted for the password of the user you are attempting to become.
+然后就能看到提示符，要求输入所要切换用户的密码。
 
-If no username is passed, su assumes the root user, and the password for which you are prompted will be that of root.
+如果没有传入用户名，su 默认切换为 root 用户，要求输入的密码也应该是 root 用户的密码。
 
-## Security
+## 另一个选择：Sudo
 
-From a security perspective, it is arguably better to set up and use [sudo](/index.php/Sudo "Sudo") instead of su. The sudo system will prompt you for your own password – or no password at all, if configured in such a way – rather than that of the target user (the user account you are attempting to use). This way you do not have to share passwords between users, and if you ever need to stop a user having root access (or access to any other account, for that matter), you do not have to change the root password, which is an inconvenience to everyone else; you only need to revoke that user's sudo access.
+[sudo](/index.php/Sudo "Sudo") 可以提供和 su 类似的功能，且更加可定制化，根据具体要求和威胁模型分析，可以作为 su 的一个替代。sudo 系统会提示你输入你自己的密码，或者根本没有密码（如果以这种方式配置的话），而不是目标用户（你正试图使用的帐户）的密码。这样就不必在用户之间共享密码，并且如果需要阻止一个用户获得 root 权限（或获得其他用户权限），则无需更改 root 密码（更改密码将给其他人造成不便），你只需要撤销该用户的 sudo 访问权。
 
-If sudo has been configured to allow the user to run root's shell, the user can run `sudo -s` or `sudo -i` to mimic `su` or `su -l`, respectively, and supply his own password or no password rather than root's password. Similarly, `sudo -u john -i` mimics `su -l john` if you are allowed to run john's shell.
+如果 sudo 被配置为允许用户以 root 身份运行 shell，那么用户只要用 `sudo -s` 或 `sudo -i` 命令就可以分别模拟出 `su` 或 `su -l` 命令的效果，而且是用他自己的密码（或没有密码），而不是 root 的密码。同样，如果允许以 john 身份运行 shell，`sudo -u john -i` 和 `su -l john` 效果一样。
 
-## Tips and tricks
+## 提示和技巧
 
-### Login shell
+### “登录至”其他用户
 
-The default behavior of su is to remain within the current directory and to maintain the environmental variables of the original user (rather than switch to those of the new user).
+su 的默认行为是保持在当前目录中并保持原始用户的环境变量（而不是切换到新用户的环境变量）。
 
-Note the following important contrasting considerations:
+这一特性的优劣需要注意以下重要的对比因素：
 
-*   It sometimes can be advantageous for a system administrator to use the shell account of an ordinary user rather than its own. In particular, occasionally the most efficient way to solve a user's problem is to log into that user's account in order to reproduce or debug the problem.
+*   系统管理员可以使用普通用户的 shell 而不是自己的。特别是在有些时候，解决用户问题的最有效的方法，就是登录到该用户的帐户以重现问题或进行调试。
 
-*   However, in many situations it is not desirable, or it can even be dangerous, for the root user to be operating from an ordinary user's shell account and with that account's environmental variables rather than from its own. While inadvertently using an ordinary user's shell account, root could install a program or make other changes to the system that would not have the same result as if they were made while using the root account. For instance, a program could be installed that could give the ordinary user power to accidentally damage the system or gain unauthorized access to certain data.
+*   但是通常情况下，root 用户不能登录普通用户的 shell 并使用该用户的环境变量进行操作，而是用自己的环境变量操作，这在很多情况下是不可取的，甚至是危险的。在无意中使用普通用户的 shell 时，root 可能会安装程序，或对系统进行其他更改，而这些更改与使用 root 帐户时所做的结果不同。例如，可能会安装某个程序，使得普通用户能够意外地损坏系统或未经授权访问某些数据。
 
-Thus, it is advisable that administrative users, as well as any other users that are authorized to use su (and it is suggested that there be very few, if any) acquire the habit of always running the su command with the `-l`/`--login` option. It has two effects:
+因此，建议系统管理员以及被授权使用 su 的任何其他用户（建议只有极少数用户），始终保持用 `-l` 或 `--login` 选项运行 su 命令的习惯。它有两个作用：
 
-1.  switches from the current directory to the home directory of the new user (e.g., to `/root` in the case of the root user) by *logging in* as that user
-2.  changes the environmental variables to those of the new user as dictated by their `~/.bashrc`. That is, the current directory and environment will be changed to what would be expected if the new user had actually logged on to a new session (rather than just taking over an existing session).
+1.  通过 *登录至* 目标用户，从当前工作目录切换到目标用户的主目录（比如切换到 root 用户就是 `/root`）。
+2.  根据目标用户的 `~/.bashrc` 切换到目标用户的环境变量。也就是说，当前工作目录和环境将会切换到和目标用户登录新会话时一样的目录和环境（而不是仅接管现有用户的会话）。
 
-Thus, administrators should generally use su as follows:
+因此，管理员通常应该这样使用 su：
 
 ```
 $ su -l
 
 ```
 
-An identical result is produced by adding the username root:
+添加用户名 root 结果一样：
 
 ```
 $ su -l root
 
 ```
 
-Likewise, the same can be done for any other user (e.g. for a user named archie):
+对于任何其他用户（如名为 archie 的用户），同样可以做到：
 
 ```
 # su -l archie
 
 ```
 
-You may wish to add an alias to `~/.bashrc` for this:
+你可能希望在 `~/.bashrc` 里为这个规则添加一个 alias：
 
 ```
 alias su="su -l"
 
 ```
 
-### su and wheel
+### su 和 wheel 用户组
 
-BSD su allows only members of the "wheel" [group](/index.php/Group "Group") to assume root's identity by default. This is not the default behavior of GNU su, but this behavior can be mimicked using [PAM](/index.php/PAM "PAM"). Uncomment the appropriate line in `/etc/pam.d/su` and `/etc/pam.d/su-l`:
+BSD su 默认仅允许 "wheel" [用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)") 成员切换至 root 身份。而 GNU su 默认没有这一特性，可以使用 [PAM](/index.php/PAM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PAM (简体中文)") 来模拟这一特性。将 `/etc/pam.d/su` 和 `/etc/pam.d/su-l` 中相应的行取消注释：
 
 ```
 auth required pam_wheel.so use_uid

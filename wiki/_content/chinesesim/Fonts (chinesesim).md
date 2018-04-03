@@ -449,6 +449,8 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Google Noto CJK 字体， 提供简体中文、繁体中文、日文、韩文一致的设计和外观。它是基于 [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) 重贴的商标。
 
+**提示：** 中文用户在安装思源cjk全集或者noto-cjk全集后，部分文字显示为日文异形字体，可参看[Arch Linux Localization (简体中文)#修正简体中文显示为异体（日文）字形](/index.php/Arch_Linux_Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.AD.A3.E7.AE.80.E4.BD.93.E4.B8.AD.E6.96.87.E6.98.BE.E7.A4.BA.E4.B8.BA.E5.BC.82.E4.BD.93.EF.BC.88.E6.97.A5.E6.96.87.EF.BC.89.E5.AD.97.E5.BD.A2 "Arch Linux Localization (简体中文)") 进行解决。
+
 *   文泉驿
     *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑，无衬线形式字体。
     *   [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite) - 文泉驿微米黑light版（笔画更细）。

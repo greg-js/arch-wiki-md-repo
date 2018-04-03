@@ -1073,5 +1073,6 @@ You can use the following website to get your device's coordinates along with a 
 45.514792, 9.137568 "Miako" # Milan, Italy
 41.557541, 2.095498 "Pol_M" # Sabadell, Barcelona, Spain
 38.220896,-85.6336618 "Wake" # Louisville, KY, USA
+40.018506,-105.084561 "enzobarrett" # Lafayette, CO, USA
 
 ```

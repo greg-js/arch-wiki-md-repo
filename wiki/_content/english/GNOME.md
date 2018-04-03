@@ -31,40 +31,40 @@ Related articles
         *   [3.2.2 Wayland sessions](#Wayland_sessions)
     *   [3.3 GNOME applications in Wayland](#GNOME_applications_in_Wayland)
 *   [4 Navigation](#Navigation)
-    *   [4.1 Legacy names](#Legacy_names)
-*   [5 Configuration](#Configuration)
-    *   [5.1 System settings](#System_settings)
-        *   [5.1.1 Color](#Color)
-        *   [5.1.2 Night Light](#Night_Light)
-        *   [5.1.3 Date & time](#Date_.26_time)
-        *   [5.1.4 Default applications](#Default_applications)
-        *   [5.1.5 Mouse and touchpad](#Mouse_and_touchpad)
-        *   [5.1.6 Network](#Network)
-        *   [5.1.7 Online accounts](#Online_accounts)
-        *   [5.1.8 Search](#Search)
-    *   [5.2 Advanced settings](#Advanced_settings)
-        *   [5.2.1 Appearance](#Appearance)
-            *   [5.2.1.1 GTK+ themes and icon themes](#GTK.2B_themes_and_icon_themes)
-                *   [5.2.1.1.1 Global dark theme](#Global_dark_theme)
-            *   [5.2.1.2 Window manager themes](#Window_manager_themes)
-                *   [5.2.1.2.1 Titlebar height](#Titlebar_height)
-                *   [5.2.1.2.2 Titlebar button order](#Titlebar_button_order)
-                *   [5.2.1.2.3 Hide titlebar when maximized](#Hide_titlebar_when_maximized)
-            *   [5.2.1.3 GNOME Shell themes](#GNOME_Shell_themes)
-            *   [5.2.1.4 Icons on menu](#Icons_on_menu)
-        *   [5.2.2 Desktop](#Desktop)
-            *   [5.2.2.1 Icons on the Desktop](#Icons_on_the_Desktop)
-            *   [5.2.2.2 Lock screen and background](#Lock_screen_and_background)
-            *   [5.2.2.3 Disable top left hot corner](#Disable_top_left_hot_corner)
-        *   [5.2.3 Extensions](#Extensions)
-        *   [5.2.4 Input methods](#Input_methods)
-        *   [5.2.5 Fonts](#Fonts)
-        *   [5.2.6 Startup applications](#Startup_applications)
-        *   [5.2.7 Power](#Power)
-            *   [5.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
-            *   [5.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
-        *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
-*   [6 See also](#See_also)
+*   [5 Legacy names](#Legacy_names)
+*   [6 Configuration](#Configuration)
+    *   [6.1 System settings](#System_settings)
+        *   [6.1.1 Color](#Color)
+        *   [6.1.2 Night Light](#Night_Light)
+        *   [6.1.3 Date & time](#Date_.26_time)
+        *   [6.1.4 Default applications](#Default_applications)
+        *   [6.1.5 Mouse and touchpad](#Mouse_and_touchpad)
+        *   [6.1.6 Network](#Network)
+        *   [6.1.7 Online accounts](#Online_accounts)
+        *   [6.1.8 Search](#Search)
+    *   [6.2 Advanced settings](#Advanced_settings)
+        *   [6.2.1 Appearance](#Appearance)
+            *   [6.2.1.1 GTK+ themes and icon themes](#GTK.2B_themes_and_icon_themes)
+                *   [6.2.1.1.1 Global dark theme](#Global_dark_theme)
+            *   [6.2.1.2 Window manager themes](#Window_manager_themes)
+                *   [6.2.1.2.1 Titlebar height](#Titlebar_height)
+                *   [6.2.1.2.2 Titlebar button order](#Titlebar_button_order)
+                *   [6.2.1.2.3 Hide titlebar when maximized](#Hide_titlebar_when_maximized)
+            *   [6.2.1.3 GNOME Shell themes](#GNOME_Shell_themes)
+            *   [6.2.1.4 Icons on menu](#Icons_on_menu)
+        *   [6.2.2 Desktop](#Desktop)
+            *   [6.2.2.1 Icons on the Desktop](#Icons_on_the_Desktop)
+            *   [6.2.2.2 Lock screen and background](#Lock_screen_and_background)
+            *   [6.2.2.3 Disable top left hot corner](#Disable_top_left_hot_corner)
+        *   [6.2.3 Extensions](#Extensions)
+        *   [6.2.4 Input methods](#Input_methods)
+        *   [6.2.5 Fonts](#Fonts)
+        *   [6.2.6 Startup applications](#Startup_applications)
+        *   [6.2.7 Power](#Power)
+            *   [6.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
+            *   [6.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
+        *   [6.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -129,7 +129,7 @@ fi
 
 ### GNOME applications in Wayland
 
-When the *GNOME* session is used, GNOME applications will be run using Wayland. See the current status of Wayland for GNOME applications at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/). For debugging cases, the [GTK+ manual](https://developer.gnome.org/gtk3/stable/gtk-running.html) lists options and environment variables.
+When the *GNOME* session is used, GNOME applications will be run using Wayland. For debugging cases, the [GTK+ manual](https://developer.gnome.org/gtk3/stable/gtk-running.html) lists options and environment variables.
 
 ## Navigation
 
@@ -141,7 +141,7 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 *   `Alt-` + ``` (the key above `Tab` on US keyboard layouts): cycle windows of the application in the foreground
 *   `Alt` + `F2`, then enter `r` or `restart`: restart the shell in case of graphical shell problems (only in X/legacy mode, not in Wayland mode).
 
-### Legacy names
+## Legacy names
 
 **Note:** Some GNOME programs have undergone name changes where the application's name in documentation and about dialogs has been changed but the executable name has not. A few such applications are listed in the table below.
 

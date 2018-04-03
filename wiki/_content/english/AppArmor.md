@@ -54,8 +54,6 @@ Instead of setting `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE` and `CONFIG_DEFAUL
 
 ### Userspace Tools
 
-**Note:** Since AppArmor builds and installs a kernel module it must be rebuilt against the current kernel on each update.
-
 The userspace tools and libraries to control AppArmor are supplied by the [apparmor](https://aur.archlinux.org/packages/apparmor/) package.
 
 The package is a split package which consists of following sub-packages:

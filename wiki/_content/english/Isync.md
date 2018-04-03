@@ -11,7 +11,7 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Automatic synchronization](#Automatic_synchronization)
-        *   [4.1.1 Integration with notmuch](#Integration_with_notmuch)
+        *   [4.1.1 Integration with notmuch or mu4e](#Integration_with_notmuch_or_mu4e)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSL error](#SSL_error)
         *   [5.1.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
@@ -159,9 +159,9 @@ Once those two files are created, [reload](/index.php/Reload "Reload") systemd, 
 
 **Tip:** The mbsync service now only runs after login. It's also possible to launch the systemd-user instances after boot if you configure [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
-#### Integration with notmuch
+#### Integration with notmuch or mu4e
 
-If you want to run [notmuch](/index.php/Notmuch "Notmuch") after automatically synchronizing your mails, it is preferable to modify the above `mbsync.service` by adding a post-start hook, like below:
+If you want to run [notmuch](/index.php/Notmuch "Notmuch") or mu/mu4e after automatically synchronizing your mails, it is preferable to modify the above `mbsync.service` by adding a post-start hook, like below:
 
  `~/.config/systemd/user/mbsycn.service` 
 ```
@@ -174,7 +174,9 @@ ExecStart=/usr/bin/mbsync -Va
 ExecStartPost=/usr/bin/notmuch new
 ```
 
-This modification assumes that you have already setup notmuch for your user. If the ExecStart command does not execute successfully, the ExecStartPost command will not execute, so be aware of this!
+You can also index `mu` by changing the `ExecStartPost` line to `ExecStartPost=/usr/bin/mu index`, or to `ExecStartPost=/usr/bin/emacsclient -e '(mu4e-update-index)'` if you are running emacsclient and would like to index `mu4e`.
+
+This modification assumes that you have already setup notmuch or mu/mu4e for your user. If the ExecStart command does not execute successfully, the ExecStartPost command will not execute, so be aware of this!
 
 ## Troubleshooting
 

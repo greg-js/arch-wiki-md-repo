@@ -43,7 +43,7 @@ To get involved in the identification of the vulnerabilities, it is recommended 
 
 *   Subscribe to the mailing lists [arch-security](https://lists.archlinux.org/listinfo/arch-security) and [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security).
 
-*   Contributing code to the [project](https://github.com/archlinux/arch-security-tracker) is a great way to contribute to the team.
+*   Committing code to the [arch-security-tracker (GitHub)](https://github.com/archlinux/arch-security-tracker) project is a great way to contribute to the team.
 
 *   Derivative distributions that rely on Arch Linux package repositories are encouraged to contribute. This helps the security of all the users.
 
@@ -171,7 +171,7 @@ For more resources, please see the OpenWall's [Open Source Software Security Wik
 
 ## Team Members
 
-**Note:** Run `!pingsec <msg>` in [IRC channels](/index.php/IRC_channels "IRC channels") to highlight all current security team members.
+The current members of the Arch Security Team are:
 
 *   [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx")
 *   [Remi Gacogne](/index.php/User:Rgacogne "User:Rgacogne")
@@ -180,3 +180,5 @@ For more resources, please see the OpenWall's [Open Source Software Security Wik
 *   [Santiago Torres-Arias](/index.php/User:Sangy "User:Sangy")
 *   [Jonathan Roemer](/index.php/User:Pid1 "User:Pid1")
 *   [Morten Linderud](/index.php/User:Foxboron "User:Foxboron")
+
+**Note:** Run `!pingsec <msg>` in [IRC channels](/index.php/IRC_channels "IRC channels") to highlight all current security team members.

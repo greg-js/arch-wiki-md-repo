@@ -9,8 +9,8 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
     *   [3.2 XFCE: Stylus and screen rotation](#XFCE:_Stylus_and_screen_rotation)
     *   [3.3 Touchscreen rotation](#Touchscreen_rotation)
 *   [4 Automatic rotation](#Automatic_rotation)
-    *   [4.1 With a script](#With_a_script)
-    *   [4.2 With systemd](#With_systemd)
+    *   [4.1 With xrandr + xinput](#With_xrandr_.2B_xinput)
+    *   [4.2 With GNOME](#With_GNOME)
     *   [4.3 With a KDE module](#With_a_KDE_module)
     *   [4.4 With Screen Rotator](#With_Screen_Rotator)
 *   [5 Tablet mode](#Tablet_mode)
@@ -183,7 +183,7 @@ You can create a link to it on your desktop or panel, or link it to a keyboard s
 
 ## Automatic rotation
 
-### With a script
+### With xrandr + xinput
 
 The following python script was developed to automatic rotate the screen and the touchscreen. Furthermore, it disable the touchpad for inverted, right, and left orientation, and supports automatic detection of accelerometers, touchscreens, and touchpad devices.
 
@@ -197,7 +197,7 @@ Note that there are many other surface pro 3 rotate scripts on github, including
 *   [https://github.com/simonwjackson/surface-pro-3-scripts](https://github.com/simonwjackson/surface-pro-3-scripts)
 *   [https://github.com/andrewrembrandt/surface-autorotate2](https://github.com/andrewrembrandt/surface-autorotate2)
 
-### With systemd
+### With GNOME
 
 See [iio-sensor-proxy](https://github.com/hadess/iio-sensor-proxy). [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) is available in the AUR.
 

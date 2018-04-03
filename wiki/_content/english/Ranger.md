@@ -297,16 +297,7 @@ map <c-n>  eval fm.tab_new('%d')
 
 By default ranger will preview PDF files as text. However, you can preview PDF files as an image in ranger by first converting the PDF file to an image. Ranger stores the image previews in `~/.cache/ranger/`. You either need to create this directory manually or set `preview_images` to `true` in `~/.config/ranger/rc.conf` to tell `ranger` to create it automatically at the next start. However, note that `preview_images` does not need to be set to `true` the whole time to preview PDF file as images, only `~/.cache/ranger` directory is needed.
 
-Ranger can preview images using, for example, [w3m](https://www.archlinux.org/packages/?name=w3m); see `~/.config/ranger/rc.conf` for all available preview methods.
-
-Replace the default `try pdftotext` command in `~/.config/ranger/scope.sh` with the following:
-
-```
-try pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6 || exit 1;;
-
-```
-
-In this example the `pdftoppm` utility from [poppler](https://www.archlinux.org/packages/?name=poppler) is used to create the image preview. Other (usually slower) options are available, for example [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) or [imagemagick](https://www.archlinux.org/packages/?name=imagemagick).
+To enable this feature, uncomment the appropriate lines in `/usr/share/doc/ranger/config/scope.sh`, or add/uncomment these lines in your local file `~/.config/ranger/scope.sh`.
 
 ### Shell tips
 

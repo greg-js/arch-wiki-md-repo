@@ -59,7 +59,7 @@ Long-running programs started before the window manager, such as a screensaver a
 
 The `xserverrc` file is a shell script responsible for starting up the X server. Both *startx* and *xinit* execute `~/.xserverrc` if it exists, *startx* will use `/etc/X11/xinit/xserverrc` otherwise.
 
-In order to maintain an [authenticated session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") with `logind` and to prevent bypassing the screen locker by switching terminals, [Xorg](/index.php/Xorg "Xorg") has to be started on the same virtual terminal where the login occurred.[[1]](http://blog.falconindy.com/articles/back-to-basics-with-x-and-systemd.html) Therefore it is recommended to specify `vt$XDG_VTNR` in the `~/.xserverrc` file:
+In order to maintain an [authenticated session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") with `logind` and to prevent bypassing the screen locker by switching terminals, [Xorg](/index.php/Xorg "Xorg") has to be started on the same virtual terminal where the login occurred [[1]](http://blog.falconindy.com/articles/back-to-basics-with-x-and-systemd.html). Therefore it is recommended to specify `vt$XDG_VTNR` in the `~/.xserverrc` file:
 
  `~/.xserverrc` 
 ```
@@ -68,6 +68,8 @@ In order to maintain an [authenticated session](/index.php/General_troubleshooti
 exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
 
 ```
+
+See [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) for a list of all command line options.
 
 **Tip:** `-nolisten local` can be added after `-nolisten tcp` to disable abstract sockets of X11 to help with isolation. There is a [quick background](https://tstarling.com/blog/2016/06/x11-security-isolation/) on how this potentially affects X11 security.
 
