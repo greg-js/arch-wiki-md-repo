@@ -4,7 +4,7 @@
 | [ALSA](/index.php/ALSA "ALSA") | no beep |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
-| [Webcam](/index.php/Webcam "Webcam") |
+| [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Fingerprint Sensor | No |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") |

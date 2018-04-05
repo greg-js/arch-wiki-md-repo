@@ -34,7 +34,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 #### Redshift-GTK
 
-The `redshift-gtk` command is provided by the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Redshift-GTK provides a system tray icon for controlling Redshift and requires the following packages to be installed: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg).
+The `redshift-gtk` command is provided by the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Redshift-GTK provides a system tray icon for controlling Redshift and requires the following packages to be installed: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [gtk3](https://www.archlinux.org/packages/?name=gtk3).
 
 ##### Alternatives
 

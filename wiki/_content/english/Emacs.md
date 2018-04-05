@@ -22,7 +22,7 @@
     *   [5.8 SyncTeX support](#SyncTeX_support)
     *   [5.9 Syntax highlighting for systemd Files](#Syntax_highlighting_for_systemd_Files)
     *   [5.10 Clipboard support for emacs-nox](#Clipboard_support_for_emacs-nox)
-*   [6 Extensions](#Extensions)
+*   [6 Packages](#Packages)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Emacs fails to start with the error message 'Undefined color: "WINDOW_FOREGROUND"'](#Emacs_fails_to_start_with_the_error_message_.27Undefined_color:_.22WINDOW_FOREGROUND.22.27)
     *   [7.2 Colored output issues](#Colored_output_issues)
@@ -31,7 +31,7 @@
     *   [7.5 Cannot open load file: ...](#Cannot_open_load_file:_...)
     *   [7.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
     *   [7.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
-    *   [7.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
+    *   [7.8 Emacs hangs](#Emacs_hangs)
     *   [7.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
     *   [7.10 Weirds escaped numbers(utf-8) displaying in emacs terminal](#Weirds_escaped_numbers.28utf-8.29_displaying_in_emacs_terminal)
     *   [7.11 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
@@ -363,16 +363,16 @@ You can define variables in your configuration file that can be later one modifi
 
 ```
 
-Now in any file you can define local variables in two ways:
+Now in any file you can define local variables in two ways, see [the manual for complete details](https://www.gnu.org/software/emacs/manual/html_node/emacs/Specifying-File-Variables.html)
 
-*   On the very first line, write
+*   Using `M-x add-file-local-variable-prop-line`, which adds a commented line at the beginning similar to:
 
 ```
 // -*- my-compiler:g++; mode:c++ -*-
 
 ```
 
-*   If you cannot (or do not want to) write this on the first line, you can put it at the end:
+*   Or you can use `M-x add-file-local-variable` to add lines near the end of the file:
 
 ```
 // Local Variables:
@@ -382,18 +382,11 @@ Now in any file you can define local variables in two ways:
 
 ```
 
-Note that the beginning characters need to be comments for the current language, that's why here we used two backslashes for C++. For Elisp you would use
+Note that for the values to take effect, you will need to call `M-x revert-buffer`.
 
-```
-;; -*- mode:emacs-lisp -*-
+Custom variables are considered unsafe by default. If you try to open a file that contains local variable redefining custom variables, Emacs will ask you for confirmation.
 
-```
-
-There is two functions that may help you in defining the variables: *add-file-local-variable* and *add-file-local-variable-prop-line*.
-
-Finally, custom variable are considered insecure by default. If you try to open a file that contains local variable redefining insecure custom variables, Emacs will ask you for confirmation.
-
-If you know what you are doing, you can declare the variable as secure, thus removing the Emacs prompt for confirmation. You need to specify a predicate that any new value has to verify so that it can be considered safe.
+You can declare the variable as secure, thus removing the Emacs prompt for confirmation. You need to specify a predicate that any new value has to verify so that it can be considered safe.
 
 ```
 (defcustom my-compiler "gcc" "Some documentation" :safe 'stringp)
@@ -509,43 +502,24 @@ To use the [Xorg](/index.php/Xorg "Xorg") clipboard in emacs-nox, [install](/ind
 ```
 See also [mwheel.el](http://www.opensource.apple.com/source/emacs/emacs-51/emacs/lisp/mwheel.el).
 
-## Extensions
+## Packages
 
-Emacs includes hundreds of modes, libraries and other extensions, with many more available to further Emacs' capabilities. Most of these come with instructions detailing any changes needed to be made in `~/.emacs`. These instructions are generally found in the comment block at the beginning of an elisp source file, or in a README (or similar), should the extension consist of multiple source files.
+Emacs's functionality can be extended with third-party packages. The built-in package manager `package.el` is the officially supported way to do this, though there are several other package managers written by members of the Emacs community. `package.el` relies on the variable `package-archives` to find packages. By default, this includes the [Emacs Lisp Package Archive (ELPA)](https://elpa.gnu.org/). `M-x list-packages` will create a buffer listing all the packages your Emacs knows about. The manual (`[(info "(emacs) Packages")](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html)`) contains much more information.
 
-You can use the [Emacs Lisp Package Archive (ELPA)](http://tromey.com/elpa/) to automatically install packages. See the manual for instructions. ELPA is included with Emacs 24 and above; it is an accepted part of the Emacs ecosystem. Also, check out [MELPA](http://melpa.milkbox.net/) for additional packages.
+Third-party package archives can be added. The most widely used of these is [MELPA](https://melpa.org/).
 
-**Tip:** Use `M-x list-packages` to get a list of available packages for installation.
+A number of popular extensions are available as packages in the `[community]` repository, and more still, via the [AUR](/index.php/AUR "AUR"). The name of such packages usually have a 'emacs-' prefix (for example, [emacs-lua-mode](https://www.archlinux.org/packages/?name=emacs-lua-mode)), though not always (for example, [auctex](https://www.archlinux.org/packages/?name=auctex)).
 
-A number of popular extensions are available as packages in the 'community' repository, and more still, via [AUR](/index.php/AUR "AUR"). The name of such packages have a 'emacs-' prefix (for example, emacs-lua-mode). In many cases, the changes which need to be made in `~/.emacs` are shown during the installation of the package.
+**Tip:** Arch Linux Wiki contributors may be interested in the [Emacs Mediawiki](/index.php/Emacs_Mediawiki "Emacs Mediawiki") package.
 
-You can load extensions using the *require* function. For instance
-
-```
-(require 'mediawiki)
+Some packages may require you to make changes to your configuration file in order to activate them so that their features are available during an Emacs session. For example, if you install [auctex](https://www.archlinux.org/packages/?name=auctex), you will need to add
 
 ```
-
-If you try using the same configuration file on a machine where the extension is not installed, Emacs will primpt for an error. Besides, all extension-specific code would be parsed for nothing.
-
-The trick is to test the return value of *require*:
-
-```
-(when (require 'mediawiki nil t)
-  (setq mediawiki-site-alist
-        '(("ArchLinux" "[https://wiki.archlinux.org/](https://wiki.archlinux.org/)" "UserName" "" "Main Page")))
-  (setq mediawiki-mode-hook
-        (lambda ()
-          (visual-line-mode 1)
-          (turn-off-auto-fill)))))
-
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
 ```
 
-Should instructions describing how to activate a specific extension not be available in the aforementioned location(s), check for a corresponding page in the [Emacs Wiki](http://emacswiki.org/), which will almost certainly provide an example configuration. The Emacs Wiki is also an excellent resource for discovering even more extensions.
-
-**Tip:** A few popular extensions worth checking out: AucTeX, auto-complete, company, el-doc, emms, helm, Magit, multiple-cursors, Org-mode, Projectile, yasnippet.
-
-Since we are at it, you may be a contributor to Arch Linux Wiki, or any Mediawiki-based website. Then emacs will become your best friend thanks to the [Emacs Mediawiki](/index.php/Emacs_Mediawiki "Emacs Mediawiki") extension. Check the dedicated page for more details.
+to your configuration file. Other packages should let you know how to activate them in the commentary section of their source code or in their README.
 
 ## Troubleshooting
 
@@ -654,9 +628,13 @@ Example:
 
 ```
 
-### Emacs client gets stuck when switching back to it
+### Emacs hangs
 
-If you are using Emacs daemon, then you should know that input is blocking. If one Emacs instance is in the minibuffer (after an **M-x** for instance), then all other instance will wait for it to finish. Press **C-g** to cancel any input to make sure this Emacs session is not blocking.
+Due to its single-threaded nature, many operations block Emacs. This could happen in a few ways. For example, Emacs may be waiting for input from you (e.g. you've opened the minibuffer in one frame but are trying to work in another). Alternatively, Emacs could be running code that simply takes a while to finish. Or perhaps you've run across a bug. There are several ways of trying to unblock Emacs without killing the Emacs process.
+
+*   Try pressing `C-g`. Depending on what Emacs is doing, you may need to press it multiple times.
+*   Try pressing `ESC ESC ESC`.
+*   From another terminal, run `killall -SIGUSR2 emacs`
 
 ### Emacs-nox output gets messy
 

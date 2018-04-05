@@ -4,9 +4,9 @@ Related articles
 
 From the [IPFS README.md on GitHub](https://github.com/ipfs/ipfs):
 
-	<a class="mw-selflink selflink">IPFS</a> (the [InterPlanetary File System](https://en.wikipedia.org/wiki/IPFS "wikipedia:IPFS")) is a new hypermedia distribution protocol, addressed by content and identities. <a class="mw-selflink selflink">IPFS</a> enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
+	IPFS (the [InterPlanetary File System](https://en.wikipedia.org/wiki/IPFS "wikipedia:IPFS")) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
-	<a class="mw-selflink selflink">IPFS</a> is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects.
+	IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single BitTorrent swarm exchanging git objects.
 
 ## Contents
 

@@ -972,6 +972,10 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://www.blender.org/](http://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
 
+*   **VidCutter** — Fast lossless media cutter + joiner w/ frame-accurate SmartCut options powered by mpv, FFmpeg via a sleek Qt5 GUI.
+
+	[https://vidcutter.ozmartians.com/](https://vidcutter.ozmartians.com/) || [vidcutter](https://aur.archlinux.org/packages/vidcutter/)
+
 #### Screencast
 
 See also [Wikipedia:Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").

@@ -53,7 +53,7 @@ Archiso comes with two "profiles": *releng* and *baseline*.
 Now, copy the profile of your choice to a directory (*archlive* in the example below) where you can make adjustments and build it. Execute the following, replacing `**profile**` with either `releng` or `baseline`.
 
 ```
-# cp -r /usr/share/archiso/configs/**profile**/* *archlive*
+# cp -r /usr/share/archiso/configs/* *archlive*
 
 ```
 
@@ -282,7 +282,7 @@ Or remove it altogether to disable auto login.
 
 Now you are ready to turn your files into the .iso which you can then burn to CD or USB:
 
-First create the `out/` directory,
+First create the `out/` directory (optional, build.sh will create it if nonexist),
 
 ```
 # mkdir ~/archlive/out/

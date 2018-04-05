@@ -4,7 +4,7 @@ Related articles
 
 **Note:** As of February 2015, curlftpfs is reported to be extremely slow, see for example [a Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/curlftpfs/+bug/1267749) and a [stackoverflow.com question](http://stackoverflow.com/questions/24360479/ftp-with-curlftpfs-is-extremely-slow-to-the-point-it-is-impossible-to-work-with).
 
-[CurlFtpFS](http://curlftpfs.sourceforge.net/) is a filesystem for accessing FTP hosts based on FUSE and libcurl.
+[CurlFtpFS](http://curlftpfs.sourceforge.net/) is a filesystem for accessing FTP hosts based on [FUSE](/index.php/FUSE "FUSE") and libcurl.
 
 ## Contents
 

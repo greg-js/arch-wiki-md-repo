@@ -43,25 +43,30 @@ EFI System Partition on GPT has the [partition type GUID](https://en.wikipedia.o
 
 **Choose one** of the following methods to create an ESP for a GPT partitioned disk:
 
-*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `EF00` in *gdisk*). Proceed to [#Format the partition](#Format_the_partition) section below.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a FAT32 partition and in Parted set/activate the `boot` flag (**not** `legacy_boot` flag) on that partition. Proceed to [#Mount the partition](#Mount_the_partition) section below.
+*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `EF00` in *gdisk*).
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with FAT32 as the file system type and set/activate the `esp` flag (**not** `legacy_boot` flag) on that partition.
+
+Proceed to [#Format the partition](#Format_the_partition) section below.
 
 ### MBR partitioned disks
 
 EFI System Partition on MBR has the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") `EF`.
 
-Create a partition with partition type `EFI (FAT-12/16/32)` using fdisk. Proceed to [#Format the partition](#Format_the_partition).
+**Choose one** of the following methods to create an ESP for a MBR partitioned disk:
+
+*   [fdisk](/index.php/Fdisk "Fdisk"): Create a primary partition with partition type `EFI (FAT-12/16/32)`.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with FAT32 as the file system type and set/activate the `esp` flag (**not** `boot` flag) on that partition.
+
+Proceed to [#Format the partition](#Format_the_partition) section below.
 
 ## Format the partition
 
-After creating the ESP, you **must** [format](/index.php/File_systems#Create_a_file_system "File systems") it as [FAT32](/index.php/FAT32 "FAT32"):
+After creating the ESP, you **must** [format](/index.php/Format "Format") it as [FAT32](/index.php/FAT32 "FAT32"):
 
 ```
 # mkfs.fat -F32 /dev/sd*xY*
 
 ```
-
-If you used GNU Parted above, it should already be formatted.
 
 If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce cluster size with `mkfs.fat -s2 -F32 ...` or `-s1`; otherwise the partition may be unreadable by UEFI. See [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) for supported cluster sizes.
 

@@ -465,7 +465,7 @@ Keep in mind that audio will probably be non-functional in Wine programs which a
 
 ### Temp directory on tmpfs
 
-To limit wine from writing its Temporary files to a physical disk, one can define an alternative location, like tmpfs, removing Temp directory and creating a symlink:
+To prevent Wine from writing its temporary files to a physical disk, one can define an alternative location, like *tmpfs*. Remove Wine's default directory for temporary files and creating a symlink:
 
 ```
 $ rm -r ~/.wine/drive_c/users/$USER/Temp
@@ -481,7 +481,7 @@ If Gecko and/or Mono are not present on the system nor in the Wine prefix, Wine 
 
 [DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
 
-To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official biniaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
+To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official binaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
 
 ```
 $ WINEPREFX=*your-prefix* setup_dxvk64
@@ -490,7 +490,7 @@ $ WINEPREFX=*your-prefix* setup_dxvk64
 
 Use `setup_dxvk32` for 32-bit applications.
 
-**Note:** For now [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) is still at version 3.4, this means that you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine) and [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) work out of the box.
+**Note:** For Wine versions below 3.5 you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine), [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) and [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) work out of the box.
 
 **Warning:** DXVK overrides the DirectX 11 DLLS, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
 

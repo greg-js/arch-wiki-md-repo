@@ -24,11 +24,10 @@ Related articles
         *   [3.2.4 Kill window shortcut](#Kill_window_shortcut)
     *   [3.3 Session](#Session)
         *   [3.3.1 Startup applications](#Startup_applications)
-            *   [3.3.1.1 Delay application startup](#Delay_application_startup)
         *   [3.3.2 Lock the screen](#Lock_the_screen)
-            *   [3.3.2.1 Panel lock button](#Panel_lock_button)
-        *   [3.3.3 Disable saved sessions](#Disable_saved_sessions)
-        *   [3.3.4 Default window manager](#Default_window_manager)
+        *   [3.3.3 Suspend](#Suspend)
+        *   [3.3.4 Disable saved sessions](#Disable_saved_sessions)
+        *   [3.3.5 Default window manager](#Default_window_manager)
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Keyboard volume buttons](#Keyboard_volume_buttons)
@@ -93,7 +92,7 @@ See [Xdg-menu](/index.php/Xdg-menu "Xdg-menu") for more info on using the Free D
 
 #### Whisker menu
 
-[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) (also included in [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace 'Applications Menu' as first item in Panel 1 (in 'Settings/Panel/Items' add 'Whisker Menu'...).
+[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) (also part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace 'Applications Menu' as first item in Panel 1 (in 'Settings/Panel/Items' add 'Whisker Menu'...).
 
 #### Edit entries
 
@@ -220,43 +219,43 @@ To launch custom applications when Xfce starts up, click the *Applications Menu 
 
 Alternatively, add the commands you wish to run (including setting environment variables) to [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when a [display manager](/index.php/Display_manager "Display manager") is being used).
 
-##### Delay application startup
-
-Sometimes it might be useful to delay the startup of an application. Specifying a command such as `sleep 3 && command` under *Application Autostart* does not work. As a workaround, one can use the following syntax instead:
-
-```
-sh -c "sleep 3 && command"
-
-```
+**Tip:** Sometimes it might be useful to **delay the startup of an application**. Note that specifying under *Application Autostart* a command such as `sleep 3 && *command*` does not work; a workaround is to use the syntax `sh -c "sleep 3 && *command*"`
 
 #### Lock the screen
 
-To lock an Xfce4 session through the *xflock4* script one of [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) packages needs to be installed. Alternatively you can set a lock command with
+*xflock4* is the reference Bash script which is used to lock an Xfce session . It tries consecutively four screen lockers or exits with return code 1 if it fails to find any. Therefore, for *xflock4* to succeed, either [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) needs to be installed.
+
+The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these four screen lockers together with other popular applications. In particular the [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed a *Security* tab is added to the power manager settings and the existing *Lock screen when system is going for sleep* setting is relocated under this tab.
+
+To **integrate a custom screen locker**, not among the four supported lockers listed above, with *xflock4*, some steps are required. The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xfclock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can:
+
+1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l" --create -t string` 
+2.  Enhance the *xflock4* script with either one of the following methods:
+    1.  Replace manually `/usr/bin/xflock4` with the latest version of the script, so that it calls the command specified in `LockCommand`.
+    2.  Install [xfce4-session-git](https://aur.archlinux.org/packages/xfce4-session-git/) in order to replace the package with the 4.13 version.
+
+The **panel lock button** in the *Action Buttons* panel simply executes `/usr/bin/xflock4`. It should work as expected as long as *xflock4* is functioning i.e. one of the native lockers is installed or a custom locker is configured to integrate with it as proposed above.
+
+#### Suspend
+
+Whenever asked to suspend, Xfce executes the command:
 
 ```
-$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l" --create -t string
+$ xfce4-session-logout --suspend
 
 ```
 
-If you want to update the command, you can use
+It is possible to systematically lock the session on *suspend* or not. To control this state, the `LockScreen` and `lock-screen-suspend-hibernate` settings, in respectively the session and power manager xconf channels, are used. To prevent locking on suspend, turn them to `false`:
 
 ```
-$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l"
+$ xfconf-query -c xfce4-session -p /shutdown/LockScreen -s false
+$ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate s false
 
 ```
 
-See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") for a comprehensive list of screen lockers.
+Similarly, turn them to `true` to lock the session on suspend.
 
-**Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). If light-locker is installed, a *Security* tab is added to the power manager settings and the existing *Lock screen when system is going for sleep* setting is relocated under the *Security* tab.
-
-##### Panel lock button
-
-The lock button in the Action Buttons panel directly executes `/usr/bin/xflock4`, which ignores the above `/general/LockCommand` setting and the aliasing strategy outlined [in this thread](https://bbs.archlinux.org/viewtopic.php?id=189484).
-
-Using [light-locker](https://www.archlinux.org/packages/?name=light-locker), two easy solutions include:
-
-*   Edit `/usr/bin/xflock4` to execute `light-locker-command -l` directly. This should not be used for multiuser systems and could get overwritten when running upgrading the package.
-*   Replace the lock button provided by Action Buttons with a custom launcher. Remove the lock button item from Action Buttons preferences, then add a launcher item to the panel, setting *Command* to `light-locker-command -l`, optionally changing the icon to `system-lock-screen`.
+The setting can also be controlled using the GUI: open the *Session and Startup* application and turn the flag *Advanced > Lock screen before sleep* on or off.
 
 #### Disable saved sessions
 
@@ -355,21 +354,21 @@ A third party polkit authentication agent for Xfce is also available, see [xfce-
 
 ### Display blanking
 
-**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[1]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[2]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
-
 Some programs that are commonly used with Xfce will control monitor blanking and [DPMS](/index.php/DPMS "DPMS") (monitor powersaving) settings. They are discussed below.
 
 	Xfce Power Manager
 
-Xfce Power Manager will control blanking and DPMS settings. These settings can be configured by running *xfce4-power-manager-settings* and clicking the *Display* tab. Note that unticking the *Handle display power management* option means that the Power Manager will disable DPMS - it does not mean that the Power Manager will relinquish control of DPMS. Also note that it will not disable screen blanking. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled *Presentation mode* is ticked.
+Xfce Power Manager will control blanking and DPMS settings. These settings can be configured by running *xfce4-power-manager-settings* and clicking the *Display* tab. Note that turning off *Handle display power management* means that the Power Manager will disable DPMS - it does not mean that the Power Manager will relinquish control of DPMS. Also note that it will not disable screen blanking. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled *Presentation mode* is ticked.
 
 	XScreenSaver
 
-See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver"). Note that if XScreenSaver is running alongside Xfce Power Manager, it may not be entirely clear which application is in control of blanking and DPMS as both applications are competing for control of the same settings. Therefore, in a situation where it is important that the monitor not be blanked (when watching a film for instance), it is advisable to disable blanking and DPMS through both applications.
+If [xcreensaver](https://www.archlinux.org/packages/?name=xcreensaver) is installed and runs alongside Xfce Power Manager, it may not be clear which application is in control of blanking and DPMS as both are competing for control of the same settings. Therefore, in a situation where it is important that the monitor not be blanked (when watching a video for instance), it is advisable to disable blanking and DPMS through both applications. To know more about *XScreenSaver* options, see [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver").
 
 	xset
 
 If neither of the above applications are running, then blanking and DPMS settings can be controlled using the *xset* command, see [DPMS#Modifying DPMS and screensaver settings using xset](/index.php/DPMS#Modifying_DPMS_and_screensaver_settings_using_xset "DPMS").
+
+**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[1]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[2]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
 
 ## Tips and tricks
 
@@ -402,13 +401,9 @@ Terminal color themes or palettes can be changed in GUI under Appearance tab in 
 
 #### Changing default color theme
 
-XFCE's `extra/terminal` package comes with a darker color palette. To change this, append the following in your terminalrc file for a lighter color theme, that is always visible in darker Terminal backgrounds.
+Xfce's `extra/terminal` package comes with a darker colour palette. To change this, append the following in your terminalrc file for a lighter color theme, that is always visible in darker Terminal backgrounds.
 
-```
-~/.config/xfce4/terminal/terminalrc
-
-```
-
+ `~/.config/xfce4/terminal/terminalrc` 
 ```
 ColorPalette5=#38d0fcaaf3a9
 ColorPalette4=#e013a0a1612f
@@ -416,7 +411,6 @@ ColorPalette2=#d456a81b7b42
 ColorPalette6=#ffff7062ffff
 ColorPalette3=#7ffff7bd7fff
 ColorPalette13=#82108210ffff
-
 ```
 
 #### Terminal tango color theme
@@ -542,9 +536,9 @@ Limiting the minimum brightness can be useful for displays which turn off backli
 
 ### Adding Profile Pictures
 
-To add profile pictures for each user to be displayed in the whisker-menu, simply place a 96x96 png file in the respective user's home directory with the name `.face`. If user bob wanted a profile picture a 96x96 png image would be placed at `/home/bob/.face`
+To add profile pictures for each user to be displayed in the whisker-menu, simply place a 96x96 PNG file in the respective user's home directory with the name `.face`. For example the PNG file `/home/*bob*/.face` for user *bob*.
 
-Image editing programs like [GIMP](/index.php/GIMP "GIMP") can be used to convert and scale your favorite images down to 96x96.
+Image editing programs like [GIMP](/index.php/GIMP "GIMP") can be used to convert and scale your favourite images down to 96x96.
 
 ## Troubleshooting
 
@@ -643,7 +637,7 @@ Unable to determine failsafe session name.  Possible causes: xfconfd isn't runni
 
 ```
 
-Restarting xfce or rebooting your system may solve the problem, but a corrupt session is the likely cause. Delete the session folder:
+Restarting Xfce or rebooting your system may solve the problem, but a corrupt session is the likely cause. Delete the session folder:
 
 ```
 $ rm -r ~/.cache/sessions/

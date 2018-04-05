@@ -75,6 +75,6 @@ In such case, is probably that the diskette is physically damaged.
 
 ## Todo
 
-*   [floppy(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/floppy.8)
-*   [fdformat(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fdformat.8)
+*   [floppy(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/floppy.8)
+*   [fdformat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdformat.8)
 *   recovering a "dead" floppy

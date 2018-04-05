@@ -90,7 +90,7 @@ I moduli extra al kernel da caricare durante il boot sono configurati in una lis
 virtio-net
 ```
 
-vedere [modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) per maggiori dettagli.
+vedere [modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) per maggiori dettagli.
 
 ### Impostazione delle opzioni
 

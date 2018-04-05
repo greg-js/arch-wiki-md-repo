@@ -247,7 +247,7 @@ In order to enable your system to be detected as an A2DP sink (e.g. to play musi
 Some tools have been marked as deprecated and removed from the package. At this time they are still available in the AUR package [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/). Their functionality is partially covered by new tools, while some things have yet to be implemented with the new [D-Bus API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/):
 
 | Deprecated tool | Most likely replacement |
-| gatttool | btgatt-client, [D-Bus Gatt API [https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt)] |
+| gatttool | btgatt-client, [D-Bus Gatt API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt) |
 | hciattach | btattach |
 | hciconfig | btmgmt (and bluetoothctl?) |
 | hcidump | btmon (and btsnoop) |

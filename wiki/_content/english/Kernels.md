@@ -124,7 +124,7 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 
 *   **[Reiser4](/index.php/Reiser4 "Reiser4")** — Successor filesystem for ReiserFS, developed from scratch by Namesys and Hans Reiser.
 
-	[https://sourceforge.net/projects/reiser4/files/](https://sourceforge.net/projects/reiser4/files/) || [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)
+	[https://sourceforge.net/projects/reiser4/files/](https://sourceforge.net/projects/reiser4/files/) ||
 
 *   **VFIO** — The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
 

@@ -71,6 +71,10 @@ Install the changes necessary for the GPD Pocket to run Arch properly by running
 
 `# pacman -Syu gpd-pocket-support`
 
+Because the patch for alsa-lib is an optional dependency, it must be installed manually to get audio to work:
+
+`# pacman -S gpd-pocket-alsa-lib`
+
 ### Manual
 
 #### WiFi

@@ -1,7 +1,3 @@
-Related articles
-
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-
 This article describes basic usage of [eCryptfs](https://launchpad.net/ecryptfs). It guides you through the process of creating a private and secure encrypted directory within your `$HOME` directory to store sensitive files and private data.
 
 In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), which provides a *block device encryption layer*, while eCryptfs is an actual file-system – a [stacked cryptographic file system](https://en.wikipedia.org/wiki/Cryptographic_filesystems "wikipedia:Cryptographic filesystems"). For comparison of the two you can refer to the [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption"). One distinguished feature is that the encryption is stacked on an existing filesystem; eCryptfs can be mounted onto any single existing directory and does not require a separate partition (or size pre-allocation).

@@ -50,10 +50,12 @@ The following requirements must be fulfilled in order to run Steam on Arch Linux
 
 ### Alternative Flatpak installation
 
-Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/). The easiest way to install it for the current user is by using the flatpakref file:
+Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/). The easiest way to install it for the current user is by using the Flathub repo and flatpak command:
 
 ```
- flatpak install --user --from [https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref](https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref)
+ flatpak --user remote-add --if-not-exists flathub [https://dl.flathub.org/repo/flathub.flatpakrepo](https://dl.flathub.org/repo/flathub.flatpakrepo)
+ flatpak --user install flathub com.valvesoftware.Steam
+ flatpak run com.valvesoftware.Steam
 
 ```
 

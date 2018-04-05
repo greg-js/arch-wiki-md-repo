@@ -11,7 +11,7 @@
 
 ## Introduction
 
-[Jalbum](http://jalbum.net/) consists of freeware cross-platform software for managing and creating digital photo albums or galleries, and a free / paid-for photo sharing service on which to publish them. Uses need not use the free sharing service though. Jalbum outputs a stand-alone directory structure/html indexes that users can upload to their own web spaces either with the built-in FTP software or via their own means. Jalbum software has been used to create over 23 million photo galleries, with over 40,000 users hosting theirs on jalbum.net.
+[Jalbum](http://jalbum.net/) consists of freeware cross-platform software for managing and creating digital photo albums or galleries, and a free / paid-for photo sharing service on which to publish them. Users need not use the free sharing service though. Jalbum outputs a stand-alone directory structure/html indexes that users can upload to their own web spaces either with the built-in FTP software or via their own means. Jalbum software has been used to create over 23 million photo galleries, with over 40,000 users hosting theirs on jalbum.net.
 
 Jalbum can be thought of as similar to Google's Picasa, or Apple's iPhoto, and is credited as being extremely easy to use, flexible and versatile. It runs on Java so can be run on most operating systems, and is available in 32 languages.
 

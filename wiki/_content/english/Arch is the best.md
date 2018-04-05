@@ -740,6 +740,15 @@ print "Arch is the best!"
 
 ```
 
+	Matlab
+
+	A proprietary programming language developed by MathWorks.
+
+```
+disp('Arch is the best!');
+
+```
+
 	Morpho
 
 	Morpho is a multi-paradigm programming language that supports procedural, object-oriented and functional programming.

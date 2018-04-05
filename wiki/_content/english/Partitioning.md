@@ -64,7 +64,7 @@ The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikip
 
 #### Master Boot Record (partition table)
 
-There are 3 types of partitions in the MBR scheme:
+In the MBR partition table (also known as DOS or MS-DOS partition table) there are 3 types of partitions:
 
 *   Primary
 *   Extended
@@ -247,31 +247,17 @@ partitionmanager |
 
 ### fdisk/gdisk
 
-These group of tools fall under *fdisk* or *gdisk* and are described in the [fdisk](/index.php/Fdisk "Fdisk") article.
+Both *fdisk* or *gdisk* are described in the [fdisk](/index.php/Fdisk "Fdisk") article.
 
-*   **[fdisk](/index.php/Fdisk "Fdisk")** — Dialog-driven program for creation and manipulation of partition tables.
+*   [fdisk](/index.php/Fdisk "Fdisk") ([util-linux](https://www.archlinux.org/packages/?name=util-linux))
+    *   [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) – Dialog-driven program for creation and manipulation of partition tables.
+    *   [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) – Curses-based variant of fdisk.
+    *   [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) – Scriptable variant of fdisk.
 
-	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Curses-based variant of fdisk.
-
-	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-*   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — Scriptable variant of fdisk.
-
-	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](#GUID_Partition_Table) alternative to fdisk.
-
-	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
-
-*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — Curses-based variant of gdisk.
-
-	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
-
-*   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable variant of gdisk.
-
-	[http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
+*   [gdisk](/index.php/Gdisk "Gdisk") ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)) – [GPT](#GUID_Partition_Table) fdisk
+    *   [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) – Interactive GUID partition table (GPT) manipulator.
+    *   [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) – Curses-based variant of gdisk.
+    *   [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) – Scriptable variant of gdisk.
 
 ### GNU Parted
 

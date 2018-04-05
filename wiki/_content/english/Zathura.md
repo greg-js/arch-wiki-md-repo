@@ -1,4 +1,4 @@
-[Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "w:Zathura (document viewer)") is a highly customizable and functional document viewer. It provides a minimalistic and space saving interface as well as an easy usage that mainly focuses on keyboard interaction. Different file formats are supported through plugins. Support is available for PDF, DJVU, PS and CB files.
+[Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "w:Zathura (document viewer)") is a highly customizable and functional document viewer with vi-styled keybindings. It provides a minimalistic and space saving interface as well as an easy usage that mainly focuses on keyboard interaction. Different file formats are supported through plugins. Support is available for PDF, DJVU, PS and CB files.
 
 ## Contents
 

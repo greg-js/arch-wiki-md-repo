@@ -1,4 +1,8 @@
-This article is meant to guide (Arch)linux users to use PDF forms. Go to this [list of PDF applications](https://wiki.archlinux.org/index.php/List_of_applications#PDF_and_DjVu), this page is not being kept up to date. Some of the information here is from [this](https://bbs.archlinux.org/viewtopic.php?id=52084) thread.
+Related articles
+
+*   [List of applications#PDF and DjVu](/index.php/List_of_applications#PDF_and_DjVu "List of applications")
+
+This article is meant to guide (Arch)linux users to use PDF forms. Some of the information here is from [this](https://bbs.archlinux.org/viewtopic.php?id=52084) thread.
 
 ## Contents
 
@@ -56,7 +60,7 @@ LibreOffice Draw can open and edit PDF files in much the same manner that Inksca
 
 ### Adobe Reader is unstable
 
-Adobe Reader (version 9.5.5-6) is not a viable alternative, as doesn't seem to work on my system.
+Adobe Reader (version 9.5.5-6) is not a viable alternative, as does not seem to work on my system.
 
 It starts up, loads the file, spends some 30 seconds fully functional and then crashes without an error message. Not enough time to manage to test any of the forms functions.
 

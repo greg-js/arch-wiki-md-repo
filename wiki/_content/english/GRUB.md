@@ -85,7 +85,7 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](htt
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
-Create a mebibyte partition (`+1M` with [fdisk](/index.php/Fdisk "Fdisk") or [gdisk](/index.php/Gdisk "Gdisk")) on the disk with no file system and with partition type BIOS boot. Select `BIOS boot` and partition type number `4` for *fdisk*, `ef02` for *gdisk*, and `bios_grub` for *parted*. This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
+Create a mebibyte partition (`+1M` with [fdisk](/index.php/Fdisk "Fdisk") or [gdisk](/index.php/Gdisk "Gdisk")) on the disk with no file system and with partition type BIOS boot. Select partition type `BIOS boot` for *fdisk*, `ef02` for *gdisk*. For *parted* set/activate the flag `bios_grub` on the partition. This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
 
 The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded, though some disk utilities will display a warning about it. In *fdisk* or *gdisk* create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 
@@ -98,11 +98,11 @@ Usually the post-[MBR](/index.php/MBR "MBR") gap (after the 512 byte MBR region 
 [Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), where already installed. Then do:
 
 ```
-# grub-install --target=i386-pc /dev/sd*x*
+# grub-install /dev/sd**X**
 
 ```
 
-where `/dev/sd*x*` is the [partitioned](/index.php/Partition "Partition") disk where grub is to be installed.
+where `/dev/sd**X**` is the [partitioned](/index.php/Partition "Partition") disk where grub is to be installed (for example, disk `/dev/sda` and **not** partition `/dev/sda1`).
 
 Now you must [#Generate the main configuration file](#Generate_the_main_configuration_file).
 
@@ -387,8 +387,8 @@ set root=(md/0,1)
 To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on devices with GPT ef02/'BIOS boot partition', simply run *grub-install* on both of the drives, such as:
 
 ```
-# grub-install --target=i386-pc --debug /dev/sda
-# grub-install --target=i386-pc --debug /dev/sdb
+# grub-install --debug /dev/sda
+# grub-install --debug /dev/sdb
 
 ```
 

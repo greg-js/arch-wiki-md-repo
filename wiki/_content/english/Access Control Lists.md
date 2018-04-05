@@ -1,4 +1,4 @@
-**A**ccess **C**ontrol **L**ist (ACL) provides an additional, more flexible permission mechanism for file systems. It is designed to assist with `UNIX` file permissions. ACL allows you to give permissions for any user or group to any disc resource.
+Access Control List (ACL) provides an additional, more flexible permission mechanism for file systems. It is designed to assist with `UNIX` file permissions. ACL allows you to give permissions for any user or group to any disc resource.
 
 ## Contents
 

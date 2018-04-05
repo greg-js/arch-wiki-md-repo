@@ -4,15 +4,11 @@ Related articles
 *   [Snapper](/index.php/Snapper "Snapper")
 *   [dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system")
 
-From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs"):
-
-	Btrfs (B-tree file system, pronounced as "butter F S", "better F S", "b-tree F S", or simply by spelling it out) is a file system based on the copy-on-write (COW) principle, initially designed at Oracle Corporation for use in Linux. The development of Btrfs began in 2007, and by August 2014, the file system's on-disk format has been marked as stable.
-
 From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
-	Btrfs is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration. Jointly developed at Oracle, Red Hat, Fujitsu, Intel, SUSE, STRATO and many others, Btrfs is licensed under the GPL and open for contribution from anyone.
+	Btrfs is a modern copy on write (CoW) filesystem for Linux aimed at implementing advanced features while also focusing on fault tolerance, repair and easy administration. Jointly developed at multiple companies, Btrfs is licensed under the GPL and open for contribution from anyone.
 
-**Warning:** Btrfs has some features that are considered experimental. See the Btrfs Wiki's [Status](https://btrfs.wiki.kernel.org/index.php/Status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information. See the [#Known issues](#Known_issues) section.
+**Warning:** Btrfs has some features that are unstable. See the Btrfs Wiki's [Status](https://btrfs.wiki.kernel.org/index.php/Status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information. See the [#Known issues](#Known_issues) section.
 
 ## Contents
 

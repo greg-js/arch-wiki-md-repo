@@ -1,3 +1,7 @@
+From [Wikipedia](https://en.wikipedia.org/wiki/OpenAFS "w:OpenAFS"):
+
+	*[OpenAFS](https://www.openafs.org/) is an open source implementation of the Andrew distributed file system (AFS).*
+
 AFS is a distributed filesystem product, pioneered at Carnegie Mellon University and supported and developed as a product by Transarc Corporation (now IBM Pittsburgh Labs). It offers a client-server architecture for federated file sharing and replicated read-only content distribution, providing location independence, scalability, security, and transparent migration capabilities. AFS is available for a broad range of heterogeneous systems including UNIX, Linux, MacOS X, and Microsoft Windows.
 
 IBM branched the source of the AFS product, and made a copy of the source available for community development and maintenance. They called the release OpenAFS.

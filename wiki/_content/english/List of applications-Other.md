@@ -87,9 +87,9 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[http://skrooge.org/](http://skrooge.org/) || [skrooge](https://www.archlinux.org/packages/?name=skrooge)
 
-*   **openerp** — Open source erp system purely in python.
+*   **[Odoo](/index.php/Odoo "Odoo")** — Open source ERP system purely in Python. Previously known as OpenERP.
 
-	[http://openerp.com/](http://openerp.com/) || [openerp](https://aur.archlinux.org/packages/openerp/)
+	[https://www.odoo.com/](https://www.odoo.com/) || [odoo](https://aur.archlinux.org/packages/odoo/)
 
 ### Education
 

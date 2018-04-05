@@ -1,22 +1,4 @@
-## Contents
-
-*   [1 Introduction](#Introduction)
-*   [2 Installation](#Installation)
-    *   [2.1 Getting the kernel module](#Getting_the_kernel_module)
-    *   [2.2 Preparing the fast drive](#Preparing_the_fast_drive)
-    *   [2.3 Creating flashcache](#Creating_flashcache)
-    *   [2.4 Starting Drives on Boot](#Starting_Drives_on_Boot)
-        *   [2.4.1 Late Boot Start Using systemd](#Late_Boot_Start_Using_systemd)
-        *   [2.4.2 Early Boot Start with initcpio](#Early_Boot_Start_with_initcpio)
-            *   [2.4.2.1 Setting up the ramdisk](#Setting_up_the_ramdisk)
-            *   [2.4.2.2 Other file changes](#Other_file_changes)
-*   [3 Tweaks](#Tweaks)
-*   [4 Troubleshooting](#Troubleshooting)
-*   [5 See also](#See_also)
-
-## Introduction
-
-Flashcache is a module originally written and released by Facebook(Mohan Srinivasan, Paul Saab and Vadim Tkachenko) in April of 2010\. It is a kernel module that allows Writethrough caching of a drive on another drive. This is most often used for caching a rotational drive on a smaller solid-state drive for performance reasons. This gives you the speed of an SSD and the size of a standard rotational drive for recently cached files. Facebook originally wrote the module to speed up database I/O, but it is easily extended to any I/O.
+[Flashcache](https://github.com/facebookarchive/flashcache) is a module originally written and released by Facebook(Mohan Srinivasan, Paul Saab and Vadim Tkachenko) in April of 2010\. It is a kernel module that allows Writethrough caching of a drive on another drive. This is most often used for caching a rotational drive on a smaller solid-state drive for performance reasons. This gives you the speed of an SSD and the size of a standard rotational drive for recently cached files. Facebook originally wrote the module to speed up database I/O, but it is easily extended to any I/O.
 
 An alternative to Flashcache is [Bcache](/index.php/Bcache "Bcache")
 
@@ -25,6 +7,21 @@ An alternative to Flashcache is [Bcache](/index.php/Bcache "Bcache")
 It is important to note that this driver is intended to speed up a slower drive with a faster one. It is not required that one of the drives is a solid-state drive. It could be useful in a situation with widely different speed drives such as a fast and small SCSI drive and a larger SATA drive or even a slower "green" drive and a super-fast 10k rpm drive.
 
 **Warning:** I have read that this module does not compile properly on a 32-bit machine, but I have not tested this.
+
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Getting the kernel module](#Getting_the_kernel_module)
+    *   [1.2 Preparing the fast drive](#Preparing_the_fast_drive)
+    *   [1.3 Creating flashcache](#Creating_flashcache)
+    *   [1.4 Starting Drives on Boot](#Starting_Drives_on_Boot)
+        *   [1.4.1 Late Boot Start Using systemd](#Late_Boot_Start_Using_systemd)
+        *   [1.4.2 Early Boot Start with initcpio](#Early_Boot_Start_with_initcpio)
+            *   [1.4.2.1 Setting up the ramdisk](#Setting_up_the_ramdisk)
+            *   [1.4.2.2 Other file changes](#Other_file_changes)
+*   [2 Tweaks](#Tweaks)
+*   [3 Troubleshooting](#Troubleshooting)
+*   [4 See also](#See_also)
 
 ## Installation
 

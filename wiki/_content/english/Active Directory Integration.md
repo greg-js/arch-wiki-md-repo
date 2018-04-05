@@ -4,58 +4,61 @@ Related articles
 *   [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller")
 *   [SOGo](/index.php/SOGo "SOGo")
 
-A key challenge for system administrators of any datacenter is trying to coexisting in Heterogeneous environments. By this we mean the mixing of different server operating system technologies (typically Microsoft Windows & Unix/Linux). User management and authentication is by far the most difficult of these to solve. The most common way of solving this problem is to use a Directory Server. There are a number of open-source and commercial solutions for the various flavors of *NIX; however, few solve the problem of interoperating with Windows. Active Directory (AD) is a directory service created by Microsoft for Windows domain networks. It is included in most Windows Server operating systems. Server computers on which Active Directory is running are called domain controllers.
+From [w:Active Directory](https://en.wikipedia.org/wiki/Active_Directory "w:Active Directory"):
 
-[Active Directory](https://en.wikipedia.org/wiki/Active_Directory "wikipedia:Active Directory") serves as a central location for network administration and security. It is responsible for authenticating and authorizing all users and computers within a network of Windows domain type, assigning and enforcing security policies for all computers in a network and installing or updating software on network computers. For example, when a user logs into a computer that is part of a Windows domain, it is Active Directory that verifies his or her password and specifies whether he or she is a system administrator or normal user.
+	*Active Directory (AD) is a [w:directory service](https://en.wikipedia.org/wiki/directory_service "w:directory service") that Microsoft developed for [w:Windows domain](https://en.wikipedia.org/wiki/Windows_domain "w:Windows domain") networks.*
 
-Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Ldap "wikipedia:Ldap") versions 2 and 3, [Kerberos](/index.php/Kerberos "Kerberos") and DNS. These same standards are available as linux, but piecing them together is not an easy task. Following these steps will help you configure an ArchLinux host to authenticate against an AD domain.
+This article describes how to integrate an Arch Linux system with an existing Windows domain network using [Samba](/index.php/Samba "Samba").
 
-This guide explains how to integrate an Arch Linux host with an existing Windows Active Directory domain. Before continuing, you must have an existing Active Directory domain, and have a user with the appropriate rights within the domain to: query users and add computer accounts (Domain Join).
+Before continuing, you must have an existing Active Directory domain, and have a user with the appropriate rights within the domain to: query users and add computer accounts (Domain Join).
 
 This document is not an intended as a complete guide to Active Directory nor Samba. Refer to the resources section for additional information.
+
+Active Directory serves as a central location for network administration and security. It is responsible for authenticating and authorizing all users and computers within a Windows domain network, assigning and enforcing security policies for all computers in a network and installing or updating software on network computers. For example, when a user logs into a computer that is part of a Windows domain, it is Active Directory that verifies his or her password and specifies whether he or she is a system administrator or normal user. Server computers on which Active Directory is running are called domain controllers.
+
+Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Ldap "wikipedia:Ldap") versions 2 and 3, Microsoft's version of [Kerberos](/index.php/Kerberos "Kerberos") and DNS.
 
 ## Contents
 
 *   [1 Terminology](#Terminology)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Active Directory Configuration](#Active_Directory_Configuration)
-        *   [2.1.1 GPO Considerations](#GPO_Considerations)
-    *   [2.2 Linux Host Configuration](#Linux_Host_Configuration)
-    *   [2.3 Installation](#Installation)
-    *   [2.4 Updating DNS](#Updating_DNS)
-    *   [2.5 Configuring NTP](#Configuring_NTP)
-    *   [2.6 Kerberos](#Kerberos)
-        *   [2.6.1 Creating a Kerberos Ticket](#Creating_a_Kerberos_Ticket)
-        *   [2.6.2 Validating the Ticket](#Validating_the_Ticket)
-    *   [2.7 pam_winbind.conf](#pam_winbind.conf)
-    *   [2.8 Samba](#Samba)
-    *   [2.9 Join the Domain](#Join_the_Domain)
-*   [3 Starting and testing services](#Starting_and_testing_services)
-    *   [3.1 Starting Samba](#Starting_Samba)
-    *   [3.2 Testing Winbind](#Testing_Winbind)
-    *   [3.3 Testing nsswitch](#Testing_nsswitch)
-    *   [3.4 Testing Samba commands](#Testing_Samba_commands)
-*   [4 Configuring PAM](#Configuring_PAM)
-    *   [4.1 system-auth](#system-auth)
-        *   [4.1.1 "auth" section](#.22auth.22_section)
-        *   [4.1.2 "account" section](#.22account.22_section)
-        *   [4.1.3 "password" section](#.22password.22_section)
-        *   [4.1.4 "session" section](#.22session.22_section)
-    *   [4.2 passwd](#passwd)
-        *   [4.2.1 "password" section](#.22password.22_section_2)
-    *   [4.3 Testing login](#Testing_login)
-*   [5 Configuring Shares](#Configuring_Shares)
-*   [6 Adding a machine keytab file and activating password-free kerberized ssh to the machine](#Adding_a_machine_keytab_file_and_activating_password-free_kerberized_ssh_to_the_machine)
-    *   [6.1 Creating a machine key tab file](#Creating_a_machine_key_tab_file)
-    *   [6.2 Enabling keytab authentication](#Enabling_keytab_authentication)
-    *   [6.3 Preparing sshd on server](#Preparing_sshd_on_server)
-    *   [6.4 Adding necessary options on client](#Adding_necessary_options_on_client)
-    *   [6.5 Testing the setup](#Testing_the_setup)
-    *   [6.6 Nifty fine-tuning for complete password-free kerberos handling.](#Nifty_fine-tuning_for_complete_password-free_kerberos_handling.)
-*   [7 Generating user Keytabs which are accepted by AD](#Generating_user_Keytabs_which_are_accepted_by_AD)
-    *   [7.1 Nice to know](#Nice_to_know)
-*   [8 See also](#See_also)
-    *   [8.1 Commercial Solutions](#Commercial_Solutions)
+*   [2 Active Directory configuration](#Active_Directory_configuration)
+    *   [2.1 GPO considerations](#GPO_considerations)
+*   [3 Linux host configuration](#Linux_host_configuration)
+    *   [3.1 Installation](#Installation)
+    *   [3.2 Updating DNS](#Updating_DNS)
+    *   [3.3 Configuring NTP](#Configuring_NTP)
+    *   [3.4 Kerberos](#Kerberos)
+        *   [3.4.1 Creating a Kerberos ticket](#Creating_a_Kerberos_ticket)
+        *   [3.4.2 Validating the Ticket](#Validating_the_Ticket)
+    *   [3.5 pam_winbind.conf](#pam_winbind.conf)
+    *   [3.6 Samba](#Samba)
+    *   [3.7 Join the domain](#Join_the_domain)
+*   [4 Starting and testing services](#Starting_and_testing_services)
+    *   [4.1 Starting Samba](#Starting_Samba)
+    *   [4.2 Testing Winbind](#Testing_Winbind)
+    *   [4.3 Testing nsswitch](#Testing_nsswitch)
+    *   [4.4 Testing Samba commands](#Testing_Samba_commands)
+*   [5 Configuring PAM](#Configuring_PAM)
+    *   [5.1 system-auth](#system-auth)
+        *   [5.1.1 "auth" section](#.22auth.22_section)
+        *   [5.1.2 "account" section](#.22account.22_section)
+        *   [5.1.3 "password" section](#.22password.22_section)
+        *   [5.1.4 "session" section](#.22session.22_section)
+    *   [5.2 passwd](#passwd)
+        *   [5.2.1 "password" section](#.22password.22_section_2)
+    *   [5.3 Testing login](#Testing_login)
+*   [6 Configuring Shares](#Configuring_Shares)
+*   [7 Adding a machine keytab file and activating password-free kerberized ssh to the machine](#Adding_a_machine_keytab_file_and_activating_password-free_kerberized_ssh_to_the_machine)
+    *   [7.1 Creating a machine key tab file](#Creating_a_machine_key_tab_file)
+    *   [7.2 Enabling keytab authentication](#Enabling_keytab_authentication)
+    *   [7.3 Preparing sshd on server](#Preparing_sshd_on_server)
+    *   [7.4 Adding necessary options on client](#Adding_necessary_options_on_client)
+    *   [7.5 Testing the setup](#Testing_the_setup)
+    *   [7.6 Nifty fine-tuning for complete password-free kerberos handling.](#Nifty_fine-tuning_for_complete_password-free_kerberos_handling.)
+*   [8 Generating user Keytabs which are accepted by AD](#Generating_user_Keytabs_which_are_accepted_by_AD)
+    *   [8.1 Nice to know](#Nice_to_know)
+*   [9 See also](#See_also)
+    *   [9.1 Commercial Solutions](#Commercial_Solutions)
 
 ## Terminology
 
@@ -68,30 +71,29 @@ If you are not familiar with Active Directory, there are a few keywords that are
 *   **WINS**: Windows Information Naming Service. Used for resolving Netbios names to windows hosts.
 *   **Winbind**: Protocol for windows authentication.
 
-## Configuration
-
-### Active Directory Configuration
+## Active Directory configuration
 
 This section works with the default configuration of Windows Server 2012 R2.
 
-#### GPO Considerations
+### GPO considerations
 
-Digital signing is enabled by default in Windows Server, and must be enabled at both the client and server level. For certain versions of samba, Linux clients may experience issues connecting to the domain and/or shares. It's recommended you add the following parameters to your smb.conf file:
+Digital signing is enabled by default in Windows Server, and must be enabled at both the client and server level. For certain versions of Samba, Linux clients may experience issues connecting to the domain and/or shares. It's recommended you add the following parameters to your `smb.conf` file:
 
 ```
 client signing = auto 
 server signing = auto
+
 ```
 
 If that is not successful, you can disable *Digital Sign Communication (Always)* in the AD group policies. In your AD Group Policy editor, locate:
 
-`Local policies` -> `Security policies` -> `Microsoft Network Server` -> `Digital sign communication (Always)` -> activate `define this policy` and use the `disable` radio button.
+Under *Local policies > Security policies > Microsoft Network Server > Digital sign communication (Always)* activate *define this policy* and use the *disable* radio button.
 
-If you use Windows Server 2008 R2, you need to modify that in GPO for Default Domain Controller Policy -> Computer Setting -> Policies -> Windows Setting -> Security Setting -> Local Policies -> Security Option -> *Microsoft network client: Digitally sign communications (always)*
+If you use Windows Server 2008 R2, you need to modify that in *GPO for Default Domain Controller Policy > Computer Setting > Policies > Windows Setting > Security Setting > Local Policies > Security Option > Microsoft network client: Digitally sign communications (always)*.
 
 Please note that disabling this GPO affects the security of all members of the domain.
 
-### Linux Host Configuration
+## Linux host configuration
 
 The next few steps will begin the process of configuring the Host. You will need root or sudo access to complete these steps.
 
@@ -174,7 +176,7 @@ Let us assume that your AD is named example.com. Let us further assume your AD i
 
 **Note:** Heimdal 1.3.1 deprecated DES encryption which is required for AD authentication before Windows Server 2008\. You will probably have to add `allow_weak_crypto = true` to the `[libdefaults]` section.
 
-#### Creating a Kerberos Ticket
+#### Creating a Kerberos ticket
 
 **Note:** The keys and commands are user specific: sudo will be root, so your non-elevated account can connect to a different AD user with a separate key. If you only have one domain, it is not necessary to type @EXAMPLE.COM
 
@@ -270,7 +272,7 @@ In this section, we will focus on getting Authentication to work first by editin
 
 ```
 
-### Join the Domain
+### Join the domain
 
 You need an AD Administrator account to do this. Let us assume this is named Administrator. The command is 'net ads join'
 

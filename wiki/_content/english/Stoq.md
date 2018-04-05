@@ -6,23 +6,56 @@ Stoq application uses PostgreSQL as database back-end, with a graphical interfac
 
 *   [1 Installation](#Installation)
     *   [1.1 Installing Stoq](#Installing_Stoq)
-    *   [1.2 Installing stoq-server](#Installing_stoq-server)
-    *   [1.3 Accessing serial](#Accessing_serial)
+    *   [1.2 Configure Stoq](#Configure_Stoq)
+        *   [1.2.1 Connect to the database locally](#Connect_to_the_database_locally)
+        *   [1.2.2 Manually configure the database connection](#Manually_configure_the_database_connection)
+        *   [1.2.3 Stoq configuration file](#Stoq_configuration_file)
+    *   [1.3 Installing stoq-server](#Installing_stoq-server)
+    *   [1.4 Configure stoq-server](#Configure_stoq-server)
+        *   [1.4.1 Stoq-server configuration file](#Stoq-server_configuration_file)
+    *   [1.5 Accessing serial](#Accessing_serial)
 *   [2 Additional documentation](#Additional_documentation)
 
 ## Installation
 
 ### Installing Stoq
 
-Install the [stoq](https://aur.archlinux.org/packages/stoq/) package. Please note that the Stoq package comes with a bunch of python2 packages available in the [AUR](/index.php/AUR "AUR"). The dependency of [webkitgtk2](https://aur.archlinux.org/packages/webkitgtk2/) take long time for installation process.
+[Install](/index.php/Install "Install") the [stoq](https://aur.archlinux.org/packages/stoq/) package. Please note that the Stoq package comes with a bunch of python2 packages available in the [AUR](/index.php/AUR "AUR"). The dependency of [webkitgtk2](https://aur.archlinux.org/packages/webkitgtk2/) take long time for installation process.
 
-The main Stoq configuration file is located at ~/.stoq/stoq.conf.
+### Configure Stoq
+
+After running Stoq for the first time, you will need to configure the database location. In this step there are two options for the client to connect to the database:
+
+*   Connect to the database locally;
+*   Manually configure the database connection.
+
+#### Connect to the database locally
+
+To connect to the database locall, you must [install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql).
+
+If the PostgreSQL database cluster has not been initialized yet, please follow first the [PostgreSQL install process](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+
+As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`.
+
+On the screen "Database location" use the option "I want to use Stoq just on this computer".
+
+#### Manually configure the database connection
+
+On the screen "Database location" use the option "I want to manually configure the database connection" and fill the details about the database.
+
+#### Stoq configuration file
+
+The main Stoq configuration file is located at `~/.stoq/stoq.conf`.
 
 ### Installing stoq-server
 
-Install the [stoq-server](https://aur.archlinux.org/packages/stoq-server/) package. Then [set a password](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") for the newly created *stoqserver* user.
+[Install](/index.php/Install "Install") the [stoq-server](https://aur.archlinux.org/packages/stoq-server/) package. Then [set a password](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") for the newly created *stoqserver* user.
 
-As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`. If the PostgreSQL instance has not been initialized yet, please follow first the [PostgreSQL install process](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+### Configure stoq-server
+
+If the PostgreSQL database cluster has not been initialized yet, please follow first the [PostgreSQL install process](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+
+As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`.
 
 It is necessary to create a new PostgreSQL configuration for stoqserver. For that log in as the default PostgreSQL superuser, 'postgres', by executing the following command:
 
@@ -45,7 +78,14 @@ Use stoqsconf script to generate the necessary configuration files:
 
 ```
 
-The main stoqserver configuration file is located at /usr/share/stoqserver/.stoq/stoq.conf.
+Where:
+
+*   the `-p` is the port that PostgreSQL uses to remote conecctions;
+*   and `-D` is the location where the configuration files of stoq-server must be stored.
+
+Return to the regular user using `exit`.
+
+In order for the stoq-server to be accessible remotely it is necessary to follow the article [Configure PostgreSQL to be accessible from remote hosts](/index.php/PostgreSQL#Configure_PostgreSQL_to_be_accessible_from_remote_hosts "PostgreSQL").
 
 As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `supervisord.service`.
 
@@ -61,7 +101,9 @@ Restart the supervisor process:
 
 ```
 
-It's necessary [start](/index.php/Start "Start") or [enable](/index.php/Enable "Enable") the `postgresql.service` and `supervisord.service` before start Stoq with stoqserver.
+#### Stoq-server configuration file
+
+The main stoqserver configuration file is located at `/usr/share/stoqserver/.stoq/stoq.conf`.
 
 ### Accessing serial
 
@@ -76,4 +118,4 @@ The stoqserver communicates with the computer via a serial connection or a seria
 
 ## Additional documentation
 
-Therefore, reading the [Stoq Manual](https://doc.stoq.com.br/manual/latest/).
+Therefore, reading the [wiki](https://wiki.stoq.com.br) and the [manual](https://doc.stoq.com.br/manual/latest/) of Stoq (only in Portuguese).

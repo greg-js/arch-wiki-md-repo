@@ -161,6 +161,8 @@ Trusted users and developers can connect to [PKGBUILD.com](http://pkgbuild.com/)
 
 The process is similar to that of a local setup with devtools. Your GnuPG private is required for signing but you don't want to upload it to soyuz for obvious security reasons. As such, you'll need to forward the GnuPG agent socket from your local machine to the server: this will allow you to sign packages on soyuz without communicating your key. This also means that we need to disable the agent on the server before we can run anything.
 
+**Warning:** Forwarding your gpg-agent socket to a remote machine makes it possible to anyone with root access to that system to use your unlocked GPG credentials.
+
 First, connect to soyuz and disable
 
 ```

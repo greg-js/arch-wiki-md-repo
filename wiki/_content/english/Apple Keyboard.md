@@ -56,9 +56,10 @@ To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_opt
 
 ```
 echo "options hid_apple fnmode=2" | sudo tee /etc/modprobe.d/hid_apple.conf
-echo 'FILES="$FILES:/etc/modprobe.d/hid_apple.conf"' | sudo tee -a /etc/mkinitcpio.conf
 
 ```
+
+To apply the change to your initial ramdisk, in your [mkinitcpio configuration](/index.php/Mkinitcpio#Configuration "Mkinitcpio") (usually `/etc/mkinitcpio.conf`), make sure you either have `modconf` included in the `HOOKS` variable or `/etc/modprobe.d/hid_apple.conf` in the `FILES` variable. You would then need to [rebuild the ramdisk image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 
 If your keyboard is model A1644, please use this [[1]](https://bugzilla.kernel.org/attachment.cgi?id=258205) patch (from this [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=99881#c41)thread) to fix the function/media keys.
 

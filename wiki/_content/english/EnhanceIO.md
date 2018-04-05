@@ -2,9 +2,9 @@
 
 **Warning:**
 
+*   As of October 2015 EnhanceIO is [completely broken](https://github.com/stec-inc/EnhanceIO/issues/106) on newer kernels.
 *   As always be careful and read the documentation carefully before attempting to use EnhanceIO, do not confuse your HDD and SDD and make sure the SSD does not have any important data on it.
 *   There is a [known issue](https://github.com/stec-inc/EnhanceIO/issues/30) with EnhanceIO causing filesystem corruption if fsck is run on file system before cache is brought up.
-*   As of October 2015 EnhanceIO is [completely broken](https://github.com/stec-inc/EnhanceIO/issues/106) on newer kernels.
 
 ## Contents
 

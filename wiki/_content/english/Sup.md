@@ -1,4 +1,4 @@
-**Sup** is a powerful new mail client developed for people who manage lots of mail. It can be viewed as a cross between Mutt and Gmail, with very fast operation and search, tagging, automatic contact management, support for a wide variety of accounts at once, and more.
+[Sup](https://sup-heliotrope.github.io/) is a powerful new mail client developed for people who manage lots of mail. It can be viewed as a cross between Mutt and Gmail, with very fast operation and search, tagging, automatic contact management, support for a wide variety of accounts at once, and more.
 
 ## Contents
 
@@ -22,8 +22,7 @@
     *   [5.5 Keybindings from line-cursor-mode](#Keybindings_from_line-cursor-mode)
     *   [5.6 Keybindings from scroll-mode](#Keybindings_from_scroll-mode)
     *   [5.7 Global keybindings](#Global_keybindings)
-*   [6 Tips and tricks](#Tips_and_tricks)
-*   [7 See also](#See_also)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -386,11 +385,9 @@ m, c : Compose new message
 
 ```
 
-## Tips and tricks
-
 ## See also
 
-*   [Website](http://sup-heliotrope.github.io/)
+*   [Website](https://sup-heliotrope.github.io/)
 *   [Wiki](https://github.com/sup-heliotrope/sup/wiki)
 *   [README](https://github.com/sup-heliotrope/sup/blob/develop/README.md)
 *   [FAQ](https://github.com/sup-heliotrope/sup/blob/develop/doc/FAQ.txt)

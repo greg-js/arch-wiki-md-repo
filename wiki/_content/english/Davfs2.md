@@ -1,4 +1,4 @@
-**davfs2** is a Linux file system driver that allows to [mount](/index.php/Mount "Mount") a [WebDAV](/index.php/WebDAV "WebDAV") resource. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources.
+[davfs2](http://savannah.nongnu.org/projects/davfs2) is a Linux file system driver that allows to [mount](/index.php/Mount "Mount") a [WebDAV](/index.php/WebDAV "WebDAV") resource. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources.
 
 ## Contents
 

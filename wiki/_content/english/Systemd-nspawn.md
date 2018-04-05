@@ -40,6 +40,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [4.6 Specify per-container settings](#Specify_per-container_settings)
     *   [4.7 Use Btrfs subvolume as container root](#Use_Btrfs_subvolume_as_container_root)
     *   [4.8 Use temporary Btrfs snapshot of container](#Use_temporary_Btrfs_snapshot_of_container)
+    *   [4.9 Run docker in systemd-nspawn](#Run_docker_in_systemd-nspawn)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
@@ -409,6 +410,38 @@ where *my-container* is the directory of an **existing** container or system. Fo
 ```
 
 After powering off the container, the btrfs subvolume that was created is immediately removed.
+
+### Run docker in systemd-nspawn
+
+[Docker](/index.php/Docker "Docker") requires `rw` permission of `/sys/fs/cgroup` to run its containers, which is mounted read-only by `systemd-nspawn` by default due to cgroup namespace. However, it is possible to run Docker in a systemd-nspawn container by bind-mounting `/sys/fs/cgroup` from host os and enabling necessary capabilities and permissions.
+
+**Note:** The following steps are essentially sharing the cgroup namespace to the container, giving kernel keyring permissions and making it a privileged container, which is likely to increase the attack surface and decrease security level. You should always evaluate the actual benefits by doing so before following the steps.
+
+First, cgroup namespace should be disabled by `systemctl edit systemd-nspawn@myContainer`
+
+ `systemctl edit systemd-nspawn@myContainer` 
+```
+[Service]
+Environment=SYSTEMD_NSPAWN_USE_CGNS=0
+
+```
+
+Then, edit `/etc/systemd/nspawn/myContainer.nspwn` (create if absent) and add the following configurations.
+
+ `/etc/systemd/nspawn/myContainer.nspwn` 
+```
+[Exec]
+Capability=all
+SystemCallFilter=add_key keyctl
+
+[Files]
+Bind=/sys/fs/cgroup
+
+```
+
+This grants all capabilities to the container, whitelists two system calls `add_key` and `keyctl` (related to kernel keyring and required by Docker), and bind-mounts `/sys/fs/cgroup` from host to the container. After editing these files, you need to poweroff and restart your container for them to take effect.
+
+**Note:** You might need to load the `overlay` module on the host before starting Docker inside the systemd-nspawn to use the `overlay2` storage driver (default storage driver of Docker) properly. Failure to load the driver will cause Docker to choose the inefficient driver `vfs` which copies everything for every layer of Docker containers. Consult [Kernel_modules#Automatic_module_handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") on how to load the module automatically.
 
 ## Troubleshooting
 

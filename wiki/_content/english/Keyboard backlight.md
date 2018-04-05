@@ -47,6 +47,15 @@ if __name__ ==  '__main__':
 
 ```
 
+Alternatively the following bash oneliner will set the backlight to the value specified in argument:
+
+```
+setKeyboardLight () {
+    dbus-send --system --type=method_call  --dest="org.freedesktop.UPower" "/org/freedesktop/UPower/KbdBacklight" "org.freedesktop.UPower.KbdBacklight.SetBrightness" int32:$1 
+}
+
+```
+
 ## Asus
 
 **Warning:** The following way is not recommended. It provides world-writeable permissions to the keyboard backlight device file meaning that any and every user can control it.

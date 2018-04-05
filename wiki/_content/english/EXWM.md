@@ -40,13 +40,13 @@ It's also possible to start emacs in server mode and to start EXWM from commandl
 
 ## Configuration
 
-EXWM is a full X window manager, so Emacs manages X windows such as your browser, vlc, etc. You may use all the normal Emacs window commands to control window placement. In X windows (i.e. not "normal" Emacs buffers), some commands are caught by EXWM and not passed through to the program. These keys are store in `exwm-input-prefix-keys`. Alternatively, you can set global commands by using the `exwm-input-set-key` function. For example, to use s-& as a keyboard shortcut to launch a program (e.g. firefox), you can do:
+EXWM is a full X window manager, so Emacs manages X windows such as your browser, vlc, etc. You may use all the normal Emacs window commands to control window placement. In X windows (i.e. not "normal" Emacs buffers), some commands are caught by EXWM and not passed through to the program. These keys are store in `exwm-input-prefix-keys`. Alternatively, you can set global commands by customizing `exwm-input-global-keys`. If you would rather set `exwm-input-global-keys` in elisp rather than using the customization feature, be aware that you will have to restart EXWM (and set `exwm-input-global-keys` before enabling exwm). To use s-& as a keyboard shortcut to launch a program (e.g. firefox), you can do:
 
 ```
-(exwm-input-set-key (kbd "s-&")
-                    (lambda (command)
-                      (interactive (list (read-shell-command "$ ")))
-                      (start-process-shell-command command nil command)))
+(setq exwm-input-global-keys `(,(kbd "s-&") .
+                               (lambda (command)
+                                 (interactive (list (read-shell-command "$ ")))
+                                 (start-process-shell-command command nil command))))
 
 ```
 
@@ -122,7 +122,10 @@ This stores your recentf history to disk, prompts you to save, discard, or diff 
 
 ### Screen tearing in Firefox
 
-Try turning off smooth scrolling in Preferences > Advanced > Use Smooth Scrolling
+You may experience screen tearing in some programs, particularly Firefox. You can try:
+
+*   turning off smooth scrolling in Preferences > Advanced > Use Smooth Scrolling.
+*   installing (and activating) [Compton](/index.php/Compton "Compton") or another composite manager: [Xorg#Composite](/index.php/Xorg#Composite "Xorg").
 
 ## See also
 

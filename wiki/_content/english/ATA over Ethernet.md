@@ -1,4 +1,6 @@
-ATA over Ethernet (AoE) is a network protocol developed by the Brantley Coile Company, designed for simple, high-performance access of SATA storage devices over Ethernet networks. It is used to build storage area networks (SANs) with low-cost, standard technologies.
+From [w:ATA over Ethernet](https://en.wikipedia.org/wiki/ATA_over_Ethernet "w:ATA over Ethernet"):
+
+	*ATA over Ethernet (AoE) is a network protocol developed by the Brantley Coile Company, designed for simple, high-performance access of SATA storage devices over Ethernet networks. It is used to build storage area networks (SANs) with low-cost, standard technologies.*
 
 ## Prequisites to AE
 

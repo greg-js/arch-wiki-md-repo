@@ -108,6 +108,7 @@ When other input methods with xim support are also running, fcitx may fail to st
 
 [Define](/index.php/Define "Define") the environment variables to register the input method modules and support xim programs.
 
+ `~/.pam_environment` 
 ```
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx

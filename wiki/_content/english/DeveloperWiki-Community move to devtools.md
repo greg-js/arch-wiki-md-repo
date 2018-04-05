@@ -1,12 +1,12 @@
 Proposal: **Make [community] use the same repository system as [core] or [extra].**
 
 Result: The proposal was passed on 23 Jan 2009\. The [community] repository has recently moved to a new server and has been moved to the SVN/devtools setup. Shell accounts have been created for Trusted Users. See the following threads for details on the transition:
-[https://www.archlinux.org/pipermail/aur-general/2009-June/005359.html](https://www.archlinux.org/pipermail/aur-general/2009-June/005359.html)
-[https://www.archlinux.org/pipermail/aur-general/2009-July/005844.html](https://www.archlinux.org/pipermail/aur-general/2009-July/005844.html)
+[https://lists.archlinux.org/pipermail/aur-general/2009-June/005359.html](https://lists.archlinux.org/pipermail/aur-general/2009-June/005359.html)
+[https://lists.archlinux.org/pipermail/aur-general/2009-July/005844.html](https://lists.archlinux.org/pipermail/aur-general/2009-July/005844.html)
 
 * * *
 
-Reference: [https://archlinux.org/pipermail/aur-general/2008-December/003325.html](https://archlinux.org/pipermail/aur-general/2008-December/003325.html)
+Reference: [https://lists.archlinux.org/pipermail/aur-general/2008-December/003325.html](https://lists.archlinux.org/pipermail/aur-general/2008-December/003325.html)
 The above thread contains the initial discussion on this proposal.
 
 For quite a while, [community] in Arch has led an almost independent existence, being tightly coupled with the AUR. Many improvements have been made in the workflow of package distribution in 'devtools' which are used for uploading and managing packages in the [core] and [extra] repositories.

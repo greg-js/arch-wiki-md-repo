@@ -69,6 +69,8 @@ Configure the following `makepkg.conf` variables if needed:
 *   `SRCDEST` — directory for storing [source](/index.php/PKGBUILD#source "PKGBUILD") data (symbolic links will be placed to `src/` if it points elsewhere)
 *   `SRCPKGDEST` — directory for storing resulting source packages (built with `makepkg -S`)
 
+**Tip:** The `PKGDEST` directory can be cleaned up with e.g. `paccache -c ~/build/packages/` as described in [pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_cache "Pacman").
+
 ### Signature checking
 
 **Note:** The signature checking implemented in *makepkg* does not use pacman's keyring, instead relying on the user's keyring.[[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)

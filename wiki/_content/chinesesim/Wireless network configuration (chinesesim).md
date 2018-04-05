@@ -416,7 +416,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 提供了 [钩子](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd"), 可以使用它自动在无线接口上启动 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")。
+**提示：** [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") 提供了 [钩子](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.92.A9.E5.AD.90 "Dhcpcd (简体中文)"), 可以使用它自动在无线接口上启动 [WPA supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)")。
 
 #### 示例
 

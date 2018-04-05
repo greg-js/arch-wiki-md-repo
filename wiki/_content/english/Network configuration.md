@@ -5,98 +5,75 @@ Related articles
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [Network bridge](/index.php/Network_bridge "Network bridge")
 *   [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet")
+*   [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Router](/index.php/Router "Router")
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 
-This page explains how to set up a **wired** connection to a network. If you need to set up **wireless** networking see the [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") page.
+This page explains how to set up a wired connection to a network. If you need to set up wireless networking see the [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") page.
 
 ## Contents
 
-*   [1 Check the connection](#Check_the_connection)
+*   [1 Network debugging](#Network_debugging)
 *   [2 Device driver](#Device_driver)
     *   [2.1 Check the status](#Check_the_status)
     *   [2.2 Load the module](#Load_the_module)
-*   [3 Network management](#Network_management)
-    *   [3.1 Network interfaces](#Network_interfaces)
-        *   [3.1.1 Get current interface names](#Get_current_interface_names)
-        *   [3.1.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
-    *   [3.2 Dynamic IP address](#Dynamic_IP_address)
-    *   [3.3 Static IP address](#Static_IP_address)
-        *   [3.3.1 Manual assignment](#Manual_assignment)
-        *   [3.3.2 Calculating addresses](#Calculating_addresses)
-    *   [3.4 Network managers](#Network_managers)
-*   [4 Set the hostname](#Set_the_hostname)
-    *   [4.1 Local network hostname resolution](#Local_network_hostname_resolution)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Change device name](#Change_device_name)
-    *   [5.2 Revert to traditional device names](#Revert_to_traditional_device_names)
-    *   [5.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
-    *   [5.4 ifplugd for laptops](#ifplugd_for_laptops)
-    *   [5.5 Bonding or LAG](#Bonding_or_LAG)
-    *   [5.6 IP address aliasing](#IP_address_aliasing)
-        *   [5.6.1 Example](#Example)
-    *   [5.7 Change MAC/hardware address](#Change_MAC.2Fhardware_address)
-    *   [5.8 Internet sharing](#Internet_sharing)
-    *   [5.9 Router configuration](#Router_configuration)
-    *   [5.10 Promiscuous mode](#Promiscuous_mode)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
-    *   [6.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
-        *   [6.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
-        *   [6.2.2 Ways of fixing it](#Ways_of_fixing_it)
-            *   [6.2.2.1 Bad](#Bad)
-            *   [6.2.2.2 Good](#Good)
-            *   [6.2.2.3 Best](#Best)
-        *   [6.2.3 More about it](#More_about_it)
-    *   [6.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
-        *   [6.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
-        *   [6.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
-        *   [6.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
-        *   [6.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [6.3.5 Enable *LAN Boot ROM* in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
-    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [6.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
-*   [7 See also](#See_also)
+*   [3 Network interface](#Network_interface)
+    *   [3.1 Listing network interfaces](#Listing_network_interfaces)
+    *   [3.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
+*   [4 Obtaining an IP address](#Obtaining_an_IP_address)
+    *   [4.1 Dynamic IP address](#Dynamic_IP_address)
+    *   [4.2 Static IP address](#Static_IP_address)
+        *   [4.2.1 Manual assignment](#Manual_assignment)
+        *   [4.2.2 Calculating addresses](#Calculating_addresses)
+    *   [4.3 Network managers](#Network_managers)
+*   [5 Set the hostname](#Set_the_hostname)
+    *   [5.1 Local network hostname resolution](#Local_network_hostname_resolution)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Change device name](#Change_device_name)
+    *   [6.2 Revert to traditional device names](#Revert_to_traditional_device_names)
+    *   [6.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
+    *   [6.4 ifplugd for laptops](#ifplugd_for_laptops)
+    *   [6.5 Bonding or LAG](#Bonding_or_LAG)
+    *   [6.6 IP address aliasing](#IP_address_aliasing)
+        *   [6.6.1 Example](#Example)
+    *   [6.7 Promiscuous mode](#Promiscuous_mode)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
+    *   [7.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
+        *   [7.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
+        *   [7.2.2 Ways of fixing it](#Ways_of_fixing_it)
+            *   [7.2.2.1 Bad](#Bad)
+            *   [7.2.2.2 Good](#Good)
+            *   [7.2.2.3 Best](#Best)
+        *   [7.2.3 More about it](#More_about_it)
+    *   [7.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
+        *   [7.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
+        *   [7.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
+        *   [7.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
+        *   [7.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
+        *   [7.3.5 Enable *LAN Boot ROM* in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+    *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [7.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+*   [8 See also](#See_also)
 
-## Check the connection
+## Network debugging
 
-The basic installation procedure typically has a functional network configuration. Use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) to check the connection:
+You can use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) to check if you can reach a host.
 
- `$ ping www.google.com` 
-```
-PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
-64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
-...
-```
+1.  Make sure your [#Network interface](#Network_interface) is up. If it isn't listed, check your [#Device driver](#Device_driver).
+2.  Check if you can access the internet by pinging a public IP address (e.g. `8.8.8.8`). If you cannot access the internet but your network interface is up, see [#Obtaining an IP address](#Obtaining_an_IP_address).
+3.  Check if if you can resolve domain names, by pinging a domain name (e.g. `google.com`). If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
 
-If the ping is successful (you see 64 bytes messages as above), then the network is configured. Press `Control-C` to stop the ping.
-
-If the ping failed with an *Unknown hosts* error, it means that your machine was unable to resolve this domain name. It may be related to your service provider or your router/gateway. Try pinging a static IP address to prove that your machine has access to the Internet:
-
- `$ ping 8.8.8.8` 
-```
-PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
-...
-
-```
-
-If you are able to ping `8.8.8.8` but not `www.google.com`, check your DNS configuration. See [resolv.conf](/index.php/Resolv.conf "Resolv.conf") for details. The `hosts` line in `/etc/nsswitch.conf` is another place you can check.
-
-If not, check for cable issues before diagnosing further.
-
-**Note:**
-
-*   If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
-*   The `-c *num*` option can be used to make exactly `*num*` pings, otherwise it pings infinitely and has to be terminated manually. See [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) for more information.
-*   `8.8.8.8` is a static address that is easy to remember. It is the address of Google's primary DNS server, therefore it can be considered reliable, and is generally not blocked by content filtering systems and proxies.
+**Note:** If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
 
 ## Device driver
 
 ### Check the status
 
-[udev](/index.php/Udev "Udev") should detect your [network interface controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") and automatically load the necessary module at start up. Check the "Ethernet controller" entry (or similar) from the `lspci -v` output. It should tell you which kernel module contains the driver for your network device. For example:
+[udev](/index.php/Udev "Udev") should detect your [network interface controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") (NIC) and automatically load the necessary [kernel module](/index.php/Kernel_module "Kernel module") at startup. Check the "Ethernet controller" entry (or similar) from the `lspci -v` output. It should tell you which kernel module contains the driver for your network device. For example:
 
  `$ lspci -v` 
 ```
@@ -122,17 +99,13 @@ Skip the next section if the driver was loaded successfully. Otherwise, you will
 
 Search in the Internet for the right module/driver for the chipset. Some common modules are `8139too` for cards with a Realtek chipset, or `sis900` for cards with a SiS chipset. Once you know which module to use, try to [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If you get an error saying that the module was not found, it's possible that the driver is not included in Arch kernel. You may search the [AUR](/index.php/AUR "AUR") for the module name.
 
-If udev is not detecting and loading the proper module automatically during bootup, see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+If udev is not detecting and loading the proper module automatically during bootup, see [Kernel module#Automatic module handling](/index.php/Kernel_module#Automatic_module_handling "Kernel module").
 
-## Network management
+## Network interface
 
-### Network interfaces
+[udev](/index.php/Udev "Udev") assigns names to your network interfaces. More specifically [udev](/index.php/Udev "Udev") uses [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames). Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier.
 
-For computers with multiple NICs, it is important to have fixed interface names. Many configuration problems are caused by interface name changing.
-
-[udev](/index.php/Udev "Udev") is responsible for assigning names to each device. Systemd uses [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier, creating an entry such as `enp0s25`.
-
-#### Get current interface names
+### Listing network interfaces
 
 Both wired and wireless interface names can be found via `ls /sys/class/net` or `ip link`. Note that `lo` is the [loop device](https://en.wikipedia.org/wiki/loop_device "w:loop device") and not used in making network connections.
 
@@ -140,7 +113,7 @@ Wireless device names can also be retrieved using `iw dev`. See also [Wireless n
 
 **Tip:** To change the device names, see [#Change device name](#Change_device_name) and [#Revert to traditional device names](#Revert_to_traditional_device_names).
 
-#### Enabling and disabling network interfaces
+### Enabling and disabling network interfaces
 
 You can activate a network interface using:
 
@@ -166,6 +139,8 @@ To check the result for the interface `eth0`:
 ```
 
 **Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Manual assignment](#Manual_assignment) for reestablishing it.
+
+## Obtaining an IP address
 
 ### Dynamic IP address
 
@@ -454,18 +429,6 @@ To remove a given alias execute
 
 Packets destined for a subnet will use the primary alias by default. If the destination IP is within a subnet of a secondary alias, then the source IP is set respectively. Consider the case where there is more than one NIC, the default routes can be listed with `ip route`.
 
-### Change MAC/hardware address
-
-See [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing").
-
-### Internet sharing
-
-See [Internet sharing](/index.php/Internet_sharing "Internet sharing").
-
-### Router configuration
-
-See [Router](/index.php/Router "Router").
-
 ### Promiscuous mode
 
 Toggling [promiscuous mode](https://en.wikipedia.org/wiki/Promiscuous_mode "wikipedia:Promiscuous mode") will make a (wireless) NIC forward all traffic it receives to the OS for further processing. This is opposite to "normal mode" where a NIC will drop frames it is not intended to receive. It is most often used for advanced network troubleshooting and [packet sniffing](https://en.wikipedia.org/wiki/Packet_sniffing "wikipedia:Packet sniffing").
@@ -492,7 +455,7 @@ If you want to enable promiscuous mode on interface `eth0` run [enable](/index.p
 
 ### Swapping computers on the cable modem
 
-Some cable ISPs (videotron for example) have the cable modem configured to recognize only one client PC, by the MAC address of its network interface. Once the cable modem has learned the MAC address of the first PC or equipment that talks to it, it will not respond to another MAC address in any way. Thus if you swap one PC for another (or for a router), the new PC (or router) will not work with the cable modem, because the new PC (or router) has a MAC address different from the old one. To reset the cable modem so that it will recognise the new PC, you must power the cable modem off and on again. Once the cable modem has rebooted and gone fully online again (indicator lights settled down), reboot the newly connected PC so that it makes a DHCP request, or manually make it request a new DHCP lease.
+Some cable ISPs (Vidéotron for example) have the cable modem configured to recognize only one client PC, by the MAC address of its network interface. Once the cable modem has learned the MAC address of the first PC or equipment that talks to it, it will not respond to another MAC address in any way. Thus if you swap one PC for another (or for a router), the new PC (or router) will not work with the cable modem, because the new PC (or router) has a MAC address different from the old one. To reset the cable modem so that it will recognise the new PC, you must power the cable modem off and on again. Once the cable modem has rebooted and gone fully online again (indicator lights settled down), reboot the newly connected PC so that it makes a DHCP request, or manually make it request a new DHCP lease.
 
 If this method does not work, you will need to clone the MAC address of the original machine. See also [#Change MAC/hardware address](#Change_MAC.2Fhardware_address).
 

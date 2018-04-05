@@ -90,7 +90,7 @@ $ modprobe --show-depends *module_name*
 virtio-net
 ```
 
-Смотрите [modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) для дополнительной информации.
+Смотрите [modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) для дополнительной информации.
 
 ## Управление модулями вручную
 

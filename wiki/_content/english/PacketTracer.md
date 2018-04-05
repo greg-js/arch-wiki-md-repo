@@ -1,4 +1,4 @@
-Cisco Packet Tracer is a powerful network simulation program that allows students to experiment with network behavior and ask “what if” questions. As an integral part of the Networking Academy comprehensive learning experience, Packet Tracer provides simulation, visualization, authoring, assessment, and collaboration capabilities and facilitates the teaching and learning of complex technology concepts. [Source](https://www.netacad.com/web/about-us/cisco-packet-tracer)
+[Cisco Packet Tracer](https://www.netacad.com/courses/packet-tracer-download/) is a powerful network simulation program that allows students to experiment with network behavior and ask “what if” questions. As an integral part of the Networking Academy comprehensive learning experience, Packet Tracer provides simulation, visualization, authoring, assessment, and collaboration capabilities and facilitates the teaching and learning of complex technology concepts. [Source](https://www.netacad.com/web/about-us/cisco-packet-tracer)
 
 ## Contents
 

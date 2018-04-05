@@ -4,16 +4,12 @@ Related articles
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
 
-[Wicd](https://launchpad.net/wicd) is a network connection manager that can manage wireless and wired interfaces, similar and an alternative to [NetworkManager](/index.php/NetworkManager "NetworkManager"). Wicd is written in [Python](/index.php/Python "Python") and [GTK+](/index.php/GTK%2B "GTK+"). Alternatively, a version of Wicd for [KDE](/index.php/KDE "KDE"), written in [Qt](/index.php/Qt "Qt"), is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Wicd can also run from the terminal in a curses interface, requiring no X server session or task panel (see [#Running Wicd in Text Mode](#Running_Wicd_in_Text_Mode)).
+[Wicd](https://launchpad.net/wicd) is a network connection manager that can manage wireless and wired interfaces, similar and an alternative to [NetworkManager](/index.php/NetworkManager "NetworkManager"). Wicd is written in [Python](/index.php/Python "Python") and [GTK+](/index.php/GTK%2B "GTK+"). Wicd can also run from the terminal in a curses interface, requiring no X server session or task panel (see [#Running Wicd in Text Mode](#Running_Wicd_in_Text_Mode)).
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Base package](#Base_package)
-    *   [1.2 GTK+ client](#GTK.2B_client)
-    *   [1.3 KDE client](#KDE_client)
-    *   [1.4 Notifications](#Notifications)
-    *   [1.5 Alternative](#Alternative)
+    *   [1.1 Notifications](#Notifications)
 *   [2 Getting started](#Getting_started)
     *   [2.1 Initial setup](#Initial_setup)
     *   [2.2 Running Wicd in Desktop Environment](#Running_Wicd_in_Desktop_Environment)
@@ -39,27 +35,15 @@ Related articles
 
 ## Installation
 
-### Base package
+[Install](/index.php/Install "Install") the [wicd](https://www.archlinux.org/packages/?name=wicd) package, or [wicd-git](https://aur.archlinux.org/packages/wicd-git/) for the development version. It includes everything needed to run the wicd daemon and the `wicd-cli` and `wicd-curses` interfaces.
 
-[Install](/index.php/Install "Install") the [wicd](https://www.archlinux.org/packages/?name=wicd) package. It includes everything needed to run the wicd daemon and the `wicd-cli` and `wicd-curses` interfaces.
-
-### GTK+ client
-
-For a GTK+ front-end, install [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk), available in the official repositories. It includes everything needed to run the GTK interface of wicd and the autostart file for the client to appear in the system tray.
-
-### KDE client
-
-For a KDE front-end, install [wicd-kde](https://aur.archlinux.org/packages/wicd-kde/), available in the [AUR](/index.php/AUR "AUR").
+There is also an official GTK+ front-end, available as [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk).
 
 ### Notifications
 
 To enable visual notifications about network status, you need to install the packages [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon) and [python2-notify](https://www.archlinux.org/packages/?name=python2-notify).
 
 If you are not using [GNOME](/index.php/GNOME "GNOME"), you may want to install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) instead of the notification-daemon, because it pulls a lot of unnecessary GNOME packages.
-
-### Alternative
-
-The [wicd-git](https://aur.archlinux.org/packages/wicd-git/) is the latest development branch. If you need an alternative version or you just want to roll your own package, you can easily build it using [ABS](/index.php/ABS "ABS").
 
 ## Getting started
 

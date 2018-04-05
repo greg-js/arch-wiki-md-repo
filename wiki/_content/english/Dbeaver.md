@@ -1,6 +1,6 @@
 Dbeaver is a free multi-platform database database administration tool. For more information about features, see the [official homepage](https://dbeaver.jkiss.org/).
 
-It supports all popular databases: [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [MariaDB](/index.php/MariaDB "MariaDB"), [SQLite](/index.php/SQLite "SQLite"), [Oracle](/index.php/Oracle "Oracle"), etc.
+It supports popular databases such as [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [MariaDB](/index.php/MariaDB "MariaDB"), [SQLite](/index.php/SQLite "SQLite"), [Oracle](/index.php/Oracle "Oracle").
 
 It provides a plugin architecture (based on Eclipse plugins architecture) that allows to modify much of the application behavior to provide database-specific functionality or features that are database-independent. This is a desktop application written in Java and based on Eclipse platform.
 
@@ -8,19 +8,16 @@ It provides a plugin architecture (based on Eclipse plugins architecture) that a
 
 [Install](/index.php/Install "Install") the [dbeaver](https://www.archlinux.org/packages/?name=dbeaver) package.
 
-There're also some plugins available from the repos:
+There are also some plugins available:
 
 *   [dbeaver-plugin-apache-poi](https://www.archlinux.org/packages/?name=dbeaver-plugin-apache-poi) - DBeaver library for Microsoft Office documents
-
 *   [dbeaver-plugin-batik](https://www.archlinux.org/packages/?name=dbeaver-plugin-batik) - DBeaver library for SVG format
-
 *   [dbeaver-plugin-office](https://www.archlinux.org/packages/?name=dbeaver-plugin-office) - DBeaver plugin to export data to Microsoft Office format
-
 *   [dbeaver-plugin-svg-format](https://www.archlinux.org/packages/?name=dbeaver-plugin-svg-format) - DBeaver plugin to save diagrams in SVG format
 
 ## Troubleshooting
 
-If you're getting an error like this:
+If you are getting an error like this:
 
 ```
  JVM terminated. Exit code=1
@@ -48,4 +45,4 @@ If you're getting an error like this:
 
 ```
 
-Try adding `export _JAVA_OPTIONS="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"` to your `.xinitrc`
+Try adding `export _JAVA_OPTIONS="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"` to your [xinitrc](/index.php/Xinitrc "Xinitrc").

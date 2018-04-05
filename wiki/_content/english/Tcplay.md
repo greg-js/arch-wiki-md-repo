@@ -4,7 +4,7 @@ Related articles
 *   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 *   [Tomb](/index.php/Tomb "Tomb")
 
-*tcplay* is a free, fully featured and stable TrueCrypt implementation including multiple keyfiles and cipher cascades.
+*tcplay* is a free, fully featured and stable [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") implementation including multiple keyfiles and cipher cascades.
 
 Source: [github project home](https://github.com/bwalex/tc-play)
 

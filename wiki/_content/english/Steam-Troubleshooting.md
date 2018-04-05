@@ -482,3 +482,13 @@ To work around this, run Steam with `LIBGL_DRI3_DISABLE=1`, disabling DRI3 for S
 ### Launching games on Nvidia optimus laptops
 
 To be able to play games which require using Nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start Steam with *primusrun* prefix. Otherwise, game will not work. Keep in mind, that issuing some command such as `primusrun steam` while Steam is already running will not restart it. You should explicitly exit and then start Steam via `primusrun steam` command or start game immediately after start, for example with `primusrun steam steam://rungameid/236870`. After Steam was launched with primusrun prefix, you do not need to prefix your game with primusrun or optirun, because it does not matter.
+
+For primusrun, VSYNC is enabled by default it could result in a mouse input delay lag, slightly decrease performance and in-game FPS might be locked to a refresh rate of a monitor/display. In order to disable VSYNC for primusrun default value of option vblank_mode needs to be overridden by environment variable.
+
+`vblank_mode=0 primusrun steam`
+
+Same with optirun that uses primus as a bridge.
+
+`vblank_mode=0 optirun -b primus steam`
+
+For more details see [Bumblebee#Primusrun mouse delay (disable VSYNC)](/index.php/Bumblebee#Primusrun_mouse_delay_.28disable_VSYNC.29 "Bumblebee").

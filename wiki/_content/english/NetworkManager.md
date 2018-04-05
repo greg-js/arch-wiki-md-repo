@@ -2,86 +2,84 @@ Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
 
 [NetworkManager](http://projects.gnome.org/NetworkManager/) is a program for providing detection and configuration for systems to automatically connect to network. NetworkManager's functionality can be useful for both wireless and wired networks. For wireless networks, NetworkManager prefers known wireless networks and has the ability to switch to the most reliable network. NetworkManager-aware applications can switch from online and offline mode. NetworkManager also prefers wired connections over wireless ones, has support for modem connections and certain types of VPN. NetworkManager was originally developed by Red Hat and now is hosted by the [GNOME](/index.php/GNOME "GNOME") project.
 
-**Warning:** By default, Wi-Fi passwords are stored in clear text. See section [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
+**Warning:** By default, Wi-Fi passwords are stored in clear text, see [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords).
 
 ## Contents
 
 *   [1 Installation](#Installation)
     *   [1.1 VPN support](#VPN_support)
     *   [1.2 PPPoE / DSL support](#PPPoE_.2F_DSL_support)
-*   [2 Front-ends](#Front-ends)
-    *   [2.1 GNOME](#GNOME)
-    *   [2.2 KDE Plasma](#KDE_Plasma)
-    *   [2.3 nm-applet](#nm-applet)
-        *   [2.3.1 Appindicator](#Appindicator)
-    *   [2.4 Command line](#Command_line)
-        *   [2.4.1 nmcli](#nmcli)
-        *   [2.4.2 nmtui](#nmtui)
-        *   [2.4.3 nmcli-dmenu](#nmcli-dmenu)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Enable NetworkManager](#Enable_NetworkManager)
-    *   [3.2 Enable NetworkManager Wait Online](#Enable_NetworkManager_Wait_Online)
-    *   [3.3 Set up PolicyKit permissions](#Set_up_PolicyKit_permissions)
-    *   [3.4 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
-        *   [3.4.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
-        *   [3.4.2 Start OpenNTPD](#Start_OpenNTPD)
-        *   [3.4.3 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
-        *   [3.4.4 Use dispatcher to automatically toggle Wi-Fi depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_Wi-Fi_depending_on_LAN_cable_being_plugged_in)
-        *   [3.4.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
-            *   [3.4.5.1 Create the dispatcher script](#Create_the_dispatcher_script)
-            *   [3.4.5.2 Give the script access to VPN password](#Give_the_script_access_to_VPN_password)
-        *   [3.4.6 Use dispatcher to handle mounting of CIFS shares](#Use_dispatcher_to_handle_mounting_of_CIFS_shares)
-    *   [3.5 Proxy settings](#Proxy_settings)
-    *   [3.6 Disable NetworkManager](#Disable_NetworkManager)
-    *   [3.7 Checking connectivity](#Checking_connectivity)
-*   [4 Testing](#Testing)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
-    *   [5.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
-    *   [5.3 Network management disabled](#Network_management_disabled)
-    *   [5.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
-    *   [5.5 Customizing resolv.conf](#Customizing_resolv.conf)
-    *   [5.6 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
-    *   [5.7 Hostname problems](#Hostname_problems)
-        *   [5.7.1 Configure dhclient to push the hostname to the DHCP server](#Configure_dhclient_to_push_the_hostname_to_the_DHCP_server)
-        *   [5.7.2 Configure NetworkManager to use a specific DHCP client](#Configure_NetworkManager_to_use_a_specific_DHCP_client)
-    *   [5.8 Missing default route](#Missing_default_route)
-    *   [5.9 3G modem not detected](#3G_modem_not_detected)
-    *   [5.10 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
-    *   [5.11 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
-    *   [5.12 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
-    *   [5.13 Forget hidden wireless network](#Forget_hidden_wireless_network)
-    *   [5.14 VPN not working in GNOME](#VPN_not_working_in_GNOME)
-    *   [5.15 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [5.16 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
-    *   [5.17 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [5.18 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
-    *   [5.19 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
-        *   [6.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
-        *   [6.1.2 Using KDE Wallet](#Using_KDE_Wallet)
-    *   [6.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
-        *   [6.2.1 Ad-hoc](#Ad-hoc)
-        *   [6.2.2 Real AP](#Real_AP)
-    *   [6.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
-    *   [6.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
-    *   [6.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
-    *   [6.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
-        *   [6.6.1 GNOME](#GNOME_2)
-        *   [6.6.2 SLiM login manager](#SLiM_login_manager)
-        *   [6.6.3 Troubleshooting](#Troubleshooting_2)
-    *   [6.7 Ignore specific devices](#Ignore_specific_devices)
-    *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
-    *   [6.9 Configuring MAC Address Randomization](#Configuring_MAC_Address_Randomization)
-    *   [6.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
-    *   [6.11 Working with wired connections](#Working_with_wired_connections)
-    *   [6.12 Configure NetworkManager resolv.conf management mode to use resolvconf](#Configure_NetworkManager_resolv.conf_management_mode_to_use_resolvconf)
-*   [7 See also](#See_also)
+*   [2 Usage](#Usage)
+    *   [2.1 nmcli examples](#nmcli_examples)
+*   [3 Front-ends](#Front-ends)
+    *   [3.1 GNOME](#GNOME)
+    *   [3.2 KDE Plasma](#KDE_Plasma)
+    *   [3.3 nm-applet](#nm-applet)
+        *   [3.3.1 Appindicator](#Appindicator)
+    *   [3.4 nmcli-dmenu](#nmcli-dmenu)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Enable NetworkManager](#Enable_NetworkManager)
+    *   [4.2 Enable NetworkManager Wait Online](#Enable_NetworkManager_Wait_Online)
+    *   [4.3 Set up PolicyKit permissions](#Set_up_PolicyKit_permissions)
+    *   [4.4 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
+        *   [4.4.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
+        *   [4.4.2 Start OpenNTPD](#Start_OpenNTPD)
+        *   [4.4.3 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
+        *   [4.4.4 Use dispatcher to automatically toggle Wi-Fi depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_Wi-Fi_depending_on_LAN_cable_being_plugged_in)
+        *   [4.4.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
+            *   [4.4.5.1 Create the dispatcher script](#Create_the_dispatcher_script)
+            *   [4.4.5.2 Give the script access to VPN password](#Give_the_script_access_to_VPN_password)
+        *   [4.4.6 Use dispatcher to handle mounting of CIFS shares](#Use_dispatcher_to_handle_mounting_of_CIFS_shares)
+    *   [4.5 Proxy settings](#Proxy_settings)
+    *   [4.6 Disable NetworkManager](#Disable_NetworkManager)
+    *   [4.7 Checking connectivity](#Checking_connectivity)
+*   [5 Testing](#Testing)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
+    *   [6.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
+    *   [6.3 Network management disabled](#Network_management_disabled)
+    *   [6.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
+    *   [6.5 Customizing resolv.conf](#Customizing_resolv.conf)
+    *   [6.6 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
+    *   [6.7 Hostname problems](#Hostname_problems)
+        *   [6.7.1 Configure dhclient to push the hostname to the DHCP server](#Configure_dhclient_to_push_the_hostname_to_the_DHCP_server)
+        *   [6.7.2 Configure NetworkManager to use a specific DHCP client](#Configure_NetworkManager_to_use_a_specific_DHCP_client)
+    *   [6.8 Missing default route](#Missing_default_route)
+    *   [6.9 3G modem not detected](#3G_modem_not_detected)
+    *   [6.10 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
+    *   [6.11 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
+    *   [6.12 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
+    *   [6.13 Forget hidden wireless network](#Forget_hidden_wireless_network)
+    *   [6.14 VPN not working in GNOME](#VPN_not_working_in_GNOME)
+    *   [6.15 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [6.16 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
+    *   [6.17 Systemd Bottleneck](#Systemd_Bottleneck)
+    *   [6.18 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
+    *   [6.19 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
+        *   [7.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
+        *   [7.1.2 Using KDE Wallet](#Using_KDE_Wallet)
+    *   [7.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
+        *   [7.2.1 Ad-hoc](#Ad-hoc)
+        *   [7.2.2 Real AP](#Real_AP)
+    *   [7.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
+    *   [7.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
+    *   [7.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
+    *   [7.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
+        *   [7.6.1 GNOME](#GNOME_2)
+        *   [7.6.2 SLiM login manager](#SLiM_login_manager)
+        *   [7.6.3 Troubleshooting](#Troubleshooting_2)
+    *   [7.7 Ignore specific devices](#Ignore_specific_devices)
+    *   [7.8 Enable DNS Caching](#Enable_DNS_Caching)
+    *   [7.9 Configuring MAC Address Randomization](#Configuring_MAC_Address_Randomization)
+    *   [7.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+    *   [7.11 Working with wired connections](#Working_with_wired_connections)
+    *   [7.12 Configure NetworkManager resolv.conf management mode to use resolvconf](#Configure_NetworkManager_resolv.conf_management_mode_to_use_resolvconf)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -93,55 +91,85 @@ NetworkManager can be [installed](/index.php/Install "Install") with the package
 
 NetworkManager VPN support is based on a plug-in system. If you need VPN support via NetworkManager, you have to install one of the following packages:
 
-*   **NetworkManager-openconnect** — Connect to Cisco AnyConnect, Juniper VPNs.
-
-	[https://git.gnome.org/browse/network-manager-openconnect](https://git.gnome.org/browse/network-manager-openconnect) || [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect)
-
-*   **NetworkManager-openvpn** — Connect to OpenVPN VPNs.
-
-	[https://git.gnome.org/browse/network-manager-openvpn](https://git.gnome.org/browse/network-manager-openvpn) || [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
-
-*   **NetworkManager-pptp** — Connect to PPTP VPNs, Microsoft compatible.
-
-	[https://git.gnome.org/browse/network-manager-pptp](https://git.gnome.org/browse/network-manager-pptp) || [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
-
-*   **NetworkManager-vpnc** — Connect to IPsec VPNs, Cisco compatible.
-
-	[https://git.gnome.org/browse/network-manager-vpnc](https://git.gnome.org/browse/network-manager-vpnc) || [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
-
-*   **NetworkManager-strongswan** — Connect to IKEv2 IPsec VPNs with support for EAP, PSK and certificate authentication.
-
-	[https://wiki.strongswan.org/projects/strongswan/wiki/NetworkManager](https://wiki.strongswan.org/projects/strongswan/wiki/NetworkManager) || [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan)
-
-*   **NetworkManager-fortisslvpn** — Connect to Fortinet SSLVPN VPNs.
-
-	[https://git.gnome.org/browse/network-manager-fortisslvpn](https://git.gnome.org/browse/network-manager-fortisslvpn) || [networkmanager-fortisslvpn-git](https://aur.archlinux.org/packages/networkmanager-fortisslvpn-git/)
-
-*   **NetworkManager-iodine** — Tunnel IP traffic via DNS using Iodine.
-
-	[https://honk.sigxcpu.org/piki/projects/network-manager-iodine/](https://honk.sigxcpu.org/piki/projects/network-manager-iodine/) || [networkmanager-iodine-git](https://aur.archlinux.org/packages/networkmanager-iodine-git/)
-
-*   **NetworkManager-libreswan** — Connect to IPsec IKEv1 VPNs, Cisco compatible.
-
-	[https://git.gnome.org/browse/network-manager-libreswan](https://git.gnome.org/browse/network-manager-libreswan) || [networkmanager-libreswan](https://aur.archlinux.org/packages/networkmanager-libreswan/)
-
-*   **NetworkManager-l2tp** — L2TP compatible VPN plugin .
-
-	[https://github.com/nm-l2tp/network-manager-l2tp](https://github.com/nm-l2tp/network-manager-l2tp) || [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
-
-*   **NetworkManager-ssh** — Connect using OpenSSH's Tunnel capability.
-
-	[https://github.com/danfruehauf/NetworkManager-ssh](https://github.com/danfruehauf/NetworkManager-ssh) || [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
-
-*   **NetworkManager-sstp** — SSTP compatible VPN plugin.
-
-	[http://sstp-client.sourceforge.net/#Network_Manager_Plugin](http://sstp-client.sourceforge.net/#Network_Manager_Plugin) || [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
+*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) for [OpenConnect](/index.php/OpenConnect "OpenConnect")
+*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) for [OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp) for [PPTP Client](/index.php/PPTP_Client "PPTP Client")
+*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc) for [Vpnc](/index.php/Vpnc "Vpnc")
+*   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan) for [strongSwan](/index.php/StrongSwan "StrongSwan")
+*   [networkmanager-fortisslvpn-git](https://aur.archlinux.org/packages/networkmanager-fortisslvpn-git/)
+*   [networkmanager-iodine-git](https://aur.archlinux.org/packages/networkmanager-iodine-git/)
+*   [networkmanager-libreswan](https://aur.archlinux.org/packages/networkmanager-libreswan/)
+*   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
+*   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
+*   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
 ### PPPoE / DSL support
 
 [Install](/index.php/Install "Install") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) for PPPoE / DSL connection support. To actually add pppoe connection you must use `nm-connection-editor` from the command line and add new DSL/PPPoE connection.
+
+## Usage
+
+NetworkManager comes with [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) and [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
+
+### nmcli examples
+
+Connect to a wifi network:
+
+```
+nmcli dev wifi connect <SSID> password <password>
+
+```
+
+Connect to a hidden network:
+
+```
+nmcli dev wifi connect <SSID> password <password> hidden yes
+
+```
+
+Connect to a wifi on the `wlan1` wifi interface:
+
+```
+nmcli dev wifi connect <SSID> password <password> iface wlan1 [profile name]
+
+```
+
+Disconnect an interface:
+
+```
+nmcli dev disconnect iface eth0
+
+```
+
+Reconnect an interface marked as disconnected:
+
+```
+nmcli con up uuid <uuid>
+
+```
+
+Get a list of UUIDs:
+
+```
+nmcli con show
+
+```
+
+See a list of network devices and their state:
+
+```
+nmcli dev
+
+```
+
+Turn off wifi:
+
+```
+nmcli r wifi off
+
+```
 
 ## Front-ends
 
@@ -200,32 +228,7 @@ $ nm-applet --indicator
 
 ```
 
-### Command line
-
-The following applications can be useful for configuring and managing networks without X.
-
-#### nmcli
-
-A command line frontend, *nmcli*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
-
-For usage information, see [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Examples:
-
-*   To connect to a wifi network: `nmcli dev wifi connect <SSID> password <password>` 
-*   To connect to a hidden network: `nmcli dev wifi connect <SSID> password <password> hidden yes` 
-*   To connect to a wifi on the `wlan1` wifi interface: `nmcli dev wifi connect <SSID> password <password> iface wlan1 [profile name]` 
-*   To disconnect an interface: `nmcli dev disconnect iface eth0` 
-*   To reconnect an interface marked as disconnected: `nmcli con up uuid <uuid>` 
-*   To get a list of UUIDs: `nmcli con show` 
-*   To see a list of network devices and their state: `nmcli dev` 
-*   To turn off wifi: `nmcli r wifi off` 
-
-#### nmtui
-
-A curses based graphical frontend, *nmtui*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
-
-For usage information, see [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
-
-#### nmcli-dmenu
+### nmcli-dmenu
 
 Alternatively there is [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) which is a small script to manage NetworkManager connections with *dmenu* instead of `nm-applet`. It provides all essential features such as connect to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking, launch *nm-connection-editor* GUI.
 

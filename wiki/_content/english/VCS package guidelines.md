@@ -44,7 +44,7 @@ Use only the PKGBUILD prototypes provided in the [pacman](https://www.archlinux.
 
 ### VCS sources
 
-**Note:** Pacman 4.1 supports the following VCS sources: `bzr`, `git`, `hg` and `svn`. See the `fragment` section of [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) or [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html) for a list of supported VCS.
+**Note:** Pacman 4.1 supports the following VCS sources: `bzr`, `git`, `hg` and `svn`. See the `fragment` section of [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) or [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html) for a list of supported VCS.
 
 Starting with [pacman](https://www.archlinux.org/packages/?name=pacman) 4.1, the VCS sources should be specified in the `source=()` array and will be treated like any other source. `makepkg` will clone/checkout/branch the repository into `$SRCDEST` (same as `$startdir` if not set in [makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html)) and copy it to `$srcdir` (in a specific way to each VCS). The local repository is left untouched, thus invalidating the need for a `-build` directory.
 
@@ -58,7 +58,7 @@ source=('[folder::][vcs+]url[#fragment]')
 *   `folder` (optional) is used to change the default repository name to something more relevant (e.g. than `trunk`) or to preserve the previous sources.
 *   `vcs+` is needed for URLs that do not reflect the VCS type, e.g. `git+http://some_repo`.
 *   `url` is the URL to the distant or local repository.
-*   `#fragment` (optional) is needed to pull a specific branch or commit. See [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) for more information on the fragments available for each VCS.
+*   `#fragment` (optional) is needed to pull a specific branch or commit. See [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) for more information on the fragments available for each VCS.
 
 An example Git source array:
 

@@ -2,6 +2,8 @@ Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
 
+The [w:Journaled File System](https://en.wikipedia.org/wiki/Journaled_File_System "w:Journaled File System") (JFS) is a [w:journaling file system](https://en.wikipedia.org/wiki/journaling_file_system "w:journaling file system") that was open-sourced by IBM in 1999 and support for which has been available in the Linux kernel since 2002\.
+
 This article introduces the reader to the JFS file system. In particular, procedures for implementation, maintenance and optimization will be presented along with background information on the file system itself and some cautionary notes on precarious implementations.
 
 ## Contents
@@ -28,8 +30,6 @@ This article introduces the reader to the JFS file system. In particular, proced
 *   [8 See also](#See_also)
 
 ## Background
-
-The Journaled File System (JFS) is a [journaling file system](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system") that was open-sourced by IBM in 1999 and support for which has been available in the Linux kernel since 2002\.
 
 *   In 1990, JFS1, (then simply called JFS), was released for AIX version 3.1\. The filesystem was closely tied to its targeted hardware, IBM's AIX line of UNIX servers, being a proprietary design.
 *   In 1995, heavy development began on improving JFS, focusing on scalability and expanded features.

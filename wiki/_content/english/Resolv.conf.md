@@ -94,7 +94,7 @@ nameserver 2620:0:ccd::2
 
 ### Cloudflare
 
-[Cloudflare](https://1.1.1.1/) provides a service committed to never writing the querying IP addresses to disk and wiping all logs within 24 hours.
+[Cloudflare](https://1.1.1.1/) provides a service committed to never writing the querying IP addresses to disk and wiping all logs within 24 hours, with the exception of providing data to APNIC labs for research purposes, who pledge to hold themselves to high privacy standards. [[1]](https://labs.apnic.net/?p=1127)
 
 ```
 # IPv4 nameservers: 

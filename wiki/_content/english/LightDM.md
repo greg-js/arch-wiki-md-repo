@@ -57,18 +57,21 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 ## Installation
 
-[Install](/index.php/Install "Install") [lightdm](https://www.archlinux.org/packages/?name=lightdm). Note that stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Also available is [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/).
+[Install](/index.php/Install "Install") [lightdm](https://www.archlinux.org/packages/?name=lightdm).
+
+**Tip:** Stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Also available is [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/).
 
 ### Greeter
 
-You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session, and so on. It's possible to use LightDM without a greeter, but only if an automatic login is configured. The reference greeter is [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter). LightDM attempts to use this greeter when started unless configured to do otherwise.
+You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session, and so on. It's possible to use LightDM without a greeter, but only if an automatic login is configured.
 
-The official repositories contain the following alternative greeters.
+The official repositories contain the following greeters:
 
+*   [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): this is the **default** greeter LightDM attempts to use when started unless configured to do otherwise.
 *   [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): A greeter used with KDE4.
 *   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin "Deepin") project.
 
-Other alternative greeters are available in the [AUR](/index.php/AUR "AUR").
+Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 
 *   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
@@ -85,7 +88,7 @@ greeter-session=lightdm-*yourgreeter*-greeter
 ...
 ```
 
-Which greeters are available? What values may be assigned to the `greeter-session` option? Each `.desktop` file in the `/usr/share/xgreeters` directory denotes an available greeter. In this example, the `lightdm-gtk-greeter` and `lightdm-kde-greeter` greeters are available:
+One way to check which greeters are available is to list the files in the `/usr/share/xgreeters` directory; each *.desktop* file represents an available greeter. In this example, the `lightdm-gtk-greeter` and `lightdm-kde-greeter` greeters are available:
 
 ```
 $ ls -1 /usr/share/xgreeters/
@@ -235,7 +238,7 @@ The filename here should point to the icon created in the first step, so adjust 
 
 ### Sources of Arch-centric 64x64 icons
 
-The [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) package from the [AUR](/index.php/AUR "AUR") contains some nice examples that install to `/usr/share/archlinux/icons` and that can be copied to `/usr/share/icons/hicolor/64x64/devices` as follows:
+The [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) package contains some nice examples that install to `/usr/share/archlinux/icons` and that can be copied to `/usr/share/icons/hicolor/64x64/devices` as follows:
 
 ```
 # find /usr/share/archlinux/icons -name "*64*" -exec cp {} /usr/share/icons/hicolor/64x64/devices \;

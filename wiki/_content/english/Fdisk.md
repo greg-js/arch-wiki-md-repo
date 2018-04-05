@@ -6,11 +6,14 @@ Related articles
 
 [util-linux fdisk](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/) is a dialogue-driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table.
 
-[GPT fdisk](http://www.rodsbooks.com/gdisk/), as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables."
+[gdisk](http://www.rodsbooks.com/gdisk/) ([GPT](/index.php/GPT "GPT") fdisk), works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables."
 
 This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) and its related [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) utility, as well as the analogous [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
 
-**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) and [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
+**Tip:**
+
+*   For basic partitioning functionality with a text user interface, [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) and [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
+*   GPT fdisk website has detailed walkthroughs for [gdisk](http://www.rodsbooks.com/gdisk/walkthrough.html), [cgdisk](http://www.rodsbooks.com/gdisk/cgdisk-walkthrough.html) and [sgdisk](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html).
 
 ## Contents
 
@@ -134,8 +137,7 @@ unit: sectors
 first-lba: 34
 last-lba: 1048576
 
-/dev/sda1 : start=2048, size=1048576, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=BBF1CD36-9262-463E-A4FB-81E32C12BDE7
-
+/dev/sda1 : start=2048, size=1048576, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=BBF1CD36-9262-463E-A4FB-81E32C12BDE7
 ```
 
 To later restore this layout you can run:
@@ -144,8 +146,6 @@ To later restore this layout you can run:
 # sfdisk /dev/sda < sda.dump
 
 ```
-
-**Note:** If the device path contains semicolons, restore will fail with *line X : unsupported command*. Use a device path without semicolons.
 
 ### Using sgdisk
 
@@ -256,7 +256,7 @@ After conversion, the bootloaders will need to be reinstalled to configure them 
 
 **Note:**
 
-*   GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR doesn't have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion and resize the final partition.
+*   GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR does not have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion and resize the final partition.
 *   If your boot loader is GRUB, it needs a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 *   There are known corruption issues with the backup GPT table on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
 
@@ -278,14 +278,14 @@ To convert GPT to MBR use the `m` option. Note that it is not possible to conver
 
 This applies for when a new partition is created in the space between two partitions or a partition is deleted. `/dev/sda` is used in this example.
 
-MBR
+MBR:
 
 ```
 # sfdisk -r /dev/sda
 
 ```
 
-GPT
+GPT:
 
 ```
 # sgdisk -s /dev/sda
@@ -293,6 +293,8 @@ GPT
 ```
 
 After sorting the partitions if you are not using [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"), it might be required to adjust the `/etc/fstab` and/or the `/etc/crypttab` configuration files.
+
+**Note:** The kernel must read the new partition table for the partitions (e.g. `/dev/sda1`) to be usable. Reboot the system or tell the kernel to [reread the partition table](https://serverfault.com/questions/36038/reread-partition-table-without-rebooting).
 
 ### Recover GPT header
 

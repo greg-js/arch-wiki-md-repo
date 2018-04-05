@@ -121,7 +121,7 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ### Suspend and hibernate
 
-*systemd* provides commands for suspend to RAM, hibernate and a hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post- suspend actions.
+*systemd* provides commands to suspend to RAM, hibernate or hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post- suspend actions.
 
 `systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
 

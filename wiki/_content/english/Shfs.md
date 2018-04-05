@@ -1,4 +1,4 @@
-**Shfs** is a simple and easy to use Linux kernel module which allows you to mount remote filesystems using a plain shell (ssh) connection. When using shfs, you can access all remote files just like the local ones, only the access is governed through the transport security of ssh.
+[Shfs](http://shfs.sourceforge.net/) is a simple and easy to use Linux kernel module which allows you to mount remote filesystems using a plain shell (ssh) connection. When using shfs, you can access all remote files just like the local ones, only the access is governed through the transport security of ssh.
 
 **Note:** The FUSE-based [SSHFS](/index.php/SSHFS "SSHFS") is much more widely used, as shfs has not been updated since 2004.
 

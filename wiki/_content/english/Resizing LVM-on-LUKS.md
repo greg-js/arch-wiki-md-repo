@@ -12,6 +12,11 @@ This article follows the process of resizing and shrinking an LVM-on-LUKS-on-GPT
     *   [2.6 Resize the partition](#Resize_the_partition)
     *   [2.7 Create a new partition](#Create_a_new_partition)
     *   [2.8 Recover the logical volume buffer](#Recover_the_logical_volume_buffer)
+*   [3 Enlarge LVM on LUKS](#Enlarge_LVM_on_LUKS)
+    *   [3.1 Preparation](#Preparation)
+    *   [3.2 Extending the physical segments of the cryptdevice](#Extending_the_physical_segments_of_the_cryptdevice)
+    *   [3.3 Resizing the logical volume](#Resizing_the_logical_volume)
+    *   [3.4 Resizing the encrypted volume](#Resizing_the_encrypted_volume)
 
 ## Method
 
@@ -147,3 +152,115 @@ Then resize the filesystem to occupy the whole logical volume:
 ```
 
 If all went fine, your `lvhome` filesystem is now as large as your logical volume itself.
+
+## Enlarge LVM on LUKS
+
+Enlarging a LVM-on-LUKS logical partition, for instance after migrating to a larger hard disk, is done in the opposite way - from the outermost to the innermost partition:
+
+`primary partition(LUKS device{volume group[(logical partition1)(logical partition2-->)]})`
+
+### Preparation
+
+Create a new partition on the new hard disk of wanted size, f.i. by using [GNU Parted](/index.php/GNU_Parted "GNU Parted"), and clone the old partition `sdX1`, containing your LUKS container, into the new partition `sdY1`:
+
+```
+# dd if=/dev/sdX1 of=/dev/sdY1 bs=4M
+
+```
+
+### Extending the physical segments of the cryptdevice
+
+Now, open the cryptdevice `CryptDisk` on the new hard disk:
+
+```
+# cryptsetup open /dev/sdY1 CryptDisk
+
+```
+
+Take a look at your current physical volume. In this example, we have a cryptdevice `CryptDisk` containing a volume group `CryptVolumeGroup` of two partitions `root` and `home`:
+
+```
+# pvdisplay -m
+ --- Physical volume ---                                                
+ PV Name               /dev/mapper/CryptDisk                          
+ VG Name               CryptVolumeGroup                                    
+ PV Size               <118.75 GiB / not usable 3.00 MiB                
+ Allocatable           yes (but full)                                   
+ PE Size               4.00 MiB                                         
+ Total PE              30399                                            
+ Free PE               0                                                
+ Allocated PE          30399                                            
+ PV UUID               hu0iA9-i8fv-2SC1-C6ys-LQCz-sptQ-RSOUE5           
+
+ --- Physical Segments ---                                              
+ Physical extent 0 to 6399:                                             
+   Logical volume      /dev/CryptVolumeGroup/root                          
+   Logical extents     0 to 6399                                        
+ Physical extent 6400 to 30398:                                         
+   Logical volume      /dev/CryptVolumeGroup/home                          
+   Logical extents     0 to 23998                                       
+
+```
+
+By taking the total physical extents (PE) times the PE's size, we get the total size of the physical volume (PV), in this case 118.75 GiB. Although pvdisplay does not show the free extents, we can enlarge the PV to use all the available remaining space of the partition:
+
+```
+# pvresize /dev/mapper/CryptDisk
+
+```
+
+Now we get:
+
+```
+# pvdisplay -m
+...
+ --- Physical Segments ---                          
+ Physical extent 0 to 6399:                         
+   Logical volume      /dev/CryptVolumeGroup/root      
+   Logical extents     0 to 6399                    
+ Physical extent 6400 to 30398:                     
+   Logical volume      /dev/CryptVolumeGroup/home      
+   Logical extents     0 to 23998                   
+ Physical extent 30399 to 60922:                    
+   FREE                                             
+
+```
+
+Note the free extents at the end of the PV. Calculate the size difference by taking the free physical extends times PE size - in that case (60922-30399)*4 MiB = 119.2 GiB.
+
+### Resizing the logical volume
+
+Now we are going to resize the second logical volume (LV), in this case containing the /home partition, by the size of the free physical extents minus some safety space:
+
+```
+# lvresize -L +119G
+
+```
+
+Note the new size of the second logical volume. Calculate its total size by taking the total logical extends time the PE size - in that case 53438 * 4 MiB = 208.7 GiB:
+
+```
+# pvdisplay -m
+...
+ --- Physical Segments ---                           
+ Physical extent 0 to 6399:                          
+   Logical volume      /dev/CryptVolumeGroup/root       
+   Logical extents     0 to 6399                     
+ Physical extent 6400 to 59838:                      
+   Logical volume      /dev/CryptVolumeGroup/home       
+   Logical extents     0 to 53438                    
+ Physical extent 59839 to 60922:                     
+   FREE                                              
+
+```
+
+### Resizing the encrypted volume
+
+Now we are going to resize the encrypted volume itself. By taking in account the total size of the logical volume minus some safety space:
+
+```
+# resize2fs -p /dev/mapper/CryptVolumeGroup-Home 208G
+
+```
+
+Execute e2fsck, if asked. That's it.

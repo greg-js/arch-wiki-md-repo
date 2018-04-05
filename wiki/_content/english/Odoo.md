@@ -20,7 +20,7 @@ A thriving support and development community has grown up around Odoo, providing
 
 ### Installing Odoo
 
-Install the [odoo](https://aur.archlinux.org/packages/odoo/) package. Please note that the Odoo package comes with a bunch of python2 packages available in the [AUR](/index.php/AUR "AUR"). These dependencies and the size of Odoo require much disk space to be used (1.8Gio only for the source and the final Odoo pkg without its dependencies). If you are building manually in the current directory, please make sure your current directory is on a device with enough free space. If you are using an [AUR helper](/index.php/AUR_helper "AUR helper"), please [increase the size of your tmpfs](/index.php/Tmpfs#Examples "Tmpfs") or configure your AUR helper accordingly.
+Install the [odoo](https://aur.archlinux.org/packages/odoo/) package. Please note that the Odoo package comes with a bunch of Python packages available in the [AUR](/index.php/AUR "AUR"). These dependencies and the size of Odoo require much disk space to be used (multiple GBs). If you are building manually in the current directory, please make sure your current directory is on a device with enough free space. If you are using an [AUR helper](/index.php/AUR_helper "AUR helper"), please [increase the size of your tmpfs](/index.php/Tmpfs#Examples "Tmpfs") or configure your AUR helper accordingly.
 
 ### Configuring PostgreSQL to run with Odoo
 
@@ -82,7 +82,6 @@ db_host = False
 db_port = False
 db_user = odoo
 db_password = False
-addons_path = /usr/lib/python2.7/site-packages/odoo/addons
 
 ```
 

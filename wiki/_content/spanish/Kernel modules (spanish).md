@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [Kernels](/index.php/Kernels "Kernels")
+*   [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)")
+
 [Los módulos del núcleo](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module") (también conocido por su nombre inglés, *kernel*) son ​​fragmentos de código que pueden ser cargados y eliminados del núcleo bajo demanda. Extienden la funcionalidad del núcleo sin necesidad de reiniciar el sistema.
 
 ## Contents

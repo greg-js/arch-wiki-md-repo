@@ -37,7 +37,7 @@ Related articles
     *   [5.8 liteide](#liteide)
     *   [5.9 screen recording](#screen_recording)
     *   [5.10 remote display](#remote_display)
-    *   [5.11 xwayland - Input grabbing in games, remote desktop and VM windows](#xwayland_-_Input_grabbing_in_games.2C_remote_desktop_and_VM_windows)
+    *   [5.11 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games.2C_remote_desktop_and_VM_windows)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -422,7 +422,7 @@ Currently only [green-recorder](https://aur.archlinux.org/packages/green-recorde
 
 (20180401) mutter has now remote desktop enabled at compile time, see [https://wiki.gnome.org/Projects/Mutter/RemoteDesktop](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [https://aur.archlinux.org/packages/gnome-remote-desktop/](https://aur.archlinux.org/packages/gnome-remote-desktop/) for details. (20161229) there was a merge of FreeRDP into weston in 2013, enabled via compile time switch. The arch linux weston package currently has it not enabled.
 
-### xwayland - Input grabbing in games, remote desktop and VM windows
+### Input grabbing in games, remote desktop and VM windows
 
 In contrast to Xorg, Wayland does not allow exclusive input device grabbing, also known as active or explicit grab (e.g. [keyboard](https://tronche.com/gui/x/xlib/input/XGrabKeyboard.html), [mouse](https://tronche.com/gui/x/xlib/input/XGrabPointer.html)), instead, it depends on the Wayland compositor to pass keyboard shortcuts and confine the pointer device to the application window.
 
@@ -431,11 +431,13 @@ This change in input grabbing breaks current applications' behavior, meaning:
 *   Hotkey combinations and modifiers will be caught by the compositor and won't be sent to remote desktop and virtual machine windows.
 *   The mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window of the virtual machine or remote desktop is displaced from the host's mouse pointer.
 
-Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to Wayland compositors, and in the case of native Wayland clients to widget toolkits (e.g GTK, QT) and probably also to the applications themselves.
+Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to the Wayland compositors. In the case of native Wayland clients, the used widget toolkits (e.g GTK, QT) needs to support these extensions or the applications themselves if no widget toolkit is being used. In the case of Xorg applications, no changes in the applications or widget toolkits are needed as the XWayland support is enough.
+
+These extensions are already included in the latest stable release of [wayland-protocols](https://www.archlinux.org/packages/?name=wayland-protocols), and supported by the latest release candidate of [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 1.20.
 
 The related extensions are:
 
-*   [XWayland keyboard grabbing protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/xwayland-keyboard-grab/xwayland-keyboard-grab-unstable-v1.xml), XWayland support [has been added](https://lists.x.org/archives/xorg-devel/2017-August/054231.html) to xorg-server 1.20 development tree
+*   [XWayland keyboard grabbing protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/xwayland-keyboard-grab/xwayland-keyboard-grab-unstable-v1.xml)
 *   [Compositor shortcuts inhibit protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/keyboard-shortcuts-inhibit/keyboard-shortcuts-inhibit-unstable-v1.xml)
 *   [Relative pointer protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml)
 *   [Pointer constraints protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml)

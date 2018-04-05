@@ -5,7 +5,7 @@ Related articles
 *   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
 *   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
 
-This article will provide an example of how to install and configure Arch Linux with a software RAID or Logical Volume Manager (LVM). The combination of [RAID](/index.php/RAID "RAID") and [LVM](/index.php/LVM "LVM") provides numerous features with few caveats compared to just using RAID.
+This article will provide an example of how to install and configure Arch Linux with a software [RAID](/index.php/RAID "RAID") or Logical Volume Manager ([LVM](/index.php/LVM "LVM")). The combination of RAID and LVM provides numerous features with few caveats compared to just using RAID.
 
 ## Contents
 

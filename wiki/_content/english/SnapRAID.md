@@ -1,4 +1,4 @@
-SnapRAID is a folder-based backup tool that behaves like a software or hardware RAID5/6 disk raid, but is not a disk raid itself. There is no realtime recovery, free space between disks cannot be combined and manual excution of backup is needed.
+[SnapRAID](http://www.snapraid.it/) is a folder-based backup tool that behaves like a software or hardware RAID5/6 disk raid, but is not a disk raid itself. There is no realtime recovery, free space between disks cannot be combined and manual excution of backup is needed.
 
 Because of the nature of folder-based backup, SnapRAID is more flexible and simpler than software raids. Although disk raids have advantages such as realtime backup, increased complexity or reduced performance are the drawback. Not to mention a two-disk failure or a SATA URE (Unrecoverable Read Error) happening to RAID5 could damage all data, which is not the case with SnapRAID. Thus the use of SnapRAID is logical when backup is the main goal rather than preventing a system from going offline due to disk failure.
 

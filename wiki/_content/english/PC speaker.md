@@ -161,6 +161,8 @@ username ALL=(ALL) NOPASSWD: /usr/bin/beep
 
 ```
 
+**Warning:** The following is vulnerable to privilege escalation to root, as described in [[[1]](https://www.debian.org/security/2018/dsa-4163)], which has not been fixed upstream as of 2018-04-03.
+
 Another way is setting the sticky bit on `/usr/bin/beep`:
 
 ```

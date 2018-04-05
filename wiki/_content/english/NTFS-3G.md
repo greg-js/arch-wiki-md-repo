@@ -2,7 +2,7 @@ Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
 
-The Linux kernel only supports reading Microsoft's NTFS file system. [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) is an open source implementation of NTFS that includes read *and* write support. NTFS-3G developers use the FUSE file system to facilitate development and to help with portability.
+[NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) is an open source implementation of [Microsoft NTFS](https://en.wikipedia.org/wiki/NTFS "w:NTFS") that includes read *and* write support (the Linux kernel only supports reading NTFS). NTFS-3G developers use the FUSE file system to facilitate development and to help with portability.
 
 ## Contents
 

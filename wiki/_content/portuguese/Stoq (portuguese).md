@@ -24,7 +24,7 @@ O aplicativo Stoq usa o PostgreSQL como banco de dados back-end, com um cliente 
 
 ### Configuração do Stoq
 
-Após a execução do Stoq pela primeira vez será necessário configurar a localização do banco de dados. Nesta etapa existem duas opções para o cliente se conectar ao banco de dados:
+Após a execução do Stoq pela primeira vez será necessário configurar a localização do banco de dados. Nessa etapa existem duas opções para o cliente se conectar ao banco de dados:
 
 *   Conectar no banco de dados localmente;
 *   Configurar manualmente a conexão com o banco de dados.
@@ -33,7 +33,9 @@ Após a execução do Stoq pela primeira vez será necessário configurar a loca
 
 Para conexão com o banco de dados no local é necessário [instalar](/index.php/Help:Reading_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_de_pacotes "Help:Reading (Português)") o [postgresql](https://www.archlinux.org/packages/?name=postgresql).
 
-Se a instância PostgreSQL ainda não estiver inicializada, seguir o artigo [Processo de instalação do PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL"). Em seguida, como o root, [ative ou habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `postgresql.service`.
+Se a instância PostgreSQL ainda não estiver inicializada, seguir o artigo [Processo de instalação do PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+
+Em seguida, como o root, [ative ou habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `postgresql.service`.
 
 Na tela "Localização do banco de dados" utilizar a opção "Eu quero usar o Stoq apenas neste computador".
 
@@ -51,7 +53,9 @@ O principal arquivo de configuraçãos do Stoq se encontra em `~/.stoq/stoq.conf
 
 ### Configuração do stoq-server
 
-Se a instância PostgreSQL ainda não estiver inicializada, seguir o artigo [Processo de instalação do PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL"). Em seguida, como o root, [ative ou habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `postgresql.service`.
+Se a instância PostgreSQL ainda não estiver inicializada, seguir o artigo [Processo de instalação do PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+
+Em seguida, como o root, [ative ou habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `postgresql.service`.
 
 É necessário criar uma nova configuração no PostgreSQL para o stoq-server. Para isso, entre no usário padrão para o PostgreSQL, 'postgres', usando os seguintes comandos:
 

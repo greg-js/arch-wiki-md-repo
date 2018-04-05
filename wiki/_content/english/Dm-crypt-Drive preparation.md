@@ -40,29 +40,30 @@ For detailed instructions on how to erase and prepare a drive consult [Securely 
 
 The following two methods are specific for dm-crypt and are mentioned because they are very fast and can be performed after a partition setup too.
 
-The [cryptsetup FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) mentions a very simple procedure to use an existing dm-crypt-volume to wipe all free space accessible on the underlying block device with random data by acting as a simple pseudorandom number generator. It is also claimed to protect against disclosure of usage patterns. That is because encrypted data is practically indistinguishable from random.
+The [cryptsetup FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup) (item 2.19 "*How can I wipe a device with crypto-grade randomness?*") mentions a very simple procedure to use an existing dm-crypt-volume to wipe all free space accessible on the underlying block device with random data by acting as a simple pseudorandom number generator. It is also claimed to protect against disclosure of usage patterns. That is because encrypted data is practically indistinguishable from random.
 
 #### dm-crypt wipe on an empty disk or partition
 
-First, create a temporary encrypted container on the partition (`sdXY`) or the full disk (`sdX`) to be encrypted, e.g. using default encryption parameters and a random key via the `--key-file /dev/{u}random` option (see also [Random number generation](/index.php/Random_number_generation "Random number generation")):
+First, create a temporary encrypted container on the partition (using the form `sdXY`) or complete device (using the form `sdX`) to be encrypted:
 
 ```
-# cryptsetup open --type plain /dev/sdXY container --key-file /dev/random
+# cryptsetup open --type plain -d /dev/urandom /dev/<block-device> to_be_wiped
 
 ```
 
-Second, check it exists:
+You can verify that it exists:
 
- `# fdisk -l` 
+ `# lsblk` 
 ```
-Disk /dev/mapper/container: 1000 MB, 1000277504 bytes
-...
-Disk /dev/mapper/container does not contain a valid partition table
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+sda             8:0    0  1.8T  0 disk
+└─to_be_wiped 252:0    0  1.8T  0 crypt
+
 ```
 
 Wipe the container with zeros. A use of `if=/dev/urandom` is not required as the encryption cipher is used for randomness.
 
- `# dd if=/dev/zero of=/dev/mapper/container status=progress`  `dd: writing to ‘/dev/mapper/container’: No space left on device` 
+ `# dd if=/dev/zero of=/dev/mapper/to_be_wiped status=progress`  `dd: writing to ‘/dev/mapper/to_be_wiped’: No space left on device` 
 **Tip:**
 
 *   Using *dd* with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.

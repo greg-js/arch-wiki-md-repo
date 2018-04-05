@@ -97,10 +97,6 @@
 
 	[https://roy.marples.name/projects/dhcpcd](https://roy.marples.name/projects/dhcpcd) || [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)
 
-*   **Kea** — An open source implementation of the Dynamic Host Configuration Protocol (DHCP) servers.
-
-	[https://www.isc.org/kea/](https://www.isc.org/kea/) || [kea](https://www.archlinux.org/packages/?name=kea)
-
 *   **[netctl](/index.php/Netctl "Netctl")** — Simple and robust tool to manage network connections via profiles. Intended for use with [systemd](/index.php/Systemd "Systemd").
 
 	[https://projects.archlinux.org/netctl.git/](https://projects.archlinux.org/netctl.git/) || [netctl](https://www.archlinux.org/packages/?name=netctl)

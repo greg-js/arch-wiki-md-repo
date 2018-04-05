@@ -116,7 +116,7 @@ systemd 读取 `/etc/modules-load.d/` 中的配置加载额外的内核模块。
 virtio-net
 ```
 
-另见[modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5)。
+另见[modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5)。
 
 ### 配置内核模块参数
 

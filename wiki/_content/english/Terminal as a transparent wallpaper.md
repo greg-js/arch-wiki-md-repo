@@ -2,7 +2,7 @@ There are two popular ways of configuring a Linux terminal to work transparently
 
 ## Contents
 
-*   [1 The Easy Way](#The_Easy_Way)
+*   [1 Using Tilda](#Using_Tilda)
 *   [2 The Professional Way](#The_Professional_Way)
     *   [2.1 Openbox, Compiz and alike](#Openbox.2C_Compiz_and_alike)
     *   [2.2 Gnome](#Gnome)
@@ -13,40 +13,22 @@ There are two popular ways of configuring a Linux terminal to work transparently
         *   [2.2.5 Step 5](#Step_5)
     *   [2.3 Xfce4](#Xfce4)
 
-## The Easy Way
+## Using Tilda
 
-[Tilda](http://sourceforge.net/projects/tilda/) is a highly customizable Linux terminal window. The author is inspired by classical terminals featured in *first person shooter games, Quake, Doom and Half-Life to name a few, where the terminal has no border and is hidden from the desktop till a key or keys are pressed.* In our example we will install it and give a basic terminal.
+[Tilda](/index.php/Tilda "Tilda") is a highly customizable terminal emulator. The author is inspired by classical terminals featured in first person shooter games, Quake, Doom and Half-Life to name a few, where the terminal has no border and is hidden from the desktop till a key or keys are pressed. To achieve the desired look, edit the configurations as follows:
 
-```
-# pacman -S tilda
-
-```
-
-In Gnome you can locate it under Applications –> Accessories –> Tilda.
-
-To achieve our desired look we will need to edit the default configurations:
-
-```
-Under *General* tab, **uncheck** "Always on Top".
-
-Under *Appearance* you can edit the **height** and **width** to your liking,
- but make sure you **check** "Enable Transparency" and make the "Level of Transparency" **100%**.
-
-Under *Colors* tab, **chose** "Green on Black" or "Personalize".
-
-Under *Scrolling* you must **select** "Disabled".
-
-```
-
-That's all you need, to run Tilda go to Applications –> Accessories –> Tilda.
+1.  Under *General* tab, **uncheck** "Always on Top".
+2.  Under *Appearance* you can edit the **height** and **width** to your liking, but make sure you **check** "Enable Transparency" and make the "Level of Transparency" **100%**.
+3.  Under *Colors* tab, **chose** "Green on Black" or "Personalize".
+4.  Under *Scrolling* you must **select** "Disabled".
 
 ## The Professional Way
 
 ### Openbox, Compiz and alike
 
-With versatile WindowManagers like Openbox it's easy to create a terminal on your Desktop. Since tilda brings lot's of easy configuration per GUI, it might be your terminal of choice, if you don't know how to create a transparent terminal otherwise. Right-click on tilda and configure the size to your needs, then set transparency to 100%, uncheck the option to start tilda hidden.
+With versatile window managers like [Openbox](/index.php/Openbox "Openbox") it's easy to create a terminal on your Desktop. Since Tilda brings lot's of easy configuration per GUI, it might be your terminal of choice, if you don't know how to create a transparent terminal otherwise. Right-click on tilda and configure the size to your needs, then set transparency to 100%, uncheck the option to start Tilda hidden.
 
-Now you only have to set tilda as "below" according to your WindowManager. For Compiz, this is done by the "Rules for Windows"-plugin, for Openbox, you'll have to add to the "applications"-section of your a `rc.xml` the following code.
+Now you only have to set tilda as "below" according to your window manager. For Compiz, this is done by the "Rules for Windows"-plugin, for Openbox, you'll have to add to the "applications"-section of your a `rc.xml` the following code.
 
 ```
 <application name="tilda">
@@ -63,12 +45,7 @@ With the use of devilspie we will have more control over the placement and the b
 
 #### Step 1
 
-Install devilspie on Arch:
-
-```
-# pacman -S devilspie
-
-```
+Install the [devilspie](https://www.archlinux.org/packages/?name=devilspie) package.
 
 #### Step 2
 
@@ -128,7 +105,7 @@ Under *Scrolling* tab, **select** "Disabled".
 
 In this step we will setup devilspie and our custom terminal profile to load on bootup.
 
-Go to Systems –> Preferences –> Sessions.
+Go to *Systems > Preferences > Sessions*.
 
 Add a new session by using the `+` sign. The first one we will put, "devilspie", in both name and command.
 

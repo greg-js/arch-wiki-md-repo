@@ -4,7 +4,7 @@ Related articles
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
 *   [Xorg](/index.php/Xorg "Xorg")
-*   [xinitrc](/index.php/Xinitrc "Xinitrc")
+*   [xinit](/index.php/Xinit "Xinit")
 *   [Start X at Login](/index.php/Start_X_at_Login "Start X at Login")
 
 A [window manager](https://en.wikipedia.org/wiki/Window_manager "wikipedia:Window manager") (WM) is system software that controls the placement and appearance of windows within a windowing system in a graphical user interface (GUI). It can be part of a [desktop environment](/index.php/Desktop_environment "Desktop environment") (DE) or be used standalone.

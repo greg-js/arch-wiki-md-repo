@@ -34,16 +34,16 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 MWM compatibility options](#MWM_compatibility_options)
     *   [4.2 Force icon size and background](#Force_icon_size_and_background)
-    *   [4.3 Ignore resize hints](#Ignore_resize_hints)
-    *   [4.4 Do not use a wireframe when moving or resizing windows](#Do_not_use_a_wireframe_when_moving_or_resizing_windows)
-    *   [4.5 Disable edge scrolling](#Disable_edge_scrolling)
-    *   [4.6 Stop modifiers from interfering with mouse and key bindings](#Stop_modifiers_from_interfering_with_mouse_and_key_bindings)
-    *   [4.7 Use ClickToFocus](#Use_ClickToFocus)
-    *   [4.8 Window tiling](#Window_tiling)
-    *   [4.9 Transfer focus on page or desk switch](#Transfer_focus_on_page_or_desk_switch)
-    *   [4.10 Toggle window decorations](#Toggle_window_decorations)
+    *   [4.3 Do not use a wireframe when moving or resizing windows](#Do_not_use_a_wireframe_when_moving_or_resizing_windows)
+    *   [4.4 Disable edge scrolling](#Disable_edge_scrolling)
+    *   [4.5 Use ClickToFocus](#Use_ClickToFocus)
+    *   [4.6 Window tiling](#Window_tiling)
+    *   [4.7 Transfer focus on page or desk switch](#Transfer_focus_on_page_or_desk_switch)
+    *   [4.8 Toggle window decorations](#Toggle_window_decorations)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Window start position changes on launch](#Window_start_position_changes_on_launch)
+    *   [5.1 Maximized applications do not fully cover screen](#Maximized_applications_do_not_fully_cover_screen)
+    *   [5.2 Stop modifiers from interfering with mouse and key bindings](#Stop_modifiers_from_interfering_with_mouse_and_key_bindings)
+    *   [5.3 Window start position changes on launch](#Window_start_position_changes_on_launch)
 *   [6 See also](#See_also)
 
 ## Installing
@@ -533,10 +533,6 @@ The sizing of icons is not regular as different programs provide icons of differ
 
 By default, icons also have no background. You can use the `IconBackgroundColorset` style to force icons to have a background. See [#Colorsets](#Colorsets).
 
-### Ignore resize hints
-
-Some applications, such as XTerm, supply a maximum size to the window manager that might be smaller than the screen size. This means that if such an application is maximized, it will not cover the whole screen. To force FVWM to ignore these hints, use the following: `Style "*" ResizeHintOverride`.
-
 ### Do not use a wireframe when moving or resizing windows
 
 Use the `OpaqueMoveSize unlimited` command to view the window itself when moving.
@@ -546,10 +542,6 @@ Use `Style "*" ResizeOpaque` to view the window itself when resizing.
 ### Disable edge scrolling
 
 To disable scrolling to the next viewport when moving the mouse pointer to the screen edge, use the following command: `EdgeScroll 0 0`.
-
-### Stop modifiers from interfering with mouse and key bindings
-
-NumLock, CapsLock and ScrollLock can intefere with ClickToFocus as well as mouse and key bindings. To disable this behavior, use the following command: `IgnoreModifiers L25`.
 
 ### Use ClickToFocus
 
@@ -641,6 +633,14 @@ I ThisWindow (!HasHandles) WindowStyle Title, Borders
 ```
 
 ## Troubleshooting
+
+### Maximized applications do not fully cover screen
+
+Some applications, such as XTerm, supply a maximum size to the window manager that might be smaller than the screen size. This means that if such an application is maximized, it will not cover the whole screen. To force FVWM to ignore these hints, use the following: `Style "*" ResizeHintOverride`.
+
+### Stop modifiers from interfering with mouse and key bindings
+
+NumLock, CapsLock and ScrollLock can intefere with ClickToFocus as well as mouse and key bindings. To disable this behavior, use the following command: `IgnoreModifiers L25`.
 
 ### Window start position changes on launch
 
