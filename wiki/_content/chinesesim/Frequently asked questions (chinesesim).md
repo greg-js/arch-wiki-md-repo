@@ -249,7 +249,7 @@ libbaz=1.5
 
 ### Q) Arch需要安装程序，比如带图形界面的。
 
-**A)** 由于Arch通常不需要多次安装（采取滚动升级），安装程序并不是开发者和用户关注的重点。[Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)") 已经完全更新到使用命令行的版本。如果想使用安装程序，可以试试[Archboot](/index.php/Archboot "Archboot").
+**A)** 由于Arch通常不需要多次安装（采取滚动升级），安装程序并不是开发者和用户关注的重点。[Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)") 已经完全更新到使用命令行的版本。
 
 ### 我安装了Arch，现在正面对一个命令行登陆界面，怎么办？
 

@@ -46,8 +46,6 @@ Boot into your BIOS and change the boot mode to Legacy. Then simply follow the n
 
 ### UEFI
 
-Use [archboot](/index.php/Archboot "Archboot") to install or see [https://bbs.archlinux.org/viewtopic.php?pid=1288500#p1288500](https://bbs.archlinux.org/viewtopic.php?pid=1288500#p1288500)
-
 1\. You follow the guide from here and skip the part about errors and refind: [Create_UEFI_bootable_USB_from_ISO](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface")
 
 2\. Make sure you USB is mounted to /boot/efi and install grub, like so:

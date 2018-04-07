@@ -129,7 +129,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[https://github.com/mate-desktop/marco](https://github.com/mate-desktop/marco) || [marco](https://www.archlinux.org/packages/?name=marco)
 
-*   **[Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")** — This window manager strives to be quiet, small, stable, get on with its job, and stay out of your attention.
+*   **[Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")** — This window manager strives to be quiet, small, stable, get on with its job, and stay out of your attention. It is used by the legacy GNOME 2 and GNOME flashback sessions, and superseded by Mutter.
 
 	[https://blogs.gnome.org/metacity/](https://blogs.gnome.org/metacity/) || [metacity](https://www.archlinux.org/packages/?name=metacity)
 

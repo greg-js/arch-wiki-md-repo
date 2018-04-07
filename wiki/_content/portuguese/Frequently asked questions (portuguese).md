@@ -204,7 +204,7 @@ Atualizações de pacotes serão lançadas quando elas estiverem prontas. A quan
 
 ### O Arch precisa de um instalador. Talvez um instalador gráfico?
 
-Já que a instalação não ocorre com frequência (leia o resto deste artigo para saber mais sobre lançamento contínuo - *rolling release*), isso não é uma prioridade alta para os desenvolvedores ou usuários. O [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") foi completamente atualizado para usar o método de linha de comando. Se você ainda está interessado em usar um instalador, considere usar [Archboot](/index.php/Archboot "Archboot").
+Já que a instalação não ocorre com frequência (leia o resto deste artigo para saber mais sobre lançamento contínuo - *rolling release*), isso não é uma prioridade alta para os desenvolvedores ou usuários. O [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") foi completamente atualizado para usar o método de linha de comando.
 
 ### Eu instalei o Arch e agora eu estou em um shell! O que faço agora?
 

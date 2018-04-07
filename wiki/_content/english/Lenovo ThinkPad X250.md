@@ -54,6 +54,10 @@ Although a dedicated Pause-key is missing, it can be input using the key combina
 
 #### Sound and Volume Control
 
+In order to get control of the audio from Intel hdmi, you have to disable it and force alsa to use Intel PCH. See [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA") to set the default sound card to Intel PCH (speakers and headphones).
+
+ ` /etc/modprobe.d/thinkpad-x250.conf `  `options snd_hda_intel index=1,0` 
+
 With [acpid](https://www.archlinux.org/packages/?name=acpid) and [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed, you can map the volume buttons to change the volume. Here are some samples:
 
 `/etc/acpi/events/volumemute`:

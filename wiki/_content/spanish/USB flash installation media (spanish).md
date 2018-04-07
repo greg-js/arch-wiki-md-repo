@@ -215,7 +215,7 @@ Este método es un poco más complicado que escribir la imagen directamente con 
 
 ```
 
-*   Ajuste los archivos de configuración (necesarios solo para [Archiso](/index.php/Archiso "Archiso"), no se necesitan para la iso de [Archboot](/index.php/Archboot "Archboot")). Estas órdenes reemplazan la parte `archisolabel=ARCH_2013XX` con su equivalente `archiso**device**=/dev/disk/by-uuid/47FA-4071` para ambos archivos de configuración, al mismo tiempo, utilizando una sola orden:
+*   Ajuste los archivos de configuración. Estas órdenes reemplazan la parte `archisolabel=ARCH_2013XX` con su equivalente `archiso**device**=/dev/disk/by-uuid/47FA-4071` para ambos archivos de configuración, al mismo tiempo, utilizando una sola orden:
 
 **Advertencia:** Si se equivoca al etiquetar la unidad "`ARCH_2013XX`" (con el apropiado mes de lanzamiento) o al usar [UUID](/index.php/UUID "UUID") (al reetiquetarlo según su preferencia) impedirá el arranque desde el medio creado.
 
@@ -246,15 +246,13 @@ $ sed -i "s|label=ARCH_.*|device=/dev/disk/by-uuid/$(blkid -o value -s UUID /dev
 
 *   Particione y formatee la unidad USB utilizando [Rufus USB partitioner](http://rufus.akeo.ie/). Seleccione la opción del esquema de particionado como **MBR for BIOS and UEFI** y el sistema de archivos como **FAT32**. Desmarque las opciones «Create a bootable disk using ISO image» y «Create extended label and icon files».
 
-*   Cambie **Volume Label** de la unidad flash USB `X:` para hacerla coincidir con el LABEL mencionado en `archisolabel=` parte de `<ISO>\loader\entries\archiso-x86_64.conf`. Este paso es necesario para la ISO Oficial ([Archiso](/index.php/Archiso "Archiso")), pero no se requiere para [Archboot](/index.php/Archboot "Archboot").
+*   Cambie **Volume Label** de la unidad flash USB `X:` para hacerla coincidir con el LABEL mencionado en `archisolabel=` parte de `<ISO>\loader\entries\archiso-x86_64.conf`. Este paso es necesario para la ISO Oficial ([Archiso](/index.php/Archiso "Archiso")).
 
 *   Extraiga la ISO (de modo similar a como se extrae un archivo ZIP) en la unidad flash USB (utilizando [7-Zip](http://7-zip.org/)).
 
 *   Descargue los binarios oficiales (archivo zip) mas recientes de syslinux 6.xx desde [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) y extráigalos.
 
 *   Ejecute las siguientes órdenes (en el prompt de órdenes de Windows, como administrador):
-
-**Nota:** Utilice `X:\boot\syslinux\` para la iso de Archboot.
 
 ```
 > cd bios\
@@ -264,8 +262,6 @@ $ sed -i "s|label=ARCH_.*|device=/dev/disk/by-uuid/$(blkid -o value -s UUID /dev
 ```
 
 *   Instale Syslinux en el USB para poder ejecutarlo (utilice `win64/syslinux64.exe` en Windows x64):
-
-**Nota:** Utilice `/boot/syslinux` para la iso de Archboot.
 
 ```
 > cd bios\

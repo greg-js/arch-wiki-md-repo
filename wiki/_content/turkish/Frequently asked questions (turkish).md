@@ -200,7 +200,7 @@ Package updates will be released when they are ready. The specific amount of tim
 
 ### Arch needs an installer. Maybe a GUI installer?
 
-Since installation doesn't occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") has been fully updated to use the command-line method. If you're still interested in using an installer, consider using [Archboot](/index.php/Archboot "Archboot").
+Since installation doesn't occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") has been fully updated to use the command-line method.
 
 ### I installed Arch, and now I am at a shell! What now?
 

@@ -103,7 +103,7 @@ Re-login for the changes to take effect.
 
 #### GNOME
 
-To change the theme in [GNOME](/index.php/GNOME "GNOME"), use [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) or set the configuration directly with:
+To change the theme in [GNOME](/index.php/GNOME "GNOME"), use [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) or set the configuration directly with:
 
 ```
 gsettings set org.gnome.desktop.interface cursor-theme *cursor_theme_name*

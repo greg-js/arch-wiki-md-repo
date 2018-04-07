@@ -4,8 +4,6 @@ Secara singkat, *bootloader* adalah program software pertama yang berjalan ketik
 
 **Note:** grub2 dari 1.99 dan selanjutnya telah mendukung btrfs sebagai root (tanpa /boot filesistem yang terpisah), tetapi tingkat kompresinya terbatas pada zlib, tidak LZO. Dukungan kompresi LZO hanya terdapat pada repo bzr upstream.
 
-**Note:** Penginstall standar AIF (Arch Installation Framework) berdasar pada [Archiso](/index.php/Archiso "Archiso") tidak mendukung penginstallan grub2-bios atau grub2-uefi. Akan tetapi [Archboot](/index.php/Archboot "Archboot") iso mendukung penginstallan grub2-bios dan grub2-uefi.
-
 ## Contents
 
 *   [1 Prefasi](#Prefasi)

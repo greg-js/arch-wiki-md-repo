@@ -24,7 +24,7 @@ Stoq application uses PostgreSQL as database back-end, with a graphical interfac
 
 ### Configure Stoq
 
-After running Stoq for the first time, you will need to configure the database location. In this step there are two options for the client to connect to the database:
+After running Stoq for the first time, you will need to configure the database location. In this step there are two options for the client connect to the database:
 
 *   Connect to the database locally;
 *   Manually configure the database connection.

@@ -39,18 +39,19 @@ According to a Microsoft note[[2]](https://docs.microsoft.com/en-us/windows-hard
 
 ### GPT partitioned disks
 
-EFI System Partition on GPT has the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
+EFI System Partition on GPT is identified by the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
 
 **Choose one** of the following methods to create an ESP for a GPT partitioned disk:
 
-*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `EF00` in *gdisk*).
+*   [fdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type `EFI System`.
+*   [gdisk](/index.php/Gdisk "Gdisk"): Create a partition with partition type `EF00`.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with FAT32 as the file system type and set/activate the `esp` flag (**not** `legacy_boot` flag) on that partition.
 
 Proceed to [#Format the partition](#Format_the_partition) section below.
 
 ### MBR partitioned disks
 
-EFI System Partition on MBR has the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") `EF`.
+EFI System Partition on MBR is identified by the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") `EF`.
 
 **Choose one** of the following methods to create an ESP for a MBR partitioned disk:
 

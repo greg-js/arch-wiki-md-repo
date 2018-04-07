@@ -371,7 +371,7 @@ KCM significa **KC**onfig **M**odule. Questi moduli possono aiutare a configurar
 
 **Configurazioni per tavolette Wacom**
 
-*   [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
+*   [kcm-wacomtablet](https://www.archlinux.org/packages/?name=kcm-wacomtablet)
 
 Altri KCM possono essere trovati in [kde-apps.org](http://kde-apps.org/index.php?xcontentmode=273).
 

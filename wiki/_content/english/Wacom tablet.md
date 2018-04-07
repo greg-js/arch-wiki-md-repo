@@ -633,7 +633,7 @@ Here is how to do the same in the xorg configuration file:
 
 ### Using kcm-wacomtablet
 
-The KDE configuration module [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/) (or if you're on Plasma 5, [kcm-wacomtablet-frameworks-git](https://aur.archlinux.org/packages/kcm-wacomtablet-frameworks-git/)) supports easy configuration of the tablet through a graphical user interface, allowing for different profiles and proper hotplugging support. It will auto-detect the type of your tablet, and load your configuration profile automatically when the tablet is plugged in.
+The KDE configuration module [kcm-wacomtablet](https://www.archlinux.org/packages/?name=kcm-wacomtablet) (or if you're on Plasma 5, [kcm-wacomtablet-frameworks-git](https://aur.archlinux.org/packages/kcm-wacomtablet-frameworks-git/)) supports easy configuration of the tablet through a graphical user interface, allowing for different profiles and proper hotplugging support. It will auto-detect the type of your tablet, and load your configuration profile automatically when the tablet is plugged in.
 
 ## Application-specific configuration
 

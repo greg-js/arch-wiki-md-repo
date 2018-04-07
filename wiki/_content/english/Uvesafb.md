@@ -1,3 +1,9 @@
+Related articles
+
+*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
+*   [sysctl](/index.php/Sysctl "Sysctl")
+
 In contrast with other framebuffer drivers, uvesafb needs a userspace virtualizing daemon, called v86d. It may seem foolish to emulate x86 code on a x86, but this is important if one wants to use the framebuffer code on other architectures (notably non-x86 ones). It was added in kernel 2.6.24 and has many more features than the standard vesafb, including:
 
 1.  Proper blanking and hardware suspension after delay

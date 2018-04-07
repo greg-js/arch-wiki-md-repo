@@ -25,7 +25,6 @@
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Дополнительные пакеты](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
 *   [2 Сессии GNOME](#.D0.A1.D0.B5.D1.81.D1.81.D0.B8.D0.B8_GNOME)
 *   [3 Запуск GNOME](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_GNOME)
     *   [3.1 Графически](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8)
@@ -34,77 +33,50 @@
         *   [3.2.2 Сессия Wayland](#.D0.A1.D0.B5.D1.81.D1.81.D0.B8.D1.8F_Wayland)
     *   [3.3 Приложения GNOME в Wayland](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_.D0.B2_Wayland)
 *   [4 Навигация](#.D0.9D.D0.B0.D0.B2.D0.B8.D0.B3.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [4.1 Устаревшие названия](#.D0.A3.D1.81.D1.82.D0.B0.D1.80.D0.B5.D0.B2.D1.88.D0.B8.D0.B5_.D0.BD.D0.B0.D0.B7.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [5 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [5.1 Настройки системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-        *   [5.1.1 Цвет](#.D0.A6.D0.B2.D0.B5.D1.82)
-        *   [5.1.2 Дата & время](#.D0.94.D0.B0.D1.82.D0.B0_.26_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F)
-        *   [5.1.3 Приложения по умолчанию](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
-        *   [5.1.4 Мышь и тачпад](#.D0.9C.D1.8B.D1.88.D1.8C_.D0.B8_.D1.82.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
-        *   [5.1.5 Сеть](#.D0.A1.D0.B5.D1.82.D1.8C)
-        *   [5.1.6 Сетевые учетные записи](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D1.83.D1.87.D0.B5.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8)
-        *   [5.1.7 Поиск](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA)
-    *   [5.2 Расширенная конфигурация](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-        *   [5.2.1 Внешний вид](#.D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B9_.D0.B2.D0.B8.D0.B4)
-            *   [5.2.1.1 Темы GTK+ и иконок](#.D0.A2.D0.B5.D0.BC.D1.8B_GTK.2B_.D0.B8_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
-                *   [5.2.1.1.1 Глобальная темная тема](#.D0.93.D0.BB.D0.BE.D0.B1.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.B0)
-            *   [5.2.1.2 Темы оконного менеджера](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0)
-                *   [5.2.1.2.1 Высота заголовка](#.D0.92.D1.8B.D1.81.D0.BE.D1.82.D0.B0_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0)
-                *   [5.2.1.2.2 Порядок кнопок в заголовке](#.D0.9F.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.B2_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B5)
-                *   [5.2.1.2.3 Скрыть заголовок, когда окно во весь экран](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D1.8C_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D0.BA.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.BE.D0.BA.D0.BD.D0.BE_.D0.B2.D0.BE_.D0.B2.D0.B5.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD)
-            *   [5.2.1.3 Темы GNOME Shell](#.D0.A2.D0.B5.D0.BC.D1.8B_GNOME_Shell)
-            *   [5.2.1.4 Иконки в меню](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.B2_.D0.BC.D0.B5.D0.BD.D1.8E)
-        *   [5.2.2 Рабочий стол](#.D0.A0.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB)
-            *   [5.2.2.1 Иконки на рабочем столе](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.BD.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.BC_.D1.81.D1.82.D0.BE.D0.BB.D0.B5)
-            *   [5.2.2.2 Фон экрана блокировки и рабочего стола](#.D0.A4.D0.BE.D0.BD_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8_.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
-        *   [5.2.3 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
-        *   [5.2.4 Методы ввода](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4.D1.8B_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
-        *   [5.2.5 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
-        *   [5.2.6 Запуск приложений при входе в систему](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
-        *   [5.2.7 Электропитание](#.D0.AD.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D0.B5)
-            *   [5.2.7.1 Изменить поведение при закрытии крышки](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B8_.D0.BA.D1.80.D1.8B.D1.88.D0.BA.D0.B8)
-            *   [5.2.7.2 Изменить поведение при критическом уровне заряда батареи](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BA.D1.80.D0.B8.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.BC_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5_.D0.B7.D0.B0.D1.80.D1.8F.D0.B4.D0.B0_.D0.B1.D0.B0.D1.82.D0.B0.D1.80.D0.B5.D0.B8)
-        *   [5.2.8 Сортировка приложений по соответствующим папкам](#.D0.A1.D0.BE.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D0.BE_.D1.81.D0.BE.D0.BE.D1.82.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.BC_.D0.BF.D0.B0.D0.BF.D0.BA.D0.B0.D0.BC)
-*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [5 Устаревшие названия](#.D0.A3.D1.81.D1.82.D0.B0.D1.80.D0.B5.D0.B2.D1.88.D0.B8.D0.B5_.D0.BD.D0.B0.D0.B7.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
+*   [6 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [6.1 Настройки системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+        *   [6.1.1 Цвет](#.D0.A6.D0.B2.D0.B5.D1.82)
+        *   [6.1.2 Night Light](#Night_Light)
+        *   [6.1.3 Дата & время](#.D0.94.D0.B0.D1.82.D0.B0_.26_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F)
+        *   [6.1.4 Приложения по умолчанию](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
+        *   [6.1.5 Мышь и тачпад](#.D0.9C.D1.8B.D1.88.D1.8C_.D0.B8_.D1.82.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
+        *   [6.1.6 Сеть](#.D0.A1.D0.B5.D1.82.D1.8C)
+        *   [6.1.7 Сетевые учетные записи](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D1.83.D1.87.D0.B5.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8)
+        *   [6.1.8 Поиск](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA)
+    *   [6.2 Расширенная конфигурация](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+        *   [6.2.1 Внешний вид](#.D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B9_.D0.B2.D0.B8.D0.B4)
+            *   [6.2.1.1 Темы GTK+ и иконок](#.D0.A2.D0.B5.D0.BC.D1.8B_GTK.2B_.D0.B8_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
+                *   [6.2.1.1.1 Глобальная темная тема](#.D0.93.D0.BB.D0.BE.D0.B1.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.B0)
+            *   [6.2.1.2 Темы оконного менеджера](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0)
+                *   [6.2.1.2.1 Высота заголовка](#.D0.92.D1.8B.D1.81.D0.BE.D1.82.D0.B0_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0)
+                *   [6.2.1.2.2 Порядок кнопок в заголовке](#.D0.9F.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.B2_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B5)
+                *   [6.2.1.2.3 Скрыть заголовок, когда окно во весь экран](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D1.8C_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D0.BA.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.BE.D0.BA.D0.BD.D0.BE_.D0.B2.D0.BE_.D0.B2.D0.B5.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD)
+            *   [6.2.1.3 Темы GNOME Shell](#.D0.A2.D0.B5.D0.BC.D1.8B_GNOME_Shell)
+            *   [6.2.1.4 Иконки в меню](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.B2_.D0.BC.D0.B5.D0.BD.D1.8E)
+        *   [6.2.2 Рабочий стол](#.D0.A0.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB)
+            *   [6.2.2.1 Иконки на рабочем столе](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.BD.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.BC_.D1.81.D1.82.D0.BE.D0.BB.D0.B5)
+            *   [6.2.2.2 Фон экрана блокировки и рабочего стола](#.D0.A4.D0.BE.D0.BD_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8_.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
+        *   [6.2.3 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
+        *   [6.2.4 Методы ввода](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4.D1.8B_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
+        *   [6.2.5 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
+        *   [6.2.6 Запуск приложений при входе в систему](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+        *   [6.2.7 Электропитание](#.D0.AD.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D0.B5)
+            *   [6.2.7.1 Изменить поведение при закрытии крышки](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B8_.D0.BA.D1.80.D1.8B.D1.88.D0.BA.D0.B8)
+            *   [6.2.7.2 Изменить поведение при критическом уровне заряда батареи](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BA.D1.80.D0.B8.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.BC_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5_.D0.B7.D0.B0.D1.80.D1.8F.D0.B4.D0.B0_.D0.B1.D0.B0.D1.82.D0.B0.D1.80.D0.B5.D0.B8)
+        *   [6.2.8 Сортировка приложений по соответствующим папкам](#.D0.A1.D0.BE.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D0.BE_.D1.81.D0.BE.D0.BE.D1.82.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.BC_.D0.BF.D0.B0.D0.BF.D0.BA.D0.B0.D0.BC)
+*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
 Доступны две группы:
 
 *   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) содержит основное рабочее окружение и набор хорошо интегрированных [приложений](https://wiki.gnome.org/Apps);
-*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) включает в себя дополнительные приложения GNOME, такие как архиватор, диспетчер дисков, текстовый редактор и набор игр. Обратите внимание, что эта группа опирается на [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) включает в себя дополнительные приложения GNOME, такие как архиватор, диспетчер дисков, [текстовый редактор](/index.php/Gedit "Gedit") и набор игр. Обратите внимание, что эта группа опирается на [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
 Базовый рабочий стол состоит из GNOME Shell, плагина для оконного менеджера [Mutter](https://en.wikipedia.org/wiki/ru:Mutter_(%D0%BE%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80) "wikipedia:ru:Mutter (оконный менеджер)"). Он может быть установлен отдельным пакетом - [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell)
 
 **Примечание:** *mutter* выступает в роли композитного менеджера, который использует аппаратное ускорение для предоставления эффектов. Менеджер сеансов GNOME автоматически определяет, может ли ваша система работать с GNOME Shell, и, если нет, возвращается к использованию рендеринга с использованием *llvmpipe*.
-
-### Дополнительные пакеты
-
-Пакеты, отсутствующие во всех вышеперечисленных группах:
-
-*   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — Простой пользовательский интерфейс для получения доступа к виртуальным машинам [libvirt](/index.php/Libvirt "Libvirt").
-
-	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
-
-*   **GNOME Initial Setup** — Простой, легкий и безопасный способ "подготовки" новой системы.
-
-	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
-
-*   **GNOME MultiWriter** — Запись ISO файла на несколько USB устройств одновременно.
-
-	[https://wiki.gnome.org/Apps/MultiWriter](https://wiki.gnome.org/Apps/MultiWriter) || [gnome-multi-writer](https://www.archlinux.org/packages/?name=gnome-multi-writer)
-
-*   **GNOME PackageKit** — Коллекция графических инструментов для PackageKit, которые хорошо вписываются в окружение GNOME.
-
-	[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
-
-*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — Отладчик C/C++.
-
-	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
-
-*   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — Позволяет вам устанавливать и обновлять приложения и системные расширения.
-
-	[https://wiki.gnome.org/Apps/Software/](https://wiki.gnome.org/Apps/Software/) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
 ## Сессии GNOME
 
@@ -140,15 +112,17 @@ GNOME может быть запущен как графически, испол
 
 #### Сессия Wayland
 
-**Примечание:** Пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) все еще нужен даже для запуска тех приложений, которые не портированы на [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
+**Примечание:**
 
-Вручную можно запустить следующей командой: `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. Для того чтобы приложения, работающие при помощи Qt, использовали Wayland, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) и значение [переменной окружения](/index.php/Environment_variable "Environment variable"): `QT_QPA_PLATFORM=wayland`.
+*   Пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) все еще нужен даже для запуска тех приложений, которые не портированы на [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
+*   Wayland с проприетарным драйвером [NVIDIA](/index.php/NVIDIA "NVIDIA") на данный момент имеет плохую производительность: [FS#53284](https://bugs.archlinux.org/task/53284).
+
+Вручную можно запустить следующей командой: `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
 
 Чтобы запускать сессию GNOME при входе в систему, добавьте следующее в `.bash_profile`:
 
 ```
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
-# export QT_QPA_PLATFORM=wayland
   XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
@@ -156,19 +130,19 @@ fi
 
 ### Приложения GNOME в Wayland
 
-Когда используется сессия *GNOME*, соответствующие приложения будут запущены, используя Wayland. Смотрите текущий статус Wayland для приложений GNOME [здесь](https://wiki.gnome.org/Initiatives/Wayland/Applications/). Для отладки смотрите [руководство GTK+](https://developer.gnome.org/gtk3/stable/gtk-running.html), в нем перечислены параметры и переменные окружения.
+Когда используется сессия *GNOME*, соответствующие приложения будут запущены, используя Wayland. Для отладки смотрите [руководство GTK+](https://developer.gnome.org/gtk3/stable/gtk-running.html), в нем перечислены параметры и переменные окружения.
 
 ## Навигация
 
-Чтобы понять, как использовать GNOME эффективно, прочитайте [шпаргалку GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet); в ней освещаются особенности, которые включают в себя переключение между задачами, использование клавиатуры, контроль окон, панель, обзор, оболочки GNOME и горячие клавиши. Вот некоторые из них:
+Чтобы понять, как использовать GNOME эффективно, прочитайте [шпаргалку GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet); в ней освещаются особенности, включающие в себя переключение между задачами, использование клавиатуры, управление окнами, панель, режим обзора, GNOME shell и горячие клавиши. Вот некоторые из них:
 
 *   `Super` + `m`: показать трей с сообщениями
 *   `Super` + `a`: показать меню приложений
 *   `Alt-` + `Tab`: переключение между активными приложениями
 *   `Alt-` + ``` (клавиша выше `Tab` на раскладке клавиатуры США): переключение между окнами активного приложения
-*   `Alt` + `F2`, затем введите `r` или `restart`: перезапуск оболочки ввиду графических проблем (только для режима X/legacy. Недоступно для Wayland).
+*   `Alt` + `F2`, затем введите `r` или `restart`: перезапуск оболочки ввиду графических проблем (только для режима X/legacy. Не доступно для Wayland).
 
-### Устаревшие названия
+## Устаревшие названия
 
 **Примечание:** Имя некоторых приложений GNOME в документации, диалоговых окнах изменилось, но исполняемый файл остался тот же. Несколько таких приложений перечислено в таблице ниже.
 
@@ -199,11 +173,18 @@ $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 ### Настройки системы
 
-Заметки о настройках панели управления.
-
 #### Цвет
 
 Демон `colord` считывает данные EDID дисплея и извлекает соответствующий цветовой профиль. Большинство цветовых профилей являются правильными и не требуют настройки; однако для тех, которые не являются правильными или для старых дисплеев, цветовые профили могут быть помещены в `~/.local/share/icc/` и направлены туда же.
+
+#### Night Light
+
+GNOME поставляется со встроенным световым фильтром, который похож на [Redshift](/index.php/Redshift "Redshift"). Его можно включить в меню настроек в разделе Дисплеи. Более того вы можете изменить температуру кельвина посредством [dconf](https://www.archlinux.org/packages/?name=dconf). В следующем примере выбрано значение 5000:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 5000
+
+```
 
 #### Дата & время
 

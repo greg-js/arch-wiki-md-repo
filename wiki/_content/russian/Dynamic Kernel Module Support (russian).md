@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support"). Дата последней синхронизации: 28 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=508637).
+**Состояние перевода:** На этой странице представлен перевод статьи [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support"). Дата последней синхронизации: 28 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=512538).
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Dynamic_Kernel_Module_Support "wikipedia:ru:Dynamic Kernel Module Support"):
 
@@ -114,7 +114,7 @@
 
 ```
 
-Если пакет [dkms](https://www.archlinux.org/packages/?name=dkms) удален, то теряется информация о предыдущих файлах сборки модуля. В этом случае, перейдите в директорию `/usr/lib/modules/KERNELVERSION-ARCH` и удалите файлы и/или папки, которые больше не используются.
+Если пакет [dkms](https://www.archlinux.org/packages/?name=dkms) удален, то теряется информация о предыдущих файлах сборки модуля. В этом случае, перейдите в директорию `/usr/lib/modules/KERNELVERSION-ARCH` и удалите все файлы и папки, которые больше не используются.
 
 ## Создание DKMS пакета
 

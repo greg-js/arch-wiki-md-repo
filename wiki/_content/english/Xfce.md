@@ -50,22 +50,21 @@ Related articles
     *   [4.10 Mouse button modifier](#Mouse_button_modifier)
     *   [4.11 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
     *   [4.12 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
-    *   [4.13 Adding Profile Pictures](#Adding_Profile_Pictures)
+    *   [4.13 Adding profile pictures](#Adding_profile_pictures)
+    *   [4.14 Power manager plugin label](#Power_manager_plugin_label)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
     *   [5.2 GTK themes not working with multiple monitors](#GTK_themes_not_working_with_multiple_monitors)
     *   [5.3 Icons do not appear in right-click menus](#Icons_do_not_appear_in_right-click_menus)
-    *   [5.4 Keyboard settings are not saved in xkb-plugin](#Keyboard_settings_are_not_saved_in_xkb-plugin)
-    *   [5.5 NVIDIA and xfce4-sensors-plugin](#NVIDIA_and_xfce4-sensors-plugin)
-    *   [5.6 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
-    *   [5.7 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
-    *   [5.8 Restore default settings](#Restore_default_settings)
-    *   [5.9 Session failure](#Session_failure)
-    *   [5.10 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
-    *   [5.11 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
-    *   [5.12 Power Manager Plugin shows battery time and remaining percentage](#Power_Manager_Plugin_shows_battery_time_and_remaining_percentage)
-    *   [5.13 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
-    *   [5.14 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
+    *   [5.4 NVIDIA and xfce4-sensors-plugin](#NVIDIA_and_xfce4-sensors-plugin)
+    *   [5.5 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
+    *   [5.6 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
+    *   [5.7 Restore default settings](#Restore_default_settings)
+    *   [5.8 Session failure](#Session_failure)
+    *   [5.9 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
+    *   [5.10 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
+    *   [5.11 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
+    *   [5.12 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -229,44 +228,44 @@ The [List of applications/Security#Screen lockers](/index.php/List_of_applicatio
 
 To **integrate a custom screen locker**, not among the four supported lockers listed above, with *xflock4*, some steps are required. The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xfclock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can:
 
-1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l" --create -t string` 
+1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "**light-locker-command -l**" --create -t string` The command inside the quotes can be adapted accordingly for other screen lockers.
 2.  Enhance the *xflock4* script with either one of the following methods:
     1.  Replace manually `/usr/bin/xflock4` with the latest version of the script, so that it calls the command specified in `LockCommand`.
-    2.  Install [xfce4-session-git](https://aur.archlinux.org/packages/xfce4-session-git/) in order to replace the package with the 4.13 version.
+    2.  Install [xfce4-session-git](https://aur.archlinux.org/packages/xfce4-session-git/) in order to replace the official repository package with the updated 4.13 version which takes into account `LockCommand`.
 
 The **panel lock button** in the *Action Buttons* panel simply executes `/usr/bin/xflock4`. It should work as expected as long as *xflock4* is functioning i.e. one of the native lockers is installed or a custom locker is configured to integrate with it as proposed above.
 
 #### Suspend
 
-Whenever asked to suspend, Xfce executes the command:
+Whenever asked to suspend, Xfce executes the [xfce4-session-logout(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfce4-session-logout.1) command with the `suspend` option:
 
 ```
 $ xfce4-session-logout --suspend
 
 ```
 
-It is possible to systematically lock the session on *suspend* or not. To control this state, the `LockScreen` and `lock-screen-suspend-hibernate` settings, in respectively the session and power manager xconf channels, are used. To prevent locking on suspend, turn them to `false`:
+Whether or not the session is systematically locked on *suspend* can be configured through the xfconf properties or from the GUI. To control this state using the CLI: there are two settings that are used, `LockScreen` and `lock-screen-suspend-hibernate`, in respectively the session and the power manager xfconf channels. To prevent locking on suspend, turn them to `false`:
 
 ```
-$ xfconf-query -c xfce4-session -p /shutdown/LockScreen -s false
-$ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate s false
+$ xfconf-query -c xfce4-session -p /shutdown/LockScreen -s **false**
+$ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s **false**
 
 ```
 
 Similarly, turn them to `true` to lock the session on suspend.
 
-The setting can also be controlled using the GUI: open the *Session and Startup* application and turn the flag *Advanced > Lock screen before sleep* on or off.
+The setting can also be controlled from the GUI: open the *Session and Startup* application and turn the flag *Advanced > Lock screen before sleep* on or off.
 
 #### Disable saved sessions
 
 Per user, saved sessions can be disabled by executing the following:
 
 ```
-$ xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false
+$ xfconf-query -c xfce4-session -p /general/SaveOnExit -s false
 
 ```
 
-Then navigate to *Applications > Settings > Session and Startup > Sessions* and click the *Clear saved sessions* button.
+Then navigate to *Applications > Settings > Session and Startup > Sessions* and press the *Clear saved sessions* button to remove all previously saved sessions.
 
 **Tip:** If the command above does not change the setting persistently, use the following command instead: `xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
 
@@ -358,7 +357,9 @@ Some programs that are commonly used with Xfce will control monitor blanking and
 
 	Xfce Power Manager
 
-Xfce Power Manager will control blanking and DPMS settings. These settings can be configured by running *xfce4-power-manager-settings* and clicking the *Display* tab. Note that turning off *Handle display power management* means that the Power Manager will disable DPMS - it does not mean that the Power Manager will relinquish control of DPMS. Also note that it will not disable screen blanking. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled *Presentation mode* is ticked.
+*Xfce Power Manager* controls blanking and DPMS settings. These settings can be configured in the *Power Manager* GUI within the *Display* tab.
+
+Note that when *Display power management* is turned off, DPMS is fully disabled, it does not mean that *Power Manager* will simply stop controlling DPMS. It does not disable screen blanking either. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled *Presentation mode* is ticked.
 
 	XScreenSaver
 
@@ -534,11 +535,17 @@ The 2 in the array is the middle click.
 
 Limiting the minimum brightness can be useful for displays which turn off backlight on a brightness level of 0\. In `xfce4-power-manager 1.3.2` a new hidden option had been introduced to set a minimum brightness value with a xfconf4-property. Add `brightness-slider-min-level` as an int property in xfconf4\. Adjust the int value to get a suitable minimum brightness level.
 
-### Adding Profile Pictures
+### Adding profile pictures
 
 To add profile pictures for each user to be displayed in the whisker-menu, simply place a 96x96 PNG file in the respective user's home directory with the name `.face`. For example the PNG file `/home/*bob*/.face` for user *bob*.
 
 Image editing programs like [GIMP](/index.php/GIMP "GIMP") can be used to convert and scale your favourite images down to 96x96.
+
+### Power manager plugin label
+
+The xfconf option `show-panel-label` of type `int` controls the label of the power manager, it can be configured for different label formats: it can be set to 0 (no label), 1 (percentage), 2 (remaining time) or 3 (both).
+
+It is also accessible through the power manager plugin GUI in *Properties > Show label*
 
 ## Troubleshooting
 
@@ -573,17 +580,13 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ```
 
-### Keyboard settings are not saved in xkb-plugin
-
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[4]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
-
 ### NVIDIA and xfce4-sensors-plugin
 
 To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https://www.archlinux.org/packages/?name=libxnvctrl) and then rebuild [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) with [ABS](/index.php/ABS "ABS"). You also have the option of using [xfce4-sensors-plugin-nvidia](https://aur.archlinux.org/packages/xfce4-sensors-plugin-nvidia/) which replaces [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin).
 
 ### Panel applets keep being aligned on the left
 
-Add a separator someplace before the right end and set its "expand" property. [[5]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+Add a separator someplace before the right end and set its "expand" property. [[4]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
 
 ### Preferred Applications preferences have no effect
 
@@ -659,13 +662,7 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 
 ```
 
-**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
-
-### Power Manager Plugin shows battery time and remaining percentage
-
-Since 1.5.1 an hidden option has been introduced to configure a label on the statusbar. The new xfconf4 option `show-panel-label` of type `int` can be configured for different label formats. `show-panel-label` can be set to 0 (no label), 1 (percentage), 2 (remaining time) or 3 (both).
-
-Source: [1.5.1 release notes](https://mail.xfce.org/pipermail/xfce-announce/2015-June/000424.html)
+**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
 
 ### User switching action button is greyed out
 

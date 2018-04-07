@@ -212,7 +212,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **physlock** — Screen and console locker.
 
-	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock](https://aur.archlinux.org/packages/physlock/)
+	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock](https://www.archlinux.org/packages/?name=physlock)
 
 *   **sflock** — Simple screen locker utility for X, based on slock. Provides a very basic user feedback.
 

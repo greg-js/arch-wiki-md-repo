@@ -31,15 +31,14 @@ This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") 
     *   [2.6 Disconnect](#Disconnect)
     *   [2.7 NoScript](#NoScript)
     *   [2.8 uMatrix](#uMatrix)
-    *   [2.9 Cookie Monster](#Cookie_Monster)
-    *   [2.10 Cookie AutoDelete](#Cookie_AutoDelete)
-    *   [2.11 RefControl](#RefControl)
-    *   [2.12 RequestPolicy](#RequestPolicy)
-    *   [2.13 Decentraleyes](#Decentraleyes)
-    *   [2.14 CanvasBlocker](#CanvasBlocker)
-    *   [2.15 Random User Agent](#Random_User_Agent)
-    *   [2.16 Privacy Settings](#Privacy_Settings)
-    *   [2.17 Stop Fingerprinting](#Stop_Fingerprinting)
+    *   [2.9 Cookie AutoDelete](#Cookie_AutoDelete)
+    *   [2.10 RefControl](#RefControl)
+    *   [2.11 RequestPolicy Continued](#RequestPolicy_Continued)
+    *   [2.12 Decentraleyes](#Decentraleyes)
+    *   [2.13 CanvasBlocker](#CanvasBlocker)
+    *   [2.14 Random User Agent](#Random_User_Agent)
+    *   [2.15 Privacy Settings](#Privacy_Settings)
+    *   [2.16 Stop Fingerprinting](#Stop_Fingerprinting)
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
 
 ## Configuration tweaks
@@ -58,7 +57,7 @@ Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.moz
 
 *   `privacy.resistFingerprinting` `true`
 
-There is no user-facing documentation about this flag, and Mozilla doesn't recommend users enable it, since it will break a few websites (it exists mostly to make life easier for the Tor Browser developers). But it does automatically enable many of the features listed below (such as changing your reported timezone and user agent), as well as protection against other, lesser-known fingerprinting techniques. See the [tracking bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1333933) that lists many of these features.
+There is no user-facing documentation about this flag, and Mozilla does not recommend users enable it, since it will break a few websites (it exists mostly to make life easier for the Tor Browser developers). But it does automatically enable many of the features listed below (such as changing your reported timezone and user agent), as well as protection against other, lesser-known fingerprinting techniques. See the [tracking bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1333933) that lists many of these features.
 
 ### Enable tracking protection
 
@@ -72,7 +71,7 @@ Note that this is not a replacement for ad blocking extensions such as [#uBlock 
 
 ### Change browser time zone
 
-The time zone of your system can be used in browser fingerprinting. To set firefox's time zone to UTC launch it as:
+The time zone of your system can be used in browser fingerprinting. To set Firefox's time zone to UTC launch it as:
 
 ```
 $ TZ=UTC firefox
@@ -90,7 +89,7 @@ The value for the key is your browser's user agent. Select a known common one.
 **Tip:**
 
 *   The value `Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0` is used as the user agent for the Tor browser, thus being very common.
-*   The [#Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting) option also enables the Tor browser user agent automatically and changes your browser platform automatically.
+*   The [#Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting) option also enables the Tor browser user agent and changes your browser platform automatically.
 
 **Warning:** Changing the user agent without changing to a corresponding platform will make your browser nearly unique.
 
@@ -133,6 +132,8 @@ Set `toolkit.telemetry.enabled` to `false` and/or disable it under Preferences, 
 ### Enable Do Not Track Header (DNT)
 
 **Note:** The remote server may choose to not honour the Do Not Track request.
+
+**Warning:** The Do Not Track header may be used to fingerprint your browser, since most users leave the option disabled.
 
 Set `privacy.donottrackheader.enabled` to `true` or toggle it in *Preferences > Privacy > Manage your Do Not Track settings*.
 
@@ -179,11 +180,11 @@ uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](ht
 
 ### Adblock Plus
 
-[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[3]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
+[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[3]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like [#uBlock Origin](#uBlock_Origin).
 
 ### Privacy Badger
 
-[Privacy Badger](https://www.eff.org/privacybadger) is an extension that monitors third-party trackers loaded with web content. It blocks trackers once they appear on different sites. It does not block advertisements in the first place, but since a lot of ads are served based on tracking information these are blocked as well. For more information on the mechanism, see its [FAQ](https://www.eff.org/privacybadger#faq-How-is-Privacy-Badger-different-to-Disconnect,-Adblock-Plus,-Ghostery,-and-other-blocking-extensions?).
+[Privacy Badger](https://www.eff.org/privacybadger) is an extension by the EFF that monitors third-party trackers loaded with web content. It blocks trackers once they appear on different sites. It does not block advertisements in the first place, but since a lot of ads are served based on tracking information these are blocked as well. For more information on the mechanism, see its [FAQ](https://www.eff.org/privacybadger#faq-How-is-Privacy-Badger-different-to-Disconnect,-Adblock-Plus,-Ghostery,-and-other-blocking-extensions?).
 
 ### Disconnect
 
@@ -209,12 +210,6 @@ For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
 
 For more Information visit the [project site](https://github.com/gorhill/uMatrix).
 
-### Cookie Monster
-
-[Cookie Monster](https://addons.mozilla.org/firefox/addon/cookie-monster/) is a similar extension to NoScript but will the goal of managing cookies.
-
-From the preferences for Cookie Monster select "Block All Cookies". Once this is done, just as with NoScript, you can enable the use of cookies for specific pages from either the Cookie Monster icon on the toolbar or by right clicking the page and navigating to Cookie Monster. You have the option to accept cookies from the website in question or alternatively to only temporarily allow cookies for the current session.
-
 ### Cookie AutoDelete
 
 [Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. (Support for clearing LocalStorage was added in version 2.1, but only for Firefox versions 58+. The same release added support for first party isolation, but only for Firefox versions 59+).
@@ -227,7 +222,7 @@ To do this open RefControl's preferences and change the setting for "Default for
 
 **Note:** This extension has not been updated since 2014 and will not work with modern versions of Firefox. However Firefox now has native options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referrer header control](/index.php/Firefox_tweaks#Referrer_header_control "Firefox tweaks").
 
-### RequestPolicy
+### RequestPolicy Continued
 
 [RequestPolicy Continued](https://addons.mozilla.org/firefox/addon/requestpolicy-continued/) (a successor to the original [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/)) is an extension for Mozilla browsers which lets you have control over cross-site requests. It also lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
 

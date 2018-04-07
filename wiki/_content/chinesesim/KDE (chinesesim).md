@@ -404,7 +404,7 @@ KCM 意为 KDE 控制模块（**KC**onfig **M**odule）。这些模块在系统�
 
 *   **wacom tablet** — KDE Wacom 驱动图形界面。
 
-	[https://www.linux-apps.com/p/1127862/](https://www.linux-apps.com/p/1127862/) || [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
+	[https://www.linux-apps.com/p/1127862/](https://www.linux-apps.com/p/1127862/) || [kcm-wacomtablet](https://www.archlinux.org/packages/?name=kcm-wacomtablet)
 
 *   **Kcmsystemd** — KDE 系统控制组件.
 

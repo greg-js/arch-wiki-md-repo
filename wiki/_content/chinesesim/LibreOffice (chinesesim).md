@@ -39,7 +39,7 @@
 
 **注意:**
 
-*   安装过程中至少需要安装一种语言包。默认的语言为Afrikaans (这是因为它是提供的libreoffice语言包的字母排序首位)。如果你想使用UK-English语言包，请安装 [libreoffice-fresh-en-GB](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-GB)或[libreoffice-still-en-GB](https://www.archlinux.org/packages/?name=libreoffice-still-en-GB), 而不是[libreoffice-fresh-uk](https://www.archlinux.org/packages/?name=libreoffice-fresh-uk)，[libreoffice-still-uk](https://www.archlinux.org/packages/?name=libreoffice-still-uk) (Ukrainian)或者 [libreoffice-fresh-br](https://www.archlinux.org/packages/?name=libreoffice-fresh-br)，[libreoffice-still-br](https://www.archlinux.org/packages/?name=libreoffice-still-br) (Breton)!
+*   安装过程中至少需要安装一种语言包。默认的语言为Afrikaans (这是因为它是提供的libreoffice语言包的字母排序首位)。如果你想使用UK-English语言包，请安装 [libreoffice-fresh-en-GB](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-GB)或[libreoffice-still-en-gb](https://www.archlinux.org/packages/?name=libreoffice-still-en-gb), 而不是[libreoffice-fresh-uk](https://www.archlinux.org/packages/?name=libreoffice-fresh-uk)，[libreoffice-still-uk](https://www.archlinux.org/packages/?name=libreoffice-still-uk) (Ukrainian)或者 [libreoffice-fresh-br](https://www.archlinux.org/packages/?name=libreoffice-fresh-br)，[libreoffice-still-br](https://www.archlinux.org/packages/?name=libreoffice-still-br) (Breton)!
 *   对于 SDK - 根据自己安装的libreoffice包的情况可以选择 [libreoffice-fresh-sdk](https://www.archlinux.org/packages/?name=libreoffice-fresh-sdk) 或 [libreoffice-still-sdk](https://www.archlinux.org/packages/?name=libreoffice-still-sdk)
 
 *   For Qt 和 GTK+ 可视化工具, 详见 [#主题](#.E4.B8.BB.E9.A2.98).

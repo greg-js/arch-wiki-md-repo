@@ -44,21 +44,19 @@ Related articles
     *   [6.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
     *   [6.5 Customizing resolv.conf](#Customizing_resolv.conf)
     *   [6.6 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
-    *   [6.7 Hostname problems](#Hostname_problems)
-        *   [6.7.1 Configure dhclient to push the hostname to the DHCP server](#Configure_dhclient_to_push_the_hostname_to_the_DHCP_server)
-        *   [6.7.2 Configure NetworkManager to use a specific DHCP client](#Configure_NetworkManager_to_use_a_specific_DHCP_client)
-    *   [6.8 Missing default route](#Missing_default_route)
-    *   [6.9 3G modem not detected](#3G_modem_not_detected)
-    *   [6.10 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
-    *   [6.11 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
-    *   [6.12 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
-    *   [6.13 Forget hidden wireless network](#Forget_hidden_wireless_network)
-    *   [6.14 VPN not working in GNOME](#VPN_not_working_in_GNOME)
-    *   [6.15 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [6.16 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
-    *   [6.17 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [6.18 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
-    *   [6.19 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [6.7 Missing default route](#Missing_default_route)
+    *   [6.8 3G modem not detected](#3G_modem_not_detected)
+    *   [6.9 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
+    *   [6.10 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
+    *   [6.11 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
+    *   [6.12 Forget hidden wireless network](#Forget_hidden_wireless_network)
+    *   [6.13 VPN not working in GNOME](#VPN_not_working_in_GNOME)
+    *   [6.14 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [6.15 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
+    *   [6.16 Systemd Bottleneck](#Systemd_Bottleneck)
+    *   [6.17 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
+    *   [6.18 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [6.19 Turn off hostname sending](#Turn_off_hostname_sending)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
         *   [7.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
@@ -578,60 +576,6 @@ If you have problems with getting an IP address via DHCP, try to add the followi
 
 Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
-### Hostname problems
-
-NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to its internal DHCP funtionality, if the former is not installed. To make *dhclient* forward the hostname requires to set a non-default option, *dhcpcd* forwards the hostname by default.
-
-First, check which DHCP client is used (*dhclient* in this example):
-
- `# journalctl -b | egrep "dhc"` 
-```
-...
-Nov 17 21:03:20 zenbook dhclient[2949]: Nov 17 21:03:20 zenbook dhclient[2949]: Bound to *:546
-Nov 17 21:03:20 zenbook dhclient[2949]: Listening on Socket/wlan0
-Nov 17 21:03:20 zenbook dhclient[2949]: Sending on   Socket/wlan0
-Nov 17 21:03:20 zenbook dhclient[2949]: XMT: Info-Request on wlan0, interval 1020ms.
-Nov 17 21:03:20 zenbook dhclient[2949]: RCV: Reply message on wlan0 from fe80::126f:3fff:fe0c:2dc.
-
-```
-
-#### Configure dhclient to push the hostname to the DHCP server
-
-Copy the example configuration file:
-
-```
-# cp /usr/share/dhclient/dhclient.conf.example /etc/dhclient.conf
-
-```
-
-Take a look at the file - there will only really be one line we want to keep and *dhclient* will use its defaults (as it has been using if you did not have this file) for the other options. This is the important line:
-
- `/etc/dhclient.conf`  `send host-name = pick-first-value(gethostname(), "ISC-dhclient");` 
-
-Force an IP address renewal by your favorite means, and you should now see your hostname on your DHCP server.
-
-IPv6 push host name:
-
-```
-# cp /usr/share/dhclient/dhclient.conf.example /etc/dhclient6.conf
-
-```
- `/etc/dhclient6.conf`  `send fqdn.fqdn = pick-first-value(gethostname(), "ISC-dhclient");` 
-
-#### Configure NetworkManager to use a specific DHCP client
-
-If you want to explicitly set the DHCP client used by NetworkManager, it can be set in the global configuration:
-
- `/etc/NetworkManager/conf.d/dhcp-client.conf` 
-```
-[main]
-dhcp=internal
-```
-
-The alternative `dhcp=dhclient` is used per default, if this option is not set.
-
-Then [restart](/index.php/Restart "Restart") `NetworkManager.service`.
-
 ### Missing default route
 
 On at least one KDE4 system, no default route was created when establishing wireless connections with NetworkManager. Changing the route settings of the wireless connection to remove the default selection "Use only for resources on this connection" solved the issue.
@@ -737,6 +681,23 @@ Alternatively, if roaming is not important, the periodic scanning behavior can b
 There is an issue with the `ideapad_laptop` module on some Lenovo models due to the wi-fi driver incorrectly reporting a soft block. The card can still be manipulated with `netctl`, but managers like NetworkManager break. You can verify that this is the problem by checking the output of `rfkill list` after toggling your hardware switch and seeing that the soft block persists.
 
 [Unloading](/index.php/Modprobe "Modprobe") the `ideapad_laptop` module should fix this. (**warning**: this may disable the laptop keyboard and touchpad also!).
+
+### Turn off hostname sending
+
+NetworkManager by default sends the hostname to the DHCP server. Hostname sending can only be disabled per connection not globally ([GNOME Bug 768076](https://bugzilla.gnome.org/show_bug.cgi?id=768076)).
+
+To disable sending your hostname to the DHCP server for a specific connection, add the following to your network connection file:
+
+ `/etc/NetworkManager/system-connections/*your_connection_file*` 
+```
+...
+[ipv4]
+dhcp-send-hostname=false
+...
+[ipv6]
+dhcp-send-hostname=false
+...
+```
 
 ## Tips and tricks
 

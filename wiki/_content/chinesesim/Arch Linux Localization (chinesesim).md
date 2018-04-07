@@ -256,9 +256,9 @@ fontconfig的设置文件是`~/.fonts.conf`（用户）或者`/etc/fonts/conf.d`
 
 ### Libreoffice
 
-简体中文用户安装 [libreoffice-fresh-zh-CN](https://www.archlinux.org/packages/?name=libreoffice-fresh-zh-CN) 或 [libreoffice-still-zh-CN](https://www.archlinux.org/packages/?name=libreoffice-still-zh-CN)
+简体中文用户安装 [libreoffice-fresh-zh-CN](https://www.archlinux.org/packages/?name=libreoffice-fresh-zh-CN) 或 [libreoffice-still-zh-cn](https://www.archlinux.org/packages/?name=libreoffice-still-zh-cn)
 
-繁体中文用户安装 [libreoffice-fresh-zh-TW](https://www.archlinux.org/packages/?name=libreoffice-fresh-zh-TW) 或 [libreoffice-still-zh-CN](https://www.archlinux.org/packages/?name=libreoffice-still-zh-CN)
+繁体中文用户安装 [libreoffice-fresh-zh-TW](https://www.archlinux.org/packages/?name=libreoffice-fresh-zh-TW) 或 [libreoffice-still-zh-cn](https://www.archlinux.org/packages/?name=libreoffice-still-zh-cn)
 
 ### Calligra (原 Koffice)
 

@@ -361,8 +361,6 @@ Pagina principale [Unified Extensible Firmware Interface/Hardware](/index.php/Un
 
 ## Creare un dispositivo USB avviabile con UEFI dalla ISO
 
-**Nota:** Le seguenti istruzioni sono specifiche per il supporto ufficiale/[Archiso](/index.php/Archiso "Archiso"); la perparazione di [Archboot](/index.php/Archboot "Archboot") è identica, ma utilizza questo [refind.conf](https://bbs.archlinux.org/viewtopic.php?pid=1190788#p1190788)anziché quello più avanti(che è invece pensato per Archiso) e senza necessità di modificare l'etichetta del filesystem.
-
 **Nota:** Il dispositivo USB può utilizzare il partizionamento MBR che GPT (è quindi possibile utilizzare anche un dispositivo USB già partizionato), il filesystem dovebbe essere FAT32(raccomandato), FAT16\. FAT12 è stato ideato per i dischi Floppy e quindi non è consigliato per le periferiche USB.
 
 Per prima cosa creare una tavola delle partizioni MBR ed almeno una prtizione sul dispositivo USB. Effettuare il mount della ISO scaricata dalla [pagina dei download di Arch Linux](https://www.archlinux.org/download/).

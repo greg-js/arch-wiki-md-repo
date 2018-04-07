@@ -30,17 +30,20 @@ Related articles
     *   [3.3 Auto boot](#Auto_boot)
     *   [3.4 Security](#Security)
     *   [3.5 Chainloading](#Chainloading)
-    *   [3.6 Chainloading other Linux systems](#Chainloading_other_Linux_systems)
-    *   [3.7 Using memtest](#Using_memtest)
-    *   [3.8 HDT](#HDT)
-    *   [3.9 Reboot and power off](#Reboot_and_power_off)
-    *   [3.10 Clear menu](#Clear_menu)
-    *   [3.11 Keyboard layout](#Keyboard_layout)
-    *   [3.12 Hiding the menu](#Hiding_the_menu)
-    *   [3.13 PXELINUX](#PXELINUX)
-    *   [3.14 Booting ISO9660 image files with memdisk](#Booting_ISO9660_image_files_with_memdisk)
-    *   [3.15 Serial console](#Serial_console)
-    *   [3.16 Boot another OS once](#Boot_another_OS_once)
+        *   [3.5.1 Chainloading a partition's VBR](#Chainloading_a_partition.27s_VBR)
+        *   [3.5.2 Chainloading a disk's MBR](#Chainloading_a_disk.27s_MBR)
+        *   [3.5.3 Chainloading other boot loaders](#Chainloading_other_boot_loaders)
+        *   [3.5.4 Chainloading other Linux systems](#Chainloading_other_Linux_systems)
+    *   [3.6 Using memtest](#Using_memtest)
+    *   [3.7 HDT](#HDT)
+    *   [3.8 Reboot and power off](#Reboot_and_power_off)
+    *   [3.9 Clear menu](#Clear_menu)
+    *   [3.10 Keyboard layout](#Keyboard_layout)
+    *   [3.11 Hiding the menu](#Hiding_the_menu)
+    *   [3.12 PXELINUX](#PXELINUX)
+    *   [3.13 Booting ISO9660 image files with memdisk](#Booting_ISO9660_image_files_with_memdisk)
+    *   [3.14 Serial console](#Serial_console)
+    *   [3.15 Boot another OS once](#Boot_another_OS_once)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to load ldlinux](#Failed_to_load_ldlinux)
     *   [4.2 Using the Syslinux prompt](#Using_the_Syslinux_prompt)
@@ -77,19 +80,19 @@ Related articles
 **Note:**
 
 *   [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) is required for [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") support using the automated script.
-*   If your boot partition is FAT, you will also need [mtools](https://www.archlinux.org/packages/?name=mtools).
+*   If your boot partition is [FAT](/index.php/FAT "FAT"), you will also need [mtools](https://www.archlinux.org/packages/?name=mtools).
 
 Installing the package is not the same as installing the bootloader. After installing the relevant package(s), the bootloader code itself needs to be installed (to the adequate area, usually the VBR) so to be able to boot the system; the following sections provide alternative instructions depending on the characteristics of your particular system.
 
 #### Automatic Install
 
-**Note:** The `syslinux-install_update` script is Arch specific, and is not provided/supported by Syslinux upstream. Please direct any bug reports specific to the script to the Arch Bug Tracker and not upstream.
+**Note:** The `syslinux-install_update` script is Arch specific, and is not provided/supported by Syslinux upstream. Please direct any bug reports specific to the script to the [Arch Bug Tracker](https://bugs.archlinux.org/) and not upstream.
 
 *   After executing the `syslinux-install_update` script, do not forget to edit `/boot/syslinux/syslinux.cfg` by following [#Configuration](#Configuration) and [#Kernel parameters](#Kernel_parameters).
 
 **Warning:** The `syslinux-install_update` script sets a default root partition that possibly will not match your particular system. It is important to point Syslinux to the correct root partition by editing `/boot/syslinux/syslinux.cfg`, or the OS will fail to boot. See [#Kernel parameters](#Kernel_parameters).
 
-The `syslinux-install_update` script will install Syslinux, copy `*.c32` modules to `/boot/syslinux`, set the boot flag and install the boot code in the MBR. It can handle [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT") disks along with software RAID:
+The `syslinux-install_update` script will install Syslinux, copy `*.c32` modules to `/boot/syslinux/`, set the boot flag and install the boot code in the MBR. It can handle [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT") disks along with software RAID:
 
 If you use a separate boot partition, make sure that it is mounted. Check with `lsblk`; if you do not see a `/boot` mountpoint, mount it before you go any further.
 
@@ -110,7 +113,7 @@ This can happen, for example, when upgrading from [LILO](/index.php/LILO "LILO")
 *   If you are on another root directory (e.g. from an install disk) install SYSLINUX by directing to the chroot:
 
 ```
-# syslinux-install_update -i -a -m -c /mnt/
+# syslinux-install_update -i -a -m -c /mnt
 
 ```
 
@@ -129,7 +132,7 @@ Your boot partition, on which you plan to install Syslinux, must contain a FAT, 
 
 ```
 
-Copy all `.c32` files from `/usr/lib/syslinux/bios` to `/boot/syslinux` if you desire to use any menus or configurations other than a basic boot prompt. Do not symlink them.
+Copy all `.c32` files from `/usr/lib/syslinux/bios/` to `/boot/syslinux/` if you desire to use any menus or configurations other than a basic boot prompt. Do not symlink them.
 
 ```
 # cp /usr/lib/syslinux/bios/*.c32 /boot/syslinux/     
@@ -194,11 +197,7 @@ For a [GPT](/index.php/GPT "GPT"), ensure bit 2 of the attributes is set for the
 
 This would toggle the attribute *legacy BIOS bootable* on partition 1 of `/dev/sda`. To check:
 
- `# sgdisk /dev/sda --attributes=1:show` 
-```
- 1:2:1 (legacy BIOS bootable)
-
-```
+ `# sgdisk /dev/sda --attributes=1:show`  `1:2:1 (legacy BIOS bootable)` 
 
 Install the MBR:
 
@@ -212,11 +211,8 @@ Install the MBR:
 **Note:**
 
 *   `efi64` denotes x86_64 UEFI systems, for IA32 (32-bit) EFI replace `efi64` with `efi32` in the below commands.
-
 *   For Syslinux, the kernel and initramfs files need to be in the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (aka ESP), as Syslinux does not (currently) have the ability to access files outside its own partition (i.e. outside ESP in this case). For this reason, it is recommended to mount ESP at `/boot`.
-
 *   The automatic install script `/usr/bin/syslinux-install_update` does not support UEFI install.
-
 *   The configuration syntax of `syslinux.cfg` for UEFI is same as that of BIOS.
 
 ### Limitations of UEFI Syslinux
@@ -232,12 +228,11 @@ Install the MBR:
 **Note:** In the commands related to UEFI, `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
 
 *   Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). Then setup Syslinux in the ESP as follows:
-
 *   Copy Syslinux files to ESP:
 
 ```
 # mkdir -p *esp*/EFI/syslinux
-# cp -r /usr/lib/syslinux/efi64/* *esp*/EFI/syslinux/
+# cp -r /usr/lib/syslinux/efi64/ *esp*/EFI/syslinux/
 
 ```
 
@@ -252,9 +247,10 @@ where `/dev/sdXY` is the partition containing the bootloader.
 
 *   Create or edit `*esp*/EFI/syslinux/syslinux.cfg` by following [#Configuration](#Configuration).
 
-**Note:** The config file for UEFI is `*esp*/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI Syslinux.
+**Note:**
 
-**Note:** When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/EFI/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `*esp*/EFI/syslinux/* -> *esp*/EFI/BOOT/*` and `*esp*/EFI/syslinux/syslinux.efi -> *esp*/EFI/BOOT/bootx64.efi`
+*   The config file for UEFI is `*esp*/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI Syslinux.
+*   When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/EFI/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `*esp*/EFI/syslinux/* -> *esp*/EFI/BOOT/*` and `*esp*/EFI/syslinux/syslinux.efi -> *esp*/EFI/BOOT/bootx64.efi`
 
 ## Configuration
 
@@ -287,19 +283,19 @@ Configuration:
 ```
 
 ```
- PROMPT 1
- TIMEOUT 50
- DEFAULT arch
+PROMPT 1
+TIMEOUT 50
+DEFAULT arch
 
- LABEL arch
-         LINUX ../vmlinuz-linux
-         APPEND root=/dev/sda2 rw
-         INITRD ../initramfs-linux.img
+LABEL arch
+	LINUX ../vmlinuz-linux
+	APPEND root=/dev/sda2 rw
+	INITRD ../initramfs-linux.img
 
- LABEL archfallback
-         LINUX ../vmlinuz-linux
-         APPEND root=/dev/sda2 rw
-         INITRD ../initramfs-linux-fallback.img
+LABEL archfallback
+	LINUX ../vmlinuz-linux
+	APPEND root=/dev/sda2 rw
+	INITRD ../initramfs-linux-fallback.img
 
 ```
 
@@ -322,24 +318,24 @@ Configuration:
 ```
 
 ```
- UI menu.c32
- PROMPT 0
+UI menu.c32
+PROMPT 0
 
- MENU TITLE Boot Menu
- TIMEOUT 50
- DEFAULT arch
+MENU TITLE Boot Menu
+TIMEOUT 50
+DEFAULT arch
 
- LABEL arch
-         MENU LABEL Arch Linux
-         LINUX ../vmlinuz-linux
-         APPEND root=/dev/sda2 rw
-         INITRD ../initramfs-linux.img
+LABEL arch
+	MENU LABEL Arch Linux
+	LINUX ../vmlinuz-linux
+	APPEND root=/dev/sda2 rw
+	INITRD ../initramfs-linux.img
 
- LABEL archfallback
-         MENU LABEL Arch Linux Fallback
-         LINUX ../vmlinuz-linux
-         APPEND root=/dev/sda2 rw
-         INITRD ../initramfs-linux-fallback.img
+LABEL archfallback
+	MENU LABEL Arch Linux Fallback
+	LINUX ../vmlinuz-linux
+	APPEND root=/dev/sda2 rw
+	INITRD ../initramfs-linux-fallback.img
 
 ```
 
@@ -356,7 +352,7 @@ Syslinux also allows you to use a graphical boot menu. To use it, copy the `vesa
 
 Copying additional `lib*.c32` library modules might be needed too.
 
-**Note:** If you are using [UEFI](/index.php/UEFI "UEFI"), make sure to copy from `/usr/lib/syslinux/efi64/` (`efi32` for i686 systems), otherwise you will be presented with a black screen. In that case, boot from a live medium and use [chroot](/index.php/Chroot "Chroot") to make the appropriate changes.
+**Note:** If you are using [UEFI](/index.php/UEFI "UEFI"), make sure to copy from `/usr/lib/syslinux/efi64/` (or `efi32` for IA32 (32-bit) EFI systems), otherwise you will be presented with a black screen. In that case, boot from a live medium and use [chroot](/index.php/Chroot "Chroot") to make the appropriate changes.
 
 This configuration uses the same menu design as the Arch Install CD, its config can be found at [projects.archlinux.org](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux). The [Arch Linux background image](https://projects.archlinux.org/archiso.git/plain/configs/releng/syslinux/splash.png) can be downloaded from there, too. Copy the image to `/boot/syslinux/splash.png`.
 
@@ -368,46 +364,46 @@ Configuration:
 ```
 
 ```
- UI vesamenu.c32
- DEFAULT arch
- PROMPT 0
- MENU TITLE Boot Menu
- MENU BACKGROUND splash.png
- TIMEOUT 50
+UI vesamenu.c32
+DEFAULT arch
+PROMPT 0
+MENU TITLE Boot Menu
+MENU BACKGROUND splash.png
+TIMEOUT 50
 
- MENU WIDTH 78
- MENU MARGIN 4
- MENU ROWS 5
- MENU VSHIFT 10
- MENU TIMEOUTROW 13
- MENU TABMSGROW 11
- MENU CMDLINEROW 11
- MENU HELPMSGROW 16
- MENU HELPMSGENDROW 29
+MENU WIDTH 78
+MENU MARGIN 4
+MENU ROWS 5
+MENU VSHIFT 10
+MENU TIMEOUTROW 13
+MENU TABMSGROW 11
+MENU CMDLINEROW 11
+MENU HELPMSGROW 16
+MENU HELPMSGENDROW 29
 
- # Refer to http://www.syslinux.org/wiki/index.php/Comboot/menu.c32
+# Refer to http://www.syslinux.org/wiki/index.php/Comboot/menu.c32
 
- MENU COLOR border       30;44   #40ffffff #a0000000 std
- MENU COLOR title        1;36;44 #9033ccff #a0000000 std
- MENU COLOR sel          7;37;40 #e0ffffff #20ffffff all
- MENU COLOR unsel        37;44   #50ffffff #a0000000 std
- MENU COLOR help         37;40   #c0ffffff #a0000000 std
- MENU COLOR timeout_msg  37;40   #80ffffff #00000000 std
- MENU COLOR timeout      1;37;40 #c0ffffff #00000000 std
- MENU COLOR msg07        37;40   #90ffffff #a0000000 std
- MENU COLOR tabmsg       31;40   #30ffffff #00000000 std
+MENU COLOR border       30;44   #40ffffff #a0000000 std
+MENU COLOR title        1;36;44 #9033ccff #a0000000 std
+MENU COLOR sel          7;37;40 #e0ffffff #20ffffff all
+MENU COLOR unsel        37;44   #50ffffff #a0000000 std
+MENU COLOR help         37;40   #c0ffffff #a0000000 std
+MENU COLOR timeout_msg  37;40   #80ffffff #00000000 std
+MENU COLOR timeout      1;37;40 #c0ffffff #00000000 std
+MENU COLOR msg07        37;40   #90ffffff #a0000000 std
+MENU COLOR tabmsg       31;40   #30ffffff #00000000 std
 
- LABEL arch
-         MENU LABEL Arch Linux
-         LINUX ../vmlinuz-linux
-         APPEND root=/dev/sda2 rw
-         INITRD ../initramfs-linux.img
+LABEL arch
+	MENU LABEL Arch Linux
+	LINUX ../vmlinuz-linux
+	APPEND root=/dev/sda2 rw
+	INITRD ../initramfs-linux.img
 
- LABEL archfallback
-         MENU LABEL Arch Linux Fallback
-         LINUX ../vmlinuz-linux
-         APPEND root=/dev/sda2 rw
-         INITRD ../initramfs-linux-fallback.img
+LABEL archfallback
+	MENU LABEL Arch Linux Fallback
+	LINUX ../vmlinuz-linux
+	APPEND root=/dev/sda2 rw
+	INITRD ../initramfs-linux-fallback.img
 
 ```
 
@@ -469,7 +465,7 @@ APPEND root=/dev/md1 rw md=0,/dev/sda2,/dev/sdb2 md=1,/dev/sda3,/dev/sdb3 md=2,/
 If booting from a software raid partition fails using the kernel device node method above an alternative, a more reliable, way is to use partition labels:
 
 ```
-APPEND root=LABEL=THEROOTPARTITIONLABEL rw
+APPEND root=LABEL=*THEROOTPARTITIONLABEL* rw
 
 ```
 
@@ -508,17 +504,19 @@ The passwd can be either a cleartext password or hashed: [see official documenta
 
 ### Chainloading
 
-**Note:** Syslinux BIOS cannot directly chainload files located on other partitions; however, `chain.c32` can boot a partition boot sector (VBR).
+Syslinux BIOS cannot directly chainload files located on other partitions; however, `chain.c32` can boot a partition boot sector (VBR) or another disk's MBR.
+
+#### Chainloading a partition's VBR
 
 If you want to chainload other operating systems (such as Windows) or boot loaders, copy the `chain.c32` module to the Syslinux directory (additional `lib*.c32` library modules might be needed too; for details, see the instructions in the previous section). Then create a section in the configuration file:
 
  `/boot/syslinux/syslinux.cfg` 
 ```
 ...
- LABEL windows
-         MENU LABEL Windows
-         COM32 chain.c32
-         APPEND hd0 3
+LABEL windows
+	MENU LABEL Windows
+	COM32 chain.c32
+	APPEND hd0 3
 ...
 
 ```
@@ -527,20 +525,22 @@ If you want to chainload other operating systems (such as Windows) or boot loade
 
 **Note:** For Windows, this skips the system's own boot manager (`bootmgr`), which is required for a few important updates ([eg.](http://support.microsoft.com/kb/2883200)) to complete. In such cases it may be advisable to temporarily set the MBR boot flag to the Windows partition (eg. with [GParted](/index.php/GParted "GParted")), let the update finish installing, and then reset the flag to the Syslinux partition (eg. with Windows's own [DiskPart](http://www.online-tech-tips.com/computer-tips/set-active-partition-vista-xp)).
 
+#### Chainloading a disk's MBR
+
 If you are unsure about which drive your BIOS thinks is "first", you can instead use the MBR identifier, or if you are using GPT, the filesystem labels. To use the MBR identifier, run the command
 
  `# fdisk -l /dev/sdb` 
 ```
- Disk /dev/sdb: 128.0 GB, 128035676160 bytes 
- 255 heads, 63 sectors/track, 15566 cylinders, total 250069680 sectors
- Units = sectors of 1 * 512 = 512 bytes
- Sector size (logical/physical): 512 bytes / 512 bytes
- I/O size (minimum/optimal): 512 bytes / 512 bytes
- Disk identifier: 0xf00f1fd3
+Disk /dev/sdb: 128.0 GB, 128035676160 bytes 
+255 heads, 63 sectors/track, 15566 cylinders, total 250069680 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0xf00f1fd3
 
- Device Boot      Start         End      Blocks   Id  System
- /dev/sdb1            2048     4196351     2097152    7  HPFS/NTFS/exFAT
- /dev/sdb2         4196352   250066943   122935296    7  HPFS/NTFS/exFAT
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     4196351     2097152    7  HPFS/NTFS/exFAT
+/dev/sdb2         4196352   250066943   122935296    7  HPFS/NTFS/exFAT
 
 ```
 
@@ -549,25 +549,27 @@ replacing `/dev/sdb` with the drive you wish to chainload. Using the hexadecimal
  `/boot/syslinux/syslinux.cfg` 
 ```
 ...
- LABEL windows
-         MENU LABEL Windows
-         COM32 chain.c32
-         APPEND mbr:0xf00f1fd3
+LABEL windows
+	MENU LABEL Windows
+	COM32 chain.c32
+	APPEND mbr:0xf00f1fd3
 ...
 
 ```
 
 For more details about chainloading, see [the Syslinux wiki](http://www.syslinux.org/wiki/index.php/Comboot/chain.c32).
 
+#### Chainloading other boot loaders
+
 If you have [GRUB](/index.php/GRUB "GRUB") installed on the same partition, you can chainload it by using:
 
  `/boot/syslinux/syslinux.cfg` 
 ```
 ...
- LABEL grub2
-        MENU LABEL Grub2
-        COM32 chain.c32
-        append file=../grub/boot.img
+LABEL grub2
+	MENU LABEL Grub2
+	COM32 chain.c32
+	APPEND file=../grub/boot.img
 ...
 
 ```
@@ -577,17 +579,17 @@ Alternatively, it is also possible to load [GRUB](/index.php/GRUB "GRUB") as a l
  `/boot/syslinux/syslinux.cfg` 
 ```
 ...
- LABEL grub2lnx
-        MENU LABEL Grub2 (lnxboot)
-        LINUX ../grub/i386-pc/lnxboot.img
-        INITRD ../grub/i386-pc/core.img
+LABEL grub2lnx
+	MENU LABEL Grub2 (lnxboot)
+	LINUX ../grub/i386-pc/lnxboot.img
+	INITRD ../grub/i386-pc/core.img
 ...
 
 ```
 
 This may be required for booting from ISO images.
 
-### Chainloading other Linux systems
+#### Chainloading other Linux systems
 
 Chainloading another bootloader such as Windows' is pretty obvious, as there is a definite bootloader to chain to. But with Syslinux, it is only able to load files residing on the same partition as the configuration file. Thus, if you have another version of Linux on a separate partition, without a shared `/boot`, it becomes *necessary* to employ EXTLINUX rather than the other OS's default bootloader (eg. GRUB2). Essentially, EXTLINUX can be installed on the partition superblock/[VBR](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") and be called as a *separate bootloader* right from the MBR installed by Syslinux. EXTLINUX is part of The Syslinux Project and is included with the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package.
 
@@ -613,18 +615,18 @@ Create `/mnt/boot/syslinux/syslinux.cfg`. You can use the other Linux's bootload
 
  `/mnt/boot/syslinux/syslinux.cfg **on /dev/sda3**` 
 ```
-timeout 10
+TIMEOUT 10
 
-ui menu.c32
+UI menu.c32
 
-label OtherLinux
-    linux /boot/vmlinuz-linux
-    initrd /boot/initramfs-linux.img
-    append root=/dev/sda3 rw quiet
+LABEL OtherLinux
+	LINUX /boot/vmlinuz-linux
+	INITRD /boot/initramfs-linux.img
+	APPEND root=/dev/sda3 rw quiet
 
-label MAIN
-    com32 chain.c32
-    append hd0 0
+LABEL MAIN
+	COM32 chain.c32
+	APPEND hd0 0
 
 ```
 
@@ -632,13 +634,11 @@ And then add an entry to your main syslinux.cfg
 
  `/boot/syslinux/syslinux.cfg` 
 ```
-label OtherLinux
-    com32 chain.c32
-    append hd0 3
+LABEL OtherLinux
+	COM32 chain.c32
+	APPEND hd0 3
 
 ```
-
-taken from [Djgera's user wiki page](/index.php/User:Djgera "User:Djgera").
 
 Note that the other Linux entry in `<other-OS>/boot/syslinux/syslinux.cfg` will need to be edited each time you update this OS's kernel unless it has symlinks to its latest kernel and initrd in **/**. Since we are booting the kernel directly and not chainloading the other-OS's default bootloader.
 
@@ -651,14 +651,14 @@ Use this `LABEL` section to launch [memtest](https://en.wikipedia.org/wiki/Memte
  `/boot/syslinux/syslinux.cfg` 
 ```
 ...
- LABEL memtest
-         MENU LABEL Memtest86+
-         LINUX ../memtest86+/memtest.bin
+LABEL memtest
+	MENU LABEL Memtest86+
+	LINUX ../memtest86+/memtest.bin
 ...
 
 ```
 
-**Note:** If you are using PXELINUX, change the name from *memtest.bin* to *memtest* since PXELINUX treats the file with .bin extension as a boot sector and loads only 2KB of it.
+**Note:** If you are using PXELINUX, change the name from `memtest.bin` to `memtest` since PXELINUX treats the file with *.bin* extension as a boot sector and loads only 2KB of it.
 
 ### HDT
 
@@ -666,9 +666,9 @@ Use this `LABEL` section to launch [memtest](https://en.wikipedia.org/wiki/Memte
 
  `/boot/syslinux/syslinux.cfg` 
 ```
- LABEL hdt
-         MENU LABEL Hardware Info
-         COM32 hdt.c32
+LABEL hdt
+	MENU LABEL Hardware Info
+	COM32 hdt.c32
 
 ```
 
@@ -680,13 +680,13 @@ Use the following sections to reboot or power off your machine:
 
  `/boot/syslinux/syslinux.cfg` 
 ```
- LABEL reboot
-         MENU LABEL Reboot
-         COM32 reboot.c32
+LABEL reboot
+	MENU LABEL Reboot
+	COM32 reboot.c32
 
- LABEL poweroff
-         MENU LABEL Power Off
-         COM32 poweroff.c32
+LABEL poweroff
+	MENU LABEL Power Off
+	COM32 poweroff.c32
 
 ```
 
@@ -696,7 +696,7 @@ To clear the screen when exiting the menu, add the following line:
 
  `/boot/syslinux/syslinux.cfg` 
 ```
- MENU CLEAR
+MENU CLEAR
 
 ```
 
@@ -704,7 +704,7 @@ To clear the screen when exiting the menu, add the following line:
 
 If you often have to edit your boot command with diverse parameters in the Syslinux boot prompt, then you might want to remap your keyboard layout. This allows you to enter "=", "/" and other characters easily on a non-US keyboard.
 
-**Note:** keytab-lilo is a perl script invoking the "loadkeys" program.
+**Note:** `keytab-lilo` is a perl script invoking the *loadkeys* program.
 
 To create a compatible keymap (e.g. a german one) run:
 
@@ -729,7 +729,7 @@ Use the option:
 
  `/boot/syslinux/syslinux.cfg` 
 ```
- MENU HIDDEN
+MENU HIDDEN
 
 ```
 
@@ -744,8 +744,8 @@ PXELINUX is provided by the [syslinux](https://www.archlinux.org/packages/?name=
 For BIOS clients, copy the `{l,}pxelinux.0` bootloader to the boot directory of the client. For version 5.00 and newer, also copy `ldlinux.c32` from the same package:
 
 ```
-# cp /usr/lib/syslinux/bios/pxelinux.0 "*TFTP_root*/boot"
-# cp /usr/lib/syslinux/bios/ldlinux.c32 "*TFTP_root*/boot"
+# cp /usr/lib/syslinux/bios/pxelinux.0 "*TFTP_root*/boot/"
+# cp /usr/lib/syslinux/bios/ldlinux.c32 "*TFTP_root*/boot/"
 # mkdir "*TFTP_root*/boot/pxelinux.cfg"
 
 ```
@@ -754,11 +754,11 @@ We also created the `pxelinux.cfg` directory, which is where PXELINUX searches f
 
  `*TFTP_root*/boot/pxelinux.cfg/default` 
 ```
-default linux
+DEFAULT linux
 
-label linux
-kernel vmlinuz-linux
-append initrd=initramfs-linux.img quiet ip=:::::eth0:dhcp nfsroot=10.0.0.1:/arch
+LABEL linux
+	KERNEL vmlinuz-linux
+	APPEND initrd=initramfs-linux.img quiet ip=:::::eth0:dhcp nfsroot=10.0.0.1:/arch
 
 ```
 
@@ -889,9 +889,7 @@ then install and configure Syslinux.
 ### Missing operating system
 
 *   Check that you have installed `gptmbr.bin` for GPT and `mbr.bin` for msdos partition table. A "Missing operating system" message comes from `mbr.bin` while `gptmbr.bin` would show a "Missing OS" message.
-
 *   Check whether the partition that contains `/boot` has the "boot" flag enabled.
-
 *   Check whether the first partition at the boot device starts at sector 1 rather than sector 63 or 2048\. Check this with `fdisk -l`. If it starts at sector 1, you can move the partition(s) with `gparted` from a rescue disk. Or, if you have a separate boot partition, you can back up `/boot` with
 
 ```
@@ -902,7 +900,7 @@ then install and configure Syslinux.
 and then boot up with the Arch install disk. Next, use `cfdisk` to delete the `/boot` partition, and recreate it. This time it should begin at the proper sector, **63**. Now mount your partitions and `chroot` into your mounted system, as described in the beginners guide. Restore `/boot` with the command
 
 ```
-# cp -a /boot.bak/* /boot
+# cp -a /boot.bak/ /boot/
 
 ```
 
@@ -954,9 +952,9 @@ If Windows is installed on a different drive than Arch and you have trouble chai
 
 ```
 LABEL Windows
-       MENU LABEL Windows
-       COM32 chain.c32
-       APPEND mbr:0xdfc1ba9e swap
+	MENU LABEL Windows
+	COM32 chain.c32
+	APPEND mbr:0xdfc1ba9e swap
 
 ```
 
@@ -966,13 +964,13 @@ Replace the mbr code with the one your Windows drive has (details [above](#Chain
 
 In some cases (e.g. bootloader unable to boot kernel) it is highly desirable to get more information from the boot process. *Syslinux* prints error messages to screen but the boot menu quickly overwrites the text. To avoid losing the log information, disable `UI menu` in `syslinux.cfg` and use the default "command-line" prompt. It means:
 
-*   avoid the UI directive
-*   avoid ONTIMEOUT
-*   avoid ONERROR
-*   avoid MENU CLEAR
-*   use a higher TIMEOUT
-*   use PROMPT 1
-*   use DEFAULT <problematic_label>
+*   avoid the `UI` directive
+*   avoid `ONTIMEOUT`
+*   avoid `ONERROR`
+*   avoid `MENU CLEAR`
+*   use a higher `TIMEOUT`
+*   use `PROMPT 1`
+*   use `DEFAULT *problematic_label*`
 
 To get more detailed debug log, [recompile](/index.php/ABS "ABS") the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package with additional CFLAGS:
 

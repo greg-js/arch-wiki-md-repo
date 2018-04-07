@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Apache OpenOffice](/index.php/Apache_OpenOffice "Apache OpenOffice")
+
 Da [Home - LibreOffice](https://it.libreoffice.org/):
 
 	*LibreOffice è la suite Open Source di produttività personale per Windows, Macintosh e Linux, che offre sei applicazioni ricche di funzionalità per tutte le necessità di produzione di documenti ed elaborazione dati: Writer, Calc, Impress, Draw, Math e Base. La nostra grande comunità dedicata di utenti, contributori e sviluppatori offre gratuitamente [supporto](https://it.libreoffice.org/supporto/) e [documentazione](https://it.libreoffice.org/supporto/documentazione/). Anche voi potete [contribuire](https://it.libreoffice.org/contribuire/)!*

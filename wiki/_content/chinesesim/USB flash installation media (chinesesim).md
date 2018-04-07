@@ -200,8 +200,7 @@ $ sudo dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 ```
 
-*   **注意:** 如果用的是 [Archboot](/index.php/Archboot "Archboot")，以下步骤可省略；如果是[Archiso](/index.php/Archiso "Archiso") 则不可。
-    卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2017**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用*gparted*）。 要修改识别的卷标，可以编辑 */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg*、*archiso_sys64.cfg*和*/mnt/usb/loader/entries/archiso-x86_64.conf*中的 `archisolabel=ARCH_2017**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
+*   卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2017**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用*gparted*）。 要修改识别的卷标，可以编辑 */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg*、*archiso_sys64.cfg*和*/mnt/usb/loader/entries/archiso-x86_64.conf*中的 `archisolabel=ARCH_2017**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
 
 **警告:** 错误的卷标或 UUID 会导致启动失败。
 

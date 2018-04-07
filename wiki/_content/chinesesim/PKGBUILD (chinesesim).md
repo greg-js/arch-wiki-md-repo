@@ -13,7 +13,7 @@
 
 **翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-16，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=495729)可以查看翻译后英文页面的改动。
 
-**PKGBUILD**是一个shell脚本，包含 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 在构建软件包时需要的信息。本页面讨论PKGUILD中使用的变量。若要获取PKGBUILD中函数的信息，请参考[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)") 和 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
+**PKGBUILD**是一个shell脚本，包含 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 在构建软件包时需要的信息。本页面讨论PKGUILD中使用的变量。若要获取PKGBUILD中函数的信息，请参考[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)") 和 [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
 Arch Linux 用 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)") 创建软件包。当 **makepkg** 运行时，它会在当前目录寻找 `PKGBUILD` 文件，并依照其中的指令去获取依赖文件，编译出 `pkgname.pkg.tar.xz` 文件。生成的包内有二进制文件和安装指令，可以使用 [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 进行安装。
 
@@ -88,7 +88,7 @@ source=("$pkgname-${pkgver//_/-}.tar.gz")
 
 **Tip:**
 
-*   非常用变量的顺序可以通过 [pacman](/index.php/Pacman "Pacman") 软件包提供的 [vercmp(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vercmp.8) 进行测试.
+*   非常用变量的顺序可以通过 [pacman](/index.php/Pacman "Pacman") 软件包提供的 [vercmp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vercmp.8) 进行测试.
 *   在 PKGBUILD 中定义`pkgver()`，[makepkg](/index.php/Makepkg "Makepkg") 就可以自动 [更新](http://allanmcrae.com/2013/04/pacman-4-1-released/) 此变量。详情参阅 [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines").
 
 ### pkgrel
@@ -110,7 +110,7 @@ epoch=1
 ```
  `1:5.13-2` 
 
-更多信息参见[pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)。
+更多信息参见[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)。
 
 ## 一般变量
 
@@ -250,7 +250,7 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 ### options
 
-这个变量允许你重置`makepkg`的部分默认（定义在`/etc/makepkg.conf`中的）行为。要设置一个选项必须指定选项名。要反转一个默认行为，在选项前加上**`!`** 。 参见 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) 以获取所有可用选项。
+这个变量允许你重置`makepkg`的部分默认（定义在`/etc/makepkg.conf`中的）行为。要设置一个选项必须指定选项名。要反转一个默认行为，在选项前加上**`!`** 。 参见 [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) 以获取所有可用选项。
 
 ### install
 
@@ -323,7 +323,7 @@ noextract=("${source[@]%%::*}")
 
 ### validpgpkeys
 
-PGP 指纹列表。如果使用，*makepkg* 仅接受这里定义的签名，并且忽略密钥环中的值。如果源代码用子密钥加密，*makepkg* 会使用主键进行比较。
+PGP 指纹列表。如果使用，*makepkg* 仅接受这里定义的签名，并且忽略密钥环中的值。如果源代码用子密钥签名，*makepkg* 会使用主密钥进行比较。
 
 仅接受完整签名，必须是大写字母而且不能有空白字符。
 
@@ -341,7 +341,7 @@ Checksums 仅是为了验证下载文件的 *完整性*，而**不是** 它们�
 
 [makepkg](/index.php/Makepkg "Makepkg") 的 `-g`/`--geninteg` 选项可以自动生成校验值，可以通过 `makepkg -g >> PKGBUILD` 命令写入. `updpkgsums` 也可以自动更新 PKGBUILD 中的数值. 两个工具都会自动检测 PKGBUILD 中的算法, 如果没找到就使用 `md5sums`。
 
-要使用的校验算法可以通过 `/etc/makepkg.conf` 中的 `INTEGRITY_CHECK` 选项设置，参考 [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
+要使用的校验算法可以通过 `/etc/makepkg.conf` 中的 `INTEGRITY_CHECK` 选项设置，参考 [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 ### md5sums
 

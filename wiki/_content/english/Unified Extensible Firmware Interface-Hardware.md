@@ -243,7 +243,7 @@ Intel Atom System-on-Chip (SoC) is the Intel's answer to ARM SoC, primarily targ
 
 **Note:** This section was written based on information available online, not based on experience by an actual user of any Intel Atom SoC system.
 
-**Note:** Intel Atom SoC systems that ship with Windows 8/8.1 32-bit provide 32-bit UEFI-only firmware with no BIOS compatibility option (no CSM). In UEFI terms these systems are called Class 3 systems (this term is not specific to 32-bit), ie. UEFI-only with no BIOS CSM. These Atom SoC systems are therefore called as 32-bit UEFI Class 3 systems, and these can be booted only using a 32-bit UEFI bootable USB, which is not provided by default in [Archiso](/index.php/Archiso "Archiso") (official install iso) and [Archboot](/index.php/Archboot "Archboot"). These systems also come with UEFI Secure Boot enabled by default, but the firmware setup provides option(s) to disable Secure Boot as mandated by Microsoft for x86 systems.
+**Note:** Intel Atom SoC systems that ship with Windows 8/8.1 32-bit provide 32-bit UEFI-only firmware with no BIOS compatibility option (no CSM). In UEFI terms these systems are called Class 3 systems (this term is not specific to 32-bit), ie. UEFI-only with no BIOS CSM. These Atom SoC systems are therefore called as 32-bit UEFI Class 3 systems, and these can be booted only using a 32-bit UEFI bootable USB, which is not provided by default in [Archiso](/index.php/Archiso "Archiso") (official install iso) and Archboot. These systems also come with UEFI Secure Boot enabled by default, but the firmware setup provides option(s) to disable Secure Boot as mandated by Microsoft for x86 systems.
 
 **Related Links:**
 

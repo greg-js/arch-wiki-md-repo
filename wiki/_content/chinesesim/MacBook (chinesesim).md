@@ -231,8 +231,6 @@ menuentry "Boot from USB" {
 
 **Note:** 有些MacBook用户反映键盘不能正确响应，那就按照下面的参数来启动光盘。
 
-**Note:** 截止2011年4月30日，MacBook7,1不能从普通的iso镜像启动，但最新的[archboot](/index.php/Archboot "Archboot")应该有用。
-
 ```
 boot: arch noapic irqpoll acpi=force
 

@@ -108,18 +108,24 @@ Next, you need to create a file in the directory with the following content:
     <file>checkbox-off-focused.svg</file>
     <file>checkbox-off.svg</file>
     <file>checkbox.svg</file>
+    <file>close.svg</file>
     <file>close-window-active.svg</file>
     <file>close-window-hover.svg</file>
-    <file>close-window.svg</file>
-    <file>close.svg</file>		
+    <file>close-window.svg</file>    		
     <file>corner-ripple-ltr.png</file>
     <file>corner-ripple-rtl.png</file>
     <file>dash-placeholder.svg</file>
     <file>filter-selected-ltr.svg</file>
-    <file>filter-selected-rtl.svg</file>		
+    <file>filter-selected-rtl.svg</file>
+    <file>gnome-shell.css</file>	
     <file>gnome-shell-high-contrast.css</file>
-    <file>gnome-shell.css</file>
     <file>icons/message-indicator-symbolic.svg</file>
+    <file>key-enter.svg</file>
+    <file>key-hide.svg</file>
+    <file>key-layout.svg</file>
+    <file>key-shift-latched-uppercase.svg</file>
+    <file>key-shift.svg</file>
+    <file>key-shift-uppercase.svg</file>
     <file>logged-in-indicator.svg</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
@@ -537,6 +543,13 @@ GDM uses a separate dconf database to control power management. You can make GDM
 ```
 $ IFS=$'
 '; for x in $(sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
+
+```
+
+Or to simply disable auto-suspend (also run the command with `ac` replaced with `battery` to also disable it while running on battery):
+
+```
+$ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 
 ```
 

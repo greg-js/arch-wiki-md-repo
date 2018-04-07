@@ -170,7 +170,7 @@ Install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and 
 
 	GTK+
 
-The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME Application Style*.
+The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (part of the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME Application Style*.
 
 In some themes, tooltips in GTK+ applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`. It might also help to uncheck the option to *Apply colors to non-Qt applications* under *System Settings* > *Colors*.
 
@@ -235,6 +235,8 @@ There you can also directly download and install more themes with one click, and
 Icon themes can be installed and changed on *System Settings > Icons*.
 
 **Note:** Although all modern Linux desktops share the same icon theme format, desktops like [GNOME](/index.php/GNOME "GNOME") use fewer icons (esp. in menus and toolbars). Themes developed for such desktops usually lack icons required by Plasma and KDE apps. It is recommended to install Plasma compatible icon themes instead.
+
+**Tip:** Since some icon themes do not inherit from the default icon theme, some icons may be missing. To inherit from the Breeze, add `breeze` to the `Inherits=` array in `/usr/share/icon/*theme-name*/index.theme`, for example: `Inherits=breeze,hicolor`. You need to reapply this patch after every update to the icon theme, consider using [Pacman hooks](/index.php/Pacman_hooks "Pacman hooks") to automate the process.
 
 #### Fonts
 
@@ -397,7 +399,7 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 *   **wacom tablet** — KDE GUI for the Wacom Linux Drivers.
 
-	[https://www.linux-apps.com/p/1127862/](https://www.linux-apps.com/p/1127862/) || [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
+	[https://www.linux-apps.com/p/1127862/](https://www.linux-apps.com/p/1127862/) || [kcm-wacomtablet](https://www.archlinux.org/packages/?name=kcm-wacomtablet)
 
 *   **Kcmsystemd** — systemd control module for KDE.
 

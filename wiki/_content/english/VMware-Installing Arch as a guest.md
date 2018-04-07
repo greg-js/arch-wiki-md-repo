@@ -666,7 +666,7 @@ Do not forget to run:
 
 **Tip:** There is an unspecified relationship between it and *gtkmm3* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
 
-The drag-and-drop (copy/paste) feature requires both [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) and [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) packages to be installed in order to work.
+The drag-and-drop (copy/paste) feature requires both [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) and [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) packages to be installed in order to work.
 
 Make the command `vmware-user` run after [X11](/index.php/X11 "X11") by either:
 

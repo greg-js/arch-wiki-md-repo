@@ -12,7 +12,7 @@ Ensure that you have the latest BIOS and EC firmware from [MSI's website](https:
 
 ## Installation
 
-This notebook has a physical hardware button to switch between the Intel and discrete (Nvidia 980m) GPU. Before installing Arch, boot into Windows and use the button to switch to the Intel display adapter. Also [#Networking](#Networking) in Linux might not work out of the box, so you may need to use a USB networking dongle or prepare your own [installation media](/index.php/Archboot "Archboot").
+This notebook has a physical hardware button to switch between the Intel and discrete (Nvidia 980m) GPU. Before installing Arch, boot into Windows and use the button to switch to the Intel display adapter. Also [#Networking](#Networking) in Linux might not work out of the box, so you may need to use a USB networking dongle or prepare your own.
 
 Now you can follow the [installation guide](/index.php/Installation_guide "Installation guide") as usual. Remember to install the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver as well ([Nouveau](/index.php/Nouveau "Nouveau") might not work). After installing, boot back into Windows and use the button to switch the display adapter back to the NVIDIA GPU.
 

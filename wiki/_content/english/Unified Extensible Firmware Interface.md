@@ -185,7 +185,7 @@ There are few tools that can access/modify the UEFI variables, namely
 
 *   **efibootmgr** — Tool to manipulate UEFI Firmware Boot Manager Settings
 
-	[https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) || [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr), [efibootmgr-git](https://aur.archlinux.org/packages/efibootmgr-git/)
+	[https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) || [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)
 
 *   **uefivars** — Dumps list of EFI variables with some additional PCI related info (uses efibootmgr code internally)
 
@@ -193,7 +193,7 @@ There are few tools that can access/modify the UEFI variables, namely
 
 *   **efitools** — Tools for manipulating UEFI secure boot platforms
 
-	[https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git](https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git) || [efitools](https://www.archlinux.org/packages/?name=efitools), [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
+	[https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git](https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git) || [efitools](https://www.archlinux.org/packages/?name=efitools)
 
 *   **Ubuntu's Firmware Test Suite** — Test suite that performs sanity checks on Intel/AMD PC firmware
 
@@ -246,7 +246,7 @@ You can download a BSD licensed UEFI Shell from Intel's Tianocore UDK/EDK2 proje
 *   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream)
 *   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://ptpb.pw/~Shell2.zip) - from Clover EFI bootloader
 
-Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](https://github.com/tianocore/tianocore.github.io/wiki/ShellPkg) and [this mail](http://sourceforge.net/mailarchive/message.php?msg_id=28690732)
+Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](https://github.com/tianocore/tianocore.github.io/wiki/ShellPkg) and [this mail](http://edk2-devel.narkive.com/zCN4CEnb/inclusion-of-uefi-shell-in-linux-distro-iso).
 
 ### Launching UEFI Shell
 
@@ -460,11 +460,11 @@ This issue can occur due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KM
 
 ### Booting 64-bit kernel on 32-bit UEFI
 
-Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso do not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since they use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot 64-bit kernel with 32-bit UEFI you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
+Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso do not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since they use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot a 64-bit kernel with 32-bit UEFI you have to use a boot loader that does not rely on EFI boot stub for launching kernels.
 
 #### Using GRUB
 
-**Tip:** The given configuration entries can also be entered inside a [GRUB command-shell](/index.php/GRUB#Using_the_command_shell "GRUB").
+This section describes how to setup [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader.
 
 *   [Create an editable USB Flash Installation](/index.php/USB_flash_installation_media#Using_manual_formatting "USB flash installation media"). Since we are going to use GRUB, you only need to follow the steps up until the `syslinux` part
 
@@ -477,6 +477,11 @@ Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/inde
 ```
 
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
+
+**Tip:**
+
+*   The archiso label can be aquired from the *.iso* file with `isoinfo` from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) or `iso-info` from [libcdio](https://www.archlinux.org/packages/?name=libcdio).
+*   The given configuration entries can also be entered inside a [GRUB command-shell](/index.php/GRUB#Using_the_command_shell "GRUB").
 
  `grub.cfg for official ISO` 
 ```
@@ -544,12 +549,9 @@ This issue is caused because the motherboards can only load Microsoft Windows. T
 Copy the `bootx64.efi` file from the Arch Linux installation medium (`FSO:`) to the Microsoft directory your [ESP](/index.php/ESP "ESP") partition on your hard drive (`FS1:`). Do this by booting into EFI shell and typing:
 
 ```
-FS1:
-cd EFI
-mkdir Microsoft
-cd Microsoft
-mkdir Boot
-cp FS0:\EFI\BOOT\bootx64.efi FS1:\EFI\Microsoft\Boot\bootmgfw.efi
+Shell> mkdir FS1:\EFI\Microsoft
+Shell> mkdir FS1:\EFI\Microsoft\Boot
+Shell> cp FS0:\EFI\BOOT\bootx64.efi FS1:\EFI\Microsoft\Boot\bootmgfw.efi
 
 ```
 

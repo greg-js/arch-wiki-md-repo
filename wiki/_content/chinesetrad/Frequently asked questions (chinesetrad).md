@@ -231,7 +231,7 @@ $ pacman -Qlq **軟體包名稱** | grep /usr/bin/
 
 ### Q) 我覺得 Arch 需要一個 GUI 安裝程式
 
-**A)** 安裝程式並未被開發人員/使用者排在高優先順序，畢竟安裝不是每天都要做的事(可以參考其他有關「無縫發行」的文章)。[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")和[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")內已經更新了完整的指令安裝方式。若您還時對安裝程式有興趣的話，可以考慮使用 [Archboot](/index.php/Archboot "Archboot")。
+**A)** 安裝程式並未被開發人員/使用者排在高優先順序，畢竟安裝不是每天都要做的事(可以參考其他有關「無縫發行」的文章)。[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")和[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")內已經更新了完整的指令安裝方式。若您還時對安裝程式有興趣的話，
 
 ### Q) 我已經安裝好 Arch，現在正在文字介面 (shell)，我該怎麼辦呢？
 

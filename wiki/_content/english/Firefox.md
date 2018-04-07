@@ -189,7 +189,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 *   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
-*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde5-wallet-password-integrati/), [GNotifier](https://addons.mozilla.org/firefox/addon/gnotifier/) (soon to be [discontinued](https://github.com/mkiol/GNotifier/issues/162)), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/) (or e10s compatible [firefox-extension-unity-launcher-api-e10s](https://aur.archlinux.org/packages/firefox-extension-unity-launcher-api-e10s/)), and [Plasma Integration](https://addons.mozilla.org/firefox/addon/plasma-integration/).
+*   Add-ons may provide some integration, such as [firefox-extension-unity-launcher-api-e10s](https://aur.archlinux.org/packages/firefox-extension-unity-launcher-api-e10s/), and [Plasma Integration](https://addons.mozilla.org/firefox/addon/plasma-integration/).
 
 *   Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 

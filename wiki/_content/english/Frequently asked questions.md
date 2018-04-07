@@ -11,7 +11,7 @@ Related articles
     *   [1.2 Why would I not want to use Arch?](#Why_would_I_not_want_to_use_Arch.3F)
     *   [1.3 What architectures does Arch support?](#What_architectures_does_Arch_support.3F)
     *   [1.4 Does Arch support ARM CPUs?](#Does_Arch_support_ARM_CPUs.3F)
-    *   [1.5 Does Arch follow the FHS?](#Does_Arch_follow_the_FHS.3F)
+    *   [1.5 Does Arch follow the Linux Foundation's Filesystem Hierarchy Standard (FHS)?](#Does_Arch_follow_the_Linux_Foundation.27s_Filesystem_Hierarchy_Standard_.28FHS.29.3F)
     *   [1.6 I am a complete GNU/Linux beginner. Should I use Arch?](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F)
     *   [1.7 Is Arch designed to be used as a server? A desktop? A workstation?](#Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
     *   [1.8 I really like Arch, except the development team needs to implement feature X](#I_really_like_Arch.2C_except_the_development_team_needs_to_implement_feature_X)
@@ -23,14 +23,14 @@ Related articles
     *   [1.14 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
     *   [1.15 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
 *   [2 Package management](#Package_management)
-    *   [2.1 I've found an error with Package X. What should I do?](#I.27ve_found_an_error_with_Package_X._What_should_I_do.3F)
+    *   [2.1 I have found an error with Package X. What should I do?](#I_have_found_an_error_with_Package_X._What_should_I_do.3F)
     *   [2.2 Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing](#Arch_packages_need_to_use_a_unique_naming_convention._.22.pkg.tar.gz.22_and_.22.pkg.tar.xz.22_are_too_long_and.2For_confusing)
     *   [2.3 Pacman needs a library so other applications can easily access package information](#Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
     *   [2.4 Pacman needs feature X!](#Pacman_needs_feature_X.21)
     *   [2.5 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
     *   [2.6 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
     *   [2.7 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
-    *   [2.8 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
+    *   [2.8 Is it possible that there is a major kernel update in the repository, and that some of the driver packages have not been updated?](#Is_it_possible_that_there_is_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_have_not_been_updated.3F)
     *   [2.9 What to do before upgrading?](#What_to_do_before_upgrading.3F)
     *   [2.10 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
     *   [2.11 Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?](#Upstream_project_X_has_released_a_new_version._How_long_will_it_take_for_the_Arch_package_to_update_to_that_new_version.3F)
@@ -69,7 +69,7 @@ Arch only supports the x86_64 (sometimes called amd64) architecture. Support for
 
 No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port of Arch Linux to several ARM platforms. See [[2]](http://ix.io/73w/irc).
 
-### Does Arch follow the [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)?
+### Does Arch follow the Linux Foundation's Filesystem Hierarchy Standard (FHS)?
 
 Arch Linux follows the *file system hierarchy* for operating systems using the [systemd](/index.php/Systemd "Systemd") service manager. See [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) for an explanation of each directory along with their designations. In particular, `/bin`, `/sbin`, and `/usr/sbin` are symbolic links to `/usr/bin`, and `/lib` and `/lib64` are symbolic links to `/usr/lib`.
 
@@ -111,7 +111,7 @@ Possibly so. Feel free to volunteer your time! Visit the [forums](https://bbs.ar
 
 Is your network configured correctly? Have a look at the [Network configuration](/index.php/Network_configuration "Network configuration") article.
 
-Also note that Arch Linux does not come with [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") enabled. Thus, it is possible that if a program on it somehow utilizes your internet connection to the full – regardless if it's over P2P or classic client-server connections – other local ones will find it clogged, resulting in severe lags and timeouts. Relief can be provided by [firewalls](/index.php/Firewalls "Firewalls") such as Shorewall or Vuurmuur; there are also static scripts for [iproute2](https://www.archlinux.org/packages/?name=iproute2) (such as [this derivative](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) of Wondershaper), which allow shaping on the network layer.
+Also note that Arch Linux does not come with [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") enabled. Thus, it is possible that if a program on it somehow utilizes your internet connection to the full – regardless if it is over P2P or classic client-server connections – other local ones will find it clogged, resulting in severe lags and timeouts. Relief can be provided by [firewalls](/index.php/Firewalls "Firewalls") such as Shorewall or Vuurmuur; there are also static scripts for [iproute2](https://www.archlinux.org/packages/?name=iproute2) (such as [this derivative](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) of Wondershaper), which allow shaping on the network layer.
 
 ### Why is Arch using all my RAM?
 
@@ -131,7 +131,7 @@ Swap:          3.0G        881M        2.1G
 
 It is important to note the difference between "free" and "available" memory. In the above example, a laptop with 2.8G of total RAM appears to be using most of it, with only 283M as free memory. However, 1.4G of it is "buff/cache". There is still 1.2G available for starting new applications, without swapping. See `man free(1)` for detail. The result of all this? Performance!
 
-See [this wonderful article](http://www.linuxjournal.com/article/2770) if your curiosity has been piqued! There's also a website dedicated to clearing this confusion: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
+See [this wonderful article](http://www.linuxjournal.com/article/2770) if your curiosity has been piqued! There is also a website dedicated to clearing this confusion: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
 
 ### Where did all my free space go?
 
@@ -141,17 +141,17 @@ The answer to this question depends on your system. There are some [fine utiliti
 
 See the [pacman](/index.php/Pacman "Pacman"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") and [Official repositories](/index.php/Official_repositories "Official repositories") pages for more answers.
 
-### I've found an error with Package X. What should I do?
+### I have found an error with Package X. What should I do?
 
-First, you need to figure out if this error is something the Arch team can fix. Sometimes it's not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an *upstream error*. If it is an Arch problem, there is a series of steps you can take:
+First, you need to figure out if this error is something the Arch team can fix. Sometimes it is not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an *upstream error*. If it is an Arch problem, there is a series of steps you can take:
 
 1.  Search the forums for information. See if anyone else has noticed it.
 2.  Post a [bug report](/index.php/Bug_report "Bug report") with detailed information at [https://bugs.archlinux.org](https://bugs.archlinux.org).
-3.  If you'd like, write a forum post detailing the problem and the fact that you have reported it already. This will help prevent a lot of people from reporting the same error.
+3.  If you would like, write a forum post detailing the problem and the fact that you have reported it already. This will help prevent a lot of people from reporting the same error.
 
 ### Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing
 
-This has been discussed on the Arch mailing list. Some proposed a `.pac` file extension. As far as is currently known, there is no plan to change the package extension. As Tobias Kieslich, one of the Arch devs, put it, "*A package **is** a gzipped* [xz] *tarball! And it can be opened, investigated and manipulated by any tar-capable application. Moreover, the mime-type is automatically detected correctly by most applications.*"
+This has been discussed on the Arch mailing list. Some proposed a *.pac* file extension, but there is no plan to change the package extension. As Tobias Kieslich, one of the Arch developers, put it, "A package **is** a gzipped *[xz]* tarball! And it can be opened, investigated and manipulated by any tar-capable application. Moreover, the mime-type is automatically detected correctly by most applications."
 
 ### Pacman needs a library so other applications can easily access package information
 
@@ -165,7 +165,7 @@ However, the best way to get a feature added to pacman or Arch Linux is to imple
 
 ### I just installed Package X. How do I start it?
 
-If you're using a desktop environment like [KDE](/index.php/KDE "KDE") or [GNOME](/index.php/GNOME "GNOME"), the program should automatically show up in your menu. If you're trying to run the program from a terminal and do not know the binary name, use:
+If you are using a desktop environment like [KDE](/index.php/KDE "KDE") or [GNOME](/index.php/GNOME "GNOME"), the program should automatically show up in your menu. If you are trying to run the program from a terminal and do not know the binary name, use:
 
 ```
 $ pacman -Qlq *package_name* | grep /usr/bin/
@@ -180,11 +180,11 @@ In case of a distribution like Arch, only the latest stable versions of packages
 
 ### What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?
 
-This scenario should not happen at all. Assuming an application called `foobaz` is in one of the official repositories and builds successfully against a new version of a shared library called `libbaz`, it will be updated along with `libbaz`. If, however, it doesn't build successfully, `foobaz` package will have a versioned dependency (e.g. *libbaz 1.5*), and will be removed by pacman during `libbaz` upgrade, due to a conflict.
+This scenario should not happen at all. Assuming an application called `foobaz` is in one of the official repositories and builds successfully against a new version of a shared library called `libbaz`, it will be updated along with `libbaz`. If, however, it does not build successfully, `foobaz` package will have a versioned dependency (e.g. *libbaz 1.5*), and will be removed by pacman during `libbaz` upgrade, due to a conflict.
 
 If `foobaz` is a package that you built yourself and installed from AUR, you should try rebuilding `foobaz` against the new version of `libbaz`. If the build fails, report the bug to the `foobaz` developers.
 
-### Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?
+### Is it possible that there is a major kernel update in the repository, and that some of the driver packages have not been updated?
 
 No, it is not possible. Major kernel updates (e.g. *linux 3.5.0-1* to *linux 3.6.0-1*) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/), then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
 
@@ -204,7 +204,7 @@ Package updates will be released when they are ready. The specific amount of tim
 
 ### Arch needs an installer. Maybe a GUI installer?
 
-Since installation doesn't occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") has been fully updated to use the command-line method.
+Since installation does not occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") has been fully updated to use the command-line method.
 
 ### I installed Arch, and now I am at a shell! What now?
 

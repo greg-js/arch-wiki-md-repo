@@ -220,7 +220,7 @@ Los servidores de réplicas de *pacman* no se sincronizan inmediatamente. Puede 
 
 ### Arch necesita un instalador. ¿Tal vez una instalación a través de GUI?
 
-Dado que la instalación no se produce con frecuencia (léase el resto de este artículo para saber más acerca de lo que significa *rolling release*), no es una alta prioridad para los desarrolladores o usuarios. La [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") y la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") han sido completamente actualizadas para utilizar el método de línea de órdenes. Si todavía está interesado en usar un instalador, considere el uso de [Archboot](/index.php/Archboot "Archboot").
+Dado que la instalación no se produce con frecuencia (léase el resto de este artículo para saber más acerca de lo que significa *rolling release*), no es una alta prioridad para los desarrolladores o usuarios. La [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") y la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") han sido completamente actualizadas para utilizar el método de línea de órdenes.
 
 ### He instalado Arch, ¡y estoy en una shell! ¿Y ahora qué?
 

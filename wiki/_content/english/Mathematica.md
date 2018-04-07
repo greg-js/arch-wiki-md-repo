@@ -102,7 +102,7 @@ Mathematica 11 automatically creates a document folder 'Wolfram Mathematica' in 
 
 ## Troubleshooting
 
-#### Missing symbols
+### Missing symbols
 
 If you have font rendering problems where certain symbols do not show up (i.e. `/` appears as a square), try uninstalling [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica).
 
@@ -110,7 +110,7 @@ Also, try [this](http://mathematica.stackexchange.com/questions/1158/invisible-c
 
 Try having applications use anti-aliasing. For KDE: *System Settings > Application Appearance > Fonts > Use anti-aliasing (Enabled)*
 
-#### HiDPI / Retina Screens
+### HiDPI / Retina Screens
 
 If you have a [HiDPI](/index.php/HiDPI "HiDPI") screen, such as an Apple Retina display, and the main text in Mathematica looks small when you open it, this can be fixed:
 

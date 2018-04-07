@@ -2,6 +2,8 @@ Related articles
 
 *   [mutt](/index.php/Mutt "Mutt")
 *   [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")
+*   [SSMTP](/index.php/SSMTP "SSMTP")
+*   [S-nail](/index.php/S-nail "S-nail")
 
 [msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") compatibility.
 
@@ -136,8 +138,8 @@ $ cat test.mail | msmtp -a default <username>@domain.com
 
 **Tip:** If using Gmail you'll need to either
 
-*   Allow "Less Secure Apps" in *Settings* > *Security*. Make sure to sign out of your other Gmail accounts first because the security settings part of Google Accounts can not manage concurrent sessions of more than one account.
-*   Enable two factor authentication and create an app password.
+*   If you use two factor authentication: [create an app password](https://myaccount.google.com/apppasswords).
+*   Otherwise: [allow less secure apps](https://myaccount.google.com/lesssecureapps). (not recommended)
 
 **Tip:** You can use *--read-envelope-from* instead of *-a default* to automatically chose account by *From:* field in message you are going to send.
 
@@ -287,14 +289,14 @@ You may be affected by this [bug](https://bugs.archlinux.org/task/44994). Recomp
 
 ### Server sent empty reply
 
-If you get a "server sent empty reply" error, add the following line to **~/.msmtprc**:
+If you get a "server sent empty reply" error, this probably means the mail server doesn't allow STARTTLS over port 587, but requires the nonstandard SSL/TLS over port 465.[[1]](https://www.fastmail.com/help/technical/ssltlsstarttls.html)
+
+To let msmtp use SSL/TLS over port 465, add the following line to `~/.msmtprc`:
 
 ```
 tls_starttls off
 
 ```
-
-This allows msmtp to use SSL/TLS (port 465) in place of STARTTLS (port 587) [[1]](https://www.fastmail.com/help/technical/ssltlsstarttls.html).
 
 ### Issues with GSSAPI
 

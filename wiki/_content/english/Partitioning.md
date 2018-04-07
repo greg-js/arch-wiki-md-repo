@@ -199,7 +199,9 @@ One can consider mounting a "data" partition to cover various files to be shared
 
 A [swap](/index.php/Swap "Swap") partition provides memory that can be used as virtual RAM. A [swap file](/index.php/Swap_file "Swap file") should be considered too, as they do not have any performance overhead compared to a partition but are much easier to resize as needed. A swap partition can *potentially* be shared between operating systems, but not if hibernation is used.
 
-Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MiB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MiB) is available, it may be possible to have a smaller swap partition. See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
+Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512 MiB RAM, the 2× rule is usually adequate; if a sufficient amount of RAM (more than 1024 MiB) is available, it may be possible to have a smaller swap partition.
+
+To use hibernation (a.k.a suspend to disk) it is advised to create the swap partition at the size of RAM. Although the kernel will try to compress the suspend-to-disk image to fit the swap space there is no guarantee it will succeed if the used swap space is significantly smaller than RAM. See [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate") for more information.
 
 ### Example layouts
 
@@ -207,7 +209,7 @@ Historically, the general rule for swap partition size was to allocate twice the
 
 #### UEFI/GPT example layout
 
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
+| Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
 | `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | 550 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
@@ -215,7 +217,7 @@ Historically, the general rule for swap partition size was to allocate twice the
 
 #### BIOS/MBR example layout
 
-| Mount point | Partition | [Partition type (ID)](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | [Boot flag](https://en.wikipedia.org/wiki/Boot_flag "wikipedia:Boot flag") | Suggested size |
+| Mount point | Partition | [Partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | [Boot flag](https://en.wikipedia.org/wiki/Boot_flag "wikipedia:Boot flag") | Suggested size |
 | `/` | `/dev/sda1` | `83`: Linux | Yes | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda2` | `82`: Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
 | `/home` | `/dev/sda3` | `83`: Linux | No | Remainder of the device |

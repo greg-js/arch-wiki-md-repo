@@ -4,11 +4,11 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Usage](#Usage)
-        *   [2.1.1 Basic configuration access](#Basic_configuration_access)
-        *   [2.1.2 Chinese punctuation](#Chinese_punctuation)
-        *   [2.1.3 Advanced](#Advanced)
-*   [3 See also](#See_also)
+*   [3 Usage](#Usage)
+    *   [3.1 Selecting Input Method](#Selecting_Input_Method)
+    *   [3.2 Chinese punctuation](#Chinese_punctuation)
+    *   [3.3 Advanced](#Advanced)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -28,6 +28,8 @@ In order for Rime to work, input schemas are needed. Schemas are text files that
 *   Wugniu (Wuu)
 *   Cangjie5
 *   Wubi86
+
+You can switch input schema at any time by pressing `F4` to trigger the program menu. See [Selecting Input Method](/index.php/Rime_IME#Usage.23Selecting_Input_Method "Rime IME").
 
 To customize Rime, you should first create the rime config directory. Assuming you are using [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime):
 
@@ -81,11 +83,20 @@ Note: Tones are optionals but you can type them to filter the list very well. He
 
 Example: if one wants to type `hǎo` to display only Chinese characters that are pronounced this way, one must type `hao<` and it will be automatically converted to hǎo.
 
-#### Usage
+By default, RIME only displays five candidates for input whilst typing. You can change this by setting the `"menu/page_size"` value manually.
+
+ `default.custom.yaml` 
+```
+patch:
+     "menu/page_size": 9
+
+```
+
+## Usage
 
 Rime provides some great features that allow you to write Chinese characters and its punctuation well.
 
-##### Basic configuration access
+### Selecting Input Method
 
 At any time, while running Rime, you can access some basic options with `F4`. The displayed options look like this:
 
@@ -106,7 +117,7 @@ The third one lets you select if you want to type the punctuation in full width 
 
 The last one allows you to switch between traditional Chinese (漢字) and simplified Chinese (汉字).
 
-##### Chinese punctuation
+### Chinese punctuation
 
 You have access to all the Chinese punctuation thanks to Rime. Here is a little table showing you how to type some of them:
 
@@ -130,7 +141,7 @@ _ -> ——
 
 ```
 
-##### Advanced
+### Advanced
 
 Rime allows you to change everything you can imagine and more examples are provided on the website of the project (in Chinese): [https://github.com/rime/home/wiki/CustomizationGuide](https://github.com/rime/home/wiki/CustomizationGuide)
 

@@ -85,7 +85,7 @@ See [nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for more information.
 
 It's also possible to create a separated config file and include it in each server block:
 
- `/etc/nginx/conf/001-cerbot.conf` 
+ `/etc/nginx/conf/001-certbot.conf` 
 ```
 ssl_certificate /etc/letsencrypt/live/*domain*/fullchain.pem; # managed by Certbot
 ssl_certificate_key /etc/letsencrypt/live/*domain*/privkey.pem; # managed by Certbot

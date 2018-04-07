@@ -369,7 +369,7 @@ If you are curious about what is inside the initrd image, you can extract it and
 
 The initrd image is an SVR4 CPIO archive, generated via the `find` and `bsdcpio` commands, optionally compressed with a compression scheme understood by the kernel. For more information on the compression schemes, see [#COMPRESSION](#COMPRESSION).
 
-mkinitcpio includes a utility called `lsinitcpio` which will list and extract the contents of initramfs images.
+mkinitcpio includes a utility called `lsinitcpio` which will list and/or extract the contents of initramfs images.
 
 You can list the files in the image with:
 

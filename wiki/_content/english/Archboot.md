@@ -1,4 +1,6 @@
-Archboot is a set of scripts to generate bootable media for CD/USB/PXE, designed for installation or rescue operation.
+**Warning:** Due to [FS#54817](https://bugs.archlinux.org/task/54817), [archboot](https://www.archlinux.org/packages/?name=archboot) can not be installed due to unfulfilled dependencies as of July 2017\. See also [[1]](https://bugs.archlinux.org/task/54817#comment164735)
+
+Archboot is an unofficial set of scripts to generate bootable media for CD/USB/PXE, designed for installation or rescue operation.
 
 It only runs in RAM, without any special filesystems like squashfs, thus it is limited to the RAM which is installed in your system.
 

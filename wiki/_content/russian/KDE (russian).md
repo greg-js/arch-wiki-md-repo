@@ -371,7 +371,7 @@ SystemGroup sys root lpadmin
 
 **Настройки планшетов Wacom:**
 
-*   [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
+*   [kcm-wacomtablet](https://www.archlinux.org/packages/?name=kcm-wacomtablet)
 
 Множество модулей KCM вы также найдете на [kde-apps.org](http://kde-apps.org/index.php?xcontentmode=273).
 

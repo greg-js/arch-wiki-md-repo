@@ -32,7 +32,7 @@ Un servidor SSH, por defecto, escucha el puerto TCP 22\. Un programa cliente de 
             *   [1.3.3.2 Autenticación de dos factores y claves públicas](#Autenticaci.C3.B3n_de_dos_factores_y_claves_p.C3.BAblicas)
             *   [1.3.3.3 Protección contra ataques de fuerza bruta](#Protecci.C3.B3n_contra_ataques_de_fuerza_bruta)
                 *   [1.3.3.3.1 Usango ufw](#Usango_ufw)
-                *   [1.3.3.3.2 Usango iptables](#Usango_iptables)
+                *   [1.3.3.3.2 Usando iptables](#Usando_iptables)
                 *   [1.3.3.3.3 Utilidades para prevenir ataques de fuerza bruta](#Utilidades_para_prevenir_ataques_de_fuerza_bruta)
             *   [1.3.3.4 Limitar el inicio de sesión como root](#Limitar_el_inicio_de_sesi.C3.B3n_como_root)
                 *   [1.3.3.4.1 Denegar](#Denegar)
@@ -92,7 +92,7 @@ OpenSSH es confundido a veces con OpenSSL por la similitud de nombre, sin embarg
 Para conectarse a un servidor, ejecuta:
 
 ```
-$ ssh -p *puerto* *usuario*@*direción-servidor*
+$ ssh -p *puerto* *usuario*@*dirección-servidor*
 
 ```
 
@@ -118,7 +118,7 @@ Host miServidor
 Con dicha configuración, los siguientes comando son equivalentes:
 
 ```
-$ ssh -p *puerto* *usuario*@*direción-servidor*
+$ ssh -p *puerto* *usuario*@*dirección-servidor*
 $ ssh miServidor
 
 ```
@@ -154,7 +154,7 @@ Banner /etc/issue
 
 ```
 
-Claves de acceso del servidor seran generadas automaticamente por los [archivos de servicio](#Gesti.C3.B3n_del_Demonio) de *sshd*. Si se desea usar una clave especifica, previamente creada, se puede configurar manualmente:
+Claves de acceso del servidor serán generadas automáticamente por los [archivos de servicio](#Gesti.C3.B3n_del_Demonio) de *sshd*. Si se desea usar una clave especifica, previamente creada, se puede configurar manualmente:
 
 ```
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -180,9 +180,9 @@ Port 39901
 1.  `sshd.service`, el cual mantendra el demonio de SSH permanentemente activo y bifurcara para cada conexión entrante. [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh#n16) Es especialmente interesante para sistemas con bastante trafico de SSH. [[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n15)
 2.  `sshd.socket` + `sshd@.service`, el cual inicia una instancia de SSH en demanda. Usando esta configuracion implica que *systemd* escucha el en socket de SSH y solo inicia el demonio cuando hay una conexión entrante. Es el método recomendado para ejecutar `sshd` en casi todos los casos. [[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
 
-Se puede [activar](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") y [activar inicio automatico](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") de `sshd.service` **o de** `sshd.socket` para empezar a usar el demonio.
+Se puede [activar](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") y [activar inicio automático](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") de `sshd.service` **o de** `sshd.socket` para empezar a usar el demonio.
 
-Usando el servico de socket, se necesita [editar](/index.php/Systemd_(Espa%C3%B1ol)#Modificar_los_archivos_de_unidad_suministrados "Systemd (Español)") el archivo de unidad si se desea utilizar un puerto diferente al puert por defecto 22:
+Usando el servicio de socket, se necesita [editar](/index.php/Systemd_(Espa%C3%B1ol)#Modificar_los_archivos_de_unidad_suministrados "Systemd (Español)") el archivo de unidad si se desea utilizar un puerto diferente al puerto por defecto 22:
 
  `# systemctl edit sshd.socket` 
 ```
@@ -194,7 +194,7 @@ ListenStream=12345
 
 **Advertencia:**
 
-*   Usar la opción `sshd.socket` niega la opción `ListenAddress`, asi que aceptara conexiones desde todas la direcciones IP. Para tener el efecto de la opcion `ListenAddress`, se debe especificar la direccion IP *y* el puerto en `ListenStream` (v.g. `ListenStream=192.168.1.100:22`). Además se debe agregar `FreeBind=true` bajo `[Socket]` o de lo contrario definir una dirección IP tendra el mismo efecto de definir `ListenAddress`: el socket no iniciara si la red no está lista.
+*   Usar la opción `sshd.socket` niega la opción `ListenAddress`, asi que aceptara conexiones desde todas la direcciones IP. Para tener el efecto de la opcion `ListenAddress`, se debe especificar la dirección IP *y* el puerto en `ListenStream` (v.g. `ListenStream=192.168.1.100:22`). Además se debe agregar `FreeBind=true` bajo `[Socket]` o de lo contrario definir una dirección IP tendrá el mismo efecto de definir `ListenAddress`: el socket no iniciara si la red no está lista.
 *   Systemd inicia los procesos de manera asíncrona. Si se amarra el demonio SSH a una dirección IP específica `ListenAddress 192.168.1.100` puede ser que no cargue al arranque porque por defecto el archivo sshd.service no depende de que se hayan habilitado las interfaces de red. Cuando se amarre a una dirección IP, es necesario agregar `After=network.target` a un archivo personalizado de sshd.service. Ver [Systemd (Español)#Modificar los archivos de unidad suministrados](/index.php/Systemd_(Espa%C3%B1ol)#Modificar_los_archivos_de_unidad_suministrados "Systemd (Español)").
 
 **Sugerencia:** Cuando se utiliza la activación del socket, ni `sshd.socket` ni `sshd.service` permiten supervisar los intentos de conexión en el registro, pero si lo puede ver al ejecutar `# journalctl /usr/bin/sshd`.
@@ -268,9 +268,9 @@ El concepto de [ataques de fuerza bruta](https://en.wikipedia.org/wiki/es:Ataque
 
 Vea [ufw#Rate limiting with ufw](/index.php/Ufw#Rate_limiting_with_ufw "Ufw").
 
-###### Usango iptables
+###### Usando iptables
 
-Si su sistema ya esta usando iptables, se puede proteger facilmente contra los ataques de fuerza bruta usando la siguientes reglas
+Si su sistema ya esta usando iptables, se puede proteger fácilmente contra los ataques de fuerza bruta usando la siguientes reglas
 
 **Nota:** En este ejemplo el puerto de SSH fue cambiado al puerto TCP 42660.
 
@@ -281,7 +281,7 @@ Antes de usar las siguientes reglas es necesario crear una nueva regla que regis
 
 ```
 
-La primera regla va a ser aplicada a paquetes que senalan el comienzo de nuevas conexiones con destino el puert TCP 42660.
+La primera regla va a ser aplicada a paquetes que señaalan el comienzo de nuevas conexiones con destino el puert TCP 42660.
 
 ```
 # iptables -A INPUT -p tcp -m tcp --dport 42660 -m state --state NEW -m recent --set --name DEFAULT --rsource
@@ -352,7 +352,7 @@ Ahora va a ser incapaz de conectarse por SSH como root, pero todavía será capa
 
 ###### Restringir
 
-Algunas tareas automatizadas realizadas a distancia, como copia de seguridad de todo el sistema, requieren el acceso de root completo. Para permitir que esto se haga de una manera segura, en lugar de desactivar el inicio de sessión de root a través de SSH, es posible permitir las conexiones de root solo para ciertas órdenes seleccionadas. Esto se puede lograr editando `~root/.ssh/authorized_keys`, y anteponiendo la clave deseada, por ejemplo, como sigue:
+Algunas tareas automatizadas realizadas a distancia, como copia de seguridad de todo el sistema, requieren el acceso de root completo. Para permitir que esto se haga de una manera segura, en lugar de desactivar el inicio de sesión de root a través de SSH, es posible permitir las conexiones de root solo para ciertas órdenes seleccionadas. Esto se puede lograr editando `~root/.ssh/authorized_keys`, y anteponiendo la clave deseada, por ejemplo, como sigue:
 
 ```
 command="/usr/lib/rsync/rrsync -ro /" ssh-rsa …
@@ -543,7 +543,7 @@ Para ejecutar aplicaciones X como otro usuario en el servidor SSH, necesita la l
 
 ### Redireccionar otros puertos
 
-Además del soporte integrado de SSH para redirigir X11, dicho soporte se puede usar también para asegurar el canal de cualquier conexión TCP, mediante su redirección local o remota.
+Además del soporte integrado de SSH para redirigir X11, dicho soporte se puede usar también para asegurar el canal de cualquier conexión TCP, mediante su re dirección local o remota.
 
 El reenvío local abre un puerto en la máquina local, a la que se redirigirán las conexiones para el equipo remoto y de ahí a un destino determinado. Muy a menudo, el destino de reenvío será el mismo que el del equipo remoto, proporcionando así un shell seguro y, por ejemplo, una conexión VNC segura, a la misma máquina. El reenvío local se lleva a cabo por medio del parámetro `-L` y la especificación de reenvío se acompaña en forma de `<tunnel port>:<destination address>:<destination port>`.
 
@@ -839,7 +839,7 @@ ip a
 
 ```
 
-Encuentre la interfaz de su dispositivo y busque el campo inet. Luego acceda a la interfaz web de configuración del router, utilizando la IP del router (encontrará esto en la web). Informe a su router para redirigirlo a su IP inet. Vaya a [[6]](http://portforward.com/) para más instrucciones sobre cómo hacerlo para su router en particular.
+Encuentre la interfaz de su dispositivo y busque el campo inet. Luego acceda a la interfaz web de configuración del router, utilizando la IP del router (encontrará esto en la web). Informe a su router para re-dirigirlo a su IP inet. Vaya a [[6]](http://portforward.com/) para más instrucciones sobre cómo hacerlo para su router en particular.
 
 #### ¿Está SSH corriendo y escuchando?
 
@@ -880,7 +880,7 @@ Esto debería mostrar alguna información básica, y luego espere a que todo el 
 
 **Nota:** Pruebe este paso si **sabe** que no está ejecutando ningún cortafuegos y sabe que ha configurado el router para DMZ o ha redirigido el puerto a su equipo y aún no funciona. Aquí encontrará los pasos de diagnóstico y una posible solución.
 
-En algunos casos, su proveedor de Internet podría bloquear el puerto predeterminado (puerto 22 SSH), así que lo que está intentando (apertura de puertos, endurecimiento del apilamiento, defensa contra ataques de saturación, etc.) es estéril. Para confirmar esto, cree un servidor en todas las interfaces (0.0.0.0) y conéctese de forma remota.
+En algunos casos, su proveedor de Internet podría bloquear el puerto predeterminado (puerto 22 SSH), así que lo que está intentando (apertura de puertos, endurecimiento del apilamiento, defensa contra ataques de saturación, etc.) es estéril. Para confirmar esto, cree un servidor en todas las interfaces (0.0.0.0) y conéctelo de forma remota.
 
 Si recibe un mensaje de error similar a este:
 

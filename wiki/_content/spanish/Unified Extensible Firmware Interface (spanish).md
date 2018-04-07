@@ -498,7 +498,7 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 
 *   Este fallo puede deberse a un problema con [KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Pruebe [desactivando KMSdurante](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel mode setting (Español)") el arranque del USB.
 
-*   Si el problema no se debe a KMS, entonces puede ser debido a un error en el arranque de [EFISTUB](/index.php/EFISTUB "EFISTUB") (véase [[2]](https://bugs.archlinux.org/task/33745) y [[3]](https://bbs.archlinux.org/viewtopic.php?id=156670) para obtener más información.). Tanto la ISO Oficial ([Archiso](/index.php/Archiso "Archiso")) como la iso de [Archboot](/index.php/Archboot "Archboot") utilizan EFISTUB (mediante el gestor de arranque [Gummiboot](/index.php/Gummiboot "Gummiboot") para el menú) para iniciar el kernel en modalidad UEFI. En tal caso hay que usar [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") como gestor de arranque de UEFI para el USB siguiendo la sección siguiente.
+*   Si el problema no se debe a KMS, entonces puede ser debido a un error en el arranque de [EFISTUB](/index.php/EFISTUB "EFISTUB") (véase [[2]](https://bugs.archlinux.org/task/33745) y [[3]](https://bbs.archlinux.org/viewtopic.php?id=156670) para obtener más información.). Tanto la ISO Oficial ([Archiso](/index.php/Archiso "Archiso")) utilizan EFISTUB (mediante el gestor de arranque [Gummiboot](/index.php/Gummiboot "Gummiboot") para el menú) para iniciar el kernel en modalidad UEFI. En tal caso hay que usar [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") como gestor de arranque de UEFI para el USB siguiendo la sección siguiente.
 
 #### Utilizar GRUB
 

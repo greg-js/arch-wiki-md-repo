@@ -10,18 +10,17 @@
     *   [1.3 Arch Linux Mobile](#Arch_Linux_Mobile)
     *   [1.4 ArchPwn](#ArchPwn)
     *   [1.5 ArchServer](#ArchServer)
-    *   [1.6 Archboot](#Archboot)
-    *   [1.7 CDN Linux](#CDN_Linux)
-    *   [1.8 Chakra](#Chakra)
-    *   [1.9 ConnochaetOS](#ConnochaetOS)
-    *   [1.10 CTKarchLive](#CTKarchLive)
-    *   [1.11 Elegance](#Elegance)
-    *   [1.12 Kahel OS](#Kahel_OS)
-    *   [1.13 LinHES](#LinHES)
-    *   [1.14 live.linuX-gamers.net](#live.linuX-gamers.net)
-    *   [1.15 Mesk Linux](#Mesk_Linux)
-    *   [1.16 Plugbox Linux](#Plugbox_Linux)
-    *   [1.17 Uzume Linux](#Uzume_Linux)
+    *   [1.6 CDN Linux](#CDN_Linux)
+    *   [1.7 Chakra](#Chakra)
+    *   [1.8 ConnochaetOS](#ConnochaetOS)
+    *   [1.9 CTKarchLive](#CTKarchLive)
+    *   [1.10 Elegance](#Elegance)
+    *   [1.11 Kahel OS](#Kahel_OS)
+    *   [1.12 LinHES](#LinHES)
+    *   [1.13 live.linuX-gamers.net](#live.linuX-gamers.net)
+    *   [1.14 Mesk Linux](#Mesk_Linux)
+    *   [1.15 Plugbox Linux](#Plugbox_Linux)
+    *   [1.16 Uzume Linux](#Uzume_Linux)
 *   [2 Мета-дистрибутивы](#.D0.9C.D0.B5.D1.82.D0.B0-.D0.B4.D0.B8.D1.81.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.B8.D0.B2.D1.8B)
     *   [2.1 archiso](#archiso)
     *   [2.2 Archiso-live](#Archiso-live)
@@ -80,14 +79,6 @@ ArchPwn дистрибутив, во главу угла ставящий без
 *   Домашняя страница: [http://www.archserver.org](http://www.archserver.org)
 *   Форум: [http://bbs.archserver.org](http://bbs.archserver.org)
 *   Документация: [http://docs.archserver.org](http://docs.archserver.org)
-
-### Archboot
-
-[Archboot](/index.php/Archboot "Archboot") предназначен для работ по восстановлению в live-режиме, но так-же может быть легко установлен в качестве стабильной системы. В образе присутствует поддержка как i686, так и x86_64 архитектур. Использует [hwdetect](/index.php/Hwdetect "Hwdetect") и набор скриптов из официальных образов Arch Linux. В live-режиме работает в оперативной памяти с использованием iniramfs и без применения squashfs [https://ru.wikipedia.org/wiki/Squashfs](https://ru.wikipedia.org/wiki/Squashfs) и прочих специализированных файловых систем, поэтому чувствителен к объёму оперативной памяти.
-
-*   Домашняя страница: [https://projects.archlinux.org/?p=archboot.git;a=summary](https://projects.archlinux.org/?p=archboot.git;a=summary)
-*   Форум: [https://bbs.archlinux.org/](https://bbs.archlinux.org/)
-*   Документация: [ftp://ftp.archlinux.org/iso/archboot/Readme.txt](ftp://ftp.archlinux.org/iso/archboot/Readme.txt)
 
 ### CDN Linux
 

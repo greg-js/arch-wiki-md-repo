@@ -73,7 +73,7 @@ Install GRUB on the USB drive:
 In case you want to boot ISOs in UEFI mode, you have to install grub for the UEFI target:
 
 ```
-# grub-install --target x86_64-efi --efi-directory /mnt --boot-directory=/mnt/boot --removable
+# grub-install --target x86_64-efi --removable --boot-directory=/mnt/boot --efi-directory=/mnt
 
 ```
 
@@ -83,11 +83,9 @@ For UEFI, the partition has to be the first one in an MBR partition table and fo
 
 This configuration is useful for creating a universal USB key, bootable everywhere. First of all you must create a [GPT](/index.php/GPT "GPT") partition table on your device. You need at least 3 partitions:
 
-1.  A BIOS boot partition (type EF02)
-2.  An EFI System partition (type EF00 with a [FAT32 filesystem](/index.php/EFI_System_Partition#Format_the_partition "EFI System Partition"))
-3.  Your data partition (use a filesystem supported by [GRUB](/index.php/GRUB "GRUB"))
-
-The BIOS boot partition must be sized 1 MB, while the EFI System partition can be at least as small as 50 MB. The data partition can take up the rest of the space of your drive.
+1.  A BIOS boot partition (type EF02). This partition must be 1 MiB in size
+2.  An EFI System partition (type EF00 with a [FAT32 filesystem](/index.php/EFI_System_Partition#Format_the_partition "EFI System Partition")). This partition can be as small as 50 MiB.
+3.  Your data partition (use a filesystem supported by [GRUB](/index.php/GRUB "GRUB")). This partition can take up the rest of the space of your drive.
 
 Next you must create a hybrid MBR partition table, as setting the boot flag on the protective MBR partition might not be enough.
 
@@ -98,6 +96,11 @@ Hybrid MBR partition table creation example using gdisk:
 
 Command (? for help): r
 Recovery/transformation command (? for help): h
+
+WARNING! Hybrid MBRs are flaky and dangerous! If you decide not to use one,
+just hit the Enter key at the below prompt and your MBR partition table will
+be untouched.
+
 Type from one to three GPT partition numbers, separated by spaces, to be added to the hybrid MBR, in sequence: 1 2 3
 Place EFI GPT (0xEE) partition first in MBR (good for GRUB)? (Y/N): N
 
@@ -129,21 +132,21 @@ You can now install GRUB to support both EFI + GPT and BIOS + GPT/MBR. The GRUB 
 First, you need to mount the EFI System partition and the data partition of your USB drive. Then, you can install GRUB for EFI with:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=/EFI_MOUNTPOINT --boot-directory=/DATA_MOUNTPOINT/boot --removable --recheck
+# grub-install --target=x86_64-efi --recheck --removable --efi-directory=/EFI_MOUNTPOINT --boot-directory=/DATA_MOUNTPOINT/boot
 
 ```
 
 And for BIOS with:
 
 ```
-# grub-install --target=i386-pc --boot-directory=/DATA_MOUNTPOINT/boot --recheck /dev/sdX
+# grub-install --target=i386-pc --recheck --boot-directory=/DATA_MOUNTPOINT/boot /dev/sdX
 
 ```
 
 As an additional fallback, you can also install GRUB on your MBR-bootable data partition:
 
 ```
-# grub-install --target=i386-pc --boot-directory=/DATA_MOUNTPOINT/boot --recheck /dev/sdX3
+# grub-install --target=i386-pc --recheck --boot-directory=/DATA_MOUNTPOINT/boot /dev/sdX3
 
 ```
 

@@ -228,8 +228,6 @@ Arranque el CD/DVD/USB creado. Si desea instalar la Archiso creada **-tal como e
 
 Si no tiene una conexión a Internet en su equipo, o si no quiere descargar todos los paquetes que desea otra vez, siga la Guía, y al llegar a la [Instalación del sistema base](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_el_sistema_base "Beginners' guide (Español)"), en lugar de realizar la descarga, utilice esto: [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync"). (Más información aquí: [Talk:Archiso](/index.php/Talk:Archiso "Talk:Archiso"))
 
-También puede probar: [Archboot](/index.php/Archboot "Archboot"), instalador gráfico.
-
 ## Véase también
 
 *   [Página del proyecto Archiso (en)](https://projects.archlinux.org/?p=archiso.git;a=summary)

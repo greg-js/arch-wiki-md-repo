@@ -7,7 +7,7 @@ Related articles
 *   [Concurrent Versions System](/index.php/Concurrent_Versions_System "Concurrent Versions System")
 
 > I've met people who thought that git is a front-end to GitHub. They were wrong, git is a front-end to the AUR.
-> — Linus Torvalds
+> — Linus Torvalds (as heard by Freddi Fish)
 
 [Git](https://en.wikipedia.org/wiki/Git_(software) is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain [AUR](/index.php/AUR "AUR") packages, as well as many other projects, including sources for the Linux kernel.
 

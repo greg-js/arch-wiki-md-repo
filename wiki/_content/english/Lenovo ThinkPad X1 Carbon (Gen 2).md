@@ -70,9 +70,7 @@ Version: ThinkPad X1 Carbon 2nd
 
 ### UEFI
 
-Installing the system from an [Archboot](/index.php/Archboot "Archboot") device just works.
-
-Alteratively, to manually install using `efibootmgr` (see [Unified Extensible Firmware Interface#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface")), you can run this:
+To manually install using `efibootmgr` (see [Unified Extensible Firmware Interface#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface")), you can run this:
 
 ```
 # efibootmgr -c -d /dev/sda -p 1 -l /EFI/arch_grub/grubx64.efi -L "Arch"

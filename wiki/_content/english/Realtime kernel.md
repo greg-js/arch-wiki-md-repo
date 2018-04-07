@@ -42,7 +42,7 @@ When trying to determine a system's maximum scheduling latency, the system needs
 
 ## Latency testing utilities
 
-There are several tools available to check kernel scheduling latencies, and to track down the causes of latency spikes. One set of tools comes in a package called [rt-tests](https://aur.archlinux.org/packages/rt-tests/).
+There are several tools available to check kernel scheduling latencies, and to track down the causes of latency spikes. One set of tools comes in a package called [rt-tests](https://www.archlinux.org/packages/?name=rt-tests).
 
 ### cyclictest
 

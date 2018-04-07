@@ -88,8 +88,6 @@
 
 *   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") (i.e. version 0.9x) 已被開發者們認為是舊作，在 Arch Linux已經被GRUB2取代 . 參閱最新消息 [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). Upstream recommends GRUB2 >=1.99 over GRUB Legacy, even for current GRUB Legacy users.
 
-*   The [Archboot](/index.php/Archboot "Archboot") ISO的安裝script支援 [grub-bios](https://www.archlinux.org/packages/?name=grub-bios) 和 [grub-efi-x86_64](https://www.archlinux.org/packages/?name=grub-efi-x86_64)的安裝. 舊版官方的安裝script-AIF (Arch Installation Framework)還未支援 GRUB(2)。
-
 *   從 1.99-6版起, GRUB2 支援 [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` filesystem) compressed with either zlib or LZO.
 
 *   For GRUB2 UEFI info, it is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before reading this page.

@@ -190,7 +190,7 @@ $ pacman -Qlq *jmeno_balicku* | grep bin
 
 ### Q) Arch potřebuje instalátor. Možná grafický (GUI) instalátor.
 
-**A)** Jelikož instalace neprobíhá příliš často (přečtěte si prosím zbytek tohoto článku, abyste pochopili význam *rolling release* modelu), nemá tato záležitost vysokou prioritu u vývojářů ani u uživatelů. Stránky [Instalační průvodce](/index.php/Installation_guide_(%C4%8Cesky) "Installation guide (Česky)") a [Příručka začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)") byly plně aktualizovány pro aktuálně používané [instalační skripty](https://projects.archlinux.org/arch-install-scripts.git/). Pokud stále chcete použít instalátor, zvažte použití [Archboot](/index.php/Archboot "Archboot").
+**A)** Jelikož instalace neprobíhá příliš často (přečtěte si prosím zbytek tohoto článku, abyste pochopili význam *rolling release* modelu), nemá tato záležitost vysokou prioritu u vývojářů ani u uživatelů. Stránky [Instalační průvodce](/index.php/Installation_guide_(%C4%8Cesky) "Installation guide (Česky)") a [Příručka začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)") byly plně aktualizovány pro aktuálně používané [instalační skripty](https://projects.archlinux.org/arch-install-scripts.git/).
 
 ### Q) Nainstaloval jsem Arch a teď jsem příkazové řádce. Co teď?
 

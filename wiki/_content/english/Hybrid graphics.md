@@ -81,8 +81,6 @@ Trying \_SB_.PCI0.VGA.PX02: failed
 
 See the "works"? This means the script found a bus which your GPU sits on and it has now turned off the chip. To confirm this, your battery time remaining should have increased.
 
-**Note:** To turn the GPU back on just reboot.
-
 Currently, the chip will turn back on with the next reboot. To get around this, add the kernel module to the array of modules to load at boot:
 
  `/etc/modules-load.d/acpi_call.conf` 
@@ -92,12 +90,12 @@ Currently, the chip will turn back on with the next reboot. To get around this, 
 acpi_call
 ```
 
-To turn off the GPU at boot we could just run the above script but honestly that is not very elegant so instead lets make use of systemd's tmpfiles.
+To turn off the GPU at boot it is possible to use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd").
 
  `/etc/tmpfiles.d/acpi_call.conf` 
 ```
 
-w /proc/acpi/call - - - - \\_SB.PCI0.PEG0.PEGP._OFF
+w /proc/acpi/call - - - - *\\_SB.PCI0.PEG0.PEGP._OFF*
 ```
 
 The above config will be loaded at boot by systemd. What it does is write the specific OFF signal to the `/proc/acpi/call` file. Obviously, replace the `\_SB.PCI0.PEG0.PEGP._OFF` with the one which works on your system (please note that you need to escape the backslash).

@@ -340,7 +340,7 @@ System Settings > Input Devices > Keyboard > Advanced (tab) > "Key Sequence to k
 
 **ضبط لوحيات Wacom**
 
-*   [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
+*   [kcm-wacomtablet](https://www.archlinux.org/packages/?name=kcm-wacomtablet)
 
 يمك العثور على المزيد من وحدات الضبط لِكدي من [kde-apps.org](http://kde-apps.org/index.php?xcontentmode=273).
 

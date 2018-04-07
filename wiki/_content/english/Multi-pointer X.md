@@ -8,9 +8,11 @@ Xorg servers starting from version 1.7 have a feature called "multi-pointer". Ba
 *   [2 Configuration](#Configuration)
     *   [2.1 configuration file](#configuration_file)
     *   [2.2 xinput utility](#xinput_utility)
-*   [3 Software support](#Software_support)
-    *   [3.1 Window managers](#Window_managers)
-*   [4 Useful links](#Useful_links)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Flicker](#Flicker)
+*   [4 Software support](#Software_support)
+    *   [4.1 Window managers](#Window_managers)
+*   [5 Useful links](#Useful_links)
 
 ## Basic concepts
 
@@ -94,6 +96,12 @@ xinput reattach [device id #] "Auxiliary pointer"
 and then do so for your keyboard as well!
 
 Shamelessly stolen from [Antonio Ospite at ao2.it](http://ao2.it/en/blog/2010/01/19/poor-mans-multi-touch-using-multiple-mice-xorg)
+
+## Troubleshooting
+
+### Flicker
+
+The [Compton](/index.php/Compton "Compton") compositor can cause the cursors to flicker and should be disabled.
 
 ## Software support
 

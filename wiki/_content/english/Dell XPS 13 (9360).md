@@ -219,6 +219,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [UGREEN USB Type-C 30W Wall Charger With Power Delivery](https://ugreen.com/product/1258-en.html) | USB-C Power | Not Working |
 | [Xiaomi USB Type-C to HDMI Multifunction Adapter](https://xiaomi-mi.com/accessories-for-laptops/xiaomi-usb-type-c-to-hdmi-multifunction-adapter/) | 4K HDMI, 1x USB 3.0, USB-C Power | Working |
 | [Xiaomi USB Type-C Clip On Car Charger Expansion](https://item.mi.com/1172800036.html?cfrom=list) | USB-C Power | Working |
+| [Hama 135729 Multiport 4 in 1](https://www.amazon.co.uk/Hama-135729-Multiport-USB-HDMI-Adapter/dp/B01MD0FWWY/) | 2 X USB A, USB c, HDMI | Working |
 
 ### Thunderbolt Firmware updates
 

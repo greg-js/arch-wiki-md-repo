@@ -200,10 +200,7 @@ For media formats that are not natively supported by your browser (e.g. most bro
 
 ## Google Hangouts
 
-**Note:**
-
-*   This plugin is not required when using Chromium
-*   Hangouts calling doesn't work in Firefox as of March 2017.[[2]](https://gsuiteupdates.googleblog.com/2017/02/google-hangouts-temporary-issues-with-firefox.html)[[3]](https://support.google.com/hangouts/answer/7334146)
+**Note:** This plugin is not required when using Chromium or Firefox
 
 Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously, or share your screen with others.
 

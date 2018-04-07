@@ -1415,7 +1415,7 @@ See [[8]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#
 
 ### Natural Selection 2
 
-[sndio](https://aur.archlinux.org/packages/sndio/) is required, furthermore, you must also execute
+[sndio](https://www.archlinux.org/packages/?name=sndio) is required, furthermore, you must also execute
 
 ```
 $ ln -s /usr/lib/libsndio.so x64/libsndio.so.6.1

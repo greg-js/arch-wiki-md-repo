@@ -256,7 +256,7 @@ TARGET SOURCE  FSTYPE OPTIONS
 
 ```
 
-参考[efibootmgr(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) 或 [efibootmgr README](https://raw.githubusercontent.com/rhinstaller/efibootmgr/master/README)。
+参考[efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) 或 [efibootmgr README](https://raw.githubusercontent.com/rhinstaller/efibootmgr/master/README)。
 
 **注意:** UEFI 使用反斜杠 `\` 作为路径分隔符 (类似于 Windows 路径)，Efibootmgr 解析路径之前内部会把 `/` 转换为 `\`.
 
@@ -506,7 +506,7 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 ### 在 32 位 UEFI 上启动 64 位内核
 
-官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 和 [Archboot](/index.php/Archboot "Archboot") iso 都用 EFISTUB (通过 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 启动管理器) 来让内核以 UEFI 模式启动。这种情况下参考下文来使用 [GRUB](/index.php/GRUB "GRUB") 作为 USB 的引导器。
+官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 和 都用 EFISTUB (通过 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 启动管理器) 来让内核以 UEFI 模式启动。这种情况下参考下文来使用 [GRUB](/index.php/GRUB "GRUB") 作为 USB 的引导器。
 
 #### 使用 GRUB
 

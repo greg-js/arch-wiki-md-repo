@@ -1,5 +1,3 @@
-**Warning:** Version 1.x of the dnscrypt-proxy client documented below has reached EOL. See [FS#57027](https://bugs.archlinux.org/task/57027). It has been superseded by version 2 [dnscrypt-proxy-go](https://aur.archlinux.org/packages/dnscrypt-proxy-go/) which is a new implementation of the same protocol.
-
 [DNSCrypt](http://dnscrypt.info/) encrypts and authenticates DNS traffic between user and DNS resolver. While IP traffic itself is unchanged, it prevents local spoofing of DNS queries, ensuring DNS responses are sent by the server of choice. [[1]](https://www.reddit.com/r/sysadmin/comments/2hn435/dnssec_vs_dnscrypt/ckuhcbu)
 
 ## Contents
@@ -24,8 +22,6 @@
             *   [3.4.1.1 Create systemd file](#Create_systemd_file)
             *   [3.4.1.2 Add dnscrypt-sockets](#Add_dnscrypt-sockets)
             *   [3.4.1.3 Apply new systemd configuration](#Apply_new_systemd_configuration)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges)
 
 ## Installation
 
@@ -289,17 +285,3 @@ Since we are replacing the default service with a different name, we need to exp
 Now [start/enable](/index.php/Start/enable "Start/enable") the new service(s), e.g., `dnscrypt-proxy@dnscrypt.eu-nl`, etc.
 
 Finally [restart](/index.php/Restart "Restart") `unbound.service`.
-
-## Troubleshooting
-
-### dnscrypt runs with root privileges
-
-See [FS#49881](https://bugs.archlinux.org/task/49881) for more information. To work around this, [edit](/index.php/Edit "Edit") `dnscrypt-proxy.service` to include the following lines:
-
-```
-[Service]
-DynamicUser=yes
-
-```
-
-This method can be combined with [#Sandboxing](#Sandboxing).

@@ -115,8 +115,6 @@ There may be several reasons for this:
 
 	 `# c_rehash /opt/Citrix/ICAClient/keystore/cacerts/` 
 
-	*After the last openssl upgrade, the* c_rehash *command is broken in Arch.*
-
 ## Audio Support
 
 Citrix Receiver uses [ALSA](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture"). If you use [Pulse Audio](https://en.wikipedia.org/wiki/Pulse_Audio "wikipedia:Pulse Audio"), install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).

@@ -497,7 +497,7 @@ Some models may need EFI_ARCH set to i386.
 
 **Note:** This section is only required if you want to have OS X installed along with Arch Linux. If not, follow the steps in the official install guide, then skip to [#Post-installation](#Post-installation).
 
-*   Boot from the Arch Linux install CD, from the latest [Archboot](/index.php/Archboot "Archboot") iso (unofficial), or from a [manually created](/index.php/USB_flash_installation_media#Using_manual_formatting "USB flash installation media") bootable USB drive.
+*   Boot from the Arch Linux install CD, or from a [manually created](/index.php/USB_flash_installation_media#Using_manual_formatting "USB flash installation media") bootable USB drive.
 
 **Note:**
 
@@ -1710,7 +1710,7 @@ and backtraces that causes X11 to crash. This might apply to Version 5,2 assumin
 
 #### Mid 2011 — version 4,x
 
-Works out-of-the-box since kernel 3.2\. It is recommended to use [Archboot](/index.php/Archboot "Archboot"), install [GRUB](/index.php/GRUB "GRUB") and use EFI.
+Works out-of-the-box since kernel 3.2\.
 
 #### Early 2008 — version 1,1
 

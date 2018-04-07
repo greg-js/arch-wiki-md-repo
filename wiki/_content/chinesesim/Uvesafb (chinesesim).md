@@ -1,3 +1,9 @@
+Related articles
+
+*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
+*   [sysctl](/index.php/Sysctl "Sysctl")
+
 **翻译状态：** 本文是英文页面 [Uvesafb](/index.php/Uvesafb "Uvesafb") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-28，点击[这里](https://wiki.archlinux.org/index.php?title=Uvesafb&diff=0&oldid=359183)可以查看翻译后英文页面的改动。
 
 与其他 framebuffer 驱动不同，uvesafb 需要一个叫做 v86d 的用户空间虚拟化守护进程。在 x86 机器上模拟 x86 代码看起来很愚蠢，但若是想在其他架构上使用 framebuffer 代码这就显得很重要了 (尤其是非 x86 架构). 一个新的 framebuffer 驱动已添加到 2.6.24 版的内核中。它比标准的 vesafb 有更多的特性，包括:

@@ -213,7 +213,7 @@ Arch Linux 安裝完成後，若您確定不再使用裡面的安裝媒體，要
 
 ```
 
-*   調整設定檔 archiso_sys32 與 archiso_sys64。如果您打算使用 [Archboot](/index.php/Archboot "Archboot") (非 [Archiso](/index.php/Archiso "Archiso")) 則跳過此步驟。這個指令會將兩個檔案中的 archisolabel 參數 (如 `archisolabel=ARCH_2014XX`) 替換成 archisodevice 參數 (如 `archiso**device**=/dev/disk/by-uuid/47FA-4071`)。
+*   調整設定檔 archiso_sys32 與 archiso_sys64。 (非 [Archiso](/index.php/Archiso "Archiso")) 則跳過此步驟。這個指令會將兩個檔案中的 archisolabel 參數 (如 `archisolabel=ARCH_2014XX`) 替換成 archisodevice 參數 (如 `archiso**device**=/dev/disk/by-uuid/47FA-4071`)。
 
 **警告:** 若硬碟的標記 `ARCH_2014XX` (釋出月份) 或 [UUID](/index.php/UUID "UUID") (視情況而定) 設錯，建立的媒體將無法用來開機。
 
@@ -244,22 +244,13 @@ $ sed -i "s|label=ARCH_.*|device=/dev/disk/by-uuid/$(blkid -o value -s UUID /dev
 
 *   使用 [Rufus USB partitioner](http://rufus.akeo.ie/) 分割並格式化 USB 隨身碟。選擇 **MBR for BIOS and UEFI** 分割計劃選項，檔案系統選擇 **FAT32**。取消勾選「Create a bootable disk using ISO image」和「Create extended label and icon files」選項。
 
-*   將 USB 隨身碟 `X:` 的 **Volume Label** (標籤) 修改成 `<ISO>\loader\entries\archiso-x86_64.conf` 中 `archisolabel=` 部分的 LABEL 名稱。官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 需要這項步驟，[Archboot](/index.php/Archboot "Archboot") 則不需要。
+*   將 USB 隨身碟 `X:` 的 **Volume Label** (標籤) 修改成 `<ISO>\loader\entries\archiso-x86_64.conf` 中 `archisolabel=` 部分的 LABEL 名稱。官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 需要這項步驟，
 
 *   將 ISO 解壓縮 (和解壓縮 ZIP 檔一樣) 到 USB 隨身碟 (使用 [7-Zip](http://7-zip.org/))。
 
 *   從 [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) 下載官方最新 syslinux 6.xx 執行檔 (zip 檔)，將它解壓縮。
 
 *   執行以下指令 (在 Windows 命令提示字元下，用系統管理員身分執行)：
-
-**註記:** Archboot ISO 請使用 `X:\boot\syslinux\`。
-
-```
-> cd bios\
-> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
-> copy mbr\*.bin X:\arch\boot\syslinux\ /y
-
-```
 
 *   執行以下指令將 Syslinux 安裝到 USB (64 位元版 Windows 得使用 `win64\syslinux64.exe`)：
 

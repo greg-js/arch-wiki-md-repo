@@ -52,7 +52,7 @@ FI
   FT(
     AUTHORS( "timetoplatypus" ),
     SPEC( "increment() returns 0 when given the largest integer value" ),
-    increment(INT_MAX) == 0;
+    increment(INT_MAX) == 0
   );
 
 FC
@@ -97,7 +97,7 @@ FI
   FT(
     AUTHORS( "timetoplatypus" ),
     SPEC( "increment() returns 0 when given the largest integer value" ),
-    increment(INT_MAX) == 0;
+    increment(INT_MAX) == 0
   );
 
 FC
@@ -114,3 +114,4 @@ In extended mode,
 ## See also
 
 *   [Faction Releases](https://timetoplatypus.com/static/faction/)
+*   [Faction Example Project](https://github.com/timetoplatypus/three_b)
