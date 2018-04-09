@@ -28,7 +28,7 @@ After creating the [EFI System Partition](/index.php/EFI_System_Partition "EFI S
 
 ## Booting EFISTUB
 
-**Note:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root. For example, if the initramfs is located in `*esp*/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=/EFI/arch/initramfs-linux.img` or `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is in `*esp*/`.
+**Note:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root and use backslashes (in accordance with EFI standards). For example, if the initramfs is located in `*esp*/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is in `*esp*/`.
 
 ### Using a boot manager
 
@@ -40,7 +40,7 @@ It is possible to launch an EFISTUB kernel from UEFI Shell as if it is a normal 
 
 ```
 > fs0:
-> \vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=/initramfs-linux.img
+> \vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=\initramfs-linux.img
 
 ```
 
@@ -61,7 +61,7 @@ UEFI is designed to remove the need for an intermediate bootloader such as [GRUB
 The command looks like
 
 ```
-# efibootmgr --disk */dev/sdX* --part *Y* --create --gpt --label "Arch Linux" --loader /vmlinuz-linux --unicode "root=*/dev/sdBZ* rw initrd=/initramfs-linux.img"
+# efibootmgr --disk */dev/sdX* --part *Y* --create --gpt --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=*/dev/sdBZ* rw initrd=\initramfs-linux.img'
 
 ```
 
@@ -152,7 +152,7 @@ Shell> edit fs1:\options.txt
 In the file add the boot line. For example:
 
 ```
-root=/dev/sda2 ro initrd=/initramfs-linux.img
+root=/dev/sda2 ro initrd=\initramfs-linux.img
 
 ```
 

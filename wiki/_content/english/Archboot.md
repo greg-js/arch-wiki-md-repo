@@ -1,4 +1,4 @@
-**Warning:** Due to [FS#54817](https://bugs.archlinux.org/task/54817), [archboot](https://www.archlinux.org/packages/?name=archboot) can not be installed due to unfulfilled dependencies as of July 2017\. See also [[1]](https://bugs.archlinux.org/task/54817#comment164735)
+**Warning:** Due to [FS#54817](https://bugs.archlinux.org/task/54817), [archboot](https://www.archlinux.org/packages/?name=archboot) can not be installed due to unfulfilled dependencies as of July 2017\. See also [[1]](https://bugs.archlinux.org/task/54817#comment164735).
 
 Archboot is an unofficial set of scripts to generate bootable media for CD/USB/PXE, designed for installation or rescue operation.
 

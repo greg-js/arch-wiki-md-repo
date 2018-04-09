@@ -40,6 +40,7 @@ This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") 
     *   [2.15 Privacy Settings](#Privacy_Settings)
     *   [2.16 Stop Fingerprinting](#Stop_Fingerprinting)
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
+*   [4 See also](#See_also)
 
 ## Configuration tweaks
 
@@ -265,3 +266,8 @@ Several extensions, hidden to the user, are installed by default in `/usr/lib/fi
 *   `shield-recipe-client@mozilla.org.xpi` [SHIELD studies](https://support.mozilla.org/en-US/kb/shield)
 
 See also [[5]](https://dxr.mozilla.org/mozilla-release/source/browser/extensions/) for a full list of system extensions including README files describing their functions.
+
+## See also
+
+*   [privacytools.io Firefox Privacy Add-ons](https://www.privacytools.io/#addons)
+*   [prism-break.org Web Browser Addons](https://prism-break.org/en/categories/gnu-linux/#web-browser-addons)

@@ -7,9 +7,10 @@
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(1) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
 | <small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
-| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small> |
-| <small>1.3.</small> [获取并安装Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") <small>(20)</small> |
-| <small>1.4.</small> [Live Arch系统](/index.php/Category:Live_Arch_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Live Arch systems (简体中文)") <small>(2)</small> |
+| <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch projects (简体中文)") <small>(1)</small> |
+| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small> |
+| <small>1.4.</small> [获取并安装Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") <small>(20)</small> |
+| <small>1.5.</small> [Live Arch系统](/index.php/Category:Live_Arch_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Live Arch systems (简体中文)") <small>(2)</small> |
 | <small>2.</small> [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)") <small>(6)</small> |
 | <small>2.1.</small> [程序启动器](/index.php/Category:Application_launchers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Application launchers (简体中文)") <small>(2)</small> |
 | <small>2.2.</small> [数据压缩和归档](/index.php/Category:Data_compression_and_archiving_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Data compression and archiving (简体中文)") <small>(4)</small> |
@@ -68,7 +69,7 @@
 | <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(34)</small> |
 | <small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.2.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(1)</small> |
-| <small>6.2.1.</small> [FTP servers](/index.php/Category:FTP_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:FTP servers (简体中文)") <small>(1)</small> |
+| <small>6.2.1.</small> [FTP servers](/index.php/Category:FTP_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:FTP servers (简体中文)") <small>(1) (同时还属于 [Servers](/index.php/Category:Servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Servers (简体中文)"))</small> |
 | <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.4.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(17) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
 | <small>6.4.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
@@ -81,10 +82,12 @@
 | <small>6.9.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(4) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.10.</small> [远程桌面](/index.php/Category:Remote_desktop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Remote desktop (简体中文)") <small>(2)</small> |
 | <small>6.11.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
-| <small>6.12.</small> [虚拟网络计算 (VNC)](/index.php/Category:Virtual_Network_Computing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Network Computing (简体中文)") <small>(1)</small> |
-| <small>6.13.</small> [虚拟专用网络 (VPN)](/index.php/Category:Virtual_Private_Network_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Private Network (简体中文)") <small>(4)</small> |
-| <small>6.14.</small> [网页服务器](/index.php/Category:Web_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web server (简体中文)") <small>(9)</small> |
-| <small>6.15.</small> [无线网络](/index.php/Category:Wireless_networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wireless networking (简体中文)") <small>(8)</small> |
+| <small>6.12.</small> [Servers](/index.php/Category:Servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Servers (简体中文)") <small>(0)</small> |
+| <small>6.12.1.</small> [FTP servers](/index.php/Category:FTP_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:FTP servers (简体中文)") <small>(1) (同时还属于 [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)"))</small> |
+| <small>6.13.</small> [虚拟网络计算 (VNC)](/index.php/Category:Virtual_Network_Computing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Network Computing (简体中文)") <small>(1)</small> |
+| <small>6.14.</small> [虚拟专用网络 (VPN)](/index.php/Category:Virtual_Private_Network_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Private Network (简体中文)") <small>(4)</small> |
+| <small>6.15.</small> [网页服务器](/index.php/Category:Web_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web server (简体中文)") <small>(9)</small> |
+| <small>6.16.</small> [无线网络](/index.php/Category:Wireless_networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wireless networking (简体中文)") <small>(8)</small> |
 | <small>7.</small> [软件](/index.php/Category:Software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software (简体中文)") <small>(4)</small> |
 | <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(29)</small> |
 | <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(9)</small> |

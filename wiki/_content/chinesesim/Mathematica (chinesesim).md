@@ -4,7 +4,7 @@
 *   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
 *   [Matlab (简体中文)](/index.php/Matlab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Matlab (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Mathematica](/index.php/Mathematica "Mathematica") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-30，点击[这里](https://wiki.archlinux.org/index.php?title=Mathematica&diff=0&oldid=515047)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Mathematica](/index.php/Mathematica "Mathematica") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=Mathematica&diff=0&oldid=516199)可以查看翻译后英文页面的改动。
 
 [Mathematica](http://www.wolfram.com/mathematica/) 是用于科学，工程和数学领域的商业软件。在这里我们说明如何安装它。
 
@@ -104,7 +104,7 @@ Mathematica 11 在 [$UserDocumentsDirectory](https://reference.wolfram.com/langu
 
 ## 故障排除
 
-#### "Missing symbols" 错误
+### "Missing symbols" 错误
 
 如果出现字体渲染问题，某些符号无法显示（比如 `/` 显示为正方形），请尝试卸载 [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica)。
 
@@ -112,7 +112,7 @@ Mathematica 11 在 [$UserDocumentsDirectory](https://reference.wolfram.com/langu
 
 尝试让应用程序使用抗锯齿。 对于 KDE 用户： *System Settings > Application Appearance > Fonts > Use anti-aliasing (Enabled)*
 
-#### HiDPI / Retina 屏幕
+### HiDPI / Retina 屏幕
 
 如果你有一块 [HiDPI](/index.php/HiDPI "HiDPI") 屏幕，比如 Apple Retina 屏幕，而且 Mathematica 里面的文字非常小，这样就能解决：
 

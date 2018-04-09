@@ -188,16 +188,16 @@ $ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 
 
 #### Дата & время
 
-Если в системе настроен [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon"), он будет эффективно работать также и с GNOME. Если требуется, синхронизация может быть переключена на ручной контроль из меню.
+Если в системе настроен [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon"), то он будет эффективно работать также и с GNOME. Синхронизация может быть переключена на ручной контроль из меню.
 
-Чтобы показывать дату в верхней панели, выполните:
+Чтобы показывать дату в верхней панели:
 
 ```
 $ gsettings set org.gnome.desktop.interface clock-show-date true
 
 ```
 
-Кроме того, чтобы показывать номера недель в календаре, открытом в верхней панели, выполните:
+Кроме того, чтобы показывать номера недель в календаре, открытом в верхней панели:
 
 ```
 $ gsettings set org.gnome.desktop.calendar show-weekdate true
@@ -237,13 +237,13 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 ```
 
-или через *gnome-tweak-tool*.
+или через *gnome-tweak*.
 
 **Примечание:** Драйвер [synaptics](/index.php/Synaptics "Synaptics") не поддерживается GNOME. Вместо него вы должны использовать [libinput](/index.php/Libinput "Libinput"). Смотрите [этот отчет об ошибке](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
 
 #### Сеть
 
-[NetworkManager](/index.php/NetworkManager "NetworkManager") - родной инструмент проекта GNOME для контроля настроек сети. По умолчанию он устанавливается как зависимость пакета [tracker](https://www.archlinux.org/packages/?name=tracker), который является частью группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), и нужно просто [включить](/index.php/NetworkManager#Enable_NetworkManager "NetworkManager") его.
+[NetworkManager](/index.php/NetworkManager "NetworkManager") - родной инструмент проекта GNOME для управления настройками сети. [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) и [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") `NetworkManager.service`.
 
 В отличие от других [менеджеров сети](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet"), которые могут быть также использованы, NetworkManager обеспечивает полную интеграцию через настройки сети оболочки и предоставляет апплет индикатора статуса [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (не требуется для GNOME).
 
@@ -253,7 +253,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 #### Поиск
 
-В GNOME встроен поиск, доступ к которому можно получить, используя клавишу `Super`. [tracker](https://www.archlinux.org/packages/?name=tracker) устанавливается по умолчанию, как часть группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), индексирует приложения и базы метаданных. Настраивается при помощи *Поиск и индексация*; мониторинг состояния посредством *tracker-control*. Автоматически запускается *gnome-session* при входе в систему. Можно запустить вручную: `tracker-control -s`. Параметры поиска также могут быть настроены из панели *Все параметры*.
+Чтобы воспользоваться поиском GNOME нужно нажать `Super` и просто начать печатать. [tracker](https://www.archlinux.org/packages/?name=tracker) устанавливается по умолчанию, как часть группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), и индексирует приложения и базы метаданных. Настраивается при помощи *Поиск и индексация*; мониторинг состояния производится посредством *tracker-control*. Он автоматически запускается *gnome-session* при входе в систему. Можно запустить вручную: `tracker-control -s`. Параметры поиска также могут быть настроены из панели *Все параметры*.
 
 Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства [tracker-sparql(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1).
 

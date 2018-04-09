@@ -1068,11 +1068,11 @@ You can use the following website to get your device's coordinates along with a 
 4.599795, -74.129656 "frealgagu" # Bogotá, Colombia
 37.348667, -121.93664499999998 "Taigrr" # California, USA
 15.3896076, 73.88307 "Rushikesh" # BITS Pilani, K K Birla Goa Campus, Goa, India
-40.70872222, -73.60250000 "pigeoncapo" # Hempstead, New York, USA
 55.987729, -3.223113 "Milk" # Edinburgh, Scotland
 45.514792, 9.137568 "Miako" # Milan, Italy
 41.557541, 2.095498 "Pol_M" # Sabadell, Barcelona, Spain
 38.220896,-85.6336618 "Wake" # Louisville, KY, USA
 40.018506,-105.084561 "enzobarrett" # Lafayette, CO, USA
+40.708693,-73.602507 "railbird" # Hempstead, NY, USA
 
 ```

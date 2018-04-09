@@ -15,7 +15,7 @@ The idea is to use the built-in fingerprint reader in some notebooks for login u
 *   [2 Installation](#Installation)
 *   [3 Configuration](#Configuration)
     *   [3.1 Login configuration](#Login_configuration)
-    *   [3.2 Create fingeprint signature](#Create_fingeprint_signature)
+    *   [3.2 Create fingerprint signature](#Create_fingerprint_signature)
     *   [3.3 Restrict enrolling](#Restrict_enrolling)
 
 ## Prerequisites
@@ -51,7 +51,7 @@ This tries to use fingerprint login first, and if it fails or if it finds no fin
 
 You can also modify other files in `/etc/pam.d/` in the same way, for example `/etc/pam.d/polkit-1` for GNOME polkit authentication.
 
-### Create fingeprint signature
+### Create fingerprint signature
 
 To add a signature for a finger, run
 

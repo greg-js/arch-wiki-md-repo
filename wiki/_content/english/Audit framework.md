@@ -29,6 +29,18 @@ Install a custom kernel with `CONFIG_AUDIT` enabled. You can also install [linux
 
 Install [audit](https://www.archlinux.org/packages/?name=audit) and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `auditd.service`.
 
+**Note:** The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package by default sets `audit=0` in [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") which conflicts with `ConditionKernelCommandLine=!audit=0` set in `/usr/lib/systemd/system/auditd.service`. To overcome this you may override `auditd.service` settings with:
+```
+# systemctl edit auditd.service
+
+```
+ `/etc/systemd/system/auditd.service.d/override.conf` 
+```
+[Unit]
+ConditionKernelCommandLine=
+ConditionKernelCommandLine=audit=1
+```
+
 Audit framework is composed of the auditd daemon, responsible for writing the audit messages that were generated through the audit kernel interface and triggered by application and system activity.
 
 This daemon can be controlled by several commands and files:

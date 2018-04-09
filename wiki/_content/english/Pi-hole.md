@@ -6,7 +6,7 @@ Related articles
 *   [Nginx](/index.php/Nginx "Nginx")
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 
-[Pi-hole](https://pi-hole.net/) is a shell-script based project that manages blocklists of known IP addresses known to host advertisements and malware through a seamless interaction with [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to simply drop all any bad request. Running it effectively deploys network-wide adblocking without the need to configure individual clients. The package comes with a web and a CLI interface.
+[Pi-hole](https://pi-hole.net/) is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole) that compiles a blocklist of domains known to host advertisements and malware from multiple third-party sources. Pi-hole uses [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to seamlessly drop any and all requests for domains in its blocklist. Running it effectively deploys network-wide ad-blocking without the need to configure individual clients. The package comes with a web and a CLI interface.
 
 ## Contents
 
@@ -45,7 +45,7 @@ Related articles
 
 #### Dnsmasq
 
-Ensure that the following line in `/etc/dnsmasq.conf` is uncommented:
+Ensure that the following line in `/etc/dnsmasq.conf` is not commented out:
 
 ```
 conf-dir=/etc/dnsmasq.d/,*.conf

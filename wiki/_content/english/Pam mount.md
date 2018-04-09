@@ -22,7 +22,10 @@ Edit `/etc/security/pam_mount.conf.xml` as follows:
 
  `/etc/security/pam_mount.conf.xml` 
 ```
-<volume user="*USERNAME*" fstype="auto" path="/dev/*sdaX*" mountpoint="/home" options="fsck,noatime" />
+  <!-- Generic encrypted partition example -->
+  <volume user="*USERNAME*" fstype="auto" path="/dev/*sdaX*" mountpoint="/home" options="fsck,noatime" />
+
+  <!-- Example using CIFS -->
   <volume
       fstype="cifs"
       server="*server.example.com*"
@@ -42,7 +45,7 @@ Notes:
 *   `*USERNAME*` should be replaced with your user name.
 *   `/dev/*sdaX*` should be replaced with the corresponding device or container file.
 *   `fstype="auto"` can be changed to any `*type*` that is present in `/usr/bin/mount.*type*`. `"auto"` should work fine in most cases. Use `fstype="crypt"` so that the loop device gets closed at logout for volumes needing it.
-*   Add mount options, if needed. Note that `mount.cifs` does not read `smb.conf` and so all options must be specified. In the example, `uid` matches the local `smb.conf` parameter idmap config ... : range = so that *pam_mount* is not called for a Unix only user. Kerberos is indicated by krb5, SMB3.0 is specified because the other end may not support SMB1 which is the default. Signing is enabled with the i on the end of krb5i. See [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more details.
+*   Add mount options, if needed. Note that `mount.cifs` does not read `smb.conf` and so all options must be specified. In the example, `uid` matches the local `smb.conf` parameter idmap config ... : range = so that *pam_mount* is not called for a Unix only user. Kerberos is indicated by krb5, SMB3.0 is specified because the other end may not support SMB1 which is the default. Signing is enabled with the i on the end of krb5i. See [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more details.
 
 ### Veracrypt volumes
 

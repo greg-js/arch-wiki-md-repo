@@ -563,13 +563,9 @@ These steps should help if your computer has this chipset:
 
 *   Find your NIC in *lspci* output:
 
- `$ lspci | grep Ethernet` 
-```
-02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)
+ `$ lspci | grep Ethernet`  `02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)` 
 
-```
-
-*   If your wired networking is not functioning in some way or another, try unplugging your cable then doing the following:
+*   If your wired networking is not functioning in some way or another, unplug your cable then do the following:
 
 ```
 # modprobe -r tg3
@@ -578,12 +574,16 @@ These steps should help if your computer has this chipset:
 
 ```
 
-*   Plug your network cable in. If this solves your problems you can make this permanent by adding `broadcom` and `tg3` (in this order) to the `MODULES` array in `/etc/mkinitcpio.conf`:
+*   Plug your network cable back in and check whether the module succeeded with:
 
 ```
-MODULES=".. broadcom tg3 .."
+$ dmesg | greg tg3
 
 ```
+
+*   If this procedure solved the issue you can make it permanent by adding `broadcom` and `tg3` (in this order) to the `MODULES` array:
+
+ `/etc/mkinitcpio.conf`  `MODULES=(.. broadcom tg3 ..)` 
 
 *   Rebuild the initramfs:
 

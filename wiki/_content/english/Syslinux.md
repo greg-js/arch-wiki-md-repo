@@ -5,7 +5,7 @@ Related articles
 
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from drives, CDs, and over the network via [PXE](/index.php/PXE "PXE"). Some of the supported [file systems](/index.php/File_systems "File systems") are [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and uncompressed single-device [Btrfs](/index.php/Btrfs "Btrfs").
 
-**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[1]](http://www.syslinux.org/wiki/index.php/Filesystem) for more information.
+**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[1]](https://www.syslinux.org/wiki/index.php/Filesystem) for more information.
 
 **Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading) on how to work around this.
 
@@ -70,8 +70,8 @@ Related articles
 4.  **Stage 2 : Part 2** - **Execute `/boot/syslinux/ldlinux.sys`** - The VBR will load the rest of `/boot/syslinux/ldlinux.sys`. The sector location of `/boot/syslinux/ldlinux.sys` should not change, otherwise syslinux will not boot.
     **Note:** In the case of [Btrfs](/index.php/Btrfs "Btrfs"), the above method will not work since files move around resulting in changing of the sector location of `ldlinux.sys`. Therefore, in Btrfs the entire `ldlinux.sys` code is embedded in the space following the VBR and is not installed at `/boot/syslinux/ldlinux.sys` unlike the case of other filesystems.
 
-5.  **Stage 3** - **Load `/boot/syslinux/ldlinux.c32`** - The `/boot/syslinux/ldlinux.sys` will load the `/boot/syslinux/ldlinux.c32` (core module) that contains the rest of the **core** part of syslinux that could not be fit into `ldlinux.sys` (due to file-size constraints). The `ldlinux.c32` file should be present in every Syslinux installation and should match the version of `ldlinux.sys` installed in the partition. Otherwise Syslinux will fail to boot. See [http://bugzilla.syslinux.org/show_bug.cgi?id=7](http://bugzilla.syslinux.org/show_bug.cgi?id=7) for more info.
-6.  **Stage 4** - **Search and Load configuration file** - Once Syslinux is fully loaded, it looks for `/boot/syslinux/syslinux.cfg` (or `/boot/syslinux/extlinux.conf` in some cases) and loads it if it is found. If no configuration file is found, you will be dropped to a Syslinux `boot:` prompt. This step and the rest of **non-core** parts of Syslinux (`/boot/syslinux/*.c32` modules, excluding `lib*.c32` and `ldlinux.c32`) require `/boot/syslinux/lib*.c32` (library) modules to be present ([http://www.syslinux.org/wiki/index.php/Common_Problems#ELF](http://www.syslinux.org/wiki/index.php/Common_Problems#ELF)). The `lib*.c32` library modules and non-core `*.c32` modules should match the version of `ldlinux.sys` installed in the partition.
+5.  **Stage 3** - **Load `/boot/syslinux/ldlinux.c32`** - The `/boot/syslinux/ldlinux.sys` will load the `/boot/syslinux/ldlinux.c32` (core module) that contains the rest of the **core** part of syslinux that could not be fit into `ldlinux.sys` (due to file-size constraints). The `ldlinux.c32` file should be present in every Syslinux installation and should match the version of `ldlinux.sys` installed in the partition. Otherwise Syslinux will fail to boot. See [https://bugzilla.syslinux.org/show_bug.cgi?id=7](https://bugzilla.syslinux.org/show_bug.cgi?id=7) for more info.
+6.  **Stage 4** - **Search and Load configuration file** - Once Syslinux is fully loaded, it looks for `/boot/syslinux/syslinux.cfg` (or `/boot/syslinux/extlinux.conf` in some cases) and loads it if it is found. If no configuration file is found, you will be dropped to a Syslinux `boot:` prompt. This step and the rest of **non-core** parts of Syslinux (`/boot/syslinux/*.c32` modules, excluding `lib*.c32` and `ldlinux.c32`) require `/boot/syslinux/lib*.c32` (library) modules to be present ([https://www.syslinux.org/wiki/index.php/Common_Problems#ELF](https://www.syslinux.org/wiki/index.php/Common_Problems#ELF)). The `lib*.c32` library modules and non-core `*.c32` modules should match the version of `ldlinux.sys` installed in the partition.
 
 ### Installation on BIOS
 
@@ -217,11 +217,11 @@ Install the MBR:
 
 ### Limitations of UEFI Syslinux
 
-*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report: [[3]](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
-*   Using TAB to edit kernel parameters in UEFI Syslinux menu might lead to garbaged display (text on top of one another). Bug report: [[4]](http://bugzilla.syslinux.org/show_bug.cgi?id=9)
-*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Enhancement request: [[5]](http://bugzilla.syslinux.org/show_bug.cgi?id=17)
-*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports: [[6]](http://bugzilla.syslinux.org/show_bug.cgi?id=21), [[7]](http://bugzilla.syslinux.org/show_bug.cgi?id=23) and [[8]](http://bugzilla.syslinux.org/show_bug.cgi?id=72)
-*   Memdisk is not available for UEFI. Enhancement request: [[9]](http://bugzilla.syslinux.org/show_bug.cgi?id=30)
+*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report: [[3]](https://bugzilla.syslinux.org/show_bug.cgi?id=8)
+*   Using TAB to edit kernel parameters in UEFI Syslinux menu might lead to garbaged display (text on top of one another). Bug report: [[4]](https://bugzilla.syslinux.org/show_bug.cgi?id=9)
+*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Enhancement request: [[5]](https://bugzilla.syslinux.org/show_bug.cgi?id=17)
+*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports: [[6]](https://bugzilla.syslinux.org/show_bug.cgi?id=21), [[7]](https://bugzilla.syslinux.org/show_bug.cgi?id=23) and [[8]](https://bugzilla.syslinux.org/show_bug.cgi?id=72)
+*   Memdisk is not available for UEFI. Enhancement request: [[9]](https://bugzilla.syslinux.org/show_bug.cgi?id=30)
 
 ### Installation on UEFI
 
@@ -339,7 +339,7 @@ LABEL archfallback
 
 ```
 
-For more details about the menu system, see [the Syslinux wiki](http://www.syslinux.org/wiki/index.php/Menu).
+For more details about the menu system, see [the Syslinux wiki](https://www.syslinux.org/wiki/index.php/Menu).
 
 #### Graphical boot menu
 
@@ -381,7 +381,7 @@ MENU CMDLINEROW 11
 MENU HELPMSGROW 16
 MENU HELPMSGENDROW 29
 
-# Refer to http://www.syslinux.org/wiki/index.php/Comboot/menu.c32
+# Refer to https://www.syslinux.org/wiki/index.php/Comboot/menu.c32
 
 MENU COLOR border       30;44   #40ffffff #a0000000 std
 MENU COLOR title        1;36;44 #9033ccff #a0000000 std
@@ -430,7 +430,7 @@ VESA standards are commonly a maximum of 25 rows and 80 columns, so going higher
 
 ### Kernel parameters
 
-The [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") are set by using the `APPEND` directive in `syslinux.cfg`: for each `LABEL` entry, a maximum of one [APPEND](http://www.syslinux.org/wiki/index.php/Config#APPEND) line is accepted (i.e. spanning multiple lines is not valid).
+The [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") are set by using the `APPEND` directive in `syslinux.cfg`: for each `LABEL` entry, a maximum of one [APPEND](https://www.syslinux.org/wiki/index.php/Config#APPEND) line is accepted (i.e. spanning multiple lines is not valid).
 
 It is recommended to make the following changes for the "fallback" entry as well.
 
@@ -480,7 +480,7 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 ### Auto boot
 
-If you do not want to see the Syslinux menu at all, use the [#Boot prompt](#Boot_prompt), and set `PROMPT` to `0` and comment out any `UI` menu entries. Setting the `TIMEOUT` variable to `0` might also be a good idea. Make sure there is a `DEFAULT` set in your `syslinux.cfg`. Holding either `Shift` or `Alt`, or setting either `Caps Lock` or `Scroll Lock`, during boot will allow for options other than default to be used. See the [upstream wiki](http://www.syslinux.org/wiki/index.php/Directives/special_keys) for additional alternatives.
+If you do not want to see the Syslinux menu at all, use the [#Boot prompt](#Boot_prompt), and set `PROMPT` to `0` and comment out any `UI` menu entries. Setting the `TIMEOUT` variable to `0` might also be a good idea. Make sure there is a `DEFAULT` set in your `syslinux.cfg`. Holding either `Shift` or `Alt`, or setting either `Caps Lock` or `Scroll Lock`, during boot will allow for options other than default to be used. See the [upstream wiki](https://www.syslinux.org/wiki/index.php/Directives/special_keys) for additional alternatives.
 
 ### Security
 
@@ -500,7 +500,7 @@ MENU PASSWD passwd
 
 within a `LABEL` block to password-protect individual boot items.
 
-The passwd can be either a cleartext password or hashed: [see official documentation](http://www.syslinux.org/wiki/index.php/Comboot/menu.c32).
+The passwd can be either a cleartext password or hashed: [see official documentation](https://www.syslinux.org/wiki/index.php/Comboot/menu.c32).
 
 ### Chainloading
 
@@ -523,7 +523,7 @@ LABEL windows
 
 `hd0 3` is the third partition on the first BIOS drive - drives are counted from zero, but partitions are counted from one.
 
-**Note:** For Windows, this skips the system's own boot manager (`bootmgr`), which is required for a few important updates ([eg.](http://support.microsoft.com/kb/2883200)) to complete. In such cases it may be advisable to temporarily set the MBR boot flag to the Windows partition (eg. with [GParted](/index.php/GParted "GParted")), let the update finish installing, and then reset the flag to the Syslinux partition (eg. with Windows's own [DiskPart](http://www.online-tech-tips.com/computer-tips/set-active-partition-vista-xp)).
+**Note:** For Windows, this skips the system's own boot manager (`bootmgr`), which is required for a few important updates ([eg.](https://support.microsoft.com/kb/2883200)) to complete. In such cases it may be advisable to temporarily set the MBR boot flag to the Windows partition (eg. with [GParted](/index.php/GParted "GParted")), let the update finish installing, and then reset the flag to the Syslinux partition (eg. with Windows's own [DiskPart](https://www.online-tech-tips.com/computer-tips/set-active-partition-vista-xp)).
 
 #### Chainloading a disk's MBR
 
@@ -557,7 +557,7 @@ LABEL windows
 
 ```
 
-For more details about chainloading, see [the Syslinux wiki](http://www.syslinux.org/wiki/index.php/Comboot/chain.c32).
+For more details about chainloading, see [the Syslinux wiki](https://www.syslinux.org/wiki/index.php/Comboot/chain.c32).
 
 #### Chainloading other boot loaders
 
@@ -662,7 +662,7 @@ LABEL memtest
 
 ### HDT
 
-[HDT (Hardware Detection Tool)](http://hdt-project.org/) displays hardware information. Like before, the `.c32` file has to be copied from `/boot/syslinux/`. Additional `lib*.c32` library modules might be needed too. For PCI info, copy `/usr/share/hwdata/pci.ids` to `/boot/syslinux/pci.ids` and add the following to your configuration file:
+[HDT (Hardware Detection Tool)](https://www.syslinux.org/wiki/index.php?title=Hdt_(Hardware_Detection_Tool)) displays hardware information. Like before, the `.c32` file has to be copied from `/boot/syslinux/`. Additional `lib*.c32` library modules might be needed too. For PCI info, copy `/usr/share/hwdata/pci.ids` to `/boot/syslinux/pci.ids` and add the following to your configuration file:
 
  `/boot/syslinux/syslinux.cfg` 
 ```
@@ -674,7 +674,7 @@ LABEL hdt
 
 ### Reboot and power off
 
-**Note:** As of Syslinux 6.03, `poweroff.c32` only works with APM and not with ACPI. For a possible solution, see [this thread](http://www.syslinux.org/archives/2012-March/017661.html) .
+**Note:** As of Syslinux 6.03, `poweroff.c32` only works with APM and not with ACPI. For a possible solution, see [this thread](https://www.syslinux.org/archives/2012-March/017661.html) .
 
 Use the following sections to reboot or power off your machine:
 
@@ -721,7 +721,7 @@ KBDMAP de.ktl
 
 ```
 
-See the [Syslinux wiki](http://www.syslinux.org/wiki/index.php/Directives/kbdmap) for more details.
+See the [Syslinux wiki](https://www.syslinux.org/wiki/index.php/Directives/kbdmap) for more details.
 
 ### Hiding the menu
 
@@ -775,11 +775,11 @@ To actually load PXELINUX, replace `filename "/grub/i386-pc/core.0";` in `/etc/d
 
 ### Booting ISO9660 image files with memdisk
 
-Syslinux supports booting from ISO images directly using the [memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK) module, see [Multiboot USB drive#Using Syslinux and memdisk](/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk "Multiboot USB drive") for examples.
+Syslinux supports booting from ISO images directly using the [memdisk](https://www.syslinux.org/wiki/index.php/MEMDISK) module, see [Multiboot USB drive#Using Syslinux and memdisk](/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk "Multiboot USB drive") for examples.
 
 ### Serial console
 
-To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[10]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
+To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[10]](https://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
 
  `syslinux.cfg` 
 ```
@@ -787,7 +787,7 @@ SERIAL 0 115200
 
 ```
 
-Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[11]](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
+Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[11]](https://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
 
  `syslinux.cfg`  `APPEND root=UUID=126ca36d-c853-4f3a-9f46-cdd49d034ce4 rw console=tty0 console=ttyS0,115200n8` 
 
@@ -810,14 +810,14 @@ During the next boot, the specified label will be booted without any Syslinux pr
 
 An error message such as "Failed to load ldlinux.c32" during the initial boot can be triggered by many diverse reasons. One potential reason could be a change in file system tools or in a file system structure, depending on its own version. For instance, newer ext4 file systems might be created with its "64bit" feature enabled by default (whereas its "64bit" feature is only set manually, not by default, in older versions of mke2fs). This is just one example; file systems other than ext4 could also be affected by changes in their own structures and/or respective tools, thus also affecting bootloaders' behavior.
 
-**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[12]](http://www.syslinux.org/wiki/index.php/Filesystem) for more information.
+**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[12]](https://www.syslinux.org/wiki/index.php/Filesystem) for more information.
 
 **Note:** There is no direct and unique correspondence between a message such as `Failed to load ldlinux.c32` and a problem related to the file system:
 
 *   Other alternative symptoms, instead of this message, could also indicate a problem related to the file system.
 *   The message does not necessarily mean that the problem is related to the file system; there are other possible reasons for this type of messages.
 
-See also [[13]](http://www.syslinux.org/wiki/index.php/Common_Problems#Failed_to_load_ldlinux) (the whole page might be relevant for troubleshooting too).
+See also [[13]](https://www.syslinux.org/wiki/index.php/Common_Problems#Failed_to_load_ldlinux) (the whole page might be relevant for troubleshooting too).
 
 ### Using the Syslinux prompt
 
@@ -981,7 +981,7 @@ To get more detailed debug log, [recompile](/index.php/ABS "ABS") the [syslinux]
 
 ### Btrfs compression
 
-Booting from btrfs with compression is not supported.[[14]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
+Booting from btrfs with compression is not supported.[[14]](https://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
 
 ```
 btrfs: found compressed data, cannot continue!
@@ -1001,6 +1001,6 @@ extlinux: path /boot/syslinux doesn't match device /dev/sda1
 
 ## See also
 
-*   [Official website](http://www.syslinux.org)
+*   [Official website](https://www.syslinux.org)
 *   [PXELinux configuration](http://www.josephn.net/scrapbook/pxelinux_stuff)
 *   [Multiboot USB using Syslinux](http://blog.jak.me/2013/01/03/creating-a-multiboot-usb-stick-using-syslinux/)

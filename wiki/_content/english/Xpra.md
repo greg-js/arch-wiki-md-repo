@@ -29,7 +29,7 @@ Xpra is '[screen](/index.php/Screen "Screen") for X': it allows you to run X pro
 
 [Install](/index.php/Install "Install") the package [xpra](https://aur.archlinux.org/packages/xpra/) from the [AUR](/index.php/AUR "AUR"), on the server and the clients.
 
-**Tip:** If you intend to run Xpra locally under a existing Xorg session with graphic drivers such as `nvidia` or `ATi` you will need to modify the default xpra config. Xpra fetches `-configdir` from `xorg-server-xvfb` which will be `/etc/X11/xorg.conf.d`, there for you need to change this by following the three bottom steps of [1333056#p1333056](https://bbs.archlinux.org/viewtopic.php?pid=1333056#p1333056) in order to run xpra locally.
+**Tip:** If you intend to run Xpra locally under a existing Xorg session with graphic drivers such as `nvidia` or `ATi` you will need to modify the default xpra config. Xpra fetches `-configdir` from `xorg-server-xvfb` which will be `/etc/X11/xorg.conf.d`, therefore you need to change this by following the three bottom steps of [1333056#p1333056](https://bbs.archlinux.org/viewtopic.php?pid=1333056#p1333056) in order to run xpra locally.
 
 ## Use
 
@@ -122,7 +122,7 @@ Sandox can be achieved with [firejail](/index.php/Firejail "Firejail"):
 *   xpra attach, etc:
 
  `$ firejail --net=eth0 xpra [...]` 
-**Note:** `--net=eth0` create separate namespace for network, this is necessary to hide all xorg or system sockets from xpra, otherwise sanbox is most likely ineffective ([issue-54#153757284](https://github.com/netblue30/firejail/issues/57#issuecomment-153757284)).
+**Note:** `--net=eth0` creates a separate namespace for the network. This is necessary to hide all xorg or system sockets from xpra, otherwise a sandbox is most likely ineffective ([issue-54#153757284](https://github.com/netblue30/firejail/issues/57#issuecomment-153757284)).
 
 ### more
 

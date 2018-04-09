@@ -147,6 +147,8 @@ You may also need to [unmute](#ALSA) the PC speaker in [ALSA](/index.php/ALSA "A
 
 ### Access for non-root users
 
+**Warning:** All the following notes are vulnerable to root privilege escalation, as described in [[[1]](https://www.debian.org/security/2018/dsa-4163)], which has not been fixed upstream as of 2018-04-03\. It is strongly not recommended to allow beep to run without root authentication
+
 By default `beep` will fail if not run by the root. Other users may call it using [sudo](/index.php/Sudo "Sudo"). To let group `users` call `sudo beep` without a password (for example to use it in scripts), `/etc/sudoers` [should be edited](/index.php/Sudo#Using_visudo "Sudo"):
 
 ```
@@ -160,8 +162,6 @@ or, to let only a single user do that:
 username ALL=(ALL) NOPASSWD: /usr/bin/beep
 
 ```
-
-**Warning:** The following is vulnerable to privilege escalation to root, as described in [[[1]](https://www.debian.org/security/2018/dsa-4163)], which has not been fixed upstream as of 2018-04-03.
 
 Another way is setting the sticky bit on `/usr/bin/beep`:
 

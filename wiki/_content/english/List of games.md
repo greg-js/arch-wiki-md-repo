@@ -1,7 +1,7 @@
 Related articles
 
 *   [List of applications](/index.php/List_of_applications "List of applications")
-*   [Gaming#Emulators](/index.php/Gaming#Emulators "Gaming")
+*   [Gaming](/index.php/Gaming "Gaming")
 
 This page strives to list all games which have a package available in the [official repositories](/index.php/Official_repositories "Official repositories") or the [AUR](/index.php/AUR "AUR"). There are many more Linux games available, which are not packaged. See [Gaming#Getting games](/index.php/Gaming#Getting_games "Gaming") for ways to obtain them.
 

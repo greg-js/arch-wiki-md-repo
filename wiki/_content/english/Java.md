@@ -7,11 +7,13 @@ From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_lan
 
 	Java is a programming language originally developed by Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode that can run on any Java virtual machine ([JVM](https://en.wikipedia.org/wiki/Java_virtual_machine "wikipedia:Java virtual machine")) regardless of computer architecture.
 
-Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net/) versions 7, 8, and 9\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
+Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net/) versions 7, 8, 9, and 10\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
 
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Officially supported packages](#Officially_supported_packages)
+    *   [1.2 Unofficially supported packages](#Unofficially_supported_packages)
 *   [2 Flagging packages as out-of-date](#Flagging_packages_as_out-of-date)
 *   [3 Switching between JVM](#Switching_between_JVM)
     *   [3.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
@@ -48,39 +50,45 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **Warning:** File `/etc/profile.d/jdk.sh` is not provided any more by any package.
 
-The following packages are available:
+### Officially supported packages
 
-**OpenJDK 7** — The open-source implementation of the seventh edition of Java SE.
+**OpenJDK 10** — The open-source reference implementation of the tenth edition of Java SE.
 
-	[http://openjdk.java.net/projects/jdk7/](http://openjdk.java.net/projects/jdk7/) || [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)
-
-**IBM J9 7** — IBM's implementation of the seventh edition of JRE.
-
-	[https://developer.ibm.com/javasdk/downloads/sdk7/](https://developer.ibm.com/javasdk/downloads/sdk7/) || [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
-
-**OpenJDK 8** — The open-source implementation of the eight edition of Java SE.
-
-	[http://openjdk.java.net/projects/jdk8/](http://openjdk.java.net/projects/jdk8/) || [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)
-
-**OpenJFX 8** — The open-source implementation of JavaFX. You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
-
-	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
-
-**IBM J9 8** — IBM's implementation of the eighth edition of JRE.
-
-	[https://developer.ibm.com/javasdk/downloads/sdk8/](https://developer.ibm.com/javasdk/downloads/sdk8/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/)
+	[http://openjdk.java.net/projects/jdk/10/](http://openjdk.java.net/projects/jdk/10/) || [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src)
 
 **OpenJDK 9** — The open-source implementation of the ninth edition of Java SE.
 
 	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || [jre9-openjdk-headless](https://www.archlinux.org/packages/?name=jre9-openjdk-headless) [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) [openjdk9-doc](https://www.archlinux.org/packages/?name=openjdk9-doc) [openjdk9-src](https://www.archlinux.org/packages/?name=openjdk9-src)
 
-**OpenJ9** — Eclipse's implementation of JRE, contributed by IBM.
+**OpenJDK 8** — The open-source implementation of the eight edition of Java SE.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
+	[http://openjdk.java.net/projects/jdk8/](http://openjdk.java.net/projects/jdk8/) || [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)
+
+**OpenJDK 7** — The open-source implementation of the seventh edition of Java SE.
+
+	[http://openjdk.java.net/projects/jdk7/](http://openjdk.java.net/projects/jdk7/) || [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)
+
+**OpenJFX 8** — The open-source implementation of JavaFX. You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
+
+	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
+
+### Unofficially supported packages
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 
 	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre6](https://aur.archlinux.org/packages/jre6/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre-devel](https://aur.archlinux.org/packages/jre-devel/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
+
+**OpenJ9** — Eclipse's implementation of JRE, contributed by IBM.
+
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
+
+**IBM J9 8** — IBM's implementation of the eighth edition of JRE.
+
+	[https://developer.ibm.com/javasdk/downloads/sdk8/](https://developer.ibm.com/javasdk/downloads/sdk8/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/)
+
+**IBM J9 7** — IBM's implementation of the seventh edition of JRE.
+
+	[https://developer.ibm.com/javasdk/downloads/sdk7/](https://developer.ibm.com/javasdk/downloads/sdk7/) || [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
 
 **Parrot VM** — a VM with experimental support for Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/), or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
 

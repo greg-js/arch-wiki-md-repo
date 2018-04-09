@@ -320,21 +320,21 @@ Plasma can autostart applications and run scripts on startup and shutdown. To au
 
 Place [Desktop entries](/index.php/Desktop_entries "Desktop entries") (i.e. `.desktop` files) here:
 
-	`~/.config/autostart`
+	`~/.config/autostart/`
 
 	for starting applications at login.
 
 Place or symlink shell scripts in one of the following directories:
 
-	`~/.config/plasma-workspace/env`
+	`~/.config/plasma-workspace/env/`
 
 	for executing scripts at login before launching Plasma.
 
-	`~/.config/autostart-scripts`
+	`~/.config/autostart-scripts/`
 
 	for executing scripts at login.
 
-	`~/.config/plasma-workspace/shutdown`
+	`~/.config/plasma-workspace/shutdown/`
 
 	for executing scripts on shutdown.
 

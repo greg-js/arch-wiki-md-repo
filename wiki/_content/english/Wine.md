@@ -26,7 +26,10 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
     *   [4.2 Winetricks](#Winetricks)
-    *   [4.3 CSMT](#CSMT)
+    *   [4.3 Performance](#Performance)
+        *   [4.3.1 CSMT](#CSMT)
+        *   [4.3.2 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
+        *   [4.3.3 DXVK](#DXVK)
     *   [4.4 Unregister existing Wine file associations](#Unregister_existing_Wine_file_associations)
     *   [4.5 Prevent new Wine file associations](#Prevent_new_Wine_file_associations)
     *   [4.6 Execute Windows binaries with Wine implicitly](#Execute_Windows_binaries_with_Wine_implicitly)
@@ -34,13 +37,11 @@ Related articles
     *   [4.8 16-bit programs](#16-bit_programs)
     *   [4.9 Burning optical media](#Burning_optical_media)
     *   [4.10 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.11 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
-    *   [4.12 Show FPS overlay in games](#Show_FPS_overlay_in_games)
-    *   [4.13 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
-    *   [4.14 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
-    *   [4.15 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
-    *   [4.16 DXVK](#DXVK)
-    *   [4.17 Vulkan](#Vulkan)
+    *   [4.11 Show FPS overlay in games](#Show_FPS_overlay_in_games)
+    *   [4.12 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
+    *   [4.13 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
+    *   [4.14 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
+    *   [4.15 Vulkan](#Vulkan)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -285,13 +286,43 @@ $ winetricks
 
 ```
 
-### CSMT
+### Performance
+
+#### CSMT
 
 CSMT is a technology used by Wine to use a separate thread for the OpenGL calls to improve performance noticeably. Since Wine 3.3, CSMT is enabled by default. However, CSMT support needs to be enabled manually for Wine versions lower than 3.3\. For vanilla Wine run `wine regedit` and set the DWORD value for *HKEY_CURRENT_USER -> Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
 
 Further information:
 
 *   [Phoronix Forum discussion](http://www.phoronix.com/forums/showthread.php?93967-Wine-s-Big-Command-Stream-D3D-Patch-Set-Updated/page3&s=7775d7c3d4fa698089d5492bb7b1a435) with the CSMT developer Stefan Dösinger
+
+#### Force OpenGL mode in games
+
+Some games might have an OpenGL mode which *may* perform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
+
+```
+$ wine */path/to/3d_game.exe* -opengl
+
+```
+
+You should of course refer to your application's documentation and Wine's [AppDB](http://appdb.winehq.org) for such application specific information.
+
+#### DXVK
+
+[DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
+
+To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official binaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
+
+```
+$ WINEPREFX=*your-prefix* setup_dxvk64
+
+```
+
+Use `setup_dxvk32` for 32-bit applications.
+
+**Note:** For Wine versions below 3.5 you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine), [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) and [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) work out of the box.
+
+**Warning:** DXVK overrides the DirectX 11 DLLS, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
 
 ### Unregister existing Wine file associations
 
@@ -399,17 +430,6 @@ Some applications will check for the optical media to be in drive. They may chec
 
 Some virtual drive tools do not handle these metadata, like fuse-based virtual drives (Acetoneiso for instance). CDEmu will handle it correctly.
 
-### Force OpenGL mode in games
-
-Some games might have an OpenGL mode which *may* perform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
-
-```
-$ wine */path/to/3d_game.exe* -opengl
-
-```
-
-You should of course refer to your application's documentation and Wine's [AppDB](http://appdb.winehq.org) for such application specific information.
-
 ### Show FPS overlay in games
 
 Wine features an embedded FPS monitor which works for all graphical applications if the environment variable `WINEDEBUG=fps` is set. This will output the framerate to stdout. You can display the FPS on top of the window thanks to `osd_cat` from the [xosd](https://www.archlinux.org/packages/?name=xosd) package. See [winefps.sh](https://gist.github.com/anonymous/844aefd70bb50bf72b35) for a helper script.
@@ -476,23 +496,6 @@ $ ln -s /tmp/ ~/.wine/drive_c/users/$USER/Temp
 ### Prevent installing Mono/Gecko
 
 If Gecko and/or Mono are not present on the system nor in the Wine prefix, Wine will prompt to download them from the internet. If you do not need Gecko and/or Mono, you might want to disable this dialog, by setting the `WINEDLLOVERRIDES` [environment variable](/index.php/Environment_variable "Environment variable") to `mscoree=d;mshtml=d`.
-
-### DXVK
-
-[DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
-
-To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official binaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
-
-```
-$ WINEPREFX=*your-prefix* setup_dxvk64
-
-```
-
-Use `setup_dxvk32` for 32-bit applications.
-
-**Note:** For Wine versions below 3.5 you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine), [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) and [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) work out of the box.
-
-**Warning:** DXVK overrides the DirectX 11 DLLS, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
 
 ### Vulkan
 

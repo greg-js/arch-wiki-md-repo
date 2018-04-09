@@ -1,4 +1,4 @@
-**Faction** is a C library for test-driven software development.
+**Faction** is a C library for test-driven software development. Its design is inspired by [Oil Shell](https://github.com/oilshell/oil/wiki/Spec-Tests).
 
 ## Contents
 

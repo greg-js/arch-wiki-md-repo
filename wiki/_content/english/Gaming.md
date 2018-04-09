@@ -62,19 +62,15 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 Just because games are available for Linux doesn't mean that they are native, they might be pre-packaged with Wine or DOSBox.
 
-*   **[Desura](https://en.wikipedia.org/wiki/Desura "wikipedia:Desura")** — Digital distribution platform focusing on indie games.
-
-	[http://www.desura.com/](http://www.desura.com/)  || [desura](https://aur.archlinux.org/packages/desura/)
-
 *   **[Steam](/index.php/Steam "Steam")** — Digital distribution and communications platform developed by Valve.
 
-	[http://store.steampowered.com](http://store.steampowered.com) || [steam](https://www.archlinux.org/packages/?name=steam)
+	[https://store.steampowered.com](https://store.steampowered.com) || [steam](https://www.archlinux.org/packages/?name=steam)
 
 *   **[itch.io](https://en.wikipedia.org/wiki/itch.io "wikipedia:itch.io")** — Indie game store.
 
 	[https://itch.io/](https://itch.io/) || [itch](https://aur.archlinux.org/packages/itch/)
 
-*   [GOG.com](http://www.gog.com/games/linux)
+*   [GOG.com](https://www.gog.com/games/linux)
     *   GOG.com officially only supports Ubuntu and Linux Mint.
     *   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) package can be used to download GOG titles from the command line.
 
@@ -343,9 +339,7 @@ Most every game can benefit if given the correct scheduling policies for the ker
 
 ### For Wine programs
 
-[wine-rt](https://aur.archlinux.org/packages/wine-rt/) is a patched version of Wine that implements scheduling policies on a per-thread basis, using the equivalent of what the Windows developers had intended the threads to be run at. The default patch is more oriented towards professional audio users, and tends to be too heavy-handed of an approach for gaming. You may instead wish to use [this patch](http://pastebin.com/D9GBzBBv), which also includes nice levels and uses more than one policy decision. Be warned that it uses `SCHED_ISO`, which is only properly implemented on [Linux-ck](/index.php/Linux-ck "Linux-ck"), and will simply renice `THREAD_PRIORITY_ABOVE_NORMAL` threads if your system does not support it.
-
-[wine-staging](https://www.archlinux.org/packages/?name=wine-staging) versions 1.9.5 and before incorporate the CSMT patchset which provides better performance for 3D accelerated games. The patchset has been disabled as of 1.9.6 pending an upstream update to the patch and incorporation into the main Wine source tree, so you will need to compile version 1.9.5 of wine-staging yourself if you wish to take advantage of this.
+See [Wine#Performance](/index.php/Wine#Performance "Wine")
 
 ### For everything else
 

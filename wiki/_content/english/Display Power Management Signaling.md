@@ -1,4 +1,4 @@
-**[DPMS](https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling "wikipedia:VESA Display Power Management Signaling")** (Display Power Management Signaling) enables power saving behaviour of monitors when the computer is not in use. For details on each timeout, see [[1]](http://linux.die.net/man/3/dpmssettimeouts). Note that some monitors make no difference between various DPMS modes.
+**[DPMS](https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling "wikipedia:VESA Display Power Management Signaling")** (Display Power Management Signaling) enables power saving behaviour of monitors when the computer is not in use. The time of inactivity before the monitor enters into a given saving power level, standby, suspend or off, can be set as described in [DPMSSetTimeouts(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/DPMSSetTimeouts.3). Note that some monitors make no difference between various DPMS modes.
 
 ## Contents
 
@@ -59,8 +59,6 @@ EndSection
 
 It is possible to turn off your monitor using the *xset* tool which is provided by [installing](/index.php/Installing "Installing") the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package.
 
-**Note:** If using this command manually in a shell you may need to prefix it with `sleep 1;` for it to work correctly, for example `sleep 1; xset dpms force off`
-
 Example commands:
 
 | Command | Description |
@@ -72,14 +70,11 @@ Example commands:
 | xset dpms force standby | Standby screen |
 | xset dpms force suspend | Suspend screen |
 
-**Note:** `xset dpms 0 0 0`, which sets all the DPMS timeouts to zero, could be a better way to "disable" DPMS, since the effect of `-dpms` would be reverted when, for example, turning off the screen with `xset dpms force off`.
-
 To query the current settings:
 
  `$ xset q` 
 ```
 ...
-
 Screen Saver:
   prefer blanking:  yes    allow exposures:  yes
   timeout:  600    cycle:  600
@@ -92,9 +87,12 @@ DPMS (Energy Star):
 
 See `xset` for all available commands.
 
-**Note:** If using `xset` in [xinitrc](/index.php/Xinitrc "Xinitrc") does not work, specify settings within a file in `/etc/X11/xorg.conf.d/`. See [#Setting up DPMS in X](#Setting_up_DPMS_in_X) for details.
+**Note:**
 
-**Warning:** [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) use their own DPMS settings and override *xset* configuration. See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver") and [Xfce#Display blanking](/index.php/Xfce#Display_blanking "Xfce") for more information.
+*   [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) use their own DPMS settings and override *xset* configuration. See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver") and [Xfce#Display blanking](/index.php/Xfce#Display_blanking "Xfce") for more information.
+*   If using the command manually in a shell you may need to prefix it with `sleep 1;` for it to work correctly, for example `sleep 1; xset dpms force off`
+*   `xset dpms 0 0 0`, which sets all the DPMS timeouts to zero, could be a better way to "disable" DPMS, since the effect of `-dpms` would be reverted when, for example, turning off the screen with `xset dpms force off`.
+*   If using `xset` in [xinitrc](/index.php/Xinitrc "Xinitrc") does not work, specify settings within a file in `/etc/X11/xorg.conf.d/`. See [#Setting up DPMS in X](#Setting_up_DPMS_in_X) for details.
 
 ## DPMS interaction in a Linux console with setterm
 

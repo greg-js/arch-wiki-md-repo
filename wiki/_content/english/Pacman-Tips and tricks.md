@@ -449,7 +449,7 @@ $ pacman -Qqe > pkglist.txt
 
 ```
 
-**Note:** When using option `-t`, when reinstalling the list all the non-top-level packages would be set as dependencies. With opion `-n`, foreign packages (e.g. from AUR) are ommited from the list.
+**Note:** If the option `-t` was used, when reinstalling the list all the non-top-level packages would be set as dependencies. With option `-n`, foreign packages (e.g. from AUR) would be omitted from the list.
 
 To install packages from the list backup, run:
 

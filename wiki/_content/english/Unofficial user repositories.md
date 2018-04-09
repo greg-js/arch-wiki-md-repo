@@ -213,8 +213,6 @@ Server = https://repo.itmettke.de/aur/$repo/$arch
 *   **Description:** AUR packages I tend to use every day. Will be updated weekly
 *   **Key-ID:** 2A07EF8371AFC028
 
-**Warning:** Repository is going offline on 2018-03-10.
-
 ```
 [aurpackages]
 Server = https://r.mikroskeem.eu

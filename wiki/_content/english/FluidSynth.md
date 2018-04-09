@@ -18,7 +18,7 @@ The first step is to [install](/index.php/Install "Install") the [fluidsynth](ht
 
 ## Usage
 
-There are two ways to use FluidSynth. Either as MIDI player or as daemon adding MIDI support to ALSA.
+There are two ways to use FluidSynth. Either as [MIDI](/index.php/MIDI "MIDI") player or as daemon adding MIDI support to [ALSA](/index.php/ALSA "ALSA").
 
 ### Standalone mode
 

@@ -8,6 +8,8 @@ This page attempts to draw a comparison between Arch Linux and other popular GNU
 
 For a more complete comparison, see [w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") and [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
+In all of the following only Arch Linux is compared with other distributions. Community ports that support architectures other than x86_64 can be found listed among the [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions").
+
 ## Contents
 
 *   [1 Source-based](#Source-based)
@@ -67,7 +69,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 *   Debian focuses on stringent testing of the Stable branch, which is "frozen" and supported up to [five years](https://wiki.debian.org/LTS "debian:LTS"). Arch packages are more current than Debian Stable, being more comparable to the Debian Testing and Unstable branches, and has no fixed release schedule.
 
-*   Debian is available for many architectures, including alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390, and sparc, whereas Arch is officially x86_64, with community ports for i686 ([Arch Linux 32](https://archlinux32.org/)) and ARM ([Arch Linux ARM](https://archlinuxarm.org/)) only.
+*   Debian is available for many architectures, including alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390, and sparc, whereas Arch is x86_64 only.
 
 *   Arch provides more expedient support for building custom, installable packages from outside sources, with a ports-like package build system. Debian does not offer a ports system, relying instead on its large binary repositories.
 

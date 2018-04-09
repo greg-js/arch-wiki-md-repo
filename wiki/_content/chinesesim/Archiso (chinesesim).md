@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-04，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=512164)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=516323)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -56,7 +56,7 @@ $ mkdir ~/archlive
 
 现在要将早先安装到主机的 archiso 脚本复制到你新建的工作目录内。
 
-Archiso 附带2个预定义配置（ profiles ）: *releng* 和*baseline*。
+Archiso 附带2个预定义配置（profiles）: *releng* 和*baseline*。
 
 *   如果您想要创建完全定制的 Live Arch Linux ，并预装所有您喜爱的程序和配置，使用 *releng*。
 
@@ -65,7 +65,7 @@ Archiso 附带2个预定义配置（ profiles ）: *releng* 和*baseline*。
 现在，将您选择的配置文件复制到目录（在下面的示例中为 *archlive*），您可以在其中进行调整和构建。 执行以下操作，用 `releng` 或 `baseline` 替换 `**profile**`。
 
 ```
-# cp -r /usr/share/archiso/configs/**profile**/* *archlive*
+# cp -r /usr/share/archiso/configs/* *archlive*
 
 ```
 
@@ -293,7 +293,7 @@ ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 现在，你已经准备好把你的文件转换成 .iso，以便可以刻录到 CD 或 USB：
 
-首先创建 `out/` 目录，
+首先创建 `out/` 目录（可选，如果没有的话 build.sh 将会创建它），
 
 ```
 # mkdir ~/archlive/out/

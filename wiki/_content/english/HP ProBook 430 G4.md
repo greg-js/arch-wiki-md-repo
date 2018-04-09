@@ -24,6 +24,7 @@
 *   [4 Graphic card setup](#Graphic_card_setup)
 *   [5 Keyboard mapping](#Keyboard_mapping)
 *   [6 PCIe error in dmesg](#PCIe_error_in_dmesg)
+*   [7 fix cold boot hang](#fix_cold_boot_hang)
 
 ## Device information
 
@@ -128,3 +129,15 @@ Feb 21 16:09:01 laptop64 kernel: pcieport 0000:00:1d.0:    [ 0] Receiver Error  
 ```
 
 This one can be fixed with appending pci=noaer to the kernel boot line.
+
+## fix cold boot hang
+
+There seems to be some bug in i2c_i801 module implementation with HP notebooks. To fix system hang at cold boot add this module loading options and regenerate initrds.
+
+ `/etc/modprobe.d/i2c_i801.conf` 
+```
+# disable Host Notify + Interrupts
+options i2c_i801 disable_features=0x30
+```
+
+See [https://www.spinics.net/lists/linux-i2c/msg33938.html](https://www.spinics.net/lists/linux-i2c/msg33938.html) for more.

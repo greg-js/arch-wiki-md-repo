@@ -25,7 +25,7 @@ Related articles
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 LDAP Segfault](#LDAP_Segfault)
     *   [5.2 Error: Incoming server already exists](#Error:_Incoming_server_already_exists)
-    *   [5.3 Thunderbird UI freezes eceiving a new message](#Thunderbird_UI_freezes_eceiving_a_new_message)
+    *   [5.3 Thunderbird UI freezes when receiving a new message](#Thunderbird_UI_freezes_when_receiving_a_new_message)
 
 ## Installation
 
@@ -243,12 +243,12 @@ $ pacman -S thunderbird
 
 ```
 
-6.Create your mail accounts, feeds and calenders (empty).
+6\. Create your mail accounts, feeds and calenders (empty).
 
 7\. Install the [ImportExportTools](https://addons.mozilla.org/thunderbird/addon/importexporttools/) AddOn
 
 8\. Import all your data.
 
-### Thunderbird UI freezes eceiving a new message
+### Thunderbird UI freezes when receiving a new message
 
-If thunderbird is configured to show an alert when a new message arrives, or at launch, the lack of a notification daemon may freeze the interface (white screen) for many seconds. You can solve this issue by disabling alerts or installing a [notification server](/index.php/Desktop_notifications#Notification_servers "Desktop notifications").
+If Thunderbird is configured to show an alert when a new message arrives, or at launch, the lack of a notification daemon may freeze the interface (white screen) for many seconds. You can solve this issue by disabling alerts or installing a [notification server](/index.php/Desktop_notifications#Notification_servers "Desktop notifications").

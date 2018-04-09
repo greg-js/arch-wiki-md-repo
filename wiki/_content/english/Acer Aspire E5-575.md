@@ -5,6 +5,7 @@
     *   [2.1 Add entries to UEFI menu](#Add_entries_to_UEFI_menu)
     *   [2.2 Use Secure Boot with trusted EFI executables](#Use_Secure_Boot_with_trusted_EFI_executables)
     *   [2.3 Function keys](#Function_keys)
+    *   [2.4 Hardware video acceleration](#Hardware_video_acceleration)
 *   [3 Hardware identification](#Hardware_identification)
 *   [4 Known issues](#Known_issues)
     *   [4.1 Trusted Platform Module](#Trusted_Platform_Module)
@@ -53,6 +54,66 @@ Other function keys are exposed as media keys and can be added as [keyboard shor
 | `Page Up` | `XF86AudioStop` |
 | `Page Down` | `XF86AudioPrev` |
 | `End` | `XF86AudioNext` |
+
+### Hardware video acceleration
+
+The laptop contains a 9th generation Intel GPU (Intel HD 620) codenamed "Kaby Lake". To enable hardware video acceleration [install](/index.php/Install "Install") the following packages: [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver), and [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl). Follow the instructions on [Intel graphics](/index.php/Intel_graphics "Intel graphics") and [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). You may need additional packages or configuration to utilize hardware acceleration for your particular application.
+
+When enabled you will see something like the following when running `vainfo`:
+
+ `vainfo` 
+```
+libva info: VA-API version 1.1.0
+libva info: va_getDriverName() returns 0
+libva info: Trying to open /usr/lib/dri/i965_drv_video.so
+libva info: Found init function __vaDriverInit_1_1
+libva info: va_openDriver() returns 0
+vainfo: VA-API version: 1.1 (libva 2.1.0)
+vainfo: Driver version: Intel i965 driver for Intel(R) Kaby Lake - 2.1.0
+vainfo: Supported profile and entrypoints
+      VAProfileMPEG2Simple            : VAEntrypointVLD
+      VAProfileMPEG2Simple            : VAEntrypointEncSlice
+      VAProfileMPEG2Main              : VAEntrypointVLD
+      VAProfileMPEG2Main              : VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline: VAEntrypointVLD
+      VAProfileH264ConstrainedBaseline: VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline: VAEntrypointEncSliceLP
+      VAProfileH264Main               : VAEntrypointVLD
+      VAProfileH264Main               : VAEntrypointEncSlice
+      VAProfileH264Main               : VAEntrypointEncSliceLP
+      VAProfileH264High               : VAEntrypointVLD
+      VAProfileH264High               : VAEntrypointEncSlice
+      VAProfileH264High               : VAEntrypointEncSliceLP
+      VAProfileH264MultiviewHigh      : VAEntrypointVLD
+      VAProfileH264MultiviewHigh      : VAEntrypointEncSlice
+      VAProfileH264StereoHigh         : VAEntrypointVLD
+      VAProfileH264StereoHigh         : VAEntrypointEncSlice
+      VAProfileVC1Simple              : VAEntrypointVLD
+      VAProfileVC1Main                : VAEntrypointVLD
+      VAProfileVC1Advanced            : VAEntrypointVLD
+      VAProfileNone                   : VAEntrypointVideoProc
+      VAProfileJPEGBaseline           : VAEntrypointVLD
+      VAProfileJPEGBaseline           : VAEntrypointEncPicture
+      VAProfileVP8Version0_3          : VAEntrypointVLD
+      VAProfileVP8Version0_3          : VAEntrypointEncSlice
+      VAProfileHEVCMain               : VAEntrypointVLD
+      VAProfileHEVCMain               : VAEntrypointEncSlice
+      VAProfileHEVCMain10             : VAEntrypointVLD
+      VAProfileHEVCMain10             : VAEntrypointEncSlice
+      VAProfileVP9Profile0            : VAEntrypointVLD
+      VAProfileVP9Profile0            : VAEntrypointEncSlice
+      VAProfileVP9Profile2            : VAEntrypointVLD
+```
+
+Additionally you should see that `i965` is used for the DRI driver and `va_gl` is used for the VDPAU driver:
+
+ `grep -iE 'vdpau | dri driver' ~/.local/share/xorg/Xorg.0.log` 
+```
+[    16.124] (II) intel(0): [DRI2]   DRI driver: i965
+[    16.124] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+```
+
+For [Vulkan](/index.php/Vulkan "Vulkan") support install the [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) package.
 
 ## Hardware identification
 

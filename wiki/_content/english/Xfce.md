@@ -224,11 +224,13 @@ Alternatively, add the commands you wish to run (including setting environment v
 
 *xflock4* is the reference Bash script which is used to lock an Xfce session . It tries consecutively four screen lockers or exits with return code 1 if it fails to find any. Therefore, for *xflock4* to succeed, either [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) needs to be installed.
 
-The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these four screen lockers together with other popular applications. In particular the [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed a *Security* tab is added to the power manager settings and the existing *Lock screen when system is going for sleep* setting is relocated under this tab.
+The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these four screen lockers together with other popular applications.
+
+In particular the [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. It is then possible to set in this GUI whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
 
 To **integrate a custom screen locker**, not among the four supported lockers listed above, with *xflock4*, some steps are required. The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xfclock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can:
 
-1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "**light-locker-command -l**" --create -t string` The command inside the quotes can be adapted accordingly for other screen lockers.
+1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "**light-locker-command --lock**" --create -t string` The command inside the quotes can be adapted accordingly for other screen lockers.
 2.  Enhance the *xflock4* script with either one of the following methods:
     1.  Replace manually `/usr/bin/xflock4` with the latest version of the script, so that it calls the command specified in `LockCommand`.
     2.  Install [xfce4-session-git](https://aur.archlinux.org/packages/xfce4-session-git/) in order to replace the official repository package with the updated 4.13 version which takes into account `LockCommand`.
@@ -244,7 +246,9 @@ $ xfce4-session-logout --suspend
 
 ```
 
-Whether or not the session is systematically locked on *suspend* can be configured through the xfconf properties or from the GUI. To control this state using the CLI: there are two settings that are used, `LockScreen` and `lock-screen-suspend-hibernate`, in respectively the session and the power manager xfconf channels. To prevent locking on suspend, turn them to `false`:
+Whether or not the session is systematically locked on *suspend* can be configured through the xfconf properties or from the GUI.
+
+To control this state using the CLI: there are two settings that are used, `LockScreen` and `lock-screen-suspend-hibernate`, in respectively the session and the power manager xfconf channels. To prevent locking on suspend, turn them to `false`:
 
 ```
 $ xfconf-query -c xfce4-session -p /shutdown/LockScreen -s **false**
@@ -255,6 +259,13 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspen
 Similarly, turn them to `true` to lock the session on suspend.
 
 The setting can also be controlled from the GUI: open the *Session and Startup* application and turn the flag *Advanced > Lock screen before sleep* on or off.
+
+Whenever the suspend keyboard button is pressed, it can be handled by either Xfce's power manager or by systemd-logind. To give precedence to logind, the following xfconf setting must be set to `true`:
+
+```
+$ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-suspend-key -n -t bool -s **true**
+
+```
 
 #### Disable saved sessions
 

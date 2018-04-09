@@ -36,6 +36,8 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
 *   [7 UEFI Bootable Media](#UEFI_Bootable_Media)
     *   [7.1 Create UEFI bootable USB from ISO](#Create_UEFI_bootable_USB_from_ISO)
     *   [7.2 Remove UEFI boot support from optical media](#Remove_UEFI_boot_support_from_optical_media)
+    *   [7.3 Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI)
+        *   [7.3.1 Using GRUB](#Using_GRUB)
 *   [8 Testing UEFI in systems without native support](#Testing_UEFI_in_systems_without_native_support)
     *   [8.1 OVMF for virtual machines](#OVMF_for_virtual_machines)
     *   [8.2 DUET for BIOS only systems](#DUET_for_BIOS_only_systems)
@@ -43,9 +45,7 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
     *   [9.1 Windows 7 will not boot in UEFI mode](#Windows_7_will_not_boot_in_UEFI_mode)
     *   [9.2 Windows changes boot order](#Windows_changes_boot_order)
     *   [9.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
-    *   [9.4 Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI)
-        *   [9.4.1 Using GRUB](#Using_GRUB)
-    *   [9.5 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
+    *   [9.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
 *   [10 See also](#See_also)
 
 ## UEFI versions
@@ -391,73 +391,6 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 *   Burn `*output.iso*` to optical media and proceed with installation normally.
 
-## Testing UEFI in systems without native support
-
-### OVMF for virtual machines
-
-[OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware and a separate non-volatile variable store for QEMU.
-
-You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository.
-
-It is [advised](https://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt) to make a local copy of the non-volatile variable store for your virtual machine:
-
-```
-$ cp /usr/share/ovmf/x64/OVMF_VARS.fd my_uefi_vars.bin
-
-```
-
-To use the OVMF firmware and this variable store, add following to your QEMU command:
-
-```
--drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
--drive if=pflash,format=raw,file=my_uefi_vars.bin
-
-```
-
-For example:
-
-```
-$ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd -drive if=pflash,format=raw,file=my_uefi_vars.bin …
-
-```
-
-### DUET for BIOS only systems
-
-DUET is a tianocore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
-
-You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitorious repos.
-
-## Troubleshooting
-
-### Windows 7 will not boot in UEFI mode
-
-If you have installed Windows to a different hard disk with GPT partitioning and still have a MBR partitioned hard disk in your computer, then it is possible that the firmware (UEFI) is starting its CSM support (for booting MBR partitions) and therefore Windows will not boot. To solve this merge your MBR hard disk to GPT partitioning or disable the SATA port where the MBR hard disk is plugged in or unplug the SATA connector from this hard disk.
-
-Mainboards with this kind of problem:
-
-*   Gigabyte Z77X-UD3H rev. 1.1 (UEFI version F19e)
-    *   The firmware option for booting "UEFI Only" does not prevent the firmware from starting CSM.
-
-### Windows changes boot order
-
-If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") and your motherboard just boots Windows immediately instead of your chosen UEFI application, there are several possible causes and workarounds.
-
-*   Ensure [Fast Startup](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") is disabled in your Windows power options
-*   Ensure [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled in your BIOS (if you are not using a signed boot loader)
-*   Ensure your UEFI boot order does not have Windows Boot Manager set first e.g. using [#efibootmgr](#efibootmgr) and what you see in the configuration tool of the UEFI. Some motherboards override by default any settings set with efibootmgr by Windows if it detects it. This is confirmed in a Packard Bell laptop.
-*   If your motherboard is booting the default UEFI path (`\EFI\BOOT\BOOTX64.EFI`), this file may have been overwritten with the Windows boot loader. Try setting the correct boot path e.g. using [#efibootmgr](#efibootmgr).
-*   If the previous steps do not work, you can tell the Windows boot loader to run a different UEFI application. From a Windows Administrator command prompt: `# bcdedit /set "{bootmgr}" path "\EFI\*path*\*to*\*app.efi*"` 
-*   Alternatively, you can set a startup script in Windows that ensures that the boot order is set correctly every time you boot Windows.
-    1.  Open a command prompt with admin privlages. Run `bcdedit /enum firmware` and find your desired boot entry.
-    2.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-    3.  Create a batch file with the command `bcdedit /set "{fwbootmgr}" DEFAULT "{*copied boot identifier*}"`
-    4.  Open *gpedit.msc* and under *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, choose *Startup*
-    5.  Under the *Scripts* tab, choose the *Add* button, and select your batch file
-
-### USB media gets struck with black screen
-
-This issue can occur due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") while booting the USB.
-
 ### Booting 64-bit kernel on 32-bit UEFI
 
 Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso do not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since they use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot a 64-bit kernel with 32-bit UEFI you have to use a boot loader that does not rely on EFI boot stub for launching kernels.
@@ -539,6 +472,73 @@ menuentry "Arch Linux x86_64 Archboot" {
 }
 
 ```
+
+## Testing UEFI in systems without native support
+
+### OVMF for virtual machines
+
+[OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware and a separate non-volatile variable store for QEMU.
+
+You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository.
+
+It is [advised](https://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt) to make a local copy of the non-volatile variable store for your virtual machine:
+
+```
+$ cp /usr/share/ovmf/x64/OVMF_VARS.fd my_uefi_vars.bin
+
+```
+
+To use the OVMF firmware and this variable store, add following to your QEMU command:
+
+```
+-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
+-drive if=pflash,format=raw,file=my_uefi_vars.bin
+
+```
+
+For example:
+
+```
+$ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd -drive if=pflash,format=raw,file=my_uefi_vars.bin …
+
+```
+
+### DUET for BIOS only systems
+
+DUET is a tianocore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
+
+You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitorious repos.
+
+## Troubleshooting
+
+### Windows 7 will not boot in UEFI mode
+
+If you have installed Windows to a different hard disk with GPT partitioning and still have a MBR partitioned hard disk in your computer, then it is possible that the firmware (UEFI) is starting its CSM support (for booting MBR partitions) and therefore Windows will not boot. To solve this merge your MBR hard disk to GPT partitioning or disable the SATA port where the MBR hard disk is plugged in or unplug the SATA connector from this hard disk.
+
+Mainboards with this kind of problem:
+
+*   Gigabyte Z77X-UD3H rev. 1.1 (UEFI version F19e)
+    *   The firmware option for booting "UEFI Only" does not prevent the firmware from starting CSM.
+
+### Windows changes boot order
+
+If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") and your motherboard just boots Windows immediately instead of your chosen UEFI application, there are several possible causes and workarounds.
+
+*   Ensure [Fast Startup](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") is disabled in your Windows power options
+*   Ensure [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled in your BIOS (if you are not using a signed boot loader)
+*   Ensure your UEFI boot order does not have Windows Boot Manager set first e.g. using [#efibootmgr](#efibootmgr) and what you see in the configuration tool of the UEFI. Some motherboards override by default any settings set with efibootmgr by Windows if it detects it. This is confirmed in a Packard Bell laptop.
+*   If your motherboard is booting the default UEFI path (`\EFI\BOOT\BOOTX64.EFI`), this file may have been overwritten with the Windows boot loader. Try setting the correct boot path e.g. using [#efibootmgr](#efibootmgr).
+*   If the previous steps do not work, you can tell the Windows boot loader to run a different UEFI application. From a Windows Administrator command prompt: `# bcdedit /set "{bootmgr}" path "\EFI\*path*\*to*\*app.efi*"` 
+*   Alternatively, you can set a startup script in Windows that ensures that the boot order is set correctly every time you boot Windows.
+    1.  Open a command prompt with admin privlages. Run `bcdedit /enum firmware` and find your desired boot entry.
+    2.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
+    3.  Create a batch file with the command `bcdedit /set "{fwbootmgr}" DEFAULT "{*copied boot identifier*}"`
+    4.  Open *gpedit.msc* and under *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, choose *Startup*
+    5.  Under the *Scripts* tab, choose the *Add* button, and select your batch file
+
+### USB media gets struck with black screen
+
+This issue can occur due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") while booting the USB.
 
 ### UEFI boot loader does not show up in firmware menu
 

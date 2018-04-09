@@ -164,7 +164,7 @@ By default, only English language dictionaries are installed. More dictionaries 
 **Tip:**
 
 *   To enable spelling in two languages (for instance English and German), add `set spelllang=*en,de*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
-*   You can enable spell checking for arbitrary file types (e.g. *.txt*) by using the FileType plugin and a custom rule for file type detection. To enable spell checking for any file ending with *.txt*, create the file `/usr/share/vim/vimfiles/ftdetect/plaintext.vim`, and insert the line `autocmd BufRead,BufNewFile *.txt setfiletype plaintext` into that file. Next, insert the line `autocmd FileType plaintext setlocal spell spelllang=*en_us*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
+*   You can enable spell checking for arbitrary file types (e.g. *.txt*) by using the FileType plugin and a custom rule for file type detection. To enable spell checking for any file ending with *.txt*, create the file `/usr/share/vim/vimfiles/ftdetect/plaintext.vim`, and insert the line `autocmd BufRead,BufNewFile *.txt setfiletype plaintext` into that file. Next, insert the line `autocmd FileType plaintext setlocal spell spelllang=*en_us*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim. Alternatively, one can simply insert the line `autocmd BufRead,BufNewFile *.txt setlocal spell` into their `~/.vimrc` or `/etc/vimrc`, and then restart Vim. Be sure to edit this line (specifically `*.txt`) to include the filetype(s) intended for spell checking.
 *   To enable spell checking for LaTeX (or TeX) documents only, add `autocmd FileType **tex** setlocal spell spelllang=*en_us*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
 
 ### Save cursor position

@@ -6,7 +6,7 @@ Articoli correlati
 *   [Nginx](/index.php/Nginx "Nginx")
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 
-Pi-hole è un progetto basato su script di shell che gestisce una lista di blocco di IP conosciuti per offrire pubblicità e malware in maniera trasparente con [dnsmasq](/index.php/Dnsmasq "Dnsmasq") in modo da semplicemente rifiutare ogni richiesta dannosa. Questa configurazione implementa efficacemente il blocco della pubblicità a livello di rete senza dover configurare ogni singolo client. Il pacchetto offre una interfaccia web e una a riga di comando.
+[Pi-hole](https://pi-hole.net/) è un [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole) che redige una lista di blocco di domini conosciuti per offrire pubblicità e malware da sorgenti multiple di terze parti. Pi-hole, attraverso l'uso di [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), elimina semplicemente tutte le richieste di domini nella sua lista di blocco. Questa configurazione implementa efficacemente il blocco della pubblicità a livello di rete senza dover configurare ogni singolo client. Il pacchetto offre una interfaccia web e una a riga di comando.
 
 ## Contents
 

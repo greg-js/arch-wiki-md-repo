@@ -1027,7 +1027,7 @@ The number of networks supported by these clients is very large but they (like a
 
 *   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
 
-	[https://wiki.gnome.org/Empathy](https://wiki.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
+	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
 *   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — Audio/video VoIP phone and instant messenger written in Java that supports protocols such as SIP, XMPP, ICQ, IRC and many other useful features.
 
@@ -1127,7 +1127,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **Polari** — Simple IRC client by the GNOME project.
 
-	[https://wiki.gnome.org/Polari](https://wiki.gnome.org/Polari) || [polari](https://www.archlinux.org/packages/?name=polari)
+	[https://wiki.gnome.org/Apps/Polari](https://wiki.gnome.org/Apps/Polari) || [polari](https://www.archlinux.org/packages/?name=polari)
 
 *   **[Quassel](/index.php/Quassel "Quassel")** — Modern, cross-platform, distributed IRC client.
 
