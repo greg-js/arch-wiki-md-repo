@@ -449,7 +449,7 @@ $ pacman -Qqe > pkglist.txt
 
 ```
 
-**Nota:** Ao usar a opção `-t`, ao reinstalar a lista, todos os pacotes de nível superior não seriam definidos como dependências. Com a opção `-n`, pacotes externos (p. ex., do AUR) são omitidos da lista.
+**Nota:** Se a opção `-t` tivesse sido usada, ao reinstalar a lista todos os pacotes de nível superior não seriam definidos como dependências. Com a opção `-n`, pacotes externos (p. ex., do AUR) seriam omitidos da lista.
 
 Para instalar pacotes da lista backup, execute:
 
@@ -682,7 +682,11 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 ### Front-ends gráficos
 
-**Atenção:** Alguns front-ends, como o [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266), realizam [atualizações parciais](/index.php/Atualiza%C3%A7%C3%A3o_parcial "Atualização parcial") periodicamente.
+**Atenção:** Alguns front-ends, como o [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) ou [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) [[2]](https://github.com/manjaro/pamac/blob/master/data/systemd/pamac-mirrorlist.service#L9), realizam [atualizações parciais](/index.php/Atualiza%C3%A7%C3%A3o_parcial "Atualização parcial") periodicamente.
+
+*   **Aarchup** — Um fork do archup. Tem as mesmas opções que o archup mais alguns outros recursos. Para diferenças entre ambos, por favor acesse o [changelog](https://bbs.archlinux.org/viewtopic.php?id=119129).
+
+	[https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/) || [aarchup](https://aur.archlinux.org/packages/aarchup/)
 
 *   **Arch-Update** — Indicador de atualização para o GNOME-Shell.
 
@@ -708,13 +712,13 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
 
-*   **pamac** — Um daemon de DBus e front-end de Gtk3 para libalpm escrito em Vala.
-
-	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
-
 *   **pcurses** — Gerenciamento de pacotes em um front-end curses
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
+
+*   **PkgBrowser** — Aplicativo para pesquisar e navegar por pacotes do Arch, mostrando detalhes de pacotes selecionados.
+
+	[https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home](https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
 
 *   **tkPacman** — Depende apenas de Tcl/Tk e X11 e interage com base de dados de pacotes via a CLI do *pacman*.
 

@@ -80,7 +80,7 @@ PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-insta
 *pip* doesn't know how to generate `.pyo` files (see [https://github.com/pypa/pip/issues/2209](https://github.com/pypa/pip/issues/2209)). In order to generate them manually after *pip* has installed the module, run:
 
 ```
-python -O -m compileall "${pkgdir}/path/to/module
+python -O -m compileall "${pkgdir}/path/to/module"
 
 ```
 

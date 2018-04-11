@@ -43,7 +43,7 @@ See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks
 
 The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications").
 
-**Note:** Desktop Environments, such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE") may also provide a udisk wrapper.
+**Note:** [Desktop environments](/index.php/Desktop_environment "Desktop environment"), such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE") may also provide a udisk wrapper.
 
 *   **bashmount** — A bash script to mount and manage removable media as a regular user with *udisks2*.
 

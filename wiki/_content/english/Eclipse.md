@@ -38,7 +38,7 @@ You cannot install multiple of these at the same time since they conflict, see [
 
 ## Plugins
 
-Many plugins are easily installed using **pacman** (see [Eclipse plugin package guidelines](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") for further informations). This will also keep them up-to-date. Alternatively, you can choose either the [Eclipse Marketplace](#Eclipse_Marketplace) or the internal [plugin manager](#Plugin_manager).
+Many plugins are easily installed using **pacman** (see [Eclipse plugin package guidelines](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") for further information). This will also keep them up-to-date. Alternatively, you can choose either the [Eclipse Marketplace](#Eclipse_Marketplace) or the internal [plugin manager](#Plugin_manager).
 
 ### Add the default update site
 

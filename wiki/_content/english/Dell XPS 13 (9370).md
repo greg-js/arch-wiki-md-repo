@@ -8,6 +8,7 @@
 | USB-C / Thunderbolt 3 | Working |  ? |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
+| Fingerprint sensor | Not working |  ? |
 
 The Dell XPS 13 Early 2018 (9370) is the fifth-generation model of the XPS 13 line. The laptop was released in January 2018 in both a standard edition with Windows installed as well as a Developer Edition with Ubuntu 16.04 installed, featuring kernel 4.4 as of now. There are only minor hardware differences between them, mostly in regards to the mainboard microchip manufacturers. Just like the older versions ([9333](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [9343](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)"), [9350](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)"), and [9360](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)")) it is available in different hardware configurations as well. These fifth gen models includes Intel's eighth generation Kaby Lake processors, and can be configured with up to 16GB LPDDR3 2133 MHz RAM and a 1TB PCI SSD.
 
@@ -15,7 +16,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 
 ## Booting
 
-To boot from a USB device attached via the USB-C to USB-A adapter included in the box, you'll need to enable Thunderbolt boot in the BIOS (press F2 while the Dell logo is displayed). Once enabled, F12 on boot will enter the boot menu.
+To boot from a USB device attached via the USB-C to USB-A adapter included in the box, you'll need to enable Thunderbolt boot in the BIOS (press F2 while the Dell logo is displayed). Once enabled, F12 on boot will enter the boot menu. It is also possible to use the right USB-C port directly without any BIOS adjustment.
 
 ## Video
 

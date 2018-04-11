@@ -29,6 +29,7 @@ Related articles
     *   [4.3 "Not registered", or "Method "Connect" with signature ... doesn't exist"](#.22Not_registered.22.2C_or_.22Method_.22Connect.22_with_signature_..._doesn.27t_exist.22)
     *   [4.4 Error Failed to set hostname/domainname](#Error_Failed_to_set_hostname.2Fdomainname)
     *   [4.5 Unknown route on connection](#Unknown_route_on_connection)
+    *   [4.6 File /proc/net/pnp doesn't exist](#File_.2Fproc.2Fnet.2Fpnp_doesn.27t_exist)
 *   [5 See also](#See_also)
     *   [5.1 Front-ends](#Front-ends)
 
@@ -365,6 +366,10 @@ While there is no option to configure the destination host of the check, the con
 # iptables -A OUTPUT -d ipv4.connman.net,ipv6.connman.net -j REJECT
 
 ```
+
+### File /proc/net/pnp doesn't exist
+
+If you see this in your error log it is caused by bug in connman [[6]](https://bbs.archlinux.org/viewtopic.php?id=227689#p1766928) and can be ignored. [Bug Report](https://01.org/jira/browse/CM-690)
 
 ## See also
 

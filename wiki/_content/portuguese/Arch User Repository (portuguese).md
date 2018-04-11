@@ -133,7 +133,7 @@ $ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*nome_pacote*.tar.g
 
 Mude diretórios para o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") do pacote.
 
-**Atenção:** **Verifique com atenção todos os arquivos.** Verifique no `PKGBUILD` e em qualquer arquivo `.install` por comandos maliciosos. `PKGBUILD`s são scripts em [bash](/index.php/Bash "Bash") contendo funções para serem executadas pelo *makepkg*: essas funções podem conter *qualquer* comando válido ou sintaxe Bash válida. Então, é totalmente possível que um `PKGBUILD` contenha comandos perigosos por malícia ou ignorância por parte do autor. Já que o *makepkg* usa *fakeroot* (e nunca deveria ser executado como root), há ainda um certo nível de proteção, mas você nunca deveria contar somente nisso. Em caso de dúvida, não compile o pacote e procure ajuda nos fóruns ou na lista de discussão.
+**Atenção:** **Verifique com atenção todos os arquivos.** Verifique no `PKGBUILD` e em qualquer arquivo *.install* por comandos maliciosos. `PKGBUILD`s são scripts em [bash](/index.php/Bash "Bash") contendo funções para serem executadas pelo *makepkg*: essas funções podem conter *qualquer* comando válido ou sintaxe Bash válida. Então, é totalmente possível que um `PKGBUILD` contenha comandos perigosos por malícia ou ignorância por parte do autor. Já que o *makepkg* usa *fakeroot* (e nunca deveria ser executado como root), há ainda um certo nível de proteção, mas você nunca deveria contar somente nisso. Em caso de dúvida, não compile o pacote e procure ajuda nos fóruns ou na lista de discussão.
 
 ```
 $ cd *nome_pacote*
@@ -263,7 +263,7 @@ Os procedimentos para envio de pacotes para o AUR é o mesmo de novos pacotes e 
 
 **Nota:** Você precisa regerar o `.SRCINFO` toda vez que você alterar os metadados do `PKGBUILD`, tal como atualizações de [pkgver()](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgver "PKGBUILD (Português)"). Do contrário, o AUR não vai mostrar os números de versão atualizados.
 
-Para enviar, adicione o `PKGBUILD`, `.SRCINFO` e quaisquer arquivos auxiliares (como arquivos `.install` ou arquivos fontes locais como `.patch`) à *staging area* com `git add`, faça commit deles para sua árvore local com uma mensagem de commit com `git commit` e, finalmente, publique as alterações para o AUR com `git push`.
+Para enviar, adicione o `PKGBUILD`, `.SRCINFO` e quaisquer arquivos auxiliares (como arquivos *.install* ou arquivos fontes locais como *.patch*) à *staging area* com `git add`, faça commit deles para sua árvore local com uma mensagem de commit com `git commit` e, finalmente, publique as alterações para o AUR com `git push`.
 
 Por exemplo:
 
@@ -289,16 +289,13 @@ $ git push
 
 ### Outras requisições
 
-*   Requisições para abandono e requisições para remoção de pacotes podem ser criadas clicando no link "Enviar requisição" sob "Ações do pacote" no lado direito da janela. Isso automaticamente uma notificação de e-mail para o atual mantenedor de pacote e para a [lista de discussão aur-requests](https://mailman.archlinux.org/mailman/listinfo/aur-requests) para debate.
-*   Requisições de abandono (*Disownment Requests*) serão concedidas somente após duas semanas se o atual mantenedor não apresentar resposta.
-*   Requisições de mesclagem (*Merge Requests*) são para substituir um outro. Usuários ainda terão que reenviar um pacote sob um novo nome e podem requisitar mesclagem dos comentários e votos da versão anterior. Isso tem nada haver com "git merge" e não é similar aos "pull requests" do github.
-*   Requisições de remoção (*Removal Requests*) precisam das seguintes informações:
-    *   Motivo para exclusão, com pelo menos uma nota curta
-        **NOTE:** Um comentário em um pacote não necessariamente demonstra suficiente motivo do porquê um pacote deve ser excluído. Isso porque assim que um TU realiza a exclusão, o único lugar que vai manter a tal informação será o e-mail na lista de discussão do aur-requests.
-    *   Incluir detalhes de suporte, como, por exemplo, quando um pacote é fornecido por outro pacote, se você é o mantenedor do pacote, ele foi renomeado e o dono original concordou, etc.
-    *   Para requisições de mesclagem: Nome do pacote base para o qual deve ser mescla
-
-Requisições de remoção podem ser negadas, caso em que você provavelmente será aconselhado a abandonar o pacote para a referência de um possível futuro mantenedor.
+*   Requisições para excluir, mesclar e tornar órfão podem ser criadas clicando no link "Enviar requisição" sob "Ações do pacote" no lado direito da janela. Isso automaticamente uma notificação de e-mail para o atual mantenedor de pacote e para a [lista de discussão aur-requests](https://mailman.archlinux.org/mailman/listinfo/aur-requests) para debate.
+*   Requisições para tornar órfão (*Orphan requests*, em inglês) serão concedidas somente após duas semanas se o atual mantenedor não apresentar resposta.
+*   Requisições para mesclar (*Merge requests*, em inglês) são para excluir o pacote base e transferir os votos e comentários para outro pacote base. O nome do pacote base para onde será mesclado deve ser informado. Note que isso tem nada haver com "git merge" ou com as "Merge Requests" do GitLab.
+*   Requisições para excluir (*Deletion requests*, em inglês) precisam das seguintes informações:
+    *   Uma nota curta explicando o motivo para exclusão. Note que um comentário em um pacote não necessariamente demonstra suficiente motivo do porquê um pacote deve ser excluído. Isso porque assim que um TU realiza a exclusão, o único lugar que vai manter a tal informação será o e-mail na lista de discussão do aur-requests.
+    *   Detalhes de suporte, como, por exemplo, quando um pacote é fornecido por outro pacote, se você é o mantenedor do pacote, ele foi renomeado e o dono original concordou, etc.
+    *   Requisições para excluir podem ser negadas, caso em que, se você for o mantenedor do pacote, você provavelmente será aconselhado a tornar órfão o pacote para permitir a adoção por outro empacotador.
 
 ## Tradução da interface web
 

@@ -116,7 +116,7 @@ See forum discussion [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1374434#p
 
 ### Maven problems with small tmpfs
 
-If your system has a small tmpfs partition you will have problems unpacking the maven index (will continue downloading again after failing to unpack). To fix this issue, append the following pieces of informations in the Netbeans configuration file accordingly.
+If your system has a small tmpfs partition you will have problems unpacking the maven index (will continue downloading again after failing to unpack). To fix this issue, append the following pieces of information in the Netbeans configuration file accordingly.
 
  `~/.netbeans/*version*/etc/netbeans.conf` 
 ```

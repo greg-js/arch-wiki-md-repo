@@ -74,7 +74,7 @@ $ zgrep VIRTIO /proc/config.gz
 
 ### Loading kernel modules
 
-First, check if the kernel modules are automatically loaded. This should be the case with recent versions of [udev](/index.php/Udev "Udev").
+首先检查内核模块是否已经自动加载，This should be the case with recent versions of [udev](/index.php/Udev "Udev").
 
 ```
 $ lsmod | grep kvm
@@ -82,9 +82,9 @@ $ lsmod | grep virtio
 
 ```
 
-In case the above commands return nothing, you need to [load](/index.php/Kernel_modules#Loading "Kernel modules") kernel modules.
+上面的命令如果没有返回内容，那么你需要[Kernel_modules_(简体中文) #手动加载卸载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.8D.B8.E8.BD.BD "Kernel modules (简体中文)") 内核模块。
 
-**Tip:** If modprobing `kvm_intel` or `kvm_amd` fails but modprobing `kvm` succeeds, (and `lscpu` claims that hardware acceleration is supported), check your BIOS settings. Some vendors (especially laptop vendors) disable these processor extensions by default. To determine whether there's no hardware support or there is but the extensions are disabled in BIOS, the output from `dmesg` after having failed to modprobe will tell.
+**Tip:** 如果 `kvm_intel` 或 `kvm_amd` 加载失败但是`kvm` 加载成功， (`lscpu`可检查硬件支持情况)检查你的BIOS设置。一些品牌机 (尤其时笔记本电脑) 默认关闭了这个功能，请确保是否是硬件支持该功能，但在BIOS中它被关闭了，在`dmesg`的提示信息中会展示出相关的警告信息。
 
 ### List of para-virtualized devices
 

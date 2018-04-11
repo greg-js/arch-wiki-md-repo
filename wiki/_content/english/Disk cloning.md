@@ -63,7 +63,7 @@ If you are positive that your disk does not contain any errors, you could procee
 
 **Note:**
 
-*   To regain unique UUIDs of an *ext2/3/4* filesystem, use `tune2fs /dev/sd*XY* -U random` on every partition.
+*   To regain unique UUIDs of an *ext2/3/4* filesystem, use `tune2fs /dev/sd*XY* -U random` on every partition. For swap partitions, use `mkswap /dev/sd*XY*` instead.
 *   Partition table changes from *dd* are not registered by the kernel. To notify of changes without rebooting, use a utility like *partprobe* (part of [GNU Parted](/index.php/GNU_Parted "GNU Parted")).
 
 ### Backing up the partition table

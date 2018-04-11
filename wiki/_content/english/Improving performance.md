@@ -360,9 +360,9 @@ Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the
 
 ### DRIconf
 
-[driconf](https://www.archlinux.org/packages/?name=driconf) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
+[driconf](https://www.archlinux.org/packages/?name=driconf) (**DRI** **CONF**igurator) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
 
-[adriconf-git](https://aur.archlinux.org/packages/adriconf-git/) (**A**dvanced **DRI** **CONF**igurator) is an improved version of DRIconf, with refreshed interface and better handling of options to set.
+[adriconf](https://aur.archlinux.org/packages/adriconf/) and [adriconf-git](https://aur.archlinux.org/packages/adriconf-git/) (**A**dvanced **DRI** **CONF**igurator) is an improved version of DRIconf, with refreshed interface and better handling of options to set.
 
 ## RAM and swap
 

@@ -1,4 +1,4 @@
-DomainKeys Identified Mail (DKIM) is a digital email signing/verification technology, which is supported by most common mail providers, including Yahoo, Google and Outlook.com.
+[DomainKeys Identified Mail](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail "w:DomainKeys Identified Mail") (DKIM) is a digital email signing/verification technology, which is supported by most common mail providers, including Yahoo, Google and Outlook.com.
 
 ## Contents
 

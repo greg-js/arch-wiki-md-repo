@@ -9,6 +9,7 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
 ## Contents
 
 *   [1 Nome do pacote](#Nome_do_pacote)
+    *   [1.1 Pacotes versionados](#Pacotes_versionados)
 *   [2 Métodos de instalação](#M.C3.A9todos_de_instala.C3.A7.C3.A3o)
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
@@ -18,9 +19,15 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
 
 ## Nome do pacote
 
-Para módulos de [Python 3](/index.php/Python#Python_3 "Python"), use a sistemática de nome `python-*nomemódulo*`; se o pacote é para [Python 2](/index.php/Python#Python_2 "Python"), use o prefixo `python2-`.
+Para módulos de biblioteca do [Python 3](/index.php/Python#Python_3 "Python"), use `python-*nomemódulo*`. Também use o prefixo se o pacote fornece um programa fortemente atrelado ao ecossistema do Python (p. ex. *pip* or *tox*). Para outros aplicativos, use apenas o nome do programa.
 
-Se você precisar adicionar um pacote versionado, use `python-*nomemódulo*-*versão*` (ex.: `python-colorama-0.2.5`). Então, uma dependência python `colorama==0.2.5` vai se tornar em um pacote Arch `python-colorama-0.2.5`.
+O mesmo se aplica para Python 2, exceto que o prefixo (se necessário) é `python2-`.
+
+**Nota:** O nome do pacote deve estar todo em minúsculo.
+
+### Pacotes versionados
+
+Se você precisar adicionar um pacote versionado, use `python-*nomemódulo*-*versão*` (ex.: `python-colorama-0.2.5`). Então, uma dependência python `colorama==0.2.5` vai se tornar um pacote Arch `python-colorama-0.2.5`.
 
 ## Métodos de instalação
 
@@ -30,18 +37,25 @@ No entanto, para gerenciar pacotes Python dentro de PKGBUILDs, o [distutils](htt
 
 ### distutils
 
-Um exemplo de PKGBUILD com *distutils* pode ser encontrado [aqui](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto). Ele segue a forma:
+Um PKGBUILD de *distutils* é geralmente bem simples:
 
 ```
-python setup.py install --root="$pkgdir/" --optimize=1
+build() {
+  *python* setup.py build
+}
+
+package() {
+  *python* setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}
 
 ```
 
 sendo que:
 
-*   python é substituído com o binário correto, `python` ou `python2`
+*   *python* é substituído com o binário correto, `python` ou `python2`
 *   `--root="$pkgdir/"` evita a tentativa de instalar diretamente no sistema hospedeiro em vez do arquivo de pacote, que resultaria em um erro de permissão
-*   `--optimize=1` compila arquivos `.pyo` de forma que eles possam ser rastreados pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
+*   `--optimize=1` compila arquivos bytecode otimizados (`.pyo` para Python 2, `opt-1.pyc` para Python 3) de forma que eles possam ser rastreados pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
+*   `--skip-build` otimiza, evitando tentativas desnecessárias de reexecutar as etapas de compilação já executadas na função `build()`.
 
 ### setuptools
 
@@ -51,7 +65,7 @@ Se o pacote resultante incluir executáveis que [importam o módulo `pkg_resourc
 
 ### pip
 
-Se você precisar usar o *pip* (fornecido por [python-pip](https://www.archlinux.org/packages/?name=python-pip) e [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)) para, por exemplo, instalar pacotes [wheel](https://bitbucket.org/pypa/wheel/), lembre-se de passar as seguintes opções:
+Se você precisar usar o *pip* (fornecido por [python-pip](https://www.archlinux.org/packages/?name=python-pip) e [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)) para, por exemplo, instalar pacotes [wheel](https://github.com/pypa/wheel), lembre-se de passar as seguintes opções:
 
 ```
 PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-installed --no-deps *.whl
@@ -66,7 +80,7 @@ PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-insta
 *pip* não sabe como gerar arquivos `.pyo` (veja [https://github.com/pypa/pip/issues/2209](https://github.com/pypa/pip/issues/2209)). Para gerá-los manualmente após *pip* ter instalado o módulo, execute:
 
 ```
-python -O -m compileall "${pkgdir}/caminho/para/o/módulo
+python -O -m compileall "${pkgdir}/caminho/para/o/módulo"
 
 ```
 
@@ -78,11 +92,7 @@ Não instale um diretório chamado apenas `tests`, pois ele facilmente entra em 
 
 ### URLs de download do PyPI
 
-URL PyPI na forma `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` foram abandonados silenciosamente para novas versões de pacotes no curso de 2016, substituídos por um esquema usando um hash impredizível que precisa ser obtido do site do PYPI toda vez que um pacote precisa ser atualizado[[1]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940764).
-
-Como os empacotadores *downstream* relataram seus problemas aos mantenedores do PyPI[[2]](https://github.com/pypa/pypi-legacy/issues/438), um novo esquema estável foi fornecido[[3]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730): [PKGBUILD (Português)#source](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") o vetor `source=()` deve agora usar os modelos de URL a seguir.
-
-Note que uma variável `$_name` personalizada é usada em vez de `$pkgname` já que pacotes python são geralmente chamados `python-$_name`.
+URL PyPI na forma `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` foram abandonados silenciosamente para novas versões de pacotes no curso de 2016, substituídos por um esquema usando um hash impredizível que precisa ser obtido do site do PYPI toda vez que um pacote precisa ser atualizado[[1]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940764). Como os empacotadores *downstream* relataram seus problemas aos mantenedores do PyPI[[2]](https://github.com/pypa/pypi-legacy/issues/438), um novo esquema estável foi fornecido[[3]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730): [PKGBUILD (Português)#source](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") o vetor `source=()` deve agora usar os modelos de URL a seguir.
 
 	Pacote fonte
 
@@ -97,3 +107,10 @@ Note que uma variável `$_name` personalizada é usada em vez de `$pkgname` já 
 	neste exemplo para `source_x86_64=('...')`. Também `_py=py36` pode ser usado para não repetir a versão do python:
 
 	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/$_name-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
+
+Note que uma variável personalizada `**$_name**` é usada em vez de `pkgname` já que nomes de pacotes python são geralmente prefixados com `python-`. Essa variável pode ser definida genericamente da seguinte forma:
+
+```
+_name=${pkgname#python-}
+
+```

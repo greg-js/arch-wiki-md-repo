@@ -3,7 +3,7 @@
 *   [Users and groups (简体中文)](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")
 *   [sudo (简体中文)](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")
 
-**翻译状态：** 本文是英文页面 [su](/index.php/Su "Su") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-03，点击[这里](https://wiki.archlinux.org/index.php?title=su&diff=0&oldid=502924)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [su](/index.php/Su "Su") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-10，点击[这里](https://wiki.archlinux.org/index.php?title=su&diff=0&oldid=516603)可以查看翻译后英文页面的改动。
 
 **su** 命令 (**s**ubstitute **u**ser) 用来切换当前用户身份到其他用户身份，默认切换成 root。
 

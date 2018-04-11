@@ -1,4 +1,6 @@
-[dictd](http://sourceforge.net/projects/dict/) is an online dictionary client and server.
+The [official website](http://sourceforge.net/projects/dict/) describes dictd as:
+
+	Client/server software, human language dictionary databases, and tools supporting the [DICT](https://en.wikipedia.org/wiki/DICT "wikipedia:DICT") protocol (RFC 2229).
 
 ## Contents
 

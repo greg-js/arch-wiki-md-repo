@@ -1,8 +1,3 @@
-Related articles
-
-*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
-*   [tmux](/index.php/Tmux "Tmux")
-
 dtach "is a tiny program that emulates the detach feature of screen, allowing you to run a program in an environment that is protected from the controlling terminal and attach to it later." [[1]](http://dtach.sourceforge.net/)
 
 ## Contents

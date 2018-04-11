@@ -52,7 +52,7 @@ Changes are preserved on saved files and can be modified again in Master PDF Edi
 
 Note that it cannot properly handle select boxes yet in forms.
 
-The package can be [installed](/index.php/Install "Install") with [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/) and gives the executable pdfeditor.
+The package can be [installed](/index.php/Install "Install") with [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/) and gives the executable masterpdfeditor4.
 
 ### LibreOffice Draw
 

@@ -165,7 +165,7 @@ export XDG_MENU_PREFIX="lxde-"
 
 ```
 
-See these threads for more informations: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1110903), and especially this post from the Linux Mint forums: [[2]](http://forums.linuxmint.com/viewtopic.php?f=175&t=53986#p501920)
+See these threads for more information: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1110903), and especially this post from the Linux Mint forums: [[2]](http://forums.linuxmint.com/viewtopic.php?f=175&t=53986#p501920)
 
 ### No icons
 

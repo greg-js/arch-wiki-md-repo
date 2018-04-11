@@ -1,4 +1,4 @@
-**Faction** is a C library for test-driven software development. Its design is inspired by [Oil Shell](https://github.com/oilshell/oil/wiki/Spec-Tests).
+**Faction** is a C library for test-driven software development.
 
 ## Contents
 
@@ -33,9 +33,10 @@ Convention dictates that Faction tests are to be written at the bottom of the so
 
 ```
 /* This is the function to be tested */
+int
 increment(int input)
 {
-  return (input + 1);
+   return (input + 1);
 }
 
 #ifdef FACTION
@@ -113,5 +114,5 @@ In extended mode,
 
 ## See also
 
-*   [Faction Releases](https://timetoplatypus.com/static/faction/)
+*   [Faction Homepage](https://timetoplatypus.com/static/faction/index.html)
 *   [Faction Example Project](https://github.com/timetoplatypus/three_b)

@@ -129,7 +129,7 @@ The `git commit` command records the staged changes to the repository, see [git-
 
 #### Revision selection
 
-Git offers multiple ways to specify revisions, see [gitrevisions(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitrevisions.7) and [Revision Selection](https://git-scm.com/book/tr/v2/Git-Tools-Revision-Selection).
+Git offers multiple ways to specify revisions, see [gitrevisions(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitrevisions.7) and [Revision Selection](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection).
 
 Many Git commands take revisions as arguments. A commit can be identified by any of the following:
 

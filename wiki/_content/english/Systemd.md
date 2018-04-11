@@ -6,14 +6,14 @@ Related articles
 *   [init](/index.php/Init "Init")
 *   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
 *   [udev](/index.php/Udev "Udev")
-*   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
+*   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
 *   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
 
 From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 	*systemd* is a suite of basic building blocks for a Linux system. It provides a system and service manager that runs as PID 1 and starts the rest of the system. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), maintains mount and automount points, and implements an elaborate transactional dependency-based service control logic. *systemd* supports SysV and LSB init scripts and works as a replacement for sysvinit. Other parts include a logging daemon, utilities to control basic system configuration like the hostname, date, locale, maintain a list of logged-in users and running containers and virtual machines, system accounts, runtime directories and settings, and daemons to manage simple network configuration, network time synchronization, log forwarding, and name resolution.
 
-**Note:** For a detailed explanation as to why Arch has moved to *systemd*, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
+**Note:** For a detailed explanation of why Arch moved to *systemd*, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
 ## Contents
 
@@ -270,7 +270,7 @@ The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/syste
 **Note:**
 
 *   The load paths are completely different when running *systemd* in [user mode](/index.php/Systemd/User#How_it_works "Systemd/User").
-*   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes, or employ their pre defined semantics ('@', '-'). See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) and [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for more information.
+*   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes, or employ their predefined semantics ('@', '-'). See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) and [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for more information.
 
 Look at the units installed by your packages for examples, as well as the [annotated example section](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) of [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
 
@@ -805,7 +805,6 @@ You may want to disable emergency mode on a remote machine, for example, a virtu
 *   [Fedora Project - About systemd](http://fedoraproject.org/wiki/Systemd)
 *   [Fedora Project - How to debug systemd problems](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
 *   [Fedora Project - SysVinit to systemd cheatsheet](http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
-*   [Gentoo Wiki systemd page](https://wiki.gentoo.org/wiki/Systemd "gentoo:Systemd")
 *   [Debian Wiki systemd page](https://wiki.debian.org/systemd "debian:systemd")
 *   [Manual pages](http://0pointer.de/public/systemd-man/)
 *   [Lennart's blog story](http://0pointer.de/blog/projects/systemd.html), [update 1](http://0pointer.de/blog/projects/systemd-update.html), [update 2](http://0pointer.de/blog/projects/systemd-update-2.html), [update 3](http://0pointer.de/blog/projects/systemd-update-3.html), [summary](http://0pointer.de/blog/projects/why.html)

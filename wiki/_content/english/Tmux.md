@@ -1,8 +1,3 @@
-Related articles
-
-*   [dtach](/index.php/Dtach "Dtach")
-*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
-
 [tmux](http://tmux.github.io/) is a "terminal multiplexer: it enables a number of terminals (or windows), each running a separate program, to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached."
 
 tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://github.com/tmux/tmux/wiki/FAQ).

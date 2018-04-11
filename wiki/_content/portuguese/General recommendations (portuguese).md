@@ -306,7 +306,7 @@ Essa seção contém ajustes cosméticos frequentemente procurados para uma expe
 
 ### Fontes
 
-Você pode querer instalar um conjunto de fontes TrueType, já que fontes bitmap não escaláveis são incluídas no sistema Arch. O pacote [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) fornece um conjunto de alta qualidade, fontes de propósito geral com boa cobertura de [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode").
+Você pode querer instalar um conjunto de fontes TrueType, já que fontes bitmap não escaláveis são incluídas no sistema Arch. Há várias [famílias de fontes](/index.php/Fonts#Families "Fonts") de propósito geral fornecendo grande cobertura de [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode") e até mesmo [compatibilidade métrica](/index.php/Metric-compatible_fonts "Metric-compatible fonts") com fontes de outros sistemas operacionais.
 
 Uma abundância de informações sobre o assunto pode ser localizada nos artigos [Fontes](/index.php/Fonts "Fonts") e [Configuração de fonte](/index.php/Font_configuration "Font configuration").
 

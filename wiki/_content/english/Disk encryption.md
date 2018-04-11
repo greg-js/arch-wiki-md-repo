@@ -322,7 +322,7 @@ Among other things, you will need to answer the following questions:
 *   At login
 *   Manually on demand *(after login)*
 
-	How should multiple users be accomodated?
+	How should multiple users be accommodated?
 
 *   Not at all
 *   Using a shared passphrase/key
@@ -423,7 +423,7 @@ Whenever the operating system or an application requests a certain fragment of d
 
 ```
 
-Similarly, on each write operation, all sectors that are affected must be re-encrypted complelety (while the rest of the sectors remain untouched).
+Similarly, on each write operation, all sectors that are affected must be re-encrypted completely (while the rest of the sectors remain untouched).
 
 In order to be able to de/encrypt data, the disk encryption system needs to know the unique secret "key" associated with it. Whenever the encrypted block device or folder in question is to be mounted, its corresponding key (called henceforth its "master key") must be supplied.
 

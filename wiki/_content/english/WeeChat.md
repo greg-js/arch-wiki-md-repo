@@ -231,6 +231,8 @@ Or have a look at [Mosh](https://mosh.org).
 
 ### Slack
 
+**Warning:** [Slack will end support for IRC gateways on 2018-05-15.](https://get.slack.help/hc/en-us/articles/201727913-Connect-to-Slack-over-IRC-and-XMPP)
+
 [Slack](https://slack.com/) is a platform for team communication; an IRC on steroids. Thanks to its open API, it is possible to connect to your slack team using weechat.
 
 #### IRC gateway
@@ -351,4 +353,3 @@ and the help will be displayed in the main buffer (usually buffer 1).
 *   [Official WeeChat quick start guide](https://weechat.org/files/doc/stable/weechat_quickstart.en.html) - a good place to start
 *   [FiXato's guide to WeeChat](https://guides.fixato.org/weechat) - A Weechat Contributers Guide
 *   [My always up-to-date WeeChat configuration](https://gist.github.com/pascalpoitras/8406501) - r3m (weechat-dev)
-*   [Thoughtbot article on weechat and slack](https://robots.thoughtbot.com/weechat-for-slacks-irc-gateway)

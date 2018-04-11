@@ -36,6 +36,7 @@
         *   [1.11.6 Virtual desktop pagers](#Virtual_desktop_pagers)
         *   [1.11.7 Desktop widgets](#Desktop_widgets)
     *   [1.12 Dictionary and Thesaurus](#Dictionary_and_Thesaurus)
+    *   [1.13 Spell checkers](#Spell_checkers)
 
 ## Others
 
@@ -680,3 +681,21 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   **[sdcv](/index.php/Sdcv "Sdcv")** — A command line dictionary. It provides access to dictionaries in StarDict's format.
 
 	[http://dushistov.github.io/sdcv/](http://dushistov.github.io/sdcv/) || [sdcv](https://www.archlinux.org/packages/?name=sdcv)
+
+### Spell checkers
+
+*   **[Ispell](https://en.wikipedia.org/wiki/Ispell "wikipedia:Ispell")** — An interactive spell-checking program for Unix
+
+	[https://www.cs.hmc.edu/~geoff/ispell.html](https://www.cs.hmc.edu/~geoff/ispell.html) || [ispell](https://www.archlinux.org/packages/?name=ispell)
+
+*   **[Aspell](/index.php/Aspell "Aspell")** — A spell checker designed to eventually replace Ispell
+
+	[http://aspell.net/](http://aspell.net/) || [aspell](https://www.archlinux.org/packages/?name=aspell)
+
+*   **[Hunspell](https://en.wikipedia.org/wiki/Hunspell "wikipedia:Hunspell")** — Spell checker and morphological analyzer library and program
+
+	[https://hunspell.github.io/](https://hunspell.github.io/) || [hunspell](https://www.archlinux.org/packages/?name=hunspell)
+
+*   **[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) "wikipedia:Enchant (software)")** — A wrapper library for generic spell checking
+
+	[https://abiword.github.io/enchant/](https://abiword.github.io/enchant/) || [enchant](https://www.archlinux.org/packages/?name=enchant)

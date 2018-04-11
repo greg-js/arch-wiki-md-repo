@@ -395,7 +395,7 @@ ${execi 300 ~/.scripts/imap.php}
 
 or wherever you saved the file.
 
-This script displays A/B where A is the number of unseen emails and B is the total number of mails in the mailbox. There are a lot of other informations available through a lot of PHP functions like with imap_Status ([http://php.net/manual/function.imap-status.php](http://php.net/manual/function.imap-status.php)). Just see the PHP docs about IMAP: [http://php.net/manual/ref.imap.php](http://php.net/manual/ref.imap.php).
+This script displays A/B where A is the number of unseen emails and B is the total number of mails in the mailbox. There are a lot of other information available through a lot of PHP functions like with imap_Status ([http://php.net/manual/function.imap-status.php](http://php.net/manual/function.imap-status.php)). Just see the PHP docs about IMAP: [http://php.net/manual/ref.imap.php](http://php.net/manual/ref.imap.php).
 
 ## Show graphic of active network interface
 

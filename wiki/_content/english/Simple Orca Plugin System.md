@@ -168,8 +168,7 @@ Those type of plug-ins are loaded with the spec.loader.exec_module. you can load
 Configure Orca to speak/braille the word "bang" instead of the "!" while loading the plug-in. Filename:`replace_chnames__-__loadmodule__+__exec.py`
 
 ```
-*#!/bin/python*
-import orca.orca
+*import orca.orca*
 orca.chnames.chnames["!"] = "bang"
 ```
 

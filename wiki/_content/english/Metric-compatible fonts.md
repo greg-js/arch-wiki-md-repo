@@ -78,7 +78,7 @@ In the following table, commonly-specified families are shown in **bold**. This 
 
 The PostScript language defines [35 core fonts](https://en.wikipedia.org/wiki/PostScript_fonts#Core_Font_Set "wikipedia:PostScript fonts") in PostScript 2\. URW released open-source versions/clones of these 35 fonts for [w:ghostscript](https://en.wikipedia.org/wiki/ghostscript "w:ghostscript"), available as [gsfonts](https://www.archlinux.org/packages/?name=gsfonts). Projects including GUST's [TeX Gyre](#TeX_Gyre) and [GNU FreeFont](#GNU_FreeFont) release enhanced versions of these fonts.
 
-PostScript 3 defines an additional 101 fonts, many of which are made available by URW under the AFPL in [GhostPDL](https://ghostscript.com/doc/pcl/urwfonts/). The AFPL bars commercial use.
+PostScript 3 defines an additional 101 fonts, many of which are made available by URW under the AFPL in [GhostPDL](https://ghostscript.com/doc/pcl/urwfonts/). The AFPL bars commercial use. Many of the dual font names are caused by [a batch update](http://git.ghostscript.com/?p=ghostpdl.git;a=commit;h=6f1da3c990ab7de4c3218bf8beff21f19449b284).
 
 #### Garamond
 

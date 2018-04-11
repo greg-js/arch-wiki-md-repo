@@ -429,7 +429,7 @@ insmod video_cirrus
 
 insmod font
 
-if loadfont "${prefix}/fonts/unicode.pf2" ; then
+if loadfont "${prefix}/fonts/unicode.pf2" ; then
     insmod gfxterm
     set gfxmode="1024x768x32;auto"
     terminal_input console
@@ -438,11 +438,10 @@ fi
 
 menuentry "Arch Linux archiso x86_64 UEFI USB" {
     set gfxpayload=keep
-    search --no-floppy --set=root --label ARCH_YYYYMM
-    linux /arch/boot/x86_64/vmlinuz archisobasedir=arch archisolabel=ARCH_YYYYMM add_efi_memmap
+    search --no-floppy --set=root --label *ARCH_YYYYMM*
+    linux /arch/boot/x86_64/vmlinuz archisobasedir=arch archisolabel=*ARCH_YYYYMM* add_efi_memmap
     initrd /arch/boot/intel_ucode.img /arch/boot/x86_64/archiso.img
 }
-
 ```
  `grub.cfg for Archboot ISO` 
 ```
@@ -457,7 +456,7 @@ insmod video_cirrus
 
 insmod font
 
-if loadfont "${prefix}/fonts/unicode.pf2" ; then
+if loadfont "${prefix}/fonts/unicode.pf2" ; then
     insmod gfxterm
     set gfxmode="1024x768x32;auto"
     terminal_input console
@@ -470,7 +469,6 @@ menuentry "Arch Linux x86_64 Archboot" {
     linux /boot/vmlinuz_x86_64 cgroup_disable=memory loglevel=7 add_efi_memmap
     initrd /boot/initramfs_x86_64.img
 }
-
 ```
 
 ## Testing UEFI in systems without native support

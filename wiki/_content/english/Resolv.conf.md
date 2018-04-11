@@ -23,10 +23,11 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [2.8 UncensoredDNS](#UncensoredDNS)
     *   [2.9 Yandex](#Yandex)
 *   [3 Preserve DNS settings](#Preserve_DNS_settings)
-    *   [3.1 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
-    *   [3.2 Use openresolv](#Use_openresolv)
-    *   [3.3 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
-    *   [3.4 Write-protect resolv.conf](#Write-protect_resolv.conf)
+    *   [3.1 Systemd-resolved configuration](#Systemd-resolved_configuration)
+    *   [3.2 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
+    *   [3.3 Use openresolv](#Use_openresolv)
+    *   [3.4 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
+    *   [3.5 Write-protect resolv.conf](#Write-protect_resolv.conf)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Limit lookup time](#Limit_lookup_time)
     *   [4.2 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
@@ -256,6 +257,19 @@ Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no t
 
 *   If you are using *dhcpcd*, see [#Modify the dhcpcd config](#Modify_the_dhcpcd_config) below.
 *   If you are using [netctl](/index.php/Netctl "Netctl") and static IP address assignment, do not use the `DNS*` options in your profile, otherwise *resolvconf* is called and `/etc/resolv.conf` overwritten.
+
+### Systemd-resolved configuration
+
+[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is the [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications.
+
+The recommended mode of [handling *resolv.conf* with *systemd-resolved*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF) is to redirect software which read the `/etc/resolv.conf` file to the local *systemd-resolved* stub DNS resolver, delete or rename the existing file and create the following symbolic link: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
+
+The DNS servers can be configured in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file. In order to check the DNS actually used by *systemd-resolved*, use the command:
+
+```
+$ systemd-resolve --status
+
+```
 
 ### Prevent NetworkManager modifications
 

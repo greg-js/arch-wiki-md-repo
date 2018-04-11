@@ -99,6 +99,6 @@ sslCA=/etc/letsencrypt/live/$domain/fullchain.pem
 To set the SuperUser password, use the following command.
 
 ```
-# murmur -ini /etc/murmur.ini -supw PASSWORD
+# murmurd -ini /etc/murmur.ini -supw PASSWORD
 
 ```

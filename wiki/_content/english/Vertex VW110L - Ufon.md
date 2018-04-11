@@ -74,7 +74,7 @@ Files in vwmfdiag zipfile from ufon website and from newer CDs seems to be corru
 *   update modules.dep and map files - **depmod -a**
 *   Plug Vertex modem in and wait for few second until red LED on the edge of modem change color to **blue**
 
-Try screen or minicom to get an informations from `/dev/ttyUSB1`.
+Try screen or minicom to get an information from `/dev/ttyUSB1`.
 
 * * *
 

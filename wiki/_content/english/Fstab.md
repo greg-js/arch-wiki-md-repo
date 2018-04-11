@@ -50,7 +50,7 @@ A simple `/etc/fstab`, using kernel name descriptors:
 
 **Tip:** The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
 
-**Note:** If the root file system is [btrfs](/index.php/Btrfs "Btrfs"), the fsck order should be set to `0` instead of `1`.
+**Note:**If the root file system is [btrfs](/index.php/Btrfs "Btrfs"), the fsck order should be set to `0` instead of `1`.
 
 All specified devices within `/etc/fstab` will be automatically mounted on startup and when the `-a` flag is used with [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) unless the `noauto` option is specified. Devices that are listed and not present will result in an error unless the `nofail` option is used.
 

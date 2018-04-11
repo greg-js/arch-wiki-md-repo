@@ -53,7 +53,7 @@ EndSection
 
 ```
 
-After restarting your X server, the mouse should be fully functional, including the two lateral buttons. If not, or if you need more informations about configuring gaming mice, see [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
+After restarting your X server, the mouse should be fully functional, including the two lateral buttons. If not, or if you need more information about configuring gaming mice, see [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
 
 ## RAT7 or RAT9 Partial Fix
 

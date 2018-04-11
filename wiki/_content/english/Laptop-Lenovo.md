@@ -124,9 +124,9 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad W510 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Touchscreen (Yes), Fingeprint Reader (Not tested) | Tested April 2017 / Linux 4.10.8 |
-| Lenovo ThinkPad W540 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (Yes) | Tested April 2017 / Linux 4.10.8 |
-| Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingeprint Reader (Yes) |
+| Lenovo ThinkPad W510 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Touchscreen (Yes), Fingerprint Reader (Not tested) | Tested April 2017 / Linux 4.10.8 |
+| Lenovo ThinkPad W540 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2017 / Linux 4.10.8 |
+| Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingerprint Reader (Yes) |
 
 #### X series
 

@@ -403,8 +403,6 @@ Some service files are created for the Live environment, please disable the serv
 # systemctl disable pacman-init.service choose-mirror.service
 # rm -r /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman.d-gnupg.mount,getty@tty1.service.d}
 # rm /etc/systemd/scripts/choose-mirror
-# rm /etc/systemd/system/archiso-start.service
-# rm /etc/systemd/system/multi-user.target.wants/archiso-start.service
 
 ```
 

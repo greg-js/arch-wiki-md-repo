@@ -14,8 +14,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.7 prauat: 2xIntel(R) Xeon(R) CPU E5-2609 v4, 2xGigabyte GeForce GTX 1060 6GB G1 Gaming, Intel S2600CWTR](#prauat:_2xIntel.28R.29_Xeon.28R.29_CPU_E5-2609_v4.2C_2xGigabyte_GeForce_GTX_1060_6GB_G1_Gaming.2C_Intel_S2600CWTR)
     *   [1.8 Dinkonin's virtual gaming/work setup](#Dinkonin.27s_virtual_gaming.2Fwork_setup)
     *   [1.9 pauledd's unexeptional setup](#pauledd.27s_unexeptional_setup)
-    *   [1.10 DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070](#DragoonAethis:_6700K.2C_GA-Z170X-UD3.2C_GTX_1070_2)
-    *   [1.11 hkk's Windows gaming machine (6700K, 1070, 16GB)](#hkk.27s_Windows_gaming_machine_.286700K.2C_1070.2C_16GB.29)
+    *   [1.10 hkk's Windows gaming machine (6700K, 1070, 16GB)](#hkk.27s_Windows_gaming_machine_.286700K.2C_1070.2C_16GB.29)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -259,25 +258,6 @@ Configuration:
 *   Using **libvirt/QEMU**: libvirt-4.0.0, qemu-2.11.1, [https://github.com/pauledd/GPU-Passthrough/blob/master/win10-2.xml](https://github.com/pauledd/GPU-Passthrough/blob/master/win10-2.xml) , using vfio kernel module
 *   Had to dump VBIOS in at the host while GPU was normally attached (and drivers loaded) (see [https://stackoverflow.com/a/42441234](https://stackoverflow.com/a/42441234)), had to set CPU settings manually according to my cpu (host-passthrough, sockets 1, cores: 4, threads: 2 ) or some games will regularly crash, see my xml how to insert vbios, still have audio clicking/lag with pulseaudio but thats ok for me, no further patching etc.. works out of the box without any issues.
 *   3DMark Results Time Spy Graphic Score: Native Windows 10: 5564 , GPU-Passthrough: 5541
-
-### DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070
-
-Hardware:
-
-*   **CPU**: Intel Core i7-6700K (using iGPU as the host GPU)
-*   **Motherboard**: Gigabyte GA-Z170X-UD3 (Revision 1.0, BIOS/UEFI Version: F22)
-*   **GPU**: MSI GeForce 1070 Gaming X (10Gbps)
-*   **RAM**: 16GB DDR4 2400MHz
-
-Configuration:
-
-*   **Kernel**: Linux-ck (no ACS patch needed).
-*   Using **libvirt**: XML domain, helper scripts, IOMMU groups, etc available in [my VFIO repository](https://github.com/DragoonAethis/VFIO).
-*   **Guest OS**: Windows 8.1 Pro.
-*   The entire HDD is passed to the VM as a raw device (formatted as a single NTFS partition).
-*   USB keyboard and mouse are passed to the guest VM and shared with the host with Synergy.
-*   Virtualized audio is working: PulseAudio on the host is configured to accept TCP connections, and the envvars required for QEMU to use PA are pointed at the PA server running on 127.0.0.1\. This way it's not required to change the QEMU user, everything works flawlessly. (Exact details in the repo.)
-*   Bridged networking (with NetworkManager's and [this tutorial's](https://www.happyassassin.net/2014/07/23/bridged-networking-for-libvirt-with-networkmanager-2014-fedora-21/) help) is used. `bridge0` is created, `eth0` interface is bound to it. STP disabled, VirtIO NIC is configured in the VM and that VM is seen in the network just as any other computer (and is being assigned an IP address from the router itself, can communicate freely with other computers).
 
 ### hkk's Windows gaming machine (6700K, 1070, 16GB)
 

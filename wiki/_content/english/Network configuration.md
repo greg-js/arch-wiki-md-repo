@@ -63,7 +63,7 @@ This page explains how to set up a wired connection to a network. If you need to
 
 You can use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) to check if you can reach a host.
 
-1.  Make sure your [#Network interface](#Network_interface) is up. If it isn't listed, check your [#Device driver](#Device_driver).
+1.  Make sure your [#Network interface](#Network_interface) is up. If it is not listed, check your [#Device driver](#Device_driver).
 2.  Check if you can access the internet by pinging a public IP address (e.g. `8.8.8.8`). If you cannot access the internet but your network interface is up, see [#Obtaining an IP address](#Obtaining_an_IP_address).
 3.  Check if if you can resolve domain names, by pinging a domain name (e.g. `google.com`). If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
 
@@ -97,7 +97,7 @@ Skip the next section if the driver was loaded successfully. Otherwise, you will
 
 ### Load the module
 
-Search in the Internet for the right module/driver for the chipset. Some common modules are `8139too` for cards with a Realtek chipset, or `sis900` for cards with a SiS chipset. Once you know which module to use, try to [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If you get an error saying that the module was not found, it's possible that the driver is not included in Arch kernel. You may search the [AUR](/index.php/AUR "AUR") for the module name.
+Search in the Internet for the right module/driver for the chipset. Some common modules are `8139too` for cards with a Realtek chipset, or `sis900` for cards with a SiS chipset. Once you know which module to use, try to [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If you get an error saying that the module was not found, it is possible that the driver is not included in Arch kernel. You may search the [AUR](/index.php/AUR "AUR") for the module name.
 
 If udev is not detecting and loading the proper module automatically during bootup, see [Kernel module#Automatic module handling](/index.php/Kernel_module#Automatic_module_handling "Kernel module").
 
@@ -167,7 +167,7 @@ If you are running a private network, it is safe to use IP addresses in `192.168
 
 #### Manual assignment
 
-It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection made using this method will not persist across reboots. First enable the [network interface](#Network_interfaces):
+It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection made using this method will not persist across reboots. First enable the [#Network interface](#Network_interface):
 
 ```
 # ip link set *interface* up
@@ -243,7 +243,6 @@ HostMin:   10.66.66.1
 HostMax:   10.66.66.2
 Broadcast: 10.66.66.3
 Hosts/Net: 2                     Class A, Private Internet
-
 ```
 
 ### Network managers
@@ -342,7 +341,6 @@ You can change the device name by defining the name manually with an udev-rule. 
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
-
 ```
 
 These rules will be applied automatically at boot.
@@ -350,16 +348,11 @@ These rules will be applied automatically at boot.
 A couple of things to note:
 
 *   To get the MAC address of each card, use this command: `cat /sys/class/net/*device_name*/address`
-*   Make sure to use the lower-case hex values in your udev rules. It doesn't like upper-case.
+*   Make sure to use the lower-case hex values in your udev rules. It does not like upper-case.
 
 If the network card has a dynamic MAC, you can use `DEVPATH`, for example:
 
- `/etc/udev/rules.d/10-network.rules` 
-```
-SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
-SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
-
-```
+{{hc|/etc/udev/rules.d/10-network.rules|2= SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int" SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en" }
 
 The device path should match both the new and old device name, since the rule may be executed more than once on bootup. For example, in the second rule, `"/devices/pci*/*1c.0/*/net/enp*"` would be wrong since it will stop matching once the name is changed to `en`. Only the system-default rule will fire the second time around, causing the name to be changed back to e.g. `enp1s0`.
 
@@ -372,7 +365,7 @@ To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they 
 If you would prefer to retain traditional interface names such as eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) can be disabled by masking the udev rule:
 
 ```
- # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+# ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
 ```
 
@@ -382,12 +375,7 @@ Alternatively, add `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_
 
 You can change the device [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit "wikipedia:Maximum transmission unit") and queue length by defining manually with an udev-rule. For example:
 
- `/etc/udev/rules.d/10-network.rules` 
-```
-ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_len}="2000"
-
-```
-
+ `/etc/udev/rules.d/10-network.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_len}="2000"` 
 **Note:**
 
 *   `mtu`: For PPPoE, the MTU should be no larger than 1492\. You can also set MTU via [systemd.netdev(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
@@ -457,7 +445,7 @@ If you want to enable promiscuous mode on interface `eth0` run [enable](/index.p
 
 Some cable ISPs (Vidéotron for example) have the cable modem configured to recognize only one client PC, by the MAC address of its network interface. Once the cable modem has learned the MAC address of the first PC or equipment that talks to it, it will not respond to another MAC address in any way. Thus if you swap one PC for another (or for a router), the new PC (or router) will not work with the cable modem, because the new PC (or router) has a MAC address different from the old one. To reset the cable modem so that it will recognise the new PC, you must power the cable modem off and on again. Once the cable modem has rebooted and gone fully online again (indicator lights settled down), reboot the newly connected PC so that it makes a DHCP request, or manually make it request a new DHCP lease.
 
-If this method does not work, you will need to clone the MAC address of the original machine. See also [#Change MAC/hardware address](#Change_MAC.2Fhardware_address).
+If this method does not work, you will need to clone the MAC address of the original machine. See also [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing").
 
 ### The TCP window scaling problem
 
@@ -471,11 +459,11 @@ The resulting connection is at best very slow or broken.
 
 #### How to diagnose the problem
 
-First of all, let's make it clear: this problem is odd. In some cases, you will not be able to use TCP connections (HTTP, FTP, ...) at all and in others, you will be able to communicate with some hosts (very few).
+First of all, let us make it clear: this problem is odd. In some cases, you will not be able to use TCP connections (HTTP, FTP, ...) at all and in others, you will be able to communicate with some hosts (very few).
 
 When you have this problem, the `dmesg`'s output is OK, logs are clean and `ip addr` will report normal status... and actually everything appears normal.
 
-If you cannot browse any website, but you can ping some random hosts, chances are great that you're experiencing this problem: ping uses ICMP and is not affected by TCP problems.
+If you cannot browse any website, but you can ping some random hosts, chances are great that you are experiencing this problem: ping uses ICMP and is not affected by TCP problems.
 
 You can try to use [Wireshark](/index.php/Wireshark "Wireshark"). You might see successful UDP and ICMP communications but unsuccessful TCP communications (only to foreign hosts).
 
@@ -501,7 +489,7 @@ net.ipv4.tcp_window_scaling = 0
 
 ##### Best
 
-This problem is caused by broken routers/firewalls, so let's change them. Some users have reported that the broken router was their very own DSL router.
+This problem is caused by broken routers/firewalls, so let us change them. Some users have reported that the broken router was their very own DSL router.
 
 #### More about it
 
@@ -539,7 +527,7 @@ Right click my computer and choose "Properties"
 
 ```
 
-**Note:** Newer Realtek Windows drivers (tested with *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like *Shutdown Wake-On-LAN --> Enable*. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
+**Note:** Newer Realtek Windows drivers (tested with *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like *Shutdown Wake-On-LAN > Enable*. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
 
 #### Newer Realtek Linux driver
 
@@ -547,7 +535,7 @@ Any newer driver for these Realtek cards can be found for Linux on the realtek s
 
 #### Enable *LAN Boot ROM* in BIOS/CMOS
 
-It appears that setting *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
+It appears that setting *Integrated Peripherals > Onboard LAN Boot ROM > Enabled* in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
 
 **Note:** This was tested several times on a GIGABYTE GA-G31M-ES2L motherboard, BIOS version F8 released on 2009/02/05.
 
@@ -563,7 +551,11 @@ These steps should help if your computer has this chipset:
 
 *   Find your NIC in *lspci* output:
 
- `$ lspci | grep Ethernet`  `02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)` 
+ `$ lspci | grep Ethernet` 
+```
+02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)
+
+```
 
 *   If your wired networking is not functioning in some way or another, unplug your cable then do the following:
 
@@ -585,13 +577,7 @@ $ dmesg | greg tg3
 
  `/etc/mkinitcpio.conf`  `MODULES=(.. broadcom tg3 ..)` 
 
-*   Rebuild the initramfs:
-
-```
-# mkinitcpio -p linux
-
-```
-
+*   [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs")
 *   Alternatively, you can create an `/etc/modprobe.d/broadcom.conf`:
 
 ```

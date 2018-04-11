@@ -176,7 +176,7 @@ If the above succeeds, you can switch from the ***testing*** to the ***productio
 The following command can be used to renew the certificate and restart the server upon renewal:
 
 ```
-# /path/to/letsencrypt renew restart
+# */path/to*/letsencrypt renew restart
 
 ```
 

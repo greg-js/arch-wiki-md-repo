@@ -80,7 +80,7 @@ TLP provides several command line tools. See [TLP commands](http://linrunner.de/
 
 ## Debugging
 
-You can display informations about the currently used Mode(AC/BAT) and applied configurations:
+You can display information about the currently used Mode(AC/BAT) and applied configurations:
 
 ```
  # tlp-stat

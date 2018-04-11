@@ -47,21 +47,22 @@ Related articles
     *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
     *   [4.3 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
     *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
-    *   [4.5 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
-    *   [4.6 Sharing a folder fails](#Sharing_a_folder_fails)
-    *   [4.7 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
-    *   [4.8 "Browsing" network lead to an empty folder](#.22Browsing.22_network_lead_to_an_empty_folder)
-    *   [4.9 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.10 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.11 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
-    *   [4.12 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
-    *   [4.13 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
-    *   [4.14 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
-    *   [4.15 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
-        *   [4.15.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
-        *   [4.15.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
-        *   [4.15.3 Verify folder access by guest](#Verify_folder_access_by_guest)
-    *   [4.16 Mount error: Host is down](#Mount_error:_Host_is_down)
+    *   [4.5 Windows 10 1709 and up connectivity problems - "Windows cannot access" 0x80004005](#Windows_10_1709_and_up_connectivity_problems_-_.22Windows_cannot_access.22_0x80004005)
+    *   [4.6 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
+    *   [4.7 Sharing a folder fails](#Sharing_a_folder_fails)
+    *   [4.8 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.9 "Browsing" network lead to an empty folder](#.22Browsing.22_network_lead_to_an_empty_folder)
+    *   [4.10 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
+    *   [4.11 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
+    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.13 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
+    *   [4.14 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
+    *   [4.15 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
+    *   [4.16 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
+        *   [4.16.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
+        *   [4.16.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
+        *   [4.16.3 Verify folder access by guest](#Verify_folder_access_by_guest)
+    *   [4.17 Mount error: Host is down](#Mount_error:_Host_is_down)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -783,6 +784,13 @@ Do one of the following for the settings to take effect:
 **Note:** Googling will reveal another tweak recommending users to add a key modifying the "IRPStackSize" size. This is incorrect for fixing this issue under Windows 7\. Do not attempt it.
 
 [Original article](http://alan.lamielle.net/2009/09/03/windows-7-nonpaged-pool-srv-error-2017).
+
+### Windows 10 1709 and up connectivity problems - "Windows cannot access" 0x80004005
+
+This error affects some machines running windows 10 1709 and later. It is not related to SMB1 being disabled in this version but to the fact that Microsoft disabled insecure logons for guests on this version for some, but not others.
+
+To fix, press Windows Key + R, enter gpedit.msc . Navigate to "Computer configuration\administrative templates
+etwork\Lanman Workstation" -> "Enable insecure guest logons" and disable it. Alternatively, edit the registry [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters] “AllowInsecureGuestAuth”=dword:1
 
 ### Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL
 

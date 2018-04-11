@@ -68,7 +68,7 @@ We will use **mencoder** (part of **mplayer** package) for ripping and encoding 
 
 ### Ripping and encoding the video
 
-The H.264 encoder is usually used in two passes: the first reads informations about the movie, the second uses that information to encode. We will not extract any audio for now.
+The H.264 encoder is usually used in two passes: the first reads information about the movie, the second uses that information to encode. We will not extract any audio for now.
 
 Commands follow; remember to replace the variables with the proper values:
 

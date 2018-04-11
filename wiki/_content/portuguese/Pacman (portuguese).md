@@ -40,9 +40,10 @@ O *pacman* é escrito na linguagem de programação C e usa o formato [tar](http
         *   [2.1.1 Comparando versões antes de atualizar](#Comparando_vers.C3.B5es_antes_de_atualizar)
         *   [2.1.2 Pular pacotes para não serem atualizados](#Pular_pacotes_para_n.C3.A3o_serem_atualizados)
         *   [2.1.3 Pular um grupos de pacotes para não serem atualizados](#Pular_um_grupos_de_pacotes_para_n.C3.A3o_serem_atualizados)
-        *   [2.1.4 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_n.C3.A3o_serem_instalados_no_sistema)
-        *   [2.1.5 Manter vários arquivos de configuração](#Manter_v.C3.A1rios_arquivos_de_configura.C3.A7.C3.A3o)
-        *   [2.1.6 Hooks](#Hooks)
+        *   [2.1.4 Pular arquivos para não serem instalados](#Pular_arquivos_para_n.C3.A3o_serem_instalados)
+        *   [2.1.5 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_n.C3.A3o_serem_instalados_no_sistema)
+        *   [2.1.6 Manter vários arquivos de configuração](#Manter_v.C3.A1rios_arquivos_de_configura.C3.A7.C3.A3o)
+        *   [2.1.7 Hooks](#Hooks)
     *   [2.2 Repositórios e espelhos](#Reposit.C3.B3rios_e_espelhos)
         *   [2.2.1 Segurança de pacote](#Seguran.C3.A7a_de_pacote)
 *   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
@@ -63,7 +64,9 @@ O *pacman* é escrito na linguagem de programação C e usa o formato [tar](http
     *   [3.15 Erro "cannot open shared object file"](#Erro_.22cannot_open_shared_object_file.22)
     *   [3.16 Congelamento de downloads de pacote](#Congelamento_de_downloads_de_pacote)
     *   [3.17 Falha ao obter arquivo 'core.db' do espelho](#Falha_ao_obter_arquivo_.27core.db.27_do_espelho)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Entendendo](#Entendendo)
+    *   [4.1 O que acontece durante a instalação/atualização/remoção de pacote](#O_que_acontece_durante_a_instala.C3.A7.C3.A3o.2Fatualiza.C3.A7.C3.A3o.2Fremo.C3.A7.C3.A3o_de_pacote)
+*   [5 Veja também](#Veja_tamb.C3.A9m)
 
 ## Uso
 
@@ -354,7 +357,7 @@ O arquivo `depends` lista os pacotes que este pacote depende, enquanto a `desc` 
 
 ### Limpando o cache de pacotes
 
-O *pacman* armazena seus pacotes baixados em `/var/cache/pacman/pkg/` e não remove as versões antigas ou desinstaladas automaticamente, portanto, é necessário limpar deliberadamente essa pasta periodicamente para impedir que essa pasta cresça indefinidamente em tamanho.
+O *pacman* armazena seus pacotes baixados em `/var/cache/pacman/pkg/` e não remove as versões antigas ou desinstaladas automaticamente. Portanto, é necessário limpar deliberadamente essa pasta periodicamente para impedir que essa pasta cresça indefinidamente em tamanho.
 
 A opção interna para remover todos os pacotes em cache que não estão instalados atualmente é:
 
@@ -532,6 +535,14 @@ IgnoreGroup=gnome
 
 ```
 
+#### Pular arquivos para não serem instalados
+
+Todos os arquivos listados com uma diretiva `NoUpgrade` nunca serão tocados durante uma instalação/atualização de pacote, e os novos arquivos serão instalados com uma extensão *.pacnew*.
+
+NoUpgrade=*caminho/para/arquivo*
+
+**Nota:** O caminho se refere aos arquivos no arquivo do pacote. Portanto, não inclua a barra inicial.
+
 #### Pular arquivos para não serem instalados no sistema
 
 Para pular sempre a instalação de lista de diretórios sob `NoExtract`. Por exemplo, para evitar a instalação de units de [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") use:
@@ -559,6 +570,8 @@ sendo que arquivo `*/caminho/para/configurações/comuns*` contém as mesmas op�
 #### Hooks
 
 *pacman* pode executar hooks de pré- e pós-transação do diretório `/usr/share/libalpm/hooks/`; mais diretórios podem ser especificados com a opção `HookDir` no `pacman.conf`, que tem como padrão `/etc/pacman.d/hooks`. Nomes de arquivo hook devem ser sufixados com *.hook*.
+
+Hooks do *pacman* são usados, por exemplo, em combinação com `systemd-sysusers` e `systemd-tmpfiles` para criar automaticamente arquivos e usuários de sistema durante a isntalação dos pacotes. Por exemplo, o pacote `tomcat8` especifica que ele deseja um usuário de sistema chamado `tomcat8` e certos diretórios pertencentes a este usuário. Os hooks do pacman `systemd-sysusers.hook` e `systemd-tmpfiles.hook` chamam `systemd-sysusers` e `systemd-tmpfiles` quando o pacman determina que o pacote `tomcat8` contém arquivos especificando usuários e arquivos tmp.
 
 Para mais informações sobre hooks do alpm, veja [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
@@ -637,7 +650,7 @@ Mesmo se o *pacman* estiver terrivelmente quebrado, você pode corrigi-lo manual
 1.  Determinar dependências para instalar
 2.  Baixar cada pacote de um espelho de sua escolha
 3.  Extrair cada pacote para a raiz
-4.  Reinstalar esses pacotes com `pacman -Sf` para atualizar a base de dados de pacote
+4.  Reinstalar esses pacotes com `pacman -S --force` para atualizar a base de dados de pacote
 5.  Fazer uma atualização completa do sistema
 
 Se você tem um sistema do Arch saudável disponível, você pode ver a lista completa de dependências com
@@ -650,7 +663,7 @@ $ pacman -Q $(pactree -u pacman)
 mas você pode precisar atualizar algumas delas, dependendo do seu problema. Um exemplo de extração de um pacote é
 
 ```
-# tar -xvpwf *pacote.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL
+# tar -xvpwf *pacote.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL --exclude .MTREE --exclude .BUILDINFO
 
 ```
 
@@ -758,6 +771,22 @@ Houve alguns relatos a cerca de problemas de rede que impedem o *pacman* de atua
 ### Falha ao obter arquivo 'core.db' do espelho
 
 Se você receber essa mensagem de erro com os [espelhos](/index.php/Mirrors "Mirrors") (*mirrors*) corretos, tente configurar um [servidor de nomes](/index.php/Resolv.conf "Resolv.conf") diferente.
+
+## Entendendo
+
+### O que acontece durante a instalação/atualização/remoção de pacote
+
+Ao concluir com êxito uma transação de pacote, o pacman executa as seguintes etapas de alto nível:
+
+1.  o pacman obtém o arquivo do pacote a ser instalado para todos os pacotes enfileirados em uma transação
+2.  o pacman executa várias verificações de que os pacotes provavelmente podem ser instalados
+3.  se hooks `PreTransaction` pré-existentes do pacman se aplicarem, eles serão executados
+4.  cada pacote é instalado/atualizado/removido por vez
+    1.  se o pacote tiver um script de instalação, sua função `pre_install` é executada (ou `pre_upgrade` ou `pre_remove` no caso de um pacote atualizado ou removido)
+    2.  pacman exclui todos os arquivos de uma versão pré-existente do pacote (no caso de um pacote atualizado ou removido)
+    3.  pacman descompacta o pacote e despeja seus arquivos no sistema de arquivos (no caso de um pacote instalado ou atualizado)
+    4.  se o pacote tiver um script de instalação, sua função `post_install` será executada (ou `post_upgrade` ou `post_remove` no caso de um pacote atualizado ou removido)
+5.  se hooks do pacman `PostTransaction` que existem no final da transação se aplicarem, eles serão executados
 
 ## Veja também
 

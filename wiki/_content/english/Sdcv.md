@@ -1,4 +1,4 @@
-[Sdcv](https://dushistov.github.io/sdcv/) is a command line dictionary. It provides access to dictionaries in StarDict's format.
+[Sdcv](https://dushistov.github.io/sdcv/) is a command line dictionary. It provides access to dictionaries in [StarDict](https://en.wikipedia.org/wiki/StarDict "wikipedia:StarDict")'s format.
 
 ## Contents
 

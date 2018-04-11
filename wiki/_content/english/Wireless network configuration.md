@@ -631,7 +631,7 @@ If the computer's Wi-Fi channels do not match those of the user's country, that 
 
 This section covers methods and procedures for installing kernel modules and *firmware* for specific chipsets, that differ from generic method.
 
-See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general informations on operations with modules.
+See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general information on operations with modules.
 
 ### Ralink/Mediatek
 

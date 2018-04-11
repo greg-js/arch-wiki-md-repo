@@ -17,7 +17,8 @@ Related articles
     *   [1.4 Bug: Trackpoint/Trackpad not working](#Bug:_Trackpoint.2FTrackpad_not_working)
         *   [1.4.1 Solution 1](#Solution_1)
         *   [1.4.2 Solution 2](#Solution_2)
-    *   [1.5 Bug: System occasionally hanging during startup](#Bug:_System_occasionally_hanging_during_startup)
+    *   [1.5 Bug: TrackPoint stops working after waking up from suspend](#Bug:_TrackPoint_stops_working_after_waking_up_from_suspend)
+    *   [1.6 Bug: System occasionally hanging during startup](#Bug:_System_occasionally_hanging_during_startup)
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Special buttons](#Special_buttons)
@@ -102,6 +103,17 @@ Since kernel v4.14 you can workaround this by adding `psmouse.synaptics_intertou
 #### Solution 2
 
 If you uses a kernel older than 4.14, you can patch it using [https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4](https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4). Note that this only works on the Elantech trackpoint (LEN0073).
+
+### Bug: TrackPoint stops working after waking up from suspend
+
+A workaround is to manually insert the elan_i2c module after waking up from suspend:
+
+```
+# modprobe elan_i2c
+
+```
+
+See this [bugticket](https://bugzilla.redhat.com/show_bug.cgi?id=1560723) for details.
 
 ### Bug: System occasionally hanging during startup
 

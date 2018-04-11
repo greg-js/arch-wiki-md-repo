@@ -56,6 +56,7 @@
         *   [4.24.1 Missing libpcre.so.3](#Missing_libpcre.so.3_2)
     *   [4.25 Cossacks 3](#Cossacks_3)
         *   [4.25.1 No sound](#No_sound_2)
+        *   [4.25.2 Flashing screen with primus](#Flashing_screen_with_primus)
     *   [4.26 Counter-Strike: Global Offensive (CS:GO)](#Counter-Strike:_Global_Offensive_.28CS:GO.29)
         *   [4.26.1 Game starts on the wrong screen](#Game_starts_on_the_wrong_screen)
         *   [4.26.2 Cannot reach bottom of the screen on menus](#Cannot_reach_bottom_of_the_screen_on_menus)
@@ -202,7 +203,7 @@
         *   [4.91.1 No audio](#No_audio_2)
     *   [4.92 Slay the Spire](#Slay_the_Spire)
     *   [4.93 Songbringer](#Songbringer)
-        *   [4.93.1 Launch error with wanyland](#Launch_error_with_wanyland)
+        *   [4.93.1 Launch error with Wayland](#Launch_error_with_Wayland)
     *   [4.94 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
         *   [4.94.1 No audio](#No_audio_3)
     *   [4.95 Spacechem](#Spacechem)
@@ -482,13 +483,13 @@ Out of the box you will not be able to log into SHiFT since the game expects cer
 
 #### Game crashes nearly instantly
 
-The game crashes in libopenal directlay after launch.
+The game crashes in libopenal directly after launch.
 
 Possible solution 0: Run the game with the `-nostartupmovies` flag. It no longer crashes in libopenal with a general protection error.
 
 Possible solution 1: As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.steam/root/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
 
-In case there're messages like this in the terminal:
+In case there are messages like this in the terminal:
 
 ```
 [  671.617205] Borderlands2[2772]: segfault at 0 ip           (null) sp 00000000ff9a462c error 14 in Borderlands2[8048000+235a000]
@@ -598,7 +599,7 @@ Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 This is a strange corner case which happens infrequently at best (and the prerequisites for reproducing it are unknown), but the crash would look like this:
 
-1.  Immediate SEGV on start, before any windows get created
+1.  Immediate segfault on start, before any windows get created
 2.  The game creates `~/.local/share/aspyr-media/Sid Meier's Civilization VI/AppOptions.txt`
 3.  The string `AppHost::BugSubmissionPackager::BugSubmissionPackager` appears inhttp://store.steampowered.com/app/310080/Hatoful_Boyfriend/ the backtrace output when running the game under [gdb](https://www.archlinux.org/packages/?name=gdb)
     1.  To run under [gdb](https://www.archlinux.org/packages/?name=gdb), first launch a shell and change into the game directory.
@@ -661,6 +662,10 @@ Use the steam-runtime, e.g. set the [launch options](https://support.steampowere
 
 ```
 
+#### Flashing screen with primus
+
+Set `PRIMUS_SYNC=2`in the launch options.
+
 ### Counter-Strike: Global Offensive (CS:GO)
 
 #### Game starts on the wrong screen
@@ -689,7 +694,7 @@ wmctrl -r "Counter-Strike: Global Offensive - OpenGL" -e 0,2560,0,1600,1200
 
 ```
 
-Here X and Y is 0,2560 to move the window to the monitor on the right and H and W 1600,1200 is set to match the ingame resolution.
+Here X and Y is 0,2560 to move the window to the monitor on the right and H and W 1600,1200 is set to match the in-game resolution.
 
 #### Sound is played slightly delayed
 
@@ -1306,7 +1311,7 @@ In addition to the command above, add the following to the Steam launch command:
 
 ```
 
-For example, if you have a screen of resultion 1280x720 and are launching the x64 version from the terminal (within the directory which contains the binaries), the full command would be:
+For example, if you have a screen resolution of 1280x720 and are launching the x64 version from the terminal (within the directory which contains the binaries), the full command would be:
 
 ```
 LD_PRELOAD=~/.steam/root/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64 -screen-fullscreen 0 -screen-width 1280 -screen-height 720
@@ -1606,7 +1611,7 @@ If the game does not start or crashes at startup, install [xorg-xrandr](https://
 
 ### Songbringer
 
-#### Launch error with wanyland
+#### Launch error with Wayland
 
 Install [glfw-x11](https://www.archlinux.org/packages/?name=glfw-x11) and run the game with `LD_PRELOAD=/usr/lib/libglfw.so.3`.
 
@@ -1795,7 +1800,7 @@ snd_pitchquality 1
 
 #### Loading screen freeze
 
-If you are a non-english (speaking) user, you have to enable "en_US.UTF-8" in the locale.gen! Generate a new locale after that.
+If you are a non-English (speaking) user, you have to enable "en_US.UTF-8" in the locale.gen! Generate a new locale after that.
 
 #### No audio
 
@@ -1920,7 +1925,7 @@ Dependencies:
 
 #### Colors
 
-If colors are wrong with FOSS drivers (r600g at least), try to run the game in windowed mode, rendering will be corrected. ([bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=60553))
+If colors are wrong with FOSS drivers (r600g at least), try to run the game in windowed mode, rendering will be corrected. ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=60553))
 
 #### Sound
 
@@ -1994,7 +1999,7 @@ Affected games: *Kerbal Space Program, SUPERHOT, ClusterTruck*
 
 Unity games that do not support monitor selection will most likely launch the game on a wrong monitor.
 
-The problem is that Unity games write the default param `<pref name="UnitySelectMonitor" type="int">-1</pref>` to the game config file.
+The problem is that Unity games write the default parameter `<pref name="UnitySelectMonitor" type="int">-1</pref>` to the game config file.
 
 This will lead to the game launching on a non-primary monitor.
 
@@ -2124,7 +2129,7 @@ To change the game resolution edit the *Graphics display* section in `*GAME*/pro
 
 #### Game crashes on startup
 
-The game may crash on startup becuase it's linked to libz version 1.2.9, while the latest version of this library in Arch Linux is higher. The following message in the terminals appears in this case:
+The game may crash on startup because it's linked to libz version 1.2.9, while the latest version of this library in Arch Linux is higher. The following message in the terminals appears in this case:
 
 ```
 ./X3TC_config: lib/libz.so.1: version 'ZLIB_1.2.9' not found (required by /usr/lib32/libpng16.so.16

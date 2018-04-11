@@ -163,7 +163,7 @@ For networks of varying complexity, possibly employing extensive use of [EAP](ht
 As is clear after reading [#Connecting with wpa_passphrase](#Connecting_with_wpa_passphrase), a basic configuration file can be generated with:
 
 ```
-# wpa_passphrase MYSSID passphrase > /etc/wpa_supplicant/example.conf
+# wpa_passphrase *MYSSID* *passphrase* > /etc/wpa_supplicant/example.conf
 
 ```
 

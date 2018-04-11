@@ -80,7 +80,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 
-*   **[Antiword](/index.php?title=Antiword&action=edit&redlink=1 "Antiword (page does not exist)")** — MS Word reader.
+*   **Antiword** — MS Word reader.
 
 	[http://www.winfield.demon.nl/](http://www.winfield.demon.nl/) || [antiword](https://www.archlinux.org/packages/?name=antiword)
 

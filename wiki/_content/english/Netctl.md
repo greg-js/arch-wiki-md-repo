@@ -3,7 +3,6 @@ Related articles
 *   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
 
 [netctl](https://projects.archlinux.org/netctl.git/) is a CLI and profile-based network manager and an Arch project.
 

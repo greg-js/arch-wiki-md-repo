@@ -136,7 +136,7 @@ A command can be run each time the computer is (re)booted using "@reboot" in a c
 
 #### NetworkManager
 
-In version 1.0.6 NetworkManager [adds Wake-on-LAN controls](https://www.phoronix.com/scan.php?page=news_item&px=NetworkManager-WoL-Control). One way to enable Wake-on-LAN by magic packet is through nmcli.
+NetworkManager provides [Wake-on-LAN ethernet support](https://www.phoronix.com/scan.php?page=news_item&px=NetworkManager-WoL-Control). One way to enable Wake-on-LAN by magic packet is through *nmcli*.
 
 First, search for the name of the wired connection:
 
@@ -163,7 +163,7 @@ Enable Wake-on-LAN by magic packet on that connection:
 
 Then reboot, possibly two times. To disable Wake-on-Lan, substitute `magic` with `ignore`.
 
-From version 1.2.0 Wake-on-LAN settings can be changed graphically using [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor).
+The Wake-on-LAN settings can also be changed from the GUI using [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor).
 
 ### Enable WoL in TLP
 

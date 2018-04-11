@@ -1,8 +1,3 @@
-Related articles
-
-*   [tmux](/index.php/Tmux "Tmux")
-*   [dtach](/index.php/Dtach "Dtach")
-
 [GNU Screen](https://www.gnu.org/software/screen/) is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Programs running in Screen continue to run when their window is currently not visible and even when the whole screen session is detached from the user's terminal.
 
 See the official overview [GNU Screen manual](https://www.gnu.org/software/screen/manual/screen.html#Overview) for the description of the features.

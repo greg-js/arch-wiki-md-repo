@@ -296,11 +296,11 @@ $ git push
 Orphan, deletion and merge requests can be created by clicking on the "Submit Request" link under "Package Actions" on the right hand side. This automatically sends a notification email to the current package maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will then either accept or reject the request.
 
 *   Orphan requests will be granted after two weeks if the current maintainer did not react.
-*   Merge requests are to delete the package base and transfer its votes and comments to another package base. The name of the package base to merge into is required. Note this has nothing to do with 'git merge' or GitHub's merge requests.
+*   Merge requests are to delete the package base and transfer its votes and comments to another package base. The name of the package base to merge into is required. Note this has nothing to do with 'git merge' or GitLab's merge requests.
 *   Deletion requests require the following information:
     *   A short note explaining the reason for deletion. Note that a package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
     *   Supporting details, like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc.
-    *   Deletion requests can be rejected, in which case if you are the maintainer or the package you will likely be advised to disown the package to allow adoption by another packager.
+    *   Deletion requests can be rejected, in which case if you are the maintainer of the package you will likely be advised to disown the package to allow adoption by another packager.
 
 ## Web interface translation
 

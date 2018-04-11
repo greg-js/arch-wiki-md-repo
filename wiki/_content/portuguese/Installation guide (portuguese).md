@@ -38,7 +38,19 @@ Para trocar para um console diferente — por exemplo, para ver esse guia com [E
 
 ### Definir o layout do teclado
 
-O [mapa de teclas de console](/index.php/Mapa_de_teclas_de_console "Mapa de teclas de console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Para listar todos os layouts disponíveis, execute `ls /usr/share/kbd/keymaps/**/*.map.gz`. Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
+O [mapa de teclas de console](/index.php/Mapa_de_teclas_de_console "Mapa de teclas de console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Layouts disponíveis podem ser listados com:
+
+```
+# ls /usr/share/kbd/keymaps/**/*.map.gz
+
+```
+
+Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitindo caminho e extensão de arquivo. Por exemplo, para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg"):
+
+```
+# loadkeys br-abnt2
+
+```
 
 [Fontes de console](/index.php/Console_fonts "Console fonts") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
@@ -77,7 +89,7 @@ Para verificar o status do serviço, use `timedatectl status`.
 
 ### Partição dos discos
 
-Quando reconhecido pelo sistema *live*, discos são atribuídos a um *dispositivo de bloco* tal como `/dev/*sda*`. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk*.
+Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositivo de bloco](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "w:Device file") tal como `/dev/sda` ou `/dev/nvme0n1`.. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk*.
 
 ```
 # fdisk -l
@@ -86,7 +98,7 @@ Quando reconhecido pelo sistema *live*, discos são atribuídos a um *dispositiv
 
 Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
 
-As seguintes *partições* (mostradas com um sufixo numérico) são **exigidos** para um dispositivo escolhido:
+As seguintes *partições* são **exigidos** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
 *   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition").

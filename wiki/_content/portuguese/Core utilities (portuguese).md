@@ -52,7 +52,7 @@ A tabela a seguir lista os comandos básicos do shell, cada usuário Linux deve 
 | cd | Muda o diretório (comando embutido no shell) | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) | cd /etc/pacman.d |
 | mkdir | Cria um diretório | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) | mkdir ~/novapasta |
 | rmdir | Remove diretório vazio | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1) | rmdir ~/pastavazia |
-| rm | Remove um arquivo | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1) | rm ~/file.txt |
+| rm | Remove um arquivo | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1) | rm ~/arquivo.txt |
 | rm -r | Remove diretório e seu conteúdo | rm -r ~/.cache |
 | ls | Lista arquivos | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1) | ls *.mkv |
 | ls -a | Lista arquivos ocultos | ls -a /home/archie |
@@ -388,7 +388,7 @@ Para mais informações, veja [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man
 
 Como um formato de arquivamento antigo do Unix, arquivos .tar – conhecidos como "tarballs" – são amplamente usados para empacotamento nos sistema operacionais tipo Unix. Os pacotes de tanto o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") quanto [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") são comprimidos em tarballs, e o Arch usa o programa *tar* do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") por padrão.
 
-Para pacotes .tar, *tar* por padrão vai extrair o arquivo conforme sua extensão:
+Para pacotes *.tar*, *tar* por padrão vai extrair o arquivo conforme sua extensão:
 
 ```
 $ tar xvf *arquivo.EXTENSÃO*
@@ -406,6 +406,7 @@ Forçando um formato dado:
 `bzip2 -cd *arquivo*.bz2 | tar xvf -` |
 | `*arquivo*.tar.xz` | `tar xvJf *arquivo*.tar.xz`
 `xz -cd *arquivo*.xz | tar xvf -` |
+| `*arquivo*.tar.zst` | `tar -I zstd xvf *arquivo*.tar.zst` |
 
 A construção de alguns dos argumentos do *tar* podem ser considerado legado, mas eles ainda são úteis ao realizar operações específicas. Veja [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) para detalhes.
 

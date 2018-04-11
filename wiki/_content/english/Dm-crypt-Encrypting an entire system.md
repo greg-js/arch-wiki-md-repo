@@ -86,7 +86,7 @@ shows a basic and straight-forward set-up for a fully LUKS encrypted root.
  |
 | [#LVM on LUKS](#LVM_on_LUKS)
 
-achieves partitioning flexiblity by using LVM inside a single LUKS encrypted partition.
+achieves partitioning flexibility by using LVM inside a single LUKS encrypted partition.
 
  | 
 
@@ -587,7 +587,7 @@ For the sake of the instructions below, the following block devices are used:
 
 ```
 
-Be sure to substitue them with the appropriate device designations for your setup, as they may be different.
+Be sure to substitute them with the appropriate device designations for your setup, as they may be different.
 
 ### Preparing the disks
 
@@ -738,12 +738,12 @@ The disk layout is:
 
 **Tip:**
 
-*   It is also possible to use a single usb key by copying the keyfile to the initram directly. An example keyfile `/etc/keyfile` gets copied to the initram image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initram image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
+*   It is also possible to use a single USB key by copying the keyfile to the initram directly. An example keyfile `/etc/keyfile` gets copied to the initram image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initram image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
 *   Another option is using a passphrase with good [entropy](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
 
 ### Preparing the disk
 
-It is vital that the mapped device is filled with data. In particular this applies to the scenario usecase we apply here.
+It is vital that the mapped device is filled with data. In particular this applies to the scenario use case we apply here.
 
 See [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") and [Dm-crypt/Drive preparation#dm-crypt specific methods](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation")
 
@@ -874,7 +874,7 @@ The disk layout in this example is:
 **Tip:**
 
 *   All scenarios are intended as examples. It is, of course, possible to apply both of the two above distinct installation steps with the other scenarios as well. See also the variants linked in [#LVM on LUKS](#LVM_on_LUKS).
-*   You can use `cryptboot` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified encrypted boot management (mounting, unmounting, upgrading packages) and as a defense against [Evil Maid](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html) attacks with [UEFI Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"). For more informations and limitations see [cryptboot project](https://github.com/xmikos/cryptboot) page.
+*   You can use `cryptboot` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified encrypted boot management (mounting, unmounting, upgrading packages) and as a defense against [Evil Maid](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html) attacks with [UEFI Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"). For more information and limitations see [cryptboot project](https://github.com/xmikos/cryptboot) page.
 
 ### Preparing the disk
 

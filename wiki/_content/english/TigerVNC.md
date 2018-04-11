@@ -92,6 +92,8 @@ exec startlxqt
 
 ```
 
+- This is wrong at least for XFCE4 as it will not source your user profile and specific things like PGP keys will not function properly for example in Thunderbird with Enigmail, in addition you will not be able to control things like Bluetooth either which in fact the icon for the Bluetooth control will disappear.
+
 make sure `~/.vnc/xstartup` has a execute permission:
 
 ```

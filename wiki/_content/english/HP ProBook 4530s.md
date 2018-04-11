@@ -9,6 +9,13 @@
 | Touchpad | **Working** | xf86-input-synaptics-led |
 | Function Keys | **Working** | hp_wmi |
 
+Related articles
+
+*   [HP_ProBook_4330s](/index.php/HP_ProBook_4330s "HP ProBook 4330s")
+*   [HP_ProBook_4730s](/index.php/HP_ProBook_4730s "HP ProBook 4730s")
+*   [Intel_graphics](/index.php/Intel_graphics "Intel graphics")
+*   [Power_management](/index.php/Power_management "Power management")
+
 ## Contents
 
 *   [1 Device information](#Device_information)
@@ -156,7 +163,7 @@ Works with [hpfall-git](https://aur.archlinux.org/packages/hpfall-git/) package.
 
 ### Power
 
-Module **acpi-cpufreq** and at least one of CPU governors (**cpufreq_ondemand**, **cpufreq_conservative**, etc.) are required. More informations on [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
+Module **acpi-cpufreq** and at least one of CPU governors (**cpufreq_ondemand**, **cpufreq_conservative**, etc.) are required. More information on [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
 
 **Note:** ~~i915 module parameter i915_enable_rc6 can give up to 2 hours of additional battery life. However it is considered unstable and might cause crashes and graphical glitches. Add **i915.i915_enable_rc6=1** to the kernel command line of your bootloader to try it.~~
 

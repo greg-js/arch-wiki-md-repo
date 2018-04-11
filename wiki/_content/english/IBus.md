@@ -51,6 +51,7 @@ You will need at least one input method, corresponding to the language you wish 
 *   [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) - Japanese IME, based on [Mozc](/index.php/Mozc "Mozc").
 *   [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) - Japanese IME, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
 *   [ibus-cangjie](https://aur.archlinux.org/packages/ibus-cangjie/) - Chinese IME for Cangjie3, Cangjie3, and Quick based on [libcangjie](https://aur.archlinux.org/packages/libcangjie/) and [python-pycangjie](https://aur.archlinux.org/packages/python-pycangjie/).
+*   [ibus-kmfl](https://aur.archlinux.org/packages/ibus-kmfl/) - Linux port of [Keyman](https://keyman.com/) input method for Windows which supports over 1,000 languages, such as complex scripts, languages of minorities, and IPA symbols. Only part of them is available in KMFL as it can work with uncompiled layout description only (*.kmn files).
 
 To see all available input methods:
 

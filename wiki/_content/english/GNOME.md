@@ -262,9 +262,9 @@ The Tracker database can be queried using the *tracker-sparql* command. View its
 
 ### Advanced settings
 
-As noted above, many configuration options such as changing the [GTK+](/index.php/GTK%2B "GTK+") theme or the [window manager](/index.php/Window_manager "Window manager") theme are not exposed in the GNOME System Settings panel (*gnome-control-center*). Those users that want to configure these settings may wish to use the GNOME Tweak Tool ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), a convenient graphical tool which exposes many of these settings.
+As noted above, many configuration options such as changing the [GTK+](/index.php/GTK%2B "GTK+") theme or the [window manager](/index.php/Window_manager "Window manager") theme are not exposed in the GNOME System Settings panel (*gnome-control-center*). Those users that want to configure these settings may wish to use the GNOME Tweaks ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), a convenient graphical tool which exposes many of these settings.
 
-GNOME settings (which are stored in the DConf database) can also be configured using the [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (a graphical DConf configuration tool) or the [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) command line tool. The GNOME Tweak Tool does not do anything else in the background of the GUI; note though that you will not find all settings described in the following sections in it.
+GNOME settings (which are stored in the DConf database) can also be configured using the [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (a graphical DConf configuration tool) or the [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) command line tool. The GNOME Tweaks does not do anything else in the background of the GUI; note though that you will not find all settings described in the following sections in it.
 
 #### Appearance
 
@@ -291,7 +291,7 @@ Additional theme locations:
 *   [Cursor themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
 *   [Icon themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
-Once installed, they can be selected using the GNOME Tweak Tool or GSettings - see below for GSettings commands:
+Once installed, they can be selected using the GNOME Tweaks or GSettings - see below for GSettings commands:
 
 For the GTK+ theme:
 
@@ -309,7 +309,7 @@ $ gsettings set org.gnome.desktop.interface icon-theme *theme-name*
 
 ###### Global dark theme
 
-GNOME will use the Adwaita light theme by default however a dark variant of this theme (called the Global Dark Theme) also exists and can be selected using the Tweak Tool or by editing the GTK+ 3 settings file - see [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Some applications such as Image Viewer (*eog*) use the dark theme by default. It should be noted that the Global Dark Theme only works with GTK+ 3 applications; some GTK+ 3 applications may only have partial support for the Global Dark theme. Qt and GTK+ 2 support for the Global Dark Theme may be added in the future.
+GNOME will use the Adwaita light theme by default however a dark variant of this theme (called the Global Dark Theme) also exists and can be selected using the Tweaks or by editing the GTK+ 3 settings file - see [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Some applications such as Image Viewer (*eog*) use the dark theme by default. It should be noted that the Global Dark Theme only works with GTK+ 3 applications; some GTK+ 3 applications may only have partial support for the Global Dark theme. Qt and GTK+ 2 support for the Global Dark Theme may be added in the future.
 
 ##### Window manager themes
 
@@ -357,7 +357,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 ##### GNOME Shell themes
 
-The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly ensure that you have the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package installed. Then enable the *User Themes* extension, either through GNOME Tweak Tool or through the [GNOME Shell Extensions](https://extensions.gnome.org) webpage. Shell themes can then be loaded and selected using the GNOME Tweak Tool.
+The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly ensure that you have the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package installed. Then enable the *User Themes* extension, either through GNOME Tweaks or through the [GNOME Shell Extensions](https://extensions.gnome.org) webpage. Shell themes can then be loaded and selected using the GNOME Tweaks.
 
 There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
@@ -433,7 +433,7 @@ GNOME has integrated support for input methods through [IBus](/index.php/IBus "I
 
 **Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
 
-Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweak Tool for the relevant options.
+Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweaks for the relevant options.
 
 For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
 
@@ -443,7 +443,7 @@ To start certain applications on login, copy the relevant `.desktop` file from `
 
 The [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) allows managing autostart-entries.
 
-**Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweaks`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+**Tip:** If the plus sign button in the Tweaks's Startup Applications section is unresponsive, try start the Tweaks from the terminal using the following command: `gnome-tweaks`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 
 **Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
 
@@ -481,7 +481,7 @@ org.gnome.settings-daemon.plugins.power critical-battery-action
 
 ##### Configure behaviour on lid switch close
 
-The GNOME Tweaks can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweak tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+The GNOME Tweaks can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweaks tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweaks's inhibitor.
 
 If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 

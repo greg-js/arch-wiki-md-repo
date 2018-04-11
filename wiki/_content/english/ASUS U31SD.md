@@ -82,7 +82,7 @@ Should return nothing, this means your GPU is off.
 
 You can check your GPU by running **glxgears** with and without the 'optirun' prefix and comparing the Frames Per Second.
 
-Read the [Bumblebee](/index.php/Bumblebee "Bumblebee") page for further informations.
+Read the [Bumblebee](/index.php/Bumblebee "Bumblebee") page for further information.
 
 ## Suspend/hibernate
 

@@ -1,4 +1,4 @@
-[Anki](http://ankisrs.net/) is an [SRS](https://en.wikipedia.org/wiki/Spaced_repetition "wikipedia:Spaced repetition") (Spaced Repetition System), a program which allows you to create, manage and review [flashcards](https://en.wikipedia.org/wiki/Flashcard "wikipedia:Flashcard"). Anki is very flexible and also allows the creation of templates. Apps for Android and iOS as well as a web interface can be used to interact with the user's flashcard database. Anki supports [addons](https://ankiweb.net/shared/addons/), written in [python](/index.php/Python "Python").
+[Anki](http://ankisrs.net/) is a [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition "wikipedia:Spaced repetition") system (SRS), a program which allows you to create, manage and review [flashcards](https://en.wikipedia.org/wiki/Flashcard "wikipedia:Flashcard"). Anki is very flexible and also allows the creation of templates. Apps for Android and iOS as well as a web interface can be used to interact with the user's flashcard database. Anki supports [addons](https://ankiweb.net/shared/addons/), written in [python](/index.php/Python "Python").
 
 ## Contents
 

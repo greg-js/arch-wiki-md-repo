@@ -2,9 +2,9 @@
 
 ## Installation
 
-[lmms](https://www.archlinux.org/packages/?name=lmms) is in the offical Archlinux repository. Alternatively, because LMMS has seen many changes since the stable release at time of writing, you may want [lmms-git](https://aur.archlinux.org/packages/lmms-git/) for the latest in upstream development, or [lmms-beta-bin](https://aur.archlinux.org/packages/lmms-beta-bin/) for a pre-compiled pre-release version. See [[1]](https://github.com/LMMS/lmms/releases) for release notes.
+[Install](/index.php/Install "Install") [lmms](https://www.archlinux.org/packages/?name=lmms), or [lmms-git](https://aur.archlinux.org/packages/lmms-git/) for the development version, or [lmms-beta-bin](https://aur.archlinux.org/packages/lmms-beta-bin/) for a precompiled prerelease version. See [[1]](https://github.com/LMMS/lmms/releases) for release notes.
 
-As always, if you want to use multiple audio applications simultaneously but your hardware does not natively support this, you will need either a [usermode sound server](/index.php/Sound#Sound_servers "Sound"), or to configure ALSA [dmix](/index.php/Alsa#Dmix "Alsa").
+As always, if you want to use multiple audio applications simultaneously but your hardware does not natively support this, you will need either a [usermode sound server](/index.php/Sound#Sound_servers "Sound"), or to configure [ALSA dmix](/index.php/Alsa#Dmix "Alsa").
 
 ## MIDI and soundfonts
 

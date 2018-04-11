@@ -1,4 +1,4 @@
-From the [official website](http://aspell.net/): "GNU Aspell is a Free and Open Source spell checker designed to eventually replace Ispell. It can either be used as a library or as an independent spell checker."
+From the [official website](http://aspell.net/): "GNU Aspell is a Free and Open Source spell checker designed to eventually replace [Ispell](https://en.wikipedia.org/wiki/Ispell "wikipedia:Ispell"). It can either be used as a library or as an independent spell checker."
 
 ## Contents
 
@@ -6,6 +6,7 @@ From the [official website](http://aspell.net/): "GNU Aspell is a Free and Open 
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 All text is marked as misspelled](#All_text_is_marked_as_misspelled)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -13,7 +14,7 @@ From the [official website](http://aspell.net/): "GNU Aspell is a Free and Open 
 
 ## Usage
 
-Many programs use *aspell* automatically and need no further configuration. Additionally one can use *aspell* manually. Here are some basic usages. See [aspell(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1) for more.
+Many programs use *aspell* automatically and need no further configuration. Additionally one can use *aspell* manually. Here are some basic usages. See [aspell(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1) for more.
 
 To spell check a single file:
 
@@ -50,3 +51,8 @@ If your respective language dictionary is listed, add it to `/usr/share/enchant/
 en_GB:aspell
 
 ```
+
+## See also
+
+*   [aspell info document](http://aspell.net/man-html/index.html)
+*   [Wikipedia:GNU Aspell](https://en.wikipedia.org/wiki/GNU_Aspell "wikipedia:GNU Aspell")

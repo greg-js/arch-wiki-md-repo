@@ -75,7 +75,7 @@ You can annotate a pdf with `Shift + Right Click`. To allow saving of annotation
 
 ```
 
-to your `llpp.conf`. After annotating the file save the changes by pressing `W`. This `echo`s the current pdf path to the option savepath-mmand
+to your `llpp.conf`. After annotating the file save the changes by pressing `W`. This `echo`s the current pdf path to the option savepath-command
 
 ## Tips and Tricks
 

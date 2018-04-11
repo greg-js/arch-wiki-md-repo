@@ -17,6 +17,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
+    *   [2.3 MG Series](#MG_Series)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
     *   [4.1 Utilities](#Utilities)
@@ -247,6 +248,30 @@ Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing 
 ### USB over IP (BJNP)
 
 Some Canon printers use Canon's proprietary USB over IP BJNP protocol to communicate over the network. There is a CUPS backend for this, which is available as [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/).
+
+### MG Series
+
+For the MG4200 series (and possibly others in the MG series)
+
+1\. Install gutenprint from aur (which contains a good and working ppd file). don't then try to install via cups, though, since it won't find the ppd file 2\. execute
+
+cnijnetprn --search auto
+
+I assume that installing the driver from aur installs cnijnetprn, though I could be wrong.
+
+Output will be similar to:
+
+network cnijnet:/D8-49-2F-A7-DD-0A "Canon MG4200 series" "Canon-MG4200-series_D8-49-2F-A7-DD-0A"
+
+You need to note the number at the end (D8-49-2F-A7-DD-0A in my case)
+
+3\. execute
+
+sudo /usr/sbin/lpadmin -p Canon_MG4200 -P /usr/share/cups/model/canonmg4200.ppd -v cnijnet:/D8-49-2F-A7-DD-0A -E
+
+Replace the address with your address from the previous step. You can replace "Canon_MG4200" with whatever you want the printer called in CUPS.
+
+Now you should see the printer in CUPS and be able to successfully print. Duplex is working, as are quality controls.
 
 ## Dell
 

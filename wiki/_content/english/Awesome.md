@@ -479,6 +479,18 @@ awful.titlebar.hide(c)
 
 See [[5]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
 
+4/10/2018: The above mentioned wiki no longer exists. [(Reddit comment: What happened to the wiki?)](https://www.reddit.com/r/awesomewm/comments/5k9vob/what_happened_to_the_wiki/)
+
+From the linked Reddit comment:
+
+**Workaround:**
+
+For those still interested in it's content: [https://github.com/gutierri/awesomewm-wiki-dump/tree/master/markdown](https://github.com/gutierri/awesomewm-wiki-dump/tree/master/markdown) has a partial markdown conversion of the old wiki (and the raw dump in xml format too).
+
+[Here](https://github.com/gutierri/awesomewm-wiki-dump/blob/master/markdown/Acpitools-based_battery_widget.md) is the only Battery widget from the partial wiki. It is based on [ACPI](https://wiki.archlinux.org/index.php/ACPI_modules) and written for version 3.5\. I am not reproducing it here b/c there may be additional steps to get it working.
+
+**NOTE: This partial wiki only covers versions up to 3.x**
+
 ### Media Controls
 
 It is possible to control both volume and media playback via a combination of amixer (available via the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package) and [playerctl](https://www.archlinux.org/packages/?name=playerctl). The following can be added to the relevant key binding section of your rc.lua configuration file:

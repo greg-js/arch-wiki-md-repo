@@ -1,4 +1,4 @@
-[phpMyAdmin](http://www.phpmyadmin.net/) is a web-based tool to help manage MySQL databases using an Apache/PHP frontend. It requires a working [LAMP](/index.php/LAMP "LAMP") setup.
+[phpMyAdmin](http://www.phpmyadmin.net/) is a web-based tool to help manage MySQL databases using an Apache/PHP frontend.
 
 ## Contents
 
@@ -40,9 +40,17 @@ Optionally you can enable `extension=bz2` and `extension=zip` for compression su
 
 **Note:** *If* you use `open_basedir` (it is not set by default), make sure that PHP can access `/etc/webapps` by adding it to `open_basedir` in `/etc/php/php.ini`.
 
+If you want to run PhpMyAdmin without any web server, such as Apache, Lighttpd or Nginx. You can host it directly with PHP and skip any further steps, by doing the following:
+
+```
+cd /usr/share/webapps/phpMyAdmin
+php -S localhost:8000
+
+```
+
 ### Apache
 
-Set up Apache to use php as outlined in the [LAMP](/index.php/LAMP#PHP "LAMP") article.
+Set up Apache to use PHP as outlined in the [Apache HTTP Server#PHP](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server") article.
 
 Create the Apache configuration file:
 
@@ -55,7 +63,6 @@ Alias /phpmyadmin "/usr/share/webapps/phpMyAdmin"
     Options FollowSymlinks
     Require all granted
 </Directory>
-
 ```
 
 And include it in `/etc/httpd/conf/httpd.conf`:
@@ -66,7 +73,7 @@ Include conf/extra/phpmyadmin.conf
 
 ```
 
-**Note:** By default, everyone who can reach the Apache Web Server can see the phpMyAdmin login page under this URL. To change this, edit `/etc/httpd/conf/extra/phpmyadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`. Beware that this will disallow connecting to PhpMyAdmin on a remote server.
+**Note:** By default, everyone who can reach the Apache Web Server can see the phpMyAdmin login page under this URL. To change this, edit `/etc/httpd/conf/extra/phpmyadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`. Beware that this will disallow connecting to PhpMyAdmin on a remote server. If you still want to access PhpMyAdmin on a remote server securely, you might want to consider setting up a [Secure Shell#Encrypted SOCKS tunnel](/index.php/Secure_Shell#Encrypted_SOCKS_tunnel "Secure Shell").
 
 ### Lighttpd
 

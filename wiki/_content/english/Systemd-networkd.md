@@ -43,7 +43,7 @@ Related articles
         *   [3.2.5 Result](#Result)
         *   [3.2.6 Notice](#Notice)
     *   [3.3 Static IP network](#Static_IP_network)
-*   [4 Management, status information, and desktop integration](#Management.2C_status_information.2C_and_desktop_integration)
+*   [4 Interface and desktop integration](#Interface_and_desktop_integration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Mount services at boot fail](#Mount_services_at_boot_fail)
     *   [5.2 systemd-resolve not searching the local domain](#systemd-resolve_not_searching_the_local_domain)
@@ -55,21 +55,14 @@ The [systemd](https://www.archlinux.org/packages/?name=systemd) package is part 
 
 ### Required services and setup
 
-To use *systemd-networkd*, [start/enable](/index.php/Start/enable "Start/enable") `systemd-networkd.service` and optionally `systemd-resolved.service`.
+To use *systemd-networkd*, [start/enable](/index.php/Start/enable "Start/enable") `systemd-networkd.service`.
 
-**Note:**
+It is optional to also [start/enable](/index.php/Start/enable "Start/enable") `systemd-resolved.service`, which is a network name resolution service to local applications, considering the following points:
 
-*   *systemd-resolved* is required only if you are specifying DNS entries in *.network* files or if you want to obtain DNS addresses from the network DHCP client. Alternatively manually manage [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
-*   It is not required to use/enable *systemd-networkd* to use *systemd-resolved*.
-
-For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), and redirect software which directly read `/etc/resolv.conf` to the local *systemd-resolved* stub DNS resolver, delete or rename the existing file and create the following symbolic link when using *systemd-resolved*:
-
-```
-# ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-```
-
-For more information, see [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8), [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5), and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
+*   The *systemd-resolved* service is required if DNS entries are specified in *.network* files,
+*   It can be used to automatically obtain DNS addresses from the network DHCP client,
+*   It is important to understand how [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and *systemd-resolved* interact to properly configure the DNS that will be used, some explanations are provided in [resolv.conf#systemd-resolved configuration](/index.php/Resolv.conf#systemd-resolved_configuration "Resolv.conf")
+*   Note that it is not required to use/enable *systemd-networkd* to use *systemd-resolved*.
 
 ### Configuration examples
 
@@ -87,19 +80,18 @@ After making changes to a configuration file, [restart](/index.php/Restart "Rest
 
 #### Wired adapter using DHCP
 
- `/etc/systemd/network/50-wired.network` 
+ `/etc/systemd/network/20-wired.network` 
 ```
 [Match]
 Name=enp1s0
 
 [Network]
 DHCP=ipv4
-
 ```
 
 #### Wired adapter using a static IP
 
- `/etc/systemd/network/25-wired.network` 
+ `/etc/systemd/network/20-wired.network` 
 ```
 [Match]
 Name=enp1s0
@@ -109,7 +101,6 @@ Address=10.1.10.9/24
 Gateway=10.1.10.1
 DNS=10.1.10.1
 #DNS=8.8.8.8
-
 ```
 
 `Address=` can be used more than once to configure multiple IPv4 or IPv6 addresses. See [#network files](#network_files) or [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for more options.
@@ -136,7 +127,7 @@ This setup will enable a DHCP IP for both a wired and wireless connection making
 
 The kernel's route metric (same as configured with *ip*) decides which route to use for outgoing packets, in cases when several match. This will be the case when both wireless and wired devices on the system have active connections. To break the tie, the kernel uses the metric. If one of the connections is terminated, the other automatically wins without there being a gap with nothing configured (ongoing transfers may still not deal with this nicely but that is at a different OSI layer).
 
-**Note:** The **Metric** option is for static routes while the **RouteMetric** option is for setups not using static routes.
+**Note:** The `Metric` option is for static routes while the `RouteMetric` option is for setups not using static routes.
  `/etc/systemd/network/20-wired.network` 
 ```
 [Match]
@@ -147,7 +138,6 @@ DHCP=ipv4
 
 [DHCP]
 RouteMetric=10
-
 ```
  `/etc/systemd/network/25-wireless.network` 
 ```
@@ -159,7 +149,6 @@ DHCP=ipv4
 
 [DHCP]
 RouteMetric=20
-
 ```
 
 #### Renaming an interface
@@ -548,17 +537,21 @@ Gateway=192.168.1.254
 
 ```
 
-## Management, status information, and desktop integration
+## Interface and desktop integration
 
-*systemd-networkd* doesn't have a proper interactive management interface via either command-line or GUI. *networkctl* (via CLI) just offers a simple dump of the network interface states.
+*systemd-networkd* does not have a proper interactive management interface neither via command-line nor graphical. Still, some tools are available to either display the current state of the network, receive notifications or interact with the wireless configuration:
 
-When *networkd* is configured with [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), both *wpa_cli* and *wpa_gui* offer the ability to associate and reconfigure WLAN interfaces dynamically.
+*   *networkctl* (via CLI) offers a simple dump of the network interface states.
 
-[networkd-notify](https://github.com/wavexx/networkd-notify) can generate simple notifications in response to network interface state changes (such as connection/disconnection and re-association).
+*   When *networkd* is configured with [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), both *wpa_cli* and *wpa_gui* offer the ability to associate and configure WLAN interfaces dynamically.
 
-The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to NetworkManager-dispatcher.
+*   Also to be used with *wpa_supplicant*, [wpa_tui](https://www.archlinux.org/packages/?name=wpa_tui) is an interactive command line tool to connect to wireless networks.
 
-For the DNS resolver *systemd-resolved*, information about current DNS servers can be visualized with `systemd-resolve --status`.
+*   [networkd-notify-git](https://aur.archlinux.org/packages/networkd-notify-git/) can generate simple notifications in response to network interface state changes (such as connection/disconnection and re-association).
+
+*   The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to *NetworkManager-dispatcher*.
+
+*   As for the DNS resolver *systemd-resolved*, information about current DNS servers can be visualized with `systemd-resolve --status`.
 
 ## Troubleshooting
 

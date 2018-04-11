@@ -8,7 +8,7 @@ Owners of ATI/AMD video cards have a choice between AMD's proprietary driver ([c
 
 AMD's Linux driver package *catalyst* was previously named *fglrx* (**F**ire**GL** and **R**adeon **X**). Only the package name has changed, while the kernel module retains its original *fglrx.ko* filename. Therefore, any mention of fglrx below is specifically in reference to the *kernel module*, **not the package**.
 
-**Catalyst packages are no longer offered in the official repositories. It is no longer updated by AMD and does not support the latest Xorg, so installing an old Xorg is required.**
+**Note:** Catalyst packages are no longer offered in the official repositories. It is no longer updated by AMD and does not support the latest Xorg, so installing an old Xorg is required.
 
 Compared with the open source driver, Catalyst performs generally worse in 2D rendering and generally equal in 3D rendering, also having better power management, but it lacks efficient multi-head support. Catalyst does support OpenCL 2.0 though and that's the main difference between Catalyst and open source drivers. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with R600 to Volcanic Islands chipsets (Radeon HD 2xxx to Rx 300 cards). See the [Release notes](https://support.amd.com/en-us/kb-articles/Pages/AMDRadeonSoftwareCrimsonEdition15-12LINReleaseNotes.aspx), [Xorg decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units"), to translate *model* names (HD2400, HD6990) to/from *chip* names (R600, *Northern Islands* respectively).
 

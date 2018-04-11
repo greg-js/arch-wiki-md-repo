@@ -576,7 +576,7 @@ Fontconfig lets every user configure the order they want via `$XDG_CONFIG_HOME/f
 
 **Tip:** If you use a Chinese locale, set `LC_LANG` to `und` to make this work. Otherwise both English and Chinese text will be rendered in the Chinese font.
 
-You can add a section for sans-serif and monospace as well. For more informations, have a look at the fontconfig manual.
+You can add a section for sans-serif and monospace as well. For more information, have a look at the fontconfig manual.
 
 See also [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration").
 
