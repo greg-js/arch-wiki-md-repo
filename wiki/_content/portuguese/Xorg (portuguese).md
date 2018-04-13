@@ -706,13 +706,13 @@ The client connections are rejected by the X server's security mechanism, you ca
 
 See also:
 
-*   [Display manager](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 *   [Start X at login](/index.php/Start_X_at_login "Start X at login")
 *   [Xorg Font Configuration](/index.php/Xorg_Font_Configuration "Xorg Font Configuration")
 *   Proprietary Video Drivers
     *   [ATI](/index.php/ATI "ATI")
     *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
     *   [KDE](/index.php/KDE "KDE")
     *   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
     *   [Xfce](/index.php/Xfce "Xfce")

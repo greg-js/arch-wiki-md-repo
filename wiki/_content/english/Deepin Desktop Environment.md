@@ -4,7 +4,7 @@ Related articles
 *   [GNOME](/index.php/GNOME "GNOME")
 *   [LightDM](/index.php/LightDM "LightDM")
 
-[DDE](https://www.deepin.org/en/?language=en) (Deepin Desktop Environment) is the default desktop environment originally created for the linux Deepin distribution.
+The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) is the [desktop environment](/index.php/Desktop_environment "Desktop environment") of the Chinese [Deepin](https://en.wikipedia.org/wiki/Deepin "wikipedia:Deepin") Linux distribution.
 
 ## Contents
 

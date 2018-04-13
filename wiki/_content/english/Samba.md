@@ -787,10 +787,16 @@ Do one of the following for the settings to take effect:
 
 ### Windows 10 1709 and up connectivity problems - "Windows cannot access" 0x80004005
 
-This error affects some machines running windows 10 1709 and later. It is not related to SMB1 being disabled in this version but to the fact that Microsoft disabled insecure logons for guests on this version for some, but not others.
+This error affects some machines running Windows 10 version 1709 and later. It is not related to SMB1 being disabled in this version but to the fact that Microsoft disabled insecure logons for guests on this version for some, but not others.
 
-To fix, press Windows Key + R, enter gpedit.msc . Navigate to "Computer configuration\administrative templates
-etwork\Lanman Workstation" -> "Enable insecure guest logons" and disable it. Alternatively, edit the registry [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters] “AllowInsecureGuestAuth”=dword:1
+To fix, open Group Policy Editor (`gpedit.msc`). Navigate to *Computer configuration\administrative templates
+etwork\Lanman Workstation > Enable insecure guest logons* and disable it. Alternatively,change the following value in the registry:
+
+```
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
+"AllowInsecureGuestAuth"=dword:1
+
+```
 
 ### Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL
 

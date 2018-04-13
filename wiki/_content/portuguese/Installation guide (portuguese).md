@@ -15,7 +15,7 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
     *   [1.6 Formatar as partições](#Formatar_as_parti.C3.A7.C3.B5es)
     *   [1.7 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
 *   [2 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [2.1 Selecionar os mirrors](#Selecionar_os_mirrors)
+    *   [2.1 Selecionar os espelhos](#Selecionar_os_espelhos)
     *   [2.2 Instalar os pacotes base](#Instalar_os_pacotes_base)
 *   [3 Configurar o sistema](#Configurar_o_sistema)
     *   [3.1 Fstab](#Fstab)
@@ -156,11 +156,11 @@ Crie pontos de montagem para quaisquer partições restantes e monte-as conforme
 
 ## Instalação
 
-### Selecionar os mirrors
+### Selecionar os espelhos
 
-Pacotes a serem instalados devem ser baixados de [servidores *mirrors*](/index.php/Mirrors "Mirrors"), que são definidos na `/etc/pacman.d/mirrorlist`. No sistema *live*, todos os mirrors estão habilitados e ordenados por seu status e velocidade de sincronização à época em que a imagem de instalação foi criada.
+Pacotes a serem instalados devem ser baixados de [espelhos](/index.php/Espelhos "Espelhos") *(mirrors)*, que são definidos na `/etc/pacman.d/mirrorlist`. No sistema *live*, todos os espelhos estão habilitados e ordenados por seu status e velocidade de sincronização à época em que a imagem de instalação foi criada.
 
-Quanto mais alto um mirror está posicionado na lista, mais prioritário ele será ao baixar um pacote. Você pode querer editar o arquivo e mover mirrors geograficamente mais pertos para o topo da lista, apesar de que outros critérios devem ser levados em consideração.
+Quanto mais alto um espelho está posicionado na lista, mais prioritário ele será ao baixar um pacote. Você pode querer editar o arquivo e mover espelhos geograficamente mais pertos para o topo da lista, apesar de que outros critérios devem ser levados em consideração.
 
 Esse arquivo será posteriormente copiado para o novo sistema por *pacstrap*, então é melhor fazer direito.
 

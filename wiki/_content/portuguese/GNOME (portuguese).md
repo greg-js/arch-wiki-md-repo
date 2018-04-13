@@ -1,6 +1,6 @@
 Artigos relacionados
 
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
 *   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 *   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
 *   [GTK+](/index.php/GTK%2B "GTK+")
@@ -18,7 +18,7 @@ Artigos relacionados
 *   [MATE](/index.php/MATE "MATE")
 *   [Official repositories (Português)#gnome-unstable](/index.php/Official_repositories_(Portugu%C3%AAs)#gnome-unstable "Official repositories (Português)")
 
-[GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Desktop_environment "Desktop environment"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](https://en.wikipedia.org/wiki/pt:Projeto_GNU "wikipedia:pt:Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
+[GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
 ## Contents
 

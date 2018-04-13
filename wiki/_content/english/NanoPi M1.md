@@ -138,9 +138,38 @@ Root password: `root`.
 
 ### Configure Linux
 
-It is recommended that you install the base-devel group in order to continue. Do this and update the Linux system using:
+First, SSH into the machine and change the root password.
 
 ```
-# pacman -Syu base-devel
+# passwd
+
+```
+
+You must install the base-devel group as well as Git in order to continue. Do this and update the Linux system using:
+
+```
+# pacman -Syu base-devel git
+
+```
+
+Now you should download and install the drivers for the Mali graphics card inside the SoC.
+
+```
+# git clone [https://github.com/mripard/sunxi-mali.git](https://github.com/mripard/sunxi-mali.git)
+# cd sunxi-mali
+# export CROSS_COMPILE=$TOOLCHAIN_PREFIX
+# export KDIR=$KERNEL_BUILD_DIR
+# export INSTALL_MOD_PATH=$TARGET_DIR
+# ./build.sh -r r6p2 -b
+# ./build.sh -r r6p2 -i
+
+```
+
+Finally, install the UserSpace blobs from arm using these commands:
+
+```
+# git clone [https://github.com/free-electrons/mali-blobs.git](https://github.com/free-electrons/mali-blobs.git)
+# cd mali-blobs
+# cp -a r6p2/fbdev/lib/lib_fb_dev/lib* $TARGET_DIR/usr/lib
 
 ```

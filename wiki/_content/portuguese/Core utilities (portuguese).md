@@ -17,31 +17,33 @@ Este artigo trata dos utilitários chamados *core* ("principais") em um sistema 
 
 *   [1 Comandos básicos](#Comandos_b.C3.A1sicos)
 *   [2 cat](#cat)
-*   [3 dd](#dd)
-*   [4 grep](#grep)
-*   [5 find](#find)
-*   [6 iconv](#iconv)
-    *   [6.1 Converter um arquivo no lugar](#Converter_um_arquivo_no_lugar)
-*   [7 ip](#ip)
-*   [8 locate](#locate)
-*   [9 less](#less)
-    *   [9.1 Vim como alternativa de paginador](#Vim_como_alternativa_de_paginador)
-*   [10 ls](#ls)
-    *   [10.1 Formato longo](#Formato_longo)
-    *   [10.2 Nomes de arquivos contendo espaços envoltos por aspas](#Nomes_de_arquivos_contendo_espa.C3.A7os_envoltos_por_aspas)
-*   [11 lsblk](#lsblk)
-*   [12 mkdir](#mkdir)
-*   [13 mv](#mv)
-*   [14 od](#od)
-*   [15 pv](#pv)
-*   [16 rm](#rm)
-*   [17 sed](#sed)
-*   [18 seq](#seq)
-*   [19 ss](#ss)
-*   [20 tar](#tar)
-*   [21 which](#which)
-*   [22 wipefs](#wipefs)
-*   [23 Veja também](#Veja_tamb.C3.A9m)
+*   [3 chmod](#chmod)
+*   [4 chown](#chown)
+*   [5 dd](#dd)
+*   [6 find](#find)
+*   [7 grep](#grep)
+*   [8 iconv](#iconv)
+    *   [8.1 Converter um arquivo no lugar](#Converter_um_arquivo_no_lugar)
+*   [9 ip](#ip)
+*   [10 less](#less)
+*   [11 locate](#locate)
+    *   [11.1 Vim como alternativa de paginador](#Vim_como_alternativa_de_paginador)
+*   [12 ls](#ls)
+    *   [12.1 Formato longo](#Formato_longo)
+    *   [12.2 Nomes de arquivos contendo espaços envoltos por aspas](#Nomes_de_arquivos_contendo_espa.C3.A7os_envoltos_por_aspas)
+*   [13 lsblk](#lsblk)
+*   [14 mkdir](#mkdir)
+*   [15 mv](#mv)
+*   [16 od](#od)
+*   [17 pv](#pv)
+*   [18 rm](#rm)
+*   [19 sed](#sed)
+*   [20 seq](#seq)
+*   [21 ss](#ss)
+*   [22 tar](#tar)
+*   [23 which](#which)
+*   [24 wipefs](#wipefs)
+*   [25 Veja também](#Veja_tamb.C3.A9m)
 
 ## Comandos básicos
 
@@ -71,11 +73,11 @@ A tabela a seguir lista os comandos básicos do shell, cada usuário Linux deve 
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/pt:cat_(Unix) "w:pt:cat (Unix)") é um utilitário padrão do Unix que concatena e lista arquivos.
+[cat](https://en.wikipedia.org/wiki/pt:cat_(Unix) "w:pt:cat (Unix)") é um utilitário padrão do Unix que concatena arquivos para a saída padrão.
 
 *   Porque o *cat* não é embutido no shell, em muitas ocasiões você pode achar mais conveniente usar um [redirecionamento](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por exemplo em scripts, ou se você se preocupa muito com desempenho. De fato, `< *arquivo*` faz o mesmo que `cat *arquivo*`.
 
-*   *cat* é capaz de trabalhar com várias linhas:
+*   *cat* pode trabalhar com várias linhas:
 
 ```
 $ cat << EOF >> *caminho/arquivo*
@@ -94,7 +96,15 @@ $ printf '%s
 
 ```
 
-*   Se você precisa listar linhas na ordem reversa, há um utilitários chamado [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* inverso).
+*   Se você precisa listar linhas na ordem reversa, há um *coreutil* chamado [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* inverso).
+
+## chmod
+
+Veja [File permissions and attributes#Changing permissions](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes").
+
+## chown
+
+Veja [File permissions and attributes#Changing ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes").
 
 ## dd
 
@@ -106,9 +116,19 @@ Similarmente ao *cp*, por padrão o *dd* faz cópia bit a bit do arquivo, mas co
 
 Para mais informações, veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) ou da [documentação completa](https://www.gnu.org/software/coreutils/dd).
 
+## find
+
+*find* é parte do pacote [findutils](https://www.archlinux.org/packages/?name=findutils), que pertence ao grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/).
+
+**Dica:** [fd](https://www.archlinux.org/packages/?name=fd) é uma alternativa simples, rápida e amigável ao `find` que fornece mais padrões sensíveis (p. ex., ignora arquivos ocultos, diretórios e arquivos listados no `.gitignore`, `fd PADRÃO` em vez de `find -iname '*PADRÃO*'`). Possui saída colorida (semelhante ao `ls`), suporte a Unicode, expressões regulares e muito mais.
+
+Provavelmente se esperaria que um comando *find* levasse como argumento um nome de arquivo e pesquisasse no sistema de arquivos para arquivos que correspondessem a esse nome. Para um programa que faz exatamente isso, veja [#locate](#locate) abaixo.
+
+Em vez disso, find leva um conjunto de diretórios e combina cada arquivo abaixo deles contra um conjunto de expressões. Este design permite alguns "one-liners" muito poderosos que não seriam possíveis usando o design "intuitivo" descrito acima. Veja [UsingFind](http://mywiki.wooledge.org/UsingFind) para detalhes de uso.
+
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/pt:grep "w:pt:grep") (de *g/re/p*, *global/regular expression/print*, do [ed](https://en.wikipedia.org/wiki/pt:Ed_(software) "w:pt:Ed (software)")) é um utilitário de pesquisa de texto de linha de comando originalmente escrito para Unix. O comando *grep* pesquisa arquivos ou entrada padrão para linhas correspondendo a uma expressão regular dada, e imprime essas linhas para a saída padrão do programa.
+[grep](https://en.wikipedia.org/wiki/pt:grep "w:pt:grep") (de *g/re/p*, *global/regular expression/print*, do [ed](https://en.wikipedia.org/wiki/pt:Ed_(software) "w:pt:Ed (software)")) é um utilitário de pesquisa de texto de linha de comando originalmente escrito para Unix. O comando *grep* pesquisa arquivos ou entrada padrão para linhas correspondendo a uma expressão regular dada, e imprime essas linhas para a saída padrão.
 
 *   Lembre-se que *grep* trata de arquivos, então um construto como `cat *arquivo* | grep *padrão*` pode ser substituído com `grep *padrão* *arquivo*`
 *   Há alternativas ao *grep* otimizadas para código fonte em VCS, tal como [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) e [ack](https://www.archlinux.org/packages/?name=ack).
@@ -117,16 +137,6 @@ Para mais informações, veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man
 **Nota:** Alguns comandos enviam suas saídas para [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) e o grep não tem aparente efeito. Neste caso, redirecione *stderr* para *stdout* com `*comando* 2>&1 | grep *args*` ou (par Bash 4) `*comando* |& grep *args*`. Veja também [Redirecionamento de E/S](http://www.tldp.org/LDP/abs/html/io-redirection.html) (inglês).
 
 Para suporte a cores, veja [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
-
-## find
-
-*find* é parte do pacote [findutils](https://www.archlinux.org/packages/?name=findutils), que pertence ao grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/).
-
-**Tip:** [fd](https://www.archlinux.org/packages/?name=fd) é uma alternativa simples, rápida e amigável ao `find` que fornece mais padrões sensíveis (p. ex., ignora arquivos ocultos, dirs e arquivos listados no `.gitignore`, `fd PADRÃO` em vez de `find -iname '*PADRÃO*'`). Possui saída colorida (semelhante ao `ls`), suporte a Unicode, expressões regulares e muito mais.
-
-Provavelmente se esperaria que um comando *find* levasse como argumento um nome de arquivo e pesquisasse no sistema de arquivos para arquivos que correspondessem a esse nome. Para um programa que faz exatamente isso, veja [#locate](#locate) abaixo.
-
-Em vez disso, find leva um conjunto de diretórios e combina cada arquivo abaixo deles contra um conjunto de expressões. Este design permite alguns "one-liners" muito poderosos que não seriam possíveis usando o design "intuitivo" descrito acima. Veja [UsingFind](http://mywiki.wooledge.org/UsingFind) para detalhes de uso.
 
 ## iconv
 
@@ -185,6 +195,12 @@ O artigo [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Con
 
 **Nota:** Você pode estar familiarizado com o comando [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig"), que era usado em versões antigas do Linux para configuração de interface. Ele está obsoleto no Arch Linux; em vez dele, você deve usar o *ip*.
 
+## less
+
+[less](https://en.wikipedia.org/wiki/pt:less "w:pt:less") é um programa paginador de terminal usado para visualizar os conteúdos de um arquivo texto uma tela por vez. Embora parecido com outros paginadores, como o [more](https://en.wikipedia.org/wiki/pt:more_(comando) "w:pt:more (comando)") e [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* oferece uma interface mais avançada e um [conjunto de recursos](http://www.greenwoodsoftware.com/less/faq.html) mais completo.
+
+Veja [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") para alternativas.
+
 ## locate
 
 [Instale](/index.php/Instale "Instale") o pacote [mlocate](https://www.archlinux.org/packages/?name=mlocate). O pacote contém uma unidade `updatedb.timer`, que invoca uma atualização do banco de dados a cada dia. O temporizador é ativado logo após a instalação, [inicie](/index.php/Inicie "Inicie") manualmente se você quiser usá-lo antes de reiniciar. Você também pode executar manualmente *updatedb* como root a qualquer momento. Por padrão, os caminhos como `/media` e `/mnt` são ignorados, portanto, *locate* pode não descobrir arquivos em dispositivos externos. Veja a [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) para obter detalhes.
@@ -194,12 +210,6 @@ O comando *locate* é uma ferramenta Unix comum para encontrar rapidamente arqui
 Antes que o *locate* possa ser usado, o banco de dados precisará ser criado. Para fazer isso, execute `updatedb` como root.
 
 Veja também [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/) ("Como locate funciona e rescreva-o em um minuto").
-
-## less
-
-[less](https://en.wikipedia.org/wiki/pt:less "w:pt:less") é um programa paginador de terminal usado para visualizar os conteúdos de um arquivo texto uma tela por vez. Embora parecido com outros paginadores, como o [more](https://en.wikipedia.org/wiki/pt:more_(comando) "w:pt:more (comando)") e [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* oferece uma interface mais avançada e um [conjunto de recursos](http://www.greenwoodsoftware.com/less/faq.html) mais completo.
-
-Veja [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") para alternativas.
 
 ### Vim como alternativa de paginador
 

@@ -25,6 +25,8 @@ Shorewall can be used on a dedicated firewall system, a multi-function gateway/r
 
 ## Configuration
 
+**Note:** If you use systemd for logging set `LOGFILE="systemd"` in `/etc/shorewall/shorewall.conf` for the `shorewall show` command to work. [[1]](http://shorewall.org/manpages/shorewall.conf.html)
+
 These settings are based on the [two-interface documentation on the Shorewall web site](http://www.shorewall.net/two-interface.htm).
 
 Use some example configuration files that come with the shorewall package

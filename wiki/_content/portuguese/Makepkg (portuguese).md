@@ -68,6 +68,8 @@ Configure as seguintes variáveis do `makepkg.conf`, se necessário:
 *   `SRCDEST` – diretório para armazenar dados [fonte](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") (links simbólicos serão colocados em `src/` se ele aponta para outro lugar)
 *   `SRCPKGDEST` – diretório para armazenar os pacotes fontes (compilado com `makepkg -S`)
 
+**Dica:** O diretório `PKGDEST` pode ser limpado com, p. ex., `paccache -c ~/build/pacotes/` como descrito em [pacman (Português)#Limpando o cache de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Limpando_o_cache_de_pacotes "Pacman (Português)").
+
 ### Verificação de assinatura
 
 **Nota:** A verificação de assinatura implementada no *makepkg* não usa o chaveiro do pacman; em vez disso, depende do chaveiro do usuário.[[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
@@ -202,7 +204,7 @@ $ PKGEXT='.pkg.tar' makepkg
 
 ```
 
-Um outro exemplo abaixo mostra o uso do algoritmo lzop, com o pacote [lzo](https://www.archlinux.org/packages/?name=lzo) necessário:
+Um outro exemplo abaixo mostra o uso do algoritmo lzop, com o pacote [lzop](https://www.archlinux.org/packages/?name=lzop) necessário:
 
 ```
 $ PKGEXT='.pkg.tar.lzo' makepkg

@@ -40,27 +40,18 @@ Uma vez o pacote seja revertido, adicione-o temporariamente para a [seção Igno
 
 ### Fazendo downgrade do kernel
 
-Se você não consegue iniciar o sistema após uma atualização do kernel, então você pode fazer o downgrade do kernel usando um CD *live*. Use uma mídia de instalação do Arch Linux razoavelmente recente. Uma vez que ela tenha iniciado, monte a partição na qual seu sistema está instalado para `/mnt` e se você tiver `/boot` ou `/var` em partições separadas, monte-as lá também (p.ex. `mount /dev/sdc3 /mnt/boot`). Então, faça um [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") no sistema:
+Em caso de problema com um novo kernel, é possível fazer downgrade dos pacotes de Linux para as últimas que estejam funcionando [#Usando o cache do pacman](#Usando_o_cache_do_pacman). Vá para o diretório `/var/cache/pacman/pkg` e faça downgrade de pelo menos [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) e qualquer módulo do kernel. Por exemplo:
 
 ```
-# arch-chroot /mnt /bin/bash
-
-```
-
-Aqui você pode ir em `/var/cache/pacman/pkg` e fazer o downgrade dos pacotes. Faça o downgrade de pelo menos [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) e de quaisquer módulos. Por exemplo:
-
-```
-# pacman -U linux-3.5.6-1-x86_64.pkg.tar.xz linux-headers-3.5.6-1-x86_64.pkg.tar.xz virtualbox-host-modules-4.2.0-5-x86_64.pkg.tar.xz
+# pacman -U linux-4.15.8-1-x86_64.pkg.tar.xz linux-headers-4.15.8-1-x86_64.pkg.tar.xz virtualbox-host-modules-arch-5.2.8-4-x86_64.pkg.tar.xz
 
 ```
 
-Saia do chroot (com `exit`), reinicie e agora deve funcionar.
+**Dica:** Se você não conseguir inicializar após uma atualização do kernel, você pode fazer downgrade do kernel com um [chroot](/index.php/Change_root_(Portugu%C3%AAs) "Change root (Português)") para o sistema. Inicialize usando ums [mídia de instalação flash USB](/index.php?title=M%C3%ADdia_de_instala%C3%A7%C3%A3o_flash_USB&action=edit&redlink=1 "Mídia de instalação flash USB (page does not exist)") com Arch Linux e monte a partição onde seu sistema está instalado para `/mnt`. Se você tiver `/boot` ou `/var` em partições separadas, monte-as também em `/mnt` (por exemplo, `mount /dev/sdc3 /mnt/boot`). Então, faça um *chroot* no sistema usando: `# arch-chroot /mnt /bin/bash` Agora você pode entrar no diretório de cache *pacman* e fazer o downgrade dos pacotes do Linux usando o comando indicado acima. Uma vez feito isso, saia do chroot (com `exit`) e reinicie.
 
 ### Arch Linux Archive
 
-O [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") é um *snapshot* diário dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
-
-O *ALA* pode ser usado para [instalar uma versão anterior de um pacote](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs)#Como_fazer_downgrade_de_um_pacote "Arch Linux Archive (Português)") ou [restaurar o sistema para uma data anterior](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs)#Como_restaurar_todos_os_pacotes_para_uma_data_espec.C3.ADfica "Arch Linux Archive (Português)").
+O [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") é um *snapshot* diário dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"). Ele pode ser usado para [instalar uma versão anterior de um pacote](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs)#Como_fazer_downgrade_de_um_pacote "Arch Linux Archive (Português)") ou [restaurar o sistema para uma data anterior](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs)#Como_restaurar_todos_os_pacotes_para_uma_data_espec.C3.ADfica "Arch Linux Archive (Português)").
 
 ### Recompilar o pacote
 
@@ -68,7 +59,7 @@ Se o pacote está indisponível, localize o [PKGBUILD](/index.php/PKGBUILD_(Port
 
 Para pacotes dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"), obtenha o PKGBUILD com [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e altere a versão do software. Alternativamente, localize o pacote no site de [pacotes](https://www.archlinux.org/packages), clique "View Changes" e navegue na versão desejada. Os arquivos estão disponíveis por meio de uma *snapshot* de `.tar.gz` e via uma visão de "árvore".
 
-veja também [Arch Build System (Português)#Faça checkout de uma versão anterior de um pacote](/index.php/Arch_Build_System_(Portugu%C3%AAs)#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote "Arch Build System (Português)").
+Veja também [Arch Build System (Português)#Faça checkout de uma versão anterior de um pacote](/index.php/Arch_Build_System_(Portugu%C3%AAs)#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote "Arch Build System (Português)").
 
 Pacotes antigos do AUR podem ser compilados fazendo checkout de um commit antigo no repositório Git do pacote do AUR. Para PKGBUILDs do AUR pré-2015, veja [Arch User Repository (Português)#Repositórios Git para pacotes AUR3](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Reposit.C3.B3rios_Git_para_pacotes_AUR3 "Arch User Repository (Português)").
 

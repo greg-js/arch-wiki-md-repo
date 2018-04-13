@@ -10,12 +10,13 @@ Related articles
 *   [1 Installation](#Installation)
     *   [1.1 AUR](#AUR)
     *   [1.2 Optional packages](#Optional_packages)
-*   [2 Automatically starting Dropbox](#Automatically_starting_Dropbox)
-    *   [2.1 Starting with your WM/DE](#Starting_with_your_WM.2FDE)
-    *   [2.2 Starting on boot with systemd](#Starting_on_boot_with_systemd)
-    *   [2.3 Starting on login with systemd](#Starting_on_login_with_systemd)
+    *   [1.3 Prevent automatic updates](#Prevent_automatic_updates)
+*   [2 Autostart](#Autostart)
+    *   [2.1 Autostart with your WM/DE](#Autostart_with_your_WM.2FDE)
+    *   [2.2 Autostart on boot with systemd](#Autostart_on_boot_with_systemd)
+    *   [2.3 Autostart on login with systemd](#Autostart_on_login_with_systemd)
 *   [3 Accessing the files without installing a sync client](#Accessing_the_files_without_installing_a_sync_client)
-*   [4 Securing your Dropbox](#Securing_your_Dropbox)
+*   [4 Encrypting your Dropbox files](#Encrypting_your_Dropbox_files)
     *   [4.1 Setup EncFS with Dropbox](#Setup_EncFS_with_Dropbox)
 *   [5 Multiple Dropbox instances](#Multiple_Dropbox_instances)
 *   [6 Dropbox on laptops](#Dropbox_on_laptops)
@@ -33,7 +34,6 @@ Related articles
         *   [7.5.4 Locale caused errors](#Locale_caused_errors)
         *   [7.5.5 Filesystem monitoring problem](#Filesystem_monitoring_problem)
     *   [7.6 Proxy settings](#Proxy_settings)
-    *   [7.7 Hack to stop Auto Update](#Hack_to_stop_Auto_Update)
 
 ## Installation
 
@@ -57,13 +57,29 @@ Related articles
 | Caja integration | [caja-dropbox](https://aur.archlinux.org/packages/caja-dropbox/) |
 | [KDE](/index.php/KDE "KDE") client | [kfilebox](https://aur.archlinux.org/packages/kfilebox/) |
 
-## Automatically starting Dropbox
+### Prevent automatic updates
 
-After installation, it is recommended to start Dropbox manually to configure it. If you open your Dropbox preferences, under the "General" tab there should be a "Start Dropbox on system startup" checkbox. Try checking this box and seeing if Dropbox starts automatically.
+Since at least version 2.4.6 (see comments around 2013-11-06 on [AUR](https://aur.archlinux.org/packages/dropbox/?comments=all)), Dropbox has had an auto-update capability which downloads a new binary to the `~/.dropbox-dist/` folder. The service then attempts to hand over control to this binary and dies, causing systemd to re-start the service, generating a conflict and an endless loop of log-filling, CPU-eating misery.
+
+A workaround is to prevent Dropbox from downloading the automatic update by creating the `~/.dropbox-dist/` folder and making it read-only:
+
+```
+$ rm -rf ~/.dropbox-dist
+$ install -dm0 ~/.dropbox-dist
+
+```
+
+This appears to be necessary for modern Dropbox clients to operate successfully from systemd on arch.
+
+Also see the [relevant Dropbox forum post](https://www.dropboxforum.com/hc/en-us/community/posts/202917115-dropbox-will-not-start-under-systemd-on-linux).
+
+## Autostart
+
+In the Dropbox preferences, under the "General" tab there should be a "Start Dropbox on system startup" checkbox. Try checking this box and seeing if Dropbox starts automatically.
 
 If that does not work, uncheck the box and use one of the following methods instead:
 
-### Starting with your WM/DE
+### Autostart with your WM/DE
 
 For [KDE](/index.php/KDE "KDE") users, no further steps are required, as KDE saves running applications when logging out and restarts them automatically. Similarly for [Xfce](/index.php/Xfce "Xfce") users, Dropbox will be restarted automatically next time you login since the `dropbox.desktop` file has been placed in `~/.config/autostart`.
 
@@ -71,9 +87,9 @@ For [Cinnamon](/index.php/Cinnamon "Cinnamon") users, it's recommended to start 
 
 If that does not work, you can start the Dropbox sync client along with your window manager by adding `/usr/bin/dropbox &` to your [xinitrc](/index.php/Xinitrc "Xinitrc") (or `~/.config/openbox/autostart`, depending on your setup).
 
-### Starting on boot with systemd
+### Autostart on boot with systemd
 
-**Note:** If *systemd* keeps restarting Dropbox you should try to [disable Auto Update](#Hack_to_stop_Auto_Update) according to [Dropbox forum](https://www.dropboxforum.com/hc/en-us/community/posts/202917115-dropbox-will-not-start-under-systemd-on-linux).
+**Note:** If *systemd* keeps restarting Dropbox, see [#Prevent automatic updates](#Prevent_automatic_updates).
 
 To have Dropbox automatically start when your system boots, simply [enable](/index.php/Enable "Enable") the systemd service, passing your username as the instance identifier. The service unit to be enabled takes the format `dropbox@*username*`.
 
@@ -86,7 +102,7 @@ Environment=DISPLAY=:0
 
 ```
 
-### Starting on login with systemd
+### Autostart on login with systemd
 
 To have Dropbox automatically start when you log in, simply [enable](/index.php/Enable "Enable") the [user service](/index.php/Systemd/User "Systemd/User").
 
@@ -105,7 +121,7 @@ If all you need is basic access to the files in your Dropbox, you can use the we
 
 Alternatively, the [AUR](/index.php/AUR "AUR") package [droxi](https://aur.archlinux.org/packages/droxi/) provides a command-line interface to Dropbox similar to the GNU `ftp` client.
 
-## Securing your Dropbox
+## Encrypting your Dropbox files
 
 If you want to store sensitive data in your Dropbox, you should encrypt it before doing so. Syncing to Dropbox is encrypted, but all files are (for the time being) stored on the server unencrypted just as you put them in your Dropbox.
 
@@ -343,11 +359,3 @@ export http_proxy=http://your.proxy.here:port
 ```
 
 **Note:** Dropbox will only use proxy settings of the form `http://your.proxy.here:port`, not `your.proxy.here:port` as some other applications do.
-
-### Hack to stop Auto Update
-
-```
-rm -rf ~/.dropbox-dist
-install -dm0 ~/.dropbox-dist
-
-```

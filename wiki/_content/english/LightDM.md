@@ -52,7 +52,6 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.5 LightDM does not appear](#LightDM_does_not_appear)
     *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
     *   [6.7 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
-    *   [6.8 Missing power buttons in GTK greeter](#Missing_power_buttons_in_GTK_greeter)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -463,12 +462,6 @@ Some LightDM themes try to access the user avatar located in HOME. If your HOME 
 
 *   Set your avatar as explained in [#Changing your avatar](#Changing_your_avatar)
 *   for [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) only: `hide-user-image = true` in `/etc/lightdm/lightdm-gtk-greeter.conf`
-
-### Missing power buttons in GTK greeter
-
-The GTK greeter used to have a button to power off / restart the computer in the top right corner. This has been removed from the default configuration in newer versions of the upstream package ([bug report](https://bugzilla.redhat.com/show_bug.cgi?id=1506505)). To get it back, adapt the following line in `/etc/lightdm/lightdm-gtk-greeter.conf`:
-
- `/etc/lightdm/lightdm-gtk-greeter.conf`  `indicators = ~host;~spacer;~clock;~spacer;~language;~session;~a11y;~power` 
 
 ## See also
 

@@ -65,16 +65,23 @@ The command looks like
 
 ```
 
-Where `*/dev/sdX*` and `*Y*` are the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root (disk [UUIDs](/index.php/UUID "UUID") can also be used). Note that the `-u`/`--unicode` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode").
+Where `*/dev/sdX*` and `*Y*` are the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root. Note that the `-u`/`--unicode` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters (e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode")).
 
-It is a good idea to then run
+**Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
+
+Alternatively, you can define the boot entry using disk [UUIDs](/index.php/UUID "UUID") with this command:
+
+```
+# efibootmgr --disk */dev/sdX* --part *Y* --create --gpt --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=UUID=*00000000-0000-0000-0000-000000000000* rw initrd=\initramfs-linux.img'
+
+```
+
+After adding the boot entry, you can verify the entry was added properly with:
 
 ```
 # efibootmgr --verbose
 
 ```
-
-to verify that the resulting entry is correct.
 
 **Note:** Some kernel and `efibootmgr` version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
 ```
@@ -92,8 +99,6 @@ To set the boot order, run:
 ```
 
 where *XXXX* is the number that appears in the output of `efibootmgr` command against each entry.
-
-**Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
 
 More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI"). Forum post [https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) .
 

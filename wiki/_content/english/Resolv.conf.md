@@ -95,7 +95,7 @@ nameserver 2620:0:ccd::2
 
 ### Cloudflare
 
-[Cloudflare](https://1.1.1.1/) provides a service committed to never writing the querying IP addresses to disk and wiping all logs within 24 hours, with the exception of providing data to APNIC labs for research purposes, who pledge to hold themselves to high privacy standards. [[1]](https://labs.apnic.net/?p=1127)
+[Cloudflare](https://1.1.1.1/) provides a service committed to never writing the querying IP addresses to disk and wiping all logs within 24 hours, with the exception of providing data to APNIC labs for research purposes. APNIC and Cloudfare committed to treat all data with high privacy standards in their [research agreement statement](https://labs.apnic.net/?p=1127).
 
 ```
 # IPv4 nameservers: 
@@ -173,9 +173,10 @@ nameserver 2a05:dfc7:5::5353
 
 ```
 
-[opennic-up](https://aur.archlinux.org/packages/opennic-up/) automates the renewal of the DNS servers with the most responsive OpenNIC servers using [NetworkManager](/index.php/NetworkManager "NetworkManager").
+**Note:**
 
-**Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (*.o*, *.libre*, *.dyn*...)
+*   The use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces: *.o*, *.libre*, *.dyn*...
+*   The tool [opennic-up](https://aur.archlinux.org/packages/opennic-up/) automates the renewal of the DNS servers with the most responsive OpenNIC servers
 
 ### Quad9
 
@@ -260,16 +261,23 @@ Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no t
 
 ### Systemd-resolved configuration
 
-[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is the [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications.
+[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications. *systemd-resoved* has [four different modes for handling *resolv.conf*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF). In one of the modes, it is a consumer of the `/etc/resolv.conf` file and any change made to it is going to be preserved and taken into account transparently for the user. This mode is therefore compatible with the procedures described in this page.
 
-The recommended mode of [handling *resolv.conf* with *systemd-resolved*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF) is to redirect software which read the `/etc/resolv.conf` file to the local *systemd-resolved* stub DNS resolver, delete or rename the existing file and create the following symbolic link: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
+However, this is not *systemd-resolved'*s recommended mode of operation. The service users are advised to redirect software which read the `/etc/resolv.conf` file to the local stub DNS resolver managed by *systemd-resolved*. This can be done by deleting or renaming the existing file and creating a symbolic link: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
 
-The DNS servers can be configured in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file. In order to check the DNS actually used by *systemd-resolved*, use the command:
+In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file. In order to check the DNS actually used by *systemd-resolved*, the command to use is:
 
 ```
 $ systemd-resolve --status
 
 ```
+
+**Tip:** To understand the context around the DNS choices and switches, one can turn on detailed debug information: for this, [edit](/index.php/Edit "Edit") *systemd-resolved* drop-in file inputting the two lines
+```
+[Service]
+Environment=SYSTEMD_LOG_LEVEL=debug
+```
+and [restart](/index.php/Restart "Restart") *systemd-resolved*, then watch the journal output for the service.
 
 ### Prevent NetworkManager modifications
 

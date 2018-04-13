@@ -1,6 +1,6 @@
 Artigos relacionados
 
-*   [Mirrors](/index.php/Mirrors "Mirrors")
+*   [Espelhos](/index.php/Espelhos "Espelhos")
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
 
 Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *pacman* em si, veja [Core utilities](/index.php/Core_utilities "Core utilities") e [Bash](/index.php/Bash "Bash").
@@ -585,9 +585,9 @@ Isso tentará colocar todos os pequenos arquivos em uma única localização (f�
 
 ### Velocidades de download
 
-**Nota:** Se suas velocidades de download foram reduzidas a uma lesma, certifique-se de usar um dos muitos [espelhos](/index.php/Mirrors "Mirrors") e não o ftp.archlinux.org, cuja [velocidade é limitada desde março de 2007](https://www.archlinux.org/news/302/).
+**Nota:** Se suas velocidades de download foram reduzidas a uma lesma, certifique-se de usar um dos muitos [espelhos](/index.php/Espelhos "Espelhos") e não o ftp.archlinux.org, cuja [velocidade é limitada desde março de 2007](https://www.archlinux.org/news/302/).
 
-Ao baixar pacotes, o *pacman* usa os espelhos na ordem em que estão no `/etc/pacman.d/mirrorlist`. O espelho que está no topo da lista por padrão, no entanto, pode não ser o mais rápido para você. Para selecionar um espelho mais rápido, veja [Mirrors](/index.php/Mirrors "Mirrors").
+Ao baixar pacotes, o *pacman* usa os espelhos na ordem em que estão no `/etc/pacman.d/mirrorlist`. O espelho que está no topo da lista por padrão, no entanto, pode não ser o mais rápido para você. Para selecionar um espelho mais rápido, veja [Espelhos](/index.php/Espelhos "Espelhos").
 
 A velocidade do *pacman* ao baixar pacotes também pode ser melhorada usando um aplicativo diferente para baixar pacotes, em vez baixador de arquivos embutido do *pacman*.
 

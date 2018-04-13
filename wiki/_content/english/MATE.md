@@ -27,7 +27,7 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [5.4 Show or hide desktop icons](#Show_or_hide_desktop_icons)
         *   [5.4.1 Hide all desktop icons](#Hide_all_desktop_icons)
         *   [5.4.2 Hide individual icons](#Hide_individual_icons)
-    *   [5.5 Use a different window manager with MATE](#Use_a_different_window_manager_with_MATE)
+    *   [5.5 Use a different window manager](#Use_a_different_window_manager)
     *   [5.6 Prevent Caja from managing the desktop](#Prevent_Caja_from_managing_the_desktop)
     *   [5.7 Change window decoration button order](#Change_window_decoration_button_order)
     *   [5.8 Auto open file manager after drive mount](#Auto_open_file_manager_after_drive_mount)
@@ -240,7 +240,7 @@ $ gsettings set org.mate.caja.desktop volumes-visible false
 
 Replace `false` with `true` for the icons to reappear.
 
-### Use a different window manager with MATE
+### Use a different window manager
 
 The *marco* window manager can be replaced with another window manager via either of the following methods:
 

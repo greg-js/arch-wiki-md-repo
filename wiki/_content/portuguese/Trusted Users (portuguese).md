@@ -15,14 +15,14 @@ Os requisitos *mínimos* para se tornar um TU são as seguintes:
 *   conhecer Google-Fu
 *   uma ideia geral do tipo de pacotes que você deseja manter (basicamente, por que você deseja se tornar um TU?)
 
-Ainda que você possa se tornar um TU por meramente preencher aqueles requisitos mínimos, as pessoas julgando você [durante a votação](https://aur.archlinux.org/trusted-user/TUbylaws.html#_standard_voting_procedure) podem esperar mais de você. Tal como:
+Ainda que você possa se tornar um TU por meramente preencher aqueles requisitos mínimos, as pessoas julgando você durante o [procedimento padrão de votação](https://aur.archlinux.org/trusted-user/TUbylaws.html#_standard_voting_procedure) podem esperar mais de você. Tal como:
 
-*   envolvimento no rastreador de erro (relatando, pesquisando solução, informações)
-*   patches para projetos do Arch
+*   envolvimento no rastreador de erros (relatando, pesquisando solução, informações)
+*   *patches* para projetos do Arch
 *   envolvimento em alguns projetos de código-fonte (mesmo se eles são seus próprios)
 
-No que em que você ainda esteja interessado em se tornar um TU após ler essas listas, você tem que encontrar um outro TU para patrocinar (*sponsor*) você e escrever um aplicação espirituosa assinada com sua chave GPGpara a lista de discussão do aur-general.
+Se você ainda estiver interessado em se tornar um TU após ler essas linhas, o primeiro passo é encontrar um TU que concorde em patrocinar (*sponsor*) você. Uma vez definido o patrocinador, escreva um aplicação espirituosa assinada com sua chave GPG para a lista de discussão do aur-general.
 
-**Note:** Caso o TU que você contatou negue ser o patrocinador de sua aplicação, você deve informar este fato se você busca patrocínio de um outro TU.
+**Nota:** Caso o TU que você contatou negue ser o patrocinador de sua aplicação, você deve informar este fato se você busca patrocínio de um outro TU.
 
-Para mais informações, por favor veja [Trusted User Bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) ("Estatuto de TUs") e [Diretrizes de Trusted User do AUR](/index.php/Diretrizes_de_Trusted_User_do_AUR "Diretrizes de Trusted User do AUR").
+Para mais informações, veja as [Trusted User Bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) ("Estatuto de TUs") e [Diretrizes de Trusted User do AUR](/index.php/Diretrizes_de_Trusted_User_do_AUR "Diretrizes de Trusted User do AUR").

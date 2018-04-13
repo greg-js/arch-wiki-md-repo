@@ -1,4 +1,15 @@
-This article links to various methods to launch scripts or applications automatically when some particular event is taking place, like system startup or shutdown, shell login or logout and so on.
+To automatically run programs:
+
+*   on bootup / shutdown, use [systemd](/index.php/Systemd "Systemd")
+*   on user login / logout, use [systemd/User](/index.php/Systemd/User "Systemd/User") services
+*   periodically at certain times, dates or intervals, use [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") or [Cron](/index.php/Cron "Cron")
+*   once at a date and time, use [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") or [at](https://www.archlinux.org/packages/?name=at)
+*   on filesystem events use an [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") event watcher, like [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), [incron](https://www.archlinux.org/packages/?name=incron) or [fswatch](https://aur.archlinux.org/packages/fswatch/)
+*   on shell login / logout, see the article / documentation of your [shell](/index.php/Shell "Shell")
+*   on [Xorg](/index.php/Xorg "Xorg") startup, you can use:
+    *   [xinitrc](/index.php/Xinitrc "Xinitrc") if you are starting [Xorg](/index.php/Xorg "Xorg") manually with [xinit](/index.php/Xinit "Xinit")
+    *   [xprofile](/index.php/Xprofile "Xprofile") if you are using a [display manager](/index.php/Display_manager "Display manager")
+    *   [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") i.e. place [Desktop entries](/index.php/Desktop_entries "Desktop entries") in specific directories
 
 ## Contents
 
@@ -42,7 +53,7 @@ Other tools that use the same underlying functionality are [incron](https://www.
 
 To autostart programs in console or upon login, you can use shell startup files/directories. Read the documentation for your shell, or its ArchWiki article, e.g. [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 
-See also [Wikipedia:Unix shell#Configuration files for shells](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files_for_shells "wikipedia:Unix shell").
+See also [Wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 
 ### /etc/profile
 

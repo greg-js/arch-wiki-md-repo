@@ -3,7 +3,7 @@ Artigos relacionados
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 *   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
-*   [Mirrors](/index.php/Mirrors "Mirrors")
+*   [Espelhos](/index.php/Espelhos "Espelhos")
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 *   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 *   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
@@ -27,13 +27,14 @@ Pacotes nos repositórios oficiais são atualizados constantemente: quando um pa
         *   [1.5.3 gnome-unstable](#gnome-unstable)
         *   [1.5.4 kde-unstable](#kde-unstable)
         *   [1.5.5 Desabilitando repositórios de teste](#Desabilitando_reposit.C3.B3rios_de_teste)
+    *   [1.6 staging](#staging)
 *   [2 Revisão histórica](#Revis.C3.A3o_hist.C3.B3rica)
 
 ## Repositórios
 
 ### core
 
-Esse repositório pode ser localizado em `.../core/os/` de seu [mirror](/index.php/Mirror "Mirror") favorito.
+Esse repositório pode ser localizado em `.../core/os/` de seu [espelho](/index.php/Espelho "Espelho") favorito.
 
 *core* contém pacotes para:
 
@@ -51,19 +52,19 @@ assim como as dependências deles (não necessariamente [makedepends](/index.php
 
 ### extra
 
-Esse repositório pode ser localizado em `.../extra/os/` de seu *mirror* favorito.
+Esse repositório pode ser localizado em `.../extra/os/` de seu espelho favorito.
 
 *extra* contém todos os pacotes que não foram para o *core*. Por exemplo: Xorg, gerenciadores de janela, navegadores web, reprodutores de mídia, ferramentas para trabalhar com linguagens como Python e Ruby, e muito mais.
 
 ### community
 
-Esse repositório pode ser localizado em `.../comunidade/os/` de seu *mirror* favorito.
+Esse repositório pode ser localizado em `.../comunidade/os/` de seu espelho favorito.
 
 *community* contém pacotes que foram adotadores por [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") do [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"). Alguns desses pacotes podem eventualmente serem movidos para os repositórios [core](#core) ou [extra](#extra) caso os desenvolvedores os considerem cruciais para a distribuição.
 
 ### multilib
 
-Esse repositório pode ser localizado em `.../multilib/os/` de seu *mirror* favorito.
+Esse repositório pode ser localizado em `.../multilib/os/` de seu espelho favorito.
 
 *multilib* contém softwares e bibliotecas 32 bits que podem ser usados para executar e compilar aplicativos 32 bits em instalações 64 bits (ex.: [wine](https://www.archlinux.org/packages/?name=wine), [steam](https://www.archlinux.org/packages/?name=steam), etc).
 
@@ -73,7 +74,7 @@ Para mais informações, veja [Multilib](/index.php/Multilib_(Portugu%C3%AAs) "M
 
 **Atenção:** Cuidado ao ativar o repositório *testing*. Seu sistema pode não funcionar adequadamente ao realizar uma atualização. Apenas usuários experientes que sabem como lidar com falhas de sistema em potencial devem usá-lo.
 
-Esse repositório pode ser localizado em `.../multilib/os/` de seu *mirror* favorito.
+Esse repositório pode ser localizado em `.../multilib/os/` de seu espelho favorito.
 
 *testing* contém pacotes que são candidatos aos repositórios *core* ou *extra*.
 
@@ -137,6 +138,14 @@ Se você habilitou repositórios de teste, mas posteriormente decidir desabilit�
 2.  Realizar um `# pacman -Syuu` para "retroceder" suas atualizações para esses repositórios.
 
 O segundo item é opcional, mas tenha-o em mente que cas você tenha algum problema.
+
+### staging
+
+**Atenção:** Não ative os repositórios *staging* por qualquer motivo. Seu sistema quebrará inquestionavelmente depois de executar uma atualização. Este repositório destina-se apenas ao uso de desenvolvedores de backend.
+
+Este repositório contém pacotes quebrados e é usado apenas por desenvolvedores durante a recompilação de muitos pacotes de uma só vez. Para recompilar os pacotes que dependem, por exemplo, de uma nova biblioteca compartilhada, a própria biblioteca compartilhada deve ser compilada e carregada nos repositórios de teste para ser disponibilizada para outros desenvolvedores. Assim que todos os pacotes dependentes forem reconstruídos, o grupo de pacotes será movido para o teste ou para os repositórios principais, o que for mais apropriado.
+
+Veja [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2010-August/017579.html) para mais detalhes históricos.
 
 ## Revisão histórica
 

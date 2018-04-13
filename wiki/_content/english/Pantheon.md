@@ -1,4 +1,4 @@
-[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and macOS.
+[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and macOS.
 
 ## Contents
 

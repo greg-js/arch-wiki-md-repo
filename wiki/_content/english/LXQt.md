@@ -15,7 +15,7 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
     *   [2.1 Using xinit](#Using_xinit)
     *   [2.2 Graphical login](#Graphical_login)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Replace Openbox](#Replace_Openbox)
+    *   [3.1 Use a different window manager](#Use_a_different_window_manager)
     *   [3.2 Autostarting applications](#Autostarting_applications)
     *   [3.3 Set-up environment variables](#Set-up_environment_variables)
     *   [3.4 Editing the Application Menu](#Editing_the_Application_Menu)
@@ -64,7 +64,7 @@ Choose *LXQt Desktop* from the menu in a [display manager](/index.php/Display_ma
 
 LXQt in general tries to provide GUI applications to change its settings. Configuration files are in `~/.config/lxqt`. This directory is initialized automatically. The default configuration for new users is found in `/etc/xdg/lxqt`.
 
-### Replace Openbox
+### Use a different window manager
 
 While [Openbox](/index.php/Openbox "Openbox") is the default [window manager](/index.php/Window_manager "Window manager") for LXQt, you can specify a different window manager to use with LXQt via *Session Settings*, `lxqt-config-session`; or by editing `~/.config/lxqt/session.conf`. Change the following line:
 

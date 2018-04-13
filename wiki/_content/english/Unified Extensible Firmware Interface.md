@@ -409,14 +409,16 @@ This section describes how to setup [GRUB](/index.php/GRUB "GRUB") as the USB's 
 
 ```
 
-*   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
+*   Create `*/mnt/usb*/EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 
 **Tip:**
 
 *   The archiso label can be aquired from the *.iso* file with `isoinfo` from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) or `iso-info` from [libcdio](https://www.archlinux.org/packages/?name=libcdio).
 *   The given configuration entries can also be entered inside a [GRUB command-shell](/index.php/GRUB#Using_the_command_shell "GRUB").
 
- `grub.cfg for official ISO` 
+For the official ISO:
+
+ `*/mnt/usb*/EFI/boot/grub.cfg` 
 ```
 insmod part_gpt
 insmod part_msdos
@@ -443,7 +445,10 @@ menuentry "Arch Linux archiso x86_64 UEFI USB" {
     initrd /arch/boot/intel_ucode.img /arch/boot/x86_64/archiso.img
 }
 ```
- `grub.cfg for Archboot ISO` 
+
+For Archboot:
+
+ `*/mnt/usb*/EFI/boot/grub.cfg` 
 ```
 insmod part_gpt
 insmod part_msdos

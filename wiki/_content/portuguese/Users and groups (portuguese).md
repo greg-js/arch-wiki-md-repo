@@ -1,7 +1,8 @@
 Artigos relacionados
 
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
-*   [polkit](/index.php/Polkit "Polkit")
+*   [Sudo](/index.php/Sudo "Sudo")
+*   [Polkit](/index.php/Polkit "Polkit")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
 Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en.wikipedia.org/wiki/pt:Controle_de_acesso#Na_seguran.C3.A7a_da_informa.C3.A7.C3.A3o "wikipedia:pt:Controle de acesso") — isto é, para controlar o acesso aos arquivos, diretórios e periféricos do sistema. O Linux oferece mecanismos de controle de acesso relativamente simples/grosseiros por padrão. Para opções mais avançadas, veja [ACL](/index.php/ACL "ACL") e [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
@@ -82,7 +83,7 @@ Direitos de acesso:
 
  `$ stat -c %A /media/sf_Shared/`  `drwxrwx---` 
 
-As permissões de acesso são exibidas em três grupos de caracteres, representando as permissões do usuário dono, grupo dono e outros, respectivamente. Por exemplo, os caracteres `-rw-r-r--` indicam que o dono do arquivo tem permissão de leitura e gravação, mas não de execução (`rw-`), enquanto os usuários pertencem ao grupo dono e outros usuários só têm permissão de leitura (`r--` e `r--`). Enquanto isso, os caracteres `drwxrwx---` indicam que o dono do arquivo e os usuários pertencentes ao grupo dono possuem permissões de leitura, gravação e execução (`rwx` e {{ic|rwx} }), enquanto outros usuários têm acesso negado (`---`). O primeiro caractere representa o tipo do arquivo.
+As permissões de acesso são exibidas em três grupos de caracteres, representando as permissões do usuário dono, grupo dono e outros, respectivamente. Por exemplo, os caracteres `-rw-r-r--` indicam que o dono do arquivo tem permissão de leitura e gravação, mas não de execução (`rw-`), enquanto os usuários pertencem ao grupo dono e outros usuários só têm permissão de leitura (`r--` e `r--`). Enquanto isso, os caracteres `drwxrwx---` indicam que o dono do arquivo e os usuários pertencentes ao grupo dono possuem permissões de leitura, gravação e execução (`rwx` e `rwx`), enquanto outros usuários têm acesso negado (`---`). O primeiro caractere representa o tipo do arquivo.
 
 Liste arquivos que pertencem a um usuário ou grupo com o utilitário *find*:
 

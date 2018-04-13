@@ -28,15 +28,6 @@ Related articles
 
 To launch the `snapd` daemon when *snap* tries to use it, [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") the `snapd.socket`.
 
-The package ships several systemd unit files, which manage several tasks like automatically refreshing all installed snaps once a new version is released.
-
-To start the timer which periodically refreshes snaps when a new version is pushed to the store use:
-
-```
-# systemctl start snapd.refresh.timer
-
-```
-
 ## Usage
 
 The *snap* tool is used to manage the snaps.
@@ -77,12 +68,30 @@ You can also sideload snaps from your local hard drive with:
 
 ### Updating
 
-To update your snaps use:
+To update your snaps manually use:
 
 ```
 # snap refresh
 
 ```
+
+Snaps are refreshed automatically according to snap `refresh.timer` setting.
+
+To view the next/last refresh times use:
+
+```
+# snap refresh --time
+
+```
+
+To set a different refresh time, eg. twice a day:
+
+```
+# snap set core refresh.timer=0:00~24:00/2
+
+```
+
+See [system options documentation page](https://forum.snapcraft.io/t/system-options/87) for details on customizing the refresh time.
 
 ### Removing
 

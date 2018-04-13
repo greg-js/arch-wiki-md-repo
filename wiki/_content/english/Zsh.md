@@ -432,7 +432,7 @@ zstyle ':completion:*' rehash true
 
 ### Bind key to ncurses application
 
-Bind a ncurses application to a keystoke, but it will not accept interaction. Use `BUFFER` variable to make it work. The following example lets users open ncmpcpp using `Alt+\`:
+Bind a ncurses application to a keystroke, but it will not accept interaction. Use `BUFFER` variable to make it work. The following example lets users open ncmpcpp using `Alt+\`:
 
  `~/.zshrc` 
 ```

@@ -65,7 +65,7 @@ You can use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) to chec
 
 1.  Make sure your [#Network interface](#Network_interface) is up. If it is not listed, check your [#Device driver](#Device_driver).
 2.  Check if you can access the internet by pinging a public IP address (e.g. `8.8.8.8`). If you cannot access the internet but your network interface is up, see [#Obtaining an IP address](#Obtaining_an_IP_address).
-3.  Check if if you can resolve domain names, by pinging a domain name (e.g. `google.com`). If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
+3.  Check if you can resolve domain names, by pinging a domain name (e.g. `google.com`). If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
 
 **Note:** If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
 
@@ -352,7 +352,11 @@ A couple of things to note:
 
 If the network card has a dynamic MAC, you can use `DEVPATH`, for example:
 
-{{hc|/etc/udev/rules.d/10-network.rules|2= SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int" SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en" }
+ `/etc/udev/rules.d/10-network.rules` 
+```
+SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
+SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
+```
 
 The device path should match both the new and old device name, since the rule may be executed more than once on bootup. For example, in the second rule, `"/devices/pci*/*1c.0/*/net/enp*"` would be wrong since it will stop matching once the name is changed to `en`. Only the system-default rule will fire the second time around, causing the name to be changed back to e.g. `enp1s0`.
 
@@ -601,7 +605,7 @@ Another fault in the drivers for some revisions of this adapter is poor IPv6 sup
 
 ### Gigabyte Motherboard with Realtek 8111/8168/8411
 
-With motherboards such as the *Gigabyte GA-990FXA-UD3*, booting with [IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF") off (which can be the default) will cause the network interface to be unreliable, often failing to connect or connecting but allowing no throughput. This will apply to the onboard NIC an to any other pci-NIC in the box because the IOMMU setting affects the entire network interface on the board. Enabling IOMMU and booting with the install media will throw AMD I-10/xhci page faults for a second, but then boots normally, resulting in a fully functional onboard NIC (even with the r8169 module).
+With motherboards such as the *Gigabyte GA-990FXA-UD3*, booting with [IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF") off (which can be the default) will cause the network interface to be unreliable, often failing to connect or connecting but allowing no throughput. This will apply to the onboard NIC and to any other pci-NIC in the box because the IOMMU setting affects the entire network interface on the board. Enabling IOMMU and booting with the install media will throw AMD I-10/xhci page faults for a second, but then boots normally, resulting in a fully functional onboard NIC (even with the r8169 module).
 
 When configuring the boot process for your installation, add `iommu=soft` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to eliminate the error messages on boot and restore USB3.0 functionality.
 

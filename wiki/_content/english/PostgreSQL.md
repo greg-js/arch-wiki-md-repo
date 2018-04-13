@@ -382,7 +382,7 @@ Stop and make sure PostgreSQL is stopped:
 Upgrade the packages:
 
 ```
-# pacman -S postgresql postgresql-lib postgresql-old-upgrade
+# pacman -S postgresql postgresql-libs postgresql-old-upgrade
 
 ```
 

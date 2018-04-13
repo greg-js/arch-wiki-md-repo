@@ -61,9 +61,9 @@ A vantagem de um pacote meta, comparado com um grupo, é que quaisquer novos pac
 
 ### Pré-requisito de software
 
-Primeiro se certifique de que as ferramentas necessárias estão instaladas. [Instalar](/index.php/Instale "Instale") o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) deve ser o suficiente; ele inclui **make** e ferramentas adicionais necessárias para compilar a partir do código-fonte.
+Primeiro, certifique-se de que as ferramentas necessárias estejam [instaladas](/index.php/Instala "Instala"): o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) deve ser o suficiente; ele inclui **make** e ferramentas adicionais necessárias para compilar a partir do código-fonte.
 
-Uma das ferramentas chaves para compilar pacotes é o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") (fornecido pelo [pacman](https://www.archlinux.org/packages/?name=pacman)), que faz o seguinte:
+A ferramenta chave para compilar pacotes é o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") (fornecido pelo [pacman](https://www.archlinux.org/packages/?name=pacman)), que faz o seguinte:
 
 1.  Verifica se as dependências do pacote estão instaladas.
 2.  Baixa os arquivos fontes dos servidores especificados.
@@ -76,7 +76,7 @@ Uma das ferramentas chaves para compilar pacotes é o [makepkg](/index.php/Makep
 
 ### Baixe e teste a instalação
 
-Baixe o tarball fonte do software se você deseja empacotá-lo, extraí-lo e seguir as etapas do autor para instalar o programa. Tome nota de todos os comandos e/ou etapas necessários para compilar e instalar. Você estará repetindo os mesmos comandos no arquivo *PKGBUILD*.
+Baixe o tarball fonte do software se você deseja empacotá-lo, extraí-lo e seguir as etapas do autor para instalar o programa. Tome nota de todos os comandos e/ou etapas necessários para compilar e instalar. Você estará repetindo os mesmos comandos no arquivo `PKGBUILD`.
 
 A maioria dos autores de software seguem o ciclo de compilação em 3 etapas:
 
@@ -91,9 +91,9 @@ Esse é um bom momento para se certificar o programa está funcionando corretame
 
 ## Criação de um PKGBUILD
 
-Quando você executa `makepkg`, ele vai procurar por um arquivo `PKGBUILD` no diretório de trabalho atual. Se um arquivo `PKGBUILD` for localizado, ele vai baixar o código-fonte do software e compilá-lo de acordo com as instruções especificadas no arquivo `PKGBUILD`. As instruções devem ser completamente interpretáveis pelo shell [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash"). Após concluir com sucesso, os binários resultantes e metadados do pacote, isto é, informações de versão e dependências do pacote, são empacotados em um arquivo de pacote `pkgname.pkg.tar.xz` que pode ser instalado com `pacman -U *<arquivo de pacote>*`.
+Quando `makepkg` é executado, ele procura por um arquivo `PKGBUILD` no diretório de trabalho atual. Se localizar um, ele baixa o código-fonte do software e compilá-lo de acordo com as instruções especificadas no arquivo `PKGBUILD`. As instruções devem ser completamente interpretáveis pelo shell [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash"). Após concluir com sucesso, os binários resultantes e metadados do pacote, isto é, informações de versão e dependências do pacote, são empacotados em um arquivo de pacote `pkgname.pkg.tar.xz`. O pacote recém-criado que pode ser instalado usando `makepkg --install` que vai chamar o pacman em plano de fundo, ou diretamente usando `pacman -U *pkgname.pkg.tar.xz*`.
 
-Para começar com um novo pacote, você deve primeiro criar um diretório de trabalho vazio, mudar para aquele diretório, e criar um arquivo `PKGBUILD`. Você pode copiar o protótipo de PKGBUILD do diretório `/usr/share/pacman/` para seu diretório de trabalho ou copiar um `PKGBUILD` de um pacote similar. A última opção pode ser útil se você só precisar alterar algumas opções.
+Para começar a compilar um novo pacote, primeiro crie um novo diretório para o pacote e mude o diretório atual para esse novo. Então, um arquivo `PKGBUILD` precisa ser criado: um protótipo de PKGBUILD localizado em `/usr/share/pacman/` pode ser usado ou você pode começar `PKGBUILD` a partir de outro pacote. A última opção pode ser uma boa escolha, se um pacote similar já existir.
 
 ### Definindo as variáveis do PKGBUILD
 
@@ -109,11 +109,9 @@ Exemplos de PKGBUILDs estão localizados em `/usr/share/pacman/`. Uma explicaç�
 
 	aponta para o diretório no qual *makepkg* empacota o software instalado, o qual se torna o diretório raiz de seu pacote compilado.
 
-Todos eles contêm caminhos *absolutos*, o que significa que você não tem que se preocupar com seu diretório de trabalho, se você usar essas variáveis adequadamente.
+Eles contêm caminhos *absolutos*, o que significa que você não tem que se preocupar com seu diretório de trabalho, se você usar essas variáveis adequadamente.
 
 **Nota:** *makepkg*, e portanto as funções `build()` e `package()`, são feitas para serem não interativas. Utilitários interativos ou scripts chamados naquelas funções podem quebrar o *makepkg*, principalmente se for invocada com registro de log de compilação habilitado (`-L`). (Veja [FS#13214](https://bugs.archlinux.org/task/13214).)
-
-**Nota:** Com exceção do *Maintainer* atual do pacote, pode haver mantenedores anteriores listados acima como *Contributors*.
 
 ### Funções do PKGBUILD
 
@@ -207,11 +205,11 @@ Por favor, leia [AUR (Português)#Enviando pacotes](/index.php/AUR_(Portugu%C3%A
 
 ## Resumo
 
-1.  Baixe o tarball fonte do software que você deseja empacotar.
+1.  Baixe o tarball fonte do software para empacotar.
 2.  Tente compilar o pacote e instalá-lo em um diretório arbitrário.
 3.  Copie o protótipo `/usr/share/pacman/PKGBUILD.proto` e renomeie-o para `PKGBUILD` em um diretório de trabalho temporário.
 4.  Edite o `PKGBUILD` de acordo com as necessidades do seu pacote.
-5.  Execute `makepkg` e veja se o pacote resultante é compilado corretamente.
+5.  Execute `makepkg` e verifique se o pacote resultante compila corretamente.
 6.  Se não, repita as últimas duas etapas.
 
 ### Avisos
@@ -234,11 +232,8 @@ PKGBUILDs para alguns pacotes podem ser gerados automaticamente.
 **Nota:** Usuários ainda são responsáveis por garantir que o pacote atende os padrões de alta qualidade antes de enviar os arquivos gerados para o [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
 *   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
-
 *   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
-
-*   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [PyPI2PKGBUILD](https://github.com/anntzer/pypi2pkgbuild)
-
+*   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [python-pypi2pkgbuild](https://aur.archlinux.org/packages/python-pypi2pkgbuild/)
 *   [Ruby](/index.php/Ruby "Ruby"): [gem2arch](https://aur.archlinux.org/packages/gem2arch/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
 
 ## Veja também

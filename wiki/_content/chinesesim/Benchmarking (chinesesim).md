@@ -1,10 +1,7 @@
 Related articles
 
-*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
 *   [Improving performance](/index.php/Improving_performance "Improving performance")
 *   [Sysstat](/index.php/Sysstat "Sysstat")
-
-**翻译状态：** 本文是英文页面 [Benchmarking](/index.php/Benchmarking "Benchmarking") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-08，点击[这里](https://wiki.archlinux.org/index.php?title=Benchmarking&diff=0&oldid=453268)可以查看翻译后英文页面的改动。
 
 基准测试是性能测试，与其他的系统进行比较，通过统一的流程，是一个被广泛接受的标准。评估系统性能可以解答如下问题：
 
@@ -25,11 +22,16 @@ Related articles
     *   [1.6 time](#time)
     *   [1.7 hdparm](#hdparm)
     *   [1.8 Unigine 引擎](#Unigine_.E5.BC.95.E6.93.8E)
+    *   [1.9 gnome-disks](#gnome-disks)
+    *   [1.10 systemd-analyze](#systemd-analyze)
+    *   [1.11 dd](#dd)
+    *   [1.12 dcfldd](#dcfldd)
 *   [2 软件集](#.E8.BD.AF.E4.BB.B6.E9.9B.86)
     *   [2.1 Bonnie++](#Bonnie.2B.2B)
     *   [2.2 IOzone](#IOzone)
     *   [2.3 HardInfo](#HardInfo)
     *   [2.4 Phoronix测试集](#Phoronix.E6.B5.8B.E8.AF.95.E9.9B.86)
+    *   [2.5 S](#S)
 *   [3 闪存介质](#.E9.97.AA.E5.AD.98.E4.BB.8B.E8.B4.A8)
 *   [4 参阅](#.E5.8F.82.E9.98.85)
 
@@ -63,14 +65,11 @@ unixbench [unixbench](https://aur.archlinux.org/packages/unixbench/)中。 在�
 
 ### ttcp
 
-(n)(nu)ttcp测试任意网络连接的P2P带宽。需要在（被测试带宽的）网络两端都安装该程序。
+ttcp (Test TCP)测试任意网络连接的P2P带宽。需要在（被测试带宽的）网络两端都安装该程序。
 
-可以在[AUR](/index.php/AUR "AUR")（看下面的链接）找到不同版本的ttcp。
-
-请看：
+可以在[AUR](/index.php/AUR "AUR")找到不同版本的ttcp。
 
 *   [ttcp](https://aur.archlinux.org/packages/ttcp/)
-*   [nttcp](https://aur.archlinux.org/packages/nttcp/)
 *   [nuttcp](https://aur.archlinux.org/packages/nuttcp/)
 
 ### iperf
@@ -90,9 +89,17 @@ $ time tar -zxvf archive.tar.gz
 
 ### hdparm
 
-可以用 [Hdparm](/index.php/Hdparm "Hdparm") 评测存储介质。
+可以用[hdparm](/index.php/Hdparm "Hdparm")([hdparm](https://www.archlinux.org/packages/?name=hdparm))测试存储介质。Using hdparm with the -Tt switch, one can time sequential reads. This method is independent of partition alignment!
 
-请看[Benchmarking/Data storage devices#Using hdparm](/index.php/Benchmarking/Data_storage_devices#Using_hdparm "Benchmarking/Data storage devices")。
+```
+# hdparm -Tt /dev/sdX
+/dev/sdX:
+Timing cached reads:   x MB in  y seconds = z MB/sec
+Timing buffered disk reads:  x MB in  y seconds = z MB/sec
+
+```
+
+**Note:** 一次测试需要执行上述命令2-3次并手动计算平均值以便评估read speed per the hdparm man page.
 
 ### Unigine 引擎
 
@@ -116,12 +123,105 @@ $ time tar -zxvf archive.tar.gz
 *   [unigine-tropics](https://aur.archlinux.org/packages/unigine-tropics/)
 *   [unigine-sanctuary](https://aur.archlinux.org/packages/unigine-sanctuary/)
 *   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/)
+*   [unigine-superposition](https://aur.archlinux.org/packages/unigine-superposition/)
+
+### gnome-disks
+
+There is a graphical benchmark called gnome-disks contained in the gnome-disk-utility package that will give min/max/ave reads along with average access time and a nice graphical display. This method is independent of partition alignment!
+
+```
+# gnome-disks
+
+```
+
+Users will need to navigate through the GUI to the benchmark button ("More actions..." => "Benchmark Volume..."). [Example](http://imgur.com/Ayv1B)
+
+### systemd-analyze
+
+```
+systemd-analyze plot > boot.svg
+
+```
+
+上述命令会吧启动顺序画一个详细的图，包括：kernel用的时间，用户态时间，每个服务的时间。 [Example](http://imgur.com/4ywt1)
+
+### dd
+
+The dd utility can be used to measure both reads and writes. This method is dependent on partition alignment! In other words, if you failed to properly align your partitions, this fact will be seen here since you are writing and reading to a mounted filesystem.
+
+**Note:** This method requires the command to be executed from a mounted partition on the device of interest!
+
+First, enter a directory on the SSD with at least 1.1 GB of free space (and one that obviously gives your user wrx permissions) and write a test file to measure write speeds and to give the device something to read:
+
+```
+$ cd /path/to/SSD
+$ dd if=/dev/zero of=tempfile bs=1M count=1024 conv=fdatasync,notrunc status=progress
+1024+0 records in
+1024+0 records out
+w bytes (x GB) copied, y s, z MB/s
+
+```
+
+**Tip:** See [dd-benchmark](https://romanrm.net/dd-benchmark) for an explanation on the requirement to `sync` and further related `dd` options.
+
+Next, clear the buffer-cache to accurately measure read speeds directly from the device:
+
+```
+# echo 3 > /proc/sys/vm/drop_caches
+$ dd if=tempfile of=/dev/null bs=1M count=1024 status=progress
+1024+0 records in
+1024+0 records out
+w bytes (x GB) copied, y s, z MB/s
+
+```
+
+Now that the last file is in the buffer, repeat the command to see the speed of the buffer-cache:
+
+```
+$ dd if=tempfile of=/dev/null bs=1M count=1024 status=progress
+1024+0 records in
+1024+0 records out
+w bytes (x GB) copied, y s, z GB/s
+
+```
+
+**Note:** One should run the above command 4-5 times and manually average the results for an accurate evaluation of the buffer read speed.
+
+Finally, delete the temp file
+
+```
+$ rm tempfile
+
+```
+
+**Note:** Some SSD controllers have compression hardware, which may skew benchmark results. See [http://www.pugetsystems.com/labs/articles/SSDs-Advertised-vs-Actual-Performance-179/](http://www.pugetsystems.com/labs/articles/SSDs-Advertised-vs-Actual-Performance-179/)
+
+See also [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities").
+
+### dcfldd
+
+Dcfldd doesn't print the average speed in MB/s like good old dd does but with [time](#time) you can work around that.
+
+Time the run clearing the disk:
+
+```
+# time dcfldd if=/dev/zero of=/dev/sdX bs=4M
+18944 blocks (75776Mb) written.dcfldd:: No space left of device
+real     16m17.033s
+user     0m0.377s
+sys      0m51.160s
+
+```
+
+Calculate MB/s by dividing the output of the dcfldd command by the time in seconds. For this example: 75776Mb / (16.4 min * 60) = 77.0 MB/s.
 
 ## 软件集
 
 ### Bonnie++
 
 [bonnie++](https://www.archlinux.org/packages/?name=bonnie%2B%2B)用C++重写了[原Bonnie](http://www.textuality.com/bonnie/)评测集，主要测试硬盘和文件系统性能。
+
+**Warning:** By default, bonnie++ write at least twice the RAM size on disk. If you want to preserve your SSD, use non default option.
 
 **Note:** 原Bonnie集不是以GPL或其他兼容许可证发布。
 
@@ -155,6 +255,14 @@ IOzone用来测试文件系统性能。
 *Phoronix测试集使用OpenBenchmarking.org接口用于存储测试结果，分享测试总述和结果，高级的分析特性，以及其他功能。Phoromatic是在多系统编排测试执行的企业组件，具有远程管理的功能。*
 
 可以[安装](/index.php/Pacman "Pacman")[phoronix-test-suite](https://aur.archlinux.org/packages/phoronix-test-suite/)包。还有开发版[phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/)。
+
+### S
+
+[S](https://github.com/Algodev-github/S), an I/O Benchmark Suite, is a small collection of scripts to measure storage I/O performance.
+
+It has been developed by [algodev](http://algogroup.unimore.it/algodev/), the team behind the BFQ scheduler.
+
+Download or clone the project, install its dependencies and run it as root (privileges needed to change disk scheduler).
 
 ## 闪存介质
 

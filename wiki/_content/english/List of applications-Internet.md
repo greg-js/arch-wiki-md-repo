@@ -361,7 +361,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Uzbl](/index.php/Uzbl "Uzbl")** — Group of web interface tools which adhere to the Unix philosophy.
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
 

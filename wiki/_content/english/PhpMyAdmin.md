@@ -16,6 +16,7 @@
     *   [3.2 Enabling Configuration Storage (optional)](#Enabling_Configuration_Storage_.28optional.29)
         *   [3.2.1 creating phpMyAdmin database](#creating_phpMyAdmin_database)
         *   [3.2.2 creating phpMyAdmin database user](#creating_phpMyAdmin_database_user)
+    *   [3.3 Enabling templates catching (optional)](#Enabling_templates_catching_.28optional.29)
 *   [4 Accessing your phpMyAdmin installation](#Accessing_your_phpMyAdmin_installation)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Fixing open_basedir warning](#Fixing_open_basedir_warning)
@@ -266,6 +267,26 @@ In order to take advantage of the bookmark and relation features, you will also 
  `GRANT SELECT, INSERT, UPDATE, DELETE ON <pma_db>.* TO 'pma'@'localhost';` 
 
 Log out, and back in to ensure the new features are activated. The message at the bottom of the main screen should now be gone.
+
+### Enabling templates catching (optional)
+
+To enable templates catching - you must create `tmp` directory in phpmyadmin installation. This can be done by executing the following commands:
+
+Create `tmp` directory:
+
+```
+# mkdir /usr/share/webapps/phpMyAdmin/tmp
+
+```
+
+Give it 777 permissions, so PHP can write to it:
+
+```
+# chmod 777 /usr/share/webapps/phpMyAdmin/tmp
+
+```
+
+Refresh phpmyadmin in browser and message `The $cfg['TempDir'] (./tmp/) is not accessible. phpMyAdmin is not able to cache templates and will be slow because of this.` should be gone.
 
 ## Accessing your phpMyAdmin installation
 

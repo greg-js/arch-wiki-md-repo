@@ -1,8 +1,5 @@
 Related articles
 
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
 *   [GTK+](/index.php/GTK%2B "GTK+")
 *   [GDM](/index.php/GDM "GDM")
 *   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
@@ -14,17 +11,15 @@ Related articles
 *   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
 *   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
-*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
-*   [MATE](/index.php/MATE "MATE")
 *   [Official repositories#gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories")
 
-[GNOME](https://www.gnome.org/) (pronounced *gah-nohm* or *nohm*) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") that aims to be simple and easy to use. It is designed by [The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") and is composed entirely of free and open-source software. GNOME is a part of the [GNU Project](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project"). The default display is [Wayland](/index.php/Wayland "Wayland") instead of [Xorg](/index.php/Xorg "Xorg").
+[GNOME](https://www.gnome.org/) (pronounced *gah-nohm* or *nohm*) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") that aims to be simple and easy to use. It is designed by [The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") and is composed entirely of free and open-source software. GNOME is a part of the [GNU Project](/index.php/GNU_Project "GNU Project"). The default display is [Wayland](/index.php/Wayland "Wayland") instead of [Xorg](/index.php/Xorg "Xorg").
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 GNOME Sessions](#GNOME_Sessions)
-*   [3 Starting GNOME](#Starting_GNOME)
+*   [3 Starting](#Starting)
     *   [3.1 Graphically](#Graphically)
     *   [3.2 Manually](#Manually)
         *   [3.2.1 Xorg sessions](#Xorg_sessions)
@@ -64,6 +59,7 @@ Related articles
             *   [6.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
             *   [6.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
         *   [6.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
+    *   [6.3 Use a different window manager](#Use_a_different_window_manager)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -85,7 +81,7 @@ GNOME has three available sessions, all using GNOME Shell.
 *   **GNOME Classic** is a traditional desktop layout with a similar interface to GNOME 2, using pre-activated extensions and parameters. [[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) Hence it is more a customized GNOME Shell than a truly distinct mode.
 *   **GNOME on Xorg** runs GNOME Shell using Xorg.
 
-## Starting GNOME
+## Starting
 
 GNOME can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console.
 
@@ -539,6 +535,10 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 ```
 
 For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
+
+### Use a different window manager
+
+GNOME Shell does not support using a different [window manager](/index.php/Window_manager "Window manager"), however [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") provides sessions for Metacity and [Compiz](/index.php/Compiz "Compiz"). Furthermore, it is possible to define your own [custom GNOME sessions](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") which use alternative components.
 
 ## See also
 

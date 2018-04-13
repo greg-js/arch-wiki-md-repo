@@ -1,6 +1,6 @@
 The freedesktop [Desktop Entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) provides a standard for applications to integrate into a [desktop environment](/index.php/Desktop_environment "Desktop environment"). Desktop entries are the configuration files that describe how an application is launched and which data it can handle. They also configure how an application appears in a menu with an icon, which is subject to the related [menu specification](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) standard.
 
-The most common desktop entries are the `.desktop` and `.directory` files. This article explains briefly how to create useful and standard compliant desktop entries. It is mainly intended for package contributors and maintainers, but may also be useful for software developers and others.
+The most common desktop entries are the *.desktop* and *.directory* files. This article explains briefly how to create useful and standard compliant desktop entries. It is mainly intended for package contributors and maintainers, but may also be useful for software developers and others.
 
 There are roughly three types of desktop entries:
 
@@ -18,7 +18,7 @@ There are roughly three types of desktop entries:
 
 The following sections will roughly explain how these are created and validated.
 
-Related to this content, and also defined in `.desktop` files, are MIME-type associations for data files. [Default applications](/index.php/Default_applications "Default applications") describes how these are configured.
+Related to this content, and also defined in *.desktop* files, are MIME-type associations for data files. [Default applications](/index.php/Default_applications "Default applications") describes how these are configured.
 
 ## Contents
 
@@ -44,7 +44,7 @@ Related to this content, and also defined in `.desktop` files, are MIME-type ass
 
 ## Application entry
 
-Desktop entries for applications, or `.desktop` files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in `/usr/share/applications` or `/usr/local/share/applications` for applications installed system-wide, or `~/.local/share/applications` for user-specific applications. User entries take precedence over system entries.
+Desktop entries for applications, or *.desktop* files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in `/usr/share/applications` or `/usr/local/share/applications` for applications installed system-wide, or `~/.local/share/applications` for user-specific applications. User entries take precedence over system entries.
 
 ### File example
 
@@ -177,7 +177,7 @@ $ icns2png -x <icon name>.icns
 
 ### Obtaining icons
 
-Although packages that already ship with a .desktop-file most certainly contain an icon or a set of icons, there is sometimes the case when a developer has not created a .desktop-file, but may ship icons, nonetheless. So a good start is to look for icons in the source package. You can i.e. first filter for the extension with **find** and then use **grep** to filter further for certain buzzwords like the package name, "icon", "logo", etc, if there are quite a lot of images in the source package.
+Although packages that already ship with a *.desktop* file most certainly contain an icon or a set of icons, there is sometimes the case when a developer has not created a *.desktop* file, but may ship icons, nonetheless. So a good start is to look for icons in the source package. You can i.e. first filter for the extension with **find** and then use **grep** to filter further for certain buzzwords like the package name, "icon", "logo", etc, if there are quite a lot of images in the source package.
 
 ```
 $ find /path/to/source/package -regex ".*\.\(svg\|png\|xpm\|gif\|ico\)$"
@@ -264,19 +264,7 @@ where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop
 
 ### Autostart
 
-If you use an XDG-compliant desktop environment, such as GNOME or KDE, the desktop environment will automatically start <a class="mw-selflink selflink">*.desktop</a> files found in the following directories:
-
-*   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
-
-*   GNOME also starts files found in `/usr/share/gnome/autostart/`
-
-*   User-specific: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` by default)
-
-Users can override system-wide `*.desktop` files by copying them into the user-specific `~/.config/autostart/` folder.
-
-For a more specific description of directories used, [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
-
-**Note:** This method is supported only by XDG-compliant desktop environments. Tools like [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) can be used to offer XDG autostart in unsupported desktop environments as long as some other autostart mechanism exists. Use the existing mechanism to start the xdg compliant autostart tool.
+If you use an [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart")-compliant [desktop environment](/index.php/Desktop_environment "Desktop environment"), it will automatically start Desktop entries found in [specific directories](/index.php/XDG_Autostart "XDG Autostart").
 
 ### Modify environment variables
 

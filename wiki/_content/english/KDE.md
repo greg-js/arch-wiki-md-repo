@@ -63,7 +63,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [4.5.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
     *   [4.6 KDE Connect](#KDE_Connect)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Using an alternative window manager](#Using_an_alternative_window_manager)
+    *   [5.1 Use a different window manager](#Use_a_different_window_manager)
         *   [5.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
         *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
@@ -542,7 +542,7 @@ It is possible to use KDE Connect even if you do not use the Plasma desktop. For
 
 ## Tips and tricks
 
-### Using an alternative window manager
+### Use a different window manager
 
 The component chooser settings in Plasma does not allow changing the window manager anymore. [[5]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[6]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
 

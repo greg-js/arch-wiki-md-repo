@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. Many major Linux desktop environments, like Gnome and KDE, support Wayland. There is also a compositor reference implementation called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
+[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. Many major Linux desktop environments, like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"), support Wayland. There is also a compositor reference implementation called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
 
 ## Contents
 

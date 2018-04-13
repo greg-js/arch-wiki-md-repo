@@ -30,7 +30,8 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [1.2 Removing packages](#Removing_packages)
     *   [1.3 Upgrading packages](#Upgrading_packages)
     *   [1.4 Querying package databases](#Querying_package_databases)
-        *   [1.4.1 Database structure](#Database_structure)
+        *   [1.4.1 Pactree](#Pactree)
+        *   [1.4.2 Database structure](#Database_structure)
     *   [1.5 Cleaning the package cache](#Cleaning_the_package_cache)
     *   [1.6 Additional commands](#Additional_commands)
     *   [1.7 Installation reason](#Installation_reason)
@@ -318,28 +319,18 @@ $ pacman -Qet
 
 ```
 
-To list a dependency tree of a package:
+See [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") for more examples.
+
+#### Pactree
+
+To view the dependency tree of a package:
 
 ```
 $ pactree *package_name*
 
 ```
 
-To list all the packages recursively depending on an *installed* package, use *whoneeds* from [pkgtools](https://aur.archlinux.org/packages/pkgtools/):
-
-```
-$ whoneeds *package_name*
-
-```
-
-or the reverse flag to *pactree*:
-
-```
-$ pactree -r *package_name*
-
-```
-
-See [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") for more examples.
+To view the dependant tree of a package, pass the reverse flag `-r` to *pactree*, or use *whoneeds* from [pkgtools](https://aur.archlinux.org/packages/pkgtools/).
 
 #### Database structure
 

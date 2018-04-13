@@ -110,7 +110,7 @@ Some of those drivers are described in more detail in [CUPS/Printer-specific pro
 
 ## Printer URI
 
-Listed below are additional steps to manually generate the URI if required.
+Listed below are additional steps to manually generate the URI if required. Some printers or drivers may need a special URI as described in [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
 
 ### USB
 

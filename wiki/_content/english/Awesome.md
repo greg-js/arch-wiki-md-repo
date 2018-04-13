@@ -9,7 +9,7 @@ Related articles
 
 From the [awesome website](https://awesomewm.org/):
 
-	[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.
+	[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework [window manager](/index.php/Window_manager "Window manager") for [Xorg](/index.php/Xorg "Xorg"). It is very fast and extensible [..]. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.
 
 ## Contents
 
@@ -121,9 +121,9 @@ For more information about configuring awesome, check out the [configuration sec
 
 Some good examples of rc.lua would be as follows:
 
-*   [https://github.com/setkeh/Awesome-3.5](https://github.com/setkeh/Awesome-3.5) - [Setkeh](/index.php/User:Setkeh "User:Setkeh")'s 3.5 Configuration.
-*   [http://awesome.naquadah.org/wiki/User_Configuration_Files](http://awesome.naquadah.org/wiki/User_Configuration_Files) - Collection of user configurations on the awesome homepage.
-*   [https://github.com/copycat-killer/awesome-copycats](https://github.com/copycat-killer/awesome-copycats) - User configuration that supports different themes, including a status bar
+*   [Setkeh's 3.5 Configuration](https://github.com/setkeh/Awesome-3.5)
+*   [Collection of user configurations on the awesome homepage](http://awesome.naquadah.org/wiki/User_Configuration_Files)
+*   [User configuration that supports different themes, including a status bar](https://github.com/copycat-killer/awesome-copycats)
 
 ### Extensions
 
@@ -236,7 +236,7 @@ Alternatively, see [Keyboard configuration in Xorg](/index.php/Keyboard_configur
 
 ### Theming
 
-[Beautiful](http://awesome.naquadah.org/wiki/Beautiful) is a lua library that allows you to theme awesome using an external file, it becomes very easy to dynamically change your whole awesome colours and wallpaper without changing your `rc.lua`.
+[Beautiful](https://awesomewm.org/apidoc/libraries/beautiful.html) is a Lua library that allows you to theme awesome using an external file, it becomes very easy to dynamically change your whole awesome colours and wallpaper without changing your `rc.lua`.
 
 The default theme is at `/usr/share/awesome/themes/default`. Copy it to `~/.config/awesome/themes/default` and change `theme_path` in `rc.lua`.
 
@@ -245,7 +245,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 ```
 
-See also [[1]](https://awesomewm.org/apidoc/libraries/beautiful.html) for additional theming options. To add a useless gap for example, add
+See also [[2]](https://awesomewm.org/apidoc/libraries/beautiful.html) for additional theming options. To add a useless gap for example, add
 
 ```
 beautiful.useless_gap = 5
@@ -275,7 +275,7 @@ end
 
 ```
 
-For a random background image, add [[2]](https://gist.github.com/anonymous/37f3b1c58d6616cab756) to `rc.lua` (v3.5+). To automatically fetch images from a given directory use [[3]](https://gist.github.com/anonymous/9072154f03247ab6e28c) instead.
+For a random background image, add [[3]](https://gist.github.com/anonymous/37f3b1c58d6616cab756) to `rc.lua` (v3.5+). To automatically fetch images from a given directory use [[4]](https://gist.github.com/anonymous/9072154f03247ab6e28c) instead.
 
 To simply specify the wallpaper in your `rc.lua`, add the following line to the theming section:
 
@@ -431,7 +431,7 @@ to your `rc.lua`.
 
 ### Application directories in menubar
 
-[awesome](https://www.archlinux.org/packages/?name=awesome) includes [menubar](http://awesome.naquadah.org/wiki/Menubar/3.5). By default, pressing `*Mod*+p` will open a dmenu-like applications menu at the top of the screen. However, this menu only searches for `.desktop` files in `/usr/share/applications` and `/usr/local/share/applications`.
+[awesome](https://www.archlinux.org/packages/?name=awesome) includes [menubar](https://awesomewm.org/apidoc/libraries/menubar.html). By default, pressing `*Mod*+p` will open a dmenu-like applications menu at the top of the screen. However, this menu only searches for `.desktop` files in `/usr/share/applications` and `/usr/local/share/applications`.
 
 To change this, add the following line to `rc.lua`, ideally, under *Menubar configuration*:
 
@@ -444,7 +444,7 @@ Note that the `.desktop` files are re-read each time awesome starts, thereby slo
 
 ### Pop-up menus
 
-There is a simple menu by default in awesome 3, simplifying custom menus. [[4]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/copycat-killer/awesome-freedesktop)*.
+There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](https://awesomewm.org/apidoc/libraries/awful.menu.html) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/copycat-killer/awesome-freedesktop)*.
 
 ### Applications menu
 
@@ -477,7 +477,7 @@ awful.titlebar.hide(c)
 
 ### Battery notification
 
-See [[5]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
+See [this blog post](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that it needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4).
 
 4/10/2018: The above mentioned wiki no longer exists. [(Reddit comment: What happened to the wiki?)](https://www.reddit.com/r/awesomewm/comments/5k9vob/what_happened_to_the_wiki/)
 
@@ -678,6 +678,8 @@ awful.rules.rules = {
 
 ### IntelliJ: menus appear on incorrect position
 
+See [GitHub issue #2204](https://github.com/awesomeWM/awesome/issues/2204).
+
 This fixed it for me:
 
  `.config/awesome/rc.lua` 
@@ -689,7 +691,7 @@ awful.rules.rules = {
                 class = "sun-awt-X11-XFramePeer", 
                 class = "jetbrains-idea",
                 name = "win.*"
-            }, properties = { titlebars_enabled = false, floating = true, placement = awful.placement.restore }
+            }, properties = { focusable = false, ontop = true, titlebars_enabled = false, floating = true, placement = awful.placement.restore }
         },
         ...
 

@@ -1,6 +1,6 @@
-The [Equinox Desktop Environment (EDE)](http://equinox-project.org/) is a DE designed to be simple, extremely light-weight and fast.
+The [Equinox Desktop Environment](https://equinox-project.org/) (EDE) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") designed to be simple, extremely light-weight and fast.
 
-It primarily offers the most basic things: A window manager ([PekWM](/index.php/PekWM "PekWM") is used by default), a simple GUI including a panel, a daemon watching removable media and a notification daemon. Other than that there's not much more than some configuration progams, a calculator, etc. Beginning with version 2.0, EDE follows the FreeDesktop.org guidelines.
+It primarily offers the most basic things: A window manager ([PekWM](/index.php/PekWM "PekWM") is used by default), a simple GUI including a panel, a daemon watching removable media and a notification daemon. Other than that there's not much more than some configuration programs, a calculator, etc. Beginning with version 2.0, EDE follows the FreeDesktop.org guidelines.
 
 Unlike any other desktop environment, EDE² is based upon the [FLTK toolkit](http://fltk.org). It's especially fit for systems with little RAM or for users who want to completely customize their system and need a GUI that is not already bloated with functions and applications.
 

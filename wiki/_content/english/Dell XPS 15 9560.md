@@ -230,7 +230,9 @@ Alternatively, firmware updates can be installed by copying the MS-DOS executabl
 
 ## Fingerprint reader
 
-The fingerprint reader is a Validity/Synaptics model with USB id `138a:0091`. There currently is no Linux driver but according to the person(s) working on drivers for various other related readers, one would be fairly easy to implement as none of the traffic to or from the device appears to be encrypted. [[1]](https://github.com/nmikhailov/Validity90)
+The fingerprint reader is a Validity/Synaptics model with USB id `138a:0091`. There is currently a working prototype of a driver capable of capturing prints, however direct integration with libfprint is unlikely due to the manner in which the matching algorithm is implemented. [[1]](https://github.com/hmaarrfk/Validity91).
+
+There is also some people working on drivers for various other related readers. According to them it should be fairly easy to implement a driver for this model as none of the traffic to or from the device appears to be encrypted. Nevertheless, `138a:0091` is out of the scope of the project. [[2]](https://github.com/nmikhailov/Validity90)
 
 ## Troubleshooting
 
@@ -253,7 +255,7 @@ This can be corrected with the kernel boot option `pci=nommconf` (see [here](htt
 
 ### `lspci` causes CPU lockups
 
-The NVidia/nouveau driver may cause any runs of `lspci`, starting an X server, or otherwise poking the graphics card to cause at least one CPU core to lock up, as well as seeming to completely lock up PCIe access, for instance to the NVMe SSD. The kernel parameter `nouveau.modeset=0` may fix this. This is also related to the X freezes on startup (some machines may require lspci/startx to be run twice so they freeze after nouveau is taken care of); the solution in that case is to also set `acpi_rev_override=1`. [[2]](https://cnly.github.io/2017/08/25/fix-system-hangs-xps-15-9560.html)
+The NVidia/nouveau driver may cause any runs of `lspci`, starting an X server, or otherwise poking the graphics card to cause at least one CPU core to lock up, as well as seeming to completely lock up PCIe access, for instance to the NVMe SSD. The kernel parameter `nouveau.modeset=0` may fix this. This is also related to the X freezes on startup (some machines may require lspci/startx to be run twice so they freeze after nouveau is taken care of); the solution in that case is to also set `acpi_rev_override=1`. [[3]](https://cnly.github.io/2017/08/25/fix-system-hangs-xps-15-9560.html)
 
 ## Notes
 
@@ -262,4 +264,5 @@ The suspend function key is not printed on the keyboard, but it's actually mappe
 ## External links
 
 *   [Dell XPS 15 9560 (Early 2017) Thread on the Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=223056)
+*   [Optimizing Dell XPS](https://www.reddit.com/r/Dell/comments/6s2e3w/optimizing_dell_xps_for_linux/)
 *   [Tutorial about how to change CPU thermal paste on XPS15 to avoid throttling](https://www.ultrabookreview.com/14875-fix-throttling-xps-15/)

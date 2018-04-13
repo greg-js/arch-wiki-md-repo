@@ -52,6 +52,7 @@ IMAPStore gmail-remote
 Account gmail
 
 MaildirStore gmail-local
+Subfolders Verbatim
 # The trailing "/" is important
 Path ~/.mail/gmail/
 Inbox ~/.mail/gmail/Inbox

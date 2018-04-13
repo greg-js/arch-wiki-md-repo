@@ -63,7 +63,7 @@ Instale o pacote [arch-install-scripts](https://www.archlinux.org/packages/?name
 
 Siga [Guia de instalação#Montar os sistemas de arquivos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Montar_os_sistemas_de_arquivos "Guia de instalação"). Se você já usa o diretório `/mnt` para alguma outra coisa, basta criar outro diretório como `/mnt/install` e usá-lo.
 
-Então, siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instala.C3.A7.C3.A3o "Guia de instalação"). Você pode pular [Guia de instalação#Selecionar os mirrors](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_mirrors "Guia de instalação"), já que o host já deve ter a lista de espelhos correta.
+Então, siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instala.C3.A7.C3.A3o "Guia de instalação"). Você pode pular [Guia de instalação#Selecionar os espelhos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_espelhos "Guia de instalação"), já que o host já deve ter a lista de espelhos correta.
 
 **Dica:** Para evitar baixar novamente todos os pacotes, considere seguir [Pacman/Dicas e truques#Cache do pacman compartilhado na rede](/index.php/Pacman/Dicas_e_truques#Cache_do_pacman_compartilhado_na_rede "Pacman/Dicas e truques") ou usara opção `-c` do *pacstrap*.
 
@@ -81,9 +81,10 @@ Ao copiar o sistema de arquivos raiz, use alguma coisa como `cp -ax` ou `rsync -
 Existem várias ferramentas que automatizam uma grande parte das etapas descritas nas subseções a seguir. Consulte as respectivas páginas para obter instruções detalhadas.
 
 *   [arch-bootstrap](https://github.com/tokland/arch-bootstrap) (Bash)
+*   [archcx](https://github.com/m4rienf/ArchCX) (Bash, do Hetzner CX Rescue System)
+*   [digitalocean-debian-to-arch](https://github.com/gh2o/digitalocean-debian-to-arch) (disco de repartição, específico para DigitalOCean)
 *   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
 *   [vps2arch](https://github.com/drizzt/vps2arch) (Bash)
-*   [archcx](https://github.com/m4rienf/ArchCX) (Bash, do Hetzner CX Rescue System)
 
 A maneira manual é apresentada nas seguintes subseções. A ideia é executar um sistema Arch dentro do sistema host, com a instalação real sendo executada a partir do sistema Arch. O sistema aninhado está contido dentro de um chroot.
 
@@ -97,7 +98,7 @@ Baixe a imagem *bootstrap* de um [espelho](https://www.archlinux.org/download) (
 
 ```
 # cd /tmp
-# curl -O [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.02.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.02.01-x86_64.tar.gz)
+# wget [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.04.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.04.01-x86_64.tar.gz)
 
 ```
 
@@ -106,7 +107,7 @@ Você também pode baixar a assinatura (mesma URL com `.sig` adicionado) e [veri
 Extraia o tarball:
 
 ```
-# tar xzf <caminho-para-imagem-bootstrap>/archlinux-bootstrap-2018.02.01-x86_64.tar.gz
+# tar xzf <caminho-para-imagem-bootstrap>/archlinux-bootstrap-2018.04.01-x86_64.tar.gz
 
 ```
 
@@ -181,7 +182,7 @@ Antes de iniciar a instalação, as chaves do pacman precisam ser configuradas. 
 
 #### Selecionando um espelho e baixando ferramentas básicas
 
-Após [selecionar um espelho](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [renove as listas de pacotes](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_espec.C3.ADfico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#For.C3.A7ar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
 
 ### Dicas de instalação
 

@@ -8,6 +8,8 @@ Esta página tenta estabelecer uma comparação entre o Arch Linux e outras dist
 
 Para uma comparação mais completa, veja [w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") e [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
+Em todos os itens a seguir, apenas o Arch Linux é comparado com outras distribuições. Os *ports* comunitários que suportam arquiteturas diferentes de x86_64 podem ser encontradas listadas entre as [Distribuições baseadas no Arch](/index.php/Arch-based_distributions "Arch-based distributions").
+
 ## Contents
 
 *   [1 Baseados em código-fonte](#Baseados_em_c.C3.B3digo-fonte)
@@ -32,22 +34,24 @@ As distribuições baseadas em fontes são altamente portáteis, proporcionando 
 
 ### CRUX
 
-*   Antes de criar o Arch, Judd Vinet admirava e usava o CRUX; uma distribuição minimalista criada por Per Lidén. Originalmente inspirado por ideias em comum com CRUX e BSD, o Arch foi construído a partir do zero, e o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") foi então codificado em C.
+*   [CRUX](https://crux.nu/) é uma distribuição leve que se concentra no princípio [KISS](/index.php/Terminologia_do_Arch#KISS "Terminologia do Arch"). CRUX inspirou Judd Vinet a criar o Arch.
+*   CRUX usa scripts init no estilo BSD, enquanto o Arch usa systemd.
+*   Enquanto o Arch usa o sistema de lançamento contínuo *(rolling release)*, o CRUX tem lançamentos mais ou menos anual.
 *   Ambos são enviados com sistemas do tipo *ports* e, como * BSD, ambos fornecem um ambiente base para construir.
 *   O Arch possui o pacman, que lida com o gerenciamento do pacote de sistema binário e funciona perfeitamente com o [sistema de compilação do Arch](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"). O CRUX usa um sistema de contribuição comunitária chamado *prt-get* , que, em combinação com seu próprio sistema de *ports*, lida com a resolução de dependência, mas constrói todos os pacotes do fonte (embora a instalação da base do CRUX seja binária).
 *   Arch e CRUX oficialmente apenas apoiam a arquitetura x86_64.
-*   O Arch usa um sistema de lançamento contínuo e possui uma grande variedade de repositórios de pacotes binários, bem como o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"). O CRUX fornece um sistema de *ports* oficialmente mais lento e suportado oficialmente, além de um repositório comunitário comparativamente modesto.
+*   O Arch possui uma grande variedade de repositórios de pacotes binários, bem como o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"). O CRUX fornece um sistema de *ports* oficialmente mais lento e suportado oficialmente, além de um repositório comunitário comparativamente modesto.
 
 ### LFS
 
-*   O LFS (ou Linux From Scratch) existe simplesmente como documentação. O livro instrui o usuário a obter o código-fonte para um pacote de base mínimo definido para um sistema GNU/Linux funcional e como compilar, corrigir e configurá-lo manualmente a partir do zero. O LFS é tão mínimo quanto obtém, e oferece um processo excelente e educacional de construção e personalização de um sistema base.
+*   O [LFS](http://www.linuxfromscratch.org/lfs/) (ou Linux From Scratch) existe simplesmente como documentação. O livro instrui o usuário a obter o código-fonte para um pacote de base mínimo definido para um sistema GNU/Linux funcional e como compilar, corrigir e configurá-lo manualmente a partir do zero. O LFS é tão mínimo quanto obtém, e oferece um processo excelente e educacional de construção e personalização de um sistema base.
 *   O LFS não fornece repositórios on-line; os fontes são obtidas manualmente, compilados e instalados com *make*. (Existem vários métodos manuais de gerenciamento de pacotes e são mencionados em LFS Hints).
 *   O Arch fornece esses mesmos pacotes, além do [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), algumas ferramentas extras e o poderoso gerenciador de pacotes [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") como seu sistema base, já compilado para x86_64\. Junto com o sistema de base mínimo do Arch, a comunidade Arch e os desenvolvedores fornecem e mantêm muitos milhares de pacotes binários instaláveis via pacman, bem como os scripts de compilação [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para uso com o [sistema de compilação do Arch](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"). O Arch também inclui a ferramenta [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") para construir ou personalizar de forma conveniente pacotes *.pkg.tar.xz*, facilmente instaláveis pelo pacman.
 *   Judd Vinet compilou o Arch do zero e então escreveu o pacman em C. Historicamente, o Arch às vezes foi descrito com humor simplesmente como "Linux, com um bom gerenciador de pacotes."
 
 ### Gentoo/Funtoo Linux
 
-*   Tanto o Arch Linux quanto o Gentoo Linux são sistemas de lançamento contínuo (*rolling release*), tornando os pacotes disponíveis para a distribuição um curto período de tempo depois que eles são lançados pelo *upstream*.
+*   Tanto o Arch Linux quanto o [Gentoo Linux](https://gentoo.org/) são sistemas de lançamento contínuo (*rolling release*), tornando os pacotes disponíveis para a distribuição um curto período de tempo depois que eles são lançados pelo *upstream*.
 *   Os pacotes e o sistema base do Gentoo são construídos diretamente do código-fonte de acordo com os "USE flags" especificados pelo usuário. O Arch fornece um sistema tipo *ports* para criar pacotes a partir do fonte, embora o sistema base do Arch seja projetado para ser instalado como binário em x86_64 pré-compilado. Isso geralmente torna o Arch mais rápido para compilar e atualizar, e permite que o Gentoo seja mais sistematicamente personalizável.
 *   O Arch apenas oferece suporte a x86_64 enquanto o Gentoo oferece suporte oficialmente às arquiteturas x86 (i486/i686), x86_64, PPC/PPC64, SPARC, Alpha, ARM, MIPS, HPPA, S/390 e Itanium.
 *   O pacote oficial do Gentoo e as ferramentas de gerenciamento de sistema tendem a ser bastante mais complexas e "poderosas" do que as fornecidas pelo Arch, e certas características que estão no coração do Gentoo *([USE flags](https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE), [SLOTs](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Portage#Terminology), etc.)* não possui nenhum equivalente direto do Arch Linux. Parte disso é devido ao fato de que o Arch é principalmente uma distro binária, mas as diferenças na [filosofia do design](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princ.C3.ADpios "Arch Linux (Português)") também desempenham um papel importante, com o Arch assumindo uma posição mais baseada em princípios em favor da simplicidade arquitetural e evitando excesso de engenharia.
@@ -62,7 +66,7 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 *   [Debian](https://www.debian.org/) é a maior upstream de distribuição Linux com uma comunidade maior e possui ramos estáveis, testes e instáveis, oferecendo mais de 43.000 [pacotes](https://packages.debian.org/unstable/). O número disponível de pacotes binários do Arch é mais modesto. No entanto, ao incluir o AUR, as quantidades são comparáveis.
 *   Debian tem uma postura mais veemente sobre o software livre, mas ainda inclui software não livre em seus repositórios não livres. O Arch é mais leniente e, portanto, inclusivo, em relação a "pacotes não livres", conforme definido pelo GNU.
 *   Debian se concentra em testes rigorosos do ramo estável, que está "congelado" e há suporte por até [cinco anos](https://wiki.debian.org/LTS "debian:LTS"). Os pacotes Arch são mais atuais do que o Stable do Debian, sendo mais comparável a ramos Testing e Unstable do Debian e não tem um agendamento de lançamento fixo.
-*   Debian está disponível para muitas arquiteturas, incluindo alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390 e sparc, enquanto o Arch é oficialmente x86_64, com *ports* da comunidade para i686 ([Arch Linux 32](https://archlinux32.org/)) e ARM ([Arch Linux ARM](https://archlinuxarm.org/)) apenas.
+*   Debian está disponível para muitas arquiteturas, incluindo alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390 e sparc, enquanto o Arch é x86_64 apenas.
 *   O Arch fornece suporte mais conveniente para a construção de pacotes personalizados e instaláveis de fontes externas, com um sistema de compilação de pacotes tipos *ports*. O Debian não oferece um sistema de *ports*, confiando em vez dos seus grandes repositórios binários.
 *   O sistema de instalação do Arch só oferece uma base mínima, exposta de forma transparente durante a configuração do sistema, enquanto os métodos da Debian, como o uso de *tasks* do apt para instalar grupos pré-selecionados de pacotes, oferecem uma abordagem mais configurada automaticamente, bem como vários métodos alternativos de instalação.
 *   O Arch geralmente agrupa bibliotecas de software junto com seus arquivos de cabeçalho, enquanto que os arquivos de cabeçalho Debian precisam ser baixados separadamente.
@@ -70,7 +74,7 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 ### Fedora
 
-*   O Fedora é desenvolvido pela comunidade, ainda que corporativamente apoiado pela Red Hat; muitas vezes é apresentado como um sistema de lançamento de teste. Os pacotes e projetos do Fedora migram para a RHEL e alguns eventualmente são adotados por outras distribuições. O Arch não possui lançamentos fixos e não serve como um ramo de teste para outra distribuição.
+*   O [Fedora](https://getfedora.org/) é desenvolvido pela comunidade, ainda que corporativamente apoiado pela Red Hat; muitas vezes é apresentado como um sistema de lançamento de teste. Os pacotes e projetos do Fedora migram para a RHEL e alguns eventualmente são adotados por outras distribuições. O Arch não possui lançamentos fixos e não serve como um ramo de teste para outra distribuição.
 
 *   Os pacotes do Fedora usam o formato RPM com o gerenciador de pacotes DNF. Arch usa [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para gerenciar pacotes tar.xz.
 
@@ -90,7 +94,7 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 ### Slackware
 
-*   O Slackware usa scripts de inicialização do tipo BSD, enquanto o Arch usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)").
+*   O [Slackware](http://www.slackware.com/) usa scripts de inicialização do tipo BSD, enquanto o Arch usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)").
 
 *   O Arch fornece um sistema de gerenciamento de pacotes no [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") que, ao contrário das ferramentas padrão do Slackware, oferece resolução de dependência automática e permite atualizações automatizadas do sistema. Os usuários do Slackware geralmente preferem seu método de resolução de dependência manual, citando o nível de controle do sistema que os concede, bem como o excelente fornecimento de bibliotecas pré-instaladas e dependências da Slackware.
 
@@ -106,7 +110,7 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 ### Ubuntu
 
-*   O Ubuntu é uma distribuição popular baseada no Debian e patrocinada comercialmente pela Canonical Ltd., enquanto a Arch é um sistema desenvolvido de forma independente criado a partir do zero.
+*   O [Ubuntu](https://www.ubuntu.com/) é uma distribuição popular baseada no Debian e patrocinada comercialmente pela Canonical Ltd., enquanto a Arch é um sistema desenvolvido de forma independente criado a partir do zero.
 
 *   Os dois projetos têm objetivos muito diferentes e são direcionados para uma base de usuários diferente. O Arch é projetado para usuários que desejam uma abordagem "faça você mesmo", enquanto o Ubuntu fornece um sistema pré-configurado. O Arch apresenta um design mais simples a partir da instalação base em diante, confiando no usuário para personalizá-lo para suas próprias necessidades específicas. Muitos usuários do Arch começaram no Ubuntu e, eventualmente, migraram para o Arch.
 
@@ -120,14 +124,14 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 ### Linux Mint
 
-*   [Linux Mint](http://www.linuxmint.com/) nasceu como uma derivação do [Ubuntu](#Ubuntu) e, posteriormente, adicionou o LMDE (Linux Mint Debian Edition), que é baseado no [#Debian](#Debian). Por outro lado, o Arch é uma distribuição independente que depende do seu próprio [sistema de compilação](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [repositórios](/index.php/Reposit%C3%B3rios "Repositórios").
+*   [Linux Mint](https://www.linuxmint.com/) nasceu como uma derivação do [Ubuntu](#Ubuntu) e, posteriormente, adicionou o LMDE (Linux Mint Debian Edition), que é baseado no [#Debian](#Debian). Por outro lado, o Arch é uma distribuição independente que depende do seu próprio [sistema de compilação](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [repositórios](/index.php/Reposit%C3%B3rios "Repositórios").
 *   O Mint inclui várias ferramentas gráficas para facilitar a manutenção, chamadas *MintTools*. O Arch fornece apenas ferramentas de linha de comando simples, como o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e deixa o gerenciamento do sistema ser organizado pelo usuário.
 *   O Mint é fornecido principalmente com [Cinnamon](/index.php/Cinnamon "Cinnamon") ou [MATE](/index.php/MATE "MATE") como sua interface gráfica e, alternativamente, [KDE](/index.php/KDE "KDE") ou [Xfce4](/index.php/Xfce4 "Xfce4").
 *   Novas versões do Mint são lançadas a cada seis meses, cerca de um mês após o Ubuntu. Cada lançamento é baseado no Ubuntu LTS mais recente e há suporte por cinco anos. O Linux Mint Debian Edition (LMDE) é baseado em Debian Stable e só recebe atualizações em pacotes do Mint e atualizações de segurança. O Arch é, em vez disso, uma distribuição completamente de lançamento contínuo.
 
 ### openSUSE
 
-O openSUSE é centrado em torno do formato do pacote RPM e da bem-considerada ferramenta de configuração orientada por interface gráfica YaST2\. O Arch não oferece tal facilidade. O openSUSE, portanto, pode ser mais apropriado para usuários que desejam um ambiente mais orientado a interface gráfica, configuração automática ou funcionalidade esperada fora da caixa enquanto ainda permite a profundidade de personalização.
+O [openSUSE](https://www.opensuse.org/) é centrado em torno do formato do pacote RPM e da bem-considerada ferramenta de configuração orientada por interface gráfica YaST2\. O Arch não oferece tal facilidade. O openSUSE, portanto, pode ser mais apropriado para usuários que desejam um ambiente mais orientado a interface gráfica, configuração automática ou funcionalidade esperada fora da caixa enquanto ainda permite a profundidade de personalização.
 
 ### Mandriva/Mageia
 
@@ -145,5 +149,5 @@ O Mandriva Linux (anteriormente Mandrake Linux) foi criado em 1998 com o objetiv
 
 ## Veja também
 
-*   [DistroWatch](http://distrowatch.com/) - Notícias e análises de distribuições Linux
-*   [The Live CD List](http://www.livecdlist.com) - Lista de imagens de sistemas operacionais *live*
+*   [DistroWatch](https://distrowatch.com/) - Notícias e análises de distribuições Linux
+*   [The Live CD List](https://www.livecdlist.com) - Lista de imagens de sistemas operacionais *live*

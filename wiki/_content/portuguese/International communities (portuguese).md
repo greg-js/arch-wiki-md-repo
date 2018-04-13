@@ -19,14 +19,13 @@ Por favor, note que nosso wiki também oferece suporte a conteúdo internacional
     *   [1.12 Japão](#Jap.C3.A3o)
     *   [1.13 Lituânia](#Litu.C3.A2nia)
     *   [1.14 Polônia](#Pol.C3.B4nia)
-    *   [1.15 República Checa](#Rep.C3.BAblica_Checa)
-    *   [1.16 Romênia](#Rom.C3.AAnia)
-    *   [1.17 Rússia](#R.C3.BAssia)
-    *   [1.18 Sérvia](#S.C3.A9rvia)
-    *   [1.19 Suécia](#Su.C3.A9cia)
-    *   [1.20 Taiwan](#Taiwan)
-    *   [1.21 Turquia](#Turquia)
-    *   [1.22 Vietnã](#Vietn.C3.A3)
+    *   [1.15 Romênia](#Rom.C3.AAnia)
+    *   [1.16 Rússia](#R.C3.BAssia)
+    *   [1.17 Sérvia](#S.C3.A9rvia)
+    *   [1.18 Suécia](#Su.C3.A9cia)
+    *   [1.19 Taiwan](#Taiwan)
+    *   [1.20 Turquia](#Turquia)
+    *   [1.21 Vietnã](#Vietn.C3.A3)
 *   [2 Páginas relacionadas](#P.C3.A1ginas_relacionadas)
 
 ## Comunidades internacionais
@@ -123,12 +122,6 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 
 *   Fórum: [http://forum.archlinux.org.pl/](http://forum.archlinux.org.pl/)
 *   Wiki: [Main page (Polski)](/index.php/Main_page_(Polski) "Main page (Polski)")
-
-### República Checa
-
-*   Site: [http://archlinux.cz/](http://archlinux.cz/) 
-*   Fórum: [http://www.archlinux.cz/forum/](http://www.archlinux.cz/forum/) 
-*   Wiki: [Main page (Česky)](/index.php/Main_page_(%C4%8Cesky) "Main page (Česky)")
 
 ### Romênia
 

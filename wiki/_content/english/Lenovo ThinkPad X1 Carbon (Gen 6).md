@@ -16,6 +16,7 @@ Related articles
     *   [2.2 S0i3 support](#S0i3_support)
     *   [2.3 BIOS configurations](#BIOS_configurations)
 *   [3 Power Management/Throttling issues](#Power_Management.2FThrottling_issues)
+    *   [3.1 Temporary fix](#Temporary_fix)
 
 ## Model description
 
@@ -63,3 +64,73 @@ echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
 Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
 
 There is a post in the official Lenovo forum ([https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489)) to inform Lenovo about this issue.
+
+### Temporary fix
+
+Until Lenovo fixes this issue, you can manually set the limit.
+
+To begin, install **msr-tools**
+
+Create the file */usr/local/bin/cpu-throttling.sh* (making it executable) containing the following :
+
+```
+#!/bin/bash
+
+/bin/modprobe msr
+wrmsr -a 0x1a2 0x3000000 # which sets the offset to 3 C, so the new trip point is 97 C 
+
+```
+
+Then you can create the associated service.
+
+Create the file /etc/systemd/system/cpu-throttling.service :
+
+```
+[Unit]
+Description=set cpu heating limit to 97°c
+
+[Service]
+ExecStart=/usr/local/bin/cpu-throttling.sh
+RemainAfterExit=no
+
+[Timer]
+OnActiveSec=60
+OnUnitActiveSec=60
+
+[Install]
+WantedBy=timers.target
+
+```
+
+Create the file /etc/systemd/system/cpu-throttling.timer :
+
+```
+[Unit]
+Description=set cpu heating limit to 97°c every minute
+
+[Timer]
+OnActiveSec=60
+OnUnitActiveSec=60
+Unit=cpu-throttling.service
+Requires=cpu-throttling.service
+
+[Install]
+WantedBy=timers.target
+
+```
+
+Then, enable it :
+
+```
+# systemctl enable cpu-throttling.timer
+
+```
+
+Reboot and check with :
+
+```
+# rdmsr -f 29:24 -d 0x1a2
+
+3
+
+```

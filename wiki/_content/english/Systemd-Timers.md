@@ -87,7 +87,7 @@ Description=Run foo weekly
 
 [Timer]
 OnCalendar=weekly
-Persistent=true     
+Persistent=true
 
 [Install]
 WantedBy=timers.target

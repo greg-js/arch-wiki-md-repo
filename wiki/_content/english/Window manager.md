@@ -1,7 +1,5 @@
 Related articles
 
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
 *   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [xinit](/index.php/Xinit "Xinit")
@@ -240,7 +238,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[http://swaywm.org/](http://swaywm.org/) || [sway](https://www.archlinux.org/packages/?name=sway)
 
-*   **[way-cooler](/index.php?title=Way-cooler&action=edit&redlink=1 "Way-cooler (page does not exist)")** — Way Cooler is a tiling Wayland window manager, written in Rust, configurable using Lua, and extendable with D-Bus.
+*   **way-cooler** — Way Cooler is a tiling Wayland window manager, written in Rust, configurable using Lua, and extendable with D-Bus.
 
 	[http://way-cooler.org/](http://way-cooler.org/) || [way-cooler](https://aur.archlinux.org/packages/way-cooler/)
 

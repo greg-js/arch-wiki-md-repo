@@ -20,7 +20,7 @@ Another tool to be used for the same purpose is [RVM](/index.php/RVM "RVM").
 
 ## Installation
 
-You can install [rbenv](https://aur.archlinux.org/packages/rbenv/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [rbenv](https://aur.archlinux.org/packages/rbenv/) package.
 
 ## Plugins
 
@@ -100,6 +100,13 @@ This can be solved by using the patch as described [here](https://www.reddit.com
 
 ```
  curl -fsSL https://gist.githubusercontent.com/anonymous/679228bc324d6fdd3074.txt | rbenv install --patch 1.9.3-p448
+
+```
+
+If above was not enough you can install openssl-1.0 and gcc6 and try:
+
+```
+ curl -fsSL https://gist.githubusercontent.com/anonymous/679228bc324d6fdd3074.txt | CC=/usr/bin/gcc-6 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig rbenv install --patch 1.9.3-p551
 
 ```
 

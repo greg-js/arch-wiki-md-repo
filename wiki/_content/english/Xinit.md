@@ -5,27 +5,31 @@ Related articles
 *   [xprofile](/index.php/Xprofile "Xprofile")
 *   [Xresources](/index.php/Xresources "Xresources")
 
-The [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) package provides two programs:
+From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
-*   `xinit` - [X Window System](/index.php/X_Window_System "X Window System") initializer, see [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1)
-*   `startx` - a shell wrapper around xinit, see [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1)
+	The **xinit** program allows a user to manually start an [Xorg](/index.php/Xorg "Xorg") display server. The [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1) script is a front-end for [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1).
 
 *xinit* and *startx* take an optional client program argument. If you do not provide one they will look for `~/.xinitrc` to run as a shell script to start up client programs. Executing `xinit /usr/bin/foo` is therefore equivalent to running `xinit` with `exec foo` in your `~/.xinitrc`.
 
-*xinit* is typically used to start [window managers](/index.php/Window_manager "Window manager") or [desktop environments](/index.php/Desktop_environment "Desktop environment"). While you can also use *xinit* to run GUI applications without a window manager, many graphical applications expect an [w:Extended Window Manager Hints](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") compliant window manager. `~/.xinitrc` is handy to run programs / daemons depending on X and set environment variables on X server start. [Display managers](/index.php/Display_manager "Display manager") invoke *xinit* for you and generally also source [xprofile](/index.php/Xprofile "Xprofile") beforehand.
+*xinit* is typically used to start [window managers](/index.php/Window_manager "Window manager") or [desktop environments](/index.php/Desktop_environment "Desktop environment"). While you can also use *xinit* to run GUI applications without a window manager, many graphical applications expect an [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "wikipedia:Extended Window Manager Hints") compliant window manager. `~/.xinitrc` is handy to run programs depending on X and set environment variables on X server startup. [Display managers](/index.php/Display_manager "Display manager") start [Xorg](/index.php/Xorg "Xorg") for you and generally source [xprofile](/index.php/Xprofile "Xprofile").
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
-    *   [1.1 xinitrc](#xinitrc)
-    *   [1.2 xserverrc](#xserverrc)
-*   [2 Usage](#Usage)
-*   [3 Autostart X at login](#Autostart_X_at_login)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Override xinitrc from command line](#Override_xinitrc_from_command_line)
-    *   [4.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
-    *   [4.3 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
-    *   [4.4 Output redirection using startx](#Output_redirection_using_startx)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 xinitrc](#xinitrc)
+    *   [2.2 xserverrc](#xserverrc)
+*   [3 Usage](#Usage)
+*   [4 Autostart X at login](#Autostart_X_at_login)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Override xinitrc from command line](#Override_xinitrc_from_command_line)
+    *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
+    *   [5.3 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
+    *   [5.4 Output redirection using startx](#Output_redirection_using_startx)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) package.
 
 ## Configuration
 

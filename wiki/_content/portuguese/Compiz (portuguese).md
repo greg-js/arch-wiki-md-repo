@@ -2,7 +2,7 @@ Artigos relacionados
 
 *   [Compiz/Configuration](/index.php/Compiz/Configuration "Compiz/Configuration")
 *   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
-*   [Ambiente desktop](/index.php/Desktop_environment "Desktop environment")
+*   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
 *   [Xfce](/index.php/Xfce "Xfce")
 *   [MATE](/index.php/MATE "MATE")
 

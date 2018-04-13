@@ -10,7 +10,8 @@ For general instructions see [Laptop](/index.php/Laptop "Laptop") and comparable
 *   [4 Touch Pad](#Touch_Pad)
 *   [5 Fan Control](#Fan_Control)
 *   [6 Virtual Terminal Fonts](#Virtual_Terminal_Fonts)
-*   [7 See also](#See_also)
+*   [7 Headphones not detected](#Headphones_not_detected)
+*   [8 See also](#See_also)
 
 ## Kernel Options
 
@@ -93,6 +94,15 @@ The 4K resolution causes the default virtual terminal font to be extremely small
 
 ```
 FONT=ter-v28b
+
+```
+
+## Headphones not detected
+
+To attempt to scan for your headphones again run:
+
+```
+alsactl restore
 
 ```
 

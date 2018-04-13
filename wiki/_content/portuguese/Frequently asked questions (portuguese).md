@@ -11,7 +11,7 @@ Artigos relacionados
     *   [1.2 Por que eu não gostaria de usar o Arch?](#Por_que_eu_n.C3.A3o_gostaria_de_usar_o_Arch.3F)
     *   [1.3 A quais arquiteturas o Arch oferece suporte?](#A_quais_arquiteturas_o_Arch_oferece_suporte.3F)
     *   [1.4 O Arch oferece suporte a CPUs ARM?](#O_Arch_oferece_suporte_a_CPUs_ARM.3F)
-    *   [1.5 O Arch segue o FHS?](#O_Arch_segue_o_FHS.3F)
+    *   [1.5 O Arch segue o Filesystem Hierarchy Standard (FHS) da Linux Foundation?](#O_Arch_segue_o_Filesystem_Hierarchy_Standard_.28FHS.29_da_Linux_Foundation.3F)
     *   [1.6 Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?](#Eu_sou_um_completo_iniciante_no_GNU.2FLinux._Eu_deveria_usar_o_Arch.3F)
     *   [1.7 O Arch é projetado para ser usado como um servidor? Um desktop? Uma estação de trabalho?](#O_Arch_.C3.A9_projetado_para_ser_usado_como_um_servidor.3F_Um_desktop.3F_Uma_esta.C3.A7.C3.A3o_de_trabalho.3F)
     *   [1.8 Eu realmente gosto do Arch, exceto que a equipe de desenvolvimento precisa implementar o recurso X](#Eu_realmente_gosto_do_Arch.2C_exceto_que_a_equipe_de_desenvolvimento_precisa_implementar_o_recurso_X)
@@ -69,9 +69,9 @@ O Arch só oferece suporte à arquitetura x86_64 (algumas vezes chamada de amd64
 
 Não, mas o projeto [Arch Linux ARM](http://archlinuxarm.org/) fornece um *port* do Arch Linux para várias plataformas ARM. Veja [[2]](http://ix.io/73w/irc).
 
-### O Arch segue o [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)?
+### O Arch segue o Filesystem Hierarchy Standard (FHS) da Linux Foundation?
 
-O Arch Linux segue a *hierarquia de sistema de arquivos* para sistemas de arquivos usando o gerenciador de serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). Veja [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma explicação de cada diretório junto com suas designações. Em especial, `/bin`, `/sbin` e `/usr/sbin` são links simbólicos para `/usr/bin`, e `/lib` e `/lib64` são links simbólicos para `/usr/lib`.
+O Arch Linux segue FHS (em português, *hierarquia de sistema de arquivos*) para sistemas de arquivos usando o gerenciador de serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). Veja [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma explicação de cada diretório junto com suas designações. Em especial, `/bin`, `/sbin` e `/usr/sbin` são links simbólicos para `/usr/bin`, e `/lib` e `/lib64` são links simbólicos para `/usr/lib`.
 
 ### Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?
 
@@ -151,7 +151,7 @@ Primeiro, você precisa descobrir se esse erro é algo que a equipe do Arch poss
 
 ### Os pacotes do Arch precisam usar uma nomenclatura única. ".pkg.tar.gz" e "pkg.tar.xz" é muito longo e/ou confuso
 
-Isto foi discutido na lista de discussão do Arch. Alguns propuseram uma extensão de arquivo .pac. Até onde se sabe, não há nenhum plano para modificar a extensão dos pacotes. Como Tobias Kieslich, um dos desenvolvedores do Arch, colocou, *"Um pacote **é** tarball gzipado [xz]!! E ele pode ser aberto, verificado e manipulado por qualquer aplicação tar. Além disso, o tipo mime é automaticamente detectado pela maioria dos aplicativos"*.
+Isto foi discutido na lista de discussão do Arch. Alguns propuseram uma extensão de arquivo *.pac*, mas não há nenhum plano para modificar a extensão de pacote. Como Tobias Kieslich, um dos desenvolvedores do Arch, colocou, "Um pacote **é** tarball gzipado em *[xz]*!! E ele pode ser aberto, verificado e manipulado por qualquer aplicação tar. Além disso, o tipo mime é automaticamente detectado pela maioria dos aplicativos".
 
 ### O pacman precisa de uma biblioteca para que outros aplicativos possam acessar facilmente informações dos pacotes
 
@@ -212,7 +212,7 @@ Veja [Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomen
 
 ### Qual ambiente de área de trabalho ou gerenciador de janelas eu devo usar?
 
-Já que há muitos disponíveis para você, use o que você preferir para atender suas necessidades. Dê uma olhada nos artigos [Desktop environment](/index.php/Desktop_environment "Desktop environment") e [Window manager](/index.php/Window_manager "Window manager").
+Já que há muitos disponíveis para você, use o que você preferir para atender suas necessidades. Dê uma olhada nos artigos [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") e [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela").
 
 ### O que faz do Arch único entre outras distribuições "minimalistas"?
 

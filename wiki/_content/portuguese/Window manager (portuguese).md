@@ -1,13 +1,11 @@
 Related articles
 
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 *   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
 *   [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)")
 *   [xinitrc](/index.php/Xinitrc "Xinitrc")
 *   [Start X at Login](/index.php/Start_X_at_Login "Start X at Login")
 
-Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janela "wikipedia:pt:Gerenciador de janela"), ou *window manager* (WM), é um software de sistema que controla o posicionamento e aparência de janelas dentro de um sistema de janelas em uma interface gráfica de usuário (GUI). Ele pode ser parte de uma [ambiente desktop](/index.php/Desktop_environment "Desktop environment") (DE) ou ser usado de forma independente.
+Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janela "wikipedia:pt:Gerenciador de janela"), ou *window manager* (WM), é um software de sistema que controla o posicionamento e aparência de janelas dentro de um sistema de janelas em uma interface gráfica de usuário (GUI). Ele pode ser parte de uma [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") (DE) ou ser usado de forma independente.
 
 ## Contents
 
@@ -25,7 +23,7 @@ Os gerenciadores de janela são clientes X que controlam a aparência e o compor
 
 A especificação [Dicas estendidas de Gerenciador de janela](http://standards.freedesktop.org/wm-spec/wm-spec-latest.html) (inglês) é usada para permitir que os gerenciadores de janela interajam de maneira padrão com o servidor e os outros clientes.
 
-Alguns gerenciadores de janela são desenvolvidos como parte de um [ambiente desktop](/index.php/Desktop_environment "Desktop environment") mais completo, geralmente permitindo que os outros aplicativos fornecidos interajam melhor uns com os outros, dando uma experiência mais consistente ao usuário, com recursos como ícones de área de trabalho, fontes, barras de ferramentas, papéis de parede ou widgets.
+Alguns gerenciadores de janela são desenvolvidos como parte de um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") mais completo, geralmente permitindo que os outros aplicativos fornecidos interajam melhor uns com os outros, dando uma experiência mais consistente ao usuário, com recursos como ícones de área de trabalho, fontes, barras de ferramentas, papéis de parede ou widgets.
 
 Outros gerenciadores de janela são, em vez disso, projetados para serem usados como "autônomos", dando ao usuário liberdade completa sobre a escolha dos outros aplicativos a serem usados. Isso permite ao usuário criar um ambiente mais leve e personalizado, adaptado às suas próprias necessidades específicas. "Extras", como ícones de área de trabalho, barras de ferramentas, papéis de parede ou widgets, se necessário, terão que ser adicionados com aplicativos dedicados adicionais.
 

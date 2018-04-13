@@ -1,10 +1,10 @@
 Artigos relacionados
 
 *   [Automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")
-*   [Display Manager](/index.php/Display_Manager "Display Manager")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 *   [Xinitrc](/index.php/Xinitrc "Xinitrc")
 
-Um [gestor de display](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)") pode ser utilizado para prover uma tela de login e incializar o [servidor X](/index.php/Servidor_X "Servidor X"). Este artigo explica como isto pode ser feito utilizando um terminal virtual existente.
+Um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") pode ser utilizado para prover uma tela de login e inicializar o [servidor X](/index.php/Servidor_X "Servidor X"). Este artigo explica como isto pode ser feito utilizando um terminal virtual existente.
 
 Para inciar o X manualmente, `startx` ou `xinit` são utilizados. Ambos executarão o `~/.xinitrc`, que pode ser customizado para iniciar um gerenciador de janelas de sua escolha como descrito no artigo [xinitrc](/index.php/Xinitrc "Xinitrc").
 

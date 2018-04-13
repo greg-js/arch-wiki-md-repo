@@ -123,7 +123,7 @@ Arch Linux é uma distribuição de *[rolling release](https://en.wikipedia.org/
 
 É por esse motivo que *não há suporte* a atualizações parciais. Não use `pacman -Sy *pacote*` ou qualquer comando equivalente, como `pacman -Sy` seguido por `pacman -S *pacote*`. **Sempre** atualize (com `pacman -Syu`) antes de instalar um pacote. Tenha muito cuidado ao usar `IgnorePkg` e `IgnoreGroup` pelo mesmo motivo. Se o sistema possui pacotes instalados localmente (tal como pacote do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")), os usuários precisarão recompilá-los quando suas dependências receberem uma mudança no [soname](https://en.wikipedia.org/wiki/pt:soname "wikipedia:pt:soname").
 
-Se um cenário de atualização parcial for criado, e os binários forem quebrados porque eles não conseguem localizar as bibliotecas às quais eles estão vinculados, **não "corrija" o problema usando apenas fazendo um link simbólico**. Bibliotecas recebem mudanças [soname](https://en.wikipedia.org/wiki/pt:soname "wikipedia:pt:soname") quando elas **não possuem compatível com a versão anterior**. Um simples `pacman -Syu` com um mirror sincronizado corretamente irá corrigir o problema, desde que o *pacman* não esteja quebrado.
+Se um cenário de atualização parcial for criado, e os binários forem quebrados porque eles não conseguem localizar as bibliotecas às quais eles estão vinculados, **não "corrija" o problema usando apenas fazendo um link simbólico**. Bibliotecas recebem mudanças [soname](https://en.wikipedia.org/wiki/pt:soname "wikipedia:pt:soname") quando elas **não possuem compatível com a versão anterior**. Um simples `pacman -Syu` com um espelho sincronizado corretamente irá corrigir o problema, desde que o *pacman* não esteja quebrado.
 
 O script bash *checkupdates*, incluído no pacote do pacman, fornece uma forma segura de verificar por atualizações para pacotes instalados sem executar uma atualização do sistema ao mesmo tempo.
 
@@ -175,9 +175,9 @@ Para simplificar a manutenção, limite a quantidade de pacotes não oficiais us
 
 ### Atualize o mirrorlist
 
-Atualize a lista de mirrors (*mirrorlist*) do pacman, pois a qualidade dos mirrors podem variar ao longo do tempo e alguns podem ficar inacessíveis ou sua taxa de download pode estar ruim.
+Atualize a lista de espelhos (*mirrorlist*) do pacman, pois a qualidade dos espelhos podem variar ao longo do tempo e alguns podem ficar inacessíveis ou sua taxa de download pode estar ruim.
 
-Veja [mirrors](/index.php/Mirrors "Mirrors") para detalhes.
+Veja [Espelhos](/index.php/Espelhos "Espelhos") para detalhes.
 
 ## Limpe o sistema de arquivos
 

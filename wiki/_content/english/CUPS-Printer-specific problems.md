@@ -17,7 +17,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
-    *   [2.3 MG Series](#MG_Series)
+    *   [2.3 cnijfilter](#cnijfilter)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
     *   [4.1 Utilities](#Utilities)
@@ -195,7 +195,7 @@ With that, the printer will restart, and the latest firmware will be installed a
 
 ## Canon
 
-There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS) or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
+There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS), [#cnijfilter](#cnijfilter), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
 
 | Printer | Driver/filter | Notes |
 | iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use the [TurboPrint](http://www.turboprint.info/) driver. |
@@ -234,7 +234,7 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | LBP7210Cdn |
 | LBP9100C |
 | MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
-| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) |
+| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Avoid the [web interface](/index.php/CUPS#Web_interface "CUPS") when adding the printer as it won't find the PPD file. |
 | TS8050 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) | Without [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) printing will fail with a filter error or you might get "Rendering Completed" and nothing will print |
 | TS9020 | [canon-ts9020](https://aur.archlinux.org/packages/canon-ts9020/) |
 | Printer | Driver/filter | Notes |
@@ -249,29 +249,16 @@ Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing 
 
 Some Canon printers use Canon's proprietary USB over IP BJNP protocol to communicate over the network. There is a CUPS backend for this, which is available as [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/).
 
-### MG Series
+### cnijfilter
 
-For the MG4200 series (and possibly others in the MG series)
+Some printers using the cnijfilter drivers support the `cnijnet` protocol. To find the [printer URI](/index.php/CUPS#Printer_URI "CUPS") run
 
-1\. Install gutenprint from aur (which contains a good and working ppd file). don't then try to install via cups, though, since it won't find the ppd file 2\. execute
+```
+$ cnijnetprn --search auto
 
-cnijnetprn --search auto
+```
 
-I assume that installing the driver from aur installs cnijnetprn, though I could be wrong.
-
-Output will be similar to:
-
-network cnijnet:/D8-49-2F-A7-DD-0A "Canon MG4200 series" "Canon-MG4200-series_D8-49-2F-A7-DD-0A"
-
-You need to note the number at the end (D8-49-2F-A7-DD-0A in my case)
-
-3\. execute
-
-sudo /usr/sbin/lpadmin -p Canon_MG4200 -P /usr/share/cups/model/canonmg4200.ppd -v cnijnet:/D8-49-2F-A7-DD-0A -E
-
-Replace the address with your address from the previous step. You can replace "Canon_MG4200" with whatever you want the printer called in CUPS.
-
-Now you should see the printer in CUPS and be able to successfully print. Duplex is working, as are quality controls.
+and use the `cnijnet:/` URI in the output.
 
 ## Dell
 

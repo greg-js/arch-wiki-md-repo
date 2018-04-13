@@ -21,15 +21,14 @@ In Arch Linux, IPv6 is enabled by default.
     *   [6.1 With dibbler](#With_dibbler)
     *   [6.2 With dhcpcd](#With_dhcpcd)
     *   [6.3 With WIDE-DHCPv6](#With_WIDE-DHCPv6)
-*   [7 IPv6 on Comcast](#IPv6_on_Comcast)
-*   [8 Disable IPv6](#Disable_IPv6)
-    *   [8.1 Disable functionality](#Disable_functionality)
-    *   [8.2 Other programs](#Other_programs)
-        *   [8.2.1 dhcpcd](#dhcpcd_2)
-        *   [8.2.2 NetworkManager](#NetworkManager_2)
-        *   [8.2.3 ntpd](#ntpd)
-    *   [8.3 systemd-networkd](#systemd-networkd_2)
-*   [9 See also](#See_also)
+*   [7 Disable IPv6](#Disable_IPv6)
+    *   [7.1 Disable functionality](#Disable_functionality)
+    *   [7.2 Other programs](#Other_programs)
+        *   [7.2.1 dhcpcd](#dhcpcd_2)
+        *   [7.2.2 NetworkManager](#NetworkManager_2)
+        *   [7.2.3 ntpd](#ntpd)
+    *   [7.3 systemd-networkd](#systemd-networkd_2)
+*   [8 See also](#See_also)
 
 ## Neighbor discovery
 
@@ -306,38 +305,6 @@ To enable/start wide-dhcpv6 client use the following command. Change `WAN` with 
 ```
 
 **Tip:** Read dhcp6c(8) and dhcp6c.conf(5) for more information.
-
-## IPv6 on Comcast
-
-`dhcpcd -4` or `dhcpcd -6` worked using a Motorola SURFBoard 6141 and a Realtek RTL8168d/8111d. Either would work, but would not run dual stack: both protocols and addresses on one interface. (The `-6` command would not work if `-4` ran first, even after resetting the interface. And when it did, it gave the NIC a /128 address.) Try these commands:
-
-```
-# dhclient -4 enp3s0
-# dhclient -P -v enp3s0
-
-```
-
-The `-P` argument grabs a lease of the IPv6 prefix only. `-v` writes to `stdout` what is also written to `/var/lib/dhclient/dhclient6.leases`:
-
-```
-Bound to *:546
-Listening on Socket/enp3s0
-Sending on   Socket/enp3s0
-PRC: Confirming active lease (INIT-REBOOT).
-XMT: Forming Rebind, 0 ms elapsed.
-XMT:  X-- IA_PD a1:b2:cd:e2
-XMT:  | X-- Requested renew  +3600
-XMT:  | X-- Requested rebind +5400
-XMT:  | | X-- **IAPREFIX 1234:5:6700:890::/64**
-
-```
-
-`IAPREFIX` is the necessary value. Substitute `::1` before the CIDR slash to make the prefix a real address:
-
-```
-# ip -6 addr add 1234:5:6700:890::1/64 dev enp3s0
-
-```
 
 ## Disable IPv6
 

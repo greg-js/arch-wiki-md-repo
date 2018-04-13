@@ -10,7 +10,8 @@
 *   [3 Running tint2](#Running_tint2)
     *   [3.1 Openbox](#Openbox)
     *   [3.2 GNOME 3](#GNOME_3)
-    *   [3.3 Multiple panels](#Multiple_panels)
+    *   [3.3 i3](#i3)
+    *   [3.4 Multiple panels](#Multiple_panels)
 *   [4 Enabling transparency](#Enabling_transparency)
     *   [4.1 Fullscreen/Overlay](#Fullscreen.2FOverlay)
     *   [4.2 Third party extensions](#Third_party_extensions)
@@ -22,7 +23,7 @@
 
 ## Configuration
 
-tint2 has a configuration file in `~/.config/tint2/tint2rc`. A skeleton configuration file with the default settings is created the first time you run tint2\. You can then change this file to your liking. Full documentation on how to configure tint2 is found [here](https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md#configuration). You can configure the fonts, colors, looks, location and more in this file. The tint2 package also contains a GUI configuration tool that can be launched by running *tint2conf*.
+tint2 has a configuration file in `~/.config/tint2/tint2rc`. A skeleton configuration file with the default settings is created the first time you run tint2\. You can then change this file to your liking. Full documentation on how to configure tint2 is found [here](https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md#configuration). You can configure the fonts, colors, looks, location and more in this file. The tint2 package also contains a GUI configuration tool that can be launched by running `tint2conf`.
 
 ### Application launchers
 
@@ -131,6 +132,14 @@ $ gnome-session-properties
 ```
 
 and add `/usr/bin/tint2` as an application to run on start-up. The next time GNOME starts, tint2 will run automatically.
+
+### i3
+
+In [i3](/index.php/I3 "I3"), to use tint2 as a replacement for `i3status`, append the following line to end of the i3 configuration file:
+
+ `~/.i3/config`  `exec --no-startup-id tint2` 
+
+and comment out or remove any section like `bar{status_command i3status`} from the same file.
 
 ### Multiple panels
 

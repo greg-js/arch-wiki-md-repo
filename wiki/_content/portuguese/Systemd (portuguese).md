@@ -19,7 +19,7 @@ De [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [1.1 Analisando o estado do sistema](#Analisando_o_estado_do_sistema)
     *   [1.2 Usando units](#Usando_units)
     *   [1.3 O gerenciamento de energia](#O_gerenciamento_de_energia)
-*   [2 Executando Gerenciadores de Display no systemd](#Executando_Gerenciadores_de_Display_no_systemd)
+*   [2 Executando gerenciadores de exibição no systemd](#Executando_gerenciadores_de_exibi.C3.A7.C3.A3o_no_systemd)
     *   [2.1 Usando systemd-logind](#Usando_systemd-logind)
 *   [3 Arquivos temporários](#Arquivos_tempor.C3.A1rios)
 *   [4 Escrevendo arquivos .service personalizados](#Escrevendo_arquivos_.service_personalizados)
@@ -209,9 +209,9 @@ $ systemctl hybrid-sleep
 
 ```
 
-## Executando Gerenciadores de Display no systemd
+## Executando gerenciadores de exibição no systemd
 
-Para habilitar a autenticação gráfica, execute o seu daemon de [Display manager](/index.php/Display_manager "Display manager") preferido (ex. [KDM](/index.php/KDM "KDM")). No momento, existem arquivos de serviço para [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM"), [SLiM](/index.php/SLiM "SLiM"), [XDM](/index.php/XDM "XDM"), [LXDM](/index.php/LXDM "LXDM"), [LightDM](/index.php/LightDM "LightDM"), e [sddm](https://www.archlinux.org/packages/?name=sddm).
+Para habilitar a autenticação gráfica, execute o seu daemon de [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") preferido (ex. [KDM](/index.php/KDM "KDM")). No momento, existem arquivos de serviço para [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM"), [SLiM](/index.php/SLiM "SLiM"), [XDM](/index.php/XDM "XDM"), [LXDM](/index.php/LXDM "LXDM"), [LightDM](/index.php/LightDM "LightDM"), e [sddm](https://www.archlinux.org/packages/?name=sddm).
 
 ```
 # systemctl enable kdm

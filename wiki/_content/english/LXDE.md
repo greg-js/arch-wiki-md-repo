@@ -33,7 +33,7 @@ From project [home page](http://lxde.org/):
     *   [3.8 Screen locking](#Screen_locking)
     *   [3.9 LXPanel icons](#LXPanel_icons)
     *   [3.10 LXPanel menus](#LXPanel_menus)
-    *   [3.11 Replace Openbox](#Replace_Openbox)
+    *   [3.11 Use a different window manager](#Use_a_different_window_manager)
     *   [3.12 Shutdown, reboot, suspend and hibernate options (LXSession-logout)](#Shutdown.2C_reboot.2C_suspend_and_hibernate_options_.28LXSession-logout.29)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
@@ -184,9 +184,9 @@ Icon=/name/of/new/icon/added/to/pixmaps/.png
 
 The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` as per the [xdg-menu](/index.php/Xdg-menu "Xdg-menu") format to work with applications from other sessions (notably [MATE](/index.php/MATE "MATE")) to add some of the function-ability that lxde lacks.
 
-### Replace Openbox
+### Use a different window manager
 
-*lxsession* uses the [window manager](/index.php/Window_manager "Window manager") defined in `~/.config/lxsession/LXDE/desktop.conf`. If this file does not exist, it searches in `/etc/xdg/lxsession/LXDE/desktop.conf` instead.
+*lxsession* uses the [window manager](/index.php/Window_manager "Window manager") defined in `~/.config/lxsession/LXDE/desktop.conf` ([Openbox](/index.php/Openbox "Openbox") by default). If this file does not exist, it searches in `/etc/xdg/lxsession/LXDE/desktop.conf` instead.
 
 Replace `openbox-lxde` in either file with a window manager of choice:
 

@@ -5,7 +5,7 @@ Related articles
 
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from drives, CDs, and over the network via [PXE](/index.php/PXE "PXE"). Some of the supported [file systems](/index.php/File_systems "File systems") are [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and uncompressed single-device [Btrfs](/index.php/Btrfs "Btrfs").
 
-**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[1]](https://www.syslinux.org/wiki/index.php/Filesystem) for more information.
+**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader. See [[1]](https://www.syslinux.org/wiki/index.php/Filesystem) for more information.
 
 **Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading) on how to work around this.
 
@@ -808,9 +808,9 @@ During the next boot, the specified label will be booted without any Syslinux pr
 
 ### Failed to load ldlinux
 
-An error message such as "Failed to load ldlinux.c32" during the initial boot can be triggered by many diverse reasons. One potential reason could be a change in file system tools or in a file system structure, depending on its own version. For instance, newer ext4 file systems might be created with its "64bit" feature enabled by default (whereas its "64bit" feature is only set manually, not by default, in older versions of mke2fs). This is just one example; file systems other than ext4 could also be affected by changes in their own structures and/or respective tools, thus also affecting bootloaders' behavior.
+An error message such as "Failed to load ldlinux.c32" during the initial boot can be triggered by many diverse reasons. One potential reason could be a change in file system tools or in a file system structure, depending on its own version.
 
-**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[12]](https://www.syslinux.org/wiki/index.php/Filesystem) for more information.
+**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader. See [[12]](https://www.syslinux.org/wiki/index.php/Filesystem) for more information.
 
 **Note:** There is no direct and unique correspondence between a message such as `Failed to load ldlinux.c32` and a problem related to the file system:
 

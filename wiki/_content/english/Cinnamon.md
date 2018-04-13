@@ -1,17 +1,13 @@
 Related articles
 
 *   [Nemo](/index.php/Nemo "Nemo")
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [MATE](/index.php/MATE "MATE")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
 
 [Cinnamon](https://github.com/linuxmint/Cinnamon) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") which combines a traditional desktop layout with modern graphical effects. The underlying technology was forked from the [GNOME](/index.php/GNOME "GNOME") desktop. As of version 2.0, Cinnamon is a complete desktop environment and not merely a frontend for GNOME like GNOME Shell and Unity.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting Cinnamon](#Starting_Cinnamon)
+*   [2 Starting](#Starting)
     *   [2.1 Graphical log-in](#Graphical_log-in)
     *   [2.2 Starting Cinnamon manually](#Starting_Cinnamon_manually)
     *   [2.3 Restarting Cinnamon](#Restarting_Cinnamon)
@@ -20,6 +16,7 @@ Related articles
     *   [3.2 Applets and extensions](#Applets_and_extensions)
     *   [3.3 Pressing power buttons suspend the system](#Pressing_power_buttons_suspend_the_system)
     *   [3.4 Manage languages used in Cinnamon](#Manage_languages_used_in_Cinnamon)
+    *   [3.5 Use a different window manager](#Use_a_different_window_manager)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Creating custom applets](#Creating_custom_applets)
     *   [4.2 Default desktop background wallpaper path](#Default_desktop_background_wallpaper_path)
@@ -42,7 +39,7 @@ Related articles
 
 Cinnamon can be [installed](/index.php/Installed "Installed") with the package [cinnamon](https://www.archlinux.org/packages/?name=cinnamon).
 
-## Starting Cinnamon
+## Starting
 
 ### Graphical log-in
 
@@ -127,6 +124,10 @@ This is the default behaviour. To change the setting open the `cinnamon-settings
 *   To change between enabled languages: install the [mintlocale](https://aur.archlinux.org/packages/mintlocale/) package.
 *   To change the keyboard layout: navigate to **System Settings > Hardware > Keyboard > Layouts**.
 
+### Use a different window manager
+
+Cinnamon does not support using a different window manager.
+
 ## Tips and tricks
 
 ### Creating custom applets
@@ -162,7 +163,7 @@ Replacing 4 with the number of workspaces you want.
 
 ### Hide desktop icons
 
-The desktop icons rendering feature is enabled in nemo by default. To disable this feature, change the setting with the following command:
+The desktop icons rendering feature is enabled in [Nemo](/index.php/Nemo "Nemo") by default. To disable this feature, change the setting with the following command:
 
 ```
 $ gsettings set org.nemo.desktop show-desktop-icons false

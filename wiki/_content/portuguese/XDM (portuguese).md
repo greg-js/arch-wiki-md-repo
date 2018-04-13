@@ -1,6 +1,6 @@
 Artigos relacionados
 
-*   [Display Manager](/index.php/Display_Manager "Display Manager")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 
 Da Página do [Manual do XDM](http://www.xfree86.org/current/xdm.1.html):
 
@@ -31,4 +31,4 @@ Opciconalmente, instale o tema do Arch Linux para o XDM:
 
 ```
 
-Veja [Display manager](/index.php/Display_manager "Display manager") para informações adicionais.
+Veja [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") para informações adicionais.

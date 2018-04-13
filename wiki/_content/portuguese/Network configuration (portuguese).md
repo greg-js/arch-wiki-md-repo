@@ -5,100 +5,75 @@ Artigos relacionados
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [Network bridge](/index.php/Network_bridge "Network bridge")
 *   [List of applications#Network Managers](/index.php/List_of_applications#Network_Managers "List of applications")
+*   [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Router](/index.php/Router "Router")
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 
-Esta página explica como configurar uma conexão **cabeada**. Se você deseja configurar uma rede **wireless/sem fio** veja a página [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+Esta página explica como configurar uma conexão cabeada. Se você deseja configurar uma rede wireless/sem fio veja a página [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 
 ## Contents
 
-*   [1 Verificando a conexão](#Verificando_a_conex.C3.A3o)
+*   [1 Depuração de rede](#Depura.C3.A7.C3.A3o_de_rede)
 *   [2 Driver de dispositivo](#Driver_de_dispositivo)
     *   [2.1 Verificando o estado](#Verificando_o_estado)
     *   [2.2 Carregando o módulo](#Carregando_o_m.C3.B3dulo)
-*   [3 Gerenciamento de rede](#Gerenciamento_de_rede)
-    *   [3.1 Interfaces de rede](#Interfaces_de_rede)
-        *   [3.1.1 Obtendo nomes atuais de interfaces](#Obtendo_nomes_atuais_de_interfaces)
-        *   [3.1.2 Habilitando e desabilitando interfaces de rede](#Habilitando_e_desabilitando_interfaces_de_rede)
-    *   [3.2 Endereço IP dinâmico](#Endere.C3.A7o_IP_din.C3.A2mico)
-    *   [3.3 Endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
-        *   [3.3.1 Atribuição manual](#Atribui.C3.A7.C3.A3o_manual)
-        *   [3.3.2 Calculando endereços](#Calculando_endere.C3.A7os)
-    *   [3.4 Gerenciadores de rede](#Gerenciadores_de_rede)
-*   [4 Configurando um hostname](#Configurando_um_hostname)
-    *   [4.1 Resolução de hostname de rede local](#Resolu.C3.A7.C3.A3o_de_hostname_de_rede_local)
-*   [5 Dicas e truques](#Dicas_e_truques)
-    *   [5.1 Alterando o nome do dispositivo](#Alterando_o_nome_do_dispositivo)
-    *   [5.2 Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos)
-    *   [5.3 Definindo o MTU do dispositivo e o tamanho da fila](#Definindo_o_MTU_do_dispositivo_e_o_tamanho_da_fila)
-    *   [5.4 ifplugd for laptops](#ifplugd_for_laptops)
-    *   [5.5 Bonding e LAG(agregação de LINK)](#Bonding_e_LAG.28agrega.C3.A7.C3.A3o_de_LINK.29)
-    *   [5.6 Aliasing de endereço IP](#Aliasing_de_endere.C3.A7o_IP)
-        *   [5.6.1 Exemplo](#Exemplo)
-    *   [5.7 Alterando endereço MAC/hardware](#Alterando_endere.C3.A7o_MAC.2Fhardware)
-    *   [5.8 Compartilhamento de Internet](#Compartilhamento_de_Internet)
-    *   [5.9 Configuração do roteador](#Configura.C3.A7.C3.A3o_do_roteador)
-    *   [5.10 Modo promíscuo](#Modo_prom.C3.ADscuo)
-*   [6 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [6.1 Trocando computadores no modem a cabo](#Trocando_computadores_no_modem_a_cabo)
-    *   [6.2 O problema de escala de janela TCP](#O_problema_de_escala_de_janela_TCP)
-        *   [6.2.1 Como diagnosticar o problema](#Como_diagnosticar_o_problema)
-        *   [6.2.2 Formas de corrigi-lo](#Formas_de_corrigi-lo)
-            *   [6.2.2.1 Ruim](#Ruim)
-            *   [6.2.2.2 Bom](#Bom)
-            *   [6.2.2.3 Melhor](#Melhor)
-        *   [6.2.3 More about it](#More_about_it)
-    *   [6.3 Realtek sem link / Problema com WOL](#Realtek_sem_link_.2F_Problema_com_WOL)
-        *   [6.3.1 Habilitando a NIC diretamente no Linux](#Habilitando_a_NIC_diretamente_no_Linux)
-        *   [6.3.2 Revertendo/alterando driver do Windows](#Revertendo.2Falterando_driver_do_Windows)
-        *   [6.3.3 Habilitando WOL no driver do Windows](#Habilitando_WOL_no_driver_do_Windows)
-        *   [6.3.4 Driver Realtek mais novo para Linux](#Driver_Realtek_mais_novo_para_Linux)
-        *   [6.3.5 Ativando *LAN Boot ROM* na BIOS/CMOS](#Ativando_LAN_Boot_ROM_na_BIOS.2FCMOS)
-    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [6.7 Placa-mãe Gigabyte com Realtek 8111/8168/8411](#Placa-m.C3.A3e_Gigabyte_com_Realtek_8111.2F8168.2F8411)
-*   [7 Veja também](#Veja_tamb.C3.A9m)
+*   [3 Interface de rede](#Interface_de_rede)
+    *   [3.1 Listando interfaces de rede](#Listando_interfaces_de_rede)
+    *   [3.2 Habilitando e desabilitando interfaces de rede](#Habilitando_e_desabilitando_interfaces_de_rede)
+*   [4 Obtendo um endereço IP](#Obtendo_um_endere.C3.A7o_IP)
+    *   [4.1 Endereço IP dinâmico](#Endere.C3.A7o_IP_din.C3.A2mico)
+    *   [4.2 Endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
+        *   [4.2.1 Atribuição manual](#Atribui.C3.A7.C3.A3o_manual)
+        *   [4.2.2 Calculando endereços](#Calculando_endere.C3.A7os)
+    *   [4.3 Gerenciadores de rede](#Gerenciadores_de_rede)
+*   [5 Configurando um hostname](#Configurando_um_hostname)
+    *   [5.1 Resolução de hostname de rede local](#Resolu.C3.A7.C3.A3o_de_hostname_de_rede_local)
+*   [6 Dicas e truques](#Dicas_e_truques)
+    *   [6.1 Alterando o nome do dispositivo](#Alterando_o_nome_do_dispositivo)
+    *   [6.2 Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos)
+    *   [6.3 Definindo o MTU do dispositivo e o tamanho da fila](#Definindo_o_MTU_do_dispositivo_e_o_tamanho_da_fila)
+    *   [6.4 ifplugd for laptops](#ifplugd_for_laptops)
+    *   [6.5 Bonding e LAG(agregação de LINK)](#Bonding_e_LAG.28agrega.C3.A7.C3.A3o_de_LINK.29)
+    *   [6.6 Aliasing de endereço IP](#Aliasing_de_endere.C3.A7o_IP)
+        *   [6.6.1 Exemplo](#Exemplo)
+    *   [6.7 Modo promíscuo](#Modo_prom.C3.ADscuo)
+*   [7 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+    *   [7.1 Trocando computadores no modem a cabo](#Trocando_computadores_no_modem_a_cabo)
+    *   [7.2 O problema de escala de janela TCP](#O_problema_de_escala_de_janela_TCP)
+        *   [7.2.1 Como diagnosticar o problema](#Como_diagnosticar_o_problema)
+        *   [7.2.2 Formas de corrigi-lo](#Formas_de_corrigi-lo)
+            *   [7.2.2.1 Ruim](#Ruim)
+            *   [7.2.2.2 Bom](#Bom)
+            *   [7.2.2.3 Melhor](#Melhor)
+        *   [7.2.3 More about it](#More_about_it)
+    *   [7.3 Realtek sem link / Problema com WOL](#Realtek_sem_link_.2F_Problema_com_WOL)
+        *   [7.3.1 Habilitando a NIC diretamente no Linux](#Habilitando_a_NIC_diretamente_no_Linux)
+        *   [7.3.2 Revertendo/alterando driver do Windows](#Revertendo.2Falterando_driver_do_Windows)
+        *   [7.3.3 Habilitando WOL no driver do Windows](#Habilitando_WOL_no_driver_do_Windows)
+        *   [7.3.4 Driver Realtek mais novo para Linux](#Driver_Realtek_mais_novo_para_Linux)
+        *   [7.3.5 Ativando *LAN Boot ROM* na BIOS/CMOS](#Ativando_LAN_Boot_ROM_na_BIOS.2FCMOS)
+    *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [7.7 Placa-mãe Gigabyte com Realtek 8111/8168/8411](#Placa-m.C3.A3e_Gigabyte_com_Realtek_8111.2F8168.2F8411)
+*   [8 Veja também](#Veja_tamb.C3.A9m)
 
-## Verificando a conexão
+## Depuração de rede
 
-O procedimento básico de instalação cria uma configuração de rede cabeada funciona. Use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para verificar a conexão:
+Você pode usar [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para verificar se você consegue alcançar um host.
 
- `$ ping www.google.com` 
-```
-PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
-64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
-...
-```
+1.  Certifique-se que sua [#Interface de rede](#Interface_de_rede) está ativa. Se não estiver listada, verifique seu [#Driver de dispositivo](#Driver_de_dispositivo).
+2.  Verifique se você consegue acessar a internet pingando um endereço IP público (p. ex., `8.8.8.8`). Se você não conseguir acessar a internet, mas sua interface de rede estiver ativa, veja [#Obtendo um endereço IP](#Obtendo_um_endere.C3.A7o_IP).
+3.  Verifique se você consegue resolver nomes de domínio, pingando um nome de domínio (p. ex., `google.com`). Se você não consegue resolver nomes de domínio, mas você está conectado à Internet, veja [resolv.conf](/index.php/Resolv.conf "Resolv.conf") e verifique a linha `hosts` em [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
 
-Caso funcione, você precisará apenas personalizar algumas das opções abaixo.
-
-Caso o ping funcione (você verá as mensagens de "64 bytes" acima), então a rede está configurada. Pressione `Control-C` para interromper o ping.
-
-Se o comando ping falhar com um erro de *Unknown hosts* ("host desconhecido"), significa que seu computador não pôde resolver esse nome de domínio. Pode estar relacionado ao seu provedor de serviço de internet ou roteador/gateway. Tente pingar um endereço IP estático para provar que sua máquina possui acesso à Internet:
-
- `$ ping 8.8.8.8` 
-```
-PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
-...
-
-```
-
-Caso você consiga pingar `8.8.8.8`, mas não o `www.google.com`, verifique sua configuração de DNS. Veja [resolv.conf](/index.php/Resolv.conf "Resolv.conf") para resolver esse detalhe. A linha `hosts` em `/etc/nsswitch.conf` é outro lugar que você pode verificar.
-
-Se não, verifique por problemas no cabo antes de prosseguir com o diagnóstico.
-
-**Nota:**
-
-*   Se você receber um erro como `ping: icmp open socket: Operation not permitted` ao executar *ping*, tente reinstalar o pacote [iputils](https://www.archlinux.org/packages/?name=iputils).
-*   A opção `-c *núm*` pode ser usada para fazer exatamente `*núm*` pings, do contrário ele vai pingar infinitamente e terá que ser terminado manualmente. Veja [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para mais informações.
-*   `8.8.8.8` é um endereço estático que é fácil de lembrar. É o endereço do servidor DNS primário do Google, então é considerado estável e geralmente não é bloqueado por proxy e sistemas de filtro de conteúdo.
+**Nota:** Se você receber um erro como `ping: icmp open socket: Operation not permitted` ao executar *ping*, tente reinstalar o pacote [iputils](https://www.archlinux.org/packages/?name=iputils).
 
 ## Driver de dispositivo
 
 ### Verificando o estado
 
-O [udev](/index.php/Udev "Udev") deve detectar sua [interface de rede](https://en.wikipedia.org/wiki/pt:Placa_de_rede "wikipedia:pt:Placa de rede") (em inglês, *network interface controller* ou NIC) e carregará automaticamente o módulo necessário na inicialização. Verifique pela entrada "Ethernet controller" (ou similar) no resultado do comando `lspci -v`. Este comando dirá qual módulo do kernel é necessário para o funcionamento do dispositivo. Por exemplo:
+O [udev](/index.php/Udev "Udev") deve detectar sua [interface de rede](https://en.wikipedia.org/wiki/pt:Placa_de_rede "wikipedia:pt:Placa de rede") (em inglês, *network interface controller* ou NIC) e carregará automaticamente o [módulo de kernel](/index.php/Kernel_module "Kernel module") necessário na inicialização. Verifique pela entrada "Ethernet controller" (ou similar) no resultado do comando `lspci -v`. Este comando dirá qual módulo do kernel é necessário para o funcionamento do dispositivo. Por exemplo:
 
  `$ lspci -v` 
 ```
@@ -111,12 +86,7 @@ O [udev](/index.php/Udev "Udev") deve detectar sua [interface de rede](https://e
 
 Após, veja se o driver foi carregado usando `dmesg | grep *nome_módulo*`. Exemplo:
 
- `$ dmesg | grep atl1` 
-```
-...
-atl1 0000:02:00.0: eth0 link is up 100 Mbps full duplex
-
-```
+ `$ dmesg `  ` grep | atl1` 
 
 Pule para a próxima sessão caso o driver tenha sido carregado com sucesso. Caso contrário, você precisará descobrir qual é o módulo necessário para o seu modelo de interface de rede em específico.
 
@@ -126,15 +96,11 @@ Pesquise na internet pelo modelo/driver para o seu chipset. Algumas módulos com
 
 Caso o udev não detecte ou não carregue o módulo de forma apropriada e automaticamente durante o boot, veja [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
-## Gerenciamento de rede
+## Interface de rede
 
-### Interfaces de rede
+O [udev](/index.php/Udev "Udev") atribui nomes para suas interfaces de rede. Mais especificamente, o [udev](/index.php/Udev "Udev") usa [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames). Interfaces são agora prefixadas com `en` (cabeada/[Ethernet](https://en.wikipedia.org/wiki/pt:Ethernet "w:pt:Ethernet")), `wl` (sem fio/wireless/WLAN) ou `ww` ([WWAN](https://en.wikipedia.org/wiki/pt:Rede_de_longa_dist%C3%A2ncia_sem_fio "w:pt:Rede de longa distância sem fio")) seguido por um identificador gerado automaticamente.
 
-Para computadores que possuem várias placas de rede, é importante ter nomes de interface fixos. Muitos problemas de configuração são causados pela alteração de nomes de interface.
-
-O [udev](/index.php/Udev "Udev") é o responsável por atribuir nomes para cada dispositivo. O systemd usa [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), o que automaticamente atribui nomes estáticos a dispositivos de rede. Interfaces são agora prefixadas com `en` (cabeada/[Ethernet](https://en.wikipedia.org/wiki/pt:Ethernet "w:pt:Ethernet")), `wl` (sem fio/wireless/WLAN) ou `ww` ([WWAN](https://en.wikipedia.org/wiki/pt:Rede_de_longa_dist%C3%A2ncia_sem_fio "w:pt:Rede de longa distância sem fio")) seguido por um identificador gerado automaticamente, criando uma entrada similar a `enp0s25`.
-
-#### Obtendo nomes atuais de interfaces
+### Listando interfaces de rede
 
 Ambos nomes de interfaces com e sem fio podem ser descobertos por meio de `ls /sys/class/net` ou `ip link`. Note que `lo` é o [dispositivo *loop* ou de laço](https://en.wikipedia.org/wiki/pt:Loop_device "w:pt:Loop device") e não é usado para fazer conexões de rede.
 
@@ -142,7 +108,7 @@ Nomes de dispositivos sem fio também podem ser obtidos usando `iw dev`. Veja ta
 
 **Dica:** Para alterar os nomes de dispositivos, veja [#Alterando o nome do dispositivo](#Alterando_o_nome_do_dispositivo) e [#Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos).
 
-#### Habilitando e desabilitando interfaces de rede
+### Habilitando e desabilitando interfaces de rede
 
 Você pode ativar uma interface de rede usando:
 
@@ -169,6 +135,8 @@ Para verificar o resultado para a interface `eth0`:
 
 **Nota:** Se sua rota padrão é por meio da interface `eth0`, desabilitá-la também vai remover a rota e reativá-la não vai restabelecer automaticamente a rota padrão. Veja [#Atribuição manual](#Atribui.C3.A7.C3.A3o_manual) para restabelecê-la.
 
+## Obtendo um endereço IP
+
 ### Endereço IP dinâmico
 
 Veja [#Gerenciadores de rede](#Gerenciadores_de_rede) para uma lista de opções na definição de um endereço IP dinâmico
@@ -194,7 +162,7 @@ Se você está usando em uma rede privada, é seguro usar endereços IP em `192.
 
 #### Atribuição manual
 
-É possível configurar manualmente um IP estático usando apenas o pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2). Essa é uma boa forma de testar as configurações da conexão, já que a conexão feita usando esse método não persistirá entre as reinicializações. Primeiro, ative a [interface de rede](#Interfaces_de_rede):
+É possível configurar manualmente um IP estático usando apenas o pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2). Essa é uma boa forma de testar as configurações da conexão, já que a conexão feita usando esse método não persistirá entre as reinicializações. Primeiro, ative a [#Interface de rede](#Interface_de_rede):
 
 ```
 # ip link set *interface* up
@@ -269,8 +237,7 @@ IP de Rede: 10.66.66.0/30
 HostMín:    10.66.66.1
 HostMáx:    10.66.66.2
 Broadcast:  10.66.66.3
-Hosts/REde: 2                     Classe A, Internet Privada
-
+Hosts/Rede: 2                     Classe A, Internet Privada
 ```
 
 ### Gerenciadores de rede
@@ -371,7 +338,6 @@ Você pode alterar o nome de um dispositivo definindo o nome em uma regra de ude
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
-
 ```
 
 Essas regras serão aplicadas automaticamente na inicialização.
@@ -387,7 +353,6 @@ Se a placa de rede possui um MAC dinâmico, você pode usar `DEVPATH`, por exemp
 ```
 SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
-
 ```
 
 O caminho do dispositivo deve corresponder ao nome do dispositivo novo e antigo, uma vez que a regra pode ser executada mais de uma vez na inicialização. Por exemplo, na segunda regra, `"/devices/pci*/*1c.0/*/net/enp*"` seria errado, uma vez que irá parar de corresponder depois que o nome for alterado para `en`. Somente a regra padrão do sistema será chamada na segunda vez, fazendo com que o nome seja alterado de volta para, por exemplo, `enp1s0`.
@@ -401,7 +366,7 @@ Para [testar](/index.php/Udev#Testing_rules_before_loading "Udev") suas regras, 
 Se você preferir manter os nomes de interface tradicionais, como eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) podem ser desabilitados mascarando a regra de rule:
 
 ```
- # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+# ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
 ```
 
@@ -411,12 +376,7 @@ Alternativamente, adicione `net.ifnames=0` aos [parâmetros do kernel](/index.ph
 
 Você pode alterar o [MTU](https://en.wikipedia.org/wiki/pt:MTU "wikipedia:pt:MTU") do dispositivo e o tamanho da fila ao definir manualmente com uma regra de udev. Por exemplo:
 
- `/etc/udev/rules.d/10-network.rules` 
-```
-ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_len}="2000"
-
-```
-
+ `/etc/udev/rules.d/10-network.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_len}="2000"` 
 **Nota:**
 
 *   `mtu`: Para PPPoE, o MTU não deve ser maior que 1492\. Você também pode definir o MTU via [systemd.netdev(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
@@ -458,18 +418,6 @@ Para remover um dado alias, execute
 
 Os pacotes de rede destinados para uma sub-rede vão usar o alias primário por padrão. Se o IP de destino está dentro de uma sub-rede de um alias secundário, então o IP fonte está definido respectivamente. Considere o caso em que há mais de uma interface de rede, as rotas padrão podem ser listadas com `ip route`.
 
-### Alterando endereço MAC/hardware
-
-Veja [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing").
-
-### Compartilhamento de Internet
-
-Veja [Internet sharing](/index.php/Internet_sharing "Internet sharing").
-
-### Configuração do roteador
-
-Veja [Router](/index.php/Router "Router").
-
 ### Modo promíscuo
 
 Ativar [modo promíscuo](https://en.wikipedia.org/wiki/pt:Modo_prom%C3%ADscuo "wikipedia:pt:Modo promíscuo") fará com que uma interface de rede (sem fio) encaminhe todo o tráfego que receber para o sistema operacional para processamento posterior. Isso é contrário ao "modo normal" onde uma interface de rede irá descartar quadros que não pretende receber. É usado com mais frequência para solução de problemas avançados de rede e [análise de pacotes (sniffing)](https://en.wikipedia.org/wiki/pt:Analisador_de_pacotes "wikipedia:pt:Analisador de pacotes").
@@ -498,7 +446,7 @@ Se você deseja habilitar o modo pomíscuo na interface `eth0`, execute [*enable
 
 Alguns ISP por cabo têm o modem a cabo configurado para reconhecer apenas um PC cliente, pelo endereço MAC da sua interface de rede. Uma vez que o modem a cabo aprendeu o endereço MAC do primeiro PC ou equipamento que fala com ele, ele não responderá de outro modo a outro endereço MAC. Assim, se você trocar um PC por outro (ou por um roteador), o novo PC (ou roteador) não funcionará com o modem a cabo, porque o novo PC (ou roteador) possui um endereço MAC diferente do antigo. Para reiniciar o modem a cabo para que reconheça o novo PC, você deve desligar e ligar o modem a cabo. Uma vez que o modem a cabo foi reiniciado e voltou totalmente on-line novamente (as luzes indicadoras foram instaladas), reinicie o PC recém-conectado para que ele faça uma solicitação DHCP ou faça com que ele solicite um novo *lease* (concessão) DHCP.
 
-Caso este método não funcione, você deverá clonar o endereço MAC do computador original. Veja também [#Alterando endereço MAC/hardware](#Alterando_endere.C3.A7o_MAC.2Fhardware).
+Caso este método não funcione, você deverá clonar o endereço MAC do computador original. Veja também [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing").
 
 ### O problema de escala de janela TCP
 
@@ -580,7 +528,7 @@ No Windows XP (exemplo):
 
 ```
 
-**Nota:** Novos drivers Windows do Realtek (testados com *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, datado de 2009/01/22, disponível da GIGABYTE) podem se referir a esta opção de forma ligeiramente diferente, como *Desligar Wake-On-LAN -> Ativar*. Parece que mudar para `Desativar` não tem efeito (você notará que a luz do link ainda está desligada no desligamento do Windows). Uma solução de contorno ruim é inicializar no Windows e apenas reiniciar o sistema (executar um reinício/desligamento desagradável), portanto, não dar ao driver do Windows a chance de desabilitar a LAN. A luz de link permanecerá ativada e o adaptador de LAN permanecerá acessível após o POST - isto é, até reiniciar o Windows e desligá-lo corretamente novamente.
+**Nota:** Novos drivers Windows do Realtek (testados com *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, datado de 2009/01/22, disponível da GIGABYTE) podem se referir a esta opção de forma ligeiramente diferente, como *Desligar Wake-On-LAN > Ativar*. Parece que mudar para `Desativar` não tem efeito (você notará que a luz do link ainda está desligada no desligamento do Windows). Uma solução de contorno ruim é inicializar no Windows e apenas reiniciar o sistema (executar um reinício/desligamento desagradável), portanto, não dar ao driver do Windows a chance de desabilitar a LAN. A luz de link permanecerá ativada e o adaptador de LAN permanecerá acessível após o POST - isto é, até reiniciar o Windows e desligá-lo corretamente novamente.
 
 #### Driver Realtek mais novo para Linux
 
@@ -588,7 +536,7 @@ Qualquer driver mais recente para estas placas Realtek pode ser encontrado para 
 
 #### Ativando *LAN Boot ROM* na BIOS/CMOS
 
-Parece que a configuração *Periféricos integrados--> Onboard LAN Boot ROM --> Ativado* na BIOS/CMOS reativa o chip de LAN da Realtek na inicialização do sistema, apesar do driver do Windows desabilitando no desligamento do sistema operacional.
+Parece que a configuração *Periféricos integrados > Onboard LAN Boot ROM > Ativado* na BIOS/CMOS reativa o chip de LAN da Realtek na inicialização do sistema, apesar do driver do Windows desabilitando no desligamento do sistema operacional.
 
 **Nota:** Isso foi testado várias vezes em uma placa-mãe GIGABYTE GA-G31M-ES2L, BIOS versão F8 lançada em 2009/02/05.
 
@@ -610,7 +558,7 @@ Essas etapas devem ajudar se o seu computador tiver esse chipset:
 
 ```
 
-*   Se sua rede com fio não estiver funcionando de alguma maneira, tente desconectar seu cabo e, em seguida, faça o seguinte:
+*   Se sua rede com fio não estiver funcionando de alguma maneira, desconecte seu cabo e, em seguida, faça o seguinte:
 
 ```
 # modprobe -r tg3
@@ -619,20 +567,18 @@ Essas etapas devem ajudar se o seu computador tiver esse chipset:
 
 ```
 
-*   Conecte seu cabo de rede. Se isso solucionar seus problemas, você pode tornar isso permanente adicionando `broadcom` e `tg3` (nesta ordem) à matriz `MODULES` em `/etc/mkinitcpio.conf`:
+*   Conecte seu cabo de rede de volta e verifique se o módulo foi carregado com sucesso com:
 
 ```
-MODULES=".. broadcom tg3 .."
-
-```
-
-*   Recompile o initramfs:
-
-```
-# mkinitcpio -p linux
+$ dmesg | greg tg3
 
 ```
 
+*   Se esse procedimento resolveu o problema, você pode torná-lo permanente adicionando `broadcom` e `tg3` (nesta ordem) para o vetor `MODULES`:
+
+ `/etc/mkinitcpio.conf`  `MODULES=(.. broadcom tg3 ..)` 
+
+*   [Gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs")
 *   Alternativamente, você pode criar um `/etc/modprobe.d/broadcom.conf`:
 
 ```
@@ -656,7 +602,7 @@ Outra falha nos drivers para algumas revisões deste adaptador é um suporte fra
 
 ### Placa-mãe Gigabyte com Realtek 8111/8168/8411
 
-Com placas-mãe como o Gigabyte GA-990FXA-UD3, inicializar com IOMMU desligado (o que pode ser o padrão) fará com que a interface de rede não seja confiável, muitas vezes não conseguindo se conectar, ou até conectar mas não permitindo a transferência. Isso se aplicará não só à NIC *on-board*, mas a qualquer outra NIC pci que você coloque na caixa porque a configuração IOMMU afeta toda a interface de rede na placa. Habilitar o IOMMU e inicializar com a mídia de instalação lançará as falhas da página AMD I-10/xhci por um segundo, mas depois inicializará normalmente, resultando em uma NIC *onboard* totalmente funcional (mesmo com o módulo r8169).
+Com placas-mãe como o *Gigabyte GA-990FXA-UD3*, inicializar com [IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF") desligado (o que pode ser o padrão) fará com que a interface de rede não seja confiável, muitas vezes não conseguindo se conectar, ou até conectar mas não permitindo a transferência. Isso se aplicará à NIC *on-board* e para qualquer outra NIC pci na máquina porque a configuração IOMMU afeta toda a interface de rede na placa. Habilitar o IOMMU e inicializar com a mídia de instalação lançará as falhas da página AMD I-10/xhci por um segundo, mas depois inicializará normalmente, resultando em uma NIC *onboard* totalmente funcional (mesmo com o módulo r8169).
 
 Ao configurar o processo de inicialização para sua instalação, adicione `iommu=soft` como um [parâmetro de kernel](/index.php/Kernel_parameter "Kernel parameter") para eliminar as mensagens de erro na inicialização e restaurar a funcionalidade USB3.0.
 

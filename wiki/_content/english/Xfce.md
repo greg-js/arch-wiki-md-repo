@@ -27,7 +27,7 @@ Related articles
         *   [3.3.2 Lock the screen](#Lock_the_screen)
         *   [3.3.3 Suspend](#Suspend)
         *   [3.3.4 Disable saved sessions](#Disable_saved_sessions)
-        *   [3.3.5 Default window manager](#Default_window_manager)
+        *   [3.3.5 Use a different window manager](#Use_a_different_window_manager)
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Keyboard volume buttons](#Keyboard_volume_buttons)
@@ -297,7 +297,7 @@ $ rm ~/.cache/sessions/* && chmod 500 ~/.cache/sessions
 
 This will prevent Xfce from saving any sessions despite any configuration that specifies otherwise.
 
-#### Default window manager
+#### Use a different window manager
 
 **Note:** For the changes to take effect, you will need to clear the saved sessions and ensure that session saving is disabled when logging out for the first time. Once the window manager of choice is running, session saving can be enabled again.
 

@@ -4,7 +4,7 @@ Related articles
 *   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
 *   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
 *   [init](/index.php/Init "Init")
-*   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
+*   [Daemons](/index.php/Daemons "Daemons")
 *   [udev](/index.php/Udev "Udev")
 *   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
 *   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
@@ -53,7 +53,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Investigating systemd errors](#Investigating_systemd_errors)
     *   [9.2 Diagnosing boot problems](#Diagnosing_boot_problems)
-    *   [9.3 Diagnosing problems with a specific service](#Diagnosing_problems_with_a_specific_service)
+    *   [9.3 Diagnosing a service](#Diagnosing_a_service)
     *   [9.4 Shutdown/reboot takes terribly long](#Shutdown.2Freboot_takes_terribly_long)
     *   [9.5 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
     *   [9.6 Boot time increasing over time](#Boot_time_increasing_over_time)
@@ -736,27 +736,26 @@ Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 
 *systemd* has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") for more general instructions and options to capture boot messages before *systemd* takes over the [boot process](/index.php/Boot_process "Boot process"). Also see the [systemd debugging documentation](http://freedesktop.org/wiki/Software/systemd/Debugging/).
 
-### Diagnosing problems with a specific service
+### Diagnosing a service
 
-If some *systemd* service misbehaves and you want to get more information about what is going on, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the *systemd-networkd* daemon in debug mode:
+If some *systemd* service misbehaves or you want to get more information about what is happening, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the *systemd-networkd* daemon in debug mode:
+
+Add a [#Drop-in_files](#Drop-in_files) for the service adding the two lines:
 
 ```
-# systemctl stop systemd-networkd
+[Service]
+Environment=SYSTEMD_LOG_LEVEL=debug
+
+```
+
+Or equivalently, set the environment variable manually:
+
+```
 # SYSTEMD_LOG_LEVEL=debug /lib/systemd/systemd-networkd
 
 ```
 
-Or, equivalently, modify the service file temporarily for gathering enough output. For example:
-
- `/usr/lib/systemd/system/systemd-networkd.service` 
-```
-[Service]
-...
-Environment=SYSTEMD_LOG_LEVEL=debug
-....
-```
-
-If debug information is required long-term, add the variable the [regular](#Editing_provided_units) way.
+then [restart](/index.php/Restart "Restart") *systemd-networkd*.
 
 ### Shutdown/reboot takes terribly long
 

@@ -1002,7 +1002,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
 
-*   **[RecordMyDesktop](https://en.wikipedia.org/wiki/RecordMyDesktop "wikipedia:RecordMyDesktop")** — (inactive) An easy to use utility that records your desktop into the ogg format with a CLI, Qt or GTK+ interface.
+*   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — (inactive) An easy to use utility that records your desktop into the ogg format with a CLI, Qt or GTK+ interface.
 
 	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
 

@@ -69,7 +69,7 @@ Refaça a sua imagem initrd (veja o artigo [mkinitcpio](/index.php/Mkinitcpio "M
 
 Para activar a *transição suave* (se a mesma for suportada) tem de:
 
-1.  Desactivar o seu [Display manager](/index.php/Display_manager "Display manager"), por ex. `systemctl disable gdm.service`
+1.  Desativar o seu [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), por ex. `systemctl disable gdm.service`
 2.  Activar o respectivo serviço plymouth-DM (GDM, LXDM, SLiM, LightDM, SDDM serviços incluidos) por ex. `systemctl enable gdm-plymouth.service`
 
 ### Atraso na apresentação

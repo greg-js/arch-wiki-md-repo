@@ -20,7 +20,7 @@ Artigos relacionados
 
 Essa seção é sobre [#archlinux](ircs://chat.freenode.net/archlinux), o canal [IRC](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat") principal do Arch Linux, e [#archlinux-offtopic](ircs://chat.freenode.net/archlinux-offtopic), o canal social principal do Arch Linux, ambos disponíveis na rede [Freenode](https://freenode.net/).
 
-O tópico central de **#archlinux** é suporte e discussão geral sobre o Arch Linux. Para uma lista de regras, veja o [Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta") e [Código de conduta#IRC](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta"). Para uma lista de abreviações comumente usadas, veja [Terminologia do Arch](/index.php/Terminologia_do_Arch "Terminologia do Arch") e [Jargão do IRC](http://leonardo.spidernet.net/Copernicus/831/mirc/tips5/jarg.html).
+O tópico central de **#archlinux** é suporte e discussão geral sobre o Arch Linux. Para uma lista de regras, veja o [Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta") e [Código de conduta#IRC](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta"). Para uma lista de abreviações comumente usadas, veja [Terminologia do Arch](/index.php/Terminologia_do_Arch "Terminologia do Arch") e [Jargão do IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 
 **Nota:** Por causa de abuso de vários gateways e clientes web podem ser banidos por alguns tempo. Se você experimentar problema use um cliente IRC *"adequado"* ou peça a um dos operadores uma exceção de banimento (`+e`).
 

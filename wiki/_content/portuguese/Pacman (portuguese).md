@@ -581,7 +581,7 @@ Além da seção especial [[options]](#Op.C3.A7.C3.B5es_gerais), cada outra `[se
 
 Repositórios são distinguidos entre [oficial](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") e [não oficiais](/index.php/Unofficial_user_repositories "Unofficial user repositories"). A ordem de repositórios no arquivo de configuração importa; repositórios listados primeiro terão precedências sobre os listados posteriormente quando pacotes nos dois repositórios tiverem nomes idênticos, independentemente do número da versão. Para usar um repositório após adicioná-lo, você precisará [atualizar](#Atualizando_pacotes) todo o sistema primeiro.
 
-Cada seção de repositório permite definir a lista de seus espelhos diretamente ou em um arquivo externo por meio da diretiva `Include`: por exemplo, os espelhos para os repositórios oficiais são incluídos no `/etc/pacman.d/mirrorlist`. Veja o artigo [Mirrors](/index.php/Mirrors "Mirrors") para configuração de espelho.
+Cada seção de repositório permite definir a lista de seus espelhos diretamente ou em um arquivo externo por meio da diretiva `Include`: por exemplo, os espelhos para os repositórios oficiais são incluídos no `/etc/pacman.d/mirrorlist`. Veja o artigo [Espelhos](/index.php/Espelhos "Espelhos") para configuração de espelho.
 
 #### Segurança de pacote
 
@@ -770,7 +770,7 @@ Houve alguns relatos a cerca de problemas de rede que impedem o *pacman* de atua
 
 ### Falha ao obter arquivo 'core.db' do espelho
 
-Se você receber essa mensagem de erro com os [espelhos](/index.php/Mirrors "Mirrors") (*mirrors*) corretos, tente configurar um [servidor de nomes](/index.php/Resolv.conf "Resolv.conf") diferente.
+Se você receber essa mensagem de erro com os [espelhos](/index.php/Espelhos "Espelhos") (*mirrors*) corretos, tente configurar um [servidor de nomes](/index.php/Resolv.conf "Resolv.conf") diferente.
 
 ## Entendendo
 

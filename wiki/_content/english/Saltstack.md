@@ -103,7 +103,7 @@ The **salt** command is compromised of command options, target specification, th
 
 The ***** is the target, which specifies all minions, and **test.ping** tells the minions to run the **test.ping** function. This **salt** command will tell all of the minions to execute the **test.ping** in parallel and return the result.
 
-for more commands see documentation or run:
+For more commands see documentation or run:
 
 ```
 # salt '*' sys.doc

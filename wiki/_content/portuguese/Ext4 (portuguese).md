@@ -28,8 +28,7 @@ De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
     *   [4.5 Desabilitando journaling](#Desabilitando_journaling)
 *   [5 Habilitando somas de verificação de metadados](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados)
     *   [5.1 Novo sistema de arquivos](#Novo_sistema_de_arquivos)
-    *   [5.2 Sistema de arquivos existente](#Sistema_de_arquivos_existente)
-    *   [5.3 Impacto na performance](#Impacto_na_performance)
+    *   [5.2 Converter sistema de arquivos existentes](#Converter_sistema_de_arquivos_existentes)
 *   [6 Veja também](#Veja_tamb.C3.A9m)
 
 ## Criar um novo sistema de arquivos ext4
@@ -41,7 +40,10 @@ Para formatar uma partição, faça:
 
 ```
 
-**Dica:** Veja [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) para mais opções; edite `/etc/mke2fs.conf` para ver/configurar as opções padrões.
+**Dica:**
+
+*   Veja [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) para mais opções; edite `/etc/mke2fs.conf` para ver/configurar as opções padrões.
+*   Se houver suporte, você pode querer habilitar [metadados de somas de verificação](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados) (também conhecidos como *checksums*)
 
 ### Proporção de bytes por inode
 
@@ -315,72 +317,58 @@ Desabilitar o journal do *ext4* pode ser feito com o seguinte comando em um disc
 
 ## Habilitando somas de verificação de metadados
 
-Em ambos os casos de permitir somas de verificação (*checksums*) de metadados para sistemas de arquivos novos e existentes, você precisará carregar alguns módulos de kernel.
+Se o seu CPU tem suporte a SSE 4.2, verifique se o módulo do kernel `crc32c_intel` está carregado para habilitar o algoritmo CRC32C acelerado por hardware [[7]](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking). Caso contrário, você precisará carregar o módulo `crc32c_generic`.
 
-Se o seu CPU tem suporte a SSE 4.2, verifique se o módulo do kernel `crc32c_intel` está carregado para habilitar o algoritmo CRC32C acelerado por hardware. Caso contrário, você precisará carregar o módulo `crc32c_generic`.
+Para ler mais sobre metadados de somas de verificação, veja o [wiki do ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
 
-Depois disso, você está pronto para ativar o suporte a somas de verificação de metadados conforme descrito nas duas seções a seguir. Em ambos os casos, o sistema de arquivos não deve ser montado.
+**Nota:**
 
-Mais sobre somas de verificação de metadados pode ser lido no [wiki do ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
-
-### Novo sistema de arquivos
-
-Para habilitar o suporte a somas de verificação de metadados ext4 em um novo sistema de arquivos, certifique-se de ter `e2fsprogs 1.43` ou mais recente e execute:
-
-```
-# mkfs.ext4 -O metadata_csum */dev/caminho/para/disco*
-
-```
-
-A opção `64bit` está habilitada por padrão.
-
-O sistema de arquivos pode então ser montado como de costume.
-
-### Sistema de arquivos existente
-
-Para habilitar o suporte em um sistema de arquivos ext4 existente, faça o seguinte.
-
-Isso precisa ser feito com a partição desmontada, então se você quiser converter a raiz, você precisará executar uma distro Live em um pendrive ou outro tipo de mídia Live.
-
-Primeiro, a partição precisa ser verificada e otimizada usando:
-
-```
-# e2fsck -Df */dev/caminho/para/disco*
-
-```
-
-Então, o sistema de arquivos precisa ser convertido para 64bit:
-
-```
-# resize2fs -b */dev/caminho/para/disco*
-
-```
-
-Finalmente, somas de verificação podem ser adicionadas
-
-```
-# tune2fs -O metadata_csum */dev/caminho/para/disco*
-
-```
-
-O sistema de arquivos pode então ser montado como de costume.
-
-Você pode verificar se os recursos foram habilitados com sucesso executando:
+*   Em ambos os casos, o sistema de arquivos não deve ser montado.
+*   Há suporte a somas de verificação de metadados no [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) 1.43 e posterior.
+*   Use `dump2fs` para verificar se os recursos foram habilitados com sucesso:
 
 ```
 # dumpe2fs -h */dev/caminho/para/disco*
 
 ```
 
-### Impacto na performance
+### Novo sistema de arquivos
 
-Tenha em mente que o módulo Intel executa consistentemente 10 vezes mais rápido que o genérico, atingindo 20x mais rápido, como pode ser visto [neste *benchmark*](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking).
+Para habilitar o suporte a somas de verificação de metadados ext4 ao criar um novo sistema de arquivos.
+
+```
+# mkfs.ext4 -O metadata_csum */dev/caminho/para/disco*
+
+```
+
+### Converter sistema de arquivos existentes
+
+Primeiro, a partição precisa ser verificada e otimizada usando `e2fsck`:
+
+```
+# e2fsck -Df */dev/caminho/para/disco*
+
+```
+
+Converta o sistema de arquivos para 64bit:
+
+```
+# resize2fs -b */dev/caminho/para/disco*
+
+```
+
+Finalmente, habilite suporte a somas de verificação:
+
+```
+# tune2fs -O metadata_csum */dev/caminho/para/disco*
+
+```
 
 ## Veja também
 
 *   [Wiki oficial do Ext4](https://ext4.wiki.kernel.org/)
 *   [Layout de disco com Ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) descrito no seu wiki
 *   [Criptografia no Ext4](http://lwn.net/Articles/639427/) - artigo do LWN
-*   Commits do kernel para criptografia no ext4 [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   Commits do kernel para criptografia no ext4 [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
 *   [Changelog do e2fsprogs](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
 *   [Somas de verificação de metadados do Ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

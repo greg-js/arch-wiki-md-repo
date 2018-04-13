@@ -181,7 +181,7 @@ vboxvideo
 adicione a seguinte linha para o topo de `~/.xinitrc` acima de quaisquer opções `exec`. (crie um novo arquivo se este não existir):
 
  `~/.xinitrc`  `/usr/bin/VBoxClient-all` 
-**Nota:** Se você está criando um novo arquivo `~/.xinitrc` você *deve* também incluir um [Gerenciador de Janelas (Documentação em Inglês)](/index.php/Window_manager "Window manager") ou [Ambiente de Trabalho (Documentação em Inglês)](/index.php/Desktop_environment "Desktop environment").
+**Nota:** Se você está criando um novo arquivo `~/.xinitrc` você *deve* também incluir um [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") ou [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop").
 
 #### Iniciando serviços compartilhados
 

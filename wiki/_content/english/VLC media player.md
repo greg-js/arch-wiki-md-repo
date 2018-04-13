@@ -152,7 +152,12 @@ WantedBy=multi-user.target
 
 ### Chromecast support
 
-Starting with 3.0 release (*Vetinari* branch), VLC can stream to chromecast devices on the same wireless network. Install the [libmicrodns](https://www.archlinux.org/packages/?name=libmicrodns) package and in the VLC GUI, choose the chromecast device (instead of *<Local>*) from *Playback > Renderer*.
+Starting with 3.0 release (*Vetinari* branch), VLC can stream to chromecast devices on the same wireless network.
+
+Install packages:
+
+*   [libmicrodns](https://www.archlinux.org/packages/?name=libmicrodns) - VLC can find the chromecast device and it shows up in *Playback > Renderer* menu
+*   [protobuf](https://www.archlinux.org/packages/?name=protobuf) - enables streaming to the selected device in *Playback > Renderer* menu
 
 ## Troubleshooting
 

@@ -16,7 +16,7 @@ Esse documento é um índice anotado de artigos populares e informações import
 *   [2 Gerenciamento de pacote](#Gerenciamento_de_pacote)
     *   [2.1 pacman](#pacman)
     *   [2.2 Repositórios](#Reposit.C3.B3rios)
-    *   [2.3 Mirrors](#Mirrors)
+    *   [2.3 Espelhos](#Espelhos)
     *   [2.4 Arch Build System](#Arch_Build_System)
     *   [2.5 Arch User Repository](#Arch_User_Repository)
 *   [3 Inicialização](#Inicializa.C3.A7.C3.A3o)
@@ -116,9 +116,9 @@ Se você planeja usar aplicativos 32 bits, você vai querer habilitar o reposit�
 
 Considere instalar o serviço [pkgstats](/index.php/Pkgstats_(Portugu%C3%AAs) "Pkgstats (Português)").
 
-### Mirrors
+### Espelhos
 
-Por vezes chamados de "espelhos". Visite [Mirrors](/index.php/Mirrors "Mirrors") para etapas para se beneficiar do uso de mirrors mais rápidos e mais atualizados dos repositórios oficiais. Como explicado no artigo, um conselho particularmente bom é verificar periodicamente a página [Mirror Status](https://www.archlinux.org/mirrors/status/) por uma lista de mirrors que foram sincronizados recentemente.
+Por vezes chamados de "espelhos" *(mirrors)*. Visite [Espelhos](/index.php/Espelhos "Espelhos") para etapas para se beneficiar do uso de espelhos mais rápidos e mais atualizados dos repositórios oficiais. Como explicado no artigo, um conselho particularmente bom é verificar periodicamente a página [Mirror Status](https://www.archlinux.org/mirrors/status/) por uma lista de espelhos que foram sincronizados recentemente.
 
 ### Arch Build System
 
@@ -168,7 +168,7 @@ O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de víd
 
 ### Ambientes gráficos
 
-Apesar do Xorg fornecer um framework básico para compilação de um ambiente gráfico, componentes adicionais podem ser considerados necessários para uma experiência de usuário completa. [Ambientes gráficos](/index.php/Desktop_environment "Desktop environment") como o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE") e [Xfce](/index.php/Xfce "Xfce") colecionam uma gama de *clientes X*, tal como um gerenciador de janelas, painel, gerenciador de arquivos, emulador de terminal, editor de texto, ícones e outros utilitários. Usuários com menos experiência podem preferir instalar um ambiente gráfico para ter um ambiente mais familiar. Veja [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") para recursos adicionais.
+Apesar do Xorg fornecer um framework básico para compilação de um ambiente gráfico, componentes adicionais podem ser considerados necessários para uma experiência de usuário completa. [Ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") como o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE") e [Xfce](/index.php/Xfce "Xfce") colecionam uma gama de *clientes X*, tal como um gerenciador de janelas, painel, gerenciador de arquivos, emulador de terminal, editor de texto, ícones e outros utilitários. Usuários com menos experiência podem preferir instalar um ambiente gráfico para ter um ambiente mais familiar. Veja [Category:Desktop environments (Português)](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)") para recursos adicionais.
 
 ### Gerenciadores de janela
 
@@ -290,7 +290,7 @@ Essa seção está relacionada a [daemons](/index.php/Daemons_(Portugu%C3%AAs) "
 
 A maioria das distribuições possuem um comando `locate` disponível para possibilitar uma pesquisa rápida por arquivos. Para obter essa funcionalidade no Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) é a instalação recomendável. Após tê-lo instalado, você deve executar `updatedb` para indexar os sistemas de arquivos.
 
-[Mecanismos de pesquisa](/index.php/List_of_applications/Utilities#Desktop_search_engines "List of applications/Utilities") fornecem um serviço similar, ao mesmo tempo mais integrado ao [ambiente gráfico](/index.php/Desktop_environments "Desktop environments").
+[Mecanismos de pesquisa](/index.php/List_of_applications/Utilities#Desktop_search_engines "List of applications/Utilities") fornecem um serviço similar, ao mesmo tempo mais integrado ao [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop").
 
 ### Entrega local de correio
 

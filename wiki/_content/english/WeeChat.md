@@ -42,7 +42,7 @@ Related articles
 
 ## Running WeeChat
 
-WeeChat is going to have multiple interfaces at some point, run **weechat-[interface]** to start WeeChat.
+Since WeeChat shall have multiple interfaces at some point, run **weechat-[interface]** to start WeeChat as desired.
 
 The current implementation only comes with `weechat-ncurses`. Therefore, the following commands are interchangeable until other interfaces are implemented:
 
