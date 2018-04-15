@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Mirroring](/index.php/Mirroring "Mirroring")
+*   [pacman (Italiano)](/index.php/Pacman_(Italiano) "Pacman (Italiano)")
+*   [Reflector](/index.php/Reflector "Reflector")
+
 Questa pagina è una guida per la selezione e la configurazione dei "mirrors", e un elenco degli attuali mirrors disponibili.
 
 ## Contents

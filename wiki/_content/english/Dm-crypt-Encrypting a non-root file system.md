@@ -96,7 +96,7 @@ There are two methods for using a loop device as an encrypted container, one usi
 
 ### Without losetup
 
-Using losetup directly can be avoided completely by doing the following:
+Using losetup directly can be avoided completely by doing the following [[1]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile):
 
 ```
 # dd if=/dev/urandom of=key.img bs=20M count=1
@@ -107,9 +107,9 @@ Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/ind
 
 The instructions for opening the device and making the [file system](/index.php/File_system "File system") are the same as [#Partition](#Partition).
 
-Having too small of a file will get you a `Requested offset is beyond real size of device /dev/loop0` error, but as a rough reference creating a 4 MiB file will encrypt it successfully. [[1]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile)
+Having too small of a file will get you a `Requested offset is beyond real size of device /dev/loop0` error, but as a rough reference creating a 4 MiB file will encrypt it successfully. [[2]](http://archive.is/VOh2p)
 
-If creating a larger file, `dd` from `/dev/urandom` will stop after 32 MiB, requiring the `iflag=fullblock` option to complete the full write. [[2]](https://unix.stackexchange.com/questions/178949/why-does-dd-from-dev-urandom-stops-early)
+If creating a larger file, `dd` from `/dev/urandom` will stop after 32 MiB, requiring the `iflag=fullblock` option to complete the full write. [[3]](https://unix.stackexchange.com/questions/178949/why-does-dd-from-dev-urandom-stops-early)
 
 Manual mounting and unmounting procedure is equivalent to [#Manual mounting and unmounting](#Manual_mounting_and_unmounting).
 

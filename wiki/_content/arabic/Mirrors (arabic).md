@@ -1,3 +1,9 @@
+Related articles
+
+*   [Mirroring](/index.php/Mirroring "Mirroring")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [reflector](/index.php/Reflector "Reflector")
+
 هذه الصفحة دليل لاختيار وإعداد المرايا Mirrors (المرآة mirror هي نفسها المُخدم server، لكن يستخدم هذا الاسم مرآة mirror مع بعض المخدمات من بينها مخازن الحزم Package Repositories) ،بالإضافة إلى قائمة بالمرايا المتوفرة.
 
 ## Contents

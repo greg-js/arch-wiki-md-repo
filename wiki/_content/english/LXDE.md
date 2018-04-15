@@ -98,9 +98,9 @@ Applications can be automatically started in several ways.
 
 #### Desktop files
 
-**Tip:** `.desktop` files can be manipulated with the [lxsession-edit](https://aur.archlinux.org/packages/lxsession-edit/) package.
+LXDE implements [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
-See [Desktop entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop entries").
+**Tip:** `.desktop` files can be manipulated with the [lxsession-edit](https://aur.archlinux.org/packages/lxsession-edit/) package.
 
 #### Lxsession
 

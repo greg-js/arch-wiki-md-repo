@@ -33,8 +33,8 @@ A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that 
         *   [4.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
         *   [4.2.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
         *   [4.2.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-        *   [4.2.5 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
-        *   [4.2.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
+        *   [4.2.5 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry)
+        *   [4.2.6 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS.2FMBR_mode)
     *   [4.3 LVM](#LVM)
     *   [4.4 RAID](#RAID)
     *   [4.5 Multiple entries](#Multiple_entries)
@@ -85,7 +85,12 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](htt
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
-Create a mebibyte partition (`+1M` with [fdisk](/index.php/Fdisk "Fdisk") or [gdisk](/index.php/Gdisk "Gdisk")) on the disk with no file system and with partition type BIOS boot. Select partition type `BIOS boot` for *fdisk*, `ef02` for *gdisk*. For *parted* set/activate the flag `bios_grub` on the partition. This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
+Create a mebibyte partition (`+1M` with *fdisk* or *gdisk*) on the disk with no file system and with partition type GUID `21686148-6449-6E6F-744E-656564454649`.
+
+*   Select partition type `BIOS boot` for [fdisk](/index.php/Fdisk "Fdisk"), `ef02` for [gdisk](/index.php/Gdisk "Gdisk").
+*   For [parted](/index.php/Parted "Parted") set/activate the flag `bios_grub` on the partition.
+
+This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
 
 The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded, though some disk utilities will display a warning about it. In *fdisk* or *gdisk* create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 
@@ -133,7 +138,7 @@ To find out the disk partition scheme and the system partition, use `parted` as 
 The command returns:
 
 *   The disk partition layout: if the disk is GPT, it indicates `Partition Table: gpt`.
-*   The list of partitions on the disk: Look for the ESP in the list, it is a small (512 MiB or less) partition with a *vfat* or *fat32* file system and with the flags *boot* and possibly *esp* enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+*   The list of partitions on the disk: Look for the ESP in the list, it is a small (about 550 MiB) partition with a *vfat* or *fat32* file system and with the flag *esp* enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
 Once it is found, **take note of the ESP partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") article.
 
@@ -203,13 +208,13 @@ Remember to always [#Generate the main configuration file](#Generate_the_main_co
 
 To pass custom additional arguments to the Linux image, you can set the `GRUB_CMDLINE_LINUX` + `GRUB_CMDLINE_LINUX_DEFAULT` variables in `/etc/default/grub`. The two are appended to each other and passed to kernel when generating regular boot entries. For the *recovery* boot entry, only `GRUB_CMDLINE_LINUX` is used in the generation.
 
-It is not necessary to use both, but can be useful. For example, you could use `GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` where `sda**X**` is your swap partition to enable resume after hibernation. This would generate a recovery boot entry without the resume and without *quiet* suppressing kernel messages during a boot from that menu entry. Though, the other (regular) menu entries would have them as options.
+It is not necessary to use both, but can be useful. For example, you could use `GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` where `sda**X**` is your swap partition to enable resume after hibernation. This would generate a recovery boot entry without the resume and without `quiet` suppressing kernel messages during a boot from that menu entry. Though, the other (regular) menu entries would have them as options.
 
 By default *grub-mkconfig* determines the [UUID](/index.php/UUID "UUID") of the root filesystem for the configuration. To disable this, uncomment `GRUB_DISABLE_LINUX_UUID=true`.
 
 For generating the GRUB recovery entry you have to ensure that `GRUB_DISABLE_RECOVERY` is not set to `true` in `/etc/default/grub`.
 
-You can also use `GRUB_CMDLINE_LINUX="resume=UUID=uuid-of-swap-partition"`
+You can also use `GRUB_CMDLINE_LINUX="resume=UUID=*uuid-of-swap-partition*"`
 
 See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
 
@@ -224,6 +229,7 @@ menuentry "System shutdown" {
 	echo "System shutting down..."
 	halt
 }
+
 ```
 
 #### "Restart" menu entry
@@ -233,6 +239,7 @@ menuentry "System restart" {
 	echo "System rebooting..."
 	reboot
 }
+
 ```
 
 #### "Firmware setup" menu entry (UEFI only)
@@ -241,11 +248,12 @@ menuentry "System restart" {
 menuentry "Firmware setup" {
 	fwsetup
 }
+
 ```
 
 #### GNU/Linux menu entry
 
-Assuming that the other distro is on partition `sda2`:
+Assuming that the other distribution is on partition `sda2`:
 
 ```
 menuentry "Other Linux" {
@@ -270,7 +278,7 @@ menuentry "Other Linux" {
 }
 ```
 
-#### Windows installed in UEFI-GPT Mode menu entry
+#### Windows installed in UEFI/GPT Mode menu entry
 
 This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI partition and running the bootloader from it.
 
@@ -278,7 +286,7 @@ This mode determines where the Windows bootloader resides and chain-loads it aft
 
 ```
 if [ "${grub_platform}" == "efi" ]; then
-	menuentry "Microsoft Windows Vista/7/8/8.1 UEFI-GPT" {
+	menuentry "Microsoft Windows Vista/7/8/8.1 UEFI/GPT" {
 		insmod part_gpt
 		insmod fat
 		insmod search_fs_uuid
@@ -303,28 +311,28 @@ The `$hints_string` command will determine the location of the EFI partition, in
 
 These two commands assume the ESP Windows uses is mounted at `*esp*`. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
 
-#### Windows installed in BIOS-MBR mode
+#### Windows installed in BIOS/MBR mode
 
-**Note:** GRUB supports booting `bootmgr` directly and [chainloading](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading) of partition boot sector is no longer required to boot Windows in a BIOS-MBR setup.
+**Note:** GRUB supports booting `bootmgr` directly and [chainloading](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading) of partition boot sector is no longer required to boot Windows in a BIOS/MBR setup.
 
 **Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually C:). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
 
-Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of hd0,msdos1\. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS-MBR mode:
+Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of hd0,msdos1\. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS/MBR mode:
 
 **Note:** These menuentries will work only in Legacy BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
-*In both examples* 69B235F6749E84CE *is the filesystem UUID which can be found with command* lsblk --fs*.*
+In both examples `*XXXXXXXXXXXXXXXX*` is the filesystem UUID which can be found with command `lsblk --fs`.
 
 For Windows Vista/7/8/8.1/10:
 
 ```
 if [ "${grub_platform}" == "pc" ]; then
-  menuentry "Microsoft Windows Vista/7/8/8.1/10 BIOS-MBR" {
+  menuentry "Microsoft Windows Vista/7/8/8.1/10 BIOS/MBR" {
     insmod part_msdos
     insmod ntfs
     insmod search_fs_uuid
     insmod ntldr     
-    search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 69B235F6749E84CE
+    search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
     ntldr /bootmgr
   }
 fi
@@ -340,25 +348,23 @@ if [ "${grub_platform}" == "pc" ]; then
     insmod ntfs
     insmod search_fs_uuid
     insmod ntldr     
-    search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 69B235F6749E84CE
+    search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
     ntldr /ntldr
   }
 fi
 
 ```
 
-**Note:** In some cases, GRUB may be installed without a clean Windows 8, in which case you cannot boot Windows without having an error with `\boot\bcd` (error code `0xc000000f`). You can fix it by going to Windows Recovery Console (cmd from install disk) and executing:
+**Note:** In some cases, GRUB may be installed without a clean Windows 8, in which case you cannot boot Windows without having an error with `\boot\bcd` (error code `0xc000000f`). You can fix it by going to Windows Recovery Console (`cmd.exe` from install disk) and executing:
 ```
-x:\> "bootrec.exe /fixboot" 
-x:\> "bootrec.exe /RebuildBcd".
+X:\> bootrec.exe /fixboot
+X:\> bootrec.exe /RebuildBcd
 
 ```
 
-Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can use Boot Repair function in the Troubleshooting menu - it will not wipe out GRUB but will fix most errors.
+Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can use Boot Repair function in the Troubleshooting menu - it will not wipe out GRUB but will fix most errors. Also you would better keep plugged in both the target hard drive and your bootable device **ONLY**. Windows usually fails to repair boot information if any other devices are connected.
 
-Also you would better keep plugged in both the target hard drive and your bootable device **ONLY**. Windows usually fails to repair boot information if any other devices are connected.
-
-`/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/nn_custom`. Where `nn` defines the precendence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
+`/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/*nn*_custom`. Where `*nn*` defines the precedence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
 
 **Note:** `nn` should be greater than 06 to ensure necessary scripts are executed first.
 
@@ -370,7 +376,11 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot` or `/` root partition, m
 
 ### RAID
 
-GRUB provides convenient handling of RAID volumes. You need to add `insmod mdraid09` or `mdraid1x` which allows you to address the volume natively. For example, `/dev/md0` becomes:
+GRUB provides convenient handling of RAID volumes. You need to load GRUB modules `mdraid09` or `mdraid1x` to allow you to address the volume natively:
+
+ `/etc/default/grub`  `GRUB_PRELOAD_MODULES="mdraid09 mdraid1x"` 
+
+For example, `/dev/md0` becomes:
 
 ```
 set root=(md/0)
@@ -384,7 +394,7 @@ set root=(md/0,1)
 
 ```
 
-To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on devices with GPT ef02/'BIOS boot partition', simply run *grub-install* on both of the drives, such as:
+To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on BIOS systems, simply run *grub-install* on both of the drives, such as:
 
 ```
 # grub-install --debug /dev/sda
@@ -408,13 +418,13 @@ To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the
 
 If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
 
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"` 
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=UUID=*device-UUID*:cryptroot"` 
 
-If using the `sd-encrypt` hook, add `rd.luks.uuid`:
+If using the `sd-encrypt` hook, add `rd.luks.name`:
 
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="rd.luks.uuid=*UUID*"` 
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="rd.luks.name=*device-UUID*=cryptroot"` 
 
-where *UUID* is the UUID of the LUKS-encrypted device.
+where *device-UUID* is the UUID of the LUKS-encrypted device.
 
 Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) when done.
 
@@ -550,7 +560,7 @@ boot
 
 ```
 
-*insmod ntfs* used for loading the ntfs file system module for loading Windows. (hd0,gpt4) or /dev/sda4 is my EFI System Partition (ESP). The entry in the *chainloader* line specifies the path of the .efi file to be chain-loaded.
+`insmod ntfs` is used for loading the ntfs file system module for loading Windows. (hd0,gpt4) or /dev/sda4 is my EFI System Partition (ESP). The entry in the *chainloader* line specifies the path of the *.efi* file to be chain-loaded.
 
 #### Normal loading
 
@@ -688,14 +698,14 @@ Booting however
 
 Then you need to initialize GRUB graphical terminal (`gfxterm`) with proper video mode (`gfxmode`) in GRUB. This video mode is passed by GRUB to the linux kernel via 'gfxpayload'. In case of UEFI systems, if the GRUB video mode is not initialized, no kernel boot messages will be shown in the terminal (atleast until KMS kicks in).
 
-Copy `/usr/share/grub/unicode.pf2` to ${GRUB_PREFIX_DIR} (`/boot/grub/` in case of BIOS and UEFI systems). If GRUB UEFI was installed with `--boot-directory=*esp*/EFI` set, then the directory is `*esp*/EFI/grub/`:
+Copy `/usr/share/grub/unicode.pf2` to `${GRUB_PREFIX_DIR`} (`/boot/grub/` in case of BIOS and UEFI systems). If GRUB UEFI was installed with `--boot-directory=*esp*/EFI` set, then the directory is `*esp*/EFI/grub/`:
 
 ```
 # cp /usr/share/grub/unicode.pf2 ${GRUB_PREFIX_DIR}
 
 ```
 
-If `/usr/share/grub/unicode.pf2` does not exist, install [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont), create the `unifont.pf2` file and then copy it to `${GRUB_PREFIX_DIR}`:
+If `/usr/share/grub/unicode.pf2` does not exist, install [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont), create the `unifont.pf2` file and then copy it to `${GRUB_PREFIX_DIR`}:
 
 ```
 # grub-mkfont -o unicode.pf2 /usr/share/fonts/misc/unifont.bdf
@@ -737,7 +747,7 @@ fi
 
 ```
 
-As you can see for gfxterm (graphical terminal) to function properly, `unicode.pf2` font file should exist in `${GRUB_PREFIX_DIR}`.
+As you can see for gfxterm (graphical terminal) to function properly, `unicode.pf2` font file should exist in `${GRUB_PREFIX_DIR`}.
 
 ### msdos-style error message
 

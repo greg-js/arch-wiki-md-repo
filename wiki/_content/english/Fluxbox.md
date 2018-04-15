@@ -21,7 +21,7 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
         *   [3.6.3 Nitrogen](#Nitrogen)
     *   [3.7 Theming](#Theming)
     *   [3.8 The Slit](#The_Slit)
-    *   [3.9 Autostart programs](#Autostart_programs)
+    *   [3.9 Autostart](#Autostart)
     *   [3.10 Other menus](#Other_menus)
     *   [3.11 Desktop effects](#Desktop_effects)
     *   [3.12 Notifications](#Notifications)
@@ -269,7 +269,7 @@ If you use mmaker -f FluxBox to create your menus, you will not see the styles m
 
 Fluxbox, WindowMaker and a couple of other lightweight window managers have a "Slit". This is a dock for any application that can be 'dockable'. A docked application is anchored and appears on every workspace. It cannot be moved freely and is not influenced by any manipulation to windows. It is basically a small widget. Dock apps that are useful in such a situation tend to be clocks, system monitors, weather, etc. Visit [dockapps.net](http://www.dockapps.net/)
 
-### Autostart programs
+### Autostart
 
 Fluxbox provides functionality to autostart applications on its own. The `~/.fluxbox/startup` file is a script for autostarting applications as well as starting Fluxbox itself. The `#` symbol denotes a comment.
 

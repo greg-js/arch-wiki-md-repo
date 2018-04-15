@@ -23,7 +23,7 @@ Related articles
         *   [3.2.3 One wallpaper across multihead](#One_wallpaper_across_multihead)
         *   [3.2.4 Kill window shortcut](#Kill_window_shortcut)
     *   [3.3 Session](#Session)
-        *   [3.3.1 Startup applications](#Startup_applications)
+        *   [3.3.1 Autostart](#Autostart)
         *   [3.3.2 Lock the screen](#Lock_the_screen)
         *   [3.3.3 Suspend](#Suspend)
         *   [3.3.4 Disable saved sessions](#Disable_saved_sessions)
@@ -65,6 +65,7 @@ Related articles
     *   [5.10 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
     *   [5.11 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
     *   [5.12 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
+    *   [5.13 Cursor theme doesn't change on login](#Cursor_theme_doesn.27t_change_on_login)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -212,7 +213,7 @@ To add the shortcut, use *Settings > Keyboard* or an application like [xbindkeys
 
 ### Session
 
-#### Startup applications
+#### Autostart
 
 To launch custom applications when Xfce starts up, click the *Applications Menu > Settings > Settings Manager* and then choose the *Session and Startup* option and click the tab *Application Autostart*. You will see a list of programs that get launched on startup. To add an entry, click the *Add* button and fill out the form, specifying the path to an executable you want to run.
 
@@ -687,6 +688,17 @@ A possible workaround is to create an executable script called *gdmflexiserver* 
 ### Macros in .Xresources not working
 
 Xfce loads `$HOME/.Xresources` file using `xrdb`, but with `-nocpp` option to skip preprocessing. For macros to work properly, copy `/etc/xdg/xfce4/xinitrc` to `$HOME/.config/xfce4` directory and remove `-nocpp` option to `xrdb` from the resulting file. See [this thread](https://bbs.archlinux.org/profile.php?id=104121).
+
+### Cursor theme doesn't change on login
+
+Sometimes when logging in your non-default cursor theme will fail to change. This can be solved by changing the default cursor theme by editing the following file:
+
+ `/usr/share/icons/default/index.theme` 
+```
+[Icon Theme]
+Inherits=<desired-cursor-theme-name>
+
+```
 
 ## See also
 

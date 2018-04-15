@@ -55,7 +55,7 @@ A number of tweaks can be accessed via Chrome URLs. See **chrome://chrome-urls**
 *   **chrome://sandbox** - indicate sandbox status.
 *   **chrome://version** - display version and switches used to invoke the active `/usr/bin/chromium`.
 
-An automatically updated, complete listing of Chromium switches is available [here](http://peter.sh/experiments/chromium-command-line-switches/).
+An automatically updated, complete listing of Chromium switches (command line parameters) is available [here](http://peter.sh/experiments/chromium-command-line-switches/).
 
 ### Chromium task manager
 
@@ -154,7 +154,7 @@ $ chromium --single-process
 
 **Warning:** The single-process model is discouraged because it is unsafe and may contain bugs not present in other models.[[2]](https://www.chromium.org/developers/design-documents/process-models#TOC-Single-process)
 
-In addition, you can suspend or store inactive Tabs with extensions such as [Tab Suspender](https://chrome.google.com/webstore/detail/tab-suspender/fiabciakcmgepblmdkmemdbbkilneeeh?hl=en) and [OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=en).
+In addition, you can suspend or store inactive Tabs with extensions such as [Tab Suspender](https://chrome.google.com/webstore/detail/tab-suspender/fiabciakcmgepblmdkmemdbbkilneeeh?hl=en), [The Great Suspender(GPLv2)](https://github.com/deanoemcke/thegreatsuspender/) and [OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=en).
 
 ### User Agent
 

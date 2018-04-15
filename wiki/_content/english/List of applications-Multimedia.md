@@ -504,6 +504,10 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[http://deadbeef.sourceforge.net/](http://deadbeef.sourceforge.net/) || [deadbeef](https://www.archlinux.org/packages/?name=deadbeef)
 
+*   **Elisa** — A simple music player aiming to provide a nice experience for its users.
+
+	[https://community.kde.org/Elisa](https://community.kde.org/Elisa) || [elsia](https://www.archlinux.org/packages/?name=elsia)
+
 *   **[Exaile](/index.php/Exaile "Exaile")** — GTK+ clone of Amarok.
 
 	[http://www.exaile.org/](http://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)

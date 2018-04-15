@@ -1,23 +1,8 @@
 This article covers details pertaining to installing and configuring your Arch on Lenovo Thinkpad T450 laptop.
 
-## Contents
-
-*   [1 Installation](#Installation)
-*   [2 Hardware](#Hardware)
-    *   [2.1 Sound](#Sound)
-    *   [2.2 Rebinding Forward and Back Keys](#Rebinding_Forward_and_Back_Keys)
-
 ## Installation
 
-This laptop supports [UEFI](/index.php/UEFI "UEFI") as well as the traditional BIOS.
-
-There are no issues with installing Arch Linux with the latest [Archiso](https://www.archlinux.org/download/).
-
-The rest of the installation process can be followed with the [Installation guide](/index.php/Installation_guide "Installation guide").
-
-## Hardware
-
-All hardware works out of the box, except the following:
+Supports both UEFI and MBR style bios. There are no issues with installing Arch Linux with the latest that is known [Archiso](https://www.archlinux.org/download/). The installation process is the same [Installation guide](/index.php/Installation_guide "Installation guide") except, the sound.
 
 ### Sound
 

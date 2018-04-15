@@ -85,7 +85,7 @@ _sysroot=/usr/lib/${_target}
 This is PKGBUILD for binutils for MinGW. Things worth noticing are:
 
 *   specifying root directory of the cross-environment
-*   usage of `${_pkgname`}, `${_target`} and `${_sysroot`} variables to make the code more readable
+*   usage of `${_pkgname}` , `${_target}` and `${_sysroot}` variables to make the code more readable
 *   removal of the duplicated/conflicting files
 
 ```

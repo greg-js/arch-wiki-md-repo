@@ -43,13 +43,9 @@ If you encounter a problem or desire a new feature, there is a high probability 
 Search thoroughly for existing information, including:
 
 *   [Arch Linux Forums](https://bbs.archlinux.org/): The forums are often the first stop for users looking for help or sharing ideas. While a solution may not yet exist, additional background information and discussion can steer you in the right direction.
-
 *   [Arch Linux Bugtracker](https://bugs.archlinux.org/): Your problem may have already been reported to Arch Linux developers. Duplicate bug reports are unhelpful and promptly closed. Search both **[recently closed bugs](https://bugs.archlinux.org/index.php?string=&project=1&status%5B%5D=closed&closedfrom=-1+week)** as well as open reports. Remember to mark 'search details' and/or 'search comments' under Advanced, the bug title may not contain the text you're searching for.
-
 *   [Google](https://www.google.com) or your favorite search engine: Search using the program's name, version, and a relevant part of the error message, if any.
-
 *   **Upstream** forum, mailing list and bug tracker: If Arch Linux is not responsible for a bug, it should be reported upstream rather than the Arch Linux Bugtracker. Search both recently closed bugs as well as open reports. Bugs may have already been fixed in the program's development version.
-
 *   **Other distribution forums**: The free software community is vast; Archers are not the only users with ideas! Consider searching the [Gentoo Forums](https://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/), and [Ubuntu Forums](https://ubuntuforums.org/), for example.
 
 ### Upstream or Arch?
@@ -65,7 +61,6 @@ Once you have reported a bug upstream or have found other relevant information f
 So what is Arch Linux responsible for?
 
 *   [Arch Linux Projects](https://projects.archlinux.org/): [pacman](/index.php/Pacman "Pacman"), [AUR](/index.php/AUR "AUR"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), Arch Websites. If you have a doubt about if the project belongs to Arch or not, display the package information (`pacman -Qi *package_name*` or using the website) and look at the upstream URL.
-
 *   **Packaging**: Packaging basically consists of fetching the source code from upstream, compiling it with relevant options, making sure that it will be correctly installed on an Arch system, and checking that the main functionality works. Packaging at Arch does not consist of adding new functionality or patches for existing bugs; this is the job of the upstream developer.
 
 If a bug/feature is not under Arch's responsibility, report it upstream. See also [#Reasons for not being a bug](#Reasons_for_not_being_a_bug).
@@ -102,15 +97,10 @@ If a bug/feature is not under Arch's responsibility, report it upstream. See als
 Here is a list of useful information that should be mentioned in your bug report:
 
 *   **Version of the package** being used. **Always specify package version**. Saying "the latest", "todays", or "the package in extra" have absolutely no meaning. Especially if the bug is not about to get fixed right away.
-
 *   Version of the main libraries used by the package (available in the *depends* variable in the PKGBUILD), when they are involved in the problem. If you do not know exactly what information to provide then wait for a bug hunter to ask you for it...
-
 *   Version of the kernel used if you are having hardware related problems.
-
 *   Indicate whether or not **the functionality worked at one time or not**. If so, indicate since when it stopped working.
-
 *   Indicate your **hardware brand** when you are having hardware related problems
-
 *   Add **relevant log information** when any is available. This can be obtained in the following places depending on the problem:
     *   [systemd journal](/index.php/Systemd_journal "Systemd journal"). If using [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` contains logs related to kernel and hardware related issues.
     *   `~/.local/share/xorg/Xorg.0.log` or `/var/log/Xorg.0.log` or `/var/log/Xorg.2.log` or any Xorg like log files if video related problems (nvidia, ati, xorg...)
@@ -127,7 +117,6 @@ This will affect only the current terminal and will stop taking effect when the 
 If you have to paste a lot of text, like the output of dmesg, or a Xorg log, is it preferred to save it as a file on your computer and attach it to your bug report. Attaching a file rather than using a pastebin to present relevant information is preferable in general due to the fact that pastebined content may suffer by expired links or any other potential problems. **Attaching a file guarantees the provided information will always be available**.
 
 *   **Indicate how to reproduce the bug**. This is very important, it will help people test the bug and potential patches on their own computer.
-
 *   **The stack trace**. It is a list of calls made by the program during its execution, and helps in finding part of the program where the bug is located, especially if bug involves the program crashing. You can obtain a stack trace using [gdb](https://www.archlinux.org/packages/?name=gdb) (The GNU Debugger) as explained in [Debug - Getting Traces#Getting the trace](/index.php/Debug_-_Getting_Traces#Getting_the_trace "Debug - Getting Traces").
 
 ## Opening a bug
@@ -143,13 +132,9 @@ You have to create an account on [Arch's bug tracker system](https://bugs.archli
 Once you have determined your feature or bug is related to Arch and not an upstream issue, you will need to file your problem in the correct project. Select the project in the drop down list *to the left of the "Switch" button* in the top left corner of the bug report creation page (*not* to the right of "Category"). There are five projects:
 
 *   **Arch Linux** - for packages in *testing*, *core*, or *extra*. It is also a place for documentation, websites (except AUR), and security issues.
-
-*   **Arch User Repository (AUR)** - for the AUR website code and server issues. This does not include third party apps used to access the AUR or packages in *unsupported*.
-
+*   **AUR web interface** - for the AUR website code and server issues. This does not include third party apps used to access the AUR or packages in *unsupported*.
 *   **Community Packages** - for packages in *community*. It is not a place for packages in *unsupported*.
-
 *   **Pacman** - for [pacman](/index.php/Pacman "Pacman") and the official scripts and tools associated with it. This includes things like makepkg and abs. It does not include community developed packages such as [AUR helpers](/index.php/AUR_helpers "AUR helpers").
-
 *   **Release Engineering** - intended for all release related issues (isos, installer, etc)
 
 There is no place for reporting problems with packages in *unsupported*. The AUR provides a way to add comments to a package in *unsupported*. You should use this to report bugs to the package maintainer.
@@ -219,17 +204,11 @@ Sometimes people report a bug but do not notify when they have solved it on thei
 During its life a bug goes through several states:
 
 *   **Unconfirmed** - This is the default state. You have just reported it and nobody managed to reproduce the problem or confirmed that it is actually a bug.
-
 *   **New** - The bug is confirmed but it has not been assigned to the developer responsible for the related software. It is usually the case when more investigation is needed to determine which software is responsible for the bug.
-
 *   **Assigned** - The bug has been assigned to a developer responsible for the software involved in the bug. It does not mean that the developer will be the one who will fix the bug. It does not even mean that the developer will work on a solution. It just means that the developer will take care of the life cycle of the bug, including reviewing patches if any, releasing a fix and closing the bug when required. There is no point in contacting a developer directly to have a bug fixed more quickly, he/she will certainly not like it...
-
 *   **Researching** - Somebody is looking for a solution. This status is **rarely used at Arch** and it is better this way. The *researching* status could make people believe they do not need to get interested in the bug report. But usually we need more than one person to fix a bug: having several experienced people on a bug helps a lot.
-
 *   **Waiting on Response** and **Requires testing** - The one who reported a bug is asked to provide more information or to try a proposed solution, but he/she did not give a feedback yet. Those status are **rarely used at Arch** and should be used more often. However it is important that you **watch the bug** (see the [#Voting and Watching](#Voting_and_Watching) section) as developers or bug hunters usually ask questions in the comments.
-
 *   **A task closure has been requested** - This is not exactly a status, but you may find some bug reports with such a notification. This indicates that somebody requested a closure for the bug. A reason is added to the request most of the time. It is upon the assignee developer to decide whether he/she will accept the closure or not.
-
 *   **Closed** - Either this is not a valid bug (see [#Reasons for not being a bug](#Reasons_for_not_being_a_bug)) or a solution has been found and released.
 
 Some people (developers, TUs...) are responsible for dispatching the bugs and change their status.

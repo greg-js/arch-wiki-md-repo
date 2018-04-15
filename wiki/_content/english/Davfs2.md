@@ -31,6 +31,8 @@ $ mount.davfs -h
 
 ```
 
+Also see [mount.davfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.davfs.8) for description and options.
+
 ### Using command-line
 
 To mount a WebDAV-resource use `mount`, not `mount.davfs` directly.

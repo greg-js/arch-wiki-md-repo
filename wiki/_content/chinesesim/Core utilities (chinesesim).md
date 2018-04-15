@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Core_Utilities](/index.php/Core_Utilities "Core Utilities") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-10，点击[这里](https://wiki.archlinux.org/index.php?title=Core_Utilities&diff=0&oldid=516600)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Core_Utilities](/index.php/Core_Utilities "Core Utilities") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-15，点击[这里](https://wiki.archlinux.org/index.php?title=Core_Utilities&diff=0&oldid=516773)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -19,31 +19,33 @@
 
 *   [1 基本命令](#.E5.9F.BA.E6.9C.AC.E5.91.BD.E4.BB.A4)
 *   [2 cat](#cat)
-*   [3 dd](#dd)
-*   [4 grep](#grep)
-*   [5 find](#find)
-*   [6 iconv](#iconv)
-    *   [6.1 在原文件上转换](#.E5.9C.A8.E5.8E.9F.E6.96.87.E4.BB.B6.E4.B8.8A.E8.BD.AC.E6.8D.A2)
-*   [7 ip](#ip)
-*   [8 locate](#locate)
-*   [9 less](#less)
-    *   [9.1 用 Vim 代替 less 来分页](#.E7.94.A8_Vim_.E4.BB.A3.E6.9B.BF_less_.E6.9D.A5.E5.88.86.E9.A1.B5)
-*   [10 ls](#ls)
-    *   [10.1 “长格式”输出](#.E2.80.9C.E9.95.BF.E6.A0.BC.E5.BC.8F.E2.80.9D.E8.BE.93.E5.87.BA)
-    *   [10.2 带空格的文件名被引号引起](#.E5.B8.A6.E7.A9.BA.E6.A0.BC.E7.9A.84.E6.96.87.E4.BB.B6.E5.90.8D.E8.A2.AB.E5.BC.95.E5.8F.B7.E5.BC.95.E8.B5.B7)
-*   [11 lsblk](#lsblk)
-*   [12 mkdir](#mkdir)
-*   [13 mv](#mv)
-*   [14 od](#od)
-*   [15 pv](#pv)
-*   [16 rm](#rm)
-*   [17 sed](#sed)
-*   [18 seq](#seq)
-*   [19 ss](#ss)
-*   [20 tar](#tar)
-*   [21 which](#which)
-*   [22 wipefs](#wipefs)
-*   [23 参阅](#.E5.8F.82.E9.98.85)
+*   [3 chmod](#chmod)
+*   [4 chown](#chown)
+*   [5 dd](#dd)
+*   [6 find](#find)
+*   [7 grep](#grep)
+*   [8 iconv](#iconv)
+    *   [8.1 在原文件上转换](#.E5.9C.A8.E5.8E.9F.E6.96.87.E4.BB.B6.E4.B8.8A.E8.BD.AC.E6.8D.A2)
+*   [9 ip](#ip)
+*   [10 less](#less)
+*   [11 locate](#locate)
+    *   [11.1 用 Vim 代替 less 来分页](#.E7.94.A8_Vim_.E4.BB.A3.E6.9B.BF_less_.E6.9D.A5.E5.88.86.E9.A1.B5)
+*   [12 ls](#ls)
+    *   [12.1 “长格式”输出](#.E2.80.9C.E9.95.BF.E6.A0.BC.E5.BC.8F.E2.80.9D.E8.BE.93.E5.87.BA)
+    *   [12.2 带空格的文件名被引号引起](#.E5.B8.A6.E7.A9.BA.E6.A0.BC.E7.9A.84.E6.96.87.E4.BB.B6.E5.90.8D.E8.A2.AB.E5.BC.95.E5.8F.B7.E5.BC.95.E8.B5.B7)
+*   [13 lsblk](#lsblk)
+*   [14 mkdir](#mkdir)
+*   [15 mv](#mv)
+*   [16 od](#od)
+*   [17 pv](#pv)
+*   [18 rm](#rm)
+*   [19 sed](#sed)
+*   [20 seq](#seq)
+*   [21 ss](#ss)
+*   [22 tar](#tar)
+*   [23 which](#which)
+*   [24 wipefs](#wipefs)
+*   [25 参阅](#.E5.8F.82.E9.98.85)
 
 ## 基本命令
 
@@ -73,7 +75,7 @@
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) 是一个能够连接并显示多文件的标准 Unix 工具。
+[cat](https://en.wikipedia.org/wiki/cat_(Unix) 是一个将文件内容发送到标准输出的标准 Unix 工具。
 
 *   **cat** 并不内置于 shell ，不过若追求高性能，你会发现在很多情况下改用[重定向](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)")就很方便得许多，例如编写脚本。事实上，`$ < *file*` 的效果就如同 `$ cat *file*` 一样。
 
@@ -96,7 +98,15 @@ $ printf '%s
 
 ```
 
-*   如果您希望能以倒读顺序显示文件内容，有个工具叫 [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* 倒着写).
+*   如果您希望能以倒读顺序显示文件内容，有个位于 coreutils 包中的工具叫 [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* 倒着写)。
+
+## chmod
+
+参阅 [File permissions and attributes#Changing permissions](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes")。
+
+## chown
+
+参阅 [File permissions and attributes#Changing ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes")。
 
 ## dd
 
@@ -107,6 +117,16 @@ $ printf '%s
 **提示：** 默认情况下在任务完成前 dd 都没有输出，要监控操作的进度，可以添加 `status=progress` 选项。
 
 更多信息参考 [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) 或 [完整文档](https://www.gnu.org/software/coreutils/dd)。
+
+## find
+
+*find* 是 [findutils](https://www.archlinux.org/packages/?name=findutils) 软件包的一部分, 它属于 [base](https://www.archlinux.org/groups/x86_64/base/) 软件包组。
+
+**提示：** [fd](https://www.archlinux.org/packages/?name=fd) 是 `find` 的一个更加简单、快速、友好的替代方案，它有着更合理的默认值（比如忽略隐藏文件、文件夹和 `.gitignore` 等文件，可用 `fd PATTERN` 代替 `find -iname '*PATTERN*'`）。它具有彩色输出（类似 `ls`），unicode 支持，正则表达式等等。
+
+你可能希望 *find* 命令将一个文件名称作为参数，并在文件系统中搜索与该名称匹配的文件。下面的 [#locate](#locate) 程序可以专门做这件事。
+
+相反，find 需要一组目录，并将它们下面的每个文件与一组表达式进行匹配。这种设计为实现一些“能干的单行小程序”提供了强大的支持，而这是上述“直观”设计无法实现的。参阅 [UsingFind](http://mywiki.wooledge.org/UsingFind) 来获取使用说明。
 
 ## grep
 
@@ -119,16 +139,6 @@ $ printf '%s
 **注意:** 一些命令把错误输出到 [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3)，grep 就无法处理。这时，用 `*command* 2>&1 | grep *args*` 或 (对于 Bash 4) `*command* |& grep *args*` 将 *stderr* 重定向到 *stdout*。参阅 [I/O 重定向](http://www.tldp.org/LDP/abs/html/io-redirection.html)。
 
 参阅 [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console") 来启用彩色输出支持。
-
-## find
-
-*find* 是 [findutils](https://www.archlinux.org/packages/?name=findutils) 软件包的一部分, 它属于 [base](https://www.archlinux.org/groups/x86_64/base/) 软件包组。
-
-**提示：** [fd](https://www.archlinux.org/packages/?name=fd) 是 `find` 的一个更加简单、快速、友好的替代方案，它有着更合理的默认值（比如忽略隐藏文件、文件夹和 `.gitignore` 等文件，可用 `fd PATTERN` 代替 `find -iname '*PATTERN*'`）。它具有彩色输出（类似 `ls`），unicode 支持，正则表达式等等。
-
-你可能希望 *find* 命令将一个文件名称作为参数，并在文件系统中搜索与该名称匹配的文件。下面的 [#locate](#locate) 程序可以专门做这件事。
-
-相反，find 需要一组目录，并将它们下面的每个文件与一组表达式进行匹配。这种设计为实现一些“能干的单行小程序”提供了强大的支持，而这是上述“直观”设计无法实现的。参阅 [UsingFind](http://mywiki.wooledge.org/UsingFind) 来获取使用说明。
 
 ## iconv
 
@@ -187,6 +197,12 @@ $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
 
 **注意:** 你也许很熟悉 [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") 命令，它用于旧版linux的接口配置。在 Arch Linux 中现已不赞成使用；应当用 *ip* 替代之。
 
+## less
+
+[less](https://en.wikipedia.org/wiki/less_(Unix) 是一个对文本文件内容进行分页显示的终端程序，它和其他的分页显示程序如 [more](https://en.wikipedia.org/wiki/more_(command) 和 [pg](https://en.wikipedia.org/wiki/pg_(Unix) 相似，但 *less* 提供了更高级的界面和更多的 [功能](http://www.greenwoodsoftware.com/less/faq.html)。
+
+参阅 [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") 查找更多替代方案。
+
 ## locate
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mlocate](https://www.archlinux.org/packages/?name=mlocate)。包里包括了一个 `updatedb.timer` 单元，用于每天更新数据库。这个 systemd 定时器在安装后就会 enable，如果不想重启系统，请手动 [start](/index.php/Start "Start")。以 root 手动运行 *updatedb* 也可以更新数据库。默认会忽略 `/media` 和 `/mnt` 等路径，所以 *locate* 不会查找外置设备里的文件。详情请参考 [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8)。
@@ -196,12 +212,6 @@ $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
 使用 *locate* 前需建立数据库，请先以 root 权限执行 `updatedb`。
 
 详情参考 [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/)。
-
-## less
-
-[less](https://en.wikipedia.org/wiki/less_(Unix) 是一个对文本文件内容进行分页显示的终端程序，它和其他的分页显示程序如 [more](https://en.wikipedia.org/wiki/more_(command) 和 [pg](https://en.wikipedia.org/wiki/pg_(Unix) 相似，但 *less* 提供了更高级的界面和更多的 [功能](http://www.greenwoodsoftware.com/less/faq.html)。
-
-参阅 [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") 查找更多替代方案。
 
 ### 用 Vim 代替 less 来分页
 

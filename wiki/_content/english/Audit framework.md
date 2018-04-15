@@ -1,4 +1,4 @@
-The Linux audit framework provides a CAPP-compliant (Controlled Access Protection Profiles) auditing system that reliably collects information about any security-relevant (or non-security-relevant) event on a system. It can help you track actions performed on a system.
+The Linux audit framework provides a CAPP-compliant ([Controlled Access Protection Profile](https://en.wikipedia.org/wiki/Controlled_Access_Protection_Profile "wikipedia:Controlled Access Protection Profile")) auditing system that reliably collects information about any security-relevant (or non-security-relevant) event on a system. It can help you track actions performed on a system.
 
 Linux audit helps make your system more secure by providing you with a means to analyze what is happening on your system in great detail. It does not, however, provide additional security itself—it does not protect your system from code malfunctions or any kind of exploits. Instead, Audit is useful for tracking these issues and helps you take additional security measures, to prevent them.
 

@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [GTK+](/index.php/GTK%2B "GTK+")
+
 Budgie es el escritorio por defecto del sistema operativo Solus, escrito desde cero. Además de un diseño más moderno, Budgie puede simular la apariencia del escritorio GNOME 2.
 
 En este momento Budgie está fuertemente en fase de desarrollo, por lo que se puede esperar pequeños errores y nuevas características con el paso del tiempo.

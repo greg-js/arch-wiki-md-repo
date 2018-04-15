@@ -45,7 +45,7 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
 **Note:**
 
 *   In the past, the installation of at least 1 language pack was required. Currently, LibreOffice detects your system defaults; manual installation of a language pack is no longer mandatory. See [help.libreoffice.org](https://help.libreoffice.org/Scalc/cui/ui/optlanguagespage/ignorelanguagechange#User_interface) for additional information.
-*   If you want the UK-English language pack, install [libreoffice-fresh-en-GB](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-GB), not [libreoffice-fresh-uk](https://www.archlinux.org/packages/?name=libreoffice-fresh-uk) (Ukrainian) or [libreoffice-fresh-br](https://www.archlinux.org/packages/?name=libreoffice-fresh-br) (Breton)!
+*   If you want the UK-English language pack, install [libreoffice-fresh-en-gb](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-gb), not [libreoffice-fresh-uk](https://www.archlinux.org/packages/?name=libreoffice-fresh-uk) (Ukrainian) or [libreoffice-fresh-br](https://www.archlinux.org/packages/?name=libreoffice-fresh-br) (Breton)!
 *   For SDK install [libreoffice-fresh-sdk](https://www.archlinux.org/packages/?name=libreoffice-fresh-sdk).
 *   For Qt and GTK+ visual integration, see [#Theme](#Theme).
 
@@ -121,7 +121,7 @@ French-speaking users are advantaged here: they do not need to install LanguageT
 
 ### Offline help for en-US
 
-As of version 5.2.2, [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) provides the offline help files for en-US. Help files for different locales is provided by the appropriate libreoffice language package, (i.e., [libreoffice-fresh-en-ZA](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-ZA) provides the help files for en-ZA locales).
+As of version 5.2.2, [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) provides the offline help files for en-US. Help files for different locales is provided by the appropriate libreoffice language package, (i.e., [libreoffice-fresh-en-za](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-za) provides the help files for en-ZA locales).
 
 ## Installing macros
 

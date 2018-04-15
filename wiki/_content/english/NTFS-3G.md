@@ -15,7 +15,6 @@ Related articles
     *   [4.3 Allowing group/user](#Allowing_group.2Fuser)
     *   [4.4 Basic NTFS-3G options](#Basic_NTFS-3G_options)
     *   [4.5 Allowing user to mount](#Allowing_user_to_mount)
-    *   [4.6 ntfs-config](#ntfs-config)
 *   [5 Resizing NTFS partition](#Resizing_NTFS_partition)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
@@ -65,13 +64,12 @@ Your NTFS partition(s) can be setup to mount automatically, or pre-configured to
 
 ### Default settings
 
-Using the default settings will mount the NTFS partition(s) at boot. With this method, **if** the parent folder that it is mounted upon has the proper user or group [permissions](/index.php/Users_and_groups "Users and groups") (e.g. /run/media/<username>/), then that user or group will be able to read and write on that partition(s).
+Using the default settings will mount the NTFS partition(s) at boot. With this method, **if** the parent folder that it is mounted upon has the proper user or group [permissions](/index.php/Users_and_groups "Users and groups") (e.g. /run/media/<username>/), **then** that user or group will be able to read and write on that partition(s).
 
-Put this in `/etc/fstab`:
-
+ `/etc/fstab` 
 ```
-# <file system>   <dir>		<type>    <options>             <dump>  <pass>
-/dev/*NTFS-part*  /mnt/windows  ntfs-3g   defaults		  0       0
+# <file system>   <dir> <type>    <options>             <dump>  <pass>
+/dev/*NTFS-part*  /mnt/windows  ntfs-3g   defaults          0       0
 
 ```
 
@@ -81,40 +79,44 @@ Permissions on a Linux system are normally set to 755 for folders and 644 for fi
 
 ```
 # Mount internal Windows partition with linux compatible permissions, i.e. 755 for directories (dmask=022) and 644 for files (fmask=133)
-/dev/*NTFS-partition*  /mnt/windows  ntfs-3g uid=*username*,gid=users,dmask=022,fmask=133 0 0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g uid=*userid*,gid=*groupid*,dmask=022,fmask=133 0 0
 
 ```
 
 ### Allowing group/user
 
-In `/etc/fstab` you can also specify other options like those who are allowed to access (read) the partition. For example, for you to allow people in the `users` group to have access:
+In `/etc/fstab` you can also specify other options like those who are allowed to access (read) the partition. For example, for you to allow people in the `groupid` group to have access:
 
 ```
-/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   gid=users,umask=0022    0       0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   gid=*groupid*,umask=0022    0       0
 
 ```
 
-By default, the above line will enable write support for root only. To enable user writing, you have to specify the user who should be granted write permissions. Use the `uid` parameter together with your username to enable user writing:
+By default, the above line will enable write support for root only. To enable user writing, you have to specify the user who should be granted write permissions. Use the `uid` parameter together with your user id to enable user writing:
 
 ```
-/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   uid=*username*,gid=users,umask=0022    0       0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   uid=*userid*,gid=*groupid*,umask=0022    0       0
 
 ```
 
 If you are running on a single user machine, you may like to own the file system yourself and grant all possible permissions:
 
 ```
-/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   uid=*username*,gid=users    0       0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   uid=*userid*,gid=*groupid*    0       0
 
 ```
 
 ### Basic NTFS-3G options
 
-For most, the above settings should suffice. Here are a few other options that are general common options for various Linux filesystems. For a complete list, see [this](http://www.tuxera.com/community/ntfs-3g-manual/#6)
+For most, the above settings should suffice. Here are a few other options that are general common options for various Linux filesystems. For a complete list, see [ntfs-3g(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntfs-3g.8#OPTIONS).
 
 	[umask](/index.php/Umask "Umask")
 
 	umask is a built-in shell command which automatically sets file permissions on newly created files. For Arch Linux, the default umask for root and user is 0022\. With 0022 new folders have the directory permissions of 755 and new files have permissions of 644\. You can read more about umask permissions [here](http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html).
+
+	fmask and dmask
+
+	Like `umask` but defining file and directory respectively individually.
 
 	noauto
 
@@ -122,11 +124,11 @@ For most, the above settings should suffice. Here are a few other options that a
 
 	uid
 
-	The user id number. This allows a specific user to have full access to the partition. Your uid can be found with the `id` command.
+	The user id. This allows a specific user to have full access to the partition. Your uid can be found with the `id` command.
 
-	fmask and dmask
+	windows_names
 
-	Like `umask` but defining file and directory respectively individually.
+	prevents files, directories and extended attributes to be created with a name not allowed by windows.
 
 ### Allowing user to mount
 
@@ -136,10 +138,6 @@ By default, *ntfs-3g* requires root rights to mount the filesystem, even with th
 
 *   The [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package does not have internal FUSE support. Rebuild the package using [ABS](/index.php/ABS "ABS"), or install [ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/).
 *   There seems to be an issue with unmounting rights, so you will still need root rights if you need to unmount the filesystem. You can also use `fusermount -u /mnt/*mountpoint*` to unmount the filesystem without root rights. Also, if you use the `*users*` option (plural) in `/etc/fstab` instead of the `user` option, you will be able to both mount and unmount the filesystem using the `mount` and `umount` commands.
-
-### ntfs-config
-
-[ntfs-config](https://aur.archlinux.org/packages/ntfs-config/) is a program that may be able to help configure your NTFS partition(s) if other methods do not work.
 
 ## Resizing NTFS partition
 
@@ -230,4 +228,4 @@ If you cannot mount your NTFS partition even when following this guide, try usin
 
 ## See also
 
-*   [Official NTFS-3G manual](http://www.tuxera.com/community/ntfs-3g-manual/)
+*   [ntfs-3g(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntfs-3g.8)

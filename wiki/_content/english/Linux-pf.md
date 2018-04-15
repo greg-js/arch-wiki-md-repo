@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Kernels](/index.php/Kernels "Kernels")
+*   [Kernels#Major patchsets](/index.php/Kernels#Major_patchsets "Kernels")

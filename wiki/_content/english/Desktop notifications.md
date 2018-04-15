@@ -112,7 +112,7 @@ You can choose one of the following implementations:
 
 *   **Xfce Notification Daemon** — Notification server for [Xfce](/index.php/Xfce "Xfce").
 
-	[http://goodies.xfce.org/projects/applications/xfce4-notifyd](http://goodies.xfce.org/projects/applications/xfce4-notifyd) || [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd)
+	[https://docs.xfce.org/apps/notifyd/start](https://docs.xfce.org/apps/notifyd/start) || [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd)
 
 	You can run it manually using `/usr/lib/xfce4/notifyd/xfce4-notifyd`.
 

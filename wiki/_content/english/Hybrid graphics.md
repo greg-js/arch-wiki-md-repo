@@ -2,6 +2,14 @@ Hybrid-graphics is a concept involving two graphics cards on same computer. The 
 
 There are a variety of technologies and each manufacturer developed its own solution to this problem. This technology is well supported on Windows but it's still quite experimental with Linux distributions. Here we try to explain a little about each approach and models and some community solutions to the lack of GNU/Linux systems support.
 
+## Contents
+
+*   [1 First Generation Hybrid Model (Basic Switching)](#First_Generation_Hybrid_Model_.28Basic_Switching.29)
+*   [2 Dynamic Switching Model](#Dynamic_Switching_Model)
+    *   [2.1 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
+        *   [2.1.1 Using bbswitch](#Using_bbswitch)
+        *   [2.1.2 Using acpi_call](#Using_acpi_call)
+
 ## First Generation Hybrid Model (Basic Switching)
 
 **Note:** Unless your notebook is from the last decade, it’s most likely using [dynamic switching](#Dynamic_Switching_Model).
@@ -28,7 +36,15 @@ Read [PRIME](/index.php/PRIME "PRIME") basically everything else (like AMD Radeo
 
 ### Fully Power Down Discrete GPU
 
-You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) package.
+You may want to turn off the high-performance graphics processor to save battery power.
+
+#### Using bbswitch
+
+With a NVidia GPU, this can be more safely done using [bbswitch](/index.php/Bumblebee#Power_management "Bumblebee"), which consists of a kernel package that automatically and issues the correct ACPI calls to disable the discrete GPU when not needed, or automatically at boot.
+
+#### Using acpi_call
+
+Otherwise, and for GPUs not supported by bbswitch, the same can be done manually installing the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) package.
 
 **Tip:** For kernels not in the [Official repositories](/index.php/Official_repositories "Official repositories"), the [acpi_call-dkms](https://www.archlinux.org/packages/?name=acpi_call-dkms) is an alternative. See also [DKMS](/index.php/DKMS "DKMS").
 

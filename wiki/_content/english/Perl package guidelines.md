@@ -8,7 +8,7 @@ This document covers the creation of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")
 
 ## Contents
 
-*   [1 ArchLinux Packaging Conventions](#ArchLinux_Packaging_Conventions)
+*   [1 Arch Linux Packaging Conventions](#Arch_Linux_Packaging_Conventions)
     *   [1.1 Package names](#Package_names)
     *   [1.2 Package file placement](#Package_file_placement)
     *   [1.3 Architecture](#Architecture)
@@ -36,9 +36,9 @@ This document covers the creation of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")
         *   [4.5.7 PERL_LOCAL_LIB_ROOT](#PERL_LOCAL_LIB_ROOT)
 *   [5 Problems with user-installed perl](#Problems_with_user-installed_perl)
 
-## ArchLinux Packaging Conventions
+## Arch Linux Packaging Conventions
 
-The following conventions should be used to keep perl module packages consistent. This section serves as an introduction to the concept of perl packaging, from the point of view of ArchLinux; that is, package management and system administration. In an effort to please the casual TL;DR reader, the easiest and/or most popular material is at the top.
+The following conventions should be used to keep perl module packages consistent. This section serves as an introduction to the concept of perl packaging, from the point of view of Arch Linux; that is, package management and system administration. In an effort to please the casual TL;DR reader, the easiest and/or most popular material is at the top.
 
 ### Package names
 
@@ -145,7 +145,7 @@ Justification for the added complexity of these PKGBUILDs is attempted in the la
 
 ## CPAN Module Mechanics
 
-There are a number of carefully, and not so carefully, designed mechanics that work together to create the module system. When making use of the CPAN, procedures must be followed to fetch the source code of a module, build that fetched module, and insert it into the system software for later execution. In order to understand how modules should be packaged, it helps immensely if one understands how modules work without any involvement from pacman and ArchLinux packages. Our goal in the end is to try to be unobtrusive as possible, while improving organization and consistency in the end product.
+There are a number of carefully, and not so carefully, designed mechanics that work together to create the module system. When making use of the CPAN, procedures must be followed to fetch the source code of a module, build that fetched module, and insert it into the system software for later execution. In order to understand how modules should be packaged, it helps immensely if one understands how modules work without any involvement from pacman and Arch Linux packages. Our goal in the end is to try to be unobtrusive as possible, while improving organization and consistency in the end product.
 
 ### Modules
 
@@ -155,7 +155,7 @@ Core modules are included with an installation of perl. Some core modules are *o
 
 ### Distributions
 
-(aka dist, package) This is the equivalent of an Archlinux package in CPAN-lingo. Distributions are `.tar.gz` archives full of files. These archives contain primarily .pm module files, tests for the included modules, documentation for the modules, and whatever else is deemed necessary.
+(aka dist, package) This is the equivalent of an Arch Linux package in CPAN-lingo. Distributions are `.tar.gz` archives full of files. These archives contain primarily .pm module files, tests for the included modules, documentation for the modules, and whatever else is deemed necessary.
 
 Usually a distribution contains a primary module with the same name. Sometimes this is not true, like with the Template-Toolkit distribution. The latest package, `Template-Toolkit-2.22.tar.gz`, for the `Template-Toolkit` dist, contains no `Template::Toolkit` module!
 

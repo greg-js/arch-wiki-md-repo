@@ -15,6 +15,7 @@
     *   [2.2 Managing packages with pacman](#Managing_packages_with_pacman)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 node-gyp python errors](#node-gyp_python_errors)
+    *   [3.2 Cannot find module ... errors](#Cannot_find_module_..._errors)
 *   [4 Additional resources](#Additional_resources)
 
 ## Installation
@@ -200,6 +201,18 @@ In case of errors like `gyp WARN EACCES user "root" does not have permission to 
 # npm install --unsafe-perm -g node-inspector
 
 ```
+
+### Cannot find module ... errors
+
+Since npm 5.x.x. package-lock.json file is generated along with the package.json file. Conflictions may arise when the two files refer to different package versions. A temporary method to solving this problem has been:
+
+```
+$ rm package-lock.json
+$ npm install
+
+```
+
+However, fixes were made after npm 5.1.0 or above. For further information, see: [missing dependencies](https://github.com/npm/npm/pull/17508)
 
 ## Additional resources
 

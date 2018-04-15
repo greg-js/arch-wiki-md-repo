@@ -266,12 +266,7 @@ HOOKS="base udev autodetect modconf *block* filesystems keyboard fsck"
 [...]
 ```
 
-If it is not present, add it and [regenerate your initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio"):
-
-```
-# mkinitcpio -p linux
-
-```
+If it is not present, add it and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ### Create a VM configuration to boot from the physical drive
 

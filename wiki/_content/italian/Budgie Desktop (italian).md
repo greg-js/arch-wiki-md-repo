@@ -1,3 +1,10 @@
+Related articles
+
+*   [Desktop environment (Italiano)](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)")
+*   [Display manager (Italiano)](/index.php/Display_manager_(Italiano) "Display manager (Italiano)")
+*   [Window manager (Italiano)](/index.php/Window_manager_(Italiano) "Window manager (Italiano)")
+*   [GTK+ (Italiano)](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)")
+
 Budgie è l'interfaccia grafica di default di Solus OS, scritta da zero. Oltre a offrire un design moderno, Budgie può emulare l'aspetto del desktop di GNOME 2.
 
 In questo momento Budgie è in sviluppo, quindi potresti trovare bug e nuove funzionalità verranno aggiunge in seguito.

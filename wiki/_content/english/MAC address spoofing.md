@@ -112,7 +112,7 @@ Finally, to return the MAC address to its original, permanent hardware value:
 
 ### Method 1: systemd-networkd
 
-[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") supports MAC address spoofing via [link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") (see [systemd.link(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for details).
+[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") supports MAC address spoofing via [link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") (see [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for details).
 
 To set a static spoofed MAC address:
 
@@ -226,5 +226,6 @@ If you cannot connect to a DHCPv4 network and you are using dhcpcd, which is the
 
 ## See also
 
+*   [Wikipedia:MAC spoofing](https://en.wikipedia.org/wiki/MAC_spoofing "wikipedia:MAC spoofing")
 *   [Macchanger GitHub page](https://github.com/alobbs/macchanger)
 *   [Article on DebianAdmin](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) with more *macchanger* options

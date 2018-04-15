@@ -4,11 +4,11 @@
 
 *   [1 Installation](#Installation)
 *   [2 Initial setup](#Initial_setup)
-*   [3 Post-Install](#Post-Install)
-*   [4 Getting Started](#Getting_Started)
+*   [3 Post-install](#Post-install)
+*   [4 Getting started](#Getting_started)
 *   [5 Systemd](#Systemd)
 *   [6 Migration to new major versions](#Migration_to_new_major_versions)
-*   [7 See Also](#See_Also)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -53,7 +53,7 @@ Add an administrator user account, be sure to copy the password:
 
 ```
 
-## Post-Install
+## Post-install
 
 Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed by the [OpenVAS redis configuration](https://svn.wald.intevation.org/svn/openvas/tags/openvas-scanner-release-5.0.3/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
 
@@ -79,7 +79,7 @@ Finally restart `redis`
 
 ```
 
-## Getting Started
+## Getting started
 
 Start the `openvasmd` daemon
 
@@ -114,6 +114,7 @@ The database needs to be migrated when moving to a new major version:
 
 ```
 
-## See Also
+## See also
 
+*   [Wikipedia:OpenVAS](https://en.wikipedia.org/wiki/OpenVAS "wikipedia:OpenVAS")
 *   [OpenVAS](http://www.openvas.org/) Official OpenVAS website.

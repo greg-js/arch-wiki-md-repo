@@ -54,7 +54,7 @@ Related articles
         *   [6.2.3 Extensions](#Extensions)
         *   [6.2.4 Input methods](#Input_methods)
         *   [6.2.5 Fonts](#Fonts)
-        *   [6.2.6 Startup applications](#Startup_applications)
+        *   [6.2.6 Autostart](#Autostart)
         *   [6.2.7 Power](#Power)
             *   [6.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
             *   [6.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
@@ -433,9 +433,9 @@ Fonts can be set for Window titles, Interface (applications), Documents and Mono
 
 For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
 
-#### Startup applications
+#### Autostart
 
-To start certain applications on login, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`.
+GNOME implements [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
 The [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) allows managing autostart-entries.
 

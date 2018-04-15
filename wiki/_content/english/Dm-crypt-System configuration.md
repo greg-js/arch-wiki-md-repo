@@ -26,15 +26,17 @@
 
 ## mkinitcpio
 
-When encrypting a system it is necessary to regenerate the initial ramdisk after properly configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). Depending on the particular scenarios, a subset of the following hooks will have to be enabled:
+Depending on the particular scenarios, a subset of the following [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hooks will have to be enabled:
 
 | busybox | systemd | Use case |
 | `encrypt` | `sd-encrypt` | Always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` or `systemd` hook. |
 | `keyboard` | Needed to make keyboards work in early userspace. |
-| `keymap` | `sd-vconsole` | Provides support for non-US keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Set your keymap in `/etc/vconsole.conf`, see [Fonts#Persistent configuration](/index.php/Fonts#Persistent_configuration "Fonts"). |
+| `keymap` | `sd-vconsole` | Provides support for non-US keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Set your keymap in `/etc/vconsole.conf`, see [Keyboard configuration in console#Persistent configuration](/index.php/Keyboard_configuration_in_console#Persistent_configuration "Keyboard configuration in console"). |
 | `consolefont` | Loads an alternative console font in early userspace. Set your font in `/etc/vconsole.conf`, see [Fonts#Persistent configuration](/index.php/Fonts#Persistent_configuration "Fonts"). |
 
 [Other hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") needed should be clear from other manual steps followed during the installation of the system.
+
+Remember to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") after saving the changes.
 
 ### Examples
 
@@ -93,6 +95,11 @@ resume=*device*
 *   `*device*` is the device file of the decrypted (swap) filesystem used for [suspend to disk](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate"). If swap is on a separate partition, it will be in the form of `/dev/mapper/swap`. See also [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
 ### Using encrypt hook
+
+**Note:** Compared to the [sd-encrypt](#Using_sd-encrypt_hook) hook, the `encrypt` hook has some limitations. It does not support:
+
+*   Unlocking [multiple encrypted disks](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties") ([FS#23182](https://bugs.archlinux.org/task/23182)). Only **one** device can be unlocked in the initramfs.
+*   Using a [detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") ([FS#42851](https://bugs.archlinux.org/task/42851)).
 
 #### cryptdevice
 
@@ -181,12 +188,19 @@ In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` paramet
 
 **Tip:**
 
-*   If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`, you can specify devices that need to be unlocked at boot there. Syntax is documented in [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
+*   If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`, you can specify devices that need to be unlocked at boot there. Syntax is documented in [#crypttab](#crypttab) and [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
 *   `/etc/crypttab.initramfs` is not limited to using only UUID like `rd.luks`. You can use any of the [persistent block device naming methods](/index.php/Persistent_block_device_naming#Persistent_naming_methods "Persistent block device naming").
+
+**Note:**
+
+*   All of the `rd.luks` parameters can be specified multiple times to unlock multiple LUKS encrypted volumes.
+*   The `rd.luks` parameters only support unlocking LUKS devices, to unlock a plain dm-crypt device you must specify it in `/etc/crypttab.initramfs`. See [#crypttab](#crypttab) for the syntax.
 
 **Warning:** If you are using `/etc/crypttab` or `/etc/crypttab.initramfs` together with `luks.*` or `rd.luks.*` parameters, only those devices specified on the kernel command line will be activated and you will see `Not creating device 'devicename' because it was not specified on the kernel command line.`. To activate all devices in `/etc/crypttab` do not specify any `luks.*` parameters and use `rd.luks.*`. To activate all devices in `/etc/crypttab.initramfs` do not specify any `luks.*` or `rd.luks.*` parameters.
 
 #### rd.luks.uuid
+
+**Tip:** `rd.luks.uuid` can be omitted when using `rd.luks.name`.
 
 ```
 rd.luks.uuid=*UUID*
@@ -194,6 +208,8 @@ rd.luks.uuid=*UUID*
 ```
 
 Specify the [UUID](/index.php/UUID "UUID") of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab.initramfs`, the options listed there will be used. For `luks.uuid` options from `/etc/crypttab.initramfs` or `/etc/crypttab` will be used.
+
+By default the mapped device will be located at `/dev/mapper/luks-*UUID*` where *UUID* is the UUID of the LUKS partition.
 
 #### rd.luks.name
 
@@ -273,13 +289,13 @@ See [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) for det
 
 **Note:** When using [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and the `sd-encrypt` hook, if a non-root partition's passphrase is the same as root's, there is no need to put that non-root partition in crypttab due to passphrase caching. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=219859) for more information.
 
-**Warning:** There are issues with [systemd](/index.php/Systemd "Systemd") when processing `crypttab` entries for *dm-crypt* [plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) devices:
+**Warning:**
 
-*   For `--type plain` devices with a keyfile, it is necessary to add the `hash=plain` option to crypttab due to a [systemd incompatibility](https://bugs.freedesktop.org/show_bug.cgi?id=52630). **Do not** use `systemd-cryptsetup` manually for device creation to work around it.
+*   If the *nofail* option is specified, the password entry screen may disappear while typing the password. *nofail* should therefore only be used together with keyfiles.
+*   There are issues with [systemd](/index.php/Systemd "Systemd") when processing `crypttab` entries for *dm-crypt* [plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) devices:
+    *   For `--type plain` devices with a keyfile, it is necessary to add the `hash=plain` option to crypttab due to a [systemd incompatibility](https://bugs.freedesktop.org/show_bug.cgi?id=52630). **Do not** use `systemd-cryptsetup` manually for device creation to work around it.
+    *   It may be further required to add the `plain` option explicitly to force `systemd-cryptsetup` to recognize a `--type plain`) device at boot. See [systemd issue 442](https://github.com/systemd/systemd/issues/442).
 
-*   It may be further required to add the `plain` option explicitly to force `systemd-cryptsetup` to recognize a `--type plain`) device at boot. See [systemd issue 442](https://github.com/systemd/systemd/issues/442).
-
-**Warning:** If the *nofail* option is specified, the password entry screen may disappear while typing the password. *nofail* should therefore only be used together with keyfiles.
  `/etc/crypttab` 
 ```
 # Example crypttab file. Fields are: name, underlying device, passphrase, cryptsetup options.

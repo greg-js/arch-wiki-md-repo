@@ -42,12 +42,12 @@ This article does not attempt to show how to set up a shared connection between 
 
 ### Persistent interface naming
 
-Systemd automatically chooses unique interface names for all your interfaces. These are persistent and will not change when you reboot. However you might want to rename you interfaces e.g. in order to highlight their different networks to which they connect. In the following sections of this guide the below stated convention is used throughout:
+Systemd automatically chooses unique interface names for all your interfaces. These are persistent and will not change when you reboot. However you might want to rename your interfaces e.g. in order to highlight their different networks to which they connect. In the following sections of this guide the below stated convention is used throughout:
 
 *   **intern0**: the network card connected to the LAN. On an actual computer it will probably have the name enp2s0, enp1s1, etc.
 *   **extern0**: the network card connected to the external network (or WAN). It will probably have the name enp2s0, enp1s1, etc.
 
-You may change the assigned names of your devices via a configuration file using [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") described in [Systemd-networkd#Renaming an interface](/index.php/Systemd-networkd#Renaming_an_interface "Systemd-networkd") or by a [udev](/index.php/Udev "Udev")-rule following [Network configuration#Change device name](/index.php/Network_configuration#Change_device_name "Network configuration"). Due the example-rich nature of this article you might want to for example choose the above described names.
+You may change the assigned names of your devices via a configuration file using [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") described in [Systemd-networkd#Renaming an interface](/index.php/Systemd-networkd#Renaming_an_interface "Systemd-networkd") or by a [udev](/index.php/Udev "Udev")-rule following [Network configuration#Change device name](/index.php/Network_configuration#Change_device_name "Network configuration"). Due to the example-rich nature of this article you might want to choose the above described names.
 
 ### IP configuration
 

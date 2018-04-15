@@ -99,22 +99,22 @@ Se um erro/recurso não está sob a responsabilidade do Arch, relate-o ao upstre
 
 ### Colete informações úteis
 
-Here is a list of useful information that should be mentioned in your bug report:
+Aqui está uma lista de informações úteis que devem ser mencionadas no seu relatório de erros:
 
-*   **Version of the package** being used. **Always specify package version**. Saying "the latest", "todays", or "the package in extra" have absolutely no meaning. Especially if the bug is not about to get fixed right away.
+*   **Versão do pacote** sendo usado. **Sempre especifique a versão do pacote**. Dizer "a última", "atual" ou "o pacote no extra" não tem nenhuma sentido. Especialmente se o erro não está para ser corrigido imediatamente.
 
-*   Version of the main libraries used by the package (available in the *depends* variable in the PKGBUILD), when they are involved in the problem. If you do not know exactly what information to provide then wait for a bug hunter to ask you for it...
+*   Versão das principais bibliotecas utilizadas pelo pacote (disponível na variável *depends* no PKGBUILD), quando estão envolvidas no problema. Se você não sabe exatamente quais informações fornecer, espere que um caçador de bugs peça a você...
 
-*   Version of the kernel used if you are having hardware related problems.
+*   Versão do kernel usada se você está tendo problemas relacionados ao hardware.
 
-*   Indicate whether or not **the functionality worked at one time or not**. If so, indicate since when it stopped working.
+*   Indique se **a funcionalidade funcionou em algum momento** ou não. Se sim, indique desde quando parou de funcionar.
 
-*   Indicate your **hardware brand** when you are having hardware related problems
+*   Indique a sua **marca de hardware** quando tiver problemas relacionados com hardware
 
-*   Add **relevant log information** when any is available. This can be obtained in the following places depending on the problem:
-    *   [systemd journal](/index.php/Systemd_journal "Systemd journal"). If using [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` contains logs related to kernel and hardware related issues.
-    *   `~/.local/share/xorg/Xorg.0.log` or `/var/log/Xorg.0.log` or `/var/log/Xorg.2.log` or any Xorg like log files if video related problems (nvidia, ati, xorg...)
-    *   Run your program in a **console** and use **verbose** and/or **debug** mode if available (see your program documentation), and copy the output in a file. When running an application in a terminal make sure relevant information will be displayed in **English** so that many people can understand it. This can be done by using `export LC_ALL="C"`. Example with a software named *foobar* from which you would like to have relevant information at runtime and provided that *foobar* has a `--verbose` option:
+*   Adicione **informações de log relevantes** quando estiver disponível. Isso pode ser obtido nos seguintes locais, dependendo do problema:
+    *   [Journal do systemd](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)"). Se estiver usando [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` contém logs relacionados a kernel e problemas relacionados ao hardware.
+    *   `~/.local/share/xorg/Xorg.0.log` ou `/var/log/Xorg.0.log` ou `/var/log/Xorg.2.log` ou a qualquer arquivo de log tipo Xorg se problemas relacionados a vídeo (nvidia, ati, xorg...)
+    *   Execute seu programa em um **console** e use o modo **verboso** *(verbose)* e/ou **depuração** *(debug)* se disponível (veja a documentação do programa) e copie a saída em um arquivo. Ao executar um aplicativo em um terminal, certifique-se de que informações relevantes serão exibidas em **inglês**, de forma que mais pessoas possam entendê-la. Isso pode ser feito usando `export LC_ALL="C"`. Exemplifique com um software chamado *foobar* do qual você gostaria de ter informações relevantes em tempo de execução e considerando que *foobar* tem uma opção `--verbose`:
 
 ```
 $ export LC_ALL="C"
@@ -122,59 +122,59 @@ $ foobar --verbose
 
 ```
 
-This will affect only the current terminal and will stop taking effect when the terminal is closed.
+Isso afetará apenas o terminal atual e parará de funcionar quando o terminal for fechado.
 
-If you have to paste a lot of text, like the output of dmesg, or a Xorg log, is it preferred to save it as a file on your computer and attach it to your bug report. Attaching a file rather than using a pastebin to present relevant information is preferable in general due to the fact that pastebined content may suffer by expired links or any other potential problems. **Attaching a file guarantees the provided information will always be available**.
+Se você tiver que colar muito texto, como a saída do dmesg, ou um log do Xorg, é preferível salvá-lo como um arquivo no seu computador e anexá-lo ao seu relatório de erros. Anexar um arquivo em vez de usar um pastebin para apresentar informações relevantes é preferível em geral, devido ao fato de que o conteúdo colocado em um pastebin pode ter seu link expirado ou quaisquer outros problemas potenciais. **Anexar um arquivo garante que as informações fornecidas estarão sempre disponíveis**.
 
-*   **Indicate how to reproduce the bug**. This is very important, it will help people test the bug and potential patches on their own computer.
+*   **Indique como reproduzir o erro**. Isso é muito importante, ajudará as pessoas a testar o erro e possíveis patches em seu próprio computador.
 
-*   **The stack trace**. It is a list of calls made by the program during its execution, and helps in finding part of the program where the bug is located, especially if bug involves the program crashing. You can obtain a stack trace using [gdb](https://www.archlinux.org/packages/?name=gdb) (The GNU Debugger) as explained in [Debug - Getting Traces#Getting the trace](/index.php/Debug_-_Getting_Traces#Getting_the_trace "Debug - Getting Traces").
+*   **O rastro da pilha** *(stack trace)*. É uma lista de chamadas feitas pelo programa durante sua execução e ajuda a encontrar a parte do programa onde o erro está localizado, especialmente se o erro envolver o travamento do programa. Você pode obter um rastro de pilha usando [gdb](https://www.archlinux.org/packages/?name=gdb) (O GNU Debugger) como explicado em [Depuração - Obtendo Rastros#Obtendo o rastro](/index.php/Depura%C3%A7%C3%A3o_-_Obtendo_Rastros#Obtendo_o_rastro "Depuração - Obtendo Rastros").
 
 ## Abrindo um relatório
 
-When you are sure it is a bug or a feature and you gathered all useful information, then you are ready to open a bug report or feature request.
+Quando tiver certeza de que é um erro ou um recurso e você coletou todas as informações úteis, então você está pronto para abrir um relatório de erro ou solicitação de recurso.
 
 ### Criando uma conta
 
-You have to create an account on [Arch's bug tracker system](https://bugs.archlinux.org/). This is as easy as creating an account on a wiki or a forum and there is nothing particular to mention here.
+Você tem que criar uma conta no [sistema de rastreamento de erros do Arch](https://bugs.archlinux.org/). Isso é tão fácil quanto criar uma conta em um wiki ou um fórum e não há nada de especial para mencionar aqui.
 
 ### Projetos
 
-Once you have determined your feature or bug is related to Arch and not an upstream issue, you will need to file your problem in the correct project. Select the project in the drop down list *to the left of the "Switch" button* in the top left corner of the bug report creation page (*not* to the right of "Category"). There are five projects:
+Depois de determinar que seu recurso ou bug está relacionado ao Arch e não a um problema de upstream, será necessário relatar seu problema no projeto correto. Selecione o projeto na lista suspensa *à esquerda do botão "Swtich"* no canto superior esquerdo da página de criação de relatórios de erros (*não* à direita de "Category"). Existem cinco projetos:
 
-*   **Arch Linux** - for packages in *testing*, *core*, or *extra*. It is also a place for documentation, websites (except AUR), and security issues.
+*   **Arch Linux** - para pacotes em *testing*, *core* ou *extra*. Também é um lugar para documentação, sites (exceto AUR) e problemas de segurança.
 
-*   **Arch User Repository (AUR)** - for the AUR website code and server issues. This does not include third party apps used to access the AUR or packages in *unsupported*.
+*   **Arch User Repository (AUR)** - para o código do site do AUR e problemas em seu servidor. Isso não inclui aplicativos de terceiros usados para acessar o AUR ou pacotes no *unsupported*.
 
-*   **Community Packages** - for packages in *community*. It is not a place for packages in *unsupported*.
+*   **Community Packages** - para pacotes no *community*. Não é um lugar para pacotes no *unsupported*.
 
-*   **Pacman** - for [pacman](/index.php/Pacman "Pacman") and the official scripts and tools associated with it. This includes things like makepkg and abs. It does not include community developed packages such as [AUR helpers](/index.php/AUR_helpers "AUR helpers").
+*   **Pacman** - para [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e os scripts e ferramentas oficiais associadas a ele. Isso inclui coisas como o makepkg. Isso não inclui pacotes desenvolvidos pela comunidade, como os [auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR").
 
-*   **Release Engineering** - intended for all release related issues (isos, installer, etc)
+*   **Release Engineering** - destinado a todos os problemas relacionados à lançamentos (isos, instalador etc.)
 
-There is no place for reporting problems with packages in *unsupported*. The AUR provides a way to add comments to a package in *unsupported*. You should use this to report bugs to the package maintainer.
+Não há lugar para relatar problemas com pacotes no *unsupported*. O AUR fornece uma maneira de adicionar comentários a um pacote no *unsupported*. Você deve usar isso para relatar erros ao mantenedor do pacote.
 
 ### Resumo
 
-Please write a concise and descriptive Summary.
+Por favor, escreva um resumo *(Summary)* conciso e descritivo.
 
-Here is a list of recommendations:
+Aqui está uma lista de recomendações:
 
-*   **Do not** name your report "*pkgname* is broken after the last update" - it is non-descriptive and "after last update" has no meaning in Arch.
-*   Start the Summary with package name enclosed in square brackets, e.g. "**[*pkgname*]** 3.0.5-1 breaks copy-paste feature". By naming reports this way you make it much easier for developers to sort reports by package names.
-*   Do not write too much text in the Summary. Excessive text will not be visible in reports list.
+*   **Não** nomeie seu relatório "*pkgname* is broken after the last update" - isso não é descritivo e "after the last update" não tem sentido no Arch.
+*   Inicie o Summary com o nome do pacote envolto com colchetes, p. ex.. "**[*pkgname*]** 3.0.5-1 breaks copy-paste feature". Ao nomear relatórios dessa forma, você facilita para desenvolvedores a ordenarem relatórios por nomes de pacotes.
+*   Não escreva muito texto no Summary. Texto excessivo não será visível na lista de relatórios.
 
 ### Severidade
 
-Choosing a *critical* severity will not help to solve the bug faster. It will only make truly critical problems less visible and probably make the developer assigned to your bug a bit less open to fixing it.
+Escolher uma severidade *crítica* (em inglês, *Severity*) não ajudará a resolver o erro mais rápido. Isso só tornará os problemas realmente críticos menos visíveis e provavelmente fará com que o desenvolvedor atribuído ao seu relatório fique menos aberto para corrigi-lo.
 
-Here is a general usage of severities:
+Aqui está um uso geral de severidades:
 
-*   **Critical** - System crash, severe boot failure that is likely to affect more than just you, or an exploitable security issue in either a core or outward-facing service package.
-*   **High** - The main functionality of the application does not work, less critical security issues, etc.
-*   **Medium** - A non-essential functionality does not work, UNIX standards not respected, etc.
-*   **Low** - An optional functionality (plugin or compilation activated) does not work.
-*   **Very Low** - Translation or documentation mistake. Something that really does not matter much but should be noticed for a future release.
+*   **Critical** - Queda do sistema, falha grave de inicialização que provavelmente afetará mais do que apenas você ou um problema de segurança explorável em um pacote de serviços principal ou externo.
+*   **High** - A principal funcionalidade do aplicativo não funciona, menos problemas críticos de segurança, etc.
+*   **Medium** - Uma funcionalidade não essencial não funciona, padrões UNIX não são respeitados, etc.
+*   **Low** - Uma funcionalidade opcional (plug-in ou compilação ativado) não funciona.
+*   **Very Low** - Erro de tradução ou documentação. Algo que realmente não importa muito, mas deve ser notado para uma versão futura.
 
 ### Incluindo informações relevantes
 

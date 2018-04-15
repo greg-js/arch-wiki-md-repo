@@ -61,7 +61,7 @@ It is optional to also [start/enable](/index.php/Start/enable "Start/enable") `s
 
 *   The *systemd-resolved* service is required if DNS entries are specified in *.network* files,
 *   It can be used to automatically obtain DNS addresses from the network DHCP client,
-*   It is important to understand how [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and *systemd-resolved* interact to properly configure the DNS that will be used, some explanations are provided in [Resolv.conf#Systemd-resolved configuration](/index.php/Resolv.conf#Systemd-resolved_configuration "Resolv.conf")
+*   It is important to understand how [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and *systemd-resolved* interact to properly configure the DNS that will be used, some explanations are provided in [resolv.conf#Systemd-resolved configuration](/index.php/Resolv.conf#Systemd-resolved_configuration "Resolv.conf")
 *   Note that it is not required to use/enable *systemd-networkd* to use *systemd-resolved*.
 
 ### Configuration examples
@@ -523,7 +523,7 @@ First, we shall get rid of the system `/usr/lib/systemd/network/80-container-hos
 
 ```
 
-Then, configure an static IP for the default `host0` network interface and [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-networkd` on your container. An example configuration is provided below:
+Then, configure an static IP for the default `host0` network interface and [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-networkd.service` on your container. An example configuration is provided below:
 
  `/etc/systemd/network/*MyVeth*.network` 
 ```

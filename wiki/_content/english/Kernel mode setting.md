@@ -58,7 +58,7 @@ If you are using a custom EDID file (not applicable for the built-in resolutions
 
  `/etc/mkinitcpio.conf`  `FILES=(/usr/lib/firmware/edid/your_edid.bin)` 
 
-Rebuild your initial ramdisk image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")).
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ## Troubleshooting
 

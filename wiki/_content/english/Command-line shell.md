@@ -6,6 +6,14 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 	A Unix shell is a command-line interpreter or shell that provides a traditional user interface for the Unix operating system and for Unix-like systems. Users direct the operation of the computer by entering commands as text for a command line interpreter to execute or by creating text scripts of one or more such commands.
 
+## Contents
+
+*   [1 List of shells](#List_of_shells)
+*   [2 Changing your default shell](#Changing_your_default_shell)
+*   [3 Configuration files](#Configuration_files)
+    *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
+*   [4 See also](#See_also)
+
 ## List of shells
 
 *   **[Bash](/index.php/Bash "Bash")** — Bash is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh). It is intended to conform to the IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers functional improvements over sh for both programming and interactive use. In addition, most sh scripts can be run by Bash without modification.
@@ -77,6 +85,16 @@ $ chsh -s *full-path-to-shell*
 where *full-path-to-shell* is the full path as given by `chsh -l`.
 
 If you now log out and log in again, you will be greeted by the other shell.
+
+## Configuration files
+
+To autostart programs in console or upon login, you can use shell startup files/directories. Read the documentation for your shell, or its ArchWiki article, e.g. [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+
+See also [Wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
+
+### /etc/profile
+
+Upon login, all Bourne-compatible shells source `/etc/profile`, which in turn sources any readable `*.sh` files in `/etc/profile.d/`: these scripts do not require an interpreter directive, nor do they need to be executable. They are used to set up an environment and define application-specific settings.
 
 ## See also
 

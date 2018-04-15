@@ -222,7 +222,7 @@
 
 *   **[Uzbl](https://en.wikipedia.org/wiki/ru:Uzbl "wikipedia:ru:Uzbl")** — Группа инструментов веб-интерфейса, которая придерживается философии Unix
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **Vimb** — Быстрый и легковесный веб-браузер в стиле vim, основанный на движке webkit и тулките GTK
 

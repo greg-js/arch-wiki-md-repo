@@ -16,12 +16,11 @@
     *   [4.2 Exchange data between client and server (desktop)](#Exchange_data_between_client_and_server_.28desktop.29)
     *   [4.3 To leave a session temporarily](#To_leave_a_session_temporarily)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Authentication error](#Authentication_error)
-    *   [5.2 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
-    *   [5.3 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
-    *   [5.4 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_.28Windows_Clients.29)
-    *   [5.5 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
-    *   [5.6 /bin/bash: No such file or directory when connect (or what ever shell you use)](#.2Fbin.2Fbash:_No_such_file_or_directory_when_connect_.28or_what_ever_shell_you_use.29)
+    *   [5.1 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
+    *   [5.2 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
+    *   [5.3 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_.28Windows_Clients.29)
+    *   [5.4 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
+    *   [5.5 /bin/bash: No such file or directory when connect (or what ever shell you use)](#.2Fbin.2Fbash:_No_such_file_or_directory_when_connect_.28or_what_ever_shell_you_use.29)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -101,20 +100,6 @@ On the X2Go client (e.g. laptop) local directories could be shared. The server w
 Another special feature of X2Go is the possibility of suspending a session. This means you can leave a session on one client and reopen it even from another client at the same point. This can be used to to start a session in the LAN and to reopen it later on a laptop. The session data are stored and administered in a [SQLite](/index.php/SQLite "SQLite") database on the server in the meanwhile. The state of the sessions is protocolled by a process named *x2gocleansessions*.
 
 ## Troubleshooting
-
-### Authentication error
-
-If the following error appears:
-
-```
-Authentification Failed:
-The host key for this server was not found but an othertype of key exists.
-An Attacker might change the default server key to confuse  
-your client into thinking the key does not exist
-
-```
-
-Delete the servers entry from `~/.ssh/known_hosts` file and retry to authenticate.
 
 ### No selection screen in x2goclient
 

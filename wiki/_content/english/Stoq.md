@@ -1,6 +1,6 @@
 [Stoq](http://www.stoq.com.br) is a suite of open-source enterprise management.
 
-Stoq application uses PostgreSQL as database back-end, with a graphical interface client.
+Stoq application uses [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database back-end, with a graphical interface client.
 
 ## Contents
 

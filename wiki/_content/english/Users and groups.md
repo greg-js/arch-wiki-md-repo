@@ -59,6 +59,7 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 -rw-r--r-- 1 root root 1821573 Jan 12 00:31 initramfs-linux.img
 -rw-r--r-- 1 root root 1457315 Jan  8 08:19 System.map26
 -rw-r--r-- 1 root root 2209920 Jan  8 08:19 vmlinuz-linux
+
 ```
 
 The first column displays the file's permissions (for example, the file `initramfs-linux.img` has permissions `-rw-r--r--`). The third and fourth columns display the file's owning user and group, respectively. In this example, all files are owned by the *root* user and the *root* group.
@@ -67,21 +68,34 @@ The first column displays the file's permissions (for example, the file `initram
 ```
 total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
+
 ```
 
 In this example, the `sf_Shared` directory is owned by the *root* user and the *vboxsf* group. It is also possible to determine a file's owners and permissions using the stat command:
 
 Owning user:
 
- `$ stat -c %U /media/sf_Shared/`  `root` 
+ `$ stat -c %U /media/sf_Shared/` 
+```
+root
+
+```
 
 Owning group:
 
- `$ stat -c %G /media/sf_Shared/`  `vboxsf` 
+ `$ stat -c %G /media/sf_Shared/` 
+```
+vboxsf
+
+```
 
 Access rights:
 
- `$ stat -c %A /media/sf_Shared/`  `drwxrwx---` 
+ `$ stat -c %A /media/sf_Shared/` 
+```
+drwxrwx---
+
+```
 
 Access permissions are displayed in three groups of characters, representing the permissions of the owning user, owning group, and others, respectively. For example, the characters `-rw-r--r--` indicate that the file's owner has read and write permission, but not execute (`rw-`), whilst users belonging to the owning group and other users have only read permission (`r--` and `r--`). Meanwhile, the characters `drwxrwx---` indicate that the file's owner and users belonging to the owning group all have read, write, and execute permissions (`rwx` and `rwx`), whilst other users are denied access (`---`). The first character represents the file's type.
 
@@ -97,7 +111,7 @@ List files owned by a user or group with the *find* utility:
 
 ```
 
-A file's owning user and group can be changed with the *chown* (change owner) command. A file's access permissions can be changed with the *chmod* (change mode) command.
+A file's owning user and group can be changed with the [chown](/index.php/Chown "Chown") (change owner) command. A file's access permissions can be changed with the [chmod](/index.php/Chmod "Chmod") (change mode) command.
 
 See [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) for additional detail.
 
@@ -155,14 +169,7 @@ Although it is not required to protect the newly created user `archie` with a pa
 
 The above *useradd* command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
 
-You could also make the default group something else, e.g. `study`:
-
-```
-# useradd -m -g study -s /bin/bash archie
-
-```
-
-Note that, in multi-user systems, using a single default group (e.g. `users`) for every user is not recommended. The reason is that typically, the method for facilitating shared write access for specific groups of users is setting user [umask](/index.php/Umask "Umask") value to `002`, which means that the default group will by default always have write access to any file you create. See also [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix).
+You could also make the default group something else using the `-g` option, but note that, in multi-user systems, using a single default group (e.g. `users`) for every user is not recommended. The reason is that typically, the method for facilitating shared write access for specific groups of users is setting user [umask](/index.php/Umask "Umask") value to `002`, which means that the default group will by default always have write access to any file you create. See also [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix). If a user must be a member of a specific group specify that group as a supplementary group when creating the user.
 
 In the recommended scenario, where the default group has the same name as the user name, all files are by default writeable only for the user who created them. To allow write access to a specific group, shared files/folders can be made writeable by default for everyone in this group and the owning group can be automatically fixed to the group which owns the parent directory by setting the setgid bit on this directory:
 

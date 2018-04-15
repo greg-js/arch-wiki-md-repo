@@ -13,6 +13,8 @@ Este documento define o padrão para a empacotamento de projetos Common Language
 *   [2 Exemplos de PKGBUILD](#Exemplos_de_PKGBUILD)
     *   [2.1 xbuild](#xbuild)
         *   [2.1.1 Unsigned DLL](#Unsigned_DLL)
+    *   [2.2 NAnt](#NAnt)
+    *   [2.3 Prebuild](#Prebuild)
 
 ## Pegadinhas de empacotamento
 
@@ -78,3 +80,7 @@ package() {
 }
 
 ```
+
+### NAnt
+
+### Prebuild

@@ -1,4 +1,4 @@
-[DANE](https://en.wikipedia.org/wiki/DNS-based_Authentication_of_Named_Entities "w:DNS-based Authentication of Named Entities") (DNS-based Authentication of Named Entities) is a protocol to allow X.509 certificates, commonly used for Transport Layer Security (TLS), to be bound to DNS names using Domain Name System Security Extensions (DNSSEC).
+[DANE](https://en.wikipedia.org/wiki/DNS-based_Authentication_of_Named_Entities "wikipedia:DNS-based Authentication of Named Entities") (DNS-based Authentication of Named Entities) is a protocol to allow X.509 certificates, commonly used for Transport Layer Security (TLS), to be bound to DNS names using Domain Name System Security Extensions (DNSSEC).
 
 **Warning:** This is not a trivial article. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
 

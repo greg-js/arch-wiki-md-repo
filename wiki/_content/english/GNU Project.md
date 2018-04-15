@@ -11,14 +11,14 @@ The aim of the GNU Project is to produce a totally free operating system. While 
 
 ## Contents
 
-*   [1 The Base System](#The_Base_System)
+*   [1 The base system](#The_base_system)
     *   [1.1 Kernel](#Kernel)
-    *   [1.2 Software Collection](#Software_Collection)
-*   [2 Development Tools](#Development_Tools)
-*   [3 Other Tools](#Other_Tools)
+    *   [1.2 Software collection](#Software_collection)
+*   [2 Development tools](#Development_tools)
+*   [3 Other tools](#Other_tools)
 *   [4 See also](#See_also)
 
-## The Base System
+## The base system
 
 At the end of the installation process, an Arch system is nothing more than the Linux Kernel, the GNU toolchain, and a few command line tools. The minimal install normally contains the entire [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
@@ -26,7 +26,7 @@ At the end of the installation process, an Arch system is nothing more than the 
 
 While [Hurd](https://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under active development, there is not yet a stable version. For this reason Arch and most other GNU based systems use the Linux Kernel. The [Arch Hurd Project](/index.php/Arch_Hurd_Project "Arch Hurd Project") aims to port Arch Linux to the Hurd kernel.
 
-### Software Collection
+### Software collection
 
 *   **[GRUB](/index.php/GRUB "GRUB")** — GRUB is the bootloader from the GNU project.
 
@@ -56,7 +56,7 @@ While [Hurd](https://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under act
 
 	[https://www.gnu.org/software/tar/](https://www.gnu.org/software/tar/) || [tar](https://www.archlinux.org/packages/?name=tar)
 
-## Development Tools
+## Development tools
 
 Though not necessary, users have the option of installing the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group for some software development tools. This group is a requirement for building packages from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
@@ -82,7 +82,7 @@ Among **base-devel** are several members of the [GNU toolchain](https://en.wikip
 
 	**library support script:** [libtool](https://www.archlinux.org/packages/?name=libtool)
 
-## Other Tools
+## Other tools
 
 Many other optional GNU tools are available in the [official repositories](/index.php/Official_repositories "Official repositories"):
 

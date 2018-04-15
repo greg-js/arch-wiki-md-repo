@@ -261,7 +261,7 @@ Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no t
 
 ### Systemd-resolved configuration
 
-[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications. *systemd-resoved* has [four different modes for handling *resolv.conf*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF). In one of the modes, it is a consumer of the `/etc/resolv.conf` file and any change made to it is going to be preserved and taken into account transparently for the user. This mode is therefore compatible with the procedures described in this page.
+[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications. *systemd-resolved* has [four different modes for handling *resolv.conf*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF). In one of the modes, it is a consumer of the `/etc/resolv.conf` file and any change made to it is going to be preserved and taken into account transparently for the user. This mode is therefore compatible with the procedures described in this page.
 
 However, this is not *systemd-resolved'*s recommended mode of operation. The service users are advised to redirect software which read the `/etc/resolv.conf` file to the local stub DNS resolver managed by *systemd-resolved*. This can be done by deleting or renaming the existing file and creating a symbolic link: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
 
@@ -272,12 +272,7 @@ $ systemd-resolve --status
 
 ```
 
-**Tip:** To understand the context around the DNS choices and switches, one can turn on detailed debug information: for this, [edit](/index.php/Edit "Edit") *systemd-resolved* drop-in file inputting the two lines
-```
-[Service]
-Environment=SYSTEMD_LOG_LEVEL=debug
-```
-and [restart](/index.php/Restart "Restart") *systemd-resolved*, then watch the journal output for the service.
+**Tip:** To understand the context around the DNS choices and switches, one can turn on detailed debug information for *systemd-resolved* as described in [Systemd#Diagnosing a service](/index.php/Systemd#Diagnosing_a_service "Systemd").
 
 ### Prevent NetworkManager modifications
 

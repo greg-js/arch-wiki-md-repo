@@ -1,104 +1,73 @@
-To automatically run programs:
+Related articles
 
-*   on bootup / shutdown, use [systemd](/index.php/Systemd "Systemd")
-*   on user login / logout, use [systemd/User](/index.php/Systemd/User "Systemd/User") services
-*   periodically at certain times, dates or intervals, use [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") or [Cron](/index.php/Cron "Cron")
-*   once at a date and time, use [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") or [at](https://www.archlinux.org/packages/?name=at)
-*   on filesystem events use an [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") event watcher, like [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), [incron](https://www.archlinux.org/packages/?name=incron) or [fswatch](https://aur.archlinux.org/packages/fswatch/)
-*   on shell login / logout, see the article / documentation of your [shell](/index.php/Shell "Shell")
-*   on [Xorg](/index.php/Xorg "Xorg") startup, you can use:
-    *   [xinitrc](/index.php/Xinitrc "Xinitrc") if you are starting [Xorg](/index.php/Xorg "Xorg") manually with [xinit](/index.php/Xinit "Xinit")
-    *   [xprofile](/index.php/Xprofile "Xprofile") if you are using a [display manager](/index.php/Display_manager "Display manager")
-    *   [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") i.e. place [Desktop entries](/index.php/Desktop_entries "Desktop entries") in specific directories
+*   [Daemons](/index.php/Daemons "Daemons")
+
+This article links to various methods to launch scripts or applications automatically when some particular event is taking place.
 
 ## Contents
 
-*   [1 Daemons](#Daemons)
-    *   [1.1 Systemd](#Systemd)
-*   [2 Cron](#Cron)
-*   [3 File-system changes](#File-system_changes)
-*   [4 Shells](#Shells)
-    *   [4.1 /etc/profile](#.2Fetc.2Fprofile)
-*   [5 Graphical](#Graphical)
-    *   [5.1 X session startup](#X_session_startup)
-    *   [5.2 Desktop entries](#Desktop_entries)
-    *   [5.3 GNOME](#GNOME)
-    *   [5.4 KDE Plasma](#KDE_Plasma)
-    *   [5.5 Xfce](#Xfce)
-    *   [5.6 LXDE](#LXDE)
-    *   [5.7 LXQt](#LXQt)
-    *   [5.8 Fluxbox](#Fluxbox)
-    *   [5.9 Openbox](#Openbox)
-    *   [5.10 Awesome](#Awesome)
+*   [1 On bootup / shutdown](#On_bootup_.2F_shutdown)
+*   [2 On user login / logout](#On_user_login_.2F_logout)
+*   [3 On time events](#On_time_events)
+*   [4 On filesystem events](#On_filesystem_events)
+*   [5 On shell login / logout](#On_shell_login_.2F_logout)
+*   [6 On Xorg startup](#On_Xorg_startup)
+*   [7 On desktop environment startup](#On_desktop_environment_startup)
+*   [8 On window manager startup](#On_window_manager_startup)
 
-## Daemons
+## On bootup / shutdown
 
-You can start your scripts or applications as daemons, see [Daemon](/index.php/Daemon "Daemon").
+Use [systemd](/index.php/Systemd "Systemd") services.
 
-### Systemd
+## On user login / logout
 
-*systemd* is the default init framework, replacing initscripts. The services which are started by *systemd* can be found in the subfolders of `/etc/systemd/system/`. Services can be enabled using the `systemctl` command. For more information about *systemd* and how to write autostart scripts for it, see at [systemd](/index.php/Systemd "Systemd"). To autostart scripts for specific users, see [systemd/User](/index.php/Systemd/User "Systemd/User").
+Use [systemd/User](/index.php/Systemd/User "Systemd/User") services.
 
-## Cron
+## On time events
 
-[Cron](/index.php/Cron "Cron") can be used to autostart non-GUI system setup tasks.
+Periodically at certain times, dates or intervals:
 
-## File-system changes
+*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
+*   [Cron](/index.php/Cron "Cron")
 
-[inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) can be used to execute commands or scripts on [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") events, triggered by file-system changes. See [some examples](https://techarena51.com/index.php/inotify-tools-example/).
+Once at a date and time:
 
-Other tools that use the same underlying functionality are [incron](https://www.archlinux.org/packages/?name=incron) and [fswatch](https://aur.archlinux.org/packages/fswatch/).
+*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
+*   [at](https://www.archlinux.org/packages/?name=at)
 
-## Shells
+## On filesystem events
 
-To autostart programs in console or upon login, you can use shell startup files/directories. Read the documentation for your shell, or its ArchWiki article, e.g. [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+Use an [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") event watcher:
 
-See also [Wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
+*   [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) (see [some examples](https://techarena51.com/index.php/inotify-tools-example/))
+*   [Incron](/index.php/Incron "Incron")
+*   [fswatch](https://aur.archlinux.org/packages/fswatch/)
 
-### /etc/profile
+## On shell login / logout
 
-Upon login, all Bourne-compatible shells source `/etc/profile`, which in turn sources any readable `*.sh` files in `/etc/profile.d/`: these scripts do not require an interpreter directive, nor do they need to be executable. They are used to set up an environment and define application-specific settings.
+See [Command-line shell#Configuration files](/index.php/Command-line_shell#Configuration_files "Command-line shell").
 
-## Graphical
+## On Xorg startup
 
-You can autostart programs automatically when you login into your [Window manager](/index.php/Window_manager "Window manager") or [Desktop environment](/index.php/Desktop_environment "Desktop environment").
+*   [xinitrc](/index.php/Xinitrc "Xinitrc") if you are starting [Xorg](/index.php/Xorg "Xorg") manually with [xinit](/index.php/Xinit "Xinit").
+*   [xprofile](/index.php/Xprofile "Xprofile") if you are using a [display manager](/index.php/Display_manager "Display manager").
 
-### X session startup
+## On desktop environment startup
 
-See [xinitrc](/index.php/Xinitrc "Xinitrc") and [xprofile](/index.php/Xprofile "Xprofile").
+If the [desktop environment](/index.php/Desktop_environment "Desktop environment") has an ArchWiki article, see its *Autostart* section.
 
-### Desktop entries
+*   [GNOME#Autostart](/index.php/GNOME#Autostart "GNOME")
+*   [KDE#Autostart](/index.php/KDE#Autostart "KDE")
+*   [Xfce#Autostart](/index.php/Xfce#Autostart "Xfce")
+*   [LXDE#Autostart](/index.php/LXDE#Autostart "LXDE")
+*   [LXQt#Autostart](/index.php/LXQt#Autostart "LXQt")
 
-See [Desktop entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop entries").
+Most desktop environments implement [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
-### GNOME
+## On window manager startup
 
-See [GNOME#Startup applications](/index.php/GNOME#Startup_applications "GNOME").
+If the [window manager](/index.php/Window_manager "Window manager") has an ArchWiki article, see its *Autostart* section.
 
-### KDE Plasma
-
-See [KDE#Autostarting applications](/index.php/KDE#Autostarting_applications "KDE").
-
-### Xfce
-
-See [Xfce#Startup applications](/index.php/Xfce#Startup_applications "Xfce").
-
-### LXDE
-
-See [LXDE#Autostart](/index.php/LXDE#Autostart "LXDE").
-
-### LXQt
-
-See [LXQt#Autostarting applications](/index.php/LXQt#Autostarting_applications "LXQt").
-
-### Fluxbox
-
-See [Fluxbox#Autostart programs](/index.php/Fluxbox#Autostart_programs "Fluxbox").
-
-### Openbox
-
-See [Openbox#autostart](/index.php/Openbox#autostart "Openbox").
-
-### Awesome
-
-See [Awesome#Autorun programs](/index.php/Awesome#Autorun_programs "Awesome").
+*   [Fluxbox#Autostart](/index.php/Fluxbox#Autostart "Fluxbox")
+*   [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox")
+*   [Awesome#Autostart](/index.php/Awesome#Autostart "Awesome")

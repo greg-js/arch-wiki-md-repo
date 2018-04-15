@@ -1,17 +1,93 @@
+| **Device** | **Status** | **Modules** |
+| Intel | Working | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) |
+| Ethernet | Working | tg3 |
+| Wireless | Working | wl |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) |
+| Fingerprint | Working | [fprintd](https://www.archlinux.org/packages/?name=fprintd) |
+| Camera | Working | linux-uvc |
+| Card Reader | Working | sdhci_pci |
+| Bluetooth | Working | btusb |
+
 The Dell Latitude E5430 is a business line laptop made for corporate users who have a need for durability. This article will tell you how to get the basic components of the laptop running with Arch.
 
 ## Contents
 
-*   [1 Hardware Overview](#Hardware_Overview)
-*   [2 Bluetooth](#Bluetooth)
-*   [3 Fingerprint](#Fingerprint)
-*   [4 Synaptics Touchpad](#Synaptics_Touchpad)
-*   [5 Wireless](#Wireless)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Issue with XKeyboardConfig](#Issue_with_XKeyboardConfig)
-    *   [6.2 Disable PC Speaker](#Disable_PC_Speaker)
+*   [1 Hardware support](#Hardware_support)
+    *   [1.1 Audio](#Audio)
+    *   [1.2 Bluetooth](#Bluetooth)
+    *   [1.3 Fingerprint reader](#Fingerprint_reader)
+    *   [1.4 Touchpad](#Touchpad)
+    *   [1.5 Wireless](#Wireless)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Issue with XKeyboardConfig](#Issue_with_XKeyboardConfig)
+*   [3 Hardware Information](#Hardware_Information)
 
-## Hardware Overview
+## Hardware support
+
+In this section you will find some quick information and references for hardware support. See [Laptop](/index.php/Laptop "Laptop") and [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") for more general information on laptops.
+
+### Audio
+
+Audio works out of the box.
+
+PC speaker capability is included. See [PC speaker](/index.php/PC_speaker "PC speaker") for information on how to disable it and more.
+
+### Bluetooth
+
+[Install](/index.php/Install "Install") the package [bluez](https://www.archlinux.org/packages/?name=bluez), [start](/index.php/Start "Start") `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
+
+### Fingerprint reader
+
+[Install](/index.php/Install "Install") the package [fprintd](https://www.archlinux.org/packages/?name=fprintd). It is required to create fingerprint signature. See [fprint](/index.php/Fprint "Fprint") for more useful information.
+
+### Touchpad
+
+[Install](/index.php/Install "Install") the package [libinput](https://www.archlinux.org/packages/?name=libinput) for enabling the touchpad.
+
+### Wireless
+
+You may find out which wireless network card you have with:
+
+```
+$ lspci | grep Broadcom | grep -v Ethernet
+
+```
+
+It seems this laptop may have BCM5761 or BCM43228.
+
+In both cases, you will need the proprietary driver [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), or its non-DKMS version [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/).
+
+See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more information on this Wireless NIC (WNIC) vendor.
+
+## Troubleshooting
+
+### Issue with XKeyboardConfig
+
+While starting the graphic interface, you might come across with the bug [#77504](https://bugs.freedesktop.org/show_bug.cgi?id=77504) reported in freedesktop bugzilla. It seems to apply to both Xorg and Wayland. During the display server startup, the XKEYBOARD keymap compiler (xkbcomb) reports:
+
+```
+> Warning:          Compat map for group 2 redefined
+>                   Using new definition
+> Warning:          Compat map for group 3 redefined
+>                   Using new definition
+> Warning:          Compat map for group 4 redefined
+>                   Using new definition
+Errors from xkbcomp are not fatal to the X server
+
+```
+
+One solution is to comment out the following lines in the file `/usr/share/X11/xkb/compat/basic`. The double forward-slash is the comment symbol.
+
+```
+ //    group 2 = AltGr;                                                                
+ //    group 3 = AltGr;
+ //    group 4 = AltGr; 
+```
+
+This solution of provided in the forum thread [Xkeyboard/xkbcomp gives warnings](https://bbs.archlinux.org/viewtopic.php?pid=1105212).
+
+## Hardware Information
 
 Modules found by [hwdetect](https://www.archlinux.org/packages/?name=hwdetect):
 
@@ -75,75 +151,4 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-```
-
-## Bluetooth
-
-[Install](/index.php/Install "Install") the package [bluez](https://www.archlinux.org/packages/?name=bluez), [start](/index.php/Start "Start") `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
-
-## Fingerprint
-
-You should find a fingerprint sensor with
-
-```
-$ lsusb | grep AuthenTec
-Bus 001 Device 005: ID 08ff:2810 AuthenTec, Inc. AES2810
-
-```
-
-You'll need the [fprintd](https://www.archlinux.org/packages/?name=fprintd) package. See [fprint](/index.php/Fprint "Fprint") for more information.
-
-## Synaptics Touchpad
-
-[Install](/index.php/Install "Install") the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for enabling the touchpad.
-
-## Wireless
-
-You may find out which wireless network card you have with:
-
-```
-$ lspci | grep Broadcom | grep -v Ethernet
-
-```
-
-It seems this laptop may have BCM5761 or BCM43228.
-
-In both cases, you will need the proprietary driver [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), or its non-DKMS version [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/).
-
-## Troubleshooting
-
-### Issue with XKeyboardConfig
-
-While starting the graphic interface, you might come across with the bug [#77504](https://bugs.freedesktop.org/show_bug.cgi?id=77504) reported in freedesktop bugzilla. It seems to apply to both Xorg and Wayland. During the display server startup, the XKEYBOARD keymap compiler (xkbcomb) reports:
-
-```
-> Warning:          Compat map for group 2 redefined
->                   Using new definition
-> Warning:          Compat map for group 3 redefined
->                   Using new definition
-> Warning:          Compat map for group 4 redefined
->                   Using new definition
-Errors from xkbcomp are not fatal to the X server
-
-```
-
-One solution is to comment out the following lines in the file `/usr/share/X11/xkb/compat/basic`. The double forward-slash is the comment symbol.
-
-```
- //    group 2 = AltGr;                                                                
- //    group 3 = AltGr;
- //    group 4 = AltGr; 
-```
-
-This solution of provided in the forum thread [Xkeyboard/xkbcomp gives warnings](https://bbs.archlinux.org/viewtopic.php?pid=1105212).
-
-### Disable PC Speaker
-
-To disable it, ensure the module `pcspkr` is not loaded during bootup:
-
- `/etc/modprobe.d/nobeep.conf` 
-```
-#Do not load the 'pcspkr' module on boot.
-
-blacklist pcspkr
 ```

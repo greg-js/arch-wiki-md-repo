@@ -494,7 +494,7 @@ If you see `crc32c=crc32c-generic`, it is probably because your root partition i
 
  `/etc/mkinitcpio.conf`  `BINARIES=("/usr/bin/btrfs")` 
 
-Regenerate the initial ramdisk using [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio").
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 Then if there is a problem booting, the utility is available for repair.
 

@@ -128,3 +128,12 @@ Other applications that are usually provided by desktop environments are:
 ### Use a different window manager
 
 If the desktop environment has an article, see its *Use a different window manager* section, otherwise consult the official documentation.
+
+*   [GNOME#Use a different window manager](/index.php/GNOME#Use_a_different_window_manager "GNOME")
+*   [KDE#Use a different window manager](/index.php/KDE#Use_a_different_window_manager "KDE")
+*   [Xfce#Use a different window manager](/index.php/Xfce#Use_a_different_window_manager "Xfce")
+*   [MATE#Use a different window manager](/index.php/MATE#Use_a_different_window_manager "MATE")
+*   [Cinnamon#Use a different window manager](/index.php/Cinnamon#Use_a_different_window_manager "Cinnamon")
+*   [LXDE#Use a different window manager](/index.php/LXDE#Use_a_different_window_manager "LXDE")
+*   [LXQt#Use a different window manager](/index.php/LXQt#Use_a_different_window_manager "LXQt")
+*   [Budgie#Use a different window manager](/index.php/Budgie#Use_a_different_window_manager "Budgie")

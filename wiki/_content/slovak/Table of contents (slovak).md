@@ -1,4 +1,4 @@
-| [Slovenský](/index.php/Category:Slovensk%C3%BD "Category:Slovenský") <small>(15)</small> |
+| [Slovenský](/index.php/Category:Slovensk%C3%BD "Category:Slovenský") <small>(14)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(Slovensk%C3%BD) "Category:About Arch (Slovenský)") <small>(1)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(Slovensk%C3%BD) "Category:ArchWiki (Slovenský)") <small>(2)</small> |
 | <small>1.2.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Slovensk%C3%BD) "Category:Getting and installing Arch (Slovenský)") <small>(2)</small> |

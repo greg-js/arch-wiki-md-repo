@@ -61,20 +61,13 @@ UEFI is designed to remove the need for an intermediate bootloader such as [GRUB
 The command looks like
 
 ```
-# efibootmgr --disk */dev/sdX* --part *Y* --create --gpt --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=*/dev/sdBZ* rw initrd=\initramfs-linux.img'
+# efibootmgr --disk */dev/sdX* --part *Y* --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw initrd=\initramfs-linux.img' --verbose
 
 ```
 
 Where `*/dev/sdX*` and `*Y*` are the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root. Note that the `-u`/`--unicode` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters (e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode")).
 
 **Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
-
-Alternatively, you can define the boot entry using disk [UUIDs](/index.php/UUID "UUID") with this command:
-
-```
-# efibootmgr --disk */dev/sdX* --part *Y* --create --gpt --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=UUID=*00000000-0000-0000-0000-000000000000* rw initrd=\initramfs-linux.img'
-
-```
 
 After adding the boot entry, you can verify the entry was added properly with:
 
@@ -94,7 +87,7 @@ Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. 
 To set the boot order, run:
 
 ```
-# efibootmgr --bootorder *XXXX*,*XXXX*
+# efibootmgr --bootorder *XXXX*,*XXXX* --verbose
 
 ```
 
@@ -107,7 +100,7 @@ More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI
 If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable *.efi* image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the *.efi* file:
 
 ```
-# efibootmgr --create --disk /dev/sdX --part *partition_number* --label "*label*" --loader "EFI\*folder*\*file*.efi"
+# efibootmgr --create --disk /dev/sdX --part *partition_number* --label "*label*" --loader "EFI\*folder*\*file*.efi" --verbose
 
 ```
 

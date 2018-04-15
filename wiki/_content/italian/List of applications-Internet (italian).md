@@ -749,7 +749,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Uzbl](https://en.wikipedia.org/wiki/Uzbl "wikipedia:Uzbl")** — Gruppo di strumenti di interfaccia web che segue la filosofia UNIX.
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Browser che si comporta come il plugin Vimperator disponibili per Mozilla Firefox. Si basa sul motore WebKit e usa le GTK.
 

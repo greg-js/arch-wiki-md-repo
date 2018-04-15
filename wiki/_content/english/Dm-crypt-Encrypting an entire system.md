@@ -256,13 +256,21 @@ What you do have to setup is a non-encrypted `/boot` partition, which is needed 
 
 At [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") you will have to mount the mapped devices, not the actual partitions. Of course `/boot`, which is not encrypted, will still have to be mounted directly.
 
-Afterwards continue with the installation procedure up to the mkinitcpio step.
-
 ### Configuring mkinitcpio
 
 Add the `keyboard`, `keymap` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). If the default US keymap is fine for you, you can omit the `keymap` hook.
 
- `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** ... filesystems ...)` 
+```
+HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** filesystems fsck)
+
+```
+
+Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+
+```
+HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** filesystems fsck)
+
+```
 
 Depending on which other hooks are used, the order may be relevant. See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -272,6 +280,13 @@ In order to unlock the encrypted root partition at boot, the following kernel pa
 
 ```
 cryptdevice=UUID=*device-UUID*:cryptroot root=/dev/mapper/cryptroot
+
+```
+
+For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be set by the boot loader instead:
+
+```
+rd.luks.name=*device-UUID*=cryptroot root=/dev/mapper/cryptroot
 
 ```
 
@@ -405,13 +420,21 @@ Mount the partition to `/mnt/boot`:
 
 ```
 
-Afterwards continue with the installation procedure up to the `mkinitcpio` step.
-
 ### Configuring mkinitcpio
 
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** **lvm2** ... filesystems ...)` 
+```
+HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
+
+```
+
+Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+
+```
+HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
+
+```
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -421,6 +444,13 @@ In order to unlock the encrypted root partition at boot, the following kernel pa
 
 ```
 cryptdevice=UUID=*device-UUID*:cryptlvm root=/dev/mapper/MyVol-root
+
+```
+
+For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be set by the boot loader instead:
+
+```
+rd.luks.name=*device-UUID*=cryptlvm root=/dev/mapper/MyVol-root
 
 ```
 
@@ -441,19 +471,19 @@ The following short example creates a LUKS on LVM setup and mixes in the use of 
 Partitioning scheme:
 
 ```
-+----------------+-----------------------------------------------------------------------------------------+
-| Boot partition | LUKS encrypted volume       | LUKS encrypted volume       | LUKS encrypted volume       |
-|                |                             |                             |                             |
-| /boot          | [SWAP]                      | /                           | /home                       |
-|                |                             |                             |                             |
-|                | /dev/mapper/swap            | /dev/mapper/root            | /dev/mapper/home            |
-|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
-|                | Logical volume 1            | Logical volume 2            | Logical volume 3            |
-|                | /dev/mapper/MyVol-cryptswap | /dev/mapper/MyVol-cryptroot | /dev/mapper/MyVol-crypthome |
-|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
-|                |                                                                                         |
-|   /dev/sda1    |                               /dev/sda2                                                 |
-+----------------+-----------------------------------------------------------------------------------------+
++----------------+---------------------------------------------------------------------------------------------+
+| Boot partition | dm-crypt plain encrypted volume | LUKS encrypted volume       | LUKS encrypted volume       |
+|                |                                 |                             |                             |
+| /boot          | [SWAP]                          | /                           | /home                       |
+|                |                                 |                             |                             |
+|                | /dev/mapper/swap                | /dev/mapper/root            | /dev/mapper/home            |
+|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+|                | Logical volume 1                | Logical volume 2            | Logical volume 3            |
+|                | /dev/mapper/MyVol-cryptswap     | /dev/mapper/MyVol-cryptroot | /dev/mapper/MyVol-crypthome |
+|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+|                |                                                                                             |
+|   /dev/sda1    |                                   /dev/sda2                                                 |
++----------------+---------------------------------------------------------------------------------------------+
 
 ```
 
@@ -491,13 +521,14 @@ More information about the encryption options can be found in [Dm-crypt/Device e
 
 ```
 
-Now after setup of the encrypted LVM partitioning, it would be time to install: [Arch Install Scripts](/index.php/Installation_guide#Mount_the_file_systems "Installation guide").
-
 ### Configuring mkinitcpio
 
 Add the `keyboard`, `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **lvm2** **encrypt** ... filesystems ...)` 
+```
+HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **lvm2** **encrypt** filesystems fsck)
+
+```
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -514,6 +545,13 @@ See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_confi
 
 ### Configuring fstab and crypttab
 
+Both [crypttab](/index.php/Crypttab "Crypttab") and [fstab](/index.php/Fstab "Fstab") entries are required to both unlock the device and mount the filesystems, respectively. The following lines will re-encrypt the temporary filesystems on each reboot:
+
+ `/etc/crypttab` 
+```
+swap	/dev/mapper/MyVol-cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
+tmp	/dev/mapper/MyVol-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
+```
  `/etc/fstab` 
 ```
 /dev/mapper/root        /       ext4            defaults        0       1
@@ -523,17 +561,9 @@ See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_confi
 
 ```
 
-The following [crypttab](/index.php/Crypttab "Crypttab") options will re-encrypt the temporary filesystems each reboot:
-
- `/etc/crypttab` 
-```
-swap	/dev/mapper/MyVol-cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
-tmp	/dev/mapper/MyVol-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
-```
-
 ### Encrypting logical volume /home
 
-Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, each encrypted logical volume requires its own encryption. Yet, unlike the temporary filesystems configured with volatile encryption above, the logical volume for `/home` should be persistent, of course. The following assumes you have rebooted into the installed system, otherwise you have to adjust paths. To safe on entering a second passphrase at boot for it, a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") is created:
+Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, each encrypted logical volume requires its own encryption. Yet, unlike the temporary filesystems configured with volatile encryption above, the logical volume for `/home` should of course be persistent. The following assumes you have rebooted into the installed system, otherwise you have to adjust paths. To safe on entering a second passphrase at boot for it, a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") is created:
 
 ```
 # mkdir -m 700 /etc/luks-keys
@@ -551,7 +581,7 @@ The logical volume is encrypted with it:
 
 ```
 
-The encrypted mount is configured in [crypttab](/index.php/Crypttab "Crypttab"):
+The encrypted mount is configured in both [crypttab](/index.php/Crypttab "Crypttab") and [fstab](/index.php/Fstab "Fstab"):
 
  `/etc/crypttab` 
 ```
@@ -563,8 +593,6 @@ home	/dev/mapper/MyVol-crypthome   /etc/luks-keys/home
 /dev/mapper/home        /home   ext4        defaults        0       2
 
 ```
-
-and setup is done.
 
 If you want to expand the logical volume for `/home` (or any other volume) at a later point, it is important to note that the LUKS encrypted part has to be resized as well. For a procedure see [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
@@ -697,7 +725,7 @@ Edit [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to include 
 
 ```
 FILES=(/crypto_keyfile.bin)
-HOOKS=( ... **keyboard** **keymap** block **mdadm_udev** **encrypt** filesystems ... )
+HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **mdadm_udev** **encrypt** filesystems fsck)
 
 ```
 
@@ -808,7 +836,10 @@ Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition inten
 
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** **lvm2** ... filesystems ...)` 
+```
+HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
+
+```
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -989,13 +1020,21 @@ sda                       8:0      0   200G  0 disk
 
 ```
 
-Afterwards continue with the installation procedure up to the mkinitcpio step.
-
 ### Configuring mkinitcpio
 
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** **lvm2** ... filesystems ...)` 
+```
+HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
+
+```
+
+Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+
+```
+HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
+
+```
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -1006,6 +1045,14 @@ Configure GRUB to recognize the LUKS encrypted `/boot` partition and unlock the 
  `/etc/default/grub` 
 ```
 GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*device-UUID*:cryptlvm ..."
+GRUB_ENABLE_CRYPTODISK=y
+```
+
+For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be used instead:
+
+ `/etc/default/grub` 
+```
+GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
@@ -1192,7 +1239,7 @@ In order for GRUB to open the LUKS partition without having the user enter his p
 
 #### Edit mkinitcpio.conf
 
-After creating, adding, and embedding the key as described above, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") as well as any other hooks you require. See [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information. Be sure to regenerate the initial ramdisk when finished.
+After creating, adding, and embedding the key as described above, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") as well as any other hooks you require. See [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information.
 
 **Tip:** You may want to add `BINARIES=(/usr/bin/btrfs)` to your `mkinitcpio.conf`. See the [Btrfs#Corruption recovery](/index.php/Btrfs#Corruption_recovery "Btrfs") article.
 
@@ -1203,5 +1250,3 @@ Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/g
 ### Configuring swap
 
 If you created a partition to be used for encrypted swap, now is the time to configure it. Follow the instructions at [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
-
-After completing this step, continue configuring your system as normal according to the [installation guide](/index.php/Installation_guide#Reboot "Installation guide").

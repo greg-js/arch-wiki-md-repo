@@ -4,7 +4,7 @@ Related articles
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
 
-[ConnMan](https://01.org/connman) is a command-line network manager designed for use with embedded devices and fast resolve times. It is modular through a [plugin architecture](http://git.kernel.org/cgit/network/connman/connman.git/tree/plugins), but has native [w:DHCP](https://en.wikipedia.org/wiki/DHCP "w:DHCP") and [NTP](/index.php/NTP "NTP") support.[[1]](http://git.kernel.org/cgit/network/connman/connman.git/tree/src/)
+[ConnMan](https://01.org/connman) is a command-line network manager designed for use with embedded devices and fast resolve times. It is modular through a [plugin architecture](http://git.kernel.org/cgit/network/connman/connman.git/tree/plugins), but has native [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") and [NTP](/index.php/NTP "NTP") support.[[1]](http://git.kernel.org/cgit/network/connman/connman.git/tree/src/)
 
 ## Contents
 

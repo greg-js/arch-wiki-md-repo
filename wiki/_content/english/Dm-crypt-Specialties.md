@@ -361,9 +361,15 @@ rd.luks.options=discard
 
 ```
 
+**Note:** The `rd.luks.options=discard` kernel option does not have any effect on devices included in the initramfs image's `/etc/crypttab` file (`/etc/crypttab.initramfs` on real root). You must specify option `discard` in `/etc/crypttab.initramfs`.
+
 Besides the kernel option, it is also required to periodically run `fstrim` or mount the filesystem (e.g. `/dev/mapper/root` in this example) with the `discard` option in `/etc/fstab`. For details, please refer to the [TRIM](/index.php/TRIM "TRIM") page.
 
-For LUKS devices unlocked via `/etc/crypttab` use option `discard`. When manually unlocking devices on the console use `--allow-discards`.
+For LUKS devices unlocked via `/etc/crypttab` use option `discard`, e.g.:
+
+ `/etc/crypttab`  `luks-123abcdef-etc UUID=123abcdef-etc none discard` 
+
+When manually unlocking devices on the console use `--allow-discards`.
 
 With LUKS2 you can set `allow-discards` as a default flag for a device by opening it once with the option `--persistent`:
 
@@ -372,11 +378,19 @@ With LUKS2 you can set `allow-discards` as a default flag for a device by openin
 
 ```
 
-You can confirm the flag is set by looking at the `cryptsetup luksDump` output:
+You can confirm the flag is persistently set in the LUKS2 header by looking at the `cryptsetup luksDump` output:
 
  `# cryptsetup luksDump /dev/sdaX | grep Flags` 
 ```
 Flags:          allow-discards
+
+```
+
+In any case, you can verify whether the device actually was opened with discards by inspecting the `dmsetup table` output:
+
+ `# dmsetup table` 
+```
+luks-123abcdef-etc: 0 1234567 crypt aes-xts-plain64 000etc000 0 8:2 4096 1 allow_discards
 
 ```
 
@@ -491,7 +505,7 @@ By using a detached header the encrypted blockdevice itself only carries encrypt
 See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
 
 ```
-# truncate -s 4M header.img
+# dd if=/dev/zero of=header.img bs=4M count=1 conv=notrunc
 # cryptsetup luksFormat --type luks2 /dev/sdX --align-payload 8192 --header header.img
 
 ```
@@ -528,9 +542,11 @@ Modify `/etc/mkinitcpio.conf` [to use systemd](/index.php/Mkinitcpio#Common_hook
 
  `/etc/mkinitcpio.conf` 
 ```
+...
 FILES=(**/boot/header.img**)
-
-HOOKS=(... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ...)
+...
+HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
+...
 ```
 
 [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and you are done.
@@ -579,11 +595,13 @@ Now edit the [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to 
 
  `/etc/mkinitcpio.conf` 
 ```
+...
 MODULES=(**loop**)
-
+...
 FILES=(**/boot/header.img**)
-
-HOOKS=(... **encrypt2** **lvm2** ... filesystems ...)
+...
+HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt2** **lvm2** filesystems fsck)
+...
 ```
 
 This is required so the LUKS header is available on boot allowing the decryption of the system, exempting us from a more complicated setup to mount another separate USB device in order to access the header. After this set up [the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") is created.
@@ -635,7 +653,7 @@ Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/ind
 
 *filesize* is in bytes but can be followed by a suffix such as `M`. Having too small of a file will get you a nasty `Requested offset is beyond real size of device /dev/loop0` error. As a rough reference, creating a 4M file will encrypt it successfully. You should make the file larger than the space needed since the encrypted loop device will be a little smaller than the file's size.
 
-With a big file, you can use `--keyfile-offset=*offset*` and `--keyfile-size=*size*` to navigate to the correct position. [[5]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile) [[6]](https://bbs.archlinux.org/viewtopic.php?id=193451)
+With a big file, you can use `--keyfile-offset=*offset*` and `--keyfile-size=*size*` to navigate to the correct position. [[5]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile)
 
 Now you should have `lukskey` opened in a loop device (underneath `/dev/loop1`), mapped as `/dev/mapper/lukskey`.
 

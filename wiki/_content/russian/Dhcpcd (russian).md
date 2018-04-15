@@ -35,6 +35,8 @@
 
 Также с пакетом [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) (доступен в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)")) вы можете установить графическую оболочку [GTK+](/index.php/GTK%2B "GTK+") для демона *dhcpcd* (и, опционально, для [wpa_supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)")). Он предоставляет диалоговую панель для настройки и позволяет вводить данные для подключения к беспроводным сетям.
 
+[dhcpcd-ui-patched](https://aur.archlinux.org/packages/dhcpcd-ui-patched/) - патченная версия пакета [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/). Она использует AppIndicator вместо GtkStatusIcon и компилируется с gtk3, благодаря чему имеет четкую иконку в трее при использовании с [KDE](/index.php/KDE "KDE").
+
 ## Запуск
 
 Вместе с *dhcpcd* предоставляются два юнит-файла [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), каждый из которых может быть использован для управления демоном:

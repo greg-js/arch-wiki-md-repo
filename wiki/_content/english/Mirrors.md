@@ -32,8 +32,9 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [5.14 South Africa](#South_Africa)
     *   [5.15 Sweden](#Sweden)
     *   [5.16 Thailand](#Thailand)
-    *   [5.17 United States](#United_States)
-    *   [5.18 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+    *   [5.17 Turkey](#Turkey)
+    *   [5.18 United States](#United_States)
+    *   [5.19 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 
 ## Official mirrors
 
@@ -228,7 +229,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 ### Japan
 
-*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - *NAra Institute of Science and Technology*
+*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - *Nara Institute of Science and Technology*
 *   [http://ftp.kddilabs.jp/Linux/packages/archlinux/](http://ftp.kddilabs.jp/Linux/packages/archlinux/)
 *   [http://srv2.ftp.ne.jp/Linux/packages/archlinux/](http://srv2.ftp.ne.jp/Linux/packages/archlinux/)
 *   [http://mirror.archlinuxjp.org/](http://mirror.archlinuxjp.org/)
@@ -273,6 +274,11 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 ### Thailand
 
 *   [http://mirror1.ku.ac.th/archlinux/](http://mirror1.ku.ac.th/archlinux/)
+
+### Turkey
+
+*   [http://mirror.veriteknik.net.tr/archlinux/](http://mirror.veriteknik.net.tr/archlinux/) *- VeriTeknik Data Center*
+*   [http://ftp.linux.org.tr/archlinux/](http://ftp.linux.org.tr/archlinux/)
 
 ### United States
 

@@ -5,9 +5,8 @@
 *   [1 Installation](#Installation)
 *   [2 IMAP Setup](#IMAP_Setup)
 *   [3 Alternative IMAP Setup](#Alternative_IMAP_Setup)
-    *   [3.1 Offlineimap setup](#Offlineimap_setup)
-    *   [3.2 First offlineimap sync and automated sync-ing](#First_offlineimap_sync_and_automated_sync-ing)
-    *   [3.3 Evolution setup for offlineimap's maildir](#Evolution_setup_for_offlineimap.27s_maildir)
+    *   [3.1 OfflineIMAP setup](#OfflineIMAP_setup)
+    *   [3.2 Evolution setup for offlineimap's maildir](#Evolution_setup_for_offlineimap.27s_maildir)
 *   [4 Gmail Setup](#Gmail_Setup)
     *   [4.1 Receiving Mail](#Receiving_Mail)
     *   [4.2 Sending Mail](#Sending_Mail)
@@ -59,9 +58,9 @@ An alternative to letting Evolution connect directly to the IMAP server is to sy
 
 To set this up, you will need to [install](/index.php/Install "Install") the [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) package (see also [[1]](http://offlineimap.org/)).
 
-### Offlineimap setup
+### OfflineIMAP setup
 
-offlineimap takes its settings from the file `~/.offlineimaprc`, which you will need to create. Most users will be able to use the .offlineimaprc below, for the most common case of a Gmail account. The settings for a general account are identical, except remotehost, ssl, and remoteport need to be set appropriately (see the comments below). See the [official README](https://github.com/nicolas33/offlineimap) for more information.
+OfflineIMAP takes its settings from the file `~/.offlineimaprc`, which you will need to create. For standard IMAP server, most users will be able to use the template file below. See the [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") for more information.
 
 ```
 [general]
@@ -75,100 +74,61 @@ ui = Noninteractive.Basic
 [Account MyAccount]
 # Each account should have a local and remote repository
 localrepository = MyLocal
-remoterepository = MyGmail
+remoterepository = MyMailserver
 # Specifies how often to do a repeated sync (if running without crond)
 autorefresh = 10
 
 [Repository MyLocal]
 type = Maildir
 localfolders = /home/path/to/your/maildir
-# This needs to be specified so the MailDir uses a folder structure
-# suitable to Evolution
-sep = /
+# This needs to be specified so offlineimap does not complain during resync 
+sep = .
+nametrans = lambda folder: re.sub('^.', *,*
+                       re.sub('^$', '.INBOX', folder))
 
-[Repository MyGmail]
+[Repository MyMailserver]
 # Example for a gmail account
-type = Gmail
-# If using some other IMAP server, uncomment and set the following:-
-#remotehost = imap.gmail.com
-#ssl = yes
-#remoteport = 993
-# Specify the Gmail user name and password.
-remoteuser = yourname@gmail.com
+type = IMAP
+remotehost = your.imap.server.com
+remoteuser = yourname
 remotepass = yourpassword
-# realdelete is Gmail specific, setting to no ensures that deleting
-# a message sends it to 'All Mail' instead of the trash.
-realdelete = no
-# Use 1 here first, increase it if your connection (and the server's)
-# supports it.
-maxconnections = 1
-# This translates folder names such that everything (including your Inbox)
-# appears in the same folder (named root).
-nametrans = lambda foldername: re.sub('^Sent$', 'root/Sent',
- re.sub('^(\[G.*ail\]|INBOX)', 'root', foldername))
-# This excludes some folders from being synced. You will almost
-# certainly want to exclude 'All Mail', 'Trash', and 'Starred', at
-# least. Note that offlineimap does NOT honor subscription details.
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail',
- '[Gmail]/Trash','[Gmail]/Spam','[Gmail]/Starred']
+remoteport = 143
+# You need to configure some CA certificates
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# Translate your INBOX to be the root directory.
+# All other directories need a dot before the actual name.
+nametrans = lambda folder: re.sub('^.INBOX$', *,*
+                       re.sub('^', '.', folder))
+
+```
+
+In case of Gmail instead of standard IMAP server, you will most likely need to add additional translations ( [source](https://medvid.tk/post/2015/02/08/sync-evolution-mail-with-offlineimap/) ).
+
+For remote Mailserver Repository:
+
+```
+nametrans = lambda folder: re.sub('^.INBOX$', *,*
+                          re.sub('^', '.',
+                          re.sub('\.', '_2E',
+                          re.sub('^\[Gmail\].Drafts$', 'Drafts',
+                          re.sub('^\[Gmail\].Sent Mail$', 'Sent', folder)))))
+
+```
+
+and for local Repository:
+
+```
+nametrans = lambda folder: re.sub('^Sent$',   '[Gmail].Sent Mail',
+                          re.sub('^Drafts$', '[Gmail].Drafts',
+                          re.sub('_2E', '.',
+                          re.sub('^.', *,*
+                          re.sub('^$', '.INBOX', folder)))))
 
 ```
 
 **Warning:** Please note that any space indenting a line of code in `~/.offlineimaprc` would be considered as appending that line to the previous line. In other words, always make sure there is no space before any lines in your config file.
 
-Acknowledgement: This config file was done by referring both to the official example as well as to the config file in an article on [http://www.linux.com](http://www.linux.com) (no longer available).
-
-### First offlineimap sync and automated sync-ing
-
-Once you have completed your offlineimap setup, you should perform your first sync by running with your normal user account
-
-```
-$ offlineimap
-
-```
-
-Assuming you've set your password and all other settings correctly, offlineimap will begin to sync the requested repositories. This may take a long while, depending on connection speed and size of your mail account, so you should preferably find a fast connection to do this. You can run offlineimap using another interface by specifying
-
-```
-$ offlineimap -u TTY.TTYUI
-
-```
-
-This allows interactive entry of passwords.
-
-Once you've completed your first sync, you'll want to set up automatic syncing. This can be done using crond, or just by running offlineimap on startup. The disadvantage of running offlineimap on startup (with autorefresh set) is that if for any reason an error appears, your mail will just stop syncing from that point onwards. So, running through crond requires you to add the following line to your crontab.
-
-```
-*/10 * * * * /path/to/scripts/runofflineimap >/dev/null 2>&1
-
-```
-
-For those unfamiliar with crontab and/or vi, just run
-
-```
-$ crontab -e
-
-```
-
-Press 'i' to start input, type in the line above, press Esc to escape back to the prompt, and type ':wq' to save and quit. /path/to/scripts/runofflineimap should run offlineimap itself (with -o for a single run). Here is an example script for that:-
-
-```
-#!/bin/sh
-# Run offlineimap through cron to fetch email periodically
-pgrep offlineimap
-if [ $? -eq "0" ]; then
-        logger -i -t offlineimap "Another instance of offlineimap running. Exiting."
-        exit 0;
-else
-        logger -i -t offlineimap "Starting offlineimap..."
-        offlineimap -u Noninteractive.Quiet -o
-        logger -i -t offlineimap "Done offlineimap..."
-	exit 0;
-fi
-
-```
-
-You should now have an automatically synced local copy of your IMAP server. Error messages (if any) will be shown in /var/log/cron.d or one of its variants.
+See [OfflineIMAP#Running_offlineimap_in_the_background](/index.php/OfflineIMAP#Running_offlineimap_in_the_background "OfflineIMAP") to configure OfflineIMAP for work in the background.
 
 ### Evolution setup for offlineimap's maildir
 

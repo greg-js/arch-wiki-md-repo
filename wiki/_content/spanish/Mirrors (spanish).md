@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Mirroring](/index.php/Mirroring "Mirroring")
+*   [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
+*   [reflector (Español)](/index.php/Reflector_(Espa%C3%B1ol) "Reflector (Español)")
+
 Esta guía esta orientada a ayudarle a seleccionar y configurar los mejores mirrors para su equipo, y mostrarle un listado de los mirrors actuales disponibles.
 
 ## Contents

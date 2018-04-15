@@ -16,6 +16,7 @@
     *   [9.1 Error: Clamd was NOT notified](#Error:_Clamd_was_NOT_notified)
     *   [9.2 Error: No supported database files found](#Error:_No_supported_database_files_found)
     *   [9.3 Error: Can't create temporary directory](#Error:_Can.27t_create_temporary_directory)
+*   [10 See also](#See_also)
 
 ## Installation
 
@@ -318,3 +319,8 @@ Correct permissions:
 # chown UID:GID /var/lib/clamav & chmod 755 /var/lib/clamav
 
 ```
+
+## See also
+
+*   [Wikipedia:ClamAV](https://en.wikipedia.org/wiki/ClamAV "wikipedia:ClamAV")
+*   [ClamSMTP](/index.php/ClamSMTP "ClamSMTP")

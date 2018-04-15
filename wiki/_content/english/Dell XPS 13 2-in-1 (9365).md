@@ -1,10 +1,21 @@
 The Dell XPS 13 2-in-1 (9365) is the early 2017 model. It can be used like a tablet when folding the display on the back. The touchscreen works out of the box.
 
-## Installation - BIOS configuration
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 BIOS configuration](#BIOS_configuration)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Not waking from suspend](#Not_waking_from_suspend)
+    *   [2.2 Screen not rotating](#Screen_not_rotating)
+    *   [2.3 Fingerprint sensor](#Fingerprint_sensor)
+
+## Installation
+
+### BIOS configuration
 
 Bios can be accessed with F2 or F12 on DELL logo boot screen.
 
-With Bios version 1.1.0 you have to set sata operation to AHCI first and then uncheck in Advanced Boot options -> Legacy ROM.[[1]](http://en.community.dell.com/support-forums/laptop/f/3518/t/20004529?pi41097=1)
+With Bios version 1.1.0 or 1.3.1 you have to set sata operation to AHCI first and then uncheck in Advanced Boot options -> Legacy ROM.[[1]](http://en.community.dell.com/support-forums/laptop/f/3518/t/20004529?pi41097=1)
 
 **Note:**
 
@@ -12,7 +23,7 @@ With Bios version 1.1.0 you have to set sata operation to AHCI first and then un
 *   In AHCI mode the BIOS/UEFI with Legacy ROM activated is not able to see the internal drive. If you try to boot it will fail and display an error that no harddrive is installed.
 *   In AHCI mode the BIOS/UEFI with Legacy ROM deactivated is able to see the internal drive and therefore boot from it and Archiso is able to see the drive too. With these settings you can install and boot arch.
 
-It is also needed to [[2]](https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/m-p/5119127/highlight/true#M918191) :
+It is also needed to set the following settings [[2]](https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/m-p/5119127/highlight/true#M918191) :
 
 *   UEFI network stack - disabled
 *   Secure Boot - disabled
@@ -30,3 +41,11 @@ It is also needed to [[2]](https://www.dell.com/community/General/Dell-XPS-13-93
 ### Not waking from suspend
 
 This model only supports the S0 (s2idle) sleep mode. [[3]](https://patchwork.kernel.org/patch/9758513/) Change the suspend mode to `s2idle` by adding the `mem_sleep_default=s2idle` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+### Screen not rotating
+
+You need to install [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) for automatic screen rotation to work.
+
+### Fingerprint sensor
+
+The fingerprint sensor on this computer is not yet supported. [[4]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=99462)

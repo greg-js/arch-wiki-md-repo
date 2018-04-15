@@ -1,4 +1,4 @@
-AIDE is a host-based intrusion detection system (HIDS) for checking the integrity of files. It does this by creating a baseline database of files on an initial run, and then checks this database against the system on subsequent runs. File properties that can be checked against include inode, permissions, modification time, file contents, etc.
+[Advanced Intrusion Detection Environment](https://en.wikipedia.org/wiki/Advanced_Intrusion_Detection_Environment "wikipedia:Advanced Intrusion Detection Environment") (AIDE) is a host-based intrusion detection system (HIDS) for checking the integrity of files. It does this by creating a baseline database of files on an initial run, and then checks this database against the system on subsequent runs. File properties that can be checked against include inode, permissions, modification time, file contents, etc.
 
 AIDE only does file integrity checks. It does not check for rootkits or parse logfiles for suspicious activity, like some other [HIDS](/index.php/List_of_applications/Security#Threat_and_vulnerability_detection "List of applications/Security") (such as OSSEC) do. For these features, you can use an additional HIDS ([see here](http://www.la-samhna.de/library/scanners.html) for a possibly biased comparison), or use standalone rootkit scanners (rkhunter, chkrootkit) and log monitoring solutions ([logwatch](/index.php/Logwatch "Logwatch"), logcheck).
 
@@ -27,7 +27,7 @@ To initialize the database, use `aide -i` or `aideinit`. Depending on your confi
 
 You can check the system against the baseline database using `aide -C`, or update the baseline db using `aide -u`.
 
-For more info, see [aide(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aide.1).
+For more info, see [aide(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aide.1).
 
 ### Cron
 

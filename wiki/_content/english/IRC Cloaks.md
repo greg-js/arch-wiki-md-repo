@@ -30,7 +30,7 @@ id@archlinux/developer/nickname
 | Ionuț Bîru | wonder or ioni |
 | Jeff Mickey | codemac |
 | Pierre Schmitz | pierres |
-| Roman Kyrylych= | romashka |
+| Roman Kyrylych | romashka |
 | Simo Leone | neotuli |
 | Thomas Bächler | brain0 |
 | Tobias Kieslich | neri |

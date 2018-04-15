@@ -1,12 +1,6 @@
 [ClamSMTP](http://thewalter.net/stef/software/clamsmtp/) is a very simple virus filtering tool for any SMTP server. It is very usable with the Postfix MTA, so the following article applies to this and gives you an example of a simple configuration.
 
-The basic requirements are a working Postfix installation with a bunch of users and a working Clamav daemon, so be sure you have installed and configured them properly.
-
-See:
-
-[ClamAV](/index.php/ClamAV "ClamAV")
-
-[Postfix](/index.php/Postfix "Postfix")
+The basic requirements are a working [Postfix](/index.php/Postfix "Postfix") installation with users set up and a working [ClamAV](/index.php/ClamAV "ClamAV") daemon, so be sure you have installed and configured them properly.
 
 ## Contents
 

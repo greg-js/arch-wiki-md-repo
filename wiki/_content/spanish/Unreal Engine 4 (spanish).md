@@ -55,7 +55,7 @@ Como el repositorio es privado usted puede [Establecer una clave SSH](https://he
 
 #### Satisfacer Dependencias
 
-Instale [clang35](https://www.archlinux.org/packages/?name=clang35), [mono](https://www.archlinux.org/packages/?name=mono), [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and [cmake](https://www.archlinux.org/packages/?name=cmake).
+Instale [clang35](https://aur.archlinux.org/packages/clang35/), [mono](https://www.archlinux.org/packages/?name=mono), [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and [cmake](https://www.archlinux.org/packages/?name=cmake).
 
 En algunas ocasiones sera necesario re compilar clang o obtener un paquete pre compilado de clang que no use `ld.gold`:
 

@@ -449,7 +449,7 @@ Btrfs 目前还没有内建的加密支持，但可以在运行`mkfs.btrfs`前�
 
 ### 交换文件
 
-Btrfs 不支持交换文件，因为 Btrfs 因为潜在的文件系统损坏风险，没有加入交换文件需要的功能，参阅[这里](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). 交换文件可以挂载到 loop 设备中，但是性能比较差。[systemd-loop-swapfile](https://aur.archlinux.org/packages/systemd-loop-swapfile/)提供了需要的服务文件。
+Btrfs 不支持交换文件，因为 Btrfs 有潜在的文件系统损坏风险，没有加入交换文件需要的功能，参阅[这里](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). 交换文件可以挂载到 loop 设备中，但是性能比较差。[systemd-loop-swapfile](https://aur.archlinux.org/packages/systemd-loop-swapfile/)提供了需要的服务文件。
 
 ### Linux-rt 内核
 

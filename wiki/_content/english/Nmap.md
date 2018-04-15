@@ -386,6 +386,6 @@ $ nmap -oN output.txt -oX output.xml scanme.nmap.org
 
 ## See also
 
+*   [Wikipedia:Nmap](https://en.wikipedia.org/wiki/Nmap "wikipedia:Nmap")
 *   [Official website](http://nmap.org/)
 *   [Nmap Network Scanning book](http://nmap.org/book/)
-*   [Nmap on Wikipedia](https://en.wikipedia.org/wiki/Nmap "wikipedia:Nmap")

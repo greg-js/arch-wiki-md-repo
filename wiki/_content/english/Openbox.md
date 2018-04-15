@@ -18,7 +18,7 @@ Related articles
 *   [3 Configuration](#Configuration)
     *   [3.1 rc.xml](#rc.xml)
     *   [3.2 menu.xml](#menu.xml)
-    *   [3.3 autostart](#autostart)
+    *   [3.3 Autostart](#Autostart)
     *   [3.4 environment](#environment)
     *   [3.5 GUI configuration](#GUI_configuration)
 *   [4 Openbox reconfiguration](#Openbox_reconfiguration)
@@ -135,7 +135,7 @@ This file is also pre-configured, meaning that it will only be necessary to amen
 
 The available options are discussed extensively below in the [#Menus](#Menus) section.
 
-### autostart
+### Autostart
 
 The file `~/.config/openbox/autostart`, if present, is executed by Openbox at startup. A basic example of this file consists of one command per line, like so:
 

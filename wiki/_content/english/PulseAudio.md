@@ -78,7 +78,7 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 *   For console (CLI) mixers, install the [ponymix](https://www.archlinux.org/packages/?name=ponymix) or [pamixer](https://www.archlinux.org/packages/?name=pamixer) package.
 *   For console (curses) mixer, install the [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/) package.
 *   For volume control via mapped keyboard keys, install the [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/) package.
-*   For system tray icon, install the [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/) or [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/) package.
+*   For system tray icon, install the [volumeicon](https://www.archlinux.org/packages/?name=volumeicon), [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/) or [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/) package.
 
 **Tip:** The non-standalone versions of `pasystray` can install both GTK2 and GTK3 versions and requires choosing which during build. The standalone versions install a single version.
 

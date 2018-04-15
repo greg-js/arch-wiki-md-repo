@@ -343,6 +343,8 @@ The easiest way to do this is to run:
 
 This opens the file `/etc/systemd/system/*unit*.d/override.conf` in your text editor (creating it if necessary) and automatically reloads the unit when you are done editing.
 
+**Note:** Not all keys can be overridden with drop-in files. For example, for changing `Conflicts=` a replacement file [is necessary](https://lists.freedesktop.org/archives/systemd-devel/2017-June/038976.html).
+
 #### Revert to vendor version
 
 To revert any changes to a unit made using `systemctl edit` do:
@@ -475,7 +477,7 @@ An example of these mount options in the context of *automounting*, which means 
 
 ```
 
-In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated when you set `Storage=persistent` and run `systemctl restart systemd-journald` (or reboot).
+In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated when you set `Storage=persistent` and [restart](/index.php/Restart "Restart") `systemd-journald.service` (or reboot).
 
 Systemd journal classifies messages by [Priority level](#Priority_level) and [Facility](#Facility). Logging classification corresponds to classic [Syslog](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog") protocol ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 
@@ -615,7 +617,7 @@ TTYPath=/dev/tty12
 MaxLevelConsole=info
 ```
 
-Then [restart](/index.php/Restart "Restart") systemd-journald.
+Then [restart](/index.php/Restart "Restart") `systemd-journald.service`.
 
 ### Specify a different journal to view
 
@@ -740,7 +742,7 @@ Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 
 If some *systemd* service misbehaves or you want to get more information about what is happening, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the *systemd-networkd* daemon in debug mode:
 
-Add a [#Drop-in_files](#Drop-in_files) for the service adding the two lines:
+Add a [#Drop-in files](#Drop-in_files) for the service adding the two lines:
 
 ```
 [Service]
@@ -755,7 +757,7 @@ Or equivalently, set the environment variable manually:
 
 ```
 
-then [restart](/index.php/Restart "Restart") *systemd-networkd*.
+then [restart](/index.php/Restart "Restart") *systemd-networkd* and watch the journal for the service with the `--follow` option.
 
 ### Shutdown/reboot takes terribly long
 

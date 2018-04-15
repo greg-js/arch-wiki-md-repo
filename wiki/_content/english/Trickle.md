@@ -14,7 +14,7 @@ Trickle runs entirely in userspace. [[1]](https://github.com/mariusae/trickle)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [trickle](https://www.archlinux.org/packages/?name=trickle) package.
+[Install](/index.php/Install "Install") the [trickle](https://aur.archlinux.org/packages/trickle/) package.
 
 ## Usage
 

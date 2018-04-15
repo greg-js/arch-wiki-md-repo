@@ -181,11 +181,11 @@ There are few tools that can access/modify the UEFI variables, namely
 
 *   **efivar** — Library and Tool to manipulate UEFI Variables (used by efibootmgr)
 
-	[https://github.com/vathpela/efivar](https://github.com/vathpela/efivar) || [efivar](https://www.archlinux.org/packages/?name=efivar), [efivar-git](https://aur.archlinux.org/packages/efivar-git/)
+	[https://github.com/rhboot/efivar](https://github.com/rhboot/efivar) || [efivar](https://www.archlinux.org/packages/?name=efivar), [efivar-git](https://aur.archlinux.org/packages/efivar-git/)
 
 *   **efibootmgr** — Tool to manipulate UEFI Firmware Boot Manager Settings
 
-	[https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) || [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)
+	[https://github.com/rhboot/efibootmgr](https://github.com/rhboot/efibootmgr) || [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)
 
 *   **uefivars** — Dumps list of EFI variables with some additional PCI related info (uses efibootmgr code internally)
 
@@ -224,7 +224,7 @@ TARGET    SOURCE     FSTYPE OPTIONS
 In this example, this indicates that the ESP is on disk `/dev/sda` and has partition number 1\. The path to the UEFI application relative to the root of the ESP is `/EFI/refind/refind_x64.efi`. So you would create the boot entry as follows:
 
 ```
-# efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
+# efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager" --verbose
 
 ```
 

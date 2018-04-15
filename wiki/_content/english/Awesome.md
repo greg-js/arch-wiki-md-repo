@@ -22,7 +22,7 @@ From the [awesome website](https://awesomewm.org/):
     *   [3.1 Creating the configuration file](#Creating_the_configuration_file)
         *   [3.1.1 Examples](#Examples)
     *   [3.2 Extensions](#Extensions)
-    *   [3.3 Autorun programs](#Autorun_programs)
+    *   [3.3 Autostart](#Autostart)
     *   [3.4 Changing keyboard layout](#Changing_keyboard_layout)
     *   [3.5 Theming](#Theming)
         *   [3.5.1 Wallpaper](#Wallpaper)
@@ -158,7 +158,7 @@ Several extensions are available for awesome (3.5+):
 
  | Start a program if no instance exists, else jump to it |
 
-### Autorun programs
+### Autostart
 
 To autorun programs, create a shell script via
 

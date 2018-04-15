@@ -23,8 +23,8 @@ Related articles
     *   [4.1 ObexFS](#ObexFS)
     *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
-    *   [4.4 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
 *   [5 Audio](#Audio)
+    *   [5.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
     *   [6.2 gnome-bluetooth](#gnome-bluetooth)
@@ -70,7 +70,7 @@ Then [start](/index.php/Start "Start") the `bluetooth.service` systemd unit. You
 
 Pairing a device from the shell is one of the simplest and most reliable options. The exact procedure depends on the devices involved and their input functionality. What follows is a general outline of pairing a device using `/usr/bin/bluetoothctl`:
 
-Start the `bluetoothctl` interactive command. There one can input `help` to get a list of available commands.
+Start the `bluetoothctl` interactive command. Input `help` to get a list of available commands.
 
 *   Possibly select a default controller by inputting `select *MAC Address*`
 *   Turn the power to the controller on by entering `power on`. It is off by default and will turn off again each reboot, see [#Auto power-on after boot](#Auto_power-on_after_boot).
@@ -215,11 +215,15 @@ Read the output, look for Obex Object Push, remember the channel for this servic
 
 ```
 
+## Audio
+
+In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package.
+
+Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
+
 ### Using your computer's speakers as a bluetooth headset
 
-This can allow you to do things such as playing what is on your phone through your computer speakers.
-
-Add the following to the file `/etc/bluetooth/audio.conf` (create it if not present):
+In order to enable your system to be detected as an A2DP sink (e.g. to play music from your phone via your computer speakers), add the following to the file `/etc/bluetooth/audio.conf` (create it if not present):
 
 ```
 [General]
@@ -231,14 +235,6 @@ More info in:
 
 *   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
 *   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
-
-## Audio
-
-In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package.
-
-Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
-
-In order to enable your system to be detected as an A2DP sink (e.g. to play music from your phone via your computer speakers), add `Enable=Source,Sink,Media,Socket` under `[General]` in `/etc/bluetooth/audio.conf`.
 
 ## Troubleshooting
 

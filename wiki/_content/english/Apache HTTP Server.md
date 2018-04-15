@@ -194,7 +194,7 @@ Include conf/extra/httpd-vhosts.conf
 
 In `/etc/httpd/conf/extra/httpd-vhosts.conf` set your virtual hosts. The default file contains an elaborate example that should help you get started.
 
-To test the virtual hosts on you local machine, add the virtual names to your `/etc/hosts` file:
+To test the virtual hosts on your local machine, add the virtual names to your `/etc/hosts` file:
 
 ```
 127.0.0.1 domainname1.dom 

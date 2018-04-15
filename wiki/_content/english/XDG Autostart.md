@@ -1,4 +1,4 @@
-The [XDG Autostart specification](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html) defines a standard for [autostarting](/index.php/Autostarting "Autostarting") ordinary [Desktop entries](/index.php/Desktop_entries "Desktop entries") on [desktop environment](/index.php/Desktop_environment "Desktop environment") startup and removable medium mounting, by placing them in specific [#Directories](#Directories).
+The [XDG Autostart specification](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html) defines a standard for [autostarting](/index.php/Autostarting "Autostarting") ordinary [desktop entries](/index.php/Desktop_entries "Desktop entries") on [desktop environment](/index.php/Desktop_environment "Desktop environment") startup and removable medium mounting, by placing them in specific [#Directories](#Directories).
 
 ## Prerequisites
 
@@ -6,7 +6,7 @@ You need to use either a [desktop environment](/index.php/Desktop_environment "D
 
 ## Directories
 
-An XDG-compliant desktop environment will automatically start [Desktop entries](/index.php/Desktop_entries "Desktop entries") found in the following directories:
+An XDG-compliant desktop environment will automatically start [desktop entries](/index.php/Desktop_entries "Desktop entries") found in the following directories:
 
 *   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
 
@@ -14,6 +14,6 @@ An XDG-compliant desktop environment will automatically start [Desktop entries](
 
 *   User-specific: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` by default)
 
-Users can override system-wide [Desktop entries](/index.php/Desktop_entries "Desktop entries") by copying them into the user-specific directory.
+Users can override system-wide [desktop entries](/index.php/Desktop_entries "Desktop entries") by copying them into the user-specific directory.
 
 For a more details, consult [the specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).

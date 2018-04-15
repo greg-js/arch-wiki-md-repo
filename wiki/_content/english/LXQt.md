@@ -16,7 +16,7 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
     *   [2.2 Graphical login](#Graphical_login)
 *   [3 Configuration](#Configuration)
     *   [3.1 Use a different window manager](#Use_a_different_window_manager)
-    *   [3.2 Autostarting applications](#Autostarting_applications)
+    *   [3.2 Autostart](#Autostart)
     *   [3.3 Set-up environment variables](#Set-up_environment_variables)
     *   [3.4 Editing the Application Menu](#Editing_the_Application_Menu)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -80,7 +80,7 @@ window_manager=*your_window_manager*
 
 ```
 
-### Autostarting applications
+### Autostart
 
 To have X applications start on login, click the main menu from the *LXQt > Preferences > LXQt Settings > Session Settings*. Alternatively, this can be launched with:
 
@@ -89,9 +89,9 @@ lxqt-config-session
 
 ```
 
-From this window, click on "AutoStart" on the left side. Here you can add a new application to either the global autostart (launched in all sessions implementing the said specification) or your local autostart (labled LXQt Autostart) (See [issue 746](https://github.com/lxde/lxqt/issues/746) for a bug related to this option).
+From this window, click on *AutoStart* on the left side. Here you can add a new application to either the global autostart (launched in all sessions implementing the [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") specification) or your local autostart (labled LXQt Autostart) (See [issue 746](https://github.com/lxde/lxqt/issues/746) for a bug related to this option). For each item you add, `lxqt-config-session` will create a Desktop entry (*.desktop* file) in the appropriate [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") directory.
 
-For each item you add, `lxqt-config-session` will create a .desktop-file at `~/.config/autostart`. Preinstalled applications that will be automatically started at login can be found at `/etc/xdg/autostart`. So you can also change your autostart preferences by editing the files in these directories. Besides, the distinction between "Global Autostart" and "LXQt Autostart" does not depend on the directory in which the corresponding .desktop-file is located, but rather on the `OnlyShowIn`-setting. If it is `OnlyShowIn=true`, it is considered an "LXQt Autostart". Furthermore, if `X-LXQt-Module=true`, the item is not shown in `lxqt-config-session`.
+The distinction between "Global Autostart" and "LXQt Autostart" does not depend on the directory in which the corresponding *.desktop* file is located, but rather on the `OnlyShowIn` setting. If it is `OnlyShowIn=true`, it is considered an "LXQt Autostart". Furthermore, if `X-LXQt-Module=true`, the item is not shown in `lxqt-config-session`.
 
 ### Set-up environment variables
 

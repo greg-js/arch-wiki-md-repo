@@ -773,7 +773,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Uzbl](https://en.wikipedia.org/wiki/Uzbl "wikipedia:Uzbl")** — Grupo de herramientas de intergaz web que se adhiere a la filosofía Unix.
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Navegador que se comporta como el plugin Vimperator disponible para Mozilla Firefox. Se basa en el motor WebKit y utiliza los enlaces GTK + .
 

@@ -48,8 +48,8 @@ As an alternative to manually managing gemfiles, you might also want to consider
 
 ### Package contains reference to $pkgdir
 
-Sometimes when you build the package you can see following warning `WARNING: Package contains reference to $pkgdir`. Some packed files contain absolute path of directory where you built the package. To find these files run `cd pkg && grep -R "$(pwd)" .` Most likely the reason will be hardcoded path in `.../ext/Makefile`.
+Sometimes when you build the package you can see following warning `WARNING: Package contains reference to $pkgdir`. Some packed files contain absolute path of directory where you built the package. To find these files run `cd pkg && grep -R "$(pwd)"`. Most likely the reason will be hardcoded path in `.../ext/Makefile`.
 
-**Note:** folder `ext` contains native extension code usually written in C. During the package installation rubygems generates a Makefile using `mkmf` library. Then `make` is called, it compiles a shared library and copies one to `lib` gem directory.
+**Note:** The folder `ext` contains native extension code usually written in C. During the package installation rubygems generates a Makefile using `mkmf` library. Then `make` is called, it compiles a shared library and copies one to `lib` gem directory.
 
 After `gem install` is over the `Makefile` is not needed anymore. In fact none of the files in `ext` is needed and it can be completely removed by adding `rm -rf "$pkgdir/$_gemdir/gems/$_gemname-$pkgver/ext"` to `package()` function.

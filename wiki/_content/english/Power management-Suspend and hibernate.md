@@ -120,9 +120,9 @@ The value of `*swap_file_offset*` can also be obtained by running `swap-offset *
 
 *   When an [initramfs](/index.php/Initramfs "Initramfs") with the `base` hook is used, which is the default, the `resume` hook is required in `/etc/mkinitcpio.conf`. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the `resume` hook must go *after* the `udev` hook. This example was made starting from the default hook configuration:
 
-	 `HOOKS="base udev **resume** autodetect modconf block filesystems keyboard fsck"` 
+	 `HOOKS=(base udev autodetect keyboard modconf block filesystems **resume** fsck)` 
 
-	Remember to [rebuild the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") for these changes to take effect.
+	Remember to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") for these changes to take effect.
 
 **Note:** [LVM](/index.php/LVM "LVM") users should add the `resume` hook after `lvm2`.
 

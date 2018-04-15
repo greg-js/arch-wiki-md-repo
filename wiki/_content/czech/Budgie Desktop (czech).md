@@ -1,3 +1,10 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager (Česky)](/index.php/Display_manager_(%C4%8Cesky) "Display manager (Česky)")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [GTK+](/index.php/GTK%2B "GTK+")
+
 Budgie je výchozím pracovním prostředím operačního systému Solus. Kromě moderního vzhledu, může prostředí Budgie navozovat pocit práce jako v desktopovém prostředí GNOME 2.
 
 V tuto chvíli je prostředí Budgie intenzivně vyvíjeno, takže se můžete setkat s menšími chybami spolu s tím, jak jsou přidávány nové funkce v průběhu vývoje.

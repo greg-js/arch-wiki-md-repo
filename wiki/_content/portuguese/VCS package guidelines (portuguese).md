@@ -44,42 +44,42 @@ Use apenas os protótipos de PKGBUILD fornecidos pelo pacote [pacman](https://ww
 
 ### Fontes VCS
 
-**Note:** Pacman 4.1 supports the following VCS sources: `bzr`, `git`, `hg` and `svn`. See the `fragment` section of [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) or [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html) for a list of supported VCS.
+**Nota:** O pacman 4.1 possui suporte aos seguintes fontes VCS: `bzr`, `git`, `hg` and `svn`. Veja a seção `fragment` do [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) ou [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html) para uma lista de VCS suportados.
 
-Starting with [pacman](https://www.archlinux.org/packages/?name=pacman) 4.1, the VCS sources should be specified in the `source=()` array and will be treated like any other source. `makepkg` will clone/checkout/branch the repository into `$SRCDEST` (same as `$startdir` if not set in [makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html)) and copy it to `$srcdir` (in a specific way to each VCS). The local repository is left untouched, thus invalidating the need for a `-build` directory.
+A partir do [pacman](https://www.archlinux.org/packages/?name=pacman) 4.1, os fontes VCS devem ser especificados no vetor `source=()` e será tratado como qualquer outro fonte. `makepkg` vai realizar *clone*/*checkout*/*branch* do repositório para `$SRCDEST` (mesmo que `$startdir` se não definido no [makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html)) e vai copiá-lo para `$srcdir` (em uma forma específica para cada VCS). O repositório local é deixado intocado, portanto passando a ser desnecessário ter um diretório `-build`.
 
-The general format of a VCS `source=()` array is:
-
-```
-source=('[folder::][vcs+]url[#fragment]')
+O formato geral de um vetor `source=()` de VCS é:
 
 ```
-
-*   `folder` (optional) is used to change the default repository name to something more relevant (e.g. than `trunk`) or to preserve the previous sources.
-*   `vcs+` is needed for URLs that do not reflect the VCS type, e.g. `git+http://some_repo`.
-*   `url` is the URL to the distant or local repository.
-*   `#fragment` (optional) is needed to pull a specific branch or commit. See [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) for more information on the fragments available for each VCS.
-
-An example Git source array:
+source=('[pasta::][vcs+]url[#fragmento]')
 
 ```
-source=('project_name::git+http://project_url#branch=project_branch')
+
+*   `pasta` (opcional) é usada para alterar o nome do repositório padrão para algo mais relevante (p. ex., do que `trunk`) ou para preservar os fontes anteriores.
+*   `vcs+` é necessário para URLs que não refletem o tipo VCS, p. ex., `git+http://algum_repo`.
+*   `url` é o URL para o repositório distante ou local.
+*   `#fragmento` (opcional) é necessário para fazer *pull* um *branch* ou *commit* específico. Veja [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) para mais informações nos fragmentos disponíveis para cada VCS.
+
+Um exemplo de vetor fonte de Git:
+
+```
+source=('nome_projeto::git+http://url_projeto#branch=ramo_projeto')
 
 ```
 
 ### A função pkgver()
 
-The `pkgver` autobump is now achieved via a dedicated `pkgver()` function. This allows for better control over the `pkgver`, and maintainers should favor a `pkgver` that makes sense. To use `pkgver()`, you still need to declare the `pkgver` variable with the most recent value. makepkg will invoke function `pkgver()`, and update variable `pkgver` accordingly.
+O autoincremento de `pkgver` agora é alcançado através de uma função `pkgver()` dedicada. Isso permite um melhor controle sobre o `pkgver`, e os mantenedores devem favorecer um `pkgver` que faça sentido. Para usar `pkgver()`, você ainda precisa declarar a variável `pkgver` com o valor mais recente. O makepkg irá invocar a função `pkgver()` e atualizar a variável `pkgver` de acordo.
 
-It is recommended to have following version format: *RELEASE.rREVISION* where *REVISION* is a monotonically increasing number that uniquely identifies the source tree (VCS revisions do this). If there are no public releases and no repository tags then zero could be used as a release number or you can drop *RELEASE* completely and use version number that looks like *rREVISION*. If there are public releases but repo has no tags then the developer should get the release version somehow e.g. by parsing the project files.
+Recomenda-se ter o seguinte formato de versão: *LANÇAMENTO.rREVISÃO* onde *REVISÃO* é um número monotonicamente crescente que identifica exclusivamente a árvore de fonte (revisões VCS fazem isso). Se não houver lançamentos públicos e nenhuma tag de repositório, o zero pode ser usado como um número de release ou você pode descartar *LANÇAMENTO* e usar o número da versão que se parece com *rREVISÃO*. Se houver lançamentos públicos, mas o repo não tiver tags, o desenvolvedor deve obter a versão de lançamento de alguma forma, por exemplo, analisando os arquivos do projeto.
 
-The revision number delimiter ("r" right before REVISION) is important. This delimiter allows to avoid problems in case if upstream decides to make its first release or uses versions with different number of components. E.g. if at revision "455" upstream decides to release version 0.1 then the revision delimiter preserves version monotonicity - `0.1.r456 > r454`. Without the delimiter monotonicity fails - `0.1.456 < 454`.
+O delimitador do número de revisão ("r" logo antes da REVISÃO) é importante. Esse delimitador permite evitar problemas caso o upstream decida fazer seu primeiro lançamento ou use versões com diferentes números de componentes. Por exemplo, se na revisão "455" o upstream decidir lançar a versão 0.1, o delimitador de revisão preservará a monotonicidade da versão - `0.1.r456 > r454`. Sem o delimitador, a monotonicidade falha - `0.1.456 < 454`.
 
-See [PKGBUILD-vcs.proto](https://projects.archlinux.org/pacman.git/tree/proto/PKGBUILD-vcs.proto#n33) for generic examples showing the intended output.
+Veja [PKGBUILD-vcs.proto](https://projects.archlinux.org/pacman.git/tree/proto/PKGBUILD-vcs.proto#n33) para exemplos genéricos mostrando a saúde visada.
 
 #### Git
 
-Using the most recent annotated tag reachable from the last commit:
+Usando a tag anotada mais recente alcançável do último commit:
 
 ```
 pkgver() {
@@ -93,7 +93,7 @@ pkgver() {
 
 ```
 
-Using the most recent un-annotated tag reachable from the last commit:
+Usando a tag não anotada mais recente alcançável do último commit:
 
 ```
 pkgver() {
@@ -107,9 +107,9 @@ pkgver() {
 
 ```
 
-In case if the git tag does not contain dashes then one can use simpler sed expression `sed 's/-/.r/;s/-/./'`.
+No caso, se a tag git não contém traços, então pode-se usar uma expressão sed mais simples, como `sed 's/-/.r/;s/-/./'`.
 
-If tag contains a prefix, like `v` or project name then it should be cut off:
+Se a tag contiver um prefixo, como `v` ou o nome do projeto, ele deverá ser cortado:
 
 ```
 pkgver() {
@@ -124,7 +124,7 @@ pkgver() {
 
 ```
 
-If there are no tags then use number of revisions since beginning of the history:
+Se não houver tags, use o número de revisões desde o início do histórico:
 
 ```
 pkgver() {
@@ -138,14 +138,14 @@ r1142.a17a017
 
 ```
 
-Version and only commit/revision number (SHA1 omitted; however, without a SHA1 quick referencing of an exact revision is lost if not mindful of versioning):
+Versão e somente o commit/número da revisão (SHA1 omitido; no entanto, sem uma referência rápida SHA1 de uma revisão exata, ela é perdida se não estiver atento ao controle de versão):
 
 ```
 git describe --long | sed -r 's/-([0-9,a-g,A-G]{7}.*)//' | sed 's/-/./'
 
 ```
 
-Both methods can also be combined, to support repositories that start without a tag but get tagged later on (uses a bashism):
+Ambos os métodos também podem ser combinados, para suportar repositórios que iniciam sem uma tag, mas são marcados mais tarde (use um bashismo):
 
 ```
 pkgver() {
@@ -178,7 +178,7 @@ r8546
 
 ```
 
-**Note:** If the project has releases you should use them instead of the `0.`.
+**Nota:** Se o projeto tiver lançamentos, você deve usá-los em vez do `0.`.
 
 #### Mercurial
 
@@ -210,7 +210,7 @@ r830
 
 #### Reserva
 
-In case no satisfactory `pkgver` can be extracted from the repository, the current date can be used:
+Caso nenhum `pkgver` satisfatório possa ser extraído do repositório, a data atual pode ser usada:
 
 ```
 pkgver() {
@@ -223,22 +223,22 @@ pkgver() {
 
 ```
 
-Although it does not identify source tree state uniquely, so avoid it if possible.
+Embora não identifique o estado da árvore de fonte de forma exclusiva, então evite-o, se possível.
 
 ## Dicas
 
 ### Submódulos git
 
-Git submodules are a little tricky to do. The idea is to add the URLs of the submodules themselves directly to the sources array and then reference them during prepare(). This could look like this:
+Submódulos de Git são um pouco complicados de se fazer. A ideia é adicionar as URLs dos submódulos diretamente ao vetor de fontes e, em seguida, referenciá-las durante o prepare(). Isso poderia ser assim:
 
 ```
-source=("git://somewhere.org/something/something.git"
-        "git://somewhere.org/mysubmodule/mysubmodule.git")
+source=("git://algumlugar.org/algumacoisa/algumacoisa.git"
+        "git://algumlugar.org/meusubmódulo/meusubmódulo.git")
 
 prepare() {
   cd something
   git submodule init
-  git config submodule.mysubmodule.url $srcdir/mysubmodule
+  git config submodule.meusubmódulo.url $srcdir/meusubmódulo
   git submodule update
 }
 

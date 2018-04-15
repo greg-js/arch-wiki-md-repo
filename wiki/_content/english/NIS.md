@@ -1,4 +1,4 @@
-Network Information Service (NIS) is a protocol developed by Sun to allow one to defer user authentication to a server. The server software is in the [ypserv](https://aur.archlinux.org/packages/ypserv/) package, and the client software is in the [yp-tools](https://aur.archlinux.org/packages/yp-tools/) package. [ypbind-mt](https://aur.archlinux.org/packages/ypbind-mt/) is also available, which is a multi threaded version of the client daemon.
+[Network Information Service](https://en.wikipedia.org/wiki/Network_Information_Service "wikipedia:Network Information Service") (NIS) is a protocol developed by Sun to allow one to defer user authentication to a server. The server software is in the [ypserv](https://aur.archlinux.org/packages/ypserv/) package, and the client software is in the [yp-tools](https://aur.archlinux.org/packages/yp-tools/) package. [ypbind-mt](https://aur.archlinux.org/packages/ypbind-mt/) is also available, which is a multi threaded version of the client daemon.
 
 **Note:** This article somewhat unfinished. In the future that will change, but in the meantime check the [More resources section](#More_resources).
 

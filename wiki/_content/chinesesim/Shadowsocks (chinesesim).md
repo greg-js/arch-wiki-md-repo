@@ -65,13 +65,13 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 运行 `ss-local` 启动客户端；若需指定配置文件的位置：
 
- `# sslocal -c /etc/shadowsocks/config.json` 
+ `# ss-local -c /etc/shadowsocks/config.json` 
 **注意:** 有用户报告无法成功在运行时加载`config.json`
-，或可尝试手动运行： `# sslocal -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法*` 
+，或可尝试手动运行： `# ss-local -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法*` 
 
 配合nohup和&可以使之后台运行，关闭终端也不影响：
 
- `#nohup sslocal -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法* &` 
+ `#nohup ss-local -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法* &` 
 
 增加 `-v` 参数获取详细log信息
 

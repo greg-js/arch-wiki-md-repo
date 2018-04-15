@@ -41,7 +41,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [3.3 Samba/Windows support](#Samba.2FWindows_support)
     *   [3.4 KDE Desktop activities](#KDE_Desktop_activities)
     *   [3.5 Power saving](#Power_saving)
-    *   [3.6 Autostarting applications](#Autostarting_applications)
+    *   [3.6 Autostart](#Autostart)
     *   [3.7 Phonon](#Phonon)
         *   [3.7.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
 *   [4 Applications](#Applications)
@@ -309,22 +309,18 @@ An easier solution is to use [samba-mounter-git](https://aur.archlinux.org/packa
 
 **Note:** Powerdevil may not [inhibit](/index.php/Power_management#Power_managers "Power management") all logind settings (such as the lid close action for laptops). In these cases, the logind setting itself will need to be changed - see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 
-### Autostarting applications
+### Autostart
 
-Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, navigate to *System Settings > Startup and Shutdown > Autostart* and add the program or shell script of your choice. For applications, a `.desktop` file will be created, for shell scripts, a symlink will be created.
+Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, navigate to *System Settings > Startup and Shutdown > Autostart* and add the program or shell script of your choice. For applications, a *.desktop* file will be created, for shell scripts, a symlink will be created.
 
 **Note:**
 
 *   Programs can be autostarted on login only, whilst shell scripts can also be run on shutdown or even before Plasma itself starts.
-*   Shell scripts will only be run if they are marked executable.
+*   Shell scripts will only be run if they are marked [executable](/index.php/Executable "Executable").
 
-Place [Desktop entries](/index.php/Desktop_entries "Desktop entries") (i.e. `.desktop` files) here:
+*   Place [Desktop entries](/index.php/Desktop_entries "Desktop entries") (i.e. *.desktop* files) in the appropriate [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") directory.
 
-	`~/.config/autostart/`
-
-	for starting applications at login.
-
-Place or symlink shell scripts in one of the following directories:
+*   Place or symlink shell scripts in one of the following directories:
 
 	`~/.config/plasma-workspace/env/`
 

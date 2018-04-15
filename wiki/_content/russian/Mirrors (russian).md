@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [Mirroring](/index.php/Mirroring "Mirroring")
+*   [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
+*   [Reflector (Русский)](/index.php/Reflector_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Reflector (Русский)")
+
 На этой странице представлено руководство по выбору и настройке зеркал, а также список зеркал, доступных в настоящее время.
 
 ## Contents
