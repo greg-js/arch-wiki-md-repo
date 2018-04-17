@@ -50,10 +50,10 @@ Select the 200 most recently synchronized HTTP or HTTPS mirrors, sort them by do
 
 ```
 
-Select the HTTPS mirrors synchronized within the last 12 hours and located in the US, sort them by download speed, and overwrite the file `/etc/pacman.d/mirrorlist`:
+Select the HTTPS mirrors synchronized within the last 12 hours and located in either France or Germany, sort them by download speed, and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
-# reflector --country 'United States' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --country France --country Germany --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 

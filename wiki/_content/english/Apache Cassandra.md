@@ -2,7 +2,7 @@ Related articles
 
 *   [Apache Spark](/index.php/Apache_Spark "Apache Spark")
 
-[Apache Cassandra](https://cassandra.apache.org/) is a NoSQL database with linear scalability.
+[Apache Cassandra](https://cassandra.apache.org/) is a NoSQL multi-master database with linear scalability and no single point of failure.
 
 ## Contents
 

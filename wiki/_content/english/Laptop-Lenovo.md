@@ -113,7 +113,7 @@ install CD version
 | [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; Thunderbolt 3 (USB-C) | For [video h/w acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") install [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) and ensure to enable acceleration in `about:flags`. Check everything is working in `about:gpu`. |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
-| [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
+| [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | YesYes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
 | Lenovo ThinkPad T560 | Yes | Yes | Yes | Yes | Yes | Yes | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
 | [Lenovo ThinkPad T570](/index.php/Lenovo_ThinkPad_T570 "Lenovo ThinkPad T570") | Yes | Yes | Yes | Yes | Yes |  ? | Yes* | NA | not yet fully tested |
@@ -125,6 +125,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo ThinkPad W510 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Touchscreen (Yes), Fingerprint Reader (Not tested) | Tested April 2017 / Linux 4.10.8 |
+| Lenovo ThinkPad W530 | 2016.03 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2018 / Linux 4.15.15 |
 | Lenovo ThinkPad W540 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2017 / Linux 4.10.8 |
 | Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingerprint Reader (Yes) |
 
@@ -173,7 +174,7 @@ install CD version
 | Lenovo IdeaPad U430p | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
 | Lenovo IdeaPad Y700 | 2015.12.01 | Yes | Yes* | Yes | Yes | Yes | Not tested | NA | Trackpad - [buggy](https://unix.stackexchange.com/questions/362165/lenovo-y700-elantech-touchpad-query-0x01-failed) | [Trackpad requires pata_legacy to be blacklisted](https://bugzilla.kernel.org/show_bug.cgi?id=151681) |
 | [Lenovo IdeaPad Z580](/index.php/Lenovo_IdeaPad_Z580 "Lenovo IdeaPad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
-| Lenovo IdeaPad 720s | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | Fingerprint reader not tested but most likely not working |
+| [Lenovo IdeaPad 720s](/index.php/Lenovo_IdeaPad_720s "Lenovo IdeaPad 720s") | 2018.03.01 | Yes | Yes | NA* | Yes | Yes | Yes | NA | Fingerprint reader not working | *requires USB or USB C dongle |
 | [Lenovo IdeaPad 720s (Ryzen)](/index.php/Lenovo_IdeaPad_720s_(Ryzen) "Lenovo IdeaPad 720s (Ryzen)") | 2018.02.01 | Not tested | Not tested | Yes* | No | Not tested | Not tested | NA | Fingerprint reader not tested but most likely not working | *requires USB or USB C dongle |
 | Lenovo Ideapad 320 | 2018.03.01 | Not tested | Not tested | Yes | Not tested | Not tested | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
 | Lenovo Ideapad N24 | 2018.04.01 | Yes | Yes | NA | Yes | Not tested | Not tested | NA | Touchscreen |

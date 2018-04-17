@@ -364,7 +364,7 @@ This setting will not only restrict the commands which root may execute via SSH,
 A slightly less restrictive alternative will allow any command for root, but makes brute force attacks infeasible by enforcing public key authentication. For this option, set:
 
 ```
-PermitRootLogin without-password
+PermitRootLogin prohibit-password
 
 ```
 

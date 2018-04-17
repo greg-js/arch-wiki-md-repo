@@ -251,7 +251,7 @@ Nov 25 22:36:08 xxxxx kernel: pcieport 0000:00:1c.0:    [12] Replay Timer Timeou
 
 ```
 
-This can be corrected with the kernel boot option `pci=nommconf` (see [here](https://unix.stackexchange.com/questions/327730/what-causes-this-pcieport-00000003-0-pcie-bus-error-aer-bad-tlp) for explanation).
+This can be corrected with the kernel boot option `pcie_aspm=off` which appears to have minimal to no affect on power consumption. If that does not work, try `pci=nommconf` (see [here](https://unix.stackexchange.com/questions/327730/what-causes-this-pcieport-00000003-0-pcie-bus-error-aer-bad-tlp) for explanation).
 
 ### `lspci` causes CPU lockups
 

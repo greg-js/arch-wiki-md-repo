@@ -153,6 +153,8 @@ There is no point in removing dummy packages, because they will be re-created in
 
 ### Remote build on PKGBUILD.com
 
+**Warning:** The following procedures defeats the Web Of Trust model: a user with root access to PKGBUILD.com could alter the package and/or the signature before it gets published.
+
 Trusted users and developers can connect to [PKGBUILD.com](http://pkgbuild.com/) via SSH to, among others, build packages using the devtools. This has numerous advantages over a local setup:
 
 *   Builds are fast and network speed is high.
@@ -160,8 +162,6 @@ Trusted users and developers can connect to [PKGBUILD.com](http://pkgbuild.com/)
 *   Your local system need not be Arch Linux.
 
 The process is similar to that of a local setup with devtools. Your GnuPG private is required for signing but you don't want to upload it to soyuz for obvious security reasons. As such, you'll need to forward the GnuPG agent socket from your local machine to the server: this will allow you to sign packages on soyuz without communicating your key. This also means that we need to disable the agent on the server before we can run anything.
-
-**Warning:** Forwarding your gpg-agent socket to a remote machine makes it possible to anyone with root access to that system to use your unlocked GPG credentials.
 
 First, connect to soyuz and disable
 
@@ -196,32 +196,48 @@ LOGDEST="/home/johndoe/logs"
 GPGKEY="ABCD1234..."
 ```
 
-You might need to enable `gpg-agent-extra.socket` on the local system. (This is the default on Arch Linux.) At the user level on a systemd distribution, you can use:
+**Warning:** Forwarding your gpg-agent socket to a remote machine makes it possible for anyone with root access to that system to use your unlocked GPG credentials. To circumvent this issue, we need to disable passphrase caching.
+
+Disable passphrase caching with the following settings:
+
+ `gpg-agent.conf` 
+```
+default-cache-ttl 0
+max-cache-ttl 0
 
 ```
- $ systemctl --user enable gpg-agent-extra.socket
- $ systemctl --user start gpg-agent-extra.socket
+
+Because we will want to keep our usual GPG agent running with its current settings, we are going to run another GPG agent dedicated to the task at hand. Create a `~/.gnupg-archlinux` folder and symlink everything from `~/.gnupg` there, except `~/.gnupg/gpg-agent.conf`. Configure the new GPG agent:
+
+ `~/.gnupg-archlinux` 
+```
+extra-socket /home/doe/.gnupg-archlinux/S.gpg-agent.extra
+default-cache-ttl 0
+max-cache-ttl 0
+pinentry-program /usr/bin/pinentry-gtk-2
 
 ```
 
-You might also want to enable:
+The `gpg-agent-extra.socket` will be forwarded to PKGBUILD.com.
+
+Start the dedicated agent with
 
 ```
- $ systemctl --user enable dirmngr.service
+ $ gpg-agent --homedir ~/.gnupg-archlinux --daemon
 
 ```
 
 Connect with:
 
 ```
- $ ssh -R $REMOTE_SSH_AUTH_SOCK:$SSH_AUTH_SOCK -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.extra soyuz.archlinux.org
+ $ ssh -R $REMOTE_SSH_AUTH_SOCK:$SSH_AUTH_SOCK -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/home/doe/.gnupg-archlinux/S.gpg-agent.extra soyuz.archlinux.org
 
 ```
 
 or, if using GnuPG as your SSH agent:
 
 ```
- $ ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent.ssh:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.extra soyuz.archlinux.org
+ $ ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent.ssh:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/home/doe/.gnupg-archlinux/S.gpg-agent.extra soyuz.archlinux.org
 
 ```
 

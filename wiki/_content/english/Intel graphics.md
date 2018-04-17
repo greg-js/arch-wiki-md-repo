@@ -111,14 +111,12 @@ Section "Device"
 EndSection
 ```
 
-Additional options are added by the user on new lines below `Driver`.
+Additional options are added by the user on new lines below `Driver`. For the full list of options, see the [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) man page.
 
 **Note:**
 
 *   You may need to indicate `Option "AccelMethod"` when creating a configuration file, even just to set it to the default method (currently `"sna"`); otherwise, X may crash.
 *   You might need to add more device sections than the one listed above. This will be indicated where necessary.
-
-For the full list of options, see the [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) man page.
 
 ## Module-based Powersaving Options
 

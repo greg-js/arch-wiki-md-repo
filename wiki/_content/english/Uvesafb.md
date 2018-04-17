@@ -34,7 +34,7 @@ It should support as much hardware as vesafb.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [v86d](https://aur.archlinux.org/packages/v86d/) package.
+[Install](/index.php/Install "Install") the [uvesafb-dkms](https://aur.archlinux.org/packages/uvesafb-dkms/) package.
 
 ## Configuration
 

@@ -72,7 +72,7 @@ Wipe the container with zeros. A use of `if=/dev/urandom` is not required as the
 Finally, close the temporary container:
 
 ```
-# cryptsetup close container
+# cryptsetup close to_be_wiped
 
 ```
 

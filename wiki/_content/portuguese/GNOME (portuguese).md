@@ -1,10 +1,7 @@
 Artigos relacionados
 
-*   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
-*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
-*   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
 *   [GTK+](/index.php/GTK%2B "GTK+")
-*   [GDM (Português)](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)")
+*   [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)")
 *   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
 *   [GNOME/Troubleshooting](/index.php/GNOME/Troubleshooting "GNOME/Troubleshooting")
 *   [GNOME/Files](/index.php/GNOME/Files "GNOME/Files")
@@ -14,9 +11,7 @@ Artigos relacionados
 *   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
 *   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
-*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
-*   [MATE](/index.php/MATE "MATE")
-*   [Official repositories (Português)#gnome-unstable](/index.php/Official_repositories_(Portugu%C3%AAs)#gnome-unstable "Official repositories (Português)")
+*   [Repositórios oficiais#gnome-unstable](/index.php/Reposit%C3%B3rios_oficiais#gnome-unstable "Repositórios oficiais")
 
 [GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
@@ -24,7 +19,7 @@ Artigos relacionados
 
 *   [1 Instalação](#Instala.C3.A7.C3.A3o)
 *   [2 Sessões do GNOME](#Sess.C3.B5es_do_GNOME)
-*   [3 Iniciando o GNOME](#Iniciando_o_GNOME)
+*   [3 Iniciando](#Iniciando)
     *   [3.1 Graficamente](#Graficamente)
     *   [3.2 Manualmente](#Manualmente)
         *   [3.2.1 Sessões Xorg](#Sess.C3.B5es_Xorg)
@@ -59,11 +54,12 @@ Artigos relacionados
         *   [6.2.3 Extensões](#Extens.C3.B5es)
         *   [6.2.4 Métodos de entrada](#M.C3.A9todos_de_entrada)
         *   [6.2.5 Fontes](#Fontes)
-        *   [6.2.6 Inicialização de aplicativos](#Inicializa.C3.A7.C3.A3o_de_aplicativos)
+        *   [6.2.6 Inicialização automática](#Inicializa.C3.A7.C3.A3o_autom.C3.A1tica)
         *   [6.2.7 Energia](#Energia)
             *   [6.2.7.1 Configurar o comportamento do fechamento da tela de notebook](#Configurar_o_comportamento_do_fechamento_da_tela_de_notebook)
             *   [6.2.7.2 Alterar ação de nível crítico da bateria](#Alterar_a.C3.A7.C3.A3o_de_n.C3.ADvel_cr.C3.ADtico_da_bateria)
         *   [6.2.8 Ordenar aplicativos em pastas de aplicativo (app)](#Ordenar_aplicativos_em_pastas_de_aplicativo_.28app.29)
+    *   [6.3 Usar um gerenciador de janela diferente](#Usar_um_gerenciador_de_janela_diferente)
 *   [7 Veja também](#Veja_tamb.C3.A9m)
 
 ## Instalação
@@ -85,7 +81,7 @@ GNOME possui três sessões disponíveis, todos usando o GNOME Shell.
 *   **GNOME Clássico** é uma disposição do ambiente tradicional com uma interface similar à do GNOME 2, usando extensões e parâmetros pré-ativados. [[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) Portanto, é mais um GNOME Shell personalizado do que um modo realmente distinto.
 *   **GNOME sobre Xorg** executa o GNOME Shell usando o Xorg.
 
-## Iniciando o GNOME
+## Iniciando
 
 O GNOME pode ser iniciado tanto graficamente, usando um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), ou manualmente pelo console.
 
@@ -437,9 +433,9 @@ Fontes podem ser definidas para *Títulos de janelas*, *Interface* (aplicativos)
 
 Para *hinting*, RGBA provavelmente é melhor por atender a maioria dos tipos de monitores. Se as fontes aparecerem bloqueadas demais, reduza *hinting* para *Slight* ou *None*.
 
-#### Inicialização de aplicativos
+#### Inicialização automática
 
-Para iniciar certos aplicativos no início da sessão, copie o arquivo `.desktop` relevante do `/usr/share/applications/` para `~/.config/autostart/`.
+O GNOME implementa [XDG Autostart](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)").
 
 O Ajustes, [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), permite gerenciar entradas de de "autostart".
 
@@ -539,6 +535,10 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 ```
 
 Para mais informações, veja o [esquema app-folders](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
+
+### Usar um gerenciador de janela diferente
+
+GNOME Shell não oferece suporte a usar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") diferente, porém o [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") forence sessões para Metacity e [Compiz](/index.php/Compiz "Compiz"). Além disso, é possível definir suas próprias [sessões GNOME personalizadas](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que usam componentes alternativos.
 
 ## Veja também
 

@@ -22,11 +22,10 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
         *   [7.2.1 Launch CellWriter under pen](#Launch_CellWriter_under_pen)
         *   [7.2.2 Gestures for the Alphabet](#Gestures_for_the_Alphabet)
     *   [7.3 Xournal](#Xournal)
-    *   [7.4 Disable gksu grab mode](#Disable_gksu_grab_mode)
-    *   [7.5 Gnome-screensaver](#Gnome-screensaver)
-    *   [7.6 GDM](#GDM)
-    *   [7.7 LightDM](#LightDM)
-    *   [7.8 Touchegg](#Touchegg)
+    *   [7.4 Gnome-screensaver](#Gnome-screensaver)
+    *   [7.5 GDM](#GDM)
+    *   [7.6 LightDM](#LightDM)
+    *   [7.7 Touchegg](#Touchegg)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Wacom Drivers](#Wacom_Drivers)
     *   [8.2 Screen Rotation](#Screen_Rotation)
@@ -454,19 +453,6 @@ So, when you want to enter an upper-case letter, use your gesture for the shift 
 [Xournal](http://xournal.sourceforge.net/) is an application for notetaking, sketching, and keeping a journal using a stylus. Xournal aims to provide superior graphical quality (subpixel resolution) and overall functionality. [xournal](https://www.archlinux.org/packages/?name=xournal) can be installed from the **extra** repository.
 
 You can also extend the functionality of Xournal with patches, to enable things such as autosaving documents and inserting images. See [SourceForge](http://sourceforge.net/tracker/?group_id=163434&atid=827735) for links to all the available patches. To apply a patch, download the PKGBUILD for Xournal from the [ABS](/index.php/ABS "ABS"), and reference the article [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS").
-
-### Disable gksu grab mode
-
-**Warning:** This will make it possible for other X applications to listen to keyboard input events, thus making it impossible to shield from malicious applications which may be running, such as keyloggers, etc.
-
-If you are using gksu/gksudo, you can authenticate with the stylus to enter the password by disabling grab mode. In a terminal, run the following command:
-
-```
-$ gksu-properties
-
-```
-
-Change the **Grab Mode** to *disable*.
 
 ### Gnome-screensaver
 

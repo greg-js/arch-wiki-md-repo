@@ -43,10 +43,10 @@ If you plan to use SSH to interact with your repositories, make sure to add the 
 
 ## First start
 
-After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At first load, you will be redirected to the installation page where you can configure some options. In order to be able to save changes made using the initial configuration page the permissions of the configuration file (owned by root) will have to be modified (either temporary or permanently), for example:
+After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At first load, you will be redirected to the installation page where you can configure some options. In order to be able to save changes made using the initial configuration page the permissions of the configuration directory (owned by root) will have to be modified (either temporary or permanently), for example:
 
 ```
-# chown gogs:gogs /etc/gogs/app.ini
+# chown -R gogs:gogs /etc/gogs/
 
 ```
 
@@ -73,6 +73,13 @@ In order to interact with the git repositories using ssh, and to be able to use 
 ```
 
 Public keys will be added by the `gogs` user to `/var/lib/gogs/.ssh/authorized_keys`
+
+Since when installing [gogs](https://aur.archlinux.org/packages/gogs/) your `gogs` user will have a `/sbin/nologin` shell, so you need to put in a `/bin/bash` shell:
+
+```
+# usermod -s /bin/bash gogs
+
+```
 
 ### .gitignore and license files
 

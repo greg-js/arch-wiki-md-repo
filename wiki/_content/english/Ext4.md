@@ -164,7 +164,7 @@ These instructions were adapted from [Kernel documentation](http://ext4.wiki.ker
 
 **Warning:**
 
-*   If you convert the system's root filesystem, ensure that the 'fallback' initramfs is available at reboot. Alternatively, add `ext4` according to [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") and re-create the 'default' initial ramdisk with `mkinitcpio -p linux` before starting.
+*   If you convert the system's root filesystem, ensure that the 'fallback' initramfs is available at reboot. Alternatively, add `ext4` according to [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") before starting.
 *   If you decide to convert a separate `/boot` partition, ensure the [bootloader](/index.php/Bootloader "Bootloader") supports booting from ext4.
 
 In the following steps `/dev/sdxX` denotes the path to the partition to be converted, such as `/dev/sda1`.

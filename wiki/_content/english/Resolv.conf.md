@@ -176,7 +176,9 @@ nameserver 2a05:dfc7:5::5353
 **Note:**
 
 *   The use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces: *.o*, *.libre*, *.dyn*...
-*   The tool [opennic-up](https://aur.archlinux.org/packages/opennic-up/) automates the renewal of the DNS servers with the most responsive OpenNIC servers
+*   The tool **opennic-up** — automates the renewal of the DNS servers with the most responsive OpenNIC servers
+
+	[https://github.com/kewlfft/opennic-up](https://github.com/kewlfft/opennic-up) || [opennic-up](https://aur.archlinux.org/packages/opennic-up/)
 
 ### Quad9
 

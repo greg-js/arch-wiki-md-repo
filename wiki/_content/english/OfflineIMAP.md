@@ -26,8 +26,9 @@ Related articles
         *   [4.4.2 Using GPG](#Using_GPG)
         *   [4.4.3 Using pass](#Using_pass)
         *   [4.4.4 Gnome keyring](#Gnome_keyring)
-            *   [4.4.4.1 Option 1: using gnomekeyring Python module](#Option_1:_using_gnomekeyring_Python_module)
-            *   [4.4.4.2 Option 2: using gnome-keyring-query tool](#Option_2:_using_gnome-keyring-queryAUR_tool)
+            *   [4.4.4.1 Option 1: python2-gnomekeyring script](#Option_1:_python2-gnomekeyring_script)
+            *   [4.4.4.2 Option 2: gnome-keyring-query script](#Option_2:_gnome-keyring-query_script)
+            *   [4.4.4.3 Option 3: gkgetsecret.py](#Option_3:_gkgetsecret.py)
         *   [4.4.5 python2-keyring](#python2-keyring)
         *   [4.4.6 Emacs EasyPG](#Emacs_EasyPG)
         *   [4.4.7 KeePass / KeePassX](#KeePass_.2F_KeePassX)
@@ -165,6 +166,8 @@ holdconnectionopen = yes
 ```
 
 To start the daemon automatically on login, [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") the [systemd/User](/index.php/Systemd/User "Systemd/User") service `offlineimap.service` using the `--user` flag.
+
+In case you have more than one account configured, it is advised to use `offlineimap@.service` instead of increasing maxsyncaccounts parameter ([source](http://www.offlineimap.org/configuration/2016/01/29/why-i-m-not-using-maxconnctions.html)). Simply [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `offlineimap@youraccountname.service`.
 
 #### systemd timer
 
@@ -354,7 +357,9 @@ remotepasseval = get_password("examplerepo")
 
 ```
 
-##### Option 1: using gnomekeyring Python module
+##### Option 1: python2-gnomekeyring script
+
+**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[1]](https://git.gnome.org/browse/libgnome-keyring/commit/?id=6a5adea4aec93)
 
 Install [python2-gnomekeyring](https://www.archlinux.org/packages/?name=python2-gnomekeyring). Then:
 
@@ -402,7 +407,11 @@ if __name__ == "__main__":
 
 To set the credentials, run this script from a shell.
 
-##### Option 2: using [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/) tool
+##### Option 2: gnome-keyring-query script
+
+**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[2]](https://git.gnome.org/browse/libgnome-keyring/commit/?id=6a5adea4aec93)
+
+Install [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/). Then create the following:
 
  `~/.offlineimap.py` 
 ```
@@ -421,9 +430,39 @@ def get_password(p):
 
 ```
 
+##### Option 3: gkgetsecret.py
+
+Ensure that [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [python2](https://www.archlinux.org/packages/?name=python2), [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) and [libsecret](https://www.archlinux.org/packages/?name=libsecret) are installed. Then create `~/.offlineimap.py` with the following contents: [gkgetsecret.py](https://github.com/charlesbos/my-scripts/blob/master/gkgetsecret.py) and set `pythonfile = ~/.offlineimap.py` in `~/.offlineimaprc` as described above.
+
+If you created a password using [seahorse](https://www.archlinux.org/packages/?name=seahorse), you can retrieve it from its description. For instance, the password for a repository *Work* which is stored in gnome-keyring with the description *Password for me@myworkemail.com* can be retrieved by adding the following to `~/.offlineimaprc`:
+
+```
+[Repository Work]
+...
+remotepasseval = get_pw_from_desc("Password for me@myworkemail.com")
+
+```
+
+For configurations where you wish to store the username as well, it is better if the password is created using *secret-tool* as this can be used to set attributes such as the username and repository name. Consider a password created with the following command:
+
+```
+$ secret-tool store --label "Password for Work Email" username me@myworkemail.com repo Work
+
+```
+
+The username and password for this account can be retrieved by adding the following to `~/.offlineimaprc`:
+
+```
+[Repository Work]
+...
+remoteusereval = get_val_from_attrs("username", "repo", "Work")
+remotepasseval = get_pw_from_attrs("repo", "Work")
+
+```
+
 #### python2-keyring
 
-There is a general solution that should work for any keyring. Install [python2-keyring](http://pypi.python.org/pypi/keyring) from [AUR](/index.php/AUR "AUR"), then change your ~/.offlineimaprc to say something like:
+There is a general solution that should work for any keyring. Install [python2-keyring](https://www.archlinux.org/packages/?name=python2-keyring) and then change your ~/.offlineimaprc to say something like:
 
 ```
 [general]

@@ -16,22 +16,6 @@ The proper, recommended way to run GUI apps under X with elevated privileges is 
 
 Those methods wrap the application in an elevation framework and drop the acquired privileges once it exits:
 
-*   [kdesu](https://www.archlinux.org/packages/?name=kdesu) (see [Sudo#kdesu](/index.php/Sudo#kdesu "Sudo"))
-
-```
-$ kdesu *application*
-
-```
-
-*   [gksu](/index.php/Sudo#gksu "Sudo") (see [Sudo#gksu](/index.php/Sudo#gksu "Sudo"))
-
-**Warning:** *gksu* has been deprecated since 2011[[3]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014[[4]](https://www.archlinux.org/packages/?name=gksu).
-
-```
-$ gksu *application*
-
-```
-
 *   [bashrun](https://www.archlinux.org/packages/?name=bashrun)
 
 ```
@@ -39,7 +23,14 @@ $ bashrun --su *application*
 
 ```
 
-*   [sudo](/index.php/Sudo "Sudo") (must be installed and properly configured with `visudo`)
+*   [kdesu](https://www.archlinux.org/packages/?name=kdesu)
+
+```
+$ kdesu *application*
+
+```
+
+*   [sudo](/index.php/Sudo "Sudo") (must be [properly configured](/index.php/Sudo#Configuration "Sudo"))
 
 ```
 $ sudo *application*
@@ -50,6 +41,15 @@ $ sudo *application*
 
 ```
 $ sux root *application*
+
+```
+
+*   [gksu](https://www.archlinux.org/packages/?name=gksu)
+
+**Warning:** *gksu* has been deprecated since 2011[[3]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014[[4]](https://www.archlinux.org/packages/?name=gksu).
+
+```
+$ gksu *application*
 
 ```
 

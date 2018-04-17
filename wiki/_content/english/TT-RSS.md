@@ -52,6 +52,7 @@ extension=curl
 extension=iconv
 extension=pdo_mysql # for MySQL
 extension=pdo_pgsql # for PostgreSQL
+extension=pgsql # for legacy PostgreSQL plugins
 extension=soap
 
 ```

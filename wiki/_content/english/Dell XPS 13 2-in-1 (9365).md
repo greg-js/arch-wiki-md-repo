@@ -8,6 +8,7 @@ The Dell XPS 13 2-in-1 (9365) is the early 2017 model. It can be used like a tab
     *   [2.1 Not waking from suspend](#Not_waking_from_suspend)
     *   [2.2 Screen not rotating](#Screen_not_rotating)
     *   [2.3 Fingerprint sensor](#Fingerprint_sensor)
+    *   [2.4 Soundcard turning off and coil whine](#Soundcard_turning_off_and_coil_whine)
 
 ## Installation
 
@@ -49,3 +50,9 @@ You need to install [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-se
 ### Fingerprint sensor
 
 The fingerprint sensor on this computer is not yet supported. [[4]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=99462)
+
+### Soundcard turning off and coil whine
+
+By default, the soundcard automatically turns of which leads to delays when there is a song to play (or distortion). This can also cause coil whine especially while scrolling with headphones plugged and sound muted. To solve this, you can force the soundcard to always stay awake :
+
+ `/etc/modprobe.d/audio_no_powersave.conf`  `options snd_hda_intel power_save=0`

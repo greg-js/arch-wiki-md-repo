@@ -98,7 +98,7 @@ The following configurations should work with *dnscrypt-proxy* and assume that i
 Configure [Unbound](/index.php/Unbound "Unbound") to your liking (in particular, see [Unbound#Local DNS server](/index.php/Unbound#Local_DNS_server "Unbound")) and add the following lines to the end of the `server` section in `/etc/unbound/unbound.conf`:
 
 ```
-do-not-query-localhost: no
+  do-not-query-localhost: no
 forward-zone:
   name: "."
   forward-addr: 127.0.0.1@5353

@@ -327,7 +327,7 @@ The disk layout in this example is:
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a BIOS Boot Partition as explained in [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB").
+When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 
 Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
 
@@ -464,7 +464,7 @@ To use encryption on top of [LVM](/index.php/LVM "LVM"), the LVM volumes are set
 
 **Tip:** Unlike [#LVM on LUKS](#LVM_on_LUKS), this method allows normally spanning the logical volumes over multiple disks.
 
-The following short example creates a LUKS on LVM setup and mixes in the use of a key-file for the /home partition and temporary crypt volumes for `/tmp` and `/swap`. The latter is considered desirable from a security perspective, because no potentially sensitive temporary data survives the reboot, when the encryption is re-initialised. If you are experienced with LVM, you will be able to ignore/replace LVM and other specifics according to your plan. If you want to span a logical volume over multiple disks during setup already, a procedure to do so is described in [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
+The following short example creates a LUKS on LVM setup and mixes in the use of a key-file for the /home partition and temporary crypt volumes for `/tmp` and `/swap`. The latter is considered desirable from a security perspective, because no potentially sensitive temporary data survives the reboot, when the encryption is re-initialised. If you are experienced with LVM, you will be able to ignore/replace LVM and other specifics according to your plan. If you want to span a logical volume over multiple disks that are set up already, a procedure to do so is described in [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
 ### Preparing the disk
 
@@ -509,7 +509,9 @@ Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on 
 
 ```
 
-More information about the encryption options can be found in [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note that `/home` will be encrypted in [#Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome). Further, note that if you ever have to access the encrypted root from the Arch-ISO, the above `open` action will allow you to after the [LVM shows up](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
+More information about the encryption options can be found in [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note that `/home` will be encrypted in [#Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome).
+
+**Tip:** If you ever have to access the encrypted root from the Arch-ISO, the above `open` action will allow you to after the [LVM shows up](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
 
 ### Preparing the boot partition
 
@@ -552,6 +554,8 @@ Both [crypttab](/index.php/Crypttab "Crypttab") and [fstab](/index.php/Fstab "Fs
 swap	/dev/mapper/MyVol-cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
 tmp	/dev/mapper/MyVol-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
 ```
+
+**Note:** The decrypted partition is mapped to the encrypted device.
  `/etc/fstab` 
 ```
 /dev/mapper/root        /       ext4            defaults        0       1
@@ -563,7 +567,7 @@ tmp	/dev/mapper/MyVol-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
 
 ### Encrypting logical volume /home
 
-Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, each encrypted logical volume requires its own encryption. Yet, unlike the temporary filesystems configured with volatile encryption above, the logical volume for `/home` should of course be persistent. The following assumes you have rebooted into the installed system, otherwise you have to adjust paths. To safe on entering a second passphrase at boot for it, a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") is created:
+Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, each encrypted logical volume requires its own encryption. Yet, unlike the temporary filesystems configured with volatile encryption above, the logical volume for `/home` should of course be persistent. The following assumes you have rebooted into the installed system, otherwise you have to adjust paths. To save on entering a second passphrase at boot, a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") is created:
 
 ```
 # mkdir -m 700 /etc/luks-keys
@@ -588,13 +592,15 @@ The encrypted mount is configured in both [crypttab](/index.php/Crypttab "Cryptt
 home	/dev/mapper/MyVol-crypthome   /etc/luks-keys/home
 
 ```
+
+**Note:** The decrypted partition is mapped to the encrypted device.
  `/etc/fstab` 
 ```
 /dev/mapper/home        /home   ext4        defaults        0       2
 
 ```
 
-If you want to expand the logical volume for `/home` (or any other volume) at a later point, it is important to note that the LUKS encrypted part has to be resized as well. For a procedure see [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
+If you want to expand the logical volume for `/home` (or any other volume) at a later point, it is important to note that the LUKS encrypted part has to be resized as well. For steps on how to do this, see [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
 ## LUKS on software RAID
 
@@ -621,7 +627,7 @@ Be sure to substitute them with the appropriate device designations for your set
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition"). For this setup, this includes a 1 MiB partition for "BIOS boot" at `/dev/sda1` and the remaining space on the drive being partitioned for "Linux RAID" at `/dev/sda2`.
+When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition"). For this setup, this includes a 1 MiB partition for BIOS/GPT boot at `/dev/sda1` and the remaining space on the drive being partitioned for "Linux RAID" at `/dev/sda2`.
 
 Once partitions have been created on `/dev/sda`, the following commands can be used to clone them to `/dev/sdb`.
 
@@ -882,10 +888,7 @@ However, when an update to the kernel or bootloader is required, the `/boot` par
 
 ## Encrypted boot partition (GRUB)
 
-This setup utilizes the same partition layout and configuration for the system's root partition as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with two distinct differences:
-
-1.  The setup is performed for an [UEFI](/index.php/UEFI "UEFI") and/or BIOS system
-2.  A special feature of the [GRUB](/index.php/GRUB "GRUB") bootloader is used to additionally encrypt the boot partition `/boot`. See also [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB").
+This setup utilizes the same partition layout and configuration for the system's root partition as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with the difference that a special feature of the [GRUB](/index.php/GRUB "GRUB") bootloader is used to additionally encrypt the boot partition `/boot`. See also [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB").
 
 The disk layout in this example is:
 
@@ -1072,7 +1075,7 @@ Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_
 
 ```
 
-[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk and the BIOS boot partition for BIOS booting:
+[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk for BIOS booting:
 
 ```
 # grub-install --target=i386-pc --recheck /dev/sda

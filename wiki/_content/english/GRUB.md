@@ -23,7 +23,7 @@ A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that 
     *   [1.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
     *   [1.3 Installation](#Installation)
 *   [2 UEFI systems](#UEFI_systems)
-    *   [2.1 Check for GPT disk layout and an EFI System Partition](#Check_for_GPT_disk_layout_and_an_EFI_System_Partition)
+    *   [2.1 Check for an EFI System Partition](#Check_for_an_EFI_System_Partition)
     *   [2.2 Installation](#Installation_2)
 *   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
 *   [4 Configuration](#Configuration)
@@ -124,7 +124,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 *   It is recommended to read and understand the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages.
 *   When installing to use UEFI it is important to start the install with your machine in UEFI mode. The Arch Linux install media must be UEFI bootable.
 
-### Check for GPT disk layout and an EFI System Partition
+### Check for an EFI System Partition
 
 To boot from a disk using EFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an EFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
 
@@ -138,7 +138,7 @@ To find out the disk partition scheme and the system partition, use `parted` as 
 The command returns:
 
 *   The disk partition layout: if the disk is GPT, it indicates `Partition Table: gpt`.
-*   The list of partitions on the disk: Look for the ESP in the list, it is a small (about 550 MiB) partition with a *vfat* or *fat32* file system and with the flag *esp* enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+*   The list of partitions on the disk: Look for the ESP in the list, it is a small (about 550 MiB) partition with a *fat32* file system and with the flag *esp* enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
 Once it is found, **take note of the ESP partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") article.
 
@@ -426,7 +426,7 @@ If using the `sd-encrypt` hook, add `rd.luks.name`:
 
 where *device-UUID* is the UUID of the LUKS-encrypted device.
 
-Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) when done.
+Be sure to [generate the main configuration file](#Generate_the_main_configuration_file) when done.
 
 For further information about bootloader configuration for encrypted devices, see [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 

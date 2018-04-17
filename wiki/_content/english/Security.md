@@ -482,7 +482,7 @@ Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` fla
 
 ### hidepid
 
-**Warning:** This may cause issues for certain applications like an application running in a [sandbox](/index.php/Sandbox "Sandbox") and [Xorg](/index.php/Xorg "Xorg") (see workaround).
+**Warning:** This may cause issues for certain applications like an application running in a sandbox and [Xorg](/index.php/Xorg "Xorg") (see workaround).
 
 The kernel has the ability to hide other users' processes, normally accessible via `/proc`, from unprivileged users by mounting the `proc` filesystem with the `hidepid=` and `gid=` options documented [here](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/proc.txt#n1919).
 
@@ -494,7 +494,7 @@ For example, to hide process information from other users except those in the `p
 
  `/etc/fstab`  `proc	/proc	proc	nosuid,nodev,noexec,hidepid=2,gid=proc	0	0` 
 
-For [Xorg](/index.php/Xorg "Xorg") to work, an exception needs to be added for systemd-logind:
+For user sessions to work correctly, an exception needs to be added for *systemd-logind*:
 
  `/etc/systemd/system/systemd-logind.service.d/hidepid.conf` 
 ```

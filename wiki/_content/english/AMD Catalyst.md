@@ -652,11 +652,11 @@ Another, more complex utility to perform such operations is **AMDOverdriveCtrl**
 The GUI tool shipped by ATI is very useful and we will try to use it as much as we can. To launch it, open a terminal and use the following command:
 
 ```
-$ {kdesu/gksu} amdcccle
+$ kdesu amdcccle
 
 ```
 
-**Warning:** Do **not** use sudo directly with a GUI. Sudo gives you admin rights with user account information. Instead, use *gksu* (GNOME) or *kdesu* (KDE).
+**Warning:** Do **not** use sudo instead of kdesu. Sudo gives you admin rights with user account information.
 
 #### Installation
 

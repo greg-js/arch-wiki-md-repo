@@ -285,20 +285,15 @@ Sometimes the wicd client fails to load after a package update due to D-Bus erro
 
 ### Note about graphical sudo programs
 
-If you are receiving an error about wicd failing to find a graphical sudo program, install one of [gksu](https://www.archlinux.org/packages/?name=gksu), [ktsuss](https://aur.archlinux.org/packages/ktsuss/), or [kdebase-runtime](https://www.archlinux.org/packages/?name=kdebase-runtime), then use the relative command:
-
-```
-$ ktsuss wicd-client -n
-
-```
-
-```
-$ gksudo wicd-client -n
-
-```
+If you are receiving an error about wicd failing to find a graphical sudo program, install [kdesu](https://www.archlinux.org/packages/?name=kdesu) or [ktsuss](https://aur.archlinux.org/packages/ktsuss/), then use the relative command:
 
 ```
 $ kdesu wicd-client -n
+
+```
+
+```
+$ ktsuss wicd-client -n
 
 ```
 

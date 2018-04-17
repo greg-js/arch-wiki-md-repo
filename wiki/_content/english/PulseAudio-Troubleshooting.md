@@ -33,7 +33,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_.3D_no)
     *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
 *   [3 Audio quality](#Audio_quality)
-    *   [3.1 Enable Echo/Noise-Cancelation](#Enable_Echo.2FNoise-Cancelation)
+    *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo.2FNoise-Cancellation)
     *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
     *   [3.3 Static noise when using headphones](#Static_noise_when_using_headphones)
     *   [3.4 Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio)
@@ -541,13 +541,13 @@ Then restart PulseAudio:
 
 ## Audio quality
 
-### Enable Echo/Noise-Cancelation
+### Enable Echo/Noise-Cancellation
 
-Arch does not load the Pulseaudio Echo-Cancelation module by default, therefore, we have to add it in `/etc/pulse/default.pa`. First you can test if the module is present with `pacmd` and entering `list-modules`. If you cannot find a line showing `name: <module-echo-cancel>` you have to add
+Arch does not load the Pulseaudio Echo-Cancellation module by default, therefore, we have to add it in `/etc/pulse/default.pa`. First you can test if the module is present with `pacmd` and entering `list-modules`. If you cannot find a line showing `name: <module-echo-cancel>` you have to add
 
  `/etc/pulse/default.pa` 
 ```
-### Enable Echo/Noise-Cancelation
+### Enable Echo/Noise-Cancellation
 load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0 digital_gain_control=1" source_name=echoCancel_source sink_name=echoCancel_sink
 set-default-source echoCancel_source
 set-default-sink echoCancel_sink
@@ -583,7 +583,7 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
     *   `routing_mode=speakerphone` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
     *   `comfort_noise=1` - ? - only valid with "mobile=1".
 
-If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancelation), you probably don't want other applications to do additional audio post processing.
+If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation), you probably don't want other applications to do additional audio post processing.
 Here is a list for disabling audio post processing in following applications:
 
 *   Mumble:
@@ -1091,7 +1091,7 @@ Known programs that changes permissions for `/run/user/*user id*/pulse` when usi
 
 *   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)
 
-As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) or [kdesu](https://www.archlinux.org/packages/?name=kdesu) in a [desktop entry](/index.php/Desktop_entry "Desktop entry"), or add `*username* ALL=NOPASSWD: /usr/bin/*program_name*` to [sudoers](/index.php/Sudoers "Sudoers") to run it with [sudo](https://www.archlinux.org/packages/?name=sudo) or `gksudo` without a password.
+As a workaround, include [kdesu](https://www.archlinux.org/packages/?name=kdesu) in a [desktop entry](/index.php/Desktop_entry "Desktop entry"), or add `*username* ALL=NOPASSWD: /usr/bin/*program_name*` to [sudoers](/index.php/Sudoers "Sudoers") to run it with [sudo](https://www.archlinux.org/packages/?name=sudo) without a password.
 
 The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
 

@@ -465,7 +465,7 @@ As user theme files (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) ar
 *   Adjust the theme as root
 
 ```
-# gksu lxappearance
+# sudo lxappearance
 
 ```
 

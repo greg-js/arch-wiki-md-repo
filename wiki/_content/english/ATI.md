@@ -90,12 +90,7 @@ MODULES="... radeon ..."
 
 ```
 
-Now, regenerate the initramfs:
-
-```
-# mkinitcpio -p linux
-
-```
+Now, [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 The change takes effect at the next reboot.
 

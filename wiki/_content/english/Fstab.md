@@ -16,10 +16,10 @@ The `mount` command will use fstab, if just one of either directory or device is
 *   [1 Usage](#Usage)
 *   [2 Identifying filesystems](#Identifying_filesystems)
     *   [2.1 Kernel name descriptors](#Kernel_name_descriptors)
-    *   [2.2 Labels](#Labels)
-    *   [2.3 UUIDs](#UUIDs)
-    *   [2.4 GPT labels](#GPT_labels)
-    *   [2.5 GPT UUIDs](#GPT_UUIDs)
+    *   [2.2 File system labels](#File_system_labels)
+    *   [2.3 File system UUIDs](#File_system_UUIDs)
+    *   [2.4 GPT partition labels](#GPT_partition_labels)
+    *   [2.5 GPT partition UUIDs](#GPT_partition_UUIDs)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Automount with systemd](#Automount_with_systemd)
         *   [3.1.1 Local partition](#Local_partition)
@@ -78,7 +78,7 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
 
 ```
 
-### Labels
+### File system labels
 
 Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* column with `LABEL=`:
 
@@ -94,7 +94,7 @@ LABEL=SWAP      none  swap   defaults                                           
 
 **Note:** If any of your fields contains spaces, see [#Filepath spaces](#Filepath_spaces).
 
-### UUIDs
+### File system UUIDs
 
 Run `lsblk -f` to list the partitions, and prefix the values in the *UUID* column with `UUID=`:
 
@@ -110,7 +110,7 @@ UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults                 
 
 **Tip:** If you would like to return just the UUID of a specific partition: `lsblk -no UUID /dev/sda2`.
 
-### GPT labels
+### GPT partition labels
 
 Run `blkid` to list the partitions, and use the *PARTLABEL* values without the quotes:
 
@@ -126,7 +126,7 @@ PARTLABEL=SWAP                       none  swap   defaults                      
 
 **Note:** If any of your fields contains spaces, see [#Filepath spaces](#Filepath_spaces).
 
-### GPT UUIDs
+### GPT partition UUIDs
 
 Run `blkid` to list the partitions, and use the *PARTUUID* values without the quotes:
 

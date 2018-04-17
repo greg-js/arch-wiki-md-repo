@@ -112,9 +112,10 @@ ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?na
 | Proprietary | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
 | [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 
-**Note:** For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") or [Bumblebee](/index.php/Bumblebee "Bumblebee").
+**Note:**
 
-**Note:** For Intel graphics on 4th generation and above, see [Intel_graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for a discussion on why [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) should not be used
+*   For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") or [Bumblebee](/index.php/Bumblebee "Bumblebee").
+*   For Intel graphics on 4th generation and above, see [Intel graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for available drivers.
 
 Other video drivers can be found in the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group.
 

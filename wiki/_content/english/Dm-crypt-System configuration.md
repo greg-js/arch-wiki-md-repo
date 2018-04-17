@@ -62,7 +62,7 @@ HOOKS=(base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-
 
 In order to enable booting an encrypted root partition, a subset of the following kernel parameters need to be set. See [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for instructions specific to your [boot loader](/index.php/Boot_loader "Boot loader").
 
-For example using [GRUB](/index.php/GRUB#Root_partition "GRUB") the relevant parameters are best added to `/etc/default/grub` before generating the boot configuration. See also [GRUB#Warning when installing in chroot](/index.php/GRUB#Warning_when_installing_in_chroot "GRUB") as another point to be aware of when installing the GRUB loader.
+For example, if using [GRUB](/index.php/GRUB#Root_partition "GRUB"), the relevant parameters are added to `/etc/default/grub` before [generating the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). See also [GRUB#Warning when installing in chroot](/index.php/GRUB#Warning_when_installing_in_chroot "GRUB") as another point to be aware of when installing the GRUB loader.
 
 The kernel parameters you need to specify depend on whether or not you are using the `encrypt` hook or the `sd-encrypt` hook.
 
@@ -194,7 +194,7 @@ In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` paramet
 **Note:**
 
 *   All of the `rd.luks` parameters can be specified multiple times to unlock multiple LUKS encrypted volumes.
-*   The `rd.luks` parameters only support unlocking LUKS devices, to unlock a plain dm-crypt device you must specify it in `/etc/crypttab.initramfs`. See [#crypttab](#crypttab) for the syntax.
+*   The `rd.luks` parameters only support unlocking detectable LUKS devices. To unlock a plain dm-crypt device or a LUKS device with a detached header, you must specify it in `/etc/crypttab.initramfs`. See [#crypttab](#crypttab) for the syntax.
 
 **Warning:** If you are using `/etc/crypttab` or `/etc/crypttab.initramfs` together with `luks.*` or `rd.luks.*` parameters, only those devices specified on the kernel command line will be activated and you will see `Not creating device 'devicename' because it was not specified on the kernel command line.`. To activate all devices in `/etc/crypttab` do not specify any `luks.*` parameters and use `rd.luks.*`. To activate all devices in `/etc/crypttab.initramfs` do not specify any `luks.*` or `rd.luks.*` parameters.
 

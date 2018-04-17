@@ -32,7 +32,7 @@ Alternatively, to start the peer immediately in a terminal:
 
 ```
 
-See also [How to start and stop a GNUnet peer](https://gnunet.org/how-start-and-stop-gnunet-respectivelypeer).
+See also [How to start and stop a GNUnet peer](https://gnunet.org/how-start-and-stop-gnunet-peer).
 
 ## Usage
 

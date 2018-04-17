@@ -192,21 +192,22 @@ Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no h
 There are several online databases of man pages, including:
 
 *   [man7.org](http://man7.org/linux/man-pages/index.html). Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
-*   [Arch Linux man pages](https://manned.org/pkg/arch)
-*   [Debian GNU/Linux man pages](http://manpages.debian.net/)
-*   [DragonFlyBSD manual pages](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [FreeBSD man pages](http://www.freebsd.org/cgi/man.cgi)
+*   [Arch Linux man pages](https://jlk.fjfi.cvut.cz/arch/manpages/). Used for links from the wiki.
+*   [manned.org's collection from various Linux distributions, BSD, etc., with multiple package versions](https://manned.org/)
+*   [Debian GNU/Linux man pages](https://manpages.debian.net/)
+*   [DragonFlyBSD manual pages](https://leaf.dragonflybsd.org/cgi/web-man)
+*   [FreeBSD man pages](https://www.freebsd.org/cgi/man.cgi)
 *   [Linux and Solaris 10 man pages](http://www.manpages.spotlynx.com/)
-*   [Linux man pages at die.net](http://linux.die.net/man/)
-*   [Linux man pages at man.cx](http://man.cx/)
+*   [Linux man pages at die.net](https://linux.die.net/man/)
+*   [Linux man pages at man.cx](https://man.cx/)
 *   [NetBSD manual pages](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [Mac OS X manual pages](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [Mac OS X manual pages](https://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
 *   [On-line UNIX manual pages](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [OpenBSD manual pages](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [OpenBSD manual pages](https://www.openbsd.org/cgi-bin/man.cgi)
 *   [Plan 9 Manual — Volume 1](http://man.cat-v.org/plan_9/)
 *   [Inferno Manual — Volume 1](http://man.cat-v.org/inferno/)
 *   [Storage Foundation man pages](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [The UNIX and Linux forums man page repository](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [The UNIX and Linux forums man page repository](https://www.unix.com/man-page/OpenSolaris/1/man/)
 *   [Ubuntu manpage repository](http://manpages.ubuntu.com/)
 
 **Warning:** Some distributions provide patched or outdated man pages that differ from those provided by Arch. Exercise caution when using online man pages.

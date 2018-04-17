@@ -539,13 +539,14 @@ You can automate this at boot with a custom systemd unit. For example:
 ```
 [Unit]
 Description=Load storage encryption keys
+DefaultDependencies=no
 Before=systemd-user-sessions.service
 Before=zfs-mount.service
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/bash -c '/usr/bin/zfs load-key zpool/%i <<< $(systemd-ask-password "Encrypted storage password (%i): ")'
+ExecStart=/usr/bin/bash -c 'systemd-ask-password "Encrypted storage password (%i): " | /usr/bin/zfs load-key zpool/%i'
 
 [Install]
 WantedBy=zfs-mount.service

@@ -264,7 +264,7 @@ $ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
 
 #### kdesu
 
-kdesu may be used under KDE to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.config/kdesurc` (or `~/.kde4/share/config/kdesurc` for the kde4 version of kdesu):
+kdesu may be used under KDE to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.config/kdesurc`:
 
 ```
 [super-user-command]
@@ -272,7 +272,7 @@ super-user-command=sudo
 
 ```
 
-or use the following command (use *kwriteconfig* for the kde4 version of kdesu):
+or use the following command:
 
 ```
 $ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-command sudo

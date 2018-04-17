@@ -48,8 +48,9 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [7.7 Forward journald to /dev/tty12](#Forward_journald_to_.2Fdev.2Ftty12)
     *   [7.8 Specify a different journal to view](#Specify_a_different_journal_to_view)
 *   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
-    *   [8.2 Sandboxing application environments](#Sandboxing_application_environments)
+    *   [8.1 Running services after the network is up](#Running_services_after_the_network_is_up)
+    *   [8.2 Enable installed units by default](#Enable_installed_units_by_default)
+    *   [8.3 Sandboxing application environments](#Sandboxing_application_environments)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Investigating systemd errors](#Investigating_systemd_errors)
     *   [9.2 Diagnosing boot problems](#Diagnosing_boot_problems)
@@ -629,6 +630,26 @@ $ journalctl -D */mnt*/var/log/journal -xe
 ```
 
 ## Tips and tricks
+
+### Running services after the network is up
+
+To delay a service after the network is up, include the following dependencies in the *.service* file:
+
+ `/etc/systemd/system/*foo*.service` 
+```
+[Unit]
+...
+**Wants=network-online.target**
+**After=network-online.target**
+...
+```
+
+The network wait service of the particular application that manages the network, must also be enabled so that `network-online.target` properly reflects the network status.
+
+*   For the ones using [NetworkManager](/index.php/NetworkManager "NetworkManager"), [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service`.
+*   If using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` is by default enabled automatically whenever `systemd-networkd.service` has been enabled; check this is the case with `systemctl is-enabled systemd-networkd-wait-online.service`, there is no other action needed.
+
+For more detailed explanations see [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) in the systemd wiki.
 
 ### Enable installed units by default
 

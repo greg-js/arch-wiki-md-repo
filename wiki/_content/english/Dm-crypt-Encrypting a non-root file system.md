@@ -23,7 +23,7 @@ Because dm-crypt is a [block-level](/index.php/Disk_encryption#Block_device_encr
 
 This example covers the encryption of the `/home` partition, but it can be applied to any other comparable non-root partition containing user data.
 
-**Tip:** You can either have a single user's `/home` directory on a partition, or create a common partition for all user's `/home` partitions.
+**Tip:** You can either have a single user's `/home` directory on a partition, or create a common partition for all user's `/home` directories.
 
 First make sure the partition is empty (has no file system attached to it). Delete the partition and create an empty one if it has a file system. Then prepare the partition by securely erasing it, see [Dm-crypt/Drive preparation#Secure erasure of the hard disk drive](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation").
 

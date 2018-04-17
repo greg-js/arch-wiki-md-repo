@@ -181,10 +181,10 @@ $ ssh-add -D
 
 Now when you connect to a server, the key will be found and a dialog will popup asking you for the passphrase. It has an option to automatically unlock the key when you log in. If you check this, you will not need to enter your passphrase again!
 
-Alternatively, to permanently save the a passphrase in the keyring, use seahorse-ssh-askpass from package [seahorse](https://www.archlinux.org/packages/?name=seahorse):
+Alternatively, to permanently save the a passphrase in the keyring, use ssh-askpass from package [seahorse](https://www.archlinux.org/packages/?name=seahorse):
 
 ```
-/usr/lib/seahorse/seahorse-ssh-askpass my_key
+/usr/lib/seahorse/ssh-askpass my_key
 
 ```
 

@@ -374,12 +374,7 @@ This option can also be compiled into your initramfs by adding the config file t
 
  `/etc/mkinitcpio.conf`  `FILES="... /etc/udev/udev.conf"` 
 
-and then rebuilding the initramfs with
-
-```
-# mkinitcpio -p linux
-
-```
+and then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ### udevd hangs at boot
 
