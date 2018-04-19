@@ -56,7 +56,7 @@ $ lspci | grep Broadcom | grep -v Ethernet
 
 It seems this laptop may have BCM5761 or BCM43228.
 
-In both cases, you will need the proprietary driver [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), or its non-DKMS version [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/).
+In both cases, you will need the proprietary driver [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl), or its non-DKMS version [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
 
 See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more information on this Wireless NIC (WNIC) vendor.
 

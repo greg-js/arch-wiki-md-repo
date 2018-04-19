@@ -53,6 +53,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [9 DNS](#DNS)
     *   [9.1 Update resolv-conf script](#Update_resolv-conf_script)
     *   [9.2 Update systemd-resolved script](#Update_systemd-resolved_script)
+    *   [9.3 Override DNS servers using NetworkManager](#Override_DNS_servers_using_NetworkManager)
 *   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
 *   [11 Config generators](#Config_generators)
     *   [11.1 ovpngen](#ovpngen)
@@ -757,6 +758,14 @@ down /etc/openvpn/scripts/update-systemd-resolved
 down-pre
 
 ```
+
+### Override DNS servers using NetworkManager
+
+By default [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) plugin appends DNS servers provided by OpenVPN to `/etc/resolv.conf`. This may result result DNS instability (leakage).
+
+The settings user interface does not provide any way to change this behavior, but it is possible to [completely override](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1211110/comments/92) DNS using connection configuration file.
+
+To use DNS settings provided by the VPN connection add `dns-priority=-1` ([ipv4 section](https://developer.gnome.org/NetworkManager/stable/settings-ipv4.html)) to the file located at `/etc/NetworkManager/system-connections/*your_vpn_name*`, where `*your_vpn_name*` is the name of your VPN connection.
 
 ## L2 Ethernet bridging
 

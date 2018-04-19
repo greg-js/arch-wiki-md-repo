@@ -148,7 +148,7 @@ Or when you also need to select a specific mirror ([https://cran.r-project.org/m
 
 #### Within a shell
 
-First, [Install](/index.php/Install "Install") [littler](https://aur.archlinux.org/packages/littler/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). This package allows direct execution of **R** commands and can be seen as a scripting front-end. Then, visit [dirk.eddelbuettel](http://dirk.eddelbuettel.com/code/littler.examples.html) webiste about **littler**. Below is the script to run packages updates:
+First, [Install](/index.php/Install "Install") [littler](https://aur.archlinux.org/packages/littler/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). This package allows direct execution of **R** commands and can be seen as a scripting front-end. Then, visit [dirk.eddelbuettel](http://dirk.eddelbuettel.com/code/littler.examples.html) website about **littler**. Below is the script to run packages updates:
 
 ```
 #!/usr/bin/env r 
@@ -166,7 +166,7 @@ update.packages(repos=repos, ask=FALSE, lib.loc=lib.loc)
 
 Put this script in your favorite place and make it executable. Of course, feel free to modify the repo URL and the library location.
 
-**Warning:** when using [zsh](/index.php/Zsh "Zsh"), **r** is a builtin command. You will have to either use an explicit path `/usr/bin/r` or create an alias under a different name.
+**Warning:** when using [zsh](/index.php/Zsh "Zsh"), **r** is a builtin command. You will have to use **R** or create an alias under a different name.
 
 #### Automatically after R upgrades
 

@@ -35,23 +35,24 @@ The goal of this article is to setup Postfix and explain what the basic configur
         *   [4.2.1 SMTPS (port 465)](#SMTPS_.28port_465.29)
 *   [5 Extra](#Extra)
     *   [5.1 PostfixAdmin](#PostfixAdmin)
-    *   [5.2 Postgrey](#Postgrey)
-        *   [5.2.1 Installation](#Installation_2)
-        *   [5.2.2 Configuration](#Configuration_2)
-        *   [5.2.3 Troubleshooting](#Troubleshooting)
-    *   [5.3 SpamAssassin](#SpamAssassin)
-        *   [5.3.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
-        *   [5.3.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
-        *   [5.3.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
-        *   [5.3.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
-        *   [5.3.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
-    *   [5.4 Using Razor](#Using_Razor)
-    *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
-    *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
-    *   [5.7 Rule-based mail processing](#Rule-based_mail_processing)
-    *   [5.8 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
-        *   [5.8.1 Resource Record](#Resource_Record)
-        *   [5.8.2 Configuration](#Configuration_3)
+    *   [5.2 Blacklist incoming emails](#Blacklist_incoming_emails)
+    *   [5.3 Postgrey](#Postgrey)
+        *   [5.3.1 Installation](#Installation_2)
+        *   [5.3.2 Configuration](#Configuration_2)
+        *   [5.3.3 Troubleshooting](#Troubleshooting)
+    *   [5.4 SpamAssassin](#SpamAssassin)
+        *   [5.4.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
+        *   [5.4.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
+        *   [5.4.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
+        *   [5.4.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+        *   [5.4.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
+    *   [5.5 Using Razor](#Using_Razor)
+    *   [5.6 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
+    *   [5.7 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+    *   [5.8 Rule-based mail processing](#Rule-based_mail_processing)
+    *   [5.9 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
+        *   [5.9.1 Resource Record](#Resource_Record)
+        *   [5.9.2 Configuration](#Configuration_3)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -346,6 +347,33 @@ Include conf/extra/httpd-postfixadmin.conf
 **Note:** If you go to yourdomain/postfixadmin/setup.php and it says do not find config.inc.php, add `/etc/webapps/postfixadmin` to the `open_basedir` line in `/etc/php/php.ini`.
 
 **Note:** If you get a blank page check the syntax of the file with `php -l /etc/webapps/postfixadmin/config.inc.php`.
+
+### Blacklist incoming emails
+
+Manually blacklisting incoming emails by sender address can easily be done with Postfix.
+
+Create and open `/etc/postfix/blacklist_incoming` file and append sender email address:
+
+```
+user@blacklistdomain.com REJECT
+
+```
+
+Then use the `postmap` command to create a database:
+
+```
+# postmap hash:blacklist_incoming
+
+```
+
+Add the following code before the first permit rule in `main.cf`:
+
+```
+smtpd_recipient_restrictions = check_sender_access hash:/etc/postfix/blacklist_incoming
+
+```
+
+Finally [restart](/index.php/Restart "Restart") `postfix.service`.
 
 ### Postgrey
 

@@ -278,7 +278,7 @@ $ git push
 **Dica:**
 
 *   Se você inicialmente se esqueceu de fazer commit do `.SRCINFO` e adicionou-o em um commit posterior, o AUR ainda rejeitará seus *pushes* porque o `.SRCINFO` deve existir para *todo* commit. Para resolver esse problema, você pode usar [git rebase](https://git-scm.com/docs/git-rebase) com a opção `--root` ou [git filter-branch](https://git-scm.com/docs/git-filter-branch) com a opção `--tree-filter`.
-*   Para evitar arquivos não rastreados de commits e manter o diretório de trabalho o mais limpo possível, exclua todos os arquivos com `.gitignore` e force a adição de arquivos. Veja o [uso de gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
+*   Para evitar arquivos não rastreados de commits e manter o diretório de trabalho o mais limpo possível, exclua todos os arquivos com `.gitignore` e force a adição de arquivos. Veja o [uso de gitignore](/index.php/Dotfiles_(Portugu%C3%AAs)#Usando_gitignore "Dotfiles (Português)").
 
 ### Mantendo pacotes
 

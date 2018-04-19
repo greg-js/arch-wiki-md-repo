@@ -222,6 +222,8 @@ WantedBy=timers.target
 
 [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the newly created `letsencrypt-renew.timer`.
 
+**Note:** The service waits for the network to be up and online, for more information on the implementation of the network dependency, see [Systemd#Running services after the network is up](/index.php/Systemd#Running_services_after_the_network_is_up "Systemd").
+
 ## See also
 
 *   [Hiawatha Support page](https://www.hiawatha-webserver.org/support)

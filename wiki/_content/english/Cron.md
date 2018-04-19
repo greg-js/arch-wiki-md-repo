@@ -1,7 +1,6 @@
 Related articles
 
 *   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
-*   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 

@@ -103,7 +103,7 @@ Usually the post-[MBR](/index.php/MBR "MBR") gap (after the 512 byte MBR region 
 [Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), where already installed. Then do:
 
 ```
-# grub-install /dev/sd**X**
+# grub-install --target=i386-pc /dev/sd**X**
 
 ```
 
@@ -372,13 +372,13 @@ Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can u
 
 If you use [LVM](/index.php/LVM "LVM") for your `/boot` or `/` root partition, make sure that the `lvm` module is preloaded:
 
- `/etc/default/grub`  `GRUB_PRELOAD_MODULES="lvm"` 
+ `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... lvm"` 
 
 ### RAID
 
-GRUB provides convenient handling of RAID volumes. You need to load GRUB modules `mdraid09` or `mdraid1x` to allow you to address the volume natively:
+GRUB provides convenient handling of [RAID](/index.php/RAID "RAID") volumes. You need to load GRUB modules `mdraid09` or `mdraid1x` to allow you to address the volume natively:
 
- `/etc/default/grub`  `GRUB_PRELOAD_MODULES="mdraid09 mdraid1x"` 
+ `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... mdraid09 mdraid1x"` 
 
 For example, `/dev/md0` becomes:
 
@@ -397,8 +397,8 @@ set root=(md/0,1)
 To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on BIOS systems, simply run *grub-install* on both of the drives, such as:
 
 ```
-# grub-install --debug /dev/sda
-# grub-install --debug /dev/sdb
+# grub-install --target=i386-pc --debug /dev/sda
+# grub-install --target=i386-pc --debug /dev/sdb
 
 ```
 

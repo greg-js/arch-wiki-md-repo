@@ -1,3 +1,7 @@
+Related articles
+
+*   [Improving performance](/index.php/Improving_performance "Improving performance")
+
 Article on utilizing video memory for system swap.
 
 **Warning:** This will not work with binary drivers.
@@ -120,5 +124,4 @@ The following command may help you getting the used swap in the different spaces
 
 ## See also
 
-*   [Archived Gentoo Wiki articles. Note the warnings.](http://www.gentoo-wiki.info/TIP_Use_memory_on_video_card_as_swap)
 *   [MTD website](http://www.linux-mtd.infradead.org)

@@ -59,6 +59,7 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 -rw-r--r-- 1 root root 1821573 Jan 12 00:31 initramfs-linux.img
 -rw-r--r-- 1 root root 1457315 Jan  8 08:19 System.map26
 -rw-r--r-- 1 root root 2209920 Jan  8 08:19 vmlinuz-linux
+
 ```
 
 A primeira coluna exibe as permissões do arquivo (por exemplo, o arquivo `initramfs-linux.img` possui permissões `-rw-r-r--`). As terceira e quarta colunas exibem o usuário e o grupo que possuem o arquivo, respectivamente. Neste exemplo, todos os arquivos pertencem ao usuário *root* e do grupo *root*.
@@ -67,21 +68,34 @@ A primeira coluna exibe as permissões do arquivo (por exemplo, o arquivo `initr
 ```
 total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
+
 ```
 
 Neste exemplo, o diretório `sf_Shared` pertence ao usuário *root* e do grupo *vboxsf*. Também é possível determinar os donos e as permissões do arquivo usando o comando *stat*:
 
 Usuário dono:
 
- `$ stat -c %U /media/sf_Shared/`  `root` 
+ `$ stat -c %U /media/sf_Shared/` 
+```
+root
+
+```
 
 Grupo dono:
 
- `$ stat -c %G /media/sf_Shared/`  `vboxsf` 
+ `$ stat -c %G /media/sf_Shared/` 
+```
+vboxsf
+
+```
 
 Direitos de acesso:
 
- `$ stat -c %A /media/sf_Shared/`  `drwxrwx---` 
+ `$ stat -c %A /media/sf_Shared/` 
+```
+drwxrwx---
+
+```
 
 As permissões de acesso são exibidas em três grupos de caracteres, representando as permissões do usuário dono, grupo dono e outros, respectivamente. Por exemplo, os caracteres `-rw-r-r--` indicam que o dono do arquivo tem permissão de leitura e gravação, mas não de execução (`rw-`), enquanto os usuários pertencem ao grupo dono e outros usuários só têm permissão de leitura (`r--` e `r--`). Enquanto isso, os caracteres `drwxrwx---` indicam que o dono do arquivo e os usuários pertencentes ao grupo dono possuem permissões de leitura, gravação e execução (`rwx` e `rwx`), enquanto outros usuários têm acesso negado (`---`). O primeiro caractere representa o tipo do arquivo.
 
@@ -97,7 +111,7 @@ Liste arquivos que pertencem a um usuário ou grupo com o utilitário *find*:
 
 ```
 
-O usuário e o grupo donos de um arquivo podem ser alterados com o comando *chown* (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando *chmod* (*change mode* ou mudar o modo).
+O usuário e o grupo donos de um arquivo podem ser alterados com o comando [chown](/index.php?title=Chown_(Portugu%C3%AAs)&action=edit&redlink=1 "Chown (Português) (page does not exist)") (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando [chmod](/index.php/Chmod "Chmod") (*change mode* ou mudar o modo).
 
 Veja [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) e [Permissões de acesso a arquivos e diretórios](http://www.guiafoca.org/cgs/guia/inic_interm/ch-perm.html) para detalhes adicionais.
 
@@ -155,14 +169,7 @@ Apesar de ser obrigatório proteger o recém criado usuário `archie` com uma se
 
 O comando *useradd* acima pode também criar automaticamente um grupo chamado `archie` com o mesmo GID que o UID do usuário `archie` e torna este o grupo padrão para `archie` no login. Fazer com que cada usuário tenha seu próprio grupo (com o nome do grupo igual ao nome do usuário e GID, o mesmo que o UID) é a maneira preferida de adicionar usuários.
 
-Você poderia fazer o grupo padrão alguma outra coisa como, por exemplo, `estudo`:
-
-```
-# useradd -m -g estudo -s /bin/bash archie
-
-```
-
-Note-se que, em sistemas multiusuários, o uso de um único grupo padrão (por exemplo, `users`) para cada usuário não é recomendado. A razão é que, tipicamente, o método para facilitar o acesso de gravação compartilhada para grupos específicos de usuários é definir o valor [umask](/index.php/Umask_(Portugu%C3%AAs) "Umask (Português)") do usuário para `002`, o que significa que o grupo padrão sempre terá, por padrão, acesso de gravação a qualquer arquivo que você crie. Veja também [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix).
+Você poderia fazer o grupo padrão alguma outra coisa usando a opção `-g`, mas note que, em sistemas multiusuários, o uso de um único grupo padrão (por exemplo, `users`) para cada usuário não é recomendado. A razão é que, tipicamente, o método para facilitar o acesso de gravação compartilhada para grupos específicos de usuários é definir o valor [umask](/index.php/Umask_(Portugu%C3%AAs) "Umask (Português)") do usuário para `002`, o que significa que o grupo padrão sempre terá, por padrão, acesso de gravação a qualquer arquivo que você crie. Veja também [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix). Se um usuário deve ser um membro de um grupo específico, especifique aquele grupo como um grupo suplementar ao criar o usuário.
 
 No cenário recomendado, onde o grupo padrão tem o mesmo nome que o nome do usuário, todos os arquivos são somente graváveis para o usuário que os criou. Para permitir o acesso de gravação a um grupo específico, os arquivos/pastas compartilhados podem ser gravados por padrão para todos neste grupo e o grupo dono pode ser fixado automaticamente no grupo que possui o diretório pai configurando o bit *setgid* neste diretório:
 

@@ -1,45 +1,221 @@
-*cron*是一个在类Unix操作系统上的任务计划程序。它可以让用户在指定时间段周期性地运行命令或者shell脚本，通常被用在系统的自动化维护或者管理。
+相关文章
+
+*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
+
+摘自 [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
+
+	*cron* 是一个在 Unix 及类似操作系统上执行计划任务的程序。用户可以在指定的时间段周期性地运行命令或 shell 脚本，通常用于系统的自动化维护或者管理。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 初始配置](#.E5.88.9D.E5.A7.8B.E9.85.8D.E7.BD.AE)
-*   [3 Crontab 格式](#Crontab_.E6.A0.BC.E5.BC.8F)
-*   [4 基本命令](#.E5.9F.BA.E6.9C.AC.E5.91.BD.E4.BB.A4)
-*   [5 范例](#.E8.8C.83.E4.BE.8B)
-*   [6 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
-*   [7 run-parts issue](#run-parts_issue)
-*   [8 运行 X 程序](#.E8.BF.90.E8.A1.8C_X_.E7.A8.8B.E5.BA.8F)
-*   [9 Asynchronous job processing](#Asynchronous_job_processing)
-    *   [9.1 Dcron](#Dcron)
-    *   [9.2 Cronwhip](#Cronwhip)
-    *   [9.3 Anacron](#Anacron)
-    *   [9.4 Fcron](#Fcron)
-*   [10 参见](#.E5.8F.82.E8.A7.81)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+*   [3 激活及开机启动](#.E6.BF.80.E6.B4.BB.E5.8F.8A.E5.BC.80.E6.9C.BA.E5.90.AF.E5.8A.A8)
+    *   [3.1 处理任务中的错误](#.E5.A4.84.E7.90.86.E4.BB.BB.E5.8A.A1.E4.B8.AD.E7.9A.84.E9.94.99.E8.AF.AF)
+        *   [3.1.1 使用 ssmtp](#.E4.BD.BF.E7.94.A8_ssmtp)
+        *   [3.1.2 Example with msmtp](#Example_with_msmtp)
+        *   [3.1.3 Example with esmtp](#Example_with_esmtp)
+        *   [3.1.4 Example with opensmtpd](#Example_with_opensmtpd)
+        *   [3.1.5 Long cron job](#Long_cron_job)
+*   [4 Crontab 格式](#Crontab_.E6.A0.BC.E5.BC.8F)
+*   [5 基本命令](#.E5.9F.BA.E6.9C.AC.E5.91.BD.E4.BB.A4)
+*   [6 范例](#.E8.8C.83.E4.BE.8B)
+*   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
+*   [8 run-parts issue](#run-parts_issue)
+*   [9 运行 X 程序](#.E8.BF.90.E8.A1.8C_X_.E7.A8.8B.E5.BA.8F)
+*   [10 Asynchronous job processing](#Asynchronous_job_processing)
+    *   [10.1 Dcron](#Dcron)
+    *   [10.2 Cronwhip](#Cronwhip)
+    *   [10.3 Anacron](#Anacron)
+    *   [10.4 Fcron](#Fcron)
+*   [11 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-有很多 cron 的实现，用户可以选择其一。[cronie](https://www.archlinux.org/packages/?name=cronie) 可以从 [core] 中获得，并且它被作为 **base** 软件组的一部分安装，你可以检查它是否正确安装：
+cron 有多个实现程序，但是基础系统默认使用 [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")，都没用安装，用户可以选择其一进行安装。[Gentoo Linux Cron 指南](http://www.gentoo.org/doc/en/cron-guide.xml) 提供了一个这些实现之间的比较。软件包:
+
+*   [cronie](https://www.archlinux.org/packages/?name=cronie)
+*   [fcron](https://www.archlinux.org/packages/?name=fcron)
+*   [dcron](https://aur.archlinux.org/packages/dcron/)
+*   [vixie-cron](https://aur.archlinux.org/packages/vixie-cron/)
+*   [scron-git](https://aur.archlinux.org/packages/scron-git/)
+
+## 配置
+
+## 激活及开机启动
+
+安装后，默认的守护进程不会启动。安装的软件包都提供了可以用 [systemctl](/index.php/Systemd#Using_units "Systemd") 控制的服务文件。例如 *cronie* 使用 `cronie.service`.
+
+`/etc/cron.daily/` 目录包含当前的任务，启动 cron 服务时会触发所有当天任务。
+
+**Note:** *cronie* 提供了 `0anacron`任务，每小时执行一次，可以执行其它因为未开机而延迟的任务。
+
+### 处理任务中的错误
+
+cron 会记录 *stdout* 和 *stderr* 的输出并尝试通过 `sendmail` 命令发送邮件给用户。如果 Cronie 未找到 `/usr/bin/sendmail`，则会禁用邮件通知。要发送邮件到用户的 spool，需要在系统上运行 smtp 进程，例如 [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd)。也可以安装提供 sendmail 命令的软件包，然后配置成通过外部邮件服务器发送邮件。或者使用 `-m` 选项将错误记录到日志并通过定制的脚本进行处理。
+
+**Tip:** 通过 [Postfix#Local mail](/index.php/Postfix#Local_mail "Postfix") 可以发送邮件到本地系统。
+
+1.  [编辑](/index.php/Edit "Edit") `cronie.service` 服务。
+2.  安装 [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](/index.php/Msmtp "Msmtp"), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd), [ssmtp](/index.php/SSMTP "SSMTP") 或编写自定义脚本。
+
+#### 使用 ssmtp
+
+ssmtp 是一个仅包含发送功能的 sendmail 模拟器，可以从本地计算机向 smtp 服务器发送邮件。尽管目前已经没用活跃维护者，这个程序依然是发送邮件的最简单方式。没用需要运行的后台进程，最简单的配置只需要一个包含三行内容的配置文件(发送服务提供商支持未认证转发的时候)。ssmtp 无法收取邮件、展开扩展或管理队列。
+
+安装 [ssmtp](https://www.archlinux.org/packages/?name=ssmtp)，安装时会创建 `/usr/bin/sendmail` 链接，指向 `/usr/bin/ssmtp`. 安装后编辑 `/etc/ssmtp/ssmtp.conf` 配置文件。详情请参考 [ssmtp](/index.php/SSMTP "SSMTP")，到 `/usr/bin/sendmail` 的软链接可以确保 [S-nail](/index.php/S-nail "S-nail") 等提供 `/usr/bin/mail` 的程序可以无需修改直接使用。
+
+安装配置完成后重启 `cronie` 以重新确认 `/usr/bin/sendmail` 已经被安装。
+
+#### Example with msmtp
+
+Install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta), which creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/msmtp`. Restart `cronie` to make sure it detects the new `sendmail` command. You must then provide a way for `msmtp` to convert your username into an email address.
+
+Then either add `MAILTO` line to your crontab, like so:
 
 ```
-# pacman -S --needed cronie
+MAILTO=your@email.com
 
 ```
 
-截至2011年5月，Arch Linux 默认的 cron 实现是 [dcron](https://aur.archlinux.org/packages/dcron/) (Dillon's Cron)，它仍然被支持，可以从 [extra] 找到：
+**or** create `/etc/msmtprc` and append this line:
 
 ```
-# pacman -S dcron
+aliases /etc/aliases
 
 ```
 
-另外，用户可以安装 [fcron](https://www.archlinux.org/packages/?name=fcron) (来自 [community]) 或者 [bcron](https://aur.archlinux.org/packages/bcron/) 或者 [vixie-cron](https://aur.archlinux.org/packages/vixie-cron/) (来自 [AUR](/index.php/AUR "AUR")); 它们都提供了广泛的功能和配置选项。
+and create `/etc/aliases`:
 
-[Gentoo Linux Cron 指南](http://www.gentoo.org/doc/en/cron-guide.xml) 提供了一个这些实现之间的比较。
+```
+your_username: your@email.com
+# Optional:
+default: your@email.com
 
-## 初始配置
+```
 
-**注意:** 本部分内容已过期，暂时不翻译。
+Then [modify the configuration](/index.php/Systemd#Editing_provided_units "Systemd") of *cronie* daemon by replacing the `ExecStart` command with:
+
+```
+ExecStart=/usr/bin/crond -n -m '/usr/bin/msmtp -t'
+
+```
+
+#### Example with esmtp
+
+Install [esmtp](https://www.archlinux.org/packages/?name=esmtp) and [procmail](https://www.archlinux.org/packages/?name=procmail).
+
+After installation configure the routing:
+
+ `/etc/esmtprc` 
+```
+identity *myself*@myisp.com
+       hostname mail.myisp.com:25
+       username *"myself"*
+       password *"secret"*
+       starttls enabled
+       default
+mda "/usr/bin/procmail -d %T"
+
+```
+
+Procmail needs root privileges to work in delivery mode but it is not an issue if you are running the cronjobs as root anyway.
+
+To test that everything works correctly, create a file `message.txt` with `"test message"` in it.
+
+From the same directory run:
+
+```
+$ sendmail *user_name* < message.txt 
+
+```
+
+then:
+
+```
+$ cat /var/spool/mail/*user_name*
+
+```
+
+You should now see the test message and the time and date it was sent.
+
+The error output of all jobs will now be redirected to `/var/spool/mail/*user_name*`.
+
+Due to the privileged issue, it is hard to create and send emails to root (e.g. `su -c ""`). You can ask `esmtp` to forward all root's email to an ordinary user with:
+
+ `/etc/esmtprc`  `force_mda="*user-name*"` 
+**Note:** If the above test didn't work, you may try creating a local configuration in `~/.esmtprc` with the same content.
+
+Run the following command to make sure it has the correct permission:
+
+```
+$ chmod 710 ~/.esmtprc
+
+```
+Then repeat the test with `message.txt` exactly as before.
+
+#### Example with opensmtpd
+
+Install [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd).
+
+Edit `/etc/smtpd/smtpd.conf`. The following configuration allows for local delivery:
+
+```
+listen on localhost
+accept for local deliver to mbox
+
+```
+
+You can proceed to test it. First [start](/index.php/Start "Start") `smtpd.service`. Then do:
+
+```
+$ echo test | sendmail user
+
+```
+
+*user* can check his/her mail in with any [reader](/index.php/Category:Email_clients "Category:Email clients") able to handle mbox format, or just have a look at the file `/var/spool/mail/*user*`. If everything goes as expected, you can [enable](/index.php/Enable "Enable") opensmtpd for future boots.
+
+This approach has the advantage of not sending local cron notifications to a remote server. On the downside, you need a new daemon running.
+
+**Note:**
+
+*   At the moment of writing the Arch opensmtpd package does not create all needed directories under `/var/spool/smtpd`, but the daemon will warn about that specifying the required ownerships and permissions. Just create them as suggested.
+*   Even though the suggested configuration does not accept remote connections, it's a healthy precaution to add an additional layer of security blocking port 25 with [iptables](/index.php/Iptables "Iptables") or similar.
+
+#### Long cron job
+
+Suppose this program is invoked by cron :
+
+```
+#!/bin/sh
+echo "I had a recoverable error!"
+sleep 1h
+
+```
+
+What happens is this:
+
+1.  cron runs the script
+2.  as soon as cron sees some output, it runs your MTA, and provides it with the headers. It leaves the pipe open, because the job hasn't finished and there might be more output.
+3.  the MTA opens the connection to postfix and leaves that connection open while it waits for the rest of the body.
+4.  postfix closes the idle connection after less than an hour and you get an error like this :
+
+```
+smtpmsg='421 … Error: timeout exceeded' errormsg='the server did not accept the mail'
+
+```
+
+To solve this problem you can use the command chronic or sponge from [moreutils](https://www.archlinux.org/packages/?name=moreutils). From their respective man page:
+
+	chronic
+
+	chronic runs a command, and arranges for its standard out and standard error to only be displayed if the command fails (exits nonzero or crashes). If the command succeeds, any extraneous output will be hidden.
+
+	sponge
+
+	sponge reads standard input and writes it out to the specified file. Unlike a shell redirect, sponge soaks up all its input before opening the output file… If no output file is specified, sponge outputs to stdout.
+
+Chronic too buffers the command output before opening its standard output.
 
 ## Crontab 格式
 

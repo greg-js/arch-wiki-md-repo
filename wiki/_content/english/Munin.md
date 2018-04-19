@@ -256,7 +256,7 @@ And [restart](/index.php/Restart "Restart") `munin-node.service`. Finally, refre
 
 ##### Additional Plugins
 
-There are many Munin plugins out there just waiting to be installed. The [MuninExchange](http://muninexchange.projects.linpro.no/) is an excellent place to start looking, and if you cannot find a plugin that does what you want it is easy to write your own. Have a look at [HowToWritePlugins](http://munin-monitoring.org/wiki/HowToWritePlugins) at the Munin documentation wiki to learn how.
+There are many Munin plugins out there just waiting to be installed. The [MuninExchange](http://muninexchange.projects.linpro.no/) is an excellent place to start looking, and if you cannot find a plugin that does what you want it is easy to write your own. Have a look at [Developing Plugins](http://guide.munin-monitoring.org/en/latest/develop/plugins/) at the Munin documentation wiki to learn how.
 
 ##### Removing
 

@@ -1603,7 +1603,11 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 	[http://gpodder.org/](http://gpodder.org/) || [gpodder3](https://aur.archlinux.org/packages/gpodder3/)
 
-*   **Vocal** — Simple Podcast Client for the Modern Desktop (GTK+).
+*   **Hammond** — A podcast client for the GNOME Desktop written in Rust.
+
+	[https://gitlab.gnome.org/World/hammond](https://gitlab.gnome.org/World/hammond) || [hammond](https://aur.archlinux.org/packages/hammond/)
+
+*   **Vocal** — Simple podcast client for the Modern Desktop (GTK+).
 
 	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://aur.archlinux.org/packages/vocal/)
 

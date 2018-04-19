@@ -28,6 +28,7 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
     *   [7.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
+    *   [7.3 Screen flickering](#Screen_flickering)
 
 ## Selecting the right driver
 
@@ -205,3 +206,7 @@ If you have screen artifacts when setting your screen frequency up to 120+Hz you
 A workaround [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
 
 There is a GUI solution [[2]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
+
+### Screen flickering
+
+If you experience flickering [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=199101) add `amdgpu.dc=0` to your kernel parameters.

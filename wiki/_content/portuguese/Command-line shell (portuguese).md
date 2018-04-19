@@ -1,10 +1,18 @@
 Artigos relacionados
 
-*   [dotfiles](/index.php/Dotfiles "Dotfiles")
+*   [dotfiles](/index.php/Dotfiles_(Portugu%C3%AAs) "Dotfiles (Português)")
 
 Do [Wikipédia](https://en.wikipedia.org/wiki/pt:Shell_do_Unix "wikipedia:pt:Shell do Unix"):
 
 	Um shell do Unix é um interpretador de linha de comando ou shell que fornece uma interface semelhante ao Unix tradicional. Os usuários indicam a operação do computador pela entrada de comandos como texto para um interpretador de linha de comando executar, ou criando scripts de texto de um ou mais de tais comandos.
+
+## Contents
+
+*   [1 Lista de shells](#Lista_de_shells)
+*   [2 Alterando seu shell padrão](#Alterando_seu_shell_padr.C3.A3o)
+*   [3 Arquivos de configuração](#Arquivos_de_configura.C3.A7.C3.A3o)
+    *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
+*   [4 Veja também](#Veja_tamb.C3.A9m)
 
 ## Lista de shells
 
@@ -77,6 +85,16 @@ $ chsh -s *caminho-completo-do-shell*
 sendo *caminho-completo-do-shell* é o caminho completo como fornecido em `chsh -l`.
 
 Se você agora você encerrar a sessão e iniciá-la novamente, você será saudado pelo outro shell.
+
+## Arquivos de configuração
+
+Para iniciar automaticamente programas no console ou no login, você pode usar os arquivos/diretórios de inicialização do shell. Leia a documentação do seu shell, ou seu artigo do ArchWiki, p. ex., [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+
+Veja também [Wikipedia:pt:Shell do Unix#Arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
+
+### /etc/profile
+
+Após o login, todas os shells compatíveis com Bourne usam `/etc/profile`, o que, por sua vez, origina qualquer arquivo `*.sh` legível em `/etc/profile.d/`: estes scripts não requerem uma diretiva de interpretador, nem precisam ser executáveis. Eles são usados para configurar um ambiente e definir configurações específicas do aplicativo.
 
 ## Veja também
 

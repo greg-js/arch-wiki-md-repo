@@ -43,14 +43,14 @@ Version: ThinkPad X1 Carbon 3rd
 Options:
 
 *   There is a version with a touch screen
-*   The integrated mobile broadband can be upgraded to a LTE Sierra EM7345
+*   The integrated mobile broadband can be upgraded to a LTE Sierra EM7345 or WCDMA Ericsson H5321gw/C5621gw/N5321gw
 
 ### Support
 
 | **Device** | **Working** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
-| Mobile broadband |  ?? |
+| Mobile broadband | Yes |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Touchscreen](/index.php/Touchscreen "Touchscreen") | Yes |

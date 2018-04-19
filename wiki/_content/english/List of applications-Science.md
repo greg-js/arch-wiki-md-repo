@@ -514,6 +514,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://activityworkshop.net/software/gpsprune/](https://activityworkshop.net/software/gpsprune/) || [gpsprune](https://www.archlinux.org/packages/?name=gpsprune)
 
+*   **GPXSee** — GPS log file viewer and analyzer.
+
+	[http://www.gpxsee.org/](http://www.gpxsee.org/) || [gpxsee](https://www.archlinux.org/packages/?name=gpxsee)
+
 *   **GPX Viewer** — Simple tool to visualize tracks and waypoints stored in a gpx file.
 
 	[https://blog.sarine.nl/tag/gpxviewer/](https://blog.sarine.nl/tag/gpxviewer/) || [gpx-viewer](https://www.archlinux.org/packages/?name=gpx-viewer)
@@ -552,7 +556,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **QGIS** — Geographic Information System (GIS) that supports vector, raster & database formats.
 
-	[https://qgis.org/](https://qgis.org/) || [qgis](https://aur.archlinux.org/packages/qgis/)
+	[https://qgis.org/](https://qgis.org/) || [qgis](https://www.archlinux.org/packages/?name=qgis)
 
 *   **Viking** — GTK+2 application to manage GPS data.
 

@@ -18,6 +18,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
     *   [3.5 Movendo pacotes do [community] para unsupported](#Movendo_pacotes_do_.5Bcommunity.5D_para_unsupported)
     *   [3.6 Movendo pacotes do [community-testing] para [community]](#Movendo_pacotes_do_.5Bcommunity-testing.5D_para_.5Bcommunity.5D)
     *   [3.7 Excluindo pacotes do unsupported](#Excluindo_pacotes_do_unsupported)
+    *   [3.8 Compilação remota no PKGBUILD.com](#Compila.C3.A7.C3.A3o_remota_no_PKGBUILD.com)
 *   [4 Lista de TODO na retirada de um Trusted User](#Lista_de_TODO_na_retirada_de_um_Trusted_User)
 *   [5 Veja também](#Veja_tamb.C3.A9m)
 
@@ -30,20 +31,20 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 5.  Se inscrever na lista de discussão pública de desenvolvimento do Arch Linux, [arch-dev-public](https://lists.archlinux.org/listinfo/arch-dev-public).
 6.  Lembrar um [administrador do BBS](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) de alterar sua conta nos fóruns.
 7.  Perguntar a algum TU pela chave do #archlinux-tu@freenode e aparecer no canal. Você não tem que fazer isso, mas seria interessante já que é lá que a maioria dos segredos ocultos são apresentados e onde muitas novas ideias são concebidas.
+    *   Uma vez no canal, se você quiser uma manta de @archlinux/trusteduser/*, peça ao nosso [contato no grupo](https://freenode.net/groupreg#two-types-of-group-contacts-exist-for-freenode), ioni, para obter uma.
 8.  Criar uma chave PGP para [assinatura de pacotes](/index.php/Assinatura_de_pacote "Assinatura de pacote") ou use sua chave PGP existente. Certifique-se de que a chave também contém uma subchave criptográfica de forma você possa receber tokens de verificação criptografados.
-9.  Enviar ao Ionuț Bîru (ibiru@archlinux.org) oru ao Florian Pritz (bluewind@xinu.at) um e-mail com todas as informações baseadas neste [modelo](https://www.archlinux.org/trustedusers/) para ter acesso à interface de desenvolvimento (archweb).
-10.  Enviar um e-mail assinado para o Florian:
-    *   Anexe uma chave pública SSH. Se você não possuir uma, use `ssh-keygen` para gerar uma. Verifique na página wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mais informações sobre chaves SSH.
+9.  Enviar um e-mail assinado para Florian Pritz (bluewind@xinu.at) ou Bartłomiej Piotrowski (bpiotrowski@archlinux.org):
+    *   Anexar uma chave pública SSH. Se você não possuir uma, use `ssh-keygen` para gerar uma. Verifique na página wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mais informações sobre chaves SSH.
     *   Solicitar que ele lhe dê permissão à arch-dev-public.
     *   Façar para ele se você deseja um e-mail @archlinux.org.
-11.  Pedir a seu patrocinador (*sponsor*):
+10.  Pedir a seu patrocinador (*sponsor*):
     *   para lhe conceder o status de TU no AUR.
     *   para abrir uma nova tarefa no projeto "Keyring" do rastreador de erro seguindo as sintruções [nesta mensagem](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) na ordem de ter sua chave PGP assinado pelos três detentores de chave mestre.
-12.  Instale o pacote [devtools](https://www.archlinux.org/packages/?name=devtools).
-13.  [Configurar sua chave privada ssh](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Autentica.C3.A7.C3.A3o "Arch User Repository (Português)") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
-14.  Teste a conexão SSH para seunome@orion.archlinux.org (assim que você tiver permissões).
-15.  Se você não for acrescentado a um grupo de Trusted User no rastreador de erro em dois dias, relate isso como um bug para arch-dev-public.
-16.  Começar a contribuir!
+11.  Instale o pacote [devtools](https://www.archlinux.org/packages/?name=devtools).
+12.  [Configurar sua chave privada ssh](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Autentica.C3.A7.C3.A3o "Arch User Repository (Português)") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
+13.  Teste a conexão SSH para seunome@orion.archlinux.org (assim que você tiver permissões).
+14.  Se você não for acrescentado a um grupo de Trusted User no rastreador de erro em dois dias, relate isso como um bug para arch-dev-public.
+15.  Começar a contribuir!
 
 ## O TU e o AUR
 
@@ -145,6 +146,121 @@ ssh nymeria.archlinux.org /arch/db-move community-testing community package
 ### Excluindo pacotes do unsupported
 
 Não há sentido em remover pacotes-modelos, porque eles serão recriados na tentativa de atender dependências. Se alguém enviar um pacote real, então todos os dependentes irão apontar para o local correto.
+
+### Compilação remota no PKGBUILD.com
+
+**Atenção:** Os procedimentos a seguir invalidam o modelo Web Of Trust: um usuário com acesso root ao PKGBUILD.com poderia alterar o pacote e/ou a assinatura antes de publicá-lo.
+
+Trusted Users e desenvolvedores podem se conectar ao [PKGBUILD.com](http://pkgbuild.com/) via SSH para, entre outros, criar pacotes usando o devtools. Isso tem diversas vantagens sobre a configuração local:
+
+*   Compilações são rápidas e a velocidade de rede é alta.
+*   O ambiente precisa ser configurado apenas uma vez.
+*   Seu sistema local não precisa ser Arch Linux.
+
+O processo é semelhante ao de uma configuração local com devtools. Seu GnuPG privado é necessário para assinar, mas você não quer enviá-lo para soyuz por razões óbvias de segurança. Como tal, você precisará encaminhar o soquete de agente do GnuPG de sua máquina local para o servidor: isso permitirá que você assine pacotes em soyuz sem comunicar sua chave. Isso também significa que precisamos desabilitar o agente no servidor antes de podermos executar qualquer coisa.
+
+Primeiro, conecte-se ao soyuz e desabilite-o:
+
+```
+ $ ssh soyuz.archlinux.org
+ $ systemctl --user mask gpg-agent.service
+
+```
+
+Certifique-se de que o gpg-agent não esteja em execução (`systemctl --user stop gpg-agent.service`). Neste ponto, certifique-se de que não existem soquetes na pasta apontada por `gpgconf --list-dir socketdir`. Em caso afirmativo, remova-os ou efetue o logout e novamente. Se você tem um $GNUPGHOME personalizado (por exemplo, para movê-lo para `~/.config/gnupg`), você precisará desmarcar isso, pois não é possível no gnupg definir o homedir sem configurar o socketdir. No soyuz, *StreamLocalBindUnlink yes* está definido no *sshd_config*, então remover os soquetes manualmente no logout não é necessário.
+
+Enquanto as chaves privadas PGP permanecem em sua máquina local, as chaves públicas **devem** estar no soyuz. Exportar sua chave público para soyuz, por exemplo da sua máquina local
+
+```
+ $ scp ~/.gnupg/pubring.gpg soyuz.archlinux.org:~/.gnupg/pubring.gpg
+
+```
+
+O SSH é necessário para fazer *checkout* e *commit* no repositório SVN. Você pode configurar um novo par de chaves SSH no servidor (é altamente desencorajado colocar sua chave privada local no soyuz por motivos de segurança) ou reutilizar as chaves locais por meio do encaminhamento de soquete. Se você optar por este último, certifique-se de desabilitar o ssh-agent no soyuz se você o habilitou anteriormente (ele não está em execução por padrão).
+
+Configure seu ambiente de compilação no soyuz:
+
+ `~/.makepkg.conf` 
+```
+PACKAGER="John Doe <john@doe.example>"
+## Opcional
+PKGDEST="/home/johndoe/packages"
+SRCDEST="/home/johndoe/sources"
+SRCPKGDEST="/home/johndoe/srcpackages"
+LOGDEST="/home/johndoe/logs"
+## Se sua chave PGP não é a padrão, especifique a impressão digital correta:
+GPGKEY="ABCD1234..."
+```
+
+**Atenção:** Encaminhar seu soquete gpg-agent para uma máquina remota possibilita que qualquer pessoa com acesso root a esse sistema use suas credenciais GPG desbloqueadas. Para contornar esse problema, precisamos desabilitar o armazenamento em cache da frase secreta.
+
+desabilite o cache de senha com as seguintes configurações:
+
+ `gpg-agent.conf` 
+```
+default-cache-ttl 0
+max-cache-ttl 0
+
+```
+
+Como desejaremos manter nosso agente GPG normal em execução com suas configurações atuais, executaremos outro agente GPG dedicado à tarefa em questão. Crie uma pasta `~/.gnupg-archlinux` e crie uma ligação simbólica de `~/.gnupg`, exceto `~/.gnupg/gpg-agent.conf`. Configure o novo agente GPG:
+
+ `~/.gnupg-archlinux` 
+```
+extra-socket /home/doe/.gnupg-archlinux/S.gpg-agent.extra
+default-cache-ttl 0
+max-cache-ttl 0
+pinentry-program /usr/bin/pinentry-gtk-2
+
+```
+
+O `gpg-agent-extra.socket` será encaminhado para PKGBUILD.com.
+
+Inicie o agente dedicado com:
+
+```
+ $ gpg-agent --homedir ~/.gnupg-archlinux --daemon
+
+```
+
+Conecte-se com:
+
+```
+ $ ssh -R $REMOTE_SSH_AUTH_SOCK:$SSH_AUTH_SOCK -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/home/doe/.gnupg-archlinux/S.gpg-agent.extra soyuz.archlinux.org
+
+```
+
+ou, se estiver usando GnuPG como seu agente SSH, com:
+
+```
+ $ ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent.ssh:/run/user/$LOCAL_UID/gnupg/S.gpg-agent.ssh -R /run/user/$REMOTE_UID/gnupg/S.gpg-agent:/home/doe/.gnupg-archlinux/S.gpg-agent.extra soyuz.archlinux.org
+
+```
+
+Substitua *$REMOTE_UID* e *$LOCAL_UID* pelo seu identificador de usuário como retornado por `id -u` no soyuz e localmente, respectivamente. Se estiver usando ssh-agent, substitua *$REMOTE_SSH_AUTH_SOCK* pelo caminho para o soquete SSH no host remoto (pode ser qualquer coisa).
+
+Você pode tornar o encaminhamento permanente para esse host. Por exemplo, com gpg-agent.ssh:
+
+ `~/.ssh/config` 
+```
+Host soyuz.archlinux.org
+  RemoteForward /run/user/$REMOTE_UID/gnupg/S.gpg-agent /run/user/$LOCAL_UID/gnupg/S.gpg-agent.extra
+  RemoteForward /run/user/$REMOTE_UID/gnupg/S.gpg-agent.ssh /run/user/$LOCAL_UID/gnupg/S.gpg-agent.ssh
+
+```
+
+Novamente, substitua *$REMOTE_UID* e *$LOCAL_UID* pelos seus respectivos valores.
+
+A partir de então, o procedimento deve ser exatamente igual a uma compilação local:
+
+```
+ $ ssh soyuz.archlinux.org
+ $ svn checkout -N svn+[ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn](ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn) svn-community
+ $ ...
+
+```
+
+**Nota:** pinentry-curses pode não funcionar com encaminhamento de soquete. Se ele falhar para você, tente usar um pinentry diferente.
 
 ## Lista de TODO na retirada de um Trusted User
 

@@ -90,6 +90,10 @@ If you have not actually patched or customized a kernel before it is not that ha
 
 Some of the listed packages may also be available as binary packages via [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
+*   **AppArmor** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
+
+	[AppArmor](/index.php/AppArmor "AppArmor") || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/), [linux-hardened-apparmor](https://aur.archlinux.org/packages/linux-hardened-apparmor/)
+
 *   **Aufs** — The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 
 	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) || [linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)

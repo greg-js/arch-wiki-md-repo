@@ -5,21 +5,21 @@ Related articles
 *   [xinitrc](/index.php/Xinitrc "Xinitrc")
 *   [Start X at Login](/index.php/Start_X_at_Login "Start X at Login")
 
-Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janela "wikipedia:pt:Gerenciador de janela"), ou *window manager* (WM), é um software de sistema que controla o posicionamento e aparência de janelas dentro de um sistema de janelas em uma interface gráfica de usuário (GUI). Ele pode ser parte de uma [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") (DE) ou ser usado de forma independente.
+Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janela "wikipedia:pt:Gerenciador de janela"), ou *window manager* (WM), é um software de sistema que controla o posicionamento e aparência de janelas dentro de um sistema de janelas em uma interface gráfica de usuário (GUI). Ele pode ser parte de um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") (DE) ou ser usado de forma independente.
 
 ## Contents
 
 *   [1 Visão geral](#Vis.C3.A3o_geral)
     *   [1.1 Tipos](#Tipos)
 *   [2 Lista de gerenciadores de janela](#Lista_de_gerenciadores_de_janela)
-    *   [2.1 Gerenciadores de janelas de empilhamento](#Gerenciadores_de_janelas_de_empilhamento)
+    *   [2.1 Gerenciadores de janela de empilhamento](#Gerenciadores_de_janela_de_empilhamento)
     *   [2.2 Gerenciadores de janela de tiling](#Gerenciadores_de_janela_de_tiling)
-    *   [2.3 Gerenciadores de janelas dinâmicos](#Gerenciadores_de_janelas_din.C3.A2micos)
+    *   [2.3 Gerenciadores de janela dinâmicos](#Gerenciadores_de_janela_din.C3.A2micos)
 *   [3 Veja também](#Veja_tamb.C3.A9m)
 
 ## Visão geral
 
-Os gerenciadores de janela são clientes X que controlam a aparência e o comportamento dos quadros ("janelas"), onde os vários aplicativos gráficos são desenhados. Eles determinam a borda, a barra do título, o tamanho e a capacidade de redimensionar as janelas, e muitas vezes fornecem outras funcionalidades, como áreas reservadas para aderir [dockapps](http://windowmaker.org/dockapps/) como o [Window Maker](/index.php/Window_Maker "Window Maker"), ou a capacidade para separar janelas como o [Fluxbox](/index.php/Fluxbox "Fluxbox"). Alguns gerenciadores de janelas são empacotados com utilitários simples, como menus para iniciar programas ou para configurar o próprio WM.
+Os gerenciadores de janela são clientes X que controlam a aparência e o comportamento dos quadros ("janelas"), onde os vários aplicativos gráficos são desenhados. Eles determinam a borda, a barra do título, o tamanho e a capacidade de redimensionar as janelas, e muitas vezes fornecem outras funcionalidades, como áreas reservadas para aderir [dockapps](http://windowmaker.org/dockapps/) como o [Window Maker](/index.php/Window_Maker "Window Maker"), ou a capacidade para separar janelas como o [Fluxbox](/index.php/Fluxbox "Fluxbox"). Alguns gerenciadores de janela são empacotados com utilitários simples, como menus para iniciar programas ou para configurar o próprio WM.
 
 A especificação [Dicas estendidas de Gerenciador de janela](http://standards.freedesktop.org/wm-spec/wm-spec-latest.html) (inglês) é usada para permitir que os gerenciadores de janela interajam de maneira padrão com o servidor e os outros clientes.
 
@@ -33,15 +33,15 @@ Antes de instalar um gerenciador de janela, é necessária uma instalação func
 
 ### Tipos
 
-*   [Empilhamento](#Gerenciadores_de_janelas_de_empilhamento) – os gerenciadores de janela, neste caso também conhecidos como *flutuantes*, fornecem a metáfora tradicional de desktop usado em sistemas operacionais comerciais como Windows e OS X. As janelas agem como folhas de papéis em uma mesa e pode ser empilhada uma sobre a outra. Para páginas disponíveis no Arch Wiki, veja [Category:Stacking WMs (Português)](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)").
-*   [Tiling](#Gerenciadores_de_janela_de_tiling) – os gerenciadores de janela "colam" (*tile*) as janelas lado a lado, de forma que nenhuma se sobreponha a outra. Eles geralmente fazem grande uso de atalhos de teclados e menos (ou nenhuma) dependência do mouse. Os gerenciadores de janela de *tiling* podem ser manuais, oferecendo layouts pré-definidos ou ambos. Para páginas disponíveis no Arch Wiki, veja [Category:Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs").
-*   [Dinâmico](#Gerenciadores_de_janelas_din.C3.A2micos) – os gerenciadores de janela podem trocar dinamicamente entre a disposição de janelas *tiling* ou flutuante. Para páginas disponíveis no Arch Wiki, veja [Category:Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs").
+*   [Empilhamento](#Gerenciadores_de_janela_de_empilhamento) – os gerenciadores de janela, neste caso também conhecidos como *flutuantes*, fornecem a metáfora tradicional de desktop usado em sistemas operacionais comerciais como Windows e OS X. As janelas agem como folhas de papéis em uma mesa e pode ser empilhada uma sobre a outra. Para páginas disponíveis no Arch Wiki, veja [Category:Stacking WMs (Português)](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)").
+*   [Tiling](#Gerenciadores_de_janela_de_tiling) – os gerenciadores de janela se "anexam" (*tile*) as janelas lado a lado, de forma que nenhuma se sobreponha a outra. Eles geralmente fazem grande uso de atalhos de teclados e menos (ou nenhuma) dependência do mouse. Os gerenciadores de janela de *tiling* podem ser manuais, oferecendo layouts pré-definidos ou ambos. Para páginas disponíveis no Arch Wiki, veja [Category:Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs").
+*   [Dinâmico](#Gerenciadores_de_janela_din.C3.A2micos) – os gerenciadores de janela podem trocar dinamicamente entre a disposição de janelas *tiling* ou flutuante. Para páginas disponíveis no Arch Wiki, veja [Category:Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs").
 
 Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers") e [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers "wikipedia:Comparison of X window managers") para uma comparação entre gerenciadores de janelas.
 
 ## Lista de gerenciadores de janela
 
-### Gerenciadores de janelas de empilhamento
+### Gerenciadores de janela de empilhamento
 
 *   **[2bwm](/index.php/2bwm "2bwm")** — Fast floating WM, with the particularity of having 2 borders, written over the XCB library and derived from mcwm written by Michael Cardell. In 2bwm everything is accessible from the keyboard but a pointing device can be used for move, resize and raise/lower. The name has recently changed from mcwm-beast to 2bwm.
 
@@ -93,7 +93,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 *   **[Gala](http://elementaryos.org/journal/meet-gala-window-manager)** — A beautiful Window Manager from elementaryos, part of [Pantheon](/index.php/Pantheon "Pantheon"). Also as a compositing manager, based on libmutter.
 
-	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala](https://aur.archlinux.org/packages/gala/),[gala-git](https://aur.archlinux.org/packages/gala-git/)
+	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala](https://aur.archlinux.org/packages/gala/), [gala-git](https://aur.archlinux.org/packages/gala-git/)
 
 *   **Goomwwm** — X11 window manager implemented in C as a cleanroom software project. It manages windows in a minimal floating layout, while providing flexible keyboard-driven controls for window switching, sizing, moving, tagging, and tiling. It is also fast, lightweight, modeless, Xinerama-aware, and EWMH compatible wherever possible.
 
@@ -127,7 +127,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[https://github.com/mate-desktop/marco](https://github.com/mate-desktop/marco) || [marco](https://www.archlinux.org/packages/?name=marco)
 
-*   **[Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")** — This window manager strives to be quiet, small, stable, get on with its job, and stay out of your attention.
+*   **[Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")** — This window manager strives to be quiet, small, stable, get on with its job, and stay out of your attention. It is used by the legacy GNOME 2 and GNOME flashback sessions, and superseded by Mutter.
 
 	[https://blogs.gnome.org/metacity/](https://blogs.gnome.org/metacity/) || [metacity](https://www.archlinux.org/packages/?name=metacity)
 
@@ -193,7 +193,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[https://github.com/baskerville/bspwm](https://github.com/baskerville/bspwm) || [bspwm](https://www.archlinux.org/packages/?name=bspwm)
 
-*   **[EXWM](/index.php/EXWM "EXWM")** — EXWM (Emacs X Window Manager) is a full-featured tiling X window manager for Emacs built on top of XELB. It features hybrid layout modes (tiling & stacking), dynamic workspace support, multi-monitor support, built-in compositing manager, and a system tray.
+*   **[EXWM](/index.php/EXWM "EXWM")** — EXWM (Emacs X Window Manager) is a full-featured tiling X window manager for Emacs built on top of XELB. It features fully keyboard-driven operations, hybrid layout modes (tiling & stacking), dynamic workspace support, ICCCM/EWMH compliance, RandR (multi-monitor) support, and a built-in system tray.
 
 	[https://github.com/ch11ng/exwm](https://github.com/ch11ng/exwm) || [emacs-exwm-git](https://aur.archlinux.org/packages/emacs-exwm-git/)
 
@@ -238,7 +238,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[http://swaywm.org/](http://swaywm.org/) || [sway](https://www.archlinux.org/packages/?name=sway)
 
-*   **[way-cooler](/index.php?title=Way-cooler&action=edit&redlink=1 "Way-cooler (page does not exist)")** — Way Cooler is a tiling Wayland window manager, written in Rust, configurable using Lua, and extendable with D-Bus.
+*   **way-cooler** — Way Cooler is a tiling Wayland window manager, written in Rust, configurable using Lua, and extendable with D-Bus.
 
 	[http://way-cooler.org/](http://way-cooler.org/) || [way-cooler](https://aur.archlinux.org/packages/way-cooler/)
 
@@ -250,7 +250,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[https://github.com/xorg62/wmfs](https://github.com/xorg62/wmfs) || [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/)
 
-### Gerenciadores de janelas dinâmicos
+### Gerenciadores de janela dinâmicos
 
 *   **[awesome](/index.php/Awesome "Awesome")** — Highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. Configured in Lua, it has a system tray, information bar, and launcher built in. There are extensions available to it written in Lua. Awesome uses XCB as opposed to Xlib, which may result in a speed increase. Awesome has other features as well, such as an early replacement for notification-daemon, a right-click menu similar to that of the *box window managers, and many other things.
 

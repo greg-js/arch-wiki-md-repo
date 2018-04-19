@@ -43,13 +43,9 @@ Se você encontrar um problema ou desejar um novo recurso, existe uma grande pro
 Pesquise detalhadamente as informações existentes, incluindo:
 
 *   [Fóruns do Arch Linux](https://bbs.archlinux.org/): Os fóruns são muitas vezes a primeira parada para usuários que procuram ajuda ou compartilhar ideias. Ainda que não exista uma solução, informações detalhadas e discussão adicional podem orientá-lo na direção certa.
-
 *   [Rastreador de Erros do Arch Linux](https://bugs.archlinux.org/): Seu problema talvez já tenha sido relatado aos desenvolvedores do Arch Linux. Relatórios de erros duplicados são inúteis e prontamente fechados. Pesquisa por tanto **[relatório de erros fechados recentemente](https://bugs.archlinux.org/index.php?string=&project=1&status%5B%5D=closed&closedfrom=-1+week)** como os relatórios abertos. Lembre-se de marcar "search details" (detalhes da pesquisa) e/ou "search comments" (pesquisar comentários) em Advanced, pois o título do relatório pode não conter o texto que você está procurando.
-
 *   [Google](https://www.google.com) ou seu mecanismo de pesquisa favorito: Pesquise usando o nome do programa, versão e uma parte relevante da mensagem de erro, se houver.
-
 *   Fórum, lista de discussão e rastreador de erro do **Upstream**: Se o Arch Linux não é responsável por um erro, ele deve ser relatado no upstream em vez do Rastreador de Erros do Arch Linux. Procure os erros recentemente fechados, bem como relatórios abertos. Erros podem já ter sido corrigidos na versão de desenvolvimento do programa.
-
 *   **Fóruns de outras distribuições**: A comunidade de software livre é vasta; usuários do Arch não são os únicos usuários com ideias! Considere pesquisar nos [Fóruns do Gentoo](https://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/) e [Fóruns do Ubuntu](https://ubuntuforums.org/), por exemplo.
 
 ### Upstream ou Arch?
@@ -65,7 +61,6 @@ Assim que você relatar um erro no upstream ou encontrar outras informações re
 Então, pelo que o Arch Linux é responsável?
 
 *   [Projetos do Arch Linux](https://projects.archlinux.org/): [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e sites do Arch. Se você tiver dúvidas sobre se o projeto pertence ao Arch ou obtenha estas informações do pacote (`pacman -Qi *nome_pacote*` ou usando o site) e veja o URL do upstream.
-
 *   **Empacotamento**: O empacotamento basicamente consiste em buscar o código fonte do upstream, compilando-o com as opções relevantes, certificando-se de que ele será instalado corretamente em um sistema Arch e verificando se a funcionalidade principal funciona. O empacotamento no Arch não consiste em adicionar novas funcionalidades ou patches para erros existentes; este é o trabalho do desenvolvedor upstream.
 
 Se um erro/recurso não está sob a responsabilidade do Arch, relate-o ao upstream. Veja também [#Motivos para não ser um erro](#Motivos_para_n.C3.A3o_ser_um_erro).
@@ -102,15 +97,10 @@ Se um erro/recurso não está sob a responsabilidade do Arch, relate-o ao upstre
 Aqui está uma lista de informações úteis que devem ser mencionadas no seu relatório de erros:
 
 *   **Versão do pacote** sendo usado. **Sempre especifique a versão do pacote**. Dizer "a última", "atual" ou "o pacote no extra" não tem nenhuma sentido. Especialmente se o erro não está para ser corrigido imediatamente.
-
 *   Versão das principais bibliotecas utilizadas pelo pacote (disponível na variável *depends* no PKGBUILD), quando estão envolvidas no problema. Se você não sabe exatamente quais informações fornecer, espere que um caçador de bugs peça a você...
-
 *   Versão do kernel usada se você está tendo problemas relacionados ao hardware.
-
 *   Indique se **a funcionalidade funcionou em algum momento** ou não. Se sim, indique desde quando parou de funcionar.
-
 *   Indique a sua **marca de hardware** quando tiver problemas relacionados com hardware
-
 *   Adicione **informações de log relevantes** quando estiver disponível. Isso pode ser obtido nos seguintes locais, dependendo do problema:
     *   [Journal do systemd](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)"). Se estiver usando [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` contém logs relacionados a kernel e problemas relacionados ao hardware.
     *   `~/.local/share/xorg/Xorg.0.log` ou `/var/log/Xorg.0.log` ou `/var/log/Xorg.2.log` ou a qualquer arquivo de log tipo Xorg se problemas relacionados a vídeo (nvidia, ati, xorg...)
@@ -127,7 +117,6 @@ Isso afetará apenas o terminal atual e parará de funcionar quando o terminal f
 Se você tiver que colar muito texto, como a saída do dmesg, ou um log do Xorg, é preferível salvá-lo como um arquivo no seu computador e anexá-lo ao seu relatório de erros. Anexar um arquivo em vez de usar um pastebin para apresentar informações relevantes é preferível em geral, devido ao fato de que o conteúdo colocado em um pastebin pode ter seu link expirado ou quaisquer outros problemas potenciais. **Anexar um arquivo garante que as informações fornecidas estarão sempre disponíveis**.
 
 *   **Indique como reproduzir o erro**. Isso é muito importante, ajudará as pessoas a testar o erro e possíveis patches em seu próprio computador.
-
 *   **O rastro da pilha** *(stack trace)*. É uma lista de chamadas feitas pelo programa durante sua execução e ajuda a encontrar a parte do programa onde o erro está localizado, especialmente se o erro envolver o travamento do programa. Você pode obter um rastro de pilha usando [gdb](https://www.archlinux.org/packages/?name=gdb) (O GNU Debugger) como explicado em [Depuração - Obtendo Rastros#Obtendo o rastro](/index.php/Depura%C3%A7%C3%A3o_-_Obtendo_Rastros#Obtendo_o_rastro "Depuração - Obtendo Rastros").
 
 ## Abrindo um relatório
@@ -143,13 +132,9 @@ Você tem que criar uma conta no [sistema de rastreamento de erros do Arch](http
 Depois de determinar que seu recurso ou bug está relacionado ao Arch e não a um problema de upstream, será necessário relatar seu problema no projeto correto. Selecione o projeto na lista suspensa *à esquerda do botão "Swtich"* no canto superior esquerdo da página de criação de relatórios de erros (*não* à direita de "Category"). Existem cinco projetos:
 
 *   **Arch Linux** - para pacotes em *testing*, *core* ou *extra*. Também é um lugar para documentação, sites (exceto AUR) e problemas de segurança.
-
-*   **Arch User Repository (AUR)** - para o código do site do AUR e problemas em seu servidor. Isso não inclui aplicativos de terceiros usados para acessar o AUR ou pacotes no *unsupported*.
-
+*   **AUR web interface** - para o código do site do AUR e problemas em seu servidor. Isso não inclui aplicativos de terceiros usados para acessar o AUR ou pacotes no *unsupported*.
 *   **Community Packages** - para pacotes no *community*. Não é um lugar para pacotes no *unsupported*.
-
 *   **Pacman** - para [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e os scripts e ferramentas oficiais associadas a ele. Isso inclui coisas como o makepkg. Isso não inclui pacotes desenvolvidos pela comunidade, como os [auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR").
-
 *   **Release Engineering** - destinado a todos os problemas relacionados à lançamentos (isos, instalador etc.)
 
 Não há lugar para relatar problemas com pacotes no *unsupported*. O AUR fornece uma maneira de adicionar comentários a um pacote no *unsupported*. Você deve usar isso para relatar erros ao mantenedor do pacote.
@@ -178,19 +163,19 @@ Aqui está um uso geral de severidades:
 
 ### Incluindo informações relevantes
 
-This is maybe one of the most difficult parts of bug reporting. You have to choose from the section [#Gather useful information](#Gather_useful_information) which information you will add to your bug report. This will depend on which your problem is. If you do not know what the relevant pieces of information are, do not be shy: **it is better to give more information than needed than not enough**.
+Esta é talvez uma das partes mais difíceis de relatar erros. Você tem que escolher na seção [#Colete informações úteis](#Colete_informa.C3.A7.C3.B5es_.C3.BAteis) quais informações você irá adicionar ao seu relatório de erros. Isso vai depender de qual é o seu problema. Se você não sabe quais são as informações relevantes, não seja tímido: **é melhor fornecer mais informações do que é necessário a não ter o suficiente**.
 
-A good tutorial on reporting bugs can be found at [[1]](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
+Um bom tutorial sobre relatório de erro pode ser localizado em [[1]](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
 
-However, developers or bug hunters will ask you for more information if needed. Fortunately after a few bug reports you will know what information should be given.
+No entanto, os desenvolvedores ou caçadores de erros solicitarão mais informações, se necessário. Felizmente, depois de alguns relatos de erros, você saberá quais informações devem ser fornecidas.
 
-Short information can be inlined in your bug report, whereas **long information (logs, screenshots...) should be attached**.
+Informações curtas podem ser inseridos no corpo do relatório de erro, enquanto **informações longas (logs, capturas de telas...) devem ser anexados**.
 
 ## Acompanhando relatórios
 
-**Do not think the work is done once you have reported a bug**!
+**Não pense que o trabalho está feito depois de ter relatado um bug**!
 
-Developers or other users will probably ask you for more details and give you some potential fixes to try. Without continued feedback, bugs cannot be closed and the end result is both angry users and developers.
+Os desenvolvedores ou outros usuários provavelmente pedirão mais detalhes e darão algumas correções em potencial para você tentar. Sem feedback contínuo, os bugs não podem ser fechados e o resultado final é de usuários e desenvolvedores irritados.
 
 ### Votando e monitorando
 
@@ -219,17 +204,11 @@ Sometimes people report a bug but do not notify when they have solved it on thei
 During its life a bug goes through several states:
 
 *   **Unconfirmed** - This is the default state. You have just reported it and nobody managed to reproduce the problem or confirmed that it is actually a bug.
-
 *   **New** - The bug is confirmed but it has not been assigned to the developer responsible for the related software. It is usually the case when more investigation is needed to determine which software is responsible for the bug.
-
 *   **Assigned** - The bug has been assigned to a developer responsible for the software involved in the bug. It does not mean that the developer will be the one who will fix the bug. It does not even mean that the developer will work on a solution. It just means that the developer will take care of the life cycle of the bug, including reviewing patches if any, releasing a fix and closing the bug when required. There is no point in contacting a developer directly to have a bug fixed more quickly, he/she will certainly not like it...
-
 *   **Researching** - Somebody is looking for a solution. This status is **rarely used at Arch** and it is better this way. The *researching* status could make people believe they do not need to get interested in the bug report. But usually we need more than one person to fix a bug: having several experienced people on a bug helps a lot.
-
 *   **Waiting on Response** and **Requires testing** - The one who reported a bug is asked to provide more information or to try a proposed solution, but he/she did not give a feedback yet. Those status are **rarely used at Arch** and should be used more often. However it is important that you **watch the bug** (see the [#Voting and Watching](#Voting_and_Watching) section) as developers or bug hunters usually ask questions in the comments.
-
 *   **A task closure has been requested** - This is not exactly a status, but you may find some bug reports with such a notification. This indicates that somebody requested a closure for the bug. A reason is added to the request most of the time. It is upon the assignee developer to decide whether he/she will accept the closure or not.
-
 *   **Closed** - Either this is not a valid bug (see [#Reasons for not being a bug](#Reasons_for_not_being_a_bug)) or a solution has been found and released.
 
 Some people (developers, TUs...) are responsible for dispatching the bugs and change their status.

@@ -6,18 +6,18 @@ Related articles
 
 ## Contents
 
-*   [1 Creating a F2FS partition](#Creating_a_F2FS_partition)
-*   [2 Mounting a F2FS partition](#Mounting_a_F2FS_partition)
-*   [3 Grow an F2FS partition](#Grow_an_F2FS_partition)
+*   [1 Creating a F2FS file system](#Creating_a_F2FS_file_system)
+*   [2 Mounting a F2FS file system](#Mounting_a_F2FS_file_system)
+*   [3 Grow an F2FS file system](#Grow_an_F2FS_file_system)
 *   [4 Checking and repair](#Checking_and_repair)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
 
-## Creating a F2FS partition
+## Creating a F2FS file system
 
-In order to create a F2FS partition, [install](/index.php/Install "Install") [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools).
+In order to create a F2FS file system, [install](/index.php/Install "Install") [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools).
 
-Create the partition:
+Create the file system:
 
 ```
 # mkfs.f2fs -l mylabel */dev/sdxY*
@@ -26,16 +26,16 @@ Create the partition:
 
 where `*/dev/sdxY*` is the target volume to format in F2FS. See [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) for all available options.
 
-## Mounting a F2FS partition
+## Mounting a F2FS file system
 
-The partition can then be mounted manually or via other mechanisms:
+The file system can then be mounted manually or via other mechanisms:
 
 ```
 # mount /dev/sdxY /mnt/foo
 
 ```
 
-## Grow an F2FS partition
+## Grow an F2FS file system
 
 When the filesystem is unmounted, it can be grown if the partition is expanded. [Shrinking is not currently supported](https://www.mail-archive.com/linux-f2fs-devel@lists.sourceforge.net/msg04247.html).
 
@@ -54,7 +54,7 @@ where `*/dev/sdxY*` is the target F2FS volume to grow. See [resize.f2fs(8)](http
 
 ## Checking and repair
 
-Checking and repairs to f2fs partitions are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See [fsck.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8) for available switches.
+Checking and repairs to f2fs file systems are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See [fsck.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8) for available switches.
 
 ## Troubleshooting
 

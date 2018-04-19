@@ -326,6 +326,10 @@ rpc-passwd=rpcpass
 
 	[http://ugetdm.com](http://ugetdm.com) || [uget](https://www.archlinux.org/packages/?name=uget)
 
+*   **Persepolis DM** — Graphical front-end for aria2 download manager with lots of features. Supports HTTP and FTP.
+
+	[https://github.com/persepolisdm/](https://github.com/persepolisdm/) || [persepolis](https://aur.archlinux.org/packages/persepolis/),[persepolis-git](https://aur.archlinux.org/packages/persepolis-git/)
+
 ## Tips and tricks
 
 ### Download the packages without installing them

@@ -30,7 +30,8 @@ O *pacman* é escrito na linguagem de programação C e usa o formato [tar](http
     *   [1.2 Removendo pacotes](#Removendo_pacotes)
     *   [1.3 Atualizando pacotes](#Atualizando_pacotes)
     *   [1.4 Consultando base de dados de pacotes](#Consultando_base_de_dados_de_pacotes)
-        *   [1.4.1 Estrutura da base de dados](#Estrutura_da_base_de_dados)
+        *   [1.4.1 Pactree](#Pactree)
+        *   [1.4.2 Estrutura da base de dados](#Estrutura_da_base_de_dados)
     *   [1.5 Limpando o cache de pacotes](#Limpando_o_cache_de_pacotes)
     *   [1.6 Comandos adicionais](#Comandos_adicionais)
     *   [1.7 Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o)
@@ -318,28 +319,15 @@ $ pacman -Qet
 
 ```
 
-Para listar a árvore de dependência de um pacote:
+Veja [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques") para mais exemplos.
 
-```
+#### Pactree
+
+Para visualizar a árvore de dependência de um pacote:
+
 $ pactree *nome_pacote*
 
-```
-
-Para listar todos os pacotes dependentes de um pacote *instalado*, use *whoneeds* do pacote [pkgtools](https://aur.archlinux.org/packages/pkgtools/):
-
-```
-$ whoneeds *nome_pacote*
-
-```
-
-Ou a opção inversa para *pactree*:
-
-```
-$ pactree -r *nome_pacote*
-
-```
-
-Veja [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques") para mais exemplos.
+Para ver uma área dependente de um pacote, passe a opção reversa `-r` ao *pactree*, ou use *whoneeds* de [pkgtools](https://aur.archlinux.org/packages/pkgtools/).
 
 #### Estrutura da base de dados
 

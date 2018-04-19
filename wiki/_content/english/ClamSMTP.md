@@ -112,14 +112,7 @@ The first two lines create the service „scan”, the others take charge of acc
 
 ## Testing
 
-Now, test your server:
-
-```
-/etc/rc.d/clamav restart
-/etc/rc.d/postfix restart
-/etc/rc.d/clamsmtp restart
-
-```
+Now, test your server, [restarting](/index.php/Restart "Restart") the services `clamav`, `postfix` and `clamsmtp`.
 
 Send yourself a mail, without any viruses
 

@@ -32,8 +32,9 @@ Esta página é um guia para selecionar e configurar seus espelhos e uma lista d
     *   [5.14 África do Sul](#.C3.81frica_do_Sul)
     *   [5.15 Suécia](#Su.C3.A9cia)
     *   [5.16 Tailândia](#Tail.C3.A2ndia)
-    *   [5.17 Estados Unidos](#Estados_Unidos)
-    *   [5.18 Sourceforge (ISOs antigas)](#Sourceforge_.28ISOs_antigas.29)
+    *   [5.17 Turquia](#Turquia)
+    *   [5.18 Estados Unidos](#Estados_Unidos)
+    *   [5.19 Sourceforge (ISOs antigas)](#Sourceforge_.28ISOs_antigas.29)
 
 ## Espelhos oficiais
 
@@ -144,8 +145,13 @@ O [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) oficial f
 
 Existem vários scripts automatizando a atualização do mirrorlist do servidor de classificação:
 
-*   [Reflector](/index.php/Reflector "Reflector") obtém o mirrorlist mais recente da página [MirrorStatus](https://www.archlinux.org/mirrors/status/), filtra os espelhos mais atualizados, ordena-os por velocidade e sobrescreve o arquivo `/etc/pacman.d/mirrorlist`.
-*   [armrr (GitHub)](https://github.com/spurge/armrr) baixa um mirrorlist classificado para um país específico do [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) e cria um backup do mirrorlist anterior.
+*   **[Reflector](/index.php/Reflector "Reflector")** — Obtém o mirrorlist mais recente da página [MirrorStatus](https://www.archlinux.org/mirrors/status/), filtra os espelhos mais atualizados, ordena-os por velocidade e sobrescreve o `/etc/pacman.d/mirrorlist`
+
+	[https://xyne.archlinux.ca/projects/reflector/](https://xyne.archlinux.ca/projects/reflector/) || [reflector](https://www.archlinux.org/packages/?name=reflector).
+
+*   **armrr** — Baixa um mirrorlist classificado para países específicos do [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/)
+
+	[https://github.com/spurge/armrr](https://github.com/spurge/armrr) || nenhum pacote
 
 ### Listar espelhos apenas para um país específico
 
@@ -228,7 +234,7 @@ Esses espelhos *não* estão listados no `/etc/pacman.d/mirrorlist`.
 
 ### Japão
 
-*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - *NAra Institute of Science and Technology*
+*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - *Nara Institute of Science and Technology*
 *   [http://ftp.kddilabs.jp/Linux/packages/archlinux/](http://ftp.kddilabs.jp/Linux/packages/archlinux/)
 *   [http://srv2.ftp.ne.jp/Linux/packages/archlinux/](http://srv2.ftp.ne.jp/Linux/packages/archlinux/)
 *   [http://mirror.archlinuxjp.org/](http://mirror.archlinuxjp.org/)
@@ -273,6 +279,12 @@ Esses espelhos *não* estão listados no `/etc/pacman.d/mirrorlist`.
 ### Tailândia
 
 *   [http://mirror1.ku.ac.th/archlinux/](http://mirror1.ku.ac.th/archlinux/)
+
+### Turquia
+
+*   [http://mirror.veriteknik.net.tr/archlinux/](http://mirror.veriteknik.net.tr/archlinux/) *- VeriTeknik Data Center*
+
+*   [http://ftp.linux.org.tr/archlinux/](http://ftp.linux.org.tr/archlinux/)
 
 ### Estados Unidos
 

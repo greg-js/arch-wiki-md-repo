@@ -283,6 +283,7 @@ You may or may not get sound back after a few restarts. This is a bug and has be
 
 Workarounds:
 
+*   Install alsa-utils and run hdajackretask just toggle the drop down.
 *   Suspend and resume your computer [(thank you spheenik)](https://www.reddit.com/r/Dell/comments/4y1svp/gnulinux_on_xps_9550_questions_arch/)
 *   Restart your computer
 *   Disable sound BIOS, powerboot into Arch, enable sound in BIOS, start Arch with sound back

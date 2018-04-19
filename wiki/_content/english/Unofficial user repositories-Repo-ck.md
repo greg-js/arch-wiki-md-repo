@@ -32,14 +32,14 @@ Server = http://repo-ck.com/$arch
 Add and [sign](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") graysky's key:
 
 ```
-$ pacman-key -r 5EE46C4C && pacman-key --lsign-key 5EE46C4C
+# pacman-key -r 5EE46C4C && pacman-key --lsign-key 5EE46C4C
 
 ```
 
 Update your sync database:
 
 ```
-$ pacman -Syy
+# pacman -Syy
 
 ```
 

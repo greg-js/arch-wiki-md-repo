@@ -46,5 +46,6 @@ List here articles that only exist in non-English languages, or that exist in En
 | [RoverBook Voyager H591 (Русский)](/index.php/RoverBook_Voyager_H591_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RoverBook Voyager H591 (Русский)") | Russian | in Russian only |
 | [Small Business Server (Italiano)](/index.php/Small_Business_Server_(Italiano) "Small Business Server (Italiano)") | Italian | See also [Category:Small Business Server (Italiano)](/index.php/Category:Small_Business_Server_(Italiano) "Category:Small Business Server (Italiano)") |
 | [Tavolette Trust Aiptek (Italiano)](/index.php/Tavolette_Trust_Aiptek_(Italiano) "Tavolette Trust Aiptek (Italiano)") | Italian |
+| [Usbip (Português)](/index.php/Usbip_(Portugu%C3%AAs) "Usbip (Português)") | Português |
 | [Tencent QQ (简体中文)](/index.php/Tencent_QQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tencent QQ (简体中文)") | Chinese (Simplified) |
 | [Zabbix with NGINX how-to (Русский)](/index.php/Zabbix_with_NGINX_how-to_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zabbix with NGINX how-to (Русский)") | Russian | Content from [Zabbix (Русский)](/index.php/Zabbix_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zabbix (Русский)") before it was synched with English version |

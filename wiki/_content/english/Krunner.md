@@ -1,4 +1,27 @@
-## Quick draft on how to switch active windows using krunner
+Related articles
+
+*   [KDE](/index.php/KDE "KDE")
+
+Krunner is an application built into Plasma 5 to perform functions and run commands quickly, and features a "runner" system to customize functions available for use.
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+*   [3 Switch active windows using Krunner](#Switch_active_windows_using_Krunner)
+    *   [3.1 Full list of windows with search by titles](#Full_list_of_windows_with_search_by_titles)
+    *   [3.2 Search by titles without full windows list](#Search_by_titles_without_full_windows_list)
+*   [4 See also](#See_also)
+
+## Installation
+
+For installation instructions regarding Plasma, see [KDE](/index.php/KDE "KDE").
+
+## Usage
+
+To open Krunner in Plasma, you can either right-click the desktop and press "run command", or you can use the default keybindings, `Alt+Space` or `Alt+F2`. In some workspaces such as a blank desktop, starting to type will automatically bring up Krunner.
+
+## Switch active windows using Krunner
 
 Plasma 5 doesn't contain default way to specify krunner search only by active window titles. Following approaches are used to work around this issue.
 
@@ -43,3 +66,7 @@ This approach is more limited but far less ugly.
   - Arguments          : windows ""
 
 ```
+
+## See also
+
+[Krunner on KDE UserBase Wiki](https://userbase.kde.org/Plasma/Krunner)

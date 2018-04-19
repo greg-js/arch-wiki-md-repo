@@ -16,6 +16,7 @@
     *   [9.1 Erro: Clamd was NOT notified](#Erro:_Clamd_was_NOT_notified)
     *   [9.2 Erro: No supported database files found](#Erro:_No_supported_database_files_found)
     *   [9.3 Erro: Can't create temporary directory](#Erro:_Can.27t_create_temporary_directory)
+*   [10 Veja também](#Veja_tamb.C3.A9m)
 
 ## Instalação
 
@@ -320,3 +321,8 @@ Corrija as permissões:
 ```
 
 sendo *UID* e *GID* o informado na dica acima
+
+## Veja também
+
+*   [Wikipedia:ClamAV](https://en.wikipedia.org/wiki/ClamAV "wikipedia:ClamAV")
+*   [ClamSMTP](/index.php/ClamSMTP_(Portugu%C3%AAs) "ClamSMTP (Português)")

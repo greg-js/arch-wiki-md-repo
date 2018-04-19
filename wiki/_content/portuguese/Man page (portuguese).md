@@ -192,21 +192,22 @@ Ressalvas: Fontes são geralmente limitadas a Times em tamanhos fixos. Não há 
 Há vários bancos de dado online de páginas man, incluindo:
 
 *   [man7.org](http://man7.org/linux/man-pages/index.html). Upstream do [man-pages](https://www.archlinux.org/packages/?name=man-pages) do Arch Linux.
-*   [Páginas man do Arch Linux](https://manned.org/pkg/arch)
-*   [Páginas man do Debian GNU/Linux](http://manpages.debian.net/)
-*   [Páginas man do DragonFlyBSD](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [Páginas man do FreeBSD](http://www.freebsd.org/cgi/man.cgi)
+*   [Páginas man do Arch Linux](https://jlk.fjfi.cvut.cz/arch/manpages/). Usado para links do wiki.
+*   [Coleção do manned.org para várias distribuições Linux, BSD, etc. com múltiplas versões de pacotes](https://manned.org/)
+*   [Páginas man do Debian GNU/Linux](https://manpages.debian.net/)
+*   [Páginas man do DragonFlyBSD](https://leaf.dragonflybsd.org/cgi/web-man)
+*   [Páginas man do FreeBSD](https://www.freebsd.org/cgi/man.cgi)
 *   [Páginas man do Linux e Solaris 10](http://www.manpages.spotlynx.com/)
-*   [Páginas man do Linux no die.net](http://linux.die.net/man/)
-*   [Páginas man do Linux no man.cx](http://man.cx/)
+*   [Páginas man do Linux no die.net](https://linux.die.net/man/)
+*   [Páginas man do Linux no man.cx](https://man.cx/)
 *   [Páginas man do NetBSD](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [Páginas man do Mac OS X](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [Páginas man do Mac OS X](https://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
 *   [Páginas man online do UNIX](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [Páginas de manual do OpenBSD](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [Páginas de manual do OpenBSD](https://www.openbsd.org/cgi-bin/man.cgi)
 *   [Manual do Plan 9 — Volume 1](http://man.cat-v.org/plan_9/)
 *   [Manual do Inferno — Volume 1](http://man.cat-v.org/inferno/)
 *   [Páginas man do Storage Foundation](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [Repositório de páginas man do UNIX and Linux Forums](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [Repositório de páginas man do UNIX and Linux Forums](https://www.unix.com/man-page/OpenSolaris/1/man/)
 *   [Repositório de páginas man do Ubuntu](http://manpages.ubuntu.com/)
 
 **Atenção:** Algumas distribuições fornecem páginas man alteradas ou desatualizadas que se diferem daquelas fornecidas pelo Arch. Exercite o cuidado ao usar páginas man online.

@@ -1,340 +1,667 @@
+**翻译状态：** 本文是英文页面 [Git](/index.php/Git "Git") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-17，点击[这里](https://wiki.archlinux.org/index.php?title=Git&diff=0&oldid=516679)可以查看翻译后英文页面的改动。
+
 相关文章
 
-*   [Super Quick Git Guide](/index.php/Super_Quick_Git_Guide "Super Quick Git Guide")
 *   [Gitweb](/index.php/Gitweb "Gitweb")
 *   [Cgit](/index.php/Cgit "Cgit")
-*   [Subversion](/index.php/Subversion "Subversion")
+*   [HTTP tunneling#Tunneling Git](/index.php/HTTP_tunneling#Tunneling_Git "HTTP tunneling")
+*   [Subversion (简体中文)](/index.php/Subversion_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Subversion (简体中文)")
 *   [Concurrent Versions System](/index.php/Concurrent_Versions_System "Concurrent Versions System")
 
-[Git](http://git-scm.com/) 是一个由 Linux 内核作者 Linus Torvalds 编写的版本控制系统（VCS），现在被用来维护 Linux 内核以及数以千计的其他项目，包括 Arch 的软件包管理器 [Pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")。
+> I've met people who thought that git is a front-end to GitHub. They were wrong, git is a front-end to the AUR.
+> — [Linus T.](https://public-inbox.org/git/#didyoureallythinklinuswouldsaythat)
 
-在官方网站可以获得一份完整的、包含参考与教程的 [文档](http://git-scm.com/documentation)。
+[Git](https://en.wikipedia.org/wiki/Git_(software) 是一个由 Linux 内核作者 Linus Torvalds 编写的版本控制系统（VCS），现在被用来维护 [AUR](/index.php/AUR "AUR") 软件包以及数以千计的其他项目，其中包括 Linux 内核。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 在 Git 命令行下启用彩色输出](#.E5.9C.A8_Git_.E5.91.BD.E4.BB.A4.E8.A1.8C.E4.B8.8B.E5.90.AF.E7.94.A8.E5.BD.A9.E8.89.B2.E8.BE.93.E5.87.BA)
-    *   [2.2 解决 Git 在命令行下中文文件名显示为数字的问题](#.E8.A7.A3.E5.86.B3_Git_.E5.9C.A8.E5.91.BD.E4.BB.A4.E8.A1.8C.E4.B8.8B.E4.B8.AD.E6.96.87.E6.96.87.E4.BB.B6.E5.90.8D.E6.98.BE.E7.A4.BA.E4.B8.BA.E6.95.B0.E5.AD.97.E7.9A.84.E9.97.AE.E9.A2.98)
 *   [3 基本用法](#.E5.9F.BA.E6.9C.AC.E7.94.A8.E6.B3.95)
-    *   [3.1 克隆一个版本库](#.E5.85.8B.E9.9A.86.E4.B8.80.E4.B8.AA.E7.89.88.E6.9C.AC.E5.BA.93)
-    *   [3.2 提交（commit）文件到版本库](#.E6.8F.90.E4.BA.A4.EF.BC.88commit.EF.BC.89.E6.96.87.E4.BB.B6.E5.88.B0.E7.89.88.E6.9C.AC.E5.BA.93)
-    *   [3.3 将改动提交（push）到公共版本库](#.E5.B0.86.E6.94.B9.E5.8A.A8.E6.8F.90.E4.BA.A4.EF.BC.88push.EF.BC.89.E5.88.B0.E5.85.AC.E5.85.B1.E7.89.88.E6.9C.AC.E5.BA.93)
-    *   [3.4 从服务器公共版本库下载修改](#.E4.BB.8E.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.85.AC.E5.85.B1.E7.89.88.E6.9C.AC.E5.BA.93.E4.B8.8B.E8.BD.BD.E4.BF.AE.E6.94.B9)
-    *   [3.5 查看历史记录](#.E6.9F.A5.E7.9C.8B.E5.8E.86.E5.8F.B2.E8.AE.B0.E5.BD.95)
-    *   [3.6 处理合并（merge）](#.E5.A4.84.E7.90.86.E5.90.88.E5.B9.B6.EF.BC.88merge.EF.BC.89)
-*   [4 使用分布式版本控制系统](#.E4.BD.BF.E7.94.A8.E5.88.86.E5.B8.83.E5.BC.8F.E7.89.88.E6.9C.AC.E6.8E.A7.E5.88.B6.E7.B3.BB.E7.BB.9F)
-    *   [4.1 创建一个分支](#.E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA.E5.88.86.E6.94.AF)
-    *   [4.2 A word on commits](#A_word_on_commits)
-    *   [4.3 提交为检查点](#.E6.8F.90.E4.BA.A4.E4.B8.BA.E6.A3.80.E6.9F.A5.E7.82.B9)
-    *   [4.4 编辑之前的提交](#.E7.BC.96.E8.BE.91.E4.B9.8B.E5.89.8D.E7.9A.84.E6.8F.90.E4.BA.A4)
-    *   [4.5 插入、重新排序和更改历史记录](#.E6.8F.92.E5.85.A5.E3.80.81.E9.87.8D.E6.96.B0.E6.8E.92.E5.BA.8F.E5.92.8C.E6.9B.B4.E6.94.B9.E5.8E.86.E5.8F.B2.E8.AE.B0.E5.BD.95)
-*   [5 Git提示符](#Git.E6.8F.90.E7.A4.BA.E7.AC.A6)
-*   [6 传输协议](#.E4.BC.A0.E8.BE.93.E5.8D.8F.E8.AE.AE)
-    *   [6.1 智能HTTP](#.E6.99.BA.E8.83.BDHTTP)
-    *   [6.2 Git SSH](#Git_SSH)
-        *   [6.2.1 特定非标准端口](#.E7.89.B9.E5.AE.9A.E9.9D.9E.E6.A0.87.E5.87.86.E7.AB.AF.E5.8F.A3)
-    *   [6.3 Git守护进程](#Git.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-    *   [6.4 Git版本库权限](#Git.E7.89.88.E6.9C.AC.E5.BA.93.E6.9D.83.E9.99.90)
-*   [7 参见](#.E5.8F.82.E8.A7.81)
+    *   [3.1 获取一个 Git 仓库](#.E8.8E.B7.E5.8F.96.E4.B8.80.E4.B8.AA_Git_.E4.BB.93.E5.BA.93)
+    *   [3.2 记录更改](#.E8.AE.B0.E5.BD.95.E6.9B.B4.E6.94.B9)
+        *   [3.2.1 暂存 (stage) 更改](#.E6.9A.82.E5.AD.98_.28stage.29_.E6.9B.B4.E6.94.B9)
+        *   [3.2.2 提交 (commit) 更改](#.E6.8F.90.E4.BA.A4_.28commit.29_.E6.9B.B4.E6.94.B9)
+        *   [3.2.3 选择修订版本](#.E9.80.89.E6.8B.A9.E4.BF.AE.E8.AE.A2.E7.89.88.E6.9C.AC)
+        *   [3.2.4 查看更改](#.E6.9F.A5.E7.9C.8B.E6.9B.B4.E6.94.B9)
+    *   [3.3 撤销修改](#.E6.92.A4.E9.94.80.E4.BF.AE.E6.94.B9)
+    *   [3.4 分支 (branch)](#.E5.88.86.E6.94.AF_.28branch.29)
+    *   [3.5 多人合作](#.E5.A4.9A.E4.BA.BA.E5.90.88.E4.BD.9C)
+        *   [3.5.1 合并请求 (pull requests)](#.E5.90.88.E5.B9.B6.E8.AF.B7.E6.B1.82_.28pull_requests.29)
+        *   [3.5.2 使用远程仓库 (remote)](#.E4.BD.BF.E7.94.A8.E8.BF.9C.E7.A8.8B.E4.BB.93.E5.BA.93_.28remote.29)
+        *   [3.5.3 向某个仓库推送 (push) 修改](#.E5.90.91.E6.9F.90.E4.B8.AA.E4.BB.93.E5.BA.93.E6.8E.A8.E9.80.81_.28push.29_.E4.BF.AE.E6.94.B9)
+        *   [3.5.4 处理合并 (merge)](#.E5.A4.84.E7.90.86.E5.90.88.E5.B9.B6_.28merge.29)
+    *   [3.6 历史记录和版本记录](#.E5.8E.86.E5.8F.B2.E8.AE.B0.E5.BD.95.E5.92.8C.E7.89.88.E6.9C.AC.E8.AE.B0.E5.BD.95)
+        *   [3.6.1 在历史记录中搜索](#.E5.9C.A8.E5.8E.86.E5.8F.B2.E8.AE.B0.E5.BD.95.E4.B8.AD.E6.90.9C.E7.B4.A2)
+        *   [3.6.2 使用标签 (tag)](#.E4.BD.BF.E7.94.A8.E6.A0.87.E7.AD.BE_.28tag.29)
+        *   [3.6.3 重新组织 commit](#.E9.87.8D.E6.96.B0.E7.BB.84.E7.BB.87_commit)
+*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [4.1 使用 git-config](#.E4.BD.BF.E7.94.A8_git-config)
+    *   [4.2 保持良好的礼仪](#.E4.BF.9D.E6.8C.81.E8.89.AF.E5.A5.BD.E7.9A.84.E7.A4.BC.E4.BB.AA)
+    *   [4.3 加快身份验证](#.E5.8A.A0.E5.BF.AB.E8.BA.AB.E4.BB.BD.E9.AA.8C.E8.AF.81)
+    *   [4.4 默认通讯协议](#.E9.BB.98.E8.AE.A4.E9.80.9A.E8.AE.AF.E5.8D.8F.E8.AE.AE)
+    *   [4.5 Bash 自动补全](#Bash_.E8.87.AA.E5.8A.A8.E8.A1.A5.E5.85.A8)
+    *   [4.6 Git 提示符](#Git_.E6.8F.90.E7.A4.BA.E7.AC.A6)
+    *   [4.7 可视化显示](#.E5.8F.AF.E8.A7.86.E5.8C.96.E6.98.BE.E7.A4.BA)
+    *   [4.8 关于提交 (commit) 的小提示](#.E5.85.B3.E4.BA.8E.E6.8F.90.E4.BA.A4_.28commit.29_.E7.9A.84.E5.B0.8F.E6.8F.90.E7.A4.BA)
+    *   [4.9 对提交 (commit) 签名](#.E5.AF.B9.E6.8F.90.E4.BA.A4_.28commit.29_.E7.AD.BE.E5.90.8D)
+    *   [4.10 在非主分支上工作](#.E5.9C.A8.E9.9D.9E.E4.B8.BB.E5.88.86.E6.94.AF.E4.B8.8A.E5.B7.A5.E4.BD.9C)
+    *   [4.11 直接将补丁发送至邮件列表](#.E7.9B.B4.E6.8E.A5.E5.B0.86.E8.A1.A5.E4.B8.81.E5.8F.91.E9.80.81.E8.87.B3.E9.82.AE.E4.BB.B6.E5.88.97.E8.A1.A8)
+*   [5 Git 服务器](#Git_.E6.9C.8D.E5.8A.A1.E5.99.A8)
+    *   [5.1 SSH 协议](#SSH_.E5.8D.8F.E8.AE.AE)
+    *   [5.2 Smart HTTP 协议](#Smart_HTTP_.E5.8D.8F.E8.AE.AE)
+    *   [5.3 Git 协议](#Git_.E5.8D.8F.E8.AE.AE)
+    *   [5.4 设置访问权限](#.E8.AE.BE.E7.BD.AE.E8.AE.BF.E9.97.AE.E6.9D.83.E9.99.90)
+*   [6 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
 
 ## 安装
 
-[git](https://www.archlinux.org/packages/?name=git) 可以通过 [Pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 从 [extra] 官方源安装。如果你希望搭配其它 VCS、邮件服务器或 Git 的图形界面使用 git，请注意安装时提示的可选依赖。
+[安装](/index.php/Install "Install") [git](https://www.archlinux.org/packages/?name=git) 软件包。要使用开发版本，请安装 [git-git](https://aur.archlinux.org/packages/git-git/) 软件包。当使用 *git svn*、*git gui* 和 *gitk* 等工具时请检查可选依赖项是否安装。
 
-如果需要 Bash 命令补完（也即按下 `Tab` 来完成你正在键入的命令），请在`~/.bashrc`文件中添加如下内容：
-
- `source /usr/share/git/completion/git-completion.bash` 
-
-你也可以安装 [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) 来自动为 shell 提供命令补完。
-
-如果你想使用 Git 内建的图形界面（例如 `gitk` 或者 `git gui`），你需要安装 [tk](https://www.archlinux.org/packages/?name=tk) 软件包，否则你会遇到一个隐晦的错误信息：
-
- `/usr/bin/gitk: line 3: exec: wish: not found.` 
+**注意:** 要打开 *git-gui* 的拼写检查功能，请安装 [aspell](https://www.archlinux.org/packages/?name=aspell)，同时还需要与 `LC_MESSAGES` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)") 相对应的字典文件。参阅 [FS#28181](https://bugs.archlinux.org/task/28181) 和 [aspell (简体中文)](/index.php/Aspell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Aspell (简体中文)")。
 
 ## 配置
 
-Git 从若干 INI 格式的配置文件中读取配置信息。在每一个 git 版本库中，`.git/config` 用于指定与该版本库有关的配置选项。在 `$HOME/.gitconfig` 中的用户 ("global") 的配置文件将被用作仓库配置的备用配置。你可以直接编辑配置文件，但是更推荐的方法是使用 git-config 工具。例如，
+你至少需要设置好姓名和邮箱之后才能开始使用 Git：
+
+```
+$ git config --global user.name  "*John Doe*"
+$ git config --global user.email "*johndoe@example.com*"
+
+```
+
+参阅 [起步 - 初次运行 Git 前的配置](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE)。
+
+更多设置选项可参阅 [#提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)。
+
+## 基本用法
+
+一个 Git 版本库包含在一个名为 `.git` 的目录内，该目录包含了修订历史以及其他元数据。版本库所跟踪的目录（默认为父目录）称为工作目录。在工作树进行的更改在被提交 (commit) 前需要先暂存 (stage) 起来。Git 还可以让你恢复以前提交的工作树文件。
+
+参阅 [起步 - Git 基础](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-Git-%E5%9F%BA%E7%A1%80)。
+
+### 获取一个 Git 仓库
+
+*   初始化一个版本库
+
+	`git init`，参阅 [git-init(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-init.1)
+
+*   克隆 (clone) 一个现有的版本库
+
+	`git clone *repository*`，参阅 [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1)
+
+### 记录更改
+
+Git 管理的项目存在一个暂存区 (staging area)，即 git 目录中的 `index` 文件，其中保存了即将包含在你下一次提交中的文件更改。要将某个修改过的文件记录下来，首先需要将修改后的文件添加到 index（暂存它），然后用 `git commit` 命令将当前的 index 保存为一次新的提交。
+
+#### 暂存 (stage) 更改
+
+*   将工作树中的文件更改添加至 index
+
+	`git add *pathspec*`，参阅 [git-add(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1)
+
+*   移除 index 中记录的文件更改
+
+	`git reset *pathspec*`，参阅 [git-reset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-reset.1)
+
+*   显示即将提交的更改、未暂存的更改以及未被 git 跟踪的文件
+
+	`git status`，参阅 [git-status(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-status.1)
+
+可以用 `.gitignore` 文件来让 git 忽略某些未跟踪的文件，请参阅 [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5)。
+
+Git 不会跟踪文件移动。合并时的文件移动检测仅基于内容的相似性。`git mv` 命令仅仅是为了方便，它相当于：
+
+```
+$ mv -i foo bar
+$ git reset -- foo
+$ git add bar
+
+```
+
+#### 提交 (commit) 更改
+
+`git commit` 命令将暂存区的更改保存至版本库，参阅 [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1)。
+
+*   `-m` – 后面跟上提交消息作为参数直接提交，而不是打开默认的文本编辑器来写提交信息后再提交
+*   `-a` – 自动暂存已更改或已删除的文件（不会添加未跟踪的文件）
+*   `--amend` – 重做上次提交，用于修改提交消息或修改提交的文件
+
+**提示：** 建议经常性的提交小更改，并附上有意义的提交信息。
+
+#### 选择修订版本
+
+Git 提供了多种方式来指定修订版本，参阅 [gitrevisions(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitrevisions.7) 和 [选择修订版本](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%80%89%E6%8B%A9%E4%BF%AE%E8%AE%A2%E7%89%88%E6%9C%AC)。
+
+许多 Git 命令需要用修订版本作为参数。一次提交记录可以用下列任何一种方式表示：
+
+*   某次提交的 SHA-1 哈希值（前7位通常足以唯一标识它）
+*   任意提交时的标签，如分支名称或 tag 名称
+*   标签 `HEAD` 总是指向当前 check out 的提交（通常是分支的头部，除非你使用 *git checkout* 跳回到历史记录中的旧提交）
+*   以上任意一种表示方式加上 `~` 都可以表示之前的提交。例如，`HEAD~` 指向 `HEAD` 的前一次提交，`HEAD~5` 指向 `HEAD` 5 次前的提交。
+
+#### 查看更改
+
+查看不同提交间的修改处：
+
+```
+$ git diff HEAD HEAD~3
+
+```
+
+或者查看暂存区和工作树之间的不同：
+
+```
+$ git diff
+
+```
+
+查看修改历史（其中 "*-N*" 指定最近的 n 次修改）：
+
+```
+$ git log -p *(-N)*
+
+```
+
+### 撤销修改
+
+*   `git reset` - 重置当前 HEAD 指针到指定状态，参阅 [git-reset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-reset.1)
+
+*   `git checkout` - 恢复工作树中的文件，参阅 [git-checkout(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-checkout.1)
+
+### 分支 (branch)
+
+Bug 修复和新功能通常在不同分支里测试。当一切就绪时它们就可以合并至默认（主）分支。
+
+创建一个分支，其名称准确地反映了其目的：
+
+```
+$ git branch *help-section-addition*
+
+```
+
+列出已存在的分支：
+
+```
+$ git branch
+
+```
+
+切换分支：
+
+```
+$ git checkout *branch*
+
+```
+
+新建分支并切换至该分支：
+
+```
+$ git checkout -b *branch*
+
+```
+
+将一个分支合并回主分支：
+
+```
+$ git checkout master
+$ git merge *branch*
+
+```
+
+如果不存在冲突的话，所有更改将被合并。否则 Git 将显示一条错误信息，并通过给工作树中的文件加注释来记录冲突。添加的注释可以用 `git diff` 显示。要解决冲突，必须编辑文件，删除注释，并提交最终版本。请参阅下面的 [#处理合并 (merge)](#.E5.A4.84.E7.90.86.E5.90.88.E5.B9.B6_.28merge.29)。
+
+当一个分支使用完毕，可以这样删除：
+
+```
+$ git branch -d *branch*
+
+```
+
+### 多人合作
+
+一个典型的 Git 工作流像这样：
+
+1.  创建一个新仓库或克隆一个远程仓库。
+2.  新建一个分支用于修改文件，然后提交这些修改。
+3.  将多次提交合并在一起，这样更便于组织项目或更好地理解。
+4.  把提交的分支合并回主分支。
+5.  （可选）将更改推送至远程服务器。
+
+#### 合并请求 (pull requests)
+
+在做出并提交更改后，贡献者可以请求原作者合并更改。这被称为 *合并请求 (pull request)*。
+
+如果用 pull：
+
+```
+$ git pull *location* master
+
+```
+
+*pull* 命令相当于 *fetch* 和 *merge* 命令的结合。如果存在冲突（比如原作者在同一时间段内在相同位置做了更改），那就有必要手动解决冲突。
+
+另一种方式是，原作者可以选择想要合并的更改。通过使用 *fetch* 命令（以及带有特殊 `FETCH_HEAD` 标记的 *log* 命令），可以在决定如何处理合并请求 (pull request) 前查看该请求的内容：
+
+```
+$ git fetch *location* master
+$ git log -p HEAD..FETCH_HEAD
+$ git merge *location* master
+
+```
+
+#### 使用远程仓库 (remote)
+
+远程 (remote) 是和本地相关联的远程仓库的别名。其实就是创建一个 *label* 来定义一个位置。这些 label 用于标识经常访问的仓库。
+
+添加一个远程仓库：
+
+```
+$ git remote add *label* *location*
+
+```
+
+获取远程库里的内容：
+
+```
+$ git fetch *label*
+
+```
+
+显示本地主分支与远程主分支之间的差异：
+
+```
+$ git log -p master..*label*/master
+
+```
+
+查看当前仓库相关联的远程仓库：
+
+```
+$ git remote -v
+
+```
+
+当设置的远程仓库是本仓库的 fork 来源（项目的领导者），这个远程仓库会被定义为 *upstream*（上游）。
+
+#### 向某个仓库推送 (push) 修改
+
+从原作者处获得推送修改的权限之后，使用以下命令推送修改：
+
+```
+$ git push *location* *branch*
+
+```
+
+当使用 *git clone* 获得这个仓库后，git 会把仓库的原始地址记录在名为 `origin` 的变量中。
+
+所以一次 *典型的* 推送可以这样做：
+
+```
+$ git push origin master
+
+```
+
+如果使用了 `-u` (`--set-upstream-to`) 选项，地址将会被记录下来，下次只要使用 `git push` 就可以了。
+
+#### 处理合并 (merge)
+
+可以查看 Git Book 的 [遇到冲突时的分支合并](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6#遇到冲突时的分支合并) 部分了解如何处理合并冲突。合并操作通常是可逆的，如果想返回合并前，可以使用 `--abort` 命令（比如 `git merge --abort` 或 `git pull --abort`）。
+
+### 历史记录和版本记录
+
+#### 在历史记录中搜索
+
+`git log` 命令可以显示历史记录信息，其中包含每次提交的校验和、作者、日期，以及简略信息。*校验和* 就是一次提交对象的 "对象名称"，通常是一个 40 位的 SHA-1 哈希值。
+
+对于具有较长信息的历史记录（其中 "*checksum*" 可以截取前几位，只要它是唯一的）：
+
+```
+$ git show (*checksum*)
+
+```
+
+在被跟踪的文件中搜索 *pattern*：
+
+```
+$ git grep *pattern*
+
+```
+
+在 `.c` 和 `.h` 文件中搜索：
+
+```
+$ git grep *pattern* -- '*.[ch]'
+
+```
+
+#### 使用标签 (tag)
+
+给某次提交打标签来标记这个版本：
+
+```
+$ git tag 2.14 *checksum*
+
+```
+
+*Tag* 通常是用于 [发布/标记版本](https://www.drupal.org/node/1066342) 的，但它可以是任何字符串。通常使用带注释的标签，因为它们会被添加到 Git 数据库中。
+
+标记当前的提交：
+
+```
+$ git tag -a 2.14 -m "Version 2.14"
+
+```
+
+列出标签：
+
+```
+$ git tag -l
+
+```
+
+删除某个标签：
+
+```
+$ git tag -d 2.08
+
+```
+
+更新远程库中的标签：
+
+```
+$ git push --tags
+
+```
+
+#### 重新组织 commit
+
+在提交合并请求之前，可能需要合并/重新组织 commit。这是通过 *git rebase*（变基）`--interactive`完成的：
+
+```
+$ git rebase -i *checksum*
+
+```
+
+然后会打开文本编辑器，其中包含指定范围内所有提交的摘要；这种情况下会包括最新提交 (`HEAD`)，但不包括 `*checksum*` 表示的那次 commit。也可以使用数字来标记，例如用 `HEAD~3`，这会把最后三次提交变基：
+
+```
+pick d146cc7 Mountpoint test.
+pick 4f47712 Explain -o option in readme.
+pick 8a4d479 Rename documentation.
+
+```
+
+修改第一栏中的动作可以决定如何执行变基操作。可选的动作有：
+
+*   `pick` — 原样保留每次提交（默认）。
+*   `edit` — 编辑文件和/或 commit 信息。
+*   `reword` — 编辑 commit 信息。
+*   `squash` — 合并/折叠到先前的提交中。
+*   `fixup` — 合并/折叠到先前的提交中并丢弃它们的信息。
+
+提交会被重新排序或从历史记录中擦除（所以要非常小心）。编辑文件后，Git 将执行指定的操作；如果提示有合并问题待解决，请解决它们并使用 `git rebase --continue` 来继续，或使用 `git rebase --abort` 命令来取消操作。
+
+**注意:** 合并多次提交的操作只能应用于本地提交，它会导致其他人共享的存储库出现问题。
+
+## 提示与技巧
+
+### 使用 git-config
+
+Git 从三个 ini 类型的配置文件里读取配置：
+
+*   `/etc/gitconfig` 是应用于整个系统的默认配置文件
+*   `~/.gitconfig` 是应用于特定用户的配置文件
+*   `.git/config` 是应用于特定仓库的配置文件
+
+这些文件可以直接编辑，但是更常用的方法是使用 *git config*，下面是一些示范。
+
+列出当前已配置的变量：
+
+```
+$ git config {--local,--global,--system} --list
+
+```
+
+将默认文本编辑器从 [vim](/index.php/Vim "Vim") 改成 [nano](/index.php/Nano "Nano")：
 
 ```
 $ git config --global core.editor "nano -w"
 
 ```
 
-会在 `~/.gitconfig` 文件的 `[core]` 部分中添加 `editor = nano -w`。
-
-[git-config 工具的 man page](http://www.kernel.org/pub/software/scm/git/docs/git-config.html) 提供了完整的选项列表。
-
-这是一些你可能用到的常见的配置：
+设置默认的推送 (push) 行为：
 
 ```
-$ git config --global user.name "Firstname Lastname"
-$ git config --global user.email "your_email@youremail.com"
+$ git config --global push.default simple
 
 ```
 
-### 在 Git 命令行下启用彩色输出
-
-配置 `color.ui` 选项可以令 Git 以彩色输出信息。
+设置不同的 *git difftool* 工具（默认是 *meld*）：
 
 ```
-$ git config --global color.ui true
+$ git config --global diff.tool vimdiff
 
 ```
 
-### 解决 Git 在命令行下中文文件名显示为数字的问题
+更多信息请参阅 [git-config(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-config.1) 和 [配置 Git](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git)。
 
+### 保持良好的礼仪
+
+*   当你想为一个现有的项目贡献时，请先阅读并理解这个项目的许可，因为它可能会过度限制你更改代码的权力。有些许可会在代码的所有权方面引起争议。
+*   理解这个项目的社区，以及你可以融入其中的程度。要了解项目的主要方向，可以阅读所有文档甚至是代码库的 [log](#.E5.8E.86.E5.8F.B2.E8.AE.B0.E5.BD.95.E5.92.8C.E7.89.88.E6.9C.AC.E8.AE.B0.E5.BD.95)。
+*   当发起一个合并请求，或者提交一个补丁时，保证它是小改动并且有完善的文档；这将有助于项目维护者理解你的改动，并决定是否合并这些改动或是让你再改一下。
+*   如果贡献被拒绝，不要气馁，毕竟这是他们的项目。如果它很重要，请尽可能清楚和耐心地讨论这次贡献的理由，最终可能通过这种方法解决问题。
+
+### 加快身份验证
+
+每次向 Git 服务器推送时都要认证身份,你可能会想要避免这种麻烦。
+
+*   如果你是用 SSH 密钥来认证的，请使用 [SSH agents](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#SSH_agents "SSH keys (简体中文)")。参阅 [Secure Shell (简体中文)#加速 SSH](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.8A.A0.E9.80.9F_SSH "Secure Shell (简体中文)") 和 [Secure Shell (简体中文)#保持在线](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.9D.E6.8C.81.E5.9C.A8.E7.BA.BF "Secure Shell (简体中文)")。
+*   如果你是用账号和密码来认证的，在服务器支持 SSH 的情况下请切换至 [SSH keys](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)")， 否则请尝试 [git-credential-cache](https://git-scm.com/docs/git-credential-cache) 或 [git-credential-store](https://git-scm.com/docs/git-credential-store)。
+
+### 默认通讯协议
+
+如果你正在使用一个上述那种复用的 SSH 连接，让 Git 使用 SSH 可能比使用 HTTPS 更快。同时，一些服务器（比如 AUR）只允许通过 SSH 推送更改。例如，像下面这样配置可以使得 Git 通过 SSH 访问 AUR 上的任何仓库。
+
+ `~/.gitconfig` 
 ```
-$ git config --global core.quotepath false
-
-```
-
-## 基本用法
-
-### 克隆一个版本库
-
-以下命令可以将一个 Git 版本库克隆至本地目录的新文件夹中：
-
-```
-git clone <repo location> <dir>
-
-```
-
-如果留空 `<dir>` 字段，就会以 Git 版本库的名称命名新文件夹，例如：
-
-```
-git clone git@github.com:torvalds/linux.git
-
-```
-
-可以将 GitHub 上 Linux 内核的镜像克隆至名为「linux」的文件夹中。
-
-### 提交（commit）文件到版本库
-
-Git 的提交过程分为两步：
-
-1.  添加新文件、修改现有的文件（均可通过 `git add <files>` 完成), 或者删除文件（通过 `git rm` 完成）。这些修改将被存入名叫 index 的文件中。
-2.  使用 `git commit` 提交修改。
-
-Git 提交时会打开文本编辑器，填写提交信息。你可以通过 `git config` 命令修改 `core.editor` 来选择编辑器。
-
-此外，你也可以直接用 `git commit -m <message>` 命令在提交时填写提交信息，这样就不会打开编辑器。
-
-其它有用的技巧：
-
-`git commit -a` lets you commit changes you have made to files already under Git control without having to take the step of adding the changes to the index. You still have to add new files with git add.
-
-`git commit -a` 命令可以跳过添加修改的部分，但是如果创建新文件依然需要 `git add`。
-
-`git add -p` 命令可以提交修改文件的特定部分。如果你进行了许多修改而且希望将其分多次提交的话，这一选项非常有用。
-
-### 将改动提交（push）到公共版本库
-
-以下命令可以将修改提交至服务器（例如 Github）：
-
-```
-git push <server name> <branch>
+[url "ssh://aur@aur.archlinux.org/"]
+	insteadOf = https://aur.archlinux.org/
+	insteadOf = http://aur.archlinux.org/
+	insteadOf = git://aur.archlinux.org/
 
 ```
 
-添加 `-u` 参数可以将该服务器设为当前分支（branch）提交时的默认服务器。如果你是通过上文的方法克隆的版本库，默认服务器将是你克隆的来源（别名「origin」），默认分支将是 master。也就是说如果你按照上文的方法克隆的话，提交时只要执行 `git push` 即可。如果需要的话，可以令 Git 提交至多个服务器，不过这比较复杂。下文将讲解分支（branch）。
+### Bash 自动补全
 
-### 从服务器公共版本库下载修改
+要启用 Bash 的自动补全，请在 [Bash 启动文件](/index.php/Bash#Configuration_files "Bash") 里用 source 加载 `/usr/share/git/completion/git-completion.bash` 文件。或者也可以安装 [bash-completion](https://www.archlinux.org/packages/?name=bash-completion)。
 
-如果你在多台电脑上工作，并且需要将本地版本库与服务器更新，可以执行：
+### Git 提示符
 
-```
-git pull <server name> <branch>
+Git 包带有一个提示符脚本。要启用它，请在 [shell 启动文件](/index.php/Autostarting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Shells "Autostarting (简体中文)") 里用 source 加载 `/usr/share/git/completion/git-prompt.sh` 脚本，然后使用 `%s` 参数设置一个自定义 shell 提示符：
 
-```
+*   [Bash](/index.php/Bash "Bash") 用户： `PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '`
+*   [zsh](/index.php/Zsh "Zsh") 用户： `setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '`
 
-与 push 类似，server name 与 branch 都可以根据默认来，所以只需执行 `git pull`。
-
-Git pull 实际上是如下两个命令的简写：
-
-1.  `git fetch`，将服务器文件复制至本地，这一分支被称作「remote」也即它是远程服务器的镜像。
-2.  `git merge`，将「remote」分支的文件与本地文件合并。如果你的本地提交记录与服务器的提交记录相同，就可以直接得到服务器的最新版本。如果你的提交记录与服务器的记录不符（例如在你最后一次提交之后别人进行了提交），两份提交记录将被合并。
-
-It is not a bad idea to get into the practice of using these two commands instead of `git pull`. This way you can check to make sure that the server contains what you would expect before merging.
-
-分步执行两个命令而非 `git pull` 并不是坏事，这样可以确保合并之前服务器的文件与你期望的相同。
-
-### 查看历史记录
-
-`git log` 命令可以显示当前分支的历史记录。注意每一次提交（commit）会以一个 SHA-1 标记区分，接下来是提交者、提交日期以及提交信息。更实用的命令：
-
-```
-git log --graph --oneline --decorate
-
-```
-
-可以显示与 TortoiseGit 的提交记录类似的窗口，这一窗口包含了如下内容：
-
-*   每次提交的 SHA-1 标记的前七位（足以区分不同的提交）
-*   `--graph` 选项可以显示从当前分支 fork 的分支数目（如果有的话）
-*   `--oneline` 选项可以在一行内显示每次提交的信息
-*   `--decorate` 选项可以显示所有的提交信息（包括分支与标签）
-
-可以通过如下命令将这一命令以 `git graph` 的别名保存：
-
-```
-git config --global alias.graph 'log --graph --oneline --decorate'
-
-```
-
-现在执行 `git graph` 将等价于执行 `git log --graph --oneline --decorate`。
-
-`git graph` 与 `git log` 命令也可以带 `--all` 的参数执行，这将显示所有的分支信息，而不止当前的分支。
-
-也可以带 `--stat` 参数执行，它可以显示每次提交时哪些文件有修改、修改了多少行。
-
-### 处理合并（merge）
-
-当你执行 pull、进行复原操作，或者将一个分支与另一个进行合并时会需要处理合并。与其它 VCS 类似，当 Git 无法自动处理合并时，就需要使用者进行处理。
-
-可以查看 Git Book 的[这一部分](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts)讲解如何处理冲突合并。
-
-如果你需要通过合并来还原的话，可以带 `--abort` 参数运行合并相关的命令，例如 `git merge --abort`，`git pull --abort`，`git rebase --abort`)。
-
-## 使用分布式版本控制系统
-
-The above commands only provide the basics. The real power and convenience in Git (and other distributed version control systems) come from leveraging its local commits and fast branching. A typical Git workflow looks like this:
-
-1.  Create and check out a branch to add a feature.
-2.  Make as many commits as you would like on that branch while developing that feature.
-3.  Squash, rearrange, and edit your commits until you are satisfied with the commits enough to push them to the central server and make them public.
-4.  Merge your branch back into the main branch.
-5.  Delete your branch, if you desire.
-6.  Push your changes to the central server.
-
-### 创建一个分支
-
-```
-git branch <branch name>
-
-```
-
-can be used to create a branch that will branch off the current commit. After it has been created, you should switch to it using
-
-```
-git checkout <branch name>
-
-```
-
-A simpler method is to do both in one step with
-
-```
-git checkout -b <branch name>
-
-```
-
-To see a list of branches, and which branch is currently checked out, use
-
-```
-git branch
-
-```
-
-### A word on commits
-
-Many of the following commands take commits as arguments. A commit can be identified by any of the following:
-
-*   Its 40-digit SHA-1 hash (the first 7 digits are usually sufficient to identify it uniquely)
-*   Any commit label such as a branch or tag name
-*   The label `HEAD` always refers to the currently checked-out commit (usually the head of the branch, unless you used `git checkout` to jump back in history to an old commit)
-*   Any of the above plus `~` to refer to previous commits. For example, `HEAD~` refers to one commit before `HEAD` and `HEAD~5` refers to five commits before `HEAD`.
-
-### 提交为检查点
-
-In Subversion and other older, centralized version control systems, commits are permanent - once you make them, they are there on the server for everyone to see. In Git, your commits are local and you can combine, rearrange, and edit them before pushing them to the server. This gives you more flexibility and lets you use commits as checkpoints. Commit early and commit often.
-
-### 编辑之前的提交
-
-```
-git commit --amend
-
-```
-
-allows you to modify the previous commit. The contents of the index will be applied to it, allowing you to add more files or changes you forgot to put in. You can also use it to edit the commit message, if you would like.
-
-### 插入、重新排序和更改历史记录
-
-```
-git rebase -i <commit>
-
-```
-
-will bring up a list of all commits between `<commit>` and the present, including `HEAD` but excluding `<commit>`. This command allows you rewrite history. To the left of each commit, a command is specified. Your options are as follows:
-
-*   The "pick" command (the default) uses that commit in the rewritten history.
-*   The "reword" command lets you change a commit message without changing the commit's contents.
-*   The "edit" command will cause Git to pause during the history rewrite at this commit. You can then modify it with `git commit --amend` or insert new commits.
-*   The "squash" command will cause a commit to be folded into the previous one. You will be prompted to enter a message for the combined commit.
-*   The "fixup" command works like squash, but discards the message of the commit being squashed instead of prompting for a new message.
-*   Commits can be erased from history by deleting them from the list of commits
-*   Commits can be re-ordered by re-ordering them in the list. When you are done modifying the list, Git will prompt you to resolve any resulting merge problems (after doing so, continue rebasing with `git rebase --continue`)
-
-When you are done modifying the list, Git will perform the desired actions. If Git stops at a commit (due to merge conflicts caused by re-ordering the commits or due to the "edit" command), use `git rebase --continue` to resume. You can always back out of the rebase operation with `git rebase --abort`.
-
-**Warning:** Only use `git rebase -i` on local commits that have not yet been pushed to anybody else. Modifying commits that are on the central server will cause merge problems for obvious reasons.
-
-**Note:** Vim makes these rebase operations very simple since lines can be cut and pasted with few keystrokes.
-
-## Git提示符
-
-The Git package comes with a prompt script. To enable the prompt addition you will need to source the git-prompt.sh script and add `$(__git_ps1 " (%s)")` to you PS1 variable.
-
-*   Copy `/usr/share/git/completion/git-prompt.sh` to your home directory (e.g. `~/.git-prompt.sh`).
-*   Add the following line to your .bashrc/.zshrc:
-
-```
-source ~/.git-prompt.sh
-
-```
-
-*   For Bash:
-
-```
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-
-```
-
-**Note:** For information about coloring your bash prompt see [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt")
-
-*   For zsh:
-
-```
-PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
-
-```
-
-The `%s` is replaced by the current branch name. The git information is displayed only if you are navigating in a git repository. You can enable extra information by setting and exporting certain variables to a non-empty value as shown in the following table:
+当切换至一个 Git 仓库所在目录时，shell 提示符会变成所在分支名称。也可以配置提示符来显示其他信息：
 
 <caption></caption>
-| Variable | Information |
-| GIT_PS1_SHOWDIRTYSTATE | ***** for unstaged and **+** for staged changes |
-| GIT_PS1_SHOWSTASHSTATE | **$** if something is stashed |
-| GIT_PS1_SHOWUNTRACKEDFILES | **%** if there are untracked files |
+| Shell variable | Information |
+| GIT_PS1_SHOWDIRTYSTATE | 已暂存 (staged) 显示 **+**，未暂存 (unstaged) 显示 *****。 |
+| GIT_PS1_SHOWSTASHSTATE | 已储藏 (stashed) 显示 **$**。 |
+| GIT_PS1_SHOWUNTRACKEDFILES | 有未跟踪文件时显示 **%**。 |
+| GIT_PS1_SHOWUPSTREAM | **<,>,<>** 分别表示落后于上游、领先于上游、偏离上游。 |
 
-## 传输协议
+`GIT_PS1_SHOWUPSTREAM` 需要设置为 `auto` 才能使更改生效。
 
-### 智能HTTP
+**注意:** 如果发生了 `$(__git_ps1)` 返回 `((unknown))` 的情况，是因为有一个 `.git` 文件夹在你当前的文件夹里面，但却不包含任何存储库，因此 Git 不认识它。这有可能发生在你把 `~/.git/config` 误认为是 Git 的配置文件而不是 `~/.gitconfig`。
 
-Since version 1.6.6 git is able to use the HTTP(S) protocol as efficiently as SSH or Git by utilizing the git-http-backend. Furthermore it is not only possible to clone or pull from repositories, but also to push into repositories over HTTP(S).
+你也可以使用来自 [AUR](/index.php/AUR "AUR") 的自定义 git shell 提示符软件包，例如 [bash-git-prompt](https://aur.archlinux.org/packages/bash-git-prompt/) 或 [gittify](https://aur.archlinux.org/packages/gittify/)。
 
-The setup for this is rather simple as all you need to have installed is the Apache web server (with mod_cgi, mod_alias, and mod_env enabled) and of course, git:
+### 可视化显示
+
+要了解已经完成了多少工作：
 
 ```
-# pacman -S apache git
+$ git diff --stat
 
 ```
 
-Once you have your basic setup up and running, add the following to your Apache's config usually located at `/etc/httpd/conf/httpd.conf`:
+带有 fork 显示的 *git log*：
 
+```
+$ git log --graph --oneline --decorate
+
+```
+
+给图形化的 *git log* 做一个别名（使用 *git graph* 即可显示经过修饰的 log）：
+
+```
+$ git config --global alias.graph 'log --graph --oneline --decorate'
+
+```
+
+### 关于提交 (commit) 的小提示
+
+重置为以前的提交（非常危险，这将会擦除所有内容并改写为特定提交）：
+
+```
+$ git reset --hard HEAD^
+
+```
+
+如果远程仓库的地址发生变化，可以这样更新它的位置：
+
+```
+$ git remote set-url origin git@*address*:*user*/*repo*.git
+
+```
+
+自动附加签名行到提交（将某个 姓名-电邮 签名添加到提交中，某些项目会要求这样做）：
+
+```
+$ git commit -s
+
+```
+
+自动附加签名到补丁（使用 `git format-patch *commit*` 时生效）：
+
+```
+$ git config --local format.signoff true
+
+```
+
+提交已更改文件的特定部分。如果有大量更改时，最好拆分成多个提交，这种情况下这个命令通常很有用：
+
+```
+$ git add -p
+
+```
+
+### 对提交 (commit) 签名
+
+Git 允许使用 [GnuPG](/index.php/GnuPG_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GnuPG (简体中文)") 对提交和标签进行签名，请参见 [签署工作](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E7%AD%BE%E7%BD%B2%E5%B7%A5%E4%BD%9C)。
+
+**注意:** 如果是借助 [pinentry](https://www.archlinux.org/packages/?name=pinentry) 来进行 GPG 签名，请确保 `export GPG_TTY=$(tty)`（或者使用 pinentry-tty），否则当 GPG 处于锁定状态时签名这一步会失败（因为它无法在 shell 提示符里询问 pin 码）。
+
+配置 Git 使它自动对提交进行签名：
+
+```
+$ git config --global commit.gpgSign true
+
+```
+
+### 在非主分支上工作
+
+偶尔项目维护人员会要求你在其他分支上完成工作。这些分支通常被称为 `devel` 或 `testing`。首先要克隆存储库。
+
+要进入不是主分支的分支（*git clone* 只会显示主分支，但其他分支其实也是存在的，用 `git branch -a` 可以显示出来）：
+
+```
+$ git checkout -b *branch* origin/*branch*
+
+```
+
+然后就可以像平常一样编辑文件，但是要使得整个仓库都保持同步，下面这两个命令都要用：
+
+```
+$ git pull --all
+$ git push --all
+
+```
+
+### 直接将补丁发送至邮件列表
+
+如果你想直接将补丁发送至一个邮件列表，需要安装以下软件包：[perl-authen-sasl](https://www.archlinux.org/packages/?name=perl-authen-sasl)，[perl-net-smtp-ssl](https://www.archlinux.org/packages/?name=perl-net-smtp-ssl) 和 [perl-mime-tools](https://www.archlinux.org/packages/?name=perl-mime-tools)。
+
+确保你已经配置了用户名和邮件地址，可参阅 [#配置](#.E9.85.8D.E7.BD.AE)。
+
+配置你的邮箱设置：
+
+```
+$ git config --global sendemail.smtpserver *smtp.example.com*
+$ git config --global sendemail.smtpserverport *587*
+$ git config --global sendemail.smtpencryption *tls*
+$ git config --global sendemail.smtpuser *foobar@example.com*
+
+```
+
+现在你应该可以将补丁发送至某个邮件列表了（可参阅[OpenEmbedded:How to submit a patch to OpenEmbedded#Sending patches](http://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded#Sending_patches)）：
+
+```
+$ git add *filename*
+$ git commit -s
+$ git send-email --to=*openembedded-core@lists.openembedded.org* --confirm=always -M -1
+
+```
+
+## Git 服务器
+
+这一节讲述如何配置使用不同的协议连接到存储库。
+
+### SSH 协议
+
+要使用 SSH 协议，首先要准备一个 SSH 公钥，可以按照 [SSH keys (简体中文)](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)") 的指导来完成。要配置一个 SSH 服务器，请遵循 [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") 的指导。
+
+当 SSH 生成了密钥之后，将 `~/.ssh/id_rsa.pub` 文件的内容粘贴至服务器上的 `~/.ssh/authorized_keys` 文件里（一行一个，同一个公钥确保在同一行）。现在 Git 仓库可以通过 SSH 来访问：
+
+```
+$ git clone *user*@*foobar.com*:*my_repository*.git
+
+```
+
+现在，如果你的 SSH 客户端的 `StrictHostKeyChecking` 选项设为了 `ask`（默认），你应该会收到来自 SSH 的问题，要你回答 yes/no。输入 `yes` 然后回车，你的仓库就能被取出。同时，由于通过 SSH 协议访问，你现在应该有提交权限。
+
+要把一个已存在的仓库改成使用 SSH 访问，需要重新定义一下远程地址：
+
+```
+$ git remote set-url origin git@localhost:*my_repository*.git
+
+```
+
+要从非 22 端口连接，可以在每台主机的 `/etc/ssh/ssh_config` 或 `~/.ssh/config` 里配置。要为某个本地仓库设置端口（示例中用的 443 端口）：
+
+ `.git/config` 
+```
+[remote "origin"]
+    url = ssh://*user*@*foobar*.com:443/~*my_repository*/repo.git
+```
+
+你可以通过只允许用户执行 push 和 pull 操作来进一步提高 SSH 账户的安全性。这是通过将该账户的默认登录 shell 换成 git-shell 来实现的。在 [配置服务器](https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8) 中对此有所描述。
+
+### Smart HTTP 协议
+
+通过使用 git-http 后端，Git 可以像使用 SSH 协议或 Git 协议一样高效地使用 HTTP(S) 协议。此外，它不仅可以从仓库中克隆或拉取更改，还可以通过 HTTP(S) 推送更改。
+
+这个设置相当简单，因为你只需要安装 Apache Web 服务器（[apache](https://www.archlinux.org/packages/?name=apache)，启用 `mod_cgi`、`mod_alias` 和 `mod_env`），当然还要安装 [git](https://www.archlinux.org/packages/?name=git)。
+
+当你正在进行基本设置时，请将以下内容添加到 Apache 配置文件中，该配置文件通常位于：
+
+ `/etc/httpd/conf/httpd.conf` 
 ```
 <Directory "/usr/lib/git-core*">
-    Order allow,deny
-    Allow from all
+    Require all granted
 </Directory>
 
 SetEnv GIT_PROJECT_ROOT /srv/git
@@ -343,94 +670,47 @@ ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
 
 ```
 
-The above example config assumes that your git repositories are located at `/srv/git` and that you want to access them via something like http(s)://your_address.tld/git/your_repo.git. Feel free to customize this to your needs.
+这里假设你的 Git 仓库位于 `/srv/git`，并且你想用类似 `http(s)://your_address.tld/git/your_repo.git` 的方式来访问它们。
 
-**Note:** Of course you have to make sure that your Apache can read and write (if you want to enable push access) on your git repositories.
+**注意:** 请确保 Apache 对你的仓库有读写权限。
 
-For more detailed documentation, visit the following links:
+如果需要更多详细文档，请访问：
 
-*   [http://progit.org/2010/03/04/smart-http.html](http://progit.org/2010/03/04/smart-http.html)
-*   [https://www.kernel.org/pub/software/scm/git/docs/v1.7.10.1/git-http-backend.html](https://www.kernel.org/pub/software/scm/git/docs/v1.7.10.1/git-http-backend.html)
+*   [https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP](https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP)
+*   [https://git-scm.com/docs/git-http-backend](https://git-scm.com/docs/git-http-backend)
 
-### Git SSH
+### Git 协议
 
-You first need to have a public SSH key. For that follow the guide at [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys"). To set up SSH itself, you need to follow the [SSH](/index.php/SSH "SSH") guide. This assumes you have a public SSH key now and that your SSH is working. Open your SSH key in your favorite editor (default public key name is `~/.ssh/id_rsa.pub`), and copy its content (`Ctrl+c`). Now go to your user where you have made your Git repository, since we now need to allow that SSH key to log in on that user to access the Git repository. Open `~/.ssh/authorized_keys` in your favorite editor, and paste the contents of id_rsa.pub in it. Be sure it is all on one line! That is important! It should look somewhat like this:
+**注意:** Git 协议没有加密或认证机制，且只允许读取。
 
-**Warning:** Do not copy the line below! It is an example! It will not work if you use that line!
+[Start 并且 enable](/index.php/Start "Start") `git-daemon.socket` 这个 systemd 单元。
 
-```
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCboOH6AotCh4OcwJgsB4AtXzDo9Gzhl+BAHuEvnDRHNSYIURqGN4CrP+b5Bx/iLrRFOBv58TcZz1jyJ2PaGwT74kvVOe9JCCdgw4nSMBV44cy+6cTJiv6f1tw8pHRS2H6nHC9SCSAWkMX4rpiSQ0wkhjug+GtBWOXDaotIzrFwLw== username@hostname
-
-```
-
-Now you can checkout your Git repository this way (change where needed. Here it is using the git username and localhost):
+守护程序会带有以下选项启动：
 
 ```
-git clone git@localhost:my_repository.git
+ExecStart=-/usr/lib/git-core/git-daemon --inetd --export-all --base-path=/srv/git
 
 ```
 
-You should now get an SSH yes/no question. Type `yes` followed by `Enter`. Then you should have your repository checked out. Because this is with SSH, you also do have commit rights now. For that look at [Git](/index.php/Git "Git") and [Super Quick Git Guide](/index.php/Super_Quick_Git_Guide "Super Quick Git Guide").
-
-#### 特定非标准端口
-
-Connecting on a port other than 22 can be configured on a per-host basis in `/etc/ssh/ssh_config` or `~/.ssh/config`. To set up ports for a repository, specify the path in `.git/config` using the port number `N` and the *absolute path* `/PATH/TO/REPO`:
+位于 `/srv/git/` 目录下的仓库会被守护程序识别。客户端能以类似这样的方式连接：
 
 ```
-[ssh://user@example.org:N/PATH/TO/REPO](ssh://user@example.org:N/PATH/TO/REPO)
+$ git clone git://*location*/*repository*.git
 
 ```
 
-Typically the repository resides in the home directory of the user which allows you to use tilde-expansion. Thus to connect on port N=443,
+### 设置访问权限
 
-```
-url = git@example.org:repo.git
+要限制读取和/或写入权限，可以使用常规 Unix 权限控制。更多信息请参考 [when gitolite is overkill](https://github.com/sitaramc/gitolite/blob/d74e58b5de8c78bddd29b009ba2d606f7fcb4f2d/doc/overkill.mkd)。
 
-```
+如果需要更加精细的访问控制，请参考 [gitolite](/index.php/Gitolite "Gitolite") 和 [gitosis](/index.php/Gitosis "Gitosis")。
 
-becomes:
+## 参考资料
 
-```
-url = [ssh://git@example.org:443/~git/repo.git](ssh://git@example.org:443/~git/repo.git)
-
-```
-
-### Git守护进程
-
-**Note:** The git daemon only allows read access. For write access see [#Git SSH](#Git_SSH).
-
-This will allow URLs like "git clone [git://localhost/my_repository.git](git://localhost/my_repository.git)".
-
-Edit the configuration file for git-daemon `/etc/conf.d/git-daemon.conf` (GIT_REPO is a place with your git projects), then start git-daemon with root privileges:
-
-```
-# systemctl start git-daemon@
-
-```
-
-To run the git-daemon every time at boot, enable the service:
-
-```
-# systemctl enable git-daemon@
-
-```
-
-Clients can now simply use:
-
-```
-git clone [git://localhost/my_repository.git](git://localhost/my_repository.git)
-
-```
-
-### Git版本库权限
-
-To restrict read/write access, you can simply use Unix rights, see [http://sitaramc.github.com/gitolite/doc/overkill.html](http://sitaramc.github.com/gitolite/doc/overkill.html)
-
-For a fine-grained rights access, see [gitolite](/index.php/Gitolite "Gitolite") and [gitosis](/index.php/Gitosis "Gitosis")
-
-## 参见
-
-*   [http://book.git-scm.com/index.html](http://book.git-scm.com/index.html)
-*   [http://gitref.org/](http://gitref.org/)
-*   [http://www.kernel.org/pub/software/scm/git/docs/](http://www.kernel.org/pub/software/scm/git/docs/)
-*   [http://help.github.com/](http://help.github.com/)
+*   Git 手册页：[git(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git.1)
+*   [Pro Git book](https://git-scm.com/book/en/)
+*   来自 GitHub 的 [Git Reference](https://git.github.io/git-reference/)
+*   [Git workflow: Forks, remotes, and pull requests](http://nathanhoad.net/git-workflow-forks-remotes-and-pull-requests)
+*   [VideoLAN wiki article](https://wiki.videolan.org/Git)
+*   [A comparison of protocols GitHubGist](https://gist.github.com/grawity/4392747)
+*   [How to GitHub](https://gun.io/blog/how-to-github-fork-branch-and-pull-request)

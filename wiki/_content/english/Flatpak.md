@@ -1,6 +1,7 @@
 Related articles
 
 *   [Snapd](/index.php/Snapd "Snapd")
+*   [bubblewrap](/index.php/Bubblewrap "Bubblewrap")
 
 From the project [README](https://github.com/flatpak/flatpak/blob/master/README.md): "*[Flatpak](http://flatpak.org) is a system for building, distributing and running sandboxed desktop applications on Linux.*"
 

@@ -220,6 +220,10 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://www.gnome.org/](http://www.gnome.org/) || [gedit-latex](https://aur.archlinux.org/packages/gedit-latex/)
 
+*   **[GNOME LaTeX](https://en.wikipedia.org/wiki/GNOME-LaTeX "wikipedia:GNOME-LaTeX")** — LaTeX editor for the GNOME Desktop including support for code completion, compiling and project management.
+
+	[https://wiki.gnome.org/Apps/GNOME-LaTeX](https://wiki.gnome.org/Apps/GNOME-LaTeX) || [gnome-latex](https://www.archlinux.org/packages/?name=gnome-latex)
+
 *   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK+-based editor. It features a continuous preview mode, integrated BibTeX support, extendable snippet interface and multi-document support.
 
 	[https://github.com/alexandervdm/gummi/](https://github.com/alexandervdm/gummi/) || [gummi](https://www.archlinux.org/packages/?name=gummi)
@@ -235,10 +239,6 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 *   **Ktikz** — GUI making diagrams with [PGF/TikZ](http://pgf.sourceforge.net/) easier.
 
 	[http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/](http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/) || [ktikz](https://aur.archlinux.org/packages/ktikz/)
-
-*   **[LaTeXila](https://en.wikipedia.org/wiki/LaTeXila "wikipedia:LaTeXila")** — LaTeX editor for the GNOME Desktop including support for code completion, compiling and project management.
-
-	[https://wiki.gnome.org/Apps/LaTeXila](https://wiki.gnome.org/Apps/LaTeXila) || [latexila](https://www.archlinux.org/packages/?name=latexila)
 
 *   **[Lout](/index.php/Lout "Lout")** — A lightware document formatting system. Reads a high-level description of a document similar in style to LaTeX and produces a PostScript.
 
@@ -473,6 +473,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **[LightTable](https://en.wikipedia.org/wiki/Light_Table_(software) "w:Light Table (software)")** — A modern open source text editor.
 
 	[http://lighttable.com](http://lighttable.com) || [lighttable-bin](https://aur.archlinux.org/packages/lighttable-bin/)[lighttable-git](https://aur.archlinux.org/packages/lighttable-git/)
+
+*   **Marker** — Simple yet robust markdown editor for the Linux desktop.
+
+	[https://fabiocolacio.github.io/Marker/](https://fabiocolacio.github.io/Marker/) || [marker](https://aur.archlinux.org/packages/marker/)
 
 *   **Medit** — Programming and around-programming text editor.
 

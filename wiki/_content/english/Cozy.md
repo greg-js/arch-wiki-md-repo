@@ -43,25 +43,22 @@ You will need to add two users accounts manually:
 
 ### Configuring CouchDB
 
-We will now configure the database. Cozy stores almost everything in a [CouchDB](/index.php/CouchDB "CouchDB") database, and needs a CouchDB administrator to manage this database. This administrator's credentials must be placed in `/etc/cozy/couchdb.login` so Cozy can use them.
+We will now configure the database. Cozy stores almost everything in a [CouchDB](/index.php/CouchDB "CouchDB") database, and needs a CouchDB administrator to manage this database. This administrator’s credentials must be specified as part of the `couchdb url` setting in `/etc/cozy/cozy.yml` so that Cozy can use them. This suppose you have a running [CouchDB](/index.php/CouchDB "CouchDB") instance, you can follow the corresponding wiki page to setup one in single node mode.
 
-To create an administrator, first generate the credentials (with [pwgen](https://www.archlinux.org/packages/?name=pwgen) for example), store them, and send them to CouchDB. Do not forget to give the appropriate rights to the file.
+You can generate the credentials with [pwgen](https://www.archlinux.org/packages/?name=pwgen) for example. Once you have them (`couch_user` and `couch_password`), edit your configuration as follow:
 
-**Note:** The following curl commands will setup CouchDB 2.0 in “single node” mode. If you don’t use CouchDB for anything else, this is likely what you want.
-
+ `/etc/cozy/cozy.yaml` 
 ```
-# pwgen -1 > /etc/cozy/couchdb.login
-# pwgen -1 >> /etc/cozy/couchdb.login
-# chown cozy-data-system /etc/cozy/couchdb.login
-# chmod 640 /etc/cozy/couchdb.login
-# curl -X PUT 127.0.0.1:5984/_node/couchdb@localhost/_config/admins/$(head -n1 /etc/cozy/couchdb.login) -d "\"$(tail -n1 /etc/cozy/couchdb.login)\""
-# curl -X PUT $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_users
-# curl -X PUT $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_replicator
-# curl -X PUT $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_global_changes
-
+couchdb:
+  url: http://<couch_user>:<couch_password>@127.0.0.1/
 ```
 
-**Note:** You should also take a look at [CouchDB#Single node setup & Security](/index.php/CouchDB#Single_node_setup_.26_Security "CouchDB").
+And register them to CouchDB (replace `<couchdb_admin>` and `<couchdb_password>` with your CouchDB admin credentials):
+
+```
+# curl -X PUT <couchdb_admin>:<couchdb_password>@127.0.0.1:5984/_node/couchdb@localhost/_config/admins/<couch_user> -d "\"<couch_password>\""
+
+```
 
 ### Starting the controller
 

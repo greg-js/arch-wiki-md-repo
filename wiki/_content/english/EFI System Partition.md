@@ -3,11 +3,14 @@ Related articles
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
 
-The [EFI System Partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition") (also called ESP or EFISYS) is a FAT32 formatted physical partition (in the main partition table of the disk, not under LVM or software RAID etc.) from where the [UEFI](/index.php/UEFI "UEFI") firmware launches the UEFI bootloader and application.
+The [EFI System Partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition") (also called ESP or EFISYS) is an OS independent partition that acts as the storage place for the EFI bootloaders, applications and drivers to be launched by the UEFI firmware. It is mandatory for UEFI boot.
 
-It is an OS independent partition that acts as the storage place for the EFI bootloaders and applications to be launched by the UEFI firmware. It is mandatory for UEFI boot.
+The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesystems (see [UEFI specification version 2.7, section 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers.
 
-**Warning:** If [dual-booting](/index.php/Dual_boot_with_Windows "Dual boot with Windows") with an existing installation of Windows on a UEFI/GPT system, avoid reformatting the ESP, as this includes the Windows *.efi* file required to boot it. In other words, use the existing partition as is and simply [#Mount the partition](#Mount_the_partition).
+**Warning:**
+
+*   The EFI System Partition must be a physical partition in the main partition table of the disk, not under LVM or software RAID etc.
+*   If [dual-booting](/index.php/Dual_boot_with_Windows "Dual boot with Windows") with an existing installation of Windows on a UEFI/GPT system, avoid reformatting the ESP, as this includes the Windows *.efi* file required to boot it. In other words, use the existing partition as is and simply [#Mount the partition](#Mount_the_partition).
 
 ## Contents
 
@@ -33,7 +36,7 @@ The following two sections show how to create an EFI System Partition (ESP).
 
 **Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI/MBR boot.
 
-To avoid potential problems with some EFIs, ESP size should be at least 512 MiB. 550 MiB is recommended to avoid MiB/MB confusion and accidentally creating FAT16 [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html), although larger sizes are fine.
+To avoid potential problems with some EFIs, the ESP should be formatted with FAT32 and the size should be at least 512 MiB. 550 MiB is recommended to avoid MiB/MB confusion and accidentally creating FAT16 [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html), although larger sizes are fine.
 
 According to a Microsoft note[[2]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules), the minimum size for the EFI System Partition (ESP) would be 100 MiB, though this is not stated in the UEFI Specification. Note that for [Advanced Format](/index.php/Advanced_Format "Advanced Format") 4K Native drives (4-KiB-per-sector) drives, the size is at least 256 MiB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KiB) x 65527 = 256 MiB), due to a limitation of the FAT32 file format.
 
@@ -45,7 +48,7 @@ EFI System Partition on GPT is identified by the [partition type GUID](https://e
 
 *   [fdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type `EFI System`.
 *   [gdisk](/index.php/Gdisk "Gdisk"): Create a partition with partition type `EF00`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with FAT32 as the file system type and set/activate the `esp` flag (**not** `legacy_boot` flag) on that partition.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with FAT32 as the file system type and set/activate the `esp` flag on that partition.
 
 Proceed to [#Format the partition](#Format_the_partition) section below.
 
@@ -56,7 +59,7 @@ EFI System Partition on MBR is identified by the [partition type ID](https://en.
 **Choose one** of the following methods to create an ESP for a MBR partitioned disk:
 
 *   [fdisk](/index.php/Fdisk "Fdisk"): Create a primary partition with partition type `EFI (FAT-12/16/32)`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with FAT32 as the file system type and set/activate the `esp` flag (**not** `boot` flag) on that partition.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with FAT32 as the file system type and set/activate the `esp` flag on that partition.
 
 Proceed to [#Format the partition](#Format_the_partition) section below.
 

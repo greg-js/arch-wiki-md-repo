@@ -18,6 +18,7 @@ Related articles
         *   [2.4.1 MIDI support](#MIDI_support)
     *   [2.5 Other libraries](#Other_libraries)
     *   [2.6 Fonts](#Fonts)
+        *   [2.6.1 Enable font smoothing](#Enable_font_smoothing)
     *   [2.7 Desktop launcher menus](#Desktop_launcher_menus)
         *   [2.7.1 Creating menu entries for Wine utilities](#Creating_menu_entries_for_Wine_utilities)
         *   [2.7.2 Removing menu entries](#Removing_menu_entries)
@@ -147,6 +148,13 @@ If Wine applications are not showing easily readable fonts, you may not have any
 
 ```
 
+Wine uses freetype to render fonts, and freetype's defaults changed a few releases ago. Try using this environment setting for wine programs:
+
+```
+ FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+
+```
+
 Another possibility is to install Microsoft's Truetype fonts into your wine prefix. See [MS Fonts](/index.php/MS_Fonts "MS Fonts"). If this does not help, try running `winetricks corefonts` first, then `winetricks allfonts` as a last resort.
 
 After running such programs, kill all Wine servers and run `winecfg`. Fonts should be legible now.
@@ -163,6 +171,26 @@ Windows Registry Editor Version 5.00
 For high resolution displays, you can adjust dpi values in winecfg.
 
 See also [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration").
+
+#### Enable font smoothing
+
+A good way to improve wine font rendering is to enable cleartype font smoothing. To enable "Subpixel smoothing (ClearType) RGB":
+
+```
+cat << EOF > /tmp/fontsmoothing
+REGEDIT4
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingOrientation"=dword:00000001
+"FontSmoothingType"=dword:00000002
+"FontSmoothingGamma"=dword:00000578
+EOF
+
+WINE=${WINE:-wine} WINEPREFIX=${WINEPREFIX:-$HOME/.wine} $WINE regedit /tmp/fontsmoothing 2> /dev/null
+```
+
+For more information, check [the original answer](https://askubuntu.com/a/219795/514682)
 
 ### Desktop launcher menus
 

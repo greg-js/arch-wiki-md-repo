@@ -6,7 +6,29 @@ From [Wikipedia:File Allocation Table](https://en.wikipedia.org/wiki/File_Alloca
 
 	File Allocation Table (FAT) is a computer file system architecture and a family of industry-standard file systems utilizing it. The FAT file system is a legacy file system which is simple and robust. It offers good performance even in light-weight implementations, but cannot deliver the same performance, reliability and scalability as some modern file systems. It is, however, supported for compatibility reasons by nearly all currently developed operating systems for personal computers and many mobile devices and embedded systems, and thus is a well-suited format for data exchange between computers and devices of almost any type and age from 1981 up to the present.
 
-## Kernel configurations
+## Contents
+
+*   [1 File system creation](#File_system_creation)
+*   [2 Kernel configuration](#Kernel_configuration)
+*   [3 Writing to FAT32 as normal user](#Writing_to_FAT32_as_normal_user)
+*   [4 See also](#See_also)
+
+## File system creation
+
+To create a FAT filesystem, [install](/index.php/Install "Install") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
+
+`mkfs.fat` supports creating FAT12, FAT16 and FAT32, see [Wikipedia:File Allocation Table#Types](https://en.wikipedia.org/wiki/File_Allocation_Table#Types "wikipedia:File Allocation Table") for an explanation on their differences. `mkfs.fat` will select the FAT type based on the partition size, to explicitly create a certain type of FAT filesystem use the `-F` option. See [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) for more information.
+
+**Tip:** For most situations you will want to use FAT32.
+
+Format a partition to FAT32:
+
+```
+# mkfs.fat -F 32 /dev/*partition*
+
+```
+
+## Kernel configuration
 
 Here is an example of the default *mount* configuration in the kernel:
 

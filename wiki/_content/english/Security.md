@@ -86,7 +86,7 @@ Passwords are key to a secure Linux system. They secure your [user accounts](/in
 
 ### Choosing secure passwords
 
-When relying on a passphrase, it must be complex enough to not be easily guessed from e.g. personal information, or [cracked](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") using e.g. brute-force attacks. The tenets of strong passphrases are based on *length* and *randomness*. In cryptography the quality of a passphrase is referred to as its [Wikipedia:Entropic security](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
+When relying on a passphrase, it must be complex enough to not be easily guessed from e.g. personal information, or [cracked](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") using e.g. brute-force attacks. The tenets of strong passphrases are based on *length* and *randomness*. In cryptography the quality of a passphrase is referred to as its [entropic security](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
 
 Insecure passwords include those containing:
 

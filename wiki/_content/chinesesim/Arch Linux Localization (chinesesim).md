@@ -158,17 +158,21 @@ export LC_ALL="zh_CN.UTF-8"
 
 ##### 修正简体中文显示为异体（日文）字形
 
-安装的Noto Sans CJK 或 adobe source han sans otc fonts（思源黑体） 或 adobe source han serif otc fonts（思源宋体）后，在某些情况下（框架未定义地区）汉字字形与标准形态不符，例如门、关、复等字字形与规范中文不符。这是因为每个程序中可以设置不同的默认字体，比如Arial或者Tohamo，而这些字体的属性由fontconfig控制，其使用顺序是据地区代码以A-Z字母表顺序成默认排序，由于 ja-JP 在 zh_{CN,HK,SG,TW} 之前，故优先显示日文字形。
+安装的Noto Sans CJK 或 adobe source han sans otc fonts（思源黑体） 或 adobe source han serif otc fonts（思源宋体）后，在某些情况下（框架未定义地区）汉字字形与标准形态不符，例如门、关、复等字字形与规范中文不符。
+
+这是因为每个程序中可以设置不同的默认字体，比如Arial或者Tohamo，而这些字体的属性由fontconfig控制，其使用顺序是据地区代码以A-Z字母表顺序成默认排序，由于 ja-JP 在 zh_{CN,HK,SG,TW} 之前，故优先显示日文字形。
 
 **提示：** 若欲解决Chromium/Chrome中的异体字形问题，应首先在chrome://settings/fonts中将几个字体选项调成Noto xxx CJK SC。如无效再尝试下述三种方案 [[3]](http://tieba.baidu.com/p/4879946717)
 
-解决方法任选一种：
+可选用以下方法解决（以简体中文为例）：
 
-*   安装思源的简体中文字体部分如[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)而非中日韩（CJK)整包，或者在aur中安装[noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/)。(推荐，此方法最简单）
-*   在 locale.conf 中设置中文为默认语言LANG=zh_{CN,HK,SG,TW}.UTF-8，则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。
-*   手动调整 prefer，即，将中文字形调整到日文字形之前。[[4]](http://tieba.baidu.com/p/4879946717)
+*   安装根据地区打包的字体，例如简体中文用户安装思源黑体简体中文包[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)或者[noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/)。(推荐，此方法最简单）
+*   在`locale.conf`中添加**LANG=zh_CN.UTF-8**，以将简体中文设置为默认语言。由于对[Locale_(简体中文)](/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Locale (简体中文)")定义了框架内地区（即 CJK 优先度），使得默认的优先级被忽略。
+*   手动调整优先级，将中文字形调整到日文字形之前。[[4]](http://tieba.baidu.com/p/4879946717)
 
-以noto-fonts-cjk 为例，修改文件 /etc/fonts/conf.avail/64-language-selector-prefer.conf 如下，无此文件则创建：
+修改或创建文件`/etc/fonts/conf.avail/64-language-selector-prefer.conf`，根据安装的不同情况添加如下内容：
+
+*   noto-fonts-cjk用户：
 
 ```
  <?xml version="1.0"?>
@@ -194,7 +198,36 @@ export LC_ALL="zh_CN.UTF-8"
 
 ```
 
-保存文件后，若 /etc/fonts 目录下有 conf.d/ 目录，则在该目录中创建指向 /etc/fonts/conf.avail/64-language-selector-prefer.conf 的同名软链接：
+*   adobe-source-han-sans-otc-fonts用户：
+
+```
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+ <alias>
+ <family>sans-serif</family>
+ <prefer>
+ <family>Source Han Sans SC</family>
+ <family>Source Han Sans TC</family>
+ <family>Source Han Sans HW</family>
+ <family>Source Han Sans K</family>
+ </prefer>
+ </alias>
+
+ <alias>
+ <family>monospace</family>
+ <prefer>
+ <family>Source Han Sans SC</family>
+ <family>Source Han Sans TC</family>
+ <family>Source Han Sans HW</family>
+ <family>Source Han Sans K</family>
+ </prefer>
+ </alias>
+ </fontconfig>
+
+```
+
+若`/etc/fonts`目录下{{|conf.d/}}目录，则在该目录中创建指向`/etc/fonts/conf.avail/64-language-selector-prefer.con`的同名软链接：
 
 ```
  $ sudo ln -s /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf

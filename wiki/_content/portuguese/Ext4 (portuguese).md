@@ -164,7 +164,7 @@ Essas instruções foram adaptadas da [documentação do Kernel](http://ext4.wik
 
 **Atenção:**
 
-*   Se você converter o sistema de arquivos raiz do sistema, assegure-se de que o initramfs reserva ('fallback') está disponível na reinicialização. Alternativamente, adicione `ext4` de acordo com [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") e recrie um ramdisk inicial "padrão" com `mkinitcpio -p linux` antes de iniciar.
+*   Se você converter o sistema de arquivos raiz do sistema, assegure-se de que o initramfs reserva ('fallback') está disponível na reinicialização. Alternativamente, adicione `ext4` de acordo com [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") e [gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") antes de iniciar.
 *   Se você decidir converter uma partição `/boot` separada, assegure-se que o [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") oferece inicialização do ext4.
 
 Nas etapas a seguir, `/dev/sdxX` denota o caminho para a partição a ser convertida, tal como `/dev/sda1`.

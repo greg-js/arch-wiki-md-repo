@@ -103,11 +103,11 @@ RequiredBy=multi-user.target
 
 [starting](/index.php/Start "Start") `reflector.service` will update the mirrorlist. To update the mirrorlist every time the computer boots, [enable](/index.php/Enable "Enable") the service.
 
-**Note:** In the above example, ensure the right [network-wait service](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) is enabled depending on your network configuration so that `network-online.target` reflects well your network status.
+**Note:** For more information on the implementation of the network dependency, see [Systemd#Running services after the network is up](/index.php/Systemd#Running_services_after_the_network_is_up "Systemd").
 
 ### Systemd timer
 
-If you want to run `reflector.service` on a weekly basis:
+If you want to run `reflector.service` on a weekly basis, create an associated *.timer*:
 
  `/etc/systemd/system/reflector.timer` 
 ```

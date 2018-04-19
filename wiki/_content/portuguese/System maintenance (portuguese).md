@@ -71,7 +71,7 @@ Os backups podem ser automatizados com [systemd/Timers](/index.php/Systemd/Timer
 
 ### Arquivos de configuração
 
-Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um sistema de controle de versão (VCS); veja [dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles") para mais.
+Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um sistema de controle de versão (VCS); veja [dotfiles (Português)#Controle de versão](/index.php/Dotfiles_(Portugu%C3%AAs)#Controle_de_vers.C3.A3o "Dotfiles (Português)") para mais.
 
 ### Lista de pacotes instalados
 

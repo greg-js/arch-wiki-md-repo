@@ -50,7 +50,7 @@ The columns have the following meaning:
 ### Active
 
 | Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Native pacman | Shell completion | Specificity |
-| [aurman](https://aur.archlinux.org/packages/aurman/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash | batch interaction, fetch pgp keys, sort by popularity, [deep search](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) |
+| [aurman](https://aur.archlinux.org/packages/aurman/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash, fish | batch interaction, fetch pgp keys, sort by popularity, [deep search](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | N/A | zsh | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support, sort by votes/popularity |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | Trust management, ABS support, extends Powerpill |
 | [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Yes | Yes [[1]](https://github.com/kitsunyan/pakku/commit/864cc0373fd6095295f68cc44d1657bd17269732) | Yes | Yes | Yes | Yes | Partial [[2]](https://github.com/kitsunyan/pakku/wiki/Pacman-Wrap-Explanation) | bash | AUR comments, batch interaction, fetch PGP keys |

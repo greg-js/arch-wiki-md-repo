@@ -143,18 +143,25 @@ The disadvantage is that UUIDs make long code lines hard to read and break forma
 
 ### by-id and by-path
 
-`by-id` creates a unique name depending on the hardware serial number, `by-path` depending on the shortest physical path (according to sysfs). Both contain strings to indicate which subsystem they belong to (i.e. `-ide-` for `by-path`, and `-ata-` for `by-id`), so they are linked to the hardware controlling the device. This implies different levels of persistence: the `by-path` will already change when the device is plugged into a different port of the controller, the `by-id` will change when the device is plugged into a port of a hardware controller subject to another subsystem. [[1]](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Online_Storage_Reconfiguration_Guide/persistent_naming.html) Thus, both are not suitable to achieve persistent naming tolerant to hardware changes.
+`by-id` creates a unique name depending on the hardware serial number, `by-path` depending on the shortest physical path (according to sysfs). Both contain strings to indicate which subsystem they belong to (i.e. `pci-` for `by-path`, and `ata-` for `by-id`), so they are linked to the hardware controlling the device. This implies different levels of persistence: the `by-path` will already change when the device is plugged into a different port of the controller, the `by-id` will change when the device is plugged into a port of a hardware controller subject to another subsystem. [[1]](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Online_Storage_Reconfiguration_Guide/persistent_naming.html) Thus, both are not suitable to achieve persistent naming tolerant to hardware changes.
 
 However, both provide important information to find a particular device in a large hardware infrastructure. For example, if you do not manually assign persistent labels (`by-label` or `by-partlabel`) and keep a directory with hardware port usage, `by-id` and `by-path` can be used to find a particular device.[[2]](http://linuxshellaccount.blogspot.in/2008/09/how-to-easily-find-wwns-of-qlogic-hba.html) [[3]](http://www.linuxquestions.org/questions/linux-server-73/how-to-find-wwn-for-dev-sdc-917269/)
+
+`by-id` also creates [World Wide Name](https://en.wikipedia.org/wiki/World_Wide_Name "wikipedia:World Wide Name") links of storage devices that support it. Unlike other `by-id` links, WWNs are fully persistent and will not change depending on the used subsystem.
 
  `$ ls -l /dev/disk/by-id/` 
 ```
 total 0
-lrwxrwxrwx 1 root root 10 May 27 23:31 ata-VBOX_HARDDISK_VBe4474842-dc40379f -> ../../sda
-lrwxrwxrwx 1 root root 10 May 27 23:31 ata-VBOX_HARDDISK_VBe4474842-dc40379f-part1 -> ../../sda1
-lrwxrwxrwx 1 root root 10 May 27 23:31 ata-VBOX_HARDDISK_VBe4474842-dc40379f-part2 -> ../../sda2
-lrwxrwxrwx 1 root root 10 May 27 23:31 ata-VBOX_HARDDISK_VBe4474842-dc40379f-part3 -> ../../sda3
-lrwxrwxrwx 1 root root 10 May 27 23:31 ata-VBOX_HARDDISK_VBe4474842-dc40379f-part4 -> ../../sda4
+lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470 -> ../../sda
+lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part3 -> ../../sda3
+lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part4 -> ../../sda4
+lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f -> ../../sda
+lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f-part3 -> ../../sda3
+lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f-part4 -> ../../sda4
 
 ```
  `$ ls -l /dev/disk/by-path/` 

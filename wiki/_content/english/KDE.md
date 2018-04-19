@@ -52,6 +52,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [4.2.1 Baloo](#Baloo)
             *   [4.2.1.1 Using and configuring Baloo](#Using_and_configuring_Baloo)
             *   [4.2.1.2 How do I index a removable device?](#How_do_I_index_a_removable_device.3F)
+            *   [4.2.1.3 How do I remove baloo_file](#How_do_I_remove_baloo_file)
     *   [4.3 Web browsers](#Web_browsers)
     *   [4.4 PIM](#PIM)
         *   [4.4.1 Akonadi](#Akonadi)
@@ -422,6 +423,15 @@ Once you added additional folders to the blacklist or disabled Baloo entirely, a
 ##### How do I index a removable device?
 
 By default every removable device is blacklisted. You just have to remove your device from the blacklist in the KCM panel.
+
+##### How do I remove baloo_file
+
+Baloo_file uses a lot of resources and slow down computers. It also increases power consumption on laptops. While it cannot be removed due to dependencies issues, it is however possible to deactivate it until the next update. As root, type
+
+```
+killall baloo_file ; mv /usr/bin/baloo_file /usr/bin/baloo_file.bak ; echo '#!/bin/sh' > /usr/bin/baloo_file
+
+```
 
 ### Web browsers
 

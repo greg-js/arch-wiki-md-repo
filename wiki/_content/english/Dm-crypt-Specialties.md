@@ -406,7 +406,7 @@ The following sections briefly show alternatives to overcome the limitation. The
 
 The management of multiple disks is a basic [LVM](/index.php/LVM "LVM") feature and a major reason for its partitioning flexibility. It can also be used with *dm-crypt*, but only if LVM is employed as the first mapper. In such a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup the encrypted devices are created inside the logical volumes (with a separate passphrase/key per volume). The following covers the steps to expand that setup to another disk.
 
-**Warning:** Backup! While resizing filesystems may be standard, keep in mind that operations **may** go wrong and the following might not apply to a particular setup. Generally, extending a filesystem to free disk space is less problematic than shrinking one. This in particular applies when stacked mappers are used, as it is the case in the following example.
+**Warning:** Back up! While resizing filesystems may be standard, keep in mind that operations **may** go wrong and the following might not apply to a particular setup. Generally, extending a filesystem to free disk space is less problematic than shrinking one. This in particular applies when stacked mappers are used, as it is the case in the following example.
 
 #### Adding a new drive
 
@@ -449,14 +449,14 @@ Finally, the filesystem itself is resized:
 
 ```
 
-Done! If it went to plan, `/home` can be remounted
+Done! If it went to plan, `/home` can be remounted and now includes the span to the new disk:
 
 ```
 # mount /dev/mapper/home /home
 
 ```
 
-and now includes the span to the new disk. Note that the `cryptsetup resize` action does not affect encryption keys, they have not changed.
+Note that the `cryptsetup resize` action does not affect encryption keys, and these have not changed.
 
 ### Modifying the encrypt hook for multiple partitions
 

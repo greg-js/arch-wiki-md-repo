@@ -14,7 +14,7 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
 
 *   [1 Setting up a bcache device on an existing system](#Setting_up_a_bcache_device_on_an_existing_system)
     *   [1.1 Bcache management](#Bcache_management)
-    *   [1.2 Bcache on top of another block layer](#Bcache_on_top_of_another_block_layer)
+    *   [1.2 Converting existing disks](#Converting_existing_disks)
         *   [1.2.1 Troubleshooting](#Troubleshooting)
 *   [2 Installation to a bcache device](#Installation_to_a_bcache_device)
 *   [3 Configuring](#Configuring)
@@ -137,7 +137,7 @@ In the above example, the *writethrough* mode is enabled.
 
 ```
 
-### Bcache on top of another block layer
+### Converting existing disks
 
 **Warning:**
 

@@ -181,11 +181,11 @@ shows how to encrypt a [Btrfs](/index.php/Btrfs "Btrfs") system, including the `
 
 While all above scenarios provide much greater protection from outside threats than encrypted secondary filesystems, they also share a common disadvantage: any user in possession of the encryption key is able to decrypt the entire drive, and therefore can access other users' data. If that is of concern, it is possible to use a combination of blockdevice and stacked filesystem encryption and reap the advantages of both. See [Disk encryption](/index.php/Disk_encryption "Disk encryption") to plan ahead.
 
-See [Dm-crypt/Drive preparation#Partitioning](/index.php/Dm-crypt/Drive_preparation#Partitioning "Dm-crypt/Drive preparation") for a general overview of the partitioning strategies used in the scenarios.
+See [dm-crypt/Drive preparation#Partitioning](/index.php/Dm-crypt/Drive_preparation#Partitioning "Dm-crypt/Drive preparation") for a general overview of the partitioning strategies used in the scenarios.
 
-Another area to consider is whether to set up an encrypted swap partition and what kind. See [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") for alternatives.
+Another area to consider is whether to set up an encrypted swap partition and what kind. See [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") for alternatives.
 
-If you anticipate to protect the system's data not only against physical theft, but also have a requirement of precautions against logical tampering, see [Dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") for further possibilities after following one of the scenarios.
+If you anticipate to protect the system's data not only against physical theft, but also have a requirement of precautions against logical tampering, see [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") for further possibilities after following one of the scenarios.
 
 **Warning:** In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
 
@@ -211,13 +211,13 @@ The first steps can be performed directly after booting the Arch Linux install i
 
 ### Preparing the disk
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
 Then create the needed partitions, at least one for `/` (e.g. `/dev/sda2`) and `/boot` (`/dev/sda1`). See [Partitioning](/index.php/Partitioning "Partitioning").
 
 ### Preparing non-boot partitions
 
-The following commands create and mount the encrypted root partition. They correspond to the procedure described in detail in [Dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (which, despite the title, *can* be applied to root partitions, as long as [mkinitcpio](#Configuring_mkinitcpio) and the [boot loader](#Configuring_the_boot_loader) are correctly configured). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
+The following commands create and mount the encrypted root partition. They correspond to the procedure described in detail in [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (which, despite the title, *can* be applied to root partitions, as long as [mkinitcpio](#Configuring_mkinitcpio) and the [boot loader](#Configuring_the_boot_loader) are correctly configured). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
 
 ```
 # cryptsetup -y -v luksFormat --type luks2 /dev/sda2
@@ -237,9 +237,9 @@ Check the mapping works as intended:
 
 ```
 
-If you created separate partitions (e.g. `/home`), these steps have to be adapted and repeated for all of them, *except* for `/boot`. See [Dm-crypt/Encrypting a non-root file system#Automated unlocking and mounting](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting "Dm-crypt/Encrypting a non-root file system") on how to handle additional partitions at boot.
+If you created separate partitions (e.g. `/home`), these steps have to be adapted and repeated for all of them, *except* for `/boot`. See [dm-crypt/Encrypting a non-root file system#Automated unlocking and mounting](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting "Dm-crypt/Encrypting a non-root file system") on how to handle additional partitions at boot.
 
-Note that each blockdevice requires its own passphrase. This may be inconvenient, because it results in a separate passphrase to be input during boot. An alternative is to use a keyfile stored in the system partition to unlock the separate partition via `crypttab`. See [Dm-crypt/Device encryption#Using LUKS to format partitions with a keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_format_partitions_with_a_keyfile "Dm-crypt/Device encryption") for instructions.
+Note that each blockdevice requires its own passphrase. This may be inconvenient, because it results in a separate passphrase to be input during boot. An alternative is to use a keyfile stored in the system partition to unlock the separate partition via `crypttab`. See [dm-crypt/Device encryption#Using LUKS to format partitions with a keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_format_partitions_with_a_keyfile "Dm-crypt/Device encryption") for instructions.
 
 ### Preparing the boot partition
 
@@ -290,7 +290,7 @@ rd.luks.name=*device-UUID*=cryptroot root=/dev/mapper/cryptroot
 
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
 The `*device-UUID*` refers to the UUID of `/dev/sda2`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
@@ -315,17 +315,17 @@ The disk layout in this example is:
 
 ```
 
-**Warning:** This method does not allow you to span the logical volumes over multiple disks easily; see [Dm-crypt/Specialties#Modifying the encrypt hook for multiple partitions](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
+**Warning:** While using the `encrypt` hook this method does not allow you to span the logical volumes over multiple disks; either use the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") or see [dm-crypt/Specialties#Modifying the encrypt hook for multiple partitions](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
 
 **Tip:** Three variants of this setup:
 
 *   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
 *   Instructions at [Pavel Kogan's blog](https://web.archive.org/web/20180103175714/http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
-*   Instructions at [Dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
+*   Instructions at [dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
 
 ### Preparing the disk
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
 When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 
@@ -456,7 +456,7 @@ rd.luks.name=*device-UUID*=cryptlvm root=/dev/mapper/MyVol-root
 
 The `*device-UUID*` refers to the UUID of `/dev/sda1`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
 ## LUKS on LVM
 
@@ -464,7 +464,9 @@ To use encryption on top of [LVM](/index.php/LVM "LVM"), the LVM volumes are set
 
 **Tip:** Unlike [#LVM on LUKS](#LVM_on_LUKS), this method allows normally spanning the logical volumes over multiple disks.
 
-The following short example creates a LUKS on LVM setup and mixes in the use of a key-file for the /home partition and temporary crypt volumes for `/tmp` and `/swap`. The latter is considered desirable from a security perspective, because no potentially sensitive temporary data survives the reboot, when the encryption is re-initialised. If you are experienced with LVM, you will be able to ignore/replace LVM and other specifics according to your plan. If you want to span a logical volume over multiple disks that are set up already, a procedure to do so is described in [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
+The following short example creates a LUKS on LVM setup and mixes in the use of a key-file for the /home partition and temporary crypt volumes for `/tmp` and `/swap`. The latter is considered desirable from a security perspective, because no potentially sensitive temporary data survives the reboot, when the encryption is re-initialised. If you are experienced with LVM, you will be able to ignore/replace LVM and other specifics according to your plan.
+
+If you want to span a logical volume over multiple disks that have already been set up, or expand the logical volume for `/home` (or any other volume), a procedure to do so is described in [dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties"). It is important to note that the LUKS encrypted container has to be resized as well.
 
 ### Preparing the disk
 
@@ -487,7 +489,7 @@ Partitioning scheme:
 
 ```
 
-Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on an empty disk or partition](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation").
+Randomise `/dev/sda2` according to [dm-crypt/Drive preparation#dm-crypt wipe on an empty disk or partition](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation").
 
 ### Preparing the logical volumes
 
@@ -509,7 +511,7 @@ Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on 
 
 ```
 
-More information about the encryption options can be found in [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note that `/home` will be encrypted in [#Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome).
+More information about the encryption options can be found in [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note that `/home` will be encrypted in [#Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome).
 
 **Tip:** If you ever have to access the encrypted root from the Arch-ISO, the above `open` action will allow you to after the [LVM shows up](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
 
@@ -532,6 +534,13 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 ```
 
+Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+
+```
+HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
+
+```
+
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
 ### Configuring the boot loader
@@ -543,7 +552,16 @@ cryptdevice=/dev/mapper/MyVol-cryptroot:root root=/dev/mapper/root
 
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
+For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be set by the boot loader instead:
+
+```
+rd.luks.name=*device-UUID*=root root=/dev/mapper/root
+
+```
+
+The `*device-UUID*` refers to the UUID of `/dev/mapper/MyVol-cryptroot`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
 ### Configuring fstab and crypttab
 
@@ -554,8 +572,6 @@ Both [crypttab](/index.php/Crypttab "Crypttab") and [fstab](/index.php/Fstab "Fs
 swap	/dev/mapper/MyVol-cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
 tmp	/dev/mapper/MyVol-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
 ```
-
-**Note:** The decrypted partition is mapped to the encrypted device.
  `/etc/fstab` 
 ```
 /dev/mapper/root        /       ext4            defaults        0       1
@@ -592,15 +608,11 @@ The encrypted mount is configured in both [crypttab](/index.php/Crypttab "Cryptt
 home	/dev/mapper/MyVol-crypthome   /etc/luks-keys/home
 
 ```
-
-**Note:** The decrypted partition is mapped to the encrypted device.
  `/etc/fstab` 
 ```
 /dev/mapper/home        /home   ext4        defaults        0       2
 
 ```
-
-If you want to expand the logical volume for `/home` (or any other volume) at a later point, it is important to note that the LUKS encrypted part has to be resized as well. For steps on how to do this, see [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
 ## LUKS on software RAID
 
@@ -625,7 +637,7 @@ Be sure to substitute them with the appropriate device designations for your set
 
 ### Preparing the disks
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
 When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition"). For this setup, this includes a 1 MiB partition for BIOS/GPT boot at `/dev/sda1` and the remaining space on the drive being partitioned for "Linux RAID" at `/dev/sda2`.
 
@@ -650,7 +662,7 @@ Create the RAID array for the SSDs. This example utilizes RAID0, you may wish to
 
 ### Preparing the block devices
 
-As explained in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"), the devices are wiped with random data utilizing `/dev/zero` and a crypt device with a random key. Alternatively, you could use `dd` with `/dev/random` or `/dev/urandom`, though it will be much slower.
+As explained in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"), the devices are wiped with random data utilizing `/dev/zero` and a crypt device with a random key. Alternatively, you could use `dd` with `/dev/random` or `/dev/urandom`, though it will be much slower.
 
 ```
 # cryptsetup open --type plain /dev/md0 container --key-file /dev/random
@@ -692,7 +704,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details.
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details.
 
 Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda` will work).
 
@@ -743,7 +755,7 @@ Contrary to LUKS, dm-crypt *plain* mode does not require a header on the encrypt
 
 Note that if full-disk encryption is not required, the methods using LUKS described in the sections above are better options for both system encryption and encrypted partitions. LUKS features like key management with multiple passphrases/key-files or re-encrypting a device in-place are unavailable with *plain* mode.
 
-*Plain* dm-crypt encryption can be more resilient to damage than LUKS, because it does not rely on an encryption master-key which can be a single-point of failure if damaged. However, using *plain* mode also requires more manual configuration of encryption options to achieve the same cryptographic strength. See also [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Using *plain* mode could also be considered if concerned with the problems explained in [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties").
+*Plain* dm-crypt encryption can be more resilient to damage than LUKS, because it does not rely on an encryption master-key which can be a single-point of failure if damaged. However, using *plain* mode also requires more manual configuration of encryption options to achieve the same cryptographic strength. See also [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Using *plain* mode could also be considered if concerned with the problems explained in [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties").
 
 **Tip:** If headerless encryption is your goal but you are unsure about the lack of key-derivation with *plain* mode, then two alternatives are:
 
@@ -753,7 +765,7 @@ Note that if full-disk encryption is not required, the methods using LUKS descri
 The scenario uses two USB sticks:
 
 *   one for the boot device, which also allows storing the options required to open/unlock the plain encrypted device in the boot loader configuration, since typing them on each boot would be error prone;
-*   another for the encryption key file, assuming it stored as raw bits so that to the eyes of an unaware attacker who might get the usbkey the encryption key will appear as random data instead of being visible as a normal file. See also [Wikipedia:Security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"), follow [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to prepare the keyfile.
+*   another for the encryption key file, assuming it stored as raw bits so that to the eyes of an unaware attacker who might get the usbkey the encryption key will appear as random data instead of being visible as a normal file. See also [Wikipedia:Security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"), follow [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to prepare the keyfile.
 
 The disk layout is:
 
@@ -779,11 +791,11 @@ The disk layout is:
 
 It is vital that the mapped device is filled with data. In particular this applies to the scenario use case we apply here.
 
-See [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") and [Dm-crypt/Drive preparation#dm-crypt specific methods](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation")
+See [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") and [dm-crypt/Drive preparation#dm-crypt specific methods](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation")
 
 ### Preparing the non-boot partitions
 
-See [Dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") for details.
+See [dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") for details.
 
 Using the device `/dev/sda`, with the twofish-xts cipher with a 512 bit key size and using a keyfile we have the following options for this scenario:
 
@@ -860,7 +872,7 @@ cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*
 
 The `*disk-ID-of-**disk***` refers to the id of the referenced disk. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
 
 **Tip:** If using GRUB, you can install it on the same USB as the `/boot` partition with:
 ```
@@ -912,7 +924,7 @@ The disk layout in this example is:
 
 ### Preparing the disk
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
 For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with size of 1 MiB for GRUB to store the second stage of BIOS bootloader. Do not mount the partition.
 
@@ -954,7 +966,7 @@ The decrypted container is now available at `/dev/mapper/cryptlvm`.
 
 ### Preparing the logical volumes
 
-The LVM logical volumes of this example follow the exact layout as the previous scenario. Therefore, please follow [Preparing the logical volumes](#Preparing_the_logical_volumes) above or adjust as required.
+The LVM logical volumes of this example follow the exact layout as the [#LVM on LUKS](#LVM_on_LUKS) scenario. Therefore, please follow [#Preparing the logical volumes](#Preparing_the_logical_volumes) above and adjust as required.
 
 ### Preparing the boot partition
 
@@ -1009,17 +1021,17 @@ At this point, you should have the following partitions and logical volumes insi
 
  `$ lsblk` 
 ```
-NAME              	  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
-sda                       8:0      0   200G  0 disk
-├─sda1                    8:1      0     1M  0 part
-├─sda2                    8:2      0   550M  0 part  /boot/efi
-├─sda3                    8:3      0   200M  0 part
-│ └─boot		  254:0    0   198M  0 crypt /boot
-└─sda4                    8:4      0   100G  0 part
-  └─lvm                   254:1    0   100G  0 crypt
-    ├─MyStorage-swapvol   254:2    0     8G  0 lvm   [SWAP]
-    ├─MyStorage-rootvol   254:3    0    15G  0 lvm   /
-    └─MyStorage-homevol   254:4    0    77G  0 lvm   /home
+NAME             MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda              8:0      0   200G  0 disk
+├─sda1           8:1      0     1M  0 part
+├─sda2           8:2      0   550M  0 part  /boot/efi
+├─sda3           8:3      0   200M  0 part
+│ └─cryptboot    254:0    0   198M  0 crypt /boot
+└─sda4           8:4      0   100G  0 part
+  └─cryptlvm     254:1    0   100G  0 crypt
+    ├─MyVol-swap 254:2    0     8G  0 lvm   [SWAP]
+    ├─MyVol-root 254:3    0    32G  0 lvm   /
+    └─MyVol-home 254:4    0    60G  0 lvm   /home
 
 ```
 
@@ -1059,7 +1071,7 @@ GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda4` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda4` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file:
 
@@ -1098,7 +1110,7 @@ cryptboot  /dev/sda3      none        luks
 
 ```
 
-will make the system ask for the passphrase again (i.e. you have to enter it twice at boot: once for GRUB and once for systemd init). To avoid the double entry for unlocking `/boot`, follow the instructions at [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to:
+will make the system ask for the passphrase again (i.e. you have to enter it twice at boot: once for GRUB and once for systemd init). To avoid the double entry for unlocking `/boot`, follow the instructions at [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to:
 
 1.  Create a [randomtext keyfile](/index.php/Dm-crypt/Device_encryption#Storing_the_keyfile_on_a_filesystem "Dm-crypt/Device encryption"),
 2.  Add the keyfile to the (`/dev/sda3`) [boot partition's LUKS header](/index.php/Dm-crypt/Device_encryption#Configuring_LUKS_to_make_use_of_the_keyfile "Dm-crypt/Device encryption") and
@@ -1138,7 +1150,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 
 **Note:** It is not possible to use btrfs partitioning as described in [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") when using LUKS. Traditional partitioning must be used, even if it is just to create one partition.
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
 
 Create the needed partitions, at least one for `/` (e.g. `/dev/sda2`). See the [Partitioning](/index.php/Partitioning "Partitioning") article.
 
@@ -1146,11 +1158,11 @@ Create the needed partitions, at least one for `/` (e.g. `/dev/sda2`). See the [
 
 #### Create LUKS container
 
-Follow [dm-crypt/Device encryption#Encrypting devices with LUKS mode](/index.php/Dm-crypt/Device_encryption#Encrypting_devices_with_LUKS_mode "Dm-crypt/Device encryption") to setup `/dev/sda2` for LUKS. See the [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before doing so for a list of encryption options.
+Follow [dm-crypt/Device encryption#Encrypting devices with LUKS mode](/index.php/Dm-crypt/Device_encryption#Encrypting_devices_with_LUKS_mode "Dm-crypt/Device encryption") to setup `/dev/sda2` for LUKS. See the [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before doing so for a list of encryption options.
 
 #### Unlock LUKS container
 
-Now follow [Dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") to unlock the LUKS container and map it.
+Now follow [dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") to unlock the LUKS container and map it.
 
 #### Format mapped device
 
@@ -1238,11 +1250,11 @@ At the [pacstrap](/index.php/Installation_guide#Install_the_base_packages "Insta
 
 #### Create keyfile
 
-In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile embedded in the initramfs. Follow [Dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") making sure to add the key to `/dev/sda2` at the *luksAddKey* step.
+In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile embedded in the initramfs. Follow [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") making sure to add the key to `/dev/sda2` at the *luksAddKey* step.
 
 #### Edit mkinitcpio.conf
 
-After creating, adding, and embedding the key as described above, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") as well as any other hooks you require. See [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information.
+After creating, adding, and embedding the key as described above, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") as well as any other hooks you require. See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information.
 
 **Tip:** You may want to add `BINARIES=(/usr/bin/btrfs)` to your `mkinitcpio.conf`. See the [Btrfs#Corruption recovery](/index.php/Btrfs#Corruption_recovery "Btrfs") article.
 
@@ -1252,4 +1264,4 @@ Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/g
 
 ### Configuring swap
 
-If you created a partition to be used for encrypted swap, now is the time to configure it. Follow the instructions at [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+If you created a partition to be used for encrypted swap, now is the time to configure it. Follow the instructions at [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").

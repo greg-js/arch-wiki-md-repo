@@ -67,7 +67,7 @@ Hello world!
 
 ## Development
 
-Starting to develop in Mono/C# is very easy. Just [install](/index.php/Install "Install") the [MonoDevelop IDE](http://monodevelop.com/) with package [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/). Alternatively, you can install the [rider](https://aur.archlinux.org/packages/rider/) IDE.
+Starting to develop in Mono/C# is very easy. Just [install](/index.php/Install "Install") the [MonoDevelop IDE](http://monodevelop.com/) with package [monodevelop-stable](https://aur.archlinux.org/packages/monodevelop-stable/) or [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/). Alternatively, you can install the [rider](https://aur.archlinux.org/packages/rider/) IDE.
 
 If you want the API documentation browser and some testing and development tools you have to install [mono-tools](https://www.archlinux.org/packages/?name=mono-tools).
 
