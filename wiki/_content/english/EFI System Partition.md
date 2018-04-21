@@ -48,7 +48,7 @@ EFI System Partition on GPT is identified by the [partition type GUID](https://e
 
 *   [fdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type `EFI System`.
 *   [gdisk](/index.php/Gdisk "Gdisk"): Create a partition with partition type `EF00`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with FAT32 as the file system type and set/activate the `esp` flag on that partition.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with `fat32` as the file system type and set/activate the `esp` flag on it.
 
 Proceed to [#Format the partition](#Format_the_partition) section below.
 
@@ -59,7 +59,7 @@ EFI System Partition on MBR is identified by the [partition type ID](https://en.
 **Choose one** of the following methods to create an ESP for a MBR partitioned disk:
 
 *   [fdisk](/index.php/Fdisk "Fdisk"): Create a primary partition with partition type `EFI (FAT-12/16/32)`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with FAT32 as the file system type and set/activate the `esp` flag on that partition.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with `fat32` as the file system type and set/activate the `esp` flag on it.
 
 Proceed to [#Format the partition](#Format_the_partition) section below.
 

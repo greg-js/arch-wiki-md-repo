@@ -92,7 +92,7 @@ If the last rule did not accept the traffic (e.g. no connection attempt in 30 se
 
 ```
 
-Now that the end of the sequence has been handled first, the following rules now do the checking of the port sequence. For each of the ports to knock one rule checks for the correct port in sequence. If the sequence is met, a jump occurs to where the IP is added to the list for the next knock in sequence. If no jump to `SSH-INPUT` or `SSH-INPUTTWO` occured, it can only mean that the wrong port was knocked or (more likely) that it is some other traffic. Hence, the second rule removes the IP from the list and drops the traffic, same as the rule for `SSH2` before.
+Now that the end of the sequence has been handled first, the following rules do the checking of the port sequence. For each of the ports to knock, one rule checks for the correct port in sequence. If the sequence is met, a jump occurs to where the IP is added to the list for the next knock in sequence. If no jump to `SSH-INPUT` or `SSH-INPUTTWO` occured, it can only mean that the wrong port was knocked or (more likely) that it is some other traffic. Hence, the second rule removes the IP from the list and drops the traffic, same as the rule for `SSH2` before.
 
 ```
 -A TRAFFIC -m state --state NEW -m tcp -p tcp --dport 9991 -m recent --rcheck --name SSH1 -j SSH-INPUTTWO

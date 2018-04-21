@@ -2,222 +2,143 @@ Related articles
 
 *   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
 
-[Cozy](https://cozy.io) is a personal cloud platform free, and self-hostable, written in [Node.js](/index.php/Node.js "Node.js") (the future version, v3, will be written in [Go](/index.php/Go "Go") instead).
+[Cozy](https://cozy.io) is a personal cloud platform free, and self-hostable, written in [Go](/index.php/Go "Go") (the former version, v2, was written in [Node.js](/index.php/Node.js "Node.js") instead).
 
-The platform aims at simplifying the use of a personal cloud and at allowing the users to take back ownership of their privacy. Its base applications' features include hosting, sharing and synchronising files, pictures, contacts and calendars, along with an email client.
+The platform aims at simplifying the use of a personal cloud and at allowing the users to take back ownership of their privacy. Its base applications’ features include hosting, sharing and synchronising files & pictures and collecting your data from several providers. Some other apps are on the roadmap, like a contacts manager and a calendar.
 
-Third-party apps are available through a marketplace and can be used to extend Cozy's default features, with task management, blog hosting, bank account overview, etc.
+Third-party apps will also be available through a marketplace soon.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Pre-configuration](#Pre-configuration)
-    *   [1.2 Configuring CouchDB](#Configuring_CouchDB)
-    *   [1.3 Starting the controller](#Starting_the_controller)
-    *   [1.4 Installing the Cozy stack](#Installing_the_Cozy_stack)
-    *   [1.5 Configuring](#Configuring)
-        *   [1.5.1 Configuring the domain](#Configuring_the_domain)
-        *   [1.5.2 Configuring the background](#Configuring_the_background)
-*   [2 Reverse proxying](#Reverse_proxying)
-    *   [2.1 Apache](#Apache)
-    *   [2.2 nginx](#nginx)
-    *   [2.3 Caddy](#Caddy)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Upgrading to CouchDB 2.x from an existing install](#Upgrading_to_CouchDB_2.x_from_an_existing_install)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Configuring CouchDB](#Configuring_CouchDB)
+    *   [2.2 Configuring Cozy admin password](#Configuring_Cozy_admin_password)
+    *   [2.3 Starting the stack](#Starting_the_stack)
+*   [3 Creating an instance](#Creating_an_instance)
+    *   [3.1 Reverse proxying](#Reverse_proxying)
+        *   [3.1.1 nginx](#nginx)
 
 ## Installation
 
-Just install the [cozy](https://aur.archlinux.org/packages/cozy/) package. It provides the core (cozy-controller and cozy-monitor) plus related configuration files, as well as the required dependencies.
+Install the [cozy-stack](https://www.archlinux.org/packages/?name=cozy-stack) package. It provides the core plus related configuration files, as well as the minimum required dependencies.
 
-**Note:** This will install Node.js version 4.x provided by [nodejs-lts-argon](https://www.archlinux.org/packages/?name=nodejs-lts-argon). While Cozy **may** totally work with newer versions (e.g. 6.x, 8.x), they are not officially supported, as Cozy officially supports only Node.js v4.x. If you still want to use the Node.js version currently in Archlinux's official repository, you will need to change the dependency in the PKGBUILD.
+You might also want to install [nsjail](https://www.archlinux.org/packages/?name=nsjail) to run Konnectors in isolated environments, as well as an SMTP server to let Cozy send emails to your users.
 
-### Pre-configuration
+## Configuration
 
-You will need to add two users accounts manually:
-
-```
-# useradd -MU cozy-data-system
-# useradd -MU cozy-home
-
-```
+Almost everything happens in `/etc/cozy/cozy.yml`. Some defaults are already set, while some placeholders will be replaced during configuration. You can also find an example file at `/usr/share/cozy/cozy.example.yaml`.
 
 ### Configuring CouchDB
 
-We will now configure the database. Cozy stores almost everything in a [CouchDB](/index.php/CouchDB "CouchDB") database, and needs a CouchDB administrator to manage this database. This administrator’s credentials must be specified as part of the `couchdb url` setting in `/etc/cozy/cozy.yml` so that Cozy can use them. This suppose you have a running [CouchDB](/index.php/CouchDB "CouchDB") instance, you can follow the corresponding wiki page to setup one in single node mode.
+Cozy stores everything (but actual files) in a [CouchDB](/index.php/CouchDB "CouchDB") database, and needs a CouchDB administrator to manage this database. This administrator’s credentials must be specified as part of the `couchdb url` setting in `/etc/cozy/cozy.yml` so that Cozy can use them. The following supposes you have a running [CouchDB](/index.php/CouchDB "CouchDB") instance, if not you can follow the corresponding wiki page to setup one as single node.
 
 You can generate the credentials with [pwgen](https://www.archlinux.org/packages/?name=pwgen) for example. Once you have them (`couch_user` and `couch_password`), edit your configuration as follow:
 
  `/etc/cozy/cozy.yaml` 
 ```
 couchdb:
-  url: http://<couch_user>:<couch_password>@127.0.0.1/
+  url: http://<couch_user>:<couch_password>@localhost:5984/
 ```
 
 And register them to CouchDB (replace `<couchdb_admin>` and `<couchdb_password>` with your CouchDB admin credentials):
 
 ```
-# curl -X PUT <couchdb_admin>:<couchdb_password>@127.0.0.1:5984/_node/couchdb@localhost/_config/admins/<couch_user> -d "\"<couch_password>\""
+$ curl -X PUT http://<couchdb_admin>:<couchdb_password>@127.0.0.1:5984/_node/couchdb@localhost/_config/admins/<couch_user> -d "\"<couch_password>\""
 
 ```
 
-### Starting the controller
+### Configuring Cozy admin password
 
-Cozy needs its controller (cozy-controller) up and running in order to work. As it is supposed to run as a background task, it is better to run it in systemd. The service file is provided by the package, and has couchdb in its dependencies so that starting/enabling cozy-controller.service is enough.
-
-### Installing the Cozy stack
-
-You can now use cozy-monitor to install and start each component of Cozy's base stack:
+Cozy itself requires an admin password for all operations at the stack level. Create it like this:
 
 ```
-# cozy-monitor install-cozy-stack
+# cozy-stack config passwd /etc/cozy/cozy-admin-passphrase
 
 ```
 
-### Configuring
-
-Cozy will now need some basic configuration, in order to know the homepage's background and on which domain it will be accessed by the user.
-
-#### Configuring the domain
+You will be prompted to enter a passphrase. Then fix the ownership:
 
 ```
-# coffee /var/lib/cozy/apps/home/commands.coffee setdomain <your domain>
+# chown cozy:cozy /etc/cozy/cozy-admin-passphrase
 
 ```
 
-**Note:** Because of the way it works, it is recommended to use a whole domain (or sub-domain) for Cozy, such as `cozy.example.tld`.
+### Starting the stack
 
-#### Configuring the background
+At this point, you should [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `cozy-stack.service` daemon.
+
+You can check everything is right by running:
 
 ```
-# curl -X POST [http://localhost:9103/api/instance](http://localhost:9103/api/instance) -H "Content-Type: application/json" -d '{"background":"background-07"}'
+$ curl [http://localhost:8080/version](http://localhost:8080/version)
 
 ```
 
-**Note:** This setting can be changed at any time in the "Settings" page in the Cozy instance.
+## Creating an instance
 
-## Reverse proxying
+To add an instance (you will be prompted for your Cozy admin password, you might also pass it using COZY_ADMIN_PASSWORD env var):
+
+```
+$ cozy-stack instances add <instance>.example.tld --apps onboarding,settings,drive,photos,collect
+
+```
+
+This will output you a registration token. You can also specify an email using `--email <address>` at which the registration token will be sent.
+
+You will then need to visit `https://<instance>.example.tld/?registrationToken=<token>`, which requires you to have setup a reverse proxy (see below).
+
+### Reverse proxying
 
 As a security measure, Cozy needs to be served over HTTPS, which means it needs a reverse proxy in front of it. This can managed by either a proxying software like [HAproxy](/index.php/HAproxy "HAproxy") or a webserver such as [Apache](/index.php/Apache "Apache"), [nginx](/index.php/Nginx "Nginx") or [Caddy](https://caddyserver.com/).
 
-You will also need SSL certificates, either self-signed or provided by a trusted authority.
+Cozy needs a full domain name for the instance (something like `<instance>.example.tld`) and use one domain name per application, in the form of `<app>.<instance>.example.tld`.
 
-Below are example configuration files for some common web servers.
+Thus, you have to setup your domain zone with something like this:
 
-### Apache
-
- `**/etc/httpd/conf/extra/cozy.conf**` 
 ```
-<IfModule mod_ssl.c>
- <VirtualHost *:443>
-        ServerName      cozy.example.tld
-        ServerAdmin     admin@server
+   <instance> 1h IN A x.x.x.x
+   *.<instance> 1h IN CNAME <instance>
 
-        SSLEngine               On
-        SSLCertificateFile      /etc/cozy/server.crt
-        SSLCertificateKeyFile   /etc/cozy/server.key
-
-        RewriteEngine           On
-        RewriteCond             %{REQUEST_URI} ^/.*socket\.io [NC]
-        RewriteCond             %{THE_REQUEST} websocket [NC]
-        RewriteRule             /(.*)           ws://127.0.0.1:9104/$1 [P,L]
-
-        ProxyPass               / [http://127.0.0.1:9104/](http://127.0.0.1:9104/) retry=0 Keepalive=On timeout=1600
-        ProxyPassReverse        / [http://127.0.0.1:9104/](http://127.0.0.1:9104/)
-        setenv proxy-initial-not-pooled 1
-
-        CustomLog               /var/log/apache2/cozy-access.log "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
-        ErrorLog                /var/log/apache2/cozy-error.log
-
- </VirtualHost>
-
- <VirtualHost *:80>
-        ServerName      cozy.example.tld
-        ServerAdmin     admin@server
-
-	Redirect permanent / [https://cozy.example.tld/](https://cozy.example.tld/)
-
- </VirtualHost>
-</IfModule>
 ```
 
-### nginx
+You will also need SSL certificates, either a wildcard one covering `*.<instance>.example.tld` and `<instance>.example.tld` or a certificate for `<instance>.example.tld` with apps domains added as SAN. Currently, the list of apps is: onboarding,settings,drive,photos,collect. But this will grow over time, so you will have to expand your certificate regularly. Thus, getting a wildcard one is advised.
 
- `**/etc/nginx/cozy.conf**` 
+Below is an example configuration file for nginx.
+
+#### nginx
+
+ `**/etc/nginx/sites-available/<instance>.conf**` 
 ```
-server {
-    listen 443;
-
-    server_name cozy.example.tld;
-
-    ssl_certificate /etc/cozy/server.crt;
-    ssl_certificate_key /etc/cozy/server.key;
-    ssl_dhparam /etc/cozy/dh.pem;
-    ssl_session_cache shared:SSL:10m;
-    ssl_session_timeout 10m;
-    ssl_prefer_server_ciphers on;
-    ssl on;
-
-    gzip_vary on;
-    client_max_body_size 1024M;
-
-    add_header Strict-Transport-Security max-age=2678400;
-
-    location / {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_redirect http:// https://;
-        proxy_pass [http://127.0.0.1:9104](http://127.0.0.1:9104);
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-    }
-
-    access_log /var/log/nginx/cozy.log;
-}
-
 # Always redirect http:// to https://
 server {
     listen 80;
-    server_name cozy.example.tld;
+    server_name .<instance>.example.tld <instance>.example.tld;
 
     return 301 [https://$host$request_uri](https://$host$request_uri);
 }
-```
 
-**Note:** Do not forget to include `/etc/nginx/cozy.conf` in `/etc/nginx/nginx.conf`!
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name .<instance>.example.tld <instance>.example.tld; 
 
-### Caddy
+    ssl_certificate /etc/cozy/<instance>.crt;
+    ssl_certificate_key /etc/cozy/<instance>.key;
 
- `**/etc/caddy/Caddyfile**` 
-```
-cozy.example.tld {
-    tls admin@server
-    proxy / 127.0.0.1:9104 {
-        transparent
-        websocket
+    location / {
+        proxy_pass [http://127.0.0.1:8080](http://127.0.0.1:8080);
+        proxy_http_version 1.1;
+        proxy_redirect http:// https://;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
     }
+
+    access_log /var/log/nginx/<instance>.log;
+    error_log /var/log/nginx/<instance>.error.log;
 }
 ```
 
-## Troubleshooting
-
-### Upgrading to CouchDB 2.x from an existing install
-
-If you are updating CouchDB from version 1.x to version 2.x, Cozy may not be able to run because of CouchDB's sharding (which is not supported by Cozy yet). This updates changes the default database directory, making Cozy's database not found by CouchDB. Here is the path to follow to make Cozy work again.
-
-*   Stop the `couchdb` service. Backup `/var/lib/couchdb/cozy.couch` somewhere else and remove everything under `/var/lib/couchdb` (don’t do this if you happen to use couchdb for anything else than Cozy! In that case, you probably need to check carefully what’s in there, and find the appropriate migration process for every database).
-
-*   Edit `/etc/couchdb/local.ini` and add the following:
-
- `**/etc/couchdb/local.ini**` 
-```
-[cluster]
-q=1
-n=1
-```
-
-*   Start the `couchdb` service. At this point, you should have files under `/var/lib/couchdb` again, and especially `/var/lib/couchdb/shards/00000000-ffffffff/cozy.<unix time of creation>.couch`.
-
-*   Stop the `couchdb` service again, copy (don’t move, rather be safe) your backuped `cozy.couch` to `/var/lib/couchdb/shards/00000000-ffffffff/cozy.<unix time of creation>.couch`.
-
-*   Start the `couchdb` service. Now, everything should be working.
+**Note:** Do not forget to symlink `/etc/nginx/sites-available/<instance>.conf` in `/etc/nginx/sites-enabled`!

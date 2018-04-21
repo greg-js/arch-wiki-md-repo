@@ -187,6 +187,8 @@ Another area to consider is whether to set up an encrypted swap partition and wh
 
 If you anticipate to protect the system's data not only against physical theft, but also have a requirement of precautions against logical tampering, see [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") for further possibilities after following one of the scenarios.
 
+For [Solid State Drives](/index.php/Solid_State_Drive "Solid State Drive") you might want to consider enabling TRIM support, but be warned, there are potential security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
+
 **Warning:** In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
 
 ## Simple partition layout with LUKS
@@ -265,7 +267,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 ```
 
-Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** filesystems fsck)
@@ -283,7 +285,7 @@ cryptdevice=UUID=*device-UUID*:cryptroot root=/dev/mapper/cryptroot
 
 ```
 
-For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be set by the boot loader instead:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
 
 ```
 rd.luks.name=*device-UUID*=cryptroot root=/dev/mapper/cryptroot
@@ -301,17 +303,17 @@ The straight-forward method is to set up [LVM](/index.php/LVM "LVM") on top of t
 The disk layout in this example is:
 
 ```
-+--------------------------------------------------------------------------+ +----------------+
-| Logical volume 1       | Logical volume 2       | Logical volume 3       | | Boot partition |
-|                        |                        |                        | |                |
-| [SWAP]                 | /                      | /home                  | | /boot          |
-|                        |                        |                        | |                |
-| /dev/mapper/MyVol-swap | /dev/mapper/MyVol-root | /dev/mapper/MyVol-home | |                |
-|_ _ _ _ _ __ _ _ _ _ _ _|__ _ _ _ _ _ _ _ _ _ _ _|__ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
-|                                                                          | | other device)  |
-|                         LUKS encrypted partition                         | |                |
-|                           /dev/sda1                                      | | /dev/sdb1      |
-+--------------------------------------------------------------------------+ +----------------+
++-----------------------------------------------------------------------------------------+ +----------------+
+| Logical volume 1            | Logical volume 2            | Logical volume 3            | | Boot partition |
+|                             |                             |                             | |                |
+| [SWAP]                      | /                           | /home                       | | /boot          |
+|                             |                             |                             | |                |
+| /dev/mapper/MyVolGroup-swap | /dev/mapper/MyVolGroup-root | /dev/mapper/MyVolGroup-home | |                |
+|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
+|                                                                                         | | other device)  |
+|                         LUKS encrypted partition                                        | |                |
+|                           /dev/sda1                                                     | | /dev/sdb1      |
++-----------------------------------------------------------------------------------------+ +----------------+
 
 ```
 
@@ -360,38 +362,38 @@ Create a physical volume on top of the opened LUKS container:
 
 ```
 
-Create the volume group named `MyVol` (or whatever you want), adding the previously created physical volume to it:
+Create the volume group named `MyVolGroup` (or whatever you want), adding the previously created physical volume to it:
 
 ```
-# vgcreate MyVol /dev/mapper/cryptlvm
+# vgcreate MyVolGroup /dev/mapper/cryptlvm
 
 ```
 
 Create all your logical volumes on the volume group:
 
 ```
-# lvcreate -L 8G MyVol -n swap
-# lvcreate -L 32G MyVol -n root
-# lvcreate -l 100%FREE MyVol -n home
+# lvcreate -L 8G MyVolGroup -n swap
+# lvcreate -L 32G MyVolGroup -n root
+# lvcreate -l 100%FREE MyVolGroup -n home
 
 ```
 
 Format your filesystems on each logical volume:
 
 ```
-# mkfs.ext4 /dev/mapper/MyVol-root
-# mkfs.ext4 /dev/mapper/MyVol-home
-# mkswap /dev/mapper/MyVol-swap
+# mkfs.ext4 /dev/mapper/MyVolGroup-root
+# mkfs.ext4 /dev/mapper/MyVolGroup-home
+# mkswap /dev/mapper/MyVolGroup-swap
 
 ```
 
 Mount your filesystems:
 
 ```
-# mount /dev/mapper/MyVol-root /mnt
+# mount /dev/mapper/MyVolGroup-root /mnt
 # mkdir /mnt/home
-# mount /dev/mapper/MyVol-home /mnt/home
-# swapon /dev/mapper/MyVol-swap
+# mount /dev/mapper/MyVolGroup-home /mnt/home
+# swapon /dev/mapper/MyVolGroup-swap
 
 ```
 
@@ -429,7 +431,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 ```
 
-Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
@@ -443,14 +445,14 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameter needs to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*device-UUID*:cryptlvm root=/dev/mapper/MyVol-root
+cryptdevice=UUID=*device-UUID*:cryptlvm root=/dev/mapper/MyVolGroup-root
 
 ```
 
-For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be set by the boot loader instead:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
 
 ```
-rd.luks.name=*device-UUID*=cryptlvm root=/dev/mapper/MyVol-root
+rd.luks.name=*device-UUID*=cryptlvm root=/dev/mapper/MyVolGroup-root
 
 ```
 
@@ -473,19 +475,19 @@ If you want to span a logical volume over multiple disks that have already been 
 Partitioning scheme:
 
 ```
-+----------------+---------------------------------------------------------------------------------------------+
-| Boot partition | dm-crypt plain encrypted volume | LUKS encrypted volume       | LUKS encrypted volume       |
-|                |                                 |                             |                             |
-| /boot          | [SWAP]                          | /                           | /home                       |
-|                |                                 |                             |                             |
-|                | /dev/mapper/swap                | /dev/mapper/root            | /dev/mapper/home            |
-|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
-|                | Logical volume 1                | Logical volume 2            | Logical volume 3            |
-|                | /dev/mapper/MyVol-cryptswap     | /dev/mapper/MyVol-cryptroot | /dev/mapper/MyVol-crypthome |
-|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
-|                |                                                                                             |
-|   /dev/sda1    |                                   /dev/sda2                                                 |
-+----------------+---------------------------------------------------------------------------------------------+
++----------------+-------------------------------------------------------------------------------------------------------------+
+| Boot partition | dm-crypt plain encrypted volume     | LUKS encrypted volume             | LUKS encrypted volume             |
+|                |                                     |                                   |                                   |
+| /boot          | [SWAP]                              | /                                 | /home                             |
+|                |                                     |                                   |                                   |
+|                | /dev/mapper/swap                    | /dev/mapper/root                  | /dev/mapper/home                  |
+|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+|                | Logical volume 1                    | Logical volume 2                  | Logical volume 3                  |
+|                | /dev/mapper/MyVolGroup-cryptswap    | /dev/mapper/MyVolGroup-cryptroot  | /dev/mapper/MyVolGroup-crypthome  |
+|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+|                |                                                                                                             |
+|   /dev/sda1    |                                   /dev/sda2                                                                 |
++----------------+-------------------------------------------------------------------------------------------------------------+
 
 ```
 
@@ -495,17 +497,17 @@ Randomise `/dev/sda2` according to [dm-crypt/Drive preparation#dm-crypt wipe on 
 
 ```
 # pvcreate /dev/sda2
-# vgcreate MyVol /dev/sda2
-# lvcreate -L 32G -n cryptroot MyVol
-# lvcreate -L 500M -n cryptswap MyVol
-# lvcreate -L 500M -n crypttmp MyVol
-# lvcreate -l 100%FREE -n crypthome MyVol
+# vgcreate MyVolGroup /dev/sda2
+# lvcreate -L 32G -n cryptroot MyVolGroup
+# lvcreate -L 500M -n cryptswap MyVolGroup
+# lvcreate -L 500M -n crypttmp MyVolGroup
+# lvcreate -l 100%FREE -n crypthome MyVolGroup
 
 ```
 
 ```
-# cryptsetup luksFormat --type luks2 /dev/mapper/MyVol-cryptroot
-# cryptsetup open /dev/mapper/MyVol-cryptroot root
+# cryptsetup luksFormat --type luks2 /dev/mapper/MyVolGroup-cryptroot
+# cryptsetup open /dev/mapper/MyVolGroup-cryptroot root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
 
@@ -534,7 +536,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 ```
 
-Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
@@ -548,18 +550,18 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=/dev/mapper/MyVol-cryptroot:root root=/dev/mapper/root
+cryptdevice=/dev/mapper/MyVolGroup-cryptroot:root root=/dev/mapper/root
 
 ```
 
-For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be set by the boot loader instead:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
 
 ```
 rd.luks.name=*device-UUID*=root root=/dev/mapper/root
 
 ```
 
-The `*device-UUID*` refers to the UUID of `/dev/mapper/MyVol-cryptroot`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+The `*device-UUID*` refers to the UUID of `/dev/mapper/MyVolGroup-cryptroot`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
 See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
@@ -569,8 +571,8 @@ Both [crypttab](/index.php/Crypttab "Crypttab") and [fstab](/index.php/Fstab "Fs
 
  `/etc/crypttab` 
 ```
-swap	/dev/mapper/MyVol-cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
-tmp	/dev/mapper/MyVol-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
+swap	/dev/mapper/MyVolGroup-cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
+tmp	/dev/mapper/MyVolGroup-crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
 ```
  `/etc/fstab` 
 ```
@@ -594,8 +596,8 @@ Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, ea
 The logical volume is encrypted with it:
 
 ```
-# cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVol-crypthome /etc/luks-keys/home
-# cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-crypthome home
+# cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVolGroup-crypthome /etc/luks-keys/home
+# cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVolGroup-crypthome home
 # mkfs.ext4 /dev/mapper/home
 # mount /dev/mapper/home /home
 
@@ -605,7 +607,7 @@ The encrypted mount is configured in both [crypttab](/index.php/Crypttab "Cryptt
 
  `/etc/crypttab` 
 ```
-home	/dev/mapper/MyVol-crypthome   /etc/luks-keys/home
+home	/dev/mapper/MyVolGroup-crypthome   /etc/luks-keys/home
 
 ```
  `/etc/fstab` 
@@ -770,15 +772,15 @@ The scenario uses two USB sticks:
 The disk layout is:
 
 ```
-+---------------------------+-------------------------+---------------------------+ +----------------+ +----------------+
-| Logical volume 1          | Logical volume 2        | Logical volume 3          | | Boot device    | | Encryption key |
-|                           |                         |                           | |                | | file storage   |
-| /                         | [SWAP]                  | /home                     | | /boot          | | (unpartitioned |
-|                           |                         |                           | |                | | in example)    |
-| /dev/mapper/MyVol-root    | /dev/mapper/MyVol-swap  | /dev/mapper/MyVol-home    | | /dev/sdb1      | | /dev/sdc       |
-|---------------------------+-------------------------+---------------------------| |----------------| |----------------|
-| disk drive /dev/sda encrypted using plain mode and LVM                          | | USB stick 1    | | USB stick 2    |
-+---------------------------------------------------------------------------------+ +----------------+ +----------------+
++-----------------------------+-----------------------------+-----------------------------+ +----------------+ +----------------+
+| Logical volume 1            | Logical volume 2            | Logical volume 3            | | Boot device    | | Encryption key |
+|                             |                             |                             | |                | | file storage   |
+| /                           | [SWAP]                      | /home                       | | /boot          | | (unpartitioned |
+|                             |                             |                             | |                | | in example)    |
+| /dev/mapper/MyVolGroup-root | /dev/mapper/MyVolGroup-swap | /dev/mapper/MyVolGroup-home | | /dev/sdb1      | | /dev/sdc       |
+|-----------------------------+-----------------------------+-----------------------------| |----------------| |----------------|
+| disk drive /dev/sda encrypted using plain mode and LVM                                  | | USB stick 1    | | USB stick 2    |
++-----------------------------------------------------------------------------------------+ +----------------+ +----------------+
 
 ```
 
@@ -817,23 +819,23 @@ Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device.
 
 ```
 # pvcreate /dev/mapper/cryptlvm
-# vgcreate MyVol /dev/mapper/cryptlvm
-# lvcreate -L 32G MyVol -n root
-# lvcreate -L 10G MyVol -n swap
-# lvcreate -l 100%FREE MyVol -n home
+# vgcreate MyVolGroup /dev/mapper/cryptlvm
+# lvcreate -L 32G MyVolGroup -n root
+# lvcreate -L 10G MyVolGroup -n swap
+# lvcreate -l 100%FREE MyVolGroup -n home
 
 ```
 
 We format and mount them and activate swap. See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for further details:
 
 ```
-# mkfs.ext4 /dev/mapper/MyVol-root
-# mkfs.ext4 /dev/mapper/MyVol-home
-# mount /dev/mapper/MyVol-root /mnt
+# mkfs.ext4 /dev/mapper/MyVolGroup-root
+# mkfs.ext4 /dev/mapper/MyVolGroup-home
+# mount /dev/mapper/MyVolGroup-root /mnt
 # mkdir /mnt/home
-# mount /dev/mapper/MyVol-home /mnt/home
-# mkswap /dev/mapper/MyVol-swap
-# swapon /dev/mapper/MyVol-swap
+# mount /dev/mapper/MyVolGroup-home /mnt/home
+# mkswap /dev/mapper/MyVolGroup-swap
+# swapon /dev/mapper/MyVolGroup-swap
 
 ```
 
@@ -905,15 +907,15 @@ This setup utilizes the same partition layout and configuration for the system's
 The disk layout in this example is:
 
 ```
-+---------------------+---------------+----------------+------------------------+------------------------+------------------------+
-| BIOS boot partition | ESP partition | Boot partition | Logical volume 1       | Logical volume 2       | Logical volume 3       |
-|                     |               |                |                        |                        |                        |
-|                     | /boot/efi     | /boot          | /root                  | [SWAP]                 | /home                  |
-|                     |               |                |                        |                        |                        |
-|                     |               |                | /dev/mapper/MyVol-root | /dev/mapper/MyVol-swap | /dev/mapper/MyVol-home |
-| /dev/sda1           | /dev/sda2     | /dev/sda3      +------------------------+------------------------+------------------------+
-| **un**encrypted         | **un**encrypted   | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                                    |
-+---------------------+---------------+----------------+--------------------------------------------------------------------------+
++---------------------+---------------------+----------------+-----------------------------+-----------------------------+-----------------------------+
+| BIOS boot partition | ESP partition       | Boot partition | Logical volume 1            | Logical volume 2            | Logical volume 3            |
+|                     |                     |                |                             |                             |                             |
+|                     | /boot/efi           | /boot          | /root                       | [SWAP]                      | /home                       |
+|                     |                     |                |                             |                             |                             |
+|                     |                     |                | /dev/mapper/MyVolGroup-root | /dev/mapper/MyVolGroup-swap | /dev/mapper/MyVolGroup-home |
+| /dev/sda1           | /dev/sda2           | /dev/sda3      +-----------------------------+-----------------------------+-----------------------------+
+| **un**encrypted   | **un**encrypted   | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                                                   |
++---------------------+---------------------+----------------+-----------------------------------------------------------------------------------------+
 
 ```
 
@@ -1029,9 +1031,9 @@ sda              8:0      0   200G  0 disk
 │ └─cryptboot    254:0    0   198M  0 crypt /boot
 └─sda4           8:4      0   100G  0 part
   └─cryptlvm     254:1    0   100G  0 crypt
-    ├─MyVol-swap 254:2    0     8G  0 lvm   [SWAP]
-    ├─MyVol-root 254:3    0    32G  0 lvm   /
-    └─MyVol-home 254:4    0    60G  0 lvm   /home
+    ├─MyVolGroup-swap 254:2    0     8G  0 lvm   [SWAP]
+    ├─MyVolGroup-root 254:3    0    32G  0 lvm   /
+    └─MyVolGroup-home 254:4    0    60G  0 lvm   /home
 
 ```
 
@@ -1044,7 +1046,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 ```
 
-Or, if using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
@@ -1063,7 +1065,7 @@ GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*device-UUID*:cryptlvm ..."
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
-For [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook the following kernel parameters need to be used instead:
+If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
 
  `/etc/default/grub` 
 ```

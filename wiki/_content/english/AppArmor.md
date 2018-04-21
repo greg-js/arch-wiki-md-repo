@@ -48,7 +48,7 @@ CONFIG_AUDIT=y
 
 ```
 
-For those new or altered variables to not get overridden, place them at the bottom of the config file or adjust the previous invocations accordingly.
+In order to ensure that those new or altered variables do not get overridden, place them at the bottom of the config file or adjust the previous invocations accordingly.
 
 Instead of setting `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE` and `CONFIG_DEFAULT_SECURITY_APPARMOR`, you can also set [kernel boot parameters](/index.php/Kernel_parameters "Kernel parameters"): `apparmor=1 security=apparmor`.
 

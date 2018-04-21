@@ -5,6 +5,11 @@
 
 | Model version | Arch Linux Install CD version | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| [ASUS GL702ZC](/index.php/ASUS_GL702ZC "ASUS GL702ZC") (ROG Strix AMD) | 2017.04.01 | Radeon RX580 - The default kernel amdgpu driver works OK; having some graphic freezes, but unsure if its the GPU | Works out of the box, pulseaudio | Works out of the box | Works out of the box | Works | Haven't tested [TLP](/index.php/TLP "TLP"), but notably bad battery life; about 1 hour on standby. | Haven't tested | Earlier kernels probably does not work with Ryzen CPU, but did not test. | Backlight keys don't work out
+
+of the box, see wiki page for fix
+
+ |
 | ASUS GL552VM-DM-802D | 2017.02.01 | GTX960m - need nvidia proprietary driver with specific boot kernel otherwise due to a kernel lockup, you won't be able to boot. **acpi_osi=! acpi_osi='Windows 2009'** | works out of the box using pulseaudio | works out of the box | works out of the box | not tested | still testing | not tested | need to add acpi_backlight=native to have fn keys backlight control and idle=nomwait |
 | ASUS G502VM-FY017T | 2017.02.01 | GTX1060 3G - i use nvidia proprietaries driver it work fine after done an "mhwd-kernel -i linux410 & reboot" , nouveau not tested | works out of the box using pulseaudio (KDE stock) | works out of the box | works out of the box | works out the box (and using a Bluetooh headset like a Bose Qc35 works fine after a little workaround) | ~3.75hrs in normal use, with decent screen brightness, seems the same as what I get on Windows 10 | not tested | Most Fn keys, sound control, works out the box, but the screen ajustment need a little workaround and it's fine | Do *not* install intel drivers. This laptop does not have integrated graphics. |
 | FX502VM | 2017.02.01 | GTX1060 3G - install nvidia, nouveau does not work | works out of the box using pulseaudio | works out of the box with r8169 | works out of the box | not tested | ~3hrs in normal use, with decent screen brightness | not tested | Fn keys does not send ACPI events, except F10,F11,F12 (sound control) | Do *not* install intel drivers. This laptop does not have integrated graphics. |

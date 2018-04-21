@@ -4,7 +4,7 @@ Linux audit helps make your system more secure by providing you with a means to 
 
 The audit framework works by listening to the event reported by the kernel and logging them to a log file.
 
-**Note:** as of linux 3.12, the audit framework is not yet compatible with the namespace implementation, if you use namespaces, do not use the audit framework.
+**Note:** As of linux 3.12, the audit framework is not yet compatible with the namespace implementation. If you use namespaces, do not use the audit framework.
 
 **Note:** Depending on your configuration, it may affect the performance of the system.
 
@@ -55,7 +55,7 @@ This daemon can be controlled by several commands and files:
 
 ## Adding rules
 
-Before adding rules, you must know that the audit framework can be very verbose and that each rules must be carefully tested before being effectively deployed. Indeed, just one rule can flood all your log within a few minutes.
+Before adding rules, you must know that the audit framework can be very verbose and that each rule must be carefully tested before being effectively deployed. Indeed, just one rule can flood all your logs within a few minutes.
 
 ### Audit files and directories access
 

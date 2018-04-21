@@ -80,8 +80,6 @@ Exec = /bin/sh -c "reflector --country 'United States' --latest 200 --age 24 --s
 
 Make sure to substitute in your desired arguments for *reflector*.
 
-See [User:Allan/Pacman Hooks](/index.php/User:Allan/Pacman_Hooks "User:Allan/Pacman Hooks") and [DeveloperWiki:Pacman Hooks](/index.php/DeveloperWiki:Pacman_Hooks "DeveloperWiki:Pacman Hooks") for more info on pacman hooks.
-
 ### Systemd service
 
 This is an example of service unit that waits for the network to be up and online before running reflector:

@@ -21,8 +21,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [2.2 Enable GuC / HuC firmware loading](#Enable_GuC_.2F_HuC_firmware_loading)
 *   [3 Xorg configuration](#Xorg_configuration)
 *   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
-    *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)
-    *   [4.2 Framebuffer compression (enable_fbc)](#Framebuffer_compression_.28enable_fbc.29)
+    *   [4.1 Framebuffer compression (enable_fbc)](#Framebuffer_compression_.28enable_fbc.29)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Tear-free video](#Tear-free_video)
     *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
@@ -82,6 +81,12 @@ It is necessary to add `i915.enable_guc_loading=1 i915.enable_guc_submission=1` 
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_guc_loading=1 enable_guc_submission=1` 
 
+**For kernel 4.16 and latest:**
+
+ `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=1` 
+
+**Update in 4.16 kernel:** parm: enable_guc:Enable GuC load for GuC submission and/or HuC load. Required functionality can be selected using bitmask values. (-1=auto, 0=disable [default], 1=GuC submission, 2=HuC load) (int)
+
 You can verify that it is enabled by checking *dmesg*:
 
 ```
@@ -140,31 +145,11 @@ You will note that many options default to -1, resulting in per-chip powersaving
 
 **Warning:** Diverting from the defaults will mark the kernel as [tainted](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fc9740cebc3ab7c65f3c5f6ce0caf3e4969013ca) from Linux 3.18 onwards. This basically implies using other options than the per-chip defaults is considered experimental and not supported by the developers.
 
-The following set of options should be generally safe to enable:
+The following option should be generally safe to enable:
 
  `/etc/modprobe.d/i915.conf` 
 ```
-options i915 enable_rc6=1 enable_fbc=1 semaphores=1
-
-```
-
-### RC6 sleep modes (enable_rc6)
-
-You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[3]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
-
-The available `enable_rc6` values are a bitmask with bit values RC6=1, RC6p=2, RC6pp=4[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/intel_pm.c#n34) - where "RC6p" and "RC6pp" are lower power states.
-
-To confirm the current running RC6 level, you can look in sysfs:
-
-```
-# cat /sys/class/drm/card0/power/rc6_enable
-
-```
-
-... if the value read is a lower number than expected, the other RC6 level are probably not supported. Passing `drm.debug=0xe` will add DRM debugging information to the kernel log - possibly including a line like this:
-
-```
-[drm:sanitize_rc6_option] Adjusting RC6 mask to 1 (requested 7, valid 1)
+options i915 enable_fbc=1
 
 ```
 
@@ -204,7 +189,7 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 **Note:**
 
 *   This option may not work when `SwapbuffersWait` is `false`.
-*   This option may increases memory allocation considerably and reduce performance. [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
+*   This option may increases memory allocation considerably and reduce performance. [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
 *   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
 *   This option does not work with UXA acceleration method, only with SNA.
 
@@ -252,7 +237,7 @@ $ xrandr --output LVDS1 --set "scaling mode" *param*
 
 where `*param*` is one of `"Full"`, `"Center"` or `"Full aspect"`.
 
-**Note:** This option currently does not work for external displays (e.g. VGA, DVI, HDMI, DP). [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=90989)
+**Note:** This option currently does not work for external displays (e.g. VGA, DVI, HDMI, DP). [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=90989)
 
 ### KMS Issue: console is limited to small area
 
@@ -262,7 +247,7 @@ If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1\. Video por
 
 ### Hardware accelerated H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package only provides hardware accelerated MPEG-2 decoding for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[7]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[8]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done. Smooth playback (1080p/720p) works also with [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in combination with [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) and [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). With MPV and the Firefox plugin "Watch with MPV"[[9]](https://addons.mozilla.org/de/firefox/addon/watch-with-mpv/) it is possible to watch hardware accelerated YouTube videos.
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package only provides hardware accelerated MPEG-2 decoding for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[5]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[6]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done. Smooth playback (1080p/720p) works also with [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in combination with [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) and [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). With MPV and the Firefox plugin "Watch with MPV"[[7]](https://addons.mozilla.org/de/firefox/addon/watch-with-mpv/) it is possible to watch hardware accelerated YouTube videos.
 
 ### Setting brightness and gamma
 
@@ -378,7 +363,7 @@ Unfortunately, the Intel driver does not support setting the color range through
 
 A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
 
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[10]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[11]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[8]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[9]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 ### Backlight is not adjustable
 

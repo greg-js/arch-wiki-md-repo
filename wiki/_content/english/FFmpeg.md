@@ -475,8 +475,6 @@ $ ffmpeg -i source.ext -c:v h264_nvenc -rc constqp -qp 28 output.mkv
 
 NVDEC can be used for decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") and [Hardware video acceleration#Formats](/index.php/Hardware_video_acceleration#Formats "Hardware video acceleration")).
 
-It will be available in [FFMPEG 3.5](https://www.phoronix.com/scan.php?page=news_item&px=FFmpeg-NVDEC-H264-Acceleration).
-
 ## Preset files
 
 Populate `~/.ffmpeg` with the default [preset files](http://ffmpeg.org/ffmpeg.html#Preset-files):

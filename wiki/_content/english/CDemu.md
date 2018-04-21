@@ -7,7 +7,7 @@ CDemu can be [installed](/index.php/Pacman "Pacman") with the package [cdemu-cli
 Since systemd does not automatically load fdrivers for CD/DVD drives, you need to do this manually.
 
 ```
-modprobe sg sr_mod
+modprobe sg sr_mod vhba
 
 ```
 

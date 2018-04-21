@@ -265,7 +265,7 @@ Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no t
 
 [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications. *systemd-resolved* has [four different modes for handling *resolv.conf*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF). In one of the modes, it is a consumer of the `/etc/resolv.conf` file and any change made to it is going to be preserved and taken into account transparently for the user. This mode is therefore compatible with the procedures described in this page.
 
-However, this is not *systemd-resolved'*s recommended mode of operation. The service users are advised to redirect software which read the `/etc/resolv.conf` file to the local stub DNS resolver managed by *systemd-resolved*. This can be done by deleting or renaming the existing file and creating a symbolic link: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
+However, this is not *systemd-resolved'*s recommended mode of operation. The service users are advised to redirect software which read the `/etc/resolv.conf` file to the local stub DNS resolver managed by *systemd-resolved*. This can be done by deleting or renaming the existing `/etc/resolv.conf` and replacing it by a symbolic link to the systemd stub: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
 
 In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file. In order to check the DNS actually used by *systemd-resolved*, the command to use is:
 

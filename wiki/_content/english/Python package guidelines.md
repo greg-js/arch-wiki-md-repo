@@ -100,7 +100,7 @@ PyPI URLs of the form `https://pypi.python.org/packages/source/${_name:0:1}/${_n
 
 	Bilingual wheel package (Python 2 and Python 3 compatible)
 
-	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-$_name-$pkgver-py2.py3-none-any.whl`
+	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-py2.py3-none-any.whl`
 
 	Arch specific wheel package
 

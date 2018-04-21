@@ -217,6 +217,8 @@ Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/
 
 **Note:** It works out of the box with GNOME.
 
+*   There is a BIOS bug that gets in the way of the boot process with LUKS and full-disk encryption. The user is stuck at the "Loading initial ramdisk" step, and does not see a password prompt to unlock the encrypted device. You can actually enter your password at this step, and boot-up will continue. However, updating the BIOS will resolve this completely.
+
 ## See also
 
 *   [A Hacker's Ongoing Review for Lenovo ThinkPad X230](https://gist.github.com/bassu/8478346)

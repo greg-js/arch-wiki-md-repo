@@ -21,6 +21,8 @@ Related articles
     *   [4.1 Activating the custom table](#Activating_the_custom_table)
     *   [4.2 Test changes](#Test_changes)
 *   [5 Modifier keys](#Modifier_keys)
+    *   [5.1 Finding the keysym column modifier keys](#Finding_the_keysym_column_modifier_keys)
+    *   [5.2 Reassigning modifiers to keys on your keyboard](#Reassigning_modifiers_to_keys_on_your_keyboard)
 *   [6 Reverse scrolling](#Reverse_scrolling)
 *   [7 Swapping mouse buttons](#Swapping_mouse_buttons)
 *   [8 Templates](#Templates)
@@ -67,10 +69,10 @@ Each *keysym* column in the table corresponds to a particular combination of mod
 
 1.  `Key`
 2.  `Shift+Key`
-3.  `mode_switch+Key`
-4.  `mode_switch+Shift+Key`
-5.  `AltGr+Key`
-6.  `AltGr+Shift+Key`
+3.  `Mode_switch+Key`
+4.  `Mode_switch+Shift+Key`
+5.  `ISO_Level3_Shift+Key`
+6.  `ISO_Level3_Shift+Shift+Key`
 
 Not all *keysyms* have to be set, but to assign only a latter *keysym*, use the `NoSymbol` value.
 
@@ -78,7 +80,7 @@ To see which *keycode* corresponds to a key, see [Extra keyboard keys#In Xorg](/
 
 **Tip:** There are predefined descriptive *keysyms* for multimedia keys, e.g. `XF86AudioMute` or `XF86Mail`. These *keysyms* can be found in `/usr/include/X11/XF86keysym.h`. Many multimedia programs are designed to work with these *keysyms* out-of-the-box, without the need to configure any third-party application.
 
-Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the us(intl) xkbd layout but not for the default us (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the *(intl)* variant of the keyboard from xorg.conf or add, using us layout as an example, `setxkbmap -layout 'us(intl)'` before calling xmodmap.
+Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the US(intl) xkbd layout but not for the default US (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the *(intl)* variant of the keyboard from xorg.conf or add, using US layout as an example, `$ setxkbmap -layout 'us(intl)'` before calling xmodmap.
 
 ## Custom table
 
@@ -122,7 +124,57 @@ $ xmodmap -e "keysym a = e E"
 
 *xmodmap* can also be used to override [modifier keys](https://en.wikipedia.org/wiki/Modifier_key "wikipedia:Modifier key"), e.g. to swap `Control` and `Super` (the [Windows keys](https://en.wikipedia.org/wiki/Windows_key "wikipedia:Windows key")).
 
-Before assignment the modifier keys need to be empty. `!` is a comment, so only the modifiers `Control` and `Mod4` get cleared in the following example. Then the *keysyms* `Control_L`, `Control_R`, `Super_L` and `Super_R` are assigned to the opposite modifier. Assigning both left and right to the same modifier means that both keys are treated the same way.
+Print the current modifier table verbosely (full sample):
+
+ `$ xmodmap -pm` 
+```
+xmodmap:  up to 4 keys per modifier, (keycodes in parentheses):
+
+shift       Shift_L (0x32),  Shift_R (0x3e)
+lock        Caps_Lock (0x42)
+control     Control_L (0x25),  Control_R (0x69)
+mod1        Alt_L (0x40),  Meta_L (0xcd)
+mod2        Num_Lock (0x94)
+mod3      
+mod4        Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+mod5        ISO_Level3_Shift (0x5c),  ISO_Level3_Shift (0x6c),  Mode_switch (0x85),  Mode_switch (0xcb)
+```
+
+### Finding the keysym column modifier keys
+
+	Shift
+
+	The key that calls the Shift modifier is labeled Shift on many keyboards.
+
+	ISO_Level3_Shift
+
+	The AltGr key on non-US keyboards calls modifier ISO_Level3_Shift. (On US keyboards, the right-alt `Alt_R` has the same function as the left-alt `Alt_L`, which makes setting the layout as US international preferable. See [#Keymap Table](#Keymap_Table).)
+
+	Mode_switch
+
+	The Mode_switch modifier may be mapped by default to a key that is not on your keyboard.
+
+**Note:** The usage of the modifier names `ISO_Level3_Shift` and `Mode_switch` is different between xmodmap and [X Keyboard Extension](/index.php/X_KeyBoard_extension#xmodmap "X KeyBoard extension"). See also [[2]](https://unix.stackexchange.com/questions/55076/what-is-the-mode-switch-modifier-for)
+
+### Reassigning modifiers to keys on your keyboard
+
+**Note:** xmodmap is *case-sensitive*. Using incorrect case, such as `Mode_Switch` instead of the correct `Mode_switch` will cause errors such as: `xmodmap: .Xmodmap:21: bad keysym name 'Mode_Switch' in keysym list
+xmodmap: 1 error encountered, aborting.`
+
+Before assignment, the modifier keys need to be cleared. This applies to both modifiers you intend to assign and modifiers on keys that you intend to use. For example, if you intend to assign `Caps_Lock` to your A key and `B` to your NumLock key, you need to first clear the modifiers for both `Caps_Lock` and `Num_Lock`, then assign the keysyms, and finally add back the modifiers.
+
+ `~/.Xmodmap` 
+```
+[...]
+clear lock
+clear mod2
+keycode  38 = Caps_Lock
+keycode  77 = Num_Lock
+add lock = Caps_Lock
+add mod2 = Num_Lock
+```
+
+`!` is a comment, so only the modifiers `Control` and `Mod4` get cleared in the following example. Then the *keysyms* `Control_L`, `Control_R`, `Super_L` and `Super_R` are assigned to the opposite modifier. Assigning both left and right to the same modifier means that both keys are treated the same way.
 
  `~/.Xmodmap` 
 ```

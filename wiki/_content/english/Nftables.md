@@ -726,7 +726,7 @@ To accept incoming DNS requests:
 
 ```
 # nft add rule inet filter TCP tcp dport 53 accept
-# nft add rule inet filter UDP tcp dport 53 accept
+# nft add rule inet filter UDP udp dport 53 accept
 
 ```
 

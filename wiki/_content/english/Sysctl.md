@@ -361,3 +361,4 @@ Try to change `kernel.io_delay_type` (x86 only):
 *   [Linux kernel documentation for /proc/sys/](https://www.kernel.org/doc/Documentation/sysctl/)
 *   Kernel Documentation: [IP Sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
 *   [Kernel network parameters for sysctl](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)
+*   [sysctl-explorer.net – an initiative to facilitate the access of Linux' sysctl reference documentation](https://sysctl-explorer.net)

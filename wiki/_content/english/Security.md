@@ -66,10 +66,11 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [12.2 Bootloaders](#Bootloaders)
         *   [12.2.1 Syslinux](#Syslinux)
         *   [12.2.2 GRUB](#GRUB)
-    *   [12.3 Denying console login as root](#Denying_console_login_as_root)
-    *   [12.4 Automatic logout](#Automatic_logout)
-    *   [12.5 Block TTY access from X](#Block_TTY_access_from_X)
-    *   [12.6 Protect against rogue USB devices](#Protect_against_rogue_USB_devices)
+    *   [12.3 Boot partition on removable flash drive](#Boot_partition_on_removable_flash_drive)
+    *   [12.4 Denying console login as root](#Denying_console_login_as_root)
+    *   [12.5 Automatic logout](#Automatic_logout)
+    *   [12.6 Block TTY access from X](#Block_TTY_access_from_X)
+    *   [12.7 Protect against rogue USB devices](#Protect_against_rogue_USB_devices)
 *   [13 Rebuilding packages](#Rebuilding_packages)
 *   [14 See also](#See_also)
 
@@ -95,23 +96,23 @@ Insecure passwords include those containing:
 *   Root "words" or common strings followed or preceded by added numbers, symbols, or characters (e.g., `DG091101%`)
 *   Common phrases or short phrases of grammatically related words (e.g. `all of the lights`), and even with character substitution.
 
-The right choice for a password is something long (8-20 characters, depending on importance) and seemingly completely random. A good technique for building secure, seemingly random passwords is to base them on characters from every word in a sentence. Take for instance “the girl is walking down the rainy street” could be translated to `t6!WdtR5` or, less simply, `t&6!RrlW@dtR,57`. This approach could make it easier to remember a password, but note that the various letters have very different probabilities of being found at the start of words ([Wikipedia:Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_the_first_letters_of_a_word_in_the_English_language "wikipedia:Letter frequency")).
+The right choice for a password is something long (8-20 characters, depending on importance) and seemingly completely random. A good technique for building secure, seemingly random passwords is to base them on characters from every word in a sentence. Take for instance “the girl is walking down the rainy street” could be translated to `t6!WdtR5` or, less simply, `t&6!RrlW@dtR,57`. This approach could make it easier to remember a password, but note that the various letters have very different probabilities of being found at the start of words ([Wikipedia:Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_the_first_letters_of_a_word_in_the_English_language "wikipedia:Letter frequency")). Also consider the [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html) method, using a sufficient number of words.
 
 A better approach is to generate pseudo-random passwords with tools like [pwgen](https://www.archlinux.org/packages/?name=pwgen) or [apg](https://aur.archlinux.org/packages/apg/): for memorizing them, one technique (for ones typed often) is to generate a long password and memorize a minimally secure number of characters, temporarily writing down the full generated string. Over time, increase the number of characters typed - until the password is ingrained in muscle memory and need not be remembered. This technique is more difficult, but can provide confidence that a password will not turn up in wordlists or "intelligent" brute force attacks that combine words and substitute characters.
 
 It is also very effective to combine these two techniques by saving long, complex random passwords with a [password manager](/index.php/Password_manager "Password manager"), which will be in turn accessed with a mnemonic password that will have to be used only for that purpose, especially avoiding to ever transmit it over any kind of network. This method of course limits the use of the stored passwords to the terminals where the database is available for reading (which on the other hand could be seen as an added security feature).
 
-Also consider the [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html) method, using a sufficient number of words.
-
-See Bruce Schneier's article [Choosing Secure Passwords](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html) or [The passphrase FAQ](https://www.iusmentis.com/security/passphrasefaq/) for some additional background. Also, you can check entropy level of your chosen passphrase [here](http://rumkin.com/tools/password/passchk.php), or consulting [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength").
+See Bruce Schneier's article [Choosing Secure Passwords](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html), [The passphrase FAQ](https://www.iusmentis.com/security/passphrasefaq/) or [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength") for some additional background.
 
 ### Maintaining passwords
 
-Once you pick a strong password, be sure to keep it safe. Watch out for [manipulation](https://en.wikipedia.org/wiki/Social_engineering_(security) "wikipedia:Social engineering (security)"), [shoulder surfing](https://en.wikipedia.org/wiki/Shoulder_surfing_(computer_security) "wikipedia:Shoulder surfing (computer security)"), and avoid reusing passwords so insecure servers cannot leak more information than necessary. [Password managers](/index.php/List_of_applications/Security#Password_managers "List of applications/Security") can help manage large numbers of complex passwords: if you are copy-pasting the stored passwords from the manager to the applications that need them, make sure to clear the copy buffer every time, and ensure they are not saved in any kind of log (e.g. do not paste them in plain terminal commands, which would store them in files like `.bash_history`).
+Once you pick a strong password, be sure to keep it safe. Watch out for [keyloggers](https://en.wikipedia.org/wiki/Keylogger "wikipedia:Keylogger") (software and hardware), [manipulation](https://en.wikipedia.org/wiki/Social_engineering_(security) "wikipedia:Social engineering (security)"), [shoulder surfing](https://en.wikipedia.org/wiki/Shoulder_surfing_(computer_security) "wikipedia:Shoulder surfing (computer security)"), and avoid reusing passwords so insecure servers cannot leak more information than necessary. [Password managers](/index.php/List_of_applications/Security#Password_managers "List of applications/Security") can help manage large numbers of complex passwords: if you are copy-pasting the stored passwords from the manager to the applications that need them, make sure to clear the copy buffer every time, and ensure they are not saved in any kind of log (e.g. do not paste them in plain terminal commands, which would store them in files like `.bash_history`).
 
 As a rule, do not pick insecure passwords just because secure ones are harder to remember. Passwords are a balancing act. It is better to have an encrypted database of secure passwords, guarded behind a key and one strong master password, than it is to have many similar weak passwords. Writing passwords down is perhaps equally effective[[1]](https://www.schneier.com/blog/archives/2005/06/write_down_your.html), avoiding potential vulnerabilities in software solutions while requiring physical security.
 
 Another aspect of the strength of the passphrase is that it must not be easily recoverable from other places. If you use the same passphrase for disk encryption as you use for your login password (useful e.g. to auto-mount the encrypted partition or folder on login), make sure that `/etc/shadow` either also ends up on an encrypted partition, or uses a strong hash algorithm (i.e. sha512/bcrypt, not md5) for the stored password hash (see [SHA password hashes](/index.php/SHA_password_hashes "SHA password hashes") for more info).
+
+If you are backing up your password database, make sure that each copy is not stored behind any other passphrase which in turn is stored in it, e.g. an encrypted drive or an authenticated remote storage service, or you will not be able to access it in case of need; a useful trick is to protect the drives or accounts where the database is backed up using a simple cryptographic hash of the master password. If you fear that the master passphrase protecting your password database has been compromised, remember to change it immediately on all the existing backups; if you fear that you have lost control over a copy of the database, you will need to change all the passwords contained in it within the time that it may take to brute-force the master password, according to its entropy.
 
 ### Password hashes
 
@@ -543,7 +544,7 @@ Kernel parameters which affect networking can be set using [Sysctl](/index.php/S
 
 ### SSH
 
-Avoid using [Secure Shell](/index.php/Secure_Shell "Secure Shell") without [requiring SSH keys](/index.php/Secure_Shell#Force_public_key_authentication "Secure Shell"). This prevents [brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack "wikipedia:Brute-force attack"). Alternatively [Fail2ban](/index.php/Fail2ban "Fail2ban") or [Sshguard](/index.php/Sshguard "Sshguard") offer lesser forms of protection by monitoring logs and writing [iptables rules](/index.php/Iptables "Iptables") but open up the potential for a denial of serving, since an attacker can spoof packets as if they came from the administrator after identifying their address.
+Avoid using [Secure Shell](/index.php/Secure_Shell "Secure Shell") without [requiring SSH keys](/index.php/Secure_Shell#Force_public_key_authentication "Secure Shell"). This prevents [brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack "wikipedia:Brute-force attack"). Alternatively [Fail2ban](/index.php/Fail2ban "Fail2ban") or [Sshguard](/index.php/Sshguard "Sshguard") offer lesser forms of protection by monitoring logs and writing [iptables rules](/index.php/Iptables "Iptables") but open up the potential for a denial of service, since an attacker can spoof packets as if they came from the administrator after identifying their address.
 
 You may want to harden authentication even more by using two-factor authentication. [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") provides a two-step authentication procedure using one-time passcodes (OTP).
 
@@ -551,7 +552,9 @@ You may want to harden authentication even more by using two-factor authenticati
 
 ### DNS
 
-See [DNSSEC](/index.php/DNSSEC "DNSSEC") and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt").
+[Domain Name System](https://en.wikipedia.org/wiki/DNS "wikipedia:DNS") queries are, by default on most systems, sent and received unencrypted and without checking for authentication of receipt from qualified servers. This could then allow [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack "wikipedia:Man-in-the-middle attack"), whereby an attacker intercepts your DNS queries and modifies the responses to deliver you an IP address leading to a [phishing](https://en.wikipedia.org/wiki/Phishing "wikipedia:Phishing") page to collect your valuable information. You nor your browser would be aware since the DNS query was believed to be legitimate.
+
+[DNSSEC](/index.php/DNSSEC "DNSSEC") is a set of standards in place that would require DNS servers to provide clients with origin authentication of DNS data, authenticated denial of existence, and data integrity. It, however, is not yet widely used. With DNSSEC enabled, an attacker could not make modifications to your DNS queries, but would still be able to read them. [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") uses cryptography to secure your communications with DNS resolvers.
 
 ### Proxies
 
@@ -608,6 +611,10 @@ Syslinux supports [password-protecting your bootloader](/index.php/Syslinux#Secu
 #### GRUB
 
 [GRUB](/index.php/GRUB "GRUB") supports bootloader passwords as well. See [GRUB/Tips and tricks#Password protection of GRUB menu](/index.php/GRUB/Tips_and_tricks#Password_protection_of_GRUB_menu "GRUB/Tips and tricks") for details. It also has support for [encrypted boot partitions](/index.php/GRUB#Boot_partition "GRUB"), which only leaves some parts of the bootloader code unencrypted. GRUB's configuration, [kernel](/index.php/Kernel "Kernel") and [initramfs](/index.php/Initramfs "Initramfs") are encrypted.
+
+### Boot partition on removable flash drive
+
+One popular idea is to place the boot partition on a flash drive in order to render the system unbootable without it. Proponents of this idea often use [full disk encryption](#Disk_encryption) alongside, and some also use [detached encryption headers](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") placed on the boot partition.
 
 ### Denying console login as root
 

@@ -295,7 +295,7 @@ See [fdisk#Convert between MBR and GPT](/index.php/Fdisk#Convert_between_MBR_and
 
 ### GPT Kernel Support
 
-The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in Arch's [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels in the [core] repo. In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
+The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in all Arch's [officially supported kernels](/index.php/Kernels#Officially_supported "Kernels"). In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
 
 ## See also
 

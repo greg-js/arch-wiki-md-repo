@@ -160,7 +160,7 @@ As this solution does not use an official certificate authority (CA), a security
 
 #### Install
 
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. The script is available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into your preferred location, for example `/root`.
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into your preferred location, for example `/root`.
 
 #### Obtain a certificate
 
@@ -190,7 +190,7 @@ In order to automate the renewal of the certificate, schedule a cronjob for the 
 
 ##### Automation with a systemd timer
 
-A [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") can be used for the repetition of the renewal process, both service and timer unit files need to be created:
+A [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") can be used for the repetition of the renewal process, both service and timer unit files are provided in the package:
 
  `/etc/systemd/system/letsencrypt-renew.service ` 
 ```
@@ -220,7 +220,7 @@ WantedBy=timers.target
 
 ```
 
-[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the newly created `letsencrypt-renew.timer`.
+[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `letsencrypt-renew.timer`.
 
 **Note:** The service waits for the network to be up and online, for more information on the implementation of the network dependency, see [Systemd#Running services after the network is up](/index.php/Systemd#Running_services_after_the_network_is_up "Systemd").
 

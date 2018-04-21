@@ -93,10 +93,6 @@ Description=set cpu heating limit to 97°c
 ExecStart=/usr/local/bin/cpu-throttling.sh
 RemainAfterExit=no
 
-[Timer]
-OnActiveSec=60
-OnUnitActiveSec=60
-
 [Install]
 WantedBy=timers.target
 
@@ -112,7 +108,6 @@ Description=set cpu heating limit to 97°c every minute
 OnActiveSec=60
 OnUnitActiveSec=60
 Unit=cpu-throttling.service
-Requires=cpu-throttling.service
 
 [Install]
 WantedBy=timers.target

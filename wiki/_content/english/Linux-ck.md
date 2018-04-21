@@ -158,6 +158,6 @@ Always feel free to open a thread in the forums for support purpose. Be sure to 
 
 *   [Kernel patch repository of Con Kolivas](http://ck.kolivas.org/patches/)
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.it/)
-*   [Con Kolivas' desktop-centric kernel patchset](http://lkml.org/lkml/2009/9/6/136)
-*   [Wikipedia's Con Kovalis page](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas")
+*   [Con Kolivas' first BFS announcement on the Linux Kernel Mailing List](http://lkml.org/lkml/2009/9/6/136)
+*   [Wikipedia's Con Kolivas page](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas")
 *   [Wikipedia's BFS article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")

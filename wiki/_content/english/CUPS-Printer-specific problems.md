@@ -72,6 +72,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
 | HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Use socket protocol (`socket://hostname-or-ip:9100`). |
+| HL-L5100DN | HP LaserJet Foomatic driver | This model will emulate a HP LaserJet. `lpd://hostname-or-ip/BINARY_P1` |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |

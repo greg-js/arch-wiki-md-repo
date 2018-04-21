@@ -1,7 +1,7 @@
 Artigos relacionados
 
-*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
+*   [Solução de problema geral](/index.php/General_troubleshooting "General troubleshooting")
+*   [Guia de depuração passo a passo](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
 *   [Depuração - Obtendo Rastros](/index.php/Depura%C3%A7%C3%A3o_-_Obtendo_Rastros "Depuração - Obtendo Rastros")
 
 Abrir (e fechar) relatórios de erros no [Rastreador de erros do Arch Linux](https://bugs.archlinux.org/) (também conhecido como *Arch Linux Bugtracker*) é uma das muitas maneiras possíveis de [ajudar a comunidade](/index.php/Getting_involved_(Portugu%C3%AAs) "Getting involved (Português)"). No entanto, relatórios de erros mal formulados podem ser contraproducentes. Quando os erros são incorretamente relatados, os desenvolvedores perdem tempo investigando e fechando relatórios inválidos. Este documento irá guiar qualquer pessoa que deseje ajudar a comunidade informando eficientemente e buscando erros.
@@ -179,36 +179,36 @@ Os desenvolvedores ou outros usuários provavelmente pedirão mais detalhes e da
 
 ### Votando e monitorando
 
-You can **vote** for your favourite bugs. The number of votes indicates to the developers how many people are impacted by the bug. However, this is not a very effective way of getting the bug solved. Much more important would be posting any additional information you know about the bug if you were not the original reporter.
+Você pode **votar** nos seus relatórios de erros favoritos. O número de votos indica para os desenvolvedores quantas pessoas são impactadas pelo erro. No entanto, esta não é uma maneira muito eficaz de resolver o problema. Muito mais importante seria publicar qualquer informação adicional que você conheça sobre o erro se você não fosse o relator original.
 
-**Watching** a bug is important - you will receive an email when new comments are added or the bug status has changed. If you opened a bug, verify that the "Notify me whenever this task changes" checkbox is activated in order to receive such emails.
+**Monitorar** um relatório de erro é importante - você receberá um e-mail quando novos comentários forem adicionados ou o status do relatório for alterado. Se você abriu um relatório, verifique se a caixa de seleção "Notify me whenever this task changes" está ativada para receber esses e-mails.
 
 ### Respondendo solicitações de informações adicionais
 
-People will take the time to look at your bug report and will try to help you. You need to continue to help them resolve your bug. Not answering to their questions will keep your bug unresolved and likely hamper enthusiasm to fix it.
+As pessoas analisarão o seu relatório de erros e tentarão ajudá-lo. Você precisa continuar a ajudá-los a resolver seu relatório de erro. Não responder às suas perguntas irá manter o seu relatório não resolvido e provavelmente dificultará o entusiasmo para consertá-lo.
 
-**Please take the time to give people more information if requested and try the solutions proposed**.
+**Por favor, reserve um tempo para dar mais informações às pessoas, se solicitado, e tente as soluções propostas**.
 
-Developers or bug hunters will close your bug if you do not answer questions after a few weeks or a month.
+Desenvolvedores ou caçadores de erros fecharão seu relatório se você não responder a perguntas depois de algumas semanas ou um mês.
 
 ### Atualizando o relatório de erro quando surgir uma nova versão do software relatado
 
-Sometimes a bug is related to a given package version and is fixed in a new version. If this is the case then indicate it in the bug report comments and request a closure.
+Às vezes, um relatório de erro está relacionado a uma determinada versão do pacote e é corrigido em uma nova versão. Se este for o caso, indique nos comentários do relatório de erros e solicite um encerramento.
 
 ### Fechando quando resolvido
 
-Sometimes people report a bug but do not notify when they have solved it on their own, leaving people searching for a solution that has already been found. Please request a closure if you found a solution and give the solution in the bug report comments.
+Às vezes, as pessoas relatam um erro, mas não notificam quando o resolvem por conta própria, deixando as pessoas procurando por uma solução que já tenha sido encontrada. Por favor, solicite um fechamento se você encontrou uma solução e forneça a solução nos comentários do relatório de erros.
 
 ### Mais sobre status de relatórios
 
-During its life a bug goes through several states:
+Durante sua vida, um relatório de erro passa por vários status:
 
-*   **Unconfirmed** - This is the default state. You have just reported it and nobody managed to reproduce the problem or confirmed that it is actually a bug.
-*   **New** - The bug is confirmed but it has not been assigned to the developer responsible for the related software. It is usually the case when more investigation is needed to determine which software is responsible for the bug.
-*   **Assigned** - The bug has been assigned to a developer responsible for the software involved in the bug. It does not mean that the developer will be the one who will fix the bug. It does not even mean that the developer will work on a solution. It just means that the developer will take care of the life cycle of the bug, including reviewing patches if any, releasing a fix and closing the bug when required. There is no point in contacting a developer directly to have a bug fixed more quickly, he/she will certainly not like it...
-*   **Researching** - Somebody is looking for a solution. This status is **rarely used at Arch** and it is better this way. The *researching* status could make people believe they do not need to get interested in the bug report. But usually we need more than one person to fix a bug: having several experienced people on a bug helps a lot.
-*   **Waiting on Response** and **Requires testing** - The one who reported a bug is asked to provide more information or to try a proposed solution, but he/she did not give a feedback yet. Those status are **rarely used at Arch** and should be used more often. However it is important that you **watch the bug** (see the [#Voting and Watching](#Voting_and_Watching) section) as developers or bug hunters usually ask questions in the comments.
-*   **A task closure has been requested** - This is not exactly a status, but you may find some bug reports with such a notification. This indicates that somebody requested a closure for the bug. A reason is added to the request most of the time. It is upon the assignee developer to decide whether he/she will accept the closure or not.
-*   **Closed** - Either this is not a valid bug (see [#Reasons for not being a bug](#Reasons_for_not_being_a_bug)) or a solution has been found and released.
+*   **Unconfirmed** *(Não confirmado)* - Este é o status padrão. Você acabou de relatá-lo e ninguém conseguiu reproduzir o problema ou confirmar que é realmente um erro.
+*   **New** *(Novo)* - O erro está confirmado, mas não foi atribuído ao desenvolvedor responsável pelo software relacionado. Geralmente é o caso quando mais investigação é necessária para determinar qual software é responsável pelo erro.
+*   **Assigned** *(Atribuído)* - O relatório foi atribuído a um desenvolvedor responsável pelo software envolvido no relatório. Isso não significa que o desenvolvedor será quem corrigirá o erro. Isso não significa que o desenvolvedor vai trabalhar em uma solução. Significa apenas que o desenvolvedor vai cuidar do ciclo de vida do relatório, incluindo a revisão de patches, se houver, lançando uma correção e fechando o relatório quando necessário. Não faz sentido entrar em contato diretamente com um desenvolvedor para ter um erro corrigido mais rapidamente, ele/ela certamente não gostará disso...
+*   **Researching** *(Pesquisando)* - Alguém está procurando uma solução. Este status é **raramente usado no Arch** e é melhor assim. O status de *pesquisa* pode fazer as pessoas acreditarem que não precisam se interessar pelo relatório de erros. Mas geralmente precisamos de mais de uma pessoa para consertar um erro: ter várias pessoas experientes em um relatório ajuda muito.
+*   **Waiting on Response** *(Aguardando resposta)* e **Requires testing** *(Requer teste)* - Aquele que relatou o erro foi solicitado a fornecer mais informações ou a tentar uma solução proposta, mas ele ainda não deu um feedback. Esses status são raramente usados no Arch e deveriam ser usados com mais frequência. No entanto, é importante que você **monitore o relatório** (consulte a seção [#Votando e monitorando](#Votando_e_monitorando)), já que desenvolvedores ou caçadores de erros costumam fazer perguntas nos comentários.
+*   **A task closure has been requested** *(Um fechamento de tarefa foi requisitado)* - Este não é exatamente um status, mas você pode encontrar alguns relatórios de erros com essa notificação. Isso indica que alguém solicitou um fechamento para o relatório. Um motivo é adicionado à solicitação na maioria das vezes. Cabe ao desenvolvedor responsável decidir se ele aceitará o encerramento ou não.
+*   **Closed** *(Fechado)* - Ou esse não é um relatório válido (veja [#Motivos para não ser um erro](#Motivos_para_n.C3.A3o_ser_um_erro)) ou uma solução foi encontrada e foi lançada.
 
-Some people (developers, TUs...) are responsible for dispatching the bugs and change their status.
+Algumas pessoas (desenvolvedores, TUs ...) são responsáveis por despachar os erros e alterar seu status.

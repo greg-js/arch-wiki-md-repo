@@ -111,10 +111,7 @@ OpenSSH 7.0 [deprecated and disabled support for DSA keys](https://www.archlinux
 
 [#RSA](#RSA) keys will give you the greatest portability, while [#Ed25519](#Ed25519) will give you the best security but requires recent versions of client & server[[1]](https://www.gentoo.org/support/news-items/2015-08-13-openssh-weak-keys.html). [#ECDSA](#ECDSA) is likely more compatible than Ed25519 (though still less than RSA), but suspicions exist about its security (see below).
 
-**Note:**
-
-*   As of July 10, 2015, [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") does not handle ECDSA[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[3]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. Users will have to turn to other [SSH agents](#SSH_agents) or stick to RSA keys.
-*   These keys are used only to authenticate you; choosing stronger keys will not increase CPU load when transferring data over SSH.
+**Note:** These keys are used only to authenticate you; choosing stronger keys will not increase CPU load when transferring data over SSH.
 
 #### RSA
 
@@ -152,9 +149,9 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-Be aware though that there are diminishing returns in using longer keys.[[4]](https://security.stackexchange.com/a/25377)[[5]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096) The GnuPG FAQ reads: "*If you need more security than RSA-2048 offers, the way to go would be to switch to elliptical curve cryptography — not to continue using RSA*".[[6]](https://www.gnupg.org/faq/gnupg-faq.html#please_use_ecc)
+Be aware though that there are diminishing returns in using longer keys.[[2]](https://security.stackexchange.com/a/25377)[[3]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096) The GnuPG FAQ reads: "*If you need more security than RSA-2048 offers, the way to go would be to switch to elliptical curve cryptography — not to continue using RSA*".[[4]](https://www.gnupg.org/faq/gnupg-faq.html#please_use_ecc)
 
-On the other hand, the latest iteration of the [NSA Fact Sheet Suite B Cryptography](https://www.nsa.gov/ia/programs/suiteb_cryptography/index.shtml) suggests a minimum 3072-bit modulus for RSA while "*[preparing] for the upcoming quantum resistant algorithm transition*".[[7]](http://www.keylength.com/en/6/)
+On the other hand, the latest iteration of the [NSA Fact Sheet Suite B Cryptography](https://www.nsa.gov/ia/programs/suiteb_cryptography/index.shtml) suggests a minimum 3072-bit modulus for RSA while "*[preparing] for the upcoming quantum resistant algorithm transition*".[[5]](http://www.keylength.com/en/6/)
 
 #### ECDSA
 
@@ -169,7 +166,7 @@ Both of those concerns are best summarized in [libssh curve25519 introduction](h
 
 #### Ed25519
 
-[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5) of January 2014: "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[8]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
+[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5) of January 2014: "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[6]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
 
 It is already implemented in [many applications and libraries](https://en.wikipedia.org/wiki/Curve25519#Popularity "wikipedia:Curve25519") and is the [default key exchange algorithm](https://www.libssh.org/2013/11/03/openssh-introduces-curve25519-sha256libssh-org-key-exchange/) (which is different from key *signature*) in OpenSSH.
 

@@ -86,7 +86,7 @@ The drivers for a printer may come from any of the sources shown below. See [CUP
 
 To drive a printer, CUPS needs a PPD file and, for most printers, some [filters](https://www.cups.org/doc/man-filter.html). For details on how CUPS uses PPDs and filters, see [[1]](https://www.cups.org/doc/postscript-driver.html).
 
-The [OpenPrinting Printer List](http://www.openprinting.org/printers) provides driver recommendations for many printers. It also supplies PPD files for each printer, but most are available through [foomatic](#Foomatic) or the recommended driver package.
+The [OpenPrinting Printer List](http://www.openprinting.org/printers) provides driver recommendations for many printers. It also supplies PPD files for each printer, but most are available through [#Foomatic](#Foomatic) or the recommended driver package.
 
 When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD files and save them in `/etc/cups/ppd/`.
 

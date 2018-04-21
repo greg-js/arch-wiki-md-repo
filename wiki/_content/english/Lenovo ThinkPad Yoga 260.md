@@ -65,7 +65,7 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint"). Sometimes the TrackPoint s
 
 ### TouchScreen and Stylus
 
-Touchscreen works with the Wacom driver (package: [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom)). Also using the Stylus, only one of the two buttons on the pen is usable.
+Touchscreen works with the Wacom driver (package: [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom)). Also using the Stylus, the bottom button of the pen is defined as the eraser and the top button works as a middle mouse button
 
 ### Video
 

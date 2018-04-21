@@ -761,7 +761,7 @@ down-pre
 
 ### Override DNS servers using NetworkManager
 
-By default [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) plugin appends DNS servers provided by OpenVPN to `/etc/resolv.conf`. This may result result DNS instability (leakage).
+By default [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) plugin appends DNS servers provided by OpenVPN to `/etc/resolv.conf`. This may result in DNS instability (leakage).
 
 The settings user interface does not provide any way to change this behavior, but it is possible to [completely override](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1211110/comments/92) DNS using connection configuration file.
 

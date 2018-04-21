@@ -448,6 +448,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
+*   **[ngspice](https://en.wikipedia.org/wiki/ngspice "wikipedia:ngspice")** — Application used to simulate circuits. Open source successor of [spice3f5](https://en.wikipedia.org/wiki/SPICE "wikipedia:SPICE")
+
+	[http://ngspice.sourceforge.net/](http://ngspice.sourceforge.net/) || [ngspice](https://www.archlinux.org/packages/?name=ngspice)
+
 #### Physics simulation
 
 *   **[Code_Aster](https://en.wikipedia.org/wiki/Code_Aster "wikipedia:Code Aster")** — Software package for Civil and Structural Engineering finite element analysis and numeric simulation in structural mechanics.

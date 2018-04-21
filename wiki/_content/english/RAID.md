@@ -66,8 +66,6 @@ This article explains how to create/manage a software RAID array using mdadm.
 
 Despite redundancy implied by most RAID levels, RAID does not guarantee that data is safe. A RAID will not protect data if there is a fire, the computer is stolen or multiple hard drives fail at once. Furthermore, installing a system with RAID is a complex process that may destroy data.
 
-**Tip:** Users considering a RAID array for data storage/redundancy should also consider RAIDZ which is implemented via [ZFS](/index.php/ZFS "ZFS"), a more modern and powerful alternative to software RAID.
-
 ### Standard RAID levels
 
 There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard_RAID_levels "wikipedia:Standard RAID levels"), please find hereafter the most commonly used ones.
@@ -147,8 +145,8 @@ The RAID devices can be managed in different ways:
 *   by an abstraction layer (e.g. [mdadm](#Installation));
     **Note:** This is the method we will use later in this guide.
 
-*   by a logical volume manager (e.g. [LVM#RAID](/index.php/LVM#RAID "LVM"));
-*   by a component of a file system (e.g. [ZFS](/index.php/ZFS "ZFS"), [Btrfs](/index.php/Btrfs "Btrfs")).
+*   by a logical volume manager (e.g. [LVM](/index.php/LVM#RAID "LVM"));
+*   by a component of a file system (e.g. [ZFS](/index.php/ZFS "ZFS"), [Btrfs](/index.php/Btrfs#RAID "Btrfs")).
 
 	Hardware RAID
 
@@ -166,7 +164,7 @@ However, discerning between FakeRAID and true hardware RAID can be more difficul
 
 ## Installation
 
-Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [official repositories](/index.php/Official_repositories "Official repositories"). *mdadm* is used for administering pure software RAID using plain block devices: the underlying hardware does not provide any RAID logic, just a supply of disks. *mdadm* will work with any collection of block devices. Even if unusual. For example, one can thus make a RAID array from a collection of thumb drives.
+[Install](/index.php/Install "Install") [mdadm](https://www.archlinux.org/packages/?name=mdadm). *mdadm* is used for administering pure software RAID using plain block devices: the underlying hardware does not provide any RAID logic, just a supply of disks. *mdadm* will work with any collection of block devices. Even if unusual. For example, one can thus make a RAID array from a collection of thumb drives.
 
 ### Prepare the devices
 
@@ -189,7 +187,7 @@ or if a particular partition on a drive is to be deleted:
 **Note:**
 
 *   Zapping a partition's superblock should not affect the other partitions on the disk.
-*   Due to the nature of RAID functionality it is very difficult to [Securely wipe disks](/index.php/Securely_wipe_disk "Securely wipe disk") fully on a running array. Consider whether it is useful to do so before creating it.
+*   Due to the nature of RAID functionality it is very difficult to [securely wipe disks](/index.php/Securely_wipe_disk "Securely wipe disk") fully on a running array. Consider whether it is useful to do so before creating it.
 
 ### Partition the devices
 
@@ -223,9 +221,9 @@ Use `mdadm` to build the array. See [mdadm(8)](https://jlk.fjfi.cvut.cz/arch/man
 **Note:**
 
 *   If this is a RAID1 array which is intended to boot from [Syslinux](/index.php/Syslinux "Syslinux") a limitation in syslinux v4.07 requires the metadata value to be 1.0 rather than the default of 1.2.
-*   When creating an array from [Arch installation medium](/index.php/Archiso "Archiso") use the option `--homehost=*myhostname*` (or `--homehost=any` to always have the same name regardless of the host) to set the hostname, otherwise the hostname `archiso` will be written in the array metadata.
+*   When creating an array from [Arch installation medium](/index.php/Archiso "Archiso") use the option `--homehost=*myhostname*` (or `--homehost=any` to always have the same name regardless of the host) to set the [hostname](/index.php/Hostname "Hostname"), otherwise the hostname `archiso` will be written in the array metadata.
 
-**Tip:** You can specify a custom raid device name using the option `--name=*myraidname*` or by setting the raid device path to `/dev/md/*myraidname*`. Udev will create symlinks to the raid arrays in `/dev/md/` using that name. If `homehost` matches the current hostname (or if homehost is set to `any`) the link will be `/dev/md/*name*`, if the hostname does not match the link be `/dev/md/*homehost*:*name*`.
+**Tip:** You can specify a custom raid device name using the option `--name=*myraidname*` or by setting the raid device path to `/dev/md/*myraidname*`. Udev will create symlinks to the raid arrays in `/dev/md/` using that name. If `homehost` matches the current [hostname](/index.php/Hostname "Hostname") (or if homehost is set to `any`) the link will be `/dev/md/*name*`, if the hostname does not match the link be `/dev/md/*homehost*:*name*`.
 
 The following example shows building a 2-device RAID1 array:
 

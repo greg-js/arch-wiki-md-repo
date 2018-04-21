@@ -94,7 +94,7 @@ Regarding the [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-v
 | [Kodi](/index.php/Kodi "Kodi") | ✓ | ✓ | ✓ |
 | [Firefox](/index.php/Firefox "Firefox") | ✗ [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210727) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=563206) | ✗ |
 | [Chromium](/index.php/Chromium "Chromium") | [WIP](https://chromium-review.googlesource.com/c/chromium/src/+/532294) ([chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)) | ✗ | ✗ |
-| [FFmpeg](/index.php/FFmpeg "FFmpeg") | ✓ | ✓ | ✓ [(from 3.5)](https://www.phoronix.com/scan.php?page=news_item&px=FFmpeg-NVDEC-H264-Acceleration) |
+| [FFmpeg](/index.php/FFmpeg "FFmpeg") | ✓ | ✓ | ✓ [[5]](https://www.phoronix.com/scan.php?page=news_item&px=FFmpeg-NVDEC-H264-Acceleration) |
 
 ## Installation
 
@@ -102,7 +102,7 @@ The choice varies depending on your video card vendor:
 
 *   For Intel Graphics use VA-API.
 *   For NVIDIA cards use VDPAU.
-*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[5]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
+*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[6]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
 
 There are also two specific types of drivers for VA-API and VDPAU:
 

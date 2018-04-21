@@ -381,7 +381,7 @@ Next, modify the reject packets rule for UDP:
 
 ##### Restore the Final Rule
 
-If either or both of the portscanning tricks above were used the final default rule is no longer the last rule in the INPUT chain. It needs to be the last rule otherwise it will intercept the trick port scanner rules you just added and they will never be used. Simply delete the rule (-D), then add it once again using append (-A) which will place it at the end of the chain.
+If either or both of the portscanning tricks above were used, the final default rule is no longer the last rule in the INPUT chain. It needs to be the last rule, or it would intercept the *trick port scanner* rules you just added, rendering them useless. Simply delete (-D) the rule, then add it again using append (-A), which will place it at the end of the chain.
 
 ```
 # iptables -D INPUT -j REJECT --reject-with icmp-proto-unreachable
@@ -467,7 +467,7 @@ the first step is to change IPs referenced in the rules from IPv4 format to IPv6
 
 Next, a few of the rules (built as example in this article for IPv4) have to be adapted. IPv6 obtained a new ICMPv6 protocol, replacing ICMP. Hence, the reject error return codes `--reject-with icmp-port-unreachable` and `--reject-with icmp-proto-unreachable` have to be converted to ICMPv6 codes.
 
-The available ICMPv6 error codes are listed in [RFC 4443](https://tools.ietf.org/html/rfc4443#section-3.1), which specifies connection attempts blocked by a firewall rule should use `--reject-with icmp6-adm-prohibited`. Doing so will basically inform the remote system that the connection was rejected by a firewall, rather than a listening service.
+The available ICMPv6 error codes are listed in [RFC 4443](https://tools.ietf.org/html/rfc4443#section-3.1), which specifies that connection attempts blocked by a firewall rule should use `--reject-with icmp6-adm-prohibited`. Doing so will basically inform the remote system that the connection was rejected by a firewall, rather than a listening service.
 
 If it is preferred not to explicitly inform about the existence of a firewall filter, the packet may also be rejected without the message:
 
@@ -510,7 +510,7 @@ This section of the guide deals with NAT gateways. It is assumed that you alread
 
 #### Creating necessary chains
 
-In our setup, we will use another two chains in the filter table, the **fw-interfaces** and **fw-open** chains. Create them with the commands
+In our setup, we will create two new chains in the filter table, **fw-interfaces** and **fw-open**, using he following commands:
 
 ```
 # iptables -N fw-interfaces

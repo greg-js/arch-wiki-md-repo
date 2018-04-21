@@ -37,41 +37,41 @@ Para inicializar o Arch Linux, um [gerenciador de boot](/index.php/Gerenciador_d
 
 ### BIOS
 
-A [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or Basic Input-Output System is the very first program (firmware) that is executed once the system is switched on. In most cases it is stored in a flash memory in the motherboard itself and independent of the system storage.
+Uma [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") (acrônimo para *Basic Input-Output System*) é o primeiro programa (firmware) que é executado assim que o sistema é ligado. Na maioria dos casos, é armazenado em uma memória flash na própria placa-mãe e é independente do armazenamento do sistema.
 
-The BIOS loads the beginning 512 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first valid disk in the BIOS disk order. Of these 512 bytes, the first 440 contains the first stage of a [boot loader](/index.php/Boot_loader "Boot loader") like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [LILO](/index.php/LILO "LILO"). Since very little can be achieved by a program of this size, the second stage (residing on the next disk sectors) is loaded from here and looks up a file stored on the partition itself (the actual bootloader). This then loads an operating system by either chain-loading or directly loading the operating system kernel.
+O BIOS carrega os 512 bytes iniciais ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) do primeiro disco válido na ordem de disco do BIOS. Destes 512 bytes, o primeiro 440 contém o primeiro estágio de um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot"), como [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") ou [LILO](/index.php/LILO "LILO"). Uma vez que muito pouco pode ser alcançado por um programa deste tamanho, o segundo estágio (que reside nos próximos setores do disco) é carregado a partir daqui e procura um arquivo armazenado na própria partição (o gerenciador de boot real). Isso, então, carrega um sistema operacional carregando em cadeia ou carregando diretamente o kernel do sistema operacional.
 
 ### UEFI
 
-UEFI has support for reading both the partition table as well as understanding filesystems. Hence it is not limited by 440 byte code limitation (MBR boot code) as in BIOS systems. It does not use the MBR boot code at all.
+O UEFI tem suporte para ler a tabela de partições, bem como entender os sistemas de arquivos. Portanto, ele não é limitado pela limitação de código de 440 bytes (código de inicialização do MBR) como nos sistemas BIOS. Ele não usa o código de inicialização do MBR.
 
-The commonly used UEFI firmwares support both MBR and GPT [partition table](/index.php/Partition_table "Partition table"). EFI in Apple-Intel Macs are known to also support Apple Partition Map besides MBR and GPT. Most UEFI firmwares have support for accessing FAT12 (floppy disks), FAT16 and FAT32 filesystems in HDDs and ISO9660 (and UDF) in CD/DVDs. EFI in Intel Macs can also access HFS/HFS+ filesystems, in addition to the mentioned ones.
+Os firmwares UEFI comumente usados oferecem suporte a MBR e GPT [tabela de partições](/index.php/Partition_table "Partition table"). EFI em Apple-Intel Macs são conhecidos por também ter suporte ao Apple Partition Map, além de MBR e GPT. A maioria dos firmwares da UEFI tem suporte para acessar sistemas de arquivos FAT12 (disquetes), FAT16 e FAT32 em HDDs e ISO9660 (e UDF) em CD/DVDs. O EFI em Intel Macs também pode acessar sistemas de arquivos HFS/HFS+, além dos mencionados.
 
-UEFI does not launch any boot code in the MBR whether it exists or not. Instead it uses a special partition in the partition table called [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") in which files required to be launched by the firmware are stored. Each vendor can store its files under `<EFI SYSTEM PARTITION>/EFI/<VENDOR NAME>/` folder and can use the firmware or its shell ([UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")) to launch the boot program. An EFI System Partition is usually formatted as [FAT32](/index.php/FAT32 "FAT32") or (less commonly) FAT16.
+O UEFI não inicia nenhum código de inicialização no MBR, independentemente de existir ou não. Em vez disso, ele usa uma partição especial na tabela de partição chamada [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition") na qual os arquivos que precisam ser lançados pelo firmware são armazenados. Cada fornecedor pode armazenar seus arquivos na pasta `<PARTIÇÃO DE SISTEMA EFI>/EFI/<NOME DO FORNECEDOR>/` e pode usar o firmware ou seu shell ([UEFI](/index.php/Unified_Extensible_Firmware_Interface#Shell_UEFI "Unified Extensible Firmware Interface")) para iniciar o programa de inicialização. Uma partição do sistema EFI geralmente é formatada como [FAT32](/index.php/FAT32 "FAT32") ou (menos comumente) FAT16.
 
 ## Inicialização do sistema
 
 ### Na BIOS
 
-1.  System switched on - [Power-on self-test](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") or POST process
-2.  After POST, BIOS initializes the necessary system hardware for booting (disk, keyboard controllers etc.)
-3.  BIOS launches the first 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first disk in the BIOS disk order
-4.  The MBR boot code then takes control from BIOS and launches its next stage code (if any) (mostly [boot loader](/index.php/Boot_loader "Boot loader") code)
-5.  The launched actual boot loader
+1.  Sistema ligado - processo de POST ou [Power-on self-test](https://en.wikipedia.org/wiki/pt:Power_On_Self_Test "wikipedia:pt:Power On Self Test") (tradução livre: *autoteste de inicialização*)
+2.  Após o POST, a BIOS inicializa o hardware de sistema necessário para inicializar (disco, controladores de teclado etc.)
+3.  A BIOS inicia os primeiros 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) do primeiro disco na ordem de disco da BIOS
+4.  O código de inicialização da MBR, então, toma controle da BIOS e inicia o código de seu próximo estágio (se houver) (em sua maioria, código do [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot"))
+5.  O gerenciador de boot lançado
 
 ### No UEFI
 
-1.  System switched on. The Power On Self Test (POST) is executed.
-2.  UEFI firmware is loaded. Firmware initializes the hardware required for booting.
-3.  Firmware reads the boot entries in the firmware's boot manager to determine which UEFI application to be launched and from where (i.e. from which disk and partition).
-4.  Firmware launches the UEFI application.
-    *   This could be the Arch kernel itself (since [EFISTUB](/index.php/EFISTUB "EFISTUB") is enabled by default).
-    *   It could be some other application such as a shell or a graphical boot manager.
-    *   Or the boot entry could simply be a disk. In this case the firmware looks for an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") on that disk and tries to run the fallback UEFI application `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on [32-bit EFI systems](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). This is how UEFI bootable thumb drives work.
+1.  Sistema ligado. O *Power On Self Test (POST)* é executado.
+2.  O firmware UEFI é carregado. O firmware inicializa o hardware necessário para inicializar.
+3.  O firmware lê as entradas de inicialização no gerenciador de boot para determinar qual aplicativo UEFI deve ser iniciado e de onde (por exemplo, de qual disco e partição).
+4.  O firmware inicia o aplicativo UEFI.
+    *   Isso poderia ser o próprio kernel do Arch (já que [EFISTUB](/index.php/EFISTUB "EFISTUB") está habilitado por padrão).
+    *   Isso poderia ser algum aplicativo como um shell ou um gerenciador de boot gráfico.
+    *   Ou a entrada de inicialização poderia simplesmente ser um disco. Neste caso, o firmware procura por uma [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition") naquele disco e tenta executar o aplicativo reserva EFI `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` em [sistemas EFI de 32 bits](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). É assim que pendrive UEFI inicializável funciona.
 
-If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot process will verify authenticity of the EFI binary by signature.
+Se [Secure Boot](/index.php/Secure_Boot "Secure Boot") estiver habilitado, o processo de inicialização vai verificar a autenticidade do binário EFI pela assinatura.
 
-**Nota:** On some (poorly-designed) UEFI systems the only way to boot is using a disk boot entry with the fallback UEFI application path.
+**Nota:** em alguns sistemas UEFI (mal desenhados), a única forma de inicializar é usando uma entrada de boot de disco com o caminho reserva de aplicativo UEFI.
 
 ### Multiboot no UEFI
 

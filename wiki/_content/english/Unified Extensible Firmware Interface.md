@@ -86,7 +86,7 @@ If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it return
 
 ## Linux kernel config options for UEFI
 
-The required Linux Kernel configuration options for UEFI systems are :
+The required Linux Kernel configuration options for UEFI systems are:
 
 ```
 CONFIG_RELOCATABLE=y
@@ -120,7 +120,7 @@ CONFIG_EFI_PARTITION=y
 
 **Note:** All of the above options are required to boot Linux via UEFI, and are enabled in Archlinux kernels in official repos.
 
-Retrieved from [https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt) .
+Retrieved from [https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt).
 
 ## UEFI variables
 
@@ -565,7 +565,7 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [Wikipedia:UEFI](https://en.wikipedia.org/wiki/UEFI "wikipedia:UEFI")
 *   [UEFI Forum](http://www.uefi.org/home/) - contains the official [UEFI Specifications](http://uefi.org/specifications) - GUID Partition Table is part of UEFI Specification
 *   [UEFI boot: how does that actually work, then? - A blog post by AdamW](https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/)
-*   [Linux Kernel x86_64 UEFI Documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt)
+*   [Linux Kernel x86_64 UEFI Documentation](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt)
 *   [Intel's page on EFI](https://www.intel.com/content/www/us/en/architecture-and-technology/unified-extensible-firmware-interface/efi-homepage-general-technology.html)
 *   [Intel Architecture Firmware Resource Center](https://firmware.intel.com/)
 *   [Matt Fleming - The Linux EFI Boot Stub](https://firmware.intel.com/blog/linux-efi-boot-stub)

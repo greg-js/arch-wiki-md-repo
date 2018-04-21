@@ -1,4 +1,4 @@
-**DDNet**, as it is popularly known, is a sidescrolling platform game, featuring weaponry and a cooperative gameplay, and is a mod of [Teeworlds](https://www.teeworlds.com). The game name comes from Dummy Drag Race Network, as it was based DDRace.
+**DDNet**, as it is popularly known, is a sidescrolling platform game, featuring weaponry and a cooperative gameplay, and is a mod of [Teeworlds](https://www.teeworlds.com). The game name comes from Dummy Drag Race Network, as it was based in DDRace.
 
 From the official website [ddnet.tw](https://ddnet.tw):
 
@@ -36,22 +36,21 @@ The game works in a client–server model, where the user plays using a Client w
     *   [5.9 map_extract](#map_extract)
     *   [5.10 map_replace_image](#map_replace_image)
     *   [5.11 map_resave](#map_resave)
-    *   [5.12 map_version](#map_version)
-    *   [5.13 packetgen](#packetgen)
-    *   [5.14 tileset_borderadd](#tileset_borderadd)
-    *   [5.15 tileset_borderfix](#tileset_borderfix)
-    *   [5.16 tileset_borderrem](#tileset_borderrem)
-    *   [5.17 tileset_borderset](#tileset_borderset)
-    *   [5.18 uuid](#uuid)
+    *   [5.12 packetgen](#packetgen)
+    *   [5.13 tileset_borderadd](#tileset_borderadd)
+    *   [5.14 tileset_borderfix](#tileset_borderfix)
+    *   [5.15 tileset_borderrem](#tileset_borderrem)
+    *   [5.16 tileset_borderset](#tileset_borderset)
+    *   [5.17 uuid](#uuid)
 *   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [ddnet](https://aur.archlinux.org/packages/ddnet/) from [AUR](/index.php/AUR "AUR"). Alternatively, you install the development version [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/) in same place.
+[Install](/index.php/Install "Install") the package [ddnet](https://aur.archlinux.org/packages/ddnet/). Alternatively, you can install the development version [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/).
 
 ### Optional skins
 
-[Install](/index.php/Install "Install") [ddnet-skins](https://aur.archlinux.org/packages/ddnet-skins/) from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [ddnet-skins](https://aur.archlinux.org/packages/ddnet-skins/).
 
 This package provides all skins from [DDNet Skin Database](https://ddnet.tw/skins/) for your client, so you can choose between many skins to play with a fancy *tee* char. However, this will not affect anything in the gameplay.
 
@@ -65,7 +64,7 @@ Please notice that other players will only see your chosen skin if they also hav
 
 ### Optional offline maps
 
-[Install](/index.php/Install "Install") [ddnet-maps-git](https://aur.archlinux.org/packages/ddnet-maps-git/) from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [ddnet-maps-git](https://aur.archlinux.org/packages/ddnet-maps-git/).
 
 This package provides all playable maps from the [ddnet-maps repository](https://github.com/ddnet/ddnet-maps) with default configuration files for running an offline DDNet server. So, once installed, eases running a offline server.
 
@@ -154,7 +153,7 @@ Use these instructions if you want a local server in a [LAN](https://en.wikipedi
 
 ### MySQL support
 
-The DDNet packages in AUR provide a server binary, but MySQL support is disabled. In order to enable MySQL support you have to edit the PKGBUILD:
+The DDNet packages provide a server binary, but MySQL support is disabled. In order to enable MySQL support you have to edit the PKGBUILD:
 
 1.  Add [mariadb](https://www.archlinux.org/packages/?name=mariadb) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) to [depends()](/index.php/PKGBUILD#depends "PKGBUILD") array.
 2.  Append `-DMYSQL=ON` to the *cmake* command-line.
@@ -287,8 +286,8 @@ Replaces the image *imagename* currently inside the map filename *mapfile1.map* 
 
 **Note:**
 
-*   both map filenames must be relative to user default ddnet folder
-*   new image filepath must be absolute or relative to the current position
+*   Both map filenames must be relative to user default DDNet folder
+*   New image filepath must be absolute or relative to the current position
 
 ### map_resave
 
@@ -300,8 +299,6 @@ $ /usr/share/ddnet/tools/map_resave *mapfile.map* *imagefile*
 Updates the map file *mapfile.map* with the provided file *imagefile*.
 
 The error status 255 is returned if 1) a number of arguments different from 2 is provided, 2) if the *mapfile.map* is not valid, or 3) if *imagefile* is not a valid image file (e.g. it is a text file); otherwise, return 0.
-
-### map_version
 
 ### packetgen
 

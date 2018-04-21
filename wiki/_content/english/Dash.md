@@ -59,15 +59,22 @@ Once you have verified that it won't break any functionality, it should be safe 
 
 ```
 
-Updates of Bash will overwrite `/bin/sh` with the default symlink. To prevent this, configure pacman to skip extracting `/usr/bin/sh`:
+Updates of Bash will overwrite `/bin/sh` with the default symlink. To prevent this, use the following [pacman hook](/index.php/Pacman#Hooks "Pacman"), which will relink `/bin/sh` after every affected update:
 
- `/etc/pacman.conf` 
 ```
-NoUpgrade   = usr/bin/sh
-NoExtract   = usr/bin/sh
-```
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = bash
 
-**Note:** The `NoUpgrade` statement is necessary, because if it is ommited, pacman will remove `/bin/sh` during a bash upgrade, since it is owned by the bash package. However, it will not create a new symlink in `/bin/sh` either, leaving you without any `/bin/sh` and breaking all scripts that rely on it.
+[Action]
+Description = Re-pointing /bin/sh symlink to dash...
+When = PostTransaction
+Exec = /usr/bin/ln -sfT dash /usr/bin/sh
+Depends = dash
+
+```
 
 ## See also
 

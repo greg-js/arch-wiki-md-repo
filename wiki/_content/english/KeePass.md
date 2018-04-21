@@ -131,6 +131,8 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
     2.  In KeePass additional option will show up under `Key file / provider` called `Yubikey challenge-response`
     3.  Plugin assumes slot 2 is used
 
+KeepassXC provides built-in support for Yubikey Challenge-Response without plugins.
+
 ## Tips and tricks
 
 ### Disable your clipboard manager

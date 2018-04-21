@@ -240,6 +240,6 @@ CONFIG_MICROCODE_INTEL=Y
 
 *   [Updating microcodes](https://flossexperiences.wordpress.com/2013/11/17/updating-microcodes/)
 *   [Notes on Intel Microcode updates](http://inertiawar.com/microcode/)
-*   [Kernel early microcode](https://www.kernel.org/doc/Documentation/x86/early-microcode.txt)
+*   [Kernel microcode loader](https://www.kernel.org/doc/Documentation/x86/microcode.txt)
 *   [Erratum found in Haswell/Broadwell](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly)
 *   [Technical details](https://gitlab.com/iucode-tool/iucode-tool)

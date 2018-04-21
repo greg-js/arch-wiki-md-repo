@@ -39,8 +39,8 @@ The `lsblk -f` command can be used for viewing graphically the first persistent 
 NAME   FSTYPE LABEL  UUID                                 MOUNTPOINT
 sda                                                       
 ├─sda1 vfat          CBB6-24F2                            /boot
-├─sda2 ext4   SYSTEM 0a3407de-014b-458b-b5c1-848e92a327a3 /
-├─sda3 ext4   DATA   b411dc99-f0a0-4c87-9e05-184977be8539 /home
+├─sda2 ext4   System 0a3407de-014b-458b-b5c1-848e92a327a3 /
+├─sda3 ext4   Data   b411dc99-f0a0-4c87-9e05-184977be8539 /home
 └─sda4 swap          f9fe0b69-a280-415d-a03a-a32752370dee [SWAP]
 
 ```
@@ -49,11 +49,10 @@ For those using [GPT](/index.php/GPT "GPT"), use the `blkid` command instead. Th
 
  `$ blkid` 
 ```
-/dev/sda1: UUID="CBB6-24F2" TYPE="vfat" PARTLABEL="EFI SYSTEM PARTITION" PARTUUID="d0d0d110-0a71-4ed6-936a-304969ea36af" 
-/dev/sda2: LABEL="SYSTEM" UUID="0a3407de-014b-458b-b5c1-848e92a327a3" TYPE="ext4" PARTLABEL="GNU/LINUX" PARTUUID="98a81274-10f7-40db-872a-03df048df366" 
-/dev/sda3: LABEL="DATA" UUID="b411dc99-f0a0-4c87-9e05-184977be8539" TYPE="ext4" PARTLABEL="HOME" PARTUUID="7280201c-fc5d-40f2-a9b2-466611d3d49e" 
-/dev/sda4: UUID="f9fe0b69-a280-415d-a03a-a32752370dee" TYPE="swap" PARTLABEL="SWAP" PARTUUID="039b6c1c-7553-4455-9537-1befbc9fbc5b"
-
+/dev/sda1: UUID="CBB6-24F2" TYPE="vfat" PARTLABEL="EFI system partition" PARTUUID="d0d0d110-0a71-4ed6-936a-304969ea36af" 
+/dev/sda2: LABEL="System" UUID="0a3407de-014b-458b-b5c1-848e92a327a3" TYPE="ext4" PARTLABEL="GNU/Linux" PARTUUID="98a81274-10f7-40db-872a-03df048df366" 
+/dev/sda3: LABEL="Data" UUID="b411dc99-f0a0-4c87-9e05-184977be8539" TYPE="ext4" PARTLABEL="Home" PARTUUID="7280201c-fc5d-40f2-a9b2-466611d3d49e" 
+/dev/sda4: UUID="f9fe0b69-a280-415d-a03a-a32752370dee" TYPE="swap" PARTLABEL="Swap" PARTUUID="039b6c1c-7553-4455-9537-1befbc9fbc5b"
 ```
 
 ### by-label
@@ -62,10 +61,9 @@ Almost every [filesystem](/index.php/Filesystem "Filesystem") type can have a la
 
  `$ ls -l /dev/disk/by-label` 
 ```
-
 total 0
-lrwxrwxrwx 1 root root 10 May 27 23:31 DATA -> ../../sda3
-lrwxrwxrwx 1 root root 10 May 27 23:31 SYSTEM -> ../../sda2
+lrwxrwxrwx 1 root root 10 May 27 23:31 Data -> ../../sda3
+lrwxrwxrwx 1 root root 10 May 27 23:31 System -> ../../sda2
 
 ```
 
@@ -188,10 +186,10 @@ This method is very similar to the [filesystem labels](#by-label), excepted that
  `ls -l /dev/disk/by-partlabel/` 
 ```
 total 0
-lrwxrwxrwx 1 root root 10 May 27 23:31 EFI\x20SYSTEM\x20PARTITION -> ../../sda1
-lrwxrwxrwx 1 root root 10 May 27 23:31 GNU\x2fLINUX -> ../../sda2
-lrwxrwxrwx 1 root root 10 May 27 23:31 HOME -> ../../sda3
-lrwxrwxrwx 1 root root 10 May 27 23:31 SWAP -> ../../sda4
+lrwxrwxrwx 1 root root 10 May 27 23:31 EFI\x20system\x20partition -> ../../sda1
+lrwxrwxrwx 1 root root 10 May 27 23:31 GNU\x2fLinux -> ../../sda2
+lrwxrwxrwx 1 root root 10 May 27 23:31 Home -> ../../sda3
+lrwxrwxrwx 1 root root 10 May 27 23:31 Swap -> ../../sda4
 
 ```
 

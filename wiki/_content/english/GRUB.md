@@ -138,7 +138,7 @@ To find out the disk partition scheme and the system partition, use `parted` as 
 The command returns:
 
 *   The disk partition layout: if the disk is GPT, it indicates `Partition Table: gpt`.
-*   The list of partitions on the disk: Look for the ESP in the list, it is a small (about 550 MiB) partition with a *fat32* file system and with the flag *esp* enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+*   The list of partitions on the disk: Look for the ESP in the list, it is a small (about 550 MiB) partition with a `fat32` file system and with the flag `esp` enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
 Once it is found, **take note of the ESP partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") article.
 
@@ -170,7 +170,7 @@ Remember to [#Generate the main configuration file](#Generate_the_main_configura
 *   While some distributions require a `/boot/efi` or `/boot/EFI` directory, Arch does not.
 *   `--efi-directory` and `--bootloader-id` are specific to GRUB UEFI, `--efi-directory` replaces `--root-directory` which is deprecated.
 *   You might note the absence of a *device_path* option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any *device_path* provided will be ignored by the GRUB UEFI install script. Indeed, UEFI bootloaders do not use a MBR or partition boot sector at all.
-*   The section assumes you are installing GRUB for x86_64 systems (x86_64-efi). For 32-bit EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
+*   The section assumes you are installing GRUB for x86_64 systems. For IA32 (32-bit) EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
 See [UEFI troubleshooting](#UEFI) in case of problems. Additionally see [GRUB/Tips and tricks#UEFI further reading](/index.php/GRUB/Tips_and_tricks#UEFI_further_reading "GRUB/Tips and tricks").
 

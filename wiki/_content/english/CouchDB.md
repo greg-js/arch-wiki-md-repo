@@ -33,9 +33,7 @@ To setup the database and create an admin account through Fauxton, visit [http:/
 To setup a single node from the command line (where `<adminuser>` and `<password>` are to be replaced).
 
 ```
-   curl -X POST -H "Content-Type: application/json" [http://127.0.0.1:5984/_cluster_setup](http://127.0.0.1:5984/_cluster_setup) -d '{"action": "enable_single_node", "bind_address":"127.0.0.1", "username": "<adminuser>", "password": "<password>"}'
-   curl -X PUT http://<adminuser>:<password>@127.0.0.1:5984/_users
-   curl -X PUT http://<adminuser>:<password>@127.0.0.1:5984/_replicator
+$ curl -X POST -H "Content-Type: application/json" [http://127.0.0.1:5984/_cluster_setup](http://127.0.0.1:5984/_cluster_setup) -d '{"action": "enable_single_node", "bind_address":"127.0.0.1", "username": "<adminuser>", "password": "<password>"}'
 
 ```
 

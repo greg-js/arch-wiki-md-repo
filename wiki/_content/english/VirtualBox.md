@@ -249,9 +249,9 @@ To load the modules manually, type:
 
 ```
 
-[virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch) and [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) use **systemd-modules-load** service to load their modules at boot time.
+[virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) uses `systemd-modules-load.service` to load its modules at boot time.
 
-**Note:** If you do not want the VirtualBox modules to be loaded at boot time, you have to [mask](/index.php/Mask "Mask") the default `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (or `/usr/lib/modules-load.d/virtualbox-guest-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d/`.
+**Note:** If you do not want the VirtualBox modules to be loaded at boot time, you have to [mask](/index.php/Mask "Mask") the default `/usr/lib/modules-load.d/virtualbox-guest-dkms.conf` by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d/`.
 
 ### Launch the VirtualBox guest services
 
@@ -345,7 +345,7 @@ You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to
 
 *   `*sharedFolderName*`: the value from the VirtualMachine's *Settings > SharedFolders > Edit > FolderName* menu. This value can be different from the name of the real folder name on the host machine. To see the VirtualMachine's *Settings* go to the host OS VirtualBox application, select the corresponding virtual machine and click on *Settings*.
 *   `*/path/to/mntPtOnGuestMachine*`: if not existing, this directory should be created manually (for example by using [mkdir](/index.php/Core_utilities#mkdir "Core utilities"))
-*   `dmode`/`fmode` are directory/file permissions for directories/files inside `*/path/to/mntPtOnGuestMachine*`.}}
+*   `dmode`/`fmode` are directory/file permissions for directories/files inside `*/path/to/mntPtOnGuestMachine*`.
 
 As of 2012-08-02, mount.vboxsf does not support the *nofail* option:
 

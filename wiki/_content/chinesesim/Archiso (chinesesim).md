@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=516683)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-21，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=518033)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -65,7 +65,7 @@ Archiso 附带2个预定义配置（profiles）: *releng* 和*baseline*。
 现在，将您选择的配置文件复制到目录（在下面的示例中为 *archlive*），您可以在其中进行调整和构建。 执行以下操作，用 `releng` 或 `baseline` 替换 `**profile**`。
 
 ```
-# cp -r /usr/share/archiso/configs/* *archlive*
+# cp -r /usr/share/archiso/configs/**profile**/* *archlive*
 
 ```
 

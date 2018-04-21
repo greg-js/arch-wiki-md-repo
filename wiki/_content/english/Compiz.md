@@ -187,7 +187,7 @@ To ensure that *fusion-icon* then starts Compiz, right click on the icon in the 
 
 ### Autostarting Compiz in a desktop environment
 
-See [Desktop environment#Custom window manager](/index.php/Desktop_environment#Custom_window_manager "Desktop environment").
+See [Desktop environment#Use a different window manager](/index.php/Desktop_environment#Use_a_different_window_manager "Desktop environment").
 
 ## Using Compiz as a standalone window manager
 
