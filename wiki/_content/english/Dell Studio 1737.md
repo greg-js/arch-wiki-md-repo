@@ -153,4 +153,4 @@ Keyboard works out of the box. For touchpad read the [Synaptics](/index.php/Syna
 
 ## Networking
 
-Ethernet works out of the box. Wireless may work out of the box depending on your wifi card. If you have a Broadcom BCM43XX card, you will need to install the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver from the [AUR](/index.php/AUR "AUR"). Read [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") guide for details. [b43](/index.php/Broadcom_wireless#b43.2Fb43legacy "Broadcom wireless") driver can work as well, if supplied with proper firmware.
+Ethernet works out of the box. Wireless may work out of the box depending on your wifi card. If you have a Broadcom BCM43XX card, you will need to install the [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) driver from the [AUR](/index.php/AUR "AUR"). Read [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") guide for details. [b43](/index.php/Broadcom_wireless#b43.2Fb43legacy "Broadcom wireless") driver can work as well, if supplied with proper firmware.

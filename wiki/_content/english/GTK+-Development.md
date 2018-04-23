@@ -453,7 +453,7 @@ end.
 
 ### Perl
 
-*   Dependency: [perl-gtk3](https://aur.archlinux.org/packages/perl-gtk3/)
+*   Dependency: [perl-gtk3](https://www.archlinux.org/packages/?name=perl-gtk3)
 
  `hello_world.pl` 
 ```

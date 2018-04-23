@@ -144,22 +144,25 @@ Once it is found, **take note of the ESP partition number**, it will be required
 
 ### Installation
 
-**Note:** UEFI firmware are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the turnarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
+**Note:**
+
+*   UEFI firmware are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the turnarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
+*   The section assumes you are installing GRUB for x86_64 systems. For IA32 (32-bit) EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
 First, [install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr): *GRUB* is the bootloader while *efibootmgr* creates bootable *.efi* stub entries used by the GRUB installation script.
 
 Then follow the below steps to install GRUB:
 
 1.  [Mount the EFI System Partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") to either `/boot` or `/boot/efi` and in the remainder of this section, substitute `*esp*` with that mount point.
-2.  Choose a bootloader identifier, here named `***arch***`. A directory of that name will be created to store the EFI binary bootloader in the ESP and this is the name that will appear in the EFI boot menu to identify the GRUB boot entry.
-3.  Execute the following command to install the GRUB UEFI application to `*esp*/EFI/grub/`, install its modules to `/boot/grub/x86_64-efi/`, and place the EFI binary bootloader `grubx64.efi` in `*esp*/EFI/***arch_grub***/`.
+2.  Choose a bootloader identifier, here named `***GRUB***`. A directory of that name will be created to store the EFI binary bootloader in the ESP and this is the name that will appear in the EFI boot menu to identify the GRUB boot entry.
+3.  Execute the following command to install the GRUB UEFI application `grubx64.efi` to `*esp*/EFI/***GRUB***/` and install its modules to `/boot/grub/x86_64-efi/`.
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=***arch_grub***
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=***GRUB***
 
 ```
 
-After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `***arch_grub***` in the above example.
+After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `***GRUB***` in the above example.
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
@@ -170,7 +173,6 @@ Remember to [#Generate the main configuration file](#Generate_the_main_configura
 *   While some distributions require a `/boot/efi` or `/boot/EFI` directory, Arch does not.
 *   `--efi-directory` and `--bootloader-id` are specific to GRUB UEFI, `--efi-directory` replaces `--root-directory` which is deprecated.
 *   You might note the absence of a *device_path* option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any *device_path* provided will be ignored by the GRUB UEFI install script. Indeed, UEFI bootloaders do not use a MBR or partition boot sector at all.
-*   The section assumes you are installing GRUB for x86_64 systems. For IA32 (32-bit) EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
 See [UEFI troubleshooting](#UEFI) in case of problems. Additionally see [GRUB/Tips and tricks#UEFI further reading](/index.php/GRUB/Tips_and_tricks#UEFI_further_reading "GRUB/Tips and tricks").
 

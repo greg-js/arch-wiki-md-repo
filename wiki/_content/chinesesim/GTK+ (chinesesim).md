@@ -365,7 +365,7 @@ Hello.run()
 
 #### Perl
 
-*   依赖： [perl-gtk3](https://aur.archlinux.org/packages/perl-gtk3/) 来自 AUR
+*   依赖： [perl-gtk3](https://www.archlinux.org/packages/?name=perl-gtk3) 来自 AUR
 
  `hello_world.pl` 
 ```

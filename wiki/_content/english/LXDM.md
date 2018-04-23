@@ -27,7 +27,7 @@ LXDM does not support the [XDMCP](/index.php/XDMCP "XDMCP") protocol. An alterna
 
 [Install](/index.php/Install "Install") the [lxdm](https://www.archlinux.org/packages/?name=lxdm) package. The development package is [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/).
 
-[lxdm](https://www.archlinux.org/packages/?name=lxdm) provides the `lxdm` [systemd](/index.php/Systemd "Systemd") service. [Enable](/index.php/Enable "Enable") it to start LXDM at boot.
+[Enable](/index.php/Enable "Enable") the provided `lxdm.service` [systemd](/index.php/Systemd "Systemd") unit to start LXDM at boot.
 
 ## Configuration
 
@@ -127,11 +127,11 @@ last_langs=sv_SE.UTF-8 fa_IR.UTF-8 en_US.UTF-8
 
 A 96x96 px image (jpg or png) can optionally be displayed on a per-user basis replacing the stock icon. Simply copy or symlink the target image to `$HOME/.face`. The [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) package supplies some default icons suitable for the lxdm screen. Look under `/usr/share/pixmaps/faces` after installing that package.
 
-**Note:** Users need not keep [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) installed to use this images. Simply install it, copy them elsewhere, and remove it.
+**Note:**
 
-**Note:** The user's directory needs have r-x permissions for others and the .face file needs have r-- permissions for others. Obviously though this has security and access implications as now anyone can browse your home directory.
-
-**Note:** A graphical tool `lxdm-config` shipped with lxdm can be used to place a `.face` file in the home directory, along with other configuration.
+*   Users need not keep [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) installed to use this images. Simply install it, copy them elsewhere, and remove it.
+*   The user's directory needs have r-x permissions for others and the .face file needs have r-- permissions for others. Obviously though this has security and access implications as now anyone can browse your home directory.
+*   A graphical tool `lxdm-config` shipped with lxdm can be used to place a `.face` file in the home directory, along with other configuration.
 
 ### Simultaneous users and switching users
 

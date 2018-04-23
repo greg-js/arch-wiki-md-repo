@@ -102,7 +102,7 @@ Another easy option is to use USB tethering with an Android device. For more inf
 
 If you have neither, the only option is to use the onboard wireless adapter. Depending on your model, you may have the Broadcom BCM43602, which is supported by the open source brcmfac which is included by default in the kernel (see [here](/index.php/Broadcom_wireless#brcm80211 "Broadcom wireless")). If this is the case, you should have wireless available from the installer.
 
-Unfortunately, other BCM43xx chipsets my only be supported by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") which is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
+Unfortunately, other BCM43xx chipsets my only be supported by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") which is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
 
 ```
 $ curl -O [https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz](https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz)
@@ -438,7 +438,7 @@ Updated 2016-07-21
 
 ### Wi-Fi
 
-*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) from the [AUR](/index.php/AUR "AUR") works
+*   [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) from the [AUR](/index.php/AUR "AUR") works
     *   Stability is an issue for some, look at [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for possible fixes (e.g. downgrading kernel works if your card is BCM4360)
     *   If stability is still an issue after the above, a possible alternative is to connect on a 802.11g network. More recent standards can cause the BCM4360 to disconnect randomly.
 

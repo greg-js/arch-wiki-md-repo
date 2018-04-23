@@ -91,7 +91,7 @@ This assumes that your root is on the second partition (first partition is the E
 
 ### Wireless
 
-To use the Broadcom BCM43142 chipset is, install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from the [AUR](/index.php/AUR "AUR"), and load the module:
+To use the Broadcom BCM43142 chipset is, install [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) from the [AUR](/index.php/AUR "AUR"), and load the module:
 
 ```
 # modprobe wl

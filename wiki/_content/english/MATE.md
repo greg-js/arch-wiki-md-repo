@@ -89,7 +89,7 @@ There are a number of other unofficial MATE applications that are contributed to
 
 *   **MATE Tweak** — Tweak tool for MATE, a fork of mintDesktop.
 
-	[https://bitbucket.org/ubuntu-mate/mate-tweak](https://bitbucket.org/ubuntu-mate/mate-tweak) || [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/)
+	[https://github.com/ubuntu-mate/mate-tweak](https://github.com/ubuntu-mate/mate-tweak) || [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/)
 
 *   **BriskMenu** — Modern, efficient menu for the MATE Desktop Environment from SolusOS distribution.
 

@@ -122,7 +122,7 @@ $ xmodmap -e "keysym a = e E"
 
 ## Modifier keys
 
-*xmodmap* can also be used to override [modifier keys](https://en.wikipedia.org/wiki/Modifier_key "wikipedia:Modifier key"), e.g. to swap `Control` and `Super` (the [Windows keys](https://en.wikipedia.org/wiki/Windows_key "wikipedia:Windows key")).
+*xmodmap* can also be used to override [modifier keys](https://en.wikipedia.org/wiki/Modifier_key "wikipedia:Modifier key"), e.g. to swap `Control` and `Super` (the [Windows key](https://en.wikipedia.org/wiki/Windows_key "wikipedia:Windows key")).
 
 Print the current modifier table verbosely (full sample):
 
@@ -142,24 +142,19 @@ mod5        ISO_Level3_Shift (0x5c),  ISO_Level3_Shift (0x6c),  Mode_switch (0x8
 
 ### Finding the keysym column modifier keys
 
-	Shift
-
-	The key that calls the Shift modifier is labeled Shift on many keyboards.
-
 	ISO_Level3_Shift
 
-	The AltGr key on non-US keyboards calls modifier ISO_Level3_Shift. (On US keyboards, the right-alt `Alt_R` has the same function as the left-alt `Alt_L`, which makes setting the layout as US international preferable. See [#Keymap Table](#Keymap_Table).)
+	The AltGr key on non-US keyboards calls modifier ISO_Level3_Shift. (On US keyboards, the right-alt `Alt_R` has the same function as the left-alt `Alt_L`, which makes setting the layout as US international preferable. See [#Keymap table](#Keymap_table).)
 
 	Mode_switch
 
 	The Mode_switch modifier may be mapped by default to a key that is not on your keyboard.
 
-**Note:** The usage of the modifier names `ISO_Level3_Shift` and `Mode_switch` is different between xmodmap and [X Keyboard Extension](/index.php/X_KeyBoard_extension#xmodmap "X KeyBoard extension"). See also [[2]](https://unix.stackexchange.com/questions/55076/what-is-the-mode-switch-modifier-for)
+**Note:** The usage of the modifier names `ISO_Level3_Shift` and `Mode_switch` is different between xmodmap and [X Keyboard Extension](/index.php/X_KeyBoard_extension#xmodmap "X KeyBoard extension"). See also [[2]](https://unix.stackexchange.com/questions/55076/what-is-the-mode-switch-modifier-for).
 
 ### Reassigning modifiers to keys on your keyboard
 
-**Note:** xmodmap is *case-sensitive*. Using incorrect case, such as `Mode_Switch` instead of the correct `Mode_switch` will cause errors such as: `xmodmap: .Xmodmap:21: bad keysym name 'Mode_Switch' in keysym list
-xmodmap: 1 error encountered, aborting.`
+**Note:** xmodmap is *case-sensitive*. Using incorrect case, such as `Mode_Switch` instead of the correct `Mode_switch` will cause errors.
 
 Before assignment, the modifier keys need to be cleared. This applies to both modifiers you intend to assign and modifiers on keys that you intend to use. For example, if you intend to assign `Caps_Lock` to your A key and `B` to your NumLock key, you need to first clear the modifiers for both `Caps_Lock` and `Num_Lock`, then assign the keysyms, and finally add back the modifiers.
 

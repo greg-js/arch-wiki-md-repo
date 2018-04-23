@@ -172,7 +172,7 @@ Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous 
 
 ```
 # cp /usr/share/shim-signed/shimx64.efi *esp*/EFI/BOOT/BOOTX64.efi
-# cp /usr/share/shim-signed/mmx64.efi *esp*/EFI/BOOT/
+# cp /usr/share/shim-signed/MokManager.efi *esp*/EFI/BOOT/
 
 ```
 
@@ -190,7 +190,7 @@ Using hash is simpler, but each time you update your boot loader or kernel you w
 
 ##### shim with hash
 
-If *shim* does not find the SHA256 hash of `grubx64.efi` in MokList it will launch `mmx64.efi`.
+If *shim* does not find the SHA256 hash of `grubx64.efi` in MokList it will launch `MokManager.efi`.
 
 In *MokManager* select *Enroll hash from disk*, find `grubx64.efi` and add it to MokList. Repeat the steps and add your kernel `vmlinuz-linux`. When done select *Continue boot* and your boot loader will launch and it will be capable launching the kernel.
 
@@ -232,7 +232,7 @@ You will need to do this each time they are updated.
 
 Copy `MOK.cer` to a FAT formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
 
-Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MokList it will launch `mmx64.efi`.
+Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MokList it will launch `MokManager.efi`.
 
 In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokList. When done select *Continue boot* and your boot loader will launch and it will be capable launching any binary signed with your Machine Owner Key.
 

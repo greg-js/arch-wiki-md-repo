@@ -74,6 +74,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
     *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
     *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
+    *   [5.27 Cannot mount shared folder from fstab](#Cannot_mount_shared_folder_from_fstab)
 *   [6 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -216,27 +217,18 @@ The parameters "Arch Linux" and "1360x768x24" in the example above should be rep
 
 Afterwards, restart the virtual machine and run `hwinfo --framebuffer` once more to verify that the new resolutions have been recognized by your guest system (which does not guarantee they will all work, depending on your hardware limitations).
 
-Finally, add a `video=*resolution*` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to set the framebuffer to the new resolution, for example `video=1360x768`.
+**Note:** As of VirtualBox 5.2, `hwinfo --framebuffer` might not show any output, but you should still be able to set a custom resolution following this procedure.
 
-If you use GRUB as your bootloader, you can edit `/etc/default/grub` to include this kernel parameter in the `GRUB_CMDLINE_LINUX_DEFAULT` list, like so:
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet video=1360x768"
+Finally, add a `video=*resolution*` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to set the framebuffer to the new resolution, for example:
 
 ```
-
-The GRUB menu itself may also be easily set to optimal resolution, by editing the `GRUB_GFXMODE` option on the same configuration file:
-
-```
-GRUB_GFXMODE="1360x768x24"
+video=1360x768
 
 ```
 
-On a standard Arch setup, you would then run `grub-mkconfig -o /boot/grub/grub.cfg` to commit these changes to the bootloader.
+Additionally you may want to configure your [bootloader](/index.php/Bootloader "Bootloader") to use the same resolution. If you use GRUB, see [GRUB/Tips and tricks#Setting the framebuffer resolution](/index.php/GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution "GRUB/Tips and tricks").
 
-After these steps, the framebuffer resolution should be optimized for the GRUB menu and all virtual consoles.
-
-**Note:** The GRUB settings `GRUB_GFXPAYLOAD_LINUX` and `vga` will not fix the framebuffer, since they are overriden by virtue of Kernel Mode Setting, which is mandatory for using X under VirtualBox and only allows for setting the framebuffer resolution by setting the kernel parameter described above.
+**Note:** Neither the kernel parameter `vga` nor the bootloader's resolution settings (e.g. GRUB's `GRUB_GFXPAYLOAD_LINUX`) will fix the framebuffer, since they are overriden by virtue of Kernel Mode Setting. The framebuffer resolution must be set by the kernel parameter `video` as described above.
 
 ### Load the VirtualBox kernel modules
 
@@ -299,7 +291,7 @@ Two additional steps are needed in order for the mount point to be accessible fr
 Use the following command to mount your folder in your Arch Linux guest:
 
 ```
-# mount -t vboxsf *shared_folder_name* *mount_point_on_guest_system*
+# mount -cit vboxsf *shared_folder_name* *mount_point_on_guest_system*
 
 ```
 
@@ -313,7 +305,7 @@ The vboxsf filesystem offers other options which can be displayed with this comm
 For example if the user was not in the *vboxsf* group, we could have used this command to give access our mountpoint to him:
 
 ```
-# mount -t vboxsf -o uid=1000,gid=1000 home /mnt/
+# mount -cit vboxsf -o uid=1000,gid=1000 home /mnt
 
 ```
 
@@ -335,6 +327,8 @@ $ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
 ```
 
 #### Mount at boot
+
+**Note:** `mount.vboxsf` will not mount shared folders from `/etc/fstab` on kernels 4.16 or newer. See [#Cannot mount shared folder from fstab](#Cannot_mount_shared_folder_from_fstab) for a workaround.
 
 You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `noauto,x-systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd reads fstab and mounts the partitions.
 
@@ -892,6 +886,12 @@ $ CR_RENDER_FORCE_PRESENT_MAIN_THREAD=0 VirtualBox
 ```
 
 Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](https://www.virtualbox.org/ticket/13653).
+
+### Cannot mount shared folder from fstab
+
+The `/usr/bin/mount.vboxsf` binary shipped in [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) cannot be used with kernels 4.16 or newer.
+
+The existence of `/usr/bin/mount.vboxsf` will prevent mounting shared folders from [fstab](#Mount_at_boot). A workaround is to declare `usr/bin/mount.vboxsf` as [NoExtract](/index.php/Pacman#Skip_files_from_being_installed_to_system "Pacman") in `/etc/pacman.conf`. See [FS#58272](https://bugs.archlinux.org/task/58272) for more information.
 
 ## See also
 

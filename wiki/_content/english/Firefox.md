@@ -32,17 +32,16 @@ Related articles
     *   [6.7 Middle-click errors](#Middle-click_errors)
     *   [6.8 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_.27Back.27_button)
     *   [6.9 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
-    *   [6.10 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
-    *   [6.11 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
-    *   [6.12 Silently fails when installing desktop apps from marketplace](#Silently_fails_when_installing_desktop_apps_from_marketplace)
-    *   [6.13 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
-    *   [6.14 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
-    *   [6.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
-    *   [6.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [6.17 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
-    *   [6.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.19 Firefox ESR 52 looks bad](#Firefox_ESR_52_looks_bad)
-    *   [6.20 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.10 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
+    *   [6.11 Silently fails when installing desktop apps from marketplace](#Silently_fails_when_installing_desktop_apps_from_marketplace)
+    *   [6.12 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
+    *   [6.13 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
+    *   [6.14 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
+    *   [6.15 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
+    *   [6.16 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
+    *   [6.17 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
+    *   [6.18 Firefox ESR 52 looks bad](#Firefox_ESR_52_looks_bad)
+    *   [6.19 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -315,44 +314,6 @@ $ rm -f ~/.mozilla/firefox/<profile id>.default/cookies.sqlite
 The profile id is a random 8 character string.
 
 Restart Firefox and see if it solved the problem.
-
-### Unreadable input fields with dark GTK+ themes
-
-When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. See [Firefox Bug 1283086](https://bugzilla.mozilla.org/show_bug.cgi?id=1283086).
-
-This can be prevented by setting `browser.display.use_system_colors` to `false` in `about:config`, which will stop Firefox using your theme's colors in web pages.
-
-The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
-
-Another workaround is to explicitly set standard colors for all web pages in `~/.mozilla/firefox/*xxxxxxxx*.default/chrome/userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
-
-The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
-
-**Note:** If you want `urlbar` and `searchbar` to be `white` remove the two first `:not` css selectors.
-
-```
-input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']):not([type='radio']), textarea, select {
-    -moz-appearance: none !important;
-    background-color: white;
-    color: black;
-}
-
-#downloads-indicator-counter {
-    color: white;
-}
-```
-
-Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
-
-1.  Copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`.
-2.  Close all running instances of Firefox and restart your window manager/desktop environment.
-
-Another way to change gtk theme for content process only, which keeps dark UI theming, but enforces light theme for rendering webpage itself:
-
-1.  Open `about:config` in the address bar
-2.  Create a new string type preference (*right mouse button > New > String*) named `widget.content.gtk-theme-override`
-3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`)
-4.  Restart Firefox
 
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 

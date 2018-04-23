@@ -132,7 +132,7 @@ To work in monitor mode, use this newly created network interface.
 
 Since the 3.3.1 kernel the **bcma** module was introduced. If using a **brcm80211** driver be sure it has not been [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules"). It should be blackisted if using a **b43** driver.
 
-If you are using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), uninstall and reinstall it after upgrading your kernel or switch to [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) package.
+If you are using [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl), uninstall and reinstall it after upgrading your kernel or switch to [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) package.
 
 ### Device with broadcom-wl driver not working/showing
 

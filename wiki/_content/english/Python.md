@@ -159,7 +159,7 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 *   **wxPython** — wxWidgets bindings
 
-	[https://wxpython.org/](https://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
+	[https://wxpython.org/](https://wxpython.org/) || [python2-wxpython3](https://www.archlinux.org/packages/?name=python2-wxpython3) [python-wxpython](https://www.archlinux.org/packages/?name=python-wxpython)
 
 To use these with Python, you may need to install the associated widget kits.
 
@@ -167,14 +167,9 @@ To use these with Python, you may need to install the associated widget kits.
 
 ### IPython
 
-[IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2). If you want the IPython notebook, install [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) for the IPython3 notebook and [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for the IPython2 notebook. Run:
+[IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2).
 
-```
-$ jupyter notebook
-
-```
-
-to autostart the browser and run the IPython kernel. You can select the *python* version when creating the notebook in the browser.
+[Jupyter](/index.php/Jupyter "Jupyter") Notebook can be used for a web interface to IPython.
 
 [bpython](https://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
 

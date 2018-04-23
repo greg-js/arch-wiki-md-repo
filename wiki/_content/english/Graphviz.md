@@ -11,7 +11,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Graphviz "wikipedia:Graphviz"):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [graphviz](https://www.archlinux.org/packages/?name=graphviz) package.
+[Install](/index.php/Install "Install") the [graphviz](https://www.archlinux.org/packages/?name=graphviz) package. For a more interactive experience also take a look at [vimdot](https://www.archlinux.org/packages/?name=vimdot) package.
 
 ## Font
 

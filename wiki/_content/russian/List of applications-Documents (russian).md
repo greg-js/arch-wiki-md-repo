@@ -626,7 +626,7 @@
 
 *   **gscan2pdf** — Производит сканирование, вызывает движок OCR, осуществляет небольшую постобработку и создает готовый документ
 
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
 *   **OCRFeeder** — Python GUI для Gnome, который выполняет анализ и передачу документа и может использовать движки CuneiForm, GOCR, Ocrad или Tesseract. Может производить импорт из файлов PDF или изображений, а экспортировать в HTML или OpenDocument
 

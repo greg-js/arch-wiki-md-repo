@@ -44,18 +44,19 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.27 miffe](#miffe)
     *   [2.28 mikelpint](#mikelpint)
     *   [2.29 mobile](#mobile)
-    *   [2.30 pkgbuilder](#pkgbuilder)
-    *   [2.31 qt-debug](#qt-debug)
-    *   [2.32 quarry](#quarry)
-    *   [2.33 repo-ck](#repo-ck)
-    *   [2.34 seblu](#seblu)
-    *   [2.35 seiichiro](#seiichiro)
-    *   [2.36 sergej-repo](#sergej-repo)
-    *   [2.37 siosm-aur](#siosm-aur)
-    *   [2.38 subtitlecomposer](#subtitlecomposer)
-    *   [2.39 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.40 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.41 xyne-x86_64](#xyne-x86_64)
+    *   [2.30 nah](#nah)
+    *   [2.31 pkgbuilder](#pkgbuilder)
+    *   [2.32 qt-debug](#qt-debug)
+    *   [2.33 quarry](#quarry)
+    *   [2.34 repo-ck](#repo-ck)
+    *   [2.35 seblu](#seblu)
+    *   [2.36 seiichiro](#seiichiro)
+    *   [2.37 sergej-repo](#sergej-repo)
+    *   [2.38 siosm-aur](#siosm-aur)
+    *   [2.39 subtitlecomposer](#subtitlecomposer)
+    *   [2.40 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.42 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -473,6 +474,18 @@ Server = https://mikelpint.github.io/repository/archlinux/repo
 ```
 [mobile]
 Server = https://farwayer.keybase.pub/arch/$repo
+
+```
+
+### nah
+
+*   **Maintainer:** [phillid](https://yeah.nah.nz)
+*   **Description:** Pre-built versions of the (slow-to-build) graph-tool python libraries
+*   **Key ID:** 7BF3D17D0884BF5B
+
+```
+[nah]
+Server = https://repo.nah.nz/$repo
 
 ```
 

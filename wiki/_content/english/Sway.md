@@ -7,7 +7,7 @@
 *   [1 Status](#Status)
 *   [2 Installation](#Installation)
 *   [3 Starting sway](#Starting_sway)
-    *   [3.1 From a TTY](#From_a_TTY)
+    *   [3.1 From a TTY, on login](#From_a_TTY.2C_on_login)
     *   [3.2 Using a display manager](#Using_a_display_manager)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keymap](#Keymap)
@@ -18,8 +18,7 @@
     *   [4.6 Custom keybindings](#Custom_keybindings)
     *   [4.7 .Xresources](#.Xresources)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Automatically start on login](#Automatically_start_on_login)
-    *   [5.2 dmenu replacement](#dmenu_replacement)
+    *   [5.1 dmenu replacement](#dmenu_replacement)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
     *   [6.2 Using VirtualBox](#Using_VirtualBox)
@@ -46,9 +45,11 @@ A detailed accounting of what features have been implemented and what features a
 
 **Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
 
-### From a TTY
+### From a TTY, on login
 
-You can start sway by simply typing `sway` from your TTY.
+You can start sway by simply typing `sway` from your TTY. To start on login to tty1, add the following to your `.bash_profile`, in this example with swiss keyboard:
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then XKB_DEFAULT_LAYOUT=ch exec sway fi
 
 ### Using a display manager
 
@@ -197,17 +198,6 @@ To control brightness you can use [brightnessctl](https://aur.archlinux.org/pack
 Copy `.Xresources` to `.Xdefaults` to use them in sway.
 
 ## Tips and tricks
-
-### Automatically start on login
-
-To start on login to tty1, add the following to your `.bash_profile`:
-
-```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  exec sway
-fi
-
-```
 
 ### dmenu replacement
 

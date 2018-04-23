@@ -317,7 +317,7 @@ The disk layout in this example is:
 
 ```
 
-**Warning:** While using the `encrypt` hook this method does not allow you to span the logical volumes over multiple disks; either use the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") or see [dm-crypt/Specialties#Modifying the encrypt hook for multiple partitions](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
+**Note:** While using the `encrypt` hook this method does not allow you to span the logical volumes over multiple disks; either use the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") or see [dm-crypt/Specialties#Modifying the encrypt hook for multiple partitions](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
 
 **Tip:** Three variants of this setup:
 
@@ -329,7 +329,7 @@ The disk layout in this example is:
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
+**Tip:** When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 
 Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
 

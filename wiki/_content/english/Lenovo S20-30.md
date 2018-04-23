@@ -1,3 +1,9 @@
+Related articles
+
+*   [Touchpad](/index.php/Touchpad "Touchpad")
+*   [Acpid](/index.php/Acpid "Acpid")
+*   [Powertop](/index.php/Powertop "Powertop")
+
 This is one of the products from the [Lenovo S-series](http://shop.lenovo.com/de/de/laptops/lenovo/s-series), which is different from the IdeaPad S-Series.
 
 ## Contents
@@ -94,7 +100,7 @@ The BIOS and the boot menu can be accessed by using the *alternative* power butt
 
 ### Wireless
 
-Works after installing the proprietary driver module [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), which supports Broadcom BCM43142\. See the detailed [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for further information.
+Works after installing the proprietary driver module [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), which supports Broadcom BCM43142\. See the detailed [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for further information.
 
 ### Bluetooth
 

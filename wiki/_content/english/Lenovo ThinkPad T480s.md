@@ -14,6 +14,13 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
+## Contents
+
+*   [1 Hardware](#Hardware)
+    *   [1.1 Fingerprint reader](#Fingerprint_reader)
+*   [2 Powersaving](#Powersaving)
+*   [3 See also](#See_also)
+
 ## Hardware
 
 Using kernel 4.15.7-1-ARCH.
@@ -74,6 +81,15 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ### Fingerprint reader
 
 Fingerprint sensor 06cb:009a is not supported by libfprint right now. There is a project to reverse enginer windows driver - [https://github.com/nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) .
+
+## Powersaving
+
+Without special configuration and with default firmware settings, power usage is a bit high (around 7,5W in idle). There are a few knobs to improve battery life:
+
+*   Set "Thunderbolt BIOS Assist Mode" to "Enabled" in the EFI firmware interface. This seems to reduce number of idle wakeups.
+*   Disable unused peripherals under "Security" -> "I/O port access" in the firmware. This especially applies to the SD/MMC-cardreader, which seems to drain some power even when idle
+
+As of Kernel 4.15, DisplayPort PSR (Panel self refresh) is disabled by default and broken when forcibly enabled (system hangs after a few seconds, display lag). 4.17-rc1 seems to improve a lot in this regard, but PSR still sometimes causes the screen to freeze for a few seconds.
 
 ## See also
 

@@ -31,6 +31,10 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [6.2 asus-nb-wmi](#asus-nb-wmi)
     *   [6.3 asus_fan](#asus_fan)
     *   [6.4 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
+*   [7 amdgpu sysfs fan control](#amdgpu_sysfs_fan_control)
+    *   [7.1 Configuration of manual control](#Configuration_of_manual_control)
+    *   [7.2 fancurve script](#fancurve_script)
+        *   [7.2.1 Setting up fancurve script](#Setting_up_fancurve_script)
 
 ## Overview
 
@@ -445,3 +449,69 @@ And finally, in the third console:
 ```
 
 Once you are done and the configuration file is generated, you should stop the first and second consoles. Continue with [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29). After config file is generated, you might need to manually replace PWM values with full sysfs paths as they are used in these steps, because hwmon number values might change after reboot.
+
+## amdgpu sysfs fan control
+
+[AMDGPU](/index.php/AMDGPU "AMDGPU") kernel driver offers fan control for graphics cards via hwmon in sysfs.
+
+### Configuration of manual control
+
+To switch to manual fan control from automatic, run
+
+```
+# echo "1" > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1_enable
+
+```
+
+Set up fan speed to e.g. 50% (100% are 255 PWM cycles, thus calculate desired fan speed percentage by multiplying its value by 2.55):
+
+```
+# echo "128" > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1_enable
+
+```
+
+To reset to automatic fan control, run
+
+```
+# echo "2" > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1_enable
+
+```
+
+**Warning:** Resetting fan speed to auto may not work due to a driver bug and instead a restart of the driver may be required as a workaround.
+
+### fancurve script
+
+Not just fan controls are offered via hwmon in sysfs, but also GPU temperature reading:
+
+```
+cat /sys/class/drm/card0/device/hwmon/hwmon0/temp1_input
+
+```
+
+This outputs GPU temperature in °C + three zeroes, e.g. `33000` for 33°C.
+
+The bash script [amdgpu-fancontrol](https://github.com/grmat/amdgpu-fancontrol) by grmat offers a fully automatic fan control by using the described sysfs hwmon functionality. It also allows to comfortably adjust the fancurve's temperature/PWM cycles assignments and a hysteresis by offering abstracted configuration fields at the top of the script.
+
+**Tip:** In order to function correctly, the script needs at least three defined temperature/PWM cycles assignments.
+
+For safety reasons, the script sets fan control again to auto when shutting down. This may cause spinning up of fans, which can be worked around at cost of security by setting `set_fanmode 1` in the section `function reset_on_fail`.
+
+#### Setting up fancurve script
+
+To start the script, it is recommend to do so via [systemd](/index.php/Systemd "Systemd") init system. This way the script's verbose output can be read via [journalctl](/index.php/Journalctl "Journalctl")/systemctl status. For this purpose, a .service configuration file is already included in the GitHub repository.
+
+It may also be required to restart the script via a [root-resume.service](/index.php/Power_management#Sleep_hooks "Power management") after hibernation in order to make it automatically function properly again:
+
+ `/etc/systemd/system/root-resume.service` 
+```
+[Unit]
+Description=Local system resume actions
+After=suspend.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemctl restart amdgpu-fancontrol.service
+
+[Install]
+WantedBy=suspend.target
+```

@@ -62,7 +62,7 @@ There are several ways to achieve this on Linux:
 | MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | ✗ |
 | MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
 | H.264 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API. |
-| HEVC (H.265) | [yes](https://cgit.freedesktop.org/mesa/mesa/commit/src/gallium/state_trackers/vdpau/decode.c?id=5609a6986f3eb3c452d66d373b6081df5c6fb34c) (which cards?) | GeForce 900 and newer | ✗ |
+| HEVC (H.265) | [yes](https://cgit.freedesktop.org/mesa/mesa/commit/src/gallium/state_trackers/vdpau/decode.c?id=5609a6986f3eb3c452d66d373b6081df5c6fb34c) | GeForce 900 and newer | ✗ |
 | VC1 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer |
 
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.

@@ -1,3 +1,10 @@
+Related articles
+
+*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
+*   [VMware](/index.php/VMware "VMware")
+*   [QEMU](/index.php/QEMU "QEMU")
+*   [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware")
+
 This article describes how to transfer your current Arch Linux installation in or out of a virtual environment (i.e. QEMU, VirtualBox, VMware). A virtual machine ("VM", for short) uses different hardware, which needs to be addressed by re-generating the initramfs image and possibly adjusting the fstab – especially if it is an [SSD](/index.php/SSD "SSD").
 
 ## Contents
@@ -180,27 +187,14 @@ Enjoy your new virtual environment.
 
 ### "mount: special device /dev/loop5p1 does not exist"
 
-First, check the loopback device with `fdisk` for the starting block:
-
- `# fdisk -l /dev/loop5` 
-```
-Disk /dev/loop5: 10.7 GB, 10733958144 bytes
-255 heads, 63 sectors/track, 1304 cylinders, total 20964762 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x000b45e8
-
-      Device Boot      Start         End      Blocks   Id  System
-/dev/loop5p1   *        2048    20963327    10480640   83  Linux
-```
-
-Then use it as an offset when mounting it:
+Use `losetup --partscan`, for example:
 
 ```
-# mount -o offset=$((**2048** * 512)) /dev/loop5 /mnt/Virtual/
+# losetup --partscan /dev/loop5 /media/Backup/backup.img
 
 ```
+
+This should create device nodes for each partition you have created inside the loop device.
 
 ### "Waiting 10 seconds for device /dev/sda1; ERROR: Unable to find root device '/dev/sda1'"
 

@@ -1563,7 +1563,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
 
-	[https://github.com/martinrotter/rssguard](https://github.com/martinrotter/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
+	[https://github.com/martinrotter/rssguard](https://github.com/martinrotter/rssguard) || [rssguard](https://www.archlinux.org/packages/?name=rssguard) or [rssguard-nowebengine](https://www.archlinux.org/packages/?name=rssguard-nowebengine)
 
 *   **selfoss** — The new multipurpose RSS reader, live stream, mashup, aggregation web application.
 

@@ -60,7 +60,6 @@ You can either install using VMware bundle or package [vmware-workstation](https
 [Install](/index.php/Install "Install") the correct dependencies:
 
 *   [fuse2](https://www.archlinux.org/packages/?name=fuse2) - for *vmware-vmblock-fuse*
-*   [gksu](https://www.archlinux.org/packages/?name=gksu) - for root operations (memory allocations, registering license, etc.)
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - for the GUI
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - for module compilation
 *   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by the `--console` installer
@@ -275,7 +274,7 @@ Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowB
 
 ```
 
-This means the following:
+This means the append the following line to the file using your prefered editor:
 
  `~/.vmware/preferences`  `mks.gl.allowBlacklistedDrivers = TRUE` 
 

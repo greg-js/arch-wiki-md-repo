@@ -22,7 +22,7 @@ Installation on this computer is very similar to a standard archlinux installati
 
 #### FIRST BOOT
 
-Now you boot on your new archlinux, install wireless with the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) package.
+Now you boot on your new archlinux, install wireless with the [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) package.
 
 (WARNING : This module is not a free module but propietary) After installation edit your rc.conf, remove blacklisted module and add at MODULES line :
 

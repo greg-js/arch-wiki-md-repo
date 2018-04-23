@@ -211,6 +211,8 @@ To enable power save mode on the audio:
 
 To decrease the consumption of the intel chipset add **i915.enable_psr=1** to your kernel parameters ([details here](https://hansdegoede.livejournal.com/18653.html)).
 
+You can try to undervolt your system (look for [intel undervolt](https://github.com/mihic/linux-intel-undervolt)). I only managed to undervolt the CPU (i7-5600U).
+
 ### SSD
 
 If you have an SSD installed, either add the discard option in the [fstab](/index.php/Fstab "Fstab") for all partitions,

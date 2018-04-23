@@ -34,7 +34,7 @@ Cuando booteen por primera vez, tengan en cuenta que deben editar la linea del k
 
 La instalación la hacen normalmente y reinician con el sistema andando. Pero les recomiendo editar el **rc.conf** en la siguiente forma:
 
-de un plumazo pongan en la lista negra el módulo de broadcom (placa wireless) "b43" y el de "ssb" aún no funcionan, a pesar que estan repotados de hacerlo con kernel 2.6.32+, con el 2.6.34 aún no resulta en mi caso. Espero que pronto lo haga, para no depender del driver privativo. Sin embargo, hasta la fecha de esta actualización (junio 2010) necesitamos instalar dicho driver, en AUR tenemos un paquete para ello: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) y lo agregan a la lista de módulos como les indica al terminar de instalar el paquete.
+de un plumazo pongan en la lista negra el módulo de broadcom (placa wireless) "b43" y el de "ssb" aún no funcionan, a pesar que estan repotados de hacerlo con kernel 2.6.32+, con el 2.6.34 aún no resulta en mi caso. Espero que pronto lo haga, para no depender del driver privativo. Sin embargo, hasta la fecha de esta actualización (junio 2010) necesitamos instalar dicho driver, en AUR tenemos un paquete para ello: [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) y lo agregan a la lista de módulos como les indica al terminar de instalar el paquete.
 
 [Agosto 2010] Desde el kernel 2.6.35 el módulo B43 funciona bien y es más estable que el de Broadcom. Sin embargo, el procedimiento para comenzar la conexion/desconexion es notablemente más largo. Eso es especialmente molesto a la hora de suspender la computadora ya que demora varios segundos para hacerlo.
 

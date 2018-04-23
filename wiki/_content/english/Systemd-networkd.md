@@ -107,7 +107,7 @@ DNS=10.1.10.1
 
 #### Wireless adapter
 
-In order to connect to a wireless network with *systemd-networkd*, a wireless adapter configured with another service such as [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") is required. In this example, the corresponding systemd service file that needs to be enabled is `wpa_supplicant@wlp2s0.service`. This service will run *wpa_supplicant* with the configuration file `/etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf`. If this file does not exist, the service will not start.
+In order to connect to a wireless network with *systemd-networkd*, a wireless adapter configured with another application such as [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") is required. In this example, the corresponding systemd service file that needs to be enabled is `wpa_supplicant@wlp2s0.service`. This service will run *wpa_supplicant* with the mandatory configuration file `/etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf`; if it does not exist, the service will not start.
 
  `/etc/systemd/network/25-wireless.network` 
 ```

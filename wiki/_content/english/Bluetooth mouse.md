@@ -8,19 +8,14 @@ This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetoo
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Bluez5 instructions](#Bluez5_instructions)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Mouse lag](#Mouse_lag)
-    *   [3.2 Problems with the USB dongle](#Problems_with_the_USB_dongle)
-    *   [3.3 Mouse always disconnect](#Mouse_always_disconnect)
-    *   [3.4 Apple Magic Mouse scroll speed](#Apple_Magic_Mouse_scroll_speed)
-    *   [3.5 Apple Magic Mouse middle click](#Apple_Magic_Mouse_middle_click)
-    *   [3.6 Mouse pairing and dual boot](#Mouse_pairing_and_dual_boot)
-
-## Installation
-
-Install the [bluez](https://www.archlinux.org/packages/?name=bluez) package which contains the current Linux bluetooth stack (Bluez5). You may also want to install [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) which provides the *bluetoothctl* utility. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
+*   [1 Bluez5 instructions](#Bluez5_instructions)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Mouse lag](#Mouse_lag)
+    *   [2.2 Problems with the USB dongle](#Problems_with_the_USB_dongle)
+    *   [2.3 Mouse always disconnect](#Mouse_always_disconnect)
+    *   [2.4 Apple Magic Mouse scroll speed](#Apple_Magic_Mouse_scroll_speed)
+    *   [2.5 Apple Magic Mouse middle click](#Apple_Magic_Mouse_middle_click)
+    *   [2.6 Mouse pairing and dual boot](#Mouse_pairing_and_dual_boot)
 
 ## Bluez5 instructions
 

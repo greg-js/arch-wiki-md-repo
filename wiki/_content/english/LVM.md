@@ -204,6 +204,8 @@ First you need to create a volume group on one of the physical volumes:
 
 ```
 
+See [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8) for a list of valid characters for volume group names.
+
 For example:
 
 ```
@@ -266,7 +268,7 @@ For example:
 
 ```
 
-This will create a logical volume that you can access later with `/dev/mapper/Volgroup00-lvolhome` or `/dev/VolGroup00/lvolhome`. Same as with the volume groups, you can use any name you want for your logical volume when creating it.
+This will create a logical volume that you can access later with `/dev/mapper/Volgroup00-lvolhome` or `/dev/VolGroup00/lvolhome`. Just like volume groups, you can use any name you want for your logical volume when creating it besides a few exceptions listed in [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8#VALID_NAMES).
 
 You can also specify one or more physical volumes to restrict where LVM allocates the data. For example, you may wish to create a logical volume for the root filesystem on your small SSD, and your home volume on a slower mechanical drive. Simply add the physical volume devices to the command line, for example:
 
@@ -695,9 +697,9 @@ Reverting the modified 'pv' logical volume to the state when the 'snap01' snapsh
 
 ```
 
-In case the origin logical volume is active, merging will occur on the next reboot.(Merging can be done even from a LiveCD)
+In case the origin logical volume is active, merging will occur on the next reboot (merging can be done even from a LiveCD).
 
-The snapshot will no longer exist after merging.
+*The snapshot will no longer exist after merging.*
 
 Also multiple snapshots can be taken and each one can be merged with the origin logical volume at will.
 

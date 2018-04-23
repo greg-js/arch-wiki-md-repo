@@ -21,14 +21,35 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
     *   [1.5 Eliminar todo menos el grupo base](#Eliminar_todo_menos_el_grupo_base)
     *   [1.6 Obtener la lista de dependencias de varios paquetes](#Obtener_la_lista_de_dependencias_de_varios_paquetes)
     *   [1.7 Listado de archivos de copia de seguridad modificados](#Listado_de_archivos_de_copia_de_seguridad_modificados)
-*   [2 Optimización](#Optimizaci.C3.B3n)
-    *   [2.1 Velocidades de acceso a la base de datos](#Velocidades_de_acceso_a_la_base_de_datos)
-    *   [2.2 Velocidades de descarga](#Velocidades_de_descarga)
-    *   [2.3 Powerpill](#Powerpill)
-    *   [2.4 Wget](#Wget)
-    *   [2.5 Aria2](#Aria2)
-*   [3 Utilidades](#Utilidades)
-    *   [3.1 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
+    *   [1.8 Copia de seguridad de la base de datos de pacman](#Copia_de_seguridad_de_la_base_de_datos_de_pacman)
+    *   [1.9 Verifique registros de cambios fácilmente](#Verifique_registros_de_cambios_f.C3.A1cilmente)
+*   [2 Instalación y recuperación](#Instalaci.C3.B3n_y_recuperaci.C3.B3n)
+    *   [2.1 Instalación de paquetes desde un CD / DVD o dispositivo USB](#Instalaci.C3.B3n_de_paquetes_desde_un_CD_.2F_DVD_o_dispositivo_USB)
+    *   [2.2 Repositorio local personalizado](#Repositorio_local_personalizado)
+    *   [2.3 Caché de pacman compartida en red](#Cach.C3.A9_de_pacman_compartida_en_red)
+        *   [2.3.1 Caché de solo lectura](#Cach.C3.A9_de_solo_lectura)
+        *   [2.3.2 Distribución de caché de solo lectura](#Distribuci.C3.B3n_de_cach.C3.A9_de_solo_lectura)
+        *   [2.3.3 Caché de lectura y escritura](#Cach.C3.A9_de_lectura_y_escritura)
+        *   [2.3.4 de doble sentido con rsync](#de_doble_sentido_con_rsync)
+        *   [2.3.5 Caché de proxy inverso dinámico usando nginx](#Cach.C3.A9_de_proxy_inverso_din.C3.A1mico_usando_nginx)
+        *   [2.3.6 Sincronice la memoria caché del paquete pacman utilizando programas de sincronización](#Sincronice_la_memoria_cach.C3.A9_del_paquete_pacman_utilizando_programas_de_sincronizaci.C3.B3n)
+        *   [2.3.7 Prevención de limpiezas de caché no deseadas](#Prevenci.C3.B3n_de_limpiezas_de_cach.C3.A9_no_deseadas)
+    *   [2.4 Reconstituir un paquete del sistema de archivos](#Reconstituir_un_paquete_del_sistema_de_archivos)
+    *   [2.5 Lista de paquetes instalados](#Lista_de_paquetes_instalados)
+    *   [2.6 Listado de todos los archivos modificados de los paquetes](#Listado_de_todos_los_archivos_modificados_de_los_paquetes)
+    *   [2.7 Reinstalling all packages](#Reinstalling_all_packages)
+    *   [2.8 Restore pacman's local database](#Restore_pacman.27s_local_database)
+    *   [2.9 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
+    *   [2.10 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
+    *   [2.11 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
+*   [3 Optimización](#Optimizaci.C3.B3n)
+    *   [3.1 Velocidades de acceso a la base de datos](#Velocidades_de_acceso_a_la_base_de_datos)
+    *   [3.2 Velocidades de descarga](#Velocidades_de_descarga)
+    *   [3.3 Powerpill](#Powerpill)
+    *   [3.4 Wget](#Wget)
+    *   [3.5 Aria2](#Aria2)
+*   [4 Utilidades](#Utilidades)
+    *   [4.1 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
 
 ## Mantenimiento
 
@@ -220,6 +241,332 @@ Si desea realizar una copia de seguridad de los archivos de configuración del s
 Ejecutar este comando con permisos de root asegurará que los archivos sólo pueden ser leídos por root (por ejemplo `/etc/sudoers`) están incluidos en la salida.
 
 **Tip:** Mire [#Listado de todos los archivos modificados de los paquetes](#Listado_de_todos_los_archivos_modificados_de_los_paquetes) para listar todos los archivos modificados que conoce *pacman* , no sólo los archivos de copia de seguridad.
+
+### Copia de seguridad de la base de datos de pacman
+
+El siguiente comando se puede usar para realizar una copia de seguridad de la base de datos local de *pacman* :
+
+```
+$ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
+
+```
+
+Almacene el archivo de base de datos de respaldo *pacman* en uno o más medios sin conexión, como una memoria USB, disco duro externo o CD-R.
+
+La base de datos se puede restaurar moviendo el`pacman_database.tar.bz2` archivo en el `/` directorio y ejecutando el siguiente comando :
+
+```
+# tar -xjvf pacman_database.tar.bz2
+
+```
+
+**Nota:** Si los archivos de la base de datos *pacman* están dañados y no hay un archivo de respaldo disponible, existe la esperanza de reconstruir la base de datos *pacman* . Consultar [#Restore pacman's local database](#Restore_pacman.27s_local_database).
+
+**Tip:** El paquete [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) proporciona una secuencia de comandos y un servicio en [systemd](/index.php/Systemd "Systemd") para automatizar la tarea. La configuración es posible en `/etc/pakbak.conf`.
+
+### Verifique registros de cambios fácilmente
+
+Cuando los mantenedores actualizan los paquetes, las confirmaciones a menudo se comentan de manera útil. Los usuarios pueden comprobarlo rápidamente desde la línea de comando instalando [pacolog](https://aur.archlinux.org/packages/pacolog/). Esta utilidad enumera mensajes de confirmación recientes para paquetes de los repositorios oficiales o en AUR, mediante el uso de `pacolog <package>`.
+
+## Instalación y recuperación
+
+Formas alternativas de obtener y restaurar paquetes.
+
+### Instalación de paquetes desde un CD / DVD o dispositivo USB
+
+Para descargar paquetes o grupos de paquetes:
+
+```
+# cd ~/Packages
+# pacman -Syw base base-devel grub-bios xorg gimp --cachedir .
+# repo-add ./custom.db.tar.gz ./*
+
+```
+
+A continuación puede grabar la carpeta "Packages" en un CD/DVD o transferir a una dispositivo USB , disco duro externo HDD, etc.
+
+Para instalar:
+
+**1.** Montar los medios:
+
+```
+# mkdir /mnt/repo
+# mount /dev/sr0 /mnt/repo    #For a CD/DVD.
+# mount /dev/sdxY /mnt/repo   #For a USB stick.
+
+```
+
+**2.** Edite `pacman.conf` y agrege este repositorio *antes* de los otros (e.g. extra, core, etc.). Esto es importante. No se limite a descomentar el que está en la parte inferior. De esta manera se asegura de que los archivos del CD/DVD/USB tengan prioridad sobre los de los repositorios estándar.:
+
+ `/etc/pacman.conf` 
+```
+[custom]
+SigLevel = PackageRequired
+Server = file:///mnt/repo/Packages
+```
+
+**3.** Finalmente, sincronice la base de datos *pacman* para poder usar el nuevo repositorio:
+
+```
+# pacman -Syu
+
+```
+
+### Repositorio local personalizado
+
+Utilice el script *repo-add* incluido con *pacman* para generar una base de datos para un repositorio personal. Utilize `repo-add --help` para más detalles sobre su uso. Para agregar un nuevo paquete a la base de datos o para reemplazar la versión anterior de un paquete existente en la base de datos, ejecute:
+
+```
+$ repo-add */path/to/repo.db.tar.gz /path/to/package-1.0-1-x86_64.pkg.tar.xz*
+
+```
+
+**Nota:** Una base de datos de paquetes es un archivo tar, opcionalmente comprimido. Las extensiones válidas son *.db* o *.files* seguidas por una extensión de archivo de *.tar* , *.tar.gz* , *.tar.bz2* , *. tar.xz* o *.tar.z* . El archivo no necesita existir, pero todos los directorios principales deben existir.
+
+La base de datos y los paquetes no necesitan estar en el mismo directorio cuando se utiliza *repo-add* , pero tenga en cuenta que cuando se usa *pacman* con esa base de datos, deben estar juntos. Almacenar todos los paquetes construidos para ser incluidos en el repositorio en un directorio también permite usar la expansión shell glob para añadir o actualizar múltiples paquetes a la vez:
+
+```
+$ repo-add */path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz*
+
+```
+
+**Advertencia:** *repo-add* agrega las entradas a la base de datos en el mismo orden que se pasó en la línea de comando. Si se trata de varias versiones del mismo paquete, se debe tener cuidado para asegurarse de que se agregue la versión correcta al final. En particular, tenga en cuenta que el orden léxico utilizado por el shell depende de la configuración regional y difiere de la [vercmp](https://www.archlinux.org/pacman/vercmp.8.html) orden utilizado por *pacman*.
+
+*repo-remove* se usa para eliminar paquetes de la base de datos, excepto si el nombre del paquete se especifica con el siguiente comando.
+
+```
+$ repo-remove */path/to/repo.db.tar.gz pkgname*
+
+```
+
+Una vez que se haya creado la base de datos del repositorio local, agregue el repositorio a `pacman.conf` para cada sistema que usará el repositorio. Un ejemplo de repositorio personalizado está en `pacman.conf`. El nombre del repositorio es el nombre de archivo de la base de datos con la extensión de archivo omitida. En el caso del ejemplo anterior, el nombre del repositorio sería simplemente *repo* . Haga referencia a la ubicación del repositorio utilizando un `file://` url, o por FTP usando [ftp://localhost/path/to/directory](ftp://localhost/path/to/directory).
+
+Si lo desea, añada el repositorio personalizado al directorio [list of unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"), para que la comunidad pueda beneficiarse de ello.
+
+### Caché de pacman compartida en red
+
+Si ejecuta varios Arch boxes en su LAN, puede compartir paquetes para que pueda disminuir considerablemente los tiempos de descarga. Tenga en cuenta que no debe compartir entre diferentes arquitecturas (es decir, i686 y x86_64) o se encontrará con problemas.
+
+#### Caché de solo lectura
+
+Si está buscando una solución rápida, puede simplemente ejecutar un servidor web independiente que otros ordenadores pueden utilizar como primera réplica.:
+
+```
+# ln -s /var/lib/pacman/sync/*.db /var/cache/pacman/pkg
+$ sudo -u http darkhttpd /var/cache/pacman/pkg --no-server-id
+
+```
+
+También podría ejecutar darkhttpd como un servicio systemd para su comodidad.Solo agregue este servidor en la parte superior de su `/etc/pacman.d/mirrorlist` in client machines with `Server = http://mymirror:8080`.Asegúrese de mantener su réplica actualizada .
+
+#### Distribución de caché de solo lectura
+
+Existen herramientas específicas de Arch para descubrir automáticamente otros equipos de la red que ofrecen una caché de paquetes. Intente [pacserve](/index.php/Pacserve "Pacserve"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/), o [paclan](https://aur.archlinux.org/packages/paclan/). pkgdistcache utilize Avahi en lugar de UDP el cual puede funcionar mejor en ciertas redes domésticas que enrutan en lugar de tender un puente entre WiFi y Ethernet .
+
+Históricamente, hubo [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) y [multipkg](https://github.com/toofishes/multipkg), pero ya no se mantienen.
+
+#### Caché de lectura y escritura
+
+Para compartir paquetes entre varios equipos, simplemente comparta `/var/cache/pacman/` utilizando cualquier protocolo de montaje basado en red. Esta sección muestra cómo usar [shfs](/index.php/Shfs "Shfs") o [ SSHFS]] para compartir una caché de paquetes más los directorios de biblioteca relacionados entre múltiples ordenadores de la misma red local. Tenga en cuenta que una caché compartida en red puede ser lenta dependiendo de la elección del sistema de archivos, entre otros factores.
+
+Primero, instale cualquier paquete de sistema de ficheros que soporte la red: [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils), [sshfs](https://www.archlinux.org/packages/?name=sshfs), [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs), [samba](https://www.archlinux.org/packages/?name=samba) or [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
+
+**Tip:**
+
+*   Para usar *sshfs* o *shfs*, considere leer [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") .
+*   Por defecto, *smbfs* no sirve nombres de archivo que contengan dos puntos, lo que hace que el cliente descargue de nuevo el paquete otra vez. Para evitarlo, utilice la función `mapchars` opción de montaje en el cliente.
+
+Luego, para compartir los paquetes actuales, monte `/var/cache/pacman/pkg` del servidor a `/var/cache/pacman/pkg` en cada máquina cliente
+
+**Nota:** No haga `/var/cache/pacman/pkg` ni a ninguno de sus antecesores (e.g., `/var`) un enlace simbólico *Pacman* espera que estos sean directorios. Cuando *pacman* se reinstale o actualice, eliminará los enlaces simbólicos y creará directorios vacíos. Sin embargo, durante la operación *pacman* se basará en algunos archivos que residen allí, rompiendo así el proceso de actualización. Consulte [FS#50298](https://bugs.archlinux.org/task/50298) para más detalles.
+
+#### de doble sentido con rsync
+
+Otro enfoque en un entorno local es [rsync](/index.php/Rsync "Rsync"). Elija un servidor para el almacenamiento en caché y active el [Rsync#rsync daemon](/index.php/Rsync#rsync_daemon "Rsync"). En los clientes, sincronice bidireccionalmente con este recurso compartido mediante el protocolo rsync. Los nombres de archivo que contienen dos puntos no son un problema para el protocolo rsync.
+
+Ejemplo para un cliente, utilizando `uname -m` dentro del nombre compartido asegura una arquitectura dependiente sync:
+
+```
+ # rsync rsync://server/share_$(uname -m)/ /var/cache/pacman/pkg/ ...
+ # pacman ...
+ # paccache ...
+ # rsync /var/cache/pacman/pkg/ rsync://server/share_$(uname -m)/  ...
+
+```
+
+#### Caché de proxy inverso dinámico usando nginx
+
+[nginx](/index.php/Nginx "Nginx") puede utilizarse para realizar peticiones proxy a las réplicas ascendentes oficiales y almacenar los resultados en caché en el disco local. Todas las solicitudes posteriores de ese archivo se servirán directamente desde la caché local, lo que minimiza la cantidad de tráfico de Internet necesario para actualizar un gran número de servidores con el mínimo esfuerzo..
+
+**Advertencia:** Este método tiene una limitación. Debe usar réplicas que usan la misma ruta relativa a los archivos del paquete y debe configurar su caché para usar esa misma ruta. En este ejemplo, estamos usando réplicas que usan la ruta relativa `/archlinux/$repo/os/$arch` y la configuración de nuestro `Server` en `mirrorlist` está configuradara de forma similar.
+
+En este ejemplo, ejecutaremos el servidor de caché en `http://cache.domain.local:8080/` y almacenando los paquetes en `/srv/http/pacman-cache/`.
+
+Cree el directorio para la memoria caché y ajuste los permisos para que nginx pueda escribir archivos en ella:
+
+```
+ # mkdir /srv/http/pacman-cache
+ # chown http:http /srv/http/pacman-cache
+
+```
+
+A continuación, configure nginx como la opción [dynamic cache](https://gist.github.com/anonymous/97ec4148f643de925e433bed3dc7ee7d) (lea los comentarios para una explicación de los comandos).
+
+Finalmente, actualice sus otros servidores Arch Linux para usar esta nueva caché agregando la siguiente línea al archivo `mirrorlist`:
+
+ `/etc/pacman.d/mirrorlist` 
+```
+Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
+...
+
+```
+
+**Nota:** Tendrá que crear un método para borrar paquetes viejos, ya que este directorio continuará creciendo con el tiempo. `paccache` (que se incluye con *pacman*) se puede utilizar para automatizarlo utilizando criterios de retención de su elección. Por ejemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` mantendrá las dos últimas versiones de los paquetes en su directorio de caché.
+
+#### Sincronice la memoria caché del paquete pacman utilizando programas de sincronización
+
+Use [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") o [Syncthing](/index.php/Syncthing "Syncthing") para sincronizar las carpetas de la caché de "pacman" (i.e. `/var/cache/pacman/pkg`).
+
+#### Prevención de limpiezas de caché no deseadas
+
+Por defecto, `pacman -Sc` elimina los paquetes tarballs de la caché que corresponden a paquetes que no están instalados en la máquina en la que se emitió el comando. Dado que "pacman" no puede predecir qué paquetes están instalados en todos los equipos que comparten la caché, acabará eliminando archivos que no deberían estarlo.
+
+Para limpiar la caché de forma que sólo se eliminen los tarballs *obsoletos*, añada esta entrada en el archivo `[options]` en la sección de `/etc/pacman.conf`:
+
+```
+CleanMethod = KeepCurrent
+
+```
+
+### Reconstituir un paquete del sistema de archivos
+
+Para reconstituir un paquete desde el sistema de archivos, use *bacman* (incluido con *pacman* ). Los archivos del sistema se toman tal como están, por lo tanto, cualquier modificación estará presente en el paquete ensamblado. Por lo tanto, se desaconseja la distribución del paquete reconstituido; ver [ABS](/index.php/ABS "ABS") y [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") para las alternativas.
+
+**Tip:** *bacman* respeta las opciones de `PACKAGER`, `PKGDEST` y `PKGEXT` de `makepkg.conf`. Las opciones personalizadas para las herramientas de compresión se pueden configurar exportando la variable de entorno relevante, por ejemplo `XZ_OPT = "- T 0"` habilitará la compresión paralela para *xz* .
+
+Una herramienta alternativa sería [fakepkg](https://aur.archlinux.org/packages/fakepkg/). Es compatible con la paralelización y puede manejar múltiples paquetes de entrada en un comando, lo que *bacman* no soporta.
+
+### Lista de paquetes instalados
+
+Mantener una lista de paquetes instalados explícitamente puede ser útil para acelerar la instalación en un nuevo sistema:
+
+```
+$ pacman -Qqe > pkglist.txt
+
+```
+
+**Nota:** Si se usó la opción `-t` al reinstalar la lista, todos los paquetes que no sean de nivel superior se establecerán como dependencias. Con la opción `-n`, los paquetes externos (por ejemplo, de AUR) se omitirán de la lista.
+
+Para instalar paquetes de la copia de seguridad de la lista, ejecute:
+
+```
+# pacman -S - < pkglist.txt
+
+```
+
+**Tip:**
+
+*   Para omitir los paquetes ya instalados, use `--needed`.
+*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` para crear también una lista de las dependencias opcionales instaladas que se pueden reinstalar con `--asdeps`.
+
+En caso de que la lista incluya paquetes externos, como paquetes [AUR](/index.php/AUR "AUR"), quítelos primero:
+
+```
+# pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+
+```
+
+Para eliminar todos los paquetes en su sistema que no se mencionan en la lista:
+
+```
+# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
+
+```
+
+**Tip:** Estas tareas pueden ser automatizadas. Consulte [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) y [pug](https://aur.archlinux.org/packages/pug/) por ejemplo.
+
+Si desea mantener una lista actualizada de los paquetes explícitamente instalados (e.g. en combinación con una versión `/etc/`), puede configurar un [hook](/index.php/Pacman#Hooks "Pacman"). Ejemplo:
+
+```
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+When = PostTransaction
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/packages.txt'
+
+```
+
+### Listado de todos los archivos modificados de los paquetes
+
+Si sospecha que hay corrupción de archivos (por ejemplo, por fallos de software o hardware), pero no está seguro de si los archivos se corrompieron, es posible que desee compararlos con las sumas de hash de los paquetes. Esto se puede hacer con [pacutils](https://www.archlinux.org/packages/?name=pacutils):
+
+```
+# paccheck --md5sum --quiet
+
+```
+
+Para la recuperación de la base de datos, véase [#Restore pacman's local database](#Restore_pacman.27s_local_database). Los archivos `mtree` también pueden ser [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
+
+**Nota:** ¡Esto *no* debe usarse cuando se sospeche de cambios maliciosos! En este caso, se recomiendan precauciones de seguridad, como usar un medio en vivo y una fuente independiente para las sumas de hash.
+
+### Reinstalling all packages
+
+To reinstall all native packages, use:
+
+```
+# pacman -Qnq | pacman -S -
+
+```
+
+Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qmq`.
+
+*Pacman* preserves the [installation reason](/index.php/Installation_reason "Installation reason") by default.
+
+### Restore pacman's local database
+
+See [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
+
+### Recovering a USB key from existing install
+
+If you have Arch installed on a USB key and manage to mess it up (e.g. removing it while it is still being written to), then it is possible to re-install all the packages and hopefully get it back up and working again (assuming USB key is mounted in `/newarch`)
+
+```
+# pacman -S $(pacman -Qq --dbpath /newarch/var/lib/pacman) --root /newarch --dbpath /newarch/var/lib/pacman
+
+```
+
+### Viewing a single file inside a .pkg file
+
+For example, if you want to see the contents of `/etc/systemd/logind.conf` supplied within the [systemd](https://www.archlinux.org/packages/?name=systemd) package:
+
+```
+$ tar -xOf /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz etc/systemd/logind.conf
+
+```
+
+Or you can use [vim](https://www.archlinux.org/packages/?name=vim) to browse the archive:
+
+```
+$ vim /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz
+
+```
+
+### Find applications that use libraries from older packages
+
+Even if you installed a package the existing long-running programs (like daemons and servers) still keep using code from old package libraries. And it is a bad idea to let these programs running if the old library contains a security bug.
+
+Here is a way how to find all the programs that use old packages code:
+
+```
+# lsof +c 0 | grep -w DEL | awk '1 { print $1 ": " $NF }' | sort -u
+
+```
+
+It will print running program name and old library that was removed or replaced with newer content.
 
 ## Optimización
 

@@ -12,7 +12,6 @@ Available clients ([screenshots](https://github.com/pyload/pyload/wiki/Screensho
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Requirements](#Requirements)
 *   [2 Configuration](#Configuration)
     *   [2.1 Manual](#Manual)
     *   [2.2 Scripts](#Scripts)
@@ -25,16 +24,6 @@ Available clients ([screenshots](https://github.com/pyload/pyload/wiki/Screensho
 ## Installation
 
 [Install](/index.php/Install "Install") [pyload](https://aur.archlinux.org/packages/pyload/) from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/) for a development build of the new pyload 0.5 version.
-
-### Requirements
-
-Required dependencies are handled by the AUR package's PKGBUILD. Nevertheless, some optional dependencies are not:
-
-*   Ability to establish a secure connection to core or webinterface: [openssl](https://www.archlinux.org/packages/?name=openssl) [python2-pyopenssl](https://www.archlinux.org/packages/?name=python2-pyopenssl).
-
-*   For ClickNLoad and at least ZippyShare (maybe other hosters too) support: [js](https://www.archlinux.org/packages/?name=js).
-
-**Note:** The current [js](https://www.archlinux.org/packages/?name=js) package does not create `/usr/bin/js`, which is required by pyload. You need to create the symlink yourself, i.e. run `ln -s /usr/bin/js24 /usr/bin/js` as root if `/usr/bin/js24` exists.
 
 ## Configuration
 

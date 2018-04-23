@@ -129,7 +129,7 @@ There are two major options to get this chipset working in Arch Linux:
 
 The [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) package contains the open-source, reverse-engineered firmware for the chipset.
 
-The [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) and [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) packages ship with the propriety, restricted-license drivers for the chipset.
+The [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) and [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) packages ship with the propriety, restricted-license drivers for the chipset.
 
 See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more information.
 
@@ -237,7 +237,7 @@ If you want to keep the discrete GPU off at boot, see [systemd-vgaswitcheroo-uni
 
 #### Graphic artifacting under b43-firmware
 
-While on integrated graphics with the b43-firmware package, you might encounter moderate to severe graphic artifacting that appears to be correlated to wireless network traffic. (disconnected->no artifacting, connected->periodic artifacting, large transfer->severe artifacting/unusuable) This can be resolved by removing/blacklisting [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) and using either [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
+While on integrated graphics with the b43-firmware package, you might encounter moderate to severe graphic artifacting that appears to be correlated to wireless network traffic. (disconnected->no artifacting, connected->periodic artifacting, large transfer->severe artifacting/unusuable) This can be resolved by removing/blacklisting [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) and using either [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
 
 ### Enable Vsync
 

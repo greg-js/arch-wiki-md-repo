@@ -52,7 +52,7 @@ From the [awesome website](https://awesomewm.org/):
     *   [5.4 Fix Java (GUI appears gray only)](#Fix_Java_.28GUI_appears_gray_only.29)
     *   [5.5 Eclipse: cannot resize/move main window](#Eclipse:_cannot_resize.2Fmove_main_window)
     *   [5.6 Netbeans: code-prediction appears on wrong screen](#Netbeans:_code-prediction_appears_on_wrong_screen)
-    *   [5.7 IntelliJ: menus appear on incorrect position](#IntelliJ:_menus_appear_on_incorrect_position)
+    *   [5.7 IntelliJ: menus appear on incorrect position, some windows don't open](#IntelliJ:_menus_appear_on_incorrect_position.2C_some_windows_don.27t_open)
     *   [5.8 scrot: Cannot take a mouse selected screenshot with keyboard shortcuts](#scrot:_Cannot_take_a_mouse_selected_screenshot_with_keyboard_shortcuts)
     *   [5.9 YouTube: fullscreen appears in background](#YouTube:_fullscreen_appears_in_background)
     *   [5.10 Prevent the mouse scroll wheel from changing tags](#Prevent_the_mouse_scroll_wheel_from_changing_tags)
@@ -676,7 +676,7 @@ awful.rules.rules = {
 }
 ```
 
-### IntelliJ: menus appear on incorrect position
+### IntelliJ: menus appear on incorrect position, some windows don't open
 
 See [GitHub issue #2204](https://github.com/awesomeWM/awesome/issues/2204).
 
@@ -684,17 +684,27 @@ This fixed it for me:
 
  `.config/awesome/rc.lua` 
 ```
+clientbuttons_jetbrains = gears.table.join(
+    awful.button({ modkey }, 1, awful.mouse.client.move),
+    awful.button({ modkey }, 3, awful.mouse.client.resize)
+)
+
+...
+
 awful.rules.rules = {
         ...
 	{
-            rule = { -- fixes IntelliJ
-                class = "sun-awt-X11-XFramePeer", 
-                class = "jetbrains-idea",
+            rule = {
+                class = "jetbrains-.*",
+            }, properties = { focus = true, buttons = clientbuttons_jetbrains }
+        },
+        {
+            rule = {
+                class = "jetbrains-.*",
                 name = "win.*"
-            }, properties = { focusable = false, ontop = true, titlebars_enabled = false, floating = true, placement = awful.placement.restore }
+            }, properties = { titlebars_enabled = false, focusable = false, focus = true, floating = true, placement = awful.placement.restore }
         },
         ...
-
 }
 ```
 

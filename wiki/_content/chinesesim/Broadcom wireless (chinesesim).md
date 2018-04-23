@@ -69,13 +69,13 @@ Kernel內建了两个开源驱动: **brcmfmac** 提供原生硬MAC支持， **br
 
 [AUR](/index.php/AUR "AUR") 中有两个版本的Broadcom STA闭源驱动：
 
-*   通常的 [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
+*   通常的 [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)
 *   以及 [DKMS](/index.php/DKMS "DKMS") 版本 [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)
 
 **Tip:** DKMS版本 [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)
 
 *   可以在不同的Kernel中工作 (例如 [linux-ck](https://aur.archlinux.org/packages/linux-ck/)).
-*   每次安装新的Kernel时，dkms都会重新构建驱动，如果你使用 [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) 或者其他依赖于单个Kernel版本的驱动 (例如 [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)), 那么在更新Kernel或者使用新的Kernel时都有可能使驱动崩溃。
+*   每次安装新的Kernel时，dkms都会重新构建驱动，如果你使用 [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) 或者其他依赖于单个Kernel版本的驱动 (例如 [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)), 那么在更新Kernel或者使用新的Kernel时都有可能使驱动崩溃。
 
 #### 加载broadcom-wl的内核模块
 
@@ -156,7 +156,7 @@ Kernel內建了两个开源驱动: **brcmfmac** 提供原生硬MAC支持， **br
 
 ### 更新 Kernel 后设备无法访问
 
-如果您使用 **brcm80211** 请确保没有被 [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules")。如果你使用 **b43** 驱动确保它在工作。如果你使用**Broadcom STA**驱动的[broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)包，请重新安装或一劳永逸地切换成[broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)。
+如果您使用 **brcm80211** 请确保没有被 [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules")。如果你使用 **b43** 驱动确保它在工作。如果你使用**Broadcom STA**驱动的[broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)包，请重新安装或一劳永逸地切换成[broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)。
 
 ### 使用 broadcom-wl 驱动的设备不工作/不显示
 

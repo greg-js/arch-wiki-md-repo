@@ -67,4 +67,4 @@ alias net-pf-10 off
 
 #### Broadcom Corporation BCM4311
 
-Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from [AUR](/index.php/AUR "AUR").
+Install [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) from [AUR](/index.php/AUR "AUR").

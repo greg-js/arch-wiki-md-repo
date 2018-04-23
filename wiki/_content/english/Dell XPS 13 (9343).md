@@ -90,7 +90,7 @@ This laptop series comes with a SSD as storage device, connected via SATA. This 
 
 ### Wi-Fi
 
-Most configurations sport the Dell DW1560 802.11ac adapter (based on the Broadcom BCM4352 chip) which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) (in this case, remember to install `linux-headers` too, even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
+Most configurations sport the Dell DW1560 802.11ac adapter (based on the Broadcom BCM4352 chip) which requires [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) (in this case, remember to install `linux-headers` too, even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
 
 Some higher-end models do not use the Dell-branded Broadcom adapter, instead they use an Intel Wireless 7265 card which is supported by the mainline kernel.
 

@@ -51,7 +51,7 @@ Siga as instruções contidas em [Broadcom wireless](/index.php/Broadcom_wireles
 
 Ou use o driver proprietário:
 
-*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
+*   [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)
 
 Com ele, seu atalho para rede wireless do teclado funcionará normalmente.
 

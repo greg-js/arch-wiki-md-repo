@@ -13,7 +13,6 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
 *   [3 Sorting mirrors](#Sorting_mirrors)
     *   [3.1 List by speed](#List_by_speed)
     *   [3.2 Server-side ranking](#Server-side_ranking)
-    *   [3.3 List mirrors only for a specific country](#List_mirrors_only_for_a_specific_country)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 Unofficial mirrors](#Unofficial_mirrors)
     *   [5.1 Austria](#Austria)
@@ -139,6 +138,8 @@ Finally, rank the mirrors. Operand `-n 6` means only output the 6 fastest mirror
 
 Run `rankmirrors -h` for a list of all the available options.
 
+**Tip:** If the servers in `mirrorlist.backup` are grouped by country, one can extract the servers of a specific country before feeding them to *rankmirrors* by using `$ awk '/^## *Country Name*$/{f=1}f==0{next}/^$/{exit}{print substr($0, 2)}' /etc/pacman.d/mirrorlist.backup` 
+
 ### Server-side ranking
 
 The official [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) provides an easy way to obtain a ranked list of mirrors. Because all ranking is done on a single server that takes multiple factors into account, the amount of load on the mirrors and the clients is significantly lower compared to ranking on each individual client.
@@ -152,15 +153,6 @@ There are multiple scripts automating the update of the mirrorlist from the rank
 *   **armrr** — Downloads a ranks mirrorlist for specific countries from the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/)
 
 	[https://github.com/spurge/armrr](https://github.com/spurge/armrr) || no package
-
-### List mirrors only for a specific country
-
-Can be useful to automate update of the mirror list only for a specific countries instead of making a speed test each time. Assumed that `mirrorlist.pacnew` exist, the file creates after installation of the [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) update.
-
-```
-awk '/^## China$/ {f=1} f==0 {next} /^$/ {exit} {print substr($0, 1)}' \
-    /etc/pacman.d/mirrorlist.pacnew
-```
 
 ## Troubleshooting
 

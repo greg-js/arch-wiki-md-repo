@@ -9,7 +9,7 @@ Related articles
 
 Since Intel provides and supports open source drivers, Intel graphics are essentially plug-and-play.
 
-For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs, see [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
+For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs, see [Wikipedia:List of Intel graphics processing units](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units "wikipedia:List of Intel graphics processing units").
 
 **Note:** PowerVR-based graphics ([GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
 

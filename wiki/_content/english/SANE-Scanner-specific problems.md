@@ -21,9 +21,10 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
     *   [6.1 S300M](#S300M)
 *   [7 HP](#HP)
     *   [7.1 Alternative way to scan with network HP scanner](#Alternative_way_to_scan_with_network_HP_scanner)
-*   [8 Mustek](#Mustek)
-    *   [8.1 BearPaw 2400CU](#BearPaw_2400CU)
-*   [9 Samsung](#Samsung)
+*   [8 Medion](#Medion)
+*   [9 Mustek](#Mustek)
+    *   [9.1 BearPaw 2400CU](#BearPaw_2400CU)
+*   [10 Samsung](#Samsung)
 
 ## Agfa
 
@@ -119,6 +120,8 @@ If xsane crashes with message "`=bugchk_free(ptr==(nil))@brother_modelinf.c(482)
 ### Scanning over the network with Canon Pixma all-in-one printer/scanners
 
 Find out your printer/scanner's IP address, and add it on a new line to `/etc/sane.d/pixma.conf` in the format `bjnp://10.0.0.20`.
+
+**Tip:** Instead of a IP address you can use the [mDNS](/index.php/MDNS "MDNS") `.local` address, e.g. `bjnp://*MyPixmaPrinter*.local`.
 
 Sane should now find your device. For more details refer to [sane-pixma(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sane-pixma.5).
 
@@ -253,6 +256,28 @@ If your device is connected on the network, use `# hp-setup <printer ip>` instea
 ```
    xsane "hpaio:/net/DeskJet_3630_series?ip=192.168.1.8"
    scanimage --device "hpaio:/net/DeskJet_3630_series?ip=10.12.129.6" --format=png --resolution 300 >scan01.png
+
+```
+
+## Medion
+
+If you own the USB scanner MD 9705 from Medion, you need to download a suitable firmware binary. This firmware file is in the device driver for Windows.
+
+Find out which model you own and take note of the USB ID:
+
+ `$ lsusb` 
+```
+Bus 006 Device 007: ID 05d8:4003 Ultima Electronics Corp. Artec E+ 48U
+
+```
+
+Download the windows driver from [http://download.medion.com/downloads/treiber/scamd9705w9xxp.exe](http://download.medion.com/downloads/treiber/scamd9705w9xxp.exe)
+
+Then enter the following commands to extract the firmware file, and copy it to the location SANE expects it:
+
+```
+$ unzip scamd9705w9xxp.exe Win2000/Artec48.usb
+# cp Win2000/Artec48.usb /usr/share/sane/artec_eplus48u/Artec48.usb
 
 ```
 

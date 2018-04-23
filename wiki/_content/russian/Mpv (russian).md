@@ -50,7 +50,7 @@
 
 *   **GNOME MPV** — Простой интерфейс для *mpv* (GTK+ 3).
 
-	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/), [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/)
+	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/), [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Мультимедийный плеер с дополнительным функционалом (CSS темы, интеграция с YouTube и другое) (Qt 5).
 
@@ -64,7 +64,7 @@
 
 ## Настройка
 
-Настройки *mpv* находятся в файлах `mpv.conf` (общие), `input.conf` (сочетания клавиш) и `lua-settings/osc.conf` (наэкранное меню). Полный список параметров доступен в [mpv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) или [GitHub docs](https://github.com/mpv-player/mpv/tree/master/DOCS/man). Если не установлена [переменная окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `XDG_CONFIG_HOME`, будут использоваться файлы настроек пользователя, расположенные в каталоге `~/.config/mpv`. Системные файлы настроек располагаются в `/etc/mpv`.
+Настройки *mpv* находятся в файлах `mpv.conf` (общие), `input.conf` (сочетания клавиш) и `lua-settings/osc.conf` (наэкранное меню). Полный список параметров доступен в [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) или [GitHub docs](https://github.com/mpv-player/mpv/tree/master/DOCS/man). Если не установлена [переменная окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `XDG_CONFIG_HOME`, будут использоваться файлы настроек пользователя, расположенные в каталоге `~/.config/mpv`. Системные файлы настроек располагаются в `/etc/mpv`.
 
 ### Пример файла input.conf
 
@@ -122,7 +122,7 @@ SHIFT+* add ao-volume 2
 
 ### Аппаратное декодирование
 
-В отличие от *mplayer* и *mplayer2*, *mpv* имеет встроенную поддержку [VA-API](/index.php/VA-API_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VA-API (Русский)") и [VDPAU](/index.php/VDPAU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VDPAU (Русский)"). Чтобы указать способ декодирования, запустите *mpv* с опцией `--hwdec='метод'`. Полный список всех доступных методов вы найдете в [man-странице](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") [mpv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1), поискав описание опции `--hwdec=<api>`. Чтобы не указывать метод при каждом запуске mpv, добавьте опцию `hwdec='метод'` в ваш файл настроек.
+В отличие от *mplayer* и *mplayer2*, *mpv* имеет встроенную поддержку [VA-API](/index.php/VA-API_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VA-API (Русский)") и [VDPAU](/index.php/VDPAU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VDPAU (Русский)"). Чтобы указать способ декодирования, запустите *mpv* с опцией `--hwdec='метод'`. Полный список всех доступных методов вы найдете в [man-странице](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1), поискав описание опции `--hwdec=<api>`. Чтобы не указывать метод при каждом запуске mpv, добавьте опцию `hwdec='метод'` в ваш файл настроек.
 
 Когда используется аппаратное декодирование, видеовывод (параметр `--vo='драйвер'`) должен быть равен `opengl` или `opengl-hq` (или `vdpau`, если указан `hwdec=vdpau`).
 

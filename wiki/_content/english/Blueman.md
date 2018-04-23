@@ -45,9 +45,10 @@ The instructions below describe a method for using different file managers with 
  `obex_thunar.sh` 
 ```
 #!/bin/bash
-fusermount -u ~/bluetooth
-obexfs -b $1 ~/bluetooth
-thunar ~/bluetooth
+[ ! -d ~/Bluetooth ] && mkdir ~/Bluetooth   
+fusermount -u ~/Bluetooth
+obexfs -b $1 ~/Bluetooth
+thunar ~/Bluetooth
 
 ```
 

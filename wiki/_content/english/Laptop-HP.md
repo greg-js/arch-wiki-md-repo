@@ -25,7 +25,7 @@ Dimming of display: Yes
 Frequency scaling of CPU: Yes | not tested | Hot keys: Yes
 LightScribe: untested | -- |
 | HP Compaq 6720S | 2009.2 | Intel X3100 driver: *xf86-video-intel* | Intel HDA driver: *snd_hda_intel* | Intel 10/100 driver: *e1000e* | Intel 3945 driver: *iwl3945*
-Broadcom 4312 driver: *wl* [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) | Yes, *bluez-utils* | ACPI: Yes
+Broadcom 4312 driver: *wl* [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) | Yes, *bluez-utils* | ACPI: Yes
 Suspend to RAM: Yes
 Disk: Yes
 Battery: Yes
@@ -68,7 +68,7 @@ Battery: Yes
 Dimming of display: Yes
 Frequency scaling of CPU: Yes | not tested | Hot keys: Yes
 LightScribe: not tested | -- |
-| HP Pavilion TX1220US (GA647UA) | Overlord | nVidia GeForce Go 6150 (works with *nvidia*) | nVidia MCP51 HD Audio (works with *snd-hda-intel*) | nVidia MCP51 Ethernet Controller (works with *forcedeth*) | Broadcom 4321 card (works with *ndiswrapper* and Broadcom-released Linux driver: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)) | not tested | not tested | not tested | Touch screen: (appears to work; have not calibrated)
+| HP Pavilion TX1220US (GA647UA) | Overlord | nVidia GeForce Go 6150 (works with *nvidia*) | nVidia MCP51 HD Audio (works with *snd-hda-intel*) | nVidia MCP51 Ethernet Controller (works with *forcedeth*) | Broadcom 4321 card (works with *ndiswrapper* and Broadcom-released Linux driver: [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)) | not tested | not tested | not tested | Touch screen: (appears to work; have not calibrated)
 Remote: not working
 Hot keys: not tested
 LightScribe: not tested | People with this same laptop have gotten the hot keys and touch screen to work on other distributions. |
@@ -92,7 +92,7 @@ DVD/CD: Yes
 SD slot: Yes
 Touchkeys: Yes
 FireWire: untested | -- |
-| [HP tx2z](/index.php/HP_tx2z "HP tx2z") | 2009.08 | Radeon HD 3200 driver: *radeon* | Intel HDA driver: *snd-hda-intel* | RTL8111/8168B driver: *r8169* | Broadcom 4322 driver: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) | not tested | not tested | not tested | Hot keys: yes
+| [HP tx2z](/index.php/HP_tx2z "HP tx2z") | 2009.08 | Radeon HD 3200 driver: *radeon* | Intel HDA driver: *snd-hda-intel* | RTL8111/8168B driver: *r8169* | Broadcom 4322 driver: [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) | not tested | not tested | not tested | Hot keys: yes
 LightScribe: not tested
 webcam: yes
 touchscreen: works

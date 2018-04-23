@@ -104,7 +104,7 @@
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
 | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(63)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
-| <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(14)</small> |
+| <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(15)</small> |
 | <small>5.3.</small> [Email](/index.php/Category:Email "Category:Email") <small>(1)</small> |
 | <small>5.3.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>5.3.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
@@ -171,7 +171,7 @@
 | <small>6.10.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.11.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(18)</small> |
 | <small>6.12.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
-| <small>6.12.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(15)</small> |
+| <small>6.12.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(16)</small> |
 | <small>6.12.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(14) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
 | <small>6.12.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.12.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(6) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

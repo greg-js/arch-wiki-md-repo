@@ -20,6 +20,13 @@ For Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-noteb
 
 For JupyterLab, [install](/index.php/Install "Install") the [jupyterlab](https://aur.archlinux.org/packages/jupyterlab/) package.
 
+After installation, run the following (as root) to enable interactive Javascript widgets in the notebooks (otherwise, widgets will be disabled):
+
+```
+# jupyter nbextension enable --py --sys-prefix widgetsnbextension
+
+```
+
 ## Running
 
 To start the notebook server, e.g. from a directory containing some *.ipynb* notebook files to be served, run:

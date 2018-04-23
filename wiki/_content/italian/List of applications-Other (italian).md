@@ -668,7 +668,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/GnuCash "wikipedia:GnuCash")** — Applicazione finanziaria che implementa un sistema di contabilità in partita doppia con funzioni per contabilità delle piccole imprese.
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Sistema di finanza personale per la gestione di conti terzi, le spese e le categorie ricevute, così come le linee di bilancio, esercizi, e altre informazioni che lo rende adatto per le associazioni.
 

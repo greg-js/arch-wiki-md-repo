@@ -16,6 +16,8 @@ Related articles
         *   [1.1.1 Secure Boot](#Secure_Boot)
             *   [1.1.1.1 Using PreLoader](#Using_PreLoader)
             *   [1.1.1.2 Using shim](#Using_shim)
+                *   [1.1.1.2.1 Using hashes](#Using_hashes)
+                *   [1.1.1.2.2 Using Machine Owner Key](#Using_Machine_Owner_Key)
             *   [1.1.1.3 Using your own keys](#Using_your_own_keys)
     *   [1.2 Manual installation](#Manual_installation)
     *   [1.3 Upgrading](#Upgrading)
@@ -116,6 +118,8 @@ See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-instal
 
 [Install](/index.php/Install "Install") [shim-signed](https://aur.archlinux.org/packages/shim-signed/). Read [Secure Boot#shim](/index.php/Secure_Boot#shim "Secure Boot"), but skip all file copying.
 
+###### Using hashes
+
 To use only hashes with *shim*, execute `refind-install` with the option `--shim */path/to/shim*`
 
 ```
@@ -124,6 +128,8 @@ To use only hashes with *shim*, execute `refind-install` with the option `--shim
 ```
 
 Next time you boot with Secure Boot enabled, MokManager will launch and you will need to enroll the hash of rEFInd (`grubx64.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel (e.g. `vmlinuz-linux`).
+
+###### Using Machine Owner Key
 
 To sign rEFInd with a Machine Owner Key, install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 

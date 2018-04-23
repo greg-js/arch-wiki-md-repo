@@ -35,6 +35,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
         *   [2.2.8 Unreadable input fields with KDE Breeze Dark theme](#Unreadable_input_fields_with_KDE_Breeze_Dark_theme)
+        *   [2.2.9 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
     *   [2.3 Web content CSS settings](#Web_content_CSS_settings)
         *   [2.3.1 Import other CSS files](#Import_other_CSS_files)
         *   [2.3.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
@@ -358,6 +359,44 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/
 #### Unreadable input fields with KDE Breeze Dark theme
 
 If you are using [KDE](/index.php/KDE "KDE") desktop in conjunction with Breeze Dark theme, you might find that some input fields have dark background, which makes text unreadable. A solution to this issue is to use a non-dark GTK theme along with a dark Firefox theme. Similarly, by using a dark Firefox theme your browser will look the way you want (requires Firefox 56 or later).
+
+#### Unreadable input fields with dark GTK+ themes
+
+When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
+
+To prevent Firefox from using theme's colors in web pages one can set `browser.display.use_system_colors` to `false` in `about:config`.
+
+The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
+
+Another workaround is to explicitly set standard colors for all web pages in `userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
+
+The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
+
+**Note:** If you want `urlbar` and `searchbar` to be `white` remove the two first `:not` css selectors.
+
+```
+input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']):not([type='radio']), textarea, select {
+    -moz-appearance: none !important;
+    background-color: white;
+    color: black;
+}
+
+#downloads-indicator-counter {
+    color: white;
+}
+```
+
+Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
+
+1.  Copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`.
+2.  Close all running instances of Firefox and restart your window manager/desktop environment.
+
+Another way to change gtk theme for content process only, which keeps dark UI theming, but enforces light theme for rendering webpage itself:
+
+1.  Open `about:config` in the address bar
+2.  Create a new string type preference (*right mouse button > New > String*) named `widget.content.gtk-theme-override`
+3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`)
+4.  Restart Firefox
 
 ### Web content CSS settings
 

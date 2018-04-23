@@ -469,3 +469,4 @@ Some LightDM themes try to access the user avatar located in HOME. If your HOME 
 *   [Gentoo Wiki article](http://wiki.gentoo.org/wiki/LightDM)
 *   [Launchpad Page](https://launchpad.net/lightdm)
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
+*   [LightDM on GitHub](https://github.com/CanonicalLtd/lightdm)

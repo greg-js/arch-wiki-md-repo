@@ -6,7 +6,7 @@ Related articles
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
 
-*iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [frontends](#Console_frontends) and [GUIs](#Graphic_frontends). iptables is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6").
+*iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [frontends](#Console_frontends) and [GUIs](#Graphic_frontends). *iptables* is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6"). Both *iptables* and *ip6tables* have the same syntax, but some options are specific to either IPv4 or IPv6.
 
 [nftables](/index.php/Nftables "Nftables") was released in [release with Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), and will one day replace iptables as the main Linux firewall utility.
 
@@ -478,5 +478,5 @@ destination d_iptables { file("/var/log/iptables.log"); };
 *   [Port knocking](/index.php/Port_knocking "Port knocking")
 *   [Official iptables web site](http://www.netfilter.org/projects/iptables/index.html)
 *   [iptables Tutorial 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) by Oskar Andreasson
-*   [[debian:iptables|Debian Wiki - iptables]
+*   [Debian Wiki - iptables](https://wiki.debian.org/iptables "debian:iptables")
 *   [Secure use of connection tracking helpers](https://home.regit.org/netfilter-en/secure-use-of-helpers/)

@@ -31,8 +31,8 @@ This page explains how to set up a [stateful](https://en.wikipedia.org/wiki/Stat
             *   [2.8.2.3 Restore the Final Rule](#Restore_the_Final_Rule)
     *   [2.9 Protection against other attacks](#Protection_against_other_attacks)
         *   [2.9.1 Bruteforce attacks](#Bruteforce_attacks)
-    *   [2.10 Saving the rules](#Saving_the_rules)
-    *   [2.11 IPv6](#IPv6)
+    *   [2.10 IPv6](#IPv6)
+    *   [2.11 Saving the rules](#Saving_the_rules)
 *   [3 Setting up a NAT gateway](#Setting_up_a_NAT_gateway)
     *   [3.1 Setting up the filter table](#Setting_up_the_filter_table)
         *   [3.1.1 Creating necessary chains](#Creating_necessary_chains_2)
@@ -431,41 +431,18 @@ In terms of order, one must ensure that `-A INPUT -p tcp --dport ssh -m conntrac
 
 **Tip:** For self-testing the rules after setup, the actual blacklisting can slow the test, making it difficult to fine-tune parameters. One can watch the incoming attempts via `cat /proc/net/xt_recent/sshbf`. To unblock the own IP during testing, root is needed `# echo / > /proc/net/xt_recent/sshbf`
 
-### Saving the rules
-
-The ruleset is now finished and should be saved to your hard drive so that it can be loaded on every boot.
-
-The systemd unit file points to the location where the rule configuration will be saved:
-
-```
-iptables=/etc/iptables/iptables.rules
-ip6tables=/etc/iptables/ip6tables.rules
-
-```
-
-Save the rules with this command:
-
-```
-# iptables-save > /etc/iptables/iptables.rules
-
-```
-
-Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `iptables.service`. Check the status of the service to make sure the rules load correctly.
-
 ### IPv6
 
-If you do not use IPv6 (most ISPs do not support it), you should [disable it](/index.php/Disabling_IPv6 "Disabling IPv6").
+If you do not use IPv6, you can consider [disabling it](/index.php/Disabling_IPv6 "Disabling IPv6"), otherwise follow these steps to enable the IPv6 firewall rules.
 
-Otherwise, you should enable the firewall rules for IPv6\. After copying the IPv4 rules as a base:
+Copy the IPv4 rules used in this example as a base, and change any IPs from IPv4 format to IPv6 format:
 
 ```
 # cp /etc/iptables/iptables.rules /etc/iptables/ip6tables.rules
 
 ```
 
-the first step is to change IPs referenced in the rules from IPv4 format to IPv6 format.
-
-Next, a few of the rules (built as example in this article for IPv4) have to be adapted. IPv6 obtained a new ICMPv6 protocol, replacing ICMP. Hence, the reject error return codes `--reject-with icmp-port-unreachable` and `--reject-with icmp-proto-unreachable` have to be converted to ICMPv6 codes.
+A few of the rules in this example have to be adapted for use with IPv6\. The ICMP protocol has been updated in IPv6, replacing the ICMP protocol for use with IPv4\. Hence, the reject error return codes `--reject-with icmp-port-unreachable` and `--reject-with icmp-proto-unreachable` have to be converted to ICMPv6 codes.
 
 The available ICMPv6 error codes are listed in [RFC 4443](https://tools.ietf.org/html/rfc4443#section-3.1), which specifies that connection attempts blocked by a firewall rule should use `--reject-with icmp6-adm-prohibited`. Doing so will basically inform the remote system that the connection was rejected by a firewall, rather than a listening service.
 
@@ -500,7 +477,19 @@ Since there is no kernel reverse path filter for IPv6, you may want to enable on
 
 ```
 
-After the configuration is done, [enable](/index.php/Enable "Enable") the **ip6tables** service, it is meant to run in parallel to *iptables*.
+### Saving the rules
+
+The rule sets are now finished and should be saved to a file so that they can be loaded on every boot.
+
+Save the IPv4 and IPv6 rules with these commands:
+
+```
+# iptables-save > /etc/iptables/iptables.rules
+# ip6tables-save > /etc/iptables/ip6tables.rules
+
+```
+
+Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `iptables.service` and the `ip6tables.service`. Check the status of the services to make sure the rules are loaded correctly.
 
 ## Setting up a NAT gateway
 
@@ -614,7 +603,7 @@ Save the rules:
 
 ```
 
-and make sure your rules are loaded when you boot enabling the **iptables** systemd service.
+This assumes that you have followed the steps [above](#Saving_the_rules) to enable the **iptables** systemd service.
 
 ## See Also
 

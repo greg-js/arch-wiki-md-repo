@@ -1,3 +1,8 @@
+Related articles
+
+*   [Scan print and save Script](/index.php?title=Scan_print_and_save_Script&action=edit&redlink=1 "Scan print and save Script (page does not exist)")
+*   [Scanner Button Daemon](/index.php/Scanner_Button_Daemon "Scanner Button Daemon")
+
 Sane fornisce una libreria e uno strumento da riga di comando per utilizzare gli scanner sotto GNU/Linux. [Qua](http://www.sane-project.org/sane-supported-devices.html) è possibili verificare se il vostro scanner è supportato.
 
 ## Contents
@@ -201,7 +206,7 @@ $ pacman -Ss sane
 
 *   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — Una GUI basata su GTK2 per produrre file PDF, TIFF o DjVus da documenti acquisiti. È inoltre in grado di applicare OCR nel processo utilizzando diversi motori . Dipende da alcuni pacchetti Perl per funzionare, alcuni dei quali si trovano su [AUR](/index.php/AUR "AUR").
 
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
 *   **[Simple Scan](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#Simple_Scan "wikipedia:Scanner Access Now Easy")** — Una GUI semplificata che è destinata ad essere più facile da usare e meglio integrata di Xsane nel desktop GNOME. Inizialmente è stata scritta per Ubuntu ed è mantenuta da Robert Ancell di Canonical Ltd. per GNU/Linux.
 

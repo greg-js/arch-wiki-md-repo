@@ -192,7 +192,7 @@ ExecStart=/usr/bin/dockerd -H fd:// --insecure-registry my.registry.name:5000
 
 ### Arch Linux
 
-The following command pulls the [archlinux/base](https://hub.docker.com/r/archlinux/base/) x86_64 image.
+The following command pulls the [archlinux/base](https://hub.docker.com/r/archlinux/base/) x86_64 image. This is a stripped down version of Arch core without network, etc.
 
 ```
 # docker pull archlinux/base
@@ -200,6 +200,20 @@ The following command pulls the [archlinux/base](https://hub.docker.com/r/archli
 ```
 
 See also [README.md](https://github.com/archlinux/archlinux-docker/blob/master/README.md).
+
+For a full Arch base, clone the repo from above and build your own image.
+
+```
+$ git clone [https://github.com/archlinux/archlinux-docker.git](https://github.com/archlinux/archlinux-docker.git)
+
+```
+
+Edit the packages file so it only contains 'base'. Then run:
+
+```
+# make docker-image
+
+```
 
 ### Debian
 

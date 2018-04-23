@@ -98,7 +98,7 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 
 *   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — A GTK2-based GUI to produce PDFs, TIFFs or DjVus from scanned documents. It is also able to apply [OCR](/index.php/List_of_applications/Documents#OCR_software "List of applications/Documents") in the process using different engines.
 
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
 *   **[Simple Scan](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#Simple_Scan "wikipedia:Scanner Access Now Easy")** — A simplified GUI that is intended to be easier to use and better integrated into the [GNOME](/index.php/GNOME "GNOME") desktop than XSane. It was initially written for Ubuntu and is maintained by Robert Ancell of Canonical Ltd. for GNU/Linux.
 
@@ -134,7 +134,7 @@ localhost
 
 If you use [iptables](/index.php/Iptables "Iptables"), [insert](/index.php/Kernel_modules "Kernel modules") the `nf_conntrack_sane` module to let the firewall track `saned` connections.
 
-Now [start/enable](/index.php/Start/enable "Start/enable") `saned.socket`. Your scanner is now available over the network. For more information, see [saned(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/saned.8).
+Now [start/enable](/index.php/Start/enable "Start/enable") `saned.socket`. Your scanner is now available over the network. For more information, see [saned(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/saned.8).
 
 **Note:** saned intentionally refuses to share scanners that use the net: backend (which includes some USB scanners). There is a crude patch to allow this in [FS#54786](https://bugs.archlinux.org/task/54786), but note it may cause problems on some networks. Check output of `scanimage -L` on the server to see the scanner url.
 

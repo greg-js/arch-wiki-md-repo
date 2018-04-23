@@ -649,27 +649,30 @@ You may find that with some progams such as Chromium, VirtualBox and VLC, the st
 This is typically due to *PPosition* (program position) or *USPosition* (user specified position) hints which applications can set and which FVWM respects by default. For troublesome windows, you can configure FVWM to ignore the hints that are causing the problem. The first step is to get the class name or resource name of the window in question - use the [#FvwmIdent](#FvwmIdent) module for this. Then try disabling either the PPosition or USPosition hints for the window. For example:
 
 ```
-Style chromium !UsePPosition, !UseTransientPPosition
+Style chromium !UsePPosition
 
 ```
 
 or
 
 ```
-Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
+Style vlc !UseUSPosition
 
 ```
 
-For windows whose position is affected by resizing, such as a VLC window, this can typically be fixed by setting the FixedPPosition style on the window which causes FVWM to ignore attempts by the window to change its position. This can be set in conjunction with ignoring USPosition hints if necessary, see below:
+For windows whose position is affected by resizing, such as a VirtualBox VM window, this can typically be fixed by setting the FixedPPosition style on the window which causes FVWM to ignore attempts by the window to change its position. This can be set in conjunction with ignoring USPosition hints if necessary, see below:
 
 ```
-Style vlc !UseUSPosition, !UseTransientUSPosition, FixedPPosition
+Style VirtualBox !UseUSPosition, FixedPPosition
 
 ```
 
 Once the hints that cause the problem are ignored, FVWM will place the window according to the placement algorithm that is in effect - this is *TileCascadePlacement* by default.
 
-**Tip:** If you prefer, you can ignore PPosition and/or USPosition hints globally by using '*' as the window class name. Bear in mind however that this means remembered window positions will be ignored which may be sub-optimal for programs with floating window layouts such as GIMP.
+**Tip:**
+
+*   If you prefer, you can ignore PPosition and/or USPosition hints globally by using '*' as the window class name. Bear in mind however that this means remembered window positions will be ignored which may be sub-optimal for programs with floating window layouts such as GIMP.
+*   Windows belonging to an application such as popup dialogs and menus are normally declared to be *Transient*. To ignore PPosition or USPosition hints on transient windows, use the `!UseTransientPPosition` or `!UseTransientUSPosition` styles respectively.
 
 ## See also
 

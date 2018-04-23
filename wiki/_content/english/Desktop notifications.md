@@ -552,7 +552,7 @@ end.
 
 ### Perl
 
-*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [perl-glib-object-introspection](https://aur.archlinux.org/packages/perl-glib-object-introspection/)
+*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [perl-glib-object-introspection](https://www.archlinux.org/packages/?name=perl-glib-object-introspection)
 
  `hello_world.pl` 
 ```

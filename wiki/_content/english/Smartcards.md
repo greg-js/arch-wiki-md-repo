@@ -105,7 +105,7 @@ If using packages from the GnuTLS suite, such as p11tool, the the OpenSC driver 
 
 ### Firefox can't access data
 
-If the browser is not able to use the smart card data, probably Firefox is not aware about the service which provides access to the device. This happens if you plug in the smart card reader with an already opened Firefox session. Simply close all instances of the browser to solve the issue.
+If the browser is not able to use the smart card data, probably it is not aware of the service which provides access to the device. This happens if you plug in the smart card reader after you open Firefox. To solve this issue, simply restart Firefox.
 
 ## See also
 

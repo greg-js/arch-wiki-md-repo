@@ -63,7 +63,7 @@ mpv comes with a minimal GUI called On Screen Controller *(OSC)*, that appears w
 
 *   **GNOME MPV** — A simple frontend for *mpv* (GTK+ 3).
 
-	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
+	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
 *   **Media Player Classic Qute Theater** — A clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt.
 

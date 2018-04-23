@@ -99,7 +99,7 @@ Esistono diversi kernel alternativi per Arch Linux oltre a quello principale. Qu
 
 	[kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)
 
-	Kernel statico per netbook con Intel Atom N270/N280/N450/N550 come l'Eee PC con l'aggiunta di firmware ([broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)) e patchset (BFS + TuxOnIce + BFQ optional) esterni - Solo GPU Intel
+	Kernel statico per netbook con Intel Atom N270/N280/N450/N550 come l'Eee PC con l'aggiunta di firmware ([broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)) e patchset (BFS + TuxOnIce + BFQ optional) esterni - Solo GPU Intel
 
 ## Patch e Patchset
 

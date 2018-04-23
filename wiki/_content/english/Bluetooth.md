@@ -46,12 +46,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [bluez](https://www.archlinux.org/packages/?name=bluez) and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages. The [bluez](https://www.archlinux.org/packages/?name=bluez) package provides the Bluetooth protocol stack, and the [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) package provides the `bluetoothctl` utility.
 
-Load the generic bluetooth driver, if not already loaded:
-
-```
-# modprobe btusb
-
-```
+The generic Bluetooth driver is the `btusb` Kernel module. [Check](/index.php/Kernel_module#Obtaining_information "Kernel module") whether that module is loaded. If it's not, then [load the module](/index.php/Kernel_module#Manual_module_handling "Kernel module").
 
 Then [start](/index.php/Start "Start") the `bluetooth.service` systemd unit. You can [enable](/index.php/Enable "Enable") it to start automatically at boot time.
 

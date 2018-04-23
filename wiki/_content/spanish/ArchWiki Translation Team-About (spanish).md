@@ -91,6 +91,7 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 *   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
 *   [RQF7](/index.php?title=User:RQF7&action=edit&redlink=1 "User:RQF7 (page does not exist)") - [enviar email](/index.php/Special:EmailUser/RQF7 "Special:EmailUser/RQF7")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - Traducción cada Domingo y Miércoles (*en principio*)
+*   [phenom](/index.php/User:DKS "User:DKS") - [enviar email](/index.php/Special:EmailUser/phenom "Special:EmailUser/phenom")
 
 ### Inactivos
 

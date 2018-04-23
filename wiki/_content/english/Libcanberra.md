@@ -170,7 +170,7 @@ GLib.usleep (2000000)
 
 **Perl**
 
-*   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [perl-glib-object-introspection](https://aur.archlinux.org/packages/perl-glib-object-introspection/)
+*   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [perl-glib-object-introspection](https://www.archlinux.org/packages/?name=perl-glib-object-introspection)
 
  `hello_world.pl` 
 ```

@@ -137,20 +137,20 @@ This means that *wpa_supplicant* can be associated with *wpa_passphrase* and sta
 
 ```
 
-**Note:** Because of the process substitution, you **cannot** run this command with [sudo](/index.php/Sudo "Sudo") - you will need a root shell. Just pre-pending *sudo* will lead to the following error:
+**Note:** Because of the process substitution, you cannot run this command with [sudo](/index.php/Sudo "Sudo") and **must use a root shell**, see [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_user_or_root "Help:Reading") for more explanations. Just pre-pending *sudo* will lead to the following error:
 ```
 Successfully initialized wpa_supplicant
 Failed to open config file '/dev/fd/63', error: No such file or directory
 Failed to read or parse configuration '/dev/fd/63'
 
 ```
-See also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_user_or_root "Help:Reading").
 
 **Tip:**
 
 *   Use quotes, if the input contains spaces. For example: `"secret passphrase"`.
 *   To discover your wireless network interface name, see [Network configuration#Get current interface names](/index.php/Network_configuration#Get_current_interface_names "Network configuration").
 *   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase *MYSSID* < passphrase.txt`, or here strings, e.g. `wpa_passphrase *MYSSID* <<< "*passphrase*"`.
+*   Alternatively, when using special characters in the passphrase, rather than escaping them, simply invoke `wpa_passphrase` without specifying the passphrase. It will then prompt for it to be entered in the standard input where users can paste it even if it contains special characters.
 
 Finally, you should obtain an IP address (e.g., using [Dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")).
 
@@ -160,14 +160,14 @@ For networks of varying complexity, possibly employing extensive use of [EAP](ht
 
 ### Configuration
 
-As is clear after reading [#Connecting with wpa_passphrase](#Connecting_with_wpa_passphrase), a basic configuration file can be generated with:
+As explained in [#Connecting with wpa_passphrase](#Connecting_with_wpa_passphrase), a basic configuration file can be generated with:
 
 ```
 # wpa_passphrase *MYSSID* *passphrase* > /etc/wpa_supplicant/example.conf
 
 ```
 
-This will only create a `network` section. A configuration file with some more common options may look like:
+This will only create a `network` section. A configuration file with also the ability of [#Connecting with wpa_cli](#Connecting_with_wpa_cli) and some other common options may look like:
 
  `/etc/wpa_supplicant/example.conf` 
 ```
@@ -176,20 +176,18 @@ ctrl_interface_group=wheel
 update_config=1
 country=US # ISO/IEC alpha2 country code
 ap_scan=1
-
+# network section generated with wpa_passphrase
 network={
     ssid="MYSSID"
     psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
 }
 ```
 
-The passphrase can alternatively be defined in clear text by enclosing it in quotes, if the resulting security problems are not of concern:
+If security is not a concern, the passphrase can also be defined in clear text in the `network` section by enclosing it in quotes:
 
 ```
-network={
-    ssid="MYSSID"
-    psk="passphrase"
-}
+psk="passphrase"
+
 ```
 
 If the network does not have a passphrase, e.g. a public Wi-Fi:

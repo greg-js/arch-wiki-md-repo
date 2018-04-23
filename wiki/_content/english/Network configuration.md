@@ -313,6 +313,8 @@ To configure the hosts file, add the following line to `/etc/hosts`:
 
 ```
 
+**Note:** The order of hostnames/aliases that follow the IP address in `/etc/hosts` is significant. The first string is considered the canonical hostname and may be appended with parent domains, where domain components are separated by a dot (ie. `.localdomain` above). All following strings on the same line are considered aliases. See [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) for more info.
+
 As a result the system resolves to both entries:
 
  `$ getent hosts` 

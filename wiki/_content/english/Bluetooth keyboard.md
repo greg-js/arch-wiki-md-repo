@@ -26,8 +26,6 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 The above output is from a Raspberry-Pi revision 'B' with archlinux-arm and a Keysonic BT Dongle.
 
-[Start](/index.php/Start "Start") `bluetooth` service from [bluez](https://www.archlinux.org/packages/?name=bluez) package with *systemctl*, or even better, [enable](/index.php/Enable "Enable") it permanently in the start up process.
-
 Three items worth remembering:
 
 *   BT devices (keyboard) and controllers (dongle) need to be paired once.

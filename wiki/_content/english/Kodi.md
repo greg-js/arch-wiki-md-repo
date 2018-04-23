@@ -9,7 +9,7 @@
     *   [3.2 Xsession with LightDM](#Xsession_with_LightDM)
     *   [3.3 Socket activation](#Socket_activation)
     *   [3.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_.2F_irexec)
-    *   [3.5 Sharing a database across multiple nodes](#Sharing_a_database_across_multiple_nodes)
+    *   [3.5 Sharing media and a centralized database across multiple nodes](#Sharing_media_and_a_centralized_database_across_multiple_nodes)
         *   [3.5.1 NFS server export example](#NFS_server_export_example)
         *   [3.5.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
         *   [3.5.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
@@ -28,9 +28,10 @@
     *   [4.5 Use port 80 for webserver](#Use_port_80_for_webserver)
     *   [4.6 Using ALSA](#Using_ALSA)
     *   [4.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-    *   [4.8 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
-    *   [4.9 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-    *   [4.10 USB DAC not working](#USB_DAC_not_working)
+        *   [4.7.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
+        *   [4.7.2 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
+    *   [4.8 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+    *   [4.9 USB DAC not working](#USB_DAC_not_working)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Accessing Kodi logs](#Accessing_Kodi_logs)
     *   [5.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -51,13 +52,13 @@ The official stable release can be installed via the [kodi](https://www.archlinu
 The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two binaries for two different use cases:
 
 1.  `/usr/bin/kodi` is meant to be run by any user on a on-demand basis. Use it like any other program on the system.
-2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on an HTPC. See [#Running standalone](#Running_standalone) for more information.
+2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC). See [#Running standalone](#Running_standalone) for more information.
 
 ## Running standalone
 
 Setting up the system and running the standalone binary is advantageous for several reasons:
 
-1.  An unprivileged user cannot access a shell by definition.
+1.  The default kodi user is unprivileged and cannot access a shell by definition.
 2.  Running without a full blown DE is lighter and more simplistic.
 3.  When paired with a systemd unit (or equivalent, see below), this setup makes the box on which kodi is running more like an appliance and very robust.
 
@@ -67,10 +68,7 @@ Setting up the system and running the standalone binary is advantageous for seve
 
 The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and automatically creates the unprivileged user to run Kodi in standalone mode. Although the correct [driver](/index.php/Xorg#Driver_installation "Xorg") is an assumed dependency, no extra Xorg packages are needed. [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time. No additional configuration should be required for most users, however, if `kodi.service` fails to start, see [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
-**Note:**
-
-*   The kodi user is unprivileged meaning it cannot login (default shell is `/usr/bin/nologin`).
-*   The home directory for the kodi user created is `/var/lib/kodi` not `/home/kodi`.
+**Note:** The home directory for the kodi user created is `/var/lib/kodi` not `/home/kodi`.
 
 **Warning:** Users of Arch ARM should not attempt to install this package as breakage will occur!
 
@@ -169,15 +167,17 @@ ExecStart = /usr/bin/irexec
 
 [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
 
-### Sharing a database across multiple nodes
+### Sharing media and a centralized database across multiple nodes
 
-If multiple PCs on the same network are running Kodi, they can be configured to share a single media library (video and music). The advantage of this is that key metadata are stored in one place, and are shared/updated by all nodes on the network. For example, users of this setup can:
+If multiple PCs on the same network are running Kodi, they can be configured to share a single media library (video and music). The advantage of this is media and key metadata are stored in one place, and are shared/updated by all nodes on the network. For example, users of this setup can:
 
 *   Stop watching a movie or show in one room then finish watching it in another room automatically.
 *   Share watched and unwatched status for media on all nodes.
 *   Simplify the setup with only a single library to maintain.
 
-Several key things are needed for this to work:
+As well, the media itself can be located in one space thus allowing a lighter footprint of client systems (ie no need for large HDD space).
+
+Several things are needed for this to work:
 
 *   Network exposed media (via protocols that Kodi can read, e.g. NFS or Samba).
 *   A MySQL server (Arch uses [mariadb](https://www.archlinux.org/packages/?name=mariadb)).
@@ -186,7 +186,7 @@ Several key things are needed for this to work:
 
 These assumptions are used for the guide, substitute to reflect your setup:
 
-*   The media is located under following mount points: `/mnt/tv-shows` `/mnt/movies` `/mnt/music`.
+*   The media is located under following mount points: `/mnt/shows` `/mnt/movies` `/mnt/music`.
 *   The network addresses of all nodes are within the 192.168.0.* subnet range.
 *   The IP address of the machine running both the NFS exports and the MySQL database is 192.168.0.105.
 *   Each Kodi box is referred to as a node.
@@ -205,8 +205,8 @@ This section provides an example using exports, see [NFS](/index.php/NFS "NFS") 
 Setup [exports](/index.php/NFS#Configuration "NFS"):
 
 ```
-# mkdir -p /srv/nfs/{tv-shows,movies,music}
-# mount --bind /mnt/tv-shows /srv/nfs/tv-shows
+# mkdir -p /srv/nfs/{shows,movies,music}
+# mount --bind /mnt/shows /srv/nfs/shows
 # mount --bind /mnt/movies /srv/nfs/movies
 # mount --bind /mnt/music /srv/nfs/music
 
@@ -215,7 +215,7 @@ Setup [exports](/index.php/NFS#Configuration "NFS"):
 Add the corresponding entries for these bind mounts to `/etc/fstab`:
 
 ```
-/mnt/tv-shows /srv/nfs/tv-shows none bind 0 0
+/mnt/shows    /srv/nfs/shows    none bind 0 0
 /mnt/movies   /srv/nfs/movies   none bind 0 0
 /mnt/music    /srv/nfs/music    none bind 0 0
 
@@ -225,7 +225,7 @@ Share the content in `/etc/exports`:
 
 ```
 /srv/nfs          192.168.0.0/24(ro,fsid=0,no_subtree_check)
-/srv/nfs/tv-shows 192.168.0.0/24(ro,no_subtree_check,insecure)
+/srv/nfs/shows    192.168.0.0/24(ro,no_subtree_check,insecure)
 /srv/nfs/movies   192.168.0.0/24(ro,no_subtree_check,insecure)
 /srv/nfs/music    192.168.0.0/24(ro,no_subtree_check,insecure)
 
@@ -295,7 +295,7 @@ Video>Files>Add Videos>Browse>Network Filesystem(NFS)
 
 After a few seconds, the IP address corresponding to the NFS server should appear.
 
-Select `/srv/nfs/tv-shows` from the list of share and then "OK" from the menu on the right. Assign this share the category of "TV Shows" to setup the appropriate scraper and to populate the MySQL database with the correct metadata.
+Select `/srv/nfs/shows` from the list of share and then "OK" from the menu on the right. Assign this share the category of "TV Shows" to setup the appropriate scraper and to populate the MySQL database with the correct metadata.
 
 Repeat this browsing process for the "movies" and "music" and then exit Kodi once properly configured. At this point, the MySQL tables should have been created.
 
@@ -303,9 +303,9 @@ Repeat this browsing process for the "movies" and "music" and then exit Kodi onc
 
 #### Cloning the configuration to other nodes on the network
 
-To set up another Kodi node on the network to use this library, simply copy `~/.kodi/userdata/advancedsettings.xml` to that box and restart Kodi.
+To set up another Kodi node on the network to use this library, simply copy `~/.kodi/userdata/advancedsettings.xml` to that box and restart Kodi. There is NO need to copy any other files or to do any other setup steps on the new kodi node. The nfs exports, the metadata for the programming, any stop/start times, view status, etc. are all stored in the MySQL tables.
 
-**Note:** There is NO need to copy any other files or to do any other setup steps on the new kodi node. The nfs exports, the metadata for the programming, any stop/start times, view status, etc. are all stored in the MySQL tables.
+**Note:** One can optionally define other media sources that are not managed by kodi database, but they will be specific to that particular node.
 
 ### Using a remote control
 
@@ -419,11 +419,37 @@ If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try 
 Kodi is available on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips to consider:
 
 *   [Install](/index.php/Install "Install") either the *kodi-rbp* (stable) or *kodi-rbp-git* (dev) package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
-*   All packages provide a [systemd](/index.php/Systemd "Systemd") service to run in standalone mode.
 *   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase the value of the `gpu_mem` in `/boot/config.txt`. A value of at least 128 MB is recommended for RPi version 1 while a value of at least 256 MB is recommended for RPi2 and 3.
-*   For CEC support [Install](/index.php/Install "Install") the *libcec-rpi* instead of *libcec* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
+*   All packages provide a [systemd](/index.php/Systemd "Systemd") service to run in standalone mode.
 
-### TV is not detected unless powered on first
+#### Fix for delayed startup on wifi
+
+If running with WiFi only while [kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes](/index.php/Kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes "Kodi"), kodi may start before the wireless network is up, which will result in failure to connect to the shares and to the mysql server. Assuming the network is managed by the default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), this can be fixed by modifying 2 service files as follows:
+
+```
+# cp /usr/lib/systemd/system/kodi.service /etc/systemd/system
+# cp /usr/lib/systemd/system/systemd-networkd-wait-online.service /etc/systemd/system
+
+```
+
+Edit `/etc/systemd/system/kodi.service` as follows:
+
+```
+-After=remote-fs.target
++After=remote-fs.target network-online.target
++Wants=network-online.target
+
+```
+
+Edit `/etc/systemd/system/systemd-networkd-wait-online.service` as follows:
+
+```
+-ExecStart=/usr/lib/systemd/systemd-networkd-wait-online
++ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --ignore eth0
+
+```
+
+#### TV is not detected unless powered on first
 
 Some TVs (LG brand for example) only report their capabilities via EDID through HDMI when powered on **before** the RPi. The effects of this can manifest in one of two ways:
 

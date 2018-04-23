@@ -83,7 +83,7 @@ fi
 
 ### Broadcom BCM4313 (Samsung N150+)
 
-Samsung N150-Plus имеет встроенный адаптер BCM4313 с блютузом. С ядром новее v2.6.37 работает из коробки. Спасибо открытому драйверу brcm80211\. Модуля для этой карты в старом ядре нет, и поэтому необходимо установить сторонний драйвер. Его можно найти в AUR'e: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) Или, если вы хотите собрать его вручную: [http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php) Этот драйвер работает по большей части работает хорошо, за исключением того, что не может подключаться в "скрытым" сетям.
+Samsung N150-Plus имеет встроенный адаптер BCM4313 с блютузом. С ядром новее v2.6.37 работает из коробки. Спасибо открытому драйверу brcm80211\. Модуля для этой карты в старом ядре нет, и поэтому необходимо установить сторонний драйвер. Его можно найти в AUR'e: [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) Или, если вы хотите собрать его вручную: [http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php) Этот драйвер работает по большей части работает хорошо, за исключением того, что не может подключаться в "скрытым" сетям.
 
 За более подробной информацией обратитесь к этой статье: [Broadcom wireless](/index.php/Broadcom_wireless#Wi-Fi_card_does_not_work_or_show_up_since_kernel_upgrade_.28brcmsmac.29 "Broadcom wireless")
 

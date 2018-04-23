@@ -137,7 +137,7 @@ Damentz, - сопровождающий набор патчей Liquorix, явл
 
 	[kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)
 
-	Статичное ядро для нетбуков с Intel Atom N270/N280/N450/N550, таких как Eee PC, с добавлением внешней прошивки ([broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)) и наборами патчей (BFS + TuxOnIce + BFQ опцией); только для Intel GPU
+	Статичное ядро для нетбуков с Intel Atom N270/N280/N450/N550, таких как Eee PC, с добавлением внешней прошивки ([broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)) и наборами патчей (BFS + TuxOnIce + BFQ опцией); только для Intel GPU
 
 	[linux-pax](https://aur.archlinux.org/packages/linux-pax/)
 

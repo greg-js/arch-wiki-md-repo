@@ -381,9 +381,8 @@ $ amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1
 
 PulseAudio will rewrite these ALSA settings. So if you use PulseAudio you should change its config to make them permanent:
 
+ `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf` 
 ```
-# vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf
-
 [Element Headphone Mic Boost]
 required-any = any
 switch = select
@@ -393,10 +392,8 @@ override-map.1 = all
 override-map.2 = all-left,all-right
 
 ```
-
+ `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf` 
 ```
-# vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf
-
 [Element Headphone Mic Boost]
 switch = off
 # Replace "volume = off" by:

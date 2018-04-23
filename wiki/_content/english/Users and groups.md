@@ -138,10 +138,21 @@ To add a new user, use the *useradd* command:
 
 ```
 
-*   `-m` creates the user home directory as `/home/*username*`. Within their home directory, a non-root user can write files, delete them, install programs, and so on.
-*   `-g` defines the group name or number of the user's initial login group. If specified, the group name must exist; if a group number is provided, it must refer to an already existing group. If not specified, the behaviour of *useradd* will depend on the `USERGROUPS_ENAB` variable contained in `/etc/login.defs`. The default behaviour (`USERGROUPS_ENAB yes`) is to create a group with the same name as the username, with `GID` equal to `UID`.
-*   `-G` introduces a list of supplementary groups which the user is also a member of. Each group is separated from the next by a comma, with no intervening spaces. The default is for the user to belong only to the initial group.
-*   `-s` defines the path and file name of the user's default login shell. After the boot process is complete, the default login shell is the one specified here. Ensure the chosen shell package is installed if choosing something other than [Bash](/index.php/Bash "Bash").
+	`-m`/`--create-home`
+
+	creates the user home directory as `/home/*username*`. Within their home directory, a non-root user can write files, delete them, install programs, and so on.
+
+	`-g`/`--gid`
+
+	defines the group name or number of the user's initial login group. If specified, the group name must exist; if a group number is provided, it must refer to an already existing group. If not specified, the behaviour of *useradd* will depend on the `USERGROUPS_ENAB` variable contained in `/etc/login.defs`. The default behaviour (`USERGROUPS_ENAB yes`) is to create a group with the same name as the username, with `GID` equal to `UID`.
+
+	`-G`/`--groups`
+
+	introduces a list of supplementary groups which the user is also a member of. Each group is separated from the next by a comma, with no intervening spaces. The default is for the user to belong only to the initial group.
+
+	`-s`/`--shell`
+
+	defines the path and file name of the user's default login shell. After the boot process is complete, the default login shell is the one specified here. Ensure the chosen shell package is installed if choosing something other than [Bash](/index.php/Bash "Bash").
 
 **Warning:** In order to be able to log in, the login shell must be one of those listed in `/etc/shells`, otherwise the [PAM](/index.php/PAM "PAM") module `pam_shell` will deny the login request. In particular, do not use the `/usr/bin/bash` path instead of `/bin/bash`, unless it is properly configured in `/etc/shells`.
 
@@ -151,12 +162,14 @@ When the login shell is intended to be non-functional, for example when the user
 
 ### Example adding a user
 
-On a typical desktop system, use the following command to add a new user named `archie` and specify Bash as their login shell:
+On a typical desktop system, use the following command to add a new user named `archie`:
 
 ```
-# useradd -m -s /bin/bash archie
+# useradd -m archie
 
 ```
+
+**Tip:** The default value used for the login shell of the new account can be displayed using `useradd -D`. The default is Bash, a different shell can be specified with the `-s`/`--shell` option.
 
 Although it is not required to protect the newly created user `archie` with a password, it is highly recommended to do so:
 
@@ -164,8 +177,6 @@ Although it is not required to protect the newly created user `archie` with a pa
 # passwd archie
 
 ```
-
-**Tip:** Bash is the default value for the shell (as indicated by `useradd -D`), so you can omit the `-s` option except if you want to use something else.
 
 The above *useradd* command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
 

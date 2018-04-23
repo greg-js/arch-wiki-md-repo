@@ -67,7 +67,7 @@ Works out-of-the-box. Remember to press the airplane mode button to turn on the 
 
 #### Broadcom
 
-Install the Broadcom-driver as provided in [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) AUR.
+Install the Broadcom-driver as provided in [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) AUR.
 
 ## Graphics
 

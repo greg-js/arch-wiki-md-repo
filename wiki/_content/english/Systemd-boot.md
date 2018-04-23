@@ -137,12 +137,23 @@ For Linux boot, you can also use instead of `efi` and `options` the following sy
 
 *   `linux` and `initrd` followed by the relative path of the corresponding files in the ESP; e.g. `/vmlinuz-linux`; this will be automatically translated into `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
+An example of boot entry file to launch Arch from a partition with the label *arch_os* and loading the Intel CPU [microcode](/index.php/Microcode "Microcode") is:
+
+ `*esp*/loader/entries/arch.conf` 
+```
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux.img
+options root=LABEL=*arch_os* rw
+```
+
 *bootctl* will automatically check at boot time for **Windows Boot Manager** at the location `/EFI/Microsoft/Boot/Bootmgfw.efi`, **EFI Shell** `/shellx64.efi` and **EFI Default Loader** `/EFI/BOOT/bootx64.efi`, as well as specially prepared kernel files found in `/EFI/Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
 
 **Note:**
 
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
-*   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
+*   Remember to load the Intel *microcode* with `initrd` if applicable, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
 *   The root partition can be identified with its `LABEL` or its `PARTUUID`. The latter can be found with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only to identify the root partition, not the `*esp*`.
 
 **Tip:**

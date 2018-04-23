@@ -44,15 +44,6 @@ $ sux root *application*
 
 ```
 
-*   [gksu](https://www.archlinux.org/packages/?name=gksu)
-
-**Warning:** *gksu* has been deprecated since 2011[[3]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014[[4]](https://www.archlinux.org/packages/?name=gksu).
-
-```
-$ gksu *application*
-
-```
-
 ## Alternate methods
 
 These methods will allow root to connect to a non-root user's X server, but present varying levels of security risks, especially if you run ssh. If you are behind a firewall, you may consider them to be safe enough for your requirements.

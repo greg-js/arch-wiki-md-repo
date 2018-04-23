@@ -24,8 +24,7 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
     *   [4.3 Passing aliases](#Passing_aliases)
     *   [4.4 Root password](#Root_password)
     *   [4.5 Disable root login](#Disable_root_login)
-        *   [4.5.1 gksu](#gksu)
-        *   [4.5.2 kdesu](#kdesu)
+        *   [4.5.1 kdesu](#kdesu)
     *   [4.6 Harden with Sudo Example](#Harden_with_Sudo_Example)
     *   [4.7 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_.2Fetc.2Fsudoers.d)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -251,17 +250,6 @@ $ sudo passwd root
 
 **Tip:** To get to an interactive root prompt, even after disabling the *root* account, use `sudo -i`.
 
-#### gksu
-
-**Warning:** *gksu* has been deprecated since 2011[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014.
-
-To set *gksu* to use sudo by default, run:
-
-```
-$ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
-
-```
-
 #### kdesu
 
 kdesu may be used under KDE to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.config/kdesurc`:
@@ -432,4 +420,4 @@ This sets sudo's umask to root's default umask (0022) and overrides the default 
 
 The authors site has a [list of all the options](http://www.sudo.ws/sudo/sudoers.man.html#x5355444f455253204f5054494f4e53) that can be used with the `Defaults` command in the `/etc/sudoers` file.
 
-See [[2]](https://gist.github.com/AladW/7eca9799b9ea624eca31) for a list of options (parsed from the version 1.8.7 source code) in a format optimized for `sudoers`.
+See [[1]](https://gist.github.com/AladW/7eca9799b9ea624eca31) for a list of options (parsed from the version 1.8.7 source code) in a format optimized for `sudoers`.
