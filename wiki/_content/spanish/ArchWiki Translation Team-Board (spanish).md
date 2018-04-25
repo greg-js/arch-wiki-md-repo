@@ -97,7 +97,7 @@
 | [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)") | Aplicaciones/juegos | `2013-10` | Página desgajada de [List of applications](/index.php/List_of_applications "List of applications") |
 | [Locale (Español)](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") | Configuración del sistema/Idioma sistema | `2013-09` |
 | [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") | Sistema archivos/Particionado | `2015-06` |
-| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | Portada wiki | `2016-08` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir una sección sobre el equipo de traducción |
+| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | Portada wiki | `2018-04` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir un enlace a la página del equipo de traducción |
 | [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") | Tabla de particionado | `2013-09` |
 | [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") | Servidores de réplica | `2013-09` |
 | [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") | Configuración del sistema | `2013-09` |
@@ -295,7 +295,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [Offline installation of packages (Español)](/index.php/Offline_installation_of_packages_(Espa%C3%B1ol) "Offline installation of packages (Español)") | Gestión de paquetes | `2010-08` | Versión inglesa desactualizada |
 | [Openbox (Español)](/index.php/Openbox_(Espa%C3%B1ol) "Openbox (Español)") | Gestor de ventanas | `2012-11` |
 | [Openbox Themes and Apps (Español)](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol) "Openbox Themes and Apps (Español)") | Gestor de ventanas | `2012-11` | Versión inglesa redirigida a [Openbox](/index.php/Openbox "Openbox") |
-| [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | Gestión de paquetes | `2013-01` |
+| [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | Gestión de paquetes | `2018-04` | [phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") | Traducción completada |
 | [Pacman-key (Español)](/index.php/Pacman-key_(Espa%C3%B1ol) "Pacman-key (Español)") | Gestión de paquetes | `2013-03` |
 | [Pacnew and Pacsave Files (Español)](/index.php/Pacnew_and_Pacsave_Files_(Espa%C3%B1ol) "Pacnew and Pacsave Files (Español)") | Gestión de paquetes | `2009-04` | Propuesto para su eliminación |
 | [Parallels (Español)](/index.php?title=Parallels_(Espa%C3%B1ol)&action=edit&redlink=1 "Parallels (Español) (page does not exist)")

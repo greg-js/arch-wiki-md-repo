@@ -38,6 +38,7 @@ Related articles
 *   [13 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
 *   [14 Remap stereo to mono](#Remap_stereo_to_mono)
 *   [15 Swap left/right channels](#Swap_left.2Fright_channels)
+    *   [15.1 Using default.pa](#Using_default.pa)
 *   [16 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
 *   [17 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
 *   [18 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
@@ -784,6 +785,20 @@ pulseaudio -k; pulseaudio -D
 ```
 
 [Pulseaudio FAQ: How can I reverse my left and right speaker channels?](https://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index34h3)
+
+### Using default.pa
+
+Another approach to swapping channels is suggested in [[1]](https://superuser.com/a/144252/161008):
+
+ `~/.config/pulse/default.pa` 
+```
+#!/usr/bin/pulseaudio -nF
+
+.include /etc/pulse/default.pa
+
+load-module module-remap-sink sink_name=reverse-stereo master=0 channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
+set-default-sink reverse-stereo
+```
 
 ## PulseAudio as a minimal unintrusive dumb pipe to ALSA
 

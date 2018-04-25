@@ -790,7 +790,7 @@ Do one of the following for the settings to take effect:
 This error affects some machines running Windows 10 version 1709 and later. It is not related to SMB1 being disabled in this version but to the fact that Microsoft disabled insecure logons for guests on this version for some, but not others.
 
 To fix, open Group Policy Editor (`gpedit.msc`). Navigate to *Computer configuration\administrative templates
-etwork\Lanman Workstation > Enable insecure guest logons* and disable it. Alternatively,change the following value in the registry:
+etwork\Lanman Workstation > Enable insecure guest logons* and enable it. Alternatively,change the following value in the registry:
 
 ```
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]

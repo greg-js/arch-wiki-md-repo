@@ -110,6 +110,8 @@ rustc 1.9.0 (e4e8b6668 2016-05-18)
 
 **Note:** Rustup does not install some Rust commands that the [rust](https://www.archlinux.org/packages/?name=rust) package does include, such as `rustfmt` and `rls`. They are not included because this allows the Rust maintainers to ship a nightly of Rust with a broken `rustfmt`/`rls`. To install them, run `rustup component add rls-preview` and `rustup component add rustfmt-preview` respectively. This will also suspend updates of the nightly channel, if they break `rustfmt`/`rls`.
 
+**Note:** Rust does not do its own linking, and so you’ll need to have a linker installed. You can use [gcc](https://www.archlinux.org/packages/?name=gcc), otherwise Rust will generate the following `error: linker `cc` not found.`
+
 ### Test your installation
 
 Check that Rust is installed correctly by building a simple program, as follows:

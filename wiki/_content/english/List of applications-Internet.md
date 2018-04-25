@@ -1199,7 +1199,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based XMPP client with audio/video support.
 
-	[https://psi-im.org/](https://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
+	[https://psi-im.org/](https://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) or [psi-nowebengine](https://www.archlinux.org/packages/?name=psi-nowebengine)
 
 *   **[Spark](https://en.wikipedia.org/wiki/Spark_(XMPP_client) "wikipedia:Spark (XMPP client)")** — Cross-platform real-time XMPP collaboration client optimized for business and organizations.
 
@@ -1559,7 +1559,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
 
-	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 *   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
 
@@ -1601,7 +1601,7 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **gPodder** — A podcast client and feed aggregator (GTK+ and CLI interface).
 
-	[http://gpodder.org/](http://gpodder.org/) || [gpodder3](https://aur.archlinux.org/packages/gpodder3/)
+	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
 
 *   **Hammond** — A podcast client for the GNOME Desktop written in Rust.
 
@@ -1609,7 +1609,7 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **Vocal** — Simple podcast client for the Modern Desktop (GTK+).
 
-	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://aur.archlinux.org/packages/vocal/)
+	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://www.archlinux.org/packages/?name=vocal)
 
 #### Usenet newsreaders
 

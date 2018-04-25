@@ -95,7 +95,7 @@ Thunderbird can be extensively configured in *Edit > Preferences > Advanced > Ge
 
 **Note:** Since version 24 the `network.protocol-handler.app.*` keys have no effect and will not be able to set the default browser.
 
-Thunderbird uses the default browser as defined by the [system MIME settings](/index.php/Default_applications "Default applications"). This is commonly modified by the Gnome Control Center (*Gnome Control Center > Details > Default Applications > Web*) (available in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)).
+Thunderbird uses the default browser as defined by the [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications"). This is commonly modified by the Gnome Control Center (*Gnome Control Center > Details > Default Applications > Web*) (available in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)).
 
 This can be overridden in the [#Config Editor](#Config_Editor) by searching for `network.protocol-handler.warn-external`.
 

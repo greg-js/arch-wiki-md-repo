@@ -296,7 +296,7 @@ Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-i
 
 The default video output driver, `opengl`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
 
-Even with hardware decoding enabled, it will only be used for some codecs by default (at the time of writing this list includes: h264, vc1, wmv3, hevc, mpeg2video, vp9). In order to use hardware decoding with all codecs set `hwdec-codecs=all`. It is also possible to specify an exact list of codecs for which you want hardware decoding to be used (provided it has been enabled) by setting `--hwdec-codecs=h264,mpeg2video`.
+Even with hardware decoding enabled, it will only be used for [some codecs](https://mpv.io/manual/stable/#options-hwdec-codecs) by default. In order to use hardware decoding with all codecs set `hwdec-codecs=all`. It is also possible to specify an exact list of codecs for which you want hardware decoding to be used (provided it has been enabled) by setting `--hwdec-codecs=h264,mpeg2video`.
 
 #### In GNOME Wayland
 

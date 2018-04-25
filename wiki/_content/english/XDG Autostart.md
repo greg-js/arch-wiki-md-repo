@@ -1,4 +1,4 @@
-The [XDG Autostart specification](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html) defines a standard for [autostarting](/index.php/Autostarting "Autostarting") ordinary [desktop entries](/index.php/Desktop_entries "Desktop entries") on [desktop environment](/index.php/Desktop_environment "Desktop environment") startup and removable medium mounting, by placing them in specific [#Directories](#Directories).
+The [XDG Autostart specification](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html) defines a method for [autostarting](/index.php/Autostarting "Autostarting") ordinary [desktop entries](/index.php/Desktop_entries "Desktop entries") on [desktop environment](/index.php/Desktop_environment "Desktop environment") startup and removable medium mounting, by placing them in specific [#Directories](#Directories).
 
 ## Prerequisites
 
@@ -6,14 +6,13 @@ You need to use either a [desktop environment](/index.php/Desktop_environment "D
 
 ## Directories
 
-An XDG-compliant desktop environment will automatically start [desktop entries](/index.php/Desktop_entries "Desktop entries") found in the following directories:
+The Autostart directories in order of preference are:
 
-*   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
+*   user-specific: `$XDG_CONFIG_HOME/autostart` (`~/.config/autostart` by default)
+*   system-wide: `$XDG_CONFIG_DIRS/autostart` (`/etc/xdg/autostart` by default)[[1]](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#referencing)
 
-*   [GNOME](/index.php/GNOME "GNOME") also starts files found in `/usr/share/gnome/autostart/`
+System-wide [desktop entries](/index.php/Desktop_entries "Desktop entries") can be overridden by user-specific entries with the same filename.
 
-*   User-specific: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` by default)
+To disable a system-wide entry, create an overriding entry containing `Hidden=true`.
 
-Users can override system-wide [desktop entries](/index.php/Desktop_entries "Desktop entries") by copying them into the user-specific directory.
-
-For a more details, consult [the specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
+For more details, read [the specification](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html).

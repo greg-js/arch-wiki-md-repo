@@ -29,7 +29,7 @@ Go through the wizard and setup your preferences. [Start/enable](/index.php/Star
 
 Though you can choose to modify your configuration files manually, this requires shutting down the server first. To load a module when `znc.service` starts, add `LoadModule = <modulename>` to the configuration file: `/var/lib/znc/.znc/configs/znc.conf`.
 
-**Warning:** **Do not edit `/var/lib/znc/.znc/configs/znc.conf` while ZNC is running**. There is a very good chance you will lose your configuration. Use the webadmin or controlpanel modules to change settings on-the-fly. They are both included in the package.
+**Warning:** Do not edit `/var/lib/znc/.znc/configs/znc.conf` while ZNC is running. There is a good chance you will lose your configuration. Use the *webadmin* or *controlpanel* modules, which are included in the package, to change settings on-the-fly.
 
 ### Webadmin Module
 

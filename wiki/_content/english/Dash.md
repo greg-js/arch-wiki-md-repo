@@ -59,7 +59,7 @@ Once you have verified that it won't break any functionality, it should be safe 
 
 ```
 
-Updates of Bash will overwrite `/bin/sh` with the default symlink. To prevent this, use the following [pacman hook](/index.php/Pacman#Hooks "Pacman"), which will relink `/bin/sh` after every affected update:
+Updates of Bash will overwrite `/bin/sh` with the default symlink. To prevent this, use the following [pacman hook](/index.php/Pacman_hook "Pacman hook"), which will relink `/bin/sh` after every affected update:
 
 ```
 [Trigger]

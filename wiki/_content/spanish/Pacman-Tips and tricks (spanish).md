@@ -37,11 +37,11 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
     *   [2.4 Reconstituir un paquete del sistema de archivos](#Reconstituir_un_paquete_del_sistema_de_archivos)
     *   [2.5 Lista de paquetes instalados](#Lista_de_paquetes_instalados)
     *   [2.6 Listado de todos los archivos modificados de los paquetes](#Listado_de_todos_los_archivos_modificados_de_los_paquetes)
-    *   [2.7 Reinstalling all packages](#Reinstalling_all_packages)
-    *   [2.8 Restore pacman's local database](#Restore_pacman.27s_local_database)
-    *   [2.9 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
-    *   [2.10 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
-    *   [2.11 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
+    *   [2.7 Reinstalar todos los paquetes](#Reinstalar_todos_los_paquetes)
+    *   [2.8 Restaurar la base de datos local de pacman](#Restaurar_la_base_de_datos_local_de_pacman)
+    *   [2.9 Recuperar una memoria USB desde la instalación existente](#Recuperar_una_memoria_USB_desde_la_instalaci.C3.B3n_existente)
+    *   [2.10 Visualización de un único archivo dentro de un .pkg](#Visualizaci.C3.B3n_de_un_.C3.BAnico_archivo_dentro_de_un_.pkg)
+    *   [2.11 Buscar aplicaciones que usan bibliotecas de paquetes antiguos](#Buscar_aplicaciones_que_usan_bibliotecas_de_paquetes_antiguos)
 *   [3 Optimización](#Optimizaci.C3.B3n)
     *   [3.1 Velocidades de acceso a la base de datos](#Velocidades_de_acceso_a_la_base_de_datos)
     *   [3.2 Velocidades de descarga](#Velocidades_de_descarga)
@@ -53,25 +53,29 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
 
 ## Mantenimiento
 
+**Nota:** En lugar de utilizar *comm* (que requiere una entrada ordenada con *sort*) en las secciones siguientes, también puede utilizar `grep -Fxf` o `grep -Fxvf`.
+
+Véase también [System maintenance](/index.php/System_maintenance "System maintenance").
+
 ### Listando paquetes
 
 Es posible que desee obtener la lista de paquetes instalados con su versión, lo cual es útil cuando se reportan errores o se discuten los paquetes instalados.
 
-*   Enumere todos los paquetes explícitamente instalados: `pacman -Qe`.
-*   todos los paquetes nativos instalados explícitamente (es decir, presentes en la base de datos de sincronización) que no sean dependencias directas o opcionales: `pacman -Qent` .
-*   Lista de todos los paquetes extranjeros (normalmente descargados e instalados manualmente): `pacman -Qm`.
-*   Haga una lista de todos los paquetes nativos (instalados desde la (s) base de datos de sincronización): `pacman -Qn` .
-*   Listar paquetes por regex: `pacman -Qs *regex*` .
+*   Lista todos los paquetes explícitamente instalados: `pacman -Qe`.
+*   Lista los paquetes originales instalados explícitamente (es decir, presentes en la base de datos de sincronización) que no sean dependencias directas o opcionales: `pacman -Qent` .
+*   Lista de todos los paquetes externos (normalmente descargados e instalados manualmente): `pacman -Qm`.
+*   Lista de todos los paquetes originales (instalados desde la (s) base de datos de sincronización): `pacman -Qn` .
+*   Lista de paquetes por regex: `pacman -Qs *regex*` .
 *   Lista de paquetes por regex con formato de salida personalizado: `expac -s "%-30n %v" *regex*` (necesita [expac](https://www.archlinux.org/packages/?name=expac)).
 
 #### Por tamaño
 
-Para obtener una lista de paquetes instalados ordenados por tamaño, lo que puede ser útil al liberar espacio en el disco duro:
+Para obtener una lista de paquetes instalados ordenados por tamaño, lo que puede ser útil para liberar espacio en su disco duro:
 
 *   Instalar [expac](https://www.archlinux.org/packages/?name=expac) y ejecutar `expac -H M '%m\t%n' | sort -h`.
 *   Ejecute [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) con la opción `-c` .
 
-Para enumerar el tamaño de descarga de varios paquetes (deje packages en blanco para listar todos los paquetes):
+Para crear un listado de paquetes y su tamaño (deje packages en blanco para listar todos los paquetes):
 
 ```
  $ expac -S -H M '%k \ t%n' *packages*
@@ -85,13 +89,6 @@ Para listar los paquetes explícitamente instalados que no están en [base](http
 
 ```
 
-Enumere todos los paquetes en Arch Linux ISO que no están en el grupo base:
-
-```
-$ comm -23 <(wget -q -O - https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
-
-```
-
 #### Por fecha
 
 Para enumerar los 20 últimos paquetes instalados con expac , ejecute:
@@ -101,7 +98,7 @@ Para enumerar los 20 últimos paquetes instalados con expac , ejecute:
 
 ```
 
-O, con segundos desde la época (1970-01-01 UTC):
+O, con segundos desde la fecha (1970-01-01 UTC):
 
 ```
  $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
@@ -129,7 +126,7 @@ Enumere todos los paquetes instalados no requeridos por otros paquetes y que no 
 Como arriba, pero con descripciones:
 
 ```
- $ expac -HM '% -20n \ t% 10d' $ (comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base -devel | sort)
+ $ expac -HM '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base base-devel | sort))
 
 ```
 
@@ -513,60 +510,60 @@ Para la recuperación de la base de datos, véase [#Restore pacman's local datab
 
 **Nota:** ¡Esto *no* debe usarse cuando se sospeche de cambios maliciosos! En este caso, se recomiendan precauciones de seguridad, como usar un medio en vivo y una fuente independiente para las sumas de hash.
 
-### Reinstalling all packages
+### Reinstalar todos los paquetes
 
-To reinstall all native packages, use:
+Para reinstalar todos los paquetes originales, use:
 
 ```
 # pacman -Qnq | pacman -S -
 
 ```
 
-Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qmq`.
+Los paquetes externos (AUR) deben reinstalarse por separado; puede listarlos con `pacman -Qmq`.
 
-*Pacman* preserves the [installation reason](/index.php/Installation_reason "Installation reason") by default.
+*Pacman* conserva la [installation reason](/index.php/Installation_reason "Installation reason") por defecto.
 
-### Restore pacman's local database
+### Restaurar la base de datos local de pacman
 
-See [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
+Véase [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
 
-### Recovering a USB key from existing install
+### Recuperar una memoria USB desde la instalación existente
 
-If you have Arch installed on a USB key and manage to mess it up (e.g. removing it while it is still being written to), then it is possible to re-install all the packages and hopefully get it back up and working again (assuming USB key is mounted in `/newarch`)
+Si tiene Arch instalado en una memoria USB y se las arregla para estropearlo ( por ejemplo, quitándola mientras todavía está siendo escrita), entonces es posible reinstalar todos los paquetes y esperar que vuelva a funcionar (suponiendo que la memoria USB está montada en `/newarch`)
 
 ```
 # pacman -S $(pacman -Qq --dbpath /newarch/var/lib/pacman) --root /newarch --dbpath /newarch/var/lib/pacman
 
 ```
 
-### Viewing a single file inside a .pkg file
+### Visualización de un único archivo dentro de un .pkg
 
-For example, if you want to see the contents of `/etc/systemd/logind.conf` supplied within the [systemd](https://www.archlinux.org/packages/?name=systemd) package:
+Por ejemplo, si desea ver el contenido de `/etc/systemd/logind.conf` suministrado dentro del paquete [systemd](https://www.archlinux.org/packages/?name=systemd)::
 
 ```
 $ tar -xOf /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz etc/systemd/logind.conf
 
 ```
 
-Or you can use [vim](https://www.archlinux.org/packages/?name=vim) to browse the archive:
+O puede usar [vim](https://www.archlinux.org/packages/?name=vim) para explorar el archivo:
 
 ```
 $ vim /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz
 
 ```
 
-### Find applications that use libraries from older packages
+### Buscar aplicaciones que usan bibliotecas de paquetes antiguos
 
-Even if you installed a package the existing long-running programs (like daemons and servers) still keep using code from old package libraries. And it is a bad idea to let these programs running if the old library contains a security bug.
+Incluso si ha instalado un paquete, los programas existentes que se ejecutan desde hace mucho tiempo (como los demonios y los servidores) siguen utilizando código de antiguas bibliotecas.Y es una mala idea dejar que estos programas se ejecuten si la biblioteca anterior contiene un error de seguridad.
 
-Here is a way how to find all the programs that use old packages code:
+Esta es una manera de encontrar todos los programas que usan código de paquetes antiguos:
 
 ```
 # lsof +c 0 | grep -w DEL | awk '1 { print $1 ": " $NF }' | sort -u
 
 ```
 
-It will print running program name and old library that was removed or replaced with newer content.
+Imprimirá el nombre del programa en ejecución y la biblioteca antigua que se eliminó o reemplazó con contenido más reciente.
 
 ## Optimización
 

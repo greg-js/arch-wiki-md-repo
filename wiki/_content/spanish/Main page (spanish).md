@@ -10,7 +10,7 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	[Preguntas de uso frecuente](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")
 
-	Un listado de las preguntas más comunes y frecuentes.
+	Un listado de las preguntas más destacadas sobre de la distribución.
 
 	[Arch comparada con otras distribuciones](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)")
 
@@ -18,11 +18,11 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	[Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 
-	Una guía cuyo seguimiento le permitirá completar el proceso de instalación y configuración de Arch Linux.
+	Esta guía le orientará en el proceso de instalación de Arch Linux.
 
 	[Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
 
-	Un índice con anotaciones a otros artículos conocidos e información de referencia común.
+	Un índice con anotaciones a tutoriales sobre configuraciones posinstalación, así como a otros artículos de interés.
 
 	[Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
@@ -30,36 +30,40 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 ## Nuestra comunidad
 
-	[Código de conducta](/index.php/Forum_etiquette_(Espa%C3%B1ol) "Forum etiquette (Español)")
+	[Código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)")
 
-	Conozca las normas de conducta para los miembros de la comunidad de Arch.
+	Detalla las normas de conducta para los miembros de la comunidad de Arch.
 
 	[Colaborar con la comunidad](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)")
 
 	Describe diversas formas mediante las cuales los usuarios pueden colaborar con la comunidad de Arch.
 
-	[Contribuir a la wiki](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)")
+	[Comunidades internacionales](/index.php/International_communities_(Espa%C3%B1ol) "International communities (Español)")
 
-	Si quiere y puede contribuir a la wiki de Arch, en general, consulte este artículo para obtener algunas ideas.
-
-	[Tutorial sobre ArchWiki](/index.php/Help:Editing_(Espa%C3%B1ol) "Help:Editing (Español)")
-
-	Un breve tutorial sobre cómo editar y colaborar con la wiki de Arch Linux.
-
-	[Comunidades internacionales](/index.php/Comunidades_internacionales "Comunidades internacionales")
-
-	Recolección de enlaces a las comunidades de Arch Linux del resto del mundo.
+	Recoge enlaces a las comunidades de Arch Linux del resto del mundo.
 
 	[Canales IRC](/index.php/IRC_channels_(Espa%C3%B1ol) "IRC channels (Español)")
 
-	Para reunirse con sus compañeros *«Archers»* y mantener una buena charla, visite estos canales.
+	Visite estos canales si quiere reunirse con sus compañeros *«Archers»* y mantener una buena charla con ellos.
 
-## El equipo de traducción de ArchWiki al español
+## Interactuar con la wiki
 
-Si quiere colaborar con la wiki, de forma más específica, a través del equipo, así como conocer algunas guías básicas respecto a las traducciones, visite la [página del equipo](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)").
+	[Cómo leer la wiki de Arch](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)")
 
-## Ayuda
+	Encuentre aclaraciones si le cuesta seguir las instrucciones de algunos artículos.
 
-Las páginas de ArchWiki tienen sus propias convenciones específicas, por lo que si tiene problemas al leer ArchWiki o para entender algunas de sus instrucciones, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)") para aclararse.
+	[Buscar en ArchWiki](/index.php/Help:Searching_(Espa%C3%B1ol) "Help:Searching (Español)")
 
-Si busca información específica, pruebe a utilizar el recuadro de búsqueda del margen superior izquierdo de esta página. También puede utilizar su motor de búsqueda favorito de la web, que probablemente le proporcione una sintaxis especial o una interfaz para limitar los resultados de búsqueda a un sitio web en particular (normalmente será suficiente añadir `site:wiki.archlinux.org` a los términos de búsqueda). Véase [Help:Searching](/index.php/Help:Searching "Help:Searching") para conocer otros trucos.
+	Pruebe usando el cuadro de búsqueda en la parte superior de la página; siga el enlace para conocer otras sugerencias.
+
+	[Contribuir a la wiki](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)")
+
+	He aquí un punto de partida para aquellos dispuestos a contribuir a la wiki.
+
+	[Editar en ArchWiki](/index.php/Help:Editing_(Espa%C3%B1ol) "Help:Editing (Español)")
+
+	Tutorial sobre la edición de artículos y la introducción a la sintaxis del texto de la wiki.
+
+	[Traducir la wiki al español](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)")
+
+	Si quiere colaborar en la traducción de la wiki de Arch Linux al español, así como conocer algunas guías básicas respecto a las traducciones, visite nuestra página.

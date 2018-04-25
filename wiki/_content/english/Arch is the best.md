@@ -336,7 +336,7 @@ Pick a language:
 	An object-oriented, Ruby-like language.
 
 ```
-print("Arch is the best!")
+puts "Arch is the best!"
 
 ```
 

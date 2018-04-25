@@ -253,7 +253,7 @@ Passphrase=*password*
 
 **Note:**
 
-*   Options are case-sensitive. [[3]](https://together.jolla.com/question/55969/connman-fails-due-to-case-sensitive-settings/)
+*   Options are case-sensitive, e.g. `EAP = ttls` instead of `EAP = TTLS`.[[3]](https://together.jolla.com/question/55969/connman-fails-due-to-case-sensitive-settings/)
 *   Consult the institution hosting the eduroam network for various settings such as username, password, `EAP`, `Phase2output`, and needed certificates.
 
 For more information, see [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [Wireless network configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").

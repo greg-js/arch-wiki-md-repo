@@ -162,6 +162,8 @@ As this solution does not use an official certificate authority (CA), a security
 
 Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into your preferred location, for example `/root`.
 
+The variable `HIAWATHA_RESTART_COMMAND` must be replaced by `systemctl restart hiawatha.service` in `/root/letsencrypt/letsencrypt.conf`.
+
 #### Obtain a certificate
 
 The detailed instructions are described in `README.txt` and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:

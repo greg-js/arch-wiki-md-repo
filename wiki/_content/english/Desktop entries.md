@@ -1,24 +1,21 @@
-The freedesktop [Desktop Entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) provides a standard for applications to integrate into a [desktop environment](/index.php/Desktop_environment "Desktop environment"). Desktop entries are the configuration files that describe how an application is launched and which data it can handle. They also configure how an application appears in a menu with an icon, which is subject to the related [menu specification](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) standard.
+The [XDG Desktop Entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) defines a standard for applications to integrate into application menus of [desktop environments](/index.php/Desktop_environment "Desktop environment") implementing the [XDG Desktop Menu](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) specification.
 
-The most common desktop entries are the *.desktop* and *.directory* files. This article explains briefly how to create useful and standard compliant desktop entries. It is mainly intended for package contributors and maintainers, but may also be useful for software developers and others.
+Each desktop entry must have a `Type` and a `Name` and can optionally define its appearance in the application menu.
 
-There are roughly three types of desktop entries:
+There are three types of desktop entries:
 
-	Application 
+*   **Application** (*.desktop* file extension)
+    Defines how to launch an application and what MIME types it supports.
+*   **Link** (*.desktop* file extension)
+    Defines a shortcut to a `URL`.
+*   **Directory** (*.directory* file extension)
+    Defines the appearance of a submenu in the application menu.
 
-	a shortcut to an application
+The `MimeType` keys of Application desktop entries are used by [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
 
-	Link 
-
-	a shortcut to a web link.
-
-	Directory 
-
-	a container of meta data of a menu entry
+With [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") Application desktop entries can be [started automatically](/index.php/Autostarting "Autostarting") by placing them in specific directories.
 
 The following sections will roughly explain how these are created and validated.
-
-Related to this content, and also defined in *.desktop* files, are MIME-type associations for data files. [Default applications](/index.php/Default_applications "Default applications") describes how these are configured.
 
 ## Contents
 
@@ -33,13 +30,12 @@ Related to this content, and also defined in *.desktop* files, are MIME-type ass
 *   [3 Tools](#Tools)
     *   [3.1 gendesk](#gendesk)
         *   [3.1.1 How to use](#How_to_use)
-    *   [3.2 List or search in .desktop files](#List_or_search_in_.desktop_files)
+    *   [3.2 lsdesktopf](#lsdesktopf)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Run a desktop file from a terminal](#Run_a_desktop_file_from_a_terminal)
     *   [4.2 Hide desktop entries](#Hide_desktop_entries)
-    *   [4.3 Autostart](#Autostart)
-    *   [4.4 Modify environment variables](#Modify_environment_variables)
+    *   [4.3 Modify environment variables](#Modify_environment_variables)
 *   [5 See also](#See_also)
 
 ## Application entry
@@ -220,7 +216,7 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 *   See the [gendesk project](https://github.com/xyproto/gendesk) for more information.
 
-### List or search in .desktop files
+### lsdesktopf
 
 [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) can list available *.desktop* files or search their contents.
 
@@ -231,11 +227,11 @@ $ lsdesktopf --list gtk zh_TW,zh_CN,en_GB
 
 ```
 
-It can also perform MIME-type-related searches. See [Default applications#lsdesktopf](/index.php/Default_applications#lsdesktopf "Default applications").
+It can also perform MIME-type-related searches. See [XDG MIME Applications#lsdesktopf](/index.php/XDG_MIME_Applications#lsdesktopf "XDG MIME Applications").
 
 ### fbrokendesktop
 
-The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command *which* to detect broken `Exec` that points to not existing path. Without any parameters it uses preset folders in `DskPath` array. It shows only broken *.desktop* with full path and filename that is missing.
+The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) Bash script detects broken `Exec` values pointing to non-existent paths. Without any arguments it uses preset directories in the `DskPath` array. It shows only broken *.desktop* with full path and filename that is missing.
 
 Examples
 
@@ -261,10 +257,6 @@ Then, to hide the entry in all environments, open the desktop entry file in a te
 To hide the entry in a specific desktop, add the following line to the desktop entry file: `NotShowIn=*desktop-name*`
 
 where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop entry can be hidden in more than desktop at once - simply separate the desktop names with a semi-colon.
-
-### Autostart
-
-If you use an [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart")-compliant [desktop environment](/index.php/Desktop_environment "Desktop environment"), it will automatically start Desktop entries found in [specific directories](/index.php/XDG_Autostart "XDG Autostart").
 
 ### Modify environment variables
 

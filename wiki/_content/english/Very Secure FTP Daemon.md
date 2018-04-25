@@ -24,6 +24,7 @@
     *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
     *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
     *   [4.5 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
+    *   [4.6 vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_connections_fail_on_a_machine_using_nis_with:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -489,7 +490,19 @@ listen=NO
 
 ```
 
+### vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send
+
+as mentioned on the vsftpd faq page, "...built-in sandboxing uses network isolation on Linux. This may be interfering with any module that needs to use the network to perform operations or lookups"
+
+add this undocumented line to your /etc/vsftpd.conf
+
+```
+isolate_network=NO
+
+```
+
 ## See also
 
 *   [vsftpd official homepage](http://vsftpd.beasts.org/)
 *   [vsftpd.conf man page](http://vsftpd.beasts.org/vsftpd_conf.html)
+*   [vsftpd FAQ](https://security.appspot.com/vsftpd/FAQ.txt)

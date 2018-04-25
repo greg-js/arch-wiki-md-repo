@@ -390,6 +390,8 @@ Relevant websites:
 
 #### Chinese, Japanese, Korean, Vietnamese
 
+*   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - WenQuanYi Micro Hei font family (also known as Hei, Gothic or Dotum) is a sans-serif style derived from Droid Sans Fallback, it offers high quality CJK outline font and it is extremely compact (~5M).
+
 ##### Pan-CJK
 
 *   adobe source han fonts

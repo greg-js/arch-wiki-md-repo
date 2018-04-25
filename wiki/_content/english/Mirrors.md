@@ -12,6 +12,8 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [2.1 Force pacman to refresh the package lists](#Force_pacman_to_refresh_the_package_lists)
 *   [3 Sorting mirrors](#Sorting_mirrors)
     *   [3.1 List by speed](#List_by_speed)
+        *   [3.1.1 Ranking an existing mirror list](#Ranking_an_existing_mirror_list)
+        *   [3.1.2 Fetching and ranking a live mirror list](#Fetching_and_ranking_a_live_mirror_list)
     *   [3.2 Server-side ranking](#Server-side_ranking)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 Unofficial mirrors](#Unofficial_mirrors)
@@ -99,17 +101,19 @@ After creating/editing `/etc/pacman.d/mirrorlist`, issue the following command:
 
 ```
 
-Passing two `--refresh` or `-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syyu` *whenever changing to a new mirror* is good practice and will avoid possible issues. See also [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124).
+Passing two `--refresh`/`-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syyu` *whenever changing to a new mirror* is good practice and will avoid possible issues. See also [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124).
 
 ## Sorting mirrors
 
-When downloading packages pacman uses the mirrors in the order they are in `/etc/pacman.d/mirrorlist`. To set a priority to mirrors, the mirrorlist file has to be sorted manually or using a script.
+When downloading packages, pacman uses the mirrors in the order they are listed in `/etc/pacman.d/mirrorlist`. The order servers appear in the list sets their priority.
 
-It is not a good idea to just use the fastest mirrors, since the fastest mirrors might be out of sync. Instead, make a list of mirrors sorted by their [speed](#List_by_speed), then remove those from the list that are out of sync according to their [status](https://www.archlinux.org/mirrors/status/).
+It is not optimal to only rank mirrors based on speed since the fastest servers might be out-of-sync. Instead, make a list of mirrors sorted by their [speed](#List_by_speed), then remove those from the list that are out of sync according to their [status](https://www.archlinux.org/mirrors/status/).
 
-It is recommended to repeat this process before every system upgrade to keep `/etc/pacman.d/mirrorlist` up to date.
+It is recommended to repeat this process before every system upgrade to keep the list of mirrors up-to-date.
 
 ### List by speed
+
+#### Ranking an existing mirror list
 
 The [pacman](https://www.archlinux.org/packages/?name=pacman) package provides a Bash script, `/usr/bin/rankmirrors`, which can be used to rank the mirrors according to their connection and opening speeds to take advantage of using the fastest local mirror.
 
@@ -120,39 +124,39 @@ Back up the existing `/etc/pacman.d/mirrorlist`:
 
 ```
 
-Edit `/etc/pacman.d/mirrorlist.backup` and uncomment mirrors for testing with `rankmirrors`.
+To prepare `mirrorlist.backup` for ranking with *rankmirrors*, the following actions can be carried out:
 
-Optionally run the following `sed` line to uncomment every mirror:
+*   Edit `mirrorlist.backup` and uncomment the servers to be tested
 
-```
-# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+*   If the servers in the file are grouped by country, one can extract all the servers of a specific country by using: `$ awk '/^## *Country Name*$/{f=1}f==0{next}/^$/{exit}{print substr($0, 2)}' /etc/pacman.d/mirrorlist.backup` 
 
-```
+*   To uncomment every mirror, run the following `sed` line: `# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup` 
 
-Finally, rank the mirrors. Operand `-n 6` means only output the 6 fastest mirrors:
+Finally, rank the mirrors, here with the operand `-n 6` to only output the 6 fastest mirrors:
 
 ```
 # rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 
 ```
 
-Run `rankmirrors -h` for a list of all the available options.
+#### Fetching and ranking a live mirror list
 
-**Tip:** If the servers in `mirrorlist.backup` are grouped by country, one can extract the servers of a specific country before feeding them to *rankmirrors* by using `$ awk '/^## *Country Name*$/{f=1}f==0{next}/^$/{exit}{print substr($0, 2)}' /etc/pacman.d/mirrorlist.backup` 
+In order to start with a shortlist of up-to-date mirrors based in some countries and feed it to *rankmirrors* one can fetch the list from the *Pacman Mirrorlist Generator*. The command below pulls the up-to-date mirrors in either *France* or the *United Kingdom* which support the *https* protocol, it uncomments the servers in the list and then ranks them and outputs the 5 fastest.
+
+```
+$ curl -s "[https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on](https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on)" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
+
+```
 
 ### Server-side ranking
 
 The official [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) provides an easy way to obtain a ranked list of mirrors. Because all ranking is done on a single server that takes multiple factors into account, the amount of load on the mirrors and the clients is significantly lower compared to ranking on each individual client.
 
-There are multiple scripts automating the update of the mirrorlist from the ranking server:
+Another popular alternative is the following tool:
 
-*   **[Reflector](/index.php/Reflector "Reflector")** — Retrieves the latest mirrorlist from the [MirrorStatus](https://www.archlinux.org/mirrors/status/) page, filters the most up-to-date mirrors, sorts them by speed and overwrites `/etc/pacman.d/mirrorlist`
+**[Reflector](/index.php/Reflector "Reflector")** — Retrieves the latest mirrorlist from the [MirrorStatus](https://www.archlinux.org/mirrors/status/) page, filters and sorts them by speed and overwrites `/etc/pacman.d/mirrorlist`
 
 	[https://xyne.archlinux.ca/projects/reflector/](https://xyne.archlinux.ca/projects/reflector/) || [reflector](https://www.archlinux.org/packages/?name=reflector)
-
-*   **armrr** — Downloads a ranks mirrorlist for specific countries from the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/)
-
-	[https://github.com/spurge/armrr](https://github.com/spurge/armrr) || no package
 
 ## Troubleshooting
 

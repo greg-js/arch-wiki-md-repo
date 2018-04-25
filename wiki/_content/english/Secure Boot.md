@@ -153,7 +153,7 @@ Where `*N*` is the NVRAM boot entry created for booting `PreLoader.efi`. Check w
 
 ### shim
 
-When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `mmx64.efi`. In MokManager you must enroll the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enroll the key they are signed with.
+When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `MokManager.efi`. In MokManager you must enroll the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enroll the key they are signed with.
 
 **Note:** If you use [#shim with hash](#shim_with_hash), each time you update any of the binaries (e.g. boot loader or kernel) you will need to enroll their new hash.
 
@@ -168,10 +168,10 @@ Rename your current [boot loader](/index.php/Boot_loader "Boot loader") to `grub
 
 ```
 
-Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous filename of your boot loader as as the filename for `shimx64.efi`:
+Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous filename of your boot loader as as the filename for `shim.efi`:
 
 ```
-# cp /usr/share/shim-signed/shimx64.efi *esp*/EFI/BOOT/BOOTX64.efi
+# cp /usr/share/shim-signed/shim.efi *esp*/EFI/BOOT/BOOTX64.efi
 # cp /usr/share/shim-signed/MokManager.efi *esp*/EFI/BOOT/
 
 ```

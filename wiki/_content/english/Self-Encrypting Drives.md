@@ -79,7 +79,7 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 
 *msed* and *OpalTool*, the two known Open Source code bases available for SED support on Linux, have both been retired, and their development efforts officially merged to form *[sedutil](https://github.com/Drive-Trust-Alliance/sedutil)*, under the umbrella of The [Drive Trust Alliance (DTA)](https://www.drivetrust.com). [sedutil](https://github.com/Drive-Trust-Alliance/sedutil) is "*an Open Source (GPLv3) effort to make Self Encrypting Drive technology freely available to everyone.*"
 
-[Install](/index.php/Install "Install") the [sedutil](https://aur.archlinux.org/packages/sedutil/) package, which contains the *sedutil-cli* tool, and helper scripts to create a custom pre-boot authorization (PBA) image based off the *current* OS in use (e.g. for setting a custom console keymap). Alternatively, you can install *sedutil* solely for acquiring the *sedutil-cli* toolset, but download and use the [precompiled PBA image (for BIOS)](https://github.com/Drive-Trust-Alliance/exec/blob/master/LINUXPBARelease.img.gz?raw=true) provided by the Drive Trust Alliance. If you are using a UEFI machine, you must download [this 64-bit UEFI PBA instead](https://github.com/Drive-Trust-Alliance/exec/blob/master/UEFI64_Release.img.gz?raw=true).
+[Install](/index.php/Install "Install") the [sedutil](https://aur.archlinux.org/packages/sedutil/) package, which contains the *sedutil-cli* tool, and helper scripts to create a custom pre-boot authorization (PBA) image based off the *current* OS in use (e.g. for setting a custom console keymap). Alternatively, you can install *sedutil* solely for acquiring the *sedutil-cli* toolset, but download and use the [precompiled PBA image (for BIOS or UEFI)](https://github.com/Drive-Trust-Alliance/sedutil/wiki/Executable-Distributions) provided by the Drive Trust Alliance.
 
 **Note:** UEFI support currently requires that Secure Boot be turned off.
 
@@ -120,7 +120,7 @@ Windows version of sedutils output:
 
 ### Download (or create) the pre-boot authorization (PBA) image
 
-Download the pre-boot authorization (PBA) image for a [BIOS](https://github.com/Drive-Trust-Alliance/exec/blob/master/LINUXPBARelease.img.gz?raw=true) or [64bit UEFI](https://github.com/Drive-Trust-Alliance/exec/blob/master/UEFI64_Release.img.gz?raw=true) machine.
+Download the pre-boot authorization (PBA) image for a [BIOS or UEFI](https://github.com/Drive-Trust-Alliance/sedutil/wiki/Executable-Distributions) machine provided by the Drive Trust Alliance.
 
 **Note:** UEFI support currently requires that Secure Boot be turned off.
 

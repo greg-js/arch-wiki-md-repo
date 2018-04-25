@@ -13,7 +13,8 @@ An environment variable is a named object that contains data used by one or more
         *   [2.2.1 Graphical applications](#Graphical_applications)
     *   [2.3 Per session](#Per_session)
 *   [3 Examples](#Examples)
-    *   [3.1 Using pam_env](#Using_pam_env)
+    *   [3.1 Default programs](#Default_programs)
+    *   [3.2 Using pam_env](#Using_pam_env)
 *   [4 See also](#See_also)
 
 ## Utilities
@@ -131,33 +132,9 @@ exec openbox
 
 *   `OLDPWD` contains the path to your previous working directory, that is, the value of `PWD` before last *cd* was executed.
 
-*   `SHELL` contains the path to the user's [preferred shell](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Note that this is not necessarily the shell that is currently running, although [Bash](/index.php/Bash "Bash") sets this variable on startup.
-
 *   `TERM` contains the type of the running terminal, e.g. `xterm-256color`. It is used by programs running in the terminal that wish to use terminal-specific capabilities.
 
-*   `PAGER` contains command to run the program used to list the contents of files, e.g., `/bin/less`.
-
-*   `EDITOR` contains the command to run the lightweight program used for editing files, e.g., `/usr/bin/nano`. For example, you can write an interactive switch between *gedit* under [X](/index.php/X "X") or *nano*, in this example:
-
-```
-export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
-
-```
-
-*   `VISUAL` contains command to run the full-fledged editor that is used for more demanding tasks, such as editing mail (e.g., `vi`, [vim](/index.php/Vim "Vim"), [emacs](/index.php/Emacs "Emacs") etc).
-
 *   `MAIL` contains the location of incoming email. The traditional setting is `/var/spool/mail/$LOGNAME`.
-
-*   `BROWSER` contains the path to the web browser. Helpful to set in an interactive shell configuration file so that it may be dynamically altered depending on the availability of a graphic environment, such as [X](/index.php/X "X"):
-
-```
-if [ -n "$DISPLAY" ]; then
-    export BROWSER=firefox
-else 
-    export BROWSER=links
-fi
-
-```
 
 *   `ftp_proxy` and `http_proxy` contains FTP and HTTP proxy server, respectively:
 
@@ -174,6 +151,32 @@ http_proxy="http://192.168.0.1:80"
 *   `INFODIR` contains a colon-separated list of directories in which the *info* command searches for the info pages, e.g., `/usr/share/info:/usr/local/share/info`
 
 *   `TZ` can be used to to set a time zone different to the system zone for a user. The zones listed in `/usr/share/zoneinfo/` can be used as reference, for example `TZ="/usr/share/zoneinfo/Pacific/Fiji"`
+
+### Default programs
+
+*   `SHELL` contains the path to the user's [preferred shell](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Note that this is not necessarily the shell that is currently running, although [Bash](/index.php/Bash "Bash") sets this variable on startup.
+
+*   `PAGER` contains command to run the program used to list the contents of files, e.g., `/bin/less`.
+
+*   `EDITOR` contains the command to run the lightweight program used for editing files, e.g., `/usr/bin/nano`. For example, you can write an interactive switch between *gedit* under [X](/index.php/X "X") or *nano*, in this example:
+
+```
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
+
+```
+
+*   `VISUAL` contains command to run the full-fledged editor that is used for more demanding tasks, such as editing mail (e.g., `vi`, [vim](/index.php/Vim "Vim"), [emacs](/index.php/Emacs "Emacs") etc).
+
+*   `BROWSER` contains the path to the web browser. Helpful to set in an interactive shell configuration file so that it may be dynamically altered depending on the availability of a graphic environment, such as [X](/index.php/X "X"):
+
+```
+if [ -n "$DISPLAY" ]; then
+    export BROWSER=firefox
+else 
+    export BROWSER=links
+fi
+
+```
 
 ### Using pam_env
 

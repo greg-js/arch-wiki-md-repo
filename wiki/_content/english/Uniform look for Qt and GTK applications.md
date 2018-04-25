@@ -97,7 +97,7 @@ style=GTK+
 
 *   For Qt 5, it can be enabled by installing [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins) and setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=gtk2`
 
-For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2B#Themes "GTK+") supports both GTK+ 2 and GTK+ 3\. If your preferred theme has inconsistent rendering after configuring Qt to use GTK+2, install `gtk-theme-switch2` and choose a theme.
+For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2B#Themes "GTK+") supports both GTK+ 2 and GTK+ 3\. If your preferred theme has inconsistent rendering after configuring Qt to use GTK+2, install [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2) and choose a theme.
 
 ### QGnomePlatform
 

@@ -88,11 +88,9 @@ Related articles
 
 ### Standalone
 
-Run `openbox-session` with [xinit](/index.php/Xinit "Xinit").
+Run `openbox` or `openbox-session` with [xinit](/index.php/Xinit "Xinit"). Note that only `openbox-session` provides [#Autostart](#Autostart).
 
 **Note:** After executing openbox-session, there is only a blank grey screen. Try to move your mouse and **right click** to get an openbox menu to make sure that it is actually working.
-
-**Note:** Specifying `openbox` instead of `openbox-session` will prevent [autostart](#autostart) in `/etc/xdg/autostart`.
 
 ### Other desktop environments
 
@@ -137,16 +135,14 @@ The available options are discussed extensively below in the [#Menus](#Menus) se
 
 ### Autostart
 
-The file `~/.config/openbox/autostart`, if present, is executed by Openbox at startup. A basic example of this file consists of one command per line, like so:
+`openbox-session` provides two autostart mechanisms: [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") (which only works if [python2-xdg](https://www.archlinux.org/packages/?name=python2-xdg) is installed) and [Openbox's own autostart mechanism](http://openbox.org/wiki/Help:Autostart).
 
-```
-xset -b
-nm-applet &
-conky &
+Openbox's own autostart mechanism:
 
-```
-
-Note that a single ampersand (`&`) causes the process in question to be run in the background, allowing the script to continue on to the next command. An ampersand is therefore needed after each command that launches a process of indefinite duration. Commands that are completed essentially instantly (e.g. `xset -b`) may be left alone.
+*   sources `/etc/xdg/openbox/environment`
+*   sources `~/.config/openbox/environment`
+*   runs `/etc/xdg/openbox/autostart`
+*   runs `~/.config/openbox/autostart`
 
 Issues regarding commands in `~/.config/openbox/autostart` being executed out of order (or skipped altogether) are often resolved by the addition of small delays. For instance:
 
@@ -156,10 +152,6 @@ xset -b
 (sleep 3s && conky) &
 
 ```
-
-**Note:** In addition to running `~/.config/openbox/autostart`, Openbox will also launch programs with `.desktop` files present in `/etc/xdg/autostart`. This is the global [autostart](/index.php/Autostart "Autostart") directory, which is automatically sourced by XDG-compliant desktop environments (e.g. GNOME, KDE). Openbox will source this directory as well, provided that the package [python2-xdg](https://www.archlinux.org/packages/?name=python2-xdg) is installed, and Openbox is launched as `openbox-session` (rather than simply `openbox`, as [noted earlier](#Standalone)). Duplication between `~/.config/openbox/autostart` and `/etc/xdg/autostart` is a common cause of programs launching twice at startup (e.g. two network manager tray icons).
-
-The `/usr/lib/openbox/openbox-xdg-autostart` python2 script runs applications based on the XDG autostart specification.
 
 ### environment
 

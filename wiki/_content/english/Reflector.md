@@ -61,7 +61,7 @@ Select the HTTPS mirrors synchronized within the last 12 hours and located in ei
 
 ### Pacman hook
 
-You can also create a [pacman hook](/index.php/Pacman#Hooks "Pacman") that will run *reflector* and remove the *.pacnew* file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
+You can also create a [pacman hook](/index.php/Pacman_hook "Pacman hook") that will run *reflector* and remove the *.pacnew* file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
 
  `/etc/pacman.d/hooks/mirrorupgrade.hook` 
 ```

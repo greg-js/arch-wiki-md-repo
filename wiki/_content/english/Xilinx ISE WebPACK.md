@@ -366,7 +366,7 @@ Solution #1 no longer works due to: coregen's bundled java fails to start. Worka
 Backup old version
 
 ```
-$ mv /opt/Xilinx/14.7/ISE_DS/ISE/java6/lin64/jre/bin/java /opt/Xilinx/14.7/ISE_DS/ISE/java6/lin64/jre/bin/java.old
+$ mv /opt/Xilinx/14.7/ISE_DS/ISE/java/lin64/jre/bin/java /opt/Xilinx/14.7/ISE_DS/ISE/java/lin64/jre/bin/java.old
 
 ```
 

@@ -699,7 +699,7 @@ Reverting the modified 'pv' logical volume to the state when the 'snap01' snapsh
 
 In case the origin logical volume is active, merging will occur on the next reboot (merging can be done even from a LiveCD).
 
-*The snapshot will no longer exist after merging.*
+**Note:** The snapshot will no longer exist after merging.
 
 Also multiple snapshots can be taken and each one can be merged with the origin logical volume at will.
 

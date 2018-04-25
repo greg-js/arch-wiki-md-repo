@@ -1,58 +1,61 @@
-**xdg-menu** generates menus for WMs using the [Free Desktop menu standard](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html). You can install [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) from the [official repositories](/index.php/Official_repositories "Official repositories").
+**xdg-menu** is a tool that generates [XDG Desktop Menus](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html) for the following [window managers](/index.php/Window_manager "Window manager"):
 
-The following WMs are supported:
-
-*   twm
-*   ion3
-*   WindowMaker
-*   fvwm2
-*   icewm
-*   blackbox
-*   fluxbox
-*   openbox
-*   awesome
+*   [awesome](/index.php/Awesome "Awesome")
+*   [Blackbox](/index.php/Blackbox "Blackbox")
+*   [Fluxbox](/index.php/Fluxbox "Fluxbox")
+*   [FVWM2](/index.php/FVWM2 "FVWM2")
+*   [IceWM](/index.php/IceWM "IceWM")
+*   [ion3](/index.php/Ion3 "Ion3")
+*   [Openbox](/index.php/Openbox "Openbox")
+*   [twm](/index.php/Twm "Twm")
+*   [Window Maker](/index.php/Window_Maker "Window Maker")
 
 KDE, Gnome, Xfce, Enlightenment are already XDG compatible.
 
 ## Contents
 
-*   [1 Menu hierarchy](#Menu_hierarchy)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Adding desktop entries from other directories](#Adding_desktop_entries_from_other_directories)
-*   [3 Usage](#Usage)
-    *   [3.1 xdg_menu](#xdg_menu)
-    *   [3.2 update-menus](#update-menus)
-*   [4 Examples](#Examples)
-    *   [4.1 Awesome](#Awesome)
-        *   [4.1.1 With xdg_menu](#With_xdg_menu)
-    *   [4.2 IceWM](#IceWM)
-        *   [4.2.1 With xdg_menu](#With_xdg_menu_2)
-        *   [4.2.2 With update-menus](#With_update-menus)
-    *   [4.3 Ion3](#Ion3)
-        *   [4.3.1 With xdg_menu](#With_xdg_menu_3)
-        *   [4.3.2 With update-menus](#With_update-menus_2)
-    *   [4.4 FluxBox](#FluxBox)
-        *   [4.4.1 With xdg_menu](#With_xdg_menu_4)
-        *   [4.4.2 With update-menus](#With_update-menus_3)
-    *   [4.5 OpenBox](#OpenBox)
-        *   [4.5.1 With xdg_menu](#With_xdg_menu_5)
-        *   [4.5.2 As a pipe menu](#As_a_pipe_menu)
-        *   [4.5.3 With update-menus](#With_update-menus_4)
-    *   [4.6 Twm](#Twm)
-        *   [4.6.1 With xdg_menu](#With_xdg_menu_6)
-        *   [4.6.2 With update-menus](#With_update-menus_5)
-    *   [4.7 WindowMaker](#WindowMaker)
-        *   [4.7.1 With xdg_menu](#With_xdg_menu_7)
-        *   [4.7.2 With update-menus](#With_update-menus_6)
-    *   [4.8 Fvwm2](#Fvwm2)
-        *   [4.8.1 With xdg_menu](#With_xdg_menu_8)
-        *   [4.8.2 With update-menus](#With_update-menus_7)
-    *   [4.9 BlackBox](#BlackBox)
-        *   [4.9.1 With xdg_menu](#With_xdg_menu_9)
-        *   [4.9.2 With update-menus](#With_update-menus_8)
-*   [5 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Menu hierarchy](#Menu_hierarchy)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Adding desktop entries from other directories](#Adding_desktop_entries_from_other_directories)
+*   [4 Usage](#Usage)
+    *   [4.1 xdg_menu](#xdg_menu)
+    *   [4.2 update-menus](#update-menus)
+*   [5 Examples](#Examples)
+    *   [5.1 Awesome](#Awesome)
+        *   [5.1.1 With xdg_menu](#With_xdg_menu)
+    *   [5.2 IceWM](#IceWM)
+        *   [5.2.1 With xdg_menu](#With_xdg_menu_2)
+        *   [5.2.2 With update-menus](#With_update-menus)
+    *   [5.3 Ion3](#Ion3)
+        *   [5.3.1 With xdg_menu](#With_xdg_menu_3)
+        *   [5.3.2 With update-menus](#With_update-menus_2)
+    *   [5.4 FluxBox](#FluxBox)
+        *   [5.4.1 With xdg_menu](#With_xdg_menu_4)
+        *   [5.4.2 With update-menus](#With_update-menus_3)
+    *   [5.5 OpenBox](#OpenBox)
+        *   [5.5.1 With xdg_menu](#With_xdg_menu_5)
+        *   [5.5.2 As a pipe menu](#As_a_pipe_menu)
+        *   [5.5.3 With update-menus](#With_update-menus_4)
+    *   [5.6 Twm](#Twm)
+        *   [5.6.1 With xdg_menu](#With_xdg_menu_6)
+        *   [5.6.2 With update-menus](#With_update-menus_5)
+    *   [5.7 WindowMaker](#WindowMaker)
+        *   [5.7.1 With xdg_menu](#With_xdg_menu_7)
+        *   [5.7.2 With update-menus](#With_update-menus_6)
+    *   [5.8 Fvwm2](#Fvwm2)
+        *   [5.8.1 With xdg_menu](#With_xdg_menu_8)
+        *   [5.8.2 With update-menus](#With_update-menus_7)
+    *   [5.9 BlackBox](#BlackBox)
+        *   [5.9.1 With xdg_menu](#With_xdg_menu_9)
+        *   [5.9.2 With update-menus](#With_update-menus_8)
+*   [6 See also](#See_also)
 
-### Menu hierarchy
+## Installation
+
+[Install](/index.php/Install "Install") the [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) package.
+
+## Menu hierarchy
 
 *   Applications
     *   Accessibility
@@ -492,6 +495,5 @@ For example add line:
 
 ## See also
 
-*   [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu)
-*   [Free Desktop menu standard](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html)
-*   [A workaround for sawfish](/index.php/Sawfish "Sawfish")
+*   [Sawfish#Menus](/index.php/Sawfish#Menus "Sawfish")
+*   [https://github.com/gapan/xdgmenumaker](https://github.com/gapan/xdgmenumaker)

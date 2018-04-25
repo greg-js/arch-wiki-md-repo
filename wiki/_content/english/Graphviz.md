@@ -11,7 +11,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Graphviz "wikipedia:Graphviz"):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [graphviz](https://www.archlinux.org/packages/?name=graphviz) package. For a more interactive experience also take a look at [vimdot](https://www.archlinux.org/packages/?name=vimdot) package.
+[Install](/index.php/Install "Install") the [graphviz](https://www.archlinux.org/packages/?name=graphviz) package.
 
 ## Font
 
@@ -32,6 +32,8 @@ $ dot example.dot -Tpng -o foo.png -v 2>&1 | grep font
 ```
 
 ## Example
+
+**Tip:** For interactive graph development try the [vimdot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vimdot.1) command.
 
 Here is a dot file example.
 

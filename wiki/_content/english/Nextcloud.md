@@ -92,19 +92,19 @@ As stated above, in order to setup Nextcloud, you must set up the appropriate PH
 To do nextcloud database upgrade automatically you may set up pacman post upgrade hook based on following example:
 
 ```
- # Update Nextcloud when core or -apps are touched
+# Update Nextcloud when core or -apps are touched
 
- [Trigger]
- Operation = Install
- Operation = Upgrade
- Type = Package
- Target = nextcloud
- Target = nextcloud-app-*
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = nextcloud
+Target = nextcloud-app-*
 
- [Action]
- Description = Updating Nextcloud installation
- When = PostTransaction
- Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/nextcloud/occ upgrade
+[Action]
+Description = Updating Nextcloud installation
+When = PostTransaction
+Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/nextcloud/occ upgrade
 
 ```
 

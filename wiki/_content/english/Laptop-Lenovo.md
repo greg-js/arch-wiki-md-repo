@@ -127,7 +127,7 @@ install CD version
 | Lenovo ThinkPad W510 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Touchscreen (Yes), Fingerprint Reader (Not tested) | Tested April 2017 / Linux 4.10.8 |
 | Lenovo ThinkPad W530 | 2016.03 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2018 / Linux 4.15.15 |
 | Lenovo ThinkPad W540 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2017 / Linux 4.10.8 |
-| Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingerprint Reader (Yes) |
+| Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2018 / Linux 4.15.15 |
 
 #### X series
 

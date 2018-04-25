@@ -232,6 +232,8 @@ $ ssh-keygen -f ~/.ssh/aur
 
 ```
 
+The public key is now available in ~/.ssh/aur.pub
+
 **Tip:** You can add multiple public keys to your profile by separating them with a newline in the input field.
 
 #### Creating a new package

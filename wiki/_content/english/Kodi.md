@@ -424,28 +424,21 @@ Kodi is available on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips 
 
 #### Fix for delayed startup on wifi
 
-If running with WiFi only while [kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes](/index.php/Kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes "Kodi"), kodi may start before the wireless network is up, which will result in failure to connect to the shares and to the mysql server. Assuming the network is managed by the default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), this can be fixed by modifying 2 service files as follows:
+If running with WiFi only (wired network unplugged) while [kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes](/index.php/Kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes "Kodi"), kodi will likely start before the wireless network is up, which will result in failure to connect to the shares and to the mysql server. Assuming the network is managed by the default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), this can be fixed by using two [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd"), one for `kodi.service` and another for `systemd-networkd-wait-online.service`:
 
 ```
-# cp /usr/lib/systemd/system/kodi.service /etc/systemd/system
-# cp /usr/lib/systemd/system/systemd-networkd-wait-online.service /etc/systemd/system
-
-```
-
-Edit `/etc/systemd/system/kodi.service` as follows:
-
-```
--After=remote-fs.target
-+After=remote-fs.target network-online.target
-+Wants=network-online.target
+# systemctl edit systemd-networkd-wait-online.service
+[Service]
+ExecStart=
+ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --ignore eth0
 
 ```
 
-Edit `/etc/systemd/system/systemd-networkd-wait-online.service` as follows:
-
 ```
--ExecStart=/usr/lib/systemd/systemd-networkd-wait-online
-+ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --ignore eth0
+# systemctl edit kodi
+[Unit]
+After=remote-fs.target network-online.target
+Wants=network-online.target
 
 ```
 

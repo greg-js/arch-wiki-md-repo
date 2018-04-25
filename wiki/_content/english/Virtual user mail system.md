@@ -344,7 +344,7 @@ See [Postfix#PostfixAdmin](/index.php/Postfix#PostfixAdmin "Postfix").
 Note: To match the configuration in this file, config.inc.php should contain the following.
 
 ```
-   # /etc/postfixadmin/config.inc.php
+   # /etc/webapps/postfixadmin/config.inc.php
    ...
    $CONF['domain_path'] = 'YES';
    $CONF['domain_in_mailbox'] = 'NO';

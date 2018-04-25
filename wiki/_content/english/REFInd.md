@@ -123,7 +123,7 @@ See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-instal
 To use only hashes with *shim*, execute `refind-install` with the option `--shim */path/to/shim*`
 
 ```
-# refind-install --shim /usr/share/shim-signed/shimx64.efi
+# refind-install --shim /usr/share/shim-signed/shim.efi
 
 ```
 
@@ -138,7 +138,7 @@ To sign rEFInd with a Machine Owner Key, install [sbsigntools](https://www.archl
 Execute `refind-install` with the options `--shim */path/to/shim*` and `--localkeys`:
 
 ```
-# refind-install --shim /usr/share/shim-signed/shimx64.efi --localkeys
+# refind-install --shim /usr/share/shim-signed/shim.efi --localkeys
 
 ```
 
@@ -147,6 +147,21 @@ Execute `refind-install` with the options `--shim */path/to/shim*` and `--localk
 ```
 # sbsign --key /etc/refind.d/keys/refind_local.key --cert /etc/refind.d/keys/refind_local.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 
+```
+
+**Tip:** The kernel signing can be automated with a [pacman hook](/index.php/Pacman_hook "Pacman hook"), e.g.: `/etc/pacman.d/hooks/999-sign_kernel_for_secureboot.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux
+
+[Action]
+Description = Signing kernel with Machine Owner Key for Secure Boot
+When = PostTransaction
+Exec = /usr/bin/sbsign --key /etc/refind.d/keys/refind_local.key --cert /etc/refind.d/keys/refind_local.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+Depends = sbsigntools
 ```
 
 Once in MokManager add `refind_local.cer` to MoKList. `refind_local.cer` can be found inside a directory called `keys` in the rEFInd's installation directory, e.g. `*esp*/EFI/refind/keys/refind_local.cer`.
@@ -238,7 +253,7 @@ Pacman updates the rEFInd files in `/usr/share/refind/` and will not copy new fi
 
 #### Pacman hook
 
-You can automate the update process using a [pacman hook](/index.php/Pacman#Hooks "Pacman"):
+You can automate the update process using a [pacman hook](/index.php/Pacman_hook "Pacman hook"):
 
  `/etc/pacman.d/hooks/refind.hook` 
 ```

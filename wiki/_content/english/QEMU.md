@@ -564,14 +564,14 @@ Tap devices are supported by the Linux bridge drivers, so it is possible to brid
 As indicated in the user-mode networking section, tap devices offer higher networking performance than user-mode. If the guest OS supports virtio network driver, then the networking performance will be increased considerably as well. Supposing the use of the tap0 device, that the virtio driver is used on the guest, and that no scripts are used to help start/stop networking, next is part of the qemu command one should see:
 
 ```
--net nic,model=virtio -net tap,ifname=tap0,script=no,downscript=no
+-device virtio-net,netdev=network0 -netdev tap,id=network0,ifname=tap0,script=no,downscript=no
 
 ```
 
 But if already using a tap device with virtio networking driver, one can even boost the networking performance by enabling vhost, like:
 
 ```
--net nic,model=virtio -net tap,ifname=tap0,script=no,downscript=no,vhost=on
+-device virtio-net,netdev=network0 -netdev tap,id=network0,ifname=tap0,script=no,downscript=no,vhost=on
 
 ```
 

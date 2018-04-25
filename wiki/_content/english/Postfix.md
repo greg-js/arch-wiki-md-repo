@@ -313,6 +313,8 @@ $CONF['dovecotpw'] = "/usr/sbin/doveadm pw";
 
 ```
 
+**Note:** For this to work it does not suffice to have dovecot installed, it also needs to be configured. See [Dovecot#Dovecot configuration](/index.php/Dovecot#Dovecot_configuration "Dovecot").
+
 Create the Apache configuration file:
 
  `/etc/httpd/conf/extra/httpd-postfixadmin.conf` 
@@ -343,6 +345,16 @@ Now, include httpd-postfixadmin.conf to `/etc/httpd/conf/httpd.conf`:
 Include conf/extra/httpd-postfixadmin.conf
 
 ```
+
+Finally, navigate to [http://127.0.0.1:80/postfixadmin/setup.php](http://127.0.0.1:80/postfixadmin/setup.php) to finish the setup. Generate your setup password hash at the bottom of the page once it is done. Write the hash to the config file
+
+ `/etc/webapps/postfixadmin/config.inc.php` 
+```
+$CONF['setup_password'] = 'yourhashhere';
+
+```
+
+Now you can create a superadmin account at [http://127.0.0.1:80/postfixadmin/setup.php](http://127.0.0.1:80/postfixadmin/setup.php)
 
 **Note:** If you go to yourdomain/postfixadmin/setup.php and it says do not find config.inc.php, add `/etc/webapps/postfixadmin` to the `open_basedir` line in `/etc/php/php.ini`.
 

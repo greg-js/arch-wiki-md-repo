@@ -79,7 +79,7 @@
 | <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(33)</small> |
 | <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(11)</small> |
-| <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(58)</small> |
+| <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(59)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
 | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(62)</small> |
@@ -136,8 +136,8 @@
 | <small>5.16.4.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(17) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>5.17.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(6)</small> |
 | <small>5.18.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(7)</small> |
-| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(22)</small> |
-| <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(30)</small> |
+| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(23)</small> |
+| <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(29)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
 | <small>6.1.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
@@ -154,30 +154,31 @@
 | <small>6.6.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(14) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
 | <small>6.6.2.</small> [FUSE](/index.php/Category:FUSE "Category:FUSE") <small>(8)</small> |
 | <small>6.6.3.</small> [Storage virtualization](/index.php/Category:Storage_virtualization "Category:Storage virtualization") <small>(7)</small> |
-| <small>6.7.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") <small>(4)</small> |
-| <small>6.7.1.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(21)</small> |
-| <small>6.7.1.1.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(12)</small> |
-| <small>6.7.1.2.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(11)</small> |
-| <small>6.7.1.3.</small> [Xfce](/index.php/Category:Xfce "Category:Xfce") <small>(3)</small> |
-| <small>6.7.2.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(10)</small> |
-| <small>6.7.3.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>6.7.4.</small> [Window managers](/index.php/Category:Window_managers "Category:Window managers") <small>(0)</small> |
-| <small>6.7.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(13)</small> |
-| <small>6.7.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small> |
-| <small>6.7.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
-| <small>6.7.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(58)</small> |
-| <small>6.8.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(15)</small> |
-| <small>6.9.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(33)</small> |
-| <small>6.10.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
-| <small>6.11.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(18)</small> |
-| <small>6.12.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
-| <small>6.12.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(16)</small> |
-| <small>6.12.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(14) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
-| <small>6.12.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>6.12.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(6) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>6.12.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>6.12.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>6.12.5.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
-| <small>6.13.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(30)</small> |
-| <small>6.14.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(25)</small> |
-| <small>6.14.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |
+| <small>6.7.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org "Category:Freedesktop.org") <small>(7)</small> |
+| <small>6.8.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") <small>(4)</small> |
+| <small>6.8.1.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(17)</small> |
+| <small>6.8.1.1.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(12)</small> |
+| <small>6.8.1.2.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(11)</small> |
+| <small>6.8.1.3.</small> [Xfce](/index.php/Category:Xfce "Category:Xfce") <small>(3)</small> |
+| <small>6.8.2.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(10)</small> |
+| <small>6.8.3.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>6.8.4.</small> [Window managers](/index.php/Category:Window_managers "Category:Window managers") <small>(0)</small> |
+| <small>6.8.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(13)</small> |
+| <small>6.8.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small> |
+| <small>6.8.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
+| <small>6.8.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(58)</small> |
+| <small>6.9.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(15)</small> |
+| <small>6.10.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(33)</small> |
+| <small>6.11.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
+| <small>6.12.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(18)</small> |
+| <small>6.13.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
+| <small>6.13.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(16)</small> |
+| <small>6.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(14) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
+| <small>6.13.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>6.13.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(6) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>6.13.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>6.13.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>6.13.5.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
+| <small>6.14.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(30)</small> |
+| <small>6.15.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(25)</small> |
+| <small>6.15.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |

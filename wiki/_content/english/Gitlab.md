@@ -27,15 +27,16 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
 *   [4 Upgrade database on updates](#Upgrade_database_on_updates)
 *   [5 Advanced Configuration](#Advanced_Configuration)
-    *   [5.1 Custom SSH Connection](#Custom_SSH_Connection)
-    *   [5.2 HTTPS/SSL](#HTTPS.2FSSL)
-        *   [5.2.1 Change GitLab configs](#Change_GitLab_configs)
-        *   [5.2.2 Let's Encrypt](#Let.27s_Encrypt)
-    *   [5.3 Web server configuration](#Web_server_configuration)
-        *   [5.3.1 Node.js](#Node.js)
-        *   [5.3.2 Nginx](#Nginx)
-        *   [5.3.3 Apache](#Apache)
-    *   [5.4 Gitlab-workhorse](#Gitlab-workhorse)
+    *   [5.1 Basic SSH](#Basic_SSH)
+    *   [5.2 Custom SSH Connection](#Custom_SSH_Connection)
+    *   [5.3 HTTPS/SSL](#HTTPS.2FSSL)
+        *   [5.3.1 Change GitLab configs](#Change_GitLab_configs)
+        *   [5.3.2 Let's Encrypt](#Let.27s_Encrypt)
+    *   [5.4 Web server configuration](#Web_server_configuration)
+        *   [5.4.1 Node.js](#Node.js)
+        *   [5.4.2 Nginx](#Nginx)
+        *   [5.4.3 Apache](#Apache)
+    *   [5.5 Gitlab-workhorse](#Gitlab-workhorse)
 *   [6 Useful Tips](#Useful_Tips)
     *   [6.1 Hidden options](#Hidden_options)
     *   [6.2 Backup and restore](#Backup_and_restore)
@@ -359,6 +360,35 @@ Afterwards, restart gitlab-related services:
 ```
 
 ## Advanced Configuration
+
+### Basic SSH
+
+After completing the basic installation, set up SSH access for users. Configuration for [OpenSSH](/index.php/Secure_Shell#OpenSSH "Secure Shell") is described below. [Other SSH clients and servers](/index.php/Secure_Shell#Other_SSH_clients_and_servers "Secure Shell") will require different modifications.
+
+For tips on adding user SSH keys, the process is well-documented on the [GitLab](https://docs.gitlab.com/ee/ssh/) website. You can check the administrator logs at `/var/lib/gitlab/log/gitlab-shell.log` to confirm user SSH keys are being submitted properly. Behind the scenes, GitLab adds these keys to its *authorized_keys* file in `/var/lib/gitlab/.ssh/authorized_keys`.
+
+The common method of testing keys (ex: `$ ssh -T git@*YOUR_SERVER*`) requires a bit of extra configuration to work correctly. The user configured in `/etc/webapps/gitlab/gitlab.yml` (default user: `gitlab`) must be added to the server's sshd configuration file, in addition to a handful of other changes:
+
+ `/etc/ssh/sshd_config` 
+```
+PubkeyAuthentication   yes
+AuthorizedKeysFile     %h/.ssh/authorized_keys
+
+```
+
+After updating the configuration file, restart the ssh daemon:
+
+```
+# systemctl restart sshd
+
+```
+
+Test user SSH keys (optionally add -v to see extra information):
+
+```
+$ ssh -T **gitlab**@*YOUR_SERVER*
+
+```
 
 ### Custom SSH Connection
 

@@ -83,7 +83,7 @@ However, Nvidia's legacy drivers are still available and might provide better 3D
 
 If you are using a custom kernel, compilation of the Nvidia kernel modules can be automated with [DKMS](/index.php/DKMS "DKMS").
 
-Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
+Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [pacman hook](/index.php/Pacman_hook "Pacman hook").
 
 ### DRM kernel mode setting
 
@@ -180,7 +180,7 @@ $ nvidia-settings --load-config-only
 
 ```
 
-See [autostarting](/index.php/Autostarting "Autostarting") to start this command on every boot.
+See [Autostarting](/index.php/Autostarting "Autostarting") to start this command on every boot.
 
 **Note:** [Xorg](/index.php/Xorg "Xorg") may not start or crash on startup after saving `nvidia-settings` changes. Adjusting or deleting the generated `~/.nvidia-settings-rc` and/or [Xorg](/index.php/Xorg "Xorg") file(s) should recover normal startup.
 

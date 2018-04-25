@@ -31,7 +31,7 @@ You can manage the Avahi daemon with `avahi-daemon.service` [using systemd](/ind
 
 ### Hostname resolution
 
-Avahi provides local hostname resolution using a "*hostname*.local" naming scheme. To enable it, install the [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) package and start `avahi-daemon.service`.
+Avahi provides local hostname resolution using a "*hostname*.local" naming scheme. To enable it, install the [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) package and [start](/index.php/Start "Start") `avahi-daemon.service`.
 
 Then, edit the file `/etc/nsswitch.conf` and change the `hosts` line to include `mdns_minimal [NOTFOUND=return]` before `resolve` and `dns`:
 
@@ -97,7 +97,7 @@ Avahi advertises the services whose `*.service` files are found in `/etc/avahi/s
 
 If you want to advertise a service for which there is no `*.service` file, it is very easy to create your own. As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per RFC 865 on TCP port `17` which you are running on your machine
 
-The first thing to do is to determine the `<type>`. [avahi.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/avahi.service.5) indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and RFC 865) is `17`.
+The first thing to do is to determine the `<type>`. [avahi.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/avahi.service.5) indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and RFC 865) is `17`.
 
 Our service file is thus:
 
@@ -119,7 +119,7 @@ Our service file is thus:
 
 ```
 
-For more complicated scenarios, such as advertising services running on a different server, DNS sub-types and so on, consult [avahi.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/avahi.service.5).
+For more complicated scenarios, such as advertising services running on a different server, DNS sub-types and so on, consult [avahi.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/avahi.service.5).
 
 ### SSH
 
@@ -161,7 +161,7 @@ With the Avahi daemon running on both the server and client, the file manager on
 
 #### Vsftpd
 
-You can also auto-discover regular FTP servers, such as [vsftpd](/index.php/Vsftpd "Vsftpd"). Install the [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) package and change the settings of vsftpd according to your own personal preferences (see [this thread on ubuntuforums.org](http://ubuntuforums.org/showthread.php?t=218630) or [vsftpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5)).
+You can also auto-discover regular FTP servers, such as [vsftpd](/index.php/Vsftpd "Vsftpd"). Install the [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) package and change the settings of vsftpd according to your own personal preferences (see [this thread on ubuntuforums.org](http://ubuntuforums.org/showthread.php?t=218630) or [vsftpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5)).
 
 Create a `.service` file in `/etc/avahi/services` with the following contents:
 

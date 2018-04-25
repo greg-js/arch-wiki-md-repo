@@ -294,6 +294,6 @@ This appears to be a security feature: MTP does not work when the phone is locke
 
 ### kio-mtp
 
-If you are not able to use the action "Open with File Manager", you may work around this problem by editing the file `/usr/share/apps/solid/actions/solid_mtp.desktop`.
+If you are not able to use the action "Open with File Manager", you may work around this problem by editing the file `/usr/share/solid/actions/solid_mtp.desktop`.
 
 Change the line `Exec=kioclient exec mtp:udi=%i/` to `Exec=dolphin "mtp:/"`.
