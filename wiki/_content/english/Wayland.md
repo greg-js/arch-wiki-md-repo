@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. Many major Linux desktop environments, like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"), support Wayland. There is also a compositor reference implementation called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
+[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. Many major Linux desktop environments, like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"), support Wayland. There is also a compositor reference implementation called Weston. [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications on Wayland.
 
 ## Contents
 
@@ -30,9 +30,9 @@ Related articles
     *   [5.1 Running graphical applications as root](#Running_graphical_applications_as_root)
     *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
     *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
-    *   [5.4 nemo](#nemo)
-    *   [5.5 X11 on tty1, wayland on tty2](#X11_on_tty1.2C_wayland_on_tty2)
-    *   [5.6 gnome wayland on tty1, weston on tty2](#gnome_wayland_on_tty1.2C_weston_on_tty2)
+    *   [5.4 Nemo](#Nemo)
+    *   [5.5 X11 on tty1, Wayland on tty2](#X11_on_tty1.2C_Wayland_on_tty2)
+    *   [5.6 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1.2C_Weston_on_tty2)
     *   [5.7 weston-terminal](#weston-terminal)
     *   [5.8 liteide](#liteide)
     *   [5.9 screen recording](#screen_recording)
@@ -42,9 +42,9 @@ Related articles
 
 ## Requirements
 
-Most Wayland compositors only work on systems using [KMS](/index.php/KMS "KMS").
+Most Wayland compositors only work on systems using [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting").
 
-Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor such as [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
+Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor like [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
 
 ### Buffer API support
 
@@ -52,7 +52,7 @@ For the GPU driver and Wayland compositor to be compatible they must support the
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
-| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [Grefsen](/index.php?title=Grefsen&action=edit&redlink=1 "Grefsen (page does not exist)"), [Sway](/index.php/Sway "Sway") ([will be removed](https://sircmpwn.github.io/2017/10/26/Fuck-you-nvidia.html)) |
+| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), Grefsen, [Sway](/index.php/Sway "Sway") ([will be removed](https://sircmpwn.github.io/2017/10/26/Fuck-you-nvidia.html)) |
 
 ## Weston
 
@@ -60,7 +60,7 @@ Weston is the reference implementation of a Wayland compositor.
 
 ### Installation
 
-Install the [weston](https://www.archlinux.org/packages/?name=weston) package.
+[Install](/index.php/Install "Install") the [weston](https://www.archlinux.org/packages/?name=weston) package.
 
 ### Usage
 
@@ -345,34 +345,7 @@ Some of installed wayland desktop clients might store information in `/usr/share
 
 ### Running graphical applications as root
 
-Trying to run a graphical application as root via [su](/index.php/Su "Su"), [sudo](/index.php/Sudo "Sudo") or [pkexec](/index.php/Polkit "Polkit") in a Wayland session (*e.g.* [GParted](/index.php/GParted "GParted") or [Gedit](/index.php/Gedit "Gedit")), be it in a terminal emulator or from a graphical component, will fail with an error similar to this:
-
-```
-$ sudo gedit
-No protocol specified
-Unable to init server: Could not connect: Connection refused
-
-(gedit:2349): Gtk-WARNING **: cannot open display: :0
-
-```
-
-Before Wayland, running GUI applications with elevated privileges could be properly implemented by creating a [Polkit](/index.php/Polkit "Polkit") policy, or more dangerously done by running the command in a terminal by prepending the command with `sudo`; but under (X)Wayland this does not work anymore as the default has been made to only allow the user who started the X server to connect clients to it (see the [bug report](https://bugzilla.redhat.com/show_bug.cgi?id=1266771) and [the](https://cgit.freedesktop.org/xorg/xserver/commit/?id=c4534a3) [upstream](https://cgit.freedesktop.org/xorg/xserver/commit/?id=4b4b908) [commits](https://cgit.freedesktop.org/xorg/xserver/commit/?id=76636ac) it refers to).
-
-The most straightforward workaround is to use [xhost](/index.php/Xhost "Xhost") to temporarily allow the root user to access the local user's X session. To do so, execute the following command as the current (unprivileged) user[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1274451#c64):
-
-```
- xhost si:localuser:root
-
-```
-
-To remove this access after the application has been closed:
-
-```
- xhost -si:localuser:root
-
-```
-
-**Note:** This [GNOME bug report](https://bugzilla.gnome.org//show_bug.cgi?id=772875) suggests two other workarounds, with one specific to editing text files.
+See [Running GUI apps as root](/index.php/Running_GUI_apps_as_root "Running GUI apps as root").
 
 ### LLVM assertion failure
 
@@ -389,22 +362,22 @@ $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
 
 Gnome-shell users may experience display issues when they switch to Wayland from X. One of the root cause might be the `CLUTTER_PAINT=disable-clipped-redraws:disable-culling` set by yourself for Xorg-based gnome-shell. Just try to remove it from `/etc/environment` or other rc files to see if everything goes back to normal.
 
-### nemo
+### Nemo
 
-(20161229) prevent that the desktop is created <ref>[nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)</ref>
+(20161229) prevent that the desktop is created [nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)
 
 ```
 gsettings set org.nemo.desktop show-desktop-icons false
 
 ```
 
-### X11 on tty1, wayland on tty2
+### X11 on tty1, Wayland on tty2
 
-(20161209) windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
+(20161209) windows of GNOME applications end up on tty2 no matter where started ([GNOME issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
 
-### gnome wayland on tty1, weston on tty2
+### GNOME Wayland on tty1, Weston on tty2
 
-(20170106) apps started on gnome with WAYLAND_DISPLAY set to westen make it not respond any more ([wayland issue 99489](https://bugs.freedesktop.org/show_bug.cgi?id=99489))
+(20170106) apps started on GNOME with WAYLAND_DISPLAY set to weston make it not respond any more ([Wayland issue 99489](https://bugs.freedesktop.org/show_bug.cgi?id=99489))
 
 ### weston-terminal
 
@@ -412,7 +385,7 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### liteide
 
-(20161229) [core dump](https://github.com/visualfc/liteide/issues/734)] on gnome and weston.
+(20161229) [core dump](https://github.com/visualfc/liteide/issues/734)] on GNOME and Weston.
 
 ### screen recording
 
@@ -420,7 +393,8 @@ Currently only [green-recorder](https://aur.archlinux.org/packages/green-recorde
 
 ### remote display
 
-(20180401) mutter has now remote desktop enabled at compile time, see [https://wiki.gnome.org/Projects/Mutter/RemoteDesktop](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [https://aur.archlinux.org/packages/gnome-remote-desktop/](https://aur.archlinux.org/packages/gnome-remote-desktop/) for details. (20161229) there was a merge of FreeRDP into weston in 2013, enabled via compile time switch. The arch linux weston package currently has it not enabled.
+*   (20180401) mutter has now remote desktop enabled at compile time, see [https://wiki.gnome.org/Projects/Mutter/RemoteDesktop](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [https://aur.archlinux.org/packages/gnome-remote-desktop/](https://aur.archlinux.org/packages/gnome-remote-desktop/) for details.
+*   (20161229) there was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package does not have it enabled.
 
 ### Input grabbing in games, remote desktop and VM windows
 
@@ -444,7 +418,7 @@ The related extensions are:
 
 Supporting Wayland compositors:
 
-*   Mutter, [GNOME's](/index.php/GNOME "GNOME") compositor [since release 3.28](https://bugzilla.gnome.org/show_bug.cgi?id=783342).
+*   Mutter, [GNOME](/index.php/GNOME "GNOME")'s compositor [since release 3.28](https://bugzilla.gnome.org/show_bug.cgi?id=783342).
 
 Supporting widget toolkits:
 

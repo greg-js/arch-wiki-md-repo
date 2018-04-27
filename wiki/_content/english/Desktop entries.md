@@ -22,7 +22,7 @@ The following sections will roughly explain how these are created and validated.
 *   [1 Application entry](#Application_entry)
     *   [1.1 File example](#File_example)
     *   [1.2 Key definition](#Key_definition)
-        *   [1.2.1 Deprecation](#Deprecation)
+    *   [1.3 Validation](#Validation)
 *   [2 Icons](#Icons)
     *   [2.1 Common image formats](#Common_image_formats)
     *   [2.2 Converting icons](#Converting_icons)
@@ -105,9 +105,9 @@ This should be avoided, as it will only be confusing to users. The `Name` key sh
 *   `GenericName` should state what you would generally call an application that does what this specific application offers (i.e. Firefox is a "Web Browser").
 *   `Comment` is intended to contain any usefull additional information.
 
-#### Deprecation
+### Validation
 
-There are quite some keys that have become deprecated over time as the standard has matured. The best/simplest way is to use the tool `desktop-file-validate` which is part of the package [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils). To validate, run
+As some keys have become deprecated over time, you may want validate your desktop entries using [desktop-file-validate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/desktop-file-validate.1) which is part of the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package. To validate, run
 
 ```
 $ desktop-file-validate <your desktop file>

@@ -11,16 +11,23 @@ Related articles
 ## Contents
 
 *   [1 Model description](#Model_description)
+    *   [1.1 Support](#Support)
 *   [2 Suspend issues](#Suspend_issues)
     *   [2.1 Suspend-to-RAM (S3) not supported by default](#Suspend-to-RAM_.28S3.29_not_supported_by_default)
-    *   [2.2 S0i3 support](#S0i3_support)
+    *   [2.2 S0i3 sleep support](#S0i3_sleep_support)
     *   [2.3 BIOS configurations](#BIOS_configurations)
-*   [3 Power Management/Throttling issues](#Power_Management.2FThrottling_issues)
+*   [3 Power management/Throttling issues](#Power_management.2FThrottling_issues)
     *   [3.1 Temporary fix](#Temporary_fix)
+*   [4 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+    *   [4.1 Load i2c_i801 kernel module on boot](#Load_i2c_i801_kernel_module_on_boot)
+    *   [4.2 Compile kernel with CONFIG_RMI4 options enabled](#Compile_kernel_with_CONFIG_RMI4_options_enabled)
+    *   [4.3 Wait for patches to be included in kernel](#Wait_for_patches_to_be_included_in_kernel)
+*   [5 References](#References)
+*   [6 Additional resources](#Additional_resources)
 
 ## Model description
 
-Lenovo ThinkPad X1 Carbon, Gen 6.
+The Lenovo ThinkPad X1 Carbon, 6th generation is an ultrabook introduced in early 2018\. It comes in several variants(`20KH*` and `20KG*`) and features a 14" screen, 8th-gen Intel Core processors and integrated [Intel UHD 620 graphics](/index.php/Intel_Graphics "Intel Graphics").
 
 To ensure you have this version, [install](/index.php/Install "Install") the package [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) and run:
 
@@ -31,22 +38,46 @@ Version: ThinkPad X1 Carbon 6th
 
 ```
 
+### Support
+
+| **Device** | **Working** | **Modules** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
+| [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
+| Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes |  ? |
+| Mobile broadband | Untested |  ? |
+| Audio | Yes | snd_hda_intel |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Yes* | psmouse, rmi_smbus, i2c_i801 |
+| [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
+| Camera | Yes | uvcvideo |
+| Fingerprint Reader | No** |  ? |
+| [Power management](/index.php/Power_management "Power management") | Yes |  ? |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Untested | btusb |
+| microSD card reader | Untested |  ? |
+| Keyboard Backlight | Yes |  ? |
+| Function/Multimedia Keys | Yes |  ? |
+
+* via [workaround](#TrackPoint_and_Touchpad_issues)
+
+** [progress being made](https://github.com/nmikhailov/Validity90) on driver
+
 ## Suspend issues
 
 ### Suspend-to-RAM (S3) not supported by default
 
-The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby) and does not support the S3 sleep state. See [https://delta-xi.net/#056](https://delta-xi.net/#056) for instructions for patching ACPI DSDT tables to add S3 support.
+The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby) and does not support the S3 sleep state. A guide exists with [instructions for patching ACPI DSDT tables](https://delta-xi.net/#056) to add S3 support.
 
-See [https://bbs.archlinux.org/viewtopic.php?id=234913](https://bbs.archlinux.org/viewtopic.php?id=234913) for the discussion related to this issue.
+A [forum thread](https://bbs.archlinux.org/viewtopic.php?id=234913) has further discussion related to this issue.
 
-### S0i3 support
+### S0i3 sleep support
 
-From [https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682), add the kernel parameter:
+From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") to enable s0i3 sleep support:
 
 ```
 acpi.ec_no_wakeup=1
 
 ```
+
+**Note:** This disables wakeup/resume via lid open.
 
 You might also need to disable the Realtek memory card reader (which appears to use a constant 2-3 W) either via the BIOS or via
 
@@ -57,21 +88,21 @@ echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
 
 ### BIOS configurations
 
-*   Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled". When disabled, on Linux, power usage appears to be significantly higher because of a substantial number of CPU wakeups during s2idle.
+*   `Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled"`. When disabled, on Linux, power usage appears to be significantly higher because of a substantial number of CPU wakeups during s2idle.
 
-## Power Management/Throttling issues
+## Power management/Throttling issues
 
-Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
+Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [T480s throttling bug](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
 
-There is a post in the official Lenovo forum ([https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489)) to inform Lenovo about this issue.
+There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) to inform Lenovo about this issue.
 
 ### Temporary fix
 
 Until Lenovo fixes this issue, you can manually set the limit.
 
-To begin, install **msr-tools**
+To begin, install `msr-tools`
 
-Create the file */usr/local/bin/cpu-throttling.sh* (making it executable) containing the following :
+Create the file `/usr/local/bin/cpu-throttling.sh` (making it executable) containing the following:
 
 ```
 #!/bin/bash
@@ -81,9 +112,7 @@ wrmsr -a 0x1a2 0x3000000 # which sets the offset to 3 C, so the new trip point i
 
 ```
 
-Then you can create the associated service.
-
-Create the file /etc/systemd/system/cpu-throttling.service :
+Then create the associated service file `/etc/systemd/system/cpu-throttling.service`:
 
 ```
 [Unit]
@@ -98,7 +127,7 @@ WantedBy=timers.target
 
 ```
 
-Create the file /etc/systemd/system/cpu-throttling.timer :
+And also the timer in `/etc/systemd/system/cpu-throttling.timer`:
 
 ```
 [Unit]
@@ -114,14 +143,14 @@ WantedBy=timers.target
 
 ```
 
-Then, enable it :
+Then, enable it:
 
 ```
 # systemctl enable cpu-throttling.timer
 
 ```
 
-Reboot and check with :
+Reboot and check with:
 
 ```
 # rdmsr -f 29:24 -d 0x1a2
@@ -129,3 +158,56 @@ Reboot and check with :
 3
 
 ```
+
+## TrackPoint and Touchpad issues
+
+On the 20KG model, the Touchpad(Synaptics) and TrackPoint(Elantech) do not work together, one has to disable the TrackPoint in BIOS to get the Touchpad to work reliably. The root of the issue seems to be that the default loading of the TrackPoint via ancient PS/2 drivers conflicts with Touchpad loading. Synaptics has introduced a new way of doing things named RMI(4) that fixes some those issues. Further explanation is collected [in this thread](https://bbs.archlinux.org/viewtopic.php?id=236367).
+
+There are several workarounds available:
+
+### Load i2c_i801 kernel module on boot
+
+Open `/etc/modules-load.d/touchpad.conf` and add:
+
+```
+ i2c_i801
+ elan_i2c
+ rmi_smbus
+
+```
+
+This enables loading the input devices over rmi4 with recent kernels.
+
+Then add `synaptics_intertouch=1` to the `psmouse` kernel options, for example in the cmdline of the [boot loader](/index.php/Boot_Loader "Boot Loader"):
+
+```
+ [...] root=/dev/sda1 rw psmouse.synaptics_intertouch=1 [...]
+
+```
+
+### Compile kernel with CONFIG_RMI4 options enabled
+
+Someone has [reported success with enabling RMI4 config flags](https://unix.stackexchange.com/a/431820) for kernel compilation.
+
+### Wait for patches to be included in kernel
+
+Benjamin Tissoires from Red Hat has [proposed patches](https://patchwork.kernel.org/patch/10324633/) that enable Elantech TrackPoints to be loaded over rmi and [whitelist X1C6 ids](https://patchwork.kernel.org/patch/10330857/).
+
+## References
+
+*   [A good night's sleep for the Lenovo X1 Carbon Gen6](https://delta-xi.net/#056): Patching ACPI DSDT tables to add S3 support
+*   [Lenovo forums: Cannot enter deep sleep S3](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/td-p/3998182/highlight/true)
+*   [Thread: No deep sleep](https://bbs.archlinux.org/viewtopic.php?id=234913): Includes DSDT patching solution and further discussion
+*   [T480s throttling bug](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/), affects X1C6 as well
+*   [Lenovo forums: T480s low cTDP and trip temperature in Linux](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489)
+*   [Thread: TrackPoint/Touchpad issues, 20KG model](https://bbs.archlinux.org/viewtopic.php?id=236367)
+*   [StackExchange: Success with enabling RMI4 config flags for Touchpad and TrackPoint](https://unix.stackexchange.com/a/431820)
+*   [Kernel patch - Input: elantech - add support for SMBus devices](https://patchwork.kernel.org/patch/10324633/)
+*   [Kernel patch - Input: synaptics - add Lenovo 80 series ids to SMBus](https://patchwork.kernel.org/patch/10330857/)
+
+## Additional resources
+
+*   [ThinkWiki X1 Carbon 6th Gen page](https://www.thinkwiki.org/wiki/Category:X1_Carbon_(6th_Gen))
+*   Benjamin Tissoires, kernel maintainer of peripherals, has explained how input bugs get fixed in his talk [Tools to debug a broken input device](https://www.youtube.com/watch?v=Bl_0xYxcYd8) ([Slides](https://www.x.org/wiki/Events/XDC2015/Program/tissoires_input_debug_tools.html)), especially interesting are slides 16 onward.
+*   [Dell XPS 13 9370 quirks](https://gist.github.com/greigdp/bb70fbc331a0aaf447c2d38eacb85b8f): Some pointers on getting Watt usage down to ~2W, Intel video powersaving features might be interesting, see also [Intel Graphics Powersaving](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics")
+*   [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)"): Shares some hardware with the X1C6

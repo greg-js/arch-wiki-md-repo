@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=512279)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=518526)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (“Very Secure FTP Daemon“) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
 
@@ -26,6 +26,7 @@
     *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
     *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
     *   [4.5 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
+    *   [4.6 vsftpd 连接在使用 nis 的机器上失败: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_.E8.BF.9E.E6.8E.A5.E5.9C.A8.E4.BD.BF.E7.94.A8_nis_.E7.9A.84.E6.9C.BA.E5.99.A8.E4.B8.8A.E5.A4.B1.E8.B4.A5:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
 *   [5 更多资源](#.E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90)
 
 ## 安装
@@ -493,7 +494,19 @@ listen=NO
 
 ```
 
+### vsftpd 连接在使用 nis 的机器上失败: yp_bind_client_create_v2: RPC: Unable to send
+
+as mentioned on the vsftpd faq page, "...built-in sandboxing uses network isolation on Linux. This may be interfering with any module that needs to use the network to perform operations or lookups" 正如在 vsftpd fap 页面上提到的那样，“...内置沙盒使用 linux 上的网络隔离可能会干扰任何需要使用网络执行操作或查找的模块”
+
+将这个未公开的行添加到你的 `/etc/vsftpd.conf`
+
+```
+isolate_network=NO
+
+```
+
 ## 更多资源
 
 *   [vsftpd official homepage](http://vsftpd.beasts.org/)
 *   [vsftpd.conf man page](http://vsftpd.beasts.org/vsftpd_conf.html)
+*   [vsftpd FAQ](https://security.appspot.com/vsftpd/FAQ.txt)

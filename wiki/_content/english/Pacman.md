@@ -466,7 +466,7 @@ Sync the files database:
 Search for a package containing a file, e.g.:
 
 ```
-# pacman -Fs pacman
+$ pacman -Fs pacman
 core/pacman 5.0.1-4
     usr/bin/pacman
     usr/share/bash-completion/completions/pacman

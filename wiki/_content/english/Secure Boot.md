@@ -228,7 +228,22 @@ Sign your boot loader (named `grubx64.efi`) and kernel:
 
 ```
 
-You will need to do this each time they are updated.
+You will need to do this each time they are updated. You can automate the kernel signing with a [pacman hook](/index.php/Pacman_hook "Pacman hook"), e.g.:
+
+ `/etc/pacman.d/hooks/999-sign_kernel_for_secureboot.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux
+
+[Action]
+Description = Signing kernel with Machine Owner Key for Secure Boot
+When = PostTransaction
+Exec = /usr/bin/sbsign --key MOK.key --cert MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+Depends = sbsigntools
+```
 
 Copy `MOK.cer` to a FAT formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
 
@@ -246,7 +261,7 @@ In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokL
 
 *   It is advised to read [Rod Smith's Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html).
 *   You can use `cryptboot-efikeys` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified creating keys, enrolling keys, signing bootloader and verifying signatures.
-*   Note that [cryptboot](https://aur.archlinux.org/packages/cryptboot/) requires the encrypted `/boot` partition to be specified in `/etc/crypttab` before it runs, and if you are using it in combination with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), *sbupdate* expects the `/boot/efikeys/db.*` files created by *cryptboot* to be capitalized like `DB.*` unless otherwise configured in `/etc/default/sbupdate`. Users who do not use systemd to handle encryption may not have anything in their `/etc/crypttab` file and would need to create an entry.
+    *   Note that [cryptboot](https://aur.archlinux.org/packages/cryptboot/) requires the encrypted `/boot` partition to be specified in `/etc/crypttab` before it runs, and if you are using it in combination with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), *sbupdate* expects the `/boot/efikeys/db.*` files created by *cryptboot* to be capitalized like `DB.*` unless otherwise configured in `/etc/default/sbupdate`. Users who do not use systemd to handle encryption may not have anything in their `/etc/crypttab` file and would need to create an entry.
 
 Secure Boot implementations use these keys:
 
@@ -388,8 +403,8 @@ Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
 *   To check if a binary is signed and list its signatures use `sbverify --list */path/to/binary*`.
 *   You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
-*   When using [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), `CMDLINE_DEFAULT` must be set in `/etc/default/sbupdate` in order for the *.efi* image to be bootable.
-*   You may want to consider using [Direct UEFI boot](/index.php/EFISTUB#efibootmgr_with_.efi_file "EFISTUB") with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) after generating the signed *.efi* file.
+    *   When using [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), `CMDLINE_DEFAULT` must be set in `/etc/default/sbupdate` in order for the *.efi* image to be bootable.
+    *   You may want to consider using [Direct UEFI boot](/index.php/EFISTUB#efibootmgr_with_.efi_file "EFISTUB") with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) after generating the signed *.efi* file.
 
 #### Signing kernel with pacman hook
 

@@ -36,8 +36,6 @@
         *   [1.4.6 BitTorrent clients](#BitTorrent_clients)
             *   [1.4.6.1 Console](#Console_3)
             *   [1.4.6.2 Graphical](#Graphical_3)
-                *   [1.4.6.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.6.2.2 Other](#Other_2)
         *   [1.4.7 Other P2P networks](#Other_P2P_networks)
         *   [1.4.8 Pastebin clients](#Pastebin_clients)
     *   [1.5 Communication](#Communication)
@@ -59,12 +57,12 @@
             *   [1.5.3.5 Matrix clients](#Matrix_clients)
             *   [1.5.3.6 Tox clients](#Tox_clients)
             *   [1.5.3.7 Serverless (decentralized) clients](#Serverless_.28decentralized.29_clients)
-            *   [1.5.3.8 Other](#Other_3)
+            *   [1.5.3.8 Other](#Other_2)
         *   [1.5.4 Instant messaging servers](#Instant_messaging_servers)
             *   [1.5.4.1 IRC servers](#IRC_servers)
             *   [1.5.4.2 XMPP servers](#XMPP_servers)
             *   [1.5.4.3 SIP servers](#SIP_servers)
-            *   [1.5.4.4 Other](#Other_4)
+            *   [1.5.4.4 Other](#Other_3)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
             *   [1.6.1.1 Console](#Console_8)
@@ -121,6 +119,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 #### VPN clients
 
+*   **Bitmask** — Secured and encrypted communication using various service providers
+
+	[https://bitmask.net/](https://bitmask.net/) || [bitmask](https://aur.archlinux.org/packages/bitmask/)
+
 *   **Libreswan** — A free software implementation of the most widely supported and standarized VPN protocol based on ("IPsec") and the Internet Key Exchange ("IKE").
 
 	[https://libreswan.org/](https://libreswan.org/) || [libreswan](https://aur.archlinux.org/packages/libreswan/)
@@ -148,10 +150,6 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 *   **[Vpnc](/index.php/Vpnc "Vpnc")** — To connect to Cisco 3000 VPN Concentrators.
 
 	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
-
-*   **[Bitmask](/index.php?title=Bitmask&action=edit&redlink=1 "Bitmask (page does not exist)")** — Secured and encrypted communication using various service providers
-
-	[https://bitmask.net/](https://bitmask.net/) || [bitmask](https://aur.archlinux.org/packages/bitmask/)
 
 #### Anonymizing networks
 
@@ -451,7 +449,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 ##### Console
 
-*   **[Aria2](/index.php/Aria2 "Aria2")** — Download utility that supports HTTP, FTP, SFTP, BitTorrent and Metalink.
+*   **[aria2](/index.php/Aria2 "Aria2")** — Lightweight download utility that supports HTTP, FTP, SFTP, BitTorrent and Metalink. It can run as a daemon controlled via a built-in JSON-RPC or XML-RPC interface.
 
 	[https://aria2.github.io/](https://aria2.github.io/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
@@ -470,10 +468,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
 
 	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare](https://www.archlinux.org/packages/?name=plowshare)
-
-*   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
-
-	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
 
 *   **snarf** — Command-line URL retrieval tool. Supports HTTP and FTP.
 
@@ -505,7 +499,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
 
-*   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent and Metalink.
+*   **FatRat** — Qt based download manager with support for HTTP, FTP, SFTP, BitTorrent and Metalink.
 
 	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
@@ -525,9 +519,17 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://www.kde.org/applications/internet/kget/](https://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
+*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — Multi-protocol P2P client that supports HTTP, FTP, BitTorrent, Direct Connect, eDonkey and FastTrack.
+
+	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
+
 *   **Persepolis** — Graphical front-end for aria2 download manager with lots of features. Supports HTTP and FTP.
 
 	[https://persepolisdm.github.io/](https://persepolisdm.github.io/) || [persepolis](https://aur.archlinux.org/packages/persepolis/)
+
+*   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
+
+	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
 
 *   **Steadyflow** — Simple download manager for GNOME. Supports HTTP and FTP.
 
@@ -609,6 +611,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-client](https://aur.archlinux.org/packages/seafile-client/)
 
+*   **[SparkleShare](https://en.wikipedia.org/wiki/SparkleShare "wikipedia:SparkleShare")** — Collaboration and sharing tool based on git written in C#.
+
+	[http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
+
 *   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — Proprietary client for SpiderOak One.
 
 	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
@@ -681,15 +687,11 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 #### BitTorrent clients
 
+Some [download managers](#Download_managers) are also able to connect to the BitTorrent network: [Aria2](/index.php/Aria2 "Aria2"), [LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp"), FatRat, [KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet"), [MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey"), uGet.
+
 See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
 
 ##### Console
-
-Can be used as-is via command line, but all have a choice of front-end options as well.
-
-*   **[aria2](/index.php/Aria2 "Aria2")** — Lightweight download utility that supports simultaneous adaptive downloading via HTTP(S), FTP, BitTorrent (DHT, PEX, MSE/PE) protocols and Metalink. It can run as a daemon controlled via a built-in JSON-RPC or XML-RPC interface.
-
-	[https://aria2.github.io/](https://aria2.github.io/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
 *   **btpd** — The BitTorrent Protocol Daemon.
 
@@ -698,10 +700,6 @@ Can be used as-is via command line, but all have a choice of front-end options a
 *   **Ctorrent** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
 
 	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
-
-*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — Multi-protocol P2P client that supports BitTorrent, HTTP, FTP, eDonkey and Direct Connect.
-
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
 *   **[rTorrent](/index.php/RTorrent "RTorrent")** — Simple and lightweight ncurses BitTorrent client. Requires [libtorrent](https://www.archlinux.org/packages/?name=libtorrent) backend.
 
@@ -713,29 +711,17 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 ##### Graphical
 
-###### libtorrent-rasterbar backend
-
 *   **[Deluge](/index.php/Deluge "Deluge")** — User-friendly BitTorrent client written in PyGTK that can run as a daemon.
 
 	[http://deluge-torrent.org/](http://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
 
-*   **FatRat** — Qt based download manager with support for HTTP, FTP, SFTP, BitTorrent, rapidshare and more. Written in C++.
+*   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
+	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
 
 *   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — Open source (GPLv2) BitTorrent client that strongly resembles µtorrent.
 
 	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
-
-*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system bittorrent client.
-
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
-
-###### Other
-
-*   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
-
-	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
 
 *   **Tixati** — P2P client that uses the BitTorrent protocol.
 
@@ -745,6 +731,10 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (remote clients work with the daemon in the -cli package)
 
+*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system bittorrent client.
+
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
+
 *   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Feature-rich BitTorrent client written in Java (formerly Azureus).
 
 	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)
@@ -752,6 +742,10 @@ Can be used as-is via command line, but all have a choice of front-end options a
 *   **Vuze Plus Extreme Mod** — A modded version of the Vuze BitTorrent client with multiple spoofing capabilities.
 
 	[http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/](http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/) || [vuze-extreme-mod](https://aur.archlinux.org/packages/vuze-extreme-mod/)
+
+*   **WebTorrent Desktop** — Streaming torrent application. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://webtorrent.io/desktop/](https://webtorrent.io/desktop/) || [webtorrent-desktop](https://aur.archlinux.org/packages/webtorrent-desktop/)
 
 #### Other P2P networks
 
@@ -764,10 +758,6 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 *   **KaMule** — KDE graphical front-end for aMule.
 
 	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
-
-*   **MlDonkey** — A multi-network P2P client.
-
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
 *   **Nicotine+** — A graphical client for the Soulseek P2P network.
 
@@ -1133,6 +1123,10 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
+*   **Srain** — Modern, beautiful IRC client written in GTK+ 3.
+
+	[https://srain.im/](https://srain.im/) || [srain](https://aur.archlinux.org/packages/srain/)
+
 ##### XMPP (Jabber) clients
 
 See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") and [Wikipedia:Comparison of instant messaging clients#XMPP-related features](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#XMPP-related_features "wikipedia:Comparison of instant messaging clients").
@@ -1339,7 +1333,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 	[https://discordapp.com/](https://discordapp.com/) || [discord](https://aur.archlinux.org/packages/discord/)
 
-*   **Hangups** — A third-party instant messaging client for Google Hangouts
+*   **Hangups** — Third-party instant messaging client for Google Hangouts.
 
 	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)
 
@@ -1391,17 +1385,21 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 	[https://www.viber.com/hu/products/linux/](https://www.viber.com/hu/products/linux/) || [viber](https://aur.archlinux.org/packages/viber/)
 
-*   **[WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp")** — Unofficial WhatsApp web desktop client. Based on the [Electron](https://electronjs.org/) platform
+*   **[WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp")** — Unofficial WhatsApp web desktop client. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://github.com/Enrico204/Whatsapp-Desktop](https://github.com/Enrico204/Whatsapp-Desktop) || [whatsapp-desktop](https://aur.archlinux.org/packages/whatsapp-desktop/)
 
-*   **[Wire](https://en.wikipedia.org/wiki/Wire_(software) "wikipedia:Wire (software)")** — Modern, private messenger. Based on the [Electron](https://electronjs.org/) platform
+*   **[Wire](https://en.wikipedia.org/wiki/Wire_(software) "wikipedia:Wire (software)")** — Modern, private messenger. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://wire.com/](https://wire.com/) || [wire-desktop](https://aur.archlinux.org/packages/wire-desktop/)
 
-*   **YakYak** — Unofficial desktop client for Google Hangouts. Based on the [Electron](https://electronjs.org/) platform
+*   **YakYak** — Unofficial desktop client for Google Hangouts. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://github.com/yakyak/yakyak](https://github.com/yakyak/yakyak) || [yakyak](https://aur.archlinux.org/packages/yakyak/)
+
+*   **[Zoom](https://en.wikipedia.org/wiki/Zoom_Video_Communications "wikipedia:Zoom Video Communications")** — Proprietary video conferencing, online meetings and group messaging application.
+
+	[https://zoom.us/](https://zoom.us/) || [zoom](https://aur.archlinux.org/packages/zoom/)
 
 #### Instant messaging servers
 
@@ -1719,7 +1717,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 ##### Graphical
 
-*   **Birdie** — A beautiful Twitter client for GNU/Linux.
+*   **Birdie** — Beautiful Twitter client designed for elementary OS. In early stage of development.
 
 	[http://birdieapp.github.io/](http://birdieapp.github.io/) || [birdie-git](https://aur.archlinux.org/packages/birdie-git/)
 
@@ -1727,11 +1725,11 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 	[http://choqok.gnufolks.org/](http://choqok.gnufolks.org/) || [choqok](https://www.archlinux.org/packages/?name=choqok)
 
-*   **Corebird** — Native Gtk+ Twitter client for the Linux desktop.
+*   **Corebird** — Native GTK+ Twitter client for the Linux desktop.
 
 	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird](https://www.archlinux.org/packages/?name=corebird)
 
-*   **Mikutter** — An open-source Twitter client using [GTK+](/index.php/GTK%2B "GTK+") and Ruby.
+*   **Mikutter** — Simple, powerful Twitter client using [GTK+](/index.php/GTK%2B "GTK+") and Ruby.
 
 	[http://mikutter.hachune.net/](http://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/)
 
@@ -1753,6 +1751,10 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 #### Remote desktop clients
 
+*   **[AnyDesk](https://en.wikipedia.org/wiki/AnyDesk "wikipedia:AnyDesk")** — Proprietary remote desktop software.
+
+	[https://anydesk.com/](https://anydesk.com/) || [anydesk](https://aur.archlinux.org/packages/anydesk/)
+
 *   **[GNOME Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — A simple GNOME 3 application to access remote or virtual systems. Supports VNC and SPICE.
 
 	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
@@ -1769,7 +1771,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 
-*   **TeamViewer** — Proprietary remote desktop client. It uses its own proprietary protocol.
+*   **[TeamViewer](https://en.wikipedia.org/wiki/TeamViewer "wikipedia:TeamViewer")** — Proprietary remote desktop client. It uses its own proprietary protocol.
 
 	[http://www.teamviewer.com/](http://www.teamviewer.com/) || [teamviewer](https://aur.archlinux.org/packages/teamviewer/)
 

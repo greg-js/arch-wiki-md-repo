@@ -165,6 +165,8 @@ $ make
 
 ```
 
+**Note:** To compile faster, make can be run with the -jX arguments, where X is an integer. Usually it is a good idea to use the number of CPU cores in your machine + 1\. For example, with a processor with 2 CPUs run "make -j3".
+
 ### Compile the modules
 
 **Warning:** From this step onwards, commands must be either run as root or with root privileges. If not, they will fail.

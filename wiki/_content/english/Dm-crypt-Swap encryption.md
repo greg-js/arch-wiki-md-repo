@@ -90,9 +90,9 @@ Using this setup, the cryptswap will only try to use the partition with the corr
 
 ## With suspend-to-disk support
 
-To be able to resume after suspending the computer to disk (hibernate), it is required to keep the swap space intact. Therefore, it is required to have a pre-existent LUKS swap partition, which can be stored on the disk or input manually at startup.
+To be able to resume after suspending the computer to disk (hibernate), it is required to keep the swap space intact. Therefore, it is required to have a pre-existent LUKS swap partition or file, which can be stored on the disk or input manually at startup.
 
-The following three methods are alternatives for setting up an encrypted swap for resume-from-disk. If you apply any of them, be aware that critical data swapped out by the system may potentially stay in the swap over a long period (i.e. until it is overwritten). To reduce this risk consider setting up a system job which re-encrypts swap, e.g. each time the system is going into a regular shut-down, along with the method of your choice.
+The following three methods are alternatives for setting up an encrypted swap for suspend-to-disk. If you apply any of them, be aware that critical data swapped out by the system may potentially stay in the swap over a long period (i.e. until it is overwritten). To reduce this risk consider setting up a system job which re-encrypts swap, e.g. each time the system is going into a regular shut-down, along with the method of your choice.
 
 ### LVM on LUKS
 
@@ -123,7 +123,7 @@ If you want to use a partition which is currently used by the system, you have t
 
 Also make sure you remove any line in `/etc/crypttab` pointing to this device.
 
-If you are reusing an existing swap partition, and if the partition is on a GPT partition table, you will need to remove the partition, and then recreate it with no File System type. See [Partitioning](/index.php/Partitioning "Partitioning"). This will prevent systemd-gpt-auto-generator from discovering and enabling the partition at boot.
+If you are reusing an existing swap [partition](/index.php/Partition "Partition"), and if the partition is on a GPT partition table, you will need use [gdisk](/index.php/Gdisk "Gdisk") to set the [partition attribute](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") `63` "do not automount" on it. This will prevent systemd-gpt-auto-generator from discovering and enabling the partition at boot.
 
 The following setup has the disadvantage of having to insert an additional passphrase for the swap partition manually on every boot.
 

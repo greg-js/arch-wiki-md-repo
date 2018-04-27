@@ -1,4 +1,4 @@
-**hpfall** is a simple daemon providing HDD shock protection for HP laptops supporting the feature officially called "HP Mobile Data Protection System 3D" or "HP 3D DriveGuard".
+[hpfall](https://github.com/srijan/hpfall) is a simple daemon providing HDD shock protection for HP laptops supporting the feature officially called "HP Mobile Data Protection System 3D" or "HP 3D DriveGuard".
 
 ## Contents
 

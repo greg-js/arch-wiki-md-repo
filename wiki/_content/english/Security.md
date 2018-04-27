@@ -260,9 +260,9 @@ The current number of threads for each user can be found with `ps --no-headers -
 
 ### Run Xorg rootless
 
-[Xorg](/index.php/Xorg "Xorg") often is considered as insecure. Thus it is recommended to avoid running Xorg as root, like it is usually the default configuration.
+[Xorg](/index.php/Xorg "Xorg") is commonly [considered insecure](https://security.stackexchange.com/questions/4641/why-are-people-saying-that-the-x-window-system-is-not-secure/4646#4646) because of its architecture and dated design. Thus it is recommended to avoid running it as root.
 
-See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for more details how to run Xorg sessions without root privileges for Xorg process.
+See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for more details how to run it without root privileges.
 
 ## Restricting root
 

@@ -25,7 +25,8 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [2.1 Updates](#Updates)
     *   [2.2 Firmware Updates](#Firmware_Updates)
 *   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
-    *   [3.1 External screen](#External_screen)
+    *   [3.1 Doing Thunderbolt firmware updates without fwupd or Windows](#Doing_Thunderbolt_firmware_updates_without_fwupd_or_Windows)
+    *   [3.2 External screen](#External_screen)
 *   [4 SATA controller](#SATA_controller)
     *   [4.1 Dual booting Linux and Windows](#Dual_booting_Linux_and_Windows)
 *   [5 NVM Express SSD](#NVM_Express_SSD)
@@ -85,9 +86,42 @@ In the event of devices not working correctly, ensure that you have updated to t
 
 Dell is working on a fwupd extension ([github repository](https://github.com/dell/thunderbolt-nvm-linux)) that allows updating Thunderbolt software from Linux.
 
-Alternatively, the [Thunderbolt 3 Firmware Update 2.16.01.003, A04](http://downloads.dell.com/FOLDER03798029M/1/Intel_TBT3_FW_UPDATE_NVM16_A04_2.16.01.003.exe) was released on 2016-08-10\. Unlike the BIOS update and the Thunderbolt-nvm Linux update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice).
+Alternatively, the [Thunderbolt 3 Firmware Update 4.26.11.001, A08](https://downloads.dell.com/FOLDER04795516M/1/Intel_TBT3_FW_UPDATE_NVM26_FJJK7_A08_4.26.11.001.exe) was released on 2018-04-05\. Unlike the BIOS update and the Thunderbolt-nvm Linux update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice) or you can attempt the procedure below (at your own risks).
 
 Hotplug support for this port requires a [bug fix](https://bugzilla.kernel.org/show_bug.cgi?id=115121) which landed in kernel version 4.7\. It also requires the kernel to be built with <tt>CONFIG_PCI_HOTPLUG=y</tt>.
+
+#### Doing Thunderbolt firmware updates without [fwupd](https://www.archlinux.org/packages/?name=fwupd) or Windows
+
+The thunderbolt updates are a bit more complicated to do than the UEFI updates. The following was tested on kernel 4.16.4\. You need to download the Thunderbolt update executable then extract the files from it:
+
+```
+$ 7z x Intel_TBT3_FW_UPDATE_NVM26_FJJK7_A08_4.26.11.001.exe
+
+```
+
+If you don't have any thunderbolt device plugged in, you need to force the controller on
+
+```
+# echo 1 > /sys/devices/platform/PNP0C14:00/wmi_bus/wmi_bus-PNP0C14:00/*/force_power
+
+```
+
+Check the controller current firmware version:
+
+```
+# cat /sys/bus/thunderbolt/devices/0-0/nvm_version
+
+```
+
+Then copy the file to the controller's memory and authenticate
+
+```
+# dd if=Intel/0x0704_secure.bin of=/sys/bus/thunderbolt/devices/0-0/nvm_non_active0/nvmem
+# echo 1 > /sys/bus/thunderbolt/devices/0-0/nvm_authenticate
+
+```
+
+The system may hang for a few seconds, and after a moment, if you read nvm_version again, it should show the new version number.
 
 ### External screen
 

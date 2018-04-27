@@ -3,9 +3,9 @@ Related articles
 *   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
 *   [vifm](/index.php/Vifm "Vifm")
 
-[ranger](http://ranger.github.io/) is a text-based file manager written in Python. Directories are displayed in one pane with three columns. Moving between them is accomplished with keystrokes, bookmarks, the mouse or the command history. File previews and directory contents show automatically for the current selection.
+[ranger](http://ranger.github.io/) is a text-based file manager written in [Python](/index.php/Python "Python"). Directories are displayed in one pane with three columns. Moving between them is accomplished with keystrokes, bookmarks, the mouse or the command history. File previews and directory contents show automatically for the current selection.
 
-Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. *ranger* has customizable commands and key bindings, including bindings to external scripts. The closest competitors are [Vifm](/index.php/Vifm "Vifm") and [lf](https://github.com/gokcehan/lf).
+Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. *ranger* has customizable commands and key bindings, including bindings to external scripts. Ranger also comes with its own [file opener](/index.php/File_opener "File opener"), [rifle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rifle.1). The closest competitors are [Vifm](/index.php/Vifm "Vifm") and [lf](https://github.com/gokcehan/lf).
 
 ## Contents
 

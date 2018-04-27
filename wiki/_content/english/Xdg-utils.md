@@ -1,4 +1,13 @@
-[xdg-utils](https://www.freedesktop.org/wiki/Software/xdg-utils/) ([xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils)) provides the official utilities for managing [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications"). Most importantly, it provides `xdg-open` which many applications use to open a file with its default application. It is desktop-environment-independent in the sense that it attempts to use each environment's native default application tool and provides its own mechanism if no known environment is detected. Examples:
+[xdg-utils](https://www.freedesktop.org/wiki/Software/xdg-utils/) ([xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils)) provides the official utilities for managing [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
+
+*   [xdg-desktop-menu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-desktop-menu.1) - Install desktop menu items
+*   [xdg-desktop-icon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-desktop-icon.1) - copies [desktop entries](/index.php/Desktop_entries "Desktop entries") to the user's desktop
+*   [xdg-email(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-email.1) - Compose a new email in the user's preferred email client, potentially with subject and other info filled in
+*   [xdg-icon-resource(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-icon-resource.1) - Install icon resources
+*   [xdg-mime(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-mime.1) - Query and install MIME types and associations
+*   [xdg-open(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-open.1) - Open a file or URI in the user's preferred application
+*   [xdg-screensaver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-screensaver.1) - Enable, disable, or suspend the screensaver
+*   [xdg-settings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-settings.1) - Get or set the default web browser and URL handlers
 
 ## xdg-mime
 
@@ -29,14 +38,11 @@ $ xdg-mime default feh.desktop image/jpeg
 
 ## xdg-open
 
-See [xdg-open(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-open.1).
+xdg-open is a [resource opener](/index.php/Resource_opener "Resource opener") that implements [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") and is used by many programs, see [xdg-open(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-open.1) for the usage.
 
-Open a file with its default application:
+xdg-open is desktop-environment-independent in the sense that it attempts to use each environment's native default application tool.
 
-```
-$ xdg-open photo.jpeg
-
-```
+If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want xdg-open to use [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") without a desktop environment, you will need to [install](/index.php/Install "Install") [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) or switch to one of the [resource openers](/index.php/Resource_opener "Resource opener") that support [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
 
 ## xdg-settings
 
@@ -55,5 +61,3 @@ Shortcut for setting the default application for a URL scheme:
 $ xdg-settings set default-url-scheme-handler irc xchat.desktop
 
 ```
-
-**Tip:** If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) to work properly without a desktop environment, you will need to install [#perl-file-mimeinfo](#perl-file-mimeinfo) or one of the [#xdg-open alternatives](#xdg-open_alternatives).

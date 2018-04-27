@@ -3,7 +3,7 @@ Related articles
 *   [dotfiles](/index.php/Dotfiles "Dotfiles")
 *   [XDG user directories](/index.php/XDG_user_directories "XDG user directories")
 
-This article exists to catalog the growing set of software using the [XDG Base Directory Specification](http://standards.freedesktop.org/basedir-spec/latest/) introduced in 2003\. This is here to demonstrate the viability of this specification by listing commonly found dotfiles and their support status. For those not currently supporting the Base Directory Specification, workarounds will be demonstrated to emulate it instead.
+This article exists to catalog the growing set of software using the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) introduced in 2003\. This is here to demonstrate the viability of this specification by listing commonly found dotfiles and their support status. For those not currently supporting the Base Directory Specification, workarounds will be demonstrated to emulate it instead.
 
 The workarounds will be limited to anything not involving patching the source, executing code stored in [environment variables](/index.php/Environment_variables "Environment variables") or compile-time options. The rationale for this is that configurations should be portable across systems and having compile-time options prevent that.
 
@@ -505,7 +505,11 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 `$ weechat -d "$XDG_CONFIG_HOME"/weechat`
 
  |
-| [wget](/index.php/Wget "Wget") | `~/.wgetrc` | 
+| [wget](/index.php/Wget "Wget") | `~/.wgetrc`
+
+`~/.wget-hsts`
+
+ | 
 
 `$ export WGETRC="$XDG_CONFIG_HOME/wgetrc"` `$ wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"`
 
@@ -540,13 +544,13 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 ## Hardcoded
 
 | Application | Legacy Path | Discussion | Notes |
-| [adb](/index.php/Adb "Adb") | `~/.android` | [[104]](https://developer.android.com/studio/command-line/variables.html#android_sdk_root) | `$ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android` |
+| [adb](/index.php/Adb "Adb") | `~/.android/` | [[104]](https://developer.android.com/studio/command-line/variables.html#android_sdk_root) | `$ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android` |
 | [AMule](/index.php/AMule "AMule") | `~/.aMule` |
 | [Android Studio](https://developer.android.com/studio/index.html) | `~/.AndroidStudio2.3`
 
-`~/.android`
+`~/.android/`
 
-`~/.java`
+`~/.java/`
 
  |
 | [anthy](https://osdn.net/projects/anthy/) | `~/.anthy` | [[105]](https://osdn.net/ticket/browse.php?group_id=14&tid=28397) |
@@ -557,7 +561,7 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 
  | [[106]](https://github.com/arduino/Arduino/issues/3915) |
 | [ARandR](https://christian.amsuess.com/tools/arandr/) | `~/.screenlayout` |
-| [Audacity](https://www.audacityteam.org/) | `~/.audacity-data` |
+| [Audacity](https://www.audacityteam.org/) | `~/.audacity-data/` |
 | [Avidemux](http://fixounet.free.fr/avidemux/) | `~/.avidemux6` |
 | [bash](/index.php/Bash "Bash") | `~/.bashrc`
 
@@ -576,21 +580,21 @@ A specified `bashrc` can be sourced from `/etc/bashrc`.
 Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive shells.
 
  |
-| [cabal](https://www.haskell.org/cabal/) | `~/.cabal` | [[108]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
-| [calibre](https://calibre-ebook.com/) | `~/Calibre Library` |
-| [CUPS](/index.php/CUPS "CUPS") | `~/.cups` | [[109]](http://www.cups.org/str.php?L4243) |
-| [darcs](/index.php/Darcs "Darcs") | `~/.darcs` | [[110]](http://bugs.darcs.net/issue2453) |
-| [dbus](/index.php/Dbus "Dbus") | `~/.dbus` | [[111]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
-| [Dia](https://wiki.gnome.org/Apps/Dia) | `~/.dia` |
+| [cabal](https://www.haskell.org/cabal/) | `~/.cabal/` | [[108]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
+| [calibre](https://calibre-ebook.com/) | `~/Calibre Library/` |
+| [CUPS](/index.php/CUPS "CUPS") | `~/.cups/` | [[109]](http://www.cups.org/str.php?L4243) |
+| [darcs](/index.php/Darcs "Darcs") | `~/.darcs/` | [[110]](http://bugs.darcs.net/issue2453) |
+| [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[111]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
+| [Dia](https://wiki.gnome.org/Apps/Dia) | `~/.dia/` |
 | [docker](/index.php/Docker "Docker") | `~/.docker` | [[112]](https://github.com/docker/machine/issues/3116) [[113]](https://github.com/moby/moby/issues/20693) |
-| [eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse` | [[114]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
+| [eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse/` | [[114]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
 | [emacs](https://www.gnu.org/software/emacs/) | `~/.emacs`
 
-`~/.emacs.d`
+`~/.emacs.d/`
 
  | [[115]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583) | It's possible to set `HOME`, but it has unexpected side effects. So far the most promising approach is modifying another Emacs environment variable to alter the load path and author your own site file which can manually load up your init file, but it changes the load process significantly. |
 | [Fetchmail](http://www.fetchmail.info/) | `~/.fetchmailrc` |
-| [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla` | [[116]](https://bugzil.la/259356) |
+| [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[116]](https://bugzil.la/259356) |
 | [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[117]](https://github.com/flatpak/flatpak/issues/46) [[118]](https://github.com/flatpak/flatpak.github.io/issues/191) |
 | [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[119]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
 | [GNU parallel](http://www.gnu.org/software/parallel/) | `~/.parallel` |
@@ -614,7 +618,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 
  | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
 | [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[125]](https://github.com/Deltafire/MilkyTracker/issues/12) |
-| [Minecraft](https://minecraft.net/) | `~/.minecraft` | [[126]](https://bugs.mojang.com/browse/MCL-2563) |
+| [Minecraft](https://minecraft.net/) | `~/.minecraft/` | [[126]](https://bugs.mojang.com/browse/MCL-2563) |
 | [mongodb](https://www.mongodb.org/) | `~/.mongorc.js`
 
 `~/.dbshell`
@@ -634,8 +638,9 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [RedNotebook](http://rednotebook.sourceforge.net/) | `~/.rednotebook` |
 | [Remarkable](https://remarkableapp.github.io/linux.html) | `~/.remarkable` |
 | [Ren'Py](https://www.renpy.org/) | `~/.renpy` | [[135]](https://github.com/renpy/renpy/issues/1377) |
+| [SANE](/index.php/SANE "SANE") | `~/.sane/` | `scanimage` creates a `.cal` file there |
 | [Scribus](https://www.scribus.net/) | `~/.scribus` |
-| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[136]](https://bugzil.la/726939) |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla/` | [[136]](https://bugzil.la/726939) |
 | [Solfege](https://www.gnu.org/software/solfege/solfege.html) | `~/.solfege`
 
 `~/.solfegerc`
@@ -657,7 +662,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
  | [[140]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[141]](https://bugzil.la/735285) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[141]](https://bugzil.la/735285) |
 | [tllocalmgr](https://git.archlinux.org/users/remy/texlive-localmanager.git/) | `~/.texlive` |
 | [vim](/index.php/Vim "Vim") | `~/.vim`
 

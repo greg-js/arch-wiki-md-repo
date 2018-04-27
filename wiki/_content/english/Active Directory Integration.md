@@ -290,7 +290,9 @@ Joined 'MYARCHLINUX' to realm 'EXAMPLE.COM'
 
 Hopefully, you have not rebooted yet! Fine. If you are in an X-session, quit it, so you can test login into another console, while you are still logged in.
 
-Enable and start the individual Samba deamons `smbd.service`, `nmbd.service`, and `winbindd.service`.
+Enable and start the individual Samba daemons `smbd.service`, `nmbd.service`, and `winbindd.service`.
+
+**Note:** In [samba](https://www.archlinux.org/packages/?name=samba) 4.8.0-1, the Samba daemon units have been renamed from `smbd.service`, `nmbd.service`, and `winbindd.service` to `smb.service`, `nmb.service`, and `winbind.service`.
 
 Next we will need to modify the NSSwitch configuration, which tells the Linux host how to retrieve information from various sources and in which order to do so. In this case, we are appending Active Directory as additional sources for Users, Groups, and Hosts.
 

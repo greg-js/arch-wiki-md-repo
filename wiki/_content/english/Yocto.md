@@ -17,7 +17,7 @@ For this guide the focus will be on YP Core 1.8 (Fido) and newer.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git), [diffstat](https://www.archlinux.org/packages/?name=diffstat), [unzip](https://www.archlinux.org/packages/?name=unzip), [texinfo](https://www.archlinux.org/packages/?name=texinfo), [python](https://www.archlinux.org/packages/?name=python), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [wget](https://www.archlinux.org/packages/?name=wget), [xterm](https://www.archlinux.org/packages/?name=xterm), [sdl](https://www.archlinux.org/packages/?name=sdl), [socat](https://www.archlinux.org/packages/?name=socat) and [cpio](https://www.archlinux.org/packages/?name=cpio) packages.
+[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git), [diffstat](https://www.archlinux.org/packages/?name=diffstat), [unzip](https://www.archlinux.org/packages/?name=unzip), [texinfo](https://www.archlinux.org/packages/?name=texinfo), [python](https://www.archlinux.org/packages/?name=python), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [wget](https://www.archlinux.org/packages/?name=wget), [xterm](https://www.archlinux.org/packages/?name=xterm), [sdl](https://www.archlinux.org/packages/?name=sdl),[rpcsvc-proto](https://www.archlinux.org/packages/?name=rpcsvc-proto), [socat](https://www.archlinux.org/packages/?name=socat) and [cpio](https://www.archlinux.org/packages/?name=cpio) packages.
 
 Enable the [multilib](/index.php/Multilib "Multilib") repository and install the [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/) group.
 

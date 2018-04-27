@@ -23,7 +23,7 @@ Available clients ([screenshots](https://github.com/pyload/pyload/wiki/Screensho
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pyload](https://aur.archlinux.org/packages/pyload/) from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/) for a development build of the new pyload 0.5 version.
+[Install](/index.php/Install "Install") [pyload-git](https://aur.archlinux.org/packages/pyload-git/) from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/) for a development build of the new pyload 0.5 version.
 
 ## Configuration
 

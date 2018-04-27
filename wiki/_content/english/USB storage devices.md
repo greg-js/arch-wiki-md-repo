@@ -14,8 +14,9 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
     *   [2.2 Identifying device](#Identifying_device)
     *   [2.3 Mounting USB memory](#Mounting_USB_memory)
         *   [2.3.1 As root](#As_root)
-        *   [2.3.2 As normal user with mount](#As_normal_user_with_mount)
+        *   [2.3.2 Allow writing by regular users](#Allow_writing_by_regular_users)
         *   [2.3.3 As normal user with fstab](#As_normal_user_with_fstab)
+        *   [2.3.4 Mount tools](#Mount_tools)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No USB storage devices are acknowledged by the system](#No_USB_storage_devices_are_acknowledged_by_the_system)
 
@@ -68,7 +69,7 @@ If `mount` does not recognize the [file system](/index.php/File_system "File sys
 
 **Note:** See [[1]](https://gist.github.com/anonymous/a69093a51f83b53d9fc5) for example mount/unmount scripts using [sudo](/index.php/Sudo "Sudo").
 
-#### As normal user with mount
+#### Allow writing by regular users
 
 If you want non-root users to be able to write to the USB stick, you can issue the following command:
 
@@ -82,6 +83,10 @@ If it does not work, make sure that the [file system](/index.php/File_system "Fi
 #### As normal user with fstab
 
 See [FAT#Writing to FAT32 as normal user](/index.php/FAT#Writing_to_FAT32_as_normal_user "FAT") if you want normal user to do the mount/unmount action.
+
+#### Mount tools
+
+Multiple [mount tools](/index.php/List_of_applications#Mount_tools "List of applications") facilitate mounting as a regular user.
 
 ## Troubleshooting
 

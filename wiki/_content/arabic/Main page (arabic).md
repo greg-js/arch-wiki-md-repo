@@ -1,55 +1,65 @@
-**مرحبا بك في [موسوعة أرتش](/index.php/ArchWiki:About "ArchWiki:About") : مصدرك لوثائق أرتش لينكس على شبكة الانترنت.**
+**مرحباً بك إلى [موسوعة آرتش](/index.php?title=ArchWiki&action=edit&redlink=1 "ArchWiki (page does not exist)")، مصدرك الأوحد للحصول على توثيقات نظام آرتش لينُكس على الويب.**
 
-قم بزيارة **[قائمة المحتويات](/index.php/Table_of_contents_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Table of contents (العربية)")** لقائمة أقسام موسوعة أرتش.
+اطّلع على [جدول المحتويات](/index.php/Table_of_contents_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Table of contents (العربية)") للحصول على قائمة بتصنيفات مقالات الموسوعة.
 
-## بداية العمل
+## التوزيعة
 
-هذه الروابط مفيدة فيما يتعلق بالبدء مع توزيعة أرتش لينُكس.
+	[آرش لينُكس](/index.php/Arch_Linux_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Arch Linux (العربية)")
 
-	[آرتش لينكس](/index.php/Arch_Linux_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Arch Linux (العربية)")
+	مقالة توفِر نظرة عامة على توزيعة آرتش لينُكس تشرح أساسيات هذا النظام.
 
-	لمحة موجزة عن أرتش لينكس؛ يصف ما يمكن توقعه من نظام لينكس أرتش.
+	[أسئلة شائعة](/index.php/Frequently_asked_questions_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Frequently asked questions (العربية)")
 
-	[منهج آرتش](/index.php/The_Arch_Way "The Arch Way")
+	أسئلة وحقائق متعددة بارزة حول التوزيعة.
 
-	وصف مبادئ وفلسفة توزيعة آرتش لينكس.
+	[مقارنة آرتش مع توزيعات أخرى](/index.php?title=Arch_compared_to_other_distributions_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Arch compared to other distributions (العربية) (page does not exist)")
 
-	[مقارنة بين أرتش لينكس وتوزيعات لينكس اﻷخرى](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions").
-
-ملخص ﻷوجه الشبه والاختلاف بين آرتش لينكس والتوزيعات اﻷخرى
-
-	[الحصول على المساعدة](/index.php/Getting_involved_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Getting involved (العربية)")
-
-يصف الطرق المتعددة التي ينتهجها مستخدمو آرتش (المستخدمين الجدد وذوي الخبرة على حد سواء للمساهمة في مجتمع آرتش.
-
-	[دليل المبتدئين](/index.php/Beginners%27_guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Beginners' guide (العربية)")
-
-	دليل ياخذك عبر كل العمليات لاعداد وتثبيت ارك لينكس ومكتوب للمستخدمين المبتدئين وقليلي الخبرة.
+	مُلخص للتشابهات والاختلافات بين آرتش والتوزيعات الأخرى.
 
 	[دليل التثبيت](/index.php/Installation_guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Installation guide (العربية)")
 
-	دليل تثبيت موجز، مُوجَّه إلى مستخدمي آرتش المتمرّسين
+	دليل إرشادي شامل حول عمليّة تثبيت آرتش لينُكس.
 
-	[الأسئلة الأكثر تكرارًا](/index.php/FAQ_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "FAQ (العربية)")
+	[نصائح عامة](/index.php?title=General_recommendations_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "General recommendations (العربية) (page does not exist)")
 
-	قائمة بالأسئلة الأكثر تكراراً وشيوعاً
+	قائمة بدروس حول الخطوات ما بعد عمليّة التثبيت ومقالات أخرى شائعة.
 
-	[توصيات عامة](/index.php/General_recommendations "General recommendations")
+	[قائمة التطبيقات](/index.php?title=List_of_applications_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "List of applications (العربية) (page does not exist)")
 
-	فهرس مقالات أخرى مشهورة أو مشار إليها في كثير من الأحيان.
+	قائمة مُصنَّفة بالحزم الرسميّة الشائعة في مستودع AUR.
 
-	[دروس في تحرير موسوعة أرتش](/index.php/Help:Editing "Help:Editing")
+## مجتمعنا
 
-	أمثلة ودروس توضيحية قصيرة حول تحرير والمساهمة في موسوعة آرتش لينكس.
+	[مقالة قواعد السلوك](/index.php?title=Code_of_conduct_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Code of conduct (العربية) (page does not exist)")
 
-## أخبار الموسوعة
+	مقالة تشرح السلوكيات التي يجب أن يتحلّى بها الفرد في مجمتع آرتش.
 
-راجع صفحة [Wiki News](/index.php/Wiki_News "Wiki News") لآخر التطورات على الموسوعة.
+	[المساهمة](/index.php/Getting_involved_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Getting involved (العربية)")
 
-إذا كنتَ راغبًا وقادرًا على المساهمة في الموسوعة، راجع [هذا المقال](/index.php/ArchWiki:Contributing "ArchWiki:Contributing").
+	مقالة تشرح طرق مختلفة يمكن من خلالها الفرد المساهمة في مجتمع مشروع آرتش.
 
-## المساعدة
+	[مجتمعات عالميّة](/index.php?title=International_communities_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "International communities (العربية) (page does not exist)")
 
-إذا كنت تبحث عن معلومة معينة، حاول استخدام صندوق البحث على اليسار. بشكل مغاير، استخدم [ميزة جوجل "site"](http://www.google.com/) عبر إضافة `site:wiki.archlinux.org` لمتغيرات البحث (مثال: [ابحث في هذا الموقع عن "Arch Linux"](http://www.lmgtfy.com/?q=Arch+Linux+site%3Awiki.archlinux.org)).
+	مجموعة من الوصلات لمواقع مجتمعات آرتشيّة حول العالم.
 
-يجب عليك إنشاء حساب لتعديل هذه الموسوعة. بعد الإنتهاء، يمكنك أن تلعب قليلًا في [Sandbox](/index.php/Sandbox "Sandbox") أو في صفحتك الشخصية لتعويد نفسك على تنسيق موسوعة أرتش. الصّيغ المتوفرة موجودة في [Category:Help](/index.php/Category:Help "Category:Help") بالإضافة لمعلومات مفيدة.
+	[قنوات آي آر سي](/index.php?title=IRC_channels_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "IRC channels (العربية) (page does not exist)")
+
+	اجتمع مع أصدقاءك وآرتشاويين للخوض في مناقشات رائعة.
+
+## مقالات عن التعامل مع الموسوعة
+
+	[دليل القراءة](/index.php?title=Help:Reading_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Help:Reading (العربية) (page does not exist)")
+
+	ادخل للحصول على بعض التوضيحات حول الرموز المُستخدمة في الشرح في المقالات إن كنت تواجه صعوبة في فهم بعض المقالات.
+
+	[دليل استخدام صندوق البحث](/index.php?title=Help:Searching_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Help:Searching (العربية) (page does not exist)")
+
+	مقالة تشرح بعض الخدع لتسهيل عمليّة البحث وإيجاد المقالات.
+
+	[دليل المساهمة](/index.php?title=ArchWiki:Contributing_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "ArchWiki:Contributing (العربية) (page does not exist)")
+
+	نقطة البداية للذين يرغبون في المساهمة في موسوعة آرتش.
+
+	[دليل تعديل المقالات](/index.php?title=Help:Editing_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Help:Editing (العربية) (page does not exist)")
+
+	دليل شامل لتعديل المقالات متضمناً مقدمة إلى الصيغة الكتابيّة للنصوص في الموسوعة.

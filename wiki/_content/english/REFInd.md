@@ -59,16 +59,18 @@ To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Find
 
 ### Installation with refind-install script
 
-The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations. See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8). For many systems it should be sufficient to simply run:
+The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations. See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) or read the comments in the install script for explanations of the various installation options.
+
+For many systems it should be sufficient to simply run:
 
 ```
 # refind-install
 
 ```
 
-This will attempt to find and mount your [ESP](/index.php/ESP "ESP"), copy rEFInd files to `*esp*/EFI/refind/`, and use `efibootmgr` to make rEFInd the default EFI boot application.
+This will attempt to find and mount your [ESP](/index.php/ESP "ESP"), copy rEFInd files to `*esp*/EFI/refind/`, and use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") to make rEFInd the default EFI boot application.
 
-Alternatively you can install rEFInd to the default/fallback boot path `*esp*/EFI/BOOT/bootx64.efi`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by `efibootmgr`:
+Alternatively you can install rEFInd to the default/fallback boot path `*esp*/EFI/BOOT/bootx64.efi`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by *efibootmgr*:
 
 ```
 # refind-install --usedefault */dev/sdXY*
@@ -76,8 +78,6 @@ Alternatively you can install rEFInd to the default/fallback boot path `*esp*/EF
 ```
 
 Where `*/dev/sdXY*` is the partition of your ESP.
-
-You can read the comments in the install script for explanations of the various installation options.
 
 **Note:** By default `refind-install` installs only the driver for the file system on which kernel resides. Additional file systems need to be installed manually or you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.:
 ```
@@ -205,7 +205,7 @@ If you want to install rEFInd to the default/fallback boot path replace `*esp*/E
 
 ```
 
-Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
+Then use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
 
 ```
 # efibootmgr --create --disk */dev/sdX* --part *Y* --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager" --verbose

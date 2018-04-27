@@ -4,6 +4,7 @@ Related articles
 *   [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")
 *   [SSMTP](/index.php/SSMTP "SSMTP")
 *   [S-nail](/index.php/S-nail "S-nail")
+*   [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")
 
 [msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") compatibility.
 

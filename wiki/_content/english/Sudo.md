@@ -27,6 +27,7 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
         *   [4.5.1 kdesu](#kdesu)
     *   [4.6 Harden with Sudo Example](#Harden_with_Sudo_Example)
     *   [4.7 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_.2Fetc.2Fsudoers.d)
+    *   [4.8 Editing files](#Editing_files)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSH TTY Problems](#SSH_TTY_Problems)
     *   [5.2 Permissive umask](#Permissive_umask)
@@ -388,6 +389,19 @@ The files in `/etc/sudoers.d/` directory are parsed in lexicographical order, fi
 **Note:** The order of entries in the drop-in files is important: make sure that the statements do not override themselves.
 
 **Warning:** The files in `/etc/sudoers.d/` are just as fragile as `/etc/sudoers` itself: any improperly formatted file will prevent `sudo` from working. Hence, for the same reason it is strongly advised to use `visudo`
+
+### Editing files
+
+`sudo -e` or `sudoedit` lets you edit a file as another user while still running the text editor as your user.
+
+This is especially useful for editing files as root without elevating the privilege of your text editor, for more details read [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8#e).
+
+Note that you can set the editor to any program, so for example one can use [meld](https://www.archlinux.org/packages/?name=meld) to manage [pacnew](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave") files:
+
+```
+$ SUDO_EDITOR=meld sudo -e /etc/*file*{,.pacnew*}*
+
+```
 
 ## Troubleshooting
 

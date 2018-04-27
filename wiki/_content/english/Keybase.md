@@ -16,7 +16,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Keybase "wikipedia:Keybase"):
 
 ## Installation
 
-Keybase is provided by the [keybase](https://www.archlinux.org/packages/?name=keybase) package, however this does not yet include the GUI or the KBFS filesystem. If you want the GUI and KBFS filesystem install [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/).
+Keybase is provided by the [keybase](https://www.archlinux.org/packages/?name=keybase) package, however this does not yet include the GUI or the KBFS filesystem. If you want the GUI and KBFS filesystem install [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/). See also the [install instructions on keybase.io.](https://keybase.io/docs/the_app/install_linux)
 
 After installing or updating, run:
 
@@ -26,6 +26,8 @@ $ run_keybase
 ```
 
 ## Signup / Login
+
+If you installed the GUI via [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/), it will walk you through signup. These instructions are for the CLI-only [keybase](https://www.archlinux.org/packages/?name=keybase) package.
 
 **Note:** The signup and login commands will fail with keybase-1.0.41 because the `keybase.service` does not ship with the package (see [#56831](https://bugs.archlinux.org/task/56831)). Run the following command in another terminal:
 ```

@@ -226,7 +226,7 @@ There are various applications that can be configured using persistent naming. F
 
 ### fstab
 
-See the main article: [fstab#UUIDs](/index.php/Fstab#UUIDs "Fstab")
+See the main article: [fstab#Identifying filesystems](/index.php/Fstab#Identifying_filesystems "Fstab").
 
 ### Boot managers
 
@@ -237,44 +237,37 @@ To use persistent names in the [boot manager (boot loader)](/index.php/Boot_load
 
 The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
 
-Non-persistent device naming using the `/dev` path format, in this example `*/dev/sdr1*` is the root partition.
-
-```
-root=*/dev/sdr1*
-
-```
-
-Persistent device naming using label and the `/dev` path format, in this example `*root_myhost*` is the label of the root partition.
-
-```
-root=/dev/disk/by-label/*root_myhost*
-
-```
-
 Persistent device naming using label and the `LABEL=` format.
 
 ```
-root=LABEL=*root_myhost*
+root=LABEL=*System*
 
 ```
 
-Persistent device naming using UUID and the `UUID=` format, in this example `*1234-5678*` is the UUID of the root partition.
+Persistent device naming using UUID and the `UUID=` format, in this example `*0a3407de-014b-458b-b5c1-848e92a327a3*` is the UUID of the root partition.
 
 ```
-root=UUID=*1234-5678*
+root=UUID=*0a3407de-014b-458b-b5c1-848e92a327a3*
+
+```
+
+Persistent device naming using disk id and the `/dev` path format, in this example `*wwn-0x60015ee0000b237f-part2*` is the id of the root partition.
+
+```
+root=/dev/disk/by-id/*wwn-0x60015ee0000b237f-part2*
 
 ```
 
 Persistent device naming using GPT partition UUID and the `PARTUUID=` format.
 
 ```
-root=PARTUUID=*1234-5678*
+root=PARTUUID=*98a81274-10f7-40db-872a-03df048df366*
 
 ```
 
 Persistent device naming using GPT partition label and the `PARTLABEL=` format.
 
 ```
-root=PARTLABEL=*root_myhost*
+root=PARTLABEL=*GNU\057Linux*
 
 ```

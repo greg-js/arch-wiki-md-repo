@@ -210,7 +210,7 @@ While some of the early algorithms have now been decommissioned, the official Li
     *   *Kyber*
     *   *BFQ*
 
-**Warning:** The multi-queue scheduler framework and its related algorithms are under active development, the state of some issues can be seen in the [bfq forum](https://groups.google.com/forum/#!forum/bfq-iosched).
+**Warning:** The multi-queue scheduler framework and its related algorithms are under active development, the state of some issues can be seen in the [bfq forum](https://groups.google.com/forum/#!forum/bfq-iosched) and [FS#57496](https://bugs.archlinux.org/task/57496). In particular, users reported USB drives to stop working - [[1]](https://bbs.archlinux.org/viewtopic.php?id=234070)[[2]](https://bbs.archlinux.org/viewtopic.php?id=234363)[[3]](https://bbs.archlinux.org/viewtopic.php?id=236291).
 
 **Note:** The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but improve system responsiveness.
 
@@ -270,7 +270,7 @@ When dealing with traditional rotational disks (HDD's) you may want to [lower or
 
 Avoiding unnecessary access to slow storage drives is good for performance and also increasing lifetime of the devices, although on modern hardware the difference in life expectancy is usually negligible.
 
-**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[1]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
+**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[4]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
 
 #### Show disk writes
 
@@ -307,7 +307,7 @@ The I/O priority of a background process can be reduced to the "Idle" level by s
 
 ```
 
-See [ionice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[2]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
+See [ionice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[5]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
 
 ## CPU
 
@@ -495,7 +495,7 @@ After you disabled watchdogs, you can *optionally* avoid the loading of the modu
 
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](/index.php/Power_management#Disabling_NMI_watchdog "Power management").
 
-See [[3]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[4]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[5]](http://0pointer.de/blog/projects/watchdog.html), and [[6]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+See [[6]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[7]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[8]](http://0pointer.de/blog/projects/watchdog.html), and [[9]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
 
 ## See also
 

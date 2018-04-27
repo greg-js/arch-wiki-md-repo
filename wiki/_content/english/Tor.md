@@ -250,7 +250,7 @@ See [#Running a Tor server](#Running_a_Tor_server).
 
 Start/enable `tor.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Alternatively, launch it with `sudo -u tor /usr/bin/tor`.
 
-To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOCKS5 proxy, with port `9050` (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
+To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOCKS5H proxy, with port `9050` (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
 
 ## Web browsing
 

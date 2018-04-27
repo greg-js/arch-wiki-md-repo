@@ -38,7 +38,9 @@ Support for swap is provided by the Linux kernel and user-space utilities from t
 
 ## Swap space
 
-Swap space will usually be a disk partition but can also be a file. Users may create a swap space during installation of Arch Linux or at any later time should it become necessary. Swap space is generally recommended for users with less than 1 GB of RAM, but becomes more a matter of personal preference on systems with gratuitous amounts of physical RAM (though it is required for suspend-to-disk support).
+Swap space can take the form of a disk partition or a file. Users may create a swap space during installation or at any later time as desired. Swap space can be used for two purposes, to extend the virtual memory beyond the installed physical memory (RAM), a.k.a "enable swap", and also for suspend-to-disk support.
+
+If it is beneficial to enable swap depends on the amount of installed physical memory, and the amount of memory required to run all the desired programs. If the amount of physical memory is less than the required amount, then it is beneficial to enable swap. This avoids [out of memory conditions](https://en.wikipedia.org/wiki/Out_of_memory "wikipedia:Out of memory"), where the Linux kernel OOM killer mechanism will automatically attempt to free up memory by killing processes. To increase the amount of virtual memory to the required amount, add the necessary difference as swap space. For example, if your programs require 7.5 GB of memory to run, and there are 4 GB of physical memory installed, add the difference of 3.5 GB in swap space. Add more swap space to account for future requirements. It is a matter of personal preference if you prefer programs to be killed over enabling swap. The biggest drawback to enabling swap is its lower performance, see section [#Performance](#Performance).
 
 To check swap status, use:
 
@@ -47,12 +49,14 @@ $ swapon --show
 
 ```
 
-Or:
+Or
 
 ```
 $ free -h
 
 ```
+
+free also indicates if memory is running short, which can be remedied by enabling swap or increasing swap.
 
 **Note:** There is no performance advantage to either a contiguous swap file or a partition, both are treated the same way.
 
@@ -204,7 +208,7 @@ See [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swa
 
 ## Performance
 
-Swap operations are usually significantly slower than directly accessing data in RAM. Disabling swap entirely to improve performance can sometimes lead to a degradation, since it decreases the memory available for VFS caches, causing more frequent and costly disk I/O. Increasing swap space can be a remediation for frequent [out of memory](https://en.wikipedia.org/wiki/Out_of_memory "wikipedia:Out of memory") conditions, where the Linux kernel OOM killer mechanism will automatically attempt to free up memory by killing processes.
+Swap operations are usually significantly slower than directly accessing data in RAM. Disabling swap entirely to improve performance can sometimes lead to a degradation, since it decreases the memory available for VFS caches, causing more frequent and costly disk I/O.
 
 Swap values can be adjusted to help performance:
 

@@ -722,7 +722,7 @@ Furthermore, NetworkManager needs to be configured not to store the password for
 
 #### Using KDE Wallet
 
-Using KDE's [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm), click the applet, click on the top right `Settings` icon, double click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
+Using KDE's [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm), click the applet, click on the top right `Settings` icon, click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
 
 If the option was selected previously and you un-tick it, you may have to use the `reset` option first to make the password disappear from the file. Alternatively, delete the connection first and set it up again.
 

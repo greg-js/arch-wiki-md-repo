@@ -24,9 +24,13 @@ The [XDG MIME Applications specification](https://specifications.freedesktop.org
 
 ## Shared MIME database
 
-The system maintains a database of recognized MIME types: the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). The database is built from the XML files installed by packages in `/usr/share/mime/packages` using the tools from [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info).
+The [XDG Shared MIME-info Database specification](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html) facilitates a shared MIME database across desktop environments and allows applications to easily register new MIME types system-wide.
+
+The database is built from the XML files installed by packages in `/usr/share/mime/packages/` using the tools from [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info).
 
 The files in `/usr/share/mime/` should not be directly edited, however it is possible to maintain a separate database on a per-user basis in the `~/.local/share/mime/` tree.
+
+"URI scheme handling [..] are handled through applications handling the `x-scheme-handler/foo mime-type`, where foo is the URI scheme in question."[[1]](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#idm140625828587776)
 
 ### New MIME types
 
@@ -73,7 +77,7 @@ The [XDG standard](https://specifications.freedesktop.org/mime-apps-spec/mime-ap
 
 Additionally, it is possible to define [desktop environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [Xfce](/index.php/Xfce "Xfce"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
 
-**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it `$ ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list` . Note that the symlink must be in this direction because [#xdg-utils](#xdg-utils) deletes and recreates `~/.config/mimeapps.list` when it writes to it, which will break any symbolic/hard links
+**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it `$ ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list` . Note that the symlink must be in this direction because [xdg-utils](/index.php/Xdg-utils "Xdg-utils") deletes and recreates `~/.config/mimeapps.list` when it writes to it, which will break any symbolic/hard links
 
 **Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
 

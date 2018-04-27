@@ -398,7 +398,7 @@ To find and play audio straight from your terminal with `mm "*search terms*"` pu
 
 ```
 function mm() {
-    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch:"$@"
+    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$@"
 }
 
 ```

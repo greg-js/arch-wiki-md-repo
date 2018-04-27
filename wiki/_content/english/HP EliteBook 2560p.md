@@ -41,9 +41,9 @@ The model of fingerprint sensor in this laptop does not have available Linux dri
 
 ### Cardreader
 
-If the cardreader does not detect the inserted card, try running the following command as root:
+If the cardreader does not detect the inserted card, try running the following command:
 
 ```
-# echo 1 | tee /sys/bus/pci/rescan
+echo 1 | sudo tee /sys/bus/pci/rescan
 
 ```

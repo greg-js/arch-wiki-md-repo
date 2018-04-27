@@ -223,19 +223,19 @@ Use `mdadm` to build the array. See [mdadm(8)](https://jlk.fjfi.cvut.cz/arch/man
 *   If this is a RAID1 array which is intended to boot from [Syslinux](/index.php/Syslinux "Syslinux") a limitation in syslinux v4.07 requires the metadata value to be 1.0 rather than the default of 1.2.
 *   When creating an array from [Arch installation medium](/index.php/Archiso "Archiso") use the option `--homehost=*myhostname*` (or `--homehost=any` to always have the same name regardless of the host) to set the [hostname](/index.php/Hostname "Hostname"), otherwise the hostname `archiso` will be written in the array metadata.
 
-**Tip:** You can specify a custom raid device name using the option `--name=*myraidname*` or by setting the raid device path to `/dev/md/*myraidname*`. Udev will create symlinks to the raid arrays in `/dev/md/` using that name. If `homehost` matches the current [hostname](/index.php/Hostname "Hostname") (or if homehost is set to `any`) the link will be `/dev/md/*name*`, if the hostname does not match the link be `/dev/md/*homehost*:*name*`.
+**Tip:** You can specify a custom raid device name using the option `--name=*MyRAIDName*` or by setting the raid device path to `/dev/md/*MyRAIDName*`. Udev will create symlinks to the raid arrays in `/dev/md/` using that name. If `homehost` matches the current [hostname](/index.php/Hostname "Hostname") (or if homehost is set to `any`) the link will be `/dev/md/*name*`, if the hostname does not match the link be `/dev/md/*homehost*:*name*`.
 
 The following example shows building a 2-device RAID1 array:
 
 ```
-# mdadm --create --verbose --level=1 --metadata=1.2 --raid-devices=2 /dev/md/myraid1array /dev/sdb1 /dev/sdc1
+# mdadm --create --verbose --level=1 --metadata=1.2 --raid-devices=2 /dev/md/MyRAID1Array /dev/sdb1 /dev/sdc1
 
 ```
 
 The following example shows building a RAID5 array with 4 active devices and 1 spare device:
 
 ```
-# mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=4 /dev/md/myraid5array /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1 --spare-devices=1 /dev/sdf1
+# mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=4 /dev/md/MyRAID5Array /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1 --spare-devices=1 /dev/sdf1
 
 ```
 
@@ -244,7 +244,7 @@ The following example shows building a RAID5 array with 4 active devices and 1 s
 The following example shows building a RAID10,far2 array with 2 devices:
 
 ```
-# mdadm --create --verbose --level=10 --metadata=1.2 --chunk=512 --raid-devices=2 --layout=f2 /dev/md/myraid10array /dev/sdb1 /dev/sdc1
+# mdadm --create --verbose --level=10 --metadata=1.2 --chunk=512 --raid-devices=2 --layout=f2 /dev/md/MyRAID10Array /dev/sdb1 /dev/sdc1
 
 ```
 
@@ -281,7 +281,7 @@ This results in something like the following:
 ...
 DEVICE partitions
 ...
-ARRAY /dev/md/myraid1array metadata=1.2 name=pine:myraid1array UUID=27664f0d:111e493d:4d810213:9f291abe
+ARRAY /dev/md/MyRAID1Array metadata=1.2 name=pine:MyRAID1Array UUID=27664f0d:111e493d:4d810213:9f291abe
 ```
 
 This also causes mdadm to examine the devices referenced by `/proc/partitions`. However, only devices that have superblocks with a UUID of `27664…` are assembled in to active arrays.
@@ -458,7 +458,7 @@ See also [mkinitcpio#Using RAID](/index.php/Mkinitcpio#Using_RAID "Mkinitcpio").
 Point the `root` parameter to the mapped device. E.g.:
 
 ```
-root=/dev/md/*homehost*:*myraidarray*
+root=/dev/md/*MyRAIDArray*
 
 ```
 

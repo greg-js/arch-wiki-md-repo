@@ -648,7 +648,7 @@ Make some free space on the relevant filesystem and X will start.
 
 ### Rootless Xorg
 
-Xorg may run with standard user privileges with the help of `logind`. The requirements for this are:
+Xorg may run with standard user privileges with the help of [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8)[[3]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights)[[4]](https://bugs.archlinux.org/task/41257). The requirements for this are:
 
 *   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
 *   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
@@ -670,7 +670,7 @@ exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
 ### A green screen whenever trying to watch a video
 

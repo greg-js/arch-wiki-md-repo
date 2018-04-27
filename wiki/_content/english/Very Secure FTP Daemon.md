@@ -494,7 +494,7 @@ listen=NO
 
 as mentioned on the vsftpd faq page, "...built-in sandboxing uses network isolation on Linux. This may be interfering with any module that needs to use the network to perform operations or lookups"
 
-add this undocumented line to your /etc/vsftpd.conf
+add this undocumented line to your `/etc/vsftpd.conf`
 
 ```
 isolate_network=NO

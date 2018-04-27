@@ -45,9 +45,10 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
 *   [3 Optimización](#Optimizaci.C3.B3n)
     *   [3.1 Velocidades de acceso a la base de datos](#Velocidades_de_acceso_a_la_base_de_datos)
     *   [3.2 Velocidades de descarga](#Velocidades_de_descarga)
-    *   [3.3 Powerpill](#Powerpill)
-    *   [3.4 Wget](#Wget)
-    *   [3.5 Aria2](#Aria2)
+        *   [3.2.1 Powerpill](#Powerpill)
+        *   [3.2.2 Wget](#Wget)
+        *   [3.2.3 Aria2](#Aria2)
+        *   [3.2.4 Otras aplcaciones](#Otras_aplcaciones)
 *   [4 Utilidades](#Utilidades)
     *   [4.1 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
 
@@ -75,7 +76,7 @@ Para obtener una lista de paquetes instalados ordenados por tamaño, lo que pued
 *   Instalar [expac](https://www.archlinux.org/packages/?name=expac) y ejecutar `expac -H M '%m\t%n' | sort -h`.
 *   Ejecute [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) con la opción `-c` .
 
-Para crear un listado de paquetes y su tamaño (deje packages en blanco para listar todos los paquetes):
+Para crear un listado de paquetes y su tamaño (deje *packages* en blanco para listar todos los paquetes):
 
 ```
  $ expac -S -H M '%k \ t%n' *packages*
@@ -116,7 +117,7 @@ Lista los paquetes explícitamente instalados que no están en los grupos de [ba
 
 ```
 
-Enumere todos los paquetes instalados no requeridos por otros paquetes y que no estén en los grupos de [base](https://www.archlinux.org/groups/x86_64/base/) o de [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) :
+Lista de todos los paquetes instalados no requeridos por otros paquetes y que no estén en los grupos de [base](https://www.archlinux.org/groups/x86_64/base/) o de [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) :
 
 ```
  $ comm -23 <(pacman -Qqt | sort) <(pacman -Sqg base base-devel | sort)
@@ -237,7 +238,7 @@ Si desea realizar una copia de seguridad de los archivos de configuración del s
 
 Ejecutar este comando con permisos de root asegurará que los archivos sólo pueden ser leídos por root (por ejemplo `/etc/sudoers`) están incluidos en la salida.
 
-**Tip:** Mire [#Listado de todos los archivos modificados de los paquetes](#Listado_de_todos_los_archivos_modificados_de_los_paquetes) para listar todos los archivos modificados que conoce *pacman* , no sólo los archivos de copia de seguridad.
+**Sugerencia:** Mire [#Listado de todos los archivos modificados de los paquetes](#Listado_de_todos_los_archivos_modificados_de_los_paquetes) para listar todos los archivos modificados que conoce *pacman* , no sólo los archivos de copia de seguridad.
 
 ### Copia de seguridad de la base de datos de pacman
 
@@ -250,7 +251,7 @@ $ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
 
 Almacene el archivo de base de datos de respaldo *pacman* en uno o más medios sin conexión, como una memoria USB, disco duro externo o CD-R.
 
-La base de datos se puede restaurar moviendo el`pacman_database.tar.bz2` archivo en el `/` directorio y ejecutando el siguiente comando :
+La base de datos se puede restaurar moviendo el archivo `pacman_database.tar.bz2` en el `/` directorio y ejecutando el siguiente comando :
 
 ```
 # tar -xjvf pacman_database.tar.bz2
@@ -259,7 +260,7 @@ La base de datos se puede restaurar moviendo el`pacman_database.tar.bz2` archivo
 
 **Nota:** Si los archivos de la base de datos *pacman* están dañados y no hay un archivo de respaldo disponible, existe la esperanza de reconstruir la base de datos *pacman* . Consultar [#Restore pacman's local database](#Restore_pacman.27s_local_database).
 
-**Tip:** El paquete [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) proporciona una secuencia de comandos y un servicio en [systemd](/index.php/Systemd "Systemd") para automatizar la tarea. La configuración es posible en `/etc/pakbak.conf`.
+**Sugerencia:** El paquete [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) proporciona una secuencia de comandos y un servicio en [systemd](/index.php/Systemd "Systemd") para automatizar la tarea. La configuración es posible en `/etc/pakbak.conf`.
 
 ### Verifique registros de cambios fácilmente
 
@@ -318,7 +319,7 @@ $ repo-add */path/to/repo.db.tar.gz /path/to/package-1.0-1-x86_64.pkg.tar.xz*
 
 ```
 
-**Nota:** Una base de datos de paquetes es un archivo tar, opcionalmente comprimido. Las extensiones válidas son *.db* o *.files* seguidas por una extensión de archivo de *.tar* , *.tar.gz* , *.tar.bz2* , *. tar.xz* o *.tar.z* . El archivo no necesita existir, pero todos los directorios principales deben existir.
+**Nota:** Una base de datos de paquetes es un archivo tar, opcionalmente comprimido. Las extensiones válidas son *.db* o *.files* seguidas por una extensión de archivo de *.tar* , *.tar.gz* , *.tar.bz2* , *. tar.xz* o *.tar.z* . No es necesario que exista el fichero, pero deben existir todos los directorios principales.
 
 La base de datos y los paquetes no necesitan estar en el mismo directorio cuando se utiliza *repo-add* , pero tenga en cuenta que cuando se usa *pacman* con esa base de datos, deben estar juntos. Almacenar todos los paquetes construidos para ser incluidos en el repositorio en un directorio también permite usar la expansión shell glob para añadir o actualizar múltiples paquetes a la vez:
 
@@ -569,7 +570,7 @@ Imprimirá el nombre del programa en ejecución y la biblioteca antigua que se e
 
 ### Velocidades de acceso a la base de datos
 
-Pacman almacena toda la información del paquete en una colección de archivos pequeños, uno para cada paquete. La mejora de las velocidades de acceso a la base de datos reduce el tiempo empleado en las tareas relacionadas con la base de datos, por ejemplo, buscar paquetes y resolver las dependencias del paquete. El método más seguro y fácil es ejecutarlo como root:
+*Pacman* almacena toda la información del paquete en una colección de archivos pequeños, uno para cada paquete. La mejora de las velocidades de acceso a la base de datos reduce el tiempo empleado en las tareas relacionadas con la base de datos, por ejemplo, buscar paquetes y resolver las dependencias del paquete. El método más seguro y fácil es ejecutarlo como root:
 
 ```
  # pacman-optimize
@@ -585,18 +586,24 @@ Esto intentará poner todos los archivos pequeños juntos en una ubicación (fí
 
 ### Velocidades de descarga
 
-Nota: Si las velocidades de descarga se han reducido a un rastreo, asegúrese de que está utilizando uno de los muchos espejos y no ftp.archlinux.org, que se estrangula desde marzo de 2007 . Al descargar paquetes pacman usa los espejos en el orden en que están en /etc/pacman.d/mirrorlist . El espejo que está en la parte superior de la lista por defecto, sin embargo, puede no ser el más rápido para usted. Para seleccionar un espejo más rápido, consulte Espejos . La velocidad de Pacman en la descarga de paquetes también puede ser mejorada mediante el uso de una aplicación diferente para descargar paquetes, en lugar del descargador de archivos integrado de Pacman. En todos los casos, asegúrese de tener la última Pacman antes de hacer cualquier modificación.
+**Nota:** Si las velocidades de descarga se han reducido a un rastreo, asegúrese de que está utilizando uno de los muchos [mirrors](/index.php/Mirrors "Mirrors") y no ftp.archlinux.org, que se estrangula desde marzo de 2007.
+
+Al descargar paquetes *pacman* usa los espejos en el orden en que están en `/etc/pacman.d/mirrorlist` . El espejo que está en la parte superior de la lista por defecto, sin embargo, puede no ser el más rápido para usted. Para seleccionar un espejo más rápido, consulte [Mirrors](/index.php/Mirrors "Mirrors").
+
+La velocidad de *pacman* en la descarga de paquetes también puede ser mejorada mediante el uso de una aplicación diferente para descargar paquetes, en lugar del descargador de archivos integrado de *pacman*.
+
+En todos los casos, asegúrese de tener la última *pacman* antes de hacer cualquier modificación.
 
 ```
  # pacman -Syu
 
 ```
 
-### Powerpill
+#### Powerpill
 
-Powerpill es un envoltorio de Pacman que utiliza la descarga paralela y segmentada para tratar de acelerar las descargas de Pacman.
+[Powerpill](/index.php/Powerpill "Powerpill") es un envoltorio de Pacman que utiliza la descarga paralela y segmentada para tratar de acelerar las descargas de Pacman.
 
-### Wget
+#### Wget
 
 Esto también es muy útil si necesita configuraciones proxy más potentes que las capacidades incorporadas de pacman.
 
@@ -609,27 +616,36 @@ Para usar wget , primero instale el paquete wget y luego modifique /etc/pacman.c
 
 En lugar de descomentar los parámetros de wget en /etc/pacman.conf , también puede modificar el archivo de configuración de wget directamente (el archivo de todo el sistema es /etc/wgetrc , por usuario los archivos son $HOME/.wgetrc .
 
-### Aria2
+#### Aria2
 
-Aria2 es una utilidad de descarga de peso ligero con soporte para HTTP / HTTPS y transferencias directas continuas y segmentadas. Aria2 permite múltiples y simultáneas conexiones HTTP / HTTPS y FTP a un espejo de Arch, lo que debería resultar en un aumento en las velocidades de descarga para la recuperación de archivos y paquetes.
+[aria2](/index.php/Aria2 "Aria2") es una utilidad de descarga de peso ligero con soporte para HTTP / HTTPS y transferencias directas continuas y segmentadas. Aria2 permite múltiples y simultáneas conexiones HTTP / HTTPS y FTP a un espejo de Arch, lo que debería resultar en un aumento en las velocidades de descarga para la recuperación de archivos y paquetes.
 
-Nota: El uso de aria2c en XferCommand de Pacman no dará lugar a descargas paralelas de varios paquetes. Pacman invoca el XferCommand con un solo paquete a la vez y espera a que se complete antes de invocar el siguiente. Para descargar varios paquetes en paralelo, consulte Powerpill.
+**Nota:** El uso de aria2c en XferCommand de *pacman* *no* dará lugar a descargas paralelas de varios paquetes. Pacman invoca el XferCommand con un solo paquete a la vez y espera a que se complete antes de invocar el siguiente. Para descargar varios paquetes en paralelo, consulte [Powerpill](/index.php/Powerpill "Powerpill").
 
-Instale aria2 y luego edite /etc/pacman.conf agregando la siguiente línea a la sección [options] :
+Instale [aria2](https://www.archlinux.org/packages/?name=aria2) y luego edite `/etc/pacman.conf` agregando la siguiente línea a la sección `[options]` :
 
 ```
  XferCommand = / usr / bin / aria2c --allow-overwrite = true --continue = true --file-allocation = ninguno --log-level = error --max-tries = 2 --max-connection-per-server = 2 --max-file-not-found = 5 --min-split-size = 5M --no-conf --remote-time = true --summary-interval = 60 --timeout = 5 --dir = / --out% o% u
 
 ```
 
-Sugerencia: Esta configuración alternativa para usar pacman con aria2 intenta simplificar la configuración y añade más opciones de configuración.
+**Sugerencia:** [Esta configuración alternativa para usar *pacman* con aria2](https://bbs.archlinux.org/viewtopic.php?pid=1491879#p1491879) intenta simplificar la configuración y añade más opciones de configuración.
 
-Vea OPCIONES en man aria2c para las opciones de aria2c usadas.
+Vea [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) en [aria2c(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) para usar las configuraciones de aria2\.
 
-*   -d, --dir : El directorio para almacenar los archivos descargados según lo especificado por pacman .
-*   -o, --out : El nombre de archivo de salida del archivo (s) descargado (s).
-*   %o : Variable que representa el nombre de archivo local especificado por pacman.
-*   %u : Variable que representa la URL de descarga especificada por pacman.
+*   `-d, --dir`: El directorio para almacenar los archivos descargados según lo especificado por *pacman* .
+*   `-o, --out`: El nombre de archivo de salida del archivo (s) descargado (s).
+*   `%o`: Variable que representa el nombre de archivo local especificado por *pacman*.
+*   `%u`: Variable que representa la URL de descarga especificada por *pacman*.
+
+#### Otras aplcaciones
+
+Hay otras aplicaciones de descarga que puede usar con *pacman* . Aquí están, y su configuración asociada de XferCommand
+
+*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
+*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
+*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (por favor lea [documentation on the Github project page](https://github.com/huydx/hget) for para mas información)
 
 ## Utilidades
 

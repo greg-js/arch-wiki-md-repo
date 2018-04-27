@@ -11,14 +11,15 @@ This article explains how to install and configure a simple [OpenSMTPD](https://
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Local mail](#Local_mail)
-        *   [2.1.1 Local-only](#Local-only)
-    *   [2.2 Hybrid : local mail and relay](#Hybrid_:_local_mail_and_relay)
-    *   [2.3 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
-        *   [2.3.1 Create encryption keys](#Create_encryption_keys)
-        *   [2.3.2 Create user accounts](#Create_user_accounts)
-        *   [2.3.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
-        *   [2.3.4 Create tables](#Create_tables)
-    *   [2.4 Test the configuration](#Test_the_configuration)
+        *   [2.1.1 Local mail only](#Local_mail_only)
+        *   [2.1.2 Hybrid : local mail and relay](#Hybrid_:_local_mail_and_relay)
+        *   [2.1.3 Relay only](#Relay_only)
+    *   [2.2 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
+        *   [2.2.1 Create encryption keys](#Create_encryption_keys)
+        *   [2.2.2 Create user accounts](#Create_user_accounts)
+        *   [2.2.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
+        *   [2.2.4 Create tables](#Create_tables)
+    *   [2.3 Test the configuration](#Test_the_configuration)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Console debugging](#Console_debugging)
     *   [3.2 Subsystem tracing](#Subsystem_tracing)
@@ -39,11 +40,11 @@ OpenSMTPD is configured in `/etc/smtpd`.
 
 To have local mail working, for example for [cron](/index.php/Cron "Cron") mails, it is enough to simply [start](/index.php/Start "Start") `smtpd.service`.
 
-The default configuration of OpenSMTPD is to do local retrieval and delivery of mail, and also relay outgoing mail. See [smtpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smtpd.conf.5).
+The default configuration of OpenSMTPD is to do local retrieval and delivery of mail, and also relay outgoing mail. See [smtpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smtpd.conf.5).
 
-#### Local-only
+#### Local mail only
 
-To do local-only mail, the following is enough:
+To do only local mail, the following is enough:
 
  `/etc/smtpd/smtpd.conf` 
 ```
@@ -52,7 +53,7 @@ accept for local alias <aliases> deliver to mbox
 
 ```
 
-### Hybrid : local mail and relay
+#### Hybrid : local mail and relay
 
 These two lines in `/etc/smtpd/smtpd.conf` :
 
@@ -69,6 +70,25 @@ configure OpenSMTPD to :
 *   use a relay to send a mail outside of localhost
 
 Simply replace *smtp.foo.bar* by your ISP mail server, or another server at your convenience.
+
+#### Relay only
+
+To send all local emails through a relay invoke [procmail](/index.php/Procmail "Procmail"):
+
+ `/etc/smtpd/smtpd.conf` 
+```
+accept from local for local virtual <aliases> deliver to mda "procmail -f -"
+accept from local for any relay via smtps+auth://label@smtp.foo.bar:465 auth <secrets> as "foo@bar"
+
+```
+
+The aliases option is used for the local user mapping, for a simplified mapping you can use virtual aliases with a catch all:
+
+ `/etc/smtpd/aliases` 
+```
+@ foo@bar
+
+```
 
 ### Simple OpenSMTPD/mbox configuration
 

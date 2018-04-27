@@ -118,4 +118,4 @@ The stoqserver communicates with the computer via a serial connection or a seria
 
 ## Additional documentation
 
-Therefore, reading the [wiki](https://wiki.stoq.com.br) and the [manual](https://doc.stoq.com.br/manual/latest/) of Stoq (only in Portuguese).
+Therefore, reading the [wiki](https://wiki.stoq.com.br/index.php/Getting_started) and the [manual](https://doc.stoq.com.br/manual/latest/) of Stoq (manual only in Portuguese).

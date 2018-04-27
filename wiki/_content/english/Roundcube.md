@@ -79,6 +79,21 @@ $config['enable_installer'] = true;
 
 ```
 
+For roundcube to be able to detect mime-types from filename extensions you need to point it to a mime.types file. Apache usually comes with one.
+
+```
+# cp /etc/httpd/conf/mime.types /etc/webapps/roundcubemail/config/mime.types
+# chown http:http /etc/webapps/roundcubemail/config/mime.types
+
+```
+ `/etc/webapps/roundcubemail/config/config.inc.php` 
+```
+$config['mime_types'] = '/etc/webapps/roundcubemail/config/mime.types';
+
+```
+
+If you are not using Apache, check the information available in /etc/webapps/roundcubemail/config/defaults.inc.php .
+
 ### PHP
 
 Make sure to adjust following variables to these minimal values in your PHP config:

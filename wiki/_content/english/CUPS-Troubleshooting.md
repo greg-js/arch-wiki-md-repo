@@ -22,6 +22,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [4.1 Conflict with SANE](#Conflict_with_SANE)
     *   [4.2 Conflict with usblp](#Conflict_with_usblp)
     *   [4.3 USB autosuspend](#USB_autosuspend)
+    *   [4.4 Bad permissions](#Bad_permissions)
 *   [5 HP issues](#HP_issues)
     *   [5.1 CUPS: "/usr/lib/cups/backend/hp failed"](#CUPS:_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
     *   [5.2 CUPS: Job is shown as complete but the printer does nothing](#CUPS:_Job_is_shown_as_complete_but_the_printer_does_nothing)
@@ -29,10 +30,9 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [5.4 CUPS: "Filter failed"](#CUPS:_.22Filter_failed.22)
         *   [5.4.1 Missing ghostscript](#Missing_ghostscript)
         *   [5.4.2 Missing foomatic-db](#Missing_foomatic-db)
-        *   [5.4.3 Bad permissions](#Bad_permissions)
-        *   [5.4.4 Avahi not enabled](#Avahi_not_enabled)
-        *   [5.4.5 Out-of-date plugin](#Out-of-date_plugin)
-        *   [5.4.6 Outdated printer configuration](#Outdated_printer_configuration)
+        *   [5.4.3 Avahi not enabled](#Avahi_not_enabled)
+        *   [5.4.4 Out-of-date plugin](#Out-of-date_plugin)
+        *   [5.4.5 Outdated printer configuration](#Outdated_printer_configuration)
     *   [5.5 CUPS: prints only an empty and an error-message page on HP LaserJet](#CUPS:_prints_only_an_empty_and_an_error-message_page_on_HP_LaserJet)
     *   [5.6 HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not](#HPLIP_3.13:_Plugin_is_installed.2C_but_HP_Device_Manager_complains_it_is_not)
     *   [5.7 hp-toolbox: "Unable to communicate with device"](#hp-toolbox:_.22Unable_to_communicate_with_device.22)
@@ -217,6 +217,42 @@ usb 3-2: configuration #1 chosen from 1 choice
 
 The Linux kernel automatically suspends USB devices when there is driver support and the devices are not in use. This can save power, but some USB printers think that they are disconnected when the kernel suspends the USB port, preventing printing. This can be fixed by deactivating autosuspend for the specific device, see [Power management#USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management").
 
+### Bad permissions
+
+Check the permissions of the printer USB device. Get the bus and device number from `lsusb`:
+
+ ` lsusb `  ` Bus <BUSID> Device <DEVID>: ID <PRINTERID>:<VENDOR> Hewlett-Packard DeskJet D1360` 
+
+Check the ownership by looking in devfs:
+
+```
+ # ls -l /dev/bus/usb/<BUSID>/<DEVID>
+
+```
+
+The cups daemon runs as user "cups" and belongs to group "lp", so either this user or group needs read & write access to the USB device. If you think the permissions look wrong, you can change the group and permission temporarily:
+
+```
+# chgrp lp /dev/bus/usb/<BUSID>/<DEVID>
+# chmod 664 /dev/bus/usb/<BUSID>/<DEVID>
+
+```
+
+Then check if cups can now see the USB device correctly.
+
+To make a persistent permission change that will be triggered automatically each time the USB device is attached, add the following line:
+
+ `/etc/udev/rules.d/10-local.rules`  `SUBSYSTEM=="usb", ATTRS{idVendor}=="<VENDOR>", ATTRS{idProduct}=="<PRINTERID>", GROUP:="lp", MODE:="0664"` 
+
+After editing, reload the udev rules with this command:
+
+```
+# udevadm control --reload-rules
+
+```
+
+Each system may vary, so consult [udev#List attributes of a device](/index.php/Udev#List_attributes_of_a_device "Udev") wiki page.
+
 ## HP issues
 
 See also [CUPS/Printer-specific problems#HP](/index.php/CUPS/Printer-specific_problems#HP "CUPS/Printer-specific problems").
@@ -269,25 +305,6 @@ Install [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) (`/u
 #### Missing foomatic-db
 
 Install [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) and [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds). This fixes it in some cases.
-
-#### Bad permissions
-
-Change the permissions of the printer USB port. Get the bus and device number from `lsusb`, then set the permission using:
-
- ` lsusb `  ` Bus <BUSID> Device <DEVID>: ID <PRINTERID>:<VENDOR> Hewlett-Packard DeskJet D1360` 
-
-Then substitute the provided device information to the
-
-```
-# chmod 0666 /dev/bus/usb/<BUSID>/<DEVID>
-
-```
-
-To make the persistent permission change that will be triggered automatically each time the computer is rebooted, add the following line.
-
- `/etc/udev/rules.d/10-local.rules`  `SUBSYSTEM=="usb", ATTRS{idVendor}=="<VENDOR>", ATTRS{idProduct}=="<PRINTERID>", GROUP="lp", MODE:="666"` 
-
-Each system may vary, so consult [udev#List attributes of a device](/index.php/Udev#List_attributes_of_a_device "Udev") wiki page.
 
 #### Avahi not enabled
 

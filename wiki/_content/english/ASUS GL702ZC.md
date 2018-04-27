@@ -10,8 +10,8 @@ You need to set the permissions for the `/sys/class/backlight/amdgpu_bl0/brightn
 ```
 ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
 ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
-ACTION=="add", SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
-ACTION=="add", SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", RUN+="/bin/chgrp video /sys/class/leds/%k/brightness"
+ACTION=="add", SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", RUN+="/bin/chmod g+w /sys/class/leds/%k/brightness"
 
 ```
 
@@ -19,7 +19,7 @@ Then adding the user to the `video` group. [brightnessctl](https://aur.archlinux
 
 ## Fans
 
-Haven't checked yet, but seemingly works fine.
+Fans don't have OS control, and handled by ACPI. Upshot is works out of the box, downside is can't configure them.
 
 ## Troubleshooting
 

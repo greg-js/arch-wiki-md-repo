@@ -49,11 +49,16 @@ A detailed accounting of what features have been implemented and what features a
 
 You can start sway by simply typing `sway` from your TTY. To start on login to tty1, add the following to your `.bash_profile`, in this example with swiss keyboard:
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then XKB_DEFAULT_LAYOUT=ch exec sway fi
+```
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  XKB_DEFAULT_LAYOUT=ch exec sway
+fi
+
+```
 
 ### Using a display manager
 
-**Note:** Sway does not support display managers officially
+**Note:** Sway does not support display managers officially.
 
 The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by modern display managers like [GDM](/index.php/GDM "GDM") and [SDDM](/index.php/SDDM "SDDM").
 
