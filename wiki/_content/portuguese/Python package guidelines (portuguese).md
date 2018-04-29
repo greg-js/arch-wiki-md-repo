@@ -100,7 +100,7 @@ URL PyPI na forma `https://pypi.python.org/packages/source/${_name:0:1}/${_name}
 
 	Pacote wheel bilingual (compatível com Python 2 e Python 3)
 
-	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-$_name-$pkgver-py2.py3-none-any.whl`
+	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-py2.py3-none-any.whl`
 
 	Pacote wheel específico para arquitetura
 

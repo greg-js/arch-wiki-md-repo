@@ -156,13 +156,7 @@ As of kernel 3.1, appending `acpi_osi=Linux` to the kernel line in your bootload
 
 ## Wireless
 
-For BCM4313 there are the following drivers available:
-
-*   proprietary [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) driver or, its dkms version [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), both available in AUR.
-
-*   open source `brcm80211` driver directly included in the Linux kernel, since version 3.0.0 (recommended)
-
-In case you use the open source brcm80211 driver provided by Linux kernel, make sure you add `bcma` to a [blacklist](/index.php/Blacklist "Blacklist") file, otherwise you will have a conflict between drivers which will block the `brcm80211` driver and that will make your wireless card be unavailable.
+For BCM4313 it is required the proprietary driver [broadcom-wl](/index.php/Broadcom_wireless#broadcom-wl "Broadcom wireless").
 
 ## Bumblebee
 

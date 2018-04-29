@@ -506,7 +506,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Elisa** — A simple music player aiming to provide a nice experience for its users.
 
-	[https://community.kde.org/Elisa](https://community.kde.org/Elisa) || [elsia](https://www.archlinux.org/packages/?name=elsia)
+	[https://community.kde.org/Elisa](https://community.kde.org/Elisa) || [elisa](https://www.archlinux.org/packages/?name=elisa)
 
 *   **[Exaile](/index.php/Exaile "Exaile")** — GTK+ clone of Amarok.
 

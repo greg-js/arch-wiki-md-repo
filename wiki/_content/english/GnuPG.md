@@ -77,7 +77,7 @@ According to the [official website](https://www.gnupg.org/):
 
 [Install](/index.php/Install "Install") the [gnupg](https://www.archlinux.org/packages/?name=gnupg) package.
 
-This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. Which *pinentry* dialog is used is determined by the symbolic link `/usr/bin/pinentry`, which by default points to `/usr/bin/pinentry-gtk-2`.
+This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. The shell script `/usr/bin/pinentry` determines which *pinentry* dialog is used, in the order described at [#pinentry](#pinentry).
 
 If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
 
@@ -500,14 +500,15 @@ However in some cases only the restart may not be sufficient, like when `keep-sc
 
 Finally, the agent needs to know how to ask the user for the password. This can be set in the gpg-agent configuration file.
 
-The default uses a gtk dialog. There are other options - see `info pinentry`. To change the dialog implementation set `pinentry-program` configuration option:
+The default uses `/usr/bin/pinentry-gnome3`, falling back to `/usr/bin/pinentry-qt`, `/usr/bin/pinentry-gtk-2` and at last `/usr/bin/pinentry-curses` if none of the previous were functioning. However there are other options - see `info pinentry`. To change the dialog implementation set `pinentry-program` configuration option:
 
  `~/.gnupg/gpg-agent.conf` 
 ```
 
 # PIN entry program
-# pinentry-program /usr/bin/pinentry-curses
+# pinentry-program /usr/bin/pinentry-gnome3
 # pinentry-program /usr/bin/pinentry-qt
+# pinentry-program /usr/bin/pinentry-curses
 # pinentry-program /usr/bin/pinentry-kwallet
 
 pinentry-program /usr/bin/pinentry-gtk-2
@@ -802,9 +803,9 @@ and then change it back after using gpg the first time. The equivalent is likely
 
 ### Agent complains end of file
 
-The default pinentry program is pinentry-gtk-2, which needs a DBus session bus to run properly. See [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for details.
+The default pinentry program is `/usr/bin/pinentry-gnome3`, which needs a DBus session bus to run properly. See [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for details.
 
-Alternatively, you can use `pinentry-qt`. See [#pinentry](#pinentry).
+Alternatively, you can use a variety of different options described in [#pinentry](#pinentry).
 
 ### KGpg configuration permissions
 

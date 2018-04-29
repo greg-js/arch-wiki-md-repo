@@ -47,7 +47,7 @@ To enable oath for a specific service only, like ssh, you can edit the file /etc
 
 ```
 
-This will allow authentification if you just enter the right oath code. You can make it a requirement and let the rest of the pam stack be processed if you use the following line instead :
+This will allow authentication if you just enter the right oath code. You can make it a requirement and let the rest of the pam stack be processed if you use the following line instead :
 
 ```
  auth	  required pam_oath.so usersfile=/etc/users.oath window=30 digits=6
@@ -86,9 +86,9 @@ The last number is actually the code you can use to log in right now, but more i
 
 ```
 
-Of course change *user*, *machine* and *DK2DEFASV26A====* accordingly. Once done, you can visualize your qrcode with your prefered image visualizer application and use that to configure your phone. It is pretty straigh forward to use FreeOTP to then take a screenshot of that png and get it to display OTP pass when needed.
+Of course change *user*, *machine* and *DK2DEFASV26A====* accordingly. Once done, you can visualize your qrcode with your preferred image visualizer application and use that to configure your phone. It is pretty straight forward to use FreeOTP to then take a screenshot of that *.png* and get it to display OTP pass when needed.
 
-**Note:** The secret key of your users is the most important information in this system. Once you setup a phone to provide OTP, it does have that key. The qr code in that png file does have that key. You need to take extra care of this file. They should only be stored on encrypted medium (Your phone need to be using encryption for any sane level of security). If not even confined in a sandbox like Samsung Knox to prevent third party application to potentially access them.
+**Note:** The secret key of your users is the most important information in this system. Once you setup a phone to provide OTP, it does have that key. The qr code in that *.png* file does have that key. You need to take extra care of this file. They should only be stored on encrypted medium (Your phone need to be using encryption for any sane level of security). If not even confined in a sandbox like Samsung Knox to prevent third party application to potentially access them.
 
 ## See also
 

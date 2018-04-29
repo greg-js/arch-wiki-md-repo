@@ -174,7 +174,7 @@ To enable compression when installing Arch to an empty Btrfs partition, use the 
 
 **Tip:** Compression can also be enabled per-file without using the `compress` mount option; to do so apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
 
-**Note:**
+**Warning:**
 
 *   Systems using older kernels or [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) without `zstd` support may be unable to read or repair your filesystem if you use this option.
 *   [GRUB](/index.php/GRUB "GRUB") and [rEFInd](/index.php/REFInd "REFInd") currently lack support for *zstd*, either use a separate boot partition without *zstd* or reset compression of boot files to something supported using for example the command: `$ btrfs filesystem defragment -v -clzo /boot/*` 

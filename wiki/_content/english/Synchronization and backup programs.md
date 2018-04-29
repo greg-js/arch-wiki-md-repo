@@ -18,12 +18,8 @@ This page lists and compares applications that synchronize data between two or m
         *   [3.1.1 Chunk-based increments](#Chunk-based_increments)
         *   [3.1.2 File-based increments](#File-based_increments)
     *   [3.2 Network oriented](#Network_oriented)
-*   [4 Cloud storage](#Cloud_storage)
-    *   [4.1 Third-party services](#Third-party_services)
-        *   [4.1.1 Multi-service clients](#Multi-service_clients)
-    *   [4.2 Custom infrastructure](#Custom_infrastructure)
-*   [5 Version control systems](#Version_control_systems)
-*   [6 See also](#See_also)
+*   [4 Version control systems](#Version_control_systems)
+*   [5 See also](#See_also)
 
 ## Backup overview
 
@@ -38,7 +34,11 @@ Having backups of important data is a necessary measure to take, since human and
 
 These applications simply keep directories synchronized between multiple locations/machines, in a "mirror" fashion. Nonetheless, most of them still allow storing and reverting to old revisions of modified or deleted files.
 
-See also [Wikipedia:Comparison of file synchronization software](https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software "wikipedia:Comparison of file synchronization software").
+See also:
+
+*   [List of applications/Utilities#File synchronization](/index.php/List_of_applications/Utilities#File_synchronization "List of applications/Utilities")
+*   [List of applications/Internet#Cloud synchronization clients](/index.php/List_of_applications/Internet#Cloud_synchronization_clients "List of applications/Internet")
+*   [Wikipedia:Comparison of file synchronization software](https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software "wikipedia:Comparison of file synchronization software")
 
 **Legend:**
 
@@ -85,7 +85,12 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 
 Applications that can do incremental backups remember and take into account what data has been backed up during the last run (so-called "diffs") and eliminate the need to have duplicates of unchanged data. Restoring the data to a certain point in time would require locating the last full backup and all the incremental backups from then to the moment when it is supposed to be restored. This sort of backup is useful for those who do it very often.
 
-See also [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles").
+See also:
+
+*   [List of applications/Security#Backup programs](/index.php/List_of_applications/Security#Backup_programs "List of applications/Security")
+*   [Wikipedia:List of backup software](https://en.wikipedia.org/wiki/List_of_backup_software "wikipedia:List of backup software")
+*   [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software")
+*   [Wikipedia:Comparison of online backup services](https://en.wikipedia.org/wiki/Comparison_of_online_backup_services "wikipedia:Comparison of online backup services")
 
 **Legend:**
 
@@ -126,7 +131,7 @@ If a file is modified, these applications store only its changed *parts* at the 
 | [Duply](http://www.duply.net/) | [Duply](/index.php/Duply "Duply") | duplicity front-end | Yes | Yes | Yes | Yes |  ? | No | Yes | No | Yes | No | GPLv2 | Yes |
 | [Kup Backup System](http://kde-apps.org/content/show.php/Kup+Backup+System?content=147465) | [kup](https://www.archlinux.org/packages/?name=kup) | rsync, bup front-end | Yes | Yes | Yes | Yes | Immature | Yes | No | Yes | bup | Qt | GPLv2 | Yes |
 | [obnam](http://liw.fi/obnam/) | [obnam](https://aur.archlinux.org/packages/obnam/) | Python | Yes | GnuPG | Yes | Yes |  ? | Yes | checkpoints every 100MB |  ? | Yes | No | GPLv3 | No |
-| [restic](https://restic.github.io/) | [restic](https://www.archlinux.org/packages/?name=restic) [restic-git](https://aur.archlinux.org/packages/restic-git/) | Go | No [[27]](https://github.com/restic/restic/issues/21) | AES-256 [[28]](https://github.com/restic/restic/blob/master/doc/Design.md) | Yes | Yes |  ? | Yes[[29]](https://restic.readthedocs.io/en/stable/050_restore.html#restore-using-mount) |  ? | Yes | Yes |  ? | BSD | Yes |
+| [restic](https://restic.net/) | [restic](https://www.archlinux.org/packages/?name=restic) [restic-git](https://aur.archlinux.org/packages/restic-git/) | Go | No [[27]](https://github.com/restic/restic/issues/21) | AES-256 [[28]](https://github.com/restic/restic/blob/master/doc/Design.md) | Yes | Yes |  ? | Yes[[29]](https://restic.readthedocs.io/en/stable/050_restore.html#restore-using-mount) |  ? | Yes | Yes |  ? | BSD | Yes |
 | [ZBackup](http://zbackup.org/) | [zbackup](https://aur.archlinux.org/packages/zbackup/) | C++ | LZMA, LZO | AES | Yes | Yes |  ? | planned [[30]](https://github.com/zbackup/zbackup#improvements) | No | Kinda through tar | Yes | No | GPLv2 | Yes | Repository consists of immutable files. |
 
 #### File-based increments
@@ -169,214 +174,14 @@ These applications have been designed to centralize the backup of several machin
 | [Synbak](http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html) | [synbak](https://www.archlinux.org/packages/?name=synbak) | Multitool wrapper |  ? | Yes | No | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No | Web | GPLv3 | Yes | Unifies several backup methods. |
 | [UrBackup](https://www.urbackup.org) | [urbackup*](https://aur.archlinux.org/packages/?K=urbackup) in [AUR](/index.php/AUR "AUR") | C++ | Pull | No | No | Yes | Internet transfers only | Yes | Yes | Yes | Yes | file-based,hard-links and symlinks[[41]](http://blog.urbackup.org/156/symbolically-linking-directories-during-incremental-file-backups)/chunk-based CoW-Snapshots[[42]](http://blog.urbackup.org/83/file-backup-storage-with-btrfs-snapshots) | Yes (client) | GUI, Web | AGPLv3+ | Windows, macOS | Yes | Identical files across backups of the same or different clients are stored only once. Integrates with LVM, dattobd and btrfs for file system snapshots. |
 
-## Cloud storage
-
-### Third-party services
-
-See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.org/wiki/Comparison_of_online_backup_services "wikipedia:Comparison of online backup services") and [List of applications#Cloud synchronization clients](/index.php/List_of_applications#Cloud_synchronization_clients "List of applications").
-
-**Tip:** [cryptomator](https://aur.archlinux.org/packages/cryptomator/) is an open-source, multi-platform program designed to add client-side transparent encryption on cloud-shared files.
-
-*   **Amazon S3** — Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web. With Amazon S3, you pay only for the storage you actually use. There is no minimum fee and no setup cost.
-
-	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd) (high-level operations), [python-boto3](https://www.archlinux.org/packages/?name=python-boto3) (low-level API)
-
-*   **Backblaze B2** — An object-storage service similar to Amazon S3.
-
-	[https://www.backblaze.com/b2/cloud-storage-pricing.html](https://www.backblaze.com/b2/cloud-storage-pricing.html) ||
-
-*   **[CrashPlan](/index.php/CrashPlan "CrashPlan")** — An online/offsite backup solution.
-    *   Unlimited online space for very reasonable pricing.
-    *   Automatic and incremental backups to multiple destinations.
-    *   Intuitive GUI.
-    *   Offers encryption and de-duplication.
-    *   Software is free for local use.
-    *   Restore prevents simultaneous backing up
-
-	[http://www.crashplan.com/](http://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)
-
-*   **[Dropbox](/index.php/Dropbox "Dropbox")** — A popular file-sharing service.
-    *   A daemon monitors a specified directory, and uploads incremental changes to dropbox.com.
-    *   Changes automatically show up on your other computers.
-    *   Includes file sharing and a public directory.
-    *   You can recover deleted files.
-    *   Community written add-ons.
-    *   Free accounts have 2GB storage.
-
-	[http://www.dropbox.com](http://www.dropbox.com) || [dropbox](https://aur.archlinux.org/packages/dropbox/) [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/)
-
-*   **[Google Drive](https://en.wikipedia.org/wiki/Google_Drive "wikipedia:Google Drive")** — A file storage and synchronization service provided by Google.
-    *   Provides cloud storage, file sharing and collaborative editing.
-    *   Multiple clients are available.
-
-	[https://drive.google.com](https://drive.google.com) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/) (free), [drive](https://aur.archlinux.org/packages/drive/) (free), [grive](https://aur.archlinux.org/packages/grive/) (free), [gdrivefs](https://aur.archlinux.org/packages/gdrivefs/) (free), [insync](/index.php/Insync "Insync") (non-free), [gdrive](https://aur.archlinux.org/packages/gdrive/) (free), [drivesync-git](https://aur.archlinux.org/packages/drivesync-git/) (free)
-
-*   **[iDrive](https://en.wikipedia.org/wiki/IDrive_Inc. "wikipedia:IDrive Inc.")** — Universal Online Backup.
-    *   Multiple Device Backup.
-    *   Online File Sync.
-    *   Real-Time Backup.
-    *   Backup and Access from Mobile Devices.
-    *   Remote Manage.
-    *   No GUI Front end for Linux, command line based. A wrapper script is available to make it easier to use.
-
-	[https://www.idrive.com/](https://www.idrive.com/) ||
-
-*   **[Jungle Disk](https://en.wikipedia.org/wiki/Jungle_Disk "wikipedia:Jungle Disk")** — An online backup tool that stores its data in Amazon S3 or Rackspace Cloud Files.
-    *   A GNOME Files extension.
-    *   Only paid plans available.
-
-	[http://www.jungledisk.com/](http://www.jungledisk.com/) ||
-
-*   **[Mail.ru Cloud](https://en.wikipedia.org/wiki/Mail.Ru "wikipedia:Mail.Ru")** — Free cloud storage service created by Mail.ru.
-
-	[https://cloud.mail.ru/](https://cloud.mail.ru/) || [mailru-cloud](https://aur.archlinux.org/packages/mailru-cloud/)
-
-*   **[MEGA](https://en.wikipedia.org/wiki/Mega_(website) "wikipedia:Mega (website)")** — Successor to the MegaUpload file-sharing service.
-    *   Free accounts are 50GB with paid plans available for more space.
-    *   Offers encryption and de-duplication.
-    *   Usually accessed through its web interface but other tools exist.
-
-	[https://mega.co.nz](https://mega.co.nz) || [megatools](https://aur.archlinux.org/packages/megatools/), [megasync](https://aur.archlinux.org/packages/megasync/), [megafuse-git](https://aur.archlinux.org/packages/megafuse-git/)
-
-*   **Nutstore** — A cloud service that lets you sync and share files anywhere.
-    *   Multiple file folders sync.
-    *   Service for Chinese users.
-
-	[http://jianguoyun.com/](http://jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)
-
-*   **OneDrive** — Microsoft cloud service.
-
-	[https://onedrive.com](https://onedrive.com) || [onedrive-git](https://aur.archlinux.org/packages/onedrive-git/)
-
-*   **rsync.net** — Cloud storage for offsite backups.
-    *   ZFS filesystem, accessible with any SSH/SFTP/SCP/rsync tool, running on a UNIX system with [jailed shell access](http://www.rsync.net/resources/howto/remote_commands.html).
-    *   Simple rsync synchronization with daily automatic ZFS snapshots.
-    *   Native support for Attic and [borg](https://www.archlinux.org/packages/?name=borg) clients: [http://rsync.net/products/attic.html](http://rsync.net/products/attic.html)
-
-	[http://www.rsync.net/](http://www.rsync.net/) || [rsync](/index.php/Rsync "Rsync")/[SSH](/index.php/SSH "SSH"), [borg](https://www.archlinux.org/packages/?name=borg)
-
-*   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak")** — An online backup tool for Windows, Mac and Linux users to back up, share, sync, access and store their data.
-    *   Free account holds 2GB as a 60-day trial.
-    *   Includes file sharing and a public directory.
-    *   Incremental backup and sync are both supported.
-
-	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
-
-*   **[Storage Made Easy](https://en.wikipedia.org/wiki/Storage_Made_Easy "wikipedia:Storage Made Easy")** — Provides unified access to numerous cloud storage services, as well as its own storage.
-    *   Free and paid version available.
-    *   Free account holds 5GB and allows access to up to three other cloud storage providers.
-    *   Supports local directory via fuse, as well as web access.
-    *   Supports many cloud storage services, such as Box, Dropbox, Google Drive, Onedrive, and others.
-
-	[http://storagemadeeasy.com/](http://storagemadeeasy.com/) ||
-
-*   **[Tarsnap](https://en.wikipedia.org/wiki/Tarsnap "wikipedia:Tarsnap")** — A secure online backup service for Linux, BSD, macOS and Windows (through Cygwin).
-    *   Compressed encrypted backups to Amazon S3 Servers.
-    *   Automate via [cron](/index.php/Cron "Cron").
-    *   Incremental backups.
-    *   Backup any files or directories.
-    *   Command line only client.
-    *   Pay only for usage (bandwidth and storage).
-
-	[http://www.tarsnap.com](http://www.tarsnap.com) || [tarsnap](https://www.archlinux.org/packages/?name=tarsnap)
-
-*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Free cloud storage service created by Yandex.ru that gives you access to your photos, videos and documents from any internet-enabled device.
-
-	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)
-
-#### Multi-service clients
-
-*   **[Déjà Dup](/index.php/D%C3%A9j%C3%A0_Dup "Déjà Dup")** — A simple GTK+ backup program. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses duplicity as the backend.
-    *   Automatic, timed backup configurable in GUI.
-    *   Restore wizard.
-    *   Integrated into the GNOME Files file manager.
-    *   Inherits several features of duplicity.
-
-	[https://launchpad.net/deja-dup](https://launchpad.net/deja-dup) || [deja-dup](https://www.archlinux.org/packages/?name=deja-dup)
-
-*   **Duplicati** — Backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It works with Amazon S3, Windows Live SkyDrive, Google Drive (Google Docs), Rackspace Cloud Files or WebDAV, SSH, FTP (and many more). Duplicati is open source and free.
-
-	[http://www.duplicati.com/](http://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)
-
-*   **[Duplicity](/index.php/Duplicity "Duplicity")** — A simple command-line utility which allows encrypted compressed incremental backup to nearly any storage.
-    *   Supports gpg encryption and signing.
-    *   Supports gzip compression.
-    *   Supports full or incremental backups, incremental backup stores only difference between new and old file.
-    *   Supports pushing over [many protocols](http://duplicity.nongnu.org/duplicity.1.html#sect7).
-
-	[http://www.nongnu.org/duplicity/](http://www.nongnu.org/duplicity/) || [duplicity](https://www.archlinux.org/packages/?name=duplicity)
-
-*   **[Duply](/index.php/Duply "Duply")** — Front-end for duplicity which simplifies running it by:
-    *   keeping recurring settings in profiles per backup job;
-    *   automated import/export of keys between profile and keyring;
-    *   enabling batch operations eg. backup_verify_purge;
-    *   executing pre/post scripts;
-    *   precondition checking for flawless duplicity operation.
-
-	[http://www.duply.net/](http://www.duply.net/) || [duply](https://aur.archlinux.org/packages/duply/)
-
-*   **rclone** — Rclone is a command line program to sync files and directories to and from Google Drive, Amazon S3, Openstack Swift / Rackspace cloud files / Memset Memstore, Dropbox, Google Cloud Storage and The local filesystem.
-
-	[http://rclone.org/](http://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
-
-*   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
-
-	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)
-
-### Custom infrastructure
-
-See [List of applications/Internet#Cloud storage servers](/index.php/List_of_applications/Internet#Cloud_storage_servers "List of applications/Internet")
-
 ## Version control systems
 
 These are traditionally used for keeping track of software development; but if you want to have a simple way to manage your config files in one directory, it might be a good solution.
 
-See also [Wikipedia:Comparison of revision control software](https://en.wikipedia.org/wiki/Comparison_of_revision_control_software "wikipedia:Comparison of revision control software").
-
-*   **[Bazaar](/index.php/Bazaar "Bazaar")** — A distributed version control system that helps you track project history over time and to collaborate easily with others.
-    *   Similar commands to Subversion.
-    *   Supports working with or without a central server.
-    *   Support for working with some other revision control systems
-    *   Complete Unicode support.
-
-	[https://bazaar.canonical.com/en/](https://bazaar.canonical.com/en/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
-
-*   **Darcs** — A distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
-    *   Offline mode.
-    *   Easy branching and merging.
-    *   Written in Haskell.
-    *   Not very fast.
-
-	[http://darcs.net/](http://darcs.net/) || [darcs](https://www.archlinux.org/packages/?name=darcs)
-
-*   **[Git](/index.php/Git "Git")** — A distributed revision control and source code management system with an emphasis on speed.
-    *   Very easy creation, merging, and deletion of branches.
-    *   Nearly all operations are performed locally, giving it a huge speed advantage on centralized systems.
-    *   Has a "staging area" or "index", this is an intermediate area where commits can be formatted and reviewed before completing the commit.
-    *   Does not handle binary files very well.
-
-	[https://git-scm.com/](https://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
-
-*   **[Mercurial](/index.php/Mercurial "Mercurial")** — A distributed version control system written in Python and similar in many ways to Git.
-    *   Platform independent.
-    *   Support for [extensions](http://mercurial.selenic.com/wiki/UsingExtensions).
-    *   A set of commands consistent with Subversion.
-    *   Supports tags.
-
-	[https://www.mercurial-scm.org/](https://www.mercurial-scm.org/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
-
-*   **[Subversion](/index.php/Subversion "Subversion")** — A full-featured centralized version control system originally designed to be a better CVS.
-    *   Renamed/copied/moved/removed files retain full revision history.
-    *   Native support for binary files, with space-efficient binary-diff storage.
-    *   Costs proportional to change size, not to data size.
-    *   Allows arbitrary metadata ("properties") to be attached to any file or directory.
-
-	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
+See [List of applications/Utilities#Version control systems](/index.php/List_of_applications/Utilities#Version_control_systems "List of applications/Utilities") and [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles").
 
 ## See also
 
-*   [Wikipedia:List of backup software](https://en.wikipedia.org/wiki/List_of_backup_software "wikipedia:List of backup software")
-*   [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software")
 *   [Exhaustive list of backup solutions for Linux](https://github.com/restic/others)
 *   [Backing up Linux and other Unix(-like) systems](http://www.halfgaar.net/backing-up-unix)
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)

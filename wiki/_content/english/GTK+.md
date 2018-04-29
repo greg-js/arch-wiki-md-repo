@@ -106,6 +106,10 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
 
+*   **Materia Theme** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
+
+	[https://github.com/nana-4/materia-theme](https://github.com/nana-4/materia-theme) || [materia-gtk-theme](https://www.archlinux.org/packages/?name=materia-gtk-theme)
+
 *   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce). Includes: *Numix*
 
 	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
@@ -113,10 +117,6 @@ More themes can be installed from the official repositories or the [AUR](/index.
 *   **Blackbird** — Dark Desktop Suite for Xfce.
 
 	[https://github.com/shimmerproject/Blackbird](https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
-
-*   **Materia Theme** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
-
-	[https://github.com/nana-4/materia-theme](https://github.com/nana-4/materia-theme) || [materia-theme](https://aur.archlinux.org/packages/materia-theme/)
 
 *   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
 

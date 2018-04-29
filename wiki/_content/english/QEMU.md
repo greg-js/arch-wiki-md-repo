@@ -1526,7 +1526,7 @@ Example configs:
 ```
 type="system-x86_64"
 
-args="-enable-kvm -m 512 -hda /dev/mapper/vg0-vm1 -net nic,macaddr=DE:AD:BE:EF:E0:00 \
+args="-enable-kvm -m 512 -hda /dev/vg0/vm1 -net nic,macaddr=DE:AD:BE:EF:E0:00 \
  -net tap,ifname=tap0 -serial telnet:localhost:7000,server,nowait,nodelay \
  -monitor telnet:localhost:7100,server,nowait,nodelay -vnc :0"
 

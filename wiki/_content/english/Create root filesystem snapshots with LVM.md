@@ -1,3 +1,8 @@
+Related articles
+
+*   [LVM](/index.php/LVM "LVM")
+*   [Full system backup with tar](/index.php/Full_system_backup_with_tar "Full system backup with tar")
+
 This article describes how to set up root filesystem LVM snapshot creation during system start. Such snapshots can be used for [full system backups](/index.php/Full_system_backup_with_tar "Full system backup with tar") with minimal downtime or testing system updates with the option to revert them.
 
 ## Contents
@@ -57,7 +62,7 @@ If the system is started with the new target, LVM snapshot(s) are created just a
 menuentry 'Arch GNU/Linux, make snapshots' --class arch --class gnu-linux --class gnu --class os {
 ...
         echo    'Loading Linux core repo kernel ...'
-        linux   /boot/vmlinuz-linux root=/dev/mapper/lvmvolume-root ro **systemd.unit=make-snapshots.target**
+        linux   /boot/vmlinuz-linux root=/dev/lvmvolume/root ro **systemd.unit=make-snapshots.target**
         echo    'Loading initial ramdisk ...'
         initrd  /boot/initramfs-linux.img
 } 

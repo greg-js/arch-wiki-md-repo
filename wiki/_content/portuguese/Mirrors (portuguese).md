@@ -12,8 +12,9 @@ Esta página é um guia para selecionar e configurar seus espelhos e uma lista d
     *   [2.1 Forçar o pacman a renovar as listas de pacotes](#For.C3.A7ar_o_pacman_a_renovar_as_listas_de_pacotes)
 *   [3 Ordenando espelhos](#Ordenando_espelhos)
     *   [3.1 Listar por velocidade](#Listar_por_velocidade)
+        *   [3.1.1 Classificando uma lista de espelhos existente](#Classificando_uma_lista_de_espelhos_existente)
+        *   [3.1.2 Obtendo e classificando uma lista de espelho live](#Obtendo_e_classificando_uma_lista_de_espelho_live)
     *   [3.2 Classificação do lado do servidor](#Classifica.C3.A7.C3.A3o_do_lado_do_servidor)
-    *   [3.3 Listar espelhos apenas para um país específico](#Listar_espelhos_apenas_para_um_pa.C3.ADs_espec.C3.ADfico)
 *   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
 *   [5 Espelhos não oficiais](#Espelhos_n.C3.A3o_oficiais)
     *   [5.1 Áustria](#.C3.81ustria)
@@ -35,6 +36,7 @@ Esta página é um guia para selecionar e configurar seus espelhos e uma lista d
     *   [5.17 Turquia](#Turquia)
     *   [5.18 Estados Unidos](#Estados_Unidos)
     *   [5.19 Sourceforge (ISOs antigas)](#Sourceforge_.28ISOs_antigas.29)
+*   [6 Veja também](#Veja_tamb.C3.A9m)
 
 ## Espelhos oficiais
 
@@ -100,17 +102,19 @@ Após criar/editar o `/etc/pacman.d/mirrorlist`, execute o seguinte comando:
 
 ```
 
-Passar dois sinalizadores `--refresh` ou `-y` força o pacman a atualizar todas as listas de pacotes, mesmo que sejam consideradas atualizadas. Emitir `pacman -Syyu` *sempre que mudar para um novo espelho* é uma boa prática e evitará possíveis problemas. Veja também [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124) (-Syy é seguro?).
+Passar dois sinalizadores `--refresh`/`-y` força o pacman a atualizar todas as listas de pacotes, mesmo que sejam consideradas atualizadas. Emitir `pacman -Syyu` *sempre que mudar para um novo espelho* é uma boa prática e evitará possíveis problemas. Veja também [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124) (-Syy é seguro?).
 
 ## Ordenando espelhos
 
-Ao baixar os pacotes, o pacman usa os espelhos na ordem em que estão no `/etc/pacman.d/mirrorlist`. Para definir uma prioridade para os espelhos, o arquivo mirrorlist deve ser classificado manualmente ou usando um script.
+Ao baixar os pacotes, o pacman usa os espelhos na ordem em que estão listados no `/etc/pacman.d/mirrorlist`. A ordem que os servidores aparecem na lista define sua prioridade.
 
-Não é uma boa ideia usar apenas os espelhos mais rápidos, pois os espelhos mais rápidos podem estar fora de sincronia. Em vez disso, faça uma lista de espelhos classificados por sua [velocidade](#Listar_por_velocidade), depois remova da lista aqueles que estão fora de sincronia conforme seu [status](https://www.archlinux.org/mirrors/status/).
+Não é ideal classificar apenas com base nos espelhos na velocidade, pois os servidores mais rápidos podem estar fora de sincronia. Em vez disso, faça uma lista de espelhos classificados por sua [velocidade](#Listar_por_velocidade), depois remova da lista aqueles que estão fora de sincronia conforme seu [status](https://www.archlinux.org/mirrors/status/).
 
-É recomendado repetir esse processo antes de toda atualização de sistema para manter o `/etc/pacman.d/mirrorlist` atualizado.
+É recomendado repetir esse processo antes de toda atualização de sistema para manter a lista de espelhos atualizada.
 
 ### Listar por velocidade
+
+#### Classificando uma lista de espelhos existente
 
 O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) fornece um script Bash, `/usr/bin/rankmirrors`, que pode ser usado para classificar os espelhos de acordo com suas velocidades de conexão e abertura para aproveitar o uso do espelho local mais rápido.
 
@@ -121,46 +125,39 @@ Faça um *backup* do `/etc/pacman.d/mirrorlist` existente:
 
 ```
 
-Edite `/etc/pacman.d/mirrorlist.backup` e descomente espelhos para teste com `rankmirrors`.
+Para preparar `mirrorlist.backup` para classificar com *rankmirrors*, as seguintes ações podem ser executadas:
 
-Opcionalmente, execute a seguinte linha `sed` para descomentar todo os espelhos:
+Edite `mirrorlist.backup` e descomente os servidores a serem testados
 
-```
-# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+*   Se os servidores no arquivo estiverem agrupados por país, pode-se extrair os servidores de um país específico por uso: `$ awk '/^## *Nome do país*$/{f=1}f==0{next}/^$/{exit}{print substr($0, 2)}' /etc/pacman.d/mirrorlist.backup` 
 
-```
+*   Para descomentar todo o espelho, execute a seguinte linha `sed`: `# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup` 
 
-Finalmente, classifique os espelhos. O operando `-n 6` significa emitir apenas os 6 espelhos mais rápidos:
+Finalmente, classifique os espelhos, aqui com o operando `-n 6` para emitir apenas os 6 espelhos mais rápidos:
 
 ```
 # rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 
 ```
 
-Execute `rankmirrors -h` para uma lista de todas as opções disponíveis.
+#### Obtendo e classificando uma lista de espelho live
+
+Para iniciar com uma lista curta de espelhos atualizados baseada em alguns países e fornecê-la ao *rankmirrors*, pode-se obter a lista do *Pacman Mirrorlist Generator*. O comando abaixo pega os espelhos atualizados na *França* ou no *Reino Unido*, que possuem suporte ao protocolo *https*, ele descomenta os servidores na lista e então os classifica e retorna os 5 mais rápidos.
+
+```
+$ curl -s "[https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on](https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on)" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
+
+```
 
 ### Classificação do lado do servidor
 
 O [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) oficial fornece uma maneira fácil de obter uma lista ordenada de espelhos. Como toda a classificação é feita em um único servidor que leva vários fatores em consideração, a quantidade de carga nos espelhos e nos clientes é significativamente menor em comparação à classificação em cada cliente individual.
 
-Existem vários scripts automatizando a atualização do mirrorlist do servidor de classificação:
+Outra alternativa popular é a ferramenta a seguir:
 
-*   **[Reflector](/index.php/Reflector "Reflector")** — Obtém o mirrorlist mais recente da página [MirrorStatus](https://www.archlinux.org/mirrors/status/), filtra os espelhos mais atualizados, ordena-os por velocidade e sobrescreve o `/etc/pacman.d/mirrorlist`
+**[Reflector](/index.php/Reflector "Reflector")** — Obtém o último mirrorlist da página [MirrorStatus](https://www.archlinux.org/mirrors/status/), filtra e ordena-os por velocidade e sobrescreve `/etc/pacman.d/mirrorlist`
 
-	[https://xyne.archlinux.ca/projects/reflector/](https://xyne.archlinux.ca/projects/reflector/) || [reflector](https://www.archlinux.org/packages/?name=reflector).
-
-*   **armrr** — Baixa um mirrorlist classificado para países específicos do [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/)
-
-	[https://github.com/spurge/armrr](https://github.com/spurge/armrr) || nenhum pacote
-
-### Listar espelhos apenas para um país específico
-
-Pode ser útil para automatizar a atualização da lista de espelhos somente para países específicos, em vez de fazer um teste de velocidade a cada vez. Presumindo que existe `mirrorlist.pacnew`, o arquivo cria após a instalação da atualização [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist).
-
-```
-awk '/^## Brazil$/ {f=1} f==0 {next} /^$/ {exit} {print substr($0, 1)}' \
-    /etc/pacman.d/mirrorlist.pacnew
-```
+	[https://xyne.archlinux.ca/projects/reflector/](https://xyne.archlinux.ca/projects/reflector/) || [reflector](https://www.archlinux.org/packages/?name=reflector)
 
 ## Solução de problemas
 
@@ -297,3 +294,7 @@ Esses espelhos *não* estão listados no `/etc/pacman.d/mirrorlist`.
 ### Sourceforge (ISOs antigas)
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *Arquivos ISO apenas; Não tem nenhum lançamento desde 2006\. Use-o apenas para obter ISOs mais antigas.*
+
+## Veja também
+
+*   [mirrorlist.py no GitHub do archweb](https://github.com/archlinux/archweb/blob/master/mirrors/views/mirrorlist.py) - código fonte do gerador de mirrorlist do archweb

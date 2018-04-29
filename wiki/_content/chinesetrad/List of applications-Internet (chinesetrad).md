@@ -799,7 +799,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **quite-rss** — RSS/Atom feed reader written on Qt/С++.
 
-	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 #### 部落格軟體
 

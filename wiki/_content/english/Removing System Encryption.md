@@ -38,7 +38,7 @@ An example setup is shown here:
 | luks | luks |
 | swap | root(xfs) |
 
-The grey sections only add a frame of reference and can be disregarded. The green partitions will be modified. Green text must match your system's setup. The yellow partition will be used as storage space and may be changed at will. In the example system: myvg contains lvs called cryptroot and cryptswap. they are located at /dev/mapper/myvg_cryptroot and /dev/mapper/myvg_cryptswap. Upon boot, luks is used along with a few crypttab entries to create /dev/mapper/root and /dev/mapper/swap. Swap will not be unencrypted as part of this guide, as undoing the swap encryption does not require any complex backup or restoration.
+The grey sections only add a frame of reference and can be disregarded. The green partitions will be modified. Green text must match your system's setup. The yellow partition will be used as storage space and may be changed at will. In the example system: myvg contains lvs called cryptroot and cryptswap. they are located at /dev/myvg/cryptroot and /dev/myvg/cryptswap. Upon boot, luks is used along with a few crypttab entries to create /dev/mapper/root and /dev/mapper/swap. Swap will not be unencrypted as part of this guide, as undoing the swap encryption does not require any complex backup or restoration.
 
 The example system is not indicative of all systems. Different filesystems require different tools to effectively backup and restore their data. LVM can be ignored if not used. XFS requires xfs_copy to ensure an effective backup and restore, DD is insufficient. DD may be used with ext2,3,and 4\. (Someone please comment on jfs, reiserfs and reiser4fs)
 
@@ -65,7 +65,7 @@ lvchange -ay myvg/cryptroot
 Open the encrypted filesystem with luks so it can be read:
 
 ```
-cryptSetup luksOpen /dev/mapper/myvg_cryptroot root
+cryptSetup luksOpen /dev/myvg/cryptroot root
 
 ```
 
@@ -125,7 +125,7 @@ We have to create a new logical volume to house our root filesystem, then we res
 
 ```
 lvm lvcreate -l 100%FREE -n root myvg
-xfs_copy -db <u>/media/Shared/backup_root.img</u> /dev/mapper/myvg-root #notice the second drive name is changed now.
+xfs_copy -db <u>/media/Shared/backup_root.img</u> /dev/myvg/root #notice the second drive name is changed now.
 
 ```
 

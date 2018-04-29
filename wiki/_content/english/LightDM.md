@@ -273,6 +273,8 @@ autologin-user=*username*
 autologin-session=*session*
 ```
 
+You will also need to ensure you have the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package installed, otherwise LightDM will fail to start, and running it from the command line will show `Error getting user list from org.freedesktop.Accounts`.
+
 **Note:** GNOME users, and by extension any gnome-keyring user will have to set up a blank password to their keyring for it to be unlocked automatically.
 
 ### Enabling interactive passwordless login

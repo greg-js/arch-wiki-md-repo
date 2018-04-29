@@ -296,7 +296,7 @@ You will then be prompted for the password to unlock the partition. Usually the 
 
 Once opened, the root partition device address would be `/dev/mapper/cryptroot` instead of the partition (e.g. `/dev/sda1`).
 
-For setting up LVM ontop the encryption layer the device file for the decrypted volume group would be anything like `/dev/mapper/cryptroot` instead of `/dev/sda1`. LVM will then give additional names to all logical volumes created, e.g. `/dev/mapper/lvmpool-root` and `/dev/mapper/lvmpool-swap`.
+For setting up LVM ontop the encryption layer the device file for the decrypted volume group would be anything like `/dev/mapper/cryptroot` instead of `/dev/sda1`. LVM will then give additional names to all logical volumes created, e.g. `/dev/lvmpool/root` and `/dev/lvmpool/swap`.
 
 In order to write encrypted data into the partition it must be accessed through the device mapped name. The first step of access will typically be to [create a filesystem](/index.php/File_systems#Create_a_file_system "File systems"). For example:
 

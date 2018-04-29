@@ -105,6 +105,10 @@ $ make UE4Editor-Linux-Debug
 
 ```
 
+However, this might have some performance impact.
+
+Another approach would be to use different clang version (e.g. 3.8 or 4.0)
+
 ### Runtime problems
 
 If the editor doesn't start from the menu, or something doesn't work right, start it in a console and check the output for errors.

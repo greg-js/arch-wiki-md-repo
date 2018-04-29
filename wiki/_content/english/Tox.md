@@ -2,35 +2,7 @@ From the project [home page](https://tox.chat/): "Tox is a distributed, secure m
 
 ## Installation
 
-In order to use Tox, you should [install](/index.php/Install "Install") a [Tox client](https://wiki.tox.chat/clients):
-
-*   **qTox** — Powerful Tox client written in QT
-
-	[https://wiki.tox.chat/clients/qtox](https://wiki.tox.chat/clients/qtox) || [qtox](https://www.archlinux.org/packages/?name=qtox)
-
-*   **Toxic** — ncurses-based CLI
-
-	[https://wiki.tox.chat/clients/toxic](https://wiki.tox.chat/clients/toxic) || [toxic](https://www.archlinux.org/packages/?name=toxic)
-
-*   **gTox** — GTK3-Style Tox-Client
-
-	[https://github.com/KoKuToru/gTox/](https://github.com/KoKuToru/gTox/) || [gtox-git](https://aur.archlinux.org/packages/gtox-git/)
-
-*   **µTox (uTox)** — Lightweight Tox client
-
-	[https://github.com/uTox/uTox](https://github.com/uTox/uTox) || [utox](https://www.archlinux.org/packages/?name=utox)
-
-*   **Ratox** — FIFO based client
-
-	[http://ratox.2f30.org/](http://ratox.2f30.org/) || [ratox-git](https://aur.archlinux.org/packages/ratox-git/)
-
-*   **qTox** — Powerful Tox client written in QT, current Github Version
-
-	[https://wiki.tox.chat/clients/qtox](https://wiki.tox.chat/clients/qtox) || [qtox-git](https://aur.archlinux.org/packages/qtox-git/)
-
-*   **Tox Pidgin Protocol Plugin** — a plugin for Pidgin which allows the use of the Tox protocol within Pidgin
-
-	[http://tox.dhs.org/](http://tox.dhs.org/) || [tox-prpl-git](https://aur.archlinux.org/packages/tox-prpl-git/)
+In order to use Tox, you should [install](/index.php/Install "Install") a [Tox client](https://wiki.tox.chat/clients). See [List of applications/Internet#Tox clients](/index.php/List_of_applications/Internet#Tox_clients "List of applications/Internet").
 
 ## Run a node
 

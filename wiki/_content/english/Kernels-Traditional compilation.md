@@ -158,14 +158,14 @@ Running `$ lspci -k #` from liveCD lists names of kernel modules in use. Most im
 
 ### Compile the kernel
 
-Compilation time will vary from as little as fifteen minutes to over an hour, depending on your kernel configuration and processor capability. See [Makeflags](/index.php/Makepkg#MAKEFLAGS "Makepkg") for details. Once the `.config` file has been set for the custom kernel, within the source directory run the following command to compile:
+Compilation time will vary from as little as fifteen minutes to over an hour, depending on your kernel configuration and processor capability. Once the `.config` file has been set for the custom kernel, within the source directory run the following command to compile:
 
 ```
 $ make
 
 ```
 
-**Note:** To compile faster, make can be run with the -jX arguments, where X is an integer. Usually it is a good idea to use the number of CPU cores in your machine + 1\. For example, with a processor with 2 CPUs run "make -j3".
+**Tip:** To compile faster, *make* can be run with the `-jX` argument, where `X` is an integer number of parallel jobs. The best results are often achieved using the number of CPU cores in the machine + 1; for example, with a 2-core processor run `make -j3`. See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg") for more information.
 
 ### Compile the modules
 

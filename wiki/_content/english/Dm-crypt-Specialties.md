@@ -193,7 +193,7 @@ The following forum posts give instructions to use two factor authentication, gp
 
 Note that:
 
-*   You can follow the above instructions with only two primary partitions, one boot partition (required because of encryption) and one primary LVM partition. Within the LVM partition you can have as many partitions as you need, but most importantly it should contain at least root, swap, and home logical volume partitions. This has the added benefit of having only one keyfile for all your partitions, and having the ability to hibernate your computer (suspend to disk) where the swap partition is encrypted. If you decide to do so your hooks in `/etc/mkinitcpio.conf` should look like this: `HOOKS=( ... usb usbinput (etwo or ssldec) encrypt (if using openssl) lvm2 resume ... )` and you should add `resume=/dev/mapper/<VolumeGroupName>-<LVNameOfSwap>` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+*   You can follow the above instructions with only two primary partitions, one boot partition (required because of encryption) and one primary LVM partition. Within the LVM partition you can have as many partitions as you need, but most importantly it should contain at least root, swap, and home logical volume partitions. This has the added benefit of having only one keyfile for all your partitions, and having the ability to hibernate your computer (suspend to disk) where the swap partition is encrypted. If you decide to do so your hooks in `/etc/mkinitcpio.conf` should look like this: `HOOKS=( ... usb usbinput (etwo or ssldec) encrypt (if using openssl) lvm2 resume ... )` and you should add `resume=/dev/<VolumeGroupName>/<LVNameOfSwap>` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 *   If you need to temporarily store the unencrypted keyfile somewhere, do not store them on an unencrypted disk. Even better make sure to store them to RAM such as `/dev/shm`.
 *   If you want to use a GPG encrypted keyfile, you need to use a statically compiled GnuPG version 1.4 or you could edit the hooks and use this AUR package [gnupg1](https://aur.archlinux.org/packages/gnupg1/)
 *   It is possible that an update to OpenSSL could break the custom `ssldec` mentioned in the second forum post.
@@ -435,7 +435,7 @@ In this example, it is assumed that the logical volume for `/home` (lv-name `hom
 Now the logical volume is extended and the LUKS container comes next:
 
 ```
-# cryptsetup open /dev/mapper/MyStorage-homevol home
+# cryptsetup open /dev/MyStorage/homevol home
 # umount /home      # as a safety, in case it was automatically remounted
 # cryptsetup --verbose resize home
 

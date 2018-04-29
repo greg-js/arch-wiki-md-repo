@@ -163,9 +163,27 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 #### Backup programs
 
-See the main article: [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs").
+See also [Synchronization and backup programs#Incremental backups](/index.php/Synchronization_and_backup_programs#Incremental_backups "Synchronization and backup programs") and [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software").
 
-See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software").
+*   **Déjà Dup** — Simple GTK+ backup program. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses [duplicity](/index.php/Duplicity "Duplicity") as the backend.
+
+	[https://launchpad.net/deja-dup](https://launchpad.net/deja-dup) || [deja-dup](https://www.archlinux.org/packages/?name=deja-dup)
+
+*   **[Duplicati](https://en.wikipedia.org/wiki/Duplicati "wikipedia:Duplicati")** — Backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.
+
+	[http://www.duplicati.com/](http://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)
+
+*   **[duplicity](/index.php/Duplicity "Duplicity")** — Simple command-line utility which allows encrypted compressed incremental backup to nearly any storage.
+
+	[http://www.nongnu.org/duplicity/](http://www.nongnu.org/duplicity/) || [duplicity](https://www.archlinux.org/packages/?name=duplicity)
+
+*   **[Duply](/index.php/Duply "Duply")** — Command-line front-end for [duplicity](/index.php/Duplicity "Duplicity") which simplifies running it. It manages backup job settings in profiles and allows to batch execute commands.
+
+	[http://www.duply.net/](http://www.duply.net/) || [duply](https://aur.archlinux.org/packages/duply/)
+
+*   **[Tarsnap](https://en.wikipedia.org/wiki/Tarsnap "wikipedia:Tarsnap")** — Secure, efficient proprietary online backup service.
+
+	[http://www.tarsnap.com](http://www.tarsnap.com) || [tarsnap](https://www.archlinux.org/packages/?name=tarsnap)
 
 #### Screen lockers
 

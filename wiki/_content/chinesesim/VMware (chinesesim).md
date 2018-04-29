@@ -63,7 +63,7 @@
 [安装](/index.php/Pacman "Pacman") 依赖项:
 
 *   [fuse2](https://www.archlinux.org/packages/?name=fuse2) - 提供 *vmware-vmblock-fuse*
-*   [gksu](https://www.archlinux.org/packages/?name=gksu) - 支持需要 root 权限的操作（比如内存分配、注册许可证等等）
+*   [gksu](https://aur.archlinux.org/packages/gksu/) - 支持需要 root 权限的操作（比如内存分配、注册许可证等等）
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - 支持 GUI
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - 模块编译所需
 *   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - 支持安装程序的 `--console` 选项

@@ -171,28 +171,28 @@ server {
 
 ```
 
-Append the following line at the end of the `http` block in /etc/nginx/nginx.conf:
+Append the following line at the end of the `http` block in `/etc/nginx/nginx.conf`:
 
 ```
 include sites-enabled/*;
 
 ```
 
-To enable a `server`, simple create a symlink:
+To enable a `server` block, simple create a symlink:
 
 ```
 # ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
 
 ```
 
-To remove a `server`, delete the symlink:
+To remove a `server`:
 
 ```
 # unlink /etc/nginx/sites-enabled/example
 
 ```
 
-Reload or restart `nginx.service` to enable the new configuration.
+[Reload](/index.php/Reload "Reload")/[restart](/index.php/Restart "Restart") `nginx.service` to enable the new configuration.
 
 #### TLS/SSL
 

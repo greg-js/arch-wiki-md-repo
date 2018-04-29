@@ -100,7 +100,7 @@ There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linu
 
 Until Lenovo fixes this issue, you can manually set the limit.
 
-To begin, install `msr-tools`
+To begin, install [msr-tools](https://aur.archlinux.org/packages/msr-tools/).
 
 Create the file `/usr/local/bin/cpu-throttling.sh` (making it executable) containing the following:
 

@@ -324,6 +324,8 @@ Using this option, a scaling factor of 1 would be normal scaling. Floating point
 
  `~/.config/chromium-flags.conf`  `--force-device-scale-factor=2` 
 
+To make this work for Chrome, add the same option to `~/.config/chrome-flags.conf` instead.
+
 If you use a HiDPI monitor such as Retina display together with another monitor, you can use the [reszoom](https://chrome.google.com/webstore/detail/resolution-zoom/enjjhajnmggdgofagbokhmifgnaophmh) extension in order to automatically adjust the zoom level for the active screen.
 
 #### Opera

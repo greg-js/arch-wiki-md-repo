@@ -81,7 +81,7 @@ root=*device*
 
 *   If the file system is formatted directly on the decrypted device file this will be `/dev/mapper/*dmname*`.
 *   If a LVM gets activated first and contains an [encrypted logical rootvolume](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the above form applies as well.
-*   If the root file system is contained in a logical volume of a fully [encrypted LVM](/index.php/Encrypted_LVM "Encrypted LVM"), the device mapper for it will be in the general form of `root=/dev/mapper/*volumegroup*-*logicalvolume*`.
+*   If the root file system is contained in a logical volume of a fully [encrypted LVM](/index.php/Encrypted_LVM "Encrypted LVM"), the device mapper for it will be in the general form of `root=/dev/*volumegroup*/*logicalvolume*`.
 
 **Tip:** This parameter is not needed to be specified manually when using [GRUB](/index.php/GRUB "GRUB"). Executing *grub-mkconfig* is meant to determine the correct UUID of the decrypted root filesystem and specify it in the generated `grub.cfg` automatically.
 
@@ -112,7 +112,7 @@ cryptdevice=*device*:*dmname*
 
 *   `*device*` is the path to the device backing the encrypted device. Usage of [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") is advisable.
 *   `*dmname*` is the **d**evice-**m**apper name given to the device after decryption, which will be available as `/dev/mapper/*dmname*`.
-*   If a LVM contains the [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the LVM gets activated first and the volume group containing the logical volume of the encrypted root serves as *device*. It is then followed by the respective volume group to be mapped to root. The parameter follows the form of `cryptdevice=*/dev/mapper/vgname-lvname*:*dmname*`.
+*   If a LVM contains the [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the LVM gets activated first and the volume group containing the logical volume of the encrypted root serves as *device*. It is then followed by the respective volume group to be mapped to root. The parameter follows the form of `cryptdevice=*/dev/vgname/lvname*:*dmname*`.
 
 #### cryptkey
 
@@ -352,7 +352,7 @@ For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptset
 
 will ask for the passphrase and mount automatically at boot.
 
-Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/mapper/vgraid-lvraid`) entries, there is no need to add additional mkinitcpio hooks/configuration, because `/etc/crypttab` processing applies to non-root mounts only. One exception is when the `mdadm_udev` hook is used *already* (e.g. for the root device). In this case `/etc/madadm.conf` and the initramfs need updating to achieve the correct root raid is picked first.
+Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/vgraid/lvraid`) entries, there is no need to add additional mkinitcpio hooks/configuration, because `/etc/crypttab` processing applies to non-root mounts only. One exception is when the `mdadm_udev` hook is used *already* (e.g. for the root device). In this case `/etc/madadm.conf` and the initramfs need updating to achieve the correct root raid is picked first.
 
 ## Troubleshooting
 

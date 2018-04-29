@@ -47,25 +47,26 @@
 | <small>8.1.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(4)</small> |
 | <small>8.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(1)</small> |
 | <small>8.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)"))</small> |
-| <small>8.2.</small> [Ambientes Desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)") <small>(2)</small> |
+| <small>8.2.</small> [Ambientes Desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)") <small>(0)</small> |
 | <small>8.2.1.</small> [Gerenciadores de tela](/index.php/Category:Display_managers_(Portugu%C3%AAs) "Category:Display managers (Português)") <small>(2)</small> |
 | <small>8.2.2.</small> [GNOME](/index.php/Category:GNOME_(Portugu%C3%AAs) "Category:GNOME (Português)") <small>(2)</small> |
 | <small>8.3.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(4)</small> |
 | <small>9.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(2)</small> |
 | <small>9.1.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(2) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>9.1.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1)</small> |
-| <small>9.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services_(Portugu%C3%AAs) "Category:Daemons and system services (Português)") <small>(2)</small> |
-| <small>9.3.</small> [Dotfiles](/index.php/Category:Dotfiles_(Portugu%C3%AAs) "Category:Dotfiles (Português)") <small>(1)</small> |
+| <small>9.2.</small> [Configuration files](/index.php/Category:Configuration_files_(Portugu%C3%AAs) "Category:Configuration files (Português)") <small>(1)</small> |
+| <small>9.3.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services_(Portugu%C3%AAs) "Category:Daemons and system services (Português)") <small>(2)</small> |
 | <small>9.4.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(1)</small> |
 | <small>9.4.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
 | <small>9.5.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(4)</small> |
-| <small>9.6.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(3)</small> |
-| <small>9.6.1.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(0)</small> |
-| <small>9.6.1.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(2)</small> |
-| <small>9.7.</small> [Internationalization](/index.php/Category:Internationalization_(Portugu%C3%AAs) "Category:Internationalization (Português)") <small>(1)</small> |
-| <small>9.8.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(20)</small> |
-| <small>9.9.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
-| <small>9.10.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(9)</small> |
-| <small>9.10.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
-| <small>9.11.</small> [System recovery](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") <small>(3)</small> |
-| <small>9.12.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |
+| <small>9.6.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(2)</small> |
+| <small>9.7.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(3)</small> |
+| <small>9.7.1.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(0)</small> |
+| <small>9.7.1.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(2)</small> |
+| <small>9.8.</small> [Internationalization](/index.php/Category:Internationalization_(Portugu%C3%AAs) "Category:Internationalization (Português)") <small>(1)</small> |
+| <small>9.9.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(20)</small> |
+| <small>9.10.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
+| <small>9.11.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(9)</small> |
+| <small>9.11.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
+| <small>9.12.</small> [System recovery](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") <small>(3)</small> |
+| <small>9.13.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |

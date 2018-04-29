@@ -79,7 +79,7 @@ The kernel parameter `resume=*swap_partition*` has to be used. Either the name t
 
 *   `resume=/dev/sda1`
 *   `resume=UUID=4209c845-f495-4c43-8a03-5363dd433153`
-*   `resume=/dev/mapper/archVolumeGroup-archLogicVolume` -- example if using LVM
+*   `resume=/dev/archVolumeGroup/archLogicVolume` -- example if using LVM
 
 Generally, the naming method used for the `resume` parameter should be the same as used for the `root` parameter.
 

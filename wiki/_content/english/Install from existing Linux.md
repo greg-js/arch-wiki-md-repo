@@ -261,7 +261,7 @@ This could be easily worked around by creating the logical volumes outside the c
 
 Also, if the system you are using has lvm, you might have the following output:
 
- `# grub-install --target=i386-pc --recheck /dev/mapper/main-archroot` 
+ `# grub-install --target=i386-pc --recheck /dev/main/archroot` 
 ```
 Installing for i386-pc platform.
   /run/lvm/lvmetad.socket: connect failed: No such file or directory

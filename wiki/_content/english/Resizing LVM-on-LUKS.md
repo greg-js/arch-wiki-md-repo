@@ -62,7 +62,7 @@ Decrypt the LUKS volume:
 First we need to resize the innermost filesystem itself. In this case, we only resize the last and largest filesystem and shave off 11GB:
 
 ```
-# resize2fs -p /dev/mapper/vgroup-lvhome 70g
+# resize2fs -p /dev/vgroup/lvhome 70g
 
 ```
 
@@ -71,7 +71,7 @@ First we need to resize the innermost filesystem itself. In this case, we only r
 You can run a `fsck` just to make sure nothing broke:
 
 ```
-# e2fsck -f /dev/mapper/vgroup-lvhome
+# e2fsck -f /dev/vgroup/lvhome
 
 ```
 
@@ -259,7 +259,7 @@ Note the new size of the second logical volume. Calculate its total size by taki
 Now we are going to resize the encrypted volume itself. By taking in account the total size of the logical volume minus some safety space:
 
 ```
-# resize2fs -p /dev/mapper/CryptVolumeGroup-Home 208G
+# resize2fs -p /dev/CryptVolumeGroup/Home 208G
 
 ```
 

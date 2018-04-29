@@ -1052,7 +1052,7 @@ E: [pulseaudio] main.c: Failed to acquire autospawn lock
 
 *   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)
 
-В качестве обходного пути можно использовать [gksu](https://www.archlinux.org/packages/?name=gksu) или [kdesu](https://www.archlinux.org/packages/?name=kdesu) в [desktop entry](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop entries (Русский)") или добавить `*username* ALL=NOPASSWD: /usr/bin/*program_name*` в [sudoers](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Sudo (Русский)") для запуска [sudo](https://www.archlinux.org/packages/?name=sudo) или `gksudo` без запроса пароля. Другой способ лежит через раскомментирование и установку `daemonize = yes` в `/etc/pulse/daemon.conf`.
+В качестве обходного пути можно использовать [gksu](https://aur.archlinux.org/packages/gksu/) или [kdesu](https://www.archlinux.org/packages/?name=kdesu) в [desktop entry](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop entries (Русский)") или добавить `*username* ALL=NOPASSWD: /usr/bin/*program_name*` в [sudoers](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Sudo (Русский)") для запуска [sudo](https://www.archlinux.org/packages/?name=sudo) или `gksudo` без запроса пароля. Другой способ лежит через раскомментирование и установку `daemonize = yes` в `/etc/pulse/daemon.conf`.
 Также стоит посмотреть [эту ветку форума (англ)](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity

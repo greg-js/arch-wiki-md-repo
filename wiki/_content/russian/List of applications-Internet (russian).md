@@ -878,7 +878,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **RSS Guard** — Крошечная программа чтения новостей RSS и ATOM, разработанная с использованием фреймворка Qt
 
-	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
+	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://www.archlinux.org/packages/?name=rssguard)
 
 *   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Мощный агрегатор фидов (feeds) RSS и Atom, написанный на Java с использованием Eclipse Rich Client Platform и SWT в качестве тулкита виджетов
 
@@ -898,7 +898,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **QuiteRSS** — Программа чтения фидов (feeds) RSS/Atom, написанная на Qt/С++
 
-	[http://quiterss.org/ru/node](http://quiterss.org/ru/node) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://quiterss.org/ru/node](http://quiterss.org/ru/node) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 #### Подкаст-клиенты
 

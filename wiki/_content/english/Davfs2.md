@@ -65,6 +65,24 @@ WantedBy=multi-user.target
 
 ```
 
+You can create an systemd automount unit to set a timeout
+
+ `/etc/systemd/system/mnt-webdav-service.automount` 
+```
+[Unit]
+Description=Mount WebDAV Service
+After=network-online.target
+Wants=network-online.target
+
+[Automount]
+Where=/mnt/dav
+TimeoutIdleSec=300
+
+[Install]
+WantedBy=remote-fs.target
+
+```
+
 See [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") for more tips and tricks when using systemd mount units.
 
 ### Using fstab

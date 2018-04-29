@@ -41,7 +41,7 @@
 
 所谓 BIOS 或 Basic Input-Output System, 就是开机时第一个被执行的程序，又名固件。一般来说它储存在主板上的一块闪存中，与硬盘彼此独立。
 
-BIOS 被启动后，会按启动顺序加载磁盘的前 512 字节，即[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")，前 440 字节包含某个启动引导器，像 [[GRUB (简体中 文)|GRUB]]、[Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和 [LILO](/index.php/LILO "LILO") 之类的第一启动阶段代码。因为空间太小了，后续的启动代码保存在磁盘上，最后启动引导器又通过「链式引导」，或是直接加载内核，以加载一个操作系统。
+BIOS 被启动后，会按启动顺序加载磁盘的前 512 字节，即[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")，前 440 字节包含某个启动引导器，像 [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") 、[Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和 [LILO](/index.php/LILO "LILO") 之类的第一启动阶段代码。因为空间太小了，后续的启动代码保存在磁盘上，最后启动引导器又通过「链式引导」，或是直接加载内核，以加载一个操作系统。
 
 ### UEFI
 

@@ -5,6 +5,8 @@
 *   [1 Installation](#Installation)
 *   [2 Basic Usage](#Basic_Usage)
 *   [3 Running Crashplan on a headless server](#Running_Crashplan_on_a_headless_server)
+    *   [3.1 X11 forwarding over SSH](#X11_forwarding_over_SSH)
+    *   [3.2 Local client](#Local_client)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Waiting for connection](#Waiting_for_connection)
     *   [4.2 Waiting for Backup](#Waiting_for_Backup)
@@ -35,7 +37,17 @@ To make CrashPlan automatically start upon system startup, [enable](/index.php/E
 
 Running CrashPlan on a headless server is not officially supported. However, it is possible to do so.
 
-The CrashPlan daemon's configuration files (in `/opt/crashplan/conf`) are in an obscure XML format, and they are meant to be edited programmatically by the CrashPlan client. The CrashPlan client and daemon communicate on port 4243 by default. Thus, an easy way of configuring the CrashPlan daemon on a headless server is to create an SSH tunnel:
+The CrashPlan daemon's configuration files (in `/opt/crashplan/conf`) are in an obscure XML format, and they are meant to be edited programmatically by the CrashPlan client.
+
+CrashPlan 5 introduced a new client app which unfortunately dropped support for configuring a remote server with a local client, so you'll need to use X11 forwarding.
+
+### X11 forwarding over SSH
+
+Ensure that `X11Forwarding` is set to `yes` in the headless server's `/etc/ssh/sshd_config` and from another machine running X11, SSH to the headless machine with `-Y`, and from the remote shell run `CrashPlanDesktop`. The headless machine's windows will appear on the local X11 server. If you have problems, check `/opt/crashplan/log/ui_error.log`.
+
+### Local client
+
+On CrashPlan v4.x and below, the client and daemon communicate on port 4243 by default. Thus, an easy way of configuring the CrashPlan daemon on a headless server is to create an SSH tunnel:
 
 1.  [Start](/index.php/Start "Start") the CrashPlan daemon on the server.
 2.  Create an SSH tunnel. On the client: `ssh -N -L 4243:localhost:4243 headless.example.com`.
@@ -45,8 +57,6 @@ Note that the authentication token (located in `/var/lib/crashplan/.ui_info`) on
 
 *   The CrashPlan support site [details](http://support.code42.com/CrashPlan/Latest/Configuring/Configuring_A_Headless_Client) a slightly more complicated method of tunneling traffic from the client (CrashPlan Desktop) to the daemon (CrashPlan Engine) through an SSH tunnel.
 *   A [post by Bryan Ross](http://www.liquidstate.net/how-to-manage-your-crashplan-server-remotely/) details how to make CrashPlan Desktop connect directly to CrashPlan Engine. Note that this method can be less secure than tunneling traffic through an SSH tunnel.
-
-Another, simpler, way of running CrashPlan headlessly is to use ssh's X11 forwarding. Ensure that `X11Forwarding` is set to `yes` in the headless server's `/etc/ssh/sshd_config` and from another machine running X11, ssh to the headless machine with either `-X` or `-Y` and from the remote shell run `CrashPlanDesktop`. The headless machine's windows will appear on the local X11 server.
 
 ## Troubleshooting
 

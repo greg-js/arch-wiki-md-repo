@@ -179,7 +179,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:00:1f.2-ata-1-part4 -> ../../sda
 
 Partition labels can be defined in the header of the partition entry on GPT disks.
 
-See also [Wikipedia:GUID Partition Table#Partition entries](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table").
+See also [Wikipedia:GUID Partition Table#Partition entries (LBA 2-33)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table").
 
 This method is very similar to the [filesystem labels](#by-label), excepted that the dynamic directory is `/dev/disk/by-partlabel`.
 

@@ -138,10 +138,21 @@ Para adicionar um novo usuário, use o comando *useradd*:
 
 ```
 
-*   `-m` cria o diretório pessoal do usuário como `/home/*nome_de_usuário*`. Dentro de seu diretório pessoal, um usuário que não seja root pode escrever arquivos, exclui-los, instalar programas e por aí vai.
-*   `-g` define o nome ou número de grupo do grupo inicial do usuário. Se especificado, o nome de grupo deve existir; se um número de grupo for fornecido, ele deve se referir a um grupo já existente. Se não especificado, o comportamento de *useradd* vai depender da variável `USERGROUPS_ENAB` contida em `/etc/login.defs`. O comportamento padrão (`USERGROUPS_ENAB yes`) é criar um grupo com o nome igual ao nome de usuário, com `GID` igual a `UID`.
-*   `-G` introduz uma lista de grupos suplementares dos quais o usuários também é membro. Cada grupo é separado do próximo por uma vírgula, com nenhuma no meio. O padrão é para o usuário pertencer a apenas o grupo inicial.
-*   `-s` define o caminho e o nome do arquivo do shell de login padrão do usuário. Após o processo de inicialização ter concluído, o shell de login padrão é o especificado aqui. Assegure-se de que o pacote do shell escolhido está instalado se escolher algo diferente do [Bash](/index.php/Bash "Bash").
+	`-m`/`--create-home`
+
+	cria o diretório pessoal do usuário como `/home/*nome_de_usuário*`. Dentro de seu diretório pessoal, um usuário que não seja root pode escrever arquivos, exclui-los, instalar programas e por aí vai.
+
+	`-g`/`--gid`
+
+	define o nome ou número de grupo do grupo inicial do usuário. Se especificado, o nome de grupo deve existir; se um número de grupo for fornecido, ele deve se referir a um grupo já existente. Se não especificado, o comportamento de *useradd* vai depender da variável `USERGROUPS_ENAB` contida em `/etc/login.defs`. O comportamento padrão (`USERGROUPS_ENAB yes`) é criar um grupo com o nome igual ao nome de usuário, com `GID` igual a `UID`.
+
+	`-G`/`--groups`
+
+	introduz uma lista de grupos suplementares dos quais o usuários também é membro. Cada grupo é separado do próximo por uma vírgula, com nenhuma no meio. O padrão é para o usuário pertencer a apenas o grupo inicial.
+
+	`-s`/`--shell`
+
+	define o caminho e o nome do arquivo do shell de login padrão do usuário. Após o processo de inicialização ter concluído, o shell de login padrão é o especificado aqui. Assegure-se de que o pacote do shell escolhido está instalado se escolher algo diferente do [Bash](/index.php/Bash "Bash").
 
 **Atenção:** Para ser capaz de se autenticar, o shell de login deve ser um dos listados em `/etc/shells`, do contrário o módulo [PAM](/index.php/PAM "PAM")`pam_shell` vai negar a requisição de login. Em especial, não use o caminho `/usr/bin/bash` em vez de `/bin/bash`, a menos que propriamente configurado em `/etc/shells`.
 
@@ -151,12 +162,14 @@ Quando o shell de login destina-se a ser não funcional, por exemplo quando a co
 
 ### Exemplo de adicionar um usuário
 
-Em um sistema de desktop típico, use o seguinte comando para adicionar um novo usuário chamado `archie` e especifique o Bash como seu shell de login:
+Em um sistema de desktop típico, use o seguinte comando para adicionar um novo usuário chamado `archie`:
 
 ```
-# useradd -m -s /bin/bash archie
+# useradd -m archie
 
 ```
+
+**Dica:** O valor padrão usado para o shell de login da nova conta pode ser exibida usando `useradd -D`. O padrão é Bash, um shell diferente pode ser especificado com a opção `-s`/`--shell`.
 
 Apesar de ser obrigatório proteger o recém criado usuário `archie` com uma senha, é altamente recomendado fazê-lo:
 
@@ -164,8 +177,6 @@ Apesar de ser obrigatório proteger o recém criado usuário `archie` com uma se
 # passwd archie
 
 ```
-
-**Dica:** Bash é o valor padrão para o shell (como indicado por `useradd -D`), então você pode omitir a opção `-s`, exceto se você quiser usar outra coisa.
 
 O comando *useradd* acima pode também criar automaticamente um grupo chamado `archie` com o mesmo GID que o UID do usuário `archie` e torna este o grupo padrão para `archie` no login. Fazer com que cada usuário tenha seu próprio grupo (com o nome do grupo igual ao nome do usuário e GID, o mesmo que o UID) é a maneira preferida de adicionar usuários.
 

@@ -609,7 +609,7 @@ Esse também é muito útil se você precisar de configurações de proxy mais p
 Para usar o `wget`, primeiro [instale](/index.php/Instale "Instale") o pacote [wget](https://www.archlinux.org/packages/?name=wget) e, após, modifique o `/etc/pacman.conf` descomentando a seguinte linha na seção `[options]`:
 
 ```
-XferCommand = /usr/bin/wget -c -q --show-progress --passive-ftp -O %o %u
+XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
 
 ```
 

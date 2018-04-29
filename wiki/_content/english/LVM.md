@@ -268,7 +268,7 @@ For example:
 
 ```
 
-This will create a logical volume that you can access later with `/dev/mapper/Volgroup00-lvolhome` or `/dev/VolGroup00/lvolhome`. Just like volume groups, you can use any name you want for your logical volume when creating it besides a few exceptions listed in [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8#VALID_NAMES).
+This will create a logical volume that you can access later with `/dev/Volgroup00/lvolhome` or `/dev/VolGroup00/lvolhome`. Just like volume groups, you can use any name you want for your logical volume when creating it besides a few exceptions listed in [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8#VALID_NAMES).
 
 You can also specify one or more physical volumes to restrict where LVM allocates the data. For example, you may wish to create a logical volume for the root filesystem on your small SSD, and your home volume on a slower mechanical drive. Simply add the physical volume devices to the command line, for example:
 
@@ -297,7 +297,7 @@ You can track created logical volumes with:
 
 ### Create file systems and mount logical volumes
 
-Your logical volumes should now be located in `/dev/mapper/` and `/dev/*YourVolumeGroupName*`. If you cannot find them, use the next commands to bring up the module for creating device nodes and to make volume groups available:
+Your logical volumes should now be located in `/dev/*YourVolumeGroupName*/`. If you cannot find them, use the next commands to bring up the module for creating device nodes and to make volume groups available:
 
 ```
 # modprobe dm_mod
@@ -309,20 +309,20 @@ Your logical volumes should now be located in `/dev/mapper/` and `/dev/*YourVolu
 Now you can create file systems on logical volumes and mount them as normal partitions (if you are installing Arch linux, refer to [mounting the partitions](/index.php/Mount "Mount") for additional details):
 
 ```
-# mkfs.<*fstype*> /dev/mapper/<*volume_group*>-<*logical_volume*>
-# mount /dev/mapper/<*volume_group*>-<*logical_volume*> /<*mountpoint*>
+# mkfs.<*fstype*> /dev/<*volume_group*>/<*logical_volume*>
+# mount /dev/<*volume_group*>/<*logical_volume*> /<*mountpoint*>
 
 ```
 
 For example:
 
 ```
-# mkfs.ext4 /dev/mapper/VolGroup00-lvolhome
-# mount /dev/mapper/VolGroup00-lvolhome /home
+# mkfs.ext4 /dev/VolGroup00/lvolhome
+# mount /dev/VolGroup00/lvolhome /home
 
 ```
 
-**Warning:** When choosing mountpoints, just select your newly created logical volumes (use: `/dev/mapper/Volgroup00-lvolhome`). Do **not** select the actual partitions on which logical volumes were created (do not use: `/dev/sda2`).
+**Warning:** When choosing mountpoints, just select your newly created logical volumes (use: `/dev/Volgroup00/lvolhome`). Do **not** select the actual partitions on which logical volumes were created (do not use: `/dev/sda2`).
 
 ### Configure mkinitcpio
 
@@ -348,7 +348,7 @@ Afterwards, you can continue in normal installation instructions with the [creat
 
 ### Kernel options
 
-If the root file system resides in a logical volume, the `root=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") must be pointed to the mapped device, e.g `/dev/mapper/*vg-name*-*lv-name*`.
+If the root file system resides in a logical volume, the `root=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") must be pointed to the mapped device, e.g `/dev/*vg-name*/*lv-name*`.
 
 ## Volume operations
 
@@ -684,7 +684,7 @@ LVM allows you to take a snapshot of your system in a much more efficient way th
 You create snapshot logical volumes just like normal ones.
 
 ```
-# lvcreate --size 100M --snapshot --name snap01 /dev/mapper/vg0-pv
+# lvcreate --size 100M --snapshot --name snap01 /dev/vg0/pv
 
 ```
 
@@ -693,7 +693,7 @@ With that volume, you may modify less than 100 MiB of data, before the snapshot 
 Reverting the modified 'pv' logical volume to the state when the 'snap01' snapshot was taken can be done with
 
 ```
-# lvconvert --merge /dev/mapper/vg0-snap01
+# lvconvert --merge /dev/vg0/snap01
 
 ```
 

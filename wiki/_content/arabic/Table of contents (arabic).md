@@ -1,4 +1,4 @@
-| [العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية")‎ <small>(46)</small> |
+| [العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية")‎ <small>(45)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:About Arch (العربية)")‎ <small>(8)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:ArchWiki (العربية)")‎ <small>(1)</small> |
 | <small>1.2.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")‎ <small>(3)</small> |

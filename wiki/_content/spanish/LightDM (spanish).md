@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Display Manager](/index.php/Display_Manager "Display Manager")
+
 [Lightdm](http://www.freedesktop.org/wiki/Software/LightDM) LighDM es un gestor de sesión inter-escritorio que aspira a ser el estándar para el sistema de ventanas X11 y para [Wayland](/index.php/Wayland "Wayland").
 
 ## Contents

@@ -36,6 +36,7 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [5.17 Turkey](#Turkey)
     *   [5.18 United States](#United_States)
     *   [5.19 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+*   [6 See also](#See_also)
 
 ## Official mirrors
 
@@ -246,6 +247,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 ### New Zealand
 
 *   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ only*
+*   [https://mirror.fsmg.org.nz/archlinux/](https://mirror.fsmg.org.nz/archlinux/) - *Free Software Mirror Group*
 
 ### Poland
 
@@ -292,3 +294,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 ### Sourceforge (old ISOs)
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs.*
+
+## See also
+
+*   [GitHub archweb mirrorlist.py](https://github.com/archlinux/archweb/blob/master/mirrors/views/mirrorlist.py) - source code of the archweb mirrorlist generator

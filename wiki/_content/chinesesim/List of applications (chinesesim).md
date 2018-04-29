@@ -8,8 +8,8 @@
 
 Related articles
 
-*   [Core_utilities_(简体中文)](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)")
-*   [List_of_Games_(简体中文)](/index.php/List_of_Games_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Games (简体中文)")
+*   [Core utilities (简体中文)](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)")
+*   [List of Games (简体中文)](/index.php/List_of_Games_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Games (简体中文)")
 
 本文按照不同分类列出常用的应用程序，是寻找软件包的索引。许多段落分成终端和图形应用程序。
 
@@ -426,7 +426,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **[Uzbl](https://en.wikipedia.org/wiki/Uzbl "wikipedia:Uzbl")** — Group of web interface tools which adhere to the Unix philosophy.
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **vimb** — Fast and lightweight vim like web browser based on the webkit web browser engine and the GTK toolkit.
 
@@ -910,7 +910,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing (since version 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psimedia](https://aur.archlinux.org/packages/psimedia/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psimedia](https://aur.archlinux.org/packages/psimedia/)
 
 *   **Psi+** — Enhanced version of the Psi Jabber client with many new [features](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
@@ -1186,7 +1186,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
 
-	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
+	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://www.archlinux.org/packages/?name=rssguard)
 
 *   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Powerful aggregator for RSS and Atom feeds, written in Java using Eclipse Rich Client Platform and SWT as a widget toolkit.
 
@@ -1206,7 +1206,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
 
-	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 #### 播客客户端
 
@@ -1474,7 +1474,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[Feh](/index.php/Feh "Feh")** — 使用imlib2的轻量级图像查看器
 
-	[http://linuxbrit.co.uk/feh/](http://linuxbrit.co.uk/feh/) || [feh](https://www.archlinux.org/packages/?name=feh)
+	[https://feh.finalrewind.org/](https://feh.finalrewind.org/) || [feh](https://www.archlinux.org/packages/?name=feh)
 
 *   **meh** — meh is a small, simple, super fast image viewer using raw XLib.
 
@@ -1684,7 +1684,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE program, based on OpenCascade, Qt and Python with features such as macro recording, workbenches and the ability to run as server.
 
-	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://www.archlinux.org/packages/?name=freecad)
+	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://aur.archlinux.org/packages/freecad/)
 
 *   **LeoCAD** — CAD program for creating virtual LEGO models. It has an easy to use interface and currently includes over 6000 different pieces created by the LDraw community.
 
@@ -2589,7 +2589,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://wiki.github.com/nonstop/termit/](https://wiki.github.com/nonstop/termit/) || [termit](https://aur.archlinux.org/packages/termit/)
 
-*   **[Termite](/index.php/Termite "Termite")** — 适合命令行控，转为平铺式窗口管理器打造，还有 Tab 机制。
+*   **[Termite](/index.php/Termite "Termite")** — 适合命令行控，专为平铺式窗口管理器打造，还有 Tab 机制。
 
 	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
 
@@ -3601,7 +3601,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **gscan2pdf** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
 *   **OCRFeeder** — Python GUI for Gnome which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument.
 
@@ -3951,7 +3951,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **physlock** — Screen and console locker.
 
-	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock](https://aur.archlinux.org/packages/physlock/)
+	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock](https://www.archlinux.org/packages/?name=physlock)
 
 *   **sflock** — Simple screen locker utility for X, based on slock. Provides a very basic user feedback.
 
@@ -3989,7 +3989,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **hashdeep** — 可对多文件计算 Hash, 生成摘记，跨平台的工具。
 
-	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://aur.archlinux.org/packages/hashdeep/)
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://www.archlinux.org/packages/?name=hashdeep)
 
 *   **Parano** — 用于生成、编辑和校验 MD5 和 SFV 文件的 GNOME 前端
 
@@ -4867,7 +4867,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/GnuCash "wikipedia:GnuCash")** — Financial application that implements a double-entry book-keeping system with features for small business accounting.
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Personal finance system which manages third party, expenditure and receipt categories, as well as budgetary lines, financial years, and other information that makes it suitable for associations.
 
@@ -5114,7 +5114,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **PCSXR** — PlayStation emulator; Debian fork of the abandoned original PCSX
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — PlayStation 2 emulator. It is still being maintained and developed. It requires BIOS files.
 

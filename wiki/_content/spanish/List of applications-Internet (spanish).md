@@ -661,7 +661,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **quite-rss** — Lector de fuentes RSS/Atom escrito en Qt/С++.
 
-	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 ### Navegadores web
 

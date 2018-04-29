@@ -7,11 +7,10 @@ Related articles
 
 Among other things they can be used to:
 
-*   define terminal colours
-*   configure terminal preferences
+*   configure terminal preferences (e.g. terminal colors)
 *   set DPI, anti-aliasing, hinting and other X font settings
 *   change the Xcursor theme
-*   theme xscreensaver
+*   theme [XScreenSaver](/index.php/XScreenSaver "XScreenSaver")
 *   configure low-level X applications like: [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock), [xpdf](https://www.archlinux.org/packages/?name=xpdf), [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode")
 
 ## Contents

@@ -25,16 +25,13 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
         *   [3.4.1 Apache](#Apache)
             *   [3.4.1.1 WebDAV](#WebDAV)
         *   [3.4.2 Nginx](#Nginx)
-            *   [3.4.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
 *   [4 Initialize](#Initialize)
     *   [4.1 Create storage directories](#Create_storage_directories)
-    *   [4.2 Optimize your instance](#Optimize_your_instance)
+    *   [4.2 Configure caching](#Configure_caching)
 *   [5 Security Hardening](#Security_Hardening)
-    *   [5.1 Let's Encrypt](#Let.27s_Encrypt)
-        *   [5.1.1 nginx](#nginx_2)
-    *   [5.2 uWSGI](#uWSGI)
-        *   [5.2.1 Activation](#Activation)
-    *   [5.3 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
+    *   [5.1 uWSGI](#uWSGI)
+        *   [5.1.1 Activation](#Activation)
+    *   [5.2 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
 *   [6 Synchronization](#Synchronization)
     *   [6.1 Desktop](#Desktop)
         *   [6.1.1 Calendar](#Calendar)
@@ -43,22 +40,22 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [6.2 Mounting files in GNOME Files (Nautilus)](#Mounting_files_in_GNOME_Files_.28Nautilus.29)
     *   [6.3 Android](#Android)
     *   [6.4 iOS](#iOS)
-    *   [6.5 SABnzbd](#SABnzbd)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
-    *   [7.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
-    *   [7.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
-    *   [7.4 Cannot create data directory](#Cannot_create_data_directory)
-    *   [7.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
-    *   [7.6 Seeing white page after login](#Seeing_white_page_after_login)
-    *   [7.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [7.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
-    *   [7.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
-    *   [7.10 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
-    *   [7.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [7.12 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
-    *   [7.13 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
-    *   [7.14 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_.22Unable_to_load_dynamic_library_.27mcrypt.so.22)
+    *   [7.1 Environment variables not available](#Environment_variables_not_available)
+    *   [7.2 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
+    *   [7.3 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
+    *   [7.4 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
+    *   [7.5 Cannot create data directory](#Cannot_create_data_directory)
+    *   [7.6 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
+    *   [7.7 Seeing white page after login](#Seeing_white_page_after_login)
+    *   [7.8 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
+    *   [7.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
+    *   [7.10 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
+    *   [7.11 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
+    *   [7.12 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [7.13 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
+    *   [7.14 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
+    *   [7.15 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_.22Unable_to_load_dynamic_library_.27mcrypt.so.22)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
     *   [8.2 Docker](#Docker)
@@ -72,7 +69,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
 Nextcloud requires several components:
 
 *   A web server: [Apache](/index.php/Apache "Apache") or [nginx](/index.php/Nginx "Nginx")
-*   A database: [MariaDB](/index.php/MariaDB "MariaDB") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+*   A database: [MariaDB](/index.php/MariaDB "MariaDB")/MySQL or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
 *   [PHP](/index.php/PHP "PHP") with [additional modules](#PHP_setup).
 
 These will be configured in [#Setup](#Setup).
@@ -89,11 +86,10 @@ As stated above, in order to setup Nextcloud, you must set up the appropriate PH
 
 ### Pacman hook
 
-To do nextcloud database upgrade automatically you may set up pacman post upgrade hook based on following example:
+To upgrade the Nextcloud database automatically on updates, you may want to create a [pacman hook](/index.php/Pacman#Hooks "Pacman"):
 
+ `/etc/pacman.d/hooks/nextcloud.hook` 
 ```
-# Update Nextcloud when core or -apps are touched
-
 [Trigger]
 Operation = Install
 Operation = Upgrade
@@ -102,23 +98,18 @@ Target = nextcloud
 Target = nextcloud-app-*
 
 [Action]
-Description = Updating Nextcloud installation
+Description = Update Nextcloud installation
 When = PostTransaction
 Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/nextcloud/occ upgrade
-
 ```
-
-You need to put it into /etc/pacman.d/hooks/nextcloud.hook if you did not customize HookDir in pacman.conf.
-
-See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 ### PHP setup
 
 **Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 13.0](https://docs.nextcloud.com/server/13/admin_manual/installation/source_installation.html#prerequisites-label).
 
-Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules.
+Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules. Configure [OPcache](/index.php/PHP#OPCache "PHP") as recommended by [the documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-opcache).
 
-Some apps (*News* for example) require the iconv extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
+Some apps (*News* for example) require the `iconv` extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
 
 Depending on which database backend will be used:
 
@@ -134,9 +125,7 @@ An SQL database must be setup and used for your Nextcloud installation. After se
 
 #### MariaDB
 
-**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[1]](https://docs.nextcloud.com/server/11/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
-
-The following is an example of setting up a [MariaDB](/index.php/MariaDB "MariaDB") database and user:
+It is recommended to setup an own database and user when using [MariaDB](/index.php/MariaDB "MariaDB"):
 
  `$ mysql -u root -p` 
 ```
@@ -145,6 +134,8 @@ mysql> CREATE USER `**nextcloud**`@'localhost' IDENTIFIED BY '**password'**;
 mysql> GRANT ALL PRIVILEGES ON `**nextcloud**`.* TO `**nextcloud**`@`localhost`;
 mysql> \q
 ```
+
+**Note:** Create or convert the database with MySQL 4-byte support in order to use Emojis (textbased smilies) on your Nextcloud server [[1]](https://docs.nextcloud.com/server/13/admin_manual/configuration_database/mysql_4byte_support.html).
 
 #### PostgreSQL
 
@@ -199,45 +190,50 @@ Nextcloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation
 
 #### Nginx
 
-Create an empty directory to hold the cloud-specific config file:
+Make sure PHP-FPM has been configured correctly as described in [Nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx"). Uncomment `env[PATH]` in `/etc/php/php-fpm.d/www.conf` as it is required by Nextcloud.
 
-```
-# mkdir /etc/nginx/conf.d/
+Create a [server block](/index.php/Nginx#Server_blocks "Nginx") and add the content according to the [Nextcloud documentation](https://docs.nextcloud.com/server/13/admin_manual/installation/nginx.html):
 
-```
+**Note:** Use `/usr/share/webapps/nextcloud` as `root` location when using [nextcloud](https://www.archlinux.org/packages/?name=nextcloud).
 
-In `/etc/nginx/nginx.conf`, add the following lines under the "http" section:
-
-```
-http {
-...
-...
-server_names_hash_bucket_size 64;
-include conf.d/*.conf;
-}
-
-```
-
-Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/13/admin_manual/installation/nginx.html). You will have to change the `root` location, as the Arch package installs to `/usr/share/webapps/nextcloud` instead of `/var/www/nextcloud`.
-
-Addtitionally, you change the php-handler block so it looks like this one
-
+**Tip:** See the [following template](https://github.com/graysky2/configs/blob/master/nginx/nextcloud-initial.conf) as initial configuration when setting up [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
+ `/etc/nginx/sites-available/owncloud.conf` 
 ```
 upstream php-handler {
-   server unix:/run/php-fpm/php-fpm.sock;
+    server unix:/run/php-fpm/php-fpm.sock;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name cloud.example.com;
+
+    ssl_certificate /etc/ssl/nginx/cloud.example.com.crt;
+    ssl_certificate_key /etc/ssl/nginx/cloud.example.com.key;
+
+    ..
+
+    # Path to the root of your installation
+    root /usr/share/webapps/nextcloud/;
+
+    ..
+
+    location ~ ^/(?:index|remote|public|cron|core/ajax/update|status|ocs/v[12]|updater/.+|ocs-provider/.+)\.php(?:$|/) {
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_param HTTPS on;
+        #Avoid sending the security headers twice
+        fastcgi_param modHeadersAvailable true;
+        fastcgi_param front_controller_active true;
+        fastcgi_pass php-handler;
+        fastcgi_intercept_errors on;
+        fastcgi_request_buffering off;
+    }
 }
 
 ```
-
-in the `/etc/nginx/conf.d/nextcloud.conf` file.
-
-From this point on, it is recommended to obtain a secure-certificates using [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt"), see [#Security Hardening](#Security_Hardening).
-
-##### PHP-FPM configuration
-
-Make sure PHP-FPM has been configured correctly as described in [Nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx").
-
-Uncomment `env[PATH] = /usr/local/bin:/usr/bin:/bin` in `/etc/php/php-fpm.d/www.conf` and [restart](/index.php/Restart "Restart") `php-fpm.service` to apply the changes.
 
 ## Initialize
 
@@ -245,120 +241,30 @@ Open the address where you have installed Nextcloud in a web browser (e.g., [htt
 
 ### Create storage directories
 
-You will now see "Cannot write into "apps" directory". This is because Arch packages Nextcloud in a way where the *apps* folder only has the webserver as a group without web permissions and the *data* folder is nonexistent.
+To webserver read/write access to the *apps* directory (e.g. on "Cannot write into "apps" directory"), setup the correct permissions:
 
-The easiest non-conflicting way is to create a new writable folder for apps and also create a writable data folder. Replace the http group with the group your webserver uses if needed.
+**Note:** Replace `http` when using a different [user](/index.php/User "User")/[group](/index.php/Group "Group") for the webserver.
 
 ```
 # mkdir -p /usr/share/webapps/nextcloud/data
-# mkdir -p /usr/share/webapps/nextcloud/apps2
 # chown http:http /usr/share/webapps/nextcloud/data
-# chown http:http /usr/share/webapps/nextcloud/apps2
-# chmod 700 /usr/share/webapps/nextcloud/data
-# chmod 700 /usr/share/webapps/nextcloud/apps2
+# chown http:http /usr/share/webapps/nextcloud/apps
+# chmod 750 /usr/share/webapps/nextcloud/data
+# chmod 750 /usr/share/webapps/nextcloud/apps
 
 ```
 
-Next edit the configuration file at `/etc/webapps/nextcloud/config/config.php` and add following lines before the closing `);` of the file.
+To overrule the data directory on the current setup, [append](/index.php/Append "Append") `datadirectory` to `/etc/webapps/nextcloud/config/config.php` before the closing tag `);`:
 
- `/etc/webapps/nextcloud/config/config.php` 
-```
-'apps_paths' =>
-  array (
-    0 =>
-    array (
-      'path' => '/usr/share/webapps/nextcloud/apps',
-      'url' => '/apps',
-      'writable' => false,
-    ),
-    1 =>
-    array (
-      'path' => '/usr/share/webapps/nextcloud/apps2',
-      'url' => '/apps2',
-      'writable' => true,
-    ),
-  ),
-  'datadirectory' => '/usr/share/webapps/nextcloud/data'
-```
+ `/etc/webapps/nextcloud/config/config.php`  `'datadirectory' => '/usr/share/webapps/nextcloud/data'` 
 
-Refresh the page and the error should be gone.
+### Configure caching
 
-From there follow the instructions in adding an administrator account as well as selecting the database you created earlier.
-
-### Optimize your instance
-
-By now you should have a working Nextcloud instance, but if you navigate to your instance settings (e.g, [https://cloud.example.com/settings/admin](https://cloud.example.com/settings/admin)), you will see that a lot of errors and notices are given. This section should fix all of them on a default install.
-
-To get rid of OPcache warnings, uncomment/edit the following extension and lines in /etc/php/php.ini [as per Nextcloud documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-opcache):
-
-```
- zend_extension=opcache.so
- opcache.enable=1
- opcache.enable_cli=1
- opcache.interned_strings_buffer=8
- opcache.max_accelerated_files=10000
- opcache.memory_consumption=128
- opcache.save_comments=1
- opcache.revalidate_freq=1
-
-```
-
-To get rid of memory cache warnings, you need to implement a memory cache - [this example will use Redis as per documentation](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/caching_configuration.html#id3):
-
-Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis.so`. Then in `config.php` add the following changes(with your own secure password):
-
-```
- 'memcache.local' => '\OC\Memcache\Redis',
- 'redis' => array(
-      'host' => '/run/redis/redis.sock',
-      'port' => 0,
-      'dbindex' => 0,
-      'password' => 'supersecretpassword',
-      'timeout' => 1.5,
-       ),
- 'memcache.locking' => '\OC\Memcache\Redis',
-
-```
-
-Add group redis to your webserver user
-
-```
- # usermod -a -G redis http 
-
-```
-
-And edit the redis config file /etc/redis.conf
-
-```
- port 0
- unixsocket /run/redis/redis.sock
- unixsocketperm 770
- requirepass supersecretpassword
-
-```
-
-and finally [start/enable](/index.php/Start/enable "Start/enable") `redis.service`, and restart `php-fpm.service` if you use nginx.
-
-To get rid of HSTS warnings, [follow the documentation](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html#enable-http-strict-transport-security) (for nginx the config is already there just commented out). Make absolutely sure you understand the ramifications of HSTS before implementing it.
-
-To get rid of warnings about environment variables, uncomment the following line in /etc/php/php-fpm.d/www.conf [as per Nextcloud documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-fpm):
-
-```
- env[PATH] = /usr/local/bin:/usr/bin:/bin
-
-```
+It is recommended to [enable caching](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/caching_configuration.html). The Nextcloud documentation provides instructions on [Redis](/index.php/Redis "Redis"), Memcached and [APCu](/index.php/PHP#APCu "PHP").
 
 ## Security Hardening
 
-The [Nextcloud Hardening and Security](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html) article guides along generic topics. See also the project's [Security scanner](https://scan.nextcloud.com/).
-
-### Let's Encrypt
-
-#### nginx
-
-1\. Create the cloud configuration `/etc/nginx/conf.d/cloud-initial.conf` using [this initial file](https://github.com/graysky2/configs/blob/master/nginx/nextcloud-initial.conf) as a template. Substitute the literal "@@FQDN@@" in the template file with the actual [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name "wikipedia:Fully qualified domain name") to be used. The certs for the server need to be generated using this unencrypted configuration initially. Follow the steps outlined on [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") to generate the server encryption certificates.
-
-2\. Upon successfully generating certificates, replace `/etc/nginx/conf.d/cloud-initial.conf` (it may be safely renamed so long as it does not end in ".conf" or simply deleted) with a new file, `/etc/nginx/conf.d/cloud.conf` using [this file](https://github.com/graysky2/configs/blob/master/nginx/nextcloud.conf) as a template. Again, substitute the literal "@@FQDN@@" in the template file with the actual [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name "wikipedia:Fully qualified domain name") to be used. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") `nginx.service`.
+See the [Nextcloud documentation](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html) and [Security](/index.php/Security "Security"). Nextcloud additionally provides a [Security scanner](https://scan.nextcloud.com/).
 
 ### uWSGI
 
@@ -627,18 +533,16 @@ To enable contacts and calendar sync (Android 4+):
 
 Download the official Nextcloud app from the [App Store](https://itunes.apple.com/us/app/nextcloud/id1125420102).
 
-### SABnzbd
-
-When using [SABnzbd](/index.php/SABnzbd "SABnzbd"), you might want to set
-
-```
-folder_rename 0
-
-```
-
-in your sabnzbd.ini file, because ownCloud will scan the files as soon as they get uploaded, preventing SABnzbd from removing UNPACKING prefixes etc.
-
 ## Troubleshooting
+
+### Environment variables not available
+
+Uncomment the line in `/etc/php/php-fpm.d/www.conf` as per [Nextcloud documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-fpm):
+
+```
+ env[PATH] = /usr/local/bin:/usr/bin:/bin
+
+```
 
 ### Self-signed certificate not accepted
 

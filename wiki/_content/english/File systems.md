@@ -86,13 +86,25 @@ Some FUSE-based file systems:
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
-*   **[EncFS](/index.php/EncFS "EncFS")** — EncFS is a userspace stackable cryptographic file-system.
+*   **[CurlFtpFS](/index.php/CurlFtpFS "CurlFtpFS")** — Filesystem for accessing FTP hosts based on FUSE and libcurl.
+
+	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
+
+*   **[davfs2](/index.php/Davfs2 "Davfs2")** — File system driver that allows you to mount a WebDAV folder.
+
+	[https://savannah.nongnu.org/projects/davfs2](https://savannah.nongnu.org/projects/davfs2) || [davfs2](https://www.archlinux.org/packages/?name=davfs2)
+
+*   **[EncFS](/index.php/EncFS "EncFS")** — Userspace stackable cryptographic file-system.
 
 	[https://vgough.github.io/encfs/](https://vgough.github.io/encfs/) || [encfs](https://www.archlinux.org/packages/?name=encfs)
 
 *   **fuseiso** — Mount an ISO as a regular user.
 
 	[http://sourceforge.net/projects/fuseiso/](http://sourceforge.net/projects/fuseiso/) || [fuseiso](https://www.archlinux.org/packages/?name=fuseiso)
+
+*   **GDriveFS** — Innovative FUSE wrapper for Google Drive.
+
+	[https://github.com/dsoprea/GDriveFS](https://github.com/dsoprea/GDriveFS) || [gdrivefs](https://aur.archlinux.org/packages/gdrivefs/)
 
 *   **[gitfs](/index.php/Gitfs "Gitfs")** — gitfs is a FUSE file system that fully integrates with git.
 
@@ -102,7 +114,15 @@ Some FUSE-based file systems:
 
 	[https://nuetzlich.net/gocryptfs/](https://nuetzlich.net/gocryptfs/) || [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/)
 
-*   **[SSHFS](/index.php/SSHFS "SSHFS")** — SSHFS is a FUSE-based filesystem client for mounting directories over SSH.
+*   **google-drive-ocamlfuse** — FUSE-based file system backed by Google Drive, written in OCaml.
+
+	[https://astrada.github.io/google-drive-ocamlfuse/](https://astrada.github.io/google-drive-ocamlfuse/) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/)
+
+*   **MegaFuse** — MEGA client for Linux, based on FUSE.
+
+	[https://github.com/matteoserva/MegaFuse](https://github.com/matteoserva/MegaFuse) || [megafuse-git](https://aur.archlinux.org/packages/megafuse-git/)
+
+*   **[SSHFS](/index.php/SSHFS "SSHFS")** — FUSE-based filesystem client for mounting directories over SSH.
 
 	[https://github.com/libfuse/sshfs](https://github.com/libfuse/sshfs) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 

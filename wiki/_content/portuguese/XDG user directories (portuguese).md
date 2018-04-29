@@ -4,9 +4,13 @@ Artigos relacionados
 *   [Aplicativos padrão](/index.php/Default_applications "Default applications")
 *   [Suporte a XDG Base Directory](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
 
-*User directories* (diretórios de usuários) são um conjunto de diretórios comuns de usuário localizados dentro do diretório `$HOME`, incluindo `Documents`, `Downloads`, `Music` e `Desktop`. Em português, esses diretórios são chamados de `Documentos`, `Downloads`, `Música` e `Área de trabalho`, respectivamente. Identificados por ícones únicos de um gerenciador de arquivos, eles normalmente serão carregados automaticamente por vários programas e aplicativos. [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) é um programa que vão gerar automaticamente esses diretórios. Veja o site do [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs) para informação adicional.
+Do [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/):
 
-**Dica:** Esse programa será especialmente útil para aqueles que desejam usar um gerenciador de arquivos para gerenciar seu desktop para um [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") como o [Openbox](/index.php/Openbox "Openbox"), pois ele também vai criar automaticamente um diretório `~/Desktop` ou, em português, `~/'Área de trabalho'`.
+	xdg-user-dirs é uma ferramenta para ajudar a gerenciar diretórios de usuário "bem conhecidos", como a pasta de área de trabalho e a pasta de música. Também lida com localização (isto é, tradução) dos nomes de arquivo.
+
+	A maneira como funciona é que o [xdg-user-dirs-update(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-user-dirs-update.1) é executado muito cedo na fase de login. Este programa lê um arquivo de configuração e um conjunto de diretórios padrão. Em seguida, ele cria versões localizadas desses diretórios no diretório inicial dos usuários e configura um arquivo de configuração em `$XDG_CONFIG_HOME/user-dirs.dirs` (XDG_CONFIG_HOME tem como padrão ~/.config) que os aplicativos podem ler para localizar esses diretórios.
+
+A maioria dos [gerenciadores de arquivo](/index.php/File_manager "File manager") indicam diretórios de usuário XDG com ícones especiais.
 
 ## Criando diretórios padrão
 

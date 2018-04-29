@@ -41,6 +41,7 @@
     *   [1.16 Colour pickers](#Colour_pickers)
     *   [1.17 Package management](#Package_management)
     *   [1.18 Input methods](#Input_methods)
+    *   [1.19 Version control systems](#Version_control_systems)
 
 ## Utilities
 
@@ -532,7 +533,31 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 #### File synchronization
 
-See [Synchronization and backup programs#Data synchronization](/index.php/Synchronization_and_backup_programs#Data_synchronization "Synchronization and backup programs").
+See also [Synchronization and backup programs#Data synchronization](/index.php/Synchronization_and_backup_programs#Data_synchronization "Synchronization and backup programs") and [Wikipedia:Comparison of file synchronization software](https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software "wikipedia:Comparison of file synchronization software").
+
+*   **[FreeFileSync](https://en.wikipedia.org/wiki/FreeFileSync "wikipedia:FreeFileSync")** — Folder comparison and synchronization software that creates and manages backup copies of all your important files.
+
+	[https://www.freefilesync.org/](https://www.freefilesync.org/) || [freefilesync](https://aur.archlinux.org/packages/freefilesync/)
+
+*   **rclone** — Command line program to sync files and directories to and from cloud storage services as well as between local paths.
+
+	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
+
+*   **[rsync](/index.php/Rsync "Rsync")** — File transfer program that uses the "rsync algorithm" which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
+
+	[https://rsync.samba.org/](https://rsync.samba.org/) || [rsync](https://www.archlinux.org/packages/?name=rsync)
+
+*   **[Syncthing](/index.php/Syncthing "Syncthing")** — Continuous file synchronization program. It synchronizes files between two or more computers in a simple way without advanced configuration.
+
+	[https://syncthing.net/](https://syncthing.net/) || [syncthing](https://www.archlinux.org/packages/?name=syncthing)
+
+*   **[Synkron](https://en.wikipedia.org/wiki/Synkron "wikipedia:Synkron")** — Application that helps you keep your files and folders always updated. You can easily sync your documents, music or pictures to have their latest versions everywhere.
+
+	[http://synkron.sourceforge.net/](http://synkron.sourceforge.net/) || [synkron](https://aur.archlinux.org/packages/synkron/)
+
+*   **[Unison](/index.php/Unison "Unison")** — File synchronization tool that allows two replicas of a collection of files and directories to be stored on different hosts (or different disks on the same host), modified separately, and then brought up to date by propagating the changes in each replica to the other.
+
+	[https://www.cis.upenn.edu/~bcpierce/unison/](https://www.cis.upenn.edu/~bcpierce/unison/) || [unison](https://www.archlinux.org/packages/?name=unison)
 
 #### Archiving and compression tools
 
@@ -977,3 +1002,27 @@ See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").
 ### Input methods
 
 See the main article: [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
+
+### Version control systems
+
+See also [Wikipedia:Comparison of revision control software](https://en.wikipedia.org/wiki/Comparison_of_revision_control_software "wikipedia:Comparison of revision control software").
+
+*   **[Bazaar](/index.php/Bazaar "Bazaar")** — Distributed version control system that helps you track project history over time and to collaborate easily with others.
+
+	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
+
+*   **[Darcs](https://en.wikipedia.org/wiki/Darcs "wikipedia:Darcs")** — Distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
+
+	[http://darcs.net/](http://darcs.net/) || [darcs](https://www.archlinux.org/packages/?name=darcs)
+
+*   **[Git](/index.php/Git "Git")** — Distributed revision control and source code management system with an emphasis on speed.
+
+	[https://git-scm.com/](https://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
+
+*   **[Mercurial](/index.php/Mercurial "Mercurial")** — Distributed version control system written in Python and similar in many ways to Git.
+
+	[https://www.mercurial-scm.org/](https://www.mercurial-scm.org/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
+
+*   **[Subversion](/index.php/Subversion "Subversion")** — Full-featured centralized version control system originally designed to be a better CVS.
+
+	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)

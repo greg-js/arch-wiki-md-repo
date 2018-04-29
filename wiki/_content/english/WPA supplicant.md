@@ -173,6 +173,7 @@ This will only create a `network` section. A configuration file with also the ab
 ```
 # Giving configuration update rights to wpa_cli
 ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=wheel
 update_config=1
 
 # AP scanning
@@ -199,16 +200,25 @@ If the network does not have a passphrase, e.g. a public Wi-Fi:
 
 ```
 network={
-    ssid="MYSSID"
-    key_mgmt=NONE
+   ssid="MYSSID"
+   key_mgmt=NONE
 }
+
 ```
 
 Further `network` blocks may be added manually, or using *wpa_cli* as illustrated in [#Connecting with wpa_cli](#Connecting_with_wpa_cli). In order to use *wpa_cli*, a control interface must be set with the `ctrl_interface` option. Setting `ctrl_interface_group=wheel` allows users belonging to such group to execute *wpa_cli*. This setting can be used to enable users without root access (or equivalent via sudo etc) to connect to wireless networks. Also add `update_config=1` so that changes made with *wpa_cli* to `example.conf` can be saved. Note that any user that is a member of the `ctrl_interface_group` group will be able to make changes to the file if this is turned on.
 
 `fast_reauth=1` and `ap_scan=1` are the *wpa_supplicant* options active globally at the time of writing. Whether you need them, or other global options too for that matter, depends on the type of network to connect to. If you need other global options, simply copy them over to the file from `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf`.
 
-Alternatively, `wpa_cli set` can be used to see options' status or set new ones. Multiple network blocks may be appended to this configuration: the supplicant will handle association to and roaming between all of them. The strongest signal defined with a network block usually is connected to by default, one may define `priority=` to influence behaviour.
+Alternatively, `wpa_cli set` can be used to see options' status or set new ones. Multiple network blocks may be appended to this configuration: the supplicant will handle association to and roaming between all of them. The strongest signal defined with a network block usually is connected to by default, one may define `priority=` to influence behaviour. For example to auto-connect to any unsecured network as a fallback with the lowest priority:
+
+```
+network={
+   key_mgmt=NONE
+   priority=-999
+}
+
+```
 
 Once you have finished the configuration file, you can optionally use it as a system-wide or per-interface default configuration by naming it according to the paths listed in [#At boot (systemd)](#At_boot_.28systemd.29). This also applies if you use additional network manager tools, which may rely on the paths (for example [Dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd")).
 

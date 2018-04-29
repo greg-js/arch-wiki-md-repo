@@ -160,9 +160,11 @@ As this solution does not use an official certificate authority (CA), a security
 
 #### Install
 
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into your preferred location, for example `/root`.
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into a suitable location, for example `/usr/local/letsencrypt`.
 
-The variable `HIAWATHA_RESTART_COMMAND` must be replaced by `systemctl restart hiawatha.service` in `/root/letsencrypt/letsencrypt.conf`.
+A configuration file example `letsencrypt.conf` is provided. The user's configuration must be saved either in `~/.letsencrypt/`, `/etc/letsencrypt/` or `/usr/local/etc/letsencrypt/`.
+
+In the configuration file, the variable `HIAWATHA_RESTART_COMMAND` must be replaced by `systemctl restart hiawatha.service` in `/root/letsencrypt/letsencrypt.conf`.
 
 #### Obtain a certificate
 
@@ -203,8 +205,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/path/to/letsencrypt renew restart
-
+ExecStart=*/path/to/*letsencrypt renew restart
 ```
  `/etc/systemd/system/letsencrypt-renew.timer ` 
 ```
@@ -219,7 +220,6 @@ Persistent=true
 
 [Install]
 WantedBy=timers.target
-
 ```
 
 [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `letsencrypt-renew.timer`.

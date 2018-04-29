@@ -80,6 +80,15 @@ Make sure [mobile-broadband-provider-info](https://www.archlinux.org/packages/?n
 
 A system restart might be necessary for ModemManager to detect the USB modem. After you restart the NetworkManager-applet and plug the modem in again NetworkManager should recognize the modem in the menu without further configuration. Setting up the modem in NetworkManager is self-explanatory, you should only need the login-information provided by your network provider.
 
+In case NetworkManager does not recognize the modem, check the output of ModemManager.service:
+
+```
+# systemctl status ModemManager
+
+```
+
+If you get error messages such as "Couldn't check support for device" and "not supported by any plugin", you may have to whitelist your device using the ModemManager filter rules [https://www.freedesktop.org/software/ModemManager/api/1.8.0/ref-overview-modem-filter.html](https://www.freedesktop.org/software/ModemManager/api/1.8.0/ref-overview-modem-filter.html)
+
 Whilst running ModemManager gammu will not work. SMS and Ussd codes can be still used with [modem-manager-gui](https://www.archlinux.org/packages/?name=modem-manager-gui).
 
 ### pppd

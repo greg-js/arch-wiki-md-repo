@@ -80,7 +80,7 @@ To see which *keycode* corresponds to a key, see [Extra keyboard keys#In Xorg](/
 
 **Tip:** There are predefined descriptive *keysyms* for multimedia keys, e.g. `XF86AudioMute` or `XF86Mail`. These *keysyms* can be found in `/usr/include/X11/XF86keysym.h`. Many multimedia programs are designed to work with these *keysyms* out-of-the-box, without the need to configure any third-party application.
 
-Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the US(intl) xkbd layout but not for the default US (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the *(intl)* variant of the keyboard from xorg.conf or add, using US layout as an example, `$ setxkbmap -layout 'us(intl)'` before calling xmodmap.
+Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the US(intl) xkbd layout but not for the default US (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the *(intl)* variant of the keyboard. Using US layout as an example, `$ setxkbmap -layout 'us(intl)'` before calling xmodmap to test your changes in the current X session. To permanently make this change, edit the xorg configuration or your .xprofile or .xinitrc file. See [Keyboard configuration in Xorg#Setting keyboard layout](/index.php/Keyboard_configuration_in_Xorg#Setting_keyboard_layout "Keyboard configuration in Xorg") for a full explanation.
 
 ## Custom table
 

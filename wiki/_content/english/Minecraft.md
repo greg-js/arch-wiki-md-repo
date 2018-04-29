@@ -18,8 +18,6 @@
     *   [2.4 Cuberite](#Cuberite)
     *   [2.5 Additional notes](#Additional_notes)
 *   [3 Minecraft Mod Launchers](#Minecraft_Mod_Launchers)
-    *   [3.1 Feed The Beast](#Feed_The_Beast)
-    *   [3.2 Technic Launcher](#Technic_Launcher)
 *   [4 See also](#See_also)
 
 ## Client
@@ -81,7 +79,7 @@ The package provides a systemd service and timer to take automatic backups. By d
 
 #### Starting the server
 
-To start the server you may either use systemd or run it directly from the command line. Either way the server is encapsulated in a [screen](/index.php/Screen "Screen") session which is owned by the `minecraft` user. Using systemd you may [start](/index.php/Start "Start") and enable the included `minecraftd.service`. Alternatively run
+To start the server you may either use systemd or run it directly from the command line. Either way the server is encapsulated in a [GNU Screen](/index.php/GNU_Screen "GNU Screen") session which is owned by the `minecraft` user. Using systemd you may [start](/index.php/Start "Start") and enable the included `minecraftd.service`. Alternatively run
 
 ```
 # minecraftd start
@@ -94,19 +92,19 @@ To start the server you may either use systemd or run it directly from the comma
 
 To easily control the server you may use the provided `minecraftd` script. It is capable of doing basic commands like `start`, `stop`, `restart` or attaching to the session with `console`. Moreover it may be used to display status information with `status`, backup the server world directory with `backup`, restore world data from backups with `restore` or run single commands in the server console with `command *do-something*`.
 
-**Note:** Regarding the server console (reachable via `minecraftd console`), remember that you can exit any screen session with `ctrl+a` `d`.
+**Note:** Regarding the server console (reachable via `minecraftd console`), remember that you can exit any GNU screen session with `ctrl+a` `d`.
 
 #### Tweaking
 
 To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edit the file `/etc/conf.d/minecraft`.
 
-For example, more advanced users may wish enable `IDLE_SERVER` by setting it to `true`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using [ncat(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ncat.1) (also called netcat or simply nc for short) and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time after suspension, it significantly decreases the CPU and memory usage leading to a more reasonably resource and power consumption.
+For example, more advanced users may wish enable `IDLE_SERVER` by setting it to `true`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using [ncat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ncat.1) (also called netcat or simply nc for short) and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time after suspension, it significantly decreases the CPU and memory usage leading to a more reasonably resource and power consumption.
 
 ### Spigot (respectively Craftbukkit)
 
 Spigot is the most widely-used **modded** Minecraft server in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/) package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/spigot`.
 
-Be sure read [#Setup](#Setup) and replace `minecraftd` with `spigot` wherever you encounter it.
+Be sure to read [#Setup](#Setup) and replace `minecraftd` with `spigot` wherever you encounter it.
 
 It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in popularity since Bukkit's demise.
 
@@ -114,7 +112,7 @@ It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in pop
 
 [Cuberite](http://cuberite.org/) is a highly efficient Minecraft compatible server written in C++ and Lua. It achieves better performances than the vanilla Minecraft server plus it is extensively moddable. The [cuberite](https://aur.archlinux.org/packages/cuberite/) package is available in the [AUR](/index.php/AUR "AUR"). The program provides a simple web interface by default at port `8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD as well builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and the corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/cuberite`.
 
-Be sure read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherever you encounter it.
+Be sure to read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherever you encounter it.
 
 ### Additional notes
 
@@ -124,15 +122,19 @@ Be sure read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherever 
 
 ## Minecraft Mod Launchers
 
-You can launch Minecraft from different "Launchers" that often include an array of Mod Packs to enchance one's gameplay and add [mods](http://minecraft.gamepedia.com/Mods).
+You can launch Minecraft from different so called *Launchers* that often include an array of Mod Packs to enhance one's gameplay and add [mods](http://minecraft.gamepedia.com/Mods).
 
-### Feed The Beast
+*   **Feed The Beast** — Originated as a custom challenge map in Minecraft that made heavy use of multiple tech mods and evolved into a mod package launcher.
 
-[feedthebeast](https://aur.archlinux.org/packages/feedthebeast/) includes the Feed The Beast launcher. The official page for Feed The Beast is: [feed-the-beast.com](https://www.feed-the-beast.com/)
+	[https://www.feed-the-beast.com/](https://www.feed-the-beast.com/) || [feedthebeast](https://aur.archlinux.org/packages/feedthebeast/)
 
-### Technic Launcher
+*   **MultiMC** — Sandbox environment manager for separable pack association.
 
-[minecraft-technic-launcher](https://aur.archlinux.org/packages/minecraft-technic-launcher/) includes the Technic Launcher. The official page for Technic Launcher is: [technicpack.net](http://www.technicpack.net/)
+	[https://multimc.org/](https://multimc.org/) || [multimc5](https://aur.archlinux.org/packages/multimc5/) and [multimc-git](https://aur.archlinux.org/packages/multimc-git/)
+
+*   **Technic Launcher** — Modpack installer with a focus on mod discovery via popularity rankings.
+
+	[http://www.technicpack.net/](http://www.technicpack.net/) || [minecraft-technic-launcher](https://aur.archlinux.org/packages/minecraft-technic-launcher/)
 
 ## See also
 

@@ -491,10 +491,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 ##### Graphical
 
-*   **4K Video Downloader** — Quickly download videos from YouTube in high-quality..
-
-	[https://www.4kdownload.com/products/product-videodownloader](https://www.4kdownload.com/products/product-videodownloader) || [4kvideodownloader](https://aur.archlinux.org/packages/4kvideodownloader/)
-
 *   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
 
 	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
@@ -506,6 +502,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **FreeRapid** — Java-based downloader that supports downloading from file-sharing services.
 
 	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [freerapid](https://aur.archlinux.org/packages/freerapid/)
+
+*   **[FrostWire](https://en.wikipedia.org/wiki/FrostWire "wikipedia:FrostWire")** — Easy to use cloud downloader, BitTorrent client and media player.
+
+	[http://www.frostwire.com/](http://www.frostwire.com/) || [frostwire](https://aur.archlinux.org/packages/frostwire/)
 
 *   **[Gwget](https://en.wikipedia.org/wiki/Wget#GWget "wikipedia:Wget")** — Download manager for GNOME. Supports HTTP and FTP.
 
@@ -563,6 +563,8 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 #### Cloud synchronization clients
 
+**Tip:** [cryptomator](https://aur.archlinux.org/packages/cryptomator/) is an open-source, multi-platform program designed to add client-side transparent encryption on cloud-shared files.
+
 *   **aws-cli** — CLI for Amazon Web Services, including efficient file transfers to and from Amazon S3.
 
 	[https://aws.amazon.com/cli/](https://aws.amazon.com/cli/) || [aws-cli](https://www.archlinux.org/packages/?name=aws-cli)
@@ -571,13 +573,33 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop-gui](https://aur.archlinux.org/packages/cozy-desktop-gui/)
 
-*   **[CrashPlan](/index.php/CrashPlan "CrashPlan")** — Desktop client for CrashPlan.
+*   **drive** — Tiny program to pull or push Google Drive files.
 
-	[https://www.crashplan.com/](https://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)
+	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive](https://aur.archlinux.org/packages/drive/)
+
+*   **DriveSync** — Command line utility that synchronizes your Google Drive files with a local folder on your machine.
+
+	[https://github.com/MStadlmeier/drivesync](https://github.com/MStadlmeier/drivesync) || [drivesync](https://aur.archlinux.org/packages/drivesync/)
 
 *   **[Dropbox](/index.php/Dropbox "Dropbox")** — Proprietary desktop client for Dropbox.
 
 	[https://www.dropbox.com/](https://www.dropbox.com/) || [dropbox](https://aur.archlinux.org/packages/dropbox/)
+
+*   **gdrive** — Command line utility for interacting with Google Drive.
+
+	[https://github.com/prasmussen/gdrive](https://github.com/prasmussen/gdrive) || [gdrive](https://aur.archlinux.org/packages/gdrive/)
+
+*   **Grive** — Google Drive client with support for new Drive REST API and partial sync.
+
+	[https://github.com/vitalif/grive2](https://github.com/vitalif/grive2) || [grive](https://aur.archlinux.org/packages/grive/)
+
+*   **[Insync](/index.php/Insync "Insync")** — Unofficial proprietary Google Drive desktop client.
+
+	[https://www.insynchq.com/](https://www.insynchq.com/) || [insync](https://aur.archlinux.org/packages/insync/)
+
+*   **[Mail.ru](https://en.wikipedia.org/wiki/Mail.Ru "wikipedia:Mail.Ru") Cloud** — Proprietary client for Mail.ru Cloud storage service.
+
+	[https://cloud.mail.ru/](https://cloud.mail.ru/) || [mailru-cloud](https://aur.archlinux.org/packages/mailru-cloud/)
 
 *   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — Desktop client to sync files with Mega.
 
@@ -597,11 +619,19 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **OneDrive** — Unofficial CLI for [OneDrive](https://onedrive.live.com/about/).
 
-	[https://skilion.github.io/onedrive/](https://skilion.github.io/onedrive/) || [onedrive-git](https://aur.archlinux.org/packages/onedrive-git/)
+	[https://skilion.github.io/onedrive/](https://skilion.github.io/onedrive/) || [onedrive](https://aur.archlinux.org/packages/onedrive/)
+
+*   **[ownCloud](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud") Desktop Client** — Desktop syncing client for ownCloud.
+
+	[https://owncloud.com/client/](https://owncloud.com/client/) || [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client)
 
 *   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop client for Pydio.
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
+
+*   **rclone** — Command line program to sync files and directories to and from Amazon S3, Dropbox, Google Drive, Microsoft OneDrive, Yandex Disk and many other cloud storage services.
+
+	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
 
 *   **S3cmd** — Unofficial CLI for Amazon S3.
 
@@ -611,13 +641,17 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-client](https://aur.archlinux.org/packages/seafile-client/)
 
-*   **[SparkleShare](https://en.wikipedia.org/wiki/SparkleShare "wikipedia:SparkleShare")** — Collaboration and sharing tool based on git written in C#.
+*   **[SparkleShare](https://en.wikipedia.org/wiki/SparkleShare "wikipedia:SparkleShare")** — File sharing and collaboration application written in C#. It can sync with any Git server over SSH.
 
 	[http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
 
 *   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — Proprietary client for SpiderOak One.
 
 	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
+
+*   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
+
+	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)
 
 *   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Proprietary CLI for Yandex Disk.
 
@@ -626,10 +660,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 #### File transfer clients
 
 See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
-
-*   **[CurlFtpFS](/index.php/CurlFtpFS "CurlFtpFS")** — Filesystem for accessing FTP hosts; based on FUSE and libcurl.
-
-	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
 
 *   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — Fast and reliable FTP, FTPS and SFTP client.
 
@@ -646,10 +676,6 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 *   **ncftp** — A set of free application programs implementing FTP.
 
 	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
-
-*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
-
-	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 
 *   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
 
@@ -687,7 +713,7 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 #### BitTorrent clients
 
-Some [download managers](#Download_managers) are also able to connect to the BitTorrent network: [Aria2](/index.php/Aria2 "Aria2"), [LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp"), FatRat, [KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet"), [MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey"), uGet.
+Some [download managers](#Download_managers) are also able to connect to the BitTorrent network: [Aria2](/index.php/Aria2 "Aria2"), [LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp"), FatRat, [FrostWire](https://en.wikipedia.org/wiki/FrostWire "wikipedia:FrostWire"), [KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet"), [MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey"), uGet.
 
 See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
 
@@ -701,13 +727,17 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
 
+*   **peerflix** — Streaming torrent client for node.js.
+
+	[https://github.com/mafintosh/peerflix](https://github.com/mafintosh/peerflix) || [peerflix](https://aur.archlinux.org/packages/peerflix/)
+
 *   **[rTorrent](/index.php/RTorrent "RTorrent")** — Simple and lightweight ncurses BitTorrent client. Requires [libtorrent](https://www.archlinux.org/packages/?name=libtorrent) backend.
 
 	[https://rakshasa.github.io/rtorrent/](https://rakshasa.github.io/rtorrent/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
 
-*   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version, GTK+, Qt GUI, web and CLI front-ends.
+*   **[Transmission](/index.php/Transmission "Transmission") CLI** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends. This package includes backend, daemon, command-line interface, and a Web UI interface.
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) (includes backend, daemon, command-line interface, and a Web UI interface)
+	[https://transmissionbt.com/](https://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
 
 ##### Graphical
 
@@ -719,19 +749,27 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
 
+*   **Powder Player** — Hybrid between a streaming BitTorrent client and a player. Based on the [Electron](https://electronjs.org/) platform.
+
+	[http://powder.media/](http://powder.media/) || [powder-player-bin](https://aur.archlinux.org/packages/powder-player-bin/)
+
 *   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — Open source (GPLv2) BitTorrent client that strongly resembles µtorrent.
 
-	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
+	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
 *   **Tixati** — P2P client that uses the BitTorrent protocol.
 
 	[http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)
 
-*   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with daemon version, GTK+, Qt GUI, web and CLI front-ends.
+*   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends.
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (remote clients work with the daemon in the -cli package)
+	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK+: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
 
-*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system bittorrent client.
+*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK+ client for remote management of the Transmission BitTorrent client, using its HTTP RPC protocol.
+
+	[https://github.com/transmission-remote-gtk/transmission-remote-gtk](https://github.com/transmission-remote-gtk/transmission-remote-gtk) || [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk)
+
+*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system BitTorrent client.
 
 	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
 
@@ -739,33 +777,41 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)
 
-*   **Vuze Plus Extreme Mod** — A modded version of the Vuze BitTorrent client with multiple spoofing capabilities.
-
-	[http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/](http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/) || [vuze-extreme-mod](https://aur.archlinux.org/packages/vuze-extreme-mod/)
-
-*   **WebTorrent Desktop** — Streaming torrent application. Based on the [Electron](https://electronjs.org/) platform.
+*   **WebTorrent Desktop** — Streaming BitTorrent application. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://webtorrent.io/desktop/](https://webtorrent.io/desktop/) || [webtorrent-desktop](https://aur.archlinux.org/packages/webtorrent-desktop/)
 
 #### Other P2P networks
 
-See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wiki/Comparison_of_eDonkey_software "wikipedia:Comparison of eDonkey software").
+See also [Wikipedia:Comparison of file-sharing applications](https://en.wikipedia.org/wiki/Comparison_of_file-sharing_applications "wikipedia:Comparison of file-sharing applications").
 
 *   **[aMule](/index.php/AMule "AMule")** — Well-known eDonkey/Kad client with a daemon version and GTK+, web, and CLI front-ends.
 
 	[http://www.amule.org/](http://www.amule.org/) || [amule](https://www.archlinux.org/packages/?name=amule)
 
+*   **EiskaltDC++** — Direct Connect and ADC client.
+
+	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK+: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
+
+*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK+ server/client for the Gnutella peer-to-peer network.
+
+	[http://gtk-gnutella.sourceforge.net/](http://gtk-gnutella.sourceforge.net/) || [gtk-gnutella](https://aur.archlinux.org/packages/gtk-gnutella/)
+
 *   **KaMule** — KDE graphical front-end for aMule.
 
 	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
 
+*   **ncdc** — Modern and lightweight Direct Connect and ADC client with a friendly ncurses interface.
+
+	[https://dev.yorhel.nl/ncdc](https://dev.yorhel.nl/ncdc) || [ncdc](https://aur.archlinux.org/packages/ncdc/)
+
 *   **Nicotine+** — A graphical client for the Soulseek P2P network.
 
-	[https://www.nicotine-plus.org/](https://www.nicotine-plus.org/) || [nicotine-plus-git](https://aur.archlinux.org/packages/nicotine-plus-git/)
+	[https://www.nicotine-plus.org/](https://www.nicotine-plus.org/) || [nicotine+](https://www.archlinux.org/packages/?name=nicotine%2B)
 
-*   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
+*   **Valknut** — Direct Connect client (like DC++) with segmented downloading.
 
-	[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)
+	[http://wxdcgui.sourceforge.net/](http://wxdcgui.sourceforge.net/) || [valknut](https://aur.archlinux.org/packages/valknut/)
 
 #### Pastebin clients
 
@@ -1271,6 +1317,10 @@ See also [Tox](/index.php/Tox "Tox").
 
 	[https://qtox.github.io/](https://qtox.github.io/) || [qtox](https://www.archlinux.org/packages/?name=qtox)
 
+*   **ratox** — FIFO based tox client.
+
+	[https://ratox.2f30.org/](https://ratox.2f30.org/) || [ratox-git](https://aur.archlinux.org/packages/ratox-git/)
+
 *   **Ricin** — Dead-simple but powerful Tox client.
 
 	[https://github.com/RicinApp/Ricin](https://github.com/RicinApp/Ricin) || [ricin](https://aur.archlinux.org/packages/ricin/)
@@ -1739,11 +1789,15 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Pumpa** — Pump.io client written in C++ and Qt.
 
-	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa-git](https://aur.archlinux.org/packages/pumpa-git/)
+	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa](https://aur.archlinux.org/packages/pumpa/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 
 	[http://turpial.org.ve/](http://turpial.org.ve/) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)
+
+*   **Whalebird** — Mastodon client application. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://whalebird.org/](https://whalebird.org/) || [whalebird-bin](https://aur.archlinux.org/packages/whalebird-bin/)
 
 ### Remote desktop
 

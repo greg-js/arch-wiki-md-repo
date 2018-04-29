@@ -32,7 +32,7 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
         *   [2.3.3 Caché de lectura y escritura](#Cach.C3.A9_de_lectura_y_escritura)
         *   [2.3.4 de doble sentido con rsync](#de_doble_sentido_con_rsync)
         *   [2.3.5 Caché de proxy inverso dinámico usando nginx](#Cach.C3.A9_de_proxy_inverso_din.C3.A1mico_usando_nginx)
-        *   [2.3.6 Sincronice la memoria caché del paquete pacman utilizando programas de sincronización](#Sincronice_la_memoria_cach.C3.A9_del_paquete_pacman_utilizando_programas_de_sincronizaci.C3.B3n)
+        *   [2.3.6 Sincronice la memoria caché de *pacman* utilizando programas de sincronización](#Sincronice_la_memoria_cach.C3.A9_de_pacman_utilizando_programas_de_sincronizaci.C3.B3n)
         *   [2.3.7 Prevención de limpiezas de caché no deseadas](#Prevenci.C3.B3n_de_limpiezas_de_cach.C3.A9_no_deseadas)
     *   [2.4 Reconstituir un paquete del sistema de archivos](#Reconstituir_un_paquete_del_sistema_de_archivos)
     *   [2.5 Lista de paquetes instalados](#Lista_de_paquetes_instalados)
@@ -365,11 +365,11 @@ Históricamente, hubo [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) y
 
 #### Caché de lectura y escritura
 
-Para compartir paquetes entre varios equipos, simplemente comparta `/var/cache/pacman/` utilizando cualquier protocolo de montaje basado en red. Esta sección muestra cómo usar [shfs](/index.php/Shfs "Shfs") o [ SSHFS]] para compartir una caché de paquetes más los directorios de biblioteca relacionados entre múltiples ordenadores de la misma red local. Tenga en cuenta que una caché compartida en red puede ser lenta dependiendo de la elección del sistema de archivos, entre otros factores.
+Para compartir paquetes entre varios equipos, simplemente comparta `/var/cache/pacman/` utilizando cualquier protocolo de montaje basado en red. Esta sección muestra cómo usar [shfs](/index.php/Shfs "Shfs") o [SSHFS](/index.php/SSHFS "SSHFS") para compartir una caché de paquetes más los directorios de biblioteca relacionados entre múltiples ordenadores de la misma red local. Tenga en cuenta que una caché compartida en red puede ser lenta dependiendo de la elección del sistema de archivos, entre otros factores.
 
 Primero, instale cualquier paquete de sistema de ficheros que soporte la red: [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils), [sshfs](https://www.archlinux.org/packages/?name=sshfs), [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs), [samba](https://www.archlinux.org/packages/?name=samba) or [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
 
-**Tip:**
+**Sugerencia:**
 
 *   Para usar *sshfs* o *shfs*, considere leer [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") .
 *   Por defecto, *smbfs* no sirve nombres de archivo que contengan dos puntos, lo que hace que el cliente descargue de nuevo el paquete otra vez. Para evitarlo, utilice la función `mapchars` opción de montaje en el cliente.
@@ -394,11 +394,11 @@ Ejemplo para un cliente, utilizando `uname -m` dentro del nombre compartido aseg
 
 #### Caché de proxy inverso dinámico usando nginx
 
-[nginx](/index.php/Nginx "Nginx") puede utilizarse para realizar peticiones proxy a las réplicas ascendentes oficiales y almacenar los resultados en caché en el disco local. Todas las solicitudes posteriores de ese archivo se servirán directamente desde la caché local, lo que minimiza la cantidad de tráfico de Internet necesario para actualizar un gran número de servidores con el mínimo esfuerzo..
+[nginx](/index.php/Nginx "Nginx") puede utilizarse para realizar peticiones proxy a las réplicas ascendentes oficiales y almacenar los resultados en caché en el disco local. Todas las solicitudes posteriores de ese archivo se servirán directamente desde la caché local, lo que minimiza la cantidad de tráfico de Internet necesario para actualizar un gran número de servidores con el mínimo esfuerzo.
 
 **Advertencia:** Este método tiene una limitación. Debe usar réplicas que usan la misma ruta relativa a los archivos del paquete y debe configurar su caché para usar esa misma ruta. En este ejemplo, estamos usando réplicas que usan la ruta relativa `/archlinux/$repo/os/$arch` y la configuración de nuestro `Server` en `mirrorlist` está configuradara de forma similar.
 
-En este ejemplo, ejecutaremos el servidor de caché en `http://cache.domain.local:8080/` y almacenando los paquetes en `/srv/http/pacman-cache/`.
+En este ejemplo, ejecutaremos el servidor de caché en `http://cache.domain.local:8080/` y almacenaremos los paquetes en `/srv/http/pacman-cache/`.
 
 Cree el directorio para la memoria caché y ajuste los permisos para que nginx pueda escribir archivos en ella:
 
@@ -419,9 +419,9 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 ```
 
-**Nota:** Tendrá que crear un método para borrar paquetes viejos, ya que este directorio continuará creciendo con el tiempo. `paccache` (que se incluye con *pacman*) se puede utilizar para automatizarlo utilizando criterios de retención de su elección. Por ejemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` mantendrá las dos últimas versiones de los paquetes en su directorio de caché.
+**Nota:** Habrá que crear un método para borrar paquetes viejos, ya que este directorio continuará creciendo con el tiempo. `paccache` (que se incluye con *pacman*) se puede utilizar para automatizarlo , utilizando criterios de retención de su elección. Por ejemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` mantendrá las dos últimas versiones de los paquetes en su directorio de caché.
 
-#### Sincronice la memoria caché del paquete pacman utilizando programas de sincronización
+#### Sincronice la memoria caché de *pacman* utilizando programas de sincronización
 
 Use [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") o [Syncthing](/index.php/Syncthing "Syncthing") para sincronizar las carpetas de la caché de "pacman" (i.e. `/var/cache/pacman/pkg`).
 
@@ -440,7 +440,7 @@ CleanMethod = KeepCurrent
 
 Para reconstituir un paquete desde el sistema de archivos, use *bacman* (incluido con *pacman* ). Los archivos del sistema se toman tal como están, por lo tanto, cualquier modificación estará presente en el paquete ensamblado. Por lo tanto, se desaconseja la distribución del paquete reconstituido; ver [ABS](/index.php/ABS "ABS") y [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") para las alternativas.
 
-**Tip:** *bacman* respeta las opciones de `PACKAGER`, `PKGDEST` y `PKGEXT` de `makepkg.conf`. Las opciones personalizadas para las herramientas de compresión se pueden configurar exportando la variable de entorno relevante, por ejemplo `XZ_OPT = "- T 0"` habilitará la compresión paralela para *xz* .
+**Sugerencia:** *bacman* respeta las opciones de `PACKAGER`, `PKGDEST` y `PKGEXT` de `makepkg.conf`. Las opciones personalizadas para las herramientas de compresión se pueden configurar exportando la variable de entorno relevante, por ejemplo `XZ_OPT = "- T 0"` habilitará la compresión paralela para *xz* .
 
 Una herramienta alternativa sería [fakepkg](https://aur.archlinux.org/packages/fakepkg/). Es compatible con la paralelización y puede manejar múltiples paquetes de entrada en un comando, lo que *bacman* no soporta.
 
@@ -462,7 +462,7 @@ Para instalar paquetes de la copia de seguridad de la lista, ejecute:
 
 ```
 
-**Tip:**
+**Sugerencia:**
 
 *   Para omitir los paquetes ya instalados, use `--needed`.
 *   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` para crear también una lista de las dependencias opcionales instaladas que se pueden reinstalar con `--asdeps`.
@@ -481,7 +481,7 @@ Para eliminar todos los paquetes en su sistema que no se mencionan en la lista:
 
 ```
 
-**Tip:** Estas tareas pueden ser automatizadas. Consulte [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) y [pug](https://aur.archlinux.org/packages/pug/) por ejemplo.
+**Sugerencia:** Estas tareas pueden ser automatizadas. Consulte [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) y [pug](https://aur.archlinux.org/packages/pug/) por ejemplo.
 
 Si desea mantener una lista actualizada de los paquetes explícitamente instalados (e.g. en combinación con una versión `/etc/`), puede configurar un [hook](/index.php/Pacman#Hooks "Pacman"). Ejemplo:
 
@@ -507,9 +507,9 @@ Si sospecha que hay corrupción de archivos (por ejemplo, por fallos de software
 
 ```
 
-Para la recuperación de la base de datos, véase [#Restore pacman's local database](#Restore_pacman.27s_local_database). Los archivos `mtree` también pueden ser [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
+Para la recuperación de la base de datos, véase [#Restaurar la base de datos local de pacman](#Restaurar_la_base_de_datos_local_de_pacman). Los archivos `mtree` también pueden ser [extraído como `.MTREE` de los respectivos archivos del paquete](#Visualizaci.C3.B3n_de_un_.C3.BAnico_archivo_dentro_de_un_.pkg).
 
-**Nota:** ¡Esto *no* debe usarse cuando se sospeche de cambios maliciosos! En este caso, se recomiendan precauciones de seguridad, como usar un medio en vivo y una fuente independiente para las sumas de hash.
+**Nota:** ¡Esto *no* debe usarse cuando se sospeche de cambios maliciosos! En este caso, se recomiendan precauciones de seguridad, como usar un medio en vivo o una fuente independiente para las sumas de hash.
 
 ### Reinstalar todos los paquetes
 
@@ -522,7 +522,7 @@ Para reinstalar todos los paquetes originales, use:
 
 Los paquetes externos (AUR) deben reinstalarse por separado; puede listarlos con `pacman -Qmq`.
 
-*Pacman* conserva la [installation reason](/index.php/Installation_reason "Installation reason") por defecto.
+*Pacman* conserva el [Motivo de la instalación](/index.php/Installation_reason "Installation reason") por defecto.
 
 ### Restaurar la base de datos local de pacman
 
@@ -539,7 +539,7 @@ Si tiene Arch instalado en una memoria USB y se las arregla para estropearlo ( p
 
 ### Visualización de un único archivo dentro de un .pkg
 
-Por ejemplo, si desea ver el contenido de `/etc/systemd/logind.conf` suministrado dentro del paquete [systemd](https://www.archlinux.org/packages/?name=systemd)::
+Por ejemplo, si desea ver el contenido de `/etc/systemd/logind.conf` suministrado dentro del paquete [systemd](https://www.archlinux.org/packages/?name=systemd):
 
 ```
 $ tar -xOf /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz etc/systemd/logind.conf
@@ -555,7 +555,7 @@ $ vim /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz
 
 ### Buscar aplicaciones que usan bibliotecas de paquetes antiguos
 
-Incluso si ha instalado un paquete, los programas existentes que se ejecutan desde hace mucho tiempo (como los demonios y los servidores) siguen utilizando código de antiguas bibliotecas.Y es una mala idea dejar que estos programas se ejecuten si la biblioteca anterior contiene un error de seguridad.
+Incluso después de haber instalado un paquete, los programas existentes que se ejecutan desde hace mucho tiempo (como los demonios y los servidores) siguen utilizando código de antiguas bibliotecas.Y es una mala idea dejar que estos programas se ejecuten si la biblioteca anterior contiene un error de seguridad.
 
 Esta es una manera de encontrar todos los programas que usan código de paquetes antiguos:
 

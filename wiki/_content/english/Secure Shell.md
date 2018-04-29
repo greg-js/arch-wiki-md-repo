@@ -561,7 +561,7 @@ $ ssh -L 1000:mail.google.com:25 192.168.0.100
 
 ```
 
-will use SSH to login to and open a shell on 192.168.0.100, and will also create a tunnel from the local machine's TCP port 1000 to mail.google.com on port 25\. Once established, connections to localhost:1000 will connect to the Gmail SMTP port. To Google, it will appear that any such connection (though not necessarily the data conveyed over the connection) originated from 192.168.0.100, and such data will be secure as between the local machine and 192.168.0.100, but not between 192.168.0.100, unless other measures are taken.
+will use SSH to login to and open a shell on `192.168.0.100`, and will also create a tunnel from the local machine's TCP port 1000 to mail.google.com on port 25\. Once established, connections to `localhost:1000` will connect to the Gmail SMTP port. To Google, it will appear that any such connection (though not necessarily the data conveyed over the connection) originated from `192.168.0.100`, and such data will be secure between the local machine and 192.168.0.100, but not between `192.168.0.100` and Google, unless other measures are taken.
 
 Similarly:
 
@@ -570,7 +570,7 @@ $ ssh -L 2000:192.168.0.100:6001 192.168.0.100
 
 ```
 
-will allow connections to localhost:2000 which will be transparently sent to the remote host on port 6001\. The preceding example is useful for VNC connections using the vncserver utility--part of the tightvnc package--which, though very useful, is explicit about its lack of security.
+will allow connections to `localhost:2000` which will be transparently sent to the remote host on port 6001\. The preceding example is useful for VNC connections using the vncserver utility--part of the tightvnc package--which, though very useful, is explicit about its lack of security.
 
 Remote forwarding allows the remote host to connect to an arbitrary host via the SSH tunnel and the local machine, providing a functional reversal of local forwarding, and is useful for situations where, e.g., the remote host has limited connectivity due to firewalling. It is enabled with the `-R` switch and a forwarding specification in the form of `<tunnel port>:<destination address>:<destination port>`.
 
@@ -581,9 +581,9 @@ $ ssh -R 3000:irc.freenode.net:6667 192.168.0.200
 
 ```
 
-will bring up a shell on 192.168.0.200, and connections from 192.168.0.200 to itself on port 3000 (remotely speaking, localhost:3000) will be sent over the tunnel to the local machine and then on to irc.freenode.net on port 6667, thus, in this example, allowing the use of IRC programs on the remote host to be used, even if port 6667 would normally be blocked to it.
+will bring up a shell on `192.168.0.200`, and connections from `192.168.0.200` to itself on port 3000 (the remote host's `localhost:3000`) will be sent over the tunnel to the local machine and then on to irc.freenode.net on port 6667, thus, in this example, allowing the use of IRC programs on the remote host to be used, even if port 6667 would normally be blocked to it.
 
-Both local and remote forwarding can be used to provide a secure "gateway," allowing other computers to take advantage of an SSH tunnel, without actually running SSH or the SSH daemon by providing a bind-address for the start of the tunnel as part of the forwarding specification, e.g. `<tunnel address>:<tunnel port>:<destination address>:<destination port>`. The `<tunnel address>` can be any address on the machine at the start of the tunnel, `localhost`, `*` (or blank), which, respectively, allow connections via the given address, via the loopback interface, or via any interface. By default, forwarding is limited to connections from the machine at the "beginning" of the tunnel, i.e. the `<tunnel address>` is set to `localhost`. Local forwarding requires no additional configuration, however remote forwarding is limited by the remote server's SSH daemon configuration. See the `GatewayPorts` option in `sshd_config(5)` for more information.
+Both local and remote forwarding can be used to provide a secure "gateway", allowing other computers to take advantage of an SSH tunnel, without actually running SSH or the SSH daemon by providing a bind-address for the start of the tunnel as part of the forwarding specification, e.g. `<tunnel address>:<tunnel port>:<destination address>:<destination port>`. The `<tunnel address>` can be any address on the machine at the start of the tunnel. The address `localhost` allows connections via the `localhost` or loopback interface, and an empty address or `*` allow connections via any interface. By default, forwarding is limited to connections from the machine at the "beginning" of the tunnel, i.e. the `<tunnel address>` is set to `localhost`. Local forwarding requires no additional configuration, however remote forwarding is limited by the remote server's SSH daemon configuration. See the `GatewayPorts` option in [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) and `-L address` option in [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1) for more information about remote forwarding and local forwarding, respectively.
 
 ### Jump hosts
 

@@ -463,7 +463,7 @@ Sincronize a base de dados de arquivos:
 Pesquise por um pacote contendo um arquivo, p.ex.:
 
 ```
-# pacman -Fs pacman
+$ pacman -Fs pacman
 core/pacman 5.0.1-4
     usr/bin/pacman
     usr/share/bash-completion/completions/pacman

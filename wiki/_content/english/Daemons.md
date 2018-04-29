@@ -99,9 +99,9 @@ NetworkManager-wait-online.service | NetworkManager daemon, provides configurati
 | [Rsync](/index.php/Rsync "Rsync") | rsyncd | rsyncd.service | rsync daemon. |
 | [Rsyslog](/index.php/Rsyslog "Rsyslog") | rsyslogd | rsyslog.service | Alternative system logger. |
 | [Redis](/index.php/Redis "Redis") | redis-server | redis.service | Key-value store |
-| [samba](/index.php/Samba "Samba") | samba | smbd.service
-nmbd.service
-winbindd.service | File and print services for Microsoft Windows clients. |
+| [samba](/index.php/Samba "Samba") | samba | smb.service
+nmb.service
+winbind.service | File and print services for Microsoft Windows clients. |
 | [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
 lvm2-lvmetad.service
 lvm2-monitor.service

@@ -117,6 +117,7 @@ install CD version
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
 | Lenovo ThinkPad T560 | Yes | Yes | Yes | Yes | Yes | Yes | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
 | [Lenovo ThinkPad T570](/index.php/Lenovo_ThinkPad_T570 "Lenovo ThinkPad T570") | Yes | Yes | Yes | Yes | Yes |  ? | Yes* | NA | not yet fully tested |
+| Lenovo ThinkPad T580 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | [Fingerprint reader is not supported](https://forums.lenovo.com/t5/Linux-Discussion/Thinkpad-T580-Synaptics-Metallica-MIS-Touch-Fingerprint-Reader/m-p/4057745) | SD Card Reader is not tested |
 
 #### W series
 

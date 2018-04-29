@@ -207,7 +207,7 @@ $ kdesu wicd-client -n
 
 ```
 
-Questi comandi richiedono rispettivamente l'installazione del pacchetto [ktsuss](https://aur.archlinux.org/packages/ktsuss/) (che si trova su AUR), [gksu](https://www.archlinux.org/packages/?name=gksu) e [kdesu](https://www.archlinux.org/packages/?name=kdesu).
+Questi comandi richiedono rispettivamente l'installazione del pacchetto [ktsuss](https://aur.archlinux.org/packages/ktsuss/) (che si trova su AUR), [gksu](https://aur.archlinux.org/packages/gksu/) e [kdesu](https://www.archlinux.org/packages/?name=kdesu).
 
 ### Configurare wicd per eduroam
 

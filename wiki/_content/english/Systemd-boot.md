@@ -12,13 +12,13 @@ It is simple to configure but it can only start EFI executables such as the Linu
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Installing the EFI boot loader](#Installing_the_EFI_boot_loader)
-    *   [1.2 Updating the EFI boot loader](#Updating_the_EFI_boot_loader)
+    *   [1.1 Installing the EFI boot manager](#Installing_the_EFI_boot_manager)
+    *   [1.2 Updating the EFI boot manager](#Updating_the_EFI_boot_manager)
         *   [1.2.1 Manual update](#Manual_update)
         *   [1.2.2 Automatic update](#Automatic_update)
 *   [2 Configuration](#Configuration)
     *   [2.1 Loader configuration](#Loader_configuration)
-    *   [2.2 Adding boot entries](#Adding_boot_entries)
+    *   [2.2 Adding loaders](#Adding_loaders)
         *   [2.2.1 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
     *   [2.3 Preparing kernels for /EFI/Linux](#Preparing_kernels_for_.2FEFI.2FLinux)
     *   [2.4 Support hibernation](#Support_hibernation)
@@ -32,9 +32,9 @@ It is simple to configure but it can only start EFI executables such as the Linu
 
 ## Installation
 
-### Installing the EFI boot loader
+### Installing the EFI boot manager
 
-To install the *systemd-boot* EFI boot loader, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list`.
+To install the *systemd-boot* EFI boot manager, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list`.
 
 It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`.
 
@@ -51,11 +51,11 @@ With the ESP mounted to `*esp*`, use [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/
 
 This will copy the *systemd-boot* boot loader to the EFI partition: on a x64 architecture system the two identical binaries `*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` will be transferred to the ESP. It will then set *systemd-boot* as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
-Then, go to the [#Configuration](#Configuration) section: the loader must be configured and boot entries added for *systemd-boot* to function properly at boot time.
+Then, go to the [#Configuration](#Configuration) section to add boot loaders to make *systemd-boot* to function properly at boot time.
 
-### Updating the EFI boot loader
+### Updating the EFI boot manager
 
-Whenever there is a new version of *systemd-boot*, the boot loader must be updated by the user. This can be performed manually or the update can be automatically triggered using pacman hooks. The two approaches are described thereafter.
+Whenever there is a new version of *systemd-boot*, the boot manager must be updated by the user. This can be performed manually or the update can be automatically triggered using pacman hooks. The two approaches are described thereafter.
 
 #### Manual update
 
@@ -98,7 +98,7 @@ Exec = /usr/bin/bootctl update
 
 The loader configuration is stored in the file `*esp*/loader/loader.conf` and it is composed of the following options:
 
-*   `default` – default entry to select as defined in [#Adding boot entries](#Adding_boot_entries); it is given without the *.conf* suffix and it can be a wildcard like `arch-*`.
+*   `default` – default entry to select as defined in [#Adding loaders](#Adding_loaders); it is given without the *.conf* suffix and it can be a wildcard like `arch-*`.
 *   `timeout` – menu timeout in seconds before the default entry is booted. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
 *   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
 
@@ -123,9 +123,9 @@ editor   0
 *   `default` and `timeout` can be changed in the boot menu itself and changes will be stored as EFI variables, overriding these options.
 *   A basic loader configuration file is located at `/usr/share/systemd/bootctl/loader.conf`.
 
-### Adding boot entries
+### Adding loaders
 
-*bootctl* searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
+*bootctl* searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one loader. The possible options are:
 
 *   `title` – operating system name. **Required.**
 *   `version` – kernel version, shown only when multiple entries with same title exist. Optional.
@@ -137,7 +137,7 @@ For Linux boot, you can also use instead of `efi` and `options` the following sy
 
 *   `linux` and `initrd` followed by the relative path of the corresponding files in the ESP; e.g. `/vmlinuz-linux`; this will be automatically translated into `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
-An example of boot entry file to launch Arch from a partition with the label *arch_os* and loading the Intel CPU [microcode](/index.php/Microcode "Microcode") is:
+An example of a loader file to launch Arch from a partition with the label *arch_os* and loading the Intel CPU [microcode](/index.php/Microcode "Microcode") is:
 
  `*esp*/loader/entries/arch.conf` 
 ```

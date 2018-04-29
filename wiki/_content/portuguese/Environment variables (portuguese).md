@@ -13,7 +13,8 @@ Uma variável de ambiente é um objeto nomeado que contém dados usados por um o
         *   [2.2.1 Aplicativos gráficos](#Aplicativos_gr.C3.A1ficos)
     *   [2.3 Por sessão](#Por_sess.C3.A3o)
 *   [3 Exemplos](#Exemplos)
-    *   [3.1 Usando pam_env](#Usando_pam_env)
+    *   [3.1 Programas padrão](#Programas_padr.C3.A3o)
+    *   [3.2 Usando pam_env](#Usando_pam_env)
 *   [4 Veja também](#Veja_tamb.C3.A9m)
 
 ## Utilitários
@@ -132,33 +133,9 @@ exec openbox
 
 *   `OLDPWD` contém o caminho de seu diretório de trabalho anterior, isto é, o valor de `PWD` antes do último *cd* ser executado.
 
-*   `SHELL` contém o caminho para o [shell preferido](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03) do usuário. Note que isso não é necessariamente o shell que está sendo usado no momento, apesar do [Bash](/index.php/Bash "Bash") definir essa variável na inicialização.
-
 *   `TERM` contém o tipo de terminal em execução, como `xterm-256color`. Ele é usado por programas em execução no terminal que desejem usam capacidades específicas do terminal.
 
-*   `PAGER` contém o comando para executar o programa de listagem de conteúdo dos arquivos, p.ex. `/bin/less`.
-
-*   `EDITOR` contém o comando para executar o programa leve usado para edição de arquivos, p.ex. `/usr/bin/nano`. Por exemplo, você pode escrever uma opção interativa entre o *gedit* sob [X](/index.php/X_(Portugu%C3%AAs) "X (Português)") ou *nano*, neste exemplo:
-
-```
-export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
-
-```
-
-*   `VISUAL` contém o comando para executar o editor de pleno direito que é usado para tarefas mais exigentes, como a edição de mensagens de correio (p.ex., `vi`, [vim](/index.php/Vim "Vim"), [emacs](/index.php/Emacs "Emacs") etc).
-
 *   `MAIL` contém a localização de e-mails de entrada. A configuração tradicional é `/var/spool/mail/$LOGNAME`.
-
-*   `BROWSER` contém o caminho para o navegador web. Útil para configurar um arquivo de configuração de shell interativo para que ele possa ser alterado dinamicamente dependendo da disponibilidade de um ambiente gráfico, como o [X](/index.php/X_(Portugu%C3%AAs) "X (Português)"):
-
-```
-if [ -n "$DISPLAY" ]; then
-    export BROWSER=firefox
-else 
-    export BROWSER=links
-fi
-
-```
 
 *   `ftp_proxy` e `http_proxy` contêm o servidor de proxy FTP e HTTP, respectivamente:
 
@@ -175,6 +152,32 @@ http_proxy="http://192.168.0.1:80"
 *   `INFODIR` contém uma lista, separada por caracteres de dois pontos, de diretórios nos quais o comando *info* pesquisa por páginas info, p.ex.: `/usr/share/info:/usr/local/share/info`
 
 *   `TZ` pode ser usado para definir um fuso horário diferente como o do usuário. Os fusos listados em `/usr/share/zoneinfo/` podem ser usados como referências, por exemplo `TZ="/usr/share/zoneinfo/Pacific/Fiji"`
+
+### Programas padrão
+
+*   `SHELL` contém o caminho para o [shell preferido](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03) do usuário. Note que isso não é necessariamente o shell que está sendo usado no momento, apesar do [Bash](/index.php/Bash "Bash") definir essa variável na inicialização.
+
+*   `PAGER` contém o comando para executar o programa de listagem de conteúdo dos arquivos, p.ex. `/bin/less`.
+
+*   `EDITOR` contém o comando para executar o programa leve usado para edição de arquivos, p.ex. `/usr/bin/nano`. Por exemplo, você pode escrever uma opção interativa entre o *gedit* sob [X](/index.php/X_(Portugu%C3%AAs) "X (Português)") ou *nano*, neste exemplo:
+
+```
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
+
+```
+
+*   `VISUAL` contém o comando para executar o editor de pleno direito que é usado para tarefas mais exigentes, como a edição de mensagens de correio (p.ex., `vi`, [vim](/index.php/Vim "Vim"), [emacs](/index.php/Emacs "Emacs") etc).
+
+*   `BROWSER` contém o caminho para o navegador web. Útil para configurar um arquivo de configuração de shell interativo para que ele possa ser alterado dinamicamente dependendo da disponibilidade de um ambiente gráfico, como o [X](/index.php/X_(Portugu%C3%AAs) "X (Português)"):
+
+```
+if [ -n "$DISPLAY" ]; then
+    export BROWSER=firefox
+else 
+    export BROWSER=links
+fi
+
+```
 
 ### Usando pam_env
 

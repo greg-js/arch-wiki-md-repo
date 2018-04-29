@@ -276,7 +276,7 @@ name = 'HVM_domU'
 builder = 'hvm'
 memory = 512
 vcpus = 2
-disk = [ 'phy:/dev/mapper/vg0-hvm_arch,xvda,w', 'file:/path/to/ISO,hdc:cdrom,r' ]
+disk = [ 'phy:/dev/vg0/hvm_arch,xvda,w', 'file:/path/to/ISO,hdc:cdrom,r' ]
 vif = [ 'mac=00:16:3e:00:00:00,bridge=xenbr0' ]
 vnc = 1
 vnclisten = '0.0.0.0'
