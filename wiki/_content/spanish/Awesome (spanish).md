@@ -37,7 +37,7 @@ Esta pensado principalmente para usuarios con experiencia, desarrolladores y per
 
 ## Instalación
 
-Awesome 3.x está disponible en los repositorios de la comunidad, instalando el paquete [awesome](https://www.archlinux.org/packages/?name=awesome) La versión en desarrollo via Git está disponible en AUR, instalando [awesome-git](https://aur.archlinux.org/packages/awesome-git/), Nótese que esta versión no es estable y su sintaxis de configuración puede diferir con la versión estable.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [awesome](https://www.archlinux.org/packages/?name=awesome) de los repositorios oficiales. La versión en desarrollo via Git está disponible en AUR, instalando [awesome-git](https://aur.archlinux.org/packages/awesome-git/). Nótese que esta versión no es estable y su sintaxis de configuración puede diferir con la versión estable.
 
 ## Usando awesome
 

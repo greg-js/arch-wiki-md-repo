@@ -19,7 +19,7 @@ Related articles
 
 YAGF tiene como dependencias Qt4 y el paquete de corrección ortográfica [aspell](https://www.archlinux.org/packages/?name=aspell). Si desea poder cargar imágenes en YAGF desde un escáner directamente, debe instalar el software [XSane](/index.php/SANE_(Espa%C3%B1ol) "SANE (Español)"). Además tendrá que instalar [cuneiform](https://www.archlinux.org/packages/?name=cuneiform) para el reconocimiento de texto.
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [yagf](https://aur.archlinux.org/packages/yagf/) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [yagf](https://aur.archlinux.org/packages/yagf/) desde AUR.
 
 ## Idiomas soportados
 

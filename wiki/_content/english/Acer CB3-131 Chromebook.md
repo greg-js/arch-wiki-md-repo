@@ -21,16 +21,29 @@ For installing firmware to enable USB/SD boot, follow the instructions in [https
 
 ## Hardware Support
 
-Everything works with the stock Linux v4.15.x kernel except audio.
+Everything works with the stock Linux v4.16.x kernel except audio.
 
 To fix sound:
 
 ```
-git clone [https://github.com/plbossart/UCM.git](https://github.com/plbossart/UCM.git)
-cd UCM
-sudo cp -r chtmax98090/ /usr/share/alsa/ucm/
-alsaucm -c chtmax98090 set _verb HiFi set _enadev Speakers (or)
-alsaucm -c chtmax98090 set _verb HiFi set _enadev Headphone
-sudo alsactl store
+# git clone [https://github.com/plbossart/UCM.git](https://github.com/plbossart/UCM.git)
+# cd UCM
+# cp -r chtmax98090/ /usr/share/alsa/ucm/
+# alsaucm -c chtmax98090 set _verb HiFi set _enadev Speakers (or)
+# alsaucm -c chtmax98090 set _verb HiFi set _enadev Headphone
+# alsactl store
 
 ```
+
+The above method enables basic audio to work, but video playback is too fast. The problem appears to be with the new unified ALSA sound driver for Baytrail and Cherrytrail machines. Reverting to the old Baytrail driver fixes this problem and both audio/video works fine. A custom kernel needs to be compiled for this purpose with a modified config containing the following options to enable the old driver:
+
+```
+# CONFIG_SND_SST_ATOM_HIFI2_PLATFORM is not set
+CONFIG_SND_SOC_INTEL_BYT_MAX98090_MACH=m
+CONFIG_SND_SOC_MAX98090=m
+
+```
+
+For more information, see [FS#48936](https://bugs.archlinux.org/task/48936)
+
+Note that with the older Baytrail driver, the 'byt-max98090' UCM files have to be used from the repository mentioned above.

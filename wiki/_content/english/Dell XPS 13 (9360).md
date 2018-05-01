@@ -172,6 +172,13 @@ As of February 2018, Dell support suggests to update the firmware of the network
 4.  Inside the new folder, rename `firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1` to `firmware-4.bin`
 5.  Reboot and test the new Killer Wi-Fi firmware
 
+Update: Internet connection dropped even with the firmware from the above fix. Using the newer firmware `firmware-6.bin_WLAN.RM.4.4.1-00102-QCARMSWP-1` by downloading that file from [https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00102-QCARMSWP-1](https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00102-QCARMSWP-1), copying it to `/usr/lib/firmware/ath10k/QCA6174/hw3.0/` and renaming it to `firmware-6.bin` fixes this. Reboot and verify that this newer firmware is used by verifying that `dmesg | grep ath` outputs:
+
+```
+ath10k_pci 0000:3a:00.0: firmware ver WLAN.RM.4.4.1-00102-QCARMSWP-1 api 6 features wowlan,ignore-otp crc32 153860ee
+
+```
+
 ## Bluetooth
 
 After following the instructions given at [Bluetooth](/index.php/Bluetooth "Bluetooth") tethering of internet connections via phone works immediately.

@@ -156,7 +156,7 @@ También debe [añadir clave GPG para Vi0L0](/index.php/User:Vi0L0 "User:Vi0L0")
 
 La creación de la imagen del repositorio se puede lograr fácilmente usando rsync://mirror.rts-informatique.fr::archlinux-catalyst
 
-Una vez que los haya agregado, actualice la base de datos de pacman e [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes:
+Una vez que los haya agregado, actualice la base de datos de pacman e [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes:
 
 *   *catalyst*
 *   *catalyst-utils*

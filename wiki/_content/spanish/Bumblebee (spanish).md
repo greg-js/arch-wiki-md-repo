@@ -61,7 +61,7 @@ Varios paquetes están disponibles para una configuración completa:
 
 ### Instalar Bumblebee con Intel/NVIDIA
 
-*   Instale [mesa](https://www.archlinux.org/packages/?name=mesa), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) y [nvidia](https://www.archlinux.org/packages/?name=nvidia).
+*   [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [mesa](https://www.archlinux.org/packages/?name=mesa), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) y [nvidia](https://www.archlinux.org/packages/?name=nvidia).
 
 Si desea ejecutar las aplicaciones de 32 bits (como los juegos con wine) en un sistema de 64 bits necesita también el paquete [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils).
 
@@ -69,7 +69,7 @@ Si desea ejecutar las aplicaciones de 32 bits (como los juegos con wine) en un s
 
 ### Instalar Bumblebee con Intel/Nouveau
 
-Instale:
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)"):
 
 *   [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) - controlador experimental con aceleración 3D.
 *   [nouveau-dri](https://www.archlinux.org/packages/?name=nouveau-dri) - controladores Mesa classic DRI + Gallium3D.

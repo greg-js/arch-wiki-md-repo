@@ -13,7 +13,7 @@
 
 ## 下载链接：
 
-稳定版： [https://github.com/XX-net/XX-Net/archive/3.6.3.tar.gz](https://github.com/XX-net/XX-Net/archive/3.6.3.tar.gz)
+最新发布： [https://github.com/XX-net/XX-Net/releases/latest](https://github.com/XX-net/XX-Net/releases/latest)
 
 版本历史和说明： [https://github.com/XX-net/XX-Net/releases](https://github.com/XX-net/XX-Net/releases)
 

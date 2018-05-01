@@ -5,6 +5,7 @@ Related articles
 *   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
 *   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
 *   [Pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [stubby](/index.php/Stubby "Stubby")
 
 [Unbound](https://unbound.net/) is a validating, recursive, and caching DNS resolver. According to [Wikipedia:Unbound (DNS Server)](https://en.wikipedia.org/wiki/Unbound_(DNS_Server) "wikipedia:Unbound (DNS Server)"):
 

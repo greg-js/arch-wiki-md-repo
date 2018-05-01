@@ -33,11 +33,15 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
         *   [7.7.2 xboxdrv](#xboxdrv)
             *   [7.7.2.1 Multiple controllers](#Multiple_controllers)
             *   [7.7.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
-                *   [7.7.2.2.1 Logitech Dual Action](#Logitech_Dual_Action)
-                *   [7.7.2.2.2 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
-                *   [7.7.2.2.3 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
-                *   [7.7.2.2.4 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
-                *   [7.7.2.2.5 PlayStation 4 controller](#PlayStation_4_controller)
+    *   [7.8 Xbox Wireless Controller / Xbox One Wireless Controller](#Xbox_Wireless_Controller_.2F_Xbox_One_Wireless_Controller)
+        *   [7.8.1 Connect Xbox Wireless Controller with usb cable](#Connect_Xbox_Wireless_Controller_with_usb_cable)
+        *   [7.8.2 Connect Xbox Wireless Controller with bluetooth](#Connect_Xbox_Wireless_Controller_with_bluetooth)
+        *   [7.8.3 Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter](#Connect_Xbox_Wireless_Controller_with_Microsoft_Xbox_Wireless_Adapter)
+    *   [7.9 Logitech Dual Action](#Logitech_Dual_Action)
+    *   [7.10 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
+    *   [7.11 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
+    *   [7.12 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
+    *   [7.13 PlayStation 4 controller](#PlayStation_4_controller)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Joystick moving mouse](#Joystick_moving_mouse)
     *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
@@ -558,7 +562,34 @@ The above example is incomplete. It only maps one axis and 3 buttons for demonst
 
 By default, xboxdrv outputs all events to the terminal. You can use this to test that the mappings are correct. Append the `--silent` option to keep it quiet.
 
-###### Logitech Dual Action
+### Xbox Wireless Controller / Xbox One Wireless Controller
+
+#### Connect Xbox Wireless Controller with usb cable
+
+This is supported by the kernel and should work without additional packages.
+
+#### Connect Xbox Wireless Controller with bluetooth
+
+You should disable ertm to get it work.
+
+either
+
+```
+# echo 1 > /sys/module/bluetooth/parameters/disable_ertm
+
+```
+
+or
+
+Add this file to your config:
+
+ `/etc/modprobe.d/xbox_bt.conf`  `options bluetooth disable_ertm=1` 
+
+#### Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter
+
+It is not work on Linux.
+
+### Logitech Dual Action
 
 The Logitech Dual Action gamepad has a very similar mapping to the PS2 pad, but some buttons and triggers need to be swapped to mimic the Xbox controller.
 
@@ -571,7 +602,7 @@ The Logitech Dual Action gamepad has a very similar mapping to the PS2 pad, but 
 
 ```
 
-###### PlayStation 2 controller via USB adapter
+### PlayStation 2 controller via USB adapter
 
 To fix the button mapping of PS2 dual adapters and mimic the Xbox controller you can run the following command:
 
@@ -584,7 +615,7 @@ To fix the button mapping of PS2 dual adapters and mimic the Xbox controller you
 
 ```
 
-###### PlayStation 3 controller via USB
+### PlayStation 3 controller via USB
 
 If you own a PS3 controller and can connect with USB, xboxdrv has the mappings built in. Just run the program (and detach the running driver) and it works!
 
@@ -595,7 +626,7 @@ If you own a PS3 controller and can connect with USB, xboxdrv has the mappings b
 
 There are some games which might also need the `--mimic-xpad` option, additionally.
 
-###### PlayStation 3 controller via Bluetooth
+### PlayStation 3 controller via Bluetooth
 
 With your controller connected via Bluetooth, find the device address with `bluetoothctl`. Then create a new udev rule with the following content:
 
@@ -610,7 +641,7 @@ $ xboxdrv --evdev /dev/input/dualshock3 --mimic-xpad
 
 ```
 
-###### PlayStation 4 controller
+### PlayStation 4 controller
 
 To fix the button mapping of PS4 controller you can use the following command with xboxdrv (or try with the [ds4drv](https://github.com/chrippa/ds4drv) program):
 

@@ -24,13 +24,13 @@ De la [Wikipedia](https://es.wikipedia.org/wiki/Python):
 
 ## Instalación
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes [python](https://www.archlinux.org/packages/?name=python) y/o [python2](https://www.archlinux.org/packages/?name=python2) disponibles en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes [python](https://www.archlinux.org/packages/?name=python) y/o [python2](https://www.archlinux.org/packages/?name=python2) disponibles en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Python 3
 
 Python 3 es la última versión del lenguaje, y es incompatibles con Python 2\. El lenguaje es esencialmente el mismo, pero muchos detalles han cambiado considerablemente, en especial el funcionamiento de los objetos integrados como los diccionarios o las cadenas, y muchas características obsoletas han sido finalmente eliminadas. Además, la biblioteca estándar se ha reorganizado en algunas partes importantes. Para ver un resumen de las diferencias, visita [Python2orPython3](http://wiki.python.org/moin/Python2orPython3) y concretamente el [chapter](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) relacionado de "Dive into Python 3".
 
-Para instalar la última versión de Python 3, [instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [python](https://www.archlinux.org/packages/?name=python) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Para instalar la última versión de Python 3, [instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [python](https://www.archlinux.org/packages/?name=python) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Si quisieras compilar el código de las últimas RC/betas, visita [Python Downloads](http://www.python.org/download/). El [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") también contiene [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") adecuados. Si decides compilar la RC, ten en cuenta que el binario (por defecto) se instala en `/usr/local/bin/python3.x`.
 
@@ -47,7 +47,7 @@ $ source proyecto/bin/activate
 
 ### Python 2
 
-Para instalar la última versión de Python 2, [instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [python2](https://www.archlinux.org/packages/?name=python2) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Para instalar la última versión de Python 2, [instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [python2](https://www.archlinux.org/packages/?name=python2) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Python 2 puede convivir sin problemas con Python 3\. Necesitas ejecutar `python2` para utilizar esta versión.
 
@@ -104,7 +104,7 @@ $ which python
 
 ```
 
-Una solución similar para cambiar el entorno, que también depende de que el *script* en cuestión ejecute `#!/usr/bin/env python` es usar un entorno virtual [Virtualenv](/index.php/Virtualenv "Virtualenv"). Cuando se activa un Virtualenv, el ejecutable de Python al que se apunta desde `$PATH` será el que se ha instalado con el Virtualenv. Así, si el Virtualenv se instaló con Python 2, `python` ejecutará Python 2\. Para hacer esto, [instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
+Una solución similar para cambiar el entorno, que también depende de que el *script* en cuestión ejecute `#!/usr/bin/env python` es usar un entorno virtual [Virtualenv](/index.php/Virtualenv "Virtualenv"). Cuando se activa un Virtualenv, el ejecutable de Python al que se apunta desde `$PATH` será el que se ha instalado con el Virtualenv. Así, si el Virtualenv se instaló con Python 2, `python` ejecutará Python 2\. Para hacer esto, [instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
 
 Después crea el Virtualenv.
 

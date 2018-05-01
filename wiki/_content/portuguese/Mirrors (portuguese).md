@@ -247,6 +247,7 @@ Esses espelhos *não* estão listados no `/etc/pacman.d/mirrorlist`.
 ### Nova Zelândia
 
 *   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ apenas*
+*   [https://mirror.fsmg.org.nz/archlinux/](https://mirror.fsmg.org.nz/archlinux/) - *Free Software Mirror Group*
 
 ### Polônia
 

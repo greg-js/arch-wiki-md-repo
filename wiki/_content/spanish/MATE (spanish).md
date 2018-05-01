@@ -24,7 +24,7 @@ Tomado de la [pagina de MATE](http://mate-desktop.org/):
 
 ## Instalación
 
-MATE está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con dos grupos de paquetes:
+MATE está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con dos grupos de paquetes:
 
 *   [mate](https://www.archlinux.org/groups/x86_64/mate/) contiene el entorno de escritorio básico y aplicaciones necesarias para la experiencia estándar de MATE.
 

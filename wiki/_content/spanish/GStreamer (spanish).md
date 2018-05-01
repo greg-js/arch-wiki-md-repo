@@ -18,7 +18,7 @@ Diseñado para ser multiplataforma, se sabe que funciona en Linux (x86, PowerPC 
 
 ## Instalación
 
-Instale una versión de GStreamer desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") una versión de GStreamer desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
 
 *   [gstreamer0.10](https://aur.archlinux.org/packages/gstreamer0.10/) - Versión antigua y extensamente utilizada.
 *   [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) - Versión actual.

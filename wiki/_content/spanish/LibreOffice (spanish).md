@@ -25,24 +25,15 @@ LibreOffice es el fork de la *Document Foundation* en el repositorio extra, que 
 
 ## Instalación
 
-Instale una de los siguientes paquetes de los repositorios oficiales:
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") una de los siguientes paquetes de los repositorios oficiales:
 
 *   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) es la rama principal, con las mejoras nuevas.
 *   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) es la rama de mantenimiento.
 
-Asegúrese de instalar las fuentes, de lo contrario verá sólo rectángulos:
+Descargar un paquete de idioma Español de acuerdo a la rama que instalo en el paso anterior:
 
-```
-# pacman -S ttf-dejavu artwiz-fonts
-
-```
-
-Descargar un paquete de idioma.
-
-```
-# pacman -S libreoffice-es ....
-
-```
+*   [libreoffice-still-es](https://www.archlinux.org/packages/?name=libreoffice-still-es).
+*   [libreoffice-fresh-es](https://www.archlinux.org/packages/?name=libreoffice-fresh-es).
 
 Examine las dependencias opcionales que pacman sugiere. Por ejemplo, puede instalar un entorno de ejecución Java (opcional pero muy recomendable). Ver: [Java](/index.php/Java "Java")
 

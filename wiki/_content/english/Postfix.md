@@ -451,8 +451,7 @@ Go over `/etc/mail/spamassassin/local.cf` and configure it to your needs.
 Update the SpamAssassin matching patterns and compile them:
 
 ```
-# sa-update
-# sa-compile
+# sa-update && sa-compile
 
 ```
 
@@ -469,12 +468,16 @@ Description=spamassassin housekeeping stuff
 #User=spamd
 #Group=spamd
 Type=oneshot
-ExecStart=/usr/bin/vendor_perl/sa-update --allowplugins #You can remove the allowplugins options if you do not want direct plugin updates from SA.
-SuccessExitStatus=0 1 #0 = updated, 1 = no updates available
-ExecStart=/usr/bin/vendor_perl/sa-compile
-SuccessExitStatus=0
-# You can automatically train SA's bayes filter by uncommenting this line and specifying the path to a mailbox where you store email that is spam (for ex this could be yours or your users manually reported spam)
-#ExecStart=/usr/bin/vendor_perl/sa-learn --spam <path to your spam>
+
+# remove --allowplugins, if you do not want plugin updates from SA.
+ExecStart=/bin/sh -c '/usr/bin/vendor_perl/sa-update --allowplugins && {\
+ /usr/bin/vendor_perl/sa-compile --quiet;\
+ /usr/bin/systemctl -q --no-block try-restart spamassassin.service; }'
+SuccessExitStatus=1
+
+# uncomment the following ExecStart line to train SA's bayes filter
+# and specify the path to the mailbox that contains spam email(s)
+#ExecStart=/usr/bin/vendor_perl/sa-learn --spam <path_to_your_spam_mailbox>
 ```
 
 Then create the timer, which will execute the previous service daily:
@@ -491,17 +494,6 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 ```
-
-Finally, you'll need to modify your Spamassassin systemd service file so that it knows to restart itself to read the new rules.
-
-Create the drop-in configuration directory `/etc/systemd/system/spamassassin.service.d` and create the file `/etc/systemd/system/spamassassin.service.d/update.conf` with the following contents:
-
-```
-[Unit]
-PartOf=spamassassin-update.service
-```
-
-This will ensure that Spamassassin's spamd is restarted just before the timer runs. This means the rules will be available the next day if your timer runs daily. This is so that there is no long service interruption while `sa.service` runs as it takes a while to compile rules.
 
 Now you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `spamassassin-update.timer`.
 

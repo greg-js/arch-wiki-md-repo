@@ -25,12 +25,7 @@ Tendrá que satisfacer todos los requisitos antes de poder correr Apache con fas
 
 ### Para satisfacer los requisitos
 
-Instale apache con pacman.
-
-```
-$ pacman -S fcgi apache
-
-```
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes [apache](https://www.archlinux.org/packages/?name=apache) y [fcgid](https://www.archlinux.org/packages/?name=fcgid) de los repositorios oficiales.
 
 ### Descargue mod_fastcgi
 

@@ -32,7 +32,7 @@ Para reproducir un contenido multimedia se requieren dos elementos:
 *   Un reproductor multimedia compatible
 *   El códec adecuado
 
-No siempre es necesario instalar explícitamente los codecs, si, previamente, se ha instalado un reproductor multimedia. Por ejemplo, [MPlayer](/index.php/MPlayer "MPlayer") conlleva un gran número de códecs como dependencias, y también tiene otros codecs integrados en su compilación.
+No siempre es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") explícitamente los codecs, si, previamente, se ha instalado un reproductor multimedia. Por ejemplo, [MPlayer](/index.php/MPlayer "MPlayer") conlleva un gran número de códecs como dependencias, y también tiene otros codecs integrados en su compilación.
 
 ## Lista de códecs
 

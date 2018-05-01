@@ -49,7 +49,9 @@ Openbox es un gestor de ventanas ligero, altamente configurable y con amplia com
 
 ## Instalación
 
-[openbox](https://www.archlinux.org/packages/?name=openbox) está disponible desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Una vez instalado, pacman te indicará que copies los archivos `rc.xml`, `rc.xml`, `autostart` y `environment` de la configuración por defecto a `~/.config/openbox/`.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [openbox](https://www.archlinux.org/packages/?name=openbox) disponible desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+
+Una vez instalado, pacman te indicará que copies los archivos `rc.xml`, `rc.xml`, `autostart` y `environment` de la configuración por defecto a `~/.config/openbox/`.
 
 **Note:** haz esto como un usuario normal, no como root.
 

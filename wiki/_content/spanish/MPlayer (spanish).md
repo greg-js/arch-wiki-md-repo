@@ -15,7 +15,7 @@
 
 ## Instalación
 
-Varias versiones de MPlayer pueden ser [instaladas](/index.php/Pacman "Pacman") desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories") o desde [AUR](/index.php/AUR "AUR"):
+Varias versiones de MPlayer pueden ser [instaladas](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") o desde [AUR](/index.php/AUR "AUR"):
 
 *   **[MPlayer](/index.php/MPlayer "MPlayer")** — Paquete oficial
 

@@ -33,7 +33,7 @@ Según la [Wikipedia](https://en.wikipedia.org/wiki/es:Network_File_System "wiki
 
 ## Instalación
 
-Tanto el cliente como el servidor necesitan únicamente de la [instalación](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") del paquete [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
+Tanto el cliente como el servidor necesitan únicamente de la [instalación](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") del paquete [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
 
 **Nota:** Es SUMAMENTE recomendable el uso de un demonio de sincronización horaria en TODOS los nodos de su red para mantener sincronizados los relojes de cliente y servidor. ¡Si no hay un ajuste preciso en los relojes de todos los nodos, el NFS puede presentar retrasos indeseados! El sistema [NTP](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") es recomendable para sincronizar tanto el servidor como los clientes con los servidores NTP extremadamente precisos disponibles en Internet.
 
@@ -113,7 +113,7 @@ Añada los directorios que se compartirán y la dirección IP o nombre de servid
 
 Los usuarios no necesitan abrir el material compartido a la subred completa; se puede especificar solo una dirección IP o un nombre de servidor.
 
-Para más información sobre todas las opciones disponibles vea [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
+Para más información sobre todas las opciones disponibles vea [exports(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
 
 Si usted modifica `/etc/exports` mientras el servidor está funcionando, debe volver a exportarlos para que los cambios surtan efecto:
 

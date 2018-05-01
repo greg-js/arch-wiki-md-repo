@@ -29,7 +29,7 @@ Vea [Wikipedia:Tor](https://es.wikipedia.org/wiki/Tor)para más información.
 
 ## Instalación
 
-[Instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [tor](https://www.archlinux.org/packages/?name=tor) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [tor](https://www.archlinux.org/packages/?name=tor) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 En general, acederás s Tor usando el "Tor Browser", disponible como el paquete [tor-browser](https://aur.archlinux.org/packages/tor-browser/) o como [ejecutable portable](https://www.torproject.org/projects/torbrowser.html.en).
 
@@ -122,9 +122,9 @@ KillSignal=SIGINT
 
 ## Corriendo Tor en un contenedor systemd-nspawn con una interfaz de red virtual
 
-En este ejemplo crearemos un contenedor [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") llamado `tor-exit` con una interfaz de red virtual macvlan.
+En este ejemplo crearemos un contenedor [systemd-nspawn](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)") llamado `tor-exit` con una interfaz de red virtual macvlan.
 
-Vea [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") y [systemd-networkd](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") para documentación completa.
+Vea [systemd-nspawn](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)") y [systemd-networkd](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") para documentación completa.
 
 ### Instalación y Configuración del Servidor
 
@@ -135,9 +135,9 @@ En este ejemplo el contenedor se alojará en `/srv/container`:
 
 ```
 
-[Instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
+[Instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-Instale [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) y [arm](https://www.archlinux.org/packages/?name=arm) y deselecione [linux](https://www.archlinux.org/packages/?name=linux) como en [Systemd-nspawn#Create and boot a minimal Arch Linux distribution in a container](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn") (en inglés):
+Instale [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) y [arm](https://www.archlinux.org/packages/?name=arm) y deselecione [linux](https://www.archlinux.org/packages/?name=linux) como en [Systemd-nspawn_(Español)#Crear_e_iniciar_Arch_Linux_en_un_contenedor](/index.php/Systemd-nspawn_(Espa%C3%B1ol)#Crear_e_iniciar_Arch_Linux_en_un_contenedor "Systemd-nspawn (Español)"):
 
 ```
 # pacstrap -i -c -d /srv/container/tor-exit base tor arm
@@ -153,7 +153,7 @@ Cree el directorio si no existe:
 
 **Nota:** Los Symlinks para `nspawn` actualmente están dañados (como en 2016-02-04; vea [https://github.com/systemd/systemd/issues/2001](https://github.com/systemd/systemd/issues/2001)), y recibirá el error "too many levels of symlinks". Como una (posiblemente insegura) solución, simplemente "pacstrap" su instalación en el directorio contenedor.
 
-Symlink al registro del contenedor del servidor, como en [Systemd-nspawn#Enable container on boot](/index.php/Systemd-nspawn#Enable_container_on_boot "Systemd-nspawn")(en inglés):
+Symlink al registro del contenedor del servidor, como en [Systemd-nspawn_(Español)#Activar inicio automático de los contenedores](/index.php/Systemd-nspawn_(Espa%C3%B1ol)#Activar_inicio_autom.C3.A1tico_de_los_contenedores "Systemd-nspawn (Español)"):
 
 ```
 # ln -s /srv/container/tor-exit /var/lib/container/tor-exit

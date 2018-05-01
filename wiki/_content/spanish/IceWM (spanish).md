@@ -17,7 +17,7 @@ Deacuerdo a [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"), 
 
 ## Instalación
 
-IceWM se puede instalar desde los repositorios oficiales con el paquete [icewm](https://www.archlinux.org/packages/?name=icewm).
+IceWM se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") desde los repositorios oficiales con el paquete [icewm](https://www.archlinux.org/packages/?name=icewm).
 
 Alternativamente, La última versión de pruebas esta en ([icewm-testing](https://aur.archlinux.org/packages/icewm-testing/)) y la última versión CVS en ([icewm-cvs](https://aur.archlinux.org/packages/icewm-cvs/)) disponibles en [AUR](/index.php/AUR "AUR"). Estas versiones corrigen Bugs y dan nuevas funcionalidades (Debido al lentísimo desarrollo de IceWM es posible que las versiones de AUR sean las mismas que las oficiales de Arch).
 

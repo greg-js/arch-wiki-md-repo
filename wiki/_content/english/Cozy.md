@@ -86,7 +86,7 @@ $ cozy-stack instances add <instance>.example.tld --apps onboarding,settings,dri
 
 This will output you a registration token. You can also specify an email using `--email <address>` at which the registration token will be sent.
 
-You will then need to visit `https://<instance>.example.tld/?registrationToken=<token>`, which requires you to have setup a reverse proxy (see below).
+You will then need to visit `https://<instance>.example.tld/?registerToken=<token>`, which requires you to have setup a reverse proxy (see below).
 
 ### Reverse proxying
 

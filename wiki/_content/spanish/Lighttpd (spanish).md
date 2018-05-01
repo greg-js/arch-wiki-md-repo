@@ -1,12 +1,47 @@
-Este documento te describirá como configurar Ruby on Rails y PHP en un servidor lighttpd (a través de fastcgi).
+[Lighttpd](https://www.lighttpd.net/) es un servidor web "seguro, rápido, compatible y muy flexible" que ha sido optimizado para ambientes de alto rendimiento. Consume muy pocos recursos comparado con otros servidores web y se ocupa de balancear el CPU. Sus características avanzadas ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, entre otras) hacen que lighttpd sea el servidor web perfecto para todos aquellos que sufren problemas de balanceo."
 
 ## Contents
 
-*   [1 Instalando lighttpd and fcgi](#Instalando_lighttpd_and_fcgi)
-*   [2 Instalando php-cgi](#Instalando_php-cgi)
-*   [3 Ruby on Rails](#Ruby_on_Rails)
-*   [4 Configuración de /etc/lighttpd/lighttpd.conf](#Configuraci.C3.B3n_de_.2Fetc.2Flighttpd.2Flighttpd.conf)
-*   [5 Links de Referencia](#Links_de_Referencia)
+*   [1 Instalación](#Instalaci.C3.B3n)
+*   [2 Configuración](#Configuraci.C3.B3n)
+    *   [2.1 Sistema básico](#Sistema_b.C3.A1sico)
+        *   [2.1.1 Instalando lighttpd and fcgi](#Instalando_lighttpd_and_fcgi)
+        *   [2.1.2 Instalando php-cgi](#Instalando_php-cgi)
+        *   [2.1.3 Ruby on Rails](#Ruby_on_Rails)
+        *   [2.1.4 Configuración de /etc/lighttpd/lighttpd.conf](#Configuraci.C3.B3n_de_.2Fetc.2Flighttpd.2Flighttpd.conf)
+        *   [2.1.5 Links de Referencia](#Links_de_Referencia)
+
+## Instalación
+
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [lighttpd](https://www.archlinux.org/packages/?name=lighttpd).
+
+## Configuración
+
+### Sistema básico
+
+EL archivo de configuración de lighttpd es: `/etc/lighttpd/lighttpd.conf`. Por defecto debe producir una pagina de prueba.
+
+Para comprobar su `lighttpd.conf` por bugs se puede usar el siguiente comando, que ayuda a encontrar errores en la configuración rápidamente:
+
+```
+$ lighttpd -t -f /etc/lighttpd/lighttpd.conf
+
+```
+
+Otra prueba mucho mas estricta puede ser ejecutada con:
+
+```
+$ lighttpd -tt -f /etc/lighttpd/lighttpd.conf
+
+```
+
+El archivo de la configuración por defecto especifica que el directorio `/srv/http/` es la base de los documentos servidos. Para comprobar la instalación, cree un archivo de prueba:
+
+ `/srv/http/index.html`  `Hola Mundo!` 
+
+Después [active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") la unidad `lighttpd.service` y en su navegador diríjase a `localhost`, donde debería ver la pagina de prueba.
+
+Archivos de configuración con ejemplos están disponibles en `/usr/share/doc/lighttpd/`.
 
 #### Instalando lighttpd and fcgi
 

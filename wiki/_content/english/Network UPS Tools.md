@@ -55,7 +55,7 @@ If the driver doesn’t start cleanly, make sure you have picked the right one f
 
 #### Can't claim USB device error
 
-If you receive a message error like this above:
+If you receive an error message like this one:
 
 ```
 Can't claim USB device [XXXX:YYYY]: could not detach kernel driver from
@@ -63,17 +63,29 @@ interface 0: Operation not permitted
 Driver failed to start (exit status=1)
 ```
 
-It's a problem with device access permissions. You can set the permissions using a udev-rule.
-
- `/etc/udev/rules.d/10-must-pa-2012.rules` 
-```
-SYSFS{idVendor}=='XXXX', SYSFS{idProduct}=='YYYY', MODE='0666'
+Or a less specific one:
 
 ```
+USB communication driver 0.33
+No matching HID UPS found
+Driver failed to start (exit status=1)
+```
 
-Where `idVendor` and `idProduct` is the numbers of the error output: `[XXXX:YYYY]`. You can obtain this information using `lsusb` also.
+It's most likely a problem with permissions for accessing the device. You can fix that by specifying an udev rule that sets the correct group:
 
-Reboot the system and try to start the driver again.
+ `/etc/udev/rules.d/50-ups.rules` 
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="XXXX", ATTR{idProduct}=="YYYY", SYMLINK+="ups0", GROUP="nut"
+
+```
+
+Where `idVendor` and `idProduct` are the device manufacturer and product ID. You can see these either in the error output `[XXXX:YYYY]` or by using `lsusb`.
+
+**Note:** *SYMLINK* here is an optional rule for adding a symlink to the device for convenience (in this case it will show up in `/dev/ups0` when connected).
+
+**Note:** The *nut* group is added by the NUT AUR package. If you used different installation method (or the package perhaps changed) you may need to correct the group. Alternatively you could also set the device accessible by anyone with `MODE="0666"`.
+
+You need to re-plug the usb device (and perhaps even restart udevd) or reboot to see the change.
 
 ### upsd configuration
 

@@ -16,7 +16,7 @@ Related articles
 
 ## Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) desde los repositorios oficiales, o [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) desde [AUR](/index.php/AUR "AUR").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) desde los repositorios oficiales, o [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) desde [AUR](/index.php/AUR "AUR").
 
 La base de datos de *pkgfile* puede sincronizarse con:
 

@@ -1,8 +1,8 @@
 Related articles
 
-*   [systemd](/index.php/Systemd "Systemd")
+*   [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")
+*   [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)")
 *   [Docker](/index.php/Docker "Docker")
 *   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
 

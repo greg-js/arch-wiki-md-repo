@@ -76,7 +76,7 @@ El paquete [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tool
 
 ### Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) desde [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) desde [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)").
 
 Open-VM-Tools lee la información sobre la versión desde `/etc/arch-release`, que está vacía:
 

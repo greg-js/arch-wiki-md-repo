@@ -1,47 +1,43 @@
-E17 es la versión de desarrollo número 17 (DR17) del entorno de escritorio Enlightenment.
-
-E17 está actualmente bajo profundo desarrollo, y aun está en las etapas pre-alfa. Aunque es muy reciente, E17 es ya bastante estable. Mucha gente lo utiliza como un entorno para el día a día.
-
-Se publican diariamente nuevas versiones via CVS, aunque para facilitar la instalación se proporcionan también versiones periódicas ("snapshots"). A continuación se dan instrucciones sobre cómo instalar un "snapshot" de CVS desde los repositorios de la comunidad de Arch.
-
 ## Contents
 
-*   [1 Instalando E17](#Instalando_E17)
-    *   [1.1 Editando /etc/pacman.conf](#Editando_.2Fetc.2Fpacman.conf)
-*   [2 Instalando temas](#Instalando_temas)
-*   [3 Resolución de problemas](#Resoluci.C3.B3n_de_problemas)
-*   [4 Enlaces externos](#Enlaces_externos)
+*   [1 Enlightenment](#Enlightenment)
+*   [2 Instalación](#Instalaci.C3.B3n)
+    *   [2.1 Desde AUR](#Desde_AUR)
+*   [3 Instalando temas](#Instalando_temas)
+*   [4 Resolución de problemas](#Resoluci.C3.B3n_de_problemas)
+*   [5 Enlaces externos](#Enlaces_externos)
 
-## Instalando E17
+## Enlightenment
 
-*   Lo primero que debe hacer es editar el archivo /etc/pacman.conf y descomentar los repositorios extra quitando el símbolo de número (también "almohadilla" o "hash" en inglés) al comienzo dela línea en cuestión. Debería acabar con algo parecido a lo siguiente:
+Este texto compromete ambos, [Enlightenment](https://www.enlightenment.org/) [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") y Enlightenment Foundation Libraries (EFL), las cuales proveen opciones adicionales al entorno de escritorio. Ha estado en desarrollo desde 2005 y en Febrero de 2011 las librerías de EFL alcanzaron su primer lanzamiento estable 1.0.
 
-#### Editando /etc/pacman.conf
+## Instalación
 
-```
-...
-# Añada aquí sus servidores favoritos, se utilizarán en primer lugar
-Include = /etc/pacman.d/extra
-...
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) de los repositorios oficiales.
 
-```
+Es deseable instalar también [terminology](https://www.archlinux.org/packages/?name=terminology), el cual es un emulador de terminal basado en EFL que se integra muy bien con Enlightenment.
 
-*   A continuación, ejecute 'pacman -Syu' para actualizar, usando ya los nuevos repositorios "extra"
-*   Instale enlightenment17: 'pacman -S enlightenment17'
+#### Desde AUR
 
-*   Si necesita una versión del paquete e17 que no esté (todavía) disponible en el repositorio [extra], vea si lo puede encontrar en el [AUR](https://aur.archlinux.org/).
+**Advertencia:** Algunos de estos PKGBUILDs usan código no estable, usese bajo su propio riesgo.
 
-Ahora está ya preparado para iniciar e17\. Puede hacer esto de varias maneras:
+Una versión de Enlightenment en desarrollo esta disponible en el paquete [enlightenment-git](https://aur.archlinux.org/packages/enlightenment-git/).
 
-*   Añada una línea que ponga 'enlightenment_start' en su ~/.xinitrc
-*   Inicie un gestor de control de entrada añadiendo 'entranced' al array de módulos en /etc/rc.conf
-*   arranque el gestor de control de entrada utilizando la línea 'x:5:respawn:/usr/sbin/entranced --nodaemon >& /dev/null' en el archivo /etc/inittab
+La siguiente lista de aplicaciones esta basada en librerías de EFL, la mayoría están en una etapa inicial de desarrollo y no han visto lanzamientos estables:
 
-¡A disfrutarlo!
-
-Nota : e17 es todavía software en estado alfa. Puede que en algún momento las cosas dejen de funcionar como se espera de ellas. Aunque todos los paquetes han sido probados antes de se añadidos al repositorio [extra], puede que las cosas dejen de funcionar en su sistema. Se le anima por tanto a conservar los paquetes de versiones previas en su computadora, permitiéndole si es necesario una desactualización.
-
-Si encuentra algín comportamiento inesperado, hay algunas cosas que puede hacer.. Compruebe primero si se da dicho comportamiento en el tema por defecto. En segundo lugar elimine ~/.e (puede que quiera hacer una copia de respaldo antes de hacer esto). Si está seguro de haber encontrado un error informe directamente por favor al proveedor original del paquete. Si no está seguro de que haya un fallo en el software o en el paquete, informe de él en el [extra] bug tracker.
+*   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) – Ecrire editor de texto
+*   [edi](https://aur.archlinux.org/packages/edi/) – IDE basado en EFL
+*   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance navegador de fotos
+*   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) reproductor de música
+*   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) visor de la tabla periódica
+*   [ephoto](https://aur.archlinux.org/packages/ephoto/) and [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](http://smhouston.us/ephoto/) visor de imágenes
+*   [epour](https://aur.archlinux.org/packages/epour/) – cliente de torrent
+*   [epymc-git](https://aur.archlinux.org/packages/epymc-git/) – centro de media
+*   [equate-git](https://aur.archlinux.org/packages/equate-git/) – calculadora
+*   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – herramientas de medición en pantalla
+*   [efbb-git](https://aur.archlinux.org/packages/efbb-git/) – juego similar a ANgry Birds
+*   [elemines-git](https://aur.archlinux.org/packages/elemines-git/) – [Elemines](http://elemines.sourceforge.net/) juego similar a minas
+*   [rage](https://aur.archlinux.org/packages/rage/) and [rage-git](https://aur.archlinux.org/packages/rage-git/) – reproductor de video
 
 ## Instalando temas
 

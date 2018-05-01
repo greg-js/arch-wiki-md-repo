@@ -32,7 +32,7 @@ Artículos relacionados
 
 ## Instalación
 
-[Instale](/index.php/Pacman "Pacman") [nautilus](https://www.archlinux.org/packages/?name=nautilus) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [nautilus](https://www.archlinux.org/packages/?name=nautilus) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
 **Nota:** Nautilus no necesita el paquete completo [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell), pero sí requiere [gnome-desktop](https://www.archlinux.org/packages/?name=gnome-desktop). Algunos pueden encontrar este procedimiento interesante ya que instalar gnome-shell supone cierta complejidad.
 
@@ -120,11 +120,11 @@ Por defecto, Nautilus ahora ya no utiliza la tecla «Supr» para mover archivos 
 
 ### Nautilus no puede explorar mis recursos compartidos de red Windows
 
-Nautilus cuenta con el paquete [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) para esta funcionalidad; puede ser [instalado](/index.php/Pacman "Pacman") desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
+Nautilus cuenta con el paquete [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) para esta funcionalidad; puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
 ### Nautilus no puede ver los recursos compartidos de red de apple
 
-Nautilus depende de [gvfs](https://www.archlinux.org/packages/?name=gvfs) y [avahi](https://www.archlinux.org/packages/?name=avahi) para esta funcionalidad, que puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Tenga en cuenta que, además de instalar [Avahi](/index.php/Avahi "Avahi"), necesita iniciarlo también, utilizando:
+Nautilus depende de [gvfs](https://www.archlinux.org/packages/?name=gvfs) y [avahi](https://www.archlinux.org/packages/?name=avahi) para esta funcionalidad, que puede ser [instalado](/index.php?title=PHelp:Reading_(Espa%C3%B1ol)&action=edit&redlink=1 "PHelp:Reading (Español) (page does not exist)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Tenga en cuenta que, además de instalar [Avahi](/index.php/Avahi "Avahi"), necesita iniciarlo también, utilizando:
 
  `systemctl start avahi-daemon` 
 

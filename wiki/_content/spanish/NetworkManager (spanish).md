@@ -65,7 +65,7 @@ Artículos relacionados
 
 ## Intalación base
 
-NetworkManager se puede instalar con el paquete [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), disponible en los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
+NetworkManager se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), disponible en los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
 ### Soporte VPN
 
@@ -493,7 +493,7 @@ Nov 17 21:03:20 zenbook dhclient[2949]: RCV: Reply message on wlan0 from fe80::1
 
 #### Opción 3: configurar NetworkManager para utilizar dhcpcd
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) y dígale a NetworkManager que lo utilice:
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) y dígale a NetworkManager que lo utilice:
 
  `/etc/NetworkManager/NetworkManager.conf`  `dhcp=dhcpcd` 
 
@@ -579,7 +579,7 @@ Puede compartir su conexión a Internet (por ejemplo: 3G o por cable) con unos p
 
 #### Ad-hoc
 
-*   [Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) para ser capaz de compartir la conexión.
+*   [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) para ser capaz de compartir la conexión.
 *   Un archivo dnsmasq.conf personalizado puede interferir con nm (aunque esta afirmación no se ha verificado).
 *   Clicar sobre nm-applet → Crear red inalámbrica nueva.
 *   Siga el asistente (asegúrese de usar una contraseña de 5 o 13 caracteres de extensión, otras longitudes fallarán).
@@ -732,7 +732,7 @@ Haga el script ejecutable:
 
 Las peticiones de DNS se puede acelerar si almacenamos en caché las solicitudes anteriores a nivel local para su posterior consulta. NetworkManager tiene un plugin para activar la caché DNS utilizando dnsmasq, pero no está activado en la configuración predeterminada. Es, sin embargo, fácil de activar siguiente las instrucciones de abajo.
 
-Comience [instalando](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq). Después, edite el archivo `/etc/NetworkManager/NetworkManager.conf` y, seguidamente, añada la línea siguiente debajo de la sección `[main]`:
+Comience [instalando](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq). Después, edite el archivo `/etc/NetworkManager/NetworkManager.conf` y, seguidamente, añada la línea siguiente debajo de la sección `[main]`:
 
 ```
 dns=dnsmasq

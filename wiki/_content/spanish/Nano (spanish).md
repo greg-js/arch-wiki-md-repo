@@ -24,7 +24,7 @@
 
 ## Instalación
 
-Puedes instalar el paquete [nano](https://www.archlinux.org/packages/?name=nano) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories"). Es probable que ya esté en tu sistema, está incluido en el grupo [base](https://www.archlinux.org/groups/x86_64/base/)
+Puedes [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [nano](https://www.archlinux.org/packages/?name=nano) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories"). Es probable que ya esté en tu sistema, está incluido en el grupo [base](https://www.archlinux.org/groups/x86_64/base/)
 
 ## Configuración
 

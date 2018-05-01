@@ -36,11 +36,10 @@ Related articles
     *   [6.7 My computer is not visible](#My_computer_is_not_visible)
     *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
     *   [6.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
-    *   [6.10 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
-    *   [6.11 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
-    *   [6.12 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
-    *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [6.14 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+    *   [6.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
+    *   [6.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [6.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
@@ -435,30 +434,6 @@ then, the only solution for now is to install [the old Bluetooth stack](/index.p
 ### HSP/HFP profiles
 
 bluez5 removed support for the HSP/HFP profiles (telephony headset for [TeamSpeak](/index.php/TeamSpeak "TeamSpeak"), [Skype](/index.php/Skype "Skype"), etc.). You need to install [PulseAudio](/index.php/PulseAudio "PulseAudio") (>= version 6) or another application that implements HSP/HFP itself.
-
-### Thinkpad Bluetooth Laser Mouse problems
-
-If you are experiencing that your Thinkpad Bluetooth Laser Mouse rapidly connects and then (after a few milliseconds) disconnects again every few seconds (when you move the mouse or press a button), try pairing it with the code `0000` instead pairing without a code.
-
-If the above is unhelpful, the issue may be in the device timeout settings. Edit/create the file `/etc/bluetooth/input.conf` and apply the following changes:
-
-```
-# Configuration file for the input service
-# This section contains options which are not specific to any
-# particular interface
-[General]
-
-# Set idle timeout (in minutes) before the connection will
-# be disconnect (defaults to 0 for no timeout)
-IdleTimeout=0
-
-#Enable HID protocol handling in userspace input profile
-#Defaults to false(hidp handled in hidp kernel module)
-UserspaceHID=true
-
-```
-
-These changes will prevent device timeout in order to remain connected. The second setting enables userspace HID handling for bluetooth devices. Restart `bluetooth.service` to test changes. You also may need a reboot and to re-pair the device.
 
 ### Foxconn / Hon Hai / Lite-On Broadcom device
 

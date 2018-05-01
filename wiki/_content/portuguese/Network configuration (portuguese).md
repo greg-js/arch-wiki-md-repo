@@ -2,7 +2,7 @@ Artigos relacionados
 
 *   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
 *   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio")
 *   [Network bridge](/index.php/Network_bridge "Network bridge")
 *   [List of applications#Network Managers](/index.php/List_of_applications#Network_Managers "List of applications")
 *   [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing")
@@ -10,7 +10,7 @@ Artigos relacionados
 *   [Router](/index.php/Router "Router")
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 
-Esta página explica como configurar uma conexão cabeada. Se você deseja configurar uma rede wireless/sem fio veja a página [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+Esta página explica como configurar uma conexão cabeada. Se você deseja configurar uma rede wireless/sem fio veja a página [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
 
 ## Contents
 
@@ -104,7 +104,7 @@ O [udev](/index.php/Udev "Udev") atribui nomes para suas interfaces de rede. Mai
 
 Ambos nomes de interfaces com e sem fio podem ser descobertos por meio de `ls /sys/class/net` ou `ip link`. Note que `lo` é o [dispositivo *loop* ou de laço](https://en.wikipedia.org/wiki/pt:Loop_device "w:pt:Loop device") e não é usado para fazer conexões de rede.
 
-Nomes de dispositivos sem fio também podem ser obtidos usando `iw dev`. Veja também [Wireless network configuration#Get the name of the interface](/index.php/Wireless_network_configuration#Get_the_name_of_the_interface "Wireless network configuration").
+Nomes de dispositivos sem fio também podem ser obtidos usando `iw dev`. Veja também [Configuração de rede sem fio#Obter o nome da interface](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio#Obter_o_nome_da_interface "Configuração de rede sem fio").
 
 **Dica:** Para alterar os nomes de dispositivos, veja [#Alterando o nome do dispositivo](#Alterando_o_nome_do_dispositivo) e [#Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos).
 

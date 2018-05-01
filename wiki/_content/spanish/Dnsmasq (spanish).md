@@ -23,7 +23,7 @@
 
 ## Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Configuración de la caché DNS
 

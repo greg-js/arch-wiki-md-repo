@@ -85,7 +85,7 @@ OpenSSH es confundido a veces con OpenSSL por la similitud de nombre, sin embarg
 
 ### Instalación
 
-[Instal](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [openssh](https://www.archlinux.org/packages/?name=openssh) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [openssh](https://www.archlinux.org/packages/?name=openssh) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Cliente
 
@@ -175,7 +175,7 @@ Port 39901
 
 #### Gestión del Demonio
 
-[openssh](https://www.archlinux.org/packages/?name=openssh) viene con dos archivos de unidades de[systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"):
+[openssh](https://www.archlinux.org/packages/?name=openssh) viene con dos archivos de unidades de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"):
 
 1.  `sshd.service`, el cual mantendra el demonio de SSH permanentemente activo y bifurcara para cada conexión entrante. [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh#n16) Es especialmente interesante para sistemas con bastante trafico de SSH. [[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n15)
 2.  `sshd.socket` + `sshd@.service`, el cual inicia una instancia de SSH en demanda. Usando esta configuracion implica que *systemd* escucha el en socket de SSH y solo inicia el demonio cuando hay una conexión entrante. Es el método recomendado para ejecutar `sshd` en casi todos los casos. [[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
@@ -397,7 +397,7 @@ Del [sitio web](http://mosh.mit.edu/) de Mosh:
 
 Aplicación de terminal remoto que permite la itinerancia, soporta conectividad intermitente y proporciona echo local inteligente y la edición de línea de keystrokes del usuario. Mosh es un reemplazo para SSH. Es más robusto y sensible, sobre todo a través de Wi-Fi, móvil y enlaces de larga distancia.
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [mosh](https://www.archlinux.org/packages/?name=mosh) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") o la última revisión [mosh-git](https://aur.archlinux.org/packages/mosh-git/) desde [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [mosh](https://www.archlinux.org/packages/?name=mosh) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") o la última revisión [mosh-git](https://aur.archlinux.org/packages/mosh-git/) desde [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)").
 
 ## Trucos y sugerencias
 
@@ -476,7 +476,7 @@ Listo. ¡Disfruta tu túnel seguro!
 
 En el sistema remoto:
 
-*   [instale](/index.php/Pacman_(Espa%C3%B1ol)#Instalar_paquetes_espec.C3.ADficos "Pacman (Español)") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) y [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+*   [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) y [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 *   en `/etc/ssh/ssh**d**_config`:
     *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a *yes*, y que `X11DisplayOffset` está ajustado a *10* (esos son los valores por defecto si no se han cambiado, ver [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5))
     *   ajuste `X11Forwarding` a *yes*
@@ -904,7 +904,7 @@ Para hacer doble verificación, puede ejecutar Wireshark en el servidor y escuch
 
 ##### Diagnóstico con Wireshark
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") Wireshark con el paquete [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") Wireshark con el paquete [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Y luego ejecútelo utilizando,
 

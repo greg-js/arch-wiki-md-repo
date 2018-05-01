@@ -22,7 +22,7 @@
 
 **Nota:** El script es para ser utilizado en una máquina x86_64.
 
-Antes de empezar, necesitamos hacernos con los scripts de archiso que llevan a cabo gran parte del trabajo, para ello [instalaremos](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [archiso](https://www.archlinux.org/packages/?name=archiso) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Alternativamente, la versión GIT ([archiso-git](https://aur.archlinux.org/packages/archiso-git/)) puede ser construída e instalada desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+Antes de empezar, necesitamos hacernos con los scripts de archiso que llevan a cabo gran parte del trabajo, para ello [instalaremos](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [archiso](https://www.archlinux.org/packages/?name=archiso) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Alternativamente, la versión GIT ([archiso-git](https://aur.archlinux.org/packages/archiso-git/)) puede ser construída e instalada desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
 Crea un directorio para trabajar con el, aquí es donde todas las modificaciones de la imagen live tendrán lugar: `/home/tuusuario/**archlive**` está bien (y es el ejemplo que se utilizará a lo largo de esta guía):
 

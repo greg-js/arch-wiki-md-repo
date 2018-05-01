@@ -64,12 +64,12 @@ This situation can be evaluated by comparing the `{I}Use%` figures provided by `
  `$ df -h /home` 
 ```
 Filesystem              Size    Used   Avail  **Use%**   Mounted on
-/dev/lvm/home           115G    56G    59G    **49%**    /home
+/dev/mapper/lvm-home    115G    56G    59G    **49%**    /home
 ```
  `$ df -hi /home` 
 ```
 Filesystem              Inodes  IUsed  IFree  **IUse%**  Mounted on
-/dev/lvm/home           1.8M    1.1K   1.8M   **1%**     /home
+/dev/mapper/lvm-home    1.8M    1.1K   1.8M   **1%**     /home
 ```
 
 To specify a different bytes-per-inode ratio, you can use the `-T *usage-type*` option which hints at the expected usage of the filesystem using types defined in `/etc/mke2fs.conf`. Among those types are the bigger `largefile` and `largefile4` which offer more relevant ratios of one inode every 1 MiB and 4 MiB respectively. It can be used as such:

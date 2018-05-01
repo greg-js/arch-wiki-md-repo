@@ -1,7 +1,7 @@
 Artigos relacionados
 
-*   [Network configuration (Português)](/index.php/Network_configuration_(Portugu%C3%AAs) "Network configuration (Português)")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
+*   [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio")
 *   [Category:Network configuration (Português)](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)")
 
 O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicações preparadas para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das wireless, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME](/index.php/GNOME "GNOME").

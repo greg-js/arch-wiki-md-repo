@@ -1,3 +1,10 @@
+Related articles
+
+*   [Browser Plugins (Español)](/index.php/Browser_Plugins_(Espa%C3%B1ol) "Browser Plugins (Español)")
+*   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
+*   [UZBL-Browser](/index.php/UZBL-Browser "UZBL-Browser")
+*   [Dillo](/index.php/Dillo "Dillo")
+
 [Midori](http://midori-browser.org) es un navegador web ligero basado en Webkit y desarrollado por Christian Dywan. Forma parte del proyecto [Xfce](/index.php/Xfce "Xfce") Goodies.
 
 Algunas de sus características son:
@@ -27,7 +34,7 @@ Algunas de sus características son:
 
 ## Instalación
 
-Hay disponibles versiones GTK+2 y GTK+3 de Midori que pueden [instalarse](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), con los paquetes [midori](https://www.archlinux.org/packages/?name=midori) y [midori-gtk3](https://www.archlinux.org/packages/?name=midori-gtk3) respectivamente, mediante los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Hay disponibles versiones GTK+2 y GTK+3 de Midori que pueden [instalarse](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)"), con los paquetes [midori](https://www.archlinux.org/packages/?name=midori) y [midori-gtk3](https://www.archlinux.org/packages/?name=midori-gtk3) respectivamente, mediante los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Versiones de desarrollo están disponibles en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"):
 

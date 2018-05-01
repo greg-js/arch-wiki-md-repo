@@ -23,7 +23,7 @@ Related articles
 
 ## Instalación
 
-El proyecto open-source, **Chromium**, puede ser instalado con el paquete [chromium](https://www.archlinux.org/packages/?name=chromium).
+El proyecto open-source, **Chromium**, puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [chromium](https://www.archlinux.org/packages/?name=chromium).
 
 Otras alternativas son:
 

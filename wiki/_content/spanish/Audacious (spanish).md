@@ -15,12 +15,7 @@ Audacious es un reproductor de audio libre y avanzada, basada en GTK +2\. Se cen
 
 ## Installation
 
-[audacious](https://www.archlinux.org/packages/?name=audacious) está disponible desde el repositorio oficial. Instalarlo con [pacman](/index.php/Pacman "Pacman"):
-
-```
-# pacman -S audacious
-
-```
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [audacious](https://www.archlinux.org/packages/?name=audacious) disponible desde los repositorios oficiales.
 
 ## Configuration
 

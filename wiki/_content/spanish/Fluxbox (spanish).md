@@ -1,37 +1,35 @@
 Fluxbox es un gestor de ventanas para X. Esta basado en el código del abandonado Blackbox 0.61.1, pero con continuas mejoras y desarrollo. Fluxbox es muy ligero, consume pocos recursos y rápido, provee de varias herramientas útiles como tabulación y agrupación, ademas es fácil de configurar.
 
-Para instalar Fluxbox ejecuta:
-
-```
-# pacman -S fluxbox
-
-```
-
 ## Contents
 
-*   [1 Comenzando con Fluxbox](#Comenzando_con_Fluxbox)
-    *   [1.1 Método 1: KDM/GDM Login/Session Managers](#M.C3.A9todo_1:_KDM.2FGDM_Login.2FSession_Managers)
-    *   [1.2 Metodo 2: ~/.xinitrc](#Metodo_2:_.7E.2F.xinitrc)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Mantenimiento del menú](#Mantenimiento_del_men.C3.BA)
-        *   [2.1.1 fluxbox-generate_menu](#fluxbox-generate_menu)
-        *   [2.1.2 MenuMaker](#MenuMaker)
-        *   [2.1.3 Arch Linux Xdg menu](#Arch_Linux_Xdg_menu)
-        *   [2.1.4 Crear/editar manualmente el menú](#Crear.2Feditar_manualmente_el_men.C3.BA)
-    *   [2.2 Teclas de acceso rápido](#Teclas_de_acceso_r.C3.A1pido)
-    *   [2.3 Espacios de trabajo](#Espacios_de_trabajo)
-    *   [2.4 Tabulación y agrupación](#Tabulaci.C3.B3n_y_agrupaci.C3.B3n)
-    *   [2.5 Fondos de pantalla](#Fondos_de_pantalla)
-        *   [2.5.1 Cambiar fondos de pantalla fácilmente](#Cambiar_fondos_de_pantalla_f.C3.A1cilmente)
-        *   [2.5.2 Usando Feh en FluxBox](#Usando_Feh_en_FluxBox)
-    *   [2.6 Temas](#Temas)
-    *   [2.7 La Slit](#La_Slit)
-    *   [2.8 Auto arrancar aplicaciones](#Auto_arrancar_aplicaciones)
-    *   [2.9 Terminales rxvt-unicode transparente](#Terminales_rxvt-unicode_transparente)
-    *   [2.10 La vida después de xorg.conf](#La_vida_despu.C3.A9s_de_xorg.conf)
-        *   [2.10.1 Configurar el teclado correctamente](#Configurar_el_teclado_correctamente)
-        *   [2.10.2 Deshabilitar ahorro de energia](#Deshabilitar_ahorro_de_energia)
-*   [3 Recursos adicionales](#Recursos_adicionales)
+*   [1 Instalación](#Instalaci.C3.B3n)
+*   [2 Comenzando con Fluxbox](#Comenzando_con_Fluxbox)
+    *   [2.1 Método 1: KDM/GDM Login/Session Managers](#M.C3.A9todo_1:_KDM.2FGDM_Login.2FSession_Managers)
+    *   [2.2 Metodo 2: ~/.xinitrc](#Metodo_2:_.7E.2F.xinitrc)
+*   [3 Configuración](#Configuraci.C3.B3n)
+    *   [3.1 Mantenimiento del menú](#Mantenimiento_del_men.C3.BA)
+        *   [3.1.1 fluxbox-generate_menu](#fluxbox-generate_menu)
+        *   [3.1.2 MenuMaker](#MenuMaker)
+        *   [3.1.3 Arch Linux Xdg menu](#Arch_Linux_Xdg_menu)
+        *   [3.1.4 Crear/editar manualmente el menú](#Crear.2Feditar_manualmente_el_men.C3.BA)
+    *   [3.2 Teclas de acceso rápido](#Teclas_de_acceso_r.C3.A1pido)
+    *   [3.3 Espacios de trabajo](#Espacios_de_trabajo)
+    *   [3.4 Tabulación y agrupación](#Tabulaci.C3.B3n_y_agrupaci.C3.B3n)
+    *   [3.5 Fondos de pantalla](#Fondos_de_pantalla)
+        *   [3.5.1 Cambiar fondos de pantalla fácilmente](#Cambiar_fondos_de_pantalla_f.C3.A1cilmente)
+        *   [3.5.2 Usando Feh en FluxBox](#Usando_Feh_en_FluxBox)
+    *   [3.6 Temas](#Temas)
+    *   [3.7 La Slit](#La_Slit)
+    *   [3.8 Auto arrancar aplicaciones](#Auto_arrancar_aplicaciones)
+    *   [3.9 Terminales rxvt-unicode transparente](#Terminales_rxvt-unicode_transparente)
+    *   [3.10 La vida después de xorg.conf](#La_vida_despu.C3.A9s_de_xorg.conf)
+        *   [3.10.1 Configurar el teclado correctamente](#Configurar_el_teclado_correctamente)
+        *   [3.10.2 Deshabilitar ahorro de energia](#Deshabilitar_ahorro_de_energia)
+*   [4 Recursos adicionales](#Recursos_adicionales)
+
+## Instalación
+
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [fluxbox](https://www.archlinux.org/packages/?name=fluxbox) de los repositorios oficiales.
 
 ## Comenzando con Fluxbox
 

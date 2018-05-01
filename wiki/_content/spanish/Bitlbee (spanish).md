@@ -4,9 +4,7 @@ Tener cuentas de msn, yahoo, jabber, facebook, icq o gmail desde weechat Se pued
 
 ## Instalación
 
-$ pacman -S bitlbee
-
-$ pacman -S weechat
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes [bitlbee](https://www.archlinux.org/packages/?name=bitlbee) y [weechat](https://www.archlinux.org/packages/?name=weechat) de los repositorios oficiales.
 
 ## Configuración
 

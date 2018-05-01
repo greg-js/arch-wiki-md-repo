@@ -2,7 +2,7 @@
 
 Archboot es un conjunto de scripts para generar medios de almacenamiento booteables en CD/USB/PXE.
 
-Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especial del tipo squashfs, por lo que se limita al alcance de la memoria RAM que esté instalada en su sistema. [Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [archboot](https://www.archlinux.org/packages/?name=archboot) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especial del tipo squashfs, por lo que se limita al alcance de la memoria RAM que esté instalada en su sistema. [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [archboot](https://www.archlinux.org/packages/?name=archboot) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Contents
 
@@ -27,7 +27,7 @@ Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especi
 
 ## Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [archboot](https://www.archlinux.org/packages/?name=archboot).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [archboot](https://www.archlinux.org/packages/?name=archboot).
 
 ## Diferencias con el soporte de instalación de archiso
 

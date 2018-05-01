@@ -121,7 +121,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **kitty** — A modern, hackable, featureful, OpenGL based terminal emulator
 
-	[https://github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) || [kitty-git](https://aur.archlinux.org/packages/kitty-git/)
+	[https://github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) || [kitty](https://www.archlinux.org/packages/?name=kitty)
 
 *   **mlterm** — A multi-lingual terminal emulator supporting various character sets and encodings in the world.
 
@@ -278,6 +278,10 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — Open source and cross-platform C/C++ IDE.
 
 	[http://www.codeblocks.org/](http://www.codeblocks.org/) || [codeblocks](https://www.archlinux.org/packages/?name=codeblocks)
+
+*   **[CLion](https://en.wikipedia.org/wiki/JetBrains#CLion "wikipedia:JetBrains")** — A cross-platform IDE for C and C++.
+
+	[http://www.jetbrains.com/clion](http://www.jetbrains.com/clion) || [clion](https://aur.archlinux.org/packages/clion/)
 
 *   **[CodeLite](https://en.wikipedia.org/wiki/CodeLite "wikipedia:CodeLite")** — Open source and cross-platform C/C++/PHP and Node.js IDE written in C++ .
 

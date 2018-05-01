@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [NVIDIA (Español)](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+*   [Bumblebee (Español)](/index.php/Bumblebee_(Espa%C3%B1ol) "Bumblebee (Español)")
+
 Este artículo describe la instalación y configuración del controlador de código abierto [Nouveau](http://nouveau.freedesktop.org/) para las tarjetas gráficas NVIDIA. Para obtener información sobre el controlador propietario, véase [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
 
 ## Contents
@@ -40,7 +46,7 @@ Asegúrese de eliminar también el archivo `/etc/X11/xorg.conf` que el controlad
 
 Antes de continuar, eche un vistazo a [HardwareStatus](http://nouveau.freedesktop.org/wiki/HardwareStatus) para ver qué características son compatibles con una determinada arquitectura, y a la lista de [codenames](http://nouveau.freedesktop.org/wiki/CodeNames) de la propia tarjeta de vídeo. También puede consultar [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units correctamente.
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el controlador DDX con el paquete [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), el cual está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Dicho paquete aporta [nouveau-dri](https://www.archlinux.org/packages/?name=nouveau-dri) como una dependencia, proporcionando el controlador DRI para una aceleración 3D.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el controlador DDX con el paquete [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), el cual está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Dicho paquete aporta [nouveau-dri](https://www.archlinux.org/packages/?name=nouveau-dri) como una dependencia, proporcionando el controlador DRI para una aceleración 3D.
 
 Para utilizar aplicaciones de 32-bit con aceleración 3D en sistemas de x86_64, instale [lib32-nouveau-dri](https://www.archlinux.org/packages/?name=lib32-nouveau-dri) disponible en el repositorio [multilib](/index.php/Multilib "Multilib").
 

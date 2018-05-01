@@ -16,6 +16,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [3.5 History search](#History_search)
     *   [3.6 Prompts](#Prompts)
         *   [3.6.1 Prompt themes](#Prompt_themes)
+            *   [3.6.1.1 Manually installing prompt themes](#Manually_installing_prompt_themes)
         *   [3.6.2 Customized prompt](#Customized_prompt)
             *   [3.6.2.1 Colors](#Colors)
             *   [3.6.2.2 Example](#Example)
@@ -234,6 +235,38 @@ To preview all available themes, use this command:
 $ prompt -p
 
 ```
+
+##### Manually installing prompt themes
+
+It is possible to install themes manually, without external configuration manager tools. For a local installation, first create a folder and add it to the `fpath` array, eg:
+
+```
+$ mkdir ~/.zprompts && fpath=( "$HOME/.zprompts" $fpath )
+
+```
+
+Now create a symbolic link of your theme file in this folder:
+
+```
+$ ln -s mytheme.zsh ~/.zprompts/prompt_mytheme_setup
+
+```
+
+If instead you wish to install a theme globally, do:
+
+```
+# ln -s mytheme.zsh /usr/share/zsh/functions/Prompts/prompt_mytheme_setup
+
+```
+
+Now you should be able to activate it using:
+
+```
+$ prompt mytheme
+
+```
+
+If everything works, you can edit your `.zshrc` accordingly.
 
 #### Customized prompt
 

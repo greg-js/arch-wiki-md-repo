@@ -134,7 +134,7 @@ Related articles
 
 这样不仅会暂停输出，而且会暂停尝试打印到终端的程序，即暂停输出时会阻塞 `write()` 调用。 如果你的 *init* 进程出现冻结，请确保系统控制台没有暂停。
 
-要查看已经显示过的错误信息，参见 [Getty#Have boot messages stay on tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty")。
+要查看已经显示过的错误信息，参见 [Getty (简体中文)#将引导消息保留在 tty1 上](/index.php/Getty_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.B0.86.E5.BC.95.E5.AF.BC.E6.B6.88.E6.81.AF.E4.BF.9D.E7.95.99.E5.9C.A8_tty1_.E4.B8.8A "Getty (简体中文)")。
 
 #### 回滚显示
 

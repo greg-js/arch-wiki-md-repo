@@ -1,3 +1,8 @@
+Related articles
+
+*   [Full system backup with rsync (Español)](/index.php/Full_system_backup_with_rsync_(Espa%C3%B1ol) "Full system backup with rsync (Español)")
+*   [Backup programs](/index.php/Backup_programs "Backup programs")
+
 [rsync](https://rsync.samba.org/) es una herramienta de código abierto que permite transferir archivos rápidamente y de forma incremental.
 
 ## Contents
@@ -16,7 +21,7 @@
 
 ## Instalación
 
-Puedes [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [rsync](https://www.archlinux.org/packages/?name=rsync) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") ejecutando el comando:
+Puedes [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [rsync](https://www.archlinux.org/packages/?name=rsync) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") ejecutando el comando:
 
 ```
 `# pacman -S rsync`

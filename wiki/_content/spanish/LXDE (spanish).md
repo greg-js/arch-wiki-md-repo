@@ -3,8 +3,8 @@
 *   [1 ¿Qué es LXDE?](#.C2.BFQu.C3.A9_es_LXDE.3F)
 *   [2 ¿Por qué utilizar LXDE?](#.C2.BFPor_qu.C3.A9_utilizar_LXDE.3F)
 *   [3 ¿Qué componentes contiene?](#.C2.BFQu.C3.A9_componentes_contiene.3F)
-*   [4 ¿Cómo instalar LXDE?](#.C2.BFC.C3.B3mo_instalar_LXDE.3F)
-    *   [4.1 Extras de LXDE en el AUR](#Extras_de_LXDE_en_el_AUR)
+*   [4 Instalación](#Instalaci.C3.B3n)
+    *   [4.1 Versión GTK+ 3](#Versi.C3.B3n_GTK.2B_3)
 *   [5 Ejecutando LXDE](#Ejecutando_LXDE)
 *   [6 Consejos](#Consejos)
     *   [6.1 Automontaje](#Automontaje)
@@ -52,23 +52,17 @@ Nosotros usamos LXDE por sus excelentes cualidades tales como:
 *   **[XArchiver](http://xarchiver.xfce.org/)**: Programa archivador ligero, rápido, basado en gtk+ e independiente del escritorio. (No es desarrollado por el proyecto LXDE, pero le sugerimos que lo use).
 *   **[LXNM](http://lxde.sourceforge.net/about.html)** (en desarrollo aún): Gestor de red ligero para LXDE con capacidad de conexión sin hilos (sólo para Linux)
 
-## ¿Cómo instalar LXDE?
+## Instalación
 
-LXDE es modular. Puede used escoger cualquiera de los paquetes anteriormente listados, todos ellos instalables mediante Pacman. Tiene que habilitar los repositorios [extra] y [community]. Para instalar algunos paquetes tales como LXAppearance o LXNM, deberá habilitar el repositorio del [AUR].
+LXDE requiere mínimamente [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes [lxde-common](https://www.archlinux.org/packages/?name=lxde-common), [lxsession](https://www.archlinux.org/packages/?name=lxsession) y [openbox](https://www.archlinux.org/packages/?name=openbox) o algún otro gestor de ventanas.
 
-Sin embargo, los paquetes imprescindibles y que tiene siempre que instalar para poder ejecutar LXDE son Lxde-common, Lxsession, y Openbox. Como se dijo antes, el paquete Openbox puede ser reemplazado por otro gestor de ventanas de su preferencia.
+LXDE tiene también un grupo de paquetes para Arch. El cual puede se instalar con el paquete [lxde](https://www.archlinux.org/groups/x86_64/lxde/).
 
-LXDE tiene también un grupo de paquetes para Arch. Por ejemplo, puede instalar LXDE así:
+### Versión GTK+ 3
 
-```
-# pacman -S lxde
+Una versión experimental de LXDE basada en GTK+ 3 puede ser instalada con el grupo [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/).
 
-```
-
-### Extras de LXDE en el AUR
-
-*   [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
-*   [lxtask](https://www.archlinux.org/packages/?name=lxtask)
+Aunque en su mayoría es funcional, existen algunos problemas conocidos con [gpicview](https://sourceforge.net/p/lxde/bugs/769/), [lxappearance-obconf](https://sourceforge.net/p/lxde/bugs/768/), [lxlauncher](https://sourceforge.net/p/lxde/bugs/803/) y [lxpanel](https://sourceforge.net/p/lxde/bugs/773/).
 
 ## Ejecutando LXDE
 

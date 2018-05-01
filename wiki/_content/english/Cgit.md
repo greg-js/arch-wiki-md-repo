@@ -10,6 +10,7 @@
     *   [2.3 Nginx](#Nginx)
         *   [2.3.1 Using fcgiwrap](#Using_fcgiwrap)
         *   [2.3.2 Using uwsgi](#Using_uwsgi)
+    *   [2.4 Caddy](#Caddy)
 *   [3 Configuration of cgit](#Configuration_of_cgit)
     *   [3.1 Basic Configuration](#Basic_Configuration)
     *   [3.2 Adding repositories](#Adding_repositories)
@@ -210,6 +211,24 @@ cgi = /usr/lib/cgit/cgit.cgi
 ```
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the corresponding socket `uwsgi@cgit.socket`.
+
+### Caddy
+
+Install [Caddy](/index.php/Caddy "Caddy") with the [caddy-cgi](https://jung-kurt.github.io/cgi/) plugin, for example [caddy-with-cgi](https://aur.archlinux.org/packages/caddy-with-cgi/). The following configuration uses the `except` subdirective in the latest caddy-cgi plugin.
+
+ `/etc/caddy/caddy.conf.d/cgit.conf` 
+```
+git.example.com {
+  # other settings such as TLS, headers, ...
+  root /usr/share/webapps/cgit
+  cgi {
+    match /
+    exec  /usr/share/webapps/cgit/cgit.cgi
+    except /cgit.png /favicon.ico /cgit.css /robots.txt
+  }
+}
+
+```
 
 ## Configuration of cgit
 

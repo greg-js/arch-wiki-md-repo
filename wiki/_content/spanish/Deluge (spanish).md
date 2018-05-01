@@ -1,39 +1,22 @@
 ## Contents
 
 *   [1 ¿Que es deluge?](#.C2.BFQue_es_deluge.3F)
-*   [2 Instalacion](#Instalacion)
-*   [3 Configuracion](#Configuracion)
-    *   [3.1 daemon e interfaz web](#daemon_e_interfaz_web)
+*   [2 Instalación](#Instalaci.C3.B3n)
+*   [3 Configuración](#Configuraci.C3.B3n)
+    *   [3.1 Demonio e interfaz web](#Demonio_e_interfaz_web)
     *   [3.2 SSL](#SSL)
 
 ### ¿Que es deluge?
 
 Deluge es un cliente BitTorrent, creado usando Python y GTK+ (a través de PyGTK). Deluge se puede utilizar en cualquier sistema operativo que respete el estándar POSIX. Su objetivo es brindar un nativo y completo cliente a entornos de escritorio GTK como son GNOME y Xfce. Desde el 13 de marzo de 2009 está disponible una versión oficial para Microsoft Windows. El programa utiliza la librería libtorrent escrita en C++ por medio de los bindings oficiales en Python.
 
-## Instalacion
+## Instalación
 
-```
-# pacman -S deluge
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [deluge](https://www.archlinux.org/packages/?name=deluge) de los repositorios oficiales. El cliente con GTK+ tambien necesita el paquete [pygtk](https://www.archlinux.org/packages/?name=pygtk).
 
-```
+## Configuración
 
-Para la interfaz web, necesitaremos **python-mako**:
-
-```
-# pacman -S python-mako
-
-```
-
-Para la interfaz gtk necesitaremos **pygtk** y **libsvg**:
-
-```
-# pacman -S pygtk librsvg
-
-```
-
-## Configuracion
-
-### daemon e interfaz web
+### Demonio e interfaz web
 
 El usuario por defecto para deluged, el demonio de Deluge, es “deluge”. Se puede cambiar en este archivo `/etc/conf.d/deluged`. Claro que el usuario debe existir, en el caso d usar el de por defecto, este se crea automáticamente.
 

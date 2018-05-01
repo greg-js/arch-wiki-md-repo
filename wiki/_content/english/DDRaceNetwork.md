@@ -20,7 +20,7 @@ The game works in a client–server model, where the user plays using a Client w
         *   [2.1.3 Blocker gametype](#Blocker_gametype)
         *   [2.1.4 FNG-like gametypes](#FNG-like_gametypes)
 *   [3 Configuration](#Configuration)
-    *   [3.1 User settings](#User_settings)
+    *   [3.1 File and directory for user settings](#File_and_directory_for_user_settings)
 *   [4 Server](#Server)
     *   [4.1 MySQL support](#MySQL_support)
     *   [4.2 Setting up a server](#Setting_up_a_server)
@@ -133,9 +133,9 @@ In this gametype, the players are divided in 2 teams and the target is to win by
 
 ## Configuration
 
-This section mention config files/directories and their use.
+Configurations are stored in plain text files in the user's home directory and can be applied in the GUI options or in the embedded console. See more information below on this topic.
 
-### User settings
+### File and directory for user settings
 
 The directory `$HOME/.teeworlds/` stores user configuration, demos, screenshots downloaded maps and other user contents.
 
@@ -173,7 +173,9 @@ The server instance should be available and visible for a Client in the LAN serv
 
 ## Extra tools
 
-The following tools are provided in `/usr/share/ddnet/tools/`:
+This section list and describe some tools that, while most might not need them, could be useful for e.g. mappers. Some of these tools are developed by the DDNet development team, but other tools were inherited from Teeworlds when forking its source code in the beginning.
+
+These following tools are provided in `/usr/share/ddnet/tools/` by the DDNet packages.
 
 ### config_retrieve
 

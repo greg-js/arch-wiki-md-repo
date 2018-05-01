@@ -8,14 +8,9 @@ Requisitos:
 
 1º Primero vamos a configurar GMail para poder recibir el correo. Para ello nos dirigimos a gmail desde nuestro navegador y entramos en **configuración/Reenvío y correo POP** y activamos la recepción de correo pop. Está parte cada usuario puede dejarla como desee, si quiere guardar una copia también en el servidor u otros datos. guardamos cambios y listo.
 
-2º Instalamos el paquete claws-mail
+2º [Instalamos](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [claws-mail](https://www.archlinux.org/packages/?name=claws-mail).
 
-```
-# pacman -S claws-mail
-
-```
-
-(en mi caso la versión usada es la 2.6.1), lo ejecutamos y nos aparecerá un asistente, lo cancelamos, ya que debemos cambiar más cosas luego y mejor hacerlo todo de 1 vez.
+Al ejecutarlo nos aparecerá un asistente, lo cancelamos, ya que debemos cambiar más cosas luego y mejor hacerlo todo de 1 vez.
 
 Ya en la pantalla de claws-mail nos dirijimos a **Configuración/Crear una nueva cuenta...** y aquí es donde se configura todo. Veremos una pantalla con diversas pestañas que iremos repasando para completar todos los datos.
 

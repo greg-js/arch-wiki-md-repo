@@ -73,7 +73,7 @@ Generalmente, **xf86-video-ati** debe ser su primera opción, independientemente
 
 **Nota:** Si Catalyst/`fglrx` ha sido instalado previamente, véase [ATI Catalyst (Español)#Desinstalación](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Desinstalaci.C3.B3n "ATI Catalyst (Español)").
 
-[Instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), disponible en los [Repositorios Oficiales](/index.php/Repositorios_Oficiales "Repositorios Oficiales").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), disponible en los [Repositorios Oficiales](/index.php/Repositorios_Oficiales "Repositorios Oficiales").
 
 ## Configuración
 

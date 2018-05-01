@@ -791,7 +791,7 @@ Con algunos portátiles ASUS (probado con ASUS series U32U), podría ayudar aña
 
 #### ipw2100 and ipw2200
 
-Estos módulos son totalmente compatibles con el kernel, pero requieren firmware adicional. Dependiendo de cuál de los chipsets tenga, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") o bien [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) o bien [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Después [recargue](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") el módulo apropiado.
+Estos módulos son totalmente compatibles con el kernel, pero requieren firmware adicional. Dependiendo de cuál de los chipsets tenga, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") o bien [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) o bien [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Después [recargue](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") el módulo apropiado.
 
 **Sugerencia:** Puede utilizar las siguientes [opciones del módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules"):
 
@@ -871,7 +871,7 @@ Véase [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?ti
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) es un controlador para el chipset USB WLAN ZyDAS ZD1211 802.11b/g, y se ha incluido en las últimas versiones del kernel de Linux. Véase [[5]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) para obtener una lista de los dispositivos compatibles. Basta con [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") del firmware para el dispositivo , suministrado por el paquete [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware).
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) es un controlador para el chipset USB WLAN ZyDAS ZD1211 802.11b/g, y se ha incluido en las últimas versiones del kernel de Linux. Véase [[5]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) para obtener una lista de los dispositivos compatibles. Basta con [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") del firmware para el dispositivo , suministrado por el paquete [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware).
 
 #### hostap_cs
 

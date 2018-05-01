@@ -267,7 +267,7 @@ The important points to check:
     *   In the `RSN` and `WPA` blocks you may find the following information:
         *   **Group cipher:** value in TKIP, CCMP, both, others.
         *   **Pairwise ciphers:** value in TKIP, CCMP, both, others. Not necessarily the same value than Group cipher.
-        *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you will usually find PSK (*i.e.* passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). See [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise") and [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") for details.
+        *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you will usually find PSK (*i.e.* passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). See [#WPA2 Enterprise](#WPA2_Enterprise) and [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") for details.
     *   If you see neither `RSN` nor `WPA` blocks but there is `Privacy`, then WEP is used.
 
 #### Set operating mode

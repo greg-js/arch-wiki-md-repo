@@ -74,7 +74,7 @@ A imagem de instalação habilita o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd"
 
 ```
 
-Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@` e pressione `Tab`. Proceda com [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Driver_de_dispositivo "Configuração de rede") para dispositivos cabeados ou [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration") para dispositivos sem fio *(wireless)*.
+Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@` e pressione `Tab`. Proceda com [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Driver_de_dispositivo "Configuração de rede") para dispositivos cabeados ou [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio") para dispositivos sem fio *(wireless)*.
 
 ### Atualizar o relógio do sistema
 
@@ -267,7 +267,7 @@ Se o sistema tem um endereço IP permanente, ele deve ser usado em vez de `127.0
 
 O recém-instalado ambiente possui nenhuma conectividade de rede ativada por padrão. Veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para configurar uma.
 
-Para [Configuração sem fio](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Instale "Instale") os pacotes [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), assim como [pacotes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") que se fizerem necessários. Opcionalmente, instale [dialog](https://www.archlinux.org/packages/?name=dialog) para uso de *wifi-menu*.
+Para [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio"), [instale](/index.php/Instale "Instale") os pacotes [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), assim como [pacotes de firmware](/index.php/Wireless_(Portugu%C3%AAs)#Instalar_driver.2Ffirmware "Wireless (Português)") que se fizerem necessários. Opcionalmente, instale [dialog](https://www.archlinux.org/packages/?name=dialog) para uso de *wifi-menu*.
 
 ### Initramfs
 

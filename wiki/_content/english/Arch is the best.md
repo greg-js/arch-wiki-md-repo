@@ -1894,6 +1894,13 @@ Que molleja de bueno es Arch.
 
 ```
 
+	Swahili
+
+```
+Arch ndiyo bora zaidi
+
+```
+
 	Swedish
 
 ```

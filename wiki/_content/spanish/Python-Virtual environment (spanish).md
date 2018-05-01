@@ -27,7 +27,7 @@ Aparte de estas dos herramientas, a partir de la versión 3.3 de Python, la bibl
 
 ### Installation
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv), o [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) para la versión compatible con Python 2.
+[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv), o [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) para la versión compatible con Python 2.
 
 ### Uso básico
 
@@ -70,7 +70,7 @@ $ source mi_env/bin/activate
 
 ### Instalación
 
-[Instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [python-virtualenvwrapper](https://www.archlinux.org/packages/?name=python-virtualenvwrapper) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [python-virtualenvwrapper](https://www.archlinux.org/packages/?name=python-virtualenvwrapper) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Una vez instalado, es necesario crear un directorio para albergar los *virtualenvs*:
 

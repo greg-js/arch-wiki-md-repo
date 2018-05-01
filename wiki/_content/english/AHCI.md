@@ -51,7 +51,7 @@ ata2.00: 625142448 sectors, multi 16: LBA48 NCQ (depth 31/32)
 
 It is possible that the AHCI module is not loaded automatically, if SATA configuration is switched from IDE to AHCI after installing Arch. In such case, an error message appear at early boot indicating that the root partition was not found.
 
-If that happens, the `failsafe` boot option should still works fine. Once started in failsafe mode, you have to run [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to re-generate a correct initramfs images.
+If that happens, the `failsafe` boot option should still work fine. Once started in failsafe mode, you have to run [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to re-generate a correct initramfs images.
 
 ## See also
 

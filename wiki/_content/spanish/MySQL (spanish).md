@@ -10,7 +10,7 @@ MySQL es una gran base de datos SQL multi-hilo y multi-usuario. Para mas informa
 
 ## Instalación
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [mysql](https://aur.archlinux.org/packages/mysql/).
+[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [mysql](https://aur.archlinux.org/packages/mysql/).
 
 Despues de la instalación es necesario ejecutar el servicio de mysqld para poder proseguir:
 

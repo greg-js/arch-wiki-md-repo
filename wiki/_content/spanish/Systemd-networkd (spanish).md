@@ -1,13 +1,13 @@
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [systemd-nspawn (Español)](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)")
 *   [Network bridge](/index.php/Network_bridge "Network bridge")
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
 
-*systemd-networkd* es un demonio del sistema que maneja las configuraciones de red. Detecta y configura los dispositivos de red que aparecen; también puede crear dispositivos de red virtuales. Este servicio puede ser especialmente útil para establecer configuraciones complejas de red para un contenedor manejado por [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") o por maquinas virtuales. Además trabaja bien en conecciones simples.
+*systemd-networkd* es un demonio del sistema que maneja las configuraciones de red. Detecta y configura los dispositivos de red que aparecen; también puede crear dispositivos de red virtuales. Este servicio puede ser especialmente útil para establecer configuraciones complejas de red para un contenedor manejado por [systemd-nspawn (Español)](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)") o por maquinas virtuales. Además trabaja bien en conecciones simples.
 
 ## Contents
 

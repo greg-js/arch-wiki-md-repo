@@ -89,13 +89,13 @@ Este artículo trata sobre la instalación y configuración de los controladores
 
 Estas instrucciones son para aquellos que utilizan el paquete stock [linux](https://www.archlinux.org/packages/?name=linux). Para la configuración de kernel personalizado, vaya a la [sección correspondiente](#Instalaci.C3.B3n_alternativa:_kernel_personalizado).
 
-**Sugerencia:** Por lo general es ventajoso instalar el controlador NVIDIA a través de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") en lugar del paquete proporcionado por el sitio web de NVIDIA, dado que permite asegurarse que el controlador se actualice conforme se vaya actualizando el sistema.
+**Sugerencia:** Por lo general es ventajoso [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el controlador NVIDIA en lugar del paquete proporcionado por el sitio web de NVIDIA, dado que permite asegurarse que el controlador se actualice conforme se vaya actualizando el sistema.
 
 1\. Si no sabe qué tarjeta gráfica tiene, puede conocerla mediante la emisión de la siguiente orden:
 
 	 `# lspci -k | grep -A 2 -i "VGA"` 
 
-2\. Instale el controlador apropiado para su tarjeta:
+2\. [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el controlador apropiado para su tarjeta:
 
 *   Para las tarjetas de la serie GeForce 8 y posteriores [NVC0 y posteriores], instale el paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 *   Para las tarjetas de las series GeForce 6/7 [NV40-FANV], instale el paquete [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
@@ -126,7 +126,7 @@ En primer lugar, es bueno saber cómo funciona el sistema ABS mediante la lectur
 
 Lo que sigue es un breve tutorial para crear un paquete personalizado de controladores NVIDIA usando [ABS](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)"):
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [abs](https://www.archlinux.org/packages/?name=abs) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y genere el árbol con:
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [abs](https://www.archlinux.org/packages/?name=abs) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y genere el árbol con:
 
 ```
 # abs

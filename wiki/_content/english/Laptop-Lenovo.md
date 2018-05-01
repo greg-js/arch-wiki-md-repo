@@ -139,7 +139,7 @@ install CD version
 | [IBM ThinkPad X60s](/index.php/IBM_ThinkPad_X60s "IBM ThinkPad X60s") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | Lenovo ThinkPad X61s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD slot |
 | [Lenovo ThinkPad X100e](/index.php/Lenovo_ThinkPad_X100e "Lenovo ThinkPad X100e") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | SD card (Yes), Webcam (Yes) |
-| [Lenovo ThinkPad X200](/index.php/Lenovo_ThinkPad_X200 "Lenovo ThinkPad X200") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
+| [Lenovo ThinkPad X200](/index.php/Lenovo_ThinkPad_X200 "Lenovo ThinkPad X200") | Yes | Yes | Yes | Yes | Yes | Yes | NA | Yes |
 | [Lenovo ThinkPad X200S](/index.php/Lenovo_ThinkPad_X200S "Lenovo ThinkPad X200S") | Yes | Yes | Yes | Yes | Yes | Not tested | NA | Not tested | Everything worked out of the box. However, fingerprint, SD card and webcam were not tested |
 | [Lenovo ThinkPad X201](/index.php/Lenovo_ThinkPad_X201 "Lenovo ThinkPad X201") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested |
 | [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) |
@@ -151,7 +151,7 @@ install CD version
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
-| [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
+| [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 
 #### Yoga Series
 

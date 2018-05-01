@@ -12,7 +12,7 @@
 
 ## Instalación y configuración
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [ntop](https://www.archlinux.org/packages/?name=ntop) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). En la primera ejecución de ntop, debe configurar la contraseña de administrador:
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [ntop](https://www.archlinux.org/packages/?name=ntop) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). En la primera ejecución de ntop, debe configurar la contraseña de administrador:
 
 ```
 # ntop

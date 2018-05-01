@@ -2,63 +2,34 @@ Conky es un monitor de sistema para los sistemas X Window. Está disponible para
 
 ## Contents
 
-*   [1 Instalación y configuración](#Instalaci.C3.B3n_y_configuraci.C3.B3n)
-*   [2 Paquetes AUR](#Paquetes_AUR)
-*   [3 Consejos y trucos](#Consejos_y_trucos)
-    *   [3.1 Habilitar transparecian real (KDE4)](#Habilitar_transparecian_real_.28KDE4.29)
-    *   [3.2 Evitar el parpadeo](#Evitar_el_parpadeo)
-    *   [3.3 Integrar con KDesktop](#Integrar_con_KDesktop)
-    *   [3.4 Visualizar información de actualización de paquetes](#Visualizar_informaci.C3.B3n_de_actualizaci.C3.B3n_de_paquetes)
-    *   [3.5 Mostrar Weather Forecast](#Mostrar_Weather_Forecast)
-    *   [3.6 Mostrar RSS feeds](#Mostrar_RSS_feeds)
-    *   [3.7 Mostrar ranking Distrowatch Arch Linux](#Mostrar_ranking_Distrowatch_Arch_Linux)
-    *   [3.8 Mostrar estadísticas rTorrent](#Mostrar_estad.C3.ADsticas_rTorrent)
-    *   [3.9 Mostrar numero de correos nuevos (GMail)](#Mostrar_numero_de_correos_nuevos_.28GMail.29)
-    *   [3.10 Mostrar correos nuevos (IMAP + SSL)](#Mostrar_correos_nuevos_.28IMAP_.2B_SSL.29)
-*   [4 Contribución de usuarios con ejemplos de configuración](#Contribuci.C3.B3n_de_usuarios_con_ejemplos_de_configuraci.C3.B3n)
-    *   [4.1 Graysky](#Graysky)
-*   [5 Un ejemplo de los anillos con soporte nVidia](#Un_ejemplo_de_los_anillos_con_soporte_nVidia)
-*   [6 Una nota sobre fuentes simbólicas](#Una_nota_sobre_fuentes_simb.C3.B3licas)
-*   [7 Enlaces externos](#Enlaces_externos)
+*   [1 Instalación](#Instalaci.C3.B3n)
+*   [2 Consejos y trucos](#Consejos_y_trucos)
+    *   [2.1 Habilitar transparecian real (KDE4)](#Habilitar_transparecian_real_.28KDE4.29)
+    *   [2.2 Evitar el parpadeo](#Evitar_el_parpadeo)
+    *   [2.3 Integrar con KDesktop](#Integrar_con_KDesktop)
+    *   [2.4 Visualizar información de actualización de paquetes](#Visualizar_informaci.C3.B3n_de_actualizaci.C3.B3n_de_paquetes)
+    *   [2.5 Mostrar Weather Forecast](#Mostrar_Weather_Forecast)
+    *   [2.6 Mostrar RSS feeds](#Mostrar_RSS_feeds)
+    *   [2.7 Mostrar ranking Distrowatch Arch Linux](#Mostrar_ranking_Distrowatch_Arch_Linux)
+    *   [2.8 Mostrar estadísticas rTorrent](#Mostrar_estad.C3.ADsticas_rTorrent)
+    *   [2.9 Mostrar numero de correos nuevos (GMail)](#Mostrar_numero_de_correos_nuevos_.28GMail.29)
+    *   [2.10 Mostrar correos nuevos (IMAP + SSL)](#Mostrar_correos_nuevos_.28IMAP_.2B_SSL.29)
+*   [3 Contribución de usuarios con ejemplos de configuración](#Contribuci.C3.B3n_de_usuarios_con_ejemplos_de_configuraci.C3.B3n)
+    *   [3.1 Graysky](#Graysky)
+*   [4 Un ejemplo de los anillos con soporte nVidia](#Un_ejemplo_de_los_anillos_con_soporte_nVidia)
+*   [5 Una nota sobre fuentes simbólicas](#Una_nota_sobre_fuentes_simb.C3.B3licas)
+*   [6 Enlaces externos](#Enlaces_externos)
 
-## Instalación y configuración
+## Instalación
 
-*   Conky esta disponible en los repositorios Extra:
-
-```
-# pacman -S conky
-
-```
-
-*   Editar el archivo de configuración usando uno como ejemplo desde [homeproject-screenshot](http://conky.sourceforge.net/screenshots.html):
-
-```
-$ nano ~/.conkyrc
-
-```
-
-*   Alternativamente, se puede usar el archivo por defecto desde `/etc/conky/conky.conf`:
-
-```
-$ cp /etc/conky/conky.conf ~/.conkyrc
-
-```
-
-*   Más información sobre sentencias:
-
-```
-$ man conky
-
-```
-
-## Paquetes AUR
-
-En adición a los paquetes básicos de conky en los repositorios, hay varios paquetes [AUR](/index.php/AUR "AUR") disponibles con opciones extras de compilación disponibles.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [conky](https://www.archlinux.org/packages/?name=conky) de los repositorios oficiales. También hay varios paquetes disponibles en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") con opciones extras de compilación disponibles.
 
 *   Instalar [conky-cli](https://aur.archlinux.org/packages/conky-cli/) para dependencias conky sans X11.
 *   Instalar [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/) para soporte nVidia.
 *   Instalar [conky-lua](https://aur.archlinux.org/packages/conky-lua/) para soporte lua.
 *   Instalar [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/) para soporte de ambos (lua, nVidia).
+
+Algunas variables incluidas en conky requieren paquetes adicionales para ser utilizados, por ejemple [Hddtemp](/index.php/Hddtemp "Hddtemp") para la temperatura del disco duro y [MPD](/index.php/Music_Player_Daemon_(Espa%C3%B1ol) "Music Player Daemon (Español)") para música.
 
 ## Consejos y trucos
 

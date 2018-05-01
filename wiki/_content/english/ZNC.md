@@ -33,7 +33,7 @@ Though you can choose to modify your configuration files manually, this requires
 
 ### Webadmin Module
 
-If you enabled the web admin module, you can access it at `http://*yourhostname*:port`*, the znc port number is the same as you defined for connecting to the bouncer.*
+If you enabled the web admin module, you can access it at `http://*yourhostname:port*`, the znc port number is the same as you defined for connecting to the bouncer.
 
 ### Control Panel Module
 
@@ -42,3 +42,4 @@ If you enabled the control panel module, `/msg *controlpanel help` for a list of
 ## See also
 
 *   [ZNC's website](http://wiki.znc.in/ZNC)
+*   [ZNC modules](http://wiki.znc.in/Modules#Module_List)

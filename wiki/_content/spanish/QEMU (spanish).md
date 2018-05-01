@@ -96,7 +96,7 @@ QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php
 
 ## Instalación
 
-Instala el paquete [qemu](https://www.archlinux.org/packages/?name=qemu) (ó [qemu-headless](https://www.archlinux.org/packages/?name=qemu-headless) para la versión sin GUI) y los paquetes opcionales para tus necesidades:
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [qemu](https://www.archlinux.org/packages/?name=qemu) (ó [qemu-headless](https://www.archlinux.org/packages/?name=qemu-headless) para la versión sin GUI) y los paquetes opcionales para tus necesidades:
 
 *   [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) - Soporte extra para arquitecturas
 *   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - Soporte para bloque glusterfs

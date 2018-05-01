@@ -42,7 +42,7 @@ Para obtener una lista completa de los modelos GPU-Intel, y los chipsets y CPUs 
 
 Prerrequisito: [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)").
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Este paquete proporciona el controlador DDX para la aceleración 2D y tira de [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) como una dependencia, proporcionando el controlador DRI para la aceleración 3D.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Este paquete proporciona el controlador DDX para la aceleración 2D y tira de [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) como una dependencia, proporcionando el controlador DRI para la aceleración 3D.
 
 Para soporte 3D de programas de 32 bits que corran en sistemas de x86_64, instale [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) desde el repositorio [multilib](/index.php/Multilib "Multilib").
 

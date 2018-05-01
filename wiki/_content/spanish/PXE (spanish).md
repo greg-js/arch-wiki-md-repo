@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Diskless System](/index.php/Diskless_System "Diskless System")
+
 De [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"):
 
 	*Preboot eXecution Environment (PXE) (Entorno de ejecución de prearranque), es un entorno para arrancar e instalar el sistema operativo en ordenadores a través de una red, de manera independiente de los dispositivos de almacenamiento de datos disponibles (como discos duros) o de los sistemas operativos instalados.*
@@ -47,11 +51,7 @@ Activa tu tarjeta de red ethernet, y asignale una dirección apropiada.
 
 Necesitarás servidores DHCP y TFTP para configurar la red en el directorio de instalación y para facilitar la transferencia de archivos entre PXE servidor y cliente; dnsmasq hace las cos cosas, y es extremadamente fácil de instalar.
 
-Instala [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq):
-
- `# pacman -S dnsmasq` 
-
-Configura [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq):
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) y configure de la siguiente manera:
 
  `# vim /etc/dnsmasq.conf` 
 ```
@@ -74,9 +74,7 @@ Inicia [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq):
 
 Gracias a recientes cambios en [archiso](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)"), ahora es posible arrancar desde HTTP (archiso_pxe_http initcpio hook) o NFS (archiso_pxe_nfs initcpio hook); de entre todas las posibilidades, darkhttpd es de lejos el mas sencillo de instalar (y el más ligero).
 
-Primero, instala [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd):
-
- `# pacman -S darkhttpd` 
+Primero, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd).
 
 Luego inicia [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) usando /mnt/archiso como raíz de los archivos:
 

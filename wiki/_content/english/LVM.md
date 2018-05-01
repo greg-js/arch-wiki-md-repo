@@ -34,9 +34,8 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
                 *   [5.2.1.2.2 Resize physical volume](#Resize_physical_volume)
                 *   [5.2.1.2.3 Resize partition](#Resize_partition)
         *   [5.2.2 Logical volumes](#Logical_volumes)
-            *   [5.2.2.1 Growing or shrinking with lvresize](#Growing_or_shrinking_with_lvresize)
-            *   [5.2.2.2 Extending the logical volume and file system in one go](#Extending_the_logical_volume_and_file_system_in_one_go)
-            *   [5.2.2.3 Resizing the file system separately](#Resizing_the_file_system_separately)
+            *   [5.2.2.1 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
+            *   [5.2.2.2 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
     *   [5.3 Remove logical volume](#Remove_logical_volume)
     *   [5.4 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
     *   [5.5 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
@@ -108,10 +107,10 @@ Example:
 ```
 **LVM logical volumes**
 
-  Volume Group1 (/dev/MyStorage/ = /dev/sda1 + /dev/sda2 + /dev/sdb1):
+  Volume Group1 (/dev/MyVolGroup/ = /dev/sda1 + /dev/sda2 + /dev/sdb1):
      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     |Logical volume1 15 GiB  |Logical volume2 35 GiB      |Logical volume3 200 GiB              |
-    |/dev/MyStorage/rootvol  |/dev/MyStorage/homevol      |/dev/MyStorage/mediavol              |
+    |/dev/MyVolGroup/rootvol |/dev/MyVolGroup/homevol     |/dev/MyVolGroup/mediavol             |
     |_ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
 
 ```
@@ -268,7 +267,7 @@ For example:
 
 ```
 
-This will create a logical volume that you can access later with `/dev/Volgroup00/lvolhome` or `/dev/VolGroup00/lvolhome`. Just like volume groups, you can use any name you want for your logical volume when creating it besides a few exceptions listed in [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8#VALID_NAMES).
+This will create a logical volume that you can access later with `/dev/VolGroup00/lvolhome`. Just like volume groups, you can use any name you want for your logical volume when creating it besides a few exceptions listed in [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8#VALID_NAMES).
 
 You can also specify one or more physical volumes to restrict where LVM allocates the data. For example, you may wish to create a logical volume for the root filesystem on your small SSD, and your home volume on a slower mechanical drive. Simply add the physical volume devices to the command line, for example:
 
@@ -476,91 +475,70 @@ Last, you need to shrink the partition with your favorite [partitioning tool](/i
 
 #### Logical volumes
 
-**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r`/`--resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
-
-##### Growing or shrinking with lvresize
+**Note:** [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) provides more or less the same options as the specialized [lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8) and [lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8) commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r`/`--resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
 
 **Warning:** While enlarging a file system can often be done on-line (*i.e.* while it is mounted), even for the root partition, shrinking will nearly always require to first unmount the file system so as to prevent data loss. Make sure your FS supports what you are trying to do.
 
-Extend logical volume *lv1* within volume group *vg1* by 2 GiB *without* touching its file system:
+##### Resizing the logical volume and file system in one go
+
+**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. For a different type of file system see [#Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately).
+
+Extend the logical volume `mediavol` in `MyVolGroup` by 10 GiB and resize its file system *all at once*:
 
 ```
-# lvresize -L +2G vg1/lv1
-
-```
-
-Reduce the size of `vg1/lv1` by 500 MiB *without* resizing its file system (make sure it is [already shrunk](#Resizing_the_file_system_separately) in that case):
-
-```
-# lvresize -L -500M vg1/lv1
+# lvresize -L +10G --resizefs MyVolGroup/mediavol
 
 ```
 
-Set `vg1/lv1` to 15 GiB and resize its file system *all at once*:
+Set the size of logical volume `mediavol` in `MyVolGroup` to 15 GiB and resize its file system *all at once*:
 
 ```
-# lvresize -L 15G -r vg1/lv1
+# lvresize -L 15G --resizefs MyVolGroup/mediavol
 
 ```
-
-**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. For a different type of file system look for the [appropriate utility](/index.php/File_systems#Types_of_file_systems "File systems").
 
 If you want to fill all the free space on a volume group, use the following command:
 
 ```
-# lvresize -l +100%FREE *vg*/*lv*
+# lvresize -l +100%FREE --resizefs MyVolGroup/mediavol
 
 ```
 
 See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
 
-##### Extending the logical volume and file system in one go
+##### Resizing the logical volume and file system separately
 
-**Warning:** Not all file systems support resizing without loss of data and/or resizing online.
+For file systems not supported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) will need to use the [appropriate utility](/index.php/File_systems#Types_of_file_systems "File systems") to resize the file system before shrinking the logical volume or after expanding it.
 
-Extend the logical volume *home* in *volume-group* with 10 GiB
-
-```
-# lvresize -L +10G /dev/*volume-group*/*home* --resizefs
+To extend logical volume `mediavol` within volume group `MyVolGroup` by 2 GiB *without* touching its file system:
 
 ```
-
-Alternatively with a XFS filesystem
-
-```
-# lvextend -L+10G /dev/*volume-group*/*home*
-# xfs_growfs /home
+# lvresize -L +2G MyVolGroup/mediavol
 
 ```
 
-Note: *xfs_growfs* takes a mount point as argument. See [xfs_growfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_growfs.8) for more detailed options.
-
-##### Resizing the file system separately
-
-If not using the `-r`/`--resizefs` option to `lvresize`, `lvextend` or `lvreduce`, or using a file system unsupported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (e.g. [Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")), you need to manually resize the file system before shrinking the LV or after expanding it.
-
-**Warning:** Not all file systems support resizing without loss of data and/or resizing online.
-
-For example with an ext2/ext3/ext4 file system:
+Now expand the file system ([ext4](/index.php/Ext4 "Ext4") in this example) to the maximum size of the underlying logical volume:
 
 ```
-# resize2fs *vg*/*lv*
+# resize2fs /dev/MyVolGroup/mediavol
 
 ```
 
-will expand the FS to the maximum size of the underlying LV, while
+To reduce the size of logical volume `mediavol` in `MyVolGroup` by 500 MiB, first calculate the resulting file system size and shrink the file system ([ext4](/index.php/Ext4 "Ext4") in this example) to the new size:
 
 ```
-# resize2fs -M *vg*/*lv*
+# resize2fs /dev/MyVolGroup/mediavol *NewSize*
 
 ```
 
-will shrink it to its minimum size. To resize it to a specified size, use:
+When the file system is shrunk, reduce the size of logical volume:
 
 ```
-# resize2fs *vg*/*lv* *NewSize*
+# lvresize -L -500M MyVolGroup/mediavol
 
 ```
+
+See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
 
 ### Remove logical volume
 

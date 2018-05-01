@@ -17,12 +17,15 @@
 
 ## Instalación
 
-```
-# pacman -S pidgin
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [pidgin](https://www.archlinux.org/packages/?name=pidgin) disponible desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
-```
+Variantes notables son:
 
-Puede que también desee instalar plugins extras de <tt>purple-plugin-pack</tt>.
+*   **Pidgin Light** — Light Pidgin sin soporte de GStreamer, Tcl/Tk, XScreenSaver, video/audio.
+
+	[http://pidgin.im/](http://pidgin.im/) || [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)
+
+Puede que también desee instalar plugins extras de [pidgin-plugin-pack](https://www.archlinux.org/packages/?name=pidgin-plugin-pack).
 
 ## Corrector ortográfico
 

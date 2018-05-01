@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
+*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [Unbound](/index.php/Unbound "Unbound")
+*   [PowerDNS](/index.php/PowerDNS "PowerDNS")
+
 **Estado de la traducción:** este artículo es una versión traducida de [Domain Name System (Español)](/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&action=edit&redlink=1 "Domain Name System (Español) (page does not exist)"). Fecha de la última traducción/revisión: **2017-01-24**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&diff=0&oldid={{{3}}}).
 
 BIND (*Berkeley Internet Name Daemon*) es la implementación de referencia del protocolo DNS (*Domain Name System*).
@@ -23,7 +31,7 @@ BIND (*Berkeley Internet Name Daemon*) es la implementación de referencia del p
 
 Los siguientes pasos indican cómo instalar una configuración básica de BIND como servidor local DNS de solo caché.
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [bind](https://www.archlinux.org/packages/?name=bind) desde los repositorios oficiales.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [bind](https://www.archlinux.org/packages/?name=bind) desde los repositorios oficiales.
 
 Opcionalmente, edite `/etc/named.conf`, y añada la siguiente línea en la sección de opciones (options), para permitir únicamente conexiones de localhost:
 

@@ -39,7 +39,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | Provider | Arch Release | Virtualization | Locations | Notes |
 | [4smart.cz](http://4smart.cz/) | 2013.08 | OpenVZ | Prague, CZ | (Czech language site only) when updating system make sure you use [tredaelli-systemd] in pacman.conf (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") |
 | [affinity.net.nz](https://www.affinity.net.nz/) | 2013.08.01 | KVM | Auckland, New Zealand (NZ) | IRC channel is #affinity on ircs.kiwicon.org |
-| [Atlantic.Net](https://www.atlantic.net/) | 2015.05.01 | KVM | NYC/SF/Toronto/Dallas/Orlando, US & Canada | 100% SSD 1-click Arch Linux, ready in 30 seconds. It is also easy to update Arch to the current version because the pre-provisioned Arch image is relatively current. |
+| [Atlantic.Net](https://www.atlantic.net/) | 2016.03.01 | KVM | NYC/SF/Toronto/Dallas/Orlando, US & Canada | 100% SSD 1-click Arch Linux, ready in 30 seconds. It is also easy to update Arch to the current version because the pre-provisioned Arch image is relatively current. |
 | [BuyVM](https://buyvm.net/) | 2013.07.01 | KVM | LA, Buffalo NY | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
 | [Coinshost](https://coinshost.com/en/vps) | 2015.04 | Xen | Zurich, Switzerland | Bitcoin and other cryptocurrencies accepted. |
 | [Cherry Host](https://cherry.host) | Latest | KVM | Santee, US-CA | Must submit a support ticket to get Arch installed. |
@@ -74,6 +74,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [World4You](https://www.world4you.com/) | 2015.10.28 | OpenVZ | Austria (AT) | Internet hosting provider; quick setup; 24/7 support; shared web hosting; also CentOS, Debian, Ubuntu, Fedora and Arch OpenVZ servers; supports newest systemd (227 atm) |
 | [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
 | [1984hosting.com](https://www.1984hosting.com/) | 2016.x | Xen | Iceland (IS) | [Hardware](https://www.1984hosting.com/product/vps/) will provide any image you request, has Arch in default image list. |
+| [ZeptoVM](https://www.zeptovm.com/) | Latest | KVM | St. Petersburg, RU; Khabarovsk, RU; Seoul, KR; Ashburn, US | Also provides local Archlinux mirror in some locations. |
 
 ## Installation
 

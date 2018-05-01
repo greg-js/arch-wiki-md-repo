@@ -14,7 +14,7 @@
 
 ## Instalación
 
-ClamAV puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [clamav](https://www.archlinux.org/packages/?name=clamav), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+ClamAV puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [clamav](https://www.archlinux.org/packages/?name=clamav), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Configuración
 

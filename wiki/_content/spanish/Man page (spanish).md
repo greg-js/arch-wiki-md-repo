@@ -180,12 +180,7 @@ Para personalizar los colores, vea [Código escape ANSI](https://en.wikipedia.or
 
 ### Usando most (No recomendado)
 
-La función básica de 'most' es similar a `less` y `more`, pero tiene un conjunto de características más pequeño. Configurando most para usar colores es más fácil que usar less, pero es necesario configuraciones adicionales para hacer que most se comporte como less. Instale [most](https://www.archlinux.org/packages/?name=most) usando [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"):
-
-```
-# pacman -S most
-
-```
+La función básica de 'most' es similar a `less` y `more`, pero tiene un conjunto de características más pequeño. Configurando most para usar colores es más fácil que usar less, pero es necesario configuraciones adicionales para hacer que most se comporte como less. [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [most](https://www.archlinux.org/packages/?name=most) de los repositorios oficiales.
 
 Edite `/etc/man_db.conf`, descomente la definición del visualizador(pager) y cámbielo a:
 

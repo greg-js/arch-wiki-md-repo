@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Scan print and save Script](/index.php?title=Scan_print_and_save_Script&action=edit&redlink=1 "Scan print and save Script (page does not exist)")
+*   [Scanner Button Daemon](/index.php/Scanner_Button_Daemon "Scanner Button Daemon")
+
 Sane proporciona una biblioteca y una herramienta en línea de órdenes para utilizar los escáneres bajo GNU/Linux. [Aquí](http://www.sane-project.org/sane-supported-devices.html) se puede comprobar si sane es compatible con su escáner.
 
 ## Contents
@@ -27,7 +32,7 @@ Sane proporciona una biblioteca y una herramienta en línea de órdenes para uti
 
 ## Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [sane](https://www.archlinux.org/packages/?name=sane) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [sane](https://www.archlinux.org/packages/?name=sane) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Configuración
 
@@ -165,7 +170,7 @@ Si el backend de su escáner no es parte del paquete sane (como, por ejemplo, hp
 
 ## Instalar un frontend
 
-XSane proporciona una interfaz basada en GTK para Sane. Puede [instalarlo](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [xsane](https://www.archlinux.org/packages/?name=xsane), disponible en los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
+XSane proporciona una interfaz basada en GTK para Sane. Puede [instalarlo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [xsane](https://www.archlinux.org/packages/?name=xsane), disponible en los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
 **Nota:** Xsane puede guardar lo escaneado directamente en formato .pdf. ¡Esto solo funciona en el modo de 8 bits de profundidad de color! (el modo de 16 bits produce [archivos dañados](https://bugs.launchpad.net/ubuntu/+source/xsane/+bug/539162)).
 
@@ -196,7 +201,7 @@ Las solicitudes de escaneo son manejadas por saned. Esto se puede ejecutar como 
 
 #### Configurar xinetd para sane
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xinetd](https://www.archlinux.org/packages/?name=xinetd) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [xinetd](https://www.archlinux.org/packages/?name=xinetd) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
 A continuación, asegúrese que el archivo llamado `/etc/xinetd.d/sane` existe y ajuste la opción desactivar (*«disable»*) a no:
 
@@ -238,7 +243,7 @@ Ahora el escáner puede ser utilizado por otras estaciones de trabajo, a través
 
 Puede acceder al escáner de red habilitada desde una estación de trabajo remota de Arch Linux.
 
-Para configurar la estación de trabajo, comience [instalando](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xsane](https://www.archlinux.org/packages/?name=xsane) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Para configurar la estación de trabajo, comience [instalando](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [xsane](https://www.archlinux.org/packages/?name=xsane) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 A continuación, especifique el nombre del servidor host o la dirección IP en el archivo `/etc/sane.d/net.conf`:
 

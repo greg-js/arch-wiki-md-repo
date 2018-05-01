@@ -27,7 +27,7 @@ Desde la [página principal](http://docs.xfce.org/xfce/thunar/start) del proyect
 
 ## Instalación
 
-[Instale](/index.php/Pacman "Pacman") el paquete [thunar](https://www.archlinux.org/packages/?name=thunar) disponible en los [repositorios oficiales](/index.php/Official_repositories "Official repositories"). Este paquete es parte del grupo [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), por lo que al ejecutar [Xfce4](/index.php/Xfce4 "Xfce4"), es probable que ya tenga instalado Thunar.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [thunar](https://www.archlinux.org/packages/?name=thunar) disponible desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Este paquete es parte del grupo [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), por lo que al ejecutar [Xfce4](/index.php/Xfce4 "Xfce4"), es probable que ya tenga instalado Thunar.
 
 ### Montaje automático
 

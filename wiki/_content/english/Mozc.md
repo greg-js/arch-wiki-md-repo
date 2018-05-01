@@ -20,6 +20,7 @@ From the project [home page](https://github.com/google/mozc):
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Building Mozc fails (process is killed)](#Building_Mozc_fails_.28process_is_killed.29)
     *   [4.2 New version of Mozc does not appear though I upgraded Mozc and restarted X or Input Method Framework (not rebooted)](#New_version_of_Mozc_does_not_appear_though_I_upgraded_Mozc_and_restarted_X_or_Input_Method_Framework_.28not_rebooted.29)
+    *   [4.3 mozc_server becomes defunct](#mozc_server_becomes_defunct)
 
 ## Installation
 
@@ -208,3 +209,7 @@ The old version of Mozc may be still on your memory. Try to kill the existing *m
 $ killall mozc_server
 
 ```
+
+### mozc_server becomes defunct
+
+Mozc cannot run in root. Start X in normal user.

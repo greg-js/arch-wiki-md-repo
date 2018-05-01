@@ -44,7 +44,7 @@ A simple `/etc/fstab`, using kernel name descriptors:
 ```
 
 *   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying filesystems](#Identifying_filesystems).
-*   `<dir>` describes the [mount](/index.php/Mount "Mount") directory, `<type>` the [file system](/index.php/File_system "File system") type, and `<options>` the associated mount options; see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS).
+*   `<dir>` describes the [mount](/index.php/Mount "Mount") directory, `<type>` the [file system](/index.php/File_system "File system") type, and `<options>` the associated mount options; see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS) and [ext4(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ext4.5#MOUNT_OPTIONS).
 *   `<dump>` is checked by the [dump(8)](http://linux.die.net/man/8/dump) utility. This field is usually set to `0`, which disables the check.
 *   `<fsck>` sets the order for filesystem checks at boot time; see [fsck(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.8). For the root device it should be `1`. For other partitions it should be `2`, or `0` to disable checking.
 

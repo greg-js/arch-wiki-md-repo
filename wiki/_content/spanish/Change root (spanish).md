@@ -2,7 +2,7 @@ Artículos relacionados
 
 *   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
 *   [PRoot](/index.php/PRoot "PRoot")
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [systemd-nspawn (Español)](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)")
 
 [Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") es el proceso por el que se cambia el directorio root del disco aparente (y el actual proceso en marcha y sus descendientes) a otro directorio root. Al cambiar a otro directorio root no se puede acceder a los archivos y órdenes fuera de ese directorio. Este directorio se llama *jaula chroot*. El cambio de root se hace comúnmente para el mantenimiento del sistema, como puede ser volver a instalar el gestor de arranque o restablecer una contraseña olvidada.
 
@@ -313,5 +313,5 @@ $ firefox
 
 ## Véase también
 
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [systemd-nspawn (Español)](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)")
 *   [Basic Chroot](https://help.ubuntu.com/community/BasicChroot)

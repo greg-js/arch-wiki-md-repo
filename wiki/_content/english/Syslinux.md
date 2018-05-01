@@ -448,10 +448,10 @@ APPEND root=UUID=*1234* rw
 
 ```
 
-**If you use encryption** [LUKS](/index.php/LUKS "LUKS") change the `APPEND` line to use your encrypted volume:
+**If you use [dm-crypt](/index.php/Dm-crypt "Dm-crypt") encryption** change the `APPEND` line to use your encrypted volume:
 
 ```
-APPEND root=/dev/mapper/*group*-*name* cryptdevice=/dev/sda2:*name* rw
+APPEND root=/dev/mapper/*name* cryptdevice=/dev/sda2:*name* rw
 
 ```
 

@@ -9,7 +9,7 @@
 
 ## Instalación
 
-El programa se encuentra en el paquete [abiword](https://www.archlinux.org/packages/?name=abiword). Para poder utilizar la corrección ortográfica, deberán instalarse los paquetes [aspell-es](https://www.archlinux.org/packages/?name=aspell-es) o [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) en el caso de escribir en inglés. Desde Editar>Preferencias es también posible habilitar la correción gramatical.
+El programa se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [abiword](https://www.archlinux.org/packages/?name=abiword). Para poder utilizar la corrección ortográfica, deberán instalarse los paquetes [aspell-es](https://www.archlinux.org/packages/?name=aspell-es) o [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) en el caso de escribir en inglés. Desde Editar>Preferencias es también posible habilitar la correción gramatical.
 
 En el caso de tener problemas debidos a la alineación del texto o la posición del cursor, deben instalarse las [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)"), [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) y [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) del repositorio oficial. la fuente [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) puede reemplazarse por [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) del AUR.
 

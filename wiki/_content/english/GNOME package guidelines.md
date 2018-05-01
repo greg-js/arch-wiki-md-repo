@@ -8,12 +8,55 @@ The [GNOME](/index.php/GNOME "GNOME") packages on Arch Linux follow a certain sc
 
 ## Contents
 
-*   [1 GConf schemas](#GConf_schemas)
-*   [2 GSettings schemas](#GSettings_schemas)
-*   [3 Scrollkeeper documentation](#Scrollkeeper_documentation)
-*   [4 GTK icon cache](#GTK_icon_cache)
-*   [5 .desktop files](#.desktop_files)
-*   [6 .install files](#.install_files)
+*   [1 Source URL](#Source_URL)
+    *   [1.1 Using released tarball](#Using_released_tarball)
+    *   [1.2 Using a commit from Git repository](#Using_a_commit_from_Git_repository)
+*   [2 GConf schemas](#GConf_schemas)
+*   [3 GSettings schemas](#GSettings_schemas)
+*   [4 Scrollkeeper documentation](#Scrollkeeper_documentation)
+*   [5 GTK icon cache](#GTK_icon_cache)
+*   [6 .desktop files](#.desktop_files)
+*   [7 .install files](#.install_files)
+
+## Source URL
+
+This topic contains the most commonly used source URL used by GNOME packages in both [official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). For examples, search for GNOME packages in the official repositories[[1]](https://www.archlinux.org/packages/?q=gnome) and in the AUR[[2]](https://aur.archlinux.org/packages/?K=gnome)
+
+### Using released tarball
+
+When downloading a released tarball, you can get it from [https://download.gnome.org](https://download.gnome.org) using the following source array:
+
+```
+source=(https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz)
+
+```
+
+where *${pkgver%.*}* returns the *major*.*minor* package version, by removing the suffix of `pkgver` (which is the *micro* package version). E.g., if *pkgver=3.28.0* then *${pkgver%.*}* would return *3.28*.
+
+### Using a commit from Git repository
+
+Another common practice is to use as source a specific commit from a GNOME software's source code git repository. It doesn't classify as VCS package because Pacman's feature of setting specific commit[[3]](https://www.archlinux.org/pacman/PKGBUILD.5.html#_using_vcs_sources_a_id_vcs_a) makes PKGBUILD not follow latest development commits neither update the `pkgver` field, using the source from the specified commit hash instead.
+
+See a template below:
+
+ `PKGBUILD` 
+```
+makedepends=(git)
+commit=*hash_of_a_commit* 
+source=("git+https://git.gnome.org/browse/$pkgname#commit=$_commit")
+md5sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+```
+
+Replace *hash_of_a_commit* with the Git commit hash desired.
+
+Please notice that since the source is downloaded with *git*, then [git](https://www.archlinux.org/packages/?name=git) must be in makedepends and checksums must be set to 'SKIP', just like it would happen with any other VCS package. Using `pkgver()` function is highly recommended, so it sets `pkgver` accordingly for the commit hash provided.
+
+**Note:** GNOME is migrating from [https://git.gnome.org](https://git.gnome.org) to [https://gitlab.gnome.org](https://gitlab.gnome.org). A automatic redirection between the old and the new Git server avoids hitting a 404 Error (page not found error), but, if you need, change the source URL to gitlab.gnome.org in order to fix the source URL.
 
 ## GConf schemas
 

@@ -118,6 +118,8 @@ XMODIFIERS=@im=fcitx
 
 Re-login or reboot to make these environment changes effective.
 
+If *fcitx* process does not start automatically, you might need to add `fcitx &` in your `~/.xinitrc`.
+
 **Note:**
 
 *   Avoid `.bashrc` for this, see [DotFiles](http://mywiki.wooledge.org/DotFiles)

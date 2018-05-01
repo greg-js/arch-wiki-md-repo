@@ -1,66 +1,29 @@
 [Wine](http://www.winehq.org/) es una capa de adaptación (un cargador) capaz de ejecutar aplicaciones de Windows en Linux y otros sistemas operativos compatibles con POSIX. Aplicaciones Windows ejecutadas en Wine se comportan como los programas nativos, ejecutandose sin las restricciones de memoria o comportamiento de un emulador, y con una apariencia similar a la de otras aplicaciones en tu escritorio.
 
+**Advertencia:** SI su usuario puede acceder algun archivo o recurso, programas que sean ejecutados con Wine también tienen acceso. Vea [#Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account) y [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security") para precauciones posibles.
+
 ## Contents
 
-*   [1 i686](#i686)
-*   [2 x86_64](#x86_64)
-*   [3 Configuración](#Configuraci.C3.B3n)
-*   [4 Fuentes](#Fuentes)
-*   [5 Submenú](#Submen.C3.BA)
-    *   [5.1 Crear entrada en el menú](#Crear_entrada_en_el_men.C3.BA)
-    *   [5.2 Arreglar el menú en KDE 4](#Arreglar_el_men.C3.BA_en_KDE_4)
-*   [6 Usando wine para ejecutar binarios de Win16 / Win32](#Usando_wine_para_ejecutar_binarios_de_Win16_.2F_Win32)
-*   [7 Utilidades para configurar Wine](#Utilidades_para_configurar_Wine)
-    *   [7.1 WineTricks](#WineTricks)
-    *   [7.2 Asistente WineTools](#Asistente_WineTools)
-    *   [7.3 Utilidad de Configuración de Wine Sidenet Wine](#Utilidad_de_Configuraci.C3.B3n_de_Wine_Sidenet_Wine)
-    *   [7.4 Wine-doors](#Wine-doors)
-*   [8 Alternativos a binarios Win16 / Win32](#Alternativos_a_binarios_Win16_.2F_Win32)
-*   [9 See also](#See_also)
+*   [1 Instalación](#Instalaci.C3.B3n)
+*   [2 Configuración](#Configuraci.C3.B3n)
+*   [3 Fuentes](#Fuentes)
+*   [4 Submenú](#Submen.C3.BA)
+    *   [4.1 Crear entrada en el menú](#Crear_entrada_en_el_men.C3.BA)
+    *   [4.2 Arreglar el menú en KDE 4](#Arreglar_el_men.C3.BA_en_KDE_4)
+*   [5 Usando wine para ejecutar binarios de Win16 / Win32](#Usando_wine_para_ejecutar_binarios_de_Win16_.2F_Win32)
+*   [6 Utilidades para configurar Wine](#Utilidades_para_configurar_Wine)
+    *   [6.1 WineTricks](#WineTricks)
+    *   [6.2 Asistente WineTools](#Asistente_WineTools)
+    *   [6.3 Utilidad de Configuración de Wine Sidenet Wine](#Utilidad_de_Configuraci.C3.B3n_de_Wine_Sidenet_Wine)
+    *   [6.4 Wine-doors](#Wine-doors)
+*   [7 Alternativos a binarios Win16 / Win32](#Alternativos_a_binarios_Win16_.2F_Win32)
+*   [8 See also](#See_also)
 
-## i686
+## Instalación
 
-Wine es constantemente actualizado y esta disponible en repositorio [extra]:
+Wine se puede instalar habilitando el repositorio [Multilib](/index.php/Multilib_(Espa%C3%B1ol) "Multilib (Español)") e [instalando](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [wine](https://www.archlinux.org/packages/?name=wine) (estable) o [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (desarrollo).
 
-```
-pacman -S wine
-
-```
-
-## x86_64
-
-Debe habilitar lor repositorios [multilib]. Para eso edite con permisos de administrador el archivo etc/pacman.conf
-
-```
-# nano /etc/pacman.conf
-
-```
-
-Dentro del archivo descomente las lineas (para descomentar lineas debe borrar los simbolos "#" del inicio de la linea)
-
-```
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-
-```
-
-Y si no se encuentran agreguelas. Guarde los cambios y luego sincronize la lista de paquetes
-
-```
-# pacman -Syu
-
-```
-
-Por ultimo instale wine.
-
-```
-# pacman -S wine
-
-```
-
-Sí llega a tener algun problema puede instalar binarios y librerías i686 a tu PC, usa uno de los paquetes bin32-wine en [AUR](/index.php/AUR "AUR"): [bin32-wine](https://aur.archlinux.org/packages.php?ID=7915) y [bin32-wine-suse](https://aur.archlinux.org/packages.php?ID=16531).
-
-**Importante:** Si tienes una tarjeta **nvidia**, necesitaras [lib32-nvidia-utils](https://aur.archlinux.org/packages.php?K=lib32-nvidia-utils) para usar 3D-allocation!
+Considere la instalación de [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) o [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) para aplicaciones que dependen en Internet Explorer o .NET respectivamente. Estos paquetes no son necesariamente requeridos ya que Wine descargara los archivos que necesite automaticamente. De todas maneras, tener estos archivos de ante mano permite trabajar sin tener que estar conectado a Internet y también no es necesario descargar de nuevo para cada prefix.
 
 ## Configuración
 

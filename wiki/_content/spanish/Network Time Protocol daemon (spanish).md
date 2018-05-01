@@ -29,7 +29,7 @@ En este artículo se describe, además, cómo configurar y ejecutar el demonio N
 
 ## Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [ntp](https://www.archlinux.org/packages/?name=ntp), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [ntp](https://www.archlinux.org/packages/?name=ntp), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Configuración
 
@@ -84,7 +84,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Nota:** Aún con las opciones anteriores, estas todavía permiten a otras personas consultar el time server. Para evitarlo, es necesario añadir `noserve` a fin de detener la función de servir el tiempo horario. También impide la sincronización horaria, ya que bloquea todos los paquetes, excepto las consultas de ntpd y ntpdc.
 
-La documentación completa para la opción "restrict" se encuentra en [ntp_acc()](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.). Consulte [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) para obtener instrucciones detalladas.
+La documentación completa para la opción "restrict" se encuentra en [ntp_acc()](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.). Consulte [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) para obtener instrucciones detalladas.
 
 Siguiendo con la configuración, debe decirle a *ntpd* qué debe permitir a través del propio servidor; la siguiente línea es suficiente si no va a configurar un servidor NTP:
 
@@ -133,7 +133,7 @@ logfile /var/log/ntp.log
 
 ### Otros recursos para la configuración de NTP
 
-En conclusión, no olvide consultar las páginas man: es probable que [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) responda a cualquier duda que todavía pudiera tener (consulta las páginas man relacionadas: `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
+En conclusión, no olvide consultar las páginas man: es probable que [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) responda a cualquier duda que todavía pudiera tener (consulta las páginas man relacionadas: `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
 
 ## Usar sin demonio
 

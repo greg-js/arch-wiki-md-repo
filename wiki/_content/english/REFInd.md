@@ -25,8 +25,9 @@ Related articles
 *   [2 Configuration](#Configuration)
     *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
         *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
+            *   [2.1.1.1 refind_linux.conf](#refind_linux.conf)
+            *   [2.1.1.2 Without configuration](#Without_configuration)
         *   [2.1.2 Manual boot stanzas](#Manual_boot_stanzas)
-        *   [2.1.3 Without configuration](#Without_configuration)
 *   [3 Installation alongside an existing UEFI Windows installation](#Installation_alongside_an_existing_UEFI_Windows_installation)
 *   [4 Tools](#Tools)
     *   [4.1 UEFI shell](#UEFI_shell)
@@ -270,6 +271,8 @@ Exec=/usr/bin/refind-install
 
 Where the `Exec=` may need to be changed to the correct update command for your setup. If you did [#Manual installation](#Manual_installation), you could create your own update script to call with the hook.
 
+**Tip:** If you setup rEFInd with [#Secure Boot](#Secure_Boot), you may want to additionally add the option `--yes` to the `refind-install` command. It will prevent the command from failing if it gets executed when Secure Boot is disabled. See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) for more information.
+
 ## Configuration
 
 The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default config contains extensive comments explaining all its options, see [Configuring the Boot Manager](http://www.rodsbooks.com/refind/configfile.html) for more detailed explanations.
@@ -279,6 +282,24 @@ The rEFInd configuration `refind.conf` is located in the same directory as the r
 There are two methods for setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") that rEFInd will pass to the kernel.
 
 #### For kernels automatically detected by rEFInd
+
+For automatically detected kernels you can either specify the kernel parameters explicitly in `/boot/refind_linux.conf` or rely on rEFInd's ability to identify the root partition and kernel parameters. See [Methods of Booting Linux: For Those With Foresight or Luck: The Easiest Method](http://www.rodsbooks.com/refind/linux.html#easiest) for more information.
+
+**Tip:** rEFInd will automatically choose the Arch Linux icon (`os_arch.png`) for the boot entry when `/etc/os-release` is on the same partition as the kernel. If your `/boot` is a separate partition see [Configuring the Boot Manager: Setting OS Icons](http://www.rodsbooks.com/refind/configfile.html#icons).
+
+For rEFInd to properly match multiple kernels with their respective initramfs you must uncomment and edit `extra_kernel_version_strings` option in `refind.conf`. E.g.:
+
+ `*esp*/EFI/refind/refind.conf` 
+```
+...
+extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
+...
+
+```
+
+**Note:** rEFInd only supports detecting one initramfs image per kernel, meaning it will not detect fallback initramfs nor Intel [microcode](/index.php/Microcode "Microcode") images.
+
+##### refind_linux.conf
 
 If rEFInd automatically detects your kernel, you can place a `refind_linux.conf` file containing the kernel parameters in the same directory as your kernel. You can use `/usr/share/refind/refind_linux.conf-sample` as a starting point. The first uncommented line of `refind_linux.conf` will be the default parameters for the kernel. Subsequent lines will create entries in a submenu accessible using `+`, `F2`, or `Insert`.
 
@@ -300,19 +321,18 @@ Which will attempt to find your kernel in `/boot` and automatically generate `re
 
 If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [Microcode](/index.php/Microcode "Microcode") passed before the initramfs: `... initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img`.
 
+**Note:** Specifying `initrd=` in `/boot/refind_linux.conf` will prevent you from using the same kernel options for multiple kernels.
+
 **Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-linux.img` or, if ESP is mounted to `/boot`, `initrd=/initramfs-linux.img`.
 
-For rEFInd to properly match multiple kernels with their respective initramfs you must uncomment and edit `extra_kernel_version_strings` option in `refind.conf`. E.g.:
+##### Without configuration
 
- `*esp*/EFI/refind/refind.conf` 
-```
-...
-extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
-...
+As a fallback mechanism rEFInd can:
 
-```
+*   Identify the root partition (for `root=` parameter ) via the [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) or `/etc/fstab`.
+*   Detect kernel options (`ro` or `rw`) from [GPT partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") (using attribute `60` "read-only") or `/etc/fstab`.
 
-**Note:** rEFInd only supports detecting one initramfs image per kernel, meaning it will not detect fallback initramfs nor Intel [microcode](/index.php/Microcode "Microcode") images. Specifying `initrd=` in `/boot/refind_linux.conf` will prevent you from using the same kernel options for multiple kernels.
+**Note:** rEFInd does not support escape codes (e.g. for [spaces](/index.php/Fstab#Filepath_spaces "Fstab")) in `/etc/fstab`.
 
 #### Manual boot stanzas
 
@@ -342,12 +362,6 @@ menuentry "Arch Linux" {
 It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label. If `volume` is not specified it defaults to volume from which rEFInd was launched (typically EFI System Partition).
 
 **Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
-
-#### Without configuration
-
-As a fallback mechanism rEFInd relies on `/etc/fstab` and/or [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) to specify kernel options `root` and `ro` or `rw`.
-
-**Note:** rEFInd does not support escape codes (e.g. for [spaces](/index.php/Fstab#Filepath_spaces "Fstab")) in `/etc/fstab`.
 
 ## Installation alongside an existing UEFI Windows installation
 

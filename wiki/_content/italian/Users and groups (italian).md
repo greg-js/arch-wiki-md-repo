@@ -48,7 +48,7 @@ Da [Estensione dell'Astrazione File di UNIX per il Networking generico](http://w
 
 	*Un'astrazione fondamentale, efficacissima e coerente, fornita in UNIX e sistemi operativi compatibili, è l'astrazione file. Molti servizi e interfacce per i dispositivi nei sistemi operativi sono implementati per fornire una metafora di file o file system alle applicazioni. Questo permette nuovi utilizzi per le applicazioni esistenti, ed inoltre ne aumenta fortemente le capacità — semplici strumenti con usi specifici possono, con l'astrazione file di UNIX, essere usati in nuove maniere. Un modesto programma come cat, disegnato per leggere uno o più file e mostrare il loro contenuto nello standard output, può essere usato per leggere l'input/output di dispositivi per mezzo di speciali file dispositivo, di solito posti dentro la cartelle `/dev`. Su molti sistemi, la registrazione e la riproduzione audio può essere semplicemente eseguita con i comandi, rispettivamente, "`cat /dev/audio > myfile`" e "`cat myfile > /dev/audio`".*
 
-Ogni file in un sistema GNU/Linux appartiene a un utente e a un gruppo. In aggiunta, ci sono tre tipi di permessi di accesso: il permesso di lettura, di scrittura, e di esecuzione. Differenti tipi di accesso possono essere applicati all'utente proprietario, al gruppo proprietario oppure agli altri(coloro che non ne hanno il possesso). Si possono visualizzare i proprietari ed i permessi dei file usando l'opzione long lisintg del comando `ls`:
+Ogni file in un sistema GNU/Linux appartiene a un utente e a un gruppo. In aggiunta, ci sono tre tipi di permessi di accesso: il permesso di lettura, di scrittura, e di esecuzione. Differenti tipi di accesso possono essere applicati all'utente proprietario, al gruppo proprietario oppure agli altri(coloro che non ne hanno il possesso). Si possono visualizzare i proprietari ed i permessi dei file usando l'opzione long listing del comando `ls`:
 
  `$ ls -l /boot/` 
 ```
@@ -60,12 +60,12 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 -rw-r--r-- 1 root root 2209920 Jan  8 08:19 vmlinuz-linux
 ```
 
-Nella prima colonna sono visualizzati i permessi dei file(ad esempio, il file `initramfs-linux.img` ha i permessi `-rw-r--r--`). Nella terza e la quarta sono visualizzati rispettivamente l'utente ed il gruppo proprietari. Nello stesso esempio tutti i file sono posseduti dall'utente *root* e dal gruppo *root*.
+Nella prima colonna sono visualizzati i permessi dei file (ad esempio, il file `initramfs-linux.img` ha i permessi `-rw-r--r--`). Nella terza e la quarta sono visualizzati rispettivamente l'utente ed il gruppo proprietari. Nello stesso esempio tutti i file sono posseduti dall'utente *root* e dal gruppo *root*.
 
  `$ ls -l /media/` 
 ```
 total 16
-drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared</nowiki>
+drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 ```
 
 In questo esempio, la cartella `sf_Shared` è posseduta dall'utente *root* e dal gruppo *vboxsf*. Si possono ottenere maggiori informazioni riguardo ai proprietari ed ai permessi dei file usando il comando `stat`:
@@ -82,7 +82,7 @@ Permessi di accesso:
 
  `$ stat -c %A /media/sf_Shared/`  `drwxrwx---` 
 
-I permessi di accesso sono visualizzati in tre gruppi di caratteri, rappresentano rispettivamente i permessi dell'utente proprietario, del gruppo proprietario, e degli altri. Ad esempio i la serie di caratteri `-rw-r--r--` indicano che l'utente proprietario ha i permessi di lettura e scrittura, ma non di esecuzione (`rw-`), mentre gli utenti appartenenti al gruppo proprietario e gli altri hanno solo il permesso di lettura (`r--` e `r--`). Invece, la serie di caratteri `drwxrwx---` indicano che l'utente proprietario e gli utenti appartenenti al gruppo proprietario hanno i permessi di lettura, scrittura ed esecuzione (`rwx` e `rwx`), mentre gli altri utenti viene negato ogni tipo di accesso (`---`). Il primo carattere indica il tipo di file.
+I permessi di accesso sono visualizzati in tre gruppi di caratteri, rappresentano rispettivamente i permessi dell'utente proprietario, del gruppo proprietario, e degli altri. Ad esempio, la serie di caratteri `-rw-r--r--` indica che l'utente proprietario ha i permessi di lettura e scrittura, ma non di esecuzione (`rw-`), mentre gli utenti appartenenti al gruppo proprietario e gli altri hanno solo il permesso di lettura (`r--` e `r--`). Invece, la serie di caratteri `drwxrwx---` indica che l'utente proprietario e gli utenti appartenenti al gruppo proprietario hanno i permessi di lettura, scrittura ed esecuzione (`rwx` e `rwx`), mentre gli altri utenti viene negato ogni tipo di accesso (`---`). Il primo carattere indica il tipo di file.
 
 Per elencare i file posseduti da un utente o un gruppo con il comando `find`:
 
@@ -353,7 +353,7 @@ I seguenti gruppi al momento non sono utilizzati:
 
 **Nota:** Questi gruppi erano necessari prima della migrazione di Arch Linux a [Systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)"). Ora questi non sono più necessari inquanto la sessione *logind* non soffre più di problemi (si veda [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") per controllare). I gruppi possono anche causare alcune mal-funzionalità del sistema. Si veda [migrazione a systemd](/index.php/SysVinit_(Italiano)#Migrare_a_Systemd "SysVinit (Italiano)") per maggiori dettagli.
 
-| Grouppo | File interessati | Scopo |
+| Gruppo | File interessati | Scopo |
 | audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Accesso diretto all'hardware sonoro , per tutte le sessioni (requisito imposto sia da [ALSA](/index.php/ALSA_(Italiano) "ALSA (Italiano)") che da [OSS](/index.php/OSS_(Italiano) "OSS (Italiano)")). Le sessioni locali hanno già la possibilità di modificare i controlli del mixer audio e l'accesso. |
 | camera | Accesso alle [Fotocamere digitali](/index.php/Digital_Cameras_(Italiano) "Digital Cameras (Italiano)"). |
 | disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | Accesso alle periferiche a blocchi che non appartengono ai gruppi *optical*, *floppy* e *storage*. |

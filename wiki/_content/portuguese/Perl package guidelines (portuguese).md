@@ -283,40 +283,40 @@ Quando esta variável é definida para um valor verdadeiro, o módulo de instala
 
 #### PERL_AUTOINSTALL
 
-You can pass additional command-line arguments to `Module::Install`'s `Makefile.PL` with this variable. In order to turn off auto-install (*highly recommended*), assign `--skipdeps` to this.
+Você pode passar argumentos adicionais de linha de comando para o `Makefile.PL` do `Module::Install` com essa variável. Para desativar a instalação automática (*altamente recomendado*), atribua `--skipdeps` a este.
 
  `export PERL_AUTOINSTALL='--skipdeps'` 
 
 #### PERL_MM_OPT
 
-You can pass additional command-line arguments to `Makefile.PL` and/or `Build.PL` with this variable. For example, you can install modules into your home-dir by using:
+Você pode passar argumentos adicionais de linha de comando a `Makefile.PL` e/ou `Build.PL` com essa variável. Por exemplo, você pode instalar módulos em seu diretório pessoal usando:
 
  `export PERL_MM_OPT=INSTALLBASE=~/perl5` 
 
 #### PERL_MB_OPT
 
-This is the same thing as `PERL_MM_OPT` except it is only for `Module::Build`. For example, you could install modules into your home-dir by using:
+Essa é a mesma coisa que `PERL_MM_OPT`, exceto por ser apenas para `Module::Build`. Por exemplo, você poderia instalar módulos em seu diretório pessoal usando:
 
  `export PERL_MB_OPT=--install_base=~/perl5` 
 
 #### MODULEBUILDRC
 
-`Module::Build` allows you to override its command-line-arguments with an rcfile. This defaults to `~/.modulebuildrc`. This is considered deprecated within the perl toolchain. You can override which file it uses by setting the path to the rcfile in `MODULEBUILDRC`. The paranoid might set `MODULEBUILDRC` to `/dev/null`... just in case.
+`Module::Build` permite que você sobrescreva seus argumentos de linha de comando com um arquivo rc. O padrão deste é `~/.modulebuildrc`. É considerado obsoleto no conjunto de ferramentas perl. Você pode sobrescrever qual arquivo usa definindo o caminho para o arquivo rc em `MODULEBUILDRC`. Os paranoicos podem definir `MODULEBUILDRC` para `/dev/null` ... apenas por precaução.
 
 #### PERL5LIB
 
-The directories searched for libraries can be set by the user (particularly if they are using `Local::Lib`) by setting `PERL5LIB`. That should be cleared before building.
+Os diretórios pesquisados por bibliotecas podem ser configurados pelo usuário (especialmente se eles estiverem usando `Local::Lib`) definindo `PERL5LIB`. Isso deve ser apagado antes de compilar.
 
 #### PERL_LOCAL_LIB_ROOT
 
-If the user is using `Local::Lib` it will set `PERL_LOCAL_LIB_ROOT`. That should be cleared before building.
+Se o usuário estiver usando `Local::Lib`, então `PERL_LOCAL_LIB_ROOT` será definido. Isso deve ser apagado antes de compilar.
 
 ## Problemas com perl instalado pelo usuário
 
-A subtle problem is that advanced perl programmers may like to have multiple versions of perl installed. This is useful for testing backwards-compatibility in created programs. There are also speed benefits to compiling your own custom perl interpreter (i.e. without threads). Another reason for a custom *perl* is simply because the official perl Arch Linux package sometimes lags behind perl releases. The user may be trying out the latest perl... who knows?
+Um problema sutil é que os programadores avançados de perl podem gostar de ter múltiplas versões de perl instaladas. Isso é útil para testar a compatibilidade com versões anteriores em programas criados. Também há benefícios de velocidade para compilar seu próprio interpretador perl personalizado (p. ex., sem threads). Outra razão para um *perl* personalizado é simplesmente porque o pacote perl do Arch Linux às vezes fica atrás de versões perl. O usuário pode estar experimentando o perl mais recente ... quem sabe?
 
-If the user has the custom perl executable in their `$PATH`, the custom perl will be run when the user types the *perl* command on the shell. In fact the custom perl will run inside the `PKGBUILD` as well! This can lead to insidious problems that are difficult to understand.
+Se o usuário tiver um executável personalizado do perl em seu `$PATH`, o perl personalizado será executado quando o usuário digita o comando *perl* na shell. Na verdade, o perl personalizado será executado dentro do `PKGBUILD` também! Isso pode levar a problemas traiçoeiros que são difíceis de entender.
 
-The problem lies in compiled XS modules. These modules bridge perl and C. As such they must use perl's internal C API to accomplish this bridge. Perl's C API changes slightly with different versions of perl. If the user has a different version of perl than the system perl (`/usr/bin/perl`) then any XS module compiled with the user's perl will be incompatible with the system-wide perl. When trying to use the compiled XS module with the system perl, the module will fail to load with a link error.
+O problema reside nos módulos XS compilados. Esses módulos ligam perl e C. Como tal, eles devem usar a API C internal do perl para realizar essa ponte. A API C do perl muda um pouco entre diferentes versões do perl. Se o usuário tiver uma versão diferente do perl do que o perl do sistema (`/usr/bin/perl`), então qualquer módulo XS compilado com o perl do usuário será incompatível com o perl do sistema. Ao tentar usar o módulo XS compilado com o perl do sistema, o módulo vai falhar em carregar com um erro de vinculação.
 
-A simple solution is to always use the absolute path of the system-wide perl interpreter (`/usr/bin/perl`) when running perl in the `PKGBUILD`.
+Uma solução simples é sempre usar o caminho absoluto do interpretador perl do sistema (`/usr/bin/perl`) ao executar perl no `PKGBUILD`.

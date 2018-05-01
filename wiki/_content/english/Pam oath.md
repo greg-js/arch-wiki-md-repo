@@ -56,7 +56,7 @@ This will allow authentication if you just enter the right oath code. You can ma
 
 ## Logging with an oath pass
 
-Run the following command if you loggin and need the current oath pass :
+Run the following command if you are logging in and need the current oath pass :
 
 ```
  oathtool -v -d6 *1ab4321412aebcw*

@@ -261,7 +261,7 @@ Isso poderia ser facilmente contornado criando os volumes lógicos fora do chroo
 
 Também, se o sistema que você está usando tiver lvm, você pode ter a seguinte saída:
 
- `# grub-install --target=i386-pc --recheck /dev/mapper/main-archroot` 
+ `# grub-install --target=i386-pc --recheck /dev/main/archroot` 
 ```
 Installing for i386-pc platform.
   /run/lvm/lvmetad.socket: connect failed: No such file or directory

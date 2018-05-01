@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Firefox Tips and Tweaks](/index.php/Firefox_Tips_and_Tweaks "Firefox Tips and Tweaks")
+
 [Firefox](http://www.firefox.com) es un popular proyecto open-source, es el navegador web de [Mozilla](http://www.mozilla.com).
 
 ## Contents
@@ -30,19 +34,14 @@
 
 ## Instalación
 
-El paquete [firefox](https://www.archlinux.org/packages/?name=firefox) puede ser encontrado en el repositorio [extra] e instalado usando [pacman](/index.php/Pacman "Pacman"):
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [firefox](https://www.archlinux.org/packages/?name=firefox) de los repositorios oficiales.
 
-```
-# pacman -S firefox
+Instale el idioma español con alguno de los siguientes paquetes:
 
-```
-
-Hay una serie de paquetes de idiomas disponibles si el Inglés no es su idioma preferido. Para ver una lista de los paquetes de idiomas disponibles, trate de:
-
-```
-$ pacman -Ss firefox-i18n
-
-```
+*   [firefox-i18n-es-ar](https://www.archlinux.org/packages/?name=firefox-i18n-es-ar) – Español Argentina
+*   [firefox-i18n-es-cl](https://www.archlinux.org/packages/?name=firefox-i18n-es-cl) – Español Chile
+*   [firefox-i18n-es-es](https://www.archlinux.org/packages/?name=firefox-i18n-es-es) – Español España
+*   [firefox-i18n-es-mx](https://www.archlinux.org/packages/?name=firefox-i18n-es-mx) – Español Mexico
 
 Otras alternativas incluyen:
 

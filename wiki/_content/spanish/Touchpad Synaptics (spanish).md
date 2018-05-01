@@ -49,7 +49,7 @@ Este artículo detalla el proceso de instalación y configuración de ***Synapti
 
 ## Instalación
 
-El controlador Synaptics puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+El controlador Synaptics puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 
 ## Configuración
 

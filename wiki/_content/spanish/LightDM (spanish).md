@@ -20,31 +20,27 @@ Artículos relacionados
 
 # Instalación
 
-Se puede instalar [lightdm](https://www.archlinux.org/packages/?name=lightdm) desde los repositorios oficiales o si se desea se puede instalar [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/) (version desarrollo) o sino [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/) estos dos últimos desde [AUR](/index.php/AUR "AUR")
+Se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [lightdm](https://www.archlinux.org/packages/?name=lightdm) desde los repositorios oficiales-
 
-puede ser instalado con su gestor de paquetes de AUR preferido, ejemplo:
-
-```
-# pacman -S lightdm #para la version estable
-# packer -S lightdm-devel # para la rama en desarollo
-# yaourt -S lightdm-bzr # para la rama bazaar
-
-```
+**Sugerencia:** Lanzamientos estables tienen números pares (1.8, 1.10), lanzamientos en desarrollo tienen números impares (1.9, 1.11). Estos lanzamientos en desarrollo están disponibles con el paquete [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/).
 
 ### Greeter
 
-Después de instalar Ligthdm necesitarás instar un greeter (una interfaz de usuario para LightDM). el greeter recomendado es *lightdm-gtk-greeter*, que es instaldo con [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) o [lightdm-gtk3-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk3-greeter). Los usuarios de KDE pueden instalar [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter), un greeter basado en Qt.
+Después de instalar Ligthdm necesitarás instalar un Greeter (una interfaz de usuario para LightDM). Es posible usar LightDM sin un Greeter al configurar login automático.
+
+Los repositorios oficiales contienes los siguientes Greeters:
+
+*   [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): el Greeter **recomendado** que LightDM intenta usar por defecto al no modificar ninguna configuracion.
+*   [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): Greeter usado en KDE4.
+*   [deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui) Lightdm-deepin-greeter: Un Greeter del proyecto [Deepin](/index.php/Deepin "Deepin").
 
 Otros greeters que se pueden instalar mediante [AUR](/index.php/AUR "AUR") son:
 
-*   [lightdm-another-gtk-greeter](https://aur.archlinux.org/packages/lightdm-another-gtk-greeter/): Un greeter GTK3 con soporte para themes personalizados.
 *   [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/): Un greeter que usa webkit.
-*   [lightdm-crowd-greeter](https://aur.archlinux.org/packages/lightdm-crowd-greeter/): Un greeter 3D que permite seleccionar un perfil de caracteres 3D.
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): El greeter usado por [Unity](/index.php/Unity "Unity") en Ubuntu.
-*   [lightdm-razor-greeter](https://aur.archlinux.org/packages/lightdm-razor-greeter/): un grerter para el entorno de escritorio [Razor-qt](/index.php/Razor-qt "Razor-qt").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): Un greeter para el proyecyo ElementaryOS.
 
-Puedes cambiar el greeter por defecto cambiando la configuracion del archivo:
+Puedes cambiar el greeter por defecto cambiando la configuración del archivo:
 
  `/etc/lightdm/lightdm.conf` 
 ```
@@ -54,7 +50,7 @@ greeter-session=lightdm-yourgreeter-greeter
 
 ## Habilitar Lightdm
 
-se habilita usando systemd, asegurate de tener activado `lightdm.service` [using systemctl](/index.php/Systemd#Using_units "Systemd") para que se cargue automáticamente al inicio.
+se habilita usando systemd, asegúrate de tener activado `lightdm.service` [using systemctl](/index.php/Systemd#Using_units "Systemd") para que se cargue automáticamente al inicio.
 
 # Configuración
 

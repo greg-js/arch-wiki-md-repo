@@ -338,7 +338,7 @@ A continuación, guarde los cambios y reinicie la shell para ver los resultados:
 
 #### Mostrar el icono de la batería
 
-Para mostrar el icono de batería en el panel, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Para mostrar el icono de batería en el panel, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 #### Eliminar la demora al salir
 

@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Network Configuration (Español)](/index.php/Network_Configuration_(Espa%C3%B1ol) "Network Configuration (Español)")
+*   [Wireless Setup (Español)](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)")
+*   [NetworkManager (Español)](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)")
+*   [Wicd (Español)](/index.php/Wicd_(Espa%C3%B1ol) "Wicd (Español)")
+*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
+
 *netctl* es una herramienta basada en CLI (*«intérprete de línea de órdenes»*, esto es, a través de consola)) utilizada para configurar y gestionar las conexiones de red mediante perfiles. Es la apuesta de Arch Linux para sustituir a *netcfg*. *netctl* supone el futuro (y el presente) de la gestión de conexiones de red.
 
 ## Contents
@@ -22,7 +30,7 @@
 
 ## Instalación
 
-El paquete [netctl](https://www.archlinux.org/packages/?name=netctl) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). netctl sustituirá a [netcfg](https://aur.archlinux.org/packages/netcfg/) una vez se instale en el equipo.
+El paquete [netctl](https://www.archlinux.org/packages/?name=netctl) se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") y está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). netctl sustituirá a [netcfg](https://aur.archlinux.org/packages/netcfg/) una vez se instale en el equipo.
 
 [netctl](https://www.archlinux.org/packages/?name=netctl) y [netcfg](https://aur.archlinux.org/packages/netcfg/) son paquetes incompatibles y conflictivos. Si los perfiles de las conexiones de red no están correctamente configurados, lo más probable es que el usuario se quede sin conexión a internet después de instalar **netctl**.
 
@@ -102,7 +110,7 @@ Esto creará y activará un servicio de [systemd](/index.php/Systemd_(Espa%C3%B1
 
 **Nota:** *netcfg* utiliza `net-auto-wireless.service` y `net-auto-wired.service` para estos fines.
 
-Primero [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes necesarios:
+Primero [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes necesarios:
 
 *   El paquete [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) es necesario para usar `netctl-auto@*interfaz*.service`.
 *   El paquete [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) es necesario para usar `netctl-ifplugd@*interfaz*.service`.

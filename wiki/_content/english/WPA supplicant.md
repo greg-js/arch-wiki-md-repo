@@ -4,9 +4,7 @@ Related articles
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise")
 
-[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) is a cross-platform [supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) with support for WEP, WPA and WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN (Robust Secure Network)). It is suitable for desktops, laptops and embedded systems.
-
-*wpa_supplicant* is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA authenticator and it controls the roaming and IEEE 802.11 authentication/association of the wireless driver.
+[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) is a cross-platform [supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) with support for WEP, WPA and WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i-2004 "wikipedia:IEEE 802.11i-2004")). It is suitable for desktops, laptops and embedded systems. It is the [IEEE 802.1X](https://en.wikipedia.org/wiki/IEEE_802.1X "wikipedia:IEEE 802.1X")/WPA component that is used in the client stations. It implements key negotiation with a WPA authenticator and it controls the roaming and [IEEE 802.11](https://en.wikipedia.org/wiki/IEEE_802.11 "wikipedia:IEEE 802.11") authentication/association of the wireless driver.
 
 ## Contents
 
@@ -38,7 +36,7 @@ Optionally also install [wpa_supplicant_gui](https://aur.archlinux.org/packages/
 
 The first step to connect to an encrypted wireless network is having *wpa_supplicant* obtain authentication from a WPA authenticator. In order to do this, *wpa_supplicant* must be configured so that it will be able to submit the correct credentials to the authenticator.
 
-Once the authentication is successful, it will be possible to connect to the network by obtaining an IP address in the usual way. For example, the [iproute2](/index.php/Core_utilities#ip "Core utilities") suite of utilities can be used for temporary configuration during initial testing of the network interface. [dhcpcd](/index.php/Dhcpcd "Dhcpcd") and [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") can obtain an IP address automatically via DHCP. See [Network configuration#Dynamic IP address](/index.php/Network_configuration#Dynamic_IP_address "Network configuration") and subsequent for more details. The [Wireless network configuration#Wireless management](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration") section may help as well.
+Once the authentication is successful, it is possible to obtain an IP address from the network in the usual way and connect. For example, the [iproute2](/index.php/Core_utilities#ip "Core utilities") suite of utilities can be used for temporary configuration during initial testing of the network interface. [dhcpcd](/index.php/Dhcpcd "Dhcpcd") and [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") can obtain an IP address automatically via DHCP. See [Network configuration#Dynamic IP address](/index.php/Network_configuration#Dynamic_IP_address "Network configuration") and subsequent for more details. The [Wireless network configuration#Wireless management](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration") section may help as well.
 
 ## Connecting with wpa_cli
 

@@ -117,7 +117,7 @@ Por lo general, el espacio usable después del [MBR](/index.php/Master_Boot_Reco
 
 ### Instalación
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [grub](https://www.archlinux.org/packages/?name=grub). Este reemplazará a [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), si está instalado.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [grub](https://www.archlinux.org/packages/?name=grub). Este reemplazará a [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), si está instalado.
 
 **Nota:** La simple instalación del paquete mencionado no actualiza el archivo `/boot/grub/i386-pc/core.img` o los módulos de GRUB en `/boot/grub/i386-pc`. Para ello es necesario actualizarlo de forma explícita utilizando `grub-install`, como se explica a continuación.
 
@@ -281,7 +281,7 @@ Asegúrese de que está en una shell de [bash](/index.php/Bash "Bash"). Por ejem
 
 ```
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes [grub](https://www.archlinux.org/packages/?name=grub) y [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* es el gestor de arranque, *efibootmgr* crea las entradas stub `.efi` con capacidad de arranque usadas por el script de instalación de GRUB.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes [grub](https://www.archlinux.org/packages/?name=grub) y [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* es el gestor de arranque, *efibootmgr* crea las entradas stub `.efi` con capacidad de arranque usadas por el script de instalación de GRUB.
 
 Los siguientes pasos instalan la aplicación GRUB UEFI en `**$esp**/EFI/grub`, instala los módulos en `/boot/grub/x86_64-efi`, y coloca el stub `grubx64.efi` booteable en `**$esp**/EFI/grub_uefi`.
 

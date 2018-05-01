@@ -6,8 +6,8 @@
 
 This page explains on how to write [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software built with the [Free Pascal Compiler (FPC)](http://freepascal.org). There currently exists two options for building software of Linux, as well as a handful of options for building software on other targets using FPC cross compilers:
 
-*   [fpc](https://www.archlinux.org/packages/?name=fpc) is available in the official Arch community repository and provides a compiler targetting only your host CPU (i686 or x86_64).
-*   [fpc-multilib](https://aur.archlinux.org/packages/fpc-multilib/) is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") which provides an x86_64 host compiler targetting both i686 and x86_64 CPU Linuxes. This will also provide the [ppcross386](https://aur.archlinux.org/packages/ppcross386/) FPC compiler driver package.
+*   [fpc](https://www.archlinux.org/packages/?name=fpc) provides a compiler targeting only your host CPU (i686 or x86_64).
+*   [fpc-multilib](https://aur.archlinux.org/packages/fpc-multilib/) provides a x86_64 host compiler targeting both i686 and x86_64 CPU Linuxes. This will also provide the [ppcross386](https://aur.archlinux.org/packages/ppcross386/) FPC compiler driver package.
 
 ## Contents
 

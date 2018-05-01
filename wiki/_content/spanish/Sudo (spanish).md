@@ -42,12 +42,7 @@ Sudo es una alternativa a [su](/index.php/Su "Su") para ejecutar órdenes como r
 
 ## Instalación
 
-Instale el paquete [sudo](https://www.archlinux.org/packages/?name=sudo), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
-
-```
-# pacman -S sudo
-
-```
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [sudo](https://www.archlinux.org/packages/?name=sudo), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Para empezar a usar `sudo` por un usuario sin privilegios, debe estar correctamente configurado. Así que lea la sección de configuración.
 
@@ -224,7 +219,7 @@ $ sudo fire<`Tab`>
 
 la shell no hará nada.
 
-Para activar `Tab`-completion con sudo, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Véase [bash#Auto-completion](/index.php/Bash#Auto-completion "Bash") para obtener más información
+Para activar `Tab`-completion con sudo, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Véase [bash#Auto-completion](/index.php/Bash#Auto-completion "Bash") para obtener más información
 
 Como alternativa, añada lo siguiente al archivo `~/.bashrc`:
 

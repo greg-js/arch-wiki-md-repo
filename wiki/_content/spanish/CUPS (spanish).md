@@ -81,7 +81,7 @@ Hay dos maneras de configurar una impresora:
 
 ## Instalar el paquete del cliente
 
-El paquete [libcups](https://www.archlinux.org/packages/?name=libcups) es el único necesario. [Instálelo](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+El paquete [libcups](https://www.archlinux.org/packages/?name=libcups) es el único necesario. [Instálelo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 A continuación, agregue la dirección IP del servidor CUPS o el nombre del equipo en `/etc/cups/client.conf`. Eso es todo lo que se necesita. Cada solicitud debe rápidamente encontrar la impresora(s) compartida por el servidor CUPS.
 
@@ -108,7 +108,7 @@ Si tiene una instalación base de 64 bit con un [entorno chroot de 32 bit](/inde
 
 ## Instalar los paquetes del servidor
 
-Son necesarios los siguientes paquetes y algunos controladores de impresora. [Instálelos](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Son necesarios los siguientes paquetes y algunos controladores de impresora. [Instálelos](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 *   [cups](https://www.archlinux.org/packages/?name=cups) - el demonio CUPS presente.
 *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) - (opcional) el intérprete para el lenguaje PostScript.
@@ -501,7 +501,7 @@ $ lpq -a # en todas las impresoras
 
 #### GNOME
 
-Si usa [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), tiene la posibilidad de gestionar y configurar la impresora [instalando](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer).
+Si usa [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), tiene la posibilidad de gestionar y configurar la impresora [instalando](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer).
 
 Para hacer system-config-printer realmente funcional, será necesario ejecutarlo como root, o, alternativamente, establecer permisos a un usuario «normal» para administrar CUPS (en este último caso **siga los pasos 1-3**):
 

@@ -15,37 +15,34 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [2.1 Installing from the MATLAB installation software](#Installing_from_the_MATLAB_installation_software)
         *   [2.1.1 Desktop entry](#Desktop_entry)
     *   [2.2 Installing from the AUR package](#Installing_from_the_AUR_package)
-*   [3 Activation](#Activation)
-    *   [3.1 R2013b and earlier](#R2013b_and_earlier)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Java](#Java)
-    *   [4.2 OpenGL acceleration](#OpenGL_acceleration)
-    *   [4.3 Fonts for figures](#Fonts_for_figures)
-    *   [4.4 Sound](#Sound)
-    *   [4.5 GPU computing](#GPU_computing)
-    *   [4.6 Install supported compilers](#Install_supported_compilers)
-    *   [4.7 Help browser](#Help_browser)
-    *   [4.8 Garbled Interface](#Garbled_Interface)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Static TLS errors](#Static_TLS_errors)
-    *   [5.2 MATLAB crashes when displaying graphics](#MATLAB_crashes_when_displaying_graphics)
-    *   [5.3 Blank/grey UI when using WM (non-reparenting window manager)](#Blank.2Fgrey_UI_when_using_WM_.28non-reparenting_window_manager.29)
-    *   [5.4 Garbled or invisible text](#Garbled_or_invisible_text)
-    *   [5.5 Corrupted text and fonts in menus and fields](#Corrupted_text_and_fonts_in_menus_and_fields)
-    *   [5.6 Installation](#Installation_2)
-    *   [5.7 Install-time library errors](#Install-time_library_errors)
-    *   [5.8 Resolving start warnings/errors](#Resolving_start_warnings.2Ferrors)
-    *   [5.9 Segmentation fault on startup](#Segmentation_fault_on_startup)
-    *   [5.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
-    *   [5.11 Addon manager not working](#Addon_manager_not_working)
-    *   [5.12 Live Script Errors](#Live_Script_Errors)
-    *   [5.13 Using webcam/video device](#Using_webcam.2Fvideo_device)
-    *   [5.14 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
-    *   [5.15 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
-    *   [5.16 Not starting - licensing error](#Not_starting_-_licensing_error)
-    *   [5.17 MATLAB crashes with "Failure loading desktop class" on startup](#MATLAB_crashes_with_.22Failure_loading_desktop_class.22_on_startup)
-    *   [5.18 Unable to type in text fields of interfaces based on MATLABWindow](#Unable_to_type_in_text_fields_of_interfaces_based_on_MATLABWindow)
-*   [6 Matlab in a systemd-nspawn](#Matlab_in_a_systemd-nspawn)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Java](#Java)
+    *   [3.2 OpenGL acceleration](#OpenGL_acceleration)
+    *   [3.3 Sound](#Sound)
+    *   [3.4 GPU computing](#GPU_computing)
+    *   [3.5 Install supported compilers](#Install_supported_compilers)
+    *   [3.6 Help browser](#Help_browser)
+    *   [3.7 Garbled Interface](#Garbled_Interface)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Static TLS errors](#Static_TLS_errors)
+    *   [4.2 MATLAB crashes when displaying graphics](#MATLAB_crashes_when_displaying_graphics)
+    *   [4.3 Blank/grey UI when using WM (non-reparenting window manager)](#Blank.2Fgrey_UI_when_using_WM_.28non-reparenting_window_manager.29)
+    *   [4.4 Garbled or invisible text](#Garbled_or_invisible_text)
+    *   [4.5 Corrupted text and fonts in menus and fields](#Corrupted_text_and_fonts_in_menus_and_fields)
+    *   [4.6 Installation](#Installation_2)
+    *   [4.7 Install-time library errors](#Install-time_library_errors)
+    *   [4.8 Resolving start warnings/errors](#Resolving_start_warnings.2Ferrors)
+    *   [4.9 Segmentation fault on startup](#Segmentation_fault_on_startup)
+    *   [4.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
+    *   [4.11 Addon manager not working](#Addon_manager_not_working)
+    *   [4.12 Live Script Errors](#Live_Script_Errors)
+    *   [4.13 Using webcam/video device](#Using_webcam.2Fvideo_device)
+    *   [4.14 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
+    *   [4.15 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
+    *   [4.16 Not starting - licensing error](#Not_starting_-_licensing_error)
+    *   [4.17 MATLAB crashes with "Failure loading desktop class" on startup](#MATLAB_crashes_with_.22Failure_loading_desktop_class.22_on_startup)
+    *   [4.18 Unable to type in text fields of interfaces based on MATLABWindow](#Unable_to_type_in_text_fields_of_interfaces_based_on_MATLABWindow)
+*   [5 Matlab in a systemd-nspawn](#Matlab_in_a_systemd-nspawn)
 
 ## Overview
 
@@ -57,7 +54,7 @@ A complete copy of the MATLAB software must be obtained before it can be install
 
 ### Installing from the MATLAB installation software
 
-The MATLAB installation software is self contained and does not require any additional packages to install in silent mode. To install with the GUI a working [Xorg](/index.php/Xorg "Xorg") graphical display is necessary. The installation is handled by the `install` script. You can run the script as root to install MATLAB system-wide or your user to install it only for you.
+The MATLAB installation software is self contained and does not require any additional packages to install in silent mode. To install with the GUI a working [Xorg](/index.php/Xorg "Xorg") graphical display is necessary. [Wayland](/index.php/Wayland "Wayland") is not currently supported yet. The installation is handled by the `install` script. You can run the script as root to install MATLAB system-wide or your user to install it only for you.
 
 MATLAB 2016a and earlier is not compatible with [ncurses](https://www.archlinux.org/packages/?name=ncurses) 6, so you must install the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [#Segmentation fault on startup](#Segmentation_fault_on_startup) for more info.
 
@@ -67,6 +64,8 @@ During the installation, you are asked if you want symlinks to be created. If yo
 # ln -s /{MATLAB}/bin/matlab /usr/local/bin
 
 ```
+
+Or you could add MATLAB install path to {{ic|PATH} environment variable.
 
 #### Desktop entry
 
@@ -83,68 +82,18 @@ In order for icons to appear correctly `StartupWMClass` needs to be set in the d
 
 The EULA for the proprietary MATLAB software is restrictive. The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") is designed to allow MATLAB to be integrated into and managed by Arch. The package should be built on the system on which it is going to be installed and the package should be deleted from the installation location and the [Pacman](/index.php/Pacman "Pacman") cache following installation. Distributing the package is a clear violation of the EULA.
 
-The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") defaults to building a package for the most recent 64-bit release of MATLAB, although the PKGBUILD supports MATLAB releases from R2010b and even the installation of multiple releases simultaneous. The PKGBUILD defaults to installing all toolboxes that the file identification key allows, however, the PKGBUILD can be edited to include only a subset of the toolboxes. The selection of the toolboxes must be finalized at the time of package creation due to DRM policies put in place by The MathWorks. The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") requires that both the MATLAB installation software and the file installation key are available in the source directory. The file installation key must be in a file called `matlab.fik` and the installation software must be in an iso file called `matlab.iso`. Once the iso file and file installation key are created, the MATLAB package can be created and install as usual.
-
-For MATLAB releases between r2010b and r2011a the contents of the iso file must include: `./archives/`, `./bin/`, `./etc/`, `./help/`, `./java/`, `./activate.ini`, `./install`, and `./installer_input.txt`. If the MATLAB download agent is used to download the installation software, then the iso file can be trivially created by simply running `mkisofs -r -o` on the download directory.
-
-For MATLAB releases including and after r2011b the contents of the iso file must include: `./archives/`, `./bin/`, `./etc/`, `./help/`, `./java/`, `./activate.ini`, `./install`, and `./installer_input.txt`. For version before r2014a, the MATLAB download agent could download all the required files and the iso file could be trivially created by simply running `mkisofs -r -o` on the download directory. For MATLAB releases including and after r2014a the MATLAB download agent only downloads the MATLAB installer. The MATLAB installer then needs to be run to downloaded the MATLAB software and toolboxes. Therefore, a two step process is required to generate this iso file with the MATLAB download agent. First, you download and run the MATLAB installer to install MATLAB in a temporary directory. This process downloads the MATLAB software and toolboxes by default to `~/Downloads/MathWorks` (this can be changed by passing the flag `-downloadFolder /path/to/directory`). It is actually possible quit the MATLAB installer once the software and toolboxes are downloaded. Once the software and toolboxes are downloaded the required iso file can be created by merging the installer directory (containing above mentioned files) and the download directory (containing `./archives/`), and then running `mkisofs -r -o` on the resulting directory.
-
-## Activation
-
-In order to run MATLAB it requires a license file to be installed. The license file can be generated with `$MATLABROOT/bin/activate_matlab.sh` or downloaded from [MATLAB](http://www.mathworks.com) directly.
-
-### R2013b and earlier
-
-Up to and including R2013b the license file was linked to the MAC address of eth0\. This causes problems with the [Predictable Network Interface Names](/index.php/Network_configuration#Device_names "Network configuration") used by Arch Linux. It is possible to disable predictable network interface names by adding `net.ifnames=0` in your kernel command line or by creating a udev rule file
-
-```
-# ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
-
-```
-
-It is also possible to [change the name of a device](/index.php/Network_configuration#Change_device_name "Network configuration"), but changing the name to eth0 can result in race conditions between the kernel and udev during boot. Another solution is to create a dummy network interface named eth0 with the MAC address linked to the license file. First, get that MAC address using `ip link`. Next, create the following file:
-
- `/etc/systemd/system/matlab.licensing.service` 
-```
-[Unit]
-Description=Dummy network interface for MATLAB
-Requires=systemd-modules-load.service
-
-[Service]
-Type=oneshot
-ExecStart=/sbin/ip link set dev dummy0 name eth0
-ExecStart=/sbin/ip link set dev eth0 address 00:00:00:00:00:00
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Replace 00:00:00:00:00:00 with the MAC address linked to the license file.
-
-Then make the script run on boot:
-
-```
-# systemctl enable matlab.licensing
-
-```
-
-Finally, set the dummy module to load on boot by creating the following file:
-
- `/etc/modules-load.d/dummy.conf`  `dummy` 
+The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") defaults to building a package for the most recent 64-bit release of MATLAB, one could also install old releases, eg. [matlab-r2015b](https://aur.archlinux.org/packages/matlab-r2015b/). The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") requires that both the MATLAB installation software and the file installation key are available in the source directory. For more details, refer to the PKGBUILD file.
 
 ## Configuration
 
 ### Java
 
-The MATLAB software is bundled with a JVM and therefore it is not necessary to install [Java](/index.php/Java "Java"). The JVM version bundled with MATLAB typically lags behind [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) from the [official repositories](/index.php/Official_repositories "Official repositories") and it is possible, although not required, to use the `MATLAB_JAVA` environment variable to specify the path of an alternative JRE. For example, to specify the [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) JRE and check the resulting version of Java, do:
+The MATLAB software is bundled with a JVM and therefore it is not necessary to install [Java](/index.php/Java "Java"). The JVM version supported by AMTLAB is listed in [System Requirements & Platform Availability](https://ww2.mathworks.cn/support/compilers.html) or simply type `version -java` in MATLAB. One could set the `MATLAB_JAVA` environment variable to use custom JVM, for example, to specify the [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) JRE, launch MATLAB with:
 
 ```
-$ MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre matlab -nodesktop -nosplash -r "version -java, exit" | grep Java
+$ env MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk/jre matlab
 
 ```
-
-Using alternative JRE would often solve some long-standing problems, such as the extra "`MEvent. CASE!`" string when doing two-finger scrolling using touchpad. Another problem that can be solved in this way is the ugly, limited fonts provided by default, especially for some Chinese characters.
 
 ### OpenGL acceleration
 
@@ -178,19 +127,6 @@ export LD_PRELOAD=/usr/lib/libstdc++.so
 export LD_LIBRARY_PATH=/usr/lib/xorg/modules/dri/
 
 ```
-
-### Fonts for figures
-
-**Note:** This section only applies to R2014a and earlier as starting with R2014b MATLAB uses True Type Fonts. So as long as `fc-match Helvetica` returns a font, figure fonts should work as expected.
-
-While MATLAB can be run in a text only mode, it also provides advanced graphics capabilities. To confirm that MATLAB is making use of the system fonts run:
-
-```
-$ matlab -nodesktop -nosplash -r "xlabel('BIG FONT', 'FontSize', 42); ylabel('small font', 'FontSize', 12); pause; exit" > /dev/null
-
-```
-
-This should produce a MATLAB figure with "BIG FONT" in a large font on the abscissa and "small font" in a small font on the ordinate. If "BIG FONT" and "small font" are both the same size, refer to [Xorg fonts](/index.php/Xorg#Program_requests_.22font_.27.28null.29.27.22 "Xorg") to confirm that the correct the bitmap font package (either [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi) or [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) from the [official repositories](/index.php/Official_repositories "Official repositories")) is installed on your system.
 
 ### Sound
 

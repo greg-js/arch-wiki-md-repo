@@ -33,7 +33,7 @@ Iptables es un poderoso [firewall](/index.php/Firewalls_(Espa%C3%B1ol) "Firewall
 
 ## Instalación
 
-Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables) presente en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables) presente en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Conceptos básicos
 
@@ -55,7 +55,7 @@ Las tablas contienen *cadenas*, que son listas de reglas que ordenan los [paquet
 2.  Todo el tráfico saliente, generado localmente, pasa a través de la cadena `OUTPUT`
 3.  Todo el tráfico enrutado, que no se ha suministrado localmente, pasa a través de la cadena `FORWARD`.
 
-Véase [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) para obtener una descripción de las cadenas integradas en otras tablas.
+Véase [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) para obtener una descripción de las cadenas integradas en otras tablas.
 
 El usuario puede definir las reglas de las cadenas para hacerlas más eficientes.
 
@@ -65,7 +65,7 @@ Las cadenas compiladas tienen un target predefinido, que se utiliza si no hay re
 
 El filtrado de los paquetes de red se basa en *rules* -*reglas*-, que se especifican por diversos *matches* -*«coincidencias»*- (condiciones que el paquete debe satisfacer para que la regla se puede aplicar), y un *target* -*«objetivo»* (acción a tomar cuando el paquete coincide con la condición plenamente). Si bien las condiciones individuales suelen ser muy simples, la especificación de la regla completa puede ser muy compleja.
 
-Los targets se especifican mediante la opción `-j` o `--jump`. Los targets pueden ser tanto las cadenas definidas por el usuario, como uno de los targets integrados especiales, o una extensión de target. Los targets integrados son `ACCEPT`, `DROP`, `QUEUE` y `RETURN`; las extensiones de target son, por ejemplo, `REJECT` y `LOG`. Si el target es un target integrado, el destino del paquete es decidido inmediatamente y el procesamiento del paquete red en la tabla actual se detiene. Si el target es una cadena definida por el usuario y el paquete supera con éxito esta segunda cadena, se moverá a la siguiente regla de la cadena inicial. Las extensiones de target pueden ser tanto *terminating* (como los targets integrados) como *non-terminating* (como las cadenas especificadas por el usuario), Véase [iptables-extensions(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables-extensions.8) para obtener más detalles
+Los targets se especifican mediante la opción `-j` o `--jump`. Los targets pueden ser tanto las cadenas definidas por el usuario, como uno de los targets integrados especiales, o una extensión de target. Los targets integrados son `ACCEPT`, `DROP`, `QUEUE` y `RETURN`; las extensiones de target son, por ejemplo, `REJECT` y `LOG`. Si el target es un target integrado, el destino del paquete es decidido inmediatamente y el procesamiento del paquete red en la tabla actual se detiene. Si el target es una cadena definida por el usuario y el paquete supera con éxito esta segunda cadena, se moverá a la siguiente regla de la cadena inicial. Las extensiones de target pueden ser tanto *terminating* (como los targets integrados) como *non-terminating* (como las cadenas especificadas por el usuario), Véase [iptables-extensions(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables-extensions.8) para obtener más detalles
 
 ### Módulos
 

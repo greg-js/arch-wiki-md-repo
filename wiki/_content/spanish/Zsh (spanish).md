@@ -49,7 +49,7 @@ $ echo $SHELL
 
 ```
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol)#Instalar_paquetes "Pacman (Español)") el paquete [zsh](https://www.archlinux.org/packages/?name=zsh). Para definiciones de completado adicionales, instale también el paquete [zsh-completions](https://www.archlinux.org/packages/?name=zsh-completions).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [zsh](https://www.archlinux.org/packages/?name=zsh). Para definiciones de completado adicionales, instale también el paquete [zsh-completions](https://www.archlinux.org/packages/?name=zsh-completions).
 
 ### Configuración Inicial
 

@@ -570,14 +570,14 @@ Imprimirá el nombre del programa en ejecución y la biblioteca antigua que se e
 
 ### Velocidades de acceso a la base de datos
 
-*Pacman* almacena toda la información del paquete en una colección de archivos pequeños, uno para cada paquete. La mejora de las velocidades de acceso a la base de datos reduce el tiempo empleado en las tareas relacionadas con la base de datos, por ejemplo, buscar paquetes y resolver las dependencias del paquete. El método más seguro y fácil es ejecutarlo como root:
+*Pacman* almacena toda la información del los paquetes en una colección de archivos pequeños, uno por cada paquete. La mejora de las velocidades de acceso a la base de datos reduce el tiempo necesario en las tareas relacionadas con esta, por ejemplo, buscar paquetes y resolver las dependencias. El método más seguro y fácil es ejecutarlo como root:
 
 ```
  # pacman-optimize
 
 ```
 
-Esto intentará poner todos los archivos pequeños juntos en una ubicación (física) en el disco duro para que la cabeza del disco duro no tenga que moverse tanto al acceder a todos los datos. Este método es seguro, pero no es infalible: depende del sistema de archivos, el uso del disco y la fragmentación del espacio vacío. Otra opción más agresiva sería eliminar primero los paquetes desinstalados del caché y eliminar los repositorios no utilizados antes de la optimización de la base de datos:
+Esto intentará poner todos los archivos pequeños juntos en una ubicación (física) en el disco duro para que la cabeza del disco no tenga que moverse tanto al acceder a todos los datos. Este método es seguro, pero no es infalible, depende del sistema de archivos, el uso del disco y la fragmentación del espacio vacío. Otra opción más agresiva sería eliminar primero los paquetes desinstalados de la caché y eliminar los repositorios no utilizados antes de la optimización de la base de datos:
 
 ```
  # pacman -Sc && pacman-optimize
@@ -586,9 +586,9 @@ Esto intentará poner todos los archivos pequeños juntos en una ubicación (fí
 
 ### Velocidades de descarga
 
-**Nota:** Si las velocidades de descarga se han reducido a un rastreo, asegúrese de que está utilizando uno de los muchos [mirrors](/index.php/Mirrors "Mirrors") y no ftp.archlinux.org, que se estrangula desde marzo de 2007.
+**Nota:** Si las velocidades de descarga se han reducido , asegúrese de que está utilizando uno de los muchos [mirrors](/index.php/Mirrors "Mirrors") y no ftp.archlinux.org, que está saturado desde marzo de 2007.
 
-Al descargar paquetes *pacman* usa los espejos en el orden en que están en `/etc/pacman.d/mirrorlist` . El espejo que está en la parte superior de la lista por defecto, sin embargo, puede no ser el más rápido para usted. Para seleccionar un espejo más rápido, consulte [Mirrors](/index.php/Mirrors "Mirrors").
+Al descargar paquetes *pacman* usa los *mirrors* en el orden en que están en `/etc/pacman.d/mirrorlist` .Sin embargo los *mirrors* que está en la parte superior de la lista , pueden no ser los más rápido para usted. Para seleccionar los *mirrors* más rápidos, consulte [Mirrors](/index.php/Mirrors "Mirrors").
 
 La velocidad de *pacman* en la descarga de paquetes también puede ser mejorada mediante el uso de una aplicación diferente para descargar paquetes, en lugar del descargador de archivos integrado de *pacman*.
 
@@ -605,27 +605,27 @@ En todos los casos, asegúrese de tener la última *pacman* antes de hacer cualq
 
 #### Wget
 
-Esto también es muy útil si necesita configuraciones proxy más potentes que las capacidades incorporadas de pacman.
+Esto también es muy útil si necesita configuraciones proxy más potentes que las capacidades incorporadas de *pacman*.
 
-Para usar wget , primero instale el paquete wget y luego modifique /etc/pacman.conf descomentando la siguiente línea en la sección [options] :
-
-```
- XferCommand = / usr / bin / wget -c -q --show-progress --passive-ftp -O% o% u
+Para usar `wget` , primero instale el paquete [wget](https://www.archlinux.org/packages/?name=wget) y luego modifique `/etc/pacman.conf` descomentando la siguiente línea en la sección `[options]` :
 
 ```
+ XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
 
-En lugar de descomentar los parámetros de wget en /etc/pacman.conf , también puede modificar el archivo de configuración de wget directamente (el archivo de todo el sistema es /etc/wgetrc , por usuario los archivos son $HOME/.wgetrc .
+```
+
+En lugar de descomentar los parámetros de `wget` en `/etc/pacman.conf` , también puede modificar el archivo de configuración de `wget` directamente , el archivo de todo el sistema es `/etc/wgetrc` o por usuario , el archivo es `$HOME/.wgetrc` .
 
 #### Aria2
 
-[aria2](/index.php/Aria2 "Aria2") es una utilidad de descarga de peso ligero con soporte para HTTP / HTTPS y transferencias directas continuas y segmentadas. Aria2 permite múltiples y simultáneas conexiones HTTP / HTTPS y FTP a un espejo de Arch, lo que debería resultar en un aumento en las velocidades de descarga para la recuperación de archivos y paquetes.
+[aria2](/index.php/Aria2 "Aria2") es una utilidad de descarga de peso ligero con soporte para HTTP / HTTPS y transferencias directas continuas y segmentadas. Aria2 permite múltiples y simultáneas conexiones HTTP / HTTPS y FTP a un *mirror* de Arch, lo que debería dar como resultado un aumento en las velocidades de descarga para la recuperación de archivos y paquetes.
 
 **Nota:** El uso de aria2c en XferCommand de *pacman* *no* dará lugar a descargas paralelas de varios paquetes. Pacman invoca el XferCommand con un solo paquete a la vez y espera a que se complete antes de invocar el siguiente. Para descargar varios paquetes en paralelo, consulte [Powerpill](/index.php/Powerpill "Powerpill").
 
 Instale [aria2](https://www.archlinux.org/packages/?name=aria2) y luego edite `/etc/pacman.conf` agregando la siguiente línea a la sección `[options]` :
 
 ```
- XferCommand = / usr / bin / aria2c --allow-overwrite = true --continue = true --file-allocation = ninguno --log-level = error --max-tries = 2 --max-connection-per-server = 2 --max-file-not-found = 5 --min-split-size = 5M --no-conf --remote-time = true --summary-interval = 60 --timeout = 5 --dir = / --out% o% u
+XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
 
 ```
 
@@ -633,9 +633,9 @@ Instale [aria2](https://www.archlinux.org/packages/?name=aria2) y luego edite `/
 
 Vea [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) en [aria2c(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) para usar las configuraciones de aria2\.
 
-*   `-d, --dir`: El directorio para almacenar los archivos descargados según lo especificado por *pacman* .
-*   `-o, --out`: El nombre de archivo de salida del archivo (s) descargado (s).
-*   `%o`: Variable que representa el nombre de archivo local especificado por *pacman*.
+*   `-d, --dir`: El directorio para almacenar los archivo(s) descargado según lo especificado por *pacman* .
+*   `-o, --out`: El nombre(s) de archivo(s) de salida descargado(s).
+*   `%o`: Variable que representa el nombre(s) de archivo(s) local especificado por *pacman*.
 *   `%u`: Variable que representa la URL de descarga especificada por *pacman*.
 
 #### Otras aplcaciones
@@ -653,7 +653,7 @@ Hay otras aplicaciones de descarga que puede usar con *pacman* . Aquí están, y
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
 
-*   **Pacmatic** — Wrapper de *Pacman* para comprobar notícias de Arch antes de la actualización, evitar actualizaciones parciales y advertir sobre cambios en el archivo de configuración.
+*   **Pacmatic** — Envoltura de *Pacman* para comprobar notícias de Arch antes de la actualización, evitar actualizaciones parciales y advertir sobre cambios en el archivo de configuración.
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
 
@@ -705,7 +705,7 @@ Hay otras aplicaciones de descarga que puede usar con *pacman* . Aquí están, y
 
 	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
+*   **GNOME Software** — Gnome Software App. (Selección conservada por GNOME)
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 

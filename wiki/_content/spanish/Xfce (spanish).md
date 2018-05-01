@@ -44,7 +44,7 @@ Antes de Empezar, asegurate que haz instalado y configurado correctamante el [Se
 
 **Note:** Xfce algo modular. esto significa que no tienes que instalar o usar todas sus partes, puedes elegir solamente aquellos elementos que deseas usar.
 
-El sistema Xfce básico puede ser instalado mediante un grupo de paquetes contenidos en [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), disponible en los [Repositorios Oficiales](/index.php/Official_repositories "Official repositories").
+El sistema Xfce básico puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") mediante un grupo de paquetes contenidos en [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), disponible en los [Repositorios Oficiales](/index.php/Official_repositories "Official repositories").
 
 Pacman te preguntará que paquetes deseas instalar, pero probablemente es mejor instalarlos todos simplemente presionando `Enter`. Paquetes adicionales, como plugins para el panel, notificaciones y otras herramientas del sistema estan disponibles en el grupo de paquetes [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 

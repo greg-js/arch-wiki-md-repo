@@ -28,10 +28,10 @@
 | [Advanced Linux Sound Architecture (Español)](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") | Sonido | `2013-09` |
 | [AMD Catalyst (Español)](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)") | Tarjeta gráfica | `2013-09` |
 | [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2016-04` |
-| [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2013-09` |
+| [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2018-01` |
 | [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2014-11` |
 | [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2016-04` |
-| [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | Repositorios | `2013-09` |
+| [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | Repositorios | `2018-01` |
 | [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") | Proceso de arranque | `2013-09` |
 | [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") | Instalación | `2013-09` |
 | [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2014-04` |
@@ -71,7 +71,7 @@
 | [Cheatsheet (Español)](/index.php/Help:Cheatsheet_(Espa%C3%B1ol) "Help:Cheatsheet (Español)") | Ayuda/Edición wiki | `2014-04` |
 | [Help:Editing (Español)](/index.php/Help:Editing_(Espa%C3%B1ol) "Help:Editing (Español)") | Ayuda/Edición wiki | `2014-04` |
 | [Help:I18n (Español)](/index.php/Help:I18n_(Espa%C3%B1ol) "Help:I18n (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)") | Ayuda/Edición wiki | `2014-04` |
+| [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)") | Ayuda/Edición wiki | `2018-01` |
 | [Help:Style (Español)](/index.php/Help:Style_(Espa%C3%B1ol) "Help:Style (Español)") | Ayuda/Edición wiki | `2014-04` |
 | [Help:Template (Español)](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)") | Ayuda/Edición wiki | `2014-04` |
 | [Improve pacman performance (Español)](/index.php/Improve_pacman_performance_(Espa%C3%B1ol) "Improve pacman performance (Español)") | Gestión de paquetes | `2013-09` |
@@ -182,7 +182,7 @@ creado en un intento de recopilar información sobre Arch Linux en prensa hispan
 | [Awesome (Español)](/index.php/Awesome_(Espa%C3%B1ol) "Awesome (Español)") | Gestor de ventanas | `2012-12` |
 | [Bash (Español)](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") | Shell de órdenes | `2008-05` | Esbozo |
 | [Bitlbee (Español)](/index.php/Bitlbee_(Espa%C3%B1ol) "Bitlbee (Español)") | Cliente IRC | `2012-04` |
-| [Bluetooth (Español)](/index.php/Bluetooth_(Espa%C3%B1ol) "Bluetooth (Español)") | Periféricos/Conectividad | `2011-10` |
+| [Bluetooth (Español)](/index.php/Bluetooth_(Espa%C3%B1ol) "Bluetooth (Español)") | Periféricos/Conectividad | `2018-04` | En proceso |
 | [Browser plugins (Español)](/index.php/Browser_plugins_(Espa%C3%B1ol) "Browser plugins (Español)") | Complementos navegador | `2008-09` |
 | [Bug Day (Español)](/index.php/Bug_Day_(Espa%C3%B1ol) "Bug Day (Español)") | Eventos | `2013-03` |
 | [BURG (Español)](/index.php/BURG_(Espa%C3%B1ol) "BURG (Español)") | Gestor de arranque | `2012-02` |
@@ -240,7 +240,7 @@ Versión inglesa propuesta para su eliminación. |
 | [GStreamer (Español)](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)") | Códecs audio/vídeo | `2013-11` |
 | [GTK+ (Español)](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") | Conjunto de herramientas de GIMP | `2008-05` |
 | [Help:Searching (Español)](/index.php/Help:Searching_(Espa%C3%B1ol) "Help:Searching (Español)")
-<small>**Remitido desde Main Page (Español)**</small> | Ayuda/Edición wiki | `--` | Sin traducir |
+<small>**Remitido desde Main Page (Español)**</small> | Ayuda/Edición wiki | `2018-09` |
 | [High Performance Firewall (Español)](/index.php/High_Performance_Firewall_(Espa%C3%B1ol) "High Performance Firewall (Español)") | Seguridad/Cortaguegos | `2013-09` | Versión inglesa propuesta para su eliminación o fusión con [router](/index.php/Router "Router") |
 | [Howto update with a home network (Español)](/index.php/Howto_update_with_a_home_network_(Espa%C3%B1ol) "Howto update with a home network (Español)") | Gestión de paquetes | `2011-03` | Página solo en español (sin versión inglesa) |
 | [Hp mini 110 - 1020 (Español)](/index.php/Hp_mini_110_-_1020_(Espa%C3%B1ol) "Hp mini 110 - 1020 (Español)") | Hardware/HP | `2010-03` | Página solo en español (sin versión inglesa) |

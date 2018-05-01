@@ -8,12 +8,55 @@ Os pacotes do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") no
 
 ## Contents
 
-*   [1 GConf schemas](#GConf_schemas)
-*   [2 GSettings schemas](#GSettings_schemas)
-*   [3 Documentação do Scrollkeeper](#Documenta.C3.A7.C3.A3o_do_Scrollkeeper)
-*   [4 Cache de ícones do GTK](#Cache_de_.C3.ADcones_do_GTK)
-*   [5 Arquivos .desktop](#Arquivos_.desktop)
-*   [6 Arquivos .install](#Arquivos_.install)
+*   [1 URL fonte](#URL_fonte)
+    *   [1.1 Usando tarball de lançamento](#Usando_tarball_de_lan.C3.A7amento)
+    *   [1.2 Usando um commit do repositório Git](#Usando_um_commit_do_reposit.C3.B3rio_Git)
+*   [2 GConf schemas](#GConf_schemas)
+*   [3 GSettings schemas](#GSettings_schemas)
+*   [4 Documentação do Scrollkeeper](#Documenta.C3.A7.C3.A3o_do_Scrollkeeper)
+*   [5 Cache de ícones do GTK](#Cache_de_.C3.ADcones_do_GTK)
+*   [6 Arquivos .desktop](#Arquivos_.desktop)
+*   [7 Arquivos .install](#Arquivos_.install)
+
+## URL fonte
+
+Esse tópico contém as URLs fonte mais comumente usadas pelos pacotes GNOME nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") e no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Para exemplos, pesquise por pacotes GNOME nos repositórios oficiais[[1]](https://www.archlinux.org/packages/?q=gnome) e no AUR[[2]](https://aur.archlinux.org/packages/?K=gnome)
+
+### Usando tarball de lançamento
+
+Ao baixar um tarball de lançamento, você pode obtê-lo de [https://download.gnome.org](https://download.gnome.org) usando o seguinte vetor fonte:
+
+```
+source=(https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz)
+
+```
+
+sendo que *${pkgver%.*}* retorna a versão de pacote *maior*.*menor*, removendo o sufixo do `pkgver` (que é a versão de pacote *micro*). Por exemplo, se *pkgver=3.28.0*, então *${pkgver%.*}* retornaria *3.28*.
+
+### Usando um commit do repositório Git
+
+Uma outra prática comum é usar como fonte um commit específico de um repositório git de código fonte do software GNOME. Isso não se classifica como pacote VCS porque o recurso do Pacman de definir um commit específico[[3]](https://www.archlinux.org/pacman/PKGBUILD.5.html#_using_vcs_sources_a_id_vcs_a) faz o PKGBUILD não seguir os últimos commits de desenvolvimento nem atualizar o campo `pkgver`, em vez disso, usando o fonte do hash de commit especificado.
+
+Veja um modelo abaixo:
+
+ `PKGBUILD` 
+```
+makedepends=(git)
+commit=*hash_de_um_commit* 
+source=("git+https://git.gnome.org/browse/$pkgname#commit=$_commit")
+md5sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+```
+
+Substitua *hash_de_um_commit* com a hash do commit Git desejado.
+
+Note que já que o fonte é baixado com *git*, então [git](https://www.archlinux.org/packages/?name=git) deve estar no `makedepends` e somas de verificação devem ser definidas para *SKIP*, assim como ocorreria com qualquer outro pacote VCS. O uso da função `pkgver()` é altamente recomendado, de forma que defina o `pkgver` adequadamente para o hash de commit fornecido.
+
+**Note:** GNOME está migrando do [https://git.gnome.org](https://git.gnome.org) para [https://gitlab.gnome.org](https://gitlab.gnome.org). Um redirecionamento automático entre o antigo e o novo servidor Git evita ter um Erro 404 (erro de página não encontrada), mas, se você quiser, altere a URL fonte para *gitlab.gnome.org* para corrigir a URL fonte.
 
 ## GConf schemas
 

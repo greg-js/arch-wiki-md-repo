@@ -9,8 +9,7 @@
 *   [3 Hardware identification](#Hardware_identification)
 *   [4 Known issues](#Known_issues)
     *   [4.1 Trusted Platform Module](#Trusted_Platform_Module)
-    *   [4.2 i915 errors in journal](#i915_errors_in_journal)
-    *   [4.3 Not a Dell system error](#Not_a_Dell_system_error)
+    *   [4.2 Not a Dell system error](#Not_a_Dell_system_error)
 
 ## Booting from Arch Linux ISO
 
@@ -186,19 +185,6 @@ Feb 17 09:58:29 kernel: acpi MSFT0101:00: platform device creation failed: -16
 ```
 
 These are related to the Trusted Platform Module (TPM), which can be safely disabled in the UEFI settings if you do not use TPM.
-
-### i915 errors in journal
-
-You may have the following error message in your journal:
-
-```
-Failed to release pages: bind_count=1, pages_pin_count=1, pin_global=0
-
-```
-
-This is usually followed by further error messages. Removing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) will remove the error since it is related to the [Intel](/index.php/Intel "Intel") driver.
-
-See [the upstream bug](https://bugs.freedesktop.org/show_bug.cgi?id=104512) for more information.
 
 ### Not a Dell system error
 
