@@ -56,7 +56,7 @@ Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://
 
 ### Verificar o modo de inicialização
 
-Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") vai [inicializar](/index.php/Boot "Boot") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_variables "UEFI"):
+Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") vai [inicializar](/index.php/Inicializar "Inicializar") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_variables "UEFI"):
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -89,7 +89,7 @@ Para verificar o status do serviço, use `timedatectl status`.
 
 ### Partição dos discos
 
-Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositivo de bloco](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "w:Device file") tal como `/dev/sda` ou `/dev/nvme0n1`.. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk*.
+Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositivo de bloco](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "w:Device file") tal como `/dev/sda` ou `/dev/nvme0n1`.. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk_(Portugu%C3%AAs) "Lsblk (Português)") ou *fdisk*.
 
 ```
 # fdisk -l
@@ -103,7 +103,7 @@ As seguintes *partições* são **exigidos** para um dispositivo escolhido:
 *   Uma partição para o diretório raiz `/`.
 *   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition").
 
-**Nota:** Espaço [swap](/index.php/Swap "Swap") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
+**Nota:** Espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
 
 Para modificar *tabelas de partição*, use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted").
 
@@ -243,7 +243,7 @@ Se você [definir o layout do teclado](#Definir_o_layout_do_teclado), torne as a
 
 ### Hostname
 
-Crie o arquivo [hostname](/index.php/Hostname "Hostname"):
+Crie o arquivo [hostname](/index.php/Hostname_(Portugu%C3%AAs) "Hostname (Português)"):
 
  `/etc/hostname` 
 ```

@@ -97,7 +97,7 @@ Esta seção descreve as tags que se relacionam com permissões incorretas de ar
 *   **directory-not-world-executable** (*aviso*) O diretório não tem o bit de executável por todos definido. Isso impede o acesso ao diretório para programas que estejam sob privilégios de usuário.
 *   **incorrect-library-permissions** (*aviso*) O arquivo de biblioteca estática (.a) não tem permissão 644 (legível e gravável pelo root, legível por qualquer pessoa).
 *   **libtool-file-present** (*aviso*) Esse arquivo é um arquivo libtool (.la) e normalmente não deve estar presente. Pode-se usar a opção `!libtool` no vetor *options* do PKGBUILD para remover esses arquivos automaticamente.
-*   **perllocal-pod-present** (*erro*) O arquivo perllocal.pod não deve estar presente em um pacote perl; veja as [diretrizes de pacote Perl](/index.php/Perl_package_guidelines "Perl package guidelines") para mais informações.
+*   **perllocal-pod-present** (*erro*) O arquivo perllocal.pod não deve estar presente em um pacote perl; veja as [diretrizes de pacotes Perl](/index.php/Diretrizes_de_pacotes_Perl "Diretrizes de pacotes Perl") para mais informações.
 *   **scrollkeeper-dir-exists** (*erro*) Um diretório scrollkeeper foi localizado no pacote. scrollkeeper não deve ser executado até pós-{instalação,atualização,remoção}.
 *   **info-dir-file-present** (*erro*) O arquivo de diretório info */usr/share/info/dir* estava presente no pacote. Esse arquivo não deve estar presente.
 *   **gnome-mime-file** (*erro*) O arquivo é um arquivo MIME autogerado do GNOME e não deveria estar presente no pacote.

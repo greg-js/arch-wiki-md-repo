@@ -100,7 +100,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [d-feet](https://wiki.gnome.org/Apps/DFeet) | `~/.d-feet` | [7f6104b](https://git.gnome.org/browse/d-feet/commit/?id==7f6104b) |
 | [dconf](https://wiki.gnome.org/dconf) |
 | [dolphin-emu](/index.php/Dolphin_emulator "Dolphin emulator") | `~/.dolphin-emu` | [a498c68](https://github.com/dolphin-emu/dolphin/commit/a498c68) | [[9]](https://github.com/dolphin-emu/dolphin/pull/2304) |
-| [dr14-meter](http://dr14tmeter.sourceforge.net) | [7e777ca64](https://github.com/simon-r/dr14_t.meter/commit/7e777ca645298ec898b3c76e3ec472ed6ed43e8a) | [[10]](https://github.com/simon-r/dr14_t.meter/pull/30) | Hardcoded `$HOME/.config/dr14meter` |
+| [dr14-meter](http://dr14tmeter.sourceforge.net) | [7e777ca64](https://github.com/simon-r/dr14_t.meter/commit/7e777ca645298ec898b3c76e3ec472ed6ed43e8a) | [[10]](https://github.com/simon-r/dr14_t.meter/pull/30) | `XDG_CONFIG_HOME/dr14tmeter/` |
 | [dunst](http://www.knopwob.org/dunst/index.html) | [78b6e2b1](https://github.com/knopwob/dunst/commit/78b6e2b1) | [[11]](https://github.com/knopwob/dunst/issues/22) |
 | [dwb](/index.php/Dwb "Dwb") |
 | [fish](/index.php/Fish "Fish") |
@@ -233,11 +233,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 ## Partial
 
 | Application | Legacy Path | Supported Since | Discussion | Notes |
-| [abook](http://abook.sourceforge.net/) | `~/.abook` | `$ abook --config "$XDG_CONFIG_HOME"/abook/abookrc \`
-
-`--datafile "$XDG_CACHE_HOME"/abook/addressbook`
-
- |
+| [abook](http://abook.sourceforge.net/) | `~/.abook` | `$ abook --config "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_CACHE_HOME"/abook/addressbook` |
 | [Anki](/index.php/Anki "Anki") | `~/Anki`
 
 `~/Documents/Anki`
@@ -284,7 +280,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
 `$ export EM_PORTS="$XDG_DATA_HOME"/emscripten/cache`
 
-`$ emcc --em-config "$XDG_CONFIG_HOME"/emscripten/config \ --em-cache "$XDG_CACHE_HOME"/emscripten/cache`
+`$ emcc --em-config "$XDG_CONFIG_HOME"/emscripten/config --em-cache "$XDG_CACHE_HOME"/emscripten/cache`
 
  |
 | [freecad](https://www.freecadweb.org/) | `~/.FreeCAD` | [[74]](https://www.freecadweb.org/tracker/view.php?id=2956) | `$ freecad -u "$XDG_CONFIG_HOME"/FreeCAD/user.cfg -s "$XDG_CONFIG_HOME"/FreeCAD/system.cfg` |
@@ -318,11 +314,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 `$ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter`
 
  |
-| [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[79]](https://github.com/irssi/irssi/pull/511) | `$ irssi --config="$XDG_CONFIG_HOME"/irssi/config \`
-
-`--home="$XDG_DATA_HOME"/irssi`
-
- |
+| [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[79]](https://github.com/irssi/irssi/pull/511) | `$ irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi` |
 | [isync](/index.php/Isync "Isync") | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
 | [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/.userPrefs` | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |
 | [less](/index.php/Core_utilities#less "Core utilities") | `~/.lesshst` | `$ mkdir -p "$XDG_CACHE_HOME"/less`
@@ -335,9 +327,11 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
  |
 | [libdvdcss](http://www.videolan.org/developers/libdvdcss.html) | `~/.dvdcss` | [[80]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html) | `$ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss` |
-| [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[81]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_RUNTIME_DIR"/ICEauthority`
+| [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[81]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority`
 
-Be wary setting this too restrictively, e.g. [gdm](https://www.archlinux.org/packages/?name=gdm) needs access to a user's `ICEauthority` file.
+Make sure `XDG_CACHE_HOME` is set beforehand to directory user running [Xorg](/index.php/Xorg "Xorg") has write access to.
+
+**Do not** use `XDG_RUNTIME_DIR` as it is available **after** login. Display managers that launch [Xorg](/index.php/Xorg "Xorg") (like [GDM](/index.php/GDM "GDM")) will repeatedly fail otherwise.
 
  |
 | [libx11](/index.php/Xorg "Xorg") | `~/.XCompose`

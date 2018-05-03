@@ -58,7 +58,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 [Install](/index.php/Install "Install") [lightdm](https://www.archlinux.org/packages/?name=lightdm).
 
-**Tip:** Stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Also available is [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/).
+**Tip:** Stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Also available is [lightdm-git](https://aur.archlinux.org/packages/lightdm-git/).
 
 ### Greeter
 
@@ -469,6 +469,6 @@ Some LightDM themes try to access the user avatar located in HOME. If your HOME 
 
 *   [Ubuntu Wiki article](https://wiki.ubuntu.com/LightDM)
 *   [Gentoo Wiki article](http://wiki.gentoo.org/wiki/LightDM)
-*   [Launchpad Page](https://launchpad.net/lightdm)
+*   [Launchpad Page](https://launchpad.net/lightdm) obsolete
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 *   [LightDM on GitHub](https://github.com/CanonicalLtd/lightdm)

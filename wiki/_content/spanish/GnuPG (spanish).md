@@ -412,31 +412,14 @@ Si un archivo ha sido cifrado ademas de ser firmado, simplemente [descifre](#Cif
 
 ## gpg-agent
 
-*gpg-agent* se usa principalmente como demonio para solicitar y almacenar en caché la contraseña de la clave. Esto es útil si se usa GnuPG desde un programa externo como un cliente de correo. Se puede activar añadiendo la siguiente línea a `gpg.conf`:
+*gpg-agent* se usa principalmente como demonio para solicitar y almacenar en cache la contraseña de la llave. Esto es útil si se usa GnuPG desde un programa externo como un cliente de correo. [gnupg](https://www.archlinux.org/packages/?name=gnupg) viene con [systemd/user](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") sockets, los cuales estan activados por defecto. Estos sockets son `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, y `dirmngr.socket`.
 
- `~/.gnupg/gpg.conf`  `use-agent` 
+*   El socket pricipal `gpg-agent.socket` es usado por *gpg* para conectar al demonio de *gpg-agent*.
+*   EL uso recomendado de `gpg-agent-extra.socket` en un sistema local es habilitar un socket de dominio Unix que reenvía desde un sistema remoto. Esto habilita el uso de *gpg* en el sistema remoto sin exponer las llaves privadas al sistema remoto. Vea [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1) para más detalles.
+*   El socket `gpg-agent-ssh.socket` puede ser usado por [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") para guardar las [Llaves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") que han sido agregadas con *ssh-add* en cache. Vea [#Agente SSH](#Agente_SSH) para la configuración necesaria.
+*   El socket `dirmngr.socket` inicia un demonio de GnuGP que maneja conexiones con servidores de llaves.
 
-Esto le indica a GnuPG que debe usar el agente siempre que se necesite la contraseña. Sin embargo, el agente necesita estar ya en ejecución. Para arrancarlo automáticamente, añade la siguiente entrada a tu `.xinitrc` o `.bash_profile`. Recuerda cambiar la ruta de *envfile* si cambiaste tu `$GNUPGHOME`.
-
- `~/.bash_profile` 
-```
-envfile="$HOME/.gnupg/gpg-agent.env"
-if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
-    eval "$(cat "$envfile")"
-else
-    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile")"
-fi
-export GPG_AGENT_INFO  # el archivo de entorno no contiene la exportación de la variable
-export SSH_AUTH_SOCK   # habilita gpg-agent para ssh
-
-```
-
-Cierra tu sesión y vuelve a iniciarla. Comprueba si *gpg-agent* ha sido activado:
-
-```
-$ pgrep gpg-agent
-
-```
+**Nota:** Si se usa una configuración diferente a la usada por defecto [#Variables de Entorno](#Variables_de_Entorno), necesitara [editar](/index.php/Edit "Edit") los archivos de los sockets para usar los valores de `gpgconf --list-dirs`.
 
 ### Configuración
 

@@ -258,7 +258,7 @@ La base de datos se puede restaurar moviendo el archivo `pacman_database.tar.bz2
 
 ```
 
-**Nota:** Si los archivos de la base de datos *pacman* están dañados y no hay un archivo de respaldo disponible, existe la esperanza de reconstruir la base de datos *pacman* . Consultar [#Restore pacman's local database](#Restore_pacman.27s_local_database).
+{{Nota|Si los archivos de la base de datos *pacman* están dañados y no hay un archivo de respaldo disponible, existe la esperanza de reconstruir la base de datos *pacman* . Consultar [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
 
 **Sugerencia:** El paquete [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) proporciona una secuencia de comandos y un servicio en [systemd](/index.php/Systemd "Systemd") para automatizar la tarea. La configuración es posible en `/etc/pakbak.conf`.
 
@@ -371,7 +371,7 @@ Primero, instale cualquier paquete de sistema de ficheros que soporte la red: [s
 
 **Sugerencia:**
 
-*   Para usar *sshfs* o *shfs*, considere leer [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") .
+*   Para usar *sshfs* o *shfs*, considere leer [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
 *   Por defecto, *smbfs* no sirve nombres de archivo que contengan dos puntos, lo que hace que el cliente descargue de nuevo el paquete otra vez. Para evitarlo, utilice la función `mapchars` opción de montaje en el cliente.
 
 Luego, para compartir los paquetes actuales, monte `/var/cache/pacman/pkg` del servidor a `/var/cache/pacman/pkg` en cada máquina cliente

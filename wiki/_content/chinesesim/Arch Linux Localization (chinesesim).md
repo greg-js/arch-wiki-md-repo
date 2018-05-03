@@ -167,7 +167,7 @@ export LC_ALL="zh_CN.UTF-8"
 可选用以下方法解决（以简体中文为例）：
 
 *   安装根据地区打包的字体，例如简体中文用户安装思源黑体简体中文包[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)或者[noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/)。(推荐，此方法最简单）
-*   在`locale.conf`中添加**LANG=zh_CN.UTF-8**，以将简体中文设置为默认语言。由于对[Locale_(简体中文)](/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Locale (简体中文)")定义了框架内地区（即 CJK 优先度），使得默认的优先级被忽略。
+*   在`locale.conf`中添加**LANG=zh_CN.UTF-8**，以将简体中文设置为默认语言。由于对[Locale (简体中文)](/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Locale (简体中文)")定义了框架内地区（即 CJK 优先度），使得默认的优先级被忽略。
 *   手动调整优先级，将中文字形调整到日文字形之前。[[4]](http://tieba.baidu.com/p/4879946717)
 
 修改或创建文件`/etc/fonts/conf.avail/64-language-selector-prefer.conf`，根据安装的不同情况添加如下内容：

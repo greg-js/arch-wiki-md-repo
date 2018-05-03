@@ -241,7 +241,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 
 ```
 
-一个典型 `/etc/grub.d/40_custom` 示例文件类似于下面。每个 `menuentry` 的结构都应该和下面的类似.请注意 UEFI 分区`/dev/sda2` 被命名为`hd0,gpt2` 和 `ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB")获取更多信息)
+一个典型 `/etc/grub.d/40_custom` 示例文件类似于下面。每个 `menuentry` 的结构都应该和下面的类似.请注意 UEFI 分区`/dev/sda2` 被命名为`hd0,gpt2` 和 `ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry "GRUB")获取更多信息)
 
  `/etc/grub.d/40_custom` 
 ```

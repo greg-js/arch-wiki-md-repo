@@ -113,7 +113,7 @@ To check if the driver for your card has been loaded, check the output of the `l
 
 **Note:** If the card is a USB device, running `dmesg | grep usbcore` should give something like `usbcore: registered new interface driver rtl8187` as output.
 
-Also check the output of `ip link` command to see if a wireless interface ([usually](/index.php/Network_configuration#Network_interfaces "Network configuration") it starts with the letter "w", e.g. `wlp2s1`) was created. Then bring the interface up with `ip link set *interface* up`. For example, assuming the interface is `wlan0`:
+Also check the output of `ip link` command to see if a wireless interface ([usually](/index.php/Network_configuration#Network_interface "Network configuration") it starts with the letter "w", e.g. `wlp2s1`) was created. Then bring the interface up with `ip link set *interface* up`. For example, assuming the interface is `wlan0`:
 
 ```
 # ip link set wlan0 up

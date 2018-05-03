@@ -81,7 +81,7 @@ Se o usuário modificou um dos arquivos especificados em `backup`, então aquele
 O pacman não lida com arquivos *.pacnew* automaticamente: você deve mantê-los você mesmo. Algumas poucas ferramentas são apresentadas na próxima seção. Para fazer isso manualmente, você primeiro terá que localizá-los. Ao atualizar ou remover um grande número de pacotes, arquivos *.pac** atualizados serão perdidos. Para descobrir se algum arquivo *.pac** foi instalado, use um entre os seguintes:
 
 *   Para procurar no `/etc`, onde a maioria das configurações globais estão armazenadas: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` ou pesquisar em todo o disco substituindo `/etc` por `/` no comando anterior.
-*   Se instalado, [locate](/index.php/Locate "Locate") também pode ser usado. Primeiro reindexe a base de dados: `# updatedb` . Então, execute: `$ locate --existing --regex "\.pac(new|save)$"` 
+*   Se instalado, [locate](/index.php/Locate_(Portugu%C3%AAs) "Locate (Português)") também pode ser usado. Primeiro reindexe a base de dados: `# updatedb` . Então, execute: `$ locate --existing --regex "\.pac(new|save)$"` 
 *   Use o log do pacman para localizá-los: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note que o log não mantém rastro dos arquivos atualmente no sistema de arquivos nem daqueles que já foram removidos; o comando acima vai listar todos os arquivos *.pac** que já existiram em seu sistema. Para apenas obter os 10 mais recentes arquivos *.pac**, faça um *pipe* do resultado para `tail`.
 
 ## Gerenciando arquivos .pacnew

@@ -175,7 +175,7 @@ Aby utworzyć mapowanie w trybie zwykłym z domyślnymi parametrami cryptsetup:
 
 ```
 
-Wykonanie go spowoduje podanie hasła, które powinno mieć bardzo wysoką entropię. Poniżej porównanie domyślnych parametrów z przykładem w [dm-crypt/Encrypting an entire system_(Polski)#Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwyk.C5.82y_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)")
+Wykonanie go spowoduje podanie hasła, które powinno mieć bardzo wysoką entropię. Poniżej porównanie domyślnych parametrów z przykładem w [dm-crypt/Encrypting an entire system (Polski)#Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwyk.C5.82y_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)")
 
 | Option | Cryptsetup 1.7.0 defaults | Example | Comment |
 | --hash

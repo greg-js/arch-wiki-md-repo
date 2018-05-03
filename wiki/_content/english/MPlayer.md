@@ -8,10 +8,7 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Frontends/GUIs](#Frontends.2FGUIs)
-*   [3 Browser integration](#Browser_integration)
-    *   [3.1 Firefox](#Firefox)
-    *   [3.2 Konqueror](#Konqueror)
-    *   [3.3 Chromium](#Chromium)
+*   [3 Konqueror integration](#Konqueror_integration)
 *   [4 Configuration](#Configuration)
     *   [4.1 Key bindings](#Key_bindings)
 *   [5 Tips and tricks](#Tips_and_tricks)
@@ -71,25 +68,11 @@ Notable variants are:
 
 	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
-## Browser integration
+## Konqueror integration
 
-If you want to let MPlayer control video viewing in your favorite web browser, install one of the following plugins for your browser.
-
-### Firefox
-
-A browser plugin is available in the official repositories with the [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer) package.
-
-**Note:** It depends on [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer), which provides a complete frontend to MPlayer.
-
-### Konqueror
-
-A plugin for Konqueror can be found in the [AUR](/index.php/AUR "AUR") with the [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) package.
+To let MPlayer control video viewing in Konqueror, [install](/index.php/Install "Install") the [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) package.
 
 **Note:** [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) also provides a complete frontend to MPlayer.
-
-### Chromium
-
-The [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer) plugin for Firefox also works in [Chromium](/index.php/Chromium "Chromium").
 
 ## Configuration
 

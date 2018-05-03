@@ -82,7 +82,7 @@ $ lsmod | grep virtio
 
 ```
 
-上面的命令如果没有返回内容，那么你需要[Kernel_modules_(简体中文) #手动加载卸载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.8D.B8.E8.BD.BD "Kernel modules (简体中文)") 内核模块。
+上面的命令如果没有返回内容，那么你需要[Kernel modules (简体中文)#手动加载卸载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.8D.B8.E8.BD.BD "Kernel modules (简体中文)") 内核模块。
 
 **Tip:** 如果 `kvm_intel` 或 `kvm_amd` 加载失败但是`kvm` 加载成功， (`lscpu`可检查硬件支持情况)检查你的BIOS设置。一些品牌机 (尤其时笔记本电脑) 默认关闭了这个功能，请确保是否是硬件支持该功能，但在BIOS中它被关闭了，在`dmesg`的提示信息中会展示出相关的警告信息。
 

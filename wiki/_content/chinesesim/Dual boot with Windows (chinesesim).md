@@ -1,5 +1,9 @@
 **翻译状态：** 本文是英文页面 [Dual_boot_with_Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-20，点击[这里](https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&diff=0&oldid=445881)可以查看翻译后英文页面的改动。
 
+Related articles
+
+*   [Dual boot with Windows/SafeBoot](/index.php/Dual_boot_with_Windows/SafeBoot "Dual boot with Windows/SafeBoot")
+
 这篇条目提供了 Arch Linux 和 Windows 双重启动的一些相关信息。
 
 ## Contents
@@ -185,7 +189,7 @@ Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map
 
 选择一个合适的启动管理器, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 和 [rEFInd](/index.php/REFInd "REFInd") 可以自动检测 *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) 并为它添加启动项.
 
-[GRUB](/index.php/GRUB "GRUB") 用户请参阅 [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). Syslinux (version 6.02 和 6.03-pre9) 和 ELILO 不支持链式加载 EFI 可执行文件,所以不能引导 `\EFI\Microsoft\Boot\bootmgfw.efi`.
+[GRUB](/index.php/GRUB "GRUB") 用户请参阅 [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry "GRUB"). Syslinux (version 6.02 和 6.03-pre9) 和 ELILO 不支持链式加载 EFI 可执行文件,所以不能引导 `\EFI\Microsoft\Boot\bootmgfw.efi`.
 
 对于打开 [安全启动](/index.php/Secure_Boot "Secure Boot") 的电脑,你可能需要更多的步骤(关闭安全启动或是使安装介质支持安全启动,参见前面的链接).
 

@@ -420,7 +420,7 @@ See [Secure Boot#Using KeyTool](/index.php/Secure_Boot#Using_KeyTool "Secure Boo
 
 There is no package for the EFI version of *gdisk*, but you can download a binary from *gdisk'*s author.
 
-Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `*esp*/EFI/tools`.
+Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `*esp*/EFI/tools/`.
 
 ### iPXE
 

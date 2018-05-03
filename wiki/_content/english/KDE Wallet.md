@@ -58,7 +58,7 @@ session         include         system-login
 
 [Install](/index.php/Install "Install") [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
 
-[Create](/index.php/Create "Create") an [autostart script file](/index.php/KDE#Autostarting_applications "KDE") and mark it as [executable](/index.php/Executable "Executable"):
+[Create](/index.php/Create "Create") an [autostart script file](/index.php/KDE#Autostart "KDE") and mark it as [executable](/index.php/Executable "Executable"):
 
  `~/.config/autostart-scripts/ssh-add.sh` 
 ```

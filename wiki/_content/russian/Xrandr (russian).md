@@ -69,7 +69,7 @@ $ xrandr --output LVDS --off --output HDMI-0 --auto
 **Примечание:**
 
 *   Изменения внесённые *xrandr* **не запоминаются** после окончания X сессии.
-*   *xrandr* имеет большое количество параметров - читайте [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1).
+*   *xrandr* имеет большое количество параметров - читайте [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1).
 
 ## Настройка
 

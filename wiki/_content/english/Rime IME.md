@@ -29,7 +29,7 @@ In order for Rime to work, input schemas are needed. Schemas are text files that
 *   Cangjie5
 *   Wubi86
 
-You can switch input schema at any time by pressing `F4` to trigger the program menu. See [Selecting Input Method](/index.php/Rime_IME#Usage.23Selecting_Input_Method "Rime IME").
+You can switch input schema at any time by pressing `F4` to trigger the program menu. See [Selecting Input Method](#Selecting_Input_Method).
 
 To customize Rime, you should first create the rime config directory. Assuming you are using [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime):
 

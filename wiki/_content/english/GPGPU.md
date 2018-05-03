@@ -48,6 +48,7 @@ To **execute** programs that use OpenCL, a compatible hardware runtime needs to 
 
 #### Intel
 
+*   [Intel Graphics Compute Runtime](https://github.com/intel/compute-runtime) (*NEO*): replaces Beignet for Gen8 (Broadwell) and beyond
 *   [beignet](https://www.archlinux.org/packages/?name=beignet): open-source implementation for Intel IvyBridge+ iGPUs
 *   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): official Intel CPU runtime, also supports non-Intel CPUs
 
@@ -144,11 +145,11 @@ To find whether the installation was successful and if cuda is up and running, y
 
 *   [Bitcoin](/index.php/Bitcoin "Bitcoin")
 *   [HandBrake](/index.php/HandBrake "HandBrake")
+*   [Hashcat](/index.php/Hashcat "Hashcat")
 *   [GIMP](/index.php/GIMP "GIMP") (experimental - see [[1]](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html))
 *   [opencv](https://www.archlinux.org/packages/?name=opencv)
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
 *   [darktable](https://www.archlinux.org/packages/?name=darktable) - OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
-*   [aircrack-ng](https://www.archlinux.org/packages/?name=aircrack-ng)
 *   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) - a GPU memtest. Despite its name, is supports both CUDA and OpenCL
 *   [Blender](/index.php/Blender "Blender") - CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
 *   [BOINC](/index.php/BOINC "BOINC")

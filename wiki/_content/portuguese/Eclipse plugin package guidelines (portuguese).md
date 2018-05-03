@@ -79,45 +79,47 @@ package() {
 
 ### Como personalizar a compilação
 
-The main variable which needs to be customized is the `pkgname`. If you are packaging a typical plugin, then this is the only thing you need to do: most plugins are distributed in zip files which only contain the two `features` and `plugins` subdirectories. So, if you are packaging the `foo` plugin and the source file only contains the `features` and `plugins`, you just need to change `pkgname` to `eclipse-foo` and you are set.
+A variável principal que precisa ser personalizada é o `pkgname`. Se você estiver empacotando um plug-in típico, essa é a única coisa que você precisa fazer: a maioria dos plug-ins é distribuída em arquivos zip que contêm apenas os dois subdiretórios `features` e `plugins`. Portanto, se você estiver empacotando o plug-in `foo` e o arquivo de origem contiver apenas `features` e `plugins`, você só precisará alterar `pkgname` para `eclipse-foo` e você está pronto.
 
-Read on to get to the internals of the PKGBUILD, which help to understand how to setup the build for all the other cases.
+Continue lendo para ir aos componentes internos do PKGBUILD, que ajudam a entender como configurar a compilação para todos os outros casos.
 
 ### Revisão aprofundada do PKGBUILD
 
 #### Nomenclatura de pacote
 
-Packages should be named `eclipse-*pluginname*`, so that they are recognizable as Eclipse-related packages and it is easy to extract the plugin name with a simple shell substitution like `${pkgname/eclipse-}`, not having to resort to an unneeded `${_realname}` variable. The plugin name is necessary to tidy up everything during installation and to avoid conflicts.
+Os pacotes devem ser denominados `eclipse-*nomeplugin*`, para que sejam reconhecidos como pacotes relacionados ao Eclipse e seja fácil extrair o nome do plug-in com uma substituição de shell simples como `${pkgname/eclipse-}`, não tendo que recorrer a uma variável desnecessária `${_realname}`. O nome do plugin é necessário para arrumar tudo durante a instalação e evitar conflitos.
 
 #### Arquivos
 
 ##### Extração
 
-Some plugins need the features to be extracted from jar files. The `jar` utility, already included in the JRE, is used to do this. However, `jar` cannot extract to directories other than the current one: this means that, after every directory creation, it is necessary to `cd` inside it before extracting. The `${_dest}` variable is used in this context to improve readability and PKGBUILD tidiness.
+Alguns plugins precisam que os recursos sejam extraídos dos arquivos jar. O utilitário `jar`, já incluído no JRE, é usado para fazer isso. No entanto, `jar` não pode extrair para diretórios diferentes do atual: isso significa que, após cada criação de diretório, é necessário `cd` dentro dele antes de extrair. A variável `${_dest}` é usada neste contexto para melhorar a legibilidade e a limpeza do PKGBUILD.
 
 ##### Localizações
 
-As we said, source archives provide two directories, `features` and `plugins`, each one packed up with jar files. The preferred dropins structure should look like this:
+Como dissemos, os archives de origem fornecem dois diretórios, `features` e `plugins`, cada um com arquivos jar. A estrutura de dropins preferida deve ficar assim:
 
 ```
-/usr/lib/eclipse/dropins/pluginname/eclipse/features/feature1/...
-/usr/lib/eclipse/dropins/pluginname/eclipse/features/feature2/...
+/usr/lib/eclipse/dropins/pluginname/eclipse/features/recurso1/...
+/usr/lib/eclipse/dropins/pluginname/eclipse/features/recurso2/...
 /usr/lib/eclipse/dropins/pluginname/eclipse/plugins/plugin1.jar
 /usr/lib/eclipse/dropins/pluginname/eclipse/plugins/plugin2.jar
 
 ```
 
-This structure allows for mixing different versions of libraries that may be needed by different plugins while being clear about which package owns what. It will also avoid conflicts in case different packages provide the same library. The only alternative would be splitting every package from its libraries, with all the extra fuss it requires, and it would not even be guaranteed to work because of packages needing older library versions. Features have to be unjarred since Eclipse will not detect them otherwise, and the whole plugin installation will not work. This happens because Eclipse treats update sites and local installations differently (do not ask why, it just does).
+Esta estrutura permite misturar diferentes versões de bibliotecas que podem ser necessárias por diferentes plugins, sendo claro sobre qual pacote possui o quê. Ele também evitará conflitos caso pacotes diferentes forneçam a mesma biblioteca. A única alternativa seria dividir cada pacote de suas bibliotecas, com toda a confusão extra que requer, e nem mesmo seria garantido que funcionasse por causa dos pacotes que precisavam de versões de bibliotecas mais antigas.
+
+Os recursos devem ser descompactados do arquivo *jar*, pois o Eclipse não os detectará de outra forma, e toda a instalação do plug-in não funcionará. Isso acontece porque o Eclipse trata os sites de atualização e as instalações locais de forma diferente (não pergunte por que, apenas faz).
 
 #### A função build()
 
-First thing to be noticed is the `cd ${srcdir}` command. Usually source archives extract the `features` and `plugins` folders directly under `${srcdir}`, but this is not always the case. Anyway, for most non-*(de facto)*-standard plugins this is the only line that needs to be changed.
+A primeira coisa a ser notada é o comando `cd ${srcdir}`. Geralmente os arquivos fonte extraem as pastas `features` e `plugins` diretamente sob `${srcdir}`, mas nem sempre é esse o caso. De qualquer forma, para a maioria dos plugins não padrão *(de fato)*, esta é a única linha que precisa ser alterada.
 
-Some released features include their sources, too. For a normal release version these sources are not needed and can be removed. Furthermore same features include `*.pack.gz` files, which contain the same files compared to the jar archives. So these files can be removed, too.
+Alguns recursos lançados incluem suas fontes também. Para uma versão normal, essas fontes não são necessárias e podem ser removidas. Além disso, os mesmos recursos incluem arquivos `*.pack.gz`, que contêm os mesmos arquivos em comparação com os arquivos jar. Então, esses arquivos podem ser removidos também.
 
-Next is the `features` section. It creates the necessary directories, one for every jar file, and extracts the jar in the corresponding directory. Similarly, the `plugins` section installs the jar files in their directory. A while cycle is used to prevent funny-named files.
+A próxima é a seção `features`. Ele cria os diretórios necessários, um para cada arquivo jar, e extrai o jar no diretório correspondente. Da mesma forma, a seção `plugins` instala os arquivos jar em seus diretórios. Um ciclo de tempo é usado para evitar arquivos de nome engraçado.
 
 ## Solução de problemas
 
-*   Sometimes cleaning of Eclipse helps to repair some problems: `$ eclipse -clean` 
-*   If new installed plugins do not appear in Eclipse, try with a clean `~/.eclipse` directory, for example by renaming the existing one. Be aware that this will of course make all the user-installed plugins via Marketplace unavailable.
+*   Algumas vezes, a limpeza do Eclipse ajuda a corrigir alguns problemas: `$ eclipse -clean` 
+*   Se novos plug-ins instalados não aparecerem no Eclipse, tente com um diretório limpo `~/.eclipse`, por exemplo, renomeando o existente. Esteja ciente de que isso, é claro, tornará todos os plugins instalados pelo usuário via Marketplace indisponíveis.

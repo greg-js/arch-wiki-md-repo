@@ -6,7 +6,7 @@ Artigos relacionados
 
 Apesar de seu escopo, páginas man são projetadas para serem documentos autocontidos, consequentemente limitando-as a fazer referência a outras páginas man ao discutir assuntos relatados. Esse é um contraste nítido com os arquivos info compatíveis com hiperlinks, a tentativa do GNU de substituir o formato tradicional de página man.
 
-[man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Core_utilities#less "Core utilities") é o paginador padrão usado com *man*.
+[man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Core_utilities_(Portugu%C3%AAs)#less "Core utilities (Português)") é o paginador padrão usado com *man*.
 
 ## Contents
 

@@ -257,7 +257,7 @@ Nastavte heslo pro užívatele root:
 
 ### Boot loader
 
-Nainstalujte a nakonfigurujte [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders") (zavaděč). Na výběr jsou např. [GRUB_(Česky)](/index.php/GRUB_(%C4%8Cesky) "GRUB (Česky)") (BIOS/UEFI), [rEFInd](/index.php/REFInd "REFInd"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (pouze UEFI) a [syslinux](/index.php/Syslinux "Syslinux") (pouze BIOS).
+Nainstalujte a nakonfigurujte [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders") (zavaděč). Na výběr jsou např. [GRUB (Česky)](/index.php/GRUB_(%C4%8Cesky) "GRUB (Česky)") (BIOS/UEFI), [rEFInd](/index.php/REFInd "REFInd"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (pouze UEFI) a [syslinux](/index.php/Syslinux "Syslinux") (pouze BIOS).
 
 Pokud máte procesor Intel, nainstalujte i balíček [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) a [povolte aktualizace mikrokódu.](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 

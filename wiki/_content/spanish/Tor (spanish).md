@@ -137,7 +137,7 @@ En este ejemplo el contenedor se alojará en `/srv/container`:
 
 [Instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-Instale [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) y [arm](https://www.archlinux.org/packages/?name=arm) y deselecione [linux](https://www.archlinux.org/packages/?name=linux) como en [Systemd-nspawn_(Español)#Crear_e_iniciar_Arch_Linux_en_un_contenedor](/index.php/Systemd-nspawn_(Espa%C3%B1ol)#Crear_e_iniciar_Arch_Linux_en_un_contenedor "Systemd-nspawn (Español)"):
+Instale [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) y [arm](https://www.archlinux.org/packages/?name=arm) y deselecione [linux](https://www.archlinux.org/packages/?name=linux) como en [Systemd-nspawn (Español)#Crear e iniciar Arch Linux en un contenedor](/index.php/Systemd-nspawn_(Espa%C3%B1ol)#Crear_e_iniciar_Arch_Linux_en_un_contenedor "Systemd-nspawn (Español)"):
 
 ```
 # pacstrap -i -c -d /srv/container/tor-exit base tor arm

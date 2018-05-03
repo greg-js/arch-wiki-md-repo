@@ -114,7 +114,7 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 
 **Note:** Scanning directly to PDF using XSane in 16bit color depth mode is known to produces [corrupted files](https://bugs.launchpad.net/ubuntu/+source/xsane/+bug/539162) and a note in `pacman` output warns so. 8bit mode is known to work.
 
-**Note:** Using a frontend doesn't mean you do not have to apply some tricks. This is especially true with devices configured via [mDNS](/index.php/Avahi "Avahi"). For example, `skanlite` needs to have additional info specified on the command line in order to detect a network scanner properly as it can't handle mDNS. Here is an example with an HP Officejet Pro L7590: `skanlite --device "hpaio:/net/Officejet_Pro_L7500?ip=192.168.0.17"`.
+**Note:** Using a frontend doesn't mean you do not have to apply some tricks. This is especially true with devices configured via [mDNS](/index.php/MDNS "MDNS"). For example, `skanlite` needs to have additional info specified on the command line in order to detect a network scanner properly as it can't handle mDNS. Here is an example with an HP Officejet Pro L7590: `skanlite --device "hpaio:/net/Officejet_Pro_L7500?ip=192.168.0.17"`.
 
 ## Network scanning
 

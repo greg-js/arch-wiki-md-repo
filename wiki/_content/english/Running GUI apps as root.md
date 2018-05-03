@@ -124,7 +124,7 @@ Unable to init server: Could not connect: Connection refused
 
 Before Wayland, running GUI applications with elevated privileges could be properly implemented by creating a [Polkit](/index.php/Polkit "Polkit") policy, or more dangerously done by running the command in a terminal by prepending the command with `sudo`; but under (X)Wayland this does not work anymore as the default has been made to only allow the user who started the X server to connect clients to it (see the [bug report](https://bugzilla.redhat.com/show_bug.cgi?id=1266771) and [the](https://cgit.freedesktop.org/xorg/xserver/commit/?id=c4534a3) [upstream](https://cgit.freedesktop.org/xorg/xserver/commit/?id=4b4b908) [commits](https://cgit.freedesktop.org/xorg/xserver/commit/?id=76636ac) it refers to).
 
-Avoid running graphical applications as root if possible, see [Running X apps as root#Circumvent running graphical apps as root](/index.php/Running_X_apps_as_root#Circumvent_running_graphical_apps_as_root "Running X apps as root").
+Avoid running graphical applications as root if possible, see [#Circumvent running graphical apps as root](#Circumvent_running_graphical_apps_as_root).
 
 A more versatile though more insecure workaround allows any graphical application to be run as root [#Using xhost](#Using_xhost).
 

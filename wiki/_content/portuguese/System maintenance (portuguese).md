@@ -143,7 +143,7 @@ Se uma atualização de pacote é esperada/sabido causar problemas, empacotadore
 
 **Dica:** Você pode usar um visualização de log como o [wat-git](https://aur.archlinux.org/packages/wat-git/) para pesquisar por logs do pacman.
 
-A esse ponto, somente após garantir que não haja informações disponíveis pelo pacman, que não há notícia relacionada no [https://www.archlinux.org/](https://www.archlinux.org/) e que não haja tópicos no fórum sobre a atualização, considere pedir ajuda no [fórum](https://bbs.archlinux.org), pelo [IRC](/index.php/IRC "IRC") ou [fazendo downgrade](/index.php/Fazendo_downgrade "Fazendo downgrade") da versão do pacote danoso.
+A esse ponto, somente após garantir que não haja informações disponíveis pelo pacman, que não há notícia relacionada no [https://www.archlinux.org/](https://www.archlinux.org/) e que não haja tópicos no fórum sobre a atualização, considere pedir ajuda no [fórum](https://bbs.archlinux.org), pelo [IRC](/index.php/IRC_(Portugu%C3%AAs) "IRC (Português)") ou [fazendo downgrade](/index.php/Fazendo_downgrade "Fazendo downgrade") da versão do pacote danoso.
 
 ### Verifique por pacotes órfãos ou abandonados
 
@@ -241,7 +241,7 @@ Evite qualquer uso do repositório de teste, até mesmo pacotes individuais de t
 
 O pacote [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) é uma pacote alternativo de kernel do Arch e está disponível no repositório [core](/index.php/Core_(Portugu%C3%AAs) "Core (Português)"). Essa versão de kernel em particular possui suporte de longo prazo (LTS) do upstream, incluindo correções de segurança e alguns *backports* de recursos. É útil caso você prefira a estabilidade de atualizações menos frequentes de kernel ou caso você deseje um kernel *fallback* na eventualidade de um novo kernel causar problemas.
 
-Para disponibilizá-lo como uma opção de boot, você precisará atualizar as configurações de seu [bootloader](/index.php/Bootloader "Bootloader") para usar o kernel LTS e disco de ram: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
+Para disponibilizá-lo como uma opção de boot, você precisará atualizar as configurações de seu [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") para usar o kernel LTS e disco de ram: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
 
 ## Veja também
 

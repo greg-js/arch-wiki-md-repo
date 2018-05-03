@@ -196,7 +196,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 ```
 
-Nem minden plugin van definiálva az alapértelmezett konfigurációban, és néhány konfigurációs érték esetleg érvénytelen a rendszereden, ezért szükség szerint szerkesztésre szorulhat. Lásd a [i3status(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/i3status.1)-t a részletekért.
+Nem minden plugin van definiálva az alapértelmezett konfigurációban, és néhány konfigurációs érték esetleg érvénytelen a rendszereden, ezért szükség szerint szerkesztésre szorulhat. Lásd a [i3status(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/i3status.1)-t a részletekért.
 
 #### i3status helyettesítők
 
@@ -280,7 +280,7 @@ Az ikonok hozzáadása a formázási sztringekhez a `~/.config/i3status/config`-
 
 ### Terminál emulátorok
 
-Alapértelmezetten a `$mod+Return` lenyomása futtatja az `i3-sensible-terminal`-t, ami egy szkript egy terminál emulátor meghívására. Lásd [i3-sensible-terminal(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/i3-sensible-terminal.1)-t a meghívható terminálok sorrendjéért.
+Alapértelmezetten a `$mod+Return` lenyomása futtatja az `i3-sensible-terminal`-t, ami egy szkript egy terminál emulátor meghívására. Lásd [i3-sensible-terminal(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/i3-sensible-terminal.1)-t a meghívható terminálok sorrendjéért.
 
 Ha ehelyett egy meghatározott terminált szeretnél indítani, módosítsd a következő sort az `~/.config/i3/config`-ben:
 

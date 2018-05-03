@@ -71,4 +71,4 @@ Véase [Fluxbox#Autostarting Applications](/index.php/Fluxbox#Autostarting_Appli
 
 ### Openbox
 
-Véase [Openbox#autostart](/index.php/Openbox#autostart "Openbox").
+Véase [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox").

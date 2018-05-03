@@ -544,7 +544,7 @@ Vea [git-config(1)](https://www.kernel.org/pub/software/scm/git/docs/git-config.
 
 Es deseable evitar tener que iniciar sesión interactiva mente en cada publicación al servidor Git.
 
-*   Si se esta usando verificación con llaves SSH, use el [agente de SSH](/index.php/SSH_keys_(Espa%C3%B1ol)#Agente_SSH "SSH keys (Español)"). Vea tambien [SSH#Acelerando SSh](/index.php/Secure_Shell_(Espa%C3%B1ol)#Acelerando_SSH "Secure Shell (Español)") y [SSH#Mantener la sesión activa](/index.php/Secure_Shell_(Espa%C3%B1ol)#Mantener_la_sesi.C3.B3n_activa "Secure Shell (Español)").
+*   Si se esta usando verificación con llaves SSH, use el [agente de SSH](/index.php/SSH_keys_(Espa%C3%B1ol)#Agentes_de_SSH "SSH keys (Español)"). Vea tambien [SSH#Acelerando SSh](/index.php/Secure_Shell_(Espa%C3%B1ol)#Acelerando_SSH "Secure Shell (Español)") y [SSH#Mantener la sesión activa](/index.php/Secure_Shell_(Espa%C3%B1ol)#Mantener_la_sesi.C3.B3n_activa "Secure Shell (Español)").
 *   Si se esta usando verificación con usuario y contrasena, cambie a [llaves de SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") si el servidor es compatible con SSH. De otra manera intente con [git-credential-cache](https://git-scm.com/docs/git-credential-cache) o [git-credential-store](https://git-scm.com/docs/git-credential-store).
 
 ### Valores por defecto del protocolo

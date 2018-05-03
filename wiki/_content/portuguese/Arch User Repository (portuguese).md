@@ -383,7 +383,7 @@ Veja também [Manutenção do sistema#Use pacotes de software aprovados](/index.
 
 ### Por que foo desapareceu do AUR?
 
-É possível que o pacote tenha sido adotado por um TU e agora esteja no repositório [community](/index.php/Community "Community").
+É possível que o pacote tenha sido adotado por um TU e agora esteja no repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)").
 
 Pacotes podem ter sido excluídos, se eles não preencherem as [#Regras de envio](#Regras_de_envio). Veja os [histórico do aur-requests](https://lists.archlinux.org/pipermail/aur-requests/) pelo motivo da exclusão.
 

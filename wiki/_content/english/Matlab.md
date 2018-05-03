@@ -78,6 +78,33 @@ Start `matlab` with:
 
 In order for icons to appear correctly `StartupWMClass` needs to be set in the desktop entry. To find it out start MATLAB, run `xprop | grep WM_CLASS` and select the MATLAB window.
 
+Example desktop entry:
+
+ `matlab.desktop` 
+```
+[Desktop Entry]
+Version=2018a
+Type=Application
+Terminal=false
+MimeType=text/x-matlab
+Exec=matlab -desktop -nosplash
+Name=MATLAB
+Icon=matlab
+Categories=Development;Math;Science
+Comment=Scientific computing environment
+StartupNotify=true
+
+```
+
+If one need to set environment variable, one could prepend `env` in `Exec`, for example, to system's libfreetype:
+
+```
+Exec=env LD_PRELOAD=/usr/lib/libfreetype.so.6 matlab
+
+```
+
+One might wanna use system's `libstdc++`.
+
 ### Installing from the AUR package
 
 The EULA for the proprietary MATLAB software is restrictive. The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") is designed to allow MATLAB to be integrated into and managed by Arch. The package should be built on the system on which it is going to be installed and the package should be deleted from the installation location and the [Pacman](/index.php/Pacman "Pacman") cache following installation. Distributing the package is a clear violation of the EULA.

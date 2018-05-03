@@ -86,7 +86,7 @@ As stated above, in order to setup Nextcloud, you must set up the appropriate PH
 
 ### Pacman hook
 
-To upgrade the Nextcloud database automatically on updates, you may want to create a [pacman hook](/index.php/Pacman#Hooks "Pacman"):
+To upgrade the Nextcloud database automatically on updates, you may want to create a [pacman hook](/index.php/Pacman_hook "Pacman hook"):
 
  `/etc/pacman.d/hooks/nextcloud.hook` 
 ```

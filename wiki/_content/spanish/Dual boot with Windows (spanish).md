@@ -157,7 +157,7 @@ Para más información de este método vea [http://www.geocities.com/epark/linux
 
 Tanto [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (anteriormente llamado **gummiboot**) como [rEFInd](/index.php/REFInd "REFInd") detectan automáticamente el **cargador de arranque Windows** `\EFI\Microsoft\Boot\bootmgfw.efi` y lo muestran en su menu de inicio, por lo que no es necesario realizar ninguna configuración manual.
 
-Para utilizar [GRUB](/index.php/GRUB "GRUB") siga la guía en [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB").
+Para utilizar [GRUB](/index.php/GRUB "GRUB") siga la guía en [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry "GRUB").
 
 Tanto Syslinux (version 6.02 y 6.03-pre9) como ELILO no soportan el arranque en cadena de otras aplicaciones EFI, por lo que no pueden ser utilizadas para el arranque en cadena de `\EFI\Microsoft\Boot\bootmgfw.efi`.
 

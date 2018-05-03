@@ -50,7 +50,7 @@ Additional steps for printer detection are listed below for various connection i
 **Note:**
 
 *   CUPS helper programs are run using the `cups` user and group. This allows the helper programs to access printer devices and read config files in `/etc/cups/`, which are owned by the `cups` group.
-*   Prior to [cups](https://www.archlinux.org/packages/?name=cups) 2.2.6-2, the `lp` group [was used instead](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=a209bf21797a239c7ddb4614f0266ba1e5238622). After the upgrade, the files in `/etc/cups` should be owned by the `cups` group and `/etc/cups/cups-files.conf` should have `User 209` and `Group 209`.
+*   Prior to [cups](https://www.archlinux.org/packages/?name=cups) 2.2.6-2, the `lp` group [was used instead](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=a209bf21797a239c7ddb4614f0266ba1e5238622). After the upgrade, the files in `/etc/cups` should be owned by the `cups` group and `User 209` and `Group 209` set in `/etc/cups/cups-files.conf`.
 
 ### USB
 

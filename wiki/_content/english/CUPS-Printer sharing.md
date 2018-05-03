@@ -64,7 +64,7 @@ Listen <hostname>:631
 
 ```
 
-There are more configuration possibilities, including automatic methods, which are described in detail in [Using Network Printers](https://www.cups.org/doc/network.html) and [cupsd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5).
+There are more configuration possibilities, including automatic methods, which are described in detail in [Using Network Printers](https://www.cups.org/doc/network.html) and [cupsd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5).
 
 After making any modifications, [restart](/index.php/Restart "Restart") the `org.cups.cupsd` service.
 
@@ -214,7 +214,7 @@ Before adding the printer, you will most likely have to install an appropriate p
 
 #### Sharing via IPP
 
-As above, IPP is also the **preferred** protocol for printer sharing although it **only works with Windows Server versions**. Windows Server versions (e.g. Server 2016) include IPP support ("Print and Document Services" role, "Internet Printing" service). Client versions (e.g. Windows 10), only include the IPP client, and **do no support sharing through IPP**.
+As above, IPP is also the **preferred** protocol for printer sharing although it **only works with Windows Server versions**. Windows Server versions (e.g. Server 2016) include IPP support ("Print and Document Services" role, "Internet Printing" service). Client versions (e.g. Windows 10), only include the IPP client, and **do not support sharing through IPP**.
 
 #### Sharing via Samba
 

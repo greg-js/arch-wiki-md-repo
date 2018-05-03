@@ -40,7 +40,7 @@ You may want to turn off the high-performance graphics processor to save battery
 
 #### Using bbswitch
 
-With a NVidia GPU, this can be more safely done using [bbswitch](/index.php/Bumblebee#Power_management "Bumblebee"), which consists of a kernel package that automatically and issues the correct ACPI calls to disable the discrete GPU when not needed, or automatically at boot.
+With a NVidia GPU, this can be more safely done using [bbswitch](/index.php/Bbswitch "Bbswitch"), which consists of a kernel package that automatically and issues the correct ACPI calls to disable the discrete GPU when not needed, or automatically at boot.
 
 #### Using acpi_call
 

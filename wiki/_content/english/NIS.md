@@ -255,30 +255,44 @@ See [section 7 of The Linux NIS HOWTO](http://www.tldp.org/HOWTO/NIS-HOWTO/setti
 
 #### Attention on Systemd V235 since 10/2017
 
-Due a problem with sandboxing on systemd-logind, which deneys any IP connections from and to the systemd-logind service it may be nessesary to edit
+Due a problem with sandboxing on `systemd-logind`, any IP connections from and to the `systemd-logind` service are now denied. This will cause failures to log in, even though `yptest` works as expected, and can also cause `accounts-daemon` to crash outright. The basic problem is that the default `/usr/lib/systemd/system/systemd-logind.service` file that ships with `systemd` specifies `IPAddressDeny=any`, and this prevents it from communicating with the NIS server at login.
 
-IMHO, the best practical solution ist to override the system's default systemd-logind.service by a modified local version:
+There are a few possible solutions:
+
+*   **Whitelist the address or address range of your NIS server:**
+
+This can be done by creating a new `.conf` file within the `/etc/systemd/system/systemd-logind.service.d/`, with these lines (the following allows connections `from 10.0.*.*`, edit as appropriate): `/etc/systemd/system/systemd-logind.service.d/open_network_interface.conf` 
+```
+echo -e [Service]
+IPAddressAllow=10.0.0.0/16
+```
+This survives a reboot and updates of the systemd toolchain. It also avoid having to open your system to any IP address.
+**Note:** there is no point in using `IPAddressAllow=any`, this is does *not* override the default `IPAddressDeny=any` set in the main unit file.
+
+*   **Override the system's default `systemd-logind.service` with a modified local version:**
 
 ```
-cp -a /usr/lib/systemd/system/systemd-logind.service /etc/systemd/system
-nano /etc/systemd/system/systemd-logind.service 
-and comment out this line  IPAddressDeny=any into
-# IPAddressDeny=any
+# cp -a /usr/lib/systemd/system/systemd-logind.service /etc/systemd/system
+# nano /etc/systemd/system/systemd-logind.service 
 
 ```
 
-This solution surrives an update of the systemd toolchain and keeps working after a reboot.
+and comment out the line `IPAddressDeny=any` to read `# IPAddressDeny=any`
 
-Workig, but not very recommended solution:
+This solution survives an update of the systemd toolchain and keeps working after a reboot. It does however override *all* settings in the unit file supplied with `systemd`, which may cause issues down the track if other unrelated settings are changed upstream. It also opens up access to *any* IP address, which is not recommended.
+
+*   **Modify the system's default `systemd-logind.service` directly:**
+
+Works, but not a recommended solution since it will not survive an update of the systemd toolchain:
 
 ```
-/usr/lib/systemd/system/systemd-logind.service 
-and comment out this line  IPAddressDeny=any into
-# IPAddressDeny=any
+# nano /usr/lib/systemd/system/systemd-logind.service 
 
 ```
 
-to make flawless login possible.
+and comment out the line `IPAddressDeny=any` to read `# IPAddressDeny=any`
+
+Note that this also opens up access to *any* IP address, which is not recommended.
 
 ## More resources
 

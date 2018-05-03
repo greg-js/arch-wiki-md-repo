@@ -105,7 +105,7 @@ Instead of mounting the ESP itself to `/boot`, you can mount a directory of the 
 
 **Note:**
 
-*   This requires a [kernel](/index.php/FAT#Kernel_configurations "FAT") and [bootloader](/index.php/Bootloader "Bootloader") compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot/`). See the forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
+*   This requires a [kernel](/index.php/FAT#Kernel_configuration "FAT") and [bootloader](/index.php/Bootloader "Bootloader") compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot/`). See the forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
 *   You *must* use the `root=` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
 
 Just like in [#Alternative mount points](#Alternative_mount_points), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot`. Then bind mount the directory:

@@ -3,7 +3,7 @@ Artigos relacionados
 *   [systemd/User](/index.php/Systemd/User "Systemd/User")
 *   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
 *   [init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
-*   [Daemons List](/index.php/Daemons_List "Daemons List")
+*   [Lista de daemons](/index.php/Lista_de_daemons "Lista de daemons")
 *   [udev](/index.php/Udev "Udev")
 *   [Improve Boot Performance](/index.php/Improve_Boot_Performance "Improve Boot Performance")
 
@@ -50,7 +50,7 @@ O principal comando usado para introspecção e controle *systemd* é **systemct
 
 **Dica:** Você pode usar todos os comandos *systemctl* com o `-H *user*@*host*` que muda para controlar uma instância *systemd* em uma máquina remota. Isso usará [SSH](/index.php/SSH "SSH") para conectar-se uma instância remota *systemd*.
 
-**Nota:** *systemadm* é a interface gráfica oficial para *systemctl*. é fornecida pelo pacote [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) do [AUR](/index.php/AUR "AUR").
+**Nota:** *systemadm* é a interface gráfica oficial para *systemctl*. é fornecida pelo pacote [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
 ### Analisando o estado do sistema
 
@@ -211,7 +211,7 @@ $ systemctl hybrid-sleep
 
 ## Executando gerenciadores de exibição no systemd
 
-Para habilitar a autenticação gráfica, execute o seu daemon de [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") preferido (ex. [KDM](/index.php/KDM "KDM")). No momento, existem arquivos de serviço para [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM"), [SLiM](/index.php/SLiM "SLiM"), [XDM](/index.php/XDM "XDM"), [LXDM](/index.php/LXDM "LXDM"), [LightDM](/index.php/LightDM "LightDM"), e [sddm](https://www.archlinux.org/packages/?name=sddm).
+Para habilitar a autenticação gráfica, execute o seu daemon de [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") preferido (ex. [KDM](/index.php/KDM "KDM")). No momento, existem arquivos de serviço para [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM"), [SLiM](/index.php/SLiM_(Portugu%C3%AAs) "SLiM (Português)"), [XDM](/index.php/XDM_(Portugu%C3%AAs) "XDM (Português)"), [LXDM](/index.php/LXDM "LXDM"), [LightDM](/index.php/LightDM "LightDM"), e [sddm](https://www.archlinux.org/packages/?name=sddm).
 
 ```
 # systemctl enable kdm
@@ -301,7 +301,7 @@ Como os arquivos units referidos serão atualizados ao longo do tempo, use *syst
 
 ### Realce de sintaxe para units dentro do Vim
 
-Realce de sintaxe para arquivos unit *systemd* dentro do [Vim](/index.php/Vim "Vim") pode ser habilitado através da instalação do [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) dos [repositórios oficiais](/index.php/Official_repositories "Official repositories").
+Realce de sintaxe para arquivos unit *systemd* dentro do [Vim](/index.php/Vim "Vim") pode ser habilitado através da instalação do [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
 ## Targets
 

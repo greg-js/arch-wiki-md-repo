@@ -132,7 +132,7 @@ If nm-applet is not prompting for a password when connecting to new wifi network
 
 Для сохранения логинов/паролей к беспроводным сетям и применения глобальных настроек (доступных всем пользователям) необходимо установить [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
 
-`nm-applet` installs the autostart file at `/etc/xdg/autostart/nm-applet.desktop`. If you have issues with it (e.g. `nm-applet` is started twice or is not started at all), see [Openbox#autostart](/index.php/Openbox#autostart "Openbox") or [[1]](https://bbs.archlinux.org/viewtopic.php?pid=993738) for solution.
+`nm-applet` installs the autostart file at `/etc/xdg/autostart/nm-applet.desktop`. If you have issues with it (e.g. `nm-applet` is started twice or is not started at all), see [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox") or [[1]](https://bbs.archlinux.org/viewtopic.php?pid=993738) for solution.
 
 ### Other desktops and window managers
 

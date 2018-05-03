@@ -393,7 +393,7 @@ Currently only [green-recorder](https://aur.archlinux.org/packages/green-recorde
 
 ### remote display
 
-*   (20180401) mutter has now remote desktop enabled at compile time, see [https://wiki.gnome.org/Projects/Mutter/RemoteDesktop](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [https://aur.archlinux.org/packages/gnome-remote-desktop/](https://aur.archlinux.org/packages/gnome-remote-desktop/) for details.
+*   (20180401) mutter has now remote desktop enabled at compile time, see [https://wiki.gnome.org/Projects/Mutter/RemoteDesktop](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://aur.archlinux.org/packages/gnome-remote-desktop/) for details.
 *   (20161229) there was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package does not have it enabled.
 
 ### Input grabbing in games, remote desktop and VM windows

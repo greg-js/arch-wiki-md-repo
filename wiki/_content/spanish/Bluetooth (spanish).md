@@ -102,7 +102,7 @@ Los siguientes paquetes permiten una interfaz gráfica para personalizar el Blue
 
 ### GNOME Bluetooth
 
-[GNOME Bluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) es la herramienta de bluetooth de [GNOME_(Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"). El paquete [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) provee el motor del programa, [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) provee una miniaplicación para monitorear el estatus, y [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provee el GUI para la configuración y se puede ver en el panel principal de configuración o desde la terminal con el comando `gnome-control-center bluetooth`. Es posible lanzar el comando `bluetooth-sendto` directamente para enviar archivos a un dispositivo remoto.
+[GNOME Bluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) es la herramienta de bluetooth de [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"). El paquete [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) provee el motor del programa, [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) provee una miniaplicación para monitorear el estatus, y [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provee el GUI para la configuración y se puede ver en el panel principal de configuración o desde la terminal con el comando `gnome-control-center bluetooth`. Es posible lanzar el comando `bluetooth-sendto` directamente para enviar archivos a un dispositivo remoto.
 
 Para recibir archivos, abra el panel de configuración de Bluetooth; solo se puede recibir mientras que el panel de Bluetooth este abierto.
 
@@ -110,7 +110,7 @@ Para recibir archivos, abra el panel de configuración de Bluetooth; solo se pue
 
 ### Bluedevil
 
-[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) la herramienta de Bluetooth de [KDE_(Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
+[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) la herramienta de Bluetooth de [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
 
 Si no hay un icono visible en Dolphin y en la bandeja de herramientas, se puede activar en las opciones de bandeja de herramientas o agregue un widget. Es posible configurar Bluedevil y detectar dispositivos Bluetooth haciendo clic en el icono. Una interfaz también esta disponible en el panel de configuración de KDE.
 

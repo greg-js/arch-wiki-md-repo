@@ -57,7 +57,7 @@ Now start *wpa_supplicant* with:
 
 ```
 
-**Tip:** To discover your wireless network interface name, see [Network configuration#Network interfaces](/index.php/Network_configuration#Network_interfaces "Network configuration").
+**Tip:** To discover your wireless network interface name, see [Network configuration#Network interface](/index.php/Network_configuration#Network_interface "Network configuration").
 
 At this point run:
 

@@ -619,7 +619,7 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 
 ### Disable WebRTC audio post processing
 
-If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
+If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancellation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
 
 To disable audio post processing, change the value of the following preferences to `false`:
 

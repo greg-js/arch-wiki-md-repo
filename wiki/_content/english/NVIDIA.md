@@ -54,11 +54,12 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
+*   For GeForce 600 series cards and newer [NVEx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
 
 *   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
 *   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 
+*   For GeForce 400/500 series cards [NVCx and NVDx] from around 2010-2011, [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
 *   For GeForce 8/9, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package.
 
 *   For even older cards (released in 2006 or earlier), have a look at [#Unsupported drivers](#Unsupported_drivers).
@@ -97,7 +98,7 @@ Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) 
 
 #### Pacman hook
 
-To avoid the possibility of forgetting to update [initramfs](/index.php/Initramfs "Initramfs") after an NVIDIA driver upgrade, you may want to use a [pacman hook](/index.php/Pacman#Hooks "Pacman"):
+To avoid the possibility of forgetting to update [initramfs](/index.php/Initramfs "Initramfs") after an NVIDIA driver upgrade, you may want to use a [pacman hook](/index.php/Pacman_hook "Pacman hook"):
 
  `/etc/pacman.d/hooks/nvidia.hook` 
 ```

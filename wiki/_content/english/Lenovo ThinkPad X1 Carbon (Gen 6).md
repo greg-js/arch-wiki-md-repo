@@ -27,7 +27,7 @@ Related articles
 
 ## Model description
 
-The Lenovo ThinkPad X1 Carbon, 6th generation is an ultrabook introduced in early 2018\. It comes in several variants(`20KH*` and `20KG*`) and features a 14" screen, 8th-gen Intel Core processors and integrated [Intel UHD 620 graphics](/index.php/Intel_Graphics "Intel Graphics").
+The Lenovo ThinkPad X1 Carbon, 6th generation is an ultrabook introduced in early 2018\. It comes in several variants(`20KH*` and `20KG*`) and features a 14" screen, 8th-gen Intel Core processors and integrated [Intel UHD 620 graphics](/index.php/Intel_graphics "Intel graphics").
 
 To ensure you have this version, [install](/index.php/Install "Install") the package [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) and run:
 
@@ -70,7 +70,7 @@ A [forum thread](https://bbs.archlinux.org/viewtopic.php?id=234913) has further 
 
 ### S0i3 sleep support
 
-From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") to enable s0i3 sleep support:
+From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to enable s0i3 sleep support:
 
 ```
 acpi.ec_no_wakeup=1
@@ -178,7 +178,7 @@ Open `/etc/modules-load.d/touchpad.conf` and add:
 
 This enables loading the input devices over rmi4 with recent kernels.
 
-Then add `synaptics_intertouch=1` to the `psmouse` kernel options, for example in the cmdline of the [boot loader](/index.php/Boot_Loader "Boot Loader"):
+Then add `synaptics_intertouch=1` to the `psmouse` kernel options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 
 ```
  [...] root=/dev/sda1 rw psmouse.synaptics_intertouch=1 [...]
@@ -211,3 +211,4 @@ Benjamin Tissoires from Red Hat has [proposed patches](https://patchwork.kernel.
 *   Benjamin Tissoires, kernel maintainer of peripherals, has explained how input bugs get fixed in his talk [Tools to debug a broken input device](https://www.youtube.com/watch?v=Bl_0xYxcYd8) ([Slides](https://www.x.org/wiki/Events/XDC2015/Program/tissoires_input_debug_tools.html)), especially interesting are slides 16 onward.
 *   [Dell XPS 13 9370 quirks](https://gist.github.com/greigdp/bb70fbc331a0aaf447c2d38eacb85b8f): Some pointers on getting Watt usage down to ~2W, Intel video powersaving features might be interesting, see also [Intel Graphics Powersaving](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics")
 *   [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)"): Shares some hardware with the X1C6
+*   [Intel Blog: Best practice to debug Linux* suspend/hibernate issues](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues), including the [pm-graph](https://github.com/01org/pm-graph) tool to analyze power usage during suspend

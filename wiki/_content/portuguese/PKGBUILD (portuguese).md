@@ -84,7 +84,7 @@ A versão do pacote. Ela deve ser a mesma que a versão de lançamento pelo auto
 **Dica:**
 
 *   A ordem de valores incomuns pode ser testada com [vercmp](https://www.archlinux.org/pacman/vercmp.8.html), que é fornecido pelo pacote [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
-*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") pode [atualizar](http://allanmcrae.com/2013/04/pacman-4-1-released/) automaticamente essa variável definindo uma função `pkgver()` no PKGBUILD. Veja [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver.28.29_function "VCS package guidelines") para detalhes.
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") pode [atualizar](http://allanmcrae.com/2013/04/pacman-4-1-released/) automaticamente essa variável definindo uma função `pkgver()` no PKGBUILD. Veja [Diretrizes de pacotes VCS#A função pkgver()](/index.php/Diretrizes_de_pacotes_VCS#A_fun.C3.A7.C3.A3o_pkgver.28.29 "Diretrizes de pacotes VCS") para detalhes.
 
 ### pkgrel
 
@@ -258,7 +258,7 @@ Cada função é executada em [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroo
 **Dica:**
 
 *   Um protótipo de *.install* é fornecido em [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
-*   [Hooks do pacman](/index.php/Pacman#Hooks "Pacman") fornecem funcionalidade similar.
+*   [Hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") fornecem funcionalidade similar.
 
 **Nota:** Não termine o script com `exit`. Isso evitaria as funções contidas de serem executadas.
 

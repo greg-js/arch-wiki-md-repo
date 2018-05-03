@@ -59,7 +59,7 @@ $ ~/.kde4/Autostart/ssh-add.sh
 
 ```
 
-**Nota:** Es necesario que un [agente SSH](/index.php/SSH_keys_(Espa%C3%B1ol)#Agente_SSH "SSH keys (Español)") esté en ejecución.
+**Nota:** Es necesario que un [agente SSH](/index.php/SSH_keys_(Espa%C3%B1ol)#Agentes_de_SSH "SSH keys (Español)") esté en ejecución.
 
 También puedes necesitar ejecutar mediante `source` el *script* que establece la variable de entorno `SSH_ASKPASS`:
 

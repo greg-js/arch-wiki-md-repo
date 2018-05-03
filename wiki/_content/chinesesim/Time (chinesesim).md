@@ -178,7 +178,7 @@ $ timedatectl list-timezones
 
 此命令会创建一个`/etc/localtime`软链接，指向`/usr/share/zoneinfo/`中的时区文件，如果手动创建此链接请确保是相对链接而不是绝对链接，参阅archlinux(7).
 
-See [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5), and [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for more details.
+See [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5), and [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for more details.
 
 **Note:** 如果pre-systemd配置的/etc/timezone仍然存在于你的系统，你可以放心地将其删除，因为它不再使用。
 

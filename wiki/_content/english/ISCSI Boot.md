@@ -126,6 +126,28 @@ run_hook ()
 
 ```
 
+**Note:** If you run into auto connect errors such as (111) and (15 - Session Exists) preventing boot, try the following hook which will give the network time to initialize and will continue trying to auto connect until successful.
+
+```
+run_hook ()
+{
+    modprobe iscsi_tcp
+    modprobe iscsi_ibft
+
+    echo "Network configuration based on iBFT"
+    iscsistart -N || echo "Unable to configure network"
+
+    echo "Waiting 5 seconds..."
+    sleep 5
+
+    echo "iSCSI auto connect based on iBFT"
+    until iscsistart -b ; do
+        sleep 3
+    done
+}
+
+```
+
 #### Manually Setting the iSCSI Target
 
 If you are not using an iBFT compatible boot rom you must explicitly setup the network and the iscsi target manually.

@@ -64,13 +64,13 @@ T: 3 (23127) P:98 I:2500 C: 258247 Min:      2 Act:    5 Avg:    4 Max:      32
 
 It shows a four CPU core system running one thread (SCHED_FIFO) per core at priority 98, with memory locked, the system is also under a high load due to running hackbench in a separate terminal. What is most interesting is the max schedling latency detected, in this case 32 usecs on core 3.
 
-See [cyclictest(8)](https://man.cx/cyclictest(8)) man page.
+See [cyclictest(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cyclictest.8) man page.
 
 ### hackbench
 
 An idle kernel will tend to show much lower scheduling latencies, it's essential to put some load on it to get a realistic result. This can be done with another utility in the rt-tests package called hackbench. It works by creating multiple pairs of threads or processes, that pass data between themselves either over sockets or pipes. To make it run longer add the -l parameter: `hackbench -l 1000000`.
 
-See [hackbench(8)](https://man.cx/hackbench(8)) man page.
+See [hackbench(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hackbench.8) man page.
 
 ### hwlatdetect
 
@@ -110,7 +110,7 @@ Samples exceeding threshold: 16
 
 The result shows 16 NMIs detected that exceeded the 15 usecs threshold specified, the maximum latency detected was 21 usecs.
 
-See [hwlatdetect(8)](https://man.cx/hwlatdetect(8)) man page.
+See [hwlatdetect(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwlatdetect.8) man page.
 
 ## See also
 

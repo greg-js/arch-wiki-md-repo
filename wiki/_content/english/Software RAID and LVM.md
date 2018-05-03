@@ -377,7 +377,7 @@ Follow the directions outlined the in [Installation](/index.php/Installation "In
 
 ### Configure system
 
-**Warning:** Follow the steps in the [LVM#Configure_mkinitcpio](/index.php/LVM#Configure_mkinitcpio "LVM") section before proceeding with the installation.
+**Warning:** Follow the steps in the [LVM#Configure mkinitcpio](/index.php/LVM#Configure_mkinitcpio "LVM") section before proceeding with the installation.
 
 #### mkinitcpio.conf
 

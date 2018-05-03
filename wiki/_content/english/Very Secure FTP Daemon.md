@@ -409,7 +409,7 @@ user_sub_token=$USER
 
 ### vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service
 
-add this to your /etc/vsftpd.conf
+If you encounter failures when listing directories with more than a few files add this to your /etc/vsftpd.conf
 
 ```
 seccomp_sandbox=NO

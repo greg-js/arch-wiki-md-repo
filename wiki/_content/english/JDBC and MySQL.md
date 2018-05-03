@@ -100,6 +100,8 @@ If using Oracle MySQL (as opposed to MariaDB), the above class name should be se
 
 To compile and run the program, execute:
 
+You will need jre8-openjdk to execute javac located at /usr/bin/javac
+
 ```
 $ javac DBDemo.java
 $ java DBDemo

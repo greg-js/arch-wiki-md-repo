@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Core utilities#lsblk](/index.php?title=Core_utilities&redirect=no#lsblk "Core utilities")
+*   [Core utilities#lsblk](/index.php/Core_utilities#lsblk "Core utilities")

@@ -1,6 +1,6 @@
 Artigos relacionados
 
-*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
 
 O **Trusted User (TU)** ("Usuário confiado") é um membro da comunidade encarregado de manter o AUR funcionando. Ele/Ela mantém pacotes populares ([comunicando com o *upstream* e enviando-o patches quando necessário](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)) e vota em assuntos administrativos. Um TU é eleito de membros ativos da comunidade pelos atuais TUs em um processo democrático. TUs são os únicos membros que têm a última palavra na direção do AUR.
 
@@ -27,7 +27,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 1.  Ler este artigo de wiki por completo.
 2.  Ler as [TU Bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html).
 3.  Certificar-se de que os detalhes da sua conta no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") estejam atualizados e que seu patrocinador tenha lhe concedido o status de TU.
-4.  Adicionar a si próprio à página de [Trusted Users](/index.php/Trusted_Users "Trusted Users").
+4.  Adicionar a si próprio à página de [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)").
 5.  Se inscrever na lista de discussão pública de desenvolvimento do Arch Linux, [arch-dev-public](https://lists.archlinux.org/listinfo/arch-dev-public).
 6.  Lembrar um [administrador do BBS](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) de alterar sua conta nos fóruns.
 7.  Perguntar a algum TU pela chave do #archlinux-tu@freenode e aparecer no canal. Você não tem que fazer isso, mas seria interessante já que é lá que a maioria dos segredos ocultos são apresentados e onde muitas novas ideias são concebidas.
@@ -58,7 +58,7 @@ Os TUs também estão em uma posição de documentar práticas recomendadas.
 
 ### Regras para a Entrada de Pacotes no Repositório [community]
 
-*   Um pacote não pode já existir em qualquer um dos repositórios do Arch Linux. você deve tomar os cuidados necessários para se certificar que nenhum outro empacotador está no processo de promoção do mesmo pacote. Veja os comentários do pacote do AUR, leia os últimos títulos de assuntos no [aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general), pesquise [todos os projetos no rastreador de erro](https://bugs.archlinux.org/index.php?project=0&do=index&switch=1), use [grep](https://en.wikipedia.org/wiki/Grep "wikipedia:Grep") no [log do Subversion](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html) e envie uma mensagem rápida para o [canal IRC](/index.php/IRC_channel "IRC channel") privado de TUs.
+*   Um pacote não pode já existir em qualquer um dos repositórios do Arch Linux. você deve tomar os cuidados necessários para se certificar que nenhum outro empacotador está no processo de promoção do mesmo pacote. Veja os comentários do pacote do AUR, leia os últimos títulos de assuntos no [aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general), pesquise [todos os projetos no rastreador de erro](https://bugs.archlinux.org/index.php?project=0&do=index&switch=1), use [grep](https://en.wikipedia.org/wiki/Grep "wikipedia:Grep") no [log do Subversion](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html) e envie uma mensagem rápida para o [canal IRC](/index.php/Canal_IRC "Canal IRC") privado de TUs.
 
 *   Somente pacotes "populares" podem entrar no repositório, sendo definido pelo 1% de uso no [pkgstats](https://www.archlinux.de/?page=PackageStatistics) ou 10 votos no AUR.
 
@@ -77,7 +77,7 @@ Os TUs também estão em uma posição de documentar práticas recomendadas.
 
 ### Acessando e Atualizando o Repositório
 
-O repositório [community] agora usa **devtools**, que é o mesmo sistema usado para enviar pacotes para o [core] e [extra], apesar de usar outro servidor `nymeria.archlinux.org` ao invés de `gerolde.archlinux.org`. Por isso, a maioria das instruções no [Guia do Empacotador](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") funciona sem qualquer outro comentário. Informações que são específicas para o repositório [community] (como URLs alteradas) foram inseridas aqui. O devtools exige que os empacotadores [definam a variável PACKAGER](/index.php/Makepkg#Packager_information "Makepkg") no `makepkg.conf`.
+O repositório [community] agora usa **devtools**, que é o mesmo sistema usado para enviar pacotes para o [core] e [extra], apesar de usar outro servidor `nymeria.archlinux.org` ao invés de `gerolde.archlinux.org`. Por isso, a maioria das instruções no [Guia do Empacotador](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") funciona sem qualquer outro comentário. Informações que são específicas para o repositório [community] (como URLs alteradas) foram inseridas aqui. O devtools exige que os empacotadores [definam a variável PACKAGER](/index.php/Makepkg_(Portugu%C3%AAs)#Informa.C3.A7.C3.A3o_do_empacotador "Makepkg (Português)") no `makepkg.conf`.
 
 Inicialmente, você deve fazer um **checkout não-recursivo** do repositório [community]: svn checkout -N svn+ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn svn-community
 

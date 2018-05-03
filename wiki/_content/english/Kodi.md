@@ -52,7 +52,7 @@ The official stable release can be installed via the [kodi](https://www.archlinu
 The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two binaries for two different use cases:
 
 1.  `/usr/bin/kodi` is meant to be run by any user on a on-demand basis. Use it like any other program on the system.
-2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC). See [#Running standalone](#Running_standalone) for more information.
+2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC "wikipedia:Home theater PC"). See [#Running standalone](#Running_standalone) for more information.
 
 ## Running standalone
 
@@ -424,7 +424,7 @@ Kodi is available on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips 
 
 #### Fix for delayed startup on wifi
 
-If running with WiFi only (wired network unplugged) while [kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes](/index.php/Kodi#Sharing_media_and_a_centralized_database_across_multiple_nodes "Kodi"), kodi will likely start before the wireless network is up, which will result in failure to connect to the shares and to the mysql server. Assuming the network is managed by the default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), this can be fixed by using two [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd"), one for `kodi.service` and another for `systemd-networkd-wait-online.service`:
+If running with WiFi only (wired network unplugged) while [#Sharing media and a centralized database across multiple nodes](#Sharing_media_and_a_centralized_database_across_multiple_nodes), kodi will likely start before the wireless network is up, which will result in failure to connect to the shares and to the mysql server. Assuming the network is managed by the default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), this can be fixed by using two [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"), one for `kodi.service` and another for `systemd-networkd-wait-online.service`:
 
 ```
 # systemctl edit systemd-networkd-wait-online.service

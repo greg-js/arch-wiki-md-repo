@@ -16,6 +16,7 @@ Related articles
         *   [1.1.5 W series](#W_series)
         *   [1.1.6 X series](#X_series)
         *   [1.1.7 Yoga Series](#Yoga_Series)
+        *   [1.1.8 Helix Series](#Helix_Series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
     *   [2.2 B series](#B_series)
@@ -117,7 +118,7 @@ install CD version
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
 | Lenovo ThinkPad T560 | Yes | Yes | Yes | Yes | Yes | Yes | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
 | [Lenovo ThinkPad T570](/index.php/Lenovo_ThinkPad_T570 "Lenovo ThinkPad T570") | Yes | Yes | Yes | Yes | Yes |  ? | Yes* | NA | not yet fully tested |
-| Lenovo ThinkPad T580 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | [Fingerprint reader is not supported](https://forums.lenovo.com/t5/Linux-Discussion/Thinkpad-T580-Synaptics-Metallica-MIS-Touch-Fingerprint-Reader/m-p/4057745) | SD Card Reader is not tested |
+| Lenovo ThinkPad T580 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card Reader is supported; [Fingerprint reader is not supported](https://forums.lenovo.com/t5/Linux-Discussion/Thinkpad-T580-Synaptics-Metallica-MIS-Touch-Fingerprint-Reader/m-p/4057745) | Tested on *2 May 2018* (with *Linux 4.16.5*) |
 
 #### W series
 
@@ -160,6 +161,15 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo ThinkPad Yoga 260](/index.php/Lenovo_ThinkPad_Yoga_260 "Lenovo ThinkPad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | Yes | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
+
+#### Helix Series
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| [Lenovo ThinkPad Helix](/index.php/Lenovo_ThinkPad_Helix "Lenovo ThinkPad Helix") | Unknown | YES | YES | NA | YES | YES | NA | Touchscreen (yes), Pen (yes), Sensors (yes) |
+| [Lenovo ThinkPad Helix 2nd Gen](/index.php/Lenovo_ThinkPad_Helix_2nd_Gen "Lenovo ThinkPad Helix 2nd Gen") | 2018.04.01 (USB) | YES | YES | NA | YES | Not tested | Yes* (with updated BIOS) | Touchscreen (yes), Pen (not tested), Sensors (w/ patched kernel) | NA | Only suspend-to-idle ("freeze") is supported |
 
 ## Lenovo
 

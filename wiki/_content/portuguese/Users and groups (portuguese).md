@@ -49,7 +49,7 @@ De [Extending UNIX File Abstraction for General-Purpose Networking](http://cites
 
 	Uma abstração fundamental e muito poderosa e consistente fornecida no UNIX e sistemas operacionais compatíveis é a abstração do arquivo. Muitos serviços de sistema operacional e interfaces de dispositivos são implementados para fornecer uma metáfora de arquivo ou sistema de arquivos para aplicativos. Isso permite novos usos para, e aumenta consideravelmente o poder de, aplicações existentes — ferramentas simples projetadas com usos específicos em mente podem, com abstrações de arquivos do UNIX, serem usadas de maneiras inovadoras. Uma ferramenta simples, como o *cat*, projetada para ler um ou mais arquivos e produzir os conteúdos para a saída padrão, pode ser usada para ler a partir de dispositivos de E/S através de arquivos de dispositivos especiais, tipicamente encontrados no diretório `/dev`. Em muitos sistemas, a gravação e reprodução de áudio podem ser feitas simplesmente com os comandos "`cat /dev/audio > meu_arquivo`" e "`cat meu_arquivo > /dev/audio`", respectivamente.
 
-Todo arquivo em um sistema GNU/Linux pertence a um usuário e a um grupo. Além disso, existem três tipos de permissões de acesso: ler, escrever e executar. Permissões de acesso diferentes podem ser aplicadas ao usuário dono de um arquivo, grupo dono e outros (aqueles que não são usuários nem do grupo dono). Pode-se determinar os donos e permissões de um arquivo ao visualizar o formato de listagem longa do comando [ls](/index.php/Ls "Ls"):
+Todo arquivo em um sistema GNU/Linux pertence a um usuário e a um grupo. Além disso, existem três tipos de permissões de acesso: ler, escrever e executar. Permissões de acesso diferentes podem ser aplicadas ao usuário dono de um arquivo, grupo dono e outros (aqueles que não são usuários nem do grupo dono). Pode-se determinar os donos e permissões de um arquivo ao visualizar o formato de listagem longa do comando [ls](/index.php/Ls_(Portugu%C3%AAs) "Ls (Português)"):
 
  `$ ls -l /boot/` 
 ```
@@ -443,7 +443,7 @@ Os seguintes grupos são usados para propósitos de sistema, uma atriubuição p
 | Grupo | Arquivos afetados | Propósito |
 | dbus | Usado internamente pelo [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Veja [Core utilities#locate](/index.php/Core_utilities#locate "Core utilities"). |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Veja [locate](/index.php/Locate_(Portugu%C3%AAs) "Locate (Português)"). |
 | lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Acesso a dispositivos de porta paralela (impressoras e outros). |
 | mail | `/usr/bin/mail` |
 | nobody | Grupo sem privilégios. |

@@ -88,7 +88,7 @@
 
 ### Openbox
 
-请参阅 [Openbox#autostart](/index.php/Openbox#autostart "Openbox").
+请参阅 [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox").
 
 ### Awesome
 

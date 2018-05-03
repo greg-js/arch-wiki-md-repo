@@ -216,7 +216,7 @@ PasswordAuthentication no
 
 ```
 
-**Advertencia:** Antes de efectuar este ajuste, asegúrese de que todas las cuentas que requieren acceso SSH, tienen configurada la autenticación de la clave pública en los correspondientes archivos `authorized_keys`. Vea [SSH keys (Español)#Copiando las llaves al servidor remoto](/index.php/SSH_keys_(Espa%C3%B1ol)#Copiando_las_llaves_al_servidor_remoto "SSH keys (Español)") para más información.
+**Advertencia:** Antes de efectuar este ajuste, asegúrese de que todas las cuentas que requieren acceso SSH, tienen configurada la autenticación de la clave pública en los correspondientes archivos `authorized_keys`. Vea [SSH keys (Español)#Copiar llaves a un servidor remoto](/index.php/SSH_keys_(Espa%C3%B1ol)#Copiar_llaves_a_un_servidor_remoto "SSH keys (Español)") para más información.
 
 ##### Autenticación de dos factores y claves públicas
 

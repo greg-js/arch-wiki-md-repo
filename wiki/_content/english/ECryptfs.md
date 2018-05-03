@@ -340,6 +340,8 @@ $ mount.ecryptfs_private secret
 
 ```
 
+**Warning:** Mounting may fail on a remote host when connecting via Mosh [[[6]](https://mosh.org/Mosh)] [[[7]](https://github.com/mobile-shell/mosh/issues/529)]
+
 When you are done, unmount it:
 
 ```

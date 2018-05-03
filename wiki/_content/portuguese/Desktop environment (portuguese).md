@@ -1,6 +1,7 @@
 Artigos relacionados
 
-*   [Aplicativos padrão](/index.php/Default_applications "Default applications")
+*   [Comparação entre ambientes de desktop](/index.php/Compara%C3%A7%C3%A3o_entre_ambientes_de_desktop "Comparação entre ambientes de desktop")
+*   [Category:Freedesktop.org (Português)](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)")
 
 Um [ambiente de desktop](https://en.wikipedia.org/wiki/pt:Ambiente_de_desktop "wikipedia:pt:Ambiente de desktop") ou ambiente de trabalho (em inglês, *desktop environment* ou **DE**) é uma implementação da [metáfora de escritório](https://en.wikipedia.org/wiki/pt:Met%C3%A1fora_de_escrit%C3%B3rio "wikipedia:pt:Metáfora de escritório") feita por um conjunto de programas, que compartilham uma interface gráfica de usuário (GUI) comum.
 
@@ -10,10 +11,8 @@ Um [ambiente de desktop](https://en.wikipedia.org/wiki/pt:Ambiente_de_desktop "w
 *   [2 Lista de ambientes de desktop](#Lista_de_ambientes_de_desktop)
     *   [2.1 Com suporte oficial](#Com_suporte_oficial)
     *   [2.2 Sem suporte oficial](#Sem_suporte_oficial)
-*   [3 Comparação de ambientes de desktop](#Compara.C3.A7.C3.A3o_de_ambientes_de_desktop)
-    *   [3.1 Uso de recurso](#Uso_de_recurso)
-*   [4 Ambientes personalizados](#Ambientes_personalizados)
-    *   [4.1 Gerenciador de janela personalizado](#Gerenciador_de_janela_personalizado)
+*   [3 Ambientes personalizados](#Ambientes_personalizados)
+    *   [3.1 Usar um gerenciador de janela diferente](#Usar_um_gerenciador_de_janela_diferente)
 
 ## Visão geral
 
@@ -99,7 +98,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://elementary.io/](https://elementary.io/) || [pantheon-session-git](https://aur.archlinux.org/packages/pantheon-session-git/)
 
-*   **theShell** — theShell é um ambiente de desktop que tenta ser o mais transparente possível. Ele usa o Qt 5 como seu kit de ferramentas de widgets e o KWin como seu gerenciador de janelas. Também incorpora um assistente pessoal.
+*   **theShell** — theShell é um ambiente de desktop que tenta ser o mais transparente possível. Ele usa o Qt 5 como seu kit de ferramentas de widgets e o KWin como seu gerenciador de janelas. Também incorpora um assistente pessoal. Ele também incorpora um assistente pessoal.
 
 	[https://vicr123.github.io/theshell](https://vicr123.github.io/theshell) || [theshell](https://aur.archlinux.org/packages/theshell/)
 
@@ -107,48 +106,11 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[http://www.trinitydesktop.org/](http://www.trinitydesktop.org/) || Veja [Trinity](/index.php/Trinity "Trinity")
 
-## Comparação de ambientes de desktop
-
-*Esta seção tenta fazer uma comparação entre os ambientes de desktop populares. Note que a experiência em primeira mão é a única maneira eficaz de avaliar verdadeiramente se um ambiente de desktop é mais adequado às suas necessidades.*
-
-Veja também [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
-
-<caption>Visão geral dos ambientes desktop</caption>
-| Ambiente de desktop | Widget toolkit | Gerenciador de janela | Barra de tarefas | Emulador de terminal | Gerenciador de arquivos | Calculadora | Editor de texto | Visualizador de imagens | Reprodutor de mídia | Visualizador de documentos | Navegador web | Gerenciador de exibição |
-| [Budgie](/index.php/Budgie_Desktop "Budgie Desktop") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](https://www.archlinux.org/packages/?name=gedit) | [eog](https://www.archlinux.org/packages/?name=eog) | [totem](https://www.archlinux.org/packages/?name=totem) | [evince](https://www.archlinux.org/packages/?name=evince) | [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [Cinnamon](/index.php/Cinnamon "Cinnamon") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [muffin](https://www.archlinux.org/packages/?name=muffin) | [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) | [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [nemo](https://www.archlinux.org/packages/?name=nemo) | [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](https://www.archlinux.org/packages/?name=gedit) | [eog](https://www.archlinux.org/packages/?name=eog) | [totem](https://www.archlinux.org/packages/?name=totem) | [evince](https://www.archlinux.org/packages/?name=evince) | [firefox](https://www.archlinux.org/packages/?name=firefox) | [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Deepin](/index.php/Deepin "Deepin") | [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [deepin-wm](https://www.archlinux.org/packages/?name=deepin-wm) | [deepin-dock](https://www.archlinux.org/packages/?name=deepin-dock) | [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | [deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager) | [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](https://www.archlinux.org/packages/?name=gedit) | [deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer) | [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie) | [evince](https://www.archlinux.org/packages/?name=evince) | [chromium](https://www.archlinux.org/packages/?name=chromium) | [deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui) |
-| [EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment") | [fltk](https://www.archlinux.org/packages/?name=fltk) | [pekwm](https://www.archlinux.org/packages/?name=pekwm) | [ede](https://aur.archlinux.org/packages/ede/) | [xterm](https://www.archlinux.org/packages/?name=xterm) | [fluff](https://aur.archlinux.org/packages/fluff/) | [zalc](https://aur.archlinux.org/packages/zalc/) | [fltk-editor](https://aur.archlinux.org/packages/fltk-editor/) | [ede](https://aur.archlinux.org/packages/ede/) | [flmusic](https://aur.archlinux.org/packages/flmusic/) | [flaxpdf-git](https://aur.archlinux.org/packages/flaxpdf-git/) | [dillo](https://www.archlinux.org/packages/?name=dillo) | [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [Enlightenment](/index.php/Enlightenment "Enlightenment") | [efl](https://www.archlinux.org/packages/?name=efl) | [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [terminology](https://www.archlinux.org/packages/?name=terminology) | [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [equate-git](https://aur.archlinux.org/packages/equate-git/) | [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) | [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) | [rage](https://aur.archlinux.org/packages/rage/) | eevee | [links](https://www.archlinux.org/packages/?name=links) | [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [mutter](https://www.archlinux.org/packages/?name=mutter) | [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) | [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](https://www.archlinux.org/packages/?name=gedit) | [eog](https://www.archlinux.org/packages/?name=eog) | [totem](https://www.archlinux.org/packages/?name=totem) | [evince](https://www.archlinux.org/packages/?name=evince) | [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [metacity](https://www.archlinux.org/packages/?name=metacity) | [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel) | [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](https://www.archlinux.org/packages/?name=gedit) | [eog](https://www.archlinux.org/packages/?name=eog) | [totem](https://www.archlinux.org/packages/?name=totem) | [evince](https://www.archlinux.org/packages/?name=evince) | [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") | [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [kwin](https://www.archlinux.org/packages/?name=kwin) | [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) | [konsole](https://www.archlinux.org/packages/?name=konsole) | [dolphin](https://www.archlinux.org/packages/?name=dolphin) | [kcalc](https://www.archlinux.org/packages/?name=kcalc) | [kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [gwenview](https://www.archlinux.org/packages/?name=gwenview) | [dragon](https://www.archlinux.org/packages/?name=dragon) | [okular](https://www.archlinux.org/packages/?name=okular) | [konqueror](https://www.archlinux.org/packages/?name=konqueror) | [sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [Liri](/index.php/Liri "Liri") | [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [greenisland](https://aur.archlinux.org/packages/greenisland/) | [liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/) | [liri-terminal-git](https://aur.archlinux.org/packages/liri-terminal-git/) | [liri-files-git](https://aur.archlinux.org/packages/liri-files-git/) | [liri-calculator-git](https://aur.archlinux.org/packages/liri-calculator-git/) | [liri-text-git](https://aur.archlinux.org/packages/liri-text-git/) | [eyesight](https://aur.archlinux.org/packages/eyesight/) | liri-player | [qpdfview](https://www.archlinux.org/packages/?name=qpdfview) | [liri-browser-git](https://aur.archlinux.org/packages/liri-browser-git/) | [sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [LXDE](/index.php/LXDE "LXDE") GTK+ 2 | [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [openbox](https://www.archlinux.org/packages/?name=openbox) | [lxpanel](https://www.archlinux.org/packages/?name=lxpanel) | [lxterminal](https://www.archlinux.org/packages/?name=lxterminal) | [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) | [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | [leafpad](https://www.archlinux.org/packages/?name=leafpad) | [gpicview](https://www.archlinux.org/packages/?name=gpicview) | [lxmusic](https://www.archlinux.org/packages/?name=lxmusic) | [epdfview](https://www.archlinux.org/packages/?name=epdfview) | [midori](https://www.archlinux.org/packages/?name=midori) | [lxdm](https://www.archlinux.org/packages/?name=lxdm) |
-| [LXDE](/index.php/LXDE "LXDE") GTK+ 3 | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [openbox](https://www.archlinux.org/packages/?name=openbox) | [lxpanel-gtk3](https://www.archlinux.org/packages/?name=lxpanel-gtk3) | [lxterminal](https://www.archlinux.org/packages/?name=lxterminal) | [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3) | [galculator](https://www.archlinux.org/packages/?name=galculator) | [l3afpad](https://www.archlinux.org/packages/?name=l3afpad) | [gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3) | [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3) | [atril](https://www.archlinux.org/packages/?name=atril) | [midori](https://www.archlinux.org/packages/?name=midori) | [lxdm-gtk3](https://www.archlinux.org/packages/?name=lxdm-gtk3) |
-| [LXQt](/index.php/LXQt "LXQt") | [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [openbox](https://www.archlinux.org/packages/?name=openbox) | [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) | [qterminal](https://www.archlinux.org/packages/?name=qterminal) | [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [speedcrunch](https://www.archlinux.org/packages/?name=speedcrunch) | [notepadqq](https://www.archlinux.org/packages/?name=notepadqq) | [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt) | [smplayer](https://www.archlinux.org/packages/?name=smplayer) | [qpdfview](https://www.archlinux.org/packages/?name=qpdfview) | [falkon](https://www.archlinux.org/packages/?name=falkon) | [sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [MATE](/index.php/MATE "MATE") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [marco](https://www.archlinux.org/packages/?name=marco) | [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | [caja](https://www.archlinux.org/packages/?name=caja) | [mate-calc](https://www.archlinux.org/packages/?name=mate-calc) | [pluma](https://www.archlinux.org/packages/?name=pluma) | [eom](https://www.archlinux.org/packages/?name=eom) | [parole](https://www.archlinux.org/packages/?name=parole) | [atril](https://www.archlinux.org/packages/?name=atril) | [midori](https://www.archlinux.org/packages/?name=midori) | [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Pantheon](/index.php/Pantheon "Pantheon") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [gala-git](https://aur.archlinux.org/packages/gala-git/) | [plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/) | [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) | [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) | [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) | [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos) | [evince](https://www.archlinux.org/packages/?name=evince) | [epiphany](https://www.archlinux.org/packages/?name=epiphany) | 
-
-[lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/)
-
- |
-| [Sugar](/index.php/Sugar "Sugar") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [metacity](https://www.archlinux.org/packages/?name=metacity) | [sugar](https://www.archlinux.org/packages/?name=sugar) | [sugar-activity-terminal](https://www.archlinux.org/packages/?name=sugar-activity-terminal) | [sugar](https://www.archlinux.org/packages/?name=sugar) | [sugar-activity-calculate](https://www.archlinux.org/packages/?name=sugar-activity-calculate) | [sugar-activity-write](https://www.archlinux.org/packages/?name=sugar-activity-write) | [sugar-activity-imageviewer](https://www.archlinux.org/packages/?name=sugar-activity-imageviewer) | [sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox) | [sugar-activity-read](https://www.archlinux.org/packages/?name=sugar-activity-read) | [sugar-activity-browse](https://www.archlinux.org/packages/?name=sugar-activity-browse) | [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| theShell | [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [kwin](https://www.archlinux.org/packages/?name=kwin) | [theshell](https://aur.archlinux.org/packages/theshell/) | [theterminal](https://aur.archlinux.org/packages/theterminal/) | [thefile](https://aur.archlinux.org/packages/thefile/) | [thecalculator](https://aur.archlinux.org/packages/thecalculator/) | [kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [gwenview](https://www.archlinux.org/packages/?name=gwenview) | [themedia](https://aur.archlinux.org/packages/themedia/) | [okular](https://www.archlinux.org/packages/?name=okular) | [konqueror](https://www.archlinux.org/packages/?name=konqueror) | [lightdm-webkit-theme-contemporary](https://aur.archlinux.org/packages/lightdm-webkit-theme-contemporary/) |
-| [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite Kate | Kuickshow | Kaffeine | KPDF | Konqueror | TDM |
-| [Xfce](/index.php/Xfce "Xfce") | [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [xfwm4](https://www.archlinux.org/packages/?name=xfwm4) | [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) | [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal) | [thunar](https://www.archlinux.org/packages/?name=thunar) | [galculator](https://www.archlinux.org/packages/?name=galculator) | [mousepad](https://www.archlinux.org/packages/?name=mousepad) | [ristretto](https://www.archlinux.org/packages/?name=ristretto) | [parole](https://www.archlinux.org/packages/?name=parole) | [epdfview](https://www.archlinux.org/packages/?name=epdfview) | [midori](https://www.archlinux.org/packages/?name=midori) | [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-
-### Uso de recurso
-
-Em termos de recursos do sistema, o GNOME e o KDE são ambientes de desktop *caros*. Não só as instalações completas consomem mais espaço em disco do que as alternativas leves (LXDE, LXQt e Xfce), mas também mais recursos de CPU e memória enquanto estão em uso. Isso ocorre porque o GNOME e o KDE são relativamente "completos": eles fornecem os ambientes mais completos e bem integrados.
-
-LXDE, LXQt e Xfce, por outro lado, são ambientes de desktop *leves*. Eles são projetados para funcionar bem em hardware mais antigo ou com menor consumo de energia e geralmente consomem menos recursos do sistema durante o uso. Isso é conseguido cortando-se os recursos "extras" (que alguns chamariam de "inchaço" ou, em inglês, *"bloat"*).
-
 ## Ambientes personalizados
 
 Os ambientes de desktop representam o meio mais simples de instalar um ambiente gráfico *completo*. No entanto, os usuários são livres para criar e personalizar seu ambiente gráfico de várias maneiras, se nenhum dos ambientes populares de desktop atender aos seus requisitos. Geralmente, a criação de um ambiente personalizado envolve a seleção de um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela"), uma [barra de tarefas](/index.php/List_of_applications#Taskbars "List of applications") e um número de aplicativos (uma seleção minimalista geralmente inclui um [emulador de terminal](/index.php/Terminal_emulator "Terminal emulator"), [gerenciador de arquivos](/index.php/List_of_applications#File_managers "List of applications") e [editor de texto](/index.php/Text_editor "Text editor")).
 
-Outros aplicativos geralmente fornecidos por ambientes de área de trabalho são:
+Outros componentes geralmente fornecidos por ambientes de área de trabalho são:
 
 *   Iniciador de aplicativo: [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications")
 *   Gerenciador de área de trabalho: [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")
@@ -162,31 +124,17 @@ Outros aplicativos geralmente fornecidos por ambientes de área de trabalho são
 *   Agente de autenticação de Polkit: [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")
 *   Bloqueador de tela: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Gerenciador de volume de som: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
+*   Aplicativos padrão: [XDG MIME Applications#mimeapps.list](/index.php/XDG_MIME_Applications#mimeapps.list "XDG MIME Applications")
 
-### Gerenciador de janela personalizado
+### Usar um gerenciador de janela diferente
 
-Em muitos ambientes de desktop, é possível substituir o gerenciador de janela fornecido. Veja abaixo as instruções específicas para o seu ambiente.
+Se o ambiente de desktop tem um artigo, veja sua seção *Usar um gerenciador de janela diferente* (ou, no artigo original, *Use a diferent window manager*), do contrário consulte a documentação oficial.
 
-	GNOME
-
-Gerenciadores de janela alternativos não podem ser usado com o GNOME Shell, porém o [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") fornece sessões para Metacity e [Compiz](/index.php/Compiz "Compiz"). Além disso, é possível definir suas próprias [sessões GNOME personalizadas](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que usam componentes alternativos.
-
-	Cinnamon
-
-Gerenciadores de janela alternativos não podem ser usados com [Cinnamon](/index.php/Cinnamon "Cinnamon").
-
-	Outros ambientes de desktop
-
-*   KDE - Veja [KDE#Using an alternative window manager](/index.php/KDE#Using_an_alternative_window_manager "KDE").
-
-*   MATE - Veja [MATE#Use a different window manager with MATE](/index.php/MATE#Use_a_different_window_manager_with_MATE "MATE").
-
-*   Xfce - Veja [Xfce#Default window manager](/index.php/Xfce#Default_window_manager "Xfce").
-
-*   LXDE - Veja [LXDE#Replace Openbox](/index.php/LXDE#Replace_Openbox "LXDE").
-
-*   LXQt - Veja [LXQt#Replace Openbox](/index.php/LXQt#Replace_Openbox "LXQt").
-
-*   Budgie - Veja [Budgie Desktop#Replace Budgie WM](/index.php/Budgie_Desktop#Replace_Budgie_WM "Budgie Desktop").
-
-*   theShell - Nas configurações do theShell, sob a categoria "Danger", insira o comando para iniciar o gerenciador de janela em "Window Manager Command"
+*   [Budgie#Use a different window manager](/index.php/Budgie#Use_a_different_window_manager "Budgie")
+*   [Cinnamon#Use a different window manager](/index.php/Cinnamon#Use_a_different_window_manager "Cinnamon")
+*   [GNOME (Português)#Usar um gerenciador de janela diferente](/index.php/GNOME_(Portugu%C3%AAs)#Usar_um_gerenciador_de_janela_diferente "GNOME (Português)")
+*   [KDE#Use a different window manager](/index.php/KDE#Use_a_different_window_manager "KDE")
+*   [LXDE#Use a different window manager](/index.php/LXDE#Use_a_different_window_manager "LXDE")
+*   [LXQt#Use a different window manager](/index.php/LXQt#Use_a_different_window_manager "LXQt")
+*   [MATE#Use a different window manager](/index.php/MATE#Use_a_different_window_manager "MATE")
+*   [Xfce#Use a different window manager](/index.php/Xfce#Use_a_different_window_manager "Xfce")

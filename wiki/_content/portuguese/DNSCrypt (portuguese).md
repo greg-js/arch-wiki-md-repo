@@ -16,7 +16,7 @@
 
 ## Instalação
 
-Instale [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) dos [repositórios oficiais](/index.php/Official_repositories "Official repositories").
+Instale [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
 **Dica:** [dnscrypt-proxy-gui](https://aur.archlinux.org/packages/dnscrypt-proxy-gui/) fornece uma GUI escrita em QT para configurar o servidor DNS usado pelo DNSCrypt
 
@@ -134,7 +134,7 @@ O tamanho padrão seria **1252** bytes, com valores até **4096** bytes com supo
 
 #### Teste EDNS0
 
-Faça uso da ferramenta [*DNS Reply Size Test Server*](https://www.dns-oarc.net/oarc/services/replysizetest%7C), use *dig*, uma ferramenta de linha de comando disponível com o pacote [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) dos [repositórios oficiais](/index.php/Official_repositories "Official repositories"), para emitir uma consulta TXT para o nome *rs.dns-oarc.net*:
+Faça uso da ferramenta [*DNS Reply Size Test Server*](https://www.dns-oarc.net/oarc/services/replysizetest%7C), use *dig*, uma ferramenta de linha de comando disponível com o pacote [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"), para emitir uma consulta TXT para o nome *rs.dns-oarc.net*:
 
 ```
 $ dig +short rs.dns-oarc.net txt

@@ -1,5 +1,11 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"). Дата последней синхронизации: 18 июня 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Persistent_block_device_naming&diff=0&oldid=480070).
 
+Ссылки по теме
+
+*   [fstab](/index.php/Fstab "Fstab")
+*   [udev](/index.php/Udev "Udev")
+*   [LVM](/index.php/LVM "LVM")
+
 This article describes how to use persistent names for your block devices. This has been made possible by the introduction of udev and has some advantages over bus-based naming. If your machine has more than one SATA, SCSI or IDE disk controller, the order in which their corresponding device nodes are added is arbitrary. This may result in device names like `/dev/**sda**` and `/dev/**sdb**` switching around on each boot, culminating in an unbootable system, kernel panic, or a block device disappearing. Persistent naming solves these issues.
 
 **Note:**

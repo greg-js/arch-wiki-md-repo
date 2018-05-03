@@ -4,7 +4,7 @@ Artigos relacionados
 *   [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio")
 *   [Category:Network configuration (Português)](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)")
 
-O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicações preparadas para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das wireless, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME](/index.php/GNOME "GNOME").
+O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicações preparadas para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das wireless, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME (Português)](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
 
 ## Contents
 
@@ -51,7 +51,7 @@ Para facilidade de configuração de novas redes, provavelmente usuários irão 
 
 ### GNOME
 
-O [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) do [GNOME](/index.php/GNOME "GNOME") funciona em todos os ambientes.
+O [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) do [GNOME (Português)](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") funciona em todos os ambientes.
 
 Para armazenar credenciais de conexões (Wireless/DSL) instale e configure o [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
 
@@ -92,7 +92,7 @@ Para funcionar corretamente no [Openbox](/index.php/Openbox "Openbox"), o applet
 
 Se você deseja armazenar credenciais de autenticação, poderá ter que configurar o [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring").
 
-O `nm-applet` instala o arquivo de autostart `/etc/xdg/autostart/nm-applet.desktop`. Caso você tenha problemas(`nm-applet` iniciando duplicado ou não iniciando), veja [Openbox#autostart](/index.php/Openbox#autostart "Openbox") ou [[4]](https://bbs.archlinux.org/viewtopic.php?pid=993738) para obter a solução.
+O `nm-applet` instala o arquivo de autostart `/etc/xdg/autostart/nm-applet.desktop`. Caso você tenha problemas(`nm-applet` iniciando duplicado ou não iniciando), veja [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox") ou [[4]](https://bbs.archlinux.org/viewtopic.php?pid=993738) para obter a solução.
 
 ### Outros desktops ou gerenciadores de janelas
 

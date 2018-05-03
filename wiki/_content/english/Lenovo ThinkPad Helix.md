@@ -8,6 +8,8 @@
 | Bluetooth | Broadcom BCM20702 Bluetooth 4.0 (USB connected) |
 | Camera | 5MP Rear and 2MP Front (also USB) |
 
+For the the second generation of Helx hardware (models 20CG and 20CH), see [Levovo ThinkPad Helix 2nd Gen](/index.php/Lenovo_ThinkPad_Helix_2nd_Gen "Lenovo ThinkPad Helix 2nd Gen").
+
 ## Contents
 
 *   [1 Installation](#Installation)

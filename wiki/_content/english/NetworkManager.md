@@ -211,7 +211,7 @@ $ nm-applet --no-agent
 
 ```
 
-**Tip:** `nm-applet` might be started automatically with a [autostart desktop file](/index.php/Desktop_entries#Autostart "Desktop entries"), to add the --no-agent option modify the Exec line there, i.e.
+**Tip:** `nm-applet` might be started automatically with a [autostart desktop file](/index.php/XDG_Autostart "XDG Autostart"), to add the --no-agent option modify the Exec line there, i.e.
 ```
 Exec=nm-applet --no-agent
 
@@ -357,7 +357,7 @@ fi
 
 ```
 
-**Note:** You can get a list of interfaces using [nmcli](#nmcli). The ethernet (LAN) interfaces start with `en`, e.g. `enp0s5`
+**Note:** You can get a list of interfaces using [nmcli](#nmcli_examples). The ethernet (LAN) interfaces start with `en`, e.g. `enp0s5`
 
 #### Use dispatcher to connect to a VPN after a network connection is established
 
@@ -465,7 +465,7 @@ fi
 
 ```
 
-**Note:** You can get a list of uuids using [nmcli](#nmcli).
+**Note:** You can get a list of uuids using [nmcli](#nmcli_examples).
 
 The following script will unmount all CIFS before a disconnect from a specific network:
 
@@ -821,7 +821,7 @@ See [SLiM#Gnome Keyring](/index.php/SLiM#Gnome_Keyring "SLiM").
 
 #### Troubleshooting
 
-While you may type both values at connection time, [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
+While you may type both values at connection time, [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
 
 Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace *username* and *password* accordingly):
 

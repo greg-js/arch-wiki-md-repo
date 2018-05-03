@@ -364,19 +364,7 @@ While the power saving features above should handle fan speeds quite well, some 
 *   Keep in mind that the following method sets the fan speed to a fixed value, hence it will not adjust with the stress of the GPU, which can lead to overheating under heavy load.
 *   Check GPU temperature when applying lower than standard values.
 
-Issue the following command to enable the manual adjustment of the fan speed of your graphics card (or the first GPU in case of a multi GPU setup).
-
-```
-# echo 1 > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1_enable
-
-```
-
-Then set your desired fan speed from 0 to 255, which corresponds to 0-100% fan speed (the following command sets it to roughly 20%):
-
-```
-# echo 55 > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1
-
-```
+To control the GPU fan, see [Fan speed control#amdgpu sysfs fan control](/index.php/Fan_speed_control#amdgpu_sysfs_fan_control "Fan speed control") (amdgpu and radeon share the same controls for this).
 
 For persistence, see the example in [#Persistent configuration](#Persistent_configuration).
 

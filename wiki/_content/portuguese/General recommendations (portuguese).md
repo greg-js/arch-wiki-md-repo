@@ -74,7 +74,7 @@ Esse documento é um índice anotado de artigos populares e informações import
 
 ## Administração do sistema
 
-Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para mais, por favor veja [Utilitários centrais](/index.php/Core_utilities "Core utilities") e [Category:System administration (Português)](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)").
+Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para mais, por favor veja [Utilitários principais](/index.php/Utilit%C3%A1rios_principais "Utilitários principais") e [Category:System administration (Português)](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)").
 
 ### Usuários e grupos
 
@@ -338,7 +338,7 @@ Essa seção é coberta por [Saída colorida no console](/index.php/Color_output
 
 ### Arquivos compactados
 
-Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema GNU/Linux. [Tar](/index.php/Tar "Tar") é uma das ferramentas de arquivamento mais comumente usadas, e usuários devem estar familiarizados com sua sintaxe (pacotes do Arch Linux, por exemplo, são nada mais do que tarballs compactadas em xz). Veja [Bash/Functions](/index.php/Bash/Functions "Bash/Functions") para outros comandos úteis.
+Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema GNU/Linux. [Tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") é uma das ferramentas de arquivamento mais comumente usadas, e usuários devem estar familiarizados com sua sintaxe (pacotes do Arch Linux, por exemplo, são nada mais do que tarballs compactadas em xz). Veja [Bash/Functions](/index.php/Bash/Functions "Bash/Functions") para outros comandos úteis.
 
 ### Prompt de console
 

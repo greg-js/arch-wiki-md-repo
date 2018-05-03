@@ -263,7 +263,7 @@ $ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
 
 As a shortcut, the `VBoxClient-all` bash script enables all of these features.
 
-[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) installs `/etc/xdg/autostart/vboxclient.desktop` that launches `VBoxClient-all` on logon. If your [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") does not support [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart"), you will need to set up autostarting yourself, see [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting") for more details.
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) installs `/etc/xdg/autostart/vboxclient.desktop` that launches `VBoxClient-all` on logon. If your [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") does not support [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart"), you will need to set up autostarting yourself, see [Autostarting#On desktop environment startup](/index.php/Autostarting#On_desktop_environment_startup "Autostarting") and [Autostarting#On window manager startup](/index.php/Autostarting#On_window_manager_startup "Autostarting") for more details.
 
 VirtualBox can also synchronize the time between the host and the guest, to do this, [start/enable](/index.php/Start/enable "Start/enable") the `vboxservice.service`.
 
@@ -313,11 +313,11 @@ Where *uid* and *gid* are values corresponding to the users we want to give acce
 
 #### Automounting
 
-**Note:** Automounting requires the `vboxservice` to be enabled/started.
+**Note:** Automounting requires the `vboxservice.service` to be [enabled](/index.php/Enabled "Enabled")/[started](/index.php/Started "Started").
 
 In order for the automounting feature to work you must have checked the auto-mount checkbox in the GUI or used the optional `--automount` argument with the command `VBoxManage sharedfolder`.
 
-The shared folder should now appear in `/media/sf_*shared_folder_name*`. If users in `media` cannot access the shared folders, check that `media` has permissions 755 or has group ownership `vboxsf` if using permission 750\. This is currently not the default if media is created by installing the `virtualbox-guest-utils`.
+The shared folder should now appear in `/media/sf_*shared_folder_name*`. If users in `media` cannot access the shared folders, check that `media` has permissions `755` or has group ownership `vboxsf` if using permission `750`. This is currently not the default if media is created by installing [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils).
 
 You can use symlinks if you want to have a more convenient access and avoid to browse in that directory, e.g.:
 

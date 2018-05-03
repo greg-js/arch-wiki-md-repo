@@ -758,6 +758,20 @@ writeln("Arch is the best!");
 
 ```
 
+	Myrddin
+
+	A system programming language which aims for control and simplicity, featuring strong type checking, generics, type inference, closures, and traits.
+
+```
+/* mbld -b aitb aitb.myr */
+use std
+const main = {
+  std.put("Arch is the best!
+")
+}
+
+```
+
 	NASM / Yasm (i686)
 
 	Notice that the string is in the .text section, which feels superior.

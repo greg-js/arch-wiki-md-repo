@@ -1,29 +1,29 @@
-Um [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) é um programa que roda em "background" como um processo(sem terminal ou interface), que comumente espera por eventos para oferecer serviços. Um bom exemplo é um servidor web que espera por requisições para entregar uma página, ou um servidor ssh que espera por alguma tentativa de login. Apesar destes serem exemplos de aplicações bastante conhecidas e difundidas, há daemons cujo trabalho não é visível. Daemons que as tarefas são enviar logs para arquivos(ex: `syslog`, `metalog`) ou manter o horário do sistema sincronizado como o [ntpd](/index.php/Ntpd "Ntpd"). Para maiores informações veja [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
+Um [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) é um programa que roda em "background" como um processo (sem terminal ou interface), que comumente espera por eventos para oferecer serviços. Um bom exemplo é um servidor web que espera por requisições para entregar uma página, ou um servidor ssh que espera por alguma tentativa de login. Apesar destes serem exemplos de aplicações bastante conhecidas e difundidas, há daemons cujo trabalho não é visível. Daemons que as tarefas são enviar logs para arquivos(ex: `syslog`, `metalog`) ou manter o horário do sistema sincronizado como o [ntpd](/index.php/Ntpd "Ntpd"). Para maiores informações veja [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
 
 No Arch Linux, daemons são gerenciados pelo [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). O [systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_systemctl "Systemd (Português)") é o comando usado como interface para gerenciá-los. Ele lê arquivos na estrutura `*nome_do_serviço*.service` que contém informação sobre como e quando iniciar o daemon a eles associados. Os arquivos de serviço são armazenados em `/{etc,usr/lib,run}/systemd/system`. Veja [usando units](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") para maiores detalhes.
 
 ## Lista de daemons
 
-Aqui há uma lista dos daemons. Note que qualquer pacote pode fornecer um daemon, portanto, esta lista nunca será completa. Sinta-se livre para adicionar daemons nesta lista em ordem alfabética. Você pode ter pacotes que incluem daemons oriundos do [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"). Estes arquivos possivelmente estão localizados em `/usr/lib/systemd/system/`.
+Aqui há uma lista dos daemons. Note que qualquer pacote pode fornecer um daemon, portanto, esta lista nunca será completa. Sinta-se livre para adicionar daemons nesta lista em ordem alfabética. Você pode ter pacotes que incluem daemons oriundos do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Estes arquivos possivelmente estão localizados em `/usr/lib/systemd/system/`.
 
 A coluna do *Pacote* contem um link para a Wiki relacionada daquele daemon(ou para o pacote onde ele está). A coluna *initscripts* denota o nome legado *rc.d* e a coluna *systemd* contem o nome do arquivo de serviço no [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). Note que alguns serviços podem ser específicos do systemd ou dos initscripts, e uma das colunas poderá estar vazia. Na coluna *Descrição* haverá uma pequena descrição preferivelmente do daemon e não de seu pacote correspondente.
 
 | Pacote | initscripts | systemd | Descrição |
 | [acpid](/index.php/Acpid "Acpid") | acpid | acpid.service | Um daemon para gerenciamento de eventos de energia através de ACPI com suporte ao netlink. |
-| [alsa](/index.php/Advanced_Linux_Sound_Architecture_(Portugu%C3%AAs) "Advanced Linux Sound Architecture (Português)") | alsa | *sempre ligados* – alsa-store.service, alsa-restore.service | Salva o estado de uma placa de som(ex: volume) durante o desligamento, e restaura na inicialização. |
+| [alsa](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)") | alsa | *sempre ligados* – alsa-store.service, alsa-restore.service | Salva o estado de uma placa de som(ex: volume) durante o desligamento, e restaura na inicialização. |
 | [at](https://www.archlinux.org/packages/?name=at) | atd | atd.service | Agenda tarefas para posterior execução. |
 | [Autofs](/index.php/Autofs "Autofs") | autofs | autofs.service | Montagem automática de mídias removíveis quando inseridas ou compartilhamentos de rede quando acessados. |
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Permite que programas encontrem automaticamente serviços na rede. |
 | avahi-dnsconfd | avahi-dnsconfd.service | Framework multicast/unicast DNS-SD. |
 | [Audit framework](/index.php/Audit_framework "Audit framework") | auditd | auditd.service | Framework de auditoria do Linux. |
-| [Bitlbee](/index.php/Bitlbee "Bitlbee") | bitlbee | bitlbee.service | Faz a ponte de mensageiros instantâneos diversos (XMPP, MSN, Yahoo!, AIM, ICQ, Twitter) para o IRC. |
+| [Bitlbee](/index.php/Bitlbee "Bitlbee") | bitlbee | bitlbee.service | Faz a ponte de mensageiros instantâneos diversos (XMPP, Yahoo!, ICQ, Twitter) para o IRC. |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | bluetooth | bluetooth.service | Protocolo, framework, pilha e subsistema Bluetooth. |
 | [Chrony](/index.php/Chrony "Chrony") | chrony | chrony.service | Cliente e servidor NTP leve. |
 | [CDemu](/index.php/CDemu "CDemu") | cdemud | cdemu-daemon.service | Emulador de CD/DVD-ROM. |
 | [ClamAV](/index.php/ClamAV_(Portugu%C3%AAs) "ClamAV (Português)") | clamav | clamd.service
 freshclamd.service | Anti-virus para Unix. |
 | [ConnMan](/index.php/ConnMan "ConnMan") | connmand | connman.service | Gerenciador de redes sem fio. |
-| [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Configura governador de [frequência de cpu](/index.php/Cpufreq "Cpufreq") e outros parâmetros de inicialização. |
+| [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Configura governador de [frequência de cpu](/index.php/Cpufreq_(Portugu%C3%AAs) "Cpufreq (Português)") e outros parâmetros de inicialização. |
  craftbukkit | craftbukkit.service | Servidor de Minecraft CraftBukkit . |
 | [Cron](/index.php/Cron "Cron") | crond | cronie.service (se usando [cronie](https://www.archlinux.org/packages/?name=cronie)) ou dcron.service (se usando [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon para agendamento de eventos baseados em horário. O nome *crond* é utilizado por pelo menos dois pacotes, [cronie](https://www.archlinux.org/packages/?name=cronie) e [dcron](https://aur.archlinux.org/packages/dcron/). |
 | [CUPS](/index.php/CUPS "CUPS") | cupsd | org.cups.cupsd.service | Daemon do serviço de impressão CUPS. |
@@ -39,7 +39,7 @@ freshclamd.service | Anti-virus para Unix. |
 | [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *não implementado* | Ferramenta para configuração de boot gráfico. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Sintetizador via software. |
 | [inetutils](https://www.archlinux.org/packages/?name=inetutils) | ftpd | ftpd.service | Daemon ftp do inetutils. |
-| [GDM](/index.php/GDM "GDM") | gdm | gdm.service | GNOME Display Manager. |
+| [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") | gdm | gdm.service | GNOME Display Manager. |
 | [Git](/index.php/Git "Git") | git-daemon | git-daemon.socket | Daemon Git. |
 | [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm | gpm.service | Habilita o mouse na console. |
 | [hddtemp](/index.php/Hddtemp "Hddtemp") | hddtemp | hddtemp.service | Monitor de temperatura de HDs. |
@@ -59,6 +59,11 @@ freshclamd.service | Anti-virus para Unix. |
 | [lighttpd](/index.php/Lighttpd "Lighttpd") | lighttpd | lighttpd.service | Lighttpd HTTP Server (Web Server). |
 | [libvirt](/index.php/Libvirt "Libvirt") | libvirt | libvirtd.service | API de virtualização e daemon para gerenciamento de máquinas virtuais. |
 | [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | LXDE Display Manager. |
+| [man-db](https://www.archlinux.org/packages/?name=man-db) |  ? | man-db.timer
+
+man-db.service
+
+ | Daily man-db cache update. |
  mdadm | mdadm.service | Administração do MD(tecnologia de raid via software para Linux). |
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | Servidor DLNA/UPnP simples. |
   ? | ModemManager.service | Torna internet móvel(3G) disponível para o [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)"). |
@@ -70,10 +75,10 @@ freshclamd.service | Anti-virus para Unix. |
  netctl-ifplugd@.service | Inicia automaticamente perfil de rede caso o cabo esteja plugado. |
  netctl-auto@.service | Inicia automaticamente perfis de rede sem fio caso haja uma rede na distância adequada. |
  network | dhcpcd@.service | Ativa conexões Ethernet dinamicamente. |
-| [NetworkManager](/index.php/NetworkManager "NetworkManager") | networkmanager | NetworkManager.service
+| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | networkmanager | NetworkManager.service
 NetworkManager-wait-online.service | Daemon que provê a configuração e conexão automática em redes conhecidas. |
 | [Nginx](/index.php/Nginx "Nginx") | nginx | nginx.service | Servidor HTTP, IMAP e POP3 Nginx(Web Server). |
- nscd | nscd.service | Serviço de cache de nomes(dns cache). |
+| [glibc](https://www.archlinux.org/packages/?name=glibc) | nscd | nscd.service | Serviço de cache de nomes(dns cache). |
 | [ntpd](/index.php/Ntpd "Ntpd") | ntpd | ntpd.service | Daemon NTP(Network Time Protocol). Cliente e servidor. |
 | [Ntop](/index.php/Ntop "Ntop") | ntop | ntop.service | Analisador de tráfego ntop, baseado na libpcap. |
 | [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") | openntpd | openntpd.service | Daemon alternativo NTP(Network Time Protocol). Cliente e servidor. |
@@ -91,14 +96,12 @@ NetworkManager-wait-online.service | Daemon que provê a configuração e conex�
 | [Prosody](/index.php/Prosody "Prosody") | prosody | prosody.service | Servidor XMPP. |
 | [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") | psd | psd.service | Mantém os temporários do navegador no tmpfs, e periodicamente efetua a sincronização com um disco. |
  pure-ftpd | pure-ftpd.servicecups.service | Servidor FTP rápido, de alta qualidade e que obedece aos padrões(standards-compliant). |
-| rfkill | rfkill | rfkill-block@.service
-rfkill-unblock@.service | Serviço de bloqueio e ativação de dispositivos que usam tecnologia a rádio(wireless, bluetooth, antenas...) |
 | [Rsync](/index.php/Rsync "Rsync") | rsyncd | rsyncd.service | Daemon rsync |
 | [Rsyslog](/index.php/Rsyslog "Rsyslog") | rsyslogd | rsyslog.service | Alternativa ao log de sistema. |
-| [redis](https://www.archlinux.org/packages/?name=redis) | redis-server | redis.service | Armazenamento de chaves. |
-| [samba](/index.php/Samba "Samba") | samba | smbd.service
-nmbd.service
-winbindd.service | Serviço de arquivos e impressão para redes Microsoft Windows. |
+| [Redis](/index.php/Redis "Redis") | redis-server | redis.service | Armazenamento de chaves. |
+| [samba](/index.php/Samba "Samba") | samba | smb.service
+nmb.service
+winbind.service | Serviço de arquivos e impressão para redes Microsoft Windows. |
 | [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
 lvm2-lvmetad.service
 lvm2-monitor.service
@@ -107,7 +110,12 @@ lvm2-pvscan.service | LVM é o sistema de gerenciamento de volumes lógicos do k
  saslauthd | saslauthd.service | Daemon de autenticação SASL. |
 | [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Daemon de coleta de informação de sensores. |
 | sensors | lm_sensors.service | Inicializador de sensores (carregamento dos módulos de Kernel necessários). |
-| [SLiM](/index.php/SLiM "SLiM") | slim | slim.service | Simple Login Manager. |
+| [shadow](https://www.archlinux.org/packages/?name=shadow) |  ? | shadow.timer
+
+shadow.service
+
+ | Verificação diária de arquivos de senha e grupo. |
+| [SLiM](/index.php/SLiM_(Portugu%C3%AAs) "SLiM (Português)") | slim | slim.service | Simple Login Manager. |
 | [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Self-Monitoring, Analysis, and Reporting Technology (S.M.A.R.T.). Tecnologia de monitoramento de discos. |
 | [smbnetfs](/index.php/Samba#smbnetfs "Samba") | smbnetfs | smbnetfs.service | Montador automático de compartilhamentos Windows. |
 | [snmpd](/index.php/Snmpd "Snmpd") | snmpd | snmpd.service | Suite de aplicações para fornecimento e recebimento de instruções codificadas no protocolo SNMP. |
@@ -123,7 +131,7 @@ lvm2-pvscan.service | LVM é o sistema de gerenciamento de volumes lógicos do k
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | Daemon BitTorrent. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |
 | [Urxvtd](/index.php/Urxvt "Urxvt") |  ? | urxvtd.service | Daemon urxvt. |
-| [VirtualBox](/index.php/VirtualBox "VirtualBox") | vboxservice | vboxservice.service | VirtualBox Guest Service. |
+| [VirtualBox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)") | vboxservice | vboxservice.service | VirtualBox Guest Service. |
 | [vnStat](/index.php/VnStat "VnStat") | vnstat | vnstat.service | Monitor leve de redes. |
 | [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") | vsftpd | vsftpd.service (permanent)
 

@@ -99,7 +99,7 @@ $ weston-image image1.jpg image2.jpg...
 
 ### 配置
 
-键盘布局，模块的选择，UI的修改的示例配置文件，请参阅[weston.ini(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5)
+键盘布局，模块的选择，UI的修改的示例配置文件，请参阅[weston.ini(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5)
 
  `~/.config/weston.ini` 
 ```

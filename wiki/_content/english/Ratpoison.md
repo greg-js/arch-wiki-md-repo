@@ -56,6 +56,14 @@ bind f exec firefox
 
 So, if you type `Ctrl+t` and then `f`, ratpoison will fire up Firefox.
 
+`Ctrl+t` is the default escape key, the key used to trigger ratpoison commands. To change the mapping of the escape key to the Windows key, use the following line in your `~/.ratpoisonrc`:
+
+```
+# Setting the escape key to the Windows key
+escape Super_L
+
+```
+
 Here is another .ratpoisonrc i'm using on my computers:
 
 ```

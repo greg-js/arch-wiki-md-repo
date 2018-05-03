@@ -1085,7 +1085,7 @@ Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_
 [install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --recheck
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --recheck
 
 ```
 

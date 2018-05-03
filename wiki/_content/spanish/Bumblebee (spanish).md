@@ -51,6 +51,8 @@ Antes de proceder a la instalación de Bunblebee compruebe su BIOS y active la o
 
 Varios paquetes están disponibles para una configuración completa:
 
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)"):
+
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - el paquete principal que proporciona el demonio y programas clientes.
 *   (opcional) [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (o [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms)) - recomendado para ahorrar energía desactivando la tarjeta Nvidia.
 *   (opcional) Si quiere algo más que un simple ahorro de energía, es decir procesar programas con la tarjeta Nvidia dedicada, también es necesario:

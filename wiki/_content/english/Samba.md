@@ -223,9 +223,9 @@ Where the options are `-b` (`--broadcast`) to use broadcast instead of using the
 
 ### NetBIOS/WINS host names
 
-You may need to start *winbindd* in order to resolve host names with e.g., mount.cifs
+You may need to [start](/index.php/Start "Start") `winbind.service` in order to resolve host names with e.g., `mount.cifs`
 
-The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add “wins” to the “hosts” line in /etc/nsswitch.conf.
+The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add `wins` to the “hosts” line in `/etc/nsswitch.conf`.
 
 ### Manual mounting
 

@@ -128,7 +128,7 @@ nametrans = lambda folder: re.sub('^Sent$',   '[Gmail].Sent Mail',
 
 **Warning:** Please note that any space indenting a line of code in `~/.offlineimaprc` would be considered as appending that line to the previous line. In other words, always make sure there is no space before any lines in your config file.
 
-See [OfflineIMAP#Running_offlineimap_in_the_background](/index.php/OfflineIMAP#Running_offlineimap_in_the_background "OfflineIMAP") to configure OfflineIMAP for work in the background.
+See [OfflineIMAP#Running offlineimap in the background](/index.php/OfflineIMAP#Running_offlineimap_in_the_background "OfflineIMAP") to configure OfflineIMAP for work in the background.
 
 ### Evolution setup for offlineimap's maildir
 

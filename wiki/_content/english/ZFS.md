@@ -58,10 +58,11 @@ As a result:
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
     *   [7.3 Does not contain an EFI label](#Does_not_contain_an_EFI_label)
     *   [7.4 No hostid found](#No_hostid_found)
-    *   [7.5 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
-        *   [7.5.1 Unexported pool](#Unexported_pool)
-        *   [7.5.2 Incorrect hostid](#Incorrect_hostid)
-    *   [7.6 Devices have different sector alignment](#Devices_have_different_sector_alignment)
+    *   [7.5 Pool can't be found while booting from SAS/SCSI devices](#Pool_can.27t_be_found_while_booting_from_SAS.2FSCSI_devices)
+    *   [7.6 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
+        *   [7.6.1 Unexported pool](#Unexported_pool)
+        *   [7.6.2 Incorrect hostid](#Incorrect_hostid)
+    *   [7.7 Devices have different sector alignment](#Devices_have_different_sector_alignment)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
     *   [8.2 Encryption in ZFS using dm-crypt](#Encryption_in_ZFS_using_dm-crypt)
@@ -771,6 +772,23 @@ The other solution is to make sure that there is a hostid in `/etc/hostid`, and 
 # mkinitcpio -p linux
 
 ```
+
+### Pool can't be found while booting from SAS/SCSI devices
+
+In case you're booting a SAS/SCSI based, you might occassionally get boot problems where the pool you're trying to boot from can't be found. A likely reason for this is that your devices are initialized too late into the process. That means that zfs can't find any devices at the time when it tries to assemble your pool.
+
+In this case you should force the scsi driver to wait for devices to come online before continuing. You can do this by putting this into `/etc/modprobe.d/zfs.conf`:
+
+ `/etc/modprobe.d/zfs.conf`  `options scsi_mod scan=sync` 
+
+Afterwards, rebuild your initramfs:
+
+```
+# mkinitcpio -p linux
+
+```
+
+This works because the zfs hook will copy the file at `/etc/modprobe.d/zfs.conf` into the initcpio which will then be used at build time.
 
 ### On boot the zfs pool does not mount stating: "pool may be in use from other system"
 

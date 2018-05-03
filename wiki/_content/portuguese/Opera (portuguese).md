@@ -43,9 +43,9 @@ Opera continua a inovar com o seu cliente de email integrado, de um clique bookm
 
 ## Instalação
 
-O navegador Opera pode ser [instalado](/index.php/Pacman "Pacman") através do pacote [opera](https://www.archlinux.org/packages/?name=opera), disponível nos [repositórios oficiais](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)").
+O navegador Opera pode ser [instalado](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") através do pacote [opera](https://www.archlinux.org/packages/?name=opera), disponível nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
-Versões em desenvolvimento podem ser encontradas no [AUR](/index.php/AUR "AUR"):
+Versões em desenvolvimento podem ser encontradas no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"):
 
 *   [opera-beta](https://aur.archlinux.org/packages/opera-beta/) - Uma versão beta.
 
@@ -63,7 +63,7 @@ Veja o principal artigo: [Browser plugins#Java (IcedTea)](/index.php/Browser_plu
 
 ### Adblock
 
-O suporte ao Adblock pode ser instalado usando o pacote [opera-adblock-complete](https://aur.archlinux.org/packages/opera-adblock-complete/) disponível no [AUR](/index.php/AUR "AUR").
+O suporte ao Adblock pode ser instalado usando o pacote [opera-adblock-complete](https://aur.archlinux.org/packages/opera-adblock-complete/) disponível no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
 ## Ajustes de performance
 
@@ -182,7 +182,7 @@ Opera tem suporte nativo para guias em modo cascata e lado a lado. Botões aprop
 
 Fontes de texto pode ser configuradas em *Configurações > Preferências... > Avançado > Fontes*.
 
-Se o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) foi instalado antes de executar o Opera pela primeira vez, por padrão o Opera irá usar estas fontes de texto, independentemente do que é especificado nas opções locais do GTK+ pelo gerenciamento de fontes do [GNOME](/index.php/GNOME "GNOME") ou do [KDE](/index.php/KDE "KDE"). Para fazer com que as instalações existentes do Opera usem as opções definidas pelo seu sistema:
+Se o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) foi instalado antes de executar o Opera pela primeira vez, por padrão o Opera irá usar estas fontes de texto, independentemente do que é especificado nas opções locais do GTK+ pelo gerenciamento de fontes do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou do [KDE](/index.php/KDE "KDE"). Para fazer com que as instalações existentes do Opera usem as opções definidas pelo seu sistema:
 
 *   Feche todas as instancias do Opera.
 *   Des-instale o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).

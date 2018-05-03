@@ -121,7 +121,7 @@ ACTION=="add", SUBSYSTEM=="net", NAME=="enp*", RUN+="/usr/bin/ethtool -s $name w
 
 The `$name` placeholder will be replaced by the value of the `NAME` variable for the matched device.
 
-**Note:** The name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Network_interfaces "Network configuration") in systemd v197, it is important that the rules matching a specific network interface are named lexicographically after `80-net-name-slot.rules`, so that they are applied after the devices gain the persistent names.
+**Note:** The name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Network_interface "Network configuration") in systemd v197, it is important that the rules matching a specific network interface are named lexicographically after `80-net-name-slot.rules`, so that they are applied after the devices gain the persistent names.
 
 **Warning:** [udev](/index.php/Udev "Udev") will match the device as soon it becomes available, be this in the [initramfs](/index.php/Initramfs "Initramfs") (before the switch_root) or the main system. The order is not deterministic; there is no guarantee. Be sure that your initramfs includes the necessary udev rules (from `/etc/udev/rules.d`) and supporting binaries (`/usr/bin/ethtool`).
 

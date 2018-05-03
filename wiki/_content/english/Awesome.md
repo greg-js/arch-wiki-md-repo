@@ -487,7 +487,7 @@ From the linked Reddit comment:
 
 For those still interested in it's content: [https://github.com/gutierri/awesomewm-wiki-dump/tree/master/markdown](https://github.com/gutierri/awesomewm-wiki-dump/tree/master/markdown) has a partial markdown conversion of the old wiki (and the raw dump in xml format too).
 
-[Here](https://github.com/gutierri/awesomewm-wiki-dump/blob/master/markdown/Acpitools-based_battery_widget.md) is the only Battery widget from the partial wiki. It is based on [ACPI](https://wiki.archlinux.org/index.php/ACPI_modules) and written for version 3.5\. I am not reproducing it here b/c there may be additional steps to get it working.
+[Here](https://github.com/gutierri/awesomewm-wiki-dump/blob/master/markdown/Acpitools-based_battery_widget.md) is the only Battery widget from the partial wiki. It is based on [ACPI](/index.php/ACPI_modules "ACPI modules") and written for version 3.5\. I am not reproducing it here b/c there may be additional steps to get it working.
 
 **NOTE: This partial wiki only covers versions up to 3.x**
 

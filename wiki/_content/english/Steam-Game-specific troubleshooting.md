@@ -1825,7 +1825,12 @@ See the KNOWN ISSUES & WORKAROUNDS​ section of the [release announcement](http
 
 #### Game does not start
 
-This happens because of an incompatibility with the newer version of `lib32-curl`. To fix the problem you need to remove `libcurl.so.4` from the game directory.
+This happens because of an incompatibility with the newer version of `lib32-curl`. To fix the problem , set your [launch options](/index.php/Launch_option "Launch option") to:
+
+```
+ LD_PRELOAD=./libcurl.so.4 %command%
+
+```
 
 #### Sound glitches with Steam native
 

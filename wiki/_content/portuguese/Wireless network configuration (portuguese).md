@@ -92,7 +92,7 @@ A configuração de rede sem fio *(wireless)* é um processo de duas partes. A p
 
 O kernel padrão do Arch Linux é *modular*, o que significa que muitos dos drivers para hardware de máquina residem no disco rígido e estão disponíveis como [módulos](/index.php/Kernel_modules "Kernel modules"). Na inicialização, o [udev](/index.php/Udev "Udev") faz um inventário do seu hardware e carrega os módulos (drivers) apropriados para o hardware correspondente, o que, por sua vez, permite a criação de uma *interface* de rede.
 
-Alguns chipsets sem fio também exigem firmware, além de um driver correspondente. Muitas imagens de firmware são fornecidas pelo pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que é instalado por padrão, no entanto, as imagens de firmware proprietárias não são incluídas e devem ser instaladas separadamente. Isso é descrito em [#Instalando driver/firmware](#Instalando_driver.2Ffirmware).
+Alguns chipsets sem fio também exigem firmware, além de um driver correspondente. Muitas imagens de firmware são fornecidas pelo pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que é instalado por padrão, no entanto, as imagens de firmware proprietárias não são incluídas e devem ser instaladas separadamente. Isso é descrito em [#Instalar driver/firmware](#Instalar_driver.2Ffirmware).
 
 **Nota:** Se o módulo apropriado não for carregado pelo udev na inicialização, basta [carregá-lo manualmente](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Se o udev carrega mais de um driver para um dispositivo, o conflito resultante pode impedir a configuração seja bem-sucedida. Certifique-se de [colocar na lista negra](/index.php/Blacklist "Blacklist") o módulo indesejado.
 
@@ -113,7 +113,7 @@ Para verificar se o driver da placa foi carregado, verifique a saída do comando
 
 **Nota:** Se a placa for um dispositivo USB, a execução `dmesg | grep usbcore` deve retornar algo como `usbcore: registered new interface driver rtl8187` como saída.
 
-Verifique também a saída do comando `ip link` para ver se uma interface sem fio ([geralmente](/index.php/Configura%C3%A7%C3%A3o_de_rede#Interfaces_de_rede "Configuração de rede") começa com a letra "w", por exemplo, `wlp2s1`) foi criada. Em seguida, ative a interface com `ip link set *interface* up`. Por exemplo, supondo que a interface seja `wlan0`:
+Verifique também a saída do comando `ip link` para ver se uma interface sem fio ([geralmente](/index.php/Configura%C3%A7%C3%A3o_de_rede#Interface_de_rede "Configuração de rede") começa com a letra "w", por exemplo, `wlp2s1`) foi criada. Em seguida, ative a interface com `ip link set *interface* up`. Por exemplo, supondo que a interface seja `wlan0`:
 
 ```
 # ip link set wlan0 up
@@ -271,26 +271,26 @@ Os pontos importantes para verificar são:
 
 #### Definir o modo de operação
 
-You might need to set the proper operating mode of the wireless card. More specifically, if you are going to connect an [ad-hoc network](/index.php/Ad-hoc_networking "Ad-hoc networking"), you need to set the operating mode to `ibss`:
+Pode ser necessário definir o modo de operação adequado da placa sem fio. Mais especificamente, se você for conectar uma [rede ad-hoc](/index.php/Ad-hoc_networking "Ad-hoc networking"), você precisa definir o modo de operação para `ibss`:
 
 ```
 # iw dev *interface* set type ibss
 
 ```
 
-**Note:** Changing the operating mode on some cards might require the wireless interface to be *down* (`ip link set *interface* down`).
+**Nota:** A mudança do modo de operação em algumas placas pode exibir que a interface sem fio esteja *desativada* (`ip link set *interface* down`).
 
 #### Conectar a um ponto de acesso
 
-Depending on the encryption, you need to associate your wireless device with the access point to use and pass the encryption key:
+Dependendo da criptografia, você precisa associar seu dispositivo sem fio ao ponto de acesso para usar e transmitir a chave de criptografia:
 
-*   **No encryption** `# iw dev *interface* connect "*your_essid*"` 
+*   **Nenhuma criptografia** `# iw dev *interface* connect "*seu_essid*"` 
 *   **WEP**
-    *   using a hexadecimal or ASCII key (the format is distinguished automatically, because a WEP key has a fixed length): `# iw dev *interface* connect "*your_essid*" key 0:*your_key*` 
-    *   using a hexadecimal or ASCII key, specifying the third set up key as default (keys are counted from zero, four are possible): `# iw dev *interface* connect "*your_essid*" key d:2:*your_key*` 
-*   **WPA/WPA2** - See [WPA supplicant#Connecting with wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant").
+    *   usando uma chave hexadecimal ou ASCII (o formato é diferenciado automaticamente porque uma chave WEP tem um tamanho fixo): `# iw dev *interface* connect "*seu_essid*" key 0:*sua_chave*` 
+    *   usando uma chave hexadecimal ou ASCII, especificando a terceira chave de configuração como padrão (as chaves são contadas a partir de zero, quatro são possíveis): `# iw dev *interface* connect "*sua_essid*" key d:2:*sua_chave*` 
+*   **WPA/WPA2** - Veja [WPA supplicant#Connecting with wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant").
 
-Regardless of the method used, you can check if you have associated successfully:
+Independentemente do método usado, você pode verificar se você conseguiu se associar com sucesso:
 
 ```
 # iw dev *interface* link
@@ -299,11 +299,11 @@ Regardless of the method used, you can check if you have associated successfully
 
 #### Obter um endereço IP
 
-Follow the instructions in [Network configuration#Manual assignment](/index.php/Network_configuration#Manual_assignment "Network configuration") for more information on the following examples.
+Siga as instruções em [Configuração de rede#Atribuição manual](/index.php/Configura%C3%A7%C3%A3o_de_rede#Atribui.C3.A7.C3.A3o_manual "Configuração de rede") para mais informações nos exemplos a seguir.
 
 ##### Exemplo
 
-Here is a complete example of setting up a wireless network with WPA supplicant and DHCP.
+Aqui está um exemplo completo de configuração de uma rede sem fio com o suplicante WPA e o DHCP.
 
 ```
 # ip link set dev wlan0 up
@@ -312,14 +312,14 @@ Here is a complete example of setting up a wireless network with WPA supplicant 
 
 ```
 
-And then to close the connection, you can simply disable the interface:
+E então, para fechar a conexão, você pode simplesmente desabilitar a interface:
 
 ```
 # ip link set dev wlan0 down
 
 ```
 
-For a static IP, you would replace the *dhcpcd* invocation with
+Para um IP estático, você substituiria a chamada *dhcpcd* por
 
 ```
 # ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlan0
@@ -327,7 +327,7 @@ For a static IP, you would replace the *dhcpcd* invocation with
 
 ```
 
-And before disabling the interface you would first flush the IP address and gateway:
+E antes de desabilitar a interface, você deve primeiro liberar o endereço IP e o gateway:
 
 ```
 # ip addr flush dev wlan0
@@ -337,75 +337,77 @@ And before disabling the interface you would first flush the IP address and gate
 
 ### Configuração automática
 
-There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously. The following table compares the different connection managers, additional notes are in subsections below.
+Existem muitas soluções para escolher, mas lembre-se de que todas elas são mutuamente exclusivas; você não deve executar dois daemons simultaneamente. A tabela a seguir compara os diferentes gerenciadores de conexões, as notas adicionais estão nas subseções abaixo.
 
-| Connection manager | Network
-profiles
-support | Roaming
-(auto connect dropped
-or changed location) | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
-(e.g. 3G modem) | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Official
-GUI | Console tools | Systemd units |
-| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | Yes | Yes | No | No | `connmanctl` | `connman.service` |
-| [netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | No | `netctl`,`wifi-menu` | `netctl-auto@*interface*.service` |
-| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | No | Yes | `nmcli`,`nmtui` | `NetworkManager.service` |
-| [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | No | Yes | `wicd-curses` | `wicd.service` |
-| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes | Yes | No | No | Yes | `wifi-radar` |
+| Gerenciador
+de rede | Suporte
+a perfis
+de rede | Roaming
+(autoconexão de localização
+descartada ou alterada) | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Protocolo_Ponto-a-Ponto "wikipedia:pt:Protocolo Ponto-a-Ponto")
+(ex., modem 3G) | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | GUI
+oficial | Ferramentas
+de console | Units de sistemd |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Sim | Sim | Sim | Não | Não | `connmanctl` | `connman.service` |
+| [netctl](/index.php/Netctl "Netctl") | Sim | Sim | Sim | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | Não | `netctl`,`wifi-menu` | `netctl-auto@*interface*.service` |
+| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Sim | Sim | Não | Sim | `nmcli`,`nmtui` | `NetworkManager.service` |
+| [Wicd](/index.php/Wicd "Wicd") | Sim | Sim | Não | Não | Sim | `wicd-curses` | `wicd.service` |
+| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Sim | Sim | Não | Não | Sim | `wifi-radar` |
 
-See also [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet").
+Veja também [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet").
 
 ## WPA2 Empresarial
 
-*WPA2 Enterprise* is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
+Do inglês *WPA2 Enterprise*, é um modo de [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/pt:Wi-Fi_Protected_Access "wikipedia:pt:Wi-Fi Protected Access"). Ele oferece melhor segurança e gerenciamento de chaves do que o *WPA2 Pessoal* *(WPA2 Personal)* e suporta outras funcionalidades do tipo corporativo, como VLANs e [NAP](https://en.wikipedia.org/wiki/pt:Prote%C3%A7%C3%A3o_de_Acesso_%C3%A0_Rede "wikipedia:pt:Proteção de Acesso à Rede"). No entanto, é necessário um servidor de autenticação externo, chamado servidor [RADIUS](https://en.wikipedia.org/wiki/pt:RADIUS "wikipedia:pt:RADIUS") para lidar com a autenticação de usuários. Isso está em contraste com o modo Pessoal, que não exige nada além do roteador sem fio ou pontos de acesso (APs) e usa uma única senha ou senha para todos os usuários.
 
-The Enterprise mode enables users to log onto the Wi-Fi network with a username and password and/or a digital certificate. Since each user has a dynamic and unique encryption key, it also helps to prevent user-to-user snooping on the wireless network, and improves encryption strength.
+O modo Empresarial permite que os usuários façam logon na rede Wi-Fi com um nome de usuário e senha e/ou um certificado digital. Como cada usuário tem uma chave de criptografia única e dinâmica, ele também ajuda a evitar a espionagem usuário a usuário na rede sem fio e melhora a força da criptografia.
 
-This section describes the configuration of [network clients](/index.php/List_of_applications#Network_managers "List of applications") to connect to a wireless access point with WPA2 Enterprise mode. See [Software access point#RADIUS](/index.php/Software_access_point#RADIUS "Software access point") for information on setting up an access point itself.
+Esta seção descreve a configuração da [clientes de rede](/index.php/List_of_applications#Network_managers "List of applications") para se conectar a um ponto de acesso sem fio com o modo WPA2 Empresarial. Consulte [Software access point#RADIUS](/index.php/Software_access_point#RADIUS "Software access point") para obter informações sobre como configurar um próprio ponto de acesso.
 
-**Note:** Enterprise mode requires a more complex client configuration, whereas Personal mode only requires entering a passphrase when prompted. Clients likely need to install the server’s CA certificate (plus per-user certificates if using EAP-TLS), and then manually configure the wireless security and 802.1X authentication settings.
+**Nota:** O modo Empresarial requer uma configuração de cliente mais complexa, enquanto o modo Pessoal requer apenas a inserção de uma senha quando solicitado. É provável que os clientes precisem instalar o certificado de AC do servidor (mais certificados por usuário se usar EAP-TLS) e, em seguida, configurar manualmente a segurança sem fio e as configurações de autenticação 802.1X.
 
-For a comparison of protocols see the following [table](http://deployingradius.com/documents/protocols/compatibility.html).
+Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingradius.com/documents/protocols/compatibility.html).
 
-**Warning:** It is possible to use WPA2 Enterprise without the client checking the server CA certificate. However, you should always seek to do so, because without authenticating the access point the connection can be subject to a man-in-the-middle attack. This may happen because while the connection handshake itself may be encrypted, the most widely used setups transmit the password itself either in plain text or the easily breakable [#MS-CHAPv2](#MS-CHAPv2). Hence, the client might send the password to a malicious access point which then proxies the connection.
+**Atenção:** É possível usar o WPA2 Empresarial sem que o cliente verifique o certificado de AC do servidor. No entanto, você deve sempre procurar fazê-lo, porque sem autenticar o ponto de acesso, a conexão pode estar sujeita a um ataque *man-in-the-middle*. Isso pode acontecer porque, embora o handshake de conexão em si possa ser criptografado, as configurações mais usadas transmitem a própria senha em texto simples ou no modo facilmente quebrável [#MS-CHAPv2](#MS-CHAPv2). Portanto, o cliente pode enviar a senha para um ponto de acesso mal-intencionado que, então, faz o proxy da conexão.
 
 ### eduroam
 
-[eduroam](https://en.wikipedia.org/wiki/eduroam "wikipedia:eduroam") is an international roaming service for users in research, higher education and further education, based on WPA2 Enterprise.
+[Eduroam](https://en.wikipedia.org/wiki/pt:eduroam "wikipedia:pt:eduroam") (acrônimo em inglês para *education roaming*) é uma rede de serviços internacional de roaming para os usuários em pesquisa no ensino superior e cursos subsequentes, baseado em WPA2 Empresarial.
 
-**Note:**
+**Nota:**
 
-*   Check connection details **first** with your institution before applying any profiles listed in this section. Example profiles are not guaranteed to work or match any security requirements.
-*   When storing connection profiles unencrypted, it is recommended restrict read access to the root account by specifying `chmod 600 *profile*` as root.
+*   Verifique os detalhes da conexão **primeiro** com sua instituição antes de aplicar os perfis listados nesta seção. Não é garantido que os perfis de exemplo funcionem ou correspondam a quaisquer requisitos de segurança.
+*   Ao armazenar os perfis de conexão não criptografados, recomenda-se restringir o acesso de leitura à conta root, especificando `chmod 600 *perfil*` como root.
 
-**Tip:** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") and [#wpa_supplicant](#wpa_supplicant) can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
+**Dica:** A configuração para o [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") e [#wpa_supplicant](#wpa_supplicant) podem ser geradas com a [ferramenta assistente de configuração (CAT) do eduroam](https://cat.eduroam.org/) .
 
 ### Configuração manual/automática
 
 #### wpa_supplicant
 
-[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly and used in combination with a DHCP client or with systemd. See the examples in `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
+[Suplicante de WPA](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") pode ser configurado diretamente e usado em combinação com um cliente DHCP ou com systemd. Veja os exemplos em `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` para configurar os detalhes de conexão.
 
 #### NetworkManager
 
-[NetworkManager](/index.php/NetworkManager "NetworkManager") can generate WPA2 Enterprise profiles with [graphical front ends](/index.php/NetworkManager#Front-ends "NetworkManager"). *nmcli* and *nmtui* do not support this, but may use existing profiles.
+[NetworkManager (Português)](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") pode gerar perfis de WPA2 Empresarial com [frontends gráficos](/index.php/NetworkManager_(Portugu%C3%AAs)#Front-ends "NetworkManager (Português)"). *nmcli* e *nmtui* não oferecem suporte a isso, mas podem usar perfis existentes.
 
 #### connman
 
-[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan") for details.
+[ConnMan](/index.php/ConnMan "ConnMan") precisa de um arquivo de configuração separado antes de [se conectar](/index.php/ConnMan#Wi-Fi "ConnMan") à rede. Veja [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) e [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan") para detalhes.
 
 #### netctl
 
-[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for details.
+[netctl](/index.php/Netctl "Netctl") possui suporte a configuração de [#wpa_supplicant](#wpa_supplicant) por meio de blocos inclusos com `WPAConfigSection=`. Veja [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) para detalhes.
 
-**Warning:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
+**Atenção:** Regras de uso especial de aspas se aplicam: veja a seção `*SPECIAL QUOTING RULES*` em [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 
-**Tip:** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
+**Dica:** Certificados personalizados podem ser especificados adicionando a linha `'ca_cert="/caminho/para/o/ceritficado.cer"'` em `WPAConfigSection`.
 
 ### Solução de problemas
 
 #### MS-CHAPv2
 
-WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[2]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[3]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
+As redes sem fio WPA2 Empresarial que exigem autenticação tipo 2 de MSCHAPv2 com PEAP às vezes exigem [pptpclient](https://www.archlinux.org/packages/?name=pptpclient), além do pacote [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl "Netctl") parece funcionar facilmente sem ppp-mppe, no entanto. Em ambos os casos, o uso de MSCHAPv2 é desencorajado, pois é altamente vulnerável, embora o uso de outro método geralmente não seja uma opção. Veja também [[2]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) e [.pdf](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise).
 
 ## Dicas e truques
 
@@ -513,7 +515,7 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
 
-See also [[4]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
+See also [[3]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
 
 ### Observando os logs
 
@@ -591,7 +593,7 @@ Packet fragmentation improves throughput by splitting up packets with size excee
 
 #### Causa nº.1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[5]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[4]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
@@ -668,7 +670,7 @@ New chipset as of 2014, released under their new commercial name Mediatek. It is
 
 ### Realtek
 
-See [[7]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
+See [[6]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
 
 #### rtl8192cu
 
@@ -688,7 +690,7 @@ or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[8]](https://bbs.archlinux.org/viewtopic.php?id=208472)
+If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[7]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
@@ -799,7 +801,7 @@ If you have problems connecting to networks in general, random failures with you
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
-If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
+If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
 
 #### iwlwifi
 
@@ -813,7 +815,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[11]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[12]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[10]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[11]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
@@ -821,7 +823,7 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 ##### Coexistência com Bluetooth
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[13]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -880,7 +882,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[14]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[13]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

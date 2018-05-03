@@ -56,7 +56,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   **[XDM](/index.php/XDM "XDM")** — Gerenciador de exibição X com suporte a XDMCP, seletor de host.
+*   **[XDM](/index.php/XDM_(Portugu%C3%AAs) "XDM (Português)")** — Gerenciador de exibição X com suporte a XDMCP, seletor de host.
 
 	[xdm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdm.1) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
 

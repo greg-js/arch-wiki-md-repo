@@ -331,7 +331,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema | `2013-09` |
 | [SysVinit (Español)](/index.php/SysVinit_(Espa%C3%B1ol) "SysVinit (Español)") | Proceso de arranque | `2013-09` |
 | [Taking a screenshot (Español)](/index.php/Taking_a_screenshot_(Espa%C3%B1ol) "Taking a screenshot (Español)") | Captura de pantalla | `2011-10` |
-| [Telnet (Español)](/index.php/Telnet_(Espa%C3%B1ol) "Telnet (Español)") | Protocolo de red | `2011-08` | Página muy breve, sin embargo no está traducida, tan solo el título y los encabezados |
+| [Telnet (Español)](/index.php/Telnet_(Espa%C3%B1ol) "Telnet (Español)") | Protocolo de red | `2018-04` |
 | [Terminal as a Transparent Wallpaper (Español)](/index.php/Terminal_as_a_Transparent_Wallpaper_(Espa%C3%B1ol) "Terminal as a Transparent Wallpaper (Español)") | Personalización escritorio | `2008-07` |
 | [ThinkFinger (Español)](/index.php/ThinkFinger_(Espa%C3%B1ol) "ThinkFinger (Español)") | Controlador para lector de huellas digitales | `2007-08` |
 | [Thunar (Español)](/index.php/Thunar_(Espa%C3%B1ol) "Thunar (Español)") | Gestor de archivos | `2013-09` |

@@ -1,6 +1,6 @@
 **Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2017-01-11**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=463062).
 
-Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)").
+Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Ayuda:Leer la wiki](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)").
 
 Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas; vea [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) están disponibles.
 
@@ -89,7 +89,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Montar los sistemas de archivos
 
-*   El siguiente paso es [montar](/index.php/File_systems#Mount_a_filesystem "File systems") la partición del sistema —root— en `/mnt`, por ejemplo: `# mount /dev/*sda1* /mnt` 
+*   El siguiente paso es [montar](/index.php/File_systems#Mount_a_file_system "File systems") la partición del sistema —root— en `/mnt`, por ejemplo: `# mount /dev/*sda1* /mnt` 
 
 *   Después de esto, hay que crear tantos directorios como particiones haya realizado y montarlas, por ejemplo: `# mkdir /mnt/boot`  `# mount /dev/sda2 /mnt/boot` 
 
@@ -111,7 +111,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Este grupo de paquetes no incluye todas las herramientas disponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware de wireless específicas ; consulte [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) para ver la comparación.
 
-*   Para [instalar](/index.php/Install "Install") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por espacios) o, posteriormente a la etapa de [#Chroot](#Chroot), con órdenes individuales con [pacman](/index.php/Pacman "Pacman").
+*   Para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por espacios) o, posteriormente a la etapa de [#Chroot](#Chroot), con órdenes individuales con [pacman](/index.php/Pacman "Pacman").
 
 ## Configuración del sistema
 
@@ -169,7 +169,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Configuración de la conexión de red
 
-*   Configure la red de nuevo para el entorno recién instalado: consulte [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
+*   Configure la red de nuevo para el entorno recién instalado: consulte [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 
 *   Para la [configuración de la red inalámbrica](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Install "Install") los paquetes [iw](https://www.archlinux.org/packages/?name=iw) y [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) y, si se diera el caso, los [paquetes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Opcionalmente instalar [dialog](https://www.archlinux.org/packages/?name=dialog) para uso del *menú-wifi*.
 
@@ -187,7 +187,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Consulte [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") para conocer las opciones y configuraciones disponibles. Por ejemplo, configure el gestor de arranque con [systemd-boot](/index.php/Systemd-boot "Systemd-boot") si el sistema es compatible con UEFI, y [GRUB](/index.php/GRUB "GRUB") cuando no.
 
-*   Si tiene una CPU Intel, además de instalar un gestor de arranque, instale el paquete [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) y [active las actualizaciones del microcódigo](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+*   Si tiene una CPU Intel, además de instalar un gestor de arranque, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) y [active las actualizaciones del microcódigo](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 
 ## Reiniciar
 
@@ -199,6 +199,6 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ## Posinstalación
 
-*   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones de cómo gestionar el sistema y tutoriales sobre qué hacer después de la instalación del sistema base (o temas relativos a la instalación, configuración de la interfaz gráfica de usuario, sonido o panel táctil).
+*   Vea el artículo [recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones de cómo gestionar el sistema y tutoriales sobre qué hacer después de la instalación del sistema base (o temas relativos a la instalación, configuración de la interfaz gráfica de usuario, sonido o panel táctil).
 
 *   Para obtener una lista de las aplicaciones que pueden ser de su interés, consulte [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)").

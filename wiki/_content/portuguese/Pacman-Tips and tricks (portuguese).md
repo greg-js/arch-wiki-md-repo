@@ -3,7 +3,7 @@ Artigos relacionados
 *   [Espelhos](/index.php/Espelhos "Espelhos")
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
 
-Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *pacman* em si, veja [Core utilities](/index.php/Core_utilities "Core utilities") e [Bash](/index.php/Bash "Bash").
+Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *pacman* em si, veja [Utilitários principais](/index.php/Utilit%C3%A1rios_principais "Utilitários principais") e [Bash](/index.php/Bash "Bash").
 
 ## Contents
 

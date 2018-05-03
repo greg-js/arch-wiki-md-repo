@@ -56,7 +56,7 @@ Before installing, disable Secure Boot in BIOS. The BIOS can be accessed by pres
 
 ### Battery Conservation Mode
 
-Lenovo laptops come with a battery controller setting called "Battery Conservation Mode", which shifts the usual loading thresholds from 95/100% to 55/60% to reduce battery degradation. To enable this, install the [acpi_call](https://www.archlinux.org/packages/community/x86_64/acpi_call/) package. The mode is enabled with:
+Lenovo laptops come with a battery controller setting called "Battery Conservation Mode", which shifts the usual loading thresholds from 95/100% to 55/60% to reduce battery degradation. To enable this, install the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) package. The mode is enabled with:
 
 ```
 $ echo '\_SB.PCI0.LPCB.EC0.VPC0.SBMC 3' | sudo tee /proc/acpi/call

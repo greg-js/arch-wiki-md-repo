@@ -38,7 +38,7 @@
 
 	مقالة تشرح طرق مختلفة يمكن من خلالها الفرد المساهمة في مجتمع مشروع آرتش.
 
-	[مجتمعات عالميّة](/index.php?title=International_communities_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "International communities (العربية) (page does not exist)")
+	[مجتمعات عالميّة](/index.php/International_communities_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "International communities (العربية)")
 
 	مجموعة من الوصلات لمواقع مجتمعات آرتشيّة حول العالم.
 

@@ -140,7 +140,7 @@ Be sure the correct modules are blacklisted and occasionally it may be necessary
 
 ### Interfaces swapped with broadcom-wl
 
-Users of the broadcom-wl driver may find their Ethernet and Wi-Fi interfaces have been swapped. See [Network configuration#Network interfaces](/index.php/Network_configuration#Network_interfaces "Network configuration") for an answer.
+Users of the broadcom-wl driver may find their Ethernet and Wi-Fi interfaces have been swapped. See [Network configuration#Network interface](/index.php/Network_configuration#Network_interface "Network configuration") for an answer.
 
 ### Interface is showing but not allowing connections
 

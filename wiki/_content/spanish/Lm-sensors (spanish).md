@@ -37,7 +37,7 @@ initrd          /boot/kernel26.img
 
 ### Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete de sensores [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) desde los repositorios oficiales.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 
 ### Configurando lm_sensors
 

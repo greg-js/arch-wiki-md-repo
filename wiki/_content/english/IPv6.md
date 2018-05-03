@@ -127,7 +127,7 @@ net.ipv6.conf.*nicN*.use_tempaddr = 2
 
 ```
 
-Where `nic0` to `nicN` are your **N**etwork **I**nterface **C**ards. You can find their names using the instructions in [Network configuration#Get current interface names](/index.php/Network_configuration#Get_current_interface_names "Network configuration"). The `all.use_tempaddr` or `default.use_tempaddr` parameters are not applied to nic's that already exist when the [sysctl](/index.php/Sysctl "Sysctl") settings are executed.
+Where `nic0` to `nicN` are your **N**etwork **I**nterface **C**ards. You can find their names using the instructions in [Network configuration#Listing network interfaces](/index.php/Network_configuration#Listing_network_interfaces "Network configuration"). The `all.use_tempaddr` or `default.use_tempaddr` parameters are not applied to nic's that already exist when the [sysctl](/index.php/Sysctl "Sysctl") settings are executed.
 
 After a reboot, at the latest, Privacy Extensions should be enabled.
 

@@ -150,8 +150,8 @@ $ flatpak uninstall *name*
 Flatpak expects window managers to respect the XDG_DATA_DIRS environment variable to discover applications. This may require restarting the session or the launcher may not support this. In such a case where you can edit the list of directories scanned, add these to it:
 
 ```
-~/.local/share/flatpak/exports/applications
-/var/lib/flatpak/exports/applications
+~/.local/share/flatpak/exports/share/applications
+/var/lib/flatpak/exports/share/applications
 
 ```
 
