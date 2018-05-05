@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2016-04-01**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=423847).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2018-05-03**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=423847).
 
 Arch Linux es una distribución GNU/Linux independiente, de propósito general, desarrollada para x86-64\. Se esfuerza en ofrecer las últimas versiones estables de la mayoría del software, siguiendo un modelo rolling-release (lanzamiento continuo). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
 
@@ -13,7 +13,11 @@ Arch Linux es una distribución GNU/Linux independiente, de propósito general, 
 *   [2 Historia](#Historia)
     *   [2.1 Los primeros años](#Los_primeros_a.C3.B1os)
     *   [2.2 Los años intermedios](#Los_a.C3.B1os_intermedios)
-    *   [2.3 El amanecer de la era de A. Griffin](#El_amanecer_de_la_era_de_A._Griffin)
+    *   [2.3 El nacimiento de ArchWiki](#El_nacimiento_de_ArchWiki)
+    *   [2.4 El amanecer de la era de A. Griffin](#El_amanecer_de_la_era_de_A._Griffin)
+    *   [2.5 Scripts de instalación de Arch](#Scripts_de_instalaci.C3.B3n_de_Arch)
+    *   [2.6 La era de systemd](#La_era_de_systemd)
+    *   [2.7 Finaliza soporte de i686](#Finaliza_soporte_de_i686)
 
 ## Principios
 
@@ -57,6 +61,10 @@ Judd Vinet, un guitarrista ocasional y programador canadiense, comenzó a desarr
 
 La primera comunidad de Arch creció de manera constante, como lo demuestra [este gráfico de publicaciones, usuarios e informes de errores en el foro](https://dev.archlinux.org/~dan/archstats.svg). Por otra parte, fue desde sus primeros días conocida como [una comunidad abierta, amigable y colaboradora](http://www.osnews.com/story/4827).
 
+### El nacimiento de ArchWiki
+
+En 2005-07-08 la ArchWiki fue [iniciada](/index.php/ArchWiki:About#History "ArchWiki:About") basada en Mediawiki.
+
 ### El amanecer de la era de A. Griffin
 
 A finales de 2007, Judd Vinet se retiró de la participación activa como desarrollador de Arch, y [transfirió sin problemas las riendas al programador estadounidense Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), también conocido como Phrakture, quien sigue siendo el principal desarrollador de Arch hasta el día de hoy.
@@ -64,3 +72,15 @@ A finales de 2007, Judd Vinet se retiró de la participación activa como desarr
 Con los años, la comunidad de Arch continuó creciendo y madurando, y ha recibido recientemente una atención inusual de la [prensa](/index.php/Arch_Linux_Press_Review "Arch Linux Press Review"), teniendo en cuenta el tamaño modesto de esta distribución Linux.
 
 Los desarrolladores de Arch no cobran, dedican a la misma parte de su tiempo y no tienen perspectivas de monetizar Arch Linux, por lo que siguen siendo libres en el sentido más amplio de la palabra. Los curiosos que deseen examinar con más detalle la historia del desarrollo de Arch pueden navegar por la [Arch entry in the Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org) y la [Arch Linux News Archives](https://www.archlinux.org/news/).
+
+### Scripts de instalación de Arch
+
+El lanzamiento del medio de instalación en 2012-07-15 hizo que la estructura de instalación antigua de Arch se volviera [obsoleta](https://www.archlinux.org/news/install-media-20120715-released/), para favorecer los Scripts de instalacion de arch (Arch Install Scripts).
+
+### La era de systemd
+
+Entre 2012 y 2013 el sistema de inicio tradicional (system V) fue remplazado por systemd.[[1]](https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/)[[2]](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)[[3]](https://www.archlinux.org/news/end-of-initscripts-support/)[[4]](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/)
+
+### Finaliza soporte de i686
+
+En 2017-01-25 se [anuncio](https://www.archlinux.org/news/phasing-out-i686-support/) que el soporte para la arquitectura de i686 seria finalizado debido a la poca popularidad entre los desarrolladores y la comunidad. Al final de [noviembre 2017](https://www.archlinux.org/news/the-end-of-i686-support/), todos los paquetes fueron removidos de los servidores replicas.

@@ -1,11 +1,11 @@
 Related articles
 
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Official repositories](/index.php/Official_repositories "Official repositories")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Crear paquetes](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)")
+*   [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)")
+*   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
+*   [Pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
+*   [Repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+*   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
 
 makepkg es usado para compilar y construir paquetes capaces de instalar mediante [pacman](/index.php/Pacman "Pacman"), el manejador de paquetes de Arch Linux. makepkg es un script que automatiza el proceso de construcción de paquetes; este puede descargar y validar archivos fuente, resolver dependencias, configurar los parámetros de tiempo de compilación, compilar las fuentes e instalarlo dentro de un root temporal.
 
@@ -86,17 +86,14 @@ Si una clave pública es necesaria, el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B
 
 ## Uso
 
-Antes de continuar, asegúrese de que el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) estén instalados. Los paquetes pertenecientes a este grupo no necesariamente tienen que ser listados como dependencias en los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Asegúrese de tener instalado este paquete ejecutando (como root):
+Antes de continuar, asegúrese de que el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) este [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)"). Los paquetes pertenecientes a este grupo no son requeridos en la lista de dependencias en los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
-```
-# pacman -S base-devel
-
-```
+Recuerde que se da por entendido que el grupo [base](https://www.archlinux.org/groups/x86_64/base/) esta instalado por defecto en **todos** los sistemas Arch Linux. El paquete [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) se da por entendió que también esta instalado cuando se crean paquetes con *makepkg*.
 
 **Nota:**
 
-*   Antes de quejarse por dependencias incumplidas en la rutina make, recuerde que se da por entendido que el grupo “base” esta instalado por default en todos los sistemas Arch Linux. El paquete “base-devel” se da por entendió que también esta instalado cuando se crean paquetes con makepkg.
-*   Ejecutar *makepkg* como root no esta [permitido](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html). Debido a que un `PKGBUILD` puede incluir comandos arbitrarios, construir como root se considera riesgoso.
+*   Asegurese de haber configurado [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") correctamente al pasar comandos a [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
+*   Ejecutar *makepkg* como root no esta [permitido](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html). Debido a que un `PKGBUILD` puede incluir comandos arbitrarios, construir como root se considera peligroso.
 
 Para crear un paquete primero debe tener un [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), como se describe en la guía de in [Creating packages](/index.php/Creating_packages "Creating packages"), o obtenga uno del [ABS tree](/index.php/Arch_Build_System "Arch Build System"), [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), u obténgalo de alguna otra fuente.
 

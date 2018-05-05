@@ -2,21 +2,13 @@ Related articles
 
 *   [VLAN](/index.php/VLAN "VLAN")
 
-This article handles the steps needed for basic network troubleshooting.
-
 ## Contents
 
-*   [1 Network Interfaces](#Network_Interfaces)
-*   [2 Link status](#Link_status)
-    *   [2.1 RTNETLINK answers: Cannot assign requested address](#RTNETLINK_answers:_Cannot_assign_requested_address)
-*   [3 IP address](#IP_address)
-*   [4 Route table](#Route_table)
-*   [5 DNS Servers](#DNS_Servers)
-*   [6 Ping & Tracepath/Traceroute](#Ping_.26_Tracepath.2FTraceroute)
-
-## Network Interfaces
-
-The first step in troubleshooting network issues will be to identify which network interfaces are present on the system. See [Network configuration#Get current interface names](/index.php/Network_configuration#Get_current_interface_names "Network configuration") for details.
+*   [1 Link status](#Link_status)
+    *   [1.1 RTNETLINK answers: Cannot assign requested address](#RTNETLINK_answers:_Cannot_assign_requested_address)
+*   [2 IP address](#IP_address)
+*   [3 DNS Servers](#DNS_Servers)
+*   [4 Ping & Tracepath/Traceroute](#Ping_.26_Tracepath.2FTraceroute)
 
 ## Link status
 
@@ -77,44 +69,6 @@ Removing an ip address:
 
 ```
 # ip addr del 192.168.1.143/24 dev eth0
-
-```
-
-## Route table
-
-The route table can be displayed by running:
-
-```
-$ ip route show
-
-```
-
-Route table for a specific interface:
-
-```
-$ ip route show dev eth0
-
-```
-
-This will provide an output along the lines of:
-
-```
-default via 192.168.1.1  proto static 
-192.168.1.0/24  proto kernel  scope link  src 192.168.1.143
-
-```
-
-Configuring the default gateway:
-
-```
-# ip route add 0/0 via 192.168.1.1 dev eth0
-
-```
-
-Removing the default gateway:
-
-```
-# ip route del 0/0 via 192.168.1.1 dev eth0
 
 ```
 

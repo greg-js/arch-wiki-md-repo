@@ -1522,11 +1522,11 @@ See [this kernel bugzilla](https://bugzilla.kernel.org/show_bug.cgi?id=96771) fo
 
 For Intel-only graphics, install the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. For more information or OpenGL/3D support, follow instructions at [Intel graphics](/index.php/Intel_graphics "Intel graphics").
 
-For Dual Graphics see [MacBookPro11,x#Graphics](/index.php/MacBookPro11,x#Graphics "MacBookPro11,x").
+As of [linux](https://www.archlinux.org/packages/?name=linux) kernel 4.16.6 dual graphics switching does work on the 11,5 (2015) with Intel modesetting and the AMD GPU utilizing the radeon driver (amdgpu is untested). See [MacBookPro11,x#Graphics](/index.php/MacBookPro11,x#Graphics "MacBookPro11,x") to enable the integrated graphics. Once the laptop boots with integrated graphics enabled you can use VGA Switcheroo controls to power down the discrete GPU. However, if you keep it powered on you will be able to utilize HDMI connections and using [switcheroo-control](https://aur.archlinux.org/packages/switcheroo-control/) you can run applications on the AMD GPU.
 
 **Note:** The kernel parameters *acpi_backlight*, *i915.lvds_downclock*, *i915.enable_ips*, and *intel_iommu* are no longer necessary as of kernel 4.2.
 
-**Note:** (Kernel 4.10.8, MacBook Pro 11,4) If you experience system lock ups and/or tearing in Xorg, remove the .[xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) completely, including any config file you made for it. Xorg will default to its modesetting DDX driver. The performance of this driver is good and the locks go away. See also: [Intel graphics](/index.php/Intel_graphics "Intel graphics")
+**Note:** (Kernel 4.10.8, MacBook Pro 11,4+) If you experience system lock ups and/or tearing in Xorg, remove the .[xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) completely, including any config file you made for it. Xorg will default to its modesetting DDX driver. The performance of this driver is good and the locks go away. See also: [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 
 **Note:** If you are experiencing flickering issues with Xorg, you can set *i915.enable_rc6* to 0 parameter into the kernel parameters which will disable to power saving of [Intel graphics](/index.php/Intel_graphics "Intel graphics").
 

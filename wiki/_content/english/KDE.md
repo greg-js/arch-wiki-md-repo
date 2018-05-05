@@ -576,7 +576,7 @@ When replacing Kwin with a window manager which does not provide a Compositor (s
 
 ### Configuring monitor resolution / multiple monitors
 
-To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to *Sytem Settings > Display and Monitor*.
+To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to *System Settings > Display and Monitor*.
 
 ### Disable opening application launcher with Super key (Windows key)
 
@@ -647,11 +647,11 @@ Plasma has desktop effects enabled by default and e.g. not every game will disab
 
 #### Disable compositing
 
-In *Sytem Settings > Display and Monitor*, uncheck *Enable compositor on startup* and restart Plasma.
+In *System Settings > Display and Monitor*, uncheck *Enable compositor on startup* and restart Plasma.
 
 #### Flickering in fullscreen when compositing is enabled
 
-In *Sytem Settings > Display and Monitor*, uncheck *Allow applications to block compositing*. This may harm performance.
+In *System Settings > Display and Monitor*, uncheck *Allow applications to block compositing*. This may harm performance.
 
 #### Screen tearing with NVIDIA
 

@@ -1,17 +1,17 @@
 Artículos relacionados
 
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [Crear paquetes](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)")
 *   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
-*   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
-*   [pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")
+*   [pacman/firmar paquetes](/index.php/Pacman/Package_signing_(Espa%C3%B1ol) "Pacman/Package signing (Español)")
+*   [pacman/Pacnew y Pacsave](/index.php/Pacman/Pacnew_and_Pacsave_(Espa%C3%B1ol) "Pacman/Pacnew and Pacsave (Español)")
 *   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
-*   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
-*   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
-*   [FAQ#Package management](/index.php/FAQ#Package_management "FAQ")
-*   [System maintenance](/index.php/System_maintenance "System maintenance")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [Official repositories](/index.php/Official_repositories "Official repositories")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [pacman/Rosetta (Español)](/index.php/Pacman/Rosetta_(Espa%C3%B1ol) "Pacman/Rosetta (Español)")
+*   [pacman/Consejos y trucos](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)")
+*   [FAQ##Gestión de paquetes](/index.php/FAQ_(Espa%C3%B1ol)#Gesti.C3.B3n_de_paquetes "FAQ (Español)")
+*   [Mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)")
+*   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
+*   [Repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+*   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
 
 **Estado de la traducción:** este artículo es una versión traducida de [pacman](/index.php/Pacman "Pacman"). Fecha de la última traducción/revisión: **2017-10-08**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=490231).
 

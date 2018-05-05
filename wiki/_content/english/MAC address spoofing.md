@@ -3,18 +3,18 @@ This article gives several methods to spoof a Media Access Control (MAC) address
 ## Contents
 
 *   [1 Manually](#Manually)
-    *   [1.1 Method 1: iproute2](#Method_1:_iproute2)
-    *   [1.2 Method 2: macchanger](#Method_2:_macchanger)
+    *   [1.1 iproute2](#iproute2)
+    *   [1.2 macchanger](#macchanger)
 *   [2 Automatically](#Automatically)
-    *   [2.1 Method 1: systemd-networkd](#Method_1:_systemd-networkd)
-    *   [2.2 Method 2: systemd-udevd](#Method_2:_systemd-udevd)
-    *   [2.3 Method 3: systemd unit](#Method_3:_systemd_unit)
+    *   [2.1 systemd-networkd](#systemd-networkd)
+    *   [2.2 systemd-udevd](#systemd-udevd)
+    *   [2.3 systemd unit](#systemd_unit)
         *   [2.3.1 Creating unit](#Creating_unit)
-            *   [2.3.1.1 iproute2](#iproute2)
-            *   [2.3.1.2 macchanger](#macchanger)
+            *   [2.3.1.1 iproute2](#iproute2_2)
+            *   [2.3.1.2 macchanger](#macchanger_2)
         *   [2.3.2 Enabling service](#Enabling_service)
-    *   [2.4 Method 4: netctl interfaces](#Method_4:_netctl_interfaces)
-    *   [2.5 Method 5: NetworkManager](#Method_5:_NetworkManager)
+    *   [2.4 netctl interfaces](#netctl_interfaces)
+    *   [2.5 NetworkManager](#NetworkManager)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Connection to DHCPv4 network fails](#Connection_to_DHCPv4_network_fails)
 *   [4 See also](#See_also)
@@ -23,7 +23,7 @@ This article gives several methods to spoof a Media Access Control (MAC) address
 
 There are two methods for spoofing a MAC address: [installing](/index.php/Installing "Installing") and configuring either [iproute2](https://www.archlinux.org/packages/?name=iproute2) or [macchanger](https://www.archlinux.org/packages/?name=macchanger). Both of them are outlined below.
 
-### Method 1: iproute2
+### iproute2
 
 First, you can check your current MAC address with the command:
 
@@ -68,7 +68,7 @@ The final step is to bring the network interface back up. This can be accomplish
 
 If you want to verify that your MAC has been spoofed, simply run `ip link show *interface*` again and check the value for 'link/ether'. If it worked, 'link/ether' should be whatever address you decided to change it to.
 
-### Method 2: macchanger
+### macchanger
 
 Another method uses [macchanger](https://www.archlinux.org/packages/?name=macchanger) (a.k.a., the GNU MAC Changer). It provides a variety of features such as changing the address to match a certain vendor or completely randomizing it.
 
@@ -110,7 +110,7 @@ Finally, to return the MAC address to its original, permanent hardware value:
 
 ## Automatically
 
-### Method 1: systemd-networkd
+### systemd-networkd
 
 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") supports MAC address spoofing via [link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") (see [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for details).
 
@@ -128,7 +128,7 @@ NamePolicy=kernel database onboard slot path
 
 To randomize the MAC address on every boot, set `MACAddressPolicy=random` instead of `MACAddress=*spoofed MAC*`.
 
-### Method 2: systemd-udevd
+### systemd-udevd
 
 [Udev](/index.php/Udev "Udev") allows you to perform MAC address spoofing by creating the [udev rule](/index.php/Udev#Writing_udev_rules "Udev"). Use `address` attribute to match the correct device by its original MAC address and change it using the *ip* command:
 
@@ -136,7 +136,7 @@ To randomize the MAC address on every boot, set `MACAddressPolicy=random` instea
 
 where `XX:XX:XX:XX:XX:XX` is the original MAC address and `YY:YY:YY:YY:YY:YY` is the new one.
 
-### Method 3: systemd unit
+### systemd unit
 
 #### Creating unit
 
@@ -187,7 +187,7 @@ WantedBy=multi-user.target
 
 ```
 
-A full random address can be set using the `-r` option, see [#Method 2: macchanger](#Method_2:_macchanger).
+A full random address can be set using the `-r` option, see [#macchanger](#macchanger).
 
 #### Enabling service
 
@@ -195,7 +195,7 @@ Append the desired network interface to the service name (e.g. `eth0`) and [enab
 
 Reboot, or stop and start the prerequisite and requisite services in the proper order. If you are in control of your network, verify that the spoofed MAC has been picked up by your router by examining the static, or DHCP address tables within the router.
 
-### Method 4: netctl interfaces
+### netctl interfaces
 
 You can use a [netctl hook](/index.php/Netctl#Using_hooks "Netctl") to run a command each time a netctl profile is re-/started for a specific network interface. Replace `*interface*` accordingly:
 
@@ -214,7 +214,7 @@ chmod +x /etc/netctl/interfaces/*interface*
 
 Source: [akendo.eu](https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-wireless-connections/)
 
-### Method 5: NetworkManager
+### NetworkManager
 
 See [NetworkManager#Configuring MAC Address Randomization](/index.php/NetworkManager#Configuring_MAC_Address_Randomization "NetworkManager").
 

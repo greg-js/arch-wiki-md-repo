@@ -53,7 +53,7 @@ From the project [home page](https://docs.xfce.org/xfce/thunar/start):
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 
-*   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
+*   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Enable_usershares "Samba").
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
 

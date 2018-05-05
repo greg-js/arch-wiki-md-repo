@@ -73,7 +73,7 @@ Afterwards [restart](/index.php/Restart "Restart") [nginx](/index.php/Nginx "Ngi
 
 ### Hiawatha
 
-Ensure that the [PHP FastCGI interface](/index.php/Hiawatha#PHP "Hiawatha") is configured correctly.
+Ensure that the [PHP FastCGI interface](/index.php/Hiawatha#FastCGI "Hiawatha") is configured correctly.
 
 Then add the following `VirtualHost` block to your `/etc/hiawatha/hiawatha.conf`.
 

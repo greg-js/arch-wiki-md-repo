@@ -492,7 +492,7 @@ If you tried to install the NVIDIA driver from NVIDIA website, this is not going
 
 ```
 
-3\. (Re)install the correct NVIDIA driver: [#Installing Bumblebee with Intel/NVIDIA](#Installing_Bumblebee_with_Intel.2FNVIDIA)
+3\. (Re)install the correct NVIDIA driver: [#Installation](#Installation)
 
 ### [ERROR]Cannot access secondary GPU: No devices detected
 
@@ -633,7 +633,7 @@ $ optirun nvidia-settings -c :8
 
 `X Server XVideo Settings -> Sync to VBlank` and `OpenGL Settings -> Sync to VBlank` should both be enabled. The Intel card has in general less tearing, so use it for video playback. Especially use VA-API for video decoding (e.g. `mplayer-vaapi` and with `-vsync` parameter).
 
-Refer to the [Intel](/index.php/Intel#Video_tearing "Intel") article on how to fix tearing on the Intel card.
+Refer to [Intel#Tear-free video](/index.php/Intel#Tear-free_video "Intel") on how to fix tearing on the Intel card.
 
 If it is still not fixed, try to disable compositing from your desktop environment. Try also disabling triple buffering.
 
@@ -663,7 +663,7 @@ If you mistakenly had the display connected to the discrete graphics card and in
 
 ### Running X.org from console after login (rootless X.org)
 
-See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
 ### Primusrun mouse delay (disable VSYNC)
 

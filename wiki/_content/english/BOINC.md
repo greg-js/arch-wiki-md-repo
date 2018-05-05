@@ -83,7 +83,7 @@ $ xhost si:localuser:boinc
 
 ```
 
-You may want to add that to a [startup script](/index.php/Autostarting#X_session_startup "Autostarting").
+You may want to [autostart that on Xorg startup](/index.php/Autostarting#On_Xorg_startup "Autostarting").
 
 ### BOINC via the CLI
 

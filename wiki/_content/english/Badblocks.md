@@ -102,7 +102,7 @@ Reading and comparing: done
 Pass completed, 0 bad blocks found. (0/0/0 errors)
 ```
 
-**Warning:** This is not secure for cryptographic purposes. A "random pattern" is a contradiction in itself. As badblocks does not (like [urandom](/index.php/Securely_wipe_disk#.2Fdev.2Furandom "Securely wipe disk")) apply sophisticated procedures to reuse entropy but simply repeats one "random pattern" it should not be used where random data would be needed, e.g. for [block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk").
+**Warning:** This is not secure for cryptographic purposes. A "random pattern" is a contradiction in itself. As badblocks does not (like [/dev/urandom](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/random")) apply sophisticated procedures to reuse entropy but simply repeats one "random pattern" it should not be used where random data would be needed, e.g. for [block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk").
 
 ### read-write Test (non-destructive)
 

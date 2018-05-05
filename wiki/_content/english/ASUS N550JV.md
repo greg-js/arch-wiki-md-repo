@@ -46,7 +46,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 #### Drivers
 
-Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee").
+Install [bumblebee](/index.php/Bumblebee "Bumblebee") along with Nvidia and Intel drivers.
 
 #### Brightness
 
@@ -56,7 +56,7 @@ In order to be able to adjust the screen brightness using `Fn+F5` and `Fn+F6` yo
 
 Install [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
-After installation, reboot the laptop to ensure all modules are loaded. Check if the fallback device is correctly set to *Build-in Audio Analog Stereo* with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol). See [PulseAudio/Troubleshooting#Fallback device is not respected](/index.php/PulseAudio/Troubleshooting#Fallback_device_is_not_respected "PulseAudio/Troubleshooting") for more information. Also check for muted devices:
+After installation, reboot the laptop to ensure all modules are loaded. Check if the fallback device is correctly set to *Built-in Audio Analog Stereo* with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol). See [PulseAudio/Troubleshooting#Fallback device is not respected](/index.php/PulseAudio/Troubleshooting#Fallback_device_is_not_respected "PulseAudio/Troubleshooting") for more information. Also check for muted devices:
 
 ```
 $ alsamixer -c PCH
@@ -152,7 +152,7 @@ Test with `xev` or try to bind something on media button. `Fn+F7` should be cont
 
 ### Touchpad
 
-See [libinput](/index.php/Libinput "Libinput"). Unless you are having issues, try [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+Install [libinput](/index.php/Libinput "Libinput"). If there are any problems, try [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ## Troubleshooting
 

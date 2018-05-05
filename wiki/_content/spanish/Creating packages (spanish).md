@@ -1,13 +1,13 @@
 Artículos relacionados
 
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
+*   [Estándares de empaquetado en Arch](/index.php/Arch_packaging_standards_(Espa%C3%B1ol) "Arch packaging standards (Español)")
+*   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
 *   [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [pacman](/index.php/Pacman "Pacman")
+*   [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)")
+*   [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 *   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)")
 *   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
 
 Este artículo tiene como objetivo ayudar a los usuarios a crear sus propios paquetes utilizando el [sistema de compilación](/index.php/Arch_Build_System "Arch Build System") de Arch Linux, asi como subirlos en [AUR](/index.php/AUR "AUR"). Cubre la creación de un [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") - un archivo de descripción de compilación de paquetes originado por `makepkg` para crear un paquete binario desde los archivos fuentes. Si ya está posee un archivo `PKGBUILD`, vea [makepkg](/index.php/Makepkg "Makepkg"). Para obtener instrucciones sobre las normas existentes y las formas de mejorar la calidad del paquete, consulte [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")

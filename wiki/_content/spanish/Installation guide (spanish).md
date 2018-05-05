@@ -56,9 +56,9 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   El servicio de Internet a través del demonio [dhcpcd](/index.php/Dhcpcd "Dhcpcd") está [activado](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) en el arranque para los dispositivos **cableados**. Compruebe que su conexión se ha establecido, usando, por ejemplo, la herramienta [ping](/index.php/Ping "Ping"): `# ping archlinux.org` 
 
-*   Si no dispone de ninguna conexión, [detenga](/index.php/Systemd#Using_units "Systemd") el servicio *dhcpcd* con la orden `systemctl stop dhcpcd@<TAB>` y eche un vistazo al artículo [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
+*   Si no dispone de ninguna conexión, [detenga](/index.php/Systemd#Using_units "Systemd") el servicio *dhcpcd* con la orden `systemctl stop dhcpcd@<TAB>` y eche un vistazo al artículo [Controlador de dispositivos](/index.php/Network_configuration_(Espa%C3%B1ol)#Controlador_del_dispositivo "Network configuration (Español)").
 
-*   Para realizar conexiones **inalámbricas**, dispone de [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) y [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl"). Vea [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+*   Para realizar conexiones **inalámbricas**, dispone de [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) y [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl"). Vea [Configuración inalámbrica](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)").
 
 ### Actualizar el reloj del sistema
 
@@ -68,7 +68,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Particionar el disco
 
-*   [Identifique los dispositivos](/index.php/Core_utilities#lsblk "Core utilities") donde se instalará el nuevo sistema (los resultados que terminen en `rom`, `loop` o `airoot` pueden ser ignorados): `# fdisk -l` 
+*   [Identifique los dispositivos](/index.php/Core_utilities_(Espa%C3%B1ol)#lsblk "Core utilities (Español)") donde se instalará el nuevo sistema (los resultados que terminen en `rom`, `loop` o `airoot` pueden ser ignorados): `# fdisk -l` 
 
 *   Se requieren las siguientes *particiones* (se muestran con un sufijo numérico) para el dispositivo elegido:
 
@@ -171,11 +171,11 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Configure la red de nuevo para el entorno recién instalado: consulte [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 
-*   Para la [configuración de la red inalámbrica](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Install "Install") los paquetes [iw](https://www.archlinux.org/packages/?name=iw) y [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) y, si se diera el caso, los [paquetes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Opcionalmente instalar [dialog](https://www.archlinux.org/packages/?name=dialog) para uso del *menú-wifi*.
+*   Para la [configuración de la red inalámbrica](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)"), [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes [iw](https://www.archlinux.org/packages/?name=iw) y [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) y, si se diera el caso, los [paquetes de firmware](/index.php/Wireless_network_configuration_(Espa%C3%B1ol)#Instalar_el_controlador.2Ffirmware "Wireless network configuration (Español)"). Opcionalmente instalar [dialog](https://www.archlinux.org/packages/?name=dialog) para uso del *menú-wifi*.
 
 ### Initramfs
 
-*   Normalmente no es necesario crear una imagen *initramfs* nueva, dado que [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") se ejecuta durante la instalación del paquete [linux](https://www.archlinux.org/packages/?name=linux) con *pacstrap*.
+*   Normalmente no es necesario crear una imagen *initramfs* nueva, dado que [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se ejecuta durante la instalación del paquete [linux](https://www.archlinux.org/packages/?name=linux) con *pacstrap*.
 
 *   Cuando haga cambios especiales en la configuración de [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), cree un nuevo disco RAM inicial con: `# mkinitcpio -p linux` 
 

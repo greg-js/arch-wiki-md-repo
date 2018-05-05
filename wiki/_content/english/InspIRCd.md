@@ -17,7 +17,7 @@
 
 ## Configuring
 
-The configuration file `/etc/inspircd/inspircd.conf` is **mandatory**, HTML-formatted and needs to be created when installing.
+The configuration file `/etc/inspircd/inspircd.conf` is **mandatory**, XML-formatted and needs to be created when installing.
 
 How you set your configuration file will depend a lot on your needs and system configuration, reason why there's no configuration file set by default.
 

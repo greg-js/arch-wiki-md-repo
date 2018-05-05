@@ -120,7 +120,7 @@ For extended configuration, you may also install Econnman (available in AUR as [
 
 You can also use [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to manage your network connections - see [NetworkManager](/index.php/NetworkManager "NetworkManager") for more information.
 
-Note however that the applet will need Appindicator support to show in Enlightenment's [system tray](#System_tray). See [NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager"). As an alternative to using the applet, NetworkManager includes both CLI and TUI interfaces for network configuration - see [NetworkManager#Command line](/index.php/NetworkManager#Command_line "NetworkManager").
+Note however that the applet will need Appindicator support to show in Enlightenment's [system tray](#System_tray). See [NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager"). As an alternative to using the applet, NetworkManager includes both CLI and TUI interfaces for network configuration - see [NetworkManager#Usage](/index.php/NetworkManager#Usage "NetworkManager").
 
 #### Polkit agent
 

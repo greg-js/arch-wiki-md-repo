@@ -371,7 +371,7 @@ the problem is with the permission on `~/.config/compiz/`. To fix it, use:
 
 ### Alt+F4 keybinding not working (Xfce)
 
-If Compiz replaces Xfwm4 at login, this can cause the `Alt+F4` keybinding to become non-functional. To avoid this issue, ensure that only Compiz is started at login - see [Xfce#Default window manager](/index.php/Xfce#Default_window_manager "Xfce").
+If Compiz replaces Xfwm4 at login, this can cause the `Alt+F4` keybinding to become non-functional. To avoid this issue, ensure that only Compiz is started at login - see [Xfce#Use a different window manager](/index.php/Xfce#Use_a_different_window_manager "Xfce").
 
 ### Emerald crashes when selecting a theme
 

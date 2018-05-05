@@ -1,73 +1,72 @@
 Related articles
 
-*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Network bridge](/index.php/Network_bridge "Network bridge")
-*   [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet")
-*   [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing")
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
 *   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
 *   [Router](/index.php/Router "Router")
-*   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 
-This page explains how to set up a wired connection to a network. If you need to set up wireless networking see the [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") page.
+This article explains how to manually set up a network connection using [iproute2](https://www.archlinux.org/packages/?name=iproute2). For automatic network configuration see [Network manager](/index.php/Network_manager "Network manager").
+
+Go through the following conditions and ensure that you meet them:
+
+1.  Your network interface is listed, see [#Listing network interfaces](#Listing_network_interfaces).
+2.  Your network interface is enabled, see [#Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces).
+3.  If its a Wi-Fi connection, you must be connected to your Wireless LAN, see [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+4.  Your network interface has an IP address, see [#IP addresses](#IP_addresses).
+5.  Your routing table is correctly set up, see [#Routing table](#Routing_table).
+6.  You can [ping](#Ping) your default gateway.
+7.  You can [ping](#Ping) a public IP address.
+8.  You can resolve domain names, see [#Resolving domain names](#Resolving_domain_names).
 
 ## Contents
 
-*   [1 Network debugging](#Network_debugging)
-*   [2 Device driver](#Device_driver)
-    *   [2.1 Check the status](#Check_the_status)
-    *   [2.2 Load the module](#Load_the_module)
-*   [3 Network interface](#Network_interface)
-    *   [3.1 Listing network interfaces](#Listing_network_interfaces)
-    *   [3.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
-*   [4 Obtaining an IP address](#Obtaining_an_IP_address)
-    *   [4.1 Dynamic IP address](#Dynamic_IP_address)
-    *   [4.2 Static IP address](#Static_IP_address)
-        *   [4.2.1 Manual assignment](#Manual_assignment)
-        *   [4.2.2 Calculating addresses](#Calculating_addresses)
-    *   [4.3 Network managers](#Network_managers)
-*   [5 Set the hostname](#Set_the_hostname)
-    *   [5.1 Local network hostname resolution](#Local_network_hostname_resolution)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Change device name](#Change_device_name)
-    *   [6.2 Revert to traditional device names](#Revert_to_traditional_device_names)
-    *   [6.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
-    *   [6.4 ifplugd for laptops](#ifplugd_for_laptops)
-    *   [6.5 Bonding or LAG](#Bonding_or_LAG)
-    *   [6.6 IP address aliasing](#IP_address_aliasing)
-        *   [6.6.1 Example](#Example)
-    *   [6.7 Promiscuous mode](#Promiscuous_mode)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
-    *   [7.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
-        *   [7.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
-        *   [7.2.2 Ways of fixing it](#Ways_of_fixing_it)
-            *   [7.2.2.1 Bad](#Bad)
-            *   [7.2.2.2 Good](#Good)
-            *   [7.2.2.3 Best](#Best)
-        *   [7.2.3 More about it](#More_about_it)
-    *   [7.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
-        *   [7.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
-        *   [7.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
-        *   [7.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
-        *   [7.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [7.3.5 Enable *LAN Boot ROM* in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
-    *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [7.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
-*   [8 See also](#See_also)
-
-## Network debugging
-
-You can use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) to check if you can reach a host.
-
-1.  Make sure your [#Network interface](#Network_interface) is up. If it is not listed, check your [#Device driver](#Device_driver).
-2.  Check if you can access the internet by pinging a public IP address (e.g. `8.8.8.8`). If you cannot access the internet but your network interface is up, see [#Obtaining an IP address](#Obtaining_an_IP_address).
-3.  Check if you can resolve domain names, by pinging a domain name (e.g. `google.com`). If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
-
-**Note:** If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
+*   [1 Device driver](#Device_driver)
+    *   [1.1 Check the status](#Check_the_status)
+    *   [1.2 Load the module](#Load_the_module)
+*   [2 Network interfaces](#Network_interfaces)
+    *   [2.1 Listing network interfaces](#Listing_network_interfaces)
+    *   [2.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
+*   [3 IP addresses](#IP_addresses)
+    *   [3.1 Listing IP addresses](#Listing_IP_addresses)
+    *   [3.2 Obtaining a dynamic IP address](#Obtaining_a_dynamic_IP_address)
+    *   [3.3 Setting up a static IP address](#Setting_up_a_static_IP_address)
+        *   [3.3.1 Manual assignment](#Manual_assignment)
+        *   [3.3.2 Calculating addresses](#Calculating_addresses)
+*   [4 Routing table](#Routing_table)
+*   [5 Ping](#Ping)
+*   [6 Resolving domain names](#Resolving_domain_names)
+*   [7 Set the hostname](#Set_the_hostname)
+    *   [7.1 Local network hostname resolution](#Local_network_hostname_resolution)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Change interface name](#Change_interface_name)
+    *   [8.2 Revert to traditional interface names](#Revert_to_traditional_interface_names)
+    *   [8.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
+    *   [8.4 ifplugd for laptops](#ifplugd_for_laptops)
+    *   [8.5 Bonding or LAG](#Bonding_or_LAG)
+    *   [8.6 IP address aliasing](#IP_address_aliasing)
+        *   [8.6.1 Example](#Example)
+    *   [8.7 Promiscuous mode](#Promiscuous_mode)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
+    *   [9.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
+        *   [9.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
+        *   [9.2.2 Ways of fixing it](#Ways_of_fixing_it)
+            *   [9.2.2.1 Bad](#Bad)
+            *   [9.2.2.2 Good](#Good)
+            *   [9.2.2.3 Best](#Best)
+        *   [9.2.3 More about it](#More_about_it)
+    *   [9.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
+        *   [9.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
+        *   [9.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
+        *   [9.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
+        *   [9.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
+        *   [9.3.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+    *   [9.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [9.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [9.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [9.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+*   [10 See also](#See_also)
 
 ## Device driver
 
@@ -101,9 +100,11 @@ Search in the Internet for the right module/driver for the chipset. Some common 
 
 If udev is not detecting and loading the proper module automatically during bootup, see [Kernel module#Automatic module handling](/index.php/Kernel_module#Automatic_module_handling "Kernel module").
 
-## Network interface
+## Network interfaces
 
-[udev](/index.php/Udev "Udev") assigns names to your network interfaces. More specifically [udev](/index.php/Udev "Udev") uses [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames). Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier.
+By default [udev](/index.php/Udev "Udev") assigns names to your network interfaces using [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which prefixes interfaces names with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")).
+
+**Tip:** To change the device names, see [#Change device name](#Change_device_name) and [#Revert to traditional device names](#Revert_to_traditional_device_names).
 
 ### Listing network interfaces
 
@@ -111,44 +112,44 @@ Both wired and wireless interface names can be found via `ls /sys/class/net` or 
 
 Wireless device names can also be retrieved using `iw dev`. See also [Wireless network configuration#Get the name of the interface](/index.php/Wireless_network_configuration#Get_the_name_of_the_interface "Wireless network configuration").
 
-**Tip:** To change the device names, see [#Change device name](#Change_device_name) and [#Revert to traditional device names](#Revert_to_traditional_device_names).
+If your network interface is not listed, make sure your [#Device driver](#Device_driver) was loaded successfully.
 
 ### Enabling and disabling network interfaces
 
-You can activate a network interface using:
+Network interfaces can be enabled / disabled using `# ip link set *interface* up|down`, see [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8).
 
-```
-# ip link set *interface* up
-
-```
-
-To deactivate it do:
-
-```
-# ip link set *interface* down
-
-```
-
-To check the result for the interface `eth0`:
+To check the status of the interface `eth0`:
 
  `$ ip link show dev eth0` 
 ```
-2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state DOWN mode DEFAULT qlen 1000
 ...
 
 ```
 
+The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface is up, not the later `state DOWN`.
+
 **Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Manual assignment](#Manual_assignment) for reestablishing it.
 
-## Obtaining an IP address
+## IP addresses
 
-### Dynamic IP address
+This section details how to manage / set up [IP addresses](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address").
 
-See [#Network managers](#Network_managers) for a list of options in setting a dynamic IP address.
+### Listing IP addresses
 
-### Static IP address
+Run `ip address`, see [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8).
 
-A static IP address can be configured with most standard [network managers](#Network_managers). Independently of the tool you choose, you will probably need to be prepared with the following information:
+### Obtaining a dynamic IP address
+
+To dynamically obtain an IP address via [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") you need a DHCP client:
+
+*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") – DHCP, DHCPv6 and ZeroConf client daemon.
+*   ISC DHCP ([dhclient](https://www.archlinux.org/packages/?name=dhclient))
+*   [pump](https://aur.archlinux.org/packages/pump/)
+
+### Setting up a static IP address
+
+Setting up a static IP address requires the following information:
 
 *   Static IP address
 *   Subnet mask, or possibly its [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"), for example `/24` is the CIDR notation of `255.255.255.0` netmask.
@@ -245,21 +246,57 @@ Broadcast: 10.66.66.3
 Hosts/Net: 2                     Class A, Private Internet
 ```
 
-### Network managers
+## Routing table
 
-There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously. The following table compares the different connection managers. *Automatically handles wired connection* means that there is at least one option for the user to simply start the daemon without creating a configuration file.
+The route table can be displayed by running:
 
-| Connection manager | Automatically handles
-wired connection | Official
-GUI | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Console tools | Systemd units |
-| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | No | No | `connmanctl` | `connman.service` |
-| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
-| [netctl](/index.php/Netctl "Netctl") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `netctl` | `netctl-ifplugd@*interface*.service` |
-| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | No | `nmcli`,`nmtui` | `NetworkManager.service` |
-| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
-| [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | `wicd-curses` | `wicd.service` |
+```
+$ ip route show
 
-See also [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
+```
+
+Route table for a specific interface:
+
+```
+$ ip route show dev eth0
+
+```
+
+This will provide an output along the lines of:
+
+```
+default via 192.168.1.1  proto static 
+192.168.1.0/24  proto kernel  scope link  src 192.168.1.143
+
+```
+
+Configuring the default gateway:
+
+```
+# ip route add 0/0 via 192.168.1.1 dev eth0
+
+```
+
+Removing the default gateway:
+
+```
+# ip route del 0/0 via 192.168.1.1 dev eth0
+
+```
+
+## Ping
+
+[ping](https://en.wikipedia.org/wiki/Ping_(networking_utility) is used to test if you can reach a host. See the [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) manual. Note that computers can be configured not to respond to ICMP echo requests.[[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
+
+When you receive no reply, you can use a [traceroute](https://en.wikipedia.org/wiki/Traceroute "wikipedia:Traceroute") ([traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) or [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8)) to further diagnose the route to the host.
+
+**Note:** If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
+
+## Resolving domain names
+
+Domain names can be resolved using [ping](#Ping), [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1) (provided by [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)) and [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1) (provided by [ldns](https://www.archlinux.org/packages/?name=ldns)).
+
+If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
 
 ## Set the hostname
 
@@ -333,7 +370,7 @@ For a system with a permanent IP address, that permanent IP address should be us
 
 ## Tips and tricks
 
-### Change device name
+### Change interface name
 
 **Note:** When changing the naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change.
 
@@ -366,7 +403,7 @@ To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they 
 
 **Note:** When choosing the static names **it should be avoided to use names in the format of "eth*X*" and "wlan*X*"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
 
-### Revert to traditional device names
+### Revert to traditional interface names
 
 If you would prefer to retain traditional interface names such as eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) can be disabled by masking the udev rule:
 
@@ -539,7 +576,7 @@ Right click my computer and choose "Properties"
 
 Any newer driver for these Realtek cards can be found for Linux on the realtek site (untested but believed to also solve the problem).
 
-#### Enable *LAN Boot ROM* in BIOS/CMOS
+#### Enable LAN Boot ROM in BIOS/CMOS
 
 It appears that setting *Integrated Peripherals > Onboard LAN Boot ROM > Enabled* in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
 

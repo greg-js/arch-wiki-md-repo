@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Git](/index.php/Git "Git") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-17，点击[这里](https://wiki.archlinux.org/index.php?title=Git&diff=0&oldid=516679)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Git](/index.php/Git "Git") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-04，点击[这里](https://wiki.archlinux.org/index.php?title=Git&diff=0&oldid=520101)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -479,10 +479,12 @@ $ git config --global diff.tool vimdiff
 
 ### Git 提示符
 
-Git 包带有一个提示符脚本。要启用它，请在 [shell 启动文件](/index.php/Autostarting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Shells "Autostarting (简体中文)") 里用 source 加载 `/usr/share/git/completion/git-prompt.sh` 脚本，然后使用 `%s` 参数设置一个自定义 shell 提示符：
+Git 包带有一个提示符脚本。要启用它，请用 source 加载 `/usr/share/git/completion/git-prompt.sh` 脚本，然后使用 `%s` 参数设置一个自定义 shell 提示符：
 
 *   [Bash](/index.php/Bash "Bash") 用户： `PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '`
 *   [zsh](/index.php/Zsh "Zsh") 用户： `setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '`
+
+要自动完成这项工作，请参阅 [Command-line shell#Configuration files](/index.php/Command-line_shell#Configuration_files "Command-line shell")。
 
 当切换至一个 Git 仓库所在目录时，shell 提示符会变成所在分支名称。也可以配置提示符来显示其他信息：
 

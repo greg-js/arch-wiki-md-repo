@@ -325,7 +325,7 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 ## Compositors
 
 | Name | Type | Description |
-| GNOME | Stacking | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
+| GNOME | Stacking | See [GNOME#Starting](/index.php/GNOME#Starting "GNOME"). |
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
 | Enlightenment | Stacking | [More Info](https://www.enlightenment.org/about-wayland) |
 | KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |

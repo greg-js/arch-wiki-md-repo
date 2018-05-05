@@ -8,30 +8,36 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
 
 	If this file does not exist, only the name server on the local machine will be queried; the domain name is determined from the hostname and the domain search path is constructed from the domain name.
 
+To use [#Alternative DNS servers](#Alternative_DNS_servers), edit `/etc/resolv.conf` and add them at the top of the list so they are used first, optionally removing or commenting out other servers. Currently, you may include a maximum of three nameservers.
+
+**Note:** Changes made to `/etc/resolv.conf` take effect immediately.
+
+**Tip:** If you require more flexibility, e.g. more than three nameservers, you can use a local DNS resolver like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [unbound](/index.php/Unbound "Unbound"). In this case the nameserver IP address will likely be `127.0.0.1`.
+
 ## Contents
 
 *   [1 DNS in Linux](#DNS_in_Linux)
     *   [1.1 Testing](#Testing)
-*   [2 Alternative DNS servers](#Alternative_DNS_servers)
-    *   [2.1 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
-    *   [2.2 Cloudflare](#Cloudflare)
-    *   [2.3 Comodo](#Comodo)
-    *   [2.4 DNS.WATCH](#DNS.WATCH)
-    *   [2.5 Google](#Google)
-    *   [2.6 OpenNIC](#OpenNIC)
-    *   [2.7 Quad9](#Quad9)
-    *   [2.8 UncensoredDNS](#UncensoredDNS)
-    *   [2.9 Yandex](#Yandex)
-*   [3 Preserve DNS settings](#Preserve_DNS_settings)
-    *   [3.1 Systemd-resolved configuration](#Systemd-resolved_configuration)
-    *   [3.2 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
-    *   [3.3 Use openresolv](#Use_openresolv)
-    *   [3.4 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
-    *   [3.5 Write-protect resolv.conf](#Write-protect_resolv.conf)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Limit lookup time](#Limit_lookup_time)
-    *   [4.2 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
-    *   [4.3 Local domain names](#Local_domain_names)
+*   [2 Preserve DNS settings](#Preserve_DNS_settings)
+    *   [2.1 Systemd-resolved configuration](#Systemd-resolved_configuration)
+    *   [2.2 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
+    *   [2.3 Use openresolv](#Use_openresolv)
+    *   [2.4 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
+    *   [2.5 Write-protect resolv.conf](#Write-protect_resolv.conf)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Limit lookup time](#Limit_lookup_time)
+    *   [3.2 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
+    *   [3.3 Local domain names](#Local_domain_names)
+*   [4 Alternative DNS servers](#Alternative_DNS_servers)
+    *   [4.1 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
+    *   [4.2 Cloudflare](#Cloudflare)
+    *   [4.3 Comodo](#Comodo)
+    *   [4.4 DNS.WATCH](#DNS.WATCH)
+    *   [4.5 Google](#Google)
+    *   [4.6 OpenNIC](#OpenNIC)
+    *   [4.7 Quad9](#Quad9)
+    *   [4.8 UncensoredDNS](#UncensoredDNS)
+    *   [4.9 Yandex](#Yandex)
 
 ## DNS in Linux
 
@@ -67,13 +73,135 @@ $ drill @127.0.0.1 www.archlinux.org
 
 ```
 
+## Preserve DNS settings
+
+[dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl "Netctl"), [NetworkManager](/index.php/NetworkManager "NetworkManager"), and various other processes can overwrite `/etc/resolv.conf`. This is usually desirable behavior, but sometimes DNS settings need to be set manually (e.g. when using a static IP address). There are several ways to accomplish this.
+
+*   If you are using *dhcpcd*, see [#Modify the dhcpcd config](#Modify_the_dhcpcd_config) below.
+*   If you are using [netctl](/index.php/Netctl "Netctl") and static IP address assignment, do not use the `DNS*` options in your profile, otherwise *resolvconf* is called and `/etc/resolv.conf` overwritten.
+
+### Systemd-resolved configuration
+
+[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications. *systemd-resolved* has [four different modes for handling *resolv.conf*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF). We will focus here on the two most relevant modes.
+
+1.  The mode in which *systemd-resolved* is a client of the `/etc/resolv.conf`. This mode preserves `/etc/resolv.conf` and is **compatible** with the procedures described in this page.
+2.  The *systemd-resolved'*s **recommended** mode of operation: the DNS stub file as indicated below contains both the local stub `127.0.0.53` as the only DNS servers and a list of search domains.
+
+ `/run/systemd/resolve/stub-resolv.conf` 
+```
+nameserver 127.0.0.53
+search lan
+```
+The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by deleting or renaming the existing `/etc/resolv.conf` and replacing it by a symbolic link to the systemd stub: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
+
+In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
+
+ `/etc/systemd/resolved.conf` 
+```
+[Resolve]
+**DNS=91.239.100.100 89.233.43.71**
+...
+```
+
+In order to check the DNS actually used by *systemd-resolved*, the command to use is:
+
+```
+$ systemd-resolve --status
+
+```
+
+**Tip:**
+
+*   To understand the context around the DNS choices and switches, one can turn on detailed debug information for *systemd-resolved* as described in [Systemd#Diagnosing a service](/index.php/Systemd#Diagnosing_a_service "Systemd").
+*   The mode of operation of *systemd-resolved* is detected automatically, depending on whether `/etc/resolv.conf` is a symlink to the local stub DNS resolver file or contains server names.
+
+### Prevent NetworkManager modifications
+
+To stop *NetworkManager* from modifying `/etc/resolv.conf`, edit `/etc/NetworkManager/NetworkManager.conf` and add the following in the `[main]` section:
+
+```
+dns=none
+
+```
+
+`/etc/resolv.conf` might be a broken symlink that you will need to remove after doing that. Then, just create a new `/etc/resolv.conf` file.
+
+*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
+
+### Use openresolv
+
+[openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility *resolvconf*, which is a framework for managing multiple DNS configurations. See [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) and [resolvconf.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) for more information.
+
+The configuration is done in `/etc/resolvconf.conf` and running `resolvconf -u` will generate `/etc/resolv.conf`.
+
+Note that *NetworkManager* can be configured to use *openresolv*, see [NetworkManager#Configure NetworkManager resolv.conf management mode to use resolvconf](/index.php/NetworkManager#Configure_NetworkManager_resolv.conf_management_mode_to_use_resolvconf "NetworkManager").
+
+### Modify the dhcpcd config
+
+*dhcpcd'*s configuration file may be edited to prevent the *dhcpcd* daemon from overwriting `/etc/resolv.conf`. To do this, add the following to the last section of `/etc/dhcpcd.conf`:
+
+```
+nohook resolv.conf
+
+```
+
+Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. *dhcpcd* will prepend this file to the beginning of `/etc/resolv.conf`.
+
+Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`, where `*dns-server-ip-addressses*` is a space separated list of DNS IP addresses.
+
+```
+static domain_name_servers=*dns-server-ip-addresses*
+
+```
+
+For example, to set it to Google's DNS servers:
+
+```
+static domain_name_servers=8.8.8.8 8.8.4.4
+
+```
+
+### Write-protect resolv.conf
+
+Another way to protect your `/etc/resolv.conf` from being modified by anything is setting the immutable (write-protection) attribute:
+
+```
+# chattr +i /etc/resolv.conf
+
+```
+
+## Tips and tricks
+
+### Limit lookup time
+
+If you are confronted with a very long hostname lookup (may it be in [pacman](/index.php/Pacman "Pacman") or while browsing), it often helps to define a small timeout after which an alternative nameserver is used. To do so, put the following in `/etc/resolv.conf`.
+
+```
+options timeout:1
+
+```
+
+### Hostname lookup delayed with IPv6
+
+If you experience a 5 second delay when resolving hostnames it might be due to a DNS-server/Firewall misbehaving and only giving one reply to a parallel A and AAAA request ([source](http://udrepper.livejournal.com/20948.html)). You can fix that by setting the following option in `/etc/resolv.conf`:
+
+```
+options single-request
+
+```
+
+### Local domain names
+
+If you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line to `resolv.conf` with the local domain such as:
+
+```
+domain example.com
+
+```
+
+That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.
+
 ## Alternative DNS servers
-
-To use alternative DNS servers, edit `/etc/resolv.conf` and add them at the top of the list so they are used first, optionally removing or commenting out other servers. Currently, you may include a maximum of three nameservers.
-
-**Note:** Changes made to `/etc/resolv.conf` take effect immediately.
-
-**Tip:** If you require more flexibility, e.g. more than three nameservers, you can use a local DNS resolver like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [unbound](/index.php/Unbound "Unbound"). In this case the nameserver IP address will likely be `127.0.0.1`.
 
 ### Cisco Umbrella (formerly OpenDNS)
 
@@ -253,123 +381,3 @@ nameserver 2a02:6b8:0:1::feed:a11 # Alternate IPv6 DNS
 ```
 
 Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no traffic filtering. In *Safe* mode, protection from infected and fraudulent sites is provided. *Family* mode enables protection from dangerous sites and blocks sites with adult content.
-
-## Preserve DNS settings
-
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl "Netctl"), [NetworkManager](/index.php/NetworkManager "NetworkManager"), and various other processes can overwrite `/etc/resolv.conf`. This is usually desirable behavior, but sometimes DNS settings need to be set manually (e.g. when using a static IP address). There are several ways to accomplish this.
-
-*   If you are using *dhcpcd*, see [#Modify the dhcpcd config](#Modify_the_dhcpcd_config) below.
-*   If you are using [netctl](/index.php/Netctl "Netctl") and static IP address assignment, do not use the `DNS*` options in your profile, otherwise *resolvconf* is called and `/etc/resolv.conf` overwritten.
-
-### Systemd-resolved configuration
-
-[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications. *systemd-resolved* has [four different modes for handling *resolv.conf*](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#/ETC/RESOLV.CONF). In one of the modes, it is a consumer of the `/etc/resolv.conf` file and any change made to it is going to be preserved and taken into account transparently for the user. This mode is therefore compatible with the procedures described in this page.
-
-However, this is not *systemd-resolved'*s recommended mode of operation. The service users are advised to redirect software which read the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This can be done by deleting or renaming the existing `/etc/resolv.conf` and replacing it by a symbolic link to the systemd stub: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
-
-In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
-
- `/etc/systemd/resolved.conf` 
-```
-[Resolve]
-**DNS=91.239.100.100 89.233.43.71**
-...
-```
-
-In order to check the DNS actually used by *systemd-resolved*, the command to use is:
-
-```
-$ systemd-resolve --status
-
-```
-
-**Tip:**
-
-*   To understand the context around the DNS choices and switches, one can turn on detailed debug information for *systemd-resolved* as described in [Systemd#Diagnosing a service](/index.php/Systemd#Diagnosing_a_service "Systemd").
-*   The mode of operation of *systemd-resolved* is detected automatically, depending on whether `/etc/resolv.conf` is a symlink to the local stub DNS resolver file or contains server names.
-
-### Prevent NetworkManager modifications
-
-To stop *NetworkManager* from modifying `/etc/resolv.conf`, edit `/etc/NetworkManager/NetworkManager.conf` and add the following in the `[main]` section:
-
-```
-dns=none
-
-```
-
-`/etc/resolv.conf` might be a broken symlink that you will need to remove after doing that. Then, just create a new `/etc/resolv.conf` file.
-
-*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
-
-### Use openresolv
-
-[openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility *resolvconf*, which is a framework for managing multiple DNS configurations. See [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) and [resolvconf.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) for more information.
-
-The configuration is done in `/etc/resolvconf.conf` and running `resolvconf -u` will generate `/etc/resolv.conf`.
-
-Note that *NetworkManager* can be configured to use *openresolv*, see [NetworkManager#Configure NetworkManager resolv.conf management mode to use resolvconf](/index.php/NetworkManager#Configure_NetworkManager_resolv.conf_management_mode_to_use_resolvconf "NetworkManager").
-
-### Modify the dhcpcd config
-
-*dhcpcd'*s configuration file may be edited to prevent the *dhcpcd* daemon from overwriting `/etc/resolv.conf`. To do this, add the following to the last section of `/etc/dhcpcd.conf`:
-
-```
-nohook resolv.conf
-
-```
-
-Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. *dhcpcd* will prepend this file to the beginning of `/etc/resolv.conf`.
-
-Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`, where `*dns-server-ip-addressses*` is a space separated list of DNS IP addresses.
-
-```
-static domain_name_servers=*dns-server-ip-addresses*
-
-```
-
-For example, to set it to Google's DNS servers:
-
-```
-static domain_name_servers=8.8.8.8 8.8.4.4
-
-```
-
-### Write-protect resolv.conf
-
-Another way to protect your `/etc/resolv.conf` from being modified by anything is setting the immutable (write-protection) attribute:
-
-```
-# chattr +i /etc/resolv.conf
-
-```
-
-## Tips and tricks
-
-### Limit lookup time
-
-If you are confronted with a very long hostname lookup (may it be in [pacman](/index.php/Pacman "Pacman") or while browsing), it often helps to define a small timeout after which an alternative nameserver is used. To do so, put the following in `/etc/resolv.conf`.
-
-```
-options timeout:1
-
-```
-
-### Hostname lookup delayed with IPv6
-
-If you experience a 5 second delay when resolving hostnames it might be due to a DNS-server/Firewall misbehaving and only giving one reply to a parallel A and AAAA request ([source](http://udrepper.livejournal.com/20948.html)). You can fix that by setting the following option in `/etc/resolv.conf`:
-
-```
-options single-request
-
-```
-
-### Local domain names
-
-If you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line to `resolv.conf` with the local domain such as:
-
-```
-domain example.com
-
-```
-
-That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.

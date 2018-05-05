@@ -595,7 +595,7 @@ Errors occurred, no packages were upgraded.
 
 ```
 
-Why this is happening: *pacman* has detected a file conflict, and by design, will not overwrite files for you. This is a design feature, not a flaw.
+this is happening because *pacman* has detected a file conflict, and by design, will not overwrite files for you. This is a design feature, not a flaw.
 
 The problem is usually trivial to solve. A safe way is to first check if another package owns the file (`pacman -Qo */path/to/file*`). If the file is owned by another package, [file a bug report](/index.php/Reporting_bug_guidelines "Reporting bug guidelines"). If the file is not owned by another package, rename the file which 'exists in filesystem' and re-issue the update command. If all goes well, the file may then be removed.
 

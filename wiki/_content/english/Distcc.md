@@ -183,7 +183,7 @@ A [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=129762) has bee
 
 **Note:** This method works, but is not very elegant requiring duplication of distccd on all nodes AND need to have a 32-bit chroots on all nodes.
 
-Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot command](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") invoking makepkg.
+Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/schroot.1) command invoking makepkg.
 
 ##### Add port numbers to DISTCC_HOSTS on the i686 chroot
 
@@ -198,7 +198,7 @@ DISTCC_HOSTS="192.168.1.101/5:3692 192.168.1.102/5:3692 192.168.1.103/3:3692"
 
 ##### Invoke makepkg from the Native Environment
 
-Setup [schroot](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") on the native x86_64 environment. Invoke makepkg to build an i686 package from the native x86_64 environment, simply by:
+Set up [schroot](https://www.archlinux.org/packages/?name=schroot) on the native x86_64 environment. Invoke makepkg to build an i686 package from the native x86_64 environment, simply by:
 
 ```
 $ schroot -p -- makepkg -src

@@ -92,7 +92,7 @@ By default, rEFInd will scan all of your drives (that it has drivers for) and ad
 
 **Tip:** It is always a good idea to edit the default config `*esp*/EFI/refind/refind.conf` to ensure that the default options work for you.
 
-**Warning:** When `refind-install` is run in chroot (e.g. in live system when installing Arch Linux) `/boot/refind_linux.conf` is populated with kernel options from the live system not the one on which it is installed. You will need to edit `/boot/refind_linux.conf` and adjust the kernel options manually. See [#For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd) for an example.
+**Warning:** When `refind-install` is run in chroot (e.g. in live system when installing Arch Linux) `/boot/refind_linux.conf` is populated with kernel options from the live system not the one on which it is installed. You will need to edit `/boot/refind_linux.conf` and adjust the kernel options manually. See [#refind_linux.conf](#refind_linux.conf) for an example.
 
 #### Secure Boot
 

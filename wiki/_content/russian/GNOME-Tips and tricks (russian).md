@@ -300,8 +300,7 @@ StartupNotify=true
 
 #### Изменение логотипа Gnome на Arch
 
-**Примечание:**
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+**Примечание:** Благодарность arkham, кто запостил данный способ в [этот форум](https://bbs.archlinux.org/viewtopic.php?id=74881)
 
 *   Скачайте [this Arch icon](http://img23.imageshack.us/img23/9679/starthere.png) (имя файла `starthere.png`)
 *   Или можете установить пакет artwork используя команду "pacman -S archlinux-artwork", что добавит новые файлы в каталог/usr/share/archlinux , и измените размер выбранного вами логотипа к 24х24px

@@ -37,11 +37,12 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 *   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/)
 *   [Arch Linux 32](https://archlinux32.org/)
 *   [Arch Linux ARM](https://archlinuxarm.org/)
+*   [Archman OS](https://sourceforge.net/projects/archman-os/)
+*   [Archphile](https://sourceforge.net/projects/archphile/)
 *   [ArchStrike](https://archstrike.org/)
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/)
 *   [ArcoLinux](https://sourceforge.net/projects/arcolinux/)
 *   [Artix Linux](https://sourceforge.net/projects/artix-linux/)
-*   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
 *   [BlackArch Linux](https://blackarch.org/)
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)
@@ -61,13 +62,14 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 *   [PacBSD](https://www.pacbsd.org/)
 *   [Parabola](https://www.parabola.nu/)
 *   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/)
-*   [RaspArch](https://sourceforge.net/projects/rasparch)
+*   [RaspArch](https://sourceforge.net/projects/rasparch/)
 *   [Revenge OS](https://sourceforge.net/projects/obrevenge/)
-*   [Sonar](https://sourceforge.net/projects/sonargnulinux)
+*   [Sekhmet](https://sourceforge.net/projects/sekhmet/)
+*   [Sonar](https://sourceforge.net/projects/sonargnulinux/)
+*   [SwagArch](https://swagarch.github.io/)
 *   [TalkingArch](https://talkingarch.tk/)
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/)
 *   [UBOS](http://ubos.net/)
-*   [Velt OS](https://velt.io)
 
 ## Inactive
 
@@ -75,28 +77,30 @@ These distributions are no longer developed, but show some of the history surrou
 
 ### 2017
 
-*   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1)
+*   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1/)
 *   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [Arch Linux WSL Edition](https://github.com/alwsl/alwsl)
-*   [Archphile](https://sourceforge.net/projects/archphile/)
+*   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/)
-*   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Feliz](https://sourceforge.net/projects/feliz/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
-*   [Nurunner Linux](https://nurunner.mkxt.net/)
+*   [Nurunner Linux](http://nurunner.mkxt.net/index2.html)
 
 ### 2016
 
 *   [alphaOS](https://sourceforge.net/projects/alphaos/)
 *   [Apricity OS](https://sourceforge.net/projects/apricityos/)
-*   [archodi](https://sourceforge.net/projects/archodi/)
+*   [Arch i3Nemesis](https://sourceforge.net/projects/arch-i3nemesis/)
 *   [Architect](https://sourceforge.net/projects/architect-linux)
+*   [archodi](https://sourceforge.net/projects/archodi/)
 *   [arch rescue kit](https://sourceforge.net/projects/archrescue/)
 *   [arkOS](https://github.com/arkOScloud)
 *   [Arquetype CRT](https://twitter.com/ArquetypeLinux)
+*   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Miraclx OS](https://sourceforge.net/projects/miraclx-os/)
 *   [niixarch](https://sourceforge.net/projects/niixarch/)
 *   [PacBang](https://sourceforge.net/projects/architect-linux/)
+*   [Velt OS](https://velt.io)
 
 ### 2015
 

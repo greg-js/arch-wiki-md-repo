@@ -160,11 +160,11 @@ As this solution does not use an official certificate authority (CA), a security
 
 #### Install
 
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into a suitable location, for example `/usr/local/letsencrypt`.
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol and therefore supporting wildcard domains such as **.mydomain.org*. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into a suitable location, for example `/usr/local/letsencrypt`.
 
 A configuration file example `letsencrypt.conf` is provided. The user's configuration must be saved either in `~/.letsencrypt/`, `/etc/letsencrypt/` or `/usr/local/etc/letsencrypt/`.
 
-In the configuration file, the variable `HIAWATHA_RESTART_COMMAND` must be replaced by `systemctl restart hiawatha.service` in `/root/letsencrypt/letsencrypt.conf`.
+In the user's configuration file, the variable `HIAWATHA_RESTART_COMMAND` must be replaced by `systemctl restart hiawatha.service`.
 
 #### Obtain a certificate
 

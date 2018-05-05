@@ -53,7 +53,7 @@ Run Awn in the background:
 
  `$ avant-window-navigator &` 
 
-To launch AWN at startup, check **Start Awn automatically** option in Dock Preferences dialog (see below), or add the following command to the [autostart](/index.php/Autostarting#Graphical "Autostarting") file: `avant-window-navigator --startup &`
+To launch AWN at startup, check **Start Awn automatically** option in Dock Preferences dialog (see below), or [autostart](/index.php/Autostart "Autostart") the command `avant-window-navigator --startup &`.
 
 ## Configuration
 

@@ -58,7 +58,7 @@ As a result:
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
     *   [7.3 Does not contain an EFI label](#Does_not_contain_an_EFI_label)
     *   [7.4 No hostid found](#No_hostid_found)
-    *   [7.5 Pool can't be found while booting from SAS/SCSI devices](#Pool_can.27t_be_found_while_booting_from_SAS.2FSCSI_devices)
+    *   [7.5 Pool cannot be found while booting from SAS/SCSI devices](#Pool_cannot_be_found_while_booting_from_SAS.2FSCSI_devices)
     *   [7.6 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
         *   [7.6.1 Unexported pool](#Unexported_pool)
         *   [7.6.2 Incorrect hostid](#Incorrect_hostid)
@@ -167,14 +167,14 @@ Use `# parted --list` to see a list of all available drives. It is not necessary
 
 **Warning:** For Advanced Format Disks with 4KB sector size, an ashift of 12 is recommended for best performance. Advanced Format disks emulate a sector size of 512 bytes for compatibility with legacy systems, this causes ZFS to sometimes use an ashift option number that is not ideal. Once the pool has been created, the only way to change the ashift option is to recreate the pool. Using an ashift of 12 would also decrease available capacity. See [1.10 What’s going on with performance?](https://github.com/zfsonlinux/zfs/wiki/faq#performance-considerations), [1.15 How does ZFS on Linux handle Advanced Format disks?](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks), and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
 
-Having identified the list of drives, it is now time to get the id's of the drives to add to the zpool. The [zfs on Linux developers recommend](https://github.com/zfsonlinux/zfs/wiki/faq#selecting-dev-names-when-creating-a-pool) using device ids when creating ZFS storage pools of less than 10 devices. To find the id's, simply:
+Having identified the list of drives, it is now time to get the IDs of the drives to add to the zpool. The [zfs on Linux developers recommend](https://github.com/zfsonlinux/zfs/wiki/faq#selecting-dev-names-when-creating-a-pool) using device IDs when creating ZFS storage pools of less than 10 devices. To find the IDs, simply:
 
 ```
 # ls -lh /dev/disk/by-id/
 
 ```
 
-The ids should look similar to the following:
+The IDs should look similar to the following:
 
 ```
 lrwxrwxrwx 1 root root  9 Aug 12 16:26 ata-ST3000DM001-9YN166_S1F0JKRR -> ../../sdc
@@ -307,7 +307,7 @@ Eventually a pool may fail to auto mount and you need to import to bring your po
 
 ```
 
-This will import your pools using `/dev/sd?` which will lead to problems the next time you rearrange your drives. This may be as simple as rebooting with a USB drive left in the machine, which harkens back to a time when PC's would not boot when a floppy disk was left in a machine. Adapt one of the following commands to import your pool so that pool imports retain the persistence they were created with.
+This will import your pools using `/dev/sd?` which will lead to problems the next time you rearrange your drives. This may be as simple as rebooting with a USB drive left in the machine, which harkens back to a time when PCs would not boot when a floppy disk was left in a machine. Adapt one of the following commands to import your pool so that pool imports retain the persistence they were created with.
 
 ```
 # zpool import -d /dev/disk/by-id zfsdata
@@ -773,20 +773,15 @@ The other solution is to make sure that there is a hostid in `/etc/hostid`, and 
 
 ```
 
-### Pool can't be found while booting from SAS/SCSI devices
+### Pool cannot be found while booting from SAS/SCSI devices
 
-In case you're booting a SAS/SCSI based, you might occassionally get boot problems where the pool you're trying to boot from can't be found. A likely reason for this is that your devices are initialized too late into the process. That means that zfs can't find any devices at the time when it tries to assemble your pool.
+In case you are booting a SAS/SCSI based, you might occassionally get boot problems where the pool you are trying to boot from cannot be found. A likely reason for this is that your devices are initialized too late into the process. That means that zfs cannot find any devices at the time when it tries to assemble your pool.
 
 In this case you should force the scsi driver to wait for devices to come online before continuing. You can do this by putting this into `/etc/modprobe.d/zfs.conf`:
 
  `/etc/modprobe.d/zfs.conf`  `options scsi_mod scan=sync` 
 
-Afterwards, rebuild your initramfs:
-
-```
-# mkinitcpio -p linux
-
-```
+Afterwards, [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 This works because the zfs hook will copy the file at `/etc/modprobe.d/zfs.conf` into the initcpio which will then be used at build time.
 

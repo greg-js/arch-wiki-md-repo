@@ -1,6 +1,5 @@
 Artigos relacionados
 
-*   [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
 *   [Ponto de acesso por software](/index.php/Software_access_point "Software access point")
 *   [Rede ad-hoc](/index.php/Ad-hoc_networking "Ad-hoc networking")
 *   [Compartilhamento de internet](/index.php/Internet_sharing "Internet sharing")
@@ -8,7 +7,11 @@ Artigos relacionados
 *   [Depuração de rede](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
 
+Veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para o artigo geral sobre como configurar uma conexão de rede.
+
 A configuração de rede sem fio *(wireless)* é um processo de duas partes. A primeira parte é identificar e garantir que o driver correto para o seu dispositivo sem fio está instalado (eles estão disponíveis na mídia de instalação, mas geralmente precisam ser instalados explicitamente) e para configurar a interface. A segunda é escolher um método de gerenciamento de conexões sem fio. Este artigo abrange as duas partes e fornece links adicionais para ferramentas de gerenciamento sem fio.
+
+A seção [#Gerenciamento de sem fio](#Gerenciamento_de_sem_fio) descreve como gerenciar manualmente sua rede sem fio / suas LANs sem fio. O artigo [Network manager](/index.php/Network_manager "Network manager") descreve vários programas que podem ser usados para gerenciar automaticamente sua interface sem fio, algumas das quais incluem uma GUI e todas que incluem suporte a perfis de rede (útil quando estiver mudando de redes sem fio, como com laptops).
 
 ## Contents
 
@@ -16,16 +19,14 @@ A configuração de rede sem fio *(wireless)* é um processo de duas partes. A p
     *   [1.1 Verificar o status de driver](#Verificar_o_status_de_driver)
     *   [1.2 Instalar driver/firmware](#Instalar_driver.2Ffirmware)
 *   [2 Gerenciamento de sem fio](#Gerenciamento_de_sem_fio)
-    *   [2.1 Configuração manual](#Configura.C3.A7.C3.A3o_manual)
-        *   [2.1.1 Obter o nome da interface](#Obter_o_nome_da_interface)
-        *   [2.1.2 Obter o status da interface](#Obter_o_status_da_interface)
-        *   [2.1.3 Ativar a interface](#Ativar_a_interface)
-        *   [2.1.4 Descobrir pontos de acesso](#Descobrir_pontos_de_acesso)
-        *   [2.1.5 Definir o modo de operação](#Definir_o_modo_de_opera.C3.A7.C3.A3o)
-        *   [2.1.6 Conectar a um ponto de acesso](#Conectar_a_um_ponto_de_acesso)
-        *   [2.1.7 Obter um endereço IP](#Obter_um_endere.C3.A7o_IP)
-            *   [2.1.7.1 Exemplo](#Exemplo)
-    *   [2.2 Configuração automática](#Configura.C3.A7.C3.A3o_autom.C3.A1tica)
+    *   [2.1 Obter o nome da interface](#Obter_o_nome_da_interface)
+    *   [2.2 Obter o status da interface](#Obter_o_status_da_interface)
+    *   [2.3 Ativar a interface](#Ativar_a_interface)
+    *   [2.4 Descobrir pontos de acesso](#Descobrir_pontos_de_acesso)
+    *   [2.5 Definir o modo de operação](#Definir_o_modo_de_opera.C3.A7.C3.A3o)
+    *   [2.6 Conectar a um ponto de acesso](#Conectar_a_um_ponto_de_acesso)
+    *   [2.7 Obter um endereço IP](#Obter_um_endere.C3.A7o_IP)
+        *   [2.7.1 Exemplo](#Exemplo)
 *   [3 WPA2 Empresarial](#WPA2_Empresarial)
     *   [3.1 eduroam](#eduroam)
     *   [3.2 Configuração manual/automática](#Configura.C3.A7.C3.A3o_manual.2Fautom.C3.A1tica)
@@ -160,10 +161,6 @@ Se sua placa sem fio não estiver listada acima, provavelmente só há suporte n
 
 ## Gerenciamento de sem fio
 
-A [#Configuração manual](#Configura.C3.A7.C3.A3o_manual) usa ferramentas de linha de comando para gerenciar manualmente sua interface de rede. A seção [#Configuração automática](#Configura.C3.A7.C3.A3o_autom.C3.A1tica) descreve vários programas que podem ser usados para gerenciar automaticamente sua interface sem fio, alguns dos quais incluem uma GUI e todos incluem suporte a perfis de rede (útil ao alternar frequentemente de redes sem fio, como laptops).
-
-### Configuração manual
-
 Assim como outras interfaces de rede, as sem fio são controladas com *ip* do pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
 Você precisará instalar um conjunto básico de ferramentas para gerenciar a conexão sem fio. [Instale](/index.php/Instale "Instale") um dos seguintes:
@@ -191,7 +188,7 @@ Você precisará instalar um conjunto básico de ferramentas para gerenciar a co
 
 Exemplos nesta seção presume que sua interface de dispositivo sem fio é `*interface*` e que você está se conectando a ponto de acesso wifi `*seu_essid*`. Substitua ambos conforme o caso.
 
-#### Obter o nome da interface
+### Obter o nome da interface
 
 **Dica:** Veja a [documentação oficial](http://wireless.kernel.org/en/users/Documentation/iw) da ferramenta *iw* para mais exemplos.
 
@@ -204,7 +201,7 @@ $ iw dev
 
 O nome da interface será exibida após a palavra "Interface". Por exemplo, ela normalmente é `wlan0`.
 
-#### Obter o status da interface
+### Obter o status da interface
 
 Para verificar o status dos links, use o comando a seguir:
 
@@ -220,7 +217,7 @@ $ iw dev *interface* station dump
 
 ```
 
-#### Ativar a interface
+### Ativar a interface
 
 **Dica:** Geralmente, essa etapa não é necessária.
 
@@ -235,7 +232,7 @@ Algumas placas de rede exigem que a interface do kernel seja ativada antes que v
 
 Para conferir se a interface está ativa, inspecione a saída do comando a seguir:
 
- `# ip link show *interface*` 
+ `$ ip link show *interface*` 
 ```
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
@@ -244,7 +241,7 @@ Para conferir se a interface está ativa, inspecione a saída do comando a segui
 
 O `UP` em `<BROADCAST,MULTICAST,UP,LOWER_UP>` é o que indica que a interface está ativa, e não o `state DOWN` em seguida.
 
-#### Descobrir pontos de acesso
+### Descobrir pontos de acesso
 
 Para ver quais pontos de acesso estão disponíveis, execute:
 
@@ -269,7 +266,7 @@ Os pontos importantes para verificar são:
         *   **Authentication suites:** valor em PSK, 802.1x, others. Para roteadores residenciais, você geralmente vai encontrar PSK (que significa *passphrase* ou, em português, senha). Em universidades, você provavelmente encontrará o padrão 802.1x que requer usuário e senha. Então, você precisará saber qual gerenciamento de chave está em uso (p. ex., EAP) e qual encapsulamento é usado (p. ex., PEAP). Veja [#WPA2 Empresarial](#WPA2_Empresarial) e [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") para detalhes.
     *   Se você não vir blocos `RSN` nem `WPA`, mas há `Privacy`, então WEP é usado.
 
-#### Definir o modo de operação
+### Definir o modo de operação
 
 Pode ser necessário definir o modo de operação adequado da placa sem fio. Mais especificamente, se você for conectar uma [rede ad-hoc](/index.php/Ad-hoc_networking "Ad-hoc networking"), você precisa definir o modo de operação para `ibss`:
 
@@ -280,7 +277,7 @@ Pode ser necessário definir o modo de operação adequado da placa sem fio. Mai
 
 **Nota:** A mudança do modo de operação em algumas placas pode exibir que a interface sem fio esteja *desativada* (`ip link set *interface* down`).
 
-#### Conectar a um ponto de acesso
+### Conectar a um ponto de acesso
 
 Dependendo da criptografia, você precisa associar seu dispositivo sem fio ao ponto de acesso para usar e transmitir a chave de criptografia:
 
@@ -297,11 +294,11 @@ Independentemente do método usado, você pode verificar se você conseguiu se a
 
 ```
 
-#### Obter um endereço IP
+### Obter um endereço IP
 
 Siga as instruções em [Configuração de rede#Atribuição manual](/index.php/Configura%C3%A7%C3%A3o_de_rede#Atribui.C3.A7.C3.A3o_manual "Configuração de rede") para mais informações nos exemplos a seguir.
 
-##### Exemplo
+#### Exemplo
 
 Aqui está um exemplo completo de configuração de uma rede sem fio com o suplicante WPA e o DHCP.
 
@@ -334,27 +331,6 @@ E antes de desabilitar a interface, você deve primeiro liberar o endereço IP e
 # ip route flush dev wlan0
 
 ```
-
-### Configuração automática
-
-Existem muitas soluções para escolher, mas lembre-se de que todas elas são mutuamente exclusivas; você não deve executar dois daemons simultaneamente. A tabela a seguir compara os diferentes gerenciadores de conexões, as notas adicionais estão nas subseções abaixo.
-
-| Gerenciador
-de rede | Suporte
-a perfis
-de rede | Roaming
-(autoconexão de localização
-descartada ou alterada) | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Protocolo_Ponto-a-Ponto "wikipedia:pt:Protocolo Ponto-a-Ponto")
-(ex., modem 3G) | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | GUI
-oficial | Ferramentas
-de console | Units de sistemd |
-| [ConnMan](/index.php/ConnMan "ConnMan") | Sim | Sim | Sim | Não | Não | `connmanctl` | `connman.service` |
-| [netctl](/index.php/Netctl "Netctl") | Sim | Sim | Sim | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | Não | `netctl`,`wifi-menu` | `netctl-auto@*interface*.service` |
-| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Sim | Sim | Não | Sim | `nmcli`,`nmtui` | `NetworkManager.service` |
-| [Wicd](/index.php/Wicd "Wicd") | Sim | Sim | Não | Não | Sim | `wicd-curses` | `wicd.service` |
-| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Sim | Sim | Não | Não | Sim | `wifi-radar` |
-
-Veja também [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet").
 
 ## WPA2 Empresarial
 
@@ -407,7 +383,7 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 #### MS-CHAPv2
 
-As redes sem fio WPA2 Empresarial que exigem autenticação tipo 2 de MSCHAPv2 com PEAP às vezes exigem [pptpclient](https://www.archlinux.org/packages/?name=pptpclient), além do pacote [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl "Netctl") parece funcionar facilmente sem ppp-mppe, no entanto. Em ambos os casos, o uso de MSCHAPv2 é desencorajado, pois é altamente vulnerável, embora o uso de outro método geralmente não seja uma opção. Veja também [[2]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) e [.pdf](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise).
+As redes sem fio WPA2 Empresarial que exigem autenticação tipo 2 de MSCHAPv2 com PEAP às vezes exigem [pptpclient](https://www.archlinux.org/packages/?name=pptpclient), além do pacote [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl "Netctl") parece funcionar facilmente sem ppp-mppe, no entanto. Em ambos os casos, o uso de MSCHAPv2 é desencorajado, pois é altamente vulnerável, embora o uso de outro método geralmente não seja uma opção. Veja também [[1]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) e [.pdf](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise).
 
 ## Dicas e truques
 
@@ -515,7 +491,7 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
 
-See also [[3]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
+See also [[2]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
 
 ### Observando os logs
 
@@ -593,7 +569,7 @@ Packet fragmentation improves throughput by splitting up packets with size excee
 
 #### Causa nº.1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[4]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[3]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
@@ -670,7 +646,7 @@ New chipset as of 2014, released under their new commercial name Mediatek. It is
 
 ### Realtek
 
-See [[6]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
+See [[5]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
 
 #### rtl8192cu
 
@@ -690,7 +666,7 @@ or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[7]](https://bbs.archlinux.org/viewtopic.php?id=208472)
+If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[6]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
@@ -801,7 +777,7 @@ If you have problems connecting to networks in general, random failures with you
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
-If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
+If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
 
 #### iwlwifi
 
@@ -815,7 +791,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[10]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[11]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[9]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
@@ -823,7 +799,7 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 ##### Coexistência com Bluetooth
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[11]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -882,7 +858,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[13]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[12]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

@@ -1,4 +1,4 @@
-This article describes basic usage of [eCryptfs](https://launchpad.net/ecryptfs). It guides you through the process of creating a private and secure encrypted directory within your `$HOME` directory to store sensitive files and private data.
+This article describes basic usage of [eCryptfs](https://launchpad.net/ecryptfs). It guides you through the process of creating a private and secure encrypted directory within your home directory to store sensitive files and private data.
 
 In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), which provides a *block device encryption layer*, while eCryptfs is an actual file-system – a [stacked cryptographic file system](https://en.wikipedia.org/wiki/Cryptographic_filesystems "wikipedia:Cryptographic filesystems"). For comparison of the two you can refer to the [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption"). One distinguished feature is that the encryption is stacked on an existing filesystem; eCryptfs can be mounted onto any single existing directory and does not require a separate partition (or size pre-allocation).
 
@@ -7,7 +7,7 @@ In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt
 *   [1 Basics](#Basics)
     *   [1.1 Deficiencies](#Deficiencies)
 *   [2 Setup & mounting](#Setup_.26_mounting)
-    *   [2.1 High-level tools (hardcoded paths)](#High-level_tools_.28hardcoded_paths.29)
+    *   [2.1 Ubuntu tools](#Ubuntu_tools)
         *   [2.1.1 Encrypting a data directory](#Encrypting_a_data_directory)
         *   [2.1.2 Encrypting a home directory](#Encrypting_a_home_directory)
         *   [2.1.3 Mounting](#Mounting)
@@ -24,7 +24,9 @@ In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt
     *   [3.1 Symlinking into the encrypted directory](#Symlinking_into_the_encrypted_directory)
     *   [3.2 Removal of encryption](#Removal_of_encryption)
     *   [3.3 Backup](#Backup)
-*   [4 See Also](#See_Also)
+*   [4 Known issues](#Known_issues)
+    *   [4.1 Mounting may fail on a remote host when connecting via Mosh](#Mounting_may_fail_on_a_remote_host_when_connecting_via_Mosh)
+*   [5 See also](#See_also)
 
 ## Basics
 
@@ -46,7 +48,7 @@ Before using eCryptfs, the following disadvantages should be checked for applica
 
 *   Ease of use
 
-	The [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) package provides several different ways of setting up eCryptfs. The high-level "Ubuntu tools" are the easiest to use, but they hard-code the lower directory path and other settings, limiting their usefulness. The package also includes low-level tools which are fully configurable, but they are somewhat more difficult to use compared to alternatives like [EncFS](/index.php/EncFS "EncFS").
+	The [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) package provides several different ways of setting up eCryptfs. The high-level [#Ubuntu tools](#Ubuntu_tools) are the easiest to use, but they hard-code the lower directory path and other settings, limiting their usefulness. The package also includes low-level tools which are fully configurable, but they are somewhat more difficult to use compared to alternatives like [EncFS](/index.php/EncFS "EncFS").
 
 *   File name length
 
@@ -75,13 +77,13 @@ eCryptfs has been included in Linux since version 2.6.19\. Start by loading the 
 
 To actually mount an eCryptfs filesystem, you need to use userspace tools provided by the package [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) available in the [Official repositories](/index.php/Official_repositories "Official repositories"). Unfortunately, due to the poor design of these tools, you must choose between three ways of setting up eCryptfs with different tradeoffs:
 
-1.  Use the [high-level tools](#High-level_tools_.28hardcoded_paths.29), which set things up automatically but require the lower directory to be `~/.Private/`, and allow only one encrypted filesystem per user.
+1.  Use the high-level [#Ubuntu tools](#Ubuntu_tools), which set things up automatically but require the lower directory to be `~/.Private/`, and allow only one encrypted filesystem per user.
 2.  Use [ecryptfs-simple](#ecryptfs-simple), available from AUR, which is an easy way to mount eCryptfs filesystems using any lower directory and upper directory.
 3.  [#Manual setup](#Manual_setup), which involves separate steps for loading the passphrase and mounting eCryptfs, but allows complete control over the directories and encryption settings.
 
-### High-level tools (hardcoded paths)
+### Ubuntu tools
 
-Most of the user-friendly convenience tools installed by the *ecryptfs-utils* package assume a very specific eCryptfs setup, namely the one that is officially used by Ubuntu (where it can be selected as an option during distro installation). Unfortunately, these choices are not just default options but are actually hard-coded in the tools. If this set-up does not suit your needs, then you can not use the convenience tools and will have to follow the steps at [#Manual setup](#Manual_setup) instead.
+Most of the user-friendly convenience tools installed by the [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) package assume a very specific eCryptfs setup, namely the one that is officially used by Ubuntu (where it can be selected as an option during distro installation). Unfortunately, these choices are not just default options but are actually hard-coded in the tools. If this set-up does not suit your needs, then you can not use the convenience tools and will have to follow the steps at [#Manual setup](#Manual_setup) instead.
 
 The set-up used by these tools is as follows:
 
@@ -164,7 +166,7 @@ $ ecryptfs-mount-private
 
 ```
 
-and entering the passphrase is all needed to mount the encrypted directory to the [above](#High-level_tools_.28hardcoded_paths.29) described *upper directory* `~/Private`.
+and entering the passphrase is all needed to mount the encrypted directory to the *upper directory* `~/Private`, described in [#Ubuntu tools](#Ubuntu_tools).
 
 Likewise, executing
 
@@ -339,8 +341,6 @@ Finally, mount `~/.secret` on `~/secret`:
 $ mount.ecryptfs_private secret
 
 ```
-
-**Warning:** Mounting may fail on a remote host when connecting via Mosh [[[6]](https://mosh.org/Mosh)] [[[7]](https://github.com/mobile-shell/mosh/issues/529)]
 
 When you are done, unmount it:
 
@@ -521,7 +521,7 @@ Besides using your private directory as storage for sensitive files, and private
 
 There are no special steps involved, if you want to remove your private directory. Make sure it is un-mounted and delete the respective lower directory (e.g. `~/.Private`), along with all the encrypted files. After also removing the related encryption signatures and configuration in `~/.ecryptfs`, all is gone.
 
-If you were [#Using the Ubuntu tools](#Using_the_Ubuntu_tools) to setup a single directory encryption, you can directly follow the steps detailed by:
+If you were using the [#Ubuntu tools](#Ubuntu_tools) to setup a single directory encryption, you can directly follow the steps detailed by:
 
 ```
 $ ecryptfs-setup-private --undo
@@ -546,7 +546,13 @@ Further points to note:
 
 *   If you use special filesystem mount options, for example `ecryptfs_xattr`, do extra checks on restore integrity.
 
-## See Also
+## Known issues
+
+### Mounting may fail on a remote host when connecting via Mosh
+
+This is a [known issue](https://github.com/mobile-shell/mosh/issues/529) of [Mosh](https://mosh.org/) server, which does not keep the eCryptfs `/home` directory mounted.
+
+## See also
 
 *   [eCryptfs](http://ecryptfs.org/documentation.html) - Manpages and project home
 *   [Security audit](https://defuse.ca/audits/ecryptfs.htm) of eCryptfs by Taylor Hornby (January 22, 2014).

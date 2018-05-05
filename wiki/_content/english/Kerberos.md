@@ -19,12 +19,14 @@ Related articles
 *   [5 Service principals and keytabs](#Service_principals_and_keytabs)
     *   [5.1 With remote kadmin](#With_remote_kadmin)
     *   [5.2 Without remote kadmin](#Without_remote_kadmin)
-*   [6 SSH Authentication](#SSH_Authentication)
-*   [7 NFS Security](#NFS_Security)
-    *   [7.1 NFS Server](#NFS_Server)
-    *   [7.2 NFS Client](#NFS_Client)
-*   [8 Troubleshooting](#Troubleshooting)
-*   [9 See also](#See_also)
+*   [6 Cross-Realm Trust](#Cross-Realm_Trust)
+*   [7 SSH Authentication](#SSH_Authentication)
+    *   [7.1 Authorize other principals](#Authorize_other_principals)
+*   [8 NFS Security](#NFS_Security)
+    *   [8.1 NFS Server](#NFS_Server)
+    *   [8.2 NFS Client](#NFS_Client)
+*   [9 Troubleshooting](#Troubleshooting)
+*   [10 See also](#See_also)
 
 ## Installation
 
@@ -320,6 +322,19 @@ Finally, copy `kbclient.keytab` from the server to the client using SCP or simil
 
 Finally, delete kbclient.keytab from the server and client.
 
+## Cross-Realm Trust
+
+Set up a second server as shown above, then create the cross-realm principal on both KDCs. Cross-realm principals must be created with strong passwords, not `-randkey`, and the same password must be used on both KDCs. The principal must have the same key version number (kvno) in both KDCs.
+
+To grant EXAMPLE.COM principals access to EXAMPLE.ORG resources, you would use the following principal:
+
+```
+kadmin# addprinc krbtgt/EXAMPLE.ORG@EXAMPLE.COM
+
+```
+
+The `[capaths]` section of `krb5.conf` can be used to further control cross-realm trust relationships.
+
 ## SSH Authentication
 
 Use the instructions in [Service principals and keytabs](#Service_principals_and_keytabs) to create a principal for the "host" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
@@ -377,6 +392,16 @@ Default principal: myuser@EXAMPLE.COM
 Valid starting       Expires              Service principal
 08/30/2017 15:37:40  08/31/2017 15:37:40  krbtgt/EXAMPLE.COM@EXAMPLE.COM
 08/30/2017 15:53:04  08/31/2017 15:37:40  host/sshserver.example.com@EXAMPLE.COM
+
+```
+
+### Authorize other principals
+
+To allow a different kerberos principal to authenticate to a user account, add the principal name to the target account's `.k5login` file. For example, to allow `robert@EXAMPLE.COM` to SSH to alice's account:
+
+ `/home/alice/.k5login` 
+```
+robert@EXAMPLE.COM
 
 ```
 

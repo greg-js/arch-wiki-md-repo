@@ -419,8 +419,7 @@ StartupNotify=true
 
 #### Cambiare l'icona predefinita del menu Gnome con l'icona di Arch
 
-**Nota:**
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+**Nota:** Grazie a arkham che ha pubblicato questo metodo su [questo post](https://bbs.archlinux.org/viewtopic.php?id=74881) e che noi riportiamo qui.
 
 *   Scaricare [questa icona Arch](http://img23.imageshack.us/img23/9679/starthere.png) (il nome del file è `starthere.png`)
 *   In alternativa scaricare il pacchetto artwork usando "pacman -S archlinux-artwork", che sistemerà il pacchetto in /usr/share/archlinux directory, e ridimensionerà il logo desiderato a 24x24px

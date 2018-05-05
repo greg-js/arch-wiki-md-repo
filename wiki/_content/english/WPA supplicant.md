@@ -146,7 +146,7 @@ Failed to read or parse configuration '/dev/fd/63'
 **Tip:**
 
 *   Use quotes, if the input contains spaces. For example: `"secret passphrase"`.
-*   To discover your wireless network interface name, see [Network configuration#Get current interface names](/index.php/Network_configuration#Get_current_interface_names "Network configuration").
+*   To discover your wireless network interface name, see [Network configuration#Listing network interfaces](/index.php/Network_configuration#Listing_network_interfaces "Network configuration").
 *   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase *MYSSID* < passphrase.txt`, or here strings, e.g. `wpa_passphrase *MYSSID* <<< "*passphrase*"`.
 *   Alternatively, when using special characters in the passphrase, rather than escaping them, simply invoke `wpa_passphrase` without specifying the passphrase. It will then prompt for it to be entered in the standard input where users can paste it even if it contains special characters.
 

@@ -89,7 +89,7 @@ You can set up [GNOME](/index.php/GNOME "GNOME") to use awesome as the visual in
 
 ### XFCE
 
-See [Xfce#Default window manager](/index.php/Xfce#Default_window_manager "Xfce").
+See [Xfce#Use a different window manager](/index.php/Xfce#Use_a_different_window_manager "Xfce").
 
 ## Configuration
 
@@ -230,7 +230,7 @@ awful.key({ "Mod1" }, "Shift_L", function ) mykeyboardlayout.next_layout(); end)
 
 This require you to set up witch keyboard layouts you want to be able to switch between, either by the setxkbmap command or in xorg.
 
-Once you've found the appropiate comand to setup your layouts, add it to [#Autorun programs](#Autorun_programs).
+Once you've found the appropriate command to setup your layouts, add it to [#Autostart](#Autostart).
 
 Alternatively, see [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
@@ -412,7 +412,7 @@ Do not forget to add the widget to your wibox.
 
 If you like awesome's lightweightness and functionality but do not like the way its default panel looks, you can install a different panel, for example [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel).
 
-Then add it to the [autorun section](#Autorun_programs) of your `rc.lua`. You may also comment out the section which creates wiboxes for each screen (starting from `mywibox[s] = awful.wibox({ position = "top", screen = s })`) but it is not necessary. Do not forget to check your `rc.lua` for errors by typing:
+Then add it to the [autorun section](#Autostart) of your `rc.lua`. You may also comment out the section which creates wiboxes for each screen (starting from `mywibox[s] = awful.wibox({ position = "top", screen = s })`) but it is not necessary. Do not forget to check your `rc.lua` for errors by typing:
 
 ```
 $ awesome -k rc.lua

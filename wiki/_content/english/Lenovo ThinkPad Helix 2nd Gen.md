@@ -168,6 +168,8 @@ Until that is fixed, the functionality can be restored by compiling the kernel w
 
 In order to use the sensors (particularly the accelerometer and the ambient light sensor) in [GNOME](/index.php/GNOME "GNOME"), you should install the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package. Due to a yet unresolved quirk, you must suspend and resume the device before the sensors will function properly.
 
+If you are using [GNOME](/index.php/GNOME "GNOME"), a program called [tp-helix-orientation-lock](http://brandon.invergo.net/software/tp-helix-orientation-lock.html) enables the use of the "rotation lock" button on the Helix 2, as well as optionally automatically locking/unlocking the screen orientation when docking/undocking the tablet.
+
 ## Touch Screen
 
 In order to enable multitouch, install [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) and [libwacom](https://www.archlinux.org/packages/?name=libwacom). By default, [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) handles multitouch, however it is limited to two-finger input. In order to allow true multitouch, you must disable this built-in support. Multitouch events will then be passed on to XServer. To test this, try running

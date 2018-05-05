@@ -1,7 +1,7 @@
 Artículos relacionados
 
-*   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
-*   [Core Utilities](/index.php/Core_Utilities "Core Utilities")
+*   [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)")
+*   [Utilidades base](/index.php/Core_Utilities_(Espa%C3%B1ol) "Core Utilities (Español)")
 
 Tomado de [http://www.gnu.org/](http://www.gnu.org/)
 

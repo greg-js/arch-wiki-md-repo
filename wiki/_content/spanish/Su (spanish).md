@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Usuarios y grupos](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
+*   [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
+
 La orden **su** (**s**ubstitute **u**ser) se utiliza para asumir la identidad de otro usuario en el sistema, normalmente root. Esto ahorra tener que cerrar la sesión en curso y volver a iniciarla después como usuario normal. En su lugar, puede iniciar sesión como otro usuario **durante** su sesión, iniciando una especie de «subsesión», y, luego, cerrar esta última sesión, para volver a la anterior, cuando haya terminado.
 
 ## Contents

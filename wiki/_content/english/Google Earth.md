@@ -86,7 +86,7 @@ If setting the `_attempt_fix` variable on top of the [google-earth](https://aur.
 
 ### Graphical corruption
 
-Either refer to the [#Corrupt cache](#Corrupt_cache) section above or disable texture compression in *Tools > Options... > 3D View > Compress*.
+Either refer to the [#Corrupt settings](#Corrupt_settings) section above or disable texture compression in *Tools > Options... > 3D View > Compress*.
 
 ### Earth shows nothing but yellow borders
 

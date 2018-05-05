@@ -3,7 +3,7 @@ Related articles
 *   [dmenu](/index.php/Dmenu "Dmenu")
 *   [wmii](/index.php/Wmii "Wmii")
 
-[dwm](https://dwm.suckless.org/) is a dynamic window manager for [Xorg](/index.php/Xorg "Xorg"). It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of [optional patches](#Patches). Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides [multihead](/index.php/Multihead "Multihead") support for [xrandr](/index.php/Xrandr "Xrandr") and Xinerama.
+[dwm](https://dwm.suckless.org/) is a dynamic window manager for [Xorg](/index.php/Xorg "Xorg"). It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of optional patches. Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides [multihead](/index.php/Multihead "Multihead") support for [xrandr](/index.php/Xrandr "Xrandr") and Xinerama.
 
 ## Contents
 
@@ -185,7 +185,7 @@ xmodmap -e "remove mod1 = Super_L"  # make sure X keeps it out of the mod1 group
 
 After doing so, any functions that are triggered by the `Super_L` key press will also be triggered by an `Alt_R` key press.
 
-**Note:** There is a `#define` option in [config.h](#Customization) which also allows you to switch the modkey
+**Note:** There is a `#define` option in [config.h](#Configuration) which also allows you to switch the modkey.
 
 ### Space around font in dwm's bar
 

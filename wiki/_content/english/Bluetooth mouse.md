@@ -92,7 +92,7 @@ and searching for devices as shown above.
 
 If the mouse stops working but works again after restarting bluetooth, you may need to [disable USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management") for the selected device.
 
-The issue may also lie in the device timeout and HID settings. See [Bluetooth#Thinkpad Bluetooth Laser Mouse problems](/index.php/Bluetooth#Thinkpad_Bluetooth_Laser_Mouse_problems "Bluetooth").
+The issue may also lie in the device timeout and HID settings. See [#Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems).
 
 ### Thinkpad Bluetooth Laser Mouse problems
 

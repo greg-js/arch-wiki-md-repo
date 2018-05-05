@@ -6,7 +6,7 @@
 
 Artículos relacionados
 
-*   [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)")
+*   [Lista de juegos](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)")
 
 Este artículo contiene un listado general de aplicaciones, ordenadas por categorías, a modo de referencia para aquellos que buscan determinados paquetes. Muchas de las secciones se dividen en aplicaciones de consola y aplicaciones gráficas.
 
@@ -372,11 +372,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Cliente Jabber basado en Qt.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
-
-*   **Psi+** — Versión mejorada del cliente Jabber Psi con nuevas [características](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
-
-	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Cliente XMPP, rico en características y fácil de hackear, del autor del servidor XMPP ejabberd.
 
@@ -526,7 +522,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Cliente Jabber basado en Qt con soporte para videoconferencia (desde la versión 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Software de telefonía que permite realizar llamadas de voz y vídeo gratis de PC a PC, e integrar todos los contactos de mensajería instantánea en un solo lugar (antes llamado Wengo Phone).
 
@@ -788,7 +784,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **quite-rss** — Lector de fuentes RSS/Atom escrito en Qt/С++.
 
-	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 ### Navegadores web
 
@@ -900,7 +896,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Uzbl](https://en.wikipedia.org/wiki/Uzbl "wikipedia:Uzbl")** — Grupo de herramientas de intergaz web que se adhiere a la filosofía Unix.
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Navegador que se comporta como el plugin Vimperator disponible para Mozilla Firefox. Se basa en el motor WebKit y utiliza los enlaces GTK + .
 
@@ -1250,7 +1246,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — Programa CAD/CAE, basado en OpenCascade, Qt y Python con funciones como grabación de macros, bancos de trabajo y la capacidad de funcionar como servidor.
 
-	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://www.archlinux.org/packages/?name=freecad)
+	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://aur.archlinux.org/packages/freecad/)
 
 *   **LeoCAD** — Programa CAD para crear modelos LEGO virtuales. Cuenta con una interfaz fácil de usar y, en la actualidad, con más de 6.000 piezas diferentes creadas por la comunidad LDraw.
 
@@ -1994,7 +1990,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **Double Commander** — Gestor de archivos con dos paneles de lado a lado. Está inspirado en Total Commander y cuenta con algunas ideas nuevas.
 
-	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2) [doublecmd-qt](https://www.archlinux.org/packages/?name=doublecmd-qt)
+	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2) [doublecmd-qt4](https://www.archlinux.org/packages/?name=doublecmd-qt4)
 
 *   **[emelFM2](https://en.wikipedia.org/wiki/emelFM2 "wikipedia:emelFM2")** — Administrador de archivos que implementa el popular diseño de dos paneles.
 
@@ -2600,7 +2596,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[GAP](https://en.wikipedia.org/wiki/GAP_(computer_algebra_system) "wikipedia:GAP (computer algebra system)")** — Sistema de álgebra computacional para álgebra discreta computacional con especial énfasis en la teoría de grupos computacionales.
 
-	[http://www.gap-system.org](http://www.gap-system.org) || [gap-math](https://aur.archlinux.org/packages/gap-math/)
+	[http://www.gap-system.org](http://www.gap-system.org) || [gap](https://www.archlinux.org/packages/?name=gap)
 
 *   **[Mathomatic](https://en.wikipedia.org/wiki/Mathomatic "wikipedia:Mathomatic")** — Aplicaciones generales para el sistema de álgebra computacional escrito en C.
 
@@ -2805,7 +2801,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Tabla periódica de los elementos con editor de moléculas y resolución de ecuaciones del escritorio [KDE](/index.php/KDE "KDE").
 
-	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kdeedu-kalzium](https://www.archlinux.org/packages/?name=kdeedu-kalzium)
+	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
 
 #### Bioquímica
 
@@ -3293,7 +3289,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/GnuCash "wikipedia:GnuCash")** — Aplicación financiera que implementa una sistema de contabilidad por partida doble con características para contabilidad en pequeñas empresas.
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Sistema de finanzas personal que gestiona categorías de gastos y recibos de terceros, así como presupuestos, pago de impuestos, y otra información que lo hace apropiados para asociaciones.
 
@@ -3518,7 +3514,7 @@ Vea también [Emuladores de videojuegos](https://en.wikipedia.org/wiki/es:Anexo:
 
 *   **PCSXR** — Emulador de PlayStation; bifurcación de Debian del proyecto original PCSX que fue abandonado
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — Emulador de PlayStation 2\. Todavía es mantenido y desarrollado. Requiere los archivos BIOS.
 

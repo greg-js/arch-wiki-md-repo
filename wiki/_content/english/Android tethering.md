@@ -30,41 +30,17 @@ Enable it via one of the following:
 
 ## USB tethering
 
-USB tethering is available for devices running Android 2.2 "Froyo" or newer.
+USB tethering is available since Android 2.2 "Froyo".
 
-*   Disconnect your computer from any wireless or wired networks
-*   Connect the phone to your computer using the USB cable (the USB connection mode -- Phone Portal, Memory Card or Charge only -- is not important, but please note that you will not be able to change the USB mode during tethering)
+*   Connect the phone to your computer via USB (the USB connection mode -- Phone Portal, Memory Card or Charge only -- is not important, but please note that you will not be able to change the USB mode during tethering)
 *   Enable the tethering option from your phone. This is usually done from one of:
     *   *Settings -> Wireless & networks -> Internet tethering* (or *Tethering & portable hotspot*, for more recent versions)
     *   *Settings -> More... -> Tethering & mobile hotspot -> USB tethering*
-*   Make sure that the USB interface is recognized by the system by using the following command:
+*   Follow [Network configuration](/index.php/Network_configuration "Network configuration").
 
-	 `$ ip link` 
+**Note:** The network interface name may change depending on the USB port you use. You may want to [change the device name](/index.php/Network_configuration#Change_device_name "Network configuration") to create a unique name for your device regardless of the USB port.
 
-	You should be able to see a `usb0` or `enp?s??u?` device listed like this (notice the enp0s20u3 device).
-
- `# ip link` 
-```
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default 
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-2: enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
-    link/ether ##:##:##:##:##:## brd ff:ff:ff:ff:ff:ff
-3: wlp2s0: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000
-    link/ether ##:##:##:##:##:## brd ff:ff:ff:ff:ff:ff
-5: enp0s20u3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/ether ##:##:##:##:##:## brd ff:ff:ff:ff:ff:ff
-
-```
-
-**Note:** Take care to use the device name from your own system in the following commands.
-
-**Warning:** The name may change depending on the usb port you use. You may want to [change the device name](/index.php/Network_configuration#Change_device_name "Network configuration") to create a unique name for your device regardless of the usb port.
-
-*   The final step is to [configure a network connection](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") on this interface. For example:
-
-	 `# dhcpcd enp0s20u3` 
-
-*   If you're using a cellular data plan instead of Wi-Fi, a restart of your phone may be required if you've recently entered a new billing period.
+*   If you're using a cellular data plan and you have recently entered a new billing period, you may need to restart your phone.
 
 #### Using systemd-networkd with udev
 
@@ -186,7 +162,7 @@ Alternatively: pair and ensure you can connect your computer and Android device,
 
  `$ dbus-send --system --type=method_call --dest=org.bluez /org/bluez/hci0/dev_AA_BB_CC_DD_EE_FF org.bluez.Network1.Connect string:'nap'` 
 
-This will create a network interface `bnep0`. Finally, [configure a network connection](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") on this interface; Android offers DHCP by default.
+This will create a network interface `bnep0`. Finally, [configure a network connection](/index.php/Network_configuration "Network configuration") on this interface; Android offers DHCP by default.
 
 ## Tethering with SOCKS proxy
 

@@ -1,7 +1,7 @@
 Artículos relacionados
 
-*   [Users and Groups (Español)](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
-*   [su (Español)](/index.php/Su_(Espa%C3%B1ol) "Su (Español)")
+*   [Usuarios y grupos](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
+*   [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)")
 
 `sudo` («substitute user do») permite que un administrador del sistema delegue autoridad para dar a ciertos usuarios (o grupos de usuarios) la capacidad de ejecutar algunas órdenes (o la totalidad) como root u otro usuario, al tiempo que permite auditar el rastro de las órdenes dadas y sus argumentos.
 

@@ -1357,9 +1357,7 @@ Si KSM está en ejecución y hay páginas que se van a fusionar (es decir, al me
 
 El controlador QXL de Linux soporta cuatro cabezas (pantallas virtuales) de forma predeterminada. Esto se puede cambiar a través del parámetro kernel `qxl.heads = N`.
 
-El tamaño de memoria VGA predeterminado para los dispositivos QXL es de 16M (el tamaño de la VRAM es de 64M). Esto no es suficiente si desea habilitar dos monitores 1920x1200 ya que requiere 2 × 1920 × 4 (profundidad de color) × 1200 = 17.6 MiB memoria VGA. Esto se puede cambiar reemplazando `-vga qxl` por`
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-`. Si alguna vez incrementas vgamem_mb más allá de 64M, también debes aumentar la opción `vram_size_mb`.
+El tamaño de memoria VGA predeterminado para los dispositivos QXL es de 16M (el tamaño de la VRAM es de 64M). Esto no es suficiente si desea habilitar dos monitores 1920x1200 ya que requiere 2 × 1920 × 4 (profundidad de color) × 1200 = 17.6 MiB memoria VGA. Esto se puede cambiar reemplazando `-vga qxl` por `-vga none -device qxl-vga, vgamem_mb=32`. Si alguna vez incrementas vgamem_mb más allá de 64M, también debes aumentar la opción `vram_size_mb`.
 
 ### Copiar y pegar
 

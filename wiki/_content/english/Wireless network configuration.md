@@ -1,6 +1,5 @@
 Related articles
 
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Software access point](/index.php/Software_access_point "Software access point")
 *   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
 *   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
@@ -8,7 +7,11 @@ Related articles
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
 
+See [Network configuration](/index.php/Network_configuration "Network configuration") for the general article on how to set up a network connection.
+
 Configuring wireless is a two-part process; the first part is to identify and ensure the correct driver for your wireless device is installed (they are available on the installation media, but often have to be installed explicitly), and to configure the interface. The second is choosing a method of managing wireless connections. This article covers both parts, and provides additional links to wireless management tools.
+
+The [#Wireless management](#Wireless_management) section describes how to manually manage your wireless network interface / your wireless LANs. The [Network manager](/index.php/Network_manager "Network manager") article describes several programs that can be used to automatically manage your wireless interface, some of which include a GUI and all of which include support for network profiles (useful when frequently switching wireless networks, like with laptops).
 
 ## Contents
 
@@ -16,16 +19,14 @@ Configuring wireless is a two-part process; the first part is to identify and en
     *   [1.1 Check the driver status](#Check_the_driver_status)
     *   [1.2 Installing driver/firmware](#Installing_driver.2Ffirmware)
 *   [2 Wireless management](#Wireless_management)
-    *   [2.1 Manual setup](#Manual_setup)
-        *   [2.1.1 Get the name of the interface](#Get_the_name_of_the_interface)
-        *   [2.1.2 Get the status of the interface](#Get_the_status_of_the_interface)
-        *   [2.1.3 Activate the interface](#Activate_the_interface)
-        *   [2.1.4 Discover access points](#Discover_access_points)
-        *   [2.1.5 Set operating mode](#Set_operating_mode)
-        *   [2.1.6 Connect to an access point](#Connect_to_an_access_point)
-        *   [2.1.7 Get an IP address](#Get_an_IP_address)
-            *   [2.1.7.1 Example](#Example)
-    *   [2.2 Automatic setup](#Automatic_setup)
+    *   [2.1 Get the name of the interface](#Get_the_name_of_the_interface)
+    *   [2.2 Get the status of the interface](#Get_the_status_of_the_interface)
+    *   [2.3 Activate the interface](#Activate_the_interface)
+    *   [2.4 Discover access points](#Discover_access_points)
+    *   [2.5 Set operating mode](#Set_operating_mode)
+    *   [2.6 Connect to an access point](#Connect_to_an_access_point)
+    *   [2.7 Get an IP address](#Get_an_IP_address)
+        *   [2.7.1 Example](#Example)
 *   [3 WPA2 Enterprise](#WPA2_Enterprise)
     *   [3.1 eduroam](#eduroam)
     *   [3.2 Manual/automatic setup](#Manual.2Fautomatic_setup)
@@ -160,10 +161,6 @@ If your wireless card is not listed above, it is likely supported only under Win
 
 ## Wireless management
 
-The [#Manual setup](#Manual_setup) uses command-line tools to manually manage your network interface. The [#Automatic setup](#Automatic_setup) section describes several programs that can be used to automatically manage your wireless interface, some of which include a GUI and all of which include support for network profiles (useful when frequently switching wireless networks, like with laptops).
-
-### Manual setup
-
 Just like other network interfaces, the wireless ones are controlled with *ip* from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
 You will need to install a basic set of tools for managing the wireless connection. [Install](/index.php/Install "Install") one of the following:
@@ -191,7 +188,7 @@ You will need to install a basic set of tools for managing the wireless connecti
 
 Examples in this section assume that your wireless device interface is `*interface*` and that you are connecting to `*your_essid*` wifi access point. Replace both accordingly.
 
-#### Get the name of the interface
+### Get the name of the interface
 
 **Tip:** See [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) of the *iw* tool for more examples.
 
@@ -204,7 +201,7 @@ $ iw dev
 
 The name of the interface will be output after the word "Interface". For example, it is commonly `wlan0`.
 
-#### Get the status of the interface
+### Get the status of the interface
 
 To check link status, use following command.
 
@@ -220,7 +217,7 @@ $ iw dev *interface* station dump
 
 ```
 
-#### Activate the interface
+### Activate the interface
 
 **Tip:** Usually this step is not required.
 
@@ -235,7 +232,7 @@ Some cards require that the kernel interface be activated before you can use *iw
 
 To verify that the interface is up, inspect the output of the following command:
 
- `# ip link show *interface*` 
+ `$ ip link show *interface*` 
 ```
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
@@ -244,7 +241,7 @@ To verify that the interface is up, inspect the output of the following command:
 
 The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface is up, not the later `state DOWN`.
 
-#### Discover access points
+### Discover access points
 
 To see what access points are available:
 
@@ -270,7 +267,7 @@ The important points to check:
         *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you will usually find PSK (*i.e.* passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). See [#WPA2 Enterprise](#WPA2_Enterprise) and [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") for details.
     *   If you see neither `RSN` nor `WPA` blocks but there is `Privacy`, then WEP is used.
 
-#### Set operating mode
+### Set operating mode
 
 You might need to set the proper operating mode of the wireless card. More specifically, if you are going to connect an [ad-hoc network](/index.php/Ad-hoc_networking "Ad-hoc networking"), you need to set the operating mode to `ibss`:
 
@@ -281,7 +278,7 @@ You might need to set the proper operating mode of the wireless card. More speci
 
 **Note:** Changing the operating mode on some cards might require the wireless interface to be *down* (`ip link set *interface* down`).
 
-#### Connect to an access point
+### Connect to an access point
 
 Depending on the encryption, you need to associate your wireless device with the access point to use and pass the encryption key:
 
@@ -298,11 +295,11 @@ Regardless of the method used, you can check if you have associated successfully
 
 ```
 
-#### Get an IP address
+### Get an IP address
 
 Follow the instructions in [Network configuration#Manual assignment](/index.php/Network_configuration#Manual_assignment "Network configuration") for more information on the following examples.
 
-##### Example
+#### Example
 
 Here is a complete example of setting up a wireless network with WPA supplicant and DHCP.
 
@@ -335,25 +332,6 @@ And before disabling the interface you would first flush the IP address and gate
 # ip route flush dev wlan0
 
 ```
-
-### Automatic setup
-
-There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously. The following table compares the different connection managers, additional notes are in subsections below.
-
-| Connection manager | Network
-profiles
-support | Roaming
-(auto connect dropped
-or changed location) | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
-(e.g. 3G modem) | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Official
-GUI | Console tools | Systemd units |
-| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | Yes | Yes | No | No | `connmanctl` | `connman.service` |
-| [netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | No | `netctl`,`wifi-menu` | `netctl-auto@*interface*.service` |
-| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | No | Yes | `nmcli`,`nmtui` | `NetworkManager.service` |
-| [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | No | Yes | `wicd-curses` | `wicd.service` |
-| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes | Yes | No | No | Yes | `wifi-radar` |
-
-See also [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet").
 
 ## WPA2 Enterprise
 
@@ -406,7 +384,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### MS-CHAPv2
 
-WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[2]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[3]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
+WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[1]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[2]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
 
 ## Tips and tricks
 
@@ -514,7 +492,7 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
 
-See also [[4]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
+See also [[3]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
 
 ### Observing Logs
 
@@ -592,7 +570,7 @@ Packet fragmentation improves throughput by splitting up packets with size excee
 
 #### Cause #1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[5]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[4]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
@@ -669,7 +647,7 @@ New chipset as of 2014, released under their new commercial name Mediatek. It is
 
 ### Realtek
 
-See [[7]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
+See [[6]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
 
 #### rtl8192cu
 
@@ -689,7 +667,7 @@ or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[8]](https://bbs.archlinux.org/viewtopic.php?id=208472)
+If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[7]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
@@ -800,7 +778,7 @@ If you have problems connecting to networks in general, random failures with you
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
-If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
+If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
 
 #### iwlwifi
 
@@ -814,7 +792,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[11]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[12]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[10]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[11]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
@@ -822,7 +800,7 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 ##### Bluetooth coexistence
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[13]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -881,7 +859,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[14]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[13]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

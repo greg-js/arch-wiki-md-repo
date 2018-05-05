@@ -1,13 +1,13 @@
 Related articles
 
-*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [Category:Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Pacman tips](/index.php/Pacman_tips "Pacman tips")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [pacman](/index.php/Pacman "Pacman")
+*   [Estándares de empaquetado en Arch](/index.php/Arch_packaging_standards_(Espa%C3%B1ol) "Arch packaging standards (Español)")
+*   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
+*   [Crear paquetes](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)")
+*   [Categoria:Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)")
+*   [Pacman tips](/index.php/Pacman_tips_(Espa%C3%B1ol) "Pacman tips (Español)")
+*   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
+*   [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)")
+*   [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 
 Un `PKGBUILD` es un archivo descriptivo de construcción de un paquete para Arch Linux (realmente es un script de shell) usado para la [Creación de paquetes](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)"). Este articulo describe posibles variables del `PKGBUILD`.
 
@@ -155,10 +155,10 @@ unzip [source].zip
 
 	`sha1sums` 
 
-	Una lista de checksums SHA-1 160-bit. Esta es una alternativa a md5sums antes descrito, pero también es conocido de tener debilidades, así que debe considerar el uso de alternativas mas fuertes. Para habilitar el uso y la creación de estos checksum, asegúrese de poner la opción `INTEGRITY_CHECK` en `/etc/makepkg.conf`. Para mas información vea [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
+	Una lista de checksums SHA-1 160-bit. Esta es una alternativa a md5sums antes descrito, pero también es conocido de tener debilidades, así que debe considerar el uso de alternativas mas fuertes. Para habilitar el uso y la creación de estos checksum, asegúrese de poner la opción `INTEGRITY_CHECK` en `/etc/makepkg.conf`. Para mas información vea [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 	`sha256sums, sha384sums, sha512sums` 
 
-	Una lista de checksums SHA-2 de diferentes tamaños, de 256, 384 y 512 respectivamente. Se cree que estas alternativas a md5sum son mas fuertes. Para habilitar el uso y la creación de estos checksum, asegúrese de poner la opción `INTEGRITY_CHECK` en `/etc/makepkg.conf`. Para mas información vea [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
+	Una lista de checksums SHA-2 de diferentes tamaños, de 256, 384 y 512 respectivamente. Se cree que estas alternativas a md5sum son mas fuertes. Para habilitar el uso y la creación de estos checksum, asegúrese de poner la opción `INTEGRITY_CHECK` en `/etc/makepkg.conf`. Para mas información vea [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 Es practica común mantener el orden de las variables en el `PKGBUILD` como se muestran arriba. Aun así, este orden no es mandatorio, y lo único obligatorio en este contexto es sintaxis correcta de [Bash](https://en.wikipedia.org/wiki/Bash "wikipedia:Bash").

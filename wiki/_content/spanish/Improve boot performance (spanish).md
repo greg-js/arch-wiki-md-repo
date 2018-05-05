@@ -59,7 +59,7 @@ $ systemd-analyze plot > plot.svg
 
 ```
 
-Ver [systemd-analyze(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-analyze.1) para más detalles.
+Ver [systemd-analyze(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-analyze.1) para más detalles.
 
 ## Usando systemd-bootchart
 
@@ -144,9 +144,7 @@ Para deshabilitarlo agregamos `libahci.ignore_sss=1` a nuestra [kernel line](/in
 
 ## Montaje de sistemas de archivos
 
-Gracias a [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")'s `fsck` hook, se puede evitar que se monte de difícil manera cambiando `ro` a `rw` en la línea del kernel y sacarlo de `/etc/fstab`. Las opciones que se pueden setear con`
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-`en nuestro kernel. Recuerda que debes eliminar la entrada de tu archivo `/etc/fstab` de lo contrario `systemd-remount-fs.service` seguirá trabajando. Alternativamente se podría de enmascarar ésa unidad.
+Gracias a [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")'s `fsck` hook, se puede evitar que se monte de difícil manera cambiando `ro` a `rw` en la línea del kernel y sacarlo de `/etc/fstab`. Las opciones que se pueden setear con `rootflags=mount options...` en nuestro kernel. Recuerda que debes eliminar la entrada de tu archivo `/etc/fstab` de lo contrario `systemd-remount-fs.service` seguirá trabajando. Alternativamente se podría de enmascarar ésa unidad.
 
 Si btrfs está en uso para el sistema de ficheros raíz, no hay necesidad de un fsck en cada arranque al igual que otros sistemas de ficheros. Si este es el caso, [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")'s `fsck` hook puede ser eliminado. También es posible que desee enmascarar el `systemd-fsck-root.service`, o decirle que no realice el *fsck* en nuestro sistema usando la línea `fsck.mode=skip`. Sin [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")'s `fsck` hook, systemd seguirá usando fsckk sin ningún inconveniente con `systemd-fsck@.service`
 

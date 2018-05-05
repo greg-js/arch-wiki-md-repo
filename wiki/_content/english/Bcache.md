@@ -261,7 +261,7 @@ Before you edit `/etc/mkinitcpio.conf` and run `mkinitcpio -p linux`:
 
 ## Configuring
 
-There are many options that can be configured (such as cache mode, cache flush interval, sequential write heuristic, etc.) This is currently done by writing to files in `/sys`. See the [bcache user documentation](http://atlas.evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt).
+There are many options that can be configured (such as cache mode, cache flush interval, sequential write heuristic, etc.) This is currently done by writing to files in `/sys`. See the [bcache user documentation](https://evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt).
 
 Changing the cache mode is done by echoing one of 'writethrough', 'writeback', 'writearound' or 'none' to /sys/block/bcache[0-9]/bcache/cache_mode.
 

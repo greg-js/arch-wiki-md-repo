@@ -124,6 +124,8 @@ enable_psr=1
 
 Panel Self Refresh (PSR) is working for eDP 1.3 and up and does stop the creation of new frames when the screen content is static to save energy. If you experience problems with PSR try to set 'disable_power_well=0' or disable otherwise.
 
+**Tip:** If you use `enable_psr=1` may need to add the `modconf` hook to your [Mkinitcpio](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to avoid a hang after resume. The [xf86-video-intel-git](https://aur.archlinux.org/packages/xf86-video-intel-git/) package was required to solve the bug for me as well, even though I was using Wayland.
+
 ```
 NOT WORKING: semaphores=1 
 
@@ -172,10 +174,10 @@ As of February 2018, Dell support suggests to update the firmware of the network
 4.  Inside the new folder, rename `firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1` to `firmware-4.bin`
 5.  Reboot and test the new Killer Wi-Fi firmware
 
-Update: Internet connection dropped even with the firmware from the above fix. Using the newer firmware `firmware-6.bin_WLAN.RM.4.4.1-00102-QCARMSWP-1` by downloading that file from [https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00102-QCARMSWP-1](https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00102-QCARMSWP-1), copying it to `/usr/lib/firmware/ath10k/QCA6174/hw3.0/` and renaming it to `firmware-6.bin` fixes this. Reboot and verify that this newer firmware is used by verifying that `dmesg | grep ath` outputs:
+Update: Internet connection dropped even with the firmware from the above fix. Using the newer firmware `firmware-6.bin_WLAN.RM.4.4.1-00102-QCARMSWP-1` by downloading that file from [https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1.c1/firmware-6.bin_RM.4.4.1.c1-00042-QCARMSWP-1](https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1.c1/firmware-6.bin_RM.4.4.1.c1-00042-QCARMSWP-1), copying it to `/usr/lib/firmware/ath10k/QCA6174/hw3.0/` and renaming it to `firmware-6.bin` fixes this. Reboot and verify that this newer firmware is used by verifying that `dmesg | grep ath` outputs:
 
 ```
-ath10k_pci 0000:3a:00.0: firmware ver WLAN.RM.4.4.1-00102-QCARMSWP-1 api 6 features wowlan,ignore-otp crc32 153860ee
+ath10k_pci 0000:3a:00.0: firmware ver RM.4.4.1.c1-00042-QCARMSWP-1 api 6 features wowlan,ignore-otp crc32 40fb7bdd
 
 ```
 

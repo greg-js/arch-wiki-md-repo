@@ -31,7 +31,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [syncthing](https://www.archlinux.org/packages/?name=syncthing) package.
 
-Syncthing provides a [#Web-GUI](#Web-GUI) for control and monitoring. A GUI wrapper and notifier, [#Syncthing-GTK](#Syncthing-GTK) provided in a separate package also exists.
+Syncthing provides a [#Web-GUI](#Web-GUI) for control and monitoring. A GUI wrapper, [#Syncthing-GTK](#Syncthing-GTK), provided in a separate package also exists.
 
 ## Running Syncthing
 
@@ -53,7 +53,7 @@ Running Syncthing as a system service ensures that it is running at startup even
 
 Running Syncthing as a *systemd user* service ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. To use the user service, [start/enable](/index.php/Start/enable "Start/enable") the user unit `syncthing.service` (i.e. with the `--user` flag).
 
-**Tip:** It's also possible to run the sytemd-user service at boot (i.e. without logging in) using [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
+**Tip:** It is also possible to run the sytemd-user service at boot (i.e. without logging in) using [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
 ### Syncthing-GTK
 
@@ -69,9 +69,9 @@ Syncthing provides a web interface accessible by default on [http://localhost:83
 
 ## Configuration
 
-After installation Syncthing already has a proper start-up configuration. You may now add new servers and/or folders by visiting the web interface. For detailed instructions on how to set up a simple network, read [Syncthing's getting started](http://docs.syncthing.net/intro/getting-started.html).
+After installation, Syncthing already has a proper start-up configuration. New servers and/or folders can be added by visiting the web interface. For detailed instructions on how to setup a simple network, read [Syncthing's getting started](http://docs.syncthing.net/intro/getting-started.html).
 
-After a successful first start, it will create the default repository at `~/Sync`. You can see this in the web admin interface. On the right is the list of nodes you have added. On the left is the list of repositories, which are folders you can choose to share with other nodes.
+After a successful first start, a default repository at `~/Sync` is created. You can see this in the web admin interface. On the right is the list of nodes you have added. On the left is the list of repositories, which are folders you can choose to share with other nodes.
 
 To add another node, click "Add Node" underneath the list of nodes. You will be prompted for their Node ID (which can be found on the other machine by clicking `Edit > Show ID`) as well as a short name and the address. If you specify "dynamic" for the address, the syncthing announce server will be used to automatically exchange addresses between nodes. If you want to know more about Node IDs, including the cryptographic implications, you can read the appropriate [Syncthing documentation page](http://docs.syncthing.net/dev/device-ids.html).
 
@@ -81,21 +81,17 @@ Next, you can either change the configuration of the default node (click its nam
 
 ### Local network setup
 
-In the typical case several machines, like laptops and androids, share a local area network *(LAN)* behind a network address translation *(NAT)* router, it is advised for a versatile configuration to:
+In the typical case several machines share a LAN (*Local Area Network*) behind a NAT (*Network Address Translation*) router, it is advised for a versatile configuration to:
 
-*   Activate both local and global discovery on each node to allow discovery in all situations, including when a mobile device leaves the LAN and connects to the internet from the outside,
+*   Activate both local and global discovery on each node. This will allow discovery in all situations, including if some of the nodes are mobile devices like laptops or Android phones, and leave the LAN and connects to the internet from the outside. This way they will still be found with global discovery.
 
-*   Use a different [listen address port](https://docs.syncthing.net/users/config.html#listen-addresses) for each machine, like `tcp://:22010`, `tcp://:22011`, `tcp://:22012` and so forth. This will differentiate them on the global discovery servers and avoid the *"Connected to myself - should not happen"* message on the other local devices whenever they leave the NAT.
+*   Use a different [listen address port](https://docs.syncthing.net/users/config.html#listen-addresses) for each machine, like `tcp://:22010`, `tcp://:22011`, `tcp://:22012` and so forth. This will differentiate the nodes on the global discovery servers and avoid the *"Connected to myself - should not happen"* message on the other local devices whenever they leave the LAN.
 
-*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding or manually forward each port. When a new node is discovered, Syncthing tries to use its listening port. If this port happens to be closed, it will seek an open port locally: whenever *NAT traversal* is enabled in Syncthing, it will attempt to use UPnP to map a random external port to the internal listening port chosen, for example 22010\. If this is not desirable or not possible, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
+*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding or manually forward each port to the right machine on the LAN. When a new node is discovered, Syncthing tries to use its configured listening port, *22000* by default. If this port happens to be closed, it will seek another port locally: whenever *NAT traversal* is enabled in Syncthing, it will attempt to use UPnP to map a random external port to the internal listening port chosen, for example *22000*. If UPnP is not supported or if this is not desirable, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
 
 ### Using inotify
 
-[inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") *(inode notify)* is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. The inotify functionality is integrated in Syncthing and can be enabled in the advanced configuration menu for individual folders. The setting is located at: *Actions* > *Advanced* > (click on the folder button you want) > *FS Watcher Enabled*. It is expected to be exposed in the folder configuration UI in the near future.
-
-Alternatively, inotify support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) but in this case inotify will only work while the GUI is running.
-
-**Tip:** To prevent errors like *Too many open files*, increase the default `fs.inotify.max_user_watches` value, by [appending](/index.php/Append "Append") the following line: `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
+[inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") *(inode notify)* is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing supports inotify and the functionality can be enabled in the configuration menu for individual folders.
 
 ## Participate in the infrastructure
 

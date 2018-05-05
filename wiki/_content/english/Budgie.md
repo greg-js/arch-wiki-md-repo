@@ -56,7 +56,7 @@ gsettings set com.solus-project.budgie-helper.workarounds fix-button-layout 'clo
 
 ### Use a different window manager
 
-It is possible to use an alternative [window manager](/index.php/Window_manager "Window manager") with the Budgie. Either define a [custom session](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") which replaces *budgie-wm* with a window manager of choice or else [autostart](/index.php/GNOME#Startup_applications "GNOME") `*my-wm* --replace` where *my-wm* is the executable name of the window manager you wish to use.
+It is possible to use an alternative [window manager](/index.php/Window_manager "Window manager") with the Budgie. Either define a [custom GNOME session](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") which replaces *budgie-wm* with another window manager or [autostart](/index.php/GNOME#Autostart "GNOME") `*my-wm* --replace` where *my-wm* is the executable name of the window manager you wish to use.
 
 ## See also
 

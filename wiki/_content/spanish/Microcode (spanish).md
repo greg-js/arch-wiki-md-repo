@@ -10,8 +10,10 @@ El [microcódigo del procesador](https://en.wikipedia.org/wiki/es:Microc%C3%B3di
         *   [1.2.1 EFI boot stub / EFI handover](#EFI_boot_stub_.2F_EFI_handover)
         *   [1.2.2 Gummiboot](#Gummiboot)
         *   [1.2.3 rEFInd](#rEFInd)
-        *   [1.2.4 Grub](#Grub)
-        *   [1.2.5 Syslinux](#Syslinux)
+        *   [1.2.4 GRUB](#GRUB)
+        *   [1.2.5 Método automático](#M.C3.A9todo_autom.C3.A1tico)
+        *   [1.2.6 Método manual](#M.C3.A9todo_manual)
+        *   [1.2.7 Syslinux](#Syslinux)
 *   [2 Verificar qué microcódigo quedó actualizado en el arranque](#Verificar_qu.C3.A9_microc.C3.B3digo_qued.C3.B3_actualizado_en_el_arranque)
 *   [3 ¿Qué CPU aceptan actualizaciones de microcódigo?](#.C2.BFQu.C3.A9_CPU_aceptan_actualizaciones_de_microc.C3.B3digo.3F)
     *   [3.1 Detectar la actualización del microcódigo disponible](#Detectar_la_actualizaci.C3.B3n_del_microc.C3.B3digo_disponible)
@@ -19,9 +21,9 @@ El [microcódigo del procesador](https://en.wikipedia.org/wiki/es:Microc%C3%B3di
 
 ## Actualización del microcódigo
 
-Para los procesadores de Intel, instale [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode).
+Para los procesadores de Intel, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
-Para los procesadores de AMD, las actualizaciones del microcódigo están disponibles en [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), que se instala como parte del sistema base.
+Para los procesadores de AMD, las actualizaciones del microcódigo están disponibles en el paquete [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), que se instala como parte del sistema base.
 
 ### Activación de las actualizaciones del microcódigo de Intel
 
@@ -57,9 +59,20 @@ Edite las opciones de arranque en `/boot/refind_linux.conf` según se indica arr
 
 Los usuarios que emplean stanza manuales en /boot/refind.conf para definir los kernels, simplemente deben añadir initrd=/intel-ucode.img o /boot/intel-ucode.img, según se requiera, a la línea options, y no en la parte principal de stanza.
 
-#### Grub
+#### GRUB
 
-Con el lanzamiento de grub-1:2.02-beta2-5, `/usr/bin/grub-mkconfig` manejará automáticamente la actualización del microcódigo. Los usuarios son emplazados a regenerar el archivo de configuración de grub ejecutando `# grub-mkconfig -o /boot/grub/grub.cfg` para activar la carga de la actualización del microcódigo, después de instalar [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode).
+#### Método automático
+
+Con el lanzamiento de grub-1:2.02-beta2-5, `/usr/bin/grub-mkconfig` manejará automáticamente la actualización del microcódigo.
+
+`grub-mkconfig` detectará automáticamente las actualizaciones de microcódigo y configurará [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") apropiadamente. Después de [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode), es necesario regenerar la configuración de GRUB para activar la carga del microcódigo con el comando:
+
+```
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+#### Método manual
 
 Alternativamente, los usuarios que deseen gestionar el archivo de configuración de grub manualmente pueden añadir `/intel-ucode.img` o `/boot/intel-ucode.img` a `grub.cfg` como sigue:
 

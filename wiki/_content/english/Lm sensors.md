@@ -193,7 +193,7 @@ There are a variety of front-ends for sensors data.
 
 *   [conky](/index.php/Conky "Conky") - Conky is an advanced, highly configurable system monitor for X based on torsmo
 *   [xsensors](https://www.archlinux.org/packages/?name=xsensors) - X11 interface to lm_sensors
-*   [psensor](https://aur.archlinux.org/packages/psensor/) - GTK+ application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using [hddtemp](/index.php/Hddtemp "Hddtemp") or libatasmart).
+*   [psensor](https://www.archlinux.org/packages/?name=psensor) - GTK+ application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using [hddtemp](/index.php/Hddtemp "Hddtemp") or libatasmart).
 
 For specific [Desktop environments](/index.php/Desktop_environments "Desktop environments"):
 

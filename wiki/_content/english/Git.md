@@ -477,10 +477,12 @@ In order to enable Bash completion, source `/usr/share/git/completion/git-comple
 
 ### Git prompt
 
-The Git package comes with a prompt script. To enable it, source the `/usr/share/git/completion/git-prompt.sh` script in a [shell startup file](/index.php/Autostarting#Shells "Autostarting"), then set a custom prompt with the `%s` parameter:
+The Git package comes with a prompt script. To enable it, source the `/usr/share/git/completion/git-prompt.sh` and set a custom prompt with the `%s` parameter:
 
 *   For [Bash](/index.php/Bash "Bash"): `PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '`
 *   For [zsh](/index.php/Zsh "Zsh"): `setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '`
+
+To automate this see [Command-line shell#Configuration files](/index.php/Command-line_shell#Configuration_files "Command-line shell").
 
 When changing to a directory of a Git repository, the prompt will change to show the branch name. Extra details can be set to be shown by the prompt:
 

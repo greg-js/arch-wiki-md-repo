@@ -65,7 +65,7 @@ $ mimeopen -n photo.jpeg
 
 ```
 
-Most importantly, [#xdg-utils](#xdg-utils) apps will actually call `mimetype` instead of `file` for MIME type detection, if it does not detect your [desktop environment](/index.php/Desktop_environment "Desktop environment"). This is important because `file` does not follow the XDG standard.
+Most importantly, [xdg-utils](/index.php/Xdg-utils "Xdg-utils") programs will actually call `mimetype` instead of `file` for MIME type detection, if it does not detect your [desktop environment](/index.php/Desktop_environment "Desktop environment"). This is important because `file` does not follow the XDG standard.
 
 **Note:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 does not *entirely* follow the XDG standard. For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
 

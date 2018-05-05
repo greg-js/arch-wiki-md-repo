@@ -44,10 +44,7 @@ ResolverName dnscrypt.eu-nl
 
 ```
 
-**Tip:**
-
-*   A potentially more up-to-date list is available directly on the [upstream page](https://github.com/dyne/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv).
-*   At this stage you may also wish to add an unprivileged user to run dnscrypt. See [#dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges).
+**Tip:** A potentially more up-to-date list is available directly on the [upstream page](https://github.com/dyne/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv).
 
 ### Modify resolv.conf
 
@@ -186,8 +183,6 @@ SystemCallFilter=~@clock @cpu-emulation @debug @keyring @ipc @module @mount @obs
 ```
 
 See [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) and [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") for more information. Additionally see [upstream comments](https://github.com/jedisct1/dnscrypt-proxy/pull/601#issuecomment-284171727).
-
-This can be combined with the additions in [#dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges).
 
 ### Enable EDNS0
 

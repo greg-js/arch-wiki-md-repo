@@ -2,9 +2,9 @@
 
 Artículos relacionados
 
-*   [Arch terminology](/index.php/Arch_terminology "Arch terminology")
-*   [Arch User Repository#FAQ](/index.php/Arch_User_Repository#FAQ "Arch User Repository")
-*   [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)")
+*   [Terminología en Arch](/index.php/Arch_Terminology_(Espa%C3%B1ol) "Arch Terminology (Español)")
+*   [Preguntas frecuentes Arch User Repository](/index.php/Arch_User_Repository_(Espa%C3%B1ol)#FAQ "Arch User Repository (Español)")
+*   [Solución de problemas](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)")
 
 Además de las preguntas tratadas más abajo, es posible que encuentre interesante la lectura de los artículos [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") y [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). Ambos artículos contienen información muy útil sobre Arch Linux.
 

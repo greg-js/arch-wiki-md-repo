@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)")
+*   [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)")
+*   [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
+
 **Advertencia:** Se ha notificado un error según el cual el arranque con EFISTUB puede fallar dependiendo de la versión del kernel y del modelo de placa base. Vea [[1]](https://bugs.archlinux.org/task/33745) y [[2]](https://bbs.archlinux.org/viewtopic.php?id=156670) para más información.
 
 El kernel de Linux ([linux](https://www.archlinux.org/packages/?name=linux)>=3.3) admite arrancar con EFISTUB (EFI BOOT STUB). Esta característica permite que el firmware EFI cargue el kernel como un ejecutable EFI. La opción está activada de forma predeterminada en los kernels de Arch Linux o se puede activar mediante el establecimiento de la variable `CONFIG_EFI_STUB=y` en la configuración del kernel (vea [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) para más información).
@@ -133,8 +139,7 @@ echo "Kernel sincronizado con ESP"
 
 En lugar de montar la propia ESP en `/boot`, se puede montar un directorio de ESP en `/boot` usando un montaje con bind (véase `mount(8)`). Esto permite a pacman actualizar el kernel directamente, manteniendo la ESP organizada a su gusto. Si funciona en su caso, este método es mucho más simple que los otros enfoques que necesitan copiar los archivos.
 
-**Nota:**
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+**Nota:** Esto requiere un kernel y un gestor de arranque compatibles con FAT32\. Esto no es un problema para una instalación normal de Arch, pero podría ser problemático para otras distribuciones (a saber, las que requieren enlaces simbólicos en `/boot`). Post del foro [aquí](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
 
 Como se hizo [anteriormente](#Alternative_ESP_Mount_Points), copie todos los archivos de /boot a un directorio en la ESP, pero monte ESP **fuera** de `/boot` (por ejemplo, `/esp`). A continuación, monte en bind el directorio:
 

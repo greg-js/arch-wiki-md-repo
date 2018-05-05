@@ -9,7 +9,7 @@
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
 
-**翻译状态：** 本文是英文页面 [Secure Shell](/index.php/Secure_Shell "Secure Shell") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-03-29，点击[这里](https://wiki.archlinux.org/index.php?title=Secure+Shell&diff=0&oldid=515156)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Secure Shell](/index.php/Secure_Shell "Secure Shell") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-04，点击[这里](https://wiki.archlinux.org/index.php?title=Secure+Shell&diff=0&oldid=518925)可以查看翻译后英文页面的改动。
 
 **Secure Shell** (**SSH**) 是一个允许两台电脑之间通过安全的连接进行数据交换的网络协议。加密保证了数据的保密性和完整性。SSH采用公钥加密技术来验证远程主机，以及(必要时)允许远程主机验证用户。
 
@@ -221,7 +221,7 @@ PasswordAuthentication no
 
 ##### 双因素验证与公钥
 
-自 OpenSSH 6.2 起，你可以使用 `AuthenticationMethods` 选项添加自己的钥匙串进行身份验证。这使你可以用公钥与双因素验证结合来登录。
+SSH 可以设置为采用多种方式进行身份验证，你可以使用 `AuthenticationMethods` 选项来指明在登录时需要哪些身份验证方式。这使你可以用公钥与双因素验证结合来登录。
 
 参阅 [Google Authenticator (简体中文)](/index.php/Google_Authenticator_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Google Authenticator (简体中文)") 来设置 Google Authenticator。
 
@@ -241,7 +241,7 @@ AuthenticationMethods publickey keyboard-interactive:pam
  `/etc/ssh/sshd_config` 
 ```
 ChallengeResponseAuthentication yes
-AuthenticationMethods publickey,keyboard-interactive:pam
+AuthenticationMethods publickey**,**keyboard-interactive:pam
 
 ```
 
@@ -368,7 +368,7 @@ PermitRootLogin forced-commands-only
 如果不想限制 root 用户可执行的命令，可以仅关闭密码验证来强制使用公钥验证：
 
 ```
-PermitRootLogin without-password
+PermitRootLogin prohibit-password
 
 ```
 
@@ -567,7 +567,7 @@ $ ssh -L 1000:mail.google.com:25 192.168.0.100
 
 ```
 
-以上指令将会通过SSH得到一个在 192.168.0.100 的 shell，同时也会创建一个从本机 1000 端口到 mai.google.com 上的 25 端口的隧道。建立之后，localhost:1000 会通过 192.168.0.100 连接到 Gmail 的 SMTP 端口。任何从 192.168.0.100 到 mail.google.com:25 的连接（即使不必要）都会以这样的方式建立，并且，在本机和 192.168.0.100 之间的数据传递都是安全的，除非你采取了别的手段。
+以上指令将会通过 SSH 得到一个在 `192.168.0.100` 的 shell，同时也会创建一个从本机 TCP 1000 端口到 mail.google.com 上的 25 端口的隧道。建立之后，通过 `localhost:1000` 的连接可以直接连接到 Gmail 的 SMTP 端口。对 Google 而言，任何这样的连接都是来自 `192.168.0.100` 的（即使这些连接中没有数据传输），并且，在本机和 192.168.0.100 之间的数据传递是安全的，但 `192.168.0.100` 和 Google 之间是不安全的，除非还采取了别的手段保障数据安全。
 
 同样：
 
@@ -576,7 +576,7 @@ $ ssh -L 2000:192.168.0.100:6001 192.168.0.100
 
 ```
 
-以上指令会将到 localhost:2000 的连接直接转发到远程主机 192.168.0.100 的 6001 端口。对于使用 VNC 服务器（tightvns包的一部分）建立的 VNC 连接来说，以上的例子尽管很有效，但是安全性有待商榷。
+以上指令会将到 `localhost:2000` 的连接直接转发到远程主机 192.168.0.100 的 6001 端口。对于使用 VNC 服务器（tightvns包的一部分）建立的 VNC 连接来说，以上的例子尽管很有效，但是安全性有待商榷。
 
 远程转发允许任何远程主机通过 SSH 隧道连接到本机，提供了和本地转发相反的功能，突破了防火墙的限制。通过 `-R` 参数，以及 `<tunnel port>:<destination address>:<destination port>` 能够实现远程转发。
 
@@ -587,9 +587,9 @@ $ ssh -R 3000:irc.freenode.net:6667 192.168.0.200
 
 ```
 
-将会在 192.168.0.200 上得到一个 shell，同时也会创建一个从 192.168.0.200 上的 3000 端口到 irc.freenode.net 上的 6667 端口的隧道。建立之后，192.168.0.200:3000 会通过本机连接到 freenode 的 IRC 端口。到 192.168.0.200 的 3000 端口的连接将会通过隧道发送到本机然后转发到 irc.freenode.net 的 6667 端口。因此，在这个例子中，在远程主机上 IRC 程序能够被使用，即使端口 6667 被阻止。
+将会在 `192.168.0.200` 上得到一个 shell，同时，来自 `192.168.0.200` 的 3000 端口（远程主机的 `localhost:3000`）的数据将会通过隧道转发至本机，然后转发至 irc.freenode.net 上的 6667 端口。因此，在这个例子中，在远程主机上能够使用 IRC 程序，即使端口 6667 被阻止。
 
-本地转发和远程转发都可以提供一个安全的"网关"，允许其他计算机无需使用 SSH 或者 SSH daemon 来使用 ssh 隧道，即在隧道起点提供绑定的地址，作为转发规则。例如 `<tunnel address>:<tunnel port>:<destination address>:<destination port>`。`<tunnel address>` 可以是作为网关的机器上的任何地址，例如 `localhost`(仅允许本地访问)，`192.168.0.100`(仅允许通过192.168.0.100访问)， `*`(允许所有地址访问)。它们可以是通过本地环回端口，或是通过其他任何端口的连接。默认情况下，转发受到隧道“起点”的主机限制，即 `<tunnel address>` 被设置为 `localhost`。本地转发不需要额外的设置，而远程转发受限于对端的 SSH daemon 设置。请参阅 `sshd_config(5)` 中的 `GatewayPorts` 选项。
+本地转发和远程转发都可以提供一个安全的“网关”，允许其他计算机无需运行 SSH 或者 SSH daemon 来使用 SSH 隧道，即在隧道起点提供绑定的地址，作为转发规则。例如 `<tunnel address>:<tunnel port>:<destination address>:<destination port>`。`<tunnel address>` 可以是作为隧道起点的机器上的任何地址，地址 `localhost` 允许来自本地回环的连接，空地址 `*` 允许来自任意网卡的连接。默认情况下，转发仅限于连接至位于隧道“起点”的主机，即 `<tunnel address>` 被设置为 `localhost`。本地转发不需要额外的设置，而远程转发受限于对端的 SSH daemon 设置。更多关于远程转发和本地转发的信息可分别参阅 [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) 中的 `GatewayPorts` 选项和 [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1) 中的 `-L address` 选项。
 
 ### 跳板机
 

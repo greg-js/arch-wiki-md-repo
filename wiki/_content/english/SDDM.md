@@ -22,7 +22,7 @@ From Wikipedia:
         *   [2.3.2 Editing themes](#Editing_themes)
         *   [2.3.3 Testing (Previewing) a Theme](#Testing_.28Previewing.29_a_Theme)
         *   [2.3.4 Mouse cursor](#Mouse_cursor)
-        *   [2.3.5 Avatar](#Avatar)
+        *   [2.3.5 User Icon (Avatar)](#User_Icon_.28Avatar.29)
     *   [2.4 Numlock](#Numlock)
     *   [2.5 Rotate display](#Rotate_display)
     *   [2.6 DPI settings](#DPI_settings)
@@ -117,9 +117,11 @@ To set the mouse cursor theme, set `CursorTheme` to your preferred cursor theme.
 
 Valid [Plasma](/index.php/Plasma "Plasma") mouse cursor theme names are `breeze_cursors`, `Breeze_Snow` and `breeze-dark`.
 
-#### Avatar
+#### User Icon (Avatar)
 
-You can simply put a png image named `username.face.icon` into the default directory `/usr/share/sddm/faces/`. Alternatively you can change the default directory to match your desires:
+SDDM reads the user icon (a.k.a. "avatar") as a PNG image from either `~/.face.icon` for each user, or the common location for all users specified by `FacesDir` in an SDDM configuration file. The configuration setting can be placed in either `/etc/sddm.conf` directly, or, better, a file under `/etc/sddm.conf.d/` such as `/etc/sddm.conf.d/avatar.conf`.
+
+To use the `FacesDir` location option, place a PNG image for each user named as `*username*.face.icon` into location specified in for `FacesDir` in the configuration file. The default location for `FacesDir` is `/usr/share/sddm/faces/`. You can change the default `FacesDir` location to match your requirements. Here is an example:
 
  `/etc/sddm.conf.d/avatar.conf` 
 ```
@@ -127,14 +129,26 @@ You can simply put a png image named `username.face.icon` into the default direc
 FacesDir=/var/lib/AccountsService/icons/
 ```
 
-You can also put a png image named `.face.icon` at the root of your home directory. However, you need to make sure that `sddm` user can read that file.
+The other option is to put a PNG image named `.face.icon` at the root of your home directory. In this case, no changes to any SDDM configuration file is required. However, you need to make sure that `sddm` user can read the PNG image file(s) for the user icon(s).
 
-**Note:** If avatar images are symlinks, you need to set proper file permissions to the target files. For example, run:
+**Note:** In many KDE versions, the user icon image file is `~/.face` and `~/.face.icon` is a symlink to that file. If the user icon images are symlinks, you need to set proper file permissions to the target files.
+
+To [set proper permissions](/index.php/Access_Control_Lists#Set_ACL "Access Control Lists") run:
+
 ```
 $ setfacl -m u:sddm:x ~/
 $ setfacl -m u:sddm:r ~/.face.icon
 
 ```
+
+You can [check permissions](/index.php/Access_Control_Lists#Show_ACL "Access Control Lists") with:
+
+```
+$ getfacl ~/
+$ getfacl ~/.face.icon
+
+```
+
 See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
 
 ### Numlock

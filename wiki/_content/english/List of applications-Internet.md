@@ -115,7 +115,7 @@
 
 	[http://wifi-radar.tuxfamily.org/](http://wifi-radar.tuxfamily.org/) || [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar)
 
-See also [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration") and [Wireless network configuration#Automatic setup](/index.php/Wireless_network_configuration#Automatic_setup "Wireless network configuration") for feature comparisons.
+See also [Network manager](/index.php/Network_manager "Network manager").
 
 #### VPN clients
 
@@ -301,7 +301,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebEngine.
 
-	[https://github.com/qutebrowser/qutebrowser](https://github.com/qutebrowser/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+	[https://qutebrowser.org/](https://qutebrowser.org/) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
 ###### Browsers based on electron/muon
 
@@ -413,6 +413,10 @@ See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Com
 
 	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
 
+*   **darkhttpd** — A small and secure static webserver
+
+	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
+
 *   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced webserver.
 
 	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
@@ -425,21 +429,17 @@ See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Com
 
 	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
 
+*   **shttpd** — Supported fork of the thttpd web server
+
+	[http://freecode.com/projects/shttpd](http://freecode.com/projects/shttpd) || [shttpd](https://aur.archlinux.org/packages/shttpd/)
+
 *   **Webfs** — Simple and instant http server for mostly static content.
 
 	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
 
-*   **darkhttpd** — A small and secure static webserver
-
-	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
-
 *   **yaws** — Web server/framework written in Erlang
 
 	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
-
-*   **shttpd** — Supported fork of the thttpd web server
-
-	[http://freecode.com/projects/shttpd](http://freecode.com/projects/shttpd) || [shttpd](https://aur.archlinux.org/packages/shttpd/)
 
 ### File sharing
 
@@ -519,10 +519,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://www.kde.org/applications/internet/kget/](https://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
-*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — Multi-protocol P2P client that supports HTTP, FTP, BitTorrent, Direct Connect, eDonkey and FastTrack.
-
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
-
 *   **Persepolis** — Graphical front-end for aria2 download manager with lots of features. Supports HTTP and FTP.
 
 	[https://persepolisdm.github.io/](https://persepolisdm.github.io/) || [persepolis](https://aur.archlinux.org/packages/persepolis/)
@@ -535,7 +531,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://launchpad.net/steadyflow](https://launchpad.net/steadyflow) || [steadyflow](https://www.archlinux.org/packages/?name=steadyflow)
 
-*   **uGet** — GTK+ download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent and Metalink.
+*   **uGet** — GTK+ download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent, Metalink, YouTube and Mega.
 
 	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
 
@@ -691,6 +687,10 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 	[http://bftpd.sourceforge.net/](http://bftpd.sourceforge.net/) || [bftpd](https://www.archlinux.org/packages/?name=bftpd)
 
+*   **chezdav** — WebDAV server that allows to share a particular directory.
+
+	[https://wiki.gnome.org/phodav](https://wiki.gnome.org/phodav) || [phodav](https://www.archlinux.org/packages/?name=phodav)
+
 *   **[ftpd](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation)** — Simple ftp server provided by GNU Inetutils
 
 	[https://www.gnu.org/software/inetutils/](https://www.gnu.org/software/inetutils/) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
@@ -757,10 +757,6 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
-*   **Tixati** — P2P client that uses the BitTorrent protocol.
-
-	[http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)
-
 *   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends.
 
 	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK+: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
@@ -800,6 +796,10 @@ See also [Wikipedia:Comparison of file-sharing applications](https://en.wikipedi
 *   **KaMule** — KDE graphical front-end for aMule.
 
 	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
+
+*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — Multi-protocol P2P client that supports HTTP, FTP, BitTorrent, Direct Connect, eDonkey and FastTrack.
+
+	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
 *   **ncdc** — Modern and lightweight Direct Connect and ADC client with a friendly ncurses interface.
 
@@ -853,11 +853,11 @@ Pastebin services are often used to quote text or images while collaborating and
 
 *   **[pbpst](/index.php/Pbpst "Pbpst")** — A small tool to interact with pb instances (eg [ptpb.pw](https://ptpb.pw)).
 
-	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst) [pbpst-git](https://aur.archlinux.org/packages/pbpst-git/)
+	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst)
 
 *   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
 
-	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/) [ruby-haste-git](https://aur.archlinux.org/packages/ruby-haste-git/)
+	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/)
 
 *   **Uppity** — The pastebin client with an attitude.
 
@@ -1093,7 +1093,7 @@ The number of networks supported by these clients is very large but they (like a
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
-*   **[YateClient](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — Instant messenger and softphone supporting XMPP, SIP and H.323.
+*   **[Yate Client](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — Instant messenger and softphone supporting XMPP, SIP and H.323.
 
 	[http://yateclient.yate.ro/](http://yateclient.yate.ro/) || [yate](https://www.archlinux.org/packages/?name=yate)
 
@@ -1229,10 +1229,6 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[http://www.kadu.im/](http://www.kadu.im/) || [kadu](https://aur.archlinux.org/packages/kadu/)
 
-*   **Licq** — Instant messaging client for UNIX supporting ICQ and XMPP.
-
-	[http://licq.org/](http://licq.org/) || [licq](https://www.archlinux.org/packages/?name=licq)
-
 *   **Nextcloud JavaScript XMPP Client** — Chat app for Nextcloud with XMPP, end-to-end encryption, video calls, file transfer & group chat.
 
 	[https://github.com/nextcloud/jsxc.nextcloud](https://github.com/nextcloud/jsxc.nextcloud) || [nextcloud-app-jsxc](https://aur.archlinux.org/packages/nextcloud-app-jsxc/)
@@ -1295,7 +1291,7 @@ See also [Matrix](/index.php/Matrix "Matrix").
 
 *   **nheko** — Desktop client for the Matrix protocol.
 
-	[https://github.com/mujx/nheko](https://github.com/mujx/nheko) || [nheko-git](https://aur.archlinux.org/packages/nheko-git/)
+	[https://github.com/mujx/nheko](https://github.com/mujx/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/)
 
 *   **Quaternion** — Qt5-based IM client for the Matrix protocol.
 
@@ -1357,9 +1353,9 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 	[https://github.com/iptux-src/iptux](https://github.com/iptux-src/iptux) || [iptux](https://aur.archlinux.org/packages/iptux/)
 
-*   **Qualia LAN Messenger** — P2P chat application for intranet communication and does not require a server. A variety of handy features are supported including notifications, personal and group messaging with encryption, file transfer and message logging.
+*   **LAN Messenger** — P2P chat application for intranet communication and does not require a server. A variety of handy features are supported including notifications, personal and group messaging with encryption, file transfer and message logging.
 
-	[http://lanmsngr.sourceforge.net/](http://lanmsngr.sourceforge.net/) || [lmc](https://aur.archlinux.org/packages/lmc/)
+	[https://lanmessenger.github.io/](https://lanmessenger.github.io/) || [lmc](https://aur.archlinux.org/packages/lmc/)
 
 *   **[RetroShare](/index.php/RetroShare "RetroShare")** — Serverless encrypted instant messenger with filesharing, chatgroups, mail.
 
@@ -1385,11 +1381,15 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 *   **Hangups** — Third-party instant messaging client for Google Hangouts.
 
-	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)
+	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups](https://aur.archlinux.org/packages/hangups/)
 
 *   **[ICQ](https://en.wikipedia.org/wiki/ICQ "wikipedia:ICQ")** — Official ICQ client for Linux.
 
 	[https://icq.com/linux/](https://icq.com/linux/) || [icqdesktop-bin](https://aur.archlinux.org/packages/icqdesktop-bin/)
+
+*   **Licq** — Instant messaging client for UNIX supporting ICQ.
+
+	[http://licq.org/](http://licq.org/) || [licq](https://www.archlinux.org/packages/?name=licq)
 
 *   **Matterhorn** — Console client for the Mattermost chat system.
 
@@ -1435,10 +1435,6 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 	[https://www.viber.com/hu/products/linux/](https://www.viber.com/hu/products/linux/) || [viber](https://aur.archlinux.org/packages/viber/)
 
-*   **[WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp")** — Unofficial WhatsApp web desktop client. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://github.com/Enrico204/Whatsapp-Desktop](https://github.com/Enrico204/Whatsapp-Desktop) || [whatsapp-desktop](https://aur.archlinux.org/packages/whatsapp-desktop/)
-
 *   **[Wire](https://en.wikipedia.org/wiki/Wire_(software) "wikipedia:Wire (software)")** — Modern, private messenger. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://wire.com/](https://wire.com/) || [wire-desktop](https://aur.archlinux.org/packages/wire-desktop/)
@@ -1450,6 +1446,10 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 *   **[Zoom](https://en.wikipedia.org/wiki/Zoom_Video_Communications "wikipedia:Zoom Video Communications")** — Proprietary video conferencing, online meetings and group messaging application.
 
 	[https://zoom.us/](https://zoom.us/) || [zoom](https://aur.archlinux.org/packages/zoom/)
+
+*   **[Zulip](https://en.wikipedia.org/wiki/Zulip "wikipedia:Zulip")** — Desktop client for Zulip group chat.
+
+	[https://zulipchat.com/apps/linux](https://zulipchat.com/apps/linux) || [zulip-electron-bin](https://aur.archlinux.org/packages/zulip-electron-bin/)
 
 #### Instant messaging servers
 

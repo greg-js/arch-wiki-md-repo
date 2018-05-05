@@ -1,3 +1,7 @@
+Related articles
+
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+
 [WiFi Radar](https://wifi-radar.tuxfamily.org/) is a nifty little GUI program that lets you switch wireless networks with ease.
 
 ## Installation

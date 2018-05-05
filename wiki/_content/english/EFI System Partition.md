@@ -187,7 +187,7 @@ Add `efistub-update` to the list of hooks in `/etc/mkinitcpio.conf`.
 ```
 #!/usr/bin/env bash
 build() {
-	/usr/local/bin/efistub-copy &
+	/usr/local/bin/efistub-copy $$ &
 }
 
 help() {
@@ -201,13 +201,17 @@ HELPEOF
 ```
 #!/usr/bin/env bash
 
-wait $PPID
+if [[ $1 -gt 0 ]]
+then
+	while [ -e /proc/$1 ]
+	do
+		sleep .5
+	done
+fi
 
-cp -af /boot/vmlinuz-linux *esp*/EFI/arch/
-cp -af /boot/initramfs-linux.img *esp*/EFI/arch/
-cp -af /boot/initramfs-linux-fallback.img *esp*/EFI/arch/
+rsync -a /boot/ *esp*/
 
-echo "Synced kernel with ESP"
+echo "Synced /boot with ESP"
 
 ```
 

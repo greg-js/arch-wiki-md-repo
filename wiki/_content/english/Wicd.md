@@ -303,7 +303,7 @@ See [WPA2 Enterprise#Wicd](/index.php/WPA2_Enterprise#Wicd "WPA2 Enterprise").
 
 ### Two instances of wicd-client (and possibly two icons in tray)
 
-See the note in [#Running Wicd](#Running_Wicd) about the autostart file in `/etc/xdg/autostart` and the forum post and bug report provided in [#External Links](#External_Links). Essentially, if `/etc/xdg/autostart/wicd-tray.desktop` exists, remove it. You only need the `wicd` service enabled in systemd.
+See the note in [#Autostart](#Autostart) about the autostart file in `/etc/xdg/autostart` and the forum post and bug report provided in [#See also](#See_also). Essentially, if `/etc/xdg/autostart/wicd-tray.desktop` exists, remove it. You only need the `wicd` service enabled in systemd.
 
 ### Bad password using PEAP with TKIP/MS-CHAPv2
 

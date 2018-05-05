@@ -91,7 +91,7 @@ When the nvidia card is not needed, bbswitch can be used to turn it off. The nvi
 
 ```
 
-After a reebot, the nvidia card will be off. This can bee seen by querying bbswitch's status:
+After a reboot, the nvidia card will be off. This can be seen by querying bbswitch's status:
 
 ```
  $ cat /proc/acpi/bbswitch  

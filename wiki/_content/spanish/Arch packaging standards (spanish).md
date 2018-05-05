@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Crear paquetes](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)")
+*   [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)")
+*   [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)")
+*   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
+*   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
+
 **Los PKGBUILDs no deben instalar aplicaciones que ya se encuentren en los repositorios oficiales bajo ninguna circunstancia. La única excepción a esta regla son paquetes que contengan añadidos extra habilitados y/o parches en comparación con los oficiales. En tal caso, la variable pkgname deberá ser diferente.**
 
 Al crear paquetes para Arch Linux deberás **seguir las directivas** delineadas en este articulo, especialmente si deseas **contribuir** con tu paquete a la Distribución. También deberías leer los manuales de [PKGBUILD](https://www.archlinux.org/pacman/PKGBUILD.5.html) y [makepkg](https://www.archlinux.org/pacman/makepkg.8.html).

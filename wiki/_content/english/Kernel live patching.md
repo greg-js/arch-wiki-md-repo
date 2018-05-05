@@ -10,7 +10,7 @@ Kernel Live Patching (KLP) allows quick fixes to the kernel space without reboot
 2.  Prepare the patch against the kernel
 3.  Apply some tools (as follows) to help transform and load the patch
 
-Some projects provide the live patching utilities before KLP was officially supported, such as Oracle's [#ksplice](#ksplice), SuSE's [#kGraft](#kGraft), and RedHat's [#kpatch](#kpatch). They implemented the KLP functionality in different ways. The minimalistic functional set of patches entered mainstream kernel were derived from kpatch and kGraft.
+Some projects provide the live patching utilities before KLP was officially supported, such as Oracle's ksplice, SuSE's [#kGraft](#kGraft), and RedHat's [#kpatch](#kpatch). They implemented the KLP functionality in different ways. The minimalistic functional set of patches entered mainstream kernel were derived from kpatch and kGraft.
 
 ## Contents
 

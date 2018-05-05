@@ -1,13 +1,13 @@
 Related articles
 
-*   [Bash (Español)](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)")
-*   [Zsh](/index.php/Zsh "Zsh")
-*   [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
-*   [GNU Project (Español)](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)")
-*   [sudo (Español)](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
+*   [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)")
+*   [Zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)")
+*   [Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
+*   [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)")
+*   [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
 *   [cron](/index.php/Cron "Cron")
 *   [File system search](/index.php/File_system_search "File system search")
-*   [man page](/index.php/Man_page "Man page")
+*   [man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)")
 *   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
@@ -33,12 +33,13 @@ Este artículo trata sobre las utilidades de los sistemas GNU/Linux denominadas 
     *   [7.3 Vim como visualizador alternativo](#Vim_como_visualizador_alternativo)
     *   [7.4 Salida coloreada cuando lee de entrada estándar](#Salida_coloreada_cuando_lee_de_entrada_est.C3.A1ndar)
 *   [8 ls](#ls)
-*   [9 mkdir](#mkdir)
-*   [10 mv](#mv)
-*   [11 rm](#rm)
-*   [12 sed](#sed)
-*   [13 seq](#seq)
-*   [14 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [9 lsblk](#lsblk)
+*   [10 mkdir](#mkdir)
+*   [11 mv](#mv)
+*   [12 rm](#rm)
+*   [13 sed](#sed)
+*   [14 seq](#seq)
+*   [15 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Comandos básicos
 
@@ -431,6 +432,26 @@ $ pty *program* | less
 El siguiente paso mejorará aún más la salida coloreada de *ls*; por ejemplo, enlaces simbólicos rotos (huérfanos) se mostrarán en un tono rojo. Añada la siguiente línea a su archivo de configuración de la terminal:
 
 	`eval $(dircolors -b)`
+
+## lsblk
+
+[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) mostrará todos los [dispositivos de bloque](https://en.wikipedia.org/wiki/es:Archivo_de_dispositivo#Dispositivos_orientados_a_bloques "w:es:Archivo de dispositivo") disponibles, con una descripcion de su esquema de particion, por ejemplo:
+
+ `$ lsblk -f` 
+```
+NAME   FSTYPE   LABEL       UUID                                 MOUNTPOINT
+sda
+├─sda1 vfat                 C4DA-2C4D                            /boot
+├─sda2 swap                 5b1564b2-2e2c-452c-bcfa-d1f572ae99f2 [SWAP]
+└─sda3 ext4                 56adc99b-a61e-46af-aab7-a6d07e504652 /
+
+```
+
+El comienzo del nombre del dispositivo especifica el tipo de bloque. La mayoria de dispositivos de almacenamiento modernos (v.g. discos duros, [SSDs](/index.php/SSD "SSD") o memorias de USB) son reconocidos como discos de SCSI (`sd`). El tipo es seguido por una letra minúscula comenzando por la letra `a` para el primer dispositivo (`sda`), `b` para el segundo dispositivo y así consecutivamente. Particiones *existentes* en cada disco duro serán enumeradas comenzando con el numero `1` para la primera partición (`sda1`), `2` para la segunda y así consecutivamente.
+
+En el ejemplo anterior solo hay un dispositivo disponible (`sda`), y tiene tres particiones (`sda1` hasta `sda3`), cada una con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") diferente.
+
+Otros tipos de dispositivos comunes son por ejemplo `mmcblk` para memorias en tarjetas y `nvme` para dispositivos [NVMe](/index.php/NVMe "NVMe").
 
 ## mkdir
 

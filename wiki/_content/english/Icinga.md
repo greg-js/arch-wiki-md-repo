@@ -19,8 +19,6 @@
 
 ## Installation
 
-Follow [Install Web Application Package](/index.php/Web_application_package_guidelines#Install_web_application_package "Web application package guidelines")
-
 Before you install the package create the user `icinga:icinga` with these commands:
 
 ```
