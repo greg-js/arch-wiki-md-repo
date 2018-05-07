@@ -14,7 +14,7 @@ Tmux 与基于 ISC 协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen T
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 快捷键前缀](#.E5.BF.AB.E6.8D.B7.E9.94.AE.E5.89.8D.E7.BC.80)
-        *   [2.1.1 滚动](#.E6.BB.9A.E5.8A.A8)
+        *   [2.1.1 复制模式](#.E5.A4.8D.E5.88.B6.E6.A8.A1.E5.BC.8F)
     *   [2.2 打开URL](#.E6.89.93.E5.BC.80URL)
     *   [2.3 正确设置 term](#.E6.AD.A3.E7.A1.AE.E8.AE.BE.E7.BD.AE_term)
     *   [2.4 其他设置](#.E5.85.B6.E4.BB.96.E8.AE.BE.E7.BD.AE)
@@ -47,7 +47,7 @@ Tmux 与基于 ISC 协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen T
 
 ## 安装
 
-从[官方源](/index.php/Official_repositories "Official repositories")[安装](/index.php/Pacman "Pacman")软件包[tmux](https://www.archlinux.org/packages/?name=tmux)。
+从[官方源](/index.php/Official_repositories "Official repositories")[安装](/index.php/Pacman "Pacman")软件包[tmux](https://www.archlinux.org/packages/?name=tmux)。可选安装[tmux-bash-completion](https://aur.archlinux.org/packages/tmux-bash-completion/)为tmux提供了bash补全功能。
 
 ## 配置
 
@@ -62,7 +62,7 @@ Tmux 与基于 ISC 协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen T
 | p | 切换到上一个窗口 |
 | " | 水平分割窗口 |
 | % | 垂直分割窗口 |
-| , | 重新命令当前窗口 |
+| , | 重新命名当前窗口 |
 | o | 移动至下一个面板 |
 
 默认绑定的前缀按键为Ctrl-b. 比如说垂直分割窗口的快捷键就是 `Ctrl-b %`。
@@ -77,6 +77,9 @@ set -g prefix C-a
 bind C-a send-prefix
 
 ```
+
+**提示：** 使用特殊字符作为前缀，你必须使用`Alt`键(Meta键)代替`Ctrl`键。例如：`set -g prefix m-'\'`
+。
 
 其他几种在窗口间移动的快捷键:
 
@@ -96,7 +99,9 @@ Ctrl-b w (从交互式列表中选择窗口)
 
 ```
 
-#### 滚动
+#### 复制模式
+
+一个tmux窗口可能处于几个模式中的一个。默认模式允许直接访问连接到窗口的终端；另一种是复制模式。一旦在复制模式下，你可以在缓冲区包括滚动历史。vi或emacs风格的按键方式绑定在复制模式中，默认是emacs,除非编辑器包含"vi"。
 
 使用下列快捷键可以进入滚动模式:
 
@@ -105,14 +110,19 @@ Ctrl-b [
 
 ```
 
-这会使你进入滚动模式,然后你可以使用上下键或翻页键进行滚动,翻页.
+可以在默认编辑器的缓冲区中进行浏览。 离开复制模式，使用下面的按键： vi模式
 
 ```
-Ctrl-b PageUp
+ q
 
 ```
 
-这个快捷键会使你立即进入滚动模式,并向上翻页.
+emacs模式
+
+```
+ Esc
+
+```
 
 ### 打开URL
 

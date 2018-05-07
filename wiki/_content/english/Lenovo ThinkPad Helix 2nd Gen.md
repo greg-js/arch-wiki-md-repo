@@ -22,13 +22,15 @@ This hardware is substantially different from the [Lenovo ThinkPad Helix 1st Gen
 
 This device does not support suspend-to-RAM. It only supports suspend-to-idle (aka "freeze"). In order for this to work completely, you must update the BIOS to the latest version (1.99 works) using the disc image provided by Lenovo. If you do not do this, you may only be able to suspend-to-idle and resume while docked in the keyboard (detaching to tablet mode while suspended would prevent the device from resuming). With an updated BIOS, it appears the device can resume from suspend-to-idle under all conditions.
 
-To force suspend-to-idle, create the file `/etc/systemd/sleep.conf` containing:
+Older versions of the BIOS misreport the suspend capabilities, and thus the system will try to suspend to RAM. To verify this, run `cat /sys/power/mem_sleep`. If you see `mem` in the output, you are susceptible to this problem. If you are unable to update the RAM, you can force the system to use suspend-to-idle. Simply create the file `/etc/systemd/sleep.conf` containing:
 
  `/etc/systemd/sleep.conf` 
 ```
 [Sleep]
 SuspendState=freeze
 ```
+
+On the most recent BIOS versions, this isn't necessary, since `/sys/power/mem_sleeep` will only contain `s2idle` and thus any attempt to suspend in any manner will default to suspend-to-idle.
 
 ## Sensors
 
@@ -166,7 +168,7 @@ Until that is fixed, the functionality can be restored by compiling the kernel w
 
 ```
 
-In order to use the sensors (particularly the accelerometer and the ambient light sensor) in [GNOME](/index.php/GNOME "GNOME"), you should install the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package. Due to a yet unresolved quirk, you must suspend and resume the device before the sensors will function properly.
+In order to use the sensors (particularly the accelerometer and the ambient light sensor) in [GNOME](/index.php/GNOME "GNOME"), you should install the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package. There is presumably a quirk with this sensor hardware. The effect is that `iio-sensor-proxy` loads too early, requiring the service to be restarted before the sensors can be read properly. To fix this, edit the systemd unit so that it starts after GDM (`After=gdm.service`; see [Systemd#Editing_provided_units](/index.php/Systemd#Editing_provided_units "Systemd")).
 
 If you are using [GNOME](/index.php/GNOME "GNOME"), a program called [tp-helix-orientation-lock](http://brandon.invergo.net/software/tp-helix-orientation-lock.html) enables the use of the "rotation lock" button on the Helix 2, as well as optionally automatically locking/unlocking the screen orientation when docking/undocking the tablet.
 
@@ -175,7 +177,7 @@ If you are using [GNOME](/index.php/GNOME "GNOME"), a program called [tp-helix-o
 In order to enable multitouch, install [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) and [libwacom](https://www.archlinux.org/packages/?name=libwacom). By default, [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) handles multitouch, however it is limited to two-finger input. In order to allow true multitouch, you must disable this built-in support. Multitouch events will then be passed on to XServer. To test this, try running
 
 ```
-$ xset "Wacom HID 501D Finger touch" Gesture off}}.
+$ xset "Wacom HID 501D Finger touch" Gesture off
 
 ```
 
@@ -183,7 +185,7 @@ To make it permanent, copy `/usr/share/X11/xorg.conf.d/70-wacom.conf` to `/etc/X
 
 ## Graphics
 
-Install the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) for graphics acceleration.
+Install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) for graphics acceleration.
 
 ## Unresolved Issues
 

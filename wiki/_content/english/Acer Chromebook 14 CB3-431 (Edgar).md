@@ -79,7 +79,7 @@ The following features are not expected to work out of box :
 *   Trackpad
 *   Sound/Audio
 
-Fixing those issues will require the user to compile and apply the patched [linux-galliumos-braswell](https://aur.archlinux.org/packages/linux-galliumos-braswell/) kernel and follow the proceeding steps below:
+Fixing those issues will require the user to compile and apply the patched [linux-galliumos](https://aur.archlinux.org/packages/linux-galliumos/) kernel and follow the proceeding steps below:
 
 ### Internal Keyboard
 

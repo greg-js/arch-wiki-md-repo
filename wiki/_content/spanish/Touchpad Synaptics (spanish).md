@@ -4,6 +4,10 @@ Artículos relacionados
 
 Este artículo detalla el proceso de instalación y configuración de ***Synaptics input driver*** para los touchpads Synaptics (y ALPS) que se encuentra en la mayoría de portátiles.
 
+**Advertencia:** El paquete [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) no esta siendo activamente mantenido. En lo posible use [libinput](/index.php/Libinput_(Espa%C3%B1ol) "Libinput (Español)").
+
+**Nota:** Si desea configurar su touchpad en el centro de control de GNOME, necesita usar el controlador de [libinput](/index.php/Libinput_(Espa%C3%B1ol) "Libinput (Español)").[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)
+
 ## Contents
 
 *   [1 Instalación](#Instalaci.C3.B3n)
@@ -653,9 +657,9 @@ Estos problemas parecen estar ocurriendo en varios modelos de portátiles LG. Lo
 El problema de desplazamiento se puede resolver insertando en `xorg.conf`:
 
  `/etc/X11/xorg.conf.d/xorg.conf`  `Option "UpDownScrolling" "0"` 
-**Nota:** Avertirá que esto hará que Synaptics interprete una pulsación como tres. Hay un parche escrito por Oskar Sandberg [[1]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) que elimina estos clics.
+**Nota:** Avertirá que esto hará que Synaptics interprete una pulsación como tres. Hay un parche escrito por Oskar Sandberg [[2]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) que elimina estos clics.
 
-Al parecer, cuando se trata de compilar esta solución a la última versión de Synaptics, esta falla. La solución es usar el repositorio GIT para Synaptics[[2]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
+Al parecer, cuando se trata de compilar esta solución a la última versión de Synaptics, esta falla. La solución es usar el repositorio GIT para Synaptics[[3]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
 
 También hay un archivo de compilación del paquete en AUR para automatizar este: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/).
 

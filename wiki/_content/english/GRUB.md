@@ -166,8 +166,6 @@ After the above install completed the main GRUB directory is located at `/boot/g
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
-**Note:** If the `*esp*` was mounted on `/boot`, you will have to remount it on a different location before generating a new configuration file (and specify its location to [grub-mkconfig](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") with the `-o` switch), otherwise it won't be able to find your kernel and [initramfs](/index.php/Initramfs "Initramfs") images.
-
 **Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a `BOOT` folder inside the `EFI` folder of the EFI partition, but its only purpose is to recreate the EFI boot option for Windows.
 
 **Note:**

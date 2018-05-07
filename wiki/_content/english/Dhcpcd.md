@@ -102,7 +102,7 @@ Care must be taken on a network running [Dynamic DNS](https://en.wikipedia.org/w
 
 ### Static profile
 
-Required settings are explained in [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"). These typically include the [device name](/index.php/Network_configuration#Network_interface "Network configuration"), *IP address*, *router address*, and *name server*.
+Required settings are explained in [Network configuration](/index.php/Network_configuration "Network configuration"). These typically include the [network interface](/index.php/Network_configuration#Network_interfaces "Network configuration") name, *IP address*, *router address*, and *name server*.
 
 Configure a static profile for *dhcpcd* in `/etc/dhcpcd.conf`, for example:
 

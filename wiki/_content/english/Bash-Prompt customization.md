@@ -62,7 +62,7 @@ $ infocmp
 
 ```
 
-The capability names (the part before the =) can be looked up in [terminfo(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5) for a description of what they do. For example, `setaf` sets the foreground color of whatever text is printed after it. To get the escape code for a capability, you can use the `tput` command. For example
+The capability names (the part before the =) can be looked up in [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5) for a description of what they do. For example, `setaf` sets the foreground color of whatever text is printed after it. To get the escape code for a capability, you can use the `tput` command. For example
 
 ```
 $ tput setaf 2
@@ -316,7 +316,7 @@ Of course your window title string can include output from [embedding commands](
 
 *   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885)
 *   [Gentoo's `/etc/bash/bashrc`](https://gitweb.gentoo.org/repo/gentoo.git/tree/app-shells/bash/files/bashrc). See also [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/).
-*   [tput(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tput.1)
+*   [tput(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tput.1)
     *   [tput reference on bash-hackers.org](http://wiki.bash-hackers.org/scripting/terminalcodes)
     *   [Colours and Cursor Movement With tput](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html)
 *   [Nice Xresources color schemes collection](http://xcolors.net/)

@@ -1,3 +1,11 @@
+Related articles
+
+*   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
+*   [RVM](/index.php/RVM "RVM")
+*   [MariaDB](/index.php/MariaDB "MariaDB")
+*   [Apache](/index.php/Apache "Apache")
+*   [Nginx](/index.php/Nginx "Nginx")
+
 [Redmine](https://www.redmine.org/) is a [free and open source](https://en.wikipedia.org/wiki/free_and_open_source_software "wikipedia:free and open source software"), web-based [project management](https://en.wikipedia.org/wiki/project_management "wikipedia:project management") and [issue tracking](https://en.wikipedia.org/wiki/Issue_tracking_system "wikipedia:Issue tracking system") tool. It handles multiple projects and subprojects. It [features](http://www.redmine.org/projects/redmine/wiki/Features) per project wikis and forums, time tracking, and flexible role based access control. It includes a [calendar](https://en.wikipedia.org/wiki/calendar "wikipedia:calendar") and [Gantt charts](https://en.wikipedia.org/wiki/Gantt_chart "wikipedia:Gantt chart") to aid visual representation of projects and their [deadlines](https://en.wikipedia.org/wiki/time_limit "wikipedia:time limit"). Redmine integrates with various [version control](https://en.wikipedia.org/wiki/version_control "wikipedia:version control") systems and includes a repository browser and diff viewer.
 
 Redmine is written using the [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails") framework. It is cross-platform and cross-[database](https://en.wikipedia.org/wiki/database "wikipedia:database") and supports 34 languages.

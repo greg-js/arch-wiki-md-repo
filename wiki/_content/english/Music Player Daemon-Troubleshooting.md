@@ -20,6 +20,7 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
     *   [1.8 MPD & ALSA](#MPD_.26_ALSA)
         *   [1.8.1 High CPU usage with ALSA](#High_CPU_usage_with_ALSA)
         *   [1.8.2 Playing audio files with different rate (works for EMU 0202/0204/0404)](#Playing_audio_files_with_different_rate_.28works_for_EMU_0202.2F0204.2F0404.29)
+    *   [1.9 Changing user](#Changing_user)
 
 ## Troubleshooting
 
@@ -128,14 +129,14 @@ listen: bind to '0.0.0.0:6600' failed: Address already in use (continuing anyway
 
 ```
 
-MPD is attempting to bind to the ipv6 interface before binding to ipv4\. If you want to use your ipv4 interface, hardcode it in mpd.conf, like so:
+it means mpd binds to the ipv6 interface before binding to ipv4\. If you want to use your ipv4 interface, hardcode it in `mpd.conf`, like:
 
 ```
 bind_to_address "127.0.0.1"
 
 ```
 
-Several binds can also be specified, for example, to have MPD listen on localhost and the external IP of your network card:
+Several binds can also be specified, for example, to have mpd listen both to localhost and to the external IP of your network card:
 
 ```
 bind_to_address "127.0.0.1"
@@ -243,4 +244,32 @@ audio_output {
     name          "Emu 0202 USB"
     device        "hw:2,0"
 }
+```
+
+### Changing user
+
+Changing the group that MPD runs as may result in errors like:
+
+```
+output: Failed to open "My ALSA Device"
+
+```
+
+```
+[alsa]: Failed to open ALSA device "default": No such file or directory
+
+```
+
+or
+
+```
+player_thread: problems opening audio device while playing "Song Name.mp3"
+
+```
+
+This is because the MPD users need to be part of the *audio* group to access sound devices under `/dev/snd/`. To fix it add user make the MPD user part of the *audio* group:
+
+```
+# gpasswd -a 'MPD' audio
+
 ```

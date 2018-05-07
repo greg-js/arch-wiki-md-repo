@@ -8,6 +8,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
     *   [1.1 RuneScape NXT](#RuneScape_NXT)
     *   [1.2 Rsu-client](#Rsu-client)
     *   [1.3 OSBuddy (Old School RuneScape only)](#OSBuddy_.28Old_School_RuneScape_only.29)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Audio issues](#Audio_issues)
 
 ## Methods to play
 
@@ -24,3 +26,9 @@ Install the official RuneScape NXT client with the [runescape-launcher](https://
 ### OSBuddy (Old School RuneScape only)
 
 [OSBuddy](https://rsbuddy.com/osbuddy/) is a third-party toolkit for Old School RuneScape which in addition to a client offers useful features, such as highscores, notes, price checker etc. It's available for installation from the AUR, [osbuddy](https://aur.archlinux.org/packages/osbuddy/).
+
+## Troubleshooting
+
+### Audio issues
+
+The Java client (jagexappletviewer.jar) requires [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) to be installed for sound to work properly. Otherwise there will be no in-game sound or other applications will not be able to play audio due to the client claiming direct access to `/dev/snd/*` devices. For more details, see [PulseAudio#ALSA](/index.php/PulseAudio#ALSA "PulseAudio").

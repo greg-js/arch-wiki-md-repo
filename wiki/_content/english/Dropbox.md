@@ -57,6 +57,8 @@ Related articles
 | Caja integration | [caja-dropbox](https://aur.archlinux.org/packages/caja-dropbox/) |
 | [KDE](/index.php/KDE "KDE") client | [kfilebox](https://aur.archlinux.org/packages/kfilebox/) |
 
+Note that in order to access the GUI and the settings, the only way is via a tray icon. You need an X panel with systray or a standalone systray application for that.
+
 ### Prevent automatic updates
 
 Since at least version 2.4.6 (see comments around 2013-11-06 on [AUR](https://aur.archlinux.org/packages/dropbox/?comments=all)), Dropbox has had an auto-update capability which downloads a new binary to the `~/.dropbox-dist/` folder. The service then attempts to hand over control to this binary and dies, causing systemd to re-start the service, generating a conflict and an endless loop of log-filling, CPU-eating misery.

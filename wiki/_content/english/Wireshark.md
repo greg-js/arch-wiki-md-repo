@@ -11,11 +11,9 @@
 
 ## Installation
 
-Wireshark's default interface uses Qt, the GTK+ interface is deprecated and might be removed in the future.
+[Install](/index.php/Install "Install") the [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) package for the Wireshark GUI or [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) for just the `tshark` CLI.
 
-[Install](/index.php/Install "Install") [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) or [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) when you prefer the GTK+ interface.
-
-Both frontends depend on the [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) package that provides the `tshark` CLI.
+For the deprecated GTK+ interface, install the [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) package. Note that this package will be removed in the future (Wireshark 3.0).
 
 ## Capturing as normal user
 

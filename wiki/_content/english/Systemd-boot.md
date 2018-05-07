@@ -108,6 +108,8 @@ Additional options are available starting with systemd **v239**:
 *   `auto-firmware` – shows entry for rebooting into UEFI firmware settings if set to `1` (default), `0` to hide;
 *   `console-mode` – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for non-standard modes provided by the device firmware, if any, `auto` picks a suitable mode automatically, `max` for highest available mode, `keep` (default) for the firmware selected mode.
 
+See [loader.conf manual](https://www.freedesktop.org/software/systemd/man/loader.conf.html) for the full list of options.
+
 Example:
 
  `*esp*/loader/loader.conf` 

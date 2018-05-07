@@ -49,7 +49,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
     *   [6.3 LightDM freezes on login attempt](#LightDM_freezes_on_login_attempt)
     *   [6.4 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
-    *   [6.5 LightDM does not appear](#LightDM_does_not_appear)
+    *   [6.5 LightDM does not appear or monitor only displays TTY output](#LightDM_does_not_appear_or_monitor_only_displays_TTY_output)
     *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
     *   [6.7 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
 *   [7 See also](#See_also)
@@ -442,7 +442,7 @@ active-monitor=0
 
 Replace 0 with the desired display number.
 
-### LightDM does not appear
+### LightDM does not appear or monitor only displays TTY output
 
 It may happen that your system boots so fast that LightDM service is started before your graphics drivers are properly loaded. If this is your case, you will want to add the following config to your lightdm.conf file:
 

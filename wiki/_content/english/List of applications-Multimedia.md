@@ -17,7 +17,8 @@
             *   [1.2.2.2 Vector graphics - illustration](#Vector_graphics_-_illustration)
             *   [1.2.2.3 Vector graphics - CAD](#Vector_graphics_-_CAD)
             *   [1.2.2.4 3D modeling/rendering](#3D_modeling.2Frendering)
-        *   [1.2.3 Screen capture](#Screen_capture)
+        *   [1.2.3 Digital camera managers](#Digital_camera_managers)
+        *   [1.2.4 Screen capture](#Screen_capture)
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
@@ -38,13 +39,11 @@
         *   [1.4.4 Video editors](#Video_editors)
             *   [1.4.4.1 Console](#Console_3)
             *   [1.4.4.2 Graphical](#Graphical_3)
-        *   [1.4.5 Screencast](#Screencast)
+        *   [1.4.5 Lyrics fetchers](#Lyrics_fetchers)
+        *   [1.4.6 Screencast](#Screencast)
     *   [1.5 Mobile phone managers](#Mobile_phone_managers)
-    *   [1.6 Digital camera managers](#Digital_camera_managers)
-    *   [1.7 Optical media burning](#Optical_media_burning)
-    *   [1.8 Podcasts](#Podcasts)
-    *   [1.9 Collection managers](#Collection_managers)
-    *   [1.10 Lyrics fetchers](#Lyrics_fetchers)
+    *   [1.6 Optical media burning](#Optical_media_burning)
+    *   [1.7 Collection managers](#Collection_managers)
 
 ## Multimedia
 
@@ -201,14 +200,6 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 *   **Xloadimage** — Classic X image viewer.
 
 	[http://sioseis.ucsd.edu/xloadimage.html](http://sioseis.ucsd.edu/xloadimage.html) || [xloadimage](https://www.archlinux.org/packages/?name=xloadimage)
-
-*   **[XnView MP](https://en.wikipedia.org/wiki/XnView "wikipedia:XnView")** — Efficient proprietary image viewer, browser and converter.
-
-	[http://www.xnview.com/en/xnviewmp/](http://www.xnview.com/en/xnviewmp/) || [xnviewmp](https://aur.archlinux.org/packages/xnviewmp/)
-
-*   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Shareware program written by John Bradley to display and modify digital images under the X Window System. Last released in 1994.
-
-	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://aur.archlinux.org/packages/xv/)
 
 #### Graphics and image manipulation
 
@@ -401,6 +392,10 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 *   **[Wings 3D](https://en.wikipedia.org/wiki/Wings3d "wikipedia:Wings3d")** — Advanced subdivision modeler that is both powerful and easy to use.
 
 	[http://www.wings3d.com/](http://www.wings3d.com/) || [wings3d](https://www.archlinux.org/packages/?name=wings3d)
+
+#### Digital camera managers
+
+See [Digital Cameras#Other frontend applications for libgphoto2](/index.php/Digital_Cameras#Other_frontend_applications_for_libgphoto2 "Digital Cameras").
 
 #### Screen capture
 
@@ -984,6 +979,12 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[https://vidcutter.ozmartians.com/](https://vidcutter.ozmartians.com/) || [vidcutter](https://aur.archlinux.org/packages/vidcutter/)
 
+#### Lyrics fetchers
+
+*   **clyrics** — An extensible lyrics fetcher, with daemon support for cmus and mocp.
+
+	[https://github.com/trizen/clyrics](https://github.com/trizen/clyrics) || [clyrics](https://aur.archlinux.org/packages/clyrics/)
+
 #### Screencast
 
 See also [Wikipedia:Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").
@@ -1052,17 +1053,9 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[https://community.kde.org/KDEConnect](https://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
 
-### Digital camera managers
-
-See [Digital Cameras#Other frontend applications for libgphoto2](/index.php/Digital_Cameras#Other_frontend_applications_for_libgphoto2 "Digital Cameras").
-
 ### Optical media burning
 
 See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
-
-### Podcasts
-
-see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "List of applications/Internet")
 
 ### Collection managers
 
@@ -1089,9 +1082,3 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 
 	[http://tellico-project.org/](http://tellico-project.org/) || [tellico](https://www.archlinux.org/packages/?name=tellico)
-
-### Lyrics fetchers
-
-*   **clyrics** — An extensible lyrics fetcher, with daemon support for cmus and mocp.
-
-	[https://github.com/trizen/clyrics](https://github.com/trizen/clyrics) || [clyrics](https://aur.archlinux.org/packages/clyrics/)

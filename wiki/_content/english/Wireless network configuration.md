@@ -26,7 +26,6 @@ The [#Wireless management](#Wireless_management) section describes how to manual
     *   [2.5 Set operating mode](#Set_operating_mode)
     *   [2.6 Connect to an access point](#Connect_to_an_access_point)
     *   [2.7 Get an IP address](#Get_an_IP_address)
-        *   [2.7.1 Example](#Example)
 *   [3 WPA2 Enterprise](#WPA2_Enterprise)
     *   [3.1 eduroam](#eduroam)
     *   [3.2 Manual/automatic setup](#Manual.2Fautomatic_setup)
@@ -297,41 +296,7 @@ Regardless of the method used, you can check if you have associated successfully
 
 ### Get an IP address
 
-Follow the instructions in [Network configuration#Manual assignment](/index.php/Network_configuration#Manual_assignment "Network configuration") for more information on the following examples.
-
-#### Example
-
-Here is a complete example of setting up a wireless network with WPA supplicant and DHCP.
-
-```
-# ip link set dev wlan0 up
-# wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-# dhcpcd wlan0
-
-```
-
-And then to close the connection, you can simply disable the interface:
-
-```
-# ip link set dev wlan0 down
-
-```
-
-For a static IP, you would replace the *dhcpcd* invocation with
-
-```
-# ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlan0
-# ip route add default via 192.168.0.1
-
-```
-
-And before disabling the interface you would first flush the IP address and gateway:
-
-```
-# ip addr flush dev wlan0
-# ip route flush dev wlan0
-
-```
+See [Network configuration#IP addresses](/index.php/Network_configuration#IP_addresses "Network configuration").
 
 ## WPA2 Enterprise
 

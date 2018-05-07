@@ -1,6 +1,8 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 12 декабря 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=497975).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 6 мая 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=520439).
 
 Из [Wikipedia](https://en.wikipedia.org/wiki/Telegram_(software) "wikipedia:Telegram (software)"): **Telegram** — бесплатный кроссплатформенный мессенджер для смартфонов и других устройств, позволяющий обмениваться текстовыми сообщениями и медиафайлами различных форматов. Используются проприетарная серверная часть c закрытым кодом и несколько клиентов с открытым исходным кодом, в том числе под лицензией GNU GPL.
+
+Хотя официальные приложения и имеют открытый исходный код, он обновляется не сразу же после выхода новой версии приложения.
 
 ## Contents
 
@@ -26,11 +28,9 @@
 
 [Официальное приложение](https://desktop.telegram.org/):
 
-*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) скомпилированное приложение от [Telegram](https://desktop.telegram.org/).
-*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) требующее библиотеки [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") для сборки.
-*   [telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/) экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных.
+*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) официальное приложение.
+*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) скомпилированное приложение от [Telegram](https://desktop.telegram.org/). Также можно получить из официального репозитория *community* (пакет выше).
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных и emoji от [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
-*   [telegram-desktop-systemqt-emojione](https://aur.archlinux.org/packages/telegram-desktop-systemqt-emojione/) экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных и emoji от [EmojiOne](https://emojione.com/).
 
 Альтернативные неофициальные клиенты:
 
@@ -52,11 +52,9 @@
 
 ## Советы и хитрости
 
-*   Пакет [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) требует для сборки [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz), а это около 40MB дополнительных загрузок.
-*   Использование неофициального репозитория [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") для установки [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) и [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) позволяет не загружать [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz), упомянутый выше. Некоторые другие связанные с Telegram пакеты также доступны в этом репозитории.
-
 ### Каналы в Telegram про Arch Linux
 
 *   [Arch Linux News](https://telegram.me/archlinuxnews) - Последние новости с официального сайта Arch (на английском).
 *   [Planet Arch](https://telegram.me/archplanet) - Последние публикации с сайта Planet Arch (на английском).
-*   [Arch Linux RU & UA](https://telegram.me/ArchLinuxChatRU) - Неофициальный чат сообщества ArchLinux в СНГ.
+*   [Arch Linux RU](https://telegram.me/ArchLinuxChatRU) - Неофициальный чат сообщества Arch Linux в СНГ.
+*   [Arch Linux](https://telegram.me/archlinuxgroup) - Неофициальный чат для обсуждения всего о Arch Linux (на английском).

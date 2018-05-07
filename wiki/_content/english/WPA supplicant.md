@@ -36,7 +36,7 @@ Optionally also install [wpa_supplicant_gui](https://aur.archlinux.org/packages/
 
 The first step to connect to an encrypted wireless network is having *wpa_supplicant* obtain authentication from a WPA authenticator. In order to do this, *wpa_supplicant* must be configured so that it will be able to submit the correct credentials to the authenticator.
 
-Once the authentication is successful, it is possible to obtain an IP address from the network in the usual way and connect. For example, the [iproute2](/index.php/Core_utilities#ip "Core utilities") suite of utilities can be used for temporary configuration during initial testing of the network interface. [dhcpcd](/index.php/Dhcpcd "Dhcpcd") and [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") can obtain an IP address automatically via DHCP. See [Network configuration#Dynamic IP address](/index.php/Network_configuration#Dynamic_IP_address "Network configuration") and subsequent for more details. The [Wireless network configuration#Wireless management](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration") section may help as well.
+Once you are authenticated you need to assign an IP address, see [Network configuration#IP addresses](/index.php/Network_configuration#IP_addresses "Network configuration").
 
 ## Connecting with wpa_cli
 
@@ -150,7 +150,7 @@ Failed to read or parse configuration '/dev/fd/63'
 *   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase *MYSSID* < passphrase.txt`, or here strings, e.g. `wpa_passphrase *MYSSID* <<< "*passphrase*"`.
 *   Alternatively, when using special characters in the passphrase, rather than escaping them, simply invoke `wpa_passphrase` without specifying the passphrase. It will then prompt for it to be entered in the standard input where users can paste it even if it contains special characters.
 
-Finally, you should obtain an IP address (e.g., using [Dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")).
+Finally, you should obtain an IP address, see [Network configuration#IP addresses](/index.php/Network_configuration#IP_addresses "Network configuration").
 
 ## Advanced usage
 

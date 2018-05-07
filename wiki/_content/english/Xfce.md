@@ -261,12 +261,14 @@ Similarly, turn them to `true` to lock the session on suspend.
 
 The setting can also be controlled from the GUI: open the *Session and Startup* application and turn the flag *Advanced > Lock screen before sleep* on or off.
 
-Whenever the suspend keyboard button is pressed, it can be handled by either Xfce's power manager or by systemd-logind. To give precedence to logind, the following xfconf setting must be set to `true`:
+Whenever the suspend keyboard button is pressed, it can be handled by either Xfce's power manager or by *systemd-logind*. To give precedence to logind, the following xfconf setting must be set to `true`:
 
 ```
 $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-suspend-key -n -t bool -s **true**
 
 ```
+
+**Note:** To check how *systemd-logind* handles events whenever it has precedence over Xfce, check [logind.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5)
 
 #### Disable saved sessions
 

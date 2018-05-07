@@ -343,7 +343,7 @@ You should of course refer to your application's documentation and Wine's [AppDB
 To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official binaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
 
 ```
-$ WINEPREFX=*your-prefix* setup_dxvk64
+$ WINEPREFIX=*your-prefix* setup_dxvk64
 
 ```
 

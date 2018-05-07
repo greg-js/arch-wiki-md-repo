@@ -135,7 +135,7 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 
 ### UTC 在Ubuntu的设置
 
-Ubuntu and its derivatives have the hardware clock set to be interpreted as in "localtime" if Windows was detected on any disk during Ubuntu installation. This is apparently done deliberately to allow new Linux users to try out Ubuntu on their Windows computers without editing the registry.
+Ubuntu及其衍生发行版会在安装时检测计算机上是否存在Windows，若存在则会默认使用localtime。这是为了让Windows用户能够在不修改注册表的情况下，在Ubuntu内看到正确的时间。
 
 要改变Ubuntu的此问题，你需要做到以下几点。打开文件:
 

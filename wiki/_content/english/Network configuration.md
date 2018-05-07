@@ -6,9 +6,9 @@ Related articles
 *   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
 *   [Router](/index.php/Router "Router")
 
-This article explains how to manually set up a network connection using [iproute2](https://www.archlinux.org/packages/?name=iproute2). For automatic network configuration see [Network manager](/index.php/Network_manager "Network manager").
+This article explains how to manually set up a network connection. For automatic network configuration see [Network manager](/index.php/Network_manager "Network manager").
 
-Go through the following conditions and ensure that you meet them:
+To set up or troubleshoot a network connection, go through the following conditions and ensure that you meet them:
 
 1.  Your network interface is listed, see [#Listing network interfaces](#Listing_network_interfaces).
 2.  Your network interface is enabled, see [#Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces).
@@ -24,49 +24,47 @@ Go through the following conditions and ensure that you meet them:
 *   [1 Device driver](#Device_driver)
     *   [1.1 Check the status](#Check_the_status)
     *   [1.2 Load the module](#Load_the_module)
-*   [2 Network interfaces](#Network_interfaces)
-    *   [2.1 Listing network interfaces](#Listing_network_interfaces)
-    *   [2.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
-*   [3 IP addresses](#IP_addresses)
-    *   [3.1 Listing IP addresses](#Listing_IP_addresses)
-    *   [3.2 Obtaining a dynamic IP address](#Obtaining_a_dynamic_IP_address)
-    *   [3.3 Setting up a static IP address](#Setting_up_a_static_IP_address)
-        *   [3.3.1 Manual assignment](#Manual_assignment)
-        *   [3.3.2 Calculating addresses](#Calculating_addresses)
-*   [4 Routing table](#Routing_table)
-*   [5 Ping](#Ping)
-*   [6 Resolving domain names](#Resolving_domain_names)
-*   [7 Set the hostname](#Set_the_hostname)
-    *   [7.1 Local network hostname resolution](#Local_network_hostname_resolution)
-*   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Change interface name](#Change_interface_name)
-    *   [8.2 Revert to traditional interface names](#Revert_to_traditional_interface_names)
-    *   [8.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
-    *   [8.4 ifplugd for laptops](#ifplugd_for_laptops)
-    *   [8.5 Bonding or LAG](#Bonding_or_LAG)
-    *   [8.6 IP address aliasing](#IP_address_aliasing)
-        *   [8.6.1 Example](#Example)
-    *   [8.7 Promiscuous mode](#Promiscuous_mode)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
-    *   [9.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
-        *   [9.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
-        *   [9.2.2 Ways of fixing it](#Ways_of_fixing_it)
-            *   [9.2.2.1 Bad](#Bad)
-            *   [9.2.2.2 Good](#Good)
-            *   [9.2.2.3 Best](#Best)
-        *   [9.2.3 More about it](#More_about_it)
-    *   [9.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
-        *   [9.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
-        *   [9.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
-        *   [9.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
-        *   [9.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [9.3.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
-    *   [9.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [9.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [9.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [9.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
-*   [10 See also](#See_also)
+*   [2 Network management](#Network_management)
+    *   [2.1 Network interfaces](#Network_interfaces)
+        *   [2.1.1 Listing network interfaces](#Listing_network_interfaces)
+        *   [2.1.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
+    *   [2.2 IP addresses](#IP_addresses)
+        *   [2.2.1 Manual IP address management](#Manual_IP_address_management)
+        *   [2.2.2 Routing table](#Routing_table)
+        *   [2.2.3 DHCP](#DHCP)
+*   [3 Ping](#Ping)
+*   [4 Resolving domain names](#Resolving_domain_names)
+*   [5 Set the hostname](#Set_the_hostname)
+    *   [5.1 Local network hostname resolution](#Local_network_hostname_resolution)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Change interface name](#Change_interface_name)
+    *   [6.2 Revert to traditional interface names](#Revert_to_traditional_interface_names)
+    *   [6.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
+    *   [6.4 ifplugd for laptops](#ifplugd_for_laptops)
+    *   [6.5 Bonding or LAG](#Bonding_or_LAG)
+    *   [6.6 IP address aliasing](#IP_address_aliasing)
+        *   [6.6.1 Example](#Example)
+    *   [6.7 Promiscuous mode](#Promiscuous_mode)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
+    *   [7.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
+        *   [7.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
+        *   [7.2.2 Ways of fixing it](#Ways_of_fixing_it)
+            *   [7.2.2.1 Bad](#Bad)
+            *   [7.2.2.2 Good](#Good)
+            *   [7.2.2.3 Best](#Best)
+        *   [7.2.3 More about it](#More_about_it)
+    *   [7.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
+        *   [7.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
+        *   [7.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
+        *   [7.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
+        *   [7.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
+        *   [7.3.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+    *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [7.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+*   [8 See also](#See_also)
 
 ## Device driver
 
@@ -100,13 +98,17 @@ Search in the Internet for the right module/driver for the chipset. Some common 
 
 If udev is not detecting and loading the proper module automatically during bootup, see [Kernel module#Automatic module handling](/index.php/Kernel_module#Automatic_module_handling "Kernel module").
 
-## Network interfaces
+## Network management
+
+[iproute2](https://www.archlinux.org/packages/?name=iproute2) provides the major network configuration utilities, many of which are accessible via the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) command-line interface. Be aware that configuration made using `ip` will be lost after a reboot. You can automate these commands using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd"). Also note that `ip` commands can generally be abbreviated, for clarity they are however spelled out in this article.
+
+### Network interfaces
 
 By default [udev](/index.php/Udev "Udev") assigns names to your network interfaces using [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which prefixes interfaces names with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")).
 
 **Tip:** To change the device names, see [#Change device name](#Change_device_name) and [#Revert to traditional device names](#Revert_to_traditional_device_names).
 
-### Listing network interfaces
+#### Listing network interfaces
 
 Both wired and wireless interface names can be found via `ls /sys/class/net` or `ip link`. Note that `lo` is the [loop device](https://en.wikipedia.org/wiki/loop_device "w:loop device") and not used in making network connections.
 
@@ -114,7 +116,7 @@ Wireless device names can also be retrieved using `iw dev`. See also [Wireless n
 
 If your network interface is not listed, make sure your [#Device driver](#Device_driver) was loaded successfully.
 
-### Enabling and disabling network interfaces
+#### Enabling and disabling network interfaces
 
 Network interfaces can be enabled / disabled using `# ip link set *interface* up|down`, see [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8).
 
@@ -131,158 +133,91 @@ The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface 
 
 **Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Manual assignment](#Manual_assignment) for reestablishing it.
 
-## IP addresses
+### IP addresses
 
-This section details how to manage / set up [IP addresses](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address").
+An [IP address](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address") can either be assigned manually (called static IP address), described in [#Manual IP address management](#Manual_IP_address_management), or assigned dynamically using [#DHCP](#DHCP). If you use a static IP address, you will also need to manually configure your default gateway in the [#Routing table](#Routing_table).
 
-### Listing IP addresses
+#### Manual IP address management
 
-Run `ip address`, see [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8).
+[IP addresses](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address") are managed using [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8).
 
-### Obtaining a dynamic IP address
-
-To dynamically obtain an IP address via [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") you need a DHCP client:
-
-*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") – DHCP, DHCPv6 and ZeroConf client daemon.
-*   ISC DHCP ([dhclient](https://www.archlinux.org/packages/?name=dhclient))
-*   [pump](https://aur.archlinux.org/packages/pump/)
-
-### Setting up a static IP address
-
-Setting up a static IP address requires the following information:
-
-*   Static IP address
-*   Subnet mask, or possibly its [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"), for example `/24` is the CIDR notation of `255.255.255.0` netmask.
-*   [Broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address")
-*   [Gateway](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway")'s IP address
-*   Name server (DNS) IP addresses. See also [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
-
-If you are running a private network, it is safe to use IP addresses in `192.168.*.*` for your IP addresses, with a subnet mask of `255.255.255.0` and a broadcast address of `192.168.*.255`. The gateway is usually `192.168.*.1` or `192.168.*.254`.
-
-**Warning:**
-
-*   Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
-*   If you share your Internet connection from a Windows machine without a router, be sure to use static IP addresses on both computers to avoid LAN problems.
-
-**Tip:** Addresses can be calculated with the [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) package; see [#Calculating addresses](#Calculating_addresses).
-
-#### Manual assignment
-
-It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection made using this method will not persist across reboots. First enable the [#Network interface](#Network_interface):
+List IP addresses:
 
 ```
-# ip link set *interface* up
+$ ip address show
 
 ```
 
-Assign a static IP address in the console:
+Add an IP address to an interface:
 
 ```
-# ip addr add *IP_address*/*subnet_mask* broadcast *broadcast_address* dev *interface*
-
-```
-
-Then add your gateway IP address:
-
-```
-# ip route add default via *default_gateway*
+# ip address add *address/prefix_len* broadcast + dev *interface*
 
 ```
 
-For example:
+	Note that:
+
+*   the address is given in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing") to also supply a [subnet mask](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")
+*   `+` is a special symbol that makes *ip* derive the broadcast address from the address prefix
+
+**Note:** Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
+
+Delete an IP address from an interface:
 
 ```
-# ip link set eth0 up
-# ip addr add 192.168.1.2/24 broadcast 192.168.1.255 dev eth0
-# ip route add default via 192.168.1.1
-
-```
-
-**Tip:** If you get the message `RTNETLINK answers: Network is unreachable`, try to break up the route creation in the following two parts:
-```
-# ip route add 192.168.1.1 dev eth0
-# ip route add default via 192.168.1.1 dev eth0
+$ ip address del *address/prefix_len* dev *interface*
 
 ```
 
-To undo these steps (e.g. before switching to a dynamic IP), first remove any assigned IP address:
+Delete all addresses matching a criteria, e.g. of a specific interface:
 
 ```
-# ip addr flush dev *interface*
-
-```
-
-Then remove any assigned gateway:
-
-```
-# ip route flush dev *interface*
+$ ip address flush dev *interface*
 
 ```
 
-And finally disable the interface:
+**Tip:** IP addresses can be calculated using [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)).
 
-```
-# ip link set *interface* down
+#### Routing table
 
-```
+The [routing table](https://en.wikipedia.org/wiki/Routing_table "wikipedia:Routing table") is used to determine if you can reach an IP address directly or what gateway (router) you should use. If no other route matches the IP address, the [default gateway](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway") is used.
 
-For more options, see the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). These commands can be automated using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
+The routing table is managed using [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8).
 
-#### Calculating addresses
+*PREFIX* is either a CIDR notation or `default` for the default gateway.
 
-You can use `ipcalc` provided by the [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) package to calculate IP broadcast, network, netmask, and host ranges for more advanced configurations. An example is using Ethernet over Firewire to connect a Windows machine to Linux. To improve security and organization, both machines have their own network with the netmask and broadcast configured accordingly.
-
-Finding out the respective netmask and broadcast addresses is done with `ipcalc`, by specifying the IP of the Linux NIC `10.66.66.1` and the number of hosts (here two):
-
- `$ ipcalc -nb 10.66.66.1 -s 1` 
-```
-Address:   10.66.66.1
-
-Netmask:   255.255.255.252 = 30
-Network:   10.66.66.0/30
-HostMin:   10.66.66.1
-HostMax:   10.66.66.2
-Broadcast: 10.66.66.3
-Hosts/Net: 2                     Class A, Private Internet
-```
-
-## Routing table
-
-The route table can be displayed by running:
+List routes:
 
 ```
 $ ip route show
 
 ```
 
-Route table for a specific interface:
+Add a route:
 
 ```
-$ ip route show dev eth0
-
-```
-
-This will provide an output along the lines of:
-
-```
-default via 192.168.1.1  proto static 
-192.168.1.0/24  proto kernel  scope link  src 192.168.1.143
+# ip route add *PREFIX* via *address* dev *interface*
 
 ```
 
-Configuring the default gateway:
+Delete a route:
 
 ```
-# ip route add 0/0 via 192.168.1.1 dev eth0
+# ip route del *PREFIX* via *address* dev *interface*
 
 ```
 
-Removing the default gateway:
+#### DHCP
 
-```
-# ip route del 0/0 via 192.168.1.1 dev eth0
+A [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") server provides clients with a dynamic IP address, the subnet mask, the default gateway IP address and optionally also with DNS name servers.
 
-```
+To use DHCP you need a DHCP server in your network and a DHCP client:
+
+*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") – DHCP, DHCPv6 and ZeroConf client daemon.
+*   ISC DHCP ([dhclient](https://www.archlinux.org/packages/?name=dhclient))
+*   [pump](https://aur.archlinux.org/packages/pump/)
+
+Note that instead of directly using a DHCP client you can also use a [network manager](/index.php/Network_manager "Network manager").
 
 ## Ping
 
@@ -294,7 +229,14 @@ When you receive no reply, you can use a [traceroute](https://en.wikipedia.org/w
 
 ## Resolving domain names
 
-Domain names can be resolved using [ping](#Ping), [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1) (provided by [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)) and [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1) (provided by [ldns](https://www.archlinux.org/packages/?name=ldns)).
+To resolve a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia:Domain name") using your system configuration, run:
+
+```
+$ getent hosts *domain_name*
+
+```
+
+For more fine-grained DNS queries use a dedicated DNS lookup utility, like [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1) (provided by [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)) or [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1) (provided by [ldns](https://www.archlinux.org/packages/?name=ldns)).
 
 If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
 

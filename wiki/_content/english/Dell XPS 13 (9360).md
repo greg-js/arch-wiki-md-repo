@@ -55,6 +55,17 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 
 In the XPS 13 the display panels (both FHD and QHD+) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) embedded in the panel firmware - it adjusts the screen brightness depending on the content displayed on the screen. While it saves a bit of power, it is generally undesirable, especially for Linux users who are likely to be switching between dark and light screen content. Dell has issued a fix for this, however it is only available to run in Windows. The fix is available [directly from Dell](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=312K3&lwp=rt).
 
+To test if your XPS 13 is affected by the CABC, go to this [test page](http://tylerwatt12.com/dc/). It is possible to apply Dell's firmware update using a portable Windows 10 on a USB device:
+
+1.  Install (for example) [woeusb from the AUR](https://aur.archlinux.org/packages/?O=0&K=woeusb)
+2.  Download a Windows 10 ISO from [Microsoft's website](https://www.microsoft.com/en-in/software-download/windows10ISO)
+3.  Create a portable Windows 10 installation [using woeusb](https://www.addictivetips.com/ubuntu-linux-tips/make-windows-usb-drive-on-linux-woeusb/)
+4.  Boot the XPS 13 from your Windows 10 USB device (F12)
+5.  In Windows, download and install the latest driver for the [Intel Graphics controller](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=M10YG)
+6.  Then download and install [this tool](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=312K3) to update the panel firmware. The tool gives you the option to disable CABC
+7.  Reboot (from USB)
+8.  Reboot to Arch Linux and rerun the [test](http://tylerwatt12.com/dc/)
+
 ## NVM Express SSD Power Saving
 
 For some devices it might be necessary to set a higher value for the `nvme_core.default_ps_max_latency_us` parameter to enable all power saving states. This parameter has to be set on the [kernel command line](/index.php/Kernel_command_line "Kernel command line").

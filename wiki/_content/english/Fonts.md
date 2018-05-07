@@ -436,7 +436,7 @@ Large collection of fonts which comprehensively support Simplified Chinese, Trad
     *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Kai and Song traditional Chinese font from the Ministry of Education of Taiwan
     *   [ttf-twcns-fonts](https://aur.archlinux.org/packages/ttf-twcns-fonts/) Chinese TrueType fonts by Ministry of Education of Taiwan government, support CNS11643 standard, including Kai and Sung fontface.
 
-*   Windows Chinses fonts
+*   Windows Chinese fonts
     *   [ttf-ms-win8-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win8-zh_cn/) - windows8 simple Chinese fonts。
     *   [ttf-ms-win8-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win8-zh_tw/) - windows8 traditional Chinese fonts。
     *   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - windows10 simple Chinese fonts。

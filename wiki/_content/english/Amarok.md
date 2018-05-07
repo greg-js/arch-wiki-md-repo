@@ -11,7 +11,6 @@
 *   [4 Ampache/MP3 streaming](#Ampache.2FMP3_streaming)
 *   [5 Collection database](#Collection_database)
     *   [5.1 MySQL](#MySQL)
-    *   [5.2 PostgreSQL](#PostgreSQL)
 *   [6 Audio CD playback](#Audio_CD_playback)
 *   [7 Firefly/Daap share](#Firefly.2FDaap_share)
 *   [8 See also](#See_also)
@@ -34,13 +33,13 @@ New scripts and applets can be found either directly from within Amarok (*Tools 
 
 ### Moodbar
 
-The moodbar is a feature which turn your standard progress slider bar into a progress slider bar coloured depending on the mood of your track.
+The moodbar is a feature which turns your standard progress slider bar into a progress slider bar coloured depending on the mood of your track.
 
 Install [moodbar](https://aur.archlinux.org/packages/moodbar/) from the [AUR](/index.php/AUR "AUR").
 
 Then go to *Settings > Configure Amarok* and check "Show moodbar in progress slider".
 
-**Note:** As of February 19th Amarok 2 does **not** generate moodfiles, you can either try to follow this tutorial [[1]](http://amarok.kde.org/wiki/Moodbar) to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to *Settings > Configure Amarok*, and in the general tab check the "use moods" and "store moods data files with music" boxes.
+Since 2010 Amarok 2 does **not** generate moodfiles, you can either try to follow [this tutorial](https://web.archive.org/web/20111219015904/https://amarok.kde.org/wiki/Moodbar) to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to *Settings > Configure Amarok*, and in the general tab check the "use moods" and "store moods data files with music" boxes.
 
 ## SHOUTcast
 
@@ -54,7 +53,7 @@ If you are streaming MP3s directly or with the Ampache plugin, you are not able 
 
 ## Collection database
 
-Amarok 2.x can use Sqlite (default) or MySQL to store the collection database. Users with large collections and more demanding performance requirements might prefer to use mysql.
+Amarok 2.x can use Sqlite (default) or MySQL to store the collection database. Users with large collections and more demanding performance requirements might prefer to use MySQL.
 
 ### MySQL
 
@@ -80,10 +79,6 @@ This creates a database called 'amarokdb' and a user with name 'amarokuser' with
 ```
 
 To configure amarok to use MySQL, enter the Configure Amarok screen, choose Database and mark "used external MySQL database". Enter the server (usually "localhost" if on your local box, else the name of the remote box), the username ("amarokuser" in this example) and your chosen password-user. Do not forget to select the path to your music collection.
-
-### PostgreSQL
-
-Not yet supported, [see more](http://amarok.kde.org/blog/archives/812-MySQL-in-Amarok-2-The-Reality.html)
 
 ## Audio CD playback
 

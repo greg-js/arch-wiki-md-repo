@@ -26,9 +26,8 @@ You can use one of following methods in order to use Telegram in Arch:
 
 The [official app](https://desktop.telegram.org/):
 
-*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) official application in the community repo.
-*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) pre-compiled binary from [Telegram](https://desktop.telegram.org/). Out of date: now it's in the community repo
-*   [telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/) Experimental build of Telegram Desktop using system Qt instead of Telegram custom Qt libraries.
+*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) official application.
+*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) pre-compiled binary from [Telegram](https://desktop.telegram.org/). Also available in the *community* repository (see package above).
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) Experimental build of Telegram Desktop using system Qt and emojis replaced with those from [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
 
 Alternative unofficial clients:
@@ -50,9 +49,6 @@ Alternative unofficial clients:
 *   Use [Telegram Chrome app](https://telegram.org/dl/webogram/chromeapp) for [Chromium](/index.php/Chromium "Chromium"), to connect to Telegram in your browser via web interface.
 
 ## Tips and tricks
-
-*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) package need to download [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz) file to compile. This requires approximately 40 MB to download for building package.
-*   Use unofficial repository [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") to install packages [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) and [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) in which case there is no need to download [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz) file, mentioned in the previous point for making [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop). Some other related packages for Telegram can also be found in this repository.
 
 ### Telegram channels about Arch Linux
 

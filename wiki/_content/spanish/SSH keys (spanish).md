@@ -32,17 +32,17 @@ Este articulo asume que el lector tiene un conocimiento básico del protocolo de
 
 ## Informacion preliminar
 
-Llaves de SSH siempre son generadas en pares con una llamada *llave privada* y otra llamada *llave publica*. La llave privada solo es conocida por el usuario y debe ser guardada con cuidado. En contraste, la llave publica puede ser compartida libremente con cualquier servidor SSH con el que se quiere conectar.
+Las llaves de SSH siempre son generadas en pares con una llamada *llave privada* y otra llamada *llave pública*. La llave privada solo es conocida por el usuario y debe ser guardada con cuidado. En contraste, la llave pública puede ser compartida libremente con cualquier servidor SSH con el que se quiere conectar.
 
-Si un servidor SSH tiene su llave publica y nota que hay un intento de conexión, usa su llave publica para construir y enviar un desafió. Este desafió es un mensaje encriptado y debe ser respondido apropiadamente antes que el servidor le de acceso. Lo que hace este mensaje particularmente seguro es que solo se puede descifrar con la llave privada. Mientras que la llave publica puede ser usada para encriptar el mensaje, no puede ser usada para descifrarlo. Solo el usuario, que tiene la llave privada puede ser capaz de descifrar correctamente el desafió y producir la respuesta adecuada.
+Si un servidor SSH tiene su llave pública y nota que hay un intento de conexión, usa su llave pública para construir y enviar un desafío. Este desafío es un mensaje encriptado y debe ser respondido apropiadamente antes de que el servidor le dé acceso. Lo que hace este mensaje particularmente seguro es que solo se puede descifrar con la llave privada. Mientras que la llave pública puede ser usada para encriptar el mensaje, no puede ser usada para descifrarlo. Solo el usuario, que tiene la llave privada puede ser capaz de descifrar correctamente el desafío y producir la respuesta adecuada.
 
-Este intercambio de desafió-respuesta ocurre como una tarea de fondo y es invisible para el usuario. Mientras se tenga la llave privada, la cual es guardada normalmente en la carpeta `~/.ssh/`, su cliente SSH debería ser capaz de responder apropiadamente al servidor.
+Este intercambio de desafío-respuesta ocurre como una tarea de fondo y es invisible para el usuario. Mientras se tenga la llave privada, la cual es guardada normalmente en la carpeta `~/.ssh/`, su cliente SSH debería ser capaz de responder apropiadamente al servidor.
 
 Una llave privada es un secreto a guardar, por ende se aconseja que cuando se guarde se haga de manera encriptada. Cuando la llave encriptada es requerida, una contraseña debe ser ingresada para descifrarla. Aunque superficialmente esto parece como si se estuviera poniendo una contraseña para ingresar al servidor de SSH, esta contraseña solo se usa para descifrar la llave privada en el sistema local. Esta contraseña no se transmite sobre la red.
 
 ## Generando las llaves SSH
 
-Un par de llaves SSH pueden ser generadas ejecutando el comando `ssh-keygen`, por defecto usando 2048-bit RSA (y SHA256) lo cual de acuerdo a [ssh-keygen(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh-keygen.1) dice que es "*considerado generalmente suficiente*" y debe ser compatible con virtualmente todos los servidores y clientes:
+Un par de llaves SSH puede ser generado ejecutando el comando `ssh-keygen`, por defecto usando seguridad 2048-bit RSA (y SHA256) la cual de acuerdo a [ssh-keygen(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh-keygen.1) es "*considerada generalmente suficiente*" y debe ser compatible con virtualmente todos los servidores y clientes:
 
 ```
 $ ssh-keygen
@@ -72,9 +72,9 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-La [imagen de arte aleatorio](http://www.cs.berkeley.edu/~dawnsong/papers/randomart.pdf) fue [introducida en OpenSSH 5.1](http://www.openssh.com/txt/release-5.1) como una forma mas simple de identificar la huella de la llave.
+La [imagen de arte aleatorio](http://www.cs.berkeley.edu/~dawnsong/papers/randomart.pdf) fue [introducida en OpenSSH 5.1](http://www.openssh.com/txt/release-5.1) como una forma más simple de identificar la huella de la llave.
 
-También es posible agregar un comentario opcional a la llave publica con el parámetro `-C`, para identificar la llave mas fácilmente en lugares como `~/.ssh/known_hosts`, `~/.ssh/authorized_keys` y `ssh-add -L`. Por ejemplo:
+También es posible agregar un comentario opcional a la llave publica con el parámetro `-C`, para identificar la llave más fácilmente en lugares como `~/.ssh/known_hosts`, `~/.ssh/authorized_keys` y `ssh-add -L`. Por ejemplo:
 
 ```
 $ ssh-keygen -C "$(whoami)@$(hostname)-$(date -I)"    ### usuario@nombredemaquina-fecha
@@ -92,21 +92,21 @@ OpenSSH soporta varios algoritmos (para llaves de autenticacion), los cuales se 
 1.  [DSA](https://en.wikipedia.org/wiki/es:DSA "wikipedia:es:DSA") y [RSA](https://en.wikipedia.org/wiki/es:RSA "wikipedia:es:RSA"), que dependen en la [dificultad práctica](https://en.wikipedia.org/wiki/es:Factorizaci%C3%B3n_de_enteros#Dificultad_y_complejidad "wikipedia:es:Factorización de enteros") de factorizar el producto de dos números primos largos.
 2.  [ECDSA](https://en.wikipedia.org/wiki/es:ECDSA "wikipedia:es:ECDSA") y [Ed25519](https://en.wikipedia.org/wiki/Curve25519 "wikipedia:Curve25519"), que dependen del problema de curva eliptica del [logaritmo discreto](https://en.wikipedia.org/wiki/es:Logaritmo_discreto "wikipedia:es:Logaritmo discreto").
 
-[Criptografía de curva elíptica](https://en.wikipedia.org/wiki/es:Criptograf%C3%ADa_de_curva_el%C3%ADptica "wikipedia:es:Criptografía de curva elíptica") (ECC) es una adición relativamente reciente al ecosistema de llaves publicas criptográficas. Una de sus ventajas mas importantes es la habilidad de proveer el mismo nivel de seguridad con llaves mas cortas, lo cual se transforma en menos recursos usados al crear, cifrar o descifrar mensajes y reduce los costos de transmisión y guardado.
+[Criptografía de curva elíptica](https://en.wikipedia.org/wiki/es:Criptograf%C3%ADa_de_curva_el%C3%ADptica "wikipedia:es:Criptografía de curva elíptica") (ECC) es una adición relativamente reciente al ecosistema de llaves publicas criptográficas. Una de sus ventajas más importantes es la habilidad de proveer el mismo nivel de seguridad con llaves más cortas, lo cual se transforma en menos recursos usados al crear, cifrar o descifrar mensajes y reduce los costos de transmisión y guardado.
 
 OpenSSH 7.0 hizo llaves de tipo [DSA obsoletas](https://www.archlinux.org/news/openssh-70p1-deprecates-ssh-dss-keys/) debido a vulnerabilidades descubiertas, así que las únicas opciones en el sistema criptográfico son RSA o alguno de los dos tipos de ECC.
 
-Llaves de [#RSA](#RSA) proveerán mayor portabilidad, mientras que [#Ed25519](#Ed25519) le proveeran la mejor seguridad requiriendo versiones recientes de servidor y cliente. [#Ed25519](#Ed25519) es probablemente mas compatible que Ed25519 (aunque menos que RSA), pero sospechas sobre su seguridad existen (ver abajo).
+Llaves de [#RSA](#RSA) proveerán mayor portabilidad, mientras que [#Ed25519](#Ed25519) le proveeran la mejor seguridad requiriendo versiones recientes de servidor y cliente. [#Ed25519](#Ed25519) es probablemente más compatible que Ed25519 (aunque menos que RSA), pero sospechas sobre su seguridad existen (ver abajo).
 
-**Nota:** Estas llaves son usadas al autenticar un usuario, seleccionar una llave mas segura no quiere decir que mas recursos de CPU se usaran cuando se transfieren datos por SSH.
+**Nota:** Estas llaves son usadas al autenticar un usuario, seleccionar una llave más segura no quiere decir que más recursos de CPU se usaran cuando se transfieren datos por SSH.
 
 #### RSA
 
-`ssh-keygen` usa por defecto RSA, así que no hay necesidad de especificarlo con el parámetro `-t`. Este provee la mejor compatibilidad de todos los algoritmos, pero requiere que la llave sea mas larga para proveer suficiente seguridad.
+`ssh-keygen` usa por defecto RSA, así que no hay necesidad de especificarlo con el parámetro `-t`. Este provee la mejor compatibilidad de todos los algoritmos, pero requiere que la llave sea más larga para proveer suficiente seguridad.
 
 El tamaño mínimo de la llave es 1024 bits,por defecto es 2048 (vea [ssh-keygen(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh-keygen.1)), el máximo es 16384.
 
-Si se desea generar un par de llaves RSA mas seguro, simplemente use el parámetro `-b` con el valor bit deseado:
+Si se desea generar un par de llaves RSA más seguro, simplemente use el parámetro `-b` con el valor bit deseado:
 
 ```
 $ ssh-keygen -b 4096
@@ -136,7 +136,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-Es importante tener en cuenta que existen desventajas en llaves mas largas.[[1]](https://security.stackexchange.com/a/25377)[[2]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096) Las preguntas frecuentes del proyecto GnuPG dice: "*Si se desea mas seguridad que RSA-2048, la mejor opción es usar curvas elípticas en lugar de seguir usando RSA*".[[3]](https://www.gnupg.org/faq/gnupg-faq.html#please_use_ecc)
+Es importante tener en cuenta que existen desventajas en llaves más largas.[[1]](https://security.stackexchange.com/a/25377)[[2]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096) Las preguntas frecuentes del proyecto GnuPG dice: "*Si se desea más seguridad que RSA-2048, la mejor opción es usar curvas elípticas en lugar de seguir usando RSA*".[[3]](https://www.gnupg.org/faq/gnupg-faq.html#please_use_ecc)
 
 En contraste, en un reporte de [sistema Criptográfico de la NSA](https://www.nsa.gov/ia/programs/suiteb_cryptography/index.shtml) se sugiere una llave mínima de 3072-bit para RSA mientras "*[se prepara] la transición al algoritmo resistente a computadores cuanticos*".[[4]](http://www.keylength.com/en/6/)
 
@@ -146,8 +146,9 @@ El algoritmo de firmado de curva elíptica (ECDSA, siglas en ingles), fue introd
 
 Hay dos fuentes de preocupación con este algoritmo:
 
-1.  *Preocupación política*, la confianza de productos producidos por NIST [es cuestionada](https://crypto.stackexchange.com/questions/10263/should-we-trust-the-nist-recommended-ecc-parameters) después de revelaciones que la NSA insertan backdoors en software, hardware y estándares publicados. Criptografos conocidos [expresaron](https://www.schneier.com/blog/archives/2013/09/the_nsa_is_brea.html#c1675929) [dudas](http://safecurves.cr.yp.to/rigid.html) [sobre](https://www.hyperelliptic.org/tanja/vortraege/20130531.pdf) las curvas fabricadas por NIST, y como voluntariamente en el pasado las ha hecho [mas](https://www.schneier.com/blog/archives/2007/11/the_strange_sto.html) [susceptibles](http://www.scientificamerican.com/article/nsa-nist-encryption-scandal/).
-2.  *Preocupación técnica*, sobre la dificultad de [implementar el estándar adecuadamente](http://blog.cr.yp.to/20140323-ecdsa.html) y la [lentitud y fallas de diseño](http://www.gossamer-threads.com/lists/openssh/dev/57162#57162) que reducen la seguridad en implementaciones insuficientemente precavidas.
+1.  *Preocupación política*, la confianza de productos producidos por NIST [es cuestionada](https://crypto.stackexchange.com/questions/10263/should-we-trust-the-nist-recommended-ecc-parameters) después de revelaciones que la NSA insertan backdoors en software, hardware y estándares publicados. Criptografos conocidos [expresaron](https://www.schneier.com/blog/archives/2013/09/the_nsa_is_brea.html#c1675929) [dudas](http://safecurves.cr.yp.to/rigid.html)
+2.  [sobre](https://www.hyperelliptic.org/tanja/vortraege/20130531.pdf) las curvas fabricadas por NIST, y como voluntariamente en el pasado las ha hecho [más](https://www.schneier.com/blog/archives/2007/11/the_strange_sto.html) [susceptibles](http://www.scientificamerican.com/article/nsa-nist-encryption-scandal/).
+3.  *Preocupación técnica*, sobre la dificultad de [implementar el estándar adecuadamente](http://blog.cr.yp.to/20140323-ecdsa.html) y la [lentitud y fallas de diseño](http://www.gossamer-threads.com/lists/openssh/dev/57162#57162) que reducen la seguridad en implementaciones insuficientemente precavidas.
 
 Estas preocupaciones están mejor resumidas en [libssh curve25519 introduction](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt#n4) (en ingles). Aunque las preocupaciones políticas todavía son debatidas, hay un [consenso](https://news.ycombinator.com/item?id=7597653) que [#Ed25519](#Ed25519) es técnicamente superior y debería ser preferida.
 
@@ -164,7 +165,7 @@ $ ssh-keygen -t ed25519
 
 ```
 
-No hay necesidad de elegir el tamaño de la llave, ya que todas las llaves Ed25519 tienen 256 bits. Estas también dependen del [nuevo formato de llaves](http://www.gossamer-threads.com/lists/openssh/dev/57162#57162) el cual "*usa derivation de llaves basada en la función de bcrypt, lo cual hace que ataques de fuerza bruta en contra de llaves robadas sean mucho mas lentos*".
+No hay necesidad de elegir el tamaño de la llave, ya que todas las llaves Ed25519 tienen 256 bits. Estas también dependen del [nuevo formato de llaves](http://www.gossamer-threads.com/lists/openssh/dev/57162#57162) el cual "*usa derivation de llaves basada en la función de bcrypt, lo cual hace que ataques de fuerza bruta en contra de llaves robadas sean mucho más lentos*".
 
 Por esas razones, compatibilidad con versiones antiguas de OpenSSH o con [otros servidores y clientes SSH](/index.php/Secure_Shell_(Espa%C3%B1ol)#Otros_servidores_y_clientes_SSH "Secure Shell (Español)") puede ser complicada.
 
@@ -172,9 +173,9 @@ Por esas razones, compatibilidad con versiones antiguas de OpenSSH o con [otros 
 
 Al ejecutar el comando `ssh-keygen`, se le preguntara por la ubicación deseada de su llave privada. Por defecto, las llaves son guardadas en la carpeta `~/.ssh/` y se les nombra de acuerdo y tipo de encriptado usado. Se recomiendo aceptar la ubicación y nombre por defecto para que los ejemplos en de este articulo funcionen sin problemas.
 
-Cuando se le pregunte por una contraseña, seleccione algo que no sea fácil de adivinar. Una contraseña aleatoria y larga es generalmente mucho mas difícil de descifrar si cae en manos equivocadas.
+Cuando se le pregunte por una contraseña, seleccione algo que no sea fácil de adivinar. Una contraseña aleatoria y larga es generalmente mucho más difícil de descifrar si cae en manos equivocadas.
 
-También es posible crear su llave privada sin contraseña. Mientras que esto es conveniente, es necesario que entienda los riesgos asociados. Sin una contraseña, su llave privada va a ser guardada en el disco de manera no encriptada. Todos aquellos que ganen acceso al archivo de su llave privada podrán asumir su identidad en un servidor SSH. Ademas, sin contraseña, también debe confiar en el usuario root, que puede pasar permisos de archivos y puede acceder a su llave en cualquier momento.
+También es posible crear su llave privada sin contraseña. Mientras que esto es conveniente, es necesario que entienda los riesgos asociados. Sin una contraseña, su llave privada va a ser guardada en el disco de manera no encriptada. Todos aquellos que ganen acceso al archivo de su llave privada podrán asumir su identidad en un servidor SSH. Además, sin contraseña, también debe confiar en el usuario root, que puede pasar permisos de archivos y puede acceder a su llave en cualquier momento.
 
 #### Cambiar la contraseña de la llave privada sin cambiar la llave
 

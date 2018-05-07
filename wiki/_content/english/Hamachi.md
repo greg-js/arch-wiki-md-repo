@@ -62,7 +62,12 @@ $ hamachi go-offline my-net
 
 ```
 
-To get a list of all the commands, run: $ hamachi ?
+To get a list of all the commands, run:
+
+```
+$ hamachi ?
+
+```
 
 **Note:** Make sure you change the status of the channel(s) you are in to "online" if you want to perform any network actions on computers in there.
 

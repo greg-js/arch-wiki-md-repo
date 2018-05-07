@@ -218,6 +218,8 @@ EndSection
 
 ```
 
+With the recent deprecation of synaptics, it is possible to use existing GUI (for instance, GNOME Tweak Tool) to change the behavior. Using gnome-tweaks, under Keyboard & Mouse section, Mouse Click Emulation is set by default to "Fingers". Changing it to the "Area" option, which uses the bottom right of the touchpad for a right click, fixes the problem.
+
 ## Thunderbolt docks
 
 TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://aur.archlinux.org/packages/bolt/) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.

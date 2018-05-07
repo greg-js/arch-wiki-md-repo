@@ -35,7 +35,7 @@ There are two versions of *udisks* called [udisks](https://aur.archlinux.org/pac
 
 Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If the [user session](/index.php/Session "Session") is not activated or present (for example, when controlling udisks from a [systemd/User](/index.php/Systemd/User "Systemd/User") service), adjust Polkit rules accordingly.
 
-See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks permissions for the `storage` group, and [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example.
+See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks permissions for the `storage` group, and [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example. If you are using [Dolphin](/index.php/Dolphin "Dolphin"), you may see [[4]](https://gist.github.com/Scrumplex/8f528c1f63b5f4bfabe14b0804adaba7).
 
 ## Tips and tricks
 
@@ -204,7 +204,7 @@ See [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for more in
 
 ### Broken standby timer (udisks2)
 
-The udisks daemon polls [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") data from drives regularly. Hard drives with a longer standby timeout than the polling interval may fail to enter standby. Drives that are already spun down are usually not effected. There seems no way to disable polling or change the interval as for [udisks2](https://www.archlinux.org/packages/?name=udisks2) by now. See [[4]](https://bugs.launchpad.net/ubuntu/+source/udisks2/+bug/1281588), [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=26508).
+The udisks daemon polls [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") data from drives regularly. Hard drives with a longer standby timeout than the polling interval may fail to enter standby. Drives that are already spun down are usually not effected. There seems no way to disable polling or change the interval as for [udisks2](https://www.archlinux.org/packages/?name=udisks2) by now. See [[5]](https://bugs.launchpad.net/ubuntu/+source/udisks2/+bug/1281588), [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=26508).
 
 However, Standby timeout applied by udisks2 seems to be unaffected. To set standby timeout via udisks, see [#Apply ATA settings (udisks2)](#Apply_ATA_settings_.28udisks2.29).
 

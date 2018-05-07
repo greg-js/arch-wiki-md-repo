@@ -17,6 +17,7 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Lost focus bug fix](#Lost_focus_bug_fix)
     *   [5.2 evilwm doesn't start](#evilwm_doesn.27t_start)
+    *   [5.3 Missing fonts.dir](#Missing_fonts.dir)
 *   [6 Links](#Links)
 
 ## Installation
@@ -151,6 +152,19 @@ The author of evilwm has been told both of this bug and this fix, but he has not
 (Sourced from the forums thread [here](https://bbs.archlinux.org/viewtopic.php?id=38671).)
 
 When you run evilwm, xorg presents error messages in the log file and/or on the screen and exits. The messages may vary from system to system. Probably [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi) or [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) is missing. Install either font to solve the problem.
+
+### Missing fonts.dir
+
+If the default `/etc/X11/xinit/xinitrc` successfully starts [Twm](/index.php/Twm "Twm") but your `~/.xinitrc` fails to start evilwm and `.local/share/xorg/Xorg.0.log` contains a warning about a missing or invalid file `fonts.dir` in `/usr/share/fonts/misc/`, follow the advice below the warning and run
+
+```
+$ mkfontdir /usr/share/fonts/misc/
+
+```
+
+to create that file.
+
+See also [Fonts#Older applications](/index.php/Fonts#Older_applications "Fonts").
 
 ## Links
 

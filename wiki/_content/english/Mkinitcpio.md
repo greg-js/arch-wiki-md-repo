@@ -322,7 +322,7 @@ Examples:
 
 ```
 
-**Note:** Make sure to use kernel device names (e.g. `eth0`) for the `<device>` parameter, the persistent names (e.g. `enp2s0`) will not work. See [Network configuration#Network interface](/index.php/Network_configuration#Network_interface "Network configuration") for details.
+**Note:** Make sure to use kernel device names (e.g. `eth0`) for the `<device>` parameter, the persistent names (e.g. `enp2s0`) will not work. See [Network configuration#Network interfaces](/index.php/Network_configuration#Network_interfaces "Network configuration") for details.
 
 **BOOTIF=**
 

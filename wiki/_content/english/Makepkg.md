@@ -32,9 +32,10 @@ Related articles
     *   [3.7 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
-    *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
-    *   [4.3 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
-    *   [4.4 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_.24srcdir)
+    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages](#CFLAGS.2FCXXFLAGS.2FLDFLAGS_in_makepkg.conf_do_not_work_for_CMake_based_packages)
+    *   [4.3 CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
+    *   [4.4 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
+    *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_.24srcdir)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -287,7 +288,27 @@ With [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent is 
 
 This bug is currently being tracked: [FS#49946](https://bugs.archlinux.org/task/49946). A temporary workaround for this issue is to run `killall gpg-agent && makepkg --sign` instead. This issue is resolved within [pacman-git](https://aur.archlinux.org/packages/pacman-git/), specifically at commit hash `c6b04c04653ba9933fe978829148312e412a9ea7`
 
-### CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages
+### CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages
+
+In order to let CMake use the variables defined in the *makepkg* configuration file, pass the variables to *cmake* in the `build()` function. For example:
+
+ `PKGBUILD` 
+```
+...
+
+build() {
+  ...
+  cmake \
+    -DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
+    -DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
+    -DCMAKE_EXE_LINKER_FLAGS:STRING="${LDFLAGS}" \
+    -DCMAKE_SHARED_LINKER_FLAGS:STRING="${LDFLAGS}" \
+  ...
+}
+
+```
+
+### CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages
 
 Qmake automatically sets the variable `CFLAGS` and `CXXFLAGS` according to what it thinks should be the right configuration. In order to let qmake use the variables defined in the makepkg configuration file, you must edit the PKGBUILD and pass the variables [QMAKE_CFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags-release) and [QMAKE_CXXFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags-release) to qmake. For example:
 

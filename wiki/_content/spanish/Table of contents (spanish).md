@@ -43,7 +43,7 @@
 | <small>4.3.</small> [Gráficos](/index.php/Category:Graphics_(Espa%C3%B1ol) "Category:Graphics (Español)") <small>(8)</small> |
 | <small>4.4.</small> [Detección de hardware y solución de problemas](/index.php/Category:Hardware_detection_and_troubleshooting_(Espa%C3%B1ol) "Category:Hardware detection and troubleshooting (Español)") <small>(3)</small> |
 | <small>4.5.</small> [Imágenes](/index.php/Category:Imaging_(Espa%C3%B1ol) "Category:Imaging (Español)") <small>(3)</small> |
-| <small>4.6.</small> [Dispositivos de entrada](/index.php/Category:Input_devices_(Espa%C3%B1ol) "Category:Input devices (Español)") <small>(2)</small> |
+| <small>4.6.</small> [Dispositivos de entrada](/index.php/Category:Input_devices_(Espa%C3%B1ol) "Category:Input devices (Español)") <small>(3)</small> |
 | <small>4.6.1.</small> [Teclados](/index.php/Category:Keyboards_(Espa%C3%B1ol) "Category:Keyboards (Español)") <small>(3)</small> |
 | <small>4.6.2.</small> [Ratones](/index.php/Category:Mice_(Espa%C3%B1ol) "Category:Mice (Español)") <small>(1)</small> |
 | <small>4.7.</small> [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)") <small>(4)</small> |

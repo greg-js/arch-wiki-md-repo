@@ -1121,7 +1121,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 | **[BZFlag](https://en.wikipedia.org/wiki/BZFlag "w:BZFlag")**
 - [bzflag.org](https://www.bzflag.org/) | C/C++ | Tank <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="GNU Lesser General Public License version 2.1">LGPLv2.1</abbr>/<abbr title="Mozilla Public License version 2.0">MPLv2</abbr> | [bzflag](https://www.archlinux.org/packages/?name=bzflag) | 3D multiplayer tank first-person shooter game. |
 | **[Cube 2: Sauerbraten](https://en.wikipedia.org/wiki/Cube_2:_Sauerbraten "w:Cube 2: Sauerbraten")**
-- [sauerbraten.org](http://sauerbraten.org/) | C/C++ | <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="First-Person Shooter">FPS</abbr> | [sauerbraten](https://www.archlinux.org/packages/?name=sauerbraten) | Successor to the Cube first-person shooter game with both single- and multi- player modes. |
+- [sauerbraten.org](http://sauerbraten.org/) | C/C++ | <abbr title="First-Person Shooter">FPS</abbr> | ZLIB | [sauerbraten](https://www.archlinux.org/packages/?name=sauerbraten) | Successor to the Cube first-person shooter game with both single- and multi- player modes. |
 | **[Endgame Singularity](https://en.wikipedia.org/wiki/Endgame:_Singularity "w:Endgame: Singularity")**
 - [emhsoft.com/singularity](http://www.emhsoft.com/singularity/) | Python | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [singularity](https://www.archlinux.org/packages/?name=singularity)
 [singularity-git](https://aur.archlinux.org/packages/singularity-git/) | Turn based single player strategy/simulation about a AI hiding, growing and evolving. |

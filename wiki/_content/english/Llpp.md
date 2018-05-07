@@ -21,7 +21,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [llpp](https://aur.archlinux.org/packages/llpp/) package, or [llpp-git](https://aur.archlinux.org/packages/llpp-git/) for the development version.
+[Install](/index.php/Install "Install") the [llpp](https://www.archlinux.org/packages/?name=llpp) package, or [llpp-git](https://aur.archlinux.org/packages/llpp-git/) for the development version.
 
 ## Usage
 

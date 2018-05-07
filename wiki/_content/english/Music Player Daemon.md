@@ -8,21 +8,19 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Setup](#Setup)
-    *   [2.1 Global configuration](#Global_configuration)
-        *   [2.1.1 Music directory](#Music_directory)
-        *   [2.1.2 Start MPD](#Start_MPD)
-            *   [2.1.2.1 Socket activation](#Socket_activation)
-        *   [2.1.3 Configure audio](#Configure_audio)
-        *   [2.1.4 Changing user](#Changing_user)
-        *   [2.1.5 Timeline of MPD startup](#Timeline_of_MPD_startup)
-    *   [2.2 Local configuration (per user)](#Local_configuration_.28per_user.29)
-        *   [2.2.1 Autostart on tty login](#Autostart_on_tty_login)
-        *   [2.2.2 Autostart in X](#Autostart_in_X)
-        *   [2.2.3 Autostart with systemd](#Autostart_with_systemd)
-        *   [2.2.4 Scripted configuration](#Scripted_configuration)
-        *   [2.2.5 Scripted configuration for bit perfect playback](#Scripted_configuration_for_bit_perfect_playback)
-    *   [2.3 Multi-mpd setup](#Multi-mpd_setup)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Per-user configuration](#Per-user_configuration)
+        *   [2.1.1 Configure the location of files and directories](#Configure_the_location_of_files_and_directories)
+        *   [2.1.2 Audio configuration](#Audio_configuration)
+        *   [2.1.3 Autostart with systemd](#Autostart_with_systemd)
+        *   [2.1.4 Autostart on tty login](#Autostart_on_tty_login)
+        *   [2.1.5 Scripted configuration](#Scripted_configuration)
+    *   [2.2 System-wide configuration](#System-wide_configuration)
+        *   [2.2.1 Music directory](#Music_directory)
+        *   [2.2.2 Start with systemd](#Start_with_systemd)
+            *   [2.2.2.1 Socket activation](#Socket_activation)
+        *   [2.2.3 User id startup workflow](#User_id_startup_workflow)
+    *   [2.3 Multi-MPD setup](#Multi-MPD_setup)
         *   [2.3.1 Running an icecast server](#Running_an_icecast_server)
         *   [2.3.2 Satellite setup](#Satellite_setup)
 *   [3 Clients](#Clients)
@@ -34,168 +32,127 @@ Related articles
 
 [Install](/index.php/Install "Install") the [mpd](https://www.archlinux.org/packages/?name=mpd) package, or [mpd-git](https://aur.archlinux.org/packages/mpd-git/) for the development version.
 
-**Note:** An alternative implementation written in Python called [Mopidy](http://www.mopidy.com) exists. It is available as [mopidy](https://www.archlinux.org/packages/?name=mopidy) and [mopidy-git](https://aur.archlinux.org/packages/mopidy-git/). Be warned that is not a complete MPD [drop-in replacement](http://docs.mopidy.com/en/latest/ext/mpd/#limitations). The advantage of Mopidy over MPD is that it has plug-ins for playing music from cloud services like Spotify, SoundCloud, and Google Play Music. However, mopidy project is not as active and many plugins become unusable or buggy at least over time.
+## Configuration
 
-## Setup
+MPD is able to run in [#Per-user configuration](#Per-user_configuration) mode or [#System-wide configuration](#System-wide_configuration) mode (settings apply to all users). Also it is possible to run multiple instances of MPD in a [#Multi-MPD setup](#Multi-MPD_setup). The way of setting up MPD depends on the way it is intended to be used: a local per-user configuration may prove more useful on a desktop system, for example.
 
-MPD is able to run locally (per user settings), globally (settings apply to all users), and in multiple instances. The way of setting up mpd depends on the way it is intended to be used: a local configuration may prove more useful on a desktop system, for example.
+In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA"), optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio"), needs to be setup and working.
 
-In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS") (optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio")) needs to be setup and working.
+MPD is configured in the file [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) which can be located in various locations depending on the setup chosen (see below). These are the commonly used configuration options:
 
-MPD is configured in `mpd.conf`. The location of this file depends on how you want to run MPD (see the sections below). These are commonly used configuration options:
-
-*   `pid_file` - The file where mpd stores its process ID
+*   `pid_file` - The file where MPD stores its process ID
 *   `db_file` - The music database
 *   `state_file` - MPD's current state is noted here
 *   `playlist_directory` - The folder where playlists are saved into
 *   `music_directory` - The folder that MPD scans for music
 *   `sticker_file` - The sticker database
 
-### Global configuration
+### Per-user configuration
 
-**Warning:** Users of PulseAudio with a global mpd have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") in order to run mpd as its own user!
+MPD can be configured per-user. Running it as a normal user has the benefits of:
 
-The default `/etc/mpd.conf` keeps the setup in `/var/lib/mpd` which is assigned to user as well as primary group *mpd*.
+*   Using a single directory `~/.config/mpd/` (or any other directory under `$HOME`) that contains all the MPD configuration files.
+*   It is easier to avoid unforeseen directory and file permission errors.
 
-#### Music directory
+#### Configure the location of files and directories
 
-The music directory has to be set by parameter `music_directory` in file `/etc/mpd.conf`:
+In user mode, the configuration is read from `$XDG_CONFIG_HOME/mpd/mpd.conf`. We will assume here `$XDG_CONFIG_HOME` equals `~/.config` which is the recommended [XDG base directory specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
-```
-music_directory "/path/to/music"
-
-```
-
-MPD needs to have `+x` permissions on *all* parent directories to the music collection and also read access to all directories containing music files. This conflicts with the default configuration of the user directory where many users store their music.
-
-While there are several solutions to this problem one of these should be most practical:
-
-*   [run MPD as user](#Local_configuration_.28per_user.29)
-*   add the mpd user to your login group and grant group permission to your user directory:
+To build the user configuration, the [MPD configuration example](https://raw.githubusercontent.com/MusicPlayerDaemon/MPD/master/doc/mpdconf.example) included in the package is a good starting point, copy it using the following lines:
 
 ```
- # gpasswd -a mpd <your login group>
- $ chmod 710 /home/<your home dir>
-
-```
-
-*   put your music collection to a different path (a) by moving it entirely, (b) with a bind mount or (c) with a [Btrfs subvolume](/index.php/Btrfs#Subvolumes "Btrfs") (you should make this change persistent with an entry to `/etc/fstab` ). Permissions of alternate directories can be adjusted with [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists").
-
-The MPD config must contain only one music directory. If the music collection is contained under multiple directories, create symbolic links under the main music directory in `/var/lib/mpd`. Remember to set permissions accordingly on the directories being linked.
-
-#### Start MPD
-
-MPD can be controlled with `mpd.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). The first startup can take some time as MPD will scan your music directory.
-
-Test everything by starting a client application ([ncmpc](https://www.archlinux.org/packages/?name=ncmpc) is a light and easy to use client), and play some music!
-
-##### Socket activation
-
-If the `mpd.socket` unit (provided by [mpd](https://www.archlinux.org/packages/?name=mpd)) is enabled while `mpd.service` is disabled, systemd will not start mpd immediately, but it will listen on the appropriate sockets. When an mpd client attempts to connect on one of those sockets, systemd will start `mpd.service` and transparently hand over control of those ports to the mpd process.
-
-If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, [edit](/index.php/Edit "Edit") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) for details).
-
-#### Configure audio
-
-Users of [ALSA](/index.php/ALSA "ALSA") will want to have the following device definition; replace `My Sound Card` with the name of a sound card or pcm (`aplay --list-pcms`).
-
- `/etc/mpd.conf` 
-```
-audio_output {
-        type            "alsa"
-        name            "My Sound Card"
-        mixer_type      "software"      # optional
-}
-```
-
-The `mixer_type "software"` option tells 'mpd' to use its own independent software volume control.
-
-Users of [PulseAudio](/index.php/PulseAudio "PulseAudio") will need to make the following modification:
-
- `/etc/mpd.conf` 
-```
-audio_output {
-        type            "pulse"
-        name            "pulse audio"
-}
-```
-
-User will also have to edit `/etc/pulse/client.conf` and change the default *autospawn = no* line to *autospawn = yes* in order to allow the mpd user to use pulseaudio. It will be necessary to restart pulseaudio after making this modification.
-
-#### Changing user
-
-Changing the group that MPD runs as may result in errors like `output: Failed to open "My ALSA Device"`, `[alsa]: Failed to open ALSA device "default": No such file or directory` or `player_thread: problems opening audio device while playing "Song Name.mp3"`.
-
-This is because the MPD users need to be part of the *audio* group to access sound devices under `/dev/snd/`. To fix it add user make the MPD user part of the *audio* group:
-
-```
-# gpasswd -a **mpd** audio
-
-```
-
-#### Timeline of MPD startup
-
-To depict when MPD drops its superuser privileges and assumes those of the user set in the configuration, the timeline of a normal MPD startup is listed here:
-
-1.  Since MPD is started as root by systemd, it first reads the `/etc/mpd.conf` file.
-2.  MPD reads the user variable in the `/etc/mpd.conf` file, and changes from root to this user.
-3.  MPD then reads the contents of the `/etc/mpd.conf` file and configures itself accordingly.
-
-Notice that MPD changes the running user from root to the one named in the `/etc/mpd.conf` file. This way, uses of `~` in the configuration file point correctly to the home user's directory, and not root's directory. It may be worthwhile to change all uses of `~` to `/home/username` to avoid any confusion over this aspect of MPD's behavior.
-
-### Local configuration (per user)
-
-MPD can be configured per user (rather than the typical method of configuring MPD globally). Running MPD as a normal user has the benefits of:
-
-*   A single directory `~/.config/mpd/` (or any other directory under `$HOME`) that will contain all the MPD configuration files.
-*   Easier to avoid unforeseen read/write permission errors.
-
-Good practice is to create a single directory for the required files and playlists. It can be any directory for which you have read and write access, e.g. `~/.config/mpd/` or `~/.mpd/`. This section assumes it is `~/.config/mpd/`, which corresponds to the default value of `$XDG_CONFIG_HOME` (part of [XDG Base Directory Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html)).
-
-MPD searches for a config file in `$XDG_CONFIG_HOME/mpd/mpd.conf` and then `~/.mpdconf`. It is also possible to pass other path as command line argument.
-
-Copy the example configuration file to desired location, for example:
-
-```
-$ mkdir -p ~/.config/mpd
+$ mkdir ~/.config/mpd
 $ cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
 
 ```
 
-Edit `~/.config/mpd/mpd.conf` and specify the required files:
+A good practice is to use this newly created `~/.config/mpd/` directory to store, together with the configuration file, other MPD related files like the database or the playlists. The user must have read write access to this directory.
+
+Then edit the configuration file in order to specify the required and optional files and directories:
 
  `~/.config/mpd/mpd.conf` 
 ```
-# Required files
+# Recommended location for database
 db_file            "~/.config/mpd/database"
-log_file           "~/.config/mpd/log"
 
-# Optional
-music_directory    "~/Music"
-playlist_directory "~/.config/mpd/playlists"
-pid_file           "~/.config/mpd/pid"
-state_file         "~/.config/mpd/state"
-sticker_file       "~/.config/mpd/sticker.sql"
+# Logs to systemd journal
+log_file           "syslog"
+
+# The music directory is by default the XDG directory, uncomment to amend and choose a different directory
+#music_directory    "~/Music"
+
+# Uncomment to refresh the database whenever files in the music_directory are changed
+#auto_update "yes"
+
+# Uncomment to enable the functionalities
+#playlist_directory "~/.config/mpd/playlists"
+#pid_file           "~/.config/mpd/pid"
+#state_file         "~/.config/mpd/state"
+#sticker_file       "~/.config/mpd/sticker.sql"
 
 ```
 
-Create the playlist directory as configured above:
+If playlists are enabled in the configuration, the specified playlist directory must be created:
 
 ```
 $ mkdir ~/.config/mpd/playlists
 
 ```
 
-When the paths of required files are configured, MPD can be started. To specify custom location of the configuration file:
+MPD can now be started (an optional custom location for the configuration file can be specified):
 
 ```
-$ mpd *config_file*
+$ mpd *[config_file]*
 
 ```
+
+To build the database scanning into the `music_directory` defined above, a MPD client must be used, for example with [mpc](https://www.archlinux.org/packages/?name=mpc) the command is:
+
+```
+$ mpc update
+
+```
+
+or alternatively one can set the option `auto_update` to `"yes"` in the configuration to refresh the database whenever files are changed in `music_directory`.
+
+#### Audio configuration
+
+If [ALSA](/index.php/ALSA "ALSA") is used, **autodetection** of the default device should work out of the box without any particular setting. If not, the syntax for ALSA audio output definition is provided thereafter; the required `name` parameter specifies a unique name for the audio output. The exact device as displayed using `aplay --list-pcm` from the package [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) can optionally be indicated with the `device` option.
+
+ `~/.config/mpd/mpd.conf` 
+```
+audio_output {
+        type          "alsa"
+        name          "*ALSA sound card*"
+        # Optional
+        #device        "*iec958:CARD=Intel,DEV=0*"
+        #mixer_control "PCM"
+}
+```
+
+Users of [PulseAudio](/index.php/PulseAudio "PulseAudio") will need to make the following modification:
+
+ `~/.config/mpd/mpd.conf` 
+```
+audio_output {
+        type            "pulse"
+        name            "*pulse audio*"
+}
+```
+
+User will also have to edit `/etc/pulse/client.conf` and change the `autospawn` option to `yes` in order to allow the MPD user to use *pulseaudio*. It will be necessary to restart *pulseaudio* after making this modification.
+
+#### Autostart with systemd
+
+The [mpd](https://www.archlinux.org/packages/?name=mpd) package provides a [user service](/index.php/Systemd/User "Systemd/User") file. The service starts the process as user, there is no need to change permission nor use the `user` and `group` variables in the MPD configuration file.
+
+[start/enable](/index.php/Start/enable "Start/enable") the user unit `mpd.service` (i.e. with the `--user` flag).
+
+**Note:** The configuration file is read from `~/.config/mpd/mpd.conf`, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to indicate a custom configuration file path.
 
 #### Autostart on tty login
 
-To start MPD on login add the following to `~/.profile` (or another [autostart file](/index.php/Autostarting#Shells "Autostarting")):
+To start MPD on login add the following to `~/.profile` or another [autostart file](/index.php/Autostarting "Autostarting"):
 
 ```
 # MPD daemon start (if no other user instance exists)
@@ -203,54 +160,75 @@ To start MPD on login add the following to `~/.profile` (or another [autostart f
 
 ```
 
-#### Autostart in X
-
-If you use a [desktop environment](/index.php/Desktop_environment "Desktop environment"), place the following file in `~/.config/autostart/`:
-
- `~/.config/autostart/mpd.desktop` 
-```
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Name=Music Player Daemon
-Comment=Server for playing audio files
-Exec=mpd
-StartupNotify=false
-Terminal=false
-Hidden=false
-X-GNOME-Autostart-enabled=false
-
-```
-
-If you do not use a DE, place the line from [#Autostart on tty login](#Autostart_on_tty_login) in your [autostart file](/index.php/Autostarting#Graphical "Autostarting").
-
-#### Autostart with systemd
-
-The [mpd](https://www.archlinux.org/packages/?name=mpd) package provides a [user service](/index.php/Systemd/User "Systemd/User") file. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`; see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use a different path. The service starts the process as user, there is no need to change permission nor use the `user` and `group` variables in the MPD configuration file.
-
-All you have to do is [start/enable](/index.php/Start/enable "Start/enable") the user unit `mpd.service` (i.e. with the `--user` flag).
-
-**Note:** [mpd](https://www.archlinux.org/packages/?name=mpd) also provides a system service file. The process is started as root and reads the [#Global configuration](#Global_configuration) from `/etc/mpd.conf` rather than the [#Local configuration (per user)](#Local_configuration_.28per_user.29).
-
 #### Scripted configuration
 
-You can use a [script](https://53280.de/dl/mpdsetup.sh) to create the proper directory structure, configuration files and prompt for the location of the user's Music directory.
+The following tool provides assistance for MPD configuration:
 
-#### Scripted configuration for bit perfect playback
+*   **[mpd-configure](http://lacocina.nl/audiophile-mpd)** — Create a MPD configuration optimized for [bit perfect](https://www.musicpd.org/doc/user/advanced_usage.html#bit_perfect) audio playback, without any resampling or conversion, using the ALSA interface hardware address (hw:x,y)
 
-You can use a [bash script](http://lacocina.nl/audiophile-mpd) to also create a valid mpd configuration file which focusses on bit perfect audio playback. That is playback without any resampling or format conversion. It does this by setting audio output parameters to use a direct alsa hwardware address (like `hw:0,0`). The script detects and lists which playback interfaces alsa supports. When one interface is found it uses that one, if multiple are found it prompts the user which one to use. When not specified on the command line, it auto configures things like the music_directory and mpd's home directory by using freedesktop.org XDG configuration.
+	[https://github.com/ronalde/mpd-configure](https://github.com/ronalde/mpd-configure) || no package
 
-### Multi-mpd setup
+### System-wide configuration
+
+**Note:** Users of PulseAudio with a system-wide MPD configuration have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") in order to run MPD as its own user!
+
+The default `/etc/mpd.conf` keeps the setup in `/var/lib/mpd` which is assigned to user as well as primary group MPD.
+
+#### Music directory
+
+The music directory is defined by the option `music_directory` in the configuration file `/etc/mpd.conf`.
+
+MPD needs to have execute permission on *all* parent directories of the music collection and also read access to all directories containing music files. This may conflict with the default configuration of the user directory, like `~/Music`, where the music is stored.
+
+While there are several solutions to this issue, one of these should be most practical:
+
+*   Switch to the [#Per-user configuration](#Per-user_configuration) mode instead
+*   Add the `mpd` user to the user's group and grant group execute permission to the user directory. This way the `mpd` user has permission to open the user directory:
+
+```
+# gpasswd -a mpd *user_group*
+$ chmod 710 /home/*user_directory*
+
+```
+
+*   Store the music collection in a different path, either:
+    *   by moving it entirely,
+    *   with a bind mount,
+    *   or with [Btrfs#Subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") (you should make this change persistent with an entry to `/etc/fstab` ).
+
+The MPD configuration file must define only one music directory. If the music collection is contained under multiple directories, create symbolic links under the main music directory in `/var/lib/mpd`. Remember to set permissions accordingly on the directories being linked.
+
+#### Start with systemd
+
+MPD can be controlled with `mpd.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). The first startup can take some time as MPD will scan your music directory.
+
+Test everything by starting a client application ([ncmpc](https://www.archlinux.org/packages/?name=ncmpc) is a light and easy to use client), and play some music!
+
+##### Socket activation
+
+[mpd](https://www.archlinux.org/packages/?name=mpd) provides a `mpd.socket` unit. If `mpd.socket` is enabled (and `mpd.service` is disabled), systemd will not start MPD immediately, it will just listen to the appropriate sockets. Then, whenever an MPD client attempts to connect to one of these sockets, systemd will start `mpd.service` and transparently hand over control of these ports to the MPD process.
+
+If you prefer to listen to different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen to network ports at all, [edit](/index.php/Edit "Edit") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) for details).
+
+#### User id startup workflow
+
+MPD should never run as *root*, you may use the `user` option in the configuration to make MPD change its user id after initialization. Do not use this option if you start MPD as an unprivileged user. To describe how MPD drops its superuser privileges and switch to those of the user set in the configuration, the steps of a normal MPD startup are listed thereafter:
+
+1.  Since MPD is started as *root* by systemd, it first reads the `/etc/mpd.conf` file.
+2.  MPD reads the `user` variable in the configuration, and changes from *root* to this user.
+3.  MPD then reads the rest of the configuration file and configures itself accordingly. Uses of `~` in the configuration file points to the home user's directory, and not root's directory.
+
+### Multi-MPD setup
 
 #### Running an icecast server
 
-For a second MPD (e.g., with icecast output to share music over the network) using the same music and playlist as the one above, simply copy the above configuration file and make a new file (e.g., `/home/username/.mpd/config-icecast`), and only change the log_file, error_file, pid_file, and state_file parameters (e.g., `mpd-icecast.log`, `mpd-icecast.error`, and so on); using the same directory paths for the music and playlist directories would ensure that this second mpd would use the same music collection as the first one e.g., creating and editing a playlist under the first daemon would affect the second daemon as well. Users do not have to create the same playlists all over again for the second daemon. Call this second daemon the same way from `~/.xinitrc` above. (Just be sure to have a different port number, so as to not conflict with the first mpd daemon).
+For a second MPD (e.g., with icecast output to share music over the network) using the same music and playlist as the one above, simply copy the above configuration file and make a new file (e.g., `/home/username/.mpd/config-icecast`), and only change the log_file, error_file, pid_file, and state_file parameters (e.g., `mpd-icecast.log`, `mpd-icecast.error`, and so on); using the same directory paths for the music and playlist directories would ensure that this second MPD would use the same music collection as the first one e.g., creating and editing a playlist under the first daemon would affect the second daemon as well. Users do not have to create the same playlists all over again for the second daemon. Call this second daemon the same way from `~/.xinitrc` above. (Just be sure to have a different port number, so as to not conflict with the first MPD daemon).
 
 #### Satellite setup
 
-The method above works, but at least in theory could lead to issues with the database, when both mpd instances try to write to the same database file. MPD has a [satellite mode](http://www.musicpd.org/doc/user/advanced_config.html#satellite) where one instance can receive the database from an already running mpd instance.
+The method above works, but at least in theory could lead to issues with the database, when both MPD instances try to write to the same database file. MPD has a [satellite mode](http://www.musicpd.org/doc/user/advanced_config.html#satellite) where one instance can receive the database from an already running MPD instance.
 
-in your config-icecast add this, where host and port reflect your primary mpd server.
+in your config-icecast add this, where host and port reflect your primary MPD server.
 
 ```
 database {
@@ -263,7 +241,7 @@ database {
 
 ## Clients
 
-A separate client is needed to control mpd. See a long list of clients at the [mpd website](https://www.musicpd.org/clients/). Popular options are:
+A separate client is needed to control MPD. See a long list of clients at the [mpd website](https://www.musicpd.org/clients/). Popular options are:
 
 ### Console
 
@@ -271,7 +249,7 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 	[http://www.musicpd.org/clients/mpc/](http://www.musicpd.org/clients/mpc/) || [mpc](https://www.archlinux.org/packages/?name=mpc)
 
-*   **ncmpc** — Ncurses client for mpd
+*   **ncmpc** — Ncurses client for MPD
 
 	[http://www.musicpd.org/clients/ncmpc/](http://www.musicpd.org/clients/ncmpc/) || [ncmpc](https://www.archlinux.org/packages/?name=ncmpc)
 
@@ -279,7 +257,7 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp)
 
-*   **pms** — Highly configurable and accessible ncurses client
+*   **pms** — Highly configurable and accessible ncurses client written in Go
 
 	[https://ambientsound.github.io/pms/](https://ambientsound.github.io/pms/) || [pmus-git](https://aur.archlinux.org/packages/pmus-git/)
 
@@ -289,15 +267,15 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 *   **vimus** — MPD client with vim-like key bindings, written in Haskell
 
-	[https://github.com/vimus/vimus](https://github.com/vimus/vimus) || [vimus-git](https://aur.archlinux.org/packages/vimus-git/)
+	[https://github.com/vimus/vimus](https://github.com/vimus/vimus) || no package
 
 ### Graphical
 
-*   **Ario** — Very feature-rich GTK2 GUI client for mpd, inspired by Rhythmbox
+*   **Ario** — Very feature-rich GTK2 GUI client for MPD, inspired by Rhythmbox
 
 	[http://ario-player.sourceforge.net/](http://ario-player.sourceforge.net/) || [ario](https://www.archlinux.org/packages/?name=ario)
 
-*   **QmpdClient** — GUI client written with Qt 4.x
+*   **QMPDClient** — Qt4 GUI client
 
 	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
 
@@ -321,9 +299,9 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://www.archlinux.org/packages/?name=pympd)
 
-*   **Quimup** — A client for the music player daemon (MPD) written in C++ and QT3 / since v. 1.4.0 the code was migrated to Qt5 for MPD 0.17.0 and above
+*   **Quimup** — A simple Qt5 frontend for MPD written in C++
 
-	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [quimup](https://aur.archlinux.org/packages/quimup/)
+	[https://sourceforge.net/projects/quimup/](https://sourceforge.net/projects/quimup/) || [quimup](https://aur.archlinux.org/packages/quimup/)
 
 *   **SkyMPC** — A simple MPD client, powered by Qt5
 
@@ -334,3 +312,5 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 *   [MPD Forum](http://forum.musicpd.org/)
 *   [MPD User Manual](http://www.musicpd.org/doc/user/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Music_Player_Daemon "wikipedia:Music Player Daemon")
+*   MPD on GitHub [https://github.com/MusicPlayerDaemon/MPD](https://github.com/MusicPlayerDaemon/MPD)
+*   [mopidy](https://www.archlinux.org/packages/?name=mopidy) is an alternative to MPD written in Python. Note it is not a complete MPD replacement, its advantage is that it has plug-ins for playing music from cloud services like Spotify, SoundCloud, and Google Play Music. However, the project is not that active and some of its plugins are not maintained.

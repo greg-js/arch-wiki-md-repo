@@ -55,7 +55,7 @@ Arch Linux'u kullanmak **istemiyeceğiniz** durumlar olabilir, bunlardan bazıla
 *   x86_64 işlemci mimarisi dışında bir işlemci mimarisine sahipseniz.
 *   bir işletim sisteminin kendi işini görmesi, kendi kendine ayarlarını yapması veya bazı varsayılan yazılımları ve masaüstü ortamınıda beraberinde getirmesi gerektirdiğini inanıyorsanız.
 *   yuvarlanan sürüm yapısına sahip olan bir GNU/Linux dağıtımı istemiyorsanız.
-*   şuanda kullandığınız işletim sisteminden memnunsanız.
+*   şu anda kullandığınız işletim sisteminden memnunsanız.
 
 Arch Linux kullanmayı birdaha gözden geçirmelisiniz.
 

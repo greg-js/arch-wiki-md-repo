@@ -51,7 +51,7 @@ Version: ThinkPad X1 Carbon 6th
 | Camera | Yes | uvcvideo |
 | Fingerprint Reader | No** |  ? |
 | [Power management](/index.php/Power_management "Power management") | Yes |  ? |
-| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Untested | btusb |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | microSD card reader | Untested |  ? |
 | Keyboard Backlight | Yes |  ? |
 | Function/Multimedia Keys | Yes |  ? |

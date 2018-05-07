@@ -7,9 +7,13 @@
 *   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 
-**翻译状态：** 本文是英文页面 [fstab](/index.php/Fstab "Fstab") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-09-20，点击[这里](https://wiki.archlinux.org/index.php?title=fstab&diff=0&oldid=223040)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [fstab](/index.php/Fstab "Fstab") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-07，点击[这里](https://wiki.archlinux.org/index.php?title=fstab&diff=0&oldid=223041)可以查看翻译后英文页面的改动。
 
-文件[/etc/fstab](https://en.wikipedia.org/wiki/Fstab "wikipedia:Fstab")包含了静态文件系统信息，定义了存储设备和分区整合到整个系统的方式。`mount` 命令会读取这个文件，确定设备和分区的挂载选项。
+[fstab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5)文件可用于定义磁盘分区，各种其他块设备或远程文件系统应如何装入文件系统。
+
+每个文件系统在一个单独的行中描述。这些定义将在引导时动态地转换为系统挂载单元，并在系统管理器的配置重新加载时转换。在启动需要挂载的服务之前，默认设置会自动[fsck](/index.php/Fsck "Fsck")和挂载文件系统。例如，[systemd](/index.php/Systemd "Systemd")会自动确保远程文件系统挂载（如[NFS](/index.php/NFS "NFS")或[Samba](/index.php/Samba "Samba")）仅在网络设置完成后启动。因此，在`/etc/fstab`中指定的本地和远程文件系统挂载应该是开箱即用的。有关详细信息，请参阅 [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) 。
+
+`mount`命令将使用fstab，如果仅给出其中一个目录或设备，则填充其他参数的值。 这样做时，也将使用fstab中列出的挂载选项。
 
 ## Contents
 
@@ -56,7 +60,7 @@ tmpfs                  /tmp          tmpfs     nodev,nosuid          0      0
 *   **<file systems>** - 要挂载的分区或存储设备.
 *   **<dir>** - <file systems>的挂载位置。
 *   **<type>** - 要挂载设备或是分区的文件系统类型，支持许多种不同的文件系统：`ext2`, `ext3`, `ext4`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` 及 `auto`。 设置成`auto`类型，mount 命令会猜测使用的文件系统类型，对 CDROM 和 DVD 等移动设备是非常有用的。
-*   **<options>** - 挂载时使用的参数，注意有些 参数是特定文件系统才有的。一些比较常用的参数有 ([mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8))：
+*   **<options>** - 挂载时使用的参数，注意有些 参数是特定文件系统才有的。一些比较常用的参数有 ([mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8))：
 
 *   `auto` - 在启动时或键入了 `mount -a` 命令时自动挂载。
 *   `noauto` - 只在你的命令下被挂载。

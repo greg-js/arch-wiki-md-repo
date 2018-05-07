@@ -510,7 +510,7 @@
 
 *   **llpp** — Очень быстрая программа чтения PDF, основанная на MuPDF и поддерживающая непрерывную прокрутку страниц, закладки и поиск по тексту во всем документе
 
-	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://aur.archlinux.org/packages/llpp/)
+	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://www.archlinux.org/packages/?name=llpp)
 
 *   **[MuPDF](https://en.wikipedia.org/wiki/MuPDF "wikipedia:MuPDF")** — Очень быстрая программа просмотра PDF и XPS, а также тулкит, написанный на portable C. Имеет поддержку шрифтов CJK
 
