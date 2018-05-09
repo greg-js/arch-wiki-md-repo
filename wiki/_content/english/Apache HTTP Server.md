@@ -1,7 +1,7 @@
 Related articles
 
 *   [XAMPP](/index.php/XAMPP "XAMPP")
-*   [mod_perl](/index.php/Mod_perl "Mod perl")
+*   [/mod_perl](/index.php/Apache_HTTP_Server/mod_perl "Apache HTTP Server/mod perl")
 
 The [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikipedia:Apache HTTP Server"), or Apache for short, is a very popular web server, developed by the Apache Software Foundation.
 
@@ -49,7 +49,7 @@ For optional further configuration, see the following sections.
 
 ### Advanced options
 
-See the [full list of Apache configuration directives](https://httpd.apache.org/docs/trunk/mod/directives.html) and the [directive quick reference](https://httpd.apache.org/docs/trunk/mod/quickreference.htm).
+See the [full list of Apache configuration directives](https://httpd.apache.org/docs/trunk/mod/directives.html) and the [directive quick reference](https://httpd.apache.org/docs/trunk/mod/quickreference.html).
 
 These options in `/etc/httpd/conf/httpd.conf` might be interesting for you:
 

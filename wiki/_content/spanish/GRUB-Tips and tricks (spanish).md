@@ -4,27 +4,141 @@ Véa el artículo principal [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GR
 
 ## Contents
 
-*   [1 Herramientas GUI de configuración](#Herramientas_GUI_de_configuraci.C3.B3n)
-*   [2 Configuración del aspecto](#Configuraci.C3.B3n_del_aspecto)
-    *   [2.1 Ajustar la resolución del framebuffer](#Ajustar_la_resoluci.C3.B3n_del_framebuffer)
-    *   [2.2 Introducir 915resolution](#Introducir_915resolution)
-    *   [2.3 Imagen de fondo y fuentes bitmap](#Imagen_de_fondo_y_fuentes_bitmap)
-    *   [2.4 Temas](#Temas)
-    *   [2.5 Colores del menú](#Colores_del_men.C3.BA)
-    *   [2.6 Menú oculto](#Men.C3.BA_oculto)
-    *   [2.7 Desactivar framebuffer](#Desactivar_framebuffer)
-*   [3 Iniciar una imagen ISO9660 directamente desde GRUB](#Iniciar_una_imagen_ISO9660_directamente_desde_GRUB)
-*   [4 Nomenclatura permanente de dispositivos de bloque](#Nomenclatura_permanente_de_dispositivos_de_bloque)
-*   [5 Utilizar etiquetas](#Utilizar_etiquetas)
-*   [6 Proteger con contraseña el menú de GRUB](#Proteger_con_contrase.C3.B1a_el_men.C3.BA_de_GRUB)
-*   [7 Ocultar GRUB y hacerlo aparecer mediante la tecla Mayús](#Ocultar_GRUB_y_hacerlo_aparecer_mediante_la_tecla_May.C3.BAs)
-*   [8 Combinar la utilización de UUID con scripts](#Combinar_la_utilizaci.C3.B3n_de_UUID_con_scripts)
-*   [9 Creación manual de grub.cfg](#Creaci.C3.B3n_manual_de_grub.cfg)
-*   [10 Múltiples entradas](#M.C3.BAltiples_entradas)
-    *   [10.1 Desactivar submenú](#Desactivar_submen.C3.BA)
-    *   [10.2 Recordar el último sistema arrancado](#Recordar_el_.C3.BAltimo_sistema_arrancado)
-    *   [10.3 Cambiar la entrada por defecto del menú](#Cambiar_la_entrada_por_defecto_del_men.C3.BA)
-    *   [10.4 Efectuar el arranque de una entrada no predeterminada por una sola vez](#Efectuar_el_arranque_de_una_entrada_no_predeterminada_por_una_sola_vez)
+*   [1 Métodos alternativos de instalación](#M.C3.A9todos_alternativos_de_instalaci.C3.B3n)
+    *   [1.1 Instalar en un dispositivo USB externo](#Instalar_en_un_dispositivo_USB_externo)
+        *   [1.1.1 BIOS](#BIOS)
+        *   [1.1.2 EFI](#EFI)
+    *   [1.2 Instalar en un disco con o sin particiones](#Instalar_en_un_disco_con_o_sin_particiones)
+    *   [1.3 Generar sólo core.img](#Generar_s.C3.B3lo_core.img)
+*   [2 Herramientas GUI de configuración](#Herramientas_GUI_de_configuraci.C3.B3n)
+*   [3 Configuración del aspecto](#Configuraci.C3.B3n_del_aspecto)
+    *   [3.1 Ajustar la resolución del framebuffer](#Ajustar_la_resoluci.C3.B3n_del_framebuffer)
+    *   [3.2 Introducir 915resolution](#Introducir_915resolution)
+    *   [3.3 Imagen de fondo y fuentes bitmap](#Imagen_de_fondo_y_fuentes_bitmap)
+    *   [3.4 Temas](#Temas)
+    *   [3.5 Colores del menú](#Colores_del_men.C3.BA)
+    *   [3.6 Menú oculto](#Men.C3.BA_oculto)
+    *   [3.7 Desactivar framebuffer](#Desactivar_framebuffer)
+*   [4 Iniciar una imagen ISO9660 directamente desde GRUB](#Iniciar_una_imagen_ISO9660_directamente_desde_GRUB)
+*   [5 Nomenclatura permanente de dispositivos de bloque](#Nomenclatura_permanente_de_dispositivos_de_bloque)
+*   [6 Utilizar etiquetas](#Utilizar_etiquetas)
+*   [7 Proteger con contraseña el menú de GRUB](#Proteger_con_contrase.C3.B1a_el_men.C3.BA_de_GRUB)
+*   [8 Ocultar GRUB y hacerlo aparecer mediante la tecla Mayús](#Ocultar_GRUB_y_hacerlo_aparecer_mediante_la_tecla_May.C3.BAs)
+*   [9 Combinar la utilización de UUID con scripts](#Combinar_la_utilizaci.C3.B3n_de_UUID_con_scripts)
+*   [10 Creación manual de grub.cfg](#Creaci.C3.B3n_manual_de_grub.cfg)
+*   [11 Múltiples entradas](#M.C3.BAltiples_entradas)
+    *   [11.1 Desactivar submenú](#Desactivar_submen.C3.BA)
+    *   [11.2 Recordar el último sistema arrancado](#Recordar_el_.C3.BAltimo_sistema_arrancado)
+    *   [11.3 Cambiar la entrada por defecto del menú](#Cambiar_la_entrada_por_defecto_del_men.C3.BA)
+    *   [11.4 Efectuar el arranque de una entrada no predeterminada por una sola vez](#Efectuar_el_arranque_de_una_entrada_no_predeterminada_por_una_sola_vez)
+
+## Métodos alternativos de instalación
+
+### Instalar en un dispositivo USB externo
+
+#### BIOS
+
+Supongamos que la primera partición de su memoria USB es FAT32 y su partición es /dev/sdy1
+
+```
+# mkdir -p /mnt/usb
+# mount /dev/sdy1 /mnt/usb
+# grub-install --target=i386-pc --debug --boot-directory=/mnt/usb/boot /dev/sdy
+# grub-mkconfig -o /mnt/usb/boot/grub/grub.cfg
+
+```
+
+Opcionalmente puede hacer una copia de seguridad de `grub.cfg`:
+
+```
+# mkdir -p /mnt/usb/etc/default
+# cp /etc/default/grub /mnt/usb/etc/default
+# cp -a /etc/grub.d /mnt/usb/etc
+
+```
+
+```
+# sync; umount /mnt/usb
+
+```
+
+#### EFI
+
+Para que grub escriba su imagen EFI en `/boot/efi/EFI/BOOT/BOOTX64.efi`, y el firmware de arranque sea capaz de encontrar sin ninguna entrada de arranque UEFI, use `--removable` cuando ejecute `grub-install`.
+
+### Instalar en un disco con o sin particiones
+
+**Advertencia:** GRUB **desaconseja encarecidamente** su instalación en un sector de arranque de partición o un disco sin particiones como lo hace GRUB Legacy o Syslinux. Esta configuración es propensa a romperse, especialmente durante las actualizaciones, y **no es soportada** por los desarrolladores de Arch.
+
+Para configurar grub en un sector de inicio de partición, en un disco sin particiones (también llamado superfloppy) o en un disquete, ejecútelo (utilizando, por ejemplo`/dev/sdaX` como la partición `/boot`):
+
+```
+# chattr -i /boot/grub/i386-pc/core.img
+# grub-install --target=i386-pc --debug --force /dev/sdaX
+# chattr +i /boot/grub/i386-pc/core.img
+
+```
+
+**Nota:**
+
+*   `/dev/sdaX` se utiliza sólo como ejemplo.
+*   `--target=i386-pc` indica a `grub-install` que se instale sólo para sistemas BIOS. Se recomienda utilizar siempre esta opción para eliminar la ambigüedad en *grub-install*.
+
+Debe usar la opción `--force` para permitir el uso de listas de bloqueo (blocklists) y no debería usar `--grub-setup=/bin/true` (que es similar a simplemente generar `core.img`).
+
+`grub-install` dará advertencias y le darán una idea de lo que podría fallar con este enfoque:
+
+```
+/sbin/grub-setup: warn: Attempting to install GRUB to a partitionless disk or to a partition. This is a BAD idea.
+/sbin/grub-setup: warn: Embedding is not possible. GRUB can only be installed in this setup by using blocklists.
+                        However, blocklists are UNRELIABLE and their use is discouraged.
+
+```
+
+Sin `--force` puede obtener el siguiente error y `grub-setup` no configurará su código de arranque en el sector de arranque de la partición:
+
+```
+/sbin/grub-setup: error: will not proceed with blocklists
+
+```
+
+Con `--force` debería obtener:
+
+```
+Installation finished. No error reported.
+
+```
+
+La razón por la que `grub-setup` no lo permite por defecto es que en caso de partición o disco sin particiones GRUB confía en las listas de bloques incrustadas en el sector de arranque de la partición para localizar el archivo `/boot/grub/i386-pc/core.img` y el directorio de prefijos `/boot/grub` . Las ubicaciones de sector de `core.img` pueden cambiar cada vez que se altere el sistema de archivos de la partición (archivos copiados, eliminados, etc.). Para más información, véase [https://bugzilla.redhat.com/show_bug.cgi?id=728742](https://bugzilla.redhat.com/show_bug.cgi?id=728742) y [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
+
+La solución es establecer el *flag* invariable en `/boot/grub/i386-pc/core.img`. (usando el comando `chattr`} como se mencionó anteriormente) para que las ubicaciones de sector del archivo `core.img` en el disco no se alteren. El *flag* invariable en `/boot/grub/i386-pc/core.img` sólo debe configurarse si GRUB está instalado en un sector de arranque de partición o en un disco sin particiones, no en el caso de la instalación en MBR o la simple generación de `core.img` sin incrustar ningún bootsector (mencionado anteriormente).
+
+Desafortunadamente, el archivo `grub.cfg` que se crea no contendrá el UUID apropiado para iniciar, incluso si no hay informe de errores.Vea [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604). Para solucionar este problema, ejecute los siguientes comandos:
+
+```
+# mount /dev/sdxY /mnt        #Your root partition.
+# mount /dev/sdxZ /mnt/boot   #Your boot partition (if you have one).
+# arch-chroot /mnt
+# pacman -S linux
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+### Generar sólo core.img
+
+Para completar el directorio `/boot/grub` y generar un `/boot/grub/i386-pc/core.img` **sin** incrustar ningún código de sector de inicio GRUB en el MBR, región post-MBR o partición del sector de arranque, agregue `--grub-setup=/bin/true` a `grub-install`:
+
+```
+# grub-install --target=i386-pc --grub-setup=/bin/true --debug /dev/sda
+
+```
+
+**Nota:**
+
+*   `/dev/sda` usado sólo como ejemplo.
+*   `--target=i386-pc` ordena a `grub-install` a instalar solo para sistemas BIOS. Se recomienda utilizar siempre esta opción para eliminar la ambigüedad en grub-install.
+
+A continuación, puede encadenar GRUB `core.img` de GRUB Legacy o syslinux como kernel de Linux o como núcleo de arranque múltiple (consulte también [Syslinux_(Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)")).
 
 ## Herramientas GUI de configuración
 
@@ -34,11 +148,11 @@ Es posible obtener estas herramientas gráficas instalando los siguientes paquet
 
 	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)
 
-*   **grub2-editor** — Módulo de control de KDE4 para configurar el gestor de arrranque GRUB
+*   **grub2-editor-frameworks** — Un módulo de control de KDE para configurar el gestor de arranque GRUB2\. *Port* no oficial KF5
 
-	[http://kde-apps.org/content/show.php?content=139643](http://kde-apps.org/content/show.php?content=139643) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
+	[https://github.com/maz-1/grub2-editor](https://github.com/maz-1/grub2-editor) || [grub2-editor-frameworks](https://aur.archlinux.org/packages/grub2-editor-frameworks/)
 
-*   **startupmanager** — Aplicación gráfica para cambiar la configuración de GRUB Legacy, GRUB, Usplash y Splashy
+*   **startupmanager** — Aplicación gráfica para cambiar la configuración de GRUB Legacy, GRUB, Usplash y Splashy ([abandonned](https://launchpad.net/startup-manager/+announcement/8300))
 
 	[http://sourceforge.net/projects/startup-manager/](http://sourceforge.net/projects/startup-manager/) || [startupmanager](https://aur.archlinux.org/packages/startupmanager/)
 
@@ -57,13 +171,17 @@ GRUB_GFXPAYLOAD_LINUX=keep
 
 Se pueden especificar múltiples resoluciones, incluyendo la opción `auto` por defecto, por lo que es recomendable que modifique la línea en cuestión, de modo que quede como esta `GRUB_GFXMODE=<resolución deseada>,<para fallback 1024x768>,auto`. Para obtener más información, remítase a [the GRUB gfxmode documentation](https://www.gnu.org/software/grub/manual/html_node/gfxmode.html#gfxmode). La propiedad [gfxpayload](https://www.gnu.org/software/grub/manual/html_node/gfxpayload.html#gfxpayload) se asegurará de que el kernel mantiene la resolución.
 
-**Nota:** Solo las modalidades soportadas por la tarjeta gráfica a través de [VESA BIOS Extensions (VBE)](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions "wikipedia:VESA BIOS Extensions") pueden ser utilizadas. Para ver la lista de las modalidades compatibles, instale [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) y ejecute `hwinfo --framebuffer` como root. Como alternativa, entre en la línea de órdenes de GRUB y ejecute la orden `vbeinfo`.
+**Nota:**
+
+*   Solo las modalidades soportadas por la tarjeta gráfica a través de [VESA BIOS Extensions (VBE)](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions "wikipedia:VESA BIOS Extensions") pueden ser utilizadas. Para ver la lista de las modalidades compatibles, instale [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) y ejecute `hwinfo --framebuffer` como root. Como alternativa, entre en la línea de órdenes de GRUB y ejecute la orden `videoinfo`.
+*   Las versiones anteriores del driver propietario [NVIDIA](/index.php/NVIDIA "NVIDIA") (probado con GeForce GTX 970, driver: nvidia 370) admite `GRUB_GFXMODE` en formato `*<width>*x*<height>*-*<depth>*` (e.g. `1920x1200-24`, pero no `1920x1200x24`). Esto no parece aplicarse a las nuevas tarjetas y controladores. Las tarjetas Pascal con controladores más recientes (probadas con GeForce GTX 1060 y nvidia 381.22) no funcionarán con el formato sugerido, por lo que si se intenta utilizarlas se producirán graves problemas, entre los que se incluyen, sin limitarse a ellos, caídas del sistema y bloqueos de hardware. El controlador y las tarjetas actuales se configuran mejor con `GRUB_GFXMODE` en el formato estándar `*<width>*x*<height>*x*<depth>*`.
+*   Asegúrese de ejecutar `grub-mkconfig -o /boot/grub/grub.cfg` después de realizar cambios.
 
 Si este método falla, la antigua opción `vga=` sigue siendo válida. Añadimos `vga=` a la opción `"GRUB_CMDLINE_LINUX_DEFAULT="` en `/etc/default/grub`. Por ejemplo: `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` establece una resolución de `1024x768`
 
 ### Introducir 915resolution
 
-Si está usando tarjeta de vídeo de Intel, puede ocurrir que ni `# hwinfo --framebuffer` ni `vbeinfo` muestre la resolución deseada. En este caso, puede utilizar este arreglo, para cambiar temporalmente la BIOS de la tarjeta de vídeo mediante la adición de la resolución requerida. Consulte la página [915resolution](http://915resolution.mango-lang.org/).
+Si está usando tarjeta de vídeo de Intel, puede ocurrir que ni `# hwinfo --framebuffer` ni `vbeinfo` muestre la resolución deseada. En este caso, puede utilizar este arreglo, para cambiar temporalmente la BIOS de la tarjeta de vídeo mediante la adición de la resolución requerida. Consulte la página [915resolution](http://915resolution.mango-lang.org/).El paquete se puede encontrar aquí: [915resolution](https://aur.archlinux.org/packages/915resolution/)
 
 En primer lugar, debe elegir un modo de vídeo para editar más tarde. Para ello necesitamos utilizar la shell de órdenes de GRUB:
 
@@ -95,7 +213,7 @@ GRUB es compatible con imágenes de fondo y fuentes de mapa de bits en el format
 
 Los formatos de imagen soportados incluyen tga, png e jpeg, siempre que los respectivos módulos se carguen. La resolución máxima aplicable depende del hardware en uso.
 
-Antes de continuar, siga las disposiciones indicadas en [este apartado](/index.php/GRUB2_(Espa%C3%B1ol)#Ajustar_la_resoluci.C3.B3n_del_framebuffer "GRUB2 (Español)").
+Antes de continuar, siga las disposiciones indicadas en [resolución del framebuffer](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Ajustar_la_resoluci.C3.B3n_del_framebuffer "GRUB/Tips and tricks (Español)").
 
 A continuación, edite el archivo `/etc/default/grub` como sigue:
 
@@ -106,9 +224,9 @@ GRUB_FONT="/ruta/a/font.pf2"
 
 ```
 
-**Nota:** Si va a instalar GRUB en una partición separada, `/boot/grub/mi_imagen` se convierte en `/grub/mi_imagen`
+**Nota:** Si ha instalado GRUB en una partición separada, `/boot/grub/mi_imagen` automáticamente se convierte en `/grub/mi_imagen` en `grub.cfg`.
 
-[Regenere](#Generar_el_archivo_de_configuraci.C3.B3n_principal) `grub.cfg` para aplicar los cambios. Si la inserción de la imagen se realiza correctamente, debería ver el mensaje `Found background image...`, al ejecutar la orden anterior. Si no, quiere decir que la imagen no se ha incorporado en el archivo `grub.cfg`.
+[Regenere](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuraci.C3.B3n_principal "GRUB (Español)") `grub.cfg` para aplicar los cambios. Si la inserción de la imagen se realiza correctamente, debería ver el mensaje `Found background image...`, al ejecutar la orden anterior. Si no, quiere decir que la imagen no se ha incorporado en el archivo `grub.cfg`.
 
 En este caso, compruebe que:
 
@@ -117,6 +235,7 @@ En este caso, compruebe que:
 *   La imagen se guarda en modo RGB y no indexado.
 *   La modalidad consola no está habilitada en el archivo `/etc/default/grub`.
 *   La orden de `grub-mkconfig` se ha hecho para poner la información relativa en un segundo plano en el archivo `/boot/grub/grub.cfg`.
+*   Los scripts `grub-mkconfig` no harán referencia al nombre del archivo en `grub.cfg` si contienen espacios , así que asegúrese de que no los tiene
 
 ### Temas
 

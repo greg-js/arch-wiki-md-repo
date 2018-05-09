@@ -48,7 +48,7 @@ The following are privacy-focused configuration tweaks to prevent [browser finge
 
 In addition, see the following links:
 
-*   [How to stop Firefox from making automatic connections](https://support.mozilla.org/t5/Protect-your-privacy/How-to-stop-Firefox-from-making-automatic-connections/ta-p/1748) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
+*   [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
 *   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
 *   [pyllyukko/user.js](https://github.com/pyllyukko/user.js) - Firefox configuration hardening and documentation
 

@@ -130,14 +130,14 @@ nmcli dev wifi connect <SSID> password <password> hidden yes
 Connect to a wifi on the `wlan1` wifi interface:
 
 ```
-nmcli dev wifi connect <SSID> password <password> iface wlan1 [profile name]
+nmcli dev wifi connect <SSID> password <password> ifname wlan1 [profile name]
 
 ```
 
 Disconnect an interface:
 
 ```
-nmcli dev disconnect iface eth0
+nmcli dev disconnect ifname eth0
 
 ```
 

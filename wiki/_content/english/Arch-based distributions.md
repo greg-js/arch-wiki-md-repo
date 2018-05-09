@@ -93,7 +93,6 @@ These distributions are no longer developed, but show some of the history surrou
 *   [Arch i3Nemesis](https://sourceforge.net/projects/arch-i3nemesis/)
 *   [Architect](https://sourceforge.net/projects/architect-linux)
 *   [archodi](https://sourceforge.net/projects/archodi/)
-*   [arch rescue kit](https://sourceforge.net/projects/archrescue/)
 *   [arkOS](https://github.com/arkOScloud)
 *   [Arquetype CRT](https://twitter.com/ArquetypeLinux)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)

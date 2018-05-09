@@ -204,7 +204,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://mirrors.geekpie.org/archlinux/](http://mirrors.geekpie.org/archlinux/) - *Geek Pie Association @ ShanghaiTech University*
 *   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University(Legacy)*
-*   [https://mirrors.sjtug.org/archlinux/](https://mirrors.sjtug.org/archlinux/) - *Shanghai Jiaotong University Linux User Group*
+*   [https://mirrors.sjtug.sjtu.edu.cn/archlinux/](https://mirrors.sjtug.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University Linux User Group*
 *   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 only)*
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*

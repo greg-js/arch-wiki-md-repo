@@ -11,6 +11,7 @@ The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) i
 *   [1 Installation](#Installation)
 *   [2 Launching Deepin Desktop Environment](#Launching_Deepin_Desktop_Environment)
     *   [2.1 Via a Display Manager](#Via_a_Display_Manager)
+    *   [2.2 Via xinit](#Via_xinit)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
 *   [4 Bug Reporting](#Bug_Reporting)
@@ -37,6 +38,12 @@ greeter-session=lightdm-deepin-greeter
 ```
 
 Note that a valid home directory must exist for a user other than root for the greeter to work.
+
+### Via xinit
+
+To use Deepin via xinit, you'll need to add the following to your .xinitrc file.
+
+ `~/.xinitrc`  `exec startdde` 
 
 ## Troubleshooting
 

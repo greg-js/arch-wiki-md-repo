@@ -223,7 +223,7 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
 
 *   **PartedMagic** — Live cd/usb with PartImage and other recovery tools.
 
-	[http://partedmagic.com/doku.php?id=start](http://partedmagic.com/doku.php?id=start) ||
+	[https://partedmagic.com](https://partedmagic.com) || non free
 
 *   **[Partimage](https://en.wikipedia.org/wiki/Partimage "wikipedia:Partimage")** — An *ncurses* disk cloning utility for Linux/UNIX environments.
     *   Has a Live CD.
@@ -232,15 +232,15 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
     *   Saving to multiple CDs or DVDs or across a network using Samba/NFS.
     *   Development stopped in favor of FSArchiver.
 
-	[http://www.partimage.org/Main_Page](http://www.partimage.org/Main_Page) || [partimage](https://www.archlinux.org/packages/?name=partimage)
+	[http://www.partimage.org](http://www.partimage.org) || [partimage](https://www.archlinux.org/packages/?name=partimage)
 
-*   **Q7Z** — P7Zip GUI for Linux, which attempts to simplify data compression and backup. It can create the following archive types: 7z, BZip2, Zip, GZip, Tar.
+*   **J7Z** — GUI for Linux in java which attempts to simplify data compression and backup. It can create 7z, BZip2, Zip, GZip, Tar archives.
     *   Updates existing archives quickly.
     *   Backup multiple folders to a storage location.
     *   Create or extract protected archives.
     *   Lessen effort by using archiving profiles and lists.
 
-	[http://k7z.sourceforge.net/](http://k7z.sourceforge.net/) || [q7z](https://aur.archlinux.org/packages/q7z/)
+	[http://j7z.xavion.name/](http://j7z.xavion.name/) || [j7z](https://aur.archlinux.org/packages/j7z/)
 
 *   **[Redo Backup and Recovery](https://en.wikipedia.org/wiki/Redo_Backup_and_Recovery "wikipedia:Redo Backup and Recovery")** — A backup and disaster recovery application that runs from a bootable Linux CD image.
     *   Is capable of bare-metal backup and recovery of disk partitions.
@@ -259,15 +259,13 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
 
 ### dd spin-offs
 
-Other *dd*-like programs feature periodical status output, e.g. a simple progress bar.
-
 	dcfldd 
 
-	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.
+	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is a dd replacement with on-the-fly hashing capability helping to ensure integrity. It accepts most of dd's parameters and includes status output. A stable version of *dcfldd* was [last released in 2006](http://dcfldd.sourceforge.net/).
 
 	ddrescue 
 
-	GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool. It is capable of ignoring read errors, which is a useless feature for disk wiping in almost any case. See the [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
+	GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool capable of ignoring read errors. *ddrescue* is not related to dd in any way except that both can be used for copying data from one device to another. The key difference is that *ddrescue* uses a sophisticated algorithm to copy data from failing drives causing them as little additional damage as possible. See the [ddrescue manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
 
 ## See also
 

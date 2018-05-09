@@ -16,7 +16,7 @@ Related articles
 
 ## Main channels
 
-**Warning:** Channel statistics are logged for [#archlinux-offtopic](https://yeah.nah.nz/aotstats/). Speak to *bq/phillid* if you would like to opt-out permanently.
+**Warning:** Channel statistics are logged for [#archlinux-offtopic](https://alyp.tk/stats/aotstats.html). Speak to *jp/alyptik* if you would like to opt-out permanently.
 
 This section is about [#archlinux](ircs://chat.freenode.net/archlinux), the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and [#archlinux-offtopic](ircs://chat.freenode.net/archlinux-offtopic), the main Arch Linux social channel, both available on the [Freenode](https://freenode.net/) network.
 

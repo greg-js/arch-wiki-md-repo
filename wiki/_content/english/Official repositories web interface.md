@@ -34,7 +34,7 @@ Example: [https://www.archlinux.org/packages/core/x86_64/coreutils/json/](https:
 
 Syntax: `/*repository*/*architecture*/*package*/files/json`
 
-Example: [https://www.archlinux.org/packages/core/i686/coreutils/files/json/](https://www.archlinux.org/packages/core/i686/coreutils/files/json/)
+Example: [https://www.archlinux.org/packages/core/x86_64/coreutils/files/json/](https://www.archlinux.org/packages/core/x86_64/coreutils/files/json/)
 
 ## Package search
 

@@ -378,6 +378,7 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | DeskJet 1000Cse |
 | DeskJet 1000Cxi |
 | LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), or [AirPrint](/index.php/CUPS#CUPS "CUPS"). |
+| LaserJet Pro MFP M126nw | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) |
 | Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/CUPS#Foomatic "CUPS"). |
 | Printer | Driver/filter | Notes |
 
@@ -385,7 +386,7 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 
 **Note:** As of hplip v3.17.11 hpijs is not longer available. If you have printers using hpijs they will fail to print. You must modify them and select the new hpcups driver instead.
 
-[hplip](https://www.archlinux.org/packages/?name=hplip) provides drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet, and some LaserJet printers, and also provides an easy to use setup tool.
+[hplip](https://www.archlinux.org/packages/?name=hplip) provides drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet, and some LaserJet printers, and also provides an easy to use setup tool. See [https://developers.hp.com/hp-linux-imaging-and-printing/supported_devices/index](https://developers.hp.com/hp-linux-imaging-and-printing/supported_devices/index) for the list of supported printers.
 
 To run the setup tool with the GUI qt frontend:
 
@@ -424,7 +425,7 @@ To generate a URI for a given ip address:
 
 PPD files are in `/usr/share/ppd/HP/`.
 
-If your printer is [listed as requiring a binary plugin](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR").
+If your printer is [listed as requiring a binary plugin](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR"). If the binary plugin [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) is a requirement you will need to [start](/index.php/Start "Start") the `org.cups.cupsd.service` before the PPD is recognized by [hplip](https://www.archlinux.org/packages/?name=hplip).
 
 **Note:**
 

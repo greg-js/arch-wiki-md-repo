@@ -34,11 +34,16 @@ Related articles
 
 ## Configuration
 
-MPD is able to run in [#Per-user configuration](#Per-user_configuration) mode or [#System-wide configuration](#System-wide_configuration) mode (settings apply to all users). Also it is possible to run multiple instances of MPD in a [#Multi-MPD setup](#Multi-MPD_setup). The way of setting up MPD depends on the way it is intended to be used: a local per-user configuration may prove more useful on a desktop system, for example.
+MPD is able to run in [#Per-user configuration](#Per-user_configuration) mode or [#System-wide configuration](#System-wide_configuration) mode (settings apply to all users). Also it is possible to run multiple instances of MPD in a [#Multi-MPD setup](#Multi-MPD_setup). The way of setting up MPD depends on the way it is intended to be used: a local per-user configuration is easier to setup and may prove more adapted on a desktop system.
 
-In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA"), optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio"), needs to be setup and working.
+In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA"), optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio"), needs to be setup and working. The [#Audio configuration](#Audio_configuration) section thereafter describes the parameters needed for *ALSA* or *PulseAudio*.
 
-MPD is configured in the file [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) which can be located in various locations depending on the setup chosen (see below). These are the commonly used configuration options:
+MPD is configured in the file [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) which can be located in various paths depending on the setup chosen (system-wide or per-user). In short the two common locations used are:
+
+*   `~/.config/mpd/mpd.conf` in per-user configuration mode, this is the first location searched,
+*   `/etc/mpd.conf` in system-wide configuration.
+
+For indication, some of the most commonly used configuration options are listed thereafter:
 
 *   `pid_file` - The file where MPD stores its process ID
 *   `db_file` - The music database
@@ -106,7 +111,7 @@ $ mpd *[config_file]*
 
 ```
 
-To build the database scanning into the `music_directory` defined above, a MPD client must be used, for example with [mpc](https://www.archlinux.org/packages/?name=mpc) the command is:
+To build the database, scanning into the `music_directory` defined above, a MPD client must be used, for example with [mpc](https://www.archlinux.org/packages/?name=mpc) the command is:
 
 ```
 $ mpc update

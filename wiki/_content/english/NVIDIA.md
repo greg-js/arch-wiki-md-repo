@@ -59,12 +59,12 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 *   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
 *   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 
-*   For GeForce 400/500 series cards [NVCx and NVDx] from around 2010-2011, [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
+*   For GeForce 400/500 series cards [NVCx and NVDx] from around 2010-2011, [install](/index.php/Install "Install") the [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) or [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts) package.
 *   For GeForce 8/9, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package.
 
 *   For even older cards (released in 2006 or earlier), have a look at [#Unsupported drivers](#Unsupported_drivers).
 
-4\. For 32-bit application support, also install the equivalent *lib32* package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)).
+4\. For 32-bit application support, also install the equivalent *lib32* package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)).
 
 5\. Reboot. The [nvidia](https://www.archlinux.org/packages/?name=nvidia) package contains a file which blacklists the *nouveau* module, so rebooting is necessary.
 
@@ -84,7 +84,7 @@ However, Nvidia's legacy drivers are still available and might provide better 3D
 
 If you are using a custom kernel, compilation of the Nvidia kernel modules can be automated with [DKMS](/index.php/DKMS "DKMS").
 
-Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [pacman hook](/index.php/Pacman_hook "Pacman hook").
+Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-390xx-dkms](https://www.archlinux.org/packages/?name=nvidia-390xx-dkms) or [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [pacman hook](/index.php/Pacman_hook "Pacman hook").
 
 ### DRM kernel mode setting
 

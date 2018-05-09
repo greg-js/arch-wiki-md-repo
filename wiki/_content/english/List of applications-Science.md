@@ -24,17 +24,19 @@
         *   [1.3.4 Biochemistry](#Biochemistry)
         *   [1.3.5 Image manipulation](#Image_manipulation)
     *   [1.4 Astronomy](#Astronomy)
-    *   [1.5 Physics](#Physics)
-        *   [1.5.1 Electronics](#Electronics)
-            *   [1.5.1.1 Digital logic](#Digital_logic)
-            *   [1.5.1.2 HDL](#HDL)
-            *   [1.5.1.3 MCU IDE](#MCU_IDE)
-            *   [1.5.1.4 Schematic capture editor](#Schematic_capture_editor)
-        *   [1.5.2 Physics simulation](#Physics_simulation)
-        *   [1.5.3 Unit conversion](#Unit_conversion)
-    *   [1.6 Geography](#Geography)
-    *   [1.7 Communication systems](#Communication_systems)
-    *   [1.8 Simulation modeling](#Simulation_modeling)
+    *   [1.5 Engineering](#Engineering)
+        *   [1.5.1 Computer-aided design](#Computer-aided_design)
+    *   [1.6 Physics](#Physics)
+        *   [1.6.1 Electronics](#Electronics)
+            *   [1.6.1.1 Digital logic](#Digital_logic)
+            *   [1.6.1.2 HDL](#HDL)
+            *   [1.6.1.3 MCU IDE](#MCU_IDE)
+            *   [1.6.1.4 Schematic capture editor](#Schematic_capture_editor)
+        *   [1.6.2 Physics simulation](#Physics_simulation)
+        *   [1.6.3 Unit conversion](#Unit_conversion)
+    *   [1.7 Geography](#Geography)
+    *   [1.8 Communication systems](#Communication_systems)
+    *   [1.9 Simulation modeling](#Simulation_modeling)
 
 ## Science
 
@@ -383,6 +385,40 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 *   **[XEphem](https://en.wikipedia.org/wiki/XEphem "wikipedia:XEphem")** — Motif-based ephemeris and planetarium program.
 
 	[http://www.clearskyinstitute.com/xephem/xephem.html](http://www.clearskyinstitute.com/xephem/xephem.html) || [xephem](https://aur.archlinux.org/packages/xephem/)
+
+### Engineering
+
+#### Computer-aided design
+
+See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.org/wiki/List_of_computer-aided_design_editors "wikipedia:List of computer-aided design editors").
+
+*   **[BRL-CAD](https://en.wikipedia.org/wiki/BRL-CAD "wikipedia:BRL-CAD")** — Constructive solid geometry (CSG) solid modeling computer-aided design (CAD) system that includes an interactive geometry editor, ray tracing support for graphics rendering and geometric analysis, computer network distributed framebuffer support, scripting, image-processing and signal-processing tools.
+
+	[http://brlcad.org/](http://brlcad.org/) || [brlcad](https://aur.archlinux.org/packages/brlcad/)
+
+*   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
+
+	[http://www.3ds.com/products-services/draftsight/overview/](http://www.3ds.com/products-services/draftsight/overview/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
+
+*   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE program, based on OpenCascade, Qt and Python with features such as macro recording, workbenches and the ability to run as server.
+
+	[https://github.com/FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) || [freecad](https://aur.archlinux.org/packages/freecad/)
+
+*   **LeoCAD** — CAD program for creating virtual LEGO models. It has an easy to use interface and currently includes over 6000 different pieces created by the LDraw community.
+
+	[http://leocad.org](http://leocad.org) || [leocad](https://aur.archlinux.org/packages/leocad/)
+
+*   **[LibreCAD](https://en.wikipedia.org/wiki/LibreCAD "wikipedia:LibreCAD")** — Powerful 2D CAD application based on Qt. It has been forked from QCad Community Edition.
+
+	[http://www.librecad.org/](http://www.librecad.org/) || [librecad](https://www.archlinux.org/packages/?name=librecad)
+
+*   **[OpenSCAD](https://en.wikipedia.org/wiki/OpenSCAD "wikipedia:OpenSCAD")** — Open source 2D/3D CAD using programmers approach.
+
+	[http://www.openscad.org](http://www.openscad.org) || [openscad](https://www.archlinux.org/packages/?name=openscad) [openscad-git](https://aur.archlinux.org/packages/openscad-git/)
+
+*   **[QCAD](https://en.wikipedia.org/wiki/QCad "wikipedia:QCad")** — Powerful 2D CAD application that began in 1999\. QCaD includes DFX standard file format and supports HPGL format.
+
+	[http://www.qcad.org/](http://www.qcad.org/) || [qcad](https://www.archlinux.org/packages/?name=qcad)
 
 ### Physics
 

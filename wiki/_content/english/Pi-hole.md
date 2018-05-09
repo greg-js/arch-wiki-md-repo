@@ -170,6 +170,7 @@ See [the GitHub Readme](https://github.com/pi-hole/FTL#ftls-config-file) for how
 *   If you setup a DHCP-based method and ad blocking does not work on a device, it might still have an outdated DHCP lease. If you do not know how to renew your DHCP lease, try restarting the device.
 *   A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of `/etc/resolv.conf` on a Linux client. One should see the IP address of the Pi-hole box, not the IP address of the router.
 *   If you are having problems with method 2, try disabling the `dns-rebind` feature on the router (if present).
+*   If `pihole -g` or updating lists from the web UI fail with `DNS Resolution is Currently Unavailable`, adding `127.0.0.1 pi.hole` to `/etc/hosts` [may fix it](https://github.com/pi-hole/pi-hole/issues/1800)
 
 ### Using Pi-hole together with OpenVPN
 

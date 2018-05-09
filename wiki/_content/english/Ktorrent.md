@@ -19,7 +19,7 @@ Here is the script that I use. I have found it on internet on an OpenSuse forum 
 #                          to suspend/resume ktorrent network activity
 #
 # gary example
-#   qdbus org.ktorrent.ktorrent /core startAll
+#   qdbus org.kde.ktorrent /core startAll
 
 case $1 in
         help)
@@ -63,23 +63,23 @@ if [ ! $pid ]; then
 fi
 eval "export $(perl -pne 's/\0/
 /g' /proc/$(pidof ktorrent)/environ | fgrep -a DBUS_SESSION_BUS_ADDRESS)"
-loc="org.ktorrent.ktorrent"
+loc="org.kde.ktorrent"
 cmd="qdbus $loc"
 case "$1" in
  stu)
   if [ "$2" ]; then
-   qdbus org.ktorrent.ktorrent /settings setMaxUploadRate $2
-   qdbus org.ktorrent.ktorrent /settings apply
+   qdbus org.kde.ktorrent /settings setMaxUploadRate $2
+   qdbus org.kde.ktorrent /settings apply
   else echo "upload rate missing!" ;  fi ;;
  std)
   if [ "$2" ]; then
-   qdbus org.ktorrent.ktorrent /settings setMaxDownloadRate $2
-   qdbus org.ktorrent.ktorrent /settings apply
+   qdbus org.kde.ktorrent /settings setMaxDownloadRate $2
+   qdbus org.kde.ktorrent /settings apply
   else echo "download rate missing!" ;  fi ;;
  suspend)
-  qdbus org.ktorrent.ktorrent /core org.ktorrent.core.setSuspended true ;;
+  qdbus org.kde.ktorrent /core org.ktorrent.core.setSuspended true ;;
  resume)
-  qdbus org.ktorrent.ktorrent /core org.ktorrent.core.setSuspended false ;;
+  qdbus org.kde.ktorrent /core org.ktorrent.core.setSuspended false ;;
     load)
         res=$($cmd /core loadSilently "$2" 1) ;;
     list|ls)

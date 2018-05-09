@@ -322,9 +322,9 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.users.qwest.net/~hmahon/](http://www.users.qwest.net/~hmahon/) || [ee-editor](https://aur.archlinux.org/packages/ee-editor/)
 
-*   **dex** — Small and easy to use text editor with support for ctags and parsing compiler errors.
+*   **dte** — Small, easy to use editor with multi-tabbed interface, syntax highlighting, ctags navigation, etc.
 
-	[https://github.com/tihirvon/dex](https://github.com/tihirvon/dex) || [dex-editor-git](https://aur.archlinux.org/packages/dex-editor-git/)
+	[https://github.com/craigbarnes/dte](https://github.com/craigbarnes/dte) || [dte](https://aur.archlinux.org/packages/dte/)
 
 *   **[Emacs-nox](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor, without X11 support.
 
@@ -540,7 +540,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
+	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)[code](https://aur.archlinux.org/packages/code/)
 
 *   **XEdit** — Simple text editor for the X Window System.
 

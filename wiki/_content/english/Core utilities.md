@@ -112,9 +112,17 @@ See [File permissions and attributes#Changing ownership](/index.php/File_permiss
 
 Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with lower-level I/O flow control features.
 
-**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
+Some notable applications of *dd* are:
+
+*   [Disk cloning#Using dd](/index.php/Disk_cloning#Using_dd "Disk cloning"),
+
+*   Binary file patching: let say one wants to replace offset `0x123AB` of a file with the `FF C0 14` hexadecimal sequence, this can be done with the command line:
+
+	 `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=/path/to/file` 
 
 For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
+
+**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
 
 ## find
 

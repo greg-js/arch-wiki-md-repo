@@ -100,6 +100,12 @@ Firstly, a kernel is required that has support for **User Namespaces** (a kernel
 
 *   Start your unprivileged containers only as *root*.
 *   Enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5).
+*   Enable the cgfs pam module by modifying `/etc/pamd.d/system-login` to **additionally** contain the following line:
+
+```
+session optional pam_cgfs.so -c freezer,memory,name=systemd,unified
+
+```
 
 Secondly, modify `/etc/lxc/default.conf` to contain the following lines:
 

@@ -313,7 +313,7 @@ As of [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) v3.17.11 
 
 You can check if this is your case looking at cups error_log:
 
- ` $ cat /var/log/cups/error_log | grep hpijs ` 
+ ` $ grep hpijs /var/log/cups/error_log ` 
 ```
  ...
  D [09/Jan/2018:14:32:58 +0000] [Job 97] **sh: hpijs: command not found**

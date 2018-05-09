@@ -44,6 +44,7 @@ Related articles
     *   [4.14 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
     *   [4.15 Vulkan](#Vulkan)
     *   [4.16 Flash](#Flash)
+    *   [4.17 Remove Wine file bindings](#Remove_Wine_file_bindings)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -541,6 +542,16 @@ To run flash websites(i.e. HBOGO) in Firefox follow these steps:
 3.  Install Flash for firefox ([https://get.adobe.com/flashplayer/otherversions/](https://get.adobe.com/flashplayer/otherversions/))
 4.  Reset Windows Version to windows XP with `winecfg`
 5.  Run Firefox with wine(i.e. `wine $WINEPREFIX/drive_c/Program\ Files/Mozilla\ Firefox/firefox.exe`) and goto the flash website.
+
+### Remove Wine file bindings
+
+For security reasons it may be useful to remove the preinstalled Wine bindings so Windows applications can't be launched directly from a file manager or from the browser (Firefox offers to open EXE files directly with Wine!). If you want to do this, you may add the following to the `[options]` section in `/etc/pacman.conf`
+
+```
+NoExtract = usr/lib/binfmt.d/wine.conf
+NoExtract = usr/share/applications/wine.desktop
+
+```
 
 ## Third-party applications
 

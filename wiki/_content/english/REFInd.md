@@ -52,7 +52,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) package.
 
-rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, and NTFS. Additionally rEFInd can use drivers from the UEFI firmware i.e. FAT (or HFS+ on Macs or ISO-9660 on some systems).
+rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, and NTFS. Additionally rEFInd can use drivers from the UEFI firmware i.e. FAT (and HFS+ on Macs or ISO-9660 on some systems).
 
 **Note:** Your kernel and initramfs must reside on a file system that rEFInd can read.
 
@@ -78,7 +78,7 @@ Alternatively you can install rEFInd to the default/fallback boot path `*esp*/EF
 
 ```
 
-Where `*/dev/sdXY*` is the partition of your ESP.
+Where `*/dev/sdXY*` is of your EFI System Partition.
 
 **Note:** By default `refind-install` installs only the driver for the file system on which kernel resides. Additional file systems need to be installed manually or you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.:
 ```
@@ -90,7 +90,7 @@ After installing rEFInd's files to the ESP, verify that rEFInd has created `refi
 
 By default, rEFInd will scan all of your drives (that it has drivers for) and add a boot entry for each EFI bootloader it finds, which should include your kernel (since Arch enables [EFISTUB](/index.php/EFISTUB "EFISTUB") by default). So you may have a bootable system at this point.
 
-**Tip:** It is always a good idea to edit the default config `*esp*/EFI/refind/refind.conf` to ensure that the default options work for you.
+**Tip:** It is always a good idea to edit the default configuration file `*esp*/EFI/refind/refind.conf` to ensure that the default options work for you.
 
 **Warning:** When `refind-install` is run in chroot (e.g. in live system when installing Arch Linux) `/boot/refind_linux.conf` is populated with kernel options from the live system not the one on which it is installed. You will need to edit `/boot/refind_linux.conf` and adjust the kernel options manually. See [#refind_linux.conf](#refind_linux.conf) for an example.
 
@@ -124,7 +124,7 @@ See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-instal
 To use only hashes with *shim*, execute `refind-install` with the option `--shim */path/to/shim*`
 
 ```
-# refind-install --shim /usr/share/shim-signed/shim.efi
+# refind-install --shim /usr/share/shim-signed/shimx64.efi
 
 ```
 
@@ -132,14 +132,14 @@ Next time you boot with Secure Boot enabled, MokManager will launch and you will
 
 ###### Using Machine Owner Key
 
-To sign rEFInd with a Machine Owner Key, install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
+To sign rEFInd with a Machine Owner Key (MOK), install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
-**Tip:** If you already have [created a MOK](/index.php/Secure_Boot#shim_with_key "Secure Boot"), place the files in the directory `/etc/refind.d/keys` with the names `refind_local.key`, `refind_local.crt` and `refind_local.cer`.
+**Tip:** If you already have [created a MOK](/index.php/Secure_Boot#shim_with_key "Secure Boot"), place the files in the directory `/etc/refind.d/keys` with the names `refind_local.key` (PEM format private key), `refind_local.crt` (PEM format certificate) and `refind_local.cer` (DER format certificate).
 
 Execute `refind-install` with the options `--shim */path/to/shim*` and `--localkeys`:
 
 ```
-# refind-install --shim /usr/share/shim-signed/shim.efi --localkeys
+# refind-install --shim /usr/share/shim-signed/shimx64.efi --localkeys
 
 ```
 
@@ -173,7 +173,7 @@ See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-instal
 
 Follow [Secure Boot#Using your own keys](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") to create keys.
 
-Create directory `/etc/refind.d/keys` and place Signature Database (**db**) key and certificates in it. Name the files: `refind_local.key`, `refind_local.crt` and `refind_local.cer`.
+Create directory `/etc/refind.d/keys` and place Signature Database (**db**) key and certificates in it. Name the files: `refind_local.key` (PEM format private key), `refind_local.crt` (PEM format certificate) and `refind_local.cer` (DER format certificate).
 
 When running install script add option `--localkeys`, e.g.:
 
@@ -182,7 +182,7 @@ When running install script add option `--localkeys`, e.g.:
 
 ```
 
-rEFInd EFI binary will be signed with supplied key and certificate.
+rEFInd EFI binaries will be signed with the supplied key and certificate.
 
 ### Manual installation
 
@@ -198,7 +198,7 @@ First, copy the executable to the ESP:
 
 ```
 
-If you want to install rEFInd to the default/fallback boot path replace `*esp*/EFI/refind/` with `*esp*/EFI/BOOT/` in the following instructions and copy rEFInd executable to `*esp*/EFI/BOOT/bootx64.efi`:
+If you want to install rEFInd to the default/fallback boot path replace `*esp*/EFI/refind/` with `*esp*/EFI/BOOT/` in the following instructions and copy rEFInd EFI executable to `*esp*/EFI/BOOT/bootx64.efi`:
 
 ```
 # mkdir -p *esp*/EFI/BOOT
@@ -206,7 +206,7 @@ If you want to install rEFInd to the default/fallback boot path replace `*esp*/E
 
 ```
 
-Then use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
+Then use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your EFI System Partition. If you are installing rEFInd to the default/fallback boot path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
 
 ```
 # efibootmgr --create --disk */dev/sdX* --part *Y* --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager" --verbose
@@ -223,16 +223,16 @@ rEFInd automatically loads all drivers from the subdirectories `drivers` and `dr
 
 ```
 
-Now rEFInd should have a boot entry for your kernel, but it will not pass the correct kernel parameters. Set up [#Passing kernel parameters](#Passing_kernel_parameters). You should now be able to boot your kernel using rEFInd. If you are still unable to boot or if you want to tweak rEFInd's settings, many options can be changed with a config file:
+Now rEFInd should have a boot entry for your kernel, but it will not pass the correct kernel parameters. Set up [#Passing kernel parameters](#Passing_kernel_parameters). You should now be able to boot your kernel using rEFInd. If you are still unable to boot or if you want to tweak rEFInd's settings, many options can be changed with a configuration file:
 
 ```
 # cp /usr/share/refind/refind.conf-sample *esp*/EFI/refind/refind.conf
 
 ```
 
-The sample config is well commented and self-explanatory.
+The sample configuration file is well commented and self-explanatory.
 
-Unless you have set `textonly` in the config file, you should copy rEFInd's icons to get rid of the ugly placeholders:
+Unless you have set `textonly` in the configuration file, you should copy rEFInd's icons to get rid of the ugly placeholders:
 
 ```
 # cp -r /usr/share/refind/icons *esp*/EFI/refind/
@@ -250,7 +250,7 @@ You can try out different fonts by copying them and changing the `font` setting 
 
 ### Upgrading
 
-Pacman updates the rEFInd files in `/usr/share/refind/` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new config file will be copied as `refind.conf-sample` so that you can integrate changes into your config file using a diff tool. If your rEFInd required [#Manual installation](#Manual_installation), you will need to figure out which files to copy yourself.
+Pacman updates the rEFInd files in `/usr/share/refind/` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new configuration file will be copied as `refind.conf-sample` so that you can integrate changes into your existing configuration file using a diff tool. If your rEFInd required [#Manual installation](#Manual_installation), you will need to figure out which files to copy yourself.
 
 #### Pacman hook
 
@@ -275,7 +275,7 @@ Where the `Exec=` may need to be changed to the correct update command for your 
 
 ## Configuration
 
-The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default config contains extensive comments explaining all its options, see [Configuring the Boot Manager](http://www.rodsbooks.com/refind/configfile.html) for more detailed explanations.
+The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default configuration file contains extensive comments explaining all its options, see [Configuring the Boot Manager](http://www.rodsbooks.com/refind/configfile.html) for more detailed explanations.
 
 ### Passing kernel parameters
 

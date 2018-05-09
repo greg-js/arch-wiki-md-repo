@@ -83,6 +83,10 @@ $ git commit -a
 
 	[https://github.com/lra/mackup](https://github.com/lra/mackup) || [mackup](https://aur.archlinux.org/packages/mackup/)
 
+*   **mystow** — a Python script to keep your application settings in sync. Allows system profiling.
+
+	[https://github.com/nivaca/mystow](https://github.com/nivaca/mystow) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **Pearl** — Package manager for dotfiles, plugins, programs and any form of code accessible via git. Allow to easily share and sync packages across systems and have them ready to work out of the box.
 
 	[https://github.com/pearl-core/pearl](https://github.com/pearl-core/pearl) || [pearl-git](https://aur.archlinux.org/packages/pearl-git/)

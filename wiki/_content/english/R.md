@@ -20,6 +20,7 @@ Related articles
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 .Renviron](#.Renviron)
     *   [3.2 Rprofile](#Rprofile)
+    *   [3.3 Makevars](#Makevars)
 *   [4 Adding a graphical frontend to R](#Adding_a_graphical_frontend_to_R)
     *   [4.1 R Commander frontend](#R_Commander_frontend)
     *   [4.2 RKWard frontend](#RKWard_frontend)
@@ -247,6 +248,16 @@ error <- quote(dump.frames("${R_HOME_USER}/testdump", TRUE))                    
 ```
 
 You can add more [global options](http://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html) to customize your `R` environment. See this [post](http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile) for more examples of user configurations.
+
+### Makevars
+
+The Makevars file can be used to set the default make options when installing packages. An example optimized Makevars file is as follow:
+
+ `~/.R/Makevars` 
+```
+CFLAGS=-O3 -Wall -pedantic -march=native -mtune=native -pipe
+CXXFLAGS=-O3 -Wall -pedantic -march=native -mtune=native -pipe
+```
 
 ## Adding a graphical frontend to R
 

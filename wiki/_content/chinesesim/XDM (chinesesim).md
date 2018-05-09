@@ -1,8 +1,8 @@
 相关文章
 
-*   [Display Manager](/index.php/Display_Manager "Display Manager")
+*   [Display Manager (简体中文)](/index.php/Display_Manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display Manager (简体中文)")
 
-来自 [XDM 手册页](http://www.xfree86.org/current/xdm.1.html):
+摘自 [XDM 手册页](http://www.xfree86.org/current/xdm.1.html):
 
 	*Xdm 能为本地和远程服务器提供一系列图形显示功能。xdm的设计满足图形显示的基本要求并遵循开放组织标准(XDMCPX Display Manager Control Protocol)，即X显示管理协议。Xdm提供的功能与init, getty等以文本登录为主的程序相似:提供登录会话，获取用户名和密码，并将授权给予登录用户并提供工作会话。*
 
@@ -11,60 +11,84 @@ XDM 提供了一个简单而又直观的图形登录界面。
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 设置墙纸](#.E8.AE.BE.E7.BD.AE.E5.A2.99.E7.BA.B8)
-*   [3 Multiple X sessions & Login in the window](#Multiple_X_sessions_.26_Login_in_the_window)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 XDM loops back to itself after login](#XDM_loops_back_to_itself_after_login)
-    *   [4.2 XDM does not update login records](#XDM_does_not_update_login_records)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 定义会话](#.E5.AE.9A.E4.B9.89.E4.BC.9A.E8.AF.9D)
+    *   [2.2 主题](#.E4.B8.BB.E9.A2.98)
+        *   [2.2.1 壁纸](#.E5.A3.81.E7.BA.B8)
+        *   [2.2.2 字体](#.E5.AD.97.E4.BD.93)
+        *   [2.2.3 登录对话框位置](#.E7.99.BB.E5.BD.95.E5.AF.B9.E8.AF.9D.E6.A1.86.E4.BD.8D.E7.BD.AE)
+        *   [2.2.4 删除徽标](#.E5.88.A0.E9.99.A4.E5.BE.BD.E6.A0.87)
+    *   [2.3 多 X 会话和登录](#.E5.A4.9A_X_.E4.BC.9A.E8.AF.9D.E5.92.8C.E7.99.BB.E5.BD.95)
+    *   [2.4 无密码登录](#.E6.97.A0.E5.AF.86.E7.A0.81.E7.99.BB.E5.BD.95)
 
 ## 安装
 
-安装 XDM:
+安装软件包 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) 然后 [启用](/index.php/Enable "Enable") `xdm.service` 服务。
 
- `# pacman -S xorg-xdm xorg-xconsole` 
+要使用 Arch Linux XDM 主题，可以安装软件包 [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux)，然后**不启用** `xdm.service`，而是启用 `xdm-archlinux.service`。
 
-更改 .xsession 为可执行文件:
+## 配置
 
- `$ chmod 744 .xsession` 
+### 定义会话
 
-除此之外, 你可以为XDM安装Arch Linux 主题(可选):
+和 [GDM]] 或 [LightDM](/index.php/LightDM "LightDM") 等大部分 [显示管理器](/index.php/Display_manager "Display manager") 不同，XDM 不会从 `/usr/share/xsessions` 目录中的 .desktop 文件读取会话。XDM 没有会话菜单。XDM 会执行账号主目录下的 `.xsession` 文件。
 
- `# pacman -S xdm-archlinux` 
+例如要启动 xface，`~/.xsession` 应该是：
 
-参看 [Display manager](/index.php/Display_manager "Display manager") 以获取详细信息。
+```
+startxfce4
 
-## 设置墙纸
+```
 
-这里有些小贴士能让 [XDM](/index.php/XDM "XDM") 变得美观些:
+请确保 `.xsession` 文件可执行：
 
-*   安装 Quick Image Viewer:
+```
+$ chmod 700 ~/.xsession
 
- `# pacman -S qiv` 
+```
 
+### 主题
+
+详情请参考 xdm 手册，默认的配置文件位于 `/etc/X11/xdm/Xresources`,[xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) 主题的配置文件位于 `/etc/X11/xdm/archlinux/Xresources`。
+
+#### 壁纸
+
+可以使用 [qiv](https://www.archlinux.org/packages/?name=qiv) 设置 XDM 的壁纸:
+
+*   安装 [qiv](https://www.archlinux.org/packages/?name=qiv)
 *   创建一个文件夹用于存放图片。 (例如 `/root/backgrounds` 或者 `/usr/local/share/backgrounds`)
+*   把图片放进文件夹
 
-*   把图片放进文件夹。如果你没有适合的墙纸可以看看[www.digitablasphemy.com](http://www.digitalblasphemy.com/)。
-
-*   编辑 `/etc/X11/xdm/Xsetup_0`. 改变 `xconsole` 命令为:
+*   编辑 `/etc/X11/xdm/Xsetup_0`. 将 `xconsole` 修改为：
 
 ```
  /usr/bin/qiv -zr /root/backgrounds/*
 
 ```
 
-*   编辑 `/etc/X11/xdm/Xresources`. 添加/替换 下面字段:
+#### 字体
+
+编辑 `/etc/X11/xdm/Xresources`. 添加/替换 下面字段:
 
 ```
  xlogin**greetFont:  -adobe-helvetica-bold-o-normal--20-**-**-**-**-**-iso8859-1
  xlogin**font:       -adobe-helvetica-medium-r-normal--14-**-**-**-**-**-iso8859-1
  xlogin**promptFont: -adobe-helvetica-bold-r-normal--14-**-**-**-**-**-iso8859-1
  xlogin**failFont:   -adobe-helvetica-bold-r-normal--14-**-**-**-**-**-iso8859-1
+
+```
+
+#### 登录对话框位置
+
+```
  xlogin*frameWidth: 1
  xlogin*innerFramesWidth: 1
  xlogin*logoPadding: 0
  xlogin*geometry:    300x175-0-0
 
 ```
+
+#### 删除徽标
 
 注释掉以下字段:
 
@@ -74,46 +98,27 @@ XDM 提供了一个简单而又直观的图形登录界面。
 
 ```
 
-如想了解各字段的确切意义,可查阅xdm的手册页。
+### 多 X 会话和登录
 
-*   更新 `/etc/pacman.conf` 以确保所作的更改不会丢失:
-
-```
- ~NoUpgrade   = etc/X11/xdm/Xsetup_0 etc/X11/xdm/Xresources
+启用 [XDMCP](/index.php/XDMCP "XDMCP") 后，可以在同一个机器上运行多个 X 会话：
 
 ```
-
-以上的处理能让登录界面随机显示文件夹里地墙纸，并且登录会话在屏幕的右下方显示。
-
-## Multiple X sessions & Login in the window
-
-With the [XDMCP](/index.php/XDMCP "XDMCP") enable, you can easily run multiple X sessions simultaneously on the same machine.
-
- `# X -query ip_xdmcp_server :2 ` 
-
-This will launch the second session, in window you need [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr)
-
- `# Xephyr -query this_machine_ip :2 ` 
-
-## Troubleshooting
-
-### XDM loops back to itself after login
-
-The current version of the [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) package, available in the [Official repositories](/index.php/Official_repositories "Official repositories") is patched to register sessions with [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") by default.
-
-When using pure systemd with logind, instead of consolekit which is now deprecated, systemd will start dbus automatically. To use xdm use `# systemctl enable xdm.service` or `# systemctl enable xdm-archlinux.service` 
-
-Also, make sure that you are actually starting your window manager, for example with the command `xmonad` in `~/.xsession`, and that `~/.xsession` has the correct permissions of `774`.
-
-### XDM does not update login records
-
-The vanilla config of XDM calls `/etc/X11/xdm/GiveConsolve` for the startup of display :0, whereas otherwise it calls `/etc/X11/xdm/Xstartup`. Since only the latter contains a call to `/usr/bin/sessreg`, the login record `/var/run/utmp` is not updated for a login on display :0\. As a consequence, the output of `who` does not necessarily list the user after login through XDM. This was already discussed in the bug report [FS#26395](https://bugs.archlinux.org/task/26395).
-
-As a simple fix, append the following line to `/etc/X11/xdm/GiveConsole`:
-
-```
-exec /usr/bin/sessreg -a -w /var/log/wtmp -u /var/run/utmp -x /etc/X11/xdm/Xservers -l $DISPLAY -h "" $USER
+# X -query ip_xdmcp_server :2
 
 ```
 
-This change also enables the `getuser` function presented in [Acpid](/index.php/Acpid#Getting_user_name_of_the_current_display "Acpid") to work.
+这将启动第二个会话，在窗口中需要 [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr)
+
+```
+# Xephyr -query this_machine_ip :2
+
+```
+
+### 无密码登录
+
+要启用 XDM 无密码登录，将下面内容加入 `/etc/X11/xdm/Xresources`:
+
+```
+xlogin*allowNullPasswd: true
+
+```

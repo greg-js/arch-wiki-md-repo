@@ -173,6 +173,8 @@ The first step is to install the tools that you need. This provides the configur
 
 ```
 
+**Warning:** To users of server-side port security: Due to a problem in libtirpc 1.0.3, ypbind-mt won't be able to retrieve port-secured content anymore. Downgrading to libtirpc-1.0.2-3 fixes the issue for now. Watch [https://github.com/thkukuk/ypbind-mt/issues/1](https://github.com/thkukuk/ypbind-mt/issues/1) and [https://bugs.archlinux.org/index.php?do=details&task_id=58502](https://bugs.archlinux.org/index.php?do=details&task_id=58502) until it got fixed.
+
 ### Configuration
 
 #### Set your domain name

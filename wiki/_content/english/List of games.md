@@ -1062,7 +1062,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Lincity-ng** — City simulation game in which you are required to build and maintain a city. You can win the game either by building a sustainable economy or by evacuating all citizens with spaceships.
 
-	[https://fedorahosted.org/LinCity-NG/](https://fedorahosted.org/LinCity-NG/) || [lincity-ng](https://www.archlinux.org/packages/?name=lincity-ng)
+	[https://github.com/lincity-ng/lincity-ng](https://github.com/lincity-ng/lincity-ng) || [lincity-ng](https://www.archlinux.org/packages/?name=lincity-ng)
 
 *   **Konquest** — A turn-based game in which the player wage wars by managing a fleet of spaceships and conquering other planets. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 

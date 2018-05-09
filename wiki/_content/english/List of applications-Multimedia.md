@@ -12,13 +12,16 @@
         *   [1.2.1 Image viewers](#Image_viewers)
             *   [1.2.1.1 Console](#Console)
             *   [1.2.1.2 Graphical](#Graphical)
-        *   [1.2.2 Graphics and image manipulation](#Graphics_and_image_manipulation)
-            *   [1.2.2.1 Raster editors](#Raster_editors)
-            *   [1.2.2.2 Vector graphics - illustration](#Vector_graphics_-_illustration)
-            *   [1.2.2.3 Vector graphics - CAD](#Vector_graphics_-_CAD)
-            *   [1.2.2.4 3D modeling/rendering](#3D_modeling.2Frendering)
-        *   [1.2.3 Digital camera managers](#Digital_camera_managers)
-        *   [1.2.4 Screen capture](#Screen_capture)
+        *   [1.2.2 Raster graphics editors](#Raster_graphics_editors)
+            *   [1.2.2.1 Console](#Console_2)
+            *   [1.2.2.2 Graphical](#Graphical_2)
+        *   [1.2.3 Vector graphics editors](#Vector_graphics_editors)
+            *   [1.2.3.1 Console](#Console_3)
+            *   [1.2.3.2 Graphical](#Graphical_3)
+        *   [1.2.4 3D computer graphics](#3D_computer_graphics)
+        *   [1.2.5 Color pickers](#Color_pickers)
+        *   [1.2.6 Digital camera managers](#Digital_camera_managers)
+        *   [1.2.7 Screen capture](#Screen_capture)
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
@@ -32,13 +35,13 @@
         *   [1.3.7 Sound editing](#Sound_editing)
     *   [1.4 Video](#Video)
         *   [1.4.1 Video players](#Video_players)
-            *   [1.4.1.1 Console](#Console_2)
-            *   [1.4.1.2 Graphical](#Graphical_2)
+            *   [1.4.1.1 Console](#Console_4)
+            *   [1.4.1.2 Graphical](#Graphical_4)
         *   [1.4.2 Subtitles](#Subtitles)
         *   [1.4.3 DVD ripping](#DVD_ripping)
         *   [1.4.4 Video editors](#Video_editors)
-            *   [1.4.4.1 Console](#Console_3)
-            *   [1.4.4.2 Graphical](#Graphical_3)
+            *   [1.4.4.1 Console](#Console_5)
+            *   [1.4.4.2 Graphical](#Graphical_5)
         *   [1.4.5 Lyrics fetchers](#Lyrics_fetchers)
         *   [1.4.6 Screencast](#Screencast)
     *   [1.5 Mobile phone managers](#Mobile_phone_managers)
@@ -83,7 +86,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Ephoto** — A light image viewer based on EFL.
 
-	[https://www.enlightenment.org/about-ephoto](https://www.enlightenment.org/about-ephoto) || [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/)
+	[https://www.enlightenment.org/about-ephoto](https://www.enlightenment.org/about-ephoto) || [ephoto](https://aur.archlinux.org/packages/ephoto/)
 
 *   **[Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")** — Image viewing and cataloging program, which is a part of the GNOME desktop environment.
 
@@ -109,10 +112,6 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://geeqie.org/](http://geeqie.org/) || [geeqie](https://www.archlinux.org/packages/?name=geeqie)
 
-*   **Gimmage** — Gtkmm image viewer.
-
-	[https://sourceforge.net/projects/gimmage.berlios/](https://sourceforge.net/projects/gimmage.berlios/) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
-
 *   **GNOME Photos** — Access, organize, and share your photos on GNOME.
 
 	[https://wiki.gnome.org/Apps/Photos](https://wiki.gnome.org/Apps/Photos) || [gnome-photos](https://www.archlinux.org/packages/?name=gnome-photos)
@@ -121,10 +120,6 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || GTK+ 2: [gpicview](https://www.archlinux.org/packages/?name=gpicview), GTK+ 3: [gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3)
 
-*   **[GQview](https://en.wikipedia.org/wiki/GQview "wikipedia:GQview")** — Image browser that features single click access to view images and move around the directory tree
-
-	[http://gqview.sourceforge.net/](http://gqview.sourceforge.net/) || [gqview-devel](https://aur.archlinux.org/packages/gqview-devel/)
-
 *   **[gThumb](https://en.wikipedia.org/wiki/GThumb "wikipedia:GThumb")** — Image viewer for the GNOME desktop.
 
 	[https://wiki.gnome.org/Apps/gthumb](https://wiki.gnome.org/Apps/gthumb) || [gthumb](https://www.archlinux.org/packages/?name=gthumb)
@@ -132,6 +127,10 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 *   **[Gwenview](https://en.wikipedia.org/wiki/Gwenview "wikipedia:Gwenview")** — Fast and easy to use image viewer for the KDE desktop.
 
 	[http://gwenview.sourceforge.net/](http://gwenview.sourceforge.net/) || [gwenview](https://www.archlinux.org/packages/?name=gwenview)
+
+*   **ida** — X11 application (Motif based) for viewing images.
+
+	[https://www.kraxel.org/blog/linux/fbida/](https://www.kraxel.org/blog/linux/fbida/) || [fbida](https://www.archlinux.org/packages/?name=fbida)
 
 *   **imv** — Lightweight image viewer with support for Wayland and animated GIFs which uses FreeImage.
 
@@ -167,7 +166,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **qimgv** — Fast and easy to use Qt5 image viewer. Supports webm/mp4 playback via mpv.
 
-	[https://github.com/easymodo/qimgv/](https://github.com/easymodo/qimgv/) || [qimgv-git](https://aur.archlinux.org/packages/qimgv-git/)
+	[https://github.com/easymodo/qimgv/](https://github.com/easymodo/qimgv/) || [qimgv](https://aur.archlinux.org/packages/qimgv/)
 
 *   **Quick Image Viewer** — Very small and fast image viewer based on GTK+ and imlib2.
 
@@ -201,43 +200,15 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://sioseis.ucsd.edu/xloadimage.html](http://sioseis.ucsd.edu/xloadimage.html) || [xloadimage](https://www.archlinux.org/packages/?name=xloadimage)
 
-#### Graphics and image manipulation
+#### Raster graphics editors
 
-##### Raster editors
+See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors").
 
-See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors") and [libgphoto2 frontends](/index.php/Libgphoto2#Other_frontend_applications_for_libgphoto2 "Libgphoto2").
+##### Console
 
-*   **AzPainter** — A Painting software.
-
-	[http://azpainter.sourceforge.jp/](http://azpainter.sourceforge.jp/) || [azpainter](https://aur.archlinux.org/packages/azpainter/)
-
-*   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Photography workflow and RAW development application.
-
-	[http://www.darktable.org/](http://www.darktable.org/) || [darktable](https://www.archlinux.org/packages/?name=darktable)
-
-*   **[RawTherapee](https://en.wikipedia.org/wiki/RawTherapee "wikipedia:RawTherapee")** — A powerful cross-platform raw image processing program.
-
-	[http://www.rawtherapee.com/](http://www.rawtherapee.com/) || [rawtherapee](https://www.archlinux.org/packages/?name=rawtherapee)
-
-*   **dcraw** — Converts many camera RAW formats.
+*   **[dcraw](https://en.wikipedia.org/wiki/dcraw "wikipedia:dcraw")** — Converts many camera RAW formats.
 
 	[http://www.cybercom.net/~dcoffin/dcraw/](http://www.cybercom.net/~dcoffin/dcraw/) || [dcraw](https://www.archlinux.org/packages/?name=dcraw)
-
-*   **[digiKam](https://en.wikipedia.org/wiki/digiKam "wikipedia:digiKam")** — KDE-based image organizer with built-in editing features via a plugin architecture. digiKam asserts it is more full featured than similar applications with a larger set of image manipulation features including RAW image import and manipulation.
-
-	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
-
-*   **[GIMP](/index.php/GIMP "GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
-
-	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
-
-*   **G'MIC** — Full-featured open-source framework for image processing, providing several different user interfaces to convert/manipulate/filter/visualize generic image datasets, ranging from 1d scalar signals to 3d+t sequences of multi-spectral volumetric images, including 2d color images.
-
-	[http://www.gmic.eu/](http://www.gmic.eu/) || [gmic](https://www.archlinux.org/packages/?name=gmic)
-
-*   **[Gpaint](https://en.wikipedia.org/wiki/GNU_Paint "wikipedia:GNU Paint")** — [Paintbrush](https://en.wikipedia.org/wiki/PC_Paintbrush "wikipedia:PC Paintbrush") clone for GNOME.
-
-	[https://www.gnu.org/software/gpaint/](https://www.gnu.org/software/gpaint/) || [gpaint](https://aur.archlinux.org/packages/gpaint/)
 
 *   **[GraphicsMagick](https://en.wikipedia.org/wiki/GraphicsMagick "wikipedia:GraphicsMagick")** — Fork of ImageMagick designed to have API and command-line stability. It also supports multi-CPU for enhanced performance and thus is used by some large commercial sites (Flickr, etsy) for its performance.
 
@@ -247,6 +218,36 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://www.imagemagick.org/script/index.php](http://www.imagemagick.org/script/index.php) || [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
+##### Graphical
+
+*   **AzPainter** — A Painting software.
+
+	[http://azpainter.sourceforge.jp/](http://azpainter.sourceforge.jp/) || [azpainter](https://aur.archlinux.org/packages/azpainter/)
+
+*   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Photography workflow and RAW development application.
+
+	[http://www.darktable.org/](http://www.darktable.org/) || [darktable](https://www.archlinux.org/packages/?name=darktable)
+
+*   **[digiKam](https://en.wikipedia.org/wiki/digiKam "wikipedia:digiKam")** — KDE-based image organizer with built-in editing features via a plugin architecture. digiKam asserts it is more full featured than similar applications with a larger set of image manipulation features including RAW image import and manipulation.
+
+	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
+
+*   **[GIMP](/index.php/GIMP "GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
+
+	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
+
+*   **[G'MIC](https://en.wikipedia.org/wiki/G%27MIC "wikipedia:G'MIC")** — Full-featured open-source framework for image processing, providing several different user interfaces to convert/manipulate/filter/visualize generic image datasets, ranging from 1d scalar signals to 3d+t sequences of multi-spectral volumetric images, including 2d color images.
+
+	[http://www.gmic.eu/](http://www.gmic.eu/) || [gmic](https://www.archlinux.org/packages/?name=gmic)
+
+*   **[Gpaint](https://en.wikipedia.org/wiki/GNU_Paint "wikipedia:GNU Paint")** — [Paintbrush](https://en.wikipedia.org/wiki/PC_Paintbrush "wikipedia:PC Paintbrush") clone for GNOME.
+
+	[https://www.gnu.org/software/gpaint/](https://www.gnu.org/software/gpaint/) || [gpaint](https://aur.archlinux.org/packages/gpaint/)
+
+*   **[Hugin](https://en.wikipedia.org/wiki/Hugin_(software) "wikipedia:Hugin (software)")** — Panorama photo stitcher.
+
+	[http://hugin.sourceforge.net/](http://hugin.sourceforge.net/) || [hugin](https://www.archlinux.org/packages/?name=hugin)
+
 *   **[KolourPaint](https://en.wikipedia.org/wiki/KolourPaint "wikipedia:KolourPaint")** — Free raster graphics editor for KDE, similar to Microsoft's Paint application before Windows 7, but with some additional features such as support for transparency. Part of [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) and [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/) groups.
 
 	[http://kolourpaint.org](http://kolourpaint.org) || [kolourpaint](https://www.archlinux.org/packages/?name=kolourpaint)
@@ -255,7 +256,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
-*   **Luminance HDR** — Open source graphical user interface application that aims to provide a workflow for HDR imaging.
+*   **[Luminance HDR](https://en.wikipedia.org/wiki/Luminance_HDR "wikipedia:Luminance HDR")** — Open source graphical user interface application that aims to provide a workflow for HDR imaging.
 
 	[http://qtpfsgui.sourceforge.net/](http://qtpfsgui.sourceforge.net/) || [luminancehdr](https://www.archlinux.org/packages/?name=luminancehdr)
 
@@ -271,29 +272,41 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://pinta-project.com/](http://pinta-project.com/) || [pinta](https://www.archlinux.org/packages/?name=pinta)
 
+*   **[RawTherapee](https://en.wikipedia.org/wiki/RawTherapee "wikipedia:RawTherapee")** — A powerful cross-platform raw image processing program.
+
+	[http://www.rawtherapee.com/](http://www.rawtherapee.com/) || [rawtherapee](https://www.archlinux.org/packages/?name=rawtherapee)
+
 *   **[XPaint](https://en.wikipedia.org/wiki/XPaint "wikipedia:XPaint")** — Color image editing tool which features most standard paint program options.
 
 	[https://sourceforge.net/projects/sf-xpaint/](https://sourceforge.net/projects/sf-xpaint/) || [xpaint](https://aur.archlinux.org/packages/xpaint/)
 
-Some image viewers like Ephoto, GNOME Photos, [gThumb](https://en.wikipedia.org/wiki/GThumb and [XnView MP](https://en.wikipedia.org/wiki/XnView "wikipedia:XnView") also provide some basic image manipulation functionality.
+Some image viewers like Ephoto, GNOME Photos, [gThumb](https://en.wikipedia.org/wiki/GThumb also provide some basic image manipulation functionality.
 
-##### Vector graphics - illustration
+#### Vector graphics editors
 
 See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
+
+##### Console
 
 *   **[Asymptote](https://en.wikipedia.org/wiki/Asymptote_(vector_graphics_language) "wikipedia:Asymptote (vector graphics language)")** — A descriptive vector graphics language (like PGF/TikZ and Metapost) with a C-like syntax and LaTeX support.
 
 	[http://asymptote.sourceforge.net](http://asymptote.sourceforge.net) || [asymptote](https://www.archlinux.org/packages/?name=asymptote)
 
-*   **[Dia](https://en.wikipedia.org/wiki/Dia_(software) "wikipedia:Dia (software)")** — GTK+-based diagram creation program.
-
-	[https://wiki.gnome.org/Apps/Dia](https://wiki.gnome.org/Apps/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
-
 *   **[Graphviz](https://en.wikipedia.org/wiki/Graphviz "wikipedia:Graphviz")** — Set of tools for drawing graphs in the descriptive DOT language.
 
 	[http://www.graphviz.org](http://www.graphviz.org) || [graphviz](https://www.archlinux.org/packages/?name=graphviz)
 
-*   **Gravit Designer** — Vector graphics design tool - For Users of All Skills and Profession
+*   **qasm2circ** — Quantum circuit generator for latex.
+
+	[http://www.media.mit.edu/quanta/qasm2circ/](http://www.media.mit.edu/quanta/qasm2circ/) || [qasm2circ](https://aur.archlinux.org/packages/qasm2circ/)
+
+##### Graphical
+
+*   **[Dia](https://en.wikipedia.org/wiki/Dia_(software) "wikipedia:Dia (software)")** — GTK+-based diagram creation program.
+
+	[https://wiki.gnome.org/Apps/Dia](https://wiki.gnome.org/Apps/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
+
+*   **Gravit Designer** — Proprietary vector design application. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://designer.io/](https://designer.io/) || [gravit-designer-bin](https://aur.archlinux.org/packages/gravit-designer-bin/)
 
@@ -301,7 +314,11 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **Mockingbot** — Prototyping & collaboration design tool .
+*   **[LibreOffice Draw](/index.php/LibreOffice "LibreOffice")** — Vector graphics editor and diagramming tool included in the LibreOffice suite similar to Microsoft Visio.
+
+	[https://www.libreoffice.org/discover/draw/](https://www.libreoffice.org/discover/draw/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
+
+*   **Mockingbot** — Proprietary prototyping & collaboration design tool. Based on the [Electron](https://electronjs.org/) platform.
 
 	[http://mockingbot.com/](http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
 
@@ -309,55 +326,23 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
-*   **[Pencil Project](https://en.wikipedia.org/wiki/Pencil2D "wikipedia:Pencil2D")** — An open-source GUI prototyping and mockup tool.
+*   **[Pencil Project](https://en.wikipedia.org/wiki/Pencil2D "wikipedia:Pencil2D")** — GUI prototyping and mockup tool. Based on the [Electron](https://electronjs.org/) platform.
 
 	[http://pencil.evolus.vn/](http://pencil.evolus.vn/) || [pencil](https://aur.archlinux.org/packages/pencil/)
-
-*   **qasm2circ** — Quantum circuit generator for latex
-
-	[http://www.media.mit.edu/quanta/qasm2circ/](http://www.media.mit.edu/quanta/qasm2circ/) || [qasm2circ](https://aur.archlinux.org/packages/qasm2circ/)
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Replacement for Adobe Illustrator or CorelDraw, oriented for "prepress ready" PostScript & PDF output.
 
 	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
 
-*   **[yEd](https://en.wikipedia.org/wiki/yEd "wikipedia:yEd")** — General-purpose diagramming program for flowcharts, network diagrams, UML diagrams, BPMN diagrams, mind maps, organization charts, and Entity Relationship diagrams.
+*   **[yEd](https://en.wikipedia.org/wiki/yEd "wikipedia:yEd")** — General-purpose proprietary diagramming program for flowcharts, network diagrams, UML diagrams, BPMN diagrams, mind maps, organization charts, and Entity Relationship diagrams.
 
-	[http://www.yworks.com/en/products_yed_about.html](http://www.yworks.com/en/products_yed_about.html) || [yed](https://aur.archlinux.org/packages/yed/)
+	[https://www.yworks.com/products/yed](https://www.yworks.com/products/yed) || [yed](https://aur.archlinux.org/packages/yed/)
 
-##### Vector graphics - CAD
+*   **[Xfig](https://en.wikipedia.org/wiki/Xfig "wikipedia:Xfig")** — Interactive drawing tool.
 
-See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.org/wiki/List_of_computer-aided_design_editors "wikipedia:List of computer-aided design editors").
+	[http://mcj.sourceforge.net/](http://mcj.sourceforge.net/) || [xfig](https://www.archlinux.org/packages/?name=xfig)
 
-*   **[BRL-CAD](https://en.wikipedia.org/wiki/BRL-CAD "wikipedia:BRL-CAD")** — Constructive solid geometry (CSG) solid modeling computer-aided design (CAD) system that includes an interactive geometry editor, ray tracing support for graphics rendering and geometric analysis, computer network distributed framebuffer support, scripting, image-processing and signal-processing tools.
-
-	[http://brlcad.org/](http://brlcad.org/) || [brlcad](https://aur.archlinux.org/packages/brlcad/)
-
-*   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
-
-	[http://www.3ds.com/products-services/draftsight/overview/](http://www.3ds.com/products-services/draftsight/overview/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
-
-*   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE program, based on OpenCascade, Qt and Python with features such as macro recording, workbenches and the ability to run as server.
-
-	[https://github.com/FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) || [freecad](https://aur.archlinux.org/packages/freecad/)
-
-*   **LeoCAD** — CAD program for creating virtual LEGO models. It has an easy to use interface and currently includes over 6000 different pieces created by the LDraw community.
-
-	[http://leocad.org](http://leocad.org) || [leocad](https://aur.archlinux.org/packages/leocad/)
-
-*   **[LibreCAD](https://en.wikipedia.org/wiki/LibreCAD "wikipedia:LibreCAD")** — Powerful 2D CAD application based on Qt. It has been forked from QCad Community Edition.
-
-	[http://www.librecad.org/](http://www.librecad.org/) || [librecad](https://www.archlinux.org/packages/?name=librecad)
-
-*   **[OpenSCAD](https://en.wikipedia.org/wiki/OpenSCAD "wikipedia:OpenSCAD")** — Open source 2D/3D CAD using programmers approach.
-
-	[http://www.openscad.org](http://www.openscad.org) || [openscad](https://www.archlinux.org/packages/?name=openscad) [openscad-git](https://aur.archlinux.org/packages/openscad-git/)
-
-*   **[QCAD](https://en.wikipedia.org/wiki/QCad "wikipedia:QCad")** — Powerful 2D CAD application that began in 1999\. QCaD includes DFX standard file format and supports HPGL format.
-
-	[http://www.qcad.org/](http://www.qcad.org/) || [qcad](https://www.archlinux.org/packages/?name=qcad)
-
-##### 3D modeling/rendering
+#### 3D computer graphics
 
 See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wikipedia.org/wiki/Comparison_of_3D_computer_graphics_software "wikipedia:Comparison of 3D computer graphics software").
 
@@ -392,6 +377,52 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 *   **[Wings 3D](https://en.wikipedia.org/wiki/Wings3d "wikipedia:Wings3d")** — Advanced subdivision modeler that is both powerful and easy to use.
 
 	[http://www.wings3d.com/](http://www.wings3d.com/) || [wings3d](https://www.archlinux.org/packages/?name=wings3d)
+
+#### Color pickers
+
+*   **Agave** — Colorscheme designer tool for GNOME.
+
+	[https://web.archive.org/web/20170327063642/http://home.gna.org/colorscheme/](https://web.archive.org/web/20170327063642/http://home.gna.org/colorscheme/) || [agave](https://www.archlinux.org/packages/?name=agave)
+
+*   **Chameleon** — Simple color picker for X11 which outputs colors to stdout.
+
+	[https://github.com/seebye/chameleon](https://github.com/seebye/chameleon) || [chameleon-git](https://aur.archlinux.org/packages/chameleon-git/)
+
+*   **ColorGrab** — Cross-platform color picker.
+
+	[https://github.com/nielssp/colorgrab](https://github.com/nielssp/colorgrab) || [colorgrab](https://aur.archlinux.org/packages/colorgrab/)
+
+*   **Color Picker** — Simplistic color picker for the Pantheon desktop.
+
+	[https://github.com/RonnyDo/ColorPicker](https://github.com/RonnyDo/ColorPicker) || [color-picker-git](https://aur.archlinux.org/packages/color-picker-git/)
+
+*   **delicolour** — Lightweight GTK+ 3 color finder.
+
+	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [delicolour](https://aur.archlinux.org/packages/delicolour/)
+
+*   **gcolor2** — Simple GTK+ 2 color selector.
+
+	[http://gcolor2.sourceforge.net/](http://gcolor2.sourceforge.net/) || [gcolor2](https://www.archlinux.org/packages/?name=gcolor2)
+
+*   **GPick** — Advanced color picker tool.
+
+	[http://www.gpick.org/](http://www.gpick.org/) || [gpick](https://www.archlinux.org/packages/?name=gpick)
+
+*   **KColorChooser** — Simple application to select the color from the screen or from a pallete. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/)
+
+	[https://www.kde.org/applications/graphics/kcolorchooser/](https://www.kde.org/applications/graphics/kcolorchooser/) || [kcolorchooser](https://www.archlinux.org/packages/?name=kcolorchooser)
+
+*   **MATE Color Selection** — Choose colors from the palette or the screen. Run with `mate-color-select`.
+
+	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate-desktop](https://www.archlinux.org/packages/?name=mate-desktop)
+
+*   **Pick** — Simple color picker tool for the Linux desktop.
+
+	[https://www.kryogenix.org/code/pick](https://www.kryogenix.org/code/pick) || [pick-colour-picker](https://aur.archlinux.org/packages/pick-colour-picker/)
+
+*   **xcolor** — Lightweight color picker for X11.
+
+	[https://github.com/Soft/xcolor](https://github.com/Soft/xcolor) || [xcolor](https://aur.archlinux.org/packages/xcolor/)
 
 #### Digital camera managers
 

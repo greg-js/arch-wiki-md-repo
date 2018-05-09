@@ -377,7 +377,7 @@ Note that when *Display power management* is turned off, DPMS is fully disabled,
 
 	XScreenSaver
 
-If [xcreensaver](https://www.archlinux.org/packages/?name=xcreensaver) is installed and runs alongside Xfce Power Manager, it may not be clear which application is in control of blanking and DPMS as both are competing for control of the same settings. Therefore, in a situation where it is important that the monitor not be blanked (when watching a video for instance), it is advisable to disable blanking and DPMS through both applications. To know more about *XScreenSaver* options, see [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver").
+If [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) is installed and runs alongside Xfce Power Manager, it may not be clear which application is in control of blanking and DPMS as both are competing for control of the same settings. Therefore, in a situation where it is important that the monitor not be blanked (when watching a video for instance), it is advisable to disable blanking and DPMS through both applications. To know more about *XScreenSaver* options, see [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver").
 
 	xset
 

@@ -29,6 +29,7 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
     *   [7.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
     *   [7.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
     *   [7.3 Screen flickering](#Screen_flickering)
+    *   [7.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and.2For_Instability)
 
 ## Selecting the right driver
 
@@ -210,3 +211,7 @@ There is a GUI solution [[2]](https://github.com/marazmista/radeon-profile) wher
 ### Screen flickering
 
 If you experience flickering [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=199101) add `amdgpu.dc=0` to your kernel parameters.
+
+### R9 390 series Poor Performance and/or Instability
+
+If you experience issues [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, add `amdgpu.dpm=1` to your kernel parameters.

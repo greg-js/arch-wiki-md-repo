@@ -99,7 +99,7 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 | *ck-bobcat* | btver1 |
 | *ck-bulldozer* | bdver1 |
 | *ck-piledriver* | bdver2 |
-| *ck-zen* | vnver1 |
+| *ck-zen* | znver1 |
 
 **Note:** Add additional entries to this table based on experience.
 

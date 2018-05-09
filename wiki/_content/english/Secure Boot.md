@@ -73,6 +73,8 @@ When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is
 
 **Note:** Each time you update any of the binaries (e.g. boot loader or kernel) you will need to enroll their new hash.
 
+**Tip:** The [rEFInd](/index.php/REFInd "REFInd") boot manager's `refind-install` script can copy the rEFInd and PreLoader EFI binaries to the ESP. See [rEFInd#Using PreLoader](/index.php/REFInd#Using_PreLoader "REFInd") for instructions.
+
 #### Set up PreLoader
 
 **Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](https://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
@@ -153,11 +155,13 @@ Where `*N*` is the NVRAM boot entry created for booting `PreLoader.efi`. Check w
 
 ### shim
 
-When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `MokManager.efi`. In MokManager you must enroll the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enroll the key they are signed with.
+When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch MokManager (`mmx64.efi`). In MokManager you must enroll the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enroll the key they are signed with.
 
 **Note:** If you use [#shim with hash](#shim_with_hash), each time you update any of the binaries (e.g. boot loader or kernel) you will need to enroll their new hash.
 
 #### Set up shim
+
+**Tip:** The [rEFInd](/index.php/REFInd "REFInd") boot manager's `refind-install` script can sign rEFInd EFI binaries and copy them along with shim and the MOK certificates to the ESP. See [rEFInd#Using shim](/index.php/REFInd#Using_shim "REFInd") for instructions.
 
 [Install](/index.php/Install "Install") [shim-signed](https://aur.archlinux.org/packages/shim-signed/).
 
@@ -168,11 +172,11 @@ Rename your current [boot loader](/index.php/Boot_loader "Boot loader") to `grub
 
 ```
 
-Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous filename of your boot loader as as the filename for `shim.efi`:
+Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous filename of your boot loader as as the filename for `shimx64.efi`:
 
 ```
-# cp /usr/share/shim-signed/shim.efi *esp*/EFI/BOOT/BOOTX64.efi
-# cp /usr/share/shim-signed/MokManager.efi *esp*/EFI/BOOT/
+# cp /usr/share/shim-signed/shimx64.efi *esp*/EFI/BOOT/BOOTX64.efi
+# cp /usr/share/shim-signed/mmx64.efi *esp*/EFI/BOOT/
 
 ```
 
@@ -190,7 +194,7 @@ Using hash is simpler, but each time you update your boot loader or kernel you w
 
 ##### shim with hash
 
-If *shim* does not find the SHA256 hash of `grubx64.efi` in MokList it will launch `MokManager.efi`.
+If *shim* does not find the SHA256 hash of `grubx64.efi` in MokList it will launch MokManager (`mmx64.efi`).
 
 In *MokManager* select *Enroll hash from disk*, find `grubx64.efi` and add it to MokList. Repeat the steps and add your kernel `vmlinuz-linux`. When done select *Continue boot* and your boot loader will launch and it will be capable launching the kernel.
 
@@ -247,7 +251,7 @@ Depends = sbsigntools
 
 Copy `MOK.cer` to a [FAT](/index.php/FAT "FAT") formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
 
-Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MokList it will launch `MokManager.efi`.
+Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MokList it will launch MokManager (`mmx64.efi`).
 
 In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokList. When done select *Continue boot* and your boot loader will launch and it will be capable launching any binary signed with your Machine Owner Key.
 
@@ -386,6 +390,8 @@ $ sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.
 When `*new_db*.auth` is created, [enroll it](#Enroll_keys_in_firmware).
 
 ### Signing bootloader and kernel
+
+**Tip:** The [rEFInd](/index.php/REFInd "REFInd") boot manager's `refind-install` script can sign rEFInd EFI binaries and copy them together with the db certificates to the ESP. See [rEFInd#Using your own keys](/index.php/REFInd#Using_your_own_keys "REFInd") for instructions.
 
 When Secure Boot is active (i.e. in "User Mode") you will only be able to launch signed binaries, so you need to sign your kernel and [boot loader](/index.php/Boot_loader "Boot loader").
 
