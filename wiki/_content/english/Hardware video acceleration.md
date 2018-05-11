@@ -120,7 +120,7 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 *   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by either [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa) or [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
 *   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
     *   To get better support on GMA 4500 consider using [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead, see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel") for instructions and caveats.
-    *   A new usermode driver being developed by Intel is available for Broadwell, Skylake, Apollolake and Canonlake: [intel-media-driver-git](https://aur.archlinux.org/packages/intel-media-driver-git/)
+    *   A new usermode driver being developed by Intel is available for Broadwell, Skylake, Kabylake, Apollolake and Canonlake: [intel-media-driver-git](https://aur.archlinux.org/packages/intel-media-driver-git/)
 *   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
 
 **Proprietary drivers:**

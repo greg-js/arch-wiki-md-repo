@@ -116,13 +116,13 @@ Some notable applications of *dd* are:
 
 *   [Disk cloning#Using dd](/index.php/Disk_cloning#Using_dd "Disk cloning"),
 
-*   Binary file patching: let say one wants to replace offset `0x123AB` of a file with the `FF C0 14` hexadecimal sequence, this can be done with the command line:
-
-	 `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=/path/to/file` 
+*   Binary file patching: let say one wants to replace offset `0x123AB` of a file with the `FF C0 14` hexadecimal sequence, this can be done with the command line: `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=*/path/to/file*` 
 
 For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
 
 **Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
+
+**Warning:** One should be extremely cautious using *dd*, as with any command of this kind it can destroy data irreversibly.
 
 ## find
 
@@ -141,10 +141,13 @@ Instead, find takes a set of directories and matches each file under them agains
 *   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
 *   There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack).
 *   To include file line numbers in the output, use the `-n` option.
+*   *grep* can also be used for hexadecimal search in a binary file, to look for let say the `A1 F2` sequence in a file, the command line is: `$ LANG=C grep --text --perl-regexp "\xA1\xF2" */path/to/file*` 
 
 **Note:** Some commands send their output to [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 For color support, see [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
+
+See [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1) for more details.
 
 ## iconv
 

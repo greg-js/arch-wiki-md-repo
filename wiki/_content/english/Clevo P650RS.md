@@ -2,20 +2,13 @@ The P650RS is a device by the Taiwanese OEM manufacturer Clevo. It is also sold 
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Graphics](#Graphics)
-    *   [2.1 Discrete only](#Discrete_only)
-    *   [2.2 Switchable / Optimus](#Switchable_.2F_Optimus)
-*   [3 Power management](#Power_management)
-*   [4 Keyboard Backlight](#Keyboard_Backlight)
-*   [5 WiFi](#WiFi)
-*   [6 Webcam](#Webcam)
-
-## Installation
-
-Installing Archlinux requires kernel parameter `nouveau.modeset=0`.
-
-**Tip:** This kernel parameter needs to be kept for the final installation until the proprietary driver is installed or nouveau gains better support for this card.
+*   [1 Graphics](#Graphics)
+    *   [1.1 Discrete only](#Discrete_only)
+    *   [1.2 Switchable / Optimus](#Switchable_.2F_Optimus)
+*   [2 Power management](#Power_management)
+*   [3 Keyboard Backlight](#Keyboard_Backlight)
+*   [4 WiFi](#WiFi)
+*   [5 Webcam](#Webcam)
 
 ## Graphics
 

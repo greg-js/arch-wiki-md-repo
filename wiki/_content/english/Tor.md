@@ -35,32 +35,33 @@ Related articles
     *   [9.1 Pidgin](#Pidgin)
 *   [10 Irssi](#Irssi)
 *   [11 Pacman](#Pacman)
-*   [12 Running a Tor server](#Running_a_Tor_server)
-    *   [12.1 Running a Tor bridge](#Running_a_Tor_bridge)
-        *   [12.1.1 Configuration](#Configuration_2)
-    *   [12.2 Running a Tor relay](#Running_a_Tor_relay)
-        *   [12.2.1 Configuration](#Configuration_3)
-    *   [12.3 Running a Tor exit node](#Running_a_Tor_exit_node)
-        *   [12.3.1 Configuration](#Configuration_4)
-        *   [12.3.2 +100Mbps Exit Relay configuration example](#.2B100Mbps_Exit_Relay_configuration_example)
-            *   [12.3.2.1 Tor](#Tor)
-                *   [12.3.2.1.1 Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors)
-                *   [12.3.2.1.2 Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports)
-                *   [12.3.2.1.3 Tor configuration](#Tor_configuration)
-            *   [12.3.2.2 arm](#arm)
-            *   [12.3.2.3 iptables](#iptables)
-            *   [12.3.2.4 Haveged](#Haveged)
-            *   [12.3.2.5 pdnsd](#pdnsd)
-                *   [12.3.2.5.1 Uncensored DNS](#Uncensored_DNS)
-*   [13 TorDNS](#TorDNS)
-    *   [13.1 Using TorDNS for all DNS queries](#Using_TorDNS_for_all_DNS_queries)
-*   [14 Torsocks](#Torsocks)
-*   [15 Transparent Torification](#Transparent_Torification)
-*   [16 Tips and tricks](#Tips_and_tricks)
-    *   [16.1 Kernel capabilities](#Kernel_capabilities)
-*   [17 Troubleshooting](#Troubleshooting)
-    *   [17.1 Problem with user value](#Problem_with_user_value)
-*   [18 See also](#See_also)
+*   [12 Java](#Java)
+*   [13 Running a Tor server](#Running_a_Tor_server)
+    *   [13.1 Running a Tor bridge](#Running_a_Tor_bridge)
+        *   [13.1.1 Configuration](#Configuration_2)
+    *   [13.2 Running a Tor relay](#Running_a_Tor_relay)
+        *   [13.2.1 Configuration](#Configuration_3)
+    *   [13.3 Running a Tor exit node](#Running_a_Tor_exit_node)
+        *   [13.3.1 Configuration](#Configuration_4)
+        *   [13.3.2 +100Mbps Exit Relay configuration example](#.2B100Mbps_Exit_Relay_configuration_example)
+            *   [13.3.2.1 Tor](#Tor)
+                *   [13.3.2.1.1 Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors)
+                *   [13.3.2.1.2 Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports)
+                *   [13.3.2.1.3 Tor configuration](#Tor_configuration)
+            *   [13.3.2.2 arm](#arm)
+            *   [13.3.2.3 iptables](#iptables)
+            *   [13.3.2.4 Haveged](#Haveged)
+            *   [13.3.2.5 pdnsd](#pdnsd)
+                *   [13.3.2.5.1 Uncensored DNS](#Uncensored_DNS)
+*   [14 TorDNS](#TorDNS)
+    *   [14.1 Using TorDNS for all DNS queries](#Using_TorDNS_for_all_DNS_queries)
+*   [15 Torsocks](#Torsocks)
+*   [16 Transparent Torification](#Transparent_Torification)
+*   [17 Tips and tricks](#Tips_and_tricks)
+    *   [17.1 Kernel capabilities](#Kernel_capabilities)
+*   [18 Troubleshooting](#Troubleshooting)
+    *   [18.1 Problem with user value](#Problem_with_user_value)
+*   [19 See also](#See_also)
 
 ## Introduction
 
@@ -407,6 +408,15 @@ On stock arch, pacman only trust keys which are either signed by you (That can b
 ...
 XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
 ...
+```
+
+## Java
+
+One can run ensure a [java application proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) its connections through Tor by appending the following command line options:
+
+```
+   export JAVA_OPTIONS="$JAVA_OPTIONS -DsocksProxyHost=localhost -DsocksProxyPort=9050"
+
 ```
 
 ## Running a Tor server

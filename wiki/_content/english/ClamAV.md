@@ -219,7 +219,7 @@ User root
 
 ```
 
-Next, create the file `/etc/clamav/detected.zsh` and add the following. This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
+Next, create the file `/etc/clamav/detected.sh` and add the following. This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
 
  `/etc/clamav/detected.sh` 
 ```

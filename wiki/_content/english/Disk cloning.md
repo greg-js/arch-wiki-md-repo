@@ -164,13 +164,9 @@ To clone a partition from physical disk `/dev/sda`, partition 1, to physical dis
 
 ## Disk cloning software
 
-These applications allow easy backup of entire filesystems and recovery in case of failure, usually in the form of a Live CD or USB drive. They contain complete system images from one or more specific points in time and are frequently used to record known good configurations.
+These applications allow easy backup of entire filesystems and recovery in case of failure, usually in the form of a Live CD or USB drive. They contain complete system images from one or more specific points in time and are frequently used to record known good configurations. See [Wikipedia:Comparison of disk cloning software](https://en.wikipedia.org/wiki/Comparison_of_disk_cloning_software "wikipedia:Comparison of disk cloning software") for their comparison.
 
 See also [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for other applications that can take full system snapshots, among other functionality.
-
-*   **[Acronis True Image](https://en.wikipedia.org/wiki/Acronis_True_Image "wikipedia:Acronis True Image")** — Commercial disk cloner for Windows. It allows you to create a live (from within Windows), so you do not need a working Windows install on the actual machine to use it. After registration of the Acronis software on their website, you will be able to download a Linux-based Live CD and/or plugins for BartPE for creation of the Windows-based live CD. It can also create a WinPE Live CD based on Windows. The created ISO Live CD image by Acronis doesn't have the [hybrid boot](http://www.syslinux.org/wiki/index.php/Isohybrid) ability and cannot be written to USB storage as a raw file.
-
-	[http://www.acronis.com/products/trueimage/](http://www.acronis.com/products/trueimage/) ||
 
 *   **Arch Backup** — A trivial backup script with simple configuration.
     *   Configurable compression method.
@@ -220,10 +216,6 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
     *   Optionally, an *ncurses* interface can be used.
 
 	[http://partclone.org/](http://partclone.org/) || [partclone](https://www.archlinux.org/packages/?name=partclone)
-
-*   **PartedMagic** — Live cd/usb with PartImage and other recovery tools.
-
-	[https://partedmagic.com](https://partedmagic.com) || non free
 
 *   **[Partimage](https://en.wikipedia.org/wiki/Partimage "wikipedia:Partimage")** — An *ncurses* disk cloning utility for Linux/UNIX environments.
     *   Has a Live CD.

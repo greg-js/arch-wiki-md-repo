@@ -118,6 +118,10 @@ Some FUSE-based file systems:
 
 	[https://astrada.github.io/google-drive-ocamlfuse/](https://astrada.github.io/google-drive-ocamlfuse/) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/)
 
+*   **gphotofs** — FUSE module to mount camera as a filesystem.
+
+	[http://www.gphoto.org/proj/gphotofs/](http://www.gphoto.org/proj/gphotofs/) || [gphotofs](https://aur.archlinux.org/packages/gphotofs/)
+
 *   **MegaFuse** — MEGA client for Linux, based on FUSE.
 
 	[https://github.com/matteoserva/MegaFuse](https://github.com/matteoserva/MegaFuse) || [megafuse-git](https://aur.archlinux.org/packages/megafuse-git/)

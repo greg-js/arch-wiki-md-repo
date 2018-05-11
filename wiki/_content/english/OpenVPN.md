@@ -639,6 +639,7 @@ Prerequisites:
 *   Any subnets used on the client side, must be unique and not in use on the server or by any other client. In this example we will use 192.168.4.0/24 for the clients LAN.
 *   Each client's certificate has a unique Common Name, in this case bugs.
 *   The server may not use the duplicate-cn directive in its config file.
+*   The CCD folder must be accessible via user and group defined in the server config file (typically nobody:nobody)
 
 Create a client configuration directory on the server. It will be searched for a file named the same as the client's common name, and the directives will be applied to the client when it connects.
 

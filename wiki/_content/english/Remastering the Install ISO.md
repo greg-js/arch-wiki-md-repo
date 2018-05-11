@@ -81,6 +81,13 @@ Unsquash `airootfs.sfs` (to `squashfs-root`):
 
 **Note:** You need [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) in order to do that.
 
+If you will need to run `mkinitcpio` within `arch-chroot`, you need to temporarily copy the kernel over:
+
+```
+ $ cp ../boot/x86_64/vmlinuz squashfs-root/boot/vmlinuz-linux
+
+```
+
 Now you can modify the content of the system in `squashfs-root`. You can also chroot into this system to install packages etc.:
 
 ```
@@ -133,11 +140,12 @@ When you are done, create a list of all installed packages, clean the pacman cac
 
 ```
 
-If you updated the kernel or the initramfs, copy them over to the system:
+If you updated the kernel or the initramfs, move them over to the system, and remove the fallback initramfs (the install ISO doesn't use this):
 
 ```
- $ cp squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
- $ cp squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
+ $ mv squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
+ $ mv squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
+ $ rm squashfs-root/boot/initramfs-linux-fallback.img
 
 ```
 
@@ -155,6 +163,8 @@ Now recreate `airootfs.sfs`:
  $ mksquashfs squashfs-root airootfs.sfs
 
 ```
+
+**Note:** The monthly install ISO uses the `-comp xz` option on `mksquashfs` to significantly reduce size, but it also takes longer
 
 Cleanup:
 

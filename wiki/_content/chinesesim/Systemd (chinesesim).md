@@ -8,7 +8,7 @@
 *   [Improve Boot Performance (简体中文)](/index.php/Improve_Boot_Performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Improve Boot Performance (简体中文)")
 *   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
 
-**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-06，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=495118)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-09，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=517689)可以查看翻译后英文页面的改动。
 
 摘自[项目主页](http://freedesktop.org/wiki/Software/systemd)：
 
@@ -27,7 +27,7 @@
     *   [2.2 服务类型](#.E6.9C.8D.E5.8A.A1.E7.B1.BB.E5.9E.8B)
     *   [2.3 修改现存单元文件](#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6)
         *   [2.3.1 替换单元文件](#.E6.9B.BF.E6.8D.A2.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6)
-        *   [2.3.2 附加代码片段](#.E9.99.84.E5.8A.A0.E4.BB.A3.E7.A0.81.E7.89.87.E6.AE.B5)
+        *   [2.3.2 附加配置片段](#.E9.99.84.E5.8A.A0.E9.85.8D.E7.BD.AE.E7.89.87.E6.AE.B5)
         *   [2.3.3 重置到软件包版本](#.E9.87.8D.E7.BD.AE.E5.88.B0.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.89.88.E6.9C.AC)
         *   [2.3.4 示例](#.E7.A4.BA.E4.BE.8B)
 *   [3 目标（target）](#.E7.9B.AE.E6.A0.87.EF.BC.88target.EF.BC.89)
@@ -50,20 +50,20 @@
     *   [7.8 转发 journald 到 /dev/tty12](#.E8.BD.AC.E5.8F.91_journald_.E5.88.B0_.2Fdev.2Ftty12)
     *   [7.9 查看特定位置的日志](#.E6.9F.A5.E7.9C.8B.E7.89.B9.E5.AE.9A.E4.BD.8D.E7.BD.AE.E7.9A.84.E6.97.A5.E5.BF.97)
 *   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
-    *   [8.2 Sandboxing application environments](#Sandboxing_application_environments)
+    *   [8.1 Running services after the network is up](#Running_services_after_the_network_is_up)
+    *   [8.2 Enable installed units by default](#Enable_installed_units_by_default)
+    *   [8.3 Sandboxing application environments](#Sandboxing_application_environments)
 *   [9 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [9.1 寻找错误](#.E5.AF.BB.E6.89.BE.E9.94.99.E8.AF.AF)
     *   [9.2 诊断启动问题](#.E8.AF.8A.E6.96.AD.E5.90.AF.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [9.3 诊断一个特定服务](#.E8.AF.8A.E6.96.AD.E4.B8.80.E4.B8.AA.E7.89.B9.E5.AE.9A.E6.9C.8D.E5.8A.A1)
+    *   [9.3 诊断一个服务](#.E8.AF.8A.E6.96.AD.E4.B8.80.E4.B8.AA.E6.9C.8D.E5.8A.A1)
     *   [9.4 关机/重启十分缓慢](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E5.8D.81.E5.88.86.E7.BC.93.E6.85.A2)
     *   [9.5 短时进程无日志记录](#.E7.9F.AD.E6.97.B6.E8.BF.9B.E7.A8.8B.E6.97.A0.E6.97.A5.E5.BF.97.E8.AE.B0.E5.BD.95)
     *   [9.6 禁止在程序崩溃时转储内存](#.E7.A6.81.E6.AD.A2.E5.9C.A8.E7.A8.8B.E5.BA.8F.E5.B4.A9.E6.BA.83.E6.97.B6.E8.BD.AC.E5.82.A8.E5.86.85.E5.AD.98)
     *   [9.7 启动的时间太长](#.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E9.97.B4.E5.A4.AA.E9.95.BF)
     *   [9.8 systemd-tmpfiles-setup.service 在启动时启动失败](#systemd-tmpfiles-setup.service_.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
-    *   [9.9 不能设定在开机时启动软链接到 /etc/systemd/system 的服务](#.E4.B8.8D.E8.83.BD.E8.AE.BE.E5.AE.9A.E5.9C.A8.E5.BC.80.E6.9C.BA.E6.97.B6.E5.90.AF.E5.8A.A8.E8.BD.AF.E9.93.BE.E6.8E.A5.E5.88.B0_.2Fetc.2Fsystemd.2Fsystem_.E7.9A.84.E6.9C.8D.E5.8A.A1)
-    *   [9.10 启动时显示的 systemd 版本和安装版本不一致](#.E5.90.AF.E5.8A.A8.E6.97.B6.E6.98.BE.E7.A4.BA.E7.9A.84_systemd_.E7.89.88.E6.9C.AC.E5.92.8C.E5.AE.89.E8.A3.85.E7.89.88.E6.9C.AC.E4.B8.8D.E4.B8.80.E8.87.B4)
-    *   [9.11 禁用远程机器的 emergency 模式](#.E7.A6.81.E7.94.A8.E8.BF.9C.E7.A8.8B.E6.9C.BA.E5.99.A8.E7.9A.84_emergency_.E6.A8.A1.E5.BC.8F)
+    *   [9.9 启动时显示的 systemd 版本和安装版本不一致](#.E5.90.AF.E5.8A.A8.E6.97.B6.E6.98.BE.E7.A4.BA.E7.9A.84_systemd_.E7.89.88.E6.9C.AC.E5.92.8C.E5.AE.89.E8.A3.85.E7.89.88.E6.9C.AC.E4.B8.8D.E4.B8.80.E8.87.B4)
+    *   [9.10 禁用远程机器的 emergency 模式](#.E7.A6.81.E7.94.A8.E8.BF.9C.E7.A8.8B.E6.9C.BA.E5.99.A8.E7.9A.84_emergency_.E6.A8.A1.E5.BC.8F)
 *   [10 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
 
 ## systemd 基本工具
@@ -73,7 +73,6 @@
 **提示：**
 
 *   在 `systemctl` 参数中添加 `-H <用户名>@<主机名>` 可以实现对其他机器的远程控制。该功能使用 [SSH](/index.php/SSH_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH (简体中文)") 连接。
-*   `systemadm` 是 systemd 的官方图形前端。[官方软件仓库](/index.php/Official_repositories "Official repositories")提供了稳定版本 [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) 。
 *   [Plasma](/index.php/Plasma "Plasma") 用户可以安装 *systemctl* 图形前端 [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)。安装后可以在 *System administration* 下找到。
 
 ### 分析系统状态
@@ -267,7 +266,7 @@ $ systemctl hybrid-sleep
 
 ## 编写单元文件
 
-`systemd` [单元文件](http://www.freedesktop.org/software/systemd/man/systemd.unit.html)的语法来源于 XDG 桌面项配置文件`.desktop`文件，最初的源头则是Microsoft Windows的`.ini`文件。单元文件可以从两个地方加载，优先级从低到高分别是：
+`systemd` [单元文件](http://www.freedesktop.org/software/systemd/man/systemd.unit.html)的语法来源于 XDG 桌面项配置文件`.desktop`文件，最初的源头则是Microsoft Windows的`.ini`文件。单元文件可以从多个地方加载，`systemctl show --property=UnitPath` 可以按优先级从低到高显示加载目录：
 
 *   `/usr/lib/systemd/system/` ：软件包安装的单元
 *   `/etc/systemd/system/` ：系统管理员安装的单元
@@ -333,11 +332,11 @@ $ systemctl hybrid-sleep
 
 这将会在记事本中打开 `/etc/systemd/system/*unit*`，如果文件不存在，可以将安装的版本复制到这里，在编辑完成之后，会自动加载新版本。
 
-**注意:** Pacman 不会更新新的单元文件，所以这个方式会增加系统维护的难度，所以推荐使用下面一种方法。
+**注意:** 即使 Pacman 更新了新的单元文件，软件包中的版本也不会被使用，所以这个方式会增加系统维护的难度，推荐使用下面一种方法。
 
-#### 附加代码片段
+#### 附加配置片段
 
-要附加代码片段，先创建名为 `/etc/systemd/system/<单元名>.d/` 的目录，然后放入 `*.conf` 文件，其中可以添加或重置参数。这里设置的参数优先级高于原来的单元文件。下面的更新方式比较简单：
+要附加配置片段，先创建名为 `/etc/systemd/system/<单元名>.d/` 的目录，然后放入 `*.conf` 文件，其中可以添加或重置参数。这里设置的参数优先级高于原来的单元文件。下面的更新方式比较简单：
 
 ```
 # systemctl edit *unit*
@@ -345,6 +344,8 @@ $ systemctl hybrid-sleep
 ```
 
 这将会在编辑器中打开文件 `/etc/systemd/system/*unit*.d/override.conf`，编辑完成之后自动加载。
+
+**Note:** 并不是所有参数都会被子配置文件覆盖。例如要修改 `Conflicts=` 就必须 [替换原始文件](https://lists.freedesktop.org/archives/systemd-devel/2017-June/038976.html)。
 
 #### 重置到软件包版本
 
@@ -439,15 +440,6 @@ systemd 中，运行级别通过“目标单元”访问。通过如下命令切
 
 ```
 
-要覆盖已经设置的*default.target*，请使用 force:
-
-```
-# systemctl set-default -f multi-user.target
-
-```
-
-可以在 `systemctl` 的输出中看到命令执行的效果：链接 `/etc/systemd/system/default.target` 被创建，指向新的默认运行级别。
-
 ## 临时文件
 
 `/usr/lib/tmpfiles.d/` 和 `/etc/tmpfiles.d/` 中的文件描述了 systemd-tmpfiles 如何创建、清理、删除临时文件和目录，这些文件和目录通常存放在 `/run` 和 `/tmp` 中。配置文件名称为 `/etc/tmpfiles.d/<program>.conf`。此处的配置能覆盖 `/usr/lib/tmpfiles.d/` 目录中的同名配置。
@@ -480,7 +472,11 @@ w /proc/acpi/wakeup - - - - USBE
 
 ## 挂载
 
-因为 systemd 替代了 System V init, 所以也负责按 `/etc/fstab` 定义挂载目录。除此之外，还实现了以 `x-systemd.` 开头的挂载选项. [Fstab (简体中文)#自动挂载](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD "Fstab (简体中文)") 包含了使用此扩展的 *automounting* (按需挂载)。完整扩展请参考 [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab)。
+因为 systemd 也负责按 `/etc/fstab` 挂载目录。在系统启动和重新加载系统管理器时，[systemd-fstab-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-fstab-generator.8) 会将 `/etc/fstab` 中的配置转化为 systemd 单元。
+
+*systemd* 扩展了 [fstab](/index.php/Fstab "Fstab") 的传统功能，提供了额外的挂载选项。例如可以确保一个挂载仅在网络已经连接时进行，或者仅当另外一个分区已挂载时再挂载。这些选项通常以 `x-systemd.` 开头，[systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5#FSTAB) 中包含了完整说明。
+
+*automounting* 也是一个例子，可以在使用时，而不是启动时挂载分区，详情请参考 [fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab")。
 
 ## 日志
 
@@ -603,6 +599,8 @@ So, useful facilities to watch: 0,1,3,4,9,10,15.
 SystemMaxUse=50M
 ```
 
+修改配置后要立即生效，请[重启](/index.php/Restart "Restart") `systemd-journald.service` 服务。
+
 详情参见 [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5).
 
 ### 配合 syslog 使用
@@ -668,6 +666,26 @@ $ journalctl -D */mnt*/var/log/journal -xe
 
 ## Tips and tricks
 
+### Running services after the network is up
+
+To delay a service after the network is up, include the following dependencies in the *.service* file:
+
+ `/etc/systemd/system/*foo*.service` 
+```
+[Unit]	
+...
+**Wants=network-online.target**
+**After=network-online.target**	
+...
+```
+
+The network wait service of the particular application that manages the network, must also be enabled so that `network-online.target` properly reflects the network status.
+
+*   For the ones using [NetworkManager](/index.php/NetworkManager "NetworkManager"), [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service`.
+*   If using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` is by default enabled automatically whenever `systemd-networkd.service` has been enabled; check this is the case with `systemctl is-enabled systemd-networkd-wait-online.service`, there is no other action needed.
+
+For more detailed explanations see [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) in the systemd wiki.
+
 ### Enable installed units by default
 
 Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` containing `disable *`. This causes *systemctl preset* to disable all units by default, such that when a new package is installed, the user must manually enable the unit.
@@ -686,7 +704,6 @@ Some examples on how sandboxing with systemd can be deployed:
 
 *   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities, but may also be used to blacklist a specific capability for a unit.
     *   The `CAP_SYS_ADM` capability, for example, which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/): `CapabilityBoundingSet=~ CAP_SYS_ADM`
-*   [Unbound#Sandboxing](/index.php/Unbound#Sandboxing "Unbound") shows a full-scale example of systemd features for sandboxing.
 
 ## 疑难解答
 
@@ -773,35 +790,29 @@ systemd-modules-load.service - Load Kernel Modules
 Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 ```
 
-参阅 [#诊断启动问题](#.E8.AF.8A.E6.96.AD.E5.90.AF.E5.8A.A8.E9.97.AE.E9.A2.98) 一节获得更多探查错误的方法.
-
 ### 诊断启动问题
 
 使用如下内核参数引导： `systemd.log_level=debug systemd.log_target=kmsg log_buf_len=1M`
 
 更多有关调试的信息，参见[该文](http://freedesktop.org/wiki/Software/systemd/Debugging)。
 
-### 诊断一个特定服务
+### 诊断一个服务
 
-如果某个 *systemd* 服务的工作状况不合你的预期因此你希望调试的话,设置 `SYSTEMD_LOG_LEVEL` [环境变量](/index.php/Environment_variable "Environment variable") 为 `debug` . 例如以调试模式运行 *systemd-networkd* 服务:
+如果某个 *systemd* 服务的工作状况不合预期,希望调试的话,设置 `SYSTEMD_LOG_LEVEL` [环境变量](/index.php/Environment_variable "Environment variable") 为 `debug` . 例如以调试模式运行 *systemd-networkd* 服务:
+
+在此服务的配置文件片段中加入：
 
 ```
-# systemctl stop systemd-networkd
-# SYSTEMD_LOG_LEVEL=debug /lib/systemd/systemd-networkd
+[Service]
+Environment=SYSTEMD_LOG_LEVEL=debug
 
 ```
 
 或者等价的,临时编辑系统单元文件,例如:
 
- `/lib/systemd/system/systemd-networkd.service` 
-```
-[Service]
-...
-Environment=SYSTEMD_LOG_LEVEL=debug
-....
-```
+1.  SYSTEMD_LOG_LEVEL=debug /lib/systemd/systemd-networkd
 
-如果经常需要调试信息,以[一般方法](#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6)添加环境变量.
+[重启](/index.php/Restart "Restart") *systemd-networkd* 服务，用 `--follow` 选项检查日志。
 
 ### 关机/重启十分缓慢
 
@@ -849,22 +860,6 @@ $ ulimit -c unlimited
 
 参阅 [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") 获得如何包含 `/var/log/journal` 启动 ACL 的详细信息.
 
-### 不能设定在开机时启动软链接到 /etc/systemd/system 的服务
-
-如果 `/etc/systemd/system/*foo*.service` 是个符号链接, 运行 `systemctl enable *foo*.service` 时可能遇到这样的错误:
-
-```
-Failed to issue method call: No such file or directory
-
-```
-
-这是 systemd 的 [设计选择](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14) ,可以通过输入绝对路径来规避这个错误:
-
-```
-# systemctl enable */absolute/path/foo*.service
-
-```
-
 ### 启动时显示的 systemd 版本和安装版本不一致
 
 需要 [重新生成 initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")。
@@ -883,19 +878,20 @@ Failed to issue method call: No such file or directory
 
 ## 相关资源
 
-*   [官方网站](http://www.freedesktop.org/wiki/Software/systemd)
-*   [维基百科上的介绍](https://en.wikipedia.org/wiki/zh:systemd "wikipedia:zh:systemd")
-*   [man 手册页](http://0pointer.de/public/systemd-man/)
-*   [systemd 优化](http://freedesktop.org/wiki/Software/systemd/Optimizations)
-*   [常见问题 FAQ](http://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
-*   [小技巧](http://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
+*   [Wikipedia article](https://en.wikipedia.org/wiki/systemd "wikipedia:systemd")
+*   [systemd Official web site](http://www.freedesktop.org/wiki/Software/systemd)
+*   [systemd optimizations](http://www.freedesktop.org/wiki/Software/systemd/Optimizations)
+*   [systemd FAQ](http://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
+*   [systemd Tips and tricks](http://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
+*   [Gentoo Wiki systemd page](http://wiki.gentoo.org/wiki/Systemd)
+*   [Fedora Project - About systemd](http://fedoraproject.org/wiki/Systemd)
+*   [Fedora Project - How to debug systemd problems](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
+*   [Fedora Project - SysVinit to systemd cheatsheet](http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
+*   [Debian Wiki systemd page](https://wiki.debian.org/systemd "debian:systemd")
+*   [Manual pages](http://0pointer.de/public/systemd-man/)
+*   [Lennart's blog story](http://0pointer.de/blog/projects/systemd.html), [update 1](http://0pointer.de/blog/projects/systemd-update.html), [update 2](http://0pointer.de/blog/projects/systemd-update-2.html), [update 3](http://0pointer.de/blog/projects/systemd-update-3.html), [summary](http://0pointer.de/blog/projects/why.html)
 *   [systemd for Administrators (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
-*   [Fedora 项目对 systemd 的介绍](http://fedoraproject.org/wiki/Systemd)
-*   [如何调试 systemd 故障](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   *The H Open* 杂志上的[两](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html)[篇](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html)科普文章
-*   [Lennart 的博文](http://0pointer.de/blog/projects/systemd.html)
-*   [更新报告](http://0pointer.de/blog/projects/systemd-update.html)
-*   [更新报告2](http://0pointer.de/blog/projects/systemd-update-2.html)
-*   [更新报告3](http://0pointer.de/blog/projects/systemd-update-3.html)
-*   [最新动态](http://0pointer.de/blog/projects/why.html)
-*   [Fedora Wiki 上的 SysVinit 和 systemd 命令对比表](https://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet/zh)
+*   [How To Use Systemctl to Manage Systemd Services and Units](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
+*   [Session management with systemd-logind](https://dvdhrm.wordpress.com/2013/08/24/session-management-on-linux/)
+*   [Emacs Syntax highlighting for Systemd files](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
+*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) introductory article in *The H Open* magazine.

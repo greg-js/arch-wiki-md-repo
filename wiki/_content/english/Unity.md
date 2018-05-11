@@ -33,7 +33,7 @@ Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 
 **Warning:** Installing Unity means that many official packages will be replaced with patched Ubuntu versions. Be careful to check the resulting package conflicts.
 
-PKGBUILDs for the Unity desktop are available on [GitHub](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/), *unity-tweak-tool* (a popular Unity configuration tool) and more.
+PKGBUILDs for the Unity desktop are available on GitHub, where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/), *unity-tweak-tool* (a popular Unity configuration tool) and more.
 
 [Install](/index.php/Install "Install") [git](https://www.archlinux.org/packages/?name=git) and navigate to a directory in which the sources can be built, then do:
 

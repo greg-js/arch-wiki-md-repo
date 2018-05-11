@@ -3,51 +3,34 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
+*   [2 Running](#Running)
     *   [2.1 PHP](#PHP)
     *   [2.2 Apache](#Apache)
     *   [2.3 Lighttpd](#Lighttpd)
     *   [2.4 Nginx](#Nginx)
-        *   [2.4.1 Option 1: subdomain](#Option_1:_subdomain)
-        *   [2.4.2 Option 2: subdirectory using symlink](#Option_2:_subdirectory_using_symlink)
-        *   [2.4.3 Option 3: subdirectory using location](#Option_3:_subdirectory_using_location)
-*   [3 phpMyAdmin configuration](#phpMyAdmin_configuration)
-    *   [3.1 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
-    *   [3.2 Enabling Configuration Storage (optional)](#Enabling_Configuration_Storage_.28optional.29)
-        *   [3.2.1 creating phpMyAdmin database](#creating_phpMyAdmin_database)
-        *   [3.2.2 creating phpMyAdmin database user](#creating_phpMyAdmin_database_user)
-    *   [3.3 Enabling templates catching (optional)](#Enabling_templates_catching_.28optional.29)
-*   [4 Accessing your phpMyAdmin installation](#Accessing_your_phpMyAdmin_installation)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Fixing open_basedir warning](#Fixing_open_basedir_warning)
-    *   [5.2 #2006 - MySQL server has gone away](#.232006_-_MySQL_server_has_gone_away)
+        *   [2.4.1 Subdomain](#Subdomain)
+        *   [2.4.2 Subdirectory using location](#Subdirectory_using_location)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Using setup script](#Using_setup_script)
+    *   [3.2 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
+    *   [3.3 Enabling Configuration Storage](#Enabling_Configuration_Storage)
+        *   [3.3.1 Setup database](#Setup_database)
+        *   [3.3.2 Setup database user](#Setup_database_user)
+    *   [3.4 Enabling templates catching](#Enabling_templates_catching)
 
 ## Installation
 
-Install the [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin) package.
+[Install](/index.php/Install "Install") the [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin) package.
 
-## Configuration
+## Running
 
 ### PHP
 
-You need to enable the `mysqli` extension in PHP by editing `/etc/php/php.ini` and uncommenting the following line:
-
-```
-extension=mysqli
-
-```
+Make sure the PHP [mysql](/index.php/PHP#MySQL.2FMariaDB "PHP") extension(s) have been enabled.
 
 Optionally you can enable `extension=bz2` and `extension=zip` for compression support.
 
-**Note:** *If* you use `open_basedir` (it is not set by default), make sure that PHP can access `/etc/webapps` by adding it to `open_basedir` in `/etc/php/php.ini`.
-
-If you want to run PhpMyAdmin without any web server, such as Apache, Lighttpd or Nginx. You can host it directly with PHP and skip any further steps, by doing the following:
-
-```
-cd /usr/share/webapps/phpMyAdmin
-php -S localhost:8000
-
-```
+**Note:** If `open_basedir` has been set, make sure to include `/etc/webapps` to `open_basedir` in `/etc/php/php.ini`.
 
 ### Apache
 
@@ -78,28 +61,22 @@ Include conf/extra/phpmyadmin.conf
 
 ### Lighttpd
 
-Configuring Lighttpd is similar to Apache. Make sure Lighttpd is setup to serve PHP files (see [Lighttpd](/index.php/Lighttpd "Lighttpd")).
+Configuring [Lighttpd](/index.php/Lighttpd "Lighttpd"), make sure it is able to serve PHP files and `mod_alias` has been enabled.
 
-Make an alias for phpmyadmin in your Lighttpd config.
+Add the following alias for PhpMyAdmin to the config:
 
 ```
  alias.url = ( "/phpmyadmin" => "/usr/share/webapps/phpMyAdmin/")
 
 ```
 
-Then enable mod_alias, mod_fastcgi and mod_cgi in your config ( server.modules section )
-
-Restart Lighttpd and go to [[1]](http://localhost/phpmyadmin/).
-
 ### Nginx
 
-Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx") with separate configuration file for PHP as shown in [nginx#PHP configuration file](/index.php/Nginx#PHP_configuration_file "Nginx").
+Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx").
 
-#### Option 1: subdomain
+#### Subdomain
 
-Using this method, you will access PhpMyAdmin as `phpmyadmin.<domain>`.
-
-You can setup a sub domain (or domain) with a server block such as:
+Set up a separate configuration file for PHP as shown in [nginx#PHP configuration file](/index.php/Nginx#PHP_configuration_file "Nginx") and use a server block such as:
 
 ```
 server {
@@ -111,139 +88,127 @@ server {
 
 ```
 
-#### Option 2: subdirectory using symlink
+#### Subdirectory using location
 
-Using this method, you'll access PhpMyAdmin as `localhost/phpmyadmin`, similarly to Apache.
+This will allow access to PhpMyAdmin as in `https://domain.tld/phpMyAdmin`:
 
-To get PhpMyAdmin working with your [nginx](/index.php/Nginx "Nginx") setup, first take note of the root of the server you want to use. Supposing it is `/srv/http`, now create a symlink:
-
+ `/etc/nginx/sites-available/domain.tld` 
 ```
- # ln -s /usr/share/webapps/phpMyAdmin/ /srv/http/phpmyadmin
+location /phpMyAdmin {
+   server_name domain.tld;
+   listen 443 ssl http2;
+   root /srv/http/domain.tld;
+   index index.php;  
 
-```
+   location / {
+      try_files $uri $uri/ =404;
+   }
 
-#### Option 3: subdirectory using location
+   # Deny static files
+   location ~ ^/phpMyAdmin/(README|LICENSE|ChangeLog|DCO)$ {
+      deny all;
+   }
 
-If for some reason you are unable to create a symlink in the root of the server or would just rather use location, you can use this example configuration.
+   # Deny .md files
+   location ~ ^/phpMyAdmin/(.+\.md)$ {
+      deny all;
+   }
 
-Using this method, you'll access PhpMyAdmin as `localhost/phpMyAdmin`, similarly to Apache.
+   # Deny setup directories
+   location ~ ^/phpMyAdmin/(doc|sql|setup)/ {
+      deny all;
+   }
 
-```
- location /phpMyAdmin {
-     root /usr/share/webapps;
-     index   index.php;  
-     try_files $uri $uri/ =404;
-     # Deny some static files
-     location ~ ^/phpMyAdmin/(README|LICENSE|ChangeLog|DCO)$ {
-         deny all;
-     }
-     # Deny .md files
-     location ~ ^/phpMyAdmin/(.+\.md)$ {
-         deny all;
-     }
-     # Deny some directories
-     location ~ ^/phpMyAdmin/(doc|sql|setup)/ {
-         deny all;
-     }
-     #FastCGI config for phpMyAdmin
-     location ~ /phpMyAdmin/(.+\.php)$ {
-         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-         fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-         fastcgi_index  index.php;
-         include        fastcgi.conf;
-     }
- }
+   #FastCGI config for phpMyAdmin
+   location ~ /phpMyAdmin/(.+\.php)$ {
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
+      fastcgi_index  index.php;
+      include        fastcgi.conf;
+   }
+}
 
 ```
 
-## phpMyAdmin configuration
+## Configuration
 
-phpMyAdmin's configuration file is located at `/etc/webapps/phpmyadmin/config.inc.php`. If you have a local MySQL server, it should be usable without making any modifications.
+The main configuration file is located at `/etc/webapps/phpmyadmin/config.inc.php`.
 
-If your MySQL server is not on the localhost, uncomment and edit the following line:
+If the [MySQL](/index.php/MySQL "MySQL") server is not on localhost, [append](/index.php/Append "Append") the following line:
 
 ```
 $cfg['Servers'][$i]['host'] = 'localhost';
 
 ```
 
-If you would like to use phpMyAdmin setup script by calling [http://localhost/phpmyadmin/setup](http://localhost/phpmyadmin/setup) you will need to create a config directory that's writeable by the *httpd* user in `/usr/share/webapps/phpMyAdmin` as follows:
+### Using setup script
+
+To allow the usage of the phpMyAdmin setup script (e.g. [http://localhost/phpmyadmin/setup](http://localhost/phpmyadmin/setup)), make sure `/usr/share/webapps/phpMyAdmin` is writable for the `http` [user](/index.php/User "User"):
 
 ```
-# cd /usr/share/webapps/phpMyAdmin
-# mkdir config
-# chgrp http config
-# chmod g+w config
+# mkdir /usr/share/webapps/phpMyAdmin/config
+# chown http:http /usr/share/webapps/phpMyAdmin/config
+# chmod 750 /usr/share/webapps/phpMyAdmin/config
 
 ```
 
 ### Add blowfish_secret passphrase
 
-If you see the following error message at the bottom of the page when you first log in to /phpmyadmin (using a previously setup MySQL username and password) :
+It is required to enter an unique string (32 characters are recommended) to fully use the blowfish algorithm used by phpMyAmdin, thus preventing the message *ERROR: The configuration file now needs a secret passphrase (blowfish_secret)*:
 
+ `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['blowfish_secret'] = '...';` 
+
+### Enabling Configuration Storage
+
+Extra options such as table linking, change tracking, PDF creation, and bookmarking queries are disabled by default, displaying *The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated.* on the homepage.
+
+**Note:** This example assumes you want to use the default username **pma** as the `controluser`, and **pmapass** as the `controlpass`.
+
+In `/etc/webapps/phpmyadmin/config.inc.php`, uncomment (remove the leading "//"s), and change them to your desired credentials if needed:
+
+ `/etc/webapps/phpmyadmin/config.inc.php` 
 ```
-ERROR: The configuration file now needs a secret passphrase (blowfish_secret)
+/* User used to manipulate with storage */
+// $cfg['Servers'][$i]['controlhost'] = 'my-host';
+// $cfg['Servers'][$i]['controlport'] = '3306';
+$cfg['Servers'][$i]['controluser'] = 'pma';
+$cfg['Servers'][$i]['controlpass'] = 'pmapass';
 
-```
-
-You need to add a unique password for the blowfish algorithm (which is used by phpMyAdmin to secure the authentication procedure) between the following `''`. You can use any password generator for that matter, a key length of 32 is recommended.
-
- `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */` 
-
-The error should go away if you refresh the phpmyadmin page.
-
-### Enabling Configuration Storage (optional)
-
-Now that the basic database server has been setup, it *is* functional, however by default, extra options such as table linking, change tracking, PDF creation, and bookmarking queries are disabled. You will see a message at the bottom of the main phpMyAdmin page, "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated. To find out why...", This section addresses how to to enable these extra features.
-
-**Note:** This example assumes you want to use the username **pma** as the controluser, and **pmapass** as the controlpass. These should be changed (the *very* least, you should change the password!) to something more secure.
-
-In `/etc/webapps/phpmyadmin/config.inc.php`, uncomment (remove the leading "//"s on) these two lines, and change them to your desired credentials:
-
-```
-// $cfg['Servers'][$i]['controluser'] = 'pma';
-// $cfg['Servers'][$i]['controlpass'] = 'pmapass';
-```
-
-You will need this information later, so keep it in mind.
-
-Beneath the controluser setup section, uncomment these lines:
-
-```
 /* Storage database and tables */
-// $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
-// $cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
-// $cfg['Servers'][$i]['relation'] = 'pma__relation';
-// $cfg['Servers'][$i]['table_info'] = 'pma__table_info';
-// $cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
-// $cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
-// $cfg['Servers'][$i]['column_info'] = 'pma__column_info';
-// $cfg['Servers'][$i]['history'] = 'pma__history';
-// $cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
-// $cfg['Servers'][$i]['tracking'] = 'pma__tracking';
-// $cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
-// $cfg['Servers'][$i]['recent'] = 'pma__recent';
-// $cfg['Servers'][$i]['favorite'] = 'pma__favorite';
-// $cfg['Servers'][$i]['users'] = 'pma__users';
-// $cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
-// $cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
-// $cfg['Servers'][$i]['savedsearches'] = 'pma__savedsearches';
-// $cfg['Servers'][$i]['central_columns'] = 'pma__central_columns';
-// $cfg['Servers'][$i]['designer_settings'] = 'pma__designer_settings';
-// $cfg['Servers'][$i]['export_templates'] = 'pma__export_templates';
+$cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
+$cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
+$cfg['Servers'][$i]['relation'] = 'pma__relation';
+$cfg['Servers'][$i]['table_info'] = 'pma__table_info';
+$cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
+$cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
+$cfg['Servers'][$i]['column_info'] = 'pma__column_info';
+$cfg['Servers'][$i]['history'] = 'pma__history';
+$cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
+$cfg['Servers'][$i]['tracking'] = 'pma__tracking';
+$cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
+$cfg['Servers'][$i]['recent'] = 'pma__recent';
+$cfg['Servers'][$i]['favorite'] = 'pma__favorite';
+$cfg['Servers'][$i]['users'] = 'pma__users';
+$cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
+$cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
+$cfg['Servers'][$i]['savedsearches'] = 'pma__savedsearches';
+$cfg['Servers'][$i]['central_columns'] = 'pma__central_columns';
+$cfg['Servers'][$i]['designer_settings'] = 'pma__designer_settings';
+$cfg['Servers'][$i]['export_templates'] = 'pma__export_templates';
 ```
 
-Next, create the user with the above details. Don't set any permissions for it just yet.
+##### Setup database
 
-**Note:** If you can't login to phpmyadmin, make sure that your mysql server is started.
+Two options are available to create the required tables:
 
-##### creating phpMyAdmin database
+*   Import `/usr/share/webapps/phpMyAdmin/sql/create_tables.sql` by using PhpMyAdmin.
+*   Execute `mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql` in the command line.
 
-Using the phpMyAdmin web interface: Import `/usr/share/webapps/phpMyAdmin/sql/create_tables.sql` from phpMyAdmin -> Import. **or** Using command line: `mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql`.
+##### Setup database user
 
-##### creating phpMyAdmin database user
+To apply the required permissions for `controluser`, execute the following query:
 
-Now to apply the permissions to your controluser, in the [SQL tab](/index.php/MySQL "MySQL"), make sure to replace all instances of 'pma' and 'pmapass' to the values set in config.inc.php. If you are setting this up for a remote database, then you must also change 'localhost' to the proper host:
+**Note:** Make sure to replace all instances of `pma` and `pmapass` to the values set in `config.inc.php`. If you are setting this up for a remote database, then you must also change `localhost` to the proper host.
 
 ```
 GRANT USAGE ON mysql.* TO 'pma'@'localhost' IDENTIFIED BY 'pmapass';
@@ -261,73 +226,30 @@ GRANT SELECT (Host, Db, User, Table_name, Table_priv, Column_priv)
 
 ```
 
-In order to take advantage of the bookmark and relation features, you will also need to give **pma** some additional permissions:
+In order use the bookmark and relation features, set the following permissions:
 
-**Note:** as long as you did not change the value of **$cfg['Servers'][$i]['pmadb']** in `/etc/webapps/phpmyadmin/config.inc.php`, then **<pma_db>** should be **phpmyadmin**
- `GRANT SELECT, INSERT, UPDATE, DELETE ON <pma_db>.* TO 'pma'@'localhost';` 
+```
+GRANT SELECT, INSERT, UPDATE, DELETE ON <pma_db>.* TO 'pma'@'localhost';
 
-Log out, and back in to ensure the new features are activated. The message at the bottom of the main screen should now be gone.
+```
 
-### Enabling templates catching (optional)
+Re-login to ensure the new features are activated.
 
-To enable templates catching - you must create `tmp` directory in phpmyadmin installation. This can be done by executing the following commands:
+### Enabling templates catching
 
-Create `tmp` directory:
+Create the `tmp` directory:
 
 ```
 # mkdir /usr/share/webapps/phpMyAdmin/tmp
 
 ```
 
-Give it 777 permissions, so PHP can write to it:
+Set read/write permissions for the `http` [user](/index.php/User "User"):
 
 ```
-# chmod 777 /usr/share/webapps/phpMyAdmin/tmp
-
-```
-
-Refresh phpmyadmin in browser and message `The $cfg['TempDir'] (./tmp/) is not accessible. phpMyAdmin is not able to cache templates and will be slow because of this.` should be gone.
-
-## Accessing your phpMyAdmin installation
-
-Your phpMyAdmin installation is now complete. Before you start using it you need to restart Apache.
-
-You can access your phpMyAdmin installation by going to [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
-
-## Troubleshooting
-
-### Fixing open_basedir warning
-
-If you see the following Warning when entering the homepage of PhpMyAdmin:
-
-```
-Warning in ./libraries/Config.class.php#1147
-file_exists(): open_basedir restriction in effect. File(./config.inc.php) is not within the allowed path(s): (/srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/)
+# chmod 750 /usr/share/webapps/phpMyAdmin/tmp
+# chown http:http /usr/share/webapps/phpMyAdmin/tmp
 
 ```
 
-It means that phpmyadmin was not able to find where the `config.inc.php` file is located.
-
-In order to fix that, you need to indicate the path in `/etc/php/php.ini` of the `phpmyadmin` directory containing the file, which should be `/etc/webapps`, putting it at the end of the paths separated with a `:` in the `open_basedir` variable:
-
- `/etc/php/php.ini`  `open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/**:/etc/webapps/**` 
-
-Once you have done that, [restart](/index.php/Restart "Restart") `httpd.service`.
-
-Now refresh the page, and you should no longer have the warning.
-
-### #2006 - MySQL server has gone away
-
-If, when trying to log into PhpMyAdmin, you encounter
-
-```
-#2006 - MySQL server has gone away
-
-Connection for controluser as defined in your configuration failed.
-
-```
-
-a fix seems to be to make sure you do not have SSL connection between PhpMyAdmin and MariaDB activated. Hence comment out or set to `false` the following line:
-
- `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['Servers'][$i]['ssl'] = true;` 
-**Note:** There surely must be a better fix since 'ssl = true' worked before. Also do not disable SSL if your PhpMyAdmin install is somehow not on the same server as MySQL!
+Refresh PhpMyAdmin to apply changes.

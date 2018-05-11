@@ -51,9 +51,9 @@
     *   [9.11 如何加速编译？](#.E5.A6.82.E4.BD.95.E5.8A.A0.E9.80.9F.E7.BC.96.E8.AF.91.EF.BC.9F)
     *   [9.12 foo 和 foo-git 的区别是什么?](#foo_.E5.92.8C_foo-git_.E7.9A.84.E5.8C.BA.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.3F)
     *   [9.13 为啥某个软件包从AUR消失了?](#.E4.B8.BA.E5.95.A5.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8EAUR.E6.B6.88.E5.A4.B1.E4.BA.86.3F)
-    *   [9.14 我要咋找出从AUR里消失的软件包?](#.E6.88.91.E8.A6.81.E5.92.8B.E6.89.BE.E5.87.BA.E4.BB.8EAUR.E9.87.8C.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.3F)
+    *   [9.14 我要怎么找出从AUR里消失的软件包?](#.E6.88.91.E8.A6.81.E6.80.8E.E4.B9.88.E6.89.BE.E5.87.BA.E4.BB.8EAUR.E9.87.8C.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.3F)
     *   [9.15 如何查找已经安装但是从 AUR 消失的软件包](#.E5.A6.82.E4.BD.95.E6.9F.A5.E6.89.BE.E5.B7.B2.E7.BB.8F.E5.AE.89.E8.A3.85.E4.BD.86.E6.98.AF.E4.BB.8E_AUR_.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [9.16 想知道AUR 里都有啥 ？](#.E6.83.B3.E7.9F.A5.E9.81.93AUR_.E9.87.8C.E9.83.BD.E6.9C.89.E5.95.A5_.EF.BC.9F)
+    *   [9.16 想知道 AUR 里都有啥 ？](#.E6.83.B3.E7.9F.A5.E9.81.93_AUR_.E9.87.8C.E9.83.BD.E6.9C.89.E5.95.A5_.EF.BC.9F)
 *   [10 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
 
 ## 导读
@@ -388,7 +388,7 @@ Arch User Repository是储存所有用户提交的PKGBUILD的地方，软件包�
 
 如果某个软件包在AUR3时期存在,它可能没 [迁移到AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). 参阅[#AUR3 软件包的Git仓库](#AUR3_.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84Git.E4.BB.93.E5.BA.93) 获得获取他们的更多信息.
 
-### 我要咋找出从AUR里消失的软件包?
+### 我要怎么找出从AUR里消失的软件包?
 
 可以用下面的命令实现:
 
@@ -403,7 +403,7 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 
 通过网络访问检查：: $ comm -23 <(pacman -Qqm | sort) <(curl [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz) | gzip -cd | sort)
 
-### 想知道AUR 里都有啥 ？
+### 想知道 AUR 里都有啥 ？
 
 *   [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz)
 *   使用来自 [python3-aur](https://aur.archlinux.org/packages/python3-aur/) 的 `aurpkglist` 。

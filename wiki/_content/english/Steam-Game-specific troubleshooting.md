@@ -257,6 +257,7 @@
         *   [4.118.2 Unity 5 sound problems](#Unity_5_sound_problems)
         *   [4.118.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
         *   [4.118.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
+        *   [4.118.5 Game does not respond](#Game_does_not_respond)
     *   [4.119 Unrest](#Unrest)
     *   [4.120 Volgarr the Viking](#Volgarr_the_Viking)
     *   [4.121 War Thunder](#War_Thunder)
@@ -2027,6 +2028,15 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 
 ```
 #fc-cache -fv
+
+```
+
+#### Game does not respond
+
+Add the following line to your [launch options](/index.php/Launch_option "Launch option") :
+
+```
+SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so %command%
 
 ```
 

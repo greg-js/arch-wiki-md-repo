@@ -16,10 +16,12 @@ Related articles
     *   [1.5 Adding a user](#Adding_a_user)
     *   [1.6 Listing users](#Listing_users)
     *   [1.7 Changing Samba user's password](#Changing_Samba_user.27s_password)
-    *   [1.8 Required ports](#Required_ports)
+    *   [1.8 Set permissions](#Set_permissions)
+    *   [1.9 Configure Firewall](#Configure_Firewall)
 *   [2 Client configuration](#Client_configuration)
     *   [2.1 List Public Shares](#List_Public_Shares)
     *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
+        *   [2.2.1 Disable NetBIOS/WINS support](#Disable_NetBIOS.2FWINS_support)
     *   [2.3 Manual mounting](#Manual_mounting)
         *   [2.3.1 Storing Share Passwords](#Storing_Share_Passwords)
     *   [2.4 Automatic mounting](#Automatic_mounting)
@@ -40,7 +42,6 @@ Related articles
     *   [3.5 Discovering network shares](#Discovering_network_shares)
     *   [3.6 Remote control of Windows computer](#Remote_control_of_Windows_computer)
     *   [3.7 Share files without a username and password](#Share_files_without_a_username_and_password)
-        *   [3.7.1 Sample Passwordless Configuration](#Sample_Passwordless_Configuration)
     *   [3.8 Build Samba without CUPS](#Build_Samba_without_CUPS)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
@@ -129,7 +130,6 @@ Set the following parameters in the `smb.conf` configuration file:
 
  `/etc/samba/smb.conf` 
 ```
-...
 [global]
   usershare path = /var/lib/samba/usershares
   usershare max shares = 100
@@ -187,7 +187,34 @@ To change a user's password, use `smbpasswd`:
 
 ```
 
-### Required ports
+### Set permissions
+
+Permissions may be applied to both the server and a share:
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+  ;inherit owner = unix only ; Inherit ownership of the parent directory for new files and directories
+  ;inherit permissions = yes ; Inherit permissions of the parent directory for new files and directories
+  create mask = 0664
+  directory mask = 2755
+  force create mode = 0644
+  force directory mode = 2755
+  ...
+
+  [media]
+  comment = Media share
+  valid users = *archie*
+  public = no
+  writable = yes
+  create mask = 0664
+  directory mask = 2775
+  force create mode = 0664
+  force directory mode = 2775
+  ...
+```
+
+### Configure Firewall
 
 If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to open required ports (usually 137-139 + 445). For a complete list please check [Samba port usage](https://www.samba.org/~tpot/articles/firewall.html).
 
@@ -226,6 +253,19 @@ Where the options are `-b` (`--broadcast`) to use broadcast instead of using the
 You may need to [start](/index.php/Start "Start") `winbind.service` in order to resolve host names with e.g., `mount.cifs`
 
 The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add `wins` to the “hosts” line in `/etc/nsswitch.conf`.
+
+#### Disable NetBIOS/WINS support
+
+When not using NetBIOS/WINS host name resolution, it may be preferred to disable this protocol:
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+  disable netbios = yes
+  dns proxy = no
+```
+
+Finally [disable](/index.php/Disable "Disable")/[stop](/index.php/Stop "Stop") `winbind.service`.
 
 ### Manual mounting
 
@@ -468,21 +508,23 @@ server min protocol = SMB2
 
 ### Improve performance
 
+It is possible to improve performance, however this may lead to **corruption and/or connection issues**.
+
+Read the [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page before applying any of the options listed below.
+
+**Note:** Network-interface adjustments may be needed for some options to work, see [Sysctl#Networking](/index.php/Sysctl#Networking "Sysctl").
  `/etc/samba/smb.conf` 
 ```
 [global]
-        server multi channel support = yes
-        socket options = IPTOS_THROUGHPUT SO_KEEPALIVE
-        deadtime = 30
-        use sendfile = Yes
-        write cache size = 262144
-        min receivefile size = 16384
-        aio read size = 16384
-        aio write size = 16384
-        nt pipe support = no
+   server multi channel support = yes
+   socket options = SO_RCVBUF=131072 SO_SNDBUF=131072 IPTOS_LOWDELAY TCP_NODELAY IPTOS_THROUGHPUT
+   deadtime = 30
+   use sendfile = Yes
+   write cache size = 262144
+   min receivefile size = 16384
+   aio read size = 16384
+   aio write size = 16384
 ```
-
-**Warning:** `nt pipe support = no` breaks some windows functionality.
 
 ### Disable printer share
 
@@ -491,10 +533,12 @@ If you do not have printers to be shared, use the following setting to save some
  `/etc/samba/smb.conf` 
 ```
 [global]
-        load printers = no
+   load printers = no
+   printing = bsd
+   printcap name = /dev/null
+   disable spoolss = yes
+   show add printer wizard = no
 ```
-
-Options `printcap name = /dev/null` and `disable spools = yes` might save a few additional resources, depending on the Samba version used.
 
 ### Block certain file extensions on Samba share
 
@@ -680,43 +724,6 @@ writable = no
 ```
 
 **Note:** Make sure the guest also has permission to visit `/path`, `/path/to` and `/path/to/public`, according to [http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory](http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory).
-
-#### Sample Passwordless Configuration
-
-This is the configuration I use with samba 4 for easy passwordless filesharing with family on a home network. Change any options needed to suit your network (workgroup and interface). I'm restricting it to the static IP I have on my ethernet interface, just delete that line if you do not care which interface is used.
-
- `/etc/samba/smb.conf` 
-```
-[global]
-
-   workgroup = WORKGROUP
-
-   server string = Media Server
-
-   security = user
-   map to guest = Bad User
-
-   log file = /var/log/samba/%m.log
-
-   max log size = 50
-
-   interfaces = 192.168.2.194/24
-
-   dns proxy = no 
-
-[media]
-   path = /shares
-   public = yes
-   only guest = yes
-   writable = yes
-
-[storage]
-   path = /media/storage
-   public = yes
-   only guest = yes
-   writable = yes
-
-```
 
 ### Build Samba without CUPS
 

@@ -87,7 +87,9 @@ Samba 服务的配置文件是 `/etc/samba/smb.conf`，如果没有则 smbd 无�
 
 ### 启动服务
 
-为了能够使用 SMB 进行基本的文件共享，[start/enable](/index.php/Systemd#Using_units "Systemd") `smbd.service` 和 `nmbd.service` 服务。更多信息参阅 [smbd](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) 和 [nmbd](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) 的 man 手册。
+**注意:** 在 [samba](https://www.archlinux.org/packages/?name=samba) 4.8.0-1里, `smbd.service` 和 `nmbd.service` 单元被改名为 `smb.service` 和 `nmb.service`.
+
+为了能够使用 SMB 进行基本的文件共享，[start/enable](/index.php/Systemd#Using_units "Systemd") `smb.service` 和 `nmb.service` 服务。更多信息参阅 [smbd](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) 和 [nmbd](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) 的 man 手册。 `nmbd.service` 并不总是需要启用。
 
 **提示：** 除了在启动时启动服务，可以选择启用 `smbd.socket`，禁用 `smbd.service`。这样的话会在第一次收到连接请求是启动后台进程。
 

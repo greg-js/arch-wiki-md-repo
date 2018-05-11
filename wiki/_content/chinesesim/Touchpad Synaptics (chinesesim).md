@@ -4,9 +4,9 @@
 
 *   [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
 
-本文描述了 ***Synaptics 输入驱动*** 的安装和配置过程，适用于大多数笔记本电脑上的Synaptics(或ALPS)触摸板
+**警告:** `xf86-input-synaptics` 已经停止维护，请尽量使用 [libinput](/index.php/Libinput "Libinput")。
 
-**注意:** `xf86-input-synaptics` 已经进入低维护状态，不会再有大的更新，请尽量使用 [libinput](/index.php/Libinput "Libinput")，libinput 使用另外的方式识别和处理多点触控功能。
+本文描述了 ***Synaptics 输入驱动*** 的安装和配置过程，适用于大多数笔记本电脑上的Synaptics(或ALPS)触摸板。
 
 ## Contents
 

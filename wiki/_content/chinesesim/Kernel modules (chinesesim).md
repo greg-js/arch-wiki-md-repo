@@ -4,38 +4,35 @@
 *   [Kernels (简体中文)](/index.php/Kernels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels (简体中文)")
 *   [Kernel parameters (简体中文)](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Kernel_modules](/index.php/Kernel_modules "Kernel modules") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-07-06，点击[这里](https://wiki.archlinux.org/index.php?title=Kernel_modules&diff=0&oldid=264846)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernel_modules](/index.php/Kernel_modules "Kernel modules") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-09，点击[这里](https://wiki.archlinux.org/index.php?title=Kernel_modules&diff=0&oldid=515813)可以查看翻译后英文页面的改动。
 
 [内核模块](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module")是可以按需加载或卸载的内核代码，可以不重启系统就扩充内核的功能。
 
+要创建内核模块，请阅读[此指南](http://tldp.org/LDP/lkmpg/2.6/html/index.html)。模块可以设置成内置或者动态加载，要编译成可动态加载，需要在内核配置时将模块配置为 `M` (模块)。
+
 ## Contents
 
-*   [1 概览](#.E6.A6.82.E8.A7.88)
-*   [2 获取信息](#.E8.8E.B7.E5.8F.96.E4.BF.A1.E6.81.AF)
+*   [1 获取信息](#.E8.8E.B7.E5.8F.96.E4.BF.A1.E6.81.AF)
+*   [2 自动处理](#.E8.87.AA.E5.8A.A8.E5.A4.84.E7.90.86)
 *   [3 手动加载卸载](#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.8D.B8.E8.BD.BD)
-*   [4 配置](#.E9.85.8D.E7.BD.AE)
-    *   [4.1 开机加载](#.E5.BC.80.E6.9C.BA.E5.8A.A0.E8.BD.BD)
-    *   [4.2 配置内核模块参数](#.E9.85.8D.E7.BD.AE.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97.E5.8F.82.E6.95.B0)
-    *   [4.3 使用 /etc/modprobe.d/中的文件](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fmodprobe.d.2F.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
-    *   [4.4 使用内核命令行](#.E4.BD.BF.E7.94.A8.E5.86.85.E6.A0.B8.E5.91.BD.E4.BB.A4.E8.A1.8C)
+*   [4 配置模块参数](#.E9.85.8D.E7.BD.AE.E6.A8.A1.E5.9D.97.E5.8F.82.E6.95.B0)
+    *   [4.1 手动加载时设置](#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E6.97.B6.E8.AE.BE.E7.BD.AE)
+    *   [4.2 使用 /etc/modprobe.d/中的文件](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fmodprobe.d.2F.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
+    *   [4.3 使用内核命令行](#.E4.BD.BF.E7.94.A8.E5.86.85.E6.A0.B8.E5.91.BD.E4.BB.A4.E8.A1.8C)
 *   [5 别名](#.E5.88.AB.E5.90.8D)
 *   [6 黑名单](#.E9.BB.91.E5.90.8D.E5.8D.95)
     *   [6.1 禁用内核模块](#.E7.A6.81.E7.94.A8.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
     *   [6.2 使用 /etc/modprobe.d/ 中的文件](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fmodprobe.d.2F_.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
     *   [6.3 使用内核命令行](#.E4.BD.BF.E7.94.A8.E5.86.85.E6.A0.B8.E5.91.BD.E4.BB.A4.E8.A1.8C_2)
-*   [7 技巧](#.E6.8A.80.E5.B7.A7)
-    *   [7.1 显示所有内核参数的脚本](#.E6.98.BE.E7.A4.BA.E6.89.80.E6.9C.89.E5.86.85.E6.A0.B8.E5.8F.82.E6.95.B0.E7.9A.84.E8.84.9A.E6.9C.AC)
+*   [7 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
+    *   [7.1 模块未加载](#.E6.A8.A1.E5.9D.97.E6.9C.AA.E5.8A.A0.E8.BD.BD)
 *   [8 参见](#.E5.8F.82.E8.A7.81)
 
-## 概览
-
-要创建内核模块，请阅读[此指南](http://tldp.org/LDP/lkmpg/2.6/html/index.html)。模块可以设置成内置或者动态加载，要编译成可动态加载，需要在内核配置时将模块配置为 `M` (模块)。
+## 获取信息
 
 模块保存在 `/lib/modules/*kernel_release*` (使用 `uname -r` 命令显示当前内核版本)。
 
 **注意:** 模块名通常使用 (`_`) 或 `-` 连接，但是这些符号在 `modprobe` 命令和 `/etc/modprobe.d/` 配置文件中都是可以相互替换的。
-
-## 获取信息
 
 显示当前装入的内核模块：
 
@@ -79,6 +76,20 @@ $ modprobe --show-depends *module_name*
 
 ```
 
+## 自动处理
+
+目前，所有必要模块的加载均由 [udev](/index.php/Udev "Udev") 自动完成。所以，如果不需要使用任何额外的模块，就没有必要在任何配置文件中添加启动时加载的模块。但是，有些情况下可能需要在系统启动时加载某个额外的模块，或者将某个模块列入黑名单以便使系统正常运行。
+
+systemd 读取 `/etc/modules-load.d/` 中的配置加载额外的内核模块。配置文件名称通常为 `/etc/modules-load.d/<program>.conf`。格式很简单，一行一个要读取的模块名，而空行以及第一个非空格字符为`#`或`;`的行会被忽略，如：
+
+ `/etc/modules-load.d/virtio-net.conf` 
+```
+# Load virtio-net.ko at boot
+virtio-net
+```
+
+另见[modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5)。
+
 ## 手动加载卸载
 
 控制内核模块载入/移除的命令是[kmod](https://www.archlinux.org/packages/?name=kmod) 软件包提供的, 要手动装入模块的话，执行:
@@ -87,6 +98,15 @@ $ modprobe --show-depends *module_name*
 # modprobe *module_name*
 
 ```
+
+按文件名加载模块:
+
+```
+# insmod filename [args]
+
+```
+
+{{Note|如果升级了内核但是没有重启，路径 `/usr/lib/modules/$(uname -r)/` 已经不存在。*modprobe* 会返回错误 1，没有额外的错误信息。如果出现 modprobe 加载失败，请检查模块路径以确认是否是这个问题导致。
 
 如果要移除一个模块：
 
@@ -102,23 +122,16 @@ $ modprobe --show-depends *module_name*
 
 ```
 
-## 配置
+## 配置模块参数
 
-目前，所有必要模块的加载均由 [udev](/index.php/Udev "Udev") 自动完成。所以，如果不需要使用任何额外的模块，就没有必要在任何配置文件中添加启动时加载的模块。但是，有些情况下可能需要在系统启动时加载某个额外的模块，或者将某个模块列入黑名单以便使系统正常运行。
+### 手动加载时设置
 
-### 开机加载
+传递参数的基本方式是使用 modprobe 选项，格式是 `*key=value*`：
 
-systemd 读取 `/etc/modules-load.d/` 中的配置加载额外的内核模块。配置文件名称通常为 `/etc/modules-load.d/<program>.conf`。格式很简单，一行一个要读取的模块名，而空行以及第一个非空格字符为`#`或`;`的行会被忽略，如：
-
- `/etc/modules-load.d/virtio-net.conf` 
 ```
-# Load virtio-net.ko at boot
-virtio-net
+# modprobe *module_name parameter_name=parameter_value*
+
 ```
-
-另见[modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5)。
-
-### 配置内核模块参数
 
 ### 使用 /etc/modprobe.d/中的文件
 
@@ -219,65 +232,15 @@ modprobe.blacklist=modname1,modname2,modname3
 
 参阅[Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-## 技巧
+## 问题处理
 
-### 显示所有内核参数的脚本
+### 模块未加载
 
-下面的 bash 脚本可以显示当前装入模块、模块参数及当前参数的数值。它使用 `/proc/modules` 获取当前装入模块的列表，然后用 modinfo 获取模块的描述和模块的参数，最后访问 sysfs 文件系统获得当前模块名和参数值。
+如果出现模块在启动时未加载，而且启动日志中(`journalctl -b`) 显示模块被屏蔽，但是 `/etc/modprobe.d/` 中未找到屏蔽设置，请检查 `/usr/lib/modprobe.d/` 目录。
 
-```
-function aa_mod_parameters () 
-{ 
-    N=/dev/null;
-    C=`tput op` O=$(echo -en "
-`tput setaf 2`>>> `tput op`");
-    for mod in $(cat /proc/modules|cut -d" " -f1);
-    do
-        md=/sys/module/$mod/parameters;
-        [[ ! -d $md ]] && continue;
-        m=$mod;
-        d=`modinfo -d $m 2>$N | tr "
-" "\t"`;
-        echo -en "$O$m$C";
-        [[ ${#d} -gt 0 ]] && echo -n " - $d";
-        echo;
-        for mc in $(cd $md; echo *);
-        do
-            de=`modinfo -p $mod 2>$N | grep ^$mc 2>$N|sed "s/^$mc=//" 2>$N`;
-            echo -en "\t$mc=`cat $md/$mc 2>$N`";
-            [[ ${#de} -gt 1 ]] && echo -en " - $de";
-            echo;
-        done;
-    done
-}
-```
+"vermagic" 字符串与内核不一致的模块不会被加载，如果确认模块与当前内核兼容，可以用 `modprobe --force-vermagic` 参数加载，跳过检查。
 
-示例输出：
-
- `# aa_mod_parameters` 
-```
->>> ehci_hcd - USB 2.0 'Enhanced' Host Controller (EHCI) Driver
-        hird=0 - hird:host initiated resume duration, +1 for each 75us (int)
-        ignore_oc=N - ignore_oc:ignore bogus hardware overcurrent indications (bool)
-        log2_irq_thresh=0 - log2_irq_thresh:log2 IRQ latency, 1-64 microframes (int)
-        park=0 - park:park setting; 1-3 back-to-back async packets (uint)
-
->>> processor - ACPI Processor Driver
-        ignore_ppc=-1 - ignore_ppc:If the frequency of your machine gets wronglylimited by BIOS, this should help (int)
-        ignore_tpc=0 - ignore_tpc:Disable broken BIOS _TPC throttling support (int)
-        latency_factor=2 - latency_factor: (uint)
-
->>> usb_storage - USB Mass Storage driver for Linux
-        delay_use=1 - delay_use:seconds to delay before using a new device (uint)
-        option_zero_cd=1 - option_zero_cd:ZeroCD mode (1=Force Modem (default), 2=Allow CD-Rom (uint)
-        quirks= - quirks:supplemental list of device IDs and their quirks (string)
-        swi_tru_install=1 - swi_tru_install:TRU-Install mode (1=Full Logic (def), 2=Force CD-Rom, 3=Force Modem) (uint)
-
->>> video - ACPI Video Driver
-        allow_duplicates=N - allow_duplicates: (bool)
-        brightness_switch_enabled=Y - brightness_switch_enabled: (bool)
-        use_bios_initial_backlight=Y - use_bios_initial_backlight: (bool)
-```
+**警告:** 忽略模块检查，可能因为不兼容导致系统崩溃或不可预知行为，请谨慎使用 `--force-vermagic`。
 
 ## 参见
 

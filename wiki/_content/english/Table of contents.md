@@ -138,7 +138,7 @@
 | <small>5.17.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(6)</small> |
 | <small>5.18.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(7)</small> |
 | <small>5.18.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(21)</small> |
+| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(22)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(29)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |

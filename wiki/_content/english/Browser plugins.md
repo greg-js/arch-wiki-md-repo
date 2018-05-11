@@ -37,10 +37,9 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [10.1 Flash Player: no sound](#Flash_Player:_no_sound)
     *   [10.2 Flash Player: blocking sound for other applications or delayed playback](#Flash_Player:_blocking_sound_for_other_applications_or_delayed_playback)
     *   [10.3 Flash Player: performance](#Flash_Player:_performance)
-    *   [10.4 Flash Player: no webcam, or low webcam resolution](#Flash_Player:_no_webcam.2C_or_low_webcam_resolution)
-    *   [10.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
-    *   [10.6 Firefox: old Flash Player version shown after upgrade](#Firefox:_old_Flash_Player_version_shown_after_upgrade)
-    *   [10.7 Firefox: plugins are installed but not working](#Firefox:_plugins_are_installed_but_not_working)
+    *   [10.4 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
+    *   [10.5 Firefox: old Flash Player version shown after upgrade](#Firefox:_old_Flash_Player_version_shown_after_upgrade)
+    *   [10.6 Firefox: plugins are installed but not working](#Firefox:_plugins_are_installed_but_not_working)
 
 ## Flash Player
 
@@ -170,7 +169,7 @@ See [Citrix](/index.php/Citrix "Citrix").
 
 ## Java (IcedTea)
 
-**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium, Opera and Firefox. They still work in [Firefox ESR 52](/index.php/Firefox#Installing "Firefox"), which is supported until August 2018.
+**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium, Opera and Firefox. They work in [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/), which is supported until August 2018.
 
 To enable [Java](/index.php/Java "Java") support in your browser, you have two options: the open-source [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK "wikipedia:OpenJDK") (recommended) or Oracle's proprietary version. For details about why OpenJDK is recommended see [[1]](https://mailman.archlinux.org/pipermail/arch-general/2011-August/021671.html).
 
@@ -337,17 +336,6 @@ and restart the browser to see if it helps.
 ### Flash Player: performance
 
 Adobe's Flash plugin has some serious performance issues, especially when CPU frequency scaling is used. There seems to be a policy not to use the whole CPU workload, so the frequency scaling governor does not clock the CPU any higher. To work around this issue, see [CPU frequency scaling#Switching threshold](/index.php/CPU_frequency_scaling#Switching_threshold "CPU frequency scaling")
-
-### Flash Player: no webcam, or low webcam resolution
-
-If Flash doesn't detect your webcam at all, or it has low resolution (the image looks very pixelated), you can try starting your browser with this:
-
-```
-$ LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so <browser>
-
-```
-
-This is because Flash still uses the V4L1 camera API, long deprecated, and via the above we give it a compatibility layer which it needs.
 
 ### Flash Player: black bars in full screen playback on multi-headed setups
 

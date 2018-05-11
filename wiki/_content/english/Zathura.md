@@ -18,7 +18,7 @@
 
 Zathura automatically reloads documents. When working in compiled documents such as those written in LaTeX, Zathura will refresh the output whenever compilation takes place. Zathura has the option of enabling inverse search (using "synctex").
 
-Zathura can adjust the document to best-fit or to fit width, and it can rotate pages. It can view pages side-by-side and has a fullscreen mode. Pages can also be recolored to have a black background and white foreground.
+Zathura can adjust the document to page-fit (`a`) or to fit width (`s`), and it can rotate pages. It can view pages side-by-side and has a fullscreen mode. Pages can also be recolored to have a black background and white foreground. Most of vi's movement/scrolling commands are supported.
 
 Zathura can search for text and copy text to the primary X selection. It supports bookmarks and can open encrypted files.
 

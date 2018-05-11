@@ -1,6 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks"). Fecha de la última traducción/revisión: **2015-06-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&diff=0&oldid=375290).
-
-Véa el artículo principal [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)").
+**Advertencia:** En proceso de traducción
 
 ## Contents
 
@@ -23,6 +21,7 @@ Véa el artículo principal [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GR
 *   [5 Nomenclatura permanente de dispositivos de bloque](#Nomenclatura_permanente_de_dispositivos_de_bloque)
 *   [6 Utilizar etiquetas](#Utilizar_etiquetas)
 *   [7 Proteger con contraseña el menú de GRUB](#Proteger_con_contrase.C3.B1a_el_men.C3.BA_de_GRUB)
+    *   [7.1 Protección con contraseña sólo para las opciones de edición y consola de GRUB](#Protecci.C3.B3n_con_contrase.C3.B1a_s.C3.B3lo_para_las_opciones_de_edici.C3.B3n_y_consola_de_GRUB)
 *   [8 Ocultar GRUB y hacerlo aparecer mediante la tecla Mayús](#Ocultar_GRUB_y_hacerlo_aparecer_mediante_la_tecla_May.C3.BAs)
 *   [9 Combinar la utilización de UUID con scripts](#Combinar_la_utilizaci.C3.B3n_de_UUID_con_scripts)
 *   [10 Creación manual de grub.cfg](#Creaci.C3.B3n_manual_de_grub.cfg)
@@ -248,7 +247,7 @@ GRUB_THEME="/boot/grub/themes/starfield/theme.txt"
 
 ```
 
-[Regenere](#Generar_el_archivo_de_configuraci.C3.B3n_principal) `grub.cfg` para aplicar los cambios. Si el tema se ha configurado correctamente, aparecerá en el terminal el mensaje `Found theme: /boot/grub/themes/starfield/theme.txt`.
+[Regenere](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuraci.C3.B3n_principal "GRUB (Español)") `grub.cfg` para aplicar los cambios. Si el tema se ha configurado correctamente, aparecerá en el terminal el mensaje `Found theme: /boot/grub/themes/starfield/theme.txt`.
 
 La imagen de fondo, por lo general, no se visualiza cuando se utiliza un tema.
 
@@ -334,6 +333,8 @@ menuentry "Arch Linux, session texte" {
 
 ## Proteger con contraseña el menú de GRUB
 
+**Advertencia:** Si alguien tiene acceso físico a su máquina y es capaz de arrancar un disco/USB live (es decir ,BIOS permite arrancar desde un disco externo), es bastante trivial que se modifiquen los archivos de configuración de GRUB para evitar esto si `/boot` reside en una partición no cifrada. Ver [#Encriptación](/index.php/GRUB_(Espa%C3%B1ol)#Encriptaci.C3.B3n "GRUB (Español)") y [Security#Disk encryption](/index.php/Security#Disk_encryption "Security").
+
 Si desea hacer GRUB más seguro, de modo que nadie pueda cambiar los parámetros de arranque o utilizar la línea de órdenes, puede agregar un nombre de usuario y contraseña para los archivos de configuración de GRUB. Para ello, ejecute `grub-mkpasswd_pbkdf2`. Es necesario introducir una contraseña y confirmarla:
 
  `grub-mkpasswd-pbkdf2` 
@@ -343,9 +344,9 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 
 ```
 
-Después, añada las siguientes cadenas a `/etc/grub.d/40_header`:
+Después, añada las siguientes cadenas a `/etc/grub.d/40_custom`:
 
- `/etc/grub.d/40_header` 
+ `/etc/grub.d/40_custom` 
 ```
 set superusers="**nombreusuario**"
 password_pbkdf2 **nombreusuario** **<contraseña>**
@@ -357,6 +358,12 @@ Donde `<contraseña>` corresponde a la cadena generada por `grub-mkpasswd_pbkdf2
 Hay que regenerar el archivo de configuración. La línea de órdenes y los parámetros de arranque de grub ahora estarán protegidos.
 
 Los ajustes anteriores se pueden hacer menos restrictivos y personalizar mediante la adición de más usuarios, como se explica en el capítulo sobre «Seguridad» del [manual de GRUB](https://www.gnu.org/software/grub/manual/grub.html#Security).
+
+### Protección con contraseña sólo para las opciones de edición y consola de GRUB
+
+Añadiendo -`--unrestricted` a la entrada de menú permitirá a cualquier usuario arrancar el sistema operativo , al tiempo que se evita que el usuario edite la entrada y el acceso a la consola de comandos *grub*. Sólo un superusuario o usuarios especificos con el modificador `--user` podrán editar la entrada del menú.
+
+ `/boot/grub/grub.cfg`  `menuentry 'Arch Linux' --unrestricted --class arch --class gnu-linux --class os ...` 
 
 ## Ocultar GRUB y hacerlo aparecer mediante la tecla Mayús
 

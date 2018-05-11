@@ -10,13 +10,13 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
 *   [2 Pre-configuration](#Pre-configuration)
 *   [3 Server configuration](#Server_configuration)
     *   [3.1 Arch Linux](#Arch_Linux_2)
-        *   [3.1.1 Use encryption](#Use_encryption)
+        *   [3.1.1 Set up encryption on server](#Set_up_encryption_on_server)
     *   [3.2 Windows](#Windows)
     *   [3.3 macOS](#macOS)
     *   [3.4 Configuration examples](#Configuration_examples)
 *   [4 Clients configuration](#Clients_configuration)
     *   [4.1 Arch Linux](#Arch_Linux_3)
-        *   [4.1.1 Use encryption](#Use_encryption_2)
+        *   [4.1.1 Set up encryption on client](#Set_up_encryption_on_client)
         *   [4.1.2 Autostart](#Autostart)
     *   [4.2 Windows](#Windows_2)
     *   [4.3 macOS](#macOS_2)
@@ -81,7 +81,7 @@ The synergy server process needs to attach to your user's X session, which means
 
 **Tip:** You can enable `synergys.socket` to start the server when a client tries to connect instead. This is useful when the service can't connect to an X server on boot.
 
-#### Use encryption
+#### Set up encryption on server
 
 To generate a certificate and fingerprint for the server to use.
 
@@ -264,12 +264,20 @@ $ synergyc -f server-host-name
 
 Here, `server-host-name` is the host name of the server.
 
-#### Use encryption
+#### Set up encryption on client
 
 If you use the synergy command line client, copy the file containing the fingerprint <a class="mw-selflink selflink">`~/.synergy/SSL/Fingerprints/Local.txt`</a> from the server into the clients home directory <a class="mw-selflink selflink">`~/.synergy/SSL/Fingerprints/TrustedServers.txt`</a>. To start the synergy command line client with encryption, type:
 
 ```
 $ synergyc --enable-crypto
+
+```
+
+If you want to enable the SSL trust without requiring the GUI on the client you can follow the steps below, but you should confirm the fingerprint that gets displays is the same one your server has in its GUI or in the <a class="mw-selflink selflink">`~/.synergy/SSL/Fingerprints/Local.txt`</a> on the server per above. The `echo -n` is required to avoid the openssl client hanging waiting for input.
+
+```
+$ mkdir -p ~/.synergy/SSL/Fingerprints
+$ echo -n | openssl s_client -connect $YOUR_SYNERGY_SERVER:24800 2>/dev/null | openssl x509  -noout -fingerprint | cut -f2 -d'=' | tee ~/.synergy/SSL/Fingerprints/TrustedServers.txt
 
 ```
 
@@ -418,7 +426,7 @@ This can be added to an init script or systemd unit:
 
 ### Client is returning "failed to verify server certificate fingerprint"
 
-You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt" into client's "~/.synergy/SSL/Fingerprints/TrustedServers.txt".
+You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt" into client's "~/.synergy/SSL/Fingerprints/TrustedServers.txt". See [#Set up encryption on client](#Set_up_encryption_on_client).
 
 ### Scroll Lock LED does not light
 

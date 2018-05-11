@@ -7,9 +7,8 @@
 *   [3 Configuration](#Configuration)
 *   [4 Extensions](#Extensions)
     *   [4.1 gd](#gd)
-    *   [4.2 imagemagick](#imagemagick)
-        *   [4.2.1 using AUR](#using_AUR)
-        *   [4.2.2 using *pecl*](#using_pecl)
+    *   [4.2 Imagemagick](#Imagemagick)
+        *   [4.2.1 PECL](#PECL)
     *   [4.3 pthreads](#pthreads)
     *   [4.4 PCNTL](#PCNTL)
     *   [4.5 MySQL/MariaDB](#MySQL.2FMariaDB)
@@ -110,29 +109,24 @@ extension=gd
 
 ```
 
-### imagemagick
+### Imagemagick
 
-Installation consists of installing [imagemagick](https://www.archlinux.org/packages/?name=imagemagick), its PHP extension library, and adding `extension=imagick` to the PHP configuration.
+[Install](/index.php/Install "Install") the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package and install one of the listed PHP extension library.
 
-#### using AUR
+Install [php-imagick](https://aur.archlinux.org/packages/php-imagick/), it will create the file `/etc/php/conf.d/imagick.ini` to configure the extension.
 
-Install [php-imagick](https://aur.archlinux.org/packages/php-imagick/), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) will be also installed as a dependency. Installing the package will automatically include this extension in PHP's configuration by creating `/etc/php/conf.d/imagick.ini`.
+#### PECL
 
-#### using *pecl*
-
-First, install [imagemagick](https://www.archlinux.org/packages/?name=imagemagick). The *pecl* binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. After installing *pecl*, install the *imagemagick* PHP extension with
+Make sure the [php-pear](https://aur.archlinux.org/packages/php-pear/) package has been installed:
 
 ```
  # pecl install imagick
 
 ```
 
-Then include this extension using
+Create a `/etc/php/conf.d/imagick.ini` and enable the extension:
 
-```
- # echo 'extension=imagick'>/etc/php/conf.d/imagick.ini
-
-```
+ `/etc/php/conf.d/imagick.ini`  `extension=imagick` 
 
 ### pthreads
 
@@ -343,7 +337,7 @@ PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 Ensure the zip extension is enabled.
 
- `$ grep zip /etc/php/php.ini`  `extension=zip` 
+ `/etc/php/php.ini`  `extension=zip` 
 
 ### /etc/php/php.ini not parsed
 

@@ -20,8 +20,8 @@
             *   [1.2.3.2 Graphical](#Graphical_3)
         *   [1.2.4 3D computer graphics](#3D_computer_graphics)
         *   [1.2.5 Color pickers](#Color_pickers)
-        *   [1.2.6 Digital camera managers](#Digital_camera_managers)
-        *   [1.2.7 Screen capture](#Screen_capture)
+        *   [1.2.6 Screenshot](#Screenshot)
+        *   [1.2.7 Digital camera managers](#Digital_camera_managers)
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
@@ -272,6 +272,10 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://pinta-project.com/](http://pinta-project.com/) || [pinta](https://www.archlinux.org/packages/?name=pinta)
 
+*   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — Raw-image converter written in GTK+.
+
+	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://aur.archlinux.org/packages/rawstudio/)
+
 *   **[RawTherapee](https://en.wikipedia.org/wiki/RawTherapee "wikipedia:RawTherapee")** — A powerful cross-platform raw image processing program.
 
 	[http://www.rawtherapee.com/](http://www.rawtherapee.com/) || [rawtherapee](https://www.archlinux.org/packages/?name=rawtherapee)
@@ -424,13 +428,85 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[https://github.com/Soft/xcolor](https://github.com/Soft/xcolor) || [xcolor](https://aur.archlinux.org/packages/xcolor/)
 
+#### Screenshot
+
+See also [Screen capture](/index.php/Screen_capture "Screen capture").
+
+*   **Deepin Screenshot** — A quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
+
+	[https://www.deepin.org/](https://www.deepin.org/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
+
+*   **Escrotum** — Screen capture using pygtk, inspired by scrot.
+
+	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
+
+*   **Flameshot** — QT5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
+
+	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://www.archlinux.org/packages/?name=flameshot)
+
+*   **[GNOME Screenshot](https://en.wikipedia.org/wiki/GNOME_Screenshot "wikipedia:GNOME Screenshot")** — Screenshot tool for the GNOME desktop.
+
+	[http://gnome.org](http://gnome.org) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
+
+*   **gscreenshot** — Simple GTK+ screenshot utility with delays, selection, and copy-to-clipboard functionality.
+
+	[https://github.com/thenaterhood/gscreenshot](https://github.com/thenaterhood/gscreenshot) || [gscreenshot](https://aur.archlinux.org/packages/gscreenshot/)
+
+*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
+
+	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)
+
+*   **KShare** — A ShareX inspired cross platform utility written with Qt.
+
+	[https://kshare.arsenarsen.com](https://kshare.arsenarsen.com) || [kshare](https://aur.archlinux.org/packages/kshare/)
+
+*   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
+
+	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)
+
+*   **LXQt Screenshot** — Screenshot tool for LXQt. Run with `lximage-qt --screenshot`.
+
+	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
+
+*   **maim** — A simple command line utility that takes screenshots. It's meant to replace scrot and performs better than scrot in many ways.
+
+	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
+
+*   **MATE Screenshot** — Screenshot tool for the MATE desktop.
+
+	[http://mate-desktop.org](http://mate-desktop.org) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
+
+*   **screencloud** — allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
+
+	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
+
+*   **screengrab** — Cross-platform application designed to quickly take screenshots (Qt).
+
+	[http://screengrab.doomer.org/](http://screengrab.doomer.org/) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
+
+*   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
+
+	[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
+
+*   **Shutter** — Rich screenshot and editing program. Supports [delay](https://hyp.is/AVQUNTRUH9ZO4OKSlue9/askubuntu.com/questions/252281/how-do-i-take-screenshots-with-a-delay/260178).
+
+	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://aur.archlinux.org/packages/shutter/)
+
+*   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
+
+	[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
+
+*   **Xfce4 Screenshooter** — This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot: save it to a PNG file, copy it to the clipboard, open it using another application, or host it on free online image hosting services Imgur and ZimageZ. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
+
+	[http://goodies.xfce.org/projects/applications/xfce4-screenshooter](http://goodies.xfce.org/projects/applications/xfce4-screenshooter) || [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter)
+
+*   **xwd** — X Window System image dumping utility
+
+	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
+
 #### Digital camera managers
 
 See [Digital Cameras#Other frontend applications for libgphoto2](/index.php/Digital_Cameras#Other_frontend_applications_for_libgphoto2 "Digital Cameras").
-
-#### Screen capture
-
-See also: [Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screenshot").
 
 ### Audio
 

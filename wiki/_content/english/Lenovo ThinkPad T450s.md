@@ -129,9 +129,13 @@ You can install [xf86-input-libinput](https://www.archlinux.org/packages/?name=x
 
 ### Sound
 
+Make sure to install alsa-utils/ or that it is installed.
+
 See [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA") to set the default sound card to Intel PCH (speakers and headphones).
 
  `/etc/modprobe.d/thinkpad-t450s.conf`  `options snd_hda_intel index=1,0` 
+
+make sure to reboot after these changes.
 
 ### Fingerprint Reader
 

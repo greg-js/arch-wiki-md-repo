@@ -106,7 +106,7 @@ If udev is not detecting and loading the proper module automatically during boot
 
 By default [udev](/index.php/Udev "Udev") assigns names to your network interfaces using [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which prefixes interfaces names with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")).
 
-**Tip:** To change the device names, see [#Change device name](#Change_device_name) and [#Revert to traditional device names](#Revert_to_traditional_device_names).
+**Tip:** To change interface names, see [#Change interface name](#Change_interface_name) and [#Revert to traditional interface names](#Revert_to_traditional_interface_names).
 
 #### Listing network interfaces
 
@@ -131,7 +131,7 @@ To check the status of the interface `eth0`:
 
 The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface is up, not the later `state DOWN`.
 
-**Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Manual assignment](#Manual_assignment) for reestablishing it.
+**Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Routing table](#Routing_table) for reestablishing it.
 
 ### IP addresses
 

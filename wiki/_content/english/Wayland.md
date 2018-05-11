@@ -407,7 +407,7 @@ This change in input grabbing breaks current applications' behavior, meaning:
 
 Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to the Wayland compositors. In the case of native Wayland clients, the used widget toolkits (e.g GTK, QT) needs to support these extensions or the applications themselves if no widget toolkit is being used. In the case of Xorg applications, no changes in the applications or widget toolkits are needed as the XWayland support is enough.
 
-These extensions are already included in the latest stable release of [wayland-protocols](https://www.archlinux.org/packages/?name=wayland-protocols), and supported by the latest release candidate of [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 1.20.
+These extensions are already included in [wayland-protocols](https://www.archlinux.org/packages/?name=wayland-protocols), and supported by [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 1.20.
 
 The related extensions are:
 

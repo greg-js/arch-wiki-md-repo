@@ -151,13 +151,9 @@ Most settings for KDE applications are stored in `~/.config`. However, configuri
 
 [Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme).
 
-The easiest way to install themes is by going through the *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
+Plasma themes can also be installed through *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
 
-This will present a frontend for the [KDE-Store](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts.
-
-Splash and Lock screens are currently unavailable. To customize these screens, you have to modify the original theme found in `/usr/share/plasma/look-and-feel/`. See [this thread](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61) on the Kubuntu forums.
-
-Note that the [SDDM](/index.php/SDDM "SDDM") login screen is not part of this theme.
+The [KDE-Store](https://store.kde.org/) offers more Plasma customization's, like [SDDM](/index.php/SDDM "SDDM") themes and splash-screens.
 
 ###### Qt and GTK+ Applications Appearance
 
