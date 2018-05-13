@@ -403,6 +403,8 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 *   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
 
+*   If you get errors, try using another USB device. There are case scenarios in which it solved all issues.
+
 ## See also
 
 *   [Gentoo wiki - LiveUSB/HOWTO](https://wiki.gentoo.org/wiki/LiveUSB/HOWTO)

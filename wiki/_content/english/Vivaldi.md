@@ -12,6 +12,8 @@
 
 Vivaldi can be [installed](/index.php/Installed "Installed") with [vivaldi](https://aur.archlinux.org/packages/vivaldi/) or [vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/). Prebuilt packages can alternatively be found in the [herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories") unofficial repository.
 
+To use [Qt](/index.php/Qt "Qt") instead of [GTK+](/index.php/GTK%2B "GTK+") dialogs for file selections just install [kdialog](https://www.archlinux.org/packages/?name=kdialog).
+
 ## Extensions
 
 Vivaldi is compatible with most of Chrome's extensions. These can be installed direct on [Chrome Web Store](https://chrome.google.com/webstore/category/extensions). To see which extensions are installed/enabled search for `vivaldi://extensions` or just `extensions`.

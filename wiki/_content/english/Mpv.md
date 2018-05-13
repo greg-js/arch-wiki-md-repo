@@ -109,13 +109,13 @@ $ cp /usr/share/doc/mpv/input.conf ~/.config/mpv/input.conf
 
 This loads high quality OpenGL options. Most users can run these without any problems, but they are not enabled by default to avoid causing problems for the few users who cannot run them.
 
- `~/.config/mpv/mpv.conf`  `profile=opengl-hq` 
+ `~/.config/mpv/mpv.conf`  `profile=gpu-hq` 
 
-The `opengl-hq` profile defaults to the `spline36` scaling filter for mid quality and speed. For the best quality video output, the manual states that if your hardware can run it, `ewa_lanczossharp` is probably what you should use.
+The `gpu-hq` profile defaults to the `spline36` scaling filter for mid quality and speed. For the best quality video output, the manual states that if your hardware can run it, `ewa_lanczossharp` is probably what you should use.
 
  `~/.config/mpv/mpv.conf` 
 ```
-profile=opengl-hq
+profile=gpu-hq
 scale=ewa_lanczossharp
 cscale=ewa_lanczossharp
 ```
@@ -124,7 +124,7 @@ These last three options are a little more complicated. The first option makes i
 
  `~/.config/mpv/mpv.conf` 
 ```
-profile=opengl-hq
+profile=gpu-hq
 scale=ewa_lanczossharp
 cscale=ewa_lanczossharp
 video-sync=display-resample
@@ -156,11 +156,11 @@ profile-desc="a profile"  #Optional description for profile
 fs=yes                    #Start in full screen
 
 [myprofile2]              #Another simple profile
-profile=opengl-hq         #A built in profile that comes with mpv
+profile=gpu-hq            #A built in profile that comes with mpv
 log-file=~~/log           #Sets a location for writing a log file, ~~/ translates to ~/.config/mpv
 ```
 
-There are only two lines within the top level area and there are two separate profiles defined below it. When *mpv* starts it sees the first line, loads the options in `myprofile2` (which means it loads the options in `opengl-hq` and `log-file=~~/log`) finally it loads `ontop=yes` and finishes starting up. Note, `myprofile1` is never loaded because it's never called in the top level area.
+There are only two lines within the top level area and there are two separate profiles defined below it. When *mpv* starts it sees the first line, loads the options in `myprofile2` (which means it loads the options in `gpu-hq` and `log-file=~~/log`) finally it loads `ontop=yes` and finishes starting up. Note, `myprofile1` is never loaded because it's never called in the top level area.
 
 Alternatively one could call mpv from the command line with
 

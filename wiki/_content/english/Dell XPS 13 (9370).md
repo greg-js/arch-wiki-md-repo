@@ -22,6 +22,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [2 Video](#Video)
 *   [3 Wifi](#Wifi)
 *   [4 Bluetooth](#Bluetooth)
+*   [5 Power Management](#Power_Management)
 
 ## Booting
 
@@ -44,3 +45,7 @@ Wifi should work out of the box with the `ath10k_pci` driver in recent [linux](h
 ## Bluetooth
 
 The Bluetooth adapter sometimes becomes unavailable after waking up from suspend and can even stay deactivated and invisible after a warm reboot.
+
+## Power Management
+
+If the laptop seems to have an high drain when in sleep mode, it is almost certainly because is not entering proper in deep sleep. Add `quiet mem_sleep_default=deep` to the [Kernel parameters](https://wiki.archlinux.org/index.php/Kernel_parameters).

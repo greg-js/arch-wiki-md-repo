@@ -75,7 +75,7 @@ You can add your own actions to any of these functions using the `AddToFunc` com
 
 ```
 AddToFunc InitFunction
-+ I Exec nm-applet &
++ I Exec nm-applet
 
 ```
 
@@ -83,7 +83,7 @@ You can also use just StartFunction and prepend your commands with Test commands
 
 ```
 AddToFunc StartFunction
-+ I Test (Init) Exec nm-applet &
++ I Test (Init) Exec nm-applet
 
 ```
 

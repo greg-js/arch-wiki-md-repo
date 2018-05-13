@@ -149,25 +149,9 @@ Or when you also need to select a specific mirror ([https://cran.r-project.org/m
 
 #### Within a shell
 
-First, [Install](/index.php/Install "Install") [littler](https://aur.archlinux.org/packages/littler/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). This package allows direct execution of **R** commands and can be seen as a scripting front-end. Then, visit [dirk.eddelbuettel](http://dirk.eddelbuettel.com/code/littler.examples.html) website about **littler**. Below is the script to run packages updates:
+You can use `Rscript`, which comes with [r](https://www.archlinux.org/packages/?name=r) to update packages from a shell:
 
-```
-#!/usr/bin/env r 
-#
-# a simple example to update packages in /usr/local/lib/R/site-library
-# parameters are easily adjustable
-
-repos <- "[http://cran.rstudio.com](http://cran.rstudio.com)"
-
-lib.loc <- Sys.getenv("R_LIBS_USER")
-
-update.packages(repos=repos, ask=FALSE, lib.loc=lib.loc)
-
-```
-
-Put this script in your favorite place and make it executable. Of course, feel free to modify the repo URL and the library location.
-
-**Warning:** when using [zsh](/index.php/Zsh "Zsh"), **r** is a builtin command. You will have to use **R** or create an alias under a different name.
+ `$ Rscript -e "update.packages()"` 
 
 #### Automatically after R upgrades
 
@@ -329,7 +313,7 @@ The numerical libraries that comes with the R (generic [blas](https://www.archli
 
 #### OpenBLAS
 
-[openblas](https://aur.archlinux.org/packages/openblas/) can be installed from the [AUR](/index.php/AUR "AUR"), replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) from extra. If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from extra no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
+[openblas](https://www.archlinux.org/packages/?name=openblas) can replace the reference [blas](https://www.archlinux.org/packages/?name=blas). If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from extra no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
 
 #### Intel MKL
 

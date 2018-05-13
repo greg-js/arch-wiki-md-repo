@@ -137,7 +137,7 @@ Para completar el directorio `/boot/grub` y generar un `/boot/grub/i386-pc/core.
 *   `/dev/sda` usado sólo como ejemplo.
 *   `--target=i386-pc` ordena a `grub-install` a instalar solo para sistemas BIOS. Se recomienda utilizar siempre esta opción para eliminar la ambigüedad en grub-install.
 
-A continuación, puede encadenar GRUB `core.img` de GRUB Legacy o syslinux como kernel de Linux o como núcleo de arranque múltiple (consulte también [Syslinux_(Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)")).
+A continuación, puede encadenar GRUB `core.img` de GRUB Legacy o syslinux como kernel de Linux o como núcleo de arranque múltiple (consulte también [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)")).
 
 ## Herramientas GUI de configuración
 
@@ -212,7 +212,7 @@ GRUB es compatible con imágenes de fondo y fuentes de mapa de bits en el format
 
 Los formatos de imagen soportados incluyen tga, png e jpeg, siempre que los respectivos módulos se carguen. La resolución máxima aplicable depende del hardware en uso.
 
-Antes de continuar, siga las disposiciones indicadas en [resolución del framebuffer](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Ajustar_la_resoluci.C3.B3n_del_framebuffer "GRUB/Tips and tricks (Español)").
+Antes de continuar, siga las disposiciones indicadas en [resolución del framebuffer](#Ajustar_la_resoluci.C3.B3n_del_framebuffer).
 
 A continuación, edite el archivo `/etc/default/grub` como sigue:
 
@@ -383,6 +383,8 @@ A continuación cree el archivo [[1]](https://gist.githubusercontent.com/anonymo
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
+
+**Nota:** Esta configuración utiliza el estado de las teclas para detectar el evento de pulsación de las mismas, por lo que es posible que no funcione en algunas máquinas.
 
 ## Combinar la utilización de UUID con scripts
 

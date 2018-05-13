@@ -210,10 +210,10 @@ $ dmesg | grep microcode
 
 ### 检查可用微指令更新
 
-可以通过 [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/) 来检查 intel-ucode.img 是否包含适用于你 CPU 的微指令映像。
+可以通过 [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool) 来检查 intel-ucode.img 是否包含适用于你 CPU 的微指令映像。
 
 1.  安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) （检测并不需要修改 initrd）
-2.  从 AUR 安装 [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)
+2.  从 AUR 安装 [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool)
 3.  `# modprobe cpuid` 
 4.  解包微指令映像，并根据你的 cpuid 搜索是否适用：
      `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS - ` 

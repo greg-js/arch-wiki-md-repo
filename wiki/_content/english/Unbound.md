@@ -78,7 +78,7 @@ For querying a host that is not cached as an address the resolver needs to start
 First point *unbound* to the `root.hints` file:
 
 ```
-root-hints: "/etc/unbound/root.hints"
+root-hints: root.hints
 
 ```
 

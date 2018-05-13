@@ -11,7 +11,7 @@
 *   [1 前言](#.E5.89.8D.E8.A8.80)
 *   [2 系统架构](#.E7.B3.BB.E7.BB.9F.E6.9E.B6.E6.9E.84)
 *   [3 SD卡性能](#SD.E5.8D.A1.E6.80.A7.E8.83.BD)
-*   [4 在树梅派上安装ArchLinux](#.E5.9C.A8.E6.A0.91.E6.A2.85.E6.B4.BE.E4.B8.8A.E5.AE.89.E8.A3.85ArchLinux)
+*   [4 在树莓派上安装ArchLinux](#.E5.9C.A8.E6.A0.91.E8.8E.93.E6.B4.BE.E4.B8.8A.E5.AE.89.E8.A3.85ArchLinux)
 *   [5 音频](#.E9.9F.B3.E9.A2.91)
     *   [5.1 HDMI音频说明](#HDMI.E9.9F.B3.E9.A2.91.E8.AF.B4.E6.98.8E)
 *   [6 音频](#.E9.9F.B3.E9.A2.91_2)
@@ -50,7 +50,7 @@
 
 System responsiveness, particularly during operations involving disk I/O such as updating the system, can be adversely affected by poor quality/slow SD media. This is characterized by [frequent, often extended pauses](http://archlinuxarm.org/forum/viewtopic.php?f=64&t=9467) as pacman writes out files to the file system. The pauses are not due to saturation of the RPi or RPi2 bus, but are likely the bottle-neck due to a slow SD (or micro SD) card. See the [Benchmarking#Flash media](/index.php/Benchmarking#Flash_media "Benchmarking") for more.
 
-## 在树梅派上安装ArchLinux
+## 在树莓派上安装ArchLinux
 
 参看 [Arch Linux ARM Pi documentation](http://archlinuxarm.org/platforms/armv6/raspberry-pi) 或者 [Arch Linux ARM Pi2 documentation](http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2)。
 

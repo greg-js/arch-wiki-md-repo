@@ -34,4 +34,4 @@ The [julialint](https://github.com/zyedidia/julialint.vim) plugin combined with 
 
 ## Performance
 
-It is [recommended](https://discourse.julialang.org/t/multithreaded-libraries/) that you use a multithreaded BLAS implementation, such as [openblas](https://aur.archlinux.org/packages/openblas/). This can lead to speedups of 10-50x for certain matrix operations.
+It is [recommended](https://discourse.julialang.org/t/multithreaded-libraries/) that you use a multithreaded BLAS implementation, such as [openblas](https://www.archlinux.org/packages/?name=openblas). This can lead to speedups of 10-50x for certain matrix operations.

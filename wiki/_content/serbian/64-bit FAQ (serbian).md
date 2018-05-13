@@ -9,10 +9,9 @@ Below is a list of frequently asked questions about Arch64.
 *   [5 Kako mogu prijavit greške?](#Kako_mogu_prijavit_gre.C5.A1ke.3F)
 *   [6 Koje riznice bi trebao koristit u pacmanu?](#Koje_riznice_bi_trebao_koristit_u_pacmanu.3F)
 *   [7 Kako prepraviti postojeće PKGBUILDs da bi se koristili u Arch64?](#Kako_prepraviti_postoje.C4.87e_PKGBUILDs_da_bi_se_koristili_u_Arch64.3F)
-*   [8 Šta ću propustiti u Arch64?](#.C5.A0ta_.C4.87u_propustiti_u_Arch64.3F)
-*   [9 Mogu li graditi 32-bitne pakete za i686 unutar Arch64?](#Mogu_li_graditi_32-bitne_pakete_za_i686_unutar_Arch64.3F)
-*   [10 Mogu li pokrenuti 32-bitne aplikacije unutar Arch64?](#Mogu_li_pokrenuti_32-bitne_aplikacije_unutar_Arch64.3F)
-*   [11 Mogu li nadograditi / promeniti moj sistem od i686 bez ponovno instalirajte na x86_64?](#Mogu_li_nadograditi_.2F_promeniti_moj_sistem_od_i686_bez_ponovno_instalirajte_na_x86_64.3F)
+*   [8 Mogu li graditi 32-bitne pakete za i686 unutar Arch64?](#Mogu_li_graditi_32-bitne_pakete_za_i686_unutar_Arch64.3F)
+*   [9 Mogu li pokrenuti 32-bitne aplikacije unutar Arch64?](#Mogu_li_pokrenuti_32-bitne_aplikacije_unutar_Arch64.3F)
+*   [10 Mogu li nadograditi / promeniti moj sistem od i686 bez ponovno instalirajte na x86_64?](#Mogu_li_nadograditi_.2F_promeniti_moj_sistem_od_i686_bez_ponovno_instalirajte_na_x86_64.3F)
 
 ## Kako da instalirate Arch64?
 
@@ -79,23 +78,6 @@ if [ "$CARCH" = "x86_64" ]; then
 fi
 
 ```
-
-## Šta ću propustiti u Arch64?
-
-Ništa, stvarno. Gotovo svi programi podržavaju 64-bitne ili su do sada u tranziciji da postanu 64-bitni kompatibilni.
-
-Ovi programi su prethodno bile problematični, ali sada su na raspolaganju [AUR](/index.php/AUR "AUR") i rada u redu:
-
-*   [Skype](/index.php/Skype "Skype") as bin32-skype
-*   [Wine](/index.php/Wine "Wine") as bin32-wine
-*   [Zsnes](/index.php?title=Zsnes&action=edit&redlink=1 "Zsnes (page does not exist)") as bin32-zsnes
-
-The biggest problem are packages that are either **closed source** or contains x86-specific assembly that is cumbersome to port to 64-bit (typical for emulators).
-
-*   TeamSpeak will not support 64-bit until the next version is released.
-*   Acrobat Reader plugin is not available in 64-bit, but you can run the 32-bit version in compatibility mode
-
-Everything else should work perfectly fine. If you miss any Arch32 package in our port and you know that it will compile on x86_64 (perhaps you have found it as native packages in another 64-bit distribution), just contact the devs or request a new package in the forums.
 
 ## Mogu li graditi 32-bitne pakete za i686 unutar Arch64?
 

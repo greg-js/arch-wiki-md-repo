@@ -477,7 +477,7 @@ The following groups are currently not used for any purpose:
 | Group | Affected files | Purpose |
 | bin | none | Historical |
 | daemon |
-| lock |
+| lock | Used for lockfile access. Required by e.g. [gnokii](https://www.archlinux.org/packages/?name=gnokii). |
 | mem |
 | network | Unused by default. Can be used e.g. for granting access to NetworkManager (see [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
 | power |

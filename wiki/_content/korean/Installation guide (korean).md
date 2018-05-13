@@ -239,7 +239,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ### 네트워크 설정
 
-새로 설치한 시스템에서는 기본적으로 네트워크 연결이 활성화되어 있지 않습니다. [네트워크 관리자](/index.php/Network_configuration#Network_managers "Network configuration")를 참고하십시오.
+새로 설치한 시스템에서는 기본적으로 네트워크 연결이 활성화되어 있지 않습니다. [네트워크 관리자](/index.php/Network_configuration#Network_management "Network configuration")를 참고하십시오.
 
 [무선 설정](/index.php/Wireless_configuration "Wireless configuration")을 하려면 [iw](https://www.archlinux.org/packages/?name=iw)와 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), 추가로 필요한 [펌웨어 패키지](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless")를 [설치](/index.php/Install "Install")하십시오. *wifi-menu*를 사용하고 싶으면 [dialog](https://www.archlinux.org/packages/?name=dialog)를 설치하십시오.
 

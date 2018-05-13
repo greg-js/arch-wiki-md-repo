@@ -4,7 +4,7 @@ This article covers details pertaining to installing and configuring your Arch o
 
 Supports both UEFI and MBR style bios. There are no issues with installing Arch Linux with the latest that is known [Archiso](https://www.archlinux.org/download/). The installation process is the same [Installation guide](/index.php/Installation_guide "Installation guide") except, the sound.
 
-Check out the T450s wiki, as pretty much everything from there works on the T450: [https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T450s](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T450s)
+Check out the T450s wiki, as pretty much everything from there works on the T450: [Lenovo ThinkPad T450s](/index.php/Lenovo_ThinkPad_T450s "Lenovo ThinkPad T450s")
 
 ### Sound
 

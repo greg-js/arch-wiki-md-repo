@@ -118,55 +118,55 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 #### Touch typing
 
-*   **[KTouch](/index.php?title=KTouch&action=edit&redlink=1 "KTouch (page does not exist)")** — Touch Typing Tutor. It's a part of Plasma workspace.
+*   **KTouch** — Touch Typing Tutor. It's a part of Plasma workspace.
 
 	[https://www.kde.org/applications/education/ktouch](https://www.kde.org/applications/education/ktouch) || [ktouch](https://www.archlinux.org/packages/?name=ktouch), [kdeedu-ktouch-patched](https://aur.archlinux.org/packages/kdeedu-ktouch-patched/)
 
-*   **[GNU Typist](/index.php?title=GNU_Typist&action=edit&redlink=1 "GNU Typist (page does not exist)")** — GNU Typist (also called gtypist) is a universal typing tutor.
+*   **GNU Typist** — GNU Typist (also called gtypist) is a universal typing tutor.
 
 	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://www.archlinux.org/packages/?name=gtypist), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
 
-*   **[Klavaro](/index.php?title=Klavaro&action=edit&redlink=1 "Klavaro (page does not exist)")** — Klavaro is libre software for teaching touch typing that intends to be keyboard and language independent.
+*   **Klavaro** — Klavaro is libre software for teaching touch typing that intends to be keyboard and language independent.
 
 	[http://klavaro.sourceforge.net/](http://klavaro.sourceforge.net/) || [klavaro](https://www.archlinux.org/packages/?name=klavaro)
 
-*   **[tipp10](/index.php?title=Tipp10&action=edit&redlink=1 "Tipp10 (page does not exist)")** — Intelligent typing tutor.
+*   **tipp10** — Intelligent typing tutor.
 
 	[http://www.tipp10.com/](http://www.tipp10.com/) || [tipp10](https://www.archlinux.org/packages/?name=tipp10)
 
-*   **[typespeed](/index.php?title=Typespeed&action=edit&redlink=1 "Typespeed (page does not exist)")** — Test your typing speed, and get your fingers' CPS.
+*   **typespeed** — Test your typing speed, and get your fingers' CPS.
 
 	[http://typespeed.sourceforge.net](http://typespeed.sourceforge.net) || [typespeed](https://www.archlinux.org/packages/?name=typespeed)
 
-*   **[amphetype-svn](/index.php?title=Amphetype-svn&action=edit&redlink=1 "Amphetype-svn (page does not exist)")** — A layout-agnostic typing program aimed at people who don't need an on-screen keyboard.
+*   **amphetype-svn** — A layout-agnostic typing program aimed at people who don't need an on-screen keyboard.
 
 	[http://code.google.com/p/amphetype/](http://code.google.com/p/amphetype/) || [amphetype-svn](https://aur.archlinux.org/packages/amphetype-svn/)
 
-*   **[dvorak7min](/index.php?title=Dvorak7min&action=edit&redlink=1 "Dvorak7min (page does not exist)")** — dvorak7min is a simple ncurses-based typing tutor for those trying to become fluent with the Dvorak keyboard layout.
+*   **dvorak7min** — dvorak7min is a simple ncurses-based typing tutor for those trying to become fluent with the Dvorak keyboard layout.
 
 	[http://packages.debian.org/unstable/games/dvorak7min](http://packages.debian.org/unstable/games/dvorak7min) || [dvorak7min](https://aur.archlinux.org/packages/dvorak7min/)
 
-*   **[dvorakng](/index.php?title=Dvorakng&action=edit&redlink=1 "Dvorakng (page does not exist)")** — A Dvorak typing tutor. It's heavily based on Dvorak7min, but adds many improvements.
+*   **dvorakng** — A Dvorak typing tutor. It's heavily based on Dvorak7min, but adds many improvements.
 
 	[https://gitlab.com/atsb/dvorakng](https://gitlab.com/atsb/dvorakng) || [dvorakng](https://aur.archlinux.org/packages/dvorakng/)
 
-*   **[psani-profi](/index.php?title=Psani-profi&action=edit&redlink=1 "Psani-profi (page does not exist)")** — Program that will teach you touchtyping (czech).
+*   **psani-profi** — Program that will teach you touchtyping (czech).
 
 	[http://www.sallyx.org/sally/psani-vsemi-deseti/](http://www.sallyx.org/sally/psani-vsemi-deseti/) || [psani-profi](https://aur.archlinux.org/packages/psani-profi/)
 
-*   **[touchtyper](/index.php?title=Touchtyper&action=edit&redlink=1 "Touchtyper (page does not exist)")** — typing trainer - an application suite for training and exercising touchtyping.
+*   **touchtyper** — typing trainer - an application suite for training and exercising touchtyping.
 
 	[http://typingtrainer.sourceforge.net/](http://typingtrainer.sourceforge.net/) || [touchtyper](https://aur.archlinux.org/packages/touchtyper/)
 
-*   **[tpgt](/index.php?title=Tpgt&action=edit&redlink=1 "Tpgt (page does not exist)")** — A ncurses-based typing trainer program.
+*   **tpgt** — A ncurses-based typing trainer program.
 
 	[http://szit.hu/tpgt/](http://szit.hu/tpgt/) || [tpgt](https://aur.archlinux.org/packages/tpgt/)
 
-*   **[tuxtype](/index.php?title=Tuxtype&action=edit&redlink=1 "Tuxtype (page does not exist)")** — An educational typing tutorial game starring Tux.
+*   **tuxtype** — An educational typing tutorial game starring Tux.
 
 	[http://tux4kids.alioth.debian.org/](http://tux4kids.alioth.debian.org/) || [tuxtype](https://aur.archlinux.org/packages/tuxtype/)
 
-*   **[typingtest-git](/index.php?title=Typingtest-git&action=edit&redlink=1 "Typingtest-git (page does not exist)")** — A typing test program desktop program with customizability.
+*   **typingtest-git** — A typing test program desktop program with customizability.
 
 	[https://github.com/laelath/typingtest](https://github.com/laelath/typingtest) || [typingtest-git](https://aur.archlinux.org/packages/typingtest-git/)
 

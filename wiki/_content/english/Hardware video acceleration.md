@@ -143,7 +143,8 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 *   AMD cards depend on the driver:
     *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") uses [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) (see [#Installing VA-API](#Installing_VA-API)).
     *   [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") uses [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) (see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU")).
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 400 series and newer GPUs are supported by [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
+*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 600 series and newer GPUs are supported by [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
+    *   GeForce 400/500 series are supported by [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils).
     *   GeForce 8/9 and GeForce 100-300 series are supported by [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils).
 
 ## Verification

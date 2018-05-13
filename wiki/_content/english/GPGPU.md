@@ -21,7 +21,7 @@ GPGPU stands for [General-purpose computing on graphics processing units](https:
 *   [2 CUDA](#CUDA)
     *   [2.1 Development](#Development)
     *   [2.2 Language bindings](#Language_bindings_2)
-*   [3 List of OpenCL and CUDA accelerated software](#List_of_OpenCL_and_CUDA_accelerated_software)
+*   [3 List of GPGPU accelerated software](#List_of_GPGPU_accelerated_software)
 *   [4 Links and references](#Links_and_references)
 
 ## OpenCL
@@ -141,18 +141,19 @@ To find whether the installation was successful and if cuda is up and running, y
 *   **[Python](/index.php/Python "Python")**: [python-pycuda](https://www.archlinux.org/packages/?name=python-pycuda) or [Kappa](http://psilambda.com/download/kappa-for-python)
 *   **[Ruby](/index.php/Ruby "Ruby")**, **Lua**: [Kappa](http://psilambda.com/products/kappa/)
 
-## List of OpenCL and CUDA accelerated software
+## List of GPGPU accelerated software
 
 *   [Bitcoin](/index.php/Bitcoin "Bitcoin")
+*   [Blender](/index.php/Blender "Blender") – CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
+*   [BOINC](/index.php/BOINC "BOINC")
+*   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) – a GPU memtest. Despite its name, is supports both CUDA and OpenCL.
+*   [darktable](https://www.archlinux.org/packages/?name=darktable) – OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
+*   [GIMP](/index.php/GIMP "GIMP") – experimental – more information [here](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html).
 *   [HandBrake](/index.php/HandBrake "HandBrake")
 *   [Hashcat](/index.php/Hashcat "Hashcat")
-*   [GIMP](/index.php/GIMP "GIMP") (experimental - see [[1]](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html))
+*   [LibreOffice](/index.php/LibreOffice "LibreOffice") Calc – more information [here](https://help.libreoffice.org/Calc/OpenCL_Options).
 *   [opencv](https://www.archlinux.org/packages/?name=opencv)
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
-*   [darktable](https://www.archlinux.org/packages/?name=darktable) - OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
-*   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) - a GPU memtest. Despite its name, is supports both CUDA and OpenCL
-*   [Blender](/index.php/Blender "Blender") - CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
-*   [BOINC](/index.php/BOINC "BOINC")
 
 ## Links and references
 

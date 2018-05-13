@@ -15,6 +15,8 @@ See the [Guix manual](https://www.gnu.org/software/guix/manual) for information 
 
 **Note:** The build check currently fails if `/bin/sh` is not a link to bash, which is not a problem on a default Arch installation.
 
+**Note:** As of 13.05.2018 *guix-environment-container* test fails during makepkg build if [BUILDDIR environment variable](/index.php/Makepkg#Building_from_files_in_memory "Makepkg") points to tmpfs mount.
+
 GNU Guix is available in the AUR as [guix](https://aur.archlinux.org/packages/guix/). As described in the `PKGBUILD`, the PGP key by the Guix distributor will need to be added first.
 
 ## Running

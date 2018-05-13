@@ -317,7 +317,7 @@ Since kernel 3.17 all the related patches merged into the upstream sources, mean
 There are few options how to set the touchpad:
 
 *   Visit the ArchWiki page for your Chromebook model (see [Chromebook models](#Chromebook_Models)) for touchpad xorg.conf.d file.
-*   Use a [touchpad configuration tool](/index.php/Touchpad_Synaptics#Configuration_on_the_fly "Touchpad Synaptics") like [Synaptics](/index.php/Touchpad_Synaptics#Graphical_tools "Touchpad Synaptics") for [KDE](/index.php/KDE "KDE"), although it is said to be currently unmaintained and seems to crash under KDE 4.11, it works well with KDE 4.12.2\. Another utility, [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/), does not work at all.
+*   Use a [touchpad configuration tool](/index.php/Touchpad_Synaptics#Configuration_on_the_fly "Touchpad Synaptics").
 
 #### Chromium OS input drivers
 
@@ -470,7 +470,7 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 #### xkeyboard configuration
 
-[xkeyboard-config 2.16-1](https://www.archlinux.org/packages/extra/any/xkeyboard-config/) added a `chromebook` model that enables the Chrome OS style functions for the function keys. You can, for example, set this using `localectl set-x11-keymap us chromebook`. See the `chromebook` definition in `/usr/share/X11/xkb/symbols/inet` for the full mappings.
+[xkeyboard-config](https://www.archlinux.org/packages/?name=xkeyboard-config) 2.16-1 added a `chromebook` model that enables the Chrome OS style functions for the function keys. You can, for example, set this using `localectl set-x11-keymap us chromebook`. See the `chromebook` definition in `/usr/share/X11/xkb/symbols/inet` for the full mappings.
 
 #### Sxhkd configuration
 
@@ -527,7 +527,7 @@ Power key and lid switch events will still be logged to journald by logind. See 
 
 #### Ignore by Gnome
 
-[Install](/index.php/Install "Install") [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), open the Tweak Tool and under Power change the Power Button Action.
+[Install](/index.php/Install "Install") [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), open the Tweak Tool and under Power change the Power Button Action.
 
 ## Known issues
 

@@ -30,14 +30,13 @@ Related articles
     *   [5.1 Running graphical applications as root](#Running_graphical_applications_as_root)
     *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
     *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
-    *   [5.4 Nemo](#Nemo)
-    *   [5.5 X11 on tty1, Wayland on tty2](#X11_on_tty1.2C_Wayland_on_tty2)
-    *   [5.6 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1.2C_Weston_on_tty2)
-    *   [5.7 weston-terminal](#weston-terminal)
-    *   [5.8 liteide](#liteide)
-    *   [5.9 screen recording](#screen_recording)
-    *   [5.10 remote display](#remote_display)
-    *   [5.11 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games.2C_remote_desktop_and_VM_windows)
+    *   [5.4 X11 on tty1, Wayland on tty2](#X11_on_tty1.2C_Wayland_on_tty2)
+    *   [5.5 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1.2C_Weston_on_tty2)
+    *   [5.6 weston-terminal](#weston-terminal)
+    *   [5.7 liteide](#liteide)
+    *   [5.8 screen recording](#screen_recording)
+    *   [5.9 remote display](#remote_display)
+    *   [5.10 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games.2C_remote_desktop_and_VM_windows)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -361,15 +360,6 @@ $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
 ### Slow motion, graphical glitches, and crashes
 
 Gnome-shell users may experience display issues when they switch to Wayland from X. One of the root cause might be the `CLUTTER_PAINT=disable-clipped-redraws:disable-culling` set by yourself for Xorg-based gnome-shell. Just try to remove it from `/etc/environment` or other rc files to see if everything goes back to normal.
-
-### Nemo
-
-(20161229) prevent that the desktop is created [nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)
-
-```
-gsettings set org.nemo.desktop show-desktop-icons false
-
-```
 
 ### X11 on tty1, Wayland on tty2
 

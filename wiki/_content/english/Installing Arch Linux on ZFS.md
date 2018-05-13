@@ -388,6 +388,19 @@ Enable the target with [systemd](/index.php/Systemd "Systemd"):
 
 ```
 
+**Note:** Beginning with ZOL version 0.6.5.8 the ZFS service unit files have been changed so that you need to explicitly enable any ZFS services you want to run.
+
+See [https://github.com/archzfs/archzfs/issues/72](https://github.com/archzfs/archzfs/issues/72) for more information.
+
+In order to mount zfs pools automatically on boot you need to enable the following services and targets:
+
+```
+# systemctl enable zfs-import-cache
+# systemctl enable zfs-mount
+# systemctl enable zfs-import.target
+
+```
+
 When running ZFS on root, the machine's hostid will not be available at the time of mounting the root filesystem. There are two solutions to this. You can either place your spl hostid in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in your boot loader. For example, adding `spl.spl_hostid=0x00bab10c`, to get your number use the `hostid` command.
 
 The other, and suggested, solution is to make sure that there is a hostid in `/etc/hostid`, and then regenerate the initramfs image which will copy the hostid into the initramfs image. To write the hostid file safely you need to use the `zgenhostid` command.

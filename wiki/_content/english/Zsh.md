@@ -40,7 +40,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
 
 ## Installation
 
-Before starting users may want to see what shell is currently being used:
+Before starting, users may want to see what shell is currently being used:
 
 ```
 $ echo $SHELL

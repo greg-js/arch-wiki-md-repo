@@ -163,10 +163,10 @@ $ dmesg | grep microcode
 
 ### Обнаружение доступного обновления микрокода
 
-Вы можете узнать, содержит ли `intel-ucode.img` образ микрокода для вашего процессора с помощью [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/).
+Вы можете узнать, содержит ли `intel-ucode.img` образ микрокода для вашего процессора с помощью [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool).
 
 *   Установите [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (для обнаружения обновления не требуется менять initrd)
-*   Установите [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)")
+*   Установите [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)")
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
 

@@ -153,10 +153,10 @@ Los usuarios pueden consultar, ya sea Intel o AMD, en los siguientes enlaces par
 
 #### Detectar la actualización del microcódigo disponible
 
-Es posible saber si intel-ucode.img contiene una imagen de microcódigo para la cpu sobre la que corre con [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/).
+Es posible saber si intel-ucode.img contiene una imagen de microcódigo para la cpu sobre la que corre con [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool).
 
 *   Instale [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (no es necesario cambiar initrd para la detección)
-*   Instale [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/) disponible en [AUR](/index.php/AUR "AUR")
+*   Instale [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool) disponible en [AUR](/index.php/AUR "AUR")
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
     (Extrae la imagen microcode y la busca para su cpuid)

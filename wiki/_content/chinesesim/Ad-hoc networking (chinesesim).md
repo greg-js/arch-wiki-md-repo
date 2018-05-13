@@ -1,3 +1,10 @@
+相关文章
+
+*   [网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")
+*   [无线设置](/index.php/Wireless_Setup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless Setup (简体中文)")
+*   [软AP](/index.php/%E8%BD%AFAP "软AP")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+
 **翻译状态：** 本文是英文页面 [Ad-hoc_networking](/index.php/Ad-hoc_networking "Ad-hoc networking") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Ad-hoc_networking&diff=0&oldid=463497)可以查看翻译后英文页面的改动。
 
 Independent Basic Service Set(独立基本服务集)，缩写是 IBSS，也被称为自组网络，是一种不使用中心控制节点，就能让一组设备相互通讯的方法。是点对点网络的一种，网络中的设备直接通讯，不需要中转。自组网络可以用来进行 [网络共享](/index.php/Internet_sharing "Internet sharing")。

@@ -6,37 +6,35 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 
 ## Contents
 
-*   [1 Using a signed boot loader](#Using_a_signed_boot_loader)
-    *   [1.1 Booting archiso](#Booting_archiso)
-    *   [1.2 PreLoader](#PreLoader)
-        *   [1.2.1 Set up PreLoader](#Set_up_PreLoader)
-            *   [1.2.1.1 Fallback](#Fallback)
-        *   [1.2.2 Remove PreLoader](#Remove_PreLoader)
-    *   [1.3 shim](#shim)
-        *   [1.3.1 Set up shim](#Set_up_shim)
-            *   [1.3.1.1 shim with hash](#shim_with_hash)
-            *   [1.3.1.2 shim with key](#shim_with_key)
-        *   [1.3.2 Remove shim](#Remove_shim)
-*   [2 Using your own keys](#Using_your_own_keys)
-    *   [2.1 Custom keys](#Custom_keys)
-        *   [2.1.1 Creating keys](#Creating_keys)
-        *   [2.1.2 Updating keys](#Updating_keys)
-    *   [2.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
-        *   [2.2.1 Signing kernel with pacman hook](#Signing_kernel_with_pacman_hook)
-    *   [2.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
-    *   [2.4 Enroll keys in firmware](#Enroll_keys_in_firmware)
-        *   [2.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
-        *   [2.4.2 Using KeyTool](#Using_KeyTool)
-    *   [2.5 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
-        *   [2.5.1 Microsoft Windows](#Microsoft_Windows)
-*   [3 Disable Secure Boot](#Disable_Secure_Boot)
-*   [4 See also](#See_also)
+*   [1 Booting archiso](#Booting_archiso)
+*   [2 Using a signed boot loader](#Using_a_signed_boot_loader)
+    *   [2.1 PreLoader](#PreLoader)
+        *   [2.1.1 Set up PreLoader](#Set_up_PreLoader)
+            *   [2.1.1.1 Fallback](#Fallback)
+        *   [2.1.2 Remove PreLoader](#Remove_PreLoader)
+    *   [2.2 shim](#shim)
+        *   [2.2.1 Set up shim](#Set_up_shim)
+            *   [2.2.1.1 shim with hash](#shim_with_hash)
+            *   [2.2.1.2 shim with key](#shim_with_key)
+        *   [2.2.2 Remove shim](#Remove_shim)
+*   [3 Using your own keys](#Using_your_own_keys)
+    *   [3.1 Custom keys](#Custom_keys)
+        *   [3.1.1 Creating keys](#Creating_keys)
+        *   [3.1.2 Updating keys](#Updating_keys)
+    *   [3.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
+        *   [3.2.1 Signing kernel with pacman hook](#Signing_kernel_with_pacman_hook)
+    *   [3.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
+    *   [3.4 Enroll keys in firmware](#Enroll_keys_in_firmware)
+        *   [3.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
+        *   [3.4.2 Using KeyTool](#Using_KeyTool)
+    *   [3.5 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
+        *   [3.5.1 Microsoft Windows](#Microsoft_Windows)
+*   [4 Disable Secure Boot](#Disable_Secure_Boot)
+*   [5 See also](#See_also)
 
-## Using a signed boot loader
+## Booting archiso
 
-Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders PreLoader and shim, their purpose is to chainload other EFI binaries (usually [boot loaders](/index.php/Boot_loaders "Boot loaders")). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use a whitelist called Machine Owner Key list. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
-
-### Booting archiso
+**Note:** The official installation image does not support Secure Boot ([FS#53864](https://bugs.archlinux.org/task/53864)). To successfully boot the installation medium you will need to [#Disable Secure Boot](#Disable_Secure_Boot).
 
 Booting the archiso with Secure Boot enabled is possible since the EFI applications `PreLoader.efi` and `HashTool.efi` have been added to it. A message will show up that says `Failed to Start loader... I will now execute HashTool.` To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps.
 
@@ -67,6 +65,10 @@ For a verbose status, another way is to execute:
 
 ```
 
+## Using a signed boot loader
+
+Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders PreLoader and shim, their purpose is to chainload other EFI binaries (usually [boot loaders](/index.php/Boot_loaders "Boot loaders")). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use a whitelist called Machine Owner Key list. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
+
 ### PreLoader
 
 When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is not in MokList, PreLoader will launch `HashTool.efi`. In HashTool you must enroll the hash of the EFI binaries you want to launch, that means your [boot loader](/index.php/Boot_loader "Boot loader") (`loader.efi`) and kernel.
@@ -77,7 +79,7 @@ When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is
 
 #### Set up PreLoader
 
-**Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](https://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
+**Note:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](https://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
 
 [Install](/index.php/Install "Install") [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and copy `PreLoader.efi` and `HashTool.efi` to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 

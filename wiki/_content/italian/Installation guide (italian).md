@@ -238,7 +238,7 @@ Per informazioni piu` approfondite vedere [Network configuration#Set the hostnam
 
 ### Configurazione della rete
 
-Il nuovo sistema installato non ha nessuna connessione attiva di default. Vedere [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
+Il nuovo sistema installato non ha nessuna connessione attiva di default. Vedere [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
 
 Per [configurare reti wireless](/index.php/Wireless_configuration "Wireless configuration"), [installare](/index.php/Install "Install") il pacchetto [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant). Opzionalmente installare [dialog](https://www.archlinux.org/packages/?name=dialog) per poter usare *wifi-menu*.
 

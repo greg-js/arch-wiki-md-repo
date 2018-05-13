@@ -12,10 +12,9 @@
 *   [8 Πώς μπορώ να βρω PKGBUILDS για το χτίσιμο πακέτων για την αρχιτεκτονική 64bit ;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CE.B2.CF.81.CF.89_PKGBUILDS_.CE.B3.CE.B9.CE.B1_.CF.84.CE.BF_.CF.87.CF.84.CE.AF.CF.83.CE.B9.CE.BC.CE.BF_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CF.89.CE.BD_.CE.B3.CE.B9.CE.B1_.CF.84.CE.B7.CE.BD_.CE.B1.CF.81.CF.87.CE.B9.CF.84.CE.B5.CE.BA.CF.84.CE.BF.CE.BD.CE.B9.CE.BA.CE.AE_64bit_.3B)
 *   [9 Πώς μπορώ να χτίσω 64bit πακέτα απο έτοιμα 32bit PKGBUILDs;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.87.CF.84.CE.AF.CF.83.CF.89_64bit_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CE.B1_.CE.B1.CF.80.CE.BF_.CE.AD.CF.84.CE.BF.CE.B9.CE.BC.CE.B1_32bit_PKGBUILDs.3B)
 *   [10 Πώς μπορώ να προσθέσω patches σε ήδη υπάρχοντα PKGBUILDs για χρήση με το Arch64;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.80.CF.81.CE.BF.CF.83.CE.B8.CE.AD.CF.83.CF.89_patches_.CF.83.CE.B5_.CE.AE.CE.B4.CE.B7_.CF.85.CF.80.CE.AC.CF.81.CF.87.CE.BF.CE.BD.CF.84.CE.B1_PKGBUILDs_.CE.B3.CE.B9.CE.B1_.CF.87.CF.81.CE.AE.CF.83.CE.B7_.CE.BC.CE.B5_.CF.84.CE.BF_Arch64.3B)
-*   [11 Τί χάνω στο Arch64;](#.CE.A4.CE.AF_.CF.87.CE.AC.CE.BD.CF.89_.CF.83.CF.84.CE.BF_Arch64.3B)
-*   [12 Μπορώ να χτίσω πακέτα για την αρχιτεκτονική 32bit (i686) μεσα σε περιβάλλον 64bit (x86_64) ;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.87.CF.84.CE.AF.CF.83.CF.89_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CE.B1_.CE.B3.CE.B9.CE.B1_.CF.84.CE.B7.CE.BD_.CE.B1.CF.81.CF.87.CE.B9.CF.84.CE.B5.CE.BA.CF.84.CE.BF.CE.BD.CE.B9.CE.BA.CE.AE_32bit_.28i686.29_.CE.BC.CE.B5.CF.83.CE.B1_.CF.83.CE.B5_.CF.80.CE.B5.CF.81.CE.B9.CE.B2.CE.AC.CE.BB.CE.BB.CE.BF.CE.BD_64bit_.28x86_64.29_.3B)
-*   [13 Μπορώ να τρέξω 32bit εφαρμογές μεσα στο 64bit Arch σύστημα μου;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.84.CF.81.CE.AD.CE.BE.CF.89_32bit_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AD.CF.82_.CE.BC.CE.B5.CF.83.CE.B1_.CF.83.CF.84.CE.BF_64bit_Arch_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_.CE.BC.CE.BF.CF.85.3B)
-*   [14 Μπορώ να "αναβαθμίσω" το σύστημα μου σε 64bit, από ένα σύστημα 32bit, χωρίς επανεγκατάσταση ;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.22.CE.B1.CE.BD.CE.B1.CE.B2.CE.B1.CE.B8.CE.BC.CE.AF.CF.83.CF.89.22_.CF.84.CE.BF_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_.CE.BC.CE.BF.CF.85_.CF.83.CE.B5_64bit.2C_.CE.B1.CF.80.CF.8C_.CE.AD.CE.BD.CE.B1_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_32bit.2C_.CF.87.CF.89.CF.81.CE.AF.CF.82_.CE.B5.CF.80.CE.B1.CE.BD.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.3B)
+*   [11 Μπορώ να χτίσω πακέτα για την αρχιτεκτονική 32bit (i686) μεσα σε περιβάλλον 64bit (x86_64) ;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.87.CF.84.CE.AF.CF.83.CF.89_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CE.B1_.CE.B3.CE.B9.CE.B1_.CF.84.CE.B7.CE.BD_.CE.B1.CF.81.CF.87.CE.B9.CF.84.CE.B5.CE.BA.CF.84.CE.BF.CE.BD.CE.B9.CE.BA.CE.AE_32bit_.28i686.29_.CE.BC.CE.B5.CF.83.CE.B1_.CF.83.CE.B5_.CF.80.CE.B5.CF.81.CE.B9.CE.B2.CE.AC.CE.BB.CE.BB.CE.BF.CE.BD_64bit_.28x86_64.29_.3B)
+*   [12 Μπορώ να τρέξω 32bit εφαρμογές μεσα στο 64bit Arch σύστημα μου;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.84.CF.81.CE.AD.CE.BE.CF.89_32bit_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AD.CF.82_.CE.BC.CE.B5.CF.83.CE.B1_.CF.83.CF.84.CE.BF_64bit_Arch_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_.CE.BC.CE.BF.CF.85.3B)
+*   [13 Μπορώ να "αναβαθμίσω" το σύστημα μου σε 64bit, από ένα σύστημα 32bit, χωρίς επανεγκατάσταση ;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.22.CE.B1.CE.BD.CE.B1.CE.B2.CE.B1.CE.B8.CE.BC.CE.AF.CF.83.CF.89.22_.CF.84.CE.BF_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_.CE.BC.CE.BF.CF.85_.CF.83.CE.B5_64bit.2C_.CE.B1.CF.80.CF.8C_.CE.AD.CE.BD.CE.B1_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_32bit.2C_.CF.87.CF.89.CF.81.CE.AF.CF.82_.CE.B5.CF.80.CE.B1.CE.BD.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.3B)
 
 ## Πώς μπορώ να εγκαταστήσω το Arch64;
 
@@ -114,18 +113,6 @@ cvs commit -m "x86_64 updated/fixed or whatever"
 cvs tag -cFR CURRENT-64 foo-package-directory (ακόμη και για τα extra, community, unstable and testing repositories)
 
 ```
-
-## Τί χάνω στο Arch64;
-
-Οι ακόλουθες εφαρμογές δεν είναι ακόμη 64bit συμβατές:
-
-*   πραγματικό x86_64 Flash support, μόνο κατά τμήματα με το GPL gnash or swfdec package από το extra repo
-*   όχι native (εγγενές) Flash plugin από την Adobe (R) - μόνο το nspluginwrapper από το community repo επιτρέπει την χρήση 32bit plugins και εγκαθιστά lib32 packages για συμβατότητα - ακολουθείστε αυτόν τον οδηγό για περισσότερα [Install Flash on Arch64](/index.php?title=Install_Flash_on_Arch64&action=edit&redlink=1 "Install Flash on Arch64 (page does not exist)")
-*   Εφαρμογές κλειστού κώδικα όπως το Skype, TeamSpeak, games και άλλα ...
-*   win32 codecs (... που δεν χρειαζόμαστε σχεδόν ποτέ)
-*   πακέτα που χρησιμοποιούν x86 32-bit assembler κώδικα (ορισμένοι emulators όπως το zsnes και το syslinux)
-
-Όλα τα υπόλοιπα σχεδόν πακέτα και προγράμματα μπορούν να μεταφερθούν στην 64bit αρχιτεκτονική. Εάν σας λείπει κάποιο 32bit πακέτο και ξέρετε ότι χτίζεται και για την 64bit αρχιτεκτονική (e.g. το βρήκατε και σε άλλη 64bit Linux διανομή χωρίς την χρήση πρόσθετων βιβλιοθηκών συμβατότητας), ενημερώστε τους developers.
 
 ## Μπορώ να χτίσω πακέτα για την αρχιτεκτονική 32bit (i686) μεσα σε περιβάλλον 64bit (x86_64) ;
 

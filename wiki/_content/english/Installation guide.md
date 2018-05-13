@@ -258,7 +258,7 @@ If the system has a permanent IP address, it should be used instead of `127.0.1.
 
 ### Network configuration
 
-The newly installed environment has no network connection activated by default. See [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
+The newly installed environment has no network connection activated by default. See [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
 
 For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Optionally install [dialog](https://www.archlinux.org/packages/?name=dialog) for usage of *wifi-menu*.
 

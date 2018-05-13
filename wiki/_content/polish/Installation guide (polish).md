@@ -252,7 +252,7 @@ Zobacz również: [Network configuration#Set the hostname](/index.php/Network_co
 
 ### Konfiguracja sieci
 
-Nowo zainstalowany system nie ma żadnego połączenia z siecią uruchomionego domyślnie. Zobacz [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
+Nowo zainstalowany system nie ma żadnego połączenia z siecią uruchomionego domyślnie. Zobacz [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
 
 Dla [sieci bezprzewodowych](/index.php/Wireless_configuration "Wireless configuration"), [zainstaluj](/index.php/Install "Install") pakiety [iw](https://www.archlinux.org/packages/?name=iw) i {{Pkg|wpa_supplicant} i wymagane [pakiety firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Opcjonalnie zainstaluj [dialog](https://www.archlinux.org/packages/?name=dialog) dla użycia *wifi-menu*.
 

@@ -427,6 +427,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
  |
 | [OpenSSL](/index.php/OpenSSL "OpenSSL") | `~/.rnd` | Seeding file .rnd's location can be set with RANDFILE environment variable per [FAQ](https://www.openssl.org/docs/faq.html). |
+| [GNU parallel](http://www.gnu.org/software/parallel/) | `~/.parallel` | [20170422](https://git.savannah.gnu.org/cgit/parallel.git/commit/?id=685018f532f4e2d24b84eb28d5de3d759f0d1af1) | `$ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel` |
 | [Pass](/index.php/Pass "Pass") | `~/.password-store` | `$ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass` |
 | [Pidgin](/index.php/Pidgin "Pidgin") | `~/.purple` | [[88]](https://developer.pidgin.im/ticket/4911) | `$ pidgin --config="$XDG_DATA_HOME"/purple` |
 | [postgresql](https://www.postgresql.org/) | `~/.psqlrc`
@@ -591,7 +592,6 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[116]](https://bugzil.la/259356) |
 | [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[117]](https://github.com/flatpak/flatpak/issues/46) [[118]](https://github.com/flatpak/flatpak.github.io/issues/191) |
 | [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[119]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
-| [GNU parallel](http://www.gnu.org/software/parallel/) | `~/.parallel` |
 | [gtk-recordMyDesktop](http://recordmydesktop.sourceforge.net/about.php) | `~/.gtk-recordmydesktop` |
 | [idris](http://www.idris-lang.org/) | `~/.idris` | [[120]](https://github.com/idris-lang/Idris-dev/pull/3456) |
 | [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/fonts`, `~/.java/webview` | [[121]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |

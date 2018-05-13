@@ -293,7 +293,7 @@ The following packages use `btrfs send` and `btrfs receive` to send backups incr
 
 *   **snap-sync** — "Use snapper snapshots to backup to external drive."
 
-	[https://github.com/wesbarnett/snap-sync.git](https://github.com/wesbarnett/snap-sync.git) || [snap-sync](https://aur.archlinux.org/packages/snap-sync/)
+	[https://github.com/wesbarnett/snap-sync.git](https://github.com/wesbarnett/snap-sync.git) || [snap-sync](https://www.archlinux.org/packages/?name=snap-sync)
 
 *   **snapsync** — "A synchronization tool for snapper"
 

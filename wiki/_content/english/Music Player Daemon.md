@@ -3,7 +3,7 @@ Related articles
 *   [MPD/Tips and Tricks](/index.php/MPD/Tips_and_Tricks "MPD/Tips and Tricks")
 *   [MPD/Troubleshooting](/index.php/MPD/Troubleshooting "MPD/Troubleshooting")
 
-**[MPD](http://www.musicpd.org/)** (**m**usic **p**layer **d**aemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database all while using very few resources. In order to interface with it, a separate [client](#Clients) is needed.
+**[MPD](http://www.musicpd.org/)** (music player daemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database, all while using very few resources. In order to interface with it, a separate [client](#Clients) is needed.
 
 ## Contents
 
@@ -34,14 +34,14 @@ Related articles
 
 ## Configuration
 
-MPD is able to run in [#Per-user configuration](#Per-user_configuration) mode or [#System-wide configuration](#System-wide_configuration) mode (settings apply to all users). Also it is possible to run multiple instances of MPD in a [#Multi-MPD setup](#Multi-MPD_setup). The way of setting up MPD depends on the way it is intended to be used: a local per-user configuration is easier to setup and may prove more adapted on a desktop system.
+MPD is able to run in [#Per-user configuration](#Per-user_configuration) or [#System-wide configuration](#System-wide_configuration) mode (settings apply to all users). Also it is possible to run multiple instances of MPD in a [#Multi-MPD setup](#Multi-MPD_setup). The way of setting up MPD depends on the way it is intended to be used: a local per-user configuration is easier to setup and may prove more adapted on a desktop system.
 
-In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA"), optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio"), needs to be setup and working. The [#Audio configuration](#Audio_configuration) section thereafter describes the parameters needed for *ALSA* or *PulseAudio*.
+In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA"), optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio"), must be setup and working. The [#Audio configuration](#Audio_configuration) section thereafter describes the parameters needed for *ALSA* or *PulseAudio*.
 
-MPD is configured in the file [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) which can be located in various paths depending on the setup chosen (system-wide or per-user). In short the two common locations used are:
+MPD is configured in the file [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) which can be located in various paths depending on the setup chosen (system-wide or per-user). In short, the two common locations used are:
 
-*   `~/.config/mpd/mpd.conf` in per-user configuration mode, this is the first location searched,
-*   `/etc/mpd.conf` in system-wide configuration.
+1.  `~/.config/mpd/mpd.conf` in per-user configuration mode, this is the first location searched,
+2.  `/etc/mpd.conf` in system-wide configuration.
 
 For indication, some of the most commonly used configuration options are listed thereafter:
 
@@ -56,8 +56,8 @@ For indication, some of the most commonly used configuration options are listed 
 
 MPD can be configured per-user. Running it as a normal user has the benefits of:
 
-*   Using a single directory `~/.config/mpd/` (or any other directory under `$HOME`) that contains all the MPD configuration files.
-*   It is easier to avoid unforeseen directory and file permission errors.
+*   Regrouping into one single directory `~/.config/mpd/` (or any other directory under `$HOME`) all the MPD configuration files.
+*   Avoiding unforeseen directory and file permission errors.
 
 #### Configure the location of files and directories
 
@@ -111,7 +111,7 @@ $ mpd *[config_file]*
 
 ```
 
-To build the database, scanning into the `music_directory` defined above, a MPD client must be used, for example with [mpc](https://www.archlinux.org/packages/?name=mpc) the command is:
+In order to build the database file, *MPD* must scan into the `music_directory` defined above. A MPD client is required to request this task, for example with [mpc](https://www.archlinux.org/packages/?name=mpc) the command is:
 
 ```
 $ mpc update
@@ -317,5 +317,5 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 *   [MPD Forum](http://forum.musicpd.org/)
 *   [MPD User Manual](http://www.musicpd.org/doc/user/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Music_Player_Daemon "wikipedia:Music Player Daemon")
-*   MPD on GitHub [https://github.com/MusicPlayerDaemon/MPD](https://github.com/MusicPlayerDaemon/MPD)
+*   [GitHub repository](https://github.com/MusicPlayerDaemon/MPD)
 *   [mopidy](https://www.archlinux.org/packages/?name=mopidy) is an alternative to MPD written in Python. Note it is not a complete MPD replacement, its advantage is that it has plug-ins for playing music from cloud services like Spotify, SoundCloud, and Google Play Music. However, the project is not that active and some of its plugins are not maintained.

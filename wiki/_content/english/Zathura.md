@@ -12,7 +12,10 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [zathura](https://www.archlinux.org/packages/?name=zathura) package along with the desired optional dependencies.
+[Install](/index.php/Install "Install") the [zathura](https://www.archlinux.org/packages/?name=zathura) package along with the desired optional dependencies:
+
+*   [zathura-pdf-poppler](https://www.archlinux.org/packages/?name=zathura-pdf-poppler) - PDF reading
+*   [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) - PDF/ePUB/OpenXPS reading, backend based on MuPDF
 
 ## Features
 

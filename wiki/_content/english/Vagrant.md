@@ -24,8 +24,9 @@ Vagrant uses a mostly declarative `Vagrantfile` to define virtualised machines. 
     *   [5.1 No ping between host and vagrant box (host-only networking)](#No_ping_between_host_and_vagrant_box_.28host-only_networking.29)
     *   [5.2 Virtual machine is not network accessible from the Arch host OS](#Virtual_machine_is_not_network_accessible_from_the_Arch_host_OS)
     *   [5.3 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)](#.27vagrant_up.27_hangs_on_NFS_mounting_.28Mounting_NFS_shared_folders....29)
-    *   [5.4 Error starting network 'default': internal error: Failed to initialize a valid firewall backend](#Error_starting_network_.27default.27:_internal_error:_Failed_to_initialize_a_valid_firewall_backend)
-    *   [5.5 Unable to ssh to vagrant guest](#Unable_to_ssh_to_vagrant_guest)
+    *   [5.4 Mounting NFS shared folders: mount.nfs: requested NFS version or transport protocol is not supported](#Mounting_NFS_shared_folders:_mount.nfs:_requested_NFS_version_or_transport_protocol_is_not_supported)
+    *   [5.5 Error starting network 'default': internal error: Failed to initialize a valid firewall backend](#Error_starting_network_.27default.27:_internal_error:_Failed_to_initialize_a_valid_firewall_backend)
+    *   [5.6 Unable to ssh to vagrant guest](#Unable_to_ssh_to_vagrant_guest)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -162,6 +163,17 @@ As of version 1.8.4, Vagrant appears to use the deprecated `route` command to co
 ### 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)
 
 Installing [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package may solve this problem.
+
+### Mounting NFS shared folders: mount.nfs: requested NFS version or transport protocol is not supported
+
+[Install](/index.php/Install "Install") the [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package. Enable (v3 and) UDP support by editing `/etc/nfs.conf` and uncommenting the following lines:
+
+```
+[nfsd]
+vers3=y
+udp=y
+
+```
 
 ### Error starting network 'default': internal error: Failed to initialize a valid firewall backend
 

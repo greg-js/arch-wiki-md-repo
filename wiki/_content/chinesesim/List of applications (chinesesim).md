@@ -1264,7 +1264,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
 
-*   **Hexo** — A fast, simple & powerful blog framework, powered by Node.js.
+*   **Hexo** — 简单、快速、强大的Node.js静态博客框架
 
 	[http://hexo.io](http://hexo.io) || [nodejs-hexo](https://aur.archlinux.org/packages/nodejs-hexo/)
 

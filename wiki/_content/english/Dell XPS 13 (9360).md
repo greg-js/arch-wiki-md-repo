@@ -212,25 +212,23 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 
 ### Thunderbolt Firmware updates
 
-The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. If you have fwupd (see: [#Firmware Updates](#Firmware_Updates)) set up then you should receive this update automatically. Otherwise, you can install it manually as follows.
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 26\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. If you have fwupd (see: [#Firmware Updates](#Firmware_Updates)) set up then you should receive this update automatically. Otherwise, you can install it manually as follows.
 
-Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files. If the provided payload does not work, try `0x075B_secure.bin` inside the [Windows package](http://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverId=MHTHF). This can be extracted with [p7zip](https://www.archlinux.org/packages/?name=p7zip).
+Dell maintained a github repository with the firmware, but abandoned it now that the firmware is on LVFS. The current version is available as `0x075B_secure.bin` (or 0x082A for newer model, see instructions below) inside the [Windows package](http://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverId=4FC9M). This can be extracted with [p7zip](https://www.archlinux.org/packages/?name=p7zip).
 
 Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.13+ (use at your own risk):
 
-*   Install [libsmbios](https://www.archlinux.org/packages/?name=libsmbios) and [efivar](https://www.archlinux.org/packages/?name=efivar)
-*   Clone [dell Thunderbolt Force Tool](https://github.com/dell/thunderbolt-nvm-linux)
-*   Build the Dell Force tool
+*   Force enable the thunderbolt controller (or plug in a device to enable it)
 
 ```
-# gcc -o force_dell_tbt force_dell_tbt.c -I /usr/include/efivar/ -lsmbios_c -lefivar
+# echo 1 | sudo tee /sys/bus/wmi/devices/86CCFD48-205E-4A77-9C48-2021CBEDE341/force_power 
 
 ```
 
-*   Force the controller to accept updates
+*   Check your model ID. If it's 0x082A, use the 0x082A firmware instead of the 0x075B one.
 
 ```
-# ./force_dell_tbt 1
+# cat /sys/bus/thunderbolt/devices/0-0/device
 
 ```
 
@@ -255,7 +253,7 @@ Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.13+ 
 
 ```
 
-*   Verify the new nvme version (it should return 21.0)
+*   Verify the new nvme version (it should return 26.1)
 
 ```
 # cat /sys/bus/thunderbolt/devices/0-0/nvm_version
@@ -265,7 +263,7 @@ Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.13+ 
 *   Put the controller back in normal mode
 
 ```
-# ./force_dell_tbt 0
+# echo 0 | sudo tee /sys/bus/wmi/devices/86CCFD48-205E-4A77-9C48-2021CBEDE341/force_power
 
 ```
 

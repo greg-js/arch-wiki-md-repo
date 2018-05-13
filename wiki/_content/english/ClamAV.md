@@ -45,13 +45,13 @@ The database files are saved in:
 
 ```
 
-The virus definition updater service is called `clamav-freshclam.service`. Consider starting it and enabling it to start at boot so that the virus definitions are kept recent.
+[Start/enable](/index.php/Start/enable "Start/enable") `clamav-freshclam.service` so that the virus definitions are kept recent.
 
 ## Starting the daemon
 
-Consider updating the database before starting the service for the first time or you will run into troubles/errors which will prevent ClamAV to start correctly.
+**Note:** You will need to run `freshclam` before starting the service for the first time or you will run into troubles/errors which will prevent ClamAV to start correctly.
 
-The service is called `clamav-daemon.service`. [Start](/index.php/Start "Start") it or [enable](/index.php/Enable "Enable") it to start at boot. You will need to run `freshclam` prior to starting the service.
+The service is called `clamav-daemon.service`. [Start](/index.php/Start "Start") it and [enable](/index.php/Enable "Enable") it to start at boot.
 
 ## Testing the software
 
@@ -89,23 +89,27 @@ user_configuration_complete="yes"
 
 ```
 
-To enable the unofficial signature service (which includes manpages, log rotation, and a cron job), run the following:
+Then [enable](/index.php/Enable "Enable") the `clamav-unofficial-sigs.timer`.
+
+This will regularly update the unofficial signatures based on the configuration files in the directory `/etc/clamav-unofficial-sigs`.
+
+If you prefer a cron job instead of above timer then run this instead:
 
 ```
-# clamav-unofficial-sigs.sh --install-all
+# clamav-unofficial-sigs.sh --install-cron
 
 ```
 
-Note that you still must have the `clamav-daemon` service running in order to have signature updates from ClamAV themselves.
+To stop the cron job from running, delete this file: `/etc/cron.d/clamav-unofficial-sigs`.
 
-This will refresh the signatures from the databases used in the clamav-unofficial-sigs script and extra ones as configured in each configuration file in the `/etc/clamav-unofficial-sigs` folder. To refresh signatures from these databases manually, run the following:
+To update signatures manually, run the following:
 
 ```
 # clamav-unofficial-sigs.sh
 
 ```
 
-To stop the cron job from running, delete this file: `/etc/cron.d/clamav-unofficial-sigs`.
+**Note:** You still must have the `clamav-freshclam.service` [started](/index.php/Started "Started") in order to have official signature updates from ClamAV mirrors.
 
 #### MalwarePatrol database
 
@@ -155,7 +159,6 @@ TemporaryDirectory /tmp
 ClamdSocket unix:/var/lib/clamav/clamd.sock
 LogSyslog yes
 LogInfected Basic
-
 ```
 
 Create `/etc/systemd/system/clamav-milter.service`:
@@ -164,7 +167,7 @@ Create `/etc/systemd/system/clamav-milter.service`:
 ```
 [Unit]
 Description='ClamAV Milter'
-After=clamd.service
+After=clamav-daemon.service
 
 [Service]
 Type=forking
@@ -172,17 +175,16 @@ ExecStart=/usr/bin/clamav-milter --config-file /etc/clamav/clamav-milter.conf
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
-Enable and start the service.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `clamav-milter.service`.
 
 ## OnAccessScan
 
 On-access scanning requires the kernel to be compiled with the *fanotify* kernel module (kernel >= 3.8). Check if *fanotify* has been enabled before enabling on-access scanning.
 
 ```
-$ cat /proc/config.gz | gunzip | grep FANOTIFY=y
+$ zgrep FANOTIFY /proc/config.gz
 
 ```
 
@@ -192,7 +194,7 @@ First, edit the `/etc/clamav/clamd.conf` configuration file by adding the follow
 
  `/etc/clamav/clamd.conf` 
 ```
-# Enables on-access scan, requires clamd service running
+# Enables on-access scan, requires clamav-daemon.service running
 ScanOnAccess true
 
 # Set the mount point where to recursively perform the scan,
@@ -212,7 +214,7 @@ OnAccessExcludeUID 0
 
 # Specify an action to perform when clamav detects a malicious file
 # it is possible to specify an inline command too
-VirusEvent /etc/clamav/detected.zsh
+VirusEvent /etc/clamav/detected.sh
 
 # WARNING: clamd should run as root
 User root
@@ -259,7 +261,7 @@ If you are using [AppArmor](/index.php/AppArmor "AppArmor"), it is also necessar
 
 ```
 
-Restart/start the service with `systemctl restart clamd.service`.
+[Restart](/index.php/Restart "Restart") the `clamav-daemon.service`.
 
 Source: [http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html](http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html)
 
@@ -290,7 +292,7 @@ LocalSocket /var/lib/clamav/clamd.sock
 
 ```
 
-Save the file and [restart the daemon](/index.php/Daemons "Daemons") with `systemctl restart clamd.service`.
+Save the file and [restart](/index.php/Restart "Restart") `clamav-daemon.service`.
 
 ### Error: No supported database files found
 
@@ -302,7 +304,7 @@ in /var/lib/clamav ERROR: Not supported data format
 
 ```
 
-This happens because of mismatch between `/etc/freshclam.conf` setting `DatabaseDirectory` and `/etc/clamd.conf` setting `DatabaseDirectory`. `/etc/freshclam.conf` pointing to `/var/lib/clamav`, but `/etc/clamd.conf` (default directory) pointing to `/usr/share/clamav`, or other directory. Edit in `/etc/clamd.conf` and replace with the same DatabaseDirectory like in `/etc/freshclam.conf`. After that clamav will start up succesfully.
+This happens because of mismatch between `/etc/clamav/freshclam.conf` setting `DatabaseDirectory` and `/etc/clamav/clamd.conf` setting `DatabaseDirectory`. `/etc/clamav/freshclam.conf` pointing to `/var/lib/clamav`, but `/etc/clamav/clamd.conf` (default directory) pointing to `/usr/share/clamav`, or other directory. Edit in `/etc/clamav/clamd.conf` and replace with the same DatabaseDirectory like in `/etc/clamav/freshclam.conf`. After that clamav will start up succesfully.
 
 ### Error: Can't create temporary directory
 

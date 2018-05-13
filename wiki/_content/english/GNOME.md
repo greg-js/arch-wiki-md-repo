@@ -374,7 +374,7 @@ Various Desktop settings can be applied.
 
 ##### Icons on the Desktop
 
-Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/GNOME/Files "GNOME/Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) which partially replicates the desktop icon functionality available in GNOME 3.26 and below. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
+Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/Files "Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) which partially replicates the desktop icon functionality available in GNOME 3.26 and below. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
 
 ##### Lock screen and background
 

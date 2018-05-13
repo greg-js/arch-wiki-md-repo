@@ -76,7 +76,7 @@ Related articles
 
 ## 安装
 
-网络管理其可以通过[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)包[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")。这个包不包括托盘插件*nm-applet*,此插件是[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)包的一部分。从1.0版本开始，网络管理内部获得了对基本DHCP功能的支持。对于全功能的DHCP或者如果你需要IPV6支持，[dhclient](https://www.archlinux.org/packages/?name=dhclient) 集成了这些功能。
+网络管理器可以通过[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)包[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")。这个包不包括托盘插件*nm-applet*,此插件是[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)包的一部分。从1.0版本开始，网络管理内部获得了对基本DHCP功能的支持。对于全功能的DHCP或者如果你需要IPV6支持，[dhclient](https://www.archlinux.org/packages/?name=dhclient) 集成了这些功能。
 
 ```
 # pacman -Syu networkmanager
