@@ -211,7 +211,9 @@ This will create an `/etc/localtime` symlink that points to a zoneinfo file unde
 **Tip:**
 
 *   The time zone can also be selected interactively with *tzselect*.
-*   The tool [tzupdate](https://aur.archlinux.org/packages/tzupdate/) automatically sets the timezone based on the geolocation of the IP address.
+*   To set the timezone automatically based on the IP address geolocation:
+    *   One can use a geolocation API to retrieve the timezone, for example `$ curl [https://ipapi.co/timezone](https://ipapi.co/timezone)`, and feed the output to `timedatectl set-timezone` for automatic setting.
+    *   The tool [tzupdate](https://aur.archlinux.org/packages/tzupdate/) automatically sets the timezone based on the geolocation of the IP address.
 
 See [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5) and [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for details.
 

@@ -121,7 +121,7 @@ Works out of the box since kernel 4.14. Earlier kernels require [Hans de Goede's
 
 Reboot holding either **"Del"** or **"Esc"** to enter BIOS. From the BIOS screen, either change the boot options to prioritize your usb drive or boot from it once.
 
-On the Arch Linux boot option screen, with the first option highlighted, click **"e"** to edit boot options and add **"i915.fastboot=1"** to avoid black screen on boot and **"fbcon=rotate:1"** for screen to be rotated correctly.
+On the Arch Linux boot option screen, with the first option highlighted, click **"e"** to edit boot options and add **"fbcon=rotate:1"** for screen to be rotated correctly.
 
 #### Formating and mounting partitions for dual booting with Windows 10
 
@@ -184,7 +184,7 @@ Create and fill **/boot/loader/entries/arch.conf**
 title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /initramfs-linux.img
-options i915.fastboot=1 fbcon=rotate:1 root=/dev/mmcblk0p**Z** rw
+options fbcon=rotate:1 root=/dev/mmcblk0p**Z** rw
 
 ```
 

@@ -5,7 +5,7 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
-| Fingerprint Sensor | No |
+| Fingerprint Sensor | WIP |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | Smartcard Reader | Yes |
@@ -83,7 +83,9 @@ video=SVIDEO-1:d
 
 The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
 
-Open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+Open source Linux driver is being developed by reverse engineering the Windows driver [[1]](https://github.com/nmikhailov/Validity90). Based on this work an experimental [fprint](/index.php/Fprint "Fprint") driver was developed: [libfprint-vfs0090-git](https://aur.archlinux.org/packages/libfprint-vfs0090-git/) [[2]](https://github.com/3v1n0/libfprint).
+
+**Note:** It only works if the device has been initialized with a Windows VirtualBox (sharing USB) guest or with a Windows installation in bare metal.
 
 ### ALSA Beep
 
@@ -95,9 +97,9 @@ Fn+Esc to enable FnLk which will make your function keys work.
 
 ### Video Issues
 
-With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
+With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
 
-This can be worked around by using the `i915.enable_rc6=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
+This can be worked around by using the `i915.enable_rc6=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
 
 ### Smartcard Reader
 

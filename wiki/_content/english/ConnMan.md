@@ -2,13 +2,13 @@ Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
 
 [ConnMan](https://01.org/connman) is a command-line network manager designed for use with embedded devices and fast resolve times. It is modular through a [plugin architecture](http://git.kernel.org/cgit/network/connman/connman.git/tree/plugins), but has native [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") and [NTP](/index.php/NTP "NTP") support.[[1]](http://git.kernel.org/cgit/network/connman/connman.git/tree/src/)
 
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Front-ends](#Front-ends)
 *   [2 Usage](#Usage)
     *   [2.1 Wi-Fi](#Wi-Fi)
         *   [2.1.1 Enabling and disabling wifi](#Enabling_and_disabling_wifi)
@@ -31,7 +31,6 @@ Related articles
     *   [4.5 Unknown route on connection](#Unknown_route_on_connection)
     *   [4.6 File /proc/net/pnp doesn't exist](#File_.2Fproc.2Fnet.2Fpnp_doesn.27t_exist)
 *   [5 See also](#See_also)
-    *   [5.1 Front-ends](#Front-ends)
 
 ## Installation
 
@@ -39,7 +38,49 @@ Related articles
 
 Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any existing [network configuration](/index.php/Network_configuration "Network configuration") is disabled.
 
-Connman comes with the [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) CLI, there are various [#Front-ends](#Front-ends) available.
+ConnMan comes with the [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) CLI, there are various [#Front-ends](#Front-ends) available.
+
+### Front-ends
+
+*   **cmst** — Qt GUI for ConnMan.
+
+	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)
+
+*   **connman-ncurses** — Simple ncurses UI for ConnMan; not all of connman functionality is implemented, but usable (with X or from terminal without X), see the [wiki](https://github.com/eurogiciel-oss/connman-json-client/wiki).
+
+	[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)
+
+*   **connman-notify** — Connman event notification client
+
+	[https://github.com/wavexx/connman-notify](https://github.com/wavexx/connman-notify) || [connman-notify](https://aur.archlinux.org/packages/connman-notify/)
+
+*   **ConnMan-UI** — GTK3 client applet.
+
+	[https://github.com/tbursztyka/connman-ui](https://github.com/tbursztyka/connman-ui) || [connman-ui-git](https://aur.archlinux.org/packages/connman-ui-git/)
+
+*   **connman_dmenu** — Client/frontend for dmenu.
+
+	[https://github.com/taylorchu/connman_dmenu](https://github.com/taylorchu/connman_dmenu) || [connman_dmenu-git](https://aur.archlinux.org/packages/connman_dmenu-git/)
+
+*   **Econnman** — Enlightenment desktop panel applet.
+
+	[http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)
+
+*   **LXQt-Connman-Applet** — LXQt desktop panel applet.
+
+	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
+
+*   **qconnman-ui** — Qt management interface used on O.S. Systems products
+
+	[https://github.com/OSSystems/qconnman-ui](https://github.com/OSSystems/qconnman-ui) || [qconnman-ui-git](https://aur.archlinux.org/packages/qconnman-ui-git/)
+
+*   **connman-gtk** — GTK client.
+
+	[https://github.com/jgke/connman-gtk](https://github.com/jgke/connman-gtk) || [connman-gtk](https://aur.archlinux.org/packages/connman-gtk/)
+
+*   **gnome-extension-connman** — Gnome3 extension for connman; it contains only some of the functionality without installing connman-gtk.
+
+	[https://github.com/jgke/gnome-extension-connman](https://github.com/jgke/gnome-extension-connman) || [https://extensions.gnome.org/extension/981/connman-extension/](https://extensions.gnome.org/extension/981/connman-extension/)
 
 ## Usage
 
@@ -374,45 +415,3 @@ If you see this in your error log it is caused by bug in connman [[6]](https://b
 ## See also
 
 *   [git repo documentation](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc) - for further detailed documentation
-
-### Front-ends
-
-*   **cmst** — Qt GUI for ConnMan.
-
-	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)
-
-*   **connman-ncurses** — Simple ncurses UI for ConnMan; not all of connman functionality is implemented, but usable (with X or from terminal without X), see the [wiki](https://github.com/eurogiciel-oss/connman-json-client/wiki).
-
-	[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)
-
-*   **connman-notify** — Connman event notification client
-
-	[https://github.com/wavexx/connman-notify](https://github.com/wavexx/connman-notify) || [connman-notify](https://aur.archlinux.org/packages/connman-notify/)
-
-*   **ConnMan-UI** — GTK3 client applet.
-
-	[https://github.com/tbursztyka/connman-ui](https://github.com/tbursztyka/connman-ui) || [connman-ui-git](https://aur.archlinux.org/packages/connman-ui-git/)
-
-*   **connman_dmenu** — Client/frontend for dmenu.
-
-	[https://github.com/taylorchu/connman_dmenu](https://github.com/taylorchu/connman_dmenu) || [connman_dmenu-git](https://aur.archlinux.org/packages/connman_dmenu-git/)
-
-*   **Econnman** — Enlightenment desktop panel applet.
-
-	[http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)
-
-*   **LXQt-Connman-Applet** — LXQt desktop panel applet.
-
-	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
-
-*   **qconnman-ui** — Qt management interface used on O.S. Systems products
-
-	[https://github.com/OSSystems/qconnman-ui](https://github.com/OSSystems/qconnman-ui) || [qconnman-ui-git](https://aur.archlinux.org/packages/qconnman-ui-git/)
-
-*   **connman-gtk** — GTK client.
-
-	[https://github.com/jgke/connman-gtk](https://github.com/jgke/connman-gtk) || [connman-gtk](https://aur.archlinux.org/packages/connman-gtk/)
-
-*   **gnome-extension-connman** — Gnome3 extension for connman; it contains only some of the functionality without installing connman-gtk.
-
-	[https://github.com/jgke/gnome-extension-connman](https://github.com/jgke/gnome-extension-connman) || [https://extensions.gnome.org/extension/981/connman-extension/](https://extensions.gnome.org/extension/981/connman-extension/)

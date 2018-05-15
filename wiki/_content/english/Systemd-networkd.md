@@ -51,7 +51,7 @@ Related articles
 
 ## Basic usage
 
-The [systemd](https://www.archlinux.org/packages/?name=systemd) package is part of the default Arch installation and contains all needed files to operate a wired network. Wireless adapters can be setup by other services, such as [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), which are covered later in this article.
+The [systemd](https://www.archlinux.org/packages/?name=systemd) package is part of the default Arch installation and contains all needed files to operate a wired network. Wireless adapters can be setup by other services, such as [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), which are covered later in this article. Wireless adapters may also be setup using [iwd](/index.php/Iwd "Iwd").
 
 ### Required services and setup
 

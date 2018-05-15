@@ -102,7 +102,7 @@ Configuration can be done per-user through `$XDG_CONFIG_HOME/fontconfig/fonts.co
 
 Fontconfig gathers all its configurations in a central file (`/etc/fonts/fonts.conf`). This file is replaced during fontconfig updates and should not be edited. Fontconfig-aware applications source this file to know available fonts and how they get rendered. This file is a conglomeration of rules from the global configuration (`/etc/fonts/local.conf`), the configured presets in `/etc/fonts/conf.d/`, and the user configuration file (`$XDG_CONFIG_HOME/fontconfig/fonts.conf`). `fc-cache` can be used to rebuild fontconfig's configuration, although changes will only be visible in newly launched applications.
 
-**Note:** For some desktop environments (such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE")) using the *Font Control Panel* will automatically create or overwrite the user font configuration file. For these desktop environments, it is best to match your already defined font configurations to get the expected behavior.
+**Note:** For some desktop environments (such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE")) using the *Font Control Panel* will automatically create or overwrite the user font configuration file. For these desktop environments, it is best to match your already defined font configurations to get the expected behavior. Also ensure that the desktop [locale](/index.php/Locale "Locale") settings or *Regional Settings* are supported by the configured fonts, if not the font configuration could be overidden.
 
 Fontconfig configuration files use [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") format and need these headers:
 
@@ -375,6 +375,7 @@ Typically when both elements are combined, `<rejectfont>` is first used on a mor
 Bitmap fonts are sometimes used as fallbacks for missing fonts, which may cause text to be rendered pixelated or too large. Use the `70-no-bitmaps.conf` [preset](#Presets) to disable this behavior.
 
 To disable embedded bitmap for all fonts:
+
  `~/.config/fontconfig/conf.d/20-no-embedded.conf` 
 ```
 <?xml version="1.0"?>
@@ -460,7 +461,7 @@ Now add necessary modifications to `$XDG_CONFIG_HOME/fontconfig/fonts.conf`:
 
 ```
 
-**Tip:** Use the value 'embolden' for existing bold fonts in order to make them even bolder.
+**Tip:** Use the value `embolden` for existing bold fonts in order to make them even bolder.
 
 ### Change rule overriding
 

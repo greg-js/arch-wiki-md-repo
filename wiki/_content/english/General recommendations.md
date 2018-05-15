@@ -78,7 +78,7 @@ This section deals with administrative tasks and system management. For more, pl
 
 ### Users and groups
 
-A new installation leaves you with only the superuser account, better known as "root". Logging in as root for prolonged periods of time, possibly even exposing it via [SSH](/index.php/SSH "SSH") on a server, [is insecure](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Instead, you should create and use unprivileged user account(s) for most tasks, only using the root account for system administration. See [Users and groups#User management](/index.php/Users_and_groups#User_management "Users and groups") for details.
+A new installation leaves you with only the [superuser](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser") account, better known as "root". Logging in as root for prolonged periods of time, possibly even exposing it via [SSH](/index.php/SSH "SSH") on a server, [is insecure](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Instead, you should create and use unprivileged user account(s) for most tasks, only using the root account for system administration. See [Users and groups#User management](/index.php/Users_and_groups#User_management "Users and groups") for details.
 
 Users and groups are a mechanism for *access control*; administrators may fine-tune group membership and ownership to grant or deny users and services access to system resources. Read the [Users and groups](/index.php/Users_and_groups "Users and groups") article for details and potential security risks.
 

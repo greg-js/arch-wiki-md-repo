@@ -6,21 +6,21 @@
 *   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
 *   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
 
-[ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") is an advanced filesystem created by [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems "wikipedia:Sun Microsystems") (now owned by Oracle) and released for OpenSolaris in November 2005\.
+[ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") это продвинутая файловая система, изначально созданная в [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems "wikipedia:Sun Microsystems") (сейчас принадлежит Oracle) для операционной системы OpenSolaris в ноябре 2005\.
 
-Features of ZFS include: pooled storage (integrated volume management – zpool), [Copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [snapshots](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), data integrity verification and automatic repair (scrubbing), [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"), a maximum [16 Exabyte](https://en.wikipedia.org/wiki/Exabyte "wikipedia:Exabyte") file size, and a maximum 256 Quadrillion [Zettabytes](https://en.wikipedia.org/wiki/Zettabyte "wikipedia:Zettabyte") storage with no limit on number of filesystems (datasets) or files[[1]](http://docs.oracle.com/cd/E19253-01/819-5461/zfsover-2/index.html). ZFS is licensed under the [Common Development and Distribution License](https://en.wikipedia.org/wiki/CDDL "wikipedia:CDDL") (CDDL).
+Особенности ZFS включают: пулы хранения (интегрированное управление томами – zpool), [Копирование при записи](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [Снимки файловой системы](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), контроль целостности данных и автоматическое восстановление (scrubbing), [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"), максимальный объем файла [16 эксабайт](https://en.wikipedia.org/wiki/Exabyte "wikipedia:Exabyte"), и максимум в 256 квадрильон [зеттабайт](https://en.wikipedia.org/wiki/Zettabyte "wikipedia:Zettabyte") хранилища без ограничения на количество файловых систем (datasets / контейнеры, хранящие собственную файловую систему ZFS) или файлов [[1]](http://docs.oracle.com/cd/E19253-01/819-5461/zfsover-2/index.html). ZFS лицензирована под [Common Development and Distribution License](https://en.wikipedia.org/wiki/CDDL "wikipedia:CDDL") (CDDL).
 
-Described as ["The last word in filesystems"](http://web.archive.org/web/20060428092023/http://www.sun.com/2004-0914/feature/) ZFS is stable, fast, secure, and future-proof. Being licensed under the CDDL, and thus incompatible with GPL, it is not possible for ZFS to be distributed along with the Linux Kernel. This requirement, however, does not prevent a native Linux kernel module from being developed and distributed by a third party, as is the case with [zfsonlinux.org](http://zfsonlinux.org/) (ZOL).
+Описывается как ["Последнее слово файловых систем"](http://web.archive.org/web/20060428092023/http://www.sun.com/2004-0914/feature/) ZFS стабильная, быстрая, безопасная, с заделом на будущее. Т.к. ZFS лицензирована под CDDL и потому несовместима с GPL, не представляется возможным распространять ZFS совместно с ядром Linux. Это требование, однако, не препятствует разработке модуля ядра третьими лицами, как в случае с [zfsonlinux.org](http://zfsonlinux.org/) (ZOL).
 
-ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://www.llnl.gov/) to develop a native Linux kernel module for its massive storage requirements and super computers.
+ZOL это проект, спонсируемый [Ливерморской национальной лабораторией](https://www.llnl.gov/), нацеленный на разработку модуля ядра Linux для их массивных требований к хранилищам и суперкомпьютеров.
 
-**Note:** Due to potential legal incompatibilities between CDDL license of ZFS code and GPL of the Linux kernel ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS development is not supported by the kernel.
+**Note:** Из-за потенциальных юридических несовместимостей между лицензиями CDDL в коде ZFS и GPL в коде Linux ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - разработка ZFS не поддерживается ядром Linux.
 
-As a result:
+Из-за этого:
 
-*   ZFS still resides in [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and unofficial [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
-*   ZFSonLinux project must keep up with Linux kernel versions. After making stable ZFSonLinux release - Arch ZFS maintainers release them.
-*   This situation sometimes locks down the normal rolling update process by unsatisfied dependencies because the new kernel version, proposed by update, is unsupported by ZFSonLinux.
+*   ZFS все еще находится в [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") и неофициальном репозитории [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories").
+*   Проект ZFSonLinux project должен поспевать за версиями ядра Linux. После выпуска стабильного релиза ZFSonLinux мейнтейнеры Arch ZFS публикуют его.
+*   Эта ситуация время от времени блокирует нормальный процесс обновлений из-за неудовлетворенных зависимостей если новая версия ядра, предлагаемая в обновлении, еще не поддерживается ZFSonLinux.
 
 ## Contents
 

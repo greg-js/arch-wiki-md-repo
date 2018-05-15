@@ -40,7 +40,7 @@ As advised in [Intel graphics#Enable early KMS](/index.php/Intel_graphics#Enable
 
 [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") with Kaby Lake seems to work fine via va-api.
 
-On [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) via [wayland](/index.php/Wayland "Wayland"), suspend-resume results in the fan holding at 100% without ever spinning down. Alternatively if you use [xorg](/index.php/Xorg "Xorg") this doesn't seem to happen.
+On [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) via [wayland](/index.php/Wayland "Wayland"), suspend-resume results in the fan holding at 100% without ever spinning down. Alternatively if you use [xorg](/index.php/Xorg "Xorg") this doesn't seem to happen. Upgrading BIOS/UEFI seems to solve the issue.
 
 ## mobile broadband
 

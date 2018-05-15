@@ -52,7 +52,7 @@ Fri 2014-07-11 00:00:00 CEST  15h left    Thu 2014-07-10 00:00:13 CEST  8h ago  
 
 *   To list all timers (including inactive), use `systemctl list-timers --all`.
 *   The status of a service started by a timer will likely be inactive unless it is currently being triggered.
-*   If a timer gets out of sync, it may help to delete its `stamp-*` file in `/var/lib/systemd/timers`. These are zero length files which mark the last time each timer was run. If deleted, they will be reconstructed on the next start of their timer.
+*   If a timer gets out of sync, it may help to delete its `stamp-*` file in `/var/lib/systemd/timers` (or `~/.local/share/systemd/` in case of user timers). These are zero length files which mark the last time each timer was run. If deleted, they will be reconstructed on the next start of their timer.
 
 ## Examples
 

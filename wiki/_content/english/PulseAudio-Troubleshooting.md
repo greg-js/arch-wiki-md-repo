@@ -365,7 +365,7 @@ you might still need to adjust the settings. The microphone and the audio jack a
 
 ### No microphone input on Acer Aspire One
 
-Install pavucontrol, unlink the microphone channels and turn down the left one to 0. Reference: [http://getsatisfaction.com/jolicloud/topics/deaf_internal_mic_on_acer_aspire_one#reply_2108048](http://getsatisfaction.com/jolicloud/topics/deaf_internal_mic_on_acer_aspire_one#reply_2108048)
+Install pavucontrol, unlink the microphone channels and turn down the left one to 0.
 
 ### Static noise in microphone recording
 

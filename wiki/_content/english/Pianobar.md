@@ -2,7 +2,7 @@ Related articles
 
 *   [List of Applications/Multimedia](/index.php/List_of_Applications/Multimedia "List of Applications/Multimedia")
 
-[Pianobar](http://6xq.net/projects/pianobar/) is a free/open-source, console-based client for the personalized online radio [Pandora](http://www.pandora.com/).
+[Pianobar](http://6xq.net/projects/pianobar/) is a free/open-source, console-based client for the personalized online radio [Pandora](http://www.pandora.com/) (only available in the USA).
 
 ***Features***
 

@@ -224,6 +224,7 @@ Exec=/usr/bin/vlc --started-from-file %F
 
 ## See also
 
+*   [Wikipedia article](https://en.wikipedia.org/wiki/VLC_media_player "wikipedia:VLC media player")
 *   [List of applications#Multimedia](/index.php/List_of_applications#Multimedia "List of applications")
 *   [VLC homepage](https://www.videolan.org/vlc/)
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players

@@ -19,9 +19,6 @@ Related articles
 *   [3 Power management/Throttling issues](#Power_management.2FThrottling_issues)
     *   [3.1 Temporary fix](#Temporary_fix)
 *   [4 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-    *   [4.1 Load i2c_i801 kernel module on boot](#Load_i2c_i801_kernel_module_on_boot)
-    *   [4.2 Compile kernel with CONFIG_RMI4 options enabled](#Compile_kernel_with_CONFIG_RMI4_options_enabled)
-    *   [4.3 Wait for patches to be included in kernel](#Wait_for_patches_to_be_included_in_kernel)
 *   [5 References](#References)
 *   [6 Additional resources](#Additional_resources)
 
@@ -161,37 +158,23 @@ Reboot and check with:
 
 ## TrackPoint and Touchpad issues
 
-On the 20KG model, the Touchpad(Synaptics) and TrackPoint(Elantech) do not work together, one has to disable the TrackPoint in BIOS to get the Touchpad to work reliably. The root of the issue seems to be that the default loading of the TrackPoint via ancient PS/2 drivers conflicts with Touchpad loading. Synaptics has introduced a new way of doing things named RMI(4) that fixes some those issues. Further explanation is collected [in this thread](https://bbs.archlinux.org/viewtopic.php?id=236367).
+On the 20KG model, the Touchpad(Synaptics) and TrackPoint(Elantech) do not work together, one has to disable the TrackPoint in BIOS to get the Touchpad to work reliably out of the box. The root of the issue seems to be that the default loading of the TrackPoint via ancient PS/2 drivers conflicts with Touchpad loading. Synaptics has introduced a new way of doing things named RMI(4) that fixes some those issues. Further explanation is collected [in this thread](https://bbs.archlinux.org/viewtopic.php?id=236367).
 
-There are several workarounds available:
-
-### Load i2c_i801 kernel module on boot
-
-Open `/etc/modules-load.d/touchpad.conf` and add:
-
-```
- i2c_i801
- elan_i2c
- rmi_smbus
-
-```
-
-This enables loading the input devices over rmi4 with recent kernels.
-
-Then add `synaptics_intertouch=1` to the `psmouse` kernel options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
+Then add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 
 ```
  [...] root=/dev/sda1 rw psmouse.synaptics_intertouch=1 [...]
 
 ```
 
-### Compile kernel with CONFIG_RMI4 options enabled
+or by editing `/etc/modprobe.d/psmouse.conf`:
 
-Someone has [reported success with enabling RMI4 config flags](https://unix.stackexchange.com/a/431820) for kernel compilation.
+```
+ psmouse synaptics_intertouch=1
 
-### Wait for patches to be included in kernel
+```
 
-Benjamin Tissoires from Red Hat has [proposed patches](https://patchwork.kernel.org/patch/10324633/) that enable Elantech TrackPoints to be loaded over rmi and [whitelist X1C6 ids](https://patchwork.kernel.org/patch/10330857/).
+**Note:** When using [TLP](/index.php/TLP "TLP") with default powersaving settings, there might be occasional hiccups such as dropouts of tap-to-click functionality for the Touchpad, as well as the TrackPoint not surviving suspends and needing to be re-initialized
 
 ## References
 

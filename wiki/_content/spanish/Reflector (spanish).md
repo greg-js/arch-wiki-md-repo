@@ -40,7 +40,7 @@ Para ver todos las opciones disponibles, utiliza:
 
 ### Actualizar la lista de paquetes
 
-Siempre que se hagan modificaciones al arhivo `/etc/pacman.d/mirrorlist` es recomendable forzar a pacman a actualizar la lista de paquetes. Para esto ejecuta:
+Siempre que se hagan modificaciones al archivo `/etc/pacman.d/mirrorlist` es recomendable forzar a pacman a actualizar la lista de paquetes. Para esto ejecuta:
 
 ```
 # pacman -Syy

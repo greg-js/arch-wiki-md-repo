@@ -23,6 +23,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [3 Wifi](#Wifi)
 *   [4 Bluetooth](#Bluetooth)
 *   [5 Power Management](#Power_Management)
+*   [6 Firmware Updates](#Firmware_Updates)
 
 ## Booting
 
@@ -32,7 +33,7 @@ To boot from a USB device attached via the USB-C to USB-A adapter included in th
 
 The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Intel graphics#Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
 
-If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
+If you have the 4K (3840x2160) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
 
 Note that the 'enable_psr=1' option appears not to work properly, at least on the touchscreen model.
 
@@ -49,3 +50,7 @@ The Bluetooth adapter sometimes becomes unavailable after waking up from suspend
 ## Power Management
 
 If the laptop seems to have an high drain when in sleep mode, it is almost certainly because is not entering proper in deep sleep. Add `quiet mem_sleep_default=deep` to the [Kernel parameters](https://wiki.archlinux.org/index.php/Kernel_parameters).
+
+## Firmware Updates
+
+Dell provides firmware updates via Linux Vendor Firmware Service (LVFS). Refer to [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux") for additional information. A package is readily available at [fwupd](https://www.archlinux.org/packages/?name=fwupd).

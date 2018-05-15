@@ -12,13 +12,13 @@
     *   [1.1 Функциональность](#.D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
     *   [1.2 Интеграция с файловыми менеджерами](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D1.81_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D0.BC.D0.B8_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0.D0.BC.D0.B8)
 *   [2 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [3 Using media players](#Using_media_players)
+*   [3 Использование медиаплееров](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D0.B4.D0.B8.D0.B0.D0.BF.D0.BB.D0.B5.D0.B5.D1.80.D0.BE.D0.B2)
 *   [4 mtpfs](#mtpfs)
 *   [5 jmtpfs](#jmtpfs)
 *   [6 go-mtpfs](#go-mtpfs)
 *   [7 simple-mtpfs](#simple-mtpfs)
-*   [8 gvfs-mtp troubleshooting](#gvfs-mtp_troubleshooting)
-*   [9 kio-mtp troubleshooting](#kio-mtp_troubleshooting)
+*   [8 Устранение неполадок gvfs-mtp](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BF.D0.BE.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_gvfs-mtp)
+*   [9 Устранение неполадок kio-mtp](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BF.D0.BE.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_kio-mtp)
 
 ## Установка
 
@@ -57,27 +57,26 @@
 
 **Примечание:** Не забудьте разблокировать ваш телефон (лок-скрин) перед подключением, потому что иначе вы увидите сообщения об ошибке.
 
-After installation, you have several MTP tools available. Upon connecting your MTP device, you use:
+После установки у вас есть несколько доступных MTP инструментов. При подключении вашего MTP-устройства используйте:
 
 ```
 # mtp-detect
 
 ```
 
-to see if your MTP device is detected. If you get errors about permission, remember that you need to be in the uucp group to access the USB system in general.
+чтобы узнать, обнаружено ли ваше устройство MTP. Если вы получаете ошибки о разрешении, помните, что вам нужно быть в группе uucp для доступа к системе USB в целом.
 
-To connect to your MTP device, you use:
+Чтобы подключиться к вашему устройству MTP, используйте:
 
 ```
 # mtp-connect
 
 ```
 
-If connection is successful, there are several switch options to use in conjunction with `mtp-connect` to access data on the device.
+Если соединение выполнено успешно, для доступа к данным на устройстве существует несколько вариантов переключения в сочетании с `mtp-connect`.
 
-There are also several stand alone commands you can use to access your MTP device such as,
-
-**Warning:** Some commands may be harmful to your MTP device!!!
+Есть также несколько автономных команд, которые вы можете использовать для доступа к вашему устройству MTP, например,
+**Warning:** Некоторые команды могут быть вредны для вашего устройства MTP!!!!!
 
 ```
  mtp-albumart        mtp-emptyfolders    mtp-getplaylist     mtp-reset           mtp-trexist
@@ -88,7 +87,7 @@ There are also several stand alone commands you can use to access your MTP devic
 
 ```
 
-If you see a message like:
+Если вы видите сообщение типа:
 
 ```
 Device 0 (VID=XXXX and PID=XXXX) is UNKNOWN.
@@ -96,82 +95,82 @@ Please report this VID/PID and the device model to the libmtp development team
 
 ```
 
-You should check whether your device has been already in this list: [Supported devices list[[1]](http://sourceforge.net/p/libmtp/code/ci/HEAD/tree/src/music-players.h)] If it is not, you should report it to the development team. If it already is, your libmtp might be slightly outdated. To allow it to be properly used by libmtp, you can add your device to:
+Вы должны проверить, было ли уже ваше устройство в этом списке: [Список поддерживаемых устройств[[1]](http://sourceforge.net/p/libmtp/code/ci/HEAD/tree/src/music-players.h)] Если это не так, сообщите об этом команде разработчиков. Если это так, ваш libmtp может быть немного устаревшим. Чтобы libmtp нормально функционировал в данном случае, вы можете добавить свое устройство в:
 
 ```
 /usr/lib/udev/rules.d/69-libmtp.rules
 
 ```
 
-## Using media players
+## Использование медиаплееров
 
-You can also use your MTP device in music players such as Amarok. To do this you may have to edit `/usr/lib/udev/rules.d/51-android.rules` (the MTP device used in the following example is a Galaxy Nexus): To do this run:
+Использование медиаплееровВы также можете использовать свое устройство MTP в музыкальных проигрывателях, таких как Amarok. Для этого вам, возможно, придется отредактировать /usr/lib/udev/rules.d/51-android.rules (устройство MTP, используемое в следующем примере, представляет собой Galaxy Nexus): Для этого выполните:
 
 ```
 $ lsusb
 
 ```
 
-and look for your device, it will be something like:
+и найдите свое устройство, это будет что-то вроде:
 
 ```
 Bus 003 Device 011: ID 04e8:6860 Samsung Electronics Co., Ltd GT-I9100 Phone [Galaxy S II], GT-P7500 [Galaxy Tab 10.1]
 
 ```
 
-in which case the entry would be:
+в этом случае запись будет:
 
 ```
-SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", OWNER="[username]"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", OWNER="[имя пользователя]"
 
 ```
 
-Then, reload udev rules:
+Затем перезагрузите правила udev:
 
 ```
 # udevadm control --reload
 
 ```
 
-**Note:** After installing MTP you may have to reboot for your device to be recognised
+**Note:** После установки MTP вам может потребоваться перезагрузка, чтобы ваше устройство распознавалось
 
 ## mtpfs
 
-**Warning:** The following is likely to not work and you might have to resort to [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").
+**Warning:** Возможно, что это не сработает, и вам может потребоваться [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") или файловый менеджер с поддержкой gvfs, такой как [PCManFM](/index.php/PCManFM "PCManFM") или [Thunar](/index.php/Thunar "Thunar").
 
-Mtpfs is FUSE filesystem that supports reading and writing from any MTP device. Basically it allows you to mount your device as an external drive.
+Mtpfs - файловая система FUSE, которая поддерживает чтение и запись с любого устройства MTP. В основном это позволяет подключить ваше устройство к внешнему диску.
 
-Mtpfs can be installed with the packge [mtpfs](https://www.archlinux.org/packages/?name=mtpfs), available from the [official repositories](/index.php/Official_repositories "Official repositories").
+Mtpfs можно установить с пакетом [mtpfs](https://www.archlinux.org/packages/?name=mtpfs), доступным из [official repositories](/index.php/Official_repositories "Official repositories").
 
-*   First edit your `/etc/fuse.conf` and uncomment the following line:
+*   Сначала отредактируйте `/etc/fuse.conf` и раскомментируйте следующую строку:
 
 ```
 user_allow_other
 
 ```
 
-*   To mount your device
+*   Для примонтирования устройства:
 
 ```
-$ mtpfs -o allow_other /media/YOURMOUNTPOINT
-
-```
-
-*   To unmount your device
-
-```
-$ fusermount -u /media/YOURMOUNTPOINT
+$ mtpfs -o allow_other /mnt/YOURMOUNTPOINT
 
 ```
 
-*   To unmount your device as root
+*   Для размонтирования устройства:
 
 ```
-# umount /media/YOURMOUNTPOINT
+$ fusermount -u /mnt/YOURMOUNTPOINT
 
 ```
 
-Also, you can put them into your ~/.bashrc:
+*   Для размонтирования устройства от root:
+
+```
+# umount /mnt/YOURMOUNTPOINT
+
+```
+
+Кроме того, вы можете поместить их в свой файл ~/.bashrc:
 
 ```
 alias android-connect="mtpfs -o allow_other /media/YOURMOUNTPOINT"
@@ -179,27 +178,27 @@ alias android-disconnect="fusermount -u /media/YOURMOUNTPOINT"
 
 ```
 
-Or, with sudo
+Или, с sudo:
 
 ```
 alias android-disconnect="sudo umount -u /media/YOURMOUNTPOINT"
 
 ```
 
-**Note:** if you want not be asked for password when using sudo, please refer to [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
+**Note:** Если вы не хотите запрашивать пароль при использовании sudo, обратитесь к [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
 
 ## jmtpfs
 
-[jmtpfs](http://research.jacquette.com/jmtpfs-exchanging-files-between-android-devices-and-linux/) is a FUSE and libmtp based filesystem for accessing MTP (Media Transfer Protocol) devices. It was specifically designed for exchanging files between Linux systems and newer Android devices that support MTP but not USB Mass Storage. jmtpfs is available as [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/) in the [AUR](/index.php/AUR "AUR").
+[jmtpfs](http://research.jacquette.com/jmtpfs-exchanging-files-between-android-devices-and-linux/) - файловая система FUSE и libmtp для доступа к устройствам MTP (Media Transfer Protocol). Он был специально разработан для обмена файлами между системами Linux и новыми устройствами Android, поддерживающими MTP, но не USB Mass Storage. jmtpfs доступен как [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/) в [AUR](/index.php/AUR "AUR").
 
-Use this commands to mount your device:
+Используйте эти команды для монтирования устройства:
 
 ```
 $ jmtpfs ~/mtp
 
 ```
 
-And this command to unmount it:
+И данную команду для его размонтирования:
 
 ```
 $ fusermount -u ~/mtp
@@ -259,34 +258,34 @@ You can create a .bashrc alias as in the example above for easier use.
 
 ## simple-mtpfs
 
-This is another FUSE filesystem for MTP devices. You may find this to be more reliable than [mtpfs](https://www.archlinux.org/packages/?name=mtpfs). [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/) is available in the AUR or can be built from source. Do not run the following commands as root.
+Это еще одна файловая система FUSE для устройств MTP. Вы можете найти это более надежным, чем [mtpfs](https://www.archlinux.org/packages/?name=mtpfs). [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/) доступен в AUR или может быть построен из источника. Не запускайте следующие команды с правами root!
 
-To list MTP devices run
+Чтобы указать запуск MTP-устройств
 
 ```
 $ simple-mtpfs --list-devices
 
 ```
 
-To mount a MTP devices (in this example device 0) run
+Для монтирования устройств MTP (в этом примере устройства 0) выполните
 
 ```
 $ simple-mtpfs /path/to/your/mount/point
 
 ```
 
-To un mount run
+Для отмнонтирования
 
 ```
 $ fusermount -u /path/to/your/mount/point
 
 ```
 
-## gvfs-mtp troubleshooting
+## Устранение неполадок gvfs-mtp
 
-If you have installed the [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) package, and your device doesn't show up in the file manager, you might need to write a udev rule in order to auto-mount the device.
+Если вы установили пакет [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp), и ваше устройство не отображается в файловом менеджере, вам может потребоваться написать правило udev для автоматической установки устройства.
 
-Plug your device and get the vendor-id and product-id,respectively:
+Подключите ваше устройство и получите идентификатор поставщика и идентификатор продукта, соответственно:
 
 ```
 $ lsusb
@@ -295,43 +294,43 @@ Bus 001 Device 007: ID 0421:0661 Nokia Mobile Phones Lumia 920
 
 ```
 
-The two numbers after ID are *vendorId* : *productID*
+Два числа после ID *vendorId*:*productID*
 
-Then make a udev rule, e.g.
+Затем сделайте правило udev, то есть выполните
 
 ```
 # nano /usr/lib/udev/rules.d/51-android.rules
 
 ```
 
-and type this rule:
+и введите это правило:
 
 ```
-ATTR{idVendor}=="YOUR VENDOR ID HERE", ATTR{idProduct}=="YOUR PRODUCT ID HERE", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
+ATTR{idVendor}=="ВАШ VENDOR УСТРОЙСТВА ЗДЕСЬ", ATTR{idProduct}=="ВАШ ID УСТРОЙСТВА ЗДЕСЬ", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
 
 ```
 
-Reload the udev rules.
+Перезагрузите правила udev.
 
 ```
 # udevadm control --reload
 
 ```
 
-And reboot the system. Now file managers (like Thunar) should be able to automount the MTP Device. [[2]](https://bbs.archlinux.org/viewtopic.php?id=180719)
+И перезагрузите систему. Теперь файловые менеджеры (например, Thunar) должны иметь возможность авторизовать MTP-устройство. [[2]](https://bbs.archlinux.org/viewtopic.php?id=180719)
 
-## kio-mtp troubleshooting
+## Устранение неполадок kio-mtp
 
-If you are not able to use the action "Open with File Manager", you may work around this problem by editing the file /usr/share/apps/solid/actions/solid_mtp.desktop
+Если вы не можете использовать действие «Открыть с помощью диспетчера файлов», вы можете обойти эту проблему, отредактировав файл **/usr/share/apps/solid/actions/solid_mtp.desktop**
 
-Change the line
+Замените строку
 
 ```
 Exec=kioclient exec mtp:udi=%i/
 
 ```
 
-To
+На
 
 ```
 Exec=dolphin "mtp:/"

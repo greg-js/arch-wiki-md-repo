@@ -40,7 +40,7 @@ See the TLP FAQ, section ["Which kernel module?"](http://linrunner.de/en/tlp/doc
 
 ### Graphical interface
 
-[TLPUI](https://github.com/d4nj1/TLPUI) is a GTK user interface for TLP written in Python. Software is currently in beta.
+[tlpui-git](https://aur.archlinux.org/packages/tlpui-git/) is a GTK user interface for TLP written in Python. Software is currently in beta.
 
 ## Configuration
 

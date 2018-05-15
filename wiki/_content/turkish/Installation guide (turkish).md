@@ -155,7 +155,7 @@ Bu dosya *pacstrap* tarafından yeni sisteme kopyalanacak, yani hata yapmamaya d
 
 ```
 
-Bu grup, canlı sistem kurlumundaki [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ya da belirli bir kablosuz yazılımı gibi bütün araçları içermiyor; karşılaştırma için [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) sayfasına bakınız bakınız.
+Bu grup, canlı sistem kurlumundaki [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ya da belirli bir kablosuz yazılımı gibi bütün araçları içermiyor; karşılaştırma için [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) sayfasına bakınız.
 
 Paketleri ve [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) gibi diğer grubları [kurmak](/index.php/Install "Install") için, [#Chroot](#Chroot) adımından sonra isimleri *pacstrap* ya da [pacman](/index.php/Pacman "Pacman") komutlarına ekleyin.
 

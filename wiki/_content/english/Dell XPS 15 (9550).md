@@ -143,6 +143,8 @@ Battery life can be improved by installing [powertop](https://www.archlinux.org/
 
 Bluetooth is disabled by default. If you wish to use Bluetooth you'll need to install some firmware. See [Bluetooth](/index.php/Bluetooth "Bluetooth") and [bug report](https://github.com/NixOS/nixpkgs/issues/21797) for details.
 
+[bcm20703a1-firmware](https://aur.archlinux.org/packages/bcm20703a1-firmware/) includes includes the firmware necessary for the Broadcom BCM20703A1 Bluetooth device.
+
 ## Thunderbolt 3 Docks
 
 It is possible to get video, audio, Ethernet and USB devices working by updating your BIOS to version >=1.2.19 and disabling Thunderbolt security in your bios settings. If you don't disable Thunderbolt security, then only video and power will work (at lest on the Dell TB16 dock).

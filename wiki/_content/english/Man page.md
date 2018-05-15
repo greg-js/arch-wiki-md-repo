@@ -183,7 +183,7 @@ $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
 
 ### Conversion to PDF
 
-man pages have always been printable: they are written in troff, which is fundamentally a typesetting language. If you have ghostscript installed, converting a man page to PDF is actually very easy: `man -t <manpage> | ps2pdf - <pdf>`. [This google image search](https://www.google.com/search?q=manpage+pdf+troff&num=100&hl=en&prmd=imvns&source=lnms&tbm=isch&sa=X&ei=5BZpUI3oH6rI2AXvx4CoAw&ved=0CAoQ_AUoAQ&biw=1321&bih=1100) should give you an idea of what the result looks like; it may not be to everybody's liking.
+man pages have always been printable: they are written in troff, which is fundamentally a typesetting language. If you have [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) installed, you can convert a man page to PDF using `man -t <manpage> | ps2pdf - <pdf>`.
 
 Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no hyperlinks. Some man pages were specifically designed for terminal viewing, and won't look right in PS or PDF form.
 

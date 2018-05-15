@@ -9,7 +9,7 @@ Related articles
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
 
-Secure Shell (SSH) is a network protocol that allows data to be exchanged over a secure channel between two computers. Encryption provides confidentiality and integrity of data. SSH uses public-key cryptography to authenticate the remote computer and allow the remote computer to authenticate the user, if necessary.
+[Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell") (SSH) is a network protocol that allows data to be exchanged over a secure channel between two computers. Encryption provides confidentiality and integrity of data. SSH uses public-key cryptography to authenticate the remote computer and allow the remote computer to authenticate the user, if necessary.
 
 SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding arbitrary TCP ports and X11 connections; file transfer can be accomplished using the associated SFTP or SCP protocols.
 
@@ -986,7 +986,6 @@ SSH responds to [flow control commands](https://en.wikipedia.org/wiki/Software_f
 
 ## See also
 
-*   [Wikipedia:Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell")
 *   [Defending against brute force ssh attacks](http://www.la-samhna.de/library/brutessh.html)
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)

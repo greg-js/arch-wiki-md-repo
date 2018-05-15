@@ -46,14 +46,14 @@ If you want to obtain schedule data from an outside source like Schedules Direct
 
 ### Use CAPMT (Linux Network DVBAPI) with OSCam
 
-[install](/index.php/Install "Install") [oscam-git](https://aur.archlinux.org/packages/oscam-git/) to provide a softcam for Tvheadend.
+[Install](/index.php/Install "Install") [oscam-git](https://aur.archlinux.org/packages/oscam-git/) or [oscam-svn](https://aur.archlinux.org/packages/oscam-svn/) to provide a softcam for Tvheadend.
 
 The following settings may be used when using DVB-API as Conditional Access Client:
 
 | Parameter | Value |
 | Client name | OSCam |
 | Mode | OSCam net protocol (rev >= 10389) |
-| IP Address (TCP mode) | localhost |
+| IP Address (TCP mode) | localhost *or* hostname |
 | Connect port: | 9000 |
 
 Add the user *vdr* with *vdr* as password in OSCam.

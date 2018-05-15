@@ -543,6 +543,7 @@ GNOME Shell does not support using a different [window manager](/index.php/Windo
 ## See also
 
 *   [Official Website](https://www.gnome.org/)
+*   [Wikipedia article](https://en.wikipedia.org/wiki/GNOME "wikipedia:GNOME")
 *   [GNOME-Shell Extensions](https://extensions.gnome.org/)
 *   [GNOME Shell Cheat Sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet)
 *   Customization (themes, icons...):

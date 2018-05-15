@@ -52,6 +52,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.5 LightDM does not appear or monitor only displays TTY output](#LightDM_does_not_appear_or_monitor_only_displays_TTY_output)
     *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
     *   [6.7 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
+    *   [6.8 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_.22.5B_OK_.5D_Reached_target_Graphical_Interface..22)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -464,6 +465,12 @@ Some LightDM themes try to access the user avatar located in HOME. If your HOME 
 
 *   Set your avatar as explained in [#Changing your avatar](#Changing_your_avatar)
 *   for [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) only: `hide-user-image = true` in `/etc/lightdm/lightdm-gtk-greeter.conf`
+
+### Boot hangs on "[ OK ] Reached target Graphical Interface."
+
+There is a possibility that user and group lookups fail if you modified /etc/nsswitch.conf. That happens when:
+
+*   nsswitch.conf group: includes `ldap` without setting `nss_initgroups_ignoreusers ALLLOCAL` in `/etc/nslcd.conf`
 
 ## See also
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration")
+*   [Mouse buttons](/index.php/Mouse_buttons "Mouse buttons")
+
 If you have invested in a high resolution mouse, adjusting the USB polling rate is a common trick to utilize the added precision it brings. The polling rate (or report rate) determines how often the mouse sends information to your computer.
 
 ## Contents
@@ -18,10 +23,10 @@ The polling rate of a device is measured in Hertz (Hz) and is determined by the 
 
 The default polling interval is 10ms. However, USB controllers round the interval down to the nearest power of two. Thus, an interval setting of 10ms will actually use 8ms, 7ms will use 4ms, etc.
 
+The following table shows the relation between polling rate Hertz and the corresponding interval milliseconds (rate = 1000 / interval).
+
 | Hz | 1000 | 500 | 250 | 125 |
 | ms | 1 | 2 | 4 | 8 |
-
-The table to the right shows the relation between polling rate Hertz and the corresponding interval milliseconds (rate = 1000 / interval).
 
 If the polling rate is 125 Hz, the mouse position will be updated every 8 milliseconds. In situations where lag is critical—for example games—some users decrease the interval to as little as possible. However, this puts more load on the CPU, so care should be taken when adjusting this value.
 
@@ -155,4 +160,4 @@ Another work-around is to disable [xHCI](https://en.wikipedia.org/wiki/Extensibl
 
 ## See also
 
-*   [CS:S Mouse Optimization Guide](http://www.overclock.net/computer-peripherals/173255-cs-s-mouse-optimization-guide.html) -- largely aimed at Windows users, though the same principles apply for Linux.
+*   [CS:S Mouse Optimization Guide](http://www.overclock.net/forum/375-mice/173255-cs-s-mouse-optimization-guide.html) -- largely aimed at Windows users, though the same principles apply for Linux.

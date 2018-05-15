@@ -229,7 +229,7 @@ This will update an existing working copy of *package-name* to the chosen revisi
 You can also specify a date. If no revision on that day exists, svn will grab the most recent package before that time. The following example checks out the revision from 2009-03-03:
 
 ```
-$ svn update -r{20090303} *package-name*
+$ svn update -r'{20090303}' *package-name*
 
 ```
 

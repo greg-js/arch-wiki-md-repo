@@ -272,6 +272,22 @@ and use the `cnijnet:/` URI in the output.
 E515dw
 
  | Install [Dell's driver](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). | Both *e515dwcupswrapper-3.2.0-1.i386.deb* and *e515dwlpr-3.2.0-1.i386.deb* need to be installed. You could either write a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), use [debtap](https://aur.archlinux.org/packages/debtap/), or use [dpkg](https://aur.archlinux.org/packages/dpkg/) (using dpkg is not recommended as the files will not be managed by [pacman](/index.php/Pacman "Pacman")). The driver works on both the x86_64 and i386 platforms, but may require [multilib](/index.php/Multilib "Multilib"). |
+| S1130n | [dell-unified-printer-driver](https://aur.archlinux.org/packages/dell-unified-printer-driver/) | Driver conflicts with samsung-unified-driver-printer (both create rastertospl and libscmssc.so) |
+| 1130 |
+| 1133 |
+| 1135n |
+| 1815 |
+| 2145cn |
+| 2335dn |
+| 2355dn |
+| 5330 |
+| B1160 |
+| B1160w |
+| B1165nfw |
+| B1260dn |
+| B1265dfw |
+| B1265dnf |
+| B2365dnf |
 | Printer | Driver/filter | Notes |
 
 ## Epson

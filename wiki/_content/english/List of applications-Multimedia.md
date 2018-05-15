@@ -25,28 +25,26 @@
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
-            *   [1.3.2.1 Music player daemons and clients](#Music_player_daemons_and_clients)
-            *   [1.3.2.2 Command-line players](#Command-line_players)
-            *   [1.3.2.3 GUI players](#GUI_players)
-        *   [1.3.3 Volume managers](#Volume_managers)
-        *   [1.3.4 CD ripping](#CD_ripping)
-        *   [1.3.5 Visualization](#Visualization)
-        *   [1.3.6 Audio tag editors](#Audio_tag_editors)
-        *   [1.3.7 Sound editing](#Sound_editing)
+            *   [1.3.2.1 Console](#Console_4)
+            *   [1.3.2.2 Graphical](#Graphical_4)
+        *   [1.3.3 Sound editing](#Sound_editing)
+        *   [1.3.4 Visualization](#Visualization)
+        *   [1.3.5 Audio tag editors](#Audio_tag_editors)
+        *   [1.3.6 Volume managers](#Volume_managers)
+        *   [1.3.7 CD ripping](#CD_ripping)
     *   [1.4 Video](#Video)
         *   [1.4.1 Video players](#Video_players)
-            *   [1.4.1.1 Console](#Console_4)
-            *   [1.4.1.2 Graphical](#Graphical_4)
-        *   [1.4.2 Subtitles](#Subtitles)
-        *   [1.4.3 DVD ripping](#DVD_ripping)
-        *   [1.4.4 Video editors](#Video_editors)
-            *   [1.4.4.1 Console](#Console_5)
-            *   [1.4.4.2 Graphical](#Graphical_5)
-        *   [1.4.5 Lyrics fetchers](#Lyrics_fetchers)
-        *   [1.4.6 Screencast](#Screencast)
-    *   [1.5 Mobile phone managers](#Mobile_phone_managers)
-    *   [1.6 Optical media burning](#Optical_media_burning)
-    *   [1.7 Collection managers](#Collection_managers)
+            *   [1.4.1.1 Console](#Console_5)
+            *   [1.4.1.2 Graphical](#Graphical_5)
+        *   [1.4.2 Video editors](#Video_editors)
+            *   [1.4.2.1 Console](#Console_6)
+            *   [1.4.2.2 Graphical](#Graphical_6)
+        *   [1.4.3 Subtitles](#Subtitles)
+        *   [1.4.4 Screencast](#Screencast)
+        *   [1.4.5 DVD ripping](#DVD_ripping)
+    *   [1.5 Collection managers](#Collection_managers)
+    *   [1.6 Mobile phone managers](#Mobile_phone_managers)
+    *   [1.7 Optical media burning](#Optical_media_burning)
 
 ## Multimedia
 
@@ -176,7 +174,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://docs.xfce.org/apps/ristretto/start](http://docs.xfce.org/apps/ristretto/start) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
 
-*   **Shotwell** — A digital photo organizer designed for the GNOME desktop environment
+*   **[Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")** — A digital photo organizer designed for the GNOME desktop environment
 
 	[https://wiki.gnome.org/Apps/Shotwell](https://wiki.gnome.org/Apps/Shotwell) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 
@@ -318,6 +316,10 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite.
+
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
+
 *   **[LibreOffice Draw](/index.php/LibreOffice "LibreOffice")** — Vector graphics editor and diagramming tool included in the LibreOffice suite similar to Microsoft Visio.
 
 	[https://www.libreoffice.org/discover/draw/](https://www.libreoffice.org/discover/draw/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
@@ -325,10 +327,6 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 *   **Mockingbot** — Proprietary prototyping & collaboration design tool. Based on the [Electron](https://electronjs.org/) platform.
 
 	[http://mockingbot.com/](http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
-
-*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite.
-
-	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Pencil Project](https://en.wikipedia.org/wiki/Pencil2D "wikipedia:Pencil2D")** — GUI prototyping and mockup tool. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -426,7 +424,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **xcolor** — Lightweight color picker for X11.
 
-	[https://github.com/Soft/xcolor](https://github.com/Soft/xcolor) || [xcolor](https://aur.archlinux.org/packages/xcolor/)
+	[https://soft.github.io/xcolor/](https://soft.github.io/xcolor/) || [xcolor](https://aur.archlinux.org/packages/xcolor/)
 
 #### Screenshot
 
@@ -482,7 +480,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 *   **screengrab** — Cross-platform application designed to quickly take screenshots (Qt).
 
-	[http://screengrab.doomer.org/](http://screengrab.doomer.org/) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
+	[https://github.com/DOOMer/screengrab](https://github.com/DOOMer/screengrab) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
 
 *   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
 
@@ -506,7 +504,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 #### Digital camera managers
 
-See [Digital Cameras#Other frontend applications for libgphoto2](/index.php/Digital_Cameras#Other_frontend_applications_for_libgphoto2 "Digital Cameras").
+See [libgphoto2](/index.php/Libgphoto2 "Libgphoto2").
 
 ### Audio
 
@@ -514,27 +512,11 @@ See [Digital Cameras#Other frontend applications for libgphoto2](/index.php/Digi
 
 See also the main article [Sound system](/index.php/Sound_system "Sound system") and [Wikipedia:Sound server](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
 
-*   **wineasio** — Provides an ASIO to JACK driver for *wine*. ASIO is the most common Windows low-latency driver, so is commonly used in audio workstation programs.
-
-	[https://sourceforge.net/projects/wineasio/](https://sourceforge.net/projects/wineasio/) || [wineasio](https://aur.archlinux.org/packages/wineasio/)
-
 #### Audio players
 
-See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.org/wiki/Comparison_of_audio_player_software "wikipedia:Comparison of audio player software").
+See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") and [Wikipedia:Comparison of audio player software](https://en.wikipedia.org/wiki/Comparison_of_audio_player_software "wikipedia:Comparison of audio player software").
 
-##### Music player daemons and clients
-
-See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Player Daemon")
-
-*   **[Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon")** — Lightweight and scalable choice for music management.
-
-	[http://www.musicpd.org/](http://www.musicpd.org/) || [mpd](https://www.archlinux.org/packages/?name=mpd)
-
-*   **[XMMS2](https://en.wikipedia.org/wiki/XMMS2 "wikipedia:XMMS2")** — Complete rewrite of the popular music player.
-
-	[https://xmms2.org](https://xmms2.org) || [xmms2](https://www.archlinux.org/packages/?name=xmms2)
-
-##### Command-line players
+##### Console
 
 *   **[cmus](/index.php/Cmus "Cmus")** — Very feature-rich ncurses-based music player.
 
@@ -564,23 +546,19 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[https://github.com/mps-youtube/mps-youtube](https://github.com/mps-youtube/mps-youtube) || [mps-youtube](https://www.archlinux.org/packages/?name=mps-youtube)
 
-*   **pancake** — Cli pandora client built with urwid.
-
-	[https://github.com/osum4est/pancake/](https://github.com/osum4est/pancake/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
 *   **[pianobar](/index.php/Pianobar "Pianobar")** — Console-based frontend for the online radio Pandora.
 
 	[https://6xq.net/projects/pianobar/](https://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
-
-*   **[VLC](https://en.wikipedia.org/wiki/VLC_media_player "wikipedia:VLC media player")** — Highly portable multimedia player with ncurses interface module, and multimedia framework capable of reading most audio and video formats as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
-
-	[https://www.videolan.org/vlc/](https://www.videolan.org/vlc/) || [vlc](https://www.archlinux.org/packages/?name=vlc)
 
 *   **whistle** — a curses-based commandline audio player.
 
 	[https://github.com/ap0calypse/whistle/](https://github.com/ap0calypse/whistle/) || [whistle-git](https://aur.archlinux.org/packages/whistle-git/)
 
-##### GUI players
+*   **[XMMS2](https://en.wikipedia.org/wiki/XMMS2 "wikipedia:XMMS2")** — Complete rewrite of the popular music player.
+
+	[https://xmms2.org](https://xmms2.org) || [xmms2](https://www.archlinux.org/packages/?name=xmms2)
+
+##### Graphical
 
 *   **[Amarok](/index.php/Amarok "Amarok")** — Mature Qt-based player known for its plethora of features.
 
@@ -597,10 +575,6 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Amarok 1.4 clone, ported to Qt 4.
 
 	[https://www.clementine-player.org/](https://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
-
-*   **Cuberok** — Music player and collection manager with a lightweight interface.
-
-	[https://code.google.com/archive/p/cuberok/](https://code.google.com/archive/p/cuberok/) || [cuberok](https://aur.archlinux.org/packages/cuberok/)
 
 *   **DeaDBeeF** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK+ GUI, comes with many plugins, and has a metadata editor.
 
@@ -634,13 +608,9 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [juk](https://www.archlinux.org/packages/?name=juk)
 
-*   **Kaku** — An highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more.
+*   **Kaku** — An highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://github.com/EragonJ/Kaku](https://github.com/EragonJ/Kaku) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
-
-*   **Listen** — Listen is a Music player and management for GNOME written in python.
-
-	[https://launchpad.net/listen](https://launchpad.net/listen) || [listen](https://aur.archlinux.org/packages/listen/)
 
 *   **Lollypop** — A GNOME music player.
 
@@ -710,55 +680,61 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
 
-*   **[VLC](https://en.wikipedia.org/wiki/VLC_media_player "wikipedia:VLC media player")** — Highly portable multimedia player and multimedia framework capable of reading most audio and video formats as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
-
-	[https://www.videolan.org/vlc/](https://www.videolan.org/vlc/) || [vlc](https://www.archlinux.org/packages/?name=vlc)
-
-*   **[XMMS](https://en.wikipedia.org/wiki/XMMS "wikipedia:XMMS")** — Skinnable GTK+ standalone media player similar to Winamp.
-
-	[https://legacy.xmms2.org/](https://legacy.xmms2.org/) || [xmms](https://aur.archlinux.org/packages/xmms/)
-
 *   **[Sonic Visualiser](https://en.wikipedia.org/wiki/Sonic_Visualiser "wikipedia:Sonic Visualiser")** — Advanced player with waveform and spectrogram visualiser, playback speed control and selection looping. Very useful for transcribing.
 
 	[https://www.sonicvisualiser.org/](https://www.sonicvisualiser.org/) || [sonic-visualiser](https://www.archlinux.org/packages/?name=sonic-visualiser)
 
-#### Volume managers
+#### Sound editing
 
-*   **GVolWheel** — An audio mixer which lets you control the volume through a tray icon.
+See also [Professional audio](/index.php/Professional_audio "Professional audio").
 
-	[https://sourceforge.net/projects/gvolwheel/](https://sourceforge.net/projects/gvolwheel/) || [gvolwheel](https://aur.archlinux.org/packages/gvolwheel/)
+*   **[Ardour](https://en.wikipedia.org/wiki/Ardour_(software) "wikipedia:Ardour (software)")** — Multichannel hard disk recorder and digital audio workstation.
 
-*   **pa-applet** — PulseAudio system tray applet with volume bar.
+	[http://ardour.org/](http://ardour.org/) || [ardour](https://www.archlinux.org/packages/?name=ardour)
 
-	[https://github.com/fernandotcl/pa-applet](https://github.com/fernandotcl/pa-applet) || [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
+*   **[Audacity](https://en.wikipedia.org/wiki/Audacity_(audio_editor) "wikipedia:Audacity (audio editor)")** — Program that lets you manipulate digital audio waveforms.
 
-*   **PNMixer** — A fork of Obmixer. It has many new features such as ALSA channel selection, connect/disconnect detection, shortcuts, etc.
+	[http://audacity.sourceforge.net/](http://audacity.sourceforge.net/) || [audacity](https://www.archlinux.org/packages/?name=audacity)
 
-	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
+*   **Bitwig Studio** — Proprietary professional digital audio workstation.
 
-*   **Volctl** — Per-application volume control for GNU/Linux desktops.
+	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio](https://aur.archlinux.org/packages/bitwig-studio/)
 
-	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
+*   **Gnac** — Audio converter for GNOME.
 
-*   **[Volnoti](/index.php/Volnoti "Volnoti")** — A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems.
+	[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
 
-	[https://github.com/davidbrazdil/volnoti](https://github.com/davidbrazdil/volnoti) || [volnoti](https://aur.archlinux.org/packages/volnoti/)
+*   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
 
-*   **Volti** — A GTK application for controlling audio volume from system tray with an internal mixer and support for multimedia keys that uses only ALSA.
+	[https://wiki.gnome.org/Apps/SoundRecorder](https://wiki.gnome.org/Apps/SoundRecorder) || [gnome-sound-recorder](https://www.archlinux.org/packages/?name=gnome-sound-recorder)
 
-	[https://github.com/gen2brain/volti](https://github.com/gen2brain/volti) || [volti](https://aur.archlinux.org/packages/volti/)
+*   **KWave** — Sound editor for KDE.
 
-*   **VolumeIcon** — Another volume control for your system tray with channel selection, themes and an external mixer.
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
-	[http://softwarebakery.com/maato/volumeicon.html](http://softwarebakery.com/maato/volumeicon.html) || [volumeicon](https://www.archlinux.org/packages/?name=volumeicon)
+*   **[LMMS](/index.php/LMMS "LMMS")** — The Linux MultiMedia Studio. Free cross-platform software which allows you to produce music with your computer.
 
-*   **VolWheel** — A little application which lets you control the sound volume easily through a tray icon you can scroll on.
+	[http://lmms.sourceforge.net/](http://lmms.sourceforge.net/) || [lmms](https://www.archlinux.org/packages/?name=lmms)
 
-	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+*   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Qt-based hard disk recorder and digital audio workstation application that aims to provide digital audio workstation software simple enough for the average home user, and yet powerful enough for the professional user.
 
-#### CD ripping
+	[http://qtractor.sourceforge.net/qtractor-index.html](http://qtractor.sourceforge.net/qtractor-index.html) || [qtractor](https://www.archlinux.org/packages/?name=qtractor)
 
-See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc drive").
+*   **[Rosegarden](https://en.wikipedia.org/wiki/Rosegarden "wikipedia:Rosegarden")** — Digital audio workstation program developed with ALSA and Qt that acts as an audio and MIDI sequencer, scorewriter and musical composition and editing tool.
+
+	[http://www.rosegardenmusic.com/](http://www.rosegardenmusic.com/) || [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
+
+*   **SoundConverter** — A graphical application to convert audio files into different formats.
+
+	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
+
+*   **soundKonverter** — Qt-based GUI front-end to various audio converters.
+
+	[https://github.com/dfaust/soundkonverter](https://github.com/dfaust/soundkonverter) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+
+*   **XCFA** — Tool to extract the contens of audio CDs and convert them to various formats.
+
+	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)
 
 #### Visualization
 
@@ -832,61 +808,43 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 	[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)
 
-#### Sound editing
+#### Volume managers
 
-See also [Professional audio](/index.php/Professional_audio "Professional audio").
+*   **GVolWheel** — An audio mixer which lets you control the volume through a tray icon.
 
-*   **[Ardour](https://en.wikipedia.org/wiki/Ardour_(software) "wikipedia:Ardour (software)")** — Multichannel hard disk recorder and digital audio workstation.
+	[https://sourceforge.net/projects/gvolwheel/](https://sourceforge.net/projects/gvolwheel/) || [gvolwheel](https://aur.archlinux.org/packages/gvolwheel/)
 
-	[http://ardour.org/](http://ardour.org/) || [ardour](https://www.archlinux.org/packages/?name=ardour)
+*   **pa-applet** — PulseAudio system tray applet with volume bar.
 
-*   **[Audacity](https://en.wikipedia.org/wiki/Audacity_(audio_editor) "wikipedia:Audacity (audio editor)")** — Program that lets you manipulate digital audio waveforms.
+	[https://github.com/fernandotcl/pa-applet](https://github.com/fernandotcl/pa-applet) || [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
 
-	[http://audacity.sourceforge.net/](http://audacity.sourceforge.net/) || [audacity](https://www.archlinux.org/packages/?name=audacity)
+*   **PNMixer** — A fork of Obmixer. It has many new features such as ALSA channel selection, connect/disconnect detection, shortcuts, etc.
 
-*   **Bitwig Studio** — Proprietary professional digital audio workstation.
+	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
 
-	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio](https://aur.archlinux.org/packages/bitwig-studio/)
+*   **Volctl** — Per-application volume control for GNU/Linux desktops.
 
-*   **Gnac** — Audio converter for GNOME.
+	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
 
-	[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
+*   **[Volnoti](/index.php/Volnoti "Volnoti")** — A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems.
 
-*   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
+	[https://github.com/davidbrazdil/volnoti](https://github.com/davidbrazdil/volnoti) || [volnoti](https://aur.archlinux.org/packages/volnoti/)
 
-	[https://wiki.gnome.org/Apps/SoundRecorder](https://wiki.gnome.org/Apps/SoundRecorder) || [gnome-sound-recorder](https://www.archlinux.org/packages/?name=gnome-sound-recorder)
+*   **Volti** — A GTK application for controlling audio volume from system tray with an internal mixer and support for multimedia keys that uses only ALSA.
 
-*   **[Jokosher](https://en.wikipedia.org/wiki/Jokosher "wikipedia:Jokosher")** — Non-linear multi-track digital audio editor that is being developed in Python, using the GTK+ interface and GStreamer as an audio back-end.
+	[https://github.com/gen2brain/volti](https://github.com/gen2brain/volti) || [volti](https://aur.archlinux.org/packages/volti/)
 
-	[https://launchpad.net/jokosher/](https://launchpad.net/jokosher/) || [jokosher](https://aur.archlinux.org/packages/jokosher/)
+*   **VolumeIcon** — Another volume control for your system tray with channel selection, themes and an external mixer.
 
-*   **KWave** — Sound editor for KDE.
+	[http://softwarebakery.com/maato/volumeicon.html](http://softwarebakery.com/maato/volumeicon.html) || [volumeicon](https://www.archlinux.org/packages/?name=volumeicon)
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
+*   **VolWheel** — A little application which lets you control the sound volume easily through a tray icon you can scroll on.
 
-*   **[LMMS](/index.php/LMMS "LMMS")** — The Linux MultiMedia Studio. Free cross-platform software which allows you to produce music with your computer.
+	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
 
-	[http://lmms.sourceforge.net/](http://lmms.sourceforge.net/) || [lmms](https://www.archlinux.org/packages/?name=lmms)
+#### CD ripping
 
-*   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Qt-based hard disk recorder and digital audio workstation application that aims to provide digital audio workstation software simple enough for the average home user, and yet powerful enough for the professional user.
-
-	[http://qtractor.sourceforge.net/qtractor-index.html](http://qtractor.sourceforge.net/qtractor-index.html) || [qtractor](https://www.archlinux.org/packages/?name=qtractor)
-
-*   **[Rosegarden](https://en.wikipedia.org/wiki/Rosegarden "wikipedia:Rosegarden")** — Digital audio workstation program developed with ALSA and Qt that acts as an audio and MIDI sequencer, scorewriter and musical composition and editing tool.
-
-	[http://www.rosegardenmusic.com/](http://www.rosegardenmusic.com/) || [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
-
-*   **SoundConverter** — A graphical application to convert audio files into different formats.
-
-	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
-
-*   **soundKonverter** — Qt-based GUI front-end to various audio converters.
-
-	[soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **XCFA** — Tool to extract the contens of audio CDs and convert them to various formats.
-
-	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)
+See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc drive").
 
 ### Video
 
@@ -972,48 +930,6 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 	[http://www.xnoise-media-player.com/](http://www.xnoise-media-player.com/) || [xnoise](https://www.archlinux.org/packages/?name=xnoise)
 
-#### Subtitles
-
-*   **[Aegisub](https://en.wikipedia.org/wiki/Aegisub "wikipedia:Aegisub")** — Subtitle editor.
-
-	[https://github.com/Aegisub/Aegisub](https://github.com/Aegisub/Aegisub) || [aegisub](https://www.archlinux.org/packages/?name=aegisub)
-
-*   **Gaupol** — Full-featured subtitle editor.
-
-	[https://otsaloma.io/gaupol/](https://otsaloma.io/gaupol/) || [gaupol](https://www.archlinux.org/packages/?name=gaupol)
-
-*   **[Gnome Subtitles](https://en.wikipedia.org/wiki/Gnome_Subtitles "wikipedia:Gnome Subtitles")** — Video subtitle editor for GNOME.
-
-	[http://www.gnomesubtitles.org/](http://www.gnomesubtitles.org/) || [gnome-subtitles](https://www.archlinux.org/packages/?name=gnome-subtitles)
-
-*   **Jubler** — Open-source multiplatform subtitle editor written in Java.
-
-	[http://www.jubler.org](http://www.jubler.org) || [jubler](https://aur.archlinux.org/packages/jubler/)
-
-*   **Penguin Subtitle Player** — Penguin Subtitle Player is an open-source, cross-platform standalone subtitle player, as an alternative to Greenfish Subtitle Player, SrtViewer (Mac), SRTPlayer, JustSubsPlayer and Free Subtitle Player.
-
-	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
-
-*   **subdl** — Automatic subtitle downloader.
-
-	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
-
-*   **Subtitle Composer** — open-source Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form
-
-	[https://github.com/maxrd2/subtitlecomposer](https://github.com/maxrd2/subtitlecomposer) || [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/)
-
-*   **[Subtitle Edit](https://en.wikipedia.org/wiki/Subtitle_Edit "wikipedia:Subtitle Edit")** — Subtitle editing program. Written in C# using mono.
-
-	[https://github.com/SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit) || [subtitleedit](https://aur.archlinux.org/packages/subtitleedit/)
-
-*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
-
-	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
-
-#### DVD ripping
-
-See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Optical disc drive").
-
 #### Video editors
 
 See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.org/wiki/Comparison_of_video_editing_software "wikipedia:Comparison of video editing software").
@@ -1086,11 +1002,47 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[https://vidcutter.ozmartians.com/](https://vidcutter.ozmartians.com/) || [vidcutter](https://aur.archlinux.org/packages/vidcutter/)
 
-#### Lyrics fetchers
+#### Subtitles
+
+*   **[Aegisub](https://en.wikipedia.org/wiki/Aegisub "wikipedia:Aegisub")** — Subtitle editor.
+
+	[https://github.com/Aegisub/Aegisub](https://github.com/Aegisub/Aegisub) || [aegisub](https://www.archlinux.org/packages/?name=aegisub)
 
 *   **clyrics** — An extensible lyrics fetcher, with daemon support for cmus and mocp.
 
 	[https://github.com/trizen/clyrics](https://github.com/trizen/clyrics) || [clyrics](https://aur.archlinux.org/packages/clyrics/)
+
+*   **Gaupol** — Full-featured subtitle editor.
+
+	[https://otsaloma.io/gaupol/](https://otsaloma.io/gaupol/) || [gaupol](https://www.archlinux.org/packages/?name=gaupol)
+
+*   **[Gnome Subtitles](https://en.wikipedia.org/wiki/Gnome_Subtitles "wikipedia:Gnome Subtitles")** — Video subtitle editor for GNOME.
+
+	[http://www.gnomesubtitles.org/](http://www.gnomesubtitles.org/) || [gnome-subtitles](https://www.archlinux.org/packages/?name=gnome-subtitles)
+
+*   **Jubler** — Open-source multiplatform subtitle editor written in Java.
+
+	[http://www.jubler.org](http://www.jubler.org) || [jubler](https://aur.archlinux.org/packages/jubler/)
+
+*   **Penguin Subtitle Player** — Penguin Subtitle Player is an open-source, cross-platform standalone subtitle player, as an alternative to Greenfish Subtitle Player, SrtViewer (Mac), SRTPlayer, JustSubsPlayer and Free Subtitle Player.
+
+	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
+
+*   **subdl** — Automatic subtitle downloader.
+
+	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
+
+*   **Subtitle Composer** — open-source Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form
+
+	[https://github.com/maxrd2/subtitlecomposer](https://github.com/maxrd2/subtitlecomposer) || [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/)
+
+*   **[Subtitle Edit](https://en.wikipedia.org/wiki/Subtitle_Edit "wikipedia:Subtitle Edit")** — Subtitle editing program. Written in C# using mono.
+
+	[https://github.com/SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit) || [subtitleedit](https://aur.archlinux.org/packages/subtitleedit/)
+
+*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
+
+	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
 
 #### Screencast
 
@@ -1146,23 +1098,9 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
 
-### Mobile phone managers
+#### DVD ripping
 
-*   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.
-
-	[http://www.gnokii.org/](http://www.gnokii.org/) || [gnokii](https://www.archlinux.org/packages/?name=gnokii)
-
-*   **GNOME Phone Manager** — Control your mobile phone from your GNOME desktop.
-
-	[https://wiki.gnome.org/PhoneManager](https://wiki.gnome.org/PhoneManager) || [gnome-phone-manager](https://www.archlinux.org/packages/?name=gnome-phone-manager)
-
-*   **KDE Connect** — A project that aims to communicate all your devices.
-
-	[https://community.kde.org/KDEConnect](https://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
-
-### Optical media burning
-
-See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
+See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Optical disc drive").
 
 ### Collection managers
 
@@ -1189,3 +1127,25 @@ See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_dr
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 
 	[http://tellico-project.org/](http://tellico-project.org/) || [tellico](https://www.archlinux.org/packages/?name=tellico)
+
+### Mobile phone managers
+
+*   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.
+
+	[http://www.gnokii.org/](http://www.gnokii.org/) || [gnokii](https://www.archlinux.org/packages/?name=gnokii)
+
+*   **GNOME Phone Manager** — Control your mobile phone from your GNOME desktop.
+
+	[https://wiki.gnome.org/PhoneManager](https://wiki.gnome.org/PhoneManager) || [gnome-phone-manager](https://www.archlinux.org/packages/?name=gnome-phone-manager)
+
+*   **KDE Connect** — A project that aims to communicate all your devices.
+
+	[https://community.kde.org/KDEConnect](https://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
+
+*   **Wammu** — Manage data in your cell phone such as contacts, calendar or messages.
+
+	[https://wammu.eu/](https://wammu.eu/) || [wammu](https://www.archlinux.org/packages/?name=wammu)
+
+### Optical media burning
+
+See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").

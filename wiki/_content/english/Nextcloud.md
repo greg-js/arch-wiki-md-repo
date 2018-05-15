@@ -139,8 +139,6 @@ mysql> \q
 
 #### PostgreSQL
 
-**Warning:** Nextcloud 12 is unable to do migration with PostgreSQL version 10 (currently in the repositories), as noted in this [bug report](https://bugs.archlinux.org/task/56302?project=5&string=nextcloud). While not officially supported, once the migration done, Nextcloud 12 seems to work as expected with PostgreSQL 10.
-
 The following is an example of setting up a [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") user and database:
 
  `$ sudo -u postgres createuser -h localhost -P nextcloud` 

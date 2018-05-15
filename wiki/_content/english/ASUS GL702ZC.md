@@ -1,5 +1,12 @@
 This page is about the Laptop ROG Strix AMD laptop. Runs pretty good out of the box, with some minor issues.
 
+## Contents
+
+*   [1 Backlight](#Backlight)
+*   [2 Fans](#Fans)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Secure Boot](#Secure_Boot)
+
 ## Backlight
 
 This ASUS model comes with Radeon RX580\. Backlight with `xbacklight` will not work; since Radeon cards don't support RandR. The relevant module seems to be `amdgpu_bl0`, and `asus::kbd_backlight` for the keyboard backlight.
@@ -23,4 +30,6 @@ Fans don't have OS control, and handled by ACPI. Upshot is works out of the box,
 
 ## Troubleshooting
 
-Compton with default settings don't work.
+### Secure Boot
+
+The BIOS has an utility to load your own BIOS keys, which was glitching for my FAT32 formatted USB drive. Tried using keytool, which bricked the computer. I suggest further work into this.

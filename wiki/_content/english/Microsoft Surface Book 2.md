@@ -26,16 +26,16 @@ This page contains instructions, tips, pointers, and links for installing and co
 
 ## Compatibility
 
-The laptop works surprisingly well with Arch Linux, but requires a customized kernel with updated drivers and modules, [available on Github](https://github.com/jakeday/linux-surface) or in an AUR package, [linux-surface4](https://aur.archlinux.org/packages/linux-surface4/).
+The laptop works surprisingly well with Arch Linux, but requires a kernel with modules and updated drivers, [available on Github](https://github.com/jakeday/linux-surface) or in an AUR package, [linux-surface4](https://aur.archlinux.org/packages/linux-surface4/).
 
 ### What works?
 
 **Note:** Touchscreen only works in a Window Manager or Desktop Environment that has full support for it. It's recognized as a mouse click otherwise.
 
 *   Touchscreen
-    *   Requires customized kernel.
+    *   Requires kernel with modules/drivers in link above.
 *   Pen Input
-    *   Requires customized kernel.
+    *   Requires kernel with modules/drivers in link above.
 *   Removal of keyboard base
     *   A few seconds slower in Linux than in Windows
     *   May cause touchscreen to stop working until reboot

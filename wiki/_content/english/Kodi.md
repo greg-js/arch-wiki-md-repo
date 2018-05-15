@@ -346,7 +346,7 @@ Lircmap.xml format is as follows:
 
 With a supported [USB-CEC adapter](http://www.pulse-eight.com/store/products/104-usb-hdmi-cec-adapter.aspx), Kodi can be used to automatically turn on and off your TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control.
 
-Install `libcec` (or any of the appropriate for the Arch ARM: `libcec-rpi`, `libcec-cubox`, `libcec-imx6`.
+Install `libcec` (or any of the appropriate for the Arch ARM: `libcec-rpi`, `libcec-cubox`, `libcec-imx6`).
 
 When connected, the USB-CEC's `/dev` entry (usually `/dev/ttyACM*`) will default to being owned by the `uucp` group, so in order to use the device the user running Kodi needs to belong to that group. The user also needs to belong to the `lock` group, otherwise Kodi will be unable to connect to the device. To add a user to both groups, run
 
