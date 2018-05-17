@@ -276,7 +276,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 ### Graphical
 
-*   **Ario** — Very feature-rich GTK2 GUI client for MPD, inspired by Rhythmbox
+*   **Ario** — Very feature-rich GTK3 GUI client for MPD, inspired by [Rhythmbox](/index.php/Rhythmbox "Rhythmbox")
 
 	[http://ario-player.sourceforge.net/](http://ario-player.sourceforge.net/) || [ario](https://www.archlinux.org/packages/?name=ario)
 
@@ -288,7 +288,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
 
-*   **gmpc** — GTK2 frontend for Music Player Daemon. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
+*   **gmpc** — GTK2 frontend for MPD. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
 
 	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)
 

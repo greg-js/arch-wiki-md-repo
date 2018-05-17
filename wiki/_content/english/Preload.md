@@ -3,9 +3,10 @@ Preloading is the action of putting and keeping target files into the RAM. The b
 ## Contents
 
 *   [1 Go-preload](#Go-preload)
+    *   [1.1 Configuration](#Configuration)
 *   [2 Preload](#Preload)
     *   [2.1 Installation](#Installation)
-    *   [2.2 Configuration](#Configuration)
+    *   [2.2 Configuration](#Configuration_2)
 *   [3 See also](#See_also)
 
 ## Go-preload
@@ -43,6 +44,10 @@ It is advised to run gopreload-prepare after system upgrades to refresh the file
 ```
 
 Just let it run without using the system.
+
+### Configuration
+
+The configuration file is located in `/etc/gopreload.conf`
 
 ## Preload
 

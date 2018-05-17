@@ -6,6 +6,13 @@ Related articles
 
 In order to use this tutorial, one must have a protonvpn account.
 
+## Contents
+
+*   [1 Walkthrough](#Walkthrough)
+    *   [1.1 Saving OpenVPN Authentication](#Saving_OpenVPN_Authentication)
+    *   [1.2 Enable VPN on Boot](#Enable_VPN_on_Boot)
+*   [2 Use ProtonVPN-cli](#Use_ProtonVPN-cli)
+
 ## Walkthrough
 
 [Install](/index.php/Install "Install") [openvpn](https://www.archlinux.org/packages/?name=openvpn).
@@ -69,3 +76,7 @@ openvpn_password
 ### Enable VPN on Boot
 
 For systemd service configuration, see [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
+
+## Use ProtonVPN-cli
+
+ProtonVPN supplies a utility to access the VPN. Details can be found on [their website](https://protonvpn.com/support/linux-vpn-tool/) and the GitHub repository can be found [here](https://github.com/ProtonVPN/protonvpn-cli).

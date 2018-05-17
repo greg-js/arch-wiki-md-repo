@@ -5,8 +5,9 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Select resolver](#Select_resolver)
-    *   [2.2 Modify resolv.conf](#Modify_resolv.conf)
-    *   [2.3 Start systemd service](#Start_systemd_service)
+    *   [2.2 Disable any services bound to port 53](#Disable_any_services_bound_to_port_53)
+    *   [2.3 Modify resolv.conf](#Modify_resolv.conf)
+    *   [2.4 Start systemd service](#Start_systemd_service)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Local DNS cache configuration](#Local_DNS_cache_configuration)
         *   [3.1.1 Change port](#Change_port)
@@ -27,31 +28,53 @@
 
 [Install](/index.php/Install "Install") the [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) package.
 
-**Tip:** [dnscrypt-proxy-gui](https://aur.archlinux.org/packages/dnscrypt-proxy-gui/) provides a GUI written in Qt to set the DNS server used by DNSCrypt.
-
 ## Configuration
 
-**Tip:** An example configuration file, `/etc/dnscrypt-proxy.conf.example` is provided, but note that systemd overrides the `LocalAddress` option with a [socket file](#Change_port).
+**Note:** Systemd overrides the `listen_addresses` option with a [socket file](#Change_port).
 
 To configure *dnscrypt-proxy*, perform the following steps:
 
 ### Select resolver
 
-Select a resolver from `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` and edit `/etc/dnscrypt-proxy.conf`, using a short name from the csv file's first column, `Name`. For example, to select *dnscrypt.eu-nl* as the resolver:
+**Note:** By leaving `server_names` commented out in the configuration file `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`, *dnscrypt-proxy* will choose the fastest server from the sources already configured under `[sources]` [[2]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration#an-example-static-server-entry). The lists will be downloaded, verified, and automatically updated. [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration-Sources#what-is-the-point-of-these-lists). Thus, configuring a specific set of servers is optional.
+
+Edit `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` and uncomment the `server_names` variable, selecting one or more of the servers. For example, to use Cloudflare's servers:
 
 ```
-ResolverName dnscrypt.eu-nl
+server_names = ['cloudflare', 'cloudflare-ipv6']
 
 ```
 
-**Tip:** A potentially more up-to-date list is available directly on the [upstream page](https://github.com/dyne/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv).
+**Tip:**
+
+*   You can find the full list of resolvers on the [upstream page](https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md), [Github](https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md), or `/var/cache/dnscrypt-proxy/public-resolvers.md`.
+*   Users should look at the description for servers on the public resolvers list and take note of which validate [DNSSEC](/index.php/DNSSEC "DNSSEC"), do not log, and are uncensored. These requirements can be configured globally with the `require_dnssec`, `require_nolog`, `require_nofilter` options.
+
+### Disable any services bound to port 53
+
+**Tip:** If using [#Unbound](#Unbound) as your local DNS cache this section can be ignored, as *unbound* runs on port 53 by default.
+
+To see if any programs are using port 53, run
+
+```
+ $ ss -lp 'sport = :domain'
+
+```
+
+If the output contains more than the first line of column names, you need to disable whatever service is using port 53\. One common culprit is `systemd-resolved.service`, but other network managers may have analogous components. You are ready to proceed once the above command outputs nothing more than the following line:
+
+```
+ Netid               State                 Recv-Q                Send-Q                                 Local Address:Port                                   Peer Address:Port
+
+```
 
 ### Modify resolv.conf
 
-After selecting a dnscrypt resolver, modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with address for *localhost*:
+Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with the address for *localhost* and options [[4]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Installation-linux#step-4-change-the-system-dns-settings):
 
 ```
 nameserver 127.0.0.1
+options edns0 single-request-reopen
 
 ```
 
@@ -65,7 +88,7 @@ Finally, [start and enable](/index.php/Enable "Enable") the `dnscrypt-proxy.serv
 
 ### Local DNS cache configuration
 
-**Note:** *dnscrypt* can cache entries without relying on another program. Ensure that `LocalCache on` is in your dnscrypt configuration file to enable this feature.
+**Note:** *dnscrypt* can cache entries without relying on another program. This feature is enabled by default with the line `cache = true` in your dnscrypt configuration file
 
 It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not using *dnscrypt's* cache feature; otherwise, every single query will make a round-trip to the upstream resolver. Any local DNS caching program should work. In addition to setting up *dnscrypt-proxy*, you must setup your local DNS cache program.
 
@@ -73,22 +96,20 @@ It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not us
 
 **Note:** Changing the IP address or port in `/etc/dnscrypt-proxy.conf` [does not work](https://web.archive.org/web/20171215112100/https://github.com/jedisct1/dnscrypt-proxy/issues/528) when using the provided systemd unit and must be changed in the provided systemd socket as follows.
 
-In order to forward to a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `5353` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
+In order to forward to a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `53000` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
 
 ```
 [Socket]
 ListenStream=
 ListenDatagram=
-ListenStream=127.0.0.1:5353
-ListenDatagram=127.0.0.1:5353
+ListenStream=127.0.0.1:53000
+ListenDatagram=127.0.0.1:53000
 
 ```
 
-**Note:** UDP Port `5353` is used by [Avahi](/index.php/Avahi#Firewall "Avahi") (if installed and running) and can cause warnings in the journal and [Avahi](/index.php/Avahi "Avahi")'s mDNS unreliable.
-
 #### Example local DNS cache configurations
 
-The following configurations should work with *dnscrypt-proxy* and assume that it is listening on port `5353`.
+The following configurations should work with *dnscrypt-proxy* and assume that it is listening on port `53000`.
 
 ##### Unbound
 
@@ -98,7 +119,7 @@ Configure [Unbound](/index.php/Unbound "Unbound") to your liking (in particular,
   do-not-query-localhost: no
 forward-zone:
   name: "."
-  forward-addr: 127.0.0.1@5353
+  forward-addr: 127.0.0.1@53000
 
 ```
 
@@ -113,7 +134,7 @@ Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#DNS_cache_setup "Dns
  `/etc/dnsmasq.conf` 
 ```
 no-resolv
-server=127.0.0.1#5353
+server=127.0.0.1#53000
 listen-address=127.0.0.1
 ```
 
@@ -146,7 +167,7 @@ global {
 server {
     label = "dnscrypt-proxy";
     ip = 127.0.0.1;
-    port = 5353;
+    port = 53000
     timeout = 4;
     proxy_only = on;
 }
@@ -226,15 +247,16 @@ rst.x4055.x4049.x3827.rs.dns-oarc.net.
 
 ### Redundant DNSCrypt providers
 
-To use several different dnscrypt providers, you may simply copy the original `dnscrypt-proxy.service` and `dnscrypt-proxy.socket`. Then in your new copy of the service change the command line parameters, either pointing to a new configuration file or naming a different resolver directly. From there change the port in the new copy of the socket. Lastly, update your local DNS cache program to point to new service's port. For example, with [unbound](/index.php/Unbound "Unbound") the configuration file would look like if using ports `5353` for the original socket and `5354` for the new socket.
+To use several different dnscrypt providers, you may simply copy the original `dnscrypt-proxy.service` and `dnscrypt-proxy.socket`. Then in your new copy of the service change the command line parameters, either pointing to a new configuration file or naming a different resolver directly. From there change the port in the new copy of the socket. Lastly, update your local DNS cache program to point to new service's port. For example, with [unbound](/index.php/Unbound "Unbound") the configuration file would look like if using ports `53000` for the original socket and `53001` for the new socket.
 
  `/etc/unbound/unbound.conf` 
 ```
  do-not-query-localhost: no
  forward-zone:
    name: "."
-   forward-addr: 127.0.0.1@5353
-   forward-addr: 127.0.0.1@5354
+   forward-addr: 127.0.0.1@53000
+   forward-addr: 127.0.0.1@53001
+
 ```
 
 #### Create instanced systemd service
@@ -264,7 +286,7 @@ This specifies an instanced systemd service that starts a dnscrypt-proxy using t
 
 ##### Add dnscrypt-sockets
 
-To create multiple dnscrypt-proxy sockets, copy `/usr/lib/systemd/system/dnscrypt-proxy.socket` to a new file, `/etc/systemd/system/dnscrypt-proxy@*short-name.here*.socket`, replacing the socket instance name with one of the short names listed in [`dnscrypt-resolvers.csv`](#Select_resolver) and [change the port](#Change_port). Use a different port for each instance (5353, 5354, and so forth).
+To create multiple dnscrypt-proxy sockets, copy `/usr/lib/systemd/system/dnscrypt-proxy.socket` to a new file, `/etc/systemd/system/dnscrypt-proxy@*short-name.here*.socket`, replacing the socket instance name with one of the short names listed in [`dnscrypt-resolvers.csv`](#Select_resolver) and [change the port](#Change_port). Use a different port for each instance (53000, 53001, and so forth).
 
 ##### Apply new systemd configuration
 

@@ -813,6 +813,8 @@ On the next shutdown, the `asound.state` file should be recreated with ALSA defa
 
 ```
 
+If you want to clean ALSA state without rebooting, you can use `rmmod` to remove the sound driver module, then manually delete the unwanted entries in `asound.state`, and then use `modprobe` to reinstall the sound driver module.
+
 ### Problems with availability to only one user at a time
 
 You might find that only one user can use the dmixer at a time. This is probably ok for most, but for those who run [mpd](/index.php/Mpd "Mpd") as a separate user this poses a problem. When mpd is playing a normal user cannot play sounds though the dmixer. While it is quite possible to just run mpd under a user's login account, another solution has been found. Adding the line `ipc_key_add_uid 0` to the `pcm.dmixer` block disables this locking. The following is a snippet from `asound.conf`, the rest is the same as above.

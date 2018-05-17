@@ -30,6 +30,14 @@
     *   [11.2 Recordar el último sistema arrancado](#Recordar_el_.C3.BAltimo_sistema_arrancado)
     *   [11.3 Cambiar la entrada por defecto del menú](#Cambiar_la_entrada_por_defecto_del_men.C3.BA)
     *   [11.4 Efectuar el arranque de una entrada no predeterminada por una sola vez](#Efectuar_el_arranque_de_una_entrada_no_predeterminada_por_una_sola_vez)
+*   [12 Tocar una melodía](#Tocar_una_melod.C3.ADa)
+*   [13 Configuración manual de la imagen del núcleo para un arranque rápido](#Configuraci.C3.B3n_manual_de_la_imagen_del_n.C3.BAcleo_para_un_arranque_r.C3.A1pido)
+*   [14 UEFI further reading](#UEFI_further_reading)
+    *   [14.1 Alternative install method](#Alternative_install_method)
+    *   [14.2 UEFI firmware workaround](#UEFI_firmware_workaround)
+    *   [14.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
+    *   [14.4 GRUB standalone](#GRUB_standalone)
+    *   [14.5 Technical information](#Technical_information)
 
 ## Métodos alternativos de instalación
 
@@ -462,16 +470,18 @@ GRUB_SAVEDEFAULT=true
 
 Para cambiar la entrada seleccionada por defecto, edite `/etc/default/grub` y cambie el valor de `GRUB_DEFAULT`:
 
-Utilizar números consecutivos :
+Utilizar números :
 
 ```
-GRUB_DEFAULT=0
+GRUB_DEFAULT="1>2"
 
 ```
 
-Grub identifica las entradas generadas en el menú contando desde cero. Eso significa que 0 se refiere a la primera entrada, la cual es el valor predeterminado, 1 para la segunda y así sucesivamente.
+Grub identifica las entradas generadas en el menú contando desde cero. Eso significa que 0 se refiere a la primera entrada, la cual es el valor predeterminado, 1 para la segunda y así sucesivamente.Las entradas del menú principal y de los submenús están separadas por `>`.
 
-O utilizar los nombres en el menú :
+El ejemplo anterior arranca la tercera entrada desde el menú principal 'Opciones avanzadas para Arch Linux'.
+
+O usar títulos de menú :
 
 ```
 GRUB_DEFAULT='Arch Linux, with Linux core repo kernel'
@@ -483,3 +493,128 @@ GRUB_DEFAULT='Arch Linux, with Linux core repo kernel'
 La orden `grub-reboot` es muy útil para arrancar otra entrada distinta de la predeterminada solo por una vez. GRUB carga la entrada especificada como primer argumento de la orden, de modo que la próxima vez, cuando el sistema reinicie, arrancará el sistema operativo indicado. Lo más importante es que GRUB vuelve a cargar la entrada por defecto para todos los sucesivos arranques. Por tanto, no es necesario cambiar el archivo de configuración o seleccionar una entrada en el menú de GRUB.
 
 **Nota:** Esta operación requiere la opción `GRUB_DEFAULT=saved` en `/etc/default/grub` (y después regenerar el archivo `grub.cfg`) o, en el caso de un archivo `grub.cfg` configurado manualmente, la línea `set default="${saved_entry}"`.
+
+## Tocar una melodía
+
+Puede reproducir una melodía a través del altavoz del PC mientras arranca modificando la variable `GRUB_INIT_TUNE`. Por ejemplo, para tocar el extracto de *Berlioz de Sabbath Night of Symphonie Fantastique* se puede añadir lo siguiente: (parte bassoon):
+
+`GRUB_INIT_TUNE="312 262 3 247 3 262 3 220 3 247 3 196 3 220 3 220 3 262 3 262 3 294 3 262 3 247 3 220 3 196 3 247 3 262 3 247 5 220 1 220 5"`
+
+Para obtener información al respecto, puede consultar `info grub -n play`.
+
+## Configuración manual de la imagen del núcleo para un arranque rápido
+
+Si necesita un mapa de teclado especial u otros pasos complejos que GRUB no puede configurar automáticamente para hacer que `/boot` esté disponible para el entorno GRUB, puede generar una imagen del núcleo usted mismo. En los sistemas UEFI, la imagen del núcleo es el archivo `grubx64.efi` que carga el firmware de arranque. La creación de su propia imagen del núcleo le permitirá integrar cualquier módulo necesario para un inicio muy rápido, así como una secuencia de comandos de configuración para arrancar GRUB.
+
+En primer lugar, tomando como ejemplo un requisito para el mapa de teclado `dvorak` integrado en el booteo-rápido en orden para ingresar una contraseña para encriptar `/boot` en un sistema UEFI:
+
+Determine a partir del archivo generado `/boot/grub/grub.cfg` qué módulos son necesarios para montar el `/boot` encriptado. Por ejemplo, debajo de su entrada `menuentry` debería ver líneas similares a:
+
+```
+insmod diskfilter cryptodisk luks gcry_rijndael gcry_rijndael gcry_sha256
+insmod ext2
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+```
+
+Tome nota de todos esos módulos: deberán incluirse en la imagen del núcleo. Ahora, cree un tarball que contenga su mapa de teclado. Esto se incluirá en la imagen del núcleo como un *memdisk*:
+
+```
+# ckbcomp dvorak | grub-mklayout > dvorak.gkb
+# tar cf memdisk.tar dvorak.gkb
+
+```
+
+Ahora cree un archivo de configuración para utilizarlo en la imagen del núcleo de GRUB. Este está en el mismo formato que su configuración normal de grub, pero sólo necesita contener unas pocas líneas para encontrar y cargar el archivo de configuración principal en la partición `/boot`:
+
+ `early-grub.cfg` 
+```
+root=(memdisk)
+prefix=($root)/
+
+terminal_input at_keyboard
+keymap /dvorak.gkb
+
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+set prefix=($root)/grub
+
+configfile grub.cfg
+```
+
+Finalmente, genere la imagen principal, enumerando todos los módulos que se determinan necesarios en el `grub.cfg`, junto con cualquier módulo utilizado en el script `early-grub.cfg`. El ejemplo anterior necesita `memdisk`, `tar`, `at_keyboard`, `keylayouts` y `configfile`.
+
+```
+# grub-mkimage -c early-grub.cfg -o grubx64.efi -O x86_64-efi -m memdisk.tar diskfilter cryptodisk luks gcry_rijndael gcry_sha256 ext2 memdisk tar at_keyboard keylayouts configfile
+
+```
+
+La imagen del núcleo de EFI generada ahora se puede usar de la misma manera que la imagen que se genera automáticamente mediante `grub-install`: colóquela en su partición EFI y habilítela con `efibootmgr`, o configúrela según corresponda para el firmware de su sistema.
+
+## UEFI further reading
+
+Below is other relevant information regarding installing Arch via UEFI.
+
+### Alternative install method
+
+Usually, GRUB keeps all files, including configuration files, in `/boot`, regardless of where the EFI System Partition is mounted.
+
+If you want to keep these files inside the EFI System Partition itself, add `--boot-directory=*esp*` to the grub-install command:
+
+```
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub --boot-directory=*esp* --debug
+
+```
+
+This puts all GRUB files in `*esp*/grub`, instead of in `/boot/grub`. When using this method, make sure you have *grub-mkconfig* put the configuration file in the same place:
+
+```
+# grub-mkconfig -o *esp*/grub/grub.cfg
+
+```
+
+Configuration is otherwise the same.
+
+### UEFI firmware workaround
+
+Some UEFI firmware requires that the bootable *.efi* stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
+
+To do so, first create the necessary directory, and then copy across the grub `.efi` stub, renaming it in the process:
+
+```
+# mkdir *esp*/EFI/boot
+# cp *esp*/EFI/grub_uefi/grubx64.efi *esp*/EFI/boot/bootx64.efi
+
+```
+
+### Create a GRUB entry in the firmware boot manager
+
+`grub-install` automatically tries to create a menu entry in the boot manager. If it does not, then see [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI") for instructions to use `efibootmgr` to create a menu entry. However, the problem is likely to be that you have not booted your CD/USB in UEFI mode, as in [UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
+
+### GRUB standalone
+
+This section assumes you are creating a standalone GRUB for x86_64 systems (x86_64-efi). For 32-bit (IA32) EFI systems, replace `x86_64-efi` with `i386-efi` where appropriate.
+
+It is possible to create a `grubx64_standalone.efi` application which has all the modules embedded in a tar archive within the UEFI application, thus removing the need to have a separate directory populated with all of the GRUB UEFI modules and other related files. This is done using the `grub-mkstandalone` command (included in [grub](https://www.archlinux.org/packages/?name=grub)) as follows:
+
+```
+# echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
+# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --locales="en@quot" --themes="" -o "*esp*/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg=/tmp/grub.cfg" -v
+
+```
+
+Then copy the GRUB config file to `*esp*/EFI/grub/grub.cfg` and create a UEFI Boot Manager entry for `*esp*/EFI/grub/grubx64_standalone.efi` using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
+
+**Note:** The option `--modules="part_gpt part_msdos"` (with the quotes) is necessary for the `${cmdpath}` feature to work properly.
+
+**Warning:** You may find that the `grub.cfg` file is not loaded due to `${cmdpath}` missing a slash (i.e. `(hd1,msdos2)EFI/Boot` instead of `(hd1,msdos2)/EFI/Boot`) and so you are dropped into a GRUB shell. If this happens determine what `${cmdpath}` is set to (`echo ${cmdpath}` ) and then load the config file manually (e.g. `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`).
+
+### Technical information
+
+The GRUB EFI file always expects its config file to be at `${prefix}/grub.cfg`. However in the standalone GRUB EFI file, the `${prefix}` is located inside a tar archive and embedded inside the standalone GRUB EFI file itself (inside the GRUB environment, it is denoted by `"(memdisk)"`, without quotes). This tar archive contains all the files that would be stored normally at `/boot/grub` in case of a normal GRUB EFI install.
+
+Due to this embedding of `/boot/grub` contents inside the standalone image itself, it does not rely on actual (external) `/boot/grub` for anything. Thus in case of standalone GRUB EFI file `${prefix}==(memdisk)/boot/grub` and the standalone GRUB EFI file reads expects the config file to be at `${prefix}/grub.cfg==(memdisk)/boot/grub/grub.cfg`.
+
+Hence to make sure the standalone GRUB EFI file reads the external `grub.cfg` located in the same directory as the EFI file (inside the GRUB environment, it is denoted by `${cmdpath}` ), we create a simple `/tmp/grub.cfg` which instructs GRUB to use `${cmdpath}/grub.cfg` as its config (`configfile ${cmdpath}/grub.cfg` command in `(memdisk)/boot/grub/grub.cfg`). We then instruct grub-mkstandalone to copy this `/tmp/grub.cfg` file to `${prefix}/grub.cfg` (which is actually `(memdisk)/boot/grub/grub.cfg`) using the option `"boot/grub/grub.cfg=/tmp/grub.cfg"`.
+
+This way, the standalone GRUB EFI file and actual `grub.cfg` can be stored in any directory inside the EFI System Partition (as long as they are in the same directory), thus making them portable.

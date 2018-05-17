@@ -138,7 +138,7 @@ cryptkey=*device*:*offset*:*size*
 
 ```
 
-where the offset is in bytes and the size in bits. Example: `cryptkey=/dev/sdZ:0:512` reads a 512 bit keyfile starting at the beginning of the device.
+where the offset and size are in bytes. Example: `cryptkey=/dev/sdZ:0:512` reads a 512 bit keyfile starting at the beginning of the device.
 
 **Tip:** If the device path you want to access contains the character `:`, you have to escape it with three backslash `\`. In that case the cryptkey parameter would be as follow: `cryptkey=/dev/disk/by-id/usb-123456-0\\\:0:0:512` for a usb key with the id `usb-123456-0:0`.
 

@@ -9,19 +9,20 @@ Some Apple keyboard models may have swapped keys or missing functionality. This 
 *   [1 Numlock is on](#Numlock_is_on)
 *   [2 Repeating keys on a wireless keyboard](#Repeating_keys_on_a_wireless_keyboard)
 *   [3 Function keys do not work](#Function_keys_do_not_work)
-*   [4 < and > have changed place with § and ½](#.3C_and_.3E_have_changed_place_with_.C2.A7_and_.C2.BD)
-*   [5 < and > have changed place with ^ and ° (or @ and #, or ` and ~)](#.3C_and_.3E_have_changed_place_with_.5E_and_.C2.B0_.28or_.40_and_.23.2C_or_.60_and_.7E.29)
-*   [6 PrintScreen and SysRq](#PrintScreen_and_SysRq)
-*   [7 Treating Apple keyboards like regular keyboards](#Treating_Apple_keyboards_like_regular_keyboards)
-    *   [7.1 Use a patch to hid-apple](#Use_a_patch_to_hid-apple)
-    *   [7.2 Use un-apple-keyboard](#Use_un-apple-keyboard)
-    *   [7.3 Change the Behavior Without Reboot](#Change_the_Behavior_Without_Reboot)
-*   [8 Magic Keyboard does not connect](#Magic_Keyboard_does_not_connect)
-*   [9 See also](#See_also)
+*   [4 Switching Cmd and Alt/AltGr](#Switching_Cmd_and_Alt.2FAltGr)
+*   [5 < and > have changed place with § and ½](#.3C_and_.3E_have_changed_place_with_.C2.A7_and_.C2.BD)
+*   [6 < and > have changed place with ^ and ° (or @ and #, or ` and ~)](#.3C_and_.3E_have_changed_place_with_.5E_and_.C2.B0_.28or_.40_and_.23.2C_or_.60_and_.7E.29)
+*   [7 PrintScreen and SysRq](#PrintScreen_and_SysRq)
+*   [8 Treating Apple keyboards like regular keyboards](#Treating_Apple_keyboards_like_regular_keyboards)
+    *   [8.1 Use a patch to hid-apple](#Use_a_patch_to_hid-apple)
+    *   [8.2 Use un-apple-keyboard](#Use_un-apple-keyboard)
+    *   [8.3 Change the Behavior Without Reboot](#Change_the_Behavior_Without_Reboot)
+*   [9 Magic Keyboard does not connect](#Magic_Keyboard_does_not_connect)
+*   [10 See also](#See_also)
 
 ## Numlock is on
 
-You may find that the numlock is on. The symptoms are that only the physical keys 7,8,9,u,i,o,j,k,l and surrounding keys work and output numbers. To fix this hit `Fn`+`F6` twice.
+You may find that the numlock is on. The symptoms are that only the physical keys `7`,`8`,`9`,`u`,`i`,`o`,`j`,`k`,`l` and surrounding keys work and output numbers. To fix this hit `Fn+F6` twice.
 
 Alternatively, set the keycodes manually using [xmodmap](/index.php/Xmodmap "Xmodmap") to avoid use Numlock:
 
@@ -45,23 +46,37 @@ Unpair the keyboard and then re-pair it. The trick is to hold down the power but
 
 ## Function keys do not work
 
-If your `F<num>` keys do not work, this is probably because the kernel driver for the keyboard has defaulted to using the media keys and requiring you to use the `Fn` key to get to the `F<num>` keys. To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `2` to `/sys/module/hid_apple/parameters/fnmode`.
+If your `F<num>` keys do not work, this is probably because the kernel driver for the keyboard has defaulted to using the media keys and requiring you to use the `Fn` key to get to the `F<num>` keys. To change the behavior temporarily, [append](/index.php/Append "Append") `2` to `/sys/module/hid_apple/parameters/fnmode`.
 
 ```
-echo "2" | sudo tee /sys/module/hid_apple/parameters/fnmode
+# echo "2" > /sys/module/hid_apple/parameters/fnmode
 
 ```
 
 To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `fnmode` option to 2:
 
-```
-echo "options hid_apple fnmode=2" | sudo tee /etc/modprobe.d/hid_apple.conf
+ `/etc/modprobe.d/hid_apple.conf`  `options hid_apple fnmode=2` 
 
-```
-
-To apply the change to your initial ramdisk, in your [mkinitcpio configuration](/index.php/Mkinitcpio#Configuration "Mkinitcpio") (usually `/etc/mkinitcpio.conf`), make sure you either have `modconf` included in the `HOOKS` variable or `/etc/modprobe.d/hid_apple.conf` in the `FILES` variable. You would then need to [rebuild the ramdisk image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+To apply the change to your initial ramdisk, in your [mkinitcpio configuration](/index.php/Mkinitcpio#Configuration "Mkinitcpio") (usually `/etc/mkinitcpio.conf`), make sure you either have `modconf` included in the `HOOKS` variable or `/etc/modprobe.d/hid_apple.conf` in the `FILES` variable. You would then need to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 If your keyboard is model A1644, please use this [[1]](https://bugzilla.kernel.org/attachment.cgi?id=258205) patch (from this [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=99881#c41)thread) to fix the function/media keys.
+
+## Switching Cmd and Alt/AltGr
+
+This will switch the left `Alt` and `Cmd` key as well as the right `Alt`/`AltGr` and `Cmd` key.
+
+Temporary and immediate solution:
+
+```
+# echo "1" > /sys/module/hid_apple/parameters/swap_opt_cmd
+
+```
+
+Permanent change, taking place at next reboot:
+
+ `/etc/modprobe.d/hid_apple.conf`  `options hid_apple swap_opt_cmd=1` 
+
+You then need to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ## < and > have changed place with § and ½
 
@@ -92,7 +107,7 @@ keycode  49 = ugrave Ugrave ugrave Ugrave notsign notsign
 
 With German layout, circumflex/degree symbol and </> are exchanged. With French layout, @/# are exchanged. With the US layout, `/~ and </> are exchanged.
 
-To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `0` to `/sys/module/hid_apple/parameters/iso_layout`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0.
+To change the behavior temporarily, [append](/index.php/Append "Append") `0` to `/sys/module/hid_apple/parameters/iso_layout`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0.
 
 ## PrintScreen and SysRq
 
@@ -106,7 +121,7 @@ Depending on the customisations you want to accomplish, there are two solutions 
 
 ### Use a patch to hid-apple
 
-While the original `hid-apple` module doesn't have options to further customize the keyboard, like swapping `Fn` and left `Ctrl` keys or having `Alt` on the left side of `Super`, there is a [patch](https://github.com/free5lot/hid-apple-patched) adding this functionality to the module. To install the patch, [install](/index.php/Install "Install") the [hid-apple-patched-git-dkms](https://aur.archlinux.org/packages/hid-apple-patched-git-dkms/) package.
+While the original `hid-apple` module does not have options to further customize the keyboard, like swapping `Fn` and left `Ctrl` keys or having `Alt` on the left side of `Super`, there is a [patch](https://github.com/free5lot/hid-apple-patched) adding this functionality to the module. To install the patch, [install](/index.php/Install "Install") the [hid-apple-patched-git-dkms](https://aur.archlinux.org/packages/hid-apple-patched-git-dkms/) package.
 
 In addition to the patched kernel module, a configuration file is also provided by the package at `/etc/modprobe.d/hid_apple_pclayout.conf`, which enables PC-like layout by default:
 
@@ -117,7 +132,7 @@ In addition to the patched kernel module, a configuration file is also provided 
 
 Please refer to [https://github.com/free5lot/hid-apple-patched#configuration](https://github.com/free5lot/hid-apple-patched#configuration) for exact meaning of each configuration options and tweaking the configuration file to suit your need.
 
-**Note:** Don't forget to include the configuration file in *initramfs* otherwise it won't work automatically after boot. Refer to [Mkinitcpio#BINARIES and FILES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") or [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") (the hook you might need is called `modconf`) about how to do that.
+**Note:** Do not forget to include the configuration file in *initramfs* otherwise it will not work automatically after boot. Refer to [Mkinitcpio#BINARIES and FILES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") or [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") (the hook you might need is called `modconf`) about how to do that.
 
 After installation the change is not picked up by the kernel immediately. The simplest way is to just reboot your system and the new behavior should be in effect.
 
@@ -138,7 +153,7 @@ The last one is provided by providing a mapping to [keyfuzz](https://aur.archlin
 
 **Warning:** If the builtin keyboard and touch pad are the only input device, beware that doing so might leave your computer in an inoperable state unless hard reboot when the second command failes.
 
-To reload the kernel module without reboot, run `sudo rmmod hid_apple && sudo modprobe hid_apple`.
+To reload the kernel module without reboot, run `rmmod hid_apple && modprobe hid_apple`.
 
 ## Magic Keyboard does not connect
 

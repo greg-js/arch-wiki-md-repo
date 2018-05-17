@@ -14,28 +14,27 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 *   [1 Installation](#Installation)
     *   [1.1 Officially supported packages](#Officially_supported_packages)
     *   [1.2 Unofficially supported packages](#Unofficially_supported_packages)
-*   [2 Flagging packages as out-of-date](#Flagging_packages_as_out-of-date)
-*   [3 Switching between JVM](#Switching_between_JVM)
-    *   [3.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
-    *   [3.2 Change default Java environment](#Change_default_Java_environment)
-    *   [3.3 Unsetting the default Java environment](#Unsetting_the_default_Java_environment)
-    *   [3.4 Fixing the default Java environment](#Fixing_the_default_Java_environment)
-    *   [3.5 Launching an application with the non-default java version](#Launching_an_application_with_the_non-default_java_version)
-*   [4 Package pre-requisites to support archlinux-java](#Package_pre-requisites_to_support_archlinux-java)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 MySQL](#MySQL)
-    *   [5.2 Impersonate another window manager](#Impersonate_another_window_manager)
-    *   [5.3 Illegible fonts](#Illegible_fonts)
-    *   [5.4 Missing text in some applications](#Missing_text_in_some_applications)
-    *   [5.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM.2C_menus_immediately_closing)
-    *   [5.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Better font rendering](#Better_font_rendering)
-    *   [6.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
-    *   [6.3 GTK LookAndFeel](#GTK_LookAndFeel)
-    *   [6.4 Better 2D performance](#Better_2D_performance)
-    *   [6.5 Non-reparenting window managers / Grey window / Programs not drawing properly](#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly)
-*   [7 See also](#See_also)
+*   [2 Switching between JVM](#Switching_between_JVM)
+    *   [2.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
+    *   [2.2 Change default Java environment](#Change_default_Java_environment)
+    *   [2.3 Unsetting the default Java environment](#Unsetting_the_default_Java_environment)
+    *   [2.4 Fixing the default Java environment](#Fixing_the_default_Java_environment)
+    *   [2.5 Launching an application with the non-default java version](#Launching_an_application_with_the_non-default_java_version)
+*   [3 Package pre-requisites to support archlinux-java](#Package_pre-requisites_to_support_archlinux-java)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 MySQL](#MySQL)
+    *   [4.2 Impersonate another window manager](#Impersonate_another_window_manager)
+    *   [4.3 Illegible fonts](#Illegible_fonts)
+    *   [4.4 Missing text in some applications](#Missing_text_in_some_applications)
+    *   [4.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [4.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Better font rendering](#Better_font_rendering)
+    *   [5.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
+    *   [5.3 GTK LookAndFeel](#GTK_LookAndFeel)
+    *   [5.4 Better 2D performance](#Better_2D_performance)
+    *   [5.5 Non-reparenting window managers / Grey window / Programs not drawing properly](#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -68,6 +67,10 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 	[http://openjdk.java.net/projects/jdk7/](http://openjdk.java.net/projects/jdk7/) || [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)
 
+**IcedTea-Web** — Java Web Start and the deprecated Java browser plugin.
+
+	[https://icedtea.classpath.org/wiki/IcedTea-Web](https://icedtea.classpath.org/wiki/IcedTea-Web) || [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web)
+
 **OpenJFX 8** — The open-source implementation of JavaFX. You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
 
 	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
@@ -76,32 +79,21 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 
-	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre6](https://aur.archlinux.org/packages/jre6/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre-devel](https://aur.archlinux.org/packages/jre-devel/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
+	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
 
 **OpenJ9** — Eclipse's implementation of JRE, contributed by IBM.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
 
-**IBM J9 8** — IBM's implementation of the eighth edition of JRE.
+**IBM J9** — IBM's implementation of the eighth edition of JRE.
 
-	[https://developer.ibm.com/javasdk/downloads/sdk8/](https://developer.ibm.com/javasdk/downloads/sdk8/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/)
-
-**IBM J9 7** — IBM's implementation of the seventh edition of JRE.
-
-	[https://developer.ibm.com/javasdk/downloads/sdk7/](https://developer.ibm.com/javasdk/downloads/sdk7/) || [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
+	[https://developer.ibm.com/javasdk/](https://developer.ibm.com/javasdk/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
 
 **Parrot VM** — a VM with experimental support for Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/), or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
 
 	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
 
 **Note:** 32-bit versions of Java SE can be found by prefixing `bin32-`, e.g. [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) and [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/). They use [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), which functions as [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) by suffixing with `32`, e.g. `java32`. The same analogy applies to [java32-environment-common](https://aur.archlinux.org/packages/java32-environment-common/), which is only used by 32-bit JDK packages.
-
-## Flagging packages as out-of-date
-
-Although the Arch Linux package releases may contain a reference to the proprietary versions the packages are based on, the open-source project has its own versioning scheme:
-
-*   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), and [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) should be flagged as out-of-date based on the [*IcedTea* version](http://icedtea.wildebeest.org/download/source) (e.g. `2.4.3`), rather than on the Oracle reference version (e.g. `u45` in the release `7.u45_2.4.3-1`).
-*   [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web) should be flagged as out-of-date based on the [*IcedTea Web* version](http://icedtea.wildebeest.org/download/source) (e.g. `1.4.1`). This is independent of the *IcedTea* version.
 
 ## Switching between JVM
 

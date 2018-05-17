@@ -12,6 +12,7 @@ This article describes how to set up and run [chrony](http://chrony.tuxfamily.or
 *   [4 Notifying network state](#Notifying_network_state)
     *   [4.1 NetworkManager](#NetworkManager)
     *   [4.2 netctl](#netctl)
+    *   [4.3 dhcpcd](#dhcpcd)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -143,6 +144,22 @@ You can either use *chronyc* to notify *chrony* that your network configuration 
 ### netctl
 
 Install [netctl-dispatcher-chrony](https://aur.archlinux.org/packages/netctl-dispatcher-chrony/) from the AUR. This adds a hook to netctl which is run automatically for any connection.
+
+### dhcpcd
+
+Create the following hook:
+
+ `/etc/dhcpcd.exit-hook` 
+```
+if $if_up; then
+	chronyc online
+elif $if_down; then
+	chronyc offline
+fi
+
+```
+
+See [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)
 
 ## See also
 

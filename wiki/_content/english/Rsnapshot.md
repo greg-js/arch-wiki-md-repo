@@ -243,7 +243,7 @@ IOSchedulingClass=idle
 ExecStart=/usr/bin/rsnapshot %I
 ```
 
-Then create a timer unit for it:
+Then create a timer unit for daily:
 
  `/etc/systemd/system/rsnapshot-daily.timer` 
 ```
@@ -251,8 +251,8 @@ Then create a timer unit for it:
 Description=rsnapshot daily backup
 
 [Timer]
-# 14:30 is the clock time when to start it
-OnCalendar=14:30
+# 05:30 is the clock time when to start it
+OnCalendar=05:30
 Persistent=true
 Unit=rsnapshot@daily.service
 
@@ -260,11 +260,46 @@ Unit=rsnapshot@daily.service
 WantedBy=timers.target
 ```
 
-Then finally enable and run it:
+A timer unit for weekly:
+
+ `/etc/systemd/system/rsnapshot-weekly.timer` 
+```
+[Unit]
+Description=rsnapshot weekly backup
+
+[Timer]
+# Run once per week on Monday at 4:30, after daily runs
+OnCalendar=Monday  *-*-* 04:30:00
+Persistent=true
+Unit=rsnapshot@weekly.service
+
+[Install]
+WantedBy=timers.target
+```
+
+And a timer unit for monthly:
+
+ `/etc/systemd/system/rsnapshot-monthly.timer` 
+```
+[Unit]
+Description=rsnapshot monthly backup
+
+[Timer]
+# Run once per month at 3:30 UTC, after daily and weekly runs
+OnCalendar=*-*-1 03:30:00
+Persistent=true
+Unit=rsnapshot@monthly.service
+
+[Install]
+WantedBy=timers.target
+```
+
+Then finally, enable then:
 
 ```
 # systemctl enable rsnapshot-daily.timer
-# systemctl start rsnapshot-daily.timer
+# systemctl enable rsnapshot-weekly.timer
+# systemctl enable rsnapshot-monthly.timer
 
 ```
 

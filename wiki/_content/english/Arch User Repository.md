@@ -374,7 +374,7 @@ See also [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Comm
 
 ### How can I speed up repeated build processes?
 
-If you frequently compile code that uses GCC - say, a Git or SVN package - you may find [ccache](/index.php/Ccache "Ccache"), short for "compiler cache", useful.
+See [Makepkg#Improving_compile_times](/index.php/Makepkg#Improving_compile_times "Makepkg").
 
 ### What is the difference between foo and foo-git packages?
 

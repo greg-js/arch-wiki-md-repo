@@ -229,6 +229,7 @@ $ chown -R USER_C: /mnt/client/folder
 *   Adding the option '`sshfs_debug`' (as in '`sshfs -o sshfs_debug user@server ...`') can help in resolving the issue.
 *   If that doesn't reveal anything useful, you might also try adding the option '`debug`'
 *   If you are trying to sshfs into a router running DD-WRT or the like, there is a solution [here](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (note that the -osftp_server=/opt/libexec/sftp-server option can be used to the sshfs command in stead of patching dropbear)
+*   If you see this only on boot, it may be that systemd is attempting to mount prior to a network connection being available. Enabling the 'wait-online' service appropriate to your network connection (eg. systemd-networkd-wait-online.service) fixes this.
 *   Old Forum thread: [sshfs: Connection reset by peer](https://bbs.archlinux.org/viewtopic.php?id=27613)
 *   Make sure your user can log into the server (especially when using AllowUsers)
 *   Make sure `Subsystem sftp /usr/lib/ssh/sftp-server` is enabled in `/etc/ssh/sshd_config`.

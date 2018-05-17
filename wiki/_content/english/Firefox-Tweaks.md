@@ -36,11 +36,12 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
         *   [2.2.8 Unreadable input fields with KDE Breeze Dark theme](#Unreadable_input_fields_with_KDE_Breeze_Dark_theme)
         *   [2.2.9 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
-    *   [2.3 Web content CSS settings](#Web_content_CSS_settings)
-        *   [2.3.1 Import other CSS files](#Import_other_CSS_files)
-        *   [2.3.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
-        *   [2.3.3 Add [pdf] after links to PDF files](#Add_.5Bpdf.5D_after_links_to_PDF_files)
-        *   [2.3.4 Block ads](#Block_ads)
+    *   [2.3 Tabs in title bar](#Tabs_in_title_bar)
+    *   [2.4 Web content CSS settings](#Web_content_CSS_settings)
+        *   [2.4.1 Import other CSS files](#Import_other_CSS_files)
+        *   [2.4.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
+        *   [2.4.3 Add [pdf] after links to PDF files](#Add_.5Bpdf.5D_after_links_to_PDF_files)
+        *   [2.4.4 Block ads](#Block_ads)
 *   [3 Mouse and keyboard](#Mouse_and_keyboard)
     *   [3.1 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
     *   [3.2 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
@@ -397,6 +398,10 @@ Another way to change gtk theme for content process only, which keeps dark UI th
 2.  Create a new string type preference (*right mouse button > New > String*) named `widget.content.gtk-theme-override`
 3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`)
 4.  Restart Firefox
+
+### Tabs in title bar
+
+To replace the title bar with the tab bar, enable `browser.tabs.drawInTitlebar` in `about:config`.
 
 ### Web content CSS settings
 

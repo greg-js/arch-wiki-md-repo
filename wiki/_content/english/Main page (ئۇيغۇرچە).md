@@ -1,10 +1,10 @@
-[ug:Main Page](/index.php?title=Ug:Main_Page&action=edit&redlink=1 "Ug:Main Page (page does not exist)") **مەرھابا [ArchWiki](/index.php?title=AboutWiki_(%D8%A6%DB%87%D9%8A%D8%BA%DB%87%D8%B1%DA%86%DB%95)&action=edit&redlink=1 "AboutWiki (ئۇيغۇرچە) (page does not exist)") : سىزنىڭ توردىكى Arch Linux ماتېريال ئامبىرىڭىز.**
+[ug:Main Page](/index.php?title=Ug:Main_Page&action=edit&redlink=1 "Ug:Main Page (page does not exist)") **مەرھابا [ArchWiki](/index.php/AboutWiki_(%D8%A6%DB%87%D9%8A%D8%BA%DB%87%D8%B1%DA%86%DB%95) "AboutWiki (ئۇيغۇرچە)") : سىزنىڭ توردىكى Arch Linux ماتېريال ئامبىرىڭىز.**
 
-ArchWiki نىڭ تولۇق مۇندەرىجىسىنى كۆرۈش —— [مۇندەرىجە تىزىملىكى](/index.php?title=Table_of_contents_(%D8%A6%DB%87%D9%8A%D8%BA%DB%87%D8%B1%DA%86%DB%95)&action=edit&redlink=1 "Table of contents (ئۇيغۇرچە) (page does not exist)")
+ArchWiki نىڭ تولۇق مۇندەرىجىسىنى كۆرۈش —— [مۇندەرىجە تىزىملىكى](/index.php/Table_of_contents_(%D8%A6%DB%87%D9%8A%D8%BA%DB%87%D8%B1%DA%86%DB%95) "Table of contents (ئۇيغۇرچە)")
 
 ## سېستىما نەشىرى ھەققىدە
 
-	[Arch Linux](/index.php?title=Arch_Linux_(%D8%A6%DB%87%D9%8A%D8%BA%DB%87%D8%B1%DA%86%DB%95)&action=edit&redlink=1 "Arch Linux (ئۇيغۇرچە) (page does not exist)")
+	[Arch Linux](/index.php/Arch_Linux_(%D8%A6%DB%87%D9%8A%D8%BA%DB%87%D8%B1%DA%86%DB%95) "Arch Linux (ئۇيغۇرچە)")
 
 	Arch Linux ھەققىدە：Arch Linux نېمە،نېملەرنى قىلىدۇ،قانداق ئەۋزەللىكى بار؟
 

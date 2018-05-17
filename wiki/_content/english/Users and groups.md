@@ -39,7 +39,7 @@ Users may be grouped together into a "group", and users may be added to an exist
 
 ## Permissions and ownership
 
-From [In UNIX Everything is a File](https://web.archive.org/web/20150110114929/http://ph7spot.com:80/musings/in-unix-everything-is-a-file):
+From [In UNIX Everything is a File](http://ph7spot.com:80/musings/in-unix-everything-is-a-file):
 
 	The UNIX operating system crystallizes a couple of unifying ideas and concepts that shaped its design, user interface, culture and evolution. One of the most important of these is probably the mantra: "everything is a file," widely regarded as one of the defining points of UNIX.
 

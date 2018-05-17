@@ -15,6 +15,7 @@ Related articles
     *   [3.1 EAP-PWD](#EAP-PWD)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
+    *   [4.2 Deny console (local) user from modifying the settings](#Deny_console_.28local.29_user_from_modifying_the_settings)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -124,7 +125,42 @@ Create / edit file `/var/lib/iwd/*network*.*type*`, where *network* is network S
 ```
 [Settings]
 Autoconnect=false
+
 ```
+
+### Deny console (local) user from modifying the settings
+
+By default `iwd` D-Bus interface allows *any* console user to connect to `iwd` daemon and modify the settings, even if that user is not a *root* user.
+
+If you do not want to allow console user to modify the settings but allow reading the status information, then create a D-Bus configuration file as follows.
+
+ `/etc/dbus-1/system.d/iwd-strict.conf` 
+```
+<!-- prevent local users from changing iwd settings, but allow
+     reading status information. overrides some part of
+     /usr/share/dbus-1/system.d/iwd-dbus.conf. -->
+
+<!-- This configuration file specifies the required security policies
+     for iNet Wireless Daemon to work. -->
+
+<!DOCTYPE busconfig PUBLIC "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+<busconfig>
+
+  <policy at_console="true">
+    <deny send_destination="net.connman.iwd"/>
+    <allow send_destination="net.connman.iwd" send_interface="org.freedesktop.DBus.Properties" send_member="GetAll" />
+    <allow send_destination="net.connman.iwd" send_interface="org.freedesktop.DBus.Properties" send_member="Get" />
+    <allow send_destination="net.connman.iwd" send_interface="org.freedesktop.DBus.ObjectManager" send_member="GetManagedObjects" />
+    <allow send_destination="net.connman.iwd" send_interface="net.connman.iwd.Device" send_member="RegisterSignalLevelAgent" />
+    <allow send_destination="net.connman.iwd" send_interface="net.connman.iwd.Device" send_member="UnregisterSignalLevelAgent" />
+  </policy>
+
+</busconfig>
+
+```
+
+**Tip:** Remove *<allow>* lines above to deny reading the status information as well.
 
 ## See also
 

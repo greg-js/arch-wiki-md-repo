@@ -1,11 +1,12 @@
 Related articles
 
 *   [Android tethering](/index.php/Android_tethering "Android tethering")
+*   [Android Debug Bridge](/index.php/Android_Debug_Bridge "Android Debug Bridge")
 
 ## Contents
 
-*   [1 Exploring Android device](#Exploring_Android_device)
-*   [2 Android development](#Android_development)
+*   [1 Transferring files](#Transferring_files)
+*   [2 App development](#App_development)
     *   [2.1 Android Studio](#Android_Studio)
     *   [2.2 Manual SDK installation](#Manual_SDK_installation)
         *   [2.2.1 Android SDK core components](#Android_SDK_core_components)
@@ -14,16 +15,8 @@ Related articles
     *   [2.3 Other IDEs](#Other_IDEs)
         *   [2.3.1 Netbeans](#Netbeans)
         *   [2.3.2 Eclipse](#Eclipse)
-    *   [2.4 Android Debug Bridge](#Android_Debug_Bridge)
-        *   [2.4.1 Connect device](#Connect_device)
-        *   [2.4.2 Figure out device IDs](#Figure_out_device_IDs)
-        *   [2.4.3 Adding udev Rules](#Adding_udev_Rules)
-        *   [2.4.4 Configuring adb](#Configuring_adb)
-        *   [2.4.5 Detect the device](#Detect_the_device)
-        *   [2.4.6 General usage](#General_usage)
-        *   [2.4.7 Notes & Troubleshooting](#Notes_.26_Troubleshooting)
-    *   [2.5 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
-*   [3 Building Android](#Building_Android)
+    *   [2.4 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
+*   [3 Building](#Building)
     *   [3.1 Required packages](#Required_packages)
     *   [3.2 Java Development Kit](#Java_Development_Kit)
     *   [3.3 Setting up the build environment](#Setting_up_the_build_environment)
@@ -31,46 +24,42 @@ Related articles
     *   [3.5 Building the code](#Building_the_code)
     *   [3.6 Testing the build](#Testing_the_build)
     *   [3.7 Creating a Flashable Image](#Creating_a_Flashable_Image)
-*   [4 Restoring Android](#Restoring_Android)
+*   [4 Flashing](#Flashing)
     *   [4.1 Fastboot](#Fastboot)
     *   [4.2 Samsung devices](#Samsung_devices)
         *   [4.2.1 Heimdall](#Heimdall)
         *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
-*   [5 Connection software](#Connection_software)
-*   [6 Tips & Tricks](#Tips_.26_Tricks)
-    *   [6.1 During Debugging "Source not found"](#During_Debugging_.22Source_not_found.22)
-    *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_.27failed_to_load.27.)
-    *   [7.2 Android Studio: 'failed to create the SD card'](#Android_Studio:_.27failed_to_create_the_SD_card.27)
-    *   [7.3 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
-    *   [7.4 libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed](#libGL_error:_failed_to_load_driver:_swrast_OR_AVD_doesn.27t_load_and_no_error_message_displayed)
-    *   [7.5 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
-    *   [7.6 Android Emulator: no keyboard input in xfwm4](#Android_Emulator:_no_keyboard_input_in_xfwm4)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_.27failed_to_load.27.)
+    *   [5.2 Android Studio: 'failed to create the SD card'](#Android_Studio:_.27failed_to_create_the_SD_card.27)
+    *   [5.3 Eclipse: During Debugging "Source not found"](#Eclipse:_During_Debugging_.22Source_not_found.22)
+    *   [5.4 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
+    *   [5.5 libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed](#libGL_error:_failed_to_load_driver:_swrast_OR_AVD_doesn.27t_load_and_no_error_message_displayed)
+    *   [5.6 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
+    *   [5.7 Android Emulator: no keyboard input in xfwm4](#Android_Emulator:_no_keyboard_input_in_xfwm4)
 
-## Exploring Android device
+## Transferring files
 
-When you connect a modern Android device via USB to a computer you can use the [Media Transfer Protocol](/index.php/Media_Transfer_Protocol "Media Transfer Protocol") to transfer files and [#Android Debug Bridge](#Android_Debug_Bridge) to debug it.
+To transfer files between your computer and an Android device via USB you can use:
 
-Files can generally be transferred with various protocols ([SSH](/index.php/SSH "SSH"), [FTP](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"), [Samba](/index.php/Samba "Samba"), HTTP). You just need to setup a client and a server (via apps Android can act as either one).
+*   [Media Transfer Protocol](/index.php/Media_Transfer_Protocol "Media Transfer Protocol") for modern Android devices
+*   [USB Mass Storage mode](https://www.howtogeek.com/192732/android-usb-connections-explained-mtp-ptp-and-usb-mass-storage/) for older devices
+*   the [Android Debug Bridge](/index.php/Android_Debug_Bridge "Android Debug Bridge")
 
-For flashing and restoring Android firmware see [#Restoring Android](#Restoring_Android).
+Otherwise files can be transferred with various protocols ([SSH](/index.php/SSH "SSH"), [FTP](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"), [Samba](/index.php/Samba "Samba"), HTTP). You just need to setup a client and a server (via apps Android can act as either one).
 
-See [#Connection software](#Connection_software) for software available for Arch Linux that can be used to connect to Android.
+File sharing apps which have a Linux counterpart are:
 
-## Android development
+*   [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
+*   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
 
-To develop Android applications you need three things:
+## App development
 
-*   the Android SDK core component
-*   one or several Android SDK Platform packages
-*   an IDE
-
-The official IDE for Android is [#Android Studio](#Android_Studio), which comes with its own SDK manager.
+The officially supported way to build Android apps is to use [#Android Studio](#Android_Studio)[[1]](https://developer.android.com/training/basics/firstapp/creating-project), for manual SDK installation see [#Manual SDK installation](#Manual_SDK_installation).
 
 ### Android Studio
 
-[Android Studio](https://developer.android.com/studio/index.html) is the official Android development environment based on [IntelliJ Idea](https://www.jetbrains.com/idea/). It provides integrated Android developer tools for development and debugging.
+[Android Studio](https://developer.android.com/studio/index.html) is the official Android development environment based on [IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA "wikipedia:IntelliJ IDEA"). It provides integrated Android developer tools for development and debugging.
 
 You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API).
 
@@ -89,6 +78,12 @@ export ANDROID_HOME=/opt/android-sdk
 ### Manual SDK installation
 
 If you are using [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you can skip this section.
+
+To develop Android applications you need three things:
+
+*   the Android SDK core component
+*   one or several Android SDK Platform packages
+*   an IDE
 
 #### Android SDK core components
 
@@ -145,7 +140,7 @@ $ newgrp sdkusers
 Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
 
 *   [android-platform](https://aur.archlinux.org/packages/android-platform/) – the latest API
-*   the [AUR](/index.php/AUR "AUR") also contains older APIs[[1]](https://aur.archlinux.org/packages/?K=android-platform-)
+*   the [AUR](/index.php/AUR "AUR") also contains [older APIs](https://aur.archlinux.org/packages/?K=android-platform-)
 
 #### Android System Images
 
@@ -182,142 +177,16 @@ Enter the path to the Android SDK Location in *Windows > Preferences > Android*.
 
 **Note:** If the plugins do not show up in Eclipse after the AUR package has been upgraded, then eclipse probably has out-of-date caches. Running `sudo eclipse -clean` once should clear them. If the problem persists, uninstall eclipse and all the plugins, delete `/usr/share/eclipse`, and reinstall everything.
 
-### Android Debug Bridge
-
-**Tip:**
-
-*   For some devices, you may have to enable MTP on the device, before ADB will work. Some other devices require enable PTP mode to work.
-*   Many devices' udev rules are included in [libmtp](https://www.archlinux.org/packages/?name=libmtp), so if you have this installed, the following steps may not be necessary.
-*   Make sure your USB cable is capable of both charge and data. Many USB cables bundled with mobile devices do not include the USB data pin.
-
-#### Connect device
-
-To connect to a real device or phone via ADB under Arch, you must:
-
-1.  Install [android-tools](https://www.archlinux.org/packages/?name=android-tools). In addition, you might want to install [android-udev](https://www.archlinux.org/packages/?name=android-udev) if you wish to connect the device to the proper `/dev/` entries.
-2.  plug in your android device via USB.
-3.  Enable USB Debugging on your phone or device:
-    *   Jelly Bean (4.2) and newer: Go to *Settings > About Phone* tap *Build Number* 7 times until you get a popup that you have become a developer. Then go to *Settings > Developer > USB debugging* and enable it. The device will ask to allow the computer with its fingerprint to connect. allowing it permanent will copy `$HOME/.android/adbkey.pub` onto the devices `/data/misc/adb/adb_keys` folder.
-    *   Older versions: This is usually done from *Settings > Applications > Development > USB debugging*. Reboot the phone after checking this option to make sure USB debugging is enabled.
-
-If [ADB recognizes your device](#Detect_the_device) (`adb devices` shows it as `"device" and not as "unauthorized"`, or it is visible and accessible in IDE), you are done. Otherwise see instructions below.
-
-#### Figure out device IDs
-
-Each Android device has a USB vendor/product ID. An example for HTC Evo is:
-
-```
-vendor id: 0bb4
-product id: 0c8d
-
-```
-
-Plug in your device and execute:
-
-```
-$ lsusb
-
-```
-
-It should come up something like this:
-
-```
-Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
-
-```
-
-#### Adding udev Rules
-
-Use the rules from [android-udev](https://www.archlinux.org/packages/?name=android-udev) (or [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/)), install them manually from [Android developer](https://source.android.com/source/initializing#configuring-usb-access), or use the following template for your [udev rules](/index.php/Udev_rules "Udev rules"), just replace `[VENDOR ID]` and `[PRODUCT ID]` with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
-
- `/etc/udev/rules.d/51-android.rules` 
-```
-SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0660", GROUP="adbusers"
-SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"
-SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_fastboot"
-
-```
-
-Then, to reload your new udev rules, execute:
-
-```
-# udevadm control --reload-rules
-
-```
-
-Make sure you are member of `adbusers` [group](/index.php/Group "Group") to access `adb` devices.
-
-#### Configuring adb
-
-Instead of using udev rules, you may create/edit `~/.android/adb_usb.ini` which contains a list of vendor IDs.
-
- `~/.android/adb_usb.ini` 
-```
-0x27e8
-
-```
-
-#### Detect the device
-
-After you have setup the udev rules, unplug your device and replug it.
-
-After running:
-
-```
-$ adb devices
-
-```
-
-you should see something like:
-
-```
-List of devices attached 
-HT07VHL00676    device
-
-```
-
-#### General usage
-
-You can now use adb to transfer files between the device and your computer. To transfer files to the device, use
-
-```
-$ adb push *<what-to-copy>* *<where-to-place>*
-
-```
-
-To transfer files from the device, use
-
-```
-$ adb pull *<what-to-pull>* *<where-to-place>*
-
-```
-
-#### Notes & Troubleshooting
-
-*   **ADB** can also be installed via [platform tools](#Android_SDK_platform_API) (usually available in `/opt/android-sdk/platform-tools/`), so it might not be necessary to install [android-tools](https://www.archlinux.org/packages/?name=android-tools) (available in `/usr/bin/`).
-
-*   If you are getting an empty list (your device is not there), it may be because you have not enabled USB debugging on your device. You can do that by going to *Settings > Applications > Development* and enabling USB debugging. On Android 4.2 (Jelly Bean) the Development menu is hidden; to enable it go to *Settings > About phone* and tap Build number 7 times.
-
-*   If there are still problems such as *adb* displaying `???????? no permissions` under devices, try restarting the adb server as root.
-
-```
-# adb kill-server
-# adb start-server
-
-```
-
-*   On Moto E, the device could have a different vendor/product ID in the sideload and fastboot modes; if you get the "no permission" error, verify the device's ID with `lsusb`.
-
 ### NVIDIA Tegra platform
 
-If you target your application at NVIDIA Tegra platform, you might also want to install tools, samples and documentation provided by NVIDIA. In [NVIDIA Developer Zone for Mobile](http://developer.nvidia.com/category/zone/mobile-development) there are two tools:
+If you target your application at [NVIDIA Tegra platform](https://developer.nvidia.com/tegra-development), you might also want to install tools, samples and documentation provided by NVIDIA. In [NVIDIA Developer Zone for Mobile](http://developer.nvidia.com/category/zone/mobile-development) there are two tools:
 
 1.  The [Tegra Android Development Pack](http://developer.nvidia.com/tegra-resources) provides tools (NVIDIA Debug Manager) related to [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html) and their documentation.
 2.  The [Tegra Toolkit](http://developer.nvidia.com/tegra-resources) provides tools (mostly CPU and GPU optimization related), samples and documentation.
 
 Both are currently not available in the [AUR](/index.php/AUR "AUR") anymore, because NVIDIA requires a registration/login for the download.
 
-## Building Android
+## Building
 
 Please note that these instructions are based on the [official AOSP build instructions](https://source.android.com/source/building). Other Android-derived systems such as LineageOS will often require extra steps.
 
@@ -474,13 +343,13 @@ make -j8 updatepackage
 
 This will create a zip image under `**out/target/product/hammerhead**` (hammerhead being the device name) that can be flashed.
 
-## Restoring Android
+## Flashing
 
 In some cases, you want to return to the stock Android after flashing custom ROMs to your Android mobile device. For flashing instructions of your device, please use [XDA forums](http://forum.xda-developers.com/).
 
 ### Fastboot
 
-Fastboot (as well as [ADB](#Android_Debug_Bridge)) is included in the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package.
+Fastboot (as well as [ADB](/index.php/ADB "ADB")) is included in the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package.
 
 **Note:** Restoring firmwares using `fastboot` can be quite tricky, but you might want to browse [XDA developers forums](http://www.xda-developers.com/) for a stock firmware, which is mostly a `*.zip` file, but inside of it, comes with the firmware files and `flash-all.sh` script. For example, [Google Nexus](https://developers.google.com/android/nexus/images) firmwares include `flash-all.sh` script or another example could be for OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541), where you can find firmwares with included `flash-all.sh` script.
 
@@ -526,23 +395,6 @@ Check if configuration is working:
 
 which means that your device is visible to Odin & Windows operating system and is ready to be flashed.
 
-## Connection software
-
-*   [adb-sync](https://github.com/google/adb-sync) (available as [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) – a tool to synchronize files between a PC and an Android device using the ADB protocol.
-*   [AndroidScreencast](http://xsavikx.github.io/AndroidScreencast) (available as [androidscreencast-bin](https://aur.archlinux.org/packages/androidscreencast-bin/)) – view and control your Android device from a PC (via ADB).
-*   [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
-*   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
-
-## Tips & Tricks
-
-### During Debugging "Source not found"
-
-Most probably the debugger wants to step into the Java code. As the source code of Android does not come with the Android SDK, this leads to an error. The best solution is to use step filters to not jump into the Java source code. Step filters are not activated by default. To activate them: *Window > Preferences > Java > Debug > Step Filtering*. Consider to select them all. If appropriate you can add the android.* package. See the forum post for more information: [http://www.eclipsezone.com/eclipse/forums/t83338.rhtml](http://www.eclipsezone.com/eclipse/forums/t83338.rhtml)
-
-### Linux distribution on the sdcard
-
-You can install Debian like in this [thread](http://forum.xda-developers.com/showthread.php?t=631389). Excellent guide to installing Arch in chroot (in parallel with Android) can be found on [archlinuxarm.org forum](http://archlinuxarm.org/forum/viewtopic.php?f=27&t=1361&start=40).
-
 ## Troubleshooting
 
 ### Android Studio: Android Virtual Devices show 'failed to load'.
@@ -552,6 +404,10 @@ Make sure you've exported the variable `ANDROID_HOME` as explained in [#Android 
 ### Android Studio: 'failed to create the SD card'
 
 If you try to run an AVD (Android Virtual Device) under x86_64 Arch and get the error above, install the [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) package from the [Multilib](/index.php/Multilib "Multilib") repository.
+
+### Eclipse: During Debugging "Source not found"
+
+Most probably the debugger wants to step into the Java code. As the source code of Android does not come with the Android SDK, this leads to an error. The best solution is to use step filters to not jump into the Java source code. Step filters are not activated by default. To activate them: *Window > Preferences > Java > Debug > Step Filtering*. Consider to select them all. If appropriate you can add the android.* package. See the forum post for more information: [http://www.eclipsezone.com/eclipse/forums/t83338.rhtml](http://www.eclipsezone.com/eclipse/forums/t83338.rhtml)
 
 ### ValueError: unsupported pickle protocol
 

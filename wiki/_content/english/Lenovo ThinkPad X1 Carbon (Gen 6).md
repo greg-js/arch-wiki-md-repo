@@ -160,7 +160,7 @@ Reboot and check with:
 
 On the 20KG model, the Touchpad(Synaptics) and TrackPoint(Elantech) do not work together, one has to disable the TrackPoint in BIOS to get the Touchpad to work reliably out of the box. The root of the issue seems to be that the default loading of the TrackPoint via ancient PS/2 drivers conflicts with Touchpad loading. Synaptics has introduced a new way of doing things named RMI(4) that fixes some those issues. Further explanation is collected [in this thread](https://bbs.archlinux.org/viewtopic.php?id=236367).
 
-Then add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
+As a workaround, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 
 ```
  [...] root=/dev/sda1 rw psmouse.synaptics_intertouch=1 [...]
@@ -170,7 +170,7 @@ Then add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Ke
 or by editing `/etc/modprobe.d/psmouse.conf`:
 
 ```
- psmouse synaptics_intertouch=1
+ options psmouse synaptics_intertouch=1
 
 ```
 

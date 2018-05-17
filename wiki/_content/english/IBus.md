@@ -34,7 +34,7 @@ Related articles
 
 Install the [ibus](https://www.archlinux.org/packages/?name=ibus) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Additionally, to enable IBus for Qt applications, install the [ibus-qt](https://www.archlinux.org/packages/?name=ibus-qt) library.
+Additionally, to smooth the typing experience of IBus for Qt applications, please install the [ibus-qt](https://www.archlinux.org/packages/?name=ibus-qt) library with provides IM modules to replace XIM protocol.
 
 ### Input method engines
 

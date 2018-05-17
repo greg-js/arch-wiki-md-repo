@@ -428,6 +428,15 @@ To let the tool generate a hostid:
 
 Don't forget to regenerate your image using [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). Your system should work and reboot properly now.
 
+On some machines the export of the pool on shutdown sometimes fails. If your pool is only used from *exactly one* machine (no danger of accidently simultaneously importing it on two different machines), it is safe to add
+
+```
+zfs_force=1
+
+```
+
+to your kernel options, which forces the import of the pool.
+
 ## Native encryption
 
 **Warning:** Encryption does not exist in a stable release, yet. So do this at you own risk, since it might break.

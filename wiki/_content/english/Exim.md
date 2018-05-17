@@ -1,3 +1,10 @@
+Related articles
+
+*   [Postfix](/index.php/Postfix "Postfix")
+*   [Dovecot](/index.php/Dovecot "Dovecot")
+*   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
+*   [Fail2ban](/index.php/Fail2ban "Fail2ban")
+
 This article gives a quick overview on the configuration of an exim mail server.
 
 [Exim](http://exim.org/) is a versatile [SMTP](https://en.wikipedia.org/wiki/SMTP "wikipedia:SMTP") server for Linux/UNIX-like systems. While the [exim wiki](https://github.com/Exim/exim/wiki/) provides some helpful how-to's on certain specific use cases, a [detailed description](https://exim.org/exim-html-current/doc/html/spec_html/index.html) of all configuration options is available as well.
@@ -7,14 +14,14 @@ This article gives a quick overview on the configuration of an exim mail server.
 *   [1 Installation](#Installation)
 *   [2 Basic configuration](#Basic_configuration)
     *   [2.1 Main parameters](#Main_parameters)
-    *   [2.2 TLS, security & authentification](#TLS.2C_security_.26_authentification)
+    *   [2.2 TLS, security & authentication](#TLS.2C_security_.26_authentication)
     *   [2.3 Routing, transport & retry](#Routing.2C_transport_.26_retry)
         *   [2.3.1 Use manualroute](#Use_manualroute)
     *   [2.4 ACL: Access Control Lists](#ACL:_Access_Control_Lists)
     *   [2.5 Hide machine name](#Hide_machine_name)
     *   [2.6 Startup](#Startup)
 *   [3 Advanced ACL configuration](#Advanced_ACL_configuration)
-*   [4 Dovecot LMTP delivery & SASL authentification](#Dovecot_LMTP_delivery_.26_SASL_authentification)
+*   [4 Dovecot LMTP delivery & SASL authentication](#Dovecot_LMTP_delivery_.26_SASL_authentication)
 *   [5 DKIM & DNSSEC](#DKIM_.26_DNSSEC)
 *   [6 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
 *   [7 Hardening](#Hardening)
@@ -60,11 +67,11 @@ timeout_frozen_after = 7d
 
 ```
 
-### TLS, security & authentification
+### TLS, security & authentication
 
-The first part of the following options are still part of the first configuration section in exim. Starting with "begin authenticators" the first special section in exim configuration begins. There will be more such sections later. Below some very basic security related options are defined, TLS is set up & a plain text authentificatior using a user password lookup is introduced.
+The first part of the following options are still part of the first configuration section in exim. Starting with "begin authenticators" the first special section in exim configuration begins. There will be more such sections later. Below some very basic security related options are defined, TLS is set up & a plain text authenticator using a user password lookup is introduced.
 
-**Warning:** This example of an authentificator should not be used in production enviroment!
+**Warning:** This example of an authenticator should not be used in production enviroment!
 
 ```
 # actually not required: it's hard coded - anyway: no mail delivery to root
@@ -89,16 +96,16 @@ tls_require_ciphers = ${if =={$received_port}{25} \
 begin authenticators
 
 	PLAIN:
-		# authentification protocol is plain text
+		# authentication protocol is plain text
 		driver = plaintext
-		# authentification is offered as plain text
+		# authentication is offered as plain text
 		public_name = PLAIN
 		server_prompts = :
-		# authentification is successful, if the password provided ($auth3) 
+		# authentication is successful, if the password provided ($auth3) 
 		# equals the password found in a lookup file for user ($auth2)
 		server_condition = ${if eq{$auth3}{${lookup{$auth2}dbm{/etc/authpwd}}}}
 		server_set_id = $auth2
-		# only offer plain text authentification after TLS is been negotiated
+		# only offer plain text authentication after TLS is been negotiated
 		server_advertise_condition = ${if def:tls_in_cipher}
 
 ```
@@ -158,7 +165,7 @@ begin retry
 
 #### Use manualroute
 
-If you wang to use manualroute instead, comment out the dnslookup block and add the smarthost block.
+If you want to use manualroute instead, comment out the dnslookup block and add the smarthost block.
 
 ```
 #dnslookup:
@@ -186,13 +193,13 @@ smarthost:
 
 Access Control Lists are at the heart of exim. They are required for basic checks and may be used for sophisticated message processing. In general the overal message processing in exim is:
 
- `connection > (authentification >) ACL > routing > transport` 
+ `connection > (authentication >) ACL > routing > transport` 
 
 With this it is important to note that messages coming from authenticated clients are treated (by default) by the same ACL as messages coming from other mail servers. Exim know a full set of [different ACL](https://www.exim.org/exim-html-current/doc/html/spec_html/ch-access_control_lists.html). Good knowledge of the SMTP protocol is required to choose the correct set of ACL.
 
  `acl_smtp_connect > acl_smtp_helo > ... > acl_smtp_rcpt > ... > acl_smtp_data > ...` 
 
-For a basic setup two ACL are mandatory: acl_smtp_rcpt and acl_smtp_data. These are default to deny while all other default to accept. The example below just prevents being an open relay. This setup has multiple security flaws (e.g. all authentificated users may use any mail address). If added to an existing configuration, it must be added before any other special section (i.e. before any existing "begin").
+For a basic setup two ACL are mandatory: acl_smtp_rcpt and acl_smtp_data. These are default to deny while all other default to accept. The example below just prevents being an open relay. This setup has multiple security flaws (e.g. all authenticated users may use any mail address). If added to an existing configuration, it must be added before any other special section (i.e. before any existing "begin").
 
 **Warning:** Don't use the following example in a production example! It lacks several required checks!
 
@@ -209,7 +216,7 @@ begin acl
 		# accept all messages for which I am the receiving mail host
 		accept 	domains = +local_domains
 
-		# accept all messages from authetificated clients
+		# accept all messages from authenticated clients
 		accept	authenticated = *
 
 		# deny all other messages (i.e. messages to be relayed from unauthorized
@@ -242,9 +249,9 @@ where `*machine*` is the hostname of your laptop or PC and `*mydomain*` is the d
 
 ## Advanced ACL configuration
 
-## Dovecot LMTP delivery & SASL authentification
+## Dovecot LMTP delivery & SASL authentication
 
-In this section the integration of [Dovecot](/index.php/Dovecot "Dovecot") is described. It is assumed that Dovecot & Exim are already setup and configured. Dovecot will serve as SASL authentificator and local transport mechanism. For this purpose the Dovecot services will be setup as follows.
+In this section the integration of [Dovecot](/index.php/Dovecot "Dovecot") is described. It is assumed that Dovecot & Exim are already setup and configured. Dovecot will serve as SASL authenticator and local transport mechanism. For this purpose the Dovecot services will be setup as follows.
 
  `/etc/dovecot/conf.d/10-master.conf` 
 ```
@@ -269,7 +276,7 @@ service lmtp {
 
 ```
 
-To use the dovecot SASL in a TLS protected enviroment, add the following authentificator to exim.
+To use the dovecot SASL in a TLS protected enviroment, add the following authenticator to exim.
 
  `/etc/mail/exim.conf - authenticators section` 
 ```

@@ -187,5 +187,5 @@ These distributions are no longer developed, but show some of the history surrou
 
 ## See also
 
-*   [w:Arch_Linux#Derivatives](https://en.wikipedia.org/wiki/Arch_Linux#Derivatives "w:Arch Linux")
+*   [Wikipedia:Arch Linux#Derivatives](https://en.wikipedia.org/wiki/Arch_Linux#Derivatives "wikipedia:Arch Linux")
 *   [DistroWatch distributions based on Arch](https://distrowatch.com/search.php?&basedon=Arch&status=All#simple)

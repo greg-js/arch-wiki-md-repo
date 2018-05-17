@@ -57,17 +57,21 @@ Related articles
 
 mpv comes with a minimal GUI called On Screen Controller *(OSC)*, that appears when moving the mouse. There are also other front ends available:
 
-*   **Baka MPlayer** — Free and open source, cross-platform, *libmpv* based multimedia player (Qt 5).
+*   **Baka MPlayer** — Free and open source, cross-platform, *mpv* based multimedia player (Qt 5).
 
-	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
+	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer)
+
+*   **Deepin Movie** — Movie player for Deepin desktop based on *mpv*.
+
+	[https://github.com/linuxdeepin/deepin-movie-reborn](https://github.com/linuxdeepin/deepin-movie-reborn) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
 
 *   **GNOME MPV** — A simple frontend for *mpv* (GTK+ 3).
 
-	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
+	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
 
 *   **Media Player Classic Qute Theater** — A clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt.
 
-	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/), [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
+	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/)
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
 
@@ -75,7 +79,7 @@ mpv comes with a minimal GUI called On Screen Controller *(OSC)*, that appears w
 
 *   **xt7-player-mpv** — Qt/Gambas GUI to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
 
-	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
+	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv](https://aur.archlinux.org/packages/xt7-player-mpv/)
 
 ## Configuration
 
@@ -294,7 +298,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking in the [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
-The default video output driver, `opengl`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
+The default video output driver, `gpu`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
 
 Even with hardware decoding enabled, it will only be used for [some codecs](https://mpv.io/manual/stable/#options-hwdec-codecs) by default. In order to use hardware decoding with all codecs set `hwdec-codecs=all`. It is also possible to specify an exact list of codecs for which you want hardware decoding to be used (provided it has been enabled) by setting `--hwdec-codecs=h264,mpeg2video`.
 
@@ -302,7 +306,7 @@ Even with hardware decoding enabled, it will only be used for [some codecs](http
 
 Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
 
-To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
+To make *mpv* use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
 
 ### Save position on quit
 
@@ -345,7 +349,7 @@ It may be useful to hide the GUI window for video files. This can be done by usi
 
 ### Restoring old OSC
 
-Since version 0.21.0, mpv has replaced the on-screen controls by a bottombar. In case you want on-screen controls back, you can edit the mpv configuration [as described here](https://github.com/mpv-player/mpv/wiki/FAQ#i-want-the-old-osc-back).
+Since version 0.21.0, *mpv* has replaced the on-screen controls by a bottombar. In case you want on-screen controls back, you can edit the *mpv* configuration [as described here](https://github.com/mpv-player/mpv/wiki/FAQ#i-want-the-old-osc-back).
 
 ### Use as a browser plugin
 
@@ -357,11 +361,11 @@ It may be needed to specify a valid user agent for HTTP streaming, e.g. `user-ag
 
 ### Improving mpv as a music player with Lua scripts
 
-The development of mpv's Lua scripts are documented in [DOCS/man/lua.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst) and examples are shown in [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) of the [mpv repository](https://github.com/mpv-player/mpv). [This blog post](https://web.archive.org/web/20160320001546/http://bamos.github.io/2014/07/05/mpv-lua-scripting/) introduces the [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/scripts/music.lua) script, which shows how Lua scripts can be used to improve mpv as a music player.
+The development of *mpv'*s Lua scripts are documented in [DOCS/man/lua.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst) and examples are shown in [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) of the [mpv repository](https://github.com/mpv-player/mpv). [This blog post](https://web.archive.org/web/20160320001546/http://bamos.github.io/2014/07/05/mpv-lua-scripting/) introduces the [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/scripts/music.lua) script, which shows how Lua scripts can be used to improve mpv as a music player.
 
 ### Twitch.tv streaming over mpv
 
-If [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) is installed, mpv can directly open a Twitch livestream.
+If [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) is installed, *mpv* can directly open a Twitch livestream.
 
 Alternatively, see [Streamlink#Twitch](/index.php/Streamlink#Twitch "Streamlink").
 
@@ -405,7 +409,7 @@ function mm() {
 
 ### Use mpv with a compositor
 
-If you are using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when mpv is playing a video, try `x11-bypass-compositor=no`
+If you are using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when *mpv* is playing a video, try `x11-bypass-compositor=no`
 
 ### Creating a single screenshot
 
@@ -420,7 +424,7 @@ Screenshots will be saved in /path/to/screenshot.png.
 
 ### GNOME Blank screen (Wayland)
 
-MPV may not suspend GNOME's Power Saving Settings if using Wayland (resulting in screen saver turning off the monitor while video is playing for example). A workaround is to add `gnome-session-inhibit` to the beginning of the `Exec=` line in `mpv.desktop`.
+*mpv* may not suspend GNOME's Power Saving Settings if using Wayland (resulting in screen saver turning off the monitor while video is playing for example). A workaround is to add `gnome-session-inhibit` to the beginning of the `Exec=` line in `mpv.desktop`.
 
 ## Troubleshooting
 
@@ -428,10 +432,10 @@ MPV may not suspend GNOME's Power Saving Settings if using Wayland (resulting in
 
 If you are having trouble with *mpv'*s playback (or if it's flat out failing to run) then the first three things you should do are:
 
-1.  Run *mpv* from the command line. If you are lucky there will be an error message there telling you what is wrong.
-    `$ mpv video.mkv`
+1.  Run *mpv* from the command line (the -v flag increases verbosity). If you are lucky there will be an error message there telling you what is wrong.
+    `$ mpv -v video.mkv`
 2.  Have *mpv* output a log file. The log file might be difficult to sift through but if something is broken you might see it there.
-    `$ mpv --log-file=./log video.mkv`
+    `$ mpv -v --log-file=./log video.mkv`
 3.  Run *mpv* without a configuration. If this runs well then the problem is somewhere in your configuration (perhaps your hardware cannot keep up with your settings).
     `$ mpv --no-config video.mkv`
 

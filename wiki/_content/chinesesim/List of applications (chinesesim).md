@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [List_of_applications](/index.php/List_of_applications "List of applications") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-20，点击[这里](https://wiki.archlinux.org/index.php?title=List_of_applications&diff=0&oldid=396023)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [List_of_applications](/index.php/List_of_applications "List of applications") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-17，点击[这里](https://wiki.archlinux.org/index.php?title=List_of_applications&diff=0&oldid=503013)可以查看翻译后英文页面的改动。
 
 **[常用程序](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")**
 
@@ -5170,17 +5170,41 @@ See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wi
 
 ## 参见
 
-*   [终端中的应用列表，包含截图和评论](http://kmandla.wordpress.com/software/)
+**通用的软件列表**
+
+*   [自由及开放源代码](https://zh.wikipedia.org/zh-hans/%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8)
+*   [GNU软件包列表](https://zh.wikipedia.org/wiki/GNU%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%88%97%E8%A1%A8)
+*   [自由软件](https://zh.wikipedia.org/zh/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6)
+*   [alternativeto.net](https://alternativeto.net/platform/linux/) - Linux 下的流行软件替代品*
+*   [Linux App Finder](https://linuxappfinder.com/all) - Linux 应用目录
+*   [Debian 软件包](https://packages.debian.org) 和 [屏幕截图](https://screenshots.debian.net)
+*   [Linux Alternative Project](http://www.linuxalt.com/) - 适用于 Linux 的 Windows 应用替代品
+*   [Open Source Alternative](https://www.osalt.com/) - 商业软件的开源替代
+*   [Linux Links](http://www.linuxlinks.com/) - 软件和文章列表
+
+**Software [forges](https://en.wikipedia.org/wiki/Forge_(software) "wikipedia:Forge (software)")**
+
+*   [Sourceforge.net](https://sourceforge.net/) - Open Source Software forge
+*   [Launchpad.net](https://launchpad.net/projects/+all) - Open Source Software forge
+*   [Gitlab.com](https://gitlab.com/explore) - Open Source Software forge
+*   [GitHub.com](https://github.com/explore**) - Open Source Software forge
+
+**专业软件列表**
+
+*   [K.Mandla's blog](https://kmandla.wordpress.com/software/) - 终端中的应用列表，包含截图和评论
+*   [Inconsolation](https://inconsolation.wordpress.com/index/) - 轻量和极简的软件
+*   [awesome-shell](https://github.com/alebcay/awesome-shell) - 命令行框架，工具箱和指引
+*   [awesome-selfhosted](https://github.com/Kickball/awesome-selfhosted) - 可自行部署的网络应用列表
+*   [Libre Projects](http://libreprojects.net/) - 开源的托管应用
+*   [awesome-sysadmin](https://github.com/n1trux/awesome-sysadmin) - 适用于系统管理员的应用
+*   [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) - 适用于生产音频，视频和直播的应用
+*   [PRISM Break](https://prism-break.org/en/all/) - 抵制监视的软件
+*   [Privacy Tools](https://www.privacytools.io/) - 保护您的隐私免受全球大规模监视的工具
+*   [lin-app.com](http://lin-app.com/) - 适用于 Linux 的商业应用和游戏
+
+**Arch Linux 论坛主题**
+
 *   [Arch Linux Forums / LnF Awards 2011](https://bbs.archlinux.org/viewtopic.php?id=111878) - 2011 年度最佳轻量程序。
 *   [Arch Linux Forums / LnF Awards 2012](https://bbs.archlinux.org/viewtopic.php?id=138281) - 2012 年度最佳轻量程序。
-*   [Survey: Vote for the most popular apps of 2013-2014](https://bbs.archlinux.org/viewtopic.php?id=174764)
-*   [http://sourceforge.net/](http://sourceforge.net/) 开源软件
-*   [http://www.oschina.net/](http://www.oschina.net/) 开源中国社区
-*   [http://linuxappfinder.com/](http://linuxappfinder.com/)
-*   [http://www.linuxlinks.com/](http://www.linuxlinks.com/)
-*   [Wikipedia:List of open source software packages](https://en.wikipedia.org/wiki/List_of_open_source_software_packages "wikipedia:List of open source software packages")
-*   [http://linuxappfinder.com/alternatives](http://linuxappfinder.com/alternatives) - Windows 和 OS X 软件的替代品
-*   [http://alternativeto.net/](http://alternativeto.net/) - 寻找流行的程序的替代品
-*   [http://www.linuxalt.com/](http://www.linuxalt.com/) - Windows 软件对应的 Linux 软件
-*   [http://lin-app.com/](http://lin-app.com/) - 广大程序与 Linux 游戏的在线信息库
-*   [http://www.osalt.com/](http://www.osalt.com/)
+*   [Arch Linux Forums / most popular apps of 2013-2014](https://bbs.archlinux.org/viewtopic.php?id=174764) - 2013~2014 年最流行应用
+*   [Arch Linux Forums / most popular apps of 2017+](https://bbs.archlinux.org/viewtopic.php?pid=1702332) - 2017 年至今最流行应用

@@ -76,5 +76,5 @@ EndSection
 
 ## See also
 
-*   [Scroll Like A Ninja - Logitech M570 Trackball & Linux Mint](http://dailyherold.net/linux/trackball/m570/2014/10/31/ninja-scrolling-linux-m570-trackball/)
+*   [Scroll Like A Ninja - Logitech M570 Trackball & Linux Mint](https://web.archive.org/web/20171102201106/http://dailyherold.net/linux/trackball/m570/2014/10/31/ninja-scrolling-linux-m570-trackball/)
 *   [Ubuntu documentation](https://help.ubuntu.com/community/Logitech_Marblemouse_USB)

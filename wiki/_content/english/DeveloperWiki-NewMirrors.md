@@ -37,7 +37,7 @@ All other mirrors should sync from one of tier 1 mirrors. Syncing from archlinux
 #### Tier 2 requirements
 
 *   Disk-space >= 60 GB
-*   Sync off a tier 1 mirror (see [https://archlinux.org/mirrors](https://archlinux.org/mirrors))
+*   Sync off a tier 1 mirror (see [https://archlinux.org/mirrors/tier/1/](https://archlinux.org/mirrors/tier/1/))
 *   Sync all contents of the upstream mirror (i.e. do not sync only some repositories)
 *   Do not sync more often than every hour, but you should sync at least once a day
 *   Sync on a random minute so it is more likely the requests will be spaced out with other mirrors
@@ -67,7 +67,7 @@ Go to [https://bugs.archlinux.org](https://bugs.archlinux.org/newtask/proj1) and
 *   An administrative contact email
 *   An alternative administrative contact email (optional)
 *   (tier 1 mirrors) Rsync IPs so your server(s) can be allowed to sync off tier 0 (rsync.archlinux.org)
-*   (tier 2 mirrors) The name of tier 1 mirror you are syncing from. You can find available tier 1 mirrors [here](https://www.archlinux.org/mirrors/) (sort using the tier column)
+*   (tier 2 mirrors) The name of tier 1 mirror you are syncing from. You can find available tier 1 mirrors [here](https://www.archlinux.org/mirrors/tier/1/)
 
 ### Contact info and mailing lists
 

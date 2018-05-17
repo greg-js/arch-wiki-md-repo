@@ -38,6 +38,8 @@ For advanced battery functions, i.e. charge thresholds and recalibration, instal
 
 See the TLP FAQ, section ["Which kernel module?"](http://linrunner.de/en/tlp/docs/tlp-faq.html#kernmod), for details.
 
+Controlling the charge thresholds using D-Bus without root privileges is possible using [threshy](https://aur.archlinux.org/packages/threshy/) and it's example Qt user interface [threshy-gui](https://aur.archlinux.org/packages/threshy-gui/).
+
 ### Graphical interface
 
 [tlpui-git](https://aur.archlinux.org/packages/tlpui-git/) is a GTK user interface for TLP written in Python. Software is currently in beta.
