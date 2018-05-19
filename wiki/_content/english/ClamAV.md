@@ -75,32 +75,15 @@ Otherwise; read the Troubleshooting part or ask for help in the [Arch Forums](ht
 
 ClamAV can use databases/signature from other repositories or security vendors.
 
-To add the most important ones in a single step, install [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/) and configure it in `/etc/clamav-unofficial-sigs/user.conf`.
+To add the most important ones in a single step, install [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/).
 
 This will add signatures/databases from e.g. MalwarePatrol, SecuriteInfo, Yara, Linux Malware Detect, etc. For the full list of databases, [see the description of the GitHub repository](https://github.com/extremeshok/clamav-unofficial-sigs#description).
 
 ### Set up clamav-unofficial-sigs
 
-First, edit the configuration in `/etc/clamav-unofficial-sigs/user.conf`, and change the following line:
-
-```
-# Uncomment the following line to enable the script
-user_configuration_complete="yes"
-
-```
-
-Then [enable](/index.php/Enable "Enable") the `clamav-unofficial-sigs.timer`.
+[Enable](/index.php/Enable "Enable") the `clamav-unofficial-sigs.timer`.
 
 This will regularly update the unofficial signatures based on the configuration files in the directory `/etc/clamav-unofficial-sigs`.
-
-If you prefer a cron job instead of above timer then run this instead:
-
-```
-# clamav-unofficial-sigs.sh --install-cron
-
-```
-
-To stop the cron job from running, delete this file: `/etc/cron.d/clamav-unofficial-sigs`.
 
 To update signatures manually, run the following:
 
@@ -108,6 +91,8 @@ To update signatures manually, run the following:
 # clamav-unofficial-sigs.sh
 
 ```
+
+To change any default settings, refer and modify `/etc/clamav-unofficial-sigs/user.conf`.
 
 **Note:** You still must have the `clamav-freshclam.service` [started](/index.php/Started "Started") in order to have official signature updates from ClamAV mirrors.
 

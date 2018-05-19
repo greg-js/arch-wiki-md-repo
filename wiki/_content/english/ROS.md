@@ -19,7 +19,7 @@ You can install any of the ROS distributions below since they are fully released
 
 Melodic [ros-melodic-desktop-full](https://aur.archlinux.org/packages/ros-melodic-desktop-full/)
 
-Lunar [ros-melodic-desktop-full](https://aur.archlinux.org/packages/ros-melodic-desktop-full/)
+Lunar [ros-lunar-desktop-full](https://aur.archlinux.org/packages/ros-lunar-desktop-full/)
 
 ## Older Versions (Not fully working)
 

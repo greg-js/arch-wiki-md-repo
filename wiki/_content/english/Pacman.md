@@ -454,6 +454,8 @@ To change the installation reason of an already installed package, execute:
 
 Use `--asexplicit` to do the opposite operation.
 
+**Note:** Using `--asdeps` and `--asexplicit` options when upgrading, such as with `pacman -Syu *package_name* --asdeps`, is discouraged. This would change the installation reason of not only the package being installed, but also the packages being upgraded.
+
 ### Search for a package that contains a specific file
 
 Sync the files database:

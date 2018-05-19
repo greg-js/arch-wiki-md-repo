@@ -7,6 +7,7 @@ This page details on how to setup an own Firefox Sync Server and how to configur
 *   [1 Server setup](#Server_setup)
     *   [1.1 Installation](#Installation)
     *   [1.2 Configuration](#Configuration)
+        *   [1.2.1 Database](#Database)
     *   [1.3 Example nginx and uwsgi setup](#Example_nginx_and_uwsgi_setup)
 *   [2 Client configuration](#Client_configuration)
 *   [3 See also](#See_also)
@@ -25,6 +26,29 @@ One file is available to configure a firefox sync server: `/etc/webapps/mozilla-
 ```
 public_url = https://sync.example.com
 sqluri = sqlite:////var/lib/mozilla-firefox-sync-server/syncserver.db
+
+```
+
+#### Database
+
+Other databases can be used as backend for the firefox sync server such as [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") instead of [SQLite](/index.php/SQLite "SQLite"). In order to achieve this it's necesserary to add python packages via pip.
+
+For MySQL `/usr/share/webapps/mozilla-firefox-sync-server/local/bin/pip install PyMySQL` For PostgreSQL `/usr/share/webapps/mozilla-firefox-sync-server/local/bin/pip install psycopg2` 
+
+Then appropriate databases and users must be created in the database engine that will be used.
+
+The syncserver.ini file should also be modified to reflect the change of database and it uses the SQLAlchemy syntax.
+
+For MySQL `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
+```
+[syncserver]
+sqluri = pymysql://username:password@db.example.com/sync
+
+```
+For PostgreSQL `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
+```
+[syncserver]
+sqluri = postgresql://username:password@db.example.com/sync
 
 ```
 

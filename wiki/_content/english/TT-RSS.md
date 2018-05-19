@@ -89,16 +89,16 @@ $ psql ttrss -U ttrss -f /usr/share/webapps/tt-rss/schema/ttrss_schema_pgsql.sql
 To do tt-rss database upgrades automatically you may set up pacman post upgrade hook based on following example:
 
 ```
- [Trigger]
- Operation = Install
- Operation = Upgrade
- Type = Package
- Target = tt-rss
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = tt-rss
 
- [Action]
- Description = Updating TT-RSS Database
- When = PostTransaction
- Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/tt-rss/update.php --update-schema
+[Action]
+Description = Updating TT-RSS Database
+When = PostTransaction
+Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/tt-rss/update.php --update-schema
 
 ```
 

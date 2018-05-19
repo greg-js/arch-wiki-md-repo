@@ -8,14 +8,13 @@ Related articles
 *   [1 Transferring files](#Transferring_files)
 *   [2 App development](#App_development)
     *   [2.1 Android Studio](#Android_Studio)
-    *   [2.2 Manual SDK installation](#Manual_SDK_installation)
-        *   [2.2.1 Android SDK core components](#Android_SDK_core_components)
-        *   [2.2.2 Android SDK platform API](#Android_SDK_platform_API)
-        *   [2.2.3 Android System Images](#Android_System_Images)
+    *   [2.2 SDK packages](#SDK_packages)
+        *   [2.2.1 Android Emulator](#Android_Emulator)
+        *   [2.2.2 Other SDK packages in the AUR](#Other_SDK_packages_in_the_AUR)
+        *   [2.2.3 Making /opt/android-sdk group-owned](#Making_.2Fopt.2Fandroid-sdk_group-owned)
     *   [2.3 Other IDEs](#Other_IDEs)
         *   [2.3.1 Netbeans](#Netbeans)
         *   [2.3.2 Eclipse](#Eclipse)
-    *   [2.4 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
 *   [3 Building](#Building)
     *   [3.1 Required packages](#Required_packages)
     *   [3.2 Java Development Kit](#Java_Development_Kit)
@@ -23,7 +22,7 @@ Related articles
     *   [3.4 Downloading the source code](#Downloading_the_source_code)
     *   [3.5 Building the code](#Building_the_code)
     *   [3.6 Testing the build](#Testing_the_build)
-    *   [3.7 Creating a Flashable Image](#Creating_a_Flashable_Image)
+    *   [3.7 Creating a flashable Image](#Creating_a_flashable_Image)
 *   [4 Flashing](#Flashing)
     *   [4.1 Fastboot](#Fastboot)
     *   [4.2 Samsung devices](#Samsung_devices)
@@ -55,50 +54,55 @@ File sharing apps which have a Linux counterpart are:
 
 ## App development
 
-The officially supported way to build Android apps is to use [#Android Studio](#Android_Studio)[[1]](https://developer.android.com/training/basics/firstapp/creating-project), for manual SDK installation see [#Manual SDK installation](#Manual_SDK_installation).
+The officially supported way to build Android apps is to use [#Android Studio](#Android_Studio).[[1]](https://developer.android.com/training/basics/firstapp/creating-project)
 
 ### Android Studio
 
 [Android Studio](https://developer.android.com/studio/index.html) is the official Android development environment based on [IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA "wikipedia:IntelliJ IDEA"). It provides integrated Android developer tools for development and debugging.
 
-You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API).
+You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package.
 
 **Note:**
 
-*   If you are using a tiling window manager other than [i3](/index.php/I3 "I3"), you may need to apply one of the fixes mentioned in [this](https://code.google.com/p/android/issues/detail?id=57675) issue page.
 *   Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
+*   If Android Studio shows up as a blank window try [exporting](/index.php/Export "Export") `_JAVA_AWT_WM_NONREPARENTING=1`, see [issue #57675](https://code.google.com/p/android/issues/detail?id=57675).
 
-Normally, apps are built through the Android Studio GUI. To build apps from the commandline (using e.g. `./gradlew assembleDebug`), add the following to your `~/.bashrc`:
+The Android Studio Setup Wizard installs the required [#SDK packages](#SDK_packages) for you and and places the SDK by default in `~/Android/Sdk`.
 
-```
-export ANDROID_HOME=/opt/android-sdk
+To build apps from the command-line (using e.g. `./gradlew assembleDebug`) set the [ANDROID_SDK_ROOT](https://developer.android.com/studio/command-line/variables#android_sdk_root) [environment variable](/index.php/Environment_variable "Environment variable") to your SDK location.
 
-```
+### SDK packages
 
-### Manual SDK installation
+Android SDK packages can be installed directly from upstream using [#Android Studio](#Android_Studio)'s [SDK Manager](https://developer.android.com/studio/intro/update#sdk-manager) or the [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager) command line tool (part of the Android SDK Tools). Some Android SDK packages are also available as [AUR](/index.php/AUR "AUR") packages, they generally install to `/opt/android-sdk/`.
 
-If you are using [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you can skip this section.
+The [required SDK packages](https://developer.android.com/studio/intro/update#recommended) are:
 
-To develop Android applications you need three things:
+| Android SDK Package | SDK-style path | AUR package | AUR dummy | CLI tools |
+| [SDK Tools](https://developer.android.com/studio/releases/sdk-tools) | tools | [android-sdk](https://aur.archlinux.org/packages/android-sdk/) | [android-sdk-dummy](https://aur.archlinux.org/packages/android-sdk-dummy/) | sdkmanager, apkanalizer, avdmanager, mksdcard, proguard |
+| [SDK Build-Tools](https://developer.android.com/studio/releases/build-tools) | build-tools;*version* | [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/) | [android-sdk-build-tools-dummy](https://aur.archlinux.org/packages/android-sdk-build-tools-dummy/) | apksigner, zipalign |
+| [SDK Platform-Tools](https://developer.android.com/studio/releases/platform-tools) | platform-tools | [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/) | [android-sdk-platform-tools-dummy](https://aur.archlinux.org/packages/android-sdk-platform-tools-dummy/) | [adb](/index.php/Adb "Adb"), [#fastboot](#Fastboot) and systrace |
+| [SDK Platform](https://developer.android.com/studio/releases/platforms) | platforms;android-*level* | [android-platform](https://aur.archlinux.org/packages/android-platform/), [older versions](https://aur.archlinux.org/packages/?K=android-platform-) | unnecessary |
 
-*   the Android SDK core component
-*   one or several Android SDK Platform packages
-*   an IDE
+The [android-tools](https://www.archlinux.org/packages/?name=android-tools) package provides [adb](/index.php/Adb "Adb"), [#fastboot](#Fastboot), `e2fsdroid` and `mke2fs.android` from the SDK Platform-Tools along with `mkbootimg` and `ext2simg`.
 
-#### Android SDK core components
+**Note:**  
 
-**Note:** Since the Android SDK contains 32-bit binaries, you must enable the [multilib](/index.php/Multilib "Multilib") repository. Otherwise you will get `error: target not found: lib32-*` error messages.
+*   Since the Android SDK contains 32-bit binaries, you must enable the [multilib](/index.php/Multilib "Multilib") repository. Otherwise you will get `error: target not found: lib32-*` error messages.
+*   If you choose to directly install SDK packages from upstream, install the AUR packages of the *AUR dummy* column to pull in the required dependencies.
 
-Before developing Android applications, you need to install the Android SDK, which is made of 4 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
+#### Android Emulator
 
-1.  [android-platform](https://aur.archlinux.org/packages/android-platform/)
-2.  [android-sdk](https://aur.archlinux.org/packages/android-sdk/)
-3.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)
-4.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)
+The [Android Emulator](https://developer.android.com/studio/run/emulator) is available as the `emulator` SDK package, the [android-emulator](https://aur.archlinux.org/packages/android-emulator/) package. And there's also a dummmy package for it: [android-emulator-dummy](https://aur.archlinux.org/packages/android-emulator-dummy/).
 
-If supporting older devices, or working with older code, [android-support](https://aur.archlinux.org/packages/android-support/) and [android-support-repository](https://aur.archlinux.org/packages/android-support-repository/) might be required.
+To run the Android Emulator you need an Intel or ARM System Image. You can install them through the AUR[[2]](https://aur.archlinux.org/packages/?K=android-+system+image), with the sdkmanager or using Android Studio's [AVD Manager](https://developer.android.com/studio/run/managing-avds).
 
-Android-sdk will be installed on `/opt/android-sdk/`. This folder has root permissions, so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
+#### Other SDK packages in the AUR
+
+The [Android Support Library](https://developer.android.com/topic/libraries/support-library/) is now available online from [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven). You can also install it offline through the `extras;android;m2repository` SDK package (also available as [android-support-repository](https://aur.archlinux.org/packages/android-support-repository/)).
+
+#### Making /opt/android-sdk group-owned
+
+The AUR packages install the SDK in `/opt/android-sdk/`. This directory has root [permissions](/index.php/Permissions "Permissions"), so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
 
 ```
 # groupadd sdkusers
@@ -133,19 +137,6 @@ $ newgrp sdkusers
 
 ```
 
-**Note:** As an alternative to a global install with the [AUR](/index.php/AUR "AUR") packages, the SDK can be installed to a user's home directory via [the upstream instructions](https://developer.android.com/sdk/index.html). You may also use the android-*-dummy packages in the [AUR](/index.php/AUR "AUR") to handle the system dependencies.
-
-#### Android SDK platform API
-
-Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
-
-*   [android-platform](https://aur.archlinux.org/packages/android-platform/) – the latest API
-*   the [AUR](/index.php/AUR "AUR") also contains [older APIs](https://aur.archlinux.org/packages/?K=android-platform-)
-
-#### Android System Images
-
-Install the desired [Android system image](https://aur.archlinux.org/packages/?K=android-+system+image) package from the [AUR](/index.php/AUR "AUR"). The Images are needed for emulating a specific android device. They are not needed if you want to develop with an android phone.
-
 ### Other IDEs
 
 Android Studio is the official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid plugin. All are described below.
@@ -162,7 +153,7 @@ and select the path where the SDK is installed (`/opt/android-sdk` by default). 
 
 #### Eclipse
 
-**Note:** The Eclipse ADT plugin is no longer supported. Google recommends to use Android Studio instead.[[2]](https://android-developers.googleblog.com/2016/11/support-ended-for-eclipse-android.html)
+**Note:** The Eclipse ADT plugin is no longer supported. Google recommends to use Android Studio instead.[[3]](https://android-developers.googleblog.com/2016/11/support-ended-for-eclipse-android.html)
 
 The official, but deprecated, [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html) plugin can be installed with the [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/) package.
 
@@ -177,15 +168,6 @@ Enter the path to the Android SDK Location in *Windows > Preferences > Android*.
 
 **Note:** If the plugins do not show up in Eclipse after the AUR package has been upgraded, then eclipse probably has out-of-date caches. Running `sudo eclipse -clean` once should clear them. If the problem persists, uninstall eclipse and all the plugins, delete `/usr/share/eclipse`, and reinstall everything.
 
-### NVIDIA Tegra platform
-
-If you target your application at [NVIDIA Tegra platform](https://developer.nvidia.com/tegra-development), you might also want to install tools, samples and documentation provided by NVIDIA. In [NVIDIA Developer Zone for Mobile](http://developer.nvidia.com/category/zone/mobile-development) there are two tools:
-
-1.  The [Tegra Android Development Pack](http://developer.nvidia.com/tegra-resources) provides tools (NVIDIA Debug Manager) related to [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html) and their documentation.
-2.  The [Tegra Toolkit](http://developer.nvidia.com/tegra-resources) provides tools (mostly CPU and GPU optimization related), samples and documentation.
-
-Both are currently not available in the [AUR](/index.php/AUR "AUR") anymore, because NVIDIA requires a registration/login for the download.
-
 ## Building
 
 Please note that these instructions are based on the [official AOSP build instructions](https://source.android.com/source/building). Other Android-derived systems such as LineageOS will often require extra steps.
@@ -197,12 +179,6 @@ To build any version of Android, you need to install these packages:
 *   [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk2](https://www.archlinux.org/packages/?name=wxgtk2) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc) [rsync](https://www.archlinux.org/packages/?name=rsync) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline) [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
 The [aosp-devel](https://aur.archlinux.org/packages/aosp-devel/) metapackage provides them all for simple installation.
-
-**Note:** The PGP signatures for [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) may cause errors, that can be solved by manually importing the needed signature:
-```
-$ gpg --recv-keys 702353E0F7E48EDB
-
-```
 
 Additionally, LineageOS requires the following packages: [xml2](https://aur.archlinux.org/packages/xml2/), [lzop](https://www.archlinux.org/packages/?name=lzop), [pngcrush](https://www.archlinux.org/packages/?name=pngcrush), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
@@ -332,7 +308,7 @@ $ emulator
 
 ```
 
-### Creating a Flashable Image
+### Creating a flashable Image
 
 To create an image that can be flashed it is necessary to:
 
@@ -421,7 +397,7 @@ $ rm ~/.repopickle_.gitconfig
 If that does not work, then try this:
 
 ```
-$ find /path/to/android-root -name .repopickle_config -exec rm {} +
+$ find /path/to/android-root -name .repopickle_config -delete
 
 ```
 

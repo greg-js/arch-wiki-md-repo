@@ -911,7 +911,7 @@ ffmpeg -f alsa -i hw:1,1,0 -f alsa -i hw:1,1,1 -filter_complex amerge output.mp3
 
 ```
 
-In the hw:R,W,N format R is your virtual card device number, W 1 recording devices 0 for writing, R is your sub device you can use all the virtual devices available and play/stop using applications like mplayer:
+In the hw:R,W,N format R is your virtual card device number, W 1 recording devices 0 for writing, N is your sub device you can use all the virtual devices available and play/stop using applications like mplayer:
 
 ```
 mplayer -ao alsa:device=hw=1,0,0 fileA

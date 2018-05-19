@@ -243,7 +243,7 @@ SSDs can handle many IOPS and tend to perform best with simple algorithm like *n
  `/etc/udev/rules.d/60-ioschedulers.rules` 
 ```
 # set scheduler for non-rotating disks
-ACTION=="add|change", KERNEL=="sd[a-z]|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
+ACTION=="add|change", KERNEL=="sd[a-z]|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
 # set scheduler for rotating disks
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
 ```

@@ -1,6 +1,6 @@
 Related articles
 
-*   [Android#Transferring files via USB](/index.php/Android#Transferring_files_via_USB "Android")
+*   [Android#Transferring files](/index.php/Android#Transferring_files "Android")
 *   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
 
 The [Media Transfer Protocol](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol") (MTP) can be used to transfer media files to and from many mobile phones (all Windows Phone 7/8/10 devices, most newer [Android](/index.php/Android "Android") devices) and media players (e.g. Creative Zen).
@@ -24,11 +24,11 @@ The [Media Transfer Protocol](https://en.wikipedia.org/wiki/Media_Transfer_Proto
 
 ## Connecting
 
-To connect your computer to a phone via MTP:
+To connect your computer to a device via MTP:
 
-*   the phone needs to be connected to your computer via USB
-*   MTP needs to be enabled on the phone
-*   the phone's screen needs to be unlocked (for security reasons)
+*   the device needs to be connected to your computer via USB
+*   MTP needs to be enabled on the device
+*   the device's screen needs to be unlocked (for security reasons)
 
 ## FUSE filesystems
 
@@ -47,7 +47,7 @@ The following programs let you access MTP devices via a [FUSE](/index.php/FUSE "
     *   [#jmtpfs](#jmtpfs), [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/), [https://github.com/JasonFerrara/jmtpfs](https://github.com/JasonFerrara/jmtpfs)
     *   [#simple-mtpfs](#simple-mtpfs), [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/), [https://github.com/phatina/simple-mtpfs/](https://github.com/phatina/simple-mtpfs/)
 
-**Note:** libmtp does not handle newer Android devices well[[1]](https://sourceforge.net/p/libmtp/bugs/) - hanging transfers and problems with remote file system browsing are very common, poor performance is expected with most devices. Furthermore, if you have a damaged USB cable, programs utilizing libmtp may crash or hang indefinitely until you disconnect the device.
+**Note:** MTP is messy and its implementation varies between devices. Try the above clients to see which one works best with your device.
 
 **Tip:** It is recommended to reboot your computer after installing MTP related packages.
 

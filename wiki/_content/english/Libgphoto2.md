@@ -28,6 +28,10 @@ This article documents the configuration of `libgphoto2` to access digital camer
 
 	[https://www.digikam.org/](https://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
+*   **Entangle** — Provides a graphical interface for “tethered shooting”, aka taking photographs with a digital camera completely controlled from the computer.
+
+	[https://entangle-photo.org/](https://entangle-photo.org/) || [entangle](https://aur.archlinux.org/packages/entangle/)
+
 *   **gphotofs** — [Fuse](/index.php/Fuse "Fuse") module to mount camera as a filesystem.
 
 	[http://www.gphoto.org/proj/gphotofs/](http://www.gphoto.org/proj/gphotofs/) || [gphotofs](https://aur.archlinux.org/packages/gphotofs/)

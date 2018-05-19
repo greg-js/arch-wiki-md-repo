@@ -83,4 +83,4 @@ windows:
 
 *   [Official Homepage](https://tmuxp.git-pull.com), including documentation and examples
 *   [GitHub](https://www.github.com/tony/tmuxp)
-*   [PyPI package](https://pypi.python.org/pypi/tmuxp)
+*   [PyPI package](https://pypi.org/project/tmuxp/)

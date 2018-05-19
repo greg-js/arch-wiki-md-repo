@@ -48,25 +48,33 @@ sudo pacman -S liri-settings-git liri-terminal-git liri-files-git liri-appcenter
 
 For additional functionality, you may wish to install the following:
 
-*   **liri-browser** — Material design web browser for Liri.
+*   **Liri Browser** — Material design web browser for Liri.
 
 	[https://github.com/lirios/browser](https://github.com/lirios/browser) || [liri-browser-git](https://aur.archlinux.org/packages/liri-browser-git/)
 
-*   **liri-files** — Material design file manager for Liri.
+*   **Liri Calculator** — Calculator for Liri.
 
-	[https://github.com/lirios/files](https://github.com/lirios/files) || [liri-files-git](https://aur.archlinux.org/packages/liri-files-git/)
+	[https://github.com/lirios/calculator](https://github.com/lirios/calculator) || [liri-calculator](https://www.archlinux.org/packages/?name=liri-calculator)
 
-*   **liri-player** — Material design media player for Liri.
+*   **Liri Files** — Material design file manager for Liri.
+
+	[https://github.com/lirios/files](https://github.com/lirios/files) || [liri-files](https://www.archlinux.org/packages/?name=liri-files)
+
+*   **Liri Player** — Material design media player for Liri.
 
 	[https://github.com/lirios/player](https://github.com/lirios/player) || [liri-player-git](https://aur.archlinux.org/packages/liri-player-git/)
 
-*   **liri-settings** — Settings application and modules for Liri.
+*   **Liri Settings** — Settings application and modules for Liri.
 
 	[https://github.com/lirios/settings](https://github.com/lirios/settings) || [liri-settings-git](https://aur.archlinux.org/packages/liri-settings-git/)
 
-*   **liri-terminal** — Terminal for Liri.
+*   **Liri Terminal** — Terminal for Liri.
 
-	[https://github.com/lirios/terminal](https://github.com/lirios/terminal) || [liri-terminal-git](https://aur.archlinux.org/packages/liri-terminal-git/)
+	[https://github.com/lirios/terminal](https://github.com/lirios/terminal) || [liri-terminal](https://www.archlinux.org/packages/?name=liri-terminal)
+
+*   **Liri Text** — Text editor for Liri.
+
+	[https://github.com/lirios/text](https://github.com/lirios/text) || [liri-text](https://www.archlinux.org/packages/?name=liri-text)
 
 ## Starting the desktop
 

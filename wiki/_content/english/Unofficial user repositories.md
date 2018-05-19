@@ -480,7 +480,7 @@ Server = https://farwayer.keybase.pub/arch/$repo
 ### nah
 
 *   **Maintainer:** [phillid](https://yeah.nah.nz)
-*   **Description:** Pre-built versions of the (slow-to-build) graph-tool python libraries
+*   **Description:** Pre-built versions of the (slow-to-build) graph-tool python libraries, mingw-w64
 *   **Key ID:** 7BF3D17D0884BF5B
 
 ```

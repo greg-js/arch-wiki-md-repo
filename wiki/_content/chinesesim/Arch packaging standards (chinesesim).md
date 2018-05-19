@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Arch+packaging+standards&diff=0&oldid=485119)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-17，点击[这里](https://wiki.archlinux.org/index.php?title=Arch+packaging+standards&diff=0&oldid=507402)可以查看翻译后英文页面的改动。
 
 当为Arch Linux构建软件包时,您应该遵循以下的**软件包指导原则**，如果您想贡献你的软件包至Arch Linux时,您应该更加遵循软件包指导原则。同时需要阅读[PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) 和 [makepkg](https://archlinux.org/pacman/makepkg.8.html) 手册。
 
@@ -78,7 +78,7 @@ optdepends=('cups: printing support'
 
 	例子取自 `extra` 中的 **wine** 软件包。这些信息在安装和升级时会自动打印，所以**不要**将这些信息加入 .install 文件。
 
-*   在填写**软件包描述（description）**时，请不要使用下定义的方式。比如说, "Nedit is a text editor for X11" 就可以简写为"A text editor for X11". 顺便注意保持descriptions在80个字以内.
+*   在填写**软件包描述（description）**时，请不要使用下定义的方式。比如说, "Nedit is a text editor for X11" 就可以简写为"A text editor for X11". 顺便注意保持descriptions在80个字符以内.
 *   尽量保持`PKGBUILD`文件中**每行**不超过100字符。
 *   如果可能的话, 从`PKGBUILD`文件中**去掉空行**（没有设置变量值的行）(如`provides`、`replaces`等)</li>
 *   通常实践建议按照上文中的`PKGBUILD`示例**安排各变量顺序**。当然这不是强制性的，这里唯一强制要求的是满足**正确的bash语法**。
@@ -146,7 +146,7 @@ optdepends=('cups: printing support'
 
 ## 架构
 
-*arch* 数组应该包含 *i686* 和/或 *x86_64* ，取决于软件可以构建的目标架构。也可以使用 *any* 生成那些架构无关的包。
+如果该软件包是针对特定架构编译的，那么 *arch* 数组应该包含 *x86_64* ，否则使用 *any* 生成那些架构无关的包。
 
 ## 授权协议
 

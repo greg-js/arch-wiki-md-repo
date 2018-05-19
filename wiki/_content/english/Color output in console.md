@@ -392,7 +392,7 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 
 *   **python-blessings** — A thin, practical wrapper around terminal coloring, styling, and positioning
 
-	[https://pypi.python.org/pypi/blessings](https://pypi.python.org/pypi/blessings) || [python-blessings](https://www.archlinux.org/packages/?name=python-blessings), [python2-blessings](https://www.archlinux.org/packages/?name=python2-blessings)
+	[https://github.com/erikrose/blessings](https://github.com/erikrose/blessings) || [python-blessings](https://www.archlinux.org/packages/?name=python-blessings), [python2-blessings](https://www.archlinux.org/packages/?name=python2-blessings)
 
 ### Application specific
 

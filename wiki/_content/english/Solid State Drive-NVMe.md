@@ -14,6 +14,7 @@ NVM Express (NVMe) is a specification for accessing SSDs attached through the PC
     *   [2.4 Testing](#Testing)
 *   [3 Power Saving APST](#Power_Saving_APST)
     *   [3.1 NVME Power Saving Patch](#NVME_Power_Saving_Patch)
+        *   [3.1.1 Samsung drive errors on Linux 4.10](#Samsung_drive_errors_on_Linux_4.10)
 *   [4 References](#References)
 
 ## Installation
@@ -57,13 +58,24 @@ Raw device performance tests can be run with [hdparm](https://www.archlinux.org/
 
 Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. The patch has been merged into mainline kernel v4.11.
 
-To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) if running an older kernel, and run `# nvme get-feature -f 0x0c -H /dev/nvme[0-9]`.
+To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) or [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/), and run `nvme get-feature -f 0x0c -H /dev/nvme[0-9]`:
+
+ `# nvme get-feature -f 0x0c -H /dev/nvme0` 
+```
+get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
+        Autonomous Power State Transition Enable (APSTE): Enabled
+        Auto PST Entries        .................
+
+...
+```
 
 When APST is enabled the output should contain "Autonomous Power State Transition Enable (APSTE): Enabled" and there should be non-zero entries in the table below indicating the idle time before transitioning into each of the available states.
 
-If ASPT is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `# nvme id-ctrl /dev/nvme[0-9]` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) then to enable it you must pass a value at least that high to the `default_ps_max_latency_us` option for the `nvme_core` module in the boot parameters. This should enable ASPT and make the table in `# nvme get-feature` show the entries.
+If ASPT is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `# nvme id-ctrl /dev/nvme[0-9]` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) you must pass a value at least that high as parameter `default_ps_max_latency_us` for the `nvme_core` [kernel module](/index.php/Kernel_module "Kernel module"). This should enable ASPT and make the table in `# nvme get-feature` show the entries.
 
-On 4.13, drive errors can occur (ext4 fs) that cause the system to become unusable. This seems to be the result of a power saving state that the drive (Intel NVMe, in my case) cannot use. Adding the boot parameter nvme_core.default_ps_max_latency_us=5500 disables the lowest power saving state.
+#### Samsung drive errors on Linux 4.10
+
+On Linux 4.10, drive errors can occur and causing system instability. This seems to be the result of a power saving state that the drive cannot use. Adding the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `nvme_core.default_ps_max_latency_us=5500`[[3]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1678184)[[4]](https://askubuntu.com/questions/905710/ext4-fs-error-after-ubuntu-17-04-upgrade/906105#906105) disables the lowest power saving state, preventing write errors.
 
 ## References
 

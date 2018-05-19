@@ -7,7 +7,7 @@ From the project [home page](http://www.ffmpeg.org/):
 *   [1 Package installation](#Package_installation)
     *   [1.1 Manual installation](#Manual_installation)
 *   [2 Encoding examples](#Encoding_examples)
-    *   [2.1 Screen cast](#Screen_cast)
+    *   [2.1 Screen capture](#Screen_capture)
     *   [2.2 Recording webcam](#Recording_webcam)
     *   [2.3 VOB to any container](#VOB_to_any_container)
     *   [2.4 x264 lossless](#x264_lossless)
@@ -83,57 +83,62 @@ Exec=/usr/bin/patchelf --set-rpath /usr/lib /usr/bin/ffmpeg
 *   It is important parameters are specified in the correct order (e.g. input, video, filters, audio, output), failing to do so may cause parameters being skipped or will prevent FFmpeg from executing.
 *   FFmpeg should automatically choose the number of CPU threads available. However you may want to force the number of threads available by the parameter `-threads <number>`.
 
-### Screen cast
+### Screen capture
 
 FFmpeg includes the [x11grab](http://www.ffmpeg.org/ffmpeg-devices.html#x11grab) and [ALSA](http://www.ffmpeg.org/ffmpeg-devices.html#alsa-1) virtual devices that enable capturing the entire user display and audio input.
 
-To create `test.mkv` with lossless encoding:
+To take a screenshot `screen.png`:
 
 ```
-$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv
-
-```
-
-where `-video_size` specifies the size of the area to capture. Check the FFmpeg manual for examples of how to change the screen or position of the capture area.
-
-To implicitly encode to a shareable size use :
-
-```
-$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -r 30 -s 1280x720 -c:v libx264 -preset:v veryfast -b:v 2000k -c:a libopus -b:a 128k test.mkv
+$ ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -vframes 1 screen.png
 
 ```
 
-You may want to adjust the parameters (left-to-right): input **f**ormat, [input]**s**ize, frame**r**ate, **i**nput (in this case display, but could be a file too), input **f**ormat, **i**nput, **c**odec:**v**ideo, **b**itrate:**v**ideo, [output]**s**ize of output. Without context the meaning of the parameters may seem ambigious. See the manpage for the synopsis.
+where `-video_size` specifies the size of the area to capture.
+
+To take a screencast `screen.mkv` with lossless encoding and without audio:
+
+```
+$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -c:v ffvhuff screen.mkv
+
+```
+
+Here, the Huffyuv codec used, which is fast, but procedures huge file size.
+
+To take a screencast `screen.mp4` with lossy encoding and with audio:
+
+```
+$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4
+
+```
+
+Here, the x264 codec with the fastest possible encoding speed is used. Other codecs can be used; if writing each frame is too slow (either due to inadequate disk performance or slow encoding), then frames will be dropped and video output will be choppy.
+
+See also the [official documentation](https://trac.ffmpeg.org/wiki/Capture/Desktop#Linux).
 
 ### Recording webcam
 
-FFmpeg supports grabbing input from Video4Linux2 devices. The following command will record a video from the webcam, assuming that the webcam is correctly recognized under `/dev/video0`:
+FFmpeg includes the [video4linux2](http://www.ffmpeg.org/ffmpeg-devices.html#video4linux2_002c-v4l2) and [ALSA](http://www.ffmpeg.org/ffmpeg-devices.html#alsa-1) input devices that enable capturing webcam and audio input.
+
+The following command will record a video `webcam.mp4` from the webcam without audio, assuming that the webcam is correctly recognized under `/dev/video0`:
 
 ```
-$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 output.mkv
-
-```
-
-The above produces a silent video. It is also possible to include audio sources from a microphone. The following command will include a stream from the default [ALSA](/index.php/ALSA "ALSA") recording device into the video:
-
-```
-$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i default output.mkv
+$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -c:v libx264 -preset ultrafast webcam.mp4
 
 ```
 
-To use [PulseAudio](/index.php/PulseAudio "PulseAudio") with an ALSA backend:
+where `-video_size` specifies the largest allowed image size from the webcam.
+
+The above produces a silent video. To record a video `webcam.mp4` from the webcam with audio:
 
 ```
-$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i pulse output.mkv
+$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac webcam.mp4
 
 ```
 
-For a higher quality capture, try encoding the output using higher quality settings:
+Here, the x264 codec with the fastest possible encoding speed is used. Other codecs can be used; if writing each frame is too slow (either due to inadequate disk performance or slow encoding), then frames will be dropped and video output will be choppy.
 
-```
-$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i default -c:v libx264 -crf:v 18 -c:a flac output.mkv
-
-```
+See also the [official documentation](https://trac.ffmpeg.org/wiki/Capture/Webcam#Linux).
 
 ### VOB to any container
 

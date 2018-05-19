@@ -26,6 +26,7 @@ An overview of [MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEnc
         *   [2.7.2 Testing subtitle muxing results](#Testing_subtitle_muxing_results)
             *   [2.7.2.1 Single-pass x264 (low quality)](#Single-pass_x264_.28low_quality.29)
     *   [2.8 mp2 vs. mp3lame vs. aac](#mp2_vs._mp3lame_vs._aac)
+    *   [2.9 Encoding AVI videos in Windows and Mac readable formats](#Encoding_AVI_videos_in_Windows_and_Mac_readable_formats)
 *   [3 GUI frontends](#GUI_frontends)
 
 ## Basics
@@ -295,6 +296,20 @@ mencoder original_video.avi -oac copy -ovc x264 -x264encopts pass=2:preset=ultra
 
 *   [toolame](https://www.archlinux.org/packages/?name=toolame) is recommended over [FFmpeg](http://www.ffmpeg.org/) lavc (libavcodec) for mp2 encoding.
 *   [mp3lame](http://lame.sourceforge.net/) is recommended over [FAAC](http://www.audiocoding.com/faac.html) (not fully developed) encoding at all bitrates.
+
+### Encoding AVI videos in Windows and Mac readable formats
+
+Use these commands:
+
+```
+opt="vbitrate=2160000:mbd=2:keyint=132:vqblur=1.0:cmp=2:subcmp=2:dia=2:mv0:last_pred=3"
+
+mencoder -ovc lavc -lavcopts vcodec=msmpeg4v2:vpass=1:$opt -oac mp3lame -o /dev/null input.avi
+mencoder -ovc lavc -lavcopts vcodec=msmpeg4v2:vpass=2:$opt -oac mp3lame -o output.avi input.avi
+
+```
+
+`input.avi` is the AVI you made using Linux utilities, and "output.avi" is the AVI you want to make which will be readable by Windows and Mac users.
 
 ## GUI frontends
 

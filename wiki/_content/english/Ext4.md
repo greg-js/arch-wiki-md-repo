@@ -65,11 +65,13 @@ This situation can be evaluated by comparing the `{I}Use%` figures provided by `
 ```
 Filesystem              Size    Used   Avail  **Use%**   Mounted on
 /dev/mapper/lvm-home    115G    56G    59G    **49%**    /home
+
 ```
  `$ df -hi /home` 
 ```
 Filesystem              Inodes  IUsed  IFree  **IUse%**  Mounted on
 /dev/mapper/lvm-home    1.8M    1.1K   1.8M   **1%**     /home
+
 ```
 
 To specify a different bytes-per-inode ratio, you can use the `-T *usage-type*` option which hints at the expected usage of the filesystem using types defined in `/etc/mke2fs.conf`. Among those types are the bigger `largefile` and `largefile4` which offer more relevant ratios of one inode every 1 MiB and 4 MiB respectively. It can be used as such:
@@ -229,8 +231,8 @@ Note that encryption can only be applied to an empty directory. New files and su
 
 Now generate and add a new key to your keyring. This step must be repeated every time you flush your keyring (i.e., reboot):
 
+ `# e4crypt add_key` 
 ```
-# e4crypt add_key
 Enter passphrase (echo disabled): 
 Added key with descriptor [f88747555a6115f5]
 
@@ -242,8 +244,8 @@ Added key with descriptor [f88747555a6115f5]
 
 Now you know the descriptor for your key. Make sure the key is in your session keyring:
 
+ `# keyctl show` 
 ```
-# keyctl show
 Session Keyring
 1021618178 --alswrv   1000  1000  keyring: _ses
  176349519 --alsw-v   1000  1000   \_ logon: ext4:f88747555a6115f5

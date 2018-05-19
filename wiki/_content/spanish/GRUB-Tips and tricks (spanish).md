@@ -33,7 +33,7 @@
 *   [12 Tocar una melodía](#Tocar_una_melod.C3.ADa)
 *   [13 Configuración manual de la imagen del núcleo para un arranque rápido](#Configuraci.C3.B3n_manual_de_la_imagen_del_n.C3.BAcleo_para_un_arranque_r.C3.A1pido)
 *   [14 UEFI further reading](#UEFI_further_reading)
-    *   [14.1 Alternative install method](#Alternative_install_method)
+    *   [14.1 Método de instalación alternativo](#M.C3.A9todo_de_instalaci.C3.B3n_alternativo)
     *   [14.2 UEFI firmware workaround](#UEFI_firmware_workaround)
     *   [14.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
     *   [14.4 GRUB standalone](#GRUB_standalone)
@@ -553,27 +553,27 @@ La imagen del núcleo de EFI generada ahora se puede usar de la misma manera que
 
 ## UEFI further reading
 
-Below is other relevant information regarding installing Arch via UEFI.
+A continuación encontrará otra información relevante sobre la instalación de Arch a través de UEFI.
 
-### Alternative install method
+### Método de instalación alternativo
 
-Usually, GRUB keeps all files, including configuration files, in `/boot`, regardless of where the EFI System Partition is mounted.
+Normalmente, GRUB guarda todos los archivos, incluidos los de configuración, en `/boot`, independientemente de dónde esté montada la partición de sistema EFI.
 
-If you want to keep these files inside the EFI System Partition itself, add `--boot-directory=*esp*` to the grub-install command:
+Si desea mantener estos archivos dentro de la propia partición del sistema EFI, añada `--boot-directory=*esp*` al comando grub-install:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub --boot-directory=*esp* --debug
 
 ```
 
-This puts all GRUB files in `*esp*/grub`, instead of in `/boot/grub`. When using this method, make sure you have *grub-mkconfig* put the configuration file in the same place:
+Esto pone todos los archivos GRUB en `*esp*/grub`, en lugar de en `/boot/grub`. Cuando utilice este método, asegúrese de que *grub-mkconfig* ha puesto el archivo de configuración en el mismo lugar:
 
 ```
 # grub-mkconfig -o *esp*/grub/grub.cfg
 
 ```
 
-Configuration is otherwise the same.
+Por lo demás, la configuración es la misma.
 
 ### UEFI firmware workaround
 

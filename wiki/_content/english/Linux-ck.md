@@ -19,8 +19,7 @@ Related articles
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
         *   [5.1.1 Use the unofficial repo (recommended if Linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_.28recommended_if_Linux-ck_is_installed_from_Repo-ck.29)
-        *   [5.1.2 The virtualbox-ck-host-modules package (recommended if Linux-ck is built from AUR)](#The_virtualbox-ck-host-modules_package_.28recommended_if_Linux-ck_is_built_from_AUR.29)
-        *   [5.1.3 Use DKMS (more complicated, recommended for LTS versions)](#Use_DKMS_.28more_complicated.2C_recommended_for_LTS_versions.29)
+        *   [5.1.2 DKMS](#DKMS)
     *   [5.2 Downgrading](#Downgrading)
     *   [5.3 Forum support](#Forum_support)
 *   [6 See also](#See_also)
@@ -127,21 +126,14 @@ Do not forget to add users to the *vboxusers* group:
 
 See the [Unofficial user repositories/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck") to set up it correctly.
 
-#### The virtualbox-ck-host-modules package (recommended if Linux-ck is built from AUR)
-
-Install the [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/) package and then install the **virtualbox** package.
-
-#### Use DKMS (more complicated, recommended for LTS versions)
+#### DKMS
 
 Install **virtualbox** with the **virtualbox-host-dkms** package. Then setup DKMS as follows:
 
 ```
 # pacman -S virtualbox virtualbox-host-dkms
-# dkms install vboxhost/4.3.12
 
 ```
-
-**Note:** Make sure to substitute the correct version number of virtualbox in the second command. At the time of writing, 4.3.12 is current.
 
 ### Downgrading
 

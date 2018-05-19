@@ -31,7 +31,7 @@ If you need to add a versioned package then use `python-*modulename*-*version*`,
 
 ## Installation methods
 
-Python packages are generally installed using language-specific tools, such as [pip](https://pip.pypa.io/) or [easy_install](https://setuptools.readthedocs.io/en/latest/easy_install.html), which are comparable to dedicated package managers in that they are designed to fetch the source files from an online repository (usually [PyPI](https://pypi.python.org/), the Python Package Index) and track the relevant files (for a detailed comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install)).
+Python packages are generally installed using language-specific tools, such as [pip](https://pip.pypa.io/) or [easy_install](https://setuptools.readthedocs.io/en/latest/easy_install.html), which are comparable to dedicated package managers in that they are designed to fetch the source files from an online repository (usually [PyPI](https://pypi.org/), the Python Package Index) and track the relevant files (for a detailed comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install)).
 
 However, for managing Python packages from within PKGBUILDs, the standard-provided [distutils](http://docs.python.org/library/distutils.html) proves to be the most convenient solution since it uses the downloaded source package's `setup.py` and easily installs files under `*$pkgdir*/usr/lib/python*<python version>*/site-packages/*$pkgname*` directory.
 

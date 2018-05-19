@@ -481,7 +481,7 @@ Install it with the [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/) packa
 
 If you have issues with the controller being recognized but not working in steam games or working but with incorrect mappings, it may be required to modify you config as such:
 
- `/etc/default/xboxdrv/` 
+ `/etc/default/xboxdrv` 
 ```
 [xboxdrv]
 silent = true

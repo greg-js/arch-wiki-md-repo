@@ -187,7 +187,7 @@ http {
     sendfile        on;
     keepalive_timeout  65;
     server {
-        listen       80;
+        listen       127.0.0.1;
         server_name  localhost;
         root /usr/share/nginx/html;
         location / {

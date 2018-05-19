@@ -166,6 +166,10 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 [VTE](http://developer.gnome.org/vte/unstable/) (Virtual Terminal Emulator) is a widget developed during early GNOME days for use in the GNOME Terminal. It has since given birth to many terminals with similar capabilities.
 
+*   **Deepin Terminal** — Terminal emulation application for Deepin desktop.
+
+	[https://github.com/linuxdeepin/deepin-terminal](https://github.com/linuxdeepin/deepin-terminal) || [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal)
+
 *   **evilvte** — Very lightweight and highly customizable terminal emulator with support for tabs, auto-hiding and different encodings.
 
 	[http://calno.com/evilvte/](http://calno.com/evilvte/) || [evilvte-git](https://aur.archlinux.org/packages/evilvte-git/)
@@ -475,6 +479,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Advanced twin panel (Midnight Commander style) file manager for the KDE desktop.
 
 	[http://www.krusader.org/](http://www.krusader.org/) || [krusader](https://www.archlinux.org/packages/?name=krusader)
+
+*   **Liri Files** — The file manager for Liri.
+
+	[https://github.com/lirios/files](https://github.com/lirios/files) || [liri-files](https://www.archlinux.org/packages/?name=liri-files)
 
 *   **muCommander** — A lightweight, cross-platform file manager with a dual-pane interface written in Java.
 

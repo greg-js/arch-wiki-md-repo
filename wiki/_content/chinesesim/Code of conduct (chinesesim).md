@@ -251,7 +251,7 @@ Arch User Repository 的指南位于:
 **#archlinux-cn**频道的默认语言是中文。如果你正在修复中文输入法或此时你无法显示中文，也可以使用英文（记得提前说明一下）。
 
 *   加入频道以后先通过 `/topic` 读一下频道的话题,一般包括了部分重要的信息.
-*   **#archlinux-cn 频道的主要目的是讨论和支持 Arch Linux**，也可以讨论与发行版无关的技术话题。
+*   **#archlinux-cn 频道的主要目的是讨论和支持 Arch Linux**.
     *   如果你正在使用某个 Arch Linux 的衍生发行版，或者非 Arch Linux 的 GNU/Linux 发行版，请在提问前先说明。
     *   另推荐阅读 [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
     *   管理员在话题跑题或明显不属于技术话题时可能会要求移步至 #archlinux-cn-offtopic ,如果被要求这样做或者转至私聊，请遵守这个要求。

@@ -12,21 +12,20 @@
         *   [1.2.1 Image viewers](#Image_viewers)
             *   [1.2.1.1 Console](#Console)
             *   [1.2.1.2 Graphical](#Graphical)
-        *   [1.2.2 Raster graphics editors](#Raster_graphics_editors)
-            *   [1.2.2.1 Console](#Console_2)
-            *   [1.2.2.2 Graphical](#Graphical_2)
-        *   [1.2.3 Vector graphics editors](#Vector_graphics_editors)
-            *   [1.2.3.1 Console](#Console_3)
-            *   [1.2.3.2 Graphical](#Graphical_3)
-        *   [1.2.4 3D computer graphics](#3D_computer_graphics)
-        *   [1.2.5 Color pickers](#Color_pickers)
-        *   [1.2.6 Screenshot](#Screenshot)
-        *   [1.2.7 Digital camera managers](#Digital_camera_managers)
+        *   [1.2.2 Image organizers](#Image_organizers)
+        *   [1.2.3 Image processing](#Image_processing)
+        *   [1.2.4 Raster graphics editors](#Raster_graphics_editors)
+        *   [1.2.5 Photo editors](#Photo_editors)
+        *   [1.2.6 Vector graphics editors](#Vector_graphics_editors)
+        *   [1.2.7 3D computer graphics](#3D_computer_graphics)
+        *   [1.2.8 Color pickers](#Color_pickers)
+        *   [1.2.9 Screenshot](#Screenshot)
+        *   [1.2.10 Digital camera managers](#Digital_camera_managers)
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
-            *   [1.3.2.1 Console](#Console_4)
-            *   [1.3.2.2 Graphical](#Graphical_4)
+            *   [1.3.2.1 Console](#Console_2)
+            *   [1.3.2.2 Graphical](#Graphical_2)
         *   [1.3.3 Sound editing](#Sound_editing)
         *   [1.3.4 Visualization](#Visualization)
         *   [1.3.5 Audio tag editors](#Audio_tag_editors)
@@ -35,15 +34,17 @@
         *   [1.3.8 CD ripping](#CD_ripping)
     *   [1.4 Video](#Video)
         *   [1.4.1 Video players](#Video_players)
-            *   [1.4.1.1 Console](#Console_5)
-            *   [1.4.1.2 Graphical](#Graphical_5)
+            *   [1.4.1.1 Console](#Console_3)
+            *   [1.4.1.2 Graphical](#Graphical_3)
         *   [1.4.2 Video converters](#Video_converters)
-            *   [1.4.2.1 Console](#Console_6)
-            *   [1.4.2.2 Graphical](#Graphical_6)
+            *   [1.4.2.1 Console](#Console_4)
+            *   [1.4.2.2 Graphical](#Graphical_4)
         *   [1.4.3 Video editors](#Video_editors)
         *   [1.4.4 Subtitles](#Subtitles)
         *   [1.4.5 Screencast](#Screencast)
-        *   [1.4.6 DVD ripping](#DVD_ripping)
+        *   [1.4.6 Webcam](#Webcam)
+        *   [1.4.7 DVD authoring](#DVD_authoring)
+        *   [1.4.8 DVD ripping](#DVD_ripping)
     *   [1.5 Collection managers](#Collection_managers)
     *   [1.6 Media servers](#Media_servers)
     *   [1.7 Mobile phone managers](#Mobile_phone_managers)
@@ -81,10 +82,6 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 ##### Graphical
 
-*   **Deepin Image Viewer** — Image viewer for the Deepin desktop environment.
-
-	[https://github.com/linuxdeepin/deepin-image-viewer](https://github.com/linuxdeepin/deepin-image-viewer) || [deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer)
-
 *   **Ephoto** — A light image viewer based on EFL.
 
 	[https://www.enlightenment.org/about-ephoto](https://www.enlightenment.org/about-ephoto) || [ephoto](https://aur.archlinux.org/packages/ephoto/)
@@ -113,17 +110,9 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://geeqie.org/](http://geeqie.org/) || [geeqie](https://www.archlinux.org/packages/?name=geeqie)
 
-*   **GNOME Photos** — Access, organize, and share your photos on GNOME.
-
-	[https://wiki.gnome.org/Apps/Photos](https://wiki.gnome.org/Apps/Photos) || [gnome-photos](https://www.archlinux.org/packages/?name=gnome-photos)
-
 *   **GPicView** — Simple and fast image viewer for X, which is part of the [LXDE](/index.php/LXDE "LXDE") desktop.
 
 	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || GTK+ 2: [gpicview](https://www.archlinux.org/packages/?name=gpicview), GTK+ 3: [gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3)
-
-*   **[gThumb](https://en.wikipedia.org/wiki/GThumb "wikipedia:GThumb")** — Image viewer for the GNOME desktop.
-
-	[https://wiki.gnome.org/Apps/gthumb](https://wiki.gnome.org/Apps/gthumb) || [gthumb](https://www.archlinux.org/packages/?name=gthumb)
 
 *   **[Gwenview](https://en.wikipedia.org/wiki/Gwenview "wikipedia:Gwenview")** — Fast and easy to use image viewer for the KDE desktop.
 
@@ -149,15 +138,11 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://sourceforge.net/projects/mirageiv.berlios/](https://sourceforge.net/projects/mirageiv.berlios/) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
-*   **nomacs** — Free (GPLv3) Qt image viewer for many operating systems. It is feature-rich but starts fast and can be configured to show additional widgets or only the image.
+*   **nomacs** — Qt image viewer. It is feature-rich but starts fast and can be configured to show additional widgets or only the image.
 
-	[http://www.nomacs.org/](http://www.nomacs.org/) || [nomacs](https://www.archlinux.org/packages/?name=nomacs)
+	[https://nomacs.org/](https://nomacs.org/) || [nomacs](https://www.archlinux.org/packages/?name=nomacs)
 
-*   **Pantheon Photos** — Image viewer for Pantheon.
-
-	[https://launchpad.net/pantheon-photos](https://launchpad.net/pantheon-photos) || [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos)
-
-*   **Phototonic** — Fast and functional image viewer and organizer (Qt).
+*   **Phototonic** — Fast and functional image viewer and browser (Qt).
 
 	[https://github.com/oferkv/phototonic/](https://github.com/oferkv/phototonic/) || [phototonic](https://aur.archlinux.org/packages/phototonic/)
 
@@ -176,10 +161,6 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 *   **Ristretto** — Fast and lightweight image viewer for the Xfce desktop environment.
 
 	[http://docs.xfce.org/apps/ristretto/start](http://docs.xfce.org/apps/ristretto/start) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
-
-*   **[Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")** — A digital photo organizer designed for the GNOME desktop environment
-
-	[https://wiki.gnome.org/Apps/Shotwell](https://wiki.gnome.org/Apps/Shotwell) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 
 *   **shufti** — shufti non-destructively saves and restores the zoom level, rotation, window size, desktop location and viewing area on a per-image/file location basis
 
@@ -201,15 +182,51 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://sioseis.ucsd.edu/xloadimage.html](http://sioseis.ucsd.edu/xloadimage.html) || [xloadimage](https://www.archlinux.org/packages/?name=xloadimage)
 
-#### Raster graphics editors
+#### Image organizers
 
-See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors").
+See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organizer "wikipedia:Image organizer").
 
-##### Console
+*   **Deepin Image Viewer** — Image viewer and organizer for Deepin desktop.
+
+	[https://github.com/linuxdeepin/deepin-image-viewer](https://github.com/linuxdeepin/deepin-image-viewer) || [deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer)
+
+*   **[digiKam](https://en.wikipedia.org/wiki/digiKam "wikipedia:digiKam")** — KDE-based image organizer with built-in editing features via a plugin architecture. digiKam asserts it is more full featured than similar applications with a larger set of image manipulation features including RAW image import and manipulation.
+
+	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
+
+*   **Frogr** — Small application for the GNOME desktop that allows users to manage their accounts in the Flickr image hosting website.
+
+	[https://wiki.gnome.org/Apps/Frogr](https://wiki.gnome.org/Apps/Frogr) || [frogr](https://aur.archlinux.org/packages/frogr/)
+
+*   **GNOME Photos** — Access, organize, and share your photos on GNOME.
+
+	[https://wiki.gnome.org/Apps/Photos](https://wiki.gnome.org/Apps/Photos) || [gnome-photos](https://www.archlinux.org/packages/?name=gnome-photos)
+
+*   **[gThumb](https://en.wikipedia.org/wiki/GThumb "wikipedia:GThumb")** — Image viewer and browser for the GNOME desktop.
+
+	[https://wiki.gnome.org/Apps/Gthumb](https://wiki.gnome.org/Apps/Gthumb) || [gthumb](https://www.archlinux.org/packages/?name=gthumb)
+
+*   **Pantheon Photos** — Photo organizer for Pantheon.
+
+	[https://launchpad.net/pantheon-photos](https://launchpad.net/pantheon-photos) || [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos)
+
+*   **[Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")** — A digital photo organizer designed for the GNOME desktop environment
+
+	[https://wiki.gnome.org/Apps/Shotwell](https://wiki.gnome.org/Apps/Shotwell) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
+
+#### Image processing
+
+*   **Converseen** — Batch image converter and resizer.
+
+	[http://converseen.fasterland.net/](http://converseen.fasterland.net/) || [converseen](https://www.archlinux.org/packages/?name=converseen)
 
 *   **[dcraw](https://en.wikipedia.org/wiki/dcraw "wikipedia:dcraw")** — Converts many camera RAW formats.
 
 	[http://www.cybercom.net/~dcoffin/dcraw/](http://www.cybercom.net/~dcoffin/dcraw/) || [dcraw](https://www.archlinux.org/packages/?name=dcraw)
+
+*   **[G'MIC](https://en.wikipedia.org/wiki/G%27MIC "wikipedia:G'MIC")** — Full-featured open-source framework for image processing, providing several different user interfaces to convert/manipulate/filter/visualize generic image datasets, ranging from 1d scalar signals to 3d+t sequences of multi-spectral volumetric images, including 2d color images.
+
+	[http://www.gmic.eu/](http://www.gmic.eu/) || [gmic](https://www.archlinux.org/packages/?name=gmic)
 
 *   **[GraphicsMagick](https://en.wikipedia.org/wiki/GraphicsMagick "wikipedia:GraphicsMagick")** — Fork of ImageMagick designed to have API and command-line stability. It also supports multi-CPU for enhanced performance and thus is used by some large commercial sites (Flickr, etsy) for its performance.
 
@@ -219,35 +236,25 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://www.imagemagick.org/script/index.php](http://www.imagemagick.org/script/index.php) || [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
-##### Graphical
+#### Raster graphics editors
 
-*   **AzPainter** — A Painting software.
+See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors").
 
-	[http://azpainter.sourceforge.jp/](http://azpainter.sourceforge.jp/) || [azpainter](https://aur.archlinux.org/packages/azpainter/)
+*   **AzPainter** — Painting software for illustration drawing.
 
-*   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Photography workflow and RAW development application.
+	[https://github.com/Symbian9/azpainter](https://github.com/Symbian9/azpainter) || [azpainter](https://aur.archlinux.org/packages/azpainter/)
 
-	[http://www.darktable.org/](http://www.darktable.org/) || [darktable](https://www.archlinux.org/packages/?name=darktable)
+*   **Deepin Draw** — Lightweight drawing tool for Deepin desktop.
 
-*   **[digiKam](https://en.wikipedia.org/wiki/digiKam "wikipedia:digiKam")** — KDE-based image organizer with built-in editing features via a plugin architecture. digiKam asserts it is more full featured than similar applications with a larger set of image manipulation features including RAW image import and manipulation.
-
-	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
+	[https://github.com/linuxdeepin/deepin-draw](https://github.com/linuxdeepin/deepin-draw) || [deepin-draw](https://www.archlinux.org/packages/?name=deepin-draw)
 
 *   **[GIMP](/index.php/GIMP "GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
-*   **[G'MIC](https://en.wikipedia.org/wiki/G%27MIC "wikipedia:G'MIC")** — Full-featured open-source framework for image processing, providing several different user interfaces to convert/manipulate/filter/visualize generic image datasets, ranging from 1d scalar signals to 3d+t sequences of multi-spectral volumetric images, including 2d color images.
-
-	[http://www.gmic.eu/](http://www.gmic.eu/) || [gmic](https://www.archlinux.org/packages/?name=gmic)
-
 *   **[Gpaint](https://en.wikipedia.org/wiki/GNU_Paint "wikipedia:GNU Paint")** — [Paintbrush](https://en.wikipedia.org/wiki/PC_Paintbrush "wikipedia:PC Paintbrush") clone for GNOME.
 
 	[https://www.gnu.org/software/gpaint/](https://www.gnu.org/software/gpaint/) || [gpaint](https://aur.archlinux.org/packages/gpaint/)
-
-*   **[Hugin](https://en.wikipedia.org/wiki/Hugin_(software) "wikipedia:Hugin (software)")** — Panorama photo stitcher.
-
-	[http://hugin.sourceforge.net/](http://hugin.sourceforge.net/) || [hugin](https://www.archlinux.org/packages/?name=hugin)
 
 *   **[KolourPaint](https://en.wikipedia.org/wiki/KolourPaint "wikipedia:KolourPaint")** — Free raster graphics editor for KDE, similar to Microsoft's Paint application before Windows 7, but with some additional features such as support for transparency. Part of [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) and [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/) groups.
 
@@ -256,10 +263,6 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 *   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Digital painting and illustration software included based on the KDE platform.
 
 	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
-
-*   **[Luminance HDR](https://en.wikipedia.org/wiki/Luminance_HDR "wikipedia:Luminance HDR")** — Open source graphical user interface application that aims to provide a workflow for HDR imaging.
-
-	[http://qtpfsgui.sourceforge.net/](http://qtpfsgui.sourceforge.net/) || [luminancehdr](https://www.archlinux.org/packages/?name=luminancehdr)
 
 *   **mtPaint** — Graphics editing program geared towards creating indexed palette images and pixel art.
 
@@ -273,6 +276,34 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://pinta-project.com/](http://pinta-project.com/) || [pinta](https://www.archlinux.org/packages/?name=pinta)
 
+*   **[XPaint](https://en.wikipedia.org/wiki/XPaint "wikipedia:XPaint")** — Color image editing tool which features most standard paint program options.
+
+	[https://sourceforge.net/projects/sf-xpaint/](https://sourceforge.net/projects/sf-xpaint/) || [xpaint](https://aur.archlinux.org/packages/xpaint/)
+
+Some image viewers and organizers like [digiKam](https://en.wikipedia.org/wiki/digiKam also provide some basic image manipulation functionality.
+
+#### Photo editors
+
+*   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Photography workflow and RAW development application.
+
+	[http://www.darktable.org/](http://www.darktable.org/) || [darktable](https://www.archlinux.org/packages/?name=darktable)
+
+*   **[Hugin](https://en.wikipedia.org/wiki/Hugin_(software) "wikipedia:Hugin (software)")** — Panorama photo stitcher.
+
+	[http://hugin.sourceforge.net/](http://hugin.sourceforge.net/) || [hugin](https://www.archlinux.org/packages/?name=hugin)
+
+*   **[LightZone](https://en.wikipedia.org/wiki/LightZone "wikipedia:LightZone")** — Professional-level digital darkroom and photo editor comparable to Photoshop Lightroom.
+
+	[http://lightzoneproject.org/](http://lightzoneproject.org/) || [lightzone](https://aur.archlinux.org/packages/lightzone/)
+
+*   **[Luminance HDR](https://en.wikipedia.org/wiki/Luminance_HDR "wikipedia:Luminance HDR")** — Open source graphical user interface application that aims to provide a workflow for HDR imaging.
+
+	[http://qtpfsgui.sourceforge.net/](http://qtpfsgui.sourceforge.net/) || [luminancehdr](https://www.archlinux.org/packages/?name=luminancehdr)
+
+*   **[nUFRaw](https://en.wikipedia.org/wiki/UFRaw "wikipedia:UFRaw")** — Utility to read and manipulate raw images from digital cameras using DCRaw.
+
+	[https://sourceforge.net/projects/nufraw/](https://sourceforge.net/projects/nufraw/) || [gimp-nufraw](https://www.archlinux.org/packages/?name=gimp-nufraw)
+
 *   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — Raw-image converter written in GTK+.
 
 	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://aur.archlinux.org/packages/rawstudio/)
@@ -281,31 +312,9 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://www.rawtherapee.com/](http://www.rawtherapee.com/) || [rawtherapee](https://www.archlinux.org/packages/?name=rawtherapee)
 
-*   **[XPaint](https://en.wikipedia.org/wiki/XPaint "wikipedia:XPaint")** — Color image editing tool which features most standard paint program options.
-
-	[https://sourceforge.net/projects/sf-xpaint/](https://sourceforge.net/projects/sf-xpaint/) || [xpaint](https://aur.archlinux.org/packages/xpaint/)
-
-Some image viewers like Ephoto, GNOME Photos, [gThumb](https://en.wikipedia.org/wiki/GThumb also provide some basic image manipulation functionality.
-
 #### Vector graphics editors
 
 See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
-
-##### Console
-
-*   **[Asymptote](https://en.wikipedia.org/wiki/Asymptote_(vector_graphics_language) "wikipedia:Asymptote (vector graphics language)")** — A descriptive vector graphics language (like PGF/TikZ and Metapost) with a C-like syntax and LaTeX support.
-
-	[http://asymptote.sourceforge.net](http://asymptote.sourceforge.net) || [asymptote](https://www.archlinux.org/packages/?name=asymptote)
-
-*   **[Graphviz](https://en.wikipedia.org/wiki/Graphviz "wikipedia:Graphviz")** — Set of tools for drawing graphs in the descriptive DOT language.
-
-	[http://www.graphviz.org](http://www.graphviz.org) || [graphviz](https://www.archlinux.org/packages/?name=graphviz)
-
-*   **qasm2circ** — Quantum circuit generator for latex.
-
-	[http://www.media.mit.edu/quanta/qasm2circ/](http://www.media.mit.edu/quanta/qasm2circ/) || [qasm2circ](https://aur.archlinux.org/packages/qasm2circ/)
-
-##### Graphical
 
 *   **[Dia](https://en.wikipedia.org/wiki/Dia_(software) "wikipedia:Dia (software)")** — GTK+-based diagram creation program.
 
@@ -404,6 +413,10 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 *   **delicolour** — Lightweight GTK+ 3 color finder.
 
 	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [delicolour](https://aur.archlinux.org/packages/delicolour/)
+
+*   **Deepin Picker** — Color picker tool for Deepin desktop.
+
+	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
 
 *   **gcolor2** — Simple GTK+ 2 color selector.
 
@@ -507,7 +520,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 #### Digital camera managers
 
-See [libgphoto2](/index.php/Libgphoto2 "Libgphoto2").
+See [Libgphoto2#Installation](/index.php/Libgphoto2#Installation "Libgphoto2").
 
 ### Audio
 
@@ -587,6 +600,10 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 
 	[https://github.com/linuxdeepin/deepin-music](https://github.com/linuxdeepin/deepin-music) || [deepin-music](https://www.archlinux.org/packages/?name=deepin-music)
 
+*   **Elisa** — Simple music player by the KDE community aiming to provide a nice experience for its users.
+
+	[https://community.kde.org/Elisa](https://community.kde.org/Elisa) || [elisa](https://www.archlinux.org/packages/?name=elisa)
+
 *   **[Exaile](/index.php/Exaile "Exaile")** — GTK+ clone of Amarok.
 
 	[http://www.exaile.org/](http://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)
@@ -602,6 +619,10 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 *   **Goggles Music Manager** — Music collection manager and player that automatically categorizes your music, supports gapless playback, features easy tag editing, and internet radio support. Uses the [Fox toolkit](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit").
 
 	[https://gogglesmm.github.io/](https://gogglesmm.github.io/) || [gogglesmm](https://www.archlinux.org/packages/?name=gogglesmm)
+
+*   **Google Play Music Desktop Player** — Beautiful cross platform desktop player for Google Play Music. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://googleplaymusicdesktopplayer.com/](https://googleplaymusicdesktopplayer.com/) || [gpmdp](https://aur.archlinux.org/packages/gpmdp/)
 
 *   **Guayadeque** — Full featured media player that can easily manage large collections and uses the GStreamer media framework.
 
@@ -698,6 +719,10 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 *   **Bitwig Studio** — Proprietary professional digital audio workstation.
 
 	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio](https://aur.archlinux.org/packages/bitwig-studio/)
+
+*   **Deepin Voice Recorder** — Voice recorder application for Deepin desktop.
+
+	[https://github.com/linuxdeepin/deepin-voice-recorder](https://github.com/linuxdeepin/deepin-voice-recorder) || [deepin-voice-recorder](https://www.archlinux.org/packages/?name=deepin-voice-recorder)
 
 *   **Gnac** — Audio converter for GNOME.
 
@@ -913,6 +938,10 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
 
+*   **GNOME Twitch** — Twitch client for GNOME using [GStreamer](/index.php/GStreamer "GStreamer").
+
+	[http://gnome-twitch.vinszent.com/](http://gnome-twitch.vinszent.com/) || [gnome-twitch](https://www.archlinux.org/packages/?name=gnome-twitch)
+
 *   **[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")** — Media player (audio and video) for the GNOME desktop that uses [GStreamer](/index.php/GStreamer "GStreamer"). Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
 	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
@@ -937,9 +966,13 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/)
 
-*   **minitube** — YouTube desktop application written in C++ using [Phonon](/index.php/KDE#Phonon "KDE") and Qt.
+*   **Minitube** — YouTube desktop application written in C++ using [Phonon](/index.php/KDE#Phonon "KDE") and Qt.
 
 	[https://flavio.tordini.org/minitube](https://flavio.tordini.org/minitube) || [minitube](https://www.archlinux.org/packages/?name=minitube)
+
+*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer").
+
+	[https://lettier.github.io/movie-monad/](https://lettier.github.io/movie-monad/) || [movie-monad](https://aur.archlinux.org/packages/movie-monad/)
 
 *   **[mpv](/index.php/Mpv "Mpv")** — Very basic GUI for mpv. Can be launched with `mpv --player-operation-mode=pseudo-gui`.
 
@@ -1003,13 +1036,17 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 
 	[http://ffmpeg.org/](http://ffmpeg.org/) || [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg)
 
-*   **HandBrake CLI** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping.
+*   **[HandBrake CLI](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli)
 
 *   **[MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder")** — Free command line video decoding, encoding and filtering tool.
 
 	[http://mplayerhq.hu/](http://mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
+
+*   **Transcode** — Command line tool for video stream processing.
+
+	[https://bitbucket.org/france/transcode-tcforge](https://bitbucket.org/france/transcode-tcforge) || [transcode](https://www.archlinux.org/packages/?name=transcode)
 
 ##### Graphical
 
@@ -1029,7 +1066,7 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 
 	[https://sites.google.com/site/ffmulticonverter/](https://sites.google.com/site/ffmulticonverter/) || [ffmulticonverter](https://aur.archlinux.org/packages/ffmulticonverter/)
 
-*   **HandBrake** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
+*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 
@@ -1044,6 +1081,10 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 *   **Transmageddon** — Simple python application for transcoding video into formats supported by GStreamer.
 
 	[http://www.linuxrising.org/](http://www.linuxrising.org/) || [transmageddon](https://www.archlinux.org/packages/?name=transmageddon)
+
+*   **WinFF** — Graphical video and audio batch converter using FFmpeg.
+
+	[https://www.biggmatt.com/winff/](https://www.biggmatt.com/winff/) || [winff](https://aur.archlinux.org/packages/winff/)
 
 #### Video editors
 
@@ -1099,6 +1140,8 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 #### Subtitles
 
+See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wiki/Comparison_of_subtitle_editors "wikipedia:Comparison of subtitle editors").
+
 *   **[Aegisub](https://en.wikipedia.org/wiki/Aegisub "wikipedia:Aegisub")** — Subtitle editor.
 
 	[https://github.com/Aegisub/Aegisub](https://github.com/Aegisub/Aegisub) || [aegisub](https://www.archlinux.org/packages/?name=aegisub)
@@ -1115,15 +1158,19 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://www.jubler.org](http://www.jubler.org) || [jubler](https://aur.archlinux.org/packages/jubler/)
 
-*   **Penguin Subtitle Player** — Penguin Subtitle Player is an open-source, cross-platform standalone subtitle player, as an alternative to Greenfish Subtitle Player, SrtViewer (Mac), SRTPlayer, JustSubsPlayer and Free Subtitle Player.
+*   **Penguin Subtitle Player** — Standalone subtitle player that provides a translucent window which always stays on the top so subtitles can be shown on top of the video without blocking anything.
 
 	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
 
-*   **subdl** — Automatic subtitle downloader.
+*   **subdl** — Command-line tool for downloading subtitles from opensubtitles.org.
 
 	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
 
-*   **Subtitle Composer** — open-source Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form
+*   **SubDownloader** — Automatic download/upload of subtitles using fast hashing.
+
+	[https://github.com/subdownloader/subdownloader](https://github.com/subdownloader/subdownloader) || [subdownloader](https://www.archlinux.org/packages/?name=subdownloader)
+
+*   **Subtitle Composer** — Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form.
 
 	[https://github.com/maxrd2/subtitlecomposer](https://github.com/maxrd2/subtitlecomposer) || [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/)
 
@@ -1131,45 +1178,61 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[https://github.com/SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit) || [subtitleedit](https://aur.archlinux.org/packages/subtitleedit/)
 
+*   **Subtitle Editor** — GTK+3 tool to edit subtitles for GNU/Linux/*BSD.
+
+	[http://kitone.github.io/subtitleeditor/](http://kitone.github.io/subtitleeditor/) || [subtitleeditor](https://www.archlinux.org/packages/?name=subtitleeditor)
+
 *   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
 
 	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
 
 #### Screencast
 
-See also [Wikipedia:Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").
+See also [FFmpeg#Screen capture](/index.php/FFmpeg#Screen_capture "FFmpeg") and [Wikipedia:Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").
 
 Screencast utilities allow you to create a video of your desktop or individual windows.
 
-*   **byzanz** — Simple screencast tool that produces GIF animations.
+*   **Byzanz** — Simple screencast tool that produces GIF animations.
 
 	[http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/](http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
 
-*   **Green Recorder** — A simple yet functional desktop recorder for Linux systems.
+*   **Deepin Screen Recorder** — Screen recorder application for Deepin desktop.
+
+	[https://github.com/linuxdeepin/deepin-screen-recorder](https://github.com/linuxdeepin/deepin-screen-recorder) || [deepin-screen-recorder](https://www.archlinux.org/packages/?name=deepin-screen-recorder)
+
+*   **FFcast** — FFmpeg-based screencast tool written in Bash.
+
+	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
+
+*   **Green Recorder** — Simple yet functional desktop recorder for Linux systems.
 
 	[https://github.com/green-project/green-recorder](https://github.com/green-project/green-recorder) || [green-recorder](https://aur.archlinux.org/packages/green-recorder/)
-
-*   **Istanbul** — Simple desktop session recorder that produces ogg videos.
-
-	[https://wiki.gnome.org/Projects/Istanbul](https://wiki.gnome.org/Projects/Istanbul) || [istanbul](https://aur.archlinux.org/packages/istanbul/)
 
 *   **Kazam** — Screencasting program with design in mind. Handles multiscreen setups.
 
 	[https://launchpad.net/kazam](https://launchpad.net/kazam) || [kazam](https://aur.archlinux.org/packages/kazam/)
 
-*   **OBS** — Free and open source software for video recording and live streaming.
+*   **[OBS](https://en.wikipedia.org/wiki/Open_Broadcaster_Software "wikipedia:Open Broadcaster Software")** — Video recording and live streaming application.
 
 	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
 
-*   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — (inactive) An easy to use utility that records your desktop into the ogg format with a CLI, Qt or GTK+ interface.
+*   **[Peek](https://en.wikipedia.org/wiki/Peek "wikipedia:Peek")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
+	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
 
-*   **simplescreenrecorder** — A feature-rich screen recorder written in C++/Qt4 that supports X11 and OpenGL.
+*   **RecordItNow** — Plugin based desktop recorder for KDE.
+
+	[http://recorditnow.sourceforge.net/](http://recorditnow.sourceforge.net/) || [recorditnow](https://www.archlinux.org/packages/?name=recorditnow)
+
+*   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — Easy to use utility that records your desktop into the ogg format with a CLI, GTK+ or Qt interface. (inactive development)
+
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || CLI: [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), GTK+: [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop), Qt: [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
+
+*   **[SimpleScreenRecorder](https://en.wikipedia.org/wiki/SimpleScreenRecorder "wikipedia:SimpleScreenRecorder")** — Feature-rich screen recorder written in C++/Qt5 that supports X11 and OpenGL.
 
 	[http://www.maartenbaert.be/simplescreenrecorder/](http://www.maartenbaert.be/simplescreenrecorder/) || [simplescreenrecorder](https://www.archlinux.org/packages/?name=simplescreenrecorder)
 
-*   **vokoscreen** — Simple screencast tool, GUI ffmpeg.
+*   **VokoScreen** — Simple screencast GUI tool using FFmpeg.
 
 	[http://www.kohaupt-online.de/hp](http://www.kohaupt-online.de/hp) || [vokoscreen](https://aur.archlinux.org/packages/vokoscreen/)
 
@@ -1177,17 +1240,69 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[http://xvidcap.sourceforge.net/](http://xvidcap.sourceforge.net/) || [xvidcap](https://aur.archlinux.org/packages/xvidcap/)
 
-*   **FFcast** — FFmpeg-based screencast tool written in Bash.
+#### Webcam
 
-	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
+See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") and [Wikipedia:Comparison of webcam software](https://en.wikipedia.org/wiki/Comparison_of_webcam_software "wikipedia:Comparison of webcam software").
 
-*   **[FFmpeg](/index.php/FFmpeg#Screen_cast "FFmpeg")** — Complete, cross-platform solution to record, convert and stream audio and video.
+*   **[Cheese](https://en.wikipedia.org/wiki/Cheese_(software) "wikipedia:Cheese (software)")** — Take photos and videos with your webcam, with fun graphical effects.
 
-	[http://www.ffmpeg.org/](http://www.ffmpeg.org/) || [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg)
+	[https://wiki.gnome.org/Apps/Cheese](https://wiki.gnome.org/Apps/Cheese) || [cheese](https://www.archlinux.org/packages/?name=cheese)
 
-*   **peek** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
+*   **fswebcam** — Small and simple command line webcam software that generates images for a webcam.
 
-	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
+	[https://www.sanslogic.co.uk/fswebcam/](https://www.sanslogic.co.uk/fswebcam/) || [fswebcam](https://aur.archlinux.org/packages/fswebcam/)
+
+*   **[Guvcview](https://en.wikipedia.org/wiki/Guvcview "wikipedia:Guvcview")** — Simple interface for capturing and viewing video from v4l2 devices.
+
+	[http://guvcview.sourceforge.net/](http://guvcview.sourceforge.net/) || GTK+: [guvcview](https://www.archlinux.org/packages/?name=guvcview), Qt: [guvcview-qt](https://www.archlinux.org/packages/?name=guvcview-qt)
+
+*   **Kamoso** — Webcam recorder from KDE community.
+
+	[https://userbase.kde.org/Kamoso](https://userbase.kde.org/Kamoso) || [kamoso](https://www.archlinux.org/packages/?name=kamoso)
+
+*   **MJPG-streamer** — Command line application which can be used to stream M-JPEG over an IP-based network from a webcam to various types of viewers.
+
+	[https://github.com/jacksonliam/mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer) || [mjpg-streamer-jacksonliam-git](https://aur.archlinux.org/packages/mjpg-streamer-jacksonliam-git/)
+
+*   **[Motion](/index.php/Motion "Motion")** — Highly configurable program that monitors video signals from many types of cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.
+
+	[https://motion-project.github.io/](https://motion-project.github.io/) || [motion](https://aur.archlinux.org/packages/motion/)
+
+*   **QtCAM** — Webcam software with more than 10 image control settings, extension settings and color space switching.
+
+	[https://www.e-consystems.com/opensource-linux-webcam-software-application.asp](https://www.e-consystems.com/opensource-linux-webcam-software-application.asp) || [qtcam-git](https://aur.archlinux.org/packages/qtcam-git/)
+
+*   **v4l2ucp** — Universal control panel for V4L2 devices.
+
+	[http://v4l2ucp.sourceforge.net/](http://v4l2ucp.sourceforge.net/) || [v4l2ucp](https://www.archlinux.org/packages/?name=v4l2ucp)
+
+*   **v4l-utils** — Provides a series of utilities for media devices.
+
+	[https://linuxtv.org/](https://linuxtv.org/) || [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils)
+
+*   **Webcamoid** — Full featured webcam suite.
+
+	[https://webcamoid.github.io/](https://webcamoid.github.io/) || [webcamoid](https://aur.archlinux.org/packages/webcamoid/)
+
+*   **ZArt** — GUI for G'MIC real-time manipulations on the output of a webcam.
+
+	[https://gmic.eu/](https://gmic.eu/) || [zart](https://www.archlinux.org/packages/?name=zart)
+
+#### DVD authoring
+
+See also [Wikipedia:List of DVD authoring applications](https://en.wikipedia.org/wiki/List_of_DVD_authoring_applications "wikipedia:List of DVD authoring applications").
+
+*   **Bombono DVD** — DVD authoring program with nice and clean GUI.
+
+	[http://www.bombono.org/](http://www.bombono.org/) || [bombono-dvd](https://aur.archlinux.org/packages/bombono-dvd/)
+
+*   **[Devede](https://en.wikipedia.org/wiki/DeVeDe "wikipedia:DeVeDe")** — Program to create VideoDVDs and CDs.
+
+	[http://www.rastersoft.com/programas/devede.html](http://www.rastersoft.com/programas/devede.html) || [devede](https://www.archlinux.org/packages/?name=devede)
+
+*   **[DVDStyler](https://en.wikipedia.org/wiki/DVDStyler "wikipedia:DVDStyler")** — DVD authoring application for the creation of professional-looking DVDs.
+
+	[https://www.dvdstyler.org/](https://www.dvdstyler.org/) || [dvdstyler](https://aur.archlinux.org/packages/dvdstyler/)
 
 #### DVD ripping
 
@@ -1232,6 +1347,10 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 *   **Gerbera** — UPnP Media Server to stream your media to devices on your home network. (Fork of MediaTomb.)
 
 	[https://gerbera.io/](https://gerbera.io/) || [gerbera](https://aur.archlinux.org/packages/gerbera/)
+
+*   **[Icecast](/index.php/Icecast "Icecast")** — Streaming media (audio/video) server which currently supports Ogg (Vorbis and Theora), Opus, WebM and MP3 streams.
+
+	[https://icecast.org/](https://icecast.org/) || [icecast](https://www.archlinux.org/packages/?name=icecast)
 
 *   **[Plex](/index.php/Plex "Plex")** — Proprietary media server, which organizes your personal video, music, and photo collections and streams them to all of your devices.
 

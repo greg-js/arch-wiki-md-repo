@@ -3,22 +3,23 @@ The [Android Debug Bridge](https://developer.android.com/studio/command-line/adb
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Connect device](#Connect_device)
-*   [3 Figure out device IDs](#Figure_out_device_IDs)
-*   [4 Adding udev Rules](#Adding_udev_Rules)
-*   [5 Configuring adb](#Configuring_adb)
-*   [6 Detect the device](#Detect_the_device)
-*   [7 Transferring files](#Transferring_files)
-*   [8 Tools building on ADB](#Tools_building_on_ADB)
-*   [9 Troubleshooting](#Troubleshooting)
+*   [2 Usage](#Usage)
+    *   [2.1 Connect device](#Connect_device)
+    *   [2.2 Figure out device IDs](#Figure_out_device_IDs)
+    *   [2.3 Adding udev Rules](#Adding_udev_Rules)
+    *   [2.4 Configuring adb](#Configuring_adb)
+    *   [2.5 Detect the device](#Detect_the_device)
+    *   [2.6 Transferring files](#Transferring_files)
+*   [3 Tools building on ADB](#Tools_building_on_ADB)
+*   [4 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package.
+ADB is part of the Platform-Tools [SDK package](/index.php/Android#SDK_packages "Android") and the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package.
 
-**ADB** can also be installed via [platform tools](/index.php/Android#Android_SDK_platform_API "Android") (usually available in `/opt/android-sdk/platform-tools/`), so it might not be necessary to install [android-tools](https://www.archlinux.org/packages/?name=android-tools) (available in `/usr/bin/`).
+## Usage
 
-## Connect device
+### Connect device
 
 **Tip:**
 
@@ -36,7 +37,7 @@ To connect to a real device or phone via ADB under Arch, you must:
 
 If [ADB recognizes your device](#Detect_the_device) (`adb devices` shows it as `"device" and not as "unauthorized"`, or it is visible and accessible in IDE), you are done. Otherwise see instructions below.
 
-## Figure out device IDs
+### Figure out device IDs
 
 Each Android device has a USB vendor/product ID. An example for HTC Evo is:
 
@@ -60,7 +61,7 @@ Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
 
 ```
 
-## Adding udev Rules
+### Adding udev Rules
 
 Use the rules from [android-udev](https://www.archlinux.org/packages/?name=android-udev) (or [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/)), install them manually from [Android developer](https://source.android.com/source/initializing#configuring-usb-access), or use the following template for your [udev rules](/index.php/Udev_rules "Udev rules"), just replace `[VENDOR ID]` and `[PRODUCT ID]` with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
 
@@ -81,7 +82,7 @@ Then, to reload your new udev rules, execute:
 
 Make sure you are member of `adbusers` [group](/index.php/Group "Group") to access `adb` devices.
 
-## Configuring adb
+### Configuring adb
 
 Instead of using udev rules, you may create/edit `~/.android/adb_usb.ini` which contains a list of vendor IDs.
 
@@ -91,7 +92,7 @@ Instead of using udev rules, you may create/edit `~/.android/adb_usb.ini` which 
 
 ```
 
-## Detect the device
+### Detect the device
 
 After you have setup the udev rules, unplug your device and replug it.
 
@@ -110,7 +111,7 @@ HT07VHL00676    device
 
 ```
 
-## Transferring files
+### Transferring files
 
 You can now use adb to transfer files between the device and your computer. To transfer files to the device, use
 

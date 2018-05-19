@@ -51,7 +51,7 @@ It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_sy
 
 ### Server
 
-The NFS server needs a list of exports (shared directories) which are defined in `/etc/exports`. NFS shares defined in `/etc/exports` are relative to the so-called NFS root. A good security practice is to define an NFS root in a discrete directory tree under the server's root file system which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the filesystem.
+The NFS server needs a list of exports (shared directories) which are defined in `/etc/exports`. NFS shares defined in `/etc/exports` are relative to the so-called NFS root. A good security practice is to define an NFS root in a discrete directory tree under the server's root file system which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
 
 Consider this following example wherein:
 
@@ -66,7 +66,7 @@ Consider this following example wherein:
 
 **Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
 
-To make it stick across reboots, add the bind mount to `fstab`:
+To make it stick across reboots, add the bind mount to [fstab](/index.php/Fstab "Fstab"):
 
  `/etc/fstab` 
 ```
@@ -74,13 +74,15 @@ To make it stick across reboots, add the bind mount to `fstab`:
 
 ```
 
-Add directories to be shared and limit them to a range of addresses via a CIDR or hostname(s) of client machines that will be allowed to mount them in `/etc/exports`:
+Add directories to be shared and limit them to a range of addresses via a CIDR or hostname(s) of client machines that will be allowed to mount them in `/etc/exports`, e.g.:
 
+**Tip:** Use an asterisk (*) to allow access from any interface.
  `/etc/exports` 
 ```
-/srv/nfs        192.168.1.0/24(rw,sync,crossmnt,fsid=0,no_subtree_check)
-/srv/nfs/music  192.168.1.0/24(rw,sync,no_subtree_check)
-/srv/nfs/public 192.168.1.0/24(ro,all_squash,insecure,no_subtree_check) desktop(rw,sync,all_squash,anonuid=99,anongid=99,no_subtree_check) # map to user/group - in this case *nobody*
+/srv/nfs        192.168.1.0/24(rw,sync,crossmnt,fsid=0)
+/srv/nfs/music  192.168.1.0/24(rw,sync)
+/srv/nfs/home   192.168.1.0/24(rw,sync,nohide)
+/srv/nfs/public 192.168.1.0/24(ro,all_squash,insecure) desktop(rw,sync,all_squash,anonuid=99,anongid=99) # map to user/group - in this case *nobody*
 ```
 
 It should be noted that modifying `/etc/exports` while the server is running will require a re-export for changes to take effect:
@@ -101,7 +103,7 @@ For more information about all available options see [exports(5)](https://jlk.fj
 
 **Tip:** [ip2cidr](http://ip2cidr.com/) is a tool to convert an IP ranges to correctly structured CDIR specification.
 
-**Note:** If the target export is a tmpfs filesystem, the `fsid=1` option is required.
+**Note:** If the target export is a [tmpfs](/index.php/Tmpfs "Tmpfs") filesystem, the `fsid=1` option is required.
 
 #### Starting the server
 

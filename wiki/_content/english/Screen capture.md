@@ -165,25 +165,7 @@ Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop
 
 ### FFmpeg
 
-[FFmpeg](/index.php/FFmpeg "FFmpeg") provides an x11grab device that allows the screen to be captured in X11.
-
-Take a screenshot on a *width* x *height* display:
-
-```
-$ ffmpeg -f x11grab -video_size *width*x*height* -i $DISPLAY -vframes 1 screen.png
-
-```
-
-Here, the PNG codec is used as it's lossless and suitable for screenshots, but any image codec can be used.
-
-The same device allows for screencasting (on a display with a refresh rate of *rate* HZ):
-
-```
-$ ffmpeg -f x11grab -video_size *width*x*height* -framerate *rate* -i $DISPLAY -c:v libx264 -preset ultrafast cast.mkv
-
-```
-
-Here, the x264 codec with the fastest possible encoding speed is used. Other codecs can be used; if writing each frame is too slow (either due to inadequate disk performance or slow encoding), then frames will be dropped and video output will be choppy.
+See [FFmpeg#Screen capture](/index.php/FFmpeg#Screen_capture "FFmpeg").
 
 ### Weston
 

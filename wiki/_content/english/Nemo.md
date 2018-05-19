@@ -13,8 +13,9 @@ Related articles
 *   [1 Installation](#Installation)
     *   [1.1 Extensions](#Extensions)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Show / hide desktop icons](#Show_.2F_hide_desktop_icons)
-    *   [2.2 Change application for "Open in terminal" context menu entry](#Change_application_for_.22Open_in_terminal.22_context_menu_entry)
+    *   [2.1 Set Nemo as default file browser](#Set_Nemo_as_default_file_browser)
+    *   [2.2 Show / hide desktop icons](#Show_.2F_hide_desktop_icons)
+    *   [2.3 Change application for "Open in terminal" context menu entry](#Change_application_for_.22Open_in_terminal.22_context_menu_entry)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Nemo Actions](#Nemo_Actions)
         *   [3.1.1 Clam Scan](#Clam_Scan)
@@ -65,7 +66,16 @@ See [AUR](https://aur.archlinux.org/packages/?O=0&K=nemo-) and [nemo-extensions 
 
 ## Configuration
 
-Nemo is simple to configure graphically but not all options are in the preferences screen in Nemo. More options are available in the *dconf-editor* under `org.nemo`. To set Nemo as the default file browser, see [Xdg-open#Set the default file-browser](/index.php/Xdg-open#Set_the_default_file-browser "Xdg-open").
+Nemo is simple to configure graphically but not all options are in the preferences screen in Nemo. More options are available in the *dconf-editor* under `org.nemo`.
+
+### Set Nemo as default file browser
+
+To set Nemo as the default file browser, execute the following:
+
+```
+$ xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+
+```
 
 ### Show / hide desktop icons
 

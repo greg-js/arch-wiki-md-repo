@@ -540,6 +540,7 @@ A section of the Unicode standard is designated for pictographic characters call
 
 *   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts.
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style.
+*   [ttf-emojione](https://aur.archlinux.org/packages/ttf-emojione/) - Official colorful EmojiOne font.
 *   [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/) - a color and B&W emoji SVGinOT font built from EmojiOne.
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Twitter's open-sourced emoji glyphs.
 

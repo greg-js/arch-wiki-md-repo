@@ -1,3 +1,7 @@
+관련 항목
+
+*   [Internationalization](/index.php/Internationalization "Internationalization")
+
 이 문서는 아치리눅스 설치 후 한국어 입력을 설정하는 방법을 다룹니다.
 
 이 문서를 읽기 전에 [X11](/index.php/X11 "X11") 환경을 미리 설치하고 설정하십시오. 이 문서는 콘솔에서 한국어를 입력하는 방법을 다루지 않습니다.
@@ -44,11 +48,11 @@
 
 	fcitx
 
-	[Fcitx](/index.php/Fcitx "Fcitx") 역시 posix 호환 운영체제들을 위한 입력기 프레임워크입니다. fcitx-hangul은 2014년 11월 현재 Chromium이나 Google Chrome의 테마를 바꾼 후에야 한글 입력이 가능해지는 문제가 있습니다.
+	[Fcitx](/index.php/Fcitx "Fcitx") 역시 POSIX 호환 운영체제들을 위한 입력기 프레임워크입니다. 사용하는데 문제는 없지만, GNOME을 사용한다면 탭 메뉴에서 몇 가지의 메뉴가 열리지 않습니다. 또한, Slack을 사용한다면, Electron이 입력을 무시해서 입력은 영어로밖에 입력이 되지 않습니다.
 
 	nabi
 
-	[nabi](https://aur.archlinux.org/packages/nabi/)는 최환진 씨가 개발하는 독립적 한글 입력기입니다. 옛한글 입력 등 한글 입력에 특화된 여러 기능을 제공합니다. 한글과 영어만을 사용한다면, 나비 입력기를 설치해보십시오. 2014년 11월 현재 나비는 Google Chrome과 Chromium에서 문제를 일으킵니다. 스페이스바를 누를 경우, 입력 중이던 글자가 공백 뒤에 놓이는 현상이 나타납니다. 즉 Google Chrome에서 `한글 입력에 문제가 있습니다`를 쳤다면, `한 글입력 에문제 가있습니다`와 같이 입력이 됩니다.
+	[nabi](https://aur.archlinux.org/packages/nabi/)는 최환진 씨가 개발하는 독립적 한글 입력기입니다. 옛한글 입력 등 한글 입력에 특화된 여러 기능을 제공합니다. 한글과 영어만을 사용한다면, 나비 입력기를 설치해보십시오. 2014년 11월 현재 나비는 Google Chrome과 Chromium에서 문제를 일으킵니다. 스페이스바를 누를 경우, 입력 중이던 글자가 공백 뒤에 놓이는 현상이 나타납니다. 즉 Google Chrome에서 `한글 입력에 문제가 있습니다`를 쳤다면, `한 글입력 에문제 가있습니다`와 같이 입력이 됩니다. 현재 나비는 아치 리눅스에서 제공되고 있지 않습니다.
 
 	dasom
 

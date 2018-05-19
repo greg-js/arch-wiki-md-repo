@@ -49,9 +49,9 @@ The automatic mounting of devices is easily achieved with udisks wrappers. See a
 
 	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-*   **udiskie** — *udisks2* automounter with optional notifications, tray icon and support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [details](https://github.com/coldfix/udiskie/wiki/Usage)
+*   **udiskie** — *udisks2* automounter with optional notifications, tray icon and support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the [udiskie wiki](https://github.com/coldfix/udiskie/wiki/Usage) for details
 
-	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
+	[https://github.com/coldfix/udiskie](https://github.com/coldfix/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 
 *   **udisksvm** — GUI *udisks2* wrapper written in Python3 and using the Qt5 framework. It uses mouse clicks to mount, unmount removable devices or eject a CD/DVD. See the [README](https://github.com/berbae/udisksvm/blob/master/README) file for details.
 

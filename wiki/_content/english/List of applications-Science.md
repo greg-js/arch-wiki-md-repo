@@ -60,6 +60,10 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[http://www.isthe.com/chongo/tech/comp/calc/](http://www.isthe.com/chongo/tech/comp/calc/) || [calc](https://www.archlinux.org/packages/?name=calc)
 
+*   **Deepin Calculator** — Easy to use calculator for Deepin desktop.
+
+	[https://github.com/linuxdeepin/deepin-calculator](https://github.com/linuxdeepin/deepin-calculator) || [deepin-calculator](https://www.archlinux.org/packages/?name=deepin-calculator)
+
 *   **Extcalc** — Qt-based scientific graphical calculator.
 
 	[http://extcalc-linux.sourceforge.net/](http://extcalc-linux.sourceforge.net/) || [extcalc](https://aur.archlinux.org/packages/extcalc/)
@@ -79,6 +83,10 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 *   **[KCalc](https://en.wikipedia.org/wiki/KCalc "wikipedia:KCalc")** — Scientific calculator included in the KDE desktop.
 
 	[https://www.kde.org/applications/utilities/kcalc/](https://www.kde.org/applications/utilities/kcalc/) || [kcalc](https://www.archlinux.org/packages/?name=kcalc)
+
+*   **Liri Calculator** — Calculator for Liri.
+
+	[https://github.com/lirios/calculator](https://github.com/lirios/calculator) || [liri-calculator](https://www.archlinux.org/packages/?name=liri-calculator)
 
 *   **MATE Calc** — Calculator for the MATE desktop environment.
 

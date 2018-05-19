@@ -1,3 +1,7 @@
+相关文章
+
+*   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
+
 **翻译状态：** 本文是英文页面 [MTP](/index.php/MTP "MTP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-30，点击[这里](https://wiki.archlinux.org/index.php?title=MTP&diff=0&oldid=447354)可以查看翻译后英文页面的改动。
 
 [MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol") 是 "Media Transfer Protocol" (媒体传输协议)的缩写,很多移动和多媒体设备都支持这个协议.

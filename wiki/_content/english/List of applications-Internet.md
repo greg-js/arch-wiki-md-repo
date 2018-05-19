@@ -115,7 +115,7 @@
 
 	[http://wifi-radar.tuxfamily.org/](http://wifi-radar.tuxfamily.org/) || [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar)
 
-See also [Network manager](/index.php/Network_manager "Network manager").
+See also [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
 
 #### VPN clients
 
@@ -1463,7 +1463,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 	[https://zoom.us/](https://zoom.us/) || [zoom](https://aur.archlinux.org/packages/zoom/)
 
-*   **[Zulip](https://en.wikipedia.org/wiki/Zulip "wikipedia:Zulip")** — Desktop client for Zulip group chat.
+*   **[Zulip](https://en.wikipedia.org/wiki/Zulip "wikipedia:Zulip")** — Desktop client for Zulip group chat. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://zulipchat.com/apps/linux](https://zulipchat.com/apps/linux) || [zulip-electron-bin](https://aur.archlinux.org/packages/zulip-electron-bin/)
 

@@ -104,7 +104,7 @@ Check the installed Rust version using `rustc -V`:
 
  `$ rustc -V ` 
 ```
-rustc 1.9.0 (e4e8b6668 2016-05-18)
+rustc 1.26.0 (a77568041 2018-05-07)
 
 ```
 

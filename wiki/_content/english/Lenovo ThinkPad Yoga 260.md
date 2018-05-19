@@ -67,6 +67,8 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint"). Sometimes the TrackPoint s
 
 Touchscreen works with the Wacom driver (package: [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom)). Also using the Stylus, the bottom button of the pen is defined as the eraser and the top button works as a middle mouse button
 
+**Note:** See [Tablet PC](/index.php/Tablet_PC "Tablet PC") for more info on optimizing the touchscreen experience.
+
 ### Video
 
 The kernel supports HD Graphics 520 from version 4.3\. With default configuration, tearing is apparent when playing videos. DRI3 and glamor are supported. To solve tearing and use DRI3 and glamor, create the file `/etc/X11/xorg.conf.d/20-intel.conf` with the following content:

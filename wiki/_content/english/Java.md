@@ -32,6 +32,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
     *   [5.1 Better font rendering](#Better_font_rendering)
     *   [5.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
     *   [5.3 GTK LookAndFeel](#GTK_LookAndFeel)
+        *   [5.3.1 GTK3 Support](#GTK3_Support)
     *   [5.4 Better 2D performance](#Better_2D_performance)
     *   [5.5 Non-reparenting window managers / Grey window / Programs not drawing properly](#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly)
 *   [6 See also](#See_also)
@@ -299,7 +300,13 @@ Some Java programs insist on using the cross platform Metal look and feel. In so
 
 `swing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
 
-**Note:** Forcing Java to use GTK may break some applications. The JRE/JDK is linked against GTK2 while many desktop applications use GTK3\. If a GTK3 app has Java plugins with GUI, the app is likely to crash when opening the Java GUI, as mixing GTK2 and GTK3 in the same process is not supported. Libreoffice 5.0 is an example of this.
+#### GTK3 Support
+
+In Java releases prior to version 9, the GTK LookAndFeel is linked against GTK2, whilst many newer desktop applications use GTK3\. This incompatibility between GTK versions may break applications utilizing Java plugins with GUI, as the mixing of GTK2 and GTK3 in the same process is not supported (for example, LibreOffice 5.0).
+
+Since [Java 9](http://openjdk.java.net/jeps/283), the GTK LookAndFeel can be run against GTK versions `2`, `2.2` and `3`, defaulting to GTK2\. This can be overridden by setting the following property:
+
+`jdk.gtk.version=3`
 
 ### Better 2D performance
 

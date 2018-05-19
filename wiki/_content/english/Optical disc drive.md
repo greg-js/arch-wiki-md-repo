@@ -44,7 +44,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
 *   [3 Ripping](#Ripping)
     *   [3.1 CD](#CD_2)
     *   [3.2 DVD-Video](#DVD-Video)
-        *   [3.2.1 dvd::rip](#dvd::rip)
+        *   [3.2.1 Console](#Console)
+        *   [3.2.2 Graphical](#Graphical)
     *   [3.3 DVD-Audio](#DVD-Audio)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
@@ -688,16 +689,16 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 ### DVD-Video
 
+See also [Wikipedia:Comparison of DVD ripper software](https://en.wikipedia.org/wiki/Comparison_of_DVD_ripper_software "wikipedia:Comparison of DVD ripper software").
+
 Often, the process of ripping a DVD can be broken down into two subtasks:
 
 1.  **Data extraction** — Copying the audio and/or video data to a hard disk,
 2.  [Transcoding](https://en.wikipedia.org/wiki/Transcode "wikipedia:Transcode") — Converting the extracted data into a suitable format.
 
-Some utilities perform both tasks, whilst others focus on one aspect or the other:
+Some utilities perform both tasks, whilst others focus on one aspect or the other.
 
-*   **Avidemux** — Multithreaded video transcoder, which offers both a graphical and command-line interface with many preset configurations. Influenced by Handbrake.
-
-	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-qt-git](https://aur.archlinux.org/packages/avidemux-qt-git/)
+#### Console
 
 *   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Tool for pure data extraction which does not transcode. It is useful for creating *exact* copies of encrypted DVDs in conjunction with **libdvdcss** or for decrypting video for other utilities unable to read encrypted DVDs.
 
@@ -705,44 +706,43 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **[FFmpeg](/index.php/FFmpeg "FFmpeg")** — Complete and free Internet live audio and video broadcasting solution for Linux/Unix, capable to do a direct rip in any format (audio/video) from a DVD-Video ISO image, just select the input as the ISO image and proceed with the desired options. It also allows to downmixing, shrinking, spliting, selecting streams among other features.
 
-	[http://ffmpeg.org/](http://ffmpeg.org/) || See [article](/index.php/FFmpeg#Package_installation "FFmpeg")
+	[http://ffmpeg.org/](http://ffmpeg.org/) || [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg)
 
-*   **HandBrake** — Multithreaded video transcoder, which offers both a graphical and command-line interface with many preset configurations.
+*   **[HandBrake CLI](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping.
 
-	[https://handbrake.fr/](https://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
+	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli)
 
-*   **Hybrid** — Multi platform Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an mp4/m2ts/mkv/webm/mov/avi container, a Blu-ray or an AVCHD structure.
-
-	[http://www.selur.de/](http://www.selur.de/) || [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)
-
-*   **[MEncoder](/index.php/MEncoder "MEncoder")** — Free command line video decoding, encoding and filtering tool released under the GNU GPL. It is a close sibling to MPlayer and can convert all the formats that MPlayer understands into a variety of compressed and uncompressed formats using different codecs. Wrapper programs like [h264enc](https://aur.archlinux.org/packages/h264enc/) can provide an assistive interface. Many [GUI frontends](/index.php/MEncoder#GUI_frontends "MEncoder") are available.
+*   **[MEncoder](/index.php/MEncoder "MEncoder")** — Free command line video decoding, encoding and filtering tool. It supports ripping and transcoding DVD-Video.
 
 	[http://www.mplayerhq.hu/](http://www.mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
 
+*   **subtitleripper** — Convert DVD subtitles into text format.
+
+	[http://joonet.de/subtitleripper/](http://joonet.de/subtitleripper/) || [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/)
+
 *   **Transcode** — Video/DVD ripper and encoder with the CLI.
 
-	[http://transcoding.org/](http://transcoding.org/) || [transcode](https://www.archlinux.org/packages/?name=transcode)
+	[https://bitbucket.org/france/transcode-tcforge](https://bitbucket.org/france/transcode-tcforge) || [transcode](https://www.archlinux.org/packages/?name=transcode)
 
-#### dvd::rip
+#### Graphical
 
-dvd::rip is a front-end to [transcode](https://www.archlinux.org/packages/?name=transcode), used to extract DVD's to the hard disk and transcode or extract and transcode on-the-fly.
+*   **dvd::rip** — Front-end to [transcode](https://www.archlinux.org/packages/?name=transcode), used to extract DVD's to the hard disk and transcode or extract and transcode on-the-fly.
 
-The following packages should be installed:
+	[https://www.exit1.org/dvdrip/](https://www.exit1.org/dvdrip/) || [dvdrip](https://aur.archlinux.org/packages/dvdrip/)
 
-*   [dvdrip](https://aur.archlinux.org/packages/dvdrip/): GTK front-end for [transcode](https://www.archlinux.org/packages/?name=transcode), which performs the ripping and encoding
-*   [libdv](https://www.archlinux.org/packages/?name=libdv): Software codec for DV video
-*   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): If you want to encode your ripped files as XviD, an open source MPEG-4 video codec (free alternative to DivX).
-*   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/): If you want to read and process subtitles.
+*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
-The dvd::rip preferences are mostly well-documented/self-explanatory. If you need help with something, see [http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp](http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp).
+	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 
-Ripping a DVD is often a simple matter of selecting the preferred codec(s), selecting the desired titles, then clicking the "Rip" button.
+*   **OGMRip** — An application and a set of libraries for ripping and encoding DVD into AVI, OGM, MP4, or Matroska files using a wide variety of codecs. It relies on mplayer, mencoder, ogmtools, mkvtoolnix, mp4box, oggenc, lame, and faac to perform its tasks.
+
+	[http://ogmrip.sourceforge.net/](http://ogmrip.sourceforge.net/) || [ogmrip](https://www.archlinux.org/packages/?name=ogmrip)
 
 ### DVD-Audio
 
 *   **Python Audio Tools** — Includes dvda2track, which is easy to use command line tool to extract DVD-Audio tracks to uncompressed wav files.
 
-	[http://audiotools.sourceforge.net/](http://audiotools.sourceforge.net/) || [audiotools-git](https://aur.archlinux.org/packages/audiotools-git/)
+	[http://audiotools.sourceforge.net/](http://audiotools.sourceforge.net/) || [audiotools](https://aur.archlinux.org/packages/audiotools/)
 
 ## Troubleshooting
 

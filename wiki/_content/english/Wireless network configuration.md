@@ -7,86 +7,86 @@ Related articles
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
 
-See [Network configuration](/index.php/Network_configuration "Network configuration") for the general article on how to set up a network connection.
+The main article on network configuration is [Network configuration](/index.php/Network_configuration "Network configuration").
 
 Configuring wireless is a two-part process; the first part is to identify and ensure the correct driver for your wireless device is installed (they are available on the installation media, but often have to be installed explicitly), and to configure the interface. The second is choosing a method of managing wireless connections. This article covers both parts, and provides additional links to wireless management tools.
 
-The [#Wireless management](#Wireless_management) section describes how to manually manage your wireless network interface / your wireless LANs. The [Network manager](/index.php/Network_manager "Network manager") article describes several programs that can be used to automatically manage your wireless interface, some of which include a GUI and all of which include support for network profiles (useful when frequently switching wireless networks, like with laptops).
+The [#iw](#iw) section describes how to manually manage your wireless network interface / your wireless LANs using [iw](https://www.archlinux.org/packages/?name=iw). The [Network manager](/index.php/Network_manager "Network manager") article describes several programs that can be used to automatically manage your wireless interface, some of which include a GUI and all of which include support for network profiles (useful when frequently switching wireless networks, like with laptops).
 
 ## Contents
 
 *   [1 Device driver](#Device_driver)
     *   [1.1 Check the driver status](#Check_the_driver_status)
     *   [1.2 Installing driver/firmware](#Installing_driver.2Ffirmware)
-*   [2 Wireless management](#Wireless_management)
-    *   [2.1 Get the name of the interface](#Get_the_name_of_the_interface)
-    *   [2.2 Get the status of the interface](#Get_the_status_of_the_interface)
-    *   [2.3 Activate the interface](#Activate_the_interface)
-    *   [2.4 Discover access points](#Discover_access_points)
-    *   [2.5 Set operating mode](#Set_operating_mode)
-    *   [2.6 Connect to an access point](#Connect_to_an_access_point)
-    *   [2.7 Get an IP address](#Get_an_IP_address)
-*   [3 WPA2 Enterprise](#WPA2_Enterprise)
-    *   [3.1 eduroam](#eduroam)
-    *   [3.2 Manual/automatic setup](#Manual.2Fautomatic_setup)
-        *   [3.2.1 wpa_supplicant](#wpa_supplicant)
-        *   [3.2.2 NetworkManager](#NetworkManager)
-        *   [3.2.3 connman](#connman)
-        *   [3.2.4 netctl](#netctl)
-    *   [3.3 Troubleshooting](#Troubleshooting)
-        *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
-    *   [4.2 iw and wireless_tools comparison](#iw_and_wireless_tools_comparison)
-*   [5 Troubleshooting](#Troubleshooting_2)
-    *   [5.1 Temporary internet access](#Temporary_internet_access)
-    *   [5.2 Rfkill caveat](#Rfkill_caveat)
-    *   [5.3 Observing Logs](#Observing_Logs)
-    *   [5.4 Power saving](#Power_saving)
-    *   [5.5 Failed to get IP address](#Failed_to_get_IP_address)
-    *   [5.6 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
-    *   [5.7 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
-    *   [5.8 Random disconnections](#Random_disconnections)
-        *   [5.8.1 Cause #1](#Cause_.231)
-        *   [5.8.2 Cause #2](#Cause_.232)
-        *   [5.8.3 Cause #3](#Cause_.233)
-        *   [5.8.4 Cause #4](#Cause_.234)
-    *   [5.9 Wi-Fi networks invisible because of incorrect regulatory domain](#Wi-Fi_networks_invisible_because_of_incorrect_regulatory_domain)
-*   [6 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
-    *   [6.1 Ralink/Mediatek](#Ralink.2FMediatek)
-        *   [6.1.1 rt2x00](#rt2x00)
-        *   [6.1.2 rt3090](#rt3090)
-        *   [6.1.3 rt3290](#rt3290)
-        *   [6.1.4 rt3573](#rt3573)
-        *   [6.1.5 rt5572](#rt5572)
-        *   [6.1.6 mt7612u](#mt7612u)
-    *   [6.2 Realtek](#Realtek)
-        *   [6.2.1 rtl8192cu](#rtl8192cu)
-        *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [6.2.3 rtl88xxau](#rtl88xxau)
-        *   [6.2.4 rtl8822bu](#rtl8822bu)
-        *   [6.2.5 rtl8xxxu](#rtl8xxxu)
-    *   [6.3 Atheros](#Atheros)
-        *   [6.3.1 ath5k](#ath5k)
-        *   [6.3.2 ath9k](#ath9k)
-            *   [6.3.2.1 Power saving](#Power_saving_2)
-    *   [6.4 Intel](#Intel)
-        *   [6.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
-        *   [6.4.2 iwlegacy](#iwlegacy)
-        *   [6.4.3 iwlwifi](#iwlwifi)
-            *   [6.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
-        *   [6.4.4 Disabling LED blink](#Disabling_LED_blink)
-    *   [6.5 Broadcom](#Broadcom)
-    *   [6.6 Other drivers/devices](#Other_drivers.2Fdevices)
-        *   [6.6.1 Tenda w322u](#Tenda_w322u)
-        *   [6.6.2 orinoco](#orinoco)
-        *   [6.6.3 prism54](#prism54)
-        *   [6.6.4 ACX100/111](#ACX100.2F111)
-        *   [6.6.5 zd1211rw](#zd1211rw)
-        *   [6.6.6 hostap_cs](#hostap_cs)
-    *   [6.7 ndiswrapper](#ndiswrapper)
-    *   [6.8 backports-patched](#backports-patched)
-*   [7 See also](#See_also)
+*   [2 Utilities](#Utilities)
+    *   [2.1 iw and wireless_tools comparison](#iw_and_wireless_tools_comparison)
+*   [3 iw](#iw)
+    *   [3.1 Get the name of the interface](#Get_the_name_of_the_interface)
+    *   [3.2 Get the status of the interface](#Get_the_status_of_the_interface)
+    *   [3.3 Activate the interface](#Activate_the_interface)
+    *   [3.4 Discover access points](#Discover_access_points)
+    *   [3.5 Set operating mode](#Set_operating_mode)
+    *   [3.6 Connect to an access point](#Connect_to_an_access_point)
+*   [4 WPA2 Enterprise](#WPA2_Enterprise)
+    *   [4.1 eduroam](#eduroam)
+    *   [4.2 Manual/automatic setup](#Manual.2Fautomatic_setup)
+        *   [4.2.1 wpa_supplicant](#wpa_supplicant)
+        *   [4.2.2 NetworkManager](#NetworkManager)
+        *   [4.2.3 connman](#connman)
+        *   [4.2.4 netctl](#netctl)
+    *   [4.3 Troubleshooting](#Troubleshooting)
+        *   [4.3.1 MS-CHAPv2](#MS-CHAPv2)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
+*   [6 Troubleshooting](#Troubleshooting_2)
+    *   [6.1 Temporary internet access](#Temporary_internet_access)
+    *   [6.2 Rfkill caveat](#Rfkill_caveat)
+    *   [6.3 Observing Logs](#Observing_Logs)
+    *   [6.4 Power saving](#Power_saving)
+    *   [6.5 Failed to get IP address](#Failed_to_get_IP_address)
+    *   [6.6 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
+    *   [6.7 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [6.8 Random disconnections](#Random_disconnections)
+        *   [6.8.1 Cause #1](#Cause_.231)
+        *   [6.8.2 Cause #2](#Cause_.232)
+        *   [6.8.3 Cause #3](#Cause_.233)
+        *   [6.8.4 Cause #4](#Cause_.234)
+    *   [6.9 Wi-Fi networks invisible because of incorrect regulatory domain](#Wi-Fi_networks_invisible_because_of_incorrect_regulatory_domain)
+*   [7 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
+    *   [7.1 Ralink/Mediatek](#Ralink.2FMediatek)
+        *   [7.1.1 rt2x00](#rt2x00)
+        *   [7.1.2 rt3090](#rt3090)
+        *   [7.1.3 rt3290](#rt3290)
+        *   [7.1.4 rt3573](#rt3573)
+        *   [7.1.5 rt5572](#rt5572)
+        *   [7.1.6 mt7612u](#mt7612u)
+    *   [7.2 Realtek](#Realtek)
+        *   [7.2.1 rtl8192cu](#rtl8192cu)
+        *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [7.2.3 rtl88xxau](#rtl88xxau)
+        *   [7.2.4 rtl8822bu](#rtl8822bu)
+        *   [7.2.5 rtl8xxxu](#rtl8xxxu)
+    *   [7.3 Atheros](#Atheros)
+        *   [7.3.1 ath5k](#ath5k)
+        *   [7.3.2 ath9k](#ath9k)
+            *   [7.3.2.1 Power saving](#Power_saving_2)
+    *   [7.4 Intel](#Intel)
+        *   [7.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
+        *   [7.4.2 iwlegacy](#iwlegacy)
+        *   [7.4.3 iwlwifi](#iwlwifi)
+            *   [7.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
+        *   [7.4.4 Disabling LED blink](#Disabling_LED_blink)
+    *   [7.5 Broadcom](#Broadcom)
+    *   [7.6 Other drivers/devices](#Other_drivers.2Fdevices)
+        *   [7.6.1 Tenda w322u](#Tenda_w322u)
+        *   [7.6.2 orinoco](#orinoco)
+        *   [7.6.3 prism54](#prism54)
+        *   [7.6.4 ACX100/111](#ACX100.2F111)
+        *   [7.6.5 zd1211rw](#zd1211rw)
+        *   [7.6.6 hostap_cs](#hostap_cs)
+    *   [7.7 ndiswrapper](#ndiswrapper)
+    *   [7.8 backports-patched](#backports-patched)
+*   [8 See also](#See_also)
 
 ## Device driver
 
@@ -158,27 +158,35 @@ If your wireless card is listed above, follow the [#Troubleshooting drivers and 
 
 If your wireless card is not listed above, it is likely supported only under Windows (some Broadcom, 3com, etc). For these, you can try to use [#ndiswrapper](#ndiswrapper).
 
-## Wireless management
+## Utilities
 
 Just like other network interfaces, the wireless ones are controlled with *ip* from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
 You will need to install a basic set of tools for managing the wireless connection. [Install](/index.php/Install "Install") one of the following:
 
-**Note:** For WPA/WPA2 encryption, *wpa_supplicant* is required.
+| Software | Package | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | Note |
+| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Yes | No | Yes | No | deprecated |
+| [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | No | Yes | Yes | No |
+| [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Yes | Yes | Yes | Yes |
+| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | No | Yes | Yes | Yes |
 
-*   **iw** — *iw* only supports the nl80211 (netlink) standard, the older WEXT (Wireless EXTentions) standard is not supported. If *iw* does not see your card, this may be the reason.
+Note that some cards only support WEXT.
 
-	[https://wireless.kernel.org/en/users/Documentation/iw](https://wireless.kernel.org/en/users/Documentation/iw) || [iw](https://www.archlinux.org/packages/?name=iw)
+### iw and wireless_tools comparison
 
-*   **wireless_tools** — *wireless_tools* is deprecated but still widely supported. Use this for modules using the WEXT standard.
+The table below gives an overview of comparable commands for *iw* and *wireless_tools*. See [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples.
 
-	[http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) || [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools)
+| *iw* command | *wireless_tools* command | Description |
+| iw dev *wlan0* link | iwconfig *wlan0* | Getting link status. |
+| iw dev *wlan0* scan | iwlist *wlan0* scan | Scanning for available access points. |
+| iw dev *wlan0* set type ibss | iwconfig *wlan0* mode ad-hoc | Setting the operation mode to *ad-hoc*. |
+| iw dev *wlan0* connect *your_essid* | iwconfig *wlan0* essid *your_essid* | Connecting to open network. |
+| iw dev *wlan0* connect *your_essid* 2432 | iwconfig *wlan0* essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
+| iw dev *wlan0* connect *your_essid* key 0:*your_key* | iwconfig *wlan0* essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
+| iwconfig *wlan0* essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
+| iw dev *wlan0* set power_save on | iwconfig *wlan0* power on | Enabling power save. |
 
-*   **[WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")** — *wpa_supplicant* is a cross-platform supplicant with support for WEP, WPA and WPA2 (IEEE 802.11i / RSN (Robust Secure Network)). It works with both WEXT and nl80211.
-
-	[http://hostap.epitest.fi/wpa_supplicant/](http://hostap.epitest.fi/wpa_supplicant/) || [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)
-
-**Tip:** For a comparison of commands between *iw* and *wireless_tools*, see [#iw and wireless_tools comparison](#iw_and_wireless_tools_comparison).
+## iw
 
 **Note:**
 
@@ -285,7 +293,6 @@ Depending on the encryption, you need to associate your wireless device with the
 *   **WEP**
     *   using a hexadecimal or ASCII key (the format is distinguished automatically, because a WEP key has a fixed length): `# iw dev *interface* connect "*your_essid*" key 0:*your_key*` 
     *   using a hexadecimal or ASCII key, specifying the third set up key as default (keys are counted from zero, four are possible): `# iw dev *interface* connect "*your_essid*" key d:2:*your_key*` 
-*   **WPA/WPA2** - See [WPA supplicant#Connecting with wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant").
 
 Regardless of the method used, you can check if you have associated successfully:
 
@@ -293,10 +300,6 @@ Regardless of the method used, you can check if you have associated successfully
 # iw dev *interface* link
 
 ```
-
-### Get an IP address
-
-See [Network configuration#IP addresses](/index.php/Network_configuration#IP_addresses "Network configuration").
 
 ## WPA2 Enterprise
 
@@ -411,20 +414,6 @@ A more permanent configuration of the regdomain can be achieved through editing 
 It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` as [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
 For further information, read the [wireless.kernel.org regulatory documentation](http://wireless.kernel.org/en/developers/Regulatory/).
-
-### iw and wireless_tools comparison
-
-The table below gives an overview of comparable commands for *iw* and *wireless_tools*. See [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples.
-
-| *iw* command | *wireless_tools* command | Description |
-| iw dev *wlan0* link | iwconfig *wlan0* | Getting link status. |
-| iw dev *wlan0* scan | iwlist *wlan0* scan | Scanning for available access points. |
-| iw dev *wlan0* set type ibss | iwconfig *wlan0* mode ad-hoc | Setting the operation mode to *ad-hoc*. |
-| iw dev *wlan0* connect *your_essid* | iwconfig *wlan0* essid *your_essid* | Connecting to open network. |
-| iw dev *wlan0* connect *your_essid* 2432 | iwconfig *wlan0* essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
-| iw dev *wlan0* connect *your_essid* key 0:*your_key* | iwconfig *wlan0* essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
-| iwconfig *wlan0* essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
-| iw dev *wlan0* set power_save on | iwconfig *wlan0* power on | Enabling power save. |
 
 ## Troubleshooting
 

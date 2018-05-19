@@ -37,6 +37,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [3.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
     *   [3.10 Can't play local files](#Can.27t_play_local_files)
     *   [3.11 Not respecting window manager rules](#Not_respecting_window_manager_rules)
+    *   [3.12 GUI hangs while the music plays](#GUI_hangs_while_the_music_plays)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -455,7 +456,7 @@ ui.track_notifications_enabled=false
 
 Restart Spotify. Note that several causes appear to exist for this problem, and this particular fix only applies to select versions of Spotify client, i3 and Awesome, and it may be that additional root causes exist for the Debian and Ubuntu users reporting this issue. Observed with Spotify 0.9.17.1.g9b85d436 and Awesome 3.4.15 and i3-gaps 4.13-2 and Spotify 1.0.64.407.g9bd02c2d.
 
-**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand some, users report not experimenting the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[2]](https://github.com/acrisci/playerctl/issues/20).
+**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand, some users report not experiencing the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[2]](https://github.com/acrisci/playerctl/issues/20).
 
 **Note:** This issue has multiple causes, so keep track of what you change while researching this. Update this section with additional scenarios and fixes.
 
@@ -545,6 +546,12 @@ If you get a segmentation fault or error message when trying to play local files
 ### Not respecting window manager rules
 
 Window manager that try to apply specific rules like starting it on a determined workspace or maximizing it on startup, has no effect, as Spotify doesn't set the *WM_CLASS* property before creating the window, violating the ICCCM specifications. One solution is to use [spotifywm](https://github.com/dasJ/spotifywm).
+
+### GUI hangs while the music plays
+
+Also the previous and next track buttons act with a delay of 10-40 seconds. Spotify by default tries to send notification about next track, if you don't have a notification-daemon installed, Spotify's GUI hangs.
+
+The solution is to either disable notifications in the settings or to install a notification daemon from [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications").
 
 ## See also
 

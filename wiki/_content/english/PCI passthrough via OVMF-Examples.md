@@ -15,6 +15,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.8 Dinkonin's virtual gaming/work setup](#Dinkonin.27s_virtual_gaming.2Fwork_setup)
     *   [1.9 pauledd's unexeptional setup](#pauledd.27s_unexeptional_setup)
     *   [1.10 hkk's Windows gaming machine (6700K, 1070, 16GB)](#hkk.27s_Windows_gaming_machine_.286700K.2C_1070.2C_16GB.29)
+    *   [1.11 sitilge's treachery](#sitilge.27s_treachery)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -286,6 +287,45 @@ Configuration:
 *   **Quirks**:
 *   Synergy isn't perfect and won't entirely work in some games.
 *   No boot screen. Display is turning on only when Windows is up and ready to go.
+
+### sitilge's treachery
+
+Full info: [https://github.com/sitilge/virtualization](https://github.com/sitilge/virtualization)
+
+Hardware:
+
+*   **CPU**: Intel Core i5 6600K
+*   **Motherboard**: Asus Z170i
+*   **GPU**: Gigabyte Radeon RX460 OC 2GB
+*   **Storage**: Samsung 850 EVO 500GB
+*   **RAM**: Corsair 16GB DDR4
+*   **Mouse, Keyboard**: Logitech M90, Vortex Pok3r
+
+Host Configuration:
+
+*   **Kernel**: linux-vfio
+*   **Packages**: qemu-git, virtio-win, ovmf
+
+Guest Configuration:
+
+*   **OS**: Windows 10 Pro
+*   **CPU**: host
+*   **Motherboard**: host
+*   **GPU**: passthrough
+*   **Storage**: 64GB
+*   **RAM**: 8GB
+*   **Mouse, Keyboard**: passthrough
+
+Notes:
+
+*   You can easy simlink the config files using `stow -t / boot mkinitcpio` and then `mkinitcpio -p linux-vfio`.
+*   `-smp cores=4` - guest might utilize only one core otherwise.
+*   `-soundhw ac97` - I'm passing mobo audio thus ac97\. Download, unzip and install the Realtek AC97 drivers within a guest.
+*   Use virtio drivers for both block devices and network. For example, the ping went down from 250 to 50.
+*   Mouse and keyboard passthrough solved the terrible lag problem which was present in emulation mode.
+*   Make sure virtualization is supported and enabled in your firmware (UEFI). The option was hidden in a submenu in my case.
+*   As trivial as it sounds, check your cables. Twice.
+*   Be patient - it took more than 10 minutes for the guest to recognize the GPU.
 
 ## Adding your own setup
 

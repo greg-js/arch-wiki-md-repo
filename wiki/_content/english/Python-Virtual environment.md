@@ -183,5 +183,5 @@ After you have done your things, leave the virtual environment:
 ## See also
 
 *   [Python venv](https://docs.python.org/3/library/venv.html)
-*   [virtualenv Pypi page](https://pypi.python.org/pypi/virtualenv)
+*   [virtualenv PyPI page](https://pypi.org/project/virtualenv/)
 *   [virtualenvwrapper page at Doug Hellmann's](http://www.doughellmann.com/docs/virtualenvwrapper/)

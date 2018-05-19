@@ -27,11 +27,12 @@
     *   [4.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
     *   [4.5 Use port 80 for webserver](#Use_port_80_for_webserver)
     *   [4.6 Using ALSA](#Using_ALSA)
-    *   [4.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-        *   [4.7.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
-        *   [4.7.2 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
-    *   [4.8 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-    *   [4.9 USB DAC not working](#USB_DAC_not_working)
+    *   [4.7 Audio Passthrough](#Audio_Passthrough)
+    *   [4.8 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
+        *   [4.8.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
+        *   [4.8.2 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
+    *   [4.9 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+    *   [4.10 USB DAC not working](#USB_DAC_not_working)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Accessing Kodi logs](#Accessing_Kodi_logs)
     *   [5.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -413,6 +414,21 @@ Kodi has a webservice that allows interaction through a web-interface. By defaul
 ### Using ALSA
 
 If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using ALSA directly by starting Kodi with the `AE_SINK=ALSA` environment variable. The Kodi wiki for NUC devices provides [instructions](http://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)
+
+If using `kodi-standalone`, change the `APP` variable in `/usr/bin/kodi-standalone` to
+
+```
+APP="${bindir}/pasuspender -- env AE_SINK=ALSA ${bindir}/${bin_name} --standalone $@"
+
+```
+
+### Audio Passthrough
+
+To allow your receiver to decode the audio you can enable passthrough. This is useful for files encoded in TrueHD or Atmos. If using PulseAudio, follow the instructions at [https://kodi.wiki/view/PulseAudio](https://kodi.wiki/view/PulseAudio) to first enable passthrough in PulseAudio. Then the passthrough options will appear in Kodi. If using ALSA, the passthrough options will appear in Kodi without modifications.
+
+**Warning:** PulseAudio requires the output in Kodi to be set to 2 channel. Audio encoded in formats not passed through will only be sent as stereo audio. Use ALSA to support passthrough and passing decoded surround audio signals
+
+**Note:** PulseAudio does not support TrueHD, DTS-MA, or Atmos passthrough. Use ALSA if you want to pass these to your receiver
 
 ### Raspberry Pi (all generations)
 
