@@ -79,7 +79,7 @@ Here the colour is removed overall. We get a range of different tones of gray, w
 
 #### Barrier Black White method
 
-This may be the method that most often leads to the best results. Grayscale is always active. The different tones of gray will break on a defined value between 0 (white) and 255 (black). Everything less than the defined point will be converted to black. A gray tone equal or greater is converted into white. This leads to a clean image for OCR. No Colours, no noise, no grayscale, just black and white. With this type of image tesseract could also read realy bright colour fonts (because they are converted into black) The parameter `-b` activates this feature. The parameter `-t <barriervalue>` sets the barrier value. <barriervalue> is a integer between 0 and 255\. If `-t` is not set, 200 is the default value.
+This may be the method that most often leads to the best results. Grayscale is always active. The different tones of gray will break on a defined value between 0 (white) and 255 (black). Everything less than the defined point will be converted to black. A gray tone equal or greater is converted into white. This leads to a clean image for OCR. No Colours, no noise, no grayscale, just black and white. With this type of image tesseract could also read really bright colour fonts (because they are converted into black) The parameter `-b` activates this feature. The parameter `-t <barriervalue>` sets the barrier value. <barriervalue> is a integer between 0 and 255\. If `-t` is not set, 200 is the default value.
 
  `$ *ocrdesktop -b -t 180*` 
 

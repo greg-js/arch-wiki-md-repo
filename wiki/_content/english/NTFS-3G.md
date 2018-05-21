@@ -224,7 +224,7 @@ As an alternative to above clean shutdown method, there is a way to completely d
 
 ### Mount failure
 
-If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. See [Fstab#UUIDs](/index.php/Fstab#UUIDs "Fstab") for an example.
+If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. See [fstab#File system UUIDs](/index.php/Fstab#File_system_UUIDs "Fstab") for an example.
 
 ## See also
 

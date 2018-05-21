@@ -55,31 +55,7 @@ Related articles
 
 ### Front ends
 
-mpv comes with a minimal GUI called On Screen Controller *(OSC)*, that appears when moving the mouse. There are also other front ends available:
-
-*   **Baka MPlayer** — Free and open source, cross-platform, *mpv* based multimedia player (Qt 5).
-
-	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer)
-
-*   **Deepin Movie** — Movie player for Deepin desktop based on *mpv*.
-
-	[https://github.com/linuxdeepin/deepin-movie-reborn](https://github.com/linuxdeepin/deepin-movie-reborn) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
-
-*   **GNOME MPV** — A simple frontend for *mpv* (GTK+ 3).
-
-	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
-
-*   **Media Player Classic Qute Theater** — A clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt.
-
-	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/)
-
-*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
-
-	[https://www.smplayer.info/](https://www.smplayer.info/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
-
-*   **xt7-player-mpv** — Qt/Gambas GUI to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
-
-	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv](https://aur.archlinux.org/packages/xt7-player-mpv/)
+See [List of applications/Multimedia#mpv-based](/index.php/List_of_applications/Multimedia#mpv-based "List of applications/Multimedia").
 
 ## Configuration
 

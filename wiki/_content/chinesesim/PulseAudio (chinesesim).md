@@ -63,7 +63,7 @@ Related articles
 *   GTK GUI：[paprefs](https://www.archlinux.org/packages/?name=paprefs) 和 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
 *   按键音量控制: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)，[pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
 *   控制台 (CLI)混合器：[ponymix](https://www.archlinux.org/packages/?name=ponymix)和[pamixer](https://www.archlinux.org/packages/?name=pamixer)
-*   控制台 (curses) 混合器：[pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
+*   控制台 (curses) 混合器：[pulsemixer](https://www.archlinux.org/packages/?name=pulsemixer)
 *   网页音量控制：[PaWebControl](https://github.com/Siot/PaWebControl)
 *   系统托盘图标：[pasystray](https://aur.archlinux.org/packages/pasystray/)，[pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
 *   KF5 plasma 程序：[kmix](https://www.archlinux.org/packages/?name=kmix)和[plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)

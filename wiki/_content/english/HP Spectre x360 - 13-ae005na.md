@@ -83,7 +83,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Installation
 
-Installation is very straightfoward. You will need to disable secureboot in BIOS (ESC to bring up menu, then F10 for BIOS and/or F9 for Boot options). Using the 2018-01-01 Arch ISO and following the [installation guide](/index.php/Installation_guide "Installation guide") presented no issues.
+Installation is very straightforward. You will need to disable secureboot in BIOS (ESC to bring up menu, then F10 for BIOS and/or F9 for Boot options). Using the 2018-01-01 Arch ISO and following the [installation guide](/index.php/Installation_guide "Installation guide") presented no issues.
 
 ## Issues and Further Configuration
 

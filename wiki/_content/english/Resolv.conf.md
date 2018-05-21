@@ -4,7 +4,7 @@ Related articles
 
 The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5):
 
-	The resolver is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). The resolver configuration file contains information that is read by the resolver routines the first time they are invoked by a process. The file is designed to be human readable and contains a list of keywords with values that provide various types of resolver information.
+	The resolver is a set of routines in the GNU C library ([glibc](https://www.archlinux.org/packages/?name=glibc)) that provide access to the [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") (DNS). The resolver configuration file contains information that is read by the resolver routines the first time they are invoked by a process. The file is designed to be human readable and contains a list of keywords with values that provide various types of resolver information.
 
 	If this file does not exist, only the name server on the local machine will be queried; the domain name is determined from the hostname and the domain search path is constructed from the domain name.
 
@@ -91,8 +91,15 @@ $ drill @127.0.0.1 www.archlinux.org
 ```
 nameserver 127.0.0.53
 search lan
+
 ```
-The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by deleting or renaming the existing `/etc/resolv.conf` and replacing it by a symbolic link to the systemd stub: `ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
+
+The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by deleting or renaming the existing `/etc/resolv.conf` and replacing it by a symbolic link to the systemd stub:
+
+```
+# ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+```
 
 In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
 

@@ -442,7 +442,7 @@ Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_li
 
 ### Black Mesa
 
-Install [lib32-gperftools](https://aur.archlinux.org/packages/lib32-gperftools/) for 32bit version of libtcmalloc_minimal.so.4 which is needed [[Source](https://steamcommunity.com/app/362890/discussions/1/340412628175324858/?ctp=7)].
+Install [lib32-gperftools](https://aur.archlinux.org/packages/lib32-gperftools/) for 32bit version of libtcmalloc_minimal.so.4 which is needed [Source](https://steamcommunity.com/app/362890/discussions/1/340412628175324858/?ctp=7).
 
 ### Block'hood
 

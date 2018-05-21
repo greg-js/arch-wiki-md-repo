@@ -19,7 +19,7 @@ Da [wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optic
     *   [1.5 Conoscere il nome del drive ottico](#Conoscere_il_nome_del_drive_ottico)
     *   [1.6 Lettura di un'immagine ISO da un CD, DVD o BD](#Lettura_di_un.27immagine_ISO_da_un_CD.2C_DVD_o_BD)
     *   [1.7 Formattare CD-RW e DVD-RW](#Formattare_CD-RW_e_DVD-RW)
-    *   [1.8 Masterizzare una immagina ISO su un CD, DVD o BD](#Masterizzare_una_immagina_ISO_su_un_CD.2C_DVD_o_BD)
+    *   [1.8 Masterizzare una immagine ISO su un CD, DVD o BD](#Masterizzare_una_immagine_ISO_su_un_CD.2C_DVD_o_BD)
     *   [1.9 Verificare l'immagine ISO masterizzata](#Verificare_l.27immagine_ISO_masterizzata)
     *   [1.10 ISO 9660 e masterizzazione On-The-Fly](#ISO_9660_e_masterizzazione_On-The-Fly)
     *   [1.11 Multi-sessione](#Multi-sessione)
@@ -282,7 +282,7 @@ Comandi alternativi sono :
 
 Tutti gli altri media sono o scrivibili una volta sola (CD-R, DVD-R, DVD+R, BD-R) o sono riscrivibili senza la necessità di formattare (DVD-RAM, DVD+RW, BD-RE).
 
-### Masterizzare una immagina ISO su un CD, DVD o BD
+### Masterizzare una immagine ISO su un CD, DVD o BD
 
 Per masterizzare un file immagine ISO prontamente preparato (`isoimage.iso`), su un supporto ottico, eseguire:
 
@@ -303,7 +303,7 @@ $ modprobe sr_mod
 Per DVD o BD :
 
 ```
-$ growisofs -dvd-compat -Z /dev/cdrw=isoimage.iso
+$ growisofs -dvd-compat -Z /dev/cdrw isoimage.iso
 
 ```
 

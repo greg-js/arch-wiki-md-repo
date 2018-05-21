@@ -84,7 +84,7 @@ db_file            "~/.config/mpd/database"
 log_file           "syslog"
 
 # The music directory is by default the XDG directory, uncomment to amend and choose a different directory
-#music_directory    "~/Music"
+#music_directory    "~/music"
 
 # Uncomment to refresh the database whenever files in the music_directory are changed
 #auto_update "yes"

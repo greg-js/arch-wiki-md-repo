@@ -100,7 +100,7 @@ The loader configuration is stored in the file `*esp*/loader/loader.conf` and it
 
 *   `default` – default entry to select as defined in [#Adding loaders](#Adding_loaders); it is given without the *.conf* suffix and it can be a wildcard like `arch-*`.
 *   `timeout` – menu timeout in seconds before the default entry is booted. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
-*   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
+*   `editor` – whether to enable the kernel parameters editor or not. `yes` (default) is enabled, `no` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `no`.
 
 Additional options are available starting with systemd **v239**:
 
@@ -116,7 +116,7 @@ Example:
 ```
 default  arch
 timeout  4
-editor   0
+editor   no
 
 ```
 

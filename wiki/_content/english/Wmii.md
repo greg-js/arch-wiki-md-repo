@@ -320,7 +320,7 @@ export WMII_FONT='xft:Sans-9'
 
 ### Keyboard layouts
 
-You'd probably like to have its own keyboard layout for each window. However, most of such applications requires system tray while witray is only available in the [development version of wmii](https://aur.archlinux.org/packages.php?ID=3497). [xxkb](https://www.archlinux.org/packages/?q=xxkb) package helps to solve the problem. It has no UI by default. You only need to configure layouts in xorg.conf. Create /etc/X11/xorg.conf.d/20-keyboard.conf and put something like this into it:
+You'd probably like to have its own keyboard layout for each window. However, most of such applications requires system tray while witray is only available in the [development version of wmii](https://aur.archlinux.org/packages.php?ID=3497). [xxkb](https://www.archlinux.org/packages/?name=xxkb) package helps to solve the problem. It has no UI by default. You only need to configure layouts in xorg.conf. Create /etc/X11/xorg.conf.d/20-keyboard.conf and put something like this into it:
 
 ```
 Section "InputClass"

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Postfix](/index.php/Postfix "Postfix")
+*   [Dovecot](/index.php/Dovecot "Dovecot")
+
 From [Postfix's site](http://www.postfix.org/SASL_README.html):
 
 	*People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering.*
@@ -63,7 +68,7 @@ Hopefully you should be able to telnet to your Postfix server with:
 
 You should then type:
 
-`EHLO test.com`
+`EHLO example.com`
 
 This is roughly what you should see:
 
@@ -74,7 +79,7 @@ Connected to localhost.localdomain
 Escape character is '^]'
 
 220 justin ESMTP Postfix
-EHLO test.com
+EHLO example.com
 250-justin
 250-PIPELINING
 250-SIZE 10240000

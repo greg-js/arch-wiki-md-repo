@@ -38,7 +38,7 @@ USB tethering is available since Android 2.2 "Froyo".
     *   *Settings -> More... -> Tethering & mobile hotspot -> USB tethering*
 *   Follow [Network configuration](/index.php/Network_configuration "Network configuration").
 
-**Note:** The network interface name may change depending on the USB port you use. You may want to [change the device name](/index.php/Network_configuration#Change_device_name "Network configuration") to create a unique name for your device regardless of the USB port.
+**Note:** The network interface name may change depending on the USB port you use. You may want to [change the interface name](/index.php/Network_configuration#Change_interface_name "Network configuration") to create a unique name for your device regardless of the USB port.
 
 *   If you're using a cellular data plan and you have recently entered a new billing period, you may need to restart your phone.
 

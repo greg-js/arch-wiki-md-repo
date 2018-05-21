@@ -61,7 +61,7 @@ then logoff and logon.
 
 *   **lysdr** — highly customizable radio interface
 
-	[https://github.com/gordonjcp/lysdr](https://github.com/gordonjcp/lysdr) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=lysdr)</small>
+	[https://github.com/gordonjcp/lysdr](https://github.com/gordonjcp/lysdr) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **linrad** — Software defined radio by SM5BSZ
 

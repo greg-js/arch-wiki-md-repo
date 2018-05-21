@@ -3,7 +3,7 @@ Related articles
 *   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
 *   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
 
-[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") PulseAudio is a general purpose sound server intended to run as a middleware between your applications and your hardware devices, either using [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). It also offers easy network streaming accross local devices using [Avahi](/index.php/Avahi "Avahi") if enabled. While its main purpose is to ease audio configuration, its modular design allows more advanced users to configure the daemon precisely to best suit their needs.
+[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") PulseAudio is a general purpose sound server intended to run as a middleware between your applications and your hardware devices, either using [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). It also offers easy network streaming across local devices using [Avahi](/index.php/Avahi "Avahi") if enabled. While its main purpose is to ease audio configuration, its modular design allows more advanced users to configure the daemon precisely to best suit their needs.
 
 **Note:** Some confusion may occur between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes a Linux kernel component with sound card drivers, as well as a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
 
@@ -11,6 +11,8 @@ Related articles
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)
+        *   [1.1.1 Console](#Console)
+        *   [1.1.2 Graphical](#Graphical)
 *   [2 Configuration](#Configuration)
     *   [2.1 Configuration files](#Configuration_files)
         *   [2.1.1 daemon.conf](#daemon.conf)
@@ -73,18 +75,85 @@ Related articles
 
 There are a number of front-ends available for controlling the PulseAudio daemon:
 
-*   For graphical configuration/volume control, install the [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) or [pavucontrol-qt](https://www.archlinux.org/packages/?name=pavucontrol-qt) package.
-*   For graphical general daemon configuration, install the [paprefs](https://www.archlinux.org/packages/?name=paprefs) package.
-*   For console (CLI) mixers, install the [ponymix](https://www.archlinux.org/packages/?name=ponymix) or [pamixer](https://www.archlinux.org/packages/?name=pamixer) package.
-*   For console (curses) mixer, install the [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/) package.
-*   For volume control via mapped keyboard keys, install the [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/) package.
-*   For system tray icon, install the [volumeicon](https://www.archlinux.org/packages/?name=volumeicon), [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/) or [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/) package.
+#### Console
 
-**Tip:** The non-standalone versions of `pasystray` can install both GTK2 and GTK3 versions and requires choosing which during build. The standalone versions install a single version.
+*   **ncpamixer** — Ncurses mixer for PulseAudio inspired by pavucontrol.
 
-*   For [KDE](/index.php/KDE "KDE") Framework 5 Plasma applet, install the [kmix](https://www.archlinux.org/packages/?name=kmix) and [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) package.
-*   For [Xfce](/index.php/Xfce "Xfce") 4 plugin: [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/) package.
-*   For web volume control, see [PaWebControl](https://github.com/Siot/PaWebControl).
+	[https://github.com/fulhax/ncpamixer](https://github.com/fulhax/ncpamixer) || [ncpamixer](https://aur.archlinux.org/packages/ncpamixer/)
+
+*   **pacmixer** — Alsamixer alike for PulseAudio.
+
+	[https://github.com/cdemoulins/pamixer](https://github.com/cdemoulins/pamixer) || [pacmixer](https://aur.archlinux.org/packages/pacmixer/)
+
+*   **PAmix** — Ncurses PulseAudio mixer similar to pavucontrol.
+
+	[https://github.com/cdemoulins/pamixer](https://github.com/cdemoulins/pamixer) || [pamix-git](https://aur.archlinux.org/packages/pamix-git/)
+
+*   **pamixer** — PulseAudio command line mixer.
+
+	[https://github.com/cdemoulins/pamixer](https://github.com/cdemoulins/pamixer) || [pamixer](https://www.archlinux.org/packages/?name=pamixer)
+
+*   **pavolume** — Simple command-line volume control for PulseAudio with libnotify messages.
+
+	[https://github.com/sseemayer/pavolume](https://github.com/sseemayer/pavolume) || [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
+
+*   **Ponymix** — Command line mixer for PulseAudio.
+
+	[https://github.com/falconindy/ponymix](https://github.com/falconindy/ponymix) || [ponymix](https://www.archlinux.org/packages/?name=ponymix)
+
+*   **pulseaudio-ctl** — Control PulseAudio volume from the shell or mapped to keyboard shortcuts.
+
+	[https://github.com/graysky2/pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl) || [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)
+
+*   **pulsemixer** — CLI and curses mixer for PulseAudio
+
+	[https://github.com/GeorgeFilipkin/pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer) || [pulsemixer](https://www.archlinux.org/packages/?name=pulsemixer)
+
+#### Graphical
+
+*   **MicTray** — Lightweight system tray application which lets you control the microphone state and volume using PulseAudio.
+
+	[https://github.com/Junker/MicTray](https://github.com/Junker/MicTray) || [mictray](https://aur.archlinux.org/packages/mictray/)
+
+*   **pa-applet** — System tray applet for PulseAudio with volume bar.
+
+	[https://github.com/fernandotcl/pa-applet](https://github.com/fernandotcl/pa-applet) || [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
+
+*   **pasystray** — System tray applet for PulseAudio.
+
+	[https://github.com/christophgysin/pasystray](https://github.com/christophgysin/pasystray) || [pasystray](https://aur.archlinux.org/packages/pasystray/)
+
+*   **plasma-pa** — [KDE](/index.php/KDE "KDE") Plasma applet for audio volume management using PulseAudio
+
+	[https://cgit.kde.org/plasma-pa.git](https://cgit.kde.org/plasma-pa.git) || [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
+
+*   **PulseAudio Manager** — Simple GTK+ frontend for PulseAudio.
+
+	[http://0pointer.de/lennart/projects/paman/](http://0pointer.de/lennart/projects/paman/) || [paman](https://aur.archlinux.org/packages/paman/)
+
+*   **PulseAudio Preferences** — Simple GTK+ configuration dialog for PulseAudio.
+
+	[https://freedesktop.org/software/pulseaudio/paprefs/](https://freedesktop.org/software/pulseaudio/paprefs/) || [paprefs](https://www.archlinux.org/packages/?name=paprefs)
+
+*   **PulseAudio Volume Control** — Simple GTK+ volume control tool ("mixer") for PulseAudio.
+
+	[https://freedesktop.org/software/pulseaudio/pavucontrol/](https://freedesktop.org/software/pulseaudio/pavucontrol/) || [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
+
+*   **PulseAudio Volume Control (Qt)** — Mixer for PulseAudio (Qt port of pavucontrol).
+
+	[https://github.com/lxqt/pavucontrol-qt](https://github.com/lxqt/pavucontrol-qt) || [pavucontrol-qt](https://www.archlinux.org/packages/?name=pavucontrol-qt)
+
+*   **PulseAudio Volume Meter** — Simple GTK+ volume meter for PulseAudio.
+
+	[http://0pointer.de/lennart/projects/pavumeter/](http://0pointer.de/lennart/projects/pavumeter/) || [pavumeter](https://aur.archlinux.org/packages/pavumeter/)
+
+*   **Volctl** — Per-application system tray applet volume control for PulseAudio.
+
+	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
+
+*   **Xfce PulseAudio Panel Plugin** — PulseAudio plugin for [Xfce](/index.php/Xfce "Xfce")4 panel.
+
+	[https://goodies.xfce.org/projects/panel-plugins/xfce4-pulseaudio-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-pulseaudio-plugin) || [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin)
 
 ## Configuration
 
@@ -126,7 +195,7 @@ This is the main configuration file to configure the daemon itself. It defines b
 | flat-volumes | `flat-volumes` scales the device-volume with the volume of the "loudest" application. For example, raising the VoIP call volume will raise the hardware volume and adjust the music-player volume so it stays where it was, without having to lower the volume of the music-player manually. Defaults to `yes` upstream, but to `no` within Arch.
 **Note:** The default behavior upstream can sometimes be confusing and some applications, unaware of this feature, can set their volume to 100% at startup, potentially blowing your speakers or your ears. This is why Arch defaults to the classic (ALSA) behavior by setting this to `no`.
  |<caption></caption>
-| realtime-scheduling | If your kernel supports realtime scheduling (for instance, [Kernels#-rt](/index.php/Kernels#-rt "Kernels") or [Kernels#-ck](/index.php/Kernels#-ck "Kernels")), set this to `yes` to ensure PulseAudio can deliver low-latency glitch-free playback. You can adjust `realtime-priority` as well to have it use the correct priority, especially when [JACK](/index.php/JACK "JACK") is also running on the system. |<caption></caption>
+| realtime-scheduling | If your [kernel](/index.php/Kernel "Kernel") supports realtime scheduling (for instance, [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel") or [Linux-ck](/index.php/Linux-ck "Linux-ck")), set this to `yes` to ensure PulseAudio can deliver low-latency glitch-free playback. You can adjust `realtime-priority` as well to have it use the correct priority, especially when [JACK](/index.php/JACK "JACK") is also running on the system. |<caption></caption>
 | nice-level | Since PulseAudio runs in userspace and involves inter-process communication, audio can be subject to dropouts if the daemon doesn't have enough CPU time to process the audio. The default usually is enough, but can be tweaked to give pulse the wanted priority over (or below) other applications. |<caption></caption>
 | exit-idle-time | If you want to run PulseAudio only when needed and use ALSA otherwise, you can set a delay in seconds after which the daemon will automatically shutdown after all clients are disconnected. Set it to -1 to disable this feature. |<caption></caption>
 | log-level | When debugging, you may want to increase the logging level of the daemon to see exactly why a specific module fails to load. High logging levels will sometimes print useful information such as detected minimum latency for the system, which can then be used to tweak `default-fragments` and `default-fragment-size-msec`. |<caption></caption>
@@ -176,7 +245,7 @@ PulseAudio on Arch has `pulseaudio.socket` enabled by default for the [systemd/U
 **Note:**
 
 *   To disable `pulseaudio.socket`, make sure that `$XDG_CONFIG_HOME/systemd/user/` exists and run `systemctl --user mask pulseaudio.socket`.
-*   Many [desktop environments](/index.php/Desktop_environments "Desktop environments") autostart programs based on [desktop files](/index.php/Desktop_entries#Autostart "Desktop entries") in the `/etc/xdg/autostart/` directory. In this case, PulseAudio will be launched automatically regardless of the socket activation status.
+*   Many [desktop environments](/index.php/Desktop_environments "Desktop environments") support [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart"). In those desktop environments, PulseAudio will be launched automatically regardless of the socket activation status.
 
 For more information, see [PulseAudio: Running](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Running/).
 

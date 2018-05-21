@@ -507,7 +507,7 @@ To handle more than 8192 connections `LimitNOFILE` can be raised to 32768 as per
 LimitNOFILE=32768
 ```
 
-To succesfully raise `nofile` limit, you may also have to append the following:
+To successfully raise `nofile` limit, you may also have to append the following:
 
  `/etc/security/limits.conf` 
 ```

@@ -27,6 +27,7 @@ SDDM ([простой десктопный экранный менеджер](ht
     *   [3.3 SDDM запускается на tty1, а не на tty7](#SDDM_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_tty1.2C_.D0.B0_.D0.BD.D0.B5_.D0.BD.D0.B0_tty7)
     *   [3.4 Один или более пользователей не отображаются на экране приветствия](#.D0.9E.D0.B4.D0.B8.D0.BD_.D0.B8.D0.BB.D0.B8_.D0.B1.D0.BE.D0.BB.D0.B5.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F)
     *   [3.5 SDDM грузит только US раскладку клавиатуры](#SDDM_.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_US_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D1.83_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [3.6 На экране входа не активны кнопки выключения, перезагрузки](#.D0.9D.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B5_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.BD.D0.B5_.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D1.8B_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
 
 ## Установка
 
@@ -152,3 +153,26 @@ MinimumUid=500 #Мой UID равен 501
 ### SDDM грузит только US раскладку клавиатуры
 
 SDDM грузит раскладку клавиатуры, заданную в `/etc/X11/xorg.conf.d/00-keyboard.conf`. Вы можете сгенерировать этот конфигурационный файл командой `localectl set-x11-keymap`. Прочтите [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") для дополнительной информации.
+
+### На экране входа не активны кнопки выключения, перезагрузки
+
+При входе систему не работают кнопки выключения, перезагрузки. Однако, при принудительной перезагрузке sddm.service после загрузки системы всё работает. Проблема в том, что sddm.service должен запускаться после systemd-logind.service. Однако, этого не происходит. Как одно из решений проблемы внести следующие изменения в файл юнита:
+
+ `/usr/lib/systemd/system/sddm.service` 
+```
+[Unit]
+Description=Simple Desktop Display Manager
+Documentation=man:sddm(1) man:sddm.conf(5)
+Conflicts=getty@tty1.service
+#В строку ниже добавляем systemd-logind.service
+After=systemd-user-sessions.service getty@tty1.service plymouth-quit.service systemd-logind.service
+
+[Service]
+ExecStart=/usr/bin/sddm
+Restart=always
+
+[Install]
+Alias=display-manager.service
+```
+
+Теперь после перезагрузки системы всё работает корректно.

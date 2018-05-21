@@ -38,22 +38,23 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
         *   [6.3.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (Bumblebee daemon reported: error: [XORG] (EE) NVIDIA(GPU-0))](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28Bumblebee_daemon_reported:_error:_.5BXORG.5D_.28EE.29_NVIDIA.28GPU-0.29.29)
         *   [6.3.4 Could not load GPU driver](#Could_not_load_GPU_driver)
         *   [6.3.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
-    *   [6.4 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
-    *   [6.5 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
-    *   [6.6 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
-    *   [6.7 Video tearing](#Video_tearing)
-    *   [6.8 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
-    *   [6.9 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
-    *   [6.10 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
-    *   [6.11 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
-    *   [6.12 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
-    *   [6.13 Optirun does not work, no debug output](#Optirun_does_not_work.2C_no_debug_output)
-    *   [6.14 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
-    *   [6.15 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
-    *   [6.16 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
-    *   [6.17 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
-    *   [6.18 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
-    *   [6.19 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
+    *   [6.4 [ERROR]Cannot access secondary GPU - error: X did not start properly](#.5BERROR.5DCannot_access_secondary_GPU_-_error:_X_did_not_start_properly)
+    *   [6.5 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
+    *   [6.6 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
+    *   [6.7 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
+    *   [6.8 Video tearing](#Video_tearing)
+    *   [6.9 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
+    *   [6.10 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
+    *   [6.11 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
+    *   [6.12 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
+    *   [6.13 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
+    *   [6.14 Optirun does not work, no debug output](#Optirun_does_not_work.2C_no_debug_output)
+    *   [6.15 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
+    *   [6.16 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
+    *   [6.17 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
+    *   [6.18 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
+    *   [6.19 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
+    *   [6.20 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -601,6 +602,19 @@ This could be because the nvidia driver is out of sync with the Linux kernel, fo
 #### NOUVEAU(0): [drm] failed to set drm interface version
 
 Consider switching to the official nvidia driver. As commented [here](https://github.com/Bumblebee-Project/Bumblebee/issues/438#issuecomment-22005923), nouveau driver has some issues with some cards and bumblebee.
+
+### [ERROR]Cannot access secondary GPU - error: X did not start properly
+
+Set the `"AutoAddDevices"` option to `"true"` in `/etc/bumblebee/xorg.conf.nvidia` (see [here](https://github.com/Bumblebee-Project/Bumblebee/issues/88)):
+
+```
+Section "ServerLayout"
+    Identifier  "Layout0"
+    Option      "AutoAddDevices" "true"
+    Option      "AutoAddGPU" "false"
+EndSection
+
+```
 
 ### /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied
 

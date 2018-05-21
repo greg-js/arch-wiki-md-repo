@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 12 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=510517).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 8 мая 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=520606).
 
 Ссылки по теме
 
@@ -15,15 +15,15 @@
     *   [2.2 Для всех заданий - "остановлено"](#.D0.94.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.B7.D0.B0.D0.B4.D0.B0.D0.BD.D0.B8.D0.B9_-_.22.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BE.22)
     *   [2.3 Для всех заданий - "Принтер не отвечает"](#.D0.94.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.B7.D0.B0.D0.B4.D0.B0.D0.BD.D0.B8.D0.B9_-_.22.D0.9F.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D0.BD.D0.B5_.D0.BE.D1.82.D0.B2.D0.B5.D1.87.D0.B0.D0.B5.D1.82.22)
     *   [2.4 Версия PPD не совместима с gutenprint](#.D0.92.D0.B5.D1.80.D1.81.D0.B8.D1.8F_PPD_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D0.BC.D0.B0_.D1.81_gutenprint)
-    *   [2.5 Принтеры отсутствуют в диалоговом окне печати для приложений GTK3](#.D0.9F.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.82_.D0.B2_.D0.B4.D0.B8.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.D0.BE.D0.BC_.D0.BE.D0.BA.D0.BD.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_GTK3)
 *   [3 Проблемы с сетью](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D1.81.D0.B5.D1.82.D1.8C.D1.8E)
     *   [3.1 Не удается найти принтер](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.B0.D0.B9.D1.82.D0.B8_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80)
     *   [3.2 Старый сервер CUPS](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B9_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80_CUPS)
-    *   [3.3 USB autosuspend](#USB_autosuspend)
-    *   [3.4 Общий принтер работает локально, но удаленный компьютер не печатает](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.2C_.D0.BD.D0.BE_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80_.D0.BD.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B0.D0.B5.D1.82)
+    *   [3.3 Общий принтер работает локально, но удаленный компьютер не печатает](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.2C_.D0.BD.D0.BE_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80_.D0.BD.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B0.D0.B5.D1.82)
 *   [4 USB-принтеры](#USB-.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B)
     *   [4.1 Конфликт с SANE](#.D0.9A.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82_.D1.81_SANE)
     *   [4.2 Конфликт с usblp](#.D0.9A.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82_.D1.81_usblp)
+    *   [4.3 USB autosuspend](#USB_autosuspend)
+    *   [4.4 Плохие разрешения](#.D0.9F.D0.BB.D0.BE.D1.85.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F)
 *   [5 Проблемы с HP](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_HP)
     *   [5.1 CUPS: "/usr/lib/cups/backend/hp failed"](#CUPS:_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
     *   [5.2 CUPS: "Печать завершена", но принтер не печатает.](#CUPS:_.22.D0.9F.D0.B5.D1.87.D0.B0.D1.82.D1.8C_.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B0.22.2C_.D0.BD.D0.BE_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D0.BD.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B0.D0.B5.D1.82.)
@@ -31,10 +31,9 @@
     *   [5.4 CUPS: "Filter failed"](#CUPS:_.22Filter_failed.22)
         *   [5.4.1 Отсутствует ghostscript](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_ghostscript)
         *   [5.4.2 Отсутствует foomatic-db](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_foomatic-db)
-        *   [5.4.3 Плохие разрешения](#.D0.9F.D0.BB.D0.BE.D1.85.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F)
-        *   [5.4.4 Avahi не включен](#Avahi_.D0.BD.D0.B5_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD)
-        *   [5.4.5 Устаревший плагин](#.D0.A3.D1.81.D1.82.D0.B0.D1.80.D0.B5.D0.B2.D1.88.D0.B8.D0.B9_.D0.BF.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD)
-        *   [5.4.6 Устаревшая конфигурация принтера](#.D0.A3.D1.81.D1.82.D0.B0.D1.80.D0.B5.D0.B2.D1.88.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0)
+        *   [5.4.3 Avahi не включен](#Avahi_.D0.BD.D0.B5_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD)
+        *   [5.4.4 Устаревший плагин](#.D0.A3.D1.81.D1.82.D0.B0.D1.80.D0.B5.D0.B2.D1.88.D0.B8.D0.B9_.D0.BF.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD)
+        *   [5.4.5 Устаревшая конфигурация принтера](#.D0.A3.D1.81.D1.82.D0.B0.D1.80.D0.B5.D0.B2.D1.88.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0)
     *   [5.5 CUPS: печатает только пустую страницу и страницу с сообщением об ошибке на HP LaserJet](#CUPS:_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B0.D0.B5.D1.82_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BF.D1.83.D1.81.D1.82.D1.83.D1.8E_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.83_.D0.B8_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.83_.D1.81_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.D0.BD.D0.B0_HP_LaserJet)
     *   [5.6 HPLIP 3.13: Плагин установлен, но HP Device Manager жалуется на его отсутствие](#HPLIP_3.13:_.D0.9F.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.2C_.D0.BD.D0.BE_HP_Device_Manager_.D0.B6.D0.B0.D0.BB.D1.83.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_.D0.B5.D0.B3.D0.BE_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D0.B8.D0.B5)
     *   [5.7 hp-toolbox: "Unable to communicate with device"](#hp-toolbox:_.22Unable_to_communicate_with_device.22)
@@ -137,12 +136,6 @@ lpd://BRN_020554/BINARY_P1
 
 И перезагрузите CUPS (будет выведено соответствующее сообщение после установки gutenprint).
 
-### Принтеры отсутствуют в диалоговом окне печати для приложений GTK3
-
-Начиная с версии GTK3 3.22 требовался пакет gtk3-print-backends, но сейчас он снова объединен с gtk3.
-
-(**Устаревшее**) Признаки и симптомы: принтеры не отображаются в диалоговом окне печати GTK3, что делает невозможным отправить на печать непосредственно из таких приложений, как [gedit](/index.php/Gedit "Gedit"), [Chromium](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)") и [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)"); но принтеры все еще отображаются в веб-интерфейсе CUPS и lpstat, и отправка на печать из интерфейса командной строки или приложений GTK2 (например, GIMP) работает.
-
 ## Проблемы с сетью
 
 ### Не удается найти принтер
@@ -154,10 +147,6 @@ lpd://BRN_020554/BINARY_P1
 ### Старый сервер CUPS
 
 Начиная с версии CUPS 1.6, клиент по умолчанию использует IPP 2.0\. Если сервер использует CUPS <= 1.5 / IPP <= 1.1, клиент не будет автоматически понижать версию протокола и, следовательно, не может связаться с сервером. Обходным путем является добавление опции `version=1.1`, описанной в [Таблице 2\. Опции URI IPP](https://www.cups.org/doc/network.html#TABLE2).
-
-### USB autosuspend
-
-Ядро Linux автоматически приостанавливает USB-устройства, когда есть поддержка драйверов и устройства не используются. Это может сэкономить электроэнергию, но некоторые USB-принтеры считают, что они не подключены, когда ядро приостанавливает USB-порт, предотвращая печать. Это можно устранить, отключив autosuspend для конкретного устройства, для получения дополнительной информации смотрите [Power management#USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management").
 
 ### Общий принтер работает локально, но удаленный компьютер не печатает
 
@@ -219,6 +208,29 @@ usb 3-2: configuration #1 chosen from 1 choice
 
 ```
 
+### USB autosuspend
+
+Ядро Linux автоматически приостанавливает USB-устройства, когда есть поддержка драйверов и устройства не используются. Это может сэкономить электроэнергию, но некоторые USB-принтеры считают, что они не подключены, когда ядро приостанавливает USB-порт, предотвращая печать. Это можно устранить, отключив autosuspend для конкретного устройства, для получения дополнительной информации смотрите [Power management#USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management").
+
+### Плохие разрешения
+
+Измените разрешения USB-порта принтера. Получите номер шины(BUSID) и устройства(DEVID) от `lsusb`, затем установите разрешение, используя:
+
+ ` lsusb `  ` Bus <BUSID> Device <DEVID>: ID <PRINTERID>:<VENDOR> Hewlett-Packard DeskJet D1360` 
+
+Затем замените предоставленную информацию об устройстве в
+
+```
+# chmod 0666 /dev/bus/usb/<BUSID>/<DEVID>
+
+```
+
+Чтобы сделать постоянное изменение разрешения, которое будет запускаться автоматически при каждом запуске компьютера, добавьте следующую строку.
+
+ `/etc/udev/rules.d/10-local.rules`  `SUBSYSTEM=="usb", ATTRS{idVendor}=="<VENDOR>", ATTRS{idProduct}=="<PRINTERID>", GROUP="lp", MODE:="666"` 
+
+Каждая система может отличаться, поэтому обратитесь к вики-странице [udev (Русский)#Список атрибутов устройства](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.B0.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.BE.D0.B2_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Udev (Русский)").
+
 ## Проблемы с HP
 
 Смотрите также [CUPS/Принтероспецифичные проблемы#HP](/index.php/CUPS/%D0%9F%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B#HP "CUPS/Принтероспецифичные проблемы").
@@ -272,25 +284,6 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 Установите [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) и [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds). Это помогает в некоторых случаях.
 
-#### Плохие разрешения
-
-Измените разрешения USB-порта принтера. Получите номер шины(BUSID) и устройства(DEVID) от `lsusb`, затем установите разрешение, используя:
-
- ` lsusb `  ` Bus <BUSID> Device <DEVID>: ID <PRINTERID>:<VENDOR> Hewlett-Packard DeskJet D1360` 
-
-Затем замените предоставленную информацию об устройстве в
-
-```
-# chmod 0666 /dev/bus/usb/<BUSID>/<DEVID>
-
-```
-
-Чтобы сделать постоянное изменение разрешения, которое будет запускаться автоматически при каждом запуске компьютера, добавьте следующую строку.
-
- `/etc/udev/rules.d/10-local.rules`  `SUBSYSTEM=="usb", ATTRS{idVendor}=="<VENDOR>", ATTRS{idProduct}=="<PRINTERID>", GROUP="lp", MODE:="666"` 
-
-Каждая система может отличаться, поэтому обратитесь к вики-странице [udev (Русский)#Список атрибутов устройства](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.B0.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.BE.D0.B2_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Udev (Русский)").
-
 #### Avahi не включен
 
 [Запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") и [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `avahi-daemon`.
@@ -305,7 +298,7 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 Вы можете проверить, если это ваш случай, посмотрев в error_log cups`а:
 
- ` $ cat /var/log/cups/error_log | grep hpijs ` 
+ ` $ grep hpijs /var/log/cups/error_log ` 
 ```
  ...
  D [09/Jan/2018:14:32:58 +0000] [Job 97] **sh: hpijs: command not found**

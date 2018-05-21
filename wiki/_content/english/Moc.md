@@ -114,7 +114,7 @@ If you want to use Libre.fm instead of Last.fm it is important to change `hostna
 
 *   **eXo** — Qt frontend to MOC, supports scrobbling
 
-	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=exo)</small>
+	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## systemd service file
 

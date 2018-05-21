@@ -218,7 +218,7 @@ You can easily use one of these loaders to apply the color profile in early boot
 *   [GIMP](/index.php/GIMP "GIMP") can use ICC profiles for display of the image being edited. The use of the installed ICC profile has to be explicitly enabled in the settings dialog, though.
 *   [mpv](/index.php/Mpv "Mpv") can take an ICC profile into account when playing a video. The command line argument is: `--icc-profile=/path/to/profile.icc` or `--icc-profile-auto`. Only `--vo=opengl` does color management; other VO drivers will silently ignore the ICC profile options.
 *   [Firefox](/index.php/Firefox "Firefox"), by default, uses the system-wide ICC profile only when displaying images that are already tagged with an ICC profile. To assume that untagged images use sRGB and apply color correction also to them, set the `gfx.color_management.mode` preference to 1.
-*   Both [Eye of Gnome](https://www.archlinux.org/packages/?name=eog) and [Eye of MATE](https://www.archlinux.org/packages/?name=eom) automatically use the system-installed ICC profile.
+*   Both Eye of Gnome ([eog](https://www.archlinux.org/packages/?name=eog)) and Eye of MATE ([eom](https://www.archlinux.org/packages/?name=eom)) automatically use the system-installed ICC profile.
 
 ## See also
 

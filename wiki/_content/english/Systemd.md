@@ -35,6 +35,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [3.3 Mapping between SysV runlevels and systemd targets](#Mapping_between_SysV_runlevels_and_systemd_targets)
     *   [3.4 Change current target](#Change_current_target)
     *   [3.5 Change default target to boot into](#Change_default_target_to_boot_into)
+    *   [3.6 Default target order](#Default_target_order)
 *   [4 Temporary files](#Temporary_files)
 *   [5 Timers](#Timers)
 *   [6 Mounting](#Mounting)
@@ -427,17 +428,35 @@ This will only change the current target, and has no effect on the next boot. Th
 
 ### Change default target to boot into
 
-The standard target is `default.target`, which is aliased by default to `graphical.target` (which roughly corresponds to the old runlevel 5). To change the default target at boot-time, append one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to your bootloader:
+The standard target is `default.target`, which is a symlink to `graphical.target`. This roughly corresponds to the old runlevel 5.
+
+To verify the current target with *systemctl*:
+
+```
+# systemctl get-default
+
+```
+
+To change the default target to boot into, change the `default.target` symlink. With *systemctl*:
+
+ `$ systemctl set-default multi-user.target` 
+```
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target.
+```
+
+Alternatively, append one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to your bootloader:
 
 *   `systemd.unit=multi-user.target` (which roughly corresponds to the old runlevel 3),
 *   `systemd.unit=rescue.target` (which roughly corresponds to the old runlevel 1).
 
-Alternatively, you may leave the bootloader alone and change `default.target`. This can be done using *systemctl*:
+### Default target order
 
-```
-# systemctl set-default multi-user.target
+Systemd chooses the `default.target` according to the following order:
 
-```
+1.  Kernel parameter shown above
+2.  Symlink of `/etc/systemd/system/default.target`
+3.  Symlink of `/usr/lib/systemd/system/default.target`
 
 ## Temporary files
 

@@ -7,32 +7,31 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Frontends/GUIs](#Frontends.2FGUIs)
-*   [3 Konqueror integration](#Konqueror_integration)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Key bindings](#Key_bindings)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Automatic resuming from where you left off](#Automatic_resuming_from_where_you_left_off)
-    *   [5.2 Hardware acceleration](#Hardware_acceleration)
-        *   [5.2.1 Enabling VDPAU](#Enabling_VDPAU)
-        *   [5.2.2 Enabling VA-API](#Enabling_VA-API)
-    *   [5.3 Translucent video with Radeon cards and Composite enabled](#Translucent_video_with_Radeon_cards_and_Composite_enabled)
-    *   [5.4 Watching streamed video](#Watching_streamed_video)
-        *   [5.4.1 DVD playing](#DVD_playing)
-        *   [5.4.2 DVB-T Streaming](#DVB-T_Streaming)
-    *   [5.5 JACK support](#JACK_support)
-    *   [5.6 Advanced Subtitles](#Advanced_Subtitles)
-    *   [5.7 Internet radio](#Internet_radio)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 MPlayer fails to open files with spaces](#MPlayer_fails_to_open_files_with_spaces)
-    *   [6.2 MPlayer has black or strange colored font for OSD and Subtitles](#MPlayer_has_black_or_strange_colored_font_for_OSD_and_Subtitles)
-    *   [6.3 SMPlayer: No video issue](#SMPlayer:_No_video_issue)
-    *   [6.4 SMPlayer: fail to resume playback after pause](#SMPlayer:_fail_to_resume_playback_after_pause)
-    *   [6.5 SMPlayer: no video when using transparency in GNOME](#SMPlayer:_no_video_when_using_transparency_in_GNOME)
-    *   [6.6 SMPlayer: OSD font too big / subtitle text too small](#SMPlayer:_OSD_font_too_big_.2F_subtitle_text_too_small)
-    *   [6.7 Mplayer shows question marks for some characters on subtitle](#Mplayer_shows_question_marks_for_some_characters_on_subtitle)
-    *   [6.8 Choppy audio CD playback](#Choppy_audio_CD_playback)
-*   [7 See also](#See_also)
+    *   [1.1 Frontends/GUIs](#Frontends.2FGUIs)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Key bindings](#Key_bindings)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Automatic resuming from where you left off](#Automatic_resuming_from_where_you_left_off)
+    *   [3.2 Hardware acceleration](#Hardware_acceleration)
+        *   [3.2.1 Enabling VDPAU](#Enabling_VDPAU)
+        *   [3.2.2 Enabling VA-API](#Enabling_VA-API)
+    *   [3.3 Translucent video with Radeon cards and Composite enabled](#Translucent_video_with_Radeon_cards_and_Composite_enabled)
+    *   [3.4 Watching streamed video](#Watching_streamed_video)
+        *   [3.4.1 DVD playing](#DVD_playing)
+        *   [3.4.2 DVB-T Streaming](#DVB-T_Streaming)
+    *   [3.5 JACK support](#JACK_support)
+    *   [3.6 Advanced Subtitles](#Advanced_Subtitles)
+    *   [3.7 Internet radio](#Internet_radio)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 MPlayer fails to open files with spaces](#MPlayer_fails_to_open_files_with_spaces)
+    *   [4.2 MPlayer has black or strange colored font for OSD and Subtitles](#MPlayer_has_black_or_strange_colored_font_for_OSD_and_Subtitles)
+    *   [4.3 SMPlayer: No video issue](#SMPlayer:_No_video_issue)
+    *   [4.4 SMPlayer: fail to resume playback after pause](#SMPlayer:_fail_to_resume_playback_after_pause)
+    *   [4.5 SMPlayer: no video when using transparency in GNOME](#SMPlayer:_no_video_when_using_transparency_in_GNOME)
+    *   [4.6 SMPlayer: OSD font too big / subtitle text too small](#SMPlayer:_OSD_font_too_big_.2F_subtitle_text_too_small)
+    *   [4.7 Mplayer shows question marks for some characters on subtitle](#Mplayer_shows_question_marks_for_some_characters_on_subtitle)
+    *   [4.8 Choppy audio CD playback](#Choppy_audio_CD_playback)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -46,33 +45,13 @@ Notable variants are:
 
 *   **MPlayer2** — Fork of MPlayer
 
-	|| [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
+	[https://github.com/nezumisama/mplayer2](https://github.com/nezumisama/mplayer2) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
 
 **Note:** *mplayer2* development seems to be ceased in favour of [mpv](/index.php/Mpv "Mpv"), which is focused on speed and quality of development, though this breaks compatibility with old hardware and software. Be aware of its [differences](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst) if you want to use it.
 
-## Frontends/GUIs
+### Frontends/GUIs
 
-*   **GNOME MPlayer** — Simple GTK+-based GUI for MPlayer.
-
-	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
-
-*   **KPlayer** — Multimedia player for KDE4 using mplayer as a backend.
-
-	[http://kplayer.sourceforge.net/](http://kplayer.sourceforge.net/) || [kplayer](https://aur.archlinux.org/packages/kplayer/)
-
-*   **KMPlayer** — Video player plugin for Konqueror and basic MPlayer/Xine/ffmpeg/ffserver/VDR frontend for KDE.
-
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
-
-*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.).
-
-	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
-
-## Konqueror integration
-
-To let MPlayer control video viewing in Konqueror, [install](/index.php/Install "Install") the [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) package.
-
-**Note:** [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) also provides a complete frontend to MPlayer.
+See [List of applications/Multimedia#MPlayer-based](/index.php/List_of_applications/Multimedia#MPlayer-based "List of applications/Multimedia").
 
 ## Configuration
 

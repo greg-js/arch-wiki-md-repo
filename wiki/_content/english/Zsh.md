@@ -98,6 +98,7 @@ When starting Zsh, it will source the following files in this order by default:
 **Note:**
 
 *   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
+
 *   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please [set the $PATH variable](#Configuring_.24PATH) in `$ZDOTDIR/.zprofile`.
 
 **Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it will break the integrity of other packages which provide some scripts in `/etc/profile.d/`.
@@ -127,17 +128,15 @@ prompt walters
 
 ### Configuring $PATH
 
-Normally, the path should be set in `~/.zshenv`, but Arch Linux sources `/etc/profile` after sourcing `~/.zshenv`.
+See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and also the note in [#Startup/Shutdown files](#Startup.2FShutdown_files) for details.
 
-To prevent your `$PATH` being overwritten, set it in `~/.zprofile`.
+The incantation `typeset -U path`, where the `-U` stands for unique, tells the shell that it should not add anything to `$PATH` if it's there already:
 
- `~/.zprofile` 
+ `~/.zshenv` 
 ```
 typeset -U path
 path=(*~/.local/bin* */other/things/in/path* $path[@])
 ```
-
-See also [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and the note in [#Startup/Shutdown files](#Startup.2FShutdown_files).
 
 ### Command completion
 

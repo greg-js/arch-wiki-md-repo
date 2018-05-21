@@ -249,7 +249,7 @@ You do not have to be precise immediately with the right-click – any highlight
 
 You can clear any selected text by left-clicking once, anywhere within the xterm window.
 
-When a character-based application runs inside xterm, it is allowed to receive mouse events. This may be a problem if the program can not communicate with the X11 clipboard. In order to pass these events to the underlying xterm, they must be accompanied by the `Shift` key. For example, in [links(1)](https://www.archlinux.org/packages/?q=links) (not `xlinks -g`), one can mouse-click on URLs and menu items, but not select or paste with a middle button. To do copy-paste, press the `Shift` key and then perform mouse clicks (the key needs to be pressed only during the click, so there is no need to hold it when dragging mouse to select, for instance, a text block).
+When a character-based application runs inside xterm, it is allowed to receive mouse events. This may be a problem if the program can not communicate with the X11 clipboard. In order to pass these events to the underlying xterm, they must be accompanied by the `Shift` key. For example, in [links](https://www.archlinux.org/packages/?name=links) (not `xlinks -g`), one can mouse-click on URLs and menu items, but not select or paste with a middle button. To do copy-paste, press the `Shift` key and then perform mouse clicks (the key needs to be pressed only during the click, so there is no need to hold it when dragging mouse to select, for instance, a text block).
 
 ## Colors
 

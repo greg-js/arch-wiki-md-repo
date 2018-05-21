@@ -62,6 +62,7 @@ install CD version
 | Lenovo ThinkPad Edge E531 | Yes | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD card (yes), Touch Pad/Trackpoint (yes), Webcam (yes) | WiFi only works with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) |
 | Lenovo ThinkPad Edge E540 | 2015.08.01 | Yes | Yes | Yes | Yes | Yes | Yes* | NA | SD card (yes), Finger Print (yes), touch pad and trackpoint (yes), Webcam (yes) |
 | Lenovo ThinkPad Edge E545 | NA | Yes | Yes | Yes | Yes* | Not tested | Yes | NA | SD card (yes), touch pad and trackpoint (yes) Webcam (yes) | wifi works only with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) |
+| Lenovo ThinkPad Edge E580 | 2018.05.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | Fingerprint sensor doesn't work because of proprietary firmware |
 
 #### L series
 

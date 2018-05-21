@@ -26,19 +26,29 @@
         *   [1.3.2 Audio players](#Audio_players)
             *   [1.3.2.1 Console](#Console_2)
             *   [1.3.2.2 Graphical](#Graphical_2)
+                *   [1.3.2.2.1 GStreamer-based](#GStreamer-based)
+                *   [1.3.2.2.2 Phonon-based](#Phonon-based)
+                *   [1.3.2.2.3 Qt Multimedia-based](#Qt_Multimedia-based)
+                *   [1.3.2.2.4 Other](#Other)
         *   [1.3.3 Sound editing](#Sound_editing)
         *   [1.3.4 Visualization](#Visualization)
         *   [1.3.5 Audio tag editors](#Audio_tag_editors)
+            *   [1.3.5.1 Console](#Console_3)
+            *   [1.3.5.2 Graphical](#Graphical_3)
         *   [1.3.6 Lyrics](#Lyrics)
-        *   [1.3.7 Volume managers](#Volume_managers)
+        *   [1.3.7 Volume control](#Volume_control)
         *   [1.3.8 CD ripping](#CD_ripping)
     *   [1.4 Video](#Video)
         *   [1.4.1 Video players](#Video_players)
-            *   [1.4.1.1 Console](#Console_3)
-            *   [1.4.1.2 Graphical](#Graphical_3)
+            *   [1.4.1.1 Console](#Console_4)
+            *   [1.4.1.2 Graphical](#Graphical_4)
+                *   [1.4.1.2.1 GStreamer-based](#GStreamer-based_2)
+                *   [1.4.1.2.2 mpv-based](#mpv-based)
+                *   [1.4.1.2.3 MPlayer-based](#MPlayer-based)
+                *   [1.4.1.2.4 Other](#Other_2)
         *   [1.4.2 Video converters](#Video_converters)
-            *   [1.4.2.1 Console](#Console_4)
-            *   [1.4.2.2 Graphical](#Graphical_4)
+            *   [1.4.2.1 Console](#Console_5)
+            *   [1.4.2.2 Graphical](#Graphical_5)
         *   [1.4.3 Video editors](#Video_editors)
         *   [1.4.4 Subtitles](#Subtitles)
         *   [1.4.5 Screencast](#Screencast)
@@ -47,8 +57,9 @@
         *   [1.4.8 DVD ripping](#DVD_ripping)
     *   [1.5 Collection managers](#Collection_managers)
     *   [1.6 Media servers](#Media_servers)
-    *   [1.7 Mobile phone managers](#Mobile_phone_managers)
-    *   [1.8 Optical media burning](#Optical_media_burning)
+    *   [1.7 Metadata](#Metadata)
+    *   [1.8 Mobile phone managers](#Mobile_phone_managers)
+    *   [1.9 Optical media burning](#Optical_media_burning)
 
 ## Multimedia
 
@@ -205,6 +216,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 *   **[gThumb](https://en.wikipedia.org/wiki/GThumb "wikipedia:GThumb")** — Image viewer and browser for the GNOME desktop.
 
 	[https://wiki.gnome.org/Apps/Gthumb](https://wiki.gnome.org/Apps/Gthumb) || [gthumb](https://www.archlinux.org/packages/?name=gthumb)
+
+*   **[KPhotoAlbum](https://en.wikipedia.org/wiki/KPhotoAlbum "wikipedia:KPhotoAlbum")** — Digital image cataloging software that supports annotation, browsing, searching and viewing of digital images and videos.
+
+	[https://www.kphotoalbum.org/](https://www.kphotoalbum.org/) || [kphotoalbum](https://www.archlinux.org/packages/?name=kphotoalbum)
 
 *   **Pantheon Photos** — Photo organizer for Pantheon.
 
@@ -558,10 +573,6 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 
 	[https://www.mpg123.org/](https://www.mpg123.org/) || [mpg123](https://www.archlinux.org/packages/?name=mpg123)
 
-*   **mps-youtube** — Terminal based YouTube jukebox with playlist management. Plays audio/video through mplayer/mpv.
-
-	[https://github.com/mps-youtube/mps-youtube](https://github.com/mps-youtube/mps-youtube) || [mps-youtube](https://www.archlinux.org/packages/?name=mps-youtube)
-
 *   **[pianobar](/index.php/Pianobar "Pianobar")** — Console-based frontend for the online radio Pandora.
 
 	[https://6xq.net/projects/pianobar/](https://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
@@ -576,13 +587,7 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 
 ##### Graphical
 
-*   **[Amarok](/index.php/Amarok "Amarok")** — Mature Qt-based player known for its plethora of features.
-
-	[https://amarok.kde.org/](https://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
-
-*   **[Audacious](/index.php/Audacious "Audacious")** — [Winamp](https://en.wikipedia.org/wiki/Winamp "wikipedia:Winamp") clone like Beep and old XMMS versions.
-
-	[http://audacious-media-player.org/](http://audacious-media-player.org/) || [audacious](https://www.archlinux.org/packages/?name=audacious)
+###### GStreamer-based
 
 *   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes") clone, built with GTK+ and [Mono](/index.php/Mono "Mono"), feature-rich.
 
@@ -592,73 +597,33 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 
 	[https://www.clementine-player.org/](https://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
 
-*   **[DeaDBeeF](https://en.wikipedia.org/wiki/DeaDBeeF "wikipedia:DeaDBeeF")** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK+ GUI, comes with many plugins, and has a metadata editor.
+*   **Cozy** — Modern audio book player for Linux using GTK+ 3.
 
-	[http://deadbeef.sourceforge.net/](http://deadbeef.sourceforge.net/) || [deadbeef](https://www.archlinux.org/packages/?name=deadbeef)
-
-*   **Deepin Music** — Awesome music player with brilliant and tweakful UI Deepin-UI based.
-
-	[https://github.com/linuxdeepin/deepin-music](https://github.com/linuxdeepin/deepin-music) || [deepin-music](https://www.archlinux.org/packages/?name=deepin-music)
-
-*   **Elisa** — Simple music player by the KDE community aiming to provide a nice experience for its users.
-
-	[https://community.kde.org/Elisa](https://community.kde.org/Elisa) || [elisa](https://www.archlinux.org/packages/?name=elisa)
+	[https://github.com/geigi/cozy](https://github.com/geigi/cozy) || [cozy-audiobooks](https://aur.archlinux.org/packages/cozy-audiobooks/)
 
 *   **[Exaile](/index.php/Exaile "Exaile")** — GTK+ clone of Amarok.
 
 	[http://www.exaile.org/](http://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)
 
-*   **gmusicbrowser** — Open-source jukebox for large collections of MP3/OGG/FLAC files.
-
-	[https://gmusicbrowser.org/](https://gmusicbrowser.org/) || [gmusicbrowser](https://aur.archlinux.org/packages/gmusicbrowser/)
-
 *   **GNOME Music** — Music is the new GNOME music playing application. It aims to combine an elegant and immersive browsing experience with simple and straightforward controls.
 
 	[https://wiki.gnome.org/Apps/Music](https://wiki.gnome.org/Apps/Music) || [gnome-music](https://www.archlinux.org/packages/?name=gnome-music)
 
-*   **Goggles Music Manager** — Music collection manager and player that automatically categorizes your music, supports gapless playback, features easy tag editing, and internet radio support. Uses the [Fox toolkit](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit").
+*   **Gradio** — GTK+ 3 application for finding and listening to internet radio stations.
 
-	[https://gogglesmm.github.io/](https://gogglesmm.github.io/) || [gogglesmm](https://www.archlinux.org/packages/?name=gogglesmm)
-
-*   **Google Play Music Desktop Player** — Beautiful cross platform desktop player for Google Play Music. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://googleplaymusicdesktopplayer.com/](https://googleplaymusicdesktopplayer.com/) || [gpmdp](https://aur.archlinux.org/packages/gpmdp/)
+	[https://github.com/haecker-felix/gradio](https://github.com/haecker-felix/gradio) || [gradio](https://aur.archlinux.org/packages/gradio/)
 
 *   **Guayadeque** — Full featured media player that can easily manage large collections and uses the GStreamer media framework.
 
 	[http://guayadeque.org/](http://guayadeque.org/) || [guayadeque](https://aur.archlinux.org/packages/guayadeque/)
 
-*   **[JuK](https://en.wikipedia.org/wiki/JuK "wikipedia:JuK")** — JuK is an audio jukebox application, supporting collections of MP3, Ogg Vorbis, and FLAC audio files.
-
-	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [juk](https://www.archlinux.org/packages/?name=juk)
-
-*   **Kaku** — An highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more. Based on the [Electron](https://electronjs.org/) platform.
-
-	[http://kaku.rocks/](http://kaku.rocks/) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
-
 *   **Lollypop** — A GNOME music player.
 
 	[https://wiki.gnome.org/Apps/Lollypop](https://wiki.gnome.org/Apps/Lollypop) || [lollypop](https://www.archlinux.org/packages/?name=lollypop)
 
-*   **LXMusic** — A minimalist xmms2-based music player.
-
-	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || GTK+ 2: [lxmusic](https://www.archlinux.org/packages/?name=lxmusic), GTK+ 3: [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3)
-
-*   **Miam-player** — Cross-platform open source music player.
-
-	[http://mbach.github.io/Miam-Player/](http://mbach.github.io/Miam-Player/) || [miam-player](https://aur.archlinux.org/packages/miam-player/)
-
 *   **Muine** — A music player written in C Sharp.
 
 	[https://muine.gooeylinux.org/](https://muine.gooeylinux.org/) || [muine](https://www.archlinux.org/packages/?name=muine)
-
-*   **Musique** — Just another music player, only better.
-
-	[http://flavio.tordini.org/musique](http://flavio.tordini.org/musique) || [musique](https://aur.archlinux.org/packages/musique/)
-
-*   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
-
-	[https://tiliado.eu/nuvolaplayer/](https://tiliado.eu/nuvolaplayer/) || [nuvolaplayer-git](https://aur.archlinux.org/packages/nuvolaplayer-git/)
 
 *   **Pantheon Music** — Simple, fast, and good looking music player. The official elementary music player.
 
@@ -672,10 +637,6 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 
 	[https://pragha-music-player.github.io/](https://pragha-music-player.github.io/) || [pragha](https://www.archlinux.org/packages/?name=pragha)
 
-*   **[Qmmp](https://en.wikipedia.org/wiki/qmmp "wikipedia:qmmp")** — Qt-based multimedia player with a user interface that is similar to Winamp or XMMS.
-
-	[http://qmmp.ylsoftware.com/](http://qmmp.ylsoftware.com/) || [qmmp](https://www.archlinux.org/packages/?name=qmmp)
-
 *   **[Quod Libet](https://en.wikipedia.org/wiki/Quod_Libet_(software) "wikipedia:Quod Libet (software)")** — Audio player written with PyGTK and GStreamer with support for regular expressions in playlists.
 
 	[https://github.com/quodlibet/quodlibet/](https://github.com/quodlibet/quodlibet/) || [quodlibet](https://www.archlinux.org/packages/?name=quodlibet)
@@ -688,6 +649,76 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 
 	[https://sayonara-player.com/](https://sayonara-player.com/) || [sayonara-player](https://aur.archlinux.org/packages/sayonara-player/)
 
+###### Phonon-based
+
+*   **[Amarok](/index.php/Amarok "Amarok")** — Mature Qt-based player known for its plethora of features.
+
+	[https://amarok.kde.org/](https://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
+
+*   **[JuK](https://en.wikipedia.org/wiki/JuK "wikipedia:JuK")** — JuK is an audio jukebox application, supporting collections of MP3, Ogg Vorbis, and FLAC audio files.
+
+	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [juk](https://www.archlinux.org/packages/?name=juk)
+
+*   **Musique** — Just another music player, only better.
+
+	[http://flavio.tordini.org/musique](http://flavio.tordini.org/musique) || [musique](https://aur.archlinux.org/packages/musique/)
+
+*   **[Tomahawk](https://en.wikipedia.org/wiki/Tomahawk_(software) "wikipedia:Tomahawk (software)")** — Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
+
+	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
+
+###### Qt Multimedia-based
+
+*   **Babe** — Tiny Qt music player to keep your favorite songs at hand.
+
+	[https://milohr.github.io/BabeIt/](https://milohr.github.io/BabeIt/) || [babe](https://www.archlinux.org/packages/?name=babe)
+
+*   **Deepin Music** — Awesome music player with brilliant and tweakful UI Deepin-UI based.
+
+	[https://github.com/linuxdeepin/deepin-music](https://github.com/linuxdeepin/deepin-music) || [deepin-music](https://www.archlinux.org/packages/?name=deepin-music)
+
+*   **Elisa** — Simple music player by the KDE community aiming to provide a nice experience for its users.
+
+	[https://community.kde.org/Elisa](https://community.kde.org/Elisa) || [elisa](https://www.archlinux.org/packages/?name=elisa)
+
+###### Other
+
+*   **[Audacious](/index.php/Audacious "Audacious")** — [Winamp](https://en.wikipedia.org/wiki/Winamp "wikipedia:Winamp") clone like Beep and old XMMS versions.
+
+	[http://audacious-media-player.org/](http://audacious-media-player.org/) || [audacious](https://www.archlinux.org/packages/?name=audacious)
+
+*   **[DeaDBeeF](https://en.wikipedia.org/wiki/DeaDBeeF "wikipedia:DeaDBeeF")** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK+ GUI, comes with many plugins, and has a metadata editor.
+
+	[http://deadbeef.sourceforge.net/](http://deadbeef.sourceforge.net/) || [deadbeef](https://www.archlinux.org/packages/?name=deadbeef)
+
+*   **gmusicbrowser** — Open-source jukebox for large collections of MP3/OGG/FLAC files.
+
+	[https://gmusicbrowser.org/](https://gmusicbrowser.org/) || [gmusicbrowser](https://aur.archlinux.org/packages/gmusicbrowser/)
+
+*   **Goggles Music Manager** — Music collection manager and player that automatically categorizes your music, supports gapless playback, features easy tag editing, and internet radio support. Uses the [Fox toolkit](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit").
+
+	[https://gogglesmm.github.io/](https://gogglesmm.github.io/) || [gogglesmm](https://www.archlinux.org/packages/?name=gogglesmm)
+
+*   **Google Play Music Desktop Player** — Beautiful cross platform desktop player for Google Play Music. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://googleplaymusicdesktopplayer.com/](https://googleplaymusicdesktopplayer.com/) || [gpmdp](https://aur.archlinux.org/packages/gpmdp/)
+
+*   **LXMusic** — A minimalist xmms2-based music player.
+
+	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || GTK+ 2: [lxmusic](https://www.archlinux.org/packages/?name=lxmusic), GTK+ 3: [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3)
+
+*   **Miam-Player** — Cross-platform open source music player.
+
+	[http://mbach.github.io/Miam-Player/](http://mbach.github.io/Miam-Player/) || [miam-player](https://aur.archlinux.org/packages/miam-player/)
+
+*   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
+
+	[https://tiliado.eu/nuvolaplayer/](https://tiliado.eu/nuvolaplayer/) || [nuvolaplayer-git](https://aur.archlinux.org/packages/nuvolaplayer-git/)
+
+*   **[Qmmp](https://en.wikipedia.org/wiki/qmmp "wikipedia:qmmp")** — Qt-based multimedia player with a user interface that is similar to Winamp or XMMS.
+
+	[http://qmmp.ylsoftware.com/](http://qmmp.ylsoftware.com/) || [qmmp](https://www.archlinux.org/packages/?name=qmmp)
+
 *   **SpotCommander** — A remote control for Spotify, optimized for mobile devices. It works on any device with a modern browser, and it's free and open source.
 
 	[https://olejon.github.io/spotcommander/](https://olejon.github.io/spotcommander/) || [spotcommander](https://aur.archlinux.org/packages/spotcommander/)
@@ -695,10 +726,6 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 *   **[Spotify](/index.php/Spotify "Spotify")** — Proprietary music streaming service. It supports local playback and streaming from Spotify's vast library (requires a free account).
 
 	[https://www.spotify.com/](https://www.spotify.com/) || [spotify](https://aur.archlinux.org/packages/spotify/)
-
-*   **[Tomahawk](https://en.wikipedia.org/wiki/Tomahawk_(software) "wikipedia:Tomahawk (software)")** — Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
-
-	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
 
 *   **Upplay** — Qt-based UPnP audio control point.
 
@@ -788,9 +815,53 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 #### Audio tag editors
 
+##### Console
+
+*   **[Beets](/index.php/Beets "Beets")** — Music library organizer, tagger and more.
+
+	[http://beets.io/](http://beets.io/) || [beets](https://www.archlinux.org/packages/?name=beets)
+
+*   **Demlo** — Batch music tagger, encoder, renamer and more.
+
+	[https://ambrevar.bitbucket.io/demlo/](https://ambrevar.bitbucket.io/demlo/) || [demlo](https://aur.archlinux.org/packages/demlo/)
+
+*   **id3** — Command-line utility to edit ID3 1.x and 2.x tags.
+
+	[https://squell.github.io/id3/](https://squell.github.io/id3/) || [id3](https://aur.archlinux.org/packages/id3/)
+
+*   **id3ted** — Command line id3 tag editor.
+
+	[https://muennich.github.io/id3ted/](https://muennich.github.io/id3ted/) || [id3ted](https://aur.archlinux.org/packages/id3ted/)
+
+*   **id3v2** — Command line editor for id3v2 tags.
+
+	[http://id3v2.sourceforge.net/](http://id3v2.sourceforge.net/) || [id3v2](https://www.archlinux.org/packages/?name=id3v2)
+
+*   **MP3Info** — MP3 technical info viewer and ID3 1.x tag editor.
+
+	[https://ibiblio.org/mp3info/](https://ibiblio.org/mp3info/) || [mp3info](https://www.archlinux.org/packages/?name=mp3info)
+
+*   **MP3Unicode** — Command line utility to convert ID3 tags in mp3 files between different encodings.
+
+	[http://mp3unicode.sourceforge.net/](http://mp3unicode.sourceforge.net/) || [mp3unicode](https://www.archlinux.org/packages/?name=mp3unicode)
+
+*   **Taffy** — Simple command-line tag editor for many audio formats.
+
+	[https://github.com/jangler/taffy](https://github.com/jangler/taffy) || [taffy](https://aur.archlinux.org/packages/taffy/)
+
+*   **Tagutil** — CLI tool to edit music file's tag. It aims to provide both an easy-to-script interface and ease of use interactively.
+
+	[https://github.com/kAworu/tagutil](https://github.com/kAworu/tagutil) || [tagutil](https://aur.archlinux.org/packages/tagutil/)
+
+##### Graphical
+
 *   **Audio Tag Tool** — Tool to edit tags in MP3 and Ogg Vorbis files.
 
-	[http://tagtool.sourceforge.net/](http://tagtool.sourceforge.net/) || [tagtool](https://aur.archlinux.org/packages/tagtool/)
+	[https://github.com/impegoraro/tagtool](https://github.com/impegoraro/tagtool) || [tagtool](https://aur.archlinux.org/packages/tagtool/)
+
+*   **Coquillo** — Metadata editor for various audio formats.
+
+	[https://github.com/sjuvonen/coquillo](https://github.com/sjuvonen/coquillo) || [coquillo](https://aur.archlinux.org/packages/coquillo/)
 
 *   **[EasyTag](https://en.wikipedia.org/wiki/EasyTag "wikipedia:EasyTag")** — Utility for viewing, editing and writing ID3 tags of music files, supports many audio formats.
 
@@ -800,29 +871,29 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[https://github.com/quodlibet/quodlibet/](https://github.com/quodlibet/quodlibet/) || [quodlibet](https://www.archlinux.org/packages/?name=quodlibet)
 
-*   **ID3 Mass Tagger** — Command-line utility to edit ID3 1.x and 2.x tags.
-
-	[http://squell.github.io/id3/](http://squell.github.io/id3/) || [id3](https://aur.archlinux.org/packages/id3/)
-
 *   **Kid3** — MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV and AIFF files tag editor.
 
-	[http://kid3.sourceforge.net/](http://kid3.sourceforge.net/) || [kid3](https://www.archlinux.org/packages/?name=kid3)
+	[http://kid3.sourceforge.net/](http://kid3.sourceforge.net/) || KDE: [kid3](https://www.archlinux.org/packages/?name=kid3), Qt: [kid3-qt](https://www.archlinux.org/packages/?name=kid3-qt)
 
-*   **MP3Info** — MP3 technical info viewer and ID3 1.x tag editor.
+*   **KTag Editor** — ID3v tag editor developed in Qt5 framework. Supported files are mp3, wav, ogg, wma, flac, asf.
 
-	[http://ibiblio.org/mp3info/](http://ibiblio.org/mp3info/) || [mp3info](https://www.archlinux.org/packages/?name=mp3info)
+	[http://karoljkocmaros.blogspot.com/p/ktag-editor.html](http://karoljkocmaros.blogspot.com/p/ktag-editor.html) || [ktageditor](https://aur.archlinux.org/packages/ktageditor/)
+
+*   **MP3Info GUI** — MP3 technical info viewer and ID3 1.x tag editor. The graphical interface can be launched with the `gmp3info` command.
+
+	[https://ibiblio.org/mp3info/](https://ibiblio.org/mp3info/) || [mp3info](https://www.archlinux.org/packages/?name=mp3info)
 
 *   **[MusicBrainz Picard](https://en.wikipedia.org/wiki/MusicBrainz_Picard "wikipedia:MusicBrainz Picard")** — Cross-platform audio tag editor written in Python (the official MusicBrainz tagger).
 
-	[http://musicbrainz.org/doc/MusicBrainz_Picard](http://musicbrainz.org/doc/MusicBrainz_Picard) || [picard](https://www.archlinux.org/packages/?name=picard)
+	[https://picard.musicbrainz.org/](https://picard.musicbrainz.org/) || [picard](https://www.archlinux.org/packages/?name=picard)
 
 *   **[Puddletag](https://en.wikipedia.org/wiki/Puddletag "wikipedia:Puddletag")** — Replacement for the famous MP3tag for Windows.
 
 	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://www.archlinux.org/packages/?name=puddletag)
 
-*   **taffy** — Simple command-line tag editor for many audio formats.
+*   **Qoobar** — Universal Qt-based audio tagger (specialized for classical music).
 
-	[https://github.com/jangler/taffy](https://github.com/jangler/taffy) || [taffy](https://aur.archlinux.org/packages/taffy/)
+	[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)
 
 *   **Tag Editor** — A tag editor with Qt GUI and command-line interface supporting MP4/M4A/AAC (iTunes), ID3v1/ID3v2, Vorbis, Opus, FLAC and Matroska.
 
@@ -831,10 +902,6 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 *   **Thunar Media Tags Plugin** — Adds special features for media files to the Thunar File Manager, including the ability to edit tags.
 
 	[http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
-
-*   **Qoobar** — Universal QT-based audio tagger (specialized for classical music)
-
-	[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)
 
 #### Lyrics
 
@@ -850,23 +917,49 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[https://github.com/osdlyrics/osdlyrics](https://github.com/osdlyrics/osdlyrics) || [osdlyrics](https://www.archlinux.org/packages/?name=osdlyrics)
 
-#### Volume managers
+#### Volume control
 
-*   **GVolWheel** — An audio mixer which lets you control the volume through a tray icon.
+See also [PulseAudio#Front-ends](/index.php/PulseAudio#Front-ends "PulseAudio").
+
+*   **[alsamixer](https://en.wikipedia.org/wiki/alsamixer "wikipedia:alsamixer")** — Soundcard mixer for ALSA soundcard driver, with ncurses interface.
+
+	[https://alsa-project.org/](https://alsa-project.org/) || [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)
+
+*   **ALSA Tray** — Provides a systray icon and a command line interface for setting the volume of the ALSA Mixers.
+
+	[https://projects.flogisoft.com/alsa-tray/](https://projects.flogisoft.com/alsa-tray/) || [alsa-tray](https://aur.archlinux.org/packages/alsa-tray/)
+
+*   **AlsaVolume** — Tray ALSA volume changer written using gtkmm.
+
+	[https://github.com/Vitozz/cppAlsaVolume](https://github.com/Vitozz/cppAlsaVolume) || [cpp-alsa-volume](https://aur.archlinux.org/packages/cpp-alsa-volume/)
+
+*   **AMixST** — Volume wheel using ALSA and Qt5.
+
+	[https://github.com/FenixFyreX/amixst](https://github.com/FenixFyreX/amixst) || [amixst](https://aur.archlinux.org/packages/amixst/)
+
+*   **GNOME ALSA Mixer** — ALSA mixer for GNOME.
+
+	[https://launchpad.net/gnome-alsamixer](https://launchpad.net/gnome-alsamixer) || [gnome-alsamixer](https://www.archlinux.org/packages/?name=gnome-alsamixer)
+
+*   **GVolWheel** — Audio mixer which lets you control the volume through a tray icon.
 
 	[https://sourceforge.net/projects/gvolwheel/](https://sourceforge.net/projects/gvolwheel/) || [gvolwheel](https://aur.archlinux.org/packages/gvolwheel/)
 
-*   **pa-applet** — PulseAudio system tray applet with volume bar.
+*   **KMix** — KDE volume control program.
 
-	[https://github.com/fernandotcl/pa-applet](https://github.com/fernandotcl/pa-applet) || [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
+	[https://kde.org/applications/multimedia/kmix/](https://kde.org/applications/multimedia/kmix/) || [kmix](https://www.archlinux.org/packages/?name=kmix)
+
+*   **MATE Volume Control** — Audio mixer application and system tray applet for MATE to mix audio and adjust volume levels of various audio mixer devices.
+
+	[https://github.com/mate-desktop/mate-media](https://github.com/mate-desktop/mate-media) || [mate-media](https://www.archlinux.org/packages/?name=mate-media)
 
 *   **PNMixer** — A fork of Obmixer. It has many new features such as ALSA channel selection, connect/disconnect detection, shortcuts, etc.
 
 	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
 
-*   **Volctl** — Per-application volume control for GNU/Linux desktops.
+*   **Retrovol** — Retro-looking volume setting tray applet.
 
-	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
+	[https://github.com/pizzasgood/retrovol](https://github.com/pizzasgood/retrovol) || [retrovol](https://aur.archlinux.org/packages/retrovol/)
 
 *   **[Volnoti](/index.php/Volnoti "Volnoti")** — A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems.
 
@@ -876,13 +969,17 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[https://github.com/gen2brain/volti](https://github.com/gen2brain/volti) || [volti](https://aur.archlinux.org/packages/volti/)
 
-*   **VolumeIcon** — Another volume control for your system tray with channel selection, themes and an external mixer.
+*   **Volume Icon** — Another volume control for your system tray with channel selection, themes and an external mixer.
 
 	[http://softwarebakery.com/maato/volumeicon.html](http://softwarebakery.com/maato/volumeicon.html) || [volumeicon](https://www.archlinux.org/packages/?name=volumeicon)
 
 *   **VolWheel** — A little application which lets you control the sound volume easily through a tray icon you can scroll on.
 
 	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+
+*   **Xfce ALSA Panel Plugin** — Simple ALSA volume control plugin for [Xfce](/index.php/Xfce "Xfce")4 panel.
+
+	[https://github.com/equeim/xfce4-alsa-plugin](https://github.com/equeim/xfce4-alsa-plugin) || [xfce4-alsa-plugin](https://aur.archlinux.org/packages/xfce4-alsa-plugin/)
 
 #### CD ripping
 
@@ -918,6 +1015,46 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 ##### Graphical
 
+###### GStreamer-based
+
+*   **GNOME Twitch** — Twitch client for GNOME using [GStreamer](/index.php/GStreamer "GStreamer").
+
+	[http://gnome-twitch.vinszent.com/](http://gnome-twitch.vinszent.com/) || [gnome-twitch](https://aur.archlinux.org/packages/gnome-twitch/)
+
+*   **[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")** — Media player (audio and video) for the GNOME desktop that uses [GStreamer](/index.php/GStreamer "GStreamer"). Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+
+	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
+
+*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer").
+
+	[https://lettier.github.io/movie-monad/](https://lettier.github.io/movie-monad/) || [movie-monad](https://aur.archlinux.org/packages/movie-monad/)
+
+*   **Pantheon Videos** — Video player and library app designed for elementary OS using [GStreamer](/index.php/GStreamer "GStreamer").
+
+	[https://github.com/elementary/videos](https://github.com/elementary/videos) || [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos)
+
+*   **Parole** — Modern media player based on the [GStreamer](/index.php/GStreamer "GStreamer") framework.
+
+	[http://goodies.xfce.org/projects/applications/parole/](http://goodies.xfce.org/projects/applications/parole/) || [parole](https://www.archlinux.org/packages/?name=parole)
+
+*   **Rage** — Video and audio player written with Enlightenment Foundation Libraries with some extra bells and whistles. Uses [GStreamer](/index.php/GStreamer "GStreamer")
+
+	[https://www.enlightenment.org/about-rage](https://www.enlightenment.org/about-rage) || [rage](https://aur.archlinux.org/packages/rage/)
+
+*   **Snappy** — Powerful media player with a minimalistic interface that uses [GStreamer](/index.php/GStreamer "GStreamer").
+
+	[https://wiki.gnome.org/Apps/Snappy](https://wiki.gnome.org/Apps/Snappy) || [snappy-player](https://www.archlinux.org/packages/?name=snappy-player)
+
+*   **Spivak** — Karaoke player based on [GStreamer](/index.php/GStreamer "GStreamer") and Qt5.
+
+	[https://github.com/gyunaev/spivak](https://github.com/gyunaev/spivak) || [spivak](https://aur.archlinux.org/packages/spivak/)
+
+*   **Xnoise** — GTK+ and [GStreamer](/index.php/GStreamer "GStreamer")-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
+
+	[http://www.xnoise-media-player.com/](http://www.xnoise-media-player.com/) || [xnoise](https://www.archlinux.org/packages/?name=xnoise)
+
+###### mpv-based
+
 *   **Baka MPlayer** — Free and open source, cross-platform, [mpv](/index.php/Mpv "Mpv") based multimedia player (Qt 5).
 
 	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer)
@@ -926,61 +1063,61 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://github.com/linuxdeepin/deepin-movie-reborn](https://github.com/linuxdeepin/deepin-movie-reborn) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
 
-*   **[Dragon Player](https://en.wikipedia.org/wiki/Dragon_Player "wikipedia:Dragon Player")** — Simple video player for KDE based on [Phonon](/index.php/KDE#Phonon "KDE"). Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
-
-	[https://www.kde.org/applications/multimedia/dragonplayer/](https://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
-
-*   **GNOME MPlayer** — Simple GTK+-based GUI for [MPlayer](/index.php/MPlayer "MPlayer").
-
-	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
-
 *   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK+ 3).
 
 	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
-
-*   **GNOME Twitch** — Twitch client for GNOME using [GStreamer](/index.php/GStreamer "GStreamer").
-
-	[http://gnome-twitch.vinszent.com/](http://gnome-twitch.vinszent.com/) || [gnome-twitch](https://www.archlinux.org/packages/?name=gnome-twitch)
-
-*   **[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")** — Media player (audio and video) for the GNOME desktop that uses [GStreamer](/index.php/GStreamer "GStreamer"). Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
-
-	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
-
-*   **[Kaffeine](https://en.wikipedia.org/wiki/Kaffeine "wikipedia:Kaffeine")** — Very versatile KDE media player that, by default, utilizes [VLC](/index.php/VLC "VLC") as its backend and has excellent support of digital TV (DVB).
-
-	[https://www.kde.org/applications/multimedia/kaffeine/](https://www.kde.org/applications/multimedia/kaffeine/) || [kaffeine](https://www.archlinux.org/packages/?name=kaffeine)
-
-*   **[KMPlayer](https://en.wikipedia.org/wiki/KMPlayer "wikipedia:KMPlayer")** — Simple KDE frontend for [MPlayer](/index.php/MPlayer "MPlayer")/[FFmpeg](/index.php/FFmpeg "FFmpeg")/[Phonon](/index.php/KDE#Phonon "KDE") and video player plugin for Konqueror.
-
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
-
-*   **[Kodi](/index.php/Kodi "Kodi")** — Media player and entertainment hub for digital media.
-
-	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
-
-*   **KPlayer** — Multimedia player for KDE4 using [MPlayer](/index.php/MPlayer "MPlayer") as a backend.
-
-	[http://kplayer.sourceforge.net/](http://kplayer.sourceforge.net/) || [kplayer](https://aur.archlinux.org/packages/kplayer/)
 
 *   **Media Player Classic Qute Theater** — Clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt and based on [mpv](/index.php/Mpv "Mpv").
 
 	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/)
 
-*   **Minitube** — YouTube desktop application written in C++ using [Phonon](/index.php/KDE#Phonon "KDE") and Qt.
-
-	[https://flavio.tordini.org/minitube](https://flavio.tordini.org/minitube) || [minitube](https://www.archlinux.org/packages/?name=minitube)
-
-*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer").
-
-	[https://lettier.github.io/movie-monad/](https://lettier.github.io/movie-monad/) || [movie-monad](https://aur.archlinux.org/packages/movie-monad/)
-
 *   **[mpv](/index.php/Mpv "Mpv")** — Very basic GUI for mpv. Can be launched with `mpv --player-operation-mode=pseudo-gui`.
 
 	[https://mpv.io/](https://mpv.io/) || [mpv](https://www.archlinux.org/packages/?name=mpv)
 
-*   **Parole** — Modern media player based on the [GStreamer](/index.php/GStreamer "GStreamer") framework.
+*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) based on [mpv](/index.php/Mpv "Mpv"). It can use [MPlayer](/index.php/MPlayer "MPlayer") as alternative backend.
 
-	[http://goodies.xfce.org/projects/applications/parole/](http://goodies.xfce.org/projects/applications/parole/) || [parole](https://www.archlinux.org/packages/?name=parole)
+	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+
+*   **xt7-player-mpv** — Qt/Gambas GUI to [mpv](/index.php/Mpv "Mpv") with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
+
+	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv](https://aur.archlinux.org/packages/xt7-player-mpv/)
+
+###### MPlayer-based
+
+*   **GNOME MPlayer** — Simple GTK+-based GUI for [MPlayer](/index.php/MPlayer "MPlayer").
+
+	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
+
+*   **[KMPlayer](https://en.wikipedia.org/wiki/KMPlayer "wikipedia:KMPlayer")** — Simple KDE frontend for [MPlayer](/index.php/MPlayer "MPlayer") and video player plugin for Konqueror. It can use [Phonon](/index.php/KDE#Phonon "KDE") as alternative backend.
+
+	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
+
+*   **KPlayer** — Multimedia player for KDE4 using [MPlayer](/index.php/MPlayer "MPlayer") as a backend.
+
+	[http://kplayer.sourceforge.net/](http://kplayer.sourceforge.net/) || [kplayer](https://aur.archlinux.org/packages/kplayer/)
+
+###### Other
+
+*   **[Dragon Player](https://en.wikipedia.org/wiki/Dragon_Player "wikipedia:Dragon Player")** — Simple video player for KDE based on [Phonon](/index.php/KDE#Phonon "KDE"). Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
+
+	[https://www.kde.org/applications/multimedia/dragonplayer/](https://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
+
+*   **[Kaffeine](https://en.wikipedia.org/wiki/Kaffeine "wikipedia:Kaffeine")** — Very versatile KDE media player that, by default, utilizes [VLC](/index.php/VLC "VLC") as its backend and has excellent support of digital TV (DVB).
+
+	[https://www.kde.org/applications/multimedia/kaffeine/](https://www.kde.org/applications/multimedia/kaffeine/) || [kaffeine](https://www.archlinux.org/packages/?name=kaffeine)
+
+*   **Kaku** — Highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more. Based on the [Electron](https://electronjs.org/) platform.
+
+	[http://kaku.rocks/](http://kaku.rocks/) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
+
+*   **[Kodi](/index.php/Kodi "Kodi")** — Media player and entertainment hub for digital media.
+
+	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
+
+*   **Minitube** — YouTube desktop application written in C++ using [Phonon](/index.php/KDE#Phonon "KDE") and Qt.
+
+	[https://flavio.tordini.org/minitube](https://flavio.tordini.org/minitube) || [minitube](https://www.archlinux.org/packages/?name=minitube)
 
 *   **QMPlay2** — Qt based video player. It can play and stream all formats supported by [FFmpeg](/index.php/FFmpeg "FFmpeg") and libmodplug. It has on integrated module system, which includes a YouTube browser.
 
@@ -989,18 +1126,6 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 *   **QtAV Player** — Simple media player based on QtAV and [FFmpeg](/index.php/FFmpeg "FFmpeg"). Run with `Player` or `QMLPlayer`.
 
 	[http://www.qtav.org/](http://www.qtav.org/) || [qtav](https://www.archlinux.org/packages/?name=qtav)
-
-*   **Rage** — Video and audio player written with Enlightenment Foundation Libraries with some extra bells and whistles. Uses [GStreamer](/index.php/GStreamer "GStreamer")
-
-	[https://www.enlightenment.org/about-rage](https://www.enlightenment.org/about-rage) || [rage](https://aur.archlinux.org/packages/rage/)
-
-*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) based on [mpv](/index.php/Mpv "Mpv"). It can use [MPlayer](/index.php/MPlayer "MPlayer") as alternative backend.
-
-	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
-
-*   **Snappy** — Powerful media player with a minimalistic interface that uses [GStreamer](/index.php/GStreamer "GStreamer").
-
-	[https://wiki.gnome.org/Apps/Snappy](https://wiki.gnome.org/Apps/Snappy) || [snappy-player](https://www.archlinux.org/packages/?name=snappy-player)
 
 *   **[tvtime](https://en.wikipedia.org/wiki/tvtime "wikipedia:tvtime")** — High quality television application for use with video capture cards.
 
@@ -1013,14 +1138,6 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 *   **[xine](https://en.wikipedia.org/wiki/xine "wikipedia:xine")** — Free multimedia player.
 
 	[http://www.xine-project.org](http://www.xine-project.org) || [xine-ui](https://www.archlinux.org/packages/?name=xine-ui)
-
-*   **Xnoise** — GTK+ and [GStreamer](/index.php/GStreamer "GStreamer")-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
-
-	[http://www.xnoise-media-player.com/](http://www.xnoise-media-player.com/) || [xnoise](https://www.archlinux.org/packages/?name=xnoise)
-
-*   **xt7-player-mpv** — Qt/Gambas GUI to [mpv](/index.php/Mpv "Mpv") with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
-
-	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv](https://aur.archlinux.org/packages/xt7-player-mpv/)
 
 #### Video converters
 
@@ -1069,6 +1186,10 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 *   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
+
+*   **[MKVToolNix GUI](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Qt based GUI to create, edit and inspect Matroska files.
+
+	[https://mkvtoolnix.download/](https://mkvtoolnix.download/) || [mkvtoolnix-gui](https://www.archlinux.org/packages/?name=mkvtoolnix-gui)
 
 *   **QWinFF** — Qt5 GUI for FFmpeg that can read audio and video files in various formats and convert them into other formats.
 
@@ -1310,29 +1431,25 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 ### Collection managers
 
-*   **Basenji** — Volume indexing tool designed for easy and fast indexing of CD/DVD and other type of volume collections.
+*   **Data Crow** — Media cataloger and media organizer.
 
-	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
-
-*   **[Beets](/index.php/Beets "Beets")** — Music library organizer, tagger and more.
-
-	[http://beets.radbox.org/](http://beets.radbox.org/) || [beets](https://www.archlinux.org/packages/?name=beets)
-
-*   **Demlo** — Batch music tagger, encoder, renamer and more.
-
-	[http://ambrevar.bitbucket.org/demlo/](http://ambrevar.bitbucket.org/demlo/) || [demlo](https://aur.archlinux.org/packages/demlo/)
+	[http://datacrow.net/](http://datacrow.net/) || [datacrow](https://aur.archlinux.org/packages/datacrow/)
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — GNOME application for organizing various collections (board games, comic books, movies, stamps, etc.).
 
 	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
-*   **[Kodi](/index.php/Kodi "Kodi")** — Application for organizing various collections and automatically retrieving info about them (video, music, photos).
+*   **Griffith** — Movie collection manager application.
 
-	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
+	[https://gitlab.com/Strit/griffith](https://gitlab.com/Strit/griffith) || [griffith](https://aur.archlinux.org/packages/griffith/)
 
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 
 	[http://tellico-project.org/](http://tellico-project.org/) || [tellico](https://www.archlinux.org/packages/?name=tellico)
+
+*   **vMovieDB** — Movie collection manager for the Gnome desktop.
+
+	[https://sourceforge.net/projects/vmoviedb/](https://sourceforge.net/projects/vmoviedb/) || [vmoviedb](https://www.archlinux.org/packages/?name=vmoviedb)
 
 ### Media servers
 
@@ -1375,6 +1492,36 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 *   **[Universal Media Server](/index.php/Universal_Media_Server "Universal Media Server")** — UPnP media server, which is capable of sharing video, audio and images between most modern devices. (Fork of PS3 Media Server.)
 
 	[http://www.universalmediaserver.com/](http://www.universalmediaserver.com/) || [ums](https://aur.archlinux.org/packages/ums/)
+
+### Metadata
+
+*   **[ExifTool](https://en.wikipedia.org/wiki/ExifTool "wikipedia:ExifTool")** — Command-line application for reading, writing and editing meta information in a wide variety of files.
+
+	[https://sno.phy.queensu.ca/~phil/exiftool/](https://sno.phy.queensu.ca/~phil/exiftool/) || [perl-image-exiftool](https://www.archlinux.org/packages/?name=perl-image-exiftool)
+
+*   **Exiv2** — Command line utility to manage image metadata. It provides fast and easy read and write access to the Exif, IPTC and XMP metadata and the ICC Profile embedded within digital images in various formats.
+
+	[http://exiv2.org/](http://exiv2.org/) || [exiv2](https://www.archlinux.org/packages/?name=exiv2)
+
+*   **[ffprobe](https://en.wikipedia.org/wiki/FFmpeg "wikipedia:FFmpeg")** — Gather information from multimedia streams and print it in human- and machine-readable fashion.
+
+	[https://ffmpeg.org/ffprobe.html](https://ffmpeg.org/ffprobe.html) || [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg)
+
+*   **jhead** — Exif jpeg header manipulation tool.
+
+	[http://sentex.net/~mwandel/jhead/](http://sentex.net/~mwandel/jhead/) || [jhead](https://www.archlinux.org/packages/?name=jhead)
+
+*   **[MediaInfo](https://en.wikipedia.org/wiki/MediaInfo "wikipedia:MediaInfo")** — Convenient unified display of the most relevant technical and tag data for video and audio files.
+
+	[https://mediaarea.net/en/MediaInfo](https://mediaarea.net/en/MediaInfo) || CLI: [mediainfo](https://www.archlinux.org/packages/?name=mediainfo), GUI: [mediainfo-gui](https://www.archlinux.org/packages/?name=mediainfo-gui)
+
+*   **pyExifToolGUI** — Graphical frontend for ExifTool, which reads and writes all kind of metadata tags from/to image files.
+
+	[https://hvdwolf.github.io/pyExifToolGUI/](https://hvdwolf.github.io/pyExifToolGUI/) || [pyexiftoolgui-git](https://aur.archlinux.org/packages/pyexiftoolgui-git/)
+
+*   **[sndfile-info](https://en.wikipedia.org/wiki/libsndfile "wikipedia:libsndfile")** — Obtaining information about the contents of an audio file.
+
+	[http://mega-nerd.com/libsndfile/](http://mega-nerd.com/libsndfile/) || [libsndfile](https://www.archlinux.org/packages/?name=libsndfile)
 
 ### Mobile phone managers
 

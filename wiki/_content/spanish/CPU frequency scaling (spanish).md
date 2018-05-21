@@ -25,7 +25,7 @@ De manera predeterminada, monitorea la temperatura la UCP usando los sensores de
 
 ### cpupower
 
-[cpupower](https://www.archlinux.org/packages/?name=cpupower) es un conjunto de utilidades diseñadas para ajustar la frecuencias de la UCP (tecnología usada principalmente en portátiles) y permite al sistema operativo el ajuste de la velocidad hacia arriba o hacia abajo, dependiendo de la carga actual del sistema o del esquema de potencia, p. ej. la frecuencia de la UCP puede ser reducida de 2 GHz a 1 GHz cuando el portátil funciona con la batería, conservando la duración de ésta, reduciendo el calor generado y el ruido del ventilador.
+[cpupower](https://www.archlinux.org/packages/?name=cpupower) es un conjunto de utilidades diseñadas para ajustar la frecuencias de la UCP (tecnología usada principalmente en portátiles) y permite al sistema operativo el ajuste de la velocidad hacia arriba o hacia abajo, dependiendo de la carga actual del sistema o del esquema de potencia, por ejemplo, la frecuencia de la UCP puede ser reducida de 2 GHz a 1 GHz cuando el portátil funciona con la batería, conservando la duración de ésta, reduciendo el calor generado y el ruido del ventilador.
 
 El fichero de configuración de *cpupower* se encuentra alojada en `/etc/default/cpupower`. Este fichero de configuración es leído por un script bash alojado en `/usr/lib/systemd/scripts/cpupower` y es activado con *systemd* a través del servicio `cpupower.service`. Si desea habilitarlo para que inicie al arrancar el sistema operativo, puede ejecutar la orden:
 

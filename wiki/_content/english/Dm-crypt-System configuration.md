@@ -140,7 +140,7 @@ cryptkey=*device*:*offset*:*size*
 
 where the offset and size are in bytes. Example: `cryptkey=/dev/sdZ:0:512` reads a 512 byte keyfile starting at the beginning of the device.
 
-**Tip:** If the device path you want to access contains the character `:`, you have to escape it with three backslash `\`. In that case the cryptkey parameter would be as follow: `cryptkey=/dev/disk/by-id/usb-123456-0\\\:0:0:512` for a usb key with the id `usb-123456-0:0`.
+**Tip:** If the device path you want to access contains the character `:`, you have to escape it with a backslash `\`. In that case the cryptkey parameter would be as follow: `cryptkey=/dev/disk/by-id/usb-123456-0\:0:0:512` for a usb key with the id `usb-123456-0:0`.
 
 For a file [included](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") in the initramfs the format is[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n14):
 

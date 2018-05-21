@@ -63,9 +63,9 @@ Some companies provide tools which offer the ability to create virtual machines 
 
 First, familiarize yourself with the [formats supported by VirtualBox](/index.php/VirtualBox#Formats_supported_by_VirtualBox "VirtualBox") and [those supported by third-party hypervisors](https://en.wikipedia.org/wiki/Comparison_of_platform_virtual_machines#Image_type_compatibility "wikipedia:Comparison of platform virtual machines").
 
-*   Importing or exporting a virtual machine from/to a VMware solution is not a problem at all if you use the VMDK or OVF disk format, otherwise converting [VMDK to VDI and VDI to VMDK](/index.php/VirtualBox#VMDK_to_VDI_and_VDI_to_VMDK "VirtualBox") is possible and the aforementioned VMware vCenter Converter tool is available.
+*   Importing or exporting a virtual machine from/to a VMware solution is not a problem at all if you use the VMDK or OVF disk format, otherwise converting [VMDK to VDI and VDI to VMDK](/index.php/VirtualBox#Disk_image_format_conversion "VirtualBox") is possible and the aforementioned VMware vCenter Converter tool is available.
 
-*   Importing or exporting from/to QEMU is not a problem neither: some QEMU formats are supported directly by VirtualBox and conversion between [QCOW2 to VDI and VDI to QCOW2](/index.php/VirtualBox#QCOW2_to_VDI_and_VDI_to_QCOW2 "VirtualBox") is still available if needed.
+*   Importing or exporting from/to QEMU is not a problem neither: some QEMU formats are supported directly by VirtualBox and conversion between [QCOW2 to VDI and VDI to QCOW2](/index.php/VirtualBox#QCOW "VirtualBox") is still available if needed.
 
 *   Importing or exporting from/to Parallels hypervisor is the hardest way: Parallels does only support its own HDD format (even the standard and portable OVF format is not supported!).
 

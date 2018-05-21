@@ -251,6 +251,8 @@ Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) pa
 
 As of January 2018, GNOME Keyring doesn't handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) nor Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
 
+**Note:** As of GNOME 3.28, gnome-keyring replaced its SSH agent implementation with a wrapper around the ssh-agent tool that comes with [openssh](https://www.archlinux.org/packages/?name=openssh) [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=775981). As a result, any type of key supported by the upstream ssh-agent is now also supported by gnome-keyring, including ECDSA and Ed25519 keys.
+
 ## See also
 
 *   [GNOME wiki](https://wiki.gnome.org/action/show/Projects/GnomeKeyring)

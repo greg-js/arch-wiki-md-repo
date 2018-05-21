@@ -1,3 +1,7 @@
+Related articles
+
+*   [Streaming media](/index.php/Streaming_media "Streaming media")
+
 **Note:** MediaTomb is unmaintained, users may wish to checkout [Gerbera](https://gerbera.io/), which is build upon MediaTomb 12.1.
 
 From [MediaTomb - Free UPnP MediaServer](http://mediatomb.cc/):
@@ -29,7 +33,7 @@ Mediatomb can use its own database, or your local [MariaDB](/index.php/MariaDB "
 
 ## Configuration
 
-**Warning:** The current version of MediaTomb has a serious bug: The `-i` command-line option to bind to a specific IP address does not work. Bug reported in 2010 to [Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=693301) and [Upstream](http://sourceforge.net/p/mediatomb/bugs/76). The webserver remains accessible on all interfaces, creating a security problem if running on a publically accessible host.
+**Warning:** The current version of MediaTomb has a serious bug: The `-i` command-line option to bind to a specific IP address does not work. Bug reported in 2010 to [Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=693301) and [Upstream](http://sourceforge.net/p/mediatomb/bugs/76). The webserver remains accessible on all interfaces, creating a security problem if running on a publicly accessible host.
 
 The default settings may be sufficient for many users, though changes are required for PlayStation 3 support. MediaTomb may be configured and run per-user or as a system-wide daemon. Following installation, either run
 

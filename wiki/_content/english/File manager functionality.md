@@ -50,7 +50,7 @@ Particularly where using - or intending to use - a lightweight environment, it s
 
 ### Mounting
 
-*   [gvfs](https://www.archlinux.org/packages/?name=gvfs): The **G**nome **V**irtual **F**ile **S**ystem provides mounting and trash functionality. GVFS uses [udisks2](https://www.archlinux.org/packages/?name=udisks2) for mounting functionality and is the recommended solution for most file managers.
+*   The Gnome virtual filesystem ([gvfs](https://www.archlinux.org/packages/?name=gvfs)) provides mounting and trash functionality. GVFS uses [udisks2](https://www.archlinux.org/packages/?name=udisks2) for mounting functionality and is the recommended solution for most file managers.
 
 **Tip:** For some file managers it may be useful to have the package [gamin](https://www.archlinux.org/packages/?name=gamin) installed. [Gamin](/index.php/Gamin "Gamin") is a file and directory monitoring system.
 

@@ -78,7 +78,7 @@
 *   Базовая настройка демона (графический): [paprefs](https://www.archlinux.org/packages/?name=paprefs)
 *   Управление громкостью через установленные сочетания клавиш клавиатуры: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
 *   Консольные (CLI) микшеры: [ponymix](https://www.archlinux.org/packages/?name=ponymix) и [pamixer](https://www.archlinux.org/packages/?name=pamixer)
-*   Консольные (curses) микшеры: [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
+*   Консольные (curses) микшеры: [pulsemixer](https://www.archlinux.org/packages/?name=pulsemixer)
 *   Контроль громкости по сети: [PaWebControl](https://github.com/Siot/PaWebControl)
 *   Иконки панели задач: [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/), [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/), и [pasystray-gtk3-standalone](https://aur.archlinux.org/packages/pasystray-gtk3-standalone/)
 

@@ -22,14 +22,6 @@
 
 lariza is available in the AUR as [lariza-git](https://aur.archlinux.org/packages/lariza-git/). Alternatively, source code is available on [GitHub](https://github.com/vain/lariza/).
 
-To build lariza directly from GitHub, pass the following within a terminal session:
-
-```
-$ git clone [https://github.com/vain/lariza.git](https://github.com/vain/lariza.git)
-$ cd lariza && make
-
-```
-
 Install suckless.org [tabbed](https://www.archlinux.org/packages/?name=tabbed) if support for tabs within a single window instance of lariza is desired. tabbed will run detached and be automatically picked up by lariza. An alternative to tabbed is the use of a window manager which supports native tabbing such as [i3](/index.php/I3 "I3"), [PekWM](/index.php/PekWM "PekWM") and/or [fluxbox](/index.php/Fluxbox "Fluxbox").
 
 ## Configuration

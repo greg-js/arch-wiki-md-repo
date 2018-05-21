@@ -3,7 +3,7 @@ Related articles
 *   [Thunderbird/Enigmail](/index.php/Thunderbird/Enigmail "Thunderbird/Enigmail")
 *   [Firefox](/index.php/Firefox "Firefox")
 
-[Mozilla Thunderbird](https://www.mozilla.org/thunderbird/) is an open source email, news, and chat client developed by the [Mozilla Foundation](https://www.mozilla.org/).
+[Mozilla Thunderbird](https://www.thunderbird.net/en-US/) is an open source email, news, and chat client developed by the [Mozilla Foundation](https://www.mozilla.org/).
 
 ## Contents
 
@@ -35,11 +35,11 @@ Other versions include:
 
 *   **Thunderbird Beta** — Cutting edge features with relatively-good stability.
 
-	[https://www.mozilla.org/thunderbird/channel/](https://www.mozilla.org/thunderbird/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)
+	[https://www.thunderbird.net/channel/](https://www.thunderbird.net/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)
 
 *   **Thunderbird Earlybird** — Experience the newest innovations as they're developed (equivalent to an alpha and Firefox Aurora releases).
 
-	[https://www.mozilla.org/thunderbird/channel/](https://www.mozilla.org/thunderbird/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)
+	[https://www.thunderbird.net/channel/](https://www.thunderbird.net/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)
 
 *   **Thunderbird Nightly** — Experience the newest innovations with nightly releases (for those that want to work with breakages).
 
@@ -243,7 +243,7 @@ $ pacman -S thunderbird
 
 ```
 
-6\. Create your mail accounts, feeds and calenders (empty).
+6\. Create your mail accounts, feeds and calendars (empty).
 
 7\. Install the [ImportExportTools](https://addons.mozilla.org/thunderbird/addon/importexporttools/) AddOn
 

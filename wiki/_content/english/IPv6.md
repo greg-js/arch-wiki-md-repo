@@ -162,7 +162,9 @@ method=auto
 
 ### systemd-networkd
 
-Systemd-networkd also does not honor the settings `net.ipv6.conf.xxx.use_tempaddr` placed in `/etc/sysctl.d/40-ipv6.conf` unless the option `IPv6PrivacyExtensions` is set with the value `kernel` in the .network file(s). Other options for the IPv6 Privacy Extensions like
+Systemd-networkd also does not honor the settings `net.ipv6.conf.xxx.use_tempaddr` placed in `/etc/sysctl.d/40-ipv6.conf` unless the option `IPv6PrivacyExtensions` is set with the value `kernel` in the .network file(s).
+
+Other options for the IPv6 Privacy Extensions like:
 
 ```
 net.ipv6.conf.xxx.temp_prefered_lft
@@ -171,6 +173,8 @@ net.ipv6.conf.xxx.temp_valid_lft
 ```
 
 are honored, however.
+
+**Note:** `temp_prefered_lft` is the variable name, preferred has to be misspelled.
 
 See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for details.
 

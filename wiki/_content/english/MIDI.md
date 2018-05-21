@@ -11,7 +11,7 @@ The scope of this article, however, will mainly focus on the usage of MIDI in co
         *   [3.1.1 SB Audigy 1 - Emu10k1 WaveTable](#SB_Audigy_1_-_Emu10k1_WaveTable)
     *   [3.2 Software](#Software)
         *   [3.2.1 DeaDBeeF](#DeaDBeeF)
-        *   [3.2.2 GStreamer-based players like Totem (GNOME Videos) or Rhythmbox](#GStreamer-based_players_like_Totem_.28GNOME_Videos.29_or_Rhythmbox)
+        *   [3.2.2 GStreamer-based players](#GStreamer-based_players)
         *   [3.2.3 VLC](#VLC)
         *   [3.2.4 Audacious](#Audacious)
         *   [3.2.5 TiMidity++](#TiMidity.2B.2B)
@@ -124,15 +124,15 @@ $ aplaymidi -p 29:0 midi_file.mid
 
 You can play MIDI files in [deadbeef](https://www.archlinux.org/packages/?name=deadbeef) player after installing and configuring *freepats.cfg* which is provided by [timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats). See [how to configure freepats.](/index.php/Timidity#Freepats "Timidity") You can also change the *freepats.cfg* file location in DeaDBeeF by going to *Edit > Preferences > Plugins > WildMidi Player > Configure*.
 
-#### GStreamer-based players like Totem (GNOME Videos) or Rhythmbox
+#### GStreamer-based players
 
-You can play MIDI files on GNOME Videos and all other players using gstreamer as backend after having installed [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) (which provides [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) as a dependency) and installed a soundfont ([soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid) for example). See [FluidSynth](/index.php/FluidSynth "FluidSynth") for more info.
+You can play MIDI files on GNOME Videos and all other players using [GStreamer](/index.php/GStreamer "GStreamer") as backend after having installed [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) and [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth), and installed a soundfont ([soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid) for example). See [FluidSynth](/index.php/FluidSynth "FluidSynth") for more info.
 
 If you choose to use [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid), the default search strategy will probably select FluidR3_GS.sf2 rather than FluidR3_GM.sf2\. There can be no audio if that's the case. To prevent this, you can use a symlink:
 
 ```
-# mv /usr/share/soundfonts/FluidR3_GS.sf2 /usr/share/soundfonts/FluidR3_GS.sf2_backup
-# ln -sf /usr/share/soundfonts/FluidR3_GM.sf2 /usr/share/soundfonts/FluidR3_GS.sf2
+# mkdir -p /usr/share/sounds/sf2/
+# ln -s ../../soundfonts/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GM.sf2
 
 ```
 

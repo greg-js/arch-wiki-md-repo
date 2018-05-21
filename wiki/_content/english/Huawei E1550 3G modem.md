@@ -36,7 +36,7 @@ $ /lib/udev/usb_modeswitch --vendor 0x12d1 --product 0x1446 --type option-zerocd
 
 command.
 
-See also [usb_modeswitch](https://www.archlinux.org/packages/?q=usb_modeswitch) package in [community], which you may need in future since in udev-157 modem-modeswitch has been renamed and changed as described in the [commit](http://git.kernel.org/?p=linux/hotplug/udev.git;a=commit;h=4dd9b291354e76f34b0d6d7b5c3b28d03a624418). This package does not need any modifications, just install it.
+See also the [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) package, which you may need in future since in udev-157 modem-modeswitch has been renamed and changed as described in the [commit](http://git.kernel.org/?p=linux/hotplug/udev.git;a=commit;h=4dd9b291354e76f34b0d6d7b5c3b28d03a624418). This package does not need any modifications, just install it.
 
 Also you can create udev's config: /etc/udev/rules.d/15-huawei-e1550.rules
 

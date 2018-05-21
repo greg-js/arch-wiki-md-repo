@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing"). Дата последней синхронизации: 17 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&diff=0&oldid=497002).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing"). Дата последней синхронизации: 3 мая 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&diff=0&oldid=520025).
 
 Ссылки по теме
 

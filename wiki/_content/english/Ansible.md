@@ -6,11 +6,12 @@ From [www.ansible.com](https://www.ansible.com/how-ansible-works):
 
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)
-    *   [2.1 Inventory](#Inventory)
-    *   [2.2 Ping](#Ping)
-    *   [2.3 Playbook](#Playbook)
-    *   [2.4 Vault](#Vault)
-    *   [2.5 Package management](#Package_management)
+    *   [2.1 Configuration](#Configuration)
+    *   [2.2 Inventory](#Inventory)
+    *   [2.3 Ping](#Ping)
+    *   [2.4 Playbook](#Playbook)
+    *   [2.5 Vault](#Vault)
+    *   [2.6 Package management](#Package_management)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 User account creation](#User_account_creation)
     *   [3.2 Python binary location](#Python_binary_location)
@@ -26,22 +27,34 @@ On the managed machines (nodes), where you want to automate deployment or config
 
 ## Basic usage
 
+### Configuration
+
+Ansible parameters are set in the configuration file which can either be `ansible.cfg` in the current directory, `.ansible.cfg` in the home directory or `/etc/ansible/ansible.cfg`, whichever it finds first.
+
+A template is available at [https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg](https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg).
+
 ### Inventory
 
-According to the default settings in `/etc/ansible/ansible.cfg`, one can define its infrastructure in `/etc/ansible/hosts`. For instance, the following inventory defines a cluster with three nodes organized into two groups:
+The infrastructure is listed in the Ansible inventory file, which defaults to being saved in the location `/etc/ansible/hosts` or one can specify a different inventory file using the `-i` command line switch. For instance, the following inventory defines a cluster with 7 nodes organized into two groups:
 
  `/etc/ansible/hosts` 
 ```
 [control]
 192.168.12.1
+foo-[a:c].example.org
+localhost ansible_connection=local
 
 [managed]
 192.168.12.2
 192.168.12.3
-
 ```
 
-One can assign specific attributes to every node in the file. Check [the official document](http://docs.ansible.com/ansible/latest/intro_inventory.html) for details.
+One can assign specific attributes to every node in the infrastructure file at the corresponding line or in the `ansible.cfg` configuration file. By default Ansible executes playbooks over SSH, the `ansible_connection` parameter extends the connection to:
+
+*   `local` to deploy the playbook to the control machine itself
+*   `docker` deploys the playbook directly into Docker containers
+
+Check [the official document](http://docs.ansible.com/ansible/latest/intro_inventory.html) for details.
 
 ### Ping
 

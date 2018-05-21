@@ -47,7 +47,7 @@ Create an `/etc/krb5.conf` file for your domain:
         dns_lookup_kdc = false
         rdns = false
         ticket_lifetime = 24h
-        fowardable = yes
+        forwardable = yes
         #allow_weak_crypto = yes  # Only if absolutely necessary. Currently FreeIPA supports strong crypto.
 
 [realms]

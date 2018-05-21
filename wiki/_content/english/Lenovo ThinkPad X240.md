@@ -42,7 +42,7 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
 
 You likely need to change the ALSA default sound card if you want to output sound via line-out by default.
 
-Install the [alsa-utils](https://www.archlinux.org/packages/?sort=&q=alsa-utils&maintainer=&flagged=) package, run `aplay -l` and inspect its output:
+Install the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package, run `aplay -l` and inspect its output:
 
 ```
 **** List of PLAYBACK Hardware Devices ****

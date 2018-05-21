@@ -21,7 +21,7 @@ This article contains information regarding sparse files, their creation, mainte
 
 ### What is a sparse file?
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Sparse_file "wikipedia:Sparse file"), in computer science, a sparse file is a type of computer file that attempts to use file system space more efficiently when blocks allocated to the file are mostly empty. This is achieved by writing brief information (metadata) representing the empty blocks to disk instead of the actual "empty" space which makes up the block, using less disk space (i.e. sparse files contain blocks of zeros whose existance is recorded, but have no space allocated on disk). The full block size is written to disk as the actual size only when the block contains "real" (non-empty) data.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Sparse_file "wikipedia:Sparse file"), in computer science, a sparse file is a type of computer file that attempts to use file system space more efficiently when blocks allocated to the file are mostly empty. This is achieved by writing brief information (metadata) representing the empty blocks to disk instead of the actual "empty" space which makes up the block, using less disk space (i.e. sparse files contain blocks of zeros whose existence is recorded, but have no space allocated on disk). The full block size is written to disk as the actual size only when the block contains "real" (non-empty) data.
 
 When reading sparse files, the file system transparently converts metadata representing empty blocks into "real" blocks filled with zero bytes at runtime. The application is unaware of this conversion.
 

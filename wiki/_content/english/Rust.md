@@ -259,7 +259,7 @@ Kate support for Rust is enabled via the official [kate](https://github.com/rust
 *   [Rust Documentation](https://www.rust-lang.org/documentation.html)
 *   [Official Rust Book](http://doc.rust-lang.org/stable/book/)
 *   [Standard Library API Lookup](https://doc.rust-lang.org/std/)
-*   [Examples with small descriptions](http://rustbyexample.com/)
+*   [Examples with small descriptions](https://doc.rust-lang.org/stable/rust-by-example/)
 *   [Page listing of Rust tutorials](https://github.com/ctjhoa/rust-learning)
 *   [Libraries(crates) available through Cargo](https://crates.io/)
 *   [This Week in Rust](https://this-week-in-rust.org/)

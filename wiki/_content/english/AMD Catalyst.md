@@ -1072,7 +1072,7 @@ When you are using packages with powerXpress support and you are switching to in
 
 Sometimes ie. when your integrated GPU is intel's one you can use `vgaswitcheroo` to turn the discrete GPU off. Sometimes unfortunately, it is not working.
 
-Then you may check out [acpi_call](https://aur.archlinux.org/packages/?O=0&K=acpi_call). MrDeepPurple has prepared the script which he is using to perform 'turn off' task. He is calling script via systemd service while booting and resuming his system. Here is his script:
+Then you may check out [acpi_call-pf](https://aur.archlinux.org/packages/acpi_call-pf/). MrDeepPurple has prepared the script which he is using to perform 'turn off' task. He is calling script via systemd service while booting and resuming his system. Here is his script:
 
 ```
 #!/bin/sh

@@ -47,7 +47,7 @@ Systemd automatically chooses unique interface names for all your interfaces. Th
 *   **intern0**: the network card connected to the LAN. On an actual computer it will probably have the name enp2s0, enp1s1, etc.
 *   **extern0**: the network card connected to the external network (or WAN). It will probably have the name enp2s0, enp1s1, etc.
 
-You may change the assigned names of your devices via a configuration file using [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") described in [Systemd-networkd#Renaming an interface](/index.php/Systemd-networkd#Renaming_an_interface "Systemd-networkd") or by a [udev](/index.php/Udev "Udev")-rule following [Network configuration#Change device name](/index.php/Network_configuration#Change_device_name "Network configuration"). Due to the example-rich nature of this article you might want to choose the above described names.
+You may change the assigned names of your devices via a configuration file using [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") described in [Systemd-networkd#Renaming an interface](/index.php/Systemd-networkd#Renaming_an_interface "Systemd-networkd") or by a [udev](/index.php/Udev "Udev")-rule following [Network configuration#Change interface name](/index.php/Network_configuration#Change_interface_name "Network configuration"). Due to the example-rich nature of this article you might want to choose the above described names.
 
 ### IP configuration
 

@@ -289,7 +289,7 @@ in /var/lib/clamav ERROR: Not supported data format
 
 ```
 
-This happens because of mismatch between `/etc/clamav/freshclam.conf` setting `DatabaseDirectory` and `/etc/clamav/clamd.conf` setting `DatabaseDirectory`. `/etc/clamav/freshclam.conf` pointing to `/var/lib/clamav`, but `/etc/clamav/clamd.conf` (default directory) pointing to `/usr/share/clamav`, or other directory. Edit in `/etc/clamav/clamd.conf` and replace with the same DatabaseDirectory like in `/etc/clamav/freshclam.conf`. After that clamav will start up succesfully.
+This happens because of mismatch between `/etc/clamav/freshclam.conf` setting `DatabaseDirectory` and `/etc/clamav/clamd.conf` setting `DatabaseDirectory`. `/etc/clamav/freshclam.conf` pointing to `/var/lib/clamav`, but `/etc/clamav/clamd.conf` (default directory) pointing to `/usr/share/clamav`, or other directory. Edit in `/etc/clamav/clamd.conf` and replace with the same DatabaseDirectory like in `/etc/clamav/freshclam.conf`. After that clamav will start up successfully.
 
 ### Error: Can't create temporary directory
 

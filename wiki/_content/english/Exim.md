@@ -266,7 +266,7 @@ service auth {
 }
 
 service lmtp {
-	# a unix socket is prefered of a local port communication
+	# a unix socket is preferred of a local port communication
 	unix_listener exim-lmtp {
 		mode = 0600
 		group = exim

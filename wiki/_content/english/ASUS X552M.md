@@ -116,7 +116,7 @@ Touchpad works with: [xf86-input-synaptics](https://www.archlinux.org/packages/?
 
 ### Brightness
 
-Brightness does work out of box, but you can not change value with keyboard combo, buttons are not mapped at all (fn + F5 / fn + F6), untill you use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi= acpi_backlight=native` to your bootloader. `acpi_osi=` it's indeed followed by a blank space + `acpi_backlight=native`. This is only way when backlight can be controled with keyboard combo keys.
+Brightness does work out of box, but you can not change value with keyboard combo, buttons are not mapped at all (fn + F5 / fn + F6), until you use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi= acpi_backlight=native` to your bootloader. `acpi_osi=` it's indeed followed by a blank space + `acpi_backlight=native`. This is only way when backlight can be controled with keyboard combo keys.
 
 ### Webcam
 

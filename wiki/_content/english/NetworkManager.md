@@ -486,7 +486,7 @@ See also [NFS#NetworkManager dispatcher](/index.php/NFS#NetworkManager_dispatche
 
 ### Proxy settings
 
-NetworkManager does not directly handle proxy settings, but if you are using GNOME or KDE, you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) wich handles proxy settings using NetworkManager's information. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
+NetworkManager does not directly handle proxy settings, but if you are using GNOME or KDE, you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) which handles proxy settings using NetworkManager's information. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
 
 In order for *proxydriver* to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (System -> Preferences -> Startup Applications):
 

@@ -1,4 +1,4 @@
-[FluidSynth](http://www.fluidsynth.org/) is a real-time software synthesizer based on the SoundFont 2 specifications. It is required by [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad), and thus is installed as a dependency of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group.
+[FluidSynth](http://www.fluidsynth.org/) is a real-time software synthesizer based on the SoundFont 2 specifications. It is optionally used by [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad).
 
 ## Contents
 
@@ -14,7 +14,10 @@
 
 The first step is to [install](/index.php/Install "Install") the [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) package.
 
-**However, FluidSynth will not produce any sound yet**. This is because FluidSynth does not include any instrument samples. To produce sound, instrument patches and/or soundfonts need to be installed and fluidsynth configured so it knows where to find them. You can install [SoundFont sample](/index.php/Timidity#SoundFonts "Timidity").
+You should also install a [SoundFont](https://en.wikipedia.org/wiki/SoundFont "wikipedia:SoundFont") to be able to produce sound. Here is a list of SoundFonts:
+
+*   [timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats)
+*   [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid)
 
 ## Usage
 
@@ -34,6 +37,8 @@ assuming than you installed [soundfont-fluid](https://www.archlinux.org/packages
 There are many other options to fluidsynth; see manpage or use -h to get help.
 
 One may wish to use pulseaudio instead of alsa as the argument to the -a option.
+
+**Tip:** The soundfont does not needed to be specified every time if a symbolic link created for the default soundfont, e.g. `ln -s FluidR3_GM.sf2 /usr/share/soundfonts/default.sf2` 
 
 ### ALSA daemon mode
 
@@ -67,7 +72,7 @@ $ aplaymidi -p128:0 example.midi
 
 ## How to convert MIDI to MP3/OGG
 
-Requires [soundfont-fluid](https://www.archlinux.org/packages/?sort=&q=soundfont-fluid&maintainer=&flagged=) or any other soundfont of your choice.
+Requires [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid) or any other soundfont of your choice.
 
 `/usr/share/soundfonts` is the default location of FluidR3_GM
 
@@ -78,7 +83,7 @@ $ fluidsynth -l -T raw -F - /usr/share/soundfonts/FluidR3_GM.sf2 example.mid | t
 
 ```
 
-Requires [twolame](https://www.archlinux.org/packages/?sort=&q=twolame&maintainer=&flagged=)
+Requires [twolame](https://www.archlinux.org/packages/?name=twolame).
 
 Simple command lines to convert midi to ogg:
 

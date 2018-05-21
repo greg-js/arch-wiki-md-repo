@@ -19,11 +19,11 @@ This article explains how to set up a network connection.
     *   [4.1 Network interfaces](#Network_interfaces)
         *   [4.1.1 Listing network interfaces](#Listing_network_interfaces)
         *   [4.1.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
-    *   [4.2 IP addresses](#IP_addresses)
-        *   [4.2.1 Manual IP address management](#Manual_IP_address_management)
-    *   [4.3 Routing table](#Routing_table)
-    *   [4.4 DHCP](#DHCP)
-    *   [4.5 Network managers](#Network_managers)
+    *   [4.2 Static IP address](#Static_IP_address)
+    *   [4.3 IP addresses](#IP_addresses)
+    *   [4.4 Routing table](#Routing_table)
+    *   [4.5 DHCP](#DHCP)
+    *   [4.6 Network managers](#Network_managers)
 *   [5 Ping](#Ping)
 *   [6 Resolving domain names](#Resolving_domain_names)
 *   [7 Set the hostname](#Set_the_hostname)
@@ -65,7 +65,7 @@ To set up a network connection, go through the following steps:
 1.  Ensure your [#network interface](#Network_interfaces) is listed and enabled.
 2.  Connect to the network. Plug in the Ethernet cable or [connect to the wireless LAN](/index.php/Wireless_network_configuration "Wireless network configuration").
 3.  Configure your network connection:
-    *   static IP address: [manually assign an IP address](#Manual_IP_address_management), set up your [#Routing table](#Routing_table) and [configure your DNS servers](/index.php/Resolv.conf "Resolv.conf").
+    *   [#static IP address](#Static_IP_address)
     *   dynamic IP address: use [#DHCP](#DHCP)
 
 **Tip:** [#Network managers](#Network_managers) provide automatic network connection and configuration based on network profiles.
@@ -152,11 +152,13 @@ The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface 
 
 **Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Routing table](#Routing_table) for reestablishing it.
 
+### Static IP address
+
+A static IP address can be configured with most standard [#network managers](#Network_managers) and also [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
+
+To manually configure a static IP address, add an IP address as described in [#IP addresses](#IP_addresses), set up your [#Routing table](#Routing_table) and [configure your DNS servers](/index.php/Resolv.conf "Resolv.conf").
+
 ### IP addresses
-
-An [IP address](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address") can either be assigned manually (called static IP address), described in [#Manual IP address management](#Manual_IP_address_management), or assigned dynamically using [#DHCP](#DHCP). If you use a static IP address, you will also need to manually configure your default gateway in the [#Routing table](#Routing_table).
-
-#### Manual IP address management
 
 [IP addresses](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address") are managed using [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8).
 
@@ -177,7 +179,7 @@ Add an IP address to an interface:
 	Note that:
 
 *   the address is given in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing") to also supply a [subnet mask](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")
-*   `+` is a special symbol that makes *ip* derive the broadcast address from the address prefix
+*   `+` is a special symbol that makes `ip` derive the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address") from the IP address and the subnet mask
 
 **Note:** Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
 
@@ -195,7 +197,7 @@ $ ip address flush dev *interface*
 
 ```
 
-**Tip:** IP addresses can be calculated using [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)).
+**Tip:** IP addresses can be calculated with [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)).
 
 ### Routing table
 
@@ -261,7 +263,18 @@ See also [List of applications#Network managers](/index.php/List_of_applications
 
 ## Ping
 
-[ping](https://en.wikipedia.org/wiki/Ping_(networking_utility) is used to test if you can reach a host. See the [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) manual. Note that computers can be configured not to respond to ICMP echo requests.[[2]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
+[ping](https://en.wikipedia.org/wiki/Ping_(networking_utility) is used to test if you can reach a host. `$ ping www.example.com` 
+```
+PING www.example.com (93.184.216.34): 56(84) data bytes
+64 bytes from 93.184.216.34: icmp_seq=0 ttl=56 time=11.632 ms
+64 bytes from 93.184.216.34: icmp_seq=1 ttl=56 time=11.726 ms
+64 bytes from 93.184.216.34: icmp_seq=2 ttl=56 time=10.683 ms
+...
+```
+
+For every reply you receive ping prints a line like above. For more information see the [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) manual.
+
+Note that computers can be configured not to respond to ICMP echo requests.[[2]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
 
 When you receive no reply, you can use a [traceroute](https://en.wikipedia.org/wiki/Traceroute "wikipedia:Traceroute") ([traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) or [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8)) to further diagnose the route to the host.
 

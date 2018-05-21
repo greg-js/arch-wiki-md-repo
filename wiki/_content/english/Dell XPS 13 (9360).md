@@ -57,7 +57,7 @@ In the XPS 13 the display panels (both FHD and QHD+) come with Content Adaptive 
 
 To test if your XPS 13 is affected by the CABC, go to this [test page](http://tylerwatt12.com/dc/). It is possible to apply Dell's firmware update using a portable Windows 10 on a USB device:
 
-1.  Install (for example) [woeusb from the AUR](https://aur.archlinux.org/packages/?O=0&K=woeusb)
+1.  Install (for example) [woeusb-git](https://aur.archlinux.org/packages/woeusb-git/)
 2.  Download a Windows 10 ISO from [Microsoft's website](https://www.microsoft.com/en-in/software-download/windows10ISO)
 3.  Create a portable Windows 10 installation [using woeusb](https://www.addictivetips.com/ubuntu-linux-tips/make-windows-usb-drive-on-linux-woeusb/)
 4.  Boot the XPS 13 from your Windows 10 USB device (F12)

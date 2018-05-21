@@ -53,7 +53,7 @@ usb 2-2: GSM modem (1-port) converter now attached to ttyUSB4
 
 In this computer there are 2 devices available: a internal 3G modem (**ttyUSB0**) and a external 3G dongle (**ttyUSB3**). The Nokia phones use other device names, like **ttyACM0**. The extra devices created are useful to get and query the internal modem state while the main one is in use (you may try the **cat** command on them).
 
-To enable some modems you may need the [usb_modeswitch](https://www.archlinux.org/packages/?q=usb_modeswitch) package (see the [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem") wiki for more information).
+To enable some modems you may need the [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) package (see the [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem") wiki for more information).
 
 ## Configuration
 

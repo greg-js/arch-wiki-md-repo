@@ -162,14 +162,14 @@ When the login shell is intended to be non-functional, for example when the user
 
 ### Example adding a user
 
-On a typical desktop system, use the following command to add a new user named `archie`:
+To add a new user named `archie`, creating its home directory and otherwise using all the defaults in terms of groups, folder names, shell used and various other parameters:
 
 ```
-# useradd -m archie
+# useradd --create-home archie
 
 ```
 
-**Tip:** The default value used for the login shell of the new account can be displayed using `useradd -D`. The default is Bash, a different shell can be specified with the `-s`/`--shell` option.
+**Tip:** The default value used for the login shell of the new account can be displayed using `useradd --default`. The default is Bash, a different shell can be specified with the `-s`/`--shell` option.
 
 Although it is not required to protect the newly created user `archie` with a password, it is highly recommended to do so:
 

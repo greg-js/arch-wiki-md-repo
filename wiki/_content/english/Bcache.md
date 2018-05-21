@@ -202,7 +202,7 @@ grub cannot handle bcache, so you will need at least 2 partitions (boot and one 
 **Note:**
 
 *   When preparing any boot disk it is important to know the ramifications of any decision you may make. Please review and review again the documentation for your chosen boot-loader/-manager and consider seriously how it might relate to bcache.
-*   If all associated disks are partitioned at once as below bcache will automatically attach "-B backing stores" to the "-C ssd cache" and step 6 is unnecessary.
+*   If all associated disks are partitioned at once as below bcache will automatically attach "-B backing stores" to the "-C ssd cache" and step 5 is unnecessary.
 
 ```
 # make-bcache -B /dev/sd? /dev/sd? -C /dev/sd?
@@ -235,6 +235,8 @@ Format the SSD as a caching device and link it to the backing device
 
 ```
 
+You can even setup LUKS on it if you want using e.g. cryptsetup. Referencing the bcache device in the 'cryptdevice' kernel option will work fine, for instance.
+
 7\. Prepare the installation mount point:
 
 ```
@@ -254,10 +256,12 @@ Format the SSD as a caching device and link it to the backing device
 
 Before you edit `/etc/mkinitcpio.conf` and run `mkinitcpio -p linux`:
 
-*   install [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from the [AUR](/index.php/AUR "AUR").
+*   install [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from the [AUR](/index.php/AUR "AUR") on the new system.
 *   Edit `/etc/mkinitcpio.conf`:
     *   add the "bcache" module
     *   add the "bcache" hook between block and filesystem hooks
+
+**Note:** Should you want to open the backing device from the installation media for any reason after a reboot you must register it manually. Make sure the bcache module is loaded and then echo the relevant devices to /sys/bcache/register. You should see whether this worked or not by using dmesg.
 
 ## Configuring
 

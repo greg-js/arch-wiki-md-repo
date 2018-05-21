@@ -53,7 +53,7 @@ Running Syncthing as a system service ensures that it is running at startup even
 
 Running Syncthing as a *systemd user* service ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. To use the user service, [start/enable](/index.php/Start/enable "Start/enable") the user unit `syncthing.service` (i.e. with the `--user` flag).
 
-**Tip:** It is also possible to run the sytemd-user service at boot (i.e. without logging in) using [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
+**Tip:** It is also possible to run the systemd-user service at boot (i.e. without logging in) using [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
 ### Syncthing-GTK
 

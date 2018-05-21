@@ -90,7 +90,7 @@ Terminal emulators show a GUI Window that contains a terminal. Most emulate Xter
 
 For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.wikipedia.org/wiki/List_of_terminal_emulators "wikipedia:List of terminal emulators").
 
-*   **Alacritty** — the fastest terminal emulator in existence.
+*   **Alacritty** — A cross-platform, GPU-accelerated terminal emulator.
 
 	[https://github.com/jwilm/alacritty](https://github.com/jwilm/alacritty) || [alacritty-git](https://aur.archlinux.org/packages/alacritty-git/)
 
@@ -720,6 +720,10 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 See also [Wikipedia:List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
 
+*   **Basenji** — Volume indexing tool designed for easy and fast indexing of CD/DVD and other type of volume collections.
+
+	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
+
 *   **fuzzy-find** — Fuzzy completion for finding files.
 
 	[https://github.com/silentbicycle/ff](https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
@@ -743,10 +747,6 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 *   **Gnome Search Tool** — Default Gnome utility to search for files
 
 	[https://help.gnome.org/users/gnome-search-tool/stable/gsearchtool-introduction.html.en](https://help.gnome.org/users/gnome-search-tool/stable/gsearchtool-introduction.html.en) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
-
-*   **Gnome Search Tool No Nautilus** — *gnome-search-tool* to search for files without [GNOME Files](/index.php/GNOME_Files "GNOME Files") or *gnome-desktop*
-
-	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
 
 *   **Recoll** — Full text search tool based on Xapian backend
 

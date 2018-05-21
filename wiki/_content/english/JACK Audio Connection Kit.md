@@ -183,7 +183,7 @@ This example setup utilizes a more GUI focused configuration and management of J
     *   save its configuration to the default location,
     *   start the JACK audio server on application startup,
     *   enable the system tray icon, and
-    *   start minimized to sytem tray.
+    *   start minimized to system tray.
 *   Reboot.
 *   After logging in, you will see QjackCtl in your system tray. Left-click on it.
 *   Tweak settings in the QjackCtl GUI to lower latency. The Frame Size, Frame Buffer, and Bitrate settings all affect latency. Larger frame sizes lower latency, lower frame buffers lower latency, and higher bitrate settings lower latency, but all increase load on the sound card and your CPU. A Latency of about ~5ms is desirable for direct monitoring of instruments or microphones, as the latency begins to become perceptible at higher latencies.

@@ -259,7 +259,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
 
-	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/) or [ungoogled-chromium-bin](https://aur.archlinux.org/packages/ungoogled-chromium-bin/)
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 
@@ -468,6 +468,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **[LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp")** — Sophisticated file transfer program. Supports HTTP, FTP, SFTP, FISH, and BitTorrent.
 
 	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
+
+*   **mps-youtube** — Terminal based YouTube jukebox with playlist management. Plays audio/video through mplayer/mpv.
+
+	[https://github.com/mps-youtube/mps-youtube](https://github.com/mps-youtube/mps-youtube) || [mps-youtube](https://www.archlinux.org/packages/?name=mps-youtube)
 
 *   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
 
@@ -1149,10 +1153,6 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 ###### Graphical
 
-*   **[ChatZilla](https://en.wikipedia.org/wiki/ChatZilla "wikipedia:ChatZilla")** — Clean, easy to use and highly extensible Internet Relay Chat (IRC) client, built on the Mozilla platform using [XULRunner](https://en.wikipedia.org/wiki/XULRunner "wikipedia:XULRunner").
-
-	[http://chatzilla.hacksrus.com/](http://chatzilla.hacksrus.com/) || [chatzilla](https://aur.archlinux.org/packages/chatzilla/)
-
 *   **HexChat** — Fork of XChat for Linux and Windows.
 
 	[https://hexchat.github.io/](https://hexchat.github.io/) || [hexchat](https://www.archlinux.org/packages/?name=hexchat)
@@ -1653,6 +1653,10 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 	[http://castget.johndal.com/](http://castget.johndal.com/) || [castget](https://www.archlinux.org/packages/?name=castget)
 
+*   **gpo** — Text mode interface of gPodder.
+
+	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
+
 *   **Greg** — A command-line podcast aggregator.
 
 	[https://github.com/manolomartinez/greg](https://github.com/manolomartinez/greg) || [greg-git](https://aur.archlinux.org/packages/greg-git/)
@@ -1663,11 +1667,15 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 ##### Graphical
 
-*   **gPodder** — A podcast client and feed aggregator (GTK+ and CLI interface).
+*   **CPod** — Simple, beautiful podcast app. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod](https://aur.archlinux.org/packages/cpod/)
+
+*   **gPodder** — Podcast client and media aggregator (GTK+ interface).
 
 	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
 
-*   **Hammond** — A podcast client for the GNOME Desktop written in Rust.
+*   **Hammond** — Podcast client for the GNOME Desktop written in Rust.
 
 	[https://gitlab.gnome.org/World/hammond](https://gitlab.gnome.org/World/hammond) || [hammond](https://aur.archlinux.org/packages/hammond/)
 

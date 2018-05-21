@@ -126,6 +126,10 @@ Some FUSE-based file systems:
 
 	[https://github.com/matteoserva/MegaFuse](https://github.com/matteoserva/MegaFuse) || [megafuse-git](https://aur.archlinux.org/packages/megafuse-git/)
 
+*   **s3fs** — FUSE-based file system backed by Amazon S3.
+
+	[https://github.com/s3fs-fuse/s3fs-fuse](https://github.com/s3fs-fuse/s3fs-fuse) || [s3fs-fuse](https://www.archlinux.org/packages/?name=s3fs-fuse)
+
 *   **[SSHFS](/index.php/SSHFS "SSHFS")** — FUSE-based filesystem client for mounting directories over SSH.
 
 	[https://github.com/libfuse/sshfs](https://github.com/libfuse/sshfs) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)

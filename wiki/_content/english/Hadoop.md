@@ -127,7 +127,7 @@ $ hadoop jar /usr/lib/hadoop-2.7.3/share/hadoop/mapreduce/hadoop-mapreduce-examp
 
 Examine the output files:
 
-Copy the output files from the distributed filesystem to the local filesytem and examine them:
+Copy the output files from the distributed filesystem to the local filesystem and examine them:
 
 ```
 $ hadoop fs -get output output

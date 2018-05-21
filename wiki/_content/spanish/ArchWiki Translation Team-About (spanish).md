@@ -85,7 +85,7 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 ### Activos
 
 *   [Arlesy](/index.php/User:Arlesy "User:Arlesy") - [enviar email](/index.php/Special:EmailUser/Arlesy "Special:EmailUser/Arlesy")
-*   [D1nam0](/index.php?title=User:D1nam0&action=edit&redlink=1 "User:D1nam0 (page does not exist)") –*Traducción y edición los sábados*– [enviar email](/index.php/Special:EmailUser/D1nam0 "Special:EmailUser/D1nam0")
+*   [D1nam0](/index.php/User:D1nam0 "User:D1nam0") –*Traducción y edición los sábados*– [enviar email](/index.php/Special:EmailUser/D1nam0 "Special:EmailUser/D1nam0")
 *   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 *   [Knight](/index.php/User:DKS "User:DKS")
 *   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")

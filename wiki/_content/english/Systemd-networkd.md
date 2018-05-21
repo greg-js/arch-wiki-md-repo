@@ -153,7 +153,7 @@ RouteMetric=20
 
 #### Renaming an interface
 
-Instead of [editing udev rules](/index.php/Network_configuration#Change_device_name "Network configuration"), a *.link* file can be used to rename an interface. A useful example is to set a predictable interface name for a USB-to-Ethernet adapter based on its MAC address, as those adapters are usually given different names depending on which USB port they are plugged into.
+Instead of [editing udev rules](/index.php/Network_configuration#Change_interface_name "Network configuration"), a *.link* file can be used to rename an interface. A useful example is to set a predictable interface name for a USB-to-Ethernet adapter based on its MAC address, as those adapters are usually given different names depending on which USB port they are plugged into.
 
  `/etc/systemd/network/10-ethusb0.link` 
 ```

@@ -14,36 +14,36 @@
 
 ZOL это проект, спонсируемый [Ливерморской национальной лабораторией](https://www.llnl.gov/), нацеленный на разработку модуля ядра Linux для их массивных требований к хранилищам и суперкомпьютеров.
 
-**Note:** Из-за потенциальных юридических несовместимостей между лицензиями CDDL в коде ZFS и GPL в коде Linux ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - разработка ZFS не поддерживается ядром Linux.
+**Примечание:** Из-за потенциальных юридических несовместимостей между лицензиями CDDL в коде ZFS и GPL в коде Linux ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - разработка ZFS не поддерживается ядром Linux.
 
 Из-за этого:
 
 *   ZFS все еще находится в [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") и неофициальном репозитории [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories").
 *   Проект ZFSonLinux project должен поспевать за версиями ядра Linux. После выпуска стабильного релиза ZFSonLinux мейнтейнеры Arch ZFS публикуют его.
-*   Эта ситуация время от времени блокирует нормальный процесс обновлений из-за неудовлетворенных зависимостей если новая версия ядра, предлагаемая в обновлении, еще не поддерживается ZFSonLinux.
+*   Эта ситуация время от времени блокирует нормальный процесс обновлений из-за неудовлетворенных зависимостей, если новая версия ядра, предлагаемая в обновлении, еще не поддерживается ZFSonLinux.
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 General](#General)
-    *   [1.2 Root on ZFS](#Root_on_ZFS)
+*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+    *   [1.1 Главное](#.D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D0.BE.D0.B5)
+    *   [1.2 Корневой раздел на ZFS](#.D0.9A.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB_.D0.BD.D0.B0_ZFS)
     *   [1.3 DKMS](#DKMS)
-*   [2 Experimenting with ZFS](#Experimenting_with_ZFS)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Automatic Start](#Automatic_Start)
-*   [4 Creating a storage pool](#Creating_a_storage_pool)
-    *   [4.1 Advanced Format disks](#Advanced_Format_disks)
+*   [2 Эксперименты с ZFS](#.D0.AD.D0.BA.D1.81.D0.BF.D0.B5.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D1.81_ZFS)
+*   [3 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [3.1 Автоматический запуск](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
+*   [4 Создание пула данных](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.83.D0.BB.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85)
+    *   [4.1 Advanced Format диски](#Advanced_Format_.D0.B4.D0.B8.D1.81.D0.BA.D0.B8)
     *   [4.2 Verifying pool creation](#Verifying_pool_creation)
     *   [4.3 GRUB-compatible pool creation](#GRUB-compatible_pool_creation)
     *   [4.4 Importing a pool created by id](#Importing_a_pool_created_by_id)
-*   [5 Tuning](#Tuning)
-    *   [5.1 General](#General_2)
+*   [5 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+    *   [5.1 General](#General)
     *   [5.2 SSD Caching](#SSD_Caching)
     *   [5.3 Database](#Database)
     *   [5.4 /tmp](#.2Ftmp)
     *   [5.5 ZVOLs](#ZVOLs)
         *   [5.5.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
-*   [6 Usage](#Usage)
+*   [6 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
     *   [6.1 Scrub](#Scrub)
     *   [6.2 Check zfs pool status](#Check_zfs_pool_status)
     *   [6.3 Destroy a storage pool](#Destroy_a_storage_pool)
@@ -54,7 +54,7 @@ ZOL это проект, спонсируемый [Ливерморской на
     *   [6.8 Automatic snapshots](#Automatic_snapshots)
         *   [6.8.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
         *   [6.8.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
-*   [7 Troubleshooting](#Troubleshooting)
+*   [7 Устранение проблем](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [7.1 Creating a zpool fails](#Creating_a_zpool_fails)
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
     *   [7.3 Does not contain an EFI label](#Does_not_contain_an_EFI_label)
@@ -63,7 +63,7 @@ ZOL это проект, спонсируемый [Ливерморской на
         *   [7.5.1 Unexported pool](#Unexported_pool)
         *   [7.5.2 Incorrect hostid](#Incorrect_hostid)
     *   [7.6 Devices have different sector alignment](#Devices_have_different_sector_alignment)
-*   [8 Tips and tricks](#Tips_and_tricks)
+*   [8 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
     *   [8.2 Encryption in ZFS on Linux](#Encryption_in_ZFS_on_Linux)
         *   [8.2.1 Using dm-crypt](#Using_dm-crypt)
@@ -71,55 +71,55 @@ ZOL это проект, спонсируемый [Ливерморской на
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
-*   [9 See also](#See_also)
+*   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
-## Installation
+## Установка
 
-### General
+### Главное
 
-**Warning:** Unless you use the [dkms](/index.php/Dkms "Dkms") versions of these packages, the ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
+**Важно:** Есил вы не собираетесь использовать [dkms](/index.php/Dkms "Dkms") версию, то необходимо иметь в виду, что модули ядра ZFS и SPL привязаны к конкретной версии ядра. Будет невозможно применить обновления ядра до тех пор, пока соответствующие пакеты ZFS не будут обновлены в AUR или неофициальном репозитории [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories").
 
-**Tip:** You can [downgrade](/index.php/Downgrade "Downgrade") your linux version to the one from [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repo if your current kernel is newer.
+**Совет:** Если ваша текущая версия ядра новее, вы можете [откатить](/index.php/Downgrading_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Downgrading packages (Русский)") ее до более ранней из репозитория [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories").
 
-Install from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository:
+Установите следущие пакеты из [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") или репозитория [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories"):
 
-*   [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) for [stable](http://zfsonlinux.org/) releases.
-*   [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases (with support of newer kernel versions).
-*   [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) for stable releases for LTS kernels.
-*   [zfs-linux-lts-git](https://aur.archlinux.org/packages/zfs-linux-lts-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases for LTS kernels.
-*   [zfs-linux-hardened](https://aur.archlinux.org/packages/zfs-linux-hardened/) for stable releases for the hardened kernels.
-*   [zfs-linux-hardened-git](https://aur.archlinux.org/packages/zfs-linux-hardened-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases for the hardened kernels.
-*   [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) for versions with dynamic kernel module support.
+*   [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) - [стабильный](http://zfsonlinux.org/) выпуск.
+*   [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) - [экспериментальный](https://github.com/zfsonlinux/zfs/releases) выпуск (с поддержкой новых версий ядра).
+*   [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) - стабильный выпуск для LTS ядра.
+*   [zfs-linux-lts-git](https://aur.archlinux.org/packages/zfs-linux-lts-git/) - [экспериментальный](https://github.com/zfsonlinux/zfs/releases) выпуск для LTS ядра.
+*   [zfs-linux-hardened](https://aur.archlinux.org/packages/zfs-linux-hardened/) - стабильный выпуск для [hardened](/index.php/Security#Kernel_hardening "Security") ядра.
+*   [zfs-linux-hardened-git](https://aur.archlinux.org/packages/zfs-linux-hardened-git/) - [экспериментальный](https://github.com/zfsonlinux/zfs/releases) выпуск для [hardened](/index.php/Security#Kernel_hardening "Security") ядра.
+*   [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) - версия с поддержкой [dkms](/index.php/Dkms "Dkms").
 
-These branches have (according to them) dependencies on the `zfs-utils`, `spl-linux`, `spl-utils-linux` packages. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
+Эти версии зависят (соответственно) от пакетов `zfs-utils`, `spl-linux`, `spl-utils-linux`. SPL (Solaris Porting Layer) это модуль ядра, реализующий API Solaris для совместимости с ZFS.
 
-Test the installation by issuing `zpool status` on the command line. If an "insmod" error is produced, try `depmod -a`.
+Проверьте установку, выполнив `zpool status` в терминале. Если выводится ошибка "insmod", попробуйте `depmod -a`.
 
-### Root on ZFS
+### Корневой раздел на ZFS
 
-When performing an Arch install on ZFS, [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) or [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) and its dependencies can be installed in the archiso environment as outlined in the previous section.
+Выполняя установку Arch на ZFS, [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) или [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) и их зависимости могут быть установлены в среду archiso в соответствии с инструкцией в предыдущем параграфе.
 
-It may be useful to prepare a [customized archiso](#Embed_the_archzfs_packages_into_an_archiso) with ZFS support builtin. For a much more detailed guide on installing Arch with ZFS as its root file system, see [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS").
+Может быть целесообразно подготовить [модифицированный archiso](#Embed_the_archzfs_packages_into_an_archiso) со встроенной поддержкой ZFS. Для более подробных инструкций по установке Arch с корневым разделом на ZFS смотрите [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS").
 
 ### DKMS
 
-Users can make use of DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") to rebuild the ZFS modules automatically with every kernel upgrade.
+Пользователи могут воспользоваться DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support"), чтобы пересобирать модули ZFS автоматически при каждом обновлении ядра.
 
-Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) or [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) and apply the post-install instructions given by these packages.
+Установите [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) или [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) и примените послеустановочные инструкции, предоставленные с этими пакетами.
 
-**Tip:** Add an `IgnorePkg` entry to [pacman.conf](/index.php/Pacman.conf "Pacman.conf") to prevent these packages from upgrading when doing a regular update.
+**Совет:** Добавьте метку `IgnorePkg` в [pacman.conf](/index.php/Pacman.conf "Pacman.conf"), чтобы предотвратить обновление этих пакетов во время обычного обновления системы.
 
-Note: Pacman does not take dependencies into consideration when rebuilding DKMS modules. This will result in build failures when pacman tries to rebuild DKMS modules after a kernel upgrade. See bug reports [FS#52901](https://bugs.archlinux.org/task/52901) and [FS#53669](https://bugs.archlinux.org/task/53669).
+**Примечание:** Pacman не учитывает зависимости во время пересборки модулей DKMS. Это может привести к ошибкам сборки, если Pacman произведет попытку пересборки после обновления ядра. Смотите отчеты об ошибках [FS#52901](https://bugs.archlinux.org/task/52901) и [FS#53669](https://bugs.archlinux.org/task/53669).
 
-## Experimenting with ZFS
+## Эксперименты с ZFS
 
 Users wishing to experiment with ZFS on *virtual block devices* (known in ZFS terms as VDEVs) which can be simple files like `~/zfs0.img` `~/zfs1.img` `~/zfs2.img` etc. with no possibility of real data loss are encouraged to see the [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS") article. Common tasks like building a RAIDZ array, purposefully corrupting data and recovering it, snapshotting datasets, etc. are covered.
 
-## Configuration
+## Конфигурация
 
 ZFS is considered a "zero administration" filesystem by its creators; therefore, configuring ZFS is very straight forward. Configuration is done primarily with two commands: `zfs` and `zpool`.
 
-### Automatic Start
+### Автоматический запуск
 
 For ZFS to live by its "zero administration" namesake, the zfs daemon must be loaded at startup. A benefit to this is that it is not necessary to mount the zpool in `/etc/fstab`; the zfs daemon can import and mount zfs pools automatically. The daemon mounts the zfs pools reading the file `/etc/zfs/zpool.cache`.
 
@@ -156,7 +156,7 @@ In order to mount zfs pools automatically on boot you need to enable the followi
 
 ```
 
-## Creating a storage pool
+## Создание пула данных
 
 Use `# parted --list` to see a list of all available drives. It is not necessary nor recommended to partition the drives before creating the zfs filesystem.
 
@@ -236,7 +236,7 @@ Here is an example for the full command:
 
 ```
 
-### Advanced Format disks
+### Advanced Format диски
 
 In case Advanced Format disks are used which have a native sector size of 4096 bytes instead of 512 bytes, the automated sector size detection algorithm of ZFS might detect 512 bytes because of backwards compatibility with legacy systems. This would result in degraded performance. To make sure a correct sector size is used, the `ashift=12` option should be used (See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks)). The full command would in this case be:
 
@@ -311,7 +311,7 @@ This will import your pools using `/dev/sd?` which will lead to problems the nex
 
 ```
 
-## Tuning
+## Настройка
 
 ### General
 
@@ -458,7 +458,7 @@ Each block of a ZVOL gets its own parity disks, and if you have physical media w
 
 See [ZFS on Linux issue #1807 for details](https://github.com/zfsonlinux/zfs/issues/1807)
 
-## Usage
+## Использование
 
 Users can optionally create a dataset under the zpool as opposed to manually creating directories under the zpool. Datasets allow for an increased level of control (quotas for example) in addition to snapshots. To be able to create and mount a dataset, a directory of the same name must not pre-exist in the zpool. To create a dataset, use:
 
@@ -614,7 +614,7 @@ The [zfs-snap-manager](https://aur.archlinux.org/packages/zfs-snap-manager/) pac
 
 The package also supports configurable replication to other machines running ZFS by means of `zfs send` and `zfs receive`. If the destination machine runs this package as well, it could be configured to keep these replicated snapshots for a longer time. This allows a setup where a source machine has only a few daily snapshots locally stored, while on a remote storage server a much longer retention is available.
 
-## Troubleshooting
+## Устранение проблем
 
 ### Creating a zpool fails
 
@@ -800,7 +800,7 @@ config:
 errors: No known data errors
 ```
 
-## Tips and tricks
+## Советы и рекомендации
 
 ### Embed the archzfs packages into an archiso
 
@@ -978,7 +978,7 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 
 ```
 
-## See also
+## Смотрите также
 
 *   [Aaron Toponce's 17-part blog on ZFS](https://pthree.org/2012/12/04/zfs-administration-part-i-vdevs/)
 *   [ZFS on Linux](http://zfsonlinux.org/)

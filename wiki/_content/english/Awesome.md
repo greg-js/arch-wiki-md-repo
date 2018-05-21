@@ -521,7 +521,7 @@ It is possible to control both volume and media playback via a combination of am
 
 ### Steam Keyboard
 
-The on screen Steam Keyboard that can be activated by the [Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad") appears to freeze after trying to type one character. This is because the client that is supposed to receive the input has to be focussed to receive it and the keyboard will wait until this input is succesfully send. Manually focussing another client will send the input to this client and unfreeze the keyboard again until the next character is entered.
+The on screen Steam Keyboard that can be activated by the [Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad") appears to freeze after trying to type one character. This is because the client that is supposed to receive the input has to be focussed to receive it and the keyboard will wait until this input is successfully send. Manually focussing another client will send the input to this client and unfreeze the keyboard again until the next character is entered.
 
 The trick to getting the keyboard to work correctly is to prevent it ever receiving focus. Add the following signal to your config (or merge with an existing client focus signal):
 
@@ -540,7 +540,7 @@ This will return the focus to the last client whenever the keyboard receives foc
 
 ### Debugging rc.lua
 
-[Xephyr](https://www.archlinux.org/packages/?q=xephyr) allows you to run X nested in another X's client window. This allows you to debug rc.lua without breaking your current desktop. Start by copying rc.lua into a new file (e.g. rc.lua.new), and modify it as needed. Then run new instance of awesome in Xephyr, supplying rc.lua.new as a config file like this:
+[xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr) allows you to run X nested in another X's client window. This allows you to debug rc.lua without breaking your current desktop. Start by copying rc.lua into a new file (e.g. rc.lua.new), and modify it as needed. Then run new instance of awesome in Xephyr, supplying rc.lua.new as a config file like this:
 
 ```
 $ Xephyr :1 -ac -br -noreset -screen 1152x720 &

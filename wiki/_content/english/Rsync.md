@@ -81,7 +81,7 @@ Whether transferring files locally or remotely, rsync first creates an index of 
 
 ### Trailing slash caveat
 
-Arch by default uses GNU cp (part of [GNU coreutils](https://www.archlinux.org/packages/?name=coreutils)). However, rsync follows the convention of BSD cp, which gives special treatment to source directories with a trailing slash "/". Although
+Arch by default uses GNU cp (part of GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils)). However, rsync follows the convention of BSD cp, which gives special treatment to source directories with a trailing slash "/". Although
 
 ```
 $ rsync -r source destination

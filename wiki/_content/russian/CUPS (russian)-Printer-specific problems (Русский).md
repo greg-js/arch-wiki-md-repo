@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 23 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=508349).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 14 мая 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=521143).
 
 Ссылки по теме
 
@@ -19,6 +19,7 @@
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 USB через IP (BJNP)](#USB_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_IP_.28BJNP.29)
+    *   [2.3 cnijfilter](#cnijfilter)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
     *   [4.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
@@ -71,7 +72,10 @@
 | HL-5140 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. |
 | HL-5340 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Используйте *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) и [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Или драйвер Brother, который может привести к сбою печати с ошибками postscript. |
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
+| HL-L2350DW | [brother-hll2350dw](https://aur.archlinux.org/packages/brother-hll2350dw/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
+| HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Используйте протокол сокета (`socket://hostname-or-ip:9100`). |
+| HL-L5100DN | Драйвер HP LaserJet Foomatic | Эта модель будет эмулировать HP LaserJet. `lpd://hostname-or-ip/BINARY_P1` |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
@@ -195,7 +199,7 @@ ftp $PRINTER_IP
 
 ## Canon
 
-Существует много возможных драйверов для принтеров Canon. [Многие принтеры Canon](http://gimp-print.sourceforge.net/p_Supported_Printers.php) поддерживаются [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Некоторые из принтеров Canon LBP, iR и MF используют драйвер, поддерживающий протоколы UFR II/UFR II LT/LIPSLX, который доступен как [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) или [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Другие используют драйверы [#CARPS](#CARPS) или [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
+Существует много возможных драйверов для принтеров Canon. [Многие принтеры Canon](http://gimp-print.sourceforge.net/p_Supported_Printers.php) поддерживаются [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Некоторые из принтеров Canon LBP, iR и MF используют драйвер, поддерживающий протоколы UFR II/UFR II LT/LIPSLX, который доступен как [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) или [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Другие используют драйверы [#CARPS](#CARPS), [#cnijfilter](#cnijfilter), или [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 
 | Принтер | Драйвер/фильтр | Примечание |
 | iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Или используйте драйвер [TurboPrint](http://www.turboprint.info/). |
@@ -234,7 +238,7 @@ ftp $PRINTER_IP
 | LBP7210Cdn |
 | LBP9100C |
 | MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
-| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) |
+| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Избегайте добавления принтера через [веб интерфейс](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D0.B5.D0.B1_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81 "CUPS (Русский)"), т.к. он не найдет файл PPD. |
 | TS8050 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) | Без [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) печать завершится ошибкой фильтра или вы можете получить "рендеринг завершен", а принтер ничего не напечатает |
 | TS9020 | [canon-ts9020](https://aur.archlinux.org/packages/canon-ts9020/) |
 | Принтер | Драйвер/фильтр | Примечание |
@@ -249,6 +253,17 @@ ftp $PRINTER_IP
 
 Некоторые принтеры Canon используют проприетарный протокол USB по протоколу IP BJNP для связи по сети. Для этого есть бэкэнд CUPS, который доступен как [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/).
 
+### cnijfilter
+
+Некоторые принтеры используют поддержку драйверами cnijfilter протокола `cnijnet`. Чтобы выяснить [URI принтера](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#URI_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0 "CUPS (Русский)") выполните
+
+```
+$ cnijnetprn --search auto
+
+```
+
+После используйте `cnijnet:/` URI из вывода, например: `cnijnet:/18-0C-AC-C6-1D-EE`.
+
 ## Dell
 
 | Принтер | Драйвер/фильтр | Примечание |
@@ -259,6 +274,22 @@ ftp $PRINTER_IP
 E515dw
 
  | Установите [драйвер Dell](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). | Должны быть установлены как *e515dwcupswrapper-3.2.0-1.i386.deb*, так и *e515dwlpr-3.2.0-1.i386.deb*. Вы можете написать [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)"), используя [debtap](https://aur.archlinux.org/packages/debtap/), или использовать [dpkg](https://aur.archlinux.org/packages/dpkg/) (использование dpkg не рекомендуется, так как файлы не будут управляться с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")). Драйвер работает как на платформах x86_64, так и на i386, но может потребоваться [multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)"). |
+| S1130n | [dell-unified-printer-driver](https://aur.archlinux.org/packages/dell-unified-printer-driver/) | Драйвер конфликтует с samsung-unified-driver-printer (оба создают rastertospl и libscmssc.so) |
+| 1130 |
+| 1133 |
+| 1135n |
+| 1815 |
+| 2145cn |
+| 2335dn |
+| 2355dn |
+| 5330 |
+| B1160 |
+| B1160w |
+| B1165nfw |
+| B1260dn |
+| B1265dfw |
+| B1265dnf |
+| B2365dnf |
 | Принтер | Драйвер/фильтр | Примечание |
 
 ## Epson
@@ -271,18 +302,18 @@ E515dw
 | EP-50V | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | EP-879A |
 | EP-880A |
-| ET-2700 |
+| ET-2700 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | ET-2750 |
-| ET-3700 |
+| ET-3700 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | ET-3750 |
 | ET-4750 |
-| EW-M571T |
-| EW-M670FT |
+| EW-M571T | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
+| EW-M670FT | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L380 | [epson-inkjet-printer-201601w](https://aur.archlinux.org/packages/epson-inkjet-printer-201601w/) |
 | L382 |
-| L4150 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
+| L4150 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | L4160 |
-| L6160 |
+| L6160 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L6170 |
 | L6190 |
 | LP-S5000 | Этот принтер требует [специализированный драйвер от Avasys](#Avasys). |
@@ -293,8 +324,10 @@ E515dw
 | PX-M7070FX |
 | PX-M780F |
 | PX-M781F |
+| PX-M884F |
 | PX-S5080 |
 | PX-S7070X |
+| PX-S884 |
 | TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
 | WF-3720 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | WF-4720 |
@@ -305,9 +338,10 @@ E515dw
 | WF-7720 |
 | WF-C869R |
 | XP-446 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
-| XP-15000 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
+| XP-5100 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | XP-6000 |
 | XP-8500 |
+| XP-15000 |
 | Принтер | Драйвер/фильтр | Примечание |
 
 ### Утилиты
@@ -362,6 +396,7 @@ $ make
 | DeskJet 1000Cse |
 | DeskJet 1000Cxi |
 | LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | или [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), или [AirPrint](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#CUPS "CUPS (Русский)"). |
+| LaserJet Pro MFP M126nw | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) |
 | Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Или используйте драйвер hpijs с [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)"). |
 | Принтер | Драйвер/фильтр | Примечание |
 
@@ -369,7 +404,7 @@ $ make
 
 **Примечание:** Начиная с hplip v3.17.11 hpijs больше не доступен. Если у вас есть принтеры, использующие hpijs, они не смогут работать. Вы должны перенастроить их и выбрать новый драйвер hpcups вместо hpijs.
 
-[hplip](https://www.archlinux.org/packages/?name=hplip) предоставляет драйверы для принтеров HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых принтеров LaserJet, а также предоставляет простой в использовании инструмент настройки.
+[hplip](https://www.archlinux.org/packages/?name=hplip) предоставляет драйверы для принтеров HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых принтеров LaserJet, а также предоставляет простой в использовании инструмент настройки. Смотрите список поддерживаемых принтеров [здесь](https://developers.hp.com/hp-linux-imaging-and-printing/supported_devices/index).
 
 Чтобы запустить средство настройки с графическим интерфейсом пользователя:
 
@@ -408,7 +443,7 @@ $ hp-systray
 
 Файлы PPD находятся в `/usr/share/ppd/HP/`.
 
-Если ваш принтер [перечислен как требующий бинарный плагин](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), установите пакет [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
+Если ваш принтер [перечислен как требующий бинарный плагин](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), установите пакет [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"). Если требуется бинарный плагин [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/), вам нужно [запустить](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Запустить") службу `org.cups.cupsd.service` перед распознаванием PPD [hplip](https://www.archlinux.org/packages/?name=hplip).
 
 **Примечание:**
 
