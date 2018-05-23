@@ -279,7 +279,7 @@ Create a mount point for the share:
 Mount the share using `mount.cifs` as `type`. Not all the options listed below are needed or desirable:
 
 ```
-# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o user=*username*,password=*password*,uid=*username*,gid=*group*,workgroup=*workgroup*,ip=*serverip*,iocharset=*utf8*
+# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o username=*username*,password=*password*,uid=*username*,gid=*group*,workgroup=*workgroup*,ip=*serverip*,iocharset=*utf8*
 
 ```
 

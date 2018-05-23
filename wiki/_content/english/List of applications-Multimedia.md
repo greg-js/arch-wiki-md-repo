@@ -545,7 +545,7 @@ See also the main article [Sound system](/index.php/Sound_system "Sound system")
 
 #### Audio players
 
-See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") and [Wikipedia:Comparison of audio player software](https://en.wikipedia.org/wiki/Comparison_of_audio_player_software "wikipedia:Comparison of audio player software").
+See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "Music Player Daemon") and [Wikipedia:Comparison of audio player software](https://en.wikipedia.org/wiki/Comparison_of_audio_player_software "wikipedia:Comparison of audio player software").
 
 ##### Console
 
@@ -576,6 +576,10 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 *   **[pianobar](/index.php/Pianobar "Pianobar")** — Console-based frontend for the online radio Pandora.
 
 	[https://6xq.net/projects/pianobar/](https://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
+
+*   **vitunes** — Curses-based music player and playlist manager with vim-like keybindings.
+
+	[http://vitunes.org/](http://vitunes.org/) || [vitunes](https://aur.archlinux.org/packages/vitunes/)
 
 *   **whistle** — Curses-based commandline audio player.
 
@@ -640,6 +644,10 @@ See also [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daem
 *   **[Quod Libet](https://en.wikipedia.org/wiki/Quod_Libet_(software) "wikipedia:Quod Libet (software)")** — Audio player written with PyGTK and GStreamer with support for regular expressions in playlists.
 
 	[https://github.com/quodlibet/quodlibet/](https://github.com/quodlibet/quodlibet/) || [quodlibet](https://www.archlinux.org/packages/?name=quodlibet)
+
+*   **Radiotray-NG** — Internet radio player systray applet.
+
+	[https://github.com/ebruck/radiotray-ng](https://github.com/ebruck/radiotray-ng) || [radiotray-ng](https://aur.archlinux.org/packages/radiotray-ng/)
 
 *   **[Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox")** — GTK+ clone of iTunes, used by default in GNOME.
 
@@ -1067,6 +1075,10 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
 
+*   **Kawaii-Player** — Audio/video manager and multimedia player (based on [mpv](/index.php/Mpv "Mpv")) with PC-to-PC casting feature, along with functionalities of portable media server and torrent streaming server.
+
+	[https://github.com/kanishka-linux/kawaii-player](https://github.com/kanishka-linux/kawaii-player) || [kawaii-player](https://aur.archlinux.org/packages/kawaii-player/)
+
 *   **Media Player Classic Qute Theater** — Clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt and based on [mpv](/index.php/Mpv "Mpv").
 
 	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/)
@@ -1435,6 +1447,10 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 	[http://datacrow.net/](http://datacrow.net/) || [datacrow](https://aur.archlinux.org/packages/datacrow/)
 
+*   **FileBot** — The ultimate tool for organizing and renaming your movies, tv shows or anime, and music well as downloading subtitles and artwork.
+
+	[https://github.com/filebot/filebot](https://github.com/filebot/filebot) || [filebot](https://aur.archlinux.org/packages/filebot/)
+
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — GNOME application for organizing various collections (board games, comic books, movies, stamps, etc.).
 
 	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
@@ -1443,9 +1459,17 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 	[https://gitlab.com/Strit/griffith](https://gitlab.com/Strit/griffith) || [griffith](https://aur.archlinux.org/packages/griffith/)
 
+*   **MediaElch** — Media manager for Kodi. Information about movies, TV shows, concerts and music are stored as nfo files.
+
+	[https://www.kvibes.de/en/mediaelch/](https://www.kvibes.de/en/mediaelch/) || [mediaelch](https://www.archlinux.org/packages/?name=mediaelch)
+
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 
 	[http://tellico-project.org/](http://tellico-project.org/) || [tellico](https://www.archlinux.org/packages/?name=tellico)
+
+*   **tinyMediaManager** — Media management tool to provide metadata for Kodi.
+
+	[https://tinymediamanager.org/](https://tinymediamanager.org/) || [tiny-media-manager](https://aur.archlinux.org/packages/tiny-media-manager/)
 
 *   **vMovieDB** — Movie collection manager for the Gnome desktop.
 
@@ -1488,6 +1512,10 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 *   **[Subsonic](/index.php/Subsonic "Subsonic")** — Proprietary media server to stream from your own computer.
 
 	[http://www.subsonic.org/](http://www.subsonic.org/) || [subsonic](https://aur.archlinux.org/packages/subsonic/)
+
+*   **[Tvheadend](/index.php/Tvheadend "Tvheadend")** — TV streaming server and recorder supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources.
+
+	[https://tvheadend.org/](https://tvheadend.org/) || [tvheadend](https://aur.archlinux.org/packages/tvheadend/)
 
 *   **[Universal Media Server](/index.php/Universal_Media_Server "Universal Media Server")** — UPnP media server, which is capable of sharing video, audio and images between most modern devices. (Fork of PS3 Media Server.)
 

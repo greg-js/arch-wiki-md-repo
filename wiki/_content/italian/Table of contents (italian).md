@@ -41,8 +41,8 @@
 | <small>4.12.</small> [Suono](/index.php/Category:Sound_(Italiano) "Category:Sound (Italiano)") <small>(3)</small> |
 | <small>4.13.</small> [Storage](/index.php/Category:Storage_(Italiano) "Category:Storage (Italiano)") <small>(3)</small> |
 | <small>4.13.1.</small> [Dispositivi ottici](/index.php/Category:Optical_(Italiano) "Category:Optical (Italiano)") <small>(1)</small> |
-| <small>5.</small> [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)") <small>(20)</small> |
-| <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Italiano) "Category:Domain Name System (Italiano)") <small>(1)</small> |
+| <small>5.</small> [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)") <small>(19)</small> |
+| <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Italiano) "Category:Domain Name System (Italiano)") <small>(2)</small> |
 | <small>5.2.</small> [Applicazioni Internet](/index.php/Category:Internet_applications_(Italiano) "Category:Internet applications (Italiano)") <small>(5) (anche in [Applicazioni](/index.php/Category:Applications_(Italiano) "Category:Applications (Italiano)"))</small> |
 | <small>5.2.1.</small> [Client Email](/index.php/Category:Email_clients_(Italiano) "Category:Email clients (Italiano)") <small>(2)</small> |
 | <small>5.2.2.</small> [Browser Web](/index.php/Category:Web_browser_(Italiano) "Category:Web browser (Italiano)") <small>(3)</small> |

@@ -1388,7 +1388,7 @@ Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot t
 
 **Note:** I used the 201212 ISO image.
 
-Since older Macbooks have a 32bit EFI running, the usual installation image is not recognized. You need to either remove the UEFI support from the disc ([Unified Extensible Firmware Interface#Remove_UEFI_boot_support_from_ISO](/index.php/Unified_Extensible_Firmware_Interface#Remove_UEFI_boot_support_from_ISO "Unified Extensible Firmware Interface")) or build a 32bit EFI version of the disc. The paragraphs below will take the first path to success, booting into BIOS mode and its pitfalls. For a try the other way round, read [Unified Extensible Firmware Interface#Create UEFI bootable USB from ISO](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface") first.
+Since older Macbooks have a 32bit EFI running, the usual installation image is not recognized. You need to either remove the UEFI support from the disc ([Unified Extensible Firmware Interface#Remove UEFI boot support from optical media](/index.php/Unified_Extensible_Firmware_Interface#Remove_UEFI_boot_support_from_optical_media "Unified Extensible Firmware Interface")) or build a 32bit EFI version of the disc. The paragraphs below will take the first path to success, booting into BIOS mode and its pitfalls. For a try the other way round, read [Unified Extensible Firmware Interface#Create UEFI bootable USB from ISO](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface") first.
 
 First prepare your harddisc according to your wishes. In this scenario it was a "Linux only" approach with
 

@@ -338,7 +338,7 @@ Arch User Repository是储存所有用户提交的PKGBUILD的地方，软件包�
 
 点击软件包页面的“Flag Out-of-date”（中文版为“标记为过期”）即可。如果长期未更新，最好email通知维护人员。如果还是没有得到答复，如果这些软件包标记为过期的时间超过 3 个月，长期未更新，可以在aur-general要求弃置软件包，邮件中请包含过期的信息。
 
-同时，你可以自行更新 PKGBUILD - 通常软件更新不需要修改编译或打包方式，更新 `pkgver` 或 `source` 数组就足够了。
+同时，你可以自行在本地更新 PKGBUILD - 通常软件更新不需要修改编译或打包方式，更新 `pkgver` 或 `source` 数组就足够了。
 
 **Note:** [VCS 软件包](/index.php/VCS_package_guidelines "VCS package guidelines") 在 pkgver 变化时并不会过时，所以不要标记它们，AUR 维护者不应该仅为了 pkgver 进行提交。
 

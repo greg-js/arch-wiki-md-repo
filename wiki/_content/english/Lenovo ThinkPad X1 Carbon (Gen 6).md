@@ -41,7 +41,7 @@ Version: ThinkPad X1 Carbon 6th
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
 | Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes |  ? |
-| Mobile broadband | Untested |  ? |
+| Mobile broadband | No*** |  ? |
 | Audio | Yes | snd_hda_intel |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes* | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
@@ -56,6 +56,8 @@ Version: ThinkPad X1 Carbon 6th
 * via [workaround](#TrackPoint_and_Touchpad_issues)
 
 ** [progress being made](https://github.com/nmikhailov/Validity90) on driver
+
+*** no working linux pcie driver for Fibocom L850-GL [forum link](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413)
 
 ## Suspend issues
 

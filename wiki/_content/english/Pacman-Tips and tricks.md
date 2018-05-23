@@ -436,7 +436,7 @@ CleanMethod = KeepCurrent
 
 To recreate a package from the file system, use *bacman* (included with *pacman*). Files from the system are taken as they are, hence any modifications will be present in the assembled package. Distributing the recreated package is therefore discouraged; see [ABS](/index.php/ABS "ABS") and [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") for alternatives.
 
-**Tip:** *bacman* honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for *xz*.
+**Tip:** *bacman* honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Bacman does not currently honor the `COMPRESS` options in `makepkg.conf`.
 
 An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which *bacman* both does not support.
 

@@ -707,9 +707,9 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 	[https://wiki.gnome.org/phodav](https://wiki.gnome.org/phodav) || [phodav](https://www.archlinux.org/packages/?name=phodav)
 
-*   **[ftpd](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation)** — Simple ftp server provided by GNU Inetutils
+*   **ftpd** — Simple ftp server provided by GNU Inetutils
 
-	[https://www.gnu.org/software/inetutils/](https://www.gnu.org/software/inetutils/) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
+	[https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
 
 *   **[proFTPd](/index.php/Proftpd "Proftpd")** — A secure and configurable FTP server
 

@@ -29,15 +29,16 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Clipboard Access](#Clipboard_Access)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Diagnose the problem](#Diagnose_the_problem)
-    *   [5.2 Emacs](#Emacs)
-        *   [5.2.1 Emacs Daemon](#Emacs_Daemon)
-    *   [5.3 Firefox popup menu not work](#Firefox_popup_menu_not_work)
-    *   [5.4 Ctrl+Space fail to work in GTK programs](#Ctrl.2BSpace_fail_to_work_in_GTK_programs)
-    *   [5.5 Buildin Chinese Pinyin Default NOT ACTIVE](#Buildin_Chinese_Pinyin_Default_NOT_ACTIVE)
-    *   [5.6 fcitx and KDE](#fcitx_and_KDE)
-    *   [5.7 Input method switched to English unintentionally](#Input_method_switched_to_English_unintentionally)
-    *   [5.8 xmodmap settings being overwritten](#xmodmap_settings_being_overwritten)
+    *   [5.1 Disable or change *Extra key for trigger input method* [sic]](#Disable_or_change_Extra_key_for_trigger_input_method_.5Bsic.5D)
+    *   [5.2 Diagnose the problem](#Diagnose_the_problem)
+    *   [5.3 Emacs](#Emacs)
+        *   [5.3.1 Emacs Daemon](#Emacs_Daemon)
+    *   [5.4 Firefox popup menu not work](#Firefox_popup_menu_not_work)
+    *   [5.5 Ctrl+Space fail to work in GTK programs](#Ctrl.2BSpace_fail_to_work_in_GTK_programs)
+    *   [5.6 Buildin Chinese Pinyin Default NOT ACTIVE](#Buildin_Chinese_Pinyin_Default_NOT_ACTIVE)
+    *   [5.7 fcitx and KDE](#fcitx_and_KDE)
+    *   [5.8 Input method switched to English unintentionally](#Input_method_switched_to_English_unintentionally)
+    *   [5.9 xmodmap settings being overwritten](#xmodmap_settings_being_overwritten)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -143,7 +144,7 @@ QT_IM_MODULE=xim
 
 ### Configuration tools
 
-fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) (KDE) or [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (GTK3). Run *fcitx-config-gtk3* after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable a input method of a different language.
+fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) (KDE) or [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (GTK3). Run *fcitx-config-gtk3* after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable an input method for a different language.
 
 Stop fcitx manually before changing configuration, or the change may be lost.
 
@@ -195,6 +196,10 @@ You can use fcitx to input text in you clipboard (as well as a short clipboard h
 **Warning:** Some clients do not support multi-line input, so you may see the multi-line clipboard content pasted as a single line using fcitx-clipboard. This is either a bug or feature of the program being used and it is not something fcitx is able to help with.
 
 ## Troubleshooting
+
+### Disable or change *Extra key for trigger input method* [sic]
+
+This setting is under the *Global Config* tab and defaults to *SHIFT Both*, meaning that pressing *either* shift key will immediately change input methods. Although it should only apply when a shift key is pressed individually, it tends to randomly interrupt typing capital letters, selecting text with the keyboard, etc. while using standard keyboard input. In addition, this setting may, at times, revert to default.
 
 ### Diagnose the problem
 

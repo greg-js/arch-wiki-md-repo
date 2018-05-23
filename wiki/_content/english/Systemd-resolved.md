@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Resolv.conf#Systemd-resolved configuration](/index.php/Resolv.conf#Systemd-resolved_configuration "Resolv.conf")
+*   [Domain name resolution#Systemd-resolved configuration](/index.php/Domain_name_resolution#Systemd-resolved_configuration "Domain name resolution")

@@ -1,6 +1,12 @@
-[Mullvad](https://mullvad.net/en/) is a VPN service based in Sweden which operates on [OpenVPN](/index.php/OpenVPN "OpenVPN") servers. They provide their own [GUI client](https://mullvad.net/download/) available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") as [mullvad](https://aur.archlinux.org/packages/mullvad/), but it can also be used with a configuration file for OpenVPN as explained in this article.
+[Mullvad](https://mullvad.net/en/) is a VPN service based in Sweden which operates on [OpenVPN](/index.php/OpenVPN "OpenVPN") servers.
 
-## Configuring OpenVPN
+## Installation
+
+The [official GUI client](https://mullvad.net/download/) is available as [mullvad](https://aur.archlinux.org/packages/mullvad/).
+
+Alternatively you can use [OpenVPN](/index.php/OpenVPN "OpenVPN") with a configuration file for Mullvad as explained in [#Manual configuration](#Manual_configuration).
+
+## Manual configuration
 
 First make sure the packages [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [openresolv](https://www.archlinux.org/packages/?name=openresolv) are installed, then proceed to download Mullvad's OpenVPN configuration file package from [their website](https://www.mullvad.net/download/config/) (under the "other platforms" tab) and unzip the downloaded file to `/etc/openvpn/client/`.
 

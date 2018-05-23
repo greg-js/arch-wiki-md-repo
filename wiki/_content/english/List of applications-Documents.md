@@ -230,7 +230,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[JabRef](https://en.wikipedia.org/wiki/JabRef "wikipedia:JabRef")** — Java GUI frontend for managing BibTeX and other bibliographies.
 
-	[http://jabref.sourceforge.net/index.php](http://jabref.sourceforge.net/index.php) || [jabref](https://aur.archlinux.org/packages/jabref/) [jabref-git](https://aur.archlinux.org/packages/jabref-git/)
+	[https://www.jabref.org/](https://www.jabref.org/) || [jabref](https://aur.archlinux.org/packages/jabref/) [jabref-git](https://aur.archlinux.org/packages/jabref-git/)
 
 *   **[Kile](https://en.wikipedia.org/wiki/Kile "wikipedia:Kile")** — User-friendly TeX/LaTeX editor for the KDE desktop with many features.
 
@@ -268,7 +268,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://github.com/lervag/vimtex/](https://github.com/lervag/vimtex/) ||
 
-*   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — This is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
+*   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
 
 	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
 
@@ -959,13 +959,13 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 	[https://www.docear.org](https://www.docear.org) || [docear](https://aur.archlinux.org/packages/docear/)
 
-*   **JabRef** — GUI frontend for BibTeX, written in Java.
+*   **[JabRef](https://en.wikipedia.org/wiki/JabRef "wikipedia:JabRef")** — Java GUI frontend for managing BibTeX and other bibliographies.
 
-	[http://jabref.sourceforge.net](http://jabref.sourceforge.net) || [jabref](https://aur.archlinux.org/packages/jabref/)
+	[https://www.jabref.org/](https://www.jabref.org/) || [jabref](https://aur.archlinux.org/packages/jabref/) [jabref-git](https://aur.archlinux.org/packages/jabref-git/)
 
-*   **Zotero** — Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+*   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
 
-	[http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)
+	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
 
 ### Barcode generators and readers
 

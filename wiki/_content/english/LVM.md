@@ -36,10 +36,13 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
         *   [5.2.2 Logical volumes](#Logical_volumes)
             *   [5.2.2.1 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
             *   [5.2.2.2 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
-    *   [5.3 Remove logical volume](#Remove_logical_volume)
-    *   [5.4 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
-    *   [5.5 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
-    *   [5.6 Deactivate volume group](#Deactivate_volume_group)
+    *   [5.3 Renaming volumes](#Renaming_volumes)
+        *   [5.3.1 Renaming a Volume Group](#Renaming_a_Volume_Group)
+        *   [5.3.2 Renaming Logical Volumes](#Renaming_Logical_Volumes)
+    *   [5.4 Remove logical volume](#Remove_logical_volume)
+    *   [5.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
+    *   [5.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
+    *   [5.7 Deactivate volume group](#Deactivate_volume_group)
 *   [6 Logical volume types](#Logical_volume_types)
     *   [6.1 Snapshots](#Snapshots)
         *   [6.1.1 Configuration](#Configuration)
@@ -539,6 +542,40 @@ When the file system is shrunk, reduce the size of logical volume:
 ```
 
 See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
+
+### Renaming volumes
+
+#### Renaming a Volume Group
+
+Use the [vgrename(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vgrename.8) command to rename an existing volume group.
+
+Either of the following commands renames the existing volume group `vg02` to `my_volume_group`
+
+```
+# vgrename /dev/vg02 /dev/my_volume_group
+
+```
+
+```
+# vgrename vg02 my_volume_group
+
+```
+
+#### Renaming Logical Volumes
+
+To rename an existing logical volume, use the [lvrename(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvrename.8) command.
+
+Either of the following commands renames logical volume `lvold` in volume group `vg02` to `lvnew`.
+
+```
+# lvrename /dev/vg02/lvold /dev/vg02/lvnew
+
+```
+
+```
+# lvrename vg02 lvold lvnew
+
+```
 
 ### Remove logical volume
 

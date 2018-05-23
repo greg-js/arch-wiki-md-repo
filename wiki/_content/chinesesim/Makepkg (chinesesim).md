@@ -124,14 +124,14 @@ $ makepkg --syncdeps
 一旦所有的依赖都满足并且软件包成功编译，一个软件包文件 (`pkgname-pkgver.pkg.tar.xz`) 会在工作目录下创建。想安装，运行
 
 ```
-$ makepkg -install
+$ makepkg --install
 
 ```
 
 要清空残余的文件和目录，例如解压到 $srcdir 的文件，输入下面的选项。这对于在使用同一个文件夹多次编译同一个软件包或者升级软件包版本时很有用。它防止过期的或残余的文件呈递到新的编译任务中。
 
 ```
-$ makepkg -clean
+$ makepkg --clean
 
 ```
 

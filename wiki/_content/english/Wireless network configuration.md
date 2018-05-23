@@ -11,7 +11,7 @@ The main article on network configuration is [Network configuration](/index.php/
 
 Configuring wireless is a two-part process; the first part is to identify and ensure the correct driver for your wireless device is installed (they are available on the installation media, but often have to be installed explicitly), and to configure the interface. The second is choosing a method of managing wireless connections. This article covers both parts, and provides additional links to wireless management tools.
 
-The [#iw](#iw) section describes how to manually manage your wireless network interface / your wireless LANs using [iw](https://www.archlinux.org/packages/?name=iw). The [Network manager](/index.php/Network_manager "Network manager") article describes several programs that can be used to automatically manage your wireless interface, some of which include a GUI and all of which include support for network profiles (useful when frequently switching wireless networks, like with laptops).
+The [#iw](#iw) section describes how to manually manage your wireless network interface / your wireless LANs using [iw](https://www.archlinux.org/packages/?name=iw). The [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration") section describes several programs that can be used to automatically manage your wireless interface, some of which include a GUI and all of which include support for network profiles (useful when frequently switching wireless networks, like with laptops).
 
 ## Contents
 
@@ -95,8 +95,6 @@ The default Arch Linux kernel is *modular*, meaning many of the drivers for mach
 Some wireless chipsets also require firmware, in addition to a corresponding driver. Many firmware images are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package which is installed by default, however, proprietary firmware images are not included and have to be installed separately. This is described in [#Installing driver/firmware](#Installing_driver.2Ffirmware).
 
 **Note:** If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If udev loads more than one driver for a device, the resulting conflict may prevent successful configuration. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the unwanted module.
-
-**Tip:** Though not strictly required, it's a good idea to first install user-space tools mentioned in [#Manual setup](#Manual_setup), especially when some problem should appear.
 
 ### Check the driver status
 

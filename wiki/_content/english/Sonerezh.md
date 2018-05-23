@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install [sonerezh-git](https://aur.archlinux.org/packages/sonerezh-git/). You will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")) and a web server (like [Nginx](/index.php/Nginx "Nginx")) with PHP support. You may refer following sites:
+Install [sonerezh](https://aur.archlinux.org/packages/sonerezh/). You will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")) and a web server (like [Nginx](/index.php/Nginx "Nginx")) with PHP support. You may refer following sites:
 
 *   [Apache](/index.php/Apache "Apache")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
@@ -16,14 +16,7 @@ In this configuration, we will configure the [Nginx](/index.php/Nginx "Nginx") w
 
 Copy `/usr/share/doc/sonerezh/example_nginx_vhost.conf` to `/etc/webapps/sonerezh/nginx.conf`.
 
-Replace the domain name:
-
-```
-sed -i 's/pydio.example.com/localhost/g' /etc/webapps/pydio/nginx.conf
-
-```
-
-and reference this configuration file in the main nginx.conf:
+Replace the domain name and reference this configuration file in the main nginx.conf:
 
  `/etc/nginx/nginx.conf` 
 ```

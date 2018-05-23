@@ -85,7 +85,7 @@ DPMS (Energy Star):
 
 ```
 
-See `xset` for all available commands.
+See [xset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1) for all available commands.
 
 **Note:**
 

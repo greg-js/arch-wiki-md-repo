@@ -1,5 +1,7 @@
 [Compton](https://github.com/chjj/compton) is a standalone [compositor](/index.php/Compositor "Compositor") for [Xorg](/index.php/Xorg "Xorg"), suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not provide compositing. Compton is a fork of [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/), which in turn is a fork of [xcompmgr](/index.php/Xcompmgr "Xcompmgr").
 
+**Note:** Compton is currently dormant (last code change 2016) and may cause issues depending on your configuration, see [#Troubleshooting](#Troubleshooting).
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -10,17 +12,18 @@
         *   [2.3.1 Disable shadows for some windows](#Disable_shadows_for_some_windows)
 *   [3 Multihead](#Multihead)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Conky](#Conky)
-    *   [4.2 dwm | dmenu](#dwm_.7C_dmenu)
-    *   [4.3 Firefox](#Firefox)
-    *   [4.4 slock](#slock)
-    *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.6 Flicker](#Flicker)
-    *   [4.7 Fullscreen tearing](#Fullscreen_tearing)
-    *   [4.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [4.9 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.10 Tabbed windows](#Tabbed_windows)
-    *   [4.11 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [4.1 Freezing video playback](#Freezing_video_playback)
+    *   [4.2 Conky](#Conky)
+    *   [4.3 dwm | dmenu](#dwm_.7C_dmenu)
+    *   [4.4 Firefox](#Firefox)
+    *   [4.5 slock](#slock)
+    *   [4.6 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [4.7 Flicker](#Flicker)
+    *   [4.8 Fullscreen tearing](#Fullscreen_tearing)
+    *   [4.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [4.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.11 Tabbed windows](#Tabbed_windows)
+    *   [4.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -135,6 +138,12 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 ## Troubleshooting
 
 The use of compositing effects may on occasion cause issues such as visual glitches when not configured correctly for use with other applications and programs.
+
+### Freezing video playback
+
+Some media players may experience an issue where the video will momentarily freeze while the audio continues to play. There is currently no known fix aside from stopping Compton while playing videos.
+
+See the [bug report](https://github.com/chjj/compton/issues/494).
 
 ### Conky
 

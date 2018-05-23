@@ -9,7 +9,6 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 ## Contents
 
 *   [1 Package naming](#Package_naming)
-    *   [1.1 Versioned packages](#Versioned_packages)
 *   [2 Installation methods](#Installation_methods)
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
@@ -25,7 +24,7 @@ The same applies to Python 2 except that the prefix (if needed) is `python2-`.
 
 **Note:** The package name should be entirely lowercase.
 
-### Versioned packages
+	Versioned packages
 
 If you need to add a versioned package then use `python-*modulename*-*version*`, e.g. `python-colorama-0.2.5`. So python dependency `colorama==0.2.5` will turn into `python-colorama-0.2.5` Arch package.
 
@@ -83,6 +82,8 @@ PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-insta
 python -O -m compileall "${pkgdir}/path/to/module"
 
 ```
+
+**Warning:** Use of *pip* and/or wheel packages is discouraged in favor of setuptools source packages, and should only be used when the latter is not a viable option (for example, packages which **only** come with wheel sources, and therefore cannot be installed using setuptools).
 
 ## Notes
 

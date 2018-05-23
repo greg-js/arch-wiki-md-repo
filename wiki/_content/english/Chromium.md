@@ -96,7 +96,7 @@ Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin. If
 
 ### Certificates
 
-Chromium uses [NSS](/index.php/Network_Security_Services "Network Security Services") for certificate management. Certificates can be managed in `chrome://settings/certificates`.
+Chromium uses [Network Security Services](/index.php/Network_Security_Services "Network Security Services") for certificate management. Certificates can be managed in `chrome://settings/certificates`.
 
 ## Tips and tricks
 

@@ -23,6 +23,7 @@
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |
 | <small>4.1.</small> [Graphics](/index.php/Category:Graphics_(Portugu%C3%AAs) "Category:Graphics (Português)") <small>(1)</small> |
 | <small>4.2.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(3)</small> |
+| <small>4.3.</small> [Storage](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
 | <small>5.</small> [HOWTOs](/index.php/Category:HOWTOs_(Portugu%C3%AAs) "Category:HOWTOs (Português)") <small>(5)</small> |
 | <small>6.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(4)</small> |
 | <small>6.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(2)</small> |

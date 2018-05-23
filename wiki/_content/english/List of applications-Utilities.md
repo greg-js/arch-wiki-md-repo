@@ -428,7 +428,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Pilot** — File manager that comes with the [Alpine](/index.php/Alpine "Alpine") email client.
 
-	[http://patches.freeiz.com/alpine/](http://patches.freeiz.com/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)
+	[https://www.washington.edu/alpine/](https://www.washington.edu/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)
 
 *   **[Ranger](/index.php/Ranger "Ranger")** — Console-based file manager with vi bindings, customizability, and lots of features.
 

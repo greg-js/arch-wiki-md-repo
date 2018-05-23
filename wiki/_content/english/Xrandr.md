@@ -21,8 +21,9 @@ Related articles
         *   [4.1.2 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
     *   [4.2 Permanently adding undetected resolutions](#Permanently_adding_undetected_resolutions)
     *   [4.3 Resolution lower than expected](#Resolution_lower_than_expected)
-    *   [4.4 Correction of overscan tv resolutions](#Correction_of_overscan_tv_resolutions)
-    *   [4.5 Full RGB in HDMI](#Full_RGB_in_HDMI)
+    *   [4.4 Correction of overscan tv resolutions via the underscan property](#Correction_of_overscan_tv_resolutions_via_the_underscan_property)
+    *   [4.5 Correction of overscan tv resolutions via --transform](#Correction_of_overscan_tv_resolutions_via_--transform)
+    *   [4.6 Full RGB in HDMI](#Full_RGB_in_HDMI)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -343,13 +344,27 @@ EndSection
 
 About the numbers: DELL on the left and Samsung on the right. So the virtual width is of sum of both LCD width 3600=1920+1680; Height then is figured as the max of them, which is max(1200,1050)=1200\. If you put one LCD above the other, use this calculation instead: (max(width1, width2), height1+height2).
 
-### Correction of overscan tv resolutions
+### Correction of overscan tv resolutions via the underscan property
 
 With a flat panel TV, [w:overscan](https://en.wikipedia.org/wiki/overscan "w:overscan") looks like the picture is "zoomed in" so the edges are cut off.
 
-Check your TV if there is a parameter to change. If not, apply an `underscan` and change border values. The required `underscan vborder` and `underscan hborder` values can be different for you, just check it and change it by more or less.
+Check your TV if there is a parameter to change. If not check if the output has support for the underscan property (xrandr --prop), if so apply an `underscan` and change border values. The required `underscan vborder` and `underscan hborder` values can be different for you, just check it and change it by more or less.
 
-`$ xrandr --output HDMI-0 --set underscan on --set "underscan vborder" 25 --set "underscan hborder" 40`
+```
+$ xrandr --output HDMI-0 --set underscan on --set "underscan vborder" 25 --set "underscan hborder" 40
+
+```
+
+### Correction of overscan tv resolutions via --transform
+
+If underscan is not available another solution is using `xrandr --transform *a,b,c,d,e,f,g,h,i*`, which applies a transformation matrix on the output. See the [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1#RandR_version_1.3_options) manual page for the explanation of the transformation.
+
+For example, the transformation scaling horizontal coordinates by `0.8`, vertical coordinates by `1.04` and moving the screen by 35 pixels right and 19 pixels down, is:
+
+```
+$ xrandr --output HDMI1 --transform 0.80,0,-35,0,1.04,-19,0,0,1
+
+```
 
 ### Full RGB in HDMI
 

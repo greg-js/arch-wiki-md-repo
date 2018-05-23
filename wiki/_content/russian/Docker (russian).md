@@ -130,3 +130,4 @@ $ docker run -t -i --rm debian /bin/bash
 ## Смотрите также
 
 *   [Arch Linux на docs.docker.com](https://docs.docker.com/installation/archlinux/)
+*   [Arch Linux Docker Tutorial на linuxhint.com](https://linuxhint.com/arch-linux-docker-tutorial/)

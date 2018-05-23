@@ -546,7 +546,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Kupfer** — Convenient command and access tool for the GNOME desktop that can launch applications, open documents and access different types of objects and act on them.
 
-	[https://wiki.gnome.org/Apps/Kupfer](https://wiki.gnome.org/Apps/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
+	[https://kupferlauncher.github.io/](https://kupferlauncher.github.io/) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **launch** — Simple command for launching applications from a terminal emulator.
 

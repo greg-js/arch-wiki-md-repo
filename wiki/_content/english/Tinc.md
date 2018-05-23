@@ -1,6 +1,4 @@
-This article describes a basic installation and configuration of tinc. For further details see the [tincd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tincd.8) page and the [tinc documentation](https://tinc-vpn.org/docs/).
-
-***tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.*[[1]](http://tinc-vpn.org/)
+[tinc](http://tinc-vpn.org/) is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.
 
 ## Contents
 
@@ -15,10 +13,11 @@ This article describes a basic installation and configuration of tinc. For furth
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 I've updated my system and now tinc won't start.](#I.27ve_updated_my_system_and_now_tinc_won.27t_start.)
     *   [6.2 I'm running a custom kernel and tinc won't start.](#I.27m_running_a_custom_kernel_and_tinc_won.27t_start.)
+*   [7 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [tinc](https://www.archlinux.org/packages/?name=tinc) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [tinc](https://www.archlinux.org/packages/?name=tinc) package.
 
 ## Configuring a private network
 
@@ -37,25 +36,19 @@ In /etc/tinc/*vpnname*/tinc.conf you specify the name of the hostmachine (which 
 
 ### Configuration of alpha
 
-/etc/tinc/*vpnname*/tinc.conf
-
+ `/etc/tinc/*vpnname*/tinc.conf` 
 ```
 Name = alpha
 Device = /dev/net/tun
-
 ```
-
-/etc/tinc/*vpnname*/tinc-up
-
+ `/etc/tinc/*vpnname*/tinc-up` 
 ```
 #!/bin/sh
 ip link set $INTERFACE up
 ip addr add  192.168.0.1/24 dev $INTERFACE
 
 ```
-
-/etc/tinc/*vpnname*/tinc-down
-
+ `/etc/tinc/*vpnname*/tinc-down` 
 ```
 #!/bin/sh
 ip addr del 192.168.0.1/24 dev $INTERFACE
@@ -67,26 +60,20 @@ ip link set $INTERFACE down
 
 ### Configuration of beta
 
-/etc/tinc/*vpnname*/tinc.conf
-
+ `/etc/tinc/*vpnname*/tinc.conf` 
 ```
 Name = beta
 Device = /dev/net/tun
 ConnectTo = alpha
-
 ```
-
-/etc/tinc/*vpnname*/tinc-up
-
+ `/etc/tinc/*vpnname*/tinc-up` 
 ```
 #!/bin/sh
 ip link set $INTERFACE up
 ip addr add 192.168.0.2/24 dev $INTERFACE
 
 ```
-
-/etc/tinc/*vpnname*/tinc-down
-
+ `/etc/tinc/*vpnname*/tinc-down` 
 ```
 #!/bin/sh
 ip addr del 192.168.0.2/24 dev $INTERFACE
@@ -100,21 +87,16 @@ ip link set $INTERFACE down
 
 The configuration files for the different hosts are stored in /etc/tinc/*vpnname*/hosts/ directory. In this example we need the two files on each machine.
 
-/etc/tinc/*vpnname*/hosts/alpha
-
+ `/etc/tinc/*vpnname*/hosts/alpha` 
 ```
 Address = 10.0.0.1
 Port = 655
 Subnet = 192.168.0.1/32
-
 ```
-
-/etc/tinc/*vpnname*/hosts/beta
-
+ `/etc/tinc/*vpnname*/hosts/beta` 
 ```
 Port = 655
 Subnet = 192.168.0.2/32
-
 ```
 
 After creating a file for each host, you have to generate a key pair using
@@ -148,29 +130,26 @@ If you want to enable it at startup you can enable the appropriate service
 
 Sometimes it is reasonable to use TAP devices instead of TUN devices. For example if you want to add the tinc device to an already existing bridge. Just add the "Mode" option to your tinc.conf.
 
-Remember to do that on **every** host. /etc/tinc/*vpnname*/tinc.conf
+Remember to do that on **every** host.
 
+ `/etc/tinc/*vpnname*/tinc.conf` 
 ```
 Name = *node*
 Mode = switch
 Device = /dev/net/tun
 ConnectTo = *other*
-
 ```
 
 Possible tinc-up/down files could look like that:
 
-/etc/tinc/*vpnname*/tinc-up
-
+ `/etc/tinc/*vpnname*/tinc-up` 
 ```
 #!/bin/sh
 ip link set $INTERFACE up
 brctl addif *br0* $INTERFACE
 
 ```
-
-/etc/tinc/*vpnname*/tinc-down
-
+ `/etc/tinc/*vpnname*/tinc-down` 
 ```
 #!/bin/sh
 brctl delif *br0* $INTERFACE
@@ -178,12 +157,7 @@ ip link set $INTERFACE down
 
 ```
 
-And finally restart your tinc daemon:
-
-```
-# systemctl restart tinc@*vpnname*
-
-```
+And finally [restart](/index.php/Restart "Restart") your tinc daemon: `tinc@*vpnname*`.
 
 ## Automatically Starting Tinc at boot
 
@@ -214,3 +188,8 @@ In case of a linux kernel update you have to either restart your system or reins
 ### I'm running a custom kernel and tinc won't start.
 
 Make sure you have [TUN/TAP support](/index.php/OpenVPN#Kernel_configuration "OpenVPN") enabled.
+
+## See also
+
+*   [tincd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tincd.8)
+*   [tinc documentation](https://tinc-vpn.org/docs/)

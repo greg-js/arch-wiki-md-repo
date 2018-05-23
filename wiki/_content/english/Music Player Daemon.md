@@ -250,67 +250,87 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 ### Console
 
-*   **mpc** — Command line user interface for MPD server
+*   **clerk** — MPD client using rofi.
+
+	[https://github.com/carnager/clerk](https://github.com/carnager/clerk) || [clerk](https://aur.archlinux.org/packages/clerk/)
+
+*   **mpc** — Command line user interface for MPD server.
 
 	[http://www.musicpd.org/clients/mpc/](http://www.musicpd.org/clients/mpc/) || [mpc](https://www.archlinux.org/packages/?name=mpc)
 
-*   **ncmpc** — Ncurses client for MPD
+*   **ncmpc** — Ncurses client for MPD.
 
 	[http://www.musicpd.org/clients/ncmpc/](http://www.musicpd.org/clients/ncmpc/) || [ncmpc](https://www.archlinux.org/packages/?name=ncmpc)
 
-*   **[ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp")** — Almost exact clone of ncmpc with some new features written in C++ (tag editor, search engine)
+*   **[ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp")** — Almost exact clone of ncmpc with some new features written in C++ (tag editor, search engine).
 
 	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp)
 
-*   **pms** — Highly configurable and accessible ncurses client written in Go
+*   **ncmpy** — Curses-based MPD client written in Python.
+
+	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [ncmpy](https://aur.archlinux.org/packages/ncmpy/)
+
+*   **nncmpp** — Yet another MPD client. It is in effect a simplified TUI version of Sonata.
+
+	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [nncmpp-git](https://aur.archlinux.org/packages/nncmpp-git/)
+
+*   **pms** — Highly configurable and accessible ncurses client written in Go.
 
 	[https://ambientsound.github.io/pms/](https://ambientsound.github.io/pms/) || [pmus-git](https://aur.archlinux.org/packages/pmus-git/)
 
-*   **vimpc** — Ncurses based MPD client with vi-like key bindings
+*   **vimpc** — Ncurses based MPD client with vi-like key bindings.
 
 	[https://github.com/boysetsfrog/vimpc](https://github.com/boysetsfrog/vimpc) || [vimpc-git](https://aur.archlinux.org/packages/vimpc-git/)
 
-*   **vimus** — MPD client with vim-like key bindings, written in Haskell
-
-	[https://github.com/vimus/vimus](https://github.com/vimus/vimus) || no package
-
 ### Graphical
 
-*   **Ario** — Very feature-rich GTK3 GUI client for MPD, inspired by [Rhythmbox](/index.php/Rhythmbox "Rhythmbox")
+*   **Ario** — Very feature-rich GTK3 GUI client for MPD, inspired by [Rhythmbox](/index.php/Rhythmbox "Rhythmbox").
 
 	[http://ario-player.sourceforge.net/](http://ario-player.sourceforge.net/) || [ario](https://www.archlinux.org/packages/?name=ario)
 
-*   **QMPDClient** — Qt4 GUI client
+*   **Cantata** — High-feature, Qt4, Qt5 or KDE client for MPD with very configurable interface.
 
-	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
-
-*   **Sonata** — Elegant Python GTK+ client
-
-	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
+	[https://github.com/CDrummond/cantata](https://github.com/CDrummond/cantata) || [cantata](https://www.archlinux.org/packages/?name=cantata)
 
 *   **gmpc** — GTK2 frontend for MPD. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
 
 	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)
 
-*   **Cantata** — High-feature, Qt4, Qt5 or KDE client for MPD with very configurable interface
-
-	[https://github.com/CDrummond/cantata](https://github.com/CDrummond/cantata) || [cantata](https://www.archlinux.org/packages/?name=cantata)
-
-*   **Xfmpc** — A graphical GTK+ MPD client focusing on low footprint
-
-	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [xfmpc](https://www.archlinux.org/packages/?name=xfmpc)
-
-*   **pymp'd** — A GTK+ front end client for the music playing daemon MPD
+*   **pymp'd** — A GTK+ front end client for the music playing daemon MPD.
 
 	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://www.archlinux.org/packages/?name=pympd)
 
-*   **Quimup** — A simple Qt5 frontend for MPD written in C++
+*   **QMPDClient** — Qt4 GUI client.
+
+	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
+
+*   **Quimup** — Simple Qt5 frontend for MPD written in C++.
 
 	[https://sourceforge.net/projects/quimup/](https://sourceforge.net/projects/quimup/) || [quimup](https://aur.archlinux.org/packages/quimup/)
 
-*   **SkyMPC** — A simple MPD client, powered by Qt5
+*   **RompЯ** — Web client for MPD.
+
+	[https://fatg3erman.github.io/RompR/](https://fatg3erman.github.io/RompR/) || [rompr](https://aur.archlinux.org/packages/rompr/)
+
+*   **SkyMPC** — Simple MPD client, powered by Qt5.
 
 	[https://github.com/soramimi/SkyMPC](https://github.com/soramimi/SkyMPC) || [skympc-git](https://aur.archlinux.org/packages/skympc-git/)
+
+*   **Sonata** — Elegant Python GTK+ client.
+
+	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
+
+*   **Xfce MPD Panel Plugin** — MPD plugin for [Xfce](/index.php/Xfce "Xfce")4 panel.
+
+	[http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin](http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin) || [xfce4-mpc-plugin](https://www.archlinux.org/packages/?name=xfce4-mpc-plugin)
+
+*   **Xfmpc** — Graphical GTK+ MPD client focusing on low footprint.
+
+	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [xfmpc](https://www.archlinux.org/packages/?name=xfmpc)
+
+*   **ympd** — Standalone MPD Web GUI written in C, utilizing Websockets and Bootstrap/JS.
+
+	[https://ympd.org/](https://ympd.org/) || [ympd](https://aur.archlinux.org/packages/ympd/)
 
 ## See also
 

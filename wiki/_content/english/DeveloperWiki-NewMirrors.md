@@ -64,10 +64,12 @@ Go to [https://bugs.archlinux.org](https://bugs.archlinux.org/newtask/proj1) and
 *   Geographical location of the mirror (country)
 *   URLs for supported access methods (http(s), [rsync](/index.php/Rsync "Rsync")) (no ftp)
 *   Your mirror's available bandwidth
-*   An administrative contact email
+*   An administrative contact email (optional, see below)
 *   An alternative administrative contact email (optional)
 *   (tier 1 mirrors) Rsync IPs so your server(s) can be allowed to sync off tier 0 (rsync.archlinux.org)
 *   (tier 2 mirrors) The name of tier 1 mirror you are syncing from. You can find available tier 1 mirrors [here](https://www.archlinux.org/mirrors/tier/1/)
+
+The contact email(s) will be used by Arch Linux staff to contact the mirror administrator if they have questions regarding the mirror or if there are problems with the mirror. If a contact email is not provided, the mirror listing may be removed at any time, especially if problems occur, without prior contact to the admin.
 
 ### Contact info and mailing lists
 

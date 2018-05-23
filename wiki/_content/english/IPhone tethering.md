@@ -2,15 +2,16 @@ Related articles
 
 *   [IPod](/index.php/IPod "IPod")
 
-Unless disabled by your provider, it's possible to share your iPhone's 3G data connection over WiFi, USB and Bluetooth without needing to jailbreak. WiFi requires no additional configuration provided your computer can connect to wireless networks, and you'll find instructions for USB and Bluetooth below.
+Unless disabled by your provider, it is possible to share your iPhone's mobile data connection over **WiFi**, **USB** and **Bluetooth**:
+
+*   WiFi requires no additional configuration provided your computer can connect to wireless networks,
+*   Instructions for USB and Bluetooth tethering are provided below.
 
 ## Contents
 
 *   [1 Tethering over USB](#Tethering_over_USB)
-    *   [1.1 Tethering over USB using Personal Hotspot](#Tethering_over_USB_using_Personal_Hotspot)
-        *   [1.1.1 Using systemd-networkd](#Using_systemd-networkd)
-        *   [1.1.2 Troubleshooting](#Troubleshooting)
-            *   [1.1.2.1 The iPhone appears in the device list but it doesn't connect](#The_iPhone_appears_in_the_device_list_but_it_doesn.27t_connect)
+    *   [1.1 Using systemd-networkd](#Using_systemd-networkd)
+    *   [1.2 Troubleshooting](#Troubleshooting)
 *   [2 Tethering over Bluetooth](#Tethering_over_Bluetooth)
     *   [2.1 Hardware Requirements](#Hardware_Requirements)
     *   [2.2 Setup](#Setup)
@@ -19,35 +20,28 @@ Unless disabled by your provider, it's possible to share your iPhone's 3G data c
 
 ## Tethering over USB
 
-### Tethering over USB using Personal Hotspot
-
 Tethering natively over USB is the optimal choice as it provides a more stable connection and uses less batteries than bluetooth or wifi.
 
 To tether your iPhone over USB, you will need to install [usbmuxd](https://www.archlinux.org/packages/?name=usbmuxd) and [libimobiledevice](https://www.archlinux.org/packages/?name=libimobiledevice).
 
-Next enable **Personal Hotspot** on your iPhone and plug it into your computer. At this point you'll have a new ethernet device available and you should be able to use any [network manager](/index.php/List_of_applications#Network_Managers "List of applications") to connect to the internet through the new iPhone ethernet device just like you would any other ethernet connection.
+Next enable **Personal Hotspot** on your iPhone and plug it into your computer. At this point you will have a new ethernet device available and should be able to use any [network manager](/index.php/List_of_applications#Network_Managers "List of applications") to connect to the internet through the new iPhone ethernet device, just like you would any other ethernet connection.
 
 #### Using systemd-networkd
 
-Using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") you can simply adjust the networking to use the iphone as the gateway.
+Using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), you can simply adjust the networking to use the iPhone as the gateway. If *enp0s26u1u2c4i2* is the name of the network device that is created from the iPhone as displayed by `networkctl list`, create the following *.network* file:
 
- `/etc/systemd/network/enp0s26u1u2c4i2.network` 
+ `/etc/systemd/network/30-tethering.network` 
 ```
 [Match]
 Name=enp0s26u1u2c4i2
 
 [Network]
 DHCP=yes
-
 ```
-
-*enp0s26u1u2c4i2* being the name of the network device that is created from the iphone.
 
 #### Troubleshooting
 
-##### The iPhone appears in the device list but it doesn't connect
-
-Its possible that you may need to connect your iPhone and pair it with your computer before connecting in some circumstances (iPhones using a PIN unlock?):
+If the iPhone appears in the device list but does not connect, it is possible that you may need to connect your iPhone and pair it with your computer before connecting (iPhones using a PIN unlock?):
 
 ```
 # idevicepair pair

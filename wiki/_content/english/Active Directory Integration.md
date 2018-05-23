@@ -4,9 +4,9 @@ Related articles
 *   [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller")
 *   [SOGo](/index.php/SOGo "SOGo")
 
-From [w:Active Directory](https://en.wikipedia.org/wiki/Active_Directory "w:Active Directory"):
+From [Wikipedia](https://en.wikipedia.org/wiki/Active_Directory "w:Active Directory"):
 
-	*Active Directory (AD) is a [w:directory service](https://en.wikipedia.org/wiki/directory_service "w:directory service") that Microsoft developed for [w:Windows domain](https://en.wikipedia.org/wiki/Windows_domain "w:Windows domain") networks.*
+	*Active Directory (AD) is a [directory service](https://en.wikipedia.org/wiki/directory_service "wikipedia:directory service") that Microsoft developed for [Windows domain](https://en.wikipedia.org/wiki/Windows_domain "wikipedia:Windows domain") networks.*
 
 This article describes how to integrate an Arch Linux system with an existing Windows domain network using [Samba](/index.php/Samba "Samba").
 

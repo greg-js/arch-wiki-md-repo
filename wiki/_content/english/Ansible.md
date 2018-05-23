@@ -31,7 +31,7 @@ On the managed machines (nodes), where you want to automate deployment or config
 
 Ansible parameters are set in the configuration file which can either be `ansible.cfg` in the current directory, `.ansible.cfg` in the home directory or `/etc/ansible/ansible.cfg`, whichever it finds first.
 
-A template is available at [https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg](https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg).
+A template is available at [GitHub example ansible.cfg](https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg).
 
 ### Inventory
 
@@ -131,7 +131,9 @@ other_not_secret: othervalue
 
 Ansible has a [pacman module](http://docs.ansible.com/ansible/latest/pacman_module.html) to handle installation, removal and system upgrades with [pacman](/index.php/Pacman "Pacman").
 
-For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") *(AUR)*, unofficial modules are available on GitHub, like [ansible-aur](https://github.com/kewlfft/ansible-aur).
+For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") *(AUR)*, an external module is required: **ansible-aur** — Ansible module to install packages from the AUR
+
+	[https://github.com/kewlfft/ansible-aur](https://github.com/kewlfft/ansible-aur) || [ansible-aur-git](https://aur.archlinux.org/packages/ansible-aur-git/)
 
 While Ansible expects to ssh as root, AUR helpers do not allow executing operations as root, they all fail with "you cannot perform this operation as root". For Ansible automation, it is therefore recommended to create a user, for example named *aur_builder*, that has no need for password with pacman in [sudoers](/index.php/Sudoers "Sudoers"). This can be done in Ansible with the following actions:
 
@@ -145,7 +147,7 @@ While Ansible expects to ssh as root, AUR helpers do not allow executing operati
      validate: /usr/sbin/visudo -cf %s
 ```
 
-Then, AUR helpers or [makepkg](/index.php/Makepkg "Makepkg") commands can be used associated with the Ansible parameters `become: yes` and `become_user: aur_builder`
+Then, AUR helpers or [makepkg](/index.php/Makepkg "Makepkg") can be used associated with the Ansible parameters `become: yes` and `become_user: aur_builder`
 
 ## Tips and tricks
 

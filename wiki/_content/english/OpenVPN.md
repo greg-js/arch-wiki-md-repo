@@ -12,7 +12,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 
 ## Contents
 
-*   [1 Install OpenVPN](#Install_OpenVPN)
+*   [1 Installation](#Installation)
 *   [2 Kernel configuration](#Kernel_configuration)
 *   [3 Connect to a VPN provided by a third party](#Connect_to_a_VPN_provided_by_a_third_party)
 *   [4 Create a Public Key Infrastructure (PKI) from scratch](#Create_a_Public_Key_Infrastructure_.28PKI.29_from_scratch)
@@ -65,7 +65,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [12.4 Route configuration fails with systemd-networkd](#Route_configuration_fails_with_systemd-networkd)
 *   [13 See also](#See_also)
 
-## Install OpenVPN
+## Installation
 
 [Install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package, which provides both server and client mode.
 
@@ -296,61 +296,9 @@ Wed Dec 28 14:41:57 2011 UID set to nobody
 Wed Dec 28 14:41:57 2011 Initialization Sequence Completed
 ```
 
-On the server, find the IP address assigned to the tunX device:
+[Find the IP address](/index.php/Network_configuration#IP_addresses "Network configuration") assigned to the tunX interface on the server, and [ping](/index.php/Ping "Ping") it from the client.
 
- `# ip addr show` 
-```
-.
-.
-40: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN qlen 100
-    link/none
-    inet 10.8.0.1 peer 10.8.0.2/32 scope global tun0
-```
-
-Here we see that the server end of the tunnel has been given the IP address 10.8.0.1.
-
-Do the same on the client:
-
- `# ip addr show` 
-```
-.
-.
-37: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN qlen 100
-    link/none
-    inet 10.8.0.6 peer 10.8.0.5/32 scope global tun0
-```
-
-And the client side has been given the IP address 10.8.0.6.
-
-Now try pinging the interfaces.
-
-On the server:
-
- `# ping -c3 10.8.0.6` 
-```
-PING 10.8.0.6 (10.8.0.6) 56(84) bytes of data.
-64 bytes from 10.8.0.6: icmp_req=1 ttl=64 time=238 ms
-64 bytes from 10.8.0.6: icmp_req=2 ttl=64 time=237 ms
-64 bytes from 10.8.0.6: icmp_req=3 ttl=64 time=205 ms
-
---- 10.8.0.6 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2002ms
-rtt min/avg/max/mdev = 205.862/227.266/238.788/15.160 ms
-```
-
-On the client:
-
- `# ping -c3 10.8.0.1` 
-```
-PING 10.8.0.1 (10.8.0.1) 56(84) bytes of data.
-64 bytes from 10.8.0.1: icmp_req=1 ttl=64 time=158 ms
-64 bytes from 10.8.0.1: icmp_req=2 ttl=64 time=158 ms
-64 bytes from 10.8.0.1: icmp_req=3 ttl=64 time=157 ms
-
---- 10.8.0.1 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2001ms
-rtt min/avg/max/mdev = 157.426/158.278/158.940/0.711 ms
-```
+[Find the IP address](/index.php/Network_configuration#IP_addresses "Network configuration") assigned to the tunX interface on the client, and [ping](/index.php/Ping "Ping") it from the server.
 
 **Note:** If using a firewall, make sure that IP packets on the TUN device are not blocked.
 

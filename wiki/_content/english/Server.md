@@ -37,7 +37,7 @@ In most GNU/Linux server operating systems, you have two options:
 
 For the installation of Arch Linux, please refer to the [Installation guide](/index.php/Installation_guide "Installation guide") and [General recommendations](/index.php/General_recommendations "General recommendations") articles, but do not go any further than [General recommendations#Graphical user interface](/index.php/General_recommendations#Graphical_user_interface "General recommendations") unless you require a GUI.
 
-For remote access to this server, you need a static IP address/ domain name, or something like [No-Ip](http://www.noip.com) or [FreeDNS](http://freedns.afraid.org).
+If the server has a dynamic IP address but you still want to be able to reliably address it you can use a [dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") from a provider like [DuckDNS](https://duckdns.org), [No-Ip](http://www.noip.com) or [FreeDNS](http://freedns.afraid.org).
 
 ## Services
 
@@ -80,4 +80,4 @@ For remote access to this server, you need a static IP address/ domain name, or 
 
 ### Local Package Repositories
 
-[Repose](https://github.com/vodik/repose) can be used to create a package repository for a local server cluster where packages must be tested for quality and reliability before undergoing deployment into a production environment.
+[Repose](https://github.com/vodik/repose) ([repose](https://www.archlinux.org/packages/?name=repose)) can be used to create a package repository for a local server cluster where packages must be tested for quality and reliability before undergoing deployment into a production environment.

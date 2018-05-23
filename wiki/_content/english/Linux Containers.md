@@ -351,6 +351,8 @@ It works nearly the same as lxc-console, but you are automatically accessing roo
 
 Users with a need to run multiple containers can simplify administrative overhead (user management, system updates, etc.) by using snapshots. The strategy is to setup and keep up-to-date a single base container, then, as needed, clone (snapshot) it. The power in this strategy is that the disk space and system overhead are truly minimized since the snapshots use an overlayfs mount to only write out to disk, only the differences in data. The base system is read-only but changes to it in the snapshots are allowed via the overlayfs.
 
+**Note:** overlayfs for unprivileged containers is not supported in the current mainline Arch Linux kernel due to security considerations.
+
 For example, setup a container as outlined above. We will call it "base" for the purposes of this guide. Now create 2 snapshots of "base" which we will call "snap1" and "snap2" with these commands:
 
 ```

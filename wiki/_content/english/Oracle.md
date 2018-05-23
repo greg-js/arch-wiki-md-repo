@@ -36,7 +36,7 @@ This section will guide you through installing Oracle onto a fresh installation 
 
 [Install](/index.php/Install "Install") packages [unzip](https://www.archlinux.org/packages/?name=unzip) [sudo](https://www.archlinux.org/packages/?name=sudo) [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) [icu](https://www.archlinux.org/packages/?name=icu) [gawk](https://www.archlinux.org/packages/?name=gawk) [gdb](https://www.archlinux.org/packages/?name=gdb) [elfutils](https://www.archlinux.org/packages/?name=elfutils) [sysstat](https://www.archlinux.org/packages/?name=sysstat) [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) [unixodbc](https://www.archlinux.org/packages/?name=unixodbc).
 
-Install a [Java](/index.php/Java "Java") runtime environment, like [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) and [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk).
+Install a [Java](/index.php/Java "Java") runtime environment, like [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) and [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk).
 
 From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
 

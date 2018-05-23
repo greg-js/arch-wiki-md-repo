@@ -12,7 +12,7 @@
         *   [2.3.2 Using uwsgi](#Using_uwsgi)
     *   [2.4 Caddy](#Caddy)
 *   [3 Configuration of cgit](#Configuration_of_cgit)
-    *   [3.1 Basic Configuration](#Basic_Configuration)
+    *   [3.1 Basic configuration](#Basic_configuration)
     *   [3.2 Adding repositories](#Adding_repositories)
     *   [3.3 Syntax highlighting](#Syntax_highlighting)
         *   [3.3.1 Using python-pygments](#Using_python-pygments)
@@ -232,7 +232,7 @@ git.example.com {
 
 ## Configuration of cgit
 
-### Basic Configuration
+### Basic configuration
 
 Before you can start adding repositories you will first have to create the basic cgit configuration file at `/etc/cgitrc`.
 

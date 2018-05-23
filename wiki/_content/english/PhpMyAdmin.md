@@ -154,7 +154,7 @@ To allow the usage of the phpMyAdmin setup script (e.g. [http://localhost/phpmya
 
 ### Add blowfish_secret passphrase
 
-It is required to enter an unique string (32 characters are recommended) to fully use the blowfish algorithm used by phpMyAmdin, thus preventing the message *ERROR: The configuration file now needs a secret passphrase (blowfish_secret)*:
+It is required to enter an unique 32 characters long string to fully use the blowfish algorithm used by PhpMyAdmin, thus preventing the message *ERROR: The configuration file now needs a secret passphrase (blowfish_secret)*:
 
  `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['blowfish_secret'] = '...';` 
 
@@ -229,7 +229,7 @@ GRANT SELECT (Host, Db, User, Table_name, Table_priv, Column_priv)
 In order use the bookmark and relation features, set the following permissions:
 
 ```
-GRANT SELECT, INSERT, UPDATE, DELETE ON <pma_db>.* TO 'pma'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON phpmyadmin.* TO 'pma'@'localhost';
 
 ```
 
@@ -251,5 +251,3 @@ Set read/write permissions for the `http` [user](/index.php/User "User"):
 # chown http:http /usr/share/webapps/phpMyAdmin/tmp
 
 ```
-
-Refresh PhpMyAdmin to apply changes.
