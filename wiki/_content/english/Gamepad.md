@@ -36,6 +36,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [7.8 Xbox Wireless Controller / Xbox One Wireless Controller](#Xbox_Wireless_Controller_.2F_Xbox_One_Wireless_Controller)
         *   [7.8.1 Connect Xbox Wireless Controller with usb cable](#Connect_Xbox_Wireless_Controller_with_usb_cable)
         *   [7.8.2 Connect Xbox Wireless Controller with bluetooth](#Connect_Xbox_Wireless_Controller_with_bluetooth)
+            *   [7.8.2.1 xpadneo](#xpadneo)
         *   [7.8.3 Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter](#Connect_Xbox_Wireless_Controller_with_Microsoft_Xbox_Wireless_Adapter)
     *   [7.9 Logitech Dual Action](#Logitech_Dual_Action)
     *   [7.10 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
@@ -584,6 +585,14 @@ or
 Add this file to your config:
 
  `/etc/modprobe.d/xbox_bt.conf`  `options bluetooth disable_ertm=1` 
+
+##### xpadneo
+
+A relatively new driver which does (yet) support only the Xbox One S controller via Bluetooth is called 'xpadneo'. In exchange for supporting just one hardware so far, it enables one to read out the correct battery level, supports rumble (even the one on the trigger buttons - L2/R2), corrects the (sometimes wrong) button mapping and more.
+
+Installation is done using DKMS.
+
+Download: [https://github.com/atar-axis/xpadneo/](https://github.com/atar-axis/xpadneo/)
 
 #### Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter
 

@@ -6,7 +6,7 @@ Related articles
 *   [Unbound](/index.php/Unbound "Unbound")
 *   [PowerDNS](/index.php/PowerDNS "PowerDNS")
 
-[BIND](https://www.isc.org/downloads/bind/) is the most widely used Domain Name System (DNS) server.
+[BIND](https://www.isc.org/downloads/bind/) (or named) is the most widely used Domain Name System (DNS) server.
 
 **Note:** The organization developing BIND is serving security notices to paying customers up to four days before Linux distributions or the general public.[[1]](https://kb.isc.org/article/AA-00861/0/ISC-Software-Defect-and-Security-Vulnerability-Disclosure-Policy.html)
 
@@ -17,31 +17,33 @@ Related articles
     *   [2.1 Restrict access to localhost](#Restrict_access_to_localhost)
     *   [2.2 Set up DNS forwarding](#Set_up_DNS_forwarding)
 *   [3 A configuration template for running a domain](#A_configuration_template_for_running_a_domain)
-    *   [3.1 1\. Creating a zonefile](#1._Creating_a_zonefile)
-    *   [3.2 2\. Configuring master server](#2._Configuring_master_server)
-    *   [3.3 3\. Setting this to be your default DNS server](#3._Setting_this_to_be_your_default_DNS_server)
-*   [4 Configuring BIND to serve DNSSEC signed zones](#Configuring_BIND_to_serve_DNSSEC_signed_zones)
-*   [5 Automatically listen on new interfaces](#Automatically_listen_on_new_interfaces)
-*   [6 Running BIND in a chrooted environment](#Running_BIND_in_a_chrooted_environment)
-    *   [6.1 Creating the Jail House](#Creating_the_Jail_House)
-    *   [6.2 Service File](#Service_File)
-*   [7 See also](#See_also)
+    *   [3.1 Creating a zonefile](#Creating_a_zonefile)
+    *   [3.2 Configuring master server](#Configuring_master_server)
+*   [4 Allow recursion](#Allow_recursion)
+*   [5 Configuring BIND to serve DNSSEC signed zones](#Configuring_BIND_to_serve_DNSSEC_signed_zones)
+*   [6 Automatically listen on new interfaces](#Automatically_listen_on_new_interfaces)
+*   [7 Running BIND in a chrooted environment](#Running_BIND_in_a_chrooted_environment)
+    *   [7.1 Creating the Jail House](#Creating_the_Jail_House)
+    *   [7.2 Service File](#Service_File)
+*   [8 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [bind](https://www.archlinux.org/packages/?name=bind) package.
 
-To use BIND as the system's DNS server prepend `nameserver 127.0.0.1` to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
-
 [Start/enable](/index.php/Start/enable "Start/enable") the `named.service` systemd unit.
+
+To use the DNS server locally, use the `127.0.0.1` nameserver, see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). This will however require you to [#Allow recursion](#Allow_recursion).
 
 ## Configuration
 
-BIND is configured in `/etc/named.conf`. The available options are documented in the `named.conf` man page.
+BIND is configured in `/etc/named.conf`. The available options are documented in [named.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/named.conf.5).
 
 [Reload](/index.php/Reload "Reload") the `named.service` unit to apply configuration changes.
 
 ### Restrict access to localhost
+
+BIND by defaults listens on all interfaces and IP addresses.
 
 To only allow connections from localhost add the following line to the options section in `/etc/named.conf`:
 
@@ -69,7 +71,7 @@ For a more elaborate example see [Two-in-one DNS server with BIND9](http://www.h
 
 Another guide at [Linux Home Server HOWTO - Domain name system (BIND): Adding your domain](http://www.brennan.id.au/08-Domain_Name_System_BIND.html#yourdomain) will show you how to set up internal network name resolution in no time; short, on-point and very informative.
 
-### 1\. Creating a zonefile
+### Creating a zonefile
 
 Create `/var/named/domain.tld.zone`.
 
@@ -101,7 +103,7 @@ $TTL defines the default time-to-live in seconds for all record types. In this e
 
 **Serial must be incremented manually before restarting named every time you change a resource record for the zone.** If you forget to do it slaves will not re-transfer the zone: they only do it if the serial is greater than that of the last time they transferred the zone.
 
-### 2\. Configuring master server
+### Configuring master server
 
 Add your zone to `/etc/named.conf`:
 
@@ -117,7 +119,7 @@ zone "domain.tld" IN {
 
 [Reload](/index.php/Reload "Reload") the `named.service` unit to apply the configuration change.
 
-### 3\. Setting this to be your default DNS server
+## Allow recursion
 
 If you are running your own DNS server, you might as well use it for all DNS lookups. This will require the ability to do *recursive* lookups. In order to prevent [DNS Amplification Attacks](https://www.us-cert.gov/ncas/alerts/TA13-088A), recursion is turned off by default for most resolvers. The default Arch `/etc/named.conf` file allows for recursion only on the loopback interface:
 
@@ -126,9 +128,7 @@ allow-recursion { 127.0.0.1; };
 
 ```
 
-So to facilitate general DNS lookups from your host, your [resolv.conf](/index.php/Resolv.conf "Resolv.conf") configuration file must have 127.0.0.1 as a name server. See [Resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") on how to keep this from being overwritten.
-
-If you want to provide name service for your local network; e.g. 192.168.0, you must add the appropriate range of IP addresses to `/etc/named.conf`:
+If you want to provide name service for your local network; e.g. 192.168.0.0/24, you must add the appropriate range of IP addresses to `/etc/named.conf`:
 
 ```
 allow-recursion { 192.168.0.0/24; 127.0.0.1; };

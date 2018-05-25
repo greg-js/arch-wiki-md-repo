@@ -103,10 +103,10 @@
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(17)</small> |
 | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
-| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(56)</small> |
+| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(55)</small> |
 | <small>5.1.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
 | <small>5.2.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
-| <small>5.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(16)</small> |
+| <small>5.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(18)</small> |
 | <small>5.4.</small> [Email](/index.php/Category:Email "Category:Email") <small>(1)</small> |
 | <small>5.4.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>5.4.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
@@ -116,13 +116,13 @@
 | <small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.8.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(1)</small> |
 | <small>5.9.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(9)</small> |
-| <small>5.9.1.</small> [Network managers](/index.php/Category:Network_managers "Category:Network managers") <small>(6)</small> |
+| <small>5.9.1.</small> [Network managers](/index.php/Category:Network_managers "Category:Network managers") <small>(7)</small> |
 | <small>5.10.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small> |
 | <small>5.11.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(12)</small> |
 | <small>5.12.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4)</small> |
 | <small>5.13.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(6) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.14.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.15.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(0)</small> |
+| <small>5.15.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(1)</small> |
 | <small>5.15.1.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
 | <small>5.15.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
 | <small>5.15.3.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(18) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |

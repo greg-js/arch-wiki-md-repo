@@ -13,10 +13,12 @@ Related articles
         *   [1.3.1 R_ENVIRON](#R_ENVIRON)
         *   [1.3.2 R_PROFILE](#R_PROFILE)
 *   [2 Installing R packages](#Installing_R_packages)
-    *   [2.1 Upgrading R packages](#Upgrading_R_packages)
-        *   [2.1.1 Within a R session](#Within_a_R_session)
-        *   [2.1.2 Within a shell](#Within_a_shell)
-        *   [2.1.3 Automatically after R upgrades](#Automatically_after_R_upgrades)
+    *   [2.1 With pacman](#With_pacman)
+    *   [2.2 With R](#With_R)
+    *   [2.3 Upgrading R packages](#Upgrading_R_packages)
+        *   [2.3.1 Within a R session](#Within_a_R_session)
+        *   [2.3.2 Within a shell](#Within_a_shell)
+        *   [2.3.3 Automatically after R upgrades](#Automatically_after_R_upgrades)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 .Renviron](#.Renviron)
     *   [3.2 Rprofile](#Rprofile)
@@ -102,11 +104,21 @@ The name of the user file can be specified by the `R_ENVIRON_USER` environment v
 
 #### R_PROFILE
 
-Then `R` searches for the **site-wilde** `Rprofile.site` defined by the `R_PROFILE` environment variable. This file does not exist after a fresh installation. Finally, `R` seraches for **user** `R_PROFILE_USER`. if unset, a file called `.Rprofile` is searched for in the current directory, returned by the `R` command `> getwd()` or in the user's home directory. This is the place to put all your custom `R` code.
+Then `R` searches for the **site-wilde** `Rprofile.site` defined by the `R_PROFILE` environment variable. This file does not exist after a fresh installation. Finally, `R` searches for **user** `R_PROFILE_USER`. If unset, a file called `.Rprofile` is searched for in the current directory, returned by the `R` command `> getwd()` or in the user's home directory. This is the place to put all your custom `R` code.
 
 ## Installing R packages
 
-There are many add-on `R` packages, which can be browsed on [The R Website.](http://cran.r-project.org/web/packages/available_packages_by_date.html). They can be installed from within `R` using the `**install.packages(c("pkgname"))**` command. `R` can install its packages locally as **per user** local settings or **system wide**.
+There are many add-on `R` packages, which can be browsed on [The R Website.](http://cran.r-project.org/web/packages/available_packages_by_date.html).
+
+**Note:** Some R packages link to files provided by system packages. These packages will need to be reinstalled when these files are updateed.
+
+### With pacman
+
+There are some packages available on the [AUR](/index.php/AUR "AUR") with the prefix `r-` or `r-cran`.
+
+### With R
+
+Packages can be installed from within `R` using the `**install.packages(c("pkgname"))**` command. `R` can install its packages locally as **per user** local settings or **system wide**.
 
 **Note:**
 

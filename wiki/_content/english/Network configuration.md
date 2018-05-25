@@ -24,50 +24,50 @@ This article explains how to configure a network connection.
     *   [3.4 Routing table](#Routing_table)
     *   [3.5 DHCP](#DHCP)
     *   [3.6 Network managers](#Network_managers)
-*   [4 Resolving domain names](#Resolving_domain_names)
-*   [5 Set the hostname](#Set_the_hostname)
-    *   [5.1 Local network hostname resolution](#Local_network_hostname_resolution)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Change interface name](#Change_interface_name)
-    *   [6.2 Revert to traditional interface names](#Revert_to_traditional_interface_names)
-    *   [6.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
-    *   [6.4 ifplugd for laptops](#ifplugd_for_laptops)
-    *   [6.5 Bonding or LAG](#Bonding_or_LAG)
-    *   [6.6 IP address aliasing](#IP_address_aliasing)
-        *   [6.6.1 Example](#Example)
-    *   [6.7 Promiscuous mode](#Promiscuous_mode)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
-    *   [7.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
-        *   [7.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
-        *   [7.2.2 Ways of fixing it](#Ways_of_fixing_it)
-            *   [7.2.2.1 Bad](#Bad)
-            *   [7.2.2.2 Good](#Good)
-            *   [7.2.2.3 Best](#Best)
-        *   [7.2.3 More about it](#More_about_it)
-    *   [7.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
-        *   [7.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
-        *   [7.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
-        *   [7.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
-        *   [7.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [7.3.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
-    *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [7.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
-*   [8 See also](#See_also)
+*   [4 Set the hostname](#Set_the_hostname)
+    *   [4.1 Local hostname resolution](#Local_hostname_resolution)
+    *   [4.2 Local network hostname resolution](#Local_network_hostname_resolution)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Change interface name](#Change_interface_name)
+    *   [5.2 Revert to traditional interface names](#Revert_to_traditional_interface_names)
+    *   [5.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
+    *   [5.4 ifplugd for laptops](#ifplugd_for_laptops)
+    *   [5.5 Bonding or LAG](#Bonding_or_LAG)
+    *   [5.6 IP address aliasing](#IP_address_aliasing)
+        *   [5.6.1 Example](#Example)
+    *   [5.7 Promiscuous mode](#Promiscuous_mode)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
+    *   [6.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
+        *   [6.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
+        *   [6.2.2 Ways of fixing it](#Ways_of_fixing_it)
+            *   [6.2.2.1 Bad](#Bad)
+            *   [6.2.2.2 Good](#Good)
+            *   [6.2.2.3 Best](#Best)
+        *   [6.2.3 More about it](#More_about_it)
+    *   [6.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
+        *   [6.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
+        *   [6.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
+        *   [6.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
+        *   [6.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
+        *   [6.3.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [6.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+*   [7 See also](#See_also)
 
 ## Check the connection
 
 To troubleshoot a network connection, go through the following conditions and ensure that you meet them:
 
-1.  Your [#network interface](#Network_interfaces) is listed and enabled.
+1.  Your [network interface](#Network_interfaces) is listed and enabled.
 2.  You are connected to the network. The cable is plugged in or you are [connected to the wireless LAN](/index.php/Wireless_network_configuration "Wireless network configuration").
-3.  Your network interface has an [#IP address](#IP_addresses)
-4.  Your [#routing table](#Routing_table) is correctly set up.
-5.  You can [#ping](#Ping) a local IP address (e.g. your default gateway).
-6.  You can [#ping](#Ping) a public IP address (e.g. `8.8.8.8`), if you can't it may be related to your default gateway or your internet service provider.
-7.  You can resolve domain names (e.g. `archlinux.org`), see [#Resolving domain names](#Resolving_domain_names).
+3.  Your network interface has an [IP address](#IP_addresses)
+4.  Your [routing table](#Routing_table) is correctly set up.
+5.  You can [ping](#Ping) a local IP address (e.g. your default gateway).
+6.  You can [ping](#Ping) a public IP address (e.g. `8.8.8.8`), if you can't it may be related to your default gateway or your internet service provider.
+7.  [Check if you can resolve domain names](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names") (e.g. `archlinux.org`).
 
 **Note:** `8.8.8.8` is a static address that is easy to remember. It is the address of Google's primary DNS server, therefore it can be considered reliable, and is generally not blocked by content filtering systems and proxies.
 
@@ -126,15 +126,15 @@ If udev is not detecting and loading the proper module automatically during boot
 
 To set up a network connection, go through the following steps:
 
-1.  Ensure your [#network interface](#Network_interfaces) is listed and enabled.
+1.  Ensure your [network interface](#Network_interfaces) is listed and enabled.
 2.  Connect to the network. Plug in the Ethernet cable or [connect to the wireless LAN](/index.php/Wireless_network_configuration "Wireless network configuration").
 3.  Configure your network connection:
-    *   [#static IP address](#Static_IP_address)
-    *   dynamic IP address: use [#DHCP](#DHCP)
+    *   [static IP address](#Static_IP_address)
+    *   dynamic IP address: use [DHCP](#DHCP)
 
 **Tip:** [#Network managers](#Network_managers) provide automatic network connection and configuration based on network profiles.
 
-The [iproute2](https://www.archlinux.org/packages/?name=iproute2) package provides the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) command-line utility, used to manage [#Network interfaces](#Network_interfaces), [#IP addresses](#IP_addresses) and the [#Routing table](#Routing_table). Be aware that configuration made using `ip` will be lost after a reboot. You can automate ip commands using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd"). Also note that `ip` commands can generally be abbreviated, for clarity they are however spelled out in this article.
+The [iproute2](https://www.archlinux.org/packages/?name=iproute2) package provides the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) command-line utility, used to manage [network interfaces](#Network_interfaces), [IP addresses](#IP_addresses) and the [routing table](#Routing_table). Be aware that configuration made using `ip` will be lost after a reboot. You can automate *ip* commands using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd"). Also note that `ip` commands can generally be abbreviated, for clarity they are however spelled out in this article.
 
 ### Network interfaces
 
@@ -148,7 +148,7 @@ Both wired and wireless interface names can be found via `ls /sys/class/net` or 
 
 Wireless device names can also be retrieved using `iw dev`. See also [Wireless network configuration#Get the name of the interface](/index.php/Wireless_network_configuration#Get_the_name_of_the_interface "Wireless network configuration").
 
-If your network interface is not listed, make sure your [#Device driver](#Device_driver) was loaded successfully.
+If your network interface is not listed, make sure your [device driver](#Device_driver) was loaded successfully.
 
 #### Enabling and disabling network interfaces
 
@@ -169,9 +169,9 @@ The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface 
 
 ### Static IP address
 
-A static IP address can be configured with most standard [#network managers](#Network_managers) and also [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
+A static IP address can be configured with most standard [network managers](#Network_managers) and also [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
 
-To manually configure a static IP address, add an IP address as described in [#IP addresses](#IP_addresses), set up your [#Routing table](#Routing_table) and [configure your DNS servers](/index.php/Resolv.conf "Resolv.conf").
+To manually configure a static IP address, add an IP address as described in [#IP addresses](#IP_addresses), set up your [routing table](#Routing_table) and [configure your DNS servers](/index.php/Domain_name_resolution "Domain name resolution").
 
 ### IP addresses
 
@@ -245,7 +245,7 @@ Delete a route:
 
 ### DHCP
 
-A [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") server provides clients with a dynamic IP address, the subnet mask, the default gateway IP address and optionally also with DNS name servers.
+A [Dynamic Host Configuration Protocol](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") (DHCP) server provides clients with a dynamic IP address, the subnet mask, the default gateway IP address and optionally also with DNS name servers.
 
 **Note:** You should not run two DHCP clients simultaneously.
 
@@ -253,10 +253,11 @@ To use DHCP you need a DHCP server in your network and a DHCP client:
 
 | Client | Package | [Archiso](/index.php/Archiso "Archiso") | Note | Systemd units |
 | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) | Yes | DHCP, DHCPv6, ZeroConf, static IP | `dhcpcd.service`, `dhcpcd@*interface*.service` |
-| [ISC DHCP](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Yes | DHCP, BOOTP, static IP | `dhclient@*interface*.service` |
-| [pump](https://packages.debian.org/wheezy/pump) | [pump](https://aur.archlinux.org/packages/pump/) | No | DHCP, BOOTP |  ? |
+| [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Yes | DHCP, BOOTP, static IP | `dhclient@*interface*.service` |
 
-Note that instead of directly using a DHCP client you can also use a [#network manager](#Network_managers).
+Note that instead of directly using a DHCP client you can also use a [network manager](#Network_managers).
+
+**Tip:** You can check if a DHCP server is running with [dhcping](https://www.archlinux.org/packages/?name=dhcping).
 
 ### Network managers
 
@@ -275,19 +276,6 @@ connections | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.ar
 | [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | No | Yes | No | No | No | any (just runs command) |
 
 See also [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
-
-## Resolving domain names
-
-To resolve a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia:Domain name") using your system configuration, run:
-
-```
-$ getent hosts *domain_name*
-
-```
-
-For more fine-grained DNS queries use a dedicated DNS lookup utility, like [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1) (provided by [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)) or [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1) (provided by [ldns](https://www.archlinux.org/packages/?name=ldns)).
-
-If you cannot resolve domain names but you are connected to the internet, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and check the `hosts` line in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
 
 ## Set the hostname
 
@@ -317,22 +305,11 @@ To temporarily set the hostname (until reboot), use [hostname(1)](https://jlk.fj
 
 To set the "pretty" hostname and other machine metadata, see [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
-### Local network hostname resolution
+### Local hostname resolution
 
-The pre-requisite is to [#Set the hostname](#Set_the_hostname), after which hostname resolution works on the local system itself:
+The `myhostname` [Name Service Switch](/index.php/Name_Service_Switch "Name Service Switch") (NSS) module of [systemd](/index.php/Systemd "Systemd") provides local hostname resolution without having to edit `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). It is enabled by default.
 
- `$ ping *myhostname*` 
-```
-PING *myhostname* (192.168.1.2) 56(84) bytes of data.
-64 bytes from *myhostname* (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
-```
-
-To allow other machines to address the host by name, it is necessary to either:
-
-*   Configure the [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) file, or
-*   Enable a service which resolves the hostname.
-
-**Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module, enabled by default in `/etc/nsswitch.conf`. However, clients may still rely on `/etc/hosts`, see [[3]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
+Some clients may however still rely on `/etc/hosts`, see [[3]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
 
 To configure the hosts file, add the following line to `/etc/hosts`:
 
@@ -354,10 +331,15 @@ As a result the system resolves to both entries:
 
 For a system with a permanent IP address, that permanent IP address should be used instead of `127.0.1.1`.
 
-**Note:** Another option is to set up a full DNS server such as [BIND](/index.php/BIND "BIND") or [Unbound](/index.php/Unbound "Unbound"), but that is overkill and too complex for most systems. For small networks and dynamic flexibility with hosts joining and leaving the network [zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") services may be more applicable:
+### Local network hostname resolution
 
-*   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmbd.service` service. Computers running Windows, macOS, or Linux with `nmbd` running, will be able to find your machine.
-*   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly more complex configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running macOS, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have an built-in Avahi client or daemon.
+To make your machine accessible in your LAN via its hostname you can:
+
+*   edit the `/etc/hosts` file for every device in your LAN, see [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
+*   set up a [DNS server](/index.php/DNS_server "DNS server") to resolve your hostname and make the LAN devices use it (e.g. via [#DHCP](#DHCP))
+*   or the easy way: use a [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") service:
+    *   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmbd.service` service. Computers running Windows, macOS, or Linux with `nmbd` running, will be able to find your machine.
+    *   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly more complex configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running macOS, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have a built-in Avahi client or daemon.
 
 ## Tips and tricks
 
@@ -641,6 +623,7 @@ When configuring the boot process for your installation, add `iommu=soft` as a [
 
 ## See also
 
+*   [Linux Network Administrators Guide](https://www.tldp.org/LDP/nag2/index.html)
 *   [Debian Reference: Network setup](https://www.debian.org/doc/manuals/debian-reference/ch05.en.html)
 *   [RHEL7: Networking Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/)
 *   [Linux Home Networking](http://www.linuxhomenetworking.com/wiki/)

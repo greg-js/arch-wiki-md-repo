@@ -13,19 +13,19 @@ Daha ayrıntılı talimatlar için, bu kılavuzdan sırasıyla [ArchWiki](/index
     *   [1.6 Bölümleri biçimlendir](#B.C3.B6l.C3.BCmleri_bi.C3.A7imlendir)
     *   [1.7 Dosya sistemerini bağla](#Dosya_sistemerini_ba.C4.9Fla)
 *   [2 Kurulum](#Kurulum)
-    *   [2.1 Mirror'ları seç](#Mirror.27lar.C4.B1_se.C3.A7)
+    *   [2.1 Yansı'ları seç](#Yans.C4.B1.27lar.C4.B1_se.C3.A7)
     *   [2.2 Temel paketleri kurun](#Temel_paketleri_kurun)
 *   [3 Sistemi yapılandır](#Sistemi_yap.C4.B1land.C4.B1r)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Zaman dilimi](#Zaman_dilimi)
-    *   [3.4 Locale](#Locale)
+    *   [3.4 Yerelleştirme](#Yerelle.C5.9Ftirme)
     *   [3.5 Hostname](#Hostname)
-    *   [3.6 Network configuration](#Network_configuration)
+    *   [3.6 Ağ yapılandırma](#A.C4.9F_yap.C4.B1land.C4.B1rma)
     *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 Root password](#Root_password)
+    *   [3.8 Root parolası](#Root_parolas.C4.B1)
     *   [3.9 Boot loader](#Boot_loader)
-*   [4 Reboot](#Reboot)
+*   [4 Yeniden Başlat](#Yeniden_Ba.C5.9Flat)
 *   [5 Post-installation](#Post-installation)
 
 ## Kurulum Öncesi
@@ -138,11 +138,11 @@ Kalan bölümler için bağlama noktaları oluşturun ve buna göre bağlayın, 
 
 ## Kurulum
 
-### Mirror'ları seç
+### Yansı'ları seç
 
-Yüklenecek paketler `/etc/pacman.d/mirrorlist`'de tanımlanmış olan, [mirror sunucular](/index.php/Mirrors "Mirrors")ından indirilmeli. Canlı bir sistemde, bütün mirror'lar etkinleştirilir ve yükleme iso'su oluşturulduğunda, senkronizasyon durumuna ve hızına göre sıralanır.
+Yüklenecek paketler `/etc/pacman.d/mirrorlist`'de tanımlanmış olan, [yansı sunucular](/index.php/Mirrors "Mirrors")ından indirilmeli. Canlı bir sistemde, bütün yansı'lar etkinleştirilir ve yükleme iso'su oluşturulduğunda, senkronizasyon durumuna ve hızına göre sıralanır.
 
-Bir mirror listede ne kadar yüksek olursa, bir paket indirilirken daha fazla öncelik verilir. Dosyayı buna göre düzenlemek ve coğrafi olarak en yakın mirror'ları listenin en üstüne taşımak isteyebilirsiniz, ancak diğer kriterler dikkate alınmalıdır.
+Bir yansı listede ne kadar yüksek olursa, bir paket indirilirken daha fazla öncelik verilir. Dosyayı buna göre düzenlemek ve coğrafi olarak en yakın yansı'ları listenin en üstüne taşımak isteyebilirsiniz, ancak diğer kriterler dikkate alınmalıdır.
 
 Bu dosya *pacstrap* tarafından yeni sisteme kopyalanacak, yani hata yapmamaya değer.
 
@@ -199,7 +199,7 @@ Yeni sistemdeki [root'u değiştir](/index.php/Change_root "Change root"):
 
 Bu komut sistem donanımının [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC") biçiminde olduğunu varsayar. Detaylar için [Zaman#Zaman standartları](/index.php/Time#Time_standard "Time") bölümüne bakınız.
 
-### Locale
+### Yerelleştirme
 
 Uncomment `en_US.UTF-8 UTF-8` and other needed [localizations](/index.php/Localization "Localization") in `/etc/locale.gen`, and generate them with:
 
@@ -218,7 +218,7 @@ If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes per
 
 ### Hostname
 
-Create the [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) file:
+[hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) dosyası oluştur:
 
  `/etc/hostname` 
 ```
@@ -236,11 +236,11 @@ Consider adding a matching entry to [hosts(5)](https://jlk.fjfi.cvut.cz/arch/man
 
 ```
 
-See also [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
+Ayrıca bakınız [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
 
-### Network configuration
+### Ağ yapılandırma
 
-The newly installed environment has no network connection activated by default. See [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
+Yeni kurulan ortamda varsayılan olarak ağ bağlantısı yok. Bakınız [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
 
 For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Optionally install [dialog](https://www.archlinux.org/packages/?name=dialog) for usage of *wifi-menu*.
 
@@ -255,9 +255,9 @@ For special configurations, modify the [mkinitcpio.conf(5)](https://jlk.fjfi.cvu
 
 ```
 
-### Root password
+### Root parolası
 
-Set the root [password](/index.php/Password "Password"):
+Root [parolası](/index.php/Password "Password") ayarlama:
 
 ```
 # passwd
@@ -270,7 +270,7 @@ A Linux-capable boot loader must be installed in order to boot Arch Linux. See [
 
 If you have an Intel CPU, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package in addition, and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 
-## Reboot
+## Yeniden Başlat
 
 Exit the chroot environment by typing `exit` or pressing `Ctrl+D`.
 

@@ -337,7 +337,7 @@ Using bitmapped XLFD fonts with CJK has many pitfalls in xterm. It is much easie
 
 ```
 XTerm.vt100.faceName: DejaVu Sans Mono:style=Book:antialias=false
-XTerm.vt100.faceNameDoublesize: WenQuanYi WenQuanYi Bitmap Song
+XTerm.vt100.faceNameDoublesize: WenQuanYi Bitmap Song
 XTerm.vt100.faceSize: 8
 
 ```

@@ -31,6 +31,7 @@ Related articles
             *   [4.6.1.1 Execute commands on established connection](#Execute_commands_on_established_connection)
             *   [4.6.1.2 Set default DHCP client](#Set_default_DHCP_client)
     *   [4.7 Minimal WPAConfigSection](#Minimal_WPAConfigSection)
+    *   [4.8 resolv.conf](#resolv.conf)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
@@ -437,6 +438,10 @@ WPAConfigSection=(
 ```
 
 **Note:** If trying to connect to an SSID with non-ASCII characters (unicode, emoji, etc), you can specify the SSID as hex instead of as a string, e.g. `ssid=F09F90BA` for "🐺". When unsure on the hex encoding, run *wifi-menu* (be sure to remove the \ and x characters).
+
+### resolv.conf
+
+If you use `DNS*` options in your profile, *netctl* calls [resolvconf](/index.php/Resolvconf "Resolvconf") to overwrite [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
 ## Troubleshooting
 

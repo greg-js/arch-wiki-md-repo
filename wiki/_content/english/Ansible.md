@@ -12,6 +12,8 @@ From [www.ansible.com](https://www.ansible.com/how-ansible-works):
     *   [2.4 Playbook](#Playbook)
     *   [2.5 Vault](#Vault)
     *   [2.6 Package management](#Package_management)
+        *   [2.6.1 Official repositories](#Official_repositories)
+        *   [2.6.2 AUR](#AUR)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 User account creation](#User_account_creation)
     *   [3.2 Python binary location](#Python_binary_location)
@@ -129,7 +131,11 @@ other_not_secret: othervalue
 
 ### Package management
 
+#### Official repositories
+
 Ansible has a [pacman module](http://docs.ansible.com/ansible/latest/pacman_module.html) to handle installation, removal and system upgrades with [pacman](/index.php/Pacman "Pacman").
+
+#### AUR
 
 For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") *(AUR)*, an external module is required: **ansible-aur** — Ansible module to install packages from the AUR
 
@@ -141,7 +147,7 @@ While Ansible expects to ssh as root, AUR helpers do not allow executing operati
 ```
 - user: name=*aur_builder*
 
- - copy:
+- copy:
      path: /etc/sudoers.d/*aur_builder-allow-to-sudo-pacman*
      content: *aur_builder* ALL=(ALL) NOPASSWD: /usr/bin/pacman
      validate: /usr/sbin/visudo -cf %s

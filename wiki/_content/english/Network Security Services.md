@@ -76,7 +76,7 @@ $ certutil -d sql:$HOME/.pki/nssdb -D -n *certificate_nickname*
 
 ## See also
 
-*   [Network Security Services](http://www.mozilla.org/projects/security/pki/nss/) on mozilla.org.
-*   [Using the Certificate Database Tool](http://www.mozilla.org/projects/security/pki/nss/tools/certutil.html#1034193) on mozilla.org.
-*   [Certificate management](http://code.google.com/p/chromium/wiki/LinuxCertManagement) on Chromium help.
-*   [Managing Certificate Trust flags in NSS Database](http://blogs.oracle.com/meena/entry/notes_about_trust_flags) on Meena's blog.
+*   [Network Security Services - Mozilla](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS)
+*   [Using the Certificate Database Tool - Mozilla](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/tools/NSS_Tools_certutil#Using_the_Certificate_Database_Tool)
+*   [Linux Cert Management - Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_cert_management.md)
+*   [Managing Certificate Trust flags in NSS Database - Meena Vyas, Oracle](https://blogs.oracle.com/meena/about-trust-flags-of-certificates-in-nss-database-that-can-be-modified-by-certutil)

@@ -37,6 +37,8 @@ Nmap package comes with a GUI called `zenmap`, but this article will cover only 
 
 ## Usage
 
+See [nmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmap.1).
+
 ### Specifying the target
 
 **Tip:** To print every packet that Nmap sends and receives, use the `--packet-trace` option.

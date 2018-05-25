@@ -137,7 +137,7 @@ You can find more information on NAT in nftables in the [nftables Wiki](https://
 
 ### Assigning IP addresses to the client PC(s)
 
-If you are planning to regularly have several machines using the internet shared by this machine, then is a good idea to install a [DHCP server](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"), such as [dhcpd](/index.php/Dhcpd "Dhcpd") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Then configure a DHCP client (e.g. [dhcpcd](/index.php/Dhcpcd "Dhcpcd")) on every client PC.
+If you are planning to regularly have several machines using the internet shared by this machine, then is a good idea to install a [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") server, such as [dhcpd](/index.php/Dhcpd "Dhcpd") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Then configure a DHCP client (e.g. [dhcpcd](/index.php/Dhcpcd "Dhcpcd")) on every client PC.
 
 Incoming connections to UDP port 67 has to be allowed for DHCP server. It also necessary to allow incoming connections to UDP/TCP port 53 for DNS requests.
 

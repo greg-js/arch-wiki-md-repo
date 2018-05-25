@@ -44,12 +44,12 @@ Different environments exist to play games in Linux:
 *   Web – games running in a web browser
     *   HTML5 games use canvas and WebGL technologies and work in all modern browsers
     *   [Flash](/index.php/Flash "Flash")-based – you need to install the plugin to play.
-*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems, (Heed the copyright laws of your country!). Check the [list of emulators](/index.php/List_of_applications/Other#Emulators "List of applications/Other") for more details.
+*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems. Check the [list of emulators](/index.php/List_of_applications/Other#Emulators "List of applications/Other") for more details.
     *   [Wine](/index.php/Wine "Wine") – allows running of some Windows games, as well as a large amount of Windows software. Performance in Wine varies, the additional CPU overhead will cause slowdown in some games while in some cases games may run faster. Consult [Wine AppDB](http://appdb.winehq.org/) for game-specific compatibility information.
     *   [Crossover Games](http://www.codeweavers.com/) – members of the Codeweavers team are prime supporters of Wine. Using Crossover Games makes the installation & setting up of some games easier, more reliable & even possible, when compared to using other methods. Crossover is a paid commercial product, which also provides a [forum](http://www.codeweavers.com/support/forums/) where the developers are very much involved in the community.
     *   [DOSBox](/index.php/DOSBox "DOSBox") is a minimal virtual machine which runs a full DOS-compatible environment. It can be used to run classic DOS titles.
     *   [scummvm](https://www.archlinux.org/packages/?name=scummvm) is an all-in-one engine reimplementation of many classic point-and-click adventure games. A full list of compatible titles can be found on the [ScummVM website](http://scummvm.org).
-    *   Similar to ScummVM, engine reimplementations exist for specific titles, such as Doom.
+    *   Similar to ScummVM, engine reimplementations and ports exist for specific titles, such as Doom.
 *   Virtual machines can be used to install compatible operating systems (such as Windows). [VirtualBox](/index.php/VirtualBox "VirtualBox") has good 3D support. As an extension of this, if you have compatible hardware you can consider VGA passthrough to a Windows KVM guest, keyword is ["virtual function I/O" (VFIO)](https://www.kernel.org/doc/Documentation/vfio.txt), or [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF").
 
 ## Getting games
@@ -80,7 +80,7 @@ See also [Category:Emulation](/index.php/Category:Emulation "Category:Emulation"
 
 **Note:** For possibly more up to date selection of emulators, try checking the [AUR 'emulators' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&L=0&C=5&SeB=nd&SB=n&SO=a&PP=25)
 
-**Warning:** Owning a high-level emulator is not illegal, but distribution of any type of copyrighted ROMs and unauthorized emulation (without written permission of the copyright holder allowing the user to do so) are **illegal**. Consequently, Arch Linux does not distribute this copyrighted content, including game ROMs and ripped console BIOSs. You are fully responsible for whatever usage of the emulators obtained from the [official repositories](/index.php/Official_repositories "Official repositories") or the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you make, as well as any legal repercussion that result. Arch Linux bears no responsibility at all.
+**Warning:** Owning a high-level emulator is legal, but distribution of any type of copyrighted ROMs and unauthorized emulation (without written permission of the copyright holder allowing the user to do so) are **illegal**. Consequently, Arch Linux does not distribute this copyrighted content, including game ROMs and ripped console BIOSs. You are fully responsible for whatever usage of the emulators obtained from the [official repositories](/index.php/Official_repositories "Official repositories") or the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you make, as well as any legal repercussion that result. Arch Linux bears no responsibility at all.
 
 ### Consoles
 
@@ -112,7 +112,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
 
-*   activate OpenGL, set video resolution per custom to 1024x600 for streched full-screen or 800x600 for non-streched;
+*   activate OpenGL, set video resolution per custom to 1024×600 for streched full-screen or 800×600 for non-streched;
 *   use "Normal" renderer, I couldn't find a visible advantage with the other ones.
 
 	[http://www.gens.me/](http://www.gens.me/) || [gens](https://www.archlinux.org/packages/?name=gens)

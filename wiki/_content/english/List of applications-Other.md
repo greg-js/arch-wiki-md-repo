@@ -208,7 +208,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 *   **Todo.txt** — Small command-line To-do manager.
 
-	[http://ginatrapani.github.com/todo.txt-cli/](http://ginatrapani.github.com/todo.txt-cli/) || [todotxt](https://aur.archlinux.org/packages/todotxt/)
+	[https://github.com/todotxt/todo.txt-cli/](https://github.com/todotxt/todo.txt-cli/) || [todotxt](https://aur.archlinux.org/packages/todotxt/)
 
 *   **todoman** — Command-line To-do list manager (supports CalDAV)
 

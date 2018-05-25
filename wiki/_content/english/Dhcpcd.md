@@ -23,6 +23,7 @@ Related articles
     *   [5.1 Speed up DHCP by disabling ARP probing](#Speed_up_DHCP_by_disabling_ARP_probing)
     *   [5.2 Remove old DHCP lease](#Remove_old_DHCP_lease)
     *   [5.3 Different IPs when multi-booting](#Different_IPs_when_multi-booting)
+    *   [5.4 resolv.conf](#resolv.conf)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Client ID](#Client_ID)
     *   [6.2 Check DHCP problem by releasing IP first](#Check_DHCP_problem_by_releasing_IP_first)
@@ -211,6 +212,33 @@ registry key.
 On OS X it is directly accessible in `Network\adapter\dhcp preferences panel`.
 
 If you are using a [dnsmasq](/index.php/Dnsmasq "Dnsmasq") DHCP server, the different DUIDs can be used in appropriate `dhcp-host=` rules in its configuration.
+
+### resolv.conf
+
+*dhcpcd'* by default overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+
+This can be stopped by adding the following to the last section of `/etc/dhcpcd.conf`:
+
+```
+nohook resolv.conf
+
+```
+
+Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. *dhcpcd* will prepend this file to the beginning of `/etc/resolv.conf`.
+
+Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`, where `*dns-server-ip-addressses*` is a space separated list of DNS IP addresses.
+
+```
+static domain_name_servers=*dns-server-ip-addresses*
+
+```
+
+For example, to set it to Google's DNS servers:
+
+```
+static domain_name_servers=8.8.8.8 8.8.4.4
+
+```
 
 ## Troubleshooting
 

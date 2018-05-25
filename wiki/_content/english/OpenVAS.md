@@ -32,6 +32,8 @@ Update the plugins and vulnerability data:
 
 ```
 
+*Note*: If GSA complains that the scapdata database is missing, it may be necessary to use greenbone-scapdata-sync --refresh
+
 Start the scanner service:
 
 ```

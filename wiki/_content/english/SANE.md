@@ -90,7 +90,7 @@ Then you need to tell sane where the firmware is:
 *   Open the file `/etc/sane.d/*<backend-name>*.conf`.
 *   Make sure the firmware entry is uncommented and let the file-path point to where you put the firmware file for your scanner. Be sure that members of the group `scanner` can access the `/etc/sane.d/*<backend-name>*.conf` file.
 
-If the backend of your scanner is not part of the sane package (such as `hpaio.conf` which is part of [hplip](https://www.archlinux.org/packages/?name=hplip)), you need to uncomment the relevant entry in `/etc/sane.d/dll.conf`.
+If the backend of your scanner is not part of the sane package (such as `hpaio.conf` which is part of [hplip](https://www.archlinux.org/packages/?name=hplip)), you need to uncomment the relevant entry in `/etc/sane.d/dll.d` or in `/etc/sane.d/dll.conf`.
 
 ## Install a frontend
 

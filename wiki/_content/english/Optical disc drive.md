@@ -42,10 +42,12 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
     *   [2.1 CD](#CD)
     *   [2.2 DVD](#DVD)
 *   [3 Ripping](#Ripping)
-    *   [3.1 CD](#CD_2)
+    *   [3.1 Audio CD](#Audio_CD)
+        *   [3.1.1 Console](#Console)
+        *   [3.1.2 Graphical](#Graphical)
     *   [3.2 DVD-Video](#DVD-Video)
-        *   [3.2.1 Console](#Console)
-        *   [3.2.2 Graphical](#Graphical)
+        *   [3.2.1 Console](#Console_2)
+        *   [3.2.2 Graphical](#Graphical_2)
     *   [3.3 DVD-Audio](#DVD-Audio)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
@@ -581,10 +583,6 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://cdw.sourceforge.net/](http://cdw.sourceforge.net/) || [cdw](https://aur.archlinux.org/packages/cdw/)
 
-*   **[GnomeBaker](https://en.wikipedia.org/wiki/GnomeBaker "wikipedia:GnomeBaker")** — Full featured CD/DVD burning application for the GNOME desktop.
-
-	[http://gnomebaker.sourceforge.net/](http://gnomebaker.sourceforge.net/) || [gnomebaker](https://aur.archlinux.org/packages/gnomebaker/)
-
 *   **Graveman** — GTK-based CD/DVD burning application. It requires configuration to point to correct devices.
 
 	[http://graveman.tuxfamily.org/](http://graveman.tuxfamily.org/) || [graveman](https://aur.archlinux.org/packages/graveman/)
@@ -597,6 +595,10 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
+*   **SimpleBurn** — Minimalistic GTK+ application for burning and extracting CDs and DVDs.
+
+	[https://simpleburn.tuxfamily.org/](https://simpleburn.tuxfamily.org/) || [simpleburn](https://aur.archlinux.org/packages/simpleburn/)
+
 *   **[X-CD-Roast](https://en.wikipedia.org/wiki/X-CD-Roast "wikipedia:X-CD-Roast")** — Lightweight *cdrtools* front-end for CD and DVD writing.
 
 	[http://www.xcdroast.org/](http://www.xcdroast.org/) || [xcdroast](https://aur.archlinux.org/packages/xcdroast/)
@@ -607,7 +609,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 *   **xorriso-tcltk** — Graphical front-end to ISO and CD/DVD/BD burn tool xorriso
 
-	[https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif](https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif) || [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+	[https://www.gnu.org/software/xorriso/](https://www.gnu.org/software/xorriso/) || [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
 
 ## Playback
 
@@ -629,19 +631,47 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 [Ripping](https://en.wikipedia.org/wiki/Ripping "wikipedia:Ripping") is the process of copying audio or video content to a hard disk, typically from removable media or media streams.
 
-### CD
+### Audio CD
 
-*   **[Abcde](https://en.wikipedia.org/wiki/ABCDE "wikipedia:ABCDE")** — Comprehensive command-line tool for ripping audio CDs.
+#### Console
+
+*   **[abcde](https://en.wikipedia.org/wiki/ABCDE "wikipedia:ABCDE")** — Comprehensive command-line tool for ripping audio CDs.
 
 	[https://abcde.einval.com/](https://abcde.einval.com/) || [abcde](https://www.archlinux.org/packages/?name=abcde)
+
+*   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Compact Disc Digital Audio (CDDA) Digital Audio Extraction (DAE) tool.
+
+	[https://xiph.org/paranoia/index.html](https://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
+
+*   **ripright** — Minimal CD ripper modeled on autorip.
+
+	[http://www.mcternan.me.uk/ripright/](http://www.mcternan.me.uk/ripright/) || [ripright](https://aur.archlinux.org/packages/ripright/)
+
+*   **[ripit](https://en.wikipedia.org/wiki/ripit "wikipedia:ripit")** — Command-line ripper that supports MusicBrainz, freeddb and various codecs.
+
+	[http://www.ripit.pl/](http://www.ripit.pl/) || [ripit](https://aur.archlinux.org/packages/ripit/)
+
+*   **shnsplit** — Splits .wav and .flac files according to a CUE sheet and encodes the resulting pieces. A useful companion to ABCDE.
+
+	[http://www.etree.org/shnutils/shntool/](http://www.etree.org/shnutils/shntool/) || [shntool](https://www.archlinux.org/packages/?name=shntool)
+
+*   **whipper** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
+
+	[https://github.com/JoeLametta/whipper](https://github.com/JoeLametta/whipper) || [whipper](https://www.archlinux.org/packages/?name=whipper)
+
+#### Graphical
 
 *   **[Asunder](https://en.wikipedia.org/wiki/Asunder "wikipedia:Asunder")** — GTK+-based CD ripping program.
 
 	[http://littlesvr.ca/asunder/](http://littlesvr.ca/asunder/) || [asunder](https://www.archlinux.org/packages/?name=asunder)
 
-*   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Compact Disc Digital Audio (CDDA) Digital Audio Extraction (DAE) tool.
+*   **Audex** — Audio grabber tool for CD-ROM drives based on KDE.
 
-	[https://xiph.org/paranoia/index.html](https://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
+	[https://www.linux-apps.com/content/show.php?content=77125](https://www.linux-apps.com/content/show.php?content=77125) || [audex](https://www.archlinux.org/packages/?name=audex)
+
+*   **fre:ac** — Audio converter and CD ripper with support for various popular formats and encoders.
+
+	[https://freac.org/](https://freac.org/) || [freac](https://aur.archlinux.org/packages/freac/)
 
 *   **Goobox** — CD player and ripper for GNOME.
 
@@ -655,25 +685,17 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
+*   **KAudioCreator** — KDE program for ripping and encoding Audio-CDs.
+
+	[https://www.kde.org/applications/multimedia/kaudiocreator/](https://www.kde.org/applications/multimedia/kaudiocreator/) || [kaudiocreator](https://www.archlinux.org/packages/?name=kaudiocreator)
+
 *   **ripperX** — GTK+ program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
 
 	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://aur.archlinux.org/packages/ripperx/)
 
-*   **ripright** — Minimal CD ripper modeled on autorip.
-
-	[http://www.mcternan.me.uk/ripright/](http://www.mcternan.me.uk/ripright/) || [ripright](https://aur.archlinux.org/packages/ripright/)
-
-*   **ripit** — Command-line ripper that supports MusicBrainz, freeddb and various codecs.
-
-	[http://www.ripit.pl/ripit/news.php](http://www.ripit.pl/ripit/news.php) || [ripit](https://aur.archlinux.org/packages/ripit/)
-
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
 	[https://code.google.com/archive/p/rubyripper/](https://code.google.com/archive/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
-
-*   **shnsplit** — Splits .wav and .flac files according to a CUE sheet and encodes the resulting pieces. A useful companion to ABCDE.
-
-	[http://www.etree.org/shnutils/shntool/](http://www.etree.org/shnutils/shntool/) || [shntool](https://www.archlinux.org/packages/?name=shntool)
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — CD ripper for GNOME.
 
@@ -683,9 +705,9 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[https://www.linux-apps.com/content/show.php?content=29024](https://www.linux-apps.com/content/show.php?content=29024) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
 
-*   **whipper** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
+*   **XCFA** — Tool to extract the content of audio CDs and convert files to various formats.
 
-	[https://github.com/JoeLametta/whipper](https://github.com/JoeLametta/whipper) || [whipper](https://www.archlinux.org/packages/?name=whipper)
+	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)
 
 ### DVD-Video
 
@@ -733,6 +755,10 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 *   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
+
+*   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD/DVD burning and ripping application based on KDElibs.
+
+	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
 *   **OGMRip** — An application and a set of libraries for ripping and encoding DVD into AVI, OGM, MP4, or Matroska files using a wide variety of codecs. It relies on mplayer, mencoder, ogmtools, mkvtoolnix, mp4box, oggenc, lame, and faac to perform its tasks.
 

@@ -10,7 +10,8 @@
     *   [1.1 Network connection](#Network_connection)
         *   [1.1.1 Network managers](#Network_managers)
         *   [1.1.2 VPN clients](#VPN_clients)
-        *   [1.1.3 Anonymizing networks](#Anonymizing_networks)
+        *   [1.1.3 Proxy servers](#Proxy_servers)
+        *   [1.1.4 Anonymizing networks](#Anonymizing_networks)
     *   [1.2 Web browsers](#Web_browsers)
         *   [1.2.1 Console](#Console)
         *   [1.2.2 Graphical](#Graphical)
@@ -91,6 +92,10 @@
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
+*   **dhclient** — DHCP client from the Internet Systems Consortium.
+
+	[https://www.isc.org/downloads/dhcp/](https://www.isc.org/downloads/dhcp/) || [dhclient](https://www.archlinux.org/packages/?name=dhclient)
+
 *   **[dhcpcd](/index.php/Dhcpcd "Dhcpcd")** — RFC2131 compliant DHCP client daemon.
 
 	[https://roy.marples.name/projects/dhcpcd](https://roy.marples.name/projects/dhcpcd) || [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)
@@ -107,9 +112,9 @@
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
-*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with an ncurses interface, and a GTK interface [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) is available.
+*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK+ interfaces.
 
-	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
+	[https://launchpad.net/wicd](https://launchpad.net/wicd) || CLI: [wicd](https://www.archlinux.org/packages/?name=wicd), GTK+ [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
 
 *   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
 
@@ -151,27 +156,57 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
 
+#### Proxy servers
+
+*   **Dante** — SOCKS server and SOCKS client, implementing RFC 1928 and related standards.
+
+	[https://www.inet.no/dante/](https://www.inet.no/dante/) || [dante](https://www.archlinux.org/packages/?name=dante)
+
+*   **[Privoxy](/index.php/Privoxy "Privoxy")** — Non-caching web proxy with advanced filtering capabilities for enhancing privacy, modifying web page data and HTTP headers, controlling access, and removing ads and other obnoxious Internet junk.
+
+	[https://www.privoxy.org/](https://www.privoxy.org/) || [privoxy](https://www.archlinux.org/packages/?name=privoxy)
+
+*   **[Shadowsocks](/index.php/Shadowsocks "Shadowsocks")** — Secure socks5 proxy, designed to protect your Internet traffic.
+
+	[https://www.shadowsocks.org/en/index.html](https://www.shadowsocks.org/en/index.html) || Python: [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks), C: [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev), Qt: [shadowsocks-qt5](https://www.archlinux.org/packages/?name=shadowsocks-qt5)
+
+*   **[Squid](/index.php/Squid "Squid")** — Caching proxy for the Web supporting HTTP, HTTPS, FTP, and more.
+
+	[http://www.squid-cache.org/](http://www.squid-cache.org/) || [squid](https://www.archlinux.org/packages/?name=squid)
+
+*   **Tinyproxy** — Lightweight HTTP/HTTPS proxy daemon.
+
+	[https://tinyproxy.github.io/](https://tinyproxy.github.io/) || [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy)
+
+*   **[Varnish](/index.php/Varnish "Varnish")** — High-performance HTTP accelerator.
+
+	[https://varnish-cache.org/](https://varnish-cache.org/) || [varnish](https://www.archlinux.org/packages/?name=varnish)
+
+*   **Ziproxy** — Forwarding (non-caching) compressing HTTP proxy server.
+
+	[http://ziproxy.sourceforge.net/](http://ziproxy.sourceforge.net/) || [ziproxy](https://www.archlinux.org/packages/?name=ziproxy)
+
 #### Anonymizing networks
 
 *   **[Freenet](/index.php/Freenet "Freenet")** — An encrypted network without censorship.
 
-	[https://freenetproject.org](https://freenetproject.org) || [freenet](https://aur.archlinux.org/packages/freenet/)
+	[https://freenetproject.org/](https://freenetproject.org/) || [freenet](https://aur.archlinux.org/packages/freenet/)
 
-*   **[GNUnet](/index.php/GNUnet "GNUnet")** — A framework for secure peer-to-peer networking.
+*   **[GNUnet](/index.php/GNUnet "GNUnet")** — Framework for secure peer-to-peer networking.
 
-	[http://gnunet.org](http://gnunet.org) || [gnunet](https://www.archlinux.org/packages/?name=gnunet)
+	[https://gnunet.org/](https://gnunet.org/) || CLI: [gnunet](https://www.archlinux.org/packages/?name=gnunet), GUI: [gnunet-gtk](https://www.archlinux.org/packages/?name=gnunet-gtk)
 
-*   **[I2P](/index.php/I2P "I2P")** — A distributed anonymous network.
+*   **[I2P](/index.php/I2P "I2P")** — Distributed anonymous network.
 
-	[https://geti2p.net](https://geti2p.net) || [i2p](https://aur.archlinux.org/packages/i2p/)
+	[https://geti2p.net/](https://geti2p.net/) || [i2p](https://aur.archlinux.org/packages/i2p/)
 
-*   **[Lantern](/index.php/Lantern "Lantern")** — A free peer-to-peer internet censorship circumvention software.
+*   **[Lantern](/index.php/Lantern "Lantern")** — Peer-to-peer internet censorship circumvention software.
 
-	[https://getlantern.org/en_US/](https://getlantern.org/en_US/) || [lantern-bin](https://aur.archlinux.org/packages/lantern-bin/)
+	[https://getlantern.org/](https://getlantern.org/) || [lantern-bin](https://aur.archlinux.org/packages/lantern-bin/)
 
 *   **[Tor](/index.php/Tor "Tor")** — Anonymizing overlay network.
 
-	[http://www.torproject.org/](http://www.torproject.org/) || [tor](https://www.archlinux.org/packages/?name=tor)
+	[https://www.torproject.org/](https://www.torproject.org/) || [tor](https://www.archlinux.org/packages/?name=tor)
 
 ### Web browsers
 
@@ -693,7 +728,7 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
 
-Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Files") and [Thunar](/index.php/Thunar "Thunar") also provide FTP functionality.
+Some file managers like [Dolphin](/index.php/Dolphin "Dolphin"), [GNOME Files](/index.php/GNOME_Files "GNOME Files") and [Thunar](/index.php/Thunar "Thunar") also provide FTP functionality.
 
 #### File transfer servers
 
@@ -960,6 +995,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Mature and feature-rich email client. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
 	[https://www.kde.org/applications/internet/kmail/](https://www.kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
+
+*   **Kube** — Modern communication and collaboration client built with QtQuick.
+
+	[https://kube.kde.org/](https://kube.kde.org/) || [kube](https://www.archlinux.org/packages/?name=kube)
 
 *   **Mailnag** — Extensible mail notification daemon.
 
@@ -1390,6 +1429,10 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 *   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — Proprietary all-in-one voice and text chat application for gamers that’s free, secure, and works on both your desktop and phone. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://discordapp.com/](https://discordapp.com/) || [discord](https://aur.archlinux.org/packages/discord/)
+
+*   **Esmska** — Program for sending SMS over the Internet.
+
+	[https://github.com/kparal/esmska](https://github.com/kparal/esmska) || [esmska](https://www.archlinux.org/packages/?name=esmska)
 
 *   **Hangups** — Third-party instant messaging client for Google Hangouts.
 
@@ -1848,6 +1891,10 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 *   **[Remmina](/index.php/Remmina "Remmina")** — Remote desktop client written in GTK+. Supports RDP, VNC, NX, XDMCP and SSH.
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
+
+*   **Remote Viewer** — Simple remote display client. Supports SPICE and VNC.
+
+	[https://virt-manager.org/](https://virt-manager.org/) || [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
 
 *   **[TeamViewer](https://en.wikipedia.org/wiki/TeamViewer "wikipedia:TeamViewer")** — Proprietary remote desktop client. It uses its own proprietary protocol.
 

@@ -12,35 +12,36 @@
     *   [1.3 Document markup languages](#Document_markup_languages)
     *   [1.4 Spreadsheets](#Spreadsheets)
     *   [1.5 Database editors](#Database_editors)
-    *   [1.6 Scientific documents](#Scientific_documents)
-    *   [1.7 Translation and localization](#Translation_and_localization)
-    *   [1.8 Text editors](#Text_editors)
-        *   [1.8.1 Console](#Console)
-            *   [1.8.1.1 Vi text editors](#Vi_text_editors)
-        *   [1.8.2 Graphical](#Graphical)
-            *   [1.8.2.1 Collaborative text editors](#Collaborative_text_editors)
-    *   [1.9 Readers and Viewers](#Readers_and_Viewers)
-        *   [1.9.1 E-book applications](#E-book_applications)
-        *   [1.9.2 PDF and DjVu](#PDF_and_DjVu)
-            *   [1.9.2.1 Console](#Console_2)
-            *   [1.9.2.2 Graphical](#Graphical_2)
-        *   [1.9.3 Terminal pagers](#Terminal_pagers)
-        *   [1.9.4 CHM](#CHM)
-        *   [1.9.5 Comic book (comix/manga)](#Comic_book_.28comix.2Fmanga.29)
-    *   [1.10 Scanning software](#Scanning_software)
-    *   [1.11 OCR software](#OCR_software)
-        *   [1.11.1 Engines](#Engines)
-        *   [1.11.2 Layout analyzers and user interfaces](#Layout_analyzers_and_user_interfaces)
-    *   [1.12 Note taking organizers](#Note_taking_organizers)
-        *   [1.12.1 Console](#Console_3)
-        *   [1.12.2 Graphical](#Graphical_3)
-    *   [1.13 Mind-mapping tools](#Mind-mapping_tools)
-    *   [1.14 Character Selector](#Character_Selector)
-    *   [1.15 Stylus notes taking](#Stylus_notes_taking)
-    *   [1.16 Bibliographic reference managers](#Bibliographic_reference_managers)
-    *   [1.17 Barcode generators and readers](#Barcode_generators_and_readers)
-        *   [1.17.1 Console](#Console_4)
-        *   [1.17.2 Graphical](#Graphical_4)
+    *   [1.6 Typesetting systems](#Typesetting_systems)
+    *   [1.7 TeX software](#TeX_software)
+    *   [1.8 Bibliographic reference managers](#Bibliographic_reference_managers)
+    *   [1.9 Translation and localization](#Translation_and_localization)
+    *   [1.10 Text editors](#Text_editors)
+        *   [1.10.1 Console](#Console)
+            *   [1.10.1.1 Vi text editors](#Vi_text_editors)
+        *   [1.10.2 Graphical](#Graphical)
+            *   [1.10.2.1 Collaborative text editors](#Collaborative_text_editors)
+    *   [1.11 Readers and Viewers](#Readers_and_Viewers)
+        *   [1.11.1 E-book applications](#E-book_applications)
+        *   [1.11.2 PDF and DjVu](#PDF_and_DjVu)
+            *   [1.11.2.1 Console](#Console_2)
+            *   [1.11.2.2 Graphical](#Graphical_2)
+        *   [1.11.3 Terminal pagers](#Terminal_pagers)
+        *   [1.11.4 CHM](#CHM)
+        *   [1.11.5 Comic book (comix/manga)](#Comic_book_.28comix.2Fmanga.29)
+    *   [1.12 Scanning software](#Scanning_software)
+    *   [1.13 OCR software](#OCR_software)
+        *   [1.13.1 Engines](#Engines)
+        *   [1.13.2 Layout analyzers and user interfaces](#Layout_analyzers_and_user_interfaces)
+    *   [1.14 Note taking organizers](#Note_taking_organizers)
+        *   [1.14.1 Console](#Console_3)
+        *   [1.14.2 Graphical](#Graphical_3)
+    *   [1.15 Mind-mapping tools](#Mind-mapping_tools)
+    *   [1.16 Character selectors](#Character_selectors)
+    *   [1.17 Stylus notes taking](#Stylus_notes_taking)
+    *   [1.18 Barcode generators and readers](#Barcode_generators_and_readers)
+        *   [1.18.1 Console](#Console_4)
+        *   [1.18.2 Graphical](#Graphical_4)
 
 ## Documents and texts
 
@@ -172,7 +173,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 	[http://manns.github.io/pyspread/index.html](http://manns.github.io/pyspread/index.html) || [pyspread](https://aur.archlinux.org/packages/pyspread/)
 
-*   **[sc](/index.php?title=Sc&action=edit&redlink=1 "Sc (page does not exist)")** — curses-based lightweight spreadsheet.
+*   **sc** — curses-based lightweight spreadsheet.
 
 	[http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html](http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html) || [sc](https://www.archlinux.org/packages/?name=sc)
 
@@ -202,7 +203,25 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 	[https://giowck.github.io/symphytum/](https://giowck.github.io/symphytum/) || [symphytum](https://aur.archlinux.org/packages/symphytum/)
 
-### Scientific documents
+### Typesetting systems
+
+*   **GNU [troff](https://en.wikipedia.org/wiki/troff "wikipedia:troff")** — Heirloom Unix document processing system, the default formatter for man pages.
+
+	[https://www.gnu.org/software/groff/groff.html](https://www.gnu.org/software/groff/groff.html) || [groff](https://www.archlinux.org/packages/?name=groff)
+
+*   **[Lout](/index.php/Lout "Lout")** — A lightware document formatting system. Reads a high-level description of a document similar in style to LaTeX and produces a PostScript.
+
+	[http://savannah.nongnu.org/projects/lout](http://savannah.nongnu.org/projects/lout) || [lout](https://www.archlinux.org/packages/?name=lout)
+
+*   **SILE** — Modern typesetting system inspired by TeX.
+
+	[http://sile-typesetter.org/](http://sile-typesetter.org/) || [sile](https://aur.archlinux.org/packages/sile/)
+
+*   **[TeX](/index.php/TeX_Live "TeX Live")** — A high-quality typesetting system popular in academia.
+
+	[https://tug.org/](https://tug.org/) || [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)
+
+### TeX software
 
 With [TeX, LaTeX and friends](/index.php/TeX_Live "TeX Live"), creation of any scientific document, article, journal, etc. is made commonplace.
 
@@ -240,10 +259,6 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/](http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/) || [ktikz](https://aur.archlinux.org/packages/ktikz/)
 
-*   **[Lout](/index.php/Lout "Lout")** — A lightware document formatting system. Reads a high-level description of a document similar in style to LaTeX and produces a PostScript.
-
-	[http://savannah.nongnu.org/projects/lout](http://savannah.nongnu.org/projects/lout) || [lout](https://www.archlinux.org/packages/?name=lout)
-
 *   **[LyX](https://en.wikipedia.org/wiki/LyX "wikipedia:LyX")** — Document processor that encourages an approach to writing based on the structure of your documents (WYSIWYM) and not simply their appearance (WYSIWYG).
 
 	[http://www.lyx.org/](http://www.lyx.org/) || [lyx](https://www.archlinux.org/packages/?name=lyx)
@@ -268,7 +283,27 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://github.com/lervag/vimtex/](https://github.com/lervag/vimtex/) ||
 
-*   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
+*   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. Can import and export BibTeX and has browser extensions.
+
+	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
+
+### Bibliographic reference managers
+
+See also [Wikipedia:Comparison of reference management software](https://en.wikipedia.org/wiki/Comparison_of_reference_management_software "wikipedia:Comparison of reference management software").
+
+*   **Bibus** — A bibliographic database that can directly insert references in OpenOffice.org/LibreOffice and generate the bibliographic index.
+
+	[http://bibus-biblio.sourceforge.net](http://bibus-biblio.sourceforge.net) || [bibus](https://aur.archlinux.org/packages/bibus/)
+
+*   **DocEar** — Docear is an academic literature suite for searching, organizing and creating academic literature, built upon the mind mapping software Freeplane and the reference manager JabRef.
+
+	[https://www.docear.org](https://www.docear.org) || [docear](https://aur.archlinux.org/packages/docear/)
+
+*   **[JabRef](https://en.wikipedia.org/wiki/JabRef "wikipedia:JabRef")** — Java GUI frontend for managing BibTeX and other bibliographies.
+
+	[https://www.jabref.org/](https://www.jabref.org/) || [jabref](https://aur.archlinux.org/packages/jabref/) [jabref-git](https://aur.archlinux.org/packages/jabref-git/)
+
+*   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. Can import and export BibTeX and has browser extensions.
 
 	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
 
@@ -634,6 +669,10 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://github.com/mate-desktop/atril](https://github.com/mate-desktop/atril) || [atril](https://www.archlinux.org/packages/?name=atril)
 
+*   **DjView4** — Viewer for DjVu documents.
+
+	[http://djvu.sourceforge.net/djview4.html](http://djvu.sourceforge.net/djview4.html) || [djview](https://www.archlinux.org/packages/?name=djview)
+
 *   **ePDFView** — Free lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.
 
 	[http://freecode.com/projects/epdfview](http://freecode.com/projects/epdfview) || [epdfview](https://www.archlinux.org/packages/?name=epdfview)
@@ -706,7 +745,10 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager").
 
-*   [more](https://en.wikipedia.org/wiki/More_(command) — A simple and feature-light pager. It is a part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
+*   **[more](https://en.wikipedia.org/wiki/More_(command) "wikipedia:More (command)")** — A simple and feature-light pager. It is a part of util-linux.
+
+	[https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
 *   **[less](/index.php/Core_utilities#less "Core utilities")** — A program similar to more, but with support for both forward and backward scrolling, as well as partial loading of files.
 
 	[https://www.gnu.org/software/less/](https://www.gnu.org/software/less/) || [less](https://www.archlinux.org/packages/?name=less)
@@ -789,7 +831,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
-*   **OCRFeeder** — Python GUI for Gnome which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument.
+*   **[OCRFeeder](https://en.wikipedia.org/wiki/OCRFeeder "wikipedia:OCRFeeder")** — Python GUI for Gnome which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument.
 
 	[https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
@@ -915,7 +957,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://aur.archlinux.org/packages/xmind/)
 
-### Character Selector
+### Character selectors
 
 *   **GNOME Characters** — Character map application for GNOME
 
@@ -946,26 +988,6 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 *   **Xournal++** — A C++ rewrite of Xournal.
 
 	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
-
-### Bibliographic reference managers
-
-See also [Wikipedia:Comparison of reference management software](https://en.wikipedia.org/wiki/Comparison_of_reference_management_software "wikipedia:Comparison of reference management software").
-
-*   **Bibus** — A bibliographic database that can directly insert references in OpenOffice.org/LibreOffice and generate the bibliographic index.
-
-	[http://bibus-biblio.sourceforge.net](http://bibus-biblio.sourceforge.net) || [bibus](https://aur.archlinux.org/packages/bibus/)
-
-*   **DocEar** — Docear is an academic literature suite for searching, organizing and creating academic literature, built upon the mind mapping software Freeplane and the reference manager JabRef.
-
-	[https://www.docear.org](https://www.docear.org) || [docear](https://aur.archlinux.org/packages/docear/)
-
-*   **[JabRef](https://en.wikipedia.org/wiki/JabRef "wikipedia:JabRef")** — Java GUI frontend for managing BibTeX and other bibliographies.
-
-	[https://www.jabref.org/](https://www.jabref.org/) || [jabref](https://aur.archlinux.org/packages/jabref/) [jabref-git](https://aur.archlinux.org/packages/jabref-git/)
-
-*   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
-
-	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
 
 ### Barcode generators and readers
 

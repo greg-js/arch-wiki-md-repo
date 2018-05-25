@@ -126,7 +126,11 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://sourceforge.net/projects/mlterm/](https://sourceforge.net/projects/mlterm/) || [mlterm](https://aur.archlinux.org/packages/mlterm/)
 
-*   **QTerminal** — A lightweight Qt-based terminal emulator.
+*   **[PuTTY](/index.php/PuTTY "PuTTY")** — Highly configurable ssh/telnet/serial console program.
+
+	[https://www.chiark.greenend.org.uk/~sgtatham/putty/](https://www.chiark.greenend.org.uk/~sgtatham/putty/) || [putty](https://www.archlinux.org/packages/?name=putty)
+
+*   **QTerminal** — Lightweight Qt-based terminal emulator.
 
 	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
 
@@ -158,7 +162,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://invisible-island.net/xterm/](http://invisible-island.net/xterm/) || [xterm](https://www.archlinux.org/packages/?name=xterm)
 
-*   **[Yakuake](https://en.wikipedia.org/wiki/Yakuake "wikipedia:Yakuake")** — Drop-down terminal (Quake style) emulator based on Konsole.
+*   **[Yakuake](/index.php/Yakuake "Yakuake")** — Drop-down terminal (Quake style) emulator based on Konsole.
 
 	[https://yakuake.kde.org/](https://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
 
@@ -550,6 +554,10 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 	[https://www.freefilesync.org/](https://www.freefilesync.org/) || [freefilesync](https://aur.archlinux.org/packages/freefilesync/)
 
+*   **[git-annex](https://en.wikipedia.org/wiki/git-annex "wikipedia:git-annex")** — Manage files with git, without checking the file contents into git.
+
+	[https://git-annex.branchable.com/](https://git-annex.branchable.com/) || [git-annex](https://www.archlinux.org/packages/?name=git-annex)
+
 *   **rclone** — Command line program to sync files and directories to and from cloud storage services as well as between local paths.
 
 	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
@@ -560,7 +568,7 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 *   **[Syncthing](/index.php/Syncthing "Syncthing")** — Continuous file synchronization program. It synchronizes files between two or more computers in a simple way without advanced configuration.
 
-	[https://syncthing.net/](https://syncthing.net/) || [syncthing](https://www.archlinux.org/packages/?name=syncthing)
+	[https://syncthing.net/](https://syncthing.net/) || Web: [syncthing](https://www.archlinux.org/packages/?name=syncthing), GTK+: [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
 
 *   **[Synkron](https://en.wikipedia.org/wiki/Synkron "wikipedia:Synkron")** — Application that helps you keep your files and folders always updated. You can easily sync your documents, music or pictures to have their latest versions everywhere.
 

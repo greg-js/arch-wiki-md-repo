@@ -211,7 +211,7 @@ Three very elaborate threads contain the history of patches for the kernel for t
 
 #### AUR package with patched kernel
 
-AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies the patches proposed in the threads above to the standard arch kernel. Sources and references for each patch are in the PKGBUILD file.
+AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies the patches proposed in the threads above to the standard arch kernel. Sources and references for each patch are in the PKGBUILD file. The package also downloads efivars for the wifi firmware which enables 5 GHz wifi.
 
 Compiling the kernel with the provided config takes about one hour.
 

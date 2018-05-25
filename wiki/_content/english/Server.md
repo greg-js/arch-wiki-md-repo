@@ -42,13 +42,9 @@ If the server has a dynamic IP address but you still want to be able to reliably
 ## Services
 
 *   [SSH](/index.php/SSH "SSH")
-*   [Category:Web server](/index.php/Category:Web_server "Category:Web server")
-*   [Category:Mail server](/index.php/Category:Mail_server "Category:Mail server")
-*   [Category:FTP servers](/index.php/Category:FTP_servers "Category:FTP servers")
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
 *   [Category:WebDAV](/index.php/Category:WebDAV "Category:WebDAV")
 *   [Category:Streaming](/index.php/Category:Streaming "Category:Streaming")
-*   [Category:Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
 *   [Category:Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
 
 ## Local network services

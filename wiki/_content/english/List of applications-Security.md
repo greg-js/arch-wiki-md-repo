@@ -23,33 +23,79 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 #### Network security
 
+See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wiki/Comparison_of_packet_analyzers "wikipedia:Comparison of packet analyzers").
+
 *   **[Arpwatch](https://en.wikipedia.org/wiki/Arpwatch "wikipedia:Arpwatch")** — Tool that monitors ethernet activity and keeps a database of Ethernet/IP address pairings.
 
 	[http://ee.lbl.gov/](http://ee.lbl.gov/) || [arpwatch](https://www.archlinux.org/packages/?name=arpwatch)
+
+*   **bettercap** — Swiss army knife for network attacks and monitoring.
+
+	[https://www.bettercap.org/](https://www.bettercap.org/) || [bettercap](https://www.archlinux.org/packages/?name=bettercap)
 
 *   **Bro** — Powerful network analysis framework that is much different from the typical IDS you may know.
 
 	[https://www.bro.org/](https://www.bro.org/) || [bro-git](https://aur.archlinux.org/packages/bro-git/)
 
-*   **EtherApe** — Graphical network monitor for Unix modeled after etherman. Featuring link layer, IP and TCP modes, it displays network activity graphically. Hosts and links change in size with traffic. Color coded protocols display.
+*   **darkstat** — Captures network traffic, calculates statistics about usage, and serves reports over HTTP.
+
+	[https://unix4lyfe.org/darkstat/](https://unix4lyfe.org/darkstat/) || [darkstat](https://www.archlinux.org/packages/?name=darkstat)
+
+*   **[dsniff](https://en.wikipedia.org/wiki/dSniff "wikipedia:dSniff")** — Collection of tools for network auditing and penetration testing.
+
+	[https://www.monkey.org/~dugsong/dsniff/](https://www.monkey.org/~dugsong/dsniff/) || [dsniff](https://www.archlinux.org/packages/?name=dsniff)
+
+*   **[EtherApe](https://en.wikipedia.org/wiki/EtherApe "wikipedia:EtherApe")** — Graphical network monitor for Unix modeled after etherman. Featuring link layer, IP and TCP modes, it displays network activity graphically. Hosts and links change in size with traffic. Color coded protocols display.
 
 	[http://etherape.sourceforge.net/](http://etherape.sourceforge.net/) || [etherape](https://www.archlinux.org/packages/?name=etherape)
+
+*   **[Ettercap](https://en.wikipedia.org/wiki/Ettercap_(software) "wikipedia:Ettercap (software)")** — Multipurpose Network sniffer/analyser/interceptor/logger.
+
+	[https://ettercap.github.io/ettercap/](https://ettercap.github.io/ettercap/) || CLI: [ettercap](https://www.archlinux.org/packages/?name=ettercap), GUI: [ettercap-gtk](https://www.archlinux.org/packages/?name=ettercap-gtk)
 
 *   **[Honeyd](/index.php/Honeyd "Honeyd")** — Tool that allows the user to set up and run multiple virtual hosts on a computer network.
 
 	[http://www.honeyd.org/](http://www.honeyd.org/) || [honeyd](https://aur.archlinux.org/packages/honeyd/)
 
+*   **hping** — Command-line oriented TCP/IP packet assembler/analyzer.
+
+	[http://hping.org/](http://hping.org/) || [hping](https://www.archlinux.org/packages/?name=hping)
+
 *   **IPTraf** — Console-based network monitoring utility.
 
 	[https://sourceforge.net/projects/iptraf-ng/](https://sourceforge.net/projects/iptraf-ng/) || [iptraf-ng](https://www.archlinux.org/packages/?name=iptraf-ng)
+
+*   **jnettop** — top-like console network traffic visualizer.
+
+	[https://sourceforge.net/projects/jnettop/](https://sourceforge.net/projects/jnettop/) || [jnettop](https://www.archlinux.org/packages/?name=jnettop)
+
+*   **[justniffer](https://en.wikipedia.org/wiki/justniffer "wikipedia:justniffer")** — Network protocol analyzer that captures network traffic and produces logs in a customized way, can emulate Apache web server log files, track response times and extract all "intercepted" files from the HTTP traffic.
+
+	[http://justniffer.sourceforge.net/](http://justniffer.sourceforge.net/) || [justniffer](https://aur.archlinux.org/packages/justniffer/)
 
 *   **Kismet** — 802.11 layer2 wireless network detector, sniffer, and intrusion detection system.
 
 	[https://www.kismetwireless.net/](https://www.kismetwireless.net/) || [kismet](https://www.archlinux.org/packages/?name=kismet)
 
+*   **LinSSID** — Graphical wireless scanner.
+
+	[https://sourceforge.net/projects/linssid/](https://sourceforge.net/projects/linssid/) || [linssid](https://www.archlinux.org/packages/?name=linssid)
+
 *   **Nemesis** — Command-line network packet crafting and injection utility.
 
 	[http://nemesis.sourceforge.net/](http://nemesis.sourceforge.net/) || [nemesis](https://aur.archlinux.org/packages/nemesis/)
+
+*   **Net Activity Viewer** — Graphical network connections viewer, similar in functionality with Netstat.
+
+	[http://netactview.sourceforge.net/](http://netactview.sourceforge.net/) || [netactview](https://www.archlinux.org/packages/?name=netactview)
+
+*   **[netsniff-ng](https://en.wikipedia.org/wiki/netsniff-ng "wikipedia:netsniff-ng")** — High performance Linux network sniffer for packet inspection.
+
+	[http://netsniff-ng.org/](http://netsniff-ng.org/) || [netsniff-ng](https://aur.archlinux.org/packages/netsniff-ng/)
+
+*   **[ngrep](https://en.wikipedia.org/wiki/ngrep "wikipedia:ngrep")** — grep-like utility that allows you to search for network packets on an interface.
+
+	[https://github.com/jpr5/ngrep](https://github.com/jpr5/ngrep) || [ngrep](https://www.archlinux.org/packages/?name=ngrep)
 
 *   **[Nmap](/index.php/Nmap "Nmap")** — Security scanner used to discover hosts and services on a computer network, thus creating a "map" of the network.
 
@@ -79,13 +125,21 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://www.tcpdump.org/](http://www.tcpdump.org/) || [tcpdump](https://www.archlinux.org/packages/?name=tcpdump)
 
+*   **[tcptrace](https://en.wikipedia.org/wiki/tcptrace "wikipedia:tcptrace")** — TCP dump file analysis tool.
+
+	[http://tcptrace.org/](http://tcptrace.org/) || [tcptrace](https://www.archlinux.org/packages/?name=tcptrace)
+
 *   **[vnStat](/index.php/VnStat "VnStat")** — Console-based network traffic monitor that keeps a log of network traffic for the selected interfaces.
 
 	[http://humdi.net/vnstat/](http://humdi.net/vnstat/) || [vnstat](https://www.archlinux.org/packages/?name=vnstat)
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.
 
-	[https://www.wireshark.org/](https://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
+	[https://www.wireshark.org/](https://www.wireshark.org/) || CLI: [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli), GTK+: [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk), Qt: [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt)
+
+*   **[Xplico](https://en.wikipedia.org/wiki/Xplico "wikipedia:Xplico")** — Network forensics analysis tool (NFAT), which is a software that reconstructs the contents of acquisitions performed with a packet sniffer.
+
+	[https://www.xplico.org/](https://www.xplico.org/) || [xplico](https://aur.archlinux.org/packages/xplico/)
 
 #### Threat and vulnerability detection
 

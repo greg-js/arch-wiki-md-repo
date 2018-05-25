@@ -17,10 +17,11 @@
         *   [1.2.4 Raster graphics editors](#Raster_graphics_editors)
         *   [1.2.5 Photo editors](#Photo_editors)
         *   [1.2.6 Vector graphics editors](#Vector_graphics_editors)
-        *   [1.2.7 3D computer graphics](#3D_computer_graphics)
-        *   [1.2.8 Color pickers](#Color_pickers)
-        *   [1.2.9 Screenshot](#Screenshot)
-        *   [1.2.10 Digital camera managers](#Digital_camera_managers)
+        *   [1.2.7 Font editors](#Font_editors)
+        *   [1.2.8 3D computer graphics](#3D_computer_graphics)
+        *   [1.2.9 Color pickers](#Color_pickers)
+        *   [1.2.10 Screenshot](#Screenshot)
+        *   [1.2.11 Digital camera managers](#Digital_camera_managers)
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
@@ -30,14 +31,16 @@
                 *   [1.3.2.2.2 Phonon-based](#Phonon-based)
                 *   [1.3.2.2.3 Qt Multimedia-based](#Qt_Multimedia-based)
                 *   [1.3.2.2.4 Other](#Other)
-        *   [1.3.3 Sound editing](#Sound_editing)
-        *   [1.3.4 Visualization](#Visualization)
-        *   [1.3.5 Audio tag editors](#Audio_tag_editors)
-            *   [1.3.5.1 Console](#Console_3)
-            *   [1.3.5.2 Graphical](#Graphical_3)
-        *   [1.3.6 Lyrics](#Lyrics)
-        *   [1.3.7 Volume control](#Volume_control)
-        *   [1.3.8 CD ripping](#CD_ripping)
+        *   [1.3.3 Audio converters](#Audio_converters)
+        *   [1.3.4 Audio editors](#Audio_editors)
+        *   [1.3.5 Scorewriters](#Scorewriters)
+        *   [1.3.6 Visualization](#Visualization)
+        *   [1.3.7 Audio tag editors](#Audio_tag_editors)
+            *   [1.3.7.1 Console](#Console_3)
+            *   [1.3.7.2 Graphical](#Graphical_3)
+        *   [1.3.8 Lyrics](#Lyrics)
+        *   [1.3.9 Volume control](#Volume_control)
+        *   [1.3.10 CD ripping](#CD_ripping)
     *   [1.4 Video](#Video)
         *   [1.4.1 Video players](#Video_players)
             *   [1.4.1.1 Console](#Console_4)
@@ -59,7 +62,7 @@
     *   [1.6 Media servers](#Media_servers)
     *   [1.7 Metadata](#Metadata)
     *   [1.8 Mobile phone managers](#Mobile_phone_managers)
-    *   [1.9 Optical media burning](#Optical_media_burning)
+    *   [1.9 Optical disc burning](#Optical_disc_burning)
 
 ## Multimedia
 
@@ -225,6 +228,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 	[https://launchpad.net/pantheon-photos](https://launchpad.net/pantheon-photos) || [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos)
 
+*   **Rapid Photo Downloader** — Download photos and videos from cameras, memory cards and portable storage devices.
+
+	[http://www.damonlynch.net/rapid/](http://www.damonlynch.net/rapid/) || [rapid-photo-downloader](https://www.archlinux.org/packages/?name=rapid-photo-downloader)
+
 *   **[Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")** — A digital photo organizer designed for the GNOME desktop environment
 
 	[https://wiki.gnome.org/Apps/Shotwell](https://wiki.gnome.org/Apps/Shotwell) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
@@ -238,6 +245,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 *   **[dcraw](https://en.wikipedia.org/wiki/dcraw "wikipedia:dcraw")** — Converts many camera RAW formats.
 
 	[http://www.cybercom.net/~dcoffin/dcraw/](http://www.cybercom.net/~dcoffin/dcraw/) || [dcraw](https://www.archlinux.org/packages/?name=dcraw)
+
+*   **Fyre** — Tool for producing computational artwork based on histograms of iterated chaotic functions.
+
+	[http://fyre.navi.cx/](http://fyre.navi.cx/) || [fyre](https://www.archlinux.org/packages/?name=fyre)
 
 *   **[G'MIC](https://en.wikipedia.org/wiki/G%27MIC "wikipedia:G'MIC")** — Full-featured open-source framework for image processing, providing several different user interfaces to convert/manipulate/filter/visualize generic image datasets, ranging from 1d scalar signals to 3d+t sequences of multi-spectral volumetric images, including 2d color images.
 
@@ -371,6 +382,22 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://mcj.sourceforge.net/](http://mcj.sourceforge.net/) || [xfig](https://www.archlinux.org/packages/?name=xfig)
 
+#### Font editors
+
+See also [Wikipedia:Comparison of font editors](https://en.wikipedia.org/wiki/Comparison_of_font_editors "wikipedia:Comparison of font editors").
+
+*   **Birdfont** — Font editor which lets you create vector graphics and export TTF, EOT and SVG fonts.
+
+	[https://birdfont.org/](https://birdfont.org/) || [birdfont](https://aur.archlinux.org/packages/birdfont/)
+
+*   **[FontForge](https://en.wikipedia.org/wiki/FontForge "wikipedia:FontForge")** — Outline font editor.
+
+	[https://fontforge.github.io/](https://fontforge.github.io/) || [fontforge](https://www.archlinux.org/packages/?name=fontforge)
+
+*   **TruFont** — Font-editing application.
+
+	[http://trufont.github.io/](http://trufont.github.io/) || [trufont-git](https://aur.archlinux.org/packages/trufont-git/)
+
 #### 3D computer graphics
 
 See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wikipedia.org/wiki/Comparison_of_3D_computer_graphics_software "wikipedia:Comparison of 3D computer graphics software").
@@ -386,6 +413,10 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 *   **Goxel** — Open Source 3D voxel editor.
 
 	[https://guillaumechereau.github.io/goxel/](https://guillaumechereau.github.io/goxel/) || [goxel](https://aur.archlinux.org/packages/goxel/)
+
+*   **LuxRender** — Rendering system for physically correct, unbiased image synthesis.
+
+	[http://luxrender.net/](http://luxrender.net/) || [luxrender](https://www.archlinux.org/packages/?name=luxrender)
 
 *   **[MakeHuman™](https://en.wikipedia.org/wiki/MakeHuman "wikipedia:MakeHuman")** — Parametrical modeling program for creating human bodies.
 
@@ -441,7 +472,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[http://www.gpick.org/](http://www.gpick.org/) || [gpick](https://www.archlinux.org/packages/?name=gpick)
 
-*   **KColorChooser** — Simple application to select the color from the screen or from a pallete. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/)
+*   **KColorChooser** — Simple application to select the color from the screen or from a pallete. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
 
 	[https://www.kde.org/applications/graphics/kcolorchooser/](https://www.kde.org/applications/graphics/kcolorchooser/) || [kcolorchooser](https://www.archlinux.org/packages/?name=kcolorchooser)
 
@@ -719,6 +750,10 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[http://mbach.github.io/Miam-Player/](http://mbach.github.io/Miam-Player/) || [miam-player](https://aur.archlinux.org/packages/miam-player/)
 
+*   **museeks** — Minimalistic and easy to use music player. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://museeks.io/](https://museeks.io/) || [museeks-bin](https://aur.archlinux.org/packages/museeks-bin/)
+
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 
 	[https://tiliado.eu/nuvolaplayer/](https://tiliado.eu/nuvolaplayer/) || [nuvolaplayer-git](https://aur.archlinux.org/packages/nuvolaplayer-git/)
@@ -739,9 +774,31 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://lesbonscomptes.com/upplay/](https://lesbonscomptes.com/upplay/) || [upplay](https://aur.archlinux.org/packages/upplay/)
 
-#### Sound editing
+#### Audio converters
 
-See also [Professional audio](/index.php/Professional_audio "Professional audio").
+*   **fre:ac** — Audio converter and CD ripper with support for various popular formats and encoders.
+
+	[https://freac.org/](https://freac.org/) || [freac](https://aur.archlinux.org/packages/freac/)
+
+*   **Gnac** — Audio converter for GNOME.
+
+	[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
+
+*   **SoundConverter** — A graphical application to convert audio files into different formats.
+
+	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
+
+*   **soundKonverter** — Qt-based GUI front-end to various audio converters.
+
+	[https://github.com/dfaust/soundkonverter](https://github.com/dfaust/soundkonverter) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+
+*   **XCFA** — Tool to extract the content of audio CDs and convert files to various formats.
+
+	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)
+
+#### Audio editors
+
+See also [Professional audio](/index.php/Professional_audio "Professional audio") and [Wikipedia:Comparison of digital audio editors](https://en.wikipedia.org/wiki/Comparison_of_digital_audio_editors "wikipedia:Comparison of digital audio editors").
 
 *   **[Ardour](https://en.wikipedia.org/wiki/Ardour_(software) "wikipedia:Ardour (software)")** — Multichannel hard disk recorder and digital audio workstation.
 
@@ -759,9 +816,9 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[https://github.com/linuxdeepin/deepin-voice-recorder](https://github.com/linuxdeepin/deepin-voice-recorder) || [deepin-voice-recorder](https://www.archlinux.org/packages/?name=deepin-voice-recorder)
 
-*   **Gnac** — Audio converter for GNOME.
+*   **FMIT** — Graphical utility for tuning your musical instruments, with error and volume history and advanced features.
 
-	[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
+	[http://gillesdegottex.github.io/fmit/](http://gillesdegottex.github.io/fmit/) || [fmit](https://aur.archlinux.org/packages/fmit/)
 
 *   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
 
@@ -775,6 +832,10 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[http://lmms.sourceforge.net/](http://lmms.sourceforge.net/) || [lmms](https://www.archlinux.org/packages/?name=lmms)
 
+*   **Play it Slowly** — Play back audio files at a different speed or pitch.
+
+	[https://29a.ch/playitslowly](https://29a.ch/playitslowly) || [playitslowly](https://aur.archlinux.org/packages/playitslowly/)
+
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Qt-based hard disk recorder and digital audio workstation application that aims to provide digital audio workstation software simple enough for the average home user, and yet powerful enough for the professional user.
 
 	[http://qtractor.sourceforge.net/qtractor-index.html](http://qtractor.sourceforge.net/qtractor-index.html) || [qtractor](https://www.archlinux.org/packages/?name=qtractor)
@@ -783,17 +844,41 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[http://www.rosegardenmusic.com/](http://www.rosegardenmusic.com/) || [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
 
-*   **SoundConverter** — A graphical application to convert audio files into different formats.
+#### Scorewriters
 
-	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
+See also [Wikipedia:Comparison of scorewriters](https://en.wikipedia.org/wiki/Comparison_of_scorewriters "wikipedia:Comparison of scorewriters").
 
-*   **soundKonverter** — Qt-based GUI front-end to various audio converters.
+*   **[Aria Maestosa](https://en.wikipedia.org/wiki/Aria_Maestosa "wikipedia:Aria Maestosa")** — MIDI sequencer/editor. It lets you compose, edit and play MIDI files with a few clicks in a user-friendly interface offering score, keyboard, guitar, drum and controller views.
 
-	[https://github.com/dfaust/soundkonverter](https://github.com/dfaust/soundkonverter) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+	[http://ariamaestosa.sourceforge.net/](http://ariamaestosa.sourceforge.net/) || [ariamaestosa](https://aur.archlinux.org/packages/ariamaestosa/)
 
-*   **XCFA** — Tool to extract the contens of audio CDs and convert them to various formats.
+*   **[Canorus](https://en.wikipedia.org/wiki/Canorus "wikipedia:Canorus")** — Music score editor. It supports an unlimited number and length of staffs, polyphony, a MIDI playback of notes, chord markings, lyrics, import/export filters to formats like MIDI, MusicXML, ABC Music, MusiXTeX and LilyPond.
 
-	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)
+	[https://sourceforge.net/projects/canorus/](https://sourceforge.net/projects/canorus/) || [canorus](https://www.archlinux.org/packages/?name=canorus)
+
+*   **[Denemo](https://en.wikipedia.org/wiki/Denemo "wikipedia:Denemo")** — Music notation editor.
+
+	[http://denemo.org/](http://denemo.org/) || [denemo](https://aur.archlinux.org/packages/denemo/)
+
+*   **[Frescobaldi](https://en.wikipedia.org/wiki/Frescobaldi_(software) "wikipedia:Frescobaldi (software)")** — Sheet music text editor for LilyPond files.
+
+	[http://frescobaldi.org/](http://frescobaldi.org/) || [frescobaldi](https://aur.archlinux.org/packages/frescobaldi/)
+
+*   **[Impro-Visor](https://en.wikipedia.org/wiki/Impro-Visor "wikipedia:Impro-Visor")** — Music notation program designed to help jazz musicians compose and hear solos similar to ones that might be improvised.
+
+	[https://www.cs.hmc.edu/~keller/jazz/improvisor/](https://www.cs.hmc.edu/~keller/jazz/improvisor/) || [impro-visor](https://aur.archlinux.org/packages/impro-visor/)
+
+*   **[LilyPond](/index.php/LilyPond "LilyPond")** — Music engraving program, devoted to producing the highest-quality sheet music possible.
+
+	[http://lilypond.org/](http://lilypond.org/) || [lilypond](https://www.archlinux.org/packages/?name=lilypond)
+
+*   **[MuseScore](https://en.wikipedia.org/wiki/MuseScore "wikipedia:MuseScore")** — Create, playback, and print sheet music.
+
+	[https://musescore.org/](https://musescore.org/) || [musescore](https://www.archlinux.org/packages/?name=musescore)
+
+*   **[TuxGuitar](https://en.wikipedia.org/wiki/TuxGuitar "wikipedia:TuxGuitar")** — Multitrack guitar tablature editor and player.
+
+	[http://tuxguitar.com.ar/](http://tuxguitar.com.ar/) || [tuxguitar](https://aur.archlinux.org/packages/tuxguitar/)
 
 #### Visualization
 
@@ -809,9 +894,9 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[https://github.com/dpayne/cli-visualizer](https://github.com/dpayne/cli-visualizer) || [cli-visualizer](https://aur.archlinux.org/packages/cli-visualizer/)
 
-*   **[ProjectM](https://en.wikipedia.org/wiki/MilkDrop "wikipedia:MilkDrop")** — Music visualizer which uses 3D accelerated iterative image-based rendering.
+*   **[ProjectM](/index.php/ProjectM "ProjectM")** — Music visualizer which uses 3D accelerated iterative image-based rendering.
 
-	[http://projectm.sourceforge.net/](http://projectm.sourceforge.net/) || [projectm](https://www.archlinux.org/packages/?name=projectm)
+	[http://projectm.sourceforge.net/](http://projectm.sourceforge.net/) || JACK: [projectm-jack](https://www.archlinux.org/packages/?name=projectm-jack), PulseAudio: [projectm-pulseaudio](https://www.archlinux.org/packages/?name=projectm-pulseaudio)
 
 *   **[Sonic Visualiser](https://en.wikipedia.org/wiki/Sonic_Visualiser "wikipedia:Sonic Visualiser")** — Advanced player with waveform and spectrogram visualiser, playback speed control and selection looping. Very useful for transcribing.
 
@@ -917,11 +1002,11 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[https://github.com/trizen/clyrics](https://github.com/trizen/clyrics) || [clyrics](https://aur.archlinux.org/packages/clyrics/)
 
-*   **lyricsx** — Lyrics editor.
+*   **LyricsX** — Lyrics editor.
 
 	[https://github.com/timxx/lyricsx](https://github.com/timxx/lyricsx) || [lyricsx](https://aur.archlinux.org/packages/lyricsx/)
 
-*   **osdlyrics** — Lyric show compatible with various media players.
+*   **OSD Lyrics** — Lyric show compatible with various media players.
 
 	[https://github.com/osdlyrics/osdlyrics](https://github.com/osdlyrics/osdlyrics) || [osdlyrics](https://www.archlinux.org/packages/?name=osdlyrics)
 
@@ -991,7 +1076,7 @@ See also [PulseAudio#Front-ends](/index.php/PulseAudio#Front-ends "PulseAudio").
 
 #### CD ripping
 
-See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc drive").
+See [Optical disc drive#Audio CD](/index.php/Optical_disc_drive#Audio_CD "Optical disc drive").
 
 ### Video
 
@@ -1561,14 +1646,18 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 	[https://wiki.gnome.org/PhoneManager](https://wiki.gnome.org/PhoneManager) || [gnome-phone-manager](https://www.archlinux.org/packages/?name=gnome-phone-manager)
 
-*   **KDE Connect** — A project that aims to communicate all your devices.
+*   **KDE Connect** — Aims to communicate all your devices.
 
 	[https://community.kde.org/KDEConnect](https://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
+
+*   **Modem Manager GUI** — Control EDGE/3G/4G broadband modem specific functions.
+
+	[http://linuxonly.ru/page/modem-manager-gui](http://linuxonly.ru/page/modem-manager-gui) || [modem-manager-gui](https://www.archlinux.org/packages/?name=modem-manager-gui)
 
 *   **Wammu** — Manage data in your cell phone such as contacts, calendar or messages.
 
 	[https://wammu.eu/](https://wammu.eu/) || [wammu](https://www.archlinux.org/packages/?name=wammu)
 
-### Optical media burning
+### Optical disc burning
 
 See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").

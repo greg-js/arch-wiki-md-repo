@@ -231,7 +231,7 @@ You have two solutions to use [Optimus](/index.php/Optimus "Optimus") on a lapto
 
 ### Vertical Sync
 
-Xorg compositors are prone to show issues with Nouveau. Unlike most of them, [compton](https://www.archlinux.org/packages/?name=compton) offers lots of options to tweak for a smoother and tearing free result. A configuration which is expected to deliver a good result would be the following:
+Xorg compositors are prone to show issues with Nouveau. Unlike most of them, [Compton](/index.php/Compton "Compton") offers lots of options to tweak for a smoother and tearing free result. A configuration which is expected to deliver a good result would be the following:
 
 ```
 compton -b --paint-on-overlay --unredir-if-possible --backend xr_glx_hybrid --vsync drm --glx-swap-method -1 --glx-no-stencil

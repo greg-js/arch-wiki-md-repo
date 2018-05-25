@@ -37,7 +37,7 @@ Other lesser-known alternatives can be found in the AUR:
 
 	[https://raymontag.github.io/keepassc/](https://raymontag.github.io/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
 
-*   **kpcli** — A command line interface for KeePassX database files `*.kdb`.
+*   **kpcli** — A command line interface for KeePass database files `*.kdb` or `*.kdbx`.
 
 	[https://sourceforge.net/projects/kpcli/](https://sourceforge.net/projects/kpcli/) || [kpcli](https://aur.archlinux.org/packages/kpcli/)
 

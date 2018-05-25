@@ -23,7 +23,7 @@ The columns have the following meaning:
 
 *   *Secure*: does not [source](/index.php/Source "Source") the PKGBUILD at all by default; or, alerts the user and offers the opportunity to inspect the PKGBUILD manually before it is sourced. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
-*   *Native pacman*: when used as replacement for [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) commands such as `pacman -Syu`, the following are obeyed *by default*:
+*   *Native pacman*: when used as replacement for [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) commands such as `pacman -Syu`, the following are obeyed *by default*: [[1]](https://wiki.archlinux.org/index.php?title=Talk:AUR_helpers&oldid=515160#Add_.22pacman_wrap.22_column)
 
 	– do not separate commands, for example `pacman -Syu` is not split to `pacman -Sy` and `pacman -S *packages*`;
 
@@ -78,21 +78,21 @@ The columns have the following meaning:
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Yes | N/A | Optional | bash | - |
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | Yes | Yes | No | N/A | print build order |
 | [cower](https://aur.archlinux.org/packages/cower/) | C | Yes | Yes | N/A | No | bash/zsh | regex support, sort by votes/popularity |
-| [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | No [[1]](https://github.com/archlinuxfr/package-query/issues/135) | N/A | N/A | None | - |
-| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | Yes [[2]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | No | zsh | local repository support |
+| [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | No [[2]](https://github.com/archlinuxfr/package-query/issues/135) | N/A | N/A | None | - |
+| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | Yes [[3]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | No | zsh | local repository support |
 
 ### Discontinued or problematic
 
 This table describes projects which either are discontinued by their authors, or have issues on *Security*, *Clean build* or *Native pacman* (see [#Active](#Active)) unaddressed in the last 6 months.
 
 | Name | Written In | Secure | Clean build | Native pacman | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
-| [aurel](https://aur.archlinux.org/packages/aurel/) [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | Yes | N/A | N/A | N/A | N/A | N/A | No | N/A | N/A | N/A | Emacs integration, no automatic builds |
-| [pacaur](https://aur.archlinux.org/packages/pacaur/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | Yes | Yes | [No](https://github.com/rmarquis/pacaur/commit/d8f49188452785fb28afc017baadd01d9e24ba21) | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | multilingual, sort by votes/popularity |
+| [aurel](https://aur.archlinux.org/packages/aurel/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | Yes | N/A | N/A | N/A | N/A | N/A | No | N/A | N/A | N/A | Emacs integration, no automatic builds |
+| [pacaur](https://aur.archlinux.org/packages/pacaur/) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | Yes | Yes | [No](https://github.com/rmarquis/pacaur/commit/d8f49188452785fb28afc017baadd01d9e24ba21) | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | multilingual, sort by votes/popularity |
 | [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Yes | Yes | [No](https://github.com/trizen/trizen/commit/ba687bc3c3e306e6f3942e95f825ed6a55d3ad69) | [Yes](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Yes | [Yes](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | [Yes](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | Yes | [Partial](https://github.com/trizen/trizen/issues/8) | bash, zsh, fish | Automatic builds by default, use `-G` to disable, AUR comments |
-| [spinach](https://aur.archlinux.org/packages/spinach/) [[5]](https://github.com/floft/spinach) | Bash | [Yes](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Yes | N/A | No | No | No | No | No | No | None | - |
-| [burgaur](https://aur.archlinux.org/packages/burgaur/) [[6]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | Optional | Yes | N/A | No | No | No | No | No | No | None | Wrapper for *cower* |
+| [spinach](https://aur.archlinux.org/packages/spinach/) [[6]](https://github.com/floft/spinach) | Bash | [Yes](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Yes | N/A | No | No | No | No | No | No | None | - |
+| [burgaur](https://aur.archlinux.org/packages/burgaur/) [[7]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | Optional | Yes | N/A | No | No | No | No | No | No | None | Wrapper for *cower* |
 | [packer](https://aur.archlinux.org/packages/packer/) | Bash | No | Yes | Yes | No | No | No | No | No | No | None | - |
-| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | No [[7]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[8]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | Optional | No | bash, zsh, fish | Backup, ABS support, AUR comments, multilingual |
+| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | No [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | Optional | No | bash, zsh, fish | Backup, ABS support, AUR comments, multilingual |
 
 ## Libraries
 

@@ -58,10 +58,6 @@ This article provides information on basic system diagnostics relating to perfor
         *   [5.3.1 Swap on zRAM using a udev rule](#Swap_on_zRAM_using_a_udev_rule)
     *   [5.4 Using the graphic card's RAM](#Using_the_graphic_card.27s_RAM)
 *   [6 Network](#Network)
-    *   [6.1 Networking protocols](#Networking_protocols)
-    *   [6.2 NIC](#NIC)
-    *   [6.3 SMB](#SMB)
-    *   [6.4 DNS](#DNS)
 *   [7 Watchdogs](#Watchdogs)
 *   [8 See also](#See_also)
 
@@ -449,21 +445,10 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 
 ## Network
 
-### Networking protocols
-
-See [Sysctl#Improving performance](/index.php/Sysctl#Improving_performance "Sysctl")
-
-### NIC
-
-See [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration")
-
-### SMB
-
-See [Samba#Improve performance](/index.php/Samba#Improve_performance "Samba")
-
-### DNS
-
-Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached"). The systemd service `systemd-resolved` provides network name resolution to local applications and does DNS caching by default, see [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) for details.
+*   Kernel networking: [Sysctl#Improving performance](/index.php/Sysctl#Improving_performance "Sysctl")
+*   NIC: [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration")
+*   DNS: [Domain name resolution#Performance](/index.php/Domain_name_resolution#Performance "Domain name resolution")
+*   Samba: [Samba#Improve performance](/index.php/Samba#Improve_performance "Samba")
 
 ## Watchdogs
 

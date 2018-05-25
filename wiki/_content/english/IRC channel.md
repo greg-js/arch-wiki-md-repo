@@ -75,7 +75,7 @@ The size of our community led to the creation of multiple IRC channels. To get a
 | [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | [aurweb](https://projects.archlinux.org/aurweb.git/) development discussion |
 | [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Bug-centric discussion |
 | [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) | A project that develops and hosts classes for the Arch Linux community. |
-| [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Infrastructure and devops discussions. |
+| [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Arch Linux internal infrastructure and devops discussions. |
 | [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) | Arch Linux Multilib Project discussion and packaging |
 | [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) | A space to learn, try new things, and ask for help without fear of ridicule. |
 | [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) | [Pacman](/index.php/Pacman "Pacman") development and discussion |

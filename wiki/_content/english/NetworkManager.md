@@ -10,8 +10,9 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 VPN support](#VPN_support)
+    *   [1.1 Mobile broadband support](#Mobile_broadband_support)
     *   [1.2 PPPoE / DSL support](#PPPoE_.2F_DSL_support)
+    *   [1.3 VPN support](#VPN_support)
 *   [2 Usage](#Usage)
     *   [2.1 nmcli examples](#nmcli_examples)
 *   [3 Front-ends](#Front-ends)
@@ -42,21 +43,20 @@ Related articles
     *   [6.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
     *   [6.3 Network management disabled](#Network_management_disabled)
     *   [6.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
-    *   [6.5 Customizing resolv.conf](#Customizing_resolv.conf)
-    *   [6.6 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
-    *   [6.7 Missing default route](#Missing_default_route)
-    *   [6.8 3G modem not detected](#3G_modem_not_detected)
-    *   [6.9 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
-    *   [6.10 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
-    *   [6.11 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
-    *   [6.12 Forget hidden wireless network](#Forget_hidden_wireless_network)
-    *   [6.13 VPN not working in GNOME](#VPN_not_working_in_GNOME)
-    *   [6.14 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [6.15 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
-    *   [6.16 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [6.17 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
-    *   [6.18 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
-    *   [6.19 Turn off hostname sending](#Turn_off_hostname_sending)
+    *   [6.5 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
+    *   [6.6 Missing default route](#Missing_default_route)
+    *   [6.7 3G modem not detected](#3G_modem_not_detected)
+    *   [6.8 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
+    *   [6.9 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
+    *   [6.10 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
+    *   [6.11 Forget hidden wireless network](#Forget_hidden_wireless_network)
+    *   [6.12 VPN not working in GNOME](#VPN_not_working_in_GNOME)
+    *   [6.13 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [6.14 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
+    *   [6.15 Systemd Bottleneck](#Systemd_Bottleneck)
+    *   [6.16 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
+    *   [6.17 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [6.18 Turn off hostname sending](#Turn_off_hostname_sending)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
         *   [7.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
@@ -76,14 +76,28 @@ Related articles
     *   [7.9 Configuring MAC Address Randomization](#Configuring_MAC_Address_Randomization)
     *   [7.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
     *   [7.11 Working with wired connections](#Working_with_wired_connections)
-    *   [7.12 Configure NetworkManager resolv.conf management mode to use resolvconf](#Configure_NetworkManager_resolv.conf_management_mode_to_use_resolvconf)
+    *   [7.12 resolv.conf](#resolv.conf)
+        *   [7.12.1 Use openresolv](#Use_openresolv)
 *   [8 See also](#See_also)
 
 ## Installation
 
-NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). The package does not include the tray applet *nm-applet* which is part of the [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it.
+NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), which contains a daemon, a command line interface (`nmcli`) and a curses‐based interface (`nmtui`). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it.
+
+Additional interfaces:
+
+*   [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor) for a graphical user interface,
+*   [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) for a system tray applet (`nm-applet`).
 
 **Note:** You must ensure that no other service that wants to configure the network is running; in fact, multiple networking services will conflict. You can find a list of the currently running services with `systemctl --type=service` and then [stop](/index.php/Stop "Stop") them. See [#Configuration](#Configuration) to enable the NetworkManager service.
+
+### Mobile broadband support
+
+[Install](/index.php/Install "Install") [modemmanager](https://www.archlinux.org/packages/?name=modemmanager), [mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info) and [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) packages for mobile broadband connection support. See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem") for details.
+
+### PPPoE / DSL support
+
+[Install](/index.php/Install "Install") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) package for PPPoE / DSL connection support. To actually add PPPoE connection, use `nm-connection-editor` and add new DSL/PPPoE connection.
 
 ### VPN support
 
@@ -102,10 +116,6 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 *   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
-
-### PPPoE / DSL support
-
-[Install](/index.php/Install "Install") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) for PPPoE / DSL connection support. To actually add pppoe connection you must use `nm-connection-editor` from the command line and add new DSL/PPPoE connection.
 
 ## Usage
 
@@ -559,10 +569,6 @@ dhcp=dhclient
 
 This workaround might solve problems in big wireless networks like eduroam.
 
-### Customizing resolv.conf
-
-See the main page: [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). If you use [dhclient](https://www.archlinux.org/packages/?name=dhclient), you may try the [networkmanager-dispatch-resolv](https://aur.archlinux.org/packages/networkmanager-dispatch-resolv/) package.
-
 ### DHCP problems with dhclient
 
 If you have problems with getting an IP address via DHCP, try to add the following to your `/etc/dhclient.conf`:
@@ -893,9 +899,21 @@ By default, NetworkManager generates a connection profile for each wired etherne
 
 You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
 
-### Configure NetworkManager resolv.conf management mode to use resolvconf
+### resolv.conf
 
-To configure NetworkManager to run resolvconf, set the `rc-manager` option to `resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
+*NetworkManager* overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf") by default.
+
+This can be stopped by adding `dns=none` to the `[main]` section in `/etc/NetworkManager/NetworkManager.conf`.
+
+After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
+
+*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
+
+If you use [dhclient](https://www.archlinux.org/packages/?name=dhclient), you may try the [networkmanager-dispatch-resolv](https://aur.archlinux.org/packages/networkmanager-dispatch-resolv/) package.
+
+#### Use openresolv
+
+To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set the `rc-manager` option to `resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/rc-manager.conf` 
 ```

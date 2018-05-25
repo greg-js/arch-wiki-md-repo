@@ -3,7 +3,6 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Debugging C#](#Debugging_C.23)
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 Integrated Terminal](#Integrated_Terminal)
@@ -16,10 +15,6 @@ The following packages provide VSCode:
 *   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 *   [code](https://aur.archlinux.org/packages/code/)
 *   [code-git](https://aur.archlinux.org/packages/code-git/)
-
-### Debugging C#
-
-If you want to debug C# code install [icu55](https://aur.archlinux.org/packages/icu55/) otherwise you will end up with a 'Debug adapter process has terminated unexpectedly' error
 
 ## Usage
 

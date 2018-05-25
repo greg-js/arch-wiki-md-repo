@@ -59,10 +59,10 @@ To use *systemd-networkd*, [start/enable](/index.php/Start/enable "Start/enable"
 
 It is optional to also [start/enable](/index.php/Start/enable "Start/enable") `systemd-resolved.service`, which is a network name resolution service to local applications, considering the following points:
 
-*   The *systemd-resolved* service is required if DNS entries are specified in *.network* files,
+*   The [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") service is required if DNS entries are specified in *.network* files,
 *   It can be used to automatically obtain DNS addresses from the network DHCP client,
-*   It is important to understand how [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and *systemd-resolved* interact to properly configure the DNS that will be used, some explanations are provided in [resolv.conf#Systemd-resolved configuration](/index.php/Resolv.conf#Systemd-resolved_configuration "Resolv.conf")
-*   Note that it is not required to use/enable *systemd-networkd* to use *systemd-resolved*.
+*   It is important to understand how [resolv.conf](/index.php/Resolv.conf "Resolv.conf") and *systemd-resolved* interact to properly configure the DNS that will be used, some explanations are provided in [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
+*   Note that *systemd-resolved* can also be used without *systemd-networkd*.
 
 ### Configuration examples
 

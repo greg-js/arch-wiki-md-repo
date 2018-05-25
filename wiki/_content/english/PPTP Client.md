@@ -321,6 +321,23 @@ If your client is timing out with "LCP: timeout sending Config-Requests", then y
 
 ```
 
+If you get “EAP: unknown authentication type 26; Naking”, open /etc/ppp/options.pptp and commented out the lines **refuse-chap** and **refuse-mschap** and add the options file entry to the tunnel file like this:
+
+ `/etc/ppp/peers/<tunel>` 
+```
+# written by pptpsetup
+pty "pptp vpn.foo.com --nolaunchpppd"
+lock
+noauth
+nobsdcomp
+nodeflate
+name USERNAME
+remotename vpn
+file /etc/ppp/options.pptp
+ipparam vpn
+require-mppe-128
+```
+
 ## Remarks
 
 You can find more information about configuring pptpclient at their website: [pptpclient website](http://pptpclient.sourceforge.net/). The contents of this article were adapted from their Ubuntu How-To which also provides some hints on how to do things such as connecting on boot. These examples should be easy to adapt into daemons or other scripts to help automate your configuration.

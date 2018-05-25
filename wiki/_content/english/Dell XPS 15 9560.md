@@ -57,7 +57,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 
 Before installing it is necessary to modify some UEFI Settings. They can be accessed by pressing the F2 key repeatedly when booting.
 
-*   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD. If dual booting with an existing Windows installation, Windows will not boot after the change but this can be fixed without a reinstallation.
+*   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD. If dual booting with an existing Windows installation, Windows will not boot after the change but [this can be fixed without a reinstallation](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
 *   Change Fastboot to "Thorough" in "POST Behaviour". This prevents intermittent boot failures.
 *   Disable secure boot to allow Linux to boot.
 

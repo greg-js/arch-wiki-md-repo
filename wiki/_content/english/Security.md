@@ -3,7 +3,6 @@ Related articles
 *   [PAM](/index.php/PAM "PAM")
 *   [Capabilities](/index.php/Capabilities "Capabilities")
 *   [List of Applications/Security](/index.php/List_of_Applications/Security "List of Applications/Security")
-*   [Category:Security](/index.php/Category:Security "Category:Security")
 
 This article contains recommendations and best practices for [hardening](https://en.wikipedia.org/wiki/Hardening_(computing) an Arch Linux system.
 
@@ -30,7 +29,7 @@ This article contains recommendations and best practices for [hardening](https:/
         *   [5.1.1 Editing files using sudo](#Editing_files_using_sudo)
     *   [5.2 Restricting root login](#Restricting_root_login)
         *   [5.2.1 Allow only certain users](#Allow_only_certain_users)
-        *   [5.2.2 Denying ssh login](#Denying_ssh_login)
+        *   [5.2.2 Denying SSH login](#Denying_SSH_login)
 *   [6 Mandatory access control](#Mandatory_access_control)
     *   [6.1 Pathname MAC](#Pathname_MAC)
     *   [6.2 Labels MAC](#Labels_MAC)
@@ -327,7 +326,7 @@ auth		required	pam_wheel.so use_uid
 
 This means only users who are already able to run privileged commands may login as root.
 
-#### Denying ssh login
+#### Denying SSH login
 
 Even if you do not wish to deny root login for local users, it is always good practice to [deny root login via SSH](/index.php/Ssh#Deny "Ssh"). The purpose of this is to add an additional layer of security before a user can completely compromise your system remotely.
 
@@ -621,7 +620,7 @@ One popular idea is to place the boot partition on a flash drive in order to ren
 
 ### Denying console login as root
 
-Changing the configuration to disallow root to login from the console makes it harder for an intruder to gain access to the system. The intruder would have to guess both a username that exists on the system and that user's password. When root is allowed to log in via the console, an intruder only needs to guess a password. Blocking root login at the console is done by commenting out the tty lines in `/etc/securetty`.
+Changing the configuration to disallow root to login from the TTYs makes it harder for an intruder to gain access to the system. The intruder would have to guess both a username that exists on the system and that user's password. When root is allowed to log in via the console, an intruder only needs to guess a password. Blocking root login at the console is done by commenting out the tty lines in `/etc/securetty`.
 
  `/etc/securetty` 
 ```
@@ -673,7 +672,7 @@ Packages can be rebuilt and stripped of undesired functions and features as a me
 ## See also
 
 *   [Arch Linux Security Tracker](https://security.archlinux.org/)
-*   [ArchWiki: Security Applications](/index.php/List_of_applications/Security "List of applications/Security")
+*   [List of applications/Security](/index.php/List_of_applications/Security "List of applications/Security")
 *   [CentOS Wiki: OS Protection](https://wiki.centos.org/HowTos/OS_Protection)
 *   [Hardening the Linux desktop](https://www.ibm.com/developerworks/linux/tutorials/l-harden-desktop/index.html)
 *   [Hardening the Linux server](https://www.ibm.com/developerworks/linux/tutorials/l-harden-server/index.html)

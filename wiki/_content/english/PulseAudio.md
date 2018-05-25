@@ -147,6 +147,10 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 	[http://0pointer.de/lennart/projects/pavumeter/](http://0pointer.de/lennart/projects/pavumeter/) || [pavumeter](https://aur.archlinux.org/packages/pavumeter/)
 
+*   **PulseEffects** — Audio effects for PulseAudio applications.
+
+	[https://github.com/wwmm/pulseeffects](https://github.com/wwmm/pulseeffects) || [pulseeffects](https://aur.archlinux.org/packages/pulseeffects/)
+
 *   **Volctl** — Per-application system tray applet volume control for PulseAudio.
 
 	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)

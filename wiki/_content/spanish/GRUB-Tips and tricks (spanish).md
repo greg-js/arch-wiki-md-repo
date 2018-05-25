@@ -32,10 +32,10 @@
     *   [11.4 Efectuar el arranque de una entrada no predeterminada por una sola vez](#Efectuar_el_arranque_de_una_entrada_no_predeterminada_por_una_sola_vez)
 *   [12 Tocar una melodía](#Tocar_una_melod.C3.ADa)
 *   [13 Configuración manual de la imagen del núcleo para un arranque rápido](#Configuraci.C3.B3n_manual_de_la_imagen_del_n.C3.BAcleo_para_un_arranque_r.C3.A1pido)
-*   [14 UEFI further reading](#UEFI_further_reading)
+*   [14 Lecturas adicionales de UEFI](#Lecturas_adicionales_de_UEFI)
     *   [14.1 Método de instalación alternativo](#M.C3.A9todo_de_instalaci.C3.B3n_alternativo)
-    *   [14.2 UEFI firmware workaround](#UEFI_firmware_workaround)
-    *   [14.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
+    *   [14.2 Solución al firmware de UEFI](#Soluci.C3.B3n_al_firmware_de_UEFI)
+    *   [14.3 Crear una entrada GRUB en el gestor de arranque del firmware](#Crear_una_entrada_GRUB_en_el_gestor_de_arranque_del_firmware)
     *   [14.4 GRUB standalone](#GRUB_standalone)
     *   [14.5 Technical information](#Technical_information)
 
@@ -341,7 +341,7 @@ menuentry "Arch Linux, session texte" {
 
 ## Proteger con contraseña el menú de GRUB
 
-**Advertencia:** Si alguien tiene acceso físico a su máquina y es capaz de arrancar un disco/USB live (es decir ,BIOS permite arrancar desde un disco externo), es bastante trivial que se modifiquen los archivos de configuración de GRUB para evitar esto si `/boot` reside en una partición no cifrada. Ver [#Encriptación](/index.php/GRUB_(Espa%C3%B1ol)#Encriptaci.C3.B3n "GRUB (Español)") y [Security#Disk encryption](/index.php/Security#Disk_encryption "Security").
+**Advertencia:** Si alguien tiene acceso físico a su máquina y es capaz de arrancar un disco/USB live (BIOS permite arrancar desde un disco externo), es bastante trivial que se modifiquen los archivos de configuración de GRUB para evitar esto si `/boot` reside en una partición no cifrada. Ver [#Encriptación](/index.php/GRUB_(Espa%C3%B1ol)#Encriptaci.C3.B3n "GRUB (Español)") y [Security#Disk encryption](/index.php/Security#Disk_encryption "Security").
 
 Si desea hacer GRUB más seguro, de modo que nadie pueda cambiar los parámetros de arranque o utilizar la línea de órdenes, puede agregar un nombre de usuario y contraseña para los archivos de configuración de GRUB. Para ello, ejecute `grub-mkpasswd_pbkdf2`. Es necesario introducir una contraseña y confirmarla:
 
@@ -551,7 +551,7 @@ Finalmente, genere la imagen principal, enumerando todos los módulos que se det
 
 La imagen del núcleo de EFI generada ahora se puede usar de la misma manera que la imagen que se genera automáticamente mediante `grub-install`: colóquela en su partición EFI y habilítela con `efibootmgr`, o configúrela según corresponda para el firmware de su sistema.
 
-## UEFI further reading
+## Lecturas adicionales de UEFI
 
 A continuación encontrará otra información relevante sobre la instalación de Arch a través de UEFI.
 
@@ -575,11 +575,11 @@ Esto pone todos los archivos GRUB en `*esp*/grub`, en lugar de en `/boot/grub`. 
 
 Por lo demás, la configuración es la misma.
 
-### UEFI firmware workaround
+### Solución al firmware de UEFI
 
-Some UEFI firmware requires that the bootable *.efi* stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
+Algunos firmware UEFI requieren que el código de arranque *.efi* tenga un nombre específico y se coloque en una ubicación específica: `*esp*/EFI/boot/bootx64.efi` (donde `*esp*` es el punto de montaje de la partición UEFI). De lo contrario, en estos casos, la instalación no se podrá iniciar. Afortunadamente, esto no causará ningún problema con otro firmware que no lo requiera..
 
-To do so, first create the necessary directory, and then copy across the grub `.efi` stub, renaming it in the process:
+Para ello, primero cree el directorio necesario y, a continuación, copie la parte de grub `.efi`, renombrándolo en el proceso:
 
 ```
 # mkdir *esp*/EFI/boot
@@ -587,9 +587,9 @@ To do so, first create the necessary directory, and then copy across the grub `.
 
 ```
 
-### Create a GRUB entry in the firmware boot manager
+### Crear una entrada GRUB en el gestor de arranque del firmware
 
-`grub-install` automatically tries to create a menu entry in the boot manager. If it does not, then see [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI") for instructions to use `efibootmgr` to create a menu entry. However, the problem is likely to be that you have not booted your CD/USB in UEFI mode, as in [UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
+`grub-install` intenta crear automáticamente una entrada de menú en el gestor de arranque. Si no lo hace, vea [efibootmgr](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#efibootmgr) para instrucciones de uso y `efibootmgr` para crear una entrada de menú. Sin embargo, es probable que el problema sea que no haya arrancado su CD/USB en modo UEFI, vea también como [Crear un USB arrancable con UEFI desde la ISO](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO).
 
 ### GRUB standalone
 

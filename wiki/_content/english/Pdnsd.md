@@ -79,7 +79,7 @@ The rest of the server section will work without any more changes. For details o
 
 #### DNS servers with DHCP connections
 
-When [netctl](/index.php/Netctl "Netctl") is installed, pdnsd can be notified of the ip addresses of the name servers by resolvconf (see [resolvconf(8)](http://manpages.ubuntu.com/manpages/vivid/man8/resolvconf.8.html)) and the notifications become dynamic when you use [Automatic switching of profiles](/index.php/Netctl#Special_systemd_units "Netctl").
+When [netctl](/index.php/Netctl "Netctl") is installed, pdnsd can be notified of the ip addresses of the name servers by [resolvconf](/index.php/Resolvconf "Resolvconf") and the notifications become dynamic when you use [Automatic switching of profiles](/index.php/Netctl#Special_systemd_units "Netctl").
 
 To configure this feature, remove the broadband server section and update the dial-up server section with the following changes:
 

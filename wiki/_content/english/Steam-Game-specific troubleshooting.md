@@ -18,6 +18,7 @@
     *   [4.6 ARK: Survival Evolved](#ARK:_Survival_Evolved)
         *   [4.6.1 Game does not start, displays text window with unreadable text](#Game_does_not_start.2C_displays_text_window_with_unreadable_text)
         *   [4.6.2 Gray water](#Gray_water)
+        *   [4.6.3 Segmentation fault on startup](#Segmentation_fault_on_startup)
     *   [4.7 Audiosurf 2](#Audiosurf_2)
         *   [4.7.1 error. unable to load song <filename> ,came back with zero duration](#error._unable_to_load_song_.3Cfilename.3E_.2Ccame_back_with_zero_duration)
     *   [4.8 BADLAND: Game of the Year Edition](#BADLAND:_Game_of_the_Year_Edition)
@@ -409,6 +410,10 @@ Run the game with `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400`.
 Download the TheCenter map and copy `Water_DepthBlur_MIC.uasset` from that map into TheIsland as described [here](https://www.gamingonlinux.com/articles/heres-a-way-to-fix-the-broken-water-in-ark-survival-evolved-on-linux.10530).
 
 Ragnarok uses TheIsland's texture, so the same procedure fixes the issue on Ragnarok as well.
+
+#### Segmentation fault on startup
+
+Caused by the games packaged libopenal. Use system libopenal to solve the segfault by running the game with with `LD_PRELOAD=/usr/lib/libopenal.so.1`
 
 ### Audiosurf 2
 

@@ -422,7 +422,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 *   **[OpenSCAD](https://en.wikipedia.org/wiki/OpenSCAD "wikipedia:OpenSCAD")** — Open source 2D/3D CAD using programmers approach.
 
-	[http://www.openscad.org](http://www.openscad.org) || [openscad](https://www.archlinux.org/packages/?name=openscad) [openscad-git](https://aur.archlinux.org/packages/openscad-git/)
+	[http://www.openscad.org](http://www.openscad.org) || [openscad](https://www.archlinux.org/packages/?name=openscad)
 
 *   **[QCAD](https://en.wikipedia.org/wiki/QCad "wikipedia:QCad")** — Powerful 2D CAD application that began in 1999\. QCaD includes DFX standard file format and supports HPGL format.
 
@@ -558,6 +558,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://github.com/freefoote/gpscorrelate](https://github.com/freefoote/gpscorrelate) || [gpscorrelate](https://www.archlinux.org/packages/?name=gpscorrelate)
 
+*   **[gpsd](https://en.wikipedia.org/wiki/gpsd "wikipedia:gpsd")** — Service daemon that monitors one or more GPSes or AIS receivers attached to a host computer through serial or USB ports, making all data on the location/course/velocity of the sensors available to be queried on TCP port 2947 of the host computer.
+
+	[http://catb.org/gpsd/](http://catb.org/gpsd/) || [gpsd](https://www.archlinux.org/packages/?name=gpsd)
+
 *   **GpsPrune** — View, edit and convert coordinate data from GPS systems.
 
 	[https://activityworkshop.net/software/gpsprune/](https://activityworkshop.net/software/gpsprune/) || [gpsprune](https://www.archlinux.org/packages/?name=gpsprune)
@@ -615,6 +619,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 *   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — Software development toolkit that provides signal processing blocks to implement software radios.
 
 	[https://www.gnuradio.org/](https://www.gnuradio.org/) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
+
+*   **Gqrx** — Software defined radio receiver implemented using GNU Radio and the Qt GUI toolkit.
+
+	[http://gqrx.dk/](http://gqrx.dk/) || [gqrx](https://www.archlinux.org/packages/?name=gqrx)
 
 *   **Pothos** — The Pothos project is a complete data-flow framework for creating topologies of interconnected processing blocks.
 

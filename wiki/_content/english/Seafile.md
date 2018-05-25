@@ -10,8 +10,7 @@ This article covers the installation of the Seafile server. If you only require 
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Setup a server instance](#Setup_a_server_instance)
-    *   [2.2 Deploy an instance with Nginx](#Deploy_an_instance_with_Nginx)
+    *   [2.1 Deploy an instance with Nginx](#Deploy_an_instance_with_Nginx)
 *   [3 Maintenance](#Maintenance)
     *   [3.1 Upgrading](#Upgrading)
     *   [3.2 Running Seafile GC](#Running_Seafile_GC)
@@ -19,20 +18,18 @@ This article covers the installation of the Seafile server. If you only require 
 
 ## Installation
 
-Install [seafile-server](https://aur.archlinux.org/packages/seafile-server/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). It is part of the split package [seafile](https://aur.archlinux.org/packages/seafile/) which produces more than one package, but not all of them are necessarily needed in your case.
+[Install](/index.php/Install "Install") the [seafile-server](https://aur.archlinux.org/packages/seafile-server/) package. It is part of the split package [seafile](https://aur.archlinux.org/packages/seafile/) which produces more than one package, but not all of them are necessarily needed in your case.
 
-As root, add a new user to run seafile server instances under:
+## Configuration
+
+Add a new user to run seafile server instances under:
 
 ```
 # useradd -m -r -d /srv/seafile -s /usr/bin/nologin seafile
 
 ```
 
-## Configuration
-
-### Setup a server instance
-
-Change to the user previously setup in [#Installation](#Installation) (following commands are to be executed as that user unless otherwise stated):
+Change to the user. The following commands are to be executed as that user unless otherwise stated.
 
 ```
 $ sudo -u seafile -s /bin/sh
@@ -42,8 +39,8 @@ $ sudo -u seafile -s /bin/sh
 As that user, create the directory layout for the new seafile server instance and change directory to it:
 
 ```
-$ mkdir -p $HOME/example.org/seafile-server
-$ cd $HOME/example.org
+$ mkdir -p ~/example.org/seafile-server
+$ cd ~/example.org
 
 ```
 
@@ -59,22 +56,22 @@ $ pacman -Qi seafile-server | grep Version
 Set the `SEAFILE_SERVER_VERSION` variable to the 'x.y.z' retrieved in the previous step:
 
 ```
-$ SEAFILE_SERVER_VERSION=3.0.3
+$ SEAFILE_SERVER_VERSION=6.2.5
 
 ```
 
 Download seahub and extract it:
 
 ```
-$ wget -P seafile-server [https://github.com/haiwen/seahub/archive/v$SEAFILE_SERVER_VERSION-server.tar.gz](https://github.com/haiwen/seahub/archive/v$SEAFILE_SERVER_VERSION-server.tar.gz)
-$ tar -xz -C seafile-server -f seafile-server/v$SEAFILE_SERVER_VERSION-server.tar.gz
+$ wget -P seafile-server [https://download.seadrive.org/seafile-server_$SEAFILE_SERVER_VERSION\_x86-64.tar.gz](https://download.seadrive.org/seafile-server_$SEAFILE_SERVER_VERSION\_x86-64.tar.gz)
+$ tar -xz -C seafile-server -f seafile-server/seafile-server_$SEAFILE_SERVER_VERSION\_x86-64.tar.gz
 
 ```
 
 Rename the extracted directory:
 
 ```
-$ mv seafile-server/seahub-$SEAFILE_SERVER_VERSION-server seafile-server/seahub
+$ mv seafile-server/seafile-server-$SEAFILE_SERVER_VERSION seafile-server/seahub
 
 ```
 
@@ -104,7 +101,7 @@ $ msgfmt -o django.mo django.po
 Next we need to add this default language to the settings now:
 
 ```
-$ echo "LANGUAGE='<yourlanguage>'" >> $HOME/example.org/conf/seahub_settings.py
+$ echo "LANGUAGE='<yourlanguage>'" >> ~/example.org/conf/seahub_settings.py
 
 ```
 

@@ -310,7 +310,7 @@ build() {
 
 ### CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages
 
-Qmake automatically sets the variable `CFLAGS` and `CXXFLAGS` according to what it thinks should be the right configuration. In order to let qmake use the variables defined in the makepkg configuration file, you must edit the PKGBUILD and pass the variables [QMAKE_CFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags-release) and [QMAKE_CXXFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags-release) to qmake. For example:
+Qmake automatically sets the variable `CFLAGS` and `CXXFLAGS` according to what it thinks should be the right configuration. In order to let qmake use the variables defined in the makepkg configuration file, you must edit the PKGBUILD and pass the variables [QMAKE_CFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags) and [QMAKE_CXXFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) to qmake. For example:
 
  `PKGBUILD` 
 ```
@@ -320,8 +320,8 @@ build() {
   cd "$srcdir/$_pkgname-$pkgver-src"
   qmake-qt4 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
     PREFIX=/usr \
-    QMAKE_CFLAGS_RELEASE="${CFLAGS}"\
-    QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}"
+    QMAKE_CFLAGS="${CFLAGS}"\
+    QMAKE_CXXFLAGS="${CXXFLAGS}"
 
   make
 }

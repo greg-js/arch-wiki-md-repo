@@ -7,8 +7,7 @@ Related articles
 *   [1 Link status](#Link_status)
     *   [1.1 RTNETLINK answers: Cannot assign requested address](#RTNETLINK_answers:_Cannot_assign_requested_address)
 *   [2 IP address](#IP_address)
-*   [3 DNS Servers](#DNS_Servers)
-*   [4 Ping & Tracepath/Traceroute](#Ping_.26_Tracepath.2FTraceroute)
+*   [3 Ping & Tracepath/Traceroute](#Ping_.26_Tracepath.2FTraceroute)
 
 ## Link status
 
@@ -71,67 +70,6 @@ Removing an ip address:
 # ip addr del 192.168.1.143/24 dev eth0
 
 ```
-
-## DNS Servers
-
-Dns is responsible for converting hostnames to an ip address. When connectivity towards ip addresses is working, but the system is unable to connect to a hostname; there is a fair chance that this will be related to the dns configuration. The configuration can be displayed by running:
-
-```
-$ cat /etc/resolv.conf
-
-```
-
-This will provide an output among the lines of:
-
-```
-domain example.com
-search example.com
-nameserver 192.168.1.1
-
-```
-
-*   The rule '`nameserver`' is the relevant section. Configuring multiple nameservers is supported.
-*   The '`domain`' and '`search`' rules are optional.
-*   Often the '`nameserver`' is the same as your default gateway.
-*   In case of doubt there is always the possibility to use the Google DNS servers as your default DNS servers:
-
-```
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-
-```
-
-Testing your dns configuration can be done through the `drill` command (from the [ldns](https://www.archlinux.org/packages/?name=ldns) package):
-
-```
-$ drill www.archlinux.org @8.8.4.4
-
-```
-
-The above command will perform a dns lookup of www.archlinux.org using the 8.8.4.4 dns server and return output as follows:
-
-```
-;; ->>HEADER<<- opcode: QUERY, rcode: NOERROR, id: 35144
-;; flags: qr rd ra ; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0 
-;; QUESTION SECTION:
-;; www.archlinux.org.   IN      A
-
-;; ANSWER SECTION:
-www.archlinux.org.      966     IN      CNAME   gudrun.archlinux.org.
-gudrun.archlinux.org.   18966   IN      A       66.211.214.131
-
-;; AUTHORITY SECTION:
-
-;; ADDITIONAL SECTION:
-
-;; Query time: 38 msec
-;; SERVER: 8.8.4.4
-;; WHEN: Wed Jun 17 20:21:47 2015
-;; MSG SIZE  rcvd: 72
-
-```
-
-As an alternative to *drill*, there are also the `dig`, `host`, and `nslookup` tools from the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package.
 
 ## Ping & Tracepath/Traceroute
 
