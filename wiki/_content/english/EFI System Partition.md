@@ -99,6 +99,8 @@ If you do not use one of the simple methods from [#Mount the partition](#Mount_t
 
 Furthermore, you will need to keep the files on the ESP up-to-date with later kernel updates. Failure to do so could result in an unbootable system. The following sections discuss several mechanisms for automating it.
 
+**Note:** If ESP is mounted to `/efi`, make sure to not rely on automount mechanism by *systemd-gpt-auto-generator*. Always have it mounted manually or using `/etc/fstab` prior to the any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on ESP.
+
 #### Using bind mount
 
 Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind [mount](/index.php/Mount "Mount") (see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). This allows [pacman](/index.php/Pacman "Pacman") to update the kernel directly while keeping the ESP organized to your liking.

@@ -353,11 +353,11 @@ To speed up wiping a large drive, see also:
 Specialized on wiping files and is available as the [wipe](https://www.archlinux.org/packages/?name=wipe) package. To make a quick wipe of a destination you can use something like:
 
 ```
-$ wipe -r -q /path/to/wipe
+$ wipe -r /path/to/wipe
 
 ```
 
-See also [wipe(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipe.1).
+See also [wipe(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipe.1). The tool was last updated in 2009\. Its [SourceForge page](http://wipe.sourceforge.net/) suggests that it is **currently unmaintained**.
 
 ### shred
 

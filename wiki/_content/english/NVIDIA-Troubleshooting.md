@@ -19,12 +19,13 @@
 *   [13 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
 *   [14 Xorg fails to load or Red Screen of Death](#Xorg_fails_to_load_or_Red_Screen_of_Death)
 *   [15 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
-*   [16 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
-*   [17 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
-*   [18 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
-*   [19 xrandr BadMatch](#xrandr_BadMatch)
-*   [20 Override EDID](#Override_EDID)
-*   [21 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
+*   [16 No audio over HDMI](#No_audio_over_HDMI)
+*   [17 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
+*   [18 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
+*   [19 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
+*   [20 xrandr BadMatch](#xrandr_BadMatch)
+*   [21 Override EDID](#Override_EDID)
+*   [22 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
 
 ## Corrupted screen: "Six screens" Problem
 
@@ -331,6 +332,31 @@ install i915 /usr/bin/false
 install intel_agp /usr/bin/false
 
 ```
+
+## No audio over HDMI
+
+Sometimes nvidia HDMI audio devices are not shown when you do
+
+```
+aplay -l
+
+```
+
+For whatever reason on some new machines, the audio chip on the nvidia GPU is disabled at boot. Read more [here](https://devtalk.nvidia.com/default/topic/1024022/linux/gtx-1060-no-audio-over-hdmi-only-hda-intel-detected-azalia/?offset=4) and [here](https://bbs.archlinux.org/viewtopic.php?id=230125)
+
+You need to reload the nvidia device with audio enabled. In order to do that make sure that your GPU is on (in case of laptops/Bumblebee) and that you are not running X on it, because it's going to reset:
+
+```
+# setpci -s 01:00.0 0x488.l=0x2000000:0x2000000
+# rmmod nvidia-drm nvidia-modeset nvidia
+# echo 1 > /sys/bus/pci/devices/0000:01:00.0/remove
+# echo 1 > /sys/bus/pci/devices/0000:00:01.0/rescan
+# modprobe nvidia-drm
+# xinit -- -retro
+
+```
+
+If you are running your TTY on nvidia, put the lines in a script so you don't end up with no screen.
 
 ## Black screen on systems with VIA integrated GPU
 

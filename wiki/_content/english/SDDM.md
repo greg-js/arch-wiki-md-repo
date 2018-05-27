@@ -3,9 +3,9 @@ Related articles
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [KDE](/index.php/KDE "KDE")
 
-The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop.
+The [Simple Desktop Display Manager](https://github.com/sddm/sddm/) (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop.
 
-From Wikipedia:
+From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager"):
 
 	Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11 and Wayland windowing systems. SDDM was written from scratch in C++11 and supports theming via QML. KDE chose SDDM to be the successor of the KDE Display Manager for KDE Plasma 5.
 
@@ -28,12 +28,13 @@ From Wikipedia:
     *   [2.6 DPI settings](#DPI_settings)
     *   [2.7 Enable HiDPI](#Enable_HiDPI)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Hangs after login](#Hangs_after_login)
-    *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
-    *   [3.3 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
-    *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
-    *   [3.5 Screen resolution is too low](#Screen_resolution_is_too_low)
-    *   [3.6 Long load time on autofs home directory](#Long_load_time_on_autofs_home_directory)
+    *   [3.1 Long load time before SDDM shows the greeter](#Long_load_time_before_SDDM_shows_the_greeter)
+    *   [3.2 Hangs after login](#Hangs_after_login)
+    *   [3.3 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
+    *   [3.4 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
+    *   [3.5 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
+    *   [3.6 Screen resolution is too low](#Screen_resolution_is_too_low)
+    *   [3.7 Long load time on autofs home directory](#Long_load_time_on_autofs_home_directory)
 
 ## Installation
 
@@ -184,6 +185,10 @@ EnableHiDPI=true
 ```
 
 ## Troubleshooting
+
+### Long load time before SDDM shows the greeter
+
+A low entropy pool can cause long SDDM load time. See [Random number generation](/index.php/Random_number_generation "Random number generation") for suggestions to increase the entropy pool.
 
 ### Hangs after login
 

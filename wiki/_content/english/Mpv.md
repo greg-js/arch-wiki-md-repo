@@ -276,13 +276,15 @@ Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-i
 
 The default video output driver, `gpu`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
 
+For VA-API hardware decoding with `vo=gpu` enable EGL with the `gpu-context=x11egl` option or use vaapi video output driver `vo=vaapi` instead.
+
 Even with hardware decoding enabled, it will only be used for [some codecs](https://mpv.io/manual/stable/#options-hwdec-codecs) by default. In order to use hardware decoding with all codecs set `hwdec-codecs=all`. It is also possible to specify an exact list of codecs for which you want hardware decoding to be used (provided it has been enabled) by setting `--hwdec-codecs=h264,mpeg2video`.
 
 #### In GNOME Wayland
 
 Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
 
-To make *mpv* use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
+To make *mpv* use the Wayland compositor, add the mpv option `gpu-context=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
 
 ### Save position on quit
 

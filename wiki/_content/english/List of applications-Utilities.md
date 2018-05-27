@@ -378,15 +378,15 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").
 
-*   **Apache Ant** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
+*   **[Apache Ant](https://en.wikipedia.org/wiki/Apache_Ant "wikipedia:Apache Ant")** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
 
 	[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
 
-*   **Apache Maven** — Software project management and comprehension tool.
+*   **[Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven "wikipedia:Apache Maven")** — Build automation tool used primarily for Java.
 
 	[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
 
-*   **Gradle** — Powerful build system for the JVM.
+*   **[Gradle](https://en.wikipedia.org/wiki/Gradle "wikipedia:Gradle")** — Powerful build system for the JVM.
 
 	[https://gradle.org/](https://gradle.org/) || [gradle](https://www.archlinux.org/packages/?name=gradle)
 
@@ -596,9 +596,9 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 	[https://www.gnu.org/software/cpio/](https://www.gnu.org/software/cpio/) || [cpio](https://www.archlinux.org/packages/?name=cpio)
 
-*   **[dar](https://en.wikipedia.org/wiki/Dar_(disk_archiver) "wikipedia:Dar (disk archiver)")** — An archiving and compression utility avoiding the drawbacks of tar
+*   **[dar](https://en.wikipedia.org/wiki/Dar_(disk_archiver) (Disk ARchive)** — An archiving and compression utility avoiding the drawbacks of tar
 
-	[DAR - Disk ARchive](http://dar.linux.free.fr/) || [dar](https://aur.archlinux.org/packages/dar/)
+	[http://dar.linux.free.fr/](http://dar.linux.free.fr/) || [dar](https://aur.archlinux.org/packages/dar/)
 
 *   **lha** — Archiver to create LH-7 format archives. 32-bit only (require multilib on x86_64).
 
@@ -778,9 +778,9 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[https://github.com/adrianlopezroche/fdupes](https://github.com/adrianlopezroche/fdupes) || [fdupes](https://www.archlinux.org/packages/?name=fdupes)
 
-*   **[fslint](http://www.pixelbeat.org/fslint/)** — A utility to find and clean various forms of lint on a filesystem
+*   **fslint** — A utility to find and clean various forms of lint on a filesystem
 
-	[https://github.com/pixelb/fslint](https://github.com/pixelb/fslint) || [fslint](https://aur.archlinux.org/packages/fslint/)
+	[https://www.pixelbeat.org/fslint/](https://www.pixelbeat.org/fslint/) || [fslint](https://aur.archlinux.org/packages/fslint/)
 
 *   **gconf-cleaner** — cleans up the unknown/invalid gconf keys that still sitting down on your gconf database
 

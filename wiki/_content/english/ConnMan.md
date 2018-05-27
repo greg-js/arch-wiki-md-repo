@@ -14,6 +14,7 @@ Related articles
         *   [2.1.1 Enabling and disabling wifi](#Enabling_and_disabling_wifi)
         *   [2.1.2 Connecting to an open access point](#Connecting_to_an_open_access_point)
         *   [2.1.3 Connecting to a protected access point](#Connecting_to_a_protected_access_point)
+        *   [2.1.4 Using iwd instead of wpa_supplicant](#Using_iwd_instead_of_wpa_supplicant)
     *   [2.2 Settings](#Settings)
     *   [2.3 Technologies](#Technologies)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -68,7 +69,7 @@ ConnMan comes with the [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 *   **LXQt-Connman-Applet** — LXQt desktop panel applet.
 
-	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
+	[https://github.com/lxqt/lxqt-connman-applet](https://github.com/lxqt/lxqt-connman-applet) || [lxqt-connman-applet](https://aur.archlinux.org/packages/lxqt-connman-applet/)
 
 *   **qconnman-ui** — Qt management interface used on O.S. Systems products
 
@@ -182,6 +183,10 @@ connmanctl> quit
 ```
 
 If the information you provided is correct you should now be connected to the protected access point.
+
+#### Using iwd instead of wpa_supplicant
+
+ConnMan can use IWD to connect to wireless networks. The package which is available in community already supports using IWD for connecting to wireless networks. You have to uninstall [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) though, because otherwise ConnMan will this daemon to connect to wireless networks. You have to make sure also that the [iwd](/index.php/Iwd "Iwd") daemon was started on the requested WiFi adapter.
 
 ### Settings
 

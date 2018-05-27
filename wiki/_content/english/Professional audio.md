@@ -37,38 +37,9 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
 
 ## Getting Started
 
-Some of the major pro audio applications are already available from the official and community Arch Linux repositories. For anything which is not, you can either add a binary repository (see further down below) or if you prefer to compile, search the AUR. Nothing stops you from building directly off of upstream releases, but then you might as well run LFS.
+Some of the major pro audio applications are already available from the official Arch Linux repositories. For anything which is not, you can either add a binary repository (see further down below) or if you prefer to compile, search the AUR. Nothing stops you from building directly off of upstream releases, but then you might as well run LFS.
 
-Start by installing [JACK](/index.php/JACK "JACK").
-
-The following packages are a good start to build a full-featured pro audio system:
-
-*   [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
-*   [patchage](https://www.archlinux.org/packages/?name=patchage)
-*   [ardour](https://www.archlinux.org/packages/?name=ardour)
-*   [qtractor](https://www.archlinux.org/packages/?name=qtractor)
-*   [hydrogen](https://www.archlinux.org/packages/?name=hydrogen)
-*   [musescore](https://www.archlinux.org/packages/?name=musescore)
-*   [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
-*   [qsynth](https://www.archlinux.org/packages/?name=qsynth)
-*   [jsampler](https://www.archlinux.org/packages/?name=jsampler)
-*   [lmms](https://www.archlinux.org/packages/?name=lmms)
-*   [calf](https://www.archlinux.org/packages/?name=calf)
-*   [dssi](https://www.archlinux.org/packages/?name=dssi)
-*   [guitarix2](https://www.archlinux.org/packages/?name=guitarix2)
-
-Other packages you may need that are available from the [AUR](/index.php/AUR "AUR"):
-
-*   [qsampler](https://www.archlinux.org/packages/?name=qsampler) (also see [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
-*   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
-*   [carla](https://www.archlinux.org/packages/?name=carla)
-*   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
-*   [XCFA](https://aur.archlinux.org/packages/XCFA/)
-*   [yoshimi](https://www.archlinux.org/packages/?name=yoshimi)
-*   [wineasio](https://aur.archlinux.org/packages/wineasio/)
-*   [vst-bridge](https://github.com/abique/vst-bridge)
-
-See also [List of applications#Audio systems](/index.php/List_of_applications#Audio_systems "List of applications"), [List of applications#Sound editing](/index.php/List_of_applications#Sound_editing "List of applications"), and [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio).
+Start by installing [JACK](/index.php/JACK "JACK"). See [List of applications#Audio](/index.php/List_of_applications#Audio "List of applications") and [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) for the available applications.
 
 ### System Configuration
 

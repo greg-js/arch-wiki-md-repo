@@ -23,6 +23,13 @@ To allow for network access, make sure that `/etc/mysql/my.cnf` has the followin
 
 ```
 
+Your MySQL version may use the following line instead to restrict network access:
+
+```
+bind-address = *
+
+```
+
 Then, start the MySQL [service](/index.php/Daemon "Daemon").
 
 ### Installing JDBC

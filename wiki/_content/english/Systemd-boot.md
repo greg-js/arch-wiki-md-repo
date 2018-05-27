@@ -36,9 +36,7 @@ It is simple to configure but it can only start EFI executables such as the Linu
 
 To install the *systemd-boot* EFI boot manager, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list`.
 
-It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`.
-
-If the ESP is **not** mounted to `/boot`, the kernel and initramfs files must be copied onto that ESP. They will also need to be replaced regularly every time there is a kernel upgrade. The copy process can be automated by watching the kernel files for change using some systemd units as proposed in [EFI System Partition#Using systemd](/index.php/EFI_System_Partition#Using_systemd "EFI System Partition").
+It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`. If the ESP is **not** mounted to `/boot`, the kernel and initramfs files must be copied onto that ESP. See [EFI System Partition#Alternative mount points](/index.php/EFI_System_Partition#Alternative_mount_points "EFI System Partition") for details.
 
 `*esp*` will be used throughout this page to denote the ESP mountpoint, i.e. `/boot`.
 

@@ -4,10 +4,11 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Select resolver](#Select_resolver)
-    *   [2.2 Disable any services bound to port 53](#Disable_any_services_bound_to_port_53)
-    *   [2.3 Modify resolv.conf](#Modify_resolv.conf)
-    *   [2.4 Start systemd service](#Start_systemd_service)
+    *   [2.1 Startup](#Startup)
+    *   [2.2 Select resolver](#Select_resolver)
+    *   [2.3 Disable any services bound to port 53](#Disable_any_services_bound_to_port_53)
+    *   [2.4 Modify resolv.conf](#Modify_resolv.conf)
+    *   [2.5 Start systemd service](#Start_systemd_service)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Local DNS cache configuration](#Local_DNS_cache_configuration)
         *   [3.1.1 Change port](#Change_port)
@@ -30,9 +31,11 @@
 
 ## Configuration
 
-**Note:** Systemd overrides the `listen_addresses` option with a [socket file](#Change_port).
+### Startup
 
-To configure *dnscrypt-proxy*, perform the following steps:
+The service can be started in two (mutually exclusive) ways (i.e. only one of the two may be enabled!): With the `.service` file (default) or through `.socket` activation aka. unix socket activation (which then starts the service on access of said socket).
+
+**Note:** For using the service directly, the `listen_addresses` option in `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` has to be configured (e.g. `listen_addresses = [ "127.0.0.1:53" ]`). However, when using unix socket activation the option has to be the empty set (i.e. `listen_addresses = [ ]`), as systemd is taking care of the socket configuration.
 
 ### Select resolver
 

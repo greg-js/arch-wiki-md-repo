@@ -173,7 +173,7 @@ However, due to their size and complexity, GPU drivers do not tend to support dy
 
 The following section details how to configure a GPU so those placeholder drivers are bound early during the boot process, which makes said device inactive until a VM claims it or the driver is switched back. This is the preferred method, considering it has less caveats than switching drivers once the system is fully online.
 
-**Warning:** Once you reboot after this procedure, whatever GPU you have configured will no longer be usable on the host until you reverse the manipulation. Make sure the GPU you intend to use on the host is properly configured before doing this.
+**Warning:** Once you reboot after this procedure, whatever GPU you have configured will no longer be usable on the host until you reverse the manipulation. Make sure the GPU you intend to use on the host is properly configured before doing this - your motherboard should be set to display using the host GPU.
 
 ### Using vfio-pci
 

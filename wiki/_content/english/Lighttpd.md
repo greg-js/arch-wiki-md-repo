@@ -100,10 +100,10 @@ $SERVER["socket"] == ":443" {
 
 ##### Let's Encrypt
 
-Alternatively, generate a certificate signed by [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt"). After following the instruction for manual certificate generation, combine the generated `privkey.pem` and `cert.pem` into one file:
+Alternatively, generate a certificate signed by [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt"). After following the instruction for manual certificate generation, combine the generated `privkey.pem` and `fullchain.pem` into one file:
 
 ```
-# cat /etc/letsencrypt/live/*domain*/{privkey.pem,cert.pem} > /etc/letsencrypt/live/*domain*/combined.pem
+# cat /etc/letsencrypt/live/*domain*/{privkey.pem,fullchain.pem} > /etc/letsencrypt/live/*domain*/combined.pem
 
 ```
 
@@ -113,7 +113,7 @@ Alternatively, generate a certificate signed by [Let's Encrypt](/index.php/Let%2
 $SERVER["socket"] == ":443" {
     ssl.engine                  = "enable" 
     ssl.pemfile                 = "/etc/letsencrypt/live/*domain*/combined.pem"
-    ssl.ca-file                 = "/etc/letsencrypt/live/*domain*/chain.pem"
+    ssl.ca-file                 = "/etc/letsencrypt/live/*domain*/fullchain.pem"
 }
 
 ```

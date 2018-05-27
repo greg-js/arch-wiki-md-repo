@@ -98,7 +98,7 @@ Download the bootstrap image from a [mirror](https://www.archlinux.org/download)
 
 ```
 # cd /tmp
-# wget [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.04.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.04.01-x86_64.tar.gz)
+# wget [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.05.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.05.01-x86_64.tar.gz)
 
 ```
 

@@ -20,7 +20,7 @@ O **InspIRCd** (Inspire IRC daemon) é um servidor de IRC leve e modular escrito
 
 ## Configuração
 
-O arquivo de configuração `/etc/inspircd/inspircd.conf` é **obrigatório**, formatado em HTML e precisa ser criado na instalação.
+O arquivo de configuração `/etc/inspircd/inspircd.conf` é **obrigatório**, formatado em XML e precisa ser criado na instalação.
 
 Como você define seu arquivo de configuração dependerá muito das suas necessidades e configuração do sistema, motivo pelo qual não há nenhum arquivo de configuração definido por padrão.
 

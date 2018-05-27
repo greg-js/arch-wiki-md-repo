@@ -194,17 +194,44 @@ To set the value, run:
 
 #### Make changes permanent
 
-To have the desired scaling enabled at boot, [kernel module options](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods. However, in some cases there might be race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
-
-For example, to set the scaling governor of the CPU core `0` to performance while the scaling driver is `acpi_cpufreq`, create the following udev rule:
-
- `/etc/udev/rules.d/50-scaling-governor.rules` 
+To have the desired scaling enabled at boot, you can edit, for example `/etc/default/cpupower` 
 ```
-SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ' "
+# Define CPUs governor
+# valid governors: ondemand, performance, powersave, conservative, userspace.
+governor='ondemand'
+
+# Limit frequency range
+# Valid suffixes: Hz, kHz (default), MHz, GHz, THz
+#min_freq="2.25GHz"
+#max_freq="3GHz"
+
+# Specific frequency to be set.
+# Requires userspace governor to be available.
+# Do not set governor field if you use this one.
+#freq=
+
+# Utilizes cores in one processor package/socket first before processes are 
+# scheduled to other processor packages/sockets.
+# See man (1) CPUPOWER-SET for additional details.
+#mc_scheduler=
+
+# Utilizes thread siblings of one processor core first before processes are
+# scheduled to other cores. See man (1) CPUPOWER-SET for additional details.
+#smp_scheduler=
+
+#  Sets a register on supported Intel processore which allows software to convey
+# its policy for the relative importance of performance versus energy savings to
+# the  processor. See man (1) CPUPOWER-SET for additional details.
+perf_bias=15
 
 ```
 
-To have the rule already applied in the *initramfs*, follow the example at [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+Don't forget to enable the service
+
+```
+# systemctl enable cpupower.service
+
+```
 
 ## Interaction with ACPI events
 

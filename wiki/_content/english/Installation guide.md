@@ -22,17 +22,16 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X8
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Time zone](#Time_zone)
     *   [3.4 Locale](#Locale)
-    *   [3.5 Hostname](#Hostname)
-    *   [3.6 Network configuration](#Network_configuration)
-    *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 Root password](#Root_password)
-    *   [3.9 Boot loader](#Boot_loader)
+    *   [3.5 Network configuration](#Network_configuration)
+    *   [3.6 Initramfs](#Initramfs)
+    *   [3.7 Root password](#Root_password)
+    *   [3.8 Boot loader](#Boot_loader)
 *   [4 Reboot](#Reboot)
 *   [5 Post-installation](#Post-installation)
 
 ## Pre-installation
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
 
 To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
@@ -67,14 +66,14 @@ If the directory does not exist, the system may be booted in [BIOS](https://en.w
 
 ### Connect to the Internet
 
-The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon on boot for [wired](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) network devices. The connection may be [checked](/index.php/Network_configuration#Check_the_connection "Network configuration") with:
+The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot. The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping_(networking_utility) "w:ping (networking utility)"):
 
 ```
 # ping archlinux.org
 
 ```
 
-If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@` and pressing `Tab`. Proceed with [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration") for **wired** devices or [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") for **wireless** devices.
+If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@*interface*`, where the `interface` name can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion"). Proceed to configure the network as described in [Network configuration](/index.php/Network_configuration "Network configuration").
 
 ### Update the system clock
 
@@ -234,7 +233,7 @@ If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes per
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 
-### Hostname
+### Network configuration
 
 Create the [hostname](/index.php/Hostname "Hostname") file:
 
@@ -256,9 +255,7 @@ Add matching entries to [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ho
 
 If the system has a permanent IP address, it should be used instead of `127.0.1.1`.
 
-### Network configuration
-
-Configure the network for the newly installed environment: see [Network configuration](/index.php/Network_configuration "Network configuration") and [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+Complete the [network configuration](/index.php/Network_configuration "Network configuration") for the newly installed environment.
 
 ### Initramfs
 

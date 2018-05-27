@@ -42,7 +42,7 @@ ResolverName dnscrypt.eu-nl
 
 ### Modificando o resolv.conf
 
-Depois de selecionar um resolvedor DNS do dnscrypt, modifique o arquivo [resolv.conf](/index.php/Resolv.conf "Resolv.conf") e substituia o conjunto atual de endereços para o endereço do *localhost*:
+Depois de selecionar um resolvedor DNS do dnscrypt, modifique o arquivo [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)") e substitua o conjunto atual de endereços para o endereço do *localhost*:
 
 ```
 nameserver 127.0.0.1

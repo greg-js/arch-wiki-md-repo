@@ -38,7 +38,7 @@
         *   [1.14.2 Graphical](#Graphical_3)
     *   [1.15 Mind-mapping tools](#Mind-mapping_tools)
     *   [1.16 Character selectors](#Character_selectors)
-    *   [1.17 Stylus notes taking](#Stylus_notes_taking)
+    *   [1.17 Stylus note taking](#Stylus_note_taking)
     *   [1.18 Barcode generators and readers](#Barcode_generators_and_readers)
         *   [1.18.1 Console](#Console_4)
         *   [1.18.2 Graphical](#Graphical_4)
@@ -205,7 +205,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 ### Typesetting systems
 
-*   **GNU [troff](https://en.wikipedia.org/wiki/troff "wikipedia:troff")** — Heirloom Unix document processing system, the default formatter for man pages.
+*   **[groff](https://en.wikipedia.org/wiki/groff_(software) "wikipedia:groff (software)")** — GNU implementation of troff, a heirloom Unix document processing system and the default formatter for man pages.
 
 	[https://www.gnu.org/software/groff/groff.html](https://www.gnu.org/software/groff/groff.html) || [groff](https://www.archlinux.org/packages/?name=groff)
 
@@ -425,7 +425,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Kakoune](/index.php/Kakoune "Kakoune")** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
 
-	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune-git](https://aur.archlinux.org/packages/kakoune-git/)
+	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune](https://www.archlinux.org/packages/?name=kakoune)
 
 *   **[Neovim](/index.php/Neovim "Neovim")** — Vim's rebirth for the 21st century
 
@@ -971,7 +971,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://utils.kde.org/projects/kcharselect/](https://utils.kde.org/projects/kcharselect/) || [kcharselect](https://www.archlinux.org/packages/?name=kcharselect)
 
-### Stylus notes taking
+### Stylus note taking
 
 *   **Write** — A word processor for hand writing.
 

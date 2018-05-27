@@ -456,6 +456,8 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 ##### HDL
 
+Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki/Hardware_description_language "wikipedia:Hardware description language").
+
 *   **[Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")** — A set of design tools for Altera's FPGA chips that includes Quartus II and ModelSim-Altera.
 
 	[https://www.altera.com/products/design-software/overview.html](https://www.altera.com/products/design-software/overview.html) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")

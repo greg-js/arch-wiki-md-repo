@@ -240,11 +240,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 	[http://www.day-planner.org/](http://www.day-planner.org/) || [dayplanner](https://aur.archlinux.org/packages/dayplanner/)
 
-*   **etm (Event and Task Manager)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects.
-
-	[http://duke.edu/~dgraham/ETM/](http://duke.edu/~dgraham/ETM/) || [etm](https://aur.archlinux.org/packages/etm/)
-
-*   **etmtk (Event and Task Manager second generation)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects. A newer version of etm.
+*   **etmtk (Event and Task Manager)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects.
 
 	[http://duke.edu/~dgraham/ETMtk/](http://duke.edu/~dgraham/ETMtk/) || [etmtk](https://aur.archlinux.org/packages/etmtk/)
 
@@ -360,6 +356,10 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
 
+*   **dvtm** — [dwm](/index.php/Dwm "Dwm")-style window manager in the console.
+
+	[http://brain-dump.org/projects/dvtm/](http://brain-dump.org/projects/dvtm/) || [dvtm](https://www.archlinux.org/packages/?name=dvtm)
+
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Full-screen window manager that multiplexes a physical terminal.
 
 	[https://www.gnu.org/software/screen/](https://www.gnu.org/software/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
@@ -381,10 +381,6 @@ See the main article: [Desktop environment#List of desktop environments](/index.
 ##### Console
 
 See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of the functions of window managers for the console.
-
-*   **dvtm** — [dwm](/index.php/Dwm "Dwm")-style window manager in the console.
-
-	[http://brain-dump.org/projects/dvtm/](http://brain-dump.org/projects/dvtm/) || [dvtm](https://www.archlinux.org/packages/?name=dvtm)
 
 *   **twin** — Text-mode window manager.
 
@@ -614,11 +610,11 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **pybgsetter** — Multi-backend (hsetroot, Esetroot, habak, feh) to set desktop wallpaper.
 
-	http://bbs.archlinux.org/viewtopic.php?id=88997 || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
+	[http://bbs.archlinux.org/viewtopic.php?id=88997](http://bbs.archlinux.org/viewtopic.php?id=88997) || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
 
 *   **pywal** — Changes the wallpaper and creates matching colorschemes for various applications (rofi, i3, termials)
 
-	[https://github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal) || [python-pywal](https://aur.archlinux.org/packages/python-pywal/)
+	[https://github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal) || [python-pywal](https://www.archlinux.org/packages/?name=python-pywal)
 
 *   **variety** — Changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
 

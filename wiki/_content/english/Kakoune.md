@@ -14,7 +14,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [kakoune-git](https://aur.archlinux.org/packages/kakoune-git/) package.
+[Install](/index.php/Install "Install") the [kakoune](https://www.archlinux.org/packages/?name=kakoune) package.
 
 ## Usage
 
@@ -37,5 +37,5 @@ Every `*.kak` file is loaded from `autoload` at startup. If this directory exist
 
 ## See also
 
-*   [Github repository](https://github.com/mawww/kakoune)
-*   [Github wiki](https://github.com/mawww/kakoune/wiki)
+*   [GitHub repository](https://github.com/mawww/kakoune)
+*   [GitHub wiki](https://github.com/mawww/kakoune/wiki)

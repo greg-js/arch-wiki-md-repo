@@ -679,7 +679,7 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 ### Graphical front-ends
 
-**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) or [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) [[3]](https://github.com/manjaro/pamac/blob/master/data/systemd/pamac-mirrorlist.service#L9) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
+**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
 
 *   **Aarchup** — Fork of archup. Has the same options as archup plus a few other features. For differences between both please check [changelog](https://bbs.archlinux.org/viewtopic.php?id=119129).
 

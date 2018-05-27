@@ -758,7 +758,7 @@ Houve alguns relatos a cerca de problemas de rede que impedem o *pacman* de atua
 
 ### Falha ao obter arquivo 'core.db' do espelho
 
-Se você receber essa mensagem de erro com os [espelhos](/index.php/Espelhos "Espelhos") (*mirrors*) corretos, tente configurar um [servidor de nomes](/index.php/Resolv.conf "Resolv.conf") diferente.
+Se você receber essa mensagem de erro com os [espelhos](/index.php/Espelhos "Espelhos") (*mirrors*) corretos, tente configurar um [servidor de nomes](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)") diferente.
 
 ## Entendendo
 

@@ -721,47 +721,14 @@ Then replug the device making you trouble. The joystick and event devices should
 
 ### Steam Controller not pairing
 
-There are some unknown cases where the packaged udev rule for the Steam controller does not work ([FS#47330](https://bugs.archlinux.org/task/47330)). The most reliable workaround is to make the controller world readable. Copy the rule `/usr/lib/udev/rules.d/70-steam-controller.rules` to `/etc/udev/rules.d` and set `MODE="0666"` e.g.
+There are some unknown cases where the packaged udev rule for the Steam controller does not work ([FS#47330](https://bugs.archlinux.org/task/47330)). The most reliable workaround is to make the controller world readable. Copy the rule `/usr/lib/udev/rules.d/70-steam-controller.rules` to `/etc/udev/rules.d` with a later prioritiy and change anything that says `MODE="0660"` to `MODE="066**6**"` e.g.
 
  `/etc/udev/rules.d/99-steam-controller-perms.rules` 
 ```
-# This rule is needed for basic functionality of the controller in Steam and keyboard/mouse emulation
+...
 SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
-
-# This rule is necessary for gamepad emulation
-KERNEL=="uinput", MODE="0660", GROUP="steamcontroller", OPTIONS+="static_node=uinput"
-
-# DualShock 4 wired
-SUBSYSTEM=="usb", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="05c4", MODE="0666"
-# DualShock 4 wireless adapter
-SUBSYSTEM=="usb", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0ba0", MODE="0666"
-# DualShock 4 slim wired
-SUBSYSTEM=="usb", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="09cc", MODE="0666"
-
-# Valve HID devices over USB hidraw
-KERNEL=="hidraw*", ATTRS{idVendor}=="28de", MODE="0666"
-
-# Valve HID devices over bluetooth hidraw
-KERNEL=="hidraw*", KERNELS=="*28DE:*", MODE="0666"
-
-# DualShock 4 over bluetooth hidraw
-KERNEL=="hidraw*", KERNELS=="*054C:05C4*", MODE="0666"
-
-# DualShock 4 Slim over bluetooth hidraw
-KERNEL=="hidraw*", KERNELS=="*054C:09CC*", MODE="0666" 
+...
 
 ```
 
-Create a group of steam controller users.
-
-```
-# groupadd steamcontroller
-
-```
-
-And add your user to that group.
-
-```
-# gpasswd -a $USER steamcontroller
-
-```
+You may have to reboot in order for the change to take effect.

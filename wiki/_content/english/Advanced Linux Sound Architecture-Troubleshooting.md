@@ -141,7 +141,7 @@ As the pulseaudio wrapper is shown as "default" in alsamixer, you may have to pr
 To test the microphone, run these commands (see arecord's man page for further information):
 
 ```
-$ arecord -d 5 -f dat test-mic.wav
+$ arecord --duration=5 --format=dat test-mic.wav
 $ aplay test-mic.wav
 
 ```
@@ -149,11 +149,18 @@ $ aplay test-mic.wav
 Alternatively, you can run this command:
 
 ```
-$ arecord -vv -f dat /dev/null
+$ arecord -vv --format=dat /dev/null
 
 ```
 
 alongside alsamixer to easily identify channel which you should select and unmute.
+
+To test a particular device, use the `--device` parameter followed by the hardware PCM name in the form `hw:*C*,*D*` for card *C* device *D*, or `plughw:*C*,*D*` for plugged hardware. For instance:
+
+```
+$ arecord -vvv --format=dat --device=plughw:0,0 /dev/null
+
+```
 
 If all fails, you may want to eliminate hardware failure by testing the microphone with a different device.
 

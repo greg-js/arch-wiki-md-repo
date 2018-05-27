@@ -1,71 +1,94 @@
 Artigos relacionados
 
-*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Depuração de rede](/index.php/Network_Debugging "Network Debugging")
 *   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio")
-*   [Network bridge](/index.php/Network_bridge "Network bridge")
-*   [List of applications#Network Managers](/index.php/List_of_applications#Network_Managers "List of applications")
-*   [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing")
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-*   [Router](/index.php/Router "Router")
-*   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Compartilhamento de internet](/index.php/Internet_sharing "Internet sharing")
+*   [Roteador](/index.php/Router "Router")
 
-Esta página explica como configurar uma conexão cabeada. Se você deseja configurar uma rede wireless/sem fio veja a página [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
+Esse artigo explica como configurar uma conexão de rede.
 
 ## Contents
 
-*   [1 Depuração de rede](#Depura.C3.A7.C3.A3o_de_rede)
+*   [1 Verificar a conexão](#Verificar_a_conex.C3.A3o)
+    *   [1.1 Ping](#Ping)
 *   [2 Driver de dispositivo](#Driver_de_dispositivo)
     *   [2.1 Verificando o estado](#Verificando_o_estado)
     *   [2.2 Carregando o módulo](#Carregando_o_m.C3.B3dulo)
-*   [3 Interface de rede](#Interface_de_rede)
-    *   [3.1 Listando interfaces de rede](#Listando_interfaces_de_rede)
-    *   [3.2 Habilitando e desabilitando interfaces de rede](#Habilitando_e_desabilitando_interfaces_de_rede)
-*   [4 Obtendo um endereço IP](#Obtendo_um_endere.C3.A7o_IP)
-    *   [4.1 Endereço IP dinâmico](#Endere.C3.A7o_IP_din.C3.A2mico)
-    *   [4.2 Endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
-        *   [4.2.1 Atribuição manual](#Atribui.C3.A7.C3.A3o_manual)
-        *   [4.2.2 Calculando endereços](#Calculando_endere.C3.A7os)
-    *   [4.3 Gerenciadores de rede](#Gerenciadores_de_rede)
-*   [5 Configurando um hostname](#Configurando_um_hostname)
-    *   [5.1 Resolução de hostname de rede local](#Resolu.C3.A7.C3.A3o_de_hostname_de_rede_local)
-*   [6 Dicas e truques](#Dicas_e_truques)
-    *   [6.1 Alterando o nome do dispositivo](#Alterando_o_nome_do_dispositivo)
-    *   [6.2 Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos)
-    *   [6.3 Definindo o MTU do dispositivo e o tamanho da fila](#Definindo_o_MTU_do_dispositivo_e_o_tamanho_da_fila)
-    *   [6.4 ifplugd for laptops](#ifplugd_for_laptops)
-    *   [6.5 Bonding e LAG(agregação de LINK)](#Bonding_e_LAG.28agrega.C3.A7.C3.A3o_de_LINK.29)
-    *   [6.6 Aliasing de endereço IP](#Aliasing_de_endere.C3.A7o_IP)
-        *   [6.6.1 Exemplo](#Exemplo)
-    *   [6.7 Modo promíscuo](#Modo_prom.C3.ADscuo)
-*   [7 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [7.1 Trocando computadores no modem a cabo](#Trocando_computadores_no_modem_a_cabo)
-    *   [7.2 O problema de escala de janela TCP](#O_problema_de_escala_de_janela_TCP)
-        *   [7.2.1 Como diagnosticar o problema](#Como_diagnosticar_o_problema)
-        *   [7.2.2 Formas de corrigi-lo](#Formas_de_corrigi-lo)
-            *   [7.2.2.1 Ruim](#Ruim)
-            *   [7.2.2.2 Bom](#Bom)
-            *   [7.2.2.3 Melhor](#Melhor)
-        *   [7.2.3 More about it](#More_about_it)
-    *   [7.3 Realtek sem link / Problema com WOL](#Realtek_sem_link_.2F_Problema_com_WOL)
-        *   [7.3.1 Habilitando a NIC diretamente no Linux](#Habilitando_a_NIC_diretamente_no_Linux)
-        *   [7.3.2 Revertendo/alterando driver do Windows](#Revertendo.2Falterando_driver_do_Windows)
-        *   [7.3.3 Habilitando WOL no driver do Windows](#Habilitando_WOL_no_driver_do_Windows)
-        *   [7.3.4 Driver Realtek mais novo para Linux](#Driver_Realtek_mais_novo_para_Linux)
-        *   [7.3.5 Ativando *LAN Boot ROM* na BIOS/CMOS](#Ativando_LAN_Boot_ROM_na_BIOS.2FCMOS)
-    *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [7.7 Placa-mãe Gigabyte com Realtek 8111/8168/8411](#Placa-m.C3.A3e_Gigabyte_com_Realtek_8111.2F8168.2F8411)
-*   [8 Veja também](#Veja_tamb.C3.A9m)
+*   [3 Gerenciamento de rede](#Gerenciamento_de_rede)
+    *   [3.1 Interfaces de rede](#Interfaces_de_rede)
+        *   [3.1.1 Listando interfaces de rede](#Listando_interfaces_de_rede)
+        *   [3.1.2 Habilitando e desabilitando interfaces de rede](#Habilitando_e_desabilitando_interfaces_de_rede)
+    *   [3.2 Endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
+    *   [3.3 Endereços IP](#Endere.C3.A7os_IP)
+    *   [3.4 Tabela de roteamento](#Tabela_de_roteamento)
+    *   [3.5 DHCP](#DHCP)
+    *   [3.6 Gerenciadores de rede](#Gerenciadores_de_rede)
+*   [4 Configurando um hostname](#Configurando_um_hostname)
+    *   [4.1 Resolução de hostname local](#Resolu.C3.A7.C3.A3o_de_hostname_local)
+    *   [4.2 Resolução de hostname de rede local](#Resolu.C3.A7.C3.A3o_de_hostname_de_rede_local)
+*   [5 Dicas e truques](#Dicas_e_truques)
+    *   [5.1 Alterando o nome da interface](#Alterando_o_nome_da_interface)
+    *   [5.2 Revertendo para nomes tradicionais de interfaces](#Revertendo_para_nomes_tradicionais_de_interfaces)
+    *   [5.3 Definindo o MTU do dispositivo e o tamanho da fila](#Definindo_o_MTU_do_dispositivo_e_o_tamanho_da_fila)
+    *   [5.4 ifplugd for laptops](#ifplugd_for_laptops)
+    *   [5.5 Bonding e LAG(agregação de LINK)](#Bonding_e_LAG.28agrega.C3.A7.C3.A3o_de_LINK.29)
+    *   [5.6 Aliasing de endereço IP](#Aliasing_de_endere.C3.A7o_IP)
+        *   [5.6.1 Exemplo](#Exemplo)
+    *   [5.7 Modo promíscuo](#Modo_prom.C3.ADscuo)
+*   [6 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+    *   [6.1 Trocando computadores no modem a cabo](#Trocando_computadores_no_modem_a_cabo)
+    *   [6.2 O problema de escala de janela TCP](#O_problema_de_escala_de_janela_TCP)
+        *   [6.2.1 Como diagnosticar o problema](#Como_diagnosticar_o_problema)
+        *   [6.2.2 Formas de corrigi-lo](#Formas_de_corrigi-lo)
+            *   [6.2.2.1 Ruim](#Ruim)
+            *   [6.2.2.2 Bom](#Bom)
+            *   [6.2.2.3 Melhor](#Melhor)
+        *   [6.2.3 More about it](#More_about_it)
+    *   [6.3 Realtek sem link / Problema com WOL](#Realtek_sem_link_.2F_Problema_com_WOL)
+        *   [6.3.1 Habilitando a NIC diretamente no Linux](#Habilitando_a_NIC_diretamente_no_Linux)
+        *   [6.3.2 Revertendo/alterando driver do Windows](#Revertendo.2Falterando_driver_do_Windows)
+        *   [6.3.3 Habilitando WOL no driver do Windows](#Habilitando_WOL_no_driver_do_Windows)
+        *   [6.3.4 Driver Realtek mais novo para Linux](#Driver_Realtek_mais_novo_para_Linux)
+        *   [6.3.5 Ativando LAN Boot ROM na BIOS/CMOS](#Ativando_LAN_Boot_ROM_na_BIOS.2FCMOS)
+    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [6.7 Placa-mãe Gigabyte com Realtek 8111/8168/8411](#Placa-m.C3.A3e_Gigabyte_com_Realtek_8111.2F8168.2F8411)
+*   [7 Veja também](#Veja_tamb.C3.A9m)
 
-## Depuração de rede
+## Verificar a conexão
 
-Você pode usar [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para verificar se você consegue alcançar um host.
+Para solucionar problemas de uma conexão de rede, siga as seguintes condições e assegure-se de atendê-las:
 
-1.  Certifique-se que sua [#Interface de rede](#Interface_de_rede) está ativa. Se não estiver listada, verifique seu [#Driver de dispositivo](#Driver_de_dispositivo).
-2.  Verifique se você consegue acessar a internet pingando um endereço IP público (p. ex., `8.8.8.8`). Se você não conseguir acessar a internet, mas sua interface de rede estiver ativa, veja [#Obtendo um endereço IP](#Obtendo_um_endere.C3.A7o_IP).
-3.  Verifique se você consegue resolver nomes de domínio, pingando um nome de domínio (p. ex., `google.com`). Se você não consegue resolver nomes de domínio, mas você está conectado à Internet, veja [resolv.conf](/index.php/Resolv.conf "Resolv.conf") e verifique a linha `hosts` em [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5).
+1.  Suas interfaces de rede estão listadas e habilitadas.
+2.  Você está conectado à rede. O cabo está conectado ou você está [conectado com a rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
+3.  Sua interface de rede tem um [endereço IP](#Endere.C3.A7os_IP).
+4.  Sua [tabela de roteamento](#Tabela_de_roteamento) está configurada corretamente.
+5.  Você pode [pingar](#Ping) um endereço IP local (por exemplo, seu gateway padrão).
+6.  Você pode [pingar](#Ping) um endereço IP público (por exemplo, `8.8.8.8`); se não puder, pode estar relacionado ao seu gateway padrão ou ao seu provedor de serviços de Internet.
+7.  [Verifique se você consegue resolver nomes de domínio](/index.php/Verifique_se_voc%C3%AA_consegue_resolver_nomes_de_dom%C3%ADnio "Verifique se você consegue resolver nomes de domínio") (por exemplo, `archlinux.org`).
+
+**Nota:** `8.8.8.8` é um endereço estático fácil de lembrar. É o endereço do servidor DNS primário do Google, portanto, pode ser considerado confiável e geralmente não é bloqueado por sistemas de filtragem de conteúdo e proxies.
+
+### Ping
+
+[ping](https://en.wikipedia.org/wiki/pt:Ping "wikipedia:pt:Ping") é usado para testar se você consegue alcançar um host.
+
+ `$ ping www.example.com` 
+```
+PING www.example.com (93.184.216.34): 56(84) data bytes
+64 bytes from 93.184.216.34: icmp_seq=0 ttl=56 time=11.632 ms
+64 bytes from 93.184.216.34: icmp_seq=1 ttl=56 time=11.726 ms
+64 bytes from 93.184.216.34: icmp_seq=2 ttl=56 time=10.683 ms
+...
+```
+
+Para cada resposta que você recebe, o ping imprime uma linha como acima. Para mais informações, consulte o manual [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8).
+
+Observe que os computadores podem ser configurados para não responder às solicitações de echo ICMP.[[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
+
+Quando você não receber nenhuma resposta, você pode usar um [traceroute](https://en.wikipedia.org/wiki/pt:traceroute "wikipedia:pt:traceroute") ([traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) ou [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8)) para diagnosticar ainda mais a rota para o host.
 
 **Nota:** Se você receber um erro como `ping: icmp open socket: Operation not permitted` ao executar *ping*, tente reinstalar o pacote [iputils](https://www.archlinux.org/packages/?name=iputils).
 
@@ -96,171 +119,165 @@ Pesquise na internet pelo modelo/driver para o seu chipset. Algumas módulos com
 
 Caso o udev não detecte ou não carregue o módulo de forma apropriada e automaticamente durante o boot, veja [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
-## Interface de rede
+## Gerenciamento de rede
 
-O [udev](/index.php/Udev "Udev") atribui nomes para suas interfaces de rede. Mais especificamente, o [udev](/index.php/Udev "Udev") usa [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames). Interfaces são agora prefixadas com `en` (cabeada/[Ethernet](https://en.wikipedia.org/wiki/pt:Ethernet "w:pt:Ethernet")), `wl` (sem fio/wireless/WLAN) ou `ww` ([WWAN](https://en.wikipedia.org/wiki/pt:Rede_de_longa_dist%C3%A2ncia_sem_fio "w:pt:Rede de longa distância sem fio")) seguido por um identificador gerado automaticamente.
+Para configurar uma conexão de rede, siga as etapas abaixo:
 
-### Listando interfaces de rede
+1.  Certifique-se que sua [interface de rede](#Interfaces_de_rede) está listada e habilitada.
+2.  Conecte à rede. Conecte o cabo de rede ou [conecte à rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
+3.  Configure sua conexão de rede:
+    *   [endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
+    *   endereço IP dinâmico: use [DHCP](#DHCP)
 
-Ambos nomes de interfaces com e sem fio podem ser descobertos por meio de `ls /sys/class/net` ou `ip link`. Note que `lo` é o [dispositivo *loop* ou de laço](https://en.wikipedia.org/wiki/pt:Loop_device "w:pt:Loop device") e não é usado para fazer conexões de rede.
+**Dica:** [#Gerenciadores de rede](#Gerenciadores_de_rede) fornecem configuração e conexão de rede automática baseada em perfis de rede.
+
+O pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2) fornece o utilitário de linha de comando [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8), usado para gerenciar [interfaces de rede](#Interfaces_de_rede), [endereços IP](#Endere.C3.A7os_IP) e a [tabela de roteamento](#Tabela_de_roteamento). Saiba que a configuração feita usando `ip` será perdida após a inicialização. Você pode automatizar comandos *ip* usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_unit "Systemd (Português)"). Também note que comandos `ip` podem de forma geral ser abreviados, mas, para melhor clareza, eles são expressos na forma longa neste artigo.
+
+### Interfaces de rede
+
+Por padrão, o [udev](/index.php/Udev "Udev") atribui nomes para suas interfaces de rede usando [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), que prefixam nomes de interfaces com `en` (cabeada/[Ethernet](https://en.wikipedia.org/wiki/pt:Ethernet "wikipedia:pt:Ethernet")), `wl` (sem fio/wireless/WLAN) ou `ww` ([WWAN](https://en.wikipedia.org/wiki/pt:Rede_de_longa_dist%C3%A2ncia_sem_fio "wikipedia:pt:Rede de longa distância sem fio")).
+
+**Dica:** Para alterar os nomes de dispositivos, veja [#Alterando o nome da interface](#Alterando_o_nome_da_interface) e [#Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos).
+
+#### Listando interfaces de rede
+
+Ambos nomes de interfaces com e sem fio podem ser descobertos por meio de `ls /sys/class/net` ou `ip link`. Note que `lo` é o [dispositivo *loop* ou de laço](https://en.wikipedia.org/wiki/pt:Loop_device "wikipedia:pt:Loop device") e não é usado para fazer conexões de rede.
 
 Nomes de dispositivos sem fio também podem ser obtidos usando `iw dev`. Veja também [Configuração de rede sem fio#Obter o nome da interface](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio#Obter_o_nome_da_interface "Configuração de rede sem fio").
 
-**Dica:** Para alterar os nomes de dispositivos, veja [#Alterando o nome do dispositivo](#Alterando_o_nome_do_dispositivo) e [#Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos).
+Se sua interface de rede não estiver listada, certifique-se que seu [driver de dispositivo](#Driver_de_dispositivo) foi carregado com sucesso.
 
-### Habilitando e desabilitando interfaces de rede
+#### Habilitando e desabilitando interfaces de rede
 
-Você pode ativar uma interface de rede usando:
+Interfaces de rede podem ser habilitadas/desabilitadas usando `ip link set *interface* up|down`. Veja [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8).
 
-```
-# ip link set *interface* up
-
-```
-
-Para desativá-la, faça:
-
-```
-# ip link set *interface* down
-
-```
-
-Para verificar o resultado para a interface `eth0`:
+Para verificar o status da interface `eth0`:
 
  `$ ip link show dev eth0` 
 ```
-2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state DOWN mode DEFAULT qlen 1000
 ...
 
 ```
 
+O `UP` em `<BROADCAST,MULTICAST,UP,LOWER_UP>` é o que indica a interface está ativa, e não o `state DOWN` posterior.
+
 **Nota:** Se sua rota padrão é por meio da interface `eth0`, desabilitá-la também vai remover a rota e reativá-la não vai restabelecer automaticamente a rota padrão. Veja [#Atribuição manual](#Atribui.C3.A7.C3.A3o_manual) para restabelecê-la.
-
-## Obtendo um endereço IP
-
-### Endereço IP dinâmico
-
-Veja [#Gerenciadores de rede](#Gerenciadores_de_rede) para uma lista de opções na definição de um endereço IP dinâmico
 
 ### Endereço IP estático
 
-Um endereço IP estático pode ser configura com a maioria dos [gerenciadores de rede](#Gerenciadores_de_rede) padrão. Independentemente da ferramenta que você escolher, você provavelmente vai precisar estar preparado com a seguinte informação:
+Um endereço IP estático pode ser configurado com a maioria dos [gerenciadores de rede](#Gerenciadores_de_rede) padrão e também [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
 
-*   Endereço IP estático
-*   Máscara de sub-rede ou possivelmente sua [notação CIDR](https://en.wikipedia.org/wiki/pt:CIDR#Nota.C3.A7.C3.A3o_standard "wikipedia:pt:CIDR"); por exemplo, `/24` é a notação CIDR da máscara de rede `255.255.255.0`.
-*   [Endereço broadcast](https://en.wikipedia.org/wiki/pt:Endere%C3%A7o_de_broadcast "wikipedia:pt:Endereço de broadcast")
-*   Endereço IP do [Gateway](https://en.wikipedia.org/wiki/pt:Gateway "wikipedia:pt:Gateway")
-*   Endereços IP dos servidores de nome (DNS). Veja também [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+Para configurar manualmente um endereço IP estático, adicione um endereço IP como descrito em [#Endereços IP](#Endere.C3.A7os_IP), configure sua [tabela de roteamento](#Tabela_de_roteamento) e [configure seus servidores DNS](/index.php/Domain_name_resolution "Domain name resolution").
 
-Se você está usando em uma rede privada, é seguro usar endereços IP em `192.168.*.*` para seus endereços IP, com uma máscara de sub-rede de `255.255.255.0` e um endereço broadcast de `192.168.*.255`. O gateway geralmente é `192.168.*.1` ou `192.168.*.254`.
+### Endereços IP
 
-**Atenção:**
+[Endereços IP](https://en.wikipedia.org/wiki/pt:Endere%C3%A7o_IP "wikipedia:pt:Endereço IP") são gerenciados usando [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8).
 
-*   Certifique-se de que endereços IP atribuídos manualmetne não conflitem com os atribuídos via DHCP. Veja [esse tópico no fórum](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
-*   Se você compartilha conexão Internet de uma máquina Windows sem um roteador, certifique-se de usar endereços IP estáticos em ambos computadores para evitar problemas de rede local.
-
-**Dica:** Endereços podem ser calculados com o pacote [ipcalc](https://www.archlinux.org/packages/?name=ipcalc); veja [#Calculando endereços](#Calculando_endere.C3.A7os).
-
-#### Atribuição manual
-
-É possível configurar manualmente um IP estático usando apenas o pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2). Essa é uma boa forma de testar as configurações da conexão, já que a conexão feita usando esse método não persistirá entre as reinicializações. Primeiro, ative a [#Interface de rede](#Interface_de_rede):
+Liste endereços IP:
 
 ```
-# ip link set *interface* up
+$ ip address show
 
 ```
 
-Atribua um endereço IP estático no console:
+Adicione um endereço IP a uma interface:
 
 ```
-# ip addr add *endereço_IP*/*máscara_sub-rede* broadcast *endereço_broadcast* dev *interface*
-
-```
-
-Então, adicione o endereço IP do seu gateway:
-
-```
-# ip route add default via *gateway_padrão*
+# ip address add *endereço/tam_prefixo* broadcast + dev *interface*
 
 ```
 
-Por exemplo:
+	Note que:
+
+*   o endereço é dado em [notação CIDR](https://en.wikipedia.org/wiki/pt:Classless_Inter-Domain_Routing#Nota.C3.A7.C3.A3o_standard "wikipedia:pt:Classless Inter-Domain Routing") para também fornecer uma [máscara de sub-rede](https://en.wikipedia.org/wiki/pt:Sub-rede "wikipedia:pt:Sub-rede")
+*   `+` é um símbolo especial que faz o `ip` derivar o [endereço broadcast](https://en.wikipedia.org/wiki/pt:Endere%C3%A7o_de_broadcast "wikipedia:pt:Endereço de broadcast") do endereço IP e a máscara de sub-rede
+
+**Nota:** Certifique-se que endereços IP atribuídos manualmente não conflitem com os atribuídos por DHCP. Veja [esse tópico do fórum](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
+
+Exclui um endereço IP de uma interface:
 
 ```
-# ip link set eth0 up
-# ip addr add 192.168.1.2/24 broadcast 192.168.1.255 dev eth0
-# ip route add default via 192.168.1.1
-
-```
-
-**Dica:** Se você receber a mensagem `RTNETLINK answers: Network is unreachable`, tente quebrar a criação da rota nas duas partes a seguir:
-```
-# ip route add 192.168.1.1 dev eth0
-# ip route add default via 192.168.1.1 dev eth0
+$ ip address del *endereço/tam_prefixo* dev *interface*
 
 ```
 
-Para desfazer esses passos (ex. antes de trocar para um IP dinâmico), primeiro remova qualquer nedereço IP atribuído:
+Exclui todos os endereços correspondendo a um critério, por exemplo, de uma interface específica:
 
 ```
-# ip addr flush dev *interface*
-
-```
-
-Então, remova qualquer gateway atribuído:
-
-```
-# ip route flush dev *interface*
+$ ip address flush dev *interface*
 
 ```
 
-E, finalmente, ative a interface:
+**Dica:** Endereços IP podem ser calculados com [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)).
+
+### Tabela de roteamento
+
+A [tabela de roteamento](https://en.wikipedia.org/wiki/Routing_table "wikipedia:Routing table") é usada para determinar se você pode alcançar um endereço IP diretamente ou qual gateway (roteador) você deve usar. Se nenhuma rota corresponde ao endereço IP, o [gateway padrão](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway") é usado.
+
+A tabela de roteamento é gerenciada usando [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8).
+
+*PREFIXO* é uma notação CIDR ou `default` para o gateway padrão.
+
+Lista rotas:
 
 ```
-# ip link set *interface* down
+$ ip route show
 
 ```
 
-Para mais opções, veja [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). Esses comandos podem ser atualizados usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_.service_personalizados "Systemd (Português)").
+Adiciona uma rota:
 
-#### Calculando endereços
-
-Você pode usar `ipcalc`, fornecido pelo pacote [ipcalc](https://www.archlinux.org/packages/?name=ipcalc), para calcular IP de broadcast, rede, máscara de rede e intervalo de hosts para mais configurações avançadas. Um exemplo é usar Ethernet por Firewire para conectar uma máquina Windows a Linux. Para melhorar a segurança e organização, ambas máquinas têm que ter sua rede com a máscara de rede e broadcast configurados corretamente.
-
-A descoberta dos respectivos endereços de máscara de rede e broadcast é feita com `ipcalc`, especificando o IP da interface de rede Linux `10.66.66.1` e o número de hosts (aqui dois):
-
- `$ ipcalc -nb 10.66.66.1 -s 1` 
 ```
-Endereço:   10.66.66.1
+# ip route add *PREFIXO* via *endereço* dev *interface*
 
-Máscara:    255.255.255.252 = 30
-IP de Rede: 10.66.66.0/30
-HostMín:    10.66.66.1
-HostMáx:    10.66.66.2
-Broadcast:  10.66.66.3
-Hosts/Rede: 2                     Classe A, Internet Privada
 ```
+
+Exclui uma rota:
+
+```
+# ip route del *PREFIXO* via *endereço* dev *interface*
+
+```
+
+### DHCP
+
+Um servidor [Dynamic Host Configuration Protocol](https://en.wikipedia.org/wiki/pt:Dynamic_Host_Configuration_Protocol "wikipedia:pt:Dynamic Host Configuration Protocol") (DHCP) fornece aos clientes um endereço IP dinâmico, a máscara de sub-rede, o endereço IP do gateway padrão e, opcionalmente, também servidores de nome DNS.
+
+**Nota:** Você não deve executar dois clientes DHCP simultaneamente.
+
+Para usar DHCP, você precisa de um servidor DHCP em sua rede e um cliente DHCP:
+
+| Cliente | Pacote | [Archiso](/index.php/Archiso "Archiso") | Nota | Units de systemd |
+| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) | Sim | DHCP, DHCPv6, ZeroConf, IP estático | `dhcpcd.service`, `dhcpcd@*interface*.service` |
+| [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Sim | DHCP, BOOTP, IP estático | `dhclient@*interface*.service` |
+
+Note que em vez de usar diretamente um cliente DHCP, você também pode usar um [gerenciador de rede](#Gerenciadores_de_rede).
+
+**Dica:** Você pode verificar se um servidor DHCP estiver funcionando com [dhcping](https://www.archlinux.org/packages/?name=dhcping).
 
 ### Gerenciadores de rede
 
-Existem muitas soluções para escolher, mas lembre-se de que todas elas são mutuamente exclusivas; você não deve executar dois daemons simultaneamente. A tabela a seguir compara os diferentes gerenciadores de conexão. *Atende automaticamente conexão com fio* significa que existe pelo menos uma opção para o usuário simplesmente iniciar o daemon sem criar um arquivo de configuração.
+Um gerenciador de rede permite que você gerencie configurações de conexão de rede nos chamados peris de rede para facilitar a troca de redes.
 
-| Gerenciador de rede | Trata da conexão
-com fio
-automaticamente | GUI
-oficial | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Ferramentas
-de console | Units de systemd |
-| [ConnMan](/index.php/ConnMan "ConnMan") | Sim | Não | Não | `connmanctl` | `connman.service` |
-| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Sim | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
-| [netctl](/index.php/Netctl "Netctl") | Sim | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | `netctl` | `netctl-ifplugd@*interface*.service` |
-| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Sim | Não | `nmcli`,`nmtui` | `NetworkManager.service` |
-| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Não | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
-| [Wicd](/index.php/Wicd "Wicd") | Sim | Sim | Não | `wicd-curses` | `wicd.service` |
+**Nota:** Existem muitas soluções para escolher, mas lembre-se de que todas elas são mutuamente exclusivas; você não deve executar dois daemons simultaneamente.
+
+| Gerenciador
+de rede | Lida com conexões
+cabeadas | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Ferramentas CLI | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Point-to-Point_Protocol "wikipedia:pt:Point-to-Point Protocol")
+(ex., Modem 3G) | Cliente [#DHCP](#DHCP) | Units de systemd |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Sim | 8 não oficiais | Não | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Sim | interno | `connman.service` |
+| [netctl](/index.php/Netctl "Netctl") | Sim | 2 não oficiais | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Sim | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
+| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Sim | Não | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Sim | internal, [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
+| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Sim | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | Não |  ? | interno | `systemd-networkd.service`, `systemd-resolved.service` |
+| [Wicd](/index.php/Wicd "Wicd") | Sim | Sim | Não | [wicd-cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-cli.8), [wicd-curses(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-curses.8) | Não | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | `wicd.service` |
+| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Não | Sim | Não | Não | Não | qualquer (apenas executa comando) |
 
 Veja também [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
 
 ## Configurando um hostname
 
-Um [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname"), ou "nome de máquina", é um nome único criado para identificar uma máquina em uma rede, configurada em `/etc/hostname`—veja [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) e [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) para detalhes. O arquivo pode conter o nome de domínio do sistema, se houver. Para configurar o hostname, [edite](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") `/etc/hostname` para incluir uma única linha com `*meuhostname*`:
+Um [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname"), ou "nome de máquina", é um nome único criado para identificar uma máquina em uma rede, configurada em `/etc/hostname` — veja [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) e [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) para detalhes. O arquivo pode conter o nome de domínio do sistema, se houver. Para configurar o hostname, [edite](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") `/etc/hostname` para incluir uma única linha com `*meuhostname*`:
 
  `/etc/hostname` 
 ```
@@ -286,22 +303,11 @@ Para definir temporariamente o hostname (até reiniciar), use [hostname(1)](http
 
 Para configurar um hostname "bonito" e outros metadados de máquina, veja [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
-### Resolução de hostname de rede local
+### Resolução de hostname local
 
-O pré-requisito é ter realizado [#Configurando um hostname](#Configurando_um_hostname), após o qual a resolução de nome funciona no sistema local em si:
+O módulo [Name Service Switch](/index.php/Name_Service_Switch "Name Service Switch") (NSS) `myhostname` do [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") fornece resolução de hostname local sem ter que editar `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). Ele está habilitado por padrão.
 
- `$ ping *meuhostname*` 
-```
-PING *meuhostname* (192.168.1.2) 56(84) bytes of data.
-64 bytes from *meuhostname* (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
-```
-
-Para permitir que outras máquinas enderecem o host pelo nome, é necessário:
-
-*   Configurar o arquivo [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) ou
-*   Habilitar um serviço que resolva o hostname.
-
-**Nota:** [systemd](https://www.archlinux.org/packages/?name=systemd) fornece resolução de hostname via o módulo nss de `meuhostname`, habilitado por padrão em `/etc/nsswitch.conf`. Porém, clientes ainda podem dependere de `/etc/hosts`, veja [[2]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) por exemplos.
+Alguns clientes, porém, podem depender de `/etc/hosts`, veja [[3]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) por exemplos.
 
 Para configurar o arquivo hosts, adicione a seguinte linha ao `/etc/hosts`:
 
@@ -323,14 +329,19 @@ Como um resultado, o sistema resolve ambas entradas:
 
 Para um sistema com um endereço IP permanente, esse endereço IP permanente deve ser usado em vez de `127.0.1.1`.
 
-**Nota:** Outra opção é configurar um servidor DNS completo, como [BIND](/index.php/BIND "BIND") ou [Unbound](/index.php/Unbound "Unbound"), mas é um exagero e muito complexo para a maioria dos sistemas. Para redes menores e flexibilidade dinâmica com hosts entrando e saindo dos serviços de rede [zero-configuration networking ou zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") podem ser mais aplicáveis:
+### Resolução de hostname de rede local
 
-*   [Samba](/index.php/Samba "Samba") fornece resolução de nomes via **NetBIOS** da Microsoft. Ele precisa da instalação do [samba](https://www.archlinux.org/packages/?name=samba) e habilitação do serviço `nmbd.service`. Computadores usando Windows, macOS ou Linux com `nmbd` ativo, serão capazes de localizar sua máquina.
-*   [Avahi](/index.php/Avahi "Avahi") fornece resolução de nomes via **zeroconf**, também conhecido como Avahi ou Bonjour. É necessário uma configuração um pouco mais complexa que o Samba: veja [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") para detalhes details. Computadores usando macOS, ou Linux com um daemon Avahi ativo, serão capazes de localizar sua máquina. Windows não têm um cliente ou daemon Avahi incorporados.
+Para tornar sua máquina acessível em sua LAN por seu hostname, você pode:
+
+*   editar o arquivo `/etc/hosts` para todo dispositivio em sua LAN, veja [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
+*   configurar um [servidor DNS](/index.php/DNS_server "DNS server") para resolver seu hostname e faça com que os dispositivos LAN o usem (ex., por [#DHCP](#DHCP))
+*   ou a forma fácil: use um serviço [Zero-configuration networking](https://en.wikipedia.org/wiki/pt:Zeroconf "wikipedia:pt:Zeroconf"):
+    *   [Samba](/index.php/Samba "Samba") fornece resolução de nomes via **NetBIOS** da Microsoft. Ele precisa da instalação do [samba](https://www.archlinux.org/packages/?name=samba) e habilitação do serviço `nmbd.service`. Computadores usando Windows, macOS ou Linux com `nmbd` ativo, serão capazes de localizar sua máquina.
+    *   [Avahi](/index.php/Avahi "Avahi") fornece resolução de nomes via **zeroconf**, também conhecido como Avahi ou Bonjour. É necessário uma configuração um pouco mais complexa que o Samba: veja [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") para detalhes details. Computadores usando macOS, ou Linux com um daemon Avahi ativo, serão capazes de localizar sua máquina. Windows não têm um cliente ou daemon Avahi incorporados.
 
 ## Dicas e truques
 
-### Alterando o nome do dispositivo
+### Alterando o nome da interface
 
 **Nota:** Ao alterar o esquema de nomes de interface, não se esqueça de atualizar todos os arquivos de configuração relacionados a rede e arquivos personalizados de unit de systemd para refletir a alteração.
 
@@ -363,7 +374,7 @@ Para [testar](/index.php/Udev#Testing_rules_before_loading "Udev") suas regras, 
 
 **Nota:** Ao escolher os nomes estáticos **deve-se evitar o uso de nomes no formato de "eth*X*" e "wlan*X*"**, pois eles podem levar a codiçẽos de corrida entre o kernel e udev durante a inicialização. Em vez disso, é melhor usar nomes de interface que não são usados pelo kernel como padrão, ex.: `net0`, `net1`, `wifi0`, `wifi1`. Para detalhes adicionais, por favor veja a documentação do [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
 
-### Revertendo para nomes tradicionais de dispositivos
+### Revertendo para nomes tradicionais de interfaces
 
 Se você preferir manter os nomes de interface tradicionais, como eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) podem ser desabilitados mascarando a regra de rule:
 
@@ -536,7 +547,7 @@ No Windows XP (exemplo):
 
 Qualquer driver mais recente para estas placas Realtek pode ser encontrado para o Linux no site da Realtek (não testado, mas acredita que também resolve o problema).
 
-#### Ativando *LAN Boot ROM* na BIOS/CMOS
+#### Ativando LAN Boot ROM na BIOS/CMOS
 
 Parece que a configuração *Periféricos integrados > Onboard LAN Boot ROM > Ativado* na BIOS/CMOS reativa o chip de LAN da Realtek na inicialização do sistema, apesar do driver do Windows desabilitando no desligamento do sistema operacional.
 
@@ -610,6 +621,7 @@ Ao configurar o processo de inicialização para sua instalação, adicione `iom
 
 ## Veja também
 
+*   [Linux Network Administrators Guide](https://www.tldp.org/LDP/nag2/index.html)
 *   [Referência do Debian: Configuração de Rede](https://www.debian.org/doc/manuals/debian-reference/ch05.en.html)
 *   [RHEL7: Guia de Rede](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/)
 *   [Linux Home Networking](http://www.linuxhomenetworking.com/wiki/)

@@ -5,7 +5,7 @@
         *   [1.1.1 Creating bootia32.efi](#Creating_bootia32.efi)
         *   [1.1.2 Creating a bootable USB](#Creating_a_bootable_USB)
             *   [1.1.2.1 Unmount](#Unmount)
-    *   [1.2 OS indipendent method](#OS_indipendent_method)
+    *   [1.2 OS Independent Method](#OS_Independent_Method)
     *   [1.3 Booting the x205ta from USB](#Booting_the_x205ta_from_USB)
 *   [2 Install Arch](#Install_Arch)
     *   [2.1 Enable wifi](#Enable_wifi)
@@ -153,7 +153,7 @@ $ umount <DEV-TARGET-N>
 
 ```
 
-### OS indipendent method
+### OS Independent Method
 
 This method is not canonical and should not be used unless you are having trouble with the proper method. On the other had this procedure can be followed without compiling bootia32.efi and it might be useful to be used under Windows or any other operating system when no linux systems are around. Create a bootable usb using standard methods (es.Rufus on windows). Download a prebuilt bootia32.efi from any source you trust (es [https://github.com/jfwells/linux-asus-t100ta/blob/master/boot/bootia32.efi](https://github.com/jfwells/linux-asus-t100ta/blob/master/boot/bootia32.efi)) and copy it to /EFI/boot folder on the usb. Create a custom grub.cfg file, replacing <FS-LABEL> with the correct label for your iso as mentioned above. Copy the custom grub.cfg file to the root folder of the usb. Once booted the x205TA from the (as mentioned above) type the following command in the grub console
 

@@ -62,9 +62,21 @@ jack_control dps period 256  -  set the driver parameter period to 256
 
 ### GUI
 
-[cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) is the modern GUI control application. It can be installed with the [cadence](https://www.archlinux.org/packages/?name=cadence) package.
+*   **Cadence** — Set of tools useful for audio production. It performs system checks, manages JACK, calls other tools and make system tweaks.
 
-[qjackctl](https://www.archlinux.org/packages/?name=qjackctl) is more widely used, and still functions, but is now outdated and is not recommended.
+	[https://kxstudio.linuxaudio.org/Applications:Cadence](https://kxstudio.linuxaudio.org/Applications:Cadence) || [cadence](https://www.archlinux.org/packages/?name=cadence)
+
+*   **Patchage** — Modular patch bay for audio and MIDI systems based on JACK and ALSA.
+
+	[https://drobilla.net/software/patchage](https://drobilla.net/software/patchage) || [patchage](https://www.archlinux.org/packages/?name=patchage)
+
+*   **PatchMatrix** — JACK patch bay in flow matrix style.
+
+	[https://git.open-music-kontrollers.ch/lad/patchmatrix/about/](https://git.open-music-kontrollers.ch/lad/patchmatrix/about/) || [patchmatrix](https://www.archlinux.org/packages/?name=patchmatrix)
+
+*   **[QjackCtl](https://en.wikipedia.org/wiki/Qjackctl "wikipedia:Qjackctl")** — Simple Qt application to control the JACK sound server daemon.
+
+	[https://qjackctl.sourceforge.io/](https://qjackctl.sourceforge.io/) || [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
 
 ## Basic Configuration
 

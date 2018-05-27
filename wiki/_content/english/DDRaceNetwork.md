@@ -46,7 +46,7 @@ The game works in a client–server model, where the user plays using a Client w
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [ddnet](https://aur.archlinux.org/packages/ddnet/). Alternatively, you can install the development version [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/).
+[Install](/index.php/Install "Install") [ddnet](https://aur.archlinux.org/packages/ddnet/). Alternatively, you can install its development version [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/).
 
 ### Optional skins
 
@@ -83,7 +83,7 @@ It is very straightforward – all user configuration (skin selection, video, co
 
 No server setup is required; if you want to set up a local server, see [#Server](#Server).
 
-Also, some extra tools – which you probably will not need – are available in `/usr/share/ddnet/tools/`. See [#Extra tools](#Extra_tools).
+Also, some extra tools – which you probably will not need – are available in `/usr/lib/ddnet/tools/`. See [#Extra tools](#Extra_tools).
 
 ### Gametypes
 
@@ -175,12 +175,12 @@ The server instance should be available and visible for a Client in the LAN serv
 
 This section list and describe some tools that, while most might not need them, could be useful for e.g. mappers. Some of these tools are developed by the DDNet development team, but other tools were inherited from Teeworlds when forking its source code in the beginning.
 
-These following tools are provided in `/usr/share/ddnet/tools/` by the DDNet packages.
+These following tools are provided in `/usr/lib/ddnet/tools/` by the DDNet packages.
 
 ### config_retrieve
 
 ```
-$ /usr/share/ddnet/tools/config_retrieve *mapfile.map*
+$ /usr/lib/ddnet/tools/config_retrieve *mapfile.map*
 
 ```
 
@@ -191,7 +191,7 @@ Available since DDNet version 9.0.
 ### config_store
 
 ```
-$ /usr/share/ddnet/tools/config_store *mapfile.map*
+$ /usr/lib/ddnet/tools/config_store *mapfile.map*
 
 ```
 
@@ -204,7 +204,7 @@ Available since DDNet version 9.0.
 ### confusables
 
 ```
-$ /usr/share/ddnet/tools/confusables *string1* *string2*
+$ /usr/lib/ddnet/tools/confusables *string1* *string2*
 
 ```
 
@@ -217,7 +217,7 @@ Available since DDnet version 10.3.5.
 ### crapnet
 
 ```
-$ /usr/share/ddnet/tools/crapnet
+$ /usr/lib/ddnet/tools/crapnet
 
 ```
 
@@ -226,7 +226,7 @@ Tests connection by setting a client–server connection locally and running pin
 ### dilate
 
 ```
-$ /usr/share/ddnet/tools/dilate *imagefile1* [*imagefile2* ... ]
+$ /usr/lib/ddnet/tools/dilate *imagefile1* [*imagefile2* ... ]
 
 ```
 
@@ -237,7 +237,7 @@ It is a graphical tool, mainly useful for mappers. It takes care of transparent 
 ### dummy_map
 
 ```
-$ /usr/share/ddnet/tools/dummy_map
+$ /usr/lib/ddnet/tools/dummy_map
 
 ```
 
@@ -246,7 +246,7 @@ Creates a dummy, small empty map to be used to start a server. See [[3]](https:/
 ### fake_server
 
 ```
-$ /usr/share/ddnet/tools/fake_server
+$ /usr/lib/ddnet/tools/fake_server
 
 ```
 
@@ -255,7 +255,7 @@ Creates a fake server for testing.
 ### map_diff
 
 ```
-$ /usr/share/ddnet/tools/map_diff *mapfile1.map* *mapfile2.map*
+$ /usr/lib/ddnet/tools/map_diff *mapfile1.map* *mapfile2.map*
 
 ```
 
@@ -271,7 +271,7 @@ If there is no difference between maps, returns 0; otherwise, returns 1.
 ### map_extract
 
 ```
-$ /usr/share/ddnet/tools/map_extract *mapfile.map* [*directory*]
+$ /usr/lib/ddnet/tools/map_extract *mapfile.map* [*directory*]
 
 ```
 
@@ -280,7 +280,7 @@ Extracts content from *mapfile.map* into *directory*. If optional argument *dire
 ### map_replace_image
 
 ```
-$ /usr/share/ddnet/tools/map_replace_image *mapfile1.map* *mapfile2.map* *imagename* *imagefile*
+$ /usr/lib/ddnet/tools/map_replace_image *mapfile1.map* *mapfile2.map* *imagename* *imagefile*
 
 ```
 
@@ -294,7 +294,7 @@ Replaces the image *imagename* currently inside the map filename *mapfile1.map* 
 ### map_resave
 
 ```
-$ /usr/share/ddnet/tools/map_resave *mapfile.map* *imagefile*
+$ /usr/lib/ddnet/tools/map_resave *mapfile.map* *imagefile*
 
 ```
 
@@ -305,7 +305,7 @@ The error status 255 is returned if 1) a number of arguments different from 2 is
 ### packetgen
 
 ```
-$ /usr/share/ddnet/tools/packetgen
+$ /usr/lib/ddnet/tools/packetgen
 
 ```
 
@@ -314,7 +314,7 @@ Generates packets to localhost in default port (8303) to test communication with
 ### tileset_borderadd
 
 ```
-$ /usr/share/ddnet/tools/tileset_borderadd *tileset1* [*tileset2* ...]
+$ /usr/lib/ddnet/tools/tileset_borderadd *tileset1* [*tileset2* ...]
 
 ```
 
@@ -325,7 +325,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### tileset_borderfix
 
 ```
-$ /usr/share/ddnet/tools/tileset_borderfix tileset1 [tileset2 ...]
+$ /usr/lib/ddnet/tools/tileset_borderfix tileset1 [tileset2 ...]
 
 ```
 
@@ -336,7 +336,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### tileset_borderrem
 
 ```
-$ /usr/share/ddnet/tools/tileset_borderrem tileset1 [tileset2 ...]
+$ /usr/lib/ddnet/tools/tileset_borderrem tileset1 [tileset2 ...]
 
 ```
 
@@ -347,7 +347,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### tileset_borderset
 
 ```
-$ /usr/share/ddnet/tools/tileset_borderset tileset1 [tileset2 ...]
+$ /usr/lib/ddnet/tools/tileset_borderset tileset1 [tileset2 ...]
 
 ```
 
@@ -358,7 +358,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### uuid
 
 ```
-$ /usr/share/ddnet/tools/uuid *name*
+$ /usr/lib/ddnet/tools/uuid *name*
 
 ```
 

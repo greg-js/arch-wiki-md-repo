@@ -61,16 +61,17 @@ This document is an annotated index of popular articles and important informatio
     *   [11.1 Fonts](#Fonts)
     *   [11.2 GTK+ and Qt themes](#GTK.2B_and_Qt_themes)
 *   [12 Console improvements](#Console_improvements)
-    *   [12.1 Aliases](#Aliases)
-    *   [12.2 Alternative shells](#Alternative_shells)
-    *   [12.3 Bash additions](#Bash_additions)
-    *   [12.4 Colored output](#Colored_output)
-    *   [12.5 Compressed files](#Compressed_files)
-    *   [12.6 Console prompt](#Console_prompt)
-    *   [12.7 Emacs shell](#Emacs_shell)
-    *   [12.8 Mouse support](#Mouse_support)
-    *   [12.9 Scrollback buffer](#Scrollback_buffer)
-    *   [12.10 Session management](#Session_management)
+    *   [12.1 Tab-completion enhancements](#Tab-completion_enhancements)
+    *   [12.2 Aliases](#Aliases)
+    *   [12.3 Alternative shells](#Alternative_shells)
+    *   [12.4 Bash additions](#Bash_additions)
+    *   [12.5 Colored output](#Colored_output)
+    *   [12.6 Compressed files](#Compressed_files)
+    *   [12.7 Console prompt](#Console_prompt)
+    *   [12.8 Emacs shell](#Emacs_shell)
+    *   [12.9 Mouse support](#Mouse_support)
+    *   [12.10 Scrollback buffer](#Scrollback_buffer)
+    *   [12.11 Session management](#Session_management)
 
 ## System administration
 
@@ -318,7 +319,11 @@ A big part of the applications with a graphical interface for Linux systems are 
 
 ## Console improvements
 
-This section applies to small modifications that better console programs' practicality. For more, please see [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
+This section applies to small modifications that improve console programs' practicality. For more, please see [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
+
+### Tab-completion enhancements
+
+It is recommended to properly set up extended [tab completion](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") right away, as instructed in the article of your chosen shell.
 
 ### Aliases
 
@@ -330,7 +335,7 @@ Aliasing a command, or a group thereof, is a way of saving time when using the c
 
 ### Bash additions
 
-A list of miscellaneous Bash settings, including completion enhancements, history search and [Readline](/index.php/Readline "Readline") macros is available in [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
+A list of miscellaneous Bash settings, history search and [Readline](/index.php/Readline "Readline") macros is available in [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
 
 ### Colored output
 

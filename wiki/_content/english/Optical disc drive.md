@@ -5,6 +5,7 @@ Related articles
 *   [dvdbackup](/index.php/Dvdbackup "Dvdbackup")
 *   [MEncoder](/index.php/MEncoder "MEncoder")
 *   [Blu-ray](/index.php/Blu-ray "Blu-ray")
+*   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive"):
 
@@ -155,10 +156,7 @@ So this example puts the disk directory `/home/user/photos`, `/home/user/mail` a
 
 Programs *mkisofs* and *xorrisofs* accept the same options. For secure backups, consider using *xorrisofs* with option `--for_backup`, which records eventual ACLs and stores an MD5 checksum for each data file.
 
-See the manuals of the ISO 9660 programs for more info about their options:
-
-*   [mkisofs](http://cdrtools.sourceforge.net/private/man/cdrecord/index.html)
-*   [xorrisofs](https://www.gnu.org/software/xorriso/man_1_xorrisofs.html)
+See the [mkisofs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkisofs.8) and [xorrisofs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorrisofs.1) man pages for more info about their options.
 
 ### Mounting an ISO image
 
@@ -361,11 +359,10 @@ $ blocks=$(expr $(du -b isoimage.iso | awk '{print $1}') / 2048)
 ```
  `$ dd if=/dev/sr0 bs=2048 count=$blocks | md5sum` 
 ```
- 43992+0 records in
- 43992+0 records out
- 90095616 bytes (90 MB) copied, 0.359539 s, 251 MB/s
- e5643e18e05f5646046bb2e4236986d8  -
-
+43992+0 records in
+43992+0 records out
+90095616 bytes (90 MB) copied, 0.359539 s, 251 MB/s
+e5643e18e05f5646046bb2e4236986d8  -
 ```
 
 Both runs should yield the same MD5 checksum (here: `e5643e18e05f5646046bb2e4236986d8`). If they do not, you will probably also get an I/O error message from the `dd` run. `dmesg` might then tell about SCSI errors and block numbers, if you are interested.
@@ -477,7 +474,7 @@ $ xorriso -dev */dev/sr0* \
 
 ```
 
-For details see the [manual page](https://www.gnu.org/software/xorriso/man_1_xorriso.html) and especially its [examples](https://www.gnu.org/software/xorriso/man_1_xorriso.html#EXAMPLES)
+For details see the [xorriso(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorriso.1) man page and especially its examples.
 
 ### BD Defect Management
 
@@ -557,7 +554,7 @@ $ toc2cue *image.toc* *image.cue*
 
 ### Burn backend problems
 
-If you're experiencing problems, you may ask for advise at mailing list [cdwrite@other.debian.org](mailto:cdwrite@other.debian.org), or try to write to the one of support mail addresses if some are listed near the end of the program's man page.
+If you are experiencing problems, you may ask for advise at mailing list [cdwrite@other.debian.org](mailto:cdwrite@other.debian.org), or try to write to the one of support mail addresses if some are listed near the end of the program's man page.
 
 Tell the command lines you tried, the medium type (e.g. CD-R, DVD+RW, ...), and the symptoms of failure (program messages, disappointed user expectation, ...). You will possibly get asked to obtain the newest release or development version of the affected program and to make test runs. But the answer might as well be, that your drive dislikes the particular medium.
 
@@ -847,21 +844,16 @@ BraseroLibburn Libburn reported an error SCSI error on write(16976,16): [3 0C 00
 
 ### AHCI
 
-If your new DVD drive is detected but you can't mount disks, check wether your BIOS uses [AHCI](/index.php/AHCI "AHCI") and add the module to the kernel image.
+If your new DVD drive is detected but you cannot mount disks, check wether your BIOS uses [AHCI](/index.php/AHCI "AHCI") and add the module to the kernel image.
 
-Edit `/etc/mkinitcpio.conf` and add `ahci` to the `MODULES` variable (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") for details):
-
-```
-MODULES="ahci"
+Edit `/etc/mkinitcpio.conf` and add `ahci` to the `MODULES` array (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") for details):
 
 ```
-
-Rebuild the kernel image so that it includes the newly added module:
-
-```
-# mkinitcpio -p linux
+MODULES=(ahci)
 
 ```
+
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") so that it includes the newly added module.
 
 ### BD-R DL 50GB errors on trying to burn second layer
 
@@ -908,5 +900,4 @@ If that solves the problem, make the change permanent:
 ## See also
 
 *   In the United States, backup of physically obtained media is allowed under these conditions: [About Piracy - RIAA](https://www.riaa.com/resources-learning/about-piracy/).
-*   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
 *   [Main page of the project Libburnia](http://libburnia-project.org/)

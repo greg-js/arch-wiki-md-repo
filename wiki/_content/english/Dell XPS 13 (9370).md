@@ -19,16 +19,21 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 ## Contents
 
 *   [1 Booting](#Booting)
-*   [2 Video](#Video)
-*   [3 Wifi](#Wifi)
-*   [4 Bluetooth](#Bluetooth)
-*   [5 Keyboard](#Keyboard)
-*   [6 Power Management](#Power_Management)
-*   [7 Firmware Updates](#Firmware_Updates)
+*   [2 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)
+*   [3 Video](#Video)
+*   [4 Wifi](#Wifi)
+*   [5 Bluetooth](#Bluetooth)
+*   [6 Keyboard](#Keyboard)
+*   [7 Power Management](#Power_Management)
+*   [8 Firmware Updates](#Firmware_Updates)
 
 ## Booting
 
 To boot from a USB device attached via the USB-C to USB-A adapter included in the box, you'll need to enable Thunderbolt boot in the BIOS (press F2 while the Dell logo is displayed). Once enabled, F12 on boot will enter the boot menu. It is also possible to use the right USB-C port directly without any BIOS adjustment.
+
+## Content Adaptive Brightness Control
+
+In the XPS 13 the display panels (both FHD and QHD+) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](http://tylerwatt12.com/dc/).
 
 ## Video
 

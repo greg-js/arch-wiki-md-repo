@@ -24,35 +24,36 @@ Note that certain font licenses may impose some legal limitations.
     *   [3.1 Preview and temporary changes](#Preview_and_temporary_changes)
     *   [3.2 Persistent configuration](#Persistent_configuration)
 *   [4 Font packages](#Font_packages)
-    *   [4.1 Bitmap](#Bitmap)
-    *   [4.2 Latin script](#Latin_script)
-        *   [4.2.1 Families](#Families)
-        *   [4.2.2 Monospaced](#Monospaced)
-        *   [4.2.3 Sans-serif](#Sans-serif)
-        *   [4.2.4 Serif](#Serif)
-        *   [4.2.5 Unsorted](#Unsorted)
-    *   [4.3 Non-latin scripts](#Non-latin_scripts)
-        *   [4.3.1 Ancient Scripts](#Ancient_Scripts)
-        *   [4.3.2 Arabic](#Arabic)
-        *   [4.3.3 Braille](#Braille)
-        *   [4.3.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
-            *   [4.3.4.1 Pan-CJK](#Pan-CJK)
-            *   [4.3.4.2 Chinese](#Chinese)
-            *   [4.3.4.3 Japanese](#Japanese)
-            *   [4.3.4.4 Korean](#Korean)
-            *   [4.3.4.5 Vietnamese](#Vietnamese)
-        *   [4.3.5 Cyrillic](#Cyrillic)
-        *   [4.3.6 Greek](#Greek)
-        *   [4.3.7 Hebrew](#Hebrew)
-        *   [4.3.8 Indic](#Indic)
-        *   [4.3.9 Khmer](#Khmer)
-        *   [4.3.10 Mongolic and Tungusic](#Mongolic_and_Tungusic)
-        *   [4.3.11 Persian](#Persian)
-        *   [4.3.12 Tai–Kadai](#Tai.E2.80.93Kadai)
-        *   [4.3.13 Tibeto-Burman](#Tibeto-Burman)
-    *   [4.4 Emoji and symbols](#Emoji_and_symbols)
-    *   [4.5 Math](#Math)
-    *   [4.6 Other operating system fonts](#Other_operating_system_fonts)
+    *   [4.1 Font Collections](#Font_Collections)
+    *   [4.2 Bitmap](#Bitmap)
+    *   [4.3 Latin script](#Latin_script)
+        *   [4.3.1 Families](#Families)
+        *   [4.3.2 Monospaced](#Monospaced)
+        *   [4.3.3 Sans-serif](#Sans-serif)
+        *   [4.3.4 Serif](#Serif)
+        *   [4.3.5 Unsorted](#Unsorted)
+    *   [4.4 Non-latin scripts](#Non-latin_scripts)
+        *   [4.4.1 Ancient Scripts](#Ancient_Scripts)
+        *   [4.4.2 Arabic](#Arabic)
+        *   [4.4.3 Braille](#Braille)
+        *   [4.4.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
+            *   [4.4.4.1 Pan-CJK](#Pan-CJK)
+            *   [4.4.4.2 Chinese](#Chinese)
+            *   [4.4.4.3 Japanese](#Japanese)
+            *   [4.4.4.4 Korean](#Korean)
+            *   [4.4.4.5 Vietnamese](#Vietnamese)
+        *   [4.4.5 Cyrillic](#Cyrillic)
+        *   [4.4.6 Greek](#Greek)
+        *   [4.4.7 Hebrew](#Hebrew)
+        *   [4.4.8 Indic](#Indic)
+        *   [4.4.9 Khmer](#Khmer)
+        *   [4.4.10 Mongolic and Tungusic](#Mongolic_and_Tungusic)
+        *   [4.4.11 Persian](#Persian)
+        *   [4.4.12 Tai–Kadai](#Tai.E2.80.93Kadai)
+        *   [4.4.13 Tibeto-Burman](#Tibeto-Burman)
+    *   [4.5 Emoji and symbols](#Emoji_and_symbols)
+    *   [4.6 Math](#Math)
+    *   [4.7 Other operating system fonts](#Other_operating_system_fonts)
 *   [5 Fallback font order with X11](#Fallback_font_order_with_X11)
 *   [6 Font alias](#Font_alias)
 *   [7 Tips and tricks](#Tips_and_tricks)
@@ -288,6 +289,11 @@ This is a selective list that includes many font packages from the [AUR](/index.
 
 The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be used to generate an overview of all the TTF fonts found in the official repositories / the AUR (the image generation is done using [ttf2png](https://aur.archlinux.org/packages/ttf2png/)).
 
+### Font Collections
+
+*   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
+*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including Ubuntu, Inconsolata, Droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
+
 ### Bitmap
 
 *   Default 8x16
@@ -305,6 +311,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 
 #### Families
 
+*   [Luxi fonts](https://en.wikipedia.org/wiki/Luxi_fonts "wikipedia:Luxi fonts") ([font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf)) – X.Org Luxi fonts
 *   [Bitstream Vera](https://en.wikipedia.org/wiki/Bitstream_Vera "wikipedia:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera)) – serif, sans-serif, and monospace
 *   [Courier Prime](https://quoteunquoteapps.com/courierprime/) ([ttf-courier-prime](https://aur.archlinux.org/packages/ttf-courier-prime/)) – Courier font alternative optimized for screenplays
 *   [Croscore fonts](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) – Google's substitute for Windows' Arial, Times New Roman, and Courier New
@@ -366,13 +373,10 @@ Relevant websites:
 
 #### Unsorted
 
-*   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) - X.Org Luxi fonts
 *   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Font collection from *dustismo.com*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Junius font containing almost complete medieval latin script glyphs
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
-*   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
-*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including Ubuntu, Inconsolata, Droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
 
 ### Non-latin scripts
 

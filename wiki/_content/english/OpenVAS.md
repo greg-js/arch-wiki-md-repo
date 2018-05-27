@@ -2,13 +2,39 @@
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Initial setup](#Initial_setup)
-*   [3 Post-install](#Post-install)
+*   [1 Pre-install](#Pre-install)
+*   [2 Installation](#Installation)
+*   [3 Initial setup](#Initial_setup)
 *   [4 Getting started](#Getting_started)
 *   [5 Systemd](#Systemd)
 *   [6 Migration to new major versions](#Migration_to_new_major_versions)
 *   [7 See also](#See_also)
+
+## Pre-install
+
+Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed by the [OpenVAS redis configuration](https://svn.wald.intevation.org/svn/openvas/tags/openvas-scanner-release-5.0.3/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
+
+```
+unixsocket /var/lib/redis/redis.sock
+unixsocketperm 700
+port 0
+timeout 0
+
+```
+
+Create and add the following to /etc/openvas/openvassd.conf
+
+```
+kb_location = /var/lib/redis/redis.sock
+
+```
+
+Finally restart `redis`
+
+```
+# systemctl restart redis
+
+```
 
 ## Installation
 
@@ -52,32 +78,6 @@ Add an administrator user account, be sure to copy the password:
 
 ```
 # openvasmd --create-user=admin --role=Admin
-
-```
-
-## Post-install
-
-Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed by the [OpenVAS redis configuration](https://svn.wald.intevation.org/svn/openvas/tags/openvas-scanner-release-5.0.3/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
-
-```
-unixsocket /var/lib/redis/redis.sock
-unixsocketperm 700
-port 0
-timeout 0
-
-```
-
-Create and add the following to /etc/openvas/openvassd.conf
-
-```
-kb_location = /var/lib/redis/redis.sock
-
-```
-
-Finally restart `redis`
-
-```
-# systemctl restart redis
 
 ```
 

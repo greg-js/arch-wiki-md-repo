@@ -79,7 +79,7 @@ Related articles
 从[镜像站](https://www.archlinux.org/download)下载 bootstrap 镜像：
 
 ```
- $ curl -O [https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2017.08.01/archlinux-bootstrap-2017.08.01-x86_64.tar.gz](https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2017.08.01/archlinux-bootstrap-2017.08.01-x86_64.tar.gz)
+ $ curl -O  [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.05.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.05.01-x86_64.tar.gz)
 
 ```
 

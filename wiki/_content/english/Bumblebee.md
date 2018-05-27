@@ -55,7 +55,6 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.18 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
     *   [6.19 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
     *   [6.20 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
-    *   [6.21 X11 freezes with nvidia card switched off](#X11_freezes_with_nvidia_card_switched_off)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -792,18 +791,6 @@ If Bumblebee starts/works in a random manner, check that you have set your [Netw
 ### Discrete card always on and nvidia driver cannot be unloaded
 
 Make sure `nvidia-persistenced.service` is disabled and not currently active. It is intended to keep the `nvidia` driver running at all times [[5]](https://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/README/nvidia-persistenced.html), which prevents the card being turned off.
-
-### X11 freezes with nvidia card switched off
-
-Add the following to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (see [here](https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238) for more details):
-
-For most laptops:
-
- `acpi_osi=! acpi_osi="Windows 2009"` 
-
-For the Clevo P6xxRx family:
-
- `acpi_osi="!Windows 2015"` 
 
 ## See also
 

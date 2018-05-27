@@ -1,3 +1,7 @@
+Related articles
+
+*   [Java](/index.php/Java "Java")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Scala_(programming_language) "wikipedia:Scala (programming language)"):
 
 	*Scala is an object-functional programming and scripting language for general software applications. Scala has full support for functional programming (including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, etc.) and a very strong static type system. This allows programs written in Scala to be very concise and thus smaller in size than most general purpose programming languages. Many of Scala's design decisions were inspired by criticism over the shortcomings of Java.*
@@ -31,7 +35,7 @@ $ scala HelloWorld
 
 ```
 
-Many different [IDEssuch](/index.php/IDE#Integrated_development_environments "IDE") as [Eclipse](/index.php/Eclipse "Eclipse") or [Netbeans](/index.php/Netbeans "Netbeans") offer support for Scala. The [eclipse-scala-ide](https://aur.archlinux.org/packages/eclipse-scala-ide/) package for example is available in the [AUR](/index.php/AUR "AUR"). But you can also download an IDE that is optimized for Scala and also based on Eclipse directly from [the official Scala Website](https://scala-lang.org).
+Many different [IDEs](/index.php/IDE#Integrated_development_environments "IDE") such as [Eclipse](/index.php/Eclipse "Eclipse") or [Netbeans](/index.php/Netbeans "Netbeans") offer support for Scala. The [eclipse-scala-ide](https://aur.archlinux.org/packages/eclipse-scala-ide/) package for example is available in the [AUR](/index.php/AUR "AUR"). But you can also download an IDE that is optimized for Scala and also based on Eclipse directly from [the official Scala Website](https://scala-lang.org).
 
 ## See also
 

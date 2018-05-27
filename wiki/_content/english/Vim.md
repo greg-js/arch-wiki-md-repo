@@ -11,9 +11,10 @@ Related articles
 *   [3 Configuration](#Configuration)
     *   [3.1 Clipboard](#Clipboard)
     *   [3.2 Syntax highlighting](#Syntax_highlighting)
-    *   [3.3 Visual wrapping](#Visual_wrapping)
-    *   [3.4 Using the mouse](#Using_the_mouse)
-    *   [3.5 Traverse line breaks with arrow keys](#Traverse_line_breaks_with_arrow_keys)
+    *   [3.3 Indentation](#Indentation)
+    *   [3.4 Visual wrapping](#Visual_wrapping)
+    *   [3.5 Using the mouse](#Using_the_mouse)
+    *   [3.6 Traverse line breaks with arrow keys](#Traverse_line_breaks_with_arrow_keys)
 *   [4 Merging files](#Merging_files)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Line numbers](#Line_numbers)
@@ -73,11 +74,20 @@ For more information, see `:help 'clipboard'`.
 
 ### Syntax highlighting
 
-To enable syntax highlighting (Vim supports a huge list of programming languages):
+To enable syntax highlighting for many programming languages:
 
 ```
 :filetype plugin on
 :syntax on
+
+```
+
+### Indentation
+
+The indent file for specific file types can be loaded with:
+
+```
+:filetype indent on
 
 ```
 

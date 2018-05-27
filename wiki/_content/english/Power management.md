@@ -37,23 +37,24 @@ In Arch Linux, power management consists of two main parts:
         *   [2.4.1 Delayed lid switch action](#Delayed_lid_switch_action)
         *   [2.4.2 Suspend from corresponding laptop Fn key not working](#Suspend_from_corresponding_laptop_Fn_key_not_working)
 *   [3 Power saving](#Power_saving)
-    *   [3.1 Audio](#Audio)
-    *   [3.2 Backlight](#Backlight)
-    *   [3.3 Bluetooth](#Bluetooth)
-    *   [3.4 Web camera](#Web_camera)
-    *   [3.5 Kernel parameters](#Kernel_parameters)
-        *   [3.5.1 Disabling NMI watchdog](#Disabling_NMI_watchdog)
-        *   [3.5.2 Writeback Time](#Writeback_Time)
-        *   [3.5.3 Laptop Mode](#Laptop_Mode)
-    *   [3.6 Network interfaces](#Network_interfaces)
-        *   [3.6.1 Intel wireless cards (iwlwifi)](#Intel_wireless_cards_.28iwlwifi.29)
-    *   [3.7 Bus power management](#Bus_power_management)
-        *   [3.7.1 Active State Power Management](#Active_State_Power_Management)
-        *   [3.7.2 PCI Runtime Power Management](#PCI_Runtime_Power_Management)
-        *   [3.7.3 USB autosuspend](#USB_autosuspend)
-        *   [3.7.4 SATA Active Link Power Management](#SATA_Active_Link_Power_Management)
-    *   [3.8 Hard disk drive](#Hard_disk_drive)
-    *   [3.9 CD-ROM or DVD drive](#CD-ROM_or_DVD_drive)
+    *   [3.1 Processors with P-state support](#Processors_with_P-state_support)
+    *   [3.2 Audio](#Audio)
+    *   [3.3 Backlight](#Backlight)
+    *   [3.4 Bluetooth](#Bluetooth)
+    *   [3.5 Web camera](#Web_camera)
+    *   [3.6 Kernel parameters](#Kernel_parameters)
+        *   [3.6.1 Disabling NMI watchdog](#Disabling_NMI_watchdog)
+        *   [3.6.2 Writeback Time](#Writeback_Time)
+        *   [3.6.3 Laptop Mode](#Laptop_Mode)
+    *   [3.7 Network interfaces](#Network_interfaces)
+        *   [3.7.1 Intel wireless cards (iwlwifi)](#Intel_wireless_cards_.28iwlwifi.29)
+    *   [3.8 Bus power management](#Bus_power_management)
+        *   [3.8.1 Active State Power Management](#Active_State_Power_Management)
+        *   [3.8.2 PCI Runtime Power Management](#PCI_Runtime_Power_Management)
+        *   [3.8.3 USB autosuspend](#USB_autosuspend)
+        *   [3.8.4 SATA Active Link Power Management](#SATA_Active_Link_Power_Management)
+    *   [3.9 Hard disk drive](#Hard_disk_drive)
+    *   [3.10 CD-ROM or DVD drive](#CD-ROM_or_DVD_drive)
 *   [4 Tools and scripts](#Tools_and_scripts)
     *   [4.1 Using a script and an udev rule](#Using_a_script_and_an_udev_rule)
     *   [4.2 Print power settings](#Print_power_settings)
@@ -407,6 +408,18 @@ Now you should see "Watching system buttons on /dev/input/event0" in syslog
 This section is a reference for creating custom scripts and power saving settings such as by udev rules. Make sure that the settings are not managed by some [other utility](#Userspace_tools) to avoid conflicts.
 
 Almost all of the features listed here are worth using whether or not the computer is on AC or battery power. Most have negligible performance impact and are just not enabled by default because of commonly broken hardware/drivers. Reducing power usage means reducing heat, which can even lead to higher performance on a modern Intel or AMD CPU, thanks to [dynamic overclocking](https://en.wikipedia.org/wiki/Intel_Turbo_Boost "wikipedia:Intel Turbo Boost").
+
+### Processors with P-state support
+
+The available energy preferences of a P-state supported processor are `default performance balance_performance balance_power power`.
+
+This can be validated by `$ cat /sys/devices/system/cpu/cpufreq/policy?/energy_performance_available_preferences`
+
+To conserve more energy, you can config by creating the following file:
+
+ `/etc/tmpfiles.d/energy_performance_preference.conf`  `w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - balance_power` 
+
+See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
 
 ### Audio
 

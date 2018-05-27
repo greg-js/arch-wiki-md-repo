@@ -495,7 +495,16 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 | [uncrustify](https://github.com/bengardner/uncrustify) | `~/.uncrustify.cfg` | `$ export UNCRUSTIFY_CONFIG="$XDG_CONFIG_HOME"/uncrustify/uncrustify.cfg` |
 | [Unison](/index.php/Unison "Unison") | `~/.unison` | `$ export UNISON="$XDG_DATA_HOME"/unison` |
 | [urxvtd](/index.php/Rxvt-unicode/Tips_and_tricks#Daemon-client "Rxvt-unicode/Tips and tricks") | `~/.urxvt/urxvtd-hostname` | `$ export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd` |
-| [WeeChat](/index.php/WeeChat "WeeChat") | `~/.weechat` | [[102]](http://savannah.nongnu.org/task/?10934) | `$ export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat`
+| [Vagrant](/index.php/Vagrant "Vagrant") | `~/.vagrant.d`
+
+`~/.vagrant.d/aliases`
+
+ | [[102]](https://www.vagrantup.com/docs/other/environmental-variables.html) | `$ export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant`
+
+`$ export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME"/vagrant/aliases`
+
+ |
+| [WeeChat](/index.php/WeeChat "WeeChat") | `~/.weechat` | [[103]](http://savannah.nongnu.org/task/?10934) | `$ export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat`
 
 `$ weechat -d "$XDG_CONFIG_HOME"/weechat`
 
@@ -509,7 +518,7 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 `$ export WGETRC="$XDG_CONFIG_HOME/wgetrc"` `$ wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"`
 
  |
-| [wine](/index.php/Wine "Wine") | `~/.wine` | [[103]](https://bugs.winehq.org/show_bug.cgi?id=20888) | [Winetricks](/index.php/Wine#Winetricks "Wine") uses XDG-alike location below for [WINEPREFIX](/index.php/Wine#WINEPREFIX "Wine") management:
+| [wine](/index.php/Wine "Wine") | `~/.wine` | [[104]](https://bugs.winehq.org/show_bug.cgi?id=20888) | [Winetricks](/index.php/Wine#Winetricks "Wine") uses XDG-alike location below for [WINEPREFIX](/index.php/Wine#WINEPREFIX "Wine") management:
 
 `$ mkdir -p "$XDG_DATA_HOME"/wineprefixes`
 
@@ -539,7 +548,7 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 ## Hardcoded
 
 | Application | Legacy Path | Discussion | Notes |
-| [adb](/index.php/Adb "Adb") | `~/.android/` | [[104]](https://developer.android.com/studio/command-line/variables.html#android_sdk_root) | `$ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android` |
+| [adb](/index.php/Adb "Adb") | `~/.android/` | [[105]](https://developer.android.com/studio/command-line/variables.html#android_sdk_root) | `$ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android` |
 | [AMule](/index.php/AMule "AMule") | `~/.aMule` |
 | [Android Studio](https://developer.android.com/studio/index.html) | `~/.AndroidStudio2.3`
 
@@ -548,13 +557,13 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 `~/.java/`
 
  |
-| [anthy](https://osdn.net/projects/anthy/) | `~/.anthy` | [[105]](https://osdn.net/ticket/browse.php?group_id=14&tid=28397) |
+| [anthy](https://osdn.net/projects/anthy/) | `~/.anthy` | [[106]](https://osdn.net/ticket/browse.php?group_id=14&tid=28397) |
 | [Apache Directory Studio](https://directory.apache.org/studio/) | `~/.ApacheDirectoryStudio` |
 | [Arduino](/index.php/Arduino "Arduino") | `~/.arduino15`
 
 `~/.jssc`
 
- | [[106]](https://github.com/arduino/Arduino/issues/3915) |
+ | [[107]](https://github.com/arduino/Arduino/issues/3915) |
 | [ARandR](https://christian.amsuess.com/tools/arandr/) | `~/.screenlayout` |
 | [Audacity](https://www.audacityteam.org/) | `~/.audacity-data/` |
 | [Avidemux](http://fixounet.free.fr/avidemux/) | `~/.avidemux6` |
@@ -568,39 +577,39 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 
 `~/.bash_logout`
 
- | [[107]](http://savannah.gnu.org/support/?108134) | `$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
+ | [[108]](http://savannah.gnu.org/support/?108134) | `$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
 
 A specified `bashrc` can be sourced from `/etc/bashrc`.
 
 Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive shells.
 
  |
-| [cabal](https://www.haskell.org/cabal/) | `~/.cabal/` | [[108]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
+| [cabal](https://www.haskell.org/cabal/) | `~/.cabal/` | [[109]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
 | [calibre](https://calibre-ebook.com/) | `~/Calibre Library/` |
-| [CUPS](/index.php/CUPS "CUPS") | `~/.cups/` | [[109]](http://www.cups.org/str.php?L4243) |
-| [darcs](/index.php/Darcs "Darcs") | `~/.darcs/` | [[110]](http://bugs.darcs.net/issue2453) |
-| [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[111]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
+| [CUPS](/index.php/CUPS "CUPS") | `~/.cups/` | [[110]](http://www.cups.org/str.php?L4243) |
+| [darcs](/index.php/Darcs "Darcs") | `~/.darcs/` | [[111]](http://bugs.darcs.net/issue2453) |
+| [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[112]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
 | [Dia](https://wiki.gnome.org/Apps/Dia) | `~/.dia/` |
-| [docker](/index.php/Docker "Docker") | `~/.docker` | [[112]](https://github.com/docker/machine/issues/3116) [[113]](https://github.com/moby/moby/issues/20693) |
-| [eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse/` | [[114]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
+| [docker](/index.php/Docker "Docker") | `~/.docker` | [[113]](https://github.com/docker/machine/issues/3116) [[114]](https://github.com/moby/moby/issues/20693) |
+| [eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse/` | [[115]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
 | [emacs](https://www.gnu.org/software/emacs/) | `~/.emacs`
 
 `~/.emacs.d/`
 
- | [[115]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583) | It's possible to set `HOME`, but it has unexpected side effects. So far the most promising approach is modifying another Emacs environment variable to alter the load path and author your own site file which can manually load up your init file, but it changes the load process significantly. |
+ | [[116]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583) | It's possible to set `HOME`, but it has unexpected side effects. So far the most promising approach is modifying another Emacs environment variable to alter the load path and author your own site file which can manually load up your init file, but it changes the load process significantly. |
 | [Fetchmail](http://www.fetchmail.info/) | `~/.fetchmailrc` |
-| [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[116]](https://bugzil.la/259356) |
-| [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[117]](https://github.com/flatpak/flatpak/issues/46) [[118]](https://github.com/flatpak/flatpak.github.io/issues/191) |
-| [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[119]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
+| [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[117]](https://bugzil.la/259356) |
+| [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[118]](https://github.com/flatpak/flatpak/issues/46) [[119]](https://github.com/flatpak/flatpak.github.io/issues/191) |
+| [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[120]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
 | [gtk-recordMyDesktop](http://recordmydesktop.sourceforge.net/about.php) | `~/.gtk-recordmydesktop` |
-| [idris](http://www.idris-lang.org/) | `~/.idris` | [[120]](https://github.com/idris-lang/Idris-dev/pull/3456) |
-| [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/fonts`, `~/.java/webview` | [[121]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |
+| [idris](http://www.idris-lang.org/) | `~/.idris` | [[121]](https://github.com/idris-lang/Idris-dev/pull/3456) |
+| [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/fonts`, `~/.java/webview` | [[122]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |
 | [julia](http://julialang.org/) | `~/.juliarc.jl`
 
 `~/.julia_history`
 
- | [[122]](https://github.com/JuliaLang/julia/issues/4630) [[123]](https://github.com/JuliaLang/julia/issues/10016) |
-| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | [[124]](https://github.com/linux-pam/linux-pam/issues/7) | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
+ | [[123]](https://github.com/JuliaLang/julia/issues/4630) [[124]](https://github.com/JuliaLang/julia/issues/10016) |
+| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | [[125]](https://github.com/linux-pam/linux-pam/issues/7) | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
 | [lldb](http://lldb.llvm.org/) | `~/.lldb`
 
 `~/.lldbinit`
@@ -611,52 +620,52 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 `~/.matho_history`
 
  | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
-| [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[125]](https://github.com/Deltafire/MilkyTracker/issues/12) |
-| [Minecraft](https://minecraft.net/) | `~/.minecraft/` | [[126]](https://bugs.mojang.com/browse/MCL-2563) |
+| [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[126]](https://github.com/Deltafire/MilkyTracker/issues/12) |
+| [Minecraft](https://minecraft.net/) | `~/.minecraft/` | [[127]](https://bugs.mojang.com/browse/MCL-2563) |
 | [mongodb](https://www.mongodb.org/) | `~/.mongorc.js`
 
 `~/.dbshell`
 
- | [[127]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
+ | [[128]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
  `~/.netrc` | Like `~/.ssh`, many programs expect this file to be here. These include projects like curl (`CURLOPT_NETRC_FILE`), ftp (`NETRC`), s-nail (`NETRC`), etc. While some of them offer alternative configurable locations, many do not such as w3m, wget and lftp. |
-| [node-gyp](https://github.com/nodejs/node-gyp) | `~/.node-gyp` | [[128]](https://github.com/nodejs/node-gyp/issues/175) [[129]](https://github.com/nodejs/node-gyp/issues/21) [[130]](https://github.com/nodejs/node-gyp/issues/1124) | Discussion seems as though partial support may soon be added. |
-| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[131]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
-| [OpenSSH](https://www.openssh.com/) | `~/.ssh` | [[132]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
-| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[133]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
+| [node-gyp](https://github.com/nodejs/node-gyp) | `~/.node-gyp` | [[129]](https://github.com/nodejs/node-gyp/issues/175) [[130]](https://github.com/nodejs/node-gyp/issues/21) [[131]](https://github.com/nodejs/node-gyp/issues/1124) | Discussion seems as though partial support may soon be added. |
+| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[132]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
+| [OpenSSH](https://www.openssh.com/) | `~/.ssh` | [[133]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
+| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[134]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:29](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L29). |
 | various [shells](/index.php/Shell "Shell") and [display managers](/index.php/Display_manager "Display manager") | `~/.profile` |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
 | [Qt Designer](https://doc.qt.io/qt-5/qtdesigner-manual.html) | `~/.designer` |
-| [Quod Libet](https://quodlibet.readthedocs.io/en/latest/) | `~/.quodlibet` | [[134]](https://github.com/quodlibet/quodlibet/issues/138) |
+| [Quod Libet](https://quodlibet.readthedocs.io/en/latest/) | `~/.quodlibet` | [[135]](https://github.com/quodlibet/quodlibet/issues/138) |
 | [racket](https://racket-lang.org/) | `~/.racketrc` |
 | [RedNotebook](http://rednotebook.sourceforge.net/) | `~/.rednotebook` |
 | [Remarkable](https://remarkableapp.github.io/linux.html) | `~/.remarkable` |
-| [Ren'Py](https://www.renpy.org/) | `~/.renpy` | [[135]](https://github.com/renpy/renpy/issues/1377) |
+| [Ren'Py](https://www.renpy.org/) | `~/.renpy` | [[136]](https://github.com/renpy/renpy/issues/1377) |
 | [SANE](/index.php/SANE "SANE") | `~/.sane/` | `scanimage` creates a `.cal` file there |
 | [Scribus](https://www.scribus.net/) | `~/.scribus` |
-| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla/` | [[136]](https://bugzil.la/726939) |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla/` | [[137]](https://bugzil.la/726939) |
 | [Solfege](https://www.gnu.org/software/solfege/solfege.html) | `~/.solfege`
 
 `~/.solfegerc`
 
 `~/lessonfiles`
 
- | [[137]](https://savannah.gnu.org/bugs/index.php?50251) |
+ | [[138]](https://savannah.gnu.org/bugs/index.php?50251) |
 | [SpamAssassin](https://spamassassin.apache.org/) | `~/.spamassassin` |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
 | [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history`
 
 `~/.sqliterc`
 
- | [[138]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[139]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
+ | [[139]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[140]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
 | [Steam](/index.php/Steam "Steam") | `~/.steam`
 
 `~/.steampath` `~/.steampid`
 
- | [[140]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
+ | [[141]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[141]](https://bugzil.la/735285) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[142]](https://bugzil.la/735285) |
 | [tllocalmgr](https://git.archlinux.org/users/remy/texlive-localmanager.git/) | `~/.texlive` |
 | [vim](/index.php/Vim "Vim") | `~/.vim`
 
@@ -686,15 +695,15 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[142]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[143]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
-| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[143]](https://sourceforge.net/p/w3m/feature-requests/31/) |
+| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[144]](https://sourceforge.net/p/w3m/feature-requests/31/) |
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
-| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[144]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[145]](https://github.com/conformal/xombrero/issues/74) |
+| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[145]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[146]](https://github.com/conformal/xombrero/issues/74) |
 | [yarn](https://www.archlinux.org/packages/?name=yarn) | `~/.yarnrc`
 
 `~/.yarn/`
@@ -703,8 +712,8 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 `~/.yarn-config/`
 
- | [[146]](https://github.com/yarnpkg/yarn/issues/2334) |
-| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[147]](http://seclists.org/nmap-dev/2012/q2/163) [[148]](https://github.com/nmap/nmap/issues/590) |
+ | [[147]](https://github.com/yarnpkg/yarn/issues/2334) |
+| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[148]](http://seclists.org/nmap-dev/2012/q2/163) [[149]](https://github.com/nmap/nmap/issues/590) |
 | [zsh](/index.php/Zsh "Zsh") | `~/.zshrc`
 
 `~/.zprofile` `~/.zshenv`
@@ -713,7 +722,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 `~/.histfile`
 
- | [[149]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+ | [[150]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 

@@ -26,12 +26,12 @@ This article explains how to configure [domain name](https://en.wikipedia.org/wi
 The [Name Service Switch](https://en.wikipedia.org/wiki/Name_Service_Switch "wikipedia:Name Service Switch") (NSS) facility is part of the GNU C Library ([glibc](https://www.archlinux.org/packages/?name=glibc)) and backs the [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3) API, used to resolve domain names. NSS allows system databases to be provided by separate services, whose search order can be configured by the administrator in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5). The database responsible for domain name resolution is the `hosts` database, for which glibc offers the following services:
 
 *   `file`: reads the `/etc/hosts` file, see [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
-*   `dns`: the [glibc resolver](#Glibc_resolver), which reads `/etc/resolv.conf`; see [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)
+*   `dns`: the [glibc resolver](#Glibc_resolver) which reads `/etc/resolv.conf`, see [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)
 
 [Systemd](/index.php/Systemd "Systemd") provides three NSS services for hostname resolution:
 
 *   [nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8) - a caching DNS stub resolver, described in [#Systemd-resolved](#Systemd-resolved)
-*   [nss-myhostname(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-myhostname.8) - provides hostname resolution without having to edit `/etc/hosts`
+*   [nss-myhostname(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-myhostname.8) - provides hostname resolution without having to edit `/etc/hosts`, described in [Network configuration#Local hostname resolution](/index.php/Network_configuration#Local_hostname_resolution "Network configuration")
 *   [nss-mymachines(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-mymachines.8) - provides hostname resolution for the names of local [systemd-machined(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-machined.8) containers
 
 ### Check if you can resolve domain names
@@ -43,7 +43,7 @@ $ getent hosts *domain_name*
 
 ```
 
-**Note:** While most programs resolve domain names using NSS, some may read `resolv.conf` and/or `/etc/hosts` directly. See [#resolv.conf](#resolv.conf) and [Network configuration#Local hostname resolution](/index.php/Network_configuration#Local_hostname_resolution "Network configuration").
+**Note:** While most programs resolve domain names using NSS, some may read `resolv.conf` and/or `/etc/hosts` directly. See [Network configuration#Local hostname resolution](/index.php/Network_configuration#Local_hostname_resolution "Network configuration").
 
 ## Glibc resolver
 

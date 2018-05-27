@@ -33,7 +33,7 @@ For additional functionality, you may wish to install the following:
 
 *   **LXQt Connman applet** — LXQt system-tray applet for [ConnMan](/index.php/ConnMan "ConnMan").
 
-	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
+	[https://github.com/lxqt/lxqt-connman-applet](https://github.com/lxqt/lxqt-connman-applet) || [lxqt-connman-applet](https://aur.archlinux.org/packages/lxqt-connman-applet/)
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — The recommended display manager for LXQt.
 

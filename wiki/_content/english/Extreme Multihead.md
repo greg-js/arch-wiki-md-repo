@@ -1,23 +1,26 @@
-## Contents
+Related articles
 
-*   [1 Background](#Background)
-*   [2 Experimenting with multiple monitors](#Experimenting_with_multiple_monitors)
-    *   [2.1 Loading configuration at X start](#Loading_configuration_at_X_start)
-*   [3 Make settings the default](#Make_settings_the_default)
-    *   [3.1 05-device.conf](#05-device.conf)
-    *   [3.2 10-monitor.conf](#10-monitor.conf)
-*   [4 Extending a desktop beyond the local system](#Extending_a_desktop_beyond_the_local_system)
-    *   [4.1 Synergy](#Synergy)
-    *   [4.2 Xdmx](#Xdmx)
-*   [5 Related pages](#Related_pages)
-
-## Background
+*   [Xorg#Monitor settings](/index.php/Xorg#Monitor_settings "Xorg")
+*   [Multihead](/index.php/Multihead "Multihead")
+*   [xrandr](/index.php/Xrandr "Xrandr")
 
 Several monitors can be attached to a single computer system. Many years ago this was only possible by installing two or more video cards in a computer. Then some high-end video cards began appearing with outputs for two monitors. Nowadays, most laptops come with a main display and a socket for an external monitor while the integrated video cards on desktop systems provide VGA + DVI + HDMI outputs as standard. If you plug in multiple monitors to whatever video sockets you have available, they will more often than not "just work" - offering two or more versions of the same display. In some cases this is exactly what is required; allowing the same desktop to be viewed from different directions.
 
 It is also possible to have these multiple monitors work together as an extended single desktop. It is even possible to join the displays from several computers - each with single or multiple monitors - into one very large extended desktop.
 
 This document describes how to configure such a system.
+
+## Contents
+
+*   [1 Experimenting with multiple monitors](#Experimenting_with_multiple_monitors)
+    *   [1.1 Loading configuration at X start](#Loading_configuration_at_X_start)
+*   [2 Make settings the default](#Make_settings_the_default)
+    *   [2.1 05-device.conf](#05-device.conf)
+    *   [2.2 10-monitor.conf](#10-monitor.conf)
+*   [3 Extending a desktop beyond the local system](#Extending_a_desktop_beyond_the_local_system)
+    *   [3.1 Synergy](#Synergy)
+    *   [3.2 Xdmx](#Xdmx)
+    *   [3.3 VNC](#VNC)
 
 ## Experimenting with multiple monitors
 
@@ -35,7 +38,7 @@ Use *xrandr* to experiment with different configurations until you arrive at set
 For example, the following command configures my dual monitor set-up:
 
 ```
-xrandr --output VGA-1 --rotate left --output VGA-1 --pos 0x0 --output DVI-0 --rotate left  --output DVI-0 --pos 1080x0
+$ xrandr --output VGA-1 --rotate left --output VGA-1 --pos 0x0 --output DVI-0 --rotate left  --output DVI-0 --pos 1080x0
 
 ```
 
@@ -52,7 +55,7 @@ If you have not done so already, create a simple batch script containing your de
 
 Add the command to either to individual or system xinitrc scripts. Add a line after the window manager has been started but before any applications are called. Execution of the command is usually quite noticeable as the monitors change from the basic cloned, landscape display to the independent portrait mode.
 
-**Note:** This will only work if X is started manually, not from a display manager such as kdm, gdm, slim or whatever
+**Note:** This will only work if X is started manually, not from a display manager such as kdm, gdm, slim or whatever.
 
 *   system-wide initialisation file is `/etc/X11/xinit/xinitrc`
 *   a user's personal initialisation file is `~/.xinitrc`
@@ -73,9 +76,9 @@ We need to create two files:
 
 These configuration files, and others you may need to manage your keyboard, mouse and other devices have a multitude of options available described in [Multihead](/index.php/Multihead "Multihead") and Xorg documentation; the examples below are offered to illustrate a particular solution.
 
-**Note:** since Xorg moved away from a monolithic configuration file that required every option to be spelled out to the lighter multiple configuration files only over-riding a default configuration, you only need to be concerned with specifying the exact changes you want; do not simply copy from these examples
+**Note:** Since Xorg moved away from a monolithic configuration file that required every option to be spelled out to the lighter multiple configuration files only over-riding a default configuration, you only need to be concerned with specifying the exact changes you want; do not simply copy from these examples
 
-#### 05-device.conf
+### 05-device.conf
 
 This is used to reference the individual monitor configurations by naming the devices. This configuration files should be loaded before the monitor file and so has a lower number ""05""
 
@@ -96,7 +99,7 @@ The `Identifier` should match the actual video device; check `/var/log/Xorg.0.lo
 
 Essentially we are specifying a relationship between the actual device and its configuration.
 
-#### 10-monitor.conf
+### 10-monitor.conf
 
 This file then specifies how we want the monitors to be configured. The file name is not important other than ensuring to is loaded after the `device` file. The important elements are the Section name and its Identifier:
 
@@ -133,7 +136,9 @@ The previous section outlined how to access other systems usually not close to y
 
 ### Synergy
 
-Using a tool called [Synergy](/index.php/Synergy "Synergy") it is possible for a single keyboard and mouse to access several systems as though all their monitors were a single desktop. [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) provides a convenient wrapper for the application.
+Using a tool called [Synergy](/index.php/Synergy "Synergy") it is possible for a single keyboard and mouse to access several systems as though all their monitors were a single desktop.
+
+[quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) provides a convenient wrapper for the application.
 
 ### Xdmx
 
@@ -150,10 +155,43 @@ To establish an Xdmx desktop involves the following steps automated so that the 
 
 At present either Xdmx itself or the current state of window managers do not work well together for complex arrangements of multihead set-ups; the server tends to crash as soon as window drawing is required after the integrated desktop has been established.
 
-## Related pages
+### VNC
 
-[Xorg#Monitor settings](/index.php/Xorg#Monitor_settings "Xorg")
+Using [X11vnc](/index.php/X11vnc "X11vnc"), [tigervnc](/index.php/Tigervnc "Tigervnc") and [Xrandr](/index.php/Xrandr "Xrandr") it is possible to create and share virtual monitors for display on the local network.
 
-[Multihead](/index.php/Multihead "Multihead")
+First, create at-least one virtual display in xorg
 
-[xrandr](/index.php/Xrandr "Xrandr")
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+    Identifier "intelgpu0"
+    Driver "intel"
+    Option "VirtualHeads" "1"
+EndSection
+
+```
+
+This virtual display can then be activated using.
+
+```
+$ xrandr --output <virtual display> --mode<resolution>   
+
+```
+
+At this point, this display may be further configured either through DE tools or xrandr itself.
+
+To share the display using X11vnc, run:
+
+```
+$ x11vnc -display :0 -clip <resolution>+<offset> -multiptr -forever  
+
+```
+
+This vnc instance can then be displayed on the remote machine by running
+
+```
+$ vncviewer -shared -ViewOnly -Fullscreen <host ip>
+
+```
+
+While functional, this can suffer from poor performance over low-bandwidth connections.

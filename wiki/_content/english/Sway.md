@@ -7,7 +7,7 @@
 *   [1 Status](#Status)
 *   [2 Installation](#Installation)
 *   [3 Starting sway](#Starting_sway)
-    *   [3.1 From a TTY, on login](#From_a_TTY.2C_on_login)
+    *   [3.1 Using xinit](#Using_xinit)
     *   [3.2 Using a display manager](#Using_a_display_manager)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keymap](#Keymap)
@@ -20,10 +20,11 @@
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 dmenu replacement](#dmenu_replacement)
 *   [6 Known issues](#Known_issues)
-    *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
-    *   [6.2 Using VirtualBox](#Using_VirtualBox)
-    *   [6.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
-    *   [6.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
+    *   [6.1 wlc compositor](#wlc_compositor)
+    *   [6.2 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
+    *   [6.3 Using VirtualBox](#Using_VirtualBox)
+    *   [6.4 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
+    *   [6.5 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
 *   [7 See also](#See_also)
 
 ## Status
@@ -45,14 +46,12 @@ A detailed accounting of what features have been implemented and what features a
 
 **Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
 
-### From a TTY, on login
+### Using xinit
 
-You can start sway by simply typing `sway` from your TTY. To start on login to tty1, add the following to your `.bash_profile`, in this example with swiss keyboard:
+To start *sway* with the Swiss keyboard layout, for example, execute the following line with [xinit](/index.php/Xinit "Xinit"):
 
 ```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  XKB_DEFAULT_LAYOUT=ch exec sway
-fi
+XKB_DEFAULT_LAYOUT=ch exec sway
 
 ```
 
@@ -104,6 +103,20 @@ $ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_D
 ```
 
 to either your `.bash_profile` or `.zprofile`.
+
+If you want multiple keyboard layouts at startup edit `.bash_profile` and add, for example US English and German layouts, switchable by Mod+Space:
+
+ `~/.bash_profile` 
+```
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  export XKB_DEFAULT_LAYOUT=us,de
+  export XKB_DEFAULT_OPTIONS=grp:win_space_toggle
+  exec sway
+fi
+
+```
+
+Other options for switching keyboard layout is Alt+Shift: *grp:alt_shift_toggle*
 
 ### Statusbar
 
@@ -209,6 +222,19 @@ Copy `.Xresources` to `.Xdefaults` to use them in sway.
 As dmenu runs on XWayland, the applicions tends to become unresponsive if the focus is moved elsewhere, requiring a sway restart, to fix the broken, always visible and unresponsive dmenu. Rofi is a nice option, yet, to automatically focus rofi as a menu, it needs to be run from urxvt or other non-wayland-native virtual terminal. Invoking it as menu in sway will not focus on the menu (you have to hover the mouse on rofi, for rofi to grab your input) One of the best workarounds could be found [https://github.com/swaywm/sway/issues/1367#issuecomment-332910152](https://github.com/swaywm/sway/issues/1367#issuecomment-332910152) :
 
 ## Known issues
+
+### wlc compositor
+
+Sway version 0.x uses the *wlc* compositor, which has some bugs that will not be fixed until the 1.0 release: this will ship with the [wlroots](https://github.com/swaywm/wlroots) compositor, which provides better XWayland support.
+
+Issues in *wlc* that are fixed by *wlroots*:
+
+*   Application popups sometimes are not displaying correctly - size is smaller than expected and placed with the offset from screen center
+*   Drag-and-drop in apps has a weird behaviour or not working at all
+*   Copy-pasting from closed terminal to Firefox or Chromium causes segfault [https://github.com/swaywm/sway/issues/2021](https://github.com/swaywm/sway/issues/2021)
+*   Cursor changes size and not displayed correctly in some apps [https://github.com/swaywm/sway/issues/2014](https://github.com/swaywm/sway/issues/2014)
+*   Dropdown menus are not displayed correctly [https://github.com/swaywm/sway/issues/1142](https://github.com/swaywm/sway/issues/1142)
+*   Scrolling apps can stop if you move mouse outside the bottom or right side of the app window. Other interactions like selection and moving cursor outside the screen will be interrupted too [https://github.com/swaywm/sway/issues/1997](https://github.com/swaywm/sway/issues/1997)
 
 ### Using i3-dmenu-desktop
 

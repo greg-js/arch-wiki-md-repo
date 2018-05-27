@@ -36,8 +36,8 @@
     *   [14.1 Método de instalación alternativo](#M.C3.A9todo_de_instalaci.C3.B3n_alternativo)
     *   [14.2 Solución al firmware de UEFI](#Soluci.C3.B3n_al_firmware_de_UEFI)
     *   [14.3 Crear una entrada GRUB en el gestor de arranque del firmware](#Crear_una_entrada_GRUB_en_el_gestor_de_arranque_del_firmware)
-    *   [14.4 GRUB standalone](#GRUB_standalone)
-    *   [14.5 Technical information](#Technical_information)
+    *   [14.4 GRUB independiente](#GRUB_independiente)
+    *   [14.5 Información técnica](#Informaci.C3.B3n_t.C3.A9cnica)
 
 ## Métodos alternativos de instalación
 
@@ -591,11 +591,11 @@ Para ello, primero cree el directorio necesario y, a continuación, copie la par
 
 `grub-install` intenta crear automáticamente una entrada de menú en el gestor de arranque. Si no lo hace, vea [efibootmgr](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#efibootmgr) para instrucciones de uso y `efibootmgr` para crear una entrada de menú. Sin embargo, es probable que el problema sea que no haya arrancado su CD/USB en modo UEFI, vea también como [Crear un USB arrancable con UEFI desde la ISO](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO).
 
-### GRUB standalone
+### GRUB independiente
 
-This section assumes you are creating a standalone GRUB for x86_64 systems (x86_64-efi). For 32-bit (IA32) EFI systems, replace `x86_64-efi` with `i386-efi` where appropriate.
+Esta sección asume que está creando un GRUB independiente para sistemas x86_64 (x86_64-efi). Para los sistemas EFI de 32 bits (IA32), reemplace `x86_64-efi` con `i386-efi` cuando corresponda.
 
-It is possible to create a `grubx64_standalone.efi` application which has all the modules embedded in a tar archive within the UEFI application, thus removing the need to have a separate directory populated with all of the GRUB UEFI modules and other related files. This is done using the `grub-mkstandalone` command (included in [grub](https://www.archlinux.org/packages/?name=grub)) as follows:
+Es posible crear una aplicación `grubx64_standalone.efi` que tenga todos los módulos integrados en un archivo tar dentro de la aplicación UEFI, eliminando así la necesidad de tener un directorio separado con todos los módulos de GRUB UEFI y otros archivos relacionados. Esto se hace usando el comando `grub-mkstandalone` (incluido en [grub](https://www.archlinux.org/packages/?name=grub)) de la siguiente manera:
 
 ```
 # echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
@@ -603,15 +603,15 @@ It is possible to create a `grubx64_standalone.efi` application which has all th
 
 ```
 
-Then copy the GRUB config file to `*esp*/EFI/grub/grub.cfg` and create a UEFI Boot Manager entry for `*esp*/EFI/grub/grubx64_standalone.efi` using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
+A continuación, copie el fichero de configuración de GRUB en `*esp*/EFI/grub/grub.cfg` y cree una entrada UEFI Boot Manager para `*esp*/EFI/grub/grubx64_standalone.efi` usando [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
 
-**Note:** The option `--modules="part_gpt part_msdos"` (with the quotes) is necessary for the `${cmdpath}` feature to work properly.
+**Nota:** La opción `--modules="part_gpt part_msdos"` (con las comillas) es necesaria para que la `${cmdpath}` funcione correctamente.
 
-**Warning:** You may find that the `grub.cfg` file is not loaded due to `${cmdpath}` missing a slash (i.e. `(hd1,msdos2)EFI/Boot` instead of `(hd1,msdos2)/EFI/Boot`) and so you are dropped into a GRUB shell. If this happens determine what `${cmdpath}` is set to (`echo ${cmdpath}` ) and then load the config file manually (e.g. `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`).
+**Advertencia:** Puede encontrar que el archivo `grub.cfg` no esté cargado debido a que `${cmdpath}` falte una barra oblicua (i.e. `(hd1,msdos2)EFI/Boot` en lugar de `(hd1,msdos2)/EFI/Boot`) y por lo tanto le envie a una shell de GRUB. Si esto sucede, determine lo que está configurado en (`echo ${cmdpath}` ) y, a continuación, carge el archivo de configuración manualmente (por ejemplo, `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`).
 
-### Technical information
+### Información técnica
 
-The GRUB EFI file always expects its config file to be at `${prefix}/grub.cfg`. However in the standalone GRUB EFI file, the `${prefix}` is located inside a tar archive and embedded inside the standalone GRUB EFI file itself (inside the GRUB environment, it is denoted by `"(memdisk)"`, without quotes). This tar archive contains all the files that would be stored normally at `/boot/grub` in case of a normal GRUB EFI install.
+El archivo GRUB EFI siempre espera que su archivo de configuración esté en `${prefix}/grub.cfg`. Sin embargo, en el archivo independiente de GRUB EFI, el `${prefix}` se encuentra dentro de un archivo tar e integrado dentro del propio archivo EFI de GRUB (dentro del entorno GRUB, se indica con `"(memdisk)"`, sin comillas). Este archivo tar contiene todos los archivos que se almacenarían normalmente en `/boot/grub` en caso de una instalación normal de GRUB EFI.
 
 Due to this embedding of `/boot/grub` contents inside the standalone image itself, it does not rely on actual (external) `/boot/grub` for anything. Thus in case of standalone GRUB EFI file `${prefix}==(memdisk)/boot/grub` and the standalone GRUB EFI file reads expects the config file to be at `${prefix}/grub.cfg==(memdisk)/boot/grub/grub.cfg`.
 

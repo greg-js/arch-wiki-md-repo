@@ -114,7 +114,7 @@
 
 *   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK+ interfaces.
 
-	[https://launchpad.net/wicd](https://launchpad.net/wicd) || CLI: [wicd](https://www.archlinux.org/packages/?name=wicd), GTK+ [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
+	[https://launchpad.net/wicd](https://launchpad.net/wicd) || CLI: [wicd](https://www.archlinux.org/packages/?name=wicd), GUI: [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
 
 *   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
 
@@ -520,6 +520,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://streamlink.github.io/](https://streamlink.github.io/) || [streamlink](https://www.archlinux.org/packages/?name=streamlink)
 
+*   **[Streamripper](https://en.wikipedia.org/wiki/Streamripper "wikipedia:Streamripper")** — Records and splits streaming mp3 into tracks.
+
+	[http://streamripper.sourceforge.net/](http://streamripper.sourceforge.net/) || [streamripper](https://www.archlinux.org/packages/?name=streamripper)
+
 *   **You-Get** — Download media contents (videos, audios, images) from the Web.
 
 	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
@@ -581,6 +585,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **Steadyflow** — Simple download manager for GNOME. Supports HTTP and FTP.
 
 	[https://launchpad.net/steadyflow](https://launchpad.net/steadyflow) || [steadyflow](https://www.archlinux.org/packages/?name=steadyflow)
+
+*   **Streamtuner2** — Internet radio station and video browser. It simply lists stations in categories from different directories and launches your preferred media apps for playback.
+
+	[https://sourceforge.net/projects/streamtuner2/](https://sourceforge.net/projects/streamtuner2/) || [streamtuner2](https://aur.archlinux.org/packages/streamtuner2/)
 
 *   **uGet** — GTK+ download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent, Metalink, YouTube and Mega.
 
@@ -716,9 +724,9 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
 
-*   **[ftp](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation)** — Simple ftp client provided by GNU Inetutils
+*   **ftp** — Simple ftp client provided by GNU Inetutils
 
-	[https://www.gnu.org/software/inetutils/](https://www.gnu.org/software/inetutils/) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
+	[https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
 
 *   **ncftp** — A set of free application programs implementing FTP.
 
