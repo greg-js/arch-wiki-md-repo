@@ -1,3 +1,7 @@
+Related articles
+
+*   [Partycjonowanie](/index.php/Partitioning_(Polski) "Partitioning (Polski)")
+
 Za [Wikipedia](https://en.wikipedia.org/wiki/pl:System_plik%C3%B3w "wikipedia:pl:System plików"):
 
 	*System plików - metoda przechowywania plików, zarządzania plikami, informacjami o tych plikach, tak by dostęp do plików i danych w nich zgromadzonych był łatwy dla użytkownika systemu.*

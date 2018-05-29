@@ -51,7 +51,7 @@ Adding the interface into the bridge is done by setting its master to `*bridge_n
 
 ```
 
-To show the existing bridges and associated interfaces, use the *bridge* utility (also part of [iproute2](https://www.archlinux.org/packages/?name=iproute2)). See [bridge(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bridge.8) for details.
+To show the existing bridges and associated interfaces, use the *bridge* utility (also part of [iproute2](https://www.archlinux.org/packages/?name=iproute2)). See [bridge(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bridge.8) for details.
 
 ```
 # bridge link
@@ -83,7 +83,7 @@ This will automatically remove all interfaces from the bridge. The slave interfa
 
 ### With bridge-utils
 
-This section describes the management of a network bridge using the legacy *brctl* tool from the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) package, which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). See [brctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/brctl.8) for full listing of options.
+This section describes the management of a network bridge using the legacy *brctl* tool from the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) package, which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). See [brctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/brctl.8) for full listing of options.
 
 Create a new bridge:
 
@@ -142,6 +142,8 @@ See [systemd-networkd#Bridge interface](/index.php/Systemd-networkd#Bridge_inter
 ### With NetworkManager
 
 Gnome's NetworkManager can create bridges, but currently will not auto-connect to them or slave/attached interfaces. Open Network Settings, add a new interface of type Bridge, add a new bridged connection, and select the MAC address of the device to attach to the bridge.
+
+**Note:** When using plasma/plasma-nm, "Show and configure virtual connections" must be enabled in plasma-nm configuration in order to view and modify bridge interfaces.
 
 Now, find the UUID of the attached device (by default named "bridge0 slave 1"):
 

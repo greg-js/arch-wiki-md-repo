@@ -102,7 +102,15 @@ After creating/editing `/etc/pacman.d/mirrorlist`, issue the following command:
 
 ```
 
-Passing two `--refresh`/`-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syyu` *whenever changing to a new mirror* is good practice and will avoid possible issues. See also [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124).
+Passing two `--refresh`/`-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syyu` is an unnecessary waste of bandwidth in most cases, but can sometimes fix issues when switching from a broken mirror to a working mirror. See also [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124).
+
+**Warning:** In most cases if you force refresh the pacman database, you will want to force downgrade any potentially too-new packages to correspond to the versions offered by the new mirror. This prevents issues where packages are inconsistently upgraded, leading to a partial update.
+```
+# pacman -Syyuu
+
+```
+
+This is not necessary when using timestamps to ensure the mirrors are only upgraded.
 
 ## Sorting mirrors
 
@@ -116,7 +124,7 @@ It is recommended to repeat this process before every system upgrade to keep the
 
 #### Ranking an existing mirror list
 
-The [pacman](https://www.archlinux.org/packages/?name=pacman) package provides a Bash script, `/usr/bin/rankmirrors`, which can be used to rank the mirrors according to their connection and opening speeds to take advantage of using the fastest local mirror.
+The [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package provides a Bash script, `/usr/bin/rankmirrors`, which can be used to rank the mirrors according to their connection and opening speeds to take advantage of using the fastest local mirror.
 
 Back up the existing `/etc/pacman.d/mirrorlist`:
 
@@ -148,6 +156,8 @@ In order to start with a shortlist of up-to-date mirrors based in some countries
 $ curl -s "[https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on](https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on)" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
 
 ```
+
+**Tip:** This procedure can be done interactively by navigating to `[https://www.archlinux.org/mirrorlist](https://www.archlinux.org/mirrorlist)` with any text-based browser, for example [elinks(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/elinks.1).
 
 ### Server-side ranking
 

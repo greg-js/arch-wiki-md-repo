@@ -9,10 +9,14 @@
 *   [1 Utilities](#Utilities)
     *   [1.1 Partitioning tools](#Partitioning_tools)
     *   [1.2 Mount tools](#Mount_tools)
-    *   [1.3 Terminal emulators](#Terminal_emulators)
-        *   [1.3.1 VTE-based](#VTE-based)
-        *   [1.3.2 KMS-based](#KMS-based)
-        *   [1.3.3 framebuffer-based](#framebuffer-based)
+    *   [1.3 Terminal](#Terminal)
+        *   [1.3.1 Command shells](#Command_shells)
+        *   [1.3.2 Terminal emulators](#Terminal_emulators)
+            *   [1.3.2.1 VTE-based](#VTE-based)
+            *   [1.3.2.2 KMS-based](#KMS-based)
+            *   [1.3.2.3 framebuffer-based](#framebuffer-based)
+        *   [1.3.3 Terminal pagers](#Terminal_pagers)
+        *   [1.3.4 Terminal multiplexers](#Terminal_multiplexers)
     *   [1.4 Hex editors](#Hex_editors)
     *   [1.5 Integrated development environments](#Integrated_development_environments)
     *   [1.6 Build automation](#Build_automation)
@@ -84,7 +88,15 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 	[https://mhogomchungu.github.io/zuluCrypt/](https://mhogomchungu.github.io/zuluCrypt/) || [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/)
 
-### Terminal emulators
+### Terminal
+
+#### Command shells
+
+See the main article: [Command-line shell](/index.php/Command-line_shell "Command-line shell").
+
+See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
+
+#### Terminal emulators
 
 Terminal emulators show a GUI Window that contains a terminal. Most emulate Xterm, which in turn emulates VT102, which emulates typewriter. For further background information, see [Wikipedia:Terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator").
 
@@ -166,7 +178,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://yakuake.kde.org/](https://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
 
-#### VTE-based
+##### VTE-based
 
 [VTE](http://developer.gnome.org/vte/unstable/) (Virtual Terminal Emulator) is a widget developed during early GNOME days for use in the GNOME Terminal. It has since given birth to many terminals with similar capabilities.
 
@@ -230,7 +242,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://github.com/lahwaacz/tinyterm](https://github.com/lahwaacz/tinyterm) || [tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/)
 
-#### KMS-based
+##### KMS-based
 
 The following terminal emulators are based on the [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") that could be invoked without X.
 
@@ -238,13 +250,67 @@ The following terminal emulators are based on the [kernel mode setting](/index.p
 
 	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
 
-#### framebuffer-based
+##### framebuffer-based
 
 In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer "wikipedia:Framebuffer") could be refered to a virtual device in the Linux kernel (**fbdev**) or the virtual framebuffer system for X (**xvfb**). This section mainly lists the terminal emulators that based on the in-kernel virtual device, i.e. **fbdev**.
 
 *   **yaft** — A simple terminal emulator for living without X, with UCS2 glyphs, wallpaper and 256color support.
 
 	[https://github.com/uobikiemukot/yaft](https://github.com/uobikiemukot/yaft) || [yaft](https://aur.archlinux.org/packages/yaft/)
+
+#### Terminal pagers
+
+See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager").
+
+*   **[more](https://en.wikipedia.org/wiki/More_(command) "wikipedia:More (command)")** — A simple and feature-light pager. It is a part of util-linux.
+
+	[https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[less](/index.php/Core_utilities#less "Core utilities")** — A program similar to more, but with support for both forward and backward scrolling, as well as partial loading of files.
+
+	[https://www.gnu.org/software/less/](https://www.gnu.org/software/less/) || [less](https://www.archlinux.org/packages/?name=less)
+
+*   **[most](https://en.wikipedia.org/wiki/Most_(Unix) "wikipedia:Most (Unix)")** — A pager with support for multiple windows, left and right scrolling, and built-in colour support
+
+	[http://www.jedsoft.org/most/](http://www.jedsoft.org/most/) || [most](https://www.archlinux.org/packages/?name=most)
+
+*   **mcview** — A pager with mouse and colour support. It is bundled with midnight commander.
+
+	[http://midnight-commander.org/](http://midnight-commander.org/) || [mc](https://www.archlinux.org/packages/?name=mc)
+
+*   **vimpager** — A script that turns vim into a pager. As a result, you get various vim features such as colour schemes, mouse support, split screens, etc.
+
+	[https://github.com/rkitover/vimpager](https://github.com/rkitover/vimpager) || [vimpager](https://www.archlinux.org/packages/?name=vimpager)
+
+#### Terminal multiplexers
+
+*   **abduco** — Tool for session attach and detach support which allows a process to run independently from its controlling terminal.
+
+	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://www.archlinux.org/packages/?name=abduco)
+
+*   **[byobu](https://en.wikipedia.org/wiki/Byobu_(software) "wikipedia:Byobu (software)")** — An GPLv3 licensed addon for tmux or screen. It requires a terminal multiplexer installed.
+
+	[http://byobu.co/](http://byobu.co/) || [byobu](https://aur.archlinux.org/packages/byobu/)
+
+*   **[dtach](/index.php/Dtach "Dtach")** — Program that emulates the detach feature of [screen](/index.php/Screen "Screen").
+
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+
+*   **dvtm** — [dwm](/index.php/Dwm "Dwm")-style window manager in the console.
+
+	[http://brain-dump.org/projects/dvtm/](http://brain-dump.org/projects/dvtm/) || [dvtm](https://www.archlinux.org/packages/?name=dvtm)
+
+*   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Full-screen window manager that multiplexes a physical terminal.
+
+	[https://www.gnu.org/software/screen/](https://www.gnu.org/software/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
+
+*   **mtm** — Simple terminal multiplexer with just four commands: change focus, split, close, and screen redraw.
+
+	[https://github.com/deadpixi/mtm](https://github.com/deadpixi/mtm) || [mtm-git](https://aur.archlinux.org/packages/mtm-git/)
+
+*   **[tmux](/index.php/Tmux "Tmux")** — BSD licensed terminal multiplexer.
+
+	[http://tmux.github.io/](http://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
 
 ### Hex editors
 

@@ -11,12 +11,13 @@
 ## Contents
 
 *   [1 Настройка сервера](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0)
-    *   [1.1 Создание ресурсов для общего доступа](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.BE.D0.B2_.D0.B4.D0.BB.D1.8F_.D0.BE.D0.B1.D1.89.D0.B5.D0.B3.D0.BE_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0)
-    *   [1.2 Запуск служб](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81.D0.BB.D1.83.D0.B6.D0.B1)
-    *   [1.3 Создание ресурсов общего доступа от имени обычного пользователя](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.BE.D0.B2_.D0.BE.D0.B1.D1.89.D0.B5.D0.B3.D0.BE_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BE.D1.82_.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8_.D0.BE.D0.B1.D1.8B.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
-    *   [1.4 Добавление пользователя](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
-    *   [1.5 Смена пароля Samba-пользователя](#.D0.A1.D0.BC.D0.B5.D0.BD.D0.B0_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8F_Samba-.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
-    *   [1.6 Требуемые порты](#.D0.A2.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BF.D0.BE.D1.80.D1.82.D1.8B)
+    *   [1.1 smb.conf](#smb.conf)
+    *   [1.2 Создание ресурсов для общего доступа](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.BE.D0.B2_.D0.B4.D0.BB.D1.8F_.D0.BE.D0.B1.D1.89.D0.B5.D0.B3.D0.BE_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0)
+    *   [1.3 Запуск служб](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81.D0.BB.D1.83.D0.B6.D0.B1)
+    *   [1.4 Создание ресурсов общего доступа от имени обычного пользователя](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.BE.D0.B2_.D0.BE.D0.B1.D1.89.D0.B5.D0.B3.D0.BE_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BE.D1.82_.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8_.D0.BE.D0.B1.D1.8B.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+    *   [1.5 Добавление пользователя](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+    *   [1.6 Смена пароля Samba-пользователя](#.D0.A1.D0.BC.D0.B5.D0.BD.D0.B0_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8F_Samba-.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+    *   [1.7 Требуемые порты](#.D0.A2.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BF.D0.BE.D1.80.D1.82.D1.8B)
 *   [2 Настройка клиента](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D0.B0)
     *   [2.1 Ручное монтирование](#.D0.A0.D1.83.D1.87.D0.BD.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
         *   [2.1.1 Добавление ресурса в /etc/fstab](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.B0_.D0.B2_.2Fetc.2Ffstab)
@@ -47,14 +48,15 @@
 
 Для обеспечения общего доступа к файлам при помощи Samba [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [samba](https://www.archlinux.org/packages/?name=samba) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
-Сервер Samba настраивается в файле `/etc/samba/smb.conf`. Скопируйте файл настроек по умолчанию в файл `/etc/samba/smb.conf`:
+### smb.conf
 
-```
-# cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+Samba настраивается с помощью файла `/etc/samba/smb.conf`, если этого файла не существует, smbd не запустится.
 
-```
+Чтобы начать, Вы можете скопировать файл настроек по умолчанию из [git-репозитория samba](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) в `/etc/samba/smb.conf`.
 
-**Совет:** Запустите `testparm`, чтобы проверить правильность синтаксиса конфигурационного файла *samba*
+**Примечание:** Файл настроек по умолчанию задает `log file` в место без возможности записи, что вызывает ошибки - измените на корректный путь: `log file = /var/log/samba/%m.log`.
+
+Доступные опции документированы на странице руководства [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5). Каждый раз, когда вы изменяете файл, запускайте команду [testparm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1), чтобы проверить файл на синтаксические ошибки.
 
 ### Создание ресурсов для общего доступа
 

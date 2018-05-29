@@ -88,7 +88,7 @@ Pacman does not deal with *.pacnew* files automatically: you must maintain these
 
 ### pacdiff
 
-Pacman includes the simple *pacdiff* tool for managing pacnew/pacsave files. It will search all `pacnew` and `pacsave` files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=your_editor pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) provides the simple *pacdiff* tool for managing pacnew/pacsave files. It will search all *.pacnew* and *.pacsave* files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=*your_editor* pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
 
 ### Third-party utilities
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Partitioning_(Magyar)](/index.php/Partitioning_(Magyar) "Partitioning (Magyar)")
+
 A [Wikipédiából](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
 	*A számítástechnika egy fájlrendszer alatt a számítógépes fájlok tárolásának és rendszerezésének a módszerét érti, ideértve a tárolt adatokhoz való hozzáférést és az adatok egyszerű megtalálását is...Precízebben meghatározva: egy fájlrendszer absztrakt adattípusok halmaza, amelyeket adatok tárolására, hierarchikus rendezésére, kezelésére, megtalálására illetve navigálásra, hozzáférésre, és visszakeresésére valósítottak meg.*

@@ -22,14 +22,14 @@ From [Wikipedia:Redis](https://en.wikipedia.org/wiki/Redis "wikipedia:Redis"):
 
 The Redis configuration file is well-documented and located at `/etc/redis.conf`.
 
-*   By default, if no "bind" configuration directive is specified, Redis listens for connections from all the network interfaces. it may be preferred to allow only access on the host instead:
+*   By default, if no "bind" configuration directive is specified, Redis listens for connections from all the network interfaces. It may be preferred to allow only access on the host instead:
 
 ```
 bind 127.0.0.1
 
 ```
 
-*   Accept connections on the specified port (default is 6379), specify `port 0` to disable listing on TCP:
+*   Accept connections on the specified port (default is 6379), specify `port 0` to disable listening on TCP:
 
 ```
 port 6379

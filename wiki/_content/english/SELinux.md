@@ -94,17 +94,9 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 
 	Modified coreutils package compiled with SELinux support enabled. It replaces the [coreutils](https://www.archlinux.org/packages/?name=coreutils) package
 
-	[pam-selinux](https://aur.archlinux.org/packages/pam-selinux/) and [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)
+	[cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)
 
-	PAM package with pam_selinux.so. and the underlying base package. They replace the [pam](https://www.archlinux.org/packages/?name=pam) and [pambase](https://www.archlinux.org/packages/?name=pambase) packages respectively.
-
-	[util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)
-
-	Modified util-linux package compiled with SELinux support enabled. It replaces the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
-
-	[systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)
-
-	An SELinux aware version of [Systemd](/index.php/Systemd "Systemd"). It replaces the [systemd](https://www.archlinux.org/packages/?name=systemd) package.
+	Fedora fork of Vixie cron with SELinux enabled. It replaces the [cronie](https://www.archlinux.org/packages/?name=cronie) package.
 
 	[dbus-selinux](https://aur.archlinux.org/packages/dbus-selinux/)
 
@@ -118,6 +110,18 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 
 	iproute2 package compiled with SELinux support; for example, it adds the `-Z` option to `ss`. It replaces the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
+	[logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)
+
+	Logrotate package compiled with SELinux support. It replaces the [logrotate](https://www.archlinux.org/packages/?name=logrotate) package.
+
+	[openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)
+
+	[OpenSSH](/index.php/OpenSSH "OpenSSH") package compiled with SELinux support to set security context for user sessions. It replaces the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
+
+	[pam-selinux](https://aur.archlinux.org/packages/pam-selinux/) and [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)
+
+	PAM package with pam_selinux.so. and the underlying base package. They replace the [pam](https://www.archlinux.org/packages/?name=pam) and [pambase](https://www.archlinux.org/packages/?name=pambase) packages respectively.
+
 	[psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/)
 
 	Psmisc package compiled with SELinux support; for example, it adds the `-Z` option to `killall`. It replaces the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package.
@@ -130,17 +134,13 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 
 	Modified [sudo](/index.php/Sudo "Sudo") package compiled with SELinux support which sets the security context correctly. It replaces the [sudo](https://www.archlinux.org/packages/?name=sudo) package.
 
-	[cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)
+	[systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)
 
-	Fedora fork of Vixie cron with SELinux enabled. It replaces the [cronie](https://www.archlinux.org/packages/?name=cronie) package.
+	An SELinux aware version of [Systemd](/index.php/Systemd "Systemd"). It replaces the [systemd](https://www.archlinux.org/packages/?name=systemd) package.
 
-	[logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)
+	[util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)
 
-	Logrotate package compiled with SELinux support. It replaces the [logrotate](https://www.archlinux.org/packages/?name=logrotate) package.
-
-	[openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)
-
-	[OpenSSH](/index.php/OpenSSH "OpenSSH") package compiled with SELinux support to set security context for user sessions. It replaces the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
+	Modified util-linux package compiled with SELinux support enabled. It replaces the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 
 #### SELinux userspace utilities
 

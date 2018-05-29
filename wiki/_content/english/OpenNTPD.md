@@ -1,3 +1,7 @@
+Related articles
+
+*   [Time](/index.php/Time "Time")
+
 [OpenNTPD](http://www.openntpd.org/) (part of the OpenBSD project) is a daemon that can be used to synchronize the system clock to internet time servers using the Network Time Protocol, and can also act as a time server itself if needed. It implements the Simple Network Time Protocol version 4, as described in RFC 5905, and the Network Time Protocol version 3, as described in RFC 1305.
 
 ## Contents
@@ -31,7 +35,7 @@ $ ntpd -n
 
 ```
 
-**Note:** [HTTPS constraint feature](https://marc.info/?l=openbsd-tech&m=142356166731390&w=2) is not supported by [openntpd](https://www.archlinux.org/packages/?name=openntpd), it requires OpenNTPD to be built with LibreSSL. [openntpd](https://www.archlinux.org/packages/?name=openntpd) is built with OpenSSL.
+**Note:** The [HTTPS constraint feature](https://marc.info/?l=openbsd-tech&m=142356166731390&w=2) is not supported by [openntpd](https://www.archlinux.org/packages/?name=openntpd), it requires OpenNTPD to be built with LibreSSL. [openntpd](https://www.archlinux.org/packages/?name=openntpd) is built with OpenSSL.
 
 ### Client
 

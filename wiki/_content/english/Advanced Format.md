@@ -19,8 +19,8 @@ Drives with a translation layer (see above) will usually report a logical block 
 
 Tools which will report the physical sector of a drive (provided the drive will report it correctly) includes
 
-*   smartmontools (since 5.41 ; <tt>smartmontools -a</tt>, in information section)
-*   hdparm (since 9.12 ; <tt>hdparm -I</tt>, in configuration section)
+*   smartmontools (since 5.41 ; `smartctl -a`, in information section)
+*   hdparm (since 9.12 ; `hdparm -I`, in configuration section)
 
 Note that both works even for USB-attached discs (if the USB bridge supports SAT aka SCSI/ATA Translation, ANSI INCITS 431-2007).
 

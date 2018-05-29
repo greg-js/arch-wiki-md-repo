@@ -33,9 +33,12 @@
 
 ### Startup
 
-The service can be started in two (mutually exclusive) ways (i.e. only one of the two may be enabled!): With the `.service` file (default) or through `.socket` activation aka. unix socket activation (which then starts the service on access of said socket).
+The service can be started in two mutually exclusive ways (i.e. only one of the two may be enabled):
 
-**Note:** For using the service directly, the `listen_addresses` option in `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` has to be configured (e.g. `listen_addresses = [ "127.0.0.1:53" ]`). However, when using unix socket activation the option has to be the empty set (i.e. `listen_addresses = [ ]`), as systemd is taking care of the socket configuration.
+*   With the `.service` file
+*   Through the `.socket` activation aka unix socket activation (which then starts the service on access of said socket).
+
+**Note:** For using the service directly, the `listen_addresses` option in `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` has to be configured (e.g. `listen_addresses = ['127.0.0.1:53', '[::1]:53']`). However, when using unix socket activation the option has to be the empty set (i.e. `listen_addresses = [ ]`), as systemd is taking care of the socket configuration.
 
 ### Select resolver
 
@@ -97,9 +100,7 @@ It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not us
 
 #### Change port
 
-**Note:** Changing the IP address or port in `/etc/dnscrypt-proxy.conf` [does not work](https://web.archive.org/web/20171215112100/https://github.com/jedisct1/dnscrypt-proxy/issues/528) when using the provided systemd unit and must be changed in the provided systemd socket as follows.
-
-In order to forward to a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `53000` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
+In order to forward queries from a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `53000` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
 
 ```
 [Socket]
@@ -109,6 +110,8 @@ ListenStream=127.0.0.1:53000
 ListenDatagram=127.0.0.1:53000
 
 ```
+
+When queries are forwarded from the local DNS cache to `53000`, `dnscrypt-proxy.socket` will start `dnscrypt-proxy.service`.
 
 #### Example local DNS cache configurations
 
@@ -189,7 +192,7 @@ Restart `pdnsd.service` to apply the changes.
 
 ```
 [Service]
-CapabilityBoundingSet=CAP_IPC_LOCK CAP_SETGID CAP_SETUID
+CapabilityBoundingSet=CAP_IPC_LOCK CAP_SETGID CAP_SETUID CAP_NET_BIND_SERVICE
 ProtectSystem=strict
 ProtectHome=true
 ProtectKernelTunables=true

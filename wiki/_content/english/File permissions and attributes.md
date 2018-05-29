@@ -279,6 +279,15 @@ $ chmod go=rx *filename*
 
 ```
 
+To view the existing permissions of a file or directory in numeric form, use the [stat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stat.1) command:
+
+```
+$ stat -c %a *filename*
+
+```
+
+Where the %a option specifies output in numeric form.
+
 Most folders and directories are set to `755` to allow reading, writing and execution to the owner, but deny writing to everyone else, and files are normally `644` to allow reading and writing for the owner but just reading for everyone else; refer to the last note on the lack of `x` permissions with non executable files: it is the same thing here.
 
 To see this in action with examples consider the previous example that has been used but with this numerical method applied instead:

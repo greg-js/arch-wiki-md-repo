@@ -2,7 +2,7 @@ This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch
 
 For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles or the various programs' [man pages](/index.php/Man_page "Man page"), both linked from this guide. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
-Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
+Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
 
 ## Contents
 
@@ -31,20 +31,20 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X8
 
 ## Pre-installation
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
+Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
 
-To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
+To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
 ### Set the keyboard layout
 
-The default [console keymap](/index.php/Console_keymap "Console keymap") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Available layouts can be listed with:
+The default [console keymap](/index.php/Console_keymap "Console keymap") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available layouts can be listed with:
 
 ```
 # ls /usr/share/kbd/keymaps/**/*.map.gz
 
 ```
 
-To modify the layout, append a corresponding file name to [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitting path and file extension. For example, to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout:
+To modify the layout, append a corresponding file name to [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitting path and file extension. For example, to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "wikipedia:File:KB Germany.svg") keyboard layout:
 
 ```
 # loadkeys de-latin1
@@ -62,18 +62,18 @@ If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archi
 
 ```
 
-If the directory does not exist, the system may be booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") or CSM mode. Refer to your motherboard's manual for details.
+If the directory does not exist, the system may be booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or CSM mode. Refer to your motherboard's manual for details.
 
 ### Connect to the Internet
 
-The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot. The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping_(networking_utility) "w:ping (networking utility)"):
+The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot. The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping_(networking_utility) "wikipedia:ping (networking utility)"):
 
 ```
 # ping archlinux.org
 
 ```
 
-If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@*interface*`, where the `interface` name can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion"). Proceed to configure the network as described in [Network configuration](/index.php/Network_configuration "Network configuration").
+If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@*interface*`, where the `*interface*` name can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Proceed to configure the network as described in [Network configuration](/index.php/Network_configuration "Network configuration").
 
 ### Update the system clock
 
@@ -88,7 +88,7 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-When recognized by the live system, disks are assigned to a [block device](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "w:Device file") such as `/dev/sda` or `/dev/nvme0n1`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk*.
+When recognized by the live system, disks are assigned to a [block device](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "wikipedia:Device file") such as `/dev/sda` or `/dev/nvme0n1`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk*.
 
 ```
 # fdisk -l
@@ -214,7 +214,7 @@ Run [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) to genera
 
 ```
 
-This command assumes the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). See [Time#Time standard](/index.php/Time#Time_standard "Time") for details.
+This command assumes the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). See [Time#Time standard](/index.php/Time#Time_standard "Time") for details.
 
 ### Locale
 

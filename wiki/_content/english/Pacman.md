@@ -19,7 +19,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 *Pacman* is written in the C programming language and uses the [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
 
-**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains other useful tools such as [makepkg](/index.php/Makepkg "Makepkg"), **pactree**, **vercmp**, and [checkupdates](/index.php/Checkupdates "Checkupdates"). Run `pacman -Qlq pacman | grep bin` to see the full list.
+**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as *pactree* and [checkupdates](/index.php/Checkupdates "Checkupdates") can be found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman) instead. Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
 
 ## Contents
 
@@ -364,7 +364,7 @@ The built-in option to remove all the cached packages that are not currently ins
 
 Because of the above limitations, consider an alternative for more control over which packages, and how many, are deleted from the cache:
 
-The *paccache* script, provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package itself, deletes all cached versions of each package regardless of whether they are installed or not, except for the most recent 3, by default:
+The *paccache* script, provided by the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, deletes all cached versions of each package regardless of whether they are installed or not, except for the most recent 3, by default:
 
 ```
 # paccache -r

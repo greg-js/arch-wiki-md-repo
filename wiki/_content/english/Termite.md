@@ -12,7 +12,7 @@ The configuration file allows to change colors and set some options. Termite sup
 *   [4 Transparency](#Transparency)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Ctrl+Shift+t](#Ctrl.2BShift.2Bt)
-    *   [5.2 Remote SSH Error](#Remote_SSH_Error)
+    *   [5.2 Remote SSH error](#Remote_SSH_error)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -86,13 +86,16 @@ If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [
 
 If it continues to fail, ensure your [hostname](/index.php/Hostname "Hostname") is valid. See [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7).
 
-### Remote SSH Error
+### Remote SSH error
 
 When Termite is using remote SSH connection sometimes the error occurs: *Error opening terminal: xterm-termite.* or *Open terminal failed: missing or unsuitable terminal: xterm-termite.*
 
 This error can occur when trying to edit file with vim or nano. To fix this issue you should execute this command on the remote system:
 
-`$ export TERM=xterm-color`
+```
+$ export TERM=xterm-color
+
+```
 
 ## See also
 

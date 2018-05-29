@@ -21,8 +21,9 @@
         *   [1.2.8 2D animation](#2D_animation)
         *   [1.2.9 3D computer graphics](#3D_computer_graphics)
         *   [1.2.10 Color pickers](#Color_pickers)
-        *   [1.2.11 Screenshot](#Screenshot)
-        *   [1.2.12 Digital camera managers](#Digital_camera_managers)
+        *   [1.2.11 Color management](#Color_management)
+        *   [1.2.12 Screenshot](#Screenshot)
+        *   [1.2.13 Digital camera managers](#Digital_camera_managers)
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
@@ -374,6 +375,10 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://mockingbot.com/](http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
 
+*   **[OpenOffice Draw](/index.php/OpenOffice "OpenOffice")** — Vector graphics editor and diagramming tool included in the OpenOffice suite.
+
+	[http://www.openoffice.org/product/draw.html](http://www.openoffice.org/product/draw.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
+
 *   **[Pencil Project](https://en.wikipedia.org/wiki/Pencil2D "wikipedia:Pencil2D")** — GUI prototyping and mockup tool. Based on the [Electron](https://electronjs.org/) platform.
 
 	[http://pencil.evolus.vn/](http://pencil.evolus.vn/) || [pencil](https://aur.archlinux.org/packages/pencil/)
@@ -526,6 +531,26 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[https://soft.github.io/xcolor/](https://soft.github.io/xcolor/) || [xcolor](https://aur.archlinux.org/packages/xcolor/)
 
+#### Color management
+
+See also [ICC profiles](/index.php/ICC_profiles "ICC profiles") and [Backlight#Color correction](/index.php/Backlight#Color_correction "Backlight").
+
+*   **ArgyllCMS** — ICC compatible color management system. It supports accurate ICC profile creation for scanners, cameras and film recorders, and calibration and profiling of displays and RGB & CMYK printers.
+
+	[https://argyllcms.com/](https://argyllcms.com/) || [argyllcms](https://www.archlinux.org/packages/?name=argyllcms)
+
+*   **DisplayCAL** — Display calibration and profiling solution with a focus on accuracy and versatility. At its core it relies on ArgyllCMS color management system, to take measurements, create calibrations and profiles, and for a variety of other advanced color related tasks.
+
+	[https://displaycal.net/](https://displaycal.net/) || [displaycal](https://www.archlinux.org/packages/?name=displaycal)
+
+*   **GNOME Color Manager** — Set of graphical utilities for color management to be used in the GNOME desktop.
+
+	[https://gitlab.gnome.org/GNOME/gnome-color-manager](https://gitlab.gnome.org/GNOME/gnome-color-manager) || [gnome-color-manager](https://www.archlinux.org/packages/?name=gnome-color-manager)
+
+*   **xcalib** — Lightweight monitor calibration loader which can load an ICC monitor profile to be shared across desktop applications.
+
+	[https://github.com/OpenICC/xcalib](https://github.com/OpenICC/xcalib) || [xcalib](https://aur.archlinux.org/packages/xcalib/)
+
 #### Screenshot
 
 See also [Screen capture](/index.php/Screen_capture "Screen capture").
@@ -677,6 +702,10 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 *   **[Exaile](/index.php/Exaile "Exaile")** — GTK+ clone of Amarok.
 
 	[http://www.exaile.org/](http://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)
+
+*   **GNOME Internet Radio Locator** — Easily find live radio programs based on geographical location of radio broadcasters on the Internet.
+
+	[https://wiki.gnome.org/Apps/InternetRadioLocator](https://wiki.gnome.org/Apps/InternetRadioLocator) || [gnome-internet-radio-locator](https://aur.archlinux.org/packages/gnome-internet-radio-locator/)
 
 *   **GNOME Music** — Music is the new GNOME music playing application. It aims to combine an elegant and immersive browsing experience with simple and straightforward controls.
 
@@ -1150,11 +1179,11 @@ See also [Wikipedia:Comparison of audio synthesis environments](https://en.wikip
 
 #### Synthesizers
 
-*   **AlsaModularSynth** — Realtime modular synthesizer and effect processor.
+*   **ams** — Alsa Modular Synth. Realtime modular synthesizer and effect processor.
 
 	[http://alsamodular.sourceforge.net/](http://alsamodular.sourceforge.net/) || [ams](https://www.archlinux.org/packages/?name=ams)
 
-*   **[amsynth](https://en.wikipedia.org/wiki/Amsynth "wikipedia:Amsynth")** — Easy-to-use software synthesizer with a classic subtractive synthesizer topology.
+*   **[amsynth](https://en.wikipedia.org/wiki/Amsynth "wikipedia:Amsynth")** — Analog Modelling SYNTHesizer. Easy-to-use software synthesizer with a classic subtractive synthesizer topology.
 
 	[https://amsynth.github.io/](https://amsynth.github.io/) || [amsynth](https://www.archlinux.org/packages/?name=amsynth)
 
@@ -1210,11 +1239,11 @@ See also [Wikipedia:Comparison of audio synthesis environments](https://en.wikip
 
 	[http://timidity.sourceforge.net/](http://timidity.sourceforge.net/) || [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B)
 
-*   **Vee One Suite** — Old-school software instruments, synthv1, as a polyphonic subtractive synthesizer, samplv1, a polyphonic sampler synthesizer, drumkv1 as yet another drum-kit sampler and padthv1 as a polyphonic additive synthesizer.
+*   **Vee One Suite** — Old-school software instruments: synthv1, a polyphonic subtractive synthesizer; samplv1, a polyphonic sampler synthesizer; drumkv1, yet another drum-kit sampler; padthv1, a polyphonic additive synthesizer.
 
 	[http://www.rncbc.org/](http://www.rncbc.org/) || [vee-one](https://www.archlinux.org/groups/x86_64/vee-one/)
 
-*   **VMPK** — Virtual MIDI Piano Keyboard, a MIDI events generator and receiver. It doesn't produce any sound by itself, but can be used to drive a MIDI synthesizer.
+*   **VMPK** — Virtual MIDI Piano Keyboard. MIDI events generator and receiver. It doesn't produce any sound by itself, but can be used to drive a MIDI synthesizer.
 
 	[http://vmpk.sourceforge.net/](http://vmpk.sourceforge.net/) || [vmpk](https://www.archlinux.org/packages/?name=vmpk)
 

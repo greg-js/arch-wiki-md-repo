@@ -235,7 +235,7 @@ Another solution is to install the [Intel](/index.php/Intel "Intel") driver to h
 
 ## Using nouveau
 
-The open-source [nouveau](/index.php/Nouveau "Nouveau") driver ([xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau)) can dynamically switch with the Intel driver ([xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel)) using a technology called PRIME. For more information, see the wiki article on [PRIME](/index.php/PRIME "PRIME").
+The open-source [nouveau](/index.php/Nouveau "Nouveau") driver can dynamically switch with the [Intel graphics](/index.php/Intel_graphics "Intel graphics") driver using a technology called PRIME. For more information, see the wiki article on [PRIME](/index.php/PRIME "PRIME").
 
 ## Using Bumblebee
 

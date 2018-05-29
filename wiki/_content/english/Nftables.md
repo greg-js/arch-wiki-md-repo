@@ -276,20 +276,20 @@ Rules are either constructed from expressions or statements and are contained wi
 To add a rule to a chain do:
 
 ```
-# nft add rule *family* *table* *chain* *position* *statement*
+# nft add rule *family* *table* *chain* handle *handle* *statement*
 
 ```
 
-The rule is appended at `*position*`, which is optional. If not specified, the rule is appended to the end of the chain.
+The rule is appended at `*handle*`, which is optional. If not specified, the rule is appended to the end of the chain.
 
 To prepend the rule to the position do:
 
 ```
-# nft insert rule *family* *table* *chain* *position* *statement*
+# nft insert rule *family* *table* *chain* handle *handle* *statement*
 
 ```
 
-If `*position*` is not specified, the rule is prepended to the chain.
+If `*handle*` is not specified, the rule is prepended to the chain.
 
 ##### Expressions
 
@@ -352,6 +352,8 @@ ct:
   state <new | established | related | invalid>
 
 ```
+
+**Note:** *nft* does not use `/etc/services` to match port numbers with names, instead it uses an [internal list](https://git.netfilter.org/nftables/plain/src/services.c).
 
 #### Deletion
 
@@ -427,11 +429,13 @@ table inet filter {
                 # accept traffic originated from us
                 ct state established,related accept
 
+		# accept ICMP & IGMP
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
+		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
+		ip protocol igmp accept
+
                 # activate the following line to accept common local services
                 #tcp dport { 22, 80, 443 } ct state new accept
-
-                # accept neighbour discovery otherwise IPv6 connectivity breaks.
-                ip6 nexthdr icmpv6 icmpv6 type { nd-neighbor-solicit,  nd-router-advert, nd-neighbor-advert } accept
 
                 # count and drop any other traffic
                 counter drop
@@ -461,10 +465,10 @@ table inet filter {
 		# loopback interface
 		iif lo accept
 
-		# ICMP
-		# routers may also want: mld-listener-query, nd-router-solicit
-		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
-		ip protocol icmp icmp type { destination-unreachable, router-advertisement, time-exceeded, parameter-problem } accept
+		# ICMP & IGMP
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
+		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
+		ip protocol igmp accept
 
 		# SSH (port 22)
 		tcp dport ssh accept

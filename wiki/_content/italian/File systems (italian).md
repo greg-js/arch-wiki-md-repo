@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Partizionamento](/index.php/Partitioning_(Italiano) "Partitioning (Italiano)")
+
 Da [Wikipedia](https://en.wikipedia.org/wiki/it:File_system "wikipedia:it:File system"):
 
 	*In informatica, un file system è, informalmente, un meccanismo con il quale i file sono immagazzinati e organizzati su un dispositivo di archiviazione, come un disco rigido o un CD-ROM. Più formalmente, un file system è l'insieme dei tipi di dati astratti necessari per la memorizzazione, l'organizzazione gerarchica, la manipolazione, la navigazione, l'accesso e la lettura dei dati. Di fatto, alcuni file system (come NFS) non interagiscono direttamente con i dispositivi di archiviazione.*

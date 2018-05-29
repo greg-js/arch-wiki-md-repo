@@ -1,4 +1,4 @@
-[fish](https://fishshell.com), the "friendly interactive shell", is a "user friendly [commandline shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use".
+[fish](https://fishshell.com), the ***f**riendly **i**nteractive **sh**ell*, is a "user friendly [commandline shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use".
 
 ## Contents
 
@@ -119,6 +119,8 @@ Whenever you run *tmux*, you will be dropped into fish.
 
 ### Setting fish as default shell
 
+To change the user's default shell, start with [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell").
+
 If you decide to set fish as your default shell, you may find that you no longer have very much in your path. You can add a section to your `~/.config/fish/config.fish` file that will set your path correctly on login. This is much like `.profile` or `.bash_profile` as it is only executed for login shells.
 
 ```
@@ -132,7 +134,14 @@ end
 
 ### Disable greeting
 
-By default, fish prints a greeting message at startup. To disable it, run `set -U fish_greeting` once.
+By default, fish prints a greeting message at startup. To disable it, run once:
+
+```
+ $ set -U fish_greeting
+
+```
+
+This clears the universal `fish_greeting` variable, shared with all fish instances and which is preserved upon restart of the shell.
 
 ### Make su launch fish
 

@@ -21,7 +21,7 @@ Of course there are also [programs that do both](#Archiving_and_compression), wh
     *   [3.2 Compression only](#Compression_only_2)
     *   [3.3 Archiving and compression](#Archiving_and_compression_2)
 *   [4 Convenience tools](#Convenience_tools)
-*   [5 Determining archive type](#Determining_archive_type)
+*   [5 Determining archive format](#Determining_archive_format)
 *   [6 See also](#See_also)
 
 ## Archiving only
@@ -37,12 +37,14 @@ Of course there are also [programs that do both](#Archiving_and_compression), wh
 
 ### Compression only
 
-| Name | Packages | Manual | Ext | Tar Ext | Description | Parallel implementations |
-| [bzip2](https://en.wikipedia.org/wiki/bzip2 "wikipedia:bzip2") | [bzip2](https://www.archlinux.org/packages/?name=bzip2) | [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | .bz2, .bz | .tbz2, .tbz | Better compression than gzip, but slower. | [lbzip2](https://www.archlinux.org/packages/?name=lbzip2), [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) |
-| [gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip") | [gzip](https://www.archlinux.org/packages/?name=gzip) | [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) | .gz, .z | .tgz, .taz | Compression tool that complements *tar*. | [pigz](https://www.archlinux.org/packages/?name=pigz) |
-| [lrzip](/index.php/Lrzip "Lrzip") | [lrzip](https://www.archlinux.org/packages/?name=lrzip) | [lrzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lrzip.1) | .lrz | Optimized compression for large files and high-memory systems. |
+These compression programs implement their own file format.
+
+| Name | Packages | Manual | Ext | Tar ext | Description | Parallel implementations |
+| [bzip2](https://en.wikipedia.org/wiki/bzip2 "wikipedia:bzip2") | [bzip2](https://www.archlinux.org/packages/?name=bzip2) | [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | .bz2, .bz | .tbz2, .tbz | Uses the [Burrows–Wheeler algorithm](https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform "wikipedia:Burrows–Wheeler transform"). | [lbzip2](https://www.archlinux.org/packages/?name=lbzip2), [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) |
+| [gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip") | [gzip](https://www.archlinux.org/packages/?name=gzip) | [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) | .gz, .z | .tgz, .taz | GNU zip, based on [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE "wikipedia:DEFLATE") algorithm. | [pigz](https://www.archlinux.org/packages/?name=pigz) |
+| [lrzip](/index.php/Lrzip "Lrzip") | [lrzip](https://www.archlinux.org/packages/?name=lrzip) | [lrzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lrzip.1) | .lrz | Improved version of [rzip](https://en.wikipedia.org/wiki/rzip "wikipedia:rzip"), uses multiple compression algorithms. |
 | [lzip](https://en.wikipedia.org/wiki/lzip "wikipedia:lzip") | [lzip](https://www.archlinux.org/packages/?name=lzip) | [lzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lzip.1) | .lz | Uses [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA"). |
-| [lzop](https://en.wikipedia.org/wiki/lzop "wikipedia:lzop") | [lzop](https://www.archlinux.org/packages/?name=lzop) | [lzop(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lzop.1) | .lzop | .tzo | Faster, slighly larger than gzip |
+| [lzop](https://en.wikipedia.org/wiki/lzop "wikipedia:lzop") | [lzop](https://www.archlinux.org/packages/?name=lzop) | [lzop(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lzop.1) | .lzop | .tzo | Uses [LZO](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Oberhumer "wikipedia:Lempel–Ziv–Oberhumer"). |
 | [xz](https://en.wikipedia.org/wiki/xz "wikipedia:xz") | [xz](https://www.archlinux.org/packages/?name=xz) | [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1) | .xz, .lzma | .txz, .tlz | Uses [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA"), default for GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) and kernel archive files. | [pixz](https://www.archlinux.org/packages/?name=pixz), [pxz](https://aur.archlinux.org/packages/pxz/) |
 
 *   Parallel implementations offer improved speeds by using multiple CPU cores.
@@ -80,12 +82,12 @@ Of course there are also [programs that do both](#Archiving_and_compression), wh
 ### Compression only
 
 | Name | Compress | Decompress | Decompress to stdout |
-| [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | `bzip2 file` | `bunzip2 file.bz2` | `bzcat file.bz2` |
-| [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) | `gzip file` | `gunzip file.gz` | `zcat file.gz` |
+| [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | `bzip2 file` | `bzip2 -d file.bz2` | `bzcat file.bz2` |
+| [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) | `gzip file` | `gzip -d file.gz` | `zcat file.gz` |
 | [lrzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lrzip.1) | `lrzip file`
-`lrztar folder` | `lrunzip file.lrz`
-`lrzuntar folder.tar.lrz` | `lrzcat file.lrz` |
-| [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1) | `xz file` | `unxz file.xz` | `xzcat file.xz` |
+`lrztar folder` | `lrzip -d file.lrz`
+`lrztar -d folder.tar.lrz` | `lrzcat file.lrz` |
+| [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1) | `xz file` | `xz -d file.xz` | `xzcat file.xz` |
 
 ### Archiving and compression
 
@@ -112,19 +114,15 @@ Of course there are also [programs that do both](#Archiving_and_compression), wh
 
 	[https://github.com/githaff/unpack](https://github.com/githaff/unpack) || [unpack-git](https://aur.archlinux.org/packages/unpack-git/)
 
-## Determining archive type
+## Determining archive format
 
-Before an archive can be extracted, its type must be established. The file extension can give a hint (see chart below).
+To extract an archive, its file format needs to be determined. If the file is properly named you can deduce its format from the file extension.
 
-A *tar* archive with correct file extension
-
- `$ file archive.tar`  `archive.tar: POSIX tar archive (GNU)` 
-
-An archive with incorrect file extension, where the `rar` is actually `gzip`
-
- `$ file archive.rar`  `archive.rar: gzip compressed data, last modified: Sat May 26 01:58:49 2018, from Unix, original size 10240` 
+Otherwise you can use the [file](https://www.archlinux.org/packages/?name=file) tool, see [file(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file.1).
 
 ## See also
 
 *   [List of applications/Utilities#Archiving and compression tools](/index.php/List_of_applications/Utilities#Archiving_and_compression_tools "List of applications/Utilities")
 *   [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/Comparison_of_file_archivers "wikipedia:Comparison of file archivers")
+*   [Wikipedia:List of archive formats](https://en.wikipedia.org/wiki/List_of_archive_formats "wikipedia:List of archive formats")
+*   [Wikipedia:Comparison of archive formats](https://en.wikipedia.org/wiki/Comparison_of_archive_formats "wikipedia:Comparison of archive formats")

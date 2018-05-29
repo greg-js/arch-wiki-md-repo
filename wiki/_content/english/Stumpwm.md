@@ -81,3 +81,13 @@ If you are an emacs user, you will find an emacs minor mode for editing StumpWM 
 ```
 
 in the REPL, it can be solved by deleting `~/.Xauthority`. See [this issue on github](https://github.com/sabetts/stumpwm/issues/1)
+
+*   If you have an issue with the SBCL_HOME being set to NIL, you may need to set it manually
+
+**Tip:** You can find the path using
+
+`find / | grep sbcl.core`
+
+ `export SBCL_HOME=/usr/lib/sbcl/` 
+
+Then you may reinstall stumpwm

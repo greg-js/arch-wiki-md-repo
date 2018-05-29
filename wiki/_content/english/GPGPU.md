@@ -48,7 +48,7 @@ To **execute** programs that use OpenCL, a compatible hardware runtime needs to 
 
 #### Intel
 
-*   [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/) (*NEO*): replaces Beignet for Gen8 (Broadwell) and beyond
+*   [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/) or [compute-runtime-bin](https://aur.archlinux.org/packages/compute-runtime-bin/) (*NEO*): replaces Beignet for Gen8 (Broadwell) and beyond
 *   [beignet](https://www.archlinux.org/packages/?name=beignet): open-source implementation for Intel IvyBridge+ iGPUs, deprecated by Intel.
 *   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): official Intel CPU runtime, also supports non-Intel CPUs
 
@@ -151,6 +151,7 @@ To find whether the installation was successful and if cuda is up and running, y
 *   [GIMP](/index.php/GIMP "GIMP") – experimental – more information [here](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html).
 *   [HandBrake](/index.php/HandBrake "HandBrake")
 *   [Hashcat](/index.php/Hashcat "Hashcat")
+*   [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 *   [LibreOffice](/index.php/LibreOffice "LibreOffice") Calc – more information [here](https://help.libreoffice.org/Calc/OpenCL_Options).
 *   [opencv](https://www.archlinux.org/packages/?name=opencv)
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)

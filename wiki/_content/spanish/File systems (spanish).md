@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Mount](/index.php/Mount "Mount")
+*   [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)")
+
 Desde [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
 	*Un **sistema de archivos** o **sistema de ficheros** (en inglés:* filesystem*) es un medio para organizar los datos que se espera se mantengan después que un programa haya terminado, al proporcionar procedimientos para almacenar, recuperar y actualizar dichos datos, así como gestionar el espacio disponible en el dispositivo(s) que lo contiene. Un sistema de archivos organiza los datos de una manera eficiente y está sintonizado con las características específicas del dispositivo.*

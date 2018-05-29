@@ -415,7 +415,7 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 ```
 
-**Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is included with *pacman*) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
+**Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is provided by [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
 
 #### Synchronize pacman package cache using synchronization programs
 

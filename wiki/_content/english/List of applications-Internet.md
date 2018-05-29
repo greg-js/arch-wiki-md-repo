@@ -982,7 +982,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **[Claws Mail](https://en.wikipedia.org/wiki/Claws_Mail "wikipedia:Claws Mail")** — Lightweight GTK-based email client and news reader.
 
-	[http://claws-mail.org/](http://claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
+	[https://www.claws-mail.org/](https://www.claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
 
 *   **[Evolution](/index.php/Evolution "Evolution")** — Mature and feature-rich e-mail client that is part of the GNOME project. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 

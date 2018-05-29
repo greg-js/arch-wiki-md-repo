@@ -190,6 +190,9 @@ Section "InputClass"
   MatchProduct    "SINO WEALTH Gaming Keyboard"
   MatchIsPointer  "on"
   Driver          "libinput"
+  Option          "MiddleEmulation" "1"
+  Option          "ScrollButton" "3"
+  Option          "ScrollMethod" "button"
 EndSection
 
 ```

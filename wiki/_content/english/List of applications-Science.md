@@ -36,6 +36,7 @@
         *   [1.6.3 Unit conversion](#Unit_conversion)
     *   [1.7 Geography](#Geography)
     *   [1.8 Communication systems](#Communication_systems)
+        *   [1.8.1 Amateur radio](#Amateur_radio)
     *   [1.9 Simulation modeling](#Simulation_modeling)
 
 ## Science
@@ -629,6 +630,12 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 *   **Pothos** — The Pothos project is a complete data-flow framework for creating topologies of interconnected processing blocks.
 
 	[https://github.com/pothosware/PothosCore/wiki](https://github.com/pothosware/PothosCore/wiki) || [pothos](https://aur.archlinux.org/packages/pothos/), [pothos-git](https://aur.archlinux.org/packages/pothos-git/)
+
+#### Amateur radio
+
+See the main article: [Amateur radio#Software list](/index.php/Amateur_radio#Software_list "Amateur radio").
+
+See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
 ### Simulation modeling
 

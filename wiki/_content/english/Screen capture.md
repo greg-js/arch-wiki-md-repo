@@ -23,6 +23,7 @@ For a list of [screencast](https://en.wikipedia.org/wiki/Screencast "wikipedia:S
     *   [1.7 maim](#maim)
     *   [1.8 FFmpeg](#FFmpeg)
     *   [1.9 Weston](#Weston)
+    *   [1.10 Flameshot](#Flameshot)
 *   [2 Details: desktop environment specific](#Details:_desktop_environment_specific)
     *   [2.1 Spectacle](#Spectacle)
     *   [2.2 Xfce Screenshooter](#Xfce_Screenshooter)
@@ -170,6 +171,10 @@ See [FFmpeg#Screen capture](/index.php/FFmpeg#Screen_capture "FFmpeg").
 ### Weston
 
 In the [Weston](/index.php/Wayland#Weston "Wayland") Wayland compositor, screenshots can be taking by pressing `Super+s`, which are stored in Weston's current working directory. Screencasts are also supported; recording is started and stopped by pressing `Super+r`, which will create a file called `capture.wcap` in Weston's current working directory. The capture can be decoded to YUV format by running `wcap-decode --yuv4mpeg2 capture.wcap`; the output of this command can be written to a file or piped into FFmpeg for further processing.
+
+### Flameshot
+
+[flameshot](https://www.archlinux.org/packages/?name=flameshot) allows you to add simple shapes to your screenshot as you are taking it (either fullscreen or a selected region).
 
 ## Details: desktop environment specific
 

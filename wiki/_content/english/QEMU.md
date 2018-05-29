@@ -1708,7 +1708,7 @@ $ qemu-system-x86_64 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
 ```
 
 *   If you are running multiple virtual machines concurrently that all have the same operating system installed, you can save memory by enabling [kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_SamePage_Merging_(KSM) "wikipedia:Kernel SamePage Merging (KSM)"). See [#Enabling KSM](#Enabling_KSM).
-*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU with the `-balloon virtio` option.
+*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU using `--device virtio-balloon`.
 *   It is possible to use a emulation layer for an ICH-9 AHCI controller (although it may be unstable). The AHCI emulation supports [NCQ](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing"), so multiple read or write requests can be outstanding at the same time:
 
 ```

@@ -16,13 +16,13 @@
 | <small>2.3.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(11)</small> |
 | <small>2.3.2.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small> |
 | <small>2.3.3.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
-| <small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(13)</small> |
+| <small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(14)</small> |
 | <small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(14)</small> |
 | <small>2.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(3)</small> |
 | <small>2.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(4)</small> |
 | <small>2.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(15)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
-| <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(38)</small> |
+| <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(37)</small> |
 | <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(26)</small> |
 | <small>2.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(3)</small> |
 | <small>2.10.2.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(6)</small> |

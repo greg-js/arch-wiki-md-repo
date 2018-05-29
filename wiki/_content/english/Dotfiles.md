@@ -131,7 +131,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 ## Repositories
 
 | Author | Shell (shell framework) | WM / DE | Editor | Terminal | Multiplexer | Audio | Monitor | Mail | IRC |
-| [Ambrevar](https://bitbucket.org/ambrevar/dotfiles) | zsh | awesome | emacs | rxvt-unicode | cmus | htop/vicious | mutt |
+| [Ambrevar](https://github.com/Ambrevar/dotfiles) | zsh | awesome | emacs | rxvt-unicode | cmus | htop/vicious | mutt |
 | [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | st | tmux | i3status | The Lounge |
 | [ayekat](https://github.com/ayekat/dotfiles) | zsh | karuiwm | vim | rxvt-unicode | tmux | ncmpcpp/mpd | karuibar | mutt | irssi |
 | [bamos](https://github.com/bamos/dotfiles) | zsh | i3/xmonad | vim/emacs | rxvt-unicode | tmux | mpv/cmus | conky/xmobar | mutt | ERC |
@@ -143,7 +143,6 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [graysky](https://github.com/graysky2/configs/tree/master/dotfiles) | zsh | xfce4 | vim | terminal | ncmpcpp | custom | thunderbird |
 | [hugdru](https://github.com/hugdru/dotfiles) | zsh | awesome | neovim | rxvt-unicode | tmux | thunderbird | weechat |
 | [insanum](https://github.com/insanum/dotfiles) | bash | herbstluftwm | vim | evilvte | tmux | dzen | mutt-kz |
-| [izmntuk](https://github.com/izmntuk/archiso/tree/testing/configs/alter/airootfs/) | zsh | xfce4 | vim | rxvt-unicode/yaft | tmux | cmus | xfce4-panel | irssi |
 | [jasonwryan](https://bitbucket.org/jasonwryan/shiv/src) | bash/zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | custom | mutt | irrsi |
 | [jdevlieghere](https://github.com/JDevlieghere/dotfiles/) | zsh | xmonad | vim | terminal | tmux | htop | mutt | weechat |
 | [jelly](https://github.com/jelly/Dotfiles) | zsh | i3 | vim | termite | tmux | ncmpcpp | mutt-kz-git | weechat |
@@ -151,7 +150,6 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
-| [pid1](https://github.com/pid1/dotfiles) | zsh | dwm | neovim | st | tmux | custom | mutt | weechat |
 | [polyzen](https://github.com/polyzen/dotfiles) | zsh | i3 | vim | termite | tmux | i3status | weechat |
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3 Gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [swalladge](https://github.com/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | cmus | i3pystatus | mutt |

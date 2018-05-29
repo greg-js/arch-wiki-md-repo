@@ -94,20 +94,14 @@ Two methods to setup and enter the chroot are presented below, from the easiest 
 
 #### Method A: Using the bootstrap image (recommended)
 
-Download the bootstrap image from a [mirror](https://www.archlinux.org/download):
-
-```
-# cd /tmp
-# wget [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.05.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.05.01-x86_64.tar.gz)
-
-```
+Download the bootstrap image from a [mirror](https://www.archlinux.org/download) into `/tmp`.
 
 You can also download the signature (same URL with `.sig` added) and [verify it with GnuPG](/index.php/GnuPG#Verify_a_signature "GnuPG").
 
 Extract the tarball:
 
 ```
-# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2018.04.01-x86_64.tar.gz
+# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-*-x86_64.tar.gz
 
 ```
 

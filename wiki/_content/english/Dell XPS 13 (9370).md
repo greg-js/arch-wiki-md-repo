@@ -33,7 +33,7 @@ To boot from a USB device attached via the USB-C to USB-A adapter included in th
 
 ## Content Adaptive Brightness Control
 
-In the XPS 13 the display panels (both FHD and QHD+) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](http://tylerwatt12.com/dc/).
+In the XPS 13 the display panels (both FHD and QHD+) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](https://tylerwatt12.com/dc/).
 
 ## Video
 

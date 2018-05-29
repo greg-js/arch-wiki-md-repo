@@ -5,7 +5,7 @@ Related articles
 
 ## Contents
 
-*   [1 Set default input sources](#Set_default_input_sources)
+*   [1 Set default input source](#Set_default_input_source)
 *   [2 Set the default output source](#Set_the_default_output_source)
 *   [3 Simultaneous HDMI and analog output](#Simultaneous_HDMI_and_analog_output)
 *   [4 HDMI output configuration](#HDMI_output_configuration)
@@ -43,25 +43,31 @@ Related articles
 *   [17 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
 *   [18 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
 
-## Set default input sources
+## Set default input source
 
 List available input sources
 
- `$ pacmd list-sources | grep -e device.string -e 'name:'` 
+ `$ pacmd list-sources | grep -e 'index:' -e device.string -e 'name:'` 
 ```
-name: <input>
- device.string = "hw:2"
-name: <oss_input.dsp>
- device.string = "/dev/dsp"
-name: <alsa_output.pci-0000_04_01.0.analog-stereo.monitor>
-name: <combined.monitor>
+index: 0
+    name: <input>
+      device.string = "hw:2"
+* index: 1
+    name: <oss_input.dsp>
+      device.string = "/dev/dsp"
+  index: 2
+    name: <alsa_output.pci-0000_04_01.0.analog-stereo.monitor>
 ```
 
-To set it as the system wide default, add your source name to /etc/pulse/default.pa
+The `*` in front of the index indicates the current default input.
 
+To set a system wide default, add the source name in the `default.pa` file:
+
+ `/etc/pulse/default.pa` 
 ```
+...
 set-default-source *alsa_output.pci-0000_04_01.0.analog-stereo.monitor*
-
+...
 ```
 
 For temporary use
@@ -75,30 +81,31 @@ $ pacmd "set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor"
 
 ## Set the default output source
 
-Determine the name of the new source, which has a * in front of index:
+To list the output sources available, type the following command:
 
- `$ pacmd list-sinks | grep -e 'name:' -e 'index'` 
+ `$ pacmd list-sinks | grep -e 'name:' -e 'index:'` 
 ```
   * index: 0
 	name: <alsa_output.pci-0000_04_01.0.analog-stereo>
     index: 1
 	name: <combined>
-
 ```
 
-To set it as the system wide default, add the following to */etc/pulse/default.pa*
+The `*` in front of the index indicates the current default output.
 
+To set a system wide default, add the source name in the `default.pa` file:
+
+ `/etc/pulse/default.pa` 
 ```
-set-default-sink alsa_output.pci-0000_04_01.0.analog-stereo
-
+...
+set-default-sink *alsa_output.pci-0000_04_01.0.analog-stereo*
+...
 ```
 
 When done then you can logout/login or restart PulseAudio manually for these changes to take effect.
 
-**Note:**
+**Note:** * The numbering of sinks is not guaranteed to be persistent, so all sinks in the `default.pa` file should be identified by the name.
 
-*   The sinks that are set as default are marked with `*` in front of the index.
-*   The numbering of sinks is not guaranteed to be persistent, so all sinks in the `default.pa` file should be identified by the name.
 *   For quick identification at runtime (e.g. to manage sound volume), you can use the sink index instead of the sink name:
     ```
     $ pactl set-sink-volume 0 +3%

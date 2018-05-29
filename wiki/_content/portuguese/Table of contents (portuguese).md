@@ -26,7 +26,7 @@
 | <small>4.3.</small> [Storage](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
 | <small>5.</small> [HOWTOs](/index.php/Category:HOWTOs_(Portugu%C3%AAs) "Category:HOWTOs (Português)") <small>(5)</small> |
 | <small>6.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(4)</small> |
-| <small>6.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(2)</small> |
+| <small>6.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(4)</small> |
 | <small>6.2.</small> [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)") <small>(0)</small> |
 | <small>6.2.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(1) (também em [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
 | <small>6.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol_(Portugu%C3%AAs) "Category:File Transfer Protocol (Português)") <small>(1)</small> |
@@ -34,7 +34,7 @@
 | <small>6.4.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(2)</small> |
 | <small>6.4.2.</small> [Web browser](/index.php/Category:Web_browser_(Portugu%C3%AAs) "Category:Web browser (Português)") <small>(1)</small> |
 | <small>6.5.</small> [Network Configuration](/index.php/Category:Network_Configuration_(Portugu%C3%AAs) "Category:Network Configuration (Português)") <small>(1)</small> |
-| <small>6.6.</small> [Network configuration](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)") <small>(2)</small> |
+| <small>6.6.</small> [Network configuration](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)") <small>(3)</small> |
 | <small>6.7.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)"))</small> |
 | <small>6.8.</small> [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)") <small>(0)</small> |
 | <small>6.8.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(1) (também em [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)"))</small> |

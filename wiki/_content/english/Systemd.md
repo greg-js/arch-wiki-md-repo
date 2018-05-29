@@ -195,7 +195,7 @@ $ systemctl is-enabled *unit*
 
 ```
 
-**Mask** a unit to make it impossible to start it (both manually and as a dependency, which makes it dangerous):
+**Mask** a unit to make it impossible to start it (both manually and as a dependency, which makes masking dangerous):
 
 ```
 # systemctl mask *unit*

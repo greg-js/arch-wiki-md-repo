@@ -57,7 +57,7 @@ $ pdftex '\empty Hello world!\bye'
 
 You should get a DVI or a PDF file accordingly.
 
-You will probably want a [TeX editor](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents"). There are also a few online solutions that let you create TeX-based documents without TeX Live. See the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
+You will probably want a [TeX editor](/index.php/List_of_applications/Documents#TeX_editors "List of applications/Documents"). There are also a few online solutions that let you create TeX-based documents without TeX Live. See the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
 
 ## Important information
 

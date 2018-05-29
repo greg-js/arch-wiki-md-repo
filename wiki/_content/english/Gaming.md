@@ -112,7 +112,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
 
-*   activate OpenGL, set video resolution per custom to 1024×600 for streched full-screen or 800×600 for non-streched;
+*   activate OpenGL, set video resolution per custom to 1024x600 for streched full-screen or 800x600 for non-streched;
 *   use "Normal" renderer, I couldn't find a visible advantage with the other ones.
 
 	[http://www.gens.me/](http://www.gens.me/) || [gens](https://www.archlinux.org/packages/?name=gens)

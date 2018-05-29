@@ -34,33 +34,13 @@ This section will guide you through installing Oracle onto a fresh installation 
 
 #### Required packages for Oracle database installation
 
-[Install](/index.php/Install "Install") packages [unzip](https://www.archlinux.org/packages/?name=unzip) [sudo](https://www.archlinux.org/packages/?name=sudo) [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) [icu](https://www.archlinux.org/packages/?name=icu) [gawk](https://www.archlinux.org/packages/?name=gawk) [gdb](https://www.archlinux.org/packages/?name=gdb) [elfutils](https://www.archlinux.org/packages/?name=elfutils) [sysstat](https://www.archlinux.org/packages/?name=sysstat) [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) [unixodbc](https://www.archlinux.org/packages/?name=unixodbc).
+[Install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group and these packages: [elfutils](https://www.archlinux.org/packages/?name=elfutils), [gdb](https://www.archlinux.org/packages/?name=gdb), [icu](https://www.archlinux.org/packages/?name=icu), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5), [sysstat](https://www.archlinux.org/packages/?name=sysstat), [unixodbc](https://www.archlinux.org/packages/?name=unixodbc) and [unzip](https://www.archlinux.org/packages/?name=unzip).
 
 Install a [Java](/index.php/Java "Java") runtime environment, like [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) and [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk).
 
 From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
 
-Oracle database 32-bit requires [lib32-unixodbc](https://aur.archlinux.org/packages/lib32-unixodbc/) [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio) [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
-
-**Note:** The following step is not required in newer Arch Linux installation after the binary directories merge
-
-Some prerequisite symbolic links for Oracle Universal Installer.
-
-```
-# ln -s /usr/bin/rpm /bin/rpm
-# ln -s /usr/bin/ksh /bin/ksh
-# ln -s /bin/awk /usr/bin/awk
-# ln -s /bin/tr /usr/bin/tr
-# ln -s /usr/bin/basename /bin/basename
-
-```
-
-Arch x86_64:
-
-```
-# ln -s /usr/lib /usr/lib64
-
-```
+Oracle database 32-bit requires [lib32-unixodbc](https://aur.archlinux.org/packages/lib32-unixodbc/), [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio), [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5), [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) and [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
 
 #### Configuration
 

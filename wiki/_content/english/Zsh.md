@@ -277,7 +277,7 @@ See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.h
 
 Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) or [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) for prompt escapes to set foreground color, background color and other visual effects.
 
-[Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified by numeric color code or by name (see [Character Highlighting](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting) or [zshzle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1)). Most terminals support the following colors by name:
+[Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified by numeric color code or by name. Most terminals support the following colors by name[[1]](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting):
 
 | Possible color values |
 | `black` or `0` | `red` or `1` |
@@ -287,7 +287,7 @@ Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash
 
 See [xterm-256color chart](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg) for color codes supported by terminal emulators compatible with xterm 256 colors.
 
-**Note:** Bold text does not necessarily use the same colors as normal text. For example, `%F{yellow}*text*%f` looks brown or a very dark yellow, while `%F{yellow}%B*text*%b%f` looks like bright or regular yellow.
+**Note:** Many terminal emulators display bold with a brighter color.
 
 **Tip:** Prompt escapes can be tested with command `print -P *"prompt escapes"*`, for example:
 ```
@@ -356,7 +356,7 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 ### The ttyctl command
 
-[[1]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
+[[2]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
 
  `~/.zshrc` 
 ```
@@ -454,7 +454,7 @@ $ rehash
 
 ```
 
-This 'rehash' can be set to happen automatically.[[2]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
+This 'rehash' can be set to happen automatically.[[3]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
 
  `~/.zshrc` 
 ```
@@ -515,7 +515,7 @@ bindkey '^[[1;3D'      cdUndoKey
 
 If your terminal emulator supports it you can set its title from Zsh. This allows dynamically changing the the title to display relevant information about the shell state, for example showing the user name and current directory or the currently executing command.
 
-xterm title is set with [xterm escape sequences](http://tldp.org/HOWTO/Xterm-Title-3.html#ss3.1). For example:
+xterm title is set with [xterm escape sequences](https://www.tldp.org/HOWTO/Xterm-Title-3.html#ss3.1). For example:
 
 ```
 $ print -n '\e]2;My xterm title\a'
@@ -577,7 +577,7 @@ Use it for every user with *zsh* set as their login shell (including root if nee
 
 Alternatively, change the default shell back to Bash by editing `/etc/passwd` as root.
 
-**Warning:** It is strongly recommended to use `vipw` when editing `/etc/passwd` as it helps prevent invalid entries and/or syntax errors.
+**Warning:** It is strongly recommended to use [vipw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vipw.8) when editing `/etc/passwd` as it helps prevent invalid entries and/or syntax errors.
 
 For example, change the following:
 
