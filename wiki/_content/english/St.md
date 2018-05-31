@@ -32,7 +32,7 @@ Consider maintaining your own [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") with yo
 To change the default shell for *st*, edit this line:
 
 ```
- static char shell[] = "/bin/sh";
+ static char *shell = "/bin/sh";
 
 ```
 
@@ -41,7 +41,7 @@ To change the default shell for *st*, edit this line:
 To change the terminal type, edit this line:
 
 ```
- static char termname[] = "st-256color";
+ static char *termname = "st-256color";
 
 ```
 
@@ -54,7 +54,7 @@ To change the terminal type, edit this line:
 Edit the following line as you prefer:
 
 ```
-static char font[] = "Liberation Mono:pixelsize=12:antialias=false:autohint=false";
+static char *font = "Liberation Mono:pixelsize=12:antialias=false:autohint=false";
 
 ```
 

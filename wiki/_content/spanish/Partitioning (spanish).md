@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
+*   [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)")
+*   [Swap (Español)](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)")
+*   [File Systems (Español)](/index.php/File_Systems_(Espa%C3%B1ol) "File Systems (Español)")
+
 *Particionar* un disco duro significa dividir lógicamente el espacio disponible en secciones a las que se puede acceder de forma independiente una de otra.
 
 Un disco duro completo se puede o bien asignar a una sola partición, o bien se puede dividir el espacio de almacenamiento disponible en varias particiones. La existencia de una variedad de escenarios requieren la creación de múltiples particiones: dual o multi-arranque, por ejemplo, o el mantenimiento de un partición [swap](/index.php/Swap "Swap"). En otros casos, la partición se utiliza como un medio para guardar datos separados lógicamente, como crear particiones para guardar los archivos de audio y vídeo. Los esquemas de particionado más comunes se tratan con más detalle a continuación.

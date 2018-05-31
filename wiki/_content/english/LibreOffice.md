@@ -99,6 +99,10 @@ For spell checking, please make sure [hunspell](https://www.archlinux.org/packag
 
 Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [libvoikko](https://www.archlinux.org/packages/?name=libvoikko), [malaga](https://aur.archlinux.org/packages/malaga/), [voikko-fi](https://aur.archlinux.org/packages/voikko-fi/), [hfstospell](https://aur.archlinux.org/packages/hfstospell/) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/).
 
+	Greek
+
+A new project called [Orthos](https://sourceforge.net/projects/orthos-spell/?source=directory) provides more up-to-date Greek spell checkers as Libreoffice extensions. Package [libreoffice-extension-orthos-greek-dictionary](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-dictionary/) provides a Greek-only spelling dictionary, while [libreoffice-extension-orthos-greek-english-dictionary](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-english-dictionary/) provides one that bundles Greek and US English.
+
 ### Hyphenation rules
 
 For hyphenation rules, you will need [hyphen](https://www.archlinux.org/packages/?name=hyphen) and a language hyphen rule set ([hyphen-en](https://www.archlinux.org/packages/?name=hyphen-en) for English, [hyphen-de](https://www.archlinux.org/packages/?name=hyphen-de) for German, etc).
@@ -106,6 +110,10 @@ For hyphenation rules, you will need [hyphen](https://www.archlinux.org/packages
 ### Thesaurus
 
 For the thesaurus option, you will need [libmythes](https://www.archlinux.org/packages/?name=libmythes) and a mythes language thesaurus (like [mythes-en](https://www.archlinux.org/packages/?name=mythes-en) for English, [mythes-de](https://www.archlinux.org/packages/?name=mythes-de) for German, etc).
+
+	Greek
+
+For Greek, you may want to try out [libreoffice-extension-orthos-greek-thesaurus](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-thesaurus/), rather than [mythes-el](https://aur.archlinux.org/packages/mythes-el/) which is older.
 
 ### Grammar checking
 

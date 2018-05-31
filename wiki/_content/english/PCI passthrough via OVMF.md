@@ -638,7 +638,7 @@ chmod 660 /dev/shm/looking-glass
 
 Replace user with your username.
 
-Remember to mark the script as executable with `chmod +x /usr/local/bin/looking-glass-init.sh`
+Remember to make the script [executable](/index.php/Executable "Executable").
 
 Create a [systemd](/index.php/Systemd "Systemd") unit to execute this script during boot
 

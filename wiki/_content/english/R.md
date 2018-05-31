@@ -12,13 +12,13 @@ Related articles
     *   [1.3 Variables](#Variables)
         *   [1.3.1 R_ENVIRON](#R_ENVIRON)
         *   [1.3.2 R_PROFILE](#R_PROFILE)
-*   [2 Installing R packages](#Installing_R_packages)
+*   [2 Managing R packages](#Managing_R_packages)
     *   [2.1 With pacman](#With_pacman)
     *   [2.2 With R](#With_R)
-    *   [2.3 Upgrading R packages](#Upgrading_R_packages)
-        *   [2.3.1 Within a R session](#Within_a_R_session)
-        *   [2.3.2 Within a shell](#Within_a_shell)
-        *   [2.3.3 Automatically after R upgrades](#Automatically_after_R_upgrades)
+        *   [2.2.1 Upgrading R packages](#Upgrading_R_packages)
+            *   [2.2.1.1 Within a R session](#Within_a_R_session)
+            *   [2.2.1.2 Within a shell](#Within_a_shell)
+            *   [2.2.1.3 Automatically after R upgrades](#Automatically_after_R_upgrades)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 .Renviron](#.Renviron)
     *   [3.2 Rprofile](#Rprofile)
@@ -106,7 +106,7 @@ The name of the user file can be specified by the `R_ENVIRON_USER` environment v
 
 Then `R` searches for the **site-wilde** `Rprofile.site` defined by the `R_PROFILE` environment variable. This file does not exist after a fresh installation. Finally, `R` searches for **user** `R_PROFILE_USER`. If unset, a file called `.Rprofile` is searched for in the current directory, returned by the `R` command `> getwd()` or in the user's home directory. This is the place to put all your custom `R` code.
 
-## Installing R packages
+## Managing R packages
 
 There are many add-on `R` packages, which can be browsed on [The R Website.](http://cran.r-project.org/web/packages/available_packages_by_date.html).
 
@@ -134,9 +134,9 @@ Installation within your `R` session is the safest way and will not conflict wit
 
  `$ R CMD INSTALL -l $R_LIBS_USER *pkg1 pkg2 ...*` 
 
-### Upgrading R packages
+#### Upgrading R packages
 
-#### Within a R session
+##### Within a R session
 
 ```
 > update.packages(ask=FALSE)
@@ -159,13 +159,13 @@ Or when you also need to select a specific mirror ([https://cran.r-project.org/m
 
 **Tip:** upgrading packages from your **R** session can quickly be a pain if you have too many loaded packages at start up. For packages to be upgraded, they need to be *not loaded*. Best practice is to start a new clean R session this way: `R --vanilla` then run the upgrade.
 
-#### Within a shell
+##### Within a shell
 
 You can use `Rscript`, which comes with [r](https://www.archlinux.org/packages/?name=r) to update packages from a shell:
 
  `$ Rscript -e "update.packages()"` 
 
-#### Automatically after R upgrades
+##### Automatically after R upgrades
 
 R packages may not be compatible between R versions. You may want to automatically upgrade them and rebuild them if necessary when R upgrades. This can be accomplished with a pacman hook:
 

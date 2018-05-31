@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [fstab (Italiano)](/index.php/Fstab_(Italiano) "Fstab (Italiano)")
+*   [LVM (Italiano)](/index.php/LVM_(Italiano) "LVM (Italiano)")
+*   [Swap](/index.php/Swap "Swap")
+*   [File Systems (Italiano)](/index.php/File_Systems_(Italiano) "File Systems (Italiano)")
+
 Il *partizionamento* del disco fisso permette di dividere logicamente lo spazio disponibile in sezioni che possono essere accessibili indipendentemente l'uno dall'altro.
 
 Un intero disco rigido può essere assegnato a una singola partizione, oppure si può dividere lo spazio di memoria disponibile su più partizioni. Un certo numero di scenari richiedono la creazione di più partizioni: dual- o multi-boot, per esempio, o il mantenimento di un partizione di [swap](/index.php/Swap "Swap"). In altri casi , il partizionamento è usato come mezzo di dati logicamente separati, come ad esempio la creazione di partizioni separate per i file audio e video. Schemi di partizionamento comuni sono discussi in dettaglio qui di seguito .

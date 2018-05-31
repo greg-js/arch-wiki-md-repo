@@ -159,16 +159,20 @@ You'll need to recompile glibc (just take the PKGBUILD from the abs) with `--dis
 
 ### Vivado HLS testbench error with GCC
 
-See [https://forums.xilinx.com/t5/High-Level-Synthesis-HLS/Testbench-error-with-gcc/td-p/756773](https://forums.xilinx.com/t5/High-Level-Synthesis-HLS/Testbench-error-with-gcc/td-p/756773)
+Vivado requires an older version of glibc (2.26 as of vivado 2018.1).
 
-This error has been observed in Vivado 2016.4, 2017.1, and 2017.2.
+The solution proposed in [this thread](https://forums.xilinx.com/t5/High-Level-Synthesis-HLS/Testbench-error-with-gcc/td-p/756773) from Xilinx forums suggests to update the fixed headers shipped by Xilinx.
 
-Download an older version of GCC of GCC (2.17 or 2.18) and unpack it. Copy `glibc-2.17/misc/sys/cdefs.h` to `$HLS_install_directory/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/sys/` directory.
+For vivado version 2016, run:
 
-Open `$HLS_install_directory/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h` and add the following:
-
- `$HLS_install_directory/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h` 
 ```
-/* Whether to use feature set F.  */
-#define __GLIBC_USE(F)  __GLIBC_USE_ ## F
+ # /opt/Xilinx/Vivado_HLS/<version>/lnx64/tools/gcc/libexec/gcc/x86_64-unknown-linux-gnu/4.6.3/install-tools/mkheaders /opt/Xilinx/Vivado_HLS/<version>/lnx64/tools/gcc/
+
+```
+
+For vivado 2017 and newer, run:
+
+```
+ # /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/libexec/gcc/x86_64-unknown-linux-gnu/4.6.3/install-tools/mkheaders /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc
+
 ```

@@ -505,7 +505,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **Deepin Picker** — Color picker tool for Deepin desktop.
 
-	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
+	[https://github.com/linuxdeepin/deepin-picker](https://github.com/linuxdeepin/deepin-picker) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
 
 *   **gcolor2** — Simple GTK+ 2 color selector.
 
@@ -915,7 +915,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://ibiblio.org/mp3info/](https://ibiblio.org/mp3info/) || [mp3info](https://www.archlinux.org/packages/?name=mp3info)
 
-*   **[MusicBrainz Picard](https://en.wikipedia.org/wiki/MusicBrainz_Picard "wikipedia:MusicBrainz Picard")** — Cross-platform audio tag editor written in Python (the official MusicBrainz tagger).
+*   **[Picard](https://en.wikipedia.org/wiki/MusicBrainz_Picard "wikipedia:MusicBrainz Picard")** — Cross-platform audio tag editor written in Python (the official [MusicBrainz](https://en.wikipedia.org/wiki/MusicBrainz "wikipedia:MusicBrainz") tagger).
 
 	[https://picard.musicbrainz.org/](https://picard.musicbrainz.org/) || [picard](https://www.archlinux.org/packages/?name=picard)
 

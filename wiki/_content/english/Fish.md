@@ -1,89 +1,76 @@
-[fish](https://fishshell.com), the ***f**riendly **i**nteractive **sh**ell*, is a "user friendly [commandline shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use".
+[fish](https://fishshell.com), the ***f**riendly **i**nteractive **sh**ell*, is a [commandline shell](/index.php/Command-line_shell "Command-line shell") intended to be interactive and user-friendly.
+
+*fish* is intentionally not fully [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") compliant, it aims at addressing POSIX inconsistencies (as perceived by the creators) with a simplified or a different syntax. This means that even simple POSIX compliant scripts may require some significant adaptation or even full rewriting to run with fish.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Web interface](#Web_interface)
-    *   [2.2 Command completion](#Command_completion)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 History substitution](#History_substitution)
+*   [2 System integration](#System_integration)
+    *   [2.1 Setting fish as default shell](#Setting_fish_as_default_shell)
+    *   [2.2 Setting fish as secondary shell](#Setting_fish_as_secondary_shell)
+        *   [2.2.1 Modify .bashrc to drop into fish](#Modify_.bashrc_to_drop_into_fish)
+        *   [2.2.2 Use terminal emulator options](#Use_terminal_emulator_options)
+        *   [2.2.3 Use terminal multiplexer options](#Use_terminal_multiplexer_options)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Web interface](#Web_interface)
+    *   [3.2 Command completion](#Command_completion)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Not setting fish as default shell](#Not_setting_fish_as_default_shell)
-        *   [4.1.1 Modify .bashrc to drop into fish](#Modify_.bashrc_to_drop_into_fish)
-        *   [4.1.2 Use terminal emulator options](#Use_terminal_emulator_options)
-        *   [4.1.3 Use terminal multiplexer options](#Use_terminal_multiplexer_options)
-    *   [4.2 Setting fish as default shell](#Setting_fish_as_default_shell)
-    *   [4.3 Disable greeting](#Disable_greeting)
-    *   [4.4 Make su launch fish](#Make_su_launch_fish)
-    *   [4.5 Start X at login](#Start_X_at_login)
-    *   [4.6 Use liquidprompt](#Use_liquidprompt)
-    *   [4.7 Put git status in prompt](#Put_git_status_in_prompt)
-    *   [4.8 Evaluate ssh-agent](#Evaluate_ssh-agent)
-    *   [4.9 The "command not found" hook](#The_.22command_not_found.22_hook)
-    *   [4.10 Remove a process from the list of jobs](#Remove_a_process_from_the_list_of_jobs)
-    *   [4.11 Quickly set a persistent alias](#Quickly_set_a_persistent_alias)
-*   [5 See also](#See_also)
+    *   [4.1 Disable greeting](#Disable_greeting)
+    *   [4.2 Make su launch fish](#Make_su_launch_fish)
+    *   [4.3 Start X at login](#Start_X_at_login)
+    *   [4.4 Use liquidprompt](#Use_liquidprompt)
+    *   [4.5 Put git status in prompt](#Put_git_status_in_prompt)
+    *   [4.6 Evaluate ssh-agent](#Evaluate_ssh-agent)
+    *   [4.7 The "command not found" hook](#The_.22command_not_found.22_hook)
+    *   [4.8 Remove a process from the list of jobs](#Remove_a_process_from_the_list_of_jobs)
+    *   [4.9 Quickly set a persistent alias](#Quickly_set_a_persistent_alias)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 History substitution](#History_substitution)
+*   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package. Alternatively install the [fish-git](https://aur.archlinux.org/packages/fish-git/) package for the development version.
-
-To make fish the default shell, see [Shell#Changing your default shell](/index.php/Shell#Changing_your_default_shell "Shell"); however, you should consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
+[Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package. For the development version, install the [fish-git](https://aur.archlinux.org/packages/fish-git/) package.
 
 Once installed simply type `fish` to drop into the fish shell.
 
 Documentation can be found by typing `help` from fish; it will be opened in a web browser. It is recommended to read at least the "Syntax overview" section, since fish's syntax is different from many other shells.
 
-## Configuration
+## System integration
 
-User configurations for fish are located at `~/.config/fish/config.fish`. Adding commands or functions to the file will execute/define them when opening a terminal, similar to `.bashrc`.
+One must decide whether fish is going to be the default user's shell, which means that the user falls directly in fish at login or whether it is used in interactive terminal mode as a child process of the current default shell, here we will assume the latter is [Bash](/index.php/Bash "Bash"). To elaborate on these two setups:
 
-### Web interface
+*   fish used as an **interactive shell** only: this is the less disruptive mode, all the Bash initialization scripts are run as usual and fish runs on top of Bash in interactive mode connected to a terminal. To setup fish in this mode, follow [#Setting fish as secondary shell](#Setting_fish_as_secondary_shell).
 
-The fish prompt and terminal colors can be set with the interactive web interface:
+*   fish used as the **default shell**: this mode requires some basic understanding of the fish functioning and its scripting language. The user's current initialization scripts and environment variables needs to be migrated to the new fish environment. To configure the system in this mode, follow [#Setting fish as default shell](#Setting_fish_as_default_shell).
 
-```
-fish_config
+### Setting fish as default shell
 
-```
+If you decide to set fish as the default user shell, the first step is to set the shell of this particular user to `/usr/bin/fish`. This can be done by following the instructions in [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell").
 
-Selected settings are written to your personal configuration file. You can also view defined functions and your history.
+Then, the next step is to port the current needed actions and configuration performed in the various Bash initialization scripts, namely `/etc/profile`, `~/.bash_profile`, `/etc/bash.bashrc` and `~/.bashrc`, into the fish framework.
 
-### Command completion
-
-fish can generate autocompletions from man pages. Completions are written to `~/.config/fish/generated_completions/` and can be generated by calling:
+In particular the content of the `$PATH` environment variable once directly logged under fish should be checked and adjusted to one's need. In fish the `$PATH` is a global environment variable, which means that it is exported to child processes and lost upon reboot. The recommended way of adding permanently additional locations to the path is by assigning the desired locations to the `fish_user_paths` universal variable. This variable is automatically added to `$PATH` and is preserved across restarts of the shell. For example by setting:
 
 ```
-fish_update_completions
+$ set -U fish_user_paths */first/path* */second/path* */third/one*
 
 ```
 
-You can also define your own completions in `~/.config/fish/completions/`. See `/usr/share/fish/completions/` for a few examples.
+These three locations will be permanently prepended to the path. This is an easy way to complement the path without the need to add any instruction in scripts.
 
-Context-aware completions for Arch Linux-specific commands like *pacman*, *pacman-key*, *makepkg*, *cower*, *pbget*, *pacmatic* are built into fish, since the policy of the fish development is to include all the existent completions in the upstream tarball. The memory management is clever enough to avoid any negative impact on resources.
+### Setting fish as secondary shell
 
-## Troubleshooting
-
-### History substitution
-
-Fish does not implement history substitution (e.g. `sudo !!`), and the fish developers have said that they [do not plan to](http://fishshell.com/docs/current/faq.html#faq-history). Still, this is an essential piece of many users' workflow. Reddit user, [crossroads1112](http://www.reddit.com/u/crossroads1112), created a function that regains some of the functionality of history substitution and with another syntax. The function is on [github](https://gist.github.com/crossroads1112/77badb2c3455e23b873b) and instructions are included as comments in it. There is a [forked version](https://gist.github.com/b-/981892a65837ab0a387e) that is closer to the original syntax and allows for `command !!` if you specify the command in the helper function.
-
-Other alternatives to regaining the `command !!` syntax can be found on [Fish' github wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-History-Substitution-%28%21%21-and-%21%24%29). The examples here include e.g. the `bind_bang` function which expands `!!` to the latest command in the history (this will of course make it impossible to do to bangs in a row as they will expand). Another option is the command given on [this github issue](https://github.com/fish-shell/fish-shell/issues/288#issuecomment-158704275).
-
-## Tips and tricks
-
-### Not setting fish as default shell
-
-In Arch, some shell scripts are written for [Bash](/index.php/Bash "Bash") and are not fully compatible with fish. Not setting fish as system wide or user default allows the Bash scripts to run on startup, ensures the environment variables are set correctly, and generally reduces the issues associated with using a non-Bash compatible terminal like fish. You may see some script errors if your default shell is set as fish. Below are several options for using fish without setting it as your default shell.
+Not setting fish as system wide or user default allows the current Bash scripts to run on startup. It ensures the current user's environment variables are unchanged and are exported to fish which then runs as a Bash child. Below are several options for using fish without setting it as the default shell.
 
 #### Modify .bashrc to drop into fish
 
-Keep your default shell as Bash and simply add the line `exec fish` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. Because fish replaces the Bash process, exiting fish will also exit the terminal. Compared to the following options, this is the most universal solution, since it works both on a local machine and on a SSH server.
+Keep the default shell as Bash and simply add the line `exec fish` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. Because fish replaces the Bash process, exiting fish will also exit the terminal. Compared to the following options, this is the most universal solution, since it works both on a local machine and on a SSH server.
 
 **Tip:**
 
 *   In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
+*   To have commands such as `bash -c 'echo test'` run the command in bash instead of starting fish, you can write `if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi` instead. (This is necessary for EternalTerminal to work.)
 *   To color the hostname in the prompt differently in SSH mode, here in bright red, one can use the line `if [ -n "$SSH_TTY" ]; then exec fish -C 'set -g fish_color_host brred'; else exec fish; fi` in the Bash configuration file instead of simply `exec fish`.
 
 #### Use terminal emulator options
@@ -117,20 +104,35 @@ set-option -g default-shell "/usr/bin/fish"
 
 Whenever you run *tmux*, you will be dropped into fish.
 
-### Setting fish as default shell
+## Configuration
 
-To change the user's default shell, start with [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell").
+User configurations for fish are located at `~/.config/fish/config.fish`. Adding commands or functions to the file will execute/define them when opening a terminal, similar to `.bashrc`.
 
-If you decide to set fish as your default shell, you may find that you no longer have very much in your path. You can add a section to your `~/.config/fish/config.fish` file that will set your path correctly on login. This is much like `.profile` or `.bash_profile` as it is only executed for login shells.
+### Web interface
 
-```
-if status --is-login
-        set PATH $PATH /usr/bin /sbin
-end
+The fish prompt and terminal colors can be set with the interactive web interface:
 
 ```
+fish_config
 
-**Note:** This route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
+```
+
+Selected settings are written to your personal configuration file. You can also view defined functions and your history.
+
+### Command completion
+
+fish can generate autocompletions from man pages. Completions are written to `~/.config/fish/generated_completions/` and can be generated by calling:
+
+```
+fish_update_completions
+
+```
+
+You can also define your own completions in `~/.config/fish/completions/`. See `/usr/share/fish/completions/` for a few examples.
+
+Context-aware completions for Arch Linux-specific commands like *pacman*, *pacman-key*, *makepkg*, *cower*, *pbget*, *pacmatic* are built into fish, since the policy of the fish development is to include all the existent completions in the upstream tarball. The memory management is clever enough to avoid any negative impact on resources.
+
+## Tips and tricks
 
 ### Disable greeting
 
@@ -170,7 +172,7 @@ end
 
 ### Use liquidprompt
 
-[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[2]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
+[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[1]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
 
 ### Put git status in prompt
 
@@ -234,6 +236,14 @@ $ funcsave FooAliasName
 ```
 
 This will set you alias as a persistent fish shell function. if you wish to see all functions and/or edit them, one can simply use `fish_config` to view or edit all functions under the **Function** tab in the resulting web configuration page.
+
+## Troubleshooting
+
+### History substitution
+
+Fish does not implement history substitution (e.g. `sudo !!`), and the fish developers have said that they [do not plan to](http://fishshell.com/docs/current/faq.html#faq-history). Still, this is an essential piece of many users' workflow. Reddit user, [crossroads1112](http://www.reddit.com/u/crossroads1112), created a function that regains some of the functionality of history substitution and with another syntax. The function is on [github](https://gist.github.com/crossroads1112/77badb2c3455e23b873b) and instructions are included as comments in it. There is a [forked version](https://gist.github.com/b-/981892a65837ab0a387e) that is closer to the original syntax and allows for `command !!` if you specify the command in the helper function.
+
+Other alternatives to regaining the `command !!` syntax can be found on [Fish' github wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-History-Substitution-%28%21%21-and-%21%24%29). The examples here include e.g. the `bind_bang` function which expands `!!` to the latest command in the history (this will of course make it impossible to do to bangs in a row as they will expand). Another option is the command given on [this github issue](https://github.com/fish-shell/fish-shell/issues/288#issuecomment-158704275).
 
 ## See also
 

@@ -61,18 +61,18 @@ As Arch linux ships new kernels, there is no point using the compatibility optio
 
 To see current storage driver, run `# docker info | head`, modern docker installation should already use `overlay2` by default.
 
-To set your own choice of storage driver, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") and use `-s` option to `dockerd` (use `systemctl edit docker`):
+To set your own choice of storage driver, edit `/etc/docker/daemon.json` (create it if it does not exist):
 
- `/etc/systemd/system/docker.service.d/override.conf` 
+ `/etc/docker/daemon.json` 
 ```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/dockerd -H fd:// -s overlay2
+{
+  "storage-driver": "overlay2"
+}
 ```
 
-Note that the `ExecStart=` line is needed to drop inherited `ExecStart`.
+Afterwards, [restart](/index.php/Restart "Restart") docker.
 
-Further information on options is available on the [user guide](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/).
+Further information on options is available on the [user guide](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/). For more information about options in `daemon.json` see [dockerd documentation](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
 
 ### Remote API
 

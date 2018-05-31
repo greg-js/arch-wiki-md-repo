@@ -23,7 +23,7 @@ From [www.ansible.com](https://www.ansible.com/how-ansible-works):
 
 ## Installation
 
-On the control machine (master), [install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package. [python2](https://www.archlinux.org/packages/?name=python2) is a dependency of the package and is required on the master.
+On the control machine (master), [install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package. [python](https://www.archlinux.org/packages/?name=python) is a dependency of the package and is required on the master.
 
 On the managed machines (nodes), where you want to automate deployment or configuration tasks, [python](https://www.archlinux.org/packages/?name=python) is required and it may be necessary to indicate the specific [#Python binary location](#Python_binary_location) in some circumstances. A way to communicate with the node is also necessary, this is usually [SSH](/index.php/SSH "SSH"). Note that a functioning [SSH key](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") setup eases the use of Ansible but is not required.
 

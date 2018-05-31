@@ -195,7 +195,7 @@ If no orphans were found *pacman* outputs `error: no targets specified`. This is
 
 ### Removing everything but base group
 
-If it is ever necessary to remove all packages except the base group, try this one-liner:
+If it is ever necessary to remove all packages except the base group, try this one-liner (requires [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)):
 
 ```
 # pacman -R $(comm -23 <(pacman -Qq | sort) <((for i in $(pacman -Qqg base); do pactree -ul "$i"; done) | sort -u))
@@ -355,7 +355,7 @@ You could also run darkhttpd as a systemd service for convenience. Just add this
 
 #### Distributed read-only cache
 
-There are Arch-specific tools for automatically discovering other computers on your network offering a package cache. Try [pacserve](/index.php/Pacserve "Pacserve"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/), or [paclan](https://aur.archlinux.org/packages/paclan/). pkgdistcache uses Avahi instead of plain UDP which may work better in certain home networks that route instead of bridge between WiFi and Ethernet.
+There are Arch-specific tools for automatically discovering other computers on your network offering a package cache. Try [pacredir](https://www.archlinux.org/packages/?name=pacredir), [pacserve](/index.php/Pacserve "Pacserve"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/), or [paclan](https://aur.archlinux.org/packages/paclan/). pkgdistcache uses Avahi instead of plain UDP which may work better in certain home networks that route instead of bridge between WiFi and Ethernet.
 
 Historically, there was [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) and [multipkg](https://github.com/toofishes/multipkg), but they are no longer maintained.
 

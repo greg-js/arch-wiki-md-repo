@@ -60,6 +60,8 @@ Install the certificates from the mentioned zip in _this_ order, by going to Edi
 
 1\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so`
 
+**Note:** You may see the message 'Failure to load dynamic library'. This can be ignored.
+
 2\. Navigate (in a shell) to the location of the unzip DoD PKI files and install via:
 
 ```

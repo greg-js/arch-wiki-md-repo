@@ -353,7 +353,7 @@ ct:
 
 ```
 
-**Note:** *nft* does not use `/etc/services` to match port numbers with names, instead it uses an [internal list](https://git.netfilter.org/nftables/plain/src/services.c).
+**Note:** *nft* does not use `/etc/services` to match port numbers with names, instead it uses an [internal list](https://git.netfilter.org/nftables/plain/src/services.c). To show the port mappings from the command line, use e.g. `nft describe tcp dport`.
 
 #### Deletion
 

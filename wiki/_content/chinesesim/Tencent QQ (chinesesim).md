@@ -145,6 +145,8 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 **注意:** 安装成功之后要取消勾选 QQ 的自动更新，以免自动更新导致不可用。
 
+**注意:** Archlinux打包的wine-3.8与wine-3.9.1版本均在安装QQ后无法打开，出现无法加载gdi32.dll的错误，可以使用命令“sudo pacman -U /var/cache/pacman/pkg/wine-3.7-1-x86_64.pkg.tar.xz”将wine降级到之前的3.7版本解决。为了避免被升级到新3.9版本而无法使用QQ，可以编辑"/etc/pacman.conf"文档，去掉"IgnorePkg"一行前面的"#"号，并在该行"="号后面添加"wine"；在后续更新中该问题得到解决后，记得去掉wine，以便更新之。
+
 ### Wine QQ 轻聊版
 
 **注意:** 此方案使用QQ轻聊版6.7，更高版本在当前wine版本需要[额外的调整](https://blog.lilydjwg.me/2015/10/26/run-tencent-qq-lite-with-wine.186640.html)才能安装
@@ -331,6 +333,10 @@ wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
 *   xfce4(xfwm4)下无法输入表情
 
 打开设置管理器-窗口管理器微调-焦点，取消勾选激活焦点防窃取和遵照标准的ICCCM焦点提示即可。 原因是表情窗口获取焦点时会发生不兼容现象。
+
+*   wine-3.8与wine-3.9版本出现无法加载gdi32.dll错误
+
+Archlinux打包的wine-3.8与wine-3.9.1版本会出现无法加载gdi32.dll的错误，可以使用命令“sudo pacman -U /var/cache/pacman/pkg/wine-3.7-1-x86_64.pkg.tar.xz”将wine降级到之前的3.7版本解决。为了避免被升级到新3.9版本，可以编辑"/etc/pacman.conf"文档，去掉"IgnorePkg"一行前面的"#"号，并在该行"="号后面添加"wine"；在后续更新中该问题得到解决后，记得去掉wine，以便更新之。
 
 ### CrossOver TM2013
 

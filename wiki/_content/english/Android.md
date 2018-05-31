@@ -49,7 +49,7 @@ Otherwise files can be transferred with various protocols ([SSH](/index.php/SSH 
 
 File sharing apps which have a Linux counterpart are:
 
-*   [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
+*   [KDE Connect](/index.php/KDE_Connect "KDE Connect") ([kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
 *   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
 
 ## App development

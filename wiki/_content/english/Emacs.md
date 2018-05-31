@@ -126,31 +126,30 @@ Which creates a new frame `-c` (use `-t` if you prefer to use it in the terminal
 
 ### As a systemd unit
 
-The old system unit method had some caveats. It gave a limited shell environment which restricted shell calls, so we will be using a user unit, which tends to work a lot better than naively calling *emacs --daemon*.
+A systemd unit is included in Emacs 26.1\. The unit is installed with Emacs, but it must be enabled after installing Emacs:
 
-Create a systemd unit for emacs:
+```
+ $ systemctl --user enable --now emacs
 
-**Note:** Such a unit file is planned for inclusion in Emacs 26.1, see [emacs bug 16507](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=16507).
- `~/.config/systemd/user/emacs.service` 
+```
+
+Run this command as the user you want to run the Emacs server as; do not run the command as root. After the service is started, Emacs is ready to The unit file is stored in /usr/lib/systemd/user/emacs.service. Here is the contents of the unit file for reference:
+
+ `/usr/lib/systemd/user/emacs.service` 
 ```
 [Unit]
-Description=Emacs: the extensible, self-documenting text editor
+Description=Emacs text editor
+Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/emacs --daemon
+Type=simple
+ExecStart=/usr/bin/emacs --fg-daemon
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
-Restart=always
+Environment=SSH_AUTH_SOCK=%t/keyring/ssh
+Restart=on-failure
 
 [Install]
 WantedBy=default.target
-
-```
-
-You need to start and enable the unit so that it gets started on every boot (note - DO *NOT* run this as root - we want them for our user, not for the root user):
-
-```
-$ systemctl --user enable --now emacs
 
 ```
 

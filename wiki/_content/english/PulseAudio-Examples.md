@@ -104,8 +104,9 @@ set-default-sink *alsa_output.pci-0000_04_01.0.analog-stereo*
 
 When done then you can logout/login or restart PulseAudio manually for these changes to take effect.
 
-**Note:** * The numbering of sinks is not guaranteed to be persistent, so all sinks in the `default.pa` file should be identified by the name.
+**Note:**
 
+*   The numbering of sinks is not guaranteed to be persistent, so all sinks in the `default.pa` file should be identified by the name.
 *   For quick identification at runtime (e.g. to manage sound volume), you can use the sink index instead of the sink name:
     ```
     $ pactl set-sink-volume 0 +3%
@@ -338,8 +339,8 @@ After doing the edit, restart PulseAudio.
 Connect speakers to front analog output and headphones to rear output. It would be useful to split front/rear to separate sinks. Add to `/etc/pulse/default.pa`:
 
 ```
- load-module module-remap-sink sink_name=speakers properties="device.description='Speakers'" remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=front-left,front-right channel_map=front-left,front-right
- load-module module-remap-sink sink_name=headphones properties="device.description='Headphones'" remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=rear-left,rear-right channel_map=front-left,front-right
+ load-module module-remap-sink sink_name=speakers sink_properties="device.description='Speakers'" remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=front-left,front-right channel_map=front-left,front-right
+ load-module module-remap-sink sink_name=headphones sink_properties="device.description='Headphones'" remix=no master=alsa_output.pci-0000_05_00.0.analog-surround-40 channels=2 master_channel_map=rear-left,rear-right channel_map=front-left,front-right
 
 ```
 

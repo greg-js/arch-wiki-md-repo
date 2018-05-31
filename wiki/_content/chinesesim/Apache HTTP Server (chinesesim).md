@@ -26,8 +26,8 @@ LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,My
 *   [3 扩展](#.E6.89.A9.E5.B1.95)
     *   [3.1 PHP](#PHP)
         *   [3.1.1 使用 libphp](#.E4.BD.BF.E7.94.A8_libphp)
-        *   [3.1.2 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid)
-        *   [3.1.3 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid_2)
+        *   [3.1.2 使用 php-fpm 和 mod_proxy_fcgi](#.E4.BD.BF.E7.94.A8_php-fpm_.E5.92.8C_mod_proxy_fcgi)
+        *   [3.1.3 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid)
         *   [3.1.4 测试 PHP](#.E6.B5.8B.E8.AF.95_PHP)
     *   [3.2 HTTP2](#HTTP2)
 *   [4 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
@@ -303,7 +303,7 @@ AH00013: Pre-configuration failed
 httpd.service: control process exited, code=exited status=1
 ```
 
-另一种选择, 你可以使用`mod_proxy_fcgi` ( [使用php-fpm和mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server")
+另外在本小节的下方还有两种处理高并发的方案供选择． 　 ( [使用php-fpm管理进程](#.E4.BD.BF.E7.94.A8_php-fpm_.E5.92.8C_mod_proxy_fcgi) 和　[使用mod_fcgid管理进程](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid)　)
 
 要启用 PHP，在 `/etc/httpd/conf/httpd.conf` 中添加如下行：
 
@@ -324,62 +324,46 @@ httpd.service: control process exited, code=exited status=1
 
 [重启](/index.php/Systemd#Using_units "Systemd") `httpd.service`。
 
-#### 使用 apache2-mpm-worker 和 mod_fcgid
+#### 使用 php-fpm 和 mod_proxy_fcgi
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) 和 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
+这种方式是使用php-fpm来管理进程的，进程不是由apache启动和管理的．
 
-创建目录并建立 PHP 软链接:
+**Note:** 与使用ProxyPass的广泛设置不同，使用SetHandler的代理配置遵守Apache指令，例如DirectoryIndex。 这是为了确保与为libphp7、mod_fastcgi和mod_fcgid而设计的软件有更好的兼容性。 如果您仍然想尝试使用ProxyPass，请尝试使用如下所示的行： `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
 
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 官方软件包 [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) .
+
+启用代理模块:
+
+ `/etc/httpd/conf/httpd.conf` 
 ```
-# mkdir /srv/http/fcgid-bin
-# ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
-
-```
-
-取消`/etc/conf.d/apache`中如下行的注释：
-
-```
-HTTPD=/usr/sbin/httpd.worker
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
 
 ```
 
-创建 `/etc/httpd/conf/extra/php-fcgid.conf`，包含的内容：
+创建文件： `/etc/httpd/conf/extra/php-fpm.conf` 写入以下内容:
 
- `/etc/httpd/conf/extra/php-fcgid.conf` 
+ `/etc/httpd/conf/extra/php-fpm.conf` 
 ```
-# Required modules: fcgid_module
-
-<IfModule fcgid_module>
-    AddHandler php-fcgid .php
-    AddType application/x-httpd-php .php
-    Action php-fcgid /fcgid-bin/php-fcgid-wrapper
-    ScriptAlias /fcgid-bin/ /srv/http/fcgid-bin/
-    SocketPath /var/run/httpd/fcgidsock
-    SharememPath /var/run/httpd/fcgid_shm
-        # If you don't allow bigger requests many applications may fail (such as WordPress login)
-        FcgidMaxRequestLen 536870912
-        # Path to php.ini – defaults to /etc/phpX/cgi
-        DefaultInitEnv PHPRC=/etc/php/
-        # Number of PHP childs that will be launched. Leave undefined to let PHP decide.
-        #DefaultInitEnv PHP_FCGI_CHILDREN 3
-        # Maximum requests before a process is stopped and a new one is launched
-        #DefaultInitEnv PHP_FCGI_MAX_REQUESTS 5000
-        <Location /fcgid-bin/>
-        SetHandler fcgid-script
-        Options +ExecCGI
-    </Location>
-</IfModule>
+DirectoryIndex index.php index.html
+<FilesMatch \.php$>
+    SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
+</FilesMatch>
 
 ```
 
-编辑 `/etc/httpd/conf/httpd.conf`，加入：
+把以下这句添加到配置文件 `/etc/httpd/conf/httpd.conf` 中 include 部份的最后
 
 ```
-LoadModule fcgid_module modules/mod_fcgid.so
-Include conf/extra/httpd-mpm.conf
-Include conf/extra/php-fcgid.conf
+Include conf/extra/php-fpm.conf
 
 ```
+
+**Note:** 在 `sock` 和 `fcgi` 中间的管道符两边不要有空格! `localhost` 可以替换成任何的字符串. 详细请见 [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)
+
+你可以自行配置 PHP-FPM 通过这个编辑这个配置文件 `/etc/php/php-fpm.d/www.conf`, 但是默认的配置已经工作的很好了.
+
+[重启](/index.php/Systemd#Using_units "Systemd") `httpd.service` 和 `php-fpm.service`　这两个服务.
 
 **Note:** 如果之前在 `httpd.conf` 加入了下面内容，请删除它们，已经不再需要：
 ```
@@ -388,11 +372,17 @@ Include conf/extra/php7_module.conf
 
 ```
 
-[重启](/index.php/Restart "Restart") `httpd.service`.
-
 #### 使用 apache2-mpm-worker 和 mod_fcgid
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) 和 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi)。
+这种方式和上一种方式(php-fpm)的区别：
+
+```
+   php-fgi进程是由apache模块启动并管理，而不需要配置和使用php-fpm来管理进程。
+   在php-cgi进程以apache用户身份运行，php程序写的文件，其权限为apache用户（而不像php-fpm下写文件为php-fpm用户所有，默认是nobody），这样在目录权限管理方面一致性高些。
+
+```
+
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid)([详情](https://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html))和 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi)。
 
 创建需要的目录并建立软链接:
 
@@ -464,7 +454,7 @@ Include conf/extra/php-fcgid.conf
 
 ### HTTP2
 
-要启用 http2，安装 [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) 软件包。然后取消 `httpd.conf` 中下面行前的注释:
+要启用 http2，安装 [libnghttp2](https://www.archlinux.org/packages/?name=libnghttp2) 软件包(属于core仓库,一般默认已经安装)。然后取消 `httpd.conf` 中下面行前的注释:
 
 ```
 LoadModule http2_module modules/mod_http2.so

@@ -1,3 +1,10 @@
+Σχετικά άρθρα
+
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+*   [Arch Boot Process](/index.php/Arch_Boot_Process "Arch Boot Process")
+
 Ο πίνακας κατατμήσεων GUID (GPT) είναι ενας νέος τρόπος κατάτμησης ο οποίος αποτελεί μέρος της προδιαγραφής Unified Extensible Firmware Interface, και κάνει χρήση του καθολικά μοναδικού αναγνωριστικού συσκευών. Διαφέρει από το Master Boot Record (ο συνήθης τρόπος κατάτμησης) σε πολλές πτυχές και έχει πολλά πλεονεκτήματα.
 
 Για την κατανόηση του GPT, είναι σημαντικό να κατανοήσει κανείς τι είναι το MBR και ποιά είναι τα μειονεκτήματά του.

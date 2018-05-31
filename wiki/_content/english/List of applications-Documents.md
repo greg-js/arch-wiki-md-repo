@@ -251,7 +251,7 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 See also [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
 
-*   **Antiword** — MS Word converter.
+*   **[Antiword](https://en.wikipedia.org/wiki/Antiword "wikipedia:Antiword")** — MS Word to text converter.
 
 	[http://www.winfield.demon.nl/](http://www.winfield.demon.nl/) || [antiword](https://www.archlinux.org/packages/?name=antiword)
 
@@ -263,9 +263,17 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 
 	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
 
+*   **catdoc** — Converter for Microsoft Word, Excel, PowerPoint and RTF files to text.
+
+	[https://wagner.pp.ru/~vitus/software/catdoc/](https://wagner.pp.ru/~vitus/software/catdoc/) || [catdoc](https://www.archlinux.org/packages/?name=catdoc)
+
 *   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Text-to-HTML conversion tool that allows you to write using a simple plain text format.
 
 	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [discount](https://www.archlinux.org/packages/?name=discount)
+
+*   **M2R** — Markdown to reStructuredText converter.
+
+	[https://github.com/miyakogi/m2r](https://github.com/miyakogi/m2r) || [m2r](https://www.archlinux.org/packages/?name=m2r)
 
 *   **[Pandoc](https://en.wikipedia.org/wiki/Pandoc "wikipedia:Pandoc")** — Swiss-army knife for converting one markup format into another.
 
@@ -307,11 +315,11 @@ With [TeX, LaTeX and friends](/index.php/TeX_Live "TeX Live"), creation of any s
 
 See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Comparison_of_TeX_editors "wikipedia:Comparison of TeX editors") and [the LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Editors).
 
-*   **[AUCTeX](https://en.wikipedia.org/wiki/AUCTEX "wikipedia:AUCTEX")** — Together with RefTex, AUCTeX provices an extensible environment for writing and formatting TeX files in Emacs.
+*   **[AUCTeX](https://en.wikipedia.org/wiki/AUCTeX "wikipedia:AUCTeX")** — Together with RefTex, AUCTeX provices an extensible environment for writing and formatting TeX files in [Emacs](/index.php/Emacs "Emacs").
 
 	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
 
-*   **gedit LaTeX Plugin** — Add code-completion to gedit and allows for compiling LaTeX documents and managing BibTeX bibliographies.
+*   **[gedit](/index.php/GNOME/Gedit "GNOME/Gedit") LaTeX Plugin** — Add code-completion to gedit and allows for compiling LaTeX documents and managing BibTeX bibliographies.
 
 	[https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin](https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin) || [gedit-latex](https://aur.archlinux.org/packages/gedit-latex/)
 
@@ -327,7 +335,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://kile.sourceforge.net/](http://kile.sourceforge.net/) || [kile](https://www.archlinux.org/packages/?name=kile)
 
-*   **Ktikz** — GUI making diagrams with [PGF/TikZ](http://pgf.sourceforge.net/) easier.
+*   **Ktikz** — Small application helping you to create [PGF/TikZ](https://en.wikipedia.org/wiki/PGF/TikZ "wikipedia:PGF/TikZ") diagrams for your publications.
 
 	[http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/](http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/) || [ktikz](https://aur.archlinux.org/packages/ktikz/)
 
@@ -347,6 +355,14 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://texstudio.sourceforge.net/](http://texstudio.sourceforge.net/) || [texstudio](https://www.archlinux.org/packages/?name=texstudio)
 
+*   **[TeXworks](https://en.wikipedia.org/wiki/TeXworks "wikipedia:TeXworks")** — Simple TeX front-end program modeled after TeXShop.
+
+	[https://tug.org/texworks/](https://tug.org/texworks/) || [texworks](https://aur.archlinux.org/packages/texworks/)
+
+*   **TikZiT** — Graphical tool for rapidly creating graphs and diagrams using [PGF/TikZ](https://en.wikipedia.org/wiki/PGF/TikZ "wikipedia:PGF/TikZ").
+
+	[https://tikzit.github.io/](https://tikzit.github.io/) || [tikzit](https://aur.archlinux.org/packages/tikzit/)
+
 *   **[Vim-LaTeX-suite](/index.php/Vim "Vim")** — Customizable LaTeX environment for Vim.
 
 	[http://vim-latex.sourceforge.net/](http://vim-latex.sourceforge.net/) || [vim-latexsuite](https://www.archlinux.org/packages/?name=vim-latexsuite)
@@ -363,9 +379,13 @@ See also [Wikipedia:Formula editor](https://en.wikipedia.org/wiki/Formula_editor
 
 	[https://klatexformula.sourceforge.io/](https://klatexformula.sourceforge.io/) || [klatexformula](https://aur.archlinux.org/packages/klatexformula/)
 
-*   **[LibreOffice Math](/index.php/LibreOffice "LibreOffice")** — Create and edit scientific formulas and equations. Included in the LibreOffice suite
+*   **[LibreOffice Math](/index.php/LibreOffice "LibreOffice")** — Create and edit scientific formulas and equations. Included in the LibreOffice suite.
 
 	[https://www.libreoffice.org/discover/math/](https://www.libreoffice.org/discover/math/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
+
+*   **[LibreOffice](/index.php/LibreOffice "LibreOffice") TexMaths extension** — LaTeX equation editor for LibreOffice.
+
+	[http://roland65.free.fr/texmaths/](http://roland65.free.fr/texmaths/) || [libreoffice-extension-texmaths](https://www.archlinux.org/packages/?name=libreoffice-extension-texmaths)
 
 *   **[OpenOffice Math](/index.php/OpenOffice "OpenOffice")** — Create equations and formulas for your documents. Included in the OpenOffice suite.
 
@@ -390,6 +410,14 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 *   **[KBibTeX](https://en.wikipedia.org/wiki/KBibTeX "wikipedia:KBibTeX")** — BibTeX editor by KDE to edit bibliographies used with LaTeX.
 
 	[https://userbase.kde.org/KBibTeX](https://userbase.kde.org/KBibTeX) || [kbibtex](https://www.archlinux.org/packages/?name=kbibtex)
+
+*   **[Pybliographer](https://en.wikipedia.org/wiki/Pybliographer "wikipedia:Pybliographer")** — Tool for managing bibliographic databases.
+
+	[https://pybliographer.org/](https://pybliographer.org/) || [pybliographer](https://aur.archlinux.org/packages/pybliographer/)
+
+*   **[Referencer](https://en.wikipedia.org/wiki/Referencer "wikipedia:Referencer")** — GNOME application to organize documents or references, and ultimately generate a BibTeX bibliography file.
+
+	[https://pybliographer.org/](https://pybliographer.org/) || [referencer](https://aur.archlinux.org/packages/referencer/)
 
 *   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. Can import and export BibTeX and has browser extensions.
 

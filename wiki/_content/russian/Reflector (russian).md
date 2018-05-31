@@ -13,8 +13,11 @@
         *   [2.1.1 Пример 1](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_1)
         *   [2.1.2 Пример 2](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_2)
         *   [2.1.3 Пример 3](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_3)
-        *   [2.1.4 Служба systemd](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd)
-        *   [2.1.5 Таймер systemd](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B5.D1.80_systemd)
+*   [3 Автоматизация](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [3.1 Pacman hook](#Pacman_hook)
+    *   [3.2 Служба systemd](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd)
+    *   [3.3 Таймер systemd](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B5.D1.80_systemd)
+    *   [3.4 Пакет Reflector-timer](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82_Reflector-timer)
 
 ## Установка
 
@@ -69,7 +72,30 @@
 
 ```
 
-#### Служба systemd
+## Автоматизация
+
+### Pacman hook
+
+Вы можете создать [pacman hook](/index.php/Pacman_hook "Pacman hook"), который будет запускать *reflector* и удалять файл *.pacnew* после каждого обновления [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist).
+
+ `/etc/pacman.d/hooks/mirrorupgrade.hook` 
+```
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = pacman-mirrorlist
+
+[Action]
+Description = Обновление списка зеркал с помощью reflector и удаление pacnew файла...
+When = PostTransaction
+Depends = reflector
+Exec = /bin/sh -c "reflector --country 'Russia' --latest 10 --age 24 --sort rate --save /etc/pacman.d/mirrorlist;  rm -f /etc/pacman.d/mirrorlist.pacnew"
+
+```
+
+Удостоверьтесь, что подставили необходимые вам аргументы.
+
+### Служба systemd
 
  `/etc/systemd/system/reflector.service` 
 ```
@@ -106,7 +132,7 @@ RequiredBy=network.target
 
 Для того, чтобы она работала, цель `network.target` должна правильно означать, что установлено интернет-соединение.
 
-#### Таймер systemd
+### Таймер systemd
 
 Если вы хотите запускать `reflector.service`, скажем, раз в неделю:
 
@@ -131,3 +157,25 @@ WantedBy=timers.target
 # systemctl enable reflector.timer
 
 ```
+
+### Пакет Reflector-timer
+
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/), который будет запускать *reflector* раз в неделю.
+
+Настройки по умолчанию, которые могут быть изменены под нужды пользователя:
+
+ `/usr/share/reflector-timer/reflector.conf` 
+```
+AGE=6
+COUNTRY=Russia
+LATEST=30
+NUMBER=20
+SORT=rate
+### Удалите те протоколы, которые не хотите использовать
+PROTOCOL1='-p http'
+PROTOCOL2='-p https'
+PROTOCOL3='-p ftp'
+PROTOCOL4='-p rsync'
+```
+
+Затем [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") таймер `reflector.timer`.

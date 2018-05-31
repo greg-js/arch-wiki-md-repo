@@ -99,7 +99,7 @@ This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, 
 
 ### Skype plugin
 
-Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) package.
+Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [purple-skypeweb-git](https://aur.archlinux.org/packages/purple-skypeweb-git/) package.
 
 ### Rocket.Chat plugin
 

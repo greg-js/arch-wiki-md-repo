@@ -348,39 +348,32 @@ The `depends` file lists the packages this package depends on, while `desc` has 
 
 ### Cleaning the package cache
 
-*Pacman* stores its downloaded packages in `/var/cache/pacman/pkg/` and does not remove the old or uninstalled versions automatically. Therefore, it is necessary to deliberately clean up that folder periodically to prevent such folder to grow indefinitely in size.
+*Pacman* stores its downloaded packages in `/var/cache/pacman/pkg/` and does not remove the old or uninstalled versions automatically. This has some advantages:
 
-The built-in option to remove all the cached packages that are not currently installed is:
+1.  It allows to [downgrade](/index.php/Downgrade "Downgrade") a package without the need to retrieve the previous version through other means, such as the [Archive](/index.php/Archive "Archive").
+2.  A package that has been uninstalled can easily be reinstalled directly from the cache folder, not requiring a new download from the repository.
 
-```
-# pacman -Sc
+However, it is necessary to deliberately clean up the cache periodically to prevent the folder to grow indefinitely in size.
 
-```
-
-**Warning:**
-
-*   Only do this when certain that previous package versions are not required, for example for a later [downgrade](/index.php/Downgrade "Downgrade"). `pacman -Sc` only leaves the versions of packages which are *currently installed* available, older versions would have to be retrieved through other means, such as the [Archive](/index.php/Archive "Archive").
-*   It is possible to empty the cache folder fully with `pacman -Scc`. In addition to the above, this also prevents from reinstalling a package directly *from* the cache folder in case of need, thus requiring a new download. It should be avoided unless there is an immediate need for disk space.
-
-Because of the above limitations, consider an alternative for more control over which packages, and how many, are deleted from the cache:
-
-The *paccache* script, provided by the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, deletes all cached versions of each package regardless of whether they are installed or not, except for the most recent 3, by default:
+The *paccache* script, provided within the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, deletes all cached versions of installed and uninstalled packages, except for the most recent 3, by default:
 
 ```
 # paccache -r
 
 ```
 
-**Tip:** You can create [#Hooks](#Hooks) to run this automatically after every pacman transaction. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) for examples.
+[Enable](/index.php/Enable "Enable") `paccache.timer` to discard unused packages weekly.
 
-You can also define how many recent versions you want to keep:
+**Tip:** You can create [#Hooks](#Hooks) to run this automatically after every pacman transaction, [see examples](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743).
+
+You can also define how many recent versions you want to keep. To retain only one past version use:
 
 ```
-# paccache -rk 1
+# paccache -rk1
 
 ```
 
-To remove all cached versions of uninstalled packages, re-run *paccache* with:
+Add the `u` switch to limit the action of *paccache* to uninstalled packages. For example to remove all cached versions of uninstalled packages, use the following:
 
 ```
 # paccache -ruk0
@@ -389,7 +382,25 @@ To remove all cached versions of uninstalled packages, re-run *paccache* with:
 
 See `paccache -h` for more options.
 
-[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) and [pacleaner](https://aur.archlinux.org/packages/pacleaner/) are two further alternatives.
+*Pacman* also has some built-in options to clean the cache and the leftover database files from repositories which are no longer listed in the configuration file `/etc/pacman.conf`. However *pacman* does not offer the possibility to keep a number of past versions and is therefore more aggressive than *paccache* default options.
+
+To remove all the cached packages that are not currently installed, and the unused sync database, execute:
+
+```
+# pacman -Sc
+
+```
+
+To remove all files from the cache, use the clean switch twice, this is the most aggressive approach and will leave nothing in the cache folder:
+
+```
+# pacman -Scc
+
+```
+
+**Warning:** One should avoid deleting from the cache all past versions of installed packages and all uninstalled packages unless one desperately needs to free some disk space. This will prevent downgrading or reinstalling packages without downloading them again.
+
+[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) and [pacleaner](https://aur.archlinux.org/packages/pacleaner/) are two further alternatives to clean the cache.
 
 ### Additional commands
 

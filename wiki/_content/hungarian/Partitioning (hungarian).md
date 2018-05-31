@@ -1,3 +1,10 @@
+Related articles
+
+*   [fstab](/index.php/Fstab "Fstab")
+*   [LVM](/index.php/LVM "LVM")
+*   [Swap](/index.php/Swap "Swap")
+*   [File Systems_(Magyar)](/index.php/File_Systems_(Magyar) "File Systems (Magyar)")
+
 Egy merevlemez *particionálása* lehetővé teszi a felhasználható hely logikai szakaszokra történő felosztását, melyek ezáltal egymástól függetlenül is kezelhetők lesznek.
 
 Egy merevlemez egyetlen partícióvá is alakítható, vagy a felhasználható tárhely akár több partícióra is osztható. Bizonyos helyzetek megkövetelik több partíció létrehozását: a kettős-, vagy multiboot, vagy épp a [cserehely](/index.php/Swap_(Magyar) "Swap (Magyar)") partíció használata. Más esetekben a particionálás egyszerűen csak az adatok logikai "elszigetelésének" eszköze, mint például amikor különböző partíciókat készítünk hang-, és videó állományainknak. Alább részletesen beszélünk majd a leggyakoribb partíciós sémákról.

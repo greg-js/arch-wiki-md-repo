@@ -70,6 +70,7 @@ As a result:
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
     *   [8.5 Monitoring / Mailing on Events](#Monitoring_.2F_Mailing_on_Events)
+    *   [8.6 Wrap shell commands in pre & post snapshots](#Wrap_shell_commands_in_pre_.26_post_snapshots)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -1061,6 +1062,33 @@ If you want to receive an email no matter the state of your pool, you will want 
 Start and enable `zfs-zed.service`.
 
 If you set verbose to 1, you can test by running a scrub.
+
+### Wrap shell commands in pre & post snapshots
+
+Since it's so cheap to make a snapshot, we can use this as a measure of security for sensitive commands such as system and package upgrades. If we make a snapshot before, and one after, we can later diff these snapshots to find out what changed on the filesystem after the command executed. Furthermore we can also rollback in case the outcome was not desired.
+
+E.g.:
+
+```
+# zfs snapshot -r zroot@pre
+# pacman -Syyu   # dangerous command
+# zfs snapshot -r zroot@post
+# zfs diff zroot@pre zroot@post 
+# zfs rollback zroot@pre
+
+```
+
+A utility that automates the creation of pre and post snapshots around a shell command is [znp](https://gist.github.com/erikw/eeec35be33e847c211acd886ffb145d5).
+
+E.g.:
+
+```
+# znp pacman -Syyu
+# znp find / -name "something*" -delete
+
+```
+
+and you would get snapshots created before and after the supplied command, and also output of the commands logged to file for future reference so we know what command created the diff seen in a pair of pre/post snapshots.
 
 ## See also
 

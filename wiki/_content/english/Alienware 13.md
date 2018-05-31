@@ -13,6 +13,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [7 OLED screen brightness](#OLED_screen_brightness)
 *   [8 OLED screen doesn't light up after resume](#OLED_screen_doesn.27t_light_up_after_resume)
 *   [9 Switching Windows from RAID to AHCI mode](#Switching_Windows_from_RAID_to_AHCI_mode)
+*   [10 HDMI/Mini-DP audio](#HDMI.2FMini-DP_audio)
 
 ## Getting Linux to boot
 
@@ -227,3 +228,7 @@ The stock installation of Windows is in RAID mode which makes linux unable to se
 8.  Reboot once more and Windows will automatically start with AHCI drivers enabled.
 
 Source: [[1]](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/)
+
+## HDMI/Mini-DP audio
+
+The HDMI and the mini-DP are connected to the nvidia card, which means that in order for them to play audio you need to route it through the sound card attached to the nvidia device. However by default the GPU has its audio disabled for whatever reason. To enable it follow [NVIDIA/Troubleshooting#No_audio_over_HDMI](/index.php/NVIDIA/Troubleshooting#No_audio_over_HDMI "NVIDIA/Troubleshooting")

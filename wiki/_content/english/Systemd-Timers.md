@@ -116,6 +116,13 @@ To run a service on the first Saturday of every month, use:
 
 ```
 
+When using the `DayOfWeek` part, at least one weekday has to be specified. If you want something to run every day on 4am, use:
+
+```
+ OnCalendar=*-*-* 4:00:00
+
+```
+
 More information is available in [systemd.time(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
 
 **Tip:**

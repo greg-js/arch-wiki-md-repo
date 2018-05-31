@@ -20,6 +20,7 @@
     *   [5.3 Git integration](#Git_integration)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Passwords are not remembered](#Passwords_are_not_remembered)
+    *   [6.2 Resetting the keyring](#Resetting_the_keyring)
 *   [7 Known issues](#Known_issues)
     *   [7.1 Cannot handle ECDSA and Ed25519 keys](#Cannot_handle_ECDSA_and_Ed25519_keys)
 *   [8 See also](#See_also)
@@ -244,6 +245,12 @@ Next time you do a *git push*, you are asked to unlock your keyring, if not unlo
 If you get a password prompt every time you login, and you find that passwords are not saved, you might need to create/set a default keyring.
 
 Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select *View* > *By Keyring* If there is no keyring in the left column (it will be marked with a lock icon), go to *File* > *New* > *Password Keyring* and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
+
+### Resetting the keyring
+
+If you get the error "The password you use to login to your computer no longer matches that of your login keyring", you can simply reset your gnome keyring.
+
+Remove "login.keyring" and "user.keystore" from */home/{username}/.local/share/keyrings/*. After removing the files, simply log out and log in again. Obviously, this will remove your saved keys.
 
 ## Known issues
 

@@ -155,7 +155,19 @@ Another way to import the license is to simply copy it to the `~/.Xilinx` or `/o
 
 Arch Linux by default uses systemd's [Predictable Network Interface Names](/index.php/Network_configuration#Device_names "Network configuration"). This means that your system will most likely not have its network interfaces named "eth0", "eth1" and so forth.
 
-However, the Xilinx License Manager looks for these names to find out the system's MAC addresses, which are used for node-locked licenses. If you want to use node-locked licenses, you will have to manually assign to your interface a name in the format expected by the License Manager. The [change device name](/index.php/Network_configuration#Change_device_name "Network configuration") article subsection explain how to write an [udev](/index.php/Udev "Udev") rule to do so.
+However, the Xilinx License Manager looks for these names to find out the system's MAC addresses, which are used for node-locked licenses. If you want to use node-locked licenses, you will have to manually assign to your interface a name in the format expected by the License Manager. The [change device name](/index.php/Network_configuration#Change_device_name "Network configuration") article subsection explain how to write an [udev](/index.php/Udev "Udev") rule to do so. If your machine does not have a wired ethernet adapter, then it is possible to use the systemd and the `dummy` kernel module to create a virtual ethernet adapter with the proper MAC address. To do this, create
+
+ `/etc/systemd/network/25-dummy.netdev` 
+```
+[Match]
+
+[NetDev]
+Name=eth0
+Kind=dummy
+MACAddress=00:11:22:33:44:55:66
+```
+
+and restart systemd-networkd.
 
 ## Post-Installation Fixes and Tweaks
 

@@ -88,7 +88,7 @@ Other programs may overwrite this setting; see [resolv.conf#Preserve DNS setting
 
 ### Start systemd service
 
-Finally, [start and enable](/index.php/Enable "Enable") the `dnscrypt-proxy.service`.
+Finally, [start/enable](/index.php/Start/enable "Start/enable") the `dnscrypt-proxy.service`.
 
 ## Tips and tricks
 
@@ -100,7 +100,13 @@ It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not us
 
 #### Change port
 
-In order to forward queries from a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `53000` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
+In order to forward queries from a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `53000` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root.
+
+There are two methods for changing the default port:
+
+**Socket method**
+
+[Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
 
 ```
 [Socket]
@@ -112,6 +118,15 @@ ListenDatagram=127.0.0.1:53000
 ```
 
 When queries are forwarded from the local DNS cache to `53000`, `dnscrypt-proxy.socket` will start `dnscrypt-proxy.service`.
+
+**Service method**
+
+Edit the `listen_addresses` option in `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` with the following:
+
+```
+listen_addresses = ['127.0.0.1:53000', '[::1]:53000']
+
+```
 
 #### Example local DNS cache configurations
 
@@ -173,7 +188,7 @@ global {
 server {
     label = "dnscrypt-proxy";
     ip = 127.0.0.1;
-    port = 53000
+    port = 53000;
     timeout = 4;
     proxy_only = on;
 }

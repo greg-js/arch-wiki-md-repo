@@ -71,7 +71,7 @@ Opcionalmente puede hacer una copia de seguridad de `grub.cfg`:
 
 #### EFI
 
-Para que grub escriba su imagen EFI en `/boot/efi/EFI/BOOT/BOOTX64.efi`, y el firmware de arranque sea capaz de encontrar sin ninguna entrada de arranque UEFI, use `--removable` cuando ejecute `grub-install`.
+Para que grub escriba su imagen EFI en `/boot/efi/EFI/BOOT/BOOTX64.efi`, y el firmware de arranque sea capaz de encontrarlo sin ninguna entrada de arranque UEFI, use `--removable` cuando ejecute `grub-install`.
 
 ### Instalar en un disco con o sin particiones
 
@@ -116,9 +116,9 @@ Installation finished. No error reported.
 
 ```
 
-La razón por la que `grub-setup` no lo permite por defecto es que en caso de partición o disco sin particiones GRUB confía en las listas de bloques incrustadas en el sector de arranque de la partición para localizar el archivo `/boot/grub/i386-pc/core.img` y el directorio de prefijos `/boot/grub` . Las ubicaciones de sector de `core.img` pueden cambiar cada vez que se altere el sistema de archivos de la partición (archivos copiados, eliminados, etc.). Para más información, véase [https://bugzilla.redhat.com/show_bug.cgi?id=728742](https://bugzilla.redhat.com/show_bug.cgi?id=728742) y [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
+La razón por la que `grub-setup` no lo permite por defecto es que en caso de partición o disco sin particiones GRUB confía en las listas de bloques integradas en el sector de arranque de la partición para localizar el archivo `/boot/grub/i386-pc/core.img` y el directorio de prefijos `/boot/grub` . Las ubicaciones de sector de `core.img` pueden cambiar cada vez que se altere el sistema de archivos de la partición (archivos copiados, eliminados, etc.). Para más información, véase [https://bugzilla.redhat.com/show_bug.cgi?id=728742](https://bugzilla.redhat.com/show_bug.cgi?id=728742) y [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
 
-La solución es establecer el *flag* invariable en `/boot/grub/i386-pc/core.img`. (usando el comando `chattr`} como se mencionó anteriormente) para que las ubicaciones de sector del archivo `core.img` en el disco no se alteren. El *flag* invariable en `/boot/grub/i386-pc/core.img` sólo debe configurarse si GRUB está instalado en un sector de arranque de partición o en un disco sin particiones, no en el caso de la instalación en MBR o la simple generación de `core.img` sin incrustar ningún bootsector (mencionado anteriormente).
+La solución es establecer el indicador invariable en `/boot/grub/i386-pc/core.img`. (usando el comando `chattr`} como se mencionó anteriormente) para que las ubicaciones de sector del archivo `core.img` en el disco no se alteren. El indicador invariable en `/boot/grub/i386-pc/core.img` sólo debe configurarse si GRUB está instalado en un sector de arranque de partición o en un disco sin particiones, no en el caso de la instalación en MBR o la simple generación de `core.img` sin integrar ningún sector de arranque (mencionado anteriormente).
 
 Desafortunadamente, el archivo `grub.cfg` que se crea no contendrá el UUID apropiado para iniciar, incluso si no hay informe de errores.Vea [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604). Para solucionar este problema, ejecute los siguientes comandos:
 

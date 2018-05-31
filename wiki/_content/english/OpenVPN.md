@@ -828,7 +828,7 @@ openvpn[458]: ERROR: Linux route add command failed: external program exited wit
 
 ```
 
-With systemd-233 (currently in [testing](/index.php/Testing "Testing")), systemd-networkd can be configured to ignore the tun connections and allow OpenVPN to manage them. To do this, create the following file:
+From systemd-233, systemd-networkd can be configured to ignore the tun connections and allow OpenVPN to manage them. To do this, create the following file:
 
  `/etc/systemd/network/90-tun-ignore.network` 
 ```

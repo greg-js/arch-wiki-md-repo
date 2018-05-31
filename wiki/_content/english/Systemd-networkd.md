@@ -204,7 +204,7 @@ These files are aimed at setting network configuration variables, especially for
 
 #### [Link]
 
-*   `MACAddress=` useful for [MAC address spoofing](/index.php/MAC_address_spoofing#Method_1:_systemd-networkd "MAC address spoofing")
+*   `MACAddress=` useful for [MAC address spoofing](/index.php/MAC_address_spoofing#systemd-networkd "MAC address spoofing")
 *   `MTUBytes=` setting a larger MTU value ([jumbo frames](/index.php/Jumbo_frames "Jumbo frames")) can significantly speed up your network transfers
 
 #### [Network]

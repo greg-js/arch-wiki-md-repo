@@ -287,6 +287,8 @@ After re-run X see Xorg.0.log to get valid CRT-x,DFP-x,TV-x values.
 
 If you have installed an update of Nvidia and your screen stays black after launching Xorg, or if shutting down Xorg causes a machine poweroff, try the below workarounds:
 
+*   Prepend "xrandr --auto" to your xinitrc
+
 *   Use the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 *   You can also try to add the `nvidia` module directly to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file.

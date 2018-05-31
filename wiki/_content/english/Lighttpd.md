@@ -107,7 +107,7 @@ Alternatively, generate a certificate signed by [Let's Encrypt](/index.php/Let%2
 
 ```
 
-[Edit](/index.php/Edit "Edit") `/etc/lighttpd/lighttpd.conf` by adding the following lines:
+Edit `/etc/lighttpd/lighttpd.conf` by adding the following lines:
 
 ```
 $SERVER["socket"] == ":443" {
@@ -126,7 +126,7 @@ Note that this module requires [libmariadbclient](https://www.archlinux.org/pack
 $ user=foo
 $ password=b@R102
 $ realm='Password Required'
-$ hash=`echo -n "$user:$realm:$pass" | md5sum | cut -b -32`
+$ hash=`echo -n "$user:$realm:$password" | md5sum | cut -b -32`
 
 # echo "$user:$realm:$hash" >> /etc/lighttpd/lighttpd.user
 
@@ -465,6 +465,13 @@ include "conf.d/compress.conf"
 ```
 
 **Note:** You can not do this (copy compress.conf) and add a needed content in `/etc/lighttpd/lighttpd.conf` instead.
+
+It is also possible to select the type of content that should be compressed, modify `/etc/lighttpd/conf.d/compress.conf` on the parameter `compress.filetype`:
+
+```
+compress.filetype           = ("text/plain", "text/html", "text/javascript", "text/css", "text/xml")
+
+```
 
 ## See also
 

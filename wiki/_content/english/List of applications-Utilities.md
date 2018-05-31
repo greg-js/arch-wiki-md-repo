@@ -320,6 +320,10 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 
 	[https://yx7.cc/code/](https://yx7.cc/code/) || [hyx](https://aur.archlinux.org/packages/hyx/)
 
+*   **okteta** — KDE hex editor for viewing and editing the raw data of files.
+
+	[https://www.kde.org/applications/utilities/okteta/](https://www.kde.org/applications/utilities/okteta/) || [okteta](https://www.archlinux.org/packages/?name=okteta)
+
 ### Integrated development environments
 
 See also [Wikipedia:Comparison of integrated development environments](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments "wikipedia:Comparison of integrated development environments").

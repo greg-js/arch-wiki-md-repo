@@ -72,18 +72,17 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.12 mesa-git](#mesa-git)
     *   [3.13 Minerva W Science](#Minerva_W_Science)
     *   [3.14 mingw-w64](#mingw-w64)
-    *   [3.15 neo_chen](#neo_chen)
-    *   [3.16 ownstuff](#ownstuff)
-    *   [3.17 pantheon](#pantheon)
-    *   [3.18 pietma](#pietma)
-    *   [3.19 Pival81 arch xapps](#Pival81_arch_xapps)
-    *   [3.20 pnsft-pur](#pnsft-pur)
-    *   [3.21 post-factum kernels](#post-factum_kernels)
-    *   [3.22 QOwnNotes](#QOwnNotes)
-    *   [3.23 rakudo](#rakudo)
-    *   [3.24 rust-git](#rust-git)
-    *   [3.25 trinity](#trinity)
-    *   [3.26 zrootfs](#zrootfs)
+    *   [3.15 ownstuff](#ownstuff)
+    *   [3.16 pantheon](#pantheon)
+    *   [3.17 pietma](#pietma)
+    *   [3.18 Pival81 arch xapps](#Pival81_arch_xapps)
+    *   [3.19 pnsft-pur](#pnsft-pur)
+    *   [3.20 post-factum kernels](#post-factum_kernels)
+    *   [3.21 QOwnNotes](#QOwnNotes)
+    *   [3.22 rakudo](#rakudo)
+    *   [3.23 rust-git](#rust-git)
+    *   [3.24 trinity](#trinity)
+    *   [3.25 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -802,21 +801,6 @@ Server = https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arc
 [mingw-w64]
 Server = https://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 #Server = http://amr.linuxd.org/archlinux/$repo/os/$arch
-
-```
-
-### neo_chen
-
-*   **Maintainer:** Kolei Chen (Neo_Chen) <chenkolei@gmail.com>
-*   **Description:** Some uncommon AUR Package
-
-**Note:** This repo runs on a unstable Desktop.
-
-```
-[neo_chen]
-Server = https://neolinuxworkstation.nerdpol.ovh/~neo_chen/neo_chen_repo/
-Server = https://thunix.org/~neo_chen/neo_chen_repo/
-Server = http://sl-sgp.asn.yt/~neo_chen_repo/
 
 ```
 

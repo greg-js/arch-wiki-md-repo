@@ -9,6 +9,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
 *   [1 Installation](#Installation)
 *   [2 Data corruption](#Data_corruption)
     *   [2.1 Repair XFS Filesystem](#Repair_XFS_Filesystem)
+    *   [2.2 Online Metadata Checking (scrub)](#Online_Metadata_Checking_.28scrub.29)
 *   [3 Integrity](#Integrity)
 *   [4 Performance](#Performance)
     *   [4.1 Stripe size and width](#Stripe_size_and_width)
@@ -45,6 +46,14 @@ Once unmounted, run the [xfs_repair(8)](https://jlk.fjfi.cvut.cz/arch/manpages/m
 # xfs_repair -v /dev/sda3
 
 ```
+
+### Online Metadata Checking (scrub)
+
+**Warning:** This program is EXPERIMENTAL, which means that its behaviour and interface could change at any time, see [xfs_scrub(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_scrub.8).
+
+`xfs_scrub` asks the kernel to scrub all metadata objects in the [filesystem](/index.php/Filesystem "Filesystem"). Metadata records are scanned for obviously bad values and then cross-referenced against other metadata. The goal is to establish a reasonable confidence about the consistency of the overall filesystem by examining the consistency of individual metadata records against the other metadata in the filesystem. Damaged metadata can be rebuilt from other metadata if there exists redundant data structures which are intact.
+
+[Enable](/index.php/Enable "Enable") `xfs_scrub_all.timer` to periodic check online metadata for all filesystems. One may want to [edit](/index.php/Edit "Edit") `xfs_scrub_all.timer`, since it runs every Sunday at 3:10am.
 
 ## Integrity
 

@@ -540,7 +540,7 @@ The configuration through the GUI may be tricky: if the phone number is not acce
 
 You will need to install KDE Connect both on your computer and on your Android. For PC side, [install](/index.php/Install "Install") [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install KDE Connect from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
 
-It is possible to use KDE Connect even if you do not use the Plasma desktop. For desktop environments that use AppIndicators, such as Unity, install [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/) package as well.
+It is possible to use KDE Connect even if you do not use the Plasma desktop. For desktop environments that use AppIndicators, such as Unity, install [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/) package as well. For GNOME users, better integration can be achieved by installing [gnome-shell-extension-gsconnect](https://aur.archlinux.org/packages/gnome-shell-extension-gsconnect/) instead of [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect).
 
 ## Tips and tricks
 
