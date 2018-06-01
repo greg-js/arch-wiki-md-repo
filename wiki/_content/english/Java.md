@@ -28,6 +28,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
     *   [4.4 Missing text in some applications](#Missing_text_in_some_applications)
     *   [4.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM.2C_menus_immediately_closing)
     *   [4.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
+    *   [4.7 JavaFX's MediaPlayer constructor throws an exception](#JavaFX.27s_MediaPlayer_constructor_throws_an_exception)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Better font rendering](#Better_font_rendering)
     *   [5.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
@@ -254,6 +255,27 @@ See [[2]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_wit
 If your system freezes while debugging a JavaFX Application, you can try to supply the JVM option `-Dsun.awt.disablegrab=true`.
 
 See [http://bugs.java.com/view_bug.do?bug_id=6714678](http://bugs.java.com/view_bug.do?bug_id=6714678)
+
+### JavaFX's MediaPlayer constructor throws an exception
+
+Creating instance of MediaPlayer class from JavaFX's sound modules might throw following exception (both Oracle JDK and OpenJDK)
+
+```
+... (i.e. FXMLLoader construction exceptions) ...
+Caused by: MediaException: UNKNOWN : com.sun.media.jfxmedia.MediaException: Could not create player! : com.sun.media.jfxmedia.MediaException: Could not create player!
+ at javafx.scene.media.MediaException.exceptionToMediaException(MediaException.java:146)
+ at javafx.scene.media.MediaPlayer.init(MediaPlayer.java:511)
+ at javafx.scene.media.MediaPlayer.<init>(MediaPlayer.java:414)
+ at <constructor call>
+...
+
+```
+
+which is a result of some incompatibilities of JavaFX with modern [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) build delivered within Arch Linux repository.
+
+Working solution is to install [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/).
+
+See [http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/](http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/)
 
 ## Tips and tricks
 

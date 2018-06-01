@@ -336,7 +336,7 @@ EndSection
 
 ### Software toggle
 
-You might want to turn the touchpad on and off with a simple button click or shortcut. This can be done by binding the following *xinput*-based script to a keyboard event as explained in [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg"):
+You might want to turn the touchpad on and off with a simple button click or shortcut. This can be done by [binding](/index.php/Xorg_keybinding "Xorg keybinding") the following *xinput*-based script:
 
  `/usr/local/bin/touchpad_toggle.sh` 
 ```

@@ -2,7 +2,6 @@ Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
-*   [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg")
 *   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
 *   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")
 
@@ -307,7 +306,7 @@ keycode 19 = equal 0 0 equal dead_doubleacute doubleacute dead_doubleacute
 
 ## See also
 
-*   [Current man page](http://www.x.org/archive/current/doc/man/man1/xmodmap.1.xhtml) at X.Org Foundation
+*   [xmodmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xmodmap.1)
 *   [Multimediakeys with .Xmodmap HOWTO](http://cweiske.de/howto/xmodmap/allinone.html) by Christian Weiske
 *   [Mapping unsupported keys with xmodmap](http://dev-loki.blogspot.com/2006/04/mapping-unsupported-keys-with-xmodmap.html) by Pascal Bleser
 *   [List of Keysyms Recognised by Xmodmap](http://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap) on [LinuxQuestions](http://linuxquestions.org)

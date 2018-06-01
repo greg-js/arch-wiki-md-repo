@@ -111,6 +111,7 @@ User *user*
 Host myserver
     HostName *server-address*
     Port     *port*
+
 ```
 
 With such a configuration, the following commands are equivalent
@@ -639,7 +640,7 @@ ssh user2@relay
 
 ```
 
-Note that SCP's autocomplete function in client's terminal is not working and even the SCP transfers themselves aren't working under some configurations.
+Note that SCP's autocomplete function in client's terminal is not working and even the SCP transfers themselves are not working under some configurations.
 
 ### Multiplexing
 
@@ -781,7 +782,7 @@ ExecStart=/usr/bin/autossh -M 0 -o ControlMaster=no -NL 2222:localhost:2222 -o T
 
 For remote or headless servers which rely exclusively on SSH, a failure to start the SSH daemon (e.g., after a system upgrade) may prevent administration access. [systemd](/index.php/Systemd "Systemd") offers a simple solution via `OnFailure` option.
 
-Let's suppose the server runs `sshd` and [telnet](/index.php/Telnet "Telnet") is the fail-safe alternative of choice. Create a file as follows. Do **not** [enable](/index.php/Enable "Enable") telnet.socket!
+Let us suppose the server runs `sshd` and [telnet](/index.php/Telnet "Telnet") is the fail-safe alternative of choice. Create a file as follows. Do **not** [enable](/index.php/Enable "Enable") telnet.socket!
 
  `/etc/systemd/system/sshd.service.d/override.conf` 
 ```

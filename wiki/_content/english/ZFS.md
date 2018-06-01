@@ -160,6 +160,13 @@ In order to mount zfs pools automatically on boot you need to enable the followi
 
 ```
 
+or, as explained on [the GitHub issue](https://github.com/archzfs/archzfs/issues/72), use the [systemd preset file](https://www.freedesktop.org/software/systemd/man/systemd.preset.html):
+
+```
+# systemctl preset $(tail -n +2 /usr/lib/systemd/system-preset/50-zfs.preset | cut -d ' ' -f 2)
+
+```
+
 ## Creating a storage pool
 
 Use `# parted --list` to see a list of all available drives. It is not necessary nor recommended to partition the drives before creating the zfs filesystem.

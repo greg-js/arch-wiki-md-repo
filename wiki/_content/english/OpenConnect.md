@@ -5,6 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Juniper Pulse Client](#Juniper_Pulse_Client)
+    *   [2.2 Split Routing](#Split_Routing)
 *   [3 Integration](#Integration)
     *   [3.1 NetworkManager](#NetworkManager)
     *   [3.2 netctl](#netctl)
@@ -42,6 +43,23 @@ In order to connect to a [Pulse Connect Secure](/index.php/Pulse_Connect_Secure 
 
 ```
 # openconnect --servercert=sha1:<HASH> --authgroup="single-Factor Pulse Clients" --protocol=nc <VPN_SERVER_ADDRESS>/dana-na/auth/url_6/welcome.cgi --pid-file="/var/run/work-vpn.pid" --user=<USERNAME>
+
+```
+
+#### Split Routing
+
+Split routing can be achieved using [vpn-slice-git](https://aur.archlinux.org/packages/vpn-slice-git/) in place of vpnc-script, so that you can selectively access hosts over the VPN but otherwise remain on your own LAN. Example:
+
+```
+   sh
+   $ sudo openconnect gateway.bigcorp.com -u user1234 \
+       -s 'vpn-slice 192.168.1.0/24 hostname1 alias2=alias2.bigcorp.com=192.168.1.43'
+   $ cat /etc/hosts
+   ...
+   192.168.1.1 dns0.tun0					# vpn-slice-tun0 AUTOCREATED
+   192.168.1.2 dns1.tun0					# vpn-slice-tun0 AUTOCREATED
+   192.168.1.57 hostname1 hostname1.bigcorp.com		# vpn-slice-tun0 AUTOCREATED
+   192.168.1.43 alias2 alias2.bigcorp.com		# vpn-slice-tun0 AUTOCREATED
 
 ```
 

@@ -20,7 +20,7 @@ Stoq application uses [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as databa
 
 ### Installing Stoq
 
-[Install](/index.php/Install "Install") the [stoq](https://aur.archlinux.org/packages/stoq/) package. Please note that the Stoq package comes with a bunch of python2 packages available in the [AUR](/index.php/AUR "AUR"). The dependency of [webkitgtk2](https://aur.archlinux.org/packages/webkitgtk2/) take long time for installation process.
+[Install](/index.php/Install "Install") the [stoq](https://aur.archlinux.org/packages/stoq/) package. The dependency of [webkitgtk](https://aur.archlinux.org/packages/webkitgtk/) take long time for installation process.
 
 ### Configure Stoq
 

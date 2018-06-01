@@ -1,3 +1,8 @@
+Related articles
+
+*   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")
+*   [Xmodmap](/index.php/Xmodmap "Xmodmap")
+
 From [sxhkd's Github page](https://github.com/baskerville/sxhkd):
 
 	*sxhkd is a simple X hotkey daemon with a powerful and compact configuration syntax.*

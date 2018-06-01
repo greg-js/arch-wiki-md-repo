@@ -212,13 +212,7 @@ The image can now be copied to a USB stick for booting, or booted as a memdisk a
 
 ### Usage
 
-The OEM Bootdisk version is recommended, as it only includes `kernel` and `command.com` thus leaving more space for the flash utility and new BIOS image. Download and decompress the FreeDOS image:
-
-```
-$ wget [http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz](http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz)
-$ gunzip FDOEM.144.gz
-
-```
+The OEM Bootdisk version is recommended, as it only includes `kernel` and `command.com` thus leaving more space for the flash utility and new BIOS image. Download the [FreeDOS image](http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz) and [decompress](/index.php/Decompress "Decompress") it.
 
 Copy your BIOS flash utility and new BIOS image to the mounted floppy disk image. Load the necessary modules:
 

@@ -20,7 +20,7 @@ O aplicativo Stoq usa o PostgreSQL como banco de dados back-end, com um cliente 
 
 ### Instalação do Stoq
 
-[Instale](/index.php/Help:Reading_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_de_pacotes "Help:Reading (Português)") o pacote [stoq](https://aur.archlinux.org/packages/stoq/). Note que os pacote Stoq vêm com um braço de bibliotecas python2 disponíveis no [AUR](/index.php/AUR "AUR"). A instalação da dependência [webkitgtk2](https://aur.archlinux.org/packages/webkitgtk2/) levará muito tempo no processo de instalação.
+[Instale](/index.php/Help:Reading_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_de_pacotes "Help:Reading (Português)") o pacote [stoq](https://aur.archlinux.org/packages/stoq/). A instalação da dependência [webkitgtk](https://aur.archlinux.org/packages/webkitgtk/) levará muito tempo no processo de instalação.
 
 ### Configuração do Stoq
 

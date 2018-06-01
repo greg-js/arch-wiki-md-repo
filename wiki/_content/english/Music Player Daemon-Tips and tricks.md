@@ -23,6 +23,7 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
 *   [9 MPRIS2 Support](#MPRIS2_Support)
     *   [9.1 mpDris2](#mpDris2)
     *   [9.2 mpd-mpris](#mpd-mpris)
+*   [10 Adding a separate volume control (ALSA)](#Adding_a_separate_volume_control_.28ALSA.29)
 
 ## Organizing library
 
@@ -401,3 +402,30 @@ Install the [mpd-mpris](https://aur.archlinux.org/packages/mpd-mpris/) package.
 After installation, you can start or enable the `mpd-mpris.service` user service through [systemd](/index.php/Systemd "Systemd").
 
 By default mpd-mpris listens on `localhost:6600` (which is the default host/port of [mpd](/index.php/Mpd "Mpd")). To change this settings copy `/usr/lib/systemd/user/mpd-mpris.service` to `~/.config/systemd/user/` then edit run parameters as needed.
+
+## Adding a separate volume control (ALSA)
+
+While MPD does not allow you to adjust its own volume by default (`mpc volume` affects global volume), you can easily make a MPD-specific volume slider using the *softvol* [ALSA](/index.php/ALSA "ALSA") module. Just add this to `asound.conf`:
+
+```
+pcm.mpd {
+    type softvol
+    slave.pcm "default"
+    control.name "MPD"
+    control.card 0
+}
+
+```
+
+And link it to MPD:
+
+ `mpd.conf` 
+```
+audio_output {
+    device "mpd"
+    mixer_control "MPD"
+}
+
+```
+
+Afterwards you will be able to adjust song volume both through `mpc` and `amixer`.

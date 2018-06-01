@@ -15,6 +15,8 @@ This page explains how to setup Arch to use a US Department of Defense [Common A
     *   [3.2 Chromium/Google Chrome](#Chromium.2FGoogle_Chrome)
 *   [4 Testing](#Testing)
 *   [5 Debugging](#Debugging)
+    *   [5.1 opensc-tool](#opensc-tool)
+    *   [5.2 pcsc-tools](#pcsc-tools)
 
 ## Installation
 
@@ -77,6 +79,34 @@ If some sites/pages seem to have a problem working correctly (e.g. outlook web a
 
 ## Debugging
 
+### opensc-tool
+
+Most of this information was found in a [blog post by Firas Kraïem](http://blog.fkraiem.org/2013/03/13/linux-smart-card-authentication-howto/)
+
+Verify opensc can see your reader
+
+ `$ opensc-tool --list-readers ` 
+```
+# Detected readers (pcsc)
+Nr.  Card  Features  Name
+0    Yes            Generic USB2.0-CRW [Smart Card Reader Interface] (20070818000000000) 00 00
+```
+
+List plugged in card
+
+ `$ opensc-tool --reader 0 --name `  `Personal Identity Verification Card` 
+
+List plugged in card and drive in use
+
+ `$ opensc-tool --reader 0 --name -v` 
+```
+Connecting to card in reader Generic USB2.0-CRW [Smart Card Reader Interface] (20070818000000000) 00 00...
+Using card driver Personal Identity Verification Card.
+Card name: Personal Identity Verification Card
+```
+
+### pcsc-tools
+
 The [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) package is also availabe in **[community]**. The program `pcsc_scan` may be helpful
 
 ```
@@ -88,24 +118,15 @@ Using reader plug'n play mechanism
 Scanning present readers...
 0: Dell Dell Smart Card Reader Keyboard 00 00
 
-```
-
-```
 Thu Sep  5 10:41:53 2013
 Reader 0: Dell Dell Smart Card Reader Keyboard 00 00
   Card state: Card removed, 
 
-```
-
-```
 Thu Sep  5 10:41:58 2013
 Reader 0: Dell Dell Smart Card Reader Keyboard 00 00
   Card state: Card inserted, 
   ATR: 3B DB 96 00 80 1F 03 00 31 C0 64 B0 F3 10 00 07 90 00 80
 
-```
-
-```
 ATR: 3B DB 96 00 80 1F 03 00 31 C0 64 B0 F3 10 00 07 90 00 80
 + TS = 3B --> Direct Convention
 + T0 = DB, Y(1): 1101, K: 11 (historical bytes)
@@ -132,9 +153,6 @@ ATR: 3B DB 96 00 80 1F 03 00 31 C0 64 B0 F3 10 00 07 90 00 80
       SW: 9000 (Normal processing.)
 + TCK = 80 (correct checksum)
 
-```
-
-```
 Possibly identified card (using /usr/share/pcsc/smartcard_list.txt):
 3B DB 96 00 80 1F 03 00 31 C0 64 B0 F3 10 00 07 90 00 80
 	DoD CAC, Oberthur ID One 128 v5.5 Dual

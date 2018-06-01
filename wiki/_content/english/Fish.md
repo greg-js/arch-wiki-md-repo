@@ -40,9 +40,9 @@ Documentation can be found by typing `help` from fish; it will be opened in a we
 
 One must decide whether fish is going to be the default user's shell, which means that the user falls directly in fish at login or whether it is used in interactive terminal mode as a child process of the current default shell, here we will assume the latter is [Bash](/index.php/Bash "Bash"). To elaborate on these two setups:
 
-*   fish used as an **interactive shell** only: this is the less disruptive mode, all the Bash initialization scripts are run as usual and fish runs on top of Bash in interactive mode connected to a terminal. To setup fish in this mode, follow [#Setting fish as secondary shell](#Setting_fish_as_secondary_shell).
-
 *   fish used as the **default shell**: this mode requires some basic understanding of the fish functioning and its scripting language. The user's current initialization scripts and environment variables needs to be migrated to the new fish environment. To configure the system in this mode, follow [#Setting fish as default shell](#Setting_fish_as_default_shell).
+
+*   fish used as an **interactive shell** only: this is the less disruptive mode, all the Bash initialization scripts are run as usual and fish runs on top of Bash in interactive mode connected to a terminal. To setup fish in this mode, follow [#Setting fish as secondary shell](#Setting_fish_as_secondary_shell).
 
 ### Setting fish as default shell
 
@@ -70,8 +70,7 @@ Keep the default shell as Bash and simply add the line `exec fish` to the approp
 **Tip:**
 
 *   In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
-*   To have commands such as `bash -c 'echo test'` run the command in bash instead of starting fish, you can write `if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi` instead. (This is necessary for EternalTerminal to work.)
-*   To color the hostname in the prompt differently in SSH mode, here in bright red, one can use the line `if [ -n "$SSH_TTY" ]; then exec fish -C 'set -g fish_color_host brred'; else exec fish; fi` in the Bash configuration file instead of simply `exec fish`.
+*   To have commands such as `bash -c 'echo test'` run the command in Bash instead of starting fish, you can write `if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi` instead. (This is necessary for EternalTerminal to work.)
 
 #### Use terminal emulator options
 
@@ -227,15 +226,26 @@ This means firefox will not be closed when the fish process is closed. See disow
 
 ### Quickly set a persistent alias
 
-To quickly make a persistent alias, one can simply open up fish shell and use the following method:
+To quickly make a persistent alias, one can simply use the method showed in this example:
 
 ```
-$ alias FooAliasName "foo"
-$ funcsave FooAliasName
+$ alias lsl "ls -l"
+$ funcsave lsl
 
 ```
 
-This will set you alias as a persistent fish shell function. if you wish to see all functions and/or edit them, one can simply use `fish_config` to view or edit all functions under the **Function** tab in the resulting web configuration page.
+This will create the function:
+
+```
+function lsl
+    ls -l $argv
+end
+
+```
+
+and will set the alias as a persistent shell function. To see all functions and/or edit them, one can simply use `fish_config` and look into the *Function* tab in the web configuration page.
+
+For more detailed information, refer to [fish - alias](https://fishshell.com/docs/current/commands.html#alias).
 
 ## Troubleshooting
 

@@ -160,7 +160,7 @@ If your wireless card is not listed above, it is likely supported only under Win
 
 Just like other network interfaces, the wireless ones are controlled with *ip* from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
-You will need to install a basic set of tools for managing the wireless connection. [Install](/index.php/Install "Install") one of the following:
+Managing a wireless connection requires a basic set of tools. Either use a [network manager](/index.php/Network_manager "Network manager") or use one of the following directly:
 
 | Software | Package | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | Note |
 | [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Yes | No | Yes | No | deprecated |

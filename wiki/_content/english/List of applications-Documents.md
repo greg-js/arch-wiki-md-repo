@@ -429,7 +429,7 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 **Note:** Some [PDF and DjVu viewers](#PDF_and_DjVu) also support other e-book formats.
 
-*   **Bookworm** — eBook reader with epub, pdf, mobi, cbr support for Elementary OS.
+*   **Bookworm** — Simple, focused eBook reader for Elementary OS with EPUB, PDF, MOBI, CBR, CBZ support.
 
 	[https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/) || [bookworm](https://www.archlinux.org/packages/?name=bookworm)
 

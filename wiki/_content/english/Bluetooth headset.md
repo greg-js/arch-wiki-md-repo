@@ -749,6 +749,8 @@ As of Pulseaudio 10.0, when connecting to headset via Bluedevil or similar, A2DP
 
 ```
 
+For some headsets, using the headset's volume or play/pause controls while connected can trigger the A2DP profile to become available.
+
 #### Gnome with GDM
 
 The instructions below were tested on Gnome 3.24.2 and PulseAudio 10.0 however they may still be applicable and useful for other versions.

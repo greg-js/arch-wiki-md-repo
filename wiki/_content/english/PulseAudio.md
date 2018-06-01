@@ -593,7 +593,7 @@ It is also possible to set the server address in the environment variable `$PULS
 
 ### Keyboard volume control
 
-Map the following commands to your volume keys: `XF86AudioRaiseVolume`, `XF86AudioLowerVolume`, `XF86AudioMute`. See [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg") for details.
+[Bind](/index.php/Xorg_keybinding "Xorg keybinding") the following commands to your volume keys: `XF86AudioRaiseVolume`, `XF86AudioLowerVolume`, `XF86AudioMute`.
 
 First find out which sink corresponds to the audio output you'd like to control. To list available sinks:
 

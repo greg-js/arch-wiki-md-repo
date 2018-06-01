@@ -38,11 +38,11 @@ Other alternatives include:
 
 *   **Chromium Beta Channel** — the beta version
 
-	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || [chromium-beta](https://aur.archlinux.org/packages/chromium-beta/)
+	[https://chromereleases.googleblog.com/](https://chromereleases.googleblog.com/) || [chromium-beta](https://aur.archlinux.org/packages/chromium-beta/)
 
 *   **Chromium Dev Channel** — the development version
 
-	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
+	[https://chromereleases.googleblog.com/](https://chromereleases.googleblog.com/) || [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
 
 *   **Chromium snapshot builds** — the untested nightly version
 
@@ -62,7 +62,7 @@ Other alternatives include:
 
 *   **Google Chrome Dev Channel** — the development version
 
-	[https://www.google.com/chrome/browser/](https://www.google.com/chrome/browser/) || [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
+	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
 
 **Note:** Support for native client (NaCl) has been dropped in [chromium](https://www.archlinux.org/packages/?name=chromium) version 54, see [FS#51511](https://bugs.archlinux.org/task/51511). Opening NaCl applications will display this error message: "This plugin is not supported". The [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package supports NaCl.
 

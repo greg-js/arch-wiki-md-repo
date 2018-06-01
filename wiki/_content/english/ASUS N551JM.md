@@ -171,6 +171,6 @@ The touchpad can be toggled using a `xinput` [script](/index.php/Touchpad_Synapt
 
 ### Special keys for window managers
 
-If you prefer using a [Window manager](/index.php/Window_manager "Window manager") rather than a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), most settings will not work out of the box, so you might need to manually bind every single `FN` button combination. How to bind, see [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
+If you prefer using a [Window manager](/index.php/Window_manager "Window manager") rather than a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), most settings will not work out of the box, so you might need to manually bind every single `FN` button combination. How to bind, see [Xorg keybinding](/index.php/Xorg_keybinding "Xorg keybinding").
 
 You can see the list of the media keys here: [ASUS N550JV#Special keys for window managers](/index.php/ASUS_N550JV#Special_keys_for_window_managers "ASUS N550JV").

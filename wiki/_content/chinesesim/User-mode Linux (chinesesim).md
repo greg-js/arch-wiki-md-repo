@@ -19,8 +19,8 @@ UML 是一种在同一时间运行多 (arch-)linux 的安全方式。 每个进�
 
 #### 运行所需:
 
-*   User-mode-linux 内核(pacman -S user-mode-linux 就可以)
-*   uml_工具, 特别使 tunctl 程序 (会在安装 uml 内核后有)
+*   User-mode-linux 内核(安装 [linux-usermode](https://aur.archlinux.org/packages/linux-usermode/))
+*   uml_工具, 特别使 tunctl 程序 (安装 [uml_utilities](https://aur.archlinux.org/packages/uml_utilities/))
 *   [archbootstrap 脚本](http://painkiller.one.pl/~lucke/archbootstrap). 在 [这个主题](https://bbs.archlinux.org/viewtopic.php?t=4020) 进行讨论.
 
 #### 现在开始
@@ -85,7 +85,7 @@ ip addr add 192.168.0.100/24 dev tap0
 8.) 现在可以启动镜像。为了使用网络，您要在 uml 内核中声明正确的设备值。 (确保普通用户通过运行 uml 命令有足够的权限使用网络！)
 
 ```
-linux ubd0=archRootFs eth0=tuntap,,,192.168.0.100
+vmlinux ubd0=archRootFs eth0=tuntap,,,192.168.0.100
 
 ```
 

@@ -111,7 +111,7 @@ Simply edit `/etc/postfix/master.cf` and add the following lines under the `subm
 
 Using this configuration implies that only authenticated users can send mails. You can see this from `smtpd_client_restrictions` option.
 
-Now add the following to Dovecot configuration file in `/etc/dovecot/dovecot.conf`:
+Now add the following to Dovecot configuration file in `/etc/dovecot/conf.d/10-master.conf`:
 
 ```
 service auth {

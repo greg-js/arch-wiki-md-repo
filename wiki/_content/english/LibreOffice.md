@@ -101,7 +101,7 @@ Unlike other languages, Finnish dictionaries use different naming. These four pa
 
 	Greek
 
-A new project called [Orthos](https://sourceforge.net/projects/orthos-spell/?source=directory) provides more up-to-date Greek spell checkers as Libreoffice extensions. Package [libreoffice-extension-orthos-greek-dictionary](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-dictionary/) provides a Greek-only spelling dictionary, while [libreoffice-extension-orthos-greek-english-dictionary](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-english-dictionary/) provides one that bundles Greek and US English.
+Project [Orthos](https://sourceforge.net/projects/orthos-spell/?source=directory) provides more complete Greek spell checkers as Libreoffice extensions. Package [libreoffice-extension-orthos-greek-dictionary](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-dictionary/) provides a Greek-only spelling dictionary, while [libreoffice-extension-orthos-greek-english-dictionary](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-english-dictionary/) provides one that bundles Greek and US English.
 
 ### Hyphenation rules
 
@@ -113,7 +113,7 @@ For the thesaurus option, you will need [libmythes](https://www.archlinux.org/pa
 
 	Greek
 
-For Greek, you may want to try out [libreoffice-extension-orthos-greek-thesaurus](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-thesaurus/), rather than [mythes-el](https://aur.archlinux.org/packages/mythes-el/) which is older.
+For Greek, instead of [mythes-el](https://aur.archlinux.org/packages/mythes-el/) you may want to try out [libreoffice-extension-orthos-greek-thesaurus](https://aur.archlinux.org/packages/libreoffice-extension-orthos-greek-thesaurus/), which includes more words.
 
 ### Grammar checking
 

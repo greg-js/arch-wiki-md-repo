@@ -65,7 +65,7 @@ The command looks like
 
 ```
 
-Where `*/dev/sdX*` and `*Y*` are the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root. Note that the `-u`/`--unicode` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters (e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode")).
+Where `*/dev/sdX*` and `*Y*` are the drive and partition number where the ESP is located. Change the `root=` parameter to reflect your Linux root partition. Note that the `-u`/`--unicode` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters (e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode")).
 
 **Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
 

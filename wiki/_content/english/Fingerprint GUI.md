@@ -94,7 +94,7 @@ and following the onscreen instructions.
 
 ## Exporting
 
-If you wish to save your user's fingerprint data to a file, simple use the *Export* button in the *Settings* tab. A file Fingerprints.tar.gz" will be created in the desired directory. At this time, I have not yet figured out what exactly to do with this saved file though, as I have not come across an "Import" function.
+If you wish to save your user's fingerprint data to a file, simply use the *Export* button in the *Settings* tab. A file Fingerprints.tar.gz" will be created in the desired directory. The saved file appears to be of little use, however, as an "Import" function has not yet been discovered (as of May 2018).
 
 ## Password
 

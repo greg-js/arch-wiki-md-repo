@@ -44,7 +44,7 @@ Make sure to boot the USB in EFI-Mode, to easily install the bootloader later.
 
 ## Function keys
 
-**Note:** A working keymap means that there is some output in `xev` when the key combination is pressed OR that the functionality is built in and "just works". It does not means that the keymap is linked to the functionality. For that it is often necessary to add a keyboard shortcut [by the method of your choice](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg") or to use a desktop shell with built-in shortcut support for the keycode in question. For some of the keys the function operates on a BIOS level and no shortcut is needed.
+**Note:** A working keymap means that there is some output in `xev` when the key combination is pressed OR that the functionality is built in and "just works". It does not means that the keymap is linked to the functionality. For that it is often necessary to [add a keyboard shortcut](/index.php/Xorg_keybinding "Xorg keybinding") or to use a desktop shell with built-in shortcut support for the keycode in question. For some of the keys the function operates on a BIOS level and no shortcut is needed.
 
 This table shows the function keys, their intended function, what keycode (if any) X recognizes and whether the function key operates at the BIOS level or if it needs a shortcut.
 
@@ -122,7 +122,7 @@ $ asus-kbd-backlight show
 
 ```
 
-You can then set the XF86KbdBrightnessDown and XF86KbdBrightnessUp keys to the above functions. See [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
+You can then [bind](/index.php/Xorg_keybinding "Xorg keybinding") the `XF86KbdBrightnessDown` and `XF86KbdBrightnessUp` keys to the above functions.
 
 #### Ambient Light Sensor (ALS)
 
