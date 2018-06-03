@@ -355,6 +355,10 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[https://wiki.gnome.org/Apps/Dia](https://wiki.gnome.org/Apps/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
 
+*   **draw.io desktop** — Diagram drawing application built on web technology. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://about.draw.io/](https://about.draw.io/) || [drawio-desktop](https://aur.archlinux.org/packages/drawio-desktop/)
+
 *   **Gravit Designer** — Proprietary vector design application. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://designer.io/](https://designer.io/) || [gravit-designer-bin](https://aur.archlinux.org/packages/gravit-designer-bin/)
@@ -824,6 +828,14 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 *   **museeks** — Minimalistic and easy to use music player. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://museeks.io/](https://museeks.io/) || [museeks-bin](https://aur.archlinux.org/packages/museeks-bin/)
+
+*   **Noson** — Fast and smart controller for SONOS devices.
+
+	[https://janbar.github.io/noson-app/](https://janbar.github.io/noson-app/) || [noson-app](https://aur.archlinux.org/packages/noson-app/)
+
+*   **Nuclear** — Modern music player focused on streaming from free sources. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://nuclear.gumblert.tech/](https://nuclear.gumblert.tech/) || [nuclear-player](https://aur.archlinux.org/packages/nuclear-player/)
 
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 

@@ -121,7 +121,7 @@ alwaysshared
 
 ### Starting and stopping vncserver via systemd
 
-Systemd can manage the vncserver via a service in one of two modes using either a user or system service. Both are presented below.
+*Systemd* can manage the vncserver via a service in one of two modes using either a user or system service. Both are presented below.
 
 #### User mode
 
@@ -173,11 +173,12 @@ WantedBy=multi-user.target
 
 #### Multi-user mode
 
-One can use systemd socket activation in combination with [XDMCP](/index.php/XDMCP "XDMCP") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. This setup uses the display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that users cannot leave a session running on the server and reconnect to it later. To get this running, first set up [XDMCP](/index.php/XDMCP "XDMCP") and make sure the display manager is running. Then create:
+One can use *systemd* socket activation in combination with [XDMCP](/index.php/XDMCP "XDMCP") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. This setup uses the display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that users cannot leave a session running on the server and reconnect to it later.
+
+To get this running, first set up [XDMCP](/index.php/XDMCP "XDMCP") and make sure the display manager is running. Then create:
 
  `/etc/systemd/system/xvnc.socket` 
 ```
-
 [Unit]
 Description=XVNC Server
 
@@ -187,11 +188,9 @@ Accept=yes
 
 [Install]
 WantedBy=sockets.target
-
 ```
  `/etc/systemd/system/xvnc@.service` 
 ```
-
 [Unit]
 Description=XVNC Per-Connection Daemon
 
@@ -200,19 +199,16 @@ ExecStart=-/usr/bin/Xvnc -inetd -query localhost -geometry 1920x1080 -once -Secu
 User=nobody
 StandardInput=socket
 StandardError=syslog
-
 ```
 
 Use systemctl to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `xvnc.socket`. Now any number of users can get unique desktops by connecting to port 5900.
 
-If the VNC server is exposed to the internet, add the `-localhost` option to `Xvnc` in `xvnc@.service` and follow the instructions below about connecting over SSH (Note that the 'localhost' in `-query localhost` is not `-localhost`). Since we only select a user after connecting, the VNC server runs as user 'nobody' and uses xvnc directly instead of the 'vncserver' script, so any options in ~/.vnc are ignored. Optionally [autostart](/index.php/Autostart "Autostart") `vncconfig` so that the clipboard works (`vncconfig` exits immediately in non-VNC sessions). One way is to create:
+If the VNC server is exposed to the internet, add the `-localhost` option to `Xvnc` in `xvnc@.service` (note that `-query localhost` and `-localhost` are different switches) and follow [#Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels). Since we only select a user after connecting, the VNC server runs as user *nobody* and uses `Xvnc` directly instead of the `vncserver` script, so any options in `~/.vnc` are ignored. Optionally, [autostart](/index.php/Autostart "Autostart") *vncconfig* so that the clipboard works (*vncconfig* exits immediately in non-VNC sessions). One way is to create:
 
  `/etc/X11/xinit/xinitrc.d/99-vncconfig.sh` 
 ```
-
 #!/bin/sh
 vncconfig -nowin &
-
 ```
 
 ## Running vncserver to directly control the local display
@@ -235,7 +231,7 @@ man x0vncserver
 
 #### Starting and stopping x0vncserver via systemd
 
-**Warning:** Do not run this service if your local area network is untrusted!
+**Warning:** Do not run this service if your local area network is untrusted.
 
 In order to have a VNC Server runnning x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit.
 
@@ -266,7 +262,7 @@ Another option is to use [x11vnc](https://www.archlinux.org/packages/?name=x11vn
 
 ## Connecting to vncserver
 
-**Warning:** It is ill-advised to connect insecurely to a vncserver outside of the LAN; readers are encouraged read the rest of this article in its entirety if use cases require connections outside of one's LAN. That being said, TigerVNC *is encrypted by default* unless it is specifically instructed otherwise by setting SecurityTypes to a non-secure option, although this lacks identity verification and will not prevent MITM attack during the connection setup. X509Vnc is the recommended option for a secure connection.
+**Warning:** It is ill-advised to connect insecurely to a vncserver outside of a trusted LAN. Note that TigerVNC is encrypted by default unless it is specifically instructed otherwise by setting `SecurityTypes` to a non-secure option, although this lacks identity verification and will not prevent man-in-the-middle attack during the connection setup. *X509Vnc* is the recommended option for a secure connection.
 
 Any number of clients can connect to a vncserver. A simple example is given below where vncserver is running on 10.1.10.2 on port 5901 (:1) in shorthand notation:
 
@@ -280,7 +276,7 @@ $ vncviewer 10.1.10.2:1
 The `-passwd` switch allows one to define the location of the server's `~/.vnc/passwd` file. It is expected that the user has access to this file on the server through [SSH](/index.php/SSH "SSH") or through physical access. In either case, place that file on the client's file system in a safe location, i.e. one that has read access ONLY to the expected user.
 
 ```
-$ vncviewer -passwd /path/to/server-passwd-file
+$ vncviewer -passwd */path/to/server-passwd-file*
 
 ```
 
@@ -291,6 +287,7 @@ $ vncviewer -passwd /path/to/server-passwd-file
 *   [rdesktop](https://www.archlinux.org/packages/?name=rdesktop)
 *   [vinagre](https://www.archlinux.org/packages/?name=vinagre)
 *   [remmina](https://www.archlinux.org/packages/?name=remmina)
+*   [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
 *   [vncviewer-jar](https://aur.archlinux.org/packages/vncviewer-jar/)
 
 TigerVNC's vncviewer also has a simple GUI when run without any parameters:
@@ -302,26 +299,23 @@ $ vncviewer
 
 ## Accessing vncserver via SSH tunnels
 
-An advantage of SSH tunneling is one does not need to open up another port to the outside, since the traffic is literally tunneled through the SSH port which the user already has open to the WAN. It is highly recommended to use the `-localhost` switch when running vncserver with this method since this switch only allows connections *from the localhost* and by analogy, only by users physically ssh'ed and authenticated on the box.
+For servers offering SSH connection, an advantage of this method is that it is not necessary to open any other port than the already opened SSH port to the outside, since the *vnc* traffic is tunneled through the SSH port. It is highly recommended to use the `-localhost` switch when running *vncserver* this way since it allows connections from the localhost only and by analogy, only from users ssh'ed and authenticated on the box.
 
-**Note:** TigerVNC uses TLSVnc encryption by default, unless specifically instructed via the SecurityTypes parameter. Authentication and traffic is encrypted, but there is no identity verification. TigerVNC supports alternative encryption schemes such as X509Vnc that allows the client to verify the identity of the server. When the SecurityTypes on the server side is set to a non-secure option as high-priority (such as None, VncAuth, Plain, TLSNone, TLSPlain, X509None, X509Plain; which is ill-advised), it is not possible to use encryption. In that case, one can tunnel the VNC over SSH. When running vncviewer, it is a good idea to explicitly set SecurityTypes and not accept any unencrypted traffic.
+**Note:** TigerVNC uses *TLSVnc* encryption by default, unless specifically instructed via the `SecurityTypes` parameter. Authentication and traffic is encrypted, but there is no identity verification. TigerVNC supports alternative encryption schemes such as *X509Vnc* that allows the client to verify the identity of the server. When `SecurityTypes` on the server side is set to a non-secure option as high-priority (such as *None*, *VncAuth*, *Plain*, *TLSNone*, *TLSPlain*, *X509None*, *X509Plain*; which is ill-advised), it is not possible to use encryption. In that case, one can tunnel over SSH. When running *vncviewer*, it is safer to explicitly set `SecurityTypes` and not accept any unencrypted traffic.
 
 ### On the server
 
-Below is an example invoking vncserver with the -localhost flag:
+Below is an example invoking vncserver with the `-localhost` flag:
 
 ```
 $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
 
 ```
 
-Alternatively, simply add the "localhost" option as a single line in `~/.vnc/config`. Below is the example above in this format:
+Alternatively, simply add `localhost` as a single line in `~/.vnc/config`. Below is the example above in this format:
 
  `~/.vnc/config` 
 ```
-## Supported server options to pass to vncserver upon invocation can be listed
-## in this file. See the following manpages for more: vncserver(1) Xvnc(1).
-## Several common ones are shown below. Uncomment and modify to your liking.
 geometry=1200x700
 alwaysshared
 dpi=96

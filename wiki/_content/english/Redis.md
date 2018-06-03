@@ -5,6 +5,7 @@ From [Wikipedia:Redis](https://en.wikipedia.org/wiki/Redis "wikipedia:Redis"):
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Client-side software](#Client-side_software)
 *   [2 Configuration](#Configuration)
     *   [2.1 Listen on socket](#Listen_on_socket)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -17,6 +18,11 @@ From [Wikipedia:Redis](https://en.wikipedia.org/wiki/Redis "wikipedia:Redis"):
 [Install](/index.php/Install "Install") the [redis](https://www.archlinux.org/packages/?name=redis) package.
 
 [Start/enable](/index.php/Start/enable "Start/enable") `redis.service`.
+
+### Client-side software
+
+*   Python: [python-redis](https://www.archlinux.org/packages/?name=python-redis) and [python2-redis](https://www.archlinux.org/packages/?name=python2-redis)
+*   PHP: [php-redis](https://aur.archlinux.org/packages/php-redis/)
 
 ## Configuration
 
@@ -60,7 +66,7 @@ unixsocketperm 770
 
 *   Add users (e.g. *git*, *http*) to the *redis* [group](/index.php/Group "Group") so they can access and use the socket.
 
-Finally restart the `redis.service`.
+Finally [restart](/index.php/Restart "Restart") the `redis.service`.
 
 ## Troubleshooting
 

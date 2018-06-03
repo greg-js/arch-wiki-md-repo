@@ -139,7 +139,7 @@ To browse without leaving obvious traces of the Web sites you visit, you can use
 *   History
 *   Logins
 
-This is similar to the [--incognito option](http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=95464) in Chrome/[Chromium](/index.php/Chromium "Chromium") and [PrivateBrowsing](https://wiki.mozilla.org/PrivateBrowsing) in [Firefox](/index.php/Firefox "Firefox").
+This is similar to the [--incognito option](http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=95464) in Chrome/[Chromium](/index.php/Chromium "Chromium") and [Private Browsing](https://wiki.mozilla.org/Private_Browsing "mozillawiki:Private Browsing") in [Firefox](/index.php/Firefox "Firefox").
 
 To open a private tab from the command-line use:
 

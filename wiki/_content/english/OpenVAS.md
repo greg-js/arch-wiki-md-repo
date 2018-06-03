@@ -12,13 +12,25 @@
 
 ## Pre-install
 
-Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed by the [OpenVAS redis configuration](https://svn.wald.intevation.org/svn/openvas/tags/openvas-scanner-release-5.0.3/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
+Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed by the [OpenVAS redis configuration](https://github.com/greenbone/openvas-scanner/blob/v5.0.9/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
 
 ```
 unixsocket /var/lib/redis/redis.sock
 unixsocketperm 700
 port 0
 timeout 0
+databases 128
+
+```
+
+*Note*: See the previous `OpenVAS redis configuration` document on how to calculate the `databases` number.
+
+Additionally comment out the following (and similar) `save` lines if present to avoid a stuck connection of the `openvas-scanner` to `redis`:
+
+```
+save 900 1
+save 300 10
+save 60 10000
 
 ```
 

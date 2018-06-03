@@ -49,7 +49,7 @@ Version: ThinkPad X1 Carbon 6th
 | Fingerprint Reader | No** |  ? |
 | [Power management](/index.php/Power_management "Power management") | Yes |  ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
-| microSD card reader | Untested |  ? |
+| microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes |  ? |
 | Function/Multimedia Keys | Yes |  ? |
 
@@ -177,6 +177,13 @@ or by editing `/etc/modprobe.d/psmouse.conf`:
 ```
 
 **Note:** When using [TLP](/index.php/TLP "TLP") with default powersaving settings, there might be occasional hiccups such as dropouts of tap-to-click functionality for the Touchpad, as well as the TrackPoint not surviving suspends and needing to be re-initialized
+
+Reconnecting dead trackpad
+
+```
+echo -n "none" | sudo tee /sys/bus/serio/devices/serio1/drvctl
+echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
+```
 
 ## References
 

@@ -72,7 +72,7 @@ Other alternatives include:
 
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
-Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases).
+Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases "mozillawiki:Releases").
 
 There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox) and [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
 
@@ -391,7 +391,7 @@ This can also help if you are using the PulseAudio [module-echo-cancel](/index.p
 
 *   [Official website](https://www.mozilla.org/firefox/)
 *   [Mozilla Foundation](https://www.mozilla.org/)
-*   [Firefox wiki](https://wiki.mozilla.org/Firefox)
+*   [MozillaWiki:Firefox](https://wiki.mozilla.org/Firefox "mozillawiki:Firefox")
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/firefox/themes/)
 *   [Wikipedia:Mozilla Firefox](https://en.wikipedia.org/wiki/Mozilla_Firefox "wikipedia:Mozilla Firefox")

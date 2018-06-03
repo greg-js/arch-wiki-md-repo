@@ -22,7 +22,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) and [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) packages.
+[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
 
 ## Usage
 

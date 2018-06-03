@@ -31,7 +31,7 @@
 *   [4 清理文件系统](#.E6.B8.85.E7.90.86.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
     *   [4.1 软件包缓存](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BC.93.E5.AD.98)
     *   [4.2 不需要的软件包](#.E4.B8.8D.E9.9C.80.E8.A6.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [4.3 旧配置文件s](#.E6.97.A7.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6s)
+    *   [4.3 旧配置文件](#.E6.97.A7.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
     *   [4.4 破损的软链接](#.E7.A0.B4.E6.8D.9F.E7.9A.84.E8.BD.AF.E9.93.BE.E6.8E.A5)
 *   [5 技巧](#.E6.8A.80.E5.B7.A7)
     *   [5.1 使用经过验证的软件包](#.E4.BD.BF.E7.94.A8.E7.BB.8F.E8.BF.87.E9.AA.8C.E8.AF.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
@@ -187,7 +187,7 @@ pacman 可能会创建 `.pacnew` 和 `.pacsave` 文件，这是 pacman 会通知
 
 从系统里面删除不需要的软件包可以减少空间占用和维护难度。详情参考 [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks").
 
-### 旧配置文件s
+### 旧配置文件
 
 旧的配置文件可能和新软件版本不兼容，所以请定期清理和更新配置文件，尤其是主目录和 `~/.config`. 在重新安装或共享 /home 时，注意下面文件夹：
 

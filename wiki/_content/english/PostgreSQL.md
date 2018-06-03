@@ -341,6 +341,10 @@ template1 | postgres | UTF8      | C         | C     |
 
 	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
 
+*   **pgModeler** — Graphical schema designer for PostgreSQL.
+
+	[https://pgmodeler.io/](https://pgmodeler.io/) || [pgmodeler](https://aur.archlinux.org/packages/pgmodeler/)
+
 ## Upgrading PostgreSQL
 
 Upgrading major PostgreSQL versions requires some extra maintenance.

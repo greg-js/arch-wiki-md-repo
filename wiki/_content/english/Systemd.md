@@ -71,7 +71,7 @@ The main command used to introspect and control *systemd* is *systemctl*. Some o
 **Tip:**
 
 *   You can use all of the following *systemctl* commands with the `-H *user*@*host*` switch to control a *systemd* instance on a remote machine. This will use [SSH](/index.php/SSH "SSH") to connect to the remote *systemd* instance.
-*   [Plasma](/index.php/Plasma "Plasma") users can install [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm) as a graphical frontend for *systemctl*. After installing the module will be added under *System administration*.
+*   [Plasma](/index.php/Plasma "Plasma") users can install [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/) as a graphical frontend for *systemctl*. After installing the module will be added under *System administration*.
 
 ### Analyzing the system state
 

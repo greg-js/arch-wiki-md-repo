@@ -24,6 +24,7 @@
             *   [3.4.1.1 Create systemd file](#Create_systemd_file)
             *   [3.4.1.2 Add dnscrypt-sockets](#Add_dnscrypt-sockets)
             *   [3.4.1.3 Apply new systemd configuration](#Apply_new_systemd_configuration)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -323,3 +324,7 @@ Since we are replacing the default service with a different name, we need to exp
 Now [start/enable](/index.php/Start/enable "Start/enable") the new service(s), e.g., `dnscrypt-proxy@dnscrypt.eu-nl`, etc.
 
 Finally [restart](/index.php/Restart "Restart") `unbound.service`.
+
+## See also
+
+*   [Wikipedia:DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS")

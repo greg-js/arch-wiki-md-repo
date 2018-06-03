@@ -57,7 +57,7 @@ Remount the partition to apply the change:
 To create the quota index for `/home`:
 
 ```
- # quotacheck -vucm /home
+ # quotacheck -cum /home
 
 ```
 

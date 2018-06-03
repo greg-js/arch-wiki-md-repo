@@ -4,7 +4,7 @@ Related articles
 
 Unreal Engine 4 is the latest version of the videogame Engine Created By Epic Games
 
-The content of this article was originally written on [this page](https://wiki.unrealengine.com/Building_On_Linux) and adapted specifically for Arch Linux.
+The content of this article was originally written on [Unreal Engine wiki](https://wiki.unrealengine.com/Building_On_Linux#Setting_up_on_Arch_Linux) and adapted specifically for Arch Linux.
 
 ## Contents
 
@@ -43,9 +43,9 @@ To gain access, login or register at [Epic Games Accounts](https://accounts.epic
 
 ### Clang compatibility
 
-Unreal Engine doesn't support the latest versions of Clang. Clang 4.0.1 is the last supported version. Clang 3.8.1 is confirmed to compile Unreal 4.18.3 successfully. **Do not** use Clang 3.4, as it has issues.
+Unreal Engine might not support the latest versions of Clang. Clang 3.8.1 is confirmed to compile Unreal 4.18.3 successfully. Clang 3.5.2 is confirmed to compile Unreal 4.19.2 successfully. **Do not** use Clang 3.4, as it has issues.
 
-You can use [downgrade](https://aur.archlinux.org/packages/downgrade/) to revert to a previous version of Clang and LLVM.
+Install [clang35](https://aur.archlinux.org/packages/clang35/), [clang38](https://aur.archlinux.org/packages/clang38/) or [downgrade](https://aur.archlinux.org/packages/downgrade/) to use an old version of Clang and LLVM.
 
 ## Compilation
 

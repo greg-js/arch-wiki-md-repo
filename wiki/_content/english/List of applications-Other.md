@@ -12,12 +12,13 @@
         *   [1.1.2 Time management](#Time_management)
             *   [1.1.2.1 Console](#Console)
             *   [1.1.2.2 Graphical](#Graphical)
-        *   [1.1.3 Task management](#Task_management)
-            *   [1.1.3.1 Console](#Console_2)
-            *   [1.1.3.2 Graphical](#Graphical_2)
-        *   [1.1.4 Contacts management](#Contacts_management)
-        *   [1.1.5 Financial management](#Financial_management)
-        *   [1.1.6 Project management](#Project_management)
+        *   [1.1.3 Time trackers](#Time_trackers)
+        *   [1.1.4 Task management](#Task_management)
+            *   [1.1.4.1 Console](#Console_2)
+            *   [1.1.4.2 Graphical](#Graphical_2)
+        *   [1.1.5 Contacts management](#Contacts_management)
+        *   [1.1.6 Financial management](#Financial_management)
+        *   [1.1.7 Project management](#Project_management)
     *   [1.2 Education](#Education)
         *   [1.2.1 Flashcards](#Flashcards)
         *   [1.2.2 Education management engines](#Education_management_engines)
@@ -113,21 +114,13 @@ There applications support both time, task and contacts management.
 
 	[http://duke.edu/~dgraham/ETMtk/](http://duke.edu/~dgraham/ETMtk/) || [etmtk](https://aur.archlinux.org/packages/etmtk/)
 
-*   **GNOME Break Timer** — Keeps track of how much you are using the computer, and it reminds you to take regular breaks.
-
-	[https://wiki.gnome.org/Apps/GnomeBreakTimer](https://wiki.gnome.org/Apps/GnomeBreakTimer) || [gnome-break-timer](https://www.archlinux.org/packages/?name=gnome-break-timer)
-
 *   **GNOME Calendar** — Calendar application for GNOME.
 
 	[https://wiki.gnome.org/Apps/Calendar](https://wiki.gnome.org/Apps/Calendar) || [gnome-calendar](https://www.archlinux.org/packages/?name=gnome-calendar)
 
-*   **GNOME Clocks** — Clocks application for GNOME, including alarm, stopwatch and timer functionality.
+*   **[KAlarm](https://en.wikipedia.org/wiki/KAlarm "wikipedia:KAlarm")** — Personal alarm message, command and email scheduler, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-	[https://wiki.gnome.org/Apps/Clocks](https://wiki.gnome.org/Apps/Clocks) || [gnome-clocks](https://www.archlinux.org/packages/?name=gnome-clocks)
-
-*   **Hamster** — Time tracking application that helps you to keep track on how much time you have spent during the day on activities you choose to track.
-
-	[http://projecthamster.org/](http://projecthamster.org/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[https://www.kde.org/applications/utilities/kalarm/](https://www.kde.org/applications/utilities/kalarm/) || [kalarm](https://www.archlinux.org/packages/?name=kalarm)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -141,17 +134,63 @@ There applications support both time, task and contacts management.
 
 	[https://kynikos.github.io/outspline/](https://kynikos.github.io/outspline/) || [outspline](https://aur.archlinux.org/packages/outspline/)
 
-*   **QTodoTxt** — A cross-platform UI client for `todo.txt` files (see [project's page](http://todotxt.com/))
+*   **TkRemind** — Sophisticated calendar and alarm program.
 
-	[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/) [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)
+	[http://www.roaringpenguin.com/products/remind](http://www.roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
+
+#### Time trackers
+
+*   **flow** — Pomodoro app that blocks distractions while you work.
+
+	[https://github.com/iamsergio/flow-pomodoro](https://github.com/iamsergio/flow-pomodoro) || [flow-pomodoro](https://aur.archlinux.org/packages/flow-pomodoro/)
+
+*   **Gnomato** — Timer for the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique "wikipedia:Pomodoro Technique").
+
+	[https://github.com/diegorubin/gnomato](https://github.com/diegorubin/gnomato) || [gnomato](https://aur.archlinux.org/packages/gnomato/)
+
+*   **GNOME Break Timer** — Keeps track of how much you are using the computer, and it reminds you to take regular breaks.
+
+	[https://wiki.gnome.org/Apps/GnomeBreakTimer](https://wiki.gnome.org/Apps/GnomeBreakTimer) || [gnome-break-timer](https://www.archlinux.org/packages/?name=gnome-break-timer)
+
+*   **GNOME Clocks** — Clocks application for GNOME, including alarm, stopwatch and timer functionality.
+
+	[https://wiki.gnome.org/Apps/Clocks](https://wiki.gnome.org/Apps/Clocks) || [gnome-clocks](https://www.archlinux.org/packages/?name=gnome-clocks)
+
+*   **GNOME Pomodoro** — Time management utility for GNOME based on the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique "wikipedia:Pomodoro Technique").
+
+	[http://gnomepomodoro.org/](http://gnomepomodoro.org/) || [gnome-shell-pomodoro](https://aur.archlinux.org/packages/gnome-shell-pomodoro/)
+
+*   **Hamster** — Time tracking application that helps you to keep track on how much time you have spent during the day on activities you choose to track.
+
+	[http://projecthamster.org/](http://projecthamster.org/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+
+*   **Kronometer** — Stopwatch application for KDE.
+
+	[https://userbase.kde.org/Kronometer](https://userbase.kde.org/Kronometer) || [kronometer](https://www.archlinux.org/packages/?name=kronometer)
+
+*   **Safe Eyes** — Tool to reduce and prevent repetitive strain injury (RSI).
+
+	[https://slgobinath.github.io/SafeEyes/](https://slgobinath.github.io/SafeEyes/) || [safeeyes](https://aur.archlinux.org/packages/safeeyes/)
+
+*   **RSIBreak** — Takes care of your health and regularly breaks your work to avoid repetitive strain injury (RSI).
+
+	[https://userbase.kde.org/RSIBreak](https://userbase.kde.org/RSIBreak) || [rsibreak](https://www.archlinux.org/packages/?name=rsibreak)
 
 *   **Tider** — Lightweight time tracking application (GTK+)
 
 	[http://pusto.org/en/tider/](http://pusto.org/en/tider/) || [tider-git](https://aur.archlinux.org/packages/tider-git/)
 
-*   **TkRemind** — Sophisticated calendar and alarm program.
+*   **Tomate** — Timer for the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique "wikipedia:Pomodoro Technique").
 
-	[http://www.roaringpenguin.com/products/remind](http://www.roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
+	[https://github.com/eliostvs/tomate-gtk](https://github.com/eliostvs/tomate-gtk) || [tomate-gtk](https://aur.archlinux.org/packages/tomate-gtk/)
+
+*   **Tomato** — Simple, usable and efficient pomodoro app designed for elementaryOS.
+
+	[https://github.com/luizaugustomm/tomato](https://github.com/luizaugustomm/tomato) || [tomatoapp-bzr](https://aur.archlinux.org/packages/tomatoapp-bzr/)
+
+*   **Tomighty** — Desktop timer for the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique "wikipedia:Pomodoro Technique").
+
+	[http://tomighty.org/](http://tomighty.org/) || [tomighty](https://aur.archlinux.org/packages/tomighty/)
 
 *   **[Workrave](https://en.wikipedia.org/wiki/Workrave "wikipedia:Workrave")** — A tool to help RSI.
 
@@ -183,15 +222,35 @@ There applications support both time, task and contacts management.
 
 ##### Graphical
 
+*   **Effitask** — Graphical task manager, based on the [todo.txt](http://todotxt.com/) format.
+
+	[https://github.com/sanpii/effitask](https://github.com/sanpii/effitask) || [effitask](https://aur.archlinux.org/packages/effitask/)
+
+*   **Getting Things GNOME!** — Personal tasks and TODO list items organizer for GNOME inspired by the [Getting Things Done (GTD)](https://en.wikipedia.org/wiki/Getting_Things_Done "wikipedia:Getting Things Done") methodology.
+
+	[https://github.com/getting-things-gnome/gtg](https://github.com/getting-things-gnome/gtg) || [gtg-git](https://aur.archlinux.org/packages/gtg-git/)
+
 *   **GNOME Todo** — Personal task manager for GNOME.
 
 	[https://wiki.gnome.org/Apps/Todo](https://wiki.gnome.org/Apps/Todo) || [gnome-todo](https://www.archlinux.org/packages/?name=gnome-todo)
 
-*   **Task Coach** — Simple open source To-do manager to manage personal tasks and To-do lists.
+*   **ptask** — GTK+ task manager based on [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior").
 
-	[http://taskcoach.org](http://taskcoach.org) || [taskcoach](https://aur.archlinux.org/packages/taskcoach/)
+	[https://wpitchoune.net/ptask/](https://wpitchoune.net/ptask/) || [ptask](https://aur.archlinux.org/packages/ptask/)
 
-*   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Easy quick task management app written in C Sharp.
+*   **QTodoTxt** — UI client for [todo.txt](http://todotxt.com/) files.
+
+	[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)
+
+*   **Task Coach** — Simple todo manager to manage personal tasks and todo lists.
+
+	[http://www.taskcoach.org/](http://www.taskcoach.org/) || [taskcoach](https://aur.archlinux.org/packages/taskcoach/)
+
+*   **TaskUnifier** — Task management application which enables you to create and organize your tasks.
+
+	[http://taskunifier.sourceforge.net/](http://taskunifier.sourceforge.net/) || [taskunifier](https://aur.archlinux.org/packages/taskunifier/)
+
+*   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Easy quick task management app written in C#.
 
 	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
 
@@ -648,10 +707,6 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 *   **variety** — Changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
 
 	[http://peterlevi.com/variety/](http://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)
-
-*   **wallpaperd** — A small application that takes care of setting the background image.
-
-	[https://projects.pekdon.net/projects/wallpaperd](https://projects.pekdon.net/projects/wallpaperd) || [wallpaperd](https://aur.archlinux.org/packages/wallpaperd/)
 
 *   **xli** — An image display program for X.
 

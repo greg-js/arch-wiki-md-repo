@@ -139,12 +139,4 @@ Also see [#Tools building on ADB](#Tools_building_on_ADB).
 
 *   If you are getting an empty list (your device is not there), it may be because you have not enabled USB debugging on your device. You can do that by going to *Settings > Applications > Development* and enabling USB debugging. On Android 4.2 (Jelly Bean) the Development menu is hidden; to enable it go to *Settings > About phone* and tap Build number 7 times.
 
-*   If there are still problems such as *adb* displaying `???????? no permissions` under devices, try restarting the adb server as root.
-
-```
-# adb kill-server
-# adb start-server
-
-```
-
 *   On Moto E, the device could have a different vendor/product ID in the sideload and fastboot modes; if you get the "no permission" error, verify the device's ID with `lsusb`.

@@ -4,6 +4,7 @@ Related articles
 *   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 *   [eCryptfs](/index.php/ECryptfs "ECryptfs")
 *   [EncFS](/index.php/EncFS "EncFS")
+*   [gocryptfs](/index.php/Gocryptfs "Gocryptfs")
 *   [Tomb](/index.php/Tomb "Tomb")
 *   [tcplay](/index.php/Tcplay "Tcplay")
 *   [GnuPG](/index.php/GnuPG "GnuPG")
@@ -21,6 +22,7 @@ If you already know *what* you want to protect and *how* you want to encrypt, yo
 *   [2 Data encryption vs system encryption](#Data_encryption_vs_system_encryption)
 *   [3 Available methods](#Available_methods)
     *   [3.1 Stacked filesystem encryption](#Stacked_filesystem_encryption)
+        *   [3.1.1 Cloud-storage optimized](#Cloud-storage_optimized)
     *   [3.2 Block device encryption](#Block_device_encryption)
     *   [3.3 Comparison table](#Comparison_table)
         *   [3.3.1 Summary](#Summary)
@@ -122,6 +124,16 @@ Stacked filesystem encryption solutions are implemented as a layer that stacks o
 The way it is implemented, is that to unlock the folder storing the raw encrypted files in the host filesystem ("lower directory"), it is mounted (using a special stacked pseudo-filesystem) onto itself or optionally a different location ("upper directory"), where the same files then appear in readable form - until it is unmounted again, or the system is turned off.
 
 Available solutions in this category are [eCryptfs](/index.php/ECryptfs "ECryptfs") and [EncFS](/index.php/EncFS "EncFS").
+
+#### Cloud-storage optimized
+
+If you are deploying stacked filesystem encryption to achieve zero-knowledge synchronization with third-party-controlled locations such as cloud-storage services, you may want to consider alternatives to eCryptfs and EncFS, since these are not optimized for transmission of files over the Internet. There are some solutions designed for this purpose instead:
+
+*   [gocryptfs](/index.php/Gocryptfs "Gocryptfs")
+*   [cryptomator](https://aur.archlinux.org/packages/cryptomator/) (multi-platform)
+*   [cryfs](https://www.archlinux.org/packages/?name=cryfs)
+
+Note that some cloud-storage services offer zero-knowledge encryption directly through their own [client applications](/index.php/List_of_applications/Internet#Cloud_synchronization_clients "List of applications/Internet").
 
 ### Block device encryption
 

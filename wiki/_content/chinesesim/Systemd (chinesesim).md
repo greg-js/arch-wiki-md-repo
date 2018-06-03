@@ -73,7 +73,7 @@
 **提示：**
 
 *   在 `systemctl` 参数中添加 `-H <用户名>@<主机名>` 可以实现对其他机器的远程控制。该功能使用 [SSH](/index.php/SSH_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH (简体中文)") 连接。
-*   [Plasma](/index.php/Plasma "Plasma") 用户可以安装 *systemctl* 图形前端 [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)。安装后可以在 *System administration* 下找到。
+*   [Plasma](/index.php/Plasma "Plasma") 用户可以安装 *systemctl* 图形前端 [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/)。安装后可以在 *System administration* 下找到。
 
 ### 分析系统状态
 

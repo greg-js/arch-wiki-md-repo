@@ -113,4 +113,3 @@ As you have probably noticed, the UX301 family of laptops will reach 80° Celsiu
 *   [Ubuntu UX302 Page](https://help.ubuntu.com/community/AsusZenbookUX302)
 *   [Ubuntu Forums UX302 thread](http://ubuntuforums.org/showthread.php?t=2205704&page=3)
 *   [InsanelyMac(OSX86) thread with hardware info, etc.](http://www.insanelymac.com/forum/topic/295153-asus-ux301la-haswell-dev-guide-1091-newer/)
-*   [Installing Arch on ASUS UX301LA](https://github.com/chrisberkhout/kiste)

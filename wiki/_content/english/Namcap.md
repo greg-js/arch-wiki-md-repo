@@ -115,7 +115,7 @@ These are the tags related to the PKGBUILDs. Some of these might also apply for 
 *   **specific-host-type-used** (*warning*) Instead of using a specific host type (like i686 or x86_64) use the generic $CARCH variable.
 *   **extra-var-begins-without-underscore** (*warning*) The variable is not one of the standard variables defined in the PKGBUILD manual, yet it does not begin with an underscore.
 *   **file-referred-in-startdir** (*error*) A file was referenced in *$startdir* outside of *$startdir/pkg* and *$startdir/src*.
-*   **missing-md5sums** (*error*) MD5sums corresponding to the source files are missing. These can be added to the PKGBUILD using `updpkgsums`.
+*   **missing-md5sums** (*error*) MD5sums corresponding to the source files are missing. These can be added to the PKGBUILD using `updpkgsums` (from [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)).
 *   **not-enough-md5sums** (*error*) There are more source files than MD5sums provided in the PKGBUILD.
 *   **too-many-md5sums** (*error*) There are more MD5sums than source files in the PKGBUILD.
 *   **improper-md5sum** (*error*) An improper MD5sum was found. MD5sums are of 32 characters in length.

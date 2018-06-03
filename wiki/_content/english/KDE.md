@@ -396,7 +396,7 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 *   **Kcmsystemd** — systemd control module for KDE.
 
-	[https://github.com/rthomsen/kcmsystemd](https://github.com/rthomsen/kcmsystemd) || [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)
+	[https://github.com/rthomsen/kcmsystemd](https://github.com/rthomsen/kcmsystemd) || [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/)
 
 More KCMs can be found at [linux-apps.com](https://www.linux-apps.com/search?projectSearchText=KCM).
 

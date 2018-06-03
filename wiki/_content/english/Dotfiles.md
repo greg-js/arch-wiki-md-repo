@@ -151,6 +151,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
 | [polyzen](https://github.com/polyzen/dotfiles) | zsh | i3 | vim | termite | tmux | i3status | weechat |
+| [reisub0](https://github.com/reisub0/dot) | bash | awesome | neovim | termite | mpd | conky |
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3 Gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [swalladge](https://github.com/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | cmus | i3pystatus | mutt |
 | [thiagowfx](https://github.com/thiagowfx/dotfiles) | bash/zsh | i3 | vim/emacs | rxvt-unicode | ncmpcpp | i3blocks |
@@ -164,7 +165,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 
 ## See also
 
-*   [gregswiki:DotFiles](http://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles")
+*   [gregswiki:DotFiles](https://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles")
 *   [XMonad Config Archive](http://wiki.haskell.org/Xmonad/Config_archive)
 *   [dotshare.it](http://dotshare.it)
 *   [dotfiles.github.io](https://dotfiles.github.io/)

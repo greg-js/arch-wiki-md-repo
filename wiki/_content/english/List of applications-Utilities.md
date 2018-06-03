@@ -486,7 +486,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Last File Manager** — Powerful file manager written in Python 3 with a curses interface.
 
-	[https://inigo.katxi.org/devel/lfm/](https://inigo.katxi.org/devel/lfm/) || [lfm](https://aur.archlinux.org/packages/lfm/)
+	[https://inigo.katxi.org/devel/lfm/](https://inigo.katxi.org/devel/lfm/) || [lfm3-hg](https://aur.archlinux.org/packages/lfm3-hg/)
 
 *   **lf** — Terminal file manager written in Go using server/client architecture.
 

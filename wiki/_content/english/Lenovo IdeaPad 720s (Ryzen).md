@@ -13,7 +13,8 @@ The [Lenovo IdeaPad 720s (Ryzen)](https://www3.lenovo.com/us/en/laptops/ideapad/
     *   [3.6 Wireless](#Wireless)
     *   [3.7 Touchpad](#Touchpad)
     *   [3.8 Hardware keys](#Hardware_keys)
-    *   [3.9 ACPI annoyances](#ACPI_annoyances)
+    *   [3.9 Finger Print Reader](#Finger_Print_Reader)
+    *   [3.10 ACPI annoyances](#ACPI_annoyances)
 
 ## PCI Devices
 
@@ -94,6 +95,12 @@ The rtl8821ce wireless driver was required in order for wireless to work properl
 Works out of the box with mutli-finger scrolling on linux 4.15-1 in X.
 
 ### Hardware keys
+
+<untested>
+
+### Finger Print Reader
+
+Model: <Unknown>
 
 <untested>
 

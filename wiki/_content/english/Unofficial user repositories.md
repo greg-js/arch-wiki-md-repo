@@ -23,40 +23,39 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.6 archzfs](#archzfs)
     *   [2.7 ashleyis](#ashleyis)
     *   [2.8 aur-archlinux](#aur-archlinux)
-    *   [2.9 aurpackages](#aurpackages)
-    *   [2.10 blackeagle-pre-community](#blackeagle-pre-community)
-    *   [2.11 boyska64](#boyska64)
-    *   [2.12 catalyst](#catalyst)
-    *   [2.13 catalyst-hd234k](#catalyst-hd234k)
-    *   [2.14 city](#city)
-    *   [2.15 coderkun-aur](#coderkun-aur)
-    *   [2.16 coderkun-aur-audio](#coderkun-aur-audio)
-    *   [2.17 eatabrick](#eatabrick)
-    *   [2.18 eschwartz](#eschwartz)
-    *   [2.19 herecura](#herecura)
-    *   [2.20 holo](#holo)
-    *   [2.21 icinga2](#icinga2)
-    *   [2.22 ivasilev](#ivasilev)
-    *   [2.23 jlk](#jlk)
-    *   [2.24 linux-macbook](#linux-macbook)
-    *   [2.25 llvm-svn](#llvm-svn)
-    *   [2.26 markzz](#markzz)
-    *   [2.27 miffe](#miffe)
-    *   [2.28 mikelpint](#mikelpint)
-    *   [2.29 mobile](#mobile)
-    *   [2.30 nah](#nah)
-    *   [2.31 pkgbuilder](#pkgbuilder)
-    *   [2.32 qt-debug](#qt-debug)
-    *   [2.33 quarry](#quarry)
-    *   [2.34 repo-ck](#repo-ck)
-    *   [2.35 seblu](#seblu)
-    *   [2.36 seiichiro](#seiichiro)
-    *   [2.37 sergej-repo](#sergej-repo)
-    *   [2.38 siosm-aur](#siosm-aur)
-    *   [2.39 subtitlecomposer](#subtitlecomposer)
-    *   [2.40 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.42 xyne-x86_64](#xyne-x86_64)
+    *   [2.9 blackeagle-pre-community](#blackeagle-pre-community)
+    *   [2.10 boyska64](#boyska64)
+    *   [2.11 catalyst](#catalyst)
+    *   [2.12 catalyst-hd234k](#catalyst-hd234k)
+    *   [2.13 city](#city)
+    *   [2.14 coderkun-aur](#coderkun-aur)
+    *   [2.15 coderkun-aur-audio](#coderkun-aur-audio)
+    *   [2.16 eatabrick](#eatabrick)
+    *   [2.17 eschwartz](#eschwartz)
+    *   [2.18 herecura](#herecura)
+    *   [2.19 holo](#holo)
+    *   [2.20 icinga2](#icinga2)
+    *   [2.21 ivasilev](#ivasilev)
+    *   [2.22 jlk](#jlk)
+    *   [2.23 linux-macbook](#linux-macbook)
+    *   [2.24 llvm-svn](#llvm-svn)
+    *   [2.25 markzz](#markzz)
+    *   [2.26 miffe](#miffe)
+    *   [2.27 mikelpint](#mikelpint)
+    *   [2.28 mobile](#mobile)
+    *   [2.29 nah](#nah)
+    *   [2.30 pkgbuilder](#pkgbuilder)
+    *   [2.31 qt-debug](#qt-debug)
+    *   [2.32 quarry](#quarry)
+    *   [2.33 repo-ck](#repo-ck)
+    *   [2.34 seblu](#seblu)
+    *   [2.35 seiichiro](#seiichiro)
+    *   [2.36 sergej-repo](#sergej-repo)
+    *   [2.37 siosm-aur](#siosm-aur)
+    *   [2.38 subtitlecomposer](#subtitlecomposer)
+    *   [2.39 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.40 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.41 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -204,18 +203,6 @@ Server = http://arch.ashleytowns.id.au/repo/$arch
 ```
 [aur-archlinux]
 Server = https://repo.itmettke.de/aur/$repo/$arch
-
-```
-
-### aurpackages
-
-*   **Maintainer:** Mark Vainomaa <mikroskeem@mikroskeem.eu>
-*   **Description:** AUR packages I tend to use every day. Will be updated weekly
-*   **Key-ID:** 2A07EF8371AFC028
-
-```
-[aurpackages]
-Server = https://r.mikroskeem.eu
 
 ```
 

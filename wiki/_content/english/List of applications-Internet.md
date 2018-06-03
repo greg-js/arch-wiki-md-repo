@@ -618,7 +618,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 #### Cloud synchronization clients
 
-**Tip:** [cryptomator](https://aur.archlinux.org/packages/cryptomator/) is an open-source, multi-platform program designed to add client-side transparent encryption on cloud-shared files.
+**Tip:** See [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") to achieve zero-knowledge (client-side transparent encryption) storage on any third-party cloud service.
 
 *   **aws-cli** — CLI for Amazon Web Services, including efficient file transfers to and from Amazon S3.
 
@@ -1864,7 +1864,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Pumpa** — Pump.io client written in C++ and Qt.
 
-	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa](https://aur.archlinux.org/packages/pumpa/)
+	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa-git](https://aur.archlinux.org/packages/pumpa-git/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 

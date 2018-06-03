@@ -202,7 +202,7 @@ Allowing remote log-on through SSH is good for administrative purposes, but can 
 
 Several other good guides are available on the topic, for example:
 
-*   [Article by Mozilla Infosec Team](https://wiki.mozilla.org/Security/Guidelines/OpenSSH)
+*   [Article by Mozilla Infosec Team](https://wiki.mozilla.org/Security/Guidelines/OpenSSH "mozillawiki:Security/Guidelines/OpenSSH")
 *   [Secure sshd](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
 ##### Force public key authentication

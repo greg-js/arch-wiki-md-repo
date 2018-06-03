@@ -235,6 +235,14 @@ The [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-syst
 
 The recommended hooks are: `base autodetect modconf block filesystems keyboard fsck systemd systemd-tool`.
 
+If you use [LVM](/index.php/LVM "LVM") or [RAID](/index.php/RAID "RAID"), corresponding hooks will be required:
+
+LVM: `base autodetect modconf block filesystems keyboard fsck systemd sd-lvm2 systemd-tool`.
+
+RAID and LVM: `base autodetect modconf block filesystems keyboard fsck systemd mdadm_udev sd-lvm2 systemd-tool`.
+
+It is also recommended to update `/etc/mkinitcpio.d/crypttab` and `/etc/mkinitcpio.d/fstab` files.
+
 ### Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)
 
 Another package combination providing remote logins to the initcpio is [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server. You have the option of using either [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) or [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/). Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://aur.archlinux.org/packages/mkinitcpio-utils/) package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.

@@ -52,7 +52,10 @@ Related articles
 
 查看和控制systemd的主要命令是`systemctl`。該命令可用查看系統狀態和管理系統及服務。詳見[systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
 
-[Template:小貼士](/index.php?title=Template:%E5%B0%8F%E8%B2%BC%E5%A3%AB&action=edit&redlink=1 "Template:小貼士 (page does not exist)")
+**提示:** * 在 `systemctl` 參數中添加 `-H <使用者名稱>@<主機名>` 可以實現對其他機器的遠端控制。該過程使用 [SSH](/index.php/SSH "SSH")連線。
+
+*   `systemadm` 是 systemd 的官方圖形前端。[官方軟體倉庫](/index.php/Official_repositories "Official repositories") 提供了稳定版本 [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui)。
+*   [Plasma](/index.php/Plasma "Plasma") 用戶可以安裝 *systemctl* 圖像前端 [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/)。安裝後可以在 *System administration* 下找到
 
 ### 分析系統狀態
 
@@ -248,7 +251,7 @@ $ systemctl hybrid-sleep
 
 單元檔的語法，可以參考系統中已經安裝的單元，也可以參考[systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)中的[EXAMPLES章節](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
-[Template:小貼士](/index.php?title=Template:%E5%B0%8F%E8%B2%BC%E5%A3%AB&action=edit&redlink=1 "Template:小貼士 (page does not exist)")
+**提示:** 以 `#` 開頭的注释可能也能用在 unit-files 中, 但是只能在新行中使用。 不要在 *systemd* 的參數後面使用行末註釋， 否則 unit 將會啟動失敗。
 
 ### 處理依賴關係
 
@@ -310,7 +313,7 @@ RestartSec=30
 
 此外，把舊的單元檔案從 `/usr/lib/systemd/system/` 複製到 `/etc/systemd/system/`，然後進行修改，也可以達到同樣的效果。在 `/etc/systemd/system/` 目錄中的單元檔的優先級總是高於 `/usr/lib/systemd/system/` 目錄中的同名單元檔案。注意，當 `/usr/lib/` 中的單元檔因軟體包升級而變更时，`/etc/` 中自訂的單元檔案不會同步更新。此外，你還得執行行 `systemctl reenable <unit>`，手動重新啟用該單元。因此，建議使用前面一種利用 `*.conf` 的方法。
 
-[Template:小貼士](/index.php?title=Template:%E5%B0%8F%E8%B2%BC%E5%A3%AB&action=edit&redlink=1 "Template:小貼士 (page does not exist)")
+**提示:** 用 `systemd-delta` 命令來查看哪些單元檔案被覆蓋、哪些被修改。系統維護的時候需要即時了解哪些單元已經有了更新。
 
 安裝 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 軟體包，可以使 unit 設定檔在 [Vim](/index.php/Vim "Vim") 下支持語法高亮。
 

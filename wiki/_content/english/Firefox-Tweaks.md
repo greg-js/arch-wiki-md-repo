@@ -103,7 +103,7 @@ If OpenGL OMTC is disabled, you can force-enable it by going to `about:config` a
 
 **Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
 
-For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing)
+For more information on OMTC in Firefox read [MozillaWiki:Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing "mozillawiki:Platform/GFX/OffMainThreadCompositing").
 
 ### Enable Accelerated Azure Canvas
 
@@ -155,7 +155,7 @@ To disable completely this feature, change `browser.sessionstore.resume_from_cra
 
 ### Referrer header control
 
-The HTTP `Referer` header can be extensively configured via `about:config`. See [Security/Referrer](https://wiki.mozilla.org/Security/Referrer) on the Mozilla wiki for the available preferences.
+The HTTP `Referer` header can be extensively configured via `about:config`. See [MozillaWiki:Security/Referrer](https://wiki.mozilla.org/Security/Referrer "mozillawiki:Security/Referrer") for the available preferences.
 
 ### Defragment the profile's SQLite databases
 
@@ -184,7 +184,7 @@ In `about:config`, set the string value to a blank for both of these: `browser.n
 
 **Note:** Electrolysis should always be enabled in Firefox 57 and later
 
-Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
+Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to [force-enable Electrolysis](https://wiki.mozilla.org/Electrolysis#Force_Enable "mozillawiki:Electrolysis"), although this is generally not recommended and may cause issues.
 
 To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
 
@@ -204,7 +204,7 @@ Modifying the following value can help improve the way fonts looks in Firefox if
 
 Note that the above method only affects the Firefox user interface's DPI settings. Web page contents still use a DPI value of 96, which may look ugly or, in the case of high-resolution displays, may be rendered too small to read. A solution is to change `layout.css.devPixelsPerPx` to system's DPI divided by 96\. For example, if your system's DPI is 144, then the value to add is 144/96 = 1.5\. Changing `layout.css.devPixelsPerPx` to **1.5** makes web page contents use a DPI of 144, which looks much better.
 
-See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[3]](https://www.sven.de/dpi/) for calculating the DPI.
+See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[2]](https://www.sven.de/dpi/) for calculating the DPI.
 
 #### Default font settings from Microsoft Windows
 
@@ -641,7 +641,7 @@ Since version 57, Firefox supports Fido U2F authentication protocol. However, it
 *   `security.webauth.u2f`
 *   `security.webauth.webauthn_enable_usbtoken`
 
-**Note:** Firefox does not inplement the entire U2F protocol [[4]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some site might not work correctly
+**Note:** Firefox does not inplement the entire U2F protocol [[3]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some site might not work correctly
 
 If you're using a Firefox version lower than 57 (e.g. Firefox 52 ESR), U2F isn't supported natively, but there is an [extension](https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/) to add this functionality.
 

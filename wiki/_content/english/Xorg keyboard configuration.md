@@ -329,9 +329,9 @@ Option "AutoRepeat" "*delay* *rate*"
 
 ## Identifying keycodes
 
-**Note:** The Xorg keycodes are 8 larger than the Linux keycodes.[[4]](https://cgit.freedesktop.org/xorg/driver/xf86-input-evdev/tree/src/evdev.c)
+**Note:** The Xorg [keycodes](/index.php/Keyboard_input "Keyboard input") are 8 larger than the Linux keycodes.[[4]](https://cgit.freedesktop.org/xorg/driver/xf86-input-evdev/tree/src/evdev.c)
 
-The *keycodes* used by [Xorg](/index.php/Xorg "Xorg") are reported by a utility called *xev*, which is provided by the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package. Of course to execute *xev*, you need to be in a graphical environment, not in the console.
+The *keycodes* used by [Xorg](/index.php/Xorg "Xorg") are reported by a utility called [xev(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xev.1), which is provided by the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package. Of course to execute *xev*, you need to be in a graphical environment, not in the console.
 
 With the following command you can start *xev* and show only the relevant parts:
 
@@ -392,4 +392,4 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 
 ## See also
 
-*   [Madduck guide](http://madduck.net/docs/extending-xkb/) on extending XKB
+*   [Madduck guide on extending XKB](http://madduck.net/docs/extending-xkb/)

@@ -193,12 +193,14 @@ The use of [ccache](/index.php/Ccache "Ccache") can improve build times by cachi
 
 ### Generate new checksums
 
-Run the following command in the same directory as the PKGBUILD file to generate new checksums:
+Install [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) and run the following command in the same directory as the PKGBUILD file to generate new checksums:
 
 ```
 $ updpkgsums
 
 ```
+
+The checksums can also be obtained with e.g `sha256sum` and added to the `sha256sums` array by hand.
 
 ### Use other compression algorithms
 

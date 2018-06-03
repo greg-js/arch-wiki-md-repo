@@ -26,7 +26,7 @@ Go back to [Conky](/index.php/Conky "Conky").
 
 ## Display package update information
 
-[Pacman-contrib](https://www.archlinux.org/packages/?name=Pacman-contrib) provides a script called `checkupdates` which displays package updates from the official repos. Use `${execi 3600 checkupdates | wc -l}` to display the total number of packages.
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) provides a script called `checkupdates` which displays package updates from the official repos. Use `${execi 3600 checkupdates | wc -l}` to display the total number of packages.
 
 ## Display log files
 

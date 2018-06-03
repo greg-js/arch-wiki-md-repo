@@ -38,6 +38,7 @@ Related articles
         *   [4.3.3 KeyTool](#KeyTool)
     *   [4.4 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
     *   [4.5 iPXE](#iPXE)
+    *   [4.6 fwupdate](#fwupdate)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -376,7 +377,7 @@ rEFInd supports running various [3rd-party tools](http://www.rodsbooks.com/refin
  `*esp*/EFI/refind/refind.conf` 
 ```
 ...
-showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#Key_management_tools), [gdisk](#GPT_fdisk_.28gdisk.29), [netboot](#iPXE), ...
+showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#Key_management_tools), [gdisk](#GPT_fdisk_.28gdisk.29), [netboot](#iPXE), [fwupdate](#fwupdate) ...
 ...
 
 ```
@@ -431,6 +432,17 @@ Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gp
 ```
 # cp /usr/share/refind/tools_x64/ipxe_discovery_x64.efi *esp*/EFI/tools/ipxe_discovery.efi
 # cp /usr/share/refind/tools_x64/ipxe_x64.efi *esp*/EFI/tools/ipxe.efi
+
+```
+
+### fwupdate
+
+Install and setup [fwupd](/index.php/Fwupd "Fwupd").
+
+Copy the `fwupx64.efi` binary and firmware files to `*esp*/EFI/tools/`:
+
+```
+# cp -r /usr/lib/fwupdate/EFI/arch/* *esp*/EFI/tools/
 
 ```
 

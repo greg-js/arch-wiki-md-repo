@@ -45,7 +45,7 @@ Other versions include:
 
 	[https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/](https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/) || [thunderbird-nightly](https://aur.archlinux.org/packages/thunderbird-nightly/)
 
-A version overview, both past and future, can be read on the [Mozilla wiki](https://wiki.mozilla.org/Releases).
+A version overview, both past and future, can be read on [MozillaWiki:Releases](https://wiki.mozilla.org/Releases "mozillawiki:Releases").
 
 ## Securing
 
@@ -191,7 +191,7 @@ mailnews.default_view_flags = 1 (Threaded view)
 
 ### Maildir support
 
-The default message store format is mbox. To enable the use of Maildir, see [Mozilla wiki: Thunderbird/Maildir](https://wiki.mozilla.org/Thunderbird/Maildir). You basically have to set the following preference in the [#Config Editor](#Config_Editor):
+The default message store format is mbox. To enable the use of Maildir, see [MozillaWiki:Thunderbird/Maildir](https://wiki.mozilla.org/Thunderbird/Maildir "mozillawiki:Thunderbird/Maildir"). You basically have to set the following preference in the [#Config Editor](#Config_Editor):
 
 ```
 mail.serverDefaultStoreContractID = @mozilla.org/msgstore/maildirstore;1

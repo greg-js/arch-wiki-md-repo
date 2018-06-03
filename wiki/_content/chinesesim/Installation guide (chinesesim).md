@@ -98,11 +98,19 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 *   一个根分区（挂载在根目录） `/`.
 *   如果 [UEFI](/index.php/UEFI "UEFI") 模式被启用,你还需要一个 [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition").
-*   [Swap](/index.php/Swap_space "Swap space") 可以在一个独立的分区上设置，也可以直接建立 [交换文件](/index.php/Swap#Swap_file "Swap").
 
-如需修改*分区表*,使用 [fdisk](/index.php/Fdisk "Fdisk") 或 [parted](/index.php/Parted "Parted"). 查看[Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")以获得更多详情.
+**注意:** [Swap](/index.php/Swap_space "Swap space") 可以在一个独立的分区上设置，也可以直接建立 [交换文件](/index.php/Swap#Swap_file "Swap").
 
-如果需要需要创建多级存储例如 [LVM](/index.php/LVM "LVM")、[LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") 或 [RAID](/index.php/RAID "RAID")，请在此时完成。
+如需修改*分区表*,使用 [fdisk](/index.php/Fdisk "Fdisk") 或 [parted](/index.php/Parted "Parted").
+
+```
+# fdisk /dev/*sda*
+
+```
+
+查看[Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")以获得更多详情.
+
+**注意:** 如果需要需要创建多级存储例如 [LVM](/index.php/LVM "LVM")、[LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") 或 [RAID](/index.php/RAID "RAID")，请在此时完成。
 
 ### 格式化分区
 
@@ -110,6 +118,14 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 # mkfs.*ext4* /dev/*sda1*
+
+```
+
+如果你为swap创建了一个空间，使用mkswap初始化
+
+```
+# mkswap /dev/*sda3*
+# swapon /dev/*sda3*
 
 ```
 
@@ -231,12 +247,7 @@ zh_TW.UTF-8 UTF-8
 创建 `locale.conf` 并提交您的本地化选项：
 
 **Tip:** 将系统 locale 设置为`en_US.UTF-8`，系统的 Log 就会用英文显示，这样更容易问题的判断和处理。用户可以设置自己的 locale，详情参阅[Locale#Per user](/index.php/Locale#Per_user "Locale").
-
-```
-# echo LANG=en_US.UTF-8 > /etc/locale.conf
-
-```
-
+ `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 **警告:** 不推荐在此设置任何中文locale，或导致tty乱码。
 
 另外，如果你需要修改[键盘布局](#Set_the_keyboard_layout), 并想让这个设置持续生效，编辑 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)，例如:
@@ -247,8 +258,9 @@ zh_TW.UTF-8 UTF-8
 
 要设置 [hostname](/index.php/Hostname "Hostname")，将其[添加](/index.php/Add "Add") 到 `/etc/hostname`, *myhostname* 是需要的主机名:
 
+ `/etc/hostname` 
 ```
-# echo ***myhostname*** > /etc/hostname
+*myhostname*
 
 ```
 
@@ -256,9 +268,9 @@ zh_TW.UTF-8 UTF-8
 
  `/etc/hosts` 
 ```
-127.0.0.1	localhost.localdomain	localhost
-::1		localhost.localdomain	localhost
-**127.0.1.1	*myhostname*.localdomain	*myhostname***
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	*myhostname*.localdomain	*myhostname*
 
 ```
 

@@ -16,6 +16,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.9 pauledd's unexeptional setup](#pauledd.27s_unexeptional_setup)
     *   [1.10 hkk's Windows gaming machine (6700K, 1070, 16GB)](#hkk.27s_Windows_gaming_machine_.286700K.2C_1070.2C_16GB.29)
     *   [1.11 sitilge's treachery](#sitilge.27s_treachery)
+    *   [1.12 chestm007's hackery](#chestm007.27s_hackery)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -326,6 +327,25 @@ Notes:
 *   Make sure virtualization is supported and enabled in your firmware (UEFI). The option was hidden in a submenu in my case.
 *   As trivial as it sounds, check your cables. Twice.
 *   Be patient - it took more than 10 minutes for the guest to recognize the GPU.
+
+### chestm007's hackery
+
+Hardware:
+
+*   **CPU**: Ryzen 7 1800x
+*   **Motherboard**: Asus ROG Crosshair VI (Revision 1, BIOS/UEFI Version: 3502)
+*   **GPU**: Asus ROG RX480oc 8GB
+*   **RAM**: 32gb Ripjaws 2400mhz
+
+Configuration:
+
+*   **Kernel**: 4.16.12-1-ARCH.
+*   Using **libvirt/QEMU**: libvirtd (libvirt) 4.3.0, QEMU emulator version 2.12.0,
+
+Notes:
+
+*   using ic6 audio - works fine for me.
+*   have a working looking-glass setup, however cant get spice to pass through keyboard and mouse, currently using a mixture of synergy and a dedicated screen as a workaround
 
 ## Adding your own setup
 

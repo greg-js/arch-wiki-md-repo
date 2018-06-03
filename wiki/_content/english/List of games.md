@@ -677,6 +677,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://e271.net/~marina/wanderer.html](http://e271.net/~marina/wanderer.html) || [wanderer](https://aur.archlinux.org/packages/wanderer/) [wanderer-git](https://aur.archlinux.org/packages/wanderer-git/)
 
+*   **Shattered Pixel Dungeon** — Shattered fork of the popular rogue-like game Pixel Dungeon.
+
+	[http://www.shatteredpixel.com/](http://www.shatteredpixel.com/) || [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/),[shattered-pixel-dungeon-git](https://aur.archlinux.org/packages/shattered-pixel-dungeon-git/)
+
 ## Role-playing games (RPG)
 
 *   **Arx Libertatis** — This project is a fully working, open source port of Arx Fatalis, a 2002 first-person role-playing game developed by Arkane Studios. It features some improvements over the original engine like bug fixes and wide screen support.

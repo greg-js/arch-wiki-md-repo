@@ -271,7 +271,7 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 *   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
 
-	[http://ugene.net/](http://ugene.net/) || [ugene](https://aur.archlinux.org/packages/ugene/)
+	[http://ugene.net/](http://ugene.net/) || [ugene-bin](https://aur.archlinux.org/packages/ugene-bin/)
 
 #### Molecules
 

@@ -48,13 +48,14 @@ The following are privacy-focused configuration tweaks to prevent [browser finge
 
 In addition, see the following links:
 
+*   [MozillaWiki:Privacy/Privacy Task Force/firefox about config privacy tweeks](https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks "mozillawiki:Privacy/Privacy Task Force/firefox about config privacy tweeks") - a wiki page maintained by Mozilla with descriptions of privacy specific settings.
 *   [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
 *   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
 *   [pyllyukko/user.js](https://github.com/pyllyukko/user.js) - Firefox configuration hardening and documentation
 
 ### Enable Anti-Fingerprinting
 
-Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.mozilla.org/Security/Fingerprinting), as part of a project to upstream features from [Tor Browser](/index.php/Tor "Tor"). Many of these anti-fingerprinting features are enabled by setting `about:config`:
+Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting"), as part of a project to upstream features from [Tor Browser](/index.php/Tor "Tor"). Many of these anti-fingerprinting features are enabled by setting `about:config`:
 
 *   `privacy.resistFingerprinting` `true`
 
@@ -237,7 +238,7 @@ To do this open RefControl's preferences and change the setting for "Default for
 
 [CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting.</canvas>
 
-**Note:** Mozilla is adding a built-in permission system to allow blocking of HTML5 canvas image track requests, [targeted for release with verion 59](https://wiki.mozilla.org/Security/Fingerprinting).
+**Note:** Mozilla is adding a built-in permission system to allow blocking of HTML5 canvas image track requests, [targeted for release with verion 59](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting").
 
 ### Random User Agent
 

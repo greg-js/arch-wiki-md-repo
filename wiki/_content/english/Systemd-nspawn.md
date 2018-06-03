@@ -426,9 +426,9 @@ Environment=SYSTEMD_NSPAWN_USE_CGNS=0
 
 ```
 
-Then, edit `/etc/systemd/nspawn/myContainer.nspwn` (create if absent) and add the following configurations.
+Then, edit `/etc/systemd/nspawn/myContainer.nspawn` (create if absent) and add the following configurations.
 
- `/etc/systemd/nspawn/myContainer.nspwn` 
+ `/etc/systemd/nspawn/myContainer.nspawn` 
 ```
 [Exec]
 Capability=all

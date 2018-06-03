@@ -41,12 +41,11 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
     *   [2.10 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
     *   [2.11 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
 *   [3 Performance](#Performance)
-    *   [3.1 Database access speeds](#Database_access_speeds)
-    *   [3.2 Download speeds](#Download_speeds)
-        *   [3.2.1 Powerpill](#Powerpill)
-        *   [3.2.2 wget](#wget)
-        *   [3.2.3 aria2](#aria2)
-        *   [3.2.4 Other applications](#Other_applications)
+    *   [3.1 Download speeds](#Download_speeds)
+        *   [3.1.1 Powerpill](#Powerpill)
+        *   [3.1.2 wget](#wget)
+        *   [3.1.3 aria2](#aria2)
+        *   [3.1.4 Other applications](#Other_applications)
 *   [4 Utilities](#Utilities)
     *   [4.1 Graphical front-ends](#Graphical_front-ends)
 
@@ -563,22 +562,6 @@ Here is a way how to find all the programs that use old packages code:
 It will print running program name and old library that was removed or replaced with newer content.
 
 ## Performance
-
-### Database access speeds
-
-*Pacman* stores all package information in a collection of small files, one for each package. Improving database access speeds reduces the time taken in database-related tasks, e.g. searching packages and resolving package dependencies. The safest and easiest method is to run as root:
-
-```
-# pacman-optimize
-
-```
-
-This will attempt to put all the small files together in one (physical) location on the hard disk so that the hard disk head does not have to move so much when accessing all the data. This method is safe, but is not foolproof: it depends on your filesystem, disk usage and empty space fragmentation. Another, more aggressive, option would be to first remove uninstalled packages from cache and to remove unused repositories before database optimization:
-
-```
-# pacman -Sc && pacman-optimize
-
-```
 
 ### Download speeds
 

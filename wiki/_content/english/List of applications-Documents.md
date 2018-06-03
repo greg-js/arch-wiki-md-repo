@@ -24,7 +24,7 @@
             *   [1.2.2.1 Console](#Console)
             *   [1.2.2.2 Graphical](#Graphical)
         *   [1.2.3 CHM](#CHM)
-        *   [1.2.4 Comic book (comix/manga)](#Comic_book_.28comix.2Fmanga.29)
+        *   [1.2.4 Comic book](#Comic_book)
     *   [1.3 Scanning and OCR](#Scanning_and_OCR)
         *   [1.3.1 Scanning](#Scanning)
         *   [1.3.2 OCR engines](#OCR_engines)
@@ -32,18 +32,19 @@
     *   [1.4 Texts and notes](#Texts_and_notes)
         *   [1.4.1 Text editors](#Text_editors)
             *   [1.4.1.1 Console](#Console_2)
-                *   [1.4.1.1.1 Vi text editors](#Vi_text_editors)
             *   [1.4.1.2 Graphical](#Graphical_2)
-                *   [1.4.1.2.1 Collaborative text editors](#Collaborative_text_editors)
-        *   [1.4.2 Note taking organizers](#Note_taking_organizers)
-            *   [1.4.2.1 Console](#Console_3)
-            *   [1.4.2.2 Graphical](#Graphical_3)
-        *   [1.4.3 Stylus note taking](#Stylus_note_taking)
-        *   [1.4.4 Mind-mapping tools](#Mind-mapping_tools)
-        *   [1.4.5 Barcode generators and readers](#Barcode_generators_and_readers)
-            *   [1.4.5.1 Console](#Console_4)
-            *   [1.4.5.2 Graphical](#Graphical_4)
-        *   [1.4.6 Character selectors](#Character_selectors)
+        *   [1.4.2 Vi text editors](#Vi_text_editors)
+        *   [1.4.3 Markdown editors](#Markdown_editors)
+        *   [1.4.4 Note taking organizers](#Note_taking_organizers)
+            *   [1.4.4.1 Console](#Console_3)
+            *   [1.4.4.2 Graphical](#Graphical_3)
+        *   [1.4.5 Distraction-free writing](#Distraction-free_writing)
+        *   [1.4.6 Storywriting](#Storywriting)
+        *   [1.4.7 Mind-mapping](#Mind-mapping)
+        *   [1.4.8 Barcode generators and readers](#Barcode_generators_and_readers)
+            *   [1.4.8.1 Console](#Console_4)
+            *   [1.4.8.2 Graphical](#Graphical_4)
+        *   [1.4.9 Character selectors](#Character_selectors)
     *   [1.5 Language](#Language)
         *   [1.5.1 Dictionary and thesaurus](#Dictionary_and_thesaurus)
         *   [1.5.2 Spell checkers](#Spell_checkers)
@@ -92,10 +93,6 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Powerful word processor included in the Calligra Suite.
 
 	[https://www.calligra.org/words/](https://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
-
-*   **FocusWriter** — Simple, distraction-free writing environment. It utilizes a hide-away interface that you access by moving your mouse to the edges of the screen, allowing the program to have a familiar look and feel to it while still getting out of the way so that you can immerse yourself in your work.
-
-	[https://gottcode.org/focuswriter/](https://gottcode.org/focuswriter/) || [focuswriter](https://aur.archlinux.org/packages/focuswriter/)
 
 *   **gLabels** — Program for creating labels, business cards and media covers.
 
@@ -271,6 +268,10 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 
 	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [discount](https://www.archlinux.org/packages/?name=discount)
 
+*   **Marked** — Markdown parser and compiler built for speed.
+
+	[https://marked.js.org/](https://marked.js.org/) || [marked](https://www.archlinux.org/packages/?name=marked)
+
 *   **M2R** — Markdown to reStructuredText converter.
 
 	[https://github.com/miyakogi/m2r](https://github.com/miyakogi/m2r) || [m2r](https://www.archlinux.org/packages/?name=m2r)
@@ -429,27 +430,31 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 **Note:** Some [PDF and DjVu viewers](#PDF_and_DjVu) also support other e-book formats.
 
-*   **Bookworm** — Simple, focused eBook reader for Elementary OS with EPUB, PDF, MOBI, CBR, CBZ support.
+*   **Bookworm** — Simple, focused e-book reader for Elementary OS with EPUB, PDF, Mobipocket and Comicbook support.
 
 	[https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/) || [bookworm](https://www.archlinux.org/packages/?name=bookworm)
 
-*   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also convert between different formats and sync with a variety of e-book readers. Supported formats include CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
+*   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also edit EPUB files, convert between different formats and sync with a variety of e-book readers. Supported formats include CHM, Comicbook, DjVu, DOCX, EPUB, FictionBook, HTML, HTMLZ, Kindle, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
 
 	[https://calibre-ebook.com/](https://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
 
 *   **Cool Reader** — E-book viewer with many supported formats such as EPUB (non-DRM), FictionBook, TXT, RTF, HTML, CHM and TCR.
 
-	[https://sourceforge.net/projects/crengine/](https://sourceforge.net/projects/crengine/) || [coolreader3-git](https://aur.archlinux.org/packages/coolreader3-git/)
-
-*   **epub** — A console EPUB reader using Python and Curses.
-
-	[https://pypi.org/project/epub/](https://pypi.org/project/epub/) || [python-epub](https://aur.archlinux.org/packages/python-epub/)
+	[https://sourceforge.net/projects/crengine/](https://sourceforge.net/projects/crengine/) || [coolreader](https://aur.archlinux.org/packages/coolreader/)
 
 *   **[FBReader](https://en.wikipedia.org/wiki/FBReader "wikipedia:FBReader")** — E-book viewer with many supported formats such as EPUB, FictionBook, HTML, plucker, PalmDoc, zTxt, TCR, CHM, RTF, OEB, Mobipocket (non-DRM) and TXT.
 
 	[https://fbreader.org/](https://fbreader.org/) || [fbreader](https://www.archlinux.org/packages/?name=fbreader)
 
-*   **[Sigil](https://en.wikipedia.org/wiki/Sigil_(application) "wikipedia:Sigil (application)")** — WYSIWYG ebook editor.
+*   **GNOME Books** — E-book manager application for GNOME with EPUB, Mobipocket, FictionBook, DjVu and Comicbook support.
+
+	[https://wiki.gnome.org/Apps/Documents](https://wiki.gnome.org/Apps/Documents) || [gnome-documents](https://www.archlinux.org/packages/?name=gnome-documents)
+
+*   **Lector** — Qt based e-book reader with PDF, EPUB, Kindle, Mobipocket and Comicbook support.
+
+	[https://github.com/BasioMeusPuga/Lector](https://github.com/BasioMeusPuga/Lector) || [lector-git](https://aur.archlinux.org/packages/lector-git/)
+
+*   **[Sigil](https://en.wikipedia.org/wiki/Sigil_(application) "wikipedia:Sigil (application)")** — WYSIWYG EPUB e-book editor.
 
 	[https://sigil-ebook.com/](https://sigil-ebook.com/) || [sigil](https://www.archlinux.org/packages/?name=sigil)
 
@@ -473,45 +478,65 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
 
-*   **ghostscript** — convert into PDF, reduce size of PDF documents with eg `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf`
+*   **[Ghostscript](https://en.wikipedia.org/wiki/Ghostscript "wikipedia:Ghostscript")** — convert into PDF, reduce size of PDF documents with eg `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf`
 
 	[https://www.ghostscript.com/](https://www.ghostscript.com/) || [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
 
-*   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
+*   **JFBView** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
 
 	[https://seasonofcode.com/pages/jfbview.html](https://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
+
+*   **pdfgrep** — Commandline utility to search text in PDF files.
+
+	[https://pdfgrep.org/](https://pdfgrep.org/) || [pdfgrep](https://www.archlinux.org/packages/?name=pdfgrep)
+
+*   **pdf2djvu** — Creates DjVu files from PDF files.
+
+	[https://jwilk.net/software/pdf2djvu](https://jwilk.net/software/pdf2djvu) || [pdf2djvu](https://www.archlinux.org/packages/?name=pdf2djvu)
+
+*   **pdf2svg** — Convert PDF files to SVG files.
+
+	[http://www.cityinthesky.co.uk/opensource/pdf2svg/](http://www.cityinthesky.co.uk/opensource/pdf2svg/) || [pdf2svg](https://www.archlinux.org/packages/?name=pdf2svg)
 
 ##### Graphical
 
 **Note:** Some [web browsers](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") have support for displaying PDF files, either built-in or via plugin.
 
-*   **acroread** — A PDF file viewer offered by Adobe (closed source).
+*   **[Adobe Reader](https://en.wikipedia.org/wiki/Adobe_Reader "wikipedia:Adobe Reader")** — Proprietary PDF file viewer offered by Adobe. Development stopped for Linux.
 
 	[http://www.adobe.com/products/reader.html](http://www.adobe.com/products/reader.html) || [acroread](https://aur.archlinux.org/packages/acroread/)
 
-*   **apvlv** — Lightweight PDF/DjVu/UMD/TXT viewer with [Vim](/index.php/Vim "Vim") keybindings.
+*   **apvlv** — Lightweight document viewer with [Vim](/index.php/Vim "Vim") keybindings. Supports PDF, DjVu, UMD and TXT.
 
-	[http://naihe2010.github.io/apvlv/](http://naihe2010.github.io/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
+	[https://naihe2010.github.io/apvlv/](https://naihe2010.github.io/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
-*   **Atril** — Simple multi-page document viewer for MATE.
+*   **Atril** — Simple multi-page document viewer for MATE. Supports DjVu, DVI, EPS, EPUB, PDF, PostScript, TIFF, XPS and Comicbook.
 
 	[https://github.com/mate-desktop/atril](https://github.com/mate-desktop/atril) || [atril](https://www.archlinux.org/packages/?name=atril)
 
-*   **DjView4** — Viewer for DjVu documents.
+*   **Cournal** — Collaborative note taking and journal application using a stylus. It allows multiple users to annotate PDF files in real-time.
+
+	[https://github.com/flyser/cournal](https://github.com/flyser/cournal) || [cournal](https://aur.archlinux.org/packages/cournal/)
+
+*   **DjView** — Viewer for DjVu documents.
 
 	[http://djvu.sourceforge.net/djview4.html](http://djvu.sourceforge.net/djview4.html) || [djview](https://www.archlinux.org/packages/?name=djview)
 
-*   **ePDFView** — Free lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.
+*   **ePDFView** — Lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.
 
 	[http://freecode.com/projects/epdfview](http://freecode.com/projects/epdfview) || [epdfview](https://www.archlinux.org/packages/?name=epdfview)
 
-*   **[Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince")** — Document viewer for multiple document formats. Supports PDF, PostScript, DjVu, TIFF and DVI.
+*   **[Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince")** — Document viewer for GNOME. Supports DjVu, DVI, EPS, PDF, PostScript, TIFF, XPS and Comicbook.
 
 	[https://wiki.gnome.org/Apps/Evince](https://wiki.gnome.org/Apps/Evince) || [evince](https://www.archlinux.org/packages/?name=evince)
 
-*   **[Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader")** — Small, fast (compared to Acrobat) PDF viewer. (closed source)
+*   **[Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader")** — Small, fast (compared to Acrobat) proprietary PDF viewer.
 
 	[https://www.foxitsoftware.com/pdf-reader/](https://www.foxitsoftware.com/pdf-reader/) || [foxitreader](https://aur.archlinux.org/packages/foxitreader/)
+
+*   **GNOME Documents** — Document manager application for GNOME with PDF, DVI, XPS, PostScript, Microsoft Office, LibreOffice and Google Docs support.
+
+	[https://wiki.gnome.org/Apps/Documents](https://wiki.gnome.org/Apps/Documents) || [gnome-documents](https://www.archlinux.org/packages/?name=gnome-documents)
 
 *   **gv** — Graphical user interface for the Ghostscript interpreter that allows to view and navigate through PostScript and PDF documents.
 
@@ -521,35 +546,39 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://www.archlinux.org/packages/?name=llpp)
 
-*   **Master PDF Editor** — A functional proprietary PDF editor. Free non-commercial use. (closed source)
+*   **Master PDF Editor** — Functional proprietary PDF editor. Free for non-commercial use.
 
 	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/)
 
-*   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast PDF, XPS, and EPUB viewer and toolkit written in portable C. Features CJK font support.
+*   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast EPUB, FictionBook, PDF, XPS and Comicbook viewer written in portable C. Features CJK font support.
 
 	[https://mupdf.com/](https://mupdf.com/) || [mupdf](https://www.archlinux.org/packages/?name=mupdf)
 
-*   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Universal PDF viewer for KDE.
+*   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Universal document viewer for KDE. Supports CHM, Comicbook, DjVu, DVI, EPUB, FictionBook, Mobipocket, ODT, PDF, Plucker, PostScript, TIFF and XPS.
 
 	[https://okular.kde.org/](https://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
 
-*   **PDF Chain** — A graphical interface allowing to manipulate PDF documents (concatenate, burst, watermark, attach files...)
+*   **PDF Chain** — Graphical interface allowing to manipulate PDF documents (concatenate, burst, watermark, attach files...).
 
 	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
 
-*   **PdfMod** — You can reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
+*   **PdfMod** — Reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
+
+*   **pdfpc** — Presenter console with multi-monitor support for PDF files.
+
+	[https://pdfpc.github.io/](https://pdfpc.github.io/) || [pdfpc](https://www.archlinux.org/packages/?name=pdfpc)
 
 *   **PDFsam** — Merge, split, rotate, convert, edit, sign PDF files.
 
 	[https://pdfsam.org/](https://pdfsam.org/) || [pdfsam](https://www.archlinux.org/packages/?name=pdfsam)
 
-*   **PDF Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK2.
+*   **PDF-Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK2.
 
 	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler](https://www.archlinux.org/packages/?name=pdfshuffler)
 
-*   **PDF Studio** — All-in-one PDF editor similar to Adobe Acrobat (proprietary).
+*   **PDF Studio** — All-in-one proprietary PDF editor similar to Adobe Acrobat.
 
 	[https://www.qoppa.com/pdfstudio/](https://www.qoppa.com/pdfstudio/) || [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/)
 
@@ -557,33 +586,33 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
 
-*   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Pdf viewer/note taking application.
+*   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
 
 	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
 
-*   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs. Note that due to removal of all Type1 fonts from the gsfonts package, you will need to install them from an archive package - see [https://bugs.archlinux.org/task/50297](https://bugs.archlinux.org/task/50297)
+*   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
 
-	[http://www.xpdfreader.com/](http://www.xpdfreader.com/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf) and [gsfonts-type1](https://aur.archlinux.org/packages/gsfonts-type1/)
+	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
 
-*   **Xreader** — Document viewer for files like PDF and Postscript. X-Apps Project.
+*   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
+
+	[http://www.xpdfreader.com/](http://www.xpdfreader.com/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
+
+*   **Xreader** — Document viewer part of the X-Apps Project. Supports DjVu, DVI, EPUB, PDF, PostScript, TIFF, XPS, Comicbook.
 
 	[https://github.com/linuxmint/xreader/](https://github.com/linuxmint/xreader/) || [xreader](https://www.archlinux.org/packages/?name=xreader)
 
-*   **[zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "wikipedia:Zathura (document viewer)")** — Highly customizable and functional PDF/DjVu/PostScript/ComicBook viewer (plugin based).
+*   **[Zathura](/index.php/Zathura "Zathura")** — Highly customizable and functional document viewer (plugin based). Supports PDF, DjVu, PostScript and Comicbook.
 
-	[https://pwmt.org/projects/zathura/](https://pwmt.org/projects/zathura/) || [zathura](https://www.archlinux.org/packages/?name=zathura) [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) [zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu)
+	[https://pwmt.org/projects/zathura/](https://pwmt.org/projects/zathura/) || [zathura](https://www.archlinux.org/packages/?name=zathura)
 
 #### CHM
 
 See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "wikipedia:Microsoft Compiled HTML Help").
 
-*   **Archmage** — An extensible reader and decompiler for files in the CHM format.
+*   **Archmage** — Extensible reader and decompiler for files in the CHM format.
 
 	[https://github.com/dottedmag/archmage](https://github.com/dottedmag/archmage) || [archmage](https://aur.archlinux.org/packages/archmage/)
-
-*   **ChmSee** — CHM viewer based on xulrunner.
-
-	[https://code.google.com/archive/p/chmsee/](https://code.google.com/archive/p/chmsee/) || [chmsee](https://aur.archlinux.org/packages/chmsee/)
 
 *   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
 
@@ -593,11 +622,19 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 	[http://xchm.sourceforge.net/](http://xchm.sourceforge.net/) || [xchm](https://www.archlinux.org/packages/?name=xchm)
 
-#### Comic book (comix/manga)
+#### Comic book
 
-*   **[MComix](https://en.wikipedia.org/wiki/MComix "wikipedia:MComix")** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
+*   **Buoh** — Online strips comics reader for GNOME.
+
+	[http://buoh.steve-o.org/](http://buoh.steve-o.org/) || [buoh](https://www.archlinux.org/packages/?name=buoh)
+
+*   **MComix** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
 
 	[https://sourceforge.net/projects/mcomix/](https://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
+
+*   **QComicBook** — Viewer for comic book archives that aims at convenience and simplicity.
+
+	[https://github.com/stolowski/QComicBook](https://github.com/stolowski/QComicBook) || [qcomicbook](https://aur.archlinux.org/packages/qcomicbook/)
 
 *   **YACReader** — Comic book viewer written in C++ and Qt5\. Comes with YACReaderLibrary for managing comics.
 
@@ -613,29 +650,29 @@ See [SANE#Install a frontend](/index.php/SANE#Install_a_frontend "SANE").
 
 See also [Wikipedia:Comparison of optical character recognition software](https://en.wikipedia.org/wiki/Comparison_of_optical_character_recognition_software "wikipedia:Comparison of optical character recognition software").
 
-*   **CuneiForm** — Command line OCR system originally developed and open sourced by Cognitive technologies. Supported languages: eng, ger, fra, rus, swe, spa, ita, ruseng, ukr, srp, hrv, pol, dan, por, dut, cze, rum, hun, bul, slo, lav, lit, est, tur.
+*   **[CuneiForm](https://en.wikipedia.org/wiki/CuneiForm_(software) "wikipedia:CuneiForm (software)")** — Command line OCR system originally developed and open sourced by Cognitive technologies. Supported languages: eng, ger, fra, rus, swe, spa, ita, ruseng, ukr, srp, hrv, pol, dan, por, dut, cze, rum, hun, bul, slo, lav, lit, est, tur.
 
 	[https://launchpad.net/cuneiform-linux](https://launchpad.net/cuneiform-linux) || [cuneiform](https://www.archlinux.org/packages/?name=cuneiform)
 
-*   **GOCR/JOCR** — OCR engine which also supports barcode recognition.
+*   **[GOCR](https://en.wikipedia.org/wiki/GOCR "wikipedia:GOCR")** — OCR engine which also supports barcode recognition.
 
-	[http://jocr.sourceforge.net/](http://jocr.sourceforge.net/) || [gocr](https://www.archlinux.org/packages/?name=gocr)
+	[https://www-e.uni-magdeburg.de/jschulen/ocr/](https://www-e.uni-magdeburg.de/jschulen/ocr/) || [gocr](https://www.archlinux.org/packages/?name=gocr)
 
-*   **Ocrad** — OCR program based on a feature extraction method.
+*   **[Ocrad](https://en.wikipedia.org/wiki/Ocrad "wikipedia:Ocrad")** — OCR program based on a feature extraction method.
 
 	[https://www.gnu.org/software/ocrad/](https://www.gnu.org/software/ocrad/) || [ocrad](https://www.archlinux.org/packages/?name=ocrad)
 
-*   **Tesseract** — Accurate open source OCR engine. Package splitted, you need install some datafiles for each language ([tesseract-data-eng](https://www.archlinux.org/packages/?name=tesseract-data-eng) for example).
+*   **[Tesseract](https://en.wikipedia.org/wiki/Tesseract_(software) "wikipedia:Tesseract (software)")** — Accurate open source OCR engine. Package splitted, you need install some datafiles for each language ([tesseract-data-eng](https://www.archlinux.org/packages/?name=tesseract-data-eng) for example).
 
 	[https://github.com/tesseract-ocr](https://github.com/tesseract-ocr) || [tesseract](https://www.archlinux.org/packages/?name=tesseract)
 
 #### Layout analyzers
 
-*   **gImageReader** — Graphical GTK frontend to Tesseract.
+*   **gImageReader** — Graphical GTK+ frontend to Tesseract.
 
-	[http://gimagereader.sourceforge.net/](http://gimagereader.sourceforge.net/) || [gimagereader](https://aur.archlinux.org/packages/gimagereader/)
+	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || [gimagereader](https://aur.archlinux.org/packages/gimagereader/)
 
-*   **gscan2pdf** — Scans, runs an OCR engine, minor post-processing, creates a document.
+*   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
 	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
@@ -643,7 +680,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
-*   **OCRopy** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
+*   **[OCRopus](https://en.wikipedia.org/wiki/OCRopus "wikipedia:OCRopus")** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
 
 	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
 
@@ -657,7 +694,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Graphical interface for the CuneiForm text recognition program on the Linux platform.
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)
+	[https://sourceforge.net/projects/yagf-ocr/](https://sourceforge.net/projects/yagf-ocr/) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
 ### Texts and notes
 
@@ -737,32 +774,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.gnu.org/software/zile/](https://www.gnu.org/software/zile/) || [zile](https://www.archlinux.org/packages/?name=zile)
 
-###### Vi text editors
-
-*   **Amp** — A text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
-
-	[https://amp.rs](https://amp.rs) || [amp](https://aur.archlinux.org/packages/amp/)
-
-*   **[Kakoune](/index.php/Kakoune "Kakoune")** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
-
-	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune](https://www.archlinux.org/packages/?name=kakoune)
-
-*   **[Neovim](/index.php/Neovim "Neovim")** — Vim's rebirth for the 21st century
-
-	[http://neovim.io/](http://neovim.io/) || [neovim](https://www.archlinux.org/packages/?name=neovim)
-
-*   **[Vi](/index.php/Vi "Vi")** — The original ex/vi text editor.
-
-	[http://ex-vi.sourceforge.net/](http://ex-vi.sourceforge.net/) || [vi](https://www.archlinux.org/packages/?name=vi)
-
-*   **[Vim](/index.php/Vim "Vim") (Vi IMproved)** — Advanced text editor that seeks to provide the power of the de-facto Unix editor 'vi', with a more complete feature set.
-
-	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
-
-*   **Vis** — modern, legacy free, simple yet efficient vim-like editor.
-
-	[http://www.brain-dump.org/projects/vis/](http://www.brain-dump.org/projects/vis/) || [vis](https://www.archlinux.org/packages/?name=vis)
-
 ##### Graphical
 
 *   **[Acme](https://en.wikipedia.org/wiki/Acme_(text_editor) "wikipedia:Acme (text editor)")** — Minimalist and flexible programming environment developed by Rob Pike for the Plan 9 operating system.
@@ -801,6 +812,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/) || [emacs](https://www.archlinux.org/packages/?name=emacs)
 
+*   **Gobby** — Collaborative editor supporting multiple documents in one session and a multi-user chat.
+
+	[https://gobby.github.io](https://gobby.github.io) || [gobby](https://www.archlinux.org/packages/?name=gobby)
+
 *   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim.
 
 	[http://www.vim.org](http://www.vim.org) || [gvim](https://www.archlinux.org/packages/?name=gvim)
@@ -837,10 +852,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://github.com/lirios/text](https://github.com/lirios/text) || [liri-text](https://www.archlinux.org/packages/?name=liri-text)
 
-*   **Marker** — Simple yet robust markdown editor for the Linux desktop.
-
-	[https://fabiocolacio.github.io/Marker/](https://fabiocolacio.github.io/Marker/) || [marker](https://aur.archlinux.org/packages/marker/)
-
 *   **Medit** — Programming and around-programming text editor.
 
 	[http://mooedit.sourceforge.net](http://mooedit.sourceforge.net) || [medit](https://www.archlinux.org/packages/?name=medit)
@@ -872,10 +883,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **QXmlEdit** — Simple Qt XML editor and XSD viewer.
 
 	[http://qxmledit.org](http://qxmledit.org) || [qxmledit](https://aur.archlinux.org/packages/qxmledit/)
-
-*   **ReText** — Simple text editor for Markdown and reStructuredText.
-
-	[https://github.com/retext-project/retext](https://github.com/retext-project/retext) || [retext](https://www.archlinux.org/packages/?name=retext)
 
 *   **[Sam](https://en.wikipedia.org/wiki/Sam_(text_editor) "wikipedia:Sam (text editor)")** — Minimalist text editor with a graphical user interface, a very powerful command language and remote editing capabilities, developed by Rob Pike.
 
@@ -909,10 +916,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://github.com/martinrotter/textosaurus](https://github.com/martinrotter/textosaurus) || [textosaurus](https://aur.archlinux.org/packages/textosaurus/)
 
-*   **UberWriter** — Elegant, free distraction GTK+ markdown editor.
-
-	[http://uberwriter.wolfvollprecht.de/](http://uberwriter.wolfvollprecht.de/) || [uberwriter](https://aur.archlinux.org/packages/uberwriter/)
-
 *   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
 	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)[code](https://aur.archlinux.org/packages/code/)
@@ -921,11 +924,57 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.x.org/wiki](https://www.x.org/wiki) || [xorg-xedit](https://www.archlinux.org/packages/?name=xorg-xedit)
 
-###### Collaborative text editors
+#### Vi text editors
 
-*   **Gobby** — Collaborative editor supporting multiple documents in one session and a multi-user chat.
+*   **Amp** — A text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
 
-	[https://gobby.github.io](https://gobby.github.io) || [gobby](https://www.archlinux.org/packages/?name=gobby)
+	[https://amp.rs](https://amp.rs) || [amp](https://aur.archlinux.org/packages/amp/)
+
+*   **[Kakoune](/index.php/Kakoune "Kakoune")** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
+
+	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune](https://www.archlinux.org/packages/?name=kakoune)
+
+*   **[Neovim](/index.php/Neovim "Neovim")** — Vim's rebirth for the 21st century
+
+	[http://neovim.io/](http://neovim.io/) || [neovim](https://www.archlinux.org/packages/?name=neovim)
+
+*   **[Vi](/index.php/Vi "Vi")** — The original ex/vi text editor.
+
+	[http://ex-vi.sourceforge.net/](http://ex-vi.sourceforge.net/) || [vi](https://www.archlinux.org/packages/?name=vi)
+
+*   **[Vim](/index.php/Vim "Vim") (Vi IMproved)** — Advanced text editor that seeks to provide the power of the de-facto Unix editor 'vi', with a more complete feature set.
+
+	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
+
+*   **Vis** — modern, legacy free, simple yet efficient vim-like editor.
+
+	[http://www.brain-dump.org/projects/vis/](http://www.brain-dump.org/projects/vis/) || [vis](https://www.archlinux.org/packages/?name=vis)
+
+#### Markdown editors
+
+*   **CuteMarkEd** — Qt-based Markdown editor with live HTML preview, math expressions, code and markdown syntax highlighting.
+
+	[https://cloose.github.io/CuteMarkEd/](https://cloose.github.io/CuteMarkEd/) || [cutemarked](https://aur.archlinux.org/packages/cutemarked/)
+
+*   **ghostwriter** — Distraction-free Markdown editor.
+
+	[https://wereturtle.github.io/ghostwriter/](https://wereturtle.github.io/ghostwriter/) || [ghostwriter](https://aur.archlinux.org/packages/ghostwriter/)
+
+*   **Marker** — Simple yet robust Markdown editor.
+
+	[https://fabiocolacio.github.io/Marker/](https://fabiocolacio.github.io/Marker/) || [marker](https://aur.archlinux.org/packages/marker/)
+
+*   **Remarkable** — Fully featured Markdown editor.
+
+	[https://remarkableapp.github.io/](https://remarkableapp.github.io/) || [remarkable](https://aur.archlinux.org/packages/remarkable/)
+
+*   **ReText** — Simple text editor for Markdown and reStructuredText.
+
+	[https://github.com/retext-project/retext](https://github.com/retext-project/retext) || [retext](https://www.archlinux.org/packages/?name=retext)
+
+*   **UberWriter** — Elegant, free distraction GTK+ Markdown editor.
+
+	[http://uberwriter.wolfvollprecht.de/](http://uberwriter.wolfvollprecht.de/) || [uberwriter](https://aur.archlinux.org/packages/uberwriter/)
 
 #### Note taking organizers
 
@@ -971,6 +1020,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://laverna.cc/](https://laverna.cc/) || [laverna](https://aur.archlinux.org/packages/laverna/)
 
+*   **MyNotex** — Note-taking, document file and activity manager.
+
+	[https://sites.google.com/site/mynotex/](https://sites.google.com/site/mynotex/) || [mynotex](https://aur.archlinux.org/packages/mynotex/)
+
 *   **Notes-Up** — Write beautiful notes fast and easy using Markdown.
 
 	[https://github.com/Philip-Scott/Notes-up](https://github.com/Philip-Scott/Notes-up) || [notes-up](https://aur.archlinux.org/packages/notes-up/)
@@ -999,6 +1052,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://tuxcards.de/](http://tuxcards.de/) || [tuxcards](https://www.archlinux.org/packages/?name=tuxcards)
 
+*   **WikidPad** — Wiki-like notebook for storing your thoughts, ideas, todo lists, contacts, or anything else you can think of to write down.
+
+	[http://wikidpad.sourceforge.net/](http://wikidpad.sourceforge.net/) || [wikidpad](https://aur.archlinux.org/packages/wikidpad/)
+
 *   **wiznote** — Opensource cross-platform cloud based note-taking client.
 
 	[http://www.wiznote.com/](http://www.wiznote.com/) || [wiznote](https://www.archlinux.org/packages/?name=wiznote)
@@ -1011,31 +1068,57 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://znotes.sourceforge.net/](http://znotes.sourceforge.net/) || [znotes](https://aur.archlinux.org/packages/znotes/)
 
-#### Stylus note taking
+#### Distraction-free writing
 
-*   **Write** — A word processor for hand writing.
+See also [Wikipedia:Full-screen writing program](https://en.wikipedia.org/wiki/Full-screen_writing_program "wikipedia:Full-screen writing program").
 
-	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)
+*   **FocusWriter** — Simple, distraction-free writing environment. It utilizes a hide-away interface that you access by moving your mouse to the edges of the screen, allowing the program to have a familiar look and feel to it while still getting out of the way so that you can immerse yourself in your work.
 
-*   **Gournal** — Note-taking application written for usage on Tablet-PC, written in perl.
+	[https://gottcode.org/focuswriter/](https://gottcode.org/focuswriter/) || [focuswriter](https://aur.archlinux.org/packages/focuswriter/)
 
-	[http://www.adebenham.com/old-stuff/gournal/](http://www.adebenham.com/old-stuff/gournal/) || [gournal](https://aur.archlinux.org/packages/gournal/)
+*   **[PyRoom](https://en.wikipedia.org/wiki/PyRoom "wikipedia:PyRoom")** — Fullscreen editor without buttons, widgets, formatting options, menus and with only the minimum of required dialog windows, it doesn't have any distractions and lets you focus on writing and only writing.
 
-*   **Xournal** — An application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF-files as well.
+	[https://pyroom.org/](https://pyroom.org/) || [pyroom](https://aur.archlinux.org/packages/pyroom/)
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+*   **Quilter** — Focus on your writing.
 
-*   **Xournal++** — A C++ rewrite of Xournal.
+	[https://github.com/dbuksbaum/TextRoom](https://github.com/dbuksbaum/TextRoom) || [quilter](https://aur.archlinux.org/packages/quilter/)
 
-	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
+*   **TextRoom** — Fullscreen text editor for writers.
 
-#### Mind-mapping tools
+	[https://github.com/dbuksbaum/TextRoom](https://github.com/dbuksbaum/TextRoom) || [textroom](https://aur.archlinux.org/packages/textroom/)
 
-*   **FreeMind** — Premier free mind-mapping software written in Java.
+#### Storywriting
+
+*   **KIT Scenarist** — Simple and powerful application for creating screenplays.
+
+	[https://kitscenarist.ru/en/](https://kitscenarist.ru/en/) || [scenarist](https://aur.archlinux.org/packages/scenarist/)
+
+*   **Magic Fountain** — Fountain syntax editor and viewer for writing screenplays.
+
+	[https://aztorius.github.io/magicfountain/](https://aztorius.github.io/magicfountain/) || [magicfountain](https://aur.archlinux.org/packages/magicfountain/)
+
+*   **Manuskript** — Provides a rich environment to help writers create their first draft and then further refine and edit their masterpiece.
+
+	[http://www.theologeek.ch/manuskript/](http://www.theologeek.ch/manuskript/) || [manuskript-git](https://aur.archlinux.org/packages/manuskript-git/)
+
+*   **oStorybook** — Tool for writers, essayists, authors from the draft to the final work.
+
+	[https://ostorybook.tuxfamily.org/?lng=en](https://ostorybook.tuxfamily.org/?lng=en) || [ostorybook](https://aur.archlinux.org/packages/ostorybook/)
+
+*   **[Trelby](https://en.wikipedia.org/wiki/Trelby "wikipedia:Trelby")** — Simple, fast and elegantly laid out to make screenwriting simple.
+
+	[https://www.trelby.org/](https://www.trelby.org/) || [trelby-git](https://aur.archlinux.org/packages/trelby-git/)
+
+#### Mind-mapping
+
+See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikipedia.org/wiki/List_of_concept-_and_mind-mapping_software "wikipedia:List of concept- and mind-mapping software").
+
+*   **[FreeMind](https://en.wikipedia.org/wiki/FreeMind "wikipedia:FreeMind")** — Mind-mapping software written in Java.
 
 	[http://freemind.sourceforge.net](http://freemind.sourceforge.net) || [freemind](https://www.archlinux.org/packages/?name=freemind)
 
-*   **Freeplane** — Free and open source software application that supports thinking, sharing information and getting things done at work, in school and at home. The software can be used for mind mapping and analyzing the information contained in mind maps.
+*   **[Freeplane](https://en.wikipedia.org/wiki/Freeplane "wikipedia:Freeplane")** — Application that supports thinking, sharing information and getting things done at work, in school and at home. The software can be used for mind mapping and analyzing the information contained in mind maps.
 
 	[http://freeplane.sourceforge.net](http://freeplane.sourceforge.net) || [freeplane](https://aur.archlinux.org/packages/freeplane/)
 
@@ -1043,7 +1126,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://github.com/labyrinth-team/labyrinth](https://github.com/labyrinth-team/labyrinth) || [labyrinth](https://www.archlinux.org/packages/?name=labyrinth)
 
-*   **Semantik** — A mind-mapping application for KDE.
+*   **Semantik** — Mind-mapping application for KDE.
 
 	[https://waf.io/semantik.html](https://waf.io/semantik.html) || [semantik](https://aur.archlinux.org/packages/semantik/)
 
@@ -1055,11 +1138,11 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://www.insilmaril.de/vym/](http://www.insilmaril.de/vym/) || [vym](https://www.archlinux.org/packages/?name=vym)
 
-*   **Visual Understanding Environment** — Open Source project focused on creating flexible tools for managing and integrating digital resources in support of teaching, learning and research.
+*   **[Visual Understanding Environment](https://en.wikipedia.org/wiki/Visual_Understanding_Environment "wikipedia:Visual Understanding Environment")** — Flexible tools for managing and integrating digital resources in support of teaching, learning and research.
 
 	[http://vue.tufts.edu](http://vue.tufts.edu) || [vue](https://aur.archlinux.org/packages/vue/)
 
-*   **XMind** — Brainstorming and mind mapping application. It provides a rich set of different visualization styles, and allows sharing of created mind maps via their website.
+*   **[XMind](https://en.wikipedia.org/wiki/XMind "wikipedia:XMind")** — Brainstorming and mind mapping application. It provides a rich set of different visualization styles, and allows sharing of created mind maps via their website.
 
 	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://aur.archlinux.org/packages/xmind/)
 
@@ -1093,6 +1176,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
 
+*   **QRab** — Simply grabs QR code from screen and copies decoded text into clipboard.
+
+	[https://qrab.sourceforge.io/](https://qrab.sourceforge.io/) || [qrab](https://aur.archlinux.org/packages/qrab/)
+
 *   **Qreator** — Create your own QR codes.
 
 	[http://davidplanella.org/project-showcase/qreator/](http://davidplanella.org/project-showcase/qreator/) || [qreator](https://aur.archlinux.org/packages/qreator/)
@@ -1101,21 +1188,25 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://launchpad.net/qr-tools](https://launchpad.net/qr-tools) || [qtqr](https://aur.archlinux.org/packages/qtqr/)
 
+*   **ZBarCam GUI** — Simple GUI for ZBar to read bar codes from various sources.
+
+	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || GTK+: [zbar-gtk](https://www.archlinux.org/packages/?name=zbar-gtk), Qt: [zbar-qt](https://www.archlinux.org/packages/?name=zbar-qt)
+
 *   **Zint Barcode Studio** — Barcode generator GUI.
 
 	[http://zint.org.uk/](http://zint.org.uk/) || [zint-qt](https://www.archlinux.org/packages/?name=zint-qt)
 
 #### Character selectors
 
-*   **GNOME Characters** — Character map application for GNOME
+*   **GNOME Characters** — Character map application for GNOME.
 
 	[https://wiki.gnome.org/Design/Apps/CharacterMap](https://wiki.gnome.org/Design/Apps/CharacterMap) || [gnome-characters](https://www.archlinux.org/packages/?name=gnome-characters)
 
-*   **gucharmap** — A GTK+ 3 Character Selector, distributed with GNOME desktop.
+*   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK+ 3 character selector for GNOME.
 
 	[https://wiki.gnome.org/Apps/Gucharmap](https://wiki.gnome.org/Apps/Gucharmap) || [gucharmap](https://www.archlinux.org/packages/?name=gucharmap)
 
-*   **kdeutils-kcharselect** — A tool to select special characters from all installed fonts and copy them into the clipboard. Distributed with KDE.
+*   **KCharSelect** — Tool to select special characters from all installed fonts and copy them into the clipboard. Part of [kdeutils](https://www.archlinux.org/groups/x86_64/kdeutils/).
 
 	[https://utils.kde.org/projects/kcharselect/](https://utils.kde.org/projects/kcharselect/) || [kcharselect](https://www.archlinux.org/packages/?name=kcharselect)
 

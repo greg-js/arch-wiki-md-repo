@@ -14,8 +14,11 @@
 
 [Install](/index.php/Install "Install") the [zathura](https://www.archlinux.org/packages/?name=zathura) package along with the desired optional dependencies:
 
-*   [zathura-pdf-poppler](https://www.archlinux.org/packages/?name=zathura-pdf-poppler) - PDF reading
-*   [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) - PDF/ePUB/OpenXPS reading, backend based on MuPDF
+*   [zathura-cb](https://www.archlinux.org/packages/?name=zathura-cb) - Comicbook support
+*   [zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu) - DjVu support
+*   [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) - EPUB, PDF and XPS support based on [MuPDF](/index.php/MuPDF "MuPDF")
+*   [zathura-pdf-poppler](https://www.archlinux.org/packages/?name=zathura-pdf-poppler) - PDF support based on [Poppler](https://en.wikipedia.org/wiki/Poppler_(software) "wikipedia:Poppler (software)")
+*   [zathura-ps](https://www.archlinux.org/packages/?name=zathura-ps) - PostScript support
 
 ## Features
 

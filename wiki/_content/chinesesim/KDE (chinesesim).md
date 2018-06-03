@@ -408,7 +408,7 @@ KCM 意为 KDE 控制模块（**KC**onfig **M**odule）。这些模块在系统�
 
 *   **Kcmsystemd** — KDE 系统控制组件.
 
-	[https://github.com/rthomsen/kcmsystemd](https://github.com/rthomsen/kcmsystemd) || [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)
+	[https://github.com/rthomsen/kcmsystemd](https://github.com/rthomsen/kcmsystemd) || [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/)
 
 可从 [linux-apps.com](https://www.linux-apps.com/search?projectSearchText=KCM) 找到更多的 KCM 。
 
