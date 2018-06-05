@@ -2,9 +2,9 @@ Related articles
 
 *   [TigerVNC](/index.php/TigerVNC "TigerVNC")
 
-x11vnc allows one to view remotely and interact with real X displays (i.e. a display corresponding to a physical monitor, keyboard, and mouse) with any VNC viewer. In this way it plays the role for Unix/X11 that WinVNC plays for Windows.
+[x11vnc](https://en.wikipedia.org/wiki/x11vnc "wikipedia:x11vnc") is a VNC server, it allows one to view remotely and interact with real X displays (i.e. a display corresponding to a physical monitor, keyboard, and mouse) with any VNC viewer. While it is not developed any longer by its original author Karl Runge, *LibVNC* and the GitHub community have taken over the development.
 
-**Note:** x11vnc is not the only way to accomplish a remote control of the real X display; x0vncserver is part of [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) and allows for the same operation.
+*x11vnc* does not create an extra display (or X desktop) for remote control. Instead, it shows in real time the existing X11 display, unlike *Xvnc*, part of [TigerVNC](/index.php/TigerVNC "TigerVNC"), which is an alternatives VNC server available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Contents
 
@@ -16,32 +16,34 @@ x11vnc allows one to view remotely and interact with real X displays (i.e. a dis
             *   [1.2.1.2 GDM](#GDM)
             *   [1.2.1.3 SLIM](#SLIM)
             *   [1.2.1.4 LXDM](#LXDM)
-        *   [1.2.2 Setting a password](#Setting_a_password)
-        *   [1.2.3 Running constantly](#Running_constantly)
-    *   [1.3 Accessing](#Accessing)
+    *   [1.3 Setting a password](#Setting_a_password)
+    *   [1.4 Running constantly](#Running_constantly)
+    *   [1.5 Accessing](#Accessing)
 *   [2 SSH Tunnel](#SSH_Tunnel)
 *   [3 Troubleshooting](#Troubleshooting)
+*   [4 See also](#See_also)
 
 ## Setting up x11vnc
 
 ### Installation
 
-[x11vnc](https://www.archlinux.org/packages/?name=x11vnc) is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+Install [x11vnc](https://www.archlinux.org/packages/?name=x11vnc) from the official repositories.
 
 ### Starting
 
-First, start X either by *startx* or through a manager such as [GDM](/index.php/GDM "GDM") or [SLiM](/index.php/SLiM "SLiM"). You may need to set up X to [run headless](/index.php/Headless_With_X "Headless With X") too. Then, open a terminal and type
+First, start X either by *startx* or through a [display manager](/index.php/Display_manager "Display manager"). You may need to set up X to [run headless](/index.php/Headless_With_X "Headless With X") too.
+
+Then, run the following command, all available options are explained in [x11vnc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x11vnc.1).
 
 ```
 $ x11vnc -display :0
 
 ```
 
-Another option is to place the x11vnc line in a script which is called at login.
+Another option is to place the x11vnc command line in a script which is called at login, for example:
 
 ```
-#!/bin/bash
-x11vnc -nap -wait 50 -noxdamage -passwd PASSWORD -display :0 -forever -o /var/log/x11vnc.log -bg
+x11vnc -wait 50 -noxdamage -passwd PASSWORD -display :0 -forever -o /var/log/x11vnc.log -bg
 
 ```
 
@@ -58,7 +60,7 @@ $ x11vnc -display :0 -auth ~/.Xauthority
 
 ```
 
-If that fails, you may have to run (as root)
+If that fails, you may have to run instead (as root):
 
 ```
 # x11vnc -display :0 -auth /home/*user*/.Xauthority
@@ -103,7 +105,7 @@ or see [Troubleshooting](#Troubleshooting) section below
 
 ```
 
-#### Setting a password
+### Setting a password
 
 ```
 $ mkdir ~/.x11vnc
@@ -120,19 +122,12 @@ $ x11vnc -display :0 -rfbauth ~/.x11vnc/passwd
 
 Your viewer should prompt for a password when connecting.
 
-#### Running constantly
+### Running constantly
 
-By default, x11vnc will accept the first VNC session and shutdown when the session disconnects. In order to avoid that, start x11vnc with the **-many** or **-forever** argument, like this:
+By default, x11vnc will accept the first VNC session and shutdown when the session disconnects. In order to avoid that, start x11vnc with either the `-many` or the `-forever` argument, like this:
 
 ```
 $ x11vnc -many -display :0
-
-```
-
-or
-
-```
-$ x11vnc -forever -display :0
 
 ```
 
@@ -216,3 +211,9 @@ Please update if this works / not works for any other [display manager](/index.p
 4\. Screensaver problem
 
 If screensaver starts every 1-2 second, start x11vnc with -nodpms key.
+
+## See also
+
+*   [original author site](http://www.karlrunge.com/x11vnc/)
+*   [https://github.com/LibVNC/x11vnc](https://github.com/LibVNC/x11vnc)
+*   [Wikipedia:x11vnc](https://en.wikipedia.org/wiki/x11vnc "wikipedia:x11vnc")

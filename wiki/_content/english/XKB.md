@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [X Keyboard Extension](/index.php/X_Keyboard_Extension "X Keyboard Extension")
+*   [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension")

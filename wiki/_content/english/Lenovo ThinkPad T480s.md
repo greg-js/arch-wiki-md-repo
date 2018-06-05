@@ -19,7 +19,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [1 Hardware](#Hardware)
     *   [1.1 Fingerprint reader](#Fingerprint_reader)
 *   [2 Powersaving](#Powersaving)
-*   [3 See also](#See_also)
+*   [3 Thermal Throttling Fix](#Thermal_Throttling_Fix)
+*   [4 See also](#See_also)
 
 ## Hardware
 
@@ -90,6 +91,14 @@ Without special configuration and with default firmware settings, power usage is
 *   Disable unused peripherals under "Security" -> "I/O port access" in the firmware. This especially applies to the SD/MMC-cardreader, which seems to drain some power even when idle
 
 As of Kernel 4.15, DisplayPort PSR (Panel self refresh) is disabled by default and broken when forcibly enabled (system hangs after a few seconds, display lag). 4.17-rc1 seems to improve a lot in this regard, but PSR still sometimes causes the screen to freeze for a few seconds.
+
+## Thermal Throttling Fix
+
+Workaround for Linux throttling issues on Lenovo T480 / T480s / X1C6 notebooks as described here.
+
+This script forces the CPU package power limit (PL1/2) to 44 W (29 W on battery) and the temperature trip point to 95 'C (85 'C on battery) by overriding default values in MSR and MCHBAR every 5 seconds (30 on battery) to block the Embedded Controller from resetting these values to default.
+
+[https://github.com/erpalma/lenovo-throttling-fix](https://github.com/erpalma/lenovo-throttling-fix)
 
 ## See also
 

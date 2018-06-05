@@ -1,15 +1,15 @@
 Related articles
 
+*   [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension")
 *   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
 *   [Xorg](/index.php/Xorg "Xorg")
-*   [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension")
 
-This article's purpose is to detail basic Xorg server keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") or [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") respectively.
+This article describes the basics of [Xorg](/index.php/Xorg "Xorg") keyboard configuration. For additional key mappings, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
 
 ## Contents
 
-*   [1 Overview](#Overview)
+*   [1 Keyboard layouts](#Keyboard_layouts)
 *   [2 Viewing keyboard settings](#Viewing_keyboard_settings)
     *   [2.1 Third party utilities](#Third_party_utilities)
 *   [3 Setting keyboard layout](#Setting_keyboard_layout)
@@ -30,13 +30,21 @@ This article's purpose is to detail basic Xorg server keyboard configuration. Fo
     *   [5.1 Using xset](#Using_xset)
     *   [5.2 Using XServer startup options](#Using_XServer_startup_options)
     *   [5.3 Using XServer options](#Using_XServer_options)
-*   [6 See also](#See_also)
+*   [6 Identifying keycodes](#Identifying_keycodes)
+*   [7 Keybinding](#Keybinding)
+    *   [7.1 Third-party tools](#Third-party_tools)
+        *   [7.1.1 sxhkd](#sxhkd)
+        *   [7.1.2 actkbd](#actkbd)
+        *   [7.1.3 xbindkeys](#xbindkeys)
+*   [8 See also](#See_also)
 
-## Overview
+## Keyboard layouts
 
-The Xorg server uses the [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) to define keyboard layouts. Optionally, [xmodmap](/index.php/Xmodmap "Xmodmap") can be used to access the internal keymap table directly, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s *localectl* can be used to define the keyboard layout for both the Xorg server and the virtual console.
+In Xorg keyboard layouts are defined using [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") (XKB).
 
-**Note:** XKB options can be overridden by the tools provided by some desktop environments such as [GNOME (XkbOptions)](/index.php/GNOME#XkbOptions_keyboard_options "GNOME") and [KDE (set keyboard)](/index.php/KDE#Set_keyboard "KDE").
+You can set the XKB keyboard layout with [setxkbmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1).
+
+[xmodmap](/index.php/Xmodmap "Xmodmap") can be used to directly access the internal keymap table, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) can be used to define the keyboard layout for both the Xorg server and the virtual console.
 
 ## Viewing keyboard settings
 
@@ -194,7 +202,7 @@ $ grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
 
 [Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is disabled by default and has to be manually enabled by passing `keypad:pointerkeys` to `XkbOptions`. This will make the `Shift+NumLock` shortcut toggle mouse keys.
 
-See also [X KeyBoard extension#Mouse control](/index.php/X_KeyBoard_extension#Mouse_control "X KeyBoard extension") for advanced configuration.
+See also [X keyboard extension#Mouse control](/index.php/X_keyboard_extension#Mouse_control "X keyboard extension") for advanced configuration.
 
 ### Configuring compose key
 
@@ -319,6 +327,69 @@ Option "AutoRepeat" "*delay* *rate*"
 
 ```
 
+## Identifying keycodes
+
+**Note:** The Xorg [keycodes](/index.php/Extra_keyboard_keys "Extra keyboard keys") are 8 larger than the Linux keycodes.[[4]](https://cgit.freedesktop.org/xorg/driver/xf86-input-evdev/tree/src/evdev.c)
+
+The *keycodes* used by [Xorg](/index.php/Xorg "Xorg") are reported by a utility called [xev(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xev.1), which is provided by the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package. Of course to execute *xev*, you need to be in a graphical environment, not in the console.
+
+With the following command you can start *xev* and show only the relevant parts:
+
+```
+ $ xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s
+", $5, $8 }'
+
+```
+
+Here is an example output:
+
+```
+38  a
+55  v
+54  c
+50  Shift_L
+133 Super_L
+135 Menu
+
+```
+
+[Xbindkeys#Identifying keycodes](/index.php/Xbindkeys#Identifying_keycodes "Xbindkeys") is another wrapper to "xev" that reports keycodes.
+
+If you press a key and nothing appears in the terminal, it means that either the key does not have a *scancode*, the *scancode* is not mapped to a *keycode*, or some other process is capturing the keypress. If you suspect that a process listening to X server is capturing the keypress, you can try running xev from a clean X session:
+
+```
+$ xinit /usr/bin/xterm -- :1
+
+```
+
+## Keybinding
+
+When we are in a graphical environment we may want to execute a command when certain key combination is pressed (i.e. bind a command to a keysym). There are multiple ways to do that:
+
+*   The most portable way using low level tools, such as [acpid](/index.php/Acpid "Acpid"). Not all keys are supported, but configuration in uniform way is possible for keyboard keys, power adapter connection and even headphone jack (un)plugging events. It is also difficult to run programs inside X session correctly.
+*   The universal way using [Xorg](/index.php/Xorg "Xorg") utilities (e.g. [xbindkeys](/index.php/Xbindkeys "Xbindkeys")) and eventually your desktop environment or window manager tools.
+*   The quicker way using a third-party program to do everything in GUI, such as the Gnome Control Center or [Keytouch](/index.php/Keytouch "Keytouch").
+
+### Third-party tools
+
+#### sxhkd
+
+A simple X hotkey daemon with a powerful and compact configuration syntax. See [sxhkd](/index.php/Sxhkd "Sxhkd") for details.
+
+#### actkbd
+
+From [actkbd home page](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
+
+	[actkbd](https://aur.archlinux.org/packages/actkbd/) (available in [AUR](/index.php/AUR "AUR")) is a simple daemon that binds actions to keyboard events. It recognises key combinations and can handle press, repeat and release events. Currently it only supports the linux-2.6 evdev interface. It uses a plain-text configuration file which contains all the bindings.
+
+A sample configuration and guide is available [here](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
+
+#### xbindkeys
+
+[xbindkeys](/index.php/Xbindkeys "Xbindkeys") allows advanced mapping of keysyms to actions independently of the Desktop Environment.
+
+**Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) from the [AUR](/index.php/AUR "AUR").
+
 ## See also
 
-*   [Madduck guide](http://madduck.net/docs/extending-xkb/) on extending XKB
+*   [Madduck guide on extending XKB](http://madduck.net/docs/extending-xkb/)

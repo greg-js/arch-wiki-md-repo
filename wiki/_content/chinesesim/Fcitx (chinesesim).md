@@ -138,7 +138,7 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 **警告:** 这一步非常重要请不要忽略，即便你原来默认没有.xprofile文件也要新建一个然后写入这几行，不然中文输入法是启动不了的。还有.xprofile文件名一定要全部小写，不要看到.Xauthority这种文件名以为首字母要大写就大写成.Xprofile了，不然也是没法用中文输入法的。
 
-**警告:** 使用Gtk2应用时请安装fcitx-gtk2，使用Gtk3应用时请安装fcitx-gtk3，使用Qt4应用时请安装fcitx-qt4，使用Qt5应用时请安装fcitx-qt5。
+**警告:** 使用Gtk2应用时请安装[fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2)，使用Gtk3应用时请安装[fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3)，使用Qt4应用时请安装[fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4)，使用Qt5应用时请安装[fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5)。
 
 **警告:** 请不要在 `.bashrc` 设置这些环境变量。`bashrc`只应用于交互性 bash 会话的初始化，并不应用于非交互性脚本或 X 会话的初始化。
 

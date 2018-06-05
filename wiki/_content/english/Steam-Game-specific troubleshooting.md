@@ -241,47 +241,49 @@
     *   [4.113 Tomb Raider](#Tomb_Raider)
         *   [4.113.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
         *   [4.113.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-    *   [4.114 Tower Unite](#Tower_Unite)
-        *   [4.114.1 Graphical Glitches](#Graphical_Glitches)
-    *   [4.115 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [4.116 Transistor](#Transistor)
-        *   [4.116.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
-    *   [4.117 Transmissions: Element 120](#Transmissions:_Element_120)
-        *   [4.117.1 Troubleshooting](#Troubleshooting)
-    *   [4.118 Trine 2](#Trine_2)
-        *   [4.118.1 Colors](#Colors)
-        *   [4.118.2 Sound](#Sound)
-        *   [4.118.3 Resolution](#Resolution)
-    *   [4.119 Tropico 5](#Tropico_5)
-        *   [4.119.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-    *   [4.120 Unity of Command](#Unity_of_Command)
-        *   [4.120.1 Squares](#Squares)
-        *   [4.120.2 No audio](#No_audio_5)
-    *   [4.121 Unity3D](#Unity3D)
-        *   [4.121.1 Locale settings](#Locale_settings)
-        *   [4.121.2 Unity 5 sound problems](#Unity_5_sound_problems)
-        *   [4.121.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-        *   [4.121.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
-        *   [4.121.5 Game does not respond](#Game_does_not_respond)
-    *   [4.122 Unrest](#Unrest)
-    *   [4.123 Volgarr the Viking](#Volgarr_the_Viking)
-    *   [4.124 War Thunder](#War_Thunder)
-        *   [4.124.1 No audio](#No_audio_6)
-        *   [4.124.2 Blank screen](#Blank_screen)
-    *   [4.125 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-    *   [4.126 We Were Here](#We_Were_Here)
-        *   [4.126.1 Stuck on black screen or logo on launch](#Stuck_on_black_screen_or_logo_on_launch)
-    *   [4.127 Worms W.M.D](#Worms_W.M.D)
-    *   [4.128 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-        *   [4.128.1 Game does not start](#Game_does_not_start_12)
-    *   [4.129 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [4.130 World of Goo](#World_of_Goo)
-        *   [4.130.1 Changing resolution](#Changing_resolution)
-    *   [4.131 X3: Terran Conflict](#X3:_Terran_Conflict)
-        *   [4.131.1 Game crashes on startup](#Game_crashes_on_startup)
-    *   [4.132 XCOM](#XCOM)
-        *   [4.132.1 Hangs on startup](#Hangs_on_startup)
-        *   [4.132.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+    *   [4.114 Torchlight 2](#Torchlight_2)
+        *   [4.114.1 Libfreetype/libfontconfig Incompatibility](#Libfreetype.2Flibfontconfig_Incompatibility)
+    *   [4.115 Tower Unite](#Tower_Unite)
+        *   [4.115.1 Graphical Glitches](#Graphical_Glitches)
+    *   [4.116 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [4.117 Transistor](#Transistor)
+        *   [4.117.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
+    *   [4.118 Transmissions: Element 120](#Transmissions:_Element_120)
+        *   [4.118.1 Troubleshooting](#Troubleshooting)
+    *   [4.119 Trine 2](#Trine_2)
+        *   [4.119.1 Colors](#Colors)
+        *   [4.119.2 Sound](#Sound)
+        *   [4.119.3 Resolution](#Resolution)
+    *   [4.120 Tropico 5](#Tropico_5)
+        *   [4.120.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+    *   [4.121 Unity of Command](#Unity_of_Command)
+        *   [4.121.1 Squares](#Squares)
+        *   [4.121.2 No audio](#No_audio_5)
+    *   [4.122 Unity3D](#Unity3D)
+        *   [4.122.1 Locale settings](#Locale_settings)
+        *   [4.122.2 Unity 5 sound problems](#Unity_5_sound_problems)
+        *   [4.122.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+        *   [4.122.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
+        *   [4.122.5 Game does not respond](#Game_does_not_respond)
+    *   [4.123 Unrest](#Unrest)
+    *   [4.124 Volgarr the Viking](#Volgarr_the_Viking)
+    *   [4.125 War Thunder](#War_Thunder)
+        *   [4.125.1 No audio](#No_audio_6)
+        *   [4.125.2 Blank screen](#Blank_screen)
+    *   [4.126 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+    *   [4.127 We Were Here](#We_Were_Here)
+        *   [4.127.1 Stuck on black screen or logo on launch](#Stuck_on_black_screen_or_logo_on_launch)
+    *   [4.128 Worms W.M.D](#Worms_W.M.D)
+    *   [4.129 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+        *   [4.129.1 Game does not start](#Game_does_not_start_12)
+    *   [4.130 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [4.131 World of Goo](#World_of_Goo)
+        *   [4.131.1 Changing resolution](#Changing_resolution)
+    *   [4.132 X3: Terran Conflict](#X3:_Terran_Conflict)
+        *   [4.132.1 Game crashes on startup](#Game_crashes_on_startup)
+    *   [4.133 XCOM](#XCOM)
+        *   [4.133.1 Hangs on startup](#Hangs_on_startup)
+        *   [4.133.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Introduction
 
@@ -1907,6 +1909,29 @@ If your Steam Controller is correctly recognized and paired but still not workin
 *   Go to Big Screen and start Tomb Raider
 
 Correctly recognized means you can control the desktop mouse and Steam in Big Picture mode and the controller is shown in the Big Picture settings.
+
+### Torchlight 2
+
+#### Libfreetype/libfontconfig Incompatibility
+
+If you are experiencing issues with launching Torchlight 2, it could be due to using a newer libfontconfig than the game currently supports.
+
+Right click the game in Steam, and set the following as it's launch option:
+
+```
+LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%
+
+```
+
+then attempt launching the game.
+
+Alternately, re-naming or deleting these 2 files will force it to use your system's libraries:
+
+```
+Torchlight 2/game/lib/libfreetype.so.6
+Torchlight 2/game/lib64/libfreetype.so.6
+
+```
 
 ### Tower Unite
 

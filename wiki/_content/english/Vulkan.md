@@ -19,7 +19,7 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 *   Vulkan is not currently supported by [Bumblebee](/index.php/Bumblebee "Bumblebee") [[1]](https://github.com/Bumblebee-Project/Bumblebee/issues/769).
 *   The Radeon Vulkan driver now supports [PRIME](/index.php/PRIME "PRIME") [[2]](http://www.phoronix.com/scan.php?page=news_item&px=RADV-PRIME-Lands).
 
-To run a Vulkan application, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package, as well as the Vulkan drivers for your graphics card(s):
+To run a Vulkan application, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package (and [lib32-vulkan-icd-loader](https://www.archlinux.org/packages/?name=lib32-vulkan-icd-loader) if you also want to run 32-bit applications), as well as the Vulkan drivers for your graphics card(s):
 
 *   [Intel](/index.php/Intel "Intel"): [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"): [nvidia](https://www.archlinux.org/packages/?name=nvidia)

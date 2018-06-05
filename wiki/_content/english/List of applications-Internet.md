@@ -680,6 +680,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://owncloud.com/client/](https://owncloud.com/client/) || [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client)
 
+*   **pCloud Drive** — Proprietary desktop syncing client for pCloud. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://www.pcloud.com/download-free-online-cloud-file-storage.html](https://www.pcloud.com/download-free-online-cloud-file-storage.html) || [pcloud-drive](https://aur.archlinux.org/packages/pcloud-drive/)
+
 *   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop client for Pydio.
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
@@ -707,6 +711,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
 
 	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)
+
+*   **[Tresorit](https://en.wikipedia.org/wiki/Tresorit "wikipedia:Tresorit")** — Proprietary desktop syncing client for Tresorit.
+
+	[https://tresorit.com/download](https://tresorit.com/download) || [tresorit](https://aur.archlinux.org/packages/tresorit/)
 
 *   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Proprietary CLI for Yandex Disk.
 

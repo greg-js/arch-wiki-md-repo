@@ -23,7 +23,7 @@
 
 ### Setting the right bus id
 
-If you install nvidia-xrun from [AUR](/index.php/AUR "AUR"),you can skip this step,the bus id has been already setted in `/etc/X11/nvidia-xorg.conf`
+If you install nvidia-xrun from [AUR](/index.php/AUR "AUR"),you can skip this step,the bus id has been already set in `/etc/X11/nvidia-xorg.conf`
 
 If you down nvidia-xrun form [nvidia-xrun github repo],perhaps you should set the bus id.
 

@@ -168,11 +168,11 @@ There are several cards used
 *   Ericsson N5321 (3.5G)
 *   Sierra Wireless EM7345 (4G)
 
-EM7345: SIM-Problems, TBD
+EM7345: SIM-Problems [[1]](https://thesquareplanet.com/blog/wwan-on-the-x1-carbon-3rd-gen-in-arch-linux/)
 
 #### GPS
 
-N5321 is unknown EM7345 can output GPS using AT-Commands. You can use [[1]](https://github.com/tuxmaster/gpsd-tcp%7Cgpsd-tcp) to interface to gpsd.
+N5321 is unknown EM7345 can output GPS using AT-Commands. You can use [[2]](https://github.com/tuxmaster/gpsd-tcp%7Cgpsd-tcp) to interface to gpsd.
 
 ## See also
 

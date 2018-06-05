@@ -4,17 +4,20 @@ Related articles
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
 *   [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")
 
-**Note:** This article covers only basic configuration without modifying layouts, mapping extra keys etc. See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") for these advanced topics.
-
 Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"), console fonts and console maps are provided by the [kbd](https://www.archlinux.org/packages/?name=kbd) package (a dependency of [systemd](/index.php/Systemd "Systemd")), which also provides many low-level tools for managing virtual console. In addition, *systemd* also provides the *localectl* tool, which can control both the system [locale](/index.php/Locale "Locale") and keyboard layout settings for both the virtual console and Xorg.
 
 ## Contents
 
 *   [1 Viewing keyboard settings](#Viewing_keyboard_settings)
-*   [2 Setting keyboard layout](#Setting_keyboard_layout)
-    *   [2.1 Keymap codes](#Keymap_codes)
-    *   [2.2 Persistent configuration](#Persistent_configuration)
-    *   [2.3 Temporary configuration](#Temporary_configuration)
+*   [2 Keymaps](#Keymaps)
+    *   [2.1 Listing keymaps](#Listing_keymaps)
+    *   [2.2 Loadkeys](#Loadkeys)
+    *   [2.3 Persistent configuration](#Persistent_configuration)
+    *   [2.4 Creating a custom keymap](#Creating_a_custom_keymap)
+        *   [2.4.1 Identifying keycodes](#Identifying_keycodes)
+        *   [2.4.2 Adding directives](#Adding_directives)
+        *   [2.4.3 Other examples](#Other_examples)
+        *   [2.4.4 Saving changes](#Saving_changes)
 *   [3 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
     *   [3.1 Systemd service](#Systemd_service)
 
@@ -22,11 +25,11 @@ Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/
 
 Use `localectl status` to view the current keyboard configurations.
 
-## Setting keyboard layout
+## Keymaps
 
-### Keymap codes
+The keymap files are stored in the `/usr/share/kbd/keymaps/` directory tree. Usually one keymap file corresponds to one keyboard layout (the `include` statement can be used to share common parts and a keymap file can contain multiple layouts with some key combination used for switching). For more details see [keymaps(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/keymaps.5).
 
-Usually one keymap file corresponds to one keyboard layout (the `include` statement can be used to share common parts and a keymap file can contain multiple layouts with some key combination used for switching). The keymap files are stored in the `/usr/share/kbd/keymaps/` directory tree.
+### Listing keymaps
 
 The naming conventions of console keymaps are somewhat arbitrary, but usually they are based on:
 
@@ -55,6 +58,19 @@ $ find /usr/share/kbd/keymaps/ -type f
 
 ```
 
+### Loadkeys
+
+It is possible to set a keymap just for current session. This is useful for testing different keymaps, solving problems etc.
+
+The *loadkeys* tool is used for this purpose, it is used internally by [systemd](/index.php/Systemd "Systemd") when loading the keymap configured in `/etc/vconsole.conf`. It can be used very simply for this purpose:
+
+```
+# loadkeys *keymap*
+
+```
+
+See [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) details.
+
 ### Persistent configuration
 
 A persistent keymap can be set in `/etc/vconsole.conf`, which is read by [systemd](/index.php/Systemd "Systemd") on start-up. The `KEYMAP` variable is used for specifying the keymap. If the variable is empty or not set, the `us` keymap is used as default value. See [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for all options. For example:
@@ -75,18 +91,124 @@ $ localectl set-keymap --no-convert *keymap*
 
 The `--no-convert` option can be used to prevent `localectl` from automatically changing the [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") to the nearest match. See [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) for more information.
 
-### Temporary configuration
+### Creating a custom keymap
 
-It is possible to set a keymap just for current session. This is useful for testing different keymaps, solving problems etc.
+When using the console, you can use hotkeys to print a specific character. Moreover we can also print a sequence of characters and some escape sequences. Thus, if we print the sequence of characters constituting a command and afterwards an escape character for a new line, that command will be executed!
 
-The *loadkeys* tool is used for this purpose, it is used internally by [systemd](/index.php/Systemd "Systemd") when loading the keymap configured in `/etc/vconsole.conf`. It can be used very simply for this purpose:
+One method of doing this is editing the [keymap](/index.php/Console_keyboard_configuration "Console keyboard configuration"). However, the keymap is a sensitive file, and since it will be rewritten anytime the package it belongs to is updated, editing this file is discouraged. It is better to integrate the existing keymap with a personal keymap. The `loadkeys` utility can do this.
+
+First, create a keymap file. This keymap file can be anywhere, but one method is to mimic the directory hierarchy in `/usr/local`:
 
 ```
-# loadkeys *keymap*
+# mkdir -p /usr/local/share/kbd/keymaps
+# vim /usr/local/share/kbd/keymaps/personal.map
 
 ```
 
-See [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) details.
+As a side note, it is worth noting that such a personal keymap is useful also to redefine the behaviour of keys already treated by the default keymap: when loaded with `loadkeys`, the directives in the default keymap will be replaced when they conflict with the new directives and conserved otherwise. This way, only changes to the keymap must be specified in the personal keymap.
+
+**Tip:** You can also edit an existing keymap located in the `/usr/share/kbd/keymaps/` directory tree. Keymaps have an *.map.gz* extension, for example `us.map.gz` is an American keymap. Just copy the keymap to `/usr/local/share/kbd/keymaps/personal.map.gz` and *gunzip* it.
+
+#### Identifying keycodes
+
+The [keycodes](/index.php/Extra_keyboard_keys "Extra keyboard keys") for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") are reported by the *showkey* utility. *showkey* waits for a key to be pressed and if none is during 10 seconds it quits. To execute *showkey* you need to be in a virtual console, not in a graphical environment. Run the following command
+
+```
+# showkey --keycodes
+
+```
+
+and try to push keyboard keys, you should see *keycodes* being printed to the output.
+
+**Note:** If showkey does not recognize a key, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
+
+#### Adding directives
+
+Two kinds of directives are required in this personal keymap. First of all, the keycode directives, which matches the format seen in the default keymaps. These directives associate a keycode with a keysym. Keysyms represent keyboard actions. The actions available include outputting character codes or character sequences, switching consoles or keymaps, booting the machine, and many other actions. A complete list can be obtained with
+
+```
+# dumpkeys -l
+
+```
+
+Most keysyms are intuitive. For example, to set key 112 to output an 'e', the directive will be:
+
+```
+keycode 112  = e
+
+```
+
+To set key 112 to output a euro symbol, the directive will be:
+
+```
+keycode 112 = euro
+
+```
+
+Some keysym are not immediately connected to a keyboard actions. In particular, the keysyms prefixed by a capital F and one to three digits (F1-F246) constituting a number greater than 30 are always free. This is useful directing a hotkey to output a sequence of characters and other actions:
+
+```
+keycode 112 = F70
+
+```
+
+Then, F70 can be bound to output a specific string:
+
+```
+string F70 = "Hello"
+
+```
+
+When key 112 is pressed, it will output the contents of F70\. In order to execute a printed command in a terminal, a newline escape character must be appended to the end of the command string. For example, to enter a system into hibernation, the following keymap is added:
+
+```
+string F70 = "sudo /usr/sbin/hibernate
+"
+
+```
+
+#### Other examples
+
+*   To make the Right Alt key same as Left Alt key (for Emacs), use the following line in your keymap. It will include the file `/usr/share/kbd/keymaps/i386/include/linux-with-two-alt-keys.inc`, check it for details.
+
+```
+include "linux-with-two-alt-keys"
+
+```
+
+*   To swap CapsLock with Escape (for Vim), remap the respective keycodes:
+
+```
+keycode 1 = Caps_Lock
+keycode 58 = Escape
+
+```
+
+*   To make CapsLock another Control key, remap the respective keycode:
+
+```
+keycode 58 = Control
+
+```
+
+*   To swap CapsLock with Left Control key, remap the respective keycodes:
+
+```
+keycode 29 = Caps_Lock
+keycode 58 = Control
+
+```
+
+#### Saving changes
+
+In order to make use of the personal keymap, it must be loaded with *loadkeys*:
+
+```
+$ loadkeys /usr/local/share/kbd/keymaps/personal.map
+
+```
+
+However this keymap is only active for the current session. In order to load the keymap at boot, specify the full path to the file in the `KEYMAP` variable in [/etc/vconsole.conf](/index.php/Keyboard_configuration_in_console#Persistent_configuration "Keyboard configuration in console"). The file does not have to be gzipped as the official keymaps provided by [kbd](https://www.archlinux.org/packages/?name=kbd).
 
 ## Adjusting typematic delay and rate
 

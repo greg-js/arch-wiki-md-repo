@@ -1078,5 +1078,6 @@ You can use the following website to get your device's coordinates along with a 
 10.7830414,106.6520271 "Garbage123" # Ho Chi Minh City, Vietnam
 45.4926259,-73.5809213 "Alex Vanparse" # Kermanshah, Iran
 39.7456528,-8.8072173 "FFY00" # Leiria, Portugal
+52.5050191, 13.4328069 "dvzrv" # Berlin, Germany
 
 ```

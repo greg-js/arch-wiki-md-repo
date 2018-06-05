@@ -1,234 +1,121 @@
-这里列出一些助手工具，可以帮助用户从 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 搜索和/或安装包。
+**翻译状态：** 本文是英文页面 [AUR helpers](/index.php/AUR_helpers "AUR helpers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-05，点击[这里](https://wiki.archlinux.org/index.php?title=AUR+helpers&diff=0&oldid=524717)可以查看翻译后英文页面的改动。
 
-**警告:** 这些工具都不是官方支持的。参见 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254).
+**警告:**
 
-图形化 pacman 前端列表，其中的一些也支持 AUR，参见 [pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
+*   这些工具都不是官方支持的,参见 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254)。我们建议用户熟悉[手动编译过程](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Arch User Repository (简体中文)")，以便自行解决问题。
+*   这些工具对于[软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")可能和[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)有相同的使用方法，比如`pacman -Syu` 。这些用法可能在各个方面和pacman的行为不同，因此这些用法并不被支持或推荐。
+
+在用户使用[Arch用户软件仓库](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")时，AUR工具可以帮用户自动完成某些任务。
 
 ## Contents
 
-*   [1 助手列表](#.E5.8A.A9.E6.89.8B.E5.88.97.E8.A1.A8)
-    *   [1.1 aurbuild](#aurbuild)
-    *   [1.2 aurget](#aurget)
-    *   [1.3 aurora](#aurora)
-    *   [1.4 aurpac](#aurpac)
-    *   [1.5 aurploader](#aurploader)
-    *   [1.6 aursh](#aursh)
-    *   [1.7 autoaur](#autoaur)
-    *   [1.8 burp](#burp)
-    *   [1.9 cower](#cower)
-    *   [1.10 haskell-archlinux](#haskell-archlinux)
-    *   [1.11 makeaur](#makeaur)
-    *   [1.12 meat](#meat)
-    *   [1.13 owl](#owl)
-    *   [1.14 pacaur](#pacaur)
-    *   [1.15 packer](#packer)
-    *   [1.16 pacmoon](#pacmoon)
-    *   [1.17 paktahn](#paktahn)
-    *   [1.18 pbfetch](#pbfetch)
-    *   [1.19 pbget](#pbget)
-    *   [1.20 pkgman](#pkgman)
-    *   [1.21 powaur](#powaur)
-    *   [1.22 spinach](#spinach)
-    *   [1.23 srcman](#srcman)
-    *   [1.24 yaourt](#yaourt)
-*   [2 比较表](#.E6.AF.94.E8.BE.83.E8.A1.A8)
+*   [1 编译和搜索](#.E7.BC.96.E8.AF.91.E5.92.8C.E6.90.9C.E7.B4.A2)
+    *   [1.1 开发中](#.E5.BC.80.E5.8F.91.E4.B8.AD)
+    *   [1.2 仅搜索](#.E4.BB.85.E6.90.9C.E7.B4.A2)
+    *   [1.3 开发停止或有问题](#.E5.BC.80.E5.8F.91.E5.81.9C.E6.AD.A2.E6.88.96.E6.9C.89.E9.97.AE.E9.A2.98)
+*   [2 库](#.E5.BA.93)
+*   [3 维护](#.E7.BB.B4.E6.8A.A4)
+*   [4 上传](#.E4.B8.8A.E4.BC.A0)
 
-## 助手列表
+## 编译和搜索
 
-### aurbuild
+**注意:** 在于[Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers")讨论之前，不要更改这部分的内容。
 
-aurbuild 是从 AUR 下载或编译软件包的工具。
+这些列的含义：
 
-*   网站: [http://aurbuild.berlios.de/](http://aurbuild.berlios.de/)
-*   软件包: [https://aur.archlinux.org/packages.php?ID=1775](https://aur.archlinux.org/packages.php?ID=1775)
+*   **安全**：默认不`[source](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Source "Help:Reading (简体中文)")` [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")，或者在`source`之前让用户有机会手动检查PKGBUILD。已知某些工具在用户可以检查PKGBUILD之前就执行了`source`，这会允许执行PKGBUILD中的恶意代码。**可选**意味着有一个命令行选项或者配置可以在执行`source`之前检查PKGBUILD。
+*   **干净编译**：不会引入可能导致编译失败的新环境变量。
+*   **原生pacman**：在代替[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)执行pacman的命令（如`pacman-Syu`）时，默认情况遵守如下规则：
+    *   不分割命令，例如`pacman -Syu`不会分为`pacman -Sy`和`pacman -S packages`来执行；
+    *   直接使用`pacman`，而不是直接操作数据库或是使用`libalpm`；
+    *   不使用不被支持的命令，例如`pacman -Ud`，`pacman -Rdd`。
+*   **可靠的语法分析器**：有能力通过使用所提供的元数据（PRC/.SRCINFO）代替解析PKGBUILD以处理复杂包，例如[aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/)。
+*   **可靠的求解器**：有能力正确处理复杂的依赖关系，例如[ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/)。
+*   **包拆分**：有能力正确地编译和安装：
+    *   对于有相同包基础的多个软件包，不重复编译和安装包基础，例如[clion](https://aur.archlinux.org/packages/clion/)。
+    *   Split packages which depend on a package from the same package base, such as [libc++](https://aur.archlinux.org/packages/libc%2B%2B/) and [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/).
+    *   独立地拆分包，例如[python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/)和[python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/)。
+*   **Git clone**：默认使用[git clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git+clone.1)从AUR获取相关文件。
+*   **差异比较**：有检查包差异的能力。除了PKGBUILD，还包括对`.install`或`.patch`文件更改的检查。
+*   **批量交互**：在编译过程开始前完成交互，特别是：
+    *   检查PKGBUILD；
+    *   通过[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)或[pacinstall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacinstall.1)解决包冲突。
+*   **命令补全**：在列出的shell中支持命令补全。
 
-### aurget
+**提示：**
 
-Aurget的目标是要成为一个简单的,像pacman一样操作的AUR工具. 它努力使AUR使用更方便;用户无论是查找、下载、编译、安装或是更新AUR包都会更迅速. Aurget的设计是不替换pacman的任何命令
+*   表格按列的值排序。其中**是**或**不适用**优先于**部分**、**可选** 以及**否**，如果值相同，则按字母顺序排序。
+*   **可选**意味着功能可用，但需要通过命令行选项或配置文件启用。**部分**意味着功能尚未完全实现，或者与标准不符。
 
-*   网站: [http://pbrisbin.com/posts/aurget/](http://pbrisbin.com/posts/aurget/)
-*   包: [https://aur.archlinux.org/packages.php?ID=31933](https://aur.archlinux.org/packages.php?ID=31933)
+### 开发中
 
-### aurora
+| 名称 | 编程语言 | 安全 | 干净编译 | 原生pacman | 可靠的语法分析器 | 可靠的求解器 | 包拆分 | Git clone | 差异比较 | 批量交互 | 命令补全 | 特性 |
+| [aurman](https://aur.archlinux.org/packages/aurman/) | Python | 是 | 是 | 是 | 是 | [是](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | 是 | 是 | 是 | [是](https://github.com/polygamma/aurman/commit/9f4cf1388e558f50e8ed435ad2487147bcb088be) | bash, fish | 获取PGP密钥，按受欢迎度排序 |
+| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | 是 | 是 | 不适用 | 是 | 是 | 是 | 是 | 是 | 部分 | zsh | 支持[vifm](/index.php/Vifm "Vifm")、[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)")、[软件包签名](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Package signing (简体中文)")、[clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")，按票数或受欢迎度排序 |
+| [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | 是 | 是 | [部分](https://github.com/actionless/pikaur/commit/2c417628729474d58fc6556d14139bf4c42755bb) | 是 | 是 | [是](https://github.com/actionless/pikaur/commit/d409b958b4ff403d4fda06681231061854d32b3c) | 是 | 是 | [是](https://github.com/actionless/pikaur/commit/cc401f66687e3d744a728205cc86c3b1446dda92) | bash, fish, zsh | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html)，[多语言](https://github.com/actionless/pikaur/tree/master/locale)，按票数或受欢迎度排序，[显示Arch新闻](https://github.com/actionless/pikaur/pull/191) |
+| [yay](https://aur.archlinux.org/packages/yay/) | Go | 是 | 是 | [部分](https://github.com/Jguer/yay/commit/98ea801004fc63b5a294f46392910e85286ffd98) | 是 | 是 | 是 | [是](https://github.com/Jguer/yay/pull/297) | [是](https://github.com/Jguer/yay/pull/447) | [是](https://github.com/Jguer/yay/commit/e88bf0f5b7f3ba3ffba01926bc3274b2f47e1efc) | bash, fish, zsh | 按票数排序, 获取PGP密钥, [提示架构](https://github.com/Jguer/yay/commit/4bcd3a6297052714e91e3f886602ce5c12d15786) |
+| [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | 是 | [是](https://github.com/kitsunyan/pakku/commit/864cc0373fd6095295f68cc44d1657bd17269732) | [部分](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | 是 | 是 | 是 | 是 | [是](https://github.com/kitsunyan/pakku/commit/396e9f44c4f5a79c7b9238835599387f6ff418fe) | 部分 | bash, zsh | [ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，AUR评论，获取PGP密钥 |
+| [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | 是 | 是 | 是 | 是 | 是 | 是 | 是 | 否 | 部分 | bash, zsh | 信任管理，[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，扩展Powerpill |
+| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | 可选 | 是 | [是](https://github.com/Kwpolska/pkgbuilder/blob/master/docs/wrapper.rst) | 是 | 是 | [部分](https://github.com/Kwpolska/pkgbuilder/issues/39) | 是 | 否 | 部分 | 无 | 默认自动编译，使用`-F`以禁用，多语言 |
+| [naaman](https://aur.archlinux.org/packages/naaman/) | Python | 可选 | 是 | 不适用 | 是 | [部分](https://github.com/enckse/naaman/issues/19) | [部分](https://github.com/enckse/naaman/issues/20) | 是 | 否 | 部分 | bash | 默认自动编译，使用`--fetch`以禁用，使用`-d`启用求解器 |
+| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | 可选 | 是 | [是](https://github.com/aurapm/aura/blob/master/aura/src/Aura/Pacman.hs) | [是](https://github.com/aurapm/aura/commit/7848e9830cd880215f1d12a1c0294992428ea778) | 否 | [否](https://github.com/aurapm/aura/issues/353) | [否](https://github.com/aurapm/aura/pull/346) | [部分](https://github.com/aurapm/aura/blob/89bf702bd0539fa757265c4c54ea2192155f85ed/aura/src/Aura/Pkgbuild/Records.hs) | 部分 | bash, zsh | 默认自动编译，使用`--dryrun` 以禁用，[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")支持，多语言 |
+| [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | 可选 | 是 | 不适用 | 否 | 否 | 否 | 是 | 是 | 部分 | 不适用 | 默认自动编译，使用`check`或`update` 以禁用，支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)") |
+| [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | 是 | 是 | 是 | 否 | 否 | 否 | 是 | 否 | 否 | 无 | 更新源列表，显示Arch新闻和AUR评论 |
+| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | 可选 | 是 | 不适用 | 否 | 否 | [否](https://github.com/pbrisbin/aurget/issues/40) | 否 | [否](https://github.com/pbrisbin/aurget/issues/41) | 否 | bash, zsh | 按票数排序 |
 
-Aurora 是一个极简的 [AUR](/index.php/AUR "AUR") 前端. 它允许用户安装AUR包, 下载AUR包 (用于手动安装) 并且还提供了一个aur升级功能. 它不替换pacman.
+### 仅搜索
 
-*   网站: [http://bitbucket.org/bbenne10/aurora](http://bitbucket.org/bbenne10/aurora)
-*   包: [https://aur.archlinux.org/packages.php?ID=41732](https://aur.archlinux.org/packages.php?ID=41732)
+| 名称 | 编程语言 | 安全 | 可靠的语法分析器 | 可靠的求解器 | Git clone | 命令补全 | 特性 |
+| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | 是 | 是 | 不适用 | 是 | 无 | - |
+| [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | 是 | 是 | 不适用 | 可选 | bash | - |
+| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | 是 | 是 | 是 | 否 | 不适用 | 显示编译顺序 |
+| [cower](https://aur.archlinux.org/packages/cower/) | C | 是 | 是 | 不适用 | 否 | bash/zsh | 支持正则表达式，按票数受欢迎度排序 |
+| [package-query](https://aur.archlinux.org/packages/package-query/) | C | 是 | 否 [[2]](https://github.com/archlinuxfr/package-query/issues/135) | 不适用 | 不适用 | 无 | - |
+| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | 是 | 是 [[3]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | 不适用 | 否 | zsh | 支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)") |
 
-### aurpac
+### 开发停止或有问题
 
-快速轻巧的 [AUR](/index.php/AUR "AUR") 和 [pacman](/index.php/Pacman "Pacman") 前端.
+此表中的是已经停止开发的，或是在过去6个月内有未处理的**安全**，**干净编译**或是**原生pacman**的问题（查看[#开发中](#.E5.BC.80.E5.8F.91.E4.B8.AD))的项目。
 
-*   网站: [http://3ed.jogger.pl/2009/02/15/aurpac/](http://3ed.jogger.pl/2009/02/15/aurpac/)
-*   Package: [https://aur.archlinux.org/packages.php?ID=23919](https://aur.archlinux.org/packages.php?ID=23919)
+| 名称 | 编程语言 | 安全 | 干净编译 | 原生pacman | 可靠的语法分析器 | 可靠的求解器 | 包拆分 | Git clone | 差异比较 | 批量交互 | 命令补全 | 特性 |
+| [aurel](https://aur.archlinux.org/packages/aurel/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | 是 | 不适用 | 不适用 | 不适用 | 不适用 | 不适用 | 否 | 不适用 | 不适用 | 不适用 | Emacs集成，不自动编译 |
+| [pacaur](https://aur.archlinux.org/packages/pacaur/) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | 是 | 是 | [否](https://github.com/rmarquis/pacaur/commit/d8f49188452785fb28afc017baadd01d9e24ba21) | 是 | 是 | 是 | 是 | 是 | 是 | bash, zsh | 多语言，按票数或受欢迎程度排序 |
+| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | 是 | 是 | [否](https://github.com/trizen/trizen/commit/ba687bc3c3e306e6f3942e95f825ed6a55d3ad69) | [是](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | 是 | [是](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | [是](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | 是 | [部分](https://github.com/trizen/trizen/issues/8) | bash, zsh, fish | 默认自动编译，使用`-G`以禁用，AUR评论 |
+| [spinach](https://aur.archlinux.org/packages/spinach/) [[6]](https://github.com/floft/spinach) | Bash | [是](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | 是 | 不适用 | 否 | 否 | 否 | 否 | 否 | 否 | 无 | - |
+| [burgaur](https://aur.archlinux.org/packages/burgaur/) [[7]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | 可选 | 是 | 不适用 | 否 | 否 | 否 | 否 | 否 | 否 | 无 | cover的包装(Wrapper for cower) |
+| [packer](https://aur.archlinux.org/packages/packer/) | Bash | 否 | 是 | 是 | 否 | 否 | 否 | 否 | 否 | 否 | 无 | - |
+| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | 否 [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [否](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | 否 | 否 | [否](https://github.com/archlinuxfr/yaourt/issues/186) | [否](https://github.com/archlinuxfr/yaourt/issues/85) | 可选 | 可选 | 否 | bash, zsh, fish | 备份，[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，AUR评论，多语言 |
 
-### aurploader
+## 库
 
-Aurploader 提示用户输入 AUR 用户名和密码，然后上传 PKGBUILD 包至 AUR. 在上传每个包之前, 用户需要选择一个分类. 当上传完成后, 用户可以选择是否需要保存cookie文件来让脚本再次运行时无需输入 AUR 用户名和密码.
+*   **haskell-archlinux** — 访问AUR和包元数据的库，使用Haskell语言编写。
 
-*   网站: [http://xyne.archlinux.ca/info/aurploader](http://xyne.archlinux.ca/info/aurploader)
-*   Package: [https://aur.archlinux.org/packages.php?ID=23393](https://aur.archlinux.org/packages.php?ID=23393)
+	[http://hackage.haskell.org/package/archlinux](http://hackage.haskell.org/package/archlinux) || [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)
 
-### aursh
+*   **python3-aur** — 用于访问AUR包的信息并自动完成AUR交互的Python 3模块。
 
-**注意:** 从 2010-09-30 开始，它不再被积极开发。
+	[http://xyne.archlinux.ca/projects/python3-aur](http://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
 
-AurShell是一个像Shell一样的软件。通过各种插件的支持，它可以从AUR、ABS上安装软件，甚至封装pacman的功能。
+## 维护
 
-*   网站: [https://github.com/husio/aursh/](https://github.com/husio/aursh/)
-*   软件包: [https://aur.archlinux.org/packages.php?ID=33423](https://aur.archlinux.org/packages.php?ID=33423)
+*   **aur-out-of-date** — 使用hoster的API检查AUR包的上游改动，
 
-### autoaur
+	[https://github.com/simon04/aur-out-of-date](https://github.com/simon04/aur-out-of-date) || [aur-out-of-date](https://aur.archlinux.org/packages/aur-out-of-date/)
 
-autoaur 是一个用于自动集中下载, 更新, 创建和安装 AUR 包的脚本.
+*   **pkgbuild-watch** — 监视上游网页的更改。
 
-*   网站: [autoaur](/index.php?title=Autoaur&action=edit&redlink=1 "Autoaur (page does not exist)")
-*   Package: [autoaur](https://aur.archlinux.org/packages/autoaur/)
+	[http://kmkeen.com/pkgbuild-watch](http://kmkeen.com/pkgbuild-watch) || [pkgbuild-watch](https://aur.archlinux.org/packages/pkgbuild-watch/)
 
-### burp
+*   **pkgbuildup** — 帮助AUR包的维护者自动更新PKGBUILD，支持模板变量语法。
 
-burp 是一个快速而简单的用C语言开发的 AUR 上传软件. 支持坚实的cookie无缝登陆.
+	[https://github.com/fasheng/pkgbuildup](https://github.com/fasheng/pkgbuildup) || [pkgbuildup-git](https://aur.archlinux.org/packages/pkgbuildup-git/)
 
-*   网站: [https://github.com/falconindy/burp](https://github.com/falconindy/burp)
-*   Package: [burp-git](https://aur.archlinux.org/packages/burp-git/)
+*   **pkgoutofdate** — 解析PKGBUILD中的URL，并以发送递增的版本号的方式来检查更新。
 
-### cower
+	[https://github.com/anatol/pkgoutofdate](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
 
-Cower 是一个快速简单的 AUR 搜索和下载代理软件, 并同时会检查更新和下载依赖包.
+## 上传
 
-*   网站: [https://github.com/falconindy/cower](https://github.com/falconindy/cower)
-*   Forum: [https://bbs.archlinux.org/viewtopic.php?id=97137](https://bbs.archlinux.org/viewtopic.php?id=97137)
-*   Package: [cower](https://aur.archlinux.org/packages/cower/)
-
-### haskell-archlinux
-
-haskell-archlinux 是一个采用 Haskell 程序语言，以可编程方式访问 AUR 和包元数据的库.
-
-*   网站: [http://hackage.haskell.org/package/archlinux](http://hackage.haskell.org/package/archlinux)
-*   Package: [https://aur.archlinux.org/packages.php?ID=29267](https://aur.archlinux.org/packages.php?ID=29267)
-
-### makeaur
-
-Makeaur is a wrapper for pacman and makepkg that allows users to easily install packages from the Arch User Repository.
-
-*   网站: [http://github.com/ghost1227/makeaur/](http://github.com/ghost1227/makeaur/)
-*   Package: [https://aur.archlinux.org/packages.php?ID=23678](https://aur.archlinux.org/packages.php?ID=23678)
-
-### meat
-
-**Note:** Meat is in actually under development/alpha state.
-
-Meat is a front-end for cower ( see above ) and it is fully written in bash.
-
-*   网站: [http://github.com/e36freak/meat](http://github.com/e36freak/meat)
-*   Package: [https://aur.archlinux.org/packages.php?ID=50075](https://aur.archlinux.org/packages.php?ID=50075)
-
-### owl
-
-owl is a [pacman](/index.php/Pacman "Pacman") and [cower](/index.php/AUR_helpers#cower "AUR helpers") wrapper focused on simplicity.
-
-*   网站: [https://github.com/baskerville/owl](https://github.com/baskerville/owl)
-
-### pacaur
-
-Pacaur is a fast workflow AUR wrapper, using [cower](/index.php/AUR_helpers#cower "AUR helpers") as backend. It aims on speed and simplicity, with an uncluttered interface. It is inspired by [pbfetch](/index.php/AUR_helpers#pbfetch "AUR helpers").
-
-*   网站: [https://github.com/Spyhawk/pacaur](https://github.com/Spyhawk/pacaur)
-*   论坛: [https://bbs.archlinux.org/viewtopic.php?pid=937423](https://bbs.archlinux.org/viewtopic.php?pid=937423)
-*   Package: [https://aur.archlinux.org/packages.php?ID=49145](https://aur.archlinux.org/packages.php?ID=49145)
-
-### packer
-
-Packer is a wrapper for pacman and the AUR. It was designed to be a simple and very fast replacement for the basic functionality of Yaourt. It has commands to install, update, search, and show information for any package in the main repositories and in the AUR. Use pacman for other commands, such as removing a package.
-
-*   网站: [http://github.com/bruenig/packer](http://github.com/bruenig/packer)
-*   论坛: [https://bbs.archlinux.org/viewtopic.php?id=88115](https://bbs.archlinux.org/viewtopic.php?id=88115)
-*   Package: [https://aur.archlinux.org/packages.php?ID=33378](https://aur.archlinux.org/packages.php?ID=33378)
-*   Wiki: [https://github.com/bruenig/packer/wiki](https://github.com/bruenig/packer/wiki)
-
-### pacmoon
-
-pacmoon is a script for compiling arch linux packages from the AUR and repositories. It can automatically install make dependencies as binaries when necessary and update the entire system or just packages listed. It keeps track of which files have been compiled so that in the event of compiled packages getting replaced with a binary (like during an upgrade process) then pacmoon can recompile only the necessary packages.
-
-*   网站: [http://chilon.net/pacmoon](http://chilon.net/pacmoon)
-*   Package: [https://aur.archlinux.org/packages.php?ID=41911](https://aur.archlinux.org/packages.php?ID=41911)
-
-### paktahn
-
-Paktahn is a yaourt replacement. It is under active development and already includes improvements such as a local cache for fast searches and interactive installation.
-
-*   网站: [http://github.com/skypher/paktahn](http://github.com/skypher/paktahn)
-*   论坛: [https://bbs.archlinux.org/viewtopic.php?id=77674&p=1](https://bbs.archlinux.org/viewtopic.php?id=77674&p=1)
-*   Package: [https://aur.archlinux.org/packages.php?ID=30242](https://aur.archlinux.org/packages.php?ID=30242)
-
-### pbfetch
-
-Pbfetch is a script which can be used as a pacman-independent AUR helper or a pacman wrapper with additional AUR functionality. Pbfetch aims to be a simple and fast versus the well established yaourt. Pbfetch can be used as a shortcut to simply download PKGBUILDs from AUR or automatically build with dependency resolution among other things. The user can select which AUR packages to upgrade using a simple menu as well as update all AUR packages.
-
-*   网站/Source: [https://github.com/dalingrin/pbfetch](https://github.com/dalingrin/pbfetch)
-*   论坛: [https://bbs.archlinux.org/viewtopic.php?id=87789](https://bbs.archlinux.org/viewtopic.php?id=87789)
-*   Package: [https://aur.archlinux.org/packages.php?ID=33256](https://aur.archlinux.org/packages.php?ID=33256)
-
-### pbget
-
-Pbget is a simple command-line tool for retrieving PKGBUILDs and local source files for Arch Linux. It is able to retrieve files from the official SVN and CVS web interface, the AUR and the ABS rsync server.
-
-*   网站: [http://xyne.archlinux.ca/info/pbget](http://xyne.archlinux.ca/info/pbget)
-*   Package: [https://aur.archlinux.org/packages.php?ID=23848](https://aur.archlinux.org/packages.php?ID=23848)
-
-### pkgman
-
-pkgman is a script which helps to manage a local repository. It retrieves the PKGBUILD and related files for given name from ABS or AUR and lets you edit them, automatically generates checksums, backs up the source tarball, builds and adds the package to your local repository. Then you can install it as usual with pacman. It also has AUR support for submitting tarballs and leaving comments.
-
-*   网站: [http://sourceforge.net/apps/mediawiki/pkgman/index.php](http://sourceforge.net/apps/mediawiki/pkgman/index.php)
-*   论坛: [https://bbs.archlinux.org/viewtopic.php?id=49023](https://bbs.archlinux.org/viewtopic.php?id=49023)
-*   Package: [https://aur.archlinux.org/packages.php?ID=17100](https://aur.archlinux.org/packages.php?ID=17100)
-
-### powaur
-
-powaur is a minimalistic AUR helper with a pacman-like interface.
-
-*   网站: [https://github.com/yanhan/powaur](https://github.com/yanhan/powaur)
-*   论坛: [https://bbs.archlinux.org/viewtopic.php?pid=938688](https://bbs.archlinux.org/viewtopic.php?pid=938688)
-*   Package: [https://aur.archlinux.org/packages.php?ID=49296](https://aur.archlinux.org/packages.php?ID=49296)
-
-### spinach
-
-Spinach is a tiny Bash AUR helper with few dependencies.
-
-*   网站: [http://floft.net/wiki/Scripts/Spinach](http://floft.net/wiki/Scripts/Spinach)
-*   Package: [https://aur.archlinux.org/packages.php?ID=46993](https://aur.archlinux.org/packages.php?ID=46993)
-
-### srcman
-
-srcman is a pacman/makepkg wrapper written in Bash, which transparently handles pacman operations on 'source packages'. This means, for example, that packages can be specified for installation either explicitly (pacman's -U operation) or can be installed from a (source) repository (-S operation). The address of an AUR pacman database can be found in the corresponding forum thread, by the way. The primary goal of this project is to provide a complete pacman wrapper and therefore, srcman supports all current pacman operations for binary *and* source packages.
-
-*   网站: [https://bbs.archlinux.org/viewtopic.php?id=65501](https://bbs.archlinux.org/viewtopic.php?id=65501)
-*   Package: [https://aur.archlinux.org/packages.php?ID=23945](https://aur.archlinux.org/packages.php?ID=23945)
-
-### yaourt
-
-[Yaourt](/index.php/Yaourt "Yaourt") (Yet Another User Repository Tool 用户的另一个软件仓库管理工具)是一个社区为增加pacman对AUR的无缝访问而做的, 它允许和自动化软件包编译和安装您在AUR选择成千上万的PKGBUILDs, 和成千上万的Arch仓库里的软件. Yaourt使用和pacman完全相同的语法,可以为您节约学习新语法的时间(仅仅添加了几个新参数)。Yaourt的强大功能给简单的pacman添加了更实用的功能并使其美观，如彩色输出，交互式界面等等
-
-*   网站: [http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en)
-*   包: [https://aur.archlinux.org/packages.php?ID=5863](https://aur.archlinux.org/packages.php?ID=5863)
-
-## 比较表
-
-| 程序 | 语言 | 依赖支持 | Core/extra/community 支持 | 活跃开发 | 使用方法 |
-| [Aurget](#aurget) | Bash | 是 | 否 | 是 | 如 `aurget --help` |
-| [AurShell](#aursh) | Python | 否 | 否 | 否 | aursh (runs Aurshell program, wherein a number of different commands can be used) |
-| [Aurora](#aurora) | Python3 | 基本(使用 makepkg) | 否 | 是 | 如 `aurora --help` |
-| [Clyde](#clyde) | Lua | 是 | 是 | 否 | 与 pacman 一致 (e.g., clyde -S <pkgname>) |
-| [Cower](#cower) | C | 是 | 否 | 是 | 如 `cower -h` |
-| [Makeaur](#makeaur) | Bash | 否 | 否 | 已经被 fork | makeaur <pkgname> |
-| [Owl](#owl) | Dash | 是 | 是 | 是 | Run `owl` without arguments |
-| [Pacaur](#pacaur) | Bash, backend in C (cower) | 是 | 是 | 否 | 与 pacman 一致, and/or AUR specific arguments . See also `pacaur -h`. |
-| [Packer](#packer) | Bash | 是 | 是 | 是 | 与 pacman 一致 (e.g., packer -S <pkgname>) |
-| [pacmoon](#pacmoon) | Zsh | 是 | 是 | 是 | Similar to emerge from portage e.g. pacmoon -av <pkgname> |
-| [Paktahn](#paktahn) | Lisp | 是 | 是 | 是 | 与 pacman 一致 (e.g., pak -S <pkgname>) |
-| [pbfetch](#pbfetch) | Bash | 是 | 是 | 是 | 与 pacman 一致, and/or AUR specific arguments (additional arguments for PKGBUILD editing, etc) |
-| [powaur](#powaur) | C | 否 | 有限 | 是 | 与 pacman 一致 (e.g. powaur -S <pkgname>) |
-| [tupac](#tupac) | PHP | 是 | 是 | 按需要更新 | 与 pacman 一致 (e.g., tupac -S <pkgname>) |
-| [Yaourt](#yaourt) | Bash, back-end in C | 是 | 是 | 是 | 与 pacman 一致 (e.g., yaourt -S <pkgname>) |
+*   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — 从包含多个包的git仓库拆分包，为每个提交添加更新`.SRCINFO`。
+*   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — 使用aur4的子模块来替换较大的git仓库的包，包括`.SRCINFO`.
+*   [aurpublish](https://github.com/Edenhofer/abs/blob/master/aurpublish) — 通过[git subtrees](https://raw.githubusercontent.com/git/git/master/contrib/subtree/git-subtree.txt)管理AUR包，在同一个[仓库](https://github.com/Edenhofer/abs/blob/master/README.md)中用git钩子完成[`.SRCINFO`的生成，`PKGBUILD`的检查](https://github.com/Edenhofer/abs/blob/master/pre-commit.hook)以及[创建每个包提交消息的模板](https://github.com/Edenhofer/abs/blob/master/prepare-commit-msg.hook)。

@@ -297,7 +297,7 @@ options thinkpad_acpi fan_control=1
 
 ```
 
-So fan control is enabled by default. Alternatively, you can enabled fan control as follows:
+So fan control is enabled by default. Alternatively, you can enable fan control as follows:
 
 ```
 $ echo "options thinkpad_acpi fan_control=1" > /etc/modprobe.d/thinkfan.conf
@@ -466,7 +466,7 @@ To switch to manual fan control from automatic, run
 Set up fan speed to e.g. 50% (100% are 255 PWM cycles, thus calculate desired fan speed percentage by multiplying its value by 2.55):
 
 ```
-# echo "128" > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1_enable
+# echo "128" > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1
 
 ```
 

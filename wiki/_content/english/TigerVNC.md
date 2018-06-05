@@ -29,29 +29,29 @@ Related articles
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Connecting to an OSX system](#Connecting_to_an_OSX_system)
     *   [6.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_.28Arch_ARM.29)
-    *   [6.3 Copying clipboard contents from the remote machine to the local](#Copying_clipboard_contents_from_the_remote_machine_to_the_local)
-    *   [6.4 Fix for no mouse cursor](#Fix_for_no_mouse_cursor)
-    *   [6.5 Recommended security settings](#Recommended_security_settings)
-    *   [6.6 Toggling Fullscreen](#Toggling_Fullscreen)
-    *   [6.7 Unable to type '<' character](#Unable_to_type_.27.3C.27_character)
-    *   [6.8 Black rectangle instead of window](#Black_rectangle_instead_of_window)
+    *   [6.3 Recommended security settings](#Recommended_security_settings)
+    *   [6.4 Toggling Fullscreen](#Toggling_Fullscreen)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Unable to type '<' character](#Unable_to_type_.27.3C.27_character)
+    *   [7.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
+    *   [7.3 No mouse cursor](#No_mouse_cursor)
+    *   [7.4 Copying clipboard content from the remote machine](#Copying_clipboard_content_from_the_remote_machine)
+*   [8 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) package.
 
-**Note:** This packages provides the requisite vncserver, x0vncserver and also vncviewer.
+Two VNC servers are available with TigerVNC:
 
-Vncserver provides two major remote control abilities:
-
-1.  Virtual (headless) server is similar to the standard X server, but has a virtual screen rather than a physical one. The virtual server runs completely *parallel* to the physical X server should one be running.
-2.  Direct control of the local X session(s) which do run on the physical monitor.
+1.  [Xvnc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xvnc.1) is both a VNC server and an X server with a virtual framebuffer. It is similar to the standard X server but has a virtual screen rather than a physical one. The virtual server runs in parallel with the physical X server should one be running. This is the default and recommended server mode for TigerVNC. [vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncserver.1) is a wrapper script which eases the starting of *Xvnc*.
+2.  [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x0vncserver.1) provides direct control of the local X session(s) which are running on the physical monitor. It continuously polls the X display which is a simple but inefficient implementation.
 
 ## Running vncserver for virtual (headless) sessions
 
 ### Create environment, config, and password files
 
-Vncserver will create its initial environment, config, and user password file the first time it is run. These will be stored in `~/.vnc` which will be created if not present.
+The first time *vncserver* is run, it creates its initial environment, config, and user password file. These will be stored in `~/.vnc` which will be created if not present.
 
  `$ vncserver` 
 ```
@@ -68,11 +68,11 @@ Log file is /home/facade/.vnc/mars:1.log
 
 ```
 
-Notice the :1 trailing the hostname. This is indicating the TCP port number on which the virtual vncserver is running. In this case, :1 is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in :2 as above.
+Note the `:1` trailing the hostname. This is indicating the TCP port number on which the virtual vncserver is running. In this case, `:1` is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in `:2` as above.
 
-**Note:** Linux systems can have as many VNC servers as physical memory allows, all of which will be running in parallel to each other.
+**Note:** Linux systems can have as many VNC servers as memory allows, all of which will be running in parallel to each other.
 
-Shutdown the vncserver by using the -kill switch:
+To shutdown the just created VNC server, use the `-kill` switch:
 
 ```
 $ vncserver -kill :1
@@ -81,42 +81,37 @@ $ vncserver -kill :1
 
 #### Edit the environment file
 
-Vncserver sources `~/.vnc/xstartup` which functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. At a minimum, users should start a DE from this file. For more, see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
+The `~/.vnc/xstartup` script is sourced by *vncserver* for creating the virtual X session and it must be adapted to one's needs. It functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. Users are expected to start a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
 
-For example, starting lxqt:
+For example, starting [XFCE](/index.php/XFCE "XFCE"):
 
  `~/.vnc/xstartup` 
 ```
 #!/bin/sh
-exec startlxqt
-
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+exec startxfce4
 ```
 
-make sure `~/.vnc/xstartup` has a execute permission:
+Make sure `~/.vnc/xstartup` has a execute permission:
 
 ```
- chmod u+x ~/.vnc/xstartup
+chmod u+x ~/.vnc/xstartup
 
 ```
 
 #### Edit the optional config file
 
-With the release of tigervnc 1.60-1, support for parsing options in `~/.vnc/config` has been implemented which obviates the need to call `vncserver` with command line switches. The format is one option per line. An example is provided:
+TigerVNV supports parsing `vncserver` options in `~/.vnc/config` rather than through the command line. The format is one option per line. An example is provided:
 
  `~/.vnc/config` 
 ```
-
-## Supported server options to pass to vncserver upon invocation can be listed
-## in this file. See the following manpages for more: vncserver(1) Xvnc(1).
-## Several common ones are shown below. Uncomment and modify to your liking.
-##
 securitytypes=tlsvnc
 desktop=sandbox
 geometry=1200x700
 dpi=96
 localhost
 alwaysshared
-
 ```
 
 ### Starting and stopping vncserver via systemd
@@ -264,7 +259,7 @@ Another option is to use [x11vnc](https://www.archlinux.org/packages/?name=x11vn
 
 **Warning:** It is ill-advised to connect insecurely to a vncserver outside of a trusted LAN. Note that TigerVNC is encrypted by default unless it is specifically instructed otherwise by setting `SecurityTypes` to a non-secure option, although this lacks identity verification and will not prevent man-in-the-middle attack during the connection setup. *X509Vnc* is the recommended option for a secure connection.
 
-Any number of clients can connect to a vncserver. A simple example is given below where vncserver is running on 10.1.10.2 on port 5901 (:1) in shorthand notation:
+Any number of clients can connect to a vncserver. A simple example is given below where vncserver is running on 10.1.10.2 port 5901, or :1 in shorthand notation:
 
 ```
 $ vncviewer 10.1.10.2:1
@@ -305,42 +300,30 @@ For servers offering SSH connection, an advantage of this method is that it is n
 
 ### On the server
 
-Below is an example invoking vncserver with the `-localhost` flag:
+The *vncserver* must be run on the server, it is appropriate to use the `-localhost` flag to only allow connections from the same machine and stop all non-SSH connections from any other host. For example run a command line similar to:
 
 ```
 $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
 
 ```
 
-Alternatively, simply add `localhost` as a single line in `~/.vnc/config`. Below is the example above in this format:
-
- `~/.vnc/config` 
-```
-geometry=1200x700
-alwaysshared
-dpi=96
-localhost
-```
-
 ### On the client
 
-With the server now only accepting connection from the localhost, [forward](/index.php/Secure_Shell#Forwarding_other_ports "Secure Shell") local port 5901 to the remote server 5901 port (10.1.10.2 in this example) with ssh. For more on this feature, see the [manpage](/index.php/Manpage "Manpage") for ssh itself. For example:
+The VNC server has been setup on the remote machine to only accept local connections. Now, the client must open a secure shell with the remote machine (10.1.10.2 in this example) and create a tunnel from the client port 5901 to the remote server 5901 port. For more details on this feature, see [Secure Shell#Forwarding other ports](/index.php/Secure_Shell#Forwarding_other_ports "Secure Shell") and [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1).
 
 ```
 $ ssh 10.1.10.2 -L 5901:localhost:5901
 
 ```
 
-Note that one does not have to match the port numbers on the server and client. For example:
+Note that the port number on the server and the one on the client do not need to match. For example to forward the client port 8900 to the server port 5901:
 
 ```
 $ ssh 10.1.10.2 -L 8900:localhost:5901
 
 ```
 
-This forwards the client port 8900 to the server port 5901\.
-
-Once connected via SSH, leave that shell window open since it is acting as the secured tunnel to/from server (or just tell ssh to run in background with the `-f` option). On the client, to connect via this encrypted tunnel, simply point the vncviewer to the forwarded client port on the localhost.
+Once connected via SSH, leave this shell window open since it is acting as the secured tunnel to/from server (or just run SSH in the background with the `-f` option). On the client side, to connect via this encrypted tunnel, point the vncviewer to the forwarded client port on the localhost.
 
 Using the matched ports on the server/client:
 
@@ -356,40 +339,34 @@ $ vncviewer localhost:8900
 
 ```
 
+What happens in practice is that the vncviewer connects locally to port 8900 which is tunneled to the server's localhost port 5901\. The connection is established to the right port within the secure shell.
+
 ### Connecting to a vncserver from Android devices over SSH
 
-To connect to a VNC Server over SSH using an Android device:
+To connect to a VNC server over SSH using an Android device as a client, consider having the following setup:
+
+1.  SSH running on the server
+2.  vncserver running on server (with `-localhost` flag for security)
+3.  SSH client on the Android device: *ConnectBot* is a popular choice and will be used in this guide as an example
+4.  VNC client on the Android device: *androidVNC* used here
+
+In *ConnectBot*, connect to the desired machine. Tap the options key, select *Port Forwards* and add a port:
 
 ```
-1\. SSH server running on the machine to connect to.
-2\. VNC server running on the machine to connect to. (Run server with -localhost flag as mentioned above)
-3\. SSH client on the Android device (ConnectBot is a popular choice and will be used in this guide as an example).
-4\. VNC client on the Android device (androidVNC).
-```
-
-Consider some dynamic DNS service for targets that do not have static IP addresses.
-
-In ConnectBot, type in the IP and connect to the desired machine. Tap the options key, select Port Forwards and add a new port:
-
-```
-Nickname: vnc
 Type: Local
 Source port: 5901
 Destination: 127.0.0.1:5901
-```
-
-Save that.
-
-In androidVNC:
 
 ```
-Nickname: nickname
-Password: the password used to set up the VNC server
-Address: 127.0.0.1 (we are in local after connecting through SSH)
+
+In *androidVNC* connect to the VNC port, this is the local address following the SSH connection:
+
+```
+Password: the vncserver password
+Address: 127.0.0.1
 Port: 5901
-```
 
-Connect.
+```
 
 ## Tips and tricks
 
@@ -401,53 +378,27 @@ See [https://help.ubuntu.com/community/AppleRemoteDesktop](https://help.ubuntu.c
 
 Install [dispmanx_vnc](https://aur.archlinux.org/packages/dispmanx_vnc/) on the Arch ARM device. Frame rates are not very high but it provides a working VNC access.
 
-### Copying clipboard contents from the remote machine to the local
-
-If copying from the remote machine to the local machine does not work, run autocutsel on the server, as mentioned below [reference](https://bbs.archlinux.org/viewtopic.php?id=101243):
-
-```
-$ autocutsel -fork
-
-```
-
-Now press F8 to display the VNC menu popup, and select `Clipboard: local -> remote` option.
-
-One can put the above command in `~/.vnc/xstartup` to have it run automatically when vncserver is started.
-
-### Fix for no mouse cursor
-
-If no mouse cursor is visible when using `x0vncserver`, start vncviewer as follows:
-
-```
-$ vncviewer DotWhenNoCursor=1 <server>
-
-```
-
-Or put `DotWhenNoCursor=1` in the tigervnc configuration file, which is at `~/.vnc/default.tigervnc` by default.
-
 ### Recommended security settings
 
-**Note:** If using ssh tunnels (i.e. [#Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels)), X509Vnc is not required since the encryption is handled by the sshd.
-
-SecurityTypes controls the preferred security algorithms. The default in the current version 1.5.0 is "X509Plain,TLSPlain,X509Vnc,TLSVnc,X509None,TLSNone,VncAuth,None". A more secure alternative is "X509Vnc,TLSVnc", which will disable all unencrypted data traffic.
-
-It is recommended to use X509Vnc, as TLSVnc lacks identity verification.
+If not [#Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels) where the identification and the encryption are handled via SSH, it is recommended to use *X509Vnc*, as *TLSVnc* lacks identity verification.
 
 ```
-$ vncserver -x509key /path/to/key.pem -x509cert /path/to/cerm.pem -SecurityTypes X509Vnc :1
+$ vncserver -x509key */path/to/key.pem* -x509cert */path/to/cert.pem* -SecurityTypes X509Vnc :1
 
 ```
 
-Issuing x509 certificates is beyond the scope of this guide. However, this is expected to be straightforward after the public launch of [Let's Encrypt](https://en.wikipedia.org/wiki/Let%27s_Encrypt "wikipedia:Let's Encrypt"). Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL") and manually share the keys between server and client using email for instance. After generating the certificates you need to copy the public certificate to the client and specify it with the `-X509CA` parameter. An example is given below where vncserver is running on 10.1.10.2:
+Issuing x509 certificates is beyond the scope of this guide. However, [Let's Encrypt](https://en.wikipedia.org/wiki/Let%27s_Encrypt "wikipedia:Let's Encrypt") provides an easy way to do so. Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL"), share the public key with the client and specify it with the `-X509CA` parameter. An example is given below the server is running on 10.1.10.2:
 
 ```
-$ vncviewer 10.1.10.2 -X509CA /path/to/cert.pem
+$ vncviewer 10.1.10.2 -X509CA */path/to/cert.pem*
 
 ```
 
 ### Toggling Fullscreen
 
 This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
+
+## Troubleshooting
 
 ### Unable to type '<' character
 
@@ -470,3 +421,31 @@ You should restart vncserver in this case using something like following:
 ```
 
 It looks like Composite extension in VNC will work only with 24bit depth.
+
+### No mouse cursor
+
+If no mouse cursor is visible when using `x0vncserver`, start vncviewer as follows:
+
+```
+$ vncviewer DotWhenNoCursor=1 <server>
+
+```
+
+Or put `DotWhenNoCursor=1` in the tigervnc configuration file, which is at `~/.vnc/default.tigervnc` by default.
+
+### Copying clipboard content from the remote machine
+
+If copying from the remote machine to the local machine does not work, run `autocutsel` on the server, as mentioned in [[2]](https://bbs.archlinux.org/viewtopic.php?id=101243):
+
+```
+$ autocutsel -fork
+
+```
+
+Now press F8 to display the VNC menu popup, and select `Clipboard: local -> remote` option.
+
+One can put the above command in `~/.vnc/xstartup` to have it run automatically when vncserver is started.
+
+## See also
+
+*   [https://github.com/TigerVNC/tigervnc](https://github.com/TigerVNC/tigervnc)

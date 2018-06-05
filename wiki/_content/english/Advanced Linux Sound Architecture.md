@@ -58,6 +58,7 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
         *   [7.5.1 Retrieving the driver state](#Retrieving_the_driver_state)
         *   [7.5.2 Reconfiguring input/output ports](#Reconfiguring_input.2Foutput_ports)
         *   [7.5.3 Resetting codecs](#Resetting_codecs)
+    *   [7.6 Correctly detect microphone plugged in a 4-pin 3.5mm (TRRS) jack](#Correctly_detect_microphone_plugged_in_a_4-pin_3.5mm_.28TRRS.29_jack)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -951,6 +952,17 @@ The ALSA driver can fully reconfigure attached codecs (the parts of the sound sy
 ```
 
 Before doing this, all processes using the ALSA driver (such as [Pulseaudio](/index.php/PulseAudio#Running "PulseAudio") or [JACK](/index.php/JACK "JACK")) must be stopped.
+
+### Correctly detect microphone plugged in a 4-pin 3.5mm (TRRS) jack
+
+On some modern laptops you may have a combined 3.5mm headset jack, instead of two separated ones, which may not be correctly detected by default. To make ALSA correctly detect plug-in status on your 3.5mm jack, you could put the following line into your `/etc/modprobe.d/alsa-base.conf` :
+
+```
+# options snd_hda_intel index=0 model=[YOUR_MODEL_SETTING]
+
+```
+
+For complete list of options put in `[YOUR_MODEL_SETTING]`, see [HD-Audio-Models.txt](http://git.alsa-project.org/?p=alsa-kernel.git;a=blob;f=Documentation/sound/alsa/HD-Audio-Models.txt;hb=HEAD). Tested with Gigabyte Aero15 2017 (P65 Model), with ALC255 and set model to `dell-headset-multi`.
 
 ## See also
 

@@ -169,12 +169,11 @@ prepend domain-name-servers 127.0.0.1;
 
 [NetworkManager](/index.php/NetworkManager "NetworkManager") has a plugin to enable DNS using dnsmasq. The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers (especially useful if you are connected to more than one VPN).
 
-Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed, but has been disabled. Then, edit `/etc/NetworkManager/NetworkManager.conf` and change the `dns` in the `[main]` section:
+Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed, but has been disabled. Then, create `/etc/NetworkManager/conf.d/dns.conf` and add the following to it:
 
- `/etc/NetworkManager/NetworkManager.conf` 
+ `/etc/NetworkManager/conf.d/dns.conf` 
 ```
 [main]
-...
 dns=dnsmasq
 
 ```

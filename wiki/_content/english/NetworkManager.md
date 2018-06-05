@@ -62,8 +62,6 @@ Related articles
         *   [7.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
         *   [7.1.2 Using KDE Wallet](#Using_KDE_Wallet)
     *   [7.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
-        *   [7.2.1 Ad-hoc](#Ad-hoc)
-        *   [7.2.2 Real AP](#Real_AP)
     *   [7.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
     *   [7.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
     *   [7.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
@@ -248,7 +246,7 @@ NetworkManager will require some additional steps to be able run properly. Make 
 
 NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") with the `NetworkManager.service` [systemd](/index.php/Systemd "Systemd") unit. Once the NetworkManager daemon is started, it will automatically connect to any available "system connections" that have already been configured. Any "user connections" or unconfigured connections will need *nmcli* or an applet to configure and connect.
 
-NetworkManager has a global configuration file at `/etc/NetworkManager/NetworkManager.conf`. Usually no configuration needs to be done to the global defaults.
+NetworkManager has a global configuration file at `/etc/NetworkManager/NetworkManager.conf`. Addition configuration files can be placed in `/etc/NetworkManager/conf.d/`. Usually no configuration needs to be done to the global defaults.
 
 ### Enable NetworkManager Wait Online
 
@@ -734,21 +732,28 @@ If the option was selected previously and you un-tick it, you may have to use th
 
 ### Sharing internet connection over Wi-Fi
 
-You can share your internet connection (e.g. 3G or wired) with a few clicks using nm. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
+You can share your internet connection (e.g. 3G or wired) with a few clicks. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
 
-#### Ad-hoc
+*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection and edit your Network Manager configuration to use [dnsmasq](/index.php/Dnsmasq "Dnsmasq"):
 
-*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
-*   Custom `dnsmasq.conf` may interfere with NetworkManager (not sure about this, but I think so).
-*   Click on applet and choose "Create new wireless network".
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=dnsmasq
+
+```
+
+[Restart](/index.php/Restart "Restart") `NetworkManager.service` afterwards.
+
+Create the shared connection:
+
+*   Click on applet and choose *Create new wireless network*.
 *   Follow wizard (if using WEP, be sure to use 5 or 13 character long password, different lengths will fail).
-*   Settings will remain stored for the next time you need it.
+    *   Choose either [Hotspot](https://fedoraproject.org/wiki/Features/RealHotspot) or Ad-hoc as Wi-Fi mode.
 
-#### Real AP
+The connection will be saved and remain stored for the next time you need it.
 
-Support of infrastructure mode (which is needed by Android phones as they intentionally do not support ad-hoc) is added by NetworkManager as of late 2012.
-
-See [Fedora's wiki](https://fedoraproject.org/wiki/Features/RealHotspot).
+**Note:** Android does not support connecting to Ad-hoc networks. To It is recommended to create a connection using infrastructure mode (i.e. setting Wi-Fi mode to "Hotspot".
 
 ### Sharing internet connection over Ethernet
 
@@ -840,7 +845,7 @@ Next time you connect, username and password should appear in the "VPN secrets" 
 
 ### Ignore specific devices
 
-Sometimes it may be desired that NetworkManager ignores specific devices and does not try to configure addresses and routes for them. You can quickly and easily ignore devices by MAC or interface-name by using the following in `/etc/NetworkManager/NetworkManager.conf`:
+Sometimes it may be desired that NetworkManager ignores specific devices and does not try to configure addresses and routes for them. You can quickly and easily ignore devices by MAC or interface-name by using the following in `/etc/NetworkManager/conf.d/unmanaged.conf`:
 
 ```
 [keyfile]
@@ -860,7 +865,7 @@ See [dnsmasq#NetworkManager](/index.php/Dnsmasq#NetworkManager "Dnsmasq") to ena
 
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
-NetworkManager supports two types MAC Address Randomization: randomization during scanning, and for network connections. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf` or by creating a separate configuration file in `/etc/NetworkManager/conf.d` which is recommended since the aforementioned config file may be overwritten by NetworkManager.
+NetworkManager supports two types MAC Address Randomization: randomization during scanning, and for network connections. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf` or by creating a separate configuration file in `/etc/NetworkManager/conf.d/` which is recommended since the aforementioned config file may be overwritten by NetworkManager.
 
 Randomization during Wi-Fi scanning is enabled by default, but it may be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf` or a dedicated configuration file under `/etc/NetworkManager/conf.d`:
 

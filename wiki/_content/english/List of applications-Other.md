@@ -126,6 +126,10 @@ There applications support both time, task and contacts management.
 
 	[https://www.kde.org/applications/office/korganizer/](https://www.kde.org/applications/office/korganizer/) || [korganizer](https://www.archlinux.org/packages/?name=korganizer)
 
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Calendar** — Calendar app for Nextcloud.
+
+	[https://github.com/nextcloud/calendar](https://github.com/nextcloud/calendar) || [nextcloud-app-calendar](https://www.archlinux.org/packages/?name=nextcloud-app-calendar)
+
 *   **Orage** — GTK+ calendar and task manager often seen integrated with Xfce.
 
 	[http://www.xfce.org/projects](http://www.xfce.org/projects) || [orage](https://www.archlinux.org/packages/?name=orage)
@@ -234,6 +238,10 @@ There applications support both time, task and contacts management.
 
 	[https://wiki.gnome.org/Apps/Todo](https://wiki.gnome.org/Apps/Todo) || [gnome-todo](https://www.archlinux.org/packages/?name=gnome-todo)
 
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Tasks** — Tasks app for Nextcloud.
+
+	[https://github.com/nextcloud/tasks](https://github.com/nextcloud/tasks) || [nextcloud-app-tasks](https://www.archlinux.org/packages/?name=nextcloud-app-tasks)
+
 *   **ptask** — GTK+ task manager based on [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior").
 
 	[https://wpitchoune.net/ptask/](https://wpitchoune.net/ptask/) || [ptask](https://aur.archlinux.org/packages/ptask/)
@@ -267,6 +275,10 @@ There applications support both time, task and contacts management.
 *   **LDAP Administration Tool** — Browse LDAP-based directories and add/edit/delete entries contained within.
 
 	[https://sourceforge.net/projects/ldap-at/](https://sourceforge.net/projects/ldap-at/) || [lat](https://www.archlinux.org/packages/?name=lat)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Contacts** — Contacts app for Nextcloud.
+
+	[https://github.com/nextcloud/contacts](https://github.com/nextcloud/contacts) || [nextcloud-app-contacts](https://www.archlinux.org/packages/?name=nextcloud-app-contacts)
 
 *   **[phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin")** — LDAP client webapp. Its hierarchical tree-viewer and advanced search functionality make it intuitive to browse and administer your LDAP directory.
 

@@ -253,7 +253,7 @@ This section contains popular input device configuration tips. For more, please 
 
 ### Keyboard layouts
 
-Non-English or otherwise non-standard keyboards may not function as expected by default. The necessary steps to configure the keymap are different for virtual console and [Xorg](/index.php/Xorg "Xorg"), they are described in [Console keyboard configuration](/index.php/Console_keyboard_configuration "Console keyboard configuration") and [Xorg keyboard configuration](/index.php/Xorg_keyboard_configuration "Xorg keyboard configuration") respectively.
+Non-English or otherwise non-standard keyboards may not function as expected by default. The necessary steps to configure the keymap are different for virtual console and [Xorg](/index.php/Xorg "Xorg"), they are described in [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") respectively.
 
 ### Mouse buttons
 

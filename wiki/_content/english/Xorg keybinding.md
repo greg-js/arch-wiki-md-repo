@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Xorg keyboard configuration#Keybinding](/index.php/Xorg_keyboard_configuration#Keybinding "Xorg keyboard configuration")
+*   [Xorg keyboard configuration#Keybinding](/index.php?title=Xorg_keyboard_configuration&redirect=no#Keybinding "Xorg keyboard configuration")

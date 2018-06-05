@@ -72,4 +72,4 @@ DAEMONS=(syslog-ng **gpm** network netfs crond)
 
 ```
 
-Per maggiori informazioni [gpm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpm.8).
+Per maggiori informazioni [gpm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpm.8).

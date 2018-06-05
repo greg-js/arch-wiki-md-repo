@@ -136,6 +136,10 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.openoffice.org/product/impress.html](http://www.openoffice.org/product/impress.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
+*   **Sozi** — Zooming presentation editor and player. Based on the [Electron](https://electronjs.org/) platform.
+
+	[http://sozi.baierouge.fr/](http://sozi.baierouge.fr/) || [sozi](https://aur.archlinux.org/packages/sozi/)
+
 *   **Spice-Up** — Create simple and beautiful presentations.
 
 	[https://github.com/Philip-Scott/Spice-up](https://github.com/Philip-Scott/Spice-up) || [spice-up](https://aur.archlinux.org/packages/spice-up/)
@@ -926,29 +930,29 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 #### Vi text editors
 
-*   **Amp** — A text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
+*   **Amp** — Text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
 
-	[https://amp.rs](https://amp.rs) || [amp](https://aur.archlinux.org/packages/amp/)
+	[https://amp.rs/](https://amp.rs/) || [amp](https://aur.archlinux.org/packages/amp/)
 
 *   **[Kakoune](/index.php/Kakoune "Kakoune")** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
 
 	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune](https://www.archlinux.org/packages/?name=kakoune)
 
-*   **[Neovim](/index.php/Neovim "Neovim")** — Vim's rebirth for the 21st century
+*   **[Neovim](/index.php/Neovim "Neovim")** — Vim's rebirth for the 21st century.
 
-	[http://neovim.io/](http://neovim.io/) || [neovim](https://www.archlinux.org/packages/?name=neovim)
+	[https://neovim.io/](https://neovim.io/) || [neovim](https://www.archlinux.org/packages/?name=neovim)
 
-*   **[Vi](/index.php/Vi "Vi")** — The original ex/vi text editor.
+*   **[vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi")** — The original ex/vi text editor.
 
 	[http://ex-vi.sourceforge.net/](http://ex-vi.sourceforge.net/) || [vi](https://www.archlinux.org/packages/?name=vi)
 
 *   **[Vim](/index.php/Vim "Vim") (Vi IMproved)** — Advanced text editor that seeks to provide the power of the de-facto Unix editor 'vi', with a more complete feature set.
 
-	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
+	[https://www.vim.org/](https://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
 
-*   **Vis** — modern, legacy free, simple yet efficient vim-like editor.
+*   **Vis** — Modern, legacy free, simple yet efficient vim-like editor.
 
-	[http://www.brain-dump.org/projects/vis/](http://www.brain-dump.org/projects/vis/) || [vis](https://www.archlinux.org/packages/?name=vis)
+	[https://github.com/martanne/vis](https://github.com/martanne/vis) || [vis](https://www.archlinux.org/packages/?name=vis)
 
 #### Markdown editors
 
@@ -982,67 +986,135 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 ##### Console
 
-*   **deft** — Manage notes within emacs
+*   **Geeknote** — Command line client for Evernote.
 
-	[http://jblevins.org/projects/deft/](http://jblevins.org/projects/deft/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[http://geeknote.me/](http://geeknote.me/) || [geeknote-git](https://aur.archlinux.org/packages/geeknote-git/)
 
-*   **hnb (hierarchical notebook)** — Program to organize many kinds of data (addresses, to-do lists, ideas, book reviews, etc.) in one place using the XML format.
+*   **hierarchical notebook** — Program to organize many kinds of data (addresses, to-do lists, ideas, book reviews, etc.) in one place using the XML format.
 
 	[http://hnb.sourceforge.net/](http://hnb.sourceforge.net/) || [hnb](https://aur.archlinux.org/packages/hnb/)
 
-*   **pynote** — Manage notes on the commandline
+*   **[Org mode](https://en.wikipedia.org/wiki/org-mode "wikipedia:org-mode")** — [Emacs](/index.php/Emacs "Emacs") mode for notes, project planning and authoring.
+
+	[https://orgmode.org/](https://orgmode.org/) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
+
+*   **pynote** — Manage notes on the commandline.
 
 	[https://github.com/rumpelsepp/pynote](https://github.com/rumpelsepp/pynote) || [pynote](https://aur.archlinux.org/packages/pynote/)
 
+*   **Vimwiki** — Personal wiki for [Vim](/index.php/Vim "Vim") – interlinked, plain text files written in a markup language.
+
+	[https://vimwiki.github.io/](https://vimwiki.github.io/) || [vim-vimwiki](https://aur.archlinux.org/packages/vim-vimwiki/)
+
 ##### Graphical
+
+*   **Almanah** — Small GTK+ application to allow you to keep a diary of your life.
+
+	[https://wiki.gnome.org/Apps/Almanah_Diary](https://wiki.gnome.org/Apps/Almanah_Diary) || [almanah](https://www.archlinux.org/packages/?name=almanah)
 
 *   **[BasKet](https://en.wikipedia.org/wiki/BasKet_Note_Pads "wikipedia:BasKet Note Pads")** — Application for organizing, sharing, and taking notes. It can manage various types of information such as to-do lists, links, pictures, and other types, similar to a scrapbook.
 
-	[https://userbase.kde.org/BasKet](https://userbase.kde.org/BasKet) || [basket](https://www.archlinux.org/packages/?name=basket)
+	[https://basket-notepads.github.io/](https://basket-notepads.github.io/) || [basket](https://www.archlinux.org/packages/?name=basket)
+
+*   **Boostnote** — Note-taking application for programmers that focuses on markdown, snippets, and customizability. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://boostnote.io/](https://boostnote.io/) || [boostnote](https://aur.archlinux.org/packages/boostnote/)
 
 *   **Cherrytree** — Hierarchical note taking application, featuring rich text and syntax highlighting, storing data in a single xml or sqlite file.
 
-	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[https://www.giuspen.com/cherrytree/](https://www.giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
 
-*   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — Experimental port of Tomboy to C++.
+*   **Elephant** — Notetaker with a classic interface.
+
+	[http://elephant.mine.nu/](http://elephant.mine.nu/) || [elephant](https://aur.archlinux.org/packages/elephant/)
+
+*   **GNOME Notes** — Note editor for GNOME designed to remain simple to use.
+
+	[https://wiki.gnome.org/Apps/Notes](https://wiki.gnome.org/Apps/Notes) || [bijiben](https://www.archlinux.org/packages/?name=bijiben)
+
+*   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — Port of Tomboy to C++. It is the same note taking application, including most of the add-ins.
 
 	[https://wiki.gnome.org/Apps/Gnote](https://wiki.gnome.org/Apps/Gnote) || [gnote](https://www.archlinux.org/packages/?name=gnote)
+
+*   **Hazama** — Simple and highly customizable application for keeping diary. There is no calendar but a big list that contains preview of diaries.
+
+	[https://hazama.cc/](https://hazama.cc/) || [hazama](https://aur.archlinux.org/packages/hazama/)
+
+*   **Joplin** — Note taking and to-do application, which can handle a large number of notes organized into notebooks. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://joplin.cozic.net/](https://joplin.cozic.net/) || [joplin](https://aur.archlinux.org/packages/joplin/)
 
 *   **KeepNote** — Cross-platform GTK+ note-taking application with rich text formatting.
 
 	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
 
-*   **KNotes** — A program that lets you write the computer equivalent of sticky notes.
+*   **KJots** — Note taking application for KDE.
+
+	[https://userbase.kde.org/KJots](https://userbase.kde.org/KJots) || [kjots](https://www.archlinux.org/packages/?name=kjots)
+
+*   **KNotes** — Program that lets you write the computer equivalent of sticky notes. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
 	[https://www.kde.org/applications/utilities/knotes/](https://www.kde.org/applications/utilities/knotes/) || [knotes](https://www.archlinux.org/packages/?name=knotes)
 
-*   **Laverna** — A JavaScript note taking application with Markdown editor and encryption support. Consider it like open source alternative to Evernote.
+*   **Laverna** — JavaScript note taking application with Markdown editor and encryption support. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://laverna.cc/](https://laverna.cc/) || [laverna](https://aur.archlinux.org/packages/laverna/)
 
-*   **MyNotex** — Note-taking, document file and activity manager.
+*   **Lifeograph** — Off-line and private journal and note taking application. It offers a rich feature set presented in a clean and simple user interface.
+
+	[http://lifeograph.sourceforge.net/](http://lifeograph.sourceforge.net/) || [lifeograph](https://aur.archlinux.org/packages/lifeograph/)
+
+*   **Mikidown** — Note taking application featuring markdown syntax.
+
+	[https://shadowkyogre.github.io/mikidown/](https://shadowkyogre.github.io/mikidown/) || [mikidown](https://aur.archlinux.org/packages/mikidown/)
+
+*   **[MyNotex](https://en.wikipedia.org/wiki/MyNotex "wikipedia:MyNotex")** — Note-taking, document file and activity manager.
 
 	[https://sites.google.com/site/mynotex/](https://sites.google.com/site/mynotex/) || [mynotex](https://aur.archlinux.org/packages/mynotex/)
 
-*   **Notes-Up** — Write beautiful notes fast and easy using Markdown.
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Notes** — Simple notes app for Nextcloud.
+
+	[https://github.com/nextcloud/notes](https://github.com/nextcloud/notes) || [nextcloud-app-notes](https://www.archlinux.org/packages/?name=nextcloud-app-notes)
+
+*   **NixNote** — Helps you take notes and stay organized. Create text notes, attach files or images, and even synchronize with Evernote. Formerly called Nevernote.
+
+	[http://nixnote.org/](http://nixnote.org/) || [nixnote2](https://aur.archlinux.org/packages/nixnote2/)
+
+*   **Notes-Up** — Markdown notes editor and manager for elementaryOS.
 
 	[https://github.com/Philip-Scott/Notes-up](https://github.com/Philip-Scott/Notes-up) || [notes-up](https://aur.archlinux.org/packages/notes-up/)
 
-*   **nixnote** — Evernote's third Opensource application, formerly called Nevernote.
+*   **nvPY** — Simplenote syncing note-taking application, inspired by Notational Velocity and ResophNotes, but uglier and cross-platformerer.
 
-	[http://www.sourceforge.net/projects/nevernote](http://www.sourceforge.net/projects/nevernote) || [nixnote2](https://aur.archlinux.org/packages/nixnote2/)
+	[https://github.com/cpbotha/nvpy](https://github.com/cpbotha/nvpy) || [nvpy-git](https://aur.archlinux.org/packages/nvpy-git/)
 
-*   **[org-mode](https://en.wikipedia.org/wiki/org-mode "wikipedia:org-mode")** — [Emacs](/index.php/Emacs "Emacs") mode for notes, project planning and authoring.
+*   **OutWiker** — Store notes in a tree.
 
-	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
+	[https://jenyay.net/Outwiker/English](https://jenyay.net/Outwiker/English) || [outwiker](https://aur.archlinux.org/packages/outwiker/)
 
-*   **[QOwnNotes](https://en.wikipedia.org/wiki/QOwnNotes "wikipedia:QOwnNotes")** — An open source notepad and todo list manager with markdown support and optional ownCloud integration built on qt5.
+*   **[QOwnNotes](https://en.wikipedia.org/wiki/QOwnNotes "wikipedia:QOwnNotes")** — Notepad and todo list manager with markdown support and optional ownCloud integration built on Qt5.
 
-	[http://www.qownnotes.org/](http://www.qownnotes.org/) || [qownnotes](https://aur.archlinux.org/packages/qownnotes/)
+	[https://www.qownnotes.org/](https://www.qownnotes.org/) || [qownnotes](https://aur.archlinux.org/packages/qownnotes/)
 
 *   **RedNotebook** — Modern journal, which lets you format, tag and search your entries.
 
-	[http://rednotebook.sourceforge.net/](http://rednotebook.sourceforge.net/) || [rednotebook](https://aur.archlinux.org/packages/rednotebook/)
+	[https://rednotebook.sourceforge.io/](https://rednotebook.sourceforge.io/) || [rednotebook](https://aur.archlinux.org/packages/rednotebook/)
+
+*   **[Simplenote](https://en.wikipedia.org/wiki/Simplenote "wikipedia:Simplenote")** — The simplest way to keep notes. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://simplenote.com/](https://simplenote.com/) || [simplenote-electron-bin](https://aur.archlinux.org/packages/simplenote-electron-bin/)
+
+*   **Standard Notes** — Simple and private notes application which focuses on simplicity, and encrypts data locally before it ever touches a cloud. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://standardnotes.org/](https://standardnotes.org/) || [standardnotes-desktop](https://aur.archlinux.org/packages/standardnotes-desktop/)
+
+*   **[TagSpaces](https://en.wikipedia.org/wiki/TagSpaces "wikipedia:TagSpaces")** — Offline personal data manager for managing of your local files. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://simplenote.com/](https://simplenote.com/) || [tagspaces](https://aur.archlinux.org/packages/tagspaces/)
+
+*   **[TiddlyWiki](https://en.wikipedia.org/wiki/TiddlyWiki "wikipedia:TiddlyWiki")** — Unique non-linear notebook for capturing, organizing and sharing complex information.
+
+	[https://tiddlywiki.com/](https://tiddlywiki.com/) || [tiddlywiki](https://aur.archlinux.org/packages/tiddlywiki/)
 
 *   **[Tomboy](https://en.wikipedia.org/wiki/Tomboy_(software) "wikipedia:Tomboy (software)")** — Desktop note-taking application for Linux and Unix with a wiki-like linking system to connect notes together.
 
@@ -1052,19 +1124,23 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://tuxcards.de/](http://tuxcards.de/) || [tuxcards](https://www.archlinux.org/packages/?name=tuxcards)
 
-*   **WikidPad** — Wiki-like notebook for storing your thoughts, ideas, todo lists, contacts, or anything else you can think of to write down.
+*   **[WikidPad](https://en.wikipedia.org/wiki/WikidPad "wikipedia:WikidPad")** — Wiki-like notebook for storing your thoughts, ideas, todo lists, contacts, or anything else you can think of to write down.
 
 	[http://wikidpad.sourceforge.net/](http://wikidpad.sourceforge.net/) || [wikidpad](https://aur.archlinux.org/packages/wikidpad/)
 
-*   **wiznote** — Opensource cross-platform cloud based note-taking client.
+*   **WizNote** — Cloud based note-taking client.
 
-	[http://www.wiznote.com/](http://www.wiznote.com/) || [wiznote](https://www.archlinux.org/packages/?name=wiznote)
+	[https://github.com/WizTeam/WizQTClient](https://github.com/WizTeam/WizQTClient) || [wiznote](https://www.archlinux.org/packages/?name=wiznote)
 
-*   **[zim](/index.php/Zim "Zim")** — WYSIWYG text editor that aims at bringing the concept of a wiki to the desktop.
+*   **Xpad** — Sticky note application for jotting down things to remember.
+
+	[https://launchpad.net/xpad](https://launchpad.net/xpad) || [xpad](https://www.archlinux.org/packages/?name=xpad)
+
+*   **[Zim](/index.php/Zim "Zim")** — WYSIWYG text editor that aims at bringing the concept of a wiki to the desktop.
 
 	[http://zim-wiki.org/](http://zim-wiki.org/) || [zim](https://www.archlinux.org/packages/?name=zim)
 
-*   **znotes** — A lightweight crossplatform application for notes managment with simple interface, use qt4 libraries.
+*   **zNotes** — Lightweight application for notes management with simple interface.
 
 	[http://znotes.sourceforge.net/](http://znotes.sourceforge.net/) || [znotes](https://aur.archlinux.org/packages/znotes/)
 

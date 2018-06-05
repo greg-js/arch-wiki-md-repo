@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [LXDE (Italiano)](/index.php/LXDE_(Italiano) "LXDE (Italiano)")
+*   [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+
 LXDM è un display manager leggero per l'ambiente desktop [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)"). L'interfaccia utente è realizzata con [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)") 2\. È ancora nelle prime fasi di sviluppo.
 
 ## Contents

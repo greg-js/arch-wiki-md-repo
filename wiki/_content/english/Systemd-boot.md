@@ -223,7 +223,7 @@ The following keys are used inside the menu:
 *   `-/T` - decrease the timeout (stored in a non-volatile EFI variable)
 *   `+/t` - increase the timeout (stored in a non-volatile EFI variable)
 *   `e` - edit the kernel command line. It has no effect if the `editor` config option is set to `0`.
-*   `v` - show the gummiboot and UEFI version
+*   `v` - show the systemd-boot and UEFI version
 *   `Q` - quit
 *   `P` - print the current configuration
 *   `h/?` - help

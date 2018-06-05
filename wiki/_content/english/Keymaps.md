@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Console keyboard configuration](/index.php/Console_keyboard_configuration "Console keyboard configuration")
+*   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")

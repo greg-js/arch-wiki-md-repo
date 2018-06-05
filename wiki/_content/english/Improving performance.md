@@ -51,6 +51,7 @@ This article provides information on basic system diagnostics relating to perfor
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
     *   [4.2 DRIconf](#DRIconf)
+    *   [4.3 Overclocking with amdgpu](#Overclocking_with_amdgpu)
 *   [5 RAM and swap](#RAM_and_swap)
     *   [5.1 Clock frequency and timings](#Clock_frequency_and_timings)
     *   [5.2 Root on RAM overlay](#Root_on_RAM_overlay)
@@ -359,6 +360,55 @@ Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the
 [driconf](https://www.archlinux.org/packages/?name=driconf) (**DRI** **CONF**igurator) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
 
 [adriconf](https://aur.archlinux.org/packages/adriconf/) and [adriconf-git](https://aur.archlinux.org/packages/adriconf-git/) (**A**dvanced **DRI** **CONF**igurator) is an improved version of DRIconf, with refreshed interface and better handling of options to set.
+
+### Overclocking with amdgpu
+
+Since Linux 4.17, it is possible to adjust clocks and voltages of the graphics card via `/sys/class/drm/card0/device/pp_od_clk_voltage`. It is however required to unlock access to it in sysfs by appending the boot parameter `amdgpu.ppfeaturemask=0xffffffff`.
+
+After this, the range of allowed values must be increased to allow higher clocks than used by default. To allow the maximum GPU clock to be increased by e.g. up to 2%, run:
+
+```
+echo "2" > /sys/class/drm/card0/device/pp_sclk_od
+
+```
+
+**Note:** Running cat `/sys/class/drm/card0/device/pp_sclk_od` does always return either 1 or 0, no matter the value added to it via `echo`.
+
+Unlike with previous kernel versions, this alone doesn't lead to a higher clock. The values in `pp_od_clk_voltage` for the pstates have to be adjusted as well. It's a good idea to get the default values as a guidance by simply reading the file. In this example, the default clock is 1196MHz and a range increase by 2% allows up to 1219MHz.
+
+To set the GPU clock for the maximum pstate 7 on a Polaris GPU to 1209MHz and 900mV voltage, run:
+
+```
+# echo "s 7 1209 900" > /sys/class/drm/card0/device/pp_od_clk_voltage
+
+```
+
+**Warning:** Double check the entered values, as mistakes might instantly cause fatal hardware damage!
+
+To apply, run
+
+```
+# echo "c" > /sys/class/drm/card0/device/pp_od_clk_voltage
+
+```
+
+To check if it worked out, read out clocks and voltage under 3D load:
+
+```
+# watch -n 0.5  cat /sys/kernel/debug/dri/0/amdgpu_pm_info
+
+```
+
+To set the allowed maximum power consumption of the GPU to e.g. 50 Watts, run
+
+```
+# echo 50000000 > /sys/class/drm/card0/device/hwmon/hwmon0/power1_cap
+
+```
+
+If the video card bios doesn't provide a maximum value above the default setting, you can only decrease the power limit, but not increase.
+
+**Note:** The above procedure was tested with a Polaris RX 560 card. There may be different behavior or bugs with different GPUs.
 
 ## RAM and swap
 

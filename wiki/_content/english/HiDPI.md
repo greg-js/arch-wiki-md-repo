@@ -423,6 +423,8 @@ java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ```
 
+Since Java 9 the GDK_SCALE environment variable is used to scale Swing applications accordingly.
+
 ### Mono applications
 
 According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_.28GTK.2B_3.29) applications.

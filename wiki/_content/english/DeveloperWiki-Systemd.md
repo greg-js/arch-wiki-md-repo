@@ -97,7 +97,7 @@ WantedBy=multi-user.target
 ### tmpfiles.d
 
 *   Instead of creating necessary runtime directories and files when a service is started (as some rc scripts do), ship a `tmpfiles.d(5)` config file in `/usr/lib/tmpfiles.d`.
-*   Add a line `systemd-tmpfiles --create foo.conf` to `post_install` (and `post_upgrade` if needed) to ensure the necessary runtime files are created on install, not just on the next boot
+*   A pacman hook included in systemd will run `systemd-tmpfiles --create foo.conf` upon install to ensure the necessary runtime files are created right away, not just on the next boot
 
 **Tip:** This feature can be used for a whole lot of other things, e.g. for writing to arbitrary files, even in /sys
 

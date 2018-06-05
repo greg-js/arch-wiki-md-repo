@@ -1,5 +1,10 @@
 **翻译状态：** 本文是英文页面 [LXDM](/index.php/LXDM "LXDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-17，点击[这里](https://wiki.archlinux.org/index.php?title=LXDM&diff=0&oldid=430730)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")
+*   [显示管理器](/index.php/Display_manager "Display manager")
+
 LXDM 是轻量级的 [LXDE](/index.php/LXDE "LXDE") [桌面环境](/index.php/Desktop_environment "Desktop environment") 使用的 [显示管理器](/index.php/Display_manager "Display manager")。界面使用 [GTK+](/index.php/GTK%2B "GTK+") 2.
 
 LXDM 不支持 XDMCP 协议，要使用 XDMCP，请使用 [LightDM](/index.php/LightDM "LightDM").

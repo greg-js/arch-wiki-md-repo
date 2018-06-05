@@ -531,7 +531,11 @@ Install [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/ope
 *   [List of supported black and white models](https://www.openprinting.org/driver/pxlmono-Ricoh)
 *   [List of supported color models](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
+For winprinters (Ricoh series SP100 and SP200) try out [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
+
 | Printer | Driver/filter | Notes |
+| SP 112 | [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/) |
+| SP 201n | [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/) |
 | 213W | *Generic PCL Laser* | Obtain a WPS code by holding down the wifi button for 2 seconds, then hitting the stop/start button. |
 | Printer | Driver/filter | Notes |
 

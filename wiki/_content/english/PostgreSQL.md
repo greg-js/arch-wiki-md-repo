@@ -7,33 +7,38 @@ Related articles
 ## Contents
 
 *   [1 Installing PostgreSQL](#Installing_PostgreSQL)
-*   [2 Create your first database/user](#Create_your_first_database.2Fuser)
-*   [3 Familiarize with PostgreSQL](#Familiarize_with_PostgreSQL)
-    *   [3.1 Access the database shell](#Access_the_database_shell)
-*   [4 Optional configuration](#Optional_configuration)
-    *   [4.1 Configure PostgreSQL to be accessible from remote hosts](#Configure_PostgreSQL_to_be_accessible_from_remote_hosts)
-    *   [4.2 Configure PostgreSQL authenticate against PAM](#Configure_PostgreSQL_authenticate_against_PAM)
-    *   [4.3 Change default data directory](#Change_default_data_directory)
-    *   [4.4 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
-*   [5 Administration tools](#Administration_tools)
-*   [6 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
-    *   [6.1 Manual dump and reload](#Manual_dump_and_reload)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
-    *   [7.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
-    *   [7.3 Cannot connect to database through pg_connect()](#Cannot_connect_to_database_through_pg_connect.28.29)
+*   [2 Initial configuration](#Initial_configuration)
+*   [3 Create your first database/user](#Create_your_first_database.2Fuser)
+*   [4 Familiarize with PostgreSQL](#Familiarize_with_PostgreSQL)
+    *   [4.1 Access the database shell](#Access_the_database_shell)
+*   [5 Optional configuration](#Optional_configuration)
+    *   [5.1 Configure PostgreSQL to be accessible from remote hosts](#Configure_PostgreSQL_to_be_accessible_from_remote_hosts)
+    *   [5.2 Configure PostgreSQL authenticate against PAM](#Configure_PostgreSQL_authenticate_against_PAM)
+    *   [5.3 Change default data directory](#Change_default_data_directory)
+    *   [5.4 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
+*   [6 Administration tools](#Administration_tools)
+*   [7 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
+    *   [7.1 Manual dump and reload](#Manual_dump_and_reload)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
+    *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
+    *   [8.3 Cannot connect to database through pg_connect()](#Cannot_connect_to_database_through_pg_connect.28.29)
 
 ## Installing PostgreSQL
 
-[Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. Then [set a password](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") for the newly created *postgres* user.
+[Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. It will also create a system user called *postgres*.
 
-Then, switch to the default PostgreSQL user *postgres* by executing the following command:
+**Warning:** See [#Upgrading PostgreSQL](#Upgrading_PostgreSQL) for necessary steps before installing new versions of the PostgreSQL packages.
 
-*   If you have [sudo](/index.php/Sudo "Sudo") and your username is in `sudoers`:
+**Note:** Commands that should be run as the *postgres* user are prefixed by `[postgres]$` in this article.
+
+You can switch to the PostgreSQL user by executing the following command:
+
+*   If you have [sudo](/index.php/Sudo "Sudo") and are in [sudoers](/index.php/Sudoers "Sudoers"):
 
 	 `$ sudo -u postgres -i` 
 
-*   Otherwise use [su](/index.php/Su "Su"):
+*   Otherwise using [su](/index.php/Su "Su"):
 
 ```
 $ su
@@ -41,9 +46,19 @@ $ su
 
 ```
 
+You can also run oneshot commands:
+
+*   Using sudo:
+
+	 `$ sudo -u postgres *command*` 
+
+*   Using su:
+
+	 `# su -c *command* postgres` 
+
 See [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) or [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) for their usage.
 
-**Note:** Commands that should be run as the postgres user are prefixed by `[postgres]$` in this article.
+## Initial configuration
 
 Before PostgreSQL can function correctly, the database cluster must be initialized:
 
@@ -83,14 +98,14 @@ initializing pg_authid ... ok
 
 If these are the kind of lines you see, then the process succeeded. Return to the regular user using `exit`.
 
-As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`. See [#Upgrading PostgreSQL](#Upgrading_PostgreSQL) for necessary steps before installing new versions of the PostgreSQL packages.
-
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to [edit](/index.php/Edit "Edit") the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
 **Warning:**
 
 *   If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
 *   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
+
+Finally, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`.
 
 ## Create your first database/user
 
@@ -378,8 +393,8 @@ When you are ready, stop the postgresql service, upgrade the following packages:
 Stop and make sure PostgreSQL is stopped:
 
 ```
-# systemctl stop postgresql
-# systemctl status postgresql
+# systemctl stop postgresql.service
+# systemctl status postgresql.service
 
 ```
 
@@ -413,7 +428,7 @@ Upgrade the cluster:
 Start the cluster:
 
 ```
-# systemctl start postgresql
+# systemctl start postgresql.service
 
 ```
 

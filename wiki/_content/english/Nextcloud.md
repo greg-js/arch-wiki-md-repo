@@ -519,7 +519,7 @@ You can access the files directly in Nautilus ('+ Other Locations') through WebD
 
 ### Android
 
-Download the official Nextcloud app from [Google Play](https://play.google.com/store/apps/details?id=com.nextcloud.client).
+Download the official Nextcloud app from [Google Play](https://play.google.com/store/apps/details?id=com.nextcloud.client) or [F-Droid](https://f-droid.org/packages/com.nextcloud.client/).
 
 To enable contacts and calendar sync (Android 4+):
 

@@ -66,5 +66,5 @@ Glusterfs can be setup to run in many different configurations depending operati
 
 ## See also
 
-*   [Official glusterfs installation guide](http://gluster.readthedocs.io/en/latest/Install-Guide/Overview/)
+*   [Official glusterfs installation guide](https://docs.gluster.org/en/latest/Install-Guide/Overview/)
 *   [Blog covering the setup of Glusterfs on Arch Linux](https://blog.bastelfreak.de/2016/05/short-tip-setup-glusterfs-share-on-arch-linux/)

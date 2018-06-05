@@ -4,6 +4,13 @@ Shairport Sync does not support AirPlay video or photo streaming.
 
 Shairport Sync is a fork of the original Shairport which was based on reverse-engineering Apple's key used in its AirPort Express. Be advised that this functionality may be removed at Apple's discretion.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+*   [3 Starting](#Starting)
+*   [4 Daemon Setup](#Daemon_Setup)
+
 ## Installation
 
 [Install](/index.php/Install "Install") the [shairport-sync](https://www.archlinux.org/packages/?name=shairport-sync) package.
@@ -15,3 +22,11 @@ The configuration file can be found at `/etc/shairport-sync.conf`. It contains u
 ## Starting
 
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `shairport-sync.service` using systemd.
+
+## Daemon Setup
+
+If you want to run shairport-sync as a daemon you will need to have a folder created in `/var/run` which is a tempfs by default in archlinux. To have a folder created automatically on boot create a tempfiles configuration file, for example
+
+ `/usr/lib/tempfiles.d/shairport-sync.conf`  `d /var/run/shairport-sync 0755 username group` 
+
+you can now use `shairport-sync -d` to run shairport-sync as a daemon, and `shairport-sync -k` to kill the daemon.

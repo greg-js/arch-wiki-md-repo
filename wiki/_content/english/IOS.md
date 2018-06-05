@@ -8,6 +8,7 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
 ## Contents
 
 *   [1 Connecting to a device](#Connecting_to_a_device)
+    *   [1.1 Manual mounting](#Manual_mounting)
 *   [2 Changing iPod mountpoint](#Changing_iPod_mountpoint)
 *   [3 Importing videos and pictures](#Importing_videos_and_pictures)
     *   [3.1 HTML5 videos](#HTML5_videos)
@@ -32,6 +33,44 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
 ## Connecting to a device
 
 Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or media players (Rhythmbox) can interact with iOS devices after [installing](/index.php/Install "Install") the [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc) package. Restarting the file manager or application might be needed. Also confirm that usbmuxd is running in the background if the device is still not being recognized by the file manager or application.
+
+#### Manual mounting
+
+[Install](/index.php/Install "Install") the [ifuse](https://www.archlinux.org/packages/?name=ifuse), [libimobiledevice](https://www.archlinux.org/packages/?name=libimobiledevice) and [ideviceinstaller-git](https://aur.archlinux.org/packages/ideviceinstaller-git/) packages.
+
+Make sure that you have the fuse module loaded by doing `modprobe fuse`, assuming that you do not have it in `/etc/modules-load.d/` already.
+
+**Note:** If your device has a screen password, unlock the device first
+
+Plug in the device and follow the following steps
+
+```
+#usbmuxd -f -v
+idevice_id -l
+ideviceinfo
+ideviceinstaller -l
+
+```
+
+The last command will provide the information regarding mounting with Fuse. For example to mount VLC installed on the device one can use the command:
+
+```
+#ifuse --documents org.videolan.vlc-ios <mountpoint>
+
+```
+
+The mountpoint field is where you want to have it mounted.
+
+And you are done! You should be able to transfer files.
+
+To unmount:
+
+```
+# umount <mountpoint>
+
+```
+
+**Note:** If an error is encountered during mounting, rebooting the device and repeating the steps can be helpful
 
 ## Changing iPod mountpoint
 

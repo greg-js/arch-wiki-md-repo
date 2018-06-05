@@ -3,10 +3,11 @@ See [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architec
 ## Contents
 
 *   [1 Volume](#Volume)
-    *   [1.1 Output is muted after reboot](#Output_is_muted_after_reboot)
-    *   [1.2 Volume is too low](#Volume_is_too_low)
-    *   [1.3 Low Sound Volume](#Low_Sound_Volume)
-    *   [1.4 Random lack of sound on startup](#Random_lack_of_sound_on_startup)
+    *   [1.1 No output](#No_output)
+    *   [1.2 Output is muted after reboot](#Output_is_muted_after_reboot)
+    *   [1.3 Volume is too low](#Volume_is_too_low)
+    *   [1.4 Low Sound Volume](#Low_Sound_Volume)
+    *   [1.5 Random lack of sound on startup](#Random_lack_of_sound_on_startup)
 *   [2 Microphone](#Microphone)
     *   [2.1 No microphone input](#No_microphone_input)
     *   [2.2 Setting the default microphone/capture device](#Setting_the_default_microphone.2Fcapture_device)
@@ -46,6 +47,17 @@ See [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architec
     *   [6.3 Problems with availability to only one user at a time](#Problems_with_availability_to_only_one_user_at_a_time)
 
 ## Volume
+
+### No output
+
+If `speaker-test` produces sound but some other program does not, determine whether [PulseAudio](/index.php/PulseAudio "PulseAudio") is being used:
+
+```
+# fuser -v /dev/snd/*
+
+```
+
+If it is, try using [apulse](https://www.archlinux.org/packages/?name=apulse), as described in [Advanced Linux Sound Architecture#PulseAudio compatibility](/index.php/Advanced_Linux_Sound_Architecture#PulseAudio_compatibility "Advanced Linux Sound Architecture"). Alternatively, killing the PulseAudio process may cause sound to start working in the desired process.
 
 ### Output is muted after reboot
 

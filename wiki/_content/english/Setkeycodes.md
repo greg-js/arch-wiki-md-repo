@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Keyboard input#Mapping scancodes to keycodes](/index.php/Keyboard_input#Mapping_scancodes_to_keycodes "Keyboard input")
+*   [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")

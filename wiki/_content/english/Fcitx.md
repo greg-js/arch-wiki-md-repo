@@ -199,7 +199,9 @@ You can use fcitx to input text in you clipboard (as well as a short clipboard h
 
 ### Disable or change *Extra key for trigger input method* [sic]
 
-This setting is under the *Global Config* tab and defaults to *SHIFT Both*, meaning that pressing *either* shift key will immediately change input methods. Although it should only apply when a shift key is pressed individually, it tends to randomly interrupt typing capital letters, selecting text with the keyboard, etc. while using standard keyboard input. In addition, this setting may, at times, revert to default.
+This setting is under the *Global Config* tab and defaults to *SHIFT Both*, meaning that pressing *either* shift key will immediately change input methods. Although it should only apply when a shift key is pressed individually, it tends to randomly interrupt typing capital letters, selecting text with the keyboard, etc. while using standard keyboard input.
+
+In addition, this setting may revert to default without warning at any time. To ensure fcitx's config cannot be modified, you must make fcitx's config file immutable: `# chattr +i ~/.config/fcitx/config`.
 
 ### Diagnose the problem
 

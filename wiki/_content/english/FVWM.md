@@ -94,7 +94,7 @@ The following configuration file locations are supported:
 *   `$HOME/.fvwm/config`
 *   `/usr/local/share/fvwm/config`
 
-The following configuration locations are supported as of version 2.6.7, but may not be supported in the future:
+The following configuration locations are supported as of version 2.6.8, but may not be supported in the future:
 
 *   `$HOME/.fvwm/.fvwm2rc`
 *   `$HOME/.fvwm2rc`
@@ -628,9 +628,11 @@ Window decorations (borders and titlebars) can be toggled on or off for a select
 ```
 DestroyFunc UndecorateWin
 AddToFunc UndecorateWin
-I ThisWindow (HasHandles) WindowStyle !Title, !Borders
-I ThisWindow (!HasHandles) WindowStyle Title, Borders
++ I ThisWindow (HasHandles) WindowStyle !Title, !Borders
++ I ThisWindow (!HasHandles) WindowStyle Title, Borders
 ```
+
+**Tip:** If you are looking to make windows fullscreen, this functionality has been added to the *Maximize* command as of FVWM 2.6.8, use the following: `Maximize Fullscreen`
 
 ## Troubleshooting
 

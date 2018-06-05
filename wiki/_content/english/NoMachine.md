@@ -89,7 +89,7 @@ Once the user is logged in to the remote desktop environment, running `setxkb cz
 
 ### Connecting via SSH
 
-The Free edition of NoMachine does not allow to use the SSH protocol to connect to the target computer and only NX protocol (listening on port `4000` by default) is used.
+The free edition of NoMachine does not allow to use the SSH protocol to connect to the target computer and only NX protocol (listening on port `4000` by default) is used.
 
 If it is not preferred to open yet another port on the firewall, a workaround is to create a standard SSH tunnel between client and target computer and connect through it:
 
