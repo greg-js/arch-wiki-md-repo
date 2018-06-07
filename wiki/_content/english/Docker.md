@@ -320,7 +320,7 @@ Delete all Docker data (purge directory):
 
 To grab the IP address of a running container:
 
- `$ docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container-name OR id> `  `172.17.0.37` 
+ `$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-name OR id> `  `172.17.0.37` 
 
 ## Troubleshooting
 

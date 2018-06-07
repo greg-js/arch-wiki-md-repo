@@ -89,26 +89,29 @@ GRANT ALL ON mattermostdb.* TO mmuser;
 
 ### PostgreSQL
 
-1\. [Install PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+1\. [Install](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL") and [configure](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 2\. Connect to the server as user `postgres`:
 
 	 `sudo -u postgres psql` 
 
-3\. Create the Mattermost database:
+3.a. Create the Mattermost database:
+
+	 `CREATE DATABASE mattermostdb;` 
+
+**Note:** When Mattermost and PostgreSQL are on the same machine, you should use a Unix socket, as it is faster and more secure.
+
+#### With TCP socket
+
+3.b. Create `mmuser` user and give it the rights on the database:
 
 ```
-CREATE DATABASE mattermostdb;
 CREATE USER mmuser WITH PASSWORD 'mmuser_password';
 GRANT ALL PRIVILEGES ON DATABASE mattermostdb to mmuser;
 
 ```
 
 4\. Exit out of `psql` with `\q`.
-
-**Note:** When Mattermost and PostgreSQL are on the same machine, you should use a Unix socket, as it is faster and more secure.
-
-#### With TCP socket
 
 5\. [PostgreSQL#Configure PostgreSQL to be accessible from remote hosts](/index.php/PostgreSQL#Configure_PostgreSQL_to_be_accessible_from_remote_hosts "PostgreSQL")
 
@@ -118,17 +121,23 @@ GRANT ALL PRIVILEGES ON DATABASE mattermostdb to mmuser;
 
 #### With Unix socket
 
-5\. Map the `mattermost` Unix user to the `mmuser` PostgreSQL user by adding the following line to `/var/lib/postgres/data/pg_ident.conf`:
+3.b. Create `mattermost` user and give it the rights on the database:
 
-	 `mattermap    mattermost    mmuser` 
+```
+CREATE USER mattermost;
+GRANT ALL PRIVILEGES ON DATABASE mattermostdb to mattermost;
 
-6\. Setup the Unix socket by adding the following line to `/var/lib/postgres/data/pg_hba.conf`:
+```
 
-	 `local    mattermostdb    mattermost    peer    map=mattermap` 
+4\. Exit out of `psql` with `\q`.
 
-7\. [Restart](/index.php/Restart "Restart") `postgresql.service`.
+5\. Setup the Unix socket by adding the following line to `/var/lib/postgres/data/pg_hba.conf`:
 
-8\. Verify it works:
+	 `local    mattermostdb    mattermost    peer` 
+
+6\. [Restart](/index.php/Restart "Restart") `postgresql.service`.
+
+7\. Verify it works:
 
 	 `$ sudo -u mattermost psql --dbname=mattermostdb --username=mattermost` 
 
@@ -208,6 +217,7 @@ Proxying can be achieved with most web servers.
 ```
 upstream backend {
     server 127.0.0.1:8065;
+    keepalive 32;
 }
 
 proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
@@ -227,7 +237,12 @@ server {
         proxy_set_header X-Frame-Options SAMEORIGIN;
         proxy_buffers 256 16k;
         proxy_buffer_size 16k;
-        proxy_read_timeout 600s;
+        client_body_timeout 60;
+        send_timeout 300;
+        lingering_timeout 5;
+        proxy_connect_timeout 90;
+        proxy_send_timeout 300;
+        proxy_read_timeout 90s;
         proxy_pass http://backend;
     }
 
@@ -256,8 +271,8 @@ server {
 4\. Enable the mattermost server:
 
 ```
-# mkdir /etc/nginx/servers-enabled
-# ln -s /etc/nginx/servers-available/mattermost /etc/nginx/server-enabled/mattermost
+# mkdir /etc/nginx/sites-enabled
+# ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost
 
 ```
 

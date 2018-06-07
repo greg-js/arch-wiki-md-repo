@@ -84,7 +84,7 @@ There are multiple tools which automate a large part of the steps described in t
 *   [archcx](https://github.com/m4rienf/ArchCX) (Bash, from Hetzner CX Rescue System)
 *   [digitalocean-debian-to-arch](https://github.com/gh2o/digitalocean-debian-to-arch) (repartition disk, DigitalOCean specific)
 *   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
-*   [vps2arch](https://github.com/drizzt/vps2arch) (Bash)
+*   [vps2arch](https://gitlab.com/drizzt/vps2arch) (Bash)
 
 The manual way is presented in the following subsections. The idea is to run an Arch system inside the host system, with the actual installation being executed from the Arch system. The nested system is contained inside a chroot.
 

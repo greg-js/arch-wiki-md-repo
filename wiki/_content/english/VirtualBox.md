@@ -74,7 +74,6 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
     *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
     *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
-    *   [5.27 Cannot mount shared folder from fstab](#Cannot_mount_shared_folder_from_fstab)
 *   [6 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -291,7 +290,7 @@ Two additional steps are needed in order for the mount point to be accessible fr
 Use the following command to mount your folder in your Arch Linux guest:
 
 ```
-# mount -cit vboxsf *shared_folder_name* *mount_point_on_guest_system*
+# mount -t vboxsf *shared_folder_name* *mount_point_on_guest_system*
 
 ```
 
@@ -305,7 +304,7 @@ The vboxsf filesystem offers other options which can be displayed with this comm
 For example if the user was not in the *vboxsf* group, we could have used this command to give access our mountpoint to him:
 
 ```
-# mount -cit vboxsf -o uid=1000,gid=1000 home /mnt
+# mount -t vboxsf -o uid=1000,gid=1000 home /mnt
 
 ```
 
@@ -327,8 +326,6 @@ $ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
 ```
 
 #### Mount at boot
-
-**Note:** `mount.vboxsf` will not mount shared folders from `/etc/fstab` on kernels 4.16 or newer. See [#Cannot mount shared folder from fstab](#Cannot_mount_shared_folder_from_fstab) for a workaround.
 
 You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `noauto,x-systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd reads fstab and mounts the partitions.
 
@@ -886,12 +883,6 @@ $ CR_RENDER_FORCE_PRESENT_MAIN_THREAD=0 VirtualBox
 ```
 
 Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](https://www.virtualbox.org/ticket/13653).
-
-### Cannot mount shared folder from fstab
-
-The `/usr/bin/mount.vboxsf` binary shipped in [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) cannot be used with kernels 4.16 or newer.
-
-The existence of `/usr/bin/mount.vboxsf` will prevent mounting shared folders from [fstab](#Mount_at_boot). A workaround is to declare `usr/bin/mount.vboxsf` as [NoExtract](/index.php/Pacman#Skip_files_from_being_installed_to_system "Pacman") in `/etc/pacman.conf`. See [FS#58272](https://bugs.archlinux.org/task/58272) for more information.
 
 ## See also
 

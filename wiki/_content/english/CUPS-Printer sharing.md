@@ -7,27 +7,32 @@ This article contains instruction on sharing printers between systems, be it bet
 
 ## Contents
 
-*   [1 Between GNU/Linux systems](#Between_GNU.2FLinux_systems)
-    *   [1.1 Using the web interface](#Using_the_web_interface)
-    *   [1.2 Manual setup](#Manual_setup)
-    *   [1.3 Enabling browsing](#Enabling_browsing)
-*   [2 Between GNU/Linux and Windows](#Between_GNU.2FLinux_and_Windows)
-    *   [2.1 Linux server - Windows client](#Linux_server_-_Windows_client)
-        *   [2.1.1 Sharing via IPP](#Sharing_via_IPP)
-        *   [2.1.2 Sharing via Samba](#Sharing_via_Samba)
-    *   [2.2 Windows server - Linux client](#Windows_server_-_Linux_client)
-        *   [2.2.1 Sharing via LPD](#Sharing_via_LPD)
-        *   [2.2.2 Sharing via IPP](#Sharing_via_IPP_2)
-        *   [2.2.3 Sharing via Samba](#Sharing_via_Samba_2)
-            *   [2.2.3.1 Configuration using the web interface](#Configuration_using_the_web_interface)
-            *   [2.2.3.2 Manual configuration](#Manual_configuration)
-            *   [2.2.3.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
-*   [3 Remote administration](#Remote_administration)
-    *   [3.1 Kerberos](#Kerberos)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
-    *   [4.2 Permission errors on Windows](#Permission_errors_on_Windows)
-*   [5 Other operating systems](#Other_operating_systems)
+*   [1 Creating class for multiple printers](#Creating_class_for_multiple_printers)
+*   [2 Between GNU/Linux systems](#Between_GNU.2FLinux_systems)
+    *   [2.1 Using the web interface](#Using_the_web_interface)
+    *   [2.2 Manual setup](#Manual_setup)
+    *   [2.3 Enabling browsing](#Enabling_browsing)
+*   [3 Between GNU/Linux and Windows](#Between_GNU.2FLinux_and_Windows)
+    *   [3.1 Linux server - Windows client](#Linux_server_-_Windows_client)
+        *   [3.1.1 Sharing via IPP](#Sharing_via_IPP)
+        *   [3.1.2 Sharing via Samba](#Sharing_via_Samba)
+    *   [3.2 Windows server - Linux client](#Windows_server_-_Linux_client)
+        *   [3.2.1 Sharing via LPD](#Sharing_via_LPD)
+        *   [3.2.2 Sharing via IPP](#Sharing_via_IPP_2)
+        *   [3.2.3 Sharing via Samba](#Sharing_via_Samba_2)
+            *   [3.2.3.1 Configuration using the web interface](#Configuration_using_the_web_interface)
+            *   [3.2.3.2 Manual configuration](#Manual_configuration)
+            *   [3.2.3.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
+*   [4 Remote administration](#Remote_administration)
+    *   [4.1 Kerberos](#Kerberos)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
+    *   [5.2 Permission errors on Windows](#Permission_errors_on_Windows)
+*   [6 Other operating systems](#Other_operating_systems)
+
+## Creating class for multiple printers
+
+'Class' in CUPS have meaning of a group. When you have multiple printers connected to single CUPS server you may want them to be balanced (printing jobs are automatically queued to different printers). This is also give an advantage that users on remote machine dealing with single 'printer'. Which is especially useful when one printer from class must be taken for repair, you just exclude it from class, yet for end users nothing have changed, printing jobs queued to another printer by CUPS server. Creating and managing classes can be done from CUPS Web GUI
 
 ## Between GNU/Linux systems
 
@@ -124,7 +129,7 @@ http://*hostname*:631/printers/*printer_name*
 *   The 'Add Printer' dialog in Windows suggests the format `http://computername/printers/printername/.printer`, which it will not accept. Instead, use the syntax suggested above.
 *   If you are using a proxy carefully check any used proxy **exclusions**. A wrong setting here may result in you being unable to add a printer until the next reboot even if you disable the proxy afterwards (at least on Windows 7).
 
-After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2').
+After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2' or 'Microsoft PS Class driver').
 
 #### Sharing via Samba
 

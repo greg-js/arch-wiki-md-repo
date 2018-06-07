@@ -33,7 +33,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 **Note:** This list is for providers with a convenient Arch Linux template. Using Arch on other providers is possible but requires more work. Example methods include:
 
 *   Loading custom disc images (requires hardware virtualization such as in Xen or KVM),
-*   [Installing under chroot](/index.php/Installation_guide "Installation guide"), for example with the help of the [vps2arch](https://github.com/drizzt/vps2arch) script (it will download the latest iso; be particularly aware of the systemd 220/221 [bug](https://github.com/systemd/systemd/issues/421)), or
+*   [Installing under chroot](/index.php/Installation_guide "Installation guide"), for example with the help of the [vps2arch](https://gitlab.com/drizzt/vps2arch/) script (it will download the latest iso; be particularly aware of the systemd 220/221 [bug](https://github.com/systemd/systemd/issues/421)), or
 *   Following [#Installing the latest Arch Linux on any OpenVZ provider](#Installing_the_latest_Arch_Linux_on_any_OpenVZ_provider) instructions, using rsync to synchronize Arch over the top of another distribution.
 
 | Provider | Arch Release | Virtualization | Locations | Notes |

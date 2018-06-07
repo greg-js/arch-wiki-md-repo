@@ -1,4 +1,8 @@
-This document provides instructions on how to set up a Korean language environment on an Arch linux installation. This document will not cover setting up Korean input on the console.
+Related articles
+
+*   [Internationalization](/index.php/Internationalization "Internationalization")
+
+This article describes how to set up a Korean language environment. It does not cover setting up Korean input on the console.
 
 ## Contents
 
@@ -6,7 +10,7 @@ This document provides instructions on how to set up a Korean language environme
 *   [2 Locale](#Locale)
 *   [3 Input in Xorg](#Input_in_Xorg)
     *   [3.1 Choose a Korean input method](#Choose_a_Korean_input_method)
-        *   [3.1.1 Current Issues](#Current_Issues)
+        *   [3.1.1 Current issues](#Current_issues)
     *   [3.2 Configuration](#Configuration)
         *   [3.2.1 ibus-hangul](#ibus-hangul)
         *   [3.2.2 uim-byeoru](#uim-byeoru)
@@ -19,7 +23,7 @@ This document provides instructions on how to set up a Korean language environme
 
 ## Fonts
 
-To use any korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) or the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. Alternatively, if you use the [Infinality](/index.php/Infinality "Infinality") patches and have the [Infinality-bundle-fonts repository](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") enabled, you can install `ttf-nanum-fonts-ibx`, `ttf-nanumgothic-coding-ibx`, and `ttf-unfonts-core-ibx` from the `infinality-bundle-fonts` repository. If you want to view and use Yethangul(옛한글), install the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) and/or the [ttf-hamchorom-lvt](https://aur.archlinux.org/packages/ttf-hamchorom-lvt/) fonts.
+To use any Korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) or the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. Alternatively, if you use the [Infinality](/index.php/Infinality "Infinality") patches and have the [Infinality-bundle-fonts repository](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") enabled, you can install `ttf-nanum-fonts-ibx`, `ttf-nanumgothic-coding-ibx`, and `ttf-unfonts-core-ibx` from the `infinality-bundle-fonts` repository. If you want to view and use Yethangul(옛한글), install the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) and/or the [ttf-hamchorom-lvt](https://aur.archlinux.org/packages/ttf-hamchorom-lvt/) fonts.
 
 ## Locale
 
@@ -33,7 +37,7 @@ Input method (IM) frameworks act as frontends to various input methods and libra
 
 **Note:** Check the issues associated with each input method framework before choosing which one to use.
 
-#### Current Issues
+#### Current issues
 
 	ibus
 
@@ -47,11 +51,11 @@ Input method (IM) frameworks act as frontends to various input methods and libra
 
 	scim
 
-	scim, or the [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform"), is a input method framework for posix-compliant systems. scim-hangul, as of November 2014, has issues with Google Chrome and Chromium web browsers. With the default environment variables, you cannot input Korean in Google Chrome or Chromium. scim also causes problems in Gedit as of November 2014\. When scim-hangul is active, pressing `backspace` does not work properly. A workaround for both these issues will be explained in the scim configuration section. However, even with this workaround applied, Chrome/Chromium users may find that the preedit string disappears when the spacebar or any other modifier key is pressed. *There is currently no known workaround for this issue.*
+	scim, or the [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform"), is a input method framework for POSIX-compliant systems. scim-hangul, as of November 2014, has issues with Google Chrome and Chromium web browsers. With the default environment variables, you cannot input Korean in Google Chrome or Chromium. scim also causes problems in Gedit as of November 2014\. When scim-hangul is active, pressing `backspace` does not work properly. A workaround for both these issues will be explained in the scim configuration section. However, even with this workaround applied, Chrome/Chromium users may find that the preedit string disappears when the spacebar or any other modifier key is pressed. *There is currently no known workaround for this issue.*
 
 	fcitx
 
-	[Fcitx](/index.php/Fcitx "Fcitx") is another input method framework for posix-compliant systems. Fcitx-hangul has issues with Google Chrome and Chromium. Some users have reported that fcitx only recognizes Google Chrome/Chromium's URL bar as an input window only after their themes have been changed.
+	[Fcitx](/index.php/Fcitx "Fcitx") is another input method framework for POSIX-compliant systems. Fcitx-hangul has issues with Google Chrome and Chromium. Some users have reported that fcitx only recognizes Google Chrome/Chromium's URL bar as an input window only after their themes have been changed.
 
 	nabi
 

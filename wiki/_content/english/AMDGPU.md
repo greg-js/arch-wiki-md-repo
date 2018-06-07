@@ -16,7 +16,7 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
     *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_.28SI.29_and_Sea_Islands_.28CIK.29_support)
-    *   [2.2 Enable AMD DC on pre-Vega cards](#Enable_AMD_DC_on_pre-Vega_cards)
+    *   [2.2 AMD DC](#AMD_DC)
     *   [2.3 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
@@ -60,13 +60,11 @@ The following workarounds are available:
 
 Also, since kernel 4.13, adding the `amdgpu.si_support=1 radeon.si_support=0` or `amdgpu.cik_support=1 radeon.cik_support=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") is [required](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1). Otherwise, AMDGPU will not start and you will end up with either radeon being used instead or the display being frozen during the boot.
 
-### Enable AMD DC on pre-Vega cards
+### AMD DC
 
-AMD DC (display code), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. It is enabled by default for GCN5/Vega cards and later.
+AMD DC (display code), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15-4.17, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
 
-**Note:** The GCN1/SI chipset is not supported.
-
-Support for older cards (GCN2/CIK, GCN3/VI, GCN4/Polaris) is now enabled in the [Arch Kernel by default](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config?h=packages/linux#n5752). For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
+It is enabled by default for GCN2/CIK cards and newer. The GCN1/SI chipset is not supported.
 
 ### AMDGPU PRO
 

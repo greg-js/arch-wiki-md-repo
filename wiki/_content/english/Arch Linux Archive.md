@@ -10,6 +10,8 @@ The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollb
 *   Restore all your packages at a precise moment (my system is broken, I want to go back 2 months ago)
 *   Find a previous version of an ISO image
 
+Packages are only kept for a few years, afterwards they are moved to the [Arch Linux Historical Archive](#Historical_Archive) on archive.org.
+
 ## Contents
 
 *   [1 Location](#Location)
@@ -20,7 +22,10 @@ The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollb
 *   [3 FAQ](#FAQ)
     *   [3.1 How to downgrade one package](#How_to_downgrade_one_package)
     *   [3.2 How to restore all packages to a specific date](#How_to_restore_all_packages_to_a_specific_date)
-*   [4 History](#History)
+*   [4 Historical Archive](#Historical_Archive)
+    *   [4.1 Finding packages in the Historical Archive](#Finding_packages_in_the_Historical_Archive)
+    *   [4.2 Downloading packages from the Historical Archive](#Downloading_packages_from_the_Historical_Archive)
+*   [5 History](#History)
 
 ## Location
 
@@ -228,9 +233,72 @@ Then update the database and force downgrade:
 
 **Note:** It's [not safe](/index.php/Partial_upgrades "Partial upgrades") to mix Archive and up-to-date mirrors. In case of a download failure, you will fall-back on an upstream package and you will have packages not from the same epoch in the rest of the system.
 
+## Historical Archive
+
+Maintaining the Arch Linux Archive consumes significant amount of ressources, so old packages are cleaned up from time to time.
+
+Before removing them, old packages are uploaded to a [dedicated collection "Arch Linux Historical Archive" on archive.org](https://archive.org/details/archlinuxarchive).
+
+Contrary to the regular Archive, the Historical Archive does not provide a filesystem hierarchy, so it is not directly usable as a pacman repository.
+
+### Finding packages in the Historical Archive
+
+The **Arch Linux Historical Archive** collection has an index of all packages: [https://archive.org/details/archlinuxarchive](https://archive.org/details/archlinuxarchive)
+
+It is also possible to directly access a package by its **identifier**. The general pattern for identifiers is:
+
+```
+archlinux_pkg_<sanitized package name>
+
+```
+
+To obtain the **sanitized** package name, simply replace any `@`, `+` or `.` character in the package name by an underscore `_`.
+
+For instance, the identifier for [lucene++](https://www.archlinux.org/packages/?name=lucene%2B%2B) is `archlinux_pkg_lucene__`.
+
+You can then access the details page of a package via its identifier, for instance: [https://archive.org/details/archlinux_pkg_lucene__](https://archive.org/details/archlinux_pkg_lucene__)
+
+It is also possible to run searches with the [archive.org Python client](https://github.com/jjjake/internetarchive):
+
+```
+$ ia search subject:"archlinux package" subject:'mysql'                                                                                       
+{"identifier": "archlinux_pkg_ejabberd-mod_mysql"}                                                                                                           
+{"identifier": "archlinux_pkg_ejabberd-mod_mysql-svn"}
+{"identifier": "archlinux_pkg_gambas3-gb-db-mysql"}
+{"identifier": "archlinux_pkg_gambas3-gb-mysql"}
+{"identifier": "archlinux_pkg_libgda-mysql"}
+
+```
+
+### Downloading packages from the Historical Archive
+
+All available package versions (and their signature) can be accessed via the download page of a package: [https://archive.org/download/archlinux_pkg_lucene__](https://archive.org/download/archlinux_pkg_lucene__)
+
+Here are a few example ways to fetch a package:
+
+```
+$ wget https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
+$ pacman -U https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz
+
+```
+
+Note that if you use pacman, you have to figure out the dependencies yourself.
+
+It is also possible to use the [archive.org Python client](https://github.com/jjjake/internetarchive):
+
+```
+# Download a specific version of a package
+$ ia download archlinux_pkg_cjdns cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
+
+# Download all x86_64 versions of a package, with signatures
+$ ia download archlinux_pkg_cjdns --glob="*x86_64.pkg.tar.xz*"
+
+```
+
 ## History
 
 *   The original ARM (*Archlinux Rollback Machine*) was closed on 2013-08-18.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
 *   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, [agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) was introduced.
 *   Moved to [archive.archlinux.org](https://archive.archlinux.org) on 2015-12-19.[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)
+*   Old packages from 2013-2016 uploaded to [archive.org](https://archive.org/details/archlinuxarchive) on 2018-06-05.

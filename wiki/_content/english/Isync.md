@@ -164,7 +164,7 @@ Once those two files are created, [reload](/index.php/Reload "Reload") systemd, 
 
 If you want to run [notmuch](/index.php/Notmuch "Notmuch") or mu/mu4e after automatically synchronizing your mails, it is preferable to modify the above `mbsync.service` by adding a post-start hook, like below:
 
- `~/.config/systemd/user/mbsycn.service` 
+ `~/.config/systemd/user/mbsync.service` 
 ```
 [Unit]
 Description=Mailbox synchronization service

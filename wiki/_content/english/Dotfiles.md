@@ -43,10 +43,6 @@ $ git commit -a
 
 ### Other tools
 
-*   **dotbot** — A minimalist dotfiles manager that can be installed as a git submodule of your dotfiles repository.
-
-	[https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
 *   **dotdrop** — A tool to manage different versions of your dotfiles on different hosts.
 
 	[https://github.com/deadc0de6/dotdrop](https://github.com/deadc0de6/dotdrop) || [dotdrop](https://aur.archlinux.org/packages/dotdrop/)
@@ -82,10 +78,6 @@ $ git commit -a
 *   **mackup** — a small Python utitlity to keep your application settings in sync.
 
 	[https://github.com/lra/mackup](https://github.com/lra/mackup) || [mackup](https://aur.archlinux.org/packages/mackup/)
-
-*   **mystow** — a Python script to keep your application settings in sync. Allows system profiling.
-
-	[https://github.com/nivaca/mystow](https://github.com/nivaca/mystow) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Pearl** — Package manager for dotfiles, plugins, programs and any form of code accessible via git. Allow to easily share and sync packages across systems and have them ready to work out of the box.
 

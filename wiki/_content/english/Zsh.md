@@ -316,7 +316,7 @@ username@host ~ %                                                         [0]
 
 *   To get the same setup as the [monthly ISO releases](https://www.archlinux.org/download/) (which use Zsh by default), install [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). It includes the many tweaks and advanced optimizations from [grml](https://grml.org/zsh/).
 *   [https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc) - basic setup, with dynamic prompt and window title/hardinfo.
-*   [https://github.com/slashbeast/conf-mgmt-like-a-sir/blob/master/roles/zsh/files/DOTzshrc](https://github.com/slashbeast/conf-mgmt-like-a-sir/blob/master/roles/zsh/files/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
+*   [https://github.com/slashbeast/conf-mgmt/blob/master/roles/user_configs/files/DOTzshrc](https://github.com/slashbeast/conf-mgmt/blob/master/roles/user_configs/files/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
 
 See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
 

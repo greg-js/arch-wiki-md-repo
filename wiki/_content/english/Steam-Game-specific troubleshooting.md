@@ -243,6 +243,7 @@
         *   [4.113.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
     *   [4.114 Torchlight 2](#Torchlight_2)
         *   [4.114.1 Libfreetype/libfontconfig Incompatibility](#Libfreetype.2Flibfontconfig_Incompatibility)
+        *   [4.114.2 Locale incompatibility](#Locale_incompatibility)
     *   [4.115 Tower Unite](#Tower_Unite)
         *   [4.115.1 Graphical Glitches](#Graphical_Glitches)
     *   [4.116 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
@@ -1932,6 +1933,12 @@ Torchlight 2/game/lib/libfreetype.so.6
 Torchlight 2/game/lib64/libfreetype.so.6
 
 ```
+
+#### Locale incompatibility
+
+Some users report that Torchlight 2 does not work if you do not have en_US.UTF8 in your locale.
+
+Double check you have generated the locale needed in [Steam Installation Requirements](/index.php/Steam#Installation "Steam").
 
 ### Tower Unite
 

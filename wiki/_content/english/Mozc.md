@@ -1,6 +1,6 @@
 From the project [home page](https://github.com/google/mozc):
 
-	Mozc is a Japanese Input Method Editor (IME) designed for multi-platform such as Android OS, Apple OS X, Chromium OS, GNU/Linux and Microsoft Windows. This OpenSource project originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/). […] Detailed differences between Google Japanese Input and Mozc are described in [About Branding](https://github.com/google/mozc/blob/master/docs/about_branding.md).
+	**Mozc** is a Japanese [input method](/index.php/Input_method "Input method") editor (IME) designed for multi-platform such as Android OS, Apple OS X, Chromium OS, GNU/Linux and Microsoft Windows. This OpenSource project originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/). […] Detailed differences between Google Japanese Input and Mozc are described in [About Branding](https://github.com/google/mozc/blob/master/docs/about_branding.md).
 
 (In short, Mozc does not have equivalent conversion quality to Google Japanese Input).
 
@@ -21,28 +21,22 @@ From the project [home page](https://github.com/google/mozc):
     *   [4.1 Building Mozc fails (process is killed)](#Building_Mozc_fails_.28process_is_killed.29)
     *   [4.2 New version of Mozc does not appear though I upgraded Mozc and restarted X or Input Method Framework (not rebooted)](#New_version_of_Mozc_does_not_appear_though_I_upgraded_Mozc_and_restarted_X_or_Input_Method_Framework_.28not_rebooted.29)
     *   [4.3 mozc_server becomes defunct](#mozc_server_becomes_defunct)
+    *   [4.4 mozc_emacs_helper not found in emacs](#mozc_emacs_helper_not_found_in_emacs)
 
 ## Installation
 
-Depending on your target setup, there are several available Mozc packages to choose from. Firstly, you will likely need to install both the Mozc core package and an integration for the Input Method Framework of your choice (such as [Fcitx](/index.php/Fcitx "Fcitx"), [IBus](/index.php/IBus "IBus"), or [uim](/index.php/UIM "UIM")), though some Fcitx packages come bundled with the core. Secondly, there exist some unofficial dictionaries: The UT (discontinued) and UT2 dictionaries, which are combined from several sources with hit numbers coming from Google/Yahoo and Wikipedia, respectively, and the NEologd UT dictionary based on the mecab-ipadic-NEologd Neologism dictionary.
+Depending on your target setup, there are several available Mozc packages to choose from. Firstly, you will likely need to install both the Mozc core package and an integration for the Input Method Framework of your choice (such as [Fcitx](/index.php/Fcitx "Fcitx"), [IBus](/index.php/IBus "IBus"), or [uim](/index.php/UIM "UIM")), though some Fcitx packages come bundled with the core. Secondly, there exist some unofficial dictionaries: The **UT** (discontinued) and **UT2** dictionaries, which are combined from several sources with hit numbers coming from Google/Yahoo and Wikipedia, respectively, and the **NEologd UT** dictionary based on the mecab-ipadic-NEologd Neologism dictionary.
 
-The following table shows the packages corresponding to certain combinations of the components and dictionaries; merged cells with multiple package names indicate split packages. Some of the packages are also available from the [pnsft-pur](/index.php/Unofficial_user_repository#pnsft-pur "Unofficial user repository") repository.
+The following table shows the packages corresponding to certain combinations of the components and dictionaries; colored cells indicate split packages. Some of the packages are also available from the [pnsft-pur](/index.php/Unofficial_user_repository#pnsft-pur "Unofficial user repository") repository.
 
- Vanilla | UT | UT2 | NEologd UT |
-| Fcitx integration | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [fcitx-mozc-ut](https://aur.archlinux.org/packages/fcitx-mozc-ut/) | [fcitx-mozc-ut2](https://aur.archlinux.org/packages/fcitx-mozc-ut2/) | [fcitx-mozc-neologd-ut](https://aur.archlinux.org/packages/fcitx-mozc-neologd-ut/)
-[mozc-neologd-ut](https://aur.archlinux.org/packages/mozc-neologd-ut/) |
-| Mozc core |
-| [mozc](https://aur.archlinux.org/packages/mozc/)
-[ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/)
-[emacs-mozc](https://aur.archlinux.org/packages/emacs-mozc/) | [mozc-ut2](https://aur.archlinux.org/packages/mozc-ut2/)
-[ibus-mozc-ut2](https://aur.archlinux.org/packages/ibus-mozc-ut2/)
-[emacs-mozc-ut2](https://aur.archlinux.org/packages/emacs-mozc-ut2/)
-[uim-mozc-ut2](https://aur.archlinux.org/packages/uim-mozc-ut2/) |
-| IBus integration |
-| Emacs integration |
-| uim integration | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) |
+<caption>IMF integration packages</caption>
+| Dictionary | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [Emacs](/index.php/Emacs "Emacs") | [uim](/index.php/UIM "UIM") |
+| Official | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) | [emacs-mozc](https://aur.archlinux.org/packages/emacs-mozc/) | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) |
+| [UT](http://www.geocities.jp/ep3797/mozc-ut.html) | [fcitx-mozc-ut](https://aur.archlinux.org/packages/fcitx-mozc-ut/) |
+| [UT2](http://www.geocities.jp/ep3797/mozc-ut2.html) | [fcitx-mozc-ut2](https://aur.archlinux.org/packages/fcitx-mozc-ut2/) | [ibus-mozc-ut2](https://aur.archlinux.org/packages/ibus-mozc-ut2/) | [emacs-mozc-ut2](https://aur.archlinux.org/packages/emacs-mozc-ut2/) | [uim-mozc-ut2](https://aur.archlinux.org/packages/uim-mozc-ut2/) |
+| [NEologd UT](http://www.geocities.jp/ep3797/mozc-neologd-ut.html) | [fcitx-mozc-neologd-ut](https://aur.archlinux.org/packages/fcitx-mozc-neologd-ut/) |
 
-Some of the above packages also contain definitions at the top of their respective PKGBUILDs that can be altered to (de)activate certain features. Most notably, to build the emacs packages you need to uncomment the `_emacs_mozc` line:
+Some of the above packages also contain definitions at the top of their respective [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") that can be altered to (de)activate certain features. Most notably, to build the Emacs packages you need to uncomment the `_emacs_mozc` line:
 
 ```
 ## If you will be using mozc.el on Emacs, uncomment below.
@@ -213,3 +207,9 @@ $ killall mozc_server
 ### mozc_server becomes defunct
 
 Mozc cannot run in root. Start X in normal user.
+
+### mozc_emacs_helper not found in emacs
+
+When installing mozc.el you need to install a helper program called `mozc_emacs_helper`.
+
+You need to install [emacs-mozc](https://aur.archlinux.org/packages/emacs-mozc/) or [emacs-mozc-ut2](https://aur.archlinux.org/packages/emacs-mozc-ut2/) for this helper program.

@@ -344,10 +344,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
 
-*   **[Brackets](https://en.wikipedia.org/wiki/Brackets_(text_editor) "wikipedia:Brackets (text editor)")** — A free open-source editor written in HTML, CSS, and Javascript with a primary focus on Web Development. It was created by Adobe Systems, licensed under the MIT License, and is currently maintained on GitHub.
-
-	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)
-
 *   **[Builder](https://en.wikipedia.org/wiki/GNOME_Builder "wikipedia:GNOME Builder")** — General purpose IDE for GNOME.
 
 	[https://wiki.gnome.org/Apps/Builder](https://wiki.gnome.org/Apps/Builder) || [gnome-builder](https://www.archlinux.org/packages/?name=gnome-builder)
@@ -628,7 +624,7 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 	[https://git-annex.branchable.com/](https://git-annex.branchable.com/) || [git-annex](https://www.archlinux.org/packages/?name=git-annex)
 
-*   **rclone** — Command line program to sync files and directories to and from cloud storage services as well as between local paths.
+*   **rclone** — Command line program to sync files and directories to and from Amazon S3, Dropbox, Google Drive, Microsoft OneDrive, Yandex Disk and many other cloud storage services as well as between local paths.
 
 	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
 
@@ -636,9 +632,17 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 	[https://rsync.samba.org/](https://rsync.samba.org/) || [rsync](https://www.archlinux.org/packages/?name=rsync)
 
+*   **[SparkleShare](https://en.wikipedia.org/wiki/SparkleShare "wikipedia:SparkleShare")** — File sharing and collaboration application written in C#. It can sync with any Git server over SSH.
+
+	[http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
+
 *   **[Syncthing](/index.php/Syncthing "Syncthing")** — Continuous file synchronization program. It synchronizes files between two or more computers in a simple way without advanced configuration.
 
 	[https://syncthing.net/](https://syncthing.net/) || Web: [syncthing](https://www.archlinux.org/packages/?name=syncthing), GTK+: [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
+
+*   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
+
+	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)
 
 *   **[Synkron](https://en.wikipedia.org/wiki/Synkron "wikipedia:Synkron")** — Application that helps you keep your files and folders always updated. You can easily sync your documents, music or pictures to have their latest versions everywhere.
 

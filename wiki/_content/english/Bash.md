@@ -53,7 +53,7 @@ Bash is considered an **interactive shell** when its standard input and error ar
 
 ### Configuration files
 
-See "6.2 Bash Startup Files" in `/usr/share/doc/bash/bashref.html` ([online link](https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files)) and [DotFiles](http://mywiki.wooledge.org/DotFiles) for a complete description.
+See "6.2 Bash Startup Files" in `/usr/share/doc/bash/bashref.html` ([online link](https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files)) and [GregsWiki:DotFiles](https://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles") for a complete description.
 
 | File | Description | Login shells  | Interactive, *non-login* shells |
 | `/etc/profile` | [Sources](/index.php/Source "Source") application settings in `/etc/profile.d/*.sh` and `/etc/bash.bashrc`. | Yes | No |
@@ -65,7 +65,7 @@ See "6.2 Bash Startup Files" in `/usr/share/doc/bash/bashref.html` ([online link
 **Note:**
 
 *   Login shells can be non-interactive when called with the `--login` argument.
-*   While interactive, *non-login* shells do **not** source `~/.bash_profile`, they still inherit the environment from their parent process (which may be a login shell). See [On processes, environments and inheritance](http://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance) for details.
+*   While interactive, *non-login* shells do **not** source `~/.bash_profile`, they still inherit the environment from their parent process (which may be a login shell). See [GregsWiki:ProcessManagement#On processes, environments and inheritance](https://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance "gregswiki:ProcessManagement") for details.
 
 ### Shell and environment variables
 
@@ -333,9 +333,9 @@ export IGNOREEOF=100
 
 ### Tutorials
 
-*   [Greg's Wiki](http://mywiki.wooledge.org/)
-*   [Greg's Wiki: BashGuide](http://mywiki.wooledge.org/BashGuide)
-*   [Greg's Wiki: BashFAQ](http://mywiki.wooledge.org/BashFAQ)
+*   [Greg's Wiki](https://mywiki.wooledge.org/ "gregswiki:")
+*   [GregsWiki:BashGuide](https://mywiki.wooledge.org/BashGuide "gregswiki:BashGuide")
+*   [GregsWiki:BashFAQ](https://mywiki.wooledge.org/BashFAQ "gregswiki:BashFAQ")
 *   [Bash Hackers Wiki](http://wiki.bash-hackers.org/doku.php)
 *   [Bash Hackers Wiki: List of Bash online tutorials](http://wiki.bash-hackers.org/scripting/tutoriallist)
 *   [Quote Tutorial](http://www.grymoire.com/Unix/Quote.html)

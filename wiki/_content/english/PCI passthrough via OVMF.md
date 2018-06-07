@@ -766,6 +766,8 @@ This laptop has 3 USB ports managed by 2 USB controllers, each with their own IO
 
 Once you have identified which controller manages which ports by plugging various devices into them and decided which one you want to passthrough, simply add it to the list of PCI host devices controlled by the VM in your guest configuration. No other configuration should be needed.
 
+**Note:** If your usb controller does not support resetting, is not in an isolated group, or is otherwise unable to be passed through then it may still be possible to accomplish similar results through udev rules. See [https://github.com/olavmrk/usb-libvirt-hotplug](https://github.com/olavmrk/usb-libvirt-hotplug) which allows any device connected to specified usb ports to be automatically attached to a vm]]
+
 ### Passing VM audio to host via PulseAudio
 
 It is possible to route the virtual machine's audio to the host as an application using libvirt. This has the advantage of multiple audio streams being routable to one host output, and working with audio output devices that do not support passthrough. [PulseAudio](/index.php/PulseAudio "PulseAudio") is required for this to work.

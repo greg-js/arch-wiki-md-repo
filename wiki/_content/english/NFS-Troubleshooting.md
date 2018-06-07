@@ -246,7 +246,7 @@ Does your situation match these conditions?
     *   Immediately visible on all the other clients.
     *   Safely stored on the server, even if the client crashes immediately after closing the file.
 *   It's not important to you that if the server crashes:
-    *   You may loose the files that were most recently written by clients.
+    *   You may lose the files that were most recently written by clients.
     *   When the server is restarted, the clients will believe their recent files exist, even though they were actually lost.
 
 In this situation, you can use `async` instead of `sync` in the server's `/etc/exports` file for those specific exports. See the **exports** manual page for details. In this case, it does not make sense to use the `nocto` mount option on the client.

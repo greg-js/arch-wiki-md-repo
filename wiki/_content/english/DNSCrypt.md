@@ -36,26 +36,26 @@
 
 The service can be started in two mutually exclusive ways (i.e. only one of the two may be enabled):
 
-*   With the `.service` file
-*   Through the `.socket` activation aka unix socket activation (which then starts the service on access of said socket).
+*   With the `.service` file.
 
-**Note:** For using the service directly, the `listen_addresses` option in `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` has to be configured (e.g. `listen_addresses = ['127.0.0.1:53', '[::1]:53']`). However, when using unix socket activation the option has to be the empty set (i.e. `listen_addresses = [ ]`), as systemd is taking care of the socket configuration.
+**Note:** The `listen_addresses` option must configured (e.g. `listen_addresses = ['127.0.0.1:53', '[::1]:53']`) in the configuration file when using the `.service` file.
+
+*   Through the `.socket` activation.
+
+**Note:** When using socket activation the `listen_addresses` option must be set to empty (i.e. `listen_addresses = [ ]`) in the configuration file, since systemd is taking care of the socket configuration.
 
 ### Select resolver
 
-**Note:** By leaving `server_names` commented out in the configuration file `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`, *dnscrypt-proxy* will choose the fastest server from the sources already configured under `[sources]` [[2]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration#an-example-static-server-entry). The lists will be downloaded, verified, and automatically updated. [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration-Sources#what-is-the-point-of-these-lists). Thus, configuring a specific set of servers is optional.
+By leaving `server_names` commented out in the configuration file `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`, *dnscrypt-proxy* will choose the fastest server from the sources already configured under `[sources]` [[2]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration#an-example-static-server-entry). The lists will be downloaded, verified, and automatically updated. [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration-Sources#what-is-the-point-of-these-lists). Thus, configuring a specific set of servers is optional.
 
-Edit `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` and uncomment the `server_names` variable, selecting one or more of the servers. For example, to use Cloudflare's servers:
+To manually set which server is used, edit `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` and uncomment the `server_names` variable, selecting one or more of the servers. For example, to use Cloudflare's servers:
 
 ```
 server_names = ['cloudflare', 'cloudflare-ipv6']
 
 ```
 
-**Tip:**
-
-*   You can find the full list of resolvers on the [upstream page](https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md), [Github](https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md), or `/var/cache/dnscrypt-proxy/public-resolvers.md`.
-*   Users should look at the description for servers on the public resolvers list and take note of which validate [DNSSEC](/index.php/DNSSEC "DNSSEC"), do not log, and are uncensored. These requirements can be configured globally with the `require_dnssec`, `require_nolog`, `require_nofilter` options.
+A full list of resolvers is located at [upstream page](https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md), [Github](https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md), or `/var/cache/dnscrypt-proxy/public-resolvers.md`.bLook at the description for servers note which validate [DNSSEC](/index.php/DNSSEC "DNSSEC"), do not log, and are uncensored. These requirements can be configured globally with the `require_dnssec`, `require_nolog`, `require_nofilter` options.
 
 ### Disable any services bound to port 53
 
@@ -89,13 +89,13 @@ Other programs may overwrite this setting; see [resolv.conf#Preserve DNS setting
 
 ### Start systemd service
 
-Finally, [start/enable](/index.php/Start/enable "Start/enable") the `dnscrypt-proxy.service`.
+Finally, [start/enable](/index.php/Start/enable "Start/enable") the `dnscrypt-proxy.service` unit or `dnscrypt-proxy.socket`, depending on which method you chose above.
 
 ## Tips and tricks
 
 ### Local DNS cache configuration
 
-**Note:** *dnscrypt* can cache entries without relying on another program. This feature is enabled by default with the line `cache = true` in your dnscrypt configuration file
+**Tip:** *dnscrypt* can cache entries without relying on another program. This feature is enabled by default with the line `cache = true` in your dnscrypt configuration file
 
 It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not using *dnscrypt's* cache feature; otherwise, every single query will make a round-trip to the upstream resolver. Any local DNS caching program should work. In addition to setting up *dnscrypt-proxy*, you must setup your local DNS cache program.
 

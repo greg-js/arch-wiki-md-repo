@@ -1,22 +1,23 @@
-This is the main article on the internationalization of an Arch Linux installation. It is meant to offer guidance, as well as crosslink other relevant articles, to customize settings of an Arch Linux installation to work with any supported language.
+This is the main article on [internationalization](https://en.wikipedia.org/wiki/Internationalization_and_localization "wikipedia:Internationalization and localization") (often also referred to as i18n). It is meant to offer guidance, as well as crosslink other relevant articles, to customize settings of an Arch Linux installation to work with any supported language.
 
 The article makes use of subpages for instructions specific for languages:
 
-*   [Internationalization/Indic](/index.php/Internationalization/Indic "Internationalization/Indic")
-*   [Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")
-*   [Internationalization/Korean](/index.php/Internationalization/Korean "Internationalization/Korean")
-*   [Internationalization/Korean (한국어)](/index.php/Internationalization/Korean_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Internationalization/Korean (한국어)")
+*   [/Indic](/index.php/Internationalization/Indic "Internationalization/Indic")
+*   [/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")
+*   [/Korean](/index.php/Internationalization/Korean "Internationalization/Korean")
+*   [/Sinhalese](/index.php/Internationalization/Sinhalese "Internationalization/Sinhalese")
 
 ## Contents
 
 *   [1 Fonts](#Fonts)
 *   [2 Locale](#Locale)
 *   [3 Keyboard layouts](#Keyboard_layouts)
-*   [4 Input methods in Xorg](#Input_methods_in_Xorg)
-    *   [4.1 GTK IM-module](#GTK_IM-module)
-        *   [4.1.1 Disabling GTK IM modules (without uninstalling)](#Disabling_GTK_IM_modules_.28without_uninstalling.29)
-    *   [4.2 QT immodule (> QT 4.0.0)](#QT_immodule_.28.3E_QT_4.0.0.29)
-        *   [4.2.1 Disabling QT IM modules (without uninstalling)](#Disabling_QT_IM_modules_.28without_uninstalling.29)
+*   [4 Input method frameworks](#Input_method_frameworks)
+    *   [4.1 Input method engines](#Input_method_engines)
+    *   [4.2 GTK IM-module](#GTK_IM-module)
+        *   [4.2.1 Disabling GTK IM modules (without uninstalling)](#Disabling_GTK_IM_modules_.28without_uninstalling.29)
+    *   [4.3 QT immodule (> QT 4.0.0)](#QT_immodule_.28.3E_QT_4.0.0.29)
+        *   [4.3.1 Disabling QT IM modules (without uninstalling)](#Disabling_QT_IM_modules_.28without_uninstalling.29)
 *   [5 See also](#See_also)
 
 ## Fonts
@@ -31,49 +32,40 @@ See [Locale](/index.php/Locale "Locale").
 
 See [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
-## Input methods in Xorg
+## Input method frameworks
 
-See also: [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method").
+[Input method](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") (IM) frameworks act as front-ends to various input methods and libraries, allowing the user to switch between different languages with ease.
 
-*   **[Fcitx](/index.php/Fcitx "Fcitx")** — Flexible Context-aware Input Tool with eXtension.
-
-	[http://fcitx-im.org](http://fcitx-im.org) || [fcitx](https://www.archlinux.org/packages/?name=fcitx)
-
+*   [Fcitx](/index.php/Fcitx "Fcitx")
+*   [gcin](/index.php/Gcin "Gcin")
 *   **Hime** — A GTK2+/GTK3+ based universal input method platform.
 
 	[http://hime-ime.github.io/](http://hime-ime.github.io/) || [hime-git](https://aur.archlinux.org/packages/hime-git/)
 
-*   **[IBus](/index.php/IBus "IBus")** — Next Generation Input Bus for Linux.
+*   [IBus](/index.php/IBus "IBus") – Input Bus for Linux.
+*   [SCIM](/index.php/SCIM "SCIM") with the x11 FrontEnd module
+*   [uim](/index.php/Uim "Uim")
 
-	[https://github.com/ibus/ibus/wiki](https://github.com/ibus/ibus/wiki) || [ibus](https://www.archlinux.org/packages/?name=ibus)
+Unmaintained:
 
-*   **[Rime IME](/index.php/Rime_IME "Rime IME")** — Rime input method engine.
+*   [Dasom](/index.php/Dasom "Dasom")
+*   [Nimf](/index.php/Nimf "Nimf")
 
-	[http://rime.im/](http://rime.im/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
+See also [Wikipedia:List of input methods for Unix platforms](https://en.wikipedia.org/wiki/List_of_input_methods_for_Unix_platforms "wikipedia:List of input methods for Unix platforms").
 
-*   **[UIM](/index.php/UIM "UIM")** — Multilingual input method library.
+### Input method engines
 
-	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
-
-*   **[gcin](/index.php/Gcin "Gcin")** —
-
-	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[SCIM](/index.php/SCIM "SCIM") with the x11 FrontEnd module** —
-
-	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim") (Japanese)** —
-
-	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[Dasom](/index.php/Dasom "Dasom")** —
-
-	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[Nimf](/index.php/Nimf "Nimf")** —
-
-	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+| Language | Back-end | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | Hime |
+| Chinese | [libchewing](https://www.archlinux.org/packages/?name=libchewing) | [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) | [ibus-chewing](https://www.archlinux.org/packages/?name=ibus-chewing) | [scim-chewing](https://www.archlinux.org/packages/?name=scim-chewing) | - | optdepends | optdepends |
+| [libgooglepinyin](https://www.archlinux.org/packages/?name=libgooglepinyin) | [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin) | [ibus-googlepinyin](https://www.archlinux.org/packages/?name=ibus-googlepinyin) | - | - | - | - |
+| [libpinyin](https://www.archlinux.org/packages/?name=libpinyin) | [fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin) | [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) | - | - | - | - |
+| [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin) | [fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin) | [ibus-sunpinyin](https://www.archlinux.org/packages/?name=ibus-sunpinyin) | - | - | - | - |
+| [Rime](/index.php/Rime "Rime") | [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime) | [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) | - | - | - | - |
+| Japanese | [anthy](https://www.archlinux.org/packages/?name=anthy) | [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy) | [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) | [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) | optdepends | optdepends | optdepends |
+| [libkkc](https://www.archlinux.org/packages/?name=libkkc) | [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) | [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) | - | - | - | - |
+| [Mozc](/index.php/Mozc "Mozc") | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) | - | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) | - | - |
+| [skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo) | [fcitx-skk](https://www.archlinux.org/packages/?name=fcitx-skk) | [ibus-skk](https://www.archlinux.org/packages/?name=ibus-skk) | - | built-in | - | - |
+| Korean | [libhangul](https://www.archlinux.org/packages/?name=libhangul) | [fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul) | [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) | [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) | - | - | - |
 
 ### GTK IM-module
 
@@ -137,6 +129,8 @@ To disable input method module loading in QT, export QT_IM_MODULE="simple".
 
 ## See also
 
+*   [Gentoo wiki](https://wiki.gentoo.org/wiki/Localization "gentoo:Localization")
+*   [Fedora wiki](https://fedoraproject.org/wiki/I18N/InputMethods)
 *   [Free Standards Group OpenI18N](http://www.openi18n.org/)
 *   [XSETTINGS 0.5 Specification](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html)
 *   [Running and Debugging GTK+ Applications](http://library.gnome.org/devel/gtk/unstable/gtk-running.html)

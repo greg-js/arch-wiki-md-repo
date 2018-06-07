@@ -1,3 +1,14 @@
+Related articles
+
+*   [Internationalization](/index.php/Internationalization "Internationalization")
+*   [Nimf](/index.php/Nimf "Nimf")
+*   [IBus](/index.php/IBus "IBus")
+*   [SCIM](/index.php/SCIM "SCIM")
+*   [UIM](/index.php/UIM "UIM")
+*   [Fcitx](/index.php/Fcitx "Fcitx")
+
+**Warning:** Dasom is no longer maintained, last update was 2016.[[1]](https://github.com/dasom-im)
+
 [Dasom](https://dasom-im.github.io) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method").
 
 ## Contents

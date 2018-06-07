@@ -62,6 +62,7 @@ These compression programs implement their own file format.
 | Name | Packages | Ext | Description |
 | [ARC](https://en.wikipedia.org/wiki/ARC_(file_format) | [arc](https://aur.archlinux.org/packages/arc/) | .arc, .ark | Was very popular during the early days of the dial-up BBS. Superseded by ZIP. |
 | [ARJ](https://en.wikipedia.org/wiki/ARJ "wikipedia:ARJ") | [arj](https://www.archlinux.org/packages/?name=arj) | .arj | An archiver used on DOS/Windows in mid-1990s. This is an open source clone. |
+| [PAR2](https://en.wikipedia.org/wiki/PAR2 "wikipedia:PAR2") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
 
 ### Feature charts
 

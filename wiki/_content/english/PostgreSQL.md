@@ -12,10 +12,12 @@ Related articles
 *   [4 Familiarize with PostgreSQL](#Familiarize_with_PostgreSQL)
     *   [4.1 Access the database shell](#Access_the_database_shell)
 *   [5 Optional configuration](#Optional_configuration)
-    *   [5.1 Configure PostgreSQL to be accessible from remote hosts](#Configure_PostgreSQL_to_be_accessible_from_remote_hosts)
-    *   [5.2 Configure PostgreSQL authenticate against PAM](#Configure_PostgreSQL_authenticate_against_PAM)
-    *   [5.3 Change default data directory](#Change_default_data_directory)
-    *   [5.4 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
+    *   [5.1 Restricts access rights to the database superuser by default](#Restricts_access_rights_to_the_database_superuser_by_default)
+    *   [5.2 Configure PostgreSQL to be accessible exclusively through UNIX Sockets](#Configure_PostgreSQL_to_be_accessible_exclusively_through_UNIX_Sockets)
+    *   [5.3 Configure PostgreSQL to be accessible from remote hosts](#Configure_PostgreSQL_to_be_accessible_from_remote_hosts)
+    *   [5.4 Configure PostgreSQL authenticate against PAM](#Configure_PostgreSQL_authenticate_against_PAM)
+    *   [5.5 Change default data directory](#Change_default_data_directory)
+    *   [5.6 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
 *   [6 Administration tools](#Administration_tools)
 *   [7 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
     *   [7.1 Manual dump and reload](#Manual_dump_and_reload)
@@ -69,9 +71,11 @@ Before PostgreSQL can function correctly, the database cluster must be initializ
 
 Where:
 
-*   the `--locale` is the one defined in the file `/etc/locale.conf`;
-*   the `-E` is the default encoding of the database that will be created in the future;
+*   the `--locale` is chosen amongst the ones defined in the file `/etc/locale.conf` (plus `POSIX` and `C` that are also accepted);
+*   the `-E` is the default encoding of the databases that will be created in the future (and must match the chosen locale);
 *   and `-D` is the default location where the database cluster must be stored.
+
+Note that by default, the locale and the encoding are derived from your current environment (so that actually, specifying them is not always necessary). However, depending on your settings and use cases this might not be what you want.
 
 Many lines should now appear on the screen with several ending by `... ok`:
 
@@ -79,7 +83,8 @@ Many lines should now appear on the screen with several ending by `... ok`:
 The files belonging to this database system will be owned by user "postgres".
 This user must also own the server process.
 
-The database cluster will be initialized with locale "en_GB.UTF-8".
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
 The default text search configuration will be set to "english".
 
 Data page checksums are disabled.
@@ -90,13 +95,23 @@ selecting default max_connections ... 100
 selecting default shared_buffers ... 128MB
 selecting dynamic shared memory implementation ... posix
 creating configuration files ... ok
-creating template1 database in /var/lib/postgres/data/base/1 ... ok
-initializing pg_authid ... ok
-[...]
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+WARNING: enabling "trust" authentication for local connections
+You can change this by editing pg_hba.conf or using the option -A, or
+--auth-local and --auth-host, the next time you run initdb.
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgres/ -l logfile start
 
 ```
 
 If these are the kind of lines you see, then the process succeeded. Return to the regular user using `exit`.
+
+**Note:** To read more about this `WARNING`, see [local users configuration](/index.php/PostgreSQL#Restricts_access_rights_to_the_database_superuser_by_default "PostgreSQL").
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to [edit](/index.php/Edit "Edit") the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
@@ -182,39 +197,68 @@ There are of course many more meta-commands, but these should help you get start
 
 ## Optional configuration
 
-### Configure PostgreSQL to be accessible from remote hosts
-
-The PostgreSQL database server configuration file is `postgresql.conf`. This file is located in the data directory of the server, typically `/var/lib/postgres/data`. This folder also houses the other main configuration files, including the `pg_hba.conf`.
+The PostgreSQL database server configuration file is `postgresql.conf`. This file is located in the data directory of the server, typically `/var/lib/postgres/data`. This folder also houses the other main configuration files, including the `pg_hba.conf` which defines authentication settings, for both [local users](/index.php/PostgreSQL#Restricts_access_rights_to_the_database_superuser_by_default "PostgreSQL") and [other hosts ones](/index.php/PostgreSQL#Configure_PostgreSQL_to_be_accessible_from_remote_hosts "PostgreSQL").
 
 **Note:** By default, this folder will not be browsable or searchable by a regular user. This is why `find` and `locate` are not finding the configuration files.
 
-Edit the file `/var/lib/postgres/data/postgresql.conf`. In the connections and authentications section, add the `listen_addresses` line to your needs:
+### Restricts access rights to the database superuser by default
 
+The defaults `pg_hba.conf` **allow any local user to connect as any database user**, including the database superuser. This is likely not what you want, so in order to restrict global access to the *postgress* user, change the following line:
+
+ `/var/lib/postgres/data/pg_hba.conf` 
 ```
-listen_addresses = 'localhost,*my_local_ip_address'*
-#You can use '*' to listen on all local addresses
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
 
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust
 ```
 
-Take a careful look at the other lines.
+To:
 
-Host-based authentication is configured in `/var/lib/postgres/data/pg_hba.conf`. This file controls which hosts are allowed to connect. Note that the defaults **allow any local user to connect as any database user**, including the database superuser. Add a line like the following:
-
+ `/var/lib/postgres/data/pg_hba.conf` 
 ```
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             postgres                                peer
+```
+
+You might later add additional lines depending on your needs or software ones.
+
+### Configure PostgreSQL to be accessible exclusively through UNIX Sockets
+
+In the connections and authentications section of your configuration, set:
+
+ `/var/lib/postgres/data/postgresql.conf`  `listen_addresses = ''` 
+
+This will disable network listening completely. After this you should [restart](/index.php/Restart "Restart") `postgresql.service` for the changes to take effect.
+
+### Configure PostgreSQL to be accessible from remote hosts
+
+In the connections and authentications section, set the `listen_addresses` line to your needs:
+
+ `/var/lib/postgres/data/postgresql.conf`  `listen_addresses = 'localhost,*my_local_ip_address'*` 
+
+You can use `'*'` to listen on all available addresses.
+
+**Note:** PostgreSQL uses TCP port `5432` by default for remote connections. Make sure this port is open in your [firewall](/index.php/Firewall "Firewall") and able to receive incoming connections. You can also change it in the configuration file, right below `listen_addresses`
+
+Then add a line like the following to the authentication config:
+
+ `/var/lib/postgres/data/pg_hba.conf` 
+```
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
 # IPv4 local connections:
-host   all   all   *my_remote_client_ip_address*/32   md5
-
+host    all             all             *ip_address*/32   md5
 ```
 
-where `my_remote_client_ip_address` is the IP address of the client.
+where `*ip_address*` is the IP address of the remote client.
 
 See the documentation for [pg_hba.conf](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html).
 
 **Note:** Neither sending your plain password nor the md5 hash (used in the example above) over the Internet is secure if it is not done over an SSL-secured connection. See [Secure TCP/IP Connections with SSL](https://www.postgresql.org/docs/current/static/ssl-tcp.html) for how to configure PostgreSQL with SSL.
 
 After this you should [restart](/index.php/Restart "Restart") `postgresql.service` for the changes to take effect.
-
-**Note:** PostgreSQL uses port `5432` by default for remote connections. Make sure this port is open in your [firewall](/index.php/Firewall "Firewall") and able to receive incoming connections.
 
 For troubleshooting take a look in the server log file:
 
@@ -229,10 +273,10 @@ PostgreSQL offers a number of authentication methods. If you would like to allow
 
 For example, the same configuration as above, but with PAM enabled:
 
+ `/var/lib/postgres/data/pg_hba.conf` 
 ```
 # IPv4 local connections:
 host   all   all   *my_remote_client_ip_address*/32   pam
-
 ```
 
 The PostgreSQL server is however running without root privileges and will not be able to access `/etc/shadow`. We can work around that by allowing the postgres group to access this file:
@@ -369,7 +413,7 @@ Upgrading major PostgreSQL versions requires some extra maintenance.
 *   Official PostgreSQL [upgrade documentation](https://www.postgresql.org/docs/current/static/upgrading.html) should be followed.
 *   From version `10.0` onwards PostgreSQL [changed its versioning scheme](https://www.postgresql.org/about/news/1786/). Earlier upgrade from version `9.*x*` to `9.*y*` was considered as major upgrade. Now upgrade from version `10.*x*` to `10.*y*` is considered as minor upgrade and upgrade from version `10.*x*` to `11.*y*` is considered as major upgrade.
 
-**Warning:** The following instructions could cause data loss. **Use at your own risk**.
+**Warning:** The following instructions could cause data loss. Do not run the commands below blindly, without understanding what they do. [Backup database](https://www.postgresql.org/docs/current/static/backup.html) first.
 
 It is recommended to add the following to your `/etc/pacman.conf` file:
 
@@ -383,8 +427,6 @@ This will ensure you do not accidentally upgrade the database to an incompatible
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
 
 For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL.
-
-**Do not run the following commands blindly without understanding what they do!** Reference the [upstream pg_upgrade documentation](https://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
 
 Note that the databases cluster directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new databases cluster must be initialized, as described in the [#Installing PostgreSQL](#Installing_PostgreSQL) section.
 

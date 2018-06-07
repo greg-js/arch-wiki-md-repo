@@ -1,4 +1,9 @@
-This document provides instructions on how to set up a Japanese language environment on an Arch linux installation. This document will not cover setting up Japanese input on the console.
+Related articles
+
+*   [Internationalization](/index.php/Internationalization "Internationalization")
+*   [Input Japanese using uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")
+
+This article describes how to set up a Japanese language environment. It does not cover setting up Japanese input on the console.
 
 ## Contents
 
@@ -6,18 +11,17 @@ This document provides instructions on how to set up a Japanese language environ
     *   [1.1 Sans-serif](#Sans-serif)
     *   [1.2 Serif (and Sans-serif)](#Serif_.28and_Sans-serif.29)
 *   [2 Locale](#Locale)
-*   [3 Input in Xorg](#Input_in_Xorg)
-    *   [3.1 Input Method Framework](#Input_Method_Framework)
-    *   [3.2 Input method](#Input_method)
-        *   [3.2.1 Mozc](#Mozc)
-        *   [3.2.2 libkkc](#libkkc)
-        *   [3.2.3 SKK](#SKK)
-        *   [3.2.4 Google CGI API for Japanese input](#Google_CGI_API_for_Japanese_input)
-        *   [3.2.5 Anthy](#Anthy)
+*   [3 Input method frameworks](#Input_method_frameworks)
+    *   [3.1 Input method engines](#Input_method_engines)
+        *   [3.1.1 Mozc](#Mozc)
+        *   [3.1.2 libkkc](#libkkc)
+        *   [3.1.3 SKK](#SKK)
+        *   [3.1.4 Google CGI API for Japanese input](#Google_CGI_API_for_Japanese_input)
+        *   [3.1.5 Anthy](#Anthy)
 
 ## Fonts
 
-*see also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail.*
+*See also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail.*
 
 To use any Japanese input method, you need to have Japanese fonts installed.
 
@@ -43,13 +47,11 @@ If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2chan
 
 ## Locale
 
-*See [locale](/index.php/Locale "Locale") for detail*
+*See [locale](/index.php/Locale "Locale") for details.*
 
 You should have `ja_JP.UTF-8` enabled in `/etc/locale.gen`.
 
-## Input in Xorg
-
-### Input Method Framework
+## Input method frameworks
 
 Input method (IM) frameworks act as frontends to various input methods and libraries, allowing the user to switch between different languages with ease.
 
@@ -64,7 +66,7 @@ See the articles for details.
 
 **Note:** [SCIM](/index.php/SCIM "SCIM") is dead project. You should not use it.
 
-### Input method
+### Input method engines
 
 #### Mozc
 

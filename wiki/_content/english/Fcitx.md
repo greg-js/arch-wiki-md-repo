@@ -1,10 +1,4 @@
-Related articles
-
-*   [IBus](/index.php/IBus "IBus")
-*   [SCIM](/index.php/SCIM "SCIM")
-*   [UIM](/index.php/UIM "UIM")
-
-[Fcitx](https://fcitx-im.org/wiki/Fcitx) (Flexible Input Method Framework) is a lightweight [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
+[Fcitx](https://en.wikipedia.org/wiki/Fcitx "wikipedia:Fcitx") is a lightweight [input method](/index.php/Input_method "Input method") framework aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
 
 ## Contents
 
@@ -123,7 +117,7 @@ If *fcitx* process does not start automatically, you might need to add `fcitx &`
 
 **Note:**
 
-*   Avoid `.bashrc` for this, see [DotFiles](http://mywiki.wooledge.org/DotFiles)
+*   Avoid `.bashrc` for this, see [GregsWiki:DotFiles](https://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles").
 *   If all Qt apps have problem with fcitx, run *qtconfig* (*qtconfig-qt4*), and go to the third tab, make sure *fcitx* is in the *Default Input Method* combo-box.
 
 ### Xim

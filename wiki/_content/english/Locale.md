@@ -231,7 +231,7 @@ If you're using a desktop environment, such as [GNOME](/index.php/GNOME "GNOME")
 
 ## See also
 
-*   [Gentoo Linux Localization Guide](http://www.gentoo.org/doc/en/guide-localization.xml)
+*   [Gentoo:Localization/Guide](https://wiki.gentoo.org/wiki/Localization/Guide "gentoo:Localization/Guide")
 *   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
 *   [ICU's interactive collation testing](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)

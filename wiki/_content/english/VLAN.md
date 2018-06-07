@@ -19,6 +19,7 @@ This article explains how to configure a VLAN using [iproute2](https://www.archl
         *   [1.5.1 systemd-networkd single interface](#systemd-networkd_single_interface)
         *   [1.5.2 systemd-networkd bonded interface](#systemd-networkd_bonded_interface)
         *   [1.5.3 netctl](#netctl)
+    *   [1.6 Setting bridge IP](#Setting_bridge_IP)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 udev renames the virtual devices](#udev_renames_the_virtual_devices)
 
@@ -297,6 +298,17 @@ Note that the Destination on `vlan10` is set to `0.0.0.0/0`, which will match al
 #### netctl
 
 You can use [netctl](/index.php/Netctl "Netctl") for this purpose, see the self-explanatory example profiles in {{ic|/etc/netctl/examples/vlan-{dhcp,static} }}.
+
+### Setting bridge IP
+
+Sometimes you might want to configure the bridge ip on which docker operates, for example when the default ip clashes with other ip addresses in the network. Docker as a [straight forward way](https://docs.docker.com/v17.09/engine/userguide/networking/default_network/custom-docker0/) of setting the `bip` (bridge IP) via the `/etc/docker/daemon.json`. When this file does not exist yet you can create it.
+
+ `/etc/docker/docker.json` 
+```
+{
+    "bip": "<desired ip range>/24"
+}
+```
 
 ## Troubleshooting
 

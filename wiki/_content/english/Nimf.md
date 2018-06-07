@@ -1,3 +1,14 @@
+Related articles
+
+*   [Internationalization](/index.php/Internationalization "Internationalization")
+*   [Dasom](/index.php/Dasom "Dasom")
+*   [IBus](/index.php/IBus "IBus")
+*   [SCIM](/index.php/SCIM "SCIM")
+*   [UIM](/index.php/UIM "UIM")
+*   [Fcitx](/index.php/Fcitx "Fcitx")
+
+**Warning:** As of May 2018 Nimf is no longer publicly maintained, the GitHub repository has been archived.[[1]](https://github.com/cogniti/nimf/issues/104)
+
 [Nimf](https://github.com/cogniti/nimf) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") which inherits [Dasom](/index.php/Dasom "Dasom").
 
 ## Contents

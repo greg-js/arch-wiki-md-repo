@@ -17,34 +17,35 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 ## Contents
 
 *   [1 Basic commands](#Basic_commands)
-*   [2 cat](#cat)
-*   [3 chmod](#chmod)
-*   [4 chown](#chown)
-*   [5 dd](#dd)
-*   [6 find](#find)
-*   [7 grep](#grep)
-*   [8 iconv](#iconv)
-    *   [8.1 Convert a file in place](#Convert_a_file_in_place)
-*   [9 ip](#ip)
-*   [10 less](#less)
-*   [11 locate](#locate)
-    *   [11.1 Vim as alternative pager](#Vim_as_alternative_pager)
-*   [12 ls](#ls)
-    *   [12.1 Long format](#Long_format)
-    *   [12.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
-*   [13 lsblk](#lsblk)
-*   [14 mkdir](#mkdir)
-*   [15 mv](#mv)
-*   [16 od](#od)
-*   [17 pv](#pv)
-*   [18 rm](#rm)
-*   [19 sed](#sed)
-*   [20 seq](#seq)
-*   [21 ss](#ss)
-*   [22 tar](#tar)
-*   [23 which](#which)
-*   [24 wipefs](#wipefs)
-*   [25 See also](#See_also)
+*   [2 awk](#awk)
+*   [3 cat](#cat)
+*   [4 chmod](#chmod)
+*   [5 chown](#chown)
+*   [6 dd](#dd)
+*   [7 find](#find)
+*   [8 grep](#grep)
+*   [9 iconv](#iconv)
+    *   [9.1 Convert a file in place](#Convert_a_file_in_place)
+*   [10 ip](#ip)
+*   [11 less](#less)
+*   [12 locate](#locate)
+    *   [12.1 Vim as alternative pager](#Vim_as_alternative_pager)
+*   [13 ls](#ls)
+    *   [13.1 Long format](#Long_format)
+    *   [13.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
+*   [14 lsblk](#lsblk)
+*   [15 mkdir](#mkdir)
+*   [16 mv](#mv)
+*   [17 od](#od)
+*   [18 pv](#pv)
+*   [19 rm](#rm)
+*   [20 sed](#sed)
+*   [21 seq](#seq)
+*   [22 ss](#ss)
+*   [23 tar](#tar)
+*   [24 which](#which)
+*   [25 wipefs](#wipefs)
+*   [26 See also](#See_also)
 
 ## Basic commands
 
@@ -71,6 +72,24 @@ The following table lists basic shell commands every Linux user should be famili
 | ps -A | Show all running processes | [ps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) |
 | killall | Kill all running instances of a process | [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
 | ss -at | Display a list of open TCP sockets | [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
+
+## awk
+
+[AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") is a pattern scanning and processing language. There are multiple implementations:
+
+*   **gawk** — GNU version of awk, see [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1).
+
+	[https://www.gnu.org/software/gawk/](https://www.gnu.org/software/gawk/) || [gawk](https://www.archlinux.org/packages/?name=gawk) (part of [base](https://www.archlinux.org/groups/x86_64/base/))
+
+*   **nawk** — The one, true implementation of AWK, see [nawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nawk.1).
+
+	[https://www.cs.princeton.edu/~bwk/btl.mirror/](https://www.cs.princeton.edu/~bwk/btl.mirror/) || [nawk](https://www.archlinux.org/packages/?name=nawk)
+
+*   **mawk** — A very fast AWK implementation.
+
+	[http://invisible-island.net/mawk/](http://invisible-island.net/mawk/) || [mawk](https://aur.archlinux.org/packages/mawk/)
+
+*   [BusyBox](/index.php/BusyBox "BusyBox") also includes an AWK implementation.
 
 ## cat
 
@@ -133,7 +152,7 @@ For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1
 
 One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
 
-Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [UsingFind](http://mywiki.wooledge.org/UsingFind) for usage details.
+Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [GregsWiki:UsingFind](https://mywiki.wooledge.org/UsingFind "gregswiki:UsingFind") for usage details.
 
 ## grep
 
@@ -371,7 +390,7 @@ To remove directories believed to be empty, use *rmdir* as it fails if there are
 
 Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-liners examples.
 
-**Tip:** More powerful alternatives are [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") and the [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") language.
+**Tip:** More powerful alternatives are [#awk](#awk) and the [Perl](/index.php/Perl "Perl") language.
 
 ## seq
 

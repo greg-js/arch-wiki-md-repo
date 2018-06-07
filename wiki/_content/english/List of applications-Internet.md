@@ -618,11 +618,18 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 #### Cloud synchronization clients
 
-**Tip:** See [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") to achieve zero-knowledge (client-side transparent encryption) storage on any third-party cloud service.
+**Tip:**
+
+*   Some [synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") provide direct support for some cloud-storage services.
+*   See [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") to achieve zero-knowledge (client-side transparent encryption) storage on any third-party cloud service.
 
 *   **aws-cli** — CLI for Amazon Web Services, including efficient file transfers to and from Amazon S3.
 
 	[https://aws.amazon.com/cli/](https://aws.amazon.com/cli/) || [aws-cli](https://www.archlinux.org/packages/?name=aws-cli)
+
+*   **Backblaze B2** — Backblaze B2 open-source command-line client.
+
+	[https://www.backblaze.com/b2/cloud-storage.html](https://www.backblaze.com/b2/cloud-storage.html) || [backblaze-b2](https://aur.archlinux.org/packages/backblaze-b2/)
 
 *   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop client for Cozy.
 
@@ -647,6 +654,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **Grive** — Google Drive client with support for new Drive REST API and partial sync.
 
 	[https://github.com/vitalif/grive2](https://github.com/vitalif/grive2) || [grive](https://aur.archlinux.org/packages/grive/)
+
+*   **hubiC** — Proprietary synchronization client service and command line tools for hubiC.
+
+	[https://hubic.com/en/downloads](https://hubic.com/en/downloads) || [hubic](https://aur.archlinux.org/packages/hubic/)
 
 *   **[Insync](/index.php/Insync "Insync")** — Unofficial proprietary Google Drive desktop client.
 
@@ -688,10 +699,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
 
-*   **rclone** — Command line program to sync files and directories to and from Amazon S3, Dropbox, Google Drive, Microsoft OneDrive, Yandex Disk and many other cloud storage services.
-
-	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
-
 *   **S3cmd** — Unofficial CLI for Amazon S3.
 
 	[http://s3tools.org/s3cmd](http://s3tools.org/s3cmd) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
@@ -700,17 +707,9 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-client](https://aur.archlinux.org/packages/seafile-client/)
 
-*   **[SparkleShare](https://en.wikipedia.org/wiki/SparkleShare "wikipedia:SparkleShare")** — File sharing and collaboration application written in C#. It can sync with any Git server over SSH.
-
-	[http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
-
 *   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — Proprietary client for SpiderOak One.
 
 	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
-
-*   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
-
-	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)
 
 *   **[Tresorit](https://en.wikipedia.org/wiki/Tresorit "wikipedia:Tresorit")** — Proprietary desktop syncing client for Tresorit.
 

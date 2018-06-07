@@ -33,18 +33,22 @@
         *   [1.4.1 Text editors](#Text_editors)
             *   [1.4.1.1 Console](#Console_2)
             *   [1.4.1.2 Graphical](#Graphical_2)
-        *   [1.4.2 Vi text editors](#Vi_text_editors)
-        *   [1.4.3 Markdown editors](#Markdown_editors)
-        *   [1.4.4 Note taking organizers](#Note_taking_organizers)
-            *   [1.4.4.1 Console](#Console_3)
-            *   [1.4.4.2 Graphical](#Graphical_3)
-        *   [1.4.5 Distraction-free writing](#Distraction-free_writing)
-        *   [1.4.6 Storywriting](#Storywriting)
-        *   [1.4.7 Mind-mapping](#Mind-mapping)
-        *   [1.4.8 Barcode generators and readers](#Barcode_generators_and_readers)
-            *   [1.4.8.1 Console](#Console_4)
-            *   [1.4.8.2 Graphical](#Graphical_4)
-        *   [1.4.9 Character selectors](#Character_selectors)
+        *   [1.4.2 Emacs text editors](#Emacs_text_editors)
+        *   [1.4.3 Vi text editors](#Vi_text_editors)
+        *   [1.4.4 Markdown editors](#Markdown_editors)
+        *   [1.4.5 Note taking organizers](#Note_taking_organizers)
+            *   [1.4.5.1 Console](#Console_3)
+            *   [1.4.5.2 Graphical](#Graphical_3)
+        *   [1.4.6 Sticky notes](#Sticky_notes)
+        *   [1.4.7 Diary](#Diary)
+        *   [1.4.8 Distraction-free writing](#Distraction-free_writing)
+        *   [1.4.9 Storywriting](#Storywriting)
+        *   [1.4.10 Mind-mapping](#Mind-mapping)
+        *   [1.4.11 XML editors](#XML_editors)
+        *   [1.4.12 Barcode generators and readers](#Barcode_generators_and_readers)
+            *   [1.4.12.1 Console](#Console_4)
+            *   [1.4.12.2 Graphical](#Graphical_4)
+        *   [1.4.13 Character selectors](#Character_selectors)
     *   [1.5 Language](#Language)
         *   [1.5.1 Dictionary and thesaurus](#Dictionary_and_thesaurus)
         *   [1.5.2 Spell checkers](#Spell_checkers)
@@ -227,6 +231,10 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 *   **pgAdmin** — Comprehensive design and management interface for PostgreSQL.
 
 	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3) or [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
+
+*   **pgModeler** — PostgreSQL Database Modeler: an open source CASE tool for modeling PostgreSQL databases.
+
+	[https://pgmodeler.io/](https://pgmodeler.io/) || [pgmodeler](https://aur.archlinux.org/packages/pgmodeler/)
 
 *   **[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")** — Webapp intended to handle the administration of MySQL.
 
@@ -710,27 +718,23 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 ##### Console
 
+*   **dte** — Small, easy to use editor with multi-tabbed interface, syntax highlighting, ctags navigation, etc.
+
+	[https://craigbarnes.gitlab.io/dte/](https://craigbarnes.gitlab.io/dte/) || [dte](https://aur.archlinux.org/packages/dte/)
+
 *   **e3** — Tiny editor without dependencies, written in assembly.
 
 	[http://sites.google.com/site/e3editor/](http://sites.google.com/site/e3editor/) || [e3](https://www.archlinux.org/packages/?name=e3)
 
-*   **ee** — A classic curse-based text editor. Born in HP-UX, used in FreeBSD.
+*   **ee** — Classic curse-based text editor. Born in HP-UX, used in FreeBSD.
 
-	[http://www.users.qwest.net/~hmahon/](http://www.users.qwest.net/~hmahon/) || [ee-editor](https://aur.archlinux.org/packages/ee-editor/)
+	[https://web.archive.org/web/20160719002816/http://www.users.qwest.net/~hmahon/](https://web.archive.org/web/20160719002816/http://www.users.qwest.net/~hmahon/) || [ee-editor](https://aur.archlinux.org/packages/ee-editor/)
 
-*   **dte** — Small, easy to use editor with multi-tabbed interface, syntax highlighting, ctags navigation, etc.
-
-	[https://github.com/craigbarnes/dte](https://github.com/craigbarnes/dte) || [dte](https://aur.archlinux.org/packages/dte/)
-
-*   **[Emacs-nox](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor, without X11 support.
-
-	[https://www.gnu.org/software/emacs/emacs.html](https://www.gnu.org/software/emacs/emacs.html) || [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)
-
-*   **[JED](https://en.wikipedia.org/wiki/JED_(text_editor) "wikipedia:JED (text editor)")** — Text editor that makes extensive use of the [S-Lang library](https://en.wikipedia.org/wiki/S-Lang_(programming_library) "wikipedia:S-Lang (programming library)"). Includes a console version (jed) and an X-window version (xjed).
+*   **[JED](https://en.wikipedia.org/wiki/JED_(text_editor) "wikipedia:JED (text editor)")** — Text editor that makes extensive use of the [S-Lang library](https://en.wikipedia.org/wiki/S-Lang "wikipedia:S-Lang"). Includes a console version (jed) and an X-window version (xjed).
 
 	[http://jedsoft.org/jed/](http://jedsoft.org/jed/) || [jed](https://aur.archlinux.org/packages/jed/)
 
-*   **Joe (Joe's Own Editor)** — Terminal-based text editor designed to be easy to use.
+*   **[JOE (Joe's Own Editor)](https://en.wikipedia.org/wiki/Joe%27s_Own_Editor "wikipedia:Joe's Own Editor")** — Terminal-based text editor designed to be easy to use.
 
 	[http://joe-editor.sourceforge.net/](http://joe-editor.sourceforge.net/) || [joe](https://www.archlinux.org/packages/?name=joe)
 
@@ -738,93 +742,77 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.ibiblio.org/mc/](http://www.ibiblio.org/mc/) || [mc](https://www.archlinux.org/packages/?name=mc)
 
-*   **micro** — A modern and intuitive terminal-based text editor, written in go and extensible through plugins
+*   **micro** — Modern and intuitive terminal-based text editor, written in go and extensible through plugins.
 
-	[https://micro-editor.github.io](https://micro-editor.github.io) || [micro](https://aur.archlinux.org/packages/micro/)
+	[https://micro-editor.github.io/](https://micro-editor.github.io/) || [micro](https://aur.archlinux.org/packages/micro/)
 
-*   **[MicroEmacs](https://en.wikipedia.org/wiki/MicroEMACS "wikipedia:MicroEMACS")** — Ncurses-based text editor. Includes a console version (me -n) and an X-window version (me).
-
-	[http://www.jasspa.com/](http://www.jasspa.com/) || [jasspa-me](https://aur.archlinux.org/packages/jasspa-me/)
-
-*   **[mg](https://en.wikipedia.org/wiki/mg_(editor) "wikipedia:mg (editor)")** — Small, fast, and portable Emacs-like editor.
-
-	[http://homepage.boetes.org/software/mg](http://homepage.boetes.org/software/mg) || [mg](https://www.archlinux.org/packages/?name=mg)
-
-*   **mp** — Minimum Profit is a text editor for programmers. It helps you definitively abandon vi, emacs and other six-legged freaks.
+*   **Minimum Profit** — Text editor for programmers.
 
 	[http://triptico.com/software/mp.html](http://triptico.com/software/mp.html) || [mp](https://aur.archlinux.org/packages/mp/)
 
 *   **[nano](/index.php/Nano "Nano")** — Console text editor based on pico with on-screen key bindings help.
 
-	[http://nano-editor.org/](http://nano-editor.org/) || [nano](https://www.archlinux.org/packages/?name=nano)
+	[https://nano-editor.org/](https://nano-editor.org/) || [nano](https://www.archlinux.org/packages/?name=nano)
 
-*   **Ne** — Minimalist text editor with Windows-like key-bindings.
+*   **ne** — Minimalist text editor with Windows-like key-bindings.
 
 	[http://ne.di.unimi.it/](http://ne.di.unimi.it/) || [ne](https://aur.archlinux.org/packages/ne/)
 
-*   **Slap** — Sublime-like terminal-based text editor.
+*   **slap** — Sublime-like terminal-based text editor.
 
 	[https://github.com/slap-editor/slap](https://github.com/slap-editor/slap) || [slap](https://aur.archlinux.org/packages/slap/)
 
-*   **Tilde** — An intuitive text editor with Windows-like key bindings.
+*   **Tilde** — Intuitive text editor with Windows-like key bindings.
 
 	[http://os.ghalkes.nl/tilde/](http://os.ghalkes.nl/tilde/) || [tilde](https://aur.archlinux.org/packages/tilde/)
-
-*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — A lightweight Emacs clone with *vi*-like key bindings.
-
-	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://aur.archlinux.org/packages/vile/)
-
-*   **[Zile](https://en.wikipedia.org/wiki/Zile_(editor) "wikipedia:Zile (editor)")** — A lightweight Emacs clone.
-
-	[https://www.gnu.org/software/zile/](https://www.gnu.org/software/zile/) || [zile](https://www.archlinux.org/packages/?name=zile)
 
 ##### Graphical
 
 *   **[Acme](https://en.wikipedia.org/wiki/Acme_(text_editor) "wikipedia:Acme (text editor)")** — Minimalist and flexible programming environment developed by Rob Pike for the Plan 9 operating system.
 
-	[http://acme.cat-v.org](http://acme.cat-v.org) || [plan9port](https://www.archlinux.org/packages/?name=plan9port)
+	[http://acme.cat-v.org/](http://acme.cat-v.org/) || [plan9port](https://www.archlinux.org/packages/?name=plan9port)
 
-*   **[Atom](/index.php/Atom "Atom")** — A promising text editor developed by GitHub. With support for plug-ins written in Node.js and embedded [Git](/index.php/Git "Git") Control.
+*   **[Atom](/index.php/Atom "Atom")** — Promising text editor developed by GitHub. With support for plug-ins written in Node.js and embedded [Git](/index.php/Git "Git") Control.
 
-	[https://atom.io](https://atom.io) || [atom](https://www.archlinux.org/packages/?name=atom)
+	[https://atom.io/](https://atom.io/) || [atom](https://www.archlinux.org/packages/?name=atom)
 
-*   **Beaver** — A GTK+ editor designed to be modular, lightweight and stylish.
+*   **Beaver** — GTK+ editor designed to be modular, lightweight and stylish.
 
-	[http://beaver-editor.sourceforge.net](http://beaver-editor.sourceforge.net) || [beaver](https://www.archlinux.org/packages/?name=beaver)
+	[http://beaver-editor.sourceforge.net/](http://beaver-editor.sourceforge.net/) || [beaver](https://www.archlinux.org/packages/?name=beaver)
 
-*   **[Brackets](https://en.wikipedia.org/wiki/Brackets_(text_editor) "w:Brackets (text editor)")** — An open source code editor for the web, written in JavaScript, HTML and CSS.
+*   **[Brackets](https://en.wikipedia.org/wiki/Brackets_(text_editor) "w:Brackets (text editor)")** — Code editor for the web, written in JavaScript, HTML and CSS.
 
-	[http://brackets.io](http://brackets.io) || [brackets](https://aur.archlinux.org/packages/brackets/)
+	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)
 
 *   **Deepin Editor** — Simple text editor for Deepin desktop.
 
 	[https://github.com/linuxdeepin/deepin-editor](https://github.com/linuxdeepin/deepin-editor) || [deepin-editor](https://www.archlinux.org/packages/?name=deepin-editor)
 
+*   **Ecrire** — Simple text editor based on EFL.
+
+	[https://git.enlightenment.org/apps/ecrire.git/](https://git.enlightenment.org/apps/ecrire.git/) || [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/)
+
+*   **Enki** — Text editor for programmers.
+
+	[http://enki-editor.org/](http://enki-editor.org/) || [enki-editor-git](https://aur.archlinux.org/packages/enki-editor-git/)
+
 *   **FeatherPad** — Minimal Qt5 plain text editor featuring a native dark theme and support for tabs, printing and syntax highlighting.
 
 	[https://github.com/tsujan/FeatherPad](https://github.com/tsujan/FeatherPad) || [featherpad](https://aur.archlinux.org/packages/featherpad/)
 
-*   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — A text editor using the GTK2 toolkit with basic features of an integrated development environment. It has support for TeX-based documents.
+*   **FLTK Editor** — Simple text editor application for FLTK.
 
-	[https://www.geany.org](https://www.geany.org) || [geany](https://www.archlinux.org/packages/?name=geany)
+	[http://www.fltk.org/](http://www.fltk.org/) || [fltk-editor](https://aur.archlinux.org/packages/fltk-editor/)
 
 *   **[Gedit](https://en.wikipedia.org/wiki/Gedit "wikipedia:Gedit")** — GTK+ editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
 
 	[https://wiki.gnome.org/Apps/Gedit](https://wiki.gnome.org/Apps/Gedit) || [gedit](https://www.archlinux.org/packages/?name=gedit)
 
-*   **[GNU Emacs](/index.php/GNU_Emacs "GNU Emacs")** — The extensible, customizable, self-documenting real-time display editor.
-
-	[https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/) || [emacs](https://www.archlinux.org/packages/?name=emacs)
-
 *   **Gobby** — Collaborative editor supporting multiple documents in one session and a multi-user chat.
 
 	[https://gobby.github.io](https://gobby.github.io) || [gobby](https://www.archlinux.org/packages/?name=gobby)
 
-*   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim.
-
-	[http://www.vim.org](http://www.vim.org) || [gvim](https://www.archlinux.org/packages/?name=gvim)
-
-*   **Jedit** — Text editor for programmers, written in Java.
+*   **[jEdit](https://en.wikipedia.org/wiki/jEdit "wikipedia:jEdit")** — Text editor for programmers, written in Java.
 
 	[http://www.jedit.org](http://www.jedit.org) || [jedit](https://www.archlinux.org/packages/?name=jedit)
 
@@ -848,15 +836,15 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://tarot.freeshell.org/leafpad](http://tarot.freeshell.org/leafpad) || [leafpad](https://www.archlinux.org/packages/?name=leafpad)
 
-*   **[LightTable](https://en.wikipedia.org/wiki/Light_Table_(software) "w:Light Table (software)")** — A modern open source text editor.
+*   **[Light Table](https://en.wikipedia.org/wiki/Light_Table_(software) "w:Light Table (software)")** — Next generation code editor that connects you to your creation with instant feedback.
 
-	[http://lighttable.com](http://lighttable.com) || [lighttable-bin](https://aur.archlinux.org/packages/lighttable-bin/)[lighttable-git](https://aur.archlinux.org/packages/lighttable-git/)
+	[http://lighttable.com/](http://lighttable.com/) || [lighttable-bin](https://aur.archlinux.org/packages/lighttable-bin/) or [lighttable-git](https://aur.archlinux.org/packages/lighttable-git/)
 
 *   **Liri Text** — Text editor for Liri.
 
 	[https://github.com/lirios/text](https://github.com/lirios/text) || [liri-text](https://www.archlinux.org/packages/?name=liri-text)
 
-*   **Medit** — Programming and around-programming text editor.
+*   **medit** — Programming and around-programming text editor.
 
 	[http://mooedit.sourceforge.net](http://mooedit.sourceforge.net) || [medit](https://www.archlinux.org/packages/?name=medit)
 
@@ -864,29 +852,21 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.xfce.org](https://www.xfce.org) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
-*   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — Text editor for the Motif environment.
+*   **[NEdit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — Text editor for the Motif environment.
 
-	[http://www.nedit.org](http://www.nedit.org) || [nedit](https://www.archlinux.org/packages/?name=nedit)
+	[https://sourceforge.net/projects/nedit/](https://sourceforge.net/projects/nedit/) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 
-*   **Notepadqq** — A Qt-based, Notepad++-like text editor with support for syntax highlighting for more than 100 languages.
+*   **Notepadqq** — Qt-based, Notepad++-like text editor with support for syntax highlighting for more than 100 languages.
 
 	[http://notepadqq.altervista.org/s/](http://notepadqq.altervista.org/s/) || [notepadqq](https://www.archlinux.org/packages/?name=notepadqq)
 
-*   **[Pluma](/index.php/MATE "MATE")** — A powerful text editor for MATE.
+*   **[Pluma](/index.php/MATE "MATE")** — Powerful text editor for MATE.
 
 	[http://mate-desktop.org](http://mate-desktop.org) || [pluma](https://www.archlinux.org/packages/?name=pluma)
-
-*   **[PyRoom](https://en.wikipedia.org/wiki/PyRoom "wikipedia:PyRoom")** — Great distractionless PyGTK text editor, a clone of the infamous WriteRoom.
-
-	[http://pyroom.org](http://pyroom.org) || [pyroom](https://aur.archlinux.org/packages/pyroom/)
 
 *   **QSciTE** — Qt clone of the SciTE text and code editor.
 
 	[https://code.google.com/archive/p/qscite/](https://code.google.com/archive/p/qscite/) || [qscite](https://aur.archlinux.org/packages/qscite/)
-
-*   **QXmlEdit** — Simple Qt XML editor and XSD viewer.
-
-	[http://qxmledit.org](http://qxmledit.org) || [qxmledit](https://aur.archlinux.org/packages/qxmledit/)
 
 *   **[Sam](https://en.wikipedia.org/wiki/Sam_(text_editor) "wikipedia:Sam (text editor)")** — Minimalist text editor with a graphical user interface, a very powerful command language and remote editing capabilities, developed by Rob Pike.
 
@@ -896,19 +876,15 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
-*   **Scribes** — An ultra minimalist text editor that combines simplicity with power.
+*   **Scratch** — Text editor for elementaryOS. It auto-saves your files, meaning they're always up-to-date. Plus it remembers your tabs so you never lose your spot, even in between sessions.
+
+	[https://launchpad.net/scratch](https://launchpad.net/scratch) || [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor)
+
+*   **Scribes** — Ultra minimalist text editor that combines simplicity with power.
 
 	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://www.archlinux.org/packages/?name=scribes)
 
-*   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
-
-	[https://www.sublimetext.com](https://www.sublimetext.com) || [sublime-text2](https://aur.archlinux.org/packages/sublime-text2/)
-
-*   **[Sublime Text 3](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
-
-	[https://www.sublimetext.com](https://www.sublimetext.com) || [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/)
-
-*   **Tea** — Qt-based feature rich text editor.
+*   **[TEA](https://en.wikipedia.org/wiki/TEA_(text_editor) "wikipedia:TEA (text editor)")** — Qt-based feature rich text editor.
 
 	[http://semiletov.org/tea](http://semiletov.org/tea) || [tea](https://aur.archlinux.org/packages/tea/)
 
@@ -922,17 +898,43 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)[code](https://aur.archlinux.org/packages/code/)
+	[https://code.visualstudio.com](https://code.visualstudio.com) || [code](https://aur.archlinux.org/packages/code/) or [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 
 *   **XEdit** — Simple text editor for the X Window System.
 
 	[https://www.x.org/wiki](https://www.x.org/wiki) || [xorg-xedit](https://www.archlinux.org/packages/?name=xorg-xedit)
+
+#### Emacs text editors
+
+*   **[Emacs](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor by GNU.
+
+	[https://www.gnu.org/software/emacs/emacs.html](https://www.gnu.org/software/emacs/emacs.html) || [emacs](https://www.archlinux.org/packages/?name=emacs) or [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)
+
+*   **[mg](https://en.wikipedia.org/wiki/mg_(editor) "wikipedia:mg (editor)")** — Small, fast, and portable Emacs-like editor.
+
+	[http://homepage.boetes.org/software/mg](http://homepage.boetes.org/software/mg) || [mg](https://www.archlinux.org/packages/?name=mg)
+
+*   **[MicroEmacs](https://en.wikipedia.org/wiki/MicroEMACS "wikipedia:MicroEMACS")** — Ncurses-based text editor.
+
+	[http://www.jasspa.com/](http://www.jasspa.com/) || [jasspa-me](https://aur.archlinux.org/packages/jasspa-me/)
+
+*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Lightweight Emacs clone with *vi*-like key bindings.
+
+	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://aur.archlinux.org/packages/vile/)
+
+*   **[Zile](https://en.wikipedia.org/wiki/GNU_Zile "wikipedia:GNU Zile")** — Lightweight Emacs clone.
+
+	[https://www.gnu.org/software/zile/](https://www.gnu.org/software/zile/) || [zile](https://www.archlinux.org/packages/?name=zile)
 
 #### Vi text editors
 
 *   **Amp** — Text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
 
 	[https://amp.rs/](https://amp.rs/) || [amp](https://aur.archlinux.org/packages/amp/)
+
+*   **[gVim](/index.php/Vim "Vim")** — Graphical interface for Vim.
+
+	[http://www.vim.org/](http://www.vim.org/) || [gvim](https://www.archlinux.org/packages/?name=gvim)
 
 *   **[Kakoune](/index.php/Kakoune "Kakoune")** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
 
@@ -956,17 +958,37 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 #### Markdown editors
 
+*   **Abricotine** — Markdown editor built for desktop. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://abricotine.brrd.fr/](https://abricotine.brrd.fr/) || [abricotine](https://aur.archlinux.org/packages/abricotine/)
+
 *   **CuteMarkEd** — Qt-based Markdown editor with live HTML preview, math expressions, code and markdown syntax highlighting.
 
 	[https://cloose.github.io/CuteMarkEd/](https://cloose.github.io/CuteMarkEd/) || [cutemarked](https://aur.archlinux.org/packages/cutemarked/)
 
-*   **ghostwriter** — Distraction-free Markdown editor.
+*   **Abricotine** — Markdown editor built for desktop. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://wereturtle.github.io/ghostwriter/](https://wereturtle.github.io/ghostwriter/) || [ghostwriter](https://aur.archlinux.org/packages/ghostwriter/)
+	[https://abricotine.brrd.fr/](https://abricotine.brrd.fr/) || [abricotine](https://aur.archlinux.org/packages/abricotine/)
+
+*   **EME** — Elegant Markdown Editor. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/egoist/eme](https://github.com/egoist/eme) || [eme](https://aur.archlinux.org/packages/eme/)
 
 *   **Marker** — Simple yet robust Markdown editor.
 
 	[https://fabiocolacio.github.io/Marker/](https://fabiocolacio.github.io/Marker/) || [marker](https://aur.archlinux.org/packages/marker/)
+
+*   **MarkMyWords** — Minimal markdown editor.
+
+	[https://github.com/voldyman/MarkMyWords](https://github.com/voldyman/MarkMyWords) || [markmywords-git](https://aur.archlinux.org/packages/markmywords-git/)
+
+*   **Mark Text** — Next generation markdown editor. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://marktext.github.io/website/](https://marktext.github.io/website/) || [marktext](https://aur.archlinux.org/packages/marktext/)
+
+*   **Moeditor** — Your all-purpose markdown editor. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://moeditor.js.org/](https://moeditor.js.org/) || [moeditor-bin](https://aur.archlinux.org/packages/moeditor-bin/)
 
 *   **Remarkable** — Fully featured Markdown editor.
 
@@ -976,7 +998,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://github.com/retext-project/retext](https://github.com/retext-project/retext) || [retext](https://www.archlinux.org/packages/?name=retext)
 
-*   **UberWriter** — Elegant, free distraction GTK+ Markdown editor.
+*   **[UberWriter](https://en.wikipedia.org/wiki/UberWriter "wikipedia:UberWriter")** — Elegant, free distraction GTK+ Markdown editor.
 
 	[http://uberwriter.wolfvollprecht.de/](http://uberwriter.wolfvollprecht.de/) || [uberwriter](https://aur.archlinux.org/packages/uberwriter/)
 
@@ -1002,15 +1024,15 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://github.com/rumpelsepp/pynote](https://github.com/rumpelsepp/pynote) || [pynote](https://aur.archlinux.org/packages/pynote/)
 
+*   **tnote** — Small note taking program for the terminal.
+
+	[https://sourceforge.net/projects/tnote/](https://sourceforge.net/projects/tnote/) || [tnote](https://aur.archlinux.org/packages/tnote/)
+
 *   **Vimwiki** — Personal wiki for [Vim](/index.php/Vim "Vim") – interlinked, plain text files written in a markup language.
 
 	[https://vimwiki.github.io/](https://vimwiki.github.io/) || [vim-vimwiki](https://aur.archlinux.org/packages/vim-vimwiki/)
 
 ##### Graphical
-
-*   **Almanah** — Small GTK+ application to allow you to keep a diary of your life.
-
-	[https://wiki.gnome.org/Apps/Almanah_Diary](https://wiki.gnome.org/Apps/Almanah_Diary) || [almanah](https://www.archlinux.org/packages/?name=almanah)
 
 *   **[BasKet](https://en.wikipedia.org/wiki/BasKet_Note_Pads "wikipedia:BasKet Note Pads")** — Application for organizing, sharing, and taking notes. It can manage various types of information such as to-do lists, links, pictures, and other types, similar to a scrapbook.
 
@@ -1028,6 +1050,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://elephant.mine.nu/](http://elephant.mine.nu/) || [elephant](https://aur.archlinux.org/packages/elephant/)
 
+*   **FromScratch** — Simple but smart note-taking application that you can use as a quick note taking or todo app. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://fromscratch.rocks/](https://fromscratch.rocks/) || [fromscratch](https://aur.archlinux.org/packages/fromscratch/)
+
 *   **GNOME Notes** — Note editor for GNOME designed to remain simple to use.
 
 	[https://wiki.gnome.org/Apps/Notes](https://wiki.gnome.org/Apps/Notes) || [bijiben](https://www.archlinux.org/packages/?name=bijiben)
@@ -1035,10 +1061,6 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 *   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — Port of Tomboy to C++. It is the same note taking application, including most of the add-ins.
 
 	[https://wiki.gnome.org/Apps/Gnote](https://wiki.gnome.org/Apps/Gnote) || [gnote](https://www.archlinux.org/packages/?name=gnote)
-
-*   **Hazama** — Simple and highly customizable application for keeping diary. There is no calendar but a big list that contains preview of diaries.
-
-	[https://hazama.cc/](https://hazama.cc/) || [hazama](https://aur.archlinux.org/packages/hazama/)
 
 *   **Joplin** — Note taking and to-do application, which can handle a large number of notes organized into notebooks. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -1052,17 +1074,9 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://userbase.kde.org/KJots](https://userbase.kde.org/KJots) || [kjots](https://www.archlinux.org/packages/?name=kjots)
 
-*   **KNotes** — Program that lets you write the computer equivalent of sticky notes. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
-
-	[https://www.kde.org/applications/utilities/knotes/](https://www.kde.org/applications/utilities/knotes/) || [knotes](https://www.archlinux.org/packages/?name=knotes)
-
 *   **Laverna** — JavaScript note taking application with Markdown editor and encryption support. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://laverna.cc/](https://laverna.cc/) || [laverna](https://aur.archlinux.org/packages/laverna/)
-
-*   **Lifeograph** — Off-line and private journal and note taking application. It offers a rich feature set presented in a clean and simple user interface.
-
-	[http://lifeograph.sourceforge.net/](http://lifeograph.sourceforge.net/) || [lifeograph](https://aur.archlinux.org/packages/lifeograph/)
 
 *   **Mikidown** — Note taking application featuring markdown syntax.
 
@@ -1080,6 +1094,14 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://nixnote.org/](http://nixnote.org/) || [nixnote2](https://aur.archlinux.org/packages/nixnote2/)
 
+*   **Notes** — Note-taking application, write down your thoughts.
+
+	[https://github.com/nuttyartist/notes](https://github.com/nuttyartist/notes) || [notes](https://aur.archlinux.org/packages/notes/)
+
+*   **NotesTree** — Note taking application, which organizes notes in a hierarchical (tree like) structure.
+
+	[https://bitbucket.org/baltic/notestree/overview](https://bitbucket.org/baltic/notestree/overview) || [notes-tree](https://aur.archlinux.org/packages/notes-tree/)
+
 *   **Notes-Up** — Markdown notes editor and manager for elementaryOS.
 
 	[https://github.com/Philip-Scott/Notes-up](https://github.com/Philip-Scott/Notes-up) || [notes-up](https://aur.archlinux.org/packages/notes-up/)
@@ -1096,10 +1118,6 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://www.qownnotes.org/](https://www.qownnotes.org/) || [qownnotes](https://aur.archlinux.org/packages/qownnotes/)
 
-*   **RedNotebook** — Modern journal, which lets you format, tag and search your entries.
-
-	[https://rednotebook.sourceforge.io/](https://rednotebook.sourceforge.io/) || [rednotebook](https://aur.archlinux.org/packages/rednotebook/)
-
 *   **[Simplenote](https://en.wikipedia.org/wiki/Simplenote "wikipedia:Simplenote")** — The simplest way to keep notes. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://simplenote.com/](https://simplenote.com/) || [simplenote-electron-bin](https://aur.archlinux.org/packages/simplenote-electron-bin/)
@@ -1110,7 +1128,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[TagSpaces](https://en.wikipedia.org/wiki/TagSpaces "wikipedia:TagSpaces")** — Offline personal data manager for managing of your local files. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://simplenote.com/](https://simplenote.com/) || [tagspaces](https://aur.archlinux.org/packages/tagspaces/)
+	[https://www.tagspaces.org/](https://www.tagspaces.org/) || [tagspaces](https://aur.archlinux.org/packages/tagspaces/)
 
 *   **[TiddlyWiki](https://en.wikipedia.org/wiki/TiddlyWiki "wikipedia:TiddlyWiki")** — Unique non-linear notebook for capturing, organizing and sharing complex information.
 
@@ -1120,9 +1138,17 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://wiki.gnome.org/Apps/Tomboy](https://wiki.gnome.org/Apps/Tomboy) || [tomboy](https://www.archlinux.org/packages/?name=tomboy)
 
+*   **TreeLine** — Store almost any kind of information in a tree structure, which makes it easy to keep things organized.
+
+	[http://treeline.bellz.org/](http://treeline.bellz.org/) || [treeline-unstable](https://aur.archlinux.org/packages/treeline-unstable/)
+
 *   **TuxCards** — Hierarchical notebook to enter and manage ever every kind of notes and ideas in a structured manner.
 
 	[http://tuxcards.de/](http://tuxcards.de/) || [tuxcards](https://www.archlinux.org/packages/?name=tuxcards)
+
+*   **VNote** — Vim-inspired note-taking application that knows programmers and Markdown better.
+
+	[https://tamlok.github.io/vnote/](https://tamlok.github.io/vnote/) || [vnote](https://aur.archlinux.org/packages/vnote/)
 
 *   **[WikidPad](https://en.wikipedia.org/wiki/WikidPad "wikipedia:WikidPad")** — Wiki-like notebook for storing your thoughts, ideas, todo lists, contacts, or anything else you can think of to write down.
 
@@ -1132,17 +1158,61 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://github.com/WizTeam/WizQTClient](https://github.com/WizTeam/WizQTClient) || [wiznote](https://www.archlinux.org/packages/?name=wiznote)
 
-*   **Xpad** — Sticky note application for jotting down things to remember.
-
-	[https://launchpad.net/xpad](https://launchpad.net/xpad) || [xpad](https://www.archlinux.org/packages/?name=xpad)
-
 *   **[Zim](/index.php/Zim "Zim")** — WYSIWYG text editor that aims at bringing the concept of a wiki to the desktop.
 
 	[http://zim-wiki.org/](http://zim-wiki.org/) || [zim](https://www.archlinux.org/packages/?name=zim)
 
 *   **zNotes** — Lightweight application for notes management with simple interface.
 
-	[http://znotes.sourceforge.net/](http://znotes.sourceforge.net/) || [znotes](https://aur.archlinux.org/packages/znotes/)
+	[https://sourceforge.net/projects/znotes/](https://sourceforge.net/projects/znotes/) || [znotes](https://aur.archlinux.org/packages/znotes/)
+
+#### Sticky notes
+
+*   **GloboNote** — Easy to use desktop note taking application. You can use it to create sticky notes, to-do lists, personal journals, reminders and other notes all in one application.
+
+	[https://globonote.info/](https://globonote.info/) || [globonote](https://aur.archlinux.org/packages/globonote/)
+
+*   **KNotes** — Program that lets you write the computer equivalent of sticky notes. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
+
+	[https://www.kde.org/applications/utilities/knotes/](https://www.kde.org/applications/utilities/knotes/) || [knotes](https://www.archlinux.org/packages/?name=knotes)
+
+*   **MyNotes** — Sticky note application. An icon appears in the system tray and from it you can create and manage your sticky notes.
+
+	[https://github.com/j4321/MyNotes](https://github.com/j4321/MyNotes) || [mynotes](https://aur.archlinux.org/packages/mynotes/)
+
+*   **Notejot** — Stupidly simple sticky notes applet for elementaryOS.
+
+	[https://github.com/lainsce/notejot](https://github.com/lainsce/notejot) || [notejot](https://aur.archlinux.org/packages/notejot/)
+
+*   **qtPad** — Modern and customizable sticky note application written in PyQt5.
+
+	[https://github.com/willbelr/qtpad](https://github.com/willbelr/qtpad) || [qtpad-git](https://aur.archlinux.org/packages/qtpad-git/)
+
+*   **xNots** — Desktop post-it/sticky note system for the Unix geek.
+
+	[https://github.com/thePalindrome/xnots](https://github.com/thePalindrome/xnots) || [xnots-git](https://aur.archlinux.org/packages/xnots-git/)
+
+*   **Xpad** — Sticky note application for jotting down things to remember.
+
+	[https://launchpad.net/xpad](https://launchpad.net/xpad) || [xpad](https://www.archlinux.org/packages/?name=xpad)
+
+#### Diary
+
+*   **Almanah** — Small GTK+ application to allow you to keep a diary of your life.
+
+	[https://wiki.gnome.org/Apps/Almanah_Diary](https://wiki.gnome.org/Apps/Almanah_Diary) || [almanah](https://www.archlinux.org/packages/?name=almanah)
+
+*   **Hazama** — Simple and highly customizable application for keeping diary. There is no calendar but a big list that contains preview of diaries.
+
+	[https://hazama.cc/](https://hazama.cc/) || [hazama](https://aur.archlinux.org/packages/hazama/)
+
+*   **Lifeograph** — Off-line and private journal and note taking application. It offers a rich feature set presented in a clean and simple user interface.
+
+	[http://lifeograph.sourceforge.net/](http://lifeograph.sourceforge.net/) || [lifeograph](https://aur.archlinux.org/packages/lifeograph/)
+
+*   **RedNotebook** — Modern journal, which lets you format, tag and search your entries.
+
+	[https://rednotebook.sourceforge.io/](https://rednotebook.sourceforge.io/) || [rednotebook](https://aur.archlinux.org/packages/rednotebook/)
 
 #### Distraction-free writing
 
@@ -1221,6 +1291,22 @@ See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikip
 *   **[XMind](https://en.wikipedia.org/wiki/XMind "wikipedia:XMind")** — Brainstorming and mind mapping application. It provides a rich set of different visualization styles, and allows sharing of created mind maps via their website.
 
 	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://aur.archlinux.org/packages/xmind/)
+
+#### XML editors
+
+See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Comparison_of_XML_editors "wikipedia:Comparison of XML editors").
+
+*   **QXmlEdit** — Simple Qt XML editor and XSD viewer.
+
+	[http://qxmledit.org/](http://qxmledit.org/) || [qxmledit](https://aur.archlinux.org/packages/qxmledit/)
+
+*   **XML Copy Editor** — Fast, validating XML editor.
+
+	[http://xml-copy-editor.sourceforge.net/](http://xml-copy-editor.sourceforge.net/) || [xmlcopyeditor](https://aur.archlinux.org/packages/xmlcopyeditor/)
+
+*   **XML Tree Editor** — Displays XML files as tree views and allows basic operations: adding, editing and deleting text nodes and their attributes.
+
+	[https://sourceforge.net/projects/xmltreeeditor/](https://sourceforge.net/projects/xmltreeeditor/) || [xmltreeedit-bin](https://aur.archlinux.org/packages/xmltreeedit-bin/)
 
 #### Barcode generators and readers
 

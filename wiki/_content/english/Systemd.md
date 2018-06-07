@@ -571,10 +571,11 @@ Examples:
 *   Follow new messages: `# journalctl -f` 
 *   Show all messages by a specific executable: `# journalctl /usr/lib/systemd/systemd` 
 *   Show all messages by a specific process: `# journalctl _PID=1` 
-*   Show all messages by a specific unit: `# journalctl -u netcfg` 
+*   Show all messages by a specific unit: `# journalctl -u man-db.service` 
 *   Show kernel ring buffer: `# journalctl -k` 
 *   Show only error, critical, and alert priority messages `# journalctl -p err..alert` Numbers also can be used, `journalctl -p 3..1`. If single number/keyword used, `journalctl -p 3` - all higher priority levels also included.
 *   Show auth.log equivalent by filtering on syslog facility: `# journalctl SYSLOG_FACILITY=10` 
+*   If your journal directory (by default located under `/var/log/journal`) contains huge amount of log data then `journalctl` can take several minutes in filtering output. You can speed it up significantly by using `--file` option to force `journalctl` to look only into most recent journal: `# journalctl --file /var/log/journal/*/system.journal -f` 
 
 See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or Lennart's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 

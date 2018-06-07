@@ -222,7 +222,7 @@ class compress(Command):
 
 ### External drives
 
-External drives can be automatically mounted with [udev](/index.php/Udev "Udev") or [udisks](/index.php/Udisks "Udisks"). Drives mounted under `/media` can be easily accessed by pressing `gm` (go, media).
+External drives can be automatically mounted with [udev](/index.php/Udev "Udev") or [udisks](/index.php/Udisks "Udisks"). Drives mounted under `/run/media` can be easily accessed by pressing `gm` (go, media).
 
 ### Image mounting
 

@@ -216,6 +216,7 @@ See [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), 
 
 To set the timezone automatically based on the IP address location, one can use a geolocation API to retrieve the timezone, for example `$ curl [https://ipapi.co/timezone](https://ipapi.co/timezone)`, and pass the output to `timedatectl set-timezone` for automatic setting. Some geo-IP APIs that provide free or partly free services are listed below:
 
+*   [https://freegeoip.app](https://freegeoip.app)
 *   [https://ipapi.co/](https://ipapi.co/)
 *   [http://ip-api.com/](http://ip-api.com/)
 *   [https://ipstack.com/](https://ipstack.com/)

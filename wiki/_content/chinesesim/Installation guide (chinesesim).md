@@ -1,8 +1,10 @@
-**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-12，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=488957)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-06，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=523580)可以查看翻译后英文页面的改动。
 
-本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)").
+本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)").请注意, 代码段可能会有占位符(格式是 `*italics*`),你可能需要手动去掉它们.
 
 有关更详细的说明，请阅读本指南内相应的 [ArchWiki](/index.php/ArchWiki:About_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:About (简体中文)") 文章或各类程序的[手册](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Man page (简体中文)")。有关配置的概述，请参阅 [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)。若需要交互帮助，可以使用 [IRC 频道](/index.php/IRC_channel "IRC channel")和[论坛](https://bbs.archlinux.org/)。
+
+Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 兼容机上运行。用 [base](https://www.archlinux.org/groups/x86_64/base/) 组内的软件包进行的基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
 
 ## Contents
 
@@ -32,19 +34,25 @@
 
 ## 安装准备
 
-Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 兼容机上运行。用 [base](https://www.archlinux.org/groups/x86_64/base/) 组内的软件包进行的基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
-
-根据 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示符。类似 [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) 的常规命令都可以用 `Tab` [自动补全](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")。
+根据 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示符。
 
 如果你想切换至其它的虚拟终端来干点别的事, 例如使用 [ELinks](/index.php/ELinks "ELinks") 来查看本篇指南，使用 `Alt+*arrow*` [快捷键](/index.php/Keyboard_shortcuts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Keyboard shortcuts (简体中文)")。可以使用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim") [编辑](/index.php/Textedit "Textedit")配置文件。
 
 ### 键盘布局
 
-[控制台键盘布局](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") 默认为`us`（美式键盘映射）。如果您正在使用非[美式](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg")键盘布局，通过以下的命令选择相应的键盘映射表：
+[控制台键盘布局](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") 默认为`us`（美式键盘映射）。列出所有可用的键盘布局, 可以使用:
 
- `# loadkeys *layout*` 
+```
+# ls /usr/share/kbd/keymaps/**/*.map.gz
 
-将 *layout* 转换为您的键盘布局，如`fr`，`uk`，`dvorak`或`be-latin1`。[这里](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2")有国家的二位字母编码表。使用命令 `ls /usr/share/kbd/keymaps/**/*.map.gz` 列出所有可用的键盘布局。
+```
+
+如果您想要更改键盘布局,可以将一致的文件名添加进[loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), 但请省略路径和扩展名. 比如, 要添加[German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "wikipedia:File:KB Germany.svg")键盘布局:
+
+```
+# loadkeys de-latin1
+
+```
 
 [Console fonts](/index.php/Console_fonts "Console fonts") 位于 `/usr/share/kbd/consolefonts/`, 设置方式请参考 [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
@@ -68,9 +76,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-若发现网络不通,利用 `systemctl stop dhcpcd@`,`TAB` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，详情请查看 [网络配置文档](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
-
-对于**无线**连接,[iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) 和 [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") 等工具已被提供. 详情查看[无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
+若发现网络不通,利用 `systemctl stop dhcpcd@`,`TAB` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，`*网络接口*` 名可以通过 [Tab补全](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). 要配置网络,详见[网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
 
 ### 更新系统时间
 
@@ -83,16 +89,16 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 用 `timedatectl status` 检查服务状态.详情阅读 [Time (简体中文)](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)").
 
-参阅 [systemd-timesyncd](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)")。
-
 ### 建立硬盘分区
 
-磁盘若被系统识别到，就会被分配为一个*块设备*，如`/dev/sda`。识别这些设备，使用[lsblk](/index.php/Core_utilities#lsblk "Core utilities")或*fdisk*。输出中以`rom`, `loop` 或 `airoot` 结尾的可以被忽略。
+磁盘若被系统识别到，就会被分配为一个*块设备*，如`/dev/sda`或者{ic|/dev/nvme0n1}}。可以使用[lsblk](/index.php/Lsblk "Lsblk") 或者 *fdisk* 查看:
 
 ```
 # fdisk -l
 
 ```
+
+结果中以`rom`, `loop` 或者 `airoot`结束的可以被忽略.
 
 对于一个选定的设备，以下的*分区*是必须要有的:
 
@@ -110,7 +116,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 查看[Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")以获得更多详情.
 
-**注意:** 如果需要需要创建多级存储例如 [LVM](/index.php/LVM "LVM")、[LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") 或 [RAID](/index.php/RAID "RAID")，请在此时完成。
+**注意:** 如果需要需要创建多级存储例如 [LVM](/index.php/LVM "LVM")、[disk encryption](/index.php/Disk_encryption "Disk encryption") 或 [RAID](/index.php/RAID "RAID")，请在此时完成。
 
 ### 格式化分区
 
@@ -133,7 +139,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ### 挂载分区
 
-首先将根分区[挂载](/index.php/File_systems#Mount_a_filesystem "File systems")到 `/mnt`，例如：
+首先将根分区[挂载](/index.php/Mount "Mount")到 `/mnt`，例如：
 
 ```
 # mount /dev/*sda1* /mnt
@@ -148,17 +154,21 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-genfstab 将会自动检测挂载的文件系统和 swap 分区。
+接下来 [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) 将会自动检测挂载的文件系统和 swap 分区。
 
 ## 安装
 
 ### 选择镜像
 
-编辑 `/etc/pacman.d/mirrorlist`，选择您的首选 [mirror](/index.php/Mirrors "Mirrors"). 这个 mirror 列表也将通过 `pacstrap` 被复制并保存在到系统中，所以请确保设置正确。
+文件`/etc/pacman.d/mirrorlist`定义了软件包会从哪个[镜像源](/index.php/Mirrors "Mirrors")下载.在LiveCD启动的系统上,所有的镜像都被启用,并且在镜像被制作时,我们已经通过他们的同步情况和速度排序.
+
+在列表中越前的镜像在下载软件包时有越高的优先权. 你可以相应的修改文件`/etc/pacman.d/mirrorlist`, 并将地理位置最近的镜像源挪到文件的头部, 同时你也应该考虑一些其他标准。
+
+这个文件接下来还会被*pacstrap*拷贝到新系统里, 所以请确保设置正确。
 
 ### 安装基本系统
 
-执行 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/groups/x86_64/base/) 组：
+使用[pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/groups/x86_64/base/) 组：
 
 ```
 # pacstrap /mnt base
@@ -167,14 +177,12 @@ genfstab 将会自动检测挂载的文件系统和 swap 分区。
 
 这个组并没有包含全部 live 环境中的程序，有些需要额外安装，例如[btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)。[packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) 页面包含了它们的差异。
 
-如果您想通过 [AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 或者 [ABS (简体中文)](/index.php/ABS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ABS (简体中文)") 编译安装软件包,需要装上 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)：
+如果你还想安装其他软件包组比如[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), 请将他们的名字添加到*pacstrap*后,并用空格隔开.你也可以在[#Chroot](#Chroot)之后使用[pacman](/index.php/Pacman "Pacman")手动安装软件包或组.
 
 ```
 # pacstrap -i /mnt base base-devel
 
 ```
-
-使用 `-i` 选项时会在实际安装前进行确认。此章节会给您安装好最基本的 Arch 系统，其它软件以后会用 [pacman (简体中文)](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 安装得到。第一个 [initramfs](/index.php/Initramfs "Initramfs") 会在新系统的启动路径生成和安装，请确保 `==> Image creation successful`.
 
 ## 配置系统
 
@@ -203,7 +211,7 @@ genfstab 将会自动检测挂载的文件系统和 swap 分区。
 设置 [时区](/index.php/Time_zone "Time zone"):
 
 ```
-# ln -sf /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
+# ln -sf /usr/share/zoneinfo/*Region*/*City* /etc/localtime
 
 ```
 
@@ -214,12 +222,14 @@ genfstab 将会自动检测挂载的文件系统和 swap 分区。
 
 ```
 
-建议设置[时间标准](/index.php/Time_standard "Time standard") 为 UTC，并调整 [时间漂移](/index.php/Time_skew "Time skew"):
+运行[hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8)以生成`/etc/adjtime`:
 
 ```
-# hwclock --systohc --utc
+# hwclock --systohc
 
 ```
+
+这个命令假定硬件时间已经被设置为[UTC时间](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). 详细信息请查看[Time#Time standard](/index.php/Time#Time_standard "Time").
 
 ### Locale
 
@@ -242,11 +252,11 @@ zh_TW.UTF-8 UTF-8
 
 ```
 
-`/etc/locale.gen` 生成指定的本地化文件，每次 [glibc](https://www.archlinux.org/packages/?name=glibc) 更新之后也会运行 `locale-gen`。
+`/etc/locale.gen` 会生成指定的本地化文件.
 
-创建 `locale.conf` 并提交您的本地化选项：
+创建 `locale.conf` 并编辑：`LANG` [变量](/index.php/Variable "Variable"),比如:
 
-**Tip:** 将系统 locale 设置为`en_US.UTF-8`，系统的 Log 就会用英文显示，这样更容易问题的判断和处理。用户可以设置自己的 locale，详情参阅[Locale#Per user](/index.php/Locale#Per_user "Locale").
+**Tip:** 将系统 locale 设置为`en_US.UTF-8`，系统的 Log 就会用英文显示，这样更容易问题的判断和处理。用户可以设置自己的 locale，详情参阅[Locale](/index.php/Locale#Overriding_system_locale_per_user_session "Locale")或[Locale_(简体中文)#设置 locale](/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E7.BD.AE_locale "Locale (简体中文)")
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 **警告:** 不推荐在此设置任何中文locale，或导致tty乱码。
 
@@ -264,7 +274,7 @@ zh_TW.UTF-8 UTF-8
 
 ```
 
-建议添加[对应的信息](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration")到[hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+并且添加[对应的信息](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration")到[hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -274,15 +284,19 @@ zh_TW.UTF-8 UTF-8
 
 ```
 
+如果机器有一个永久的ip地址,请使用这个ip而不是`127.0.1.1`.
+
 ### 网络配置
 
-对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 和
+对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")
 
 对于 [无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)，[dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的 [固件软件包](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
 
 ### Initramfs
 
-如果修改了 [mkinitcpio.conf](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")，用以下命令创建一个初始 RAM disk：
+你通常不需要创建*initramfs*,因为在你执行*pacstrap*时已经安装[linux](https://www.archlinux.org/packages/?name=linux), 这时[mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")会被自动运行.
+
+如果修改了 [mkinitcpio.conf](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")，用以下命令创建一个Initramfs：
 
 ```
 # mkinitcpio -p linux
@@ -300,7 +314,7 @@ zh_TW.UTF-8 UTF-8
 
 ### 安装引导程序
 
-[启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")页面介绍了可用选项和配置方法。
+你需要安装Linux引导程序以在安装后启动系统,你可以使用的的引导程序在["启动加载器"](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")中,请选择一个并且安装并配置它,比如[GRUB](/index.php/GRUB "GRUB").
 
 如果你使用Intel CPU，那么需要安装[intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode)并[启用英特尔微码更新](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode")
 

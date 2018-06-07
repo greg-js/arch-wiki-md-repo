@@ -106,4 +106,4 @@ Another way to set a random wallpaper on each x.org session is to edit your `.fe
 
 ```
 
-**Tip:** To change wallpapers periodically, use a script (see [while loop](http://mywiki.wooledge.org/BashGuide/TestsAndConditionals#Conditional_Loops_.28while.2C_until_and_for.29)), [cron](/index.php/Cron "Cron") job, or [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") to execute the command at the desired interval.
+**Tip:** To change wallpapers periodically, use a script (see [while loop](https://mywiki.wooledge.org/BashGuide/TestsAndConditionals#Conditional_Loops_.28while.2C_until_and_for.29 "gregswiki:BashGuide/TestsAndConditionals")), [cron](/index.php/Cron "Cron") job, or [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") to execute the command at the desired interval.

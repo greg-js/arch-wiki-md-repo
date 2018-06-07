@@ -1,4 +1,4 @@
-Gcin is a new generation of Chinese input method server developed by Edward Liu. Gcin supports various input methods and works under most Unix-like operating systems. It's one of the most popular Chinese input engines in Taiwan.
+[Gcin](http://hyperrate.com/dir.php?eid=67) is a new generation of Chinese [input method](/index.php/Input_method "Input method") server developed by Edward Liu. Gcin supports various input methods and works under most Unix-like operating systems. It's one of the most popular Chinese input engines in Taiwan.
 
 ## Contents
 
@@ -24,9 +24,9 @@ Gcin is a new generation of Chinese input method server developed by Edward Liu.
 Use [xprofile](/index.php/Xprofile "Xprofile") to execute these commands automatically:
 
 ```
- export XMODIFIERS=@im=gcin
- export LC_CTYPE=zh_TW.UTF-8
- gcin &
+export XMODIFIERS=@im=gcin
+export LC_CTYPE=zh_TW.UTF-8
+gcin &
 
 ```
 
