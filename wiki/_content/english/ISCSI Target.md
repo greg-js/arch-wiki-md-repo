@@ -1,8 +1,13 @@
+Related articles
+
+*   [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator")
+*   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot")
+
 With [iSCSI](https://en.wikipedia.org/wiki/iSCSI "wikipedia:iSCSI") you can access storage over an IP-based network.
 
 The exported storage entity is the **target** and the importing entity is the **[initiator](/index.php/ISCSI_Initiator "ISCSI Initiator")**. There are different modules available to set up the target:
 
-*   The [SCSI Target Framework (STGT/TGT)](http://stgt.berlios.de/) was the standard before linux 2.6.38.
+*   The [SCSI Target Framework (STGT/TGT)](http://stgt.sourceforge.net/) was the standard before linux 2.6.38.
 *   The current standard is the [LIO target](http://linux-iscsi.org/).
 *   The [iSCSI Enterprise Target (IET)](http://iscsitarget.sourceforge.net/) is an old implementation and [SCSI Target Subsystem (SCST)](http://scst.sourceforge.net/) is the successor of IET and was a possible candidate for kernel inclusion before the decision fell for LIO.
 

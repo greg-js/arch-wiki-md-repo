@@ -5,18 +5,29 @@ The [official website](http://sourceforge.net/projects/dict/) describes dictd as
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Graphical front ends](#Graphical_front_ends)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Hosting Offline Dictionaries](#Hosting_Offline_Dictionaries)
-    *   [2.2 Installing Additional Dictionaries](#Installing_Additional_Dictionaries)
+    *   [2.1 Locale](#Locale)
+    *   [2.2 Hosting Offline Dictionaries](#Hosting_Offline_Dictionaries)
+    *   [2.3 Installing Additional Dictionaries](#Installing_Additional_Dictionaries)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Parse Error](#Parse_Error)
-*   [4 Graphical front ends](#Graphical_front_ends)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [dictd](https://www.archlinux.org/packages/?name=dictd) package.
 
+### Graphical front ends
+
+There are various graphical applications that can access `dictd` through the [DICT protocol](https://en.wikipedia.org/wiki/DICT "wikipedia:DICT"). One of which is: [goldendict](/index.php/Goldendict "Goldendict").
+
 ## Configuration
+
+### Locale
+
+By default, dictd comes configured to use the en_US.UTF-8 locale. If your system does not have this locale compiled, dictd will fail to start without a helpful error message. It is likely that you want to configure it to use another locale in `/etc/conf.d/dictd`:
+
+ `/etc/conf.d/dictd`  `DICTD_ARGS="--locale <your locale>"` 
 
 ### Hosting Offline Dictionaries
 
@@ -35,13 +46,17 @@ $ dict
 
 ```
 
-**Tip:** A list of all the available dictionaries can be queried by executing:
+**Tip:**
+
+*   A list of all the available dictionaries can be queried by executing:
+
 ```
 $ dict -I
 
 ```
 
-**Tip:** To query a specific dictionary database, you can use the `-d` flag. To query the English-Spanish database, for example, for the word "free" you can use:
+*   To query a specific dictionary database, you can use the `-d` flag. To query the English-Spanish database, for example, for the word "free" you can use:
+
 ```
 $ dict -d eng-spa free
 
@@ -51,12 +66,7 @@ $ dict -d eng-spa free
 
 Additional dictionaries are available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") through the search term `dictd`. For example, [dict-wn](https://aur.archlinux.org/packages/dict-wn/) is an English-English dictionary.
 
-After installing the new dictionaries, make sure to restart the `dictd.service` to refresh the available dictionary databases.
-
-```
-# systemctl restart dictd.service
-
-```
+After installing the new dictionaries, make sure to [restart](/index.php/Restart "Restart") the `dictd.service` to refresh the available dictionary databases.
 
 ## Troubleshooting
 
@@ -84,7 +94,3 @@ database eng-spa {
 ```
 
 Adds the English-Spanish dicitonary installed by [dict-freedict-eng-spa](https://aur.archlinux.org/packages/dict-freedict-eng-spa/). For other dictionaries, copy and pase the above database declaration but make sure to change the database name, i.e. `eng-spa`, and also change the `data` and `index` paths above to specify the right files.
-
-## Graphical front ends
-
-There are various graphical applications that can access `dictd` through the [DICT protocol](https://en.wikipedia.org/wiki/DICT "wikipedia:DICT"). One of which is: [goldendict](/index.php/Goldendict "Goldendict").

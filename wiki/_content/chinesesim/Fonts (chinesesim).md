@@ -409,13 +409,13 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 ### 数学和符号字体
 
-*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - 提供许多 Unicode 符号，包括 Emoji
+*   [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) - 提供许多 Unicode 符号，包括 Emoji
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Wolfram 公司的 Mathematica 字体
 *   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core), [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) 包含许多数学字体，如拉丁符号。
 *   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google 的 emoji 字体
 *   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType 字体
 *   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
-*   [otf-latin-modern](https://aur.archlinux.org/packages/otf-latin-modern/), [otf-latinmodern-math](https://aur.archlinux.org/packages/otf-latinmodern-math/) -Computer Modern fonts 的改进版本
+*   [otf-latin-modern](https://www.archlinux.org/packages/?name=otf-latin-modern), [otf-latinmodern-math](https://www.archlinux.org/packages/?name=otf-latinmodern-math) -Computer Modern fonts 的改进版本
 *   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - STIX 字体的 OpenType 实现，以及对从右到左的书写支持。
 *   [emojione-color-font](https://aur.archlinux.org/packages/emojione-color-font/) -完整、独立、开源的 Emoji 字体集，专心于设计正确
 *   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter 的开源 Emoji 字形
@@ -683,7 +683,7 @@ Slant 上的字体图片比较: [最好的编程字体是什么？](http://www.s
 
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) 与 [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) — 一个免费字体的大合集（囊括里 ubuntu、inconsolata、droid 等字体）-注意：如果安装这个包，您的系统内将添加 100 多个字体，这将会使您的字体对话框变得很长。[ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 会从上游网络字体项目中拖下整个 Mercurial 库。[ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)则会从 Git 中拖下一个更小，更精简的非官方库。*(AUR)*
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) — Covers full plane 1 and several scripts
-*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) — 提供了绘文字及其它一些符号。
+*   [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) — 提供了绘文字及其它一些符号。
 *   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/) — STL 内的 Gentium, Charis, Doulos, Andika and Abyssinica *(AUR)*
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) — X.Org Luxi 字体
 *   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) — 从 *dustismo.com* 收集来的字体库

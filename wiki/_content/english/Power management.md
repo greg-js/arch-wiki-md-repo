@@ -563,6 +563,27 @@ By default it looks like this:
 
  `/etc/udev/rules.d/pci_pm.rules`  `ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"` 
 
+The rule above powers all unused devices down, but some devices will not wake up again. To allow runtime power management only for devices that are known to work, use simple matching against vendor and device IDs (use `lspci -nn` to get these values):
+
+ `/etc/udev/rules.d/pci_pm.rules` 
+```
+# whitelist for pci autosuspend
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}="auto"
+
+```
+
+Alternatively, to blacklist devices that are not working with PCI runtime power management and enable it for all other devices:
+
+ `/etc/udev/rules.d/pci_pm.rules` 
+```
+# blacklist for pci runtime power management
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", GOTO="power_pci_rules_end"
+
+ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"
+LABEL="power_pci_rules_end"
+
+```
+
 #### USB autosuspend
 
 The Linux kernel can automatically suspend USB devices when they are not in use. This can sometimes save quite a bit of power, however some USB devices are not compatible with USB power saving and start to misbehave (common for USB mice/keyboards). [udev](/index.php/Udev "Udev") rules based on whitelist or blacklist filtering can help to mitigate the problem.

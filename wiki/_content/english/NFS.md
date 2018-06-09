@@ -493,7 +493,7 @@ Description=Check the network mounts
 OnCalendar=*-*-* *:*:00
 
 [Install]
-WantedBy=timer.target
+WantedBy=timers.target
 
 ```
  `# /etc/systemd/system/auto_share.service` 

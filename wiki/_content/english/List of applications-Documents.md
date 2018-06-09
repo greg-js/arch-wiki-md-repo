@@ -792,6 +792,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://git.enlightenment.org/apps/ecrire.git/](https://git.enlightenment.org/apps/ecrire.git/) || [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/)
 
+*   **[Editra](https://en.wikipedia.org/wiki/Editra "wikipedia:Editra")** — Text editor with an implementation that focuses on creating an easy to use interface and features that aid in code development.
+
+	[http://editra.org/](http://editra.org/) || [editra](https://aur.archlinux.org/packages/editra/)
+
 *   **Enki** — Text editor for programmers.
 
 	[http://enki-editor.org/](http://enki-editor.org/) || [enki-editor-git](https://aur.archlinux.org/packages/enki-editor-git/)
@@ -904,6 +908,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.x.org/wiki](https://www.x.org/wiki) || [xorg-xedit](https://www.archlinux.org/packages/?name=xorg-xedit)
 
+*   **wxMEdit** — Text/Hex editor written in C++ and wxWidgets.
+
+	[https://wxmedit.github.io/](https://wxmedit.github.io/) || [wxmedit](https://aur.archlinux.org/packages/wxmedit/)
+
 #### Emacs text editors
 
 *   **[Emacs](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor by GNU.
@@ -966,13 +974,13 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://cloose.github.io/CuteMarkEd/](https://cloose.github.io/CuteMarkEd/) || [cutemarked](https://aur.archlinux.org/packages/cutemarked/)
 
-*   **Abricotine** — Markdown editor built for desktop. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://abricotine.brrd.fr/](https://abricotine.brrd.fr/) || [abricotine](https://aur.archlinux.org/packages/abricotine/)
-
 *   **EME** — Elegant Markdown Editor. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://github.com/egoist/eme](https://github.com/egoist/eme) || [eme](https://aur.archlinux.org/packages/eme/)
+
+*   **ghostwriter** — Distraction-free Markdown editor.
+
+	[https://wereturtle.github.io/ghostwriter/](https://wereturtle.github.io/ghostwriter/) || [ghostwriter](https://aur.archlinux.org/packages/ghostwriter/)
 
 *   **Marker** — Simple yet robust Markdown editor.
 
@@ -1376,9 +1384,9 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 #### Dictionary and thesaurus
 
-*   **artha** — Free cross-platform English thesaurus that works completely off-line and is based on WordNet.
+*   **Artha** — English thesaurus that works completely off-line and is based on WordNet.
 
-	[http://artha.sourceforge.net/wiki/index.php/Home](http://artha.sourceforge.net/wiki/index.php/Home) || [artha](https://aur.archlinux.org/packages/artha/)
+	[http://artha.sourceforge.net/](http://artha.sourceforge.net/) || [artha](https://aur.archlinux.org/packages/artha/)
 
 *   **GNOME Dictionary** — GNOME application to check word definitions and spellings in an online dictionary.
 
@@ -1387,6 +1395,14 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 *   **GoldenDict** — Feature-rich dictionary lookup program.
 
 	[https://wiki.gnome.org/Dictionary](https://wiki.gnome.org/Dictionary) || [goldendict](https://www.archlinux.org/packages/?name=goldendict)
+
+*   **OpenDict** — Computer dictionary, which supports popular computer dictionary formats including Slowo and Mova. It also acts as a client for DICT servers.
+
+	[http://opendict.sourceforge.net/](http://opendict.sourceforge.net/) || [opendict](https://aur.archlinux.org/packages/opendict/)
+
+*   **QStarDict** — Dictionary program written using Qt. The user interface is similar to StarDict.
+
+	[http://qstardict.ylsoftware.com/](http://qstardict.ylsoftware.com/) || [qstardict](https://www.archlinux.org/packages/?name=qstardict)
 
 *   **[sdcv](/index.php/Sdcv "Sdcv")** — Command line dictionary. It provides access to dictionaries in StarDict's format.
 
@@ -1402,23 +1418,25 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 #### Spell checkers
 
-*   **[Ispell](https://en.wikipedia.org/wiki/Ispell "wikipedia:Ispell")** — An interactive spell-checking program for Unix
-
-	[https://www.cs.hmc.edu/~geoff/ispell.html](https://www.cs.hmc.edu/~geoff/ispell.html) || [ispell](https://www.archlinux.org/packages/?name=ispell)
-
-*   **[Aspell](/index.php/Aspell "Aspell")** — A spell checker designed to eventually replace Ispell
+*   **[Aspell](/index.php/Aspell "Aspell")** — Spell checker designed to eventually replace Ispell.
 
 	[http://aspell.net/](http://aspell.net/) || [aspell](https://www.archlinux.org/packages/?name=aspell)
 
-*   **[Hunspell](https://en.wikipedia.org/wiki/Hunspell "wikipedia:Hunspell")** — Spell checker and morphological analyzer library and program
-
-	[https://hunspell.github.io/](https://hunspell.github.io/) || [hunspell](https://www.archlinux.org/packages/?name=hunspell)
-
-*   **[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) "wikipedia:Enchant (software)")** — A wrapper library for generic spell checking
+*   **[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) "wikipedia:Enchant (software)")** — Wrapper library for generic spell checking.
 
 	[https://abiword.github.io/enchant/](https://abiword.github.io/enchant/) || [enchant](https://www.archlinux.org/packages/?name=enchant)
 
+*   **[Hunspell](https://en.wikipedia.org/wiki/Hunspell "wikipedia:Hunspell")** — Spell checker and morphological analyzer library and program.
+
+	[https://hunspell.github.io/](https://hunspell.github.io/) || [hunspell](https://www.archlinux.org/packages/?name=hunspell)
+
+*   **[Ispell](https://en.wikipedia.org/wiki/Ispell "wikipedia:Ispell")** — Interactive spell-checking program for Unix.
+
+	[https://www.cs.hmc.edu/~geoff/ispell.html](https://www.cs.hmc.edu/~geoff/ispell.html) || [ispell](https://www.archlinux.org/packages/?name=ispell)
+
 #### Translation and localization
+
+See also [Wikipedia:Comparison of computer-assisted translation tools](https://en.wikipedia.org/wiki/Comparison_of_computer-assisted_translation_tools "wikipedia:Comparison of computer-assisted translation tools").
 
 *   **[Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium")** — Free and open source rule-based machine translation platform with available language data. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, TMX, MediaWiki and others.
 
@@ -1434,7 +1452,7 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 *   **[Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)")** — Statistical machine translation tool (language data not included).
 
-	[http://statmt.org/moses](http://statmt.org/moses) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/) [mosesdecoder-git](https://aur.archlinux.org/packages/mosesdecoder-git/)
+	[http://statmt.org/moses](http://statmt.org/moses) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/)
 
 *   **[OmegaT](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT")** — General translator's tool which contains a lot of translation memory features and can give suggestions from Google Translate. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, XLIFF/Okapi, MediaWiki, plain text, TMX and others.
 
@@ -1447,6 +1465,18 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 *   **Pology** — Set of Python tools for dealing with gettext/po-files.
 
 	[https://techbase.kde.org/Localization/Tools/Pology](https://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)
+
+*   **[Qt](/index.php/Qt "Qt") Linguist** — Translating Qt C++ and Qt Quick applications into local languages.
+
+	[https://doc.qt.io/qt-5/qtlinguist-index.html](https://doc.qt.io/qt-5/qtlinguist-index.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+
+*   **Translate Shell** — Command-line interface and interactive shell for Google Translate.
+
+	[https://www.soimort.org/translate-shell/](https://www.soimort.org/translate-shell/) || [translate-shell](https://www.archlinux.org/packages/?name=translate-shell)
+
+*   **[Translate Toolkit](https://en.wikipedia.org/wiki/Translate_Toolkit "wikipedia:Translate Toolkit")** — Localization and translation toolkit, which provides a set of tools for working with localization file formats and files that might need localization.
+
+	[https://toolkit.translatehouse.org/](https://toolkit.translatehouse.org/) || [translate-toolkit](https://www.archlinux.org/packages/?name=translate-toolkit)
 
 *   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal and others.
 

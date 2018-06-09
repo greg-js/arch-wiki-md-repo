@@ -41,7 +41,7 @@
 
 ### Input method engines
 
-Fcitx provides built-in input methods for Chinese [Pinyin](https://en.wikipedia.org/wiki/Pinyin "wikipedia:Pinyin") and table-based input (for example [Wubi](https://en.wikipedia.org/wiki/Wubi "wikipedia:Wubi")).
+Fcitx provides built-in input methods for Chinese [Pinyin](https://en.wikipedia.org/wiki/Pinyin "wikipedia:Pinyin") and table-based input (for example [Wubi](https://en.wikipedia.org/wiki/Wubi_method "wikipedia:Wubi method")).
 
 Depending on the language you wish to type, other input method engines are available:
 
@@ -281,5 +281,5 @@ For more details on how you can save your xmodmap changes see [FAQ](http://fcitx
 
 ## See also
 
-*   [Fcitx GitHub](https://github.com/fcitx/fcitx/)
+*   [Fcitx GitLab](https://gitlab.com/fcitx/fcitx)
 *   [Fcitx Wiki](http://fcitx-im.org/)

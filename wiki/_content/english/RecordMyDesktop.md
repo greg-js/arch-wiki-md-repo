@@ -15,7 +15,7 @@ recordMyDesktop is a CLI tool but there are two GUI interfaces available, **gtk-
 
 ## Installation
 
-The packages [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) and [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop) can be found in [community].
+The packages [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) and [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/) can be found in [community].
 
 ## Usage
 

@@ -742,7 +742,7 @@ If your motherboard has multiple USB controllers mapped to multiple groups, it i
 
 Unlike with GPUs, drivers for most USB controllers do not require any specific configuration to work on a VM and control can normally be passed back and forth between the host and guest systems with no side effects.
 
-**Warning:** Make sure your USB controller supports resetting :[#Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+**Warning:** Make sure your USB controller supports resetting: [#Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 
 You can find out which PCI devices correspond to which controller and how various ports and devices are assigned to each one of them using this command :
 
@@ -766,7 +766,7 @@ This laptop has 3 USB ports managed by 2 USB controllers, each with their own IO
 
 Once you have identified which controller manages which ports by plugging various devices into them and decided which one you want to passthrough, simply add it to the list of PCI host devices controlled by the VM in your guest configuration. No other configuration should be needed.
 
-**Note:** If your usb controller does not support resetting, is not in an isolated group, or is otherwise unable to be passed through then it may still be possible to accomplish similar results through udev rules. See [https://github.com/olavmrk/usb-libvirt-hotplug](https://github.com/olavmrk/usb-libvirt-hotplug) which allows any device connected to specified usb ports to be automatically attached to a vm]]
+**Note:** If your USB controller does not support resetting, is not in an isolated group, or is otherwise unable to be passed through then it may still be possible to accomplish similar results through [udev](/index.php/Udev "Udev") rules. See [[1]](https://github.com/olavmrk/usb-libvirt-hotplug) which allows any device connected to specified USB ports to be automatically attached to a virtual machine.
 
 ### Passing VM audio to host via PulseAudio
 
@@ -1161,7 +1161,7 @@ If that does not work make sure your user account is added to the kvm and libvir
 
 ### Host Lockup After VM Shutdown
 
-This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: the host will experience multiple CPU core lockups (see [[1]](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found in [[2]](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/).
+This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: the host will experience multiple CPU core lockups (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found in [[3]](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/).
 
 ## See also
 

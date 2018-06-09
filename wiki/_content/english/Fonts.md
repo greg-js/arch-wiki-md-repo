@@ -540,7 +540,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 A section of the Unicode standard is designated for pictographic characters called "emoji".
 
 *   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts.
-*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style.
+*   [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) - provides many Unicode symbols, including emoji, in outline style.
 *   [ttf-emojione](https://aur.archlinux.org/packages/ttf-emojione/) - Official colorful EmojiOne font.
 *   [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/) - a color and B&W emoji SVGinOT font built from EmojiOne.
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Twitter's open-sourced emoji glyphs.
@@ -552,7 +552,7 @@ A section of the Unicode standard is designated for pictographic characters call
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.
 *   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) and [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) contain many math fonts such as Latin Modern Math and [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project"). See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for configuration.
 *   [otf-stix](https://aur.archlinux.org/packages/otf-stix/) - A standalone, more recent version of STIX
-*   [otf-latin-modern](https://aur.archlinux.org/packages/otf-latin-modern/), [otf-latinmodern-math](https://aur.archlinux.org/packages/otf-latinmodern-math/) - Improved version of Computer Modern fonts as used in LaTeX
+*   [otf-latin-modern](https://www.archlinux.org/packages/?name=otf-latin-modern), [otf-latinmodern-math](https://www.archlinux.org/packages/?name=otf-latinmodern-math) - Improved version of Computer Modern fonts as used in LaTeX
 *   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
 *   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType fonts
 

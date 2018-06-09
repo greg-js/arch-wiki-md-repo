@@ -84,8 +84,8 @@ install CD version
 | [Lenovo ThinkPad P70](/index.php/Lenovo_ThinkPad_P70 "Lenovo ThinkPad P70") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 | Lenovo ThinkPad P51 | Unknown | Yes | Yes | Yes | Yes | Yes | Yes | Yes (No GNSS/GPS) | 
 
-*   Working: SD card, Webcam, Express card, Smartcard reader
-*   Not working: Fingerprint Reader, TPM, Color calibrator, UEFI flash
+*   Working: SD card, Webcam, Express card, Smartcard reader, Fingerprint Reader ([libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/))
+*   Not working: TPM, Color calibrator, UEFI flash
 
  | HDMI audio requires nvhda module |
 

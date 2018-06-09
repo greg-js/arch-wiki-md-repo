@@ -390,7 +390,7 @@ To remove directories believed to be empty, use *rmdir* as it fails if there are
 
 Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-liners examples.
 
-**Tip:** More powerful alternatives are [#awk](#awk) and the [Perl](/index.php/Perl "Perl") language.
+**Tip:** More powerful alternatives are [awk](#awk) and the [Perl](/index.php/Perl "Perl") language.
 
 ## seq
 

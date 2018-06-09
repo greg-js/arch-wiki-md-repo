@@ -201,7 +201,7 @@ $ systemctl --user [option] psd.service
 
 ```
 
-Available options are `start`, `stop`, `enable`, `disable` and `status`.
+Available options are `start`, `stop`,`restart`, `enable`, `disable` and `status`.
 
 ### Supported distros
 

@@ -1,4 +1,4 @@
-[uim](https://en.wikipedia.org/wiki/uim "wikipedia:uim") (universal input method) is a multilingual [input method](/index.php/Input_method "Input method") framework.
+[uim](https://github.com/uim/uim/wiki/WhatsUim) (universal input method) is a multilingual [input method](/index.php/Input_method "Input method") framework.
 
 ## Installation
 
@@ -10,3 +10,4 @@ To set up uim for Japanese input, see [/Japanese](/index.php/Uim/Japanese "Uim/J
 
 *   [GitHub wiki introduction](https://github.com/uim/uim/wiki/WhatsUim)
 *   [Wikibook introduction](https://en.wikibooks.org/wiki/Uim/Introduction "wikibooks:Uim/Introduction")
+*   [Wikipedia:uim](https://en.wikipedia.org/wiki/uim "wikipedia:uim")

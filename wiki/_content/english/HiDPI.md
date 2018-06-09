@@ -464,7 +464,7 @@ Another approach is to run the application full screen and without decoration in
 
 ## Multiple displays
 
-The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large.
+The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large. However, note that setting different scaling factors for different monitors is already supported in [Wayland](/index.php/Wayland "Wayland").
 
 ### Side display
 

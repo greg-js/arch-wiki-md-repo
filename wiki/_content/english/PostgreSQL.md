@@ -65,17 +65,18 @@ See [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) or [su(1)](http
 Before PostgreSQL can function correctly, the database cluster must be initialized:
 
 ```
-[postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
+[postgres]$ initdb -D '/var/lib/postgres/data'
 
 ```
 
-Where:
+Where `-D` is the default location where the database cluster must be stored (see [PostgreSQL#Change default data directory](/index.php/PostgreSQL#Change_default_data_directory "PostgreSQL") if you want to use a different one).
 
-*   the `--locale` is chosen amongst the ones defined in the file `/etc/locale.conf` (plus `POSIX` and `C` that are also accepted);
-*   the `-E` is the default encoding of the databases that will be created in the future (and must match the chosen locale);
-*   and `-D` is the default location where the database cluster must be stored.
+Note that by default, the locale and the encoding for the database cluster are derived from your current environment (using [$LANG](/index.php/Locale#LANG:_default_locale "Locale") value). [[1]](https://www.postgresql.org/docs/current/static/locale.html) However, depending on your settings and use cases this might not be what you want, and you can override the defaults using:
 
-Note that by default, the locale and the encoding are derived from your current environment (so that actually, specifying them is not always necessary). However, depending on your settings and use cases this might not be what you want.
+*   `--locale *locale*`, where *locale* is to be chosen amongst the ones defined in the file `/etc/locale.conf` (plus `POSIX` and `C` that are also accepted);
+*   `-E *enconding*` for the encoding (which must match the chosen locale);
+
+Example: `[postgres]$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'` 
 
 Many lines should now appear on the screen with several ending by `... ok`:
 
@@ -323,7 +324,7 @@ ProtectHome=false
 
 ### Change default encoding of new databases to UTF-8
 
-**Note:** If you ran `initdb` with `-E UTF8` these steps are not required.
+**Note:** If you ran `initdb` with `-E UTF8` or while using an UTF-8 locale, these steps are not required.
 
 When creating a new database (e.g. with `createdb blog`) PostgreSQL actually copies a template database. There are two predefined templates: `template0` is vanilla, while `template1` is meant as an on-site template changeable by the administrator and is used by default. In order to change the encoding of a new database, one of the options is to change on-site `template1`. To do this, log into PostgreSQL shell (`psql`) and execute the following:
 
@@ -453,7 +454,7 @@ Rename the databases cluster directory, and create an empty one:
 # mv /var/lib/postgres/data /var/lib/postgres/olddata
 # mkdir /var/lib/postgres/data /var/lib/postgres/tmp
 # chown postgres:postgres /var/lib/postgres/data /var/lib/postgres/tmp
-[postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
+[postgres]$ initdb -D '/var/lib/postgres/data'
 
 ```
 
@@ -488,7 +489,7 @@ You could also do something like this (after the upgrade and install of [postgre
 # mv /var/lib/postgres/data /var/lib/postgres/olddata
 # mkdir /var/lib/postgres/data
 # chown postgres:postgres /var/lib/postgres/data
-[postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
+[postgres]$ initdb -D '/var/lib/postgres/data'
 [postgres]$ /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ start
 [postgres]$ pg_dumpall -f /tmp/old_backup.sql
 [postgres]$ /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ stop

@@ -817,7 +817,7 @@
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/ru:RecordMyDesktop "wikipedia:ru:RecordMyDesktop")** — Простая в использовании утилита, производящая запись вашего рабочего стола в файлы формата *.ogg*, с интерфейсами CLI, Qt или GTK+
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
 
 *   **simplescreenrecorder** — Программа записи экрана с богатым функционалом, написанная на C++/Qt4 и поддерживающая X11 и OpenGL
 

@@ -749,7 +749,7 @@ Create the shared connection:
 
 *   Click on applet and choose *Create new wireless network*.
 *   Follow wizard (if using WEP, be sure to use 5 or 13 character long password, different lengths will fail).
-    *   Choose either [Hotspot](https://fedoraproject.org/wiki/Features/RealHotspot) or Ad-hoc as Wi-Fi mode.
+    *   Choose either [Hotspot](https://fedoraproject.org/wiki/Features/RealHotspot "fedora:Features/RealHotspot") or Ad-hoc as Wi-Fi mode.
 
 The connection will be saved and remain stored for the next time you need it.
 

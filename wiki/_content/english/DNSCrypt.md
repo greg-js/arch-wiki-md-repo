@@ -55,7 +55,7 @@ server_names = ['cloudflare', 'cloudflare-ipv6']
 
 ```
 
-A full list of resolvers is located at [upstream page](https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md), [Github](https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md), or `/var/cache/dnscrypt-proxy/public-resolvers.md`.bLook at the description for servers note which validate [DNSSEC](/index.php/DNSSEC "DNSSEC"), do not log, and are uncensored. These requirements can be configured globally with the `require_dnssec`, `require_nolog`, `require_nofilter` options.
+A full list of resolvers is located at the [upstream page](https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md) or [Github](https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md). If *dnscrypt-proxy* has run successfully on the system before, `/var/cache/dnscrypt-proxy/public-resolvers.md` will also contain a list. Look at the description for servers note which validate [DNSSEC](/index.php/DNSSEC "DNSSEC"), do not log, and are uncensored. These requirements can be configured globally with the `require_dnssec`, `require_nolog`, `require_nofilter` options.
 
 ### Disable any services bound to port 53
 

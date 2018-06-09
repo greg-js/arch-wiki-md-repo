@@ -3,6 +3,8 @@
 ## Contents
 
 *   [1 Pre-install](#Pre-install)
+    *   [1.1 Redis](#Redis)
+    *   [1.2 haveged (optional)](#haveged_.28optional.29)
 *   [2 Installation](#Installation)
 *   [3 Initial setup](#Initial_setup)
 *   [4 Getting started](#Getting_started)
@@ -11,6 +13,8 @@
 *   [7 See also](#See_also)
 
 ## Pre-install
+
+### Redis
 
 Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed by the [OpenVAS redis configuration](https://github.com/greenbone/openvas-scanner/blob/v5.0.9/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
 
@@ -47,6 +51,10 @@ Finally restart `redis`
 # systemctl restart redis
 
 ```
+
+### haveged (optional)
+
+If running OpenVAS in a virtual machine or any other system having a low entropy install [haveged](https://www.archlinux.org/packages/?name=haveged) to gather more entropy. This is required for e.g. the key material used for the encrypted credentials saved within the `openvas-manager` database.
 
 ## Installation
 

@@ -92,7 +92,7 @@ The [android-tools](https://www.archlinux.org/packages/?name=android-tools) pack
 
 #### Android Emulator
 
-The [Android Emulator](https://developer.android.com/studio/run/emulator) is available as the `emulator` SDK package, the [android-emulator](https://aur.archlinux.org/packages/android-emulator/) package. And there's also a dummmy package for it: [android-emulator-dummy](https://aur.archlinux.org/packages/android-emulator-dummy/).
+The [Android Emulator](https://developer.android.com/studio/run/emulator) is available as the `emulator` SDK package, the [android-emulator](https://aur.archlinux.org/packages/android-emulator/) package. And there's also a dummy package for it: [android-emulator-dummy](https://aur.archlinux.org/packages/android-emulator-dummy/).
 
 To run the Android Emulator you need an Intel or ARM System Image. You can install them through the AUR[[2]](https://aur.archlinux.org/packages/?K=android-+system+image), with the sdkmanager or using Android Studio's [AVD Manager](https://developer.android.com/studio/run/managing-avds).
 

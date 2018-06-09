@@ -67,6 +67,7 @@
         *   [4.28.4 Mouse not working in-game](#Mouse_not_working_in-game)
         *   [4.28.5 Brightness slider not working](#Brightness_slider_not_working)
         *   [4.28.6 Microphone not working](#Microphone_not_working)
+        *   [4.28.7 Mouse is unrensponsive or Moves slowly](#Mouse_is_unrensponsive_or_Moves_slowly)
     *   [4.29 Crusader Kings II](#Crusader_Kings_II)
         *   [4.29.1 No audio](#No_audio)
         *   [4.29.2 Oddly sized starting window](#Oddly_sized_starting_window)
@@ -787,6 +788,12 @@ Also lower the microphone level to 60% otherwise you will get some nasty backgro
 $ pacmd set-source-volume *device_name* 0x6000
 
 ```
+
+#### Mouse is unrensponsive or Moves slowly
+
+Just run the game with vblank_mode=0 %command%
+
+Works with almost any other game.
 
 ### Crusader Kings II
 

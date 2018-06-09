@@ -11,13 +11,13 @@ This article describes how to set up a Japanese language environment. It does no
     *   [1.1 Sans-serif](#Sans-serif)
     *   [1.2 Serif (and Sans-serif)](#Serif_.28and_Sans-serif.29)
 *   [2 Locale](#Locale)
-*   [3 Input method frameworks](#Input_method_frameworks)
-    *   [3.1 Input method engines](#Input_method_engines)
-        *   [3.1.1 Mozc](#Mozc)
-        *   [3.1.2 libkkc](#libkkc)
-        *   [3.1.3 SKK](#SKK)
-        *   [3.1.4 Google CGI API for Japanese input](#Google_CGI_API_for_Japanese_input)
-        *   [3.1.5 Anthy](#Anthy)
+*   [3 Input method engines](#Input_method_engines)
+    *   [3.1 Anthy](#Anthy)
+    *   [3.2 libkkc](#libkkc)
+    *   [3.3 Mozc](#Mozc)
+    *   [3.4 SKK](#SKK)
+    *   [3.5 Google CGI API for Japanese input](#Google_CGI_API_for_Japanese_input)
+*   [4 See also](#See_also)
 
 ## Fonts
 
@@ -51,52 +51,41 @@ If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2chan
 
 You should have `ja_JP.UTF-8` enabled in `/etc/locale.gen`.
 
-## Input method frameworks
+## Input method engines
 
-Input method (IM) frameworks act as frontends to various input methods and libraries, allowing the user to switch between different languages with ease.
+The following [input method](/index.php/Input_method "Input method") (IM) engines are available for Japanese:
 
-You can use the following frameworks:
+| Engine | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | [hime-git](https://aur.archlinux.org/packages/hime-git/) |
+| [anthy](https://www.archlinux.org/packages/?name=anthy) | [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy) | [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) | [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) | optdepends | optdepends | optdepends |
+| [libkkc](https://www.archlinux.org/packages/?name=libkkc) | [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) | [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) | - | - | - | - |
+| [Mozc](/index.php/Mozc "Mozc") | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) | - | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) | - | - |
+| [skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo) | [fcitx-skk](https://www.archlinux.org/packages/?name=fcitx-skk) | [ibus-skk](https://www.archlinux.org/packages/?name=ibus-skk) | - | built-in | - | - |
 
-*   [Fcitx](/index.php/Fcitx "Fcitx")
-*   [IBus](/index.php/IBus "IBus")
-*   [uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")
-*   [Nimf](/index.php/Nimf "Nimf")
+### Anthy
 
-See the articles for details.
+[Anthy](https://en.wikipedia.org/wiki/Anthy "wikipedia:Anthy") can convert Hiragana to Kanji. While Anthy is supported by all IM frameworks, its effectively dead (its last release was 2009).[[1]](https://osdn.net/projects/anthy/)
 
-**Note:** [SCIM](/index.php/SCIM "SCIM") is dead project. You should not use it.
-
-### Input method engines
-
-#### Mozc
-
-*Available IM Frameworks: Fcitx, IBus, uim*
-
-*See [Mozc](/index.php/Mozc "Mozc")*
-
-[Mozc](http://code.google.com/p/mozc/) is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux which originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/).
-
-Custom package [mozc-ut2](https://aur.archlinux.org/packages/mozc-ut2/) comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html). The dictionary adds over 350,000 words into original.
-
-#### libkkc
-
-*Available IM Frameworks: Fcitx, IBus*
+### libkkc
 
 [libkkc](https://bitbucket.org/libkkc/) provides a converter from Japanese Kana-string to Kana-Kanji-mixed-string. It was named after kkc.el in GNU Emacs, a simple Kana Kanji converter, while libkkc tries to convert sentences in a bit more complex way using N-gram language models. It is developed by a Red Hat engineer.
 
 Install [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) (for Fcitx) or [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) (for IBus).
 
-#### SKK
+### Mozc
 
-*Available IM Frameworks: Fcitx, IBus, uim*
+[Mozc](/index.php/Mozc "Mozc") is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux which originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/).
+
+Custom package [mozc-ut2](https://aur.archlinux.org/packages/mozc-ut2/) comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html). The dictionary adds over 350,000 words into original.
+
+### SKK
 
 [SKK](http://openlab.jp/skk/index.html) (Simple Kana to Kanji conversion program) is a Japanese input method on Emacs. It was designed by Dr. Masahiko Sato (Professor Emeritus, Kyoto University) (old link) and created in 1987\. A unique feature of SKK is that it converts words one by one (single-word conversion), without analyzing syntax or grammar.
 
 Install [skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo) and [fcitx-skk](https://www.archlinux.org/packages/?name=fcitx-skk) (for Fcitx) or [ibus-skk](https://www.archlinux.org/packages/?name=ibus-skk) (for IBus). uim supports SKK itself.
 
-#### Google CGI API for Japanese input
+### Google CGI API for Japanese input
 
-*Available IM Framewworks: uim*
+*Available IM frameworks: uim*
 
 [Google CGI API for Japanese Input](http://www.google.co.jp/ime/cgiapi.html) (Google-CGIAPI-Jp) is CGI service to provide Japanese conversion on the Internet by Google. It can be used on [web browser](http://www.google.com/transliterate). Its conversion engine seems to be equivalent to Google Japanese Input, so conversion quality is probably better than Mozc.
 
@@ -104,6 +93,6 @@ Install [skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo) and [fci
 
 You can use it via uim. Choose "Google-CGIAPI-Jp" on uim-im-switcher-gtk/gtk3/qt4 or uim-pref-gtk/gtk3/qt4.
 
-#### Anthy
+## See also
 
-Anthy is a factually dead project.
+*   [Gentoo:How to read and write in Japanese](https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese "gentoo:How to read and write in Japanese")

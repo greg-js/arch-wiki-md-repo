@@ -23,7 +23,7 @@ ADB is part of the Platform-Tools [SDK package](/index.php/Android#SDK_packages 
 
 **Tip:**
 
-*   For some devices, you may have to enable MTP on the device, before ADB will work. Some other devices require enable PTP mode to work.
+*   For some devices, you may have to enable [MTP](/index.php/MTP "MTP") on the device, before ADB will work. Some other devices require enable PTP mode to work.
 *   Many devices' [udev](/index.php/Udev "Udev") rules are included in [libmtp](https://www.archlinux.org/packages/?name=libmtp), so if you have this installed, the following steps may not be necessary.
 *   Make sure your USB cable is capable of both charge and data. Many USB cables bundled with mobile devices do not include the USB data pin.
 
@@ -32,7 +32,7 @@ To connect to a real device or phone via ADB under Arch, you must:
 1.  You might want to install [android-udev](https://www.archlinux.org/packages/?name=android-udev) if you wish to connect the device to the proper `/dev/` entries.
 2.  plug in your android device via USB.
 3.  Enable USB Debugging on your phone or device:
-    *   Jelly Bean (4.2) and newer: Go to *Settings > About Phone* tap *Build Number* 7 times until you get a popup that you have become a developer. Then go to *Settings > Developer > USB debugging* and enable it. The device will ask to allow the computer with its fingerprint to connect. allowing it permanent will copy `$HOME/.android/adbkey.pub` onto the devices `/data/misc/adb/adb_keys` folder.
+    *   Jelly Bean (4.2) and newer: Go to *Settings > About Phone* tap *Build Number* 7 times until you get a popup that you have become a developer. Then go to *Settings > Developer > USB debugging* and enable it. The device will ask to allow the computer with its fingerprint to connect. Allowing it permanent will copy `~/.android/adbkey.pub` onto the devices `/data/misc/adb/adb_keys` folder.
     *   Older versions: This is usually done from *Settings > Applications > Development > USB debugging*. Reboot the phone after checking this option to make sure USB debugging is enabled.
 
 If [ADB recognizes your device](#Detect_the_device) (`adb devices` shows it as `"device" and not as "unauthorized"`, or it is visible and accessible in IDE), you are done. Otherwise see instructions below.

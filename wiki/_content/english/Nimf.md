@@ -25,11 +25,13 @@ Just [Install](/index.php/Install "Install") the [nimf-git](https://aur.archlinu
 
 ### Input method engines
 
-*   nimf-libhangul, for typing Korean hangul, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul) (bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/)).
-*   nimf-sunpinyin, for typing Chinese using Pinyin, based on [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin) (bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/)).
-*   nimf-anthy, for typing Japanese, based on [anthy](https://www.archlinux.org/packages/?name=anthy) (In development. bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/)).
-*   nimf-chewing, for typing Chinese using Zhuyin, based on [libchewing](https://www.archlinux.org/packages/?name=libchewing) (In development. bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/)).
-*   nimf-rime, for typing Chinese, based on [librime](https://www.archlinux.org/packages/?name=librime) (In development. bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/)).
+The following engines are bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/):
+
+*   nimf-libhangul, for typing Korean hangul, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
+*   nimf-sunpinyin, for typing Chinese using Pinyin, based on [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin).
+*   nimf-anthy, for typing Japanese, based on [anthy](https://www.archlinux.org/packages/?name=anthy) (In development).
+*   nimf-chewing, for typing Chinese using Zhuyin, based on [libchewing](https://www.archlinux.org/packages/?name=libchewing) (In development).
+*   nimf-rime, for typing Chinese, based on [librime](https://www.archlinux.org/packages/?name=librime) (In development).
 
 ### Initial setup
 

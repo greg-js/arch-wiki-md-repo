@@ -33,7 +33,7 @@ You should have `ko_KR.UTF-8` enabled in `/etc/locale.gen`. It is recommended th
 
 ### Choose a Korean input method
 
-Input method (IM) frameworks act as frontends to various input methods and libraries, allowing the user to switch between different languages with ease. Frameworks such as [IBus](/index.php/IBus "IBus"), [uim](/index.php/UIM "UIM"), [fcitx](/index.php/Fcitx "Fcitx") and [scim](/index.php/Scim "Scim"), as well as [nabi](https://aur.archlinux.org/packages/nabi/), a stand-alone Korean input method, support Korean input. This section will try to help you choose a suitable IM framework.
+Input method (IM) frameworks act as frontends to various input methods and libraries, allowing the user to switch between different languages with ease. Frameworks such as [IBus](/index.php/IBus "IBus"), [uim](/index.php/Uim "Uim"), [fcitx](/index.php/Fcitx "Fcitx") and [scim](/index.php/Scim "Scim"), as well as [nabi-git](https://aur.archlinux.org/packages/nabi-git/), a stand-alone Korean input method, support Korean input. This section will try to help you choose a suitable IM framework.
 
 **Note:** Check the issues associated with each input method framework before choosing which one to use.
 
@@ -59,7 +59,7 @@ Input method (IM) frameworks act as frontends to various input methods and libra
 
 	nabi
 
-	[nabi](https://aur.archlinux.org/packages/nabi/) is a standalone Korean input method that is being developed by Choehwanjin. Nabi provides many unique features, such as Yethangul support. If you only need to use Korean and English input, you may want to install nabi. Currently, nabi causes an issue with chromium. When you press the spacebar, the preedit string will be placed after the space, causing your input to look like this: `한 글입력 에문제 가있습니다`
+	[nabi-git](https://aur.archlinux.org/packages/nabi-git/) is a standalone Korean input method that is being developed by Choehwanjin. Nabi provides many unique features, such as Yethangul support. If you only need to use Korean and English input, you may want to install nabi. Currently, nabi causes an issue with chromium. When you press the spacebar, the preedit string will be placed after the space, causing your input to look like this: `한 글입력 에문제 가있습니다`
 
 If you have chosen which framework to use, continue with the configuration section.
 

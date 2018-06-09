@@ -10,7 +10,8 @@ Xbindkeys is a program that allows to bind commands to certain keys or key combi
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Volume control](#Volume_control)
-    *   [2.2 GUI method](#GUI_method)
+    *   [2.2 Backlight control](#Backlight_control)
+    *   [2.3 GUI method](#GUI_method)
 *   [3 Identifying keycodes](#Identifying_keycodes)
 *   [4 Making changes permanent](#Making_changes_permanent)
 *   [5 Simulating multimedia keys](#Simulating_multimedia_keys)
@@ -39,19 +40,44 @@ Here is an example configuration file that binds Fn key combos on a laptop to *p
 
 ```
 # Increase volume
-"pactl set-sink-volume 0 +1000"
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
    XF86AudioRaiseVolume
 
 ```
 
 ```
 # Decrease volume
-"pactl set-sink-volume 0 -1000"
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
    XF86AudioLowerVolume
 
 ```
 
+```
+# Mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+```
+
 For alternative commands to control volume, see [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio") or [ALSA#Keyboard volume control](/index.php/ALSA#Keyboard_volume_control "ALSA").
+
+### Backlight control
+
+Keybindings can also be defined in order to control the brightness of the screen.
+
+```
+# Increase backlight
+"xbacklight -inc 10"
+   XF86MonBrightnessUp
+
+```
+
+```
+# Decrease backlight
+"xbacklight -dec 10"
+   XF86MonBrightnessDown
+
+```
 
 ### GUI method
 

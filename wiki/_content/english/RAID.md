@@ -200,7 +200,7 @@ It is highly recommended to partition the disks to be used in the array. Since m
 #### GUID Partition Table
 
 *   After creating the partitions, their [partition type GUIDs](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") should be `A19D880F-05FC-4D3B-A006-743F0F84911E` (it can be assigned by selecting partition type `Linux RAID` in *fdisk* or `FD00` in *gdisk*).
-*   If a larger disk array is employed, consider assigning [fylesystem labels](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") or [partition labels](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") to make it easier to identify an individual disk later.
+*   If a larger disk array is employed, consider assigning [filesystem labels](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") or [partition labels](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") to make it easier to identify an individual disk later.
 *   Creating partitions that are of the same size on each of the devices is recommended.
 
 #### Master Boot Record

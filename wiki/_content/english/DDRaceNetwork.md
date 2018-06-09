@@ -113,9 +113,9 @@ This set of gametypes consists of:
 
 The so-called *vanilla* gametypes are the first ones, and were created in Teeworlds, and which DDNet supports – as well as (almost?) all other mods of Teeworlds. This set of gametypes include:
 
-*   **dm** (**d**eath**m**atch) – The target is to kill as many enemy players as possible, until a certain score is reached or the time runs out.
-*   **tdm** (**t**eam **d**eath**m**atch) – Same as Deathmatch, except that the players now fight in 2 teams and target for a higher, combined kill score.
-*   **ctf** (**c**apture **t**he **f**lag) – Two teams try to capture and score the enemy flag to reach a certain score (combined with team kills), or to have the higher score when the time runs out.
+*   **dm** (**d**eath**m**atch) – The goal is to kill as many other players as possible until a certain kill limit or a time limit is reached. Once one of the conditions is met, the match is over, and the winner is the player that accumulated the greatest number of kills.
+*   **tdm** (**t**eam **d**eath**m**atch) – Same as Deathmatch above, except that the players are organized into two teams, with each team having its own kill count.
+*   **ctf** (**c**apture **t**he **f**lag) – Two teams each have a flag (red for red team and blue for blue team) and the objective is to capture the other team's flag, located at the team's "base," and bring it safely back to their own base until reach a certain score or the time runs out. Kill the enemy to avoid having your flag captured or to get the flag back to your team's base.
 
 #### Blocker gametype
 

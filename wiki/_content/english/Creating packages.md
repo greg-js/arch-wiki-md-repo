@@ -45,6 +45,7 @@ An Arch package is no more than a tar archive, or 'tarball', compressed using xz
 
 *   The binary files to install.
 *   `.PKGINFO`: contains all the metadata needed by pacman to deal with packages, dependencies, etc.
+*   `.BUILDINFO`: contains information needed for reproducible builds. This file is present only if a package is built with pacman 5.1 or newer.
 *   `.MTREE`: contains hashes and timestamps of the files, which are included in the local database so that pacman can verify the integrity of the package.
 *   `.INSTALL`: an optional file used to execute commands after the install/upgrade/remove stage. (This file is present only if specified in the `PKGBUILD`.)
 *   `.Changelog`: an optional file kept by the package maintainer documenting the changes of the package. (It is not present in all packages.)

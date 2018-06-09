@@ -109,7 +109,7 @@ The boot process normally gets stuck at certain point of the boot process and th
 *   You can ssh to that machine
 *   You can perform login and some debugging commands in blind mode, dumping their output into some files in the hard disk for posterior checks.
 
-One workaround is to boot the linux kernel with the nomodeset argument, just to get to the console login; however, so far it has not been possible to launch X through vesa.
+One workaround is to boot the linux kernel with the nomodeset argument. It's possible to launch X with the `xf86-video-fbdev` driver, but the GPU acceleration will not be used.
 
 The other workaround is to boot without the nomodeset argument in the kernel command line, so the amdgpu driver will be loaded into memory. Then, login to root either by ssh or blind mode metehods, and keep unloading/loading the amdgpu module until the screen is unfrozen:
 

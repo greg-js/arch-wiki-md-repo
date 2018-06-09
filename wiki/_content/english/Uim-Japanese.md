@@ -8,23 +8,19 @@ This article explains how to set up [uim](/index.php/Uim "Uim") for Japanese inp
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Japanese fonts](#Japanese_fonts)
-        *   [1.1.1 Sans-serif](#Sans-serif)
-        *   [1.1.2 Serif and Sans-serif](#Serif_and_Sans-serif)
-    *   [1.2 uim](#uim)
-        *   [1.2.1 Using pacman](#Using_pacman)
-        *   [1.2.2 Compiling uim from source using PKGBUILD](#Compiling_uim_from_source_using_PKGBUILD)
-    *   [1.3 Input method](#Input_method)
-        *   [1.3.1 Anthy](#Anthy)
-            *   [1.3.1.1 Extra dictionary](#Extra_dictionary)
-        *   [1.3.2 Modified Anthy (anthy-ut)](#Modified_Anthy_.28anthy-ut.29)
-            *   [1.3.2.1 Compiling modified Anthy using PKGBUILD](#Compiling_modified_Anthy_using_PKGBUILD)
-        *   [1.3.3 Anthy Kaomoji](#Anthy_Kaomoji)
-        *   [1.3.4 Mozc](#Mozc)
-            *   [1.3.4.1 Mozc (Vanilla)](#Mozc_.28Vanilla.29)
-            *   [1.3.4.2 mozc-ut](#mozc-ut)
-            *   [1.3.4.3 Registering Mozc](#Registering_Mozc)
-        *   [1.3.5 Google CGI API for Japanese input](#Google_CGI_API_for_Japanese_input)
+    *   [1.1 uim](#uim)
+        *   [1.1.1 From source](#From_source)
+    *   [1.2 Input method](#Input_method)
+        *   [1.2.1 Anthy](#Anthy)
+            *   [1.2.1.1 Extra dictionary](#Extra_dictionary)
+        *   [1.2.2 Modified Anthy (anthy-ut)](#Modified_Anthy_.28anthy-ut.29)
+            *   [1.2.2.1 Compiling modified Anthy using PKGBUILD](#Compiling_modified_Anthy_using_PKGBUILD)
+        *   [1.2.3 Anthy Kaomoji](#Anthy_Kaomoji)
+        *   [1.2.4 Mozc](#Mozc)
+            *   [1.2.4.1 Mozc (Vanilla)](#Mozc_.28Vanilla.29)
+            *   [1.2.4.2 mozc-ut](#mozc-ut)
+            *   [1.2.4.3 Registering Mozc](#Registering_Mozc)
+        *   [1.2.5 Google CGI API for Japanese input](#Google_CGI_API_for_Japanese_input)
 *   [2 Settings](#Settings)
     *   [2.1 Environment variables](#Environment_variables)
     *   [2.2 Toolbar utilities](#Toolbar_utilities)
@@ -54,44 +50,17 @@ This article explains how to set up [uim](/index.php/Uim "Uim") for Japanese inp
 
 You need the following packages to input Japanese.
 
-*   Japanese fonts
+*   [Japanese fonts](/index.php/Internationalization/Japanese#Fonts "Internationalization/Japanese")
 *   Japanese input method (Kana to Kanji conversion engine)
 *   Input method framework: uim
 
-### Japanese fonts
-
-*see also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail.*
-
-Recommended Japanese fonts are as follows.
-
-#### Sans-serif
-
-*   [adobe-source-han-sans](https://github.com/adobe-fonts/source-han-sans) || [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) or [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts)
-
-	Open-source OTF fonts developed by Adobe.
-
-#### Serif and Sans-serif
-
-*   [IPA fonts](http://ossipedia.ipa.go.jp/ipafont/) || [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont)
-
-	An open source OTF font set including sans-serif (Gothic) and serif (Mincho) glyphs provided by Information-technology Promotion Agency, Japan (IPA).
-
-If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly, use one of the following fonts:
-
-*   ipamona font (AUR: [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/))
-*   Monapo font (AUR: [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/))
-
 ### uim
 
-#### Using pacman
+[Install](/index.php/Install "Install") the [uim](https://www.archlinux.org/packages/?name=uim) package, or [uim-git](https://aur.archlinux.org/packages/uim-git/) for the development version.
 
-[Install](/index.php/Install "Install") [uim](https://www.archlinux.org/packages/?name=uim) from the [official repositories](/index.php/Official_repositories "Official repositories").
+#### From source
 
-**Note:** uim versions before 1.8.0 do not support Qt5\. To use uim in Qt5 applications, install the development version ([uim-git](https://aur.archlinux.org/packages/uim-git/)), or the Debian fork ([uim-debian](https://aur.archlinux.org/packages/uim-debian/)).
-
-#### Compiling uim from source using PKGBUILD
-
-If you want to build uim with your configuration, you can compile from source, using [ABS](/index.php/ABS "ABS") for instance. See [official wiki](http://code.google.com/p/uim/wiki/InstallUim) for all configure options.
+If you want to build uim with your configuration, you can compile from source, using [ABS](/index.php/ABS "ABS") for instance. See [official wiki](https://github.com/uim/uim/wiki/InstallUim) for all configure options.
 
 In Arch official repositories, uim is built with the following custom configuration (as of 1.8.6):
 

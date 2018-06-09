@@ -1,9 +1,12 @@
-[IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus "wikipedia:Intelligent Input Bus") (*Intelligent Input Bus*) is an [input method](/index.php/Input_method "Input method") framework, a system for entering foreign characters.
+[IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus "wikipedia:Intelligent Input Bus") (*Intelligent Input Bus*) is an [input method](/index.php/Input_method "Input method") framework, a system for entering non-Latin characters.
 
 ## Contents
 
 *   [1 Installation](#Installation)
     *   [1.1 Input method engines](#Input_method_engines)
+        *   [1.1.1 Chinese](#Chinese)
+        *   [1.1.2 Japanese](#Japanese)
+        *   [1.1.3 Others](#Others)
     *   [1.2 Initial setup](#Initial_setup)
     *   [1.3 GNOME](#GNOME)
 *   [2 Configuration](#Configuration)
@@ -23,10 +26,11 @@
 *   [5 ibus-m17n](#ibus-m17n)
     *   [5.1 English international AltGr](#English_international_AltGr)
     *   [5.2 Trouble with Japanese](#Trouble_with_Japanese)
+*   [6 See also](#See_also)
 
 ## Installation
 
-Install the [ibus](https://www.archlinux.org/packages/?name=ibus) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [ibus](https://www.archlinux.org/packages/?name=ibus) package.
 
 Additionally, to smooth the typing experience of IBus for Qt applications, please install the [ibus-qt](https://www.archlinux.org/packages/?name=ibus-qt) library with provides IM modules to replace XIM protocol.
 
@@ -34,17 +38,25 @@ Additionally, to smooth the typing experience of IBus for Qt applications, pleas
 
 You will need at least one input method, corresponding to the language you wish to type. Available input methods include:
 
-*   [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) - Japanese IME, based on [anthy](https://www.archlinux.org/packages/?name=anthy).
+#### Chinese
+
 *   ~~[ibus-pinyin](https://www.archlinux.org/packages/?name=ibus-pinyin) - Intelligent Chinese Phonetic IME for Hanyu pinyin and Zhuyin (Bopomofo) users. Designed by IBus main author and has many advance features such as English spell checking.~~ Package currently not maintained and partly broken with latest ibus base. Use [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) instead.
 *   [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) - Powerful and smart input method for a wide range of Chinese input methods, based on the [Rime IME](/index.php/Rime_IME "Rime IME") project.
 *   [ibus-chewing](https://www.archlinux.org/packages/?name=ibus-chewing) - Intelligent Chinese Phonetic IME for Zhuyin (Bopomofo) users, based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
+*   [ibus-cangjie](https://aur.archlinux.org/packages/ibus-cangjie/) - Chinese IME for Cangjie3, Cangjie3, and Quick based on [libcangjie](https://aur.archlinux.org/packages/libcangjie/) and [python-pycangjie](https://aur.archlinux.org/packages/python-pycangjie/).
+
+#### Japanese
+
+*   [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) - Japanese IME, based on [anthy](https://www.archlinux.org/packages/?name=anthy).
+*   [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) - Japanese IME, based on [Mozc](/index.php/Mozc "Mozc").
+*   [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) - Japanese IME, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
+
+#### Others
+
 *   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) - Korean IME, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
 *   [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) - IME for typing Vietnamese characters.
 *   [ibus-table](https://www.archlinux.org/packages/?name=ibus-table) - IME that accommodates table-based IMs.
 *   [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) - M17n IME which allows input of many languages using the input methods from [m17n-db](https://www.archlinux.org/packages/?name=m17n-db).
-*   [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) - Japanese IME, based on [Mozc](/index.php/Mozc "Mozc").
-*   [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) - Japanese IME, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
-*   [ibus-cangjie](https://aur.archlinux.org/packages/ibus-cangjie/) - Chinese IME for Cangjie3, Cangjie3, and Quick based on [libcangjie](https://aur.archlinux.org/packages/libcangjie/) and [python-pycangjie](https://aur.archlinux.org/packages/python-pycangjie/).
 *   [ibus-kmfl](https://aur.archlinux.org/packages/ibus-kmfl/) - Linux port of [Keyman](https://keyman.com/) input method for Windows which supports over 1,000 languages, such as complex scripts, languages of minorities, and IPA symbols. Only part of them is available in KMFL as it can work with uncompiled layout description only (*.kmn files).
 
 To see all available input methods:
@@ -61,7 +73,7 @@ Others packages are also available in the [AUR](/index.php/AUR "AUR").
 Now, run `$ ibus-setup` (as the user who will use IBus). It will start the daemon and give you this message:
 
 ```
-IBus has been started! If you cannot use IBus, please add below lines in `$HOME/.bashrc`, and relogin your desktop.
+IBus has been started! If you cannot use IBus, please add below lines in `~/.bashrc`, and relogin your desktop.
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
@@ -72,12 +84,12 @@ export QT_IM_MODULE=ibus
 
 *   Although IBus uses a daemon, it is not the sort of daemon managed by *systemd*: it runs as an ordinary user and will be started for you when you login.
 *   If, however, IBus is **not** autostarted upon login, then move the “export …” lines above to either
-    *   `$HOME/.xprofile` instead and append this line to the same file: `ibus-daemon -drx`, **or**
-    *   `$HOME/.xinitrc` and append this line to the same file: `ibus-daemon -drx`.
+    *   `~/.xprofile` instead and append this line to the same file: `ibus-daemon -drx`, **or**
+    *   `~/.xinitrc` and append this line to the same file: `ibus-daemon -drx`.
 
 	Which works best, depends on your [Window manager](/index.php/Window_manager "Window manager"), see also [xprofile](/index.php/Xprofile "Xprofile") and [xinitrc](/index.php/Xinitrc "Xinitrc").
 
-*   You can also try adding `ibus-daemon -drx` after the `export ...` lines in `$HOME/.bashrc`.
+*   You can also try adding `ibus-daemon -drx` after the `export ...` lines in `~/.bashrc`.
 
 You will then see a configuration screen; you can access this screen whenever IBus is running by right-clicking the icon in the system tray and choosing *Preferences*. See [Configuration](#Configuration).
 
@@ -275,3 +287,7 @@ If you want to use AltGr as compose key for the english keyboard, choose `Englis
 ### Trouble with Japanese
 
 If you have trouble with Japanese input try to generate the locales with uncommenting `ja_JP.UTF-8 UTF-8` in the `/etc/locale.gen` file and then run `locale-gen`.
+
+## See also
+
+*   [GitHub repository](https://github.com/ibus/ibus)

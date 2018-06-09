@@ -57,7 +57,7 @@ If `speaker-test` produces sound but some other program does not, determine whet
 
 ```
 
-If it is, try using [apulse](https://www.archlinux.org/packages/?name=apulse), as described in [Advanced Linux Sound Architecture#PulseAudio compatibility](/index.php/Advanced_Linux_Sound_Architecture#PulseAudio_compatibility "Advanced Linux Sound Architecture"). Alternatively, killing the PulseAudio process may cause sound to start working in the desired process.
+If it is, try using [apulse](https://aur.archlinux.org/packages/apulse/), as described in [Advanced Linux Sound Architecture#PulseAudio compatibility](/index.php/Advanced_Linux_Sound_Architecture#PulseAudio_compatibility "Advanced Linux Sound Architecture"). Alternatively, killing the PulseAudio process may cause sound to start working in the desired process.
 
 ### Output is muted after reboot
 

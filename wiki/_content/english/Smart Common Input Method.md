@@ -1,32 +1,18 @@
-Related articles
-
-*   [IBus](/index.php/IBus "IBus")
-*   [Fcitx](/index.php/Fcitx "Fcitx")
-*   [UIM](/index.php/UIM "UIM")
-
 [SCIM](https://en.wikipedia.org/wiki/Smart_Common_Input_Method "wikipedia:Smart Common Input Method") is an [input method](/index.php/Input_method "Input method") framework developed by Su Zhe (or James Su) around 2001, similar to [IBus](/index.php/IBus "IBus") or [UIM](/index.php/UIM "UIM").
 
 Its stated goals are to:
 
-*   Act as an unified front-end for current available input method libraries. Currently bindings to [UIM](/index.php/UIM "UIM") and [m17n](http://www.m17n.org/m17n-lib-en/) library are available.
+*   Act as an unified front-end for current available input method libraries. Currently bindings to [uim](/index.php/Uim "Uim") and [m17n](http://www.m17n.org/m17n-lib-en/) library are available.
 *   Act as a language engine of [IIIMF](https://en.wikipedia.org/wiki/Internet/Intranet_Input_Method_Framework "wikipedia:Internet/Intranet Input Method Framework") input method framework.
 *   Provide as many native [IMEngines](http://www.scim-im.org/projects/imengines) as possible.
 *   Support as many input method protocols/interfaces as possible.
 *   Support as many operating systems as possible.
 
-Nowadays, SCIM is also:
-
-*   Highly modularized.
-*   Very flexible in its architecture, it can be used as a dynamically loaded library as well as a C/S input method environment.
-*   Simple from a programming interface perspective.
-*   Fully i18n enabled with support for UCS-4/UTF-8 encoding.
-*   Easy to configure through its unified configuration framework.
-
 ## Contents
 
-*   [1 Installing SCIM](#Installing_SCIM)
-    *   [1.1 Installing Input Method Engines](#Installing_Input_Method_Engines)
-*   [2 Configure SCIM](#Configure_SCIM)
+*   [1 Installation](#Installation)
+    *   [1.1 Input method engines](#Input_method_engines)
+*   [2 Configuration](#Configuration)
     *   [2.1 A simple scenario](#A_simple_scenario)
     *   [2.2 Note for GTK+](#Note_for_GTK.2B)
         *   [2.2.1 Note for GNOME, Xfce, LXDE](#Note_for_GNOME.2C_Xfce.2C_LXDE)
@@ -36,25 +22,26 @@ Nowadays, SCIM is also:
     *   [2.4 Executing SCIM](#Executing_SCIM)
         *   [2.4.1 Note for GNOME](#Note_for_GNOME)
         *   [2.4.2 Note for KDE](#Note_for_KDE)
-*   [3 Bugs](#Bugs)
+*   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 LWJGL (Lightweight Java Game Library) losing keyboard focus](#LWJGL_.28Lightweight_Java_Game_Library.29_losing_keyboard_focus)
     *   [3.2 Chrome/Chromium doesn't take input](#Chrome.2FChromium_doesn.27t_take_input)
-*   [4 Links](#Links)
+*   [4 See also](#See_also)
 
-## Installing SCIM
+## Installation
 
-SCIM can be [installed](/index.php/Pacman "Pacman") with the package [scim](https://www.archlinux.org/packages/?name=scim).
+[Install](/index.php/Install "Install") the [scim](https://www.archlinux.org/packages/?name=scim) package.
 
-### Installing Input Method Engines
+### Input method engines
 
 Currently the SCIM project has a wide range of input methods (some may need other libraries), covering more than 30 languages, including (Simplified/Traditional) Chinese, Japanese, Korean and many European languages. These are some of the examples (more can be found [here](http://www.scim-im.org/projects/imengines)):
 
-*   **Chinese Smart PinYin**: [scim-pinyin](https://www.archlinux.org/packages/?name=scim-pinyin).
-*   **Chinese WuBi or other tables based**: [scim-tables](https://www.archlinux.org/packages/?name=scim-tables).
-*   **Japanese**: [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy).
-*   **Korean**: [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul)
+*   [scim-chewing](https://www.archlinux.org/packages/?name=scim-chewing) - Chinese
+*   [scim-pinyin](https://www.archlinux.org/packages/?name=scim-pinyin) - Chinese Smart PinYin .
+*   [scim-tables](https://www.archlinux.org/packages/?name=scim-tables) - Chinese WuBi or other tables based
+*   [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) - Japanese
+*   [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) - Korean
 
-## Configure SCIM
+## Configuration
 
 Configuring SCIM correctly requires the following three steps:
 
@@ -64,7 +51,7 @@ Configuring SCIM correctly requires the following three steps:
 
 ### A simple scenario
 
-If you just need SCIM to work urgently in any Desktop Environment or Window Manager, put these lines into `/etc/xprofile` or `~/.xprofile` and then reboot:
+If you just need SCIM to work urgently in any [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager"), put these lines into your [xprofile](/index.php/Xprofile "Xprofile") and then reboot:
 
  `~/.xprofile` 
 ```
@@ -72,7 +59,6 @@ export XMODIFIERS=@im=SCIM
 export GTK_IM_MODULE="scim"
 export QT_IM_MODULE="scim"
 scim -d
-
 ```
 
 These lines can be added to other files that are run at startup, such as: `/etc/profile`, `~/.profile`, `~/.xinitrc` or `~/.config/openbox/autostart` (when using [Openbox](/index.php/Openbox "Openbox")).
@@ -185,7 +171,7 @@ In case you use KDE as a desktop environment, the command above does not seem to
 
 ```
 
-## Bugs
+## Troubleshooting
 
 ### LWJGL (Lightweight Java Game Library) losing keyboard focus
 
@@ -201,11 +187,11 @@ export XMODIFIERS=@im=SCIM
 export GTK_IM_MODULE="xim"
 export QT_IM_MODULE="scim"
 scim -d
-
 ```
 
 This is a rather sloppy workaround. Also, even with this workaround, Korean users may find scim unusable with Chrome/Chromium, as the preedit string disappears when the space bar or other modifier keys are pressed at the end of a word.
 
-## Links
+## See also
 
-*   [See the official news page for more details](https://www.archlinux.org/news/166/).
+*   [GitHub repository](https://github.com/scim-im/scim)
+*   [Arch Linux news page from 2005](https://www.archlinux.org/news/166/)

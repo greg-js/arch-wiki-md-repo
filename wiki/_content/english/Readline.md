@@ -49,8 +49,8 @@ In this situation, when typing `ls` and pressing the up arrow key, current input
 You can enable the history search mode by adding the following lines to `/etc/inputrc` or `~/.inputrc`:
 
 ```
-"\e[A":history-search-backward
-"\e[B":history-search-forward
+"\e[A": history-search-backward
+"\e[B": history-search-forward
 
 ```
 
@@ -61,14 +61,14 @@ set editing-mode vi
 $if mode=vi
 set keymap vi-command
 # these are for vi-command mode
-"\e[A":history-search-backward
-"\e[B":history-search-forward
-j:history-search-forward
-k:history-search-backward
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+j: history-search-forward
+k: history-search-backward
 set keymap vi-insert
 # these are for vi-insert mode
-"\e[A":history-search-backward
-"\e[B":history-search-forward
+"\e[A": history-search-backward
+"\e[B": history-search-forward
 $endif
 
 ```
@@ -92,7 +92,7 @@ $ stty -ixon
 or use a different key in `inputrc`. For example, to use `Alt+S` which is not bound by default:
 
 ```
-"\es":forward-search-history
+"\es": forward-search-history
 
 ```
 
@@ -140,14 +140,14 @@ set menu-complete-display-prefix On
 Readline also supports binding keys to keyboard macros. For simple example, run this command in Bash:
 
 ```
-bind '"\ew":"\C-e # macro"'
+bind '"\ew": "\C-e # macro"'
 
 ```
 
 or add the part within single quotes to inputrc:
 
 ```
-"\ew":"\C-e # macro"
+"\ew": "\C-e # macro"
 
 ```
 
@@ -156,35 +156,35 @@ Now type a line and press `Alt`+`W`. Readline will act as though `Ctrl+E` (end-o
 Use any of the existing keybindings within a readline macro, which can be quite useful to automate frequently used idioms. For example, this one makes `Ctrl+Alt+L` append "| less" to the line and run it (`Ctrl+M` is equivalent to `Enter`):
 
 ```
-"\e\C-l":"\C-e | less\C-m"
+"\e\C-l": "\C-e | less\C-m"
 
 ```
 
 The next one prefixes the line with 'yes |' when pressing `Ctrl+Alt+Y`, confirming any yes/no question the command might ask:
 
 ```
-"\e\C-y":"\C-ayes | \C-m"
+"\e\C-y": "\C-ayes | \C-m"
 
 ```
 
 This example wraps the line in `su -c ''`, if `Alt+S` is pressed:
 
 ```
-"\es":"\C-a su -c '\C-e'\C-m"
+"\es": "\C-a su -c '\C-e'\C-m"
 
 ```
 
 This example prefixes the line with `sudo` , if `Alt+S` is pressed. It's safer because it won't input the `Enter` key.
 
 ```
-"\es":"\C-asudo \C-e"
+"\es": "\C-asudo \C-e"
 
 ```
 
 As a last example, quickly send a command in the background with `Ctrl+Alt+B`, discarding all of its output:
 
 ```
-"\e\C-b":"\C-e > /dev/null 2>&1 &\C-m"
+"\e\C-b": "\C-e > /dev/null 2>&1 &\C-m"
 
 ```
 

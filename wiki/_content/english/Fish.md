@@ -39,7 +39,7 @@ Documentation can be found by typing `help` from fish; it will be opened in a we
 
 ## System integration
 
-One must decide whether fish is going to be the default user's shell, which means that the user falls directly in fish at login or whether it is used in interactive terminal mode as a child process of the current default shell, here we will assume the latter is [Bash](/index.php/Bash "Bash"). To elaborate on these two setups:
+One must decide whether fish is going to be the default user's shell, which means that the user falls directly in fish at login, or whether it is used in interactive terminal mode as a child process of the current default shell, here we will assume the latter is [Bash](/index.php/Bash "Bash"). To elaborate on these two setups:
 
 *   fish used as the **default shell**: this mode requires some basic understanding of the fish functioning and its scripting language. The user's current initialization scripts and environment variables need to be migrated to the new fish environment. To configure the system in this mode, follow [#Setting fish as default shell](#Setting_fish_as_default_shell).
 
@@ -136,7 +136,9 @@ Context-aware completions for Arch Linux-specific commands like *pacman*, *pacma
 
 ### Command substitution
 
-*fish* does not implement Bash style history substitution (e.g. `sudo !!`), and the developers recommend to use the interactive history recall interface instead: [#faq-history](http://fishshell.com/docs/current/faq.html#faq-history). However some workarounds are described in the [fish wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-Command-Substitution-and-Chaining-(!!-!$-&&-%7C%7C)). While far from complete history substitution, some functions to have `!!` replaced by the previous command or `!$` replaced by the previous last argument are provided.
+*fish* does not implement Bash style history substitution (e.g. `sudo !!`), and the developers recommend in the [fish faq](http://fishshell.com/docs/current/faq.html#faq-history) to use the interactive history recall interface instead: the `Up` arrow recalls whole past lines and `Alt+Up` recalls individual arguments.
+
+However some workarounds are described in the [fish wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-Command-Substitution-and-Chaining-(!!-!$-&&-%7C%7C)): while not providing complete history substitution, some functions replace `!!` with the previous command or `!$` with the previous last argument.
 
 ### Command chaining
 
@@ -230,13 +232,13 @@ More explanations about the parameters can be found in the [fish-shell git](http
 
 To color the hostname in the prompt dynamically whenever connected through SSH, add the following lines in either the `fish_prompt` function or the fish configuration file, here using the red color:
 
+ `~/.config/fish/functions/fish_prompt.fish` 
 ```
- ...
- if set -q SSH_TTY
-   set -g fish_color_host brred
- end
- ...
-
+...
+if set -q SSH_TTY
+  set -g fish_color_host brred
+end
+...
 ```
 
 ### Evaluate ssh-agent

@@ -27,7 +27,8 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [4.2 Custom drivers](#Custom_drivers_2)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 HP](#HP)
-    *   [5.1 HPLIP Driver](#HPLIP_Driver)
+    *   [5.1 HPLIP](#HPLIP)
+    *   [5.2 foo2zjs](#foo2zjs)
 *   [6 Konica](#Konica)
 *   [7 Lexmark](#Lexmark)
     *   [7.1 Utilities](#Utilities_2)
@@ -82,6 +83,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
 | MFC-9840CDW | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
 | MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
+| MFC-J480DW | [brother-mfc-j480dw](https://aur.archlinux.org/packages/brother-mfc-j480dw/) | Use `ipp://` described below. |
 | MFC-J5520DW | [brother-mfc-j5520dw](https://aur.archlinux.org/packages/brother-mfc-j5520dw/) |
 | MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
 | MFC-J650DW | Install Brother's driver. |
@@ -383,7 +385,7 @@ If you have any problems on a 64 system, some other lib32 libraries may be requi
 
 See also [CUPS/Troubleshooting#HP issues](/index.php/CUPS/Troubleshooting#HP_issues "CUPS/Troubleshooting").
 
-Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip), but some may use [hpoj](https://aur.archlinux.org/packages/hpoj/).
+Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip), but some may use [hpoj](https://aur.archlinux.org/packages/hpoj/). Some laser printers are also supported by [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/).
 
 | Printer | Driver/filter | Notes |
 | DeskJet 710C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
@@ -399,7 +401,7 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/CUPS#Foomatic "CUPS"). |
 | Printer | Driver/filter | Notes |
 
-###### HPLIP Driver
+### HPLIP
 
 **Note:** As of hplip v3.17.11 hpijs is not longer available. If you have printers using hpijs they will fail to print. You must modify them and select the new hpcups driver instead.
 
@@ -450,6 +452,10 @@ If your printer is [listed as requiring a binary plugin](https://developers.hp.c
 
 *   **Either:** Install [hplip](https://www.archlinux.org/packages/?name=hplip) first, then retrieve the PPD file that matches your printer from `/usr/share/ppd/HP/`. Next, remove [hplip](https://www.archlinux.org/packages/?name=hplip) entirely as well as any unnecessary dependencies. Finally, install the printer manually using the CUPS web UI, selecting the PPD file you retrieved, and then re-install [hplip](https://www.archlinux.org/packages/?name=hplip). After a reboot, you should have a fully working printer.
 *   **Or:** Remove [hplip](https://www.archlinux.org/packages/?name=hplip), [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) and [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) along with any unnecessary dependencies. Reinstall [hplip](https://www.archlinux.org/packages/?name=hplip) and restart CUPS. Install your printer using the CUPS web UI, which should now be able to find the drivers automatically. No reboot needed.
+
+### foo2zjs
+
+[foo2zjs](http://foo2zjs.rkkda.com/) supports some HP LaserJet printers. As of June 2018 the hplip package interferes with [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), as described at [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1662809) and [FS#58815](https://bugs.archlinux.org/task/58815).
 
 ## Konica
 

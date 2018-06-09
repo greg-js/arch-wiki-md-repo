@@ -2,7 +2,7 @@ Related articles
 
 *   [Internationalization](/index.php/Internationalization "Internationalization")
 
-This page explains how setup your Arch installation in order to input Indic languages.
+This page explains how setup your Arch installation in order to input [Indic languages](https://en.wikipedia.org/wiki/Indo-Aryan_languages "wikipedia:Indo-Aryan languages").
 
 ## Fonts
 

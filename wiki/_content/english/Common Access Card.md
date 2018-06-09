@@ -7,6 +7,7 @@ This page explains how to setup Arch to use a US Department of Defense [Common A
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Configuration](#Configuration)
 *   [2 Enable pcscd](#Enable_pcscd)
 *   [3 Configure browser](#Configure_browser)
     *   [3.1 Firefox](#Firefox)
@@ -22,6 +23,10 @@ This page explains how to setup Arch to use a US Department of Defense [Common A
 
 Install [ccid](https://www.archlinux.org/packages/?name=ccid) and [opensc](https://www.archlinux.org/packages/?name=opensc) from [official repositories](/index.php/Official_repositories "Official repositories").
 
+### Configuration
+
+**Note:** You should not have to edit your opensc configuration files by default. You should check all other setup items first (e.g. certificate imports)
+
 If your card reader does not have a pin pad, uncomment `enable_pinpad = false` in `/etc/opensc.conf`.
 
 Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle to identify the proper driver for CAC, instead it may choose PIV or something else. You can force the CAC driver by editing `/etc/opensc.conf` for `card_drivers = cac` and `force_card_driver = cac`
@@ -34,7 +39,7 @@ Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle
 
 1\. Go to: [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
 
-2\. Download certs: "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.0" (ZIP Download)
+2\. Download certs: "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.3" (ZIP Download)
 
 3\. Unzip the DoD PKI zip
 
@@ -46,17 +51,25 @@ Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle
 
 Navigate to Edit -> Preference -> Advanced -> Certificates -> Security Devices and click "Load" to load a module using `/usr/lib/opensc-pkcs11.so` or `/usr/lib/pkcs11/opensc-pkcs11.so`.
 
+**Note:** Firefox may report the module did not load correctly however you will have to check in the security devices to confirm whether the module properly loaded or not
+
 #### Import the DoD Certificates
 
 Install the certificates from the mentioned zip in _this_ order, by going to Edit -> Preference -> Advanced -> Certificates -> View Certificates -> Authorities -> Import (make sure to at-least check the box for "Trust this CA to identify websites"):
 
-1\. DoD_Root_CA_2__0x05__DoD_Root_CA_2.cer
+**Note:** As of the 5.3 version of the certificate zip
 
-2\. DoD_Root_CA_2__0x05__DoD_Root_CA_3.cer
+1\. Certificates_PKCS7_v5.3_DoD.der.p7b
 
-3\. DoD_Root_CA_2__0x05__DoD_Root_CA_4.cer
+2\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_2.der.p7b
 
-4\. Certificates_PKCS7_v5.0u1_DoD.der.p7b
+3\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_3.der.p7b
+
+4\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_4.der.p7b
+
+5\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_5.der.p7b
+
+6\. Certificates_PKCS7_v5.3_DoD.pem.p7b
 
 ### Chromium/Google Chrome
 
