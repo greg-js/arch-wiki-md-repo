@@ -100,7 +100,7 @@ Firstly, a kernel is required that has support for **User Namespaces** (a kernel
 
 *   Start your unprivileged containers only as *root*.
 *   Enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5).
-*   Enable the cgfs pam module by modifying `/etc/pamd.d/system-login` to **additionally** contain the following line:
+*   Enable the cgfs pam module by modifying `/etc/pam.d/system-login` to **additionally** contain the following line:
 
 ```
 session optional pam_cgfs.so -c freezer,memory,name=systemd,unified
@@ -482,5 +482,4 @@ The error may happen when you type a basic command (*ls*, *cat*, etc.) on an att
 *   [LXC 1.0 Blog Post Series](https://www.stgraber.org/2013/12/20/lxc-1-0-blog-post-series/)
 *   [LXD 2.0: Blog post series](https://stgraber.org/2016/03/11/lxd-2-0-blog-post-series-012/)
 *   [LXC@developerWorks](http://www.ibm.com/developerworks/linux/library/l-lxc-containers/)
-*   [Docker Installation on ArchLinux](http://docs.docker.io/en/latest/installation/archlinux/)
 *   [LXC articles on l3net](http://l3net.wordpress.com/tag/lxc/)

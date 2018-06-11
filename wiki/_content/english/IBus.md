@@ -104,7 +104,7 @@ In *Interface > Default Input Method*, select *ibus* instead of *xim*.
 
 ### GNOME
 
-GNOME includes IBus by default, so you should only need to install the package specific to your language. To enable input in your language, add it to the *Input Sources* section of the *Region & Language* settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the *next input method* shortcut set in *ibus-setup*.
+[GNOME](/index.php/GNOME "GNOME") integrates with IBus[[1]](https://help.gnome.org/misc/release-notes/3.6/i18n-ibus.html.en), so you should only need to install the package specific to your language. To enable input in your language, add it to the *Input Sources* section of the *Region & Language* settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the *next input method* shortcut set in *ibus-setup*.
 
 ## Configuration
 

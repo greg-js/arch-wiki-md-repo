@@ -396,11 +396,8 @@ Relevant websites:
 
 ##### Pan-CJK
 
-*   adobe source han fonts
-
-Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
-
-*   *   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Sans fonts
+*   adobe source han fonts - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
+    *   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Sans fonts
     *   [adobe-source-han-serif-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-otc-fonts) - Serif fonts
 
 *   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look. It is currently a rebadged version of [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
@@ -418,10 +415,8 @@ Large collection of fonts which comprehensively support Simplified Chinese, Trad
     *   [noto-fonts-tc](https://aur.archlinux.org/packages/noto-fonts-tc/) - Noto CJK-TC fonts for Traditional Chinese
 
 *   wqy fonts
-
-*   *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - WenQuanYi Micro Hei font family (also known as Hei, Gothic or Dotum) is a sans-serif style derived from Droid Sans Fallback, it offers high quality CJK outline font and it is extremely compact (~5M).
-
-*   *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
+    *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - WenQuanYi Micro Hei font family (also known as Hei, Gothic or Dotum) is a sans-serif style derived from Droid Sans Fallback, it offers high quality CJK outline font and it is extremely compact (~5M).
+    *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
     *   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Bitmapped Song Ti (serif) Chinese font.
 
 *   arphic fonts

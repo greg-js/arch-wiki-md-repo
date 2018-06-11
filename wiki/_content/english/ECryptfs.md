@@ -281,18 +281,18 @@ You can also pipe a passphrase into `ecryptfs-add-passphrase -`. Keep in mind th
 
 As an alternative to a plain passphrase, you can use a "wrapped passphrase", where the files are encrypted using a randomly generated key, which is itself encrypted with your passphrase and stored in a file. In this case, you can change your passphrase by unwrapping the key file with your old passphrase and rewrapping it using your new passphrase.
 
-In the following we do a generation similar to the [source](http://bazaar.launchpad.net/~ecryptfs/ecryptfs/trunk/view/head:/src/utils/ecryptfs-setup-private#L96) and then use *ecryptfs-wrap-passphrase* to wrap it with the password ("Arch") to `~/.ecryptfs/wrapped-passphrase`:
+In the following we [prompt](https://stackoverflow.com/a/3980713) for the wrapping passphrase and do a generation similar to the [source](http://bazaar.launchpad.net/~ecryptfs/ecryptfs/trunk/view/head:/src/utils/ecryptfs-setup-private#L96) and then use *ecryptfs-wrap-passphrase* to wrap it with the given password to `~/.ecryptfs/wrapped-passphrase`:
 
 ```
-$ printf "%s
-%s" $(od -x -N 100 --width=30 /dev/random | head -n 1 | sed "s/^0000000//" | sed "s/\s*//g") "Arch" | ecryptfs-wrap-passphrase /home/*username*/.ecryptfs/wrapped-passphrase
+$ ( stty -echo; printf "Passphrase: " 1>&2; read PASSWORD; stty echo; echo $PASSWORD; ) | xargs printf "%s
+%s" $(od -x -N 100 --width=30 /dev/random | head -n 1 | sed "s/^0000000//" | sed "s/\s*//g") | ecryptfs-wrap-passphrase /home/*username*/.ecryptfs/wrapped-passphrase
 
 ```
 
-Next, we can enter our passphrase "Arch" to load the key into the keyring:
+Next, we can enter our passphrase to load the key into the keyring:
 
 ```
-$ printf "%s" "Arch" | ecryptfs-insert-wrapped-passphrase-into-keyring /home/*username*/.ecryptfs/wrapped-passphrase -
+$ ( stty -echo; printf "Passphrase: " 1>&2; read PASSWORD; stty echo; echo $PASSWORD; ) | ecryptfs-insert-wrapped-passphrase-into-keyring /home/*username*/.ecryptfs/wrapped-passphrase -
 Inserted auth tok with sig [7c5d3dd8a1b49db0] into the user session keyring
 
 ```
@@ -371,7 +371,7 @@ To summarize:
 Now, supposed you have created the [wrapped keyphrase](#Manual_setup) above, you need to insert the encryption key once to the root user's keyring:
 
 ```
-# printf "%s" "Arch" | ecryptfs-insert-wrapped-passphrase-into-keyring /home/*username*/.ecryptfs/wrapped-passphrase -
+# ( stty -echo; printf "Passphrase: " 1>&2; read PASSWORD; stty echo; echo $PASSWORD; ) | ecryptfs-insert-wrapped-passphrase-into-keyring /home/*username*/.ecryptfs/wrapped-passphrase -
 Inserted auth tok with sig [7c5d3dd8a1b49db0] into the user session keyring
 
 ```

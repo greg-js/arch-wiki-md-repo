@@ -45,6 +45,7 @@ Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usand
 
 *   Os arquivos binários para serem instalados.
 *   `.PKGINFO`: contém todos os metadados necessários pelo pacman para lidar com pacotes, dependências, etc.
+*   `.BUILDINFO`: contém informações necessárias para compilações reproduzíveis. Esse arquivo está presente somente se um pacote está compilado com pacman 5.1 ou mais recente.
 *   `.MTREE`: contém *hashes* e *timestamps* dos arquivos, que são incluídos na base de dados local de forma que o pacman possa verificar a integridade do pacote.
 *   `.INSTALL`: um arquivo opcional usado para executar comandos após o estágio instalação/atualização/remoção. (Esse arquivo está presente apenas se especificado no `PKGBUILD`.)
 *   `.Changelog`: um arquivo opcional mantido pelo mantenedor do pacote documentando as chances do pacote. (Ele não está presente em todos pacotes.)

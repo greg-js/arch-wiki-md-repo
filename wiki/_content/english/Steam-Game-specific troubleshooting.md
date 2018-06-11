@@ -67,7 +67,7 @@
         *   [4.28.4 Mouse not working in-game](#Mouse_not_working_in-game)
         *   [4.28.5 Brightness slider not working](#Brightness_slider_not_working)
         *   [4.28.6 Microphone not working](#Microphone_not_working)
-        *   [4.28.7 Mouse is unrensponsive or Moves slowly](#Mouse_is_unrensponsive_or_Moves_slowly)
+        *   [4.28.7 Mouse is unrensponsive or moves slowly](#Mouse_is_unrensponsive_or_moves_slowly)
     *   [4.29 Crusader Kings II](#Crusader_Kings_II)
         *   [4.29.1 No audio](#No_audio)
         *   [4.29.2 Oddly sized starting window](#Oddly_sized_starting_window)
@@ -176,8 +176,9 @@
     *   [4.78 Mount & Blade: Warband](#Mount_.26_Blade:_Warband)
         *   [4.78.1 Segmentation fault (core dumped) with wayland](#Segmentation_fault_.28core_dumped.29_with_wayland)
         *   [4.78.2 DLC Chooser](#DLC_Chooser)
+        *   [4.78.3 Crash on startup](#Crash_on_startup)
     *   [4.79 Multiwinia](#Multiwinia)
-        *   [4.79.1 Crash on startup](#Crash_on_startup)
+        *   [4.79.1 Crash on startup](#Crash_on_startup_2)
     *   [4.80 Natural Selection 2](#Natural_Selection_2)
     *   [4.81 Nuclear Throne](#Nuclear_Throne)
         *   [4.81.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
@@ -789,9 +790,14 @@ $ pacmd set-source-volume *device_name* 0x6000
 
 ```
 
-#### Mouse is unrensponsive or Moves slowly
+#### Mouse is unrensponsive or moves slowly
 
-Just run the game with vblank_mode=0 %command%
+Set launch options to:
+
+```
+vblank_mode=0 %command%
+
+```
 
 Works with almost any other game.
 
@@ -1449,6 +1455,15 @@ Use [Xorg](/index.php/Xorg "Xorg") instead.
 
 Requires [lib32-nas](https://aur.archlinux.org/packages/lib32-nas/).
 
+#### Crash on startup
+
+Set launch options to:
+
+```
+LD_LIBRARY_PATH="." %command%
+
+```
+
 ### Multiwinia
 
 Requires [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
@@ -1538,7 +1553,7 @@ When the game starts with a resolution so low that you cannot reach the game set
 
 #### Missing non Latin font
 
-Portal and Portal2 use Helvetica, add the following lines to `~/.config/fontconfig/fonts.conf`:
+The phenomenon is no menu in Portal. Portal and Portal2 use Helvetica, add the following lines to `~/.config/fontconfig/fonts.conf`:
 
 ```
 <match target="pattern">
@@ -1551,6 +1566,8 @@ Portal and Portal2 use Helvetica, add the following lines to `~/.config/fontconf
 </match>
 
 ```
+
+You can replace "Source Han Sans CN" by your favoriate and existing font.
 
 ### Prison Architect
 

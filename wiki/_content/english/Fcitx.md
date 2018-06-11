@@ -14,7 +14,7 @@
     *   [2.2 Non desktop environment](#Non_desktop_environment)
     *   [2.3 Xim](#Xim)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Configuration tools](#Configuration_tools)
+    *   [3.1 GUI configuration tools](#GUI_configuration_tools)
     *   [3.2 Input methods configuration](#Input_methods_configuration)
     *   [3.3 Change default UI](#Change_default_UI)
     *   [3.4 Extend pinyin dictionary](#Extend_pinyin_dictionary)
@@ -83,7 +83,7 @@ Applications below do not use Gtk+/Qt input module:
 *   [fcitx-ui-light](https://www.archlinux.org/packages/?name=fcitx-ui-light), light UI for fcitx.
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra), extra table.
 *   [fcitx-table-other](https://www.archlinux.org/packages/?name=fcitx-table-other), tables for Latex, Emoji and others.
-*   [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), KDE configuration module for fcitx.
+*   [#GUI configuration tools](#GUI_configuration_tools)
 
 Others packages (including git version) are also available in the [AUR](/index.php/AUR "AUR"). All components of fcitx will requires fcitx to restart after install.
 
@@ -136,9 +136,11 @@ QT_IM_MODULE=xim
 
 ## Configuration
 
-### Configuration tools
+### GUI configuration tools
 
-fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) (KDE) or [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (GTK3). Run *fcitx-config-gtk3* after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable an input method for a different language.
+fcitx provides a [KDE](/index.php/KDE "KDE") configuration module ([kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx)) and a GTK3 configuration tool ([fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)).
+
+Run *fcitx-config-gtk3* after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable an input method for a different language.
 
 Stop fcitx manually before changing configuration, or the change may be lost.
 

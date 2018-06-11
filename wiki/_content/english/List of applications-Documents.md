@@ -1060,7 +1060,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **FromScratch** — Simple but smart note-taking application that you can use as a quick note taking or todo app. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://fromscratch.rocks/](https://fromscratch.rocks/) || [fromscratch](https://aur.archlinux.org/packages/fromscratch/)
+	[https://fromscratch.rocks/](https://fromscratch.rocks/) || [fromscratch-bin](https://aur.archlinux.org/packages/fromscratch-bin/)
 
 *   **GNOME Notes** — Note editor for GNOME designed to remain simple to use.
 
@@ -1395,6 +1395,10 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 *   **GoldenDict** — Feature-rich dictionary lookup program.
 
 	[https://wiki.gnome.org/Dictionary](https://wiki.gnome.org/Dictionary) || [goldendict](https://www.archlinux.org/packages/?name=goldendict)
+
+*   **MATE Dictionary** — MATE application to look up words in dictionary sources.
+
+	[https://github.com/mate-desktop/mate-utils](https://github.com/mate-desktop/mate-utils) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
 *   **OpenDict** — Computer dictionary, which supports popular computer dictionary formats including Slowo and Mova. It also acts as a client for DICT servers.
 

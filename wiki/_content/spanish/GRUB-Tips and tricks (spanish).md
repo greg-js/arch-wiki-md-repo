@@ -133,7 +133,7 @@ Desafortunadamente, el archivo `grub.cfg` que se crea no contendrá el UUID apro
 
 ### Generar sólo core.img
 
-Para completar el directorio `/boot/grub` y generar un `/boot/grub/i386-pc/core.img` **sin** incrustar ningún código de sector de inicio GRUB en el MBR, región post-MBR o partición del sector de arranque, agregue `--grub-setup=/bin/true` a `grub-install`:
+Para completar el directorio `/boot/grub` y generar un `/boot/grub/i386-pc/core.img` **sin** incorporar ningún código de sector de inicio GRUB en el MBR, región post-MBR o partición del sector de arranque, agregue `--grub-setup=/bin/true` a `grub-install`:
 
 ```
 # grub-install --target=i386-pc --grub-setup=/bin/true --debug /dev/sda

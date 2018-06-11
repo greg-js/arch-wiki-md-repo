@@ -156,7 +156,7 @@ The following "block device encryption" solutions are available in Arch Linux:
 
 	A portable format, supporting encryption of whole disks/partitions or file containers, with compatibility across all major operating systems. [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") was discontinued by its developers in May 2014\. The VeraCrypt fork was audited in 2016.
 
-For practical implications of the chosen layer of operation, see the [comparison table](#Practical_implications) below, as well as the general write up for [eCryptfs](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare). See [Category:Encryption](/index.php/Category:Encryption "Category:Encryption") for the available content of the methods compared below, as well as other tools not included in the table.
+For practical implications of the chosen layer of operation, see the [comparison table](#Practical_implications) below, as well as the general write up for [eCryptfs](https://www.systutorials.com/docs/linux/packages/ecryptfs-utils-111/ecryptfs-faq.html#compare). See [Category:Encryption](/index.php/Category:Encryption "Category:Encryption") for the available content of the methods compared below, as well as other tools not included in the table.
 
 ### Comparison table
 
@@ -550,7 +550,7 @@ The most basic (and common) mode of operation used in practice is "*cipher-block
           │  ║          ║        ▼         ▼      ┋          ┋         . START
           ┴  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"Hello, W"┋ block  ╱╰────┐
     sector n ║          ║                         ┋          ┋ 1      ╲╭────┘
-  of file or ║          ║──────────────────╮      ┋          ┋         ' 
+   of file or ║          ║──────────────────╮      ┋          ┋         ' 
  blockdevice ╟──────────╢        ╭─key     │      ┠┈┈┈┈┈┈┈┈┈┈┨
           ┬  ║          ║        ▼         ▼      ┋          ┋
           │  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"orld !!!"┋ block

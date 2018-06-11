@@ -55,7 +55,7 @@ Even when AMDGPU support for SI/CIK has been enabled by the kernel, the [radeon]
 
 The following workarounds are available:
 
-*   Set `amdgpu` as first to load in the [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES="amdgpu radeon"`.
+*   Set `amdgpu` as first to load in the [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES=(amdgpu radeon)`.
 *   [Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
 
 Also, since kernel 4.13, adding the `amdgpu.si_support=1 radeon.si_support=0` or `amdgpu.cik_support=1 radeon.cik_support=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") is [required](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1). Otherwise, AMDGPU will not start and you will end up with either radeon being used instead or the display being frozen during the boot.
@@ -100,7 +100,7 @@ If it does not happen, then:
 KMS is typically initialized after the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process"). It is possible, however, to enable KMS during the initramfs stage. To do this, add the `amdgpu` module to the `MODULES` line in `/etc/mkinitcpio.conf`:
 
 ```
-MODULES="... amdgpu ..."
+MODULES=(amdgpu)
 
 ```
 
@@ -115,16 +115,16 @@ The change takes effect at the next reboot.
 
 ## Xorg configuration
 
-Xorg will automatically load the driver and it will use your monitor's EDID to set the native resolution. Configuration is only required for tuning the driver.
+[Xorg](/index.php/Xorg "Xorg") will automatically load the driver and it will use your monitor's EDID to set the native resolution. Configuration is only required for tuning the driver.
 
 If you want manual configuration, create `/etc/X11/xorg.conf.d/20-amdgpu.conf`, and add the following:
 
+ `/etc/X11/xorg.conf.d/20-amdgpu.conf` 
 ```
 Section "Device"
-    Identifier "AMD"
-    Driver "amdgpu"
-EndSection
-
+     Identifier "AMD"
+     Driver "amdgpu"
+ EndSection
 ```
 
 Using this section, you can enable features and tweak the driver settings.

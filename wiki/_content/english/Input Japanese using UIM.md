@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Uim/Japanese](/index.php/Uim/Japanese "Uim/Japanese")
+*   [Input Japanese using uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")

@@ -16,19 +16,18 @@ It is lightweight, highly extensible, and is designed to look similar to uTorren
 *   [3 Web server configuration](#Web_server_configuration)
     *   [3.1 Apache](#Apache)
     *   [3.2 Nginx](#Nginx)
-    *   [3.3 Nginx (manual installation)](#Nginx_.28manual_installation.29)
-    *   [3.4 Lighttpd](#Lighttpd)
-        *   [3.4.1 lighttpd](#lighttpd_2)
-            *   [3.4.1.1 lighttpd.conf](#lighttpd.conf)
-                *   [3.4.1.1.1 Test](#Test)
-            *   [3.4.1.2 php.ini](#php.ini)
-        *   [3.4.2 rutorrent](#rutorrent)
-        *   [3.4.3 Testing](#Testing)
-        *   [3.4.4 Plugins](#Plugins)
-        *   [3.4.5 SSL and authentication](#SSL_and_authentication)
-            *   [3.4.5.1 User authentication](#User_authentication)
-            *   [3.4.5.2 SSL](#SSL)
-        *   [3.4.6 Troubleshooting](#Troubleshooting)
+    *   [3.3 Lighttpd](#Lighttpd)
+        *   [3.3.1 lighttpd](#lighttpd_2)
+            *   [3.3.1.1 lighttpd.conf](#lighttpd.conf)
+                *   [3.3.1.1.1 Test](#Test)
+            *   [3.3.1.2 php.ini](#php.ini)
+        *   [3.3.2 rutorrent](#rutorrent)
+        *   [3.3.3 Testing](#Testing)
+        *   [3.3.4 Plugins](#Plugins)
+        *   [3.3.5 SSL and authentication](#SSL_and_authentication)
+            *   [3.3.5.1 User authentication](#User_authentication)
+            *   [3.3.5.2 SSL](#SSL)
+        *   [3.3.6 Troubleshooting](#Troubleshooting)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -133,95 +132,6 @@ ln -s /usr/share/webapps/rutorrent/ /usr/share/nginx/html/rutorrent
 ```
 
 *   You can now access ruTorrent at [http://127.0.0.1/rutorrent](http://127.0.0.1/rutorrent)
-
-### Nginx (manual installation)
-
-*   Install nginx, php-fpm, rtorrent
-
-*   Download and unpack [rutorrent](https://github.com/Novik/ruTorrent):
-
- `tree -L 2 /usr/share/nginx/html/` 
-```
-/usr/share/nginx/html/
-├── 50x.html
-├── index.html
-└── rutorrent
-    ├── conf
-    ├── css
-    ├── images
-    ├── index.html
-    ├── js
-    ├── lang
-    ├── LICENSE.md
-    ├── php
-    ├── plugins
-    ├── README.md
-    └── share
-
-```
-
-*   Modify premissions:
-
-```
-sudo chmod 0777 /usr/share/nginx/html/rutorrent/share/{settings,torrents,users}
-
-```
-
-*   Make necessary changes to rtorrent and nginx:
-
- `~/.rtorrent.rc` 
-```
-...
-scgi_port = localhost:5000
-
-```
- `/etc/nginx/nginx.conf` 
-```
-worker_processes  1;
-events {
-    worker_connections  1024;
-}
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on;
-    keepalive_timeout  65;
-    server {
-        listen       127.0.0.1;
-        server_name  localhost;
-        root /usr/share/nginx/html;
-        location / {
-            index  index.html index.htm;
-        }
-        location ~ \.php$ {
-            fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-            fastcgi_index  index.php;
-            include        fastcgi.conf;
-        }
-        location /RPC2 {
-            include scgi_params;
-            scgi_pass localhost:5000;
-        }
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   /usr/share/nginx/html;
-        }
-    }
-}
-
-```
-
-**Note:** *open_basedir* is unset by default and does not have to be changed.
-
-*   Start necessary services:
-
-```
-sudo systemctl start php-fpm nginx
-
-```
-
-*   Consider using [rtorrent with tmux](/index.php/RTorrent#Systemd_services_using_tmux_or_screen "RTorrent")
-*   Navigate to [http://localhost/rutorrent/](http://localhost/rutorrent/)
 
 ### Lighttpd
 

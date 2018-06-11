@@ -41,7 +41,7 @@
 | <small>2.10.2.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(6)</small> | <small>2.10.12.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
  <small>2.10.13.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
 | <small>2.11.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small> | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(26)</small> |
-| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small> | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(45)</small> |
+| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small> | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(44)</small> |
  <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(14)</small> |
  <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(20)</small> |
  <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(16)</small> |
@@ -153,7 +153,7 @@
  <small>5.19.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(6)</small> |
 | <small>5.15.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small> | <small>5.20.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
  <small>5.20.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>6.</small> [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)") <small>(8)</small> | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(23)</small> |
+| <small>6.</small> [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)") <small>(8)</small> | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(22)</small> |
 | <small>6.1.</small> [Процесс загрузки](/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot process (Русский)") <small>(27)</small> | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(29)</small> |
 | <small>6.1.1.</small> [Загрузчики](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)") <small>(7)</small> | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
 | <small>6.1.2.</small> [Экран загрузки](/index.php/Category:Bootsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bootsplash (Русский)") <small>(3) (Также в [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)"))</small> | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
@@ -162,7 +162,7 @@
  <small>6.2.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(11)</small> |
  <small>6.2.2.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small> |
  <small>6.2.3.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
- <small>6.3.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(6)</small> |
+ <small>6.3.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(7)</small> |
 | <small>6.2.</small> [Системные службы и сервисы](/index.php/Category:Daemons_and_system_services_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Daemons and system services (Русский)") <small>(7)</small> | <small>6.4.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(14)</small> |
 | <small>6.3.</small> [Окружение рабочего стола (DE)](/index.php/Category:Desktop_environments_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Desktop environments (Русский)") <small>(16)</small> |
 | <small>6.3.1.</small> [Дисплейные менеджеры](/index.php/Category:Display_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Display managers (Русский)") <small>(6)</small> |
@@ -193,7 +193,7 @@
  <small>6.8.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small> |
  <small>6.8.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
  <small>6.8.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(57)</small> |
-| <small>6.8.</small> [Переводы](/index.php/Category:Internationalization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internationalization (Русский)") <small>(1)</small> | <small>6.9.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
+| <small>6.8.</small> [Переводы](/index.php/Category:Internationalization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internationalization (Русский)") <small>(1)</small> | <small>6.9.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(17)</small> |
 | <small>6.9.</small> [Ядро](/index.php/Category:Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Kernel (Русский)") <small>(10)</small> | <small>6.10.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(34)</small> |
  <small>6.11.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(9) (also in [Keyboards](/index.php/Category:Keyboards "Category:Keyboards"))</small> |
  <small>6.12.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(3)</small> |

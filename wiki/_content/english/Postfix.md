@@ -210,7 +210,7 @@ By default, Postfix/sendmail will not send email encrypted to other SMTP servers
 
  `/etc/postfix/main.cf`  `smtp_tls_security_level = may` 
 
-To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`.
+To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`. Note, however, that this violates RFC 2487 if the SMTP server is publicly referenced.
 
 ### Secure SMTP (receiving)
 

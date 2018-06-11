@@ -18,7 +18,6 @@ Basically a DSDT table is the code run on ACPI (Power Management) events.
 *   [3 Using modified code](#Using_modified_code)
     *   [3.1 Using a CPIO archive](#Using_a_CPIO_archive)
     *   [3.2 Compiling into the kernel](#Compiling_into_the_kernel)
-    *   [3.3 Loading at runtime](#Loading_at_runtime)
 *   [4 Verify successful override](#Verify_successful_override)
 *   [5 See also](#See_also)
 
@@ -70,7 +69,7 @@ Arch users with the same laptop as you are: a minority of a minority of a minori
 
 Your best resources in this endeavor are going to be [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](https://01.org/linux-acpi) which supercedes the activity that occurred at *acpi.sourceforge.net*. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile.
 
-You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code, and be familiar with [Kernel Compilation#Compilation](/index.php/Kernel_Compilation#Compilation "Kernel Compilation") to install it.
+You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code.
 
 **What compiled the original code?** Check if your system's DSDT was compiled using Intel or Microsoft compiler:
 
@@ -112,11 +111,10 @@ If it says no errors and no warnings you should be good to go.
 
 **Warning:** After each BIOS update you will need to fix DSDT again and repeat these steps!
 
-There are at least three ways to use a custom DSDT:
+There are at least two ways to use a custom DSDT:
 
 *   creating a CPIO archive that is loaded by the bootloader
 *   compiling it into the kernel
-*   loading it at runtime (not supported)
 
 ### Using a CPIO archive
 
@@ -173,75 +171,6 @@ You'll want to be familiar with [compiling your own kernel](/index.php/Kernels "
 
 *   Disable "Select only drivers that don't need compile-time external firmware". Located in "Device Drivers -> Generic Driver Options".
 *   Enable "Include Custom DSDT" and specify the absolute path of your fixed DSDT file (`dsdt.hex`, not `dsdt.aml`). Located in "Power management and ACPI options -> ACPI (Advanced Configuration and Power Interface) Support".
-
-### Loading at runtime
-
-**Warning:** The mkinitcpio method is no longer supported, since the DSDT hook has been removed, see [[2]](https://bugs.archlinux.org/task/27906).
-
-Luckily the Arch stock kernel supports using a custom DSDT so, first copy the **.aml** file compiled by iasl to:
-
-```
-/boot/dsdt.aml
-
-```
-
-The bootloader will replace the DSDT so we need a method to include our custom DSDT table into the bootloader image. Copy the following to **/etc/grub.d/01_acpi**
-
-```
-#!/bin/sh
-set -e
-
-```
-
-```
-# Uncomment to load custom ACPI table
-GRUB_CUSTOM_ACPI="/boot/dsdt.aml"
-
-# DON'T MODIFY ANYTHING BELOW THIS LINE!
-
-prefix=/usr
-exec_prefix=${prefix}
-libdir=${exec_prefix}/lib
-
-. /usr/share/grub/grub-mkconfig_lib
-#. ${libdir}/grub/grub-mkconfig_lib
-
-# Load custom ACPI table
-if [ x${GRUB_CUSTOM_ACPI} != x ] && [ -f ${GRUB_CUSTOM_ACPI} ] \
-        && is_path_readable_by_grub ${GRUB_CUSTOM_ACPI}; then
-    echo "Found custom ACPI table: ${GRUB_CUSTOM_ACPI}" >&2
-    prepare_grub_to_access_device `${grub_probe} --target=device ${GRUB_CUSTOM_ACPI}` | sed -e "s/^/  /"
-    cat << EOF
-acpi (\$root)`make_system_path_relative_to_its_root ${GRUB_CUSTOM_ACPI}`
-EOF
-fi
-
-```
-
-Make sure to make this file executable, or it will be ignored by **grub-mkconfig**
-
-```
-chmod +x /etc/grub.d/01_acpi
-
-```
-
-This will tell GRUB to include the DSDT into its core.img (change GRUB_CUSTOM_ACPI to reflect the path to your .aml file). Next you will need a new boot image. If you use GRUB run:
-
-```
-grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-Lastly, recreate your initrd
-
-```
-mkinitcpio -p linux
-
-```
-
-and reboot. Done!
-
-To check if you are really using your own DSDT read your table again `# cat /sys/firmware/acpi/tables/DSDT > dsdt.dat` and decompile it with `iasl -d dsdt.dat`
 
 ## Verify successful override
 

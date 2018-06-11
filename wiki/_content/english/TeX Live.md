@@ -43,7 +43,7 @@ The essential package [texlive-core](https://www.archlinux.org/packages/?name=te
 
 ### Manual installation
 
-See the [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live) and [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003). For programs that require TeX Live to be installed (e.g. kile) you can use the [texlive-dummy](https://aur.archlinux.org/packages/texlive-dummy/) package.
+See the [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live) and [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003). For programs that require TeX Live to be installed (e.g. kile) you can use the [texlive-installer](https://aur.archlinux.org/packages/texlive-installer/) package provides the TeX Live installer.
 
 ## Usage
 

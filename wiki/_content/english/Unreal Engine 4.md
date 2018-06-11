@@ -43,9 +43,9 @@ To gain access, login or register at [Epic Games Accounts](https://accounts.epic
 
 ### Clang compatibility
 
-Unreal Engine might not support the latest versions of Clang. Clang 3.8.1 is confirmed to compile Unreal 4.18.3 successfully. Clang 3.5.2 is confirmed to compile Unreal 4.19.2 successfully. **Do not** use Clang 3.4, as it has issues.
+Unreal Engine might not support the latest versions of Clang. Clang 3.8.1 is confirmed to compile Unreal 4.18.3 and 4.19.2 successfully. **Do not** use Clang 3.4, as it has issues.
 
-Install [clang35](https://aur.archlinux.org/packages/clang35/), [clang38](https://aur.archlinux.org/packages/clang38/) or [downgrade](https://aur.archlinux.org/packages/downgrade/) to use an old version of Clang and LLVM.
+Install [downgrade](https://aur.archlinux.org/packages/downgrade/) to use an old version of Clang and LLVM.
 
 ## Compilation
 
@@ -69,10 +69,10 @@ $ ./GenerateProjectFiles.sh
 
 ```
 
-Then run to compile:
+Then compile:
 
 ```
-$ make
+$ make -j1
 
 ```
 

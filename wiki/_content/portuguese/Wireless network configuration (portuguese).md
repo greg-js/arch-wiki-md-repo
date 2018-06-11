@@ -11,83 +11,82 @@ Veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configu
 
 A configuração de rede sem fio *(wireless)* é um processo de duas partes. A primeira parte é identificar e garantir que o driver correto para o seu dispositivo sem fio está instalado (eles estão disponíveis na mídia de instalação, mas geralmente precisam ser instalados explicitamente) e para configurar a interface. A segunda é escolher um método de gerenciamento de conexões sem fio. Este artigo abrange as duas partes e fornece links adicionais para ferramentas de gerenciamento sem fio.
 
-A seção [#Gerenciamento de sem fio](#Gerenciamento_de_sem_fio) descreve como gerenciar manualmente sua rede sem fio / suas LANs sem fio. O artigo [Network manager](/index.php/Network_manager "Network manager") descreve vários programas que podem ser usados para gerenciar automaticamente sua interface sem fio, algumas das quais incluem uma GUI e todas que incluem suporte a perfis de rede (útil quando estiver mudando de redes sem fio, como com laptops).
+A seção [#iw](#iw) descreve como gerenciar manualmente sua interface de rede sem fio / suas LANs sem fio usando [iw](https://www.archlinux.org/packages/?name=iw). A seção [Configuração de rede#Gerenciadores de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Gerenciadores_de_rede "Configuração de rede") descreve vários programas que podem ser usados para gerenciar automaticamente sua interface sem fio, alguns dos quais incluem uma GUI e todos incluem suporte a perfis de rede (útil ao alternar frequentemente de redes sem fio, como laptops).
 
 ## Contents
 
 *   [1 Driver de dispositivo](#Driver_de_dispositivo)
     *   [1.1 Verificar o status de driver](#Verificar_o_status_de_driver)
     *   [1.2 Instalar driver/firmware](#Instalar_driver.2Ffirmware)
-*   [2 Gerenciamento de sem fio](#Gerenciamento_de_sem_fio)
-    *   [2.1 Obter o nome da interface](#Obter_o_nome_da_interface)
-    *   [2.2 Obter o status da interface](#Obter_o_status_da_interface)
-    *   [2.3 Ativar a interface](#Ativar_a_interface)
-    *   [2.4 Descobrir pontos de acesso](#Descobrir_pontos_de_acesso)
-    *   [2.5 Definir o modo de operação](#Definir_o_modo_de_opera.C3.A7.C3.A3o)
-    *   [2.6 Conectar a um ponto de acesso](#Conectar_a_um_ponto_de_acesso)
-    *   [2.7 Obter um endereço IP](#Obter_um_endere.C3.A7o_IP)
-        *   [2.7.1 Exemplo](#Exemplo)
-*   [3 WPA2 Empresarial](#WPA2_Empresarial)
-    *   [3.1 eduroam](#eduroam)
-    *   [3.2 Configuração manual/automática](#Configura.C3.A7.C3.A3o_manual.2Fautom.C3.A1tica)
-        *   [3.2.1 wpa_supplicant](#wpa_supplicant)
-        *   [3.2.2 NetworkManager](#NetworkManager)
-        *   [3.2.3 connman](#connman)
-        *   [3.2.4 netctl](#netctl)
-    *   [3.3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-        *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
-*   [4 Dicas e truques](#Dicas_e_truques)
-    *   [4.1 Respeitar o domínio regulatório](#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio)
-    *   [4.2 Comparação entre iw e wireless_tools](#Compara.C3.A7.C3.A3o_entre_iw_e_wireless_tools)
-*   [5 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas_2)
-    *   [5.1 Acesso temporário à internet](#Acesso_tempor.C3.A1rio_.C3.A0_internet)
-    *   [5.2 Problemas com rfkill](#Problemas_com_rfkill)
-    *   [5.3 Observando os logs](#Observando_os_logs)
-    *   [5.4 Economia de energia](#Economia_de_energia)
-    *   [5.5 Falha ao obter endereço IP](#Falha_ao_obter_endere.C3.A7o_IP)
-    *   [5.6 Endereço IP válido, mas não consegue resolver host](#Endere.C3.A7o_IP_v.C3.A1lido.2C_mas_n.C3.A3o_consegue_resolver_host)
-    *   [5.7 Definindo limites de RTS e de fragmentação](#Definindo_limites_de_RTS_e_de_fragmenta.C3.A7.C3.A3o)
-    *   [5.8 Desconexões aleatórias](#Desconex.C3.B5es_aleat.C3.B3rias)
-        *   [5.8.1 Causa nº.1](#Causa_n.C2.BA.1)
-        *   [5.8.2 Causa nº.2](#Causa_n.C2.BA.2)
-        *   [5.8.3 Causa nº.3](#Causa_n.C2.BA.3)
-        *   [5.8.4 Causa nº.4](#Causa_n.C2.BA.4)
-    *   [5.9 Redes Wi-Fi invisíveis por causa do domínio regulatório incorreto](#Redes_Wi-Fi_invis.C3.ADveis_por_causa_do_dom.C3.ADnio_regulat.C3.B3rio_incorreto)
-*   [6 Solução de problemas de drivers e firmware](#Solu.C3.A7.C3.A3o_de_problemas_de_drivers_e_firmware)
-    *   [6.1 Ralink/Mediatek](#Ralink.2FMediatek)
-        *   [6.1.1 rt2x00](#rt2x00)
-        *   [6.1.2 rt3090](#rt3090)
-        *   [6.1.3 rt3290](#rt3290)
-        *   [6.1.4 rt3573](#rt3573)
-        *   [6.1.5 rt5572](#rt5572)
-        *   [6.1.6 mt7612u](#mt7612u)
-    *   [6.2 Realtek](#Realtek)
-        *   [6.2.1 rtl8192cu](#rtl8192cu)
-        *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [6.2.3 rtl88xxau](#rtl88xxau)
-        *   [6.2.4 rtl8822bu](#rtl8822bu)
-        *   [6.2.5 rtl8xxxu](#rtl8xxxu)
-    *   [6.3 Atheros](#Atheros)
-        *   [6.3.1 ath5k](#ath5k)
-        *   [6.3.2 ath9k](#ath9k)
-            *   [6.3.2.1 Economia de energia](#Economia_de_energia_2)
-    *   [6.4 Intel](#Intel)
-        *   [6.4.1 ipw2100 e ipw2200](#ipw2100_e_ipw2200)
-        *   [6.4.2 iwlegacy](#iwlegacy)
-        *   [6.4.3 iwlwifi](#iwlwifi)
-            *   [6.4.3.1 Coexistência com Bluetooth](#Coexist.C3.AAncia_com_Bluetooth)
-        *   [6.4.4 Desabilitar piscada de LED](#Desabilitar_piscada_de_LED)
-    *   [6.5 Broadcom](#Broadcom)
-    *   [6.6 Outros drivers/dispositivos](#Outros_drivers.2Fdispositivos)
-        *   [6.6.1 Tenda w322u](#Tenda_w322u)
-        *   [6.6.2 orinoco](#orinoco)
-        *   [6.6.3 prism54](#prism54)
-        *   [6.6.4 ACX100/111](#ACX100.2F111)
-        *   [6.6.5 zd1211rw](#zd1211rw)
-        *   [6.6.6 hostap_cs](#hostap_cs)
-    *   [6.7 ndiswrapper](#ndiswrapper)
-    *   [6.8 backports-patched](#backports-patched)
-*   [7 Veja também](#Veja_tamb.C3.A9m)
+*   [2 Utilitários](#Utilit.C3.A1rios)
+    *   [2.1 Comparação entre iw e wireless_tools](#Compara.C3.A7.C3.A3o_entre_iw_e_wireless_tools)
+*   [3 iw](#iw)
+    *   [3.1 Obter o nome da interface](#Obter_o_nome_da_interface)
+    *   [3.2 Obter o status da interface](#Obter_o_status_da_interface)
+    *   [3.3 Ativar a interface](#Ativar_a_interface)
+    *   [3.4 Descobrir pontos de acesso](#Descobrir_pontos_de_acesso)
+    *   [3.5 Definir o modo de operação](#Definir_o_modo_de_opera.C3.A7.C3.A3o)
+    *   [3.6 Conectar a um ponto de acesso](#Conectar_a_um_ponto_de_acesso)
+*   [4 WPA2 Empresarial](#WPA2_Empresarial)
+    *   [4.1 eduroam](#eduroam)
+    *   [4.2 Configuração manual/automática](#Configura.C3.A7.C3.A3o_manual.2Fautom.C3.A1tica)
+        *   [4.2.1 wpa_supplicant](#wpa_supplicant)
+        *   [4.2.2 NetworkManager](#NetworkManager)
+        *   [4.2.3 connman](#connman)
+        *   [4.2.4 netctl](#netctl)
+    *   [4.3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+        *   [4.3.1 MS-CHAPv2](#MS-CHAPv2)
+*   [5 Dicas e truques](#Dicas_e_truques)
+    *   [5.1 Respeitar o domínio regulatório](#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio)
+*   [6 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas_2)
+    *   [6.1 Acesso temporário à internet](#Acesso_tempor.C3.A1rio_.C3.A0_internet)
+    *   [6.2 Problemas com rfkill](#Problemas_com_rfkill)
+    *   [6.3 Observando os logs](#Observando_os_logs)
+    *   [6.4 Economia de energia](#Economia_de_energia)
+    *   [6.5 Falha ao obter endereço IP](#Falha_ao_obter_endere.C3.A7o_IP)
+    *   [6.6 Endereço IP válido, mas não consegue resolver host](#Endere.C3.A7o_IP_v.C3.A1lido.2C_mas_n.C3.A3o_consegue_resolver_host)
+    *   [6.7 Definindo limites de RTS e de fragmentação](#Definindo_limites_de_RTS_e_de_fragmenta.C3.A7.C3.A3o)
+    *   [6.8 Desconexões aleatórias](#Desconex.C3.B5es_aleat.C3.B3rias)
+        *   [6.8.1 Causa nº.1](#Causa_n.C2.BA.1)
+        *   [6.8.2 Causa nº.2](#Causa_n.C2.BA.2)
+        *   [6.8.3 Causa nº.3](#Causa_n.C2.BA.3)
+        *   [6.8.4 Causa nº.4](#Causa_n.C2.BA.4)
+    *   [6.9 Redes Wi-Fi invisíveis por causa do domínio regulatório incorreto](#Redes_Wi-Fi_invis.C3.ADveis_por_causa_do_dom.C3.ADnio_regulat.C3.B3rio_incorreto)
+*   [7 Solução de problemas de drivers e firmware](#Solu.C3.A7.C3.A3o_de_problemas_de_drivers_e_firmware)
+    *   [7.1 Ralink/Mediatek](#Ralink.2FMediatek)
+        *   [7.1.1 rt2x00](#rt2x00)
+        *   [7.1.2 rt3090](#rt3090)
+        *   [7.1.3 rt3290](#rt3290)
+        *   [7.1.4 rt3573](#rt3573)
+        *   [7.1.5 rt5572](#rt5572)
+        *   [7.1.6 mt7612u](#mt7612u)
+    *   [7.2 Realtek](#Realtek)
+        *   [7.2.1 rtl8192cu](#rtl8192cu)
+        *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [7.2.3 rtl88xxau](#rtl88xxau)
+        *   [7.2.4 rtl8822bu](#rtl8822bu)
+        *   [7.2.5 rtl8xxxu](#rtl8xxxu)
+    *   [7.3 Atheros](#Atheros)
+        *   [7.3.1 ath5k](#ath5k)
+        *   [7.3.2 ath9k](#ath9k)
+            *   [7.3.2.1 Economia de energia](#Economia_de_energia_2)
+    *   [7.4 Intel](#Intel)
+        *   [7.4.1 ipw2100 e ipw2200](#ipw2100_e_ipw2200)
+        *   [7.4.2 iwlegacy](#iwlegacy)
+        *   [7.4.3 iwlwifi](#iwlwifi)
+            *   [7.4.3.1 Coexistência com Bluetooth](#Coexist.C3.AAncia_com_Bluetooth)
+        *   [7.4.4 Desabilitar piscada de LED](#Desabilitar_piscada_de_LED)
+    *   [7.5 Broadcom](#Broadcom)
+    *   [7.6 Outros drivers/dispositivos](#Outros_drivers.2Fdispositivos)
+        *   [7.6.1 Tenda w322u](#Tenda_w322u)
+        *   [7.6.2 orinoco](#orinoco)
+        *   [7.6.3 prism54](#prism54)
+        *   [7.6.4 ACX100/111](#ACX100.2F111)
+        *   [7.6.5 zd1211rw](#zd1211rw)
+        *   [7.6.6 hostap_cs](#hostap_cs)
+    *   [7.7 ndiswrapper](#ndiswrapper)
+    *   [7.8 backports-patched](#backports-patched)
+*   [8 Veja também](#Veja_tamb.C3.A9m)
 
 ## Driver de dispositivo
 
@@ -96,8 +95,6 @@ O kernel padrão do Arch Linux é *modular*, o que significa que muitos dos driv
 Alguns chipsets sem fio também exigem firmware, além de um driver correspondente. Muitas imagens de firmware são fornecidas pelo pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que é instalado por padrão, no entanto, as imagens de firmware proprietárias não são incluídas e devem ser instaladas separadamente. Isso é descrito em [#Instalar driver/firmware](#Instalar_driver.2Ffirmware).
 
 **Nota:** Se o módulo apropriado não for carregado pelo udev na inicialização, basta [carregá-lo manualmente](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Se o udev carrega mais de um driver para um dispositivo, o conflito resultante pode impedir a configuração seja bem-sucedida. Certifique-se de [colocar na lista negra](/index.php/Blacklist "Blacklist") o módulo indesejado.
-
-**Dica:** Embora não seja estritamente necessário, é uma boa ideia instalar primeiro as ferramentas de espaço do usuário mencionadas em [#Configuração manual](#Configura.C3.A7.C3.A3o_manual), especialmente quando algum problema surgir.
 
 ### Verificar o status de driver
 
@@ -114,7 +111,7 @@ Para verificar se o driver da placa foi carregado, verifique a saída do comando
 
 **Nota:** Se a placa for um dispositivo USB, a execução `dmesg | grep usbcore` deve retornar algo como `usbcore: registered new interface driver rtl8187` como saída.
 
-Verifique também a saída do comando `ip link` para ver se uma interface sem fio ([geralmente](/index.php/Configura%C3%A7%C3%A3o_de_rede#Interface_de_rede "Configuração de rede") começa com a letra "w", por exemplo, `wlp2s1`) foi criada. Em seguida, ative a interface com `ip link set *interface* up`. Por exemplo, supondo que a interface seja `wlan0`:
+Verifique também a saída do comando `ip link` para ver se uma interface sem fio ([geralmente](/index.php/Configura%C3%A7%C3%A3o_de_rede#Interfaces_de_rede "Configuração de rede") começa com a letra "w", por exemplo, `wlp2s1`) foi criada. Em seguida, ative a interface com `ip link set *interface* up`. Por exemplo, supondo que a interface seja `wlan0`:
 
 ```
 # ip link set wlan0 up
@@ -159,7 +156,35 @@ Se a sua placa sem fio estiver listada acima, siga a subseção desta página [#
 
 Se sua placa sem fio não estiver listada acima, provavelmente só há suporte no Windows (algumas Broadcom, 3com etc). Para essas, você pode tentar usar o [#ndiswrapper](#ndiswrapper).
 
-## Gerenciamento de sem fio
+## Utilitários
+
+Assim como outras interfaces de rede, as sem fio são controladas com *ip* do pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2).
+
+Gerenciar uma conexão sem fio requer um conjunto básico de ferramentas. Use um [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") ou use um dos seguintes diretamente:
+
+| Software | Pacote | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | Nota |
+| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Sim | Não | Sim | Não | obsoleto |
+| [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | Não | Sim | Sim | Não |
+| [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Sim | Sim | Sim | Sim |
+| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | Não | Sim | Sim | Sim |
+
+Note que algumas placas só oferece suporte a WEXT.
+
+### Comparação entre iw e wireless_tools
+
+A tabela abaixo fornece uma visão geral dos comandos comparáveis para *iw* e *wireless_tools*. Veja [iw substitui o iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) para mais exemplos.
+
+| comando *iw* | comando *wireless_tools* | Descrição |
+| iw dev *wlan0* link | iwconfig *wlan0* | Obtendo status do link. |
+| iw dev *wlan0* scan | iwlist *wlan0* scan | Buscando pontos de acesso disponíveis. |
+| iw dev *wlan0* set type ibss | iwconfig *wlan0* mode ad-hoc | Definindo o modo de operação para *ad-hoc*. |
+| iw dev *wlan0* connect *seu_essid* | iwconfig *wlan0* essid *seu_essid* | Conectando a rede aberta. |
+| iw dev *wlan0* connect *seu_essid* 2432 | iwconfig *wlan0* essid *seu_essid* freq 2432M | Conectando a rede aberta especificando um canal. |
+| iw dev *wlan0* connect *seu_essid* key 0:*sua_chave* | iwconfig *wlan0* essid *seu_essid* key *sua_chave* | Conectando a rede criptografada por WEP usando a chave hexadecimal. |
+| iwconfig *wlan0* essid *seu_essid* key s:*sua_chave* | Connecting to WEP encrypted network using ASCII key. |
+| iw dev *wlan0* set power_save on | iwconfig *wlan0* power on | Habilitando economia de energia. |
+
+## iw
 
 Assim como outras interfaces de rede, as sem fio são controladas com *ip* do pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
@@ -285,50 +310,11 @@ Dependendo da criptografia, você precisa associar seu dispositivo sem fio ao po
 *   **WEP**
     *   usando uma chave hexadecimal ou ASCII (o formato é diferenciado automaticamente porque uma chave WEP tem um tamanho fixo): `# iw dev *interface* connect "*seu_essid*" key 0:*sua_chave*` 
     *   usando uma chave hexadecimal ou ASCII, especificando a terceira chave de configuração como padrão (as chaves são contadas a partir de zero, quatro são possíveis): `# iw dev *interface* connect "*sua_essid*" key d:2:*sua_chave*` 
-*   **WPA/WPA2** - Veja [WPA supplicant#Connecting with wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant").
 
 Independentemente do método usado, você pode verificar se você conseguiu se associar com sucesso:
 
 ```
 # iw dev *interface* link
-
-```
-
-### Obter um endereço IP
-
-Siga as instruções em [Configuração de rede#Atribuição manual](/index.php/Configura%C3%A7%C3%A3o_de_rede#Atribui.C3.A7.C3.A3o_manual "Configuração de rede") para mais informações nos exemplos a seguir.
-
-#### Exemplo
-
-Aqui está um exemplo completo de configuração de uma rede sem fio com o suplicante WPA e o DHCP.
-
-```
-# ip link set dev wlan0 up
-# wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-# dhcpcd wlan0
-
-```
-
-E então, para fechar a conexão, você pode simplesmente desabilitar a interface:
-
-```
-# ip link set dev wlan0 down
-
-```
-
-Para um IP estático, você substituiria a chamada *dhcpcd* por
-
-```
-# ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlan0
-# ip route add default via 192.168.0.1
-
-```
-
-E antes de desabilitar a interface, você deve primeiro liberar o endereço IP e o gateway:
-
-```
-# ip addr flush dev wlan0
-# ip route flush dev wlan0
 
 ```
 
@@ -365,7 +351,7 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 #### NetworkManager
 
-[NetworkManager (Português)](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") pode gerar perfis de WPA2 Empresarial com [frontends gráficos](/index.php/NetworkManager_(Portugu%C3%AAs)#Front-ends "NetworkManager (Português)"). *nmcli* e *nmtui* não oferecem suporte a isso, mas podem usar perfis existentes.
+[NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") pode gerar perfis de WPA2 Empresarial com [frontends gráficos](/index.php/NetworkManager_(Portugu%C3%AAs)#Front-ends "NetworkManager (Português)"). *nmcli* e *nmtui* não oferecem suporte a isso, mas podem usar perfis existentes.
 
 #### connman
 
@@ -389,88 +375,74 @@ As redes sem fio WPA2 Empresarial que exigem autenticação tipo 2 de MSCHAPv2 c
 
 ### Respeitar o domínio regulatório
 
-The [regulatory domain](https://en.wikipedia.org/wiki/IEEE_802.11#Regulatory_domains_and_legal_compliance "wikipedia:IEEE 802.11"), or "regdomain", is used to reconfigure wireless drivers to make sure that wireless hardware usage complies with local laws set by the FCC, ETSI and other organizations. Regdomains use [ISO 3166-1 alpha-2 country codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 "wikipedia:ISO 3166-1 alpha-2"). For example, the regdomain of the United States would be "US", China would be "CN", etc.
+O [domínio regulatório](https://en.wikipedia.org/wiki/IEEE_802.11#Regulatory_domains_and_legal_compliance "wikipedia:IEEE 802.11"), conhecidos como *"regdomain"*, é usado para reconfigurar os drivers sem fio para garantir que o uso de tal hardware esteja em conformidade com as leis locais estabelecidas pela FCC, ETSI e outras organizações. Os *regdomain* usam [códigos de país ISO 3166-1 alfa-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 "wikipedia:ISO 3166-1 alpha-2"). Por exemplo, o *regdomain* dos Estados Unidos seria "US", a China seria "CN", do Brasil seria "BR", etc.
 
-Regdomains affect the availability of wireless channels. In the 2.4GHz band, the allowed channels are 1-11 for the US, 1-14 for Japan, and 1-13 for most of the rest of the world. In the 5GHz band, the rules for allowed channels are much more complex. In either case, consult [this list of WLAN channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels "wikipedia:List of WLAN channels") for more detailed information.
+Os *regdomains* afetam a disponibilidade de canais sem fio. Na banda de 2,4 GHz, os canais permitidos são 1-11 para os EUA, 1-14 para o Japão e 1-13 para a maior parte do resto do mundo. Na banda de 5GHz, as regras para os canais permitidos são muito mais complexas. Em ambos os casos, consulte [esta lista de canais WLAN](https://en.wikipedia.org/wiki/List_of_WLAN_channels "wikipedia:List of WLAN channels") para obter informações mais detalhadas.
 
-Regdomains also affect the limit on the [effective isotropic radiated power (EIRP)](https://en.wikipedia.org/wiki/Equivalent_isotropically_radiated_power "wikipedia:Equivalent isotropically radiated power") from wireless devices. This is derived from transmit power/"tx power", and is measured in [dBm/mBm (1dBm=100mBm) or mW (log scale)](https://en.wikipedia.org/wiki/DBm "wikipedia:DBm"). In the 2.4GHz band, the maximum is 30dBm in the US and Canada, 20dBm in most of Europe, and 20dB-30dBm for the rest of the world. In the 5GHz band, maximums are usually lower. Consult the [wireless-regdb](http://git.kernel.org/cgit/linux/kernel/git/linville/wireless-regdb.git/tree/db.txt) for more detailed information (EIRP dBm values are in the second set of brackets for each line).
+Os *regdomains* também afetam o limite da [Potência Isotrópica Radiada Equivalente (EIRP)](https://en.wikipedia.org/wiki/Equivalent_isotropically_radiated_power "wikipedia:Equivalent isotropically radiated power") (do inglês, *Effective Isotropic Radiated Power*) de dispositivos sem fio. Isso é derivado da potência de transmissão/"tx power" e é medido em [dBm/mBm (1dBm=100mBm) ou mW (escala de log)](https://en.wikipedia.org/wiki/pt:DBm "wikipedia:pt:DBm"). Na faixa de 2,4 GHz, o máximo é 30dBm nos EUA e Canadá, 20dBm na maior parte da Europa e 20dB-30dBm no resto do mundo. Na banda de 5GHz, os máximos são geralmente mais baixos. Consulte o [wireless-regdb](http://git.kernel.org/cgit/linux/kernel/git/linville/wireless-regdb.git/tree/db.txt) para informações mais detalhadas (os valores dBm de EIRP estão no segundo conjunto de colchetes para cada linha).
 
-Misconfiguring the regdomain can be useful - for example, by allowing use of an unused channel when other channels are crowded, or by allowing an increase in tx power to widen transmitter range. However, **this is not recommended** as it could break local laws and cause interference with other radio devices.
+A configuração incorreta do *regdomain* pode ser útil - por exemplo, permitindo o uso de um canal não utilizado quando outros canais estão lotados ou permitindo um aumento na potência de transmissão para ampliar o alcance do transmissor. No entanto, **isso não é recomendado**, pois poderia violar as leis locais e causar interferência em outros dispositivos de rádio.
 
-To configure the regdomain, install [crda](https://www.archlinux.org/packages/?name=crda) and reboot (to reload the `cfg80211` module and all related drivers). Check the boot log to make sure that CRDA is being called by `cfg80211`:
+Para configurar o *regdomain*, instale [crda](https://www.archlinux.org/packages/?name=crda) e reinicialize (para recarregar o módulo `cfg80211` e todos os drivers relacionados). Verifique o log de inicialização para certificar-se de que o CRDA esteja sendo chamado por `cfg80211`:
 
 ```
 $ dmesg | grep cfg80211
 
 ```
 
-The current regdomain can be set to the United States with:
+O *regdomain* atual pode ser configurar para os Estados Unidos com:
 
 ```
 # iw reg set US
 
 ```
 
-And queried with:
+E consultado com:
 
 ```
 $ iw reg get
 
 ```
 
-**Note:** Your device may be set to country "00", which is the "world regulatory domain" and contains generic settings. If this cannot be unset, CRDA may be misconfigured.
+**Nota:** Seu dispositivo pode ser configurado com país "00", que é o "world regulatory domain" (domínio regulatório mundial) e contém configurações genéricas. Se isso não puder ser desconfigurado, CRDA pode ser malconfigurado.
 
-However, setting the regdomain may not alter your settings. Some devices have a regdomain set in firmware/EEPROM, which dictates the limits of the device, meaning that setting regdomain in software [can only increase restrictions](http://wiki.openwrt.org/doc/howto/wireless.utilities#iw), not decrease them. For example, a CN device could be set in software to the US regdomain, but because CN has an EIRP maximum of 20dBm, the device will not be able to transmit at the US maximum of 30dBm.
+No entanto, a configuração do *regdomain* não pode alterar suas configurações. Alguns dispositivos têm um *regdomain* definido em firmware/EEPROM, que dita os limites do dispositivo, o que significa que a configuração de *regdomain* em software [só pode aumentar as restrições](http://wiki.openwrt.org/doc/howto/wireless.utilities#iw) , não diminui-las. Por exemplo, um dispositivo CN pode ser definido no software para o *regdomain* dos EUA, mas como o CN tem um máximo EIRP de 20dBm, o dispositivo não poderá transmitir no máximo dos EUA de 30dBm.
 
-For example, to see if the regdomain is being set in firmware for an Atheros device:
+Por exemplo, para ver se o *regdomain* está sendo configurado no firmware para um dispositivo Atheros:
 
 ```
 $ dmesg | grep ath:
 
 ```
 
-For other chipsets, it may help to search for "EEPROM", "regdomain", or simply the name of the device driver.
+Para outros chipsets, pode ser útil pesquisar por "EEPROM", "regdomain" ou simplesmente o nome do driver de dispositivo.
 
-To see if your regdomain change has been successful, and to query the number of available channels and their allowed transmit power:
+Para ver se sua alteração de *regdomain* foi realizada com sucesso, e consultar o número de canais disponíveis e sua potência permitida de transmissão:
 
 ```
 $ iw list | grep -A 15 Frequencies:
 
 ```
 
-A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain.
+Uma configuração mais permanente do *regdomain* pode ser obtida através da edição `/etc/conf.d/wireless-regdom` e descomentando o domínio apropriado.
 
-[WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") can also use a regdomain in the `country=` line of `/etc/wpa_supplicant/wpa_supplicant.conf`.
+Uma [suplicante WPA](/index.php/WPA_supplicant "WPA supplicant") também pode usar um *regdomain* na linha `country=` de `/etc/wpa_supplicant/wpa_supplicant.conf`.
 
-It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` as [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
+Também é possível configurar o módulo do kernel [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) para usar um *regdomain* específico adicionando, por exemplo, `options cfg80211 ieee80211_regdom=EU` como [opções do módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). No entanto, isso faz parte da [antiga implementação regulamentar](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
-For further information, read the [wireless.kernel.org regulatory documentation](http://wireless.kernel.org/en/developers/Regulatory/).
-
-### Comparação entre iw e wireless_tools
-
-The table below gives an overview of comparable commands for *iw* and *wireless_tools*. See [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples.
-
-| *iw* command | *wireless_tools* command | Description |
-| iw dev *wlan0* link | iwconfig *wlan0* | Getting link status. |
-| iw dev *wlan0* scan | iwlist *wlan0* scan | Scanning for available access points. |
-| iw dev *wlan0* set type ibss | iwconfig *wlan0* mode ad-hoc | Setting the operation mode to *ad-hoc*. |
-| iw dev *wlan0* connect *your_essid* | iwconfig *wlan0* essid *your_essid* | Connecting to open network. |
-| iw dev *wlan0* connect *your_essid* 2432 | iwconfig *wlan0* essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
-| iw dev *wlan0* connect *your_essid* key 0:*your_key* | iwconfig *wlan0* essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
-| iwconfig *wlan0* essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
-| iw dev *wlan0* set power_save on | iwconfig *wlan0* power on | Enabling power save. |
+Para mais informações, leia a [documentação regulatória no wireless.kernel.org](http://wireless.kernel.org/en/developers/Regulatory/).
 
 ## Solução de problemas
 
-This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware).
+Essa seção contém dicas de solução de problemas gerais, e não estritamente relacionados com problemas de drivers ou firmwares. Para tais tópicos, veja a próxima seção [#Solução de problemas de drivers e firmware](#Solu.C3.A7.C3.A3o_de_problemas_de_drivers_e_firmware).
 
 ### Acesso temporário à internet
 
-If you have problematic hardware and need internet access to, for example, download some software or get help in forums, you can make use of Android's built-in feature for internet sharing via USB cable. See [Android tethering#USB tethering](/index.php/Android_tethering#USB_tethering "Android tethering") for more information.
+Se você tem hardware problemático e precisa de acesso à Internet para, por exemplo, baixar algum software ou obter ajuda em fóruns, você pode usar o recurso interno do Android para compartilhamento de internet via cabo USB. Consulte [Android tethering#USB tethering](/index.php/Android_tethering#USB_tethering "Android tethering") para mais informações.
 
 ### Problemas com rfkill
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by *rfkill*. To show the current status:
+Muitos laptops têm um botão de hardware (ou interruptor) para desligar a placa wireless, no entanto, a placa também pode ser bloqueada pelo kernel. Isso pode ser tratado por *rfkill*. Para mostrar o status atual:
 
  `# rfkill list` 
 ```
@@ -480,51 +452,51 @@ Many laptops have a hardware button (or switch) to turn off wireless card, howev
 
 ```
 
-If the card is *hard-blocked*, use the hardware button (switch) to unblock it. If the card is not *hard-blocked* but *soft-blocked*, use the following command:
+Se a placa estiver com *hard blocked* ligado, use o botão de hardware (interruptor) para desligá-la. Se a placa estiver com *hard blocked* desligado e *soft blocked* ligado, use o seguinte comando:
 
 ```
 # rfkill unblock wifi
 
 ```
 
-**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
+**Nota:** É possível que a placa passe o estado de *hard blocked* ligado e *soft blocked* desligado para *hard blocked* desligado e *soft blocked* ligado, pressionando o botão de hardware (ou seja, o bit *soft blocked* está apenas ligado, independentemente). Isso pode ser modificado ajustando algumas opções do [módulo do kernel](/index.php/Kernel_module "Kernel module") `rfkill`.
 
-Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
+Os botões de hardware para ligar ou desligar placas de rede sem fio são tratadas por um [módulo de kernel](/index.php/Kernel_module "Kernel module") específico do fornecedor, frequentemente estes são módulos [WMI](https://lwn.net/Articles/391230/). Particularmente para modelos de hardware muito novos, acontece que o modelo ainda não é totalmente suportado no kernel estável mais recente. Neste caso, muitas vezes, ajuda a procurar informações sobre o rastreador de bugs do kernel e relatar o modelo ao mantenedor do módulo do respectivo kernel do fornecedor, caso isso ainda não tenha ocorrido.
 
-See also [[2]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
+Veja também [[2]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
 
 ### Observando os logs
 
-A good first measure to troubleshoot is to analyze the system's logfiles first. In order not to manually parse through them all, it can help to open a second terminal/console window and watch the kernels messages with
+Uma boa primeira medida para solucionar problemas é analisar primeiro os arquivos de registro do sistema. Para não analisar manualmente todos eles, pode ajudar a abrir uma segunda janela do terminal/console e observar as mensagens dos kernels com
 
 ```
 $ dmesg -w
 
 ```
 
-while performing the action, e.g. the wireless association attempt.
+ao realizar a ação, p. ex. a tentativa de associação sem fio.
 
-When using a tool for network management, the same can be done for systemd with
+Ao usar uma ferramenta para gerenciamento de rede, o mesmo pode ser feito para systemd com
 
 ```
 # journalctl -f 
 
 ```
 
-Frequently a wireless error is accompanied by a deauthentication with a particular reason code, for example:
+Frequentemente, um erro de conexão sem fio é acompanhado por uma desautenticação com um código de motivo particular, por exemplo:
 
 ```
 wlan0: deauthenticating from XX:XX:XX:XX:XX:XX by local choice (reason=3)
 
 ```
 
-Looking up [the reason code](http://www.aboutcher.co.uk/2012/07/linux-wifi-deauthenticated-reason-codes/) might give a first hint. Maybe it also helps you to look at the control message [flowchart](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211/auth-assoc-deauth), the journal messages will follow it.
+Consultar [o código de motivo](http://www.aboutcher.co.uk/2012/07/linux-wifi-deauthenticated-reason-codes/) pode dar uma primeira dica. Talvez também ajude você a olhar para a mensagem de controle [flowchart](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211/auth-assoc-deauth), as mensagens do diário a seguirão.
 
-The individual tools used in this article further provide options for more detailed debugging output, which can be used in a second step of the analysis, if required.
+As ferramentas individuais usadas neste artigo fornecem opções para uma saída de depuração mais detalhada, que pode ser usada em uma segunda etapa da análise, se necessário.
 
 ### Economia de energia
 
-See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces "Power saving").
+Veja [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces "Power saving").
 
 ### Falha ao obter endereço IP
 
@@ -543,7 +515,9 @@ Before changing the channel to auto, make sure your wireless interface is down. 
 
 ### Endereço IP válido, mas não consegue resolver host
 
-If you are on a public wireless network that may have a [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), make sure to query an HTTP page (not an HTTPS page) from your web browser, as some captive portals only redirect HTTP. If this is not the issue, it may be necessary to remove any custom DNS servers from [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)").
+If you are on a public wireless network that may have a [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), make sure to query an HTTP page (not an HTTPS page) from your web browser, as some captive portals only redirect HTTP.
+
+If this is not the issue, [check if you can resolve domain names](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names"), it may be necessary to use the DNS server advertised via DHCP.
 
 ### Definindo limites de RTS e de fragmentação
 

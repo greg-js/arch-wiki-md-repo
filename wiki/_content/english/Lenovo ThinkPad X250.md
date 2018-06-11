@@ -9,36 +9,35 @@ The Lenovo ThinkPad X250 is the successor to the [Lenovo ThinkPad X240](/index.p
     *   [2.3 Backlight and Keyboard](#Backlight_and_Keyboard)
     *   [2.4 Sound and Volume Control](#Sound_and_Volume_Control)
     *   [2.5 Bluetooth](#Bluetooth)
+*   [3 BIOS updates](#BIOS_updates)
+*   [4 See also](#See_also)
 
 #### Tested Configuration
 
-**Tip:** Below were the tested configurations at the current time.
+**Tip:** Below are the tested configurations at the current time.
 
-| Feature | Configuration |
-| System | X250 |
-| CPU | Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz |
-| Graphics | Intel HD 5400 - Broadwell |
-| Ram | 8 GB |
-| Disk | 180 GB Solid State Drive Opal 2.0 - XCapable |
-| Display | 12.5" IPS FHD (1920x1080) non-touch |
-| Wireless | Intel Corporation Wireless 7265 |
-| Built-in Battery | 9 Cell |
-| Additional Pluggable Battery | 6 Cell 19+ |
-| Backlight Keyboard | Yes |
-| ThinkLight | No |
-| Fingerprint Scanner | Yes |
-| Bluetooth | Yes |
-| Camera | Yes |
+| Feature | Configuration 1 | Configuration 2 |
+| CPU | Intel i5-5200U | Intel i7-5600U |
+| Graphics | Intel HD 5400 | Intel HD 5500 |
+| RAM | 8 GB | 8GB |
+| Disk | unknown 180 GB SSD | SanDisk X300 256GB |
+| Display | 12.5" IPS FHD (1920x1080) non-touch | 12.5" IPS FHD (1920x1080) non-touch |
+| Wireless | Intel Wireless 7265 AC | Intel Wireless 7265 AC |
+| Built-in Battery | 9 Cell | 9 Cell |
+| Additional Pluggable Battery | 6 Cell 19+ | 6 Cell 19+ |
+| Backlight Keyboard | Yes | Yes |
+| ThinkLight | No | No |
+| Fingerprint Scanner | Yes | Yes |
+| Bluetooth | Yes | Yes |
+| Camera | Yes | Yes |
+| WWAN | ? | Sierra EM7345 |
+| Smartcard reader |  ? | Yes |
 
 ### System Configuration
 
 #### Mouse
 
-The touchpad and TrackPoint work out of the box, but the physical buttons for the trackpoint do not. You will need to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
-
-**Note:** The most recent Linux kernels (at least 4.0.5) support TrackPoint buttons out of the box. The following information pertains only to older versions of the kernel.
-
-If you would rather not install a recent kernel, there is a work around for Linux 3.19.2-ARCH. If you add `options psmouse proto=imps` to `/etc/modprobe.d/x250.conf`, you can force the mouse module to use a more basic protocol than the built in one for the TrackPoint, which needs a patch. The effect is that the touchpad and mouse are treated as one device, but synaptics is not supported. If you want two finger scrolling, for example, you will need to either deal with the broken TrackPoint buttons are install the new module.
+With kernels > 4.0.5 TrackPoint and touchpad work out of the box.
 
 #### Fingerprint
 
@@ -97,3 +96,27 @@ action=amixer -c 1 sset Mic toggle -q
 #### Bluetooth
 
 Bluetooth works out of the box with [bluez](https://www.archlinux.org/packages/?name=bluez) and [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth).
+
+### BIOS updates
+
+**Warning:** This may brick your device! Be careful!
+
+In order to get a working and bootable usb dongle to flash a current BIOS it may be necessary to follow these steps:
+
+1\. Download newest BIOS update tool (ISO) from Lenovos x250 downloads section[[1]](https://pcsupport.lenovo.com/de/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x250/downloads/)
+
+2\. Install [geteltorito](https://aur.archlinux.org/packages/geteltorito/) or find another way to extract the hidden image. With geteltorito you just do `geteltorito -o thinkpadbios.img xyz.iso`
+
+3\. Copy the extracted image to a usb dongle with dd: `sudo dd if᐀thinkpadbios.img of᐀/dev/sdX bs᐀1M`
+
+4\. Just in case run `sync` once.
+
+5\. Reboot
+
+6\. Press enter at the Lenovo screen, chose your usb dongle
+
+7\. Flash the BIOS update following the description on your screen. You need to have a charged battery and a connected ac adapter in order to run this tool successfully.
+
+## See also
+
+[Thinkwiki on BIOS updates (German)](http://thinkwiki.de/BIOS-Update_ohne_optisches_Laufwerk_unter_Linux)

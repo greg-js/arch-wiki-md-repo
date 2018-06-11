@@ -11,7 +11,7 @@ This article describes how to set up a Japanese language environment. It does no
     *   [1.1 Sans-serif](#Sans-serif)
     *   [1.2 Serif (and Sans-serif)](#Serif_.28and_Sans-serif.29)
 *   [2 Locale](#Locale)
-*   [3 Input method engines](#Input_method_engines)
+*   [3 Input methods](#Input_methods)
     *   [3.1 Anthy](#Anthy)
     *   [3.2 libkkc](#libkkc)
     *   [3.3 Mozc](#Mozc)
@@ -21,7 +21,7 @@ This article describes how to set up a Japanese language environment. It does no
 
 ## Fonts
 
-*See also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail.*
+*See also [Fonts#Japanese](/index.php/Fonts#Japanese "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail.*
 
 To use any Japanese input method, you need to have Japanese fonts installed.
 
@@ -51,25 +51,27 @@ If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2chan
 
 You should have `ja_JP.UTF-8` enabled in `/etc/locale.gen`.
 
-## Input method engines
+## Input methods
 
 The following [input method](/index.php/Input_method "Input method") (IM) engines are available for Japanese:
 
-| Engine | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | [hime-git](https://aur.archlinux.org/packages/hime-git/) |
-| [anthy](https://www.archlinux.org/packages/?name=anthy) | [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy) | [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) | [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) | optdepends | optdepends | optdepends |
-| [libkkc](https://www.archlinux.org/packages/?name=libkkc) | [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) | [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) | - | - | - | - |
-| [Mozc](/index.php/Mozc "Mozc") | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) | - | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) | - | - |
-| [skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo) | [fcitx-skk](https://www.archlinux.org/packages/?name=fcitx-skk) | [ibus-skk](https://www.archlinux.org/packages/?name=ibus-skk) | - | built-in | - | - |
+| Back-end | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | [hime-git](https://aur.archlinux.org/packages/hime-git/) |
+| [Anthy](#Anthy) | [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy) | [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) | [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) | built-in | built-in | built-in |
+| [libkkc](#libkkc) | [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) | [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) | No | No | No | No |
+| [Mozc](/index.php/Mozc "Mozc") | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) | No | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) | No | No |
+| [SKK](#SKK) | [fcitx-skk](https://www.archlinux.org/packages/?name=fcitx-skk) | [ibus-skk](https://www.archlinux.org/packages/?name=ibus-skk) | No | built-in | No | No |
 
 ### Anthy
 
-[Anthy](https://en.wikipedia.org/wiki/Anthy "wikipedia:Anthy") can convert Hiragana to Kanji. While Anthy is supported by all IM frameworks, its effectively dead (its last release was 2009).[[1]](https://osdn.net/projects/anthy/)
+[Anthy](https://en.wikipedia.org/wiki/Anthy "wikipedia:Anthy") can convert Hiragana to Kanji. While Anthy is supported by all IM frameworks, it is effectively dead (its last release was 2009).[[1]](https://osdn.net/projects/anthy/)
+
+[Install](/index.php/Install "Install") [anthy](https://www.archlinux.org/packages/?name=anthy) and the engine for your framework.
 
 ### libkkc
 
-[libkkc](https://bitbucket.org/libkkc/) provides a converter from Japanese Kana-string to Kana-Kanji-mixed-string. It was named after kkc.el in GNU Emacs, a simple Kana Kanji converter, while libkkc tries to convert sentences in a bit more complex way using N-gram language models. It is developed by a Red Hat engineer.
+[libkkc](https://bitbucket.org/libkkc/) ([libkkc](https://www.archlinux.org/packages/?name=libkkc)) provides a converter from Japanese Kana-string to Kana-Kanji-mixed-string. It was named after kkc.el in GNU Emacs, a simple Kana Kanji converter, while libkkc tries to convert sentences in a bit more complex way using N-gram language models. It is developed by a Red Hat engineer.
 
-Install [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) (for Fcitx) or [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) (for IBus).
+[Install](/index.php/Install "Install") the engine for your framework.
 
 ### Mozc
 
@@ -77,11 +79,13 @@ Install [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) (for Fci
 
 Custom package [mozc-ut2](https://aur.archlinux.org/packages/mozc-ut2/) comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html). The dictionary adds over 350,000 words into original.
 
+See the article for the installation procedure.
+
 ### SKK
 
 [SKK](http://openlab.jp/skk/index.html) (Simple Kana to Kanji conversion program) is a Japanese input method on Emacs. It was designed by Dr. Masahiko Sato (Professor Emeritus, Kyoto University) (old link) and created in 1987\. A unique feature of SKK is that it converts words one by one (single-word conversion), without analyzing syntax or grammar.
 
-Install [skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo) and [fcitx-skk](https://www.archlinux.org/packages/?name=fcitx-skk) (for Fcitx) or [ibus-skk](https://www.archlinux.org/packages/?name=ibus-skk) (for IBus). uim supports SKK itself.
+[Install](/index.php/Install "Install") the SKK dictionaries ([skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo)) and the engine for your framework.
 
 ### Google CGI API for Japanese input
 

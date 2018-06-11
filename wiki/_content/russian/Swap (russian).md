@@ -1,237 +1,263 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Swap](/index.php/Swap "Swap"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=482808).
+Related articles
 
-This page provides an introduction to swap space and paging on GNU/Linux. It covers creation and activation of swap partitions and swap files.
+*   [fstab (Русский)](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")
+*   [Power management/Suspend and hibernate (Русский)](/index.php/Power_management/Suspend_and_hibernate_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Power management/Suspend and hibernate (Русский)")
+*   [Zswap](/index.php/Zswap "Zswap")
+*   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
+*   [ZFS (Русский)#Swap_volume](/index.php/ZFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Swap_volume "ZFS (Русский)")
+*   [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
 
-From [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
+Эта страница дает ознакомление с [пространством подкачки и подкачкой страниц](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%BE%D0%B4%D0%BA%D0%B0%D1%87%D0%BA%D0%B0_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86 "wikipedia:ru:Подкачка страниц") в GNU/Linux. Охватывает создание, активацию файлов и разделов подкачки.
 
-	Linux divides its physical RAM (random access memory) into chunks of memory called pages. Swapping is the process whereby a page of memory is copied to the preconfigured space on the hard disk, called swap space, to free up that page of memory. The combined sizes of the physical memory and the swap space is the amount of virtual memory available.
+Взято из [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
-Support for swap is provided by the Linux kernel and user-space utilities from the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
+	Linux делит свою физическую RAM (оперативную память) на кусочки памяти, называемые страницами. Подкачка (swapping) это процесс, когда страницы памяти копируются на предварительно сконфигурированное пространство на жестком диске, называемое пространством подкачки, чтобы освободить эту страницу из памяти. Суммарный размер оперативной памяти и пространства подкачки это количество доступной виртуальной памяти.
+
+Поддержка подкачки обеспечивается ядром Linux и утилитами в пользовательском пространстве из [util-linux](https://www.archlinux.org/packages/?name=util-linux) пакета.
 
 ## Contents
 
-*   [1 Swap space](#Swap_space)
-    *   [1.1 Swap partition](#Swap_partition)
-        *   [1.1.1 Activation by systemd](#Activation_by_systemd)
-        *   [1.1.2 Disabling swap](#Disabling_swap)
-    *   [1.2 Swap file](#Swap_file)
-        *   [1.2.1 Manually](#Manually)
-            *   [1.2.1.1 Swap file creation](#Swap_file_creation)
-            *   [1.2.1.2 Remove swap file](#Remove_swap_file)
-        *   [1.2.2 systemd-swap](#systemd-swap)
-*   [2 Swap with USB device](#Swap_with_USB_device)
-*   [3 Swap encryption](#Swap_encryption)
-*   [4 Performance Tuning](#Performance_Tuning)
-    *   [4.1 Swappiness](#Swappiness)
-    *   [4.2 Priority](#Priority)
-    *   [4.3 Using zswap or zram](#Using_zswap_or_zram)
-*   [5 Striping](#Striping)
+*   [1 Пространство подкачки](#.D0.9F.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
+*   [2 Раздел подкачки](#.D0.A0.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
+    *   [2.1 Активация используя systemd](#.D0.90.D0.BA.D1.82.D0.B8.D0.B2.D0.B0.D1.86.D0.B8.D1.8F_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_systemd)
+    *   [2.2 Отключение подкачки](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
+*   [3 Файл подкачки](#.D0.A4.D0.B0.D0.B9.D0.BB_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
+    *   [3.1 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
+        *   [3.1.1 Создание файла подкачки](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
+        *   [3.1.2 Удаление файла подкачки](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
+    *   [3.2 Автоматически](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8)
+        *   [3.2.1 systemd-swap](#systemd-swap)
+*   [4 Подкачка с USB устройства](#.D0.9F.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B0_.D1.81_USB_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
+*   [5 Шифрование подкачки](#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
+*   [6 Производительность](#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
+    *   [6.1 Swappiness](#Swappiness)
+    *   [6.2 VFS cache pressure](#VFS_cache_pressure)
+    *   [6.3 Приоритет](#.D0.9F.D1.80.D0.B8.D0.BE.D1.80.D0.B8.D1.82.D0.B5.D1.82)
+    *   [6.4 Использование zswap или zram](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_zswap_.D0.B8.D0.BB.D0.B8_zram)
+    *   [6.5 Чередование](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
 
-## Swap space
+## Пространство подкачки
 
-Swap space will usually be a disk partition but can also be a file. Users may create a swap space during installation of Arch Linux or at any later time should it become necessary. Swap space is generally recommended for users with less than 1 GB of RAM, but becomes more a matter of personal preference on systems with gratuitous amounts of physical RAM (though it is required for suspend-to-disk support).
+Пространство подкачки может быть разделом диска или файлом. Пользователи могут создать пространство подкачки во время установки или позднее в любое желаемое время. Пространство подкачки может быть использовано для двух целей, расширить виртуальную память за пределы установленной оперативной памяти (RAM), а также для сохранения данных при гибернации (suspend-to-disk).
 
-To check swap status, use:
+Иногда стоит включать Swap в зависимости от установленной оперативной памяти и количества требований для запуска желаемых программ. Если количество оперативной памяти меньше требуемого, тогда стоит включить подкачку. Это позволяет избежать [состояния нехватки памяти (OOM)](https://en.wikipedia.org/wiki/Out_of_memory "wikipedia:Out of memory"), при котором механизм ядра Linux, OOM Killer, будет автоматически пытаться освободить память, убивая процессы. Чтобы увеличить количество виртуальной памяти до требуемого уровня, добавьте необходимую разницу как пространство подкачки. Например, если программа требует 7,5 GB памяти для запуска, а у вас установлено 4 GB оперативной памяти, добавьте разницу 3,5 GB как подкачку. В будущем добавляйте больше пространства к подкачке, учитывая требования. Это вопрос личных предпочтений если вы считаете, что программы должны быть убиты, вместо включения подкачки. Самый большой недостаток в подкачке это снижение производительности, см. раздел [#Производительность](#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
+
+Для проверки статуса подкачки, используйте:
 
 ```
 $ swapon --show
 
 ```
 
-Or:
+Или
 
 ```
 $ free -h
 
 ```
 
-**Note:** There is no performance advantage to either a contiguous swap file or a partition, both are treated the same way.
+*free* также покажет недостаток памяти, который может быть исправлен включением или увеличением подкачки.
 
-### Swap partition
+**Примечание:** Преимущества в производительности между файлом и разделом подкачки нет, оба варианта обрабатываются одинаково.
 
-A swap partition can be created with most GNU/Linux [partitioning tools](/index.php/Partitioning_tools "Partitioning tools"). Swap partitions are typically designated as type `82`. Even though it is possible to use any partition type as swap, it is recommended to use type `82` in most cases since [systemd](/index.php/Systemd "Systemd") will automatically detect it and mount it (see below).
+## Раздел подкачки
 
-To set up a partition as Linux swap area, the `mkswap` command is used. For example:
+Раздел подкачки может быть создан различными GNU/Linux [утилитами разметки](/index.php/Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Partitioning (Русский)"). Разделы подкачки обычно обозначаются как тип `82`. Хотя есть возможность использовать разные типы как подкачку, рекомендуется использовать тип `82`, в большинстве случаев [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), будет автоматически определять его и монтировать (см. ниже)
+
+Для установки раздела как область Linux подкачки, можно использовать `mkswap`. Например:
 
 ```
 # mkswap /dev/sd*xy*
 
 ```
 
-**Warning:** All data on the specified partition will be lost.
+**Важно:** Все данные на указанном разделе будут утеряны.
 
-To enable the device for paging:
+Для подключения устройства как подкачку:
 
 ```
 # swapon /dev/sd*xy*
 
 ```
 
-To enable this swap partition on boot, add an entry to [fstab](/index.php/Fstab "Fstab"):
+Чтобы подключить этот раздел подкачки при загрузке, добавьте запись в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)"):
 
 ```
 UUID=<UUID> none swap defaults 0 0
 
 ```
 
-where the <UUID> is taken from the command:
+где <UUID> может быть получен из команды:
 
 ```
 lsblk -no UUID /dev/sd*xy*
 
 ```
 
-**Tip:** UUIDs and LABELs should be favoured over the use of the device names given by the kernel as the device order could change in the future. See: [fstab](/index.php/Fstab "Fstab").
+**Совет:** Предпочтительно использовать UUID и LABEL, чем имена устройств полученные от ядра *(/dev/sd*)*, т.к. порядок устройств может измениться в будущем. Смотри [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)").
 
-**Note:**
+**Примечание:**
 
-*   The fstab-entry is optional if the swap partition is located on a device using GPT. See the next subsection.
-*   If using an SSD with [TRIM](/index.php/TRIM "TRIM") support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d`/`--discard` parameter achieves the same. See [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) for details.
+*   Эта fstab запись необязательна если раздел подкачки находится на устройстве, использующий GPT разметку, см. следующий подраздел.
+*   Если используется SSD с поддержкой [TRIM](/index.php/Solid_State_Drives_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#TRIM "Solid State Drives (Русский)"), учтите использование `defaults,discard` в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") строке подключения подкачки. Если в ручную активировать подкачку с помощью *swapon*, используйте параметр `-d`/`--discard`, который делает тоже самое. Подробности смотри в [swapon(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8).
 
-**Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
+**Важно:** Включение discard в RAID установке с использованием mdadm, приведёт к блокировке системы при загрузке и во время выполнения, если использовать swapon.
 
-#### Activation by systemd
+### Активация используя systemd
 
-[systemd](/index.php/Systemd "Systemd") activates swap partitions based on two different mechanisms. Both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type code `82`.
+Активация разделов подкачки в [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") базируется на двух различных механизмах. Оба исполняются в `/usr/lib/systemd/system-generators`. Генераторы запускаются при старте системы и создают нативные systemd юниты для монтирования. Первый `systemd-fstab-generator`, читает fstab, чтобы генерировать юниты, включая юнит для подкачки. Второй `systemd-gpt-auto-generator`, осматривает корневой диск, чтобы генерировать юниты. Это операция проходит только на GPT дисках и может идентифицировать разделы подкачки по их тип коду `82`.
 
-#### Disabling swap
+### Отключение подкачки
 
-To deactivate specific swap space:
+Чтобы деактивировать определенное пространство подкачки:
 
 ```
 # swapoff /dev/sd*xy*
 
 ```
 
-Alternatively use the `-a` switch to deactivate all swap space.
+Также можно использовать `-a` ключ, чтобы деактивировать все пространства подкачки.
 
-Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run `systemctl --type swap` to find the responsible *.swap* unit and [mask](/index.php/Mask "Mask") it.
+С тех пор, как systemd управляет подкачкой, она вновь будет активирована при старте системы, для долговременного отключения автоматической активации найденных пространств подкачки, выполните `systemctl --type swap`, чтобы найти связанные со *.swap* юниты и замаскируйте ([systemctl mask *юнит*](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)")) их.
 
-### Swap file
+## Файл подкачки
 
-As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
+Как альтернатива к созданию целого раздела, файл подкачки даёт возможность менять свой размер на лету, а также его гораздо легче полностью удалить. Это может быть особенно важно, если дисковое пространство ограничено (например, небольшие SSD)
 
-**Warning:** [Btrfs](/index.php/Btrfs "Btrfs") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+**Важно:** [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)") не поддерживает файлы подкачки. Несоблюдение этого предупреждения, может стать результатом разрушения файловой системы. Пока что, файл подкачки может быть использован в Btrfs, если смонтирован через loop-устройство, тогда будет сильно уменьшена производительность подкачки.
 
-#### Manually
+### Вручную
 
-##### Swap file creation
+#### Создание файла подкачки
 
-As root use `fallocate` to create a swap file the size of your choosing (M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")). For example, creating a 512 MiB swap file:
+Использовать под суперпользователем `fallocate`, чтобы создать файл подкачки размером на свой выбор (M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")). Например создание 512 MiB файла подкачки:
 
 ```
 # fallocate -l 512M /swapfile
 
 ```
 
-**Note:** *fallocate* may cause problems with some file systems such as [F2FS](/index.php/F2FS "F2FS") or [XFS](/index.php/XFS "XFS").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) As an alternative, using *dd* is more reliable, but slower: `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
+**Примечание:** *fallocate* может вызвать проблемы с некоторыми файловыми системами, такими как: [F2FS](/index.php/F2FS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "F2FS (Русский)") или [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3). Как вариант, используйте *dd*, наиболее надёжный, но медленный. `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
 
-Set the right permissions (a world-readable swap file is a huge local vulnerability)
+Установите права доступа (всеми читаемый файл подкачки это огромная локальная уязвимость)
 
 ```
 # chmod 600 /swapfile
 
 ```
 
-After creating the correctly sized file, format it to swap:
+После создания файла нужного размера, форматируйте его в подкачку:
 
 ```
 # mkswap /swapfile
 
 ```
 
-Activate the swap file:
+Активируйте файл подкачки:
 
 ```
 # swapon /swapfile
 
 ```
 
-Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap file:
+В завершении, отредактируйте [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)"), добавив запись для файла подкачки:
 
  `/etc/fstab`  `/swapfile none swap defaults 0 0` 
+**Примечание:** Не забудьте добавить discard, если у вас SSD с поддержкой TRIM
+```
+# swapon --discard /swapfile
 
-##### Remove swap file
+```
+ `/etc/fstab`  `/swapfile none swap defaults,discard 0 0` 
 
-To remove a swap file, the current swap file must be turned off.
+#### Удаление файла подкачки
 
-As root:
+Чтобы удалить файл подкачки, сначала нужно отключить подкачку, а затем файл может быть удален:
 
 ```
 # swapoff -a
-
-```
-
-Remove swap file:
-
-```
 # rm -f /swapfile
 
 ```
 
-Finally remove the relevant entry from `/etc/fstab`.
+В завершении, удалите соответствующую запись из `/etc/fstab`.
+
+### Автоматически
 
 #### systemd-swap
 
-[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfu_enabled=1` in the *Swap File Universal* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service.
+[Установить](/index.php/Help:Reading_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Help:Reading (Русский)") [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) пакет. Установить `swapfc_enabled=1` в *Swap File Chunked* разделе файла `/etc/systemd/swap.conf`. [Start/enable](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `systemd-swap` сервис. Посетить страницу [авторов на GitHub](https://github.com/Nefelim4ag/systemd-swap) для получения подробностей и установить [рекомендуемую конфигурацию](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
-## Swap with USB device
+## Подкачка с USB устройства
 
-Thanks to the modularity offered by Linux, we can have multiple swap partitions spread over different devices. If you have a very full hard disk, a USB device can be used as a swap partition temporarily. However, this method has some severe disadvantages:
+Благодаря модульности, предлагаемой Linux, мы можем иметь множество разделов подкачки на различных устройствах. Если у вас полностью заполнен жесткий диск, то можно использовать USB устройство как временный раздел подкачки. Однако, этот метод имеет серьёзные недостатки:
 
-*   A USB device is slower than a hard disk
-*   Flash memory has a limited number of write cycles. Using it as a swap partition can kill it quickly
+*   USB устройство медленнее чем жесткий диск
+*   Flash память имеет ограниченное количество циклов записи. Использование его как раздела подкачки, может быстро убить его.
 
-To add a USB device to swap, first take a USB flash drive and partition it for swap as described in [#Swap partition](#Swap_partition).
+Чтобы добавить USB устройство как подкачку, сначала необходимо разметить USB флешку для подкачки как описано в секции [#Раздел подкачки](#.D0.A0.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8).
 
-Next open `/etc/fstab` and add
+Далее откройте `/etc/fstab` и добавьте
 
 ```
 pri=0
 
 ```
 
-to the mount options of the *original* swap entry so that the USB swap partition will take priority over the old swap partition.
+в опции монтирования *первоначальной* записи подкачки, таким образом USB подкачка будет иметь приоритет записи над старым разделом.
 
-This guide will work for other memory such as SD cards, etc.
+Данная инструкция будет работать и для других устройств хранения, таких как SD карты и т.д.
 
-## Swap encryption
+## Шифрование подкачки
 
-See [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+Смотри: [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
-## Performance Tuning
+## Производительность
 
-Swap values can be adjusted to help performance.
+Операции подкачки как правило существенно медленнее чем непосредственный доступ к RAM. Отключение подкачки полностью для повышения производительности, иногда может привести к ухудшению, поскольку это уменьшает доступную память для VFS кеша, вызывая более частые и дорогостоящие операции ввода/вывода.
+
+Значения подкачки можно настроить, чтобы помочь производительности:
 
 ### Swappiness
 
-The *swappiness* [sysctl](/index.php/Sysctl "Sysctl") parameter represents the kernel's preference (or avoidance) of swap space. Swappiness can have a value between 0 and 100, the default value is 60\. A low value causes the kernel to avoid swapping, a higher value causes the kernel to try to use swap space. Using a low value on sufficient memory is known to improve responsiveness on many systems.
+*Swappiness* [sysctl](/index.php/Sysctl "Sysctl") параметр представляющий частоту использования пространства подкачки. Swappiness может иметь значение от 0 до 100, значение по умолчанию = 60\. Низкое значение заставляет ядро избегать подкачки, высокое значение позволяет ядру использовать подкачку *наперёд*. Использование низкого значения на достаточном количестве памяти, улучшает отзывчивость на многих системах.
 
-To check the current swappiness value:
+Чтобы проверить текущее значение swappiness:
+
+```
+$ cat /sys/fs/cgroup/memory/memory.swappiness
+
+```
+
+или
 
 ```
 $ cat /proc/sys/vm/swappiness
 
 ```
 
-To temporarily set the swappiness value:
+**Примечание:** Т.к. `/proc` менее организован и сохраняется только для обратной совместимости, вместо него предпочтительнее использовать `/sys`.
+
+Чтобы временно установить значение swappiness:
 
 ```
 # sysctl vm.swappiness=10
 
 ```
 
-To set the swappiness value permanently, edit a *sysctl* configuration file
+Чтобы постоянно установить значение swappiness, отредактируйте (создайте) конфигурационный файл *sysctl*
 
  `/etc/sysctl.d/99-sysctl.conf`  `vm.swappiness=10` 
 
-To test and more on why this may work, take a look at [this article](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
+Чтобы проверить и больше узнать, почему оно так работает, посмотрите [эту статью](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 
-Another *sysctl* parameter that affects swap performance is `vm.vfs_cache_pressure`, which controls the tendency of the kernel to reclaim the memory which is used for caching of VFS caches, versus pagecache and swap. Increasing this value increases the rate at which VFS caches are reclaimed[[2]](http://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim). For more information, see the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
+### VFS cache pressure
 
-### Priority
+Другой *sysctl* параметр, который действует на производительность подкачки это `vm.vfs_cache_pressure`, он контролирует склонность ядра к применению памяти, которая используется для кэширования VFS caches, напротив кэширования страниц и подкачки. Увеличение этого значения увеличивает коэффициент с которым VFS caches применяется[[2]](http://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim). Для подробной информации смотри [документацию ядра Linux](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
 
-If you have more than one swap file or swap partition you should consider assigning a priority value (0 to 32767) for each swap area. The system will use swap areas of higher priority before using swap areas of lower priority. For example, if you have a faster disk (`/dev/sda`) and a slower disk (`/dev/sdb`), assign a higher priority to the swap area located on the faster device. Priorities can be assigned in fstab via the `pri` parameter:
+### Приоритет
+
+Если у вас больше одного файла или раздела подкачки, вы должны учитывать присвоение приоритетного значения (от 0 до 32767) для каждой области подкачки. Система будет использовать области подкачки с высоким приоритетом, перед использованием областей с низким приоритетом. Например, если у вас быстрый диск (`/dev/sda`) и медленный (`/dev/sdb`), назначьте высокий приоритет для подкачки расположенной на быстром устройстве. Приоритет может быть назначен в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") как `pri` параметр:
 
 ```
 /dev/sda1 none swap defaults,pri=100 0 0
@@ -239,19 +265,19 @@ If you have more than one swap file or swap partition you should consider assign
 
 ```
 
-Or via the `-p` (or `--priority`) parameter of swapon:
+Или как параметр в *swapon* `--priority`
 
 ```
-# swapon -p 100 /dev/sda1
+# swapon --priority 100 /dev/sda1
 
 ```
 
-If two or more areas have the same priority, and it is the highest priority available, pages are allocated on a round-robin basis between them.
+Если две или более областей будут иметь одинаковый приоритет и он будет самым высоким из доступным приоритетов, то страницы будут распределяться по кругу между областями.
 
-### Using zswap or zram
+### Использование zswap или zram
 
-[Zswap](/index.php/Zswap "Zswap") is a Linux kernel feature providing a compressed write-back cache for swapped pages. This increases the performance and decreases the IO-Operations. [ZRAM](/index.php/ZRAM "ZRAM") creates a virtual compressed Swap-file in memory as alternative to a swapfile on disc.
+[Zswap](/index.php/Zswap "Zswap") это особенность ядра Linux, обеспечивающая сжатие обратного кэша для страниц подкачки. Она увеличивает производительность и уменьшает операции ввода/вывода. [ZRAM](/index.php/ZRAM "ZRAM") создаёт виртуальный сжатый файл подкачки в памяти, как альтернатива файлу подкачки на диске.
 
-## Striping
+### Чередование
 
-There is no necessity to use [RAID](/index.php/RAID "RAID") for swap performance reasons. The kernel itself can stripe swapping on several devices, if you just give them the same priority in the `/etc/fstab` file. Refer to [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3) for details.
+Нет необходимости использовать [RAID](/index.php/RAID_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RAID (Русский)") для повышения производительности подкачки. Ядро самостоятельно может чередовать подкачку на нескольких устройствах, если вы присвоите им одинаковый приоритет в `/etc/fstab`. Для подробной информации смотри [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3).

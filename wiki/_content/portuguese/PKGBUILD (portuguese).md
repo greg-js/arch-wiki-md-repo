@@ -9,7 +9,6 @@ Artigos relacionados
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 *   [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques")
-*   [Getting PKGBUILDs from SVN (Português)](/index.php/Getting_PKGBUILDs_from_SVN_(Portugu%C3%AAs) "Getting PKGBUILDs from SVN (Português)")
 
 Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
@@ -65,7 +64,9 @@ Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` 
 
 ### pkgbase
 
-Uma diretiva global e opcional quando se está compilando um pacote dividido (*split*). `pkgbase` é usado para se referir a um grupo de pacotes na saída de *makepkg* e na nomeação de tarballs com apenas fontes. Se não especificado, o primeiro elemento no vetor `pkgname` é usado. A variável não pode iniciar com um hífen. Todos os valores de pacotes divididos têm como padrão aqueles definidos globalmente no PKGBUILD. Tudo, com exceção de variáveis [#makedepends](#makedepends), [#Fontes](#Fontes) e [#Integridade](#Integridade), podem ser sobrepostas dentro da função `package()` de cada pacote dividido.
+Uma diretiva global e opcional quando se está compilando um pacote dividido (*split*). `pkgbase` é usado para se referir a um grupo de pacotes na saída de *makepkg* e na nomeação de tarballs com apenas fontes. Se não especificado, o primeiro elemento no vetor `pkgname` é usado. A variável não pode iniciar com um hífen.
+
+Todas opções e diretivas para os pacotes divididos têm como padrão os valores globais definidos no PKGBUILD. Mesmo assim, os seguintes podem ser sobrescritos dentro de cada função de empacotameto do pacote dividido: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install) e [#changelog](#changelog).
 
 ### pkgname
 
@@ -103,7 +104,7 @@ epoch=1
 ```
  `1:5.13-2` 
 
-Veja [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) para mais informações sobre comparações de versão.
+Veja [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) para mais informações sobre comparações de versão.
 
 ## Genérica
 
@@ -115,11 +116,11 @@ Também é importante usar palavras-chaves com sabedoria para aumentar as chance
 
 ### arch
 
-Um vetor de arquiteturas nas quais o PKGBUILD deve poder ser compilado e funcionar. Arch oferece suporte oficialmente apenas a `i686` e `x86_64`, mas projetos como [Arch Linux ARM](http://archlinuxarm.org/) forencem suporte a outras arquiteturas como `arm` para armv5, `armv6h` para armv6 hardfloat, `armv7h` para armv7 hardfloat e `aarch64` para armv8 64bit.
+Um vetor de arquiteturas nas quais o PKGBUILD deve poder ser compilado e funcionar. Arch oferece suporte oficialmente apenas `x86_64`, mas outros projetos podem oferecer suporte a outras arquiteturas. Por exemplo, [Arch Linux 32](https://archlinux32.org/) fornece suporte a `i686` [Arch Linux ARM](http://archlinuxarm.org/) forence suporte a `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat) e `aarch64` (armv8 64bit).
 
-Se um pacote independe de arquitetura em seu estado compilado (shell scripts, fontes, temas, muitos tipos de extensões etc.), então use `arch=('any')`. Por favor note que, como isso serve para pacotes que podem ser compilados uma vez e serem usados para qualquer arquitetura, isso fará com que o pacote seja rotulado com `-any` em vez de `-i686`, `-x86_64`, etc.
+Se um pacote independe de arquitetura em seu estado compilado (shell scripts, fontes, temas, muitos tipos de extensões etc.), então use `arch=('any')`. Por favor note que, como isso serve para pacotes que podem ser compilados uma vez e serem usados para qualquer arquitetura, isso fará com que o pacote seja rotulado com `-any` em vez de `-x86_64`, etc.
 
-Se um pacote puder ser compilado para qualquer arquitetura, mas é específico para uma arquitetura uma vez compilado, especifique todas as arquiteturas às quais o Arch oferece suporte, isto é, `arch=('i686' 'x86_64')`.
+Se um pacote puder ser compilado para qualquer arquitetura, mas é específico para uma arquitetura uma vez compilado, especifique todas as arquiteturas às quais o Arch oferece suporte, isto é, `arch=('x86_64')`.
 
 A arquitetura alvo pode ser acessada com a variável `$CARCH` durante uma compilação.
 
@@ -133,7 +134,7 @@ A licença sob a qual o software é distribuído. O pacote [licenses](https://ww
 
 1.  Adicione `custom` ao vetor `license`. Opcionalmente, você pode substituir `custom` com `custom:*nome da licença*`. Uma vez que uma licença é usada em dois ou mais pacotes em um repositório oficial (incluindo `[community]`), ela se torna parte do pacote [licenses](https://www.archlinux.org/packages/?name=licenses).
 2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`). Uma boa forma de fazer isso é usando: {{bc|install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"}
-3.  Se a licença é encontrada apenas em um site, então você precisa incluí-la separadamente no pacote.
+3.  Se a licença é encontrada apenas em um site, então você precisa inclui-la separadamente no pacote.
 
 *   As licenças [BSD](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_BSD "wikipedia:pt:Licença BSD"), [MIT](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_MIT "wikipedia:pt:Licença MIT"), [zlib/png](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_zlib "wikipedia:pt:Licença zlib") e [Python](https://en.wikipedia.org/wiki/pt:Python "wikipedia:pt:Python") são casos especiais e não podem ser incluídos no pacote [licenses](https://www.archlinux.org/packages/?name=licenses). Para manter a consistência no vetor `license`, é tratado como licença comum (`license=('BSD')`, `license=('MIT')`, `license=('ZLIB')` e `license=('Python')`), mas tecnicamente cada uma é uma licença personalizada, porque cada uma possui sua própria linha de copyright. Quaisquer pacotes licenciados sob essas quatro devem ter uma licença única armazenada em `/usr/share/licenses/*pkgname*`.
 *   Alguns pacotes podem não estar cobertos por uma única licença. Nestes casos, múltiplas entradas podem ser feitas no vetor `license` como, por exemplo, `license=('GPL' 'custom:*nome da licença'*)`.
@@ -145,17 +146,28 @@ A licença sob a qual o software é distribuído. O pacote [licenses](https://ww
 
 **Dica:** Alguns autores de software não fornecem arquivo de licença separados e descrevem regras de distribuição em uma seção de `ReadMe.txt` comum. Essa informação pode ser extraída para um arquivo separado durante a `build()` com alguma coisa como `sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`
 
+Informações e perspectivas adicionais sobre licenças de software aberto e livre podem ser encontradas nas seguintes páginas:
+
+*   [w:pt:Licença de software livre](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_de_software_livre "w:pt:Licença de software livre")
+*   [w:Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "w:Comparison of free and open-source software licenses")
+*   [A Legal Issues Primer for Open Source and Free Software Projects](https://www.softwarefreedom.org/resources/2008/foss-primer.html)
+*   [Projeto GNU - Várias licenças e comentários sobre elas](https://www.gnu.org/licenses/license-list.html)
+*   [Debian - License information](https://www.debian.org/legal/licenses/)
+*   [Open Source Initiative - Licenses by Name](http://www.opensource.org/licenses/alphabetical)
+
 ### groups
 
 O [grupo](/index.php/Criando_pacotes#Pacotes_meta_e_grupos "Criando pacotes") ao qual o pacote pertence. Por exemplo, ao instalar o pacote [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/), ele instala todos os pacotes pertencentes àquele grupo.
 
 ## Dependências
 
-**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `depends_i686=()` e `optdepends_x86_64=()`.
+**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `optdepends_x86_64=()`.
 
 ### depends
 
-Um vetor de pacotes que devem ser instalados antes que o software possa ser executado. Restrições de versões podem ser especificadas com operadores de comparação, como, por exemplo, `depends=('foobar>=1.8.0')`; se múltiplas restrições forem necessárias, a dependência pode ser repetida para cada uma, como, por exemplo, `depends=('foobar>=1.8.0' 'foobar<2.0.0')`.
+Um vetor de pacotes que devem ser instalados para o software compilar **e** executar. Dependências definidas dentro da função `package()` são necessárias apenas para executar o software.
+
+Restrições de versões podem ser especificadas com operadores de comparação, como, por exemplo, `depends=('foobar>=1.8.0')`; se múltiplas restrições forem necessárias, a dependência pode ser repetida para cada uma, como, por exemplo, `depends=('foobar>=1.8.0' 'foobar<2.0.0')`.
 
 Dependências que são fornecidas por outras dependências não precisam ser listadas. Por exemplo, se um pacote *foo* depende de tanto *bar* quanto *baz*, e o pacote *bar* depende de *baz* também, então *baz* não precisa ser incluído no vetor `depends` do *foo*.
 
@@ -198,7 +210,7 @@ Um vetor de pacotes dos quais o software depende para executar sua suíte de tes
 
 ## Relações do pacote
 
-**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `provides_i686=()` e `conflicts_x86_64=()`.
+**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `conflicts_x86_64=()`.
 
 ### provides
 
@@ -210,15 +222,17 @@ Um vetor de pacotes adicionais dos quais o software fornece as funcionalidades (
 
 Um vetor de pacotes que conflitam com, ou causa problemas com o pacote, se instalado. Todos esses pacotes e pacotes fornecendo este item precisarão ser removidos. As propriedades da versão dos pacotes conflitantes também podem ser especificados no mesmo formato que o vetor `depends`.
 
-Isso significa que quando você escreve um pacote para o qual uma versão alternativa está disponível (esteja ela nos pacotes oficias ou no AUR) e seu pacote conflita com aquela versão, você também precisa colocar as outras versões em seu vetor `conflicts`. Especificar conflito é não somente para pacotes nos repositórios oficiais; se outro pacote do AUR conflita com o seu, você também precisa colocar aquele pacote do AUR em seu vetor `conflicts`.
+Isso significa que quando você escreve um pacote para o qual uma versão alternativa está disponível (esteja ela nos pacotes oficias ou no [AUR (Português](/index.php?title=AUR_(Portugu%C3%AAs&action=edit&redlink=1 "AUR (Português (page does not exist)")) e seu pacote conflita com aquela versão, você também precisa colocar as outras versões em seu vetor `conflicts`.
 
-Porém, há uma exceção a isso. Se seu pacote fornece um nome de pacote e os outros pacotes, conflitantes com o seu, fornecem o mesmo pacote, você não precisa especificar aquele pacote conflitante em seu vetor `conflicts`. Vejamos um exemplo concreto:
+No entanto, há uma exceção a essa regra. Definir pacotes conflitantes em todas as direções nem sempre é aplicável, especialmente se todos esses pacotes forem mantidos por pessoas diferentes. De fato, ter que entrar em contato com todos os mantenedores de pacotes de pacotes em conflito com sua própria versão e pedir que eles incluam o nome do seu pacote em seu vetor `conflicts` é um processo complicado.
+
+É por isso que, neste contexto, se seu pacote fornece `provides` um recurso e outro pacote fornece `provides` o mesmo recurso, você não precisa especificar aquele pacote conflitante em seu vetor `conflicts`. Vejamos um exemplo concreto:
 
 *   [netbeans](https://www.archlinux.org/packages/?name=netbeans) fornece `netbeans`
 *   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) fornece `netbeans` e conflita com `netbeans`
 *   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) fornece `netbeans` e conflita com `netbeans`, mas não precisa conflitar com [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) já que o pacman é suficientemente inteligente para descobrir que esses pacotes são incompatíveis, já que eles fornecem as mesmas funcionalidades e estão em conflito com isso.
 
-	O mesmo se aplica no inverso: [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) também não precisa conflitar com [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/), porque eles fornecem o mesmo pacote.
+	O mesmo se aplica no inverso: [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) também não precisa conflitar com [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/), porque eles fornecem o mesmo pacote.
 
 ### replaces
 
@@ -240,7 +254,7 @@ Veja também os [arquivos Pacnew e Pacsave](/index.php/Arquivos_Pacnew_e_Pacsave
 
 Esse vetor permite sobrescrever alguns dos comportamentos padrões do *makepkg*, definidos no `/etc/makepkg.conf`. Para definir uma opção, inclua o nome no vetor. Para inverter o comportamento, coloque um **`!`** na frente.
 
-A lista completa das opções disponíveis podem ser localizadas em [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html).
+A lista completa das opções disponíveis podem ser localizadas em [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
 ### install
 
@@ -281,7 +295,7 @@ Os arquivos também podem ser fornecidos no mesmo diretório onde o `PKGBUILD` e
 
 Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não devem ser incluídos no vetor de fontes. Arquivos no vetor de fontes com extensões *.sig*, *.sign* ou *.asc* são reconhecidos pelo *makepkg* como assinaturas PGP e serão usados automaticamente para verificar a integridade do arquivo fonte correspondente.
 
-{{Atenção|Os nomes de arquivos de fontes baixados devem ser globalmente únicos porque o diretório [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") pode ser o mesmo para todos pacotes. Por exemplo, usar o número de versão do projeto como um nome de arquivo potencialmente conflita com outros projetos com o mesmo número de versão. Neste caso, o nome de arquivo único alternativo a ser usado é fornecido com a sintaxe `source=('*nome_pacote_único*::*uri-arquivo*')` - por exemplo, `source=("$pkgname-$pkgver.tar.gz::https://github.com/codificador/programa/archive/v$pkgver.tar.gz")`.
+**Atenção:** Os nomes de arquivos de fontes baixados devem ser globalmente únicos porque o diretório [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") pode ser o mesmo para todos pacotes. Por exemplo, usar o número de versão do projeto como um nome de arquivo potencialmente conflita com outros projetos com o mesmo número de versão. Neste caso, o nome de arquivo único alternativo a ser usado é fornecido com a sintaxe `source=('*nome_pacote_único*::*uri-arquivo*')` - por exemplo, `source=("$pkgname-$pkgver.tar.gz::https://github.com/codificador/programa/archive/v$pkgver.tar.gz")`.
 
 **Dica:**
 
@@ -325,19 +339,21 @@ Apenas impressões digitais completas são aceitas. Elas devem estar em caixa al
 
 **Nota:** Você pode usar `gpg --list-keys --fingerprint <ID-CHAVE>` para localizar a impressão digital da chave apropriada.
 
-Por favor, leia [Makepkg (Português)#Verificação de assinatura](/index.php/Makepkg_(Portugu%C3%AAs)#Verifica.C3.A7.C3.A3o_de_assinatura "Makepkg (Português)") para mais informações.
+Por favor, leia [makepkg (Português)#Verificação de assinatura](/index.php/Makepkg_(Portugu%C3%AAs)#Verifica.C3.A7.C3.A3o_de_assinatura "Makepkg (Português)") para mais informações.
 
 ## Integridade
 
-**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `md5sums_i686=()`, `sha256sums_x86_64=()`.
-
 Essas variáveis são vetores cujos itens são strings de *checksums* (soma de verificação) que serão usadas para verificar a integridade dos respectivos arquivos no vetor [source](#source). Você também pode inserir `SKIP` para um arquivo em particular e seu *checksum* não será testado.
 
-*Checksums* servem para verificar a *integridade* dos arquivos baixados, e **não** sua *autenticidade*: por este motivo, ainda que o algoritmo MD5 seja conhecido por ter [vulnerabilidades](https://en.wikipedia.org/wiki/pt:MD5 "wikipedia:pt:MD5") consideráveis quando usado para outros propósitos, ele é recomendado para integridade de arquivo como uma alternativa rápida a *hashes* SHA-2, especialmente quando arquivos grandes estiverem presentes no vetor `source`. Se possível, porém, sempre teste a autenticidade dos arquivos adicionando suas assinaturas ao fonte `source`: neste caso, você também será capaz de ignorar com segurança toda sua verificação de *checksum*, como descrito acima.
+O tipo e os valores da soma de verificação *(checksum)* devem ser sempre aqueles fornecidos pelo upstream, como nos anúncios de lançamento. Quando vários tipos estão disponíveis, a soma de verificação mais forte deve ser preferida: `sha256` em `sha1` e `sha1` em `md5`. Isso garante a integridade dos arquivos baixados, desde o anúncio do upstream até o desenvolvimento de pacotes.
 
-Os valores para essas variáveis podem ser geradas automaticamente pela opção `-g`/`--geninteg` do [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, anexado com `makepkg -g >> PKGBUILD`. O comando `updpkgsums` é capaz de atualizar as variáveis onde quer que elas estejam no PKGBUILD. Ambas ferramentas usarão a variável que já está definida no PKGBUILD, ou voltarão para `md5sums` se nada estiver definido.
+**Nota:** Além disso, quando o upstream disponibiliza [assinaturas digitais](https://en.wikipedia.org/wiki/pt:Assinatura_digital "w:pt:Assinatura digital"), os arquivos de assinatura devem ser adicionados ao vetor [source](#source) e a impressão digital da chave PGP ao vetor [validpgpkeys](#validpgpkeys). Isso permite a autenticação dos arquivos no momento de compilação.
 
-As verificações de integridade de arquivo a serem usadas podem ser configuradas com a opção `INTEGRITY_CHECK` no `/etc/makepkg.conf`. Veja [makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html).
+Os valores para essas variáveis podem ser geradas automaticamente pela opção `-g`/`--geninteg` do [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, anexado com `makepkg -g >> PKGBUILD`. O comando `updpkgsums` do [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) é capaz de atualizar as variáveis onde quer que elas estejam no PKGBUILD. Ambas ferramentas usarão a variável que já está definida no PKGBUILD, ou voltarão para `md5sums` se nada estiver definido.
+
+As verificações de integridade de arquivo a serem usadas podem ser configuradas com a opção `INTEGRITY_CHECK` no `/etc/makepkg.conf`. Veja [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
+
+**Nota:** Vetores adicionais específicos da arquitetura podem ser adicionadas anexando um sublinhado e o nome da arquitetura, p. ex. `sha256sums_x86_64=()`.
 
 ### md5sums
 
@@ -357,5 +373,5 @@ Um vetor de *checksums* de SHA-2 com tamanhos de *digest* 224, 384 e 512 bits, r
 
 ## Veja também
 
-*   [Página de manual PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html)
+*   [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) - página de manual do PKGBUILD
 *   [Exemplo de arquivo PKGBUILD](https://projects.archlinux.org/pacman.git/plain/proto/PKGBUILD.proto)

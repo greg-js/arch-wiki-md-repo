@@ -103,7 +103,7 @@ AutoFS provides a new way of automatically discovering and mounting [NFS](/index
 
 ```
 
-**Note:** Each host name needs to be resolveable, e.g. the name an IP address in `/etc/hosts` or via [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") and please make sure you have [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) installed and working. You also have to enable RPC (systemctl start
+**Note:** Each host name needs to be resolveable, e.g. the name an IP address in `/etc/hosts` or via [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") and make sure you have [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) installed and configured. You also have to [enable](/index.php/Enable "Enable") `rpcbind` to browse shared Folders.
 
 For instance, if you have a remote server *fileserver* (the name of the directory is the hostname of the server) with an NFS share named */home/share*, you can just access the share by typing:
 
@@ -122,8 +122,6 @@ The `-hosts` option uses a similar mechanism as the `showmount` command to detec
 ```
 
 Replacing *<servername>* with the name of your own server.
-
-An alternative Way is to use the automount-service from Systemd, see [NFS with systemd-automount](/index.php/NFS#Mount_using_.2Fetc.2Ffstab_with_systemd "NFS")
 
 #### Manual NFS configuration
 

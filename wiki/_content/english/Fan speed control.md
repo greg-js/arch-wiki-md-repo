@@ -31,7 +31,7 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [6.2 asus-nb-wmi](#asus-nb-wmi)
     *   [6.3 asus_fan](#asus_fan)
     *   [6.4 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
-*   [7 amdgpu sysfs fan control](#amdgpu_sysfs_fan_control)
+*   [7 AMDGPU sysfs fan control](#AMDGPU_sysfs_fan_control)
     *   [7.1 Configuration of manual control](#Configuration_of_manual_control)
     *   [7.2 fancurve script](#fancurve_script)
         *   [7.2.1 Setting up fancurve script](#Setting_up_fancurve_script)
@@ -194,13 +194,11 @@ For an unofficial GUI [install](/index.php/Install "Install") [fancontrol-gui](h
 
 ## NBFC
 
-**Note:** Due to upstream bugs [#451](https://github.com/hirschmann/nbfc/issues/451) and [#453](https://github.com/hirschmann/nbfc/issues/453) you might not be able to get nbfc running on your system.
-
 NBFC is a cross-platform fan control solution for notebooks. It comes with a powerful configuration system, which allows to adjust it to many different notebook models, including some of the latest ones.
 
 ### Installation
 
-NBFC can be installed as [nbfc-git](https://aur.archlinux.org/packages/nbfc-git/). Also start and enable `nbfc.service`.
+NBFC can be installed as [nbfc-git](https://aur.archlinux.org/packages/nbfc-git/). Also enable `nbfc.service`.
 
 ### Configuration
 
@@ -219,6 +217,8 @@ If there is at least one model, try to apply this profile and see how fan speeds
 $ nbfc config -a "Asus Zenbook UX430UA"
 
 ```
+
+**Note:** If you are getting error message "*File Descriptor does not support writing*" - append `ec_sys.write_support=1` to kernel parameters.
 
 If there are no recommended models, go to [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) or `/opt/nbfc/Configs/` and check if there are any similar models available from the same manufacturer. For example, on **Asus Zenbook UX430UQ**, the configuration **Asus Zenbook UX430UA** did not work well (fans completelly stopped all the time), but **Asus Zenbook UX410UQ** worked fantastically.
 
@@ -450,7 +450,7 @@ And finally, in the third console:
 
 Once you are done and the configuration file is generated, you should stop the first and second consoles. Continue with [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29). After config file is generated, you might need to manually replace PWM values with full sysfs paths as they are used in these steps, because hwmon number values might change after reboot.
 
-## amdgpu sysfs fan control
+## AMDGPU sysfs fan control
 
 [AMDGPU](/index.php/AMDGPU "AMDGPU") kernel driver offers fan control for graphics cards via hwmon in sysfs.
 

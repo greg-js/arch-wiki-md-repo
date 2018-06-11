@@ -11,11 +11,9 @@ O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de
 
 ## Instalação
 
-A interface padrão do Wireshark usa Qt, a interface GTK + está obsoleta e pode ser removida no futuro.
+[Instale](/index.php/Instale "Instale") o pacote [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) para a GUI do Wireshark ou [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) para apenas a CLI `tshark`.
 
-[Instale](/index.php/Instale "Instale") [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) ou [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) quando você preferir a interface GTK+.
-
-Ambos *frontends* dependem do pacote [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) que fornece a linha de comando `tshark`.
+Para a interface GTK+ obsoleta, instale o pacote [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk). Note que esse pacote será removido no futuro (Wireshark 3.0).
 
 ## Capturando como um usuário normal
 

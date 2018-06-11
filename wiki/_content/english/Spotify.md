@@ -50,6 +50,10 @@ Initially, Spotify was unavailable for Linux and the workaround was to run it un
 
 ### Third-party clients
 
+*   **Spotifyd** — An open source Spotify client running as a UNIX daemon. Spotifyd streams music just like the official client, but is more lightweight and supports more platforms. Spotifyd also supports the Spotify Connect protocol which makes it show up as a device that can be controlled from the official clients.
+
+	[https://github.com/Spotifyd/spotifyd](https://github.com/Spotifyd/spotifyd) || [spotifyd](https://aur.archlinux.org/packages/spotifyd/)
+
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Able to stream from Spotify with a premium account after activating (downloading) a plugin in the settings.
 
 	[https://www.clementine-player.org/](https://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)

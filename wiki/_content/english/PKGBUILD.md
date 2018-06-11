@@ -64,7 +64,9 @@ It is a common practice to define the variables in the PKGBUILD in same order as
 
 ### pkgbase
 
-An optional global directive is available when building a split package. `pkgbase` is used to refer to the group of packages in the output of *makepkg* and in the naming of source-only tarballs. If not specified, the first element in the `pkgname` array is used. The variable is not allowed to begin with a hyphen. All values for split packages default to the global ones given in the PKGBUILD. Everything, except [#makedepends](#makedepends), [#Sources](#Sources), and [#Integrity](#Integrity) variables can be overridden within each split package's `package()` function.
+An optional global directive is available when building a split package. `pkgbase` is used to refer to the group of packages in the output of *makepkg* and in the naming of source-only tarballs. If not specified, the first element in the `pkgname` array is used. The variable is not allowed to begin with a hyphen.
+
+All options and directives for the split packages default to the global values given in the PKGBUILD. Nevertheless, the following ones can be overridden within each split package’s packaging function: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install), and [#changelog](#changelog).
 
 ### pkgname
 
@@ -163,7 +165,9 @@ The [group](/index.php/Creating_packages#Meta_packages_and_groups "Creating pack
 
 ### depends
 
-An array of packages that must be installed before the software can be run. Version restrictions can be specified with comparison operators, e.g. `depends=('foobar>=1.8.0')`; if multiple restrictions are needed, the dependency can be repeated for each, e.g. `depends=('foobar>=1.8.0' 'foobar<2.0.0')`.
+An array of packages that must be installed for the software to build **and** run. Dependencies defined inside the `package()` function are only required to run the software.
+
+Version restrictions can be specified with comparison operators, e.g. `depends=('foobar>=1.8.0')`; if multiple restrictions are needed, the dependency can be repeated for each, e.g. `depends=('foobar>=1.8.0' 'foobar<2.0.0')`.
 
 Dependencies that are provided by other dependencies do not need to be listed. For instance, if a package *foo* depends on both *bar* and *baz*, and the *bar* package depends in turn on *baz* too, *baz* does not need to be included in *foo'*s `depends` array.
 

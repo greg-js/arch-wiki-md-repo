@@ -29,7 +29,7 @@ Of course there are also [programs that do both](#Archiving_and_compression), wh
 | Name | Packages | Manual | Description |
 | [tar](https://en.wikipedia.org/wiki/tar_(computing) | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) | GNU utility for manipulating the ubiquitous tar archives (tarballs), see [tar](/index.php/Tar "Tar") for usage examples. |
 | [ar](https://en.wikipedia.org/wiki/ar_(Unix) | [binutils](https://www.archlinux.org/packages/?name=binutils) | [ar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ar.1) | Legacy Unix archiver before *tar*. Today only used for creating [static library](https://en.wikipedia.org/wiki/Static_library "wikipedia:Static library") files. |
-| [cpio](https://en.wikipedia.org/wiki/cpio "wikipedia:cpio") | [cpio](https://www.archlinux.org/packages/?name=cpio) | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | File archiver via stdin/stdout. Used in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). |
+| [cpio](https://en.wikipedia.org/wiki/cpio "wikipedia:cpio") | [cpio](https://www.archlinux.org/packages/?name=cpio) | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | File archiver via stdin/stdout, supports cpio and tar formats. |
 
 **Note:** When GNU **tar** is given a compressed file it automatically invokes the right compression program based on the file extension. bzip2, xz, lzip, lxma, lzop, gzip and compress are supported.
 
@@ -62,7 +62,7 @@ These compression programs implement their own file format.
 | Name | Packages | Ext | Description |
 | [ARC](https://en.wikipedia.org/wiki/ARC_(file_format) | [arc](https://aur.archlinux.org/packages/arc/) | .arc, .ark | Was very popular during the early days of the dial-up BBS. Superseded by ZIP. |
 | [ARJ](https://en.wikipedia.org/wiki/ARJ "wikipedia:ARJ") | [arj](https://www.archlinux.org/packages/?name=arj) | .arj | An archiver used on DOS/Windows in mid-1990s. This is an open source clone. |
-| [PAR2](https://en.wikipedia.org/wiki/PAR2 "wikipedia:PAR2") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
+| [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
 
 ### Feature charts
 
@@ -114,6 +114,8 @@ These compression programs implement their own file format.
 *   **unpack** — Wrapper script for handling multiple archive formats.
 
 	[https://github.com/githaff/unpack](https://github.com/githaff/unpack) || [unpack-git](https://aur.archlinux.org/packages/unpack-git/)
+
+*   [Bash/Functions#Extract](/index.php/Bash/Functions#Extract "Bash/Functions")
 
 ## Determining archive format
 

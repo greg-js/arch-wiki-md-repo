@@ -41,6 +41,8 @@ Currently the SCIM project has a wide range of input methods (some may need othe
 *   [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) - Japanese
 *   [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) - Korean
 
+[uim](/index.php/Uim "Uim") can be used as an engine for SCIM by using [scim-uim](https://www.archlinux.org/packages/?name=scim-uim).
+
 ## Configuration
 
 Configuring SCIM correctly requires the following three steps:

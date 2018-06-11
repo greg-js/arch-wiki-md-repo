@@ -35,7 +35,7 @@ Although the [elementary OS](https://elementary.io/) release schedule and toolch
 
 ## Installation
 
-**Warning:** Installing [pantheon-git-meta](https://aur.archlinux.org/packages/pantheon-git-meta/) is *not* a recommended method. This package attempts to install the entire desktop environment and software suite, with all extras, all at once and is likely to fail.
+**Warning:** Installing [pantheon-git-meta](https://aur.archlinux.org/packages/pantheon-git-meta/) is *not* a recommended method. This package attempts to install the entire desktop environment and software suite, with all extras, all at once and is likely to fail as some packages may not build.
 
 ### Unofficial repository
 
@@ -139,7 +139,7 @@ For applications which do not provide a [systemd unit](/index.php/Systemd#Using_
 
 ## Configuration
 
-Configure Pantheon via [switchboard](https://aur.archlinux.org/packages/switchboard/) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/) and its plugs (*switchboard-plug-**), which must be installed separately. Not all of [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)'s settings panels have been ported. In addition, Except [plank](/index.php/Plank "Plank"), all the Pantheon components store their configuration in the `org.pantheon` or `io.elementary` [gsettings keys](/index.php/GNOME#Configuration "GNOME"), which can be edited with [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor).
+Configure Pantheon via [switchboard](https://aur.archlinux.org/packages/switchboard/) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/) and its plugs (*switchboard-plug-**), which must be installed separately. Not all of [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)'s settings panels have been ported. In addition, except [plank](/index.php/Plank "Plank"), all the Pantheon components store their configuration in the `org.pantheon` or `io.elementary` [gsettings keys](/index.php/GNOME#Configuration "GNOME"), which can be edited with [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor).
 
 **Note:** [switchboard-plug-elementary-tweaks-git](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-git/) provides easy access to [customizations for various aspects of the Pantheon desktop and applications](https://raw.githubusercontent.com/elementary-tweaks/elementary-tweaks/master/docs/screenshot.png), similar to [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
@@ -161,7 +161,7 @@ At the minimum, you'll probably want to install:
 
 *   If launched by [~/.xinitrc](#Via_xinit), add third-party indicators to one of the start-up methods described [above](#Launching_Pantheon).
 
-*   Indicators designed for [Unity](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana/) or [wingpanel-indicator-ayatana-git](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana-git/).
+*   [Ayatana Indicators](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana/) or [wingpanel-indicator-ayatana-git](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana-git/) to appear in [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/).
 
 #### Indicator-session menus unresponsive
 

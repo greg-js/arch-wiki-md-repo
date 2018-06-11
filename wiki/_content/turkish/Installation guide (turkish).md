@@ -44,7 +44,7 @@ Varsayılan [konsol klavye düzeni](/index.php/Console_keymap "Console keymap") 
 
 ### Önyükleme modunu doğrula
 
-Bir [UEFI](/index.php/UEFI "UEFI") ankartta UEFI sistemi etkinleştirilmişse, [Archiso](/index.php/Archiso "Archiso"), Arch Linux'u [systemd-boot](/index.php/Systemd-boot "Systemd-boot")'una göre [önyükleyecektir](/index.php/Boot "Boot"). Bunu doğrulamak için, [efivars](/index.php/UEFI#UEFI_variables "UEFI") dizisini listeleyin.
+Bir [UEFI](/index.php/UEFI "UEFI") ankartta UEFI sistemi etkinleştirilmişse, [Archiso](/index.php/Archiso "Archiso"), Arch Linux'u [systemd-boot](/index.php/Systemd-boot "Systemd-boot")'una göre [önyükleyecektir](/index.php/Boot "Boot"). Bunu doğrulamak için, [efivars](/index.php/UEFI#UEFI_variables "UEFI") dizinini listeleyin.
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -55,7 +55,7 @@ Eğer böyle bir dizin yoksa, sistem [BIOS](https://en.wikipedia.org/wiki/BIOS "
 
 ### İnternete bağlan
 
-İso dosyayı [dhcpcd](/index.php/Dhcpcd "Dhcpcd") sunucusu(daemon) [kablolu](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) cihazlar için önyüklemede aktifleştirir. Bağlantı şununla [kontrol](/index.php/Network_configuration#Check_the_connection "Network configuration") edilebilir:
+İso dosyayı [dhcpcd](/index.php/Dhcpcd "Dhcpcd") sunucusunu(daemon) [kablolu](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) cihazlar için önyüklemede aktifleştirir. Bağlantı şununla [kontrol](/index.php/Network_configuration#Check_the_connection "Network configuration") edilebilir:
 
 ```
 # ping archlinux.org

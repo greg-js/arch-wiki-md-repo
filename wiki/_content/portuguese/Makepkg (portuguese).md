@@ -31,7 +31,7 @@ O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages
     *   [3.7 Compilar pacotes 32 bits em um sistema 64 bits](#Compilar_pacotes_32_bits_em_um_sistema_64_bits)
 *   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
     *   [4.1 Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura](#Makepkg_algumas_vezes_falha_ao_assinar_um_pacote_sem_perguntar_pela_palavra-chave_de_assinatura)
-    *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS no makepkg.conf não funciona para pacotes baseados no QMAKE](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_no_makepkg.conf_n.C3.A3o_funciona_para_pacotes_baseados_no_QMAKE)
+    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE](#CFLAGS.2FCXXFLAGS.2FLDFLAGS_no_makepkg.conf_n.C3.A3o_funcionam_para_pacotes_baseados_no_CMAKE)
     *   [4.3 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diret.C3.B3rio_de_instala.C3.A7.C3.A3o_para_pacotes_baseados_em_QMAKE)
     *   [4.4 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_cont.C3.A9m_refer.C3.AAncia_para_.24srcdir)
 *   [5 Veja também](#Veja_tamb.C3.A9m)
@@ -188,12 +188,14 @@ O uso de [ccache](/index.php/Ccache_(Portugu%C3%AAs) "Ccache (Português)") pode
 
 ### Gerar novos checksums
 
-Execute o seguinte comando no mesmo diretório que o arquivo PKGBUILD para gerar novas somas de verificação (*checksums*):
+Instale [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) e execute o seguinte comando no mesmo diretório que o arquivo PKGBUILD para gerar novas somas de verificação (*checksums*):
 
 ```
 $ updpkgsums
 
 ```
+
+As somas de verificação também podem ser obtidos com, por exemplo, `sha256sum` e adicionados ao vetor `sha256sums` manualmente.
 
 ### Usar outros algoritmos de compressão
 
@@ -283,20 +285,41 @@ Com o [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent ag
 
 Esse erro está atualmente sendo rastreado: [FS#49946](https://bugs.archlinux.org/task/49946). Uma solução temporária de contorno para esse problema é executar `killall gpg-agent && makepkg --sign`. Esse problema está resolvido no [pacman-git](https://aur.archlinux.org/packages/pacman-git/), especificamento no hash de commit `c6b04c04653ba9933fe978829148312e412a9ea7`
 
-### CFLAGS/CXXFLAGS/CPPFLAGS no makepkg.conf não funciona para pacotes baseados no QMAKE
+### CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE
 
-Qmake configura automaticamente a variável `CFLAGS` e `CXXFLAGS` de acordo com o que você pensa que deveria ser a configuração correta. Para deixar o qmake usar as variáveis definidas no arquivo de configuração do makepkg, você deve editar o PKGBUILD e passar as variáveis [QMAKE_CFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags-release) e [QMAKE_CXXFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags-release) ao qmake. Por exemplo:
+Para fazer o CMake usar as variáveis definidas no arquivo de configuração do *makepkg*, passe as variáveis para *cmake* na função `build()`. Por exemplo:
 
  `PKGBUILD` 
 ```
 ...
 
 build() {
+  ...
+
+  cmake \
+
+    -DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
+
+    -DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \ 
+
+    -DCMAKE_EXE_LINKER_FLAGS:STRING="${LDFLAGS}" \
+    -DCMAKE_SHARED_LINKER_FLAGS:STRING="${LDFLAGS}" \
+  ...
+}
+
+=== CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE ===
+
+Qmake configura automaticamente a variável {{ic|CFLAGS}} e {{ic|CXXFLAGS}} de acordo com o que você pensa que deveria ser a configuração correta. Para deixar o qmake usar as variáveis definidas no arquivo de configuração do makepkg, você deve editar o PKGBUILD e passar as variáveis [http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags QMAKE_CFLAGS] e [http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags QMAKE_CXXFLAGS] ao qmake. Por exemplo:
+
+{{hc|PKGBUILD|<nowiki>
+...
+
+build() {
   cd "$srcdir/$_pkgname-$pkgver-src"
   qmake-qt4 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
     PREFIX=/usr \
-    QMAKE_CFLAGS_RELEASE="${CFLAGS}"\
-    QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}"
+    QMAKE_CFLAGS="${CFLAGS}" \
+    QMAKE_CXXFLAGS="${CXXFLAGS}"
 
   make
 }

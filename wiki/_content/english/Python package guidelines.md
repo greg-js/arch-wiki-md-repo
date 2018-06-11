@@ -9,12 +9,12 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 ## Contents
 
 *   [1 Package naming](#Package_naming)
-*   [2 Installation methods](#Installation_methods)
-    *   [2.1 distutils](#distutils)
-    *   [2.2 setuptools](#setuptools)
-    *   [2.3 pip](#pip)
-*   [3 Notes](#Notes)
-    *   [3.1 PyPI download URLs](#PyPI_download_URLs)
+*   [2 Source](#Source)
+*   [3 Installation methods](#Installation_methods)
+    *   [3.1 distutils](#distutils)
+    *   [3.2 setuptools](#setuptools)
+    *   [3.3 pip](#pip)
+*   [4 Notes](#Notes)
 
 ## Package naming
 
@@ -24,9 +24,30 @@ The same applies to Python 2 except that the prefix (if needed) is `python2-`.
 
 **Note:** The package name should be entirely lowercase.
 
-	Versioned packages
+## Source
 
-If you need to add a versioned package then use `python-*modulename*-*version*`, e.g. `python-colorama-0.2.5`. So python dependency `colorama==0.2.5` will turn into `python-colorama-0.2.5` Arch package.
+PyPI URLs of the form `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` were silently abandoned for new package versions in the course of 2016, replaced by a scheme using an unpredictable hash that needs to be fetched from the PyPI website each time a package must be updated[[1]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940764). As downstream packagers voiced their concerns to PyPI maintainers[[2]](https://github.com/pypa/pypi-legacy/issues/438), a new stable scheme was provided[[3]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730): [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should now use the following URL templates:
+
+	Source package
+
+	`https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${pkgver}.tar.gz`
+
+	Bilingual wheel package (Python 2 and Python 3 compatible)
+
+	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-py2.py3-none-any.whl`
+
+	Arch specific wheel package
+
+	in this example for `source_x86_64=('...')`. Also `_py=py36` can be used to not repeat the python version:
+
+	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/$_name-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
+
+Note that a custom `**_name**` variable is used instead of `pkgname` since python packages are generally prefixed with `python-`. This variable can generically be defined as follows:
+
+```
+_name=${pkgname#python-}
+
+```
 
 ## Installation methods
 
@@ -90,28 +111,3 @@ python -O -m compileall "${pkgdir}/path/to/module"
 In most cases, you should put `any` in the `arch` array since most Python packages are architecture independent.
 
 Please do not install a directory named just `tests`, as it easily conflicts with other Python packages (for example, `/usr/lib/python2.7/site-packages/tests/`).
-
-### PyPI download URLs
-
-PyPI URLs of the form `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` were silently abandoned for new package versions in the course of 2016, replaced by a scheme using an unpredictable hash that needs to be fetched from the PyPI website each time a package must be updated[[1]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940764). As downstream packagers voiced their concerns to PyPI maintainers[[2]](https://github.com/pypa/pypi-legacy/issues/438), a new stable scheme was provided[[3]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730): [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should now use the following URL templates:
-
-	Source package
-
-	`https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${pkgver}.tar.gz`
-
-	Bilingual wheel package (Python 2 and Python 3 compatible)
-
-	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-py2.py3-none-any.whl`
-
-	Arch specific wheel package
-
-	in this example for `source_x86_64=('...')`. Also `_py=py36` can be used to not repeat the python version:
-
-	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/$_name-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
-
-Note that a custom `**_name**` variable is used instead of `pkgname` since python packages are generally prefixed with `python-`. This variable can generically be defined as follows:
-
-```
-_name=${pkgname#python-}
-
-```

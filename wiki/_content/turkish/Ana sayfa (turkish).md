@@ -16,7 +16,7 @@ Makale katagorilerini listelemek için [İçindekiler](/index.php/Table_of_conte
 
 	Summarizes the similarities and differences between Arch and other distributions.
 
-	[Installation guide](/index.php/Installation_guide "Installation guide")
+	[Yükleme rehberi](/index.php/Installation_guide_(T%C3%BCrk%C3%A7e) "Installation guide (Türkçe)")
 
 	Guide through the process of installing Arch Linux.
 

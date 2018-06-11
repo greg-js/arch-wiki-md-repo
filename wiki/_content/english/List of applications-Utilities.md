@@ -658,18 +658,6 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 ##### Console
 
-*   **atool** — Script for managing file archives of various types.
-
-	[http://www.nongnu.org/atool/](http://www.nongnu.org/atool/) || [atool](https://www.archlinux.org/packages/?name=atool)
-
-*   **arj** — An archiver that formerly used on DOS/Windows in mid-1990s. This is an open source clone.
-
-	[http://arj.sourceforge.net/](http://arj.sourceforge.net/) || [arj](https://www.archlinux.org/packages/?name=arj)
-
-*   **[cpio](https://en.wikipedia.org/wiki/cpio "wikipedia:cpio")** — GNU tool supporting cpio and tar file archive formats.
-
-	[https://www.gnu.org/software/cpio/](https://www.gnu.org/software/cpio/) || [cpio](https://www.archlinux.org/packages/?name=cpio)
-
 *   **[dar](https://en.wikipedia.org/wiki/Dar_(disk_archiver) (Disk ARchive)** — An archiving and compression utility avoiding the drawbacks of tar
 
 	[http://dar.linux.free.fr/](http://dar.linux.free.fr/) || [dar](https://aur.archlinux.org/packages/dar/)
@@ -697,10 +685,6 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 *   **pixz** — A multi-threaded and indexed compressor that avoiding the drawbacks of xz.
 
 	[https://github.com/vasi/pixz](https://github.com/vasi/pixz) || [pixz](https://www.archlinux.org/packages/?name=pixz)
-
-*   **[tar](/index.php/Tar "Tar")** — GNU utility for manipulating the ubiquitous tar archives (tarballs).
-
-	[https://www.gnu.org/software/tar/](https://www.gnu.org/software/tar/) || [tar](https://www.archlinux.org/packages/?name=tar)
 
 *   **[zpaq](https://en.wikipedia.org/wiki/ZPAQ "wikipedia:ZPAQ")** — A high compression ratio archiver written in C++. Powered by Context-Model, LZ77 and BWT algorithm.
 

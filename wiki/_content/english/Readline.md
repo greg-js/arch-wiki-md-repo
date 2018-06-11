@@ -3,6 +3,8 @@
 ## Contents
 
 *   [1 Editing mode](#Editing_mode)
+    *   [1.1 Mode indicator in prompt](#Mode_indicator_in_prompt)
+    *   [1.2 Different cursor shapes for each mode](#Different_cursor_shapes_for_each_mode)
 *   [2 Fast word movement](#Fast_word_movement)
 *   [3 History](#History)
 *   [4 Faster completion](#Faster_completion)
@@ -20,6 +22,46 @@ By default *readline* uses Emacs style shortcuts for interacting with command li
 Alternatively, to set it only for [bash](/index.php/Bash "Bash") by adding the following line to `~/.bashrc`:
 
  `~/.bashrc`  ` set -o vi` 
+
+### Mode indicator in prompt
+
+Vi-style editing has two modes: command and insert. You can display which one is currently active by adding the following option:
+
+ `~/.inputrc` 
+```
+set show-mode-in-prompt on
+
+```
+
+This will print a string in your prompt (`(cmd)`/`(ins)` by default) that can be customized with the `vi-ins-mode-string` and `vi-cmd-mode-string` variables.
+
+### Different cursor shapes for each mode
+
+You can set a different cursor shape for each mode by using ["\1 .. \2" escapes](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html#index-vi_002dcmd_002dmode_002dstring):
+
+ `~/.inputrc` 
+```
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+```
+
+This will set a block shaped cursor when in command mode and a pipe cursor when in insert mode.
+
+The Virtual Console uses different escape codes, so you should check first which term is being used:
+
+ `~/.inputrc` 
+```
+$if term=linux
+	set vi-ins-mode-string \1\e[?0c\2
+	set vi-cmd-mode-string \1\e[?8c\2
+$else
+	set vi-ins-mode-string \1\e[6 q\2
+	set vi-cmd-mode-string \1\e[2 q\2
+$endif
+```
+
+See [software cursor for VGA](https://www.kernel.org/doc/Documentation/admin-guide/vga-softcursor.rst) for further details.
 
 ## Fast word movement
 

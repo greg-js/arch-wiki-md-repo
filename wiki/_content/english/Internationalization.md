@@ -2,17 +2,18 @@ This is the main article on [internationalization](https://en.wikipedia.org/wiki
 
 The article makes use of subpages for instructions specific for languages:
 
+*   [/Chinese](/index.php/Internationalization/Chinese "Internationalization/Chinese")
 *   [/Indic](/index.php/Internationalization/Indic "Internationalization/Indic")
+    *   [/Sinhalese](/index.php/Internationalization/Sinhalese "Internationalization/Sinhalese")
 *   [/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")
 *   [/Korean](/index.php/Internationalization/Korean "Internationalization/Korean")
-*   [/Sinhalese](/index.php/Internationalization/Sinhalese "Internationalization/Sinhalese")
 
 ## Contents
 
 *   [1 Fonts](#Fonts)
 *   [2 Locale](#Locale)
 *   [3 Keyboard layouts](#Keyboard_layouts)
-*   [4 Input method](#Input_method)
+*   [4 Input methods](#Input_methods)
     *   [4.1 Input method engines](#Input_method_engines)
     *   [4.2 GTK IM-module](#GTK_IM-module)
         *   [4.2.1 Disabling GTK IM modules (without uninstalling)](#Disabling_GTK_IM_modules_.28without_uninstalling.29)
@@ -32,11 +33,15 @@ See [Locale](/index.php/Locale "Locale").
 
 See [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
-## Input method
+## Input methods
 
-An [input method](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") (IM) is a software that lets you input characters and symbols not found on your keyboard. IM frameworks provide the infrastructure and user interface to let you easily switch between different input methods. Input methods come either with a framework or are provided separately as IM engines. The IM engines available for a language are listed in the respective subpage.
+From [Fedora:I18N/InputMethods](https://fedoraproject.org/wiki/I18N/InputMethods "fedora:I18N/InputMethods"):
 
-The IM frameworks are:
+	An [input method](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") (IM) is a way to input a certain set of characters and symbols, usually because a keyboard does not directly support them.
+
+Most input methods are part of an **IM framework**, which lets the user easily switch between multiple input methods. These input methods are either included with the framework or packaged separately. Programs implementing input methods are called **IM engines**. The input methods available for a language are listed in the respective language subpage.
+
+The available IM frameworks are:
 
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 *   [gcin](/index.php/Gcin "Gcin")
@@ -56,14 +61,6 @@ See also [Wikipedia:List of input methods for Unix platforms](https://en.wikiped
 ### Input method engines
 
 | Language | Back-end | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | Hime |
-| Chinese | [Wubi](https://en.wikipedia.org/wiki/Wubi_method "wikipedia:Wubi method") | built-in | [ibus-table](https://www.archlinux.org/packages/?name=ibus-table) | [scim-tables](https://www.archlinux.org/packages/?name=scim-tables) | built-in |  ? |  ? |
-| [libchewing](https://www.archlinux.org/packages/?name=libchewing) | [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) | [ibus-chewing](https://www.archlinux.org/packages/?name=ibus-chewing) | [scim-chewing](https://www.archlinux.org/packages/?name=scim-chewing) | [uim-chewing](https://github.com/uim/uim-chewing) | optdepends | optdepends |
-| [libgooglepinyin](https://www.archlinux.org/packages/?name=libgooglepinyin) | [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin) | [ibus-googlepinyin](https://www.archlinux.org/packages/?name=ibus-googlepinyin) | - | - | - | - |
-| [libpinyin](https://www.archlinux.org/packages/?name=libpinyin) | [fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin) | [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) | - | - | - | - |
-| [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin) | [fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin) | [ibus-sunpinyin](https://www.archlinux.org/packages/?name=ibus-sunpinyin) | - | - | - | - |
-| [Rime](/index.php/Rime "Rime") | [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime) | [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) | - | - | - | - |
-| Korean | [libhangul](https://www.archlinux.org/packages/?name=libhangul) | [fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul) | [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) | [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) | - | - | - |
-| Sinhalese | any | [fcitx-sayura](https://www.archlinux.org/packages/?name=fcitx-sayura) | [ibus-sayura](https://github.com/pravins/ibus-sayura) | [scim-sayura](https://www.sayura.net/im/) |  ? |  ? |  ? |
 | Vietnamese | [UniKey](http://www.unikey.org/linux.php) | [fcitx-unikey](https://www.archlinux.org/packages/?name=fcitx-unikey) | [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) | [scim-unikey](https://github.com/scim-im/scim-unikey) | - | - | - |
 | Others | [m17n-lib](https://www.archlinux.org/packages/?name=m17n-lib) | [fcitx-m17n](https://www.archlinux.org/packages/?name=fcitx-m17n) | [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) | [scim-m17n](https://www.archlinux.org/packages/?name=scim-m17n) | depends |  ? |  ? |
 

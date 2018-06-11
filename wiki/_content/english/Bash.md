@@ -53,7 +53,7 @@ Bash is considered an **interactive shell** when its standard input and error ar
 
 ### Configuration files
 
-See "6.2 Bash Startup Files" in `/usr/share/doc/bash/bashref.html` ([online link](https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files)) and [GregsWiki:DotFiles](https://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles") for a complete description.
+See section "6.2 Bash Startup Files" in `/usr/share/doc/bash/bashref.html` ([online link](https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files)) and [GregsWiki:DotFiles](https://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles") for a complete description.
 
 | File | Description | Login shells  | Interactive, *non-login* shells |
 | `/etc/profile` | [Sources](/index.php/Source "Source") application settings in `/etc/profile.d/*.sh` and `/etc/bash.bashrc`. | Yes | No |
@@ -86,7 +86,7 @@ export VARIABLE=content
 
 ```
 
-Environment variables are conventionally placed in `~/.profile` or `/etc/profile` so that all bourne-compatible shells can use them.
+Environment variables are conventionally placed in `~/.profile` or `/etc/profile` so that other Bourne-compatible shells can use them.
 
 See [Environment variables](/index.php/Environment_variables "Environment variables") for more general information.
 

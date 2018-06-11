@@ -8,66 +8,73 @@ This article describes how to set up a Korean language environment. It does not 
 
 *   [1 Fonts](#Fonts)
 *   [2 Locale](#Locale)
-*   [3 Input in Xorg](#Input_in_Xorg)
-    *   [3.1 Choose a Korean input method](#Choose_a_Korean_input_method)
-        *   [3.1.1 Current issues](#Current_issues)
-    *   [3.2 Configuration](#Configuration)
-        *   [3.2.1 ibus-hangul](#ibus-hangul)
-        *   [3.2.2 uim-byeoru](#uim-byeoru)
-        *   [3.2.3 scim-hangul](#scim-hangul)
-        *   [3.2.4 fcitx-hangul](#fcitx-hangul)
-        *   [3.2.5 nabi](#nabi)
+*   [3 Input methods](#Input_methods)
+    *   [3.1 Configuration](#Configuration)
+        *   [3.1.1 Nabi](#Nabi)
+        *   [3.1.2 scim-hangul](#scim-hangul)
+        *   [3.1.3 uim-byeoru](#uim-byeoru)
+    *   [3.2 Troubleshooting](#Troubleshooting)
+        *   [3.2.1 Libreoffice](#Libreoffice)
     *   [3.3 Tips and Tricks](#Tips_and_Tricks)
         *   [3.3.1 Using the Right alt key to switch input methods](#Using_the_Right_alt_key_to_switch_input_methods)
-        *   [3.3.2 Libreoffice](#Libreoffice)
 
 ## Fonts
 
 To use any Korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) or the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. Alternatively, if you use the [Infinality](/index.php/Infinality "Infinality") patches and have the [Infinality-bundle-fonts repository](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") enabled, you can install `ttf-nanum-fonts-ibx`, `ttf-nanumgothic-coding-ibx`, and `ttf-unfonts-core-ibx` from the `infinality-bundle-fonts` repository. If you want to view and use Yethangul(옛한글), install the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) and/or the [ttf-hamchorom-lvt](https://aur.archlinux.org/packages/ttf-hamchorom-lvt/) fonts.
 
+See also [Fonts#Korean](/index.php/Fonts#Korean "Fonts").
+
 ## Locale
 
 You should have `ko_KR.UTF-8` enabled in `/etc/locale.gen`. It is recommended that you always use a `.UTF-8` locale rather than the `ko_KR.EUC-KR` locale. For more information, read [locale](/index.php/Locale "Locale").
 
-## Input in Xorg
+## Input methods
 
-### Choose a Korean input method
+The following [input methods](/index.php/Input_method "Input method") are available for Korean:
 
-Input method (IM) frameworks act as frontends to various input methods and libraries, allowing the user to switch between different languages with ease. Frameworks such as [IBus](/index.php/IBus "IBus"), [uim](/index.php/Uim "Uim"), [fcitx](/index.php/Fcitx "Fcitx") and [scim](/index.php/Scim "Scim"), as well as [nabi-git](https://aur.archlinux.org/packages/nabi-git/), a stand-alone Korean input method, support Korean input. This section will try to help you choose a suitable IM framework.
-
-**Note:** Check the issues associated with each input method framework before choosing which one to use.
-
-#### Current issues
-
-	ibus
-
-	[IBus](/index.php/IBus "IBus") is the default input framework of [GNOME](/index.php/GNOME "GNOME") and Ubuntu. It is the most widely supported input method framework. As such, you can use ibus for inputting Korean without issue in most applications. However, there are some issues:
-
-*   As of November 2014, ibus sometimes doesn't recognize user-set hotkeys for IM switching. This means that you may need to click on the ibus systray icon every time to want to switch input methods.
-
-	uim
-
-	[uim](/index.php/UIM "UIM") is a multilingual, cross-platform input method framework. The [uim](https://www.archlinux.org/packages/?name=uim) package in the official repositories includes uim-byeoru, the korean module for uim. uim-byeoru works well on most applications (including Google Chrome and Chromium) without issue. [opera](https://www.archlinux.org/packages/?name=opera) users, however, may want to avoid uim, as trying to use uim-byeoru in Opera may cause it to crash.
-
-	scim
-
-	scim, or the [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform"), is a input method framework for POSIX-compliant systems. scim-hangul, as of November 2014, has issues with Google Chrome and Chromium web browsers. With the default environment variables, you cannot input Korean in Google Chrome or Chromium. scim also causes problems in Gedit as of November 2014\. When scim-hangul is active, pressing `backspace` does not work properly. A workaround for both these issues will be explained in the scim configuration section. However, even with this workaround applied, Chrome/Chromium users may find that the preedit string disappears when the spacebar or any other modifier key is pressed. *There is currently no known workaround for this issue.*
-
-	fcitx
-
-	[Fcitx](/index.php/Fcitx "Fcitx") is another input method framework for POSIX-compliant systems. Fcitx-hangul has issues with Google Chrome and Chromium. Some users have reported that fcitx only recognizes Google Chrome/Chromium's URL bar as an input window only after their themes have been changed.
-
-	nabi
-
-	[nabi-git](https://aur.archlinux.org/packages/nabi-git/) is a standalone Korean input method that is being developed by Choehwanjin. Nabi provides many unique features, such as Yethangul support. If you only need to use Korean and English input, you may want to install nabi. Currently, nabi causes an issue with chromium. When you press the spacebar, the preedit string will be placed after the space, causing your input to look like this: `한 글입력 에문제 가있습니다`
-
-If you have chosen which framework to use, continue with the configuration section.
+*   [fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul) for [Fcitx](/index.php/Fcitx "Fcitx")
+*   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) for [IBus](/index.php/IBus "IBus")
+*   [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) for [SCIM](/index.php/SCIM "SCIM")
+*   *uim-byeoru* of [uim](/index.php/Uim "Uim")
+*   [#Nabi](#Nabi)
 
 ### Configuration
 
-#### ibus-hangul
+#### Nabi
 
-See [IBus](/index.php/IBus "IBus") for information about installing and configuring ibus.
+[Nabi](https://github.com/libhangul/nabi) is a standalone Korean input method, developed by Choe Hwanjin, offering many unique features, such as Yethangul support.
+
+[Install](/index.php/Install "Install") the [nabi-git](https://aur.archlinux.org/packages/nabi-git/) package.
+
+Once you have finished the installation, add the following to [xprofile](/index.php/Xprofile "Xprofile"), [xinitrc](/index.php/Xinitrc "Xinitrc"), or `xsession`:
+
+```
+export XIM=nabi
+export XIM_ARGS=
+export XIM_PROGRAM="nabi"
+export XMODIFIERS="@im=nabi"
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+
+```
+
+Once you restart the X session, nabi will autostart by default. The default Korean keyboard layout is Dubeolsik(두벌식). If you need a different Korean keyboard layout (e.g. Sebeolsik or Dubeolsik Yetgul), click on the system tray icon of nabi, and select a input method from the menu that pops up.
+
+#### scim-hangul
+
+[Install](/index.php/Install "Install") [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul).
+
+Now add the following to the user's `.xinitrc`, `.xprofile`, or `.xsession`:
+
+```
+export XMODIFIERS=@im=SCIM
+export GTK_IM_MODULE="xim"
+export QT_IM_MODULE="scim"
+scim -d
+
+```
+
+**Note:** The above environment variables differ slightly from the ones recommended in the [scim](/index.php/Scim "Scim") article. We are adding `export GTK_IM_MODULE="xim"` instead of `GTK_IM_MODULE=”scim"`. This allows us to input Korean in apps such as Chrome and Chromium (though with issues discussed above), and to use backspace properly in GTK+3 applications such as gedit.
 
 #### uim-byeoru
 
@@ -88,56 +95,31 @@ When you are done with the global preferences, find *Byeoru* in the tree menu on
 
 If all went properly, you should now be able to use UIM-byeoru to type in Korean.
 
-#### scim-hangul
+### Troubleshooting
 
-[Install](/index.php/Install "Install") [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul).
+	[IBus](/index.php/IBus "IBus")
 
-Now add the following to the user's `.xinitrc`, `.xprofile`, or `.xsession`:
+	As of November 2014, IBus sometimes doesn't recognize user-set hotkeys for IM switching. This means that you may need to click on the IBus systray icon every time to want to switch input methods.
 
-```
-export XMODIFIERS=@im=SCIM
-export GTK_IM_MODULE="xim"
-export QT_IM_MODULE="scim"
-scim -d
+	[uim](/index.php/Uim "Uim")
 
-```
+	*uim-byeoru* may cause [Opera](/index.php/Opera "Opera") to crash.
 
-**Note:** The above environment variables differ slightly from the ones recommended in the [scim](/index.php/Scim "Scim") article. We are adding `export GTK_IM_MODULE="xim"` instead of `GTK_IM_MODULE=”scim"`. This allows us to input Korean in apps such as Chrome and Chromium (though with issues discussed above), and to use backspace properly in GTK+3 applications such as gedit.
+	scim
 
-#### fcitx-hangul
+	scim-hangul, as of November 2014, has issues with Google Chrome and [Chromium](/index.php/Chromium "Chromium") web browsers. With the default environment variables, you cannot input Korean in Google Chrome or Chromium. scim also causes problems in Gedit as of November 2014\. When scim-hangul is active, pressing `backspace` does not work properly. A workaround for both these issues will be explained in [#scim-hangul](#scim-hangul). However, even with this workaround applied, Chrome/Chromium users may find that the preedit string disappears when the spacebar or any other modifier key is pressed. *There is currently no known workaround for this issue.*
 
-[Install](/index.php/Install "Install") [fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul) and the gui frontend of your choice. fcitx configuration frontends include: [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4), [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5).
+	fcitx
 
-If you are using KDE, also install [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), in order to have the fcitx configuration integrated into KDE's system settings.
+	Fcitx-hangul has issues with Google Chrome and Chromium. Some users have reported that fcitx only recognizes Google Chrome/Chromium's URL bar as an input window only after their themes have been changed.
 
-Once fcitx is installed, edit your `.xinitrc`, `.xprofile`, or `.xsession` file to include:
+	nabi
 
-```
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
+	[nabi-git](https://aur.archlinux.org/packages/nabi-git/) is a standalone Korean input method that is being developed by Choehwanjin. Nabi provides many unique features, such as Yethangul support. If you only need to use Korean and English input, you may want to install nabi. Currently, nabi causes an issue with chromium. When you press the spacebar, the preedit string will be placed after the space, causing your input to look like this: `한 글입력 에문제 가있습니다`
 
-```
+#### Libreoffice
 
-#### nabi
-
-[Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") the [nabi](https://aur.archlinux.org/packages/nabi/) package from the AUR.
-
-If you want the latest version of nabi, run `git clone [https://github.com/choehwanjin/nabi.git](https://github.com/choehwanjin/nabi.git)`, `cd` into the cloned git repo, check if you have all the necessary libraries for building nabi by running `./configure`, and then run `make`. When make finishes building the binary, run `make install` as root.
-
-Once you have finished the installation, add the following to `.xprofile`, `.xinitrc`, or `xsession`:
-
-```
-export XIM=nabi
-export XIM_ARGS=
-export XIM_PROGRAM="nabi"
-export XMODIFIERS="@im=nabi"
-export GTK_IM_MODULE=xim
-export QT_IM_MODULE=xim
-
-```
-
-Once you restart the X session, nabi will autostart by default. The default korean keyboard layout is Dubeolsik(두벌식). If you need a different korean keyboard layout (e.g. Sebeolsik or Dubeolsik Yetgul), click on the system tray icon of nabi, and select a input method from the menu that pops up.
+In some cases, Libreoffice will not take Korean input from any input method. To resolve this issue, try adding `export OOO_FORCE_DESKTOP="gnome"` to `.xinitrc`, `.xprofile`, or `.xsession`.
 
 ### Tips and Tricks
 
@@ -155,7 +137,3 @@ xmodmap -e 'keycode 105 = Hangul_Hanja'
 ```
 
 Then, in the settings of your input method, add the right `Alt` key as a hotkey to switch IMEs. The right `Alt` key has been remapped to a non-modifier key called "Hangul". The script above also allows you to use the right `Ctrl` key (e.g. '한자키') to activate Hanja input. The right `Ctrl` key should also have been remapped to "Hangul_Hanja". Add this key as a Hanja hotkey within the settings of your input method. If adding that to your `.xprofile` or `.xinitrc` file did not work, create a script containing those four lines and set it to auto execute when your desktop environment starts up.
-
-#### Libreoffice
-
-In some cases, Libreoffice will not take Korean input from any input method. To resolve this issue, try adding `export OOO_FORCE_DESKTOP="gnome"` to `.xinitrc`, `.xprofile`, or `.xsession`.

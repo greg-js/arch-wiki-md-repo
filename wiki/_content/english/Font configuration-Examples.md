@@ -13,7 +13,8 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
     *   [6.1 Japanese](#Japanese)
     *   [6.2 Chinese](#Chinese)
 *   [7 Patched packages](#Patched_packages)
-*   [8 See also](#See_also)
+*   [8 Infinality bundle font substitution](#Infinality_bundle_font_substitution)
+*   [9 See also](#See_also)
 
 ## Hinted fonts
 
@@ -402,6 +403,17 @@ or
 	[https://launchpad.net/ubuntu/+source/freetype](https://launchpad.net/ubuntu/+source/freetype) || [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/) [fontconfig-ubuntu](https://aur.archlinux.org/packages/fontconfig-ubuntu/)
 
 To restore the original packages, reinstall [freetype2](https://www.archlinux.org/packages/?name=freetype2), [cairo](https://www.archlinux.org/packages/?name=cairo), and [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) as dependencies (use the `--asdeps` flag with pacman when reinstalling). Include [lib32-cairo](https://www.archlinux.org/packages/?name=lib32-cairo), [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig), and [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2) if you also installed 32-bit versions.
+
+## Infinality bundle font substitution
+
+Though most features from the [Infinality bundle](https://github.com/bohoomil/fontconfig-ultimate) were made obsolete by recent versions of [freetype2](https://www.archlinux.org/packages/?name=freetype2) and [fontconfig](https://www.archlinux.org/packages/?name=fontconfig), one feature which remained valuable is the specific [font substitution](/index.php/Fonts#Font_alias "Fonts") selection that was offered with the bundle.
+
+This selection can be very simply reenacted by [installing](/index.php/Install "Install") either [fonts-meta-extended-lt](https://aur.archlinux.org/packages/fonts-meta-extended-lt/) (light version) or [fonts-meta-extended](https://aur.archlinux.org/packages/fonts-meta-extended/) (complete version) and [enabling](/index.php/Font_configuration#Presets "Font configuration") the provided preset:
+
+```
+# ln -s /etc/fonts/conf.avail/30-infinality-aliases.conf /etc/fonts/conf.d
+
+```
 
 ## See also
 

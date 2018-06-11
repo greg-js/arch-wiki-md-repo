@@ -51,7 +51,7 @@ If you decide to set fish as the default user shell, the first step is to set th
 
 The next step is to port the current needed actions and configuration performed in the various Bash initialization scripts, namely `/etc/profile`, `~/.bash_profile`, `/etc/bash.bashrc` and `~/.bashrc`, into the fish framework.
 
-In particular the content of the `$PATH` environment variable once directly logged under fish should be checked and adjusted to one's need. In fish `$PATH` is a global environment variable, which means that it is exported to child processes and lost upon reboot. The recommended way of adding permanently additional locations to the path is by assigning the desired locations to the `fish_user_paths` universal variable. This variable is automatically added to `$PATH` and is preserved across restarts of the shell. For example by setting:
+In particular the content of the `$PATH` environment variable, once directly logged under fish, should be checked and adjusted to one's need. In fish `$PATH` is a global environment variable, which means that it is exported to child processes and lost upon reboot. The recommended way of adding permanently additional locations to the path is by assigning them to the `fish_user_paths` universal variable. This variable is automatically added to `$PATH` and is preserved across restarts of the shell. For example by setting:
 
 ```
 $ set -U fish_user_paths */first/path* */second/path* */third/one*
@@ -71,7 +71,7 @@ Keep the default shell as Bash and simply add the line `exec fish` to the approp
 **Tip:**
 
 *   In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
-*   To have commands such as `bash -c 'echo test'` run the command in Bash instead of starting fish, you can write `if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi` instead. (This is necessary for EternalTerminal to work.)
+*   To have commands such as `bash -c 'echo test'` run the command in Bash instead of starting fish, you can write `if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi` instead.
 
 #### Use terminal emulator options
 
@@ -82,16 +82,14 @@ gnome-terminal -e fish
 
 ```
 
-With LilyTerm and other light terminal emulators that do not support setting the shell it would look like this:
+With terminal emulators that do not support setting the shell, for example [lilyterm-git](https://aur.archlinux.org/packages/lilyterm-git/), it would look like this:
 
 ```
 SHELL=/usr/bin/fish lilyterm
 
 ```
 
-You can also set fish as the default shell for the terminal in the terminal's configuration or for a terminal profile if your terminal emulator has a profiles feature.
-
-Whenever you open your terminal emulator, you will be dropped into fish.
+Also, depending on the terminal, you may be able to set fish as the default shell in either the terminal configuration or the terminal profile.
 
 #### Use terminal multiplexer options
 
@@ -110,14 +108,12 @@ The configuration file run at every login is located at `~/.config/fish/config.f
 
 ### Web interface
 
-The fish prompt and terminal colors can be set with the interactive web interface:
+The fish terminal colors, prompt, functions, variables, history, bindings and abbreviations can be set with the interactive web interface:
 
 ```
 fish_config
 
 ```
-
-Selected settings are written to your personal configuration file. You can also view defined functions and your history.
 
 ### Command completion
 
@@ -294,3 +290,4 @@ For more detailed information, refer to [fish - alias](https://fishshell.com/doc
 *   [http://fishshell.com/](http://fishshell.com/) - Home page
 *   [http://fishshell.com/docs/current/index.html](http://fishshell.com/docs/current/index.html) - Documentation
 *   [http://hyperpolyglot.org/unix-shells](http://hyperpolyglot.org/unix-shells) - Shell grammar correspondence table
+*   [https://github.com/fish-shell/fish-shell](https://github.com/fish-shell/fish-shell) - fish on GitHub

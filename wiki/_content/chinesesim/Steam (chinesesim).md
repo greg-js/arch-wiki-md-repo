@@ -1,3 +1,8 @@
+相关文章
+
+*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
+*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
+
 引自 [维基百科](/index.php?title=Zh-cn:Wikipedia:Steam&action=edit&redlink=1 "Zh-cn:Wikipedia:Steam (page does not exist)"):
 
 	*Steam是美国维尔福于2003年9月12日推出的电子软件分发、数字版权管理及社交系统，它用于数字软件及游戏的发布销售与后续更新，支持Windows、Mac OS和Linux等操作系统，目前是全球最大的数字游戏平台。*
@@ -9,8 +14,8 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
     *   [2.1 鼠标主题不一致](#.E9.BC.A0.E6.A0.87.E4.B8.BB.E9.A2.98.E4.B8.8D.E4.B8.80.E8.87.B4)
-    *   [2.2 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
-    *   [2.3 Flash not working on 64-bit systems](#Flash_not_working_on_64-bit_systems)
+    *   [2.2 点击关闭按钮时将 Steam 最小化](#.E7.82.B9.E5.87.BB.E5.85.B3.E9.97.AD.E6.8C.89.E9.92.AE.E6.97.B6.E5.B0.86_Steam_.E6.9C.80.E5.B0.8F.E5.8C.96)
+    *   [2.3 64位系统上 Flash 无法使用](#64.E4.BD.8D.E7.B3.BB.E7.BB.9F.E4.B8.8A_Flash_.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
     *   [2.4 Text is corrupt or missing](#Text_is_corrupt_or_missing)
     *   [2.5 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
     *   [2.6 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
@@ -24,8 +29,8 @@
 *   [3 Launching games with custom commands, such as Bumblebee/Primus](#Launching_games_with_custom_commands.2C_such_as_Bumblebee.2FPrimus)
     *   [3.1 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [4 Using native runtime](#Using_native_runtime)
-*   [5 Skins for Steam](#Skins_for_Steam)
-    *   [5.1 Steam skin manager](#Steam_skin_manager)
+*   [5 Steam 皮肤](#Steam_.E7.9A.AE.E8.82.A4)
+    *   [5.1 Steam 皮肤管理器](#Steam_.E7.9A.AE.E8.82.A4.E7.AE.A1.E7.90.86.E5.99.A8)
 *   [6 See also](#See_also)
 
 ## 安装
@@ -49,7 +54,7 @@ Steam 目前在 Arch Linux 上并不被官方支持，因此需要用户做一�
 
 ## 疑难问题
 
-**Note:** In addition to being documented here, any bug/fix/error should be, if not already, reported on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux).
+**Note:** 除了记录到这里， 所有还未被记录的bug、错误或修改方案都应该报告到 Valve 的 [GitHub page](https://github.com/ValveSoftware/steam-for-linux).
 
 ### 鼠标主题不一致
 
@@ -76,36 +81,36 @@ Inherits=Adwaita
 
 If the cursor gets stuck pointing in the wrong direction after exiting Steam, a workaround is to run `xsetroot -cursor_name left_ptr` (From [the awesomewm wiki](http://awesome.naquadah.org/wiki/FAQ#How_to_change_the_cursor_theme.3F)).
 
-### The close button only minimizes the window
+### 点击关闭按钮时将 Steam 最小化
 
 	Valve GitHub [issue 1025](https://github.com/ValveSoftware/steam-for-linux/issues/1025)
 
-To close the Steam window (and remove it from the taskbar) when you press **x**, but keep Steam running in the tray, set the environment variable `STEAM_FRAME_FORCE_CLOSE` to `1`. You can do this by launching Steam using the following command.
+如果想在点击**x**时关闭 Steam 窗口（并将它从任务栏移除），同时让 Steam 最小化到托盘，你需要设置环境变量`STEAM_FRAME_FORCE_CLOSE` 为`1`。可以通过以下命令行启动 Steam：
 
 ```
 $ STEAM_FRAME_FORCE_CLOSE=1 steam
 
 ```
 
-If you start steam with the .desktop file, you need to replace the `Exec` with following line:
+如果你通过 .desktop 文件来启动 Steam，你需要将`Exec`替换为以下内容：
 
 ```
  Exec=sh -c 'STEAM_FRAME_FORCE_CLOSE=1 steam' %U
 
 ```
 
-### Flash not working on 64-bit systems
+### 64位系统上 Flash 无法使用
 
 	Steam Support [article](https://support.steampowered.com/kb_article.php?ref=1493-GHZB-7612)
 
-First ensure [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) is installed. It should be working at this point, if not create a local Steam Flash plugin folder:
+首先确认已经安装了[lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)。如果安装后还无法使用，创建一个本地 Steam Flash 插件目录：
 
 ```
 $ mkdir ~/.steam/bin32/plugins/
 
 ```
 
-and set a symbolic link to the global lib32 flash plugin file in your upper new folder
+并且将全局的 lib32 flash 插件目录软链接到上面创建的路径：
 
 ```
 $ ln -s /usr/lib32/mozilla/plugins/libflashplayer.so ~/.steam/bin32/plugins/
@@ -230,17 +235,17 @@ $ cat /proc/$(pidof steam)/maps|sed '/\.local/!d;s/.*  //g'|sort|uniq
 
 ```
 
-## Skins for Steam
+## Steam 皮肤
 
-The Steam interface can be fully customized by copying its various interface files in its skins directory and modifying them.
+通过拷贝和修改皮肤目录下的文件， Steam 界面可以被完全的定制化。
 
-### Steam skin manager
+### Steam 皮肤管理器
 
-The process of applying a skin to Steam can be greatly simplified using [steam-skin-manager](https://aur.archlinux.org/packages/steam-skin-manager/) from the AUR. The package also comes with a hacked version of the Steam launcher which allows the window manager to draw its borders on the Steam window.
+AUR上的[steam-skin-manager](https://aur.archlinux.org/packages/steam-skin-manager/) 让 Steam 皮肤的使用过程被大大简化。这个软件包还带有一个 hacked 过的 Steam 启动器，窗口管理器可以在这个 Steam 窗口上绘制边框。
 
-As a result, skins for Steam will come in two flavors, one with and one without window buttons. The skin manager will prompt you whether you use the hacked version or not, and will automatically apply the theme corresponding to your GTK+ theme if it is found. You can of course still apply another skin if you want.
+因此就有两种风格的 Steam 皮肤，一类有窗口按钮一类没有。皮肤管理器会提示你要使用哪种，还会根据你的 GTK+ 主题自动使用对应的皮肤，当然你也可以自己选择。
 
-The package ships with two themes for the default Ubuntu themes, Ambiance and Radiance.
+皮肤管理器自动两种皮肤，对应 Ubuntu 默认主题的 Ambiance 和 Radiance.
 
 ## See also
 

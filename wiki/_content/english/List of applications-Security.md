@@ -389,6 +389,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 #### Password managers
 
+*   **Bitwarden** — Open source password manager with desktop, mobile, browser, and CLI versions. Cloud or self-hosted.
+
+	[https://bitwarden.com/](https://bitwarden.com/) || [bitwarden](https://aur.archlinux.org/packages/bitwarden/), [bitwarden-cli](https://aur.archlinux.org/packages/bitwarden-cli/)
+
 *   **Encryptr** — Zero-knowledge, cloud-based password manager.
 
 	[https://spideroak.com/encryptr/](https://spideroak.com/encryptr/) || [encryptr](https://aur.archlinux.org/packages/encryptr/)

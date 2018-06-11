@@ -32,12 +32,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
         *   [2.2.4 Mount using autofs](#Mount_using_autofs)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Performance tuning](#Performance_tuning)
-    *   [3.2 Automounting shares with systemd-networkd](#Automounting_shares_with_systemd-networkd)
-    *   [3.3 Automatic mount handling](#Automatic_mount_handling)
-        *   [3.3.1 Cron](#Cron)
-        *   [3.3.2 systemd/Timers](#systemd.2FTimers)
-        *   [3.3.3 Mount at startup via systemd](#Mount_at_startup_via_systemd)
-        *   [3.3.4 NetworkManager dispatcher](#NetworkManager_dispatcher)
+    *   [3.2 Automatic mount handling](#Automatic_mount_handling)
+        *   [3.2.1 Cron](#Cron)
+        *   [3.2.2 systemd/Timers](#systemd.2FTimers)
+        *   [3.2.3 Using a NetworkManager dispatcher](#Using_a_NetworkManager_dispatcher)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 
@@ -151,13 +149,24 @@ Even though idmapd may be running, it may not be fully enabled. Verify if `/sys/
 
 Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to make this change permanent, e.g.:
 
+ `/etc/modprobe.d/nfsd.conf`  `options nfsd nfs4_disable_idmapping=0` 
+
+To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.conf` on **both** the server and the client:
+
+ `/etc/idmapd.conf` 
+```
+# The following should be set to the local NFSv4 domain name
+# The default is the host's DNS domain name.
+Domain = *domain.tld*
+```
+
+On the client one should also enable NFSv4 idmapping:
+
  `/etc/modprobe.d/nfsd.conf` 
 ```
+options nfs nfs4_disable_idmapping=0
 options nfsd nfs4_disable_idmapping=0
-
 ```
-
-To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.conf` on **both** the server and the client.
 
 ##### Static ports for NFSv3
 
@@ -246,19 +255,7 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 ### Client
 
-Users intending to use NFS4 with [Kerberos](/index.php/Kerberos "Kerberos"), also need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`. However, due to bug [FS#50663](https://bugs.archlinux.org/task/50663) in glibc, `rpc-gssd.service` currently fails to start. Adding the "-f" (foreground) flag in the service is a workaround:
-
- `# systemctl edit rpc-gssd.service` 
-```
-[Unit]
-Requires=network-online.target
-After=network-online.target
-
-[Service]
-Type=simple
-ExecStart=
-ExecStart=/usr/sbin/rpc.gssd -f
-```
+Users intending to use NFS4 with [Kerberos](/index.php/Kerberos "Kerberos") need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`.
 
 #### Manual mounting
 
@@ -345,8 +342,6 @@ One might have to reboot the client to make systemd aware of the changes to fsta
 *   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted. You may also try to add the `x-systemd.requires=network-online.target` mount option if shutdown takes too long.
 *   Using mount options as `noatime`, `nodiratime`, `noac`, `nocto` may be used to increase NFS performance.
 
-**Note:** Users trying to automount a NFS-share via systemd which is mounted the same way on the server may experience a freeze when handling larger amounts of data.
-
 #### Mount using autofs
 
 Using [autofs](/index.php/Autofs "Autofs") is useful when multiple machines want to connect via NFS; they could both be clients as well as servers. The reason this method is preferable over the earlier one is that if the server is switched off, the client will not throw errors about being unable to find NFS shares. See [autofs#NFS network mounts](/index.php/Autofs#NFS_network_mounts "Autofs") for details.
@@ -375,36 +370,25 @@ To mount with the increased `rsize` and `wsize` mount options:
 
 ```
 
-### Automounting shares with systemd-networkd
-
-Users making use of systemd-networkd might notice nfs mounts the fstab are not mounted when booting; errors like the following are common:
-
-```
-mount[311]: mount.nfs4: Network is unreachable
-
-```
-
-The solution is simple; force systemd to wait for the network to be completely configured by [enabling](/index.php/Enabling "Enabling") `systemd-networkd-wait-online.service`. In theory this slows down the boot-process because less services run in parallel.
-
 ### Automatic mount handling
 
-This trick is useful for laptops that require nfs shares from a local wireless network. If the nfs host becomes unreachable, the nfs share will be unmounted to hopefully prevent system hangs when using the hard mount option. See [https://bbs.archlinux.org/viewtopic.php?pid=1260240#p1260240](https://bbs.archlinux.org/viewtopic.php?pid=1260240#p1260240)
+This trick is useful for NFS-shares on a [wireless](/index.php/Wireless "Wireless") network and/or on a network that may be unreliable. If the NFS host becomes unreachable, the NFS share will be unmounted to hopefully prevent system hangs when using the `hard` mount option [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1260240#p1260240).
 
-Make sure that the NFS mount points are correctly indicated in `/etc/fstab`:
+Make sure that the NFS mount points are correctly indicated in [fstab](/index.php/Fstab "Fstab"):
 
+ `/etc/fstab` 
 ```
 lithium:/mnt/data           /mnt/data	        nfs noauto,noatime,rsize=32768,wsize=32768 0 0
 lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime,rsize=32768,wsize=32768 0 0
-
 ```
 
-**Note:** You must use hostnames in `/etc/fstab` for this to work, not IP addresses.
+**Note:**
 
-The `noauto` mount option tells systemd not to automatically mount the shares at boot. systemd would otherwise attempt to mount the nfs shares that may or may not exist on the network causing the boot process to appear to stall on a blank screen.
+*   You must use hostnames in [fstab](/index.php/Fstab "Fstab") for this to work, not IP addresses.
+*   In order to mount NFS shares with non-root users the `users` option has to be added.
+*   The `noauto` mount option tells [systemd](/index.php/Systemd "Systemd") to not automatically [mount](/index.php/Mount "Mount") the shares at boot, otherwise this may causing the boot process to stall.
 
-In order to mount NFS shares with non-root users the `user` option has to be added.
-
-Create the `auto_share` script that will be used by *cron* or *systemd/Timers* to use ICMP ping to check if the NFS host is reachable:
+Create the `auto_share` script that will be used by [cron](/index.php/Cron "Cron") or [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") to use ICMP ping to check if the NFS host is reachable:
 
  `/usr/local/bin/auto_share` 
 ```
@@ -467,12 +451,14 @@ with:
 ```
 in the `auto_share` script above.
 
+Make sure the script is [executable](/index.php/Executable "Executable"):
+
 ```
 # chmod +x /usr/local/bin/auto_share
 
 ```
 
-Create a cron entry or a systemd/Timers timer to check every minute if the server of the shares are reachable.
+Next check configure the script to run every X, in the examples below this is every minute.
 
 #### Cron
 
@@ -484,10 +470,10 @@ Create a cron entry or a systemd/Timers timer to check every minute if the serve
 
 #### systemd/Timers
 
- `# /etc/systemd/system/auto_share.timer` 
+ `/etc/systemd/system/auto_share.timer` 
 ```
 [Unit]
-Description=Check the network mounts
+Description=Automount NFS shares every minute
 
 [Timer]
 OnCalendar=*-*-* *:*:00
@@ -496,35 +482,14 @@ OnCalendar=*-*-* *:*:00
 WantedBy=timers.target
 
 ```
- `# /etc/systemd/system/auto_share.service` 
-```
-[Unit]
-Description=Check the network mounts
-
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/auto_share
-
-```
-
-```
-# systemctl enable auto_share.timer
-
-```
-
-#### Mount at startup via systemd
-
-A systemd unit file can also be used to mount the NFS shares at startup. The unit file is not necessary if NetworkManager is installed and configured on the client system. See [#NetworkManager dispatcher](#NetworkManager_dispatcher).
-
  `/etc/systemd/system/auto_share.service` 
 ```
 [Unit]
-Description=NFS automount
+Description=Automount NFS shares
 After=syslog.target network.target
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
 ExecStart=/usr/local/bin/auto_share
 
 [Install]
@@ -532,13 +497,13 @@ WantedBy=multi-user.target
 
 ```
 
-Now [enable](/index.php/Enable "Enable") the `auto_share.service`.
+Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `auto_share.timer`.
 
-#### NetworkManager dispatcher
+#### Using a NetworkManager dispatcher
 
-In addition to the method described previously, [NetworkManager](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") can also be configured to run a script on network status change: [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `NetworkManager-dispatcher.service`.
+[NetworkManager](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") can also be configured to run a script on network status change.
 
-The easiest method for mount shares on network status change is to just symlink to the `auto_share` script:
+The easiest method for mount shares on network status change is to symlink the `auto_share` script:
 
 ```
 # ln -s /usr/local/bin/auto_share /etc/NetworkManager/dispatcher.d/30-nfs.sh
@@ -547,9 +512,8 @@ The easiest method for mount shares on network status change is to just symlink 
 
 However, in that particular case unmounting will happen only after the network connection has already been disabled, which is unclean and may result in effects like freezing of KDE Plasma applets.
 
-The following script safely unmounts the NFS shares before the relevant network connection is disabled by listening for the `pre-down` and `vpn-pre-down` events:
+The following script safely unmounts the NFS shares before the relevant network connection is disabled by listening for the `pre-down` and `vpn-pre-down` events, make the script is [executable](/index.php/Executable "Executable"):
 
-**Note:** This script ignores mounts with the noauto option.
  `/etc/NetworkManager/dispatcher.d/30-nfs.sh` 
 ```
 #!/bin/bash
@@ -576,16 +540,14 @@ fi
 
 ```
 
-Make the script executable with [chmod](/index.php/Chmod "Chmod") and create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down` to catch the `pre-down` events:
+**Note:** This script ignores mounts with the `noauto` option, remove this mount option or use `auto` to allow the dispatcher to manage these mounts.
+
+Create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down` to catch the `pre-down` events:
 
 ```
 # ln -s /etc/NetworkManager/dispatcher.d/30-nfs.sh /etc/NetworkManager/dispatcher.d/pre-down.d/30-nfs.sh
 
 ```
-
-The above script can be modified to mount different shares (even other than NFS) for different connections.
-
-See also: [NetworkManager#Use dispatcher to handle mounting of CIFS shares](/index.php/NetworkManager#Use_dispatcher_to_handle_mounting_of_CIFS_shares "NetworkManager").
 
 ## Troubleshooting
 

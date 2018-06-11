@@ -263,15 +263,14 @@ Um gerenciador de rede permite que você gerencie configurações de conexão de
 **Nota:** Existem muitas soluções para escolher, mas lembre-se de que todas elas são mutuamente exclusivas; você não deve executar dois daemons simultaneamente.
 
 | Gerenciador
-de rede | Lida com conexões
-cabeadas | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Ferramentas CLI | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Point-to-Point_Protocol "wikipedia:pt:Point-to-Point Protocol")
-(ex., Modem 3G) | Cliente [#DHCP](#DHCP) | Units de systemd |
-| [ConnMan](/index.php/ConnMan "ConnMan") | Sim | 8 não oficiais | Não | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Sim | interno | `connman.service` |
-| [netctl](/index.php/Netctl "Netctl") | Sim | 2 não oficiais | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Sim | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
-| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Sim | Não | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Sim | internal, [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
-| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Sim | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | Não |  ? | interno | `systemd-networkd.service`, `systemd-resolved.service` |
-| [Wicd](/index.php/Wicd "Wicd") | Sim | Sim | Não | [wicd-cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-cli.8), [wicd-curses(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-curses.8) | Não | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | `wicd.service` |
-| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Não | Sim | Não | Não | Não | qualquer (apenas executa comando) |
+de rede | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Ferramentas CLI | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Point-to-Point_Protocol "wikipedia:pt:Point-to-Point Protocol") (ex., Modem 3G) | Cliente [#DHCP](#DHCP) | Units de systemd |
+| [ConnMan](/index.php/ConnMan "ConnMan") | 8 não oficiais | Não | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Sim | interno | `connman.service` |
+| [netctl](/index.php/Netctl "Netctl") | 2 não oficiais | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Sim | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
+| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Não | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Sim | internal, [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
+| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | Não |  ? | interno | `systemd-networkd.service`, `systemd-resolved.service` |
+| [Wicd](/index.php/Wicd "Wicd") | Sim | Não | [wicd-cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-cli.8), [wicd-curses(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-curses.8) | Não | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | `wicd.service` |
+
+Há também o [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar"), um aplicativo GUI que gerencia redes Wifi por meio do [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools), porém ele não gerencia conexões cabeadas.
 
 Veja também [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
 

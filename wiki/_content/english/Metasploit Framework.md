@@ -2,7 +2,7 @@ From [the official site](http://www.offensive-security.com/metasploit-unleashed/
 
 	*Consider the MSF to be one of the single most useful auditing tools freely available to security professionals today. From a wide array of commercial grade exploits and an extensive exploit development environment, all the way to network information gathering tools and web vulnerability plugins. The Metasploit Framework provides a truly impressive work environment. The MSF is far more than just a collection of exploits, it's an infrastructure that you can build upon and utilize for your custom needs. This allows you to concentrate on your unique environment, and not have to reinvent the wheel.*
 
-Currently, Metasploit requires to setup and configure Postgresql on target system to work. This wiki will show how to get metasploit working with a Postgresql database.
+Currently, Metasploit requires to setup and configure [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") on target system to work. This wiki will show how to get Metasploit working with a PostgreSQL database.
 
 ## Contents
 
@@ -32,7 +32,7 @@ Install package [metasploit](https://www.archlinux.org/packages/?name=metasploit
 
 ### Armitage
 
-[Armitage](http://www.fastandeasyhacking.com/) is a GUI front end for metasploit written in Java; it can be installed with the [armitage](https://aur.archlinux.org/packages/armitage/) package.
+[Armitage](http://www.fastandeasyhacking.com/) is a GUI front end for Metasploit written in Java; it can be installed with the [armitage](https://aur.archlinux.org/packages/armitage/) package.
 
 When running Armitage, [#Setting up the database](#Setting_up_the_database) is not optional, and must be followed. It is also mandatory to use a `~/.msf4/database.yml` file.
 
@@ -478,5 +478,6 @@ that probably means that the `postgresql` service is not running.
 ## See also
 
 *   [Metasploit Unleashed security training](http://www.offensive-security.com/metasploit-unleashed/Main_Page)
-*   [Metasploit wiki on GitHub](https://github.com/rapid7/metasploit-framework/wiki)
-*   [The Metasploit Book](http://en.wikibooks.org/wiki/Metasploit)
+*   [GitHub wiki](https://github.com/rapid7/metasploit-framework/wiki)
+*   [Wikibooks](https://en.wikibooks.org/wiki/Metasploit "wikibooks:Metasploit")
+*   [Wikipedia](https://en.wikipedia.org/wiki/Metasploit_Project "wikipedia:Metasploit Project")

@@ -42,8 +42,8 @@ Modify the **.conf** file to use the update-resolv-conf.sh script.
  `/etc/openvpn/client/protonvpn.conf` 
 ```
 script-security 2
-up /etc/openvpn/update-resolv-conf.sh
-down /etc/openvpn/update-resolv-conf.sh
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
 down-pre
 
 ```

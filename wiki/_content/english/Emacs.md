@@ -133,7 +133,7 @@ A systemd unit is included in Emacs 26.1\. The unit is installed with Emacs, but
 
 ```
 
-Run this command as the user you want to run the Emacs server as; do not run the command as root. After the service is started, Emacs is ready to The unit file is stored in /usr/lib/systemd/user/emacs.service. Here is the contents of the unit file for reference:
+Run this command as the user you want to run the Emacs server as; do not run the command as root. After the service is started, Emacs is ready.chan The unit file is stored in /usr/lib/systemd/user/emacs.service. Here is the contents of the unit file for reference:
 
  `/usr/lib/systemd/user/emacs.service` 
 ```

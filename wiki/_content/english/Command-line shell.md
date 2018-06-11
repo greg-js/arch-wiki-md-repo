@@ -16,6 +16,15 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 ## List of shells
 
+| Shell | completion & history | [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") compliant |
+| [Bash](/index.php/Bash "Bash") | Yes | Yes (`--posix`) |
+| [C shell](https://en.wikipedia.org/wiki/C_shell "wikipedia:C shell") | Yes | No |
+| [DASH](/index.php/Dash "Dash") | No | Yes |
+| [fish](/index.php/Fish "Fish") | Yes | No |
+| [mksh](/index.php/Korn_shell "Korn shell") | Yes | Yes (`-o posix`) |
+| [rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc") | No | No |
+| [zsh](/index.php/Zsh "Zsh") | Yes | Yes (`--emulate sh`) |
+
 *   **[Bash](/index.php/Bash "Bash")** — Bash is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh). It is intended to conform to the IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers functional improvements over sh for both programming and interactive use. In addition, most sh scripts can be run by Bash without modification.
 
 	[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/) || [bash](https://www.archlinux.org/packages/?name=bash)

@@ -28,7 +28,7 @@ Artigos relacionados
     *   [2.3 O pacman precisa de uma biblioteca para que outros aplicativos possam acessar facilmente informações dos pacotes](#O_pacman_precisa_de_uma_biblioteca_para_que_outros_aplicativos_possam_acessar_facilmente_informa.C3.A7.C3.B5es_dos_pacotes)
     *   [2.4 O pacman precisa do recurso X!](#O_pacman_precisa_do_recurso_X.21)
     *   [2.5 Eu acabei de instalar o Pacote X. Como eu o inicio?](#Eu_acabei_de_instalar_o_Pacote_X._Como_eu_o_inicio.3F)
-    *   [2.6 Por que há alguma uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](#Por_que_h.C3.A1_alguma_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F)
+    *   [2.6 Por que há uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](#Por_que_h.C3.A1_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F)
     *   [2.7 E se eu executar uma atualização completa do sistema e houver uma atualização para uma biblioteca compartilhada, mas não para os aplicativos que dependem dela?](#E_se_eu_executar_uma_atualiza.C3.A7.C3.A3o_completa_do_sistema_e_houver_uma_atualiza.C3.A7.C3.A3o_para_uma_biblioteca_compartilhada.2C_mas_n.C3.A3o_para_os_aplicativos_que_dependem_dela.3F)
     *   [2.8 É possível haver uma atualização de versão maior do kernel no repositório e que alguns dos pacotes de driver não tenham sido atualizados?](#.C3.89_poss.C3.ADvel_haver_uma_atualiza.C3.A7.C3.A3o_de_vers.C3.A3o_maior_do_kernel_no_reposit.C3.B3rio_e_que_alguns_dos_pacotes_de_driver_n.C3.A3o_tenham_sido_atualizados.3F)
     *   [2.9 O que fazer antes de atualizar?](#O_que_fazer_antes_de_atualizar.3F)
@@ -172,7 +172,7 @@ $ pacman -Qlq *nome-pacote* | grep /usr/bin/
 
 ```
 
-### Por que há alguma uma única versão de cada biblioteca compartilhada nos repositórios oficiais?
+### Por que há uma única versão de cada biblioteca compartilhada nos repositórios oficiais?
 
 Diversas distribuições, como o Debian, possuem diferentes versões de bibliotecas compartilhadas empacotadas como pacotes diferentes: `libfoo1`, `libfoo2`, `libfoo3` e por aí vai. Nesta forma, é possível ter aplicativos compilados com diferentes versões de `libfoo` instaladas no mesmo sistema.
 
@@ -235,7 +235,7 @@ No Windows, usar o freeware [CPU-Z](http://www.cpuid.com/cpuz.php) ajuda a deter
 
 É mais rápido sob a maioria das circunstâncias e, como um bônus adicional, também mais seguro em razão da natureza de [Aleatorização do layout de espaço do endereço (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") em combinação com [Código independente de posição (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") e [Bit NX](https://en.wikipedia.org/wiki/pt:Bit_NX "wikipedia:pt:Bit NX") que não está disponível em kernels padrão de i686 por causa do PAE desabilitado. Se seu computador tem mais de 4GB de RAM, somente um SO 64 bits será capaz de usá-lo totalmente.
 
-Os programadores também têm de preocupado cada vez menos em relação a 32 bits ("legado"), pois as "novas" CPUs x86 geralmente oferecem suporte às extensões de 64 bits.
+Os programadores também têm se preocupado cada vez menos em relação a 32 bits ("legado"), pois as "novas" CPUs x86 geralmente oferecem suporte às extensões de 64 bits.
 
 Há muitas outras razões que podemos listar aqui para dizer-lhe para evitar 32 bits, mas entre o kernel, o espaço de usuários e os programas individuais, simplesmente não é viável listar todas as últimas coisas que o 64 bits faz muito melhor nos dias de hoje.
 

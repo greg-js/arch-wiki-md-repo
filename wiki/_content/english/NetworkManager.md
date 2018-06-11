@@ -25,18 +25,18 @@ Related articles
     *   [4.1 Enable NetworkManager](#Enable_NetworkManager)
     *   [4.2 Enable NetworkManager Wait Online](#Enable_NetworkManager_Wait_Online)
     *   [4.3 Set up PolicyKit permissions](#Set_up_PolicyKit_permissions)
-    *   [4.4 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
-        *   [4.4.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
-        *   [4.4.2 Start OpenNTPD](#Start_OpenNTPD)
-        *   [4.4.3 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
-        *   [4.4.4 Use dispatcher to automatically toggle Wi-Fi depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_Wi-Fi_depending_on_LAN_cable_being_plugged_in)
-        *   [4.4.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
-            *   [4.4.5.1 Create the dispatcher script](#Create_the_dispatcher_script)
-            *   [4.4.5.2 Give the script access to VPN password](#Give_the_script_access_to_VPN_password)
-        *   [4.4.6 Use dispatcher to handle mounting of CIFS shares](#Use_dispatcher_to_handle_mounting_of_CIFS_shares)
-    *   [4.5 Proxy settings](#Proxy_settings)
-    *   [4.6 Disable NetworkManager](#Disable_NetworkManager)
-    *   [4.7 Checking connectivity](#Checking_connectivity)
+    *   [4.4 Proxy settings](#Proxy_settings)
+    *   [4.5 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
+    *   [4.6 Checking connectivity](#Checking_connectivity)
+    *   [4.7 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
+        *   [4.7.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
+        *   [4.7.2 Dispatcher examples](#Dispatcher_examples)
+            *   [4.7.2.1 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
+            *   [4.7.2.2 Mounting of SMB shares](#Mounting_of_SMB_shares)
+            *   [4.7.2.3 Mounting of NFS shares](#Mounting_of_NFS_shares)
+            *   [4.7.2.4 Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_wireless_depending_on_LAN_cable_being_plugged_in)
+            *   [4.7.2.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
+            *   [4.7.2.6 OpenNTPD](#OpenNTPD)
 *   [5 Testing](#Testing)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
@@ -276,27 +276,60 @@ polkit.addRule(function(action, subject) {
 
 	All users in the `network` group will be able to add and remove networks without a password. This will not work under [systemd](/index.php/Systemd "Systemd") if you do not have an active session with *systemd-logind*.
 
+### Proxy settings
+
+NetworkManager does not directly handle proxy settings, but if you are using [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE"), you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) which handles proxy settings using NetworkManager's information. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
+
+In order for *proxydriver* to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (*System > Preferences > Startup Applications*):
+
+```
+xhost +si:localuser:*username*
+
+```
+
+See also [Proxy settings](/index.php/Proxy_settings "Proxy settings").
+
+### Disable NetworkManager when using dbus
+
+It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") `NetworkManager.service` and `NetworkManager-dispatcher.service`.
+
+### Checking connectivity
+
+NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking create `/etc/NetworkManager/conf.d/20-connectivity.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+
+For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
+
 ### Network services with NetworkManager dispatcher
 
-There are quite a few network services that you will not want running until NetworkManager brings up an interface. Good examples are [NTPd](/index.php/NTPd "NTPd") and network filesystem mounts of various types (e.g. **netfs**). NetworkManager has the ability to start these services when you connect to a network and stop them when you disconnect. To activate the feature you need to [start](/index.php/Start "Start") the `NetworkManager-dispatcher.service`.
+There are quite a few network services that you will not want running until NetworkManager brings up an interface. NetworkManager has the ability to start services when you connect to a network and stop them when you disconnect (e.g. when using [NFS](/index.php/NFS "NFS"), [SMB](/index.php/SMB "SMB") and [NTPd](/index.php/NTPd "NTPd")).
 
-Once the feature is active, scripts can be added to the `/etc/NetworkManager/dispatcher.d` directory. These scripts must be **owned by root**, otherwise the dispatcher will not execute them. For added security, set group ownership to root as well:
+To activate the feature you need to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `NetworkManager-dispatcher.service`.
 
-```
-# chown root:root *scriptname*
+Once the service is active, scripts can be added to the `/etc/NetworkManager/dispatcher.d` directory.
 
-```
-
-Also, the script must have **write permission for owner only**, otherwise the dispatcher will not execute them:
+Scripts must be owned by **root**, otherwise the dispatcher will not execute them. For added security, set [group](/index.php/Group "Group") ownership to root as well:
 
 ```
-# chmod 755 *scriptname*
+# chown root:root /etc/NetworkManager/dispatcher.d/*10-script.sh*
 
 ```
 
-The scripts will be run in alphabetical order at connection time, and in reverse alphabetical order at disconnect time. They receive two arguments: the name of the interface (e.g. `eth0`) and the status (*up* or *down* for interfaces and *vpn-up* or *vpn-down* for vpn connections). To ensure what order they come up in, it is common to use numerical characters prior to the name of the script (e.g. `10_portmap` or `30_netfs` (which ensures that the *portmapper* is up before NFS mounts are attempted).
+Make sure the file has correct permissions:
 
-**Warning:** If you connect to foreign or public networks, be aware of what services you are starting and what servers you expect to be available for them to connect to. You could make a security hole by starting the wrong services while connected to a public network
+```
+# chmod 755 /etc/NetworkManager/dispatcher.d/*10-script.sh*
+
+```
+
+The scripts will be run in alphabetical order at connection time, and in reverse alphabetical order at disconnect time. To ensure what order they come up in, it is common to use numerical characters prior to the name of the script (e.g. `10-portmap` or `30-netfs` (which ensures that the *portmapper* is up before NFS mounts are attempted).
+
+Scripts will receive the following arguments:
+
+*   **Interface name:** e.g. `eth0`
+*   **Interface status:** *up* or *down*
+*   **VPN status:** *vpn-up* or *vpn-down*
+
+**Warning:** If you connect to foreign or public networks, be aware of what services you are starting and what servers you expect to be available for them to connect to. You could make a security hole by starting the wrong services while connected to a public network.
 
 #### Avoiding the dispatcher timeout
 
@@ -313,11 +346,9 @@ Now start and enable the modified `NetworkManager-dispatcher` service.
 
 **Warning:** Adding the `RemainAfterExit` line to it will prevent the dispatcher from closing. Unfortunately, the dispatcher **has** to close before it can run your scripts again. With it the dispatcher will not time out but it also will not close, which means that the scripts will only run once per boot. Therefore, do not add the line unless the timeout is definitely causing a problem.
 
-#### Start OpenNTPD
+#### Dispatcher examples
 
-Install the [networkmanager-dispatcher-openntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-openntpd) package.
-
-#### Mount remote folder with sshfs
+##### Mount remote folder with sshfs
 
 As the script is run in a very restrictive environment, you have to export `SSH_AUTH_SOCK` in order to connect to your SSH agent. There are different ways to accomplish this, see [this message](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) for more information. The example below works with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and will ask you for the password if not unlocked already. In case NetworkManager connects automatically on login, it is likely *gnome-keyring* has not yet started and the export will fail (hence the sleep). The `UUID` to match can be found with the command `nmcli con status` or `nmcli con list`.
 
@@ -331,7 +362,8 @@ interface=$1 status=$2
 if [ "$CONNECTION_UUID" = "*uuid*" ]; then
   case $status in
     up)
-      export SSH_AUTH_SOCK=$(find /tmp -maxdepth 1 -type s -user "$USER" -name 'ssh')
+      SSH_AUTH_SOCK=$(find /tmp -maxdepth 1 -type s -user "$USER" -name 'ssh')
+      export SSH_AUTH_SOCK
       su "$USER" -c "sshfs $REMOTE $LOCAL"
       ;;
     down)
@@ -342,7 +374,46 @@ fi
 
 ```
 
-#### Use dispatcher to automatically toggle Wi-Fi depending on LAN cable being plugged in
+##### Mounting of SMB shares
+
+Some [SMB](/index.php/SMB "SMB") shares are only available on certain networks or locations (e.g. at home). You can use the dispatcher to only mount SMB shares that are present at your current location.
+
+The following script will check if we connected to a specific network and mount shares accordingly:
+
+ `/etc/NetworkManager/dispatcher.d/30-mount-smb.sh` 
+```
+#!/bin/sh
+
+# Find the connection UUID with "nmcli con show" in terminal.
+# All NetworkManager connection types are supported: wireless, VPN, wired...
+if [ "$2" = "up" ]; then
+  if [ "$CONNECTION_UUID" = "uuid" ]; then
+    mount /your/mount/point & 
+    # add more shares as needed
+  fi
+fi
+
+```
+
+The following script will unmount all shares before a disconnect from a specific network:
+
+ `/etc/NetworkManager/dispatcher.d/pre-down.d/30-mount-smb.sh` 
+```
+#!/bin/sh
+umount -a -l -t cifs
+
+```
+
+**Note:**
+
+*   Make sure this script is located in the `pre-down.d` sub-directory as shown above, otherwise it will unmount all shares on any connection state change.
+*   Since NetworkManager 0.9.8, the *pre-down* and *down* events are not executed on shutdown or restart, see [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=701242) for more info.
+
+##### Mounting of NFS shares
+
+See [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManager_dispatcher "NFS").
+
+##### Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in
 
 The idea is to only turn Wi-Fi on when the LAN cable is unplugged (for example when detaching from a laptop dock), and for Wi-Fi to be automatically disabled, once a LAN cable is plugged in again.
 
@@ -367,14 +438,11 @@ fi
 
 **Note:** You can get a list of interfaces using [nmcli](#nmcli_examples). The ethernet (LAN) interfaces start with `en`, e.g. `enp0s5`
 
-#### Use dispatcher to connect to a VPN after a network connection is established
+##### Use dispatcher to connect to a VPN after a network connection is established
 
 In this example we want to connect automatically to a previously defined VPN connection after connecting to a specific Wi-Fi network. First thing to do is to create the dispatcher script that defines what to do after we are connected to the network.
 
 **Note:** This script will require [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) in order to use `iwgetid`.
-
-##### Create the dispatcher script
-
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
 ```
 #!/bin/sh
@@ -400,8 +468,6 @@ esac
 ```
 
 If you would like to attempt to automatically connect to VPN for all Wi-Fi networks, you can use the following definition of the ESSID: `ESSID=$(iwgetid -r)`. Remember to set the script's permissions [accordingly](#Network_services_with_NetworkManager_dispatcher).
-
-##### Give the script access to VPN password
 
 Trying to connect with the above script may still fail with `NetworkManager-dispatcher.service` complaining about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Fortunately, there are different options to give the above script access to your VPN password.
 
@@ -455,65 +521,9 @@ esac
 
 **Note:** It may now be necessary to re-open the NetworkManager connection editor and save the VPN passwords/secrets again.
 
-#### Use dispatcher to handle mounting of CIFS shares
+##### OpenNTPD
 
-Some CIFS shares are only available on certain networks or locations (e.g. at home). You can use the dispatcher to only mount CIFS shares that are present at your current location.
-
-The following script will check if we connected to a specific network and mount shares accordingly:
-
- `/etc/NetworkManager/dispatcher.d/mount_cifs` 
-```
-#!/bin/bash
-if [ "$2" = "up" ]; then
-  if [ "$CONNECTION_UUID" = "uuid" ]; then
-    mount /your/mount/point & 
-    # add more shares as needed
-  fi
-fi
-
-```
-
-**Note:** You can get a list of uuids using [nmcli](#nmcli_examples).
-
-The following script will unmount all CIFS before a disconnect from a specific network:
-
- `/etc/NetworkManager/dispatcher.d/pre-down.d/mount_cifs` 
-```
-#!/bin/bash
-umount -a -l -t cifs
-
-```
-
-**Note:** Make sure this script is located in the pre-down.d subdirectory as shown above, otherwise it will unmount all shares on any connection state change.
-
-**Note:** Ever since NetworkManager 0.9.8, the 'pre-down' and 'down' actions are not executed on shutdown or restart, so the above script will only work if you manually disconnect from the network. See [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=701242) for more info.
-
-As before, do not forget to set the script permissions [accordingly](#Network_services_with_NetworkManager_dispatcher).
-
-See also [NFS#NetworkManager dispatcher](/index.php/NFS#NetworkManager_dispatcher "NFS") for another example script that parses `/etc/fstab` mounts during dispatcher actions.
-
-### Proxy settings
-
-NetworkManager does not directly handle proxy settings, but if you are using GNOME or KDE, you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) which handles proxy settings using NetworkManager's information. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
-
-In order for *proxydriver* to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (System -> Preferences -> Startup Applications):
-
-```
-xhost +si:localuser:*your_username*
-
-```
-
-See: [Proxy settings](/index.php/Proxy_settings "Proxy settings").
-
-### Disable NetworkManager
-
-It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") the services `NetworkManager` and `NetworkManager-dispatcher`.
-
-### Checking connectivity
-
-NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking create `/etc/NetworkManager/conf.d/20-connectivity.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
-
-For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
+See [OpenNTPD#Using NetworkManager dispatcher](/index.php/OpenNTPD#Using_NetworkManager_dispatcher "OpenNTPD").
 
 ## Testing
 
@@ -753,7 +763,7 @@ Create the shared connection:
 
 The connection will be saved and remain stored for the next time you need it.
 
-**Note:** Android does not support connecting to Ad-hoc networks. To It is recommended to create a connection using infrastructure mode (i.e. setting Wi-Fi mode to "Hotspot".
+**Note:** Android does not support connecting to Ad-hoc networks. To share a connection with Android use infrastructure mode (i.e. set Wi-Fi mode to "Hotspot").
 
 ### Sharing internet connection over Ethernet
 

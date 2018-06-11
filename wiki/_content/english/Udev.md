@@ -119,11 +119,11 @@ ACTION=="remove", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=
 To get a list of all of the attributes of a device you can use to write rules, run this command:
 
 ```
-# udevadm info -a -n [device name]
+# udevadm info -a -n *device_name*
 
 ```
 
-Replace `[device name]` with the device present in the system, such as `/dev/sda` or `/dev/ttyUSB0`.
+Replace `*device_name*` with the device present in the system, such as `/dev/sda` or `/dev/ttyUSB0`.
 
 If you do not know the device name you can also list all attributes of a specific system path:
 
@@ -135,7 +135,7 @@ If you do not know the device name you can also list all attributes of a specifi
 ### Testing rules before loading
 
 ```
-# udevadm test $(udevadm info -q path -n [device name]) 2>&1
+# udevadm test $(udevadm info -q path -n *device_name*) 2>&1
 
 ```
 

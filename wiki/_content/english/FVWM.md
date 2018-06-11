@@ -272,7 +272,6 @@ AddToFunc CreateRootMenu
 + I AddToMenu RootMenu "My Menu" PopUp MyMenu
 + I AddToMenu RootMenu "XTerm" Exec xterm
 + I AddToMenu RootMenu "Firefox" Exec firefox
-...
 
 DestroyMenu MyMenu
 AddToMenu MyMenu

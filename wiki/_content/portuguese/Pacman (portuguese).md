@@ -19,7 +19,7 @@ O *pacman* mantém o sistema atualizado, listas de pacotes de sincronização co
 
 O *pacman* é escrito na linguagem de programação C e usa o formato [tar](https://en.wikipedia.org/wiki/pt:TAR "w:pt:TAR") para empacotamento.
 
-**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) também contém outras ferramentas úteis, tal como o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), **pactree**, **vercmp** e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)"). Execute `pacman -Qlq pacman | grep bin` para ver uma lista completa.
+**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o *pactree* e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") podem ser localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
 
 ## Contents
 
@@ -345,39 +345,32 @@ O arquivo `depends` lista os pacotes que este pacote depende, enquanto a `desc` 
 
 ### Limpando o cache de pacotes
 
-O *pacman* armazena seus pacotes baixados em `/var/cache/pacman/pkg/` e não remove as versões antigas ou desinstaladas automaticamente. Portanto, é necessário limpar deliberadamente essa pasta periodicamente para impedir que essa pasta cresça indefinidamente em tamanho.
+O *pacman* armazena seus pacotes baixados em `/var/cache/pacman/pkg/` e não remove as versões antigas ou desinstaladas automaticamente. Isso tem algumas vantagens:
 
-A opção interna para remover todos os pacotes em cache que não estão instalados atualmente é:
+1.  Isso permite fazer [downgrade](/index.php/Downgrade_(Portugu%C3%AAs) "Downgrade (Português)") de um pacote sem a necessidade de obter a versão anterior por outros meios, tal como o [Archive](/index.php/Archive_(Portugu%C3%AAs) "Archive (Português)").
+2.  Um pacote que tenha sido desinstalado pode ser facilmente reinstalado diretamente da pasta cache, não exigindo um novo download do repositório.
 
-```
-# pacman -Sc
+Portanto, é necessário limpar deliberadamente essa pasta periodicamente para evitar que essa pasta cresça indefinidamente em tamanho.
 
-```
-
-**Atenção:**
-
-*   Apenas faça isso quando estiver certeza de que as versões anteriores dos pacotes não são mais necessárias, por exemplo, para um [downgrade](/index.php/Downgrade_(Portugu%C3%AAs) "Downgrade (Português)") posterior. `pacman -Sc` deixa as versões dos pacotes atualmente instalados, as versões antigas teriam que ser recuperadas por outros meios, como o [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)").
-*   É possível esvaziar completamente a pasta cache com `pacman -Scc`. Além disso, isso também impede a reinstalação de um pacote diretamente da pasta de cache em caso de necessidade, exigindo um novo download. Isso deve ser evitado a menos que seja necessário ter espaço em disco imediatamente.
-
-Devido às limitações acima, considere uma alternativa para ter mais controle sobre quais pacotes e quantos são excluídos do cache:
-
-O script *paccache*, fornecido pelo próprio pacote [pacman](https://www.archlinux.org/packages/?name=pacman), exclui todas as versões em cache de cada pacote independentemente de estarem instalados ou não, exceto os 3 mais recentes, por padrão:
+O script *paccache*, fornecido no pacote [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib), exclui todas as versões em cache de pacotes instalados e desinstalados, excepto para os 3 mais recentes, por padrão:
 
 ```
-# paccache -r
+ # paccache -r
 
 ```
 
-**Dica:** Você pode criar [#Hooks](#Hooks) para executar isso automaticamente após cada transação do pacman. Veja [este tópico](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) para obter exemplos.
+[Habilite](/index.php/Habilite "Habilite") `paccache.timer` para descartar pacotes não usados semanalmente.
 
-Você pode definir quantas versões recentes deseja manter:
+**Dica:** Você pode criar [#Hooks](#Hooks) para executar isso automaticamente após cada transação do pacman, [veja exemplos](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743).
+
+Você também pode definir quantas versões mais recentes você deseja manter. Para reter apenas a uma versão anterior, use:
 
 ```
-# paccache -rk 1
+# paccache -rk1
 
 ```
 
-Para remover todas as versões em cache de pacotes desinstalados, execute novamente *paccache* com:
+Adicione a opção `u` para limitar a ação do *paccache* a pacotes desinstalados. Por exemplo, para remover todas as versões em cache de pacotes desinstalados, use o seguinte:
 
 ```
 # paccache -ruk0
@@ -386,7 +379,25 @@ Para remover todas as versões em cache de pacotes desinstalados, execute novame
 
 Veja `paccache -h` para mais opções.
 
-[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) e [pacleaner](https://aur.archlinux.org/packages/pacleaner/) são duas alternativas.
+O *pacman* também tem algumas opções embutidas para limpar o cache e os arquivos de base de dados restantes dos repositórios que não estão mais listados no arquivo de configuração `/etc/pacman.conf`. No entanto, o *pacman* não oferece a possibilidade de manter um número de versões anteriores e, portanto, é mais agressivo do que as opções padrão do *paccache*.
+
+Para remover todos os pacotes em cache que não estão instalados atualmente e a base de dados de sincronização não utilizado, execute:
+
+```
+# pacman -Sc
+
+```
+
+Para remover todos os arquivos do cache, use a opção de limpeza duas vezes, sendo essa a abordagem mais agressiva e que vai deixar nada na pasta de cache:
+
+```
+# pacman -Scc
+
+```
+
+**Atenção:** Deve-se evitar apagar do cache todas as versões anteriores dos pacotes instalados e todos os pacotes desinstalados, a menos que um deles precise desesperadamente liberar algum espaço em disco. Isso impedirá o downgrade ou a reinstalação de pacotes sem baixá-los novamente.
+
+[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) e [pacleaner](https://aur.archlinux.org/packages/pacleaner/) são duas alternativas para limpar o cache.
 
 ### Comandos adicionais
 
@@ -450,6 +461,8 @@ Para alterar o motivo da instalação de um pacote já instalado, execute:
 ```
 
 Use `--asexplicit` para a operação oposta.
+
+**Nota:** O uso das opções `--asdeps` e `--asexplicit` na atualização, como com `pacman -Syu *nome_pacote* --asdeps`, não é recomendado. Isso alteraria o motivo da instalação não apenas do pacote que está sendo instalado, mas também dos pacotes que estão sendo atualizados.
 
 ### Pesquisar por um pacote que contenha um arquivo específico
 
@@ -589,7 +602,7 @@ Ocorreram erros e, portanto, nenhum pacote foi atualizado.
 
 ```
 
-Por que isso aconteceu: o *pacman* detectou um conflito de arquivo e, por design, não vai sobrescrever arquivos para você. Este é um recurso de design, não uma falha.
+Isso aconteceu porque o *pacman* detectou um conflito de arquivo e, por design, não vai sobrescrever arquivos para você. Este é um recurso de design, não uma falha.
 
 O problema geralmente é trivial de resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo */caminho/para/arquivo*`). Se o arquivo for de propriedade de outro pacote, [preencha um relatório de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro"). Se o arquivo não for de outro pacote, renomeie o arquivo que "existe no sistema de arquivos" e execute novamente o comando de atualização. Se tudo correr bem, o arquivo pode então ser removido.
 
@@ -692,7 +705,7 @@ Se isso não funcionar, de uma versão atual do Arch (CD/DVD ou pendrive USB), [
 **Nota:**
 
 *   Se você não tem uma versão atual ou se tem apenas alguma outra distribuição Linux "live", você pode fazer [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") usando o jeito antigo. Obviamente, terá que digitar mais do que simplesmente executar o script `arch-chroot`.
-*   Se *pacman* falhar com `não foi possível resolver máquina`, por favor [verifique sua conexão com a Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificando_a_conex.C3.A3o "Configuração de rede").
+*   Se *pacman* falhar com `não foi possível resolver máquina`, por favor [verifique sua conexão com a Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificar_a_conex.C3.A3o "Configuração de rede").
 *   Se você não conseguir entrar no ambiente do arch-chroot ou chroot, mas precisa reinstalar os pacotes, você pode usar o comando `pacman -r /mnt -Syu foo bar` para usar o *pacman* em sua partição raiz.
 
 A reinstalação do kernel (o pacote [linux](https://www.archlinux.org/packages/?name=linux)) vai gerar automaticamente a imagem com `mkinitcpio -p linux`. Não precisa fazer separadamente.

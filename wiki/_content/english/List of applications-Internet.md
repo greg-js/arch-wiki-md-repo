@@ -633,7 +633,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop client for Cozy.
 
-	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop-gui](https://aur.archlinux.org/packages/cozy-desktop-gui/)
+	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop](https://www.archlinux.org/packages/?name=cozy-desktop)
 
 *   **drive** — Tiny program to pull or push Google Drive files.
 

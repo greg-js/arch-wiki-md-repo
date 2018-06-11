@@ -322,7 +322,7 @@ build() {
   cd "$srcdir/$_pkgname-$pkgver-src"
   qmake-qt4 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
     PREFIX=/usr \
-    QMAKE_CFLAGS="${CFLAGS}"\
+    QMAKE_CFLAGS="${CFLAGS}" \
     QMAKE_CXXFLAGS="${CXXFLAGS}"
 
   make

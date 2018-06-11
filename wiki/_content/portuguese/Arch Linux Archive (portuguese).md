@@ -10,6 +10,8 @@ O **Arch Linux Archive** (também conhecido como **ALA**), antigamente conhecido
 *   Restaurar todos seus pacotes para um momento específico (meu sistema está quebrado, desejo voltar para 2 meses atrás)
 *   Localizar uma versão anterior de uma imagem ISO
 
+Os pacotes são mantidos apenas por poucos anos e, posteriormente, eles são movidos para [Arch Linux Historical Archive](#Historical_Archive) no archive.org.
+
 ## Contents
 
 *   [1 Localização](#Localiza.C3.A7.C3.A3o)
@@ -20,7 +22,11 @@ O **Arch Linux Archive** (também conhecido como **ALA**), antigamente conhecido
 *   [3 FAQ](#FAQ)
     *   [3.1 Como fazer downgrade de um pacote](#Como_fazer_downgrade_de_um_pacote)
     *   [3.2 Como restaurar todos os pacotes para uma data específica](#Como_restaurar_todos_os_pacotes_para_uma_data_espec.C3.ADfica)
-*   [4 História](#Hist.C3.B3ria)
+*   [4 Historical Archive](#Historical_Archive)
+    *   [4.1 Localizando pacotes no Historical Archive](#Localizando_pacotes_no_Historical_Archive)
+    *   [4.2 Baixando pacotes do Historical Archive](#Baixando_pacotes_do_Historical_Archive)
+    *   [4.3 Redirecionando downloads de pacote para o Historical Archive](#Redirecionando_downloads_de_pacote_para_o_Historical_Archive)
+*   [5 História](#Hist.C3.B3ria)
 
 ## Localização
 
@@ -227,6 +233,95 @@ Então, atualize sua base de dados e force o downgrade:
 ```
 
 **Nota:** [Não é seguro](/index.php/Atualiza%C3%A7%C3%B5es_parciais "Atualizações parciais") misturar os espelhos Archive e os atualizados. No caso de uma falha de download, você acabará ficando com um pacote de *upstream* e você terá pacotes não da mesma época do resto do sistema.
+
+## Historical Archive
+
+A manutenção do Arch Linux Archive consome uma quantidade significativa de recursos, portanto, os pacotes antigos são removidos de tempos em tempos.
+
+Antes de removê-los, os pacotes antigos são enviados para uma [coleção dedicada "Arch Linux Historical Archive" em archive.org](https://archive.org/details/archlinuxarchive).
+
+O Historical Archive não fornece uma maneira de acessar um "snapshot" de pacotes do Arch em um determinado momento. No entanto, há um redirecionamento em `archive.archlinux.org` para que os downloads de pacotes antigos sejam redirecionados para o Historical Archive em `archive.org`. Não deve haver impacto visível do lado do usuário, exceto pelo fato de que o `archive.org` é geralmente muito lento para baixar.
+
+### Localizando pacotes no Historical Archive
+
+A coleção **Arch Linux Historical Archive** tem um índice de todos os pacotes: [https://archive.org/details/archlinuxarchive](https://archive.org/details/archlinuxarchive)
+
+Também é possível acessar diretamente um pacote por seu **identificado**. O padrão geral para os identificadores é:
+
+```
+archlinux_pkg_<nome do pacote saneado>
+
+```
+
+Para obter o nome de pacote **saneado**, basta substituir qualquer caractere `@`, `+` ou `.` no nome de pacote por um sublinhado `_`.
+
+Por exemplo, o identificado para [lucene++](https://www.archlinux.org/packages/?name=lucene%2B%2B) é `archlinux_pkg_lucene__`.
+
+Você pode, então, acessar a página de detalhes de um pacote por meio de seu identificador, por exemplo: [https://archive.org/details/archlinux_pkg_lucene__](https://archive.org/details/archlinux_pkg_lucene__)
+
+Também é possível executar pesquisas com o [archive.org cliente Python](https://github.com/jjjake/internetarchive):
+
+```
+$ ia search subject:"archlinux package" subject:'mysql'                                                                                       
+{"identifier": "archlinux_pkg_ejabberd-mod_mysql"}                                                                                                           
+{"identifier": "archlinux_pkg_ejabberd-mod_mysql-svn"}
+{"identifier": "archlinux_pkg_gambas3-gb-db-mysql"}
+{"identifier": "archlinux_pkg_gambas3-gb-mysql"}
+{"identifier": "archlinux_pkg_libgda-mysql"}
+
+```
+
+### Baixando pacotes do Historical Archive
+
+Todas as versões de pacotes disponíveis (e sua assinatura) podem ser acessadas através da página de download de um pacote: [https://archive.org/download/archlinux_pkg_lucene__](https://archive.org/download/archlinux_pkg_lucene__)
+
+Aqui estão algumas maneiras de buscar um pacote:
+
+```
+$ wget https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
+$ pacman -U https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz
+
+```
+
+Observe que, se você usar o pacman, terá que descobrir as dependências sozinho.
+
+Também é possível usar o [archive.org cliente Python](https://github.com/jjjake/internetarchive):
+
+```
+# Baixa uma versão específica de um pacote
+$ ia download archlinux_pkg_cjdns cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
+
+# Baixa todas as versões x86_64 de um pacote, com assinaturas
+$ ia download archlinux_pkg_cjdns --glob="*x86_64.pkg.tar.xz*"
+
+```
+
+### Redirecionando downloads de pacote para o Historical Archive
+
+Para redirecionar downloads de pacotes antigos ao `archive.org`, arqui está a configuração Nginx no orion:
+
+```
+location ~ /repos/201[3456]/.*/.*\.pkg\.tar\.xz(\.sig)? {
+        # Truque de regexp para separar o pkgname do pkgver (ambos podem conter "-")
+        rewrite ^/repos/.*/((.*?)-[^-/]+-[0-9]+-[^-]+.*\.pkg\.tar\.xz(\.sig)?)$ /archive.org/archlinux_pkg_$2/$1 last;
+}
+
+# URLs de download do archive.org se parecem com:
+# https://archive.org/download/archlinux_pkg_lucene__/lucene++-1.4.2-3-i686.pkg.tar.xz
+# Nós precisamos remover @.+ no identificador (archlinux_pkg_*), mas mantê-lo no nome de arquivo ao final.
+location /archive.org/ {
+        # Reescreve @, + e . para _
+        # Isso é recursivo, então vai funcionar mesmo para substituição múltipla,
+        # com até 10 substituições para cada caractere (limie de recursão do nginx). 
+        # Ideia de https://stackoverflow.com/a/15934256
+        rewrite ^/archive\.org/([^@]*)@(.*)/(.*)$   /archive.org/$1_$2/$3;
+        rewrite ^/archive\.org/([^\.]*)\.(.*)/(.*)$ /archive.org/$1_$2/$3;
+        rewrite ^/archive\.org/([^\+]*)\+(.*)/(.*)$ /archive.org/$1_$2/$3;
+        # Quando não tiver mais @.+ na parte do identificador, redirecione para archive.org
+        rewrite ^/archive\.org/([^@\+\.]*/.*)$ https://archive.org/download/$1 permanent;
+}
+
+```
 
 ## História
 

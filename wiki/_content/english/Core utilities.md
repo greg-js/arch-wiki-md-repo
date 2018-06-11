@@ -28,8 +28,8 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
     *   [9.1 Convert a file in place](#Convert_a_file_in_place)
 *   [10 ip](#ip)
 *   [11 less](#less)
+    *   [11.1 Vim as alternative pager](#Vim_as_alternative_pager)
 *   [12 locate](#locate)
-    *   [12.1 Vim as alternative pager](#Vim_as_alternative_pager)
 *   [13 ls](#ls)
     *   [13.1 Long format](#Long_format)
     *   [13.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
@@ -232,16 +232,6 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
 
-## locate
-
-[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
-
-The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find_(Unix) tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
-
-Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
-
-See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
-
 ### Vim as alternative pager
 
 [Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries and directories. Add the following line to your shell configuration file to use it as a pager:
@@ -257,6 +247,16 @@ alias less=$PAGER
 ```
 
 Now programs that use the `PAGER` environment variable, like [git](/index.php/Git "Git"), will use *vim* as pager.
+
+## locate
+
+[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
+
+The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find_(Unix) tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
+
+Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
+
+See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
 
 ## ls
 

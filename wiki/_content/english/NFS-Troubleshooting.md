@@ -15,14 +15,15 @@ Dedicated article for common problems and solutions.
 *   [2 Client-side issues](#Client-side_issues)
     *   [2.1 mount.nfs4: No such device](#mount.nfs4:_No_such_device)
     *   [2.2 mount.nfs4: Invalid argument](#mount.nfs4:_Invalid_argument)
-    *   [2.3 Unable to connect from OS X clients](#Unable_to_connect_from_OS_X_clients)
-    *   [2.4 Unreliable connection from OS X clients](#Unreliable_connection_from_OS_X_clients)
-    *   [2.5 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
-    *   [2.6 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
-        *   [2.6.1 NFSv4](#NFSv4)
-        *   [2.6.2 NFSv3 and earlier](#NFSv3_and_earlier)
-    *   [2.7 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
-    *   [2.8 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
+    *   [2.3 mount.nfs4: Network is unreachable](#mount.nfs4:_Network_is_unreachable)
+    *   [2.4 Unable to connect from OS X clients](#Unable_to_connect_from_OS_X_clients)
+    *   [2.5 Unreliable connection from OS X clients](#Unreliable_connection_from_OS_X_clients)
+    *   [2.6 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
+    *   [2.7 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
+        *   [2.7.1 NFSv4](#NFSv4)
+        *   [2.7.2 NFSv3 and earlier](#NFSv3_and_earlier)
+    *   [2.8 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
+    *   [2.9 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
 *   [3 Performance issues](#Performance_issues)
     *   [3.1 Diagnose the problem](#Diagnose_the_problem)
     *   [3.2 Server threads](#Server_threads)
@@ -92,23 +93,17 @@ Also make sure NFSv3 is enabled. *showmount* does **not** work with NFSv4-only s
 
 ### mount.nfs4: No such device
 
-Check that you have loaded the `nfs` module
-
-```
-lsmod | grep nfs
-
-```
-
-and if previous returns empty or only nfsd-stuff, do
-
-```
-# modprobe nfs
-
-```
+Make the `nfsd` [kernel module](/index.php/Kernel_module "Kernel module") has been loaded.
 
 ### mount.nfs4: Invalid argument
 
-Enable and start nfs-client.target and make sure the appropriate daemons (nfs-idmapd, rpc-gssd, etc) are running on the server.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `nfs-client.target` and make sure the appropriate daemons (nfs-idmapd, rpc-gssd, etc) are running on the server.
+
+### mount.nfs4: Network is unreachable
+
+Users making use of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [NetworkManager](/index.php/NetworkManager "NetworkManager") might notice [NFS](/index.php/NFS "NFS") mounts are not mounted when booting.
+
+Force the network to be completely configured by [enabling](/index.php/Enabling "Enabling") `systemd-networkd-wait-online.service` or `NetworkManager-wait-online.service`. This may slow down the boot-process because less services run in parallel.
 
 ### Unable to connect from OS X clients
 
@@ -228,15 +223,15 @@ See [this excellent article](http://docstore.mik.ua/orelly/networking_2ndEd/nfs/
 
 #### The nocto mount option
 
-**Note:** The linux kernel does not seem to honour this option properly. Files are still flushed when they're closed.
+**Warning:** The Linux kernel does not seem to honor this option properly. Files are still flushed when they're closed.
 
-Does your situation match these conditions?
+If all of the following conditions are satisfied:
 
 *   The export you have mounted on the client is only going to be used by the one client.
 *   It doesn't matter too much if a file written on one client doesn't immediately appear on other clients.
 *   It doesn't matter if after a client has written a file, and the client thinks the file has been saved, and then the client crashes, the file may be lost.
 
-If you're happy with the above conditions, you can use the **nocto** mount option, which will disable the close-to-open behaviour. See the **nfs** manpage for details.
+Use the **nocto** mount option, which will disable the close-to-open behavior.
 
 #### The async export option
 
