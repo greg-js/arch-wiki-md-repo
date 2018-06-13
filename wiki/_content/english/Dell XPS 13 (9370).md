@@ -43,7 +43,7 @@ If you have the 4K (3840x2160) model, also check out [HiDPI](/index.php/HiDPI "H
 
 Note that the 'enable_psr=1' option appears not to work properly, at least on the touchscreen model.
 
-[Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which is not supported.
+[Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which is not supported. The issue should be fixed in kernel v4.18 (commit [f620d1d7afc7db57ab59f35000752840c91f67e7](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f620d1d7afc7db57ab59f35000752840c91f67e7)).
 
 ## Wifi
 

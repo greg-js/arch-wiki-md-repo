@@ -53,6 +53,10 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 	[https://ettercap.github.io/ettercap/](https://ettercap.github.io/ettercap/) || CLI: [ettercap](https://www.archlinux.org/packages/?name=ettercap), GUI: [ettercap-gtk](https://www.archlinux.org/packages/?name=ettercap-gtk)
 
+*   **GNOME Network Tools** — GNOME interface for various networking tools.
+
+	[https://gitlab.gnome.org/GNOME/gnome-nettool](https://gitlab.gnome.org/GNOME/gnome-nettool) || [gnome-nettool](https://www.archlinux.org/packages/?name=gnome-nettool)
+
 *   **[Honeyd](/index.php/Honeyd "Honeyd")** — Tool that allows the user to set up and run multiple virtual hosts on a computer network.
 
 	[http://www.honeyd.org/](http://www.honeyd.org/) || [honeyd](https://aur.archlinux.org/packages/honeyd/)
@@ -104,6 +108,14 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 *   **[Ntop](/index.php/Ntop "Ntop")** — Network probe that shows network usage in a way similar to what top does for processes.
 
 	[http://www.ntop.org/](http://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
+
+*   **pyNeighborhood** — GTK+ based SMB/CIFS browsing utility.
+
+	[https://launchpad.net/pyneighborhood](https://launchpad.net/pyneighborhood) || [pyneighborhood](https://www.archlinux.org/packages/?name=pyneighborhood)
+
+*   **Smb4K** — Advanced network neighborhood browser and Samba share mounting utility for KDE.
+
+	[http://smb4k.sourceforge.net/](http://smb4k.sourceforge.net/) || [smb4k](https://www.archlinux.org/packages/?name=smb4k)
 
 *   **[Snort](/index.php/Snort "Snort")** — Network intrusion prevention and detection system.
 
@@ -355,15 +367,15 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)
 
-*   **GNOME Keysign** — A GTK/GNOME application to use GnuPG for signing other people's keys. Quickly, easily, and securely.
+*   **GNOME Keysign** — GTK/GNOME application to use GnuPG for signing other people's keys. Quickly, easily, and securely.
 
-	[https://wiki.gnome.org/Apps/Keysign/](https://wiki.gnome.org/Apps/Keysign/) || [gnome-keysign](https://aur.archlinux.org/packages/gnome-keysign/)
+	[https://wiki.gnome.org/Apps/Keysign](https://wiki.gnome.org/Apps/Keysign) || [gnome-keysign](https://aur.archlinux.org/packages/gnome-keysign/)
 
 *   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
 
 	[https://gnupg.org/](https://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
 
-*   **gzsteg** — A utiltiy that can hide data in gzip compressed files
+*   **gzsteg** — Utility that can hide data in gzip compressed files
 
 	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
@@ -379,9 +391,9 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
 
-*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GnomeKeyring.
+*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GNOME Keyring.
 
-	[http://library.gnome.org/users/seahorse/stable/](http://library.gnome.org/users/seahorse/stable/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
+	[https://wiki.gnome.org/Apps/Seahorse](https://wiki.gnome.org/Apps/Seahorse) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
@@ -417,19 +429,19 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[http://kedpm.sourceforge.net](http://kedpm.sourceforge.net) || [kedpm](https://aur.archlinux.org/packages/kedpm/)
 
-*   **[KeePass Password Safe](/index.php/KeePass "KeePass")** — Free open source Mono-based password manager, which helps you to manage your passwords in a secure way.
+*   **[KeePass Password Safe](/index.php/KeePass "KeePass")** — Mono-based password manager, which helps you to manage your passwords in a secure way.
 
 	[https://keepass.info/](https://keepass.info/) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **KeePassC** — KeePassC is a curses-based password manager compatible to KeePass v.1.x and KeePassX.
+*   **KeePassC** — Curses-based password manager compatible to KeePass v.1.x.
 
-	[http://raymontag.github.io/keepassc/](http://raymontag.github.io/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
+	[https://k3research.outerhaven.de/keepassc/](https://k3research.outerhaven.de/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
 
-*   **KeePassX** — Free and open source Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
+*   **KeePassX** — Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
 
-	[https://www.keepassx.org/](https://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
+	[https://www.keepassx.org/](https://www.keepassx.org/) || version 1: [keepassx](https://www.archlinux.org/packages/?name=keepassx), version 2: [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 
-*   **KeePassXC** — A community fork of KeePassX with more active development.
+*   **KeePassXC** — Community fork of KeePassX with more active development. Compatible with KeePass v.1.x (import only) and KeePass v.2.x.
 
 	[https://keepassxc.org/](https://keepassxc.org/) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
 
@@ -469,7 +481,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://notabug.org/kl3/spm/](https://notabug.org/kl3/spm/) || [spm](https://aur.archlinux.org/packages/spm/)
 
-*   **Seahorse** — GNOME application for managing encryption keys and passwords in the GnomeKeyring.
+*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GNOME Keyring.
 
 	[https://wiki.gnome.org/Apps/Seahorse](https://wiki.gnome.org/Apps/Seahorse) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 

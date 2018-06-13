@@ -121,7 +121,7 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 ## Starting Plasma
 
-**Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), there are some missing features and known problems as of Plasma 5.12\. See the [Plasma 5.12 Errata](https://community.kde.org/Plasma/5.12_Errata#Wayland) for a list of issues and the [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/) for the current state of development. Use [Xorg](/index.php/Xorg "Xorg") for the most complete and stable experience.
+**Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), there are some missing features and known problems as of Plasma 5.13\. See the [Plasma 5.13 Errata](https://community.kde.org/Plasma/5.13_Errata#Wayland) for a list of issues and the [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/) for the current state of development. Use [Xorg](/index.php/Xorg "Xorg") for the most complete and stable experience.
 
 Plasma can be started either using a [display manager](/index.php/Display_manager "Display manager"), or from the console.
 

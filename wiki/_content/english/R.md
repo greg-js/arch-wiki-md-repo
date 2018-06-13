@@ -18,7 +18,6 @@ Related articles
         *   [2.2.1 Upgrading R packages](#Upgrading_R_packages)
             *   [2.2.1.1 Within a R session](#Within_a_R_session)
             *   [2.2.1.2 Within a shell](#Within_a_shell)
-            *   [2.2.1.3 Automatically after R upgrades](#Automatically_after_R_upgrades)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 .Renviron](#.Renviron)
     *   [3.2 Rprofile](#Rprofile)
@@ -110,15 +109,15 @@ Then `R` searches for the **site-wilde** `Rprofile.site` defined by the `R_PROFI
 
 There are many add-on `R` packages, which can be browsed on [The R Website.](http://cran.r-project.org/web/packages/available_packages_by_date.html).
 
-**Note:** Some R packages link to files provided by system packages. These packages will need to be reinstalled when these files are updateed.
+**Note:** Some R packages link to files provided by system packages. These packages will need to be reinstalled when these files are updated.
 
 ### With pacman
 
-There are some packages available on the [AUR](/index.php/AUR "AUR") with the prefix `r-` or `r-cran`.
+There are some packages available on the [AUR](/index.php/AUR "AUR") with the prefix `r-`. You can mix and match installing R packages with pacman and through R (below), but if you do so you should let pacman manage system packages (those that reside at `/usr/lib/R/library`, and let R manage user-installed packages elsewhere (e.g. `~/R/library`).
 
 ### With R
 
-Packages can be installed from within `R` using the `**install.packages(c("pkgname"))**` command. `R` can install its packages locally as **per user** local settings or **system wide**.
+Packages can be installed from within `R` using the `**install.packages(c("pkgname"))**` command. You should use a local library and let pacman manage files that reside under `/usr/lib/R/library`.
 
 **Note:**
 
@@ -130,7 +129,7 @@ Within your `R` session, run this command to check that your user library exists
 
  `> Sys.getenv("R_LIBS_USER")`  `[1] "/path/to/directory/R/packages"` 
 
-Installation within your `R` session is the safest way and will not conflict with the [pacman](/index.php/Pacman "Pacman") package management, but there is another method to install packages. Run the following command in your terminal:
+Alternatively, you may install from the command line like so:
 
  `$ R CMD INSTALL -l $R_LIBS_USER *pkg1 pkg2 ...*` 
 
@@ -157,33 +156,13 @@ Or when you also need to select a specific mirror ([https://cran.r-project.org/m
 
 ```
 
-**Tip:** upgrading packages from your **R** session can quickly be a pain if you have too many loaded packages at start up. For packages to be upgraded, they need to be *not loaded*. Best practice is to start a new clean R session this way: `R --vanilla` then run the upgrade.
+**Tip:** upgrading packages from your R session can quickly be a pain if you have too many loaded packages at start up. For packages to be upgraded, they cannot be loaded, so do not load packages from your Rprofile.
 
 ##### Within a shell
 
 You can use `Rscript`, which comes with [r](https://www.archlinux.org/packages/?name=r) to update packages from a shell:
 
  `$ Rscript -e "update.packages()"` 
-
-##### Automatically after R upgrades
-
-R packages may not be compatible between R versions. You may want to automatically upgrade them and rebuild them if necessary when R upgrades. This can be accomplished with a pacman hook:
-
- `/etc/pacman.d/hooks/r-upgrade.hook` 
-```
-[Trigger]
-Operation = Upgrade
-Type = Package
-Target = r
-
-[Action]
-Description = Updates R packages and rebuilds them if necessary after R upgrade
-# Depends is optional if this should depend on another package
-Depends = 
-When = PostTransaction
-Exec = Rscript -e 'update.packages(checkBuilt = TRUE, ask = FALSE)'
-
-```
 
 ## Configuration files
 
@@ -215,7 +194,7 @@ The file `.Rprofile` contains R code that is run automatically at the beginning 
 
 3\. Site `.Rprofile`, typically in `/etc/.Rprofile`.
 
-Here is an example `.Rprofile` that defines some useful settings:
+An `.Rprofile` can contain arbitrary R code, though best practice suggests that one should not load packages at startup, as this hinders package upgrades and reproducibility.
 
  `~/.Rprofile` 
 ```
@@ -224,15 +203,6 @@ Here is an example `.Rprofile` that defines some useful settings:
   # Print a welcome message
   message("Welcome back ", Sys.getenv("USER"),"!
 ","working directory is:", getwd())
-}
-
-# Always load the 'methods' package
-library(methods)
-
-# Load the devtools and colorout packages if in interactive mode
-if (interactive()) {
-  library(devtools)
-  library(colorout)
 }
 
 options(prompt = paste(paste(Sys.info()[c("user", "nodename")], collapse = "@"),"[R] "))            # customize your R prompt with username and hostname in this format: user@hostname [R]

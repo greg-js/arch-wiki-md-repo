@@ -32,11 +32,7 @@ install CD version
 | Inspiron 13 7000 Series (7370) | 2017.12 | Intel® UHD-Grafik 620\. Works out of the box with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). | Intel HD Audio. Works out of the box. | N/A | Intel® Dual Band Wireless-AC 7265, works out of the box | Yes | Suspend-to-RAM works. Otherwise untested. | N/A | HDMI works, SD card reader works, USB-C works with support for DisplayPort and charging, keyboard backlight brightness control works | Integrated [fingerprint reader is unsupported](https://bugs.launchpad.net/ubuntu/+source/libfprint/+bug/1641290). `Fn` keys work except [Wireless toggle](https://bugzilla.kernel.org/show_bug.cgi?id=198393) |
 | Inspiron M5030 | Any | [ATI](/index.php/ATI "ATI") works fine, [catalyst](/index.php/Catalyst "Catalyst") untested | Yes, works out of the box | Yes | Yes, works out of the box | N/A | Untested | N/A | Everything works alright, and out of the box. | [i8kutils](https://aur.archlinux.org/packages/i8kutils/) required for fan control |
 | Inspiron Duo 1090 (hybrid touchscreen netbook/tablet) | 2014.10.01 | Intel Atom Integrated VGA graphics controller. Software 3D, works out-of-the-box (1366x768). | Intel HD Audio with ALSA | No. | Yes, Qualcomm Atheros (ath9k) | Untested | Suspend-to-RAM works flawlessly. Hibernate untested. | No. | eGalax touchscreen and Synaptics touchpad work flawlessly. All function keys (Power manager, Wifi on/off, touchpad on/off, brightness and audio up/down work flawlessly. Webcam and integrated microphone work. | Audio out works, no standard audio-in or video out ports. USB audio-in and USB video-out untested. |
-| [Inspiron 15 5000 Series (model 5575)](/index.php/Dell_Inspiron_5575 "Dell Inspiron 5575") | 2018.05.01 | AMD Vega 8 Gfx graphics. | AMD. | Yes. Untested. | Yes, Qualcomm Atheros (ath10k) | Untested | Untested. | No. | Synaptics touchpad work flawlessly. Function keys untested. | Very early stage of testing.
-
-Great problems with booting due to amdgpu and pci communications.
-
- |
+| [Inspiron 15 5000 Series (model 5575)](/index.php/Dell_Inspiron_5575 "Dell Inspiron 5575") | 2018.05.01 | AMD Vega 8 Gfx graphics. | AMD. | Yes. Untested. | Yes, Qualcomm Atheros (ath10k) | Untested | Untested. | No. | Synaptics touchpad work flawlessly. Function keys untested. | Very early stage of testing. |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

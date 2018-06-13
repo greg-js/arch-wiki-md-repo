@@ -194,7 +194,15 @@ To obtain the internal IP address and MAC address of the target computer, execut
 
 Here the internal IP address is `192.168.1.20` and the MAC address is `48:05:ca:09:0e:6a`.
 
-One program able to send magic packets for WoL is [wol](https://www.archlinux.org/packages/?name=wol).
+Applications that are able to send magic packets for Wake-on-LAN:
+
+*   **gWakeOnLAN** — GTK+ utility to awake turned off computers through the Wake-on-LAN feature.
+
+	[https://muflone.com/gwakeonlan/english/](https://muflone.com/gwakeonlan/english/) || [gwakeonlan](https://www.archlinux.org/packages/?name=gwakeonlan)
+
+*   **wol** — Implements Wake-on-LAN functionality in a small program. It wakes up hardware that is Magic Packet compliant.
+
+	[https://sourceforge.net/projects/wake-on-lan/](https://sourceforge.net/projects/wake-on-lan/) || [wol](https://www.archlinux.org/packages/?name=wol)
 
 ### On the same LAN
 

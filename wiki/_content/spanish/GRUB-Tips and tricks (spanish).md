@@ -1,5 +1,3 @@
-**Advertencia:** En proceso de traducción
-
 ## Contents
 
 *   [1 Métodos alternativos de instalación](#M.C3.A9todos_alternativos_de_instalaci.C3.B3n)
@@ -369,7 +367,7 @@ Los ajustes anteriores se pueden hacer menos restrictivos y personalizar mediant
 
 ### Protección con contraseña sólo para las opciones de edición y consola de GRUB
 
-Añadiendo -`--unrestricted` a la entrada de menú permitirá a cualquier usuario arrancar el sistema operativo , al tiempo que se evita que el usuario edite la entrada y el acceso a la consola de comandos *grub*. Sólo un superusuario o usuarios especificos con el modificador `--user` podrán editar la entrada del menú.
+Añadiendo `--unrestricted` a la entrada de menú permitirá a cualquier usuario arrancar el sistema operativo , al tiempo que se evita que el usuario edite la entrada y el acceso a la consola de comandos *grub*. Sólo un superusuario o usuarios especificos con el modificador `--user` podrán editar la entrada del menú.
 
  `/boot/grub/grub.cfg`  `menuentry 'Arch Linux' --unrestricted --class arch --class gnu-linux --class os ...` 
 
@@ -392,7 +390,7 @@ A continuación cree el archivo [[1]](https://gist.githubusercontent.com/anonymo
 
 ```
 
-**Nota:** Esta configuración utiliza el estado de las teclas para detectar el evento de pulsación de las mismas, por lo que es posible que no funcione en algunas máquinas.
+**Nota:** Esta configuración utiliza el estado de las teclas para detectar el evento de pulsación de las mismas, por lo que es posible que no funcione en algunas máquinas la tecla Mayús, debido a la distribución del teclado,eS posible que funcione con otras.
 
 ## Combinar la utilización de UUID con scripts
 

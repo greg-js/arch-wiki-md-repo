@@ -95,7 +95,7 @@ action=amixer -c 1 sset Mic toggle -q
 
 #### Bluetooth
 
-Bluetooth works out of the box with [bluez](https://www.archlinux.org/packages/?name=bluez) and [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth).
+Bluetooth works out of the box with [bluez](https://www.archlinux.org/packages/?name=bluez) and [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth). When you use [i3-wm](https://www.archlinux.org/packages/?name=i3-wm), you can use [blueman](https://www.archlinux.org/packages/?name=blueman) in order to have a working bluetooth connection to and from the device, including a tray icon you can start by adding `blueman-applet` to you i3-conf.
 
 ### BIOS updates
 

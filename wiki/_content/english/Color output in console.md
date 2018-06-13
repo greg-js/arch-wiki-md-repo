@@ -363,7 +363,7 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 *   **grc** — Yet another colouriser for beautifying your logfiles or output of commands.
     Presets: cat, cvs, df, digg, gcc, g++, ls, ifconfig, make, mount, mtr, netstat, ping, ps, tail, traceroute, wdiff, blkid, du, dnf, docker, docker-machine, env, id, ip, iostat, last, lsattr, lsblk, lspci, lsmod, lsof, getfacl, getsebool, ulimit, uptime, nmap, fdisk, findmnt, free, semanage, sar, ss, sysctl, systemctl, stat, showmount, tune2fs and tcpdump.
 
-	[https://github.com/pengwynn/grc](https://github.com/pengwynn/grc) || [grc](https://aur.archlinux.org/packages/grc/)
+	[https://github.com/pengwynn/grc](https://github.com/pengwynn/grc) || [grc](https://www.archlinux.org/packages/?name=grc)
 
 *   **colorlogs** — Colorize commands output or STDIN using patterns.
     Presets: logs, git status, ant, maven.

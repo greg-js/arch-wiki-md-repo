@@ -221,7 +221,7 @@ Old, broken symbolic links might be sitting around your system; you should remov
 To quickly list all the broken symlinks of your system, use:
 
 ```
- # find -xtype l -print
+# find -xtype l -print
 
 ```
 

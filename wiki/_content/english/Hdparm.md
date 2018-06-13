@@ -21,6 +21,7 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
     *   [3.5 Power management for Western Digital Green drives](#Power_management_for_Western_Digital_Green_drives)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 APM level reset after suspend](#APM_level_reset_after_suspend)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -70,9 +71,7 @@ To apply different value, for example set APM to 127:
 
 ### Querying the status of the disk without waking it up
 
-Invoking hdparm with the query option is known to wake-up some drives. Instead, consider `smartctl` provided by [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) to query the device which will not wake up a sleeping disk.
-
-Example:
+Invoking hdparm with the query option is known to wake-up some drives. In this case, consider `smartctl` provided by [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) to query the device which will not wake up a sleeping disk. For example:
 
  `# smartctl -i -n standby /dev/sda` 
 ```
@@ -80,22 +79,19 @@ smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.10.13-1-ARCH] (local build)
 Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
 
 Device is in STANDBY mode, exit(2)
-
 ```
 
 ### Persistent configuration using udev rule
 
-To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev") rule:
+To make the setting persistent across reboot, one can use a [udev](/index.php/Udev "Udev") rule:
 
- `/etc/udev/rules.d/50-hdparm.rules`  `ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 254 -S 0 /dev/sda"` 
+ `/etc/udev/rules.d/69-hdparm.rules`  `ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 254 -S 0 /dev/sda"` 
 
-Systems with multiple hard drives, can make the rule more flexible. For example, to apply power-saving settings for all external drives (assuming there is only one internal drive, `/dev/sda`):
+Because a disk device can be assigned randomly to a changing `/dev/sd*X*`, the disk can also be identified by its serial as explained in [Udev#Identifying a disk by its serial](/index.php/Udev#Identifying_a_disk_by_its_serial "Udev").
 
- `/etc/udev/rules.d/50-hdparm.rules` 
-```
-ACTION=="add|change", KERNEL=="sd[b-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"
+Systems with multiple hard drives can apply the rule in a flexible way according to some criteria. For example, to apply power-saving settings to all rotational drives (hard disk with rotational head, excluding in particular [Solid State Drives](/index.php/Solid_State_Drive "Solid State Drive")), use the following rule:
 
-```
+ `/etc/udev/rules.d/69-hdparm.rules`  `ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"` 
 
 ### Putting a drive to sleep directly after boot
 
@@ -176,3 +172,7 @@ WantedBy=sleep.target
 **Note:** The `sleep.target` is pulled by all `suspend`, `hybrid-sleep` and `hibernate` targets, but it finishes starting up *before* the system is suspended, so the three targets have to be specified explicitly. See [[1]](https://wiki.archlinux.org/index.php?title=Talk:Hdparm&oldid=440457#Troubleshooting_APM_settings_after_suspend.2C_hibernate_or_hybrid-sleep).
 
 Alternatively, create a [hook in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep "Power management").
+
+## See also
+
+*   [https://sourceforge.net/projects/hdparm/](https://sourceforge.net/projects/hdparm/) - hdparm on SourceForge

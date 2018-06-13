@@ -594,6 +594,8 @@ Installation is done using DKMS.
 
 Download: [https://github.com/atar-axis/xpadneo/](https://github.com/atar-axis/xpadneo/)
 
+Try [xpadneo-dkms-git](https://aur.archlinux.org/packages/xpadneo-dkms-git/).
+
 #### Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter
 
 It is not work on Linux.

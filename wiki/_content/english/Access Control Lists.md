@@ -90,7 +90,7 @@ To remove all entries:
 To show permissions, use:
 
 ```
-# getfacl filename
+# getfacl <file/dir>
 
 ```
 
@@ -185,9 +185,9 @@ other::---
 
 ## Granting execution permissions for private files to a Web Server
 
-The following technique describes how a process like a web server (e.g. [nginx](/index.php/Nginx "Nginx"), [apache](/index.php/Apache "Apache")) can be granted access to files that reside in a user's home directory, without compromising security by giving the whole world access.
+The following technique describes how a process like a [webserver](/index.php/Webserver "Webserver") can be granted access to files that reside in a user's home directory, without compromising security by giving the whole world access.
 
-In the following we assume that the web server runs as the user `http` and grant it access to `geoffrey`'s home directory `/home/geoffrey`.
+In the following we assume that the webserver runs as the user `http` and grant it access to `geoffrey`'s home directory `/home/geoffrey`.
 
 The first step is granting execution permission to `http` so it can access `geoffrey`'s home:
 
@@ -221,7 +221,7 @@ other::---
 
 ```
 
-As the above output shows, `other`'s no longer have any permissions, but `http` still is able to access the files, thus security might be considered increased.
+As the above output shows, `other`'s no longer have any permissions, but the user `http` still is able to access the files, thus security might be considered increased.
 
 ## See also
 

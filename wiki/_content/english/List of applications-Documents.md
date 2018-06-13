@@ -49,6 +49,7 @@
             *   [1.4.12.1 Console](#Console_4)
             *   [1.4.12.2 Graphical](#Graphical_4)
         *   [1.4.13 Character selectors](#Character_selectors)
+        *   [1.4.14 Font viewers](#Font_viewers)
     *   [1.5 Language](#Language)
         *   [1.5.1 Dictionary and thesaurus](#Dictionary_and_thesaurus)
         *   [1.5.2 Spell checkers](#Spell_checkers)
@@ -243,6 +244,10 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 *   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Fully functional webapp for PostgreSQL.
 
 	[https://sourceforge.net/projects/phppgadmin/](https://sourceforge.net/projects/phppgadmin/) || [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin)
+
+*   **Sequeler** — SQL client built in Vala and Gtk. It allows you to connect to your local and remote databases, write SQL in a handy text editor with language recognition, and visualize SELECT results in a Gtk.Grid Widget.
+
+	[https://github.com/Alecaddd/sequeler](https://github.com/Alecaddd/sequeler) || [sequeler-git](https://aur.archlinux.org/packages/sequeler-git/)
 
 *   **[SQuirreL SQL Client](https://en.wikipedia.org/wiki/SQuirreL_SQL_Client "wikipedia:SQuirreL SQL Client")** — Graphical Java program that will allow you to view the structure of a JDBC compliant database, browse the data in tables, issue SQL commands etc.
 
@@ -574,7 +579,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
 
-*   **PdfMod** — Reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
+*   **PDF Mod** — Reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
 
@@ -772,6 +777,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://acme.cat-v.org/](http://acme.cat-v.org/) || [plan9port](https://www.archlinux.org/packages/?name=plan9port)
 
+*   **Aide** — Fast and convenient programming text editor.
+
+	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
+
 *   **[Atom](/index.php/Atom "Atom")** — Promising text editor developed by GitHub. With support for plug-ins written in Node.js and embedded [Git](/index.php/Git "Git") Control.
 
 	[https://atom.io/](https://atom.io/) || [atom](https://www.archlinux.org/packages/?name=atom)
@@ -808,17 +817,21 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.fltk.org/](http://www.fltk.org/) || [fltk-editor](https://aur.archlinux.org/packages/fltk-editor/)
 
-*   **[Gedit](https://en.wikipedia.org/wiki/Gedit "wikipedia:Gedit")** — GTK+ editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
+*   **[gedit](https://en.wikipedia.org/wiki/gedit "wikipedia:gedit")** — GTK+ editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
 
 	[https://wiki.gnome.org/Apps/Gedit](https://wiki.gnome.org/Apps/Gedit) || [gedit](https://www.archlinux.org/packages/?name=gedit)
 
 *   **Gobby** — Collaborative editor supporting multiple documents in one session and a multi-user chat.
 
-	[https://gobby.github.io](https://gobby.github.io) || [gobby](https://www.archlinux.org/packages/?name=gobby)
+	[https://gobby.github.io/](https://gobby.github.io/) || [gobby](https://www.archlinux.org/packages/?name=gobby)
+
+*   **Howl** — General purpose, fast and lightweight editor with a keyboard-centric minimalistic user interface.
+
+	[https://howl.io/](https://howl.io/) || [howl](https://www.archlinux.org/packages/?name=howl)
 
 *   **[jEdit](https://en.wikipedia.org/wiki/jEdit "wikipedia:jEdit")** — Text editor for programmers, written in Java.
 
-	[http://www.jedit.org](http://www.jedit.org) || [jedit](https://www.archlinux.org/packages/?name=jedit)
+	[http://www.jedit.org/](http://www.jedit.org/) || [jedit](https://www.archlinux.org/packages/?name=jedit)
 
 *   **[JuffEd](https://en.wikipedia.org/wiki/JuffEd "wikipedia:JuffEd")** — Simple tabbed text editor with syntax highlighting, written in Qt.
 
@@ -864,6 +877,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://notepadqq.altervista.org/s/](http://notepadqq.altervista.org/s/) || [notepadqq](https://www.archlinux.org/packages/?name=notepadqq)
 
+*   **Pantheon Code** — Code editor for elementaryOS. It auto-saves your files, meaning they're always up-to-date. Plus it remembers your tabs so you never lose your spot, even in between sessions.
+
+	[https://github.com/elementary/code](https://github.com/elementary/code) || [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor)
+
 *   **[Pluma](/index.php/MATE "MATE")** — Powerful text editor for MATE.
 
 	[http://mate-desktop.org](http://mate-desktop.org) || [pluma](https://www.archlinux.org/packages/?name=pluma)
@@ -880,13 +897,13 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
-*   **Scratch** — Text editor for elementaryOS. It auto-saves your files, meaning they're always up-to-date. Plus it remembers your tabs so you never lose your spot, even in between sessions.
-
-	[https://launchpad.net/scratch](https://launchpad.net/scratch) || [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor)
-
 *   **Scribes** — Ultra minimalist text editor that combines simplicity with power.
 
 	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://www.archlinux.org/packages/?name=scribes)
+
+*   **[Sublime Text](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Proprietary C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
+
+	[https://www.sublimetext.com/](https://www.sublimetext.com/) || version 3: [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/), version 2: [sublime-text2](https://aur.archlinux.org/packages/sublime-text2/)
 
 *   **[TEA](https://en.wikipedia.org/wiki/TEA_(text_editor) "wikipedia:TEA (text editor)")** — Qt-based feature rich text editor.
 
@@ -916,7 +933,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Emacs](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor by GNU.
 
-	[https://www.gnu.org/software/emacs/emacs.html](https://www.gnu.org/software/emacs/emacs.html) || [emacs](https://www.archlinux.org/packages/?name=emacs) or [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)
+	[https://www.gnu.org/software/emacs/emacs.html](https://www.gnu.org/software/emacs/emacs.html) || with GUI: [emacs](https://www.archlinux.org/packages/?name=emacs), without GUI: [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)
 
 *   **[mg](https://en.wikipedia.org/wiki/mg_(editor) "wikipedia:mg (editor)")** — Small, fast, and portable Emacs-like editor.
 
@@ -940,10 +957,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://amp.rs/](https://amp.rs/) || [amp](https://aur.archlinux.org/packages/amp/)
 
-*   **[gVim](/index.php/Vim "Vim")** — Graphical interface for Vim.
-
-	[http://www.vim.org/](http://www.vim.org/) || [gvim](https://www.archlinux.org/packages/?name=gvim)
-
 *   **[Kakoune](/index.php/Kakoune "Kakoune")** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
 
 	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune](https://www.archlinux.org/packages/?name=kakoune)
@@ -958,7 +971,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Vim](/index.php/Vim "Vim") (Vi IMproved)** — Advanced text editor that seeks to provide the power of the de-facto Unix editor 'vi', with a more complete feature set.
 
-	[https://www.vim.org/](https://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
+	[https://www.vim.org/](https://www.vim.org/) || with GUI: [gvim](https://www.archlinux.org/packages/?name=gvim), without GUI: [vim](https://www.archlinux.org/packages/?name=vim)
 
 *   **Vis** — Modern, legacy free, simple yet efficient vim-like editor.
 
@@ -1126,6 +1139,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://www.qownnotes.org/](https://www.qownnotes.org/) || [qownnotes](https://aur.archlinux.org/packages/qownnotes/)
 
+*   **Renku** — Note taking application based on Akonadi.
+
+	[https://zanshin.kde.org/](https://zanshin.kde.org/) || [zanshin](https://www.archlinux.org/packages/?name=zanshin)
+
 *   **[Simplenote](https://en.wikipedia.org/wiki/Simplenote "wikipedia:Simplenote")** — The simplest way to keep notes. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://simplenote.com/](https://simplenote.com/) || [simplenote-electron-bin](https://aur.archlinux.org/packages/simplenote-electron-bin/)
@@ -1191,6 +1208,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 *   **Notejot** — Stupidly simple sticky notes applet for elementaryOS.
 
 	[https://github.com/lainsce/notejot](https://github.com/lainsce/notejot) || [notejot](https://aur.archlinux.org/packages/notejot/)
+
+*   **Notes** — Provides you a quick way to paste text, to write down a list of things, to leave a note to your friend, or whatever you had do with Post-It's.
+
+	[https://goodies.xfce.org/projects/panel-plugins/xfce4-notes-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-notes-plugin) || [xfce4-notes-plugin](https://www.archlinux.org/packages/?name=xfce4-notes-plugin)
 
 *   **qtPad** — Modern and customizable sticky note application written in PyQt5.
 
@@ -1370,7 +1391,7 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 *   **GNOME Characters** — Character map application for GNOME.
 
-	[https://wiki.gnome.org/Design/Apps/CharacterMap](https://wiki.gnome.org/Design/Apps/CharacterMap) || [gnome-characters](https://www.archlinux.org/packages/?name=gnome-characters)
+	[https://gitlab.gnome.org/GNOME/gnome-characters](https://gitlab.gnome.org/GNOME/gnome-characters) || [gnome-characters](https://www.archlinux.org/packages/?name=gnome-characters)
 
 *   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK+ 3 character selector for GNOME.
 
@@ -1379,6 +1400,32 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 *   **KCharSelect** — Tool to select special characters from all installed fonts and copy them into the clipboard. Part of [kdeutils](https://www.archlinux.org/groups/x86_64/kdeutils/).
 
 	[https://utils.kde.org/projects/kcharselect/](https://utils.kde.org/projects/kcharselect/) || [kcharselect](https://www.archlinux.org/packages/?name=kcharselect)
+
+#### Font viewers
+
+*   **Font Manager** — Simple font management for GTK+ desktop environments.
+
+	[https://fontmanager.github.io/](https://fontmanager.github.io/) || [font-manager](https://aur.archlinux.org/packages/font-manager/)
+
+*   **Fonty Python** — Manage, view and find your fonts.
+
+	[https://savannah.nongnu.org/projects/fontypython](https://savannah.nongnu.org/projects/fontypython) || [fontypython](https://aur.archlinux.org/packages/fontypython/)
+
+*   **GNOME Fonts** — Font viewer for GNOME.
+
+	[https://gitlab.gnome.org/GNOME/gnome-font-viewer](https://gitlab.gnome.org/GNOME/gnome-font-viewer) || [gnome-font-viewer](https://www.archlinux.org/packages/?name=gnome-font-viewer)
+
+*   **KFontview** — KDE application to view and install different types of fonts.
+
+	[https://docs.kde.org/trunk5/en/kde-workspace/kfontview/index.html](https://docs.kde.org/trunk5/en/kde-workspace/kfontview/index.html) || [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)
+
+*   **MATE Font Viewer** — Font viewer for MATE.
+
+	[https://github.com/mate-desktop/mate-control-center](https://github.com/mate-desktop/mate-control-center) || [mate-font-viewer](https://www.archlinux.org/packages/?name=mate-font-viewer)
+
+*   **Waterfall** — GTK+ application to view all characters of font in all sizes.
+
+	[https://keithp.com/cgit/gwaterfall.git](https://keithp.com/cgit/gwaterfall.git) || [gwaterfall](https://www.archlinux.org/packages/?name=gwaterfall)
 
 ### Language
 

@@ -18,15 +18,18 @@
             *   [1.1.4.2 Graphical](#Graphical_2)
         *   [1.1.5 Contacts management](#Contacts_management)
         *   [1.1.6 Financial management](#Financial_management)
-        *   [1.1.7 Project management](#Project_management)
+        *   [1.1.7 Cryptocurrency](#Cryptocurrency)
+        *   [1.1.8 Project management](#Project_management)
     *   [1.2 Education](#Education)
         *   [1.2.1 Flashcards](#Flashcards)
         *   [1.2.2 Education management engines](#Education_management_engines)
         *   [1.2.3 Touch typing](#Touch_typing)
         *   [1.2.4 Recipe management](#Recipe_management)
     *   [1.3 Accessibility](#Accessibility)
-        *   [1.3.1 Screen reading](#Screen_reading)
+        *   [1.3.1 Speech synthesizers](#Speech_synthesizers)
         *   [1.3.2 Speech recognition](#Speech_recognition)
+        *   [1.3.3 Screen magnifiers](#Screen_magnifiers)
+        *   [1.3.4 On-screen keyboards](#On-screen_keyboards)
     *   [1.4 Display managers](#Display_managers)
     *   [1.5 Desktop environments](#Desktop_environments)
         *   [1.5.1 Window managers](#Window_managers)
@@ -106,9 +109,17 @@ There applications support both time, task and contacts management.
 
 ##### Graphical
 
+*   **chinese-calendar** — Chinese traditional calendar for Ubuntu Kylin.
+
+	[https://launchpad.net/chinese-calendar/](https://launchpad.net/chinese-calendar/) || [chinese-calendar](https://www.archlinux.org/packages/?name=chinese-calendar)
+
 *   **Day Planner** — Program designed to help you easily plan and manage your time. It can manage appointments, birthdays and more.
 
 	[http://www.day-planner.org/](http://www.day-planner.org/) || [dayplanner](https://aur.archlinux.org/packages/dayplanner/)
+
+*   **Deepin Calendar** — Calendar application for Deepin.
+
+	[https://github.com/linuxdeepin/dde-calendar](https://github.com/linuxdeepin/dde-calendar) || [deepin-calendar](https://www.archlinux.org/packages/?name=deepin-calendar)
 
 *   **etmtk (Event and Task Manager)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects.
 
@@ -137,6 +148,10 @@ There applications support both time, task and contacts management.
 *   **Outspline** — Extensible outliner with advanced time management features, supporting events with complex recurrence schemes.
 
 	[https://kynikos.github.io/outspline/](https://kynikos.github.io/outspline/) || [outspline](https://aur.archlinux.org/packages/outspline/)
+
+*   **Pantheon Calendar** — Desktop calendar app designed for elementary OS.
+
+	[https://github.com/elementary/calendar](https://github.com/elementary/calendar) || [pantheon-calendar](https://aur.archlinux.org/packages/pantheon-calendar/)
 
 *   **TkRemind** — Sophisticated calendar and alarm program.
 
@@ -170,15 +185,19 @@ There applications support both time, task and contacts management.
 
 *   **Kronometer** — Stopwatch application for KDE.
 
-	[https://userbase.kde.org/Kronometer](https://userbase.kde.org/Kronometer) || [kronometer](https://www.archlinux.org/packages/?name=kronometer)
+	[https://www.kde.org/applications/utilities/kronometer/](https://www.kde.org/applications/utilities/kronometer/) || [kronometer](https://www.archlinux.org/packages/?name=kronometer)
 
-*   **Safe Eyes** — Tool to reduce and prevent repetitive strain injury (RSI).
+*   **KTeaTime** — Handy timer for steeping tea.
 
-	[https://slgobinath.github.io/SafeEyes/](https://slgobinath.github.io/SafeEyes/) || [safeeyes](https://aur.archlinux.org/packages/safeeyes/)
+	[https://www.kde.org/applications/games/kteatime/](https://www.kde.org/applications/games/kteatime/) || [kteatime](https://www.archlinux.org/packages/?name=kteatime)
 
 *   **RSIBreak** — Takes care of your health and regularly breaks your work to avoid repetitive strain injury (RSI).
 
 	[https://userbase.kde.org/RSIBreak](https://userbase.kde.org/RSIBreak) || [rsibreak](https://www.archlinux.org/packages/?name=rsibreak)
+
+*   **Safe Eyes** — Tool to reduce and prevent repetitive strain injury (RSI).
+
+	[https://slgobinath.github.io/SafeEyes/](https://slgobinath.github.io/SafeEyes/) || [safeeyes](https://aur.archlinux.org/packages/safeeyes/)
 
 *   **Tider** — Lightweight time tracking application (GTK+)
 
@@ -196,7 +215,7 @@ There applications support both time, task and contacts management.
 
 	[http://tomighty.org/](http://tomighty.org/) || [tomighty](https://aur.archlinux.org/packages/tomighty/)
 
-*   **[Workrave](https://en.wikipedia.org/wiki/Workrave "wikipedia:Workrave")** — A tool to help RSI.
+*   **[Workrave](https://en.wikipedia.org/wiki/Workrave "wikipedia:Workrave")** — Program that assists in the recovery and prevention of RSI.
 
 	[http://www.workrave.org/](http://www.workrave.org/) || [workrave](https://www.archlinux.org/packages/?name=workrave)
 
@@ -226,7 +245,7 @@ There applications support both time, task and contacts management.
 
 ##### Graphical
 
-*   **Effitask** — Graphical task manager, based on the [todo.txt](http://todotxt.com/) format.
+*   **Effitask** — Graphical task manager, based on the [Todo.txt](http://todotxt.com/) format.
 
 	[https://github.com/sanpii/effitask](https://github.com/sanpii/effitask) || [effitask](https://aur.archlinux.org/packages/effitask/)
 
@@ -234,7 +253,11 @@ There applications support both time, task and contacts management.
 
 	[https://github.com/getting-things-gnome/gtg](https://github.com/getting-things-gnome/gtg) || [gtg-git](https://aur.archlinux.org/packages/gtg-git/)
 
-*   **GNOME Todo** — Personal task manager for GNOME.
+*   **Go For It!** — Simple and stylish productivity app, featuring a to-do list, merged with a timer that keeps your focus on the current task. To-do lists are stored in the [Todo.txt](http://todotxt.com/) format.
+
+	[http://manuel-kehl.de/projects/go-for-it/](http://manuel-kehl.de/projects/go-for-it/) || [go-for-it](https://aur.archlinux.org/packages/go-for-it/)
+
+*   **GNOME To Do** — Personal task manager for GNOME.
 
 	[https://wiki.gnome.org/Apps/Todo](https://wiki.gnome.org/Apps/Todo) || [gnome-todo](https://www.archlinux.org/packages/?name=gnome-todo)
 
@@ -261,6 +284,10 @@ There applications support both time, task and contacts management.
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Easy quick task management app written in C#.
 
 	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+
+*   **Zanshin** — To-do management application based on Akonadi.
+
+	[https://zanshin.kde.org/](https://zanshin.kde.org/) || [zanshin](https://www.archlinux.org/packages/?name=zanshin)
 
 #### Contacts management
 
@@ -294,7 +321,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **BillReminder** — Small and quick accounting application designed to allow for easy tracking of bills.
 
-	[https://git.gnome.org/browse/billreminder](https://git.gnome.org/browse/billreminder) || [billreminder](https://www.archlinux.org/packages/?name=billreminder)
+	[https://gitlab.gnome.org/Archive/billreminder](https://gitlab.gnome.org/Archive/billreminder) || [billreminder](https://www.archlinux.org/packages/?name=billreminder)
 
 *   **esniper** — Simple, lightweight tool for [sniping](https://en.wikipedia.org/wiki/Auction_sniping "wikipedia:Auction sniping") eBay auctions.
 
@@ -339,6 +366,36 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 *   **[Odoo](/index.php/Odoo "Odoo")** — Open source ERP system purely in Python. Previously known as OpenERP.
 
 	[https://www.odoo.com/](https://www.odoo.com/) || [odoo](https://aur.archlinux.org/packages/odoo/)
+
+#### Cryptocurrency
+
+*   **ARK Desktop Wallet** — Wallet for ARK.
+
+	[https://github.com/ArkEcosystem/desktop-wallet](https://github.com/ArkEcosystem/desktop-wallet) || [ark-desktop](https://aur.archlinux.org/packages/ark-desktop/)
+
+*   **Bitcoin Core** — Connect to the [Bitcoin](/index.php/Bitcoin "Bitcoin") P2P Network.
+
+	[https://bitcoincore.org/](https://bitcoincore.org/) || [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt)
+
+*   **Cointop** — Terminal based application for tracking cryptocurrencies.
+
+	[https://cointop.sh/](https://cointop.sh/) || [cointop](https://aur.archlinux.org/packages/cointop/)
+
+*   **Electrum** — Lightweight [Bitcoin](/index.php/Bitcoin "Bitcoin") client.
+
+	[https://electrum.org/](https://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
+
+*   **Etherwall** — [Ethereum](/index.php/Ethereum "Ethereum") wallet.
+
+	[https://www.etherwall.com/](https://www.etherwall.com/) || [etherwall](https://www.archlinux.org/packages/?name=etherwall)
+
+*   **Exodus** — All-in-one proprietary application to secure, manage, and exchange blockchain assets. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://www.exodus.io/](https://www.exodus.io/) || [exodus](https://aur.archlinux.org/packages/exodus/)
+
+*   **Mist** — [Ethereum](/index.php/Ethereum "Ethereum") Dapp browser.
+
+	[https://github.com/ethereum/mist](https://github.com/ethereum/mist) || [mist](https://aur.archlinux.org/packages/mist/)
 
 #### Project management
 
@@ -448,11 +505,11 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
 
-*   **Gourmet** — A simple but powerful recipe-managing application.
+*   **Gourmet** — Simple but powerful recipe-managing application.
 
 	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://www.archlinux.org/packages/?name=gourmet)
 
-*   **KRecipes** — A tool designed to make organizing your personal recipes collection fast and easy.
+*   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
 
 	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://www.archlinux.org/packages/?name=krecipes)
 
@@ -460,13 +517,133 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 See [Accessibility](/index.php/Accessibility "Accessibility") for tips on operating the desktop and [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility") for all available articles.
 
-#### Screen reading
+#### Speech synthesizers
 
-See [Speech recognition#List of text to speech applications](/index.php/Speech_recognition#List_of_text_to_speech_applications "Speech recognition").
+See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/wiki/Comparison_of_speech_synthesizers "wikipedia:Comparison of speech synthesizers") and [listening comparison of the different engines](https://tools.wmflabs.org/tts-comparison/).
+
+*   **Ekho** — Chinese text-to-speech (TTS) software for Cantonese, Mandarin, Zhaoan Hakka, Tibetan, Ngangien and Korean.
+
+	[https://eguidedog.net/ekho.php](https://eguidedog.net/ekho.php) || [ekho](https://aur.archlinux.org/packages/ekho/)
+
+*   **eSpeak** — Compact speech synthesizer for more than 50 languages.
+
+	[http://espeak.sourceforge.net/](http://espeak.sourceforge.net/) || [espeak](https://www.archlinux.org/packages/?name=espeak)
+
+*   **[eSpeak NG](https://en.wikipedia.org/wiki/eSpeakNG "wikipedia:eSpeakNG")** — Fork of eSpeak (due to inactivity of original maintainer).
+
+	[https://github.com/espeak-ng/espeak-ng](https://github.com/espeak-ng/espeak-ng) || [espeak-ng](https://aur.archlinux.org/packages/espeak-ng/)
+
+*   **[Festival](/index.php/Festival "Festival")** — General framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech.
+
+	[http://www.cstr.ed.ac.uk/projects/festival/](http://www.cstr.ed.ac.uk/projects/festival/) || [festival](https://www.archlinux.org/packages/?name=festival)
+
+*   **Flite** — Lightweight speech synthesis engine.
+
+	[http://festvox.org/flite/](http://festvox.org/flite/) || [flite](https://www.archlinux.org/packages/?name=flite)
+
+*   **Gespeaker** — GTK+ frontend for espeak. It allows you to play a text in many languages with settings for voice, pitch, volume and speed.
+
+	[https://muflone.com/jekyll/gespeaker/english/](https://muflone.com/jekyll/gespeaker/english/) || [gespeaker](https://www.archlinux.org/packages/?name=gespeaker)
+
+*   **KMouth** — Speech synthesizer frontend which enables persons that cannot speak to let their computer speak.
+
+	[https://www.kde.org/applications/utilities/kmouth/](https://www.kde.org/applications/utilities/kmouth/) || [kmouth](https://www.archlinux.org/packages/?name=kmouth)
+
+*   **MaryTTS** — Multilingual text-to-speech synthesis platform written in Java.
+
+	[http://mary.dfki.de/](http://mary.dfki.de/) || [marytts](https://aur.archlinux.org/packages/marytts/)
+
+*   **[MBROLA](/index.php/Mbrola "Mbrola")** — Proprietary phonemes-to-audio program which supports more than 70 languages. Mbrola-voices can also be used with eSpeak.
+
+	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)
+
+*   **Mimic** — Text-to-speech voice synthesis from the Mycroft project (based on Flite).
+
+	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic](https://aur.archlinux.org/packages/mimic/)
+
+*   **Open JTalk** — Japanese text-to-speech synthesis system.
+
+	[https://sourceforge.net/projects/open-jtalk/](https://sourceforge.net/projects/open-jtalk/) || [open-jtalk](https://aur.archlinux.org/packages/open-jtalk/)
+
+*   **Orca** — Screen reader for individuals who are blind or visually impaired, using eSpeak (via Speech Dispatcher).
+
+	[https://wiki.gnome.org/Projects/Orca](https://wiki.gnome.org/Projects/Orca) || [orca](https://www.archlinux.org/packages/?name=orca)
+
+*   **[SOPS](/index.php/Simple_Orca_Plugin_System "Simple Orca Plugin System")** — Provides a simple way to write custom plugins for screen reader Orca.
+
+	[https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php) || [simpleorcapluginsystem](https://aur.archlinux.org/packages/simpleorcapluginsystem/)
+
+*   **Speech Dispatcher** — Common interface to speech synthesis. It has backends for eSpeak, Festival, and a few other speech synthesizers.
+
+	[https://freebsoft.org/speechd](https://freebsoft.org/speechd) || [speech-dispatcher](https://www.archlinux.org/packages/?name=speech-dispatcher)
+
+*   **SVOX Pico** — The text-to-speech engine used on Android phones. (Available languages are en-US, en-GB, de-DE, es-ES, fr-FR and it-IT)
+
+	[https://android.googlesource.com/platform/external/svox/+/master](https://android.googlesource.com/platform/external/svox/+/master) || [svox-pico-bin](https://aur.archlinux.org/packages/svox-pico-bin/)
 
 #### Speech recognition
 
-See [Speech recognition#List of speech recognition applications](/index.php/Speech_recognition#List_of_speech_recognition_applications "Speech recognition").
+See also [Wikipedia:Speech recognition software for Linux](https://en.wikipedia.org/wiki/Speech_recognition_software_for_Linux "wikipedia:Speech recognition software for Linux").
+
+*   **Blather** — Speech recognizer that will run commands when a user speaks preset commands.
+
+	[https://gitlab.com/jezra/blather](https://gitlab.com/jezra/blather) || [blather-git](https://aur.archlinux.org/packages/blather-git/)
+
+*   **FreeSpeech** — Desktop application front-end for PocketSphinx dictation, voice transcription, and realtime speech recognition.
+
+	[https://thenerdshow.com/freespeech.html](https://thenerdshow.com/freespeech.html) || [freespeech-vr](https://aur.archlinux.org/packages/freespeech-vr/)
+
+*   **[Julius](https://en.wikipedia.org/wiki/Julius_(software) "wikipedia:Julius (software)")** — Large vocabulary continuous speech recognition engine.
+
+	[https://github.com/julius-speech/julius](https://github.com/julius-speech/julius) || [julius](https://www.archlinux.org/packages/?name=julius)
+
+*   **[Kaldi](https://en.wikipedia.org/wiki/Kaldi_(software) "wikipedia:Kaldi (software)")** — Speech recognition toolkit.
+
+	[https://github.com/kaldi-asr/kaldi](https://github.com/kaldi-asr/kaldi) || [kaldi](https://aur.archlinux.org/packages/kaldi/)
+
+*   **Kalliope** — Modular always-on voice controlled personal assistant designed for home automation.
+
+	[https://kalliope-project.github.io/](https://kalliope-project.github.io/) || [kalliope](https://aur.archlinux.org/packages/kalliope/)
+
+*   **Kaylee** — Somewhat fancy voice command recognition program that performs actions when a user speaks loosely preset sentences.
+
+	[https://git.clayhobbs.com/clay/kaylee](https://git.clayhobbs.com/clay/kaylee) || [kayleevc](https://aur.archlinux.org/packages/kayleevc/)
+
+*   **[Mycroft](https://en.wikipedia.org/wiki/Mycroft_(software) "wikipedia:Mycroft (software)")** — Hackable voice assistant.
+
+	[https://github.com/MycroftAI/mycroft-core](https://github.com/MycroftAI/mycroft-core) || [mycroft-core](https://aur.archlinux.org/packages/mycroft-core/)
+
+*   **Simon** — Speech recognition program that can replace your mouse and keyboard.
+
+	[https://simon.kde.org/](https://simon.kde.org/) || [simon](https://aur.archlinux.org/packages/simon/)
+
+#### Screen magnifiers
+
+*   **KMag** — Small KDE utility to magnify a part of the screen.
+
+	[https://www.kde.org/applications/utilities/kmag/](https://www.kde.org/applications/utilities/kmag/) || [kmag](https://www.archlinux.org/packages/?name=kmag)
+
+*   **Virtual Magnifying Glass** — Simple, customizable and easy-to-use screen magnification tool.
+
+	[http://magnifier.sourceforge.net/](http://magnifier.sourceforge.net/) || [vmg](https://aur.archlinux.org/packages/vmg/)
+
+*   **xzoom** — Zoom, rotate and mirror area of X display.
+
+	[https://www.ibiblio.org/pub/Linux/X11/libs/!INDEX.short.html](https://www.ibiblio.org/pub/Linux/X11/libs/!INDEX.short.html) || [xzoom](https://aur.archlinux.org/packages/xzoom/)
+
+#### On-screen keyboards
+
+*   **Florence** — Extensible scalable on-screen virtual keyboard for GNOME that stays out of your way when not needed.
+
+	[https://sourceforge.net/projects/florence/](https://sourceforge.net/projects/florence/) || [florence](https://aur.archlinux.org/packages/florence/)
+
+*   **Onboard** — Onscreen keyboard useful for tablet PC users and for mobility impaired users.
+
+	[https://launchpad.net/onboard](https://launchpad.net/onboard) || [onboard](https://www.archlinux.org/packages/?name=onboard)
+
+*   **theShell On Screen Keyboard** — Touchscreen keyboard for theShell.
+
+	[https://sourceforge.net/projects/florence/](https://sourceforge.net/projects/florence/) || [ts-kbd](https://aur.archlinux.org/packages/ts-kbd/)
 
 ### Display managers
 
@@ -534,7 +711,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Full fledged dock application that makes opening common applications and managing windows easier and quicker.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://www.go-docky.com/](http://www.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Lightweight, NETWM compliant desktop panel.
 
@@ -592,7 +769,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 See also [Wikipedia:Comparison of desktop application launchers](https://en.wikipedia.org/wiki/Comparison_of_desktop_application_launchers "wikipedia:Comparison of desktop application launchers").
 
-*   **Albert** — A sophisticated, plugin based standalone keyboard launcher.
+*   **Albert** — Sophisticated, plugin based standalone keyboard launcher.
 
 	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://aur.archlinux.org/packages/albert/)
 
@@ -604,7 +781,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://tools.suckless.org/dmenu/](https://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-extended** — An extension to *dmenu* for quickly opening files and folders.
+*   **dmenu-extended** — Extension to *dmenu* for quickly opening files and folders.
 
 	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended-git](https://aur.archlinux.org/packages/dmenu-extended-git/)
 
@@ -632,11 +809,15 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
+*   **Gnome-Pie** — Circular application launcher (pie menu) for Linux. It is made of several pies, each consisting of multiple slices.
+
+	[https://simmesimme.github.io/gnome-pie.html](https://simmesimme.github.io/gnome-pie.html) || [gnome-pie](https://www.archlinux.org/packages/?name=gnome-pie)
+
 *   **j4-dmenu-desktop** — Very fast dmenu application launcher.
 
 	[https://github.com/enkore/j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop) || [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/)
 
-*   **higgins** — A desktop agnostic application launcher, file finder, calculator and more. Plugin based and freely and easily extendable via user-written plugins
+*   **higgins** — Desktop agnostic application launcher, file finder, calculator and more. Plugin based and freely and easily extendable via user-written plugins
 
 	[https://github.com/kokoko3k/higgins](https://github.com/kokoko3k/higgins) || [higgins-git](https://aur.archlinux.org/packages/higgins-git/)
 
@@ -652,15 +833,15 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://www.launchy.net/](http://www.launchy.net/) || [launchy](https://www.archlinux.org/packages/?name=launchy)
 
-*   **Lighthouse** — A simple scriptable popup dialog to run on X.
+*   **Lighthouse** — Simple scriptable popup dialog to run on X.
 
 	[https://github.com/emgram769/lighthouse](https://github.com/emgram769/lighthouse) || [lighthouse-git](https://aur.archlinux.org/packages/lighthouse-git/)
 
-*   **[rofi](/index.php/Rofi "Rofi")** — A popup window switcher roughly based on superswitcher, requiring only xlib and pango.
+*   **[rofi](/index.php/Rofi "Rofi")** — Popup window switcher roughly based on superswitcher, requiring only xlib and pango.
 
 	[http://davedavenport.github.io/rofi/](http://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
 
-*   **slingshot** — An application launcher has a clear look, part of [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
+*   **slingshot** — Application launcher has a clear look, part of [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 
 	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
 
@@ -668,15 +849,15 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#runa](http://appstogo.mcfadzean.org.uk/linux.html#runa) || [runa](https://aur.archlinux.org/packages/runa/)
 
-*   **Synapse** — Synapse is a semantic launcher written in Vala that you can use to start applications as well as find and access relevant documents and files by making use of the Zeitgeist engine.
+*   **Synapse** — Semantic launcher written in Vala that you can use to start applications as well as find and access relevant documents and files by making use of the Zeitgeist engine.
 
 	[https://launchpad.net/synapse-project](https://launchpad.net/synapse-project) || [synapse](https://www.archlinux.org/packages/?name=synapse)
 
-*   **Whippet** — A launcher and xdg-open replacement for control freaks. Opens files and URLs with applications associated by name and/or mimetype. Applications and associations may be customized using an SQLite database. Uses dmenu to manage its menus.
+*   **Whippet** — Launcher and xdg-open replacement for control freaks. Opens files and URLs with applications associated by name and/or mimetype. Applications and associations may be customized using an SQLite database. Uses dmenu to manage its menus.
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#whippet](http://appstogo.mcfadzean.org.uk/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
 
-*   **xfce4-appfinder** — An eazy-to-use application launcher from Xfce.
+*   **xfce4-appfinder** — Easy-to-use application launcher from Xfce.
 
 	[http://docs.xfce.org/xfce/xfce4-appfinder/start](http://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
 
@@ -704,6 +885,10 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://aur.archlinux.org/packages/hsetroot/)
 
+*   **HydraPaper** — Gtk utility to set two different backgrounds for each monitor on GNOME.
+
+	[https://github.com/gabmus/hydrapaper](https://github.com/gabmus/hydrapaper) || [hydrapaper-git](https://aur.archlinux.org/packages/hydrapaper-git/)
+
 *   **[Nitrogen](/index.php/Nitrogen "Nitrogen")** — A fast and lightweight desktop background browser and setter for X windows.
 
 	[http://projects.l3ib.org/nitrogen/](http://projects.l3ib.org/nitrogen/) || [nitrogen](https://www.archlinux.org/packages/?name=nitrogen)
@@ -716,7 +901,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[https://github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal) || [python-pywal](https://www.archlinux.org/packages/?name=python-pywal)
 
-*   **variety** — Changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
+*   **Variety** — Changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
 
 	[http://peterlevi.com/variety/](http://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)
 

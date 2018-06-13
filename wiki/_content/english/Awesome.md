@@ -121,7 +121,7 @@ For more information about configuring awesome, check out the [configuration sec
 
 Some good examples of rc.lua would be as follows:
 
-*   [Setkeh's 3.5 Configuration](https://github.com/setkeh/Awesome-3.5)
+*   [Setkeh's Awesome Configuration](https://github.com/setkeh/Awesome)
 *   [Collection of user configurations on the awesome homepage](http://awesome.naquadah.org/wiki/User_Configuration_Files)
 *   [User configuration that supports different themes, including a status bar](https://github.com/copycat-killer/awesome-copycats)
 

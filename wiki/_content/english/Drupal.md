@@ -49,6 +49,50 @@ For database support enable a PDO extension for your database
 *   To enable support for [MySQL](/index.php/MySQL "MySQL") uncomment the line `extension=pdo_mysql`
 *   To enable support for [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") uncomment the line `extension=pdo_pgsql`
 
+Apache will fail to start with an error finding php_admin_value, below fixes this:
+
+[Install](/index.php/Install "Install") the [php-apache](https://www.archlinux.org/packages/?name=php-apache) package.
+
+In `/etc/httpd/conf/httpd.conf`, comment the line:
+
+```
+#LoadModule mpm_event_module modules/mod_mpm_event.so
+
+```
+
+and uncomment the line:
+
+```
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+```
+
+Place this at the end of the `LoadModule` list:
+
+```
+LoadModule php7_module modules/libphp7.so
+AddHandler php7-script .php
+
+```
+
+Place this at the end of the `Include` list:
+
+```
+Include conf/extra/php7_module.conf
+
+```
+
+Restart `httpd.service` using [systemd](/index.php/Systemd#Using_units "Systemd").
+
+Apache will fail to start with an error finding open_basedir, below fixes this:
+
+In `/etc/php/php.ini`, uncomment and suffix `open_basedir` to look like this:
+
+```
+open_basedir = /etc/webapps
+
+```
+
 ### Apache
 
 Copy the example Apache configuration file:

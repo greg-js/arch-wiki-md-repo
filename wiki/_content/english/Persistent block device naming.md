@@ -9,7 +9,7 @@ This article describes how to use persistent names for your block devices. This 
 **Note:**
 
 *   Persistent naming has limits that are out-of-scope in this article. For example, while [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") may support a method, systemd may impose its own limits (e.g. [FS#42884](https://bugs.archlinux.org/task/42884)) on naming it can process during boot.
-*   If you are using [LVM2](/index.php/LVM2 "LVM2"), this article is not relevant as LVM takes care of this automatically.
+*   If you are using [LVM](/index.php/LVM "LVM"), this article is not relevant as LVM takes care of this automatically.
 
 ## Contents
 
@@ -113,7 +113,7 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 **Note:**
 
-*   Changing the filesystem label of the root partition has to be done from a "live" GNU/Linux distribution because the partition needs to be unmounted first.
+*   Changing the filesystem label of the root partition has to be done after booting from another partition because it needs to be unmounted first.
 *   Labels have to be unambiguous to prevent any possible conflicts.
 *   Labels can be up to 16 characters long.
 *   Since the label is a property of the filesystem, it is not suitable for addressing a single RAID device persistently.

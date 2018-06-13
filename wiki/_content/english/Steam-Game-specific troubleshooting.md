@@ -675,7 +675,7 @@ Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0).
 Also if you use Bumblebee set your [launch options](/index.php/Launch_option "Launch option") to:
 
 ```
-LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%
+LD_PRELOAD="$LD_PRELOAD:libpthread.so.0:libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1  optirun %command%
 
 ```
 

@@ -307,6 +307,10 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://mypaint.org](http://mypaint.org) || [mypaint](https://www.archlinux.org/packages/?name=mypaint)
 
+*   **PhotoFlare** — Simple but powerful image editor originally inspired by PhotoFiltre.
+
+	[https://photoflare.io/](https://photoflare.io/) || [photoflare](https://aur.archlinux.org/packages/photoflare/)
+
 *   **[Pinta](https://en.wikipedia.org/wiki/Pinta_(software) "wikipedia:Pinta (software)")** — Drawing and editing program modeled after [Paint.NET](https://en.wikipedia.org/wiki/Paint.net "wikipedia:Paint.net"). Its goal is to provide a simplified alternative to GIMP for casual users.
 
 	[http://pinta-project.com/](http://pinta-project.com/) || [pinta](https://www.archlinux.org/packages/?name=pinta)
@@ -573,7 +577,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 *   **[GNOME Screenshot](https://en.wikipedia.org/wiki/GNOME_Screenshot "wikipedia:GNOME Screenshot")** — Screenshot tool for the GNOME desktop.
 
-	[http://gnome.org](http://gnome.org) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
+	[https://gitlab.gnome.org/GNOME/gnome-screenshot/](https://gitlab.gnome.org/GNOME/gnome-screenshot/) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
 
 *   **gscreenshot** — Simple GTK+ screenshot utility with delays, selection, and copy-to-clipboard functionality.
 
@@ -623,7 +627,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 	[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
 
-*   **Xfce4 Screenshooter** — This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot: save it to a PNG file, copy it to the clipboard, open it using another application, or host it on free online image hosting services Imgur and ZimageZ. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
+*   **Xfce4 Screenshooter** — Application and Xfce4 panel plugin to take screenshots about the entire screen, the active window or a selected region. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
 	[http://goodies.xfce.org/projects/applications/xfce4-screenshooter](http://goodies.xfce.org/projects/applications/xfce4-screenshooter) || [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter)
 
@@ -734,6 +738,10 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 *   **Pantheon Music** — Simple, fast, and good looking music player. The official elementary music player.
 
 	[https://github.com/elementary/music](https://github.com/elementary/music) || [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music)
+
+*   **Parlatype** — Minimal audio player for manual speech transcription, for GNOME. It plays audio sources to transcribe them in your favorite text application.
+
+	[https://gkarsay.github.io/parlatype/](https://gkarsay.github.io/parlatype/) || [parlatype](https://aur.archlinux.org/packages/parlatype/)
 
 *   **Pithos** — Python/GTK Pandora Radio desktop client.
 
@@ -1847,6 +1855,10 @@ See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") 
 
 	[https://motion-project.github.io/](https://motion-project.github.io/) || [motion](https://aur.archlinux.org/packages/motion/)
 
+*   **Pantheon Camera** — Camera app designed for elementary OS.
+
+	[https://github.com/elementary/camera](https://github.com/elementary/camera) || [pantheon-camera-git](https://aur.archlinux.org/packages/pantheon-camera-git/)
+
 *   **QtCAM** — Webcam software with more than 10 image control settings, extension settings and color space switching.
 
 	[https://www.e-consystems.com/opensource-linux-webcam-software-application.asp](https://www.e-consystems.com/opensource-linux-webcam-software-application.asp) || [qtcam-git](https://aur.archlinux.org/packages/qtcam-git/)
@@ -1989,6 +2001,10 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 	[http://sentex.net/~mwandel/jhead/](http://sentex.net/~mwandel/jhead/) || [jhead](https://www.archlinux.org/packages/?name=jhead)
 
+*   **MediaConch** — Implementation checker, policy checker, reporter, and fixer.
+
+	[https://mediaarea.net/MediaConch](https://mediaarea.net/MediaConch) || CLI: [mediaconch](https://aur.archlinux.org/packages/mediaconch/), GUI: [mediaconch-gui](https://aur.archlinux.org/packages/mediaconch-gui/)
+
 *   **[MediaInfo](https://en.wikipedia.org/wiki/MediaInfo "wikipedia:MediaInfo")** — Convenient unified display of the most relevant technical and tag data for video and audio files.
 
 	[https://mediaarea.net/en/MediaInfo](https://mediaarea.net/en/MediaInfo) || CLI: [mediainfo](https://www.archlinux.org/packages/?name=mediainfo), GUI: [mediainfo-gui](https://www.archlinux.org/packages/?name=mediainfo-gui)
@@ -2002,6 +2018,10 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 	[http://mega-nerd.com/libsndfile/](http://mega-nerd.com/libsndfile/) || [libsndfile](https://www.archlinux.org/packages/?name=libsndfile)
 
 ### Mobile device managers
+
+*   **Android File Transfer** — Interactive [Media Transfer Protocol](/index.php/Media_Transfer_Protocol "Media Transfer Protocol") client with Qt5 GUI.
+
+	[https://whoozle.github.io/android-file-transfer-linux/](https://whoozle.github.io/android-file-transfer-linux/) || [android-file-transfer](https://www.archlinux.org/packages/?name=android-file-transfer)
 
 *   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.
 

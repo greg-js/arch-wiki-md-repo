@@ -21,6 +21,7 @@ Related articles
     *   [4.1 Check kernel config](#Check_kernel_config)
     *   [4.2 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
     *   [4.3 No ipv4 on unprivileged Arch container](#No_ipv4_on_unprivileged_Arch_container)
+    *   [4.4 Resource limits are not applied when viewed from inside a container](#Resource_limits_are_not_applied_when_viewed_from_inside_a_container)
 *   [5 See also](#See_also)
 
 ## Setup
@@ -205,6 +206,17 @@ $ lxc profile set default security.syscalls.blacklist "keyctl errno 38"
 ```
 
 	stgraber: "The reason is that the networkd systemd unit somehow makes use of the kernel keyring, which doesn't work inside unprivileged containers right now. The line above makes that system call return not-implemented which is enough of a workaround to get things going again."
+
+### Resource limits are not applied when viewed from inside a container
+
+The service lxcfs (found in the Community repository) needs to be installed and started :
+
+```
+$ systemctl start lxcfs
+
+```
+
+lxd will need to be restarted. Enable lxcfs for the service to be started at boot time.
 
 ## See also
 

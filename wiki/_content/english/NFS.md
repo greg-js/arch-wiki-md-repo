@@ -19,12 +19,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
     *   [2.1 Server](#Server)
         *   [2.1.1 Starting the server](#Starting_the_server)
         *   [2.1.2 Miscellaneous](#Miscellaneous)
-            *   [2.1.2.1 Optional configuration](#Optional_configuration)
-            *   [2.1.2.2 Restricting NFS to interfaces/IPs](#Restricting_NFS_to_interfaces.2FIPs)
-            *   [2.1.2.3 Enable NFSv4 idmapping](#Enable_NFSv4_idmapping)
-            *   [2.1.2.4 Static ports for NFSv3](#Static_ports_for_NFSv3)
-            *   [2.1.2.5 NFSv2 compatibility](#NFSv2_compatibility)
-            *   [2.1.2.6 Firewall configuration](#Firewall_configuration)
+            *   [2.1.2.1 Restricting NFS to interfaces/IPs](#Restricting_NFS_to_interfaces.2FIPs)
+            *   [2.1.2.2 Enable NFSv4 idmapping](#Enable_NFSv4_idmapping)
+            *   [2.1.2.3 Static ports for NFSv3](#Static_ports_for_NFSv3)
+            *   [2.1.2.4 NFSv2 compatibility](#NFSv2_compatibility)
+            *   [2.1.2.5 Firewall configuration](#Firewall_configuration)
     *   [2.2 Client](#Client)
         *   [2.2.1 Manual mounting](#Manual_mounting)
         *   [2.2.2 Mount using /etc/fstab](#Mount_using_.2Fetc.2Ffstab)
@@ -48,6 +47,8 @@ It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_sy
 ## Configuration
 
 ### Server
+
+Configuration options can be set in `/etc/nfs.conf`. Users setting up a simple configuration may not need to edit this file.
 
 The NFS server needs a list of exports (shared directories) which are defined in `/etc/exports`. NFS shares defined in `/etc/exports` are relative to the so-called NFS root. A good security practice is to define an NFS root in a discrete directory tree under the server's root file system which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
 
@@ -109,12 +110,6 @@ For more information about all available options see [exports(5)](https://jlk.fj
 
 #### Miscellaneous
 
-##### Optional configuration
-
-Advanced configuration options can be set in `/etc/nfs.conf`. Users setting up a simple configuration may not need to edit this file.
-
-When using NFS on a network with a significant of clients one may increase the default NFS threads from *8* to *16* or even a higher, depending on the server/network requirements.
-
 ##### Restricting NFS to interfaces/IPs
 
 By default, starting `nfs-server.service` will listen for connections on all network interfaces, regardless of `/etc/exports`. This can be changed by defining which IPs and/or hostnames to listen on.
@@ -127,12 +122,7 @@ host=192.168.1.123
 # host=myhostname
 ```
 
-Restarting the service will apply the changes immediately.
-
-```
-# systemctl restart nfs-server.service
-
-```
+[Restart](/index.php/Restart "Restart") `nfs-server.service` to apply the changes immediately.
 
 ##### Enable NFSv4 idmapping
 
@@ -350,7 +340,15 @@ Using [autofs](/index.php/Autofs "Autofs") is useful when multiple machines want
 
 ### Performance tuning
 
-In order to get the most out of NFS, it is necessary to tune the `rsize` and `wsize` mount options to meet the requirements of the network configuration.
+When using NFS on a network with a significant of clients one may increase the default NFS threads from *8* to *16* or even a higher, depending on the server/network requirements:
+
+ `/etc/nfs.conf` 
+```
+[nfsd]
+threads=16
+```
+
+It may be necessary to tune the `rsize` and `wsize` mount options to meet the requirements of the network configuration.
 
 In recent linux kernels (>2.6.18) the size of I/O operations allowed by the NFS server (default max block size) varies depending on RAM size, with a maximum of 1M (1048576 bytes), the max block size of the server will be used even if nfs clients requires bigger `rsize` and `wsize`. See [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html) It is possible to change the default max block size allowed by the server by writing to the `/proc/fs/nfsd/max_block_size` before starting *nfsd*. For example, the following command restores the previous default iosize of 32k:
 

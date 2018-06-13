@@ -10,6 +10,8 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
 *   [1 Maintenance](#Maintenance)
     *   [1.1 Listing packages](#Listing_packages)
         *   [1.1.1 With size](#With_size)
+            *   [1.1.1.1 Individual packages](#Individual_packages)
+            *   [1.1.1.2 Packages & dependencies](#Packages_.26_dependencies)
         *   [1.1.2 By date](#By_date)
         *   [1.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
         *   [1.1.4 Development packages](#Development_packages)
@@ -68,7 +70,20 @@ You may want to get the list of installed packages with their version, which is 
 
 #### With size
 
-To get a list of installed packages sorted by size, which may be useful when freeing space on your hard drive:
+Figuring out which packages are largest can be useful when trying to free space on your hard drive. There are two options here: get the size of individual packages, or get the size of packages & their dependencies.
+
+##### Individual packages
+
+The following command will list all installed packages and their individual sizes:
+
+```
+$ pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+
+```
+
+##### Packages & dependencies
+
+To list package sizes with their dependencies,
 
 *   Install [expac](https://www.archlinux.org/packages/?name=expac) and run `expac -H M '%m\t%n' | sort -h`.
 *   Run [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) with the `-c` option.
@@ -154,7 +169,7 @@ $ comm -23 <(wget -q -O - https://git.archlinux.org/archiso.git/plain/configs/re
 To list all development/unstable packages, run:
 
 ```
-$ pacman -Qq | awk '/^.+(-cvs|-svn|-git|-hg|-bzr|-darcs)$/'
+$ pacman -Qq | grep -Ee '-(cvs|svn|git|hg|bzr|darcs)$'
 
 ```
 
@@ -177,7 +192,7 @@ If your system has stray files not owned by any package (a common case if you do
 
 This process is tricky in practice because many important files are not part of any package (e.g. files generated at runtime, custom configs) and so will be included in the final output, making it difficult to pick out the files that can be safely deleted.
 
-**Tip:** The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) also allows tracking orphaned files using a configuration script.
+**Tip:** The [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) also allows tracking orphaned files using a configuration script.
 
 ### Removing unused packages (orphans)
 
@@ -630,7 +645,7 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 *   **Lostfiles** — Script that identifies files not owned by any package.
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 

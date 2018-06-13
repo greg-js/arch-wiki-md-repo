@@ -43,7 +43,7 @@ To gain access, login or register at [Epic Games Accounts](https://accounts.epic
 
 ### Clang compatibility
 
-Unreal Engine might not support the latest versions of Clang. Clang 3.8.1 is confirmed to compile Unreal 4.18.3 and 4.19.2 successfully. **Do not** use Clang 3.4, as it has issues.
+Unreal Engine might not support the latest versions of Clang. Clang 4.0.1 is confirmed to compile Unreal 4.19.2 successfully.
 
 Install [downgrade](https://aur.archlinux.org/packages/downgrade/) to use an old version of Clang and LLVM.
 
@@ -62,7 +62,9 @@ $ ./Setup.sh
 
 ```
 
-Prepare for compilation:
+Prepare for compilation, patch the file `Engine/Source/Programs/UnrealBuildTool/Platform/Linux/LinuxToolChain.cs` according to [the patch on AUR](https://aur.archlinux.org/cgit/aur.git/tree/disable-pie.patch?h=unreal-engine).
+
+Generate project files:
 
 ```
 $ ./GenerateProjectFiles.sh 
@@ -78,7 +80,7 @@ $ make -j1
 
 This will directly compile a non-Debug version of the Unreal Engine.
 
-For detailed info refer to [the official instructions to build on Linux](https://wiki.unrealengine.com/Building_On_Linux#Building).
+For detailed info, refer to [the official build instructions](https://wiki.unrealengine.com/Building_On_Linux#Building).
 
 ### Installing from the AUR
 

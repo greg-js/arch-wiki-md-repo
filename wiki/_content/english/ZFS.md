@@ -945,7 +945,7 @@ For example, an encrypted zpool can be created using plain dm-crypt (without LUK
 
 ```
 
-In the case of a root filesystem pool, the `mkinicpio.conf` HOOKS line will enable the keyboard for the password, create the devices, and load the pools. It will contain something like:
+In the case of a root filesystem pool, the `mkinitcpio.conf` HOOKS line will enable the keyboard for the password, create the devices, and load the pools. It will contain something like:
 
 ```
 HOOKS="... keyboard encrypt zfs ..."

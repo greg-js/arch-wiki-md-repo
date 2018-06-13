@@ -341,7 +341,7 @@ The flashing instructions can be found on Heimdall's [GitHub page](https://githu
 
 #### Odin (Virtualbox)
 
-**Note:** This section only covers preparation and **not** flashing instructions. Search [XDA developers forums](http://www.xda-developers.com) to find a flashing instructions for specific device. For example, [Samsung Galaxy S4](https://forum.xda-developers.com/showthread.php?t=2265477).
+**Note:** This section only covers preparation and **not** flashing instructions. Search [XDA developers forums](http://www.xda-developers.com) to find flashing instructions for a specific device. For example, [Samsung Galaxy S4](https://forum.xda-developers.com/showthread.php?t=2265477).
 
 It is also possible to restore [firmware (Android)](http://www.sammobile.com/firmwares/) on the Samsung devices using [Odin](http://odindownload.com/), but inside the [VirtualBox](/index.php/VirtualBox "VirtualBox").
 

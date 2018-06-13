@@ -3,11 +3,9 @@ Related articles
 *   [sshguard](/index.php/Sshguard "Sshguard")
 *   [Security](/index.php/Security "Security")
 
-**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
+[Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) scans log files (e.g. `/var/log/httpd/error_log`) and bans IPs that show the malicious signs like too many password failures, seeking for exploits, etc. Generally Fail2Ban is then used to update firewall rules to reject the IP addresses for a specified amount of time, although any arbitrary other action (e.g. sending an email) could also be configured.
 
-[Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) scans various textual log files and bans IP that makes too many password failures by updating firewall rules to reject the IP address, similar to [Sshguard](/index.php/Sshguard "Sshguard").
-
-**Warning:** For correct function it is essential that the tool parses the IP addresses in the log correctly. You should always **test** the log filters work as intended per application you want to protect.
+**Warning:** Using an IP banning software will stop trivial attacks but it relies on an additional daemon and successful logging. Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get your IP address banned.
 
 ## Contents
 
@@ -18,8 +16,7 @@ Related articles
     *   [2.2 Filesystem Access](#Filesystem_Access)
 *   [3 Configuration](#Configuration)
     *   [3.1 Default jails](#Default_jails)
-    *   [3.2 Paths](#Paths)
-    *   [3.3 Custom SSH jail](#Custom_SSH_jail)
+    *   [3.2 Custom SSH jail](#Custom_SSH_jail)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -75,19 +72,11 @@ logtarget = /var/log/fail2ban/fail2ban.log
 
 Jails for many different services are already present in `/etc/fail2ban/jail.conf` but not enabled by default. You can copy the section headers into a .local file of your choice, enable them (and optionally override settings).
 
-### Paths
-
-There is currently basic support for archlinux, to activate that configuration, add or alter the following section in the `jail.local` file:
-
-```
-[INCLUDES]
-before = paths-arch.conf
-
-```
-
 [Restart](/index.php/Restart "Restart") `fail2ban.service` to test your configuration. Watch out for "file not found errors" from *fail2ban-client* if the fail2ban service fails to start. Adjust the paths `paths-arch.conf` or `jail.local` as needed. Many of the default jails might not work out of the box.
 
 ### Custom SSH jail
+
+**Warning:** If the attacker knows your IP address, they can send packets with a spoofed source header and get your IP address locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
 Edit `/etc/fail2ban/jail.d/jail.conf`, add this section and update the list of trusted IP addresses.
 

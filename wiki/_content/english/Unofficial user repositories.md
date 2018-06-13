@@ -54,8 +54,9 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.37 siosm-aur](#siosm-aur)
     *   [2.38 subtitlecomposer](#subtitlecomposer)
     *   [2.39 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.40 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.41 xyne-x86_64](#xyne-x86_64)
+    *   [2.40 trinity](#trinity)
+    *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.42 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -80,8 +81,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.21 QOwnNotes](#QOwnNotes)
     *   [3.22 rakudo](#rakudo)
     *   [3.23 rust-git](#rust-git)
-    *   [3.24 trinity](#trinity)
-    *   [3.25 zrootfs](#zrootfs)
+    *   [3.24 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -596,6 +596,18 @@ Server = https://pkgbuild.com/~tredaelli/repo/systemd/$arch
 
 ```
 
+### trinity
+
+*   **Maintainer:** Michael Manley <mmanley@nasutek.com>
+*   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
+*   **Key-ID:** 65A4AC99
+
+```
+[trinity]
+Server = https://repo.nasutek.com/arch/contrib/trinity/x86_64
+
+```
+
 ### Webkit2Gtk-unstable
 
 *   **Maintainer:** [Mariusz Wojcik](/index.php/User:Mrmariusz "User:Mrmariusz")
@@ -890,17 +902,6 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 ```
 [rust-git]
 Server = https://tatsuyuki.kdns.info/archlinux/$repo/$arch
-
-```
-
-### trinity
-
-*   **Maintainer:** Michael Manley <mmanley@nasutek.com>
-*   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
-
-```
-[trinity]
-Server = http://repo.nasutek.com/arch/contrib/trinity/x86_64
 
 ```
 

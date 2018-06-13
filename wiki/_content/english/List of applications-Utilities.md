@@ -7,86 +7,51 @@
 ## Contents
 
 *   [1 Utilities](#Utilities)
-    *   [1.1 Partitioning tools](#Partitioning_tools)
-    *   [1.2 Mount tools](#Mount_tools)
-    *   [1.3 Terminal](#Terminal)
-        *   [1.3.1 Command shells](#Command_shells)
-        *   [1.3.2 Terminal emulators](#Terminal_emulators)
-            *   [1.3.2.1 VTE-based](#VTE-based)
-            *   [1.3.2.2 KMS-based](#KMS-based)
-            *   [1.3.2.3 framebuffer-based](#framebuffer-based)
-        *   [1.3.3 Terminal pagers](#Terminal_pagers)
-        *   [1.3.4 Terminal multiplexers](#Terminal_multiplexers)
-    *   [1.4 Hex editors](#Hex_editors)
-    *   [1.5 Integrated development environments](#Integrated_development_environments)
-    *   [1.6 Build automation](#Build_automation)
-    *   [1.7 Files](#Files)
-        *   [1.7.1 File managers](#File_managers)
-            *   [1.7.1.1 Console](#Console)
-            *   [1.7.1.2 Graphical](#Graphical)
-        *   [1.7.2 Trash management](#Trash_management)
-        *   [1.7.3 File synchronization](#File_synchronization)
-        *   [1.7.4 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [1.7.4.1 Console](#Console_2)
-            *   [1.7.4.2 Graphical](#Graphical_2)
-        *   [1.7.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
-        *   [1.7.6 Batch renamers](#Batch_renamers)
-        *   [1.7.7 Finders](#Finders)
-    *   [1.8 Disk cleaning](#Disk_cleaning)
-    *   [1.9 Disk usage display](#Disk_usage_display)
-    *   [1.10 Clock synchronization](#Clock_synchronization)
-    *   [1.11 System monitoring](#System_monitoring)
-    *   [1.12 System information viewers](#System_information_viewers)
-        *   [1.12.1 Console](#Console_3)
-        *   [1.12.2 Graphical](#Graphical_3)
-    *   [1.13 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [1.14 Power management](#Power_management)
-    *   [1.15 Clipboard managers](#Clipboard_managers)
-    *   [1.16 Package management](#Package_management)
-    *   [1.17 Input methods](#Input_methods)
-    *   [1.18 Version control systems](#Version_control_systems)
+    *   [1.1 Terminal](#Terminal)
+        *   [1.1.1 Command shells](#Command_shells)
+        *   [1.1.2 Terminal emulators](#Terminal_emulators)
+            *   [1.1.2.1 VTE-based](#VTE-based)
+            *   [1.1.2.2 KMS-based](#KMS-based)
+            *   [1.1.2.3 framebuffer-based](#framebuffer-based)
+        *   [1.1.3 Terminal pagers](#Terminal_pagers)
+        *   [1.1.4 Terminal multiplexers](#Terminal_multiplexers)
+    *   [1.2 Files](#Files)
+        *   [1.2.1 File managers](#File_managers)
+            *   [1.2.1.1 Console](#Console)
+            *   [1.2.1.2 Graphical](#Graphical)
+        *   [1.2.2 Trash management](#Trash_management)
+        *   [1.2.3 File synchronization](#File_synchronization)
+        *   [1.2.4 Archiving and compression tools](#Archiving_and_compression_tools)
+            *   [1.2.4.1 Console](#Console_2)
+            *   [1.2.4.2 Graphical](#Graphical_2)
+        *   [1.2.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [1.2.6 Batch renamers](#Batch_renamers)
+        *   [1.2.7 Finders](#Finders)
+    *   [1.3 Development](#Development)
+        *   [1.3.1 Integrated development environments](#Integrated_development_environments)
+        *   [1.3.2 Hex editors](#Hex_editors)
+        *   [1.3.3 Build automation](#Build_automation)
+        *   [1.3.4 Version control systems](#Version_control_systems)
+    *   [1.4 Disks](#Disks)
+        *   [1.4.1 Partitioning tools](#Partitioning_tools)
+        *   [1.4.2 Mount tools](#Mount_tools)
+        *   [1.4.3 Disk usage display](#Disk_usage_display)
+        *   [1.4.4 Disk cleaning](#Disk_cleaning)
+    *   [1.5 System](#System)
+        *   [1.5.1 System monitoring](#System_monitoring)
+        *   [1.5.2 System information viewers](#System_information_viewers)
+            *   [1.5.2.1 Console](#Console_3)
+            *   [1.5.2.2 Graphical](#Graphical_3)
+        *   [1.5.3 Command schedulers](#Command_schedulers)
+        *   [1.5.4 Shutdown timers](#Shutdown_timers)
+        *   [1.5.5 Keyboard layout switchers](#Keyboard_layout_switchers)
+        *   [1.5.6 Input methods](#Input_methods)
+        *   [1.5.7 Clipboard managers](#Clipboard_managers)
+        *   [1.5.8 Clock synchronization](#Clock_synchronization)
+        *   [1.5.9 Power management](#Power_management)
+        *   [1.5.10 Package management](#Package_management)
 
 ## Utilities
-
-### Partitioning tools
-
-See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
-
-### Mount tools
-
-See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
-
-*   **9mount** — Mount 9p filesystems.
-
-	[http://sqweek.net/code/9mount/](http://sqweek.net/code/9mount/) || [9mount](https://aur.archlinux.org/packages/9mount/)
-
-*   **cryptmount** — Mount an encrypted file system as a regular user.
-
-	[https://sourceforge.net/projects/cryptmount/](https://sourceforge.net/projects/cryptmount/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
-
-*   **ldm** — A lightweight daemon that mounts drives automagically using *udev*
-
-	[https://github.com/LemonBoy/ldm](https://github.com/LemonBoy/ldm) || [ldm](https://aur.archlinux.org/packages/ldm/)
-
-*   **pmount** — Mount *source* as a regular user to an automatically created destination `/media/*source_name*`.
-
-	[https://pmount.alioth.debian.org/](https://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
-
-*   **pmount-safe-removal** — Mount removable devices as regular user with safe removal
-
-	[https://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](https://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
-
-*   **udevil** — Mounts removable devices as a regular user, show device info, and monitor device changes. Only depends on *udev* and glib.
-
-	[https://ignorantguru.github.io/udevil](https://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
-
-*   **ws** — Mount Windows network shares ([CIFS](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") and [VFS](https://en.wikipedia.org/wiki/Virtual_file_system "wikipedia:Virtual file system")).
-
-	[https://sourceforge.net/projects/winshares/](https://sourceforge.net/projects/winshares/) || [ws](https://aur.archlinux.org/packages/ws/)
-
-*   **zulucrypt** — A GUI frontend for cryptsetup to create, manage and mount encrypted volumes; supports encfs as well
-
-	[https://mhogomchungu.github.io/zuluCrypt/](https://mhogomchungu.github.io/zuluCrypt/) || [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/)
 
 ### Terminal
 
@@ -162,10 +127,6 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://www.enlightenment.org/about-terminology](https://www.enlightenment.org/about-terminology) || [terminology](https://www.archlinux.org/packages/?name=terminology)
 
-*   **[Tilda](/index.php/Tilda "Tilda")** — Terminal inspired by many classic terminals from first person shooter games such as Quake, Doom and Half-Life.
-
-	[https://github.com/lanoxx/tilda/](https://github.com/lanoxx/tilda/) || [tilda](https://www.archlinux.org/packages/?name=tilda)
-
 *   **[urxvt](/index.php/Urxvt "Urxvt")** — Highly extendable (with Perl) unicode enabled rxvt-clone terminal emulator featuring tabbing, url launching, a Quake style drop-down mode and pseudo-transparency.
 
 	[http://software.schmorp.de/pkg/rxvt-unicode.html](http://software.schmorp.de/pkg/rxvt-unicode.html) || [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode)
@@ -212,7 +173,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **Pantheon Terminal** — A super lightweight, beautiful, and simple terminal emulator. It's designed to be setup with sane defaults and little to no configuration.
 
-	[https://launchpad.net/pantheon-terminal](https://launchpad.net/pantheon-terminal) || [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal)
+	[https://github.com/elementary/terminal](https://github.com/elementary/terminal) || [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal)
 
 *   **ROXTerm** — Tabbed terminal emulator with a small footprint.
 
@@ -226,13 +187,17 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
 
-*   **[terminator](/index.php/Terminator "Terminator")** — Terminal emulator supporting multiple resizable terminal panels.
+*   **[Terminator](/index.php/Terminator "Terminator")** — Terminal emulator supporting multiple resizable terminal panels.
 
-	[http://gnometerminator.blogspot.it/](http://gnometerminator.blogspot.it/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
+	[https://gnometerminator.blogspot.com/](https://gnometerminator.blogspot.com/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
 
-*   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
+*   **[Termite](/index.php/Termite "Termite")** — Keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
 	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
+
+*   **[Tilda](/index.php/Tilda "Tilda")** — Configurable drop down terminal emulator.
+
+	[https://github.com/lanoxx/tilda/](https://github.com/lanoxx/tilda/) || [tilda](https://www.archlinux.org/packages/?name=tilda)
 
 *   **Tilix** — A tiling terminal emulator for Linux using GTK+ 3
 
@@ -312,154 +277,6 @@ See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager
 
 	[http://tmux.github.io/](http://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
 
-### Hex editors
-
-See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Comparison_of_hex_editors "wikipedia:Comparison of hex editors").
-
-*   **hyx** — A minimalistic but powerful (hex/ASCII, insert/replace/delete, copy/paste, undo/redo, search, colors, vim-inspired controls) console hex editor.
-
-	[https://yx7.cc/code/](https://yx7.cc/code/) || [hyx](https://aur.archlinux.org/packages/hyx/)
-
-*   **okteta** — KDE hex editor for viewing and editing the raw data of files.
-
-	[https://www.kde.org/applications/utilities/okteta/](https://www.kde.org/applications/utilities/okteta/) || [okteta](https://www.archlinux.org/packages/?name=okteta)
-
-### Integrated development environments
-
-See also [Wikipedia:Comparison of integrated development environments](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments "wikipedia:Comparison of integrated development environments").
-
-*   **[Anjuta](https://en.wikipedia.org/wiki/Anjuta "wikipedia:Anjuta")** — Versatile IDE with project management, an application wizard, an interactive debugger, a source editor, version control support and many more tools.
-
-	[http://www.anjuta.org/](http://www.anjuta.org/) || [anjuta](https://www.archlinux.org/packages/?name=anjuta)
-
-*   **[Aptana Studio](https://en.wikipedia.org/wiki/Aptana#Aptana_Studio "wikipedia:Aptana")** — IDE based on Eclipse, but geared towards web development, with support for HTML, CSS, Javascript, Ruby on Rails, PHP, Adobe AIR and others.
-
-	[http://www.aptana.com/](http://www.aptana.com/) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
-
-*   **[Bluefish](https://en.wikipedia.org/wiki/Bluefish_(text_editor) "wikipedia:Bluefish (text editor)")** — GTK+ editor/IDE with an MDI interface, syntax highlighting and support for Python plugins.
-
-	[http://bluefish.openoffice.nl/](http://bluefish.openoffice.nl/) || [bluefish](https://www.archlinux.org/packages/?name=bluefish)
-
-*   **[Bluej](https://en.wikipedia.org/wiki/Bluej "wikipedia:Bluej")** — Fully featured Java IDE used mainly for educational and beginner purposes.
-
-	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
-
-*   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — Open source and cross-platform C/C++ IDE.
-
-	[http://www.codeblocks.org/](http://www.codeblocks.org/) || [codeblocks](https://www.archlinux.org/packages/?name=codeblocks)
-
-*   **[CLion](https://en.wikipedia.org/wiki/JetBrains#CLion "wikipedia:JetBrains")** — A cross-platform IDE for C and C++.
-
-	[http://www.jetbrains.com/clion](http://www.jetbrains.com/clion) || [clion](https://aur.archlinux.org/packages/clion/)
-
-*   **[CodeLite](https://en.wikipedia.org/wiki/CodeLite "wikipedia:CodeLite")** — Open source and cross-platform C/C++/PHP and Node.js IDE written in C++ .
-
-	[http://www.codelite.org/](http://www.codelite.org/) || [codelite](https://aur.archlinux.org/packages/codelite/)
-
-*   **[Cloud9](https://en.wikipedia.org/wiki/Cloud9_IDE "wikipedia:Cloud9 IDE")** — State-of-the-art IDE that runs in your browser and lives in the cloud, allowing you to run, debug and deploy applications from anywhere, anytime.
-
-	[https://c9.io/](https://c9.io/) || [c9.core](https://aur.archlinux.org/packages/c9.core/)
-
-*   **[Eclipse](/index.php/Eclipse "Eclipse")** — Open source community project, which aims to provide a universal development platform.
-
-	[https://eclipse.org/](https://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
-
-*   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python and Ruby IDE in PyQt5.
-
-	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
-
-*   **[Gambas](/index.php/Gambas "Gambas")** — Free development environment based on a Basic interpreter with object extensions.
-
-	[http://gambas.sourceforge.net/en/main.html](http://gambas.sourceforge.net/en/main.html) || [gambas3-ide](https://www.archlinux.org/packages/?name=gambas3-ide)
-
-*   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — Text editor using the GTK+ toolkit with basic features of an integrated development environment.
-
-	[https://geany.org](https://geany.org) || [geany](https://www.archlinux.org/packages/?name=geany)
-
-*   **[GNOME Builder](https://en.wikipedia.org/wiki/GNOME_Builder "wikipedia:GNOME Builder")** — General purpose IDE for GNOME.
-
-	[https://wiki.gnome.org/Apps/Builder](https://wiki.gnome.org/Apps/Builder) || [gnome-builder](https://www.archlinux.org/packages/?name=gnome-builder)
-
-*   **[IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA "wikipedia:IntelliJ IDEA")** — IDE for Java, Groovy and other programming languages with advanced refactoring features.
-
-	[http://www.jetbrains.com/idea/](http://www.jetbrains.com/idea/) || [intellij-idea-community-edition](https://www.archlinux.org/packages/?name=intellij-idea-community-edition)
-
-*   **[KDevelop](https://en.wikipedia.org/wiki/KDevelop "wikipedia:KDevelop")** — Feature-full, plugin extensible IDE for C/C++ and other programming languages.
-
-	[http://kdevelop.org/](http://kdevelop.org/) || [kdevelop](https://www.archlinux.org/packages/?name=kdevelop)
-
-*   **[Komodo Edit](https://en.wikipedia.org/wiki/Komodo_Edit "wikipedia:Komodo Edit")** — A free, multi-language editor.
-
-	[http://www.activestate.com/komodo-edit](http://www.activestate.com/komodo-edit) || [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
-
-*   **[Lazarus](https://en.wikipedia.org/wiki/Lazarus_(IDE) "wikipedia:Lazarus (IDE)")** — Cross-platform IDE for Object Pascal.
-
-	[http://lazarus.freepascal.org/](http://lazarus.freepascal.org/) || [lazarus](https://www.archlinux.org/packages/?name=lazarus)
-
-*   **LiteIDE** — A simple, open source, cross-platform Go IDE.
-
-	[https://github.com/visualfc/liteide](https://github.com/visualfc/liteide) || [liteide](https://www.archlinux.org/packages/?name=liteide)
-
-*   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — Cross-platform IDE targeted for the Mono and .NET frameworks.
-
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/)
-
-*   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development
-
-	[http://www.microchip.com/mplabx](http://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)
-
-*   **[Netbeans](/index.php/Netbeans "Netbeans")** — Integrated development environment (IDE) for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
-
-	[http://netbeans.org/](http://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
-
-*   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — from the recursive acronym: "Ninja-IDE Is Not Just Another IDE", is a cross-platform integrated development environment (IDE); runs on Linux/X11, Mac OS X and Windows OSs. Used, for example, for Python development
-
-	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
-
-*   **[PHPStorm](/index.php/PHPStorm "PHPStorm")** — JetBrains PhpStorm is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform, providing an editor for PHP, HTML and JavaScript with on-the-fly code analysis, error prevention and automated refactorings for PHP and JavaScript code.
-
-	[https://www.jetbrains.com/phpstorm/](https://www.jetbrains.com/phpstorm/) || [phpstorm](https://aur.archlinux.org/packages/phpstorm/) [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)
-
-*   **[PyCharm](https://en.wikipedia.org/wiki/PyCharm "wikipedia:PyCharm")** — Python IDE with support for code analysis, debugging, unit testing, version control and web development with Django.
-
-	[http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/) || [pycharm-community-edition](https://www.archlinux.org/packages/?name=pycharm-community-edition)
-
-*   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — Lightweight, cross-platform C++ integrated development environment with a focus on Qt.
-
-	[https://www.qt.io/ide/](https://www.qt.io/ide/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
-
-*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). *Scratch* is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
-
-	[http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch) [scratch2](https://aur.archlinux.org/packages/scratch2/)
-
-*   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
-
-	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder2](https://www.archlinux.org/packages/?name=spyder2) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
-
-*   **Thonny** — Python IDE for beginners.
-
-	[http://thonny.cs.ut.ee/](http://thonny.cs.ut.ee/) || [thonny](https://aur.archlinux.org/packages/thonny/)
-
-### Build automation
-
-See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").
-
-*   **[Apache Ant](https://en.wikipedia.org/wiki/Apache_Ant "wikipedia:Apache Ant")** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
-
-	[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
-
-*   **[Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven "wikipedia:Apache Maven")** — Build automation tool used primarily for Java.
-
-	[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
-
-*   **[Gradle](https://en.wikipedia.org/wiki/Gradle "wikipedia:Gradle")** — Powerful build system for the JVM.
-
-	[https://gradle.org/](https://gradle.org/) || [gradle](https://www.archlinux.org/packages/?name=gradle)
-
-*   **Phing** — PHP program designed to automate tasks of all kinds.
-
-	[https://www.phing.info/](https://www.phing.info/) || [phing](https://aur.archlinux.org/packages/phing/)
-
 ### Files
 
 #### File managers
@@ -524,7 +341,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
 
-	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2) [doublecmd-qt4](https://www.archlinux.org/packages/?name=doublecmd-qt4)
+	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK+: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
 
 *   **[emelFM2](https://en.wikipedia.org/wiki/emelFM2 "wikipedia:emelFM2")** — File manager that implements the popular two-panel design.
 
@@ -540,7 +357,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[GNOME Files](/index.php/GNOME_Files "GNOME Files")** — Extensible, heavyweight file manager used by default in GNOME with support for custom scripts.
 
-	[https://wiki.gnome.org/Apps/Nautilus](https://wiki.gnome.org/Apps/Nautilus) || [nautilus](https://www.archlinux.org/packages/?name=nautilus)
+	[https://wiki.gnome.org/Apps/Files](https://wiki.gnome.org/Apps/Files) || [nautilus](https://www.archlinux.org/packages/?name=nautilus)
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — File manager and web browser for the KDE desktop.
 
@@ -565,6 +382,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **[PathFinder](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit")** — File browser that comes with the FOX toolkit.
 
 	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
+
+*   **Pantheon Files** — File browser designed for elementary OS.
+
+	[https://github.com/elementary/files](https://github.com/elementary/files) || [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files)
 
 *   **[PCManFM](/index.php/PCManFM "PCManFM")** — Lightweight file manager which features tabbed and dual pane browsing; also it can optionally manage the desktop icons and background.
 
@@ -718,7 +539,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[PeaZip](https://en.wikipedia.org/wiki/PeaZip "wikipedia:PeaZip")** — Open source file and archive manager.
 
-	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/) [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
+	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || GTK+: [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/), Qt: [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
 
 *   **Squeeze** — Featherweight front-end for commandline archiving tools.
 
@@ -726,7 +547,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK+.
 
-	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) or [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
+	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || GTK+ 3: [xarchiver](https://www.archlinux.org/packages/?name=xarchiver), GTK+ 2: [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
 
 #### Comparison, diff, merge
 
@@ -782,13 +603,29 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 	[http://search.cpan.org/~pederst/rename/bin/rename.PL](http://search.cpan.org/~pederst/rename/bin/rename.PL) || [perl-rename](https://www.archlinux.org/packages/?name=perl-rename)
 
+*   **[Thunar](/index.php/Thunar "Thunar") Bulk Rename** — Change the name of multiple files at once using some criterion that applies to at least one of the files. Run with `thunar -B`.
+
+	[https://docs.xfce.org/xfce/thunar/bulk-renamer/start](https://docs.xfce.org/xfce/thunar/bulk-renamer/start) || [thunar](https://www.archlinux.org/packages/?name=thunar)
+
 #### Finders
 
 See also [Wikipedia:List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
 
+*   **Baloo** — KDE's file indexing and search solution.
+
+	[https://community.kde.org/Baloo](https://community.kde.org/Baloo) || [baloo](https://www.archlinux.org/packages/?name=baloo)
+
 *   **Basenji** — Volume indexing tool designed for easy and fast indexing of CD/DVD and other type of volume collections.
 
 	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
+
+*   **Catfish** — Versatile file searching tool.
+
+	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
+
+*   **Docfetcher** — Java desktop search application.
+
+	[http://docfetcher.sourceforge.net](http://docfetcher.sourceforge.net) || [docfetcher](https://aur.archlinux.org/packages/docfetcher/)
 
 *   **fuzzy-find** — Fuzzy completion for finding files.
 
@@ -798,27 +635,19 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf) [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
-*   **Baloo** — KDE's file indexing and search solution
+*   **GNOME Search Tool** — GNOME utility to search for files.
 
-	[https://community.kde.org/Baloo](https://community.kde.org/Baloo) || [baloo](https://www.archlinux.org/packages/?name=baloo)
+	[https://gitlab.gnome.org/GNOME/gnome-search-tool](https://gitlab.gnome.org/GNOME/gnome-search-tool) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
 
-*   **Catfish** — Versatile file searching tool
+*   **KFind** — Standalone search tool for KDE to find files by name, type or content.
 
-	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
+	[https://www.kde.org/applications/utilities/kfind/](https://www.kde.org/applications/utilities/kfind/) || [kfind](https://www.archlinux.org/packages/?name=kfind)
 
-*   **Docfetcher** — A java open source desktop search application
+*   **Recoll** — Full text search tool based on Xapian backend.
 
-	[http://docfetcher.sourceforge.net](http://docfetcher.sourceforge.net) || [docfetcher](https://aur.archlinux.org/packages/docfetcher/)
+	[https://lesbonscomptes.com/recoll/](https://lesbonscomptes.com/recoll/) || [recoll](https://www.archlinux.org/packages/?name=recoll)
 
-*   **Gnome Search Tool** — Default Gnome utility to search for files
-
-	[https://help.gnome.org/users/gnome-search-tool/stable/gsearchtool-introduction.html.en](https://help.gnome.org/users/gnome-search-tool/stable/gsearchtool-introduction.html.en) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
-
-*   **Recoll** — Full text search tool based on Xapian backend
-
-	[http://www.lesbonscomptes.com/recoll/](http://www.lesbonscomptes.com/recoll/) || [recoll](https://www.archlinux.org/packages/?name=recoll)
-
-*   **Searchmonkey** — A powerful GUI search utility for matching regex patterns
+*   **Searchmonkey** — Powerful GUI search utility for matching regex patterns.
 
 	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
 
@@ -826,7 +655,261 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[https://wiki.gnome.org/Projects/Tracker](https://wiki.gnome.org/Projects/Tracker) || [tracker](https://www.archlinux.org/packages/?name=tracker)
 
-### Disk cleaning
+### Development
+
+#### Integrated development environments
+
+See also [Wikipedia:Comparison of integrated development environments](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments "wikipedia:Comparison of integrated development environments").
+
+*   **[Anjuta](https://en.wikipedia.org/wiki/Anjuta "wikipedia:Anjuta")** — Versatile IDE with project management, an application wizard, an interactive debugger, a source editor, version control support and many more tools.
+
+	[http://www.anjuta.org/](http://www.anjuta.org/) || [anjuta](https://www.archlinux.org/packages/?name=anjuta)
+
+*   **[Aptana Studio](https://en.wikipedia.org/wiki/Aptana#Aptana_Studio "wikipedia:Aptana")** — IDE based on Eclipse, but geared towards web development, with support for HTML, CSS, Javascript, Ruby on Rails, PHP, Adobe AIR and others.
+
+	[http://www.aptana.com/](http://www.aptana.com/) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
+
+*   **[Bluefish](https://en.wikipedia.org/wiki/Bluefish_(text_editor) "wikipedia:Bluefish (text editor)")** — GTK+ editor/IDE with an MDI interface, syntax highlighting and support for Python plugins.
+
+	[http://bluefish.openoffice.nl/](http://bluefish.openoffice.nl/) || [bluefish](https://www.archlinux.org/packages/?name=bluefish)
+
+*   **[Bluej](https://en.wikipedia.org/wiki/Bluej "wikipedia:Bluej")** — Fully featured Java IDE used mainly for educational and beginner purposes.
+
+	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
+
+*   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — Open source and cross-platform C/C++ IDE.
+
+	[http://www.codeblocks.org/](http://www.codeblocks.org/) || [codeblocks](https://www.archlinux.org/packages/?name=codeblocks)
+
+*   **[CLion](https://en.wikipedia.org/wiki/JetBrains#CLion "wikipedia:JetBrains")** — A cross-platform IDE for C and C++.
+
+	[http://www.jetbrains.com/clion](http://www.jetbrains.com/clion) || [clion](https://aur.archlinux.org/packages/clion/)
+
+*   **[CodeLite](https://en.wikipedia.org/wiki/CodeLite "wikipedia:CodeLite")** — Open source and cross-platform C/C++/PHP and Node.js IDE written in C++ .
+
+	[http://www.codelite.org/](http://www.codelite.org/) || [codelite](https://aur.archlinux.org/packages/codelite/)
+
+*   **[Cloud9](https://en.wikipedia.org/wiki/Cloud9_IDE "wikipedia:Cloud9 IDE")** — State-of-the-art IDE that runs in your browser and lives in the cloud, allowing you to run, debug and deploy applications from anywhere, anytime.
+
+	[https://c9.io/](https://c9.io/) || [c9.core](https://aur.archlinux.org/packages/c9.core/)
+
+*   **[Eclipse](/index.php/Eclipse "Eclipse")** — Open source community project, which aims to provide a universal development platform.
+
+	[https://eclipse.org/](https://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
+
+*   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python and Ruby IDE in PyQt5.
+
+	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
+
+*   **[Gambas](/index.php/Gambas "Gambas")** — Free development environment based on a Basic interpreter with object extensions.
+
+	[http://gambas.sourceforge.net/en/main.html](http://gambas.sourceforge.net/en/main.html) || [gambas3-ide](https://www.archlinux.org/packages/?name=gambas3-ide)
+
+*   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — Text editor using the GTK+ toolkit with basic features of an integrated development environment.
+
+	[https://geany.org](https://geany.org) || [geany](https://www.archlinux.org/packages/?name=geany)
+
+*   **[GNOME Builder](https://en.wikipedia.org/wiki/GNOME_Builder "wikipedia:GNOME Builder")** — General purpose IDE for GNOME.
+
+	[https://wiki.gnome.org/Apps/Builder](https://wiki.gnome.org/Apps/Builder) || [gnome-builder](https://www.archlinux.org/packages/?name=gnome-builder)
+
+*   **[IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA "wikipedia:IntelliJ IDEA")** — IDE for Java, Groovy and other programming languages with advanced refactoring features.
+
+	[http://www.jetbrains.com/idea/](http://www.jetbrains.com/idea/) || [intellij-idea-community-edition](https://www.archlinux.org/packages/?name=intellij-idea-community-edition)
+
+*   **[KDevelop](https://en.wikipedia.org/wiki/KDevelop "wikipedia:KDevelop")** — Feature-full, plugin extensible IDE for C/C++ and other programming languages.
+
+	[http://kdevelop.org/](http://kdevelop.org/) || [kdevelop](https://www.archlinux.org/packages/?name=kdevelop)
+
+*   **[Komodo Edit](https://en.wikipedia.org/wiki/Komodo_Edit "wikipedia:Komodo Edit")** — A free, multi-language editor.
+
+	[http://www.activestate.com/komodo-edit](http://www.activestate.com/komodo-edit) || [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
+
+*   **[Lazarus](https://en.wikipedia.org/wiki/Lazarus_(IDE) "wikipedia:Lazarus (IDE)")** — Cross-platform IDE for Object Pascal.
+
+	[http://lazarus.freepascal.org/](http://lazarus.freepascal.org/) || [lazarus](https://www.archlinux.org/packages/?name=lazarus)
+
+*   **LiteIDE** — A simple, open source, cross-platform Go IDE.
+
+	[https://github.com/visualfc/liteide](https://github.com/visualfc/liteide) || [liteide](https://www.archlinux.org/packages/?name=liteide)
+
+*   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — Cross-platform IDE targeted for the Mono and .NET frameworks.
+
+	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/)
+
+*   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development
+
+	[http://www.microchip.com/mplabx](http://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)
+
+*   **[Netbeans](/index.php/Netbeans "Netbeans")** — Integrated development environment (IDE) for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
+
+	[http://netbeans.org/](http://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
+
+*   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — from the recursive acronym: "Ninja-IDE Is Not Just Another IDE", is a cross-platform integrated development environment (IDE); runs on Linux/X11, Mac OS X and Windows OSs. Used, for example, for Python development
+
+	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
+
+*   **[PHPStorm](/index.php/PHPStorm "PHPStorm")** — JetBrains PhpStorm is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform, providing an editor for PHP, HTML and JavaScript with on-the-fly code analysis, error prevention and automated refactorings for PHP and JavaScript code.
+
+	[https://www.jetbrains.com/phpstorm/](https://www.jetbrains.com/phpstorm/) || [phpstorm](https://aur.archlinux.org/packages/phpstorm/) [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)
+
+*   **[PyCharm](https://en.wikipedia.org/wiki/PyCharm "wikipedia:PyCharm")** — Python IDE with support for code analysis, debugging, unit testing, version control and web development with Django.
+
+	[http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/) || [pycharm-community-edition](https://www.archlinux.org/packages/?name=pycharm-community-edition)
+
+*   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — Lightweight, cross-platform C++ integrated development environment with a focus on Qt.
+
+	[https://www.qt.io/ide/](https://www.qt.io/ide/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
+
+*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). *Scratch* is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
+
+	[http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch) [scratch2](https://aur.archlinux.org/packages/scratch2/)
+
+*   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
+
+	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder2](https://www.archlinux.org/packages/?name=spyder2) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
+
+*   **Thonny** — Python IDE for beginners.
+
+	[http://thonny.cs.ut.ee/](http://thonny.cs.ut.ee/) || [thonny](https://aur.archlinux.org/packages/thonny/)
+
+#### Hex editors
+
+See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Comparison_of_hex_editors "wikipedia:Comparison of hex editors").
+
+*   **Bless** — High quality, full featured hex editor.
+
+	[https://web.archive.org/web/20170503150524/http://home.gna.org/bless/](https://web.archive.org/web/20170503150524/http://home.gna.org/bless/) || [bless](https://www.archlinux.org/packages/?name=bless)
+
+*   **GHex** — Hex editor for GNOME, which allows the user to load data from any file, view and edit it in either hex or ascii.
+
+	[https://wiki.gnome.org/Apps/Ghex](https://wiki.gnome.org/Apps/Ghex) || [ghex](https://www.archlinux.org/packages/?name=ghex)
+
+*   **hyx** — Minimalistic but powerful console hex editor.
+
+	[https://yx7.cc/code/](https://yx7.cc/code/) || [hyx](https://aur.archlinux.org/packages/hyx/)
+
+*   **Okteta** — KDE hex editor for viewing and editing the raw data of files.
+
+	[https://www.kde.org/applications/utilities/okteta/](https://www.kde.org/applications/utilities/okteta/) || [okteta](https://www.archlinux.org/packages/?name=okteta)
+
+#### Build automation
+
+See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").
+
+*   **[Apache Ant](https://en.wikipedia.org/wiki/Apache_Ant "wikipedia:Apache Ant")** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
+
+	[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
+
+*   **[Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven "wikipedia:Apache Maven")** — Build automation tool used primarily for Java.
+
+	[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
+
+*   **[Gradle](https://en.wikipedia.org/wiki/Gradle "wikipedia:Gradle")** — Powerful build system for the JVM.
+
+	[https://gradle.org/](https://gradle.org/) || [gradle](https://www.archlinux.org/packages/?name=gradle)
+
+*   **Phing** — PHP program designed to automate tasks of all kinds.
+
+	[https://www.phing.info/](https://www.phing.info/) || [phing](https://aur.archlinux.org/packages/phing/)
+
+#### Version control systems
+
+See also [Wikipedia:Comparison of revision control software](https://en.wikipedia.org/wiki/Comparison_of_revision_control_software "wikipedia:Comparison of revision control software").
+
+*   **[Bazaar](/index.php/Bazaar "Bazaar")** — Distributed version control system that helps you track project history over time and to collaborate easily with others.
+
+	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
+
+*   **[Darcs](https://en.wikipedia.org/wiki/Darcs "wikipedia:Darcs")** — Distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
+
+	[http://darcs.net/](http://darcs.net/) || [darcs](https://www.archlinux.org/packages/?name=darcs)
+
+*   **[Git](/index.php/Git "Git")** — Distributed revision control and source code management system with an emphasis on speed.
+
+	[https://git-scm.com/](https://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
+
+*   **[Mercurial](/index.php/Mercurial "Mercurial")** — Distributed version control system written in Python and similar in many ways to Git.
+
+	[https://www.mercurial-scm.org/](https://www.mercurial-scm.org/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
+
+*   **[Subversion](/index.php/Subversion "Subversion")** — Full-featured centralized version control system originally designed to be a better CVS.
+
+	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
+
+### Disks
+
+#### Partitioning tools
+
+See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
+
+#### Mount tools
+
+See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
+
+*   **9mount** — Mount 9p filesystems.
+
+	[http://sqweek.net/code/9mount/](http://sqweek.net/code/9mount/) || [9mount](https://aur.archlinux.org/packages/9mount/)
+
+*   **cryptmount** — Mount an encrypted file system as a regular user.
+
+	[https://sourceforge.net/projects/cryptmount/](https://sourceforge.net/projects/cryptmount/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
+
+*   **ldm** — A lightweight daemon that mounts drives automagically using *udev*
+
+	[https://github.com/LemonBoy/ldm](https://github.com/LemonBoy/ldm) || [ldm](https://aur.archlinux.org/packages/ldm/)
+
+*   **pmount** — Mount *source* as a regular user to an automatically created destination `/media/*source_name*`.
+
+	[https://pmount.alioth.debian.org/](https://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
+
+*   **pmount-safe-removal** — Mount removable devices as regular user with safe removal
+
+	[https://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](https://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
+
+*   **udevil** — Mounts removable devices as a regular user, show device info, and monitor device changes. Only depends on *udev* and glib.
+
+	[https://ignorantguru.github.io/udevil](https://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
+
+*   **ws** — Mount Windows network shares ([CIFS](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") and [VFS](https://en.wikipedia.org/wiki/Virtual_file_system "wikipedia:Virtual file system")).
+
+	[https://sourceforge.net/projects/winshares/](https://sourceforge.net/projects/winshares/) || [ws](https://aur.archlinux.org/packages/ws/)
+
+*   **zulucrypt** — A GUI frontend for cryptsetup to create, manage and mount encrypted volumes; supports encfs as well
+
+	[https://mhogomchungu.github.io/zuluCrypt/](https://mhogomchungu.github.io/zuluCrypt/) || [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/)
+
+#### Disk usage display
+
+*   **[Disk Usage Analyzer](https://en.wikipedia.org/wiki/Disk_Usage_Analyzer "wikipedia:Disk Usage Analyzer") (Baobab)** — Disk usage analyzer for the [GNOME](/index.php/GNOME "GNOME") desktop.
+
+	[http://www.marzocca.net/linux/baobab](http://www.marzocca.net/linux/baobab) || [baobab](https://www.archlinux.org/packages/?name=baobab)
+
+*   **duc** — A library and suite of tools for inspecting disk usage.
+
+	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
+
+*   **[Filelight](https://en.wikipedia.org/wiki/Filelight "wikipedia:Filelight")** — Disk usage analyzer that creates an interactive map of concentric, segmented rings that help visualise disk usage on your computer.
+
+	[http://methylblue.com/filelight/](http://methylblue.com/filelight/) || [filelight](https://www.archlinux.org/packages/?name=filelight)
+
+*   **Graphical Disk Map** — Disk usage analyzer that draws a map of rectangles sized according to file or dir sizes.
+
+	[http://gdmap.sourceforge.net/](http://gdmap.sourceforge.net/) || [gdmap](https://www.archlinux.org/packages/?name=gdmap)
+
+*   **gt5** — Diff-capable "du-browser".
+
+	[http://gt5.sourceforge.net](http://gt5.sourceforge.net) || [gt5](https://aur.archlinux.org/packages/gt5/)
+
+*   **ncdu** — Simple ncurses disk usage analyzer.
+
+	[http://dev.yorhel.nl/ncdu](http://dev.yorhel.nl/ncdu) || [ncdu](https://www.archlinux.org/packages/?name=ncdu)
+
+*   **qdirstat** — Qt-based directory statistics (KDirStat/K4DirStat without any KDE - from the original KDirStat author).
+
+	[https://github.com/shundhammer/qdirstat](https://github.com/shundhammer/qdirstat) || [qdirstat](https://aur.archlinux.org/packages/qdirstat/)
+
+#### Disk cleaning
 
 *   **[BleachBit](https://en.wikipedia.org/wiki/BleachBit "wikipedia:BleachBit")** — It frees disk space and guards your privacy; frees cache, deletes cookies, clears Internet history, shreds temporary files, deletes logs, and discards junk you didn't know was there.
 
@@ -848,41 +931,9 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-### Disk usage display
+### System
 
-*   **[Disk Usage Analyzer](https://en.wikipedia.org/wiki/Disk_Usage_Analyzer "wikipedia:Disk Usage Analyzer") (Baobab)** — Disk usage analyzer for the [GNOME](/index.php/GNOME "GNOME") desktop.
-
-	[http://www.marzocca.net/linux/baobab](http://www.marzocca.net/linux/baobab) || [baobab](https://www.archlinux.org/packages/?name=baobab)
-
-*   **duc** — A library and suite of tools for inspecting disk usage.
-
-	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
-
-*   **[Filelight](https://en.wikipedia.org/wiki/Filelight "wikipedia:Filelight")** — Disk usage analyzer that creates an interactive map of concentric, segmented rings that help visualise disk usage on your computer.
-
-	[http://methylblue.com/filelight/](http://methylblue.com/filelight/) || [filelight](https://www.archlinux.org/packages/?name=filelight)
-
-*   **GdMap** — Disk usage analyzer that draws a map of rectangles sized according to file or dir sizes.
-
-	[http://gdmap.sourceforge.net/](http://gdmap.sourceforge.net/) || [gdmap](https://www.archlinux.org/packages/?name=gdmap)
-
-*   **gt5** — Diff-capable "du-browser".
-
-	[http://gt5.sourceforge.net](http://gt5.sourceforge.net) || [gt5](https://aur.archlinux.org/packages/gt5/)
-
-*   **ncdu** — Simple ncurses disk usage analyzer.
-
-	[http://dev.yorhel.nl/ncdu](http://dev.yorhel.nl/ncdu) || [ncdu](https://www.archlinux.org/packages/?name=ncdu)
-
-*   **qdirstat** — Qt-based directory statistics (KDirStat/K4DirStat without any KDE - from the original KDirStat author).
-
-	[https://github.com/shundhammer/qdirstat](https://github.com/shundhammer/qdirstat) || [qdirstat](https://aur.archlinux.org/packages/qdirstat/)
-
-### Clock synchronization
-
-See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
-
-### System monitoring
+#### System monitoring
 
 See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
 
@@ -890,7 +941,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/brndnmtthws/conky](https://github.com/brndnmtthws/conky) || [conky](https://www.archlinux.org/packages/?name=conky)
 
-*   **Collectd** — A simple, extensible system monitoring daemon based on [rrdtool](http://oss.oetiker.ch/rrdtool/). It has a small footprint and can be set up either stand-alone or as a server/client application.
+*   **Collectd** — Simple, extensible system monitoring daemon based on [rrdtool](http://oss.oetiker.ch/rrdtool/). It has a small footprint and can be set up either stand-alone or as a server/client application.
 
 	[https://collectd.org/](https://collectd.org/) || [collectd](https://www.archlinux.org/packages/?name=collectd)
 
@@ -914,9 +965,9 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://nicolargo.github.io/glances](http://nicolargo.github.io/glances) || [glances](https://www.archlinux.org/packages/?name=glances)
 
-*   **gnome-system-monitor** — A system monitor for [GNOME](/index.php/GNOME "GNOME").
+*   **GNOME System Monitor** — System monitor for [GNOME](/index.php/GNOME "GNOME").
 
-	[https://help.gnome.org/users/gnome-system-monitor/](https://help.gnome.org/users/gnome-system-monitor/) || [gnome-system-monitor](https://www.archlinux.org/packages/?name=gnome-system-monitor) [gnome-system-monitor-gtk2](https://aur.archlinux.org/packages/gnome-system-monitor-gtk2/)
+	[https://wiki.gnome.org/Apps/SystemMonitor](https://wiki.gnome.org/Apps/SystemMonitor) || [gnome-system-monitor](https://www.archlinux.org/packages/?name=gnome-system-monitor)
 
 *   **[htop](https://en.wikipedia.org/wiki/Htop "wikipedia:Htop")** — Simple, ncurses interactive process viewer.
 
@@ -926,7 +977,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://userbase.kde.org/KSysGuard](https://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
-*   **linux process explorer** — Graphical process explorer for Linux.
+*   **Linux Process Explorer** — Graphical process explorer for Linux.
 
 	[https://sourceforge.net/projects/procexp/](https://sourceforge.net/projects/procexp/) || [procexp](https://aur.archlinux.org/packages/procexp/)
 
@@ -934,37 +985,37 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://wiki.lxde.org/en/LXTask](http://wiki.lxde.org/en/LXTask) || [lxtask](https://www.archlinux.org/packages/?name=lxtask)
 
-*   **mate-system-monitor** — A GTK2 system monitor for [MATE](/index.php/MATE "MATE").
+*   **MATE System Monitor** — System monitor for [MATE](/index.php/MATE "MATE").
 
 	[https://github.com/mate-desktop/mate-system-monitor](https://github.com/mate-desktop/mate-system-monitor) || [mate-system-monitor](https://www.archlinux.org/packages/?name=mate-system-monitor)
 
-*   **netdata** — A web-based real-time performance monitor
+*   **netdata** — Web-based real-time performance monitor
 
 	[https://github.com/firehol/netdata/wiki](https://github.com/firehol/netdata/wiki) || [netdata](https://www.archlinux.org/packages/?name=netdata)
 
-*   **Task Manager** — GTK2 process mangement application for [Xfce](/index.php/Xfce "Xfce").
+*   **Task Manager** — GTK2 process management application for [Xfce](/index.php/Xfce "Xfce").
 
 	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
 
-*   **[Telegraf](/index.php/Telegraf "Telegraf")** — Telegraf is an agent written in Go for collecting, processing, aggregating, and writing metrics.
+*   **[Telegraf](/index.php/Telegraf "Telegraf")** — Agent written in Go for collecting, processing, aggregating, and writing metrics.
 
 	[https://docs.influxdata.com/telegraf/latest/](https://docs.influxdata.com/telegraf/latest/) || [telegraf](https://aur.archlinux.org/packages/telegraf/)
 
-*   **[Paramano](/index.php/Paramano "Paramano")** — A light battery monitor and a CPU frequency scaler. Forked from [trayfreq](http://trayfreq.sourceforge.net/)
+*   **[Paramano](/index.php/Paramano "Paramano")** — Light battery monitor and a CPU frequency scaler. Forked from [trayfreq](http://trayfreq.sourceforge.net/)
 
 	[https://github.com/phillid/paramano](https://github.com/phillid/paramano) || [paramano](https://aur.archlinux.org/packages/paramano/)
 
-*   **Sysstat** — A collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
+*   **Sysstat** — Collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
 
 	[http://pagesperso-orange.fr/sebastien.godard/](http://pagesperso-orange.fr/sebastien.godard/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
 
-*   **xosview** — A system monitor that resembles gr_osview from SGI IRIX
+*   **xosview** — System monitor that resembles gr_osview from SGI IRIX
 
 	[http://www.pogo.org.uk/~mark/xosview/](http://www.pogo.org.uk/~mark/xosview/) || [xosview](https://aur.archlinux.org/packages/xosview/)
 
-### System information viewers
+#### System information viewers
 
-#### Console
+##### Console
 
 *   **alsi** — A system information tool for Arch Linux. It can be configured for every other system without even touching the source code of the script.
 
@@ -1002,7 +1053,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/KittyKatt/screenFetch](https://github.com/KittyKatt/screenFetch) || [screenfetch](https://www.archlinux.org/packages/?name=screenfetch)
 
-#### Graphical
+##### Graphical
 
 *   **hardinfo** — A small application that displays information about your hardware and operating system, it looks like the Device Manager in Windows.
 
@@ -1020,7 +1071,41 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://www.kde.org/applications/system/kinfocenter/](https://www.kde.org/applications/system/kinfocenter/) || [kinfocenter](https://www.archlinux.org/packages/?name=kinfocenter)
 
-### Keyboard layout switchers
+#### Command schedulers
+
+See also [Cron](/index.php/Cron "Cron").
+
+*   **FcronQ** — Fcron GUI, an advanced periodic command scheduler.
+
+	[http://fcronq.xavion.name/](http://fcronq.xavion.name/) || [fcronq](https://aur.archlinux.org/packages/fcronq/)
+
+*   **GNOME Schedule** — Graphical interface to crontab and at for GNOME.
+
+	[http://gnome-schedule.sourceforge.net/](http://gnome-schedule.sourceforge.net/) || [gnome-schedule](https://www.archlinux.org/packages/?name=gnome-schedule)
+
+*   **KCron** — Tool for KDE to run applications in the background at regular intervals. It's a graphical interface to the Cron command.
+
+	[https://userbase.kde.org/KCron](https://userbase.kde.org/KCron) || [kcron](https://www.archlinux.org/packages/?name=kcron)
+
+*   **KTimer** — Little tool for KDE to execute programs after some time. It allows you to enter several tasks and to set a timer for each of them. The timers for each task can be started, stopped, changed, or looped.
+
+	[https://www.kde.org/applications/utilities/ktimer/](https://www.kde.org/applications/utilities/ktimer/) || [ktimer](https://www.archlinux.org/packages/?name=ktimer)
+
+#### Shutdown timers
+
+*   **GShutdown** — Advanced shutdown utility which allows you to schedule the shutdown or the restart of your computer, or logout your actual session.
+
+	[https://gshutdown.tuxfamily.org/](https://gshutdown.tuxfamily.org/) || [gshutdown](https://aur.archlinux.org/packages/gshutdown/)
+
+*   **Hsiu-Ming's Timer** — Graphical shutdown timer, which enables you to shutdown, turn off monitor, reboot or play sound after a period of time.
+
+	[https://cges30901.github.io/hmtimer-website/](https://cges30901.github.io/hmtimer-website/) || [hmtimer](https://aur.archlinux.org/packages/hmtimer/)
+
+*   **KShutdown** — Graphical shutdown utility, which allows you to turn off or suspend a computer at a specified time. It features various time and delay options, command-line support, and notifications.
+
+	[https://kshutdown.sourceforge.io/](https://kshutdown.sourceforge.io/) || [kshutdown](https://www.archlinux.org/packages/?name=kshutdown)
+
+#### Keyboard layout switchers
 
 *   **fbxkb** — A NETWM compliant keyboard indicator and switcher. It shows a flag of current keyboard in a systray area and allows you to switch to another one.
 
@@ -1038,42 +1123,22 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://www.xneur.ru/](http://www.xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/) (GUI)
 
-### Power management
-
-See [Power management](/index.php/Power_management "Power management").
-
-### Clipboard managers
-
-See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").
-
-### Package management
-
-See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").
-
-### Input methods
+#### Input methods
 
 See the main article: [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
 
-### Version control systems
+#### Clipboard managers
 
-See also [Wikipedia:Comparison of revision control software](https://en.wikipedia.org/wiki/Comparison_of_revision_control_software "wikipedia:Comparison of revision control software").
+See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").
 
-*   **[Bazaar](/index.php/Bazaar "Bazaar")** — Distributed version control system that helps you track project history over time and to collaborate easily with others.
+#### Clock synchronization
 
-	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
+See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
 
-*   **[Darcs](https://en.wikipedia.org/wiki/Darcs "wikipedia:Darcs")** — Distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
+#### Power management
 
-	[http://darcs.net/](http://darcs.net/) || [darcs](https://www.archlinux.org/packages/?name=darcs)
+See [Power management](/index.php/Power_management "Power management").
 
-*   **[Git](/index.php/Git "Git")** — Distributed revision control and source code management system with an emphasis on speed.
+#### Package management
 
-	[https://git-scm.com/](https://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
-
-*   **[Mercurial](/index.php/Mercurial "Mercurial")** — Distributed version control system written in Python and similar in many ways to Git.
-
-	[https://www.mercurial-scm.org/](https://www.mercurial-scm.org/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
-
-*   **[Subversion](/index.php/Subversion "Subversion")** — Full-featured centralized version control system originally designed to be a better CVS.
-
-	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
+See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").

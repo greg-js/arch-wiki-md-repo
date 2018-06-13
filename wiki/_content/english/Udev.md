@@ -2,7 +2,7 @@ Related articles
 
 *   [udisks](/index.php/Udisks "Udisks")
 
-From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
+From [Wikipedia:udev](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 	*udev* is a device manager for the Linux kernel. As the successor of *devfsd* and *hotplug*, *udev* primarily manages device nodes in the `/dev` directory. At the same time, *udev* also handles all user space events raised while hardware devices are added into the system or removed from it, including firmware loading as required by certain devices.
 
@@ -14,22 +14,24 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 *   [1 Installation](#Installation)
 *   [2 About udev rules](#About_udev_rules)
-    *   [2.1 Writing udev rules](#Writing_udev_rules)
+    *   [2.1 udev rule example](#udev_rule_example)
     *   [2.2 List attributes of a device](#List_attributes_of_a_device)
     *   [2.3 Testing rules before loading](#Testing_rules_before_loading)
     *   [2.4 Loading new rules](#Loading_new_rules)
 *   [3 Udisks](#Udisks)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Accessing firmware programmers and USB virtual comm devices](#Accessing_firmware_programmers_and_USB_virtual_comm_devices)
-    *   [4.2 Execute on VGA cable plug in](#Execute_on_VGA_cable_plug_in)
-    *   [4.3 Detect new eSATA drives](#Detect_new_eSATA_drives)
-    *   [4.4 Mark internal SATA ports as eSATA](#Mark_internal_SATA_ports_as_eSATA)
-    *   [4.5 Setting static device names](#Setting_static_device_names)
-        *   [4.5.1 Video devices](#Video_devices)
-        *   [4.5.2 Printers](#Printers)
-    *   [4.6 Waking from suspend with USB device](#Waking_from_suspend_with_USB_device)
-    *   [4.7 Triggering events](#Triggering_events)
-    *   [4.8 Triggering desktop notifications from a udev rule](#Triggering_desktop_notifications_from_a_udev_rule)
+    *   [4.1 Mounting drives in rules](#Mounting_drives_in_rules)
+    *   [4.2 Accessing firmware programmers and USB virtual comm devices](#Accessing_firmware_programmers_and_USB_virtual_comm_devices)
+    *   [4.3 Execute on VGA cable plug in](#Execute_on_VGA_cable_plug_in)
+    *   [4.4 Detect new eSATA drives](#Detect_new_eSATA_drives)
+    *   [4.5 Mark internal SATA ports as eSATA](#Mark_internal_SATA_ports_as_eSATA)
+    *   [4.6 Setting static device names](#Setting_static_device_names)
+        *   [4.6.1 Video device](#Video_device)
+        *   [4.6.2 Printer](#Printer)
+    *   [4.7 Identifying a disk by its serial](#Identifying_a_disk_by_its_serial)
+    *   [4.8 Waking from suspend with USB device](#Waking_from_suspend_with_USB_device)
+    *   [4.9 Triggering events](#Triggering_events)
+    *   [4.10 Triggering desktop notifications from a udev rule](#Triggering_desktop_notifications_from_a_udev_rule)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Blacklisting modules](#Blacklisting_modules)
     *   [5.2 Debug output](#Debug_output)
@@ -51,68 +53,58 @@ A standalone fork is available as [eudev](https://aur.archlinux.org/packages/eud
 
 *udev* rules written by the administrator go in `/etc/udev/rules.d/`, their file name has to end with *.rules*. The *udev* rules shipped with various packages are found in `/usr/lib/udev/rules.d/`. If there are two files by the same name under `/usr/lib` and `/etc`, the ones in `/etc` take precedence.
 
-### Writing udev rules
+To learn how to write *udev* rules see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html), and to see some examples in this guide follow the [Writing udev rules - Examples](http://www.reactivated.net/writing_udev_rules.html#example-printer).
 
-**Warning:** To mount removable drives, do not call `mount` from *udev* rules. In case of FUSE filesystems, you will get `Transport endpoint not connected` errors. Instead, you could use [udisks](/index.php/Udisks "Udisks") that handles automount correctly or to make mount work inside *udev* rules, copy `/usr/lib/systemd/system/systemd-udevd.service` to `/etc/systemd/system/systemd-udevd.service` and replace `MountFlags=slave` to `MountFlags=shared`.[[3]](http://unix.stackexchange.com/a/154318) Keep in mind though that *udev* is not intended to invoke long-running processes.
+### udev rule example
 
-*   To learn how to write *udev* rules, see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html).
-*   To see an example *udev* rule, follow the [Examples](http://www.reactivated.net/writing_udev_rules.html#example-printer) section of the above guide.
+Below is an example of a rule that places a symlink `/dev/video-cam1` when a webcamera is connected.
 
-This is an example of a rule that places a symlink `/dev/video-cam1` when a webcamera is connected. First, we have found out that this camera is connected and has loaded with the device `/dev/video2`. The reason for writing this rule is that at the next boot the device might just as well show up under a different name like `/dev/video0`.
+Let say this camera is currently connected and has loaded with the device name `/dev/video2`. The reason for writing this rule is that at the next boot, the device could show up under a different name, like `/dev/video0`.
 
- `# udevadm info -a -p $(udevadm info -q path -n /dev/video2)` 
+ `$ udevadm info -a -p $(udevadm info -q path -n /dev/video2)` 
 ```
-Udevadm info starts with the device specified by the devpath and then
-walks up the chain of parent devices. It prints for every device
-found, all possible attributes in the udev rules key format.
-A rule to match, can be composed by the attributes of the device
-and the attributes from one single parent device.
+Udevadm info starts with the device specified by the devpath and then walks up the chain of parent devices.
+It prints for every device found, all possible attributes in the udev rules key format.
+A rule to match, can be composed by the attributes of the device and the attributes from one single parent device.
 
-  looking at device '/devices/pci0000:00/0000:00:04.1/usb3/3-2/3-2:1.0/video4linux/video2':
-    KERNEL=="video2"
-    SUBSYSTEM=="video4linux"
-    ...
-  looking at parent device '/devices/pci0000:00/0000:00:04.1/usb3/3-2/3-2:1.0':
-    KERNELS=="3-2:1.0"
-    SUBSYSTEMS=="usb"
-    ...
-  looking at parent device '/devices/pci0000:00/0000:00:04.1/usb3/3-2':
-    KERNELS=="3-2"
-    SUBSYSTEMS=="usb"
-    ...
-    ATTRS{idVendor}=="05a9"
-    ...
-    ATTRS{manufacturer}=="OmniVision Technologies, Inc."
-    ATTRS{removable}=="unknown"
-    ATTRS{idProduct}=="4519"
-    ATTRS{bDeviceClass}=="00"
-    ATTRS{product}=="USB Camera"
-    ...
-
+looking at device '/devices/pci0000:00/0000:00:04.1/usb3/3-2/3-2:1.0/video4linux/video2':
+  KERNEL=="video2"
+  SUBSYSTEM=="video4linux"
+   ...
+looking at parent device '/devices/pci0000:00/0000:00:04.1/usb3/3-2/3-2:1.0':
+  KERNELS=="3-2:1.0"
+  SUBSYSTEMS=="usb"
+  ...
+looking at parent device '/devices/pci0000:00/0000:00:04.1/usb3/3-2':
+  KERNELS=="3-2"
+  SUBSYSTEMS=="usb"
+  ATTRS{idVendor}=="05a9"
+  ATTRS{manufacturer}=="OmniVision Technologies, Inc."
+  ATTRS{removable}=="unknown"
+  ATTRS{idProduct}=="4519"
+  ATTRS{bDeviceClass}=="00"
+  ATTRS{product}=="USB Camera"
+  ...
 ```
 
-From the video4linux device we use `KERNEL=="video2"` and `SUBSYSTEM=="video4linux"`, then we match the webcam using vendor and product ID's from the usb parent `SUBSYSTEMS=="usb"`, `ATTRS{idVendor}=="05a9"` and `ATTRS{idProduct}=="4519"`.
+From the *video4linux* device we use `KERNEL=="video2"` and `SUBSYSTEM=="video4linux"`, then walking up two levels above, we match the webcam using vendor and product ID's from the usb parent `SUBSYSTEMS=="usb"`, `ATTRS{idVendor}=="05a9"` and `ATTRS{idProduct}=="4519"`.
 
- `/etc/udev/rules.d/83-webcam.rules` 
+We are now able to create a rule match for this device as follows:
+
+ `/etc/udev/rules.d/83-webcam.rules`  `KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"` 
+
+Here we create a symlink using `SYMLINK+="video-cam1"` but we could easily set user `OWNER="john"` or group using `GROUP="video"` or set the permissions using `MODE="0660"`.
+
+If you intend to write a rule to do something when a device is being removed, be aware that device attributes may not be accessible. In this case, you will have to work with preset device [environment variables](/index.php/Environment_variables "Environment variables"). To monitor those environment variables, execute the following command while unplugging your device:
+
 ```
-KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"
-
-```
-
-In the example above we create a symlink using `SYMLINK+="video-cam1"` but we could easily set user `OWNER="john"` or group using `GROUP="video"` or set the permissions using `MODE="0660"`. However, if you intend to write a rule to do something when a device is being removed, be aware that device attributes may not be accessible. In this case, you will have to work with preset device [environment variables](/index.php/Environment_variables "Environment variables"). To monitor those environment variables, execute the following command while unplugging your device:
-
-```
-# udevadm monitor --environment --udev
+$ udevadm monitor --environment --udev
 
 ```
 
-In this command's output, you will see value pairs such as `ID_VENDOR_ID` and `ID_MODEL_ID`, which match your previously used attributes "idVendor" and "idProduct". A rule that uses device environment variables may look like this:
+In this command's output, you will see value pairs such as `ID_VENDOR_ID` and `ID_MODEL_ID`, which match the previously used attributes `idVendor` and `idProduct`. A rule that uses device environment variables instead of device attributes may look like this:
 
- `/etc/udev/rules.d/83-webcam-removed.rules` 
-```
-ACTION=="remove", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=="4519", RUN+="/path/to/your/script"
-
-```
+ `/etc/udev/rules.d/83-webcam-removed.rules`  `ACTION=="remove", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=="4519", RUN+="*/path/to/your/script*"` 
 
 ### List attributes of a device
 
@@ -169,6 +161,10 @@ To manually force *udev* to trigger your rules:
 See [Udisks](/index.php/Udisks "Udisks").
 
 ## Tips and tricks
+
+### Mounting drives in rules
+
+To mount removable drives, do not call `mount` from *udev* rules. In case of FUSE filesystems, you will get `Transport endpoint not connected` errors. Instead, you could use [udisks](/index.php/Udisks "Udisks") that handles automount correctly or to make mount work inside *udev* rules, copy `/usr/lib/systemd/system/systemd-udevd.service` to `/etc/systemd/system/systemd-udevd.service` and replace `MountFlags=slave` to `MountFlags=shared`.[[3]](http://unix.stackexchange.com/a/154318) Keep in mind though that *udev* is not intended to invoke long-running processes.
 
 ### Accessing firmware programmers and USB virtual comm devices
 
@@ -245,27 +241,23 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 ### Setting static device names
 
-Because *udev* loads all modules asynchronously, they are initialized in a different order. This can result in devices randomly switching names. A *udev* rule can be added to use static device names.
+Because *udev* loads all modules asynchronously, they are initialized in a different order. This can result in devices randomly switching names. A *udev* rule can be added to use static device names. See also [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for block devices and [Network configuration#Change interface name](/index.php/Network_configuration#Change_interface_name "Network configuration") for network devices.
 
-See also [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for block devices and [Network configuration#Change interface name](/index.php/Network_configuration#Change_interface_name "Network configuration") for network devices.
+#### Video device
 
-#### Video devices
+For setting up the webcam in the first place, refer to [Webcam setup](/index.php/Webcam_setup "Webcam setup").
 
-For setting up the webcam in the first place, refer to [Webcam configuration](/index.php/Webcam_setup#Webcam_configuration "Webcam setup").
-
-Using multiple webcams, useful for example with [motion](https://aur.archlinux.org/packages/motion/) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#Writing udev rules](#Writing_udev_rules)):
+Using multiple webcams will assign video devices as `/dev/video*` randomly on boot. The recommended solution is to create symlinks using an *udev* rule as in the example above [#Writing udev rules](#Writing_udev_rules):
 
  `/etc/udev/rules.d/83-webcam.rules` 
 ```
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="08f6", SYMLINK+="video-cam2"
-KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0840", SYMLINK+="video-cam3"
-
 ```
 
 **Note:** Using names other than `/dev/video*` will break preloading of `v4l1compat.so` and perhaps `v4l2convert.so`
 
-#### Printers
+#### Printer
 
 If you use multiple printers, `/dev/lp[0-9]` devices will be assigned randomly on boot, which will break e.g. [CUPS](/index.php/CUPS "CUPS") configuration.
 
@@ -274,7 +266,6 @@ You can create following rule, which will create symlinks under `/dev/lp/by-id` 
  `/etc/udev/rules.d/60-persistent-printer.rules` 
 ```
 ACTION=="remove", GOTO="persistent_printer_end"
-
 # This should not be necessary
 #KERNEL!="lp*", GOTO="persistent_printer_end"
 
@@ -287,23 +278,31 @@ IMPORT{builtin}="path_id"
 ENV{ID_PATH}=="?*", SYMLINK+="lp/by-path/$env{ID_PATH}"
 
 LABEL="persistent_printer_end"
-
 ```
+
+### Identifying a disk by its serial
+
+To perform some action on a specific disk device `/dev/sd*X*` identified permanently by its unique serial `ID_SERIAL_SHORT` as displayed with `udevadm info -n /dev/sd*X*`, one can use the below rule. It is passing as a parameter the device name found if any to illustrate:
+
+ `/etc/udev/rules.d/69-disk.rules`  `ACTION=="add", KERNEL=="sd[a-z]", ENV{ID_SERIAL_SHORT}=="*X5ER1ALX*", RUN+="/path/to/script /dev/%k"` 
 
 ### Waking from suspend with USB device
 
-First, find vendor and product ID of your device, for example
+A udev rule can be useful to enable the wake up functionality of a USB device, like a mouse or a keyboard, so that it can be used to wake from sleep the machine.
+
+**Note:** By default, the USB host controllers are all enabled for wakeup. The status can be checked using `cat /proc/acpi/wakeup`. The rule below is in this case not necessary but can be used as a template to perform other actions, like disabling the wakeup functionality for example.
+
+First, identify the vendor and product identifiers of the USB device. They will be used to recognize it in the udev rule. For example:
 
  `# lsusb | grep Logitech`  `Bus 007 Device 002: ID **046d**:**c52b** Logitech, Inc. Unifying Receiver` 
 
-Find where the device is connected to using:
+Then, find where the device is connected to using:
 
  `# grep *c52b* /sys/bus/usb/devices/*/idProduct`  `/sys/bus/usb/devices/**1-1.1.1.4/**idProduct:c52b` 
 
-Now change the `power/wakeup` attribute of the device and the USB controller it is connected to, using the following rule:
+Now create the rule to change the `power/wakeup` attribute of both the device and the USB controller it is connected to whenever it is added:
 
  `/etc/udev/rules.d/50-wake-on-device.rules`  `ACTION=="add", SUBSYSTEM=="usb", DRIVER=="usb", ATTRS{idVendor}=="**046d**", ATTRS{idProduct}=="**c52b**", ATTR{power/wakeup}="enabled", ATTR{driver/**1-1.1.1.4**/power/wakeup}="enabled"` 
-**Note:** By default, the USB host controllers are all enabled by default for wakeup. The status can be checked using `# cat /proc/acpi/wakeup`.
 
 ### Triggering events
 
@@ -352,7 +351,7 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/UID_OF_USER_TO_RUN_SCRIPT_A
 
 Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNAME` needs to be changed to that of the shortname for the user and user's UID of the graphical session where the notification will be displayed; 2) `/usr/bin/sudo` is needed when playing audio via pulseaudio; and, 3) three environmental variables (i.e., `XAUTHORITY`, `DISPLAY` and `DBUS_SESSION_BUS_ADDRESS`) for the user of the graphical session where the notification will be displayed need to be defined and exported.
 
-**Warning:** The `XAUTHORITY`, `DISPLAY` and `DBUS_SESSION_BUS_ADDRESS` environment variables must be defined correctly.
+**Note:** The `XAUTHORITY`, `DISPLAY` and `DBUS_SESSION_BUS_ADDRESS` environment variables must be defined correctly.
 
 3) Load/reload the new *udev* rule (see above) and test it by unplugging the power supply to the laptop.
 

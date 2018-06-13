@@ -174,7 +174,7 @@ creado en un intento de recopilar información sobre Arch Linux en prensa hispan
 | [Arch64 FAQ (Español)](/index.php/Arch64_FAQ_(Espa%C3%B1ol) "Arch64 FAQ (Español)") | Información/Arch | `2010-08` |
 | [ASUS Eee PC 1005HA (Español)](/index.php/ASUS_Eee_PC_1005HA_(Espa%C3%B1ol) "ASUS Eee PC 1005HA (Español)") | Hardware | `2010-08` |
 | [Audacious (Español)](/index.php/Audacious_(Espa%C3%B1ol) "Audacious (Español)") | Reproductor multimedia | `2011-07` |
-| [AUR helpers (Español)](/index.php?title=AUR_helpers_(Espa%C3%B1ol)&action=edit&redlink=1 "AUR helpers (Español) (page does not exist)") | Gestión de paquetes | `--` | Sin traducir |
+| [AUR helpers (Español)](/index.php/AUR_helpers_(Espa%C3%B1ol) "AUR helpers (Español)") | Gestión de paquetes | `--` | Sin traducir |
 | [AUR Trusted User Guidelines (Español)](/index.php/AUR_Trusted_User_Guidelines_(Espa%C3%B1ol) "AUR Trusted User Guidelines (Español)") | Repositorios no oficiales | `2009-12` |
 | [Autofs (Español)](/index.php/Autofs_(Espa%C3%B1ol) "Autofs (Español)") | Sistema de archivos | `2008-05` |
 | [Automatic login to virtual console (Español)](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)") | Proceso de arranque | `2013-09` |

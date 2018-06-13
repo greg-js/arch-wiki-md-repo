@@ -109,16 +109,4 @@ The boot process normally gets stuck at certain point of the boot process and th
 *   You can ssh to that machine
 *   You can perform login and some debugging commands in blind mode, dumping their output into some files in the hard disk for posterior checks.
 
-One workaround is to boot the linux kernel with the nomodeset argument. It's possible to launch X with the `xf86-video-fbdev` driver, but the GPU acceleration will not be used.
-
-The other workaround is to boot without the nomodeset argument in the kernel command line, so the amdgpu driver will be loaded into memory. Then, login to root either by ssh or blind mode metehods, and keep unloading/loading the amdgpu module until the screen is unfrozen:
-
-```
-# rmmod amdgpu
-# modprobe amdgpu
-
-```
-
-Usually, in the second or third time that you enter the previous commands the screen will be back.
-
-This error is somehow related to how the amdgpu driver gets information from the pci port. A bug is to be reported for this.
+The solution is to disable Legacy Boot in the BIOS, so the UEFI mode will be the one used to boot. Tested with Secure Boot turned **off**

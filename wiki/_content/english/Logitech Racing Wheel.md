@@ -44,7 +44,7 @@ B: FF=1 40000 0 0
 
 ### Testing
 
-Testing can be done with the Linux Force Feedback Library. This package can be found in aur: [https://aur.archlinux.org/packages.php?ID=50236](https://aur.archlinux.org/packages.php?ID=50236)
+Testing can be done with the [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) package from the [community](/index.php/Community "Community") repository.
 
 Now the wheel can be tested. To find the right device use evtest /dev/input/eventX. The correct number can be found in /proc/bus/input/devices. In this case event15 is the correct device. evtest shows the events coming from the wheel:
 

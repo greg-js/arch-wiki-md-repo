@@ -69,9 +69,17 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[http://extcalc-linux.sourceforge.net/](http://extcalc-linux.sourceforge.net/) || [extcalc](https://aur.archlinux.org/packages/extcalc/)
 
+*   **FOX Calculator** — Simple desktop calculator.
+
+	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
+
 *   **galculator** — GTK+ based scientific calculator.
 
 	[http://galculator.mnim.org/](http://galculator.mnim.org/) || GTK+ 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK+ 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
+
+*   **[Genius](https://en.wikipedia.org/wiki/Genius_(mathematics_software) "wikipedia:Genius (mathematics software)")** — Advanced calculator including a mathematical programming language.
+
+	[http://jirka.org/genius.html](http://jirka.org/genius.html) || [genius](https://www.archlinux.org/packages/?name=genius)
 
 *   **[GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")** — Scientific calculator included in the GNOME desktop.
 
@@ -93,9 +101,9 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate-calc](https://www.archlinux.org/packages/?name=mate-calc)
 
-*   **Qalculate** — Calculator and equation solver with fault-tolerant parsing, constant recognition and units.
+*   **Qalculate!** — Calculator and equation solver with fault-tolerant parsing, constant recognition and units.
 
-	[http://qalculate.github.io/](http://qalculate.github.io/) || [qalculate-gtk](https://www.archlinux.org/packages/?name=qalculate-gtk)
+	[https://qalculate.github.io/](https://qalculate.github.io/) || [qalculate-gtk](https://www.archlinux.org/packages/?name=qalculate-gtk)
 
 *   **SpeedCrunch** — Fast, high precision and powerful cross-platform calculator.
 
@@ -540,6 +548,10 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 *   **FoxtrotGPS** — Lightweight and fast mapping application.
 
 	[https://www.foxtrotgps.org/](https://www.foxtrotgps.org/) || [foxtrotgps](https://www.archlinux.org/packages/?name=foxtrotgps)
+
+*   **Gebabbel** — Alternative GUI for GPSBabel.
+
+	[http://gebabbel.sourceforge.net/](http://gebabbel.sourceforge.net/) || [gebabbel](https://www.archlinux.org/packages/?name=gebabbel)
 
 *   **Geotag** — Match date/time information from photos with location information from a GPS unit or from a map.
 

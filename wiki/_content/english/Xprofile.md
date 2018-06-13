@@ -1,4 +1,10 @@
+Related articles
+
+*   [xinitrc](/index.php/Xinitrc "Xinitrc")
+
 An xprofile file, `~/.xprofile` and `/etc/xprofile`, allows you to execute commands at the beginning of the X user session - before the [window manager](/index.php/Window_manager "Window manager") is started.
+
+If you are using a Wayland session, xprofile is not sourced and you should rely on [Systemd Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User").
 
 The xprofile file is similar in style to [xinitrc](/index.php/Xinitrc "Xinitrc").
 

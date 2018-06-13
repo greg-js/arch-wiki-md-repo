@@ -23,14 +23,14 @@ Dedicated article for common problems and solutions.
         *   [2.7.1 NFSv4](#NFSv4)
         *   [2.7.2 NFSv3 and earlier](#NFSv3_and_earlier)
     *   [2.8 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
-    *   [2.9 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
+    *   [2.9 Permissions issues](#Permissions_issues)
+    *   [2.10 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
 *   [3 Performance issues](#Performance_issues)
     *   [3.1 Diagnose the problem](#Diagnose_the_problem)
-    *   [3.2 Server threads](#Server_threads)
-    *   [3.3 Close-to-open/flush-on-close](#Close-to-open.2Fflush-on-close)
-        *   [3.3.1 The nocto mount option](#The_nocto_mount_option)
-        *   [3.3.2 The async export option](#The_async_export_option)
-    *   [3.4 Buffer cache size and MTU](#Buffer_cache_size_and_MTU)
+    *   [3.2 Close-to-open/flush-on-close](#Close-to-open.2Fflush-on-close)
+        *   [3.2.1 The nocto mount option](#The_nocto_mount_option)
+        *   [3.2.2 The async export option](#The_async_export_option)
+    *   [3.3 Buffer cache size and MTU](#Buffer_cache_size_and_MTU)
 *   [4 Debugging](#Debugging)
     *   [4.1 Using rpcdebug](#Using_rpcdebug)
     *   [4.2 Using mountstats](#Using_mountstats)
@@ -40,8 +40,6 @@ Dedicated article for common problems and solutions.
     *   [4.6 NLM debug flags](#NLM_debug_flags)
     *   [4.7 RPC debug flags](#RPC_debug_flags)
     *   [4.8 References](#References)
-*   [5 Other issues](#Other_issues)
-    *   [5.1 Permissions issues](#Permissions_issues)
 
 ## Server-side issues
 
@@ -51,16 +49,12 @@ Delete all space from the option list in `/etc/exports`
 
 ### Group/GID permissions issues
 
-If NFS shares mount fine, and are fully accessible to the owner, but not to group members; check the number of groups that user belongs to. NFS has a limit of 16 on the number of groups a user can belong to. If you have users with more than this, you need to enable the `--manage-gids` start-up flag for `rpc.mountd` on the NFS server.
+If NFS shares mount fine, and are fully accessible to the owner, but not to group members; check the number of groups that user belongs to. NFS has a limit of 16 on the number of groups a user can belong to. If you have users with more than this, you need to enable the `manage_gids` start-up flag on the NFS server:
 
- `/etc/conf.d/nfs-server.conf` 
+ `/etc/nfs.conf` 
 ```
-# Options for rpc.mountd.
-# If you have a port-based firewall, you might want to set up
-# a fixed port here using the --port option.
-# See rpc.mountd(8) for more details.
-
-MOUNTD_OPTS="--manage-gids"
+[mountd]
+manage_gids=y
 ```
 
 ### "Permission denied" when trying to write files as root
@@ -174,6 +168,29 @@ Use the relative path instead:
 
 ```
 
+### Permissions issues
+
+If you find that you cannot set the permissions on files properly, make sure the [user](/index.php/User "User")/[group](/index.php/Group "Group") are **both** on the client and server.
+
+If all your files are owned by `nobody`, and you are using NFSv4, on both the client and server, you should ensure that the `nfs-idmapd.service` has been started.
+
+On some systems detecting the domain from FQDN minus hostname does not seem to work reliably. If files are still showing as `nobody` after the above changes, edit `/etc/idmapd.conf`, ensure that `Domain` is set to `FQDN minus hostname`. For example:
+
+ `/etc/idmapd.conf` 
+```
+[General]
+Domain = *domain.ext*
+
+[Mapping]
+
+Nobody-User = nobody
+Nobody-Group = nobody
+
+[Translation]
+
+Method = nsswitch
+```
+
 ### Problems with Vagrant and synced_folders
 
 If you get an error about unuspported protocol, you need to enable NFS over UDP on your host (or make Vagrant use NFS over TCP.) See [#UDP mounts not working](#UDP_mounts_not_working).
@@ -188,30 +205,6 @@ This [NFS Howto page](http://nfs.sourceforge.net/nfs-howto/ar01s05.html) has som
 
 *   **Htop** should be your first port of call. The most obvious symptom will be a maxed-out CPU.
 *   Press F2, and under "Display options", enable "Detailed CPU time". Press F1 for an explanation of the colours used in the CPU bars. In particular, is the CPU spending most of its time responding to IRQs, or in Wait-IO (wio)?
-
-### Server threads
-
-**Symptoms:** Nothing seems to be very heavily loaded, but some operations on the client take a long time to complete for no apparent reason.
-
-If your workload involves lots of small reads and writes (or if there are a lot of clients), there may not be enough threads running on the server to handle the quantity of queries. To check if this is the case, run the following command on one or more of the clients:
-
- `# nfsstat -rc` 
-```
-Client rpc stats:
-calls      retrans    authrefrsh
-113482     0          113484
-
-```
-
-If the `retrans` column contains a number larger than 0, the server is failing to respond to some NFS requests, and the number of threads should be increased.
-
-To increase the number of threads on the server, edit the file `/etc/nfs.conf` and set the value in the `[server] threads` variable.
-
-The default number of threads is 8\. Try doubling this number until `retrans` remains consistently at zero. Don't be afraid of increasing the number quite substantially. 256 threads may be quite reasonable, depending on the workload. You will need to restart the NFS server daemon each time you modify the configuration file. Bear in mind that the client statistics will only be reset to zero when the client is rebooted.
-
-While the number of threads can be increased at runtime via an echo to `/proc/fs/nfsd/threads`, the cache size (double the threads, see the **ra** line of /proc/net/rpc/nfsd) is not dynamic. The NFS daemon must be restarted with the new thread size during initialization in order for the thread cache to properly adjust.
-
-Use **htop** (disable the hiding of kernel threads) to keep an eye on how much work each nfsd thread is doing. If you reach a point where the `retrans` values are non-zero, but you can see `nfsd` threads on the server doing no work, something different is now causing your bottleneck, and you'll need to re-diagnose this new problem.
 
 ### Close-to-open/flush-on-close
 
@@ -252,11 +245,11 @@ In this situation, you can use `async` instead of `sync` in the server's `/etc/e
 
 This is a trickier optimisation. Make sure this is definitely the problem before spending too much time on this. The default values are usually fine for most situations.
 
-See [this excellent article](http://docstore.mik.ua/orelly/networking_2ndEd/nfs/ch07_03.htm) for information about I/O buffering in NFS. Essentially, data is accumulated into buffers before being sent. The size of the buffer will affect the way data is transmitted over the network. The Maximum Transmission Unit (MTU) of the network equipment will also affect throughput, as the buffers need to be split into MTU-sized chunks before they're sent over the network. If your buffer size is too big, the kernel or hardware may spend too much time splitting it into MTU-sized chunks. If the buffer size is too small, there will be overhead involved in sending a very large number of small packets. You can use the **rsize** and **wsize** mount options on the client to alter the buffer cache size. To achieve the best throughput, you need to experiment and discover the best values for your setup.
+See [this article](http://docstore.mik.ua/orelly/networking_2ndEd/nfs/ch07_03.htm) for information about I/O buffering in NFS. Essentially, data is accumulated into buffers before being sent. The size of the buffer will affect the way data is transmitted over the network. The Maximum Transmission Unit (MTU) of the network equipment will also affect throughput, as the buffers need to be split into MTU-sized chunks before they're sent over the network. If your buffer size is too big, the kernel or hardware may spend too much time splitting it into MTU-sized chunks. If the buffer size is too small, there will be overhead involved in sending a very large number of small packets. You can use the **rsize** and **wsize** mount options on the client to alter the buffer cache size. To achieve the best throughput, you need to experiment and discover the best values for your setup.
 
 It is possible to change the MTU of many network cards. If your clients are on a separate subnet (e.g. for a Beowulf cluster), it may be safe to configure all of the network cards to use a high MTU. This should be done in very-high-bandwidth environments.
 
-See also the **nfs** manual page for more about **rsize** and **wsize**.
+See [NFS#Performance tuning](/index.php/NFS#Performance_tuning "NFS") for more information.
 
 ## Debugging
 
@@ -544,36 +537,3 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 *   [http://www.novell.com/support/kb/doc.php?id=7011571](http://www.novell.com/support/kb/doc.php?id=7011571)
 *   [http://stromberg.dnsalias.org/~strombrg/NFS-troubleshooting-2.html](http://stromberg.dnsalias.org/~strombrg/NFS-troubleshooting-2.html)
 *   [http://www.opensubscriber.com/message/nfs@lists.sourceforge.net/7833588.html](http://www.opensubscriber.com/message/nfs@lists.sourceforge.net/7833588.html)
-
-## Other issues
-
-### Permissions issues
-
-If you find that you cannot set the permissions on files properly, make sure the user/group you are chowning are on both the client and server.
-
-If all your files are owned by `nobody`, and you are using NFSv4, on both the client and server, you should:
-
-*   For systemd, ensure that the `nfs-idmapd` service has been started.
-*   For initscripts, ensure that `NEED_IDMAPD` is set to `YES` in `/etc/conf.d/nfs-common.conf`.
-
-On some systems detecting the domain from FQDN minus hostname does not seem to work reliably. If files are still showing as `nobody` after the above changes, edit /etc/idmapd.conf, ensure that `Domain` is set to `FQDN minus hostname`. For example:
-
- `/etc/idmapd.conf` 
-```
-[General]
-
-Verbosity = 7
-Pipefs-Directory = /var/lib/nfs/rpc_pipefs
-Domain = yourdomain.local
-
-[Mapping]
-
-Nobody-User = nobody
-Nobody-Group = nobody
-
-[Translation]
-
-Method = nsswitch
-```
-
-If nfs-idmapd.service refuses to start because it cannot open the Pipefs-directory (defined in /etc/idmapd.conf and appended with '/nfs'), issue a mkdir-command and restart the daemon.

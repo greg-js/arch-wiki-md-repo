@@ -92,7 +92,7 @@ Hotplug support for this port requires a [bug fix](https://bugzilla.kernel.org/s
 
 #### Doing Thunderbolt firmware updates without [fwupd](https://www.archlinux.org/packages/?name=fwupd) or Windows
 
-The thunderbolt updates are a bit more complicated to do than the UEFI updates. The following was tested on kernel 4.16.4\. You need to download the Thunderbolt update executable then extract the files from it:
+The thunderbolt updates are a bit more complicated to do than the UEFI updates. The following was tested on kernel 4.16.13\. You need to download the Thunderbolt update executable then extract the files from it:
 
 ```
 $ 7z x Intel_TBT3_FW_UPDATE_NVM26_FJJK7_A08_4.26.11.001.exe

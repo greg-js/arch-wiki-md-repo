@@ -20,6 +20,9 @@ Related articles
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Missing symbols](#Missing_symbols)
     *   [2.2 HiDPI / Retina Screens](#HiDPI_.2F_Retina_Screens)
+    *   [2.3 Conflicts with system libraries](#Conflicts_with_system_libraries)
+        *   [2.3.1 Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var](#Symbol_lookup_error:_.2Fusr.2Flib.2Flibfontconfig.so.1:_undefined_symbol:_FT_Done_MM_Var)
+        *   [2.3.2 Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)](#Mathematica.2F11.3.2FSystemFiles.2FLibraries.2FLinux-x86-64.2Flibz.so.1:_version_.60ZLIB_1.2.9.27_not_found_.28required_by_.2Fusr.2Flib.2Flibpng16.so.16.29)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -118,6 +121,30 @@ If you have a [HiDPI](/index.php/HiDPI "HiDPI") screen, such as an Apple Retina 
 *   From the *Advanced* tab, click *Open Option Inspector*
 *   In the tree on the right, go to *Formatting Options → Font Options → Font Properties*
 *   Change the value for *"ScreenResolution"* to double its current setting, e.g. 72 → 144\. You can also use `xdpyinfo | grep resolution` to get a more precise number (which will need to be doubled).
+
+### Conflicts with system libraries
+
+The Mathematica package includes a number of it's own libraries, located in <INSTALL_DIR>/SystemFiles/Libraries/Linux-x86-64\. They may lead to some compatibility issues and fallback to the system versions of some of these libraries may be necessary.
+
+#### Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var
+
+Force Mathematica to use the system version of the freetype library.
+
+```
+# cd <INSTALL_DIR>/SystemFiles/Libraries/Linux-x86-64
+# mv libfreetype.so.6 libfreetype.so.6.old
+
+```
+
+#### Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)
+
+Force Mathematica to use the system version of the zlib library.
+
+```
+# cd <INSTALL_DIR>/SystemFiles/Libraries/Linux-x86-64
+# mv libz.so.1 libz.so.1.old
+
+```
 
 ## See also
 
