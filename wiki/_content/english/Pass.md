@@ -124,7 +124,6 @@ An extension for auditing a password repository.
 
 ```
 PASSWORD_STORE_DIR=/path/to/store
-PASSWORD_STORE_GIT=/path/to/store
 
 ```
 
@@ -137,8 +136,8 @@ One can use aliases to set up different pass contexts, which helps when collabor
 Add aliases to your `*~/.bashrc*`:
 
 ```
- alias passred="PASSWORD_STORE_DIR=~/.pass/red PASSWORD_STORE_GIT=~/.pass/red pass"
- alias passblue="PASSWORD_STORE_DIR=~/.pass/blue PASSWORD_STORE_GIT=~/.pass/blue pass"
+ alias passred="PASSWORD_STORE_DIR=~/.pass/red pass"
+ alias passblue="PASSWORD_STORE_DIR=~/.pass/blue pass"
 
 ```
 

@@ -70,7 +70,7 @@ The available packages containing various OpenCL ICDs are:
 
 *   [ocl-icd](https://www.archlinux.org/packages/?name=ocl-icd): recommended, most up-to-date
 *   [libopencl](https://aur.archlinux.org/packages/libopencl/) by AMD. Provides OpenCL 2.0\. It is distributed by AMD under a restrictive license and therefore cannot be included into the official repositories.
-*   [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) by Intel. Provides OpenCL 2.0.
+*   [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) by Intel. Provides OpenCL 2.0, deprecated in favour of [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/).
 
 **Note:** ICD Loader's vendor is mentioned only to identify each loader, it is otherwise completely irrelevant. ICD loaders are vendor-agnostic and may be used interchangeably (as long as they are implemented correctly).
 
@@ -95,6 +95,8 @@ To see which OpenCL implementations are currently active on your system, use the
 $ ls /etc/OpenCL/vendors
 
 ```
+
+To find out all possible (known) properties of the OpenCL platform and devices available on the system, [install](/index.php/Install "Install") [clinfo](https://www.archlinux.org/packages/?name=clinfo).
 
 #### Language bindings
 
@@ -143,6 +145,7 @@ To find whether the installation was successful and if cuda is up and running, y
 
 ## List of GPGPU accelerated software
 
+*   [clinfo](https://www.archlinux.org/packages/?name=clinfo) – Find all possible (known) properties of the OpenCL platform and devices available on the system.
 *   [Bitcoin](/index.php/Bitcoin "Bitcoin")
 *   [Blender](/index.php/Blender "Blender") – CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
 *   [BOINC](/index.php/BOINC "BOINC")

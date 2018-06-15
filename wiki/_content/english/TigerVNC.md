@@ -16,9 +16,7 @@ Related articles
         *   [2.2.2 System mode](#System_mode)
         *   [2.2.3 Multi-user mode](#Multi-user_mode)
 *   [3 Running vncserver to directly control the local display](#Running_vncserver_to_directly_control_the_local_display)
-    *   [3.1 Using tigervnc's x0vncserver](#Using_tigervnc.27s_x0vncserver)
-        *   [3.1.1 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
-    *   [3.2 Using x11vnc](#Using_x11vnc)
+    *   [3.1 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
 *   [4 Connecting to vncserver](#Connecting_to_vncserver)
     *   [4.1 Passwordless authentication](#Passwordless_authentication)
     *   [4.2 Example GUI-based clients](#Example_GUI-based_clients)
@@ -44,8 +42,8 @@ Related articles
 
 Two VNC servers are available with TigerVNC:
 
-1.  [Xvnc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xvnc.1) is both a VNC server and an X server with a virtual framebuffer. It is similar to the standard X server but has a virtual screen rather than a physical one. The virtual server runs in parallel with the physical X server should one be running. This is the default and recommended server mode for TigerVNC. [vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncserver.1) is a wrapper script which eases the starting of *Xvnc*.
-2.  [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x0vncserver.1) provides direct control of the local X session(s) which are running on the physical monitor. It continuously polls the X display which is a simple but inefficient implementation.
+1.  *Xvnc* is the default and recommended server for TigerVNC. It is both a VNC server and an X server with a virtual framebuffer. This means it is similar to the standard X server but has a virtual screen rather than a physical one. The virtual server runs in parallel with the physical X server should one be running. See [Xvnc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xvnc.1) for the manual. *vncserver* is a wrapper script which eases the starting of *Xvnc*, see [vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncserver.1).
+2.  *x0vncserver* provides direct control of the local X session(s) which are running on the physical monitor. It continuously polls the X display which is a simple but inefficient implementation. See [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x0vncserver.1) for the manual.
 
 ## Running vncserver for virtual (headless) sessions
 
@@ -68,7 +66,7 @@ Log file is /home/facade/.vnc/mars:1.log
 
 ```
 
-Note the `:1` trailing the hostname. This is indicating the TCP port number on which the virtual vncserver is running. In this case, `:1` is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in `:2` as above.
+Note the `:1` trailing the hostname. This indicates the TCP port number on which the virtual vncserver is running. In this case, `:1` is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in `:2` as above.
 
 **Note:** Linux systems can have as many VNC servers as memory allows, all of which will be running in parallel to each other.
 
@@ -102,7 +100,7 @@ chmod u+x ~/.vnc/xstartup
 
 #### Edit the optional config file
 
-TigerVNV supports parsing `vncserver` options in `~/.vnc/config` rather than through the command line. The format is one option per line. An example is provided:
+TigerVNC supports parsing `vncserver` options in the file `~/.vnc/config` rather than through the command line. The format is one option per line. An example is provided below:
 
  `~/.vnc/config` 
 ```
@@ -122,27 +120,11 @@ alwaysshared
 
 **Note:** In order to keep the vncserver alive when the user logs out (physically or via ssh), one must enable the linger option for loginctl like this: `# loginctl enable-linger username` Failure to do so will result in the vncserver getting killed when the user logs off the machine.
 
-Start the service in usermode:
-
-```
-$ systemctl --user start vncserver@:1
-
-```
-
-Enable the service in usermode:
-
-```
-$ systemctl --user enable vncserver@:1
-
-```
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service `vncserver@:1.service` in [Systemd/User](/index.php/Systemd/User "Systemd/User") mode, i.e. with the `--user` parameter.
 
 #### System mode
 
-**Warning:** Do not run this service if your local area network is untrusted.
-
-Create `/etc/systemd/system/vncserver@*:1*.service`, where `:1` is the `$DISPLAY` [environment variable](/index.php/Environment_variable "Environment variable").
-
-Modify the service by defining the user (`User=`) to run the server, and the desired [Vncserver](/index.php/Vncserver "Vncserver") options (`usr/bin/vncserver %i -arg1 -arg2 -argn`).
+Create `/etc/systemd/system/vncserver@*:1*.service`, where `:1` is the `$DISPLAY` [environment variable](/index.php/Environment_variable "Environment variable"). Edit the service unit by defining the user (`User=`) to run the server, and the desired [Vncserver](/index.php/Vncserver "Vncserver") options.
 
  `/etc/systemd/system/vncserver@*:1*.service` 
 ```
@@ -155,14 +137,15 @@ Type=simple
 User=foo
 PAMName=login
 PIDFile=/home/%u/.vnc/%H%i.pid
-ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
-ExecStart=/usr/bin/vncserver %i -geometry 1440x900 -alwaysshared -fg
-ExecStop=/usr/bin/vncserver -kill %i
+ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
+ExecStart=/usr/bin/vncserver %i -geometry 1440x900 -alwaysshared -fg
+ExecStop=/usr/bin/vncserver -kill %i
 
 [Install]
 WantedBy=multi-user.target
-
 ```
+
+**Note:** Do not run this service if your local area network is untrusted.
 
 [Start](/index.php/Start "Start") `vncserver@*:1*.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
 
@@ -208,35 +191,23 @@ vncconfig -nowin &
 
 ## Running vncserver to directly control the local display
 
-### Using tigervnc's x0vncserver
-
-[tigervnc](https://www.archlinux.org/packages/?name=tigervnc) provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
+As mentioned in [TigerVNC#Installation](/index.php/TigerVNC#Installation "TigerVNC"), the *tigervnc* package also provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
 
 ```
 $ x0vncserver -display :0 -passwordfile ~/.vnc/passwd
 
 ```
 
-For more see
+For more information, see [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x0vncserver.1).
 
-```
-man x0vncserver
+**Tip:** Another option is to use the [x11vnc](/index.php/X11vnc "X11vnc") VNC server which also provides direct control of the current X session, note that *x11vnc* requires *root* privilege to initiate the access.
 
-```
+### Starting and stopping x0vncserver via systemd
 
-#### Starting and stopping x0vncserver via systemd
-
-**Warning:** Do not run this service if your local area network is untrusted.
-
-In order to have a VNC Server runnning x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit.
-
-**Note:** This unit will only be useful if the user in the unit is currently running a X session.
-
-Create `/etc/systemd/system/x0vncserver.service` and modify it defining the user to run the server, and the desired options.
+In order to have a VNC Server runnning x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit as follows replacing the user and the options with the desired ones:
 
  `/etc/systemd/system/x0vncserver.service` 
 ```
-
 [Unit]
 Description=Remote desktop service (VNC)
 After=syslog.target network.target
@@ -244,16 +215,16 @@ After=syslog.target network.target
 [Service]
 Type=forking
 User=foo
-ExecStart=/usr/bin/sh -c '/usr/bin/x0vncserver -display :0 -rfbport 5900 -passwordfile /home/foo/.vnc/passwd &'
+ExecStart=/usr/bin/sh -c '/usr/bin/x0vncserver -display :0 -rfbport 5900 -passwordfile /home/foo/.vnc/passwd &'
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
-### Using x11vnc
+**Note:**
 
-Another option is to use [x11vnc](https://www.archlinux.org/packages/?name=x11vnc) which has the advantage or disadvantage, depending on one's perspective, of requiring root to initiate the access. For more, see: [X11vnc](/index.php/X11vnc "X11vnc").
+*   This unit will only be useful if the user in the unit is currently running a X session.
+*   Do not run this service if your local area network is untrusted.
 
 ## Connecting to vncserver
 

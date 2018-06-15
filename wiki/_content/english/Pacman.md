@@ -362,7 +362,7 @@ The *paccache* script, provided within the [pacman-contrib](https://www.archlinu
 
 ```
 
-[Enable](/index.php/Enable "Enable") `paccache.timer` to discard unused packages weekly.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `paccache.timer` to discard unused packages weekly.
 
 **Tip:** You can create [#Hooks](#Hooks) to run this automatically after every pacman transaction, [see examples](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743).
 
@@ -608,15 +608,15 @@ Errors occurred, no packages were upgraded.
 
 ```
 
-this is happening because *pacman* has detected a file conflict, and by design, will not overwrite files for you. This is a design feature, not a flaw.
+This is happening because *pacman* has detected a file conflict, and by design, will not overwrite files for you. This is by design, not a flaw.
 
 The problem is usually trivial to solve. A safe way is to first check if another package owns the file (`pacman -Qo */path/to/file*`). If the file is owned by another package, [file a bug report](/index.php/Reporting_bug_guidelines "Reporting bug guidelines"). If the file is not owned by another package, rename the file which 'exists in filesystem' and re-issue the update command. If all goes well, the file may then be removed.
 
-If you had installed a program manually without using *pacman* or a frontend, for example through `make install`, you have to remove it and all its files and reinstall properly using *pacman*. See also [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips").
+If you had installed a program manually without using *pacman*, for example through `make install`, you have to remove/uninstall this program with all of its files. See also [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips").
 
-Every installed package provides a `/var/lib/pacman/local/*$package-$version*/files` file that contains metadata about this package. If this file gets corrupted, is empty or goes missing, it results in `file exists in filesystem` errors when trying to update the package. Such an error usually concerns only one package. Instead of manually renaming and later removing all the files that belong to the package in question, you may exceptionally run `pacman -S --force $package` to force *pacman* to overwrite these files.
+Every installed package provides a `/var/lib/pacman/local/*package-version*/files` file that contains metadata about this package. If this file gets corrupted, is empty or goes missing, it results in `file exists in filesystem` errors when trying to update the package. Such an error usually concerns only one package. Instead of manually renaming and later removing all the files that belong to the package in question, you may exceptionally run `pacman -S --overwrite *package*` to force *pacman* to overwrite these files.
 
-**Warning:** Take care when using the `--force` switch (for example `pacman -Syu --force`) as it can cause major problems if used improperly. It is highly recommended to only use this option when the Arch news instructs the user to do so.
+**Warning:** Take care when using the `--overwrite` switch (for example `pacman -S --overwrite *package*`) as it can cause major problems if used improperly. It is highly recommended to only use this option when the Arch news instructs the user to do so and/or if the user is aware of which files may be overwritten.
 
 ### "Failed to commit transaction (invalid or corrupted package)" error
 
@@ -642,9 +642,9 @@ If *pacman* is interrupted while changing the database, this stale lock file can
 
 This error manifests as `Not found in sync db`, `Target not found` or `Failed retrieving file`.
 
-Firstly, ensure the package actually exists (and watch out for typos!). If certain the package exists, your package list may be out-of-date or your repositories may be incorrectly configured. Try running `pacman -Syyu` to force a refresh of all package lists and upgrade.
+Firstly, ensure the package actually exists. If certain the package exists, your package list may be out-of-date. Try running `pacman -Syyu` to force a refresh of all package lists and upgrade. Also make sure the selected [mirrors](/index.php/Mirrors "Mirrors") are up-to-date and [repositories](/index.php/Repositories "Repositories") are correctly configured.
 
-It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the *multilib* repository, but *multilib* is not enabled in your `pacman.conf`.
+It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the [multilib](/index.php/Multilib "Multilib") repository, but *multilib* is not enabled in your `pacman.conf`.
 
 See also [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
 
@@ -652,22 +652,22 @@ See also [FAQ#Why is there only a single version of each shared library in the o
 
 **Warning:** It is extremely easy to break your system even worse using this approach. Use this only as a last resort if the method from [#Pacman crashes during an upgrade](#Pacman_crashes_during_an_upgrade) is not an option.
 
-Even if *pacman* is terribly broken, you can fix it manually by downloading the latest packages and extracting them to the correct locations. The rough steps to perform are
+Even if *pacman* is terribly broken, you can fix it manually by downloading the latest packages and extracting them to the correct locations. The rough steps to perform are:
 
-1.  Determine dependencies to install
-2.  Download each package from a mirror of your choice
+1.  Determine the [pacman](https://www.archlinux.org/packages/?name=pacman) dependencies to install
+2.  Download each package from a [mirror](/index.php/Mirror "Mirror") of your choice
 3.  Extract each package to root
-4.  Reinstall these packages with `pacman -S --force` to update the package database accordingly
+4.  Reinstall these packages with `pacman -S --overwrite` to update the package database accordingly
 5.  Do a full system upgrade
 
-If you have a healthy Arch system on hand, you can see the full list of dependencies with
+If you have a healthy Arch system on hand, you can see the full list of dependencies with:
 
 ```
 $ pacman -Q $(pactree -u pacman)
 
 ```
 
-but you may only need to update a few of them depending on your issue. An example of extracting a package is
+But you may only need to update a few of them depending on your issue. An example of extracting a package is
 
 ```
 # tar -xvpwf *package.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL --exclude .MTREE --exclude .BUILDINFO
@@ -722,9 +722,9 @@ Afterwards, it is recommended that you run `exit`, `umount /mnt/{boot,}` and `re
 
 You can try to either:
 
-*   update the known keys, i.e. `pacman-key --refresh-keys`
-*   manually upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package first, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
-*   follow [pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key")
+*   Update the known keys, i.e. `pacman-key --refresh-keys`
+*   Manually upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package first, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
+*   Follow [pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key")
 
 ### Request on importing PGP keys
 
@@ -767,7 +767,7 @@ It looks like previous *pacman* transaction removed or corrupted shared librarie
 
 To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the *pacman* cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run *pacman*.
 
-Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *Pacman* will correctly replace our shared library file with one from package.
+Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--overwrite` flag as you just unpacked system files and *pacman* does not know about it. *Pacman* will correctly replace our shared library file with one from package.
 
 That's it. Update the rest of the system.
 

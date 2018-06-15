@@ -11,7 +11,7 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
     *   [1.1 Listing packages](#Listing_packages)
         *   [1.1.1 With size](#With_size)
             *   [1.1.1.1 Individual packages](#Individual_packages)
-            *   [1.1.1.2 Packages & dependencies](#Packages_.26_dependencies)
+            *   [1.1.1.2 Packages and dependencies](#Packages_and_dependencies)
         *   [1.1.2 By date](#By_date)
         *   [1.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
         *   [1.1.4 Development packages](#Development_packages)
@@ -70,7 +70,7 @@ You may want to get the list of installed packages with their version, which is 
 
 #### With size
 
-Figuring out which packages are largest can be useful when trying to free space on your hard drive. There are two options here: get the size of individual packages, or get the size of packages & their dependencies.
+Figuring out which packages are largest can be useful when trying to free space on your hard drive. There are two options here: get the size of individual packages, or get the size of packages and their dependencies.
 
 ##### Individual packages
 
@@ -81,7 +81,7 @@ $ pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort
 
 ```
 
-##### Packages & dependencies
+##### Packages and dependencies
 
 To list package sizes with their dependencies,
 
@@ -160,7 +160,7 @@ $ comm -12 <(pacman -Qq | sort) <(pacman -Slq *repo_name* | sort)
 List all packages on the Arch Linux ISO that are not in the base group:
 
 ```
-$ comm -23 <(wget -q -O - https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
+$ comm -23 <(curl https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
 
 ```
 

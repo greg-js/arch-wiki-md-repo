@@ -56,7 +56,7 @@ One can assign specific attributes to every node in the infrastructure file at t
 *   `local` to deploy the playbook to the control machine itself
 *   `docker` deploys the playbook directly into Docker containers
 
-Check [the official document](http://docs.ansible.com/ansible/latest/intro_inventory.html) for details.
+Check [Ansible - intro inventory](http://docs.ansible.com/ansible/latest/intro_inventory.html) for details.
 
 ### Ping
 
@@ -159,7 +159,7 @@ Then, AUR helpers or [makepkg](/index.php/Makepkg "Makepkg") can be used associa
 
 ### User account creation
 
-Ansible can manage user accounts and in particular it is able to create new ones. This is achieved in playbooks with the [user module](http://docs.ansible.com/ansible/latest/user_module.html) which takes an optional `password` argument to set the user's password. It is the **hashed value of the password** that needs to be provided to the module. The hashing can simply be performed on the fly within Ansible using one of its internal [hashing filters](http://docs.ansible.com/ansible/latest/playbooks_filters.html#hash-filters):
+Ansible can manage user accounts and in particular it is able to create new ones. This is achieved in playbooks with the [user module](http://docs.ansible.com/ansible/latest/user_module.html) which takes an optional `password` argument to set the user's password. It is the **hashed value of the password** that needs to be provided to the module. The hashing can simply be performed on the fly within Ansible using one of its internal [hash-filters](http://docs.ansible.com/ansible/latest/playbooks_filters.html#hash-filters):
 
 ```
 - user:
@@ -210,9 +210,9 @@ More information about Python version support in Ansible is available in [[1]](h
 
 ### Unarchive
 
-The `unarchive` module unpacks an archive. However *tar* files are not well supported and several outstanding issues are reported in [github](https://github.com/ansible/ansible/labels/unarchive). In particular when the parameter `keep_newer` is set to `yes`, idempotence is not observed. In case you face an issue with the module, you can use instead the *zip* format which is better integrated in ansible.
+The `unarchive` module unpacks an archive. However *tar* files are not well supported and several outstanding issues are reported in [GitHub - unarchive](https://github.com/ansible/ansible/labels/unarchive). In particular when the parameter `keep_newer` is set to `yes`, idempotence is not observed. In case you face an issue with the module, you can use instead the *zip* format which is better integrated in ansible.
 
 ## See also
 
-*   [Ansible concept in 12 minutes](https://www.ansible.com/quick-start-video)
-*   [pacman module details](http://docs.ansible.com/ansible/latest/pacman_module.html)
+*   [https://www.ansible.com/quick-start-video](https://www.ansible.com/quick-start-video) - Ansible concept in 12 minutes
+*   [http://docs.ansible.com/ansible/latest/pacman_module.html](http://docs.ansible.com/ansible/latest/pacman_module.html) - pacman module official documentation

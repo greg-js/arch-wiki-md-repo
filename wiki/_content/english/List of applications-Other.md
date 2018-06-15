@@ -7,7 +7,7 @@
 ## Contents
 
 *   [1 Others](#Others)
-    *   [1.1 Business](#Business)
+    *   [1.1 Organization](#Organization)
         *   [1.1.1 Personal information managers](#Personal_information_managers)
         *   [1.1.2 Time management](#Time_management)
             *   [1.1.2.1 Console](#Console)
@@ -45,11 +45,11 @@
 
 ## Others
 
-### Business
+### Organization
 
 #### Personal information managers
 
-There applications support both time, task and contacts management.
+These applications support time, task and contacts management.
 
 *   **[Evolution](/index.php/Evolution "Evolution")** — Personal information management application that provides integrated mail, calendaring and address book functionality. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
@@ -773,6 +773,10 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://aur.archlinux.org/packages/albert/)
 
+*   **Application Finder** — Easy-to-use application launcher from Xfce.
+
+	[https://docs.xfce.org/xfce/xfce4-appfinder/start](https://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
+
 *   **Bashrun2** — Provides a different, barebones approach to a run dialog, using a specialized Bash session within a small xterm window.
 
 	[http://henning-bekel.de/bashrun2/](http://henning-bekel.de/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)
@@ -856,10 +860,6 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 *   **Whippet** — Launcher and xdg-open replacement for control freaks. Opens files and URLs with applications associated by name and/or mimetype. Applications and associations may be customized using an SQLite database. Uses dmenu to manage its menus.
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#whippet](http://appstogo.mcfadzean.org.uk/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
-
-*   **xfce4-appfinder** — Easy-to-use application launcher from Xfce.
-
-	[http://docs.xfce.org/xfce/xfce4-appfinder/start](http://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
 
 #### Wallpaper setters
 

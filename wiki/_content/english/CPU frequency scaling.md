@@ -35,6 +35,8 @@ CPU frequency scaling is implemented in the Linux kernel, the infrastructure is 
 
 By default, it monitors CPU temperature using available CPU digital temperature sensors and maintains CPU temperature under control, before HW takes aggressive correction action. If there is a skin temperature sensor in thermal sysfs, then it tries to keep skin temperature under 45C.
 
+The associated systemd unit is `thermald.service`, which should be [started and enabled](/index.php/Systemd#Using_units "Systemd").
+
 ### i7z
 
 [i7z](https://www.archlinux.org/packages/?name=i7z) is an i7 (and now i3, i5) CPU reporting tool for Linux. It can be launched from a Terminal with the command `i7z` or as GUI with `i7z-gui`.

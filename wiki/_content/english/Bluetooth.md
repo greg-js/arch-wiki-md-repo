@@ -11,35 +11,32 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration via the CLI](#Configuration_via_the_CLI)
-    *   [2.1 Bluetoothctl](#Bluetoothctl)
-        *   [2.1.1 Auto power-on after boot](#Auto_power-on_after_boot)
-*   [3 Configuration with a graphical front-end](#Configuration_with_a_graphical_front-end)
-    *   [3.1 GNOME Bluetooth](#GNOME_Bluetooth)
-    *   [3.2 Bluedevil](#Bluedevil)
-    *   [3.3 Blueberry](#Blueberry)
-    *   [3.4 Blueman](#Blueman)
-*   [4 Using Obex for sending and receiving files](#Using_Obex_for_sending_and_receiving_files)
-    *   [4.1 ObexFS](#ObexFS)
-    *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
-    *   [4.3 Obex Object Push](#Obex_Object_Push)
-*   [5 Audio](#Audio)
-    *   [5.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
-    *   [6.2 gnome-bluetooth](#gnome-bluetooth)
-    *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
-        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
-    *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
-    *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
-    *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
-    *   [6.7 My computer is not visible](#My_computer_is_not_visible)
-    *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [6.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
-    *   [6.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
-    *   [6.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
-    *   [6.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [6.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+    *   [1.1 Front-ends](#Front-ends)
+        *   [1.1.1 Command-line](#Command-line)
+        *   [1.1.2 Graphical front-end](#Graphical_front-end)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Auto power-on after boot](#Auto_power-on_after_boot)
+*   [3 Using Obex for sending and receiving files](#Using_Obex_for_sending_and_receiving_files)
+    *   [3.1 ObexFS](#ObexFS)
+    *   [3.2 ObexFTP transfers](#ObexFTP_transfers)
+    *   [3.3 Obex Object Push](#Obex_Object_Push)
+*   [4 Audio](#Audio)
+    *   [4.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
+    *   [5.2 gnome-bluetooth](#gnome-bluetooth)
+    *   [5.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [5.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
+    *   [5.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
+    *   [5.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
+    *   [5.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
+    *   [5.7 My computer is not visible](#My_computer_is_not_visible)
+    *   [5.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
+    *   [5.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
+    *   [5.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
+    *   [5.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [5.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [5.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
@@ -56,13 +53,47 @@ Then [start](/index.php/Start "Start") the `bluetooth.service` systemd unit. You
 *   Some Bluetooth cards (e.g. Broadcom) conflict with the network adapter. Thus, you need to make sure that your Bluetooth device get connected before the network service boot.
 *   Some tools such as hcitool and hciconfig have been deprecated upstream, and are no longer included in [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). Since these tools will no longer be updated, it is recommended that scripts be updated to avoid using them. If you still desire to use them, install [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/). See [FS#53110](https://bugs.archlinux.org/task/53110) and [the Bluez mailing list](https://www.spinics.net/lists/linux-bluetooth/msg69239.html) for more information.
 
-## Configuration via the CLI
+### Front-ends
+
+#### Command-line
+
+*   **bluetoothctl** — Pairing a device from the shell is one of the simplest and most reliable options.
+
+	|| [bluetooth-utils](https://www.archlinux.org/packages/?name=bluetooth-utils)
+
+#### Graphical front-end
+
+The following packages allow for a graphical interface to customize Bluetooth.
+
+*   **GNOME Bluetooth** — [GNOME](/index.php/GNOME "GNOME")'s Bluetooth tool.
+    *   [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) provides the back-end
+    *   [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) provides the status monitor applet
+    *   [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provides the configuration front-end GUI that can be accessed by typing Bluetooth on the Activities overview, or with the `gnome-control-center bluetooth` command.
+    *   You can also launch the `bluetooth-sendto` command directly to send files to a remote device.
+    *   To receive files, open the Bluetooth settings panel; you can only receive whilst the Bluetooth panel is open.
+    *   To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
+
+	[https://wiki.gnome.org/Projects/GnomeBluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) ||
+
+*   **Bluedevil** — [KDE](/index.php/KDE "KDE")'s Bluetooth tool. If there is no Bluetooth icon visible in Dolphin and in the system tray, enable it in the system tray options or add a widget. You can configure Bluedevil and detect Bluetooth devices by clicking the icon. An interface is also available from the KDE System Settings.
+
+	[https://projects.kde.org/projects/kde/workspace/bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) || [bluedevil](https://www.archlinux.org/packages/?name=bluedevil)
+
+*   **Blueberry** — Linux Mint's spin-off of GNOME Bluetooth, which works in all desktop environments. *Blueberry* doesn't support receiving files through Obex Object Push.
+
+	[https://github.com/linuxmint/blueberry](https://github.com/linuxmint/blueberry) || [blueberry](https://www.archlinux.org/packages/?name=blueberry)
+
+*   **[Blueman](/index.php/Blueman "Blueman")** — A full featured Bluetooth manager.
+
+	[https://github.com/blueman-project/blueman](https://github.com/blueman-project/blueman) || [blueman](https://www.archlinux.org/packages/?name=blueman)
+
+## Configuration
 
 **Note:** Before using the bluetooth device, make sure that it is not blocked by [rfkill](/index.php/Rfkill "Rfkill").
 
-### Bluetoothctl
+This section describes directly configuring *bluez5* via the *bluetoothctl* CLI, which might not be necessary if you are using an alternative front-end tool (such as GNOME Bluetooth).
 
-Pairing a device from the shell is one of the simplest and most reliable options. The exact procedure depends on the devices involved and their input functionality. What follows is a general outline of pairing a device using `/usr/bin/bluetoothctl`:
+The exact procedure depends on the devices involved and their input functionality. What follows is a general outline of pairing a device using `/usr/bin/bluetoothctl`:
 
 Start the `bluetoothctl` interactive command. Input `help` to get a list of available commands.
 
@@ -109,7 +140,7 @@ Connection successful
 
 ```
 
-#### Auto power-on after boot
+### Auto power-on after boot
 
 By default, your Bluetooth adapter will not power on after a reboot. The former method by using `hciconfig hci0 up` is deprecated, see the [release note](http://www.bluez.org/release-of-bluez-5-35/). Now you just need to add the line `AutoEnable=true` in `/etc/bluetooth/main.conf` at the bottom in the `[Policy]` section:
 
@@ -118,34 +149,6 @@ By default, your Bluetooth adapter will not power on after a reboot. The former 
 [Policy]
 AutoEnable=true
 ```
-
-## Configuration with a graphical front-end
-
-The following packages allow for a graphical interface to customize Bluetooth.
-
-### GNOME Bluetooth
-
-[GNOME Bluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) is [GNOME](/index.php/GNOME "GNOME")'s Bluetooth tool. The [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) package provides the back-end, [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) provides the status monitor applet, and [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provides the configuration front-end GUI that can be accessed by typing Bluetooth on the Activities overview, or with the `gnome-control-center bluetooth` command. You can also launch the `bluetooth-sendto` command directly to send files to a remote device.
-
-To receive files, open the Bluetooth settings panel; you can only receive whilst the Bluetooth panel is open.
-
-**Tip:** To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
-
-### Bluedevil
-
-[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) is [KDE](/index.php/KDE "KDE")'s Bluetooth tool. It can be [installed](/index.php/Installed "Installed") with the package [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
-
-If there is no Bluetooth icon visible in Dolphin and in the system tray, enable it in the system tray options or add a widget. You can configure Bluedevil and detect Bluetooth devices by clicking the icon. An interface is also available from the KDE System Settings.
-
-### Blueberry
-
-*Blueberry* is an alternative front-end for GNOME Bluetooth, which works in all desktop environments. It can be installed with the [blueberry](https://www.archlinux.org/packages/?name=blueberry) package. It provides a configuration tool (*blueberry*) and a system tray applet (*blueberry-tray*).
-
-**Note:** *Blueberry* doesn't support receiving files through Obex Object Push, see *blueman* below if you want to be able to receive files.
-
-### Blueman
-
-[Blueman](/index.php/Blueman "Blueman") is a full featured Bluetooth manager. It provides a graphical settings panel `blueman-manager` and a system tray applet `blueman-applet`. See [Blueman](/index.php/Blueman "Blueman") for more details.
 
 ## Using Obex for sending and receiving files
 

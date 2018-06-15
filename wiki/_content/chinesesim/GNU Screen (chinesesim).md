@@ -18,7 +18,7 @@
 *   [11 使用 X 滚动机制](#.E4.BD.BF.E7.94.A8_X_.E6.BB.9A.E5.8A.A8.E6.9C.BA.E5.88.B6)
 *   [12 添加 GRUB 条目来启动进入 Screen](#.E6.B7.BB.E5.8A.A0_GRUB_.E6.9D.A1.E7.9B.AE.E6.9D.A5.E5.90.AF.E5.8A.A8.E8.BF.9B.E5.85.A5_Screen)
 *   [13 修正启动 screen 时 Midnight Commander 无反应的问题](#.E4.BF.AE.E6.AD.A3.E5.90.AF.E5.8A.A8_screen_.E6.97.B6_Midnight_Commander_.E6.97.A0.E5.8F.8D.E5.BA.94.E7.9A.84.E9.97.AE.E9.A2.98)
-*   [14 See Also](#See_Also)
+*   [14 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -245,7 +245,7 @@ esac
 
 这个问题在某些情况下（需要进一步检查）[old gpm bug](https://bugzilla.redhat.com/show_bug.cgi?id=168076) 会出现。所以在 screen 内运行 mc，会得到无反应的 screen 窗口。尝试在运行 mc 之前杀死 gpm 守护进程，或是在 `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` 中禁止 gpm。 In some cases (need deeper inspection) [old gpm bug](https://bugzilla.redhat.com/show_bug.cgi?id=168076) gets alive. So, then you try to run mc inside screen, you get a frozen screen window. Try to kill gpm daemon before starting mc and/or disable it in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`.
 
-## See Also
+## 参见
 
 *   [MacOSX Hints - Automatically using screen in your shell](http://www.macosxhints.com/article.php?story=20021114055617124)
 *   [Gentoo Wiki - Tutorial for screen](http://wiki.gentoo.org/wiki/Screen)

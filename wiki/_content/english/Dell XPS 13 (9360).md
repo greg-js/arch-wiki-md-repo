@@ -115,18 +115,18 @@ If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI 
 For the HD 620 graphics card the following modules are working: (see [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"))
 
 ```
-modeset=1 enable_rc6=1 enable_fbc=1 
+modeset=1 enable_fbc=1 
 
 ```
 
-The first argument is to enable modesetting if it's not set by default. The second argument is needed to activate power-saving C-States. Higher values than 1 are not available for kaby lake CPUs. The third argument is for frame buffer compression power savings. These values should work well!
+The first argument is to enable modesetting if it's not set by default. The second argument is needed to activate framebuffer compression power savings. These values should work well!
 
 ```
-enable_guc_loading=1 enable_guc_submission=1
+enable_guc=1
 
 ```
 
-These arguments are used to enable GuC updates. GuC is a small proprietary binary blob released by intel to update the GuC binary in faster intervals than the kernel release does. It is used for graphics workload scheduling on the various graphics parallel engines. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The GuC binary for kaby lake is included since firmware release linux-firmware 20170217 in the official repository. HuC is also a binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. As of kernel 4.12, HuC is loaded if GuC is enabled. One can check with 'cat /sys/kernel/debug/dri/0/i915_huc_load_status' and 'cat /sys/kernel/debug/dri/0/i915_guc_load_status'.
+This argument is used to enable GuC updates. GuC is a small proprietary binary blob released by intel to update the GuC binary in faster intervals than the kernel release does. It is used for graphics workload scheduling on the various graphics parallel engines. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The GuC binary for kaby lake is included since firmware release linux-firmware 20170217 in the official repository. HuC is also a binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. As of kernel 4.12, HuC is loaded if GuC is enabled. One can check with 'cat /sys/kernel/debug/dri/0/i915_huc_load_status' and 'cat /sys/kernel/debug/dri/0/i915_guc_load_status'.
 
 ```
 enable_psr=1
@@ -376,7 +376,7 @@ Some users experienced a weird crackling, white noise sound when the display is 
 
 This issue should be patched as of the 4.14.15 kernel.
 
-If you're still encountering this issue, try manually applying this patch[[1]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
+If you're still encountering this issue, try manually applying this patch[[1]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915 enable_guc=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
 
 ### Coil Whine
 

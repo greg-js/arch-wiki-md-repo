@@ -14,8 +14,9 @@ This article contains instruction on sharing printers between systems, be it bet
     *   [2.3 Enabling browsing](#Enabling_browsing)
 *   [3 Between GNU/Linux and Windows](#Between_GNU.2FLinux_and_Windows)
     *   [3.1 Linux server - Windows client](#Linux_server_-_Windows_client)
-        *   [3.1.1 Sharing via IPP](#Sharing_via_IPP)
-        *   [3.1.2 Sharing via Samba](#Sharing_via_Samba)
+        *   [3.1.1 Sharing via Bonjour](#Sharing_via_Bonjour)
+        *   [3.1.2 Sharing via IPP](#Sharing_via_IPP)
+        *   [3.1.3 Sharing via Samba](#Sharing_via_Samba)
     *   [3.2 Windows server - Linux client](#Windows_server_-_Linux_client)
         *   [3.2.1 Sharing via LPD](#Sharing_via_LPD)
         *   [3.2.2 Sharing via IPP](#Sharing_via_IPP_2)
@@ -107,9 +108,19 @@ The `org.cups.cupsd.service` service will be automatically started when a USB pr
 
 ### Linux server - Windows client
 
+Sharing to Windows clients can be achieved using [#Sharing via Bonjour](#Sharing_via_Bonjour), [#Sharing via IPP](#Sharing_via_IPP), or [#Sharing via Samba](#Sharing_via_Samba).
+
+After setting up the server, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2' or 'Microsoft PS Class driver').
+
+Potential missing drivers can be found at [nodevice.com](https://www.nodevice.com).
+
+#### Sharing via Bonjour
+
+[Bonjour Printing Services](https://support.apple.com/kb/dl999) allows Windows to easily connect to Unix printers shared in the local network using [Avahi](/index.php/Avahi "Avahi").
+
 #### Sharing via IPP
 
-The **preferred way** to connect a Windows client to a Linux print server is using [IPP](https://en.wikipedia.org/wiki/Internet_Printing_Protocol "wikipedia:Internet Printing Protocol"), as the configuration is simpler than using Samba. It is a standard printer protocol based on HTTP, allowing you to use port forwarding, tunneling etc. IPP has been natively supported by Windows since Windows 2000.
+The [Internet Printing Protocol](https://en.wikipedia.org/wiki/Internet_Printing_Protocol "wikipedia:Internet Printing Protocol") is a widely supported standard among operating systems that is simple to configure. It features port forwarding, tunnelling, etc.
 
 **Note:** You may have to add the Internet Printing Client to Windows (*Control Panel > Programs > Turn Windows features on or off > Print and Document Services*)
 
@@ -129,11 +140,11 @@ http://*hostname*:631/printers/*printer_name*
 *   The 'Add Printer' dialog in Windows suggests the format `http://computername/printers/printername/.printer`, which it will not accept. Instead, use the syntax suggested above.
 *   If you are using a proxy carefully check any used proxy **exclusions**. A wrong setting here may result in you being unable to add a printer until the next reboot even if you disable the proxy afterwards (at least on Windows 7).
 
-After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2' or 'Microsoft PS Class driver').
-
 #### Sharing via Samba
 
-If your client's Windows version is below Windows 2000 or if you experienced troubles with IPP you can also use Samba for sharing. Note of course that with Samba this involves another complex piece of software. This makes this way **more difficult to configure** and thus sometimes also **more error-prone**, mostly due to authentication problems.
+[Samba](/index.php/Samba "Samba") is an implementation of the Windows file and printer sharing protocols, even the most vintage ones.
+
+Note that printer sharing using Samba is usually **more difficult** to configure and maintain.
 
 To configure Samba on the Linux server, edit `/etc/samba/smb.conf` file to allow access to printers. File `smb.conf` can look something like this:
 

@@ -21,7 +21,7 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 Classes are announced on the mailing list arch-general, the forums, and other broadcasting places like twitter. The following table lists classes being developed and classes announced. The stages for class development are drafting, scheduling, and canceled. Once a class has been announced, the date and time are given.
 
 | **Stage / Date** | **Class Title** | **Instructor(s)** | **Announcements and Notes** |
-| 2017-10-27 07:00 UTC | *Python for Beginners* | pulec | [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners) |
+| 2018-06-27 07:00 UTC | *Python for Beginners* | pulec | [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners) |
 | drafting | *C Programming* | HalosGhost | [https://ptpb.pw/r/~alcclass](https://ptpb.pw/r/~alcclass) |
 
 ### Previous classes

@@ -29,7 +29,7 @@ The columns have the following meaning:
 
 	– use *pacman* directly instead of manual database manipulation or usage of [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3).
 
-	In addition, potentially harmful commands such as `pacman -Ud`, `pacman -Rdd` or `pacman --ask` are **not** used.
+	In addition, potentially [harmful commands](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance") such as `pacman -Ud`, `pacman -Rdd` or `pacman --ask` are **not** used.
 
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
@@ -49,14 +49,14 @@ The columns have the following meaning:
 2.  Summarizing package upgrades;
 3.  Resolution of package conflicts and installations.
 
-	An asterisk denotes optional functionality.
+	An asterisk denotes functionality specifically enabled by the user.
 
 *   *Shell completion*: [tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") is available for the listed [shells](/index.php/Shell "Shell").
 
 **Note:**
 
 *   Table rows are sorted by column values, where *Yes* or *N/A* take precedence over *Partial* or *Optional* and *No*, or alphabetically if values are equal.
-*   *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it deviates from the given criteria in a minor way.
+*   *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it partially deviates from the given criteria.
 
 ### Active
 
@@ -67,7 +67,7 @@ The columns have the following meaning:
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Yes | Yes | [Partial](https://github.com/actionless/pikaur/issues/201) | Yes | Yes | [Yes](https://github.com/actionless/pikaur/commit/d409b958b4ff403d4fda06681231061854d32b3c) | Yes | Yes | 1, 2, 3 | bash, fish, zsh | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), [multilingual](https://github.com/actionless/pikaur/tree/master/locale), sort by votes/popularity, [print news](https://github.com/actionless/pikaur/pull/191) |
 | [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | Yes | [Partial](https://github.com/Jguer/yay/issues/464) | Yes | Yes | Yes | [Yes](https://github.com/Jguer/yay/pull/297) | [Yes](https://github.com/Jguer/yay/pull/447) | 1, 2, 3 | bash, fish, zsh | sort by votes, fetch PGP keys, [prompt architecture](https://github.com/Jguer/yay/commit/4bcd3a6297052714e91e3f886602ce5c12d15786) |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No | 1 | bash, zsh | Trust management, [ABS](/index.php/ABS "ABS") support, extends Powerpill |
-| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Optional | Yes | [Yes](https://github.com/Kwpolska/pkgbuilder/blob/master/docs/wrapper.rst) | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | No | 1* | - | Automatic builds by default, use `-F` to disable; multilingual |
+| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Optional | Yes | [Yes](https://github.com/Kwpolska/pkgbuilder/blob/master/docs/wrapper.rst) | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | 1* | - | Automatic builds by default, use `-F` to disable; multilingual |
 | [naaman](https://aur.archlinux.org/packages/naaman/) | Python | Optional | Yes | N/A | Yes | [Partial](https://github.com/enckse/naaman/issues/19) | [Partial](https://github.com/enckse/naaman/issues/20) | Yes | No | 1* | bash | Automatic builds by default, use `--fetch` to disable, use `-d` to enable the solver |
 | [aura](https://aur.archlinux.org/packages/aura/) | Haskell | Optional | Yes | [Yes](https://github.com/aurapm/aura/blob/master/aura/src/Aura/Pacman.hs) | [Yes](https://github.com/aurapm/aura/commit/7848e9830cd880215f1d12a1c0294992428ea778) | No | [No](https://github.com/aurapm/aura/issues/353) | [No](https://github.com/aurapm/aura/pull/346) | [Partial](https://github.com/aurapm/aura/blob/89bf702bd0539fa757265c4c54ea2192155f85ed/aura/src/Aura/Pkgbuild/Records.hs) | 1* | bash, zsh | Automatic builds by default, use `--dryrun` to disable, [downgrade](/index.php/Downgrade "Downgrade") support, multilingual |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Optional | Yes | N/A | No | No | No | Yes | Yes | 1* | - | Automatic builds by default, use `check` or `update` to disable, [local repository](/index.php/Local_repository "Local repository") support |

@@ -58,7 +58,7 @@ install CD version
 | [Lenovo ThinkPad Edge E430](/index.php/Lenovo_ThinkPad_Edge_E430 "Lenovo ThinkPad Edge E430") | Yes | Yes | Yes* | Yes* | Not tested | Yes | NA | NA | SD card (yes) |
 | [Lenovo ThinkPad Edge E455](/index.php/Lenovo_ThinkPad_Edge_E455 "Lenovo ThinkPad Edge E455") | 2015.04.01 | Yes* | Yes | Yes | Yes | Yes | Yes | NA |
 | Lenovo ThinkPad Edge E470 | 2017.09.01 | Yes | Yes | Yes | Yes | Not tested | NA | NA | trackpoint (yes) |
-| Lenovo ThinkPad Edge E530 | Yes | Yes | Yes* | Yes* | Yes | Yes | NA | NA | SD card (yes), Finger Print (not tested) |
+| Lenovo ThinkPad Edge E530 | Yes | Yes | Yes* | Yes* | Yes | Yes | NA | NA | SD card (yes), Finger Print (yes) | E530 without fingerprint reader can be equipt with one. |
 | Lenovo ThinkPad Edge E531 | Yes | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD card (yes), Touch Pad/Trackpoint (yes), Webcam (yes) | WiFi only works with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) |
 | Lenovo ThinkPad Edge E540 | 2015.08.01 | Yes | Yes | Yes | Yes | Yes | Yes* | NA | SD card (yes), Finger Print (yes), touch pad and trackpoint (yes), Webcam (yes) |
 | Lenovo ThinkPad Edge E545 | NA | Yes | Yes | Yes | Yes* | Not tested | Yes | NA | SD card (yes), touch pad and trackpoint (yes) Webcam (yes) | wifi works only with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) |

@@ -21,7 +21,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [3.3 Database setup](#Database_setup)
         *   [3.3.1 MariaDB](#MariaDB)
         *   [3.3.2 PostgreSQL](#PostgreSQL)
-    *   [3.4 Webserver setup](#Webserver_setup)
+    *   [3.4 Web server setup](#Web_server_setup)
         *   [3.4.1 Apache](#Apache)
             *   [3.4.1.1 WebDAV](#WebDAV)
         *   [3.4.2 Nginx](#Nginx)
@@ -152,11 +152,11 @@ $ sudo -u postgres createdb -O nextcloud nextcloud
 
 ```
 
-### Webserver setup
+### Web server setup
 
 **Warning:** It is recommended to use TLS/SSL (HTTPS) over plain HTTP, see [Apache#TLS/SSL](/index.php/Apache#TLS.2FSSL "Apache") or [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for examples and implement this in the examples given below.
 
-Depending on which [webserver](/index.php/Webserver "Webserver") you are using, further setup is required, indicated below.
+Depending on which [web server](/index.php/Web_server "Web server") you are using, further setup is required, indicated below.
 
 #### Apache
 

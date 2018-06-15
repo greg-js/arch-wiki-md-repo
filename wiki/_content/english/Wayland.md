@@ -250,7 +250,7 @@ When you want to run an X application from within Weston, it spins up Xwayland t
  `~/.config/weston.ini` 
 ```
 [core]
-modules=xwayland.so
+xwayland=true
 
 ```
 
@@ -337,6 +337,7 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 | Way Cooler | Tiling | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
 | Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/capisce/mazecompositor) is a 3D Qt based Wayland compositor |
 | Grefsen | Floating | [Grefsen](https://github.com/ec1oud/grefsen) is a Qt/Wayland compositor providing a minimal desktop environment. |
+| Waymonad | Tiling | [Waymonad](https://github.com/waymonad/waymonad) is a Wayland compositor based on ideas from and inspired by xmonad |
 
 Some of installed wayland desktop clients might store information in `/usr/share/wayland-sessions/*.desktop` files about how to start them in wayland.
 

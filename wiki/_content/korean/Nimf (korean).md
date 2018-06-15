@@ -7,7 +7,9 @@ Related articles
 *   [UIM](/index.php/UIM "UIM")
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 
-**Warning:** 2018년 5월 부터 Nimf 프로젝트가 공식적으로 완전히 중단 되었습니다. 해당 GitHub 저장소는 아카이브 처리 되었습니다. [[1]](https://github.com/cogniti/nimf/issues/104)
+**Warning:** 2018년 5월 부터 Nimf 프로젝트가 더이상 공개적으로 관리되지 않습니다. 해당 GitHub 저장소는 아카이브 처리 되었습니다. [[1]](https://github.com/cogniti/nimf/issues/104)
+
+**Warning:** 2018.06.13 - Nimf 프로젝트의 GitHub 저장소가 삭제 되었습니다. [[2]](https://cogniti-works.blogspot.com/2018/06/nimf_82.html)
 
 [님프(Nimf)](https://github.com/cogniti/nimf)는 다국어 [입력기](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") 프레임워크 이며, [다솜](/index.php/Dasom "Dasom")의 후속 프로젝트 입니다.
 

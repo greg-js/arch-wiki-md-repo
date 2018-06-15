@@ -67,7 +67,7 @@ When using console-based login, the keyring daemon can be started by either [PAM
 
 Start the gnome-keyring-daemon from `/etc/pam.d/login`:
 
-Add `-auth optional pam_gnome_keyring.so` at the end of the `auth` section and `-session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
+Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
 
  `/etc/pam.d/login` 
 ```
@@ -76,15 +76,15 @@ Add `-auth optional pam_gnome_keyring.so` at the end of the `auth` section and `
 auth       required     pam_securetty.so
 auth       requisite    pam_nologin.so
 auth       include      system-local-login
-**-auth      optional     pam_gnome_keyring.so**
+auth       optional     pam_gnome_keyring.so
 account    include      system-local-login
 session    include      system-local-login
-**-session   optional     pam_gnome_keyring.so auto_start**
+session    optional     pam_gnome_keyring.so auto_start
 ```
 
 For [SDDM](/index.php/SDDM "SDDM"), edit instead the configuration file `/etc/pam.d/sddm`.
 
-Next, for [GDM](/index.php/GDM "GDM"), add `-password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
+Next, for [GDM](/index.php/GDM "GDM"), add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
 
  `/etc/pam.d/passwd` 
 ```
@@ -93,7 +93,7 @@ Next, for [GDM](/index.php/GDM "GDM"), add `-password optional pam_gnome_keyring
 #password	required	pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
 #password	required	pam_unix.so sha512 shadow use_authtok
 password	required	pam_unix.so sha512 shadow nullok
-**-password	optional	pam_gnome_keyring.so**
+password	optional	pam_gnome_keyring.so
 ```
 
 **Note:**

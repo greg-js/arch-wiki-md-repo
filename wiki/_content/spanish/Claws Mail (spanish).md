@@ -6,7 +6,7 @@ Requisitos:
 *   Claws-mail
 *   Modulo traycon.so
 
-1º Primero vamos a configurar GMail para poder recibir el correo. Para ello nos dirigimos a gmail desde nuestro navegador y entramos en **configuración/Reenvío y correo POP** y activamos la recepción de correo pop. Está parte cada usuario puede dejarla como desee, si quiere guardar una copia también en el servidor u otros datos. guardamos cambios y listo.
+1º Primero vamos a configurar GMail para poder recibir el correo. Para ello nos dirigimos a gmail desde nuestro navegador y entramos en **configuración/Reenvío y correo POP** y activamos la recepción de correo pop. Está parte cada usuario puede dejarla como desee, si quiere guardar una copia también en el servidor u otros datos, guardamos cambios y listo. Luego vamos a "mi cuenta" en google apps, acceso y seguridad, bajamos hasta encontrar la opción "Permitir el acceso de aplicaciones menos seguras" la cual debe estar habilitada o de lo contrario nos marcará error de autenticación al sincronizar con gmail.
 
 2º [Instalamos](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [claws-mail](https://www.archlinux.org/packages/?name=claws-mail).
 

@@ -15,7 +15,7 @@ From [Wikipedia:udev](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 *   [1 Installation](#Installation)
 *   [2 About udev rules](#About_udev_rules)
     *   [2.1 udev rule example](#udev_rule_example)
-    *   [2.2 List attributes of a device](#List_attributes_of_a_device)
+    *   [2.2 List the attributes of a device](#List_the_attributes_of_a_device)
     *   [2.3 Testing rules before loading](#Testing_rules_before_loading)
     *   [2.4 Loading new rules](#Loading_new_rules)
 *   [3 Udisks](#Udisks)
@@ -53,11 +53,11 @@ A standalone fork is available as [eudev](https://aur.archlinux.org/packages/eud
 
 *udev* rules written by the administrator go in `/etc/udev/rules.d/`, their file name has to end with *.rules*. The *udev* rules shipped with various packages are found in `/usr/lib/udev/rules.d/`. If there are two files by the same name under `/usr/lib` and `/etc`, the ones in `/etc` take precedence.
 
-To learn how to write *udev* rules see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html), and to see some examples in this guide follow the [Writing udev rules - Examples](http://www.reactivated.net/writing_udev_rules.html#example-printer).
+To learn about *udev* rules, refer to the [udev(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udev.7) manual. Also see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html) and some practical examples are provided within the guide: [Writing udev rules - Examples](http://www.reactivated.net/writing_udev_rules.html#example-printer).
 
 ### udev rule example
 
-Below is an example of a rule that places a symlink `/dev/video-cam1` when a webcamera is connected.
+Below is an example of a rule that creates a symlink `/dev/video-cam` when a webcamera is connected.
 
 Let say this camera is currently connected and has loaded with the device name `/dev/video2`. The reason for writing this rule is that at the next boot, the device could show up under a different name, like `/dev/video0`.
 
@@ -87,13 +87,13 @@ looking at parent device '/devices/pci0000:00/0000:00:04.1/usb3/3-2':
   ...
 ```
 
-From the *video4linux* device we use `KERNEL=="video2"` and `SUBSYSTEM=="video4linux"`, then walking up two levels above, we match the webcam using vendor and product ID's from the usb parent `SUBSYSTEMS=="usb"`, `ATTRS{idVendor}=="05a9"` and `ATTRS{idProduct}=="4519"`.
+To identify the webcamera, from the *video4linux* device we use `KERNEL=="video2"` and `SUBSYSTEM=="video4linux"`, then walking up two levels above, we match the webcamera using vendor and product ID's from the usb parent `SUBSYSTEMS=="usb"`, `ATTRS{idVendor}=="05a9"` and `ATTRS{idProduct}=="4519"`.
 
 We are now able to create a rule match for this device as follows:
 
- `/etc/udev/rules.d/83-webcam.rules`  `KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"` 
+ `/etc/udev/rules.d/83-webcam.rules`  `KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam"` 
 
-Here we create a symlink using `SYMLINK+="video-cam1"` but we could easily set user `OWNER="john"` or group using `GROUP="video"` or set the permissions using `MODE="0660"`.
+Here we create a symlink using `SYMLINK+="video-cam"` but we could easily set user `OWNER="john"` or group using `GROUP="video"` or set the permissions using `MODE="0660"`.
 
 If you intend to write a rule to do something when a device is being removed, be aware that device attributes may not be accessible. In this case, you will have to work with preset device [environment variables](/index.php/Environment_variables "Environment variables"). To monitor those environment variables, execute the following command while unplugging your device:
 
@@ -106,7 +106,7 @@ In this command's output, you will see value pairs such as `ID_VENDOR_ID` and `I
 
  `/etc/udev/rules.d/83-webcam-removed.rules`  `ACTION=="remove", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=="4519", RUN+="*/path/to/your/script*"` 
 
-### List attributes of a device
+### List the attributes of a device
 
 To get a list of all of the attributes of a device you can use to write rules, run this command:
 

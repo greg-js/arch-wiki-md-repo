@@ -131,10 +131,9 @@ To override libinput's default settings, add a local hwdb entry:
 ```
 evdev:name:TPPS/2 IBM TrackPoint:dmi:bvn*:bvr*:bd*:svnLENOVO:pn*:pvrThinkPad??60?:*
   POINTINGSTICK_SENSITIVITY=250
-  POINTINGSTICK_CONST_ACCEL=1.5
 ```
 
-You can find various vendor/model keys in the [udev hardware database](https://github.com/systemd/systemd/blob/master/hwdb/70-pointingstick.hwdb).
+You can find various vendor/model keys in the [udev hardware database](https://github.com/systemd/systemd/blob/master/hwdb/70-pointingstick.hwdb). Note that since [this commit](https://cgit.freedesktop.org/wayland/libinput/commit/src/evdev.c?id=3669fa10dff95371658647272ef7ac7a3ef29a61) libinput ignores the POINTINGSTICK_CONST_ACCEL parameter and uses POINTINGSTICK_SENSITIVITY. The range is 0-255.
 
 Reload udev's hwdb to apply the changes:
 
@@ -161,6 +160,8 @@ Run the following to generate some debug output:
 **Note:** This will not actually apply the parameters from hwdb, but you can verify the changes in the output of the `udevadm test` command.
 
 Finally, restart your Wayland compositor or X session to apply the changes.
+
+**Note:** It is planned that [libinput 1.12](https://who-t.blogspot.com/2018/06/libinput-and-its-device-quirks-files.html) will stop using udev hwdb for device-specific overrides and move to ini-style files independent of hwdb.
 
 ## Troubleshooting
 

@@ -41,6 +41,20 @@ You need to tell hadoop your JAVA_HOME in `/etc/hadoop/hadoop-env.sh` because it
 
  `/etc/hadoop/hadoop-env.sh`  `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/` 
 
+Check installation with:
+
+```
+hadoop version
+
+```
+
+If you get warning message "WARNING: HADOOP_SLAVES has been replaced by HADOOP_WORKERS. Using value of HADOOP_SLAVES." Then replace export HADOOP_SLAVES=/etc/hadoop/slaves in /etc/profile.d/hadoop.sh with:
+
+```
+export HADOOP_WORKERS=/etc/hadoop/workers
+
+```
+
 ## Single Node Setup
 
 **Note:** This section is based on the [Hadoop Official Documentation](http://hadoop.apache.org/docs/stable/)
@@ -84,7 +98,7 @@ If you cannot ssh to localhost without a passphrase, execute the following comma
 
 ```
 $ ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
-$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys2
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 $ chmod 0600 ~/.ssh/authorized_keys
 
 ```

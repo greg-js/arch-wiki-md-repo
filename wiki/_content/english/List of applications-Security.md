@@ -383,13 +383,13 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase) or [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/)
 
+*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — Simple interface for GnuPG, for KDE.
+
+	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
+
 *   **minisign** — Simple program that only inplements key signing
 
 	[https://github.com/jedisct1/minisign](https://github.com/jedisct1/minisign) || [minisign](https://www.archlinux.org/packages/?name=minisign)
-
-*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — *a simple interface for GnuPG* for KDE.
-
-	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
 
 *   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GNOME Keyring.
 
@@ -453,6 +453,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://sourceforge.net/projects/mypasswords7/](https://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
+*   **OTPClient** — Highly secure and easy to use GTK+ software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
+
+	[https://github.com/paolostivanin/OTPClient](https://github.com/paolostivanin/OTPClient) || [otpclient](https://aur.archlinux.org/packages/otpclient/)
+
 *   **[pass](/index.php/Pass "Pass")** — Simple console based password manager, using GnuPG encryption.
 
 	[https://www.passwordstore.org/](https://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
@@ -471,7 +475,11 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **QPass** — Easy to use password manager with built-in password generator.
 
-	[http://qpass.sourceforge.net](http://qpass.sourceforge.net) || [qpass](https://aur.archlinux.org/packages/qpass/)
+	[http://qpass.sourceforge.net/](http://qpass.sourceforge.net/) || [qpass](https://aur.archlinux.org/packages/qpass/)
+
+*   **QtPass** — GUI for pass, the standard unix password manager.
+
+	[https://qtpass.org/](https://qtpass.org/) || [qtpass](https://www.archlinux.org/packages/?name=qtpass)
 
 *   **Revelation** — Password manager for the GNOME desktop.
 

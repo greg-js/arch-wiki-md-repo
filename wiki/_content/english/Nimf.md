@@ -7,7 +7,10 @@ Related articles
 *   [UIM](/index.php/UIM "UIM")
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 
-**Warning:** As of May 2018 Nimf is no longer publicly maintained, the GitHub repository has been archived.[[1]](https://github.com/cogniti/nimf/issues/104)
+**Warning:**
+
+*   As of May 2018 Nimf is no longer publicly maintained, the GitHub repository has been archived.[[1]](https://github.com/cogniti/nimf/issues/104)
+*   As of June 13, 2018 Nimf's GitHub repository has been removed. [[2]](https://cogniti-works.blogspot.com/2018/06/nimf_82.html)
 
 [Nimf](https://github.com/cogniti/nimf) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") which inherits [Dasom](/index.php/Dasom "Dasom").
 

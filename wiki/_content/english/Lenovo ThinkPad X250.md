@@ -2,7 +2,7 @@ The Lenovo ThinkPad X250 is the successor to the [Lenovo ThinkPad X240](/index.p
 
 ## Contents
 
-*   [1 Tested Configuration](#Tested_Configuration)
+*   [1 Tested Configurations](#Tested_Configurations)
 *   [2 System Configuration](#System_Configuration)
     *   [2.1 Mouse](#Mouse)
     *   [2.2 Fingerprint](#Fingerprint)
@@ -10,9 +10,11 @@ The Lenovo ThinkPad X250 is the successor to the [Lenovo ThinkPad X240](/index.p
     *   [2.4 Sound and Volume Control](#Sound_and_Volume_Control)
     *   [2.5 Bluetooth](#Bluetooth)
 *   [3 BIOS updates](#BIOS_updates)
-*   [4 See also](#See_also)
+*   [4 Tipps and tricks](#Tipps_and_tricks)
+    *   [4.1 Battery](#Battery)
+*   [5 See also](#See_also)
 
-#### Tested Configuration
+#### Tested Configurations
 
 **Tip:** Below are the tested configurations at the current time.
 
@@ -116,6 +118,12 @@ In order to get a working and bootable usb dongle to flash a current BIOS it may
 6\. Press enter at the Lenovo screen, chose your usb dongle
 
 7\. Flash the BIOS update following the description on your screen. You need to have a charged battery and a connected ac adapter in order to run this tool successfully.
+
+### Tipps and tricks
+
+#### Battery
+
+Some x250 come with dual batteries: One build-in and one detachable. Applications like cbatticon, a battery monitor for system tray, [cannot handle dual battery setups](https://github.com/valr/cbatticon/issues/25). One way to check the batteries statuses is via [conky with BAT0 and BAT1](http://conky.sourceforge.net/variables.html) as variables.
 
 ## See also
 

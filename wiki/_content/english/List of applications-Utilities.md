@@ -32,6 +32,7 @@
         *   [1.3.2 Hex editors](#Hex_editors)
         *   [1.3.3 Build automation](#Build_automation)
         *   [1.3.4 Version control systems](#Version_control_systems)
+        *   [1.3.5 Game development](#Game_development)
     *   [1.4 Disks](#Disks)
         *   [1.4.1 Partitioning tools](#Partitioning_tools)
         *   [1.4.2 Mount tools](#Mount_tools)
@@ -42,14 +43,15 @@
         *   [1.5.2 System information viewers](#System_information_viewers)
             *   [1.5.2.1 Console](#Console_3)
             *   [1.5.2.2 Graphical](#Graphical_3)
-        *   [1.5.3 Command schedulers](#Command_schedulers)
-        *   [1.5.4 Shutdown timers](#Shutdown_timers)
-        *   [1.5.5 Keyboard layout switchers](#Keyboard_layout_switchers)
-        *   [1.5.6 Input methods](#Input_methods)
-        *   [1.5.7 Clipboard managers](#Clipboard_managers)
-        *   [1.5.8 Clock synchronization](#Clock_synchronization)
-        *   [1.5.9 Power management](#Power_management)
-        *   [1.5.10 Package management](#Package_management)
+        *   [1.5.3 System log viewers](#System_log_viewers)
+        *   [1.5.4 Command schedulers](#Command_schedulers)
+        *   [1.5.5 Shutdown timers](#Shutdown_timers)
+        *   [1.5.6 Keyboard layout switchers](#Keyboard_layout_switchers)
+        *   [1.5.7 Input methods](#Input_methods)
+        *   [1.5.8 Clipboard managers](#Clipboard_managers)
+        *   [1.5.9 Clock synchronization](#Clock_synchronization)
+        *   [1.5.10 Power management](#Power_management)
+        *   [1.5.11 Package management](#Package_management)
 
 ## Utilities
 
@@ -248,6 +250,8 @@ See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager
 	[https://github.com/rkitover/vimpager](https://github.com/rkitover/vimpager) || [vimpager](https://www.archlinux.org/packages/?name=vimpager)
 
 #### Terminal multiplexers
+
+See also [Wikipedia:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal_multiplexer "wikipedia:Terminal multiplexer").
 
 *   **abduco** — Tool for session attach and detach support which allows a process to run independently from its controlling terminal.
 
@@ -837,6 +841,22 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
 
+#### Game development
+
+See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_game_engines "wikipedia:List of game engines").
+
+*   **GDevelop** — Game creator designed to be used by everyone - no programming skills required.
+
+	[https://gdevelop-app.com/](https://gdevelop-app.com/) || [gdevelop](https://aur.archlinux.org/packages/gdevelop/)
+
+*   **[Godot](/index.php/Godot_Engine "Godot Engine")** — Advanced, feature-packed, multi-platform 2D and 3D game engine. Create games with ease, using Godot's unique approach to game development.
+
+	[https://godotengine.org/](https://godotengine.org/) || [godot](https://aur.archlinux.org/packages/godot/)
+
+*   **Tiled** — General purpose 2D level editor with powerful tile map editing features. It’s built to be easy to use and is suitable for many type of games.
+
+	[https://subversion.apache.org/](https://subversion.apache.org/) || [tiled](https://www.archlinux.org/packages/?name=tiled)
+
 ### Disks
 
 #### Partitioning tools
@@ -1071,6 +1091,24 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://www.kde.org/applications/system/kinfocenter/](https://www.kde.org/applications/system/kinfocenter/) || [kinfocenter](https://www.archlinux.org/packages/?name=kinfocenter)
 
+#### System log viewers
+
+*   **GNOME Logs** — Viewer for the systemd journal. Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+
+	[https://wiki.gnome.org/Apps/Logs](https://wiki.gnome.org/Apps/Logs) || [gnome-logs](https://www.archlinux.org/packages/?name=gnome-logs)
+
+*   **GNOME System Log** — System log viewer for GNOME.
+
+	[https://gitlab.gnome.org/GNOME/gnome-system-log](https://gitlab.gnome.org/GNOME/gnome-system-log) || [gnome-system-log](https://www.archlinux.org/packages/?name=gnome-system-log)
+
+*   **KSystemLog** — System log viewer tool for KDE.
+
+	[https://www.kde.org/applications/system/ksystemlog/](https://www.kde.org/applications/system/ksystemlog/) || [ksystemlog](https://www.archlinux.org/packages/?name=ksystemlog)
+
+*   **MATE System Log** — System log viewer for MATE.
+
+	[https://github.com/mate-desktop/mate-utils](https://github.com/mate-desktop/mate-utils) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
+
 #### Command schedulers
 
 See also [Cron](/index.php/Cron "Cron").
@@ -1125,7 +1163,7 @@ See also [Cron](/index.php/Cron "Cron").
 
 #### Input methods
 
-See the main article: [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
+See the main article: [Internationalization#Input methods](/index.php/Internationalization#Input_methods "Internationalization").
 
 #### Clipboard managers
 

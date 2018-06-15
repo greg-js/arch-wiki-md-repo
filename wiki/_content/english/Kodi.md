@@ -1,52 +1,50 @@
-[Kodi](https://kodi.tv/) (formerly known as XBMC) is an award-winning free and open source (GPL) software media player and entertainment hub that can be installed on Linux, OSX, Windows, iOS and Android, featuring a 10-foot user interface for use with televisions and remote controls. These can all be played directly from a CD/DVD, or from the hard-drive. Kodi can also play multimedia from a computer over a local network (LAN), or play media streams directly from the Internet. It can also be used to play and record live TV using a tuner, a backend server and a PVR plugin; more information about this can be found on the [Kodi wiki](http://kodi.wiki/?title=PVR).
+[Kodi](https://kodi.tv/) (formerly known as XBMC) is an award-winning free and open source (GPL) software media player and entertainment hub that can be installed on Linux, OSX, Windows, iOS and Android, featuring a 10-foot user interface for use with televisions and remote controls. These can all be played directly from a CD/DVD, or from the hard-drive. Kodi can also play multimedia from a computer over a local network (LAN), or play media streams directly from the Internet. It can also be used to play and record live TV using a tuner, a backend server and a PVR plugin; more information about this can be found on the [Kodi wiki](https://kodi.wiki/view/PVR).
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)
 *   [3 Running standalone](#Running_standalone)
-    *   [3.1 Kodi-standalone-service](#Kodi-standalone-service)
+    *   [3.1 kodi-standalone service](#kodi-standalone_service)
     *   [3.2 Xsession with LightDM](#Xsession_with_LightDM)
     *   [3.3 Socket activation](#Socket_activation)
     *   [3.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_.2F_irexec)
-    *   [3.5 Sharing media and a centralized database across multiple nodes](#Sharing_media_and_a_centralized_database_across_multiple_nodes)
-        *   [3.5.1 NFS server export example](#NFS_server_export_example)
-        *   [3.5.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
-        *   [3.5.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
-            *   [3.5.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
-            *   [3.5.3.2 Setup network shares](#Setup_network_shares)
-        *   [3.5.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
-    *   [3.6 Using a remote control](#Using_a_remote_control)
-        *   [3.6.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
-        *   [3.6.2 Using a physical remote control](#Using_a_physical_remote_control)
-    *   [3.7 HDMI-CEC with Pulse Eight USB-CEC](#HDMI-CEC_with_Pulse_Eight_USB-CEC)
-*   [4 Tips and Tricks](#Tips_and_Tricks)
-    *   [4.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
-    *   [4.2 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [4.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
-    *   [4.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
-    *   [4.5 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [4.6 Using ALSA](#Using_ALSA)
-    *   [4.7 Audio Passthrough](#Audio_Passthrough)
-    *   [4.8 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-        *   [4.8.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
-        *   [4.8.2 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
-    *   [4.9 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-    *   [4.10 USB DAC not working](#USB_DAC_not_working)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Accessing Kodi logs](#Accessing_Kodi_logs)
-    *   [5.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
-    *   [5.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
-    *   [5.4 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
-    *   [5.5 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [5.6 Kodi hangs on exit, fully occupying one CPU core, UI unresponsive](#Kodi_hangs_on_exit.2C_fully_occupying_one_CPU_core.2C_UI_unresponsive)
-*   [6 See also](#See_also)
+*   [4 Using a remote control](#Using_a_remote_control)
+    *   [4.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
+    *   [4.2 Using a physical remote control](#Using_a_physical_remote_control)
+    *   [4.3 HDMI-CEC](#HDMI-CEC)
+*   [5 Sharing media and a centralized database across multiple nodes](#Sharing_media_and_a_centralized_database_across_multiple_nodes)
+    *   [5.1 NFS server export example](#NFS_server_export_example)
+    *   [5.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
+    *   [5.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
+        *   [5.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
+        *   [5.3.2 Setup network shares](#Setup_network_shares)
+    *   [5.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
+*   [6 Tips and Tricks](#Tips_and_Tricks)
+    *   [6.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
+    *   [6.2 CLI tool for kodi](#CLI_tool_for_kodi)
+    *   [6.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
+    *   [6.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
+    *   [6.5 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [6.6 Using ALSA](#Using_ALSA)
+    *   [6.7 Audio Passthrough](#Audio_Passthrough)
+        *   [6.7.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
+    *   [6.8 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+    *   [6.9 USB DAC not working](#USB_DAC_not_working)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Accessing Kodi logs](#Accessing_Kodi_logs)
+    *   [7.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
+    *   [7.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
+    *   [7.4 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
+    *   [7.5 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
+    *   [7.6 Kodi hangs on exit, fully occupying one CPU core, UI unresponsive](#Kodi_hangs_on_exit.2C_fully_occupying_one_CPU_core.2C_UI_unresponsive)
+*   [8 See also](#See_also)
 
 ## Installation
 
-The official stable release can be installed via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to install the optional dependencies listed by pacman that apply to your specific use-case. All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
+The official stable release can be [installed](/index.php/Installed "Installed") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to install the optional dependencies listed by pacman that apply to your specific use-case.
 
-**Note:** Users of Arch Linux ARM should be aware that several different Kodi packages with specific hardware support are available.
+All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 
 ## Running
 
@@ -59,25 +57,28 @@ The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two b
 
 Setting up the system and running the standalone binary is advantageous for several reasons:
 
-1.  The default kodi user is unprivileged and cannot access a shell by definition.
-2.  Running without a full blown DE is lighter and more simplistic.
-3.  When paired with a systemd unit (or equivalent, see below), this setup makes the box on which kodi is running more like an appliance and very robust.
+1.  The default `kodi` user is unprivileged and cannot access a shell.
+2.  When paired with a systemd unit (or equivalent, see below), this setup makes the box on which kodi is running more like an appliance.
 
 **Warning:** Select **only one** of the methods listed below.
 
-#### Kodi-standalone-service
+### kodi-standalone service
 
-The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and automatically creates the unprivileged user to run Kodi in standalone mode. Although the correct [driver](/index.php/Xorg#Driver_installation "Xorg") is an assumed dependency, no extra Xorg packages are needed. [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time. No additional configuration should be required for most users, however, if `kodi.service` fails to start, see [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
+The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and automatically creates the unprivileged user to run Kodi in standalone mode. Although the correct [driver](/index.php/Xorg#Driver_installation "Xorg") is an assumed dependency, no extra Xorg packages are needed.
 
-**Note:** The home directory for the kodi user created is `/var/lib/kodi` not `/home/kodi`.
+[Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
 
-**Warning:** Users of Arch ARM should not attempt to install this package as breakage will occur!
+**Note:**
 
-#### Xsession with LightDM
+*   If `kodi.service` fails to start, see [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
+*   The home directory for the created `kodi` user is `/var/lib/kodi`.
 
-**Note:** This assumes that a kodi user named "kodiuser" is on the system and that the following file is present as described.
+### Xsession with LightDM
 
-**Note:** lightdm does not pull in an X server as a required dependency, it is optional. The X server listed as an optional dependency (xephyr) does not work when run as root by lightdm.service ([Bug to have optional dependency modified](https://bugs.archlinux.org/?string=52067)) ([Upstream Bug](https://bugs.launchpad.net/lightdm/+bug/852577)). Install [xorg-server](/index.php/Xorg#Installation "Xorg").
+**Note:**
+
+*   This assumes that a kodi user named `kodi` is on the system and that the following file is present as described.
+*   [lightdm](https://www.archlinux.org/packages/?name=lightdm) does not pull in an X server as a required dependency, it is optional. The X server listed as an optional dependency ([xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr)) does not work when run as root by `lightdm.service` ([FS#52067](https://bugs.archlinux.org/task/52067), [LightDM Bug 852577](https://bugs.launchpad.net/lightdm/+bug/852577)). [Install xorg-server](/index.php/Xorg#Installation "Xorg").
 
 To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM") and [LightDM#Enabling interactive passwordless login](/index.php/LightDM#Enabling_interactive_passwordless_login "LightDM"). *Kodi* includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
 
@@ -85,16 +86,16 @@ To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php
 ```
 [Seat:seat0]
 pam-service=lightdm-autologin
-autologin-user=kodiuser
+autologin-user=kodi
 autologin-user-timeout=0
 user-session=kodi
 ```
 
-#### Socket activation
+### Socket activation
 
-Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening with *systemctl start kodi@user.socket* (replace *user* with the user running Kodi to be started as).
+Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening by [starting](/index.php/Starting "Starting") `kodi@*user*.socket` (replace *user* with the user running Kodi to be started as).
 
-The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/) package provides `kodi@.service` but not `kodi@.socket`. Depending on the setup, one may want to change the port in *kodi@.socket*. This can be done by manually using the following systemd files.
+There are no packaged `kodi@.socket` and `kodi@.socket` files, you must create them manually. Depending on the setup, you may want to change the port in `kodi@.socket`.
 
  `/etc/systemd/system/kodi@.service` 
 ```
@@ -112,6 +113,7 @@ ExecStopPost=/usr/bin/systemctl --no-block start kodi@%i.socket
 
 [Install]
 WantedBy=multi-user.target
+
 ```
  `/etc/systemd/system/kodi@.socket` 
 ```
@@ -127,9 +129,10 @@ ListenStream=8082
 
 [Install]
 WantedBy=sockets.target
+
 ```
 
-#### Start from remote control with LIRC / irexec
+### Start from remote control with LIRC / irexec
 
 Kodi can be configured to start via a key press. Users will need [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) and [lirc](https://www.archlinux.org/packages/?name=lirc). This can be useful on setups running 24/7 and having kodi up on demand.
 
@@ -139,7 +142,6 @@ Generate the file `/var/lib/kodi/.lircrc` with the following content:
 
  `/var/lib/kodi/.lircrc` 
 ```
-
 begin
 prog = irexec
 remote = devinput
@@ -152,7 +154,7 @@ end
 
 Adopt `button` to whatever button on the remote is to start Kodi. One can use *irw* (see [LIRC#Usage](/index.php/LIRC#Usage "LIRC")) to find out the correct values for `remote` and `button`.
 
-Next copy `kodi.service` from `/usr/lib/systemd/system/` to `/etc/systemd/system/` and change the line
+Next [edit](/index.php/Edit "Edit") `kodi.service` and change the line
 
 ```
 ExecStart = /usr/bin/kodi-standalone -l /run/lirc/lircd
@@ -168,7 +170,52 @@ ExecStart = /usr/bin/irexec
 
 [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
 
-### Sharing media and a centralized database across multiple nodes
+## Using a remote control
+
+As Kodi is geared toward being a remote-controlled media center via an official app, physical remote control, or USB/bluetooth keyboard/mouse.
+
+### Using the Android or iOS app
+
+Both Android and iOS users can use the official app (currently free of charge) to control kodi once it is correctly setup to do so. Steps to configure both Kodi and the app are detailed on the [Official Kodi Remote](https://kodi.wiki/view/Official_Kodi_Remote) page.
+
+### Using a physical remote control
+
+Any PC with a supported IR receiver/remote, can use [LIRC](/index.php/LIRC "LIRC") or even kernel supported modules to drive it. Configuring specific remotes with lirc is covered on the [LIRC](/index.php/LIRC "LIRC") article.
+
+To work properly with Kodi, a file that maps the lirc events to Kodi keypresses is needed. Create an [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file at `~/.kodi/userdata/Lircmap.xml` (note the capital 'L').
+
+**Note:** Users running Kodi started with [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) will find the kodi home (~) under `/var/lib/kodi` and should substitute this in for the shortcut above. Also make sure that if creating this file as the root user, it gets proper ownership as kodi:kodi when finished.
+
+`Lircmap.xml` format is as follows:
+
+```
+<lircmap>
+  <remote device="devicename">
+      <XBMC_button>LIRC_button</XBMC_button>
+      ...
+  </remote>
+</lircmap>
+```
+
+*   **Device Name** is whatever LIRC calls the remote. This is set using the **Name** directive in lircd.conf and can be viewed by running `irw` and pressing a few buttons on the remote. IRW will report the name of the button pressed and the name of the remote will appear on the end of the line.
+*   **XBMC_button** is the name of the button as defined in [keymap.xml](https://kodi.wiki/view/Keymap).
+*   **LIRC_button** is the name as defined in `lircd.conf`. If `lircd.conf` was autogenerated using `irrecord`, these are the names selected for the buttons. Refer back to [LIRC](/index.php/LIRC "LIRC") for more information.
+*   A very thorough [LIRC](https://kodi.wiki/view/LIRC) page hosted on the Kodi Wiki should be consulted for more help and information on this subject as this is out of scope of this article.
+
+### HDMI-CEC
+
+With a supported [USB-CEC adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter), Kodi can be used to automatically turn on and off your TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control.
+
+Install [libcec](https://www.archlinux.org/packages/?name=libcec).
+
+When connected, the USB-CEC's `/dev` entry (usually `/dev/ttyACM*`) will default to being owned by the `uucp` group, so in order to use the device the user running Kodi needs to belong to that group. The user also needs to belong to the `lock` group, otherwise Kodi will be unable to connect to the device. See [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups") for instructions on how to add users to groups.
+
+*   Add all users that will use Kodi to the `uucp` and `lock` [groups](/index.php/Groups "Groups").
+*   If you are [running kodi-standalone](#Running_standalone), add the user `kodi` to the `uucp` and `lock` [groups](/index.php/Groups "Groups").
+
+**Note:** Trying to use the USB-CEC without belonging to above groups may lead to problems, including Kodi crashes, so make sure the correct user belongs to both groups.
+
+## Sharing media and a centralized database across multiple nodes
 
 If multiple PCs on the same network are running Kodi, they can be configured to share a single media library (video and music). The advantage of this is media and key metadata are stored in one place, and are shared/updated by all nodes on the network. For example, users of this setup can:
 
@@ -181,7 +228,7 @@ As well, the media itself can be located in one space thus allowing a lighter fo
 Several things are needed for this to work:
 
 *   Network exposed media (via protocols that Kodi can read, e.g. NFS or Samba).
-*   A MySQL server (Arch uses [mariadb](https://www.archlinux.org/packages/?name=mariadb)).
+*   A [MySQL](/index.php/MySQL "MySQL") server.
 
 **Note:** The following guide is only an example of one configuration and is not meant to be limiting but illustrative. Key steps are shown but a detailed discussion is not offered.
 
@@ -193,9 +240,9 @@ These assumptions are used for the guide, substitute to reflect your setup:
 *   Each Kodi box is referred to as a node.
 *   The Linux user running Kodi is 'kodi' on all nodes.
 
-For additional info, refer to the [official Kodi wiki](http://kodi.wiki/index.php?title=HOW-TO:Share_libraries_using_MySQL/Setting_up_MySQL#tab=Arch_Linux).
+For additional info, refer to the [official Kodi wiki](https://kodi.wiki/view/MySQL/Setting_up_MySQL#Arch_Linux).
 
-#### NFS server export example
+### NFS server export example
 
 This section provides an example using exports, see [NFS](/index.php/NFS "NFS") for install and usage.
 
@@ -232,7 +279,7 @@ Share the content in `/etc/exports`:
 
 ```
 
-#### Install and setup the MySQL server
+### Install and setup the MySQL server
 
 See [MariaDB](/index.php/MariaDB "MariaDB") for installation and configuration instructions.
 
@@ -248,11 +295,11 @@ MariaDB [(none)]> \q
 
 ```
 
-#### Setup Kodi to use the MySQL library and the NFS exports
+### Setup Kodi to use the MySQL library and the NFS exports
 
 Since this example makes use of NFS shares, an optional dependency of Kodi is now required to access them. Ensure that each of the Kodi nodes has [libnfs](https://www.archlinux.org/packages/?name=libnfs) installed.
 
-##### Setup Kodi to use the common MySQL database
+#### Setup Kodi to use the common MySQL database
 
 To tell Kodi to use the common database, insure that Kodi is not running, then create the following file:
 
@@ -285,87 +332,23 @@ To tell Kodi to use the common database, insure that Kodi is not running, then c
 
 **Tip:** If using [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/), the default for the profile is `/var/lib/kodi/.kodi` and be sure to chown the newly created file to the kodi user and group, i.e. `chown -R kodi:kodi /var/lib/kodi`
 
-##### Setup network shares
+#### Setup network shares
 
-Load Kodi and define the network shares that correspond to the exports by browsing to the following within the interface:
-
-```
-Video>Files>Add Videos>Browse>Network Filesystem(NFS)
-
-```
+Load Kodi and define the network shares that correspond to the exports by browsing to the following within the interface *Video > Files > Add Videos > Browse > Network Filesystem(NFS)*.
 
 After a few seconds, the IP address corresponding to the NFS server should appear.
 
-Select `/srv/nfs/shows` from the list of share and then "OK" from the menu on the right. Assign this share the category of "TV Shows" to setup the appropriate scraper and to populate the MySQL database with the correct metadata.
+Select `/srv/nfs/shows` from the list of share and then *OK* from the menu on the right. Assign this share the category of *TV Shows* to setup the appropriate scraper and to populate the MySQL database with the correct metadata.
 
 Repeat this browsing process for the "movies" and "music" and then exit Kodi once properly configured. At this point, the MySQL tables should have been created.
 
-**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one **must** setup the media using the nfs shares only!
+**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one **must** setup the media using the nfs shares only.
 
-#### Cloning the configuration to other nodes on the network
+### Cloning the configuration to other nodes on the network
 
 To set up another Kodi node on the network to use this library, simply copy `~/.kodi/userdata/advancedsettings.xml` to that box and restart Kodi. There is NO need to copy any other files or to do any other setup steps on the new kodi node. The nfs exports, the metadata for the programming, any stop/start times, view status, etc. are all stored in the MySQL tables.
 
 **Note:** One can optionally define other media sources that are not managed by kodi database, but they will be specific to that particular node.
-
-### Using a remote control
-
-As Kodi is geared toward being a remote-controlled media center via an official app, physical remote control, or USB/bluetooth keyboard/mouse.
-
-#### Using the Android or iOS app
-
-Both Android and iOS users can use the official app (currently free of charge) to control kodi once it is correctly setup to do so. Steps to configure both Kodi and the app are detailed on the [Official Kodi Remote](http://kodi.wiki/view/Official_Kodi_Remote) page.
-
-#### Using a physical remote control
-
-Any PC with a supported IR receiver/remote, can use [LIRC](/index.php/LIRC "LIRC") or even kernel supported modules to drive it. Configuring specific remotes with lirc is covered on the [LIRC](/index.php/LIRC "LIRC") article.
-
-To work properly with Kodi, a file that maps the lirc events to Kodi keypresses is needed. Create an [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file at `~/.kodi/userdata/Lircmap.xml` (note the capital 'L').
-
-**Note:** Users running Kodi started with [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) will find the kodi home (~) under `/var/lib/kodi` and should substitute this in for the shortcut above. Also make sure that if creating this file as the root user, it gets proper ownership as kodi:kodi when finished.
-
-Lircmap.xml format is as follows:
-
-```
-<lircmap>
-  <remote device="devicename">
-      <XBMC_button>LIRC_button</XBMC_button>
-      ...
-  </remote>
-</lircmap>
-```
-
-*   **Device Name** is whatever LIRC calls the remote. This is set using the **Name** directive in lircd.conf and can be viewed by running `$ irw` and pressing a few buttons on the remote. IRW will report the name of the button pressed and the name of the remote will appear on the end of the line.
-
-*   **XBMC_button** is the name of the button as defined in [keymap.xml](http://kodi.wiki/index.php?title=Keymap.xml).
-
-*   **LIRC_button** is the name as defined in `lircd.conf`. If lircd.conf was autogenerated using `# irrecord`, these are the names selected for the buttons. Refer back to [LIRC](/index.php/LIRC "LIRC") for more information.
-
-*   A very thorough [Lircmap.xml page](http://kodi.wiki/index.php?title=Lircmap.xml) hosted on the [Kodi Wiki](http://kodi.wiki/index.php?title=Main_Page) should be consulted for more help and information on this subject as this is out of scope of this article.
-
-### HDMI-CEC with Pulse Eight USB-CEC
-
-With a supported [USB-CEC adapter](http://www.pulse-eight.com/store/products/104-usb-hdmi-cec-adapter.aspx), Kodi can be used to automatically turn on and off your TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control.
-
-Install `libcec` (or any of the appropriate for the Arch ARM: `libcec-rpi`, `libcec-cubox`, `libcec-imx6`).
-
-When connected, the USB-CEC's `/dev` entry (usually `/dev/ttyACM*`) will default to being owned by the `uucp` group, so in order to use the device the user running Kodi needs to belong to that group. The user also needs to belong to the `lock` group, otherwise Kodi will be unable to connect to the device. To add a user to both groups, run
-
-```
-# usermod -aG uucp,lock [username]
-
-```
-
-If more than one user uses Kodi, repeat the command for all those users. If, for example, one is using `kodi-standalone`, the relevant command is
-
-```
-# usermod -aG uucp,lock kodi
-
-```
-
-Remember that modifying the groups of any logged in users means those users need to log out and login again in order for the changes to take effect.
-
-**Note:** Trying to use the USB-CEC without belonging to above groups may lead to problems, including Kodi crashes, so make sure the correct user belongs to both groups.
 
 ## Tips and Tricks
 
@@ -385,7 +368,7 @@ Restart Kodi and enable the hardware backend(s) in Playback under Settings.
 
 ### Adjusting CD/DVD drive speed
 
-The `eject` program from the `util-linux` package does a nice job for this, but its setting is cleared as soon as the media is changed.
+The *eject* program from the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package does a nice job for this, but its setting is cleared as soon as the media is changed.
 
 This udev-rule reduces the speed permanently:
 
@@ -413,7 +396,7 @@ Kodi has a webservice that allows interaction through a web-interface. By defaul
 
 ### Using ALSA
 
-If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using ALSA directly by starting Kodi with the `AE_SINK=ALSA` environment variable. The Kodi wiki for NUC devices provides [instructions](http://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)
+If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using [ALSA](/index.php/ALSA "ALSA") directly by starting Kodi with the `AE_SINK=ALSA` [environment variable](/index.php/Environment_variable "Environment variable"). The Kodi wiki for NUC devices provides [instructions](https://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)
 
 If using `kodi-standalone`, change the `APP` variable in `/usr/bin/kodi-standalone` to
 
@@ -429,14 +412,6 @@ To allow your receiver to decode the audio you can enable passthrough. This is u
 **Warning:** PulseAudio requires the output in Kodi to be set to 2 channel. Audio encoded in formats not passed through will only be sent as stereo audio. Use ALSA to support passthrough and passing decoded surround audio signals
 
 **Note:** PulseAudio does not support TrueHD, DTS-MA, or Atmos passthrough. Use ALSA if you want to pass these to your receiver
-
-### Raspberry Pi (all generations)
-
-Kodi is available on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips to consider:
-
-*   [Install](/index.php/Install "Install") either the *kodi-rbp* (stable) or *kodi-rbp-git* (dev) package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
-*   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase the value of the `gpu_mem` in `/boot/config.txt`. A value of at least 128 MB is recommended for RPi version 1 while a value of at least 256 MB is recommended for RPi2 and 3.
-*   All packages provide a [systemd](/index.php/Systemd "Systemd") service to run in standalone mode.
 
 #### Fix for delayed startup on wifi
 
@@ -457,15 +432,6 @@ After=remote-fs.target network-online.target
 Wants=network-online.target
 
 ```
-
-#### TV is not detected unless powered on first
-
-Some TVs (LG brand for example) only report their capabilities via EDID through HDMI when powered on **before** the RPi. The effects of this can manifest in one of two ways:
-
-1.  Despite being connected, the TV will be unable to detect a signal from the HDMI source until the RPi is rebooted.
-2.  The signal will be detected but incorrectly by the RPi to the point of the GUI looking distorted when compared to having the TV on first, then rebooting the RPi.
-
-Both conditions are easily fixed. See: [Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first](http://kodi.wiki/view/Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first).
 
 ### Run kodi in a window manager
 
@@ -515,7 +481,7 @@ In case of an error the first point to start investigation can be `~/.kodi/temp/
 
 ### Fullscreen mode stretches Kodi across multiple displays
 
-For a multi-monitor setup, Kodi may default to stretching across all screens. One can restrict the fullscreen mode to one display by setting the environment variable SDL_VIDEO_FULLSCREEN_HEAD to the number of the desired target display. For example, having Kodi show up on display 0, add the following line to the Kodi user's `~/.bashrc` configuration:
+For a multi-monitor setup, Kodi may default to stretching across all screens. One can restrict the fullscreen mode to one display by setting the [environment variable](/index.php/Environment_variable "Environment variable") `SDL_VIDEO_FULLSCREEN_HEAD` to the number of the desired target display. For example, having Kodi show up on display 0, add the following line to the Kodi user's `~/.bashrc` configuration:
 
 ```
 SDL_VIDEO_FULLSCREEN_HEAD=0
@@ -536,26 +502,27 @@ The [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package is used to
 
 ### H.264 playback is using only a single core
 
-**Tip:** By default, press `O` during playback to show codec information and CPU usage. More information about this overlay can be found [here](http://kodi.wiki/view/Codecinfo).
+**Tip:** By default, press `O` during playback to show codec information and CPU usage. More information about this overlay can be found at [https://kodi.wiki/view/Codecinfo](https://kodi.wiki/view/Codecinfo).
 
-If your setup does not or cannot make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](http://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661). To achieve this, go to `System Settings` and then to `Video`. Set the `settings level` to `Advanced` or `Expert` and go to `Acceleration`. There, set `Decoding method` to `software`.
+If your setup does not or cannot make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](https://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661).
+
+To achieve this, go to *System Settings > Video*. Set the `settings level` to `Advanced` or `Expert`. Then go to *Acceleration* and set `Decoding method` to `software`.
 
 ### Kodi hangs on exit, fully occupying one CPU core, UI unresponsive
 
 This problem can arise with third-party plugins installed, there is some issue with their termination[[1]](https://www.linuxquestions.org/questions/linux-software-2/kodi-freezes-on-exit-kodi-bin-won't-die-4175588180/),[[2]](https://www.reddit.com/r/archlinux/comments/5029oo/kodi_freezes_on_exit_kodibin_wont_die/).
 
-Workaround: find proper UI description file (*DialogButtonMenu.xml*) and tweak exit button type from internal Kodi's *Quit()* function call to sending signal from outside system to Kodi. Here is one-liner that makes modifications to any skin from your default Kodi package:
+Workaround: find proper UI description file (`DialogButtonMenu.xml`) and tweak exit button type from internal Kodi's `Quit()` function call to sending signal from outside system to Kodi. Here is one-liner that makes modifications to any skin from your default Kodi package:
 
 ```
-find /usr/share/kodi/addons/skin.* -name DialogButtonMenu.xml | xargs sudo sed -i "s%<onclick>Quit()</onclick>%<onclick>System.Exec ("killall --signal SIGHUP kodi.bin")</onclick>%"
+# find /usr/share/kodi/addons/skin.* -name DialogButtonMenu.xml -exec sed -i 's%<onclick>Quit()</onclick>%<onclick>System.Exec ("killall --signal SIGHUP kodi.bin")</onclick>%' {} \;
 
 ```
 
 ## See also
 
-*   [Kodi Wiki](http://kodi.wiki/index.php?title=Main_Page) - Excellent resource with much information about Arch Linux specifically
+*   [Kodi Wiki](https://kodi.wiki/view/Main_Page) - Excellent resource with much information about Arch Linux specifically
+*   [Wikipedia:Kodi (software)](https://en.wikipedia.org/wiki/Kodi_(software) "wikipedia:Kodi (software)")
 *   [http://superrepo.org/](http://superrepo.org/) - xbmc Plug-in library
 *   [http://www.hdpfans.com/thread-329076-1-1.html](http://www.hdpfans.com/thread-329076-1-1.html) - Kodi/xbmc Chinese plug-in library installation method
-*   [https://github.com/taxigps/xbmc-addons-chinese](https://github.com/taxigps/xbmc-addons-chinese) - xbmc-addons-chinese
-
-**Note:** xbmc-addons-chinese:Addon scripts, plugins, and skins for XBMC Media Center. Special for chinese laguage.
+*   [https://github.com/taxigps/xbmc-addons-chinese](https://github.com/taxigps/xbmc-addons-chinese) - xbmc-addons-chinese: Addon scripts, plugins, and skins for XBMC Media Center. Special for chinese laguage.

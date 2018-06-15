@@ -311,9 +311,13 @@ FastCGI technology is introduced into nginx to work with many external tools, e.
 
 #### PHP implementation
 
-[PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for [PHP](/index.php/PHP "PHP"). [Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) packages and configure PHP as described on the [PHP](/index.php/PHP "PHP") page.
+[PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for [PHP](/index.php/PHP "PHP").
 
-The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the systemd unit `php-fpm.service`.
+[Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and make sure [PHP](/index.php/PHP "PHP") has been installed and configured correctly.
+
+The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`. For basic usage the default configuration should be sufficient.
+
+Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `php-fpm.service`.
 
 **Note:**
 
@@ -401,7 +405,7 @@ You need to [restart](/index.php/Restart "Restart") the `php-fpm.service` and `n
 To test the FastCGI implementation, create a new PHP file inside the `root` folder containing:
 
 ```
-<?php var_export($_SERVER)?>
+<?php phpinfo(); ?>
 
 ```
 
@@ -892,7 +896,7 @@ When starting the `nginx.service`, the process might log the message:
 
 ```
 
-To fix this warning, inside the `http` block include the following:
+To fix this warning, increase the values for these keys inside the `http` block [[4]](http://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_max_size) [[5]](http://nginx.org/en/docs/http/server_names.html):
 
  `/etc/nginx/nginx.conf` 
 ```

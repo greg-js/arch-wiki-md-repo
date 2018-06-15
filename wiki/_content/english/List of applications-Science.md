@@ -23,21 +23,22 @@
         *   [1.3.3 Periodic table](#Periodic_table)
         *   [1.3.4 Biochemistry](#Biochemistry)
         *   [1.3.5 Image manipulation](#Image_manipulation)
-    *   [1.4 Astronomy](#Astronomy)
-    *   [1.5 Engineering](#Engineering)
-        *   [1.5.1 Computer-aided design](#Computer-aided_design)
-    *   [1.6 Physics](#Physics)
-        *   [1.6.1 Electronics](#Electronics)
-            *   [1.6.1.1 Digital logic](#Digital_logic)
-            *   [1.6.1.2 HDL](#HDL)
-            *   [1.6.1.3 MCU IDE](#MCU_IDE)
-            *   [1.6.1.4 Schematic capture editor](#Schematic_capture_editor)
-        *   [1.6.2 Physics simulation](#Physics_simulation)
-        *   [1.6.3 Unit conversion](#Unit_conversion)
-    *   [1.7 Geography](#Geography)
-    *   [1.8 Communication systems](#Communication_systems)
-        *   [1.8.1 Amateur radio](#Amateur_radio)
-    *   [1.9 Simulation modeling](#Simulation_modeling)
+    *   [1.4 Meteorology](#Meteorology)
+    *   [1.5 Astronomy](#Astronomy)
+    *   [1.6 Engineering](#Engineering)
+        *   [1.6.1 Computer-aided design](#Computer-aided_design)
+    *   [1.7 Physics](#Physics)
+        *   [1.7.1 Electronics](#Electronics)
+            *   [1.7.1.1 Digital logic](#Digital_logic)
+            *   [1.7.1.2 HDL](#HDL)
+            *   [1.7.1.3 MCU IDE](#MCU_IDE)
+            *   [1.7.1.4 Schematic capture editor](#Schematic_capture_editor)
+        *   [1.7.2 Physics simulation](#Physics_simulation)
+        *   [1.7.3 Unit conversion](#Unit_conversion)
+    *   [1.8 Geography](#Geography)
+    *   [1.9 Communication systems](#Communication_systems)
+        *   [1.9.1 Amateur radio](#Amateur_radio)
+    *   [1.10 Simulation modeling](#Simulation_modeling)
 
 ## Science
 
@@ -361,6 +362,24 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
 
+### Meteorology
+
+*   **Gis Weather** — Customizable weather forecast desktop widget.
+
+	[https://sourceforge.net/projects/gis-weather/](https://sourceforge.net/projects/gis-weather/) || [gis-weather](https://aur.archlinux.org/packages/gis-weather/)
+
+*   **GNOME Weather** — Small application for GNOME that allows you to monitor the current weather conditions for your city, or anywhere in the world, and to access updated forecasts provided by various internet services.
+
+	[https://wiki.gnome.org/Apps/Weather](https://wiki.gnome.org/Apps/Weather) || [gnome-weather](https://www.archlinux.org/packages/?name=gnome-weather)
+
+*   **meteo-qt** — System tray application for weather status information.
+
+	[https://github.com/dglent/meteo-qt](https://github.com/dglent/meteo-qt) || [meteo-qt](https://aur.archlinux.org/packages/meteo-qt/)
+
+*   **Xfce Weather Panel Plugin** — Weather forecast plugin for the Xfce4 panel.
+
+	[https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin) || [xfce4-weather-plugin](https://www.archlinux.org/packages/?name=xfce4-weather-plugin)
+
 ### Astronomy
 
 *   **[Celestia](https://en.wikipedia.org/wiki/Celestia "wikipedia:Celestia")** — 3D astronomy simulation program that allows users to travel through an extensive universe, modeled after reality, at any speed, in any direction and at any time in history.
@@ -620,6 +639,10 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 *   **QGIS** — Geographic Information System (GIS) that supports vector, raster & database formats.
 
 	[https://qgis.org/](https://qgis.org/) || [qgis](https://www.archlinux.org/packages/?name=qgis)
+
+*   **[Subsurface](https://en.wikipedia.org/wiki/Subsurface_(software) "wikipedia:Subsurface (software)")** — Diving logbook to keep track of your dives by logging dive locations (with GPS coordinates), weights and exposure protection used, divemasters and dive buddies, etc.
+
+	[https://subsurface-divelog.org/](https://subsurface-divelog.org/) || [subsurface](https://www.archlinux.org/packages/?name=subsurface)
 
 *   **Viking** — GTK+2 application to manage GPS data.
 

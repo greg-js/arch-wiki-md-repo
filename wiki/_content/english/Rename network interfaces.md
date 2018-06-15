@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Network configuration#Change device name](/index.php/Network_configuration#Change_device_name "Network configuration")
+*   [Network configuration#Change interface name](/index.php/Network_configuration#Change_interface_name "Network configuration")

@@ -15,8 +15,7 @@ Related articles
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Reload File](#Reload_File)
     *   [4.2 Remote Interface](#Remote_Interface)
-    *   [4.3 Clean up history](#Clean_up_history)
-    *   [4.4 Inverse search using Synctex and Vim/Emacs](#Inverse_search_using_Synctex_and_Vim.2FEmacs)
+    *   [4.3 Inverse search using Synctex and Vim/Emacs](#Inverse_search_using_Synctex_and_Vim.2FEmacs)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -115,16 +114,6 @@ There are eight remote commands:
 *   `gotord <file-name> <remote-destination>` - goto named destination within the other document
 *   `rect <pageno> <color> <x0> <y0> <x1> <y1>` - draw a rectangle
 *   `activatewin` - raise and switch to llpp's window
-
-### Clean up history
-
-Files that no longer exist can be cleaned from llpp's history by using a "garbage collecting" script, such as the upstream python2 script [here](http://repo.or.cz/w/llpp.git/blob/HEAD:/misc/gc.py). Use the `-gc` flag:
-
-```
-$ llpp -gc /path/to/script
-gc.py done.
-
-```
 
 ### Inverse search using Synctex and Vim/Emacs
 
