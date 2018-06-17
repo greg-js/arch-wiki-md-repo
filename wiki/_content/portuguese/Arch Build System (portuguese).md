@@ -227,7 +227,7 @@ Isso vai atualizar uma cópia de trabalho existente de *nome-pacote* para a revi
 Você também pode especificar uma data. Se nenhuma revisão naquele dia existir, svn vai pegar o pacote mais recente antes daquele tempo. O seguinte exemplo faz checkout da revisão de 2009-03-03:
 
 ```
-$ svn update -r{20090303} *nome-pacote*
+ $ svn update -r'{20090303}' *nome-pacote*
 
 ```
 

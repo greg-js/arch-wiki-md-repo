@@ -10,40 +10,42 @@ Artigos relacionados
 *   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [Color output in console](/index.php/Color_output_in_console "Color output in console")
+*   [Archiving and compression tools](/index.php/Archiving_and_compression_tools "Archiving and compression tools")
 
 Este artigo trata dos utilitários chamados *core* ("principais") em um sistema GNU/Linux, como *less*, *ls* e *grep*. O escopo deste artigo inclui, mas não está limitado a, os utilitários incluídos no pacote GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). O que se segue são várias dicas e truques e outras informações úteis relacionadas a esses utilitários.
 
 ## Contents
 
 *   [1 Comandos básicos](#Comandos_b.C3.A1sicos)
-*   [2 cat](#cat)
-*   [3 chmod](#chmod)
-*   [4 chown](#chown)
-*   [5 dd](#dd)
-*   [6 find](#find)
-*   [7 grep](#grep)
-*   [8 iconv](#iconv)
-    *   [8.1 Converter um arquivo no lugar](#Converter_um_arquivo_no_lugar)
-*   [9 ip](#ip)
-*   [10 less](#less)
-*   [11 locate](#locate)
+*   [2 awk](#awk)
+*   [3 cat](#cat)
+*   [4 chmod](#chmod)
+*   [5 chown](#chown)
+*   [6 dd](#dd)
+*   [7 find](#find)
+*   [8 grep](#grep)
+*   [9 iconv](#iconv)
+    *   [9.1 Converter um arquivo no lugar](#Converter_um_arquivo_no_lugar)
+*   [10 ip](#ip)
+*   [11 less](#less)
     *   [11.1 Vim como alternativa de paginador](#Vim_como_alternativa_de_paginador)
-*   [12 ls](#ls)
-    *   [12.1 Formato longo](#Formato_longo)
-    *   [12.2 Nomes de arquivos contendo espaços envoltos por aspas](#Nomes_de_arquivos_contendo_espa.C3.A7os_envoltos_por_aspas)
-*   [13 lsblk](#lsblk)
-*   [14 mkdir](#mkdir)
-*   [15 mv](#mv)
-*   [16 od](#od)
-*   [17 pv](#pv)
-*   [18 rm](#rm)
-*   [19 sed](#sed)
-*   [20 seq](#seq)
-*   [21 ss](#ss)
-*   [22 tar](#tar)
-*   [23 which](#which)
-*   [24 wipefs](#wipefs)
-*   [25 Veja também](#Veja_tamb.C3.A9m)
+*   [12 locate](#locate)
+*   [13 ls](#ls)
+    *   [13.1 Formato longo](#Formato_longo)
+    *   [13.2 Nomes de arquivos contendo espaços envoltos por aspas](#Nomes_de_arquivos_contendo_espa.C3.A7os_envoltos_por_aspas)
+*   [14 lsblk](#lsblk)
+*   [15 mkdir](#mkdir)
+*   [16 mv](#mv)
+*   [17 od](#od)
+*   [18 pv](#pv)
+*   [19 rm](#rm)
+*   [20 sed](#sed)
+*   [21 seq](#seq)
+*   [22 ss](#ss)
+*   [23 tar](#tar)
+*   [24 which](#which)
+*   [25 wipefs](#wipefs)
+*   [26 Veja também](#Veja_tamb.C3.A9m)
 
 ## Comandos básicos
 
@@ -71,9 +73,27 @@ A tabela a seguir lista os comandos básicos do shell, cada usuário Linux deve 
 | killall | Mata todas as instâncias em execução de um processo | [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
 | ss -at | Exibe uma lista de sockets TCP abertos | [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
 
+## awk
+
+[AWK](https://en.wikipedia.org/wiki/pt:AWK "wikipedia:pt:AWK") é uma linguagem de varredura e processamento de padrão. Há várias implementações:
+
+*   **gawk** — A versão GNU do awk, veja [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1).
+
+	[https://www.gnu.org/software/gawk/](https://www.gnu.org/software/gawk/) || [gawk](https://www.archlinux.org/packages/?name=gawk) (parte do [base](https://www.archlinux.org/groups/x86_64/base/))
+
+*   **nawk** — A única e verdadeira implementação do AWK, veja [nawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nawk.1).
+
+	[https://www.cs.princeton.edu/~bwk/btl.mirror/](https://www.cs.princeton.edu/~bwk/btl.mirror/) || [nawk](https://www.archlinux.org/packages/?name=nawk)
+
+*   **mawk** — Uma implementação muito rápida do AWK.
+
+	[http://invisible-island.net/mawk/](http://invisible-island.net/mawk/) || [mawk](https://aur.archlinux.org/packages/mawk/)
+
+*   [BusyBox](/index.php/BusyBox "BusyBox") também inclui uma implementação do AWK.
+
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/pt:cat_(Unix) "w:pt:cat (Unix)") é um utilitário padrão do Unix que concatena arquivos para a saída padrão.
+[cat](https://en.wikipedia.org/wiki/pt:cat_(Unix) é um utilitário padrão do Unix que concatena arquivos para a saída padrão.
 
 *   Porque o *cat* não é embutido no shell, em muitas ocasiões você pode achar mais conveniente usar um [redirecionamento](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por exemplo em scripts, ou se você se preocupa muito com desempenho. De fato, `< *arquivo*` faz o mesmo que `cat *arquivo*`.
 
@@ -108,13 +128,21 @@ Veja [File permissions and attributes#Changing ownership](/index.php/File_permis
 
 ## dd
 
-[dd](https://en.wikipedia.org/wiki/pt:dd_(Unix) "w:pt:dd (Unix)") é um utilitário para o Unix e sistemas operacionais similares Unix, cujo principal objetivo é converter e copiar um arquivo.
+[dd](https://en.wikipedia.org/wiki/pt:dd_(Unix) é um utilitário para o Unix e sistemas operacionais similares Unix, cujo principal objetivo é converter e copiar um arquivo.
 
 Similarmente ao *cp*, por padrão o *dd* faz cópia bit a bit do arquivo, mas com recursos de controle de fluxo de E/S de baixo nível.
 
-**Dica:** Por padrão, *dd* emite nada até a tarefa está finalizada. Para monitorar o progresso da operação, adicione a opção `status=progress` ao comando.
+Alguns aplicativos notáveis de *dd* são:
+
+*   [Disk cloning#Using dd](/index.php/Disk_cloning#Using_dd "Disk cloning"),
+
+*   Patches de arquivos binários: digamos que se queira substituir offset `0x123AB` de um arquivo com a sequência hexadecimal `FF C0 14`, isso pode ser feito com a linha de comando: `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=*/caminho/para/arquivo*` 
 
 Para mais informações, veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) ou da [documentação completa](https://www.gnu.org/software/coreutils/dd).
+
+**Dica:** Por padrão, *dd* emite nada até a tarefa está finalizada. Para monitorar o progresso da operação, adicione a opção `status=progress` ao comando.
+
+**Atenção:** Deve-se ter muito cuidado ao usar *dd*, pois, assim como qualquer comando desse tipo, ele pode destruir dados de forma irreversível.
 
 ## find
 
@@ -124,19 +152,22 @@ Para mais informações, veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man
 
 Provavelmente se esperaria que um comando *find* levasse como argumento um nome de arquivo e pesquisasse no sistema de arquivos para arquivos que correspondessem a esse nome. Para um programa que faz exatamente isso, veja [#locate](#locate) abaixo.
 
-Em vez disso, find leva um conjunto de diretórios e combina cada arquivo abaixo deles contra um conjunto de expressões. Este design permite alguns "one-liners" muito poderosos que não seriam possíveis usando o design "intuitivo" descrito acima. Veja [UsingFind](http://mywiki.wooledge.org/UsingFind) para detalhes de uso.
+Em vez disso, find leva um conjunto de diretórios e combina cada arquivo abaixo deles contra um conjunto de expressões. Este design permite alguns "one-liners" muito poderosos que não seriam possíveis usando o design "intuitivo" descrito acima. Veja [GregsWiki:UsingFind](https://mywiki.wooledge.org/UsingFind "gregswiki:UsingFind") para detalhes de uso.
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/pt:grep "w:pt:grep") (de *g/re/p*, *global/regular expression/print*, do [ed](https://en.wikipedia.org/wiki/pt:Ed_(software) "w:pt:Ed (software)")) é um utilitário de pesquisa de texto de linha de comando originalmente escrito para Unix. O comando *grep* pesquisa arquivos ou entrada padrão para linhas correspondendo a uma expressão regular dada, e imprime essas linhas para a saída padrão.
+[grep](https://en.wikipedia.org/wiki/pt:grep "wikipedia:pt:grep") (de *g/re/p*, *global/regular expression/print*, do [ed](https://en.wikipedia.org/wiki/pt:Ed_(software) "wikipedia:pt:Ed (software)")) é um utilitário de pesquisa de texto de linha de comando originalmente escrito para Unix. O comando *grep* pesquisa arquivos ou entrada padrão para linhas correspondendo a uma expressão regular dada, e imprime essas linhas para a saída padrão.
 
 *   Lembre-se que *grep* trata de arquivos, então um construto como `cat *arquivo* | grep *padrão*` pode ser substituído com `grep *padrão* *arquivo*`
 *   Há alternativas ao *grep* otimizadas para código fonte em VCS, tal como [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) e [ack](https://www.archlinux.org/packages/?name=ack).
 *   Para incluir números de linha de arquivo na saída, use a opção `-n`.
+*   *grep* também pode ser usado para pesquisa hexadecimal em um arquivo binário, para procurar por, digamos, a sequência `A1 F2` em um arquivo, a linha de comando é: `$ LANG=C grep --text --perl-regexp "\xA1\xF2" */caminho/para/arquivo*` 
 
 **Nota:** Alguns comandos enviam suas saídas para [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) e o grep não tem aparente efeito. Neste caso, redirecione *stderr* para *stdout* com `*comando* 2>&1 | grep *args*` ou (par Bash 4) `*comando* |& grep *args*`. Veja também [Redirecionamento de E/S](http://www.tldp.org/LDP/abs/html/io-redirection.html) (inglês).
 
 Para suporte a cores, veja [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
+
+Veja [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1) para mais detalhes.
 
 ## iconv
 
@@ -166,7 +197,7 @@ Veja [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) para detal
 
 ## ip
 
-[ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") permite que você mostre informações sobre dispositivos de rede, endereços IP, tabelas de roteamento e outros objetos no Linux. Software de [IP](https://en.wikipedia.org/wiki/pt:Protocolo_de_Internet "w:pt:Protocolo de Internet"). Ao anexar vários comandos, você também pode manipular ou configurar a maioria desses objetos.
+[ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") permite que você mostre informações sobre dispositivos de rede, endereços IP, tabelas de roteamento e outros objetos no Linux. Software de [IP](https://en.wikipedia.org/wiki/pt:Protocolo_de_Internet "wikipedia:pt:Protocolo de Internet"). Ao anexar vários comandos, você também pode manipular ou configurar a maioria desses objetos.
 
 **Nota:** O utilitário *ip* é fornecido pelo pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2), que está incluído no grupo [base](https://www.archlinux.org/groups/x86_64/base/).
 
@@ -197,19 +228,9 @@ O artigo [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Con
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/pt:less "w:pt:less") é um programa paginador de terminal usado para visualizar os conteúdos de um arquivo texto uma tela por vez. Embora parecido com outros paginadores, como o [more](https://en.wikipedia.org/wiki/pt:more_(comando) "w:pt:more (comando)") e [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* oferece uma interface mais avançada e um [conjunto de recursos](http://www.greenwoodsoftware.com/less/faq.html) mais completo.
+[less](https://en.wikipedia.org/wiki/pt:less e [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* oferece uma interface mais avançada e um [conjunto de recursos](http://www.greenwoodsoftware.com/less/faq.html) mais completo.
 
 Veja [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") para alternativas.
-
-## locate
-
-[Instale](/index.php/Instale "Instale") o pacote [mlocate](https://www.archlinux.org/packages/?name=mlocate). O pacote contém uma unidade `updatedb.timer`, que invoca uma atualização do banco de dados a cada dia. O temporizador é ativado logo após a instalação, [inicie](/index.php/Inicie "Inicie") manualmente se você quiser usá-lo antes de reiniciar. Você também pode executar manualmente *updatedb* como root a qualquer momento. Por padrão, os caminhos como `/media` e `/mnt` são ignorados, portanto, *locate* pode não descobrir arquivos em dispositivos externos. Veja a [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) para obter detalhes.
-
-O comando *locate* é uma ferramenta Unix comum para encontrar rapidamente arquivos pelo nome. Ele oferece melhorias de velocidade ao longo da ferramenta [find](https://en.wikipedia.org/wiki/pt:Find "w:pt:Find") pesquisando um arquivo de banco de dados pré-construído, em vez do sistema de arquivos diretamente. A desvantagem dessa abordagem é que as mudanças feitas desde a construção do arquivo de banco de dados não podem ser detectadas pelo *locate*.
-
-Antes que o *locate* possa ser usado, o banco de dados precisará ser criado. Para fazer isso, execute `updatedb` como root.
-
-Veja também [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/) ("Como locate funciona e rescreva-o em um minuto").
 
 ### Vim como alternativa de paginador
 
@@ -227,9 +248,19 @@ alias less=$PAGER
 
 Agora, programas que usam a variável de ambiente `PAGER`, como o [git](/index.php/Git "Git"), vão usar *vim* como paginador.
 
+## locate
+
+[Instale](/index.php/Instale "Instale") o pacote [mlocate](https://www.archlinux.org/packages/?name=mlocate). O pacote contém uma unidade `updatedb.timer`, que invoca uma atualização do banco de dados a cada dia. O temporizador é ativado logo após a instalação, [inicie](/index.php/Inicie "Inicie") manualmente se você quiser usá-lo antes de reiniciar. Você também pode executar manualmente *updatedb* como root a qualquer momento. Por padrão, os caminhos como `/media` e `/mnt` são ignorados, portanto, *locate* pode não descobrir arquivos em dispositivos externos. Veja a [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) para obter detalhes.
+
+O comando *locate* é uma ferramenta Unix comum para encontrar rapidamente arquivos pelo nome. Ele oferece melhorias de velocidade ao longo da ferramenta [find](https://en.wikipedia.org/wiki/pt:Find "wikipedia:pt:Find") pesquisando um arquivo de banco de dados pré-construído, em vez do sistema de arquivos diretamente. A desvantagem dessa abordagem é que as mudanças feitas desde a construção do arquivo de banco de dados não podem ser detectadas pelo *locate*.
+
+Antes que o *locate* possa ser usado, o banco de dados precisará ser criado. Para fazer isso, execute `updatedb` como root.
+
+Veja também [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/) ("Como locate funciona e rescreva-o em um minuto").
+
 ## ls
 
-[ls](https://en.wikipedia.org/wiki/pt:ls "w:pt:ls") lista conteúdos de diretório.
+[ls](https://en.wikipedia.org/wiki/pt:ls "wikipedia:pt:ls") lista conteúdos de diretório.
 
 Veja `info ls` ou [o manual online](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) para mais informações.
 
@@ -275,7 +306,7 @@ Por padrão, nomes de arquivos e diretórios que contêm espaços são exibidos 
 
 ## lsblk
 
-[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) vai mostrar todos os [dispositivos de blocos](https://en.wikipedia.org/wiki/pt:Arquivo_de_dispositivo#Dispositivos_de_bloco "w:pt:Arquivo de dispositivo") disponíveis junto com seus esquemas de particionamento, por exemplo:
+[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) vai mostrar todos os [dispositivos de blocos](https://en.wikipedia.org/wiki/pt:Arquivo_de_dispositivo#Dispositivos_de_bloco "wikipedia:pt:Arquivo de dispositivo") disponíveis junto com seus esquemas de particionamento, por exemplo:
 
  `$ lsblk -f` 
 ```
@@ -293,7 +324,7 @@ Outros tipos comuns de dispositivos de blocos incluem, por exemplo, `mmcblk` par
 
 ## mkdir
 
-[mkdir](https://en.wikipedia.org/wiki/pt:mkdir "w:pt:mkdir") cria diretórios.
+[mkdir](https://en.wikipedia.org/wiki/pt:mkdir "wikipedia:pt:mkdir") cria diretórios.
 
 Para criar um diretório e toda sua hierarquia, a opção `-p` é usada; do contrário, um erro é impresso. Como os usuários devem saber o que eles querem, a opção `-p` pode ser usada como padrão:
 
@@ -310,7 +341,7 @@ Alterar o modo de um diretório recém-criado usando *chmod* não é necessário
 
 ## mv
 
-[mv](https://en.wikipedia.org/wiki/pt:mv_(Unix) "w:pt:mv (Unix)") move e renomeia arquivos e diretórios.
+[mv](https://en.wikipedia.org/wiki/pt:mv_(Unix) move e renomeia arquivos e diretórios.
 
 Para limitar dano potencial causado pelo comando, use um alias:
 
@@ -338,7 +369,7 @@ Na maioria dos casos, `pv` funciona como um substituto para `cat`.
 
 ## rm
 
-[rm](https://en.wikipedia.org/wiki/pt:rm_(Unix) "w:pt:rm (Unix)") remove arquivos ou diretórios.
+[rm](https://en.wikipedia.org/wiki/pt:rm_(Unix) remove arquivos ou diretórios.
 
 Para limitar danos potenciais causados pelo comando, use um alias:
 
@@ -355,15 +386,15 @@ Para remover diretórios que se acredita estarem vazios, use *rmdir*, pois ele f
 
 ## sed
 
-[sed](https://en.wikipedia.org/wiki/pt:sed "w:pt:sed") é um editor do fluxo para filtrar e transformar texto.
+[sed](https://en.wikipedia.org/wiki/pt:sed "wikipedia:pt:sed") é um editor do fluxo para filtrar e transformar texto.
 
 Aqui está uma [lista](http://sed.sourceforge.net/sed1line.txt) útil de exemplos de um só linha com *sed*.
 
-**Dica:** Alternativas mais poderosa são [AWK](https://en.wikipedia.org/wiki/pt:AWK "w:pt:AWK") e o idioma [Perl](https://en.wikipedia.org/wiki/pt:Perl "w:pt:Perl").
+**Dica:** Alternativas mais poderosa são [awk](#awk) e o idioma [Perl](/index.php/Perl "Perl").
 
 ## seq
 
-*seq* imprime uma sequência de números. Alternativas embutidas em shell estão disponíveis, então é de boa prática usá-las como explicado no [wikipédia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+*seq* imprime uma sequência de números. Alternativas embutidas em shell estão disponíveis, então é de boa prática usá-las como explicado no [Wikipédia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
 
 ## ss
 

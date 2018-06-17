@@ -87,15 +87,19 @@ Also, some extra tools – which you probably will not need – are available in
 
 ### Gametypes
 
-This section lists some gametype names and will provide a brief explanation about them.
+Gametypes (a.k.a game types or game modes) are different ways of playing Teeworlds-like games (DDNet included!), and different ways of exploring its resources (e.g. physics, weapons kill or just push other players, etc.).
+
+In the main dashboard of DDNet Client, several server instances are listed (not only DDNet's), each one is launched with only one gametype. In order to play a gametype, you have to join the server instance that has the desired gametype (e.g. you want to play "ctf", you have to look for and join a "ctf" server instance)
+
+See below a non-exhaustive list with name and an explanation of gametypes that can be found in DDNet official servers (although there are a lot more).
 
 #### DDNet gametypes
 
-These are the gametypes to which DDNet provides support, which means that their maps are stored and made available in DDNet's maps repository. It also means that the Test Staff runs some test before the maps being added the repository.
+These are the official DDNet gametypes, which DDNet maintains. That means these gametypes' maps are stored and made available in DDNet's maps repository. It also means that the Test Staff runs some test before the maps being added to the repository and published.
 
-Some of these might require DDNet Client due to features (e.g. dummy *tee*, teaming, specific key bindings) that this client provides.
+Some of these might require DDNet Client due to features (e.g. dummy *tee*, teaming, specific key bindings) that this client provides, but other could be played with other clients, like Teeworlds.
 
-The target of these maps, unless mentioned otherwise below, is to overcome obstacules and other difficulties of the map, while helping each other, in order to reach the finish line of map.
+The goal of these maps, unless mentioned otherwise below, is to overcome obstacules and other difficulties of the map, while helping each other, in order to reach the finish line of map.
 
 This set of gametypes consists of:
 
@@ -109,9 +113,11 @@ This set of gametypes consists of:
 *   **oldschool** – Some old maps to make long-time players nostalgic.
 *   **race** – Reach the finish line as fast as you can in a solo run.
 
+**Note:** When looking at the server list of the client dashboard, you may notice that all DDNet server instances have Type column as *DDRace*, and the server instance's name will include the gametype listed above, e.g. "DDNet GER - DDmaX [DDRaceNetwork]"
+
 #### Vanilla gametypes
 
-The so-called *vanilla* gametypes are the first ones, and were created in Teeworlds, and which DDNet supports – as well as (almost?) all other mods of Teeworlds. This set of gametypes include:
+The so-called *vanilla* gametypes are the first ones, and were created in Teeworlds, and which DDNet supports. This set of gametypes include:
 
 *   **dm** (**d**eath**m**atch) – The goal is to kill as many other players as possible until a certain kill limit or a time limit is reached. Once one of the conditions is met, the match is over, and the winner is the player that accumulated the greatest number of kills.
 *   **tdm** (**t**eam **d**eath**m**atch) – Same as Deathmatch above, except that the players are organized into two teams, with each team having its own kill count.
@@ -155,7 +161,7 @@ Use these instructions if you want a local server in a [LAN](https://en.wikipedi
 
 The DDNet packages provide a server binary, but MySQL support is disabled. In order to enable MySQL support you have to edit the PKGBUILD:
 
-1.  Add [mariadb](https://www.archlinux.org/packages/?name=mariadb) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) to [depends()](/index.php/PKGBUILD#depends "PKGBUILD") array.
+1.  Add [mariadb](https://www.archlinux.org/packages/?name=mariadb), [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) and [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) to the [depends()](/index.php/PKGBUILD#depends "PKGBUILD") array.
 2.  Append `-DMYSQL=ON` to the *cmake* command-line.
 
 **Tip:** [MySQL](/index.php/MySQL "MySQL") wiki page provides some instructions post-initially. Make sure to check in there, to avoid problems.
@@ -175,7 +181,7 @@ The server instance should be available and visible for a Client in the LAN serv
 
 This section list and describe some tools that, while most might not need them, could be useful for e.g. mappers. Some of these tools are developed by the DDNet development team, but other tools were inherited from Teeworlds when forking its source code in the beginning.
 
-These following tools are provided in `/usr/lib/ddnet/tools/` by the DDNet packages.
+The tools below are provided in `/usr/lib/ddnet/tools/` by the DDNet packages.
 
 ### config_retrieve
 

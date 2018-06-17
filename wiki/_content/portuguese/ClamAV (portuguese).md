@@ -45,13 +45,13 @@ Os arquivos de banco de dados são salvos em:
 
 ```
 
-O serviço de atualização de definição de vírus é chamado de `clamav-freshclam.service`. Considere iniciá-lo e habilitá-lo para que inicie quando da inicialização do sistema, para que as definições de vírus estejam sempre recentes.
+[Inicie/habilite](/index.php/Inicie/habilite "Inicie/habilite") `clamav-freshclam.service` para que as definições de vírus estejam sempre recentes.
 
 ## Iniciando o daemon
 
-Considere atualizar o banco de dados antes de iniciar o serviço pela primeira vez ou você poderá ter problemas/erros que impedirão o ClamAV de iniciar corretamente.
+**Nota:** Você precisa executar `freshclam` antes de iniciar o serviço pela primeira vez ou você poderá ter problemas/erros que impedirão o ClamAV de iniciar corretamente.
 
-O serviço chamado `clamav-daemon.service`. [Inicie](/index.php/Inicie "Inicie")-o ou [habilite](/index.php/Habilite "Habilite")-o para iniciar quando da inicialização do sistema. Você precisará executar `freshclam` antes de iniciar o serviço.
+O serviço chamado `clamav-daemon.service`. [Inicie](/index.php/Inicie "Inicie")-o e [habilite](/index.php/Habilite "Habilite")-o para iniciar quando da inicialização do sistema.
 
 ## Testando o software
 
@@ -75,37 +75,26 @@ Do contrário, leia a parte Solução de Problemas ou peça por ajuda nos [Fóru
 
 ClamAV pode usar banco de dados/assinaturas de outros repositórios ou fornecedores de segurança.
 
-Para adicionar os mais importantes em um único passo, instale [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/) e configure-o em `/etc/clamav-unofficial-sigs/user.conf`.
+Para adicionar os mais importantes em um único passo, instale [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/).
 
 Isso vai adicionar assinaturas/banco de dados de, por exemplo, MalwarePatrol, SecuriteInfo, Yara, Linux Malware Detect, etc. Para a lista completa de banco de dados, [veja a descrição de seu repositório no GitHub](https://github.com/extremeshok/clamav-unofficial-sigs#description).
 
 ### Configure clamav-unofficial-sigs
 
-Primeiro, edite a configuração em `/etc/clamav-unofficial-sigs/user.conf`, e altere a seguinte linha:
+[Habilite](/index.php/Habilite "Habilite") o `clamav-unofficial-sigs.timer`.
 
-```
-# Descomente a linha a seguir para habilitar o script
-user_configuration_complete="yes"
+Isso vai atualizar regularmente as assinaturas não oficiais baseadas nos arquivos de configuração no diretório `/etc/clamav-unofficial-sigs`.
 
-```
-
-Para habilitar o serviço não oficial de assinaturas (que inclui páginas man, rotação de log e cron job), execute o seguinte:
-
-```
-# clamav-unofficial-sigs.sh --install-all
-
-```
-
-Note que você ainda deve estar com o serviço `clamav-daemon` em execução para ter atualizações de assinatura do próprio ClamAV.
-
-Isso vai atualizar as assinaturas dos bancos de dados usados no script clamav-unofficial-sigs e extras conforme configurado em cada arquivo de configuração na pasta `/etc/clamav-unofficial-sigs`. Para atualizar assinaturas desses bancos de dados manualmente, execute o seguinte:
+Para atualizar as assinaturas manualmente, execute o seguinte comando:
 
 ```
 # clamav-unofficial-sigs.sh
 
 ```
 
-Para parar a execução do cron job, exclua esses arquivo: `/etc/cron.d/clamav-unofficial-sigs`.
+Para alterar as configurações padrão, acesse e modifique `/etc/clamav-unofficial-sigs/user.conf`.
+
+**Nota:** Você ainda deve estar com o `clamav-freshclam.service` [iniciado](/index.php/Iniciado "Iniciado") para ter atualizações de assinaturas oficiais dos espelhos do ClamAV.
 
 #### Banco de dados MalwarePatrol
 
@@ -155,7 +144,6 @@ TemporaryDirectory /tmp
 ClamdSocket unix:/var/lib/clamav/clamd.sock
 LogSyslog yes
 LogInfected Basic
-
 ```
 
 Crie `/etc/systemd/system/clamav-milter.service`:
@@ -164,7 +152,7 @@ Crie `/etc/systemd/system/clamav-milter.service`:
 ```
 [Unit]
 Description='ClamAV Milter'
-After=clamd.service
+After=clamav-daemon.service
 
 [Service]
 Type=forking
@@ -172,17 +160,16 @@ ExecStart=/usr/bin/clamav-milter --config-file /etc/clamav/clamav-milter.conf
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
-Habilite e inicie o serviço.
+[Habilite](/index.php/Habilite "Habilite") e [inicie](/index.php/Inicie "Inicie") `clamav-milter.service`.
 
 ## OnAccessScan
 
 A varredura no acesso (*on-access scan*) requer que o kernel seja compilado com o módulo kernel *fanotify* (kernel >= 3.8). Verifique se *fanotify* foi ativado antes de ativar a varredura no acesso.
 
 ```
-$ cat /proc/config.gz | gunzip | grep FANOTIFY=y
+ $ zgrep FANOTIFY /proc/config.gz
 
 ```
 
@@ -192,7 +179,7 @@ Primeiro, edite o arquivo de configuração `/etc/clamav/clamd.conf`, adicionand
 
  `/etc/clamav/clamd.conf` 
 ```
-# Ativa varredura no acesso, exige que o serviço clamd esteja em execução
+# Ativa varredura no acesso, exige que clamav-daemon.service esteja em execução
 ScanOnAccess true
 
 # Define o ponto de montagem onde deve-se realizar recursivamente a varredura,
@@ -212,14 +199,14 @@ OnAccessExcludeUID 0
 
 # Especifica uma ação para realizar quando o clamav detecta um arquivo malicioso
 # é possível especificar um comando em linha também
-VirusEvent /etc/clamav/detected.zsh
+VirusEvent /etc/clamav/detected.sh
 
 # AVISO: clamd deve ser executado como root
 User root
 
 ```
 
-Em seguida, crie o arquivo `/etc/clamav/detected.zsh` e adicione o conteúdo a seguir. Isso permite que você altere/especifique a mensagem de depuração quando um vírus tiver sido detectado pelo dispositivo de varredura no acesso do clamd:
+Em seguida, crie o arquivo `/etc/clamav/detected.sh` e adicione o conteúdo a seguir. Isso permite que você altere/especifique a mensagem de depuração quando um vírus tiver sido detectado pelo dispositivo de varredura no acesso do clamd:
 
  `/etc/clamav/detected.sh` 
 ```
@@ -259,7 +246,7 @@ Se você está usando [AppArmor](/index.php/AppArmor "AppArmor"), também é nec
 
 ```
 
-Reinicie/inicie o serviço com `systemctl restart clamd.service`.
+[Reinicie](/index.php/Reinicie "Reinicie") o `clamav-daemon.service`.
 
 Fonte: [http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html](http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html)
 
@@ -290,7 +277,7 @@ LocalSocket /var/lib/clamav/clamd.sock
 
 ```
 
-Salve o arquivo e [reinicie o daemon](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)") com `systemctl restart clamd.service`.
+Salve o arquivo e [reinicie](/index.php/Reinicie "Reinicie") `clamav-daemon.service`.
 
 ### Erro: No supported database files found
 
@@ -302,7 +289,7 @@ in /var/lib/clamav ERROR: Not supported data format
 
 ```
 
-Isso acontece por causa de incompatibilidade entre a configuração `DatabaseDirectory` do `/etc/freshclam.conf` e `DatabaseDirectory` do `/etc/clamd.conf`. `/etc/freshclam.conf` apontando para `/var/lib/clamav`, mas `/etc/clamd.conf` (diretório padrão) apontando para `/usr/share/clamav`, ou outro diretório. Edite `/etc/clamd.conf` e substituta com o mesmo DatabaseDirectory como no `/etc/freshclam.conf`. Após isso, clamav vai iniciar com sucesso.
+Isso acontece por causa de incompatibilidade entre a configuração `DatabaseDirectory` do `/etc/clamav/freshclam.conf` e `DatabaseDirectory` do `/etc/clamav/clamd.conf`. `/etc/clamav/freshclam.conf` apontando para `/var/lib/clamav`, mas `/etc/clamav/clamd.conf` (diretório padrão) apontando para `/usr/share/clamav`, ou outro diretório. Edite `/etc/clamav/clamd.conf` e substituta com o mesmo DatabaseDirectory como no `/etc/clamav/freshclam.conf`. Após isso, clamav vai iniciar com sucesso.
 
 ### Erro: Can't create temporary directory
 

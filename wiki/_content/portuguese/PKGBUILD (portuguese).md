@@ -300,7 +300,7 @@ Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não deve
 **Dica:**
 
 *   Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura, ex.: `x86_64=()`. Deve haver um vetor de integridade correspondente com somas de verificação (*checksums*), ex.: `sha256sums_x86_64=()`.
-*   Alguns servidores restringem download filtrando a string "User-Agent" do cliente, a qual pode ser alterada com[DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
+*   Alguns servidores restringem download filtrando a string "User-Agent" do cliente, a qual pode ser alterada com [DLAGENTS](/index.php/Diretrizes_de_pacotes_de_aplicativos_n%C3%A3o_livres#DLAGENTS_personalizados "Diretrizes de pacotes de aplicativos não livres").
 
 ### noextract
 

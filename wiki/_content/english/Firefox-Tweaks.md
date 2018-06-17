@@ -470,7 +470,7 @@ If scrolling is undesirably jerky, try enabling Firefox's "Smooth Scrolling" opt
 
 Make sure `dom.w3c_touch_events.enabled` is either set to 1 (*enabled*) or 2 (*default, auto-detect*).
 
-Run `export MOZ_USE_XINPUT2=1` before launching Firefox. To make this change persistent, add that command to `/etc/profile.d/firefox.sh`.
+Add `MOZ_USE_XINPUT2 DEFAULT=1` to `/etc/security/pam_env.conf` and then logout or reboot your system for the changes to take effect.
 
 ### Mouse click on URL bar's behavior
 

@@ -1,29 +1,27 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wikipedia:Rust (programming language)"):
 
-	*[Rust](http://rust-lang.org/) is a general-purpose, multi-paradigm, compiled programming language sponsored by Mozilla Research. It is designed to be a "safe, concurrent, practical language", supporting pure-functional, imperative-procedural, and object-oriented styles.*
-
-	*The goal of Rust is to be a good language for creating highly concurrent and highly safe systems, and programming in the large. This has led to a feature set with an emphasis on safety, control of memory layout, and concurrency. Performance of idiomatic Rust is comparable to the performance of idiomatic C++.*
+	[Rust](http://rust-lang.org/) is a general-purpose, multi-paradigm, compiled programming language sponsored by Mozilla Research. It is designed to be a "safe, concurrent, practical language", supporting pure-functional, imperative-procedural, and object-oriented styles. The goal of Rust is to be a good language for creating highly concurrent and highly safe systems, and programming in the large. This has led to a feature set with an emphasis on safety, control of memory layout, and concurrency. Performance of idiomatic Rust is comparable to the performance of idiomatic C++.
 
 ## Contents
 
 *   [1 Core language](#Core_language)
     *   [1.1 Rust Core Library](#Rust_Core_Library)
     *   [1.2 Rust Standard Library](#Rust_Standard_Library)
-    *   [1.3 Release Cycle](#Release_Cycle)
+    *   [1.3 Release cycle](#Release_cycle)
 *   [2 Installation](#Installation)
-    *   [2.1 Native Installation](#Native_Installation)
+    *   [2.1 Native installation](#Native_installation)
     *   [2.2 Rustup](#Rustup)
         *   [2.2.1 Upstream installation script](#Upstream_installation_script)
         *   [2.2.2 Arch Linux package](#Arch_Linux_package)
         *   [2.2.3 Usage](#Usage)
     *   [2.3 Test your installation](#Test_your_installation)
-*   [3 Cross Compiling](#Cross_Compiling)
+*   [3 Cross compiling](#Cross_compiling)
     *   [3.1 Using rustup](#Using_rustup)
     *   [3.2 Windows](#Windows)
     *   [3.3 Unofficial packages](#Unofficial_packages)
 *   [4 Cargo](#Cargo)
     *   [4.1 Usage](#Usage_2)
-*   [5 IDE Support](#IDE_Support)
+*   [5 IDE support](#IDE_support)
     *   [5.1 Tools](#Tools)
         *   [5.1.1 Racer](#Racer)
         *   [5.1.2 Clippy](#Clippy)
@@ -46,15 +44,15 @@ The [Rust Core Library](https://doc.rust-lang.org/core/) is the dependency-free 
 
 The [Rust Standard Library](http://doc.rust-lang.org/std/index.html) provides the convenient high level abstractions by which a majority of portable Rust software is created with. It features convenient features such as the `Vec`, `Iterator`, `Option`, `Result`, and `String` types; a vast amount of methods for language primitives; a large number of standard macros; I/O and multithreading support; heap allocations with `Box`; and many more high level features not available in the core library.
 
-### Release Cycle
+### Release cycle
 
 Rust follows a regular six week release cycle, similar to the release cycle of Firefox. With each new release, the core and standard libraries are improved to support more platforms, improve performance, and to stabilize new features for use with stable Rust.
 
 ## Installation
 
-### Native Installation
+### Native installation
 
-To [install](/index.php/Install "Install") the latest stable version of Rust from the official Arch Linux software repository, [install](/index.php/Install "Install") the [rust](https://www.archlinux.org/packages/?name=rust) package. This will install the rustc compiler.
+To [install](/index.php/Install "Install") the latest stable version of Rust from the official Arch Linux software repository, [install](/index.php/Install "Install") the [rust](https://www.archlinux.org/packages/?name=rust) package. This will install the `rustc` compiler and [Cargo](#Cargo).
 
 There's also development version of the Rust compiler available from [AUR](/index.php/AUR "AUR"). Use [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) for prebuilt generic binaries or [rust-git](https://aur.archlinux.org/packages/rust-git/) to build the compiler with system libraries. Prebuilt, periodically updated rust-git packages are also available from the [unofficial repo](/index.php/Unofficial_user_repositories#rust-git "Unofficial user repositories").
 
@@ -68,13 +66,13 @@ One has 2 choices for a rustup installation, one is officially supported by Rust
 
 #### Upstream installation script
 
-Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `less ./rust.sh`, and run the script `./rust.sh` to start rustup installation. The script makes PATH changes only to login shell [configuration files](/index.php/Bash#Invocation "Bash"). You need to `source $HOME/.cargo/env` until you logout and login back into the system. To update rustup afterwards, run `rustup self update`.
+Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `less ./rust.sh`, and run the script `./rust.sh` to start rustup installation. The script makes PATH changes only to login shell [configuration files](/index.php/Bash#Invocation "Bash"). You need to `source ~/.cargo/env` until you logout and login back into the system. To update rustup afterwards, run `rustup self update`.
 
 The script installs and activates the default toolchain by default (the one used by the [rust](https://www.archlinux.org/packages/?name=rust) package, so there is no need to manually install it to start using Rust.
 
-**Warning:** Running `curl *some-url* | sh`, as the Rust documentation suggests, is considered as a security risk by some, because it executes unknown and/or untrusted code, that might even be corrupted during the download. Therefore it is recommended to manually download the script and check it, before executing it.
+**Warning:** Running `curl *some-url* | sh`, as the Rust documentation suggests, is considered as a security risk, because it executes unknown code, that might even be corrupted during the download. Therefore it is recommended to manually download the script and check it, before executing it.
 
-**Note:** Please make sure that `$HOME/.cargo/bin` is in your `PATH` when you run `rustup`.
+**Note:** Please make sure that `~/.cargo/bin` is in your `PATH` when you run `rustup`.
 
 #### Arch Linux package
 
@@ -132,7 +130,7 @@ Hello, World!
 
 ```
 
-## Cross Compiling
+## Cross compiling
 
 ### Using rustup
 
@@ -176,7 +174,7 @@ $ cargo test --target "$ARCH-pc-windows-gnu"
 
 ### Unofficial packages
 
-The [unofficial repo archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") has rust-nightly and Rust std library for i686, ARM, ARMv7, Windows 32 and 64 so you can just install the one you want then enjoy cross compiling. However, you have to find an ARM toolchain by yourself. For Windows 32bit targets, you'll need to get a libgcc_s_dw2-1.dll to build and run.
+The [unofficial repository archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") has rust-nightly and Rust std library for i686, ARM, ARMv7, Windows 32 and 64 so you can just install the one you want then enjoy cross compiling. However, you have to find an ARM toolchain by yourself. For Windows 32bit targets, you'll need to get a libgcc_s_dw2-1.dll to build and run.
 
 ## Cargo
 
@@ -188,7 +186,10 @@ Cargo is a tool that allows Rust projects to declare their various dependencies,
 
 To create a new project using Cargo:
 
- `$ cargo new hello_world --bin` 
+```
+$ cargo new hello_world --bin
+
+```
 
 This creates a directory with a default `Cargo.toml` file, set to build an executable (because we included `--bin`, otherwise it would build a library).
 
@@ -200,7 +201,7 @@ version = "0.1.0"
 authors = ["Your Name <you@example.com>"]
 ```
 
-## IDE Support
+## IDE support
 
 ### Tools
 
@@ -231,7 +232,7 @@ $ cargo +nightly install clippy
 
 #### Atom
 
-Atom supports Rust programming when both of the next plugins installed: [language-rust](https://atom.io/packages/language-rust) and [linter-rust](https://atom.io/packages/linter-rust).
+[Atom](/index.php/Atom "Atom") supports Rust programming when both of the next plugins installed: [language-rust](https://atom.io/packages/language-rust) and [linter-rust](https://atom.io/packages/linter-rust).
 
 #### IntelliJ IDEA
 
@@ -239,19 +240,19 @@ Atom supports Rust programming when both of the next plugins installed: [languag
 
 #### Visual Studio Code
 
-Support for Rust can be obtained by installing the [Rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
+[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") support for Rust can be obtained via the [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
 
 #### Vim
 
-Vim support for Rust is enabled via the official [rust.vim](https://github.com/rust-lang/rust.vim) plugin.
+[Vim](/index.php/Vim "Vim") support for Rust can be obtained via the official [rust.vim](https://github.com/rust-lang/rust.vim) plugin.
 
 #### Emacs
 
-Emacs support for Rust is enabled via the offical [rust-mode](https://github.com/rust-lang/rust-mode) plugin or the [emacs-rust-mode](https://aur.archlinux.org/packages/emacs-rust-mode/) package.
+[Emacs](/index.php/Emacs "Emacs") support for Rust can be obtained via the official [rust-mode](https://github.com/rust-lang/rust-mode) plugin or the [emacs-rust-mode](https://aur.archlinux.org/packages/emacs-rust-mode/) package.
 
 #### Kate
 
-Kate support for Rust is enabled via the official [kate](https://github.com/rust-lang/kate-config) plugin. It is installed by defaut by the [kate](https://www.archlinux.org/packages/?name=kate) package, require the installation of [racer](https://aur.archlinux.org/packages/racer/) and manual activation.
+Kate support for Rust can be obtained via the official [kate](https://github.com/rust-lang/kate-config) plugin. It is installed by default by the [kate](https://www.archlinux.org/packages/?name=kate) package, require the installation of [racer](https://aur.archlinux.org/packages/racer/) and manual activation.
 
 ## See also
 

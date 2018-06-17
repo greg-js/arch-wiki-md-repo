@@ -61,7 +61,7 @@ $ { cat pkglist.orig; pacman -Slq; } | sort | uniq -d > pkglist
 Verifique se algum pacote importante do *base* está em falta e adicione-o à lista:
 
 ```
-$ comm -23 <(pacman -Sgq base) pkglist.orig >> pkglist
+$ comm -23 <(pacman -Sgq base | sort) pkglist.orig >> pkglist
 
 ```
 

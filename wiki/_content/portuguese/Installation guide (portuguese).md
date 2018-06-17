@@ -2,7 +2,7 @@ Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php
 
 Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") dos vários programas, ambos relacionados neste guia. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
-Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "w:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, esse guia presume que uma conexão com a Internet esteja disponível.
+Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "wikipedia:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, esse guia presume que uma conexão com a Internet esteja disponível.
 
 ## Contents
 
@@ -22,33 +22,32 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Fuso horário](#Fuso_hor.C3.A1rio)
     *   [3.4 Locale](#Locale)
-    *   [3.5 Hostname](#Hostname)
-    *   [3.6 Configuração de rede](#Configura.C3.A7.C3.A3o_de_rede)
-    *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 Senha do root](#Senha_do_root)
-    *   [3.9 Gerenciador de boot](#Gerenciador_de_boot)
+    *   [3.5 Configuração de rede](#Configura.C3.A7.C3.A3o_de_rede)
+    *   [3.6 Initramfs](#Initramfs)
+    *   [3.7 Senha do root](#Senha_do_root)
+    *   [3.8 Gerenciador de boot](#Gerenciador_de_boot)
 *   [4 Reiniciar](#Reiniciar)
 *   [5 Pós-instalação](#P.C3.B3s-instala.C3.A7.C3.A3o)
 
 ## Pré-instalação
 
-Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion").
 
-Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
+Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
 
 ### Definir o layout do teclado
 
-O [mapa de teclas de console](/index.php/Mapa_de_teclas_de_console "Mapa de teclas de console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Layouts disponíveis podem ser listados com:
+O [mapa de teclas de console](/index.php/Mapa_de_teclas_de_console "Mapa de teclas de console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Layouts disponíveis podem ser listados com:
 
 ```
 # ls /usr/share/kbd/keymaps/**/*.map.gz
 
 ```
 
-Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitindo caminho e extensão de arquivo. Por exemplo, para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg"):
+Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitindo caminho e extensão de arquivo. Por exemplo, para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "wikipedia:File:KB Portuguese Brazil.svg"):
 
 ```
-# loadkeys br-abnt2
+# loadkeys br-abnt2   
 
 ```
 
@@ -63,18 +62,18 @@ Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEF
 
 ```
 
-Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") ou CSM. Veja o manual da sua placa-mãe para detalhes.
+Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") ou CSM. Veja o manual da sua placa-mãe para detalhes.
 
 ### Conectar à Internet
 
-A imagem de instalação habilita o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos de rede [cabeada](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules). A conexão pode ser [verificada](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificando_a_conex.C3.A3o "Configuração de rede") com:
+A imagem de instalação habilita o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") para [dispositivos de rede cabeada](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização. A conexão pode ser verificada com [ping](https://en.wikipedia.org/wiki/pt:Ping "wikipedia:pt:Ping"):
 
 ```
 # ping archlinux.org
 
 ```
 
-Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@` e pressione `Tab`. Proceda com [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Driver_de_dispositivo "Configuração de rede") para dispositivos cabeados ou [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio") para dispositivos sem fio *(wireless)*.
+Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@*interface*`, sendo que o nome `*interface*` pode ser [completado com tab](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Continue com a configuração de rede conforme descrito em [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede").
 
 ### Atualizar o relógio do sistema
 
@@ -89,7 +88,7 @@ Para verificar o status do serviço, use `timedatectl status`.
 
 ### Partição dos discos
 
-Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositivo de bloco](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "w:Device file") tal como `/dev/sda` ou `/dev/nvme0n1`.. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk_(Portugu%C3%AAs) "Lsblk (Português)") ou *fdisk*.
+Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositivo de bloco](https://en.wikipedia.org/wiki/Device_file#Naming_conventions ou *fdisk*.
 
 ```
 # fdisk -l
@@ -222,7 +221,7 @@ Execute [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) para 
 
 ```
 
-Esse comando presume que o relógio de hardware está definido para [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). Veja [Time#Time standard](/index.php/Time#Time_standard "Time") para mais detalhes.
+Esse comando presume que o relógio de hardware está definido para [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Veja [Time#Time standard](/index.php/Time#Time_standard "Time") para mais detalhes.
 
 ### Locale
 
@@ -241,7 +240,7 @@ Se você [definir o layout do teclado](#Definir_o_layout_do_teclado), torne as a
 
  `/etc/vconsole.conf`  `KEYMAP=*br-abnt2*` 
 
-### Hostname
+### Configuração de rede
 
 Crie o arquivo [hostname](/index.php/Hostname_(Portugu%C3%AAs) "Hostname (Português)"):
 
@@ -263,11 +262,7 @@ Adicione entradas correspondentes ao [hosts(5)](https://jlk.fjfi.cvut.cz/arch/ma
 
 Se o sistema tem um endereço IP permanente, ele deve ser usado em vez de `127.0.1.1`.
 
-### Configuração de rede
-
-O recém-instalado ambiente possui nenhuma conectividade de rede ativada por padrão. Veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para configurar uma.
-
-Para [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio"), [instale](/index.php/Instale "Instale") os pacotes [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), assim como [pacotes de firmware](/index.php/Wireless_(Portugu%C3%AAs)#Instalar_driver.2Ffirmware "Wireless (Português)") que se fizerem necessários. Opcionalmente, instale [dialog](https://www.archlinux.org/packages/?name=dialog) para uso de *wifi-menu*.
+Complete a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para o ambiente recém-instalado.
 
 ### Initramfs
 

@@ -16,10 +16,9 @@ Related articles
 
 ## Installation
 
-There are two packages available on the [AUR](/index.php/AUR "AUR"), which use different [Qt](/index.php/Qt "Qt") versions:
+The package is available on the [AUR](/index.php/AUR "AUR") :
 
-*   [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/) uses Qt4
-*   [fingerprint-qt5](https://aur.archlinux.org/packages/fingerprint-qt5/) uses Qt5
+*   [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/)
 
 The package includes an installation guide in HTML at `/usr/share/doc/fingerprint-gui/Manual_en.html`.
 

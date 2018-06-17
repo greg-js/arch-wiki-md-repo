@@ -306,7 +306,7 @@ By default, file and directory names that contain spaces are displayed surrounde
 
 ## lsblk
 
-[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) will show all available [block devices](https://en.wikipedia.org/wiki/Device_file#Block_devices "w:Device file") along with their partitioning schemes, for example:
+[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) will show all available [block devices](https://en.wikipedia.org/wiki/Device_file#Block_devices "wikipedia:Device file") along with their partitioning schemes, for example:
 
  `$ lsblk -f` 
 ```

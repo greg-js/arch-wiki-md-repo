@@ -244,7 +244,7 @@ Ou via [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
 [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") é a ferramenta nativa do projeto GNOME para controlar as configurações de rede pelo Shell. [Instale](/index.php/Instale "Instale") o pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) e [habilite](/index.php/Habilite "Habilite") a unit do systemd `NetworkManager.service`.
 
-Enquanto qualquer outro [gerenciador de rede](/index.php/Network_manager "Network manager") pode ser usado, NetworkManager fornece a integração completa via configurações de rede shell e um miniaplicativo indicador de status [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (não exigido para o GNOME).
+Enquanto qualquer outro [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") pode ser usado, NetworkManager fornece a integração completa via configurações de rede shell e um miniaplicativo indicador de status [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (não exigido para o GNOME).
 
 #### Contas on-line
 
@@ -374,7 +374,7 @@ Várias configurações de área de trabalho podem ser aplicadas.
 
 ##### Ícones na área de trabalho
 
-Até o GNOME 3.28, os ícones na área de trabalho eram fornecidos pelo [Arquivos](/index.php/GNOME/Files "GNOME/Files"), que desenhava uma janela transparente sobre a área de trabalho contendo os ícones. A partir do GNOME 3.28 essa funcionalidade foi removida e os ícones da área de trabalho não estão mais disponíveis no GNOME. Possíveis soluções incluem o uso do [Nemo](/index.php/Nemo "Nemo") (um fork do Arquivos que ainda possui a funcionalidade de ícones do desktop) ou a instalação do [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) que replica parcialmente a funcionalidade do ícone do desktop disponível no GNOME 3.26 e abaixo. Para mais informações, consulte o seguinte [tópico no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?id=235633).
+Até o GNOME 3.28, os ícones na área de trabalho eram fornecidos pelo [Arquivos](/index.php/Files "Files"), que desenhava uma janela transparente sobre a área de trabalho contendo os ícones. A partir do GNOME 3.28 essa funcionalidade foi removida e os ícones da área de trabalho não estão mais disponíveis no GNOME. Possíveis soluções incluem o uso do [Nemo](/index.php/Nemo "Nemo") (um fork do Arquivos que ainda possui a funcionalidade de ícones do desktop) ou a instalação do [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) que replica parcialmente a funcionalidade do ícone do desktop disponível no GNOME 3.26 e abaixo. Para mais informações, consulte o seguinte [tópico no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?id=235633).
 
 ##### Tela de bloqueio e plano de fundo
 
@@ -423,7 +423,7 @@ $ gsettings get org.gnome.shell enabled-extensions
 
 #### Métodos de entrada
 
-O GNOME possui suporte integrado para métodos de entrada por meio do [IBus](/index.php/IBus "IBus"), só sendo necessário instalar [ibus](https://www.archlinux.org/packages/?name=ibus) e o motor do método de entrada (ex.: [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) para Intelligent Pinyin); após a instalação, o motor de método de entrada podem ser adicionados como disposição de teclado nas configurações de "Idioma & região" do GNOME.
+O GNOME possui suporte integrado para [métodos de entrada](/index.php/Input_method "Input method") por meio do [IBus](/index.php/IBus "IBus"), só sendo necessário instalar [ibus](https://www.archlinux.org/packages/?name=ibus) e o motor do método de entrada (ex.: [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) para Intelligent Pinyin); após a instalação, o motor de método de entrada podem ser adicionados como disposição de teclado nas configurações de "Idioma & região" do GNOME.
 
 #### Fontes
 
@@ -543,6 +543,7 @@ GNOME Shell não oferece suporte a usar um [gerenciador de janela](/index.php/Ge
 ## Veja também
 
 *   [Site oficial](https://www.gnome.org/)
+*   [Artigo do Wikipédia](https://en.wikipedia.org/wiki/pt:GNOME "wikipedia:pt:GNOME")
 *   [GNOME-Shell Extensions](https://extensions.gnome.org/)
 *   [Folha de dicas do GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet)
 *   Personalização (temas, ícones...):

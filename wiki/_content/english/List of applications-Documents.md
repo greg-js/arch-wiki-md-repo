@@ -20,10 +20,11 @@
         *   [1.2.5 Database managers](#Database_managers)
         *   [1.2.6 Formula editors](#Formula_editors)
     *   [1.3 Markup languages](#Markup_languages)
-        *   [1.3.1 Markdown editors](#Markdown_editors)
+        *   [1.3.1 Markdown](#Markdown)
+            *   [1.3.1.1 Markdown editors](#Markdown_editors)
         *   [1.3.2 Typesetting systems](#Typesetting_systems)
         *   [1.3.3 TeX editors](#TeX_editors)
-        *   [1.3.4 Formula editors](#Formula_editors_2)
+        *   [1.3.4 TeX formula editors](#TeX_formula_editors)
         *   [1.3.5 XML editors](#XML_editors)
     *   [1.4 Document converters](#Document_converters)
     *   [1.5 Bibliographic reference managers](#Bibliographic_reference_managers)
@@ -38,7 +39,7 @@
     *   [1.8 OCR software](#OCR_software)
         *   [1.8.1 OCR engines](#OCR_engines)
         *   [1.8.2 Layout analyzers](#Layout_analyzers)
-    *   [1.9 Note-taking](#Note-taking)
+    *   [1.9 Notes](#Notes)
         *   [1.9.1 Note-taking software](#Note-taking_software)
             *   [1.9.1.1 Console](#Console_3)
             *   [1.9.1.2 Graphical](#Graphical_3)
@@ -47,17 +48,15 @@
         *   [1.9.4 Sticky notes](#Sticky_notes)
     *   [1.10 Special writing environments](#Special_writing_environments)
         *   [1.10.1 Distraction-free writing](#Distraction-free_writing)
-        *   [1.10.2 Storywriting](#Storywriting)
-    *   [1.11 Text tools](#Text_tools)
-        *   [1.11.1 Character selectors](#Character_selectors)
-        *   [1.11.2 Font viewers](#Font_viewers)
-        *   [1.11.3 Barcode generators and readers](#Barcode_generators_and_readers)
-            *   [1.11.3.1 Console](#Console_4)
-            *   [1.11.3.2 Graphical](#Graphical_4)
-    *   [1.12 Language](#Language)
-        *   [1.12.1 Dictionary and thesaurus](#Dictionary_and_thesaurus)
-        *   [1.12.2 Spell checkers](#Spell_checkers)
-        *   [1.12.3 Translation and localization](#Translation_and_localization)
+        *   [1.10.2 Story writing](#Story_writing)
+        *   [1.10.3 Screenwriting](#Screenwriting)
+    *   [1.11 Language](#Language)
+        *   [1.11.1 Dictionary and thesaurus](#Dictionary_and_thesaurus)
+        *   [1.11.2 Spell checkers](#Spell_checkers)
+        *   [1.11.3 Translation and localization](#Translation_and_localization)
+    *   [1.12 Barcode generators and readers](#Barcode_generators_and_readers)
+        *   [1.12.1 Console](#Console_4)
+        *   [1.12.2 Graphical](#Graphical_4)
 
 ## Documents and texts
 
@@ -123,7 +122,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://acme.cat-v.org/](http://acme.cat-v.org/) || [plan9port](https://www.archlinux.org/packages/?name=plan9port)
 
-*   **Aide** — Fast and convenient programming text editor.
+*   **Adie** — Fast and convenient programming text editor.
 
 	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
 
@@ -469,11 +468,11 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 *   **GdaBrowser** — Graphical tool to get a quick access to a database's structure and contents.
 
-	[https://www.glom.org/](https://www.glom.org/) || [libgda](https://www.archlinux.org/packages/?name=libgda)
+	[http://www.gnome-db.org/GdaBrowser](http://www.gnome-db.org/GdaBrowser) || [libgda](https://www.archlinux.org/packages/?name=libgda)
 
 *   **Glom** — Easy-to-use database designer and user interface.
 
-	[http://www.gnome-db.org/GdaBrowser](http://www.gnome-db.org/GdaBrowser) || [glom](https://www.archlinux.org/packages/?name=glom)
+	[https://www.glom.org/](https://www.glom.org/) || [glom](https://www.archlinux.org/packages/?name=glom)
 
 *   **GSQL** — Integrated database development tool for GNOME.
 
@@ -533,21 +532,19 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 #### Formula editors
 
-See also [Wikipedia:Formula editor](https://en.wikipedia.org/wiki/Formula_editor "wikipedia:Formula editor").
+See also [#TeX formula editors](#TeX_formula_editors) and [Wikipedia:Formula editor](https://en.wikipedia.org/wiki/Formula_editor "wikipedia:Formula editor").
 
 *   **[LibreOffice Math](/index.php/LibreOffice "LibreOffice")** — Create and edit scientific formulas and equations. Included in the LibreOffice suite.
 
 	[https://www.libreoffice.org/discover/math/](https://www.libreoffice.org/discover/math/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
-
-*   **[LibreOffice](/index.php/LibreOffice "LibreOffice") TexMaths extension** — LaTeX equation editor for LibreOffice.
-
-	[http://roland65.free.fr/texmaths/](http://roland65.free.fr/texmaths/) || [libreoffice-extension-texmaths](https://www.archlinux.org/packages/?name=libreoffice-extension-texmaths)
 
 *   **[OpenOffice Math](/index.php/OpenOffice "OpenOffice")** — Create equations and formulas for your documents. Included in the OpenOffice suite.
 
 	[http://www.openoffice.org/product/math.html](http://www.openoffice.org/product/math.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
 ### Markup languages
+
+See also [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
 
 *   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating *pacman* 's man pages[[1]](https://www.archlinux.org/pacman/pacman.8.html).
 
@@ -557,9 +554,21 @@ See also [Wikipedia:Formula editor](https://en.wikipedia.org/wiki/Formula_editor
 
 	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
 
-*   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Text-to-HTML conversion tool that allows you to write using a simple plain text format.
+*   **[Sphinx](https://en.wikipedia.org/wiki/Sphinx_(documentation_generator) "wikipedia:Sphinx (documentation generator)")** — A documentation generation system using [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText "wikipedia:ReStructuredText") to generate output in multiple formats (primary documentation system for the Python project).
 
-	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [discount](https://www.archlinux.org/packages/?name=discount)
+	[http://sphinx-doc.org](http://sphinx-doc.org) || [python-sphinx](https://www.archlinux.org/packages/?name=python-sphinx)
+
+*   **[txt2tags](https://en.wikipedia.org/wiki/Txt2tags "wikipedia:Txt2tags")** — Dead-simple, KISS-compliant lightweight, human-readable markup language to produce rich format content out of plain text files.
+
+	[http://txt2tags.sourceforge.net](http://txt2tags.sourceforge.net) || [txt2tags](https://www.archlinux.org/packages/?name=txt2tags)
+
+#### Markdown
+
+See also the [official website](https://daringfireball.net/projects/markdown/) and [Wikipedia:Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown").
+
+*   **Discount** — A Markdown implementation written in C.
+
+	[https://www.pell.portland.or.us/~orc/Code/discount/](https://www.pell.portland.or.us/~orc/Code/discount/) || [discount](https://www.archlinux.org/packages/?name=discount)
 
 *   **Marked** — Markdown parser and compiler built for speed.
 
@@ -569,15 +578,7 @@ See also [Wikipedia:Formula editor](https://en.wikipedia.org/wiki/Formula_editor
 
 	[https://github.com/miyakogi/m2r](https://github.com/miyakogi/m2r) || [m2r](https://www.archlinux.org/packages/?name=m2r)
 
-*   **[Sphinx](https://en.wikipedia.org/wiki/Sphinx_(documentation_generator) "wikipedia:Sphinx (documentation generator)")** — A documentation generation system using [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText "wikipedia:ReStructuredText") to generate output in multiple formats (primary documentation system for the Python project).
-
-	[http://sphinx-doc.org](http://sphinx-doc.org) || [python-sphinx](https://www.archlinux.org/packages/?name=python-sphinx)
-
-*   **[txt2tags](https://en.wikipedia.org/wiki/Txt2tags "wikipedia:Txt2tags")** — Dead-simple, KISS-compliant lightweight, human-readable markup language to produce rich format content out of plain text files.
-
-	[http://txt2tags.sourceforge.net](http://txt2tags.sourceforge.net) || [txt2tags](https://www.archlinux.org/packages/?name=txt2tags)
-
-#### Markdown editors
+##### Markdown editors
 
 *   **Abricotine** — Markdown editor built for desktop. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -699,9 +700,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://vim-latex.sourceforge.net/](http://vim-latex.sourceforge.net/) || [vim-latexsuite](https://www.archlinux.org/packages/?name=vim-latexsuite)
 
-#### Formula editors
-
-See also [Wikipedia:Formula editor](https://en.wikipedia.org/wiki/Formula_editor "wikipedia:Formula editor").
+#### TeX formula editors
 
 *   **EqualX** — LaTeX equation editor with real time preview.
 
@@ -710,6 +709,10 @@ See also [Wikipedia:Formula editor](https://en.wikipedia.org/wiki/Formula_editor
 *   **KLatexFormula** — GUI for generating images from LaTeX equations.
 
 	[https://klatexformula.sourceforge.io/](https://klatexformula.sourceforge.io/) || [klatexformula](https://aur.archlinux.org/packages/klatexformula/)
+
+*   **[LibreOffice](/index.php/LibreOffice "LibreOffice") TexMaths extension** — LaTeX equation editor for LibreOffice.
+
+	[http://roland65.free.fr/texmaths/](http://roland65.free.fr/texmaths/) || [libreoffice-extension-texmaths](https://www.archlinux.org/packages/?name=libreoffice-extension-texmaths)
 
 #### XML editors
 
@@ -729,7 +732,7 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 ### Document converters
 
-See also [#Markup languages](#Markup_languages) and [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
+See also [#Markup languages](#Markup_languages).
 
 *   **[Antiword](https://en.wikipedia.org/wiki/Antiword "wikipedia:Antiword")** — MS Word to text converter.
 
@@ -739,7 +742,7 @@ See also [#Markup languages](#Markup_languages) and [Wikipedia:Comparison of doc
 
 	[https://wagner.pp.ru/~vitus/software/catdoc/](https://wagner.pp.ru/~vitus/software/catdoc/) || [catdoc](https://www.archlinux.org/packages/?name=catdoc)
 
-*   **[Pandoc](https://en.wikipedia.org/wiki/Pandoc "wikipedia:Pandoc")** — Swiss-army knife for converting one markup format into another.
+*   **[Pandoc](https://en.wikipedia.org/wiki/Pandoc "wikipedia:Pandoc")** — Swiss-army knife for converting markup and document formats.
 
 	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc)
 
@@ -1051,7 +1054,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[https://sourceforge.net/projects/yagf-ocr/](https://sourceforge.net/projects/yagf-ocr/) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
-### Note-taking
+### Notes
 
 #### Note-taking software
 
@@ -1313,7 +1316,7 @@ See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikip
 
 #### Distraction-free writing
 
-See also [Wikipedia:Full-screen writing program](https://en.wikipedia.org/wiki/Full-screen_writing_program "wikipedia:Full-screen writing program").
+See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writing program](https://en.wikipedia.org/wiki/Full-screen_writing_program "wikipedia:Full-screen writing program").
 
 *   **FocusWriter** — Simple, distraction-free writing environment. It utilizes a hide-away interface that you access by moving your mouse to the edges of the screen, allowing the program to have a familiar look and feel to it while still getting out of the way so that you can immerse yourself in your work.
 
@@ -1331,15 +1334,7 @@ See also [Wikipedia:Full-screen writing program](https://en.wikipedia.org/wiki/F
 
 	[https://github.com/dbuksbaum/TextRoom](https://github.com/dbuksbaum/TextRoom) || [textroom](https://aur.archlinux.org/packages/textroom/)
 
-#### Storywriting
-
-*   **KIT Scenarist** — Simple and powerful application for creating screenplays.
-
-	[https://kitscenarist.ru/en/](https://kitscenarist.ru/en/) || [scenarist](https://aur.archlinux.org/packages/scenarist/)
-
-*   **Magic Fountain** — Fountain syntax editor and viewer for writing screenplays.
-
-	[https://aztorius.github.io/magicfountain/](https://aztorius.github.io/magicfountain/) || [magicfountain](https://aur.archlinux.org/packages/magicfountain/)
+#### Story writing
 
 *   **Manuskript** — Provides a rich environment to help writers create their first draft and then further refine and edit their masterpiece.
 
@@ -1349,101 +1344,19 @@ See also [Wikipedia:Full-screen writing program](https://en.wikipedia.org/wiki/F
 
 	[https://ostorybook.tuxfamily.org/?lng=en](https://ostorybook.tuxfamily.org/?lng=en) || [ostorybook](https://aur.archlinux.org/packages/ostorybook/)
 
+#### Screenwriting
+
+*   **KIT Scenarist** — Simple and powerful application for creating screenplays.
+
+	[https://kitscenarist.ru/en/](https://kitscenarist.ru/en/) || [scenarist](https://aur.archlinux.org/packages/scenarist/)
+
+*   **Magic Fountain** — Fountain syntax editor and viewer for writing screenplays.
+
+	[https://aztorius.github.io/magicfountain/](https://aztorius.github.io/magicfountain/) || [magicfountain](https://aur.archlinux.org/packages/magicfountain/)
+
 *   **[Trelby](https://en.wikipedia.org/wiki/Trelby "wikipedia:Trelby")** — Simple, fast and elegantly laid out to make screenwriting simple.
 
 	[https://www.trelby.org/](https://www.trelby.org/) || [trelby-git](https://aur.archlinux.org/packages/trelby-git/)
-
-### Text tools
-
-#### Character selectors
-
-*   **GNOME Characters** — Character map application for GNOME.
-
-	[https://gitlab.gnome.org/GNOME/gnome-characters](https://gitlab.gnome.org/GNOME/gnome-characters) || [gnome-characters](https://www.archlinux.org/packages/?name=gnome-characters)
-
-*   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK+ 3 character selector for GNOME.
-
-	[https://wiki.gnome.org/Apps/Gucharmap](https://wiki.gnome.org/Apps/Gucharmap) || [gucharmap](https://www.archlinux.org/packages/?name=gucharmap)
-
-*   **KCharSelect** — Tool to select special characters from all installed fonts and copy them into the clipboard. Part of [kdeutils](https://www.archlinux.org/groups/x86_64/kdeutils/).
-
-	[https://utils.kde.org/projects/kcharselect/](https://utils.kde.org/projects/kcharselect/) || [kcharselect](https://www.archlinux.org/packages/?name=kcharselect)
-
-#### Font viewers
-
-*   **Font Manager** — Simple font management for GTK+ desktop environments.
-
-	[https://fontmanager.github.io/](https://fontmanager.github.io/) || [font-manager](https://aur.archlinux.org/packages/font-manager/)
-
-*   **Fonty Python** — Manage, view and find your fonts.
-
-	[https://savannah.nongnu.org/projects/fontypython](https://savannah.nongnu.org/projects/fontypython) || [fontypython](https://aur.archlinux.org/packages/fontypython/)
-
-*   **GNOME Fonts** — Font viewer for GNOME.
-
-	[https://gitlab.gnome.org/GNOME/gnome-font-viewer](https://gitlab.gnome.org/GNOME/gnome-font-viewer) || [gnome-font-viewer](https://www.archlinux.org/packages/?name=gnome-font-viewer)
-
-*   **KFontview** — KDE application to view and install different types of fonts.
-
-	[https://docs.kde.org/trunk5/en/kde-workspace/kfontview/index.html](https://docs.kde.org/trunk5/en/kde-workspace/kfontview/index.html) || [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)
-
-*   **MATE Font Viewer** — Font viewer for MATE.
-
-	[https://github.com/mate-desktop/mate-control-center](https://github.com/mate-desktop/mate-control-center) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
-
-*   **Waterfall** — GTK+ application to view all characters of font in all sizes.
-
-	[https://keithp.com/cgit/gwaterfall.git](https://keithp.com/cgit/gwaterfall.git) || [gwaterfall](https://www.archlinux.org/packages/?name=gwaterfall)
-
-#### Barcode generators and readers
-
-##### Console
-
-*   **barcode** — A tool to convert text strings to printed bars.
-
-	[https://www.gnu.org/software/barcode/](https://www.gnu.org/software/barcode/) || [barcode](https://www.archlinux.org/packages/?name=barcode)
-
-*   **iec16022** — Produce 2D barcodes often also referenced as DataMatrix.
-
-	[https://datenfreihafen.org/projects/iec16022.html](https://datenfreihafen.org/projects/iec16022.html) || [iec16022](https://www.archlinux.org/packages/?name=iec16022)
-
-*   **qrencode** — C library and command line tool for encoding data in a QR Code symbol.
-
-	[https://fukuchi.org/works/qrencode/](https://fukuchi.org/works/qrencode/) || [qrencode](https://www.archlinux.org/packages/?name=qrencode)
-
-*   **ZBar** — Application and library for reading bar codes from various sources.
-
-	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || [zbar](https://www.archlinux.org/packages/?name=zbar)
-
-*   **Zint** — Barcode encoding library and command line tool supporting over 50 symbologies.
-
-	[http://zint.org.uk/](http://zint.org.uk/) || [zint](https://www.archlinux.org/packages/?name=zint)
-
-##### Graphical
-
-*   **gLabels** — Program for creating labels and business cards. It also supports creating barcodes.
-
-	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
-
-*   **QRab** — Simply grabs QR code from screen and copies decoded text into clipboard.
-
-	[https://qrab.sourceforge.io/](https://qrab.sourceforge.io/) || [qrab](https://aur.archlinux.org/packages/qrab/)
-
-*   **Qreator** — Create your own QR codes.
-
-	[http://davidplanella.org/project-showcase/qreator/](http://davidplanella.org/project-showcase/qreator/) || [qreator](https://aur.archlinux.org/packages/qreator/)
-
-*   **QtQR** — QR Code generator and decoder.
-
-	[https://launchpad.net/qr-tools](https://launchpad.net/qr-tools) || [qtqr](https://aur.archlinux.org/packages/qtqr/)
-
-*   **ZBarCam GUI** — Simple GUI for ZBar to read bar codes from various sources.
-
-	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || GTK+: [zbar-gtk](https://www.archlinux.org/packages/?name=zbar-gtk), Qt: [zbar-qt](https://www.archlinux.org/packages/?name=zbar-qt)
-
-*   **Zint Barcode Studio** — Barcode generator GUI.
-
-	[http://zint.org.uk/](http://zint.org.uk/) || [zint-qt](https://www.archlinux.org/packages/?name=zint-qt)
 
 ### Language
 
@@ -1550,3 +1463,53 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 *   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal and others.
 
 	[http://virtaal.translatehouse.org/](http://virtaal.translatehouse.org/) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
+
+### Barcode generators and readers
+
+#### Console
+
+*   **barcode** — A tool to convert text strings to printed bars.
+
+	[https://www.gnu.org/software/barcode/](https://www.gnu.org/software/barcode/) || [barcode](https://www.archlinux.org/packages/?name=barcode)
+
+*   **iec16022** — Produce 2D barcodes often also referenced as DataMatrix.
+
+	[https://datenfreihafen.org/projects/iec16022.html](https://datenfreihafen.org/projects/iec16022.html) || [iec16022](https://www.archlinux.org/packages/?name=iec16022)
+
+*   **qrencode** — C library and command line tool for encoding data in a QR Code symbol.
+
+	[https://fukuchi.org/works/qrencode/](https://fukuchi.org/works/qrencode/) || [qrencode](https://www.archlinux.org/packages/?name=qrencode)
+
+*   **ZBar** — Application and library for reading bar codes from various sources.
+
+	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || [zbar](https://www.archlinux.org/packages/?name=zbar)
+
+*   **Zint** — Barcode encoding library and command line tool supporting over 50 symbologies.
+
+	[http://zint.org.uk/](http://zint.org.uk/) || [zint](https://www.archlinux.org/packages/?name=zint)
+
+#### Graphical
+
+*   **gLabels** — Program for creating labels and business cards. It also supports creating barcodes.
+
+	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
+
+*   **QRab** — Simply grabs QR code from screen and copies decoded text into clipboard.
+
+	[https://qrab.sourceforge.io/](https://qrab.sourceforge.io/) || [qrab](https://aur.archlinux.org/packages/qrab/)
+
+*   **Qreator** — Create your own QR codes.
+
+	[http://davidplanella.org/project-showcase/qreator/](http://davidplanella.org/project-showcase/qreator/) || [qreator](https://aur.archlinux.org/packages/qreator/)
+
+*   **QtQR** — QR Code generator and decoder.
+
+	[https://launchpad.net/qr-tools](https://launchpad.net/qr-tools) || [qtqr](https://aur.archlinux.org/packages/qtqr/)
+
+*   **ZBarCam GUI** — Simple GUI for ZBar to read bar codes from various sources.
+
+	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || GTK+: [zbar-gtk](https://www.archlinux.org/packages/?name=zbar-gtk), Qt: [zbar-qt](https://www.archlinux.org/packages/?name=zbar-qt)
+
+*   **Zint Barcode Studio** — Barcode generator GUI.
+
+	[http://zint.org.uk/](http://zint.org.uk/) || [zint-qt](https://www.archlinux.org/packages/?name=zint-qt)

@@ -102,7 +102,15 @@ Após criar/editar o `/etc/pacman.d/mirrorlist`, execute o seguinte comando:
 
 ```
 
-Passar dois sinalizadores `--refresh`/`-y` força o pacman a atualizar todas as listas de pacotes, mesmo que sejam consideradas atualizadas. Emitir `pacman -Syyu` *sempre que mudar para um novo espelho* é uma boa prática e evitará possíveis problemas. Veja também [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124) (-Syy é seguro?).
+Passar dois sinalizadores `--refresh`/`-y` força o pacman a atualizar todas as listas de pacotes, mesmo que sejam consideradas atualizadas. Emitir `pacman -Syyu` é um gasto desnecessário de largura de banda na maioria dos casos, mas algumas vezes pode corrigir problemas ao trocar entre um espelho defeituoso para um funcional. Veja também [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124) (-Syy é seguro?).
+
+**Atenção:** Na maioria dos casos, se você forçar a atualização do banco de dados do pacman, será necessário forçar o downgrade de qualquer pacote potencialmente novo demais para corresponder às versões oferecidas pelo novo espelho. Isso evita problemas nos quais os pacotes são atualizados de forma inconsistente, levando a uma atualização parcial.
+```
+# pacman -Syyuu
+
+```
+
+Isso não é necessário ao usar carimbos de hora *(timestamps)* para garantir que os espelhos apenas estejam atualizados.
 
 ## Ordenando espelhos
 
@@ -116,7 +124,7 @@ Não é ideal classificar apenas com base nos espelhos na velocidade, pois os se
 
 #### Classificando uma lista de espelhos existente
 
-O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) fornece um script Bash, `/usr/bin/rankmirrors`, que pode ser usado para classificar os espelhos de acordo com suas velocidades de conexão e abertura para aproveitar o uso do espelho local mais rápido.
+O pacote [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) fornece um script Bash, `/usr/bin/rankmirrors`, que pode ser usado para classificar os espelhos de acordo com suas velocidades de conexão e abertura para aproveitar o uso do espelho local mais rápido.
 
 Faça um *backup* do `/etc/pacman.d/mirrorlist` existente:
 
@@ -148,6 +156,8 @@ Para iniciar com uma lista curta de espelhos atualizados baseada em alguns país
 $ curl -s "[https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on](https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on)" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
 
 ```
+
+**Dica:** Esse procedimento pode ser feito interativamente navegando para `[https://www.archlinux.org/mirrorlist](https://www.archlinux.org/mirrorlist)` com qualquer navegador baseado em texto como, por exemplo, o [elinks(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/elinks.1).
 
 ### Classificação do lado do servidor
 
@@ -204,7 +214,7 @@ Esses espelhos *não* estão listados no `/etc/pacman.d/mirrorlist`.
 
 *   [http://mirrors.geekpie.org/archlinux/](http://mirrors.geekpie.org/archlinux/) - *Geek Pie Association @ ShanghaiTech University*
 *   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University(Legacy)*
-*   [https://mirrors.sjtug.org/archlinux/](https://mirrors.sjtug.org/archlinux/) - *Shanghai Jiaotong University Linux User Group*
+*   [https://mirrors.sjtug.sjtu.edu.cn/archlinux/](https://mirrors.sjtug.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University Linux User Group*
 *   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 apenas)*
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 apenas)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*

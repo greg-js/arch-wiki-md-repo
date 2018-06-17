@@ -313,9 +313,7 @@ FastCGI technology is introduced into nginx to work with many external tools, e.
 
 [PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for [PHP](/index.php/PHP "PHP").
 
-[Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and make sure [PHP](/index.php/PHP "PHP") has been installed and configured correctly.
-
-The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`. For basic usage the default configuration should be sufficient.
+[Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and make sure [PHP](/index.php/PHP "PHP") has been installed and configured correctly. The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`. For basic usage the default configuration should be sufficient.
 
 Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `php-fpm.service`.
 

@@ -347,7 +347,7 @@ O arquivo `depends` lista os pacotes que este pacote depende, enquanto a `desc` 
 
 O *pacman* armazena seus pacotes baixados em `/var/cache/pacman/pkg/` e não remove as versões antigas ou desinstaladas automaticamente. Isso tem algumas vantagens:
 
-1.  Isso permite fazer [downgrade](/index.php/Downgrade_(Portugu%C3%AAs) "Downgrade (Português)") de um pacote sem a necessidade de obter a versão anterior por outros meios, tal como o [Archive](/index.php/Archive_(Portugu%C3%AAs) "Archive (Português)").
+1.  Isso permite fazer [downgrade](/index.php/Downgrade_(Portugu%C3%AAs) "Downgrade (Português)") de um pacote sem a necessidade de obter a versão anterior por outros meios, tal como o [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)").
 2.  Um pacote que tenha sido desinstalado pode ser facilmente reinstalado diretamente da pasta cache, não exigindo um novo download do repositório.
 
 Portanto, é necessário limpar deliberadamente essa pasta periodicamente para evitar que essa pasta cresça indefinidamente em tamanho.
@@ -359,7 +359,7 @@ O script *paccache*, fornecido no pacote [pacman-contrib](https://www.archlinux.
 
 ```
 
-[Habilite](/index.php/Habilite "Habilite") `paccache.timer` para descartar pacotes não usados semanalmente.
+[Habilite](/index.php/Habilite "Habilite") e [inicie](/index.php/Inicie "Inicie") `paccache.timer` para descartar pacotes não usados semanalmente.
 
 **Dica:** Você pode criar [#Hooks](#Hooks) para executar isso automaticamente após cada transação do pacman, [veja exemplos](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743).
 
@@ -602,15 +602,15 @@ Ocorreram erros e, portanto, nenhum pacote foi atualizado.
 
 ```
 
-Isso aconteceu porque o *pacman* detectou um conflito de arquivo e, por design, não vai sobrescrever arquivos para você. Este é um recurso de design, não uma falha.
+Isso aconteceu porque o *pacman* detectou um conflito de arquivo e, por design, não vai sobrescrever arquivos para você. Este é por design, e não uma falha.
 
 O problema geralmente é trivial de resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo */caminho/para/arquivo*`). Se o arquivo for de propriedade de outro pacote, [preencha um relatório de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro"). Se o arquivo não for de outro pacote, renomeie o arquivo que "existe no sistema de arquivos" e execute novamente o comando de atualização. Se tudo correr bem, o arquivo pode então ser removido.
 
-Se você instalou um programa manualmente sem usar o *pacman* ou um frontend dele (p.ex.: por meio de `make install`), você tem que removê-lo e todos os seus arquivos para, depois, reinstalar adequadamente usando o *pacman*. Veja também [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
+Se você instalou um programa manualmente sem usar o *pacman*, (p.ex.: por meio de `make install`), você tem que remover/instalar esse programa com seus arquivos. Veja também [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
 
-Todo pacote instalado fornece um arquivo `/var/lib/pacman/local/*$pacote-$versão*/files` que contém metadados sobre esse pacote. Se o arquivo ficar corrompido, vazio ou desaparecer, ele resulta em erros de `existe no sistema de arquivos` ao tentar atualizar o pacote. Tal erro geralmente está relacionado a um pacote. Em vez de renomear manualmente e posteriormente remover todos os arquivos que pertencem ao pacote em questão, você pode tentar excepcionalmente executar `pacman -S --force $pacote` para forçar o *pacman* a sobrescrever esses arquivos.
+Todo pacote instalado fornece um arquivo `/var/lib/pacman/local/*$pacote-$versão*/files` que contém metadados sobre esse pacote. Se o arquivo ficar corrompido, vazio ou desaparecer, ele resulta em erros de `existe no sistema de arquivos` ao tentar atualizar o pacote. Tal erro geralmente está relacionado a um pacote. Em vez de renomear manualmente e posteriormente remover todos os arquivos que pertencem ao pacote em questão, você pode tentar excepcionalmente executar `pacman -S --overwrite *pacote*` para forçar o *pacman* a sobrescrever esses arquivos.
 
-**Atenção:** Tenha cuidado ao usar a opção `--force` (por exemplo, `pacman -Syu --force`), pois ela pode causar grandes problemas se usada inadequadamente. É altamente recomendado usar essa opção apenas quando as notícias do Arch instruem o usuário a fazê-lo.
+**Atenção:** Tenha cuidado ao usar a opção `--overwrite` (por exemplo, `pacman -S --overwrite *pacote*`), pois ela pode causar grandes problemas se usada inadequadamente. É altamente recomendado usar essa opção apenas quando as notícias do Arch instruem o usuário a fazê-lo e/ou se o usuário está ciente de quais arquivos podem ser sobrescritos.
 
 ### Erro "falha em submeter a transação (pacote inválido ou corrompido)"
 
@@ -636,9 +636,9 @@ Se o *pacman* for interrompido enquanto altera a base de dados, esse arquivo de 
 
 Esse erro se manifesta como `não encontrado na base de dados de sincronização`, `alvo não encontrado` ou `falha ao obter o arquivo`.
 
-Primeiramente, assegure-se de que o pacote realmente existe (e cuidado para erros de escrita!). Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada ou seus repositórios podem estar configurados incorretamente. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize.
+Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize. Também certifique-se que os [espelhos](/index.php/Espelhos "Espelhos") selecionados estejam atualizados e [repositórios](/index.php/Reposit%C3%B3rios "Repositórios") são configurados corretamente.
 
-Pode ser também que aquele repositório contendo o pacote não está habilidade no seu sistema. Por exemplo, o pacote pode estar no repositório *multilib*, mas o *multilib* não está habilitado em seu `pacman.conf`.
+Pode ser também que aquele repositório contendo o pacote não está habilidade no seu sistema. Por exemplo, o pacote pode estar no repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)"), mas o *multilib* não está habilitado em seu `pacman.conf`.
 
 Veja também [FAQ (Português)#Por que há alguma uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](/index.php/FAQ_(Portugu%C3%AAs)#Por_que_h.C3.A1_alguma_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F "FAQ (Português)").
 
@@ -646,22 +646,22 @@ Veja também [FAQ (Português)#Por que há alguma uma única versão de cada bib
 
 **Atenção:** É extremamente fácil quebrar seu sistema ainda mais, usando essa abordagem. Use isso apenas como um último recurso se o método do [#pacman trava durante uma atualização](#pacman_trava_durante_uma_atualiza.C3.A7.C3.A3o) não for uma opção.
 
-Mesmo se o *pacman* estiver terrivelmente quebrado, você pode corrigi-lo manualmente baixando os últimos pacotes e extraindo-os para os locais corretos. Os passos difíceis a se executar são
+Mesmo se o *pacman* estiver terrivelmente quebrado, você pode corrigi-lo manualmente baixando os últimos pacotes e extraindo-os para os locais corretos. Os passos difíceis a se executar são:
 
-1.  Determinar dependências para instalar
-2.  Baixar cada pacote de um espelho de sua escolha
+1.  Determinar dependências do [pacman](https://www.archlinux.org/packages/?name=pacman) para instalar
+2.  Baixar cada pacote de um [espelho](/index.php/Espelho "Espelho") de sua escolha
 3.  Extrair cada pacote para a raiz
-4.  Reinstalar esses pacotes com `pacman -S --force` para atualizar a base de dados de pacote
+4.  Reinstalar esses pacotes com `pacman -S --overwrite` para atualizar a base de dados de pacote
 5.  Fazer uma atualização completa do sistema
 
-Se você tem um sistema do Arch saudável disponível, você pode ver a lista completa de dependências com
+Se você tem um sistema do Arch saudável disponível, você pode ver a lista completa de dependências com:
 
 ```
 $ pacman -Q $(pactree -u pacman)
 
 ```
 
-mas você pode precisar atualizar algumas delas, dependendo do seu problema. Um exemplo de extração de um pacote é
+Mas você pode precisar atualizar algumas delas, dependendo do seu problema. Um exemplo de extração de um pacote é
 
 ```
 # tar -xvpwf *pacote.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL --exclude .MTREE --exclude .BUILDINFO
@@ -716,9 +716,9 @@ Após, recomenda-se que você execute `exit`, `umount /mnt/{boot,}` e `reboot`.
 
 Você pode tentar:
 
-*   atualizar as chaves conhecidas, executando `pacman-key --refresh-keys`
-*   atualizar manualmente o pacote [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primeiro, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
-*   siga [pacman-key (Português)#Redefinindo todas as chaves](/index.php/Pacman-key_(Portugu%C3%AAs)#Redefinindo_todas_as_chaves "Pacman-key (Português)")
+*   Atualizar as chaves conhecidas, executando `pacman-key --refresh-keys`
+*   Atualizar manualmente o pacote [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primeiro, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
+*   Siga [pacman-key (Português)#Redefinindo todas as chaves](/index.php/Pacman-key_(Portugu%C3%AAs)#Redefinindo_todas_as_chaves "Pacman-key (Português)")
 
 ### Solicitação de importação de chaves PGP
 
@@ -761,7 +761,7 @@ Parece que uma transição anterior do *pacman* removeu ou corrompeu as bibliote
 
 Para recuperar dessa situação, você precisa desempacotar manualmente as bibliotecas necessárias para seu sistema. Primeiro descubra qual pacote contém a biblioteca em falta e, então, localize-o no cache do *pacman* (`/var/cache/pacman/pkg/`). Desempacote a biblioteca compartilhada necessária no sistema de arquivos. Isso vai permitir executar o *pacman*.
 
-Agora, você precisa [reinstalar](#Instalando_pacotes_espec.C3.ADficos) o pacote quebrado. Note que você precisa usar a opção `--force`, pois você acabou de desempacotar arquivos de sistema e o*pacman* não tem conhecimento deles. O *pacman* vai substituir corretamente nosso arquivo de biblioteca compartilhada com o do pacote.
+Agora, você precisa [reinstalar](#Instalando_pacotes_espec.C3.ADficos) o pacote quebrado. Note que você precisa usar a opção `--overwrite`, pois você acabou de desempacotar arquivos de sistema e o*pacman* não tem conhecimento deles. O *pacman* vai substituir corretamente nosso arquivo de biblioteca compartilhada com o do pacote.
 
 É isso. Atualize o resto do sistema.
 

@@ -96,6 +96,13 @@ Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, examp
 
 ```
 
+Alternatively, if you want to use the Linux initramfs file autodetected by rEFInd, you may use [refind-efi-git-patched](https://aur.archlinux.org/packages/refind-efi-git-patched/). Your `/boot/refind_linux.conf` may then look like the example below: (the `%s` variable is automatically replaced with the autodetected Linux initrd file basename)
+
+```
+"Boot with standard options" "rw root=UUID=(...) quiet initrd=/boot/intel-ucode.img initrd=%s.img"
+
+```
+
 Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `*esp*/EFI/refind/refind.conf` to define the kernels should simply add `initrd=/intel-ucode.img` or `/boot/intel-ucode.img` as required to the options line, and not in the main part of the stanza.
 
 ### Syslinux

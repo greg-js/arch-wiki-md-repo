@@ -785,6 +785,10 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
 
+*   **Yarock** — Modern looking music player, packed with features, that doesn’t depend on any specific desktop environment. Yarock is designed to provide an easy and pretty music browser based on cover art.
+
+	[https://seb-apps.github.io/yarock/](https://seb-apps.github.io/yarock/) || [yarock-qt5](https://aur.archlinux.org/packages/yarock-qt5/)
+
 ###### Qt Multimedia-based
 
 *   **Babe** — Tiny Qt music player to keep your favorite songs at hand.

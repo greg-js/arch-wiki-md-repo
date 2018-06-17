@@ -6,6 +6,7 @@ The **Arch is the best** project is a very sophisticated and exquisite, ego-boos
 *   [2 The code](#The_code)
 *   [3 Translations](#Translations)
 *   [4 Encodings](#Encodings)
+*   [5 Hashes](#Hashes)
 
 ## History
 
@@ -1324,7 +1325,7 @@ print -- $(tput setaf 2) ${$(<<<${${${(@j: :)${(@s:_:)${:-What_Linux_is_the_bes
 	Ancient Greek (Attic)
 
 ```
-Ἡ Ἀψίς ἄριστην ἐστί!
+Ἡ Ἁψίς ἀρίστη!
 
 ```
 
@@ -2014,6 +2015,7 @@ Y gorau un yw Arch!
 
 	Base64
 
+ `$ echo 'Arch is the best!' | base64` 
 ```
 QXJjaCBpcyB0aGUgYmVzdCEK
 
@@ -2021,10 +2023,7 @@ QXJjaCBpcyB0aGUgYmVzdCEK
 
 	Binary ASCII
 
-```
-0100000101110010011000110110100000100000011010010111001100100000011101000110100001100101001000000110001001100101011100110111010000100001
-
-```
+ `$ echo 'Arch is the best!' | perl -lpe '$_=unpack"B*"'`  `0100000101110010011000110110100000100000011010010111001100100000011101000110100001100101001000000110001001100101011100110111010000100001` 
 
 	Braille
 
@@ -2035,6 +2034,7 @@ QXJjaCBpcyB0aGUgYmVzdCEK
 
 	Desrever (Reversed)
 
+ `$ echo 'Arch is the best!' | rev` 
 ```
 !tseb eht si hcrA
 
@@ -2049,17 +2049,7 @@ QXJjaCBpcyB0aGUgYmVzdCEK
 
 	Hexadecimal ASCII
 
-```
-4172636820697320746865206265737421
-
-```
-
-	md5sum
-
-```
-2d9092e089d77a8e23f47ba3dfe77027
-
-```
+ `$ echo 'Arch is the best!' | perl -lpe '$_=unpack"H*"'`  `4172636820697320746865206265737421` 
 
 	Morse Code
 
@@ -2070,8 +2060,32 @@ QXJjaCBpcyB0aGUgYmVzdCEK
 
 	ROT13
 
+ `$ echo 'Arch is the best!' | tr 'A-Za-z' 'N-ZA-Mn-za-m'` 
 ```
 Nepu vf gur orfg!
+
+```
+
+	Rotated 180°
+
+```
+¡ʇsǝq ǝɥʇ s! ɥɔɹ∀
+
+```
+
+	URL Encoded
+
+```
+Arch%20is%20the%20best!
+
+```
+
+## Hashes
+
+	md5sum
+
+```
+2d9092e089d77a8e23f47ba3dfe77027
 
 ```
 
@@ -2107,19 +2121,5 @@ af15cd556676d37f916a35e2cf74f04cf7b1805b3244ec418c3927d8
 
 ```
 b0917f66d05278106808d25f51001b038856fa7171b935d450b4bcbf1e8b82ed6a5a2f49d99734e1efc7ad3d1b8a33519008635d4e1aa3e65a5e70c4de649aad
-
-```
-
-	Rotated 180°
-
-```
-¡ʇsǝq ǝɥʇ s! ɥɔɹ∀
-
-```
-
-	URL Encoded
-
-```
-Arch%20is%20the%20best!
 
 ```

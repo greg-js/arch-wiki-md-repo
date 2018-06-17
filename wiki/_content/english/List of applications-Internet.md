@@ -106,7 +106,7 @@
 
 *   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Manager that provides wired, wireless, mobile broadband and OpenVPN detection with configuration and automatic connection.
 
-	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
+	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || CLI: [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), GUI: [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)
 
 *   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev").
 
@@ -446,7 +446,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ### Web servers
 
-See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Comparison_of_web_server_software "w:Comparison of web server software").
+See also [Web server](/index.php/Web_server "Web server").
 
 *   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
 

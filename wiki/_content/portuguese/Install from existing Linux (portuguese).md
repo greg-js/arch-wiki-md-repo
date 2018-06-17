@@ -84,7 +84,7 @@ Existem várias ferramentas que automatizam uma grande parte das etapas descrita
 *   [archcx](https://github.com/m4rienf/ArchCX) (Bash, do Hetzner CX Rescue System)
 *   [digitalocean-debian-to-arch](https://github.com/gh2o/digitalocean-debian-to-arch) (disco de repartição, específico para DigitalOCean)
 *   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
-*   [vps2arch](https://github.com/drizzt/vps2arch) (Bash)
+*   [vps2arch](https://gitlab.com/drizzt/vps2arch) (Bash)
 
 A maneira manual é apresentada nas seguintes subseções. A ideia é executar um sistema Arch dentro do sistema host, com a instalação real sendo executada a partir do sistema Arch. O sistema aninhado está contido dentro de um chroot.
 
@@ -94,20 +94,14 @@ Dois métodos para configurar e entrar no chroot são apresentados abaixo, do ma
 
 #### Método A: Usando a imagem do bootstrap (recomendado)
 
-Baixe a imagem *bootstrap* de um [espelho](https://www.archlinux.org/download) (*mirror*):
-
-```
-# cd /tmp
-# wget [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.04.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2018.04.01-x86_64.tar.gz)
-
-```
+Baixe a imagem *bootstrap* de um [espelho](https://www.archlinux.org/download) (*mirror*) em `/tmp`.
 
 Você também pode baixar a assinatura (mesma URL com `.sig` adicionado) e [verificá-la com GnuPG](/index.php/GnuPG#Verify_a_signature "GnuPG").
 
 Extraia o tarball:
 
 ```
-# tar xzf <caminho-para-imagem-bootstrap>/archlinux-bootstrap-2018.04.01-x86_64.tar.gz
+# tar xzf <caminho-para-imagem-bootstrap>/archlinux-bootstrap-*-x86_64.tar.gz
 
 ```
 

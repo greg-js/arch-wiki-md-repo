@@ -1,3 +1,5 @@
+[PHPUnit](https://phpunit.de/) is a programmer-oriented testing framework for PHP.
+
 ## Installing
 
 By far the easiest way to install is using the PHP Archive ([PHAR](http://php.net/phar)) package provided by the project. The PHAR package contains all dependencies as well as some of the optional dependencies for PHPUnit. The latest version can be retrieved from the project's site:

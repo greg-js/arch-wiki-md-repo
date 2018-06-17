@@ -1,4 +1,6 @@
-The [Lenovo IdeaPad 720s (Ryzen)](https://www3.lenovo.com/us/en/laptops/ideapad/ideapad-700-series/Ideapad-720S-13-AMD/p/88IP70S0929) is a laptop computer with a 13.3" screen, AMD Ryzen™ processor, webcam, microphone, audio in/out, 80211ac wireless card with bluetooth 4.1, 1 USB 3.0 Type-C (DP & Power Delivery), 1 x USB 3.0 Type-C (DP), 2 USB3 ports, and a fingerprint reader. The 720s is currently better supported by the linux 4.15 kernel as many things relating to it's APU are broken or only semi-working. It uses an rtl8821ce WLAN and Bluetooth chip that is not built into Linux 4.14.15.
+The [Lenovo IdeaPad 720s (Ryzen)](https://www3.lenovo.com/us/en/laptops/ideapad/ideapad-700-series/Ideapad-720S-13-AMD/p/88IP70S0929) is a laptop computer with a 13.3" screen, AMD Ryzen™ processor, webcam, microphone, audio in/out, 80211ac wireless card with bluetooth 4.1, 1 USB 3.0 Type-C (DP & Power Delivery), 1 x USB 3.0 Type-C (DP), 2 USB3 ports, and a fingerprint reader.
+
+CPU/APU-wise, Linux support for the 720s is in decent shape since kernel ~4.15 (CPU and GPU temperatures per [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)); the more recent the better. Its rtl8821ce WLAN and Bluetooth chip has no mainlined driver (as of 4.17), but [rtl8821ce-dkms-git](https://aur.archlinux.org/packages/rtl8821ce-dkms-git/) comes to rescue here.
 
 ## Contents
 
@@ -72,7 +74,7 @@ Before installing, disable [Secure Boot](/index.php/Secure_Boot "Secure Boot") i
 
 ### Video
 
-X works natively with linux 4.15-1 from testing repos and admgpu.
+X works natively with a current [linux](https://www.archlinux.org/packages/?name=linux) and [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu).
 
 ### Sound
 
@@ -80,15 +82,19 @@ Sound works with PulseAudio in linux 4.15-1 from testing repos.
 
 ### Webcam
 
+Chicony EasyCamera (USB)
+
 <untested>
 
 ### Ethernet
 
-<untested>
+(No RJ45, use any working USB (A or C) dongle.)
 
 ### Wireless
 
-The rtl8821ce wireless driver was required in order for wireless to work properly.
+The [rtl8821ce-linux-dkms](https://aur.archlinux.org/packages/rtl8821ce-linux-dkms/) wireless driver is required in order for WiFi and Bluetooth to work.
+
+Active bluetooth may lock up the PC on lid close/suspend, then `rfkill block bluetooth`.
 
 ### Touchpad
 
@@ -96,7 +102,7 @@ Works out of the box with mutli-finger scrolling on linux 4.15-1 in X.
 
 ### Hardware keys
 
-<untested>
+No dedicated keys. The Fn functions on the F{1..12} keys are correctly recognised by X11 and work out of the box (Touchpad on/off etc.). Fn state can be inverted in the BIOS menu.
 
 ### Finger Print Reader
 
@@ -106,4 +112,4 @@ Model: <Unknown>
 
 ### ACPI annoyances
 
-<pci=noaer suppresses a massive amount of complaints>
+ttys get filled with massive amounts of ACPI complaints, and are unusable as such. Mitigate by passing the `pci=noaer` kernel commandline option.

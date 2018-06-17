@@ -228,7 +228,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 ```
 
-[Append](/index.php/Append "Append") the following lines in `/etc/mysql/my.cfg` to always use a higher character-limit:
+[Append](/index.php/Append "Append") the following lines in `/etc/mysql/my.cnf` to always use a higher character-limit:
 
 ```
 [mysqld]

@@ -162,14 +162,14 @@ Quando o shell de login destina-se a ser não funcional, por exemplo quando a co
 
 ### Exemplo de adicionar um usuário
 
-Em um sistema de desktop típico, use o seguinte comando para adicionar um novo usuário chamado `archie`:
+Para adicionar um novo usuário chamado `archie`, crar seu diretório pessoal e, do contrário, usando todos os padrões nos termos de grupos, nomes de pastas, shell usado e vários outros parâmetros:
 
 ```
-# useradd -m archie
+# useradd --create-home archie
 
 ```
 
-**Dica:** O valor padrão usado para o shell de login da nova conta pode ser exibida usando `useradd -D`. O padrão é Bash, um shell diferente pode ser especificado com a opção `-s`/`--shell`.
+**Dica:** O valor padrão usado para o shell de login da nova conta pode ser exibida usando `useradd ---default`. O padrão é Bash, um shell diferente pode ser especificado com a opção `-s`/`--shell`.
 
 Apesar de ser obrigatório proteger o recém criado usuário `archie` com uma senha, é altamente recomendado fazê-lo:
 
@@ -477,7 +477,7 @@ Os seguintes grupos estão atualmente sem uso para qualquer propósito:
 | Grupo | Arquivos afetados | Propósito |
 | bin | nenhum | Histórico |
 | daemon |
-| lock |
+| lock | Usado para acesso a arquivo de trava. Necessário para, por exemplo, [gnokii](https://www.archlinux.org/packages/?name=gnokii). |
 | mem |
 | network | Sem uso por padrão. Pode ser usado, por exemplo, para conceder acesso ao NetworkManager (veja [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
 | power |

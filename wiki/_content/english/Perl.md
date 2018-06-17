@@ -274,18 +274,18 @@ To use these with Perl, you may need to install the associated widget kits.
 
 #### cpanminus
 
-[cpanminus](http://search.cpan.org/dist/App-cpanminus/) extends module management and aims to be zero configuration and integrates with `local::db`. To install use:
+[cpanminus](https://metacpan.org/release/App-cpanminus) extends module management and aims to be zero configuration and integrates with `local::db`. To install use:
 
 ```
 $ cpan App::cpanminus
 
 ```
 
-The [cpanminus documentation](http://search.cpan.org/dist/App-cpanminus/bin/cpanm) gives examples.
+The [cpanminus documentation](https://metacpan.org/pod/distribution/App-cpanminus/bin/cpanm) gives examples.
 
 #### Bundle::CPAN
 
-Installing the [Bundle::CPAN](http://search.cpan.org/dist/Bundle-CPAN/) distribution will add a lot of nice functionality to CPAN.pm.
+Installing the [Bundle::CPAN](https://metacpan.org/release/Bundle-CPAN) distribution will add a lot of nice functionality to CPAN.pm.
 
 ```
 $ cpan Bundle::CPAN

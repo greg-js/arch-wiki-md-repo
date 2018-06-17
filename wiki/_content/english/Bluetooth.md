@@ -12,8 +12,8 @@ Related articles
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)
-        *   [1.1.1 Command-line](#Command-line)
-        *   [1.1.2 Graphical front-end](#Graphical_front-end)
+        *   [1.1.1 Console](#Console)
+        *   [1.1.2 Graphical](#Graphical)
 *   [2 Configuration](#Configuration)
     *   [2.1 Auto power-on after boot](#Auto_power-on_after_boot)
 *   [3 Using Obex for sending and receiving files](#Using_Obex_for_sending_and_receiving_files)
@@ -55,13 +55,13 @@ Then [start](/index.php/Start "Start") the `bluetooth.service` systemd unit. You
 
 ### Front-ends
 
-#### Command-line
+#### Console
 
 *   **bluetoothctl** — Pairing a device from the shell is one of the simplest and most reliable options.
 
-	|| [bluetooth-utils](https://www.archlinux.org/packages/?name=bluetooth-utils)
+	[http://www.bluez.org/](http://www.bluez.org/) || [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils)
 
-#### Graphical front-end
+#### Graphical
 
 The following packages allow for a graphical interface to customize Bluetooth.
 

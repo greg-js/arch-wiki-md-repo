@@ -40,7 +40,7 @@ The [go](https://www.archlinux.org/packages/?name=go) package contains the **go*
 
 *   Go projects are either just library files, just executables or both. Choose the appropriate way of packaging them. There are several examples below.
 *   Some Go applications or libraries have not been updated to the latest version of Go yet.
-    *   Running `go build -fix` may often work, but it may have to be fixed by the developer. Report an issue upstream if this is the case.
+    *   Running `go build -fix` may often work, but it may have to be fixed by the developer. Report an issue upstream if this is the case.
 *   Several Go projects do not have a version number or a license file.
     *   Use license=('unknown') and report an issue to the developer if a license file is missing.
     *   Use version "0.1", "1" or the git-revision (or equivalent for other version control systems) if the version number is missing.

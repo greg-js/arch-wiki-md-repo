@@ -79,7 +79,7 @@ $ vncserver -kill :1
 
 #### Edit the environment file
 
-The `~/.vnc/xstartup` script is sourced by *vncserver* for creating the virtual X session and it must be adapted to one's needs. It functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. Users are expected to start a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
+The `~/.vnc/xstartup` script is sourced by *vncserver* for creating the virtual X session and it must be adapted to one's needs. It functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. In this script, users are expected to start a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
 
 For example, starting [XFCE](/index.php/XFCE "XFCE"):
 
@@ -265,16 +265,16 @@ $ vncviewer
 
 ## Accessing vncserver via SSH tunnels
 
-For servers offering SSH connection, an advantage of this method is that it is not necessary to open any other port than the already opened SSH port to the outside, since the *vnc* traffic is tunneled through the SSH port. It is highly recommended to use the `-localhost` switch when running *vncserver* this way since it allows connections from the localhost only and by analogy, only from users ssh'ed and authenticated on the box.
+For servers offering SSH connection, an advantage of this method is that it is not necessary to open any other port than the already opened SSH port to the outside, since the VNC traffic is tunneled through the SSH port.
 
-**Note:** TigerVNC uses *TLSVnc* encryption by default, unless specifically instructed via the `SecurityTypes` parameter. Authentication and traffic is encrypted, but there is no identity verification. TigerVNC supports alternative encryption schemes such as *X509Vnc* that allows the client to verify the identity of the server. When `SecurityTypes` on the server side is set to a non-secure option as high-priority (such as *None*, *VncAuth*, *Plain*, *TLSNone*, *TLSPlain*, *X509None*, *X509Plain*; which is ill-advised), it is not possible to use encryption. In that case, one can tunnel over SSH. When running *vncviewer*, it is safer to explicitly set `SecurityTypes` and not accept any unencrypted traffic.
+**Note:** TigerVNC uses *TLSVnc* encryption by default, unless specifically instructed via the `SecurityTypes` parameter. Authentication and traffic is encrypted, but there is no identity verification. TigerVNC supports alternative encryption schemes such as *X509Vnc* that allows the client to verify the identity of the server. When `SecurityTypes` on the server is set to a non-secure option as high-priority (such as *None*, *VncAuth*, *Plain*, *TLSNone*, *TLSPlain*, *X509None*, *X509Plain*); which is ill-advised, then it is not possible to use encryption. In that case, one can tunnel over SSH. When running *vncviewer*, it is safer to explicitly set `SecurityTypes` and not accept any unencrypted traffic.
 
 ### On the server
 
-The *vncserver* must be run on the server, it is appropriate to use the `-localhost` flag to only allow connections from the same machine and stop all non-SSH connections from any other host. For example run a command line similar to:
+On the server side, *vncserver* must be run. It is recommended to use the `-localhost` switch when running *vncserver* this way since it allows connections from the localhost only and by analogy, only from users ssh'ed and authenticated on the box. For example run a command such as:
 
 ```
-$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
+$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 **-localhost** :1
 
 ```
 
@@ -294,16 +294,16 @@ $ ssh 10.1.10.2 -L 8900:localhost:5901
 
 ```
 
-Once connected via SSH, leave this shell window open since it is acting as the secured tunnel to/from server (or just run SSH in the background with the `-f` option). On the client side, to connect via this encrypted tunnel, point the vncviewer to the forwarded client port on the localhost.
+Once connected via SSH, leave this shell window open since it is acting as the secured tunnel with the server. Alternatively, directly run SSH in the background using the `-f` option. On the client side, to connect via this encrypted tunnel, point the *vncviewer* to the forwarded client port on the localhost.
 
-Using the matched ports on the server/client:
+In the matched ports scenario, using the local port 5901 which is forwarded to the same port 5901 on the server:
 
 ```
 $ vncviewer localhost:5901
 
 ```
 
-Using different ports on the server/client:
+If port numbers are different, for example if the local port 8900 has been forwarded to the server port 5901, connect locally to 8900:
 
 ```
 $ vncviewer localhost:8900

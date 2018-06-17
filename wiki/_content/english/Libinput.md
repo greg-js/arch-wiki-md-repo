@@ -160,7 +160,6 @@ There are different GUI tools:
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
     *   Set of keyboard, mouse, controller, and touch pad options. Some features are still placeholders.
-    *   [pointing-devices-kcm](https://github.com/amezin/pointing-devices-kcm) ([kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/)) is a rewritten KCM for all input devices supported by libinput.
 
 ## Tips and tricks
 

@@ -125,7 +125,7 @@ Arch Linux é uma distribuição de *[rolling release](https://en.wikipedia.org/
 
 Se um cenário de atualização parcial for criado, e os binários forem quebrados porque eles não conseguem localizar as bibliotecas às quais eles estão vinculados, **não "corrija" o problema usando apenas fazendo um link simbólico**. Bibliotecas recebem mudanças [soname](https://en.wikipedia.org/wiki/pt:soname "wikipedia:pt:soname") quando elas **não possuem compatível com a versão anterior**. Um simples `pacman -Syu` com um espelho sincronizado corretamente irá corrigir o problema, desde que o *pacman* não esteja quebrado.
 
-O script bash *checkupdates*, incluído no pacote do pacman, fornece uma forma segura de verificar por atualizações para pacotes instalados sem executar uma atualização do sistema ao mesmo tempo.
+O script bash *checkupdates*, incluído no pacote [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib), fornece uma forma segura de verificar por atualizações para pacotes instalados sem executar uma atualização do sistema ao mesmo tempo.
 
 ### Aja em alertas durante uma atualização
 
@@ -221,7 +221,7 @@ Links simbólicos antigos e quebrados podem estar soltos no seu sistema; você d
 Para listar rapidamente todos os links simbólicos em seu sistema, use:
 
 ```
- # find -xtype l -print
+# find -xtype l -print
 
 ```
 
@@ -246,3 +246,4 @@ Para disponibilizá-lo como uma opção de boot, você precisará atualizar as c
 ## Veja também
 
 *   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)
+*   [Arch Linux Automatic System Maintenance](https://bbs.archlinux.org/viewtopic.php?id=237898)

@@ -229,7 +229,7 @@ The [List of applications/Security#Screen lockers](/index.php/List_of_applicatio
 
 In particular, [light-locker](https://www.archlinux.org/packages/?name=light-locker) integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. It is then possible to set in this GUI whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
 
-To have *xflock4* **run *light-locker* or any custom session locker** not among the four cited above, some steps are required. The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xfclock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can:
+To have *xflock4* **run *light-locker* or any custom session locker** not among the four cited above, some steps are required. The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xfclock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can follow the two steps below:
 
 1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "**light-locker-command --lock**" --create -t string` The command inside the quotes can be adapted accordingly for other screen lockers.
 2.  Enhance the *xflock4* script with either one of the following methods:
@@ -693,14 +693,7 @@ Xfce loads `$HOME/.Xresources` file using `xrdb`, but with `-nocpp` option to sk
 
 ### Cursor theme doesn't change on login
 
-Sometimes when logging in your non-default cursor theme will fail to change. This can be solved by changing the default cursor theme by editing the following file:
-
- `/usr/share/icons/default/index.theme` 
-```
-[Icon Theme]
-Inherits=<desired-cursor-theme-name>
-
-```
+Ensure the systemwide XDG cursor is set to your desired cursor theme - see [Cursor themes#XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes").
 
 ## See also
 

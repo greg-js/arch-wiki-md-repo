@@ -1,32 +1,32 @@
-Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X11](/index.php/X11 "X11"). It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox is very light on resources and fast, yet provides interesting window management tools such as tabbing and grouping. Its configuration files are easy to understand and edit with hundreds of Fluxbox "styles" to make your desktop look great.
+Related articles
+
+*   [Fluxbox/Style guide](/index.php/Fluxbox/Style_guide "Fluxbox/Style guide")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
+Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X11](/index.php/X11 "X11"). It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox provides a number of window management features such as tabbing and grouping and has hundreds of styles (themes) available. All Fluxbox configuration is stored in plaintext files, however some settings are exposed graphically in the configuration menu.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)
+    *   [2.1 Autostart](#Autostart)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Menu management](#Menu_management)
-        *   [3.1.1 fluxbox-generate_menu](#fluxbox-generate_menu)
-        *   [3.1.2 MenuMaker](#MenuMaker)
-        *   [3.1.3 Xdg-menu](#Xdg-menu)
-        *   [3.1.4 Manually create/edit the menu](#Manually_create.2Fedit_the_menu)
-    *   [3.2 Init](#Init)
-    *   [3.3 Hotkeys](#Hotkeys)
-        *   [3.3.1 Sound](#Sound)
-    *   [3.4 Workspaces](#Workspaces)
-    *   [3.5 Tabbing and grouping](#Tabbing_and_grouping)
-    *   [3.6 Wallpaper](#Wallpaper)
-        *   [3.6.1 Swapping multiple backgrounds easily](#Swapping_multiple_backgrounds_easily)
-        *   [3.6.2 Using feh with Fluxbox](#Using_feh_with_Fluxbox)
-        *   [3.6.3 Nitrogen](#Nitrogen)
-    *   [3.7 Theming](#Theming)
-    *   [3.8 The Slit](#The_Slit)
-    *   [3.9 Autostart](#Autostart)
-    *   [3.10 Other menus](#Other_menus)
-    *   [3.11 Desktop effects](#Desktop_effects)
-    *   [3.12 Notifications](#Notifications)
-    *   [3.13 Xorg configuration without a xorg.conf file](#Xorg_configuration_without_a_xorg.conf_file)
-        *   [3.13.1 Set the keyboard layout with Fluxbox](#Set_the_keyboard_layout_with_Fluxbox)
+    *   [3.1 Menus](#Menus)
+        *   [3.1.1 Automatic menu generation](#Automatic_menu_generation)
+            *   [3.1.1.1 fluxbox-generate_menu](#fluxbox-generate_menu)
+            *   [3.1.1.2 MenuMaker](#MenuMaker)
+            *   [3.1.1.3 Xdg-menu](#Xdg-menu)
+        *   [3.1.2 Other menus](#Other_menus)
+    *   [3.2 Keyboard](#Keyboard)
+        *   [3.2.1 Hotkeys](#Hotkeys)
+        *   [3.2.2 Set the keyboard layout with Fluxbox](#Set_the_keyboard_layout_with_Fluxbox)
+    *   [3.3 Workspaces](#Workspaces)
+    *   [3.4 Tabbing and grouping](#Tabbing_and_grouping)
+    *   [3.5 Wallpaper](#Wallpaper)
+        *   [3.5.1 Swapping multiple backgrounds easily](#Swapping_multiple_backgrounds_easily)
+        *   [3.5.2 Using feh with Fluxbox](#Using_feh_with_Fluxbox)
+    *   [3.6 Theming](#Theming)
+    *   [3.7 The Slit](#The_Slit)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -37,25 +37,57 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
 
 Run `startfluxbox` with [xinit](/index.php/Xinit "Xinit").
 
+### Autostart
+
+Fluxbox provides functionality to autostart applications. The `~/.fluxbox/startup` file is a script for autostarting applications as well as starting Fluxbox itself. The `#` symbol denotes a comment. Make sure that any lines starting applications come before the call to start Fluxbox itself. Otherwise, these lines will not be reached until Fluxbox itself terminates.
+
 ## Configuration
 
 System-wide Fluxbox configuration files are in `/usr/share/fluxbox` while user configuration files are in `~/.fluxbox`. The user config files are:
 
-*   *init* - the main Fluxbox resource configuration file. See [Editing the init file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_init_file.html)
-*   *menu* - the Fluxbox menu config. See below and [Editing the menu file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html)
-*   *keys* - the Fluxbox keyboard shortcuts (hotkeys) file. See below and [here](http://fluxbox-wiki.org/category/howtos/en/Keyboard_shortcuts.html)
-*   *startup* - where to launch startup apps but see below for .xinitrc and also [here](http://fluxbox-wiki.org/category/howtos/en/Editing_the_startup_file.html)
-*   *overlay* - a config file to override elements of styles. See [here](http://fluxbox-wiki.org/category/howtos/en/Style_overlay.html).
-*   *apps* - a config file for remembering the window configuration of specific apps. See [here](http://fluxbox-wiki.org/category/howtos/en/Editing_the_apps_file.html)
-*   *windowmenu* - a config file for altering the Window Menu itself: [read this](http://fluxbox-wiki.org/category/howtos/en/Editing_the_windowmenu.html)
+*   *init* - the main Fluxbox resource configuration file. See [Editing the init file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_init_file.html).
+*   *menu* - the Fluxbox menu config. See below and [Editing the menu file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html).
+*   *keys* - the Fluxbox keyboard shortcuts (hotkeys) file. See below and [Keyboard shortcuts](http://fluxbox-wiki.org/category/howtos/en/Keyboard_shortcuts.html).
+*   *startup* - where to launch startup apps but see below for .xinitrc and also [Editing the startup file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_startup_file.html).
+*   *overlay* - a configuration file to override elements of styles. See [Style overlay](http://fluxbox-wiki.org/category/howtos/en/Style_overlay.html).
+*   *apps* - a config file for remembering the window configuration of specific apps. See [Editing the apps file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_apps_file.html).
+*   *windowmenu* - a configuration file for altering the Window Menu itself: [Editing the windowmenu](http://fluxbox-wiki.org/category/howtos/en/Editing_the_windowmenu.html).
 
-There are a couple of other less important config files in the directory. But the main ones to be concerned with are init, menu, keys and perhaps startup.
+### Menus
 
-### Menu management
+The Fluxbox root menu is defined in `~/.fluxbox/menu` and it can be accessed by right clicking on the desktop. As with other lightweight window managers Fluxbox does not automatically update its menu when you install new applications. Therefore, the menu will need to be regenerated when new applications are installed/uninstalled.
 
-When you first install Fluxbox a very basic applications menu will be created at `~/.fluxbox/menu`. You access the menu via a right mouse button click on the desktop. As with other lightweight window managers Fluxbox does not automatically update its menu when you install new applications. It is therefore recommended that you install most of the apps you want on your system first and then re-generate or edit the menu. To enhance the menu and add/edit items there are basically four ways to do it:
+The basic syntax for a menu item to appear is:
 
-#### fluxbox-generate_menu
+```
+[exec] (name) {command} <path to icon>
+
+```
+
+...where "name" is the text you wish to appear for that menu item and "command" is the location of the binary, e.g.:
+
+```
+[exec] (Firefox Browser) {/usr/bin/firefox} <path to firefox icon>
+
+```
+
+Note that the "<path to icon>" is optional. If you want to create a submenu the syntax is:
+
+```
+[submenu] (Name)
+...
+...
+[end]
+
+```
+
+When you have finished editing, save the file and exit. There is no need to restart Fluxbox. For more information read [editing the Fluxbox menu](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html).
+
+#### Automatic menu generation
+
+There are some programs which can generate either a complete Fluxbox root menu or a submenu of installed applications which can be manually included in an existing root menu definition. These are outlined below.
+
+##### fluxbox-generate_menu
 
 There is a built-in command provided with Fluxbox:
 
@@ -66,7 +98,7 @@ $ fluxbox-generate_menu
 
 This command will auto-generate a `~/.fluxbox/menu` file based on your installed programs. However, the menu it generates will not be as comprehensive as that generated by [MenuMaker](#MenuMaker).
 
-#### MenuMaker
+##### MenuMaker
 
 [MenuMaker](http://menumaker.sourceforge.net) is a powerful tool that creates XML-based menus for a variety of Window Managers, including Fluxbox. MenuMaker will search your computer for executable programs and create a menu based on the results. It can be configured to exclude Legacy X, GNOME, KDE, or Xfce applications if desired.
 
@@ -91,84 +123,60 @@ $ mmaker --help
 
 ```
 
-#### Xdg-menu
+##### Xdg-menu
 
 You can also generate a menu using [Xdg-menu](/index.php/Xdg-menu "Xdg-menu"). See the [Xdg-menu#FluxBox](/index.php/Xdg-menu#FluxBox "Xdg-menu") section.
 
-#### Manually create/edit the menu
+#### Other menus
 
-Use your favourite text editor and edit the file: `~/.fluxbox/menu`. The basic syntax for a menu item to appear is:
+In addition to the root menu, Fluxbox also provides the following menus:
+
+*   Workspaces Menu: middle click on desktop.
+*   Configuration Menu: located within the "Fluxbox" section of the "Root" menu.
+*   Window menu: right click on the titlebar of any window, or its bar if minimized. Can be edited. See fluxbox-menu man page.
+*   Toolbar menu: right click on empty part of toolbar. Also found as a sub-menu within the Configuration Menu.
+*   Slit Menu: found as a sub-menu within the configuration menu.
+
+### Keyboard
+
+#### Hotkeys
+
+The Fluxbox hotkey file is located at `~/.fluxbox/keys`. The Control key is represented by `Control`. `Mod1` corresponds to the Alt key and `Mod4` corresponds to Super (not a standard key but most users map Super to the Win key).
+
+**Tip:** For volume control hotkeys, see [Advanced Linux Sound Architecture#Keyboard volume control](/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control "Advanced Linux Sound Architecture") and [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio").
+
+#### Set the keyboard layout with Fluxbox
+
+Just add the following line to `~/.fluxbox/startup`:
 
 ```
-[exec] (name) {command} <path to icon>
+setxkbmap us -variant intl & # to have a us keyboard with special characters enabled (like éóíáú)
 
 ```
 
-...where "name" is the text you wish to appear for that menu item and "command" is the location of the binary, e.g.:
+Instead of 'us' you can also pass your language code and remove the variant option (ex.: 'us_intl', which works like the command above in some setups). See [setxkbmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1) for more options.
+
+To make a help function in your menu, just add in `~/.fluxbox/menu`:
 
 ```
-[exec] (Firefox Browser) {/usr/bin/firefox} <path to firefox icon>
-
-```
-
-Note that the "<path to icon>" is optional. If you want to create a submenu the syntax is:
-
-```
-[submenu] (Name)
-...
-...
+[submenu] (Keyboard)
+      [exec] (normal) {setxkbmap us}
+      [exec] (international) {setxkbmap us -variant intl}
 [end]
 
 ```
 
-When you have finished editing, save the file and exit. There is no need to restart Fluxbox. For more info read [editing the Fluxbox menu](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html).
-
-### Init
-
-The `~/.fluxbox/init` file is Fluxbox's primary configuration resource file. You can change the basic functionality of Fluxbox, windows, toolbar, focus, etc. Some of these options are also available from the Fluxbox, Configuration Menu. For more detail read [Editing the init file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_init_file.html).
-
-### Hotkeys
-
-Fluxbox offers basic hotkeys functionality. The Fluxbox hotkey file is located at `~/.fluxbox/keys`. The Control key is represented by "Control". `Mod1` corresponds to the Alt key and `Mod4` corresponds to Super (not a standard key but most users map Super to the "Win" key). You should peruse and learn the `~/.fluxbox/keys` file to enhance your Fluxbox experience.
-
-#### Sound
-
-See [Advanced Linux Sound Architecture#Keyboard volume control](/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control "Advanced Linux Sound Architecture") and [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio").
-
 ### Workspaces
 
-Fluxbox defaults to having four workspaces. These are accessible using Ctrl+F1-F4 shortcuts, or by using the left mouse button to click the arrows on the toolbar. You can also access workspaces via a middle mouse button click on desktop which pops up the Workspaces Menu.
+Fluxbox defaults to having four workspaces. These are accessible using the `Ctrl+F1-F4` shortcuts, or by using the left mouse button to click the arrows on the toolbar. You can also access workspaces via a middle mouse button click on desktop which pops up the Workspaces Menu.
 
 ### Tabbing and grouping
 
-With at least two windows visible on your desktop use ctrl +left click on the upper window tab of one window and drag it into the other open window. The two windows will now be grouped together with window tabs in the upper window tab bar. You may now perform a window operation that will affect the entire window "group". To reverse the tabbing use `Ctrl+left click` on a tab and drag it to an empty space on the desktop.
+With at least two windows visible on your desktop use `Ctrl+left click` on the upper window tab of one window and drag it into the other open window. The two windows will now be grouped together with window tabs in the upper window tab bar. You may now perform a window operation that will affect the entire window "group". To reverse the tabbing use `Ctrl+left click` on a tab and drag it to an empty space on the desktop.
 
 ### Wallpaper
 
-Setting the background in Fluxbox has historically been convoluted, especially where transparency was required. The Fluxbox wiki now has an entry for [background setting](http://fluxbox-wiki.org/category/howtos/en/Howto_set_the_background.html), so please refer to that.
-
-Check that you have a background setting application available:
-
-```
-$ fbsetbg -i
-
-```
-
-If not, install either feh, esetroot or wmsetbg using pacman. Then add this "fbsetbg" line to your `~/.xinitrc` file, before the "exec" line, e.g.:
-
-```
-fbsetbg /path/to/my/image.image
-
-```
-
-If this command returns a line like this:
-
-```
-$ /usr/bin/fbsetbg: line 153: xmessage: command not found
-
-```
-
-Then you need to install the package xorg-xmessage
+Fluxbox provides a wrapper script *fbsetbg* which can help one to set the wallpaper. Please refer to the [Fluxbox wiki](http://fluxbox-wiki.org/category/howtos/en/Howto_set_the_background.html) for details. Alternatively, you can use a wallpaper setter such as [feh](/index.php/Feh "Feh") or [Nitrogen](/index.php/Nitrogen "Nitrogen") independently if you wish. See below.
 
 #### Swapping multiple backgrounds easily
 
@@ -220,28 +228,6 @@ session.screen0.rootCommand:	~/.fehbg
 
 ```
 
-#### Nitrogen
-
-You can also use the [Nitrogen](/index.php/Nitrogen "Nitrogen") background setter with Fluxbox. Run the following command in a terminal:
-
-```
-$ nitrogen
-
-```
-
-to display the graphical wallpaper selector. Add the directory that contains the picture file you wish to use, select the picture and apply it. You can also change options such as whether the wallpaper should be centered or zoomed.
-
-To ensure that the wallpaper is started at login, add the following line to your `~/.fluxbox/startup` file: `nitrogen --restore &`
-
-You may find that if you restart Fluxbox, the wallpaper set by the currently selected theme overwrites the wallpaper set by Nitrogen. To fix this, edit the `theme.cfg` file of the theme you are using and comment out or delete the following options:
-
-```
-background:
-background.color:
-background.colorTo:
-
-```
-
 ### Theming
 
 To install a Fluxbox theme, extract the theme archive file to a styles directory. The default directories are:
@@ -249,9 +235,9 @@ To install a Fluxbox theme, extract the theme archive file to a styles directory
 *   Global - `/usr/share/fluxbox/styles`
 *   User only - `~/.fluxbox/styles`
 
-The ArchLinux [AUR](/index.php/AUR "AUR") currently contains a compilation of good looking Fluxbox themes called "fluxmod-styles". Get it [here](https://aur.archlinux.org/packages/fluxmod-styles/). When installed correctly they will appear in the Fluxbox -> Styles section of your Fluxbox menu.
+The [fluxmos-styles](https://aur.archlinux.org/packages/fluxmos-styles/) package contains a number of Fluxbox styles from the (now defunct) fluxmod.dk site.
 
-To create your own Fluxbox styles read [fluxbox-style(5)](http://fluxbox.org/help/man-fluxbox-style.php), [Fluxbox/Style guide](/index.php/Fluxbox/Style_guide "Fluxbox/Style guide") and this [style guide](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
+To create your own Fluxbox styles, please refer to [fluxbox-style(5)](http://fluxbox.org/help/man-fluxbox-style.php), [Fluxbox/Style guide](/index.php/Fluxbox/Style_guide "Fluxbox/Style guide") and [tenr.de Fluxbox style guide](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
 
 If you use mmaker -f FluxBox to create your menus, you will not see the styles menu selection after you install the styles. To correct this add the following to `~/.fluxbox/menu` after the restart menu item:
 
@@ -267,69 +253,7 @@ If you use mmaker -f FluxBox to create your menus, you will not see the styles m
 
 ### The Slit
 
-Fluxbox, WindowMaker and a couple of other lightweight window managers have a "Slit". This is a dock for any application that can be 'dockable'. A docked application is anchored and appears on every workspace. It cannot be moved freely and is not influenced by any manipulation to windows. It is basically a small widget. Dock apps that are useful in such a situation tend to be clocks, system monitors, weather, etc. Visit [dockapps.net](http://www.dockapps.net/)
-
-### Autostart
-
-Fluxbox provides functionality to autostart applications on its own. The `~/.fluxbox/startup` file is a script for autostarting applications as well as starting Fluxbox itself. The `#` symbol denotes a comment.
-
-A sample file:
-
-```
-fbsetbg -l # sets the last background set, very useful and recommended.
-# In the below commands the ampersand symbol (&) is required on all applications that do not terminate immediately.
-# Failure to provide them will cause Fluxbox not to start.
-idesk &
-xterm &
-# exec is for starting Fluxbox itself, do not put an ampersand (&) after this or Fluxbox will exit immediately.
-exec /usr/bin/fluxbox
-# or if you want to keep a log, uncomment the below command and comment out the above command:
-# exec /usr/bin/fluxbox -log ~/.fluxbox/log
-
-```
-
-### Other menus
-
-In the "Menu Management" section (above) we were discussing the main "Applications" Menu, called the "Root" menu in Fluxbox lingo. Fluxbox also has other menus available to the user:
-
-*   Workspaces Menu: middle click on desktop.
-*   Configuration Menu: located within the "Fluxbox" section of the "Root" menu.
-*   Window menu: right click on the titlebar of any window, or its bar if minimized. Can be edited. See fluxbox-menu man page.
-*   Toolbar menu: right click on empty part of toolbar. Also found as a sub-menu within the Configuration Menu.
-*   Slit Menu: found as a sub-menu within the configuration menu.
-
-### Desktop effects
-
-To enable desktop effects such as true transparency or shadows in Fluxbox you need an X compositor such as [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Compton](/index.php/Compton "Compton").
-
-### Notifications
-
-To enable notifications on-screen for Fluxbox, ensure that a notification server is installed. See the [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") article.
-
-### Xorg configuration without a xorg.conf file
-
-Xorg no longer requires an *xorg.conf* file. Traditionally this is where you would change your keyboard settings and powersave settings. Luckily there are elegant solutions not using *xorg.conf*.
-
-#### Set the keyboard layout with Fluxbox
-
-Just add the following line to `~/.fluxbox/startup`:
-
-```
-setxkbmap us -variant intl & # to have a us keyboard with special characters enabled (like éóíáú)
-
-```
-
-Instead of 'us' you can also pass your language code and remove the variant option (ex.: 'us_intl', which works like the command above in some setups). See *setxkbmap* manual page for more options.
-
-To make a help function in your menu, just add in `~/.fluxbox/menu`:
-
-```
-[submenu] (Keyboard)
-      [exec] (normal) {setxkbmap us}
-      [exec] (international) {setxkbmap us -variant intl}
-[end]
-
-```
+Some window managers, such as Fluxbox, Window Maker and Openbox, have a "Slit". This is a dock for any application that can be 'dockable'. A docked application is anchored and appears on every workspace. It cannot be moved freely and is not influenced by any manipulation to windows. It is essentially a small widget. Dock apps that are useful in such a situation tend to be clocks, system monitors, weather apps and so on. Visit [dockapps.net](http://www.dockapps.net/) to see what dockapps are available.
 
 ## See also
 
@@ -337,6 +261,6 @@ To make a help function in your menu, just add in `~/.fluxbox/menu`:
 *   [Fluxbox wiki](http://fluxbox-wiki.org/)
 *   [Gentoo Wiki about Fluxbox](https://wiki.gentoo.org/wiki/Fluxbox)
 *   [Themes for Fluxbox](https://www.box-look.org/browse/cat/139/ord/latest/)
-*   The Fluxbox man pages: fluxbox, fluxbox-menu, fluxbox-style, fluxbox-keys, fluxbox-apps, fluxbox-remote, fbsetroot, fbsetbg, fbrun, startfluxbox
+*   [Fluxbox man page](https://jlk.fjfi.cvut.cz/arch/manpages/man/fluxbox.1) (plus related fluxbox manpages such as fluxbox-keys)
 *   [Narada's Fluxbox Guide](https://bbs.archlinux.org/viewtopic.php?id=77729)
 *   [Arch Linux Fluxbox screenshots](https://bbs.archlinux.org/viewtopic.php?id=90260)

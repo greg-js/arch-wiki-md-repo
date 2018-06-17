@@ -12,6 +12,13 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
+## Contents
+
+*   [1 Hardware](#Hardware)
+*   [2 Suspend / Hibernation](#Suspend_.2F_Hibernation)
+*   [3 TrackPoint and Touchpad](#TrackPoint_and_Touchpad)
+*   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
+
 ## Hardware
 
 Using kernel 4.16.8-1-ARCH
@@ -68,3 +75,11 @@ Suspend and Hibernation work out of the box. The T480 does not have the same iss
 ## TrackPoint and Touchpad
 
 TrackPoint and Touchpad work out of the box and do not seem to have the same issues as the [X1 Carbon Gen 6](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#TrackPoint_and_Touchpad_issues "Lenovo ThinkPad X1 Carbon (Gen 6)")
+
+## Power management/Throttling issues
+
+See
+
+*   X1 Carbon Gen 6 [Power management/Throttling issues](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Power_management.2FThrottling_issues "Lenovo ThinkPad X1 Carbon (Gen 6)")
+*   ThinkPad T480s [Thermal Throttling Fix](/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix "Lenovo ThinkPad T480s")
+*   [https://github.com/erpalma/lenovo-throttling-fix](https://github.com/erpalma/lenovo-throttling-fix)

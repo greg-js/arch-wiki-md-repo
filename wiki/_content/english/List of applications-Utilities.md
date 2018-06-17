@@ -33,25 +33,29 @@
         *   [1.3.3 Build automation](#Build_automation)
         *   [1.3.4 Version control systems](#Version_control_systems)
         *   [1.3.5 Game development](#Game_development)
-    *   [1.4 Disks](#Disks)
-        *   [1.4.1 Partitioning tools](#Partitioning_tools)
-        *   [1.4.2 Mount tools](#Mount_tools)
-        *   [1.4.3 Disk usage display](#Disk_usage_display)
-        *   [1.4.4 Disk cleaning](#Disk_cleaning)
-    *   [1.5 System](#System)
-        *   [1.5.1 System monitoring](#System_monitoring)
-        *   [1.5.2 System information viewers](#System_information_viewers)
-            *   [1.5.2.1 Console](#Console_3)
-            *   [1.5.2.2 Graphical](#Graphical_3)
-        *   [1.5.3 System log viewers](#System_log_viewers)
-        *   [1.5.4 Command schedulers](#Command_schedulers)
-        *   [1.5.5 Shutdown timers](#Shutdown_timers)
-        *   [1.5.6 Keyboard layout switchers](#Keyboard_layout_switchers)
-        *   [1.5.7 Input methods](#Input_methods)
-        *   [1.5.8 Clipboard managers](#Clipboard_managers)
-        *   [1.5.9 Clock synchronization](#Clock_synchronization)
-        *   [1.5.10 Power management](#Power_management)
-        *   [1.5.11 Package management](#Package_management)
+    *   [1.4 Text input](#Text_input)
+        *   [1.4.1 Character selectors](#Character_selectors)
+        *   [1.4.2 Virtual keyboards](#Virtual_keyboards)
+        *   [1.4.3 Keyboard layout switchers](#Keyboard_layout_switchers)
+        *   [1.4.4 Input methods](#Input_methods)
+    *   [1.5 Disks](#Disks)
+        *   [1.5.1 Partitioning tools](#Partitioning_tools)
+        *   [1.5.2 Mount tools](#Mount_tools)
+        *   [1.5.3 Disk usage display](#Disk_usage_display)
+        *   [1.5.4 Disk cleaning](#Disk_cleaning)
+    *   [1.6 System](#System)
+        *   [1.6.1 System monitoring](#System_monitoring)
+        *   [1.6.2 System information viewers](#System_information_viewers)
+            *   [1.6.2.1 Console](#Console_3)
+            *   [1.6.2.2 Graphical](#Graphical_3)
+        *   [1.6.3 System log viewers](#System_log_viewers)
+        *   [1.6.4 Font viewers](#Font_viewers)
+        *   [1.6.5 Command schedulers](#Command_schedulers)
+        *   [1.6.6 Shutdown timers](#Shutdown_timers)
+        *   [1.6.7 Clock synchronization](#Clock_synchronization)
+        *   [1.6.8 Bluetooth management](#Bluetooth_management)
+        *   [1.6.9 Power management](#Power_management)
+        *   [1.6.10 Package management](#Package_management)
 
 ## Utilities
 
@@ -857,6 +861,78 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 	[https://subversion.apache.org/](https://subversion.apache.org/) || [tiled](https://www.archlinux.org/packages/?name=tiled)
 
+### Text input
+
+#### Character selectors
+
+*   **GNOME Characters** — Character map application for GNOME.
+
+	[https://gitlab.gnome.org/GNOME/gnome-characters](https://gitlab.gnome.org/GNOME/gnome-characters) || [gnome-characters](https://www.archlinux.org/packages/?name=gnome-characters)
+
+*   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK+ 3 character selector for GNOME.
+
+	[https://wiki.gnome.org/Apps/Gucharmap](https://wiki.gnome.org/Apps/Gucharmap) || [gucharmap](https://www.archlinux.org/packages/?name=gucharmap)
+
+*   **KCharSelect** — Tool to select special characters from all installed fonts and copy them into the clipboard. Part of [kdeutils](https://www.archlinux.org/groups/x86_64/kdeutils/).
+
+	[https://utils.kde.org/projects/kcharselect/](https://utils.kde.org/projects/kcharselect/) || [kcharselect](https://www.archlinux.org/packages/?name=kcharselect)
+
+#### Virtual keyboards
+
+*   **CellWriter** — Grid-entry handwriting recognition input panel.
+
+	[https://github.com/risujin/cellwriter](https://github.com/risujin/cellwriter) || [cellwriter](https://www.archlinux.org/packages/?name=cellwriter)
+
+*   **eekboard** — Easy to use virtual keyboard toolkit.
+
+	[https://github.com/ueno/eekboard](https://github.com/ueno/eekboard) || [eekboard](https://aur.archlinux.org/packages/eekboard/)
+
+*   **Florence** — Extensible scalable on-screen virtual keyboard for GNOME that stays out of your way when not needed.
+
+	[https://sourceforge.net/projects/florence/](https://sourceforge.net/projects/florence/) || [florence](https://aur.archlinux.org/packages/florence/)
+
+*   **Onboard** — Onscreen keyboard useful for tablet PC users and for mobility impaired users.
+
+	[https://launchpad.net/onboard](https://launchpad.net/onboard) || [onboard](https://www.archlinux.org/packages/?name=onboard)
+
+*   **qtvkbd** — Virtual keyboard written in Qt, a fork of kvkbd.
+
+	[https://github.com/Alexander-r/qtvkbd](https://github.com/Alexander-r/qtvkbd) || [qtvkbd](https://aur.archlinux.org/packages/qtvkbd/)
+
+*   **QVKbd** — Virtual keyboard written in Qt.
+
+	[https://github.com/KivApple/qvkbd](https://github.com/KivApple/qvkbd) || [qvkbd](https://www.archlinux.org/packages/?name=qvkbd)
+
+*   **theShell On Screen Keyboard** — Touchscreen keyboard for theShell.
+
+	[https://github.com/vicr123/ts-kbd](https://github.com/vicr123/ts-kbd) || [ts-kbd](https://aur.archlinux.org/packages/ts-kbd/)
+
+*   **xvkbd** — Virtual keyboard for X window system.
+
+	[http://t-sato.in.coocan.jp/xvkbd/](http://t-sato.in.coocan.jp/xvkbd/) || [xvkbd](https://aur.archlinux.org/packages/xvkbd/)
+
+#### Keyboard layout switchers
+
+*   **fbxkb** — A NETWM compliant keyboard indicator and switcher. It shows a flag of current keyboard in a systray area and allows you to switch to another one.
+
+	[http://fbxkb.sourceforge.net/](http://fbxkb.sourceforge.net/) || [fbxkb](https://aur.archlinux.org/packages/fbxkb/)
+
+*   **xxkb** — A lightweight keyboard layout indicator and switcher.
+
+	[https://sourceforge.net/projects/xxkb/](https://sourceforge.net/projects/xxkb/) || [xxkb](https://www.archlinux.org/packages/?name=xxkb)
+
+*   **qxkb** — A keyboard switcher written in Qt.
+
+	[https://github.com/disels/qxkb](https://github.com/disels/qxkb) || [qxkb](https://aur.archlinux.org/packages/qxkb/)
+
+*   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — A text analyser, it detects the language of the input and corrects the keyboard layout if needed.
+
+	[http://www.xneur.ru/](http://www.xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/) (GUI)
+
+#### Input methods
+
+See the main article: [Internationalization#Input methods](/index.php/Internationalization#Input_methods "Internationalization").
+
 ### Disks
 
 #### Partitioning tools
@@ -1109,6 +1185,34 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/mate-desktop/mate-utils](https://github.com/mate-desktop/mate-utils) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
+#### Font viewers
+
+See also [Wikipedia:Font management software](https://en.wikipedia.org/wiki/Font_management_software "wikipedia:Font management software").
+
+*   **Font Manager** — Simple font management for GTK+ desktop environments.
+
+	[https://fontmanager.github.io/](https://fontmanager.github.io/) || [font-manager](https://aur.archlinux.org/packages/font-manager/)
+
+*   **Fonty Python** — Manage, view and find your fonts.
+
+	[https://savannah.nongnu.org/projects/fontypython](https://savannah.nongnu.org/projects/fontypython) || [fontypython](https://aur.archlinux.org/packages/fontypython/)
+
+*   **GNOME Fonts** — Font viewer for GNOME.
+
+	[https://gitlab.gnome.org/GNOME/gnome-font-viewer](https://gitlab.gnome.org/GNOME/gnome-font-viewer) || [gnome-font-viewer](https://www.archlinux.org/packages/?name=gnome-font-viewer)
+
+*   **KFontview** — KDE application to view and install different types of fonts.
+
+	[https://docs.kde.org/trunk5/en/kde-workspace/kfontview/index.html](https://docs.kde.org/trunk5/en/kde-workspace/kfontview/index.html) || [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)
+
+*   **MATE Font Viewer** — Font viewer for MATE.
+
+	[https://github.com/mate-desktop/mate-control-center](https://github.com/mate-desktop/mate-control-center) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
+
+*   **Waterfall** — GTK+ application to view all characters of font in all sizes.
+
+	[https://keithp.com/cgit/gwaterfall.git](https://keithp.com/cgit/gwaterfall.git) || [gwaterfall](https://www.archlinux.org/packages/?name=gwaterfall)
+
 #### Command schedulers
 
 See also [Cron](/index.php/Cron "Cron").
@@ -1143,35 +1247,13 @@ See also [Cron](/index.php/Cron "Cron").
 
 	[https://kshutdown.sourceforge.io/](https://kshutdown.sourceforge.io/) || [kshutdown](https://www.archlinux.org/packages/?name=kshutdown)
 
-#### Keyboard layout switchers
-
-*   **fbxkb** — A NETWM compliant keyboard indicator and switcher. It shows a flag of current keyboard in a systray area and allows you to switch to another one.
-
-	[http://fbxkb.sourceforge.net/](http://fbxkb.sourceforge.net/) || [fbxkb](https://aur.archlinux.org/packages/fbxkb/)
-
-*   **xxkb** — A lightweight keyboard layout indicator and switcher.
-
-	[https://sourceforge.net/projects/xxkb/](https://sourceforge.net/projects/xxkb/) || [xxkb](https://www.archlinux.org/packages/?name=xxkb)
-
-*   **qxkb** — A keyboard switcher written in Qt.
-
-	[https://github.com/disels/qxkb](https://github.com/disels/qxkb) || [qxkb](https://aur.archlinux.org/packages/qxkb/)
-
-*   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — A text analyser, it detects the language of the input and corrects the keyboard layout if needed.
-
-	[http://www.xneur.ru/](http://www.xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/) (GUI)
-
-#### Input methods
-
-See the main article: [Internationalization#Input methods](/index.php/Internationalization#Input_methods "Internationalization").
-
-#### Clipboard managers
-
-See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").
-
 #### Clock synchronization
 
 See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
+
+#### Bluetooth management
+
+See [Bluetooth#Front-ends](/index.php/Bluetooth#Front-ends "Bluetooth").
 
 #### Power management
 

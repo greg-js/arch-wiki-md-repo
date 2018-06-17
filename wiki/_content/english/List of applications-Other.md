@@ -29,7 +29,7 @@
         *   [1.3.1 Speech synthesizers](#Speech_synthesizers)
         *   [1.3.2 Speech recognition](#Speech_recognition)
         *   [1.3.3 Screen magnifiers](#Screen_magnifiers)
-        *   [1.3.4 On-screen keyboards](#On-screen_keyboards)
+        *   [1.3.4 Mouse](#Mouse)
     *   [1.4 Display managers](#Display_managers)
     *   [1.5 Desktop environments](#Desktop_environments)
         *   [1.5.1 Window managers](#Window_managers)
@@ -42,6 +42,8 @@
         *   [1.5.5 Wallpaper setters](#Wallpaper_setters)
         *   [1.5.6 Virtual desktop pagers](#Virtual_desktop_pagers)
         *   [1.5.7 Desktop widgets](#Desktop_widgets)
+        *   [1.5.8 Desktop notifications](#Desktop_notifications)
+        *   [1.5.9 Clipboard managers](#Clipboard_managers)
 
 ## Others
 
@@ -515,7 +517,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 ### Accessibility
 
-See [Accessibility](/index.php/Accessibility "Accessibility") for tips on operating the desktop and [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility") for all available articles.
+See [Accessibility](/index.php/Accessibility "Accessibility") for tips on operating the desktop and [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility") for all available articles. See also [Virtual keyboards](/index.php/List_of_applications/Utilities#Virtual_keyboards "List of applications/Utilities").
 
 #### Speech synthesizers
 
@@ -631,19 +633,19 @@ See also [Wikipedia:Speech recognition software for Linux](https://en.wikipedia.
 
 	[https://www.ibiblio.org/pub/Linux/X11/libs/!INDEX.short.html](https://www.ibiblio.org/pub/Linux/X11/libs/!INDEX.short.html) || [xzoom](https://aur.archlinux.org/packages/xzoom/)
 
-#### On-screen keyboards
+#### Mouse
 
-*   **Florence** — Extensible scalable on-screen virtual keyboard for GNOME that stays out of your way when not needed.
+*   **Easystroke** — Use mouse gestures to initiate commands and hotkeys.
 
-	[https://sourceforge.net/projects/florence/](https://sourceforge.net/projects/florence/) || [florence](https://aur.archlinux.org/packages/florence/)
+	[https://github.com/thjaeger/easystroke/wiki](https://github.com/thjaeger/easystroke/wiki) || [easystroke](https://www.archlinux.org/packages/?name=easystroke)
 
-*   **Onboard** — Onscreen keyboard useful for tablet PC users and for mobility impaired users.
+*   **KMouseTool** — Clicks the mouse whenever the mouse cursor pauses briefly. It was designed to help those with repetitive strain injuries, for whom pressing buttons hurts.
 
-	[https://launchpad.net/onboard](https://launchpad.net/onboard) || [onboard](https://www.archlinux.org/packages/?name=onboard)
+	[https://userbase.kde.org/KMouseTool](https://userbase.kde.org/KMouseTool) || [kmousetool](https://www.archlinux.org/packages/?name=kmousetool)
 
-*   **theShell On Screen Keyboard** — Touchscreen keyboard for theShell.
+*   **Mousetweaks** — Accessibility enhancements for pointing devices.
 
-	[https://sourceforge.net/projects/florence/](https://sourceforge.net/projects/florence/) || [ts-kbd](https://aur.archlinux.org/packages/ts-kbd/)
+	[https://wiki.gnome.org/Projects/Mousetweaks](https://wiki.gnome.org/Projects/Mousetweaks) || [mousetweaks](https://www.archlinux.org/packages/?name=mousetweaks)
 
 ### Display managers
 
@@ -952,3 +954,11 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   **[Screenlets](https://en.wikipedia.org/wiki/Screenlets "wikipedia:Screenlets")** — Widget framework that consists of small owner-drawn applications.
 
 	[https://launchpad.net/screenlets](https://launchpad.net/screenlets) || [screenlets-pack-basic](https://www.archlinux.org/packages/?name=screenlets-pack-basic)
+
+#### Desktop notifications
+
+See: [Notification servers](/index.php/Desktop_notifications#Notification_servers "Desktop notifications").
+
+#### Clipboard managers
+
+See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").

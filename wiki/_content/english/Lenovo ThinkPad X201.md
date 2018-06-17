@@ -79,6 +79,15 @@ See coreboot documentation: [[4]](https://www.coreboot.org/Board:lenovo/x201) [[
 
 See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") and [Intel graphics#DRI3 issues](/index.php/Intel_graphics#DRI3_issues "Intel graphics").
 
+X201s: If planning to use VT-d, it is also recommended to add
+
+```
+intel_iommu=igfx_off
+
+```
+
+to the kernel parameters. [see bug report](https://bugs.freedesktop.org/show_bug.cgi?id=44510#c2).
+
 ### Hardware virtualization
 
 If [KVM](/index.php/KVM "KVM") claims virtualization support is disabled in BIOS, even with VT-x enabled, disable Intel TXT. [[6]](https://groups.google.com/forum/#!topic/qubes-users/4NP4goUds2c)

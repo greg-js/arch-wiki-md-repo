@@ -113,6 +113,7 @@ Desktop environments represent the simplest means of installing a *complete* gra
 Other components usually provided by desktop environments are:
 
 *   Application launcher: [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications")
+*   Audio volume control: [List of applications#Volume control](/index.php/List_of_applications#Volume_control "List of applications")
 *   Clipboard manager: [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")
 *   Desktop compositor: [Xorg#Composite](/index.php/Xorg#Composite "Xorg")
 *   Desktop wallpaper setter and desktop icon: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") and [Openbox#Icon programs](/index.php/Openbox#Icon_programs "Openbox")
@@ -123,7 +124,6 @@ Other components usually provided by desktop environments are:
 *   Notification daemon: [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
 *   Polkit authentication agent: [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
-*   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 *   Default applications: [XDG MIME Applications#mimeapps.list](/index.php/XDG_MIME_Applications#mimeapps.list "XDG MIME Applications")
 
 ### Use a different window manager

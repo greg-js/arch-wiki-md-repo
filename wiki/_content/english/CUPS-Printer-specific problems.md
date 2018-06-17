@@ -127,6 +127,8 @@ Brother provides custom drivers on their website, either in source tarball, rpm,
 
 Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should automatically install and configure your brother printer.
 
+For some of the drivers 32 bit libraries may need to be installed from [multilib](/index.php/Multilib "Multilib").
+
 ### Updating the firmware
 
 [Install](/index.php/Install "Install") [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) and run:

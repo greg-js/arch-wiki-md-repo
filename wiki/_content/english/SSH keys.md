@@ -591,20 +591,20 @@ This agent can be used directly, by matching KeeAgent socket: `KeePass -> Tools 
 	For the local machine:
 
 ```
-$ chmod 700 ~/ ~/.ssh
-$ chmod 600 ~/.ssh/id_ecdsa
+$ chmod 700 ~/.ssh
+$ chmod 600 ~/.ssh/*key*
 
 ```
 
 	For the remote machine:
 
 ```
-$ chmod 700 ~/ ~/.ssh
+$ chmod 700 ~/.ssh
 $ chmod 600 ~/.ssh/authorized_keys
 
 ```
 
-	If that does not solve the problem you may try temporarily setting `StrictModes` to `no` in `sshd_config`. If authentication with StrictModes off is successful, it is likely an issue with file permissions persists.
+*   If that does not solve the problem you may try temporarily setting `StrictModes` to `no` in `/etc/ssh/sshd_config`. If authentication with `StrictModes off` is successful, it is likely an issue with file permissions persists.
 
 *   Make sure keys in `~/.ssh/authorized_keys` are entered correctly and only use one single line.
 

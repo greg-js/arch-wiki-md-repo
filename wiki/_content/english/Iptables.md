@@ -13,8 +13,9 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Console frontends](#Console_frontends)
-    *   [1.2 Graphic frontends](#Graphic_frontends)
+    *   [1.1 Front-ends](#Front-ends)
+        *   [1.1.1 Console](#Console)
+        *   [1.1.2 Graphical](#Graphical)
 *   [2 Basic concepts](#Basic_concepts)
     *   [2.1 Tables](#Tables)
     *   [2.2 Chains](#Chains)
@@ -38,7 +39,9 @@ Related articles
 
 The stock Arch Linux kernel is compiled with iptables support. You will only need to [install](/index.php/Install "Install") the userland utilities, which are provided by the package [iptables](https://www.archlinux.org/packages/?name=iptables). (The [iproute2](https://www.archlinux.org/packages/?name=iproute2) package from the [base](https://www.archlinux.org/groups/x86_64/base/) group depends on iptables, so the iptables package should be installed on your system by default.)
 
-### Console frontends
+### Front-ends
+
+#### Console
 
 *   **Arno's firewall** — Secure firewall for both single and multi-homed machines. Very easy to configure, handy to manage and highly customizable. Supports: NAT and SNAT, port forwarding, ADSL ethernet modems with both static and dynamically assigned IPs, MAC address filtering, stealth port scan detection, DMZ and DMZ-2-LAN forwarding, protection against SYN/ICMP flooding, extensive user definable logging with rate limiting to prevent log flooding, all IP protocols and VPNs such as IPsec, plugin support to add extra features.
 
@@ -72,7 +75,7 @@ The stock Arch Linux kernel is compiled with iptables support. You will only nee
 
 	[http://www.vuurmuur.org/](http://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)
 
-### Graphic frontends
+#### Graphical
 
 *   **Firestarter** — Good GUI for iptables writen on GTK2, it has the ability to use both white and black lists for regulating traffic, it is very simple and easy to use, with good documentation available on their website.
 

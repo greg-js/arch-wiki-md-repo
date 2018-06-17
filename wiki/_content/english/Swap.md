@@ -182,6 +182,8 @@ Finally remove the relevant entry from `/etc/fstab`.
 
 [Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfc_enabled=1` in the *Swap File Chunked* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service. Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommended configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
+**Note:** If the journal keeps showing the following warning `systemd-swap[..]: WARN: swapFC: ENOSPC` and no swap file is being created, you need to set `swapfc_force_preallocated=1` in `/etc/systemd/swap.conf`.
+
 ## Swap with USB device
 
 Thanks to the modularity offered by Linux, we can have multiple swap partitions spread over different devices. If you have a very full hard disk, a USB device can be used as a swap partition temporarily. However, this method has some severe disadvantages:

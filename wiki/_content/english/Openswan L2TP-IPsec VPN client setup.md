@@ -39,7 +39,9 @@ Edit `/etc/ipsec.conf` to contain the following lines:
 config setup
      virtual_private=%v4:10.0.0.0/8,%v4:192.168.0.0/16,%v4:172.16.0.0/12
      nat_traversal=yes
+# default is auto, which will try netkey first
      protostack=netkey
+# you can left "off" (default value) instead
      oe=no
 # Replace eth0 with your network interface
      plutoopts="--interface=eth0"
@@ -73,7 +75,7 @@ Create the file `/etc/ipsec.secrets`: It should contain the following line:
 
 ```
 
-Remember to replace the local (%any) and remote (68.68.32.79) IP addresses with the correct numbers for your location. The pre-shared key will be supplied by the VPN provider and will need to be placed in this file in cleartext form.
+Remember to replace the local (%any) and remote (68.68.32.79) IP addresses with the correct numbers for your location. The pre-shared key will be supplied by the VPN provider and will need to be placed in this file in cleartext form. You may find this file already exists and already have some data, try to back it up and create a new file only with your PSK if you'll see "Can't authenticate: no preshared key found for ..." when enabling connection in next section.
 
 Add the connection, so it's available to use:
 

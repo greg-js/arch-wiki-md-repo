@@ -370,6 +370,8 @@ It is likely that you will need to change `volume` to match either a filesystem'
 
 rEFInd is compatible with the EFI system partition created by a UEFI Windows installation, so there is no need to create or format another FAT32 partition when installing Arch alongside Windows. Simply mount the existing ESP and install rEFInd as usual. By default, rEFInd's autodetection feature should recognize any existing Windows/recovery bootloaders.
 
+**Note:** In some cases, Windows behaves differently (low resolution bootscreen, oem logo replaced by windows logo, black screen after bootscreen, artifacting). If you face such issues, try adding "graphics on" under the windows menuentry (You have to remove the disable line for this to work).
+
 ## Tools
 
 rEFInd supports running various [3rd-party tools](http://www.rodsbooks.com/refind/installing.html#addons). Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.

@@ -350,7 +350,7 @@ The `depends` file lists the packages this package depends on, while `desc` has 
 
 *Pacman* stores its downloaded packages in `/var/cache/pacman/pkg/` and does not remove the old or uninstalled versions automatically. This has some advantages:
 
-1.  It allows to [downgrade](/index.php/Downgrade "Downgrade") a package without the need to retrieve the previous version through other means, such as the [Archive](/index.php/Archive "Archive").
+1.  It allows to [downgrade](/index.php/Downgrade "Downgrade") a package without the need to retrieve the previous version through other means, such as the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive").
 2.  A package that has been uninstalled can easily be reinstalled directly from the cache folder, not requiring a new download from the repository.
 
 However, it is necessary to deliberately clean up the cache periodically to prevent the folder to grow indefinitely in size.

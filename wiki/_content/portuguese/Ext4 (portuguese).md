@@ -43,7 +43,7 @@ Para formatar uma partição, faça:
 **Dica:**
 
 *   Veja [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) para mais opções; edite `/etc/mke2fs.conf` para ver/configurar as opções padrões.
-*   Se houver suporte, você pode querer habilitar [metadados de somas de verificação](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados) (também conhecidos como *checksums*)
+*   Se houver suporte, você pode querer habilitar [metadados de somas de verificação](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados) (também conhecidos como *checksums*).
 
 ### Proporção de bytes por inode
 
@@ -65,11 +65,13 @@ Essa situação pode ser avaliada comparando as figuras `{I}Uso%` fornecidas pel
 ```
 Sist. Arq.              Tam.   Usado   Dispo.  **Uso%**  Montado em
 /dev/mapper/lvm-home    115G    56G    59G    **49%**    /home
+
 ```
  `$ df -hi /home` 
 ```
 Sist. Arq.              Inodes IUsado ILivre **IUso%**   Montado em
 /dev/mapper/lvm-home    1.8M    1.1K   1.8M   **1%**     /home
+
 ```
 
 Para especificar uma proporção de bytes por inode diferente, você pode usar a opção `-T *tipo-de-uso*` que sugere o uso esperado do sistema de arquivos usando tipos definidos em `/etc/mke2fs.conf`. Além daqueles tipos estão `largefile` e `largefile4` maiores, que oferecem proporções mais relevantes de um inode a cada 1 MB e 4 MB, respectivamente. Pode-se usar da seguinte forma:
@@ -230,8 +232,8 @@ Observe que a criptografia só pode ser aplicada a um diretório vazio. Novos ar
 
 Agora, gere e adicione uma nova chave ao seu chaveiro. Este passo deve ser repetido toda vez que você descarrega o seu chaveiro (ou seja, reinicie):
 
+ `# e4crypt add_key` 
 ```
-# e4crypt add_key
 Enter passphrase (echo disabled): 
 Added key with descriptor [f88747555a6115f5]
 
@@ -243,8 +245,8 @@ Added key with descriptor [f88747555a6115f5]
 
 Agora, você sabe o descritor para sua chave. Certifique-se que sua chave está no seu chaveiro de sessão:
 
+ `# keyctl show` 
 ```
-# keyctl show
 Session Keyring
 1021618178 --alswrv   1000  1000  keyring: _ses
  176349519 --alsw-v   1000  1000   \_ logon: ext4:f88747555a6115f5

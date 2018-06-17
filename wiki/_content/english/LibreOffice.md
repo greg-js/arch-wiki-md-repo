@@ -202,8 +202,8 @@ Add the following script to your home directory and use it to open every .pps fi
 ```
 #!/bin/bash
 
-f=$(mktemp)
-cp "$1" "${f}.ppt" && libreoffice "${f}.ppt" && rm -f "${f}.ppt"
+f=$(mktemp --suffix .ppt)
+cp "$1" "${f}" && libreoffice "${f}" && rm -f "${f}"
 
 ```
 

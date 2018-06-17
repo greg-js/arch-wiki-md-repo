@@ -10,6 +10,8 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
 *   [1 Manutenção](#Manuten.C3.A7.C3.A3o)
     *   [1.1 Listando pacotes](#Listando_pacotes)
         *   [1.1.1 Com tamanho](#Com_tamanho)
+            *   [1.1.1.1 Pacotes individuais](#Pacotes_individuais)
+            *   [1.1.1.2 Pacotes e dependências](#Pacotes_e_depend.C3.AAncias)
         *   [1.1.2 Por data](#Por_data)
         *   [1.1.3 Que não estejam em um grupo ou repositório especificado](#Que_n.C3.A3o_estejam_em_um_grupo_ou_reposit.C3.B3rio_especificado)
         *   [1.1.4 Pacotes de desenvolvimento](#Pacotes_de_desenvolvimento)
@@ -41,12 +43,11 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
     *   [2.10 Vendo um único arquivo dentro de um arquivo .pkg](#Vendo_um_.C3.BAnico_arquivo_dentro_de_um_arquivo_.pkg)
     *   [2.11 Localizar aplicativos que usam bibliotecas de pacotes mais antigos](#Localizar_aplicativos_que_usam_bibliotecas_de_pacotes_mais_antigos)
 *   [3 Desempenho](#Desempenho)
-    *   [3.1 Velocidades de acesso da base de dados](#Velocidades_de_acesso_da_base_de_dados)
-    *   [3.2 Velocidades de download](#Velocidades_de_download)
-        *   [3.2.1 Powerpill](#Powerpill)
-        *   [3.2.2 wget](#wget)
-        *   [3.2.3 aria2](#aria2)
-        *   [3.2.4 Outros aplicativos](#Outros_aplicativos)
+    *   [3.1 Velocidades de download](#Velocidades_de_download)
+        *   [3.1.1 Powerpill](#Powerpill)
+        *   [3.1.2 wget](#wget)
+        *   [3.1.3 aria2](#aria2)
+        *   [3.1.4 Outros aplicativos](#Outros_aplicativos)
 *   [4 Utilitários](#Utilit.C3.A1rios)
     *   [4.1 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
 
@@ -69,7 +70,20 @@ Você pode querer obter a lista de pacotes instalados com sua versão, o que é 
 
 #### Com tamanho
 
-Para obter uma lista de pacotes instalados ordenados por tamanho, que pode ser útil para liberar espaço em seu disco rígido:
+Descobrir quais pacotes são maiores pode ser útil ao tentar liberar espaço em seu disco rígido. Existem duas opções aqui: obter o tamanho de pacotes individuais ou obter o tamanho dos pacotes e suas dependências.
+
+##### Pacotes individuais
+
+O comando a seguir listará todos os pacotes instalados e seus tamanhos individuais:
+
+```
+$ pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+
+```
+
+##### Pacotes e dependências
+
+Para listar tamanhos com suas dependências,
 
 *   Instale [expac](https://www.archlinux.org/packages/?name=expac) e execute `expac -H M '%m\t%n' | sort -h`.
 *   Execute [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) com a opção `-c`.
@@ -146,7 +160,7 @@ $ comm -12 <(pacman -Qq | sort) <(pacman -Slq *nome_repo* | sort)
 Listar todos os pacotes na ISO do Arch Linux que não estão no grupo base:
 
 ```
-$ comm -23 <(wget -q -O - https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
+$ comm -23 <(curl https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
 
 ```
 
@@ -155,7 +169,7 @@ $ comm -23 <(wget -q -O - https://git.archlinux.org/archiso.git/plain/configs/re
 Para listar todos os pacotes de desenvolvimento/instáveis, execute:
 
 ```
-$ pacman -Qq | awk '/^.+(-cvs|-svn|-git|-hg|-bzr|-darcs)$/'
+$ pacman -Qq | grep -Ee '-(cvs|svn|git|hg|bzr|darcs)$'
 
 ```
 
@@ -178,7 +192,7 @@ Se seu arquivo possui arquivos não pertencentes a qualquer pacote (um caso comu
 
 Este processo é complicado na prática porque muitos arquivos importantes não fazem parte de nenhum pacote (por exemplo, arquivos gerados em tempo de execução, configurações personalizadas) e, portanto, serão incluídos na saída final, dificultando a escolha dos arquivos que podem ser excluídos com segurança.
 
-**Dica:** O script [lostfiles](https://aur.archlinux.org/packages/lostfiles/) realizar etapas similares, mas também inclui uma lista negra extensa para remover falso-positivos comuns da saída. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) também permite rastrear arquivos órfãos usando um script de configuração.
+**Dica:** O script [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) realizar etapas similares, mas também inclui uma lista negra extensa para remover falso-positivos comuns da saída. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) também permite rastrear arquivos órfãos usando um script de configuração.
 
 ### Removendo pacotes não usados (órfãos)
 
@@ -195,7 +209,7 @@ Se nenhum órfão for encontrado, o *pacman* emite `erro: nenhum alvo especifica
 
 ### Removendo tudo exceto o grupo base
 
-Se for necessário remover todos os pacotes, exceto o grupo base, experimente esta linha:
+Se for necessário remover todos os pacotes, exceto o grupo base, experimente esta linha (exige [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)):
 
 ```
 # pacman -R $(comm -23 <(pacman -Qq | sort) <((for i in $(pacman -Qqg base); do pactree -ul "$i"; done) | sort -u))
@@ -355,7 +369,7 @@ Você também poderia executar darkhttpd como um serviço systemd por conveniên
 
 #### Cache somente leitura distribuído
 
-Existem ferramentas específicas do Arch para descobrir automaticamente outros computadores em sua rede oferecendo um cache de pacote. Tente [pacserve](/index.php/Pacserve_(Portugu%C3%AAs) "Pacserve (Português)"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/) ou [paclan](https://aur.archlinux.org/packages/paclan/). O pkgdistcache usa Avahi em vez de UDP simples, que pode funcionar melhor em determinadas redes domésticas que roteiam em vez de ponte entre WiFi e Ethernet.
+Existem ferramentas específicas do Arch para descobrir automaticamente outros computadores em sua rede oferecendo um cache de pacote. Tente [pacredir](https://www.archlinux.org/packages/?name=pacredir), [pacserve](/index.php/Pacserve_(Portugu%C3%AAs) "Pacserve (Português)"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/) ou [paclan](https://aur.archlinux.org/packages/paclan/). O pkgdistcache usa Avahi em vez de UDP simples, que pode funcionar melhor em determinadas redes domésticas que roteiam em vez de ponte entre WiFi e Ethernet.
 
 Historicamente, havia [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) e [multipkg](https://github.com/toofishes/multipkg), mas eles não são mais mantidos.
 
@@ -415,7 +429,7 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 ```
 
-**Nota:** Você precisará criar um método para limpar pacotes antigos, pois esse diretório continuará a crescer ao longo do tempo. `paccache` (que está incluído no *pacman* ) pode ser usado para automatizar isso usando os critérios de retenção de sua escolha. Por exemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` manterá as últimas 2 versões de pacotes no seu diretório de cache.
+**Nota:** Você precisará criar um método para limpar pacotes antigos, pois esse diretório continuará a crescer ao longo do tempo. `paccache` (que é fornecido por [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)) pode ser usado para automatizar isso usando os critérios de retenção de sua escolha. Por exemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` manterá as últimas 2 versões de pacotes no seu diretório de cache.
 
 #### Sincronizar cache de pacotes do pacman usando programas de sincronização
 
@@ -436,7 +450,7 @@ CleanMethod = KeepCurrent
 
 Para recriar um pacote do sistema de arquivos, use *bacman* (incluído no *pacman*). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Linux Archive (Português)](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") para obter alternativas.
 
-**Dica:** *bacman* honra as opções `PACKAGER`, `PKGDEST` e `PKGEXT` do `makepkg.conf`. Opções personalizadas para as ferramentas de compressão podem ser configuradas exportando a variável de ambiente relevante. Por exemplo, `XZ_OPT="-T 0"` vai habilitar compressão paralela para *xz*.
+**Dica:** *bacman* honra as opções `PACKAGER`, `PKGDEST` e `PKGEXT` do `makepkg.conf`. Bacman atualmente não honra as opções `COMPRESS` em `makepkg.conf`.
 
 Uma ferramenta alternativa seria [fakepkg](https://aur.archlinux.org/packages/fakepkg/). Ela oferece suporte a paralelização e pode lidar com vários pacotes de entrada em um comando, duas coisas a que o *bacman* não oferece suporte.
 
@@ -567,22 +581,6 @@ Ele imprimirá o nome do programa em execução e a biblioteca antiga que foi re
 
 ## Desempenho
 
-### Velocidades de acesso da base de dados
-
-O *pacman* armazena todas as informações do pacote em uma coleção de pequenos arquivos, um para cada pacote. Melhorar as velocidades de acesso à base de dados reduz o tempo gasto nas tarefas relacionadas à base de dados como, por exemplo, procurando por pacotes e resolução de dependências de pacotes. O método mais seguro e mais fácil é executar como root:
-
-```
-# pacman-optimize
-
-```
-
-Isso tentará colocar todos os pequenos arquivos em uma única localização (física) no disco rígido para que a cabeça do disco rígido não precise se mover tanto ao acessar todos os dados. Este método é seguro, mas não é infalível: depende do seu sistema de arquivos, do uso do disco e da fragmentação do espaço vazio. Outra opção, mais agressiva, seria primeiro remover os pacotes desinstalados do cache e remover repositórios não utilizados antes da otimização da base de dados:
-
-```
-# pacman -Sc && pacman-optimize
-
-```
-
 ### Velocidades de download
 
 **Nota:** Se suas velocidades de download foram reduzidas a uma lesma, certifique-se de usar um dos muitos [espelhos](/index.php/Espelhos "Espelhos") e não o ftp.archlinux.org, cuja [velocidade é limitada desde março de 2007](https://www.archlinux.org/news/302/).
@@ -650,7 +648,7 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 *   **Lostfiles** — Script que identifica arquivos que não pertencem a nenhum pacote.
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **Pacmatic** — Wrapper do *pacman* para verificar o Arch News antes de atualizar, evitar atualizações parciais e avisar sobre alterações de arquivo de configuração.
 
@@ -682,7 +680,7 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 ### Front-ends gráficos
 
-**Atenção:** Alguns front-ends, como o [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) ou [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) [[2]](https://github.com/manjaro/pamac/blob/master/data/systemd/pamac-mirrorlist.service#L9), realizam [atualizações parciais](/index.php/Atualiza%C3%A7%C3%A3o_parcial "Atualização parcial") periodicamente.
+**Atenção:** Alguns front-ends, como o [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266), realizam [atualizações parciais](/index.php/Atualiza%C3%A7%C3%A3o_parcial "Atualização parcial") periodicamente.
 
 *   **Aarchup** — Um fork do archup. Tem as mesmas opções que o archup mais alguns outros recursos. Para diferenças entre ambos, por favor acesse o [changelog](https://bbs.archlinux.org/viewtopic.php?id=119129).
 

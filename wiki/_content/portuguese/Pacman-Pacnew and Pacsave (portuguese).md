@@ -88,7 +88,7 @@ O pacman não lida com arquivos *.pacnew* automaticamente: você deve mantê-los
 
 ### pacdiff
 
-O pacman inclui *pacdiff*, uma ferramenta simples para gerenciar arquivos pacnew/pacsave. Com isso, pode-se vai pesquisar por todos os arquivos `pacnew` e `pacsave` e pedir por quaisquer ações neles. Ele usa [vimdiff](/index.php/Vim#Merging_files "Vim") por padrão, mas você pode especificar uma ferramenta diferente com `DIFFPROG=seu_editor pacdiff`. Veja [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") para outras ferramentas de comparação comum.
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) fornece *pacdiff*, uma ferramenta simples para gerenciar arquivos pacnew/pacsave. Com isso, pode-se vai pesquisar por todos os arquivos *.pacnew* e *.pacsave* e pedir por quaisquer ações neles. Ele usa [vimdiff](/index.php/Vim#Merging_files "Vim") por padrão, mas você pode especificar uma ferramenta diferente com `DIFFPROG=*seu_editor* pacdiff`. Veja [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") para outras ferramentas de comparação comum.
 
 ### Utilitários de terceiros
 

@@ -26,7 +26,7 @@ The same applies to Python 2 except that the prefix (if needed) is `python2-`.
 
 ## Source
 
-PyPI URLs of the form `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` were silently abandoned for new package versions in the course of 2016, replaced by a scheme using an unpredictable hash that needs to be fetched from the PyPI website each time a package must be updated[[1]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940764). As downstream packagers voiced their concerns to PyPI maintainers[[2]](https://github.com/pypa/pypi-legacy/issues/438), a new stable scheme was provided[[3]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730): [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should now use the following URL templates:
+Download URLs linked from the PyPI website include an unpredictable hash that needs to be fetched from the PyPI website each time a package must be updated. This makes them unsuitable for use in a PKGBUILD. PyPI [provides](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730) an alternative stable scheme: [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should use the following URL templates:
 
 	Source package
 

@@ -112,8 +112,6 @@ Sharing to Windows clients can be achieved using [#Sharing via Bonjour](#Sharing
 
 After setting up the server, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2' or 'Microsoft PS Class driver').
 
-Potential missing drivers can be found at [nodevice.com](https://www.nodevice.com).
-
 #### Sharing via Bonjour
 
 [Bonjour Printing Services](https://support.apple.com/kb/dl999) allows Windows to easily connect to Unix printers shared in the local network using [Avahi](/index.php/Avahi "Avahi").

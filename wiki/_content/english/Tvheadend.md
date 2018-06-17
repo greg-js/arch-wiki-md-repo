@@ -12,6 +12,8 @@
     *   [5.1 Use hardware video acceleration](#Use_hardware_video_acceleration)
     *   [5.2 Use VA-API support transcoding](#Use_VA-API_support_transcoding)
     *   [5.3 Use CAPMT (Linux Network DVBAPI) with OSCam](#Use_CAPMT_.28Linux_Network_DVBAPI.29_with_OSCam)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Unable to authenticate/play stream](#Unable_to_authenticate.2Fplay_stream)
 
 ## Installation
 
@@ -54,7 +56,7 @@ To enable hardware acceleration, check *Hardware acceleration* for a codec profi
 
 ### Use VA-API support transcoding
 
-It is possible to use [VA-API](/index.php/VA-API "VA-API") for transcoding streams, support depends on capabilities of the video device and the selected codec.
+It is possible to use [VA-API](/index.php/VA-API "VA-API") for transcoding streams when using [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/), support depends on capabilities of the video device and the selected codec.
 
 To enable VA-API create a new *Codec Profile* and select a codec with *VAAPI* on the *Codec Profiles* page. On the next screen do **not check** *Hardware acceleration*, select the correct *Device Name*, e.g. `i915 v1.6.0 (/dev/dri/renderD128)` and click on *Create*.
 
@@ -91,3 +93,11 @@ In OSCam create an user named *vdr* with *vdr* as password and set the *DVB Api*
 | Listen port | 9000 |
 
 [Restart](/index.php/Restart "Restart") `oscam.service` and `tvheadend.service` to apply the changes.
+
+## Troubleshooting
+
+### Unable to authenticate/play stream
+
+Authentication issues can occur when using *digest* as *Authentication type*.
+
+Change this to *Both plain and digest* to allow browsers/players that don't support the digest protocol.

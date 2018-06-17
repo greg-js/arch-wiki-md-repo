@@ -16,7 +16,7 @@ Artigos relacionados
 
 ## Canais principais
 
-**Atenção:** Estatísticas de canal são registrados para [#archlinux-offtopic](https://yeah.nah.nz/aotstats/). Fale com [demize](/index.php/User:Kyrias "User:Kyrias") (#archlinux) ou *bq/phillid* (#archlinux-offtopic) se você gostaria de se retirar permanentemente.
+**Atenção:** Estatísticas de canal são registrados para [#archlinux-offtopic](https://alyp.tk/stats/aotstats.html). Fale com "jp/alyptik" se você gostaria de se retirar permanentemente.
 
 Essa seção é sobre [#archlinux](ircs://chat.freenode.net/archlinux), o canal [IRC](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat") principal do Arch Linux, e [#archlinux-offtopic](ircs://chat.freenode.net/archlinux-offtopic), o canal social principal do Arch Linux, ambos disponíveis na rede [Freenode](https://freenode.net/).
 
@@ -75,7 +75,7 @@ O tamanho de nossa comunidade levou à criação de múltiplos canais IRC. Para 
 | [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | Discussão sobre o desenvolvimento do [aurweb](https://projects.archlinux.org/aurweb.git/) |
 | [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Discussão centrada em bugs |
 | [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) | Um projeto que desenvolve e hospeda classes para a comunidade do Arch Linux. |
-| [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Discussões sobre infraestrutura e devops. |
+| [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Discussões sobre infraestrutura interna e devops do Arch Linux. |
 | [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) | Discussão e empacotamento do Projeto Multilib do Arch Linux |
 | [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) | Um espaço para aprender, tentar novas coisas e pedir ajuda sem medo do ridículo. |
 | [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) | Desenvolvimento e discussão sobre o [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") |

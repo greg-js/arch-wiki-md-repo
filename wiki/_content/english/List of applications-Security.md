@@ -15,7 +15,8 @@
     *   [1.6 Screen lockers](#Screen_lockers)
     *   [1.7 Hash checkers](#Hash_checkers)
     *   [1.8 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
-    *   [1.9 Password managers](#Password_managers)
+    *   [1.9 Password management](#Password_management)
+    *   [1.10 Firewall management](#Firewall_management)
 
 ## Security
 
@@ -399,7 +400,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
 
-#### Password managers
+#### Password management
 
 *   **Bitwarden** — Open source password manager with desktop, mobile, browser, and CLI versions. Cloud or self-hosted.
 
@@ -496,3 +497,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **Universal Password Manager** — Allows you to store usernames, passwords, URLs and generic notes in an encrypted database protected by one master password.
 
 	[http://upm.sourceforge.net/](http://upm.sourceforge.net/) || [upm](https://aur.archlinux.org/packages/upm/)
+
+#### Firewall management
+
+See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").

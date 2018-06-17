@@ -26,7 +26,7 @@ Related articles
 
 The [iwd](https://www.archlinux.org/packages/?name=iwd) package provides the client program `iwctl`, the daemon `iwd` and the Wi-Fi monitoring tool `iwmon`.
 
-Once the iwd daemon is running ([start/enable](/index.php/Start/enable "Start/enable") `iwd@*interface*.service`) you can control it using the `iwctl` command.
+Once the iwd daemon is running ([start/enable](/index.php/Start/enable "Start/enable") `iwd.service`) you can control it using the `iwctl` command.
 
 ### iwctl
 

@@ -108,7 +108,7 @@ The client can be configured to store common options and hosts. All options can 
 User *user*
 
 # host-specific options
-Host myserver
+Host *myserver*
     HostName *server-address*
     Port     *port*
 
@@ -118,7 +118,7 @@ With such a configuration, the following commands are equivalent
 
 ```
 $ ssh -p *port* *user*@*server-address*
-$ ssh myserver
+$ ssh *myserver*
 
 ```
 
@@ -207,13 +207,9 @@ Several other good guides are available on the topic, for example:
 
 ##### Force public key authentication
 
-If a client cannot authenticate through a public key, by default the SSH server falls back to password authentication, thus allowing a malicious user to attempt to gain access by [brute-forcing](#Protecting_against_brute_force_attacks) the password. One of the most effective ways to protect against this attack is to disable password logins entirely, and force the use of [SSH keys](/index.php/SSH_keys "SSH keys"). This can be accomplished by disabling the following options in `sshd_config`:
+If a client cannot authenticate through a public key, by default the SSH server falls back to password authentication, thus allowing a malicious user to attempt to gain access by [brute-forcing](#Protecting_against_brute_force_attacks) the password. One of the most effective ways to protect against this attack is to disable password logins entirely, and force the use of [SSH keys](/index.php/SSH_keys "SSH keys"). This can be accomplished by disabling the following options in the daemon configuration file:
 
-```
-PasswordAuthentication no
-
-```
-
+ `/etc/ssh/sshd_config`  `PasswordAuthentication no` 
 **Warning:** Before adding this to your configuration, make sure that all accounts which require SSH access have public-key authentication set up in the corresponding `authorized_keys` files. See [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") for more information.
 
 ##### Two-factor authentication and public keys
@@ -329,14 +325,9 @@ It is generally considered bad practice to allow the root user to log in without
 
 Sudo selectively provides root rights for actions requiring these without requiring authenticating against the root account. This allows locking the root account against access via SSH and potentially functions as a security measure against brute force attacks, since now an attacker must guess the account name in addition to the password.
 
-SSH can be configured to deny remote logins with the root user by editing the "Authentication" section in `/etc/ssh/sshd_config`. Simply change `#PermitRootLogin prohibit-password` to `no` and uncomment the line:
+SSH can be configured to deny remote logins with the root user by editing the "Authentication" section in the daemon configuration file. Simply set `PermitRootLogin` to `no`:
 
- `/etc/ssh/sshd_config` 
-```
-PermitRootLogin no
-...
-
-```
+ `/etc/ssh/sshd_config`  `PermitRootLogin no` 
 
 Next, [restart](/index.php/Restart "Restart") the SSH daemon.
 
@@ -421,23 +412,21 @@ $ ssh -TND 4711 *user*@*host*
 
 ```
 
-where `*user*` is your username at the SSH server running at the `*host*`. It will ask for your password, and then you are connected! The `N` flag disables the interactive prompt, and the `D` flag specifies the local port on which to listen on (you can choose any port number if you want). The `T` flag disables pseudo-tty allocation.
+where `*user*` is your username at the SSH server running at the `*host*`. It will ask for your password, and then you are connected. The `N` flag disables the interactive prompt, and the `D` flag specifies the local port on which to listen on (you can choose any port number if you want). The `T` flag disables pseudo-tty allocation.
 
 It is nice to add the verbose (`-v`) flag, because then you can verify that it is actually connected from that output.
 
 #### Step 2: configure your browser (or other programs)
 
-The above step is completely useless if you do not configure your web browser (or other programs) to use this newly created socks tunnel. Since the current version of SSH supports both SOCKS4 and SOCKS5, you can use either of them.
+The above step is useful only in combination with a web browser or another program that uses this newly created SOCKS tunnel. Since SSH currently supports both SOCKS4 and SOCKS5, you can use either of them.
 
-*   For Firefox: *Edit > Preferences > Advanced > Network > Connection > Setting*:
-    Check the *Manual proxy configuration* radio button, and enter `localhost` in the *SOCKS host* text field, and then enter your port number in the next text field (`4711` in the example above).
+*   For Firefox: *Preferences > General > Network Proxy > Manual proxy*, and enter `localhost` in the *SOCKS host* text field, and the port number in the next text field (`4711` in the example above).
 
 Firefox does not automatically make DNS requests through the socks tunnel. This potential privacy concern can be mitigated by the following steps:
 
-1.  Type about:config into the Firefox location bar.
-2.  Search for network.proxy.socks_remote_dns
-3.  Set the value to true.
-4.  Restart the browser.
+1.  Type `about:config` into the Firefox location bar
+2.  Set `network.proxy.socks_remote_dns` to `true`
+3.  Restart Firefox
 
 *   For Chromium: You can set the SOCKS settings as environment variables or as command line options. I recommend to add one of the following functions to your `.bashrc`:
 
@@ -821,12 +810,14 @@ If you are behind a NAT mode/router (which is likely unless you are on a VPS or 
 
 #### Is SSH running and listening?
 
+The [ss](/index.php/Ss "Ss") utility shows all the processes listening to a TCP port with the following command line:
+
 ```
-$ ss -tnlp
+$ ss --tcp --listening
 
 ```
 
-If the above command do not show SSH port is open, SSH is NOT running. Check `/var/log/messages` for errors etc.
+If the above command do not show the system is listening to the port `ssh`, then SSH is NOT running: check `/var/log/messages` for errors etc.
 
 #### Are there firewall rules blocking the connection?
 
@@ -946,7 +937,7 @@ After logging in and out from the server the problem should be fixed.
 
 #### TERM hack
 
-**Warning:** This should only be used as a last resort.
+**Note:** This should only be used as a last resort.
 
 Alternatively, you can simply set `TERM=xterm` in your environment on the server (e.g. in `.bash_profile`). This will silence the error and allow ncurses applications to run again, but you may experience strange behavior and graphical glitches unless your terminal's control sequences exactly match xterm's.
 

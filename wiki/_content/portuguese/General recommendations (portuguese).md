@@ -61,16 +61,17 @@ Esse documento é um índice anotado de artigos populares e informações import
     *   [11.1 Fontes](#Fontes)
     *   [11.2 Temas GTK+ e Qt](#Temas_GTK.2B_e_Qt)
 *   [12 Melhorias no console](#Melhorias_no_console)
-    *   [12.1 Aliases](#Aliases)
-    *   [12.2 Shells alternativos](#Shells_alternativos)
-    *   [12.3 Adições ao Bash](#Adi.C3.A7.C3.B5es_ao_Bash)
-    *   [12.4 Saída colorida](#Sa.C3.ADda_colorida)
-    *   [12.5 Arquivos compactados](#Arquivos_compactados)
-    *   [12.6 Prompt de console](#Prompt_de_console)
-    *   [12.7 Shell do emacs](#Shell_do_emacs)
-    *   [12.8 Suporte a mouse](#Suporte_a_mouse)
-    *   [12.9 Buffer de scrollback](#Buffer_de_scrollback)
-    *   [12.10 Gerenciamento de sessão](#Gerenciamento_de_sess.C3.A3o)
+    *   [12.1 Tab-completion enhancements](#Tab-completion_enhancements)
+    *   [12.2 Aliases](#Aliases)
+    *   [12.3 Shells alternativos](#Shells_alternativos)
+    *   [12.4 Adições ao Bash](#Adi.C3.A7.C3.B5es_ao_Bash)
+    *   [12.5 Saída colorida](#Sa.C3.ADda_colorida)
+    *   [12.6 Arquivos compactados](#Arquivos_compactados)
+    *   [12.7 Prompt de console](#Prompt_de_console)
+    *   [12.8 Shell do emacs](#Shell_do_emacs)
+    *   [12.9 Suporte a mouse](#Suporte_a_mouse)
+    *   [12.10 Buffer de scrollback](#Buffer_de_scrollback)
+    *   [12.11 Gerenciamento de sessão](#Gerenciamento_de_sess.C3.A3o)
 
 ## Administração do sistema
 
@@ -78,7 +79,7 @@ Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para m
 
 ### Usuários e grupos
 
-Uma nova instalação deixa você com apenas a conta de superusuário, mais conhecida como "root". Se autenticar como root por períodos prolongados de tempo, possivelmente expondo-o via [SSH](/index.php/SSH "SSH") em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Usuários e grupos#Gerenciamento de usuário](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usu.C3.A1rio "Usuários e grupos") para detalhes.
+Uma nova instalação deixa você com apenas a conta de [superusuário](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser"), mais conhecida como "root". Se autenticar como root por períodos prolongados de tempo, possivelmente expondo-o via [SSH](/index.php/SSH "SSH") em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Usuários e grupos#Gerenciamento de usuário](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usu.C3.A1rio "Usuários e grupos") para detalhes.
 
 Usuários e grupos são mecanismo para *controle de acesso*; administradores podem ajustar participação e posse de grupos para conceder ou negar a usuários e serviços acesso a recursos do sistema. Leia o artigo [Usuários e grupos](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") para detalhes e riscos de segurança em potencial.
 
@@ -124,7 +125,7 @@ Por vezes chamados de "espelhos" *(mirrors)*. Visite [Espelhos](/index.php/Espel
 
 *Ports* é um sistema inicialmente usado pelas distribuições BSD consistindo em scripts de compilação que residem em uma árvore de diretório no sistema local. Basicamente, cada *port* contém um script dentro de um diretório intuitivamente nomeado pelo aplicativo terceiro instalável.
 
-O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são posteriormente analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que de forma limpa gera pacotes gerenciáveis pelo *pacman*.
+O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são posteriormente analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que gera pacotes é gerenciável de forma limpa pelo *pacman*.
 
 Todo pacote nos repositórios junto com aqueles presentes no AUR estão sujeitos a recompilação com *makepkg*.
 
@@ -320,6 +321,10 @@ Uma grande parte dos aplicativos com uma interface gráfica para sistemas Linux 
 
 Essa seção se aplica a pequenas modificações que melhoram a praticidade de programas de console. Para mais, por favor veja [Category:Command shells (Português)](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)").
 
+### Tab-completion enhancements
+
+É recomendado configurar adequadamente [completação por tab](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") estendida imediatamente, conforme instruído no artigo de seu shell escolhido.
+
 ### Aliases
 
 Fazer um *alias* de um comando, ou um grupo deles, é uma forma de economizar tempo ao usar o console. Isso é especialmente útil para tarefas repetitivas que não precisam de alterações significativas a seus parâmetros entre execuções. *Aliases* comuns para economia de tempo podem ser encontrados em [Bash#Aliases](/index.php/Bash#Aliases "Bash"), que também é facilmente portável para [zsh](/index.php/Zsh "Zsh").
@@ -330,7 +335,7 @@ Fazer um *alias* de um comando, ou um grupo deles, é uma forma de economizar te
 
 ### Adições ao Bash
 
-Uma lista de configurações Bash diversas, incluindo melhorias de *completion* (completação, conclusão), pesquisa de histórico e macros [Readline](/index.php/Readline "Readline") está disponível em [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
+Uma lista de configurações Bash diversas, pesquisa de histórico e macros [Readline](/index.php/Readline "Readline") está disponível em [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
 
 ### Saída colorida
 
@@ -338,7 +343,7 @@ Essa seção é coberta por [Saída colorida no console](/index.php/Color_output
 
 ### Arquivos compactados
 
-Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema GNU/Linux. [Tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") é uma das ferramentas de arquivamento mais comumente usadas, e usuários devem estar familiarizados com sua sintaxe (pacotes do Arch Linux, por exemplo, são nada mais do que tarballs compactadas em xz). Veja [Bash/Functions](/index.php/Bash/Functions "Bash/Functions") para outros comandos úteis.
+Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema GNU/Linux. [Tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") é uma das ferramentas de arquivamento mais comumente usadas, e usuários devem estar familiarizados com sua sintaxe (pacotes do Arch Linux, por exemplo, são nada mais do que tarballs compactadas em xz). Veja [Archiving and compression tools](/index.php/Archiving_and_compression_tools "Archiving and compression tools").
 
 ### Prompt de console
 
