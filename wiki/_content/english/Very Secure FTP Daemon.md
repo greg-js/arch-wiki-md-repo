@@ -23,8 +23,9 @@
     *   [4.2 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot.28.29)
     *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
     *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
-    *   [4.5 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
-    *   [4.6 vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_connections_fail_on_a_machine_using_nis_with:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
+    *   [4.5 Passive mode replies with the local IP address to a remote connection](#Passive_mode_replies_with_the_local_IP_address_to_a_remote_connection)
+    *   [4.6 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
+    *   [4.7 vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_connections_fail_on_a_machine_using_nis_with:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -462,6 +463,34 @@ If you have enabled `vsftpd.service` and it fails to run on boot, make sure it i
 Description=vsftpd daemon
 After=network.target
 ```
+
+### Passive mode replies with the local IP address to a remote connection
+
+If vsftpd returns a local address to a remote connection, like:
+
+```
+227 Entering Passive Mode (192,168,0,19,192,27).
+
+```
+
+It may be that the FTP server is behind a NAT router and while some devices monitor FTP connections and dynamically replace the IP address specification for packets containing the PASV response, some do not.
+
+Indicate the external IP address in the vsftpd configuration using:
+
+```
+ pasv_address=*externalIPaddress*
+
+```
+
+or alternatively:
+
+```
+pasv_addr_resolve=YES
+pasv_address=*my.domain.name*
+
+```
+
+In case internal connection is not possible after this change, one may need to run 2 vsftpd, one for internal and one for external connections.
 
 ### ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6
 

@@ -181,7 +181,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| [Lenovo IdeaPad 120S](/index.php?title=Lenovo_IdeaPad_120S&action=edit&redlink=1 "Lenovo IdeaPad 120S (page does not exist)") | 2018-04-26 | Yes | Yes | NA | Yes | NA | Yes | NA |
+| Lenovo IdeaPad 120S | 2018-04-26 | Yes | Yes | NA | Yes | Yes | Yes | NA | Everything works |
 | [Lenovo IdeaPad Flex 10](/index.php/Lenovo_IdeaPad_Flex_10 "Lenovo IdeaPad Flex 10") | Yes | Yes* | Yes | NA | Yes | Yes | Yes | NA | Touchscreen* |
 | [Lenovo IdeaPad S10](/index.php/Lenovo_IdeaPad_S10 "Lenovo IdeaPad S10") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo IdeaPad S400 Touch](/index.php/Lenovo_IdeaPad_S400_Touch "Lenovo IdeaPad S400 Touch") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |

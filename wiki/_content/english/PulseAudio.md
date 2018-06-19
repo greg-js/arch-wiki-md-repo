@@ -63,13 +63,13 @@ Related articles
 
 **Note:** Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseaudio-split/) from the main package and must be installed separately if needed.
 
-*   For PulseAudio to manage [ALSA](/index.php/ALSA "ALSA") as well, install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package, see [#ALSA](#ALSA).
-*   For [bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez), install the [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package, see [bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page.
-*   For equalizer sink (qpaeq), install the [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer) package.
-*   For GConf support (paprefs), install the [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf) package.
-*   For [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection, install the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package.
-*   For infrared (LIRC) volume control, install the [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc) package.
-*   For Zeroconf ([Avahi](/index.php/Avahi "Avahi")/DNS-SD) support, install the [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf) package.
+*   [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), for PulseAudio to manage [ALSA](/index.php/ALSA "ALSA") as well, see [#ALSA](#ALSA).
+*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), for [bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez), see [bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page.
+*   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer), for equalizer sink (qpaeq).
+*   [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf), for GConf support (paprefs).
+*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack), for [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection.
+*   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc), for infrared (LIRC) volume control.
+*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf), for Zeroconf ([Avahi](/index.php/Avahi "Avahi")/DNS-SD) support.
 
 ### Front-ends
 

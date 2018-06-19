@@ -2,7 +2,7 @@ Related articles
 
 *   [Streaming media](/index.php/Streaming_media "Streaming media")
 
-**Note:** MediaTomb is unmaintained, users may wish to checkout [Gerbera](https://gerbera.io/), which is build upon MediaTomb 12.1.
+**Note:** MediaTomb is unmaintained, users may wish to checkout [Gerbera](https://gerbera.io/) ([gerbera](https://aur.archlinux.org/packages/gerbera/)), which is build upon MediaTomb 12.1.
 
 From [MediaTomb - Free UPnP MediaServer](http://mediatomb.cc/):
 

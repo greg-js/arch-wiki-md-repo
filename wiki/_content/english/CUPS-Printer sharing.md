@@ -114,7 +114,7 @@ After setting up the server, install the native printer drivers for your printer
 
 #### Sharing via Bonjour
 
-[Bonjour Printing Services](https://support.apple.com/kb/dl999) allows Windows to easily connect to Unix printers shared in the local network using [Avahi](/index.php/Avahi "Avahi").
+[Bonjour Printing Services](https://support.apple.com/kb/dl999) allows Windows clients to easily connect to Unix print servers with [browsing enabled](#Enabling_browsing).
 
 #### Sharing via IPP
 

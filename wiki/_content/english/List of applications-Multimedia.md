@@ -21,9 +21,8 @@
         *   [1.2.8 2D animation](#2D_animation)
         *   [1.2.9 3D computer graphics](#3D_computer_graphics)
         *   [1.2.10 Color pickers](#Color_pickers)
-        *   [1.2.11 Color management](#Color_management)
-        *   [1.2.12 Screenshot](#Screenshot)
-        *   [1.2.13 Digital camera managers](#Digital_camera_managers)
+        *   [1.2.11 Screenshot](#Screenshot)
+        *   [1.2.12 Digital camera managers](#Digital_camera_managers)
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
@@ -367,7 +366,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[https://designer.io/](https://designer.io/) || [gravit-designer-bin](https://aur.archlinux.org/packages/gravit-designer-bin/)
 
-*   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — Vector graphics editor, with capabilities similar to [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), or [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), using the SVG (Scalable Vector Graphics) file format. Inkscape supports many advanced SVG features (markers, clones, alpha blending, etc.) and great care is taken in designing a streamlined interface. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more. It's developers also aim to maintain a thriving user and developer community by using open, community-oriented development.
+*   **[Inkscape](/index.php/Inkscape "Inkscape")** — Vector graphics editor, with capabilities similar to [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), or [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), using the SVG (Scalable Vector Graphics) file format. Inkscape supports many advanced SVG features (markers, clones, alpha blending, etc.) and great care is taken in designing a streamlined interface. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more. It's developers also aim to maintain a thriving user and developer community by using open, community-oriented development.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
@@ -457,7 +456,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[http://www.artofillusion.org/](http://www.artofillusion.org/) || [aoi](https://aur.archlinux.org/packages/aoi/)
 
-*   **[Blender](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Blender (software)")** — Fully integrated 3D graphics creation suite capable of 3D modeling, texturing, and animation, among other things.
+*   **[Blender](/index.php/Blender "Blender")** — Fully integrated 3D graphics creation suite capable of 3D modeling, texturing, and animation, among other things.
 
 	[http://www.blender.org/](http://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
 
@@ -538,26 +537,6 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 *   **xcolor** — Lightweight color picker for X11.
 
 	[https://soft.github.io/xcolor/](https://soft.github.io/xcolor/) || [xcolor](https://aur.archlinux.org/packages/xcolor/)
-
-#### Color management
-
-See also [ICC profiles](/index.php/ICC_profiles "ICC profiles") and [Backlight#Color correction](/index.php/Backlight#Color_correction "Backlight").
-
-*   **ArgyllCMS** — ICC compatible color management system. It supports accurate ICC profile creation for scanners, cameras and film recorders, and calibration and profiling of displays and RGB & CMYK printers.
-
-	[https://argyllcms.com/](https://argyllcms.com/) || [argyllcms](https://www.archlinux.org/packages/?name=argyllcms)
-
-*   **DisplayCAL** — Display calibration and profiling solution with a focus on accuracy and versatility. At its core it relies on ArgyllCMS color management system, to take measurements, create calibrations and profiles, and for a variety of other advanced color related tasks.
-
-	[https://displaycal.net/](https://displaycal.net/) || [displaycal](https://www.archlinux.org/packages/?name=displaycal)
-
-*   **GNOME Color Manager** — Set of graphical utilities for color management to be used in the GNOME desktop.
-
-	[https://gitlab.gnome.org/GNOME/gnome-color-manager](https://gitlab.gnome.org/GNOME/gnome-color-manager) || [gnome-color-manager](https://www.archlinux.org/packages/?name=gnome-color-manager)
-
-*   **xcalib** — Lightweight monitor calibration loader which can load an ICC monitor profile to be shared across desktop applications.
-
-	[https://github.com/OpenICC/xcalib](https://github.com/OpenICC/xcalib) || [xcalib](https://aur.archlinux.org/packages/xcalib/)
 
 #### Screenshot
 

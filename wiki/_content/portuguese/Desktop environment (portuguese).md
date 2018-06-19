@@ -113,6 +113,7 @@ Os ambientes de desktop representam o meio mais simples de instalar um ambiente 
 Outros componentes geralmente fornecidos por ambientes de área de trabalho são:
 
 *   Iniciador de aplicativo: [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications")
+*   Controle de volume de áudio: [List of applications#Volume control](/index.php/List_of_applications#Volume_control "List of applications")
 *   Gerenciador de área de trabalho: [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")
 *   Compositor de desktop: [Xorg#Composite](/index.php/Xorg#Composite "Xorg")
 *   Definidor de papel de parede e ícone da área de trabalho: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") e [Openbox#Icon programs](/index.php/Openbox#Icon_programs "Openbox")

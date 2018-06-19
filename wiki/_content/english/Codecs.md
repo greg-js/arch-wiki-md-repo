@@ -15,6 +15,11 @@ This article deals only with codecs and application backends; see [List of Appli
 
 *   [1 Requirements](#Requirements)
 *   [2 List of codecs](#List_of_codecs)
+    *   [2.1 Audio codecs](#Audio_codecs)
+        *   [2.1.1 AAC](#AAC)
+        *   [2.1.2 Lossless](#Lossless)
+    *   [2.2 Image codecs](#Image_codecs)
+    *   [2.3 Video codecs](#Video_codecs)
 *   [3 Backends](#Backends)
     *   [3.1 GStreamer](#GStreamer)
     *   [3.2 xine](#xine)
@@ -34,17 +39,53 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 ## List of codecs
 
-*   **[ALAC](https://en.wikipedia.org/wiki/ALAC "wikipedia:ALAC")** — Data compression method which reduces the size of audio files with no loss of information.
+### Audio codecs
 
-	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-git](https://aur.archlinux.org/packages/alac-git/)
-
-*   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Compression algorithm for audio. Like MP3, Vorbis, and AAC it is suitable for transmitting music with high quality. Unlike these formats CELT imposes very little delay on the signal, even less than is typical for speech centric formats like Speex, GSM, or G.729\.
+*   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Open, royalty-free lossy audio codec, optimized for low latency.
 
 	[http://www.celt-codec.org/](http://www.celt-codec.org/) || [celt](https://www.archlinux.org/packages/?name=celt)
 
-*   **[Daala](https://en.wikipedia.org/wiki/Daala "wikipedia:Daala")** — New video compression technology. The effort is a collaboration between Mozilla Foundation, Xiph.Org Foundation and other contributors. The goal of the project is to provide a free to implement, use and distribute digital media format and reference implementation with technical performance superior to h.265.
+*   **[LAME](https://en.wikipedia.org/wiki/LAME "wikipedia:LAME")** — MP3 encoder and graphical frame analyzer.
 
-	[https://www.xiph.org/daala/](https://www.xiph.org/daala/) || [daala-git](https://aur.archlinux.org/packages/daala-git/)
+	[http://lame.sourceforge.net/](http://lame.sourceforge.net/) || [lame](https://www.archlinux.org/packages/?name=lame)
+
+*   **liba52** — Free library for decoding [ATSC A/52](https://en.wikipedia.org/wiki/ATSC_A/52 "wikipedia:ATSC A/52") (Dolby Digital) streams (lossy).
+
+	[http://liba52.sourceforge.net/](http://liba52.sourceforge.net/) || [a52dec](https://www.archlinux.org/packages/?name=a52dec)
+
+*   **[libdca](https://en.wikipedia.org/wiki/libdca "wikipedia:libdca")** — Free library for decoding DTS Coherent Acoustics streams.
+
+	[https://www.videolan.org/developers/libdca.html](https://www.videolan.org/developers/libdca.html) || [libdca](https://www.archlinux.org/packages/?name=libdca)
+
+*   **[MAD](https://en.wikipedia.org/wiki/libmad "wikipedia:libmad")** — High-quality MPEG audio decoder.
+
+	[http://www.underbit.com/products/mad/](http://www.underbit.com/products/mad/) || [libmad](https://www.archlinux.org/packages/?name=libmad)
+
+*   **[Musepack](https://en.wikipedia.org/wiki/Musepack "wikipedia:Musepack") (MPC)** — Open source lossy audio codec, designed for [transparency](https://en.wikipedia.org/wiki/Transparency_(data_compression) "wikipedia:Transparency (data compression)").
+
+	[http://musepack.net/](http://musepack.net/) || [libmpcdec](https://www.archlinux.org/packages/?name=libmpcdec)
+
+*   **[opencore-amr](https://en.wikipedia.org/wiki/Adaptive_Multi-Rate_audio_codec "wikipedia:Adaptive Multi-Rate audio codec")** — Open source implementation of the Adaptive Multi Rate (AMR) speech codec.
+
+	[http://sourceforge.net/projects/opencore-amr/](http://sourceforge.net/projects/opencore-amr/) || [opencore-amr](https://www.archlinux.org/packages/?name=opencore-amr)
+
+*   **[Opus](https://en.wikipedia.org/wiki/Opus_(audio_codec) "wikipedia:Opus (audio codec)")** — Open, royalty-free, lossy audio codec, designed for speech and general audio coding and low latency.
+
+	[http://www.opus-codec.org/](http://www.opus-codec.org/) || [opus](https://www.archlinux.org/packages/?name=opus) [opus-git](https://aur.archlinux.org/packages/opus-git/)
+
+*   **[Speex](https://en.wikipedia.org/wiki/Speex "wikipedia:Speex")** — Patent-free, lossy audio compression format designed for speech.
+
+	[http://www.speex.org/](http://www.speex.org/) || [speex](https://www.archlinux.org/packages/?name=speex)
+
+*   **[Vorbis](https://en.wikipedia.org/wiki/Vorbis "wikipedia:Vorbis")** — Open, patent-free, lossy audio codec.
+
+	[http://www.vorbis.com/](http://www.vorbis.com/) || [libvorbis](https://www.archlinux.org/packages/?name=libvorbis)
+
+#### AAC
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding"):
+
+	**Advanced Audio Coding** (AAC) is a proprietary audio coding standard for lossy digital audio compression. Designed to be the successor of the MP3 format, AAC generally achieves better sound quality than MP3 at the same bit rate.
 
 *   **[FAAC](https://en.wikipedia.org/wiki/FAAC "wikipedia:FAAC")** — Proprietary AAC audio encoder.
 
@@ -54,29 +95,43 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 	[http://www.audiocoding.com/faad2.html](http://www.audiocoding.com/faad2.html) || [faad2](https://www.archlinux.org/packages/?name=faad2)
 
+*   **[Fraunhofer FDK AAC](https://en.wikipedia.org/wiki/FAAD2 "wikipedia:FAAD2")** — Complete, high-quality audio solution to Android (and Linux) users.
+
+	[http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html](http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html) || [libfdk-aac](https://www.archlinux.org/packages/?name=libfdk-aac)
+
+*   **[Nero AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding")** — AAC audio codec (decode/encode/tag) all-in-one.
+
+	[http://www.nero.com/eng/company/about-nero/nero-aac-codec.php](http://www.nero.com/eng/company/about-nero/nero-aac-codec.php) || [neroaac](https://aur.archlinux.org/packages/neroaac/)
+
+#### Lossless
+
+*   **[Apple Lossless](https://en.wikipedia.org/wiki/Apple_Lossless "wikipedia:Apple Lossless") (ALAC)** — A lossless audio compression codec developed by Apple and deployed on all of its platforms and devices.
+
+	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-git](https://aur.archlinux.org/packages/alac-git/)
+
 *   **[FLAC](https://en.wikipedia.org/wiki/FLAC "wikipedia:FLAC")** — Free Lossless Audio Codec.
 
 	[https://xiph.org/flac/](https://xiph.org/flac/) || [flac](https://www.archlinux.org/packages/?name=flac)
 
-*   **[Fraunhofer FDK AAC](https://en.wikipedia.org/wiki/FAAD2 "wikipedia:FAAD2")** — Complete, high-quality audio solution to Android (and Linux) users.
+*   **[WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack")** — Audio compression format with lossless, lossy, and hybrid compression modes.
 
-	[http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html](http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html) || [libfdk-aac](https://www.archlinux.org/packages/?name=libfdk-aac)
+	[http://www.wavpack.com/](http://www.wavpack.com/) || [wavpack](https://www.archlinux.org/packages/?name=wavpack)
+
+### Image codecs
 
 *   **[JasPer](https://en.wikipedia.org/wiki/JasPer "wikipedia:JasPer")** — Software-based implementation of the codec specified in the emerging JPEG-2000 Part-1 standard.
 
 	[http://www.ece.uvic.ca/~frodo/jasper/](http://www.ece.uvic.ca/~frodo/jasper/) || [jasper](https://www.archlinux.org/packages/?name=jasper)
 
-*   **[LAME](https://en.wikipedia.org/wiki/LAME "wikipedia:LAME")** — MP3 encoder and graphical frame analyzer.
+*   **[OpenJPEG](https://en.wikipedia.org/wiki/OpenJPEG "wikipedia:OpenJPEG")** — Open source JPEG 2000 codec.
 
-	[http://lame.sourceforge.net/](http://lame.sourceforge.net/) || [lame](https://www.archlinux.org/packages/?name=lame)
+	[http://www.openjpeg.org/](http://www.openjpeg.org/) || [openjpeg](https://www.archlinux.org/packages/?name=openjpeg)
 
-*   **liba52** — Free library for decoding ATSC A/52 streams.
+### Video codecs
 
-	[http://liba52.sourceforge.net/](http://liba52.sourceforge.net/) || [a52dec](https://www.archlinux.org/packages/?name=a52dec)
+*   **[Daala](https://en.wikipedia.org/wiki/Daala "wikipedia:Daala")** — New video compression technology. The effort is a collaboration between Mozilla Foundation, Xiph.Org Foundation and other contributors. The goal of the project is to provide a free to implement, use and distribute digital media format and reference implementation with technical performance superior to h.265.
 
-*   **[libdca](https://en.wikipedia.org/wiki/libdca "wikipedia:libdca")** — Free library for decoding DTS Coherent Acoustics streams.
-
-	[https://www.videolan.org/developers/libdca.html](https://www.videolan.org/developers/libdca.html) || [libdca](https://www.archlinux.org/packages/?name=libdca)
+	[https://www.xiph.org/daala/](https://www.xiph.org/daala/) || [daala-git](https://aur.archlinux.org/packages/daala-git/)
 
 *   **libde265** — Open source implementation of the h.265 video codec.
 
@@ -90,49 +145,17 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 	[http://libmpeg2.sourceforge.net/](http://libmpeg2.sourceforge.net/) || [libmpeg2](https://www.archlinux.org/packages/?name=libmpeg2)
 
-*   **[MAD](https://en.wikipedia.org/wiki/libmad "wikipedia:libmad")** — High-quality MPEG audio decoder.
-
-	[http://www.underbit.com/products/mad/](http://www.underbit.com/products/mad/) || [libmad](https://www.archlinux.org/packages/?name=libmad)
-
-*   **[Musepack](https://en.wikipedia.org/wiki/Musepack "wikipedia:Musepack")** — Audio compression format with a strong emphasis on high quality. It's not lossless, but it is designed for transparency, so that you won't be able to hear differences between the original wave file and the much smaller MPC file. It is based on the MPEG-1 Layer-2 / MP2 algorithms, but since 1997 it has rapidly developed and vastly improved and is now at an advanced stage in which it contains heavily optimized and patentless code.
-
-	[http://musepack.net/](http://musepack.net/) || [libmpcdec](https://www.archlinux.org/packages/?name=libmpcdec)
-
-*   **[Nero AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding")** — AAC audio codec (decode/encode/tag) all-in-one.
-
-	[http://www.nero.com/eng/company/about-nero/nero-aac-codec.php](http://www.nero.com/eng/company/about-nero/nero-aac-codec.php) || [neroaac](https://aur.archlinux.org/packages/neroaac/)
-
-*   **[opencore-amr](https://en.wikipedia.org/wiki/Adaptive_Multi-Rate_audio_codec "wikipedia:Adaptive Multi-Rate audio codec")** — Open source implementation of the Adaptive Multi Rate (AMR) speech codec.
-
-	[http://sourceforge.net/projects/opencore-amr/](http://sourceforge.net/projects/opencore-amr/) || [opencore-amr](https://www.archlinux.org/packages/?name=opencore-amr)
-
-*   **[Opus](https://en.wikipedia.org/wiki/Opus_(audio_codec) "wikipedia:Opus (audio codec)")** — Totally open, royalty-free, highly versatile audio codec. Opus is unmatched for interactive speech and music transmission over the Internet, but is also intended for storage and streaming applications. It is standardized by the Internet Engineering Task Force (IETF) as RFC 6716 which incorporated technology from Skype's SILK codec and Xiph.Org's CELT codec.
-
-	[http://www.opus-codec.org/](http://www.opus-codec.org/) || [opus](https://www.archlinux.org/packages/?name=opus) [opus-git](https://aur.archlinux.org/packages/opus-git/)
-
 *   **[Schrödinger](https://en.wikipedia.org/wiki/Dirac_(video_compression_format) "wikipedia:Dirac (video compression format)")** — Advanced royalty-free video compression format designed for a wide range of uses, from delivering low-resolution web content to broadcasting HD and beyond, to near-lossless studio editing.
 
 	[http://diracvideo.org/](http://diracvideo.org/) || [schroedinger](https://www.archlinux.org/packages/?name=schroedinger)
-
-*   **[Speex](https://en.wikipedia.org/wiki/Speex "wikipedia:Speex")** — Patent-free audio compression format designed for speech.
-
-	[http://www.speex.org/](http://www.speex.org/) || [speex](https://www.archlinux.org/packages/?name=speex)
 
 *   **[Theora](https://en.wikipedia.org/wiki/Theora "wikipedia:Theora")** — Open video codec developed by the Xiph.org.
 
 	[http://www.theora.org/](http://www.theora.org/) || [libtheora](https://www.archlinux.org/packages/?name=libtheora)
 
-*   **[Vorbis](https://en.wikipedia.org/wiki/Vorbis "wikipedia:Vorbis")** — Completely open, patent-free, professional audio encoding and streaming technology.
-
-	[http://www.vorbis.com/](http://www.vorbis.com/) || [libvorbis](https://www.archlinux.org/packages/?name=libvorbis)
-
 *   **[VP8](https://en.wikipedia.org/wiki/VP8 "wikipedia:VP8")** — High-quality, open video format for the web that's freely available to everyone.
 
 	[http://www.webmproject.org](http://www.webmproject.org) || [libvpx](https://www.archlinux.org/packages/?name=libvpx) [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/)
-
-*   **[WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack")** — Audio compression format with lossless, lossy, and hybrid compression modes.
-
-	[http://www.wavpack.com/](http://www.wavpack.com/) || [wavpack](https://www.archlinux.org/packages/?name=wavpack)
 
 *   **[x264](https://en.wikipedia.org/wiki/x264 "wikipedia:x264")** — Free library for encoding H264/AVC video streams.
 

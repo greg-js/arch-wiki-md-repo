@@ -205,17 +205,13 @@ $ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 #### Default applications
 
-Upon installing GNOME for the first time, you may find that the wrong applications are handling certain protocols. For example, *totem* opens videos instead of a previously used [VLC](/index.php/VLC "VLC"). Some of the associations can be set from system settings via: *System* > *Details* > *Default applications*.
+Upon installing GNOME for the first time, you may find that the wrong applications are handling certain protocols. For example, *totem* opens videos instead of a previously used [VLC](/index.php/VLC "VLC"). Some of the associations can be set from system settings via: *Details* > *Default applications*.
 
 For other protocols and methods see [Default applications](/index.php/Default_applications "Default applications") for configuration.
 
 #### Mouse and touchpad
 
-To help reduce touchpad interference you may wish to implement the settings below via *gnome-control-center*:
-
-*   Disable touchpad while typing
-*   Disable scrolling
-*   Disable tap-to-click
+Most touchpad settings can be set from system settings via: *Devices* > *Mouse & Touchpad*.
 
 Depending on your device, other configuration settings may be available, but not exposed via the default GUI. For example, a different touchpad `click-method`
 
@@ -369,8 +365,6 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 ```
 
 #### Desktop
-
-Various Desktop settings can be applied.
 
 ##### Icons on the Desktop
 

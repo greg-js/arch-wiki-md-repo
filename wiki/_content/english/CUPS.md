@@ -305,17 +305,17 @@ Go to the **Printers** page, and select a queue.
 
 If your user does not have sufficient privileges to administer CUPS, the applications will request the root password when they start. To give users administrative privileges without needing root access, see [#Configuration](#Configuration).
 
-*   **print-manager** — A tool for managing print jobs and printers ([KDE](/index.php/KDE "KDE")).
+*   **GtkLP** — GTK+ interface for CUPS.
+
+	[https://gtklp.sirtobi.com/index.shtml](https://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
+
+*   **print-manager** — Tool for managing print jobs and printers ([KDE](/index.php/KDE "KDE")).
 
 	[https://cgit.kde.org/print-manager.git](https://cgit.kde.org/print-manager.git) || [print-manager](https://www.archlinux.org/packages/?name=print-manager)
 
-*   **system-config-printer** — A GTK+ printer configuration tool and status applet
+*   **system-config-printer** — GTK+ printer configuration tool and status applet.
 
 	[http://cyberelk.net/tim/software/system-config-printer/](http://cyberelk.net/tim/software/system-config-printer/) || [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer)
-
-*   **gtklp** — GTK+ interface
-
-	[https://gtklp.sirtobi.com/index.shtml](https://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
 
 ## Configuration
 

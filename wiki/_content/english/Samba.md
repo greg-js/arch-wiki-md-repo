@@ -8,22 +8,28 @@ Related articles
 
 ## Contents
 
-*   [1 Server configuration](#Server_configuration)
+*   [1 Server](#Server)
     *   [1.1 smb.conf](#smb.conf)
     *   [1.2 Creating a share](#Creating_a_share)
     *   [1.3 Starting services](#Starting_services)
-    *   [1.4 Enable usershares](#Enable_usershares)
-    *   [1.5 Adding a user](#Adding_a_user)
-    *   [1.6 Listing users](#Listing_users)
-    *   [1.7 Changing Samba user's password](#Changing_Samba_user.27s_password)
-    *   [1.8 Set permissions](#Set_permissions)
-    *   [1.9 Configure Firewall](#Configure_Firewall)
-*   [2 Client configuration](#Client_configuration)
-    *   [2.1 List Public Shares](#List_Public_Shares)
+    *   [1.4 Adding a user](#Adding_a_user)
+    *   [1.5 Listing users](#Listing_users)
+    *   [1.6 Changing Samba user's password](#Changing_Samba_user.27s_password)
+    *   [1.7 Port forwarding](#Port_forwarding)
+    *   [1.8 Tips and tricks](#Tips_and_tricks)
+        *   [1.8.1 Enable usershares](#Enable_usershares)
+        *   [1.8.2 Set permissions](#Set_permissions)
+        *   [1.8.3 Disable SMB1 protocol for better security](#Disable_SMB1_protocol_for_better_security)
+        *   [1.8.4 Disable printer share](#Disable_printer_share)
+        *   [1.8.5 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
+        *   [1.8.6 Share files without a username and password](#Share_files_without_a_username_and_password)
+        *   [1.8.7 Build Samba without CUPS](#Build_Samba_without_CUPS)
+*   [2 Client](#Client)
+    *   [2.1 List public shares](#List_public_shares)
     *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
         *   [2.2.1 Disable NetBIOS/WINS support](#Disable_NetBIOS.2FWINS_support)
     *   [2.3 Manual mounting](#Manual_mounting)
-        *   [2.3.1 Storing Share Passwords](#Storing_Share_Passwords)
+        *   [2.3.1 Storing share passwords](#Storing_share_passwords)
     *   [2.4 Automatic mounting](#Automatic_mounting)
         *   [2.4.1 As mount entry](#As_mount_entry)
         *   [2.4.2 As systemd unit](#As_systemd_unit)
@@ -34,15 +40,10 @@ Related articles
         *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
         *   [2.5.2 KDE](#KDE)
         *   [2.5.3 Other graphical environments](#Other_graphical_environments)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Disable SMB1 protocol for better security](#Disable_SMB1_protocol_for_better_security)
-    *   [3.2 Improve performance](#Improve_performance)
-    *   [3.3 Disable printer share](#Disable_printer_share)
-    *   [3.4 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
-    *   [3.5 Discovering network shares](#Discovering_network_shares)
-    *   [3.6 Remote control of Windows computer](#Remote_control_of_Windows_computer)
-    *   [3.7 Share files without a username and password](#Share_files_without_a_username_and_password)
-    *   [3.8 Build Samba without CUPS](#Build_Samba_without_CUPS)
+*   [3 Tips and tricks](#Tips_and_tricks_2)
+    *   [3.1 Improve performance](#Improve_performance)
+    *   [3.2 Discovering network shares](#Discovering_network_shares)
+    *   [3.3 Remote control of Windows computer](#Remote_control_of_Windows_computer)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
     *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
@@ -66,33 +67,79 @@ Related articles
     *   [4.17 Mount error: Host is down](#Mount_error:_Host_is_down)
 *   [5 See also](#See_also)
 
-## Server configuration
+## Server
 
 To share files with Samba, [install](/index.php/Install "Install") the [samba](https://www.archlinux.org/packages/?name=samba) package.
 
 ### smb.conf
 
-Samba is configured in `/etc/samba/smb.conf`, if this file does not exist smbd will fail to start.
+Samba is configured in the `/etc/samba/smb.conf` configuration file, which is extensively documented in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
 
-To get started you can copy the default config file from [samba git repository](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) to `/etc/samba/smb.conf`.
+Because the [samba](https://www.archlinux.org/packages/?name=samba) package does not provide the file and *smbd* fails to start if it does not exist, you need to create it.
+
+To get started you can download the `smb.conf.default` configuration file from the [Samba git repository](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) to `/etc/samba/smb.conf`.
 
 **Note:** The default configuration sets `log file` to a non-writable location, which will cause errors - change this to the correct location: `log file = /var/log/samba/%m.log`.
 
-The available options are documented in the [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page. Whenever you modify the file run the [testparm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1) command to check for syntactic errrors.
+Whenever you modify the file run the [testparm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1) command to check for syntactic errors.
+
+The `workgroup` specified in the `[global]` section has to match the in use Windows workgroup (default `WORKGROUP`).
 
 ### Creating a share
 
-Open `/etc/samba/smb.conf`, and scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory.
-
-The `workgroup` specified in `smb.conf` has to match the in use Windows workgroup (default `WORKGROUP`).
+`smb.conf.default` defines a share for every user's home directory using the special `[homes]` section.
 
 ### Starting services
 
-**Note:** In [samba](https://www.archlinux.org/packages/?name=samba) 4.8.0-1, the units were renamed from `smbd.service` and `nmbd.service` to `smb.service` and `nmb.service`.
-
 To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smb.service` and/or `nmb.service` services. See the [smbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbd.8) and [nmbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmbd.8) man pages for details, as the `nmb.service` service may not always be required.
 
-### Enable usershares
+**Note:** In [samba](https://www.archlinux.org/packages/?name=samba) 4.8.0-1, the units were renamed from `smbd.service` and `nmbd.service` to `smb.service` and `nmb.service`.
+
+### Adding a user
+
+Samba requires a Linux user account - you may use an existing user account or create a [new one](/index.php/Users_and_groups#User_management "Users and groups").
+
+Although the user name is shared with Linux system, Samba uses a password separate from that of the Linux user accounts. Replace `samba_user` with the chosen Samba user account:
+
+```
+# smbpasswd -a *samba_user*
+
+```
+
+Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE), existing [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") may need to be altered for the Samba user account.
+
+If you want the new user only to be allowed to remotely access the file server shares through Samba, you can restrict other login options：
+
+*   disabling shell - `usermod --shell /usr/bin/nologin --lock *username*`
+*   disabling SSH logons - edit `/etc/ssh/sshd_conf`, change option `AllowUsers`
+
+Also see [Security](/index.php/Security "Security") for hardening your system.
+
+### Listing users
+
+Samba users can be listed using the [pdbedit(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdbedit.8) command:
+
+```
+# pdbedit -L -v
+
+```
+
+### Changing Samba user's password
+
+To change a user's password, use `smbpasswd`:
+
+```
+# smbpasswd *samba_user*
+
+```
+
+### Port forwarding
+
+If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to open required ports (usually 137-139 + 445). For a complete list, see [Samba port usage](https://www.samba.org/~tpot/articles/firewall.html).
+
+### Tips and tricks
+
+#### Enable usershares
 
 **Note:** This is an optional feature. Skip this section if you do not need it.
 
@@ -149,45 +196,7 @@ Restart `smb.service` and `nmb.service` services.
 
 Log out and log back in. You should now be able to configure your samba share using GUI. For example, in [Thunar](/index.php/Thunar "Thunar") you can right click on any directory and share it on the network. If you want to share paths inside your home directory you must make it listable for the group others.
 
-### Adding a user
-
-Samba requires a Linux user account - you may use an existing user account or create a [new one](/index.php/Users_and_groups#User_management "Users and groups").
-
-Although the user name is shared with Linux system, Samba uses a password separate from that of the Linux user accounts. Replace `samba_user` with the chosen Samba user account:
-
-```
-# smbpasswd -a *samba_user*
-
-```
-
-Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE), existing [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") may need to be altered for the Samba user account.
-
-If you want the new user only to be allowed to remotely access the file server shares through Samba, you can restrict other login options：
-
-*   disabling shell - `usermod --shell /usr/bin/nologin --lock *username*`
-*   disabling SSH logons - edit `/etc/ssh/sshd_conf`, change option `AllowUsers`
-
-Also see [Security](/index.php/Security "Security") for hardening your system.
-
-### Listing users
-
-Samba users can be listed using the [pdbedit(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdbedit.8) command:
-
-```
-# pdbedit -L -v
-
-```
-
-### Changing Samba user's password
-
-To change a user's password, use `smbpasswd`:
-
-```
-# smbpasswd *samba_user*
-
-```
-
-### Set permissions
+#### Set permissions
 
 Permissions may be applied to both the server and a share:
 
@@ -214,23 +223,141 @@ Permissions may be applied to both the server and a share:
   ...
 ```
 
-### Configure Firewall
+#### Disable SMB1 protocol for better security
 
-If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to open required ports (usually 137-139 + 445). For a complete list please check [Samba port usage](https://www.samba.org/~tpot/articles/firewall.html).
+SMB1 protocol is considered a security risk and most clients at least support SMB2\. So it makes sense to deny connection attempts to the server via SMB1 protocol:
 
-## Client configuration
+ `/etc/samba/smb.conf` 
+```
+[global]
+server min protocol = SMB2
+```
+
+#### Disable printer share
+
+If you do not have printers to be shared, use the following setting to save some resources:
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+   load printers = no
+   printing = bsd
+   printcap name = /dev/null
+   disable spoolss = yes
+   show add printer wizard = no
+```
+
+#### Block certain file extensions on Samba share
+
+**Note:** Setting this parameter will affect the performance of Samba, as it will be forced to check all files and directories for a match as they are scanned.
+
+Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
+
+ `/etc/samba/smb.conf` 
+```
+...
+[myshare]
+  comment = Private
+  path = /mnt/data
+  read only = no
+  veto files = /*.exe/*.com/*.dll/*.bat/*.vbs/*.tmp/*.mp3/*.avi/*.mp4/*.wmv/*.wma/
+```
+
+#### Share files without a username and password
+
+Edit `/etc/samba/smb.conf` and add the following line:
+
+```
+map to guest = Bad User
+
+```
+
+After this line:
+
+```
+security = user
+
+```
+
+Restrict the shares data to a specific interface replace:
+
+```
+;   interfaces = 192.168.12.2/24 192.168.13.2/2
+
+```
+
+with:
+
+```
+interfaces = lo eth0
+bind interfaces only = true
+```
+
+Optionally edit the account that access the shares, edit the following line:
+
+```
+;   guest account = nobody
+
+```
+
+For example:
+
+```
+   guest account = pcguest
+
+```
+
+And do something in the likes of:
+
+```
+# useradd -c "Guest User" -d /dev/null -s /bin/false pcguest
+
+```
+
+Then setup a "" password for user pcguest.
+
+The last step is to create share directory (for write access make writable = yes):
+
+```
+[Public Share]
+path = /path/to/public/share
+available = yes
+browsable = yes
+public = yes
+writable = no
+
+```
+
+**Note:** Make sure the guest also has permission to visit `/path`, `/path/to` and `/path/to/public`, according to [http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory](http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory).
+
+#### Build Samba without CUPS
+
+Just build without cups installed. From the [Samba Wiki](https://wiki.samba.org/index.php/Samba_as_a_print_server):
+
+> Samba has built-in support [for CUPS] and defaults to CUPS if the development package (aka header files and libraries) could be found at compile time.
+
+Of course, modifications to the PKGBUILD will also be necessary: libcups will have to be removed from the depends and makedepends arrays and other references to cups and printing will need to be deleted. In the case of the 4.1.9-1 PKGBUILD, 'other references' includes lines 169, 170 and 236:
+
+```
+    mkdir -p ${pkgdir}/usr/lib/cups/backend
+    ln -sf /usr/bin/smbspool ${pkgdir}/usr/lib/cups/backend/smb
+  install -d -m1777 ${pkgdir}/var/spool/samba
+
+```
+
+## Client
 
 For a lightweight method (without support for listing public shares, etc.), only install [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to provide `/usr/bin/mount.cifs`.
 
-Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an ftp-like command line interface. See [smbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1) for commonly used commands.
+Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an `ftp`-like command line interface. See [smbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1) for commonly used commands.
 
-**Note:** [smbclient](https://www.archlinux.org/packages/?name=smbclient) requires an /etc/samba/smb.conf file which the utility, touch, can generate (as an empty file), or if [samba](https://www.archlinux.org/packages/?name=samba) is installed, it can be copied from the default [#smb.conf](#smb.conf).
+**Note:** [smbclient](https://www.archlinux.org/packages/?name=smbclient) requires a `/etc/samba/smb.conf` file (see [smb.conf](#smb.conf)), which you can create as an empty file using the `touch` utility.
 
 Depending on the [desktop environment](/index.php/Desktop_environment "Desktop environment"), GUI methods may be available. See [#File manager configuration](#File_manager_configuration) for use with a file manager.
 
 **Note:** After installing [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) or [smbclient](https://www.archlinux.org/packages/?name=smbclient), load the `cifs` [kernel module](/index.php/Kernel_module "Kernel module") or reboot to prevent mount fails.
 
-### List Public Shares
+### List public shares
 
 The following command lists public shares on a server:
 
@@ -311,7 +438,7 @@ To allow users to mount it as long as the mount point resides in a directory con
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
 *   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown "WPA supplicant").
 
-#### Storing Share Passwords
+#### Storing share passwords
 
 Storing passwords in a world readable file is not recommended. A safer method is to create a credentials file:
 
@@ -377,7 +504,6 @@ TimeoutSec=30
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
@@ -496,16 +622,6 @@ There are a number of useful programs, but they may need to have packages create
 
 ## Tips and tricks
 
-### Disable SMB1 protocol for better security
-
-SMB1 protocol is considered a security risk and most clients at least support SMB2\. So it makes sense to deny connection attempts to the server via SMB1 protocol:
-
- `/etc/samba/smb.conf` 
-```
-[global]
-server min protocol = SMB2
-```
-
 ### Improve performance
 
 It is possible to improve performance, however this may lead to **corruption and/or connection issues**.
@@ -524,36 +640,6 @@ Read the [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) ma
    min receivefile size = 16384
    aio read size = 16384
    aio write size = 16384
-```
-
-### Disable printer share
-
-If you do not have printers to be shared, use the following setting to save some resources:
-
- `/etc/samba/smb.conf` 
-```
-[global]
-   load printers = no
-   printing = bsd
-   printcap name = /dev/null
-   disable spoolss = yes
-   show add printer wizard = no
-```
-
-### Block certain file extensions on Samba share
-
-**Note:** Setting this parameter will affect the performance of Samba, as it will be forced to check all files and directories for a match as they are scanned.
-
-Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
-
- `/etc/samba/smb.conf` 
-```
-...
-[myshare]
-  comment = Private
-  path = /mnt/data
-  read only = no
-  veto files = /*.exe/*.com/*.dll/*.bat/*.vbs/*.tmp/*.mp3/*.avi/*.mp4/*.wmv/*.wma/
 ```
 
 ### Discovering network shares
@@ -614,7 +700,11 @@ Regardless of the output, look for **<20>**, which shows the host with open serv
  `$ smbclient -L \\PUTER` 
 ```
 Sharename       Type      Comment
----------       ----      -------
+
+* * *
+
+       ----      -------
+
 MY_MUSIC        Disk
 SHAREDDOCS      Disk
 PRINTER$        Disk
@@ -622,13 +712,19 @@ PRINTER         Printer
 IPC$            IPC       Remote Inter Process Communication
 
 Server               Comment
----------            -------
+
+* * *
+
+            -------
+
 PUTER
 
 Workgroup            Master
----------            -------
-HOMENET               PUTER
 
+* * *
+
+            -------
+HOMENET               PUTER
 ```
 
 ### Remote control of Windows computer
@@ -655,88 +751,6 @@ To see all possible net rpc command:
 
 ```
 $ net rpc
-
-```
-
-### Share files without a username and password
-
-Edit `/etc/samba/smb.conf` and add the following line:
-
-```
-map to guest = Bad User
-
-```
-
-After this line:
-
-```
-security = user
-
-```
-
-Restrict the shares data to a specific interface replace:
-
-```
-;   interfaces = 192.168.12.2/24 192.168.13.2/2
-
-```
-
-with:
-
-```
-interfaces = lo eth0
-bind interfaces only = true
-```
-
-Optionally edit the account that access the shares, edit the following line:
-
-```
-;   guest account = nobody
-
-```
-
-For example:
-
-```
-   guest account = pcguest
-
-```
-
-And do something in the likes of:
-
-```
-# useradd -c "Guest User" -d /dev/null -s /bin/false pcguest
-
-```
-
-Then setup a "" password for user pcguest.
-
-The last step is to create share directory (for write access make writable = yes):
-
-```
-[Public Share]
-path = /path/to/public/share
-available = yes
-browsable = yes
-public = yes
-writable = no
-
-```
-
-**Note:** Make sure the guest also has permission to visit `/path`, `/path/to` and `/path/to/public`, according to [http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory](http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory).
-
-### Build Samba without CUPS
-
-Just build without cups installed. From the [Samba Wiki](https://wiki.samba.org/index.php/Samba_as_a_print_server):
-
-> Samba has built-in support [for CUPS] and defaults to CUPS if the development package (aka header files and libraries) could be found at compile time.
-
-Of course, modifications to the PKGBUILD will also be necessary: libcups will have to be removed from the depends and makedepends arrays and other references to cups and printing will need to be deleted. In the case of the 4.1.9-1 PKGBUILD, 'other references' includes lines 169, 170 and 236:
-
-```
-    mkdir -p ${pkgdir}/usr/lib/cups/backend
-    ln -sf /usr/bin/smbspool ${pkgdir}/usr/lib/cups/backend/smb
-  install -d -m1777 ${pkgdir}/var/spool/samba
 
 ```
 
@@ -1069,5 +1083,9 @@ This error might be seen when mounting shares of Synology NAS servers. Use the m
 
 ## See also
 
-*   [Samba: An Introduction](http://www.samba.org/samba/docs/SambaIntro.html)
-*   [Official Samba site](http://www.samba.org/)
+*   [Official website](https://www.samba.org/)
+*   [Samba: An Introduction](https://www.samba.org/samba/docs/SambaIntro.html)
+*   [Samba 3.2.x HOWTO and Reference Guide](https://www.samba.org/samba/docs/Samba-HOWTO-Collection.pdf) (outdated but still most extensive documentation)
+*   [Wikipedia](https://en.wikipedia.org/wiki/Samba_(software) "wikipedia:Samba (software)")
+*   [Gentoo:Samba/Guide](https://wiki.gentoo.org/wiki/Samba/Guide "gentoo:Samba/Guide")
+*   [Debian:SambaServerSimple](https://wiki.debian.org/SambaServerSimple "debian:SambaServerSimple")

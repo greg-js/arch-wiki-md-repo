@@ -1,10 +1,10 @@
-MIDI itself, which stands for "Musical Instrument Digital Interface", is just a protocol and standard for communication between musical instruments and any device that understands the language. It can be used to control an array of synthesizers, make a tin can sound like a drum, or even operate industrial equipments.
+[MIDI](https://en.wikipedia.org/wiki/MIDI "wikipedia:MIDI") itself, which stands for "Musical Instrument Digital Interface", is just a protocol and standard for communication between musical instruments and any device that understands the language. It can be used to control an array of synthesizers, make a tin can sound like a drum, or even operate industrial equipments.
 
-The scope of this article, however, will mainly focus on the usage of MIDI in computer systems for playback of files that contain MIDI data. These files usually come with the **.mid** extension, and were hugely popular in the golden days of multimedia computing to share music. In professional music composition/arrangement, it still plays a vital role.
+The scope of this article, however, will mainly focus on the usage of MIDI in computer systems for playback of files that contain MIDI data. These files usually come with the `.mid` extension, and were hugely popular in the golden days of multimedia computing to share music. In professional music composition/arrangement, it still plays a vital role.
 
 ## Contents
 
-*   [1 MIDI File](#MIDI_File)
+*   [1 MIDI file](#MIDI_file)
 *   [2 GM Bank](#GM_Bank)
 *   [3 Playback](#Playback)
     *   [3.1 Hardware](#Hardware)
@@ -17,9 +17,9 @@ The scope of this article, however, will mainly focus on the usage of MIDI in co
         *   [3.2.5 TiMidity++](#TiMidity.2B.2B)
         *   [3.2.6 FluidSynth](#FluidSynth)
 
-## MIDI File
+## MIDI file
 
-Without going into the details of what the format is composed of, you just need to understand that a MIDI file eg. **foobar.mid** does not contain any digital audio data, hence no "PCM stream". It is a common misconception that MIDI is a sound file format, and as such you usually see people complaining that music players like Amarok cannot play the file. Here is a very newbie-friendly outline of what a MIDI/MID file contains:
+Without going into the details of what the format is composed of, you just need to understand that a MIDI file eg. `foobar.mid` does not contain any digital audio data, hence no "PCM stream". It is a common misconception that MIDI is a sound file format, and as such you usually see people complaining that music players like Amarok cannot play the file. Here is a very newbie-friendly outline of what a MIDI/MID file contains:
 
 ```
 **# FOOBAR.MID**
@@ -156,7 +156,7 @@ And, if you installed e.g. fluidr3 as wiki says, set the location to:
 
 #### Audacious
 
-[audacious](https://www.archlinux.org/packages/?name=audacious) has a built-in MIDI synthesizer which makes it essentially the easiest way to play a MIDI file with no extra setup. You can specify the soundfont to use for playback in the settings of its MIDI output plugin (File > Preferences > Plugins > Input > AMIDI-Plug > Preferences). As such the only prerequisites you need is the player and a soundfont file.
+[audacious](https://www.archlinux.org/packages/?name=audacious) has a built-in MIDI synthesizer which makes it essentially the easiest way to play a MIDI file with no extra setup. You can specify the soundfont to use for playback in the settings of its MIDI output plugin (*File > Preferences > Plugins > Input > AMIDI-Plug > Preferences*). As such the only prerequisites you need is the player and a soundfont file.
 
 #### TiMidity++
 

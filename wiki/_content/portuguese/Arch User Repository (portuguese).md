@@ -337,7 +337,7 @@ Você também deve tentar contactar o mantenedor diretamente por e-mail. Se não
 
 Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o PKGBUILD localmente. Ás vezes, atualizações não exigem qualquer alteração para o processo de compilação ou empacotamento, caso em que apenas atualizar o vetor `pkgver` ou `source` é suficiente.
 
-**Nota:** [Pacotes VCS](/index.php/VCS_package_guidelines "VCS package guidelines") não são considerados desatualizados quando o pkgver altera, então não sinalize-os pois o mantenedor irá simplesmente retirar a sinalização e ignorar você. Mantenedores do AUR não devem fazer commits para meramente incrementar o pkgver.
+**Nota:** [Pacotes VCS](/index.php/Diretrizes_de_pacotes_VCS "Diretrizes de pacotes VCS") não são considerados desatualizados quando o pkgver altera, então não sinalize-os pois o mantenedor irá simplesmente retirar a sinalização e ignorar você. Mantenedores do AUR não devem fazer commits para meramente incrementar o pkgver.
 
 ### Foo no AUR não compila quando eu executo makepkg; o que devo fazer?
 

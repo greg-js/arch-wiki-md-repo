@@ -7,20 +7,20 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
 
 ## Contents
 
-*   [1 Getting Started](#Getting_Started)
-    *   [1.1 System Configuration](#System_Configuration)
+*   [1 Getting started](#Getting_started)
+    *   [1.1 System configuration](#System_configuration)
         *   [1.1.1 Checklist](#Checklist)
     *   [1.2 JACK](#JACK)
         *   [1.2.1 FireWire](#FireWire)
         *   [1.2.2 Jack Flash](#Jack_Flash)
         *   [1.2.3 Quickscan JACK script](#Quickscan_JACK_script)
         *   [1.2.4 Desktop Effects vs JACK](#Desktop_Effects_vs_JACK)
-        *   [1.2.5 A General Example](#A_General_Example)
-*   [2 Realtime Kernel](#Realtime_Kernel)
+        *   [1.2.5 A general example](#A_general_example)
+*   [2 Realtime kernel](#Realtime_kernel)
     *   [2.1 AUR](#AUR)
 *   [3 MIDI](#MIDI)
-*   [4 Environment Variables](#Environment_Variables)
-*   [5 Tips and Tricks](#Tips_and_Tricks)
+*   [4 Environment variables](#Environment_variables)
+*   [5 Tips and tricks](#Tips_and_tricks)
 *   [6 Hardware](#Hardware)
     *   [6.1 M-Audio Delta 1010](#M-Audio_Delta_1010)
     *   [6.2 M-Audio Fast Track Pro](#M-Audio_Fast_Track_Pro)
@@ -28,20 +28,20 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
     *   [6.4 PreSonus AudioBox USB](#PreSonus_AudioBox_USB)
     *   [6.5 Tascam US-122](#Tascam_US-122)
     *   [6.6 RME Babyface](#RME_Babyface)
-*   [7 Restricted Software](#Restricted_Software)
+*   [7 Restricted software](#Restricted_software)
     *   [7.1 Steinberg's SDKs](#Steinberg.27s_SDKs)
 *   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
-*   [9 Linux and Arch Linux Pro Audio in the News](#Linux_and_Arch_Linux_Pro_Audio_in_the_News)
+*   [9 Linux and Arch Linux Pro Audio in the news](#Linux_and_Arch_Linux_Pro_Audio_in_the_news)
 *   [10 Mailing list](#Mailing_list)
 *   [11 IRC](#IRC)
 
-## Getting Started
+## Getting started
 
 Some of the major pro audio applications are already available from the official Arch Linux repositories. For anything which is not, you can either add a binary repository (see further down below) or if you prefer to compile, search the AUR. Nothing stops you from building directly off of upstream releases, but then you might as well run LFS.
 
 Start by installing [JACK](/index.php/JACK "JACK"). See [List of applications#Audio](/index.php/List_of_applications#Audio "List of applications") and [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) for the available applications.
 
-### System Configuration
+### System configuration
 
 You may want to consider the following often seen system optimizations:
 
@@ -236,11 +236,11 @@ The output should tell you where your system is lacking and will point you to pl
 
 In addition to the factors listed under the System Configuration section above as well as the settings checked by realTimeConfigQuickScan.pl, it is also worth noting that desktop environments can cause xruns and hence JACK audio glitches, especially memory/process intensive ones and those desktops that utilize composited desktop effects. It is recommended you disable desktop effects when using JACK. You are likely to get the least xruns and best performance by running a lightweight desktop or just a window manager instead.
 
-#### A General Example
+#### A general example
 
 A general configuration example is [JACK Audio Connection Kit#A shell-based example setup](/index.php/JACK_Audio_Connection_Kit#A_shell-based_example_setup "JACK Audio Connection Kit").
 
-## Realtime Kernel
+## Realtime kernel
 
 Since a while ago, the stock Linux kernel has proven to be adequate for realtime uses. The stock kernel (with `CONFIG_PREEMPT=y`, default in Arch) can operate with a worst case latency of [upto 10ms](https://rt.wiki.kernel.org/index.php/Frequently_Asked_Questions#What_are_real-time_capabilities_of_the_stock_2.6_linux_kernel.3F) (time between the moment an interrupt occurs in hardware, and the moment the corresponding interrupt-thread gets running), although some device drivers can introduce latency much worse than that. So depending on your hardware and driver (and requirement), you might want a kernel with hard realtime capabilities.
 
@@ -284,7 +284,7 @@ To work with MIDI, it is highly recommended that you install a2j ([a2jmidid](htt
 
 	*See: [JACK#MIDI](/index.php/JACK#MIDI "JACK")*
 
-## Environment Variables
+## Environment variables
 
 If you install things to non-standard directories, it is often necessary to set environment path variables so that applications know where to look (for plug-ins and other libraries). This usually affects only VST since users might have a Wine or external Windows location.
 
@@ -300,7 +300,7 @@ export LV2_PATH=/usr/lib/lv2:/usr/local/lib/lv2:~/.lv2:/someother/custom/dir
 export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 ```
 
-## Tips and Tricks
+## Tips and tricks
 
 *   Disable WiFi and close any programs that don't need to be open when recording such as browsers. Many have reported disabling WiFi has led to more reliable JACK performance.
 
@@ -366,11 +366,7 @@ usb-audio: Fast Track Pro config OK
 
 The interface also needs extra step of cofiguration to switch modes. It is done using option `device_setup` during module loading. The recommended way to setup the interface is using file in `modprobe.d`:
 
- `/etc/modprobe.d/ftp.conf` 
-```
-options snd_usb_audio vid=0x763 pid=0x2012 device_setup=XXX index=YYY enable=1
-
-```
+ `/etc/modprobe.d/ftp.conf`  `options snd_usb_audio vid=0x763 pid=0x2012 device_setup=XXX index=YYY enable=1` 
 
 where `vid` and `pid` are vendor and product id for M-Audio Fast Track Pro, `index` is desired device number and `device_setup` is desired device setup. Possible values for `device_setup` are:
 
@@ -512,7 +508,7 @@ For more info about the Class Compliant Mode visit RME's website, they have PDF 
 
 The Babyface does not need any special Jack Settings. But if you want to use the built in MIDI In/Out then you need to set the "MIDI Driver" to "seq" and optionally disable "Enable Alsa Sequencer Support" to use it in combination with other MIDI Devices (a USB Midi Keyboard for example).
 
-## Restricted Software
+## Restricted software
 
 ### Steinberg's SDKs
 
@@ -540,12 +536,10 @@ History: [https://bbs.archlinux.org/viewtopic.php?id=30547](https://bbs.archlinu
 
 For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archaudio @ Freenode
 
-## Linux and Arch Linux Pro Audio in the News
+## Linux and Arch Linux Pro Audio in the news
 
 *   [Build a Serious Multimedia Production Workstation with Arch](https://www.linux.com/learn/tutorials/607117-build-a-serious-multimedia-production-workstation-with-arch-linux) - Linux.com article, July 2012
-
 *   [An Arch Tale](http://www.linuxjournal.com/content/arch-tale) - Article by fellow musician and writer Dave Phillips, October 2011
-
 *   [From Windows to Linux: a sound decision](http://www.itwire.com/opinion-and-analysis/open-sauce/36698-from-windows-to-linux-a-sound-decision) - Interview with Geoff "songshop" Beasley, February 2010
 
 ## Mailing list

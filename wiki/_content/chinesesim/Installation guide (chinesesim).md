@@ -34,9 +34,9 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ## 安装准备
 
-根据 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示符。
+根据 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入 [Zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)") 命令提示符。
 
-如果你想切换至其它的虚拟终端来干点别的事, 例如使用 [ELinks](/index.php/ELinks "ELinks") 来查看本篇指南，使用 `Alt+*arrow*` [快捷键](/index.php/Keyboard_shortcuts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Keyboard shortcuts (简体中文)")。可以使用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim") [编辑](/index.php/Textedit "Textedit")配置文件。
+如果你想切换至其它的虚拟终端来干点别的事, 例如使用 [ELinks](/index.php/ELinks "ELinks") 来查看本篇指南，使用 `Alt+*方向鍵*` [快捷键](/index.php/Keyboard_shortcuts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Keyboard shortcuts (简体中文)")。可以使用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim") [编辑](/index.php/Textedit "Textedit")配置文件。
 
 ### 键盘布局
 
@@ -69,36 +69,36 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ### 连接到因特网
 
-守护进程 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 已被默认[启用](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)来探测[有线](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)设备, 并会尝试连接。如需验证网络是否正常, 可以使用 [ping](/index.php/Ping "Ping"):
+守护进程 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 已被默认启用来探测[有线网络设备](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules), 并会尝试连接。 可以使用 [ping](/index.php/Ping "Ping") 验证连接是否正常:
 
 ```
-# ping -c 3 archlinux.org
+# ping archlinux.org
 
 ```
 
-若发现网络不通,利用 `systemctl stop dhcpcd@`,`TAB` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，`*网络接口*` 名可以通过 [Tab补全](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). 要配置网络,详见[网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
+如果没有可用网络连接,利用 `systemctl stop dhcpcd@*网络接口*`,`TAB` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，`*网络接口*` 名可以通过 [Tab补全](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion").。要配置网络，详见[网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
 
 ### 更新系统时间
 
-用 [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") 确保系统时间是正确的：
+使用 [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) 确保系统时间是准确的：
 
 ```
 # timedatectl set-ntp true
 
 ```
 
-用 `timedatectl status` 检查服务状态.详情阅读 [Time (简体中文)](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)").
+可以使用 `timedatectl status` 检查服务状态。
 
 ### 建立硬盘分区
 
-磁盘若被系统识别到，就会被分配为一个*块设备*，如`/dev/sda`或者{ic|/dev/nvme0n1}}。可以使用[lsblk](/index.php/Lsblk "Lsblk") 或者 *fdisk* 查看:
+磁盘若被系统识别到，就会被分配为一个[块设备](https://en.wikipedia.org/wiki/zh:%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F#.E5.91.BD.E5.90.8D.E7.BA.A6.E5.AE.9A "wikipedia:zh:设备文件系统")，如`/dev/sda`或者`/dev/nvme0n1`。可以使用 [lsblk](/index.php/Lsblk "Lsblk") 或者 *fdisk* 查看:
 
 ```
 # fdisk -l
 
 ```
 
-结果中以`rom`, `loop` 或者 `airoot`结束的可以被忽略.
+结果中以`rom`, `loop` 或者 `airoot`结束的可以被忽略。
 
 对于一个选定的设备，以下的*分区*是必须要有的:
 
@@ -114,20 +114,20 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-查看[Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")以获得更多详情.
+查看[硬盘分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")以获得更多详情.
 
 **注意:** 如果需要需要创建多级存储例如 [LVM](/index.php/LVM "LVM")、[disk encryption](/index.php/Disk_encryption "Disk encryption") 或 [RAID](/index.php/RAID "RAID")，请在此时完成。
 
 ### 格式化分区
 
-当分区配置好了, 这些分区应立即被格式化并使用一个合适的[文件系统](/index.php/File_system "File system"). 例如，如果你想将`/dev/*sda1*`格式化成`*ext4*`, 使用这个命令:
+当分区建立好了, 这些分区都需要使用适当的[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")进行格式化。举个例子，如果想将`/dev/*sda1*`格式化成`*ext4*`, 可以运行:
 
 ```
 # mkfs.*ext4* /dev/*sda1*
 
 ```
 
-如果你为swap创建了一个空间，使用mkswap初始化
+如果您创建了交换分区（例如`/dev/*sda3*`），使用 mkswap 将其初始化：
 
 ```
 # mkswap /dev/*sda3*
@@ -135,7 +135,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-详情参见 [文件系统](/index.php/File_systems#Create_a_file_system "File systems") 和 [swap (简体中文)](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)")。
+详情参见[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F "File systems (简体中文)")。
 
 ### 挂载分区
 

@@ -128,7 +128,7 @@ Nessa função, comandos que são usados para preparar fontes para compilação 
 
 `pkgver()` é executado após os fontes serem obtidos, extraídos e o [prepare()](#prepare.28.29) executado. Então, você pode atualizar a variável *pkgver* durante um estágio do makepkg.
 
-Isso é particularmente útil se você estiver [fazendo pacote git/svn/hg/etc.](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines"), nos quais o processo de compilação pode se manter o mesmo, mas o fonte não puder ser atualizado todo dia, ou toda hora. A forma antiga de fazer isso é colocar a data no campo *pkgver* que, se o software não fosse atualizado, makepkg ainda iria recompilá-lo pensando que a versão foi alterada. Alguns comandos úteis para isso são `git describe`, `hg identify -ni`, etc. Por favor, teste antes de enviar um PKGBUILD, já que uma falha na função `pkgver()` pode parar um processo de compilação.
+Isso é particularmente útil se você estiver [fazendo pacote git/svn/hg/etc.](/index.php/Diretrizes_de_pacotes_VCS "Diretrizes de pacotes VCS"), nos quais o processo de compilação pode se manter o mesmo, mas o fonte não puder ser atualizado todo dia, ou toda hora. A forma antiga de fazer isso é colocar a data no campo *pkgver* que, se o software não fosse atualizado, makepkg ainda iria recompilá-lo pensando que a versão foi alterada. Alguns comandos úteis para isso são `git describe`, `hg identify -ni`, etc. Por favor, teste antes de enviar um PKGBUILD, já que uma falha na função `pkgver()` pode parar um processo de compilação.
 
 **Nota:** pkgver não pode conter espaços ou hífens (`-`). Usar sed para corrigir isso é comum.
 

@@ -17,6 +17,7 @@
         *   [3.3.1 Setup database](#Setup_database)
         *   [3.3.2 Setup database user](#Setup_database_user)
     *   [3.4 Enabling templates catching](#Enabling_templates_catching)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -251,3 +252,7 @@ Set read/write permissions for the `http` [user](/index.php/User "User"):
 # chown http:http /usr/share/webapps/phpMyAdmin/tmp
 
 ```
+
+## See also
+
+*   [Wikipedia](https://en.wikipedia.org/wiki/phpMyAdmin "wikipedia:phpMyAdmin")

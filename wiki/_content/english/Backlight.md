@@ -257,7 +257,7 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 *   **Monica** — A monitor calibration tool. It works as frontend to xgamma to alter the gamma correction
 
-	[https://sources.archlinux.org/other/monica/](https://sources.archlinux.org/other/monica/) || [monica](https://www.archlinux.org/packages/?name=monica)
+	[https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html](https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html) || [monica](https://www.archlinux.org/packages/?name=monica)
 
 *   **Enlighten** — Enlighten is a very small C utility to control the backlight brightness in Linux.
 

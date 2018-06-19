@@ -53,9 +53,13 @@
         *   [1.6.5 Command schedulers](#Command_schedulers)
         *   [1.6.6 Shutdown timers](#Shutdown_timers)
         *   [1.6.7 Clock synchronization](#Clock_synchronization)
-        *   [1.6.8 Bluetooth management](#Bluetooth_management)
-        *   [1.6.9 Power management](#Power_management)
-        *   [1.6.10 Package management](#Package_management)
+        *   [1.6.8 Screen management](#Screen_management)
+        *   [1.6.9 Backlight management](#Backlight_management)
+        *   [1.6.10 Color management](#Color_management)
+        *   [1.6.11 Printer management](#Printer_management)
+        *   [1.6.12 Bluetooth management](#Bluetooth_management)
+        *   [1.6.13 Power management](#Power_management)
+        *   [1.6.14 Package management](#Package_management)
 
 ## Utilities
 
@@ -1251,13 +1255,29 @@ See also [Cron](/index.php/Cron "Cron").
 
 See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
 
+#### Screen management
+
+See [Xrandr#Graphical front-ends](/index.php/Xrandr#Graphical_front-ends "Xrandr").
+
+#### Backlight management
+
+See [Backlight#Other utilities](/index.php/Backlight#Other_utilities "Backlight").
+
+#### Color management
+
+See [ICC profiles#Utilities](/index.php/ICC_profiles#Utilities "ICC profiles").
+
+#### Printer management
+
+See [CUPS#GUI applications](/index.php/CUPS#GUI_applications "CUPS").
+
 #### Bluetooth management
 
 See [Bluetooth#Front-ends](/index.php/Bluetooth#Front-ends "Bluetooth").
 
 #### Power management
 
-See [Power management](/index.php/Power_management "Power management").
+See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management").
 
 #### Package management
 

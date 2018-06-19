@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-02，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=519962)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-02，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=526631)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (“Very Secure FTP Daemon“) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
 
@@ -25,8 +25,9 @@
     *   [4.2 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot.28.29)
     *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
     *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
-    *   [4.5 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
-    *   [4.6 vsftpd 连接在使用 nis 的机器上失败: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_.E8.BF.9E.E6.8E.A5.E5.9C.A8.E4.BD.BF.E7.94.A8_nis_.E7.9A.84.E6.9C.BA.E5.99.A8.E4.B8.8A.E5.A4.B1.E8.B4.A5:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
+    *   [4.5 Passive mode replies with the local IP address to a remote connection](#Passive_mode_replies_with_the_local_IP_address_to_a_remote_connection)
+    *   [4.6 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
+    *   [4.7 vsftpd 连接在使用 nis 的机器上失败: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_.E8.BF.9E.E6.8E.A5.E5.9C.A8.E4.BD.BF.E7.94.A8_nis_.E7.9A.84.E6.9C.BA.E5.99.A8.E4.B8.8A.E5.A4.B1.E8.B4.A5:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
 *   [5 更多资源](#.E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90)
 
 ## 安装
@@ -466,6 +467,34 @@ vsftpd 尝试在 SSL 会话中显示纯文本错误消息。为了进行调试�
 Description=vsftpd daemon
 After=network.target
 ```
+
+### Passive mode replies with the local IP address to a remote connection
+
+如果 vsftpd 将本地地址返回给远程连接，如：
+
+```
+227 Entering Passive Mode (192,168,0,19,192,27).
+
+```
+
+It may be that the FTP server is behind a NAT router and while some devices monitor FTP connections and dynamically replace the IP address specification for packets containing the PASV response, some do not. 可能是 FTP 服务器位于 NAT 路由器后面，而有些设备会监视 FTP 连接并动态替换包含 PASV 响应的数据包的 IP 地址规范，但有些设备却不会。
+
+使用以下命令在 vsftpd 配置中指示外部IP地址：
+
+```
+ pasv_address=*externalIPaddress*
+
+```
+
+或者可选地：
+
+```
+pasv_addr_resolve=YES
+pasv_address=*my.domain.name*
+
+```
+
+如果在更改后无法进行内部连接，则可能需要运行 2 个 vsftpd，一个用于内部连接，一个用于外部连接。
 
 ### ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6
 

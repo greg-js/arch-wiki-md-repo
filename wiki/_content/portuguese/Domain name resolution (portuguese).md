@@ -96,12 +96,12 @@ Dessa forma, você pode se referir a hosts locais como `maquinaprincipal1.exempl
 
 ## Systemd-resolved
 
-[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications via a [D-Bus](/index.php/D-Bus "D-Bus") interface, the `resolve` NSS service ([nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8)), and a local DNS stub listener on `127.0.0.53`.
+[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) é um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") que fornece resolução de nome de rede para aplicativos locais por uma interface [D-Bus](/index.php/D-Bus "D-Bus"), o serviço NSS `resolve` ([nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8)) e um *listener* DNS local em `127.0.0.53`.
 
-*systemd-resolved* has four different modes for handling the [glibc resolver](#Glibc_resolver)'s *resolv.conf* (described in [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#.2FETC.2FRESOLV.CONF)). We will focus here on the two most relevant modes.
+*systemd-resolved* tem quatro modos diferentes para lidar com o *resolv.conf* do [resolvedor do glibc](#Resolvedor_do_glibc) (descrito em [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#.2FETC.2FRESOLV.CONF)). Vamos nos concentrar aqui nos dois modos mais relevantes.
 
-1.  The mode in which *systemd-resolved* is a client of the `/etc/resolv.conf`. This mode preserves `/etc/resolv.conf` and is **compatible** with the procedures described in this page.
-2.  The *systemd-resolved'*s **recommended** mode of operation: the DNS stub file as indicated below contains both the local stub `127.0.0.53` as the only DNS servers and a list of search domains.
+1.  O modo no qual *systemd-resolved* é um cliente do `/etc/resolv.conf`. Esse modo preserva o `/etc/resolv.conf` e é **compatível** com os procedimentos descritos nesta página.
+2.  Os modos de operação **recomendados** do *systemd-resolved*: o arquivo stub como indicado abaixo ambos no `127.0.0.53` local como apenas nos servidores DNS e uma lista de domínios de pesquisa.
 
  `/run/systemd/resolve/stub-resolv.conf` 
 ```
@@ -110,14 +110,14 @@ search lan
 
 ```
 
-The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by deleting or renaming the existing `/etc/resolv.conf` and replacing it by a symbolic link to the systemd stub:
+Os usuários do serviço são aconselhados a redirecionar o arquivo `/etc/resolv.conf` para o arquivo local do resolvedor DNS do stub `/run/systemd/resolve/stub-resolv.conf` gerenciado por *systemd-resolved*. Isso propaga a configuração gerenciada do systemd para todos os clientes. Isso pode ser feito excluindo ou renomeando o `/etc/resolv.conf` existente e substituindo-o por um link simbólico para o stub do systemd:
 
 ```
 # ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 ```
 
-In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
+Neste modo, os servidores DNS são fornecidos no arquivo [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5):
 
  `/etc/systemd/resolved.conf` 
 ```
@@ -126,41 +126,41 @@ In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk
 ...
 ```
 
-In order to check the DNS actually used by *systemd-resolved*, the command to use is:
+Para verificar o DNS realmente usado pelo *systemd-resolved*, o comando a ser usado é:
 
 ```
 $ systemd-resolve --status
 
 ```
 
-**Tip:**
+**Dica:**
 
-*   To understand the context around the DNS choices and switches, one can turn on detailed debug information for *systemd-resolved* as described in [Systemd#Diagnosing a service](/index.php/Systemd#Diagnosing_a_service "Systemd").
-*   The mode of operation of *systemd-resolved* is detected automatically, depending on whether `/etc/resolv.conf` is a symlink to the local stub DNS resolver file or contains server names.
+*   Para entender o contexto em torno das opções de DNS e switches, é possível ativar informações detalhadas de depuração para *systemd-resolved*, conforme descrito em [Systemd#Diagnosing a service](/index.php/Systemd#Diagnosing_a_service "Systemd").
+*   O modo de operação do *systemd-resolved* é detectado automaticamente, dependendo se o `/etc/resolv.conf` é um link simbólico para o arquivo local do resolvedor de DNS stub ou contém nomes de servidor.
 
 ## Desempenho
 
-The [#Glibc resolver](#Glibc_resolver) does not cache queries. If you want local caching use [#Systemd-resolved](#Systemd-resolved) or set up a local caching [DNS server](/index.php/DNS_server "DNS server") and use `127.0.0.1`.
+O [#Resolvedor do glibc](#Resolvedor_do_glibc) não armazena em cache as consultas. Se você quiser que o cache local use [#Systemd-resolved](#Systemd-resolved) ou configure um [servidor DNS](/index.php/Servidor_DNS "Servidor DNS") de cache local e use `127.0.0.1`.
 
-**Tip:** The *dig* and *drill* [#Lookup utilities](#Lookup_utilities) report the query time.
+**Dica:** Os [#Utilitários de lookup](#Utilit.C3.A1rios_de_lookup) *dig* e *drill* relatam o tempo de consulta.
 
-Internet service providers usually provide working DNS servers. A router may also add an extra DNS server in case it has its own cache server. Switching between DNS servers is transparent for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could cause delays.
+Provedores de serviços de Internet geralmente fornecem servidores DNS em funcionamento. Um roteador também pode adicionar um servidor DNS extra, caso tenha seu próprio servidor de cache. A alternância entre servidores DNS é transparente para usuários do Windows, porque se um servidor DNS estiver lento ou não funcionar, ele mudará imediatamente para um servidor melhor. No entanto, o Linux geralmente leva mais tempo para o tempo limite, o que poderia causar atrasos.
 
 ## Utilitários de lookup
 
-To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](#Name_Service_Switch).
+Para consultar servidores DNS específicos e registros DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC"), você pode usar utilitários de pesquisa de DNS dedicados. Essas ferramentas implementam o próprio DNS e não usam [NSS](#Name_Service_Switch).
 
-*   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
-*   [ldns](https://www.archlinux.org/packages/?name=ldns) provides [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), which is similar to *dig*
+*   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) fornece [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) e várias ferramentas `dnssec-`.
+*   [ldns](https://www.archlinux.org/packages/?name=ldns) fornece [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), que é similar ao *dig*
 
-For example, to query a specific nameserver with drill for the TXT records of a domain:
-
-```
-$ drill @*nameserver* TXT *domain*
+Por exemplo, para consultar um servidor de nomes específico com drill por registros TXT de um domínio:
 
 ```
+$ drill @*servidor-de-nome* TXT *domínio*
 
-If you do not specify a DNS server *dig* and *drill* use the nameservers defined in `/etc/resolv.conf`.
+```
+
+Se você não especificar um servidor DNS *dig* e *drill*, use os servidores de nome definidos em `/etc/resolv.conf`.
 
 ## Veja também
 

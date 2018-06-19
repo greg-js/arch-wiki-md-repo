@@ -2,6 +2,10 @@ Related articles
 
 *   [Professional audio](/index.php/Professional_audio "Professional audio")
 
+From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit "wikipedia:JACK Audio Connection Kit"):
+
+	JACK Audio Connection Kit (or JACK; a recursive acronym) is a professional sound server daemon that provides real-time, low-latency connections for both audio and MIDI data between applications that implement its API.
+
 ## Contents
 
 *   [1 Installation](#Installation)

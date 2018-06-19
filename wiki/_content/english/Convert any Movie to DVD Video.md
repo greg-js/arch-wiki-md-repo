@@ -717,7 +717,7 @@ emphasise "Success: dvd.iso image created"
 
 To use the script, copy and paste it into an appropriately named file (such as `video2dvdiso.sh`), and then execute `chmod +x <file>`.
 
-Hopefully the script is quite easy to understand so you can change it as needed. See [ffmpeg(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ffmpeg.1) [mkisofs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkisofs.8) [dvdauthor(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dvdauthor.1) for more information.
+Hopefully the script is quite easy to understand so you can change it as needed. See [ffmpeg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ffmpeg.1) [mkisofs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkisofs.8) [dvdauthor(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dvdauthor.1) for more information.
 
 **Example usage**
 

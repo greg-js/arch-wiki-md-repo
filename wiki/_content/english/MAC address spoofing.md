@@ -132,7 +132,7 @@ To randomize the MAC address on every boot, set `MACAddressPolicy=random` instea
 
 [Udev](/index.php/Udev "Udev") allows you to perform MAC address spoofing by creating the [udev rule](/index.php/Udev#Writing_udev_rules "Udev"). Use `address` attribute to match the correct device by its original MAC address and change it using the *ip* command:
 
- `/etc/udev/rules.d/75-mac-spoof.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="XX:XX:XX:XX:XX:XX", RUN+="/usr/bin/ip link set dev %k address YY:YY:YY:YY:YY:YY"` 
+ `/etc/udev/rules.d/75-mac-spoof.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="XX:XX:XX:XX:XX:XX", RUN+="/usr/bin/ip link set dev $name address YY:YY:YY:YY:YY:YY"` 
 
 where `XX:XX:XX:XX:XX:XX` is the original MAC address and `YY:YY:YY:YY:YY:YY` is the new one.
 

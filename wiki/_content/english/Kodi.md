@@ -388,11 +388,11 @@ After creating the file, reload the udev rules with
 Kodi has a webservice that allows interaction through a web-interface. By default, it uses port `8080` as `80` requires root privileges. Use the following to permit it to use low port numbers:
 
 ```
- # setcap 'cap_net_bind_service=+ep' /usr/lib/kodi/kodi.bin
+# setcap 'cap_net_bind_service=+ep' /usr/lib/kodi/kodi.bin
 
 ```
 
-[Restart](/index.php/Restart "Restart") `kodi.service` and set port `80` in the configuration menu (*Services->Webserver->Port*).
+Restart Kodi and set port `80` in the configuration menu (*Services > Webserver > Port*).
 
 ### Using ALSA
 

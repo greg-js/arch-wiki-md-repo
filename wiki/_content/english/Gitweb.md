@@ -104,26 +104,7 @@ location / {
 
 If you follow [Nginx#CGI implementation](/index.php/Nginx#CGI_implementation "Nginx"), try replacing `include fastcgi_params;` with `include fastcgi.conf;`.
 
-Additionally, we have to install [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) and [spawn-fcgi](https://www.archlinux.org/packages/?name=spawn-fcgi) and modify the fcgiwrap service file:
-
- `/usr/lib/systemd/system/fcgiwrap.service` 
-```
-[Unit]
-Description=Simple server for running CGI applications over FastCGI
-After=syslog.target network.target
-
-[Service]
-Type=forking
-Restart=on-abort
-PIDFile=/var/run/fcgiwrap.pid
-ExecStart=/usr/bin/spawn-fcgi -s /var/run/fcgiwrap.sock -P /var/run/fcgiwrap.pid -u http -g http -- /usr/sbin/fcgiwrap
-ExecStop=/usr/bin/kill -15 $MAINPID
-
-[Install]
-WantedBy=multi-user.target
-```
-
-In the end, [start/enable](/index.php/Start/enable "Start/enable") `fcgiwrap.service`.
+Finally, install [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) and [start/enable](/index.php/Start/enable "Start/enable") `fcgiwrap.socket`.
 
 ### Gitweb config
 

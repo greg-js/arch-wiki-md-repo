@@ -51,55 +51,51 @@ The stock Arch Linux kernel is compiled with iptables support. You will only nee
 
 	[http://ferm.foo-projects.org/](http://ferm.foo-projects.org/) || [ferm](https://www.archlinux.org/packages/?name=ferm)
 
-*   **Firehol** — Language to express firewalling rules, not just a script that produces some kind of a firewall. It makes building even sophisticated firewalls easy - the way you want it.
+*   **[FireHOL](https://en.wikipedia.org/wiki/FireHOL "wikipedia:FireHOL")** — Language to express firewalling rules, not just a script that produces some kind of a firewall. It makes building even sophisticated firewalls easy - the way you want it.
 
 	[http://firehol.sourceforge.net/](http://firehol.sourceforge.net/) || [firehol](https://aur.archlinux.org/packages/firehol/)
 
-*   **Firetable** — Firewall with "human readable" syntax.
+*   **Firetable** — Tool to maintain an IPtables firewall. Each interface can be configured separately via its own configuration file, which holds an easy and human readable syntax.
 
-	[http://projects.leisink.net/Firetable](http://projects.leisink.net/Firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)
+	[https://gitlab.com/hsleisink/firetable](https://gitlab.com/hsleisink/firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)
+
+*   **[firewalld](https://en.wikipedia.org/wiki/firewalld "wikipedia:firewalld") (firewall-cmd)** — Daemon and console interface for configuring network and firewall zones as well as setting up and configuring firewall rules.
+
+	[https://firewalld.org/](https://firewalld.org/) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
 
 *   **[Shorewall](/index.php/Shorewall "Shorewall")** — High-level tool for configuring Netfilter. You describe your firewall/gateway requirements using entries in a set of configuration files.
 
 	[http://www.shorewall.net/](http://www.shorewall.net/) || [shorewall](https://www.archlinux.org/packages/?name=shorewall)
 
-*   **[ufw](/index.php/Ufw "Ufw")** — Simple front-end for iptables.
+*   **[Uncomplicated Firewall](/index.php/Ufw "Ufw")** — Simple front-end for iptables.
 
 	[https://launchpad.net/ufw](https://launchpad.net/ufw) || [ufw](https://www.archlinux.org/packages/?name=ufw)
 
-*   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
+*   **[PeerGuardian](/index.php/PeerGuardian_Linux "PeerGuardian Linux") (pglcmd)** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
-	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/)
+	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
 
 *   **Vuurmuur** — Powerful firewall manager. It has a simple and easy to learn configuration that allows both simple and complex configurations. The configuration can be fully configured through an [ncurses](https://www.archlinux.org/packages/?name=ncurses) GUI, which allows secure remote administration through SSH or on the console. Vuurmuur supports traffic shaping, has powerful monitoring features, which allow the administrator to look at the logs, connections and bandwidth usage in realtime.
 
-	[http://www.vuurmuur.org/](http://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)
+	[https://www.vuurmuur.org/](https://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)
 
 #### Graphical
 
-*   **Firestarter** — Good GUI for iptables writen on GTK2, it has the ability to use both white and black lists for regulating traffic, it is very simple and easy to use, with good documentation available on their website.
-
-	[http://www.fs-security.com/](http://www.fs-security.com/) || [Firestarter](https://aur.archlinux.org/packages/Firestarter/)
-
 *   **Firewall Builder** — GUI firewall configuration and management tool that supports iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA) and Cisco routers extended access lists. The program runs on Linux, FreeBSD, OpenBSD, Windows and macOS and can manage both local and remote firewalls.
 
-	[http://www.fwbuilder.org/](http://www.fwbuilder.org/) || [fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder)
+	[http://fwbuilder.sourceforge.net/](http://fwbuilder.sourceforge.net/) || [fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder)
 
-*   **firewalld** — Daemon and graphical interface for configuring network and firewall zones as well as setting up and configuring firewall rules.
+*   **[firewalld](https://en.wikipedia.org/wiki/firewalld "wikipedia:firewalld") (firewall-config)** — Daemon and graphical interface for configuring network and firewall zones as well as setting up and configuring firewall rules.
 
-	[https://fedoraproject.org/wiki/FirewallD](https://fedoraproject.org/wiki/FirewallD) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
+	[https://firewalld.org/](https://firewalld.org/) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
 
 *   **[Gufw](/index.php/Uncomplicated_Firewall#Gufw "Uncomplicated Firewall")** — GTK-based front-end to [ufw](https://www.archlinux.org/packages/?name=ufw) which happens to be a CLI front-end to iptables (gufw->ufw->iptables), is super easy and super simple to use.
 
 	[http://gufw.org/](http://gufw.org/) || [gufw](https://www.archlinux.org/packages/?name=gufw)
 
-*   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
+*   **[PeerGuardian](/index.php/PeerGuardian_Linux "PeerGuardian Linux") GUI (pglgui)** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
 	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
-
-*   **[kcm-ufw](/index.php/Uncomplicated_Firewall#kcm-ufw "Uncomplicated Firewall")** — KDE alternative to Gufw.
-
-	[http://kde-apps.org/content/show.php?content=137789](http://kde-apps.org/content/show.php?content=137789) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
 
 ## Basic concepts
 

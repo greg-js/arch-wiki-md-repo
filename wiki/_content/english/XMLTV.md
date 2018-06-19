@@ -1,3 +1,5 @@
+[XMLTV](http://wiki.xmltv.org/index.php/Main_Page/) is a set of utilities to download TV listings and format them in XML.
+
 ## Contents
 
 *   [1 What does XMLTV actually *do* ?](#What_does_XMLTV_actually_.2Ado.2A_.3F)

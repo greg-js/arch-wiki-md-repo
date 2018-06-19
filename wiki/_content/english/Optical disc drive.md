@@ -636,6 +636,10 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[https://abcde.einval.com/](https://abcde.einval.com/) || [abcde](https://www.archlinux.org/packages/?name=abcde)
 
+*   **cdda2wav** — The most evolved CD-audio extraction program with paranoia support.
+
+	[http://www.cdda2wav.de/](http://www.cdda2wav.de/) || [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
+
 *   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Compact Disc Digital Audio (CDDA) Digital Audio Extraction (DAE) tool.
 
 	[https://xiph.org/paranoia/index.html](https://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)

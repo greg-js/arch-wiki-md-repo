@@ -43,18 +43,33 @@ Most input methods are part of an **IM framework**, which lets the user easily s
 
 The available IM frameworks are:
 
-*   [Fcitx](/index.php/Fcitx "Fcitx")
-*   [gcin](/index.php/Gcin "Gcin")
-*   **Hime** — A GTK2+/GTK3+ based universal input method platform.
+*   **[Dasom](/index.php/Dasom "Dasom")** — Multilingual input method framework.
 
-	[http://hime-ime.github.io/](http://hime-ime.github.io/) || [hime-git](https://aur.archlinux.org/packages/hime-git/)
+	[https://dasom-im.github.io/](https://dasom-im.github.io/) || [dasom-git](https://aur.archlinux.org/packages/dasom-git/)
 
-*   [IBus](/index.php/IBus "IBus") – Input Bus for Linux.
-*   [SCIM](/index.php/SCIM "SCIM") with the x11 FrontEnd module
-*   [uim](/index.php/Uim "Uim")
-*   Unmaintained:
-    *   [Dasom](/index.php/Dasom "Dasom")
-    *   [Nimf](/index.php/Nimf "Nimf")
+*   **[Fcitx](/index.php/Fcitx "Fcitx")** — Input method framework with extension support.
+
+	[https://fcitx-im.org/](https://fcitx-im.org/) || [fcitx](https://www.archlinux.org/packages/?name=fcitx)
+
+*   **[gcin](/index.php/Gcin "Gcin")** — Input method server supporting various input methods.
+
+	[http://hyperrate.com/dir.php?eid=67](http://hyperrate.com/dir.php?eid=67) || [gcin](https://www.archlinux.org/packages/?name=gcin)
+
+*   **Hime** — Universal input method platform.
+
+	[https://hime-ime.github.io/](https://hime-ime.github.io/) || [hime-git](https://aur.archlinux.org/packages/hime-git/)
+
+*   **[IBus](/index.php/IBus "IBus")** — Intelligent Input Bus, a next generation input framework.
+
+	[https://github.com/ibus/ibus/wiki](https://github.com/ibus/ibus/wiki) || [ibus](https://www.archlinux.org/packages/?name=ibus)
+
+*   **[SCIM](/index.php/SCIM "SCIM")** — The Smart Common Input Method platform.
+
+	[https://github.com/scim-im/scim](https://github.com/scim-im/scim) || [scim](https://www.archlinux.org/packages/?name=scim)
+
+*   **[uim](/index.php/Uim "Uim")** — Multilingual input method framework to provide simple, easily extensible and high code-quality input method development platform, and useful input method environment for users of desktop and embedded platforms.
+
+	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
 
 See also [Wikipedia:List of input methods for Unix platforms](https://en.wikipedia.org/wiki/List_of_input_methods_for_Unix_platforms "wikipedia:List of input methods for Unix platforms").
 

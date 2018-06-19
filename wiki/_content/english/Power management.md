@@ -21,6 +21,8 @@ In Arch Linux, power management consists of two main parts:
 ## Contents
 
 *   [1 Userspace tools](#Userspace_tools)
+    *   [1.1 Console](#Console)
+    *   [1.2 Graphical](#Graphical)
 *   [2 Power management with systemd](#Power_management_with_systemd)
     *   [2.1 ACPI events](#ACPI_events)
         *   [2.1.1 Power managers](#Power_managers)
@@ -66,6 +68,8 @@ Using these tools can replace setting a lot of settings by hand. Only run **one*
 
 These are the more popular scripts and tools designed to help power saving:
 
+### Console
+
 *   **[acpid](/index.php/Acpid "Acpid")** — A daemon for delivering ACPI power management events with netlink support.
 
 	[http://sourceforge.net/projects/acpid2/](http://sourceforge.net/projects/acpid2/) || [acpid](https://www.archlinux.org/packages/?name=acpid)
@@ -82,6 +86,36 @@ These are the more popular scripts and tools designed to help power saving:
 *   **[TLP](/index.php/TLP "TLP")** — Advanced power management for Linux.
 
 	[http://linrunner.de/tlp](http://linrunner.de/tlp) || [tlp](https://www.archlinux.org/packages/?name=tlp)
+
+### Graphical
+
+*   **batterymon-clone** — Simple battery monitor tray icon.
+
+	[https://github.com/jareksed/batterymon-clone](https://github.com/jareksed/batterymon-clone) || [batterymon-clone](https://www.archlinux.org/packages/?name=batterymon-clone)
+
+*   **cbatticon** — Lightweight and fast battery icon that sits in your system tray.
+
+	[https://github.com/valr/cbatticon](https://github.com/valr/cbatticon) || [cbatticon](https://www.archlinux.org/packages/?name=cbatticon)
+
+*   **GNOME Power Statistics** — System power information and statistics for GNOME.
+
+	[https://gitlab.gnome.org/GNOME/gnome-power-manager](https://gitlab.gnome.org/GNOME/gnome-power-manager) || [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager)
+
+*   **LXQt Power Management** — Power management module for LXQt.
+
+	[https://github.com/lxqt/lxqt-powermanagement](https://github.com/lxqt/lxqt-powermanagement) || [lxqt-powermanagement](https://www.archlinux.org/packages/?name=lxqt-powermanagement)
+
+*   **MATE Power Management** — Power management tool for MATE.
+
+	[https://github.com/mate-desktop/mate-power-manager](https://github.com/mate-desktop/mate-power-manager) || [mate-power-manager](https://www.archlinux.org/packages/?name=mate-power-manager)
+
+*   **Xfce Power Manager** — Power manager for Xfce.
+
+	[https://docs.xfce.org/xfce/xfce4-power-manager/start](https://docs.xfce.org/xfce/xfce4-power-manager/start) || [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager)
+
+*   **vattery** — Battery monitoring application written in Vala that will display the status of a laptop battery in a system tray.
+
+	[http://www.jezra.net/projects/vattery](http://www.jezra.net/projects/vattery) || [vattery](https://aur.archlinux.org/packages/vattery/)
 
 ## Power management with systemd
 

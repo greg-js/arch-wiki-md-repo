@@ -21,6 +21,7 @@ Related articles
     *   [4.1 Fonts](#Fonts)
         *   [4.1.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
         *   [4.1.2 Font rendering issues of UTF characters](#Font_rendering_issues_of_UTF_characters)
+        *   [4.1.3 Tab font size is too large](#Tab_font_size_is_too_large)
     *   [4.2 Force 3D acceleration](#Force_3D_acceleration)
     *   [4.3 WebGL](#WebGL)
     *   [4.4 Zoomed-in GUI](#Zoomed-in_GUI)
@@ -116,6 +117,10 @@ To fix the font rendering in some PDFs one has to install the [ttf-liberation](h
 
 UTF characters may render as boxes (e.g. simplified Chinese characters). Installing [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) will allow for the characters to be rendered as expected.
 
+#### Tab font size is too large
+
+Chromium will use the GTK settings as described in [GTK+#Configuration](/index.php/GTK%2B#Configuration "GTK+"). When configured, Chromium will use the `gtk-font-name` setting for tabs (which may mismatch window font size). To override these settings, use `--force-device-scale-factor=1.0`.
+
 ### Force 3D acceleration
 
 **Warning:** Disabling the rendering blacklist may cause unstable behaviour, including crashes of the host. See the bug reports in `chrome://gpu`.
@@ -136,7 +141,7 @@ Chromium can save incorrect data about your GPU in your user profile (e.g. if yo
 
 ### Zoomed-in GUI
 
-Chromium's graphical interface will automatically scale on high-DPI displays. To disable this, use `--force-device-scale-factor=1`.
+Chromium's graphical interface will sometimes automatically scale for [HiDPI](/index.php/HiDPI "HiDPI") displays. To disable this, use `--force-device-scale-factor=1`.
 
 ### Password prompt on every start with GNOME Keyring
 

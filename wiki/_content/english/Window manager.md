@@ -171,6 +171,10 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[http://udeproject.sourceforge.net/](http://udeproject.sourceforge.net/) || [ude](https://aur.archlinux.org/packages/ude/)
 
+*   **Wind** — Small floating window manager. Tries to comply with ICCCM, EHWM, NetWM.
+
+	[http://windwm.sourceforge.net/](http://windwm.sourceforge.net/) || [windwm](https://aur.archlinux.org/packages/windwm/), [windwm-git](https://aur.archlinux.org/packages/windwm-git/)
+
 *   **WindowLab** — Small and simple window manager of novel design. It has a click-to-focus but not raise-on-focus policy, a window resizing mechanism that allows one or many edges of a window to be changed in one action, and an innovative menubar that shares the same part of the screen as the taskbar. Window titlebars are prevented from going off the edge of the screen by constraining the mouse pointer, and when appropriate the pointer is also constrained to the taskbar/menubar in order to make target menu items easier to hit.
 
 	[https://github.com/nickgravgaard/windowlab](https://github.com/nickgravgaard/windowlab) || [windowlab](https://aur.archlinux.org/packages/windowlab/)

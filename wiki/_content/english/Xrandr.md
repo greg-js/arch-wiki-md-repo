@@ -8,6 +8,7 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Graphical front-ends](#Graphical_front-ends)
 *   [2 Testing configuration](#Testing_configuration)
 *   [3 Configuration](#Configuration)
     *   [3.1 Scripts](#Scripts)
@@ -28,7 +29,17 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Graphical front ends such as [arandr](https://www.archlinux.org/packages/?name=arandr), [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) or [lxrandr-gtk3](https://www.archlinux.org/packages/?name=lxrandr-gtk3) are also available.
+[Install](/index.php/Install "Install") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
+
+### Graphical front-ends
+
+*   **ARandR** — Provide a simple visual front end for XRandR. Relative monitor positions are shown graphically and can be changed in a drag-and-drop way.
+
+	[https://christian.amsuess.com/tools/arandr/](https://christian.amsuess.com/tools/arandr/) || [arandr](https://www.archlinux.org/packages/?name=arandr)
+
+*   **LXRandR** — Screen resolution and external monitors management tool for LXDE.
+
+	[https://wiki.lxde.org/en/LXRandR](https://wiki.lxde.org/en/LXRandR) || GTK+ 2: [lxrandr](https://www.archlinux.org/packages/?name=lxrandr), GTK+ 3: [lxrandr-gtk3](https://www.archlinux.org/packages/?name=lxrandr-gtk3)
 
 ## Testing configuration
 

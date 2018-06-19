@@ -117,7 +117,8 @@ A precedência desses arquivos `locale.conf` é configurada em `/etc/profile.d/l
 Uma vez que os arquivos `locale.conf` de sistema e de usuários terem sido criados ou editados, seus novos valores terão efeito para novas sessões na autenticação. Para fazer o ambiente atual usar as novas configurações, desconfigure `LANG` e carregue `/etc/profile.d/locale.sh`:
 
 ```
-$ LANG= source /etc/profile.d/locale.sh
+$ unset LANG
+$ source /etc/profile.d/locale.sh
 
 ```
 
@@ -168,7 +169,7 @@ O locale configurado para essa variável será usado para todas as variáveis `L
 
 ### LANGUAGE: locales reservas
 
-Os programas que usam gettext para traduções respeitam a opção `LANGUAGE` além das variáveis usuais. Isso permite que usuários para especificar uma [lista](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable) de locales que serão usados naquela ordem. Se uma tradução para o locale preferido não está disponível, outro de um locale similar será usado em vez do padrão. Por exemplo, um usuário australiano pode querer usar a ortografia britânica em vez da americana:
+Os programas que usam [gettext](https://www.archlinux.org/packages/?name=gettext) para traduções respeitam a opção `LANGUAGE` além das variáveis usuais. Isso permite que usuários para especificar uma [lista](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable) de locales que serão usados naquela ordem. Se uma tradução para o locale preferido não está disponível, outro de um locale similar será usado em vez do padrão. Por exemplo, um usuário australiano pode querer usar a ortografia britânica em vez da americana:
 
  `locale.conf` 
 ```
@@ -230,7 +231,7 @@ Se você está usando um ambiente gráfico, como o [GNOME](/index.php/GNOME_(Por
 
 ## Veja também
 
-*   [Gentoo Linux Localization Guide](http://www.gentoo.org/doc/en/guide-localization.xml)
+*   [Gentoo:Localization/Guide](https://wiki.gentoo.org/wiki/Localization/Guide "gentoo:Localization/Guide")
 *   [Gentoo Wiki Archives: Locales](https://web.archive.org/web/20151218174230/http://www.gentoo-wiki.info/Locales)
 *   [Teste de colação interativa da ICU](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)

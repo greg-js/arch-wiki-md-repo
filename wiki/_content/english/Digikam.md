@@ -35,7 +35,7 @@ After this you can run digikam as normal and the icons will be correct.
 
 ### Video playback
 
-A [Phonon backend](/index.php/KDE#Phonon "KDE") is installed as a dependency of Digikam, but matching multimedia codecs may be missing. When using the [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) backend, install one or more of its plugins with `pacman -S gstreamer0.10-{good,bad,ugly,ffmpeg}` .
+A [Phonon backend](/index.php/KDE#Phonon "KDE") is installed as a dependency of Digikam, but matching multimedia codecs may be missing. When using the [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) backend, install one or more of its plugins with {{ic|pacman -S gstreamer0.10-{good,bad,ugly,ffmpeg} }}.
 
 ### Unreadable tool tips
 

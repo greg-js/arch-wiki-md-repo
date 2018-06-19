@@ -17,7 +17,7 @@
         *   [1.2.2 Word processors](#Word_processors)
         *   [1.2.3 Presentations](#Presentations)
         *   [1.2.4 Spreadsheets](#Spreadsheets)
-        *   [1.2.5 Database managers](#Database_managers)
+        *   [1.2.5 Database tools](#Database_tools)
         *   [1.2.6 Formula editors](#Formula_editors)
     *   [1.3 Markup languages](#Markup_languages)
         *   [1.3.1 Markdown](#Markdown)
@@ -450,7 +450,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 	[https://github.com/andmarti1424/sc-im/](https://github.com/andmarti1424/sc-im/) || [sc-im](https://aur.archlinux.org/packages/sc-im/)
 
-#### Database managers
+#### Database tools
 
 See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools "wikipedia:Comparison of database tools").
 

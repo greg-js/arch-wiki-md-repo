@@ -5,6 +5,7 @@
 *   [3 Common steps](#Common_steps)
     *   [3.1 OpenSSL 1.0 setup](#OpenSSL_1.0_setup)
     *   [3.2 Adobe Air setup](#Adobe_Air_setup)
+    *   [3.3 Steam Link](#Steam_Link)
 *   [4 Games](#Games)
     *   [4.1 Alien Isolation](#Alien_Isolation)
         *   [4.1.1 Missing libpcre.so.3](#Missing_libpcre.so.3)
@@ -321,6 +322,17 @@ The package [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/) i
 ```
 
 Adobe AIR requires you to accept its EULA by creating the file `~/.appdata/Adobe/AIR/eulaAccepted` containing `2`.
+
+### Steam Link
+
+Currently Steam Link does not work with Wayland. You will only see a blank screen or even flickering when connecting to a Steam host running on Wayland. So you have to disable Wayland in /etc/gdm/custom.conf:
+
+```
+WaylandEnable=false
+
+```
+
+And reboot before trying again.
 
 ## Games
 

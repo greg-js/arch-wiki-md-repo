@@ -88,7 +88,7 @@ Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) 
 
 ### DRM kernel mode setting
 
-[nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add `nvidia`, `nvidia_modeset`, `nvidia_uvm` and `nvidia_drm` to [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs").
+[nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM (Direct Rendering Manager) [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add `nvidia`, `nvidia_modeset`, `nvidia_uvm` and `nvidia_drm` to [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs").
 
 Do not forget to run [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") every time there is a [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver update. See [#Pacman hook](#Pacman_hook) to automate these steps.
 

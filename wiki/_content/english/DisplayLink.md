@@ -37,6 +37,8 @@ This should work without any configuration changes on [linux](https://www.archli
 
 ### USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices
 
+**Warning:** The current version of [evdi](https://aur.archlinux.org/packages/evdi/), which [displaylink](https://aur.archlinux.org/packages/displaylink/) depends on, doesn't work on the latest version of [xorg-server](https://www.archlinux.org/packages/?name=xorg-server). You should [downgrade](/index.php/Downgrading_packages "Downgrading packages") your [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) and some relevant packages including but not limited to [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) and [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) to version `1.19.6` in order to make [displaylink](https://aur.archlinux.org/packages/displaylink/) work. Please check the following [github issue](https://github.com/DisplayLink/evdi/issues/133) for the latest update of this issue.
+
 1.  Install the [displaylink](https://aur.archlinux.org/packages/displaylink/) driver. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr") in the same manner as the `udl` driver.
 2.  Enable `displaylink.service`.
 

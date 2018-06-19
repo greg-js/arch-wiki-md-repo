@@ -22,3 +22,7 @@ volume = ignore
 ```
 
 Then, restart PulseAudio and changing the volume should work.
+
+## Headphone jack audio is always muted
+
+Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). Run `alsamixer`, select the "HDA Intel PCH" soud card, and adjust the "Headphone" slider to your liking. To make this persistent you may need to run `sudo alsactl store`.

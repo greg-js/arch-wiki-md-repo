@@ -3,13 +3,20 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Mono version](#Mono_version)
-    *   [1.2 Export templates](#Export_templates)
+    *   [1.1 Legacy version](#Legacy_version)
+    *   [1.2 Mono version](#Mono_version)
+    *   [1.3 Export templates](#Export_templates)
 *   [2 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [godot](https://aur.archlinux.org/packages/godot/) package, or [godot-git](https://aur.archlinux.org/packages/godot-git/) for the development version.
+
+### Legacy version
+
+**Note:** Using godot 2 is not recommended for new projects. Only use this for legacy projects and consider porting these to the latest version of the Godot Engine.
+
+To use version 2 of the engine, install the [godot2](https://aur.archlinux.org/packages/godot2/) package.
 
 ### Mono version
 

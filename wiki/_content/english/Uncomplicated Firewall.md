@@ -21,24 +21,23 @@ From the project [home page](https://launchpad.net/ufw):
     *   [8.2 Disable UFW logging](#Disable_UFW_logging)
 *   [9 GUI frontends](#GUI_frontends)
     *   [9.1 Gufw](#Gufw)
-    *   [9.2 kcm-ufw](#kcm-ufw)
 *   [10 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [ufw](https://www.archlinux.org/packages/?name=ufw) package.
 
-Start ufw as [systemd](/index.php/Systemd "Systemd") [service](/index.php/Daemon "Daemon") to have it running and enable it to make it available after boot.
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `ufw.service` to make it available at boot.
 
 ## Basic configuration
 
-A very simplistic configuration which will deny all by default, allow any protocol from inside a 192.168.0.1-192.168.0.255 LAN, and allow incoming Deluge and SSH traffic from anywhere:
+A very simplistic configuration which will deny all by default, allow any protocol from inside a 192.168.0.1-192.168.0.255 LAN, and allow incoming Deluge and [rate limited](#Rate_limiting_with_ufw) SSH traffic from *anywhere*:
 
 ```
 # ufw default deny
 # ufw allow from 192.168.0.0/24
 # ufw allow Deluge
-# ufw allow SSH
+# ufw limit SSH
 
 ```
 
@@ -49,7 +48,7 @@ The next line is only needed *once* the first time you install the package:
 
 ```
 
-Then enable the `ufw` service with [systemctl](/index.php/Systemd#Using_units "Systemd").
+**Note:** Make sure `ufw.service` has been [enabled](/index.php/Enabled "Enabled").
 
 Finally, query the rules being applied via the status command:
 
@@ -60,7 +59,7 @@ To                         Action      From
 --                         ------      ----
 Anywhere                   ALLOW       192.168.0.0/24
 Deluge                     ALLOW       Anywhere
-SSH                        ALLOW       Anywhere
+SSH                        LIMIT       Anywhere
 
 ```
 
@@ -218,19 +217,6 @@ Disabling logging may be useful to stop UFW filling up the kernel (`dmesg`) and 
 ### Gufw
 
 [gufw](https://www.archlinux.org/packages/?name=gufw) is a GTK front-end for Ufw that aims to make managing a Linux firewall as accessible and easy as possible. It features pre-sets for common ports and p2p applications. It requires [python](https://www.archlinux.org/packages/?name=python), [ufw](https://www.archlinux.org/packages/?name=ufw), and GTK support.
-
-### kcm-ufw
-
-[kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/) is KDE4 control module for ufw. The following features are supported:
-
-*   Enable/disable firewall
-*   Configure firewall default settings
-*   Add, edit, and remove rules
-*   Re-order rules via drag'n'drop
-*   Import/export of rules
-*   Setting of some IP tables modules
-
-The module will appear under "Network and Connectivity" category.
 
 ## See also
 

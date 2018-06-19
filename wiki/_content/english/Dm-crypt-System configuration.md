@@ -184,7 +184,7 @@ crypto=sha512:twofish-xts-plain64:512:0:
 
 ### Using sd-encrypt hook
 
-In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` parameters are only honored by the initrd. `luks` parameters are honored by both the main system and initrd. Unless you want to control devices which get unlocked after boot from kernel command line use `rd.luks`. See [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
+In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` parameters are only honored by the initrd. `luks` parameters are honored by both the main system and initrd. Unless you want to control devices which get unlocked after boot from kernel command line, use `rd.luks`. See [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
 
 **Tip:**
 

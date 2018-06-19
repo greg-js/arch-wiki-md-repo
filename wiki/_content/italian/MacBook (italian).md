@@ -3,19 +3,20 @@ Articoli correlati
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [Post Installation Tips](/index.php/Post_Installation_Tips "Post Installation Tips")
 
-La procedura per installare Arch Linux su un Macbook è molto simile a quella valida per qualsiasi altro computer. Nonostante ciò, a causa di alcuni componenti hardware specifici del MacBook, bisogna prendere dei particolari accorgimenti. Per informazioni generali sull'installazione, vedi [Installation guide](/index.php/Installation_guide "Installation guide"). Queste istruzioni sono da considerarsi valide per qualsiasi computer Apple il cui harware sia supportato dal kernel Linux. Si consiglia di leggere i relativi articoli (in alto a destra nella pagina), per la risoluzione dei problemi di specifiche versioni di MacBook.
+La procedura per installare Arch Linux su un Macbook (12"/Air/Pro) o su un iMac, è molto simile a quella valida per qualsiasi altro computer. Nonostante ciò, a causa di alcuni componenti hardware specifici del Mac, ci sono alcune speciali considerazioni che meritano una guida separata. Per ulteriori informazioni di base, consultare la [guida all'installazione](/index.php/Installation_guide_(Italiano) "Installation guide (Italiano)") e [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)"). Questa guida contiene istruzioni di installazione utilizzabili su qualsiasi computer Apple, il cui hardware è supportato dal kernel Linux.
 
 ## Contents
 
 *   [1 Panoramica](#Panoramica)
-*   [2 Installazione di Mac OS X e aggiornamento firmware](#Installazione_di_Mac_OS_X_e_aggiornamento_firmware)
+*   [2 Aggiornamento Firmware](#Aggiornamento_Firmware)
 *   [3 Partizionamento](#Partizionamento)
     *   [3.1 Solo Arch Linux](#Solo_Arch_Linux)
-        *   [3.1.1 EFI](#EFI)
-        *   [3.1.2 BIOS-compatibility](#BIOS-compatibility)
-    *   [3.2 Mac OS X con Arch Linux](#Mac_OS_X_con_Arch_Linux)
-        *   [3.2.1 EFI](#EFI_2)
-        *   [3.2.2 BIOS-compatibility](#BIOS-compatibility_2)
+    *   [3.2 Arch Linux con OS X o altro sistema operativo](#Arch_Linux_con_OS_X_o_altro_sistema_operativo)
+        *   [3.2.1 Opzione 1: EFI](#Opzione_1:_EFI)
+        *   [3.2.2 BIOS-compatibility](#BIOS-compatibility)
+    *   [3.3 Mac OS X con Arch Linux](#Mac_OS_X_con_Arch_Linux)
+        *   [3.3.1 EFI](#EFI)
+        *   [3.3.2 BIOS-compatibility](#BIOS-compatibility_2)
 *   [4 Installazione](#Installazione)
 *   [5 Configurazione post-installazione](#Configurazione_post-installazione)
     *   [5.1 Xorg](#Xorg)
@@ -39,65 +40,83 @@ La procedura per installare Arch Linux su un Macbook è molto simile a quella va
 
 ## Panoramica
 
-Nel dettaglio, la procedura per installare Arch Linux su un MacBook è:
+Nel dettaglio, la procedura per installare Arch Linux su un MacBook si divide in:
 
-1.  **[Installazione di Mac OS X](#Installazione_di_Mac_OS_X_e_aggiornamento_firmware)**: Indipendentemente dalla configurazione desiderata, serve per installare Arch Linux a partire da un'installazione "pulita" di Mac OS X.
-2.  **[Aggiornamento firmware](#Installazione_di_Mac_OS_X_e_aggiornamento_firmware)**: Riduce la probabilità di errori ed apporta nuove funzioni all'hardware.
-3.  **[Partizionamento](#Partizionamento)**: Ridimensiona o elimina la partizione di OS X e crea la partizione per Arch Linux.
-4.  **[Installare Arch Linux](#Installazione)**: L'installazione effettiva di Arch Linux
-5.  **[Configurazione Post-installazione](#Configurazione_post-installazione)**: Configura l'hardware del MacBook.
+1.  **[Aggiornamento Firmware](#Aggiornamento_Firmware)**: È sempre utile iniziare da un'installazione pulita e aggiornata di OS X.
+2.  **[Partizionamento](#Partizionamento)**: Ridimensionamento o eliminazione della partizione OS X per creare le partizioni per Arch Linux.
+3.  **[Installare Arch Linux](#Installazione)**: L'installazione effettiva di Arch Linux
+4.  **[Configurazione Post-installazione](#Configurazione_post-installazione)**: Configura l'hardware del MacBook.
 
-**Tip:** rEFIt è un famoso bootloader per computers con firmware EFI (Mac inclusi). Può essere installato in qualsiasi momento durante l'installazione. Per informazioni, vedere [rEFIt](/index.php/MacBook#rEFIt "MacBook").
+## Aggiornamento Firmware
 
-## Installazione di Mac OS X e aggiornamento firmware
+Prima di procedere con l'installazione di Arch Linux, è importante assicurarsi che siano installati gli aggiornamenti firmware più recenti sul proprio Mac. Questa procedura richiede OS X. In OS X, aprire l'App Store e verificare l'eventuale presenza di aggiornamenti. Se Mac trova e installa degli aggiornamenti, assicurarsi di **riavviare** il computer, quindi controllare nuovamente gli aggiornamenti per assicurarsi di aver installato tutto.
 
-[Apple](http://www.apple.com/it/) fornisce delle ottime istruzioni riguardo all'installazione di Mac OS X. Seguire le loro istruzioni, e una volta che Mac OS X è installato fare click su:
+**Nota:** Se si è disinstallato OS X o lo si vuole installare nuovamente, [Apple](https://support.apple.com/it-it/HT204904) ha delle ottime istruzioni.
 
-```
-Apple Menu --> Software Update
+Si consiglia di mantenere OS X installato, poiché gli aggiornamenti del firmware MacBook possono essere installati solo tramite OS X. Tuttavia, se si intende rimuovere completamente OS X, eseguire i backup di questi file, necessari in Linux per regolare il [color profile](#Color_Profile):
 
 ```
-
-Ed aggiornare tutto il software. Una volta finito, riavviare il computer. Ripetere questo procedimento per essere sicuri di avere installato tutti gli aggiornamenti.
-
-Se non si ha intenzione di avere OS X installato, assicurarsi di fare un backup di questi files:
-
-```
-/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext/Contents/MacOS/AppleUSBVideoSupport
+/Library/ColorSync/Profiles/Displays/*
 
 ```
 
-Si necessiterà di questo file più avanti per le funzionalità di iSight.
-
-```
-/Library/ColorSync/Profiles/Displays/<FILES HERE>
-
-```
-
-Si avrà bisogno di questi files per la regolazione del [color profile](#Color_Profile).
+Continuare a [#Partizionamento](#Partizionamento)
 
 ## Partizionamento
 
-Il passaggio successivo della procedura d'installazione è il ri-partizionamento del disco. Se MAC OS X è stato installato nella sua forma tipica, il disco dovrebbe avere una formattazione GPT e le seguenti partizioni:
+Il partizionamento del disco di un Mac non è diverso da altri PC o laptop. Tuttavia, se si vuole mantenere OS X per il dual boot, si deve considerare che il disco di un Mac, per impostazione predefinita,è formattato usando GPT e contiene almeno 3 partizioni:
 
-*   **EFI**: una partizione di 200 MB all'inizio del disco. Spesso viene riconosciuta come partizione "DOS" o "FAT" da alcuni tool di partizionamento, e solitamente ha label *#1*
-*   **Mac OS X**: la partizione *(HFS+)*, che occuperà tutto lo spazio rimasto. Solitamente ha label *#2*.
-*   **Recovery**: una partizione per la manutenzione (solo per OS X 10.7 o superiori).
+*   **EFI**: ~200 MB [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   **OS X**: la partizione principale contenente l'installazione di OS X. È formattata in [HFS+](/index.php/File_systems_(Italiano) "File systems (Italiano)").
+*   **Recovery**: una partizione di ripristino presente in quasi tutti i Mac con OS X 10.7 o successivi. Di solito è nascosta, ma può essere visualizzata con strumenti di partizionamento.
 
-Le modalità per il partizionamento vanno scelte in base al numero di sistemi operativi che si vogliono installare. In questo wiki verranno illustrate:
+**Nota:** Nei Mac che montano [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive"), lo schema di partizione potrebbe essere differente.
 
-*   [Solo Arch Linux](#Solo_Arch_Linux) in boot singolo.
-*   [Mac OS X e Arch Linux](#Mac_OS_X_con_Arch_Linux) in dual boot.
+Come partizionare il disco dipende da quanti sistemi operativi si desidera installare. Verranno illustrate le seguenti opzioni:
 
-Se non si è sicuri sulla modalità da scegliere, consigliamo un dualboot, per poter ritornare a OS X in seguito.
+*   Single boot: [#Solo Arch Linux](#Solo_Arch_Linux)
+*   Doppio boot: [#Arch Linux con OS X o altro sistema operativo](#Arch_Linux_con_OS_X_o_altro_sistema_operativo) *(raccomandato, così sarà possibile ritornare a OS X quando necessario)*
+*   triplo boot: [#OS X, Windows XP, e Arch Linux triplo boot](#OS_X.2C_Windows_XP.2C_e_Arch_Linux_triplo_boot)
 
 ### Solo Arch Linux
 
-Questa è la soluzione più semplice da realizzare. Il partizionamento si esegue come su qualsiasi altro computer su cui Arch Linux può essere installato. L'unico accorgimento particolare va preso per il suono del boot . Per assicurarsi che questo suono non sia presente, premere **mute** in OS X prima di procedere. Il firmware memorizzerà questa impostazione, se possibile. Bisogna tener presente che se si elimina la partizione OS X non vi è un modo semplice di aggiornare il firmware, a meno che non si esegua OS X da un drive esterno. Lo si può eseguire con EFI (raccomandato) o in modalità BIOS compatibile, nel dubbio scegliere EFI.
+Questa situazione è la più facile da affrontare. Il partizionamento è uguale a qualsiasi altro hardware su cui può essere installato Arch Linux. Fare riferimento alla standard [guida all'installazione](/index.php/Installation_guide_(Italiano) "Installation guide (Italiano)") per i dettagli.
 
-Per installare usando EFI, seguire le istruzioni [instruction to make a EFI bootable media](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface"). Una volta fatto verificare che il dispositivo USB parta in modalità EFI [checking the EFI kernel variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Variables_Support "Unified Extensible Firmware Interface"). Si dovrà formattare la partizione EFI con `hfsplus` filesystem ([hfsprogs](https://aur.archlinux.org/packages/hfsprogs/)) anzichè vfat altrimenti [mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) non funzionerà, e su un MacBook non si può usare efibootmgr..
+**Nota:** È consigliato **disabilitare** il suono di avvio del Mac prima di procedere con il partizionamento. Basta avviare in OS X, disattivare l'audio del sistema e riavviare nuovamente il programma di installazione di Arch Linux. Si prega di tenere presente che il volume del suono di avvio può essere modificato in modo affidabile solo in OS X.
 
-#### EFI
+Se si desidera configurare il proprio sistema per avere la crittografia completa del disco, consultare la pagina [Dm-crypt / Encrypting an whole system](/index.php?title=Dm-crypt_/_Encrypting_an_whole_system&action=edit&redlink=1 "Dm-crypt / Encrypting an whole system (page does not exist)") per i dettagli.
+
+Un esempio di partizionamento base, che non considera una partizione `/home` separata ne crittografia o LVM, è il seguente:
+
+```
+partition  mountpoint  size    type  label
+/dev/sda1  /boot       200MiB  vfat  EFI
+/dev/sda2  /swap       adjust  swap  swap
+/dev/sda3  /           remain  ext4  root
+
+```
+
+*   Una volta fatto, si può proseguire all' [#Installazione](#Installazione)
+
+### Arch Linux con OS X o altro sistema operativo
+
+È necessario partizionare il disco rigido mantenendo le partizioni utilizzate per OS X / Windows. Se si desidera mantenere OS X, il modo più semplice è utilizzare gli strumenti di partizionamento in OS X e quindi terminare con gli strumenti di Arch Linux.
+
+**Attenzione:** Se la partizione di OS X è criptata con FileVault 2, **bisogna** disabilitare il tutto prima di procedere. Dopo che la partizione di OS X è stata ridimensionata, FileVault 2 potrà essere riabilitato.
+
+**Procedimento**:
+
+*   In OS X, eseguire *Utility Disco.app* (situata in `/Applicazioni/Utilità`)
+*   Selezionare il disco da partizionare nella colonna di sinistra (non la partizione!). Premere sul pulsante **Partiziona**.
+*   Aggiungere una nuova partizione premendo il pulsante **+** e scegliere quanto spazio lasciare per OS X, e quanto per la nuova partizione. Si tenga presente che la nuova partizione sarà formattata in Arch Linux, per cui si può scegliere il tipo di partizione che si vuole.
+*   Se tutto è stato fatto fino a qui con successo, si può procedere. Altrimenti, si dovrà prima riparare la partizione da OS X.
+*   Avviare l'immagine di installazione di Arch mediante cd o [LiveUSB](/index.php/USB_flash_installation_media_(Italiano) "USB flash installation media (Italiano)") tenendo premuto `Alt` **durante l'avvio**. Procedere con l'[#Installazione](#Installazione).
+
+È possibile ridimensionare la partizione appena creata tramite il programma di installazione di Arch, o cancellarla per procedere con la creazione di altre partizione (es. swap).
+
+[Template:Consiglio](/index.php?title=Template:Consiglio&action=edit&redlink=1 "Template:Consiglio (page does not exist)")
+
+#### Opzione 1: EFI
 
 *   Richiede [GRUB](/index.php/GRUB "GRUB") per funzionare
 *   Scegliere installazione media e passare ad una tty libera.

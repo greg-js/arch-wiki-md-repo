@@ -102,16 +102,19 @@ This alternative lighttpd configuration will serve Cgit on a sub-domain like git
 
 ```
    # GIT repository browser
-   #$SERVER["socket"] == "127.0.0.1:443" {
-   $SERVER["socket"] == "127.0.0.1:80" {
+
+   server.modules += ( "mod_cgi", "mod_rewrite" )
+
+   #$SERVER["socket"] == ":443" {
+   $SERVER["socket"] == ":80" {
      #ssl.engine                    = "enable"
      #ssl.pemfile                   = "/etc/lighttpd/ssl/git.example.com.pem"
 
      server.name          = "git.example.com"
-     server.document-root = "/usr/share/webapps/cgit"
+     server.document-root = "/usr/share/webapps/cgit/"
 
      index-file.names     = ( "cgit.cgi" )
-     cgi.assign           = ( "cgit.cgi" => "/usr/share/webapps/cgit/cgit.cgi" )
+     cgi.assign           = ( "cgit.cgi" => "" )
      url.rewrite-once     = (
        "^/([^?/]+/[^?]*)?(?:\?(.*))?$"   => "/cgit.cgi?url=$1&$2",
      )
@@ -243,6 +246,7 @@ Before you can start adding repositories you will first have to create the basic
 
 css=/cgit.css
 logo=/cgit.png
+favicon=/favicon.ico
 
 # Following lines work with the above Apache config
 #css=/cgit-css/cgit.css
@@ -252,8 +256,17 @@ logo=/cgit.png
 #css=/cgit/cgit.css
 #logo=/cgit/cgit.png
 
+# Allow http transport git clone
+#enable-http-clone=0
+
 # if you do not want that webcrawler (like google) index your site
 robots=noindex, nofollow
+
+# Allow download of tar.gz, tar.bz2 and zip-files
+snapshots=tar.gz tar.bz2 zip
+
+# Enable adhoc downloads of this repo
+repo.snapshots=1
 
 # if cgit messes up links, use a virtual-root. For example has cgit.example.org/ this value:
 virtual-root=/

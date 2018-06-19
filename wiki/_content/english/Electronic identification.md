@@ -10,6 +10,9 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
 *   [1 Installation](#Installation)
     *   [1.1 Belgium](#Belgium)
     *   [1.2 Estonia](#Estonia)
+        *   [1.2.1 DigiDoc](#DigiDoc)
+        *   [1.2.2 Chromium](#Chromium)
+        *   [1.2.3 Firefox](#Firefox)
     *   [1.3 Sweden](#Sweden)
 
 ## Installation
@@ -44,15 +47,32 @@ You may find hints for troubleshooting in the [official documentation (Dutch)](h
 
 [https://www.id.ee/?lang=en](https://www.id.ee/?lang=en)
 
-Install the [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/), [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/) packages, with dependencies [libdigidoc](https://aur.archlinux.org/packages/libdigidoc/) and [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/). These applications will automatically appear in your application menus. You can also start from command line with <tt>qdigidocclient</tt> and <tt>qesteidutil</tt>.
+#### DigiDoc
 
-[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains [Native Messaging](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging) host for Google Chrome/Chromium and Firefox and it is the modern way of doing authentication and digital signatures on the web.
+Install [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) and [qdigidoc4](https://aur.archlinux.org/packages/qdigidoc4/) packages, with dependencies on [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/). DigiDoc4 contains merged features of older DigiDoc3 and ID-Card Utility. It can be started from your graphical desktop menu by searching for DigiDoc4 Client or from commandline with <tt>qdigidoc4</tt>.
 
-For Google Chrome and Chromium you also will probably want to run [esteid-update-nssdb](https://github.com/open-eid/linux-installer/blob/master/esteid-update-nssdb) script that enables TLS client authentication in the browser.
+DigiDoc4 has [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") right click menu integration. Install [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus) and restart Gnome Files using command <tt>pkill nautilus</tt>.
 
-Some recent versions of [Firefox](/index.php/Firefox "Firefox") seem to have problems recognizing opensc, see [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards"). If you still cannot login from [Firefox](/index.php/Firefox "Firefox") with your ID-card you should install [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
+In case of bugs in DigiDoc4 you can install the older DigiDoc3 and ID-Card Utility programs using AUR packages [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/).
 
-If you updated your certificates due to [https://www.id.ee/?lang=en&id=38241](https://www.id.ee/?lang=en&id=38241), then for signing you need to use a patched version of opensc (see [https://github.com/OpenSC/OpenSC/issues/1176](https://github.com/OpenSC/OpenSC/issues/1176)). Consider [opensc-esteid](https://aur.archlinux.org/packages/opensc-esteid/).
+[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains [Native Messaging](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging) host for Google Chrome/Chromium and Firefox and it is the modern way of doing digital signatures on the web. This package also contains "Token signing" extension counterpart for both browsers.
+
+#### Chromium
+
+To enable PIN 1 authentication in [Google Chrome](/index.php/Google_Chrome "Google Chrome") and [Chromium](/index.php/Chromium "Chromium") you should run [esteid-update-nssdb](https://github.com/open-eid/linux-installer/blob/master/esteid-update-nssdb) script. Or you can run this command that does pretty much the same thing with less error checking.
+
+```
+ modutil -dbdir sql:$HOME/.pki/nssdb -add onepin-opensc-pkcs11 -libfile onepin-opensc-pkcs11.so -mechanisms FRIENDLY
+
+```
+
+[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains "Token signing" extension that needs to be enabled for document signing in Chromium.
+
+#### Firefox
+
+To enable PIN 1 authentication in [Firefox](/index.php/Firefox "Firefox") 58+ you should install [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and after restarting the browser make sure that "Firefox PKCS11 loader" extension is enabled. You can also follow manual instructions at [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards"). For [firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) 52 and other other Firefox forks you can use [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
+
+[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains "Token signing" extension that needs to be enabled for document signing in Firefox 58+.
 
 ### Sweden
 

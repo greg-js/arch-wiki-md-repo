@@ -137,7 +137,7 @@ Plasma can be started either using a [display manager](/index.php/Display_manage
 
 ### From the console
 
-To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
+To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `export XDG_SESSION_TYPE=wayland && export $(dbus-launch) && startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Configuration
 
@@ -189,14 +189,14 @@ Many Plasmoid binaries are available from the [AUR](https://aur.archlinux.org/pa
 
 ##### Disable panel shadow
 
-As the Plasma panel is on top of other windows, its shadow is drawn over them. [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+As the Plasma panel is on top of other windows, its shadow is drawn over them. [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-then select the panel with the plus-sized cursor. [[2]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
+then select the panel with the plus-sized cursor. [[3]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
 
  `/usr/local/bin/kde-no-shadow` 
 ```
@@ -353,7 +353,7 @@ In the past other backends were developed as well but are no longer maintained a
 
 *   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
-*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[4]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
+*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[5]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
 *   A possible fix is to run
 
  `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
@@ -546,7 +546,7 @@ It is possible to use KDE Connect even if you do not use the Plasma desktop. For
 
 ### Use a different window manager
 
-The component chooser settings in Plasma does not allow changing the window manager anymore. [[5]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[6]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
+The component chooser settings in Plasma does not allow changing the window manager anymore. [[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 
@@ -785,7 +785,7 @@ It is not recommended to turn off the [KWallet](/index.php/KWallet "KWallet") pa
 
 ### Weird "q" symbol in konsole
 
-If you get a weird "q" symbols in programs such as vim[[7]](https://github.com/vim/vim/issues/2008) or neovim[[8]](https://github.com/neovim/neovim/issues/7002), it is because they use cursor shape changing escape sequences (DECSCUSR) which konsole does not support. See [KDE Bug 347323](https://bugs.kde.org/show_bug.cgi?id=347323).
+If you get a weird "q" symbols in programs such as vim[[8]](https://github.com/vim/vim/issues/2008) or neovim[[9]](https://github.com/neovim/neovim/issues/7002), it is because they use cursor shape changing escape sequences (DECSCUSR) which konsole does not support. See [KDE Bug 347323](https://bugs.kde.org/show_bug.cgi?id=347323).
 
 You will need to disable these escape sequences in the programs that use them. See [neovim FAQ](https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes) for a workaround for neovim.
 

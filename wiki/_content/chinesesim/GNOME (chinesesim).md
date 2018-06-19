@@ -17,14 +17,13 @@
 *   [MATE](/index.php/MATE "MATE")
 *   [Official repositories#gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories")
 
-**翻译状态：** 本文是英文页面 [GNOME](/index.php/GNOME "GNOME") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=451075)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GNOME](/index.php/GNOME "GNOME") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-19，点击[这里](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=526892)可以查看翻译后英文页面的改动。
 
-[GNOME](https://www.gnome.org/)（读音是*gah-nohm* 或 *nohm*）是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。它是由 [GNOME 项目组](https://en.wikipedia.org/wiki/The_GNOME_Project 而不是 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 进行显示。
+[GNOME](https://www.gnome.org/)（读音是 *gah-nohm* 或 *nohm*）是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。它是由 [GNOME 项目](https://en.wikipedia.org/wiki/zh:GNOME%E8%A8%88%E5%8A%83 而不是 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 进行显示。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 附加的软件包](#.E9.99.84.E5.8A.A0.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
 *   [2 GNOME 会话](#GNOME_.E4.BC.9A.E8.AF.9D)
 *   [3 运行 GNOME](#.E8.BF.90.E8.A1.8C_GNOME)
     *   [3.1 图形界面启动](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.90.AF.E5.8A.A8)
@@ -33,97 +32,58 @@
         *   [3.2.2 Wayland 会话](#Wayland_.E4.BC.9A.E8.AF.9D)
     *   [3.3 Wayland 中的 GNOME 应用程序](#Wayland_.E4.B8.AD.E7.9A.84_GNOME_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
 *   [4 浏览](#.E6.B5.8F.E8.A7.88)
-    *   [4.1 遗留名称](#.E9.81.97.E7.95.99.E5.90.8D.E7.A7.B0)
-*   [5 配置](#.E9.85.8D.E7.BD.AE)
-    *   [5.1 GNOME 系统设置](#GNOME_.E7.B3.BB.E7.BB.9F.E8.AE.BE.E7.BD.AE)
-        *   [5.1.1 色彩设置](#.E8.89.B2.E5.BD.A9.E8.AE.BE.E7.BD.AE)
-        *   [5.1.2 日期与时间](#.E6.97.A5.E6.9C.9F.E4.B8.8E.E6.97.B6.E9.97.B4)
-        *   [5.1.3 默认应用程序](#.E9.BB.98.E8.AE.A4.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-        *   [5.1.4 鼠标和触摸板](#.E9.BC.A0.E6.A0.87.E5.92.8C.E8.A7.A6.E6.91.B8.E6.9D.BF)
-        *   [5.1.5 网络](#.E7.BD.91.E7.BB.9C)
-        *   [5.1.6 在线帐户](#.E5.9C.A8.E7.BA.BF.E5.B8.90.E6.88.B7)
-        *   [5.1.7 搜索](#.E6.90.9C.E7.B4.A2)
-    *   [5.2 高级设置](#.E9.AB.98.E7.BA.A7.E8.AE.BE.E7.BD.AE)
-        *   [5.2.1 外观](#.E5.A4.96.E8.A7.82)
-            *   [5.2.1.1 GTK+主题和图标主题](#GTK.2B.E4.B8.BB.E9.A2.98.E5.92.8C.E5.9B.BE.E6.A0.87.E4.B8.BB.E9.A2.98)
-                *   [5.2.1.1.1 全局暗色主题](#.E5.85.A8.E5.B1.80.E6.9A.97.E8.89.B2.E4.B8.BB.E9.A2.98)
-            *   [5.2.1.2 窗口管理器主题](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.BB.E9.A2.98)
-                *   [5.2.1.2.1 标题栏的高度](#.E6.A0.87.E9.A2.98.E6.A0.8F.E7.9A.84.E9.AB.98.E5.BA.A6)
-                *   [5.2.1.2.2 标题栏按钮重新排序](#.E6.A0.87.E9.A2.98.E6.A0.8F.E6.8C.89.E9.92.AE.E9.87.8D.E6.96.B0.E6.8E.92.E5.BA.8F)
-                *   [5.2.1.2.3 最大化时隐藏标题栏](#.E6.9C.80.E5.A4.A7.E5.8C.96.E6.97.B6.E9.9A.90.E8.97.8F.E6.A0.87.E9.A2.98.E6.A0.8F)
-            *   [5.2.1.3 GNOME Shell主题](#GNOME_Shell.E4.B8.BB.E9.A2.98)
-            *   [5.2.1.4 Icons on menu](#Icons_on_menu)
-        *   [5.2.2 桌面](#.E6.A1.8C.E9.9D.A2)
-            *   [5.2.2.1 桌面上的图标](#.E6.A1.8C.E9.9D.A2.E4.B8.8A.E7.9A.84.E5.9B.BE.E6.A0.87)
-            *   [5.2.2.2 锁屏和背景](#.E9.94.81.E5.B1.8F.E5.92.8C.E8.83.8C.E6.99.AF)
-        *   [5.2.3 扩展](#.E6.89.A9.E5.B1.95)
-        *   [5.2.4 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95)
-        *   [5.2.5 字体](#.E5.AD.97.E4.BD.93)
-        *   [5.2.6 启动应用程序](#.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-        *   [5.2.7 电源](#.E7.94.B5.E6.BA.90)
-            *   [5.2.7.1 配置合上盖子时的行为](#.E9.85.8D.E7.BD.AE.E5.90.88.E4.B8.8A.E7.9B.96.E5.AD.90.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
-            *   [5.2.7.2 修改电池电量严重不足时的行为](#.E4.BF.AE.E6.94.B9.E7.94.B5.E6.B1.A0.E7.94.B5.E9.87.8F.E4.B8.A5.E9.87.8D.E4.B8.8D.E8.B6.B3.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
-        *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
+*   [5 遗留名称](#.E9.81.97.E7.95.99.E5.90.8D.E7.A7.B0)
+*   [6 配置](#.E9.85.8D.E7.BD.AE)
+    *   [6.1 GNOME 系统设置](#GNOME_.E7.B3.BB.E7.BB.9F.E8.AE.BE.E7.BD.AE)
+        *   [6.1.1 色彩](#.E8.89.B2.E5.BD.A9)
+        *   [6.1.2 夜间模式](#.E5.A4.9C.E9.97.B4.E6.A8.A1.E5.BC.8F)
+        *   [6.1.3 日期与时间](#.E6.97.A5.E6.9C.9F.E4.B8.8E.E6.97.B6.E9.97.B4)
+        *   [6.1.4 默认应用程序](#.E9.BB.98.E8.AE.A4.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+        *   [6.1.5 鼠标和触摸板](#.E9.BC.A0.E6.A0.87.E5.92.8C.E8.A7.A6.E6.91.B8.E6.9D.BF)
+        *   [6.1.6 网络](#.E7.BD.91.E7.BB.9C)
+        *   [6.1.7 在线帐户](#.E5.9C.A8.E7.BA.BF.E5.B8.90.E6.88.B7)
+        *   [6.1.8 搜索](#.E6.90.9C.E7.B4.A2)
+    *   [6.2 高级设置](#.E9.AB.98.E7.BA.A7.E8.AE.BE.E7.BD.AE)
+        *   [6.2.1 外观](#.E5.A4.96.E8.A7.82)
+            *   [6.2.1.1 GTK+主题和图标主题](#GTK.2B.E4.B8.BB.E9.A2.98.E5.92.8C.E5.9B.BE.E6.A0.87.E4.B8.BB.E9.A2.98)
+                *   [6.2.1.1.1 全局暗色主题](#.E5.85.A8.E5.B1.80.E6.9A.97.E8.89.B2.E4.B8.BB.E9.A2.98)
+            *   [6.2.1.2 窗口管理器主题](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.BB.E9.A2.98)
+                *   [6.2.1.2.1 标题栏的高度](#.E6.A0.87.E9.A2.98.E6.A0.8F.E7.9A.84.E9.AB.98.E5.BA.A6)
+                *   [6.2.1.2.2 标题栏按钮重新排序](#.E6.A0.87.E9.A2.98.E6.A0.8F.E6.8C.89.E9.92.AE.E9.87.8D.E6.96.B0.E6.8E.92.E5.BA.8F)
+                *   [6.2.1.2.3 最大化时隐藏标题栏](#.E6.9C.80.E5.A4.A7.E5.8C.96.E6.97.B6.E9.9A.90.E8.97.8F.E6.A0.87.E9.A2.98.E6.A0.8F)
+            *   [6.2.1.3 GNOME Shell主题](#GNOME_Shell.E4.B8.BB.E9.A2.98)
+            *   [6.2.1.4 Icons on menu](#Icons_on_menu)
+        *   [6.2.2 桌面](#.E6.A1.8C.E9.9D.A2)
+            *   [6.2.2.1 桌面上的图标](#.E6.A1.8C.E9.9D.A2.E4.B8.8A.E7.9A.84.E5.9B.BE.E6.A0.87)
+            *   [6.2.2.2 锁屏和背景](#.E9.94.81.E5.B1.8F.E5.92.8C.E8.83.8C.E6.99.AF)
+        *   [6.2.3 扩展](#.E6.89.A9.E5.B1.95)
+        *   [6.2.4 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95)
+        *   [6.2.5 字体](#.E5.AD.97.E4.BD.93)
+        *   [6.2.6 启动应用程序](#.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+        *   [6.2.7 电源](#.E7.94.B5.E6.BA.90)
+            *   [6.2.7.1 配置合上盖子时的行为](#.E9.85.8D.E7.BD.AE.E5.90.88.E4.B8.8A.E7.9B.96.E5.AD.90.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
+            *   [6.2.7.2 修改电池电量严重不足时的行为](#.E4.BF.AE.E6.94.B9.E7.94.B5.E6.B1.A0.E7.94.B5.E9.87.8F.E4.B8.A5.E9.87.8D.E4.B8.8D.E8.B6.B3.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
+        *   [6.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
+*   [7 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-以下两个软件组均包含 GNOME 的组件：
+有两个软件组可用：
 
-*   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 组包含基本的桌面环境和良好集成的[应用程序](https://wiki.gnome.org/Apps)；
+*   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 包含基本的桌面环境和一些集成良好的[应用程序](https://wiki.gnome.org/Apps)；
 
-*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) 组包含其他的 GNOME 应用，包括[文本编辑器](/index.php/Gedit "Gedit")、压缩文件管理器、磁盘管理器以及一些游戏。 [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 软件组是这个组的基础。
+*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) 包含其他 GNOME 应用，包括压缩文件管理器、[文本编辑器](/index.php/Gedit "Gedit")和一些游戏。请注意，这个组建立在 [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 组之上。
 
-基础桌面环境包含了 [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell 窗口管理器的插件。它可以通过软件包 [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) 单独安装。
+基础桌面环境由 [GNOME Shell](https://en.wikipedia.org/wiki/zh:GNOME_Shell 窗口管理器的插件——组成。它可以通过 [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) 单独安装。
 
-**注意:** *mutter* 是 gnome 桌面的混合管理器。它利用硬件加速减少屏幕杂乱。GNOME 会话管理器会自动检测显卡驱动是否足以运行 GNOME Shell，如果不行则用 *llvmpipe* 软件绘制。
-
-### 附加的软件包
-
-上面提到的软件组不包括以下软件包：
-
-*   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — 访问 [libvirt](/index.php/Libvirt "Libvirt") 虚拟机的用户接口。
-
-	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
-
-*   **Games** — GNOME 的游戏启动器。
-
-	[https://wiki.gnome.org/Apps/Games](https://wiki.gnome.org/Apps/Games) || [gnome-games](https://www.archlinux.org/packages/?name=gnome-games)
-
-*   **GNOME Initial Setup** — 准备新系统的简单、易用和安全的工具。
-
-	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
-
-*   **GNOME MultiWriter** — 一次性将ISO文件写入多个USB设备。
-
-	[https://wiki.gnome.org/Apps/MultiWriter](https://wiki.gnome.org/Apps/MultiWriter) || [gnome-multi-writer](https://www.archlinux.org/packages/?name=gnome-multi-writer)
-
-*   **GNOME PackageKit** — GNOME 的 PackageKit 图形工具集。
-
-	[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
-
-*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — C/C++ 调试器。
-
-	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
-
-*   **Recipes** — GNOME 的食谱管理应用。
-
-	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
-
-*   **Simple Scan** — 简单的扫描工具。
-
-	[https://launchpad.net/simple-scan](https://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
-
-*   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — 安装和更新软件和系统扩展。
-
-	[https://wiki.gnome.org/Apps/Software/](https://wiki.gnome.org/Apps/Software/) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+**注意:** *mutter* 充当桌面的混成管理器。它利用硬件图形加速来提供减少屏幕杂乱的效果。GNOME 会话管理器会自动检测显卡驱动是否能够运行 GNOME Shell，如果不行则用 *llvmpipe* 软件渲染。
 
 ## GNOME 会话
 
 GNOME 有三个可用的会话，都使用 GNOME Shell。
 
-*   **GNOME** 是使用 Wayland 的默认会话，传统X应用将通过 Xwayland 运行。
-*   **GNOME Classic** 的桌面布局类似于传统的GNOME 2, 使用预先激活的插件和参数。[[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) 因此，它更像是一个定制的 GNOME Shell，而不是完全独立的模式。
+*   **GNOME** 是使用 Wayland 的默认会话，传统 X 应用将通过 Xwayland 运行。
+*   **GNOME Classic** 的桌面布局类似于传统的 GNOME 2, 使用预先激活的插件和参数。[[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) 因此，它更像是一个定制的 GNOME Shell，而不是一个完全独立的模式。
 *   **GNOME on Xorg** 使用 Xorg 运行 GNOME Shell。
 
 ## 运行 GNOME
@@ -148,16 +108,16 @@ GNOME 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
     exec gnome-session --session=gnome-classic
     ```
 
-修改完 `~/.xinitrc` 后，即可使用 `startx` 启动 GNOME（有关其他详细信息，例如如何保留 logind 会话，详见 [xinitrc](/index.php/Xinitrc "Xinitrc")）。设置完 `~/.xinitrc` 后，也可以设定[在登录时启动X](/index.php/Start_X_at_login "Start X at login")。
+修改完 `~/.xinitrc` 后，即可使用 `startx` 启动 GNOME（有关其他详细信息，例如如何保留 logind 会话，详见 [xinitrc](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")）。设置完 `~/.xinitrc` 后，也可以设定[在登录时自动启动X](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E7.94.A8_X "Xinit (简体中文)")。
 
 #### Wayland 会话
 
 **注意:**
 
-*   [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 软件包提供的X服务器仍然需要用于运行尚未移植到 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 的应用程序。
-*   使用专有 NVIDIA 驱动的 Wayland 目前拥有非常差的性能：[FS#53284](https://bugs.archlinux.org/task/53284)。
+*   [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 软件包提供的 X 服务器仍然需要用于运行尚未移植到 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 的应用程序。
+*   使用专有 NVIDIA 驱动的 Wayland 会话目前的性能非常差：[FS#53284](https://bugs.archlinux.org/task/53284)。
 
-可以用 `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session` 手动启动 Wayland 会话。
+可以使用 `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session` 手动启动 Wayland 会话。
 
 若要在 tty1 登录时启动，将以下内容添加到 `.bash_profile` 中：
 
@@ -180,13 +140,13 @@ fi
 *   `Super` + `a`：显示应用程序菜单
 *   `Alt-` + `Tab`：切换当前使用的应用
 *   `Alt-` + ``` (美式键盘 `Tab` 上面的按键)：切换前台应用程序的窗口
-*   `Alt` + `F2`，然后输入 `r` 或 `restart`：重启界面如果图形界面出了问题（仅用于 X/传统 模式，不适用于 Wayland 模式）。
+*   `Alt` + `F2`，然后输入 `r` 或 `restart`：在图形界面出问题时重启界面（仅用于 X/传统 模式，不适用于 Wayland 模式）。
 
-### 遗留名称
+## 遗留名称
 
 **注意:** 一些 GNOME 程序在文档和对话框中的名称已经更改，但执行文件名称却没有。下面表格列出了一些这样的应用程序。
 
-**提示：** 在搜索栏中搜索应用程序的遗留名称将成功找到要找应用程序，例如搜索 *文件* 将返回 *Files*。
+**提示：** 在搜索栏中搜索应用的遗留名称将成功找到对应的应用，例如搜索 *nautilus* 将返还 *文件*。
 
 | 当前 | 遗留 |
 | [文件](/index.php/Files "Files") | Nautilus |
@@ -217,53 +177,74 @@ GNOME 系统设置面板（gnome-control-center）和 GNOME 应用使用 [dconf]
 
 ### GNOME 系统设置
 
-系统设置工具包括了一些最基础的 GNOME 环境配置选项。
+#### 色彩
 
-#### 色彩设置
+`colord` 守护进程会读取显示器的 EDID 信息并提取出合适的色彩配置内容。大多数情况下，色彩配置都是正确的，不需要额外设置；但是对于某些偏差情况或使用较旧的显示器时，可以把色彩配置文件放在 `~/.local/share/icc/` 下并被指向。
 
-`colord` 守护进程读取显示器的 [EDID](https://zh.wikipedia.org/wiki/EDID)信息，并提取出合适的色彩配置内容。大多数情况下，自动色彩配置都是正确的，不需要额外设置；但是对于可能出现的偏差情况，例如使用较旧的显示器时，您可以将色彩配置文件放在 `~/.local/share/icc/` 下，并在设置面板里启用。
+#### 夜间模式
+
+GNOME 内置了类似于 [Redshift](/index.php/Redshift "Redshift") 的蓝光过滤功能。夜间模式可以在设置面板中启动及自定义启动时间。此外，夜间模式的开尔文温度可以使用以下 dconf 设置进行调整，5000 是一个示例值：
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 5000
+
+```
 
 #### 日期与时间
 
-如果系统已有配置好的 [NTP 守护进程](/index.php/Network_Time_Protocol_daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol daemon (简体中文)")，它同样会对 GNOME 桌面环境起作用。如果需要，您也可以手动控制进行同步。
+如果系统已有配置好的 [网络时间协议 守护进程](/index.php/Network_Time_Protocol_daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol daemon (简体中文)")，它同样会对 GNOME 起作用。如果需要，同步设置可以在菜单内设为手动控制。
 
-如需在顶栏显示日期，请运行：
+如果需要在顶栏内显示日期，请运行：
 
 ```
 $ gsettings set org.gnome.desktop.interface clock-show-date true
 
 ```
 
-另外，如需在 shell 的日历中显示周数，请运行：
+另外，如果需要在顶栏的日历中显示周数，请运行：
 
 ```
 $ gsettings set org.gnome.shell.calendar show-weekdate true
 
 ```
 
-当然，以上配置均可以在 `gnome-tweak-tool` 里完成。
-
 #### 默认应用程序
 
-Upon installing GNOME for the first time, you may find that the wrong applications are handling certain protocols. For example, *totem* opens videos instead of a previously used [VLC](/index.php/VLC "VLC"). Some of the associations can be set from system settings via: *System* > *Details* > *Default applications*.
+首次安装 GNOME 时，您可能会发现某些协议由错误的应用程序处理。比如说，视频被 *totem* 打开而不是以前使用的 [VLC](/index.php/VLC "VLC")。某些关联可以通过系统设置进行设置：*详细信息* > *默认应用程序*。
 
-For other protocols and methods see [Default applications](/index.php/Default_applications "Default applications") for configuration.
+有关其他协议和方法，请参阅[默认应用程序](/index.php/Default_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Default applications (简体中文)")进行配置。
 
 #### 鼠标和触摸板
 
-为了帮助减少触摸板的干扰，你可能希望实现以下设置：
+大多数触摸板设置可以通过系统设置进行设置：*设备* > *鼠标和触摸板*。
 
-*   禁用触摸板，打字时
-*   禁用滚动
-*   禁用点击
+根据您的设备，其他配置可能可用，但不会显示在默认界面内，例如不同的触摸板点击方法：
 
-**Note:** GNOME 目前不再支持 [synaptics](/index.php/Synaptics "Synaptics")，请使用 [libinput](/index.php/Libinput "Libinput"). 参考 [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
+ `$ gsettings range org.gnome.desktop.peripherals.touchpad click-method` 
+```
+enum
+'default'
+'none'
+'areas'
+'fingers'
+```
+
+手动设置:
+
+```
+$ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
+
+```
+
+或通过 [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)。
+
+**Note:** GNOME 不支持 [synaptics](/index.php/Synaptics "Synaptics") 并默认使用 [libinput](/index.php/Libinput "Libinput")。参考 [这个缺陷报告](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)。
 
 #### 网络
 
-[NetworkManager](/index.php/NetworkManager "NetworkManager") is the native tool of the GNOME project to control network settings from the shell. It is installed by default as a dependency for [tracker](https://www.archlinux.org/packages/?name=tracker) package, which is a part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group, and just needs to be [enabled](/index.php/NetworkManager#Enable_NetworkManager "NetworkManager").
+[NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") 是 GNOME 项目下用于控制网络设置的工具。 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) 软件包并[启用](/index.php/%E5%90%AF%E7%94%A8 "启用") `NetworkManager.service` 单元。
 
-While any other [network manager](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet") can be used as well, NetworkManager provides the full integration via the shell network settings and a status indicator applet [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (not required for GNOME).
+虽然可以使用任何其他[网络管理器](/index.php/Network_manager "Network manager")，但 NetworkManager 可以通过网络设置和状态指示器 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)（ GNOME不需要 ）整合到桌面环境当中。
 
 #### 在线帐户
 

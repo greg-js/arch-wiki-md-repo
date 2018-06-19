@@ -121,19 +121,19 @@ Plasma themes packages should be named `kdeplasma-themes-*themename*` so that th
 
 ### Widgets de plasma
 
-Plasma widgets (formerly Plasmoids) packages should be named `plasma5-applets-*widgetname*` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
+Plasma widgets (formerly Plasmoids) packages should be named `plasma5-applets-*widgetname*` so that they are recognizable as Plasma 5-related packages; this also distinguishes them from the official packages.
 
 ### Executores
 
-Plasma runners packages should be named `plasma5-runners-*runnername*` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
+Plasma runners packages should be named `plasma5-runners-*runnername*` so that they are recognizable as Plasma 5-related packages; this also distinguishes them from the official packages.
 
 ### Menus de serviço
 
-Service menus packages should be named `kf5-servicemenus-*servicename*` so that they are recognizable as [KF5](/index.php?title=KF5&action=edit&redlink=1 "KF5 (page does not exist)")-related packages
+Service menus packages should be named `kf5-servicemenus-*servicename*` so that they are recognizable as KF5-related packages
 
 ### Temas
 
-Plasma themes packages should be named `plasma5-themes-*themename*` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages.
+Plasma themes packages should be named `plasma5-themes-*themename*` so that they are recognizable as Plasma 5-related packages.
 
 ## Arquivos de .install
 

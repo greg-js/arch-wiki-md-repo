@@ -39,11 +39,12 @@
         *   [1.5.2 Window tilers](#Window_tilers)
         *   [1.5.3 Taskbars](#Taskbars)
         *   [1.5.4 Application launchers](#Application_launchers)
-        *   [1.5.5 Wallpaper setters](#Wallpaper_setters)
-        *   [1.5.6 Virtual desktop pagers](#Virtual_desktop_pagers)
-        *   [1.5.7 Desktop widgets](#Desktop_widgets)
-        *   [1.5.8 Desktop notifications](#Desktop_notifications)
-        *   [1.5.9 Clipboard managers](#Clipboard_managers)
+        *   [1.5.5 Application menu editors](#Application_menu_editors)
+        *   [1.5.6 Wallpaper setters](#Wallpaper_setters)
+        *   [1.5.7 Virtual desktop pagers](#Virtual_desktop_pagers)
+        *   [1.5.8 Desktop widgets](#Desktop_widgets)
+        *   [1.5.9 Desktop notifications](#Desktop_notifications)
+        *   [1.5.10 Clipboard managers](#Clipboard_managers)
 
 ## Others
 
@@ -862,6 +863,40 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 *   **Whippet** — Launcher and xdg-open replacement for control freaks. Opens files and URLs with applications associated by name and/or mimetype. Applications and associations may be customized using an SQLite database. Uses dmenu to manage its menus.
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#whippet](http://appstogo.mcfadzean.org.uk/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
+
+#### Application menu editors
+
+*   **[Alacarte](https://en.wikipedia.org/wiki/Alacarte "wikipedia:Alacarte")** — Add or remove applications from the main menu.
+
+	[https://gitlab.gnome.org/GNOME/alacarte](https://gitlab.gnome.org/GNOME/alacarte) || [alacarte](https://www.archlinux.org/packages/?name=alacarte)
+
+*   **AppEditor** — Edit application entries in the application menu.
+
+	[https://github.com/donadigo/appeditor](https://github.com/donadigo/appeditor) || [appeditor-git](https://aur.archlinux.org/packages/appeditor-git/)
+
+*   **Ezame** — Desktop and menu file editor.
+
+	[https://github.com/linux-man/ezame](https://github.com/linux-man/ezame) || [ezame](https://aur.archlinux.org/packages/ezame/)
+
+*   **KMenuEdit** — Edit one of the KDE application launchers.
+
+	[https://docs.kde.org/trunk5/en/kde-workspace/kmenuedit/index.html](https://docs.kde.org/trunk5/en/kde-workspace/kmenuedit/index.html) || [kmenuedit](https://www.archlinux.org/packages/?name=kmenuedit)
+
+*   **lxmed** — Application menu editor written in Java.
+
+	[https://sourceforge.net/projects/lxmed/](https://sourceforge.net/projects/lxmed/) || [lxmed](https://aur.archlinux.org/packages/lxmed/)
+
+*   **MenuLibre** — Advanced menu editor that provides modern features in a clean, easy-to-use interface.
+
+	[https://launchpad.net/menulibre](https://launchpad.net/menulibre) || [menulibre](https://aur.archlinux.org/packages/menulibre/)
+
+*   **Meow** — Application menu editor written in Java.
+
+	[https://pnmougel.github.io/meow/](https://pnmougel.github.io/meow/) || [meow-bin](https://aur.archlinux.org/packages/meow-bin/)
+
+*   **Mozo** — Change which applications are shown on the main menu.
+
+	[https://github.com/mate-desktop/mozo](https://github.com/mate-desktop/mozo) || [mozo](https://www.archlinux.org/packages/?name=mozo)
 
 #### Wallpaper setters
 

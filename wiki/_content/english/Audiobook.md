@@ -1,3 +1,8 @@
+Related articles
+
+*   [iPod](/index.php/IPod "IPod")
+*   [Rip Audio CDs](/index.php/Rip_Audio_CDs "Rip Audio CDs")
+
 Audiobook media can be Audio CDs or downloaded files, several formats exist. For certain hardware media players a specific format will be necessary. This article documents how to create or convert an audiobook of various format types.
 
 ## Contents

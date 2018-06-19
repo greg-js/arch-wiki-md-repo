@@ -1,4 +1,4 @@
-GStreamer is a pipeline-based multimedia framework written in the C programming language with the type system based on GObject.
+[GStreamer](https://en.wikipedia.org/wiki/GStreamer "wikipedia:GStreamer") is a pipeline-based multimedia framework written in the C programming language with the type system based on GObject.
 
 GStreamer allows a programmer to create a variety of media-handling components, including simple audio playback, audio and video playback, recording, streaming and editing. The pipeline design serves as a base to create many types of multimedia applications such as video editors, streaming media broadcasters, and media players.
 
@@ -49,5 +49,5 @@ GStreamer will automatically detect and use the correct API [[1]](https://gstrea
 
 ## See also
 
-*   [Sound](/index.php/Sound "Sound")
-*   [http://gstreamer.freedesktop.org/](http://gstreamer.freedesktop.org/)
+*   [Sound system](/index.php/Sound_system "Sound system")
+*   [website](https://gstreamer.freedesktop.org/)
