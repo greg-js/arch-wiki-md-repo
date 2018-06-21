@@ -492,6 +492,8 @@ pasv_address=*my.domain.name*
 
 In case internal connection is not possible after this change, one may need to run 2 vsftpd, one for internal and one for external connections.
 
+**Tip:** To find out whether the NAT router intercept the PASV response and replaces the internal IP with an external IP, one can check the server response from the client side in TLS mode. The enciphered packets cannot be identified by the router and are not modified.
+
 ### ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6
 
 you most likely have commented out the line

@@ -254,6 +254,10 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[https://github.com/carnager/clerk](https://github.com/carnager/clerk) || [clerk](https://aur.archlinux.org/packages/clerk/)
 
+*   **FMUI** — Console user interface created with fzf and mpc.
+
+	[https://github.com/seebye/fmui](https://github.com/seebye/fmui) || [fmui-git](https://aur.archlinux.org/packages/fmui-git/)
+
 *   **mpc** — Command line user interface for MPD server.
 
 	[http://www.musicpd.org/clients/mpc/](http://www.musicpd.org/clients/mpc/) || [mpc](https://www.archlinux.org/packages/?name=mpc)

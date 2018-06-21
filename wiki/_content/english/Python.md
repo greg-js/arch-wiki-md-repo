@@ -20,7 +20,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 *   [2 Package management](#Package_management)
 *   [3 Widget bindings](#Widget_bindings)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 IPython](#IPython)
+    *   [4.1 Alternative shells](#Alternative_shells)
     *   [4.2 Virtual environment](#Virtual_environment)
     *   [4.3 Tab completion in Python2 shell](#Tab_completion_in_Python2_shell)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -165,13 +165,19 @@ To use these with Python, you may need to install the associated widget kits.
 
 ## Tips and tricks
 
-### IPython
+### Alternative shells
 
-[IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2).
+*   **bpython** — Fancy interface for the Python interpreter.
 
-[Jupyter](/index.php/Jupyter "Jupyter") Notebook can be used for a web interface to IPython.
+	[https://bpython-interpreter.org/](https://bpython-interpreter.org/) || [bpython](https://www.archlinux.org/packages/?name=bpython) [bpython2](https://www.archlinux.org/packages/?name=bpython2)
 
-[bpython](https://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
+*   **[IPython](https://en.wikipedia.org/wiki/IPython "wikipedia:IPython")** — Enhanced interactive Python shell.
+
+	[https://ipython.org/](https://ipython.org/) || [ipython](https://www.archlinux.org/packages/?name=ipython) [ipython2](https://www.archlinux.org/packages/?name=ipython2)
+
+*   **[Jupyter](/index.php/Jupyter "Jupyter") Notebook** — Web interface to IPython.
+
+	[https://jupyter.org/](https://jupyter.org/) || [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook)
 
 ### Virtual environment
 

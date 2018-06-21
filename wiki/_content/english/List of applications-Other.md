@@ -38,13 +38,14 @@
             *   [1.5.1.3 Composite managers](#Composite_managers)
         *   [1.5.2 Window tilers](#Window_tilers)
         *   [1.5.3 Taskbars](#Taskbars)
-        *   [1.5.4 Application launchers](#Application_launchers)
-        *   [1.5.5 Application menu editors](#Application_menu_editors)
-        *   [1.5.6 Wallpaper setters](#Wallpaper_setters)
-        *   [1.5.7 Virtual desktop pagers](#Virtual_desktop_pagers)
-        *   [1.5.8 Desktop widgets](#Desktop_widgets)
-        *   [1.5.9 Desktop notifications](#Desktop_notifications)
-        *   [1.5.10 Clipboard managers](#Clipboard_managers)
+        *   [1.5.4 System tray](#System_tray)
+        *   [1.5.5 Application launchers](#Application_launchers)
+        *   [1.5.6 Application menu editors](#Application_menu_editors)
+        *   [1.5.7 Wallpaper setters](#Wallpaper_setters)
+        *   [1.5.8 Virtual desktop pagers](#Virtual_desktop_pagers)
+        *   [1.5.9 Desktop widgets](#Desktop_widgets)
+        *   [1.5.10 Desktop notifications](#Desktop_notifications)
+        *   [1.5.11 Clipboard managers](#Clipboard_managers)
 
 ## Others
 
@@ -193,6 +194,10 @@ These applications support time, task and contacts management.
 *   **KTeaTime** — Handy timer for steeping tea.
 
 	[https://www.kde.org/applications/games/kteatime/](https://www.kde.org/applications/games/kteatime/) || [kteatime](https://www.archlinux.org/packages/?name=kteatime)
+
+*   **Orage Globaltime** — Show clocks from different countries.
+
+	[https://xfce.org/projects](https://xfce.org/projects) || [orage](https://www.archlinux.org/packages/?name=orage)
 
 *   **RSIBreak** — Takes care of your health and regularly breaks your work to avoid repetitive strain injury (RSI).
 
@@ -708,10 +713,6 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 	[http://www.glx-dock.org/](http://www.glx-dock.org/) || [cairo-dock](https://www.archlinux.org/packages/?name=cairo-dock)
 
-*   **Docker** — Docking application which acts as a system tray.
-
-	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker-tray](https://aur.archlinux.org/packages/docker-tray/)
-
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Full fledged dock application that makes opening common applications and managing windows easier and quicker.
 
 	[http://www.go-docky.com/](http://www.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
@@ -723,6 +724,10 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel included in the [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") desktop.
 
 	[https://wiki.gnome.org/Projects/GnomePanel](https://wiki.gnome.org/Projects/GnomePanel) || [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
+
+*   **Latte** — Dock based on Plasma frameworks that provides an elegant and intuitive experience for your tasks and plasmoids.
+
+	[https://github.com/psifidotos/Latte-Dock](https://github.com/psifidotos/Latte-Dock) || [latte-dock](https://www.archlinux.org/packages/?name=latte-dock)
 
 *   **LXPanel** — Lightweight X11 desktop panel and part of the LXDE desktop.
 
@@ -744,17 +749,9 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 	[http://pypanel.sourceforge.net/](http://pypanel.sourceforge.net/) || [pypanel](https://www.archlinux.org/packages/?name=pypanel)
 
-*   **[Stalonetray](/index.php/Stalonetray "Stalonetray")** — Stand-alone system tray.
-
-	[http://stalonetray.sourceforge.net/](http://stalonetray.sourceforge.net/) || [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)
-
 *   **[Tint2](/index.php/Tint2 "Tint2")** — Simple panel/taskbar developed specifically for Openbox.
 
 	[https://gitlab.com/o9000/tint2](https://gitlab.com/o9000/tint2) || [tint2](https://www.archlinux.org/packages/?name=tint2)
-
-*   **Trayer** — Lightweight GTK+-based systray.
-
-	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
 
 *   **Vala Panel** — Gtk3 panel for compositing window managers
 
@@ -767,6 +764,28 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 *   **[xmobar](/index.php/Xmobar "Xmobar")** — A lightweight, text-based, status bar written in Haskell.
 
 	[http://projects.haskell.org/xmobar/](http://projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)
+
+#### System tray
+
+*   **AllTray** — Dock other applications into the system tray (notification area).
+
+	[https://github.com/mbt/alltray](https://github.com/mbt/alltray) || [alltray](https://www.archlinux.org/packages/?name=alltray)
+
+*   **Docker** — Docking application which acts as a system tray.
+
+	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker-tray](https://aur.archlinux.org/packages/docker-tray/)
+
+*   **KDocker** — Dock any application in the system tray (notification area).
+
+	[https://github.com/user-none/KDocker](https://github.com/user-none/KDocker) || [kdocker](https://aur.archlinux.org/packages/kdocker/)
+
+*   **[Stalonetray](/index.php/Stalonetray "Stalonetray")** — Stand-alone freedesktop.org and KDE system tray (notification area) for [Xorg](/index.php/Xorg "Xorg"). It has full XEMBED support and minimal dependencies: an X11 lib only. Stalonetray works with virtually any EWMH-compliant window manager.
+
+	[http://stalonetray.sourceforge.net/](http://stalonetray.sourceforge.net/) || [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)
+
+*   **Trayer** — Lightweight GTK+-based system tray (notification area).
+
+	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
 
 #### Application launchers
 

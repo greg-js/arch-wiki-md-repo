@@ -89,9 +89,9 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
 
 ### Packages
 
-The main manager package is [yubikey-manager](https://www.archlinux.org/packages/?name=yubikey-manager) from the [official repositories](/index.php/Official_repositories "Official repositories"), and provides the `ykman` interface.
+The main manager package is [yubikey-manager](https://www.archlinux.org/packages/?name=yubikey-manager), and provides the `ykman` interface. The main GUI package is [yubikey-manager-qt](https://www.archlinux.org/packages/?name=yubikey-manager-qt).
 
-You can also install [yubikey-personalization](https://www.archlinux.org/packages/?name=yubikey-personalization) and [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui) to access further options
+You can also install [yubikey-personalization](https://www.archlinux.org/packages/?name=yubikey-personalization) and [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui) to access further options.
 
 ### Understanding the YubiKey
 

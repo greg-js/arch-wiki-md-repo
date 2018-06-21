@@ -10,14 +10,15 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 systemd](#systemd)
-*   [2 Hardening](#Hardening)
-    *   [2.1 Capabilities](#Capabilities)
-    *   [2.2 Filesystem Access](#Filesystem_Access)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Default jails](#Default_jails)
-    *   [3.2 Custom SSH jail](#Custom_SSH_jail)
-*   [4 See also](#See_also)
+*   [2 Usage](#Usage)
+    *   [2.1 fail2ban-client](#fail2ban-client)
+*   [3 Service hardening](#Service_hardening)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Enabling jails](#Enabling_jails)
+    *   [4.2 Firewall and services](#Firewall_and_services)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Custom SSH jail](#Custom_SSH_jail)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -25,68 +26,120 @@ Related articles
 
 If you want Fail2ban to send an email when someone has been banned, you have to configure [SSMTP](/index.php/SSMTP "SSMTP") (for example).
 
-### systemd
+## Usage
 
-[Enable](/index.php/Enable "Enable") the `fail2ban.service` unit.
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `fail2ban.service`.
 
-## Hardening
+### fail2ban-client
 
-Currently, fail2ban must be run as root. Therefore, you may wish to consider hardening the process with systemd. Ref:[systemd for Administrators, Part XII](http://0pointer.de/blog/projects/security.html)
+The fail2ban-client allows monitoring jails (reload, restart, status, etc.), to view all available commands:
 
-### Capabilities
+```
+$ fail2ban-client
 
-For added security, consider limiting fail2ban capabilities by specifying `CapabilityBoundingSet` in the [drop-in configuration file](/index.php/Systemd#Editing_provided_units "Systemd") for the provided `fail2ban.service`:
+```
 
- `/etc/systemd/system/fail2ban.service.d/capabilities.conf` 
+To view all enabled jails:
+
+```
+# fail2ban-client status
+
+```
+
+To check the status of a jail, e.g. for *sshd*:
+
+ `# fail2ban-client status sshd` 
+```
+Status for the jail: sshd
+|- Filter
+|  |- Currently failed: 1
+|  |- Total failed:     9
+|  `- Journal matches:  _SYSTEMD_UNIT=sshd.service + _COMM=sshd
+`- Actions
+   |- Currently banned: 1
+   |- Total banned:     1
+   `- Banned IP list:   0.0.0.0
+
+```
+
+## Service hardening
+
+Currently, fail2ban must be run as *root*. Therefore, you may wish to consider hardening the process with [systemd](/index.php/Systemd "Systemd").
+
+Create a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") configuration file for `fail2ban.service`:
+
+ `/etc/systemd/system/fail2ban.service.d/override.conf` 
 ```
 [Service]
-CapabilityBoundingSet=CAP_DAC_READ_SEARCH CAP_NET_ADMIN CAP_NET_RAW
+PrivateDevices=yes
+PrivateTmp=yes
+ProtectHome=read-only
+ProtectSystem=strict
+NoNewPrivileges=yes
+ReadWritePaths=-/var/run/fail2ban
+ReadWritePaths=-/var/lib/fail2ban
+ReadWritePaths=-/var/log/fail2ban
+ReadWritePaths=-/var/spool/postfix/maildrop
+CapabilityBoundingSet=CAP_AUDIT_READ CAP_DAC_READ_SEARCH CAP_NET_ADMIN CAP_NET_RAW
 ```
 
-In the example above, `CAP_DAC_READ_SEARCH` will allow fail2ban full read access, and `CAP_NET_ADMIN` and `CAP_NET_RAW` allow setting of firewall rules with [iptables](/index.php/Iptables "Iptables"). Additional capabilities may be required, depending on your fail2ban configuration. See [capabilities(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/capabilities.7) for more info.
+The `CapabilityBoundingSet` parameters `CAP_DAC_READ_SEARCH` will allow fail2ban full read access to every directory and file, `CAP_NET_ADMIN` and `CAP_NET_RAW` allow setting of firewall rules with [iptables](/index.php/Iptables "Iptables"). See [capabilities(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/capabilities.7) for more info.
 
-### Filesystem Access
+By using `ProtectSystem=strict` the [filesystem](/index.php/Filesystem "Filesystem") hierarchy will only be read-only, `ReadWritePaths` allows fail2ban to have write access on required paths.
 
-**Note:** On some systems this might lead to fail2ban not working. So, first try without, before hardening fail2ban
+[Create](/index.php/Create "Create") `/etc/fail2ban/fail2ban.local` with the correct `logtarget` path:
 
-Consider limiting file system read and write access by using *ReadOnlyDirectories* and *ReadWriteDirectories*, under the `[Service]` section. For example:
-
+ `/etc/fail2ban/fail2ban.local` 
 ```
-ReadOnlyDirectories=/
-ReadWriteDirectories=/var/run/fail2ban /var/lib/fail2ban /var/spool/postfix/maildrop /tmp /var/log/fail2ban
-
-```
-
-In the example above, this limits the file system to read-only, except for `/var/run/fail2ban` for pid and socket files, and `/var/spool/postfix/maildrop` for [postfix](/index.php/Postfix "Postfix") sendmail. Again, this will be dependent on you system configuration and fail2ban configuration. The `/tmp` directory is needed for some fail2ban actions. Note that adding `/var/log/fail2ban` is necessary if you want fail2ban to log its activity. Make sure all the directories exist, or you will get error code 226 on starting the service. And modify logtarget in `/etc/fail2ban/fail2ban.conf`:
-
-```
+[Definition]
 logtarget = /var/log/fail2ban/fail2ban.log
 
 ```
 
+Finally, [reload systemd](/index.php/Systemd#Using_units "Systemd") to apply the changes of the unit and [restart](/index.php/Restart "Restart") `fail2ban.service`.
+
 ## Configuration
 
-**Note:** Due to the possibility of the `jail.conf` file being overwritten or improved during a distribution update, it is recommended to provide customizations in a `jail.local` file, or separate *.conf* files under the `jail.d/` directory, e.g. `jail.d/ssh-iptables.conf`.
+Due to the possibility of the `/etc/fail2ban/jail.conf` file being overwritten or improved during a distribution update, it is recommended to [Create](/index.php/Create "Create") `/etc/fail2ban/jail.local` file. For example to change default ban time to 1 day:
 
-### Default jails
+ `/etc/fail2ban/jail.local` 
+```
+[DEFAULT]
+bantime = 1d
 
-Jails for many different services are already present in `/etc/fail2ban/jail.conf` but not enabled by default. You can copy the section headers into a .local file of your choice, enable them (and optionally override settings).
+```
 
-[Restart](/index.php/Restart "Restart") `fail2ban.service` to test your configuration. Watch out for "file not found errors" from *fail2ban-client* if the fail2ban service fails to start. Adjust the paths `paths-arch.conf` or `jail.local` as needed. Many of the default jails might not work out of the box.
+Or create separate *name.local* files under the `/etc/fail2ban/jail.d` directory, e.g. `/etc/fail2ban/jail.d/ssh-iptables.local`.
+
+[Restart](/index.php/Restart "Restart") `fail2ban.service` to apply the configuration changes.
+
+### Enabling jails
+
+[Append](/index.php/Append "Append") `enabled = true` to service one want to use, e.g. to enable the [OpenSSH](/index.php/OpenSSH "OpenSSH") jail:
+
+ `/etc/fail2ban/jail.local` 
+```
+[sshd]
+enabled = true
+```
+
+See [Fail2ban#Custom SSH jail](/index.php/Fail2ban#Custom_SSH_jail "Fail2ban").
+
+### Firewall and services
+
+Most [firewalls](/index.php/Firewalls "Firewalls") and services should work out of the box. See `/etc/fail2ban/action.d/` for examples, e.g. [ufw.conf](https://github.com/fail2ban/fail2ban/blob/master/config/action.d/ufw.conf).
+
+## Tips and tricks
 
 ### Custom SSH jail
 
 **Warning:** If the attacker knows your IP address, they can send packets with a spoofed source header and get your IP address locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
-Edit `/etc/fail2ban/jail.d/jail.conf`, add this section and update the list of trusted IP addresses.
+Edit `/etc/fail2ban/jail.d/sshd.local`, add this section and update the list of trusted IP addresses in `ignoreip`.
 
 If your firewall is [iptables](/index.php/Iptables "Iptables"):
 
 ```
-[DEFAULT]
-bantime = 1d
-ignoreip = 127.0.0.1/8
-
 [sshd]
 enabled  = true
 filter   = sshd
@@ -95,6 +148,7 @@ backend  = systemd
 maxretry = 5
 findtime = 1d
 bantime  = 2w
+ignoreip = 127.0.0.1/8
 
 ```
 
@@ -102,14 +156,7 @@ fail2ban has IPv6 support since version 0.10\. Adapt your firewall accordingly, 
 
 **Note:** If your firewall is [shorewall](/index.php/Shorewall "Shorewall"), replace `iptables` with `shorewall`. You can also set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf`, otherwise the rule added to ban an IP address will affect only new connections.
 
-Also do not forget to add/change:
-
-```
-LogLevel VERBOSE
-
-```
-
-in your `/etc/ssh/sshd_config`. Else, password failures are not logged correctly.
+**Note:** It may be necessary to set `LogLevel VERBOSE` in `/etc/ssh/sshd_config` to allow full fail2ban monitoring as otherwise password failures may not be logged correctly.
 
 ## See also
 

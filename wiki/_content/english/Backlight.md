@@ -12,16 +12,12 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [4 systemd-backlight service](#systemd-backlight_service)
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
-    *   [5.2 Other utilities](#Other_utilities)
-    *   [5.3 setpci](#setpci)
-    *   [5.4 Using DBus with Gnome](#Using_DBus_with_Gnome)
+    *   [5.2 setpci](#setpci)
+    *   [5.3 Using DBus with Gnome](#Using_DBus_with_Gnome)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
-    *   [6.2 Xflux](#Xflux)
-    *   [6.3 redshift](#redshift)
-    *   [6.4 Clight](#Clight)
-    *   [6.5 NVIDIA settings](#NVIDIA_settings)
-    *   [6.6 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
+    *   [6.2 NVIDIA settings](#NVIDIA_settings)
+    *   [6.3 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
 *   [7 External monitors](#External_monitors)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29)
@@ -164,6 +160,50 @@ If "0", does not restore the backlight settings on boot. However, settings will 
 
 ## Backlight utilities
 
+*   **acpilight** — "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
+
+	[https://github.com/wavexx/acpilight/](https://github.com/wavexx/acpilight/) || [acpilight](https://aur.archlinux.org/packages/acpilight/)
+
+*   **brightd** — Macbook-inspired brightd automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
+
+	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
+
+*   **brightnessctl** — Lightweight brightness control tool (Wayland compatible). Note that brightnessctl is a setuid binary, which might be considered a security risk by some.
+
+	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/)
+
+*   **Calise** — Calculates ambient brightness and sets screen’s correct backlight using a camera.
+
+	[http://calise.sourceforge.net/](http://calise.sourceforge.net/) || [calise](https://aur.archlinux.org/packages/calise/)
+
+*   **Clight** — User daemon utility that aims to fully manage your display. It will automagically change screen backlight level to match ambient brightness, as computed by capturing frames from webcam. Moreover, it can manage your screen temperature, just like redshift does. Finally, it can dim your screen after a timeout.
+
+	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
+
+*   **enlighten** — Very small C utility to control the backlight brightness in Linux.
+
+	[https://github.com/HalosGhost/enlighten](https://github.com/HalosGhost/enlighten) || [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/)
+
+*   **illum** — Backlight manager, which changes the screen backlight level based on keypresses (brightness up and brightness down). Written for newer BIOS/UEFI that does not automatically handle those buttons. This is an alternate to handling those buttons via acpi handlers or via x11/wm hotkeys.
+
+	[https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) || [illum-git](https://aur.archlinux.org/packages/illum-git/)
+
+*   **Light** — Program to control backlight controllers. It is the successor of *LightScript*.
+
+	[https://haikarainen.github.io/light/](https://haikarainen.github.io/light/) || [light](https://aur.archlinux.org/packages/light/)
+
+*   **Lux** — Shell script to easily control brightness on backlight-controllers.
+
+	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
+
+*   **relight** — The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
+
+	[http://xyne.archlinux.ca/projects/relight](http://xyne.archlinux.ca/projects/relight) || [relight](https://aur.archlinux.org/packages/relight/)
+
+*   **xbacklight** — RandR-based backlight control application.
+
+	[https://xorg.freedesktop.org/](https://xorg.freedesktop.org/) || [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight)
+
 ### xbacklight
 
 Brightness can be set using the [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) package.
@@ -213,56 +253,6 @@ Note: You'd need to install [xf86-video-intel](https://www.archlinux.org/package
 
 See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
 
-### Other utilities
-
-*   **brightnessctl** — Lightweight brightness control tool (Wayland compatible). Note that brightnessctl is a setuid binary, which might be considered a security risk by some.
-
-	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/)
-
-*   **light** — Light is the successor and C-port of *LightScript*.
-
-	[https://github.com/haikarainen/light](https://github.com/haikarainen/light) || [light](https://aur.archlinux.org/packages/light/)
-
-*   **acpilight** — acpilight contains an "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
-
-	[https://github.com/wavexx/acpilight/](https://github.com/wavexx/acpilight/) || [acpilight](https://aur.archlinux.org/packages/acpilight/)
-
-*   **illum** — ilum monitors the brightness up and brightness down keys on all input devices (via libevdev) and adjusts the backlight when they are pressed (via sysfs). Written for newer BIOS/UEFI that does not automatically handle those buttons for you. This is an alternate to handling those buttons via acpi handlers or via x11/wm hotkeys.
-
-	[https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) || [illum-git](https://aur.archlinux.org/packages/illum-git/)
-
-*   **relight** — The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
-
-	[http://xyne.archlinux.ca/projects/relight](http://xyne.archlinux.ca/projects/relight) || [relight](https://aur.archlinux.org/packages/relight/)
-
-*   **calise** — The main features of this program are that it is very precise, very light on resource usage, and with the daemon version (.service file for systemd users available too). It has practically no impact on battery life.
-
-	[http://calise.sourceforge.net/mediawiki/index.php/Main_Page](http://calise.sourceforge.net/mediawiki/index.php/Main_Page) || [calise](https://aur.archlinux.org/packages/calise/)
-
-*   **brightd** — Macbook-inspired brightd automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
-
-	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
-
-*   **lux** — lux is a POSIX-compliant Shell script to control brightness on backlight-controllers.
-
-	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
-
-*   **BacklightTooler** — BacklightTooler is a backlight control tool with brightness auto-adjustment using a webcam.
-
-	[https://github.com/cotix/backlighttooler](https://github.com/cotix/backlighttooler) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **Clight** — Inspired by calise, but written in C and with many more features, its initial aim was to turn your webcam into a light sensor: it will adjust screen backlight based on ambient brightness.
-
-	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
-
-*   **Monica** — A monitor calibration tool. It works as frontend to xgamma to alter the gamma correction
-
-	[https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html](https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html) || [monica](https://www.archlinux.org/packages/?name=monica)
-
-*   **Enlighten** — Enlighten is a very small C utility to control the backlight brightness in Linux.
-
-	[https://github.com/HalosGhost/enlighten](https://github.com/HalosGhost/enlighten) || [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/)
-
 ### setpci
 
 It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.
@@ -293,6 +283,26 @@ gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gn
 
 ## Color correction
 
+*   **Clight** — User daemon utility that aims to fully manage your display. It can manage the screen temperature depending on the current time of the day, just like redshift does. It tries to use [geoclue2](https://www.archlinux.org/packages/?name=geoclue2) to retrieve the user position if neither latitude or longitude are set in the configuration file. It also supports fixed times for sunrise and sunset.
+
+	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
+
+*   **Monica** — Monitor calibration tool. It works as frontend to xgamma to alter the gamma correction.
+
+	[https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html](https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html) || [monica](https://www.archlinux.org/packages/?name=monica)
+
+*   **[Redshift](/index.php/Redshift "Redshift")** — Color temperature adjustment tool. It adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](https://en.wikipedia.org/wiki/f.lux "wikipedia:f.lux").
+
+	[http://jonls.dk/redshift/](http://jonls.dk/redshift/) || [redshift](https://www.archlinux.org/packages/?name=redshift)
+
+*   **xcalib** — Lightweight monitor calibration loader which can load an ICC monitor profile to be shared across desktop applications.
+
+	[https://github.com/OpenICC/xcalib](https://github.com/OpenICC/xcalib) || [xcalib](https://aur.archlinux.org/packages/xcalib/)
+
+*   **xgamma** — Alter a monitor's gamma correction.
+
+	[https://xorg.freedesktop.org/](https://xorg.freedesktop.org/) || [xorg-xgamma](https://www.archlinux.org/packages/?name=xorg-xgamma)
+
 ### xcalib
 
 **Note:** *xcalib* does *not* change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (Desktop PCs). Use `xcalib -clear` to reset the LUT.
@@ -305,34 +315,6 @@ $ xcalib -co 40 -a
 ```
 
 This program uses ICC technology to interact with X11 and while the screen is dimmed, you may find that the mouse cursor is just as bright as before.
-
-### Xflux
-
-Xflux is the [f.lux](http://justgetflux.com) port for the X-Windows system. It fluctuates your screen between blue during the day and yellow or orange at night. This helps you adapt to the time of day and stop staying up late because of your bright computer screen.
-
-Various packages exist in the AUR that use *f.lux*.[[3]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/) which handles the command line functionality of *f.lux*. Various daemons exist to handle the automatic startup of the xflux package.
-
-### redshift
-
-[Redshift](/index.php/Redshift "Redshift") uses `randr` to adjust the screen brightness depending on the time of day and your geographic position. It can also do RGB gamma corrections and set color temperatures. As with `xcalib`, this is very much a software solution and the look of the mouse cursor is unaffected. To execute a single quick adjustment of the brightness, try something like this:
-
-```
-redshift -o -l 0:0 -b 0.8 -t 6500:6500
-
-```
-
-**Tip:** If your longitude is west or your latitude is south, you should input it as negative.
-
-Example for Berkeley, CA:
-
-```
-redshift-gtk -l 37.8717:-122.2728 
-
-```
-
-### Clight
-
-[Clight](https://github.com/FedeDP/Clight), available as [clight-git](https://aur.archlinux.org/packages/clight-git/), can adjust the screen temperature depending on the current time of the day. It tries to use [geoclue2](https://www.archlinux.org/packages/?name=geoclue2) to retrieve the user position if neither latitude or longitude are set in the configuration file. It also supports fixed times for sunrise and sunset.
 
 ### NVIDIA settings
 

@@ -81,7 +81,9 @@ You will probably want a [TeX editor](/index.php/List_of_applications/Documents#
 
 ### Paper size
 
-If you would like to set the default page size to something other than A4 (such as "Letter"), run the `texconfig` command. This command is also capable of changing other useful settings.
+It is currently impossible to set the default page size, because the Arch package [removes the tool necessary for this](https://bugs.archlinux.org/task/59094).
+
+Usually, you would run the `texconfig` command, which is also capable of changing other useful settings.
 
 ### Error with "formats not generated" upon update
 

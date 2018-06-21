@@ -10,7 +10,6 @@ Because it does not replace any existing window manager, it is an ideal solution
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Forks and updated versions](#Forks_and_updated_versions)
 *   [2 Configuration](#Configuration)
     *   [2.1 Window transparency](#Window_transparency)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -38,14 +37,6 @@ EndSection
 ```
 
 Xcompmgr can be [installed](/index.php/Installed "Installed") with the package [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). For transparency also [install](/index.php/Install "Install") the [transset-df](https://www.archlinux.org/packages/?name=transset-df). See [Xterm#Automatic transparency](/index.php/Xterm#Automatic_transparency "Xterm") for an example.
-
-### Forks and updated versions
-
-There are some forks available, with various bugfixes:
-
-*   **[Compton](/index.php/Compton "Compton")** — A fork of Xcompmgr that contains most of the previous fixes as well as many others.
-
-	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://www.archlinux.org/packages/?name=compton) [compton-git](https://aur.archlinux.org/packages/compton-git/)
 
 ## Configuration
 

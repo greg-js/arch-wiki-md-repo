@@ -18,6 +18,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [2 Suspend / Hibernation](#Suspend_.2F_Hibernation)
 *   [3 TrackPoint and Touchpad](#TrackPoint_and_Touchpad)
 *   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
+*   [5 UEFI](#UEFI)
 
 ## Hardware
 
@@ -83,3 +84,18 @@ See
 *   X1 Carbon Gen 6 [Power management/Throttling issues](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Power_management.2FThrottling_issues "Lenovo ThinkPad X1 Carbon (Gen 6)")
 *   ThinkPad T480s [Thermal Throttling Fix](/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix "Lenovo ThinkPad T480s")
 *   [https://github.com/erpalma/lenovo-throttling-fix](https://github.com/erpalma/lenovo-throttling-fix)
+
+## UEFI
+
+Lenovo T480 is tied in with Microsoft and will only boot to windows efi file.
+
+Sollution is to rename the .efi to that specific file.
+
+```
+ mount /dev/sdXY /mnt # replace XY with the letter & number of the Arch EFI system partition
+ mkdir -p /mnt/EFI/Microsoft/Boot
+ cp /mnt/EFI/grub/grubx64.efi /mnt/EFI/Microsoft/Boot/bootmgfw.efi
+
+```
+
+Source: [http://www.rodsbooks.com/efi-bootloaders/installation.html#alternative-naming](http://www.rodsbooks.com/efi-bootloaders/installation.html#alternative-naming)

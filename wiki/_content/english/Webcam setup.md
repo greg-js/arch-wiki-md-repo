@@ -39,7 +39,7 @@ usbcore: registered new driver sn9c102
 
 ## Configuration
 
-If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use **Qt V4L2 Test Brench** (*qv4l2*), available in the package [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications.
+If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use **Qt V4L2 Test Bench** (*qv4l2*), available in the package [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications.
 
 ## Applications
 

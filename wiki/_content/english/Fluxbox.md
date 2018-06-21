@@ -235,7 +235,7 @@ To install a Fluxbox theme, extract the theme archive file to a styles directory
 *   Global - `/usr/share/fluxbox/styles`
 *   User only - `~/.fluxbox/styles`
 
-The [fluxmos-styles](https://aur.archlinux.org/packages/fluxmos-styles/) package contains a number of Fluxbox styles from the (now defunct) fluxmod.dk site.
+The [fluxmod-styles](https://aur.archlinux.org/packages/fluxmod-styles/) package contains a number of Fluxbox styles from the (now defunct) fluxmod.dk site.
 
 To create your own Fluxbox styles, please refer to [fluxbox-style(5)](http://fluxbox.org/help/man-fluxbox-style.php), [Fluxbox/Style guide](/index.php/Fluxbox/Style_guide "Fluxbox/Style guide") and [tenr.de Fluxbox style guide](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
 

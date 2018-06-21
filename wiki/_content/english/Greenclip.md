@@ -28,7 +28,7 @@ Enable the service to start at boot:
 ## Usage
 
 1.  Spawn the daemon with `/usr/bin/greenclip daemon` or start/enable the service `systemctl --user start greenclip.service`
-2.  Show entries as a list whithin [rofi](/index.php/Rofi "Rofi") using: `rofi -modi "clipboard:greenclip print" -show clipboard`
+2.  Show entries as a list whithin [rofi](/index.php/Rofi "Rofi") using: `rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'`
 3.  The entry that you have selected will be in your [clipboard](/index.php/Clipboard "Clipboard") now
 4.  Configuration file is placed in `~/.config/greenclip.cfg`
 5.  To clear all clipboard history run `greenclip clear`

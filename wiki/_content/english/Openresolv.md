@@ -16,7 +16,7 @@ Stand-alone DHCP clients:
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") has a hook which uses resolvconf if it is installed.
 
-[Network manager](/index.php/Network_manager "Network manager"):
+[Network managers](/index.php/Network_manager "Network manager"):
 
 *   [netctl](/index.php/Netctl "Netctl") (used by default)
 *   [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager")

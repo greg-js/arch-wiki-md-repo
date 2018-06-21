@@ -116,7 +116,7 @@ You can choose one of the following implementations:
 
 	You can run it manually using `/usr/lib/xfce4/notifyd/xfce4-notifyd`.
 
-	You can also run it automatically at startup for the current user: `systemctl --user enable xfce4-notifyd`.
+	You can also run it via systemd for the current user: `systemctl --user start xfce4-notifyd`.
 
 **Tip:** To configure xfce4-notifyd, run the following command: `xfce4-notifyd-config`.
 

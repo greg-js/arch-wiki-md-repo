@@ -22,7 +22,18 @@ The following applications are just some of the apps which are able to send meta
 
 The following applications can be used to browse or search for recent activity using the Zeitgeist engine:
 
-*   [cairo-dock-plug-ins](https://www.archlinux.org/packages/?name=cairo-dock-plug-ins)
-*   [catfish](https://www.archlinux.org/packages/?name=catfish)
-*   [gnome-activity-journal](https://www.archlinux.org/packages/?name=gnome-activity-journal)
-*   [synapse](https://www.archlinux.org/packages/?name=synapse)
+*   **Catfish** — Versatile file searching tool.
+
+	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
+
+*   **GNOME Activity Journal** — Browse a chronological log of your activities and easily find files, contacts, etc.
+
+	[https://launchpad.net/gnome-activity-journal](https://launchpad.net/gnome-activity-journal) || [gnome-activity-journal](https://www.archlinux.org/packages/?name=gnome-activity-journal)
+
+*   **Recent Events applet (Cairo-Dock plugin)** — Applet for [Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock") using Zeitgeist.
+
+	[http://www.glx-dock.org/](http://www.glx-dock.org/) || [cairo-dock-plug-ins](https://www.archlinux.org/packages/?name=cairo-dock-plug-ins)
+
+*   **Synapse** — Semantic launcher written in Vala that you can use to start applications as well as find and access relevant documents and files by making use of the Zeitgeist engine.
+
+	[https://launchpad.net/synapse-project](https://launchpad.net/synapse-project) || [synapse](https://www.archlinux.org/packages/?name=synapse)

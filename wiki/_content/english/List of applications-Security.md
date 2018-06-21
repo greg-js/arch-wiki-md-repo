@@ -216,6 +216,10 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 	[http://www.clamav.net/](http://www.clamav.net/) || [clamav](https://www.archlinux.org/packages/?name=clamav)
 
+*   **ClamTk** — Graphical front-end for ClamAV using Perl and Gtk libraries. It is designed to be an easy-to-use, lightweight, on-demand antivirus scanner for Linux systems.
+
+	[https://dave-theunsub.github.io/clamtk/](https://dave-theunsub.github.io/clamtk/) || [clamtk](https://www.archlinux.org/packages/?name=clamtk), Nautilus plugin: [clamtk-gnome](https://aur.archlinux.org/packages/clamtk-gnome/), MATE plugin: [clamtk-mate](https://aur.archlinux.org/packages/clamtk-mate/), Thunar plugin: [thunar-sendto-clamtk](https://aur.archlinux.org/packages/thunar-sendto-clamtk/)
+
 *   **Linux Malware Detect** — Malware scanner designed around the threats faced in shared hosted environments.
 
 	[https://www.rfxn.com/projects/linux-malware-detect/](https://www.rfxn.com/projects/linux-malware-detect/) || [maldet](https://aur.archlinux.org/packages/maldet/)
@@ -376,17 +380,25 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://gnupg.org/](https://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
 
+*   **GPG-Crypter** — Graphical front-end to GnuPG(GPG) using the GTK3 toolkit and GPGME library.
+
+	[https://sourceforge.net/projects/gpg-crypter/](https://sourceforge.net/projects/gpg-crypter/) || [gpg-crypter](https://www.archlinux.org/packages/?name=gpg-crypter)
+
 *   **gzsteg** — Utility that can hide data in gzip compressed files
 
 	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Keybase](/index.php/Keybase "Keybase")** — Key directory mapping social media identities, with cross platform encrypted chat, cloud storage, and git repositories.
 
-	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase) or [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/)
+	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase)
 
 *   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — Simple interface for GnuPG, for KDE.
 
 	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
+
+*   **Kleopatra** — Certificate Manager and Unified Crypto GUI for KDE. It supports managing X.509 and OpenPGP certificates in the GpgSM keybox and retrieving certificates from LDAP servers.
+
+	[https://www.kde.org/applications/utilities/kleopatra/](https://www.kde.org/applications/utilities/kleopatra/) || [kleopatra](https://www.archlinux.org/packages/?name=kleopatra)
 
 *   **minisign** — Simple program that only inplements key signing
 
@@ -445,6 +457,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **KeePassXC** — Community fork of KeePassX with more active development. Compatible with KeePass v.1.x (import only) and KeePass v.2.x.
 
 	[https://keepassxc.org/](https://keepassxc.org/) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
+
+*   **KWalletManager** — Tool to manage the passwords on your system. By using the KDE wallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with the wallet.
+
+	[https://www.kde.org/applications/system/kwalletmanager/](https://www.kde.org/applications/system/kwalletmanager/) || [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager)
 
 *   **LastPass** — Hosted password manager.
 

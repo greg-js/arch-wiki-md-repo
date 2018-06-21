@@ -4,20 +4,30 @@ Veja também [Wikipedia:pt:Arch Linux](https://en.wikipedia.org/wiki/pt:Arch_Lin
 
 ## Contents
 
-*   [1 2017](#2017)
-*   [2 2016](#2016)
-*   [3 2015](#2015)
-*   [4 2012](#2012)
-*   [5 2011](#2011)
-*   [6 2010](#2010)
-*   [7 2009](#2009)
-*   [8 2008](#2008)
-*   [9 2006](#2006)
+*   [1 2018](#2018)
+*   [2 2017](#2017)
+*   [3 2016](#2016)
+*   [4 2015](#2015)
+*   [5 2012](#2012)
+*   [6 2011](#2011)
+*   [7 2010](#2010)
+*   [8 2009](#2009)
+*   [9 2008](#2008)
+*   [10 2006](#2006)
+
+## 2018
+
+*   [O que você precisa saber sobre o GNU/Linux – Debian e Arch Linux](https://canaltech.com.br/linux/o-que-voce-precisa-saber-sobre-o-gnulinux-debian-e-arch-linux-109626/) Pedro Cipoli - canaltech.com.br, 2018-03-09
 
 ## 2017
 
+*   [5 bons motivos para você começar a usar o Arch Linux](https://www.linuxdescomplicado.com.br/2017/06/5-bons-motivos-para-voce-comecar-a-usar-o-arch-linux.html) Ricardo Ferreira - linuxdescomplicado.com.br, 2017-06-08
+
 *   [História do Arch Linux | Como Nasceu?](https://www.youtube.com/watch?v=8q_o6ZHsqyA) Oficina do Tux - Youtube.com, 2017-06-11
+
 *   [Arch Linux – a melhor distro de todos os tempos?](https://imasters.com.br/infra/linux/arch-linux-melhor-distro-de-todos-os-tempos/?trace=1519021197&source=single) Fábio Akita - imasters.com.br, 2017-04-06
+
+*   [A equipe do Arch Linux está se preparando para encerrar o suporte a arquitetura i686 (x86 32 bits)](https://www.linuxdescomplicado.com.br/2017/01/a-equipe-do-arch-linux-esta-se-preparando-para-encerrar-o-suporte-a-arquitetura-i686-x86-32-bits.html) Ricardo Ferreira - linuxdescomplicado.com.br, 2017-01-25
 
 ## 2016
 
@@ -38,6 +48,8 @@ Veja também [Wikipedia:pt:Arch Linux](https://en.wikipedia.org/wiki/pt:Arch_Lin
 ## 2011
 
 *   [Utilizando o Arch Linux no Desktop](https://bitbucket.org/berlotto/archlinux-book/downloads/livro.pdf) Sérgio Berlotto - [archlinux-br.org](http://www.archlinux-br.org/livro/) e [archlinuxbook.wordpress.com](https://archlinuxbook.wordpress.com/livro/), 2011-02-27
+
+*   [Hugo Dória - Arch Linux - Castálio Podcast](https://castalio.info/hugo-doria-arch-linux.html) (história do Arch 01:50; criação do Arch-BR 09:00) Og Maciel - castalio.info, 2011-08-08
 
 ## 2010
 

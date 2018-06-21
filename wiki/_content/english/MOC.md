@@ -1,4 +1,4 @@
-[Music On Console](https://moc.daper.net/) (MOC) is a lightweight music player which consists of 2 parts, a server (Moc) and a player/interface (Mocp). This is similar to [mpd](/index.php/Mpd "Mpd"), but unlike *mpd*, Moc comes with an interface. Its server does not support remote access.
+[Music On Console](https://moc.daper.net/) is a lightweight music player similar to [MPD](/index.php/MPD "MPD"), but unlike it, MOC comes with an interface and its server does not support remote access.
 
 ## Contents
 

@@ -238,18 +238,10 @@ Re-login to ensure the new features are activated.
 
 ### Enabling templates catching
 
-Create the `tmp` directory:
+Edit `/etc/webapps/phpmyadmin/config.inc.php` to add the line:
 
 ```
-# mkdir /usr/share/webapps/phpMyAdmin/tmp
-
-```
-
-Set read/write permissions for the `http` [user](/index.php/User "User"):
-
-```
-# chmod 750 /usr/share/webapps/phpMyAdmin/tmp
-# chown http:http /usr/share/webapps/phpMyAdmin/tmp
+ $cfg['TempDir'] = '/tmp/phpmyadmin'
 
 ```
 

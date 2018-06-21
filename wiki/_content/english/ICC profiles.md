@@ -34,6 +34,10 @@ As it pertains to general desktop use, an [ICC profile](https://en.wikipedia.org
 
 	[https://argyllcms.com/](https://argyllcms.com/) || [argyllcms](https://www.archlinux.org/packages/?name=argyllcms)
 
+*   **ColorHug** — The Hughski ColorHug Colorimeter is a low cost open-source hardware sensor used to calibrate screens. This package includes the client tools which allows the user to upgrade the firmware on the sensor or to query the sensor from command line scripts.
+
+	[https://github.com/hughski/colorhug-client](https://github.com/hughski/colorhug-client) || [colorhug-client](https://www.archlinux.org/packages/?name=colorhug-client)
+
 *   **DisplayCAL** — Display calibration and profiling solution with a focus on accuracy and versatility. At its core it relies on ArgyllCMS color management system, to take measurements, create calibrations and profiles, and for a variety of other advanced color related tasks.
 
 	[https://displaycal.net/](https://displaycal.net/) || [displaycal](https://www.archlinux.org/packages/?name=displaycal)

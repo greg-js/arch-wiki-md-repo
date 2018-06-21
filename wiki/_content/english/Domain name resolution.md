@@ -3,7 +3,7 @@ Related articles
 *   [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services")
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 
-This article explains how to configure [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia:Domain name") resolution and resolve domain names.
+In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia:Domain name") represents an IP address and is associated to it in the [DNS](https://en.wikipedia.org/wiki/Domaine_Name_System "wikipedia:Domaine Name System"). This article explains how to configure domain name resolution.
 
 ## Contents
 
@@ -16,8 +16,9 @@ This article explains how to configure [domain name](https://en.wikipedia.org/wi
     *   [2.4 Local domain names](#Local_domain_names)
 *   [3 Systemd-resolved](#Systemd-resolved)
 *   [4 Performance](#Performance)
-*   [5 Lookup utilities](#Lookup_utilities)
-*   [6 See also](#See_also)
+*   [5 Privacy](#Privacy)
+*   [6 Lookup utilities](#Lookup_utilities)
+*   [7 See also](#See_also)
 
 ## Name Service Switch
 
@@ -47,9 +48,9 @@ $ getent hosts *domain_name*
 
 ## Glibc resolver
 
-The glibc [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") resolver reads `/etc/resolv.conf` ([resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)) for every resolution to determine the nameservers and options to use.
+The glibc resolver reads `/etc/resolv.conf` for every resolution to determine the nameservers and options to use.
 
-Nameservers listed first are tried first, up to three nameservers may be listed. Lines starting with a number sign are ignored.
+[resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5) lists nameservers together with some configuration options. Nameservers listed first are tried first, up to three nameservers may be listed. Lines starting with a number sign are ignored.
 
 **Note:** The glibc resolver does not cache queries. See [#Performance](#Performance) for more information.
 
@@ -145,6 +146,10 @@ The [#Glibc resolver](#Glibc_resolver) does not cache queries. If you want local
 **Tip:** The *dig* and *drill* [#Lookup utilities](#Lookup_utilities) report the query time.
 
 Internet service providers usually provide working DNS servers. A router may also add an extra DNS server in case it has its own cache server. Switching between DNS servers is transparent for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could cause delays.
+
+## Privacy
+
+Most DNS servers keep a log of IP addresses and sites visited on a more or less temporary basis. The data collected can be used to perform various statistical studies. Personally-identifying information have value and can also be rented or sold to third parties. [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services") provides a list of popular services, check their privacy policy for information about how user data is handled.
 
 ## Lookup utilities
 

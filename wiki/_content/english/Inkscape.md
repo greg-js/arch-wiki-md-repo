@@ -6,6 +6,7 @@
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Tooltips unreadable with KDE Plasma](#Tooltips_unreadable_with_KDE_Plasma)
     *   [2.2 Pan using spacebar and mouse does not work](#Pan_using_spacebar_and_mouse_does_not_work)
+    *   [2.3 Cannot change keyboard shortcuts](#Cannot_change_keyboard_shortcuts)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -30,6 +31,18 @@ Section "InputClass"
 EndSection
 
 ```
+
+### Cannot change keyboard shortcuts
+
+To be able to change keyboard shortcuts, create a copy of the shortcut file that you can edit:
+
+```
+mkdir -p ~/.config/inkscape/keys
+cp /usr/share/inkscape/keys/default.xml ~/.config/inkscape/keys/
+
+```
+
+and restart the application.
 
 ## See also
 

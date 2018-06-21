@@ -31,13 +31,13 @@
 
 First, to give an overview of the overall directory structure of Hiawatha, the hierarchy suggested by the default configuration is shown below:
 
-*   `/etc/hiawatha` - program configuration files
-*   `/etc/hiawatha/tls` - website TLS certificate
-*   `/srv/http/hiawatha` - root for the default blank website associated with the IP address
-*   `/var/lib/hiawatha` - cache for http compression and uploads
-*   `/var/log/hiawatha` - log files for the program and the default website
-*   `/srv/http/*my-domain*/public` - website root
-*   `/srv/http/*my-domain*/log` - website log files
+*   `/etc/hiawatha/` - program configuration files
+*   `/etc/hiawatha/tls/` - website TLS certificate
+*   `/srv/http/hiawatha/` - root for the default blank website associated with the IP address
+*   `/var/lib/hiawatha/` - cache for http compression and uploads
+*   `/var/log/hiawatha/` - log files for the program and the default website
+*   `/srv/http/*my-domain*/public/` - website root
+*   `/srv/http/*my-domain*/log/` - website log files
 
 ### Basic webserver setup
 
@@ -51,7 +51,7 @@ Next, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start")
 
 For further details see the official [how to](https://www.hiawatha-webserver.org/howto) and the [hiawatha(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hiawatha.1) manual page.
 
-**Note:** Hiawatha supports on-the-fly [gzip content encoding](https://en.wikipedia.org/wiki/HTTP_compression "wikipedia:HTTP compression"). It will gzip the requested file and cache it on disk in `/var/lib/hiawatha/gzipped`. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.
+**Note:** Hiawatha supports on-the-fly [gzip content encoding](https://en.wikipedia.org/wiki/HTTP_compression "wikipedia:HTTP compression"). It will gzip the requested file and cache it on disk in `/var/lib/hiawatha/gzipped/`. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.
 
 ### CGI
 
@@ -160,11 +160,11 @@ As this solution does not use an official certificate authority (CA), a security
 
 #### Install
 
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol and therefore supporting wildcard domains such as **.mydomain.org*. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into a suitable location, for example `/usr/local/letsencrypt`.
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol and therefore supporting wildcard domains such as **.mydomain.org*. The script and the [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files are available in `/usr/share/hiawatha/letsencrypt.tar.gz` and should be unarchived into a suitable location, for example `/usr/local/lib/hiawatha/letsencrypt`.
 
 A configuration file example `letsencrypt.conf` is provided. The user's configuration must be saved either in `~/.letsencrypt/`, `/etc/letsencrypt/` or `/usr/local/etc/letsencrypt/`.
 
-In the user's configuration file, the variable `HIAWATHA_RESTART_COMMAND` must be replaced by `systemctl restart hiawatha.service`.
+In the user's configuration file, the value of the variable `HIAWATHA_RESTART_COMMAND` must be replaced by `systemctl restart hiawatha.service`.
 
 #### Obtain a certificate
 
@@ -173,7 +173,9 @@ The detailed instructions are described in `README.txt` and the tool configurati
 1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ ./letsencrypt register` 
 2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `# ./letsencrypt request www.my-domain.org` 
 
-If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again.
+If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again. Do not rush into production before making sure the test was successful: letsencrypt enforces rate limit for failed attempts.
+
+**Note:** The port `80` must be forwarded to your server and a binding to port `80` must be configured in hiawatha so that letsencrypt can fetch the challenge, let say `http://*www.my-domain.org*/.well-known/acme-challenge/Cl887Wpvc297mfkdNZRuAl48h_FTLnA_ZbhJo3FdExY`
 
 #### Auto renewal
 

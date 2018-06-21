@@ -25,18 +25,19 @@ If the host system runs Arch Linux, this can be achieved by simply installing [a
 *   [1 Backup and Preparation](#Backup_and_Preparation)
 *   [2 From a host running Arch Linux](#From_a_host_running_Arch_Linux)
 *   [3 From a host running another Linux distribution](#From_a_host_running_another_Linux_distribution)
-    *   [3.1 Creating the chroot](#Creating_the_chroot)
-        *   [3.1.1 Method A: Using the bootstrap image (recommended)](#Method_A:_Using_the_bootstrap_image_.28recommended.29)
-        *   [3.1.2 Method B: Using the LiveCD image](#Method_B:_Using_the_LiveCD_image)
-    *   [3.2 Using the chroot environment](#Using_the_chroot_environment)
-        *   [3.2.1 Initializing pacman keyring](#Initializing_pacman_keyring)
-        *   [3.2.2 Selecting a mirror and downloading basic tools](#Selecting_a_mirror_and_downloading_basic_tools)
-    *   [3.3 Installation tips](#Installation_tips)
-        *   [3.3.1 Debian-based host](#Debian-based_host)
-            *   [3.3.1.1 /dev/shm](#.2Fdev.2Fshm)
-            *   [3.3.1.2 /dev/pts](#.2Fdev.2Fpts)
-            *   [3.3.1.3 lvmetad](#lvmetad)
-        *   [3.3.2 Fedora-based host](#Fedora-based_host)
+    *   [3.1 Using pacman from the host system](#Using_pacman_from_the_host_system)
+    *   [3.2 Creating a chroot](#Creating_a_chroot)
+        *   [3.2.1 Method A: Using the bootstrap image (recommended)](#Method_A:_Using_the_bootstrap_image_.28recommended.29)
+        *   [3.2.2 Method B: Using the LiveCD image](#Method_B:_Using_the_LiveCD_image)
+    *   [3.3 Using a chroot environment](#Using_a_chroot_environment)
+        *   [3.3.1 Initializing pacman keyring](#Initializing_pacman_keyring)
+        *   [3.3.2 Selecting a mirror and downloading basic tools](#Selecting_a_mirror_and_downloading_basic_tools)
+    *   [3.4 Installation tips](#Installation_tips)
+        *   [3.4.1 Debian-based host](#Debian-based_host)
+            *   [3.4.1.1 /dev/shm](#.2Fdev.2Fshm)
+            *   [3.4.1.2 /dev/pts](#.2Fdev.2Fpts)
+            *   [3.4.1.3 lvmetad](#lvmetad)
+        *   [3.4.2 Fedora-based host](#Fedora-based_host)
 *   [4 Things to check before you reboot](#Things_to_check_before_you_reboot)
 *   [5 Replacing the existing system without a LiveCD](#Replacing_the_existing_system_without_a_LiveCD)
     *   [5.1 Set old swap partition as new root partition](#Set_old_swap_partition_as_new_root_partition)
@@ -86,9 +87,15 @@ There are multiple tools which automate a large part of the steps described in t
 *   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
 *   [vps2arch](https://gitlab.com/drizzt/vps2arch) (Bash)
 
-The manual way is presented in the following subsections. The idea is to run an Arch system inside the host system, with the actual installation being executed from the Arch system. The nested system is contained inside a chroot.
+The manual way is presented in the following subsections. The idea is to either get [pacman](/index.php/Pacman "Pacman") working directly on the host system, or to run an Arch system inside the host system, with the actual installation being executed from the Arch system. The nested system is contained inside a chroot.
 
-### Creating the chroot
+### Using pacman from the host system
+
+[Pacman](https://git.archlinux.org/arch-install-scripts.git/) can be compiled on most Linux distributions, and used directly on the host system to bootstrap Arch Linux. The [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) should run without issues directly from the downloaded sources on any recent distribution.
+
+Some distributions provide a pacman package in their official repositories which can be used for this purpose. At the current point in time, Gentoo and Fedora are both known to do so. Fedora also provides the arch-install-scripts.
+
+### Creating a chroot
 
 Two methods to setup and enter the chroot are presented below, from the easiest to the most complicated. Select only one of the two methods. Then, continue at [#Using the chroot environment](#Using_the_chroot_environment).
 
@@ -158,9 +165,9 @@ It is possible to mount the root image of the latest Arch Linux installation med
 
  `# chroot squashfs-root bash` 
 
-### Using the chroot environment
+### Using a chroot environment
 
-The bootstrap environment is really barebones (no `nano`, no `ping`, no `cryptsetup`, no `lvm`). Therefore, we need to set up [pacman](/index.php/Pacman "Pacman") in order to download the rest of the `base` and, if needed, `base-devel`.
+The bootstrap environment is really barebones (no `nano`, no `ping`, no `cryptsetup`, no `lvm`). Therefore, we need to set up pacman in order to download the rest of the `base` and, if needed, `base-devel`.
 
 #### Initializing pacman keyring
 

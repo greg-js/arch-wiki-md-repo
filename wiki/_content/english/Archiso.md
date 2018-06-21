@@ -53,7 +53,7 @@ Archiso comes with two "profiles": *releng* and *baseline*.
 Now, copy the profile of your choice to a directory (*archlive* in the example below) where you can make adjustments and build it. Execute the following, replacing `**profile**` with either `releng` or `baseline`.
 
 ```
-# cp -r /usr/share/archiso/configs/**profile**/* *archlive*
+# cp -r /usr/share/archiso/configs/**profile**/ *archlive*
 
 ```
 

@@ -535,7 +535,7 @@ A syslog facility code is used to specify the type of program that is logging th
 | 2 | mail | mail system | Archaic POSIX still supported and sometimes used (for more [mail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1)) |
 | 3 | daemon | system daemons | All daemons, including systemd and its subsystems |
 | 4 | auth | security/authorization messages | Also watch for different facility 10 |
-| 5 | syslog | messages generated internally by syslogd | As it standartized for syslogd, not used by systemd (see facility 3) |
+| 5 | syslog | messages generated internally by syslogd | For syslogd implementations (not used by systemd, see facility 3) |
 | 6 | lpr | line printer subsystem (archaic subsystem) |
 | 7 | news | network news subsystem (archaic subsystem) |
 | 8 | uucp | UUCP subsystem (archaic subsystem) |

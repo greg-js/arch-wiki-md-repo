@@ -191,17 +191,39 @@ Part Number                                     OCZ3G1600LV2G
 
 There are a variety of front-ends for sensors data.
 
-*   [conky](/index.php/Conky "Conky") - Conky is an advanced, highly configurable system monitor for X based on torsmo
-*   [xsensors](https://www.archlinux.org/packages/?name=xsensors) - X11 interface to lm_sensors
-*   [psensor](https://www.archlinux.org/packages/?name=psensor) - GTK+ application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using [hddtemp](/index.php/Hddtemp "Hddtemp") or libatasmart).
+*   **psensor** — GTK+ application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using [hddtemp](/index.php/Hddtemp "Hddtemp") or libatasmart).
+
+	[https://wpitchoune.net/psensor/](https://wpitchoune.net/psensor/) || [psensor](https://www.archlinux.org/packages/?name=psensor)
+
+*   **xsensors** — X11 interface to lm_sensors.
+
+	[http://linuxhardware.org/xsensors/](http://linuxhardware.org/xsensors/) || [xsensors](https://www.archlinux.org/packages/?name=xsensors)
 
 For specific [Desktop environments](/index.php/Desktop_environments "Desktop environments"):
 
-*   [sensors-applet](https://www.archlinux.org/packages/?name=sensors-applet) - applet for the [GNOME](/index.php/GNOME "GNOME") Panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings.
-*   [gnome-shell-extension-system-monitor-git](https://aur.archlinux.org/packages/gnome-shell-extension-system-monitor-git/) - System monitor extension for [GNOME](/index.php/GNOME "GNOME") Shell.
-*   [plasma5-applets-thermal-monitor-git](https://aur.archlinux.org/packages/plasma5-applets-thermal-monitor-git/) - Is an example of the [widgets](/index.php/KDE#Widgets "KDE") available for [KDE](/index.php/KDE "KDE") desktop.
-*   [sensors-lxpanel-plugin](https://aur.archlinux.org/packages/sensors-lxpanel-plugin/) -- A lm_sensors plugin for the [LXDE](/index.php/LXDE "LXDE") panel. lxpanel also includes a simple 'Temperature Monitor' plugin.
-*   [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) - A lm_sensors plugin for the [Xfce](/index.php/Xfce "Xfce") panel
+*   **Freon (GNOME Shell extension)** — Extension for displaying CPU temperature, disk temperature, video card temperature , voltage and fan RPM in [GNOME](/index.php/GNOME "GNOME") Shell.
+
+	[https://github.com/UshakovVasilii/gnome-shell-extension-freon](https://github.com/UshakovVasilii/gnome-shell-extension-freon) || [gnome-shell-extension-freon](https://aur.archlinux.org/packages/gnome-shell-extension-freon/)
+
+*   **GNOME Sensors Applet** — Applet for the [GNOME](/index.php/GNOME "GNOME") Panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings.
+
+	[http://sensors-applet.sourceforge.net/](http://sensors-applet.sourceforge.net/) || [sensors-applet](https://www.archlinux.org/packages/?name=sensors-applet)
+
+*   **lm-sensors (LXPanel plugin)** — Monitor temperature/voltages/fan speeds in [LXDE](/index.php/LXDE "LXDE") through lm-sensors.
+
+	[http://danamlund.dk/sensors_lxpanel_plugin/](http://danamlund.dk/sensors_lxpanel_plugin/) || [sensors-lxpanel-plugin](https://aur.archlinux.org/packages/sensors-lxpanel-plugin/)
+
+*   **MATE Sensors Applet** — Display readings from hardware sensors in your [MATE](/index.php/MATE "MATE") panel.
+
+	[https://github.com/mate-desktop/mate-sensors-applet](https://github.com/mate-desktop/mate-sensors-applet) || [mate-sensors-applet](https://www.archlinux.org/packages/?name=mate-sensors-applet)
+
+*   **Sensors (Xfce4 panel plugin)** — Hardware sensors plugin for the [Xfce](/index.php/Xfce "Xfce") panel.
+
+	[http://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin](http://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin) || [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin)
+
+*   **Thermal Monitor (Plasma 5 applet)** — [KDE](/index.php/KDE "KDE") Plasma applet for monitoring CPU, GPU and other available temperature sensors.
+
+	[https://github.com/kotelnik/plasma-applet-thermal-monitor](https://github.com/kotelnik/plasma-applet-thermal-monitor) || [plasma5-applets-thermal-monitor-git](https://www.archlinux.org/packages/?name=plasma5-applets-thermal-monitor-git)
 
 ### sensord
 

@@ -43,7 +43,7 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 *   For 32-bit application support, also install the [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) package from the [multilib](/index.php/Multilib "Multilib") repostory.
 *   For the DDX driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), install the [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package.
-*   For [Vulkan](/index.php/Vulkan "Vulkan") support, install the [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) package.
+*   For [Vulkan](/index.php/Vulkan "Vulkan") support, install the [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) package. Optionally install the [lib32-vulkan-radeon](https://www.archlinux.org/packages/?name=lib32-vulkan-radeon) package for 32-bit application support.
 
 Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and [lib32-libva-mesa-driver](https://www.archlinux.org/packages/?name=lib32-libva-mesa-driver) or [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) for VA-API and [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages for VDPAU.
 

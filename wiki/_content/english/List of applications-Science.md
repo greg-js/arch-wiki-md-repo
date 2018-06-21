@@ -470,6 +470,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
 
+*   **GTKWave** — Fully featured GTK+ based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
+
+	[http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) || [gtkwave](https://aur.archlinux.org/packages/gtkwave/)
+
 *   **Logisim** — Educational digital logic design and simulation software, written in Java, officially its development has stopped.
 
 	[https://sourceforge.net/projects/circuit/](https://sourceforge.net/projects/circuit/) || [logisim](https://aur.archlinux.org/packages/logisim/)

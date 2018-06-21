@@ -11,10 +11,10 @@ The Arch Security Team is a group of volunteers whose goal is to track security 
 *   [4 Resources](#Resources)
     *   [4.1 RSS](#RSS)
     *   [4.2 Mailing lists](#Mailing_lists)
-    *   [4.3 Other Distributions](#Other_Distributions)
+    *   [4.3 Other distributions](#Other_distributions)
     *   [4.4 Other](#Other)
     *   [4.5 More](#More)
-*   [5 Team Members](#Team_Members)
+*   [5 Team members](#Team_members)
 
 ## Mission
 
@@ -24,7 +24,7 @@ The most important duty of the team is to find and track issues assigned a [Comm
 
 They publish ASAs (*Arch Linux Security Advisory*) which is an Arch-specific warning disseminated to Arch users. ASAs are scheduled in the tracker for peer-review, and need two acknowledgments from team members before being published.
 
-The *Arch Linux security tracker* is a platform used by the Arch Security Team to track packages, add CVEs and generate advisory text.
+The [Arch Linux security tracker](https://security.archlinux.org/) is a platform used by the Arch Security Team to track packages, add CVEs and generate advisory text.
 
 **Note:**
 
@@ -36,15 +36,10 @@ The *Arch Linux security tracker* is a platform used by the Arch Security Team t
 To get involved in the identification of the vulnerabilities, it is recommended to:
 
 *   Follow the [#archlinux-security](irc://irc.freenode.net/archlinux-security) IRC channel. It is the main communication medium for reporting and discussing CVEs, packages affected and first fixed package version.
-
 *   In order to be warned early about new issues, one can monitor the recommended [#Mailing lists](#Mailing_lists) for new CVEs, along with other sources if required.
-
 *   We encourage volunteers to look over the advisories for mistakes, questions, or comments and report in the IRC channel.
-
 *   Subscribe to the mailing lists [arch-security](https://lists.archlinux.org/listinfo/arch-security) and [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security).
-
 *   Committing code to the [arch-security-tracker (GitHub)](https://github.com/archlinux/arch-security-tracker) project is a great way to contribute to the team.
-
 *   Derivative distributions that rely on Arch Linux package repositories are encouraged to contribute. This helps the security of all the users.
 
 ## Procedure
@@ -117,7 +112,7 @@ The following tasks must be performed by team members:
 
 Also consider following the mailing lists for specific packages, such as LibreOffice, X.org, Puppetlabs, ISC, etc.
 
-### Other Distributions
+### Other distributions
 
 Resources of other distributions (to look for CVE, patch, comments etc.):
 
@@ -169,7 +164,7 @@ NVD and Mitre do not necessarily fill their CVE entry immediately after attribut
 
 For more resources, please see the OpenWall's [Open Source Software Security Wiki](http://oss-security.openwall.org/wiki/).
 
-## Team Members
+## Team members
 
 The current members of the Arch Security Team are:
 

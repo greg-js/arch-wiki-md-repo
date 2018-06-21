@@ -105,7 +105,7 @@ It is possible to edit menu entries by editing their *.desktop* files stored in 
 
 ### Desktop icons are grouped together
 
-When moving icons on the desktop it is possible to place them a bit too close to each other making them connected. If unable to separate them Stop Desktop from Session Settings, remove `.config/pcmanfm-qt/lxqt/desktop-items-0.conf` and Start Desktop again.
+When moving icons on the desktop it is possible to place them a bit too close to each other making them connected. If unable to separate them Stop Desktop from Session Settings, remove `~/.config/pcmanfm-qt/lxqt/desktop-items-0.conf` and Start Desktop again.
 
 ## Tips and tricks
 

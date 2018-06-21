@@ -49,8 +49,8 @@ This article provides information on basic system diagnostics relating to perfor
         *   [3.4.3 Cpulimit](#Cpulimit)
     *   [3.5 irqbalance](#irqbalance)
 *   [4 Graphics](#Graphics)
-    *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
-    *   [4.2 DRIconf](#DRIconf)
+    *   [4.1 Xorg configuration](#Xorg_configuration)
+    *   [4.2 Mesa configuration](#Mesa_configuration)
     *   [4.3 Overclocking with amdgpu](#Overclocking_with_amdgpu)
 *   [5 RAM and swap](#RAM_and_swap)
     *   [5.1 Clock frequency and timings](#Clock_frequency_and_timings)
@@ -351,15 +351,21 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI) and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
 
-### Xorg.conf configuration
+### Xorg configuration
 
-Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI") and [Intel](/index.php/Intel "Intel") articles. Improper settings may stop Xorg from working, so caution is advised.
+Graphics performance may depend on the settings in [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5); see the [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI") and [Intel](/index.php/Intel "Intel") articles. Improper settings may stop Xorg from working, so caution is advised.
 
-### DRIconf
+### Mesa configuration
 
-[driconf](https://www.archlinux.org/packages/?name=driconf) (**DRI** **CONF**igurator) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
+The performance of the Mesa drivers can be configured via [drirc](https://dri.freedesktop.org/wiki/ConfigurationInfrastructure/). GUI configuration tools are available:
 
-[adriconf](https://aur.archlinux.org/packages/adriconf/) and [adriconf-git](https://aur.archlinux.org/packages/adriconf-git/) (**A**dvanced **DRI** **CONF**igurator) is an improved version of DRIconf, with refreshed interface and better handling of options to set.
+*   **adriconf (Advanced DRI Configurator)** — Tool to set options and configure applications using the standard drirc file used by the Mesa drivers.
+
+	[https://github.com/jlHertel/adriconf/](https://github.com/jlHertel/adriconf/) || [adriconf](https://aur.archlinux.org/packages/adriconf/)
+
+*   **DRIconf** — Configuration applet for the Direct Rendering Infrastructure. It allows customizing performance and visual quality settings of OpenGL drivers on a per-driver, per-screen and/or per-application level.
+
+	[https://dri.freedesktop.org/wiki/DriConf/](https://dri.freedesktop.org/wiki/DriConf/) || [driconf](https://www.archlinux.org/packages/?name=driconf)
 
 ### Overclocking with amdgpu
 

@@ -114,35 +114,13 @@ partition  mountpoint  size    type  label
 
 È possibile ridimensionare la partizione appena creata tramite il programma di installazione di Arch, o cancellarla per procedere con la creazione di altre partizione (es. swap).
 
-[Template:Consiglio](/index.php?title=Template:Consiglio&action=edit&redlink=1 "Template:Consiglio (page does not exist)")
+**Tip:** Invece di ingombrare l'unità con una partizione diversa, è possibile utilizzare uno [swapfile](/index.php/Swapfile "Swapfile") invece di una partizione dedicata. Un'altra soluzione può essere configurare [LVM](/index.php/LVM "LVM") per utilizzare la partizione appena creata come contenitore. Si prega di fare riferimento agli articoli collegati.
 
 #### Opzione 1: EFI
 
-*   Richiede [GRUB](/index.php/GRUB "GRUB") per funzionare
-*   Scegliere installazione media e passare ad una tty libera.
-*   Eseguire **cgdisk** ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package).
-*   Creare le partizioni necessarie
+*   Eseguire *cgdisk*
 
-**Note:**
-
-*   La partizione di Swap è opzionale su macchine con RAM superiore a 4GB, dato che non influirebbe sulle prestazioni della macchina. Si può comunque creare in un secondo momento [Swap file](/index.php/Swap#Swap_file "Swap").
-*   Per ulteriori informazioni sul partizionamento [Partitioning](/index.php/Partitioning "Partitioning")
-
-.
-
-Un semplice esempio (senza LVM criptato):
-
-```
-partition  mountpoint  size    type  label
-/dev/sda1  /boot/efi   200MiB  vfat  EFI
-/dev/sda2  /boot       100MiB  ext2  boot
-/dev/sda3  -           adjust  swap  swap
-/dev/sda4  /           10GiB   ext4  root
-/dev/sda5  /home       remain. ext4  home
-
-```
-
-*   Fatto, si può ora procedere all' [#Installazione](#Installazione)
+*   Cancellare la partizione creata in precedenza con *Utility Disco* e creare le partizioni necessarie per Arch Linux. OS X usa un gap di 128 MiB dopo le partizioni, per cui quando si creerà la prima partizione dopo l'ultima partizione di OS X, digitare **+128M** quando cgdisk chiederà il primo settore per la partizione. Maggiori informazioni sulla policy di partizione di Apple si possono trovare [qui](https://developer.apple.com/library/mac/technotes/tn2166/_index.html#//apple_ref/doc/uid/DTS10003927-CH1-SUBSECTION5). Un semplice esempio (senza LVM, senza criptazione):
 
 #### BIOS-compatibility
 

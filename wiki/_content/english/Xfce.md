@@ -217,6 +217,8 @@ To add the shortcut, use *Settings > Keyboard* or an application like [xbindkeys
 
 To launch custom applications when Xfce starts up, click the *Applications Menu > Settings > Settings Manager* and then choose the *Session and Startup* option and click the tab *Application Autostart*. You will see a list of programs that get launched on startup. To add an entry, click the *Add* button and fill out the form, specifying the path to an executable you want to run.
 
+Autostart applications are stored as *.desktop* files in *~/.config/autostart/*.
+
 Alternatively, add the commands you wish to run (including setting environment variables) to [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when a [display manager](/index.php/Display_manager "Display manager") is being used).
 
 **Tip:** Sometimes it might be useful to **delay the startup of an application**. Note that specifying under *Application Autostart* a command such as `sleep 3 && *command*` does not work; a workaround is to use the syntax `sh -c "sleep 3 && *command*"`

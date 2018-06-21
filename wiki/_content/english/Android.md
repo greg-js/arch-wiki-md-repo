@@ -337,7 +337,7 @@ Samsung devices can't be flashed using **Fastboot** tool. Alternatives are only 
 
 [Heimdall](http://glassechidna.com.au/heimdall/) is a cross-platform open-source tool suite used to flash firmware (also known as ROMs) onto Samsung mobile devices and is also known as an alternative to [Odin](http://odindownload.com/). It can be installed as [heimdall](https://aur.archlinux.org/packages/heimdall/).
 
-The flashing instructions can be found on Heimdall's [GitHub page](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) or on [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461).
+The flashing instructions can be found on Heimdall's [GitLab repository](https://gitlab.com/BenjaminDobell/Heimdall/tree/master/Linux) or on [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461).
 
 #### Odin (Virtualbox)
 

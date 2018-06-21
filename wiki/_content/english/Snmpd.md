@@ -1,4 +1,4 @@
-***[SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol "wikipedia:Simple Network Management Protocol")** is a tool designed for the management and monitoring of network devices. The Net-SNMP package is one implementation of SNMP that is available for Arch Linux. This article discusses the configuration and testing of the snmpd daemon that ships with Arch's net-snmp package.*
+**[SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol "wikipedia:Simple Network Management Protocol")** is a tool designed for the management and monitoring of network devices. The Net-SNMP package is one implementation of SNMP that is available for Arch Linux. This article discusses the configuration and testing of the snmpd daemon that ships with Arch's net-snmp package.
 
 ## Contents
 
@@ -12,13 +12,13 @@
 
 ## Installation
 
-There is one package for net-snmp in Arch Linux which contains both the snmpd daemon, and the accompanying utilities.
+There is a single package for net-snmp in Arch Linux which contains both the snmpd daemon, and the accompanying utilities.
 
 [Install](/index.php/Install "Install") the [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) package.
 
 ## Configuration
 
-Note that it is crucial that the snmpd service is not running while editing configuration files for it, especially `/var/net-snmp/snmpd.conf`.
+Note that if `/var/net-snmp/snmpd.conf` is modified while snmpd is running, any changes will be lost when the daemon is restarted. It is therefore crucial that the snmpd service is stopped while editing the configuration file.
 
 ### Daemon
 
@@ -30,14 +30,14 @@ There are three versions of SNMP which are supported by net-snmp: 1, 2c and 3\. 
 
 ```
 mkdir /etc/snmp/
-echo rocommunity *read_only_user* >> /etc/snmp/snmpd.conf
+echo rocommunity *read_only_community_string* >> /etc/snmp/snmpd.conf
 
 ```
 
-The above commands will add a user that can be used for monitoring. Optionally, you can add another user used for management. This is not recommended unless you have a specific reason.
+The above commands will add a community string that can be used for monitoring. Optionally, you can add another community string used for management. This is not recommended unless you have a specific reason to do so.
 
 ```
-echo rwcommunity *read_write_user* >> /etc/snmp/snmpd.conf
+echo rwcommunity *read_write_community_string* >> /etc/snmp/snmpd.conf
 
 ```
 
@@ -59,7 +59,7 @@ echo createUser *read_only_user* SHA *password1* AES *password2* > /var/net-snmp
 
 ```
 
-Note that once snmpd is restarted, `/var/net-snmp/snmpd.conf` will be rewritten, and the clear-text passwords that you have entered will be encrypted. If this file is modified while snmpd is running, any changes will be reset when the daemon is stopped. Therefore, it is crucial that snmpd is not running while this file is being updated.
+Note that once snmpd is restarted, `/var/net-snmp/snmpd.conf` will be rewritten, and the clear-text passwords that you have entered will be encrypted.
 
 ### Start Daemon
 
@@ -75,8 +75,8 @@ systemctl start snmpd
 If using SNMP 1 or 2c, use one of the following commands to test configuration:
 
 ```
-# snmpwalk -v 1 -c *read_only_user* localhost | less
-# snmpwalk -v 2c -c *read_only_user* localhost | less
+# snmpwalk -v 1 -c *read_only_community_string* localhost | less
+# snmpwalk -v 2c -c *read_only_community_string* localhost | less
 
 ```
 

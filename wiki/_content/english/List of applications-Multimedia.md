@@ -542,7 +542,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
-*   **Deepin Screenshot** — A quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
+*   **Deepin Screenshot** — Quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
 
 	[https://www.deepin.org/](https://www.deepin.org/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
 
@@ -550,7 +550,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
 
-*   **Flameshot** — QT5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
+*   **Flameshot** — Qt5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
 
 	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://www.archlinux.org/packages/?name=flameshot)
 
@@ -566,11 +566,11 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)
 
-*   **KShare** — A ShareX inspired cross platform utility written with Qt.
+*   **KShare** — ShareX inspired cross platform utility written with Qt.
 
 	[https://kshare.arsenarsen.com](https://kshare.arsenarsen.com) || [kshare](https://aur.archlinux.org/packages/kshare/)
 
-*   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
+*   **Lightscreen** — Simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
 
 	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)
 
@@ -578,7 +578,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
 
-*   **maim** — A simple command line utility that takes screenshots. It's meant to replace scrot and performs better than scrot in many ways.
+*   **maim** — Simple command line utility that takes screenshots. It's meant to replace scrot and performs better than scrot in many ways.
 
 	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
 
@@ -586,11 +586,11 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 	[http://mate-desktop.org](http://mate-desktop.org) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
-*   **screencloud** — allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
+*   **ScreenCloud** — Take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
 
 	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
 
-*   **screengrab** — Cross-platform application designed to quickly take screenshots (Qt).
+*   **ScreenGrab** — Cross-platform application designed to quickly take screenshots (Qt).
 
 	[https://github.com/DOOMer/screengrab](https://github.com/DOOMer/screengrab) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
 

@@ -11,49 +11,32 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Start the daemon](#Start_the_daemon)
-*   [4 DNS cache setup](#DNS_cache_setup)
-    *   [4.1 DNS addresses file](#DNS_addresses_file)
-        *   [4.1.1 resolv.conf](#resolv.conf)
-            *   [4.1.1.1 More than three nameservers](#More_than_three_nameservers)
-        *   [4.1.2 dhcpcd](#dhcpcd)
-        *   [4.1.3 dhclient](#dhclient)
-    *   [4.2 NetworkManager](#NetworkManager)
-        *   [4.2.1 Custom configuration](#Custom_configuration)
-        *   [4.2.2 IPv6](#IPv6)
-        *   [4.2.3 Other methods](#Other_methods)
-    *   [4.3 Test](#Test)
-*   [5 Server setup](#Server_setup)
-    *   [5.1 DNS server](#DNS_server)
-        *   [5.1.1 Adding a custom domain](#Adding_a_custom_domain)
-    *   [5.2 DHCP server](#DHCP_server)
-        *   [5.2.1 Test](#Test_2)
-    *   [5.3 TFTP server](#TFTP_server)
-    *   [5.4 PXE server](#PXE_server)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Prevent OpenDNS redirecting Google queries](#Prevent_OpenDNS_redirecting_Google_queries)
-    *   [6.2 Override addresses](#Override_addresses)
-    *   [6.3 More than one instance](#More_than_one_instance)
-        *   [6.3.1 Static](#Static)
-        *   [6.3.2 Dynamic](#Dynamic)
-*   [7 See also](#See_also)
+*   [2 Start the daemon](#Start_the_daemon)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Caching DNS server](#Caching_DNS_server)
+        *   [3.1.1 DNS addresses file](#DNS_addresses_file)
+            *   [3.1.1.1 openresolv](#openresolv)
+            *   [3.1.1.2 resolv.conf](#resolv.conf)
+                *   [3.1.1.2.1 More than three nameservers](#More_than_three_nameservers)
+            *   [3.1.1.3 dhcpcd](#dhcpcd)
+            *   [3.1.1.4 dhclient](#dhclient)
+        *   [3.1.2 Test](#Test)
+    *   [3.2 DHCP server](#DHCP_server)
+        *   [3.2.1 Test](#Test_2)
+    *   [3.3 TFTP server](#TFTP_server)
+    *   [3.4 PXE server](#PXE_server)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Prevent OpenDNS redirecting Google queries](#Prevent_OpenDNS_redirecting_Google_queries)
+    *   [4.2 Override addresses](#Override_addresses)
+    *   [4.3 More than one instance](#More_than_one_instance)
+        *   [4.3.1 Static](#Static)
+        *   [4.3.2 Dynamic](#Dynamic)
+    *   [4.4 Adding a custom domain](#Adding_a_custom_domain)
+*   [5 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package.
-
-## Configuration
-
-To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options. For all available options see [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
-
-**Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `/etc/dnsmasq.conf`  `port=0` 
-
-**Tip:** To check configuration file(s) syntax, execute:
-```
-$ dnsmasq --test
-
-```
 
 ## Start the daemon
 
@@ -68,36 +51,84 @@ $ journalctl -u dnsmasq.service
 
 The network will also need to be restarted so the DHCP client can create a new `/etc/resolv.conf`.
 
-## DNS cache setup
+## Configuration
+
+To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options. For all available options see [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
+
+**Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `/etc/dnsmasq.conf`  `port=0` 
+
+**Tip:** To check configuration file(s) syntax, execute:
+```
+$ dnsmasq --test
+
+```
+
+### Caching DNS server
 
 To set up dnsmasq as a DNS caching daemon on a single computer edit `/etc/dnsmasq.conf` and uncomment the `listen-address` directive, adding in the localhost IP address:
 
 ```
-listen-address=127.0.0.1
+listen-address=::1,127.0.0.1
 
 ```
 
-To use this computer to listen on its LAN IP address for other computers on the network:
+To use this computer to listen on its LAN IP address for other computers on the network. It is recommended that you use a static LAN IP in this case. E.g.:
 
 ```
-listen-address=192.168.1.1    # Example IP
-
-```
-
-It is recommended that you use a static LAN IP in this case.
-
-Multiple ip address settings:
-
-```
-listen-address=127.0.0.1,192.168.1.1 
+listen-address=192.168.1.1
 
 ```
 
-### DNS addresses file
+Set the number of cached domain names with `cache-size=*size*` (the default is `150`) and optionally disable caching of "no such domain" responses with `no-negcache`:
+
+```
+cache-size=1000
+no-negcache
+
+```
+
+To validate [DNSSEC](/index.php/DNSSEC "DNSSEC") load the DNSSEC trust anchors provided by the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package and set the option `dnssec`:
+
+```
+conf-file=/usr/share/dnsmasq/trust-anchors.conf
+dnssec
+
+```
+
+See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options you might want to use.
+
+#### DNS addresses file
 
 After configuring dnsmasq, the DHCP client will need to prepend the localhost address to the known DNS addresses in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq before trying to resolve them with an external DNS. After the DHCP client is configured, the network will need to be restarted for changes to take effect.
 
-#### resolv.conf
+##### openresolv
+
+If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), instead of directly altering `/etc/resolv.conf`, you can use *openresolv* to generate configuration files for dnsmasq. [[1]](https://roy.marples.name/projects/openresolv/config)
+
+Edit `/etc/resolvconf.conf` and add the loopback addresses as name servers, and configure openresolv to write out dnsmasq configuration:
+
+ `/etc/resolvconf.conf` 
+```
+# Use the local name server
+name_servers="::1 127.0.0.1"
+
+# Write out dnsmasq extended configuration and resolv files
+dnsmasq_conf=/etc/dnsmasq-openresolv.conf
+dnsmasq_resolv=/etc/dnsmasq-resolv.conf
+```
+
+Run `resolvconf -u` so that the configuration files get created. If the files do not exist `dnsmasq.service` will fail to start.
+
+Edit dnsmasq's configuration file to use openresolv's generated configuration:
+
+```
+# Read configuration generated by openresolv
+conf-file=/etc/dnsmasq-openresolv.conf
+resolv-file=/etc/dnsmasq-resolv.conf
+
+```
+
+##### resolv.conf
 
 One option is a pure `resolv.conf` configuration. To do this, just make the first nameserver in `/etc/resolv.conf` point to localhost:
 
@@ -125,7 +156,7 @@ It is also possible to write protect your resolv.conf:
 
 ```
 
-##### More than three nameservers
+###### More than three nameservers
 
 A limitation in the way Linux handles DNS queries is that there can only be a maximum of three nameservers used in `resolv.conf`. As a workaround, you can make localhost the only nameserver in `resolv.conf`, and then create a separate `resolv-file` for your external nameservers. First, create a new resolv file for dnsmasq:
 
@@ -147,7 +178,7 @@ resolv-file=/etc/resolv.dnsmasq.conf
 
 ```
 
-#### dhcpcd
+##### dhcpcd
 
 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") has the ability to prepend or append nameservers to `/etc/resolv.conf` by creating (or editing) the `/etc/resolv.conf.head` and `/etc/resolv.conf.tail` files respectively:
 
@@ -156,7 +187,7 @@ echo "nameserver 127.0.0.1" > /etc/resolv.conf.head
 
 ```
 
-#### dhclient
+##### dhclient
 
 For [dhclient](https://www.archlinux.org/packages/?name=dhclient), uncomment in `/etc/dhclient.conf`:
 
@@ -165,40 +196,7 @@ prepend domain-name-servers 127.0.0.1;
 
 ```
 
-### NetworkManager
-
-[NetworkManager](/index.php/NetworkManager "NetworkManager") has a plugin to enable DNS using dnsmasq. The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers (especially useful if you are connected to more than one VPN).
-
-Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed, but has been disabled. Then, create `/etc/NetworkManager/conf.d/dns.conf` and add the following to it:
-
- `/etc/NetworkManager/conf.d/dns.conf` 
-```
-[main]
-dns=dnsmasq
-
-```
-
-Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
-
-#### Custom configuration
-
-Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
-
- `/etc/NetworkManager/dnsmasq.d/cache.conf`  `cache-size=1000` 
-
-#### IPv6
-
-Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `drill -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
-
- `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
-
-In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately NetworkManager does not do this ([Ubuntu Bug](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). A workaround would be to disable IPv4 DNS in the NetworkManager config, assuming one exists
-
-#### Other methods
-
-Another option is in NetworkManagers' settings (usually by right-clicking the applet) and entering settings manually. Setting up will depending on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as 'Automatic (specify addresses).' The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, DNS-server-one, ...`.
-
-### Test
+#### Test
 
 To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*drill* is part of the [ldns](https://www.archlinux.org/packages/?name=ldns) package):
 
@@ -220,30 +218,7 @@ Running the command again will use the cached DNS IP and result in a faster look
 
 ```
 
-## Server setup
-
-### DNS server
-
-#### Adding a custom domain
-
-It is possible to add a custom domain to hosts in your (local) network:
-
-```
-local=/home.lan/
-domain=home.lan
-
-```
-
-In this example it is possible to ping a host/device (e.g. defined in your `/etc/hosts` file) as `*hostname*.home.lan`.
-
-Uncomment `expand-hosts` to add the custom domain to hosts entries:
-
-```
-expand-hosts
-
-```
-
-Without this setting, you will have to add the domain to entries of `/etc/hosts`.
+To test if DNSSEC validation is working see [DNSSEC#Testing](/index.php/DNSSEC#Testing "DNSSEC").
 
 ### DHCP server
 
@@ -402,6 +377,27 @@ bind-dynamic
 ```
 
 **Note:** This is default in libvirt.
+
+### Adding a custom domain
+
+It is possible to add a custom domain to hosts in your (local) network:
+
+```
+local=/home.lan/
+domain=home.lan
+
+```
+
+In this example it is possible to ping a host/device (e.g. defined in your `/etc/hosts` file) as `*hostname*.home.lan`.
+
+Uncomment `expand-hosts` to add the custom domain to hosts entries:
+
+```
+expand-hosts
+
+```
+
+Without this setting, you will have to add the domain to entries of `/etc/hosts`.
 
 ## See also
 

@@ -15,12 +15,13 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 *   [3 Searching manuals](#Searching_manuals)
 *   [4 Page width](#Page_width)
 *   [5 Reading local man pages](#Reading_local_man_pages)
-    *   [5.1 Conversion to HTML](#Conversion_to_HTML)
-        *   [5.1.1 mandoc](#mandoc)
-        *   [5.1.2 man2html](#man2html)
-        *   [5.1.3 man -H](#man_-H)
-        *   [5.1.4 roffit](#roffit)
-    *   [5.2 Conversion to PDF](#Conversion_to_PDF)
+    *   [5.1 Viewer applications](#Viewer_applications)
+    *   [5.2 Conversion to HTML](#Conversion_to_HTML)
+        *   [5.2.1 mandoc](#mandoc)
+        *   [5.2.2 man2html](#man2html)
+        *   [5.2.3 man -H](#man_-H)
+        *   [5.2.4 roffit](#roffit)
+    *   [5.3 Conversion to PDF](#Conversion_to_PDF)
 *   [6 Online man pages](#Online_man_pages)
 *   [7 Noteworthy manpages](#Noteworthy_manpages)
 *   [8 See also](#See_also)
@@ -122,11 +123,23 @@ man() {
 
 Instead of the standard interface, using browsers such as [lynx](https://www.archlinux.org/packages/?name=lynx) and [Firefox](/index.php/Firefox "Firefox") to view man pages allows users to reap info pages' main benefit of hyperlinked text. Alternatives include the following:
 
-*   [KDE](/index.php/KDE "KDE") users can read man pages in
-    *   Konqueror using `man:<name>`.
-    *   KHelpCenter ([khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)) in "UNIX manual pages" or by running `khelpcenter man:<name>`.
-*   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) provides a categorized look at man pages in [X](/index.php/X "X").
-*   The [GNOME](/index.php/GNOME "GNOME") Help Browser [yelp](https://www.archlinux.org/packages/?name=yelp) can be used via `yelp man:<name>`.
+### Viewer applications
+
+*   **GNOME Help** — Help viewer for [GNOME](/index.php/GNOME "GNOME"). It can show man pages via `yelp man:<name>`.
+
+	[https://wiki.gnome.org/Apps/Yelp](https://wiki.gnome.org/Apps/Yelp) || [yelp](https://www.archlinux.org/packages/?name=yelp)
+
+*   **KHelpCenter** — Application to show [KDE](/index.php/KDE "KDE") Applications' documentation. Man pages are in *UNIX manual pages* or by running `khelpcenter man:<name>`.
+
+	[https://userbase.kde.org/KHelpCenter](https://userbase.kde.org/KHelpCenter) || [khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)
+
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — KDE file manager and web browser. It can show man pages via `man:<name>`.
+
+	[https://konqueror.org/](https://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
+
+*   **xman** — Provides a categorized look at man pages.
+
+	[https://xorg.freedesktop.org/](https://xorg.freedesktop.org/) || [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman)
 
 ### Conversion to HTML
 

@@ -42,7 +42,10 @@ The game works in a client–server model, where the user plays using a Client w
     *   [5.15 tileset_borderrem](#tileset_borderrem)
     *   [5.16 tileset_borderset](#tileset_borderset)
     *   [5.17 uuid](#uuid)
-*   [6 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Build failed, MYSQL_CPPCONN_INCLUDEDIR and MYSQL_CPPCONN_LIBRARY not found](#Build_failed.2C_MYSQL_CPPCONN_INCLUDEDIR_and_MYSQL_CPPCONN_LIBRARY_not_found)
+    *   [6.2 Build failed, no such file boost/shared_ptr.hpp](#Build_failed.2C_no_such_file_boost.2Fshared_ptr.hpp)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -376,10 +379,68 @@ Exits with error status 255 if *name* is not provided.
 
 Available since DDNet 10.6.1
 
+## Troubleshooting
+
+### Build failed, MYSQL_CPPCONN_INCLUDEDIR and MYSQL_CPPCONN_LIBRARY not found
+
+**Problem:**
+
+Build fails and the following message is displayed:
+
+```
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+/build/ddnet/src/DDNet-11.1.9/MYSQL_CPPCONN_INCLUDEDIR
+   used as include directory in directory /build/ddnet/src/DDNet-11.1.9
+   [...]
+   used as include directory in directory /build/ddnet/src/DDNet-11.1.9
+MYSQL_CPPCONN_LIBRARY
+    linked by target "DDNet-Server" in directory /build/ddnet/src/DDNet-11.1.9
+
+-- Configuring incomplete, errors occurred!
+See also "/build/ddnet/src/build/CMakeFiles/CMakeOutput.log".
+See also "/build/ddnet/src/build/CMakeFiles/CMakeError.log".
+
+```
+
+**Solution:**
+
+It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have [mariadb](https://www.archlinux.org/packages/?name=mariadb) package installed, but you are missing [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/).
+
+Either install [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) to build with MySQL support or remove `-DMYSQL=ON` (or set to off with `-DMYSQL=OFF`) to build without it.
+
+### Build failed, no such file boost/shared_ptr.hpp
+
+**Problem:**
+
+Build fails and the following message is displayed:
+
+```
+[ 38%] Building CXX object CMakeFiles/DDNet-Server.dir/src/engine/server/server.cpp.o
+In file included from /build/ddnet/src/DDNet-11.1.9/src/engine/server/sql_server.h:4,
+                 from /build/ddnet/src/DDNet-11.1.9/src/engine/server/sql_connector.h:4,
+                 from /build/ddnet/src/DDNet-11.1.9/src/engine/server/server.h:28,
+                 from /build/ddnet/src/DDNet-11.1.9/src/engine/server/server.cpp:40:
+/usr/include/mysql_connection.h:31:10: fatal error: boost/shared_ptr.hpp: No such file or directory
+ #include <boost/shared_ptr.hpp>
+          ^14:06, 19 June 2018 (UTC)14:06, 19 June 2018 (UTC)14:06, 19 June 2018 (UTC)14:06, 19 June 2018 (UTC)~
+compilation terminated.
+make[2]: *** [CMakeFiles/DDNet-Server.dir/build.make:116: CMakeFiles/DDNet-Server.dir/src/engine/server/server.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:281: CMakeFiles/DDNet-Server.dir/all] Error 2
+make: *** [Makefile:152: all] Error 2
+
+```
+
+**Solution:**
+
+It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have both [mariadb](https://www.archlinux.org/packages/?name=mariadb) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) packages installed, but [boost](https://www.archlinux.org/packages/?name=boost) is missing.
+
+Either install [boost](https://www.archlinux.org/packages/?name=boost) to build with MySQL support or remove `-DMYSQL=ON` (or set to off with `-DMYSQL=OFF`) to build without it.
+
 ## See also
 
-*   [DDNet website](https://ddnet.tw/)
+*   [DDNet official website](https://ddnet.tw/)
 *   [DDNet Forum](https://forum.ddnet.tw/)
-*   [DDNet source code repository at GitHub](https://github.com/ddnet/ddnet)
+*   [DDNet source code repository](https://github.com/ddnet/ddnet)
+*   [The History of DDNet](https://forum.ddnet.tw/viewtopic.php?f=3&t=1824)
 *   [Tutorials and other useful links](https://forum.ddnet.tw/viewtopic.php?f=35&t=2420)
-*   [History of DDNet](https://forum.ddnet.tw/viewtopic.php?f=3&t=1824)

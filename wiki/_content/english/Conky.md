@@ -37,6 +37,12 @@ Related articles
 
 Some built in variables in conky require additional packages to be installed in order to be utilized, for example [Hddtemp](/index.php/Hddtemp "Hddtemp") for hard drive tempurature and [mpd](/index.php/Mpd "Mpd") for music.
 
+Additional utility:
+
+*   **Conky Manager** — Theme manager for Conky widgets. It provides options to start/stop, browse and edit Conky themes installed on the system.
+
+	[http://www.teejeetech.in/p/conky-manager.html](http://www.teejeetech.in/p/conky-manager.html) || [conky-manager](https://www.archlinux.org/packages/?name=conky-manager)
+
 ## Configuration
 
 By default conky uses a configuration file located at `~/.conkyrc`. You can print out an example configuration with:

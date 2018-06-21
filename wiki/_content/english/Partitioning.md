@@ -269,15 +269,15 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 
 	[https://www.gnu.org/software/parted/parted.html](https://www.gnu.org/software/parted/parted.html) || [parted](https://www.archlinux.org/packages/?name=parted)
 
-*   **[GParted](/index.php/GParted "GParted")** — Graphical tool written in GTK.
-
-	[https://gparted.sourceforge.io/](https://gparted.sourceforge.io/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
-
-*   **GNOME Disks** — Graphical tool written in GTK.
+*   **GNOME Disks** — Disk management utility for GNOME.
 
 	[https://wiki.gnome.org/Apps/Disks](https://wiki.gnome.org/Apps/Disks) || [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility)
 
-*   **KDE Partition Manager** — Graphical tool written in Qt.
+*   **[GParted](/index.php/GParted "GParted")** — GTK+ partition editor for graphically managing your disk partitions.
+
+	[https://gparted.sourceforge.io/](https://gparted.sourceforge.io/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
+
+*   **KDE Partition Manager** — Utility program for KDE to manage the disk devices, partitions and file systems.
 
 	[https://www.kde.org/applications/system/kdepartitionmanager/](https://www.kde.org/applications/system/kdepartitionmanager/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
 

@@ -18,6 +18,7 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
         *   [1.2.5 A general example](#A_general_example)
 *   [2 Realtime kernel](#Realtime_kernel)
     *   [2.1 AUR](#AUR)
+        *   [2.1.1 Binaries](#Binaries)
 *   [3 MIDI](#MIDI)
 *   [4 Environment variables](#Environment_variables)
 *   [5 Tips and tricks](#Tips_and_tricks)
@@ -273,6 +274,12 @@ From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
 The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice includes patches some may consider to be nasty, while to others are a blessing.
 
 	*See: [Real-Time Linux Wiki](https://rt.wiki.kernel.org/)*
+
+#### Binaries
+
+Some users provide binaries for the AUR packages above in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"):
+
+*   [coderkun-aur-audio](https://www.suruatoel.xyz/arch)
 
 ## MIDI
 

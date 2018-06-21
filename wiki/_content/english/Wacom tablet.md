@@ -1,3 +1,5 @@
+**Note:** Wacom does not officially support Linux. Linux support is provided by the [Linux Wacom Project](https://linuxwacom.github.io/).
+
 This guide was started for *USB* based Wacom tablets, so much of the info in here focuses on that. Usually it is recommended to rely on [Xorg](/index.php/Xorg "Xorg")'s auto-detection or to use a **dynamic** setup. However for an *internal* tablet device one might consider a **static** Xorg setup in case autodetection does not work. A static [Xorg](/index.php/Xorg "Xorg") setup is usually not able to recognize your Wacom tablet when it is connected to a different *USB* port or even after unplugging and replugging it into the same port, and as such it should be considered as deprecated.
 
 ## Contents
@@ -705,7 +707,7 @@ To make sure, check the rules contained in the files executed after `/usr/share/
 
 ## References
 
-*   [Linux Wacom Project Wiki](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Main_Page)
+*   [Linux Wacom Project Wiki](https://github.com/linuxwacom/input-wacom/wiki)
 *   [GIMP Talk - Community - Install Guide: Getting Wacom Drawing Tablets To Work In Gimp](http://www.gimptalk.com/forum/topic.php?t=17992&start=1)
 *   [Ubuntu Help: Wacom](https://help.ubuntu.com/community/Wacom)
 *   [Ubuntu Forums - Install a LinuxWacom Kernel Driver for Tablet PC's](http://ubuntuforums.org/showthread.php?t=1038949)

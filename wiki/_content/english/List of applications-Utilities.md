@@ -40,26 +40,31 @@
         *   [1.4.4 Input methods](#Input_methods)
     *   [1.5 Disks](#Disks)
         *   [1.5.1 Partitioning tools](#Partitioning_tools)
-        *   [1.5.2 Mount tools](#Mount_tools)
-        *   [1.5.3 Disk usage display](#Disk_usage_display)
-        *   [1.5.4 Disk cleaning](#Disk_cleaning)
+        *   [1.5.2 Formatting tools](#Formatting_tools)
+        *   [1.5.3 Cloning tools](#Cloning_tools)
+        *   [1.5.4 Mount tools](#Mount_tools)
+        *   [1.5.5 Disk usage display](#Disk_usage_display)
+        *   [1.5.6 Disk cleaning](#Disk_cleaning)
+        *   [1.5.7 Disk image writing](#Disk_image_writing)
     *   [1.6 System](#System)
         *   [1.6.1 System monitoring](#System_monitoring)
-        *   [1.6.2 System information viewers](#System_information_viewers)
-            *   [1.6.2.1 Console](#Console_3)
-            *   [1.6.2.2 Graphical](#Graphical_3)
-        *   [1.6.3 System log viewers](#System_log_viewers)
-        *   [1.6.4 Font viewers](#Font_viewers)
-        *   [1.6.5 Command schedulers](#Command_schedulers)
-        *   [1.6.6 Shutdown timers](#Shutdown_timers)
-        *   [1.6.7 Clock synchronization](#Clock_synchronization)
-        *   [1.6.8 Screen management](#Screen_management)
-        *   [1.6.9 Backlight management](#Backlight_management)
-        *   [1.6.10 Color management](#Color_management)
-        *   [1.6.11 Printer management](#Printer_management)
-        *   [1.6.12 Bluetooth management](#Bluetooth_management)
-        *   [1.6.13 Power management](#Power_management)
-        *   [1.6.14 Package management](#Package_management)
+        *   [1.6.2 Hardware sensor monitoring](#Hardware_sensor_monitoring)
+        *   [1.6.3 System information viewers](#System_information_viewers)
+            *   [1.6.3.1 Console](#Console_3)
+            *   [1.6.3.2 Graphical](#Graphical_3)
+        *   [1.6.4 System log viewers](#System_log_viewers)
+        *   [1.6.5 Font viewers](#Font_viewers)
+        *   [1.6.6 Help viewers](#Help_viewers)
+        *   [1.6.7 Command schedulers](#Command_schedulers)
+        *   [1.6.8 Shutdown timers](#Shutdown_timers)
+        *   [1.6.9 Clock synchronization](#Clock_synchronization)
+        *   [1.6.10 Screen management](#Screen_management)
+        *   [1.6.11 Backlight management](#Backlight_management)
+        *   [1.6.12 Color management](#Color_management)
+        *   [1.6.13 Printer management](#Printer_management)
+        *   [1.6.14 Bluetooth management](#Bluetooth_management)
+        *   [1.6.15 Power management](#Power_management)
+        *   [1.6.16 Package management](#Package_management)
 
 ## Utilities
 
@@ -193,10 +198,6 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
 
-*   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
-
-	[http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
-
 *   **[Terminator](/index.php/Terminator "Terminator")** — Terminal emulator supporting multiple resizable terminal panels.
 
 	[https://gnometerminator.blogspot.com/](https://gnometerminator.blogspot.com/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
@@ -209,13 +210,17 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://github.com/lanoxx/tilda/](https://github.com/lanoxx/tilda/) || [tilda](https://www.archlinux.org/packages/?name=tilda)
 
-*   **Tilix** — A tiling terminal emulator for Linux using GTK+ 3
+*   **Tilix** — Tiling terminal emulator for GNOME.
 
-	[https://github.com/gnunn1/tilix](https://github.com/gnunn1/tilix) || [tilix](https://www.archlinux.org/packages/?name=tilix) [tilix-git](https://aur.archlinux.org/packages/tilix-git/)
+	[https://gnunn1.github.io/tilix-web/](https://gnunn1.github.io/tilix-web/) || [tilix](https://www.archlinux.org/packages/?name=tilix)
 
 *   **tinyterm** — Very lightweight terminal emulator based on VTE.
 
 	[https://github.com/lahwaacz/tinyterm](https://github.com/lahwaacz/tinyterm) || [tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/)
+
+*   **[Xfce Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
+
+	[https://docs.xfce.org/apps/terminal/start](https://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
 
 ##### KMS-based
 
@@ -391,13 +396,13 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [nemo](https://www.archlinux.org/packages/?name=nemo)
 
-*   **[PathFinder](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit")** — File browser that comes with the FOX toolkit.
-
-	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
-
 *   **Pantheon Files** — File browser designed for elementary OS.
 
 	[https://github.com/elementary/files](https://github.com/elementary/files) || [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files)
+
+*   **[PathFinder](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit")** — File browser that comes with the FOX toolkit.
+
+	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
 
 *   **[PCManFM](/index.php/PCManFM "PCManFM")** — Lightweight file manager which features tabbed and dual pane browsing; also it can optionally manage the desktop icons and background.
 
@@ -666,6 +671,10 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 *   **[Tracker](https://en.wikipedia.org/wiki/Tracker_(search_software) "wikipedia:Tracker (search software)")** — All-in-one indexer, search tool and metadata database.
 
 	[https://wiki.gnome.org/Projects/Tracker](https://wiki.gnome.org/Projects/Tracker) || [tracker](https://www.archlinux.org/packages/?name=tracker)
+
+*   **[Zeitgeist](/index.php/Zeitgeist "Zeitgeist")** — Event aggregation framework for the user's activities and notifications (files opened, websites visited, conversations hold with other people, etc.) and makes the relevant information available to other applications.
+
+	[https://launchpad.net/zeitgeist-project](https://launchpad.net/zeitgeist-project) || [zeitgeist](https://www.archlinux.org/packages/?name=zeitgeist)
 
 ### Development
 
@@ -943,6 +952,14 @@ See the main article: [Internationalization#Input methods](/index.php/Internatio
 
 See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
 
+#### Formatting tools
+
+See [File systems#Types of file systems](/index.php/File_systems#Types_of_file_systems "File systems").
+
+#### Cloning tools
+
+See [Disk cloning#Disk cloning software](/index.php/Disk_cloning#Disk_cloning_software "Disk cloning").
+
 #### Mount tools
 
 See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
@@ -981,10 +998,6 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 #### Disk usage display
 
-*   **[Disk Usage Analyzer](https://en.wikipedia.org/wiki/Disk_Usage_Analyzer "wikipedia:Disk Usage Analyzer") (Baobab)** — Disk usage analyzer for the [GNOME](/index.php/GNOME "GNOME") desktop.
-
-	[http://www.marzocca.net/linux/baobab](http://www.marzocca.net/linux/baobab) || [baobab](https://www.archlinux.org/packages/?name=baobab)
-
 *   **duc** — A library and suite of tools for inspecting disk usage.
 
 	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
@@ -993,6 +1006,10 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 	[http://methylblue.com/filelight/](http://methylblue.com/filelight/) || [filelight](https://www.archlinux.org/packages/?name=filelight)
 
+*   **[GNOME Disk Usage Analyzer](https://en.wikipedia.org/wiki/Disk_Usage_Analyzer "wikipedia:Disk Usage Analyzer")** — Disk usage analyzer for the [GNOME](/index.php/GNOME "GNOME") desktop to check folder sizes and available disk space.
+
+	[https://wiki.gnome.org/Apps/DiskUsageAnalyzer](https://wiki.gnome.org/Apps/DiskUsageAnalyzer) || [baobab](https://www.archlinux.org/packages/?name=baobab)
+
 *   **Graphical Disk Map** — Disk usage analyzer that draws a map of rectangles sized according to file or dir sizes.
 
 	[http://gdmap.sourceforge.net/](http://gdmap.sourceforge.net/) || [gdmap](https://www.archlinux.org/packages/?name=gdmap)
@@ -1000,6 +1017,10 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 *   **gt5** — Diff-capable "du-browser".
 
 	[http://gt5.sourceforge.net](http://gt5.sourceforge.net) || [gt5](https://aur.archlinux.org/packages/gt5/)
+
+*   **MATE Disk Usage Analyzer** — Disk usage analyzing tool for MATE Desktop.
+
+	[https://github.com/mate-desktop/mate-utils](https://github.com/mate-desktop/mate-utils) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
 *   **ncdu** — Simple ncurses disk usage analyzer.
 
@@ -1011,25 +1032,59 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 #### Disk cleaning
 
-*   **[BleachBit](https://en.wikipedia.org/wiki/BleachBit "wikipedia:BleachBit")** — It frees disk space and guards your privacy; frees cache, deletes cookies, clears Internet history, shreds temporary files, deletes logs, and discards junk you didn't know was there.
+*   **[BleachBit](https://en.wikipedia.org/wiki/BleachBit "wikipedia:BleachBit")** — Frees disk space and guards your privacy; frees cache, deletes cookies, clears Internet history, shreds temporary files, deletes logs, and discards junk you didn't know was there.
 
-	[http://bleachbit.sourceforge.net/](http://bleachbit.sourceforge.net/) || [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) [bleachbit-git](https://aur.archlinux.org/packages/bleachbit-git/)
+	[https://www.bleachbit.org/](https://www.bleachbit.org/) || [bleachbit](https://www.archlinux.org/packages/?name=bleachbit)
 
-*   **[fdupes](https://en.wikipedia.org/wiki/fdupes "wikipedia:fdupes")** — a program for identifying or deleting duplicate files residing within specified directories
+*   **[fdupes](https://en.wikipedia.org/wiki/fdupes "wikipedia:fdupes")** — Program for identifying or deleting duplicate files residing within specified directories.
 
 	[https://github.com/adrianlopezroche/fdupes](https://github.com/adrianlopezroche/fdupes) || [fdupes](https://www.archlinux.org/packages/?name=fdupes)
 
-*   **fslint** — A utility to find and clean various forms of lint on a filesystem
+*   **fslint** — A utility to find and clean various forms of lint on a filesystem.
 
 	[https://www.pixelbeat.org/fslint/](https://www.pixelbeat.org/fslint/) || [fslint](https://aur.archlinux.org/packages/fslint/)
 
-*   **gconf-cleaner** — cleans up the unknown/invalid gconf keys that still sitting down on your gconf database
+*   **gconf-cleaner** — cleans up the unknown/invalid GConf keys that still sitting down on your GConf database.
 
 	[https://code.google.com/archive/p/gconf-cleaner/](https://code.google.com/archive/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
 
-*   **rmlint** — Tool to quickly find (and optionally remove) duplicate files and other lint
+*   **rmlint** — Tool to quickly find (and optionally remove) duplicate files and other lint.
 
-	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
+	[https://github.com/sahib/rmlint](https://github.com/sahib/rmlint) || CLI: [rmlint](https://www.archlinux.org/packages/?name=rmlint), GUI: [rmlint-shredder](https://www.archlinux.org/packages/?name=rmlint-shredder)
+
+*   **Sweeper** — System cleaning utility for KDE.
+
+	[http://utils.kde.org/projects/sweeper/](http://utils.kde.org/projects/sweeper/) || [sweeper](https://www.archlinux.org/packages/?name=sweeper)
+
+#### Disk image writing
+
+*   **Deepin Boot Maker** — Tool to make boot disk for Deepin OS.
+
+	[https://github.com/linuxdeepin/deepin-boot-maker](https://github.com/linuxdeepin/deepin-boot-maker) || [deepin-boot-maker](https://www.archlinux.org/packages/?name=deepin-boot-maker)
+
+*   **Etcher** — Flash OS images to SD cards & USB drives, safely and easily. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://etcher.io/](https://etcher.io/) || [etcher](https://aur.archlinux.org/packages/etcher/)
+
+*   **GNOME MultiWriter** — Write an ISO file to multiple USB devices at once.
+
+	[https://wiki.gnome.org/Apps/MultiWriter](https://wiki.gnome.org/Apps/MultiWriter) || [gnome-multi-writer](https://www.archlinux.org/packages/?name=gnome-multi-writer)
+
+*   **ISOImageWriter** — Tool to write a .iso file to a USB disk.
+
+	[https://community.kde.org/ISOImageWriter](https://community.kde.org/ISOImageWriter) || [isoimagewriter](https://aur.archlinux.org/packages/isoimagewriter/)
+
+*   **MultiBootUSB** — Install multiple live Linux on a USB disk non destructively and option to uninstall distros.
+
+	[http://multibootusb.org/](http://multibootusb.org/) || [multibootusb](https://aur.archlinux.org/packages/multibootusb/)
+
+*   **Multisystem** — GUI tool to create a USB system that can boot multiple distro's.
+
+	[http://liveusb.info/](http://liveusb.info/) || [multisystem](https://aur.archlinux.org/packages/multisystem/)
+
+*   **WoeUSB** — Simple tool to create USB stick windows installer from an ISO image or a real DVD. (Fork of WinUSB).
+
+	[https://github.com/slacka/WoeUSB](https://github.com/slacka/WoeUSB) || [woeusb](https://aur.archlinux.org/packages/woeusb/)
 
 ### System
 
@@ -1049,9 +1104,13 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://collectl.sourceforge.net/](http://collectl.sourceforge.net/) || [collectl](https://aur.archlinux.org/packages/collectl/)
 
+*   **Deepin System Monitor** — Monitor system process status for Deepin desktop.
+
+	[https://github.com/linuxdeepin/deepin-system-monitor](https://github.com/linuxdeepin/deepin-system-monitor) || [deepin-system-monitor](https://www.archlinux.org/packages/?name=deepin-system-monitor)
+
 *   **dstat** — Versatile resource statistics tool.
 
-	[http://dag.wieers.com/home-made/dstat/](http://dag.wieers.com/home-made/dstat/) || [dstat](https://www.archlinux.org/packages/?name=dstat) or [dstat-py3](https://aur.archlinux.org/packages/dstat-py3/)
+	[http://dag.wieers.com/home-made/dstat/](http://dag.wieers.com/home-made/dstat/) || [dstat](https://www.archlinux.org/packages/?name=dstat)
 
 *   **[Fsniper](/index.php/Fsniper "Fsniper")** — Daemon to run scripts based on changes in files monitored by inotify.
 
@@ -1065,17 +1124,21 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://nicolargo.github.io/glances](http://nicolargo.github.io/glances) || [glances](https://www.archlinux.org/packages/?name=glances)
 
-*   **GNOME System Monitor** — System monitor for [GNOME](/index.php/GNOME "GNOME").
+*   **GNOME System Monitor** — System monitor for [GNOME](/index.php/GNOME "GNOME") to view and manage system resources.
 
 	[https://wiki.gnome.org/Apps/SystemMonitor](https://wiki.gnome.org/Apps/SystemMonitor) || [gnome-system-monitor](https://www.archlinux.org/packages/?name=gnome-system-monitor)
+
+*   **GNOME Usage** — View information about use of system resources, like memory and disk space.
+
+	[https://wiki.gnome.org/Apps/Usage](https://wiki.gnome.org/Apps/Usage) || [gnome-usage](https://www.archlinux.org/packages/?name=gnome-usage)
 
 *   **[htop](https://en.wikipedia.org/wiki/Htop "wikipedia:Htop")** — Simple, ncurses interactive process viewer.
 
 	[http://htop.sourceforge.net/](http://htop.sourceforge.net/) || [htop](https://www.archlinux.org/packages/?name=htop)
 
-*   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — Also known as KSysguard, is the [KDE](/index.php/KDE "KDE") task manager and performance monitor.
+*   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — System monito for [KDE](/index.php/KDE "KDE") to monitor running processes and system performance.
 
-	[https://userbase.kde.org/KSysGuard](https://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
+	[https://userbase.kde.org/KSysGuard](https://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard)
 
 *   **Linux Process Explorer** — Graphical process explorer for Linux.
 
@@ -1112,6 +1175,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **xosview** — System monitor that resembles gr_osview from SGI IRIX
 
 	[http://www.pogo.org.uk/~mark/xosview/](http://www.pogo.org.uk/~mark/xosview/) || [xosview](https://aur.archlinux.org/packages/xosview/)
+
+#### Hardware sensor monitoring
+
+See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends "Lm sensors").
 
 #### System information viewers
 
@@ -1167,9 +1234,13 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://ezix.org/project/wiki/HardwareLiSter](http://ezix.org/project/wiki/HardwareLiSter) || [lshw](https://www.archlinux.org/packages/?name=lshw)
 
-*   **KDE Info Center** — Shows hardware and software information.
+*   **KDE Info Center** — Centralized and convenient overview of system information for KDE.
 
 	[https://www.kde.org/applications/system/kinfocenter/](https://www.kde.org/applications/system/kinfocenter/) || [kinfocenter](https://www.archlinux.org/packages/?name=kinfocenter)
+
+*   **USBView** — Display the topology of devices on the USB bus.
+
+	[http://www.kroah.com/linux/usb/](http://www.kroah.com/linux/usb/) || [usbview](https://www.archlinux.org/packages/?name=usbview)
 
 #### System log viewers
 
@@ -1188,6 +1259,12 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **MATE System Log** — System log viewer for MATE.
 
 	[https://github.com/mate-desktop/mate-utils](https://github.com/mate-desktop/mate-utils) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
+
+*   **Pacman Log Viewer** — Tool used to inspect pacman log file, in particular it lists installed, removed and upgraded packages letting you to filter
+
+by package's name and/or date.
+
+	[https://www.opendesktop.org/content/show.php?content=150484](https://www.opendesktop.org/content/show.php?content=150484) || [pacmanlogviewer](https://www.archlinux.org/packages/?name=pacmanlogviewer)
 
 #### Font viewers
 
@@ -1216,6 +1293,10 @@ See also [Wikipedia:Font management software](https://en.wikipedia.org/wiki/Font
 *   **Waterfall** — GTK+ application to view all characters of font in all sizes.
 
 	[https://keithp.com/cgit/gwaterfall.git](https://keithp.com/cgit/gwaterfall.git) || [gwaterfall](https://www.archlinux.org/packages/?name=gwaterfall)
+
+#### Help viewers
+
+See [man page#Viewer applications](/index.php/Man_page#Viewer_applications "Man page").
 
 #### Command schedulers
 
@@ -1261,11 +1342,11 @@ See [Xrandr#Graphical front-ends](/index.php/Xrandr#Graphical_front-ends "Xrandr
 
 #### Backlight management
 
-See [Backlight#Other utilities](/index.php/Backlight#Other_utilities "Backlight").
+See [Backlight#Backlight utilities](/index.php/Backlight#Backlight_utilities "Backlight").
 
 #### Color management
 
-See [ICC profiles#Utilities](/index.php/ICC_profiles#Utilities "ICC profiles").
+See [ICC profiles#Utilities](/index.php/ICC_profiles#Utilities "ICC profiles") and [Backlight#Color correction](/index.php/Backlight#Color_correction "Backlight").
 
 #### Printer management
 

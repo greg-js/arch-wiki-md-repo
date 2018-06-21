@@ -204,7 +204,7 @@ To work properly with Kodi, a file that maps the lirc events to Kodi keypresses 
 
 ### HDMI-CEC
 
-With a supported [USB-CEC adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter), Kodi can be used to automatically turn on and off your TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control.
+With a supported [USB-CEC adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter), Kodi can be used to automatically turn on and off your TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control. For more information see the [official Kodi wiki page on CEC](https://kodi.wiki/view/CEC) and [libCEC FAQ](http://libcec.pulse-eight.com/faq).
 
 Install [libcec](https://www.archlinux.org/packages/?name=libcec).
 
