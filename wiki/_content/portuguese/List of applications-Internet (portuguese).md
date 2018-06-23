@@ -89,7 +89,7 @@
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Daemon [systemd](/index.php/Systemd "Systemd") Nativo que gerencia a configuração de rede. Ele inclui suporte para configuração de rede básica, através do [udev](/index.php/Udev "Udev"). O serviço está disponível com *systemd* > 210.
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Daemon [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") Nativo que gerencia a configuração de rede. Ele inclui suporte para configuração de rede básica, através do [udev](/index.php/Udev "Udev"). O serviço está disponível com *systemd* > 210.
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 

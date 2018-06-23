@@ -24,7 +24,7 @@ De [página web do projeto](http://freedesktop.org/wiki/Software/systemd):
 *   [2 Escrevendo arquivos unit](#Escrevendo_arquivos_unit)
     *   [2.1 Manuseando dependências](#Manuseando_depend.C3.AAncias)
     *   [2.2 Tipos de serviços](#Tipos_de_servi.C3.A7os)
-    *   [2.3 Editando units fornecidos](#Editando_units_fornecidos)
+    *   [2.3 Editando units fornecidas](#Editando_units_fornecidas)
         *   [2.3.1 Arquivos unit de substituição](#Arquivos_unit_de_substitui.C3.A7.C3.A3o)
         *   [2.3.2 Arquivos drop-in](#Arquivos_drop-in)
         *   [2.3.3 Reverter para versão do vendor](#Reverter_para_vers.C3.A3o_do_vendor)
@@ -43,7 +43,7 @@ De [página web do projeto](http://freedesktop.org/wiki/Software/systemd):
     *   [7.1 Nível de prioridade](#N.C3.ADvel_de_prioridade)
     *   [7.2 Facilidade](#Facilidade)
     *   [7.3 Filtrando saída](#Filtrando_sa.C3.ADda)
-    *   [7.4 Tamanho limite do journal](#Tamanho_limite_do_journal)
+    *   [7.4 Limite no tamanho do journal](#Limite_no_tamanho_do_journal)
     *   [7.5 Limpar arquivos de journal manualmente](#Limpar_arquivos_de_journal_manualmente)
     *   [7.6 Journald em conjunto com o syslog](#Journald_em_conjunto_com_o_syslog)
     *   [7.7 Encaminhar journald para /dev/tty12](#Encaminhar_journald_para_.2Fdev.2Ftty12)
@@ -297,7 +297,7 @@ Há vários tipos de execução diferentes a considerar quando se escreve um arq
 
 Veja a página man [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) para uma explicação mais detalhada dos valores de `Type`.
 
-### Editando units fornecidos
+### Editando units fornecidas
 
 Para evitar conflitos com o pacman, arquivos unit fornecidos por pacotes não devem ser editados diretamente. Há duas formas seguras de modificar um unit sem tocar no arquivo original: crie um novo arquivo unit que [se sobreponha ao unit original](#Arquivos_unit_de_substitui.C3.A7.C3.A3o) ou crie [trechos drop-in](#Arquivos_drop-in) que são aplicados sobre o unit original. Para ambos métodos, você deve recarregar o unit em seguida para aplicar suas alterações. Isso pode ser feito editando o unit com `systemctl edit` (que recarrega o unit automaticamente) ou recarregando todos os units com:
 
@@ -589,7 +589,7 @@ $ SYSTEMD_LESS=FRXMK journalctl
 ```
 Se você quiser definir esse comportamento como padrão, [exporte](/index.php/Environment_variables#Per_user "Environment variables") a variável a partir de `~/.bashrc` ou `~/.zshrc`.
 
-### Tamanho limite do journal
+### Limite no tamanho do journal
 
 Se o journal é persistente (não volátil), seu tamanho limite é definido para um valor padrão de 10% do tamanho do respectivo sistema de arquivos, mas limitado a 4 GB. Por exemplo, com o `/var/log/journal` localizado em uma partição de 20 GB, o journal pode usar até 2 GB. Em uma partição de 50 GB, ela usaria no máximo até 4 GB.
 
@@ -628,7 +628,7 @@ Veja [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") e [Syslog-n
 
 ### Encaminhar journald para /dev/tty12
 
-Create a [drop-in directory](#Editing_provided_units) `/etc/systemd/journald.conf.d` and create a `fw-tty12.conf` file in it:
+Crie um [diretório de *drop-in*](#Editando_units_fornecidas) `/etc/systemd/journald.conf.d` e crie um arquivo `fw-tty12.conf` nele:
 
  `/etc/systemd/journald.conf.d/fw-tty12.conf` 
 ```
@@ -638,11 +638,11 @@ TTYPath=/dev/tty12
 MaxLevelConsole=info
 ```
 
-Then [restart](/index.php/Restart "Restart") `systemd-journald.service`.
+Então, [reinicie](/index.php/Reinicie "Reinicie") `systemd-journald.service`.
 
 ### Especificar um journal diferente para ver
 
-There may be a need to check the logs of another system that is dead in the water, like booting from a live system to recover a production system. In such case, one can mount the disk in e.g. `/mnt`, and specify the journal path via `-D`/`--directory`, like so:
+Pode ser necessário verificar os logs de outro sistema que esteja inativo na água, como a inicialização de um sistema ativo para recuperar um sistema de produção. Nesse caso, pode-se montar o disco em, p. ex., `/mnt` e especificar o caminho do journal via `-D`/`--directory`, assim:
 
 ```
 $ journalctl -D */mnt*/var/log/journal -xe
@@ -653,7 +653,7 @@ $ journalctl -D */mnt*/var/log/journal -xe
 
 ### Executando serviços após a rede estar ativa
 
-To delay a service after the network is up, include the following dependencies in the *.service* file:
+Para atrasar um serviço depois que a rede está ativa, inclua as seguintes dependências no arquivo *.service*:
 
  `/etc/systemd/system/*foo*.service` 
 ```
@@ -664,50 +664,50 @@ To delay a service after the network is up, include the following dependencies i
 ...
 ```
 
-The network wait service of the particular application that manages the network, must also be enabled so that `network-online.target` properly reflects the network status.
+O serviço de espera de rede do aplicativo específico que gerencia a rede também deve ser ativado para que `network-online.target` reflita adequadamente o status da rede.
 
-*   For the ones using [NetworkManager](/index.php/NetworkManager "NetworkManager"), [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service`.
-*   If using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` is by default enabled automatically whenever `systemd-networkd.service` has been enabled; check this is the case with `systemctl is-enabled systemd-networkd-wait-online.service`, there is no other action needed.
+*   Para os que estão usando [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)"), [habilite](/index.php/Habilite "Habilite") `NetworkManager-wait-online.service`.
+*   Se estiver usando [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` é, por padrão, habilitado automaticamente sempre que `systemd-networkd.service` foi habilitado; caso obtenha sucesso na verificação como `systemctl is-enabled systemd-networkd-wait-online.service`, nenhuma outra ação é necessária.
 
-For more detailed explanations see [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) in the systemd wiki.
+Para explicações mais detalhadas, veja [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) no wiki do systemd.
 
 ### Habilitar units instaladas por padrão
 
-Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` containing `disable *`. This causes *systemctl preset* to disable all units by default, such that when a new package is installed, the user must manually enable the unit.
+O Arch Linux vem com `/usr/lib/systemd/system-preset/99-default.preset` contendo `disable *`. Isso faz com que o *systemctl preset* desabilite todas as unidades por padrão, de forma que quando um novo pacote é instalado, o usuário deve habilitar manualmente a unit.
 
-If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See [systemd.preset(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.preset.5) for more information.
+Se este comportamento não for desejado, basta criar um link simbólico de `/etc/systemd/system-preset/99-default.preset` para `/dev/null` para sobrescrever o arquivo de configuração. Isso fará com que o *systemctl preset* habilite todas as units que forem instaladas – independentemente do tipo de unit – a menos que especificado em outro arquivo em um dos diretórios de configuração do *systemctl preset*. Units de usuário não são afetadas. Veja [systemd.preset(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.preset.5) para mais informações.
 
-**Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
+**Nota:** Habilitar todas as units por padrão pode causar problemas com pacotes que contêm duas ou mais unidades mutuamente exclusivas. O *systemctl preset* é projetado para ser usado por distribuições ou administradores de sistema. No caso em que duas units conflitantes seriam habilitadas, você deve especificar explicitamente qual delas deve ser desabilitada em um arquivo de configuração predefinido, conforme especificado na página man de `systemd.preset`.
 
 ### Usando ambientes de aplicativos em *sandbox*
 
-A unit file can be created as a sandbox to isolate applications and their processes within a hardened virtual environment. systemd leverages [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces"), white-/blacklisting of [Capabilities](/index.php/Capabilities "Capabilities"), and [control groups](/index.php/Control_groups "Control groups") to container processes through an extensive [execution environment configuration](https://www.freedesktop.org/software/systemd/man/systemd.exec.html).
+Um arquivo de unit pode ser criado como uma *sandbox* para isolar aplicativos e seus processos em um ambiente virtual reforçado. O systemd alavanca [espaços de nomes](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces"), listas brancas/negras de [Capacidades](/index.php/Capabilities "Capabilities") e [grupos de controle](/index.php/Control_groups "Control groups") ("cgroups") para processos contêineres através de uma extensa [configuração do ambiente de execução](https://www.freedesktop.org/software/systemd/man/systemd.exec.html).
 
-The enhancement of an existing systemd unit file with application sandboxing typically requires trial-and-error tests accompanied by the generous use of [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams") and [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html) error logging and output facilities. You may want to first search upstream documentation for already done tests to base trials on.
+O aprimoramento de um arquivo existente de unit do systemd com um aplicativo de *sandboxing* normalmente requer testes de tentativa e erro acompanhados pelo uso generoso de [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/pt:Fluxos_padr%C3%A3o#Erro_padr.C3.A3o_.28stderr.29 "wikipedia:pt:Fluxos padrão") e facilidades de saída e registro de erro do [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html). Você pode querer pesquisar primeiro a documentação original para testes já feitos para basear os testes.
 
-Some examples on how sandboxing with systemd can be deployed:
+Alguns exemplos sobre como fazer *sandboxing* como systemd pode ser implementado:
 
-*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities, but may also be used to blacklist a specific capability for a unit.
-    *   The `CAP_SYS_ADM` capability, for example, which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/): `CapabilityBoundingSet=~ CAP_SYS_ADM`
+*   `CapabilityBoundingSet` define uma lista branca definida de capacidades permitidas, mas também pode ser usado para inserir em lista negra uma capacidade específica para uma unit.
+    *   A capacidade `CAP_SYS_ADM`, por exemplo, que deve ser um dos [objetivos de um sandbox seguro](https://lwn.net/Articles/486306/): `CapabilityBoundingSet=~ CAP_SYS_ADM`
 
 ## Solução de problemas
 
 ### Investigar erros no systemd
 
-As an example, we will investigate an error with `systemd-modules-load` service:
+Como um exemplo, vamos investigar um erro como o serviço `systemd-modules-load`:
 
-**1.** Lets find the *systemd* services which fail to start at boot time:
+**1.** Vamos procurar os serviços *systemd* que falham em iniciar em tempo de inicialização:
 
  `$ systemctl --state=failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
 
-Another way is to live log *systemd* messages:
+Outra forma é mensagens de log ao vivo do *systemd*:
 
 ```
 $ journalctl -fp err
 
 ```
 
-**2.** Ok, we found a problem with `systemd-modules-load` service. We want to know more:
+**2.** Beleza, localizamos um problema com o serviço `systemd-modules-load`. Queremos saber mais:
 
  `$ systemctl status systemd-modules-load` 
 ```
@@ -719,9 +719,9 @@ systemd-modules-load.service - Load Kernel Modules
   Process: **15630** ExecStart=/usr/lib/systemd/systemd-modules-load (**code=exited, status=1/FAILURE**)
 ```
 
-If the `Process ID` is not listed, just restart the failed service with `systemctl restart systemd-modules-load`
+Se o `Process ID` não estiver listado, basta reiniciar o serviço que falhou usando `systemctl restart systemd-modules-load`.
 
-**3.** Now we have the process id (PID) to investigate this error in depth. Enter the following command with the current `Process ID` (here: 15630):
+**3.** Agora temos o id de processo (PID) para investigar esse erro em profundidade. Digite o comando a seguir com o `Process ID` atual (aqui: 15630):
 
  `$ journalctl _PID=15630` 
 ```
@@ -730,7 +730,7 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'black
 Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'install usblp /bin/false'**
 ```
 
-**4.** We see that some of the kernel module configs have wrong settings. Therefore we have a look at these settings in `/etc/modules-load.d/`:
+**4.** Vemos que algumas configurações de módulo do kernel estão com configurações erradas. Portanto, vamos dar uma olhada nessas configurações em `/etc/modules-load.d/`:
 
  `$ ls -Al /etc/modules-load.d/` 
 ```
@@ -744,7 +744,7 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 
 ```
 
-**5.** The `Failed to find module 'blacklist usblp'` error message might be related to a wrong setting inside of `blacklist.conf`. Lets deactivate it with inserting a trailing **#** before each option we found via step 3:
+**5.** A mensagem de erro `Failed to find module 'blacklist usblp'` pode estar relacionada a uma configuração errada dentro de `blacklist.conf`. Vamos desativá-lo inserindo um **#** antes de cada opção que encontramos na etapa 3:
 
  `/etc/modules-load.d/blacklist.conf` 
 ```
@@ -753,16 +753,16 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 
 ```
 
-**6.** Now, try to start `systemd-modules-load`:
+**6.** Agora, tentar iniciar `systemd-modules-load`:
 
 ```
 $ systemctl start systemd-modules-load
 
 ```
 
-If it was successful, this should not prompt anything. If you see any error, go back to step 3 and use the new PID for solving the errors left.
+Se for bem sucedido, nada deve ser emitido. Se você vir algum erro, volte para a etapa 3 e use o novo PID para resolver os erros deixados.
 
-If everything is ok, you can verify that the service was started successfully with:
+Se tudo estiver correto, você pode verificar se o serviço foi iniciado com sucesso com:
 
  `$ systemctl status systemd-modules-load` 
 ```
@@ -777,15 +777,13 @@ Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 
 ### Diagnosticar problemas de inicialização
 
-Inicialização desses parâmetros na linha de comando do kernel: `systemd.log_level=debug systemd.log_target=kmsg log_buf_len=1M`
-
-[More Debugging Information](http://freedesktop.org/wiki/Software/systemd/Debugging)
+O *systemd* tem várias opções para diagnosticar problemas com o processo de inicialização. Veja [Depuração de inicialização](/index.php/Boot_debugging "Boot debugging") para instruções mais gerais e opções para capturar mensagens de inicialização antes que o *systemd* assuma o [processo de inicialização](/index.php/Processo_de_inicializa%C3%A7%C3%A3o "Processo de inicialização"). Veja também a [documentação de depuração do systemd](http://freedesktop.org/wiki/Software/systemd/Debugging/).
 
 ### Diagnosticar um serviço
 
-If some *systemd* service misbehaves or you want to get more information about what is happening, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the *systemd-networkd* daemon in debug mode:
+Se algum serviço do *systemd* se comportar mal ou você quiser obter mais informações sobre o que está acontecendo, defina a [variável de ambiente](/index.php/Environment_variable "Environment variable") `SYSTEMD_LOG_LEVEL` com `debug`. Por exemplo, para executar o daemon *systemd-networkd* no modo de depuração:
 
-Add a [#Drop-in files](#Drop-in_files) for the service adding the two lines:
+Adicione um [arquivo *drop-in*](#Arquivos_drop-in) para o serviço adicionando as duas linhas:
 
 ```
 [Service]
@@ -793,44 +791,44 @@ Environment=SYSTEMD_LOG_LEVEL=debug
 
 ```
 
-Or equivalently, set the environment variable manually:
+Ou, de forma equivalente, defina a variável de ambiente manualmente:
 
 ```
 # SYSTEMD_LOG_LEVEL=debug /lib/systemd/systemd-networkd
 
 ```
 
-then [restart](/index.php/Restart "Restart") *systemd-networkd* and watch the journal for the service with the `--follow` option.
+então, [reinicie](/index.php/Reinicie "Reinicie") *systemd-networkd* e monitore o journal para o serviço com a opção `--follow`.
 
 ### Desligamento/reinicialização demora demais
 
-Se o processo de encerramento tem um tempo muito longo (ou parece congelar) mais provavelmente um serviço que não encerra é o responsável. *Systemd* espera um tempo para cada serviço terminar antes de tentar matá-lo. Para descobrir se você foi afetado, consulte [this article](http://freedesktop.org/wiki/Software/systemd/Debugging#Shutdown_Completes_Eventually).
+Se o processo de desligamento leva um tempo muito longo (ou parece estar congelado) muito provavelmente um serviço que não se encerra é o responsável. O *systemd* espera um tempo para cada serviço encerrar antes de tentar matá-lo. Para descobrir se você foi afetado, veja [esse artigo](http://freedesktop.org/wiki/Software/systemd/Debugging#Shutdown_Completes_Eventually).
 
 ### Processos de curta duração não parecem registrar qualquer saída
 
-Se `journalctl -u foounit` não mostra nenhuma saída para um serviço de curta duração, veja o PID em vez disso. Por exemplo, se `systemd-modules-load.service` falha, e `systemctl status systemd-modules-load` mostra que executou com PID 123, então você talvez possa ver uma saída no journal por esse PID, ou seja, `journalctl -b _PID=123`. Campos de metadados para o journal como _SYSTEMD_UNIT e _COMM são coletados de forma assíncrona e invocam o diretório `/proc` para o processo existente. A solução deste problema requer fixar o kernel para fornecer esses dados através de uma conexão de socket, semelhante ao SCM_CREDENTIALS.
+Se `journalctl -u foounit` não mostra nenhuma saída para um serviço de curta duração, veja o PID em vez disso. Por exemplo, se `systemd-modules-load.service` falha, e `systemctl status systemd-modules-load` mostra que executou com PID 123, então você talvez possa ver uma saída no journal por esse PID, ou seja, `journalctl -b _PID=123`. Campos de metadados para o journal como `_SYSTEMD_UNIT` e `_COMM` são coletados de forma assíncrona e invocam o diretório `/proc` para o processo existente. A solução deste problema requer fixar o kernel para fornecer esses dados através de uma conexão de socket, semelhante ao `SCM_CREDENTIALS`.
 
 ### Tempo de inicialização aumentando com o tempo
 
-After using `systemd-analyze` a number of users have noticed that their boot time has increased significantly in comparison with what it used to be. After using `systemd-analyze blame` [NetworkManager](/index.php/NetworkManager "NetworkManager") is being reported as taking an unusually large amount of time to start.
+Depois de usar o `systemd-analyze`, vários usuários notaram que o tempo de inicialização aumentou significativamente em comparação com o que costumava ser. Depois de usar `systemd-analyse blame`, o [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") está sendo relatado como tendo uma quantidade anormalmente grande de tempo para iniciar.
 
-The problem for some users has been due to `/var/log/journal` becoming too large. This may have other impacts on performance, such as for `systemctl status` or `journalctl`. As such the solution is to remove every file within the folder (ideally making a backup of it somewhere, at least temporarily) and then setting a journal file size limit as described in [#Journal size limit](#Journal_size_limit).
+O problema para alguns usuários foi devido a `/var/log/journal` se tornar muito grande. Isso pode ter outros impactos no desempenho, como `systemctl status` ou `journalctl`. Como tal, a solução é remover todos os arquivos dentro da pasta (idealmente fazendo um backup em algum lugar, pelo menos temporariamente) e, em seguida, definindo um limite de tamanho de arquivo de diário conforme descrito em [#Limite no tamanho do journal](#Limite_no_tamanho_do_journal).
 
 ### systemd-tmpfiles-setup.service não inicia na inicialização do sistema
 
-Starting with systemd 219, `/usr/lib/tmpfiles.d/systemd.conf` specifies ACL attributes for directories under `/var/log/journal` and, therefore, requires ACL support to be enabled for the filesystem the journal resides on.
+A partir do systemd 219, `/usr/lib/tmpfiles.d/systemd.conf` especifica os atributos da ACL para os diretórios sob `/var/log/journal` e, portanto, requer que o suporte da ACL seja ativada para o sistema de arquivos em que o journal reside.
 
-See [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") for instructions on how to enable ACL on the filesystem that houses `/var/log/journal`.
+Veja [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") para instruções sobre como habilitar ACL no sistema de arquivos que hospeda `/var/log/journal`.
 
 ### A versão impressa do systemd na inicialização não é a mesma da versão do pacote instalado
 
-You need to [regenerate your initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and the versions should match.
+Você precisa [regenerar seu initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") e as versões deve corresponder.
 
-**Tip:** A pacman hook can be used to automatically regenerate the initramfs every time [systemd](https://www.archlinux.org/packages/?name=systemd) is upgraded. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=215411) and [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+**Dica:** Um hook do pacman pode ser usado para regenerar automaticamente o initramfs toda vez que o [systemd](https://www.archlinux.org/packages/?name=systemd) é atualizado. Veja [esse tópico no fórum](https://bbs.archlinux.org/viewtopic.php?id=215411) e [Pacman (Português)#Hooks](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)").
 
 ### Desabilitar modo de emergência em máquina remota
 
-You may want to disable emergency mode on a remote machine, for example, a virtual machine hosted at Azure or Google Cloud. It is because if emergency mode is triggered, the machine will be blocked from connecting to network.
+Você pode desabilitar o modo de emergência em uma máquina remota, por exemplo, uma máquina virtual hospedada no Azure ou no Google Cloud. É porque se o modo de emergência for acionado, a máquina será bloqueada de se conectar à rede.
 
 ```
 # systemctl mask emergency.service
@@ -840,19 +838,20 @@ You may want to disable emergency mode on a remote machine, for example, a virtu
 
 ## Veja também
 
-*   [Official web site](http://www.freedesktop.org/wiki/Software/systemd)
-*   [Wikipedia article](https://en.wikipedia.org/wiki/systemd "wikipedia:systemd")
-*   [Manual pages](http://0pointer.de/public/systemd-man/)
-*   [systemd optimizations](http://freedesktop.org/wiki/Software/systemd/Optimizations)
-*   [FAQ](http://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
-*   [Tips and tricks](http://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
-*   [systemd for Administrators (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
-*   [About systemd on Fedora Project](http://fedoraproject.org/wiki/Systemd)
-*   [How to debug systemd problems](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) introductory article in *The H Open* magazine.
-*   [Lennart's blog story](http://0pointer.de/blog/projects/systemd.html)
-*   [Status update](http://0pointer.de/blog/projects/systemd-update.html)
-*   [Status update2](http://0pointer.de/blog/projects/systemd-update-2.html)
-*   [Status update3](http://0pointer.de/blog/projects/systemd-update-3.html)
-*   [Most recent summary](http://0pointer.de/blog/projects/why.html)
-*   [Fedora's SysVinit to systemd cheatsheet](http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
+*   [Artigo do Wikipédia](https://en.wikipedia.org/wiki/pt:systemd "wikipedia:pt:systemd")
+*   [Site oficial do systemd](http://www.freedesktop.org/wiki/Software/systemd)
+*   [Otimizações do systemd](http://www.freedesktop.org/wiki/Software/systemd/Optimizations)
+*   [FAQ do systemd](http://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
+*   [Dicas e truques do systemd](http://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
+*   [Página sobre systemd do Gentoo Wiki](http://wiki.gentoo.org/wiki/Systemd)
+*   [Projeto Fedora - Sobre o systemd](http://fedoraproject.org/wiki/Systemd)
+*   [Projeto Fedora - Como depurar problemas no systemd](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
+*   [Projeto Fedora - Folha de dicas de SysVinit para systemd](http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
+*   [Página sobre systemd do Debian Wiki](https://wiki.debian.org/systemd "debian:systemd")
+*   [Páginas de manual](http://0pointer.de/public/systemd-man/)
+*   [História do blogue do Lennart](http://0pointer.de/blog/projects/systemd.html), [atualização 1](http://0pointer.de/blog/projects/systemd-update.html), [atualização 2](http://0pointer.de/blog/projects/systemd-update-2.html), [atualização 3](http://0pointer.de/blog/projects/systemd-update-3.html), [resumo](http://0pointer.de/blog/projects/why.html)
+*   [systemd para administradores (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
+*   [Como usar o systemctl para gerenciar serviços e units do systemd](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
+*   [gerenciamento de sessão com systemd-logind](https://dvdhrm.wordpress.com/2013/08/24/session-management-on-linux/)
+*   [Realce de sintaxe do Emacs para arquivos do systemd](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
+*   Artigo introdutório em [duas](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [partes](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) na revista *The H Open*.

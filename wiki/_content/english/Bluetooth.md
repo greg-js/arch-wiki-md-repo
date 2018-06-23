@@ -14,29 +14,30 @@ Related articles
     *   [1.1 Front-ends](#Front-ends)
         *   [1.1.1 Console](#Console)
         *   [1.1.2 Graphical](#Graphical)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Auto power-on after boot](#Auto_power-on_after_boot)
-*   [3 Using Obex for sending and receiving files](#Using_Obex_for_sending_and_receiving_files)
-    *   [3.1 ObexFS](#ObexFS)
-    *   [3.2 ObexFTP transfers](#ObexFTP_transfers)
-    *   [3.3 Obex Object Push](#Obex_Object_Push)
-*   [4 Audio](#Audio)
-    *   [4.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
-    *   [5.2 gnome-bluetooth](#gnome-bluetooth)
-    *   [5.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
-        *   [5.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
-    *   [5.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
-    *   [5.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
-    *   [5.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
-    *   [5.7 My computer is not visible](#My_computer_is_not_visible)
-    *   [5.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [5.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
-    *   [5.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
-    *   [5.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
-    *   [5.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [5.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+*   [2 Pairing](#Pairing)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Auto power-on after boot](#Auto_power-on_after_boot)
+*   [4 Using Obex for sending and receiving files](#Using_Obex_for_sending_and_receiving_files)
+    *   [4.1 ObexFS](#ObexFS)
+    *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
+    *   [4.3 Obex Object Push](#Obex_Object_Push)
+*   [5 Audio](#Audio)
+    *   [5.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
+    *   [6.2 gnome-bluetooth](#gnome-bluetooth)
+    *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
+    *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
+    *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
+    *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
+    *   [6.7 My computer is not visible](#My_computer_is_not_visible)
+    *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
+    *   [6.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
+    *   [6.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
+    *   [6.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [6.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
@@ -87,7 +88,7 @@ The following packages allow for a graphical interface to customize Bluetooth.
 
 	[https://github.com/blueman-project/blueman](https://github.com/blueman-project/blueman) || [blueman](https://www.archlinux.org/packages/?name=blueman)
 
-## Configuration
+## Pairing
 
 **Note:** Before using the bluetooth device, make sure that it is not blocked by [rfkill](/index.php/Rfkill "Rfkill").
 
@@ -139,6 +140,8 @@ Attempting to connect to 00:12:34:56:78:90
 Connection successful
 
 ```
+
+## Configuration
 
 ### Auto power-on after boot
 

@@ -28,7 +28,7 @@ Kakoune reads configuration from `$XDG_CONFIG_HOME/kak`.
 
 The main configuration file is `kakrc`, and custom colorschemes can be stored in the `colors` directory.
 
-Every `*.kak` file is loaded from `autoload` at startup. If this directory exists in `$XDG_CONFIG_HOME`, Kakoune don't loads the system wide `autoload` dir (/usr/share/kak/autoload), so it have to be linked there. For example:
+Every `*.kak` file is loaded from `autoload` at startup. If this directory exists in `$XDG_CONFIG_HOME`, Kakoune doesn't load the system wide `autoload` dir (located at `/usr/share/kak/autoload`), so it has to be linked there. For example:
 
 ```
  ln -s /usr/share/kak/autoload $XDG_CONFIG_HOME/kak/autoload/default

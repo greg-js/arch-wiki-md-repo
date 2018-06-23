@@ -33,7 +33,7 @@ Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle
 
 ## Enable pcscd
 
-[Start](/index.php/Start "Start") and enable `pcscd.service`.
+[Start](/index.php/Start "Start") and enable `pcscd.socket`.
 
 ## Configure browser
 

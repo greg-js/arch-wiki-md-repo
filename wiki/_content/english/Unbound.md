@@ -63,7 +63,7 @@ server:
 
 If you want to use *unbound* as your local DNS server, set your nameserver to `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf").
 
-**Tip:** A simple way to do this is to install the [openresolv](https://www.archlinux.org/packages/?name=openresolv) package and uncomment the line containing `name_servers=127.0.0.1` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
+**Tip:** A simple way to do this is to install [openresolv](/index.php/Openresolv "Openresolv") and uncomment the line containing `name_servers=127.0.0.1` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
 
 See [Resolv.conf#Testing](/index.php/Resolv.conf#Testing "Resolv.conf") on how to test your settings.
 

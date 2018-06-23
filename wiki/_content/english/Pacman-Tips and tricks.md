@@ -510,7 +510,7 @@ Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/packages.txt'
 
 ### Listing all changed files from packages
 
-If you are suspecting file corruption (e.g. by software/hardware failure), but are unsure if files were got corrupted, you might want to compare with the hash sums in the packages. This can be done with [pacutils](https://www.archlinux.org/packages/?name=pacutils):
+If you are suspecting file corruption (e.g. by software/hardware failure), but are unsure if files were corrupted, you might want to compare with the hash sums in the packages. This can be done with [pacutils](https://www.archlinux.org/packages/?name=pacutils):
 
 ```
 # paccheck --md5sum --quiet

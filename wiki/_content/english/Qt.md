@@ -201,7 +201,7 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 #### Android
 
-First of all you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need QT 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described bellow or build it yourself, you can find build instructions on QT [wiki](http://wiki.qt.io/Android) page.
+First of all you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need Qt 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described bellow or build it yourself, you can find build instructions on Qt [wiki](http://wiki.qt.io/Android) page.
 
 *   [android-qt5-arm64-v8a](https://aur.archlinux.org/packages/android-qt5-arm64-v8a/) - arm64-v8a [ABI](https://developer.android.com/ndk/guides/abis.html)
 *   [android-qt5-armeabi](https://aur.archlinux.org/packages/android-qt5-armeabi/) - armeabi
@@ -210,7 +210,7 @@ First of all you need an [Android SDK](/index.php/Android "Android") and NDK. In
 *   [android-qt5-x86](https://aur.archlinux.org/packages/android-qt5-x86/) - x86
 *   [android-qt5-x86_64](https://aur.archlinux.org/packages/android-qt5-x86_64/) - x86_64
 
-Or you can use [QT Installer](https://download.qt.io/official_releases/qt/5.11/5.11.0/qt-opensource-linux-x64-5.11.0.run).
+Or you can use a [Qt Installer](https://download.qt.io/official_releases/qt/5.11/5.11.1/qt-opensource-linux-x64-5.11.1.run), for a full list see [Official Qt installers](https://download.qt.io/official_releases/qt/).
 
 ### Tools
 
@@ -485,7 +485,7 @@ As the user theme file (`$XDG_CONFIG_HOME/Trolltech.conf`), are not read by othe
 
 ### Qt4 style not respected
 
-If pure Qt4 (non-KDE) applications do not stick with your selected Qt4 style, then you'll probably need to tell Qt4 how to find KDE's styles (Oxygen, Phase etc.). You just need to set the environment variable QT_PLUGIN_PATH. E.g. put
+If pure Qt4 (non-KDE) applications do not stick with your selected Qt4 style, then you'll probably need to tell Qt4 how to find KDE's styles (Oxygen, Phase etc.). You just need to set the environment variable `QT_PLUGIN_PATH`. E.g. put
 
 ```
 export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/

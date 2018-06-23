@@ -10,6 +10,7 @@
     *   [2.2 Packages](#Packages)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Internet "kill switch"](#Internet_.22kill_switch.22)
+    *   [3.2 Setting PIA DNS](#Setting_PIA_DNS)
 
 ## Manual
 
@@ -75,9 +76,9 @@ The following [iptables](/index.php/Iptables "Iptables") rules only allow networ
 COMMIT
 ```
 
-This ensures that if you are disconnected from the VPN uknowingly, no network traffic is allowed in or out.
+This ensures that if you are disconnected from the VPN unknowingly, no network traffic is allowed in or out.
 
-If you wish to additionally access devices on your LAN, you will need to explicity allow them. For example, to allow access to devices on `192.0.0.0/24`, add the following two rules (before any REJECT rule):
+If you wish to additionally access devices on your LAN, you will need to explicitly allow them. For example, to allow access to devices on `192.0.0.0/24`, add the following two rules (before any REJECT rule):
 
 ```
 -A INPUT -s 192.168.0.0/24 -j ACCEPT
@@ -86,3 +87,27 @@ If you wish to additionally access devices on your LAN, you will need to explici
 ```
 
 Additionally, the above rules block the ICMP protocol, which is probably not desired. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=224655) for potential pitfalls of using these iptables rules as well as more details.
+
+### Setting PIA DNS
+
+If you find that Network Manager is controlling your host's DNS settings, and therefore your host cannot resolve any address, you will have to manually set the DNS server and attributes. You should note a symbolic link when running the following command
+
+```
+ls -l /etc/resolv.conf
+
+```
+
+Remove the symbolic link with `rm /etc/resolv.conf` Then create a new `/etc/resolv.conf` and add the following
+
+ `/etc/resolv.conf ` 
+```
+nameserver 209.222.18.222
+nameserver 209.222.18.218
+```
+
+Finally make the file immutable so no other application can modify it
+
+```
+chattr +i /etc/resolv.conf
+
+```

@@ -1,6 +1,7 @@
 Related articles
 
 *   [MPlayer](/index.php/MPlayer "MPlayer")
+*   [youtube-dl](/index.php/Youtube-dl "Youtube-dl")
 
 [mpv](https://mpv.io/) is a media player based on [MPlayer](/index.php/MPlayer "MPlayer") and the now unmaintained *mplayer2*. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
 
@@ -343,7 +344,7 @@ The development of *mpv'*s Lua scripts are documented in [DOCS/man/lua.rst](http
 
 ### Twitch.tv streaming over mpv
 
-If [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) is installed, *mpv* can directly open a Twitch livestream.
+If [youtube-dl](/index.php/Youtube-dl "Youtube-dl") is installed, *mpv* can directly open a Twitch livestream.
 
 Alternatively, see [Streamlink#Twitch](/index.php/Streamlink#Twitch "Streamlink").
 

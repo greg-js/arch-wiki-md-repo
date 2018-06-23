@@ -972,6 +972,10 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 	[https://sourceforge.net/projects/cryptmount/](https://sourceforge.net/projects/cryptmount/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
 
+*   **KDiskFree** — Displays information about hard disks and other storage devices. It also allows to mount and unmount drives and view them in a file manager.
+
+	[https://www.kde.org/applications/system/kdiskfree/](https://www.kde.org/applications/system/kdiskfree/) || [kdf](https://www.archlinux.org/packages/?name=kdf)
+
 *   **ldm** — A lightweight daemon that mounts drives automagically using *udev*
 
 	[https://github.com/LemonBoy/ldm](https://github.com/LemonBoy/ldm) || [ldm](https://aur.archlinux.org/packages/ldm/)
@@ -1058,6 +1062,8 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 #### Disk image writing
 
+See also [Wikipedia:List of tools to create Live USB systems](https://en.wikipedia.org/wiki/List_of_tools_to_create_Live_USB_systems "wikipedia:List of tools to create Live USB systems").
+
 *   **Deepin Boot Maker** — Tool to make boot disk for Deepin OS.
 
 	[https://github.com/linuxdeepin/deepin-boot-maker](https://github.com/linuxdeepin/deepin-boot-maker) || [deepin-boot-maker](https://www.archlinux.org/packages/?name=deepin-boot-maker)
@@ -1065,6 +1071,10 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 *   **Etcher** — Flash OS images to SD cards & USB drives, safely and easily. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://etcher.io/](https://etcher.io/) || [etcher](https://aur.archlinux.org/packages/etcher/)
+
+*   **[Fedora Media Writer](https://en.wikipedia.org/wiki/Fedora_Media_Writer "wikipedia:Fedora Media Writer")** — Tool that helps users put Fedora images on their portable drives such as flash disks.
+
+	[https://github.com/FedoraQt/MediaWriter](https://github.com/FedoraQt/MediaWriter) || [mediawriter](https://aur.archlinux.org/packages/mediawriter/)
 
 *   **GNOME MultiWriter** — Write an ISO file to multiple USB devices at once.
 
@@ -1074,13 +1084,25 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 	[https://community.kde.org/ISOImageWriter](https://community.kde.org/ISOImageWriter) || [isoimagewriter](https://aur.archlinux.org/packages/isoimagewriter/)
 
+*   **LiveUSB Install** — Install various Linux distributions and operating systems on removable flash drive or external disk drive.
+
+	[http://live.learnfree.eu/](http://live.learnfree.eu/) || [live-usb-install](https://aur.archlinux.org/packages/live-usb-install/)
+
 *   **MultiBootUSB** — Install multiple live Linux on a USB disk non destructively and option to uninstall distros.
 
 	[http://multibootusb.org/](http://multibootusb.org/) || [multibootusb](https://aur.archlinux.org/packages/multibootusb/)
 
-*   **Multisystem** — GUI tool to create a USB system that can boot multiple distro's.
+*   **MultiSystem** — GUI tool to create a USB system that can boot multiple distro's.
 
 	[http://liveusb.info/](http://liveusb.info/) || [multisystem](https://aur.archlinux.org/packages/multisystem/)
+
+*   **[SUSE Studio ImageWriter](https://en.wikipedia.org/wiki/SUSE_Studio_ImageWriter "wikipedia:SUSE Studio ImageWriter")** — Utility for writing raw disk images & hybrid isos to USB keys.
+
+	[https://github.com/openSUSE/imagewriter](https://github.com/openSUSE/imagewriter) || [imagewriter](https://aur.archlinux.org/packages/imagewriter/)
+
+*   **[UNetbootin](https://en.wikipedia.org/wiki/UNetbootin "wikipedia:UNetbootin")** — Installs Linux/BSD distributions to a partition or USB drive.
+
+	[https://unetbootin.github.io/](https://unetbootin.github.io/) || [unetbootin](https://aur.archlinux.org/packages/unetbootin/)
 
 *   **WoeUSB** — Simple tool to create USB stick windows installer from an ISO image or a real DVD. (Fork of WinUSB).
 

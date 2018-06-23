@@ -22,7 +22,7 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
         *   [7.2.1 Launch CellWriter under pen](#Launch_CellWriter_under_pen)
         *   [7.2.2 Gestures for the Alphabet](#Gestures_for_the_Alphabet)
     *   [7.3 Xournal](#Xournal)
-    *   [7.4 Gnome-screensaver](#Gnome-screensaver)
+    *   [7.4 GNOME Screensaver](#GNOME_Screensaver)
     *   [7.5 GDM](#GDM)
     *   [7.6 LightDM](#LightDM)
     *   [7.7 Touchegg](#Touchegg)
@@ -454,30 +454,22 @@ So, when you want to enter an upper-case letter, use your gesture for the shift 
 
 You can also extend the functionality of Xournal with patches, to enable things such as autosaving documents and inserting images. See [SourceForge](http://sourceforge.net/tracker/?group_id=163434&atid=827735) for links to all the available patches. To apply a patch, download the PKGBUILD for Xournal from the [ABS](/index.php/ABS "ABS"), and reference the article [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS").
 
-### Gnome-screensaver
+### GNOME Screensaver
 
-To unlock your gnome-screensaver using Cellwriter to enter your password, first start Gconf-editor:
-
-```
-$ gconf-editor
+To unlock your [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver) using Cellwriter to enter your password, first start [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor):
 
 ```
+$ dconf-editor
 
-Under `/apps/gnome-screensaver`, set **embedded_keyboard_command** to *cellwriter --xid --keyboard-only*, and check the **embedded_keyboard_enabled** checkbox.
+```
+
+Under `/org/gnome/desktop/screensaver`, `embedded-keyboard-command` to `cellwriter --xid --keyboard-only`, and check the `embedded-keyboard-enabled` checkbox.
 
 Alternatively, instead of using the graphical registry editor, you can simply type these into your command line:
 
 ```
-$ gconftool-2 --set /apps/gnome-screensaver/embedded_keyboard_command "cellwriter --xid --keyboard-only" --type string
-$ gconftool-2 --set /apps/gnome-screensaver/embedded_keyboard_enabled true --type boolean
-
-```
-
-If you are administrating a multi-user system and would like to set the system-wide default, you can do so by typing the following:
-
-```
-# gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults --set /apps/gnome-screensaver/embedded_keyboard_command "cellwriter --xid --keyboard-only" --type string
-# gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults --set /apps/gnome-screensaver/embedded_keyboard_enabled true --type boolean
+$ gsettings set org.gnome.desktop.screensaver embedded-keyboard-command "cellwriter --xid --keyboard-only"
+$ gsettings set org.gnome.desktop.screensaver embedded-keyboard-enabled true
 
 ```
 

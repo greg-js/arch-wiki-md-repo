@@ -10,12 +10,10 @@ Related articles
 *   [2 Usage](#Usage)
 *   [3 Autostartup](#Autostartup)
 *   [4 Guake scripting](#Guake_scripting)
-*   [5 Using Guake on multiple monitors](#Using_Guake_on_multiple_monitors)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 'Ctrl' keybind problem](#.27Ctrl.27_keybind_problem)
-    *   [6.2 In Floating WM](#In_Floating_WM)
-    *   [6.3 Toggling Guake visibility does not work (Wayland)](#Toggling_Guake_visibility_does_not_work_.28Wayland.29)
-*   [7 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 In Floating WM](#In_Floating_WM)
+    *   [5.2 Toggling Guake visibility does not work (Wayland)](#Toggling_Guake_visibility_does_not_work_.28Wayland.29)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -31,8 +29,6 @@ $ guake
 ```
 
 After guake has started you can right click on the interface and select *Preferences* to change the hotkey to drop the terminal automatically, by default it is set to `F12`.
-
-Also, you can adjust many of the Guake preferences with *gconf-editor* tool under *apps > guake*. If it's not enough for you, you are always free to copy the *guake* executable (`/usr/bin/guake`) to `/usr/local/bin/guake` and edit it in text editor, since it's just a [Python](/index.php/Python "Python") script. Remember to make the file executable.
 
 ## Autostartup
 
@@ -126,23 +122,7 @@ Notice than we should wait some time calling *sleep* to avoid race conditions be
 
 **Warning:** `--execute` option can make harmful things on a tab running text interface program, like `fdisk` or `innotop`. Use it with caution. There is a bug on github about it: [guake#921](https://github.com/Guake/guake/issues/921).
 
-## Using Guake on multiple monitors
-
-There are two GConf options allowing you to change the screen on which Guake window will appear:
-
-*   `/apps/guake/general/display_n` — display to appear on if the `mouse_display` option is not set. If this is set to an invalid value (as in the case of removing a screen from a system), the invalid value is automatically updated to the current primary screen.
-
-*   `/apps/guake/general/mouse_display` — appear on the mouse display. This overrides any setting in `display_n`.
-
-Use some tool like *gconf-editor* to edit GConf options.
-
 ## Troubleshooting
-
-### 'Ctrl' keybind problem
-
-As of [guake](https://www.archlinux.org/packages/?name=guake) 0.4.2-7 there has been a noted bug affecting multiple users concerning the use of the `Ctrl` key to toggle Guake window visibility (i.e. users that setup `Ctrl+Shift+z` to open the guake console are able to open it by just pressing `Shift+z`, independent on whether `Ctrl` key has been pressed).
-
-To solve the problem you should manually fix the value of the GConf key `/apps/guake/keybindings/global/show_hide`. Open a *gconf-editor*, navigate to *apps > guake > keybindings > global > show_hide* and replace `<Primary>` with `<Control>`.
 
 ### In Floating WM
 

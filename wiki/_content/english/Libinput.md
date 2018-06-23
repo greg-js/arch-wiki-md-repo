@@ -24,7 +24,8 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [3.4 Disable touchpad](#Disable_touchpad)
     *   [3.5 Gestures](#Gestures)
         *   [3.5.1 libinput-gestures](#libinput-gestures)
-        *   [3.5.2 GnomeExtendedGestures](#GnomeExtendedGestures)
+        *   [3.5.2 fusuma](#fusuma)
+        *   [3.5.3 GnomeExtendedGestures](#GnomeExtendedGestures)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
     *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE.27s_Touchpad_KCM)
@@ -238,6 +239,51 @@ While the libinput driver already contains logic to process advanced multitouch 
 For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The program reads libinput gestures (through `libinput debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
 
 To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), install the [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) package. You can use the default system-wide configured swipe and pinch gestures or define your own in a personal configuration file, see the [README](https://github.com/bulletmark/libinput-gestures/blob/master/README.md) for details.
+
+#### fusuma
+
+An alternative to libinput-gestures, you can
+
+```
+$ gem install fusuma
+
+```
+
+then in *~/.config/fusuma/config.yml* you can set something like:
+
+ `~/.config/fusuma/config.yml` 
+```
+swipe:
+  3: 
+    left: 
+      shortcut: 'alt+Right'
+    right: 
+      shortcut: 'alt+Left'
+    up: 
+      shortcut: 'ctrl+shift+plus'
+    down: 
+      shortcut: 'ctrl+minus'
+pinch:
+  in:
+    shortcut: 'ctrl+shift+plus'
+  out:
+    shortcut: 'ctrl+minus'
+
+threshold:
+  swipe: 0.5
+  pinch: 0.2
+
+interval:
+  swipe: 0.2
+  pinch: 0.2
+
+```
+
+The swipe threshold is important for not swiping back too many pages.
+
+Notice that the config is for three fingers swipe.
+
+See [https://github.com/iberianpig/fusuma](https://github.com/iberianpig/fusuma)
 
 #### GnomeExtendedGestures
 

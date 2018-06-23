@@ -55,6 +55,8 @@ EndSection
 
 Check if you have [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) installed, it may prevent Nvidia's vulkan driver from being detected.
 
+Alternatively export `VK_ICD_FILENAMES` by an [environment variable](/index.php/Environment_variable "Environment variable"):
+
 ```
  export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 

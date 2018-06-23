@@ -3,7 +3,7 @@ Related articles
 *   [GIMP/CMYK support](/index.php/GIMP/CMYK_support "GIMP/CMYK support")
 *   [List of applications/Multimedia#Raster graphics editors](/index.php/List_of_applications/Multimedia#Raster_graphics_editors "List of applications/Multimedia")
 
-[GIMP](https://www.gimp.org/) is a powerful image editing program, and commonly used for photo retouching, image composition, and general graphic design work. It can be used as a simple paint program, an expert quality photo retouching program, an online batch processing system, a mass production image renderer, an image format converter, etc.
+[GIMP](https://www.gimp.org/) is a powerful raster image editing program, and commonly used for photo retouching, image composition, and general graphic design work. It can be used as a simple paint program, an expert quality photo retouching program, an online batch processing system, a mass production image renderer, an image format converter, etc.
 
 ## Contents
 
@@ -11,7 +11,7 @@ Related articles
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Create a circle](#Create_a_circle)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 GIMP can't open PDF files](#GIMP_can.27t_open_PDF_files)
+    *   [3.1 GIMP and PDF files](#GIMP_and_PDF_files)
     *   [3.2 Green text](#Green_text)
 *   [4 See also](#See_also)
 
@@ -34,9 +34,11 @@ To draw a circle in GIMP follow these steps:
 
 ## Troubleshooting
 
-### GIMP can't open PDF files
+### GIMP and PDF files
 
 GIMP requires the [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib) library to open PDF files. Without this library GIMP will say that a PDF file is "unrecognized" when an attempt to open a PDF is made.
+
+Since GIMP rasterizes the PDF files right from the start, it doesn't exploit intrinsic PDF capabilities. One might want to use other programs to better edit PDF files. [LibreOffice Draw](/index.php/LibreOffice "LibreOffice") being one example of such a program.
 
 ### Green text
 

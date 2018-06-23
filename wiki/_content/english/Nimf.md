@@ -7,12 +7,7 @@ Related articles
 *   [UIM](/index.php/UIM "UIM")
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 
-**Warning:**
-
-*   As of May 2018 Nimf is no longer publicly maintained, the GitHub repository has been archived.[[1]](https://github.com/cogniti/nimf/issues/104)
-*   As of June 13, 2018 Nimf's GitHub repository has been removed. [[2]](https://cogniti-works.blogspot.com/2018/06/nimf_82.html)
-
-[Nimf](https://github.com/cogniti/nimf) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") which inherits [Dasom](/index.php/Dasom "Dasom").
+[Nimf](https://gitlab.com/hodong/nimf) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") which inherits [Dasom](/index.php/Dasom "Dasom").
 
 ## Contents
 
@@ -31,10 +26,9 @@ Just [Install](/index.php/Install "Install") the [nimf-git](https://aur.archlinu
 The following engines are bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/):
 
 *   nimf-libhangul, for typing Korean hangul, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
-*   nimf-sunpinyin, for typing Chinese using Pinyin, based on [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin).
-*   nimf-anthy, for typing Japanese, based on [anthy](https://www.archlinux.org/packages/?name=anthy) (In development).
-*   nimf-chewing, for typing Chinese using Zhuyin, based on [libchewing](https://www.archlinux.org/packages/?name=libchewing) (In development).
-*   nimf-rime, for typing Chinese, based on [librime](https://www.archlinux.org/packages/?name=librime) (In development).
+*   nimf-anthy, for typing Japanese, based on [anthy](https://www.archlinux.org/packages/?name=anthy).
+*   nimf-chewing, for typing Chinese using Zhuyin, based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
+*   nimf-rime, for typing Chinese, based on [librime](https://www.archlinux.org/packages/?name=librime).
 
 ### Initial setup
 
@@ -48,7 +42,7 @@ export GTK_IM_MODULE=nimf
 export QT4_IM_MODULE="nimf"
 export QT_IM_MODULE=nimf
 export XMODIFIERS="@im=nimf"
-nimf-daemon
+nimf
 
 ```
 
@@ -63,8 +57,8 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMM
 
 ## Editing Settings
 
-Use `nimf-settings` to edit nimf settings. You can launch `nimf-settings` from your preferred terminal, or from the `nimf-indicator` menu which appears in system tray area.
+Use `nimf-settings` to edit nimf settings. You can launch `nimf-settings` from your preferred terminal, or from the Nimf indicator menu which appears in system tray area.
 
 ## See also
 
-*   [Nimf GitHub](https://github.com/cogniti/nimf)
+*   [Nimf GitLab](https://gitlab.com/hodong/nimf)

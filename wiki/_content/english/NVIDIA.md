@@ -6,6 +6,7 @@ Related articles
 *   [Bumblebee](/index.php/Bumblebee "Bumblebee")
 *   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
 *   [Xorg](/index.php/Xorg "Xorg")
+*   [Vulkan](/index.php/Vulkan "Vulkan")
 
 This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics card driver. For the open-source driver, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead.
 

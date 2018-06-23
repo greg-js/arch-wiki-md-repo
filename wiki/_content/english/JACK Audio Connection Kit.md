@@ -19,7 +19,7 @@ From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Au
         *   [2.2.1 Details of the shell-based example setup](#Details_of_the_shell-based_example_setup)
     *   [2.3 A GUI-based example setup](#A_GUI-based_example_setup)
     *   [2.4 Playing nice with ALSA](#Playing_nice_with_ALSA)
-    *   [2.5 gstreamer](#gstreamer)
+    *   [2.5 GStreamer](#GStreamer)
     *   [2.6 PulseAudio](#PulseAudio)
     *   [2.7 Firewire](#Firewire)
 *   [3 MIDI](#MIDI)
@@ -246,28 +246,9 @@ Remember to start it as a **user**. If you start it with `jackd` -d alsa" as use
 
 Another approach, using ALSA loopback device (more complex but probably more robust), is described in [this article](http://alsa.opensrc.org/Jack_and_Loopback_device_as_Alsa-to-Jack_bridge).
 
-### gstreamer
+### GStreamer
 
-gstreamer requires the [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) package to work with JACK. It contains the plugin that adds JACK support.
-
-Use whatever gnome application settings manager you prefer (gconf2, gconf-editor, gstreamer-properties, etc.)
-
-Set the values of both
-
-```
-/system/gstreamer/0.12/audio/default/musicaudiosink
-/system/gstreamer/0.12/audio/default/audiosink
-
-```
-
-to
-
-```
-jackaudiosink buffer-time=2000000
-
-```
-
-Exact buffer time value is unimportant, but higher values reduce chance of crackling in the audio.
+GStreamer requires the [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) package to work with JACK. It contains the plugin that adds JACK support.
 
 Further information: [http://jackaudio.org/faq/gstreamer_via_jack.html](http://jackaudio.org/faq/gstreamer_via_jack.html)
 

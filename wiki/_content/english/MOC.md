@@ -51,7 +51,7 @@ go_up = U LEFT
 
 ## Usage
 
-Run `mocp` to start the server and interface. Some useful default shortcuts (press `h` for more):
+Run *mocp* to start the server and interface. Some useful default shortcuts (press `h` for more):
 
 | Start playing at this file or go to this directory | `Enter` |
 | Pause | `Space` or `p` |
@@ -73,7 +73,7 @@ Run `mocp` to start the server and interface. Some useful default shortcuts (pre
 | Detach MOC from the server | `q` |
 | Quit | `Q` |
 
-To shut down the server, press `Shift+q` or run `mocp -x`.
+To shut down the server, press `Shift+q` or run the `mocp -x` command.
 
 ## Last.fm scrobbling
 

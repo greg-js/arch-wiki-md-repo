@@ -7,11 +7,7 @@ Related articles
 *   [UIM](/index.php/UIM "UIM")
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 
-**Warning:** 2018년 5월 부터 Nimf 프로젝트가 더이상 공개적으로 관리되지 않습니다. 해당 GitHub 저장소는 아카이브 처리 되었습니다. [[1]](https://github.com/cogniti/nimf/issues/104)
-
-**Warning:** 2018.06.13 - Nimf 프로젝트의 GitHub 저장소가 삭제 되었습니다. [[2]](https://cogniti-works.blogspot.com/2018/06/nimf_82.html)
-
-[님프(Nimf)](https://github.com/cogniti/nimf)는 다국어 [입력기](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") 프레임워크 이며, [다솜](/index.php/Dasom "Dasom")의 후속 프로젝트 입니다.
+[님프(Nimf)](https://gitlab.com/hodong/nimf)는 다국어 [입력기](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") 프레임워크 이며, [다솜](/index.php/Dasom "Dasom")의 후속 프로젝트 입니다.
 
 ## Contents
 
@@ -28,10 +24,9 @@ Related articles
 ### 입력기 엔진
 
 *   nimf-libhangul, [libhangul](https://www.archlinux.org/packages/?name=libhangul) 기반의 한국어 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
-*   nimf-sunpinyin, [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin) 기반의 중국어 병음 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
-*   nimf-anthy, [anthy](https://www.archlinux.org/packages/?name=anthy) 기반의 일본어 입력 엔진(개발중) ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
-*   nimf-chewing, [libchewing](https://www.archlinux.org/packages/?name=libchewing) 기반의 중국어 주음 입력 엔진(개발중) ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
-*   nimf-rime, [librime](https://www.archlinux.org/packages/?name=librime) 기반의 중국어 입력 엔진(개발중) ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
+*   nimf-anthy, [anthy](https://www.archlinux.org/packages/?name=anthy) 기반의 일본어 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
+*   nimf-chewing, [libchewing](https://www.archlinux.org/packages/?name=libchewing) 기반의 중국어 주음 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
+*   nimf-rime, [librime](https://www.archlinux.org/packages/?name=librime) 기반의 중국어 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
 
 ### 초기 설정
 
@@ -45,7 +40,7 @@ export GTK_IM_MODULE=nimf
 export QT4_IM_MODULE="nimf"
 export QT_IM_MODULE=nimf
 export XMODIFIERS="@im=nimf"
-nimf-daemon
+nimf
 
 ```
 
@@ -64,4 +59,4 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMM
 
 ## 더 보기
 
-*   [님프 깃허브](https://github.com/cogniti/nimf)
+*   [님프 깃랩](https://gitlab.com/hodong/nimf)

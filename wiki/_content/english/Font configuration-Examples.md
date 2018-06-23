@@ -406,7 +406,7 @@ To restore the original packages, reinstall [freetype2](https://www.archlinux.or
 
 ## Infinality-like font substitution
 
-For user provided fontconfig [substitutions](/index.php/Fonts#Font_alias "Fonts") replicating those offered with the [bundle](https://github.com/bohoomil/fontconfig-ultimate) [install](/index.php/Install "Install") either [fonts-meta-extended-lt](https://aur.archlinux.org/packages/fonts-meta-extended-lt/) (light version) or [fonts-meta-extended](https://aur.archlinux.org/packages/fonts-meta-extended/) (complete version) and [enable](/index.php/Font_configuration#Presets "Font configuration") the provided `30-infinality-aliases.conf` preset.
+For user provided fontconfig [substitutions](/index.php/Fonts#Font_alias "Fonts") replicating those offered with the [bundle](https://github.com/bohoomil/fontconfig-ultimate) install either [fonts-meta-extended-lt](https://aur.archlinux.org/packages/fonts-meta-extended-lt/) (light version) or [fonts-meta-extended](https://aur.archlinux.org/packages/fonts-meta-extended/) (complete version) and [enable](/index.php/Font_configuration#Presets "Font configuration") the provided `30-infinality-aliases.conf` preset.
 
 ## See also
 

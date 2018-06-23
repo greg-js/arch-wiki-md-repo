@@ -9,7 +9,7 @@
  <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.3.</small> [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)") <small>(14)</small> | <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(29)</small> |
 | <small>1.4.</small> [Live системы Arch](/index.php/Category:Live_Arch_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Live Arch systems (Русский)") <small>(3)</small> | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small> |
-| <small>2.</small> [Приложения](/index.php/Category:Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Applications (Русский)") <small>(10)</small> | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(20)</small> |
+| <small>2.</small> [Приложения](/index.php/Category:Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Applications (Русский)") <small>(10)</small> | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(17)</small> |
 | <small>2.1.</small> [Специальные возможности](/index.php/Category:Accessibility_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Accessibility (Русский)") <small>(1)</small> | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Application launchers (Русский)") <small>(2)</small> | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(13)</small> |
 | <small>2.3.</small> [Командная оболочка](/index.php/Category:Command_shells_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Command shells (Русский)") <small>(7)</small> |
@@ -30,7 +30,7 @@
  <small>2.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(3)</small> |
  <small>2.10.2.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(6)</small> |
  <small>2.10.3.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4)</small> |
- <small>2.10.4.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(3)</small> |
+ <small>2.10.4.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(4)</small> |
  <small>2.10.5.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
  <small>2.10.6.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(4)</small> |
 | <small>2.10.1.</small> [Интернет чат (IRC)](/index.php/Category:Internet_Relay_Chat_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet Relay Chat (Русский)") <small>(2)</small> | <small>2.10.7.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15)</small> |
@@ -41,18 +41,24 @@
 | <small>2.10.2.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(6)</small> | <small>2.10.12.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
  <small>2.10.13.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
 | <small>2.11.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small> | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(26)</small> |
-| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small> | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(43)</small> |
- <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(14)</small> |
- <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(20)</small> |
- <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(16)</small> |
+| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small> | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(21)</small> |
+ <small>2.12.1.</small> [Audio](/index.php/Category:Audio "Category:Audio") <small>(5)</small> |
+ <small>2.12.2.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Servers](/index.php/Category:Servers "Category:Servers"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
+ <small>2.12.2.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(5)</small> |
+ <small>2.12.3.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(5)</small> |
+ <small>2.12.4.</small> [Music](/index.php/Category:Music "Category:Music") <small>(26)</small> |
+ <small>2.12.5.</small> [Raster graphics](/index.php/Category:Raster_graphics "Category:Raster graphics") <small>(9)</small> |
+ <small>2.12.6.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
+ <small>2.12.7.</small> [Television](/index.php/Category:Television "Category:Television") <small>(3)</small> |
+ <small>2.12.7.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>2.13.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small> |
- <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(20)</small> |
+ <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(21)</small> |
  <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
  <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(3)</small> |
 | <small>2.14.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(3)</small> | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(7)</small> |
 | <small>2.16.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(2)</small> | <small>2.16.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
- <small>2.17.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(30) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+ <small>2.17.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(31) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
  <small>2.17.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
  <small>2.17.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
  <small>2.17.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
@@ -92,10 +98,10 @@
  <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(63)</small> |
 | <small>4.8.1.</small> [Fujitsu](/index.php/Category:Fujitsu_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Fujitsu (Русский)") <small>(1)</small> | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(3)</small> |
  <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
-| <small>4.8.2.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(53)</small> |
+| <small>4.8.2.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(54)</small> |
  <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
  <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(86)</small> |
- <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |
+ <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(5)</small> |
 | <small>4.8.3.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>4.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(6)</small> |
  <small>4.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(11)</small> |
  <small>4.9.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(15)</small> |
@@ -106,10 +112,10 @@
 | <small>4.10.</small> [Модемы](/index.php/Category:Modems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Modems (Русский)") <small>(4) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small> | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(20)</small> |
 | <small>4.11.</small> [Принтеры](/index.php/Category:Printers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Printers (Русский)") <small>(4)</small> | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
-| <small>4.12.</small> [Звук](/index.php/Category:Sound_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Sound (Русский)") <small>(9)</small> | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17)</small> |
+| <small>4.12.</small> [Звук](/index.php/Category:Sound_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Sound (Русский)") <small>(9)</small> | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
 | <small>4.13.</small> [Накопители информации](/index.php/Category:Storage_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Storage (Русский)") <small>(4)</small> | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(17)</small> |
 | <small>4.13.1.</small> [Оптические](/index.php/Category:Optical_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Optical (Русский)") <small>(1)</small> | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
- <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
+ <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
 | <small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(39)</small> | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(55)</small> |
  <small>5.1.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Distributed computing (Русский)") <small>(1)</small> | <small>5.2.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
@@ -136,23 +142,28 @@
  <small>5.15.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(1)</small> |
  <small>5.15.1.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
  <small>5.15.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
- <small>5.15.3.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(17) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
-| <small>5.12.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Telephony and voice (Русский)") <small>(1)</small> | <small>5.16.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(9)</small> |
-| <small>5.13.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small> | <small>5.17.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
- <small>5.17.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
- <small>5.18.</small> [Web](/index.php/Category:Web "Category:Web") <small>(3)</small> |
- <small>5.18.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(30) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
- <small>5.18.1.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
- <small>5.18.1.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
- <small>5.18.1.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
- <small>5.18.1.4.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
- <small>5.18.2.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
- <small>5.18.3.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
- <small>5.18.4.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(17) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
+ <small>5.15.3.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
+ <small>5.15.3.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(5)</small> |
+ <small>5.15.4.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(17) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+ <small>5.16.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(2)</small> |
+ <small>5.16.1.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
+ <small>5.16.1.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(5)</small> |
+| <small>5.12.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Telephony and voice (Русский)") <small>(1)</small> | <small>5.17.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(9)</small> |
+| <small>5.13.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small> | <small>5.18.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
+ <small>5.18.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
+ <small>5.19.</small> [Web](/index.php/Category:Web "Category:Web") <small>(3)</small> |
+ <small>5.19.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(31) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+ <small>5.19.1.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
+ <small>5.19.1.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+ <small>5.19.1.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
+ <small>5.19.1.4.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
+ <small>5.19.2.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
+ <small>5.19.3.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+ <small>5.19.4.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(17) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>5.14.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small> |
- <small>5.19.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(6)</small> |
-| <small>5.15.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small> | <small>5.20.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
- <small>5.20.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
+ <small>5.20.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(6)</small> |
+| <small>5.15.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small> | <small>5.21.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
+ <small>5.21.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>6.</small> [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)") <small>(8)</small> | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(22)</small> |
 | <small>6.1.</small> [Процесс загрузки](/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot process (Русский)") <small>(27)</small> | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(29)</small> |
 | <small>6.1.1.</small> [Загрузчики](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)") <small>(7)</small> | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
@@ -173,7 +184,7 @@
 | <small>6.3.4.2.</small> [Стэковые оконные менеджеры](/index.php/Category:Stacking_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Stacking WMs (Русский)") <small>(4)</small> |
 | <small>6.3.4.3.</small> [Тайловые оконные менеджеры](/index.php/Category:Tiling_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Tiling WMs (Русский)") <small>(8)</small> |
 | <small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dotfiles (Русский)") <small>(1)</small> |
-| <small>6.5.</small> [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)") <small>(9)</small> | <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(27)</small> |
+| <small>6.5.</small> [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)") <small>(9)</small> | <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(28)</small> |
 | <small>6.5.1.</small> [Экран загрузки](/index.php/Category:Bootsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bootsplash (Русский)") <small>(3) (Также в [Процесс загрузки](/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot process (Русский)"))</small> | <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
 | <small>6.5.2.</small> [Шрифты](/index.php/Category:Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Fonts (Русский)") <small>(5)</small> | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [Файловые системы](/index.php/Category:File_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File systems (Русский)") <small>(36)</small> | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(48)</small> |
@@ -192,7 +203,7 @@
  <small>6.8.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(13)</small> |
  <small>6.8.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small> |
  <small>6.8.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
- <small>6.8.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(57)</small> |
+ <small>6.8.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(56)</small> |
 | <small>6.8.</small> [Переводы](/index.php/Category:Internationalization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internationalization (Русский)") <small>(1)</small> | <small>6.9.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(17)</small> |
 | <small>6.9.</small> [Ядро](/index.php/Category:Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Kernel (Русский)") <small>(10)</small> | <small>6.10.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(33)</small> |
  <small>6.11.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(9) (also in [Keyboards](/index.php/Category:Keyboards "Category:Keyboards"))</small> |

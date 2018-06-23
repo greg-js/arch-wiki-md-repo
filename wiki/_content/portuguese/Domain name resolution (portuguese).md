@@ -135,7 +135,7 @@ $ systemd-resolve --status
 
 **Dica:**
 
-*   Para entender o contexto em torno das opções de DNS e switches, é possível ativar informações detalhadas de depuração para *systemd-resolved*, conforme descrito em [Systemd#Diagnosing a service](/index.php/Systemd#Diagnosing_a_service "Systemd").
+*   Para entender o contexto em torno das opções de DNS e switches, é possível ativar informações detalhadas de depuração para *systemd-resolved*, conforme descrito em [Systemd (Português)#Diagnosticando um serviço](/index.php/Systemd_(Portugu%C3%AAs)#Diagnosticando_um_servi.C3.A7o "Systemd (Português)").
 *   O modo de operação do *systemd-resolved* é detectado automaticamente, dependendo se o `/etc/resolv.conf` é um link simbólico para o arquivo local do resolvedor de DNS stub ou contém nomes de servidor.
 
 ## Desempenho

@@ -1,4 +1,4 @@
-[Inkscape](http://inkscape.org/) is a vector graphics editor application. It is distributed under a free software license, the GNU GPL. Its stated goal is to become a powerful graphics tool while being fully compliant with the XML, SVG, and CSS standards.[wikipedia:Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")
+[Inkscape](http://inkscape.org/) is a vector graphics editor application. It is distributed under a free software license, the GNU GPL. Its stated goal is to become a powerful graphics tool while being fully compliant with the XML, SVG, and CSS standards.
 
 ## Contents
 
@@ -47,5 +47,4 @@ and restart the application.
 ## See also
 
 *   [Multimedia in Arch Linux](/index.php/Multimedia_in_Arch_Linux "Multimedia in Arch Linux")
-*   [Inkscape Homepage](http://inkscape.org/)
 *   [Inkscape at Wikipedia](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")

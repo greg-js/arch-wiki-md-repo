@@ -240,27 +240,7 @@ Other mixers that have support for OSS:
 
 ### Applications that use GStreamer
 
-If you have problems with applications that use Gstreamer for audio, you can try removing [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and installing the [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) package which is needed by `oss4sink` and `oss4src`.
-
-Then you have to change the GStreamer settings to output the sound to OSS instead of the default ALSA with `gstreamer-properties` (part of the [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/) package). After starting `gstreamer-properties`, you have to modify the fields as follows:
-
-*   in the *Default Output* section: if OSS is not available as a plugin, change *Plugin* to **Custom** and *Pipeline* to **oss4sink**.
-*   in the *Default Input* section: if OSS is not available, change *Plugin* to **Custom** and *Pipeline* to **oss4src**.
-
-**Note:** You can also use `osssrc` as an alternative to `oss4src` if you find that it produces better sound.
-
-Some applications (e.g. Rhythmbox, Totem) do not read the settings set by `gstreamer-properties`, as they rely on `musicaudiosink` instead of `audiosink` (which is modified by `gstreamer-properties`).
-
-To work around this, you can set the values for `audiosink` with `gstreamer-properties` and use `gconf-editor` to copy the value of `/system/gstreamer/0.10/default/audiosink` to `musicaudiosink` (at the same location).
-
-If you are using Phonon with the GStreamer backend you will need to set a environmental variable:
-
-```
-export PHONON_GST_AUDIOSINK=oss4sink
-
-```
-
-You can add this to your `~/.bashrc` to be loaded on login.
+If you have problems with applications that use GStreamer for audio, you can try removing [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and installing the [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) package which is needed by `oss4sink` and `oss4src`.
 
 ### Applications that use OpenAL
 

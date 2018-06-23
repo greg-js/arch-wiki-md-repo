@@ -60,6 +60,8 @@ Include conf/extra/phpmyadmin.conf
 
 **Note:** By default, everyone who can reach the Apache Web Server can see the phpMyAdmin login page under this URL. To change this, edit `/etc/httpd/conf/extra/phpmyadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`. Beware that this will disallow connecting to PhpMyAdmin on a remote server. If you still want to access PhpMyAdmin on a remote server securely, you might want to consider setting up a [Secure Shell#Encrypted SOCKS tunnel](/index.php/Secure_Shell#Encrypted_SOCKS_tunnel "Secure Shell").
 
+After making changes to the Apache configuration file, [restart](/index.php/Restart "Restart") `httpd.service`.
+
 ### Lighttpd
 
 Configuring [Lighttpd](/index.php/Lighttpd "Lighttpd"), make sure it is able to serve PHP files and `mod_alias` has been enabled.

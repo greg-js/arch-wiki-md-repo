@@ -39,7 +39,7 @@ In Arch Linux, power management consists of two main parts:
         *   [2.4.1 Delayed lid switch action](#Delayed_lid_switch_action)
         *   [2.4.2 Suspend from corresponding laptop Fn key not working](#Suspend_from_corresponding_laptop_Fn_key_not_working)
 *   [3 Power saving](#Power_saving)
-    *   [3.1 Processors with P-state support](#Processors_with_P-state_support)
+    *   [3.1 Processors with HWP (Hardware P-state) support](#Processors_with_HWP_.28Hardware_P-state.29_support)
     *   [3.2 Audio](#Audio)
     *   [3.3 Backlight](#Backlight)
     *   [3.4 Bluetooth](#Bluetooth)
@@ -294,6 +294,8 @@ WantedBy=sleep.target
 
 #### Delayed hibernation service file
 
+**Note:** *systemd* version 239 includes support for the "suspend-then-hibernate" approach, which renders this sleep hook unnecessary. See [systemd-sleep.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.conf.5) (updated man page at: [[1]](https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html)).
+
 An alternative approach is delayed hibernation. This makes use of sleep hooks to suspend as usual but sets a timer to wake up later to perform hibernation. Here, entering sleep is faster than `systemctl hybrid-sleep` since no hibernation is performed initially. However, unlike "hybrid-sleep", at this point there is no protection against power loss via hibernation while in suspension. This caveat makes this approach more suitable for laptops than desktops. Since hibernation is delayed, the laptop battery is only used during suspension and to trigger the eventual hibernation. This uses less power over the long-term than a "hybrid-sleep" which will remain suspended until the battery is drained. Note that if your laptop has a spinning hard disk, when it wakes up from suspend in order to hibernate, you may not want to be moving or carrying the laptop for these few seconds. Delayed hibernation may be desirable both to reduce power use as well as for security reasons (e.g. when using full disk encryption). An example script is located [here](http://superuser.com/questions/298672/linuxhow-to-hibernate-after-a-period-of-sleep). See also [this post](https://bbs.archlinux.org/viewtopic.php?pid=1420279#p1420279) for an updated systemd sleep hook.
 
 A slightly updated version of the service is:
@@ -379,7 +381,7 @@ See [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.spec
 
 #### Delayed lid switch action
 
-When performing lid switches in short succession, *logind* will delay the suspend action for up to 90s to detect possible docks. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[2]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
+When performing lid switches in short succession, *logind* will delay the suspend action for up to 90s to detect possible docks. [[2]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[3]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
 
  `/etc/systemd/logind.conf` 
 ```
@@ -391,7 +393,7 @@ HoldoffTimeoutSec=30s
 
 #### Suspend from corresponding laptop Fn key not working
 
-If, regardless of the setting in logind.conf, the sleep button does not work (pressing it does not even produce a message in syslog), then logind is probably not watching the keyboard device. [[3]](http://lists.freedesktop.org/archives/systemd-devel/2015-February/028325.html) Do:
+If, regardless of the setting in logind.conf, the sleep button does not work (pressing it does not even produce a message in syslog), then logind is probably not watching the keyboard device. [[4]](http://lists.freedesktop.org/archives/systemd-devel/2015-February/028325.html) Do:
 
 ```
 # journalctl | grep "Watching system buttons"
@@ -407,7 +409,7 @@ May 25 21:28:19 vmarch.lan systemd-logind[210]: Watching system buttons on /dev/
 
 ```
 
-Notice no keyboard device. Now obtain ATTRS{name} for the parent keyboard device [[4]](http://systemd-devel.freedesktop.narkive.com/Rbi3rjNN/patch-1-2-logind-add-support-for-tps65217-power-button) :
+Notice no keyboard device. Now obtain ATTRS{name} for the parent keyboard device [[5]](http://systemd-devel.freedesktop.narkive.com/Rbi3rjNN/patch-1-2-logind-add-support-for-tps65217-power-button) :
 
 ```
 # udevadm info -a /dev/input/by-path/*-kbd
@@ -447,9 +449,9 @@ This section is a reference for creating custom scripts and power saving setting
 
 Almost all of the features listed here are worth using whether or not the computer is on AC or battery power. Most have negligible performance impact and are just not enabled by default because of commonly broken hardware/drivers. Reducing power usage means reducing heat, which can even lead to higher performance on a modern Intel or AMD CPU, thanks to [dynamic overclocking](https://en.wikipedia.org/wiki/Intel_Turbo_Boost "wikipedia:Intel Turbo Boost").
 
-### Processors with P-state support
+### Processors with HWP (Hardware P-state) support
 
-The available energy preferences of a P-state supported processor are `default performance balance_performance balance_power power`.
+The available energy preferences of a HWP supported processor are `default performance balance_performance balance_power power`.
 
 This can be validated by `$ cat /sys/devices/system/cpu/cpufreq/policy?/energy_performance_available_preferences`
 
@@ -671,7 +673,7 @@ See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/us
 
 **Warning:** SATA Active Link Power Management can lead to data loss on some devices. Do not enable this setting unless you have frequent backups.
 
-Since Linux 4.15 there is a [new setting](https://hansdegoede.livejournal.com/18412.html) called `med_power_with_dipm` that matches the behaviour of Windows IRST driver settings and should not cause data loss with recent SSD/HDD drives. The power saving can be significant, ranging [from 1.0 to 1.5 Watts (when idle)](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b). It will become a default setting for Intel based laptops in Linux 4.16 [[5]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b).
+Since Linux 4.15 there is a [new setting](https://hansdegoede.livejournal.com/18412.html) called `med_power_with_dipm` that matches the behaviour of Windows IRST driver settings and should not cause data loss with recent SSD/HDD drives. The power saving can be significant, ranging [from 1.0 to 1.5 Watts (when idle)](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b). It will become a default setting for Intel based laptops in Linux 4.16 [[6]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b).
 
 The current setting can be read from `/sys/class/scsi_host/host*/link_power_management_policy` as follows:
 

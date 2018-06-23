@@ -26,8 +26,10 @@ This guide was started for *USB* based Wacom tablets, so much of the info in her
         *   [2.1.6 TwinView Setup](#TwinView_Setup)
             *   [2.1.6.1 Temporary TwinView Setup](#Temporary_TwinView_Setup)
         *   [2.1.7 Xrandr Setup](#Xrandr_Setup)
-    *   [2.2 Pressure curves](#Pressure_curves)
-    *   [2.3 Force Proportions](#Force_Proportions)
+    *   [2.2 Pressure curve](#Pressure_curve)
+    *   [2.3 Adjusting aspect ratios](#Adjusting_aspect_ratios)
+        *   [2.3.1 Reducing the drawing area height](#Reducing_the_drawing_area_height)
+        *   [2.3.2 Reducing the screen area width](#Reducing_the_screen_area_width)
     *   [2.4 Using kcm-wacomtablet](#Using_kcm-wacomtablet)
 *   [3 Application-specific configuration](#Application-specific_configuration)
     *   [3.1 Blender](#Blender)
@@ -37,8 +39,7 @@ This guide was started for *USB* based Wacom tablets, so much of the info in her
     *   [3.5 VirtualBox](#VirtualBox)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Unknown device_type](#Unknown_device_type)
-    *   [4.2 System freeze](#System_freeze)
-    *   [4.3 Tablet recognized but xsetwacom and similar tools do not display it](#Tablet_recognized_but_xsetwacom_and_similar_tools_do_not_display_it)
+    *   [4.2 Tablet recognized but xsetwacom and similar tools do not display it](#Tablet_recognized_but_xsetwacom_and_similar_tools_do_not_display_it)
 *   [5 References](#References)
 
 ## Installation
@@ -54,7 +55,7 @@ This guide was started for *USB* based Wacom tablets, so much of the info in her
 Newer versions of X should be able to automatically detect and configure your device. Before going any further, restart X so the new udev rules take effect. Test if your device was recognized completely (i.e., that both pen and eraser work, if applicable), by issuing command
 
 ```
- $ xsetwacom --list devices
+ $ xsetwacom list devices
 
 ```
 
@@ -129,7 +130,7 @@ If you insist in using a static setup just refer to your tablet in the *Xorg* co
 
 #### Xorg configuration
 
-In either case, dynamic or static setup you got now one or two files in `/dev/input/` which refer to the correct input event devices of your tablet. All that is left to do is add the relevant information to `/etc/X11/xorg.conf`, or a dedicated file under `/etc/X11/xorg.conf.d/`. The exact configuration depends on your tablet's features of course. `xsetwacom --list devices` might give helpful information on what *InputDevice* sections are needed for your tablet.
+In either case, dynamic or static setup you got now one or two files in `/dev/input/` which refer to the correct input event devices of your tablet. All that is left to do is add the relevant information to `/etc/X11/xorg.conf`, or a dedicated file under `/etc/X11/xorg.conf.d/`. The exact configuration depends on your tablet's features of course. `xsetwacom list devices` might give helpful information on what *InputDevice* sections are needed for your tablet.
 
 An example configuration for a *Volito2* might look like this
 
@@ -209,6 +210,8 @@ InputDevice    "Mouse1" "CorePointer"
 
 ## Configuration
 
+**Note:** If you do not [adjust your aspect ratios](#Adjusting_aspect_ratios), your lines may be slightly vertically skewed.
+
 ### General concepts
 
 The configuration can be done in two ways temporary using the `xsetwacom` tool, which is included in *xf86-input-wacom* or permanent in `xorg.conf` or better in a extra file in `/etc/X11/xorg.conf.d`. The possible options are identical so it is recommended to first use `xsetwacom` for testing and later add the final config to the *Xorg* configuration files.
@@ -218,26 +221,26 @@ The configuration can be done in two ways temporary using the `xsetwacom` tool, 
 For the beginning it is a good idea to inspect the default configuration and all possible options using the following commands.
 
 ```
- $ xsetwacom --list devices                    # list the available devices for the get/set commands
+ $ xsetwacom list devices                    # list the available devices for the get/set commands
  Wacom Bamboo 16FG 4x5 Finger touch	id: 12	type: TOUCH
  Wacom Bamboo 16FG 4x5 Finger pad	id: 13	type: PAD       
  Wacom Bamboo 16FG 4x5 Pen stylus	id: 17	type: STYLUS    
  Wacom Bamboo 16FG 4x5 Pen eraser	id: 18	type: ERASER
- $ xsetwacom --get "Wacom Bamboo 16FG 4x5" all # using the device name
- $ xsetwacom --get 17 all                      # or equivalently use the device id
- $ xsetwacom --list parameters                 # to get an explanation of the Options
+ $ xsetwacom get "Wacom Bamboo 16FG 4x5" all # using the device name
+ $ xsetwacom get 17 all                      # or equivalently use the device id
+ $ xsetwacom list parameters                 # to get an explanation of the Options
  $ man wacom                                   # get even more details
 
 ```
 
 **Caution**, do not use the device id when writing shell scripts to set some options as the ids might change after an hotplug.
 
-Options can be changed with the `--set` flag. Some useful examples are
+Options can be changed with the `set` command. Some useful examples are
 
 ```
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger touch" ScrollDistance 50  # change scrolling speed
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger touch" Gesture off        # disable multitouch gestures
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger touch" Touch off          # disable touch
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger touch" ScrollDistance 50  # change scrolling speed
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger touch" Gesture off        # disable multitouch gestures
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger touch" Touch off          # disable touch
 
 ```
 
@@ -301,14 +304,16 @@ EndSection
 
 ```
 
-The identifiers can be set arbitrarily. The option names are (except for the buttons) identical to the ones listed by `xsetwacom --list parameters` and especially also in [wacom(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wacom.4). As noted in [#Remapping Buttons](#Remapping_Buttons) the button ids seem to be different than the ones for `xsetwacom`.
+The identifiers can be set arbitrarily. The option names are (except for the buttons) identical to the ones listed by `xsetwacom list parameters` and especially also in [wacom(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wacom.4). As noted in [#Remapping Buttons](#Remapping_Buttons) the button ids seem to be different than the ones for `xsetwacom`.
+
+**Tip:** *xsetwacom* can display the output in xorg.conf format by using `xsetwacom -x get`.
 
 #### Changing orientation
 
 If you want to use your tablet in a different orientation you have to tell this to the driver, else the movements do not cause the expected results. This is done by setting the **Rotate** option for all devices. Possible orientations are **none**,**cw**,**ccw** and **half**. A quick way is e.g.
 
 ```
- $ for i in 12 13 17 18; do xsetwacom --set $i Rotate half; done   # remember the ids might change when hotplugging
+ $ for i in 12 13 17 18; do xsetwacom set $i Rotate half; done   # remember the ids might change when hotplugging
 
 ```
 
@@ -323,10 +328,10 @@ eraser="$device Pen eraser"
 touch="$device Finger touch"
 pad="$device Finger pad"
 
-xsetwacom --set "$stylus" Rotate $1
-xsetwacom --set "$eraser" Rotate $1
-xsetwacom --set "$touch"  Rotate $1
-xsetwacom --set "$pad"    Rotate $1
+xsetwacom set "$stylus" Rotate $1
+xsetwacom set "$eraser" Rotate $1
+xsetwacom set "$touch"  Rotate $1
+xsetwacom set "$pad"    Rotate $1
 ```
 
 #### Remapping Buttons
@@ -340,9 +345,9 @@ It is possible to remap the buttons with hotkeys.
 Sometimes it needs some trial&error to find the correct button IDs. For me they even differ for `xsetwacom` and the `xorg.conf` configuration. Very helpful tools are `xev` or `xbindkeys -mk`. An easy way to proceed is to temporarily assign keystrokes to your tablet's buttons like this:
 
 ```
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 'key a'
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 2 'key b'
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 3 'key c'
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 'key a'
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 2 'key b'
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 3 'key c'
  $ # and so on
 
 ```
@@ -383,33 +388,33 @@ The syntax of `xsetwacom` is flexible but not very well documented. The general 
 ##### Some examples
 
 ```
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 3 # right mouse button
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key +ctrl z -ctrl"
- $ xsetwacom --get "Wacom Bamboo 16FG 4x5 Finger pad" Button 1
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 3 # right mouse button
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key +ctrl z -ctrl"
+ $ xsetwacom get "Wacom Bamboo 16FG 4x5 Finger pad" Button 1
  key +Control_L +z -z -Control_L
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key +shift button 1 key -shift"
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key +shift button 1 key -shift"
 
 ```
 
 even little macros are possible
 
 ```
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key +shift h -shift e l l o"
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key +shift h -shift e l l o"
 
 ```
 
 **Note:** There seems to be a bug in the *xf86-input-wacom* driver version 0.17.0, at least for my *Wacom Bamboo Pen & Touch*, but I guess this holds in general. It causes the keystrokes not to be overwritten correctly.
 ```
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key a b c" # press button 1 -> abc
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key d"     # press button 1 -> dbc  WRONG!
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key a b c" # press button 1 -> abc
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key d"     # press button 1 -> dbc  WRONG!
 
 ```
 
 A simple workaround is to reset the mapping by mapping to "":
 
 ```
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 ""          # to reset the mapping
- $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key d"     # press button 1 -> d
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 ""          # to reset the mapping
+ $ xsetwacom set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key d"     # press button 1 -> d
 
 ```
 
@@ -505,7 +510,7 @@ Screen 0: minimum 320 x 200, current 3840 x 1080, maximum 16384 x 16384
 Then you need to know what is the ID of your tablet.
 
 ```
-$ xsetwacom --list devices
+$ xsetwacom list devices
 WALTOP International Corp. Slim Tablet stylus   id: **12**  type: STYLUS
 
 ```
@@ -513,7 +518,7 @@ WALTOP International Corp. Slim Tablet stylus   id: **12**  type: STYLUS
 In my case I want to map the tablet (ID: **12**) to the screen on the right, which is **VGA-0**. I can do that with this command
 
 ```
-$ xsetwacom --set **12** MapToOutput **"VGA-0"**
+$ xsetwacom set **12** MapToOutput **"VGA-0"**
 
 ```
 
@@ -524,7 +529,7 @@ Should this fail when using the nvidia binary driver, using **HEAD-0**, **HEAD-1
 If xsetwacom replies with "Unable to find an output ..." an X11 geometry string of the form **WIDTHxHEIGHT+X+Y** can be specified instead of the screen identifier. In this example
 
 ```
-$ xsetwacom --set **12** MapToOutput **"1920x1080+1920+0"**
+$ xsetwacom set **12** MapToOutput **"1920x1080+1920+0"**
 
 ```
 
@@ -573,65 +578,62 @@ $ xinput map-to-output 20 VGA-0
 
 ```
 
-### Pressure curves
+### Pressure curve
 
-Use [Wacom Pressure Demo](http://linuxwacom.sourceforge.net/misc/bezier.html) to find P1=red (eg. 50,0), P2=purple (eg. 100,80) and Threshold=green (eg. 27) of your desired curve. The x-axis is the input pressure you apply to the pen; the y-axis is the output pressure the application is given. ([example curve](http://250kb.de/u/150207/p/FoS1SiXuZQRP.png))
+Use the [Wacom Pressure Curve and Threshold Graph](https://linuxwacom.github.io/bezier.html) to find P1=red (eg. 50,0) and P2=purple (eg. 100,80) of your desired curve. The x-axis is the input pressure you apply to the pen; the y-axis is the output pressure the application is given.
 
-You can immediately test your desired values for your device (eg. "Wacom Intuos4 6x9 stylus") with
-
-```
- xsetwacom --set "Wacom Intuos4 6x9 stylus" PressureCurve "50" "0" "100" "80"
- xsetwacom --set "Wacom Intuos4 6x9 stylus" Threshold "27"
+You can change the pressure curve with:
 
 ```
-
-Later you can apply them in `/etc/X11/xorg.conf` as shown below or you use the above shell commands in any startup script
-
- `/etc/X11/xorg.conf` 
-```
-  Option        "PressCurve"    "50,0,100,80"         # Custom preference
-  Option        "Threshold"     "27"                  # sensitivity to do a "click"
+$ xsetwacom set *stylus* PressureCurve *x1 y1 x2 y2*
 
 ```
 
-### Force Proportions
+### Adjusting aspect ratios
 
-For standard (**16:9**) widescreen monitors with Wacom tablets it is a typical problem that your strokes are slightly more horizontally oriented than they physically were (so for example a perfectly drawn circle with the pen will turn into a horizontal ellipse in the computer) because the tablet drawing surface proportions are larger on the vertical axis by default (**16:10**) than your monitors aspect ratio and this inconsistency will subtly distort your strokes. It is possible to force the proportions of the drawing surface to match the aspect ratio of your monitor to solve this problem by cutting off the bottom of the drawing surface to accommodate for the differences in vertical resolution with the below options. This is an alternative to the "Force Proportions" option in the Windows driver settings. It is generally recommended to do this to ensure maximum accuracy of your tablet input.
+Drawing areas of tablets are generally more square than the usual widescreen display with a 16:9 aspect ratio, leading to a slight vertical compression of your input. To resolve such an aspect ratio mismatch you need to compromise by either reducing the drawing area height (called *Force Proportions* on Windows) or reducing the screen area width. The former wastes drawing area and the latter prevents you from reaching the right edge of your screen with your Stylus. It is probably still a compromise worth to be made because it prevents your strokes from being skewed.
 
-To get the tablets current values run the following command (where "device name or ID" would be for your stylus):
-
-```
-   xsetwacom --get "device name or ID" Area
+Find out your tablet's resolution by running:
 
 ```
-
-The following command will reset the Area back to default:
-
-```
-   xsetwacom --set "device name or ID" ResetArea
+$ xsetwacom get *stylus* Area
 
 ```
 
-Calculate your tablet's resolution by dividing the values with the ratio **11.25** (so **21600/11.25=1920** and **13500/11.25=1200**), so to convert this to **1920x1080** (**16:9**) resolution, do **1080*11.25=12150** then to set the proportions with xsetwacom:
+#### Reducing the drawing area height
+
+Run:
 
 ```
-   xsetwacom --set "device name or ID" Area 0 0 21600 12150
-
-```
-
-Here is how to do the same in the xorg configuration file:
-
-```
-   Option "TopX" "0"
-   Option "TopY" "0"
-   Option "BottomX" "21600"
-   Option "BottomY" "12150"
+$ xsetwacom set *stylus* Area 0 0 *tablet_width* *height*
 
 ```
 
-(An alternative formula would would be aspect ratio multiplied by **1350**. So **16:9** is **16*1350=21600** and **9*1350=12150**)
+where:
 
-**Note:** There is also a KeepShape option which reportedly should do this automatically but it does not seem to work, which is why we have to do it the hard way. I do not know whether these values should be kept the same or increased on a bigger resolution monitor, but I highly suspect that they should be kept the same (e.g. the values are relative to the tablet's resolution, not the monitor's resolution; the important part is that the aspect ratio is correct, not that the resolution is a match)
+*   *tablet_width* is the width of the tablet resolution, and
+*   *height* is `tablet_width * screen_height / screen_width`
+
+The tablet resolution can be reset back to the default using:
+
+```
+$ xsetwacom set *stylus* ResetArea
+
+```
+
+#### Reducing the screen area width
+
+Run:
+
+```
+$ xsetwacom set *stylus* MapToOutput *WIDTH*x*HEIGHT*+0+0
+
+```
+
+where:
+
+*   *WIDTH* is `screen_height * tablet_width / tablet_height`, and
+*   *HEIGHT* is the height of the screen resolution
 
 ### Using kcm-wacomtablet
 
@@ -641,7 +643,7 @@ The KDE configuration module [kcm-wacomtablet](https://www.archlinux.org/package
 
 ### Blender
 
-To enable pad buttons and extra pen buttons in blender, you can create a xsetwacom wrapper to temporarily remap buttons for your blender session.
+To enable pad buttons and extra pen buttons in [Blender](/index.php/Blender "Blender"), you can create a xsetwacom wrapper to temporarily remap buttons for your blender session.
 
 Provided example (for Bamboo fun) adapted to **Sculpt** mode: [blender_sculpt.sh](http://pastebin.archlinux.fr/1887946)
 
@@ -653,7 +655,7 @@ It remaps
 
 ### GIMP
 
-To enable proper usage, and pressure sensitive painting in [GIMP](http://www.gimp.org), just go to *Edit → Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
+To enable proper usage, and pressure sensitive painting in [GIMP](/index.php/GIMP "GIMP"), just go to *Edit > Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
 
 *   Please take note that if present, the *pad* **device** should be kept disabled as I do not think GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
 
@@ -665,7 +667,7 @@ If the above was not enough, you may want to try setting up the tablet's stylus 
 
 ### Inkscape
 
-As in GIMP, to do the same simply got to *Edit → Input Devices...*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
+Pressure sensitivity in [Inkscape](/index.php/Inkscape "Inkscape") is enabled the same way as in GIMP. Go to *Edit > Input Devices...*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
 
 ### Krita
 
@@ -693,13 +695,9 @@ Download and install the for-4.4 branch from [SourceForge](http://sourceforge.ne
 
 ```
 
-### System freeze
-
-If your system freezes when your tablet gets activated by the stylus, then you will need to [patch](/index.php/Patch "Patch") your kernel with the patch from [LKML](https://lkml.org/lkml/2015/11/20/690).
-
 ### Tablet recognized but xsetwacom and similar tools do not display it
 
-Your logs indicate that the correct driver is selected, and the tablet works. However, when running `xsetwacom --list devices` or use similar tools that depend on the correct driver, you get an empty list.
+Your logs indicate that the correct driver is selected, and the tablet works. However, when running `xsetwacom list devices` or use similar tools that depend on the correct driver, you get an empty list.
 
 A reason might be the execution order of your xorg configuration. `/usr/share/X11/xorg.conf.d` gets executed first, then `/etc/X11/xorg.conf.d`. The package [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) contains the file `/usr/share/X11/xorg.conf.d/70-wacom.conf`. If there is a catchall for tablets, executed after this file, the previously selected `wacom` driver will be overwritten with a generic one that does not work with xsetwacom et. al.
 

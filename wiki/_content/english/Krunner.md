@@ -8,10 +8,11 @@ Krunner is an application built into Plasma 5 to perform functions and run comma
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-*   [3 Switch active windows using Krunner](#Switch_active_windows_using_Krunner)
-    *   [3.1 Full list of windows with search by titles](#Full_list_of_windows_with_search_by_titles)
-    *   [3.2 Search by titles without full windows list](#Search_by_titles_without_full_windows_list)
-*   [4 See also](#See_also)
+*   [3 Open KRunner with the Meta key](#Open_KRunner_with_the_Meta_key)
+*   [4 Switch active windows using Krunner](#Switch_active_windows_using_Krunner)
+    *   [4.1 Full list of windows with search by titles](#Full_list_of_windows_with_search_by_titles)
+    *   [4.2 Search by titles without full windows list](#Search_by_titles_without_full_windows_list)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -20,6 +21,22 @@ For installation instructions regarding Plasma, see [KDE](/index.php/KDE "KDE").
 ## Usage
 
 To open Krunner in Plasma, you can either right-click the desktop and press "run command", or you can use the default keybindings, `Alt+Space` or `Alt+F2`. In some workspaces such as a blank desktop, starting to type will automatically bring up Krunner.
+
+## Open KRunner with the Meta key
+
+To set the Meta key as a shortcut to open KRunner, run
+
+```
+kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.krunner,/App,,display"
+
+```
+
+To apply the change to the current session restart KWin with
+
+```
+kwin_x11 --replace # For X11
+kwin_wayland --replace # For wayland
+```
 
 ## Switch active windows using Krunner
 

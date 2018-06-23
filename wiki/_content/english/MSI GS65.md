@@ -226,16 +226,25 @@ The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-
 
 On the US model, the `\|` key (to the right of space) has scancode `0x56` is incorrectly mapped to `<>`.
 
-The mapping can be fixed temporarily with
+The mapping can be fixed temporarily by [adding a scancode mapping](/index.php/Map_scancodes_to_keycodes#Using_udev "Map scancodes to keycodes"):
+
+ `/etc/udev/hwdb.d/85-msi-keyboard.hwdb` 
+```
+# MSI GS65 Stealth Thin has a physical backslash key next to the space bar
+evdev:atkbd:dmi:bvn*:bvr*:bd*:svnMicro-Star*:pnGS65StealthThin*:pvr*
+ KEYBOARD_KEY_56=backslash
 
 ```
-# setkeycodes 56 43
+
+And reloading the keymapping database:
+
+```
+# systemd-hwdb update
+# udevadm trigger
 
 ```
 
-For the full fix, follow [Map_scancodes_to_keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")
-
-There is a fix for another model [[3]](https://github.com/systemd/systemd/pull/7826) merged in systemd.
+There is a pull request [[3]](https://github.com/systemd/systemd/pull/9390) to have this fixed and merged in upstream systemd.
 
 ##### Unmapped Buttons
 

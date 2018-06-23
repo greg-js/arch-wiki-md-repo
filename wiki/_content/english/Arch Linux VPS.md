@@ -128,7 +128,7 @@ Replace all files, directories, etc. on your target VPS with the contents of you
 **Warning:** Be careful with the following command. By design, `rsync` is very destructive, especially with any of the `--delete` options.
 
 ```
-# rsync -axH --delete-delay -e ssh --stats -P build/ YOUR.VPS.IP.ADDRESS:/
+# rsync -axH --numeric-ids --delete-delay -e ssh --stats -P build/ YOUR.VPS.IP.ADDRESS:/
 
 ```
 
@@ -138,6 +138,7 @@ Explanation of options:
 *   `--delete` - Required. Deletes anything in the target that does not exist in the source
 *   `-x` - Important. Prevents the crossing of filesystem boundaries (other partitions, /dev, etc.) during the copy
 *   `-H` - Important. Preserves hardlinks
+*   `--numeric-ids` - Important. Doesn't assign user/group ownership of files based on matching user and group names and instead uses the numeric IDs directly, ensuring proper file ownership on the target system
 *   `--delete-delay` - Recommended. Enables alternate deletion mode which waits to delete anything until the synchronization is otherwise complete, which may reduce the risk of a slow transfer causing the target VPS to lock-up
 *   `-e ssh` - Recommended. Uses `rsync` over SSH (recommended for simplicity compared to setting up an `rsync` server)
 *   `-P` - Recommended. Shows partial progress information during transfer

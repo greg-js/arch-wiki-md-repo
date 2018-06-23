@@ -41,10 +41,11 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.7 Installer Fails to Start](#Installer_Fails_to_Start)
         *   [5.7.1 User interface initialization failed](#User_interface_initialization_failed)
     *   [5.8 VMware Fails to Start](#VMware_Fails_to_Start)
-        *   [5.8.1 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
-        *   [5.8.2 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
-        *   [5.8.3 vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5)
-        *   [5.8.4 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
+        *   [5.8.1 Module CPUIDEarly power on failed](#Module_CPUIDEarly_power_on_failed)
+        *   [5.8.2 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
+        *   [5.8.3 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
+        *   [5.8.4 vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5)
+        *   [5.8.5 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
     *   [5.9 Guest Issues](#Guest_Issues)
         *   [5.9.1 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
         *   [5.9.2 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
@@ -54,6 +55,8 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 ## Installation
 
 You can either install using VMware bundle or package [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). The latter is preferred if using *VMware Workstation* on x86_64.
+
+**Warning:** VMware version 14 drops support for a number of CPUs including early core i7 cpus. Check the [Processor Requirements for Host Systems](https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-BBD199AA-C346-4334-9F56-5A42F7328594.html). If version 14 does not support your cpu then you can use [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/).
 
 ### VMware bundle
 
@@ -419,6 +422,12 @@ This can be fixed by either installing the [ncurses5-compat-libs](https://aur.ar
 ```
 
 ### VMware Fails to Start
+
+#### Module CPUIDEarly power on failed
+
+Version 14 has stricter cpu requirements than version 12\. If you have an affected cpu then, if you try to start a virtual machine, a dialog will appear with messages like "This host does not support virtualizing real mode." and "The Intel "VMX Unrestricted Guest" feature is necessary to run this virtual machine on an Intel processor."
+
+The solution is to uninstall version 14 and install version 12 ([vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/)).
 
 #### Segmentation fault at startup due to old Intel microcode
 

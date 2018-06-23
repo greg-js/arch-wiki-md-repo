@@ -3,7 +3,7 @@ Related articles
 *   [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services")
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 
-In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia:Domain name") represents an IP address and is associated to it in the [DNS](https://en.wikipedia.org/wiki/Domaine_Name_System "wikipedia:Domaine Name System"). This article explains how to configure domain name resolution.
+In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia:Domain name") represents an IP address and is associated to it in the [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") (DNS). This article explains how to configure domain name resolution and resolve domain names.
 
 ## Contents
 

@@ -40,7 +40,7 @@ This article covers using both native IMAP sending and retrieval, and a setup de
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Key bindings](#Key_bindings)
     *   [3.2 Composition](#Composition)
-        *   [3.2.1 Encrypt and sign mail (GnuPG)](#Encrypt_and_sign_mail_.28GnuPG.29)
+        *   [3.2.1 Encrypt and sign mail ( GnuPG and S/MIME )](#Encrypt_and_sign_mail_.28_GnuPG_and_S.2FMIME_.29)
         *   [3.2.2 E-mail character encoding](#E-mail_character_encoding)
         *   [3.2.3 Custom mail headers](#Custom_mail_headers)
         *   [3.2.4 Signature block](#Signature_block)
@@ -537,18 +537,20 @@ bind attach,index G last-entry
 
 ### Composition
 
-#### Encrypt and sign mail (GnuPG)
+#### Encrypt and sign mail ( GnuPG and S/MIME )
 
-To start encrypting mail in mutt using [GnuPG](/index.php/GnuPG "GnuPG") copy `/usr/share/doc/mutt/samples/gpg.rc` to your mutt configuration folder (e.g., to `~/.mutt/gpg.rc`). Then [append](/index.php/Append "Append") the following to your mutt configuration file (e.g., `~/.mutt/mutrrc`):
+**Note:** For S/MIME support you must previously importing your certificates via `gpgsm --import [file]`
+
+To start encrypting mail in mutt using [GnuPG](/index.php/GnuPG "GnuPG") or [S/MIME](/index.php/S-nail "S-nail") add to your mutt configuration file (e.g., `~/.mutt/mutrrc`):
 
 ```
-source ~/.mutt/gpg.rc
+set crypt_use_gpgme=yes
 
 ```
 
-Most encryption options are then available by pressing `p` in the compose view
+Most encryption options are then available by pressing `p` for gpg-menu or pressing `S` for smime-menu in the compose view
 
-See the `pgp_*` and `crypt_*` options in [muttrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5).
+See the `pgp_*`, `smime_*` and `crypt_*` options in [muttrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5).
 
 #### E-mail character encoding
 

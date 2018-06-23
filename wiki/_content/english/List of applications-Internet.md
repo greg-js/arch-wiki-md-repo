@@ -532,7 +532,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
 
-*   **youtube-dl** — Download videos from YouTube and many other web sites.
+*   **[youtube-dl](/index.php/Youtube-dl "Youtube-dl")** — Download videos from YouTube and many other web sites.
 
 	[https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
 
