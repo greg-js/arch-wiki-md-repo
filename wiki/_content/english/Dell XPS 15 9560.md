@@ -44,6 +44,8 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [5.2 Synaptics Driver Configuration](#Synaptics_Driver_Configuration)
         *   [5.2.1 Configure middle button](#Configure_middle_button)
 *   [6 Thunderbolt docks](#Thunderbolt_docks)
+    *   [6.1 TB16](#TB16)
+    *   [6.2 Dell Docks](#Dell_Docks)
 *   [7 Firmware updates](#Firmware_updates)
 *   [8 Fingerprint reader](#Fingerprint_reader)
 *   [9 Troubleshooting](#Troubleshooting)
@@ -222,7 +224,21 @@ With the recent deprecation of synaptics, it is possible to use existing GUI (fo
 
 ## Thunderbolt docks
 
+### TB16
+
 TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://aur.archlinux.org/packages/bolt/) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.
+
+### Dell Docks
+
+Some Dell docks (tested with the D6000) experience behavior whereby the displays periodically disconnect. Unplugging and plugging the dock back in again causes the displays to come back to life, but the displays will disconnect again. The more permanent fix for this is to edit the /etc/pulse/default.pa file, and comment out the following line:
+
+```
+### Automatically suspend sinks/sources that become idle for too long
+load-module module-suspend-on-idle
+
+```
+
+A discussion around this issue can be found [here](https://www.displaylink.org/forum/showthread.php?t=65476&page=2), including the discussion around fixes.
 
 ## Firmware updates
 
@@ -268,3 +284,4 @@ The suspend function key is not printed on the keyboard, but it's actually mappe
 *   [Dell XPS 15 9560 (Early 2017) Thread on the Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=223056)
 *   [Optimizing Dell XPS](https://www.reddit.com/r/Dell/comments/6s2e3w/optimizing_dell_xps_for_linux/)
 *   [Tutorial about how to change CPU thermal paste on XPS15 to avoid throttling](https://www.ultrabookreview.com/14875-fix-throttling-xps-15/)
+*   [[4]](https://www.displaylink.org/forum/showthread.php?t=65476&page=2)

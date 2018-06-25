@@ -77,18 +77,24 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 For Skylake and newer processors, some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.16) not enabled by default.
 
-It is necessary to add `i915.enable_guc=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable it. Alternatively, if the initramfs already includes the i915 module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`. E.g.:
+**Warning:** Enabling GuC/HuC firmware loading can cause issues on some systems; disable it if you experience freezing (for example, after resuming from hibernation).
 
- `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=1` 
+It is necessary to add `i915.enable_guc=3` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable both GuG and HuC firmware loading. Alternatively, if the [initramfs](/index.php/Initramfs "Initramfs") already includes the `i915` module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`, e.g.:
 
-You can verify that it is enabled by checking *dmesg*:
+ `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=3` 
 
+You can verify both are enabled by using *dmesg*:
+
+ `$ dmesg` 
 ```
-[    2.142029] [drm] GuC loaded (firmware i915/skl_guc_ver6_1.bin [version 6.1])
-
+[drm] HuC: Loaded firmware i915/kbl_huc_ver02_00_1810.bin (version 2.0)
+[drm] GuC: Loaded firmware i915/kbl_guc_ver9_39.bin (version 9.39)
+i915 0000:00:02.0: GuC firmware version 9.39
+i915 0000:00:02.0: GuC submission enabled
+i915 0000:00:02.0: HuC enabled
 ```
 
-Alternatively, check:
+Alternatively, check using:
 
 ```
 # cat /sys/kernel/debug/dri/0/i915_huc_load_status
@@ -312,23 +318,6 @@ Alternatively, try to disable the 3D acceleration only with the `DRI` option:
   Option "DRI" "False"
 
 ```
-
-If you experience crashes and have
-
-```
-  Option "TearFree" "true"
-  Option "AccelMethod" "sna"
-
-```
-
-in your configuration file, in most cases these can be fixed by adding
-
-```
-i915.semaphores=1
-
-```
-
-to your boot parameters.
 
 ### Baytrail complete freeze
 

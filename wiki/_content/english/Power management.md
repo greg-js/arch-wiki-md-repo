@@ -91,7 +91,7 @@ These are the more popular scripts and tools designed to help power saving:
 
 *   **batterymon-clone** — Simple battery monitor tray icon.
 
-	[https://github.com/jareksed/batterymon-clone](https://github.com/jareksed/batterymon-clone) || [batterymon-clone](https://www.archlinux.org/packages/?name=batterymon-clone)
+	[https://github.com/jareksed/batterymon-clone](https://github.com/jareksed/batterymon-clone) || [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/)
 
 *   **cbatticon** — Lightweight and fast battery icon that sits in your system tray.
 

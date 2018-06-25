@@ -16,7 +16,7 @@ Clientes DHCP autônomos:
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") tem um *hook* que usa resolvconf se ele estiver instalado.
 
-[Gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede"):
+[Gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede"):
 
 *   [netctl](/index.php/Netctl "Netctl") (usado por padrão)
 *   [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager")

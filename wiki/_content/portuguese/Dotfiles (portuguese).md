@@ -122,7 +122,9 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 
 ## Repositórios
 
-| Autor | Shell (estrutura de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-mail | IRC |
+| Autor | Shell
+(estrutura de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-mail | IRC |
+| [alfunx](https://github.com/alfunx/.dotfiles) | zsh | awesome | vim | kitty | tmux | ncmpcpp/mpd | htop/lain | thunderbird |
 | [Ambrevar](https://github.com/Ambrevar/dotfiles) | zsh | awesome | emacs | rxvt-unicode | cmus | htop/vicious | mutt |
 | [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | st | tmux | i3status | The Lounge |
 | [ayekat](https://github.com/ayekat/dotfiles) | zsh | karuiwm | vim | rxvt-unicode | tmux | ncmpcpp/mpd | karuibar | mutt | irssi |

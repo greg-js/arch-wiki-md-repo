@@ -86,7 +86,7 @@ Non è sempre necesario installare un codec specifico se si installa un lettore 
 
 *   **libde265** — Implementazione open source del codec video h.265\.
 
-	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://aur.archlinux.org/packages/libde265/) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
+	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://www.archlinux.org/packages/?name=libde265) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
 
 *   **[libdv](https://en.wikipedia.org/wiki/DV "wikipedia:DV")** — Il codec Quasar DV ( libdv ) è un codec software per video DV.
 

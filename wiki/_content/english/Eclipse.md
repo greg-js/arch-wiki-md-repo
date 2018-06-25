@@ -29,10 +29,11 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
 
 [Install](/index.php/Install "Install") one of the following packages:
 
-*   [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp)
-*   [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java)
-*   [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
-*   [eclipse-jee](https://www.archlinux.org/packages/?name=eclipse-jee)
+*   [eclipse-jee](https://www.archlinux.org/packages/?name=eclipse-jee) for Java EE Developers
+*   [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java) for Java Developers
+*   [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp) for C/C++ Developers
+*   [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php) for PHP Developers
+*   [eclipse-javascript](https://www.archlinux.org/packages/?name=eclipse-javascript) for JavaScript and Web Developers
 
 You cannot install multiple of these at the same time since they conflict, see [FS#45577](https://bugs.archlinux.org/task/45577): choose the package above which most immediately fulfills your needs, and then add support for any additionally required languages through [#Plugins](#Plugins).
 

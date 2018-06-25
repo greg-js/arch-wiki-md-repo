@@ -84,7 +84,7 @@
 
 *   **libde265** — Open source implementation of the h.265 video codec.
 
-	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://aur.archlinux.org/packages/libde265/) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
+	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://www.archlinux.org/packages/?name=libde265) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
 
 *   **[libdv](https://en.wikipedia.org/wiki/DV "wikipedia:DV")** — The Quasar DV codec (libdv) is a software codec for DV video.
 

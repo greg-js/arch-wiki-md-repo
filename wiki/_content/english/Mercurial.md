@@ -3,6 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Graphical front-ends](#Graphical_front-ends)
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
     *   [3.1 Dotfiles Repo](#Dotfiles_Repo)
@@ -11,6 +12,30 @@
 ## Installation
 
 [Install](/index.php/Install "Install") [mercurial](https://www.archlinux.org/packages/?name=mercurial), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+
+### Graphical front-ends
+
+See also [Mercurial graphical user interfaces](https://www.mercurial-scm.org/wiki/OtherTools#Graphical_user_interfaces).
+
+*   **EasyMercurial** — Simple user interface for the Mercurial distributed version control system.
+
+	[https://easyhg.org/](https://easyhg.org/) || [easyhg](https://aur.archlinux.org/packages/easyhg/)
+
+*   **hgk** — Tcl/Tk based tool to browse the history of a repository in a graphical way.
+
+	[https://www.mercurial-scm.org/wiki/HgkExtension](https://www.mercurial-scm.org/wiki/HgkExtension) || [mercurial](https://www.archlinux.org/packages/?name=mercurial) + [tk](https://www.archlinux.org/packages/?name=tk)
+
+*   **hgtui** — Textual user interface frontend for DSCM mercurial.
+
+	[https://bitbucket.org/hgtui/hgtui](https://bitbucket.org/hgtui/hgtui) || [hgtui-hg](https://aur.archlinux.org/packages/hgtui-hg/)
+
+*   **hgview** — Qt4 and text based Mercurial log navigator.
+
+	[https://www.logilab.org/project/hgview/](https://www.logilab.org/project/hgview/) || [hgview](https://www.archlinux.org/packages/?name=hgview)
+
+*   **[TortoiseHg](https://en.wikipedia.org/wiki/TortoiseHg "wikipedia:TortoiseHg")** — Set of graphical tools and a Nautilus extension for the Mercurial distributed revision control system.
+
+	[https://tortoisehg.bitbucket.io/](https://tortoisehg.bitbucket.io/) || [tortoisehg](https://aur.archlinux.org/packages/tortoisehg/)
 
 ## Configuration
 

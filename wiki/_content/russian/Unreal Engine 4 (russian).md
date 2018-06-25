@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [Unreal Tournament 4 (Русский)](/index.php/Unreal_Tournament_4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unreal Tournament 4 (Русский)")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Unreal Engine 4](/index.php/Unreal_Engine_4 "Unreal Engine 4"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&diff=0&oldid=482795).
 
 Unreal Engine 4 - последняя версия движка для видеоигр, созданная Epic Games
@@ -34,7 +38,7 @@ Unreal Engine 4 - последняя версия движка для видео
 
 Unreal Engine 4 доступен в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") как пакет [unreal-engine](https://aur.archlinux.org/packages/unreal-engine/).
 
-Пакет вешает 22 ГБ после установки, поэтому для сборки требуется около 100 ГБ свободного места. Существует около 7 ГБ исходных файлов для загрузки, а компиляция может занять несколько часов.
+Пакет весит 22 ГБ после установки, поэтому для сборки требуется около 100 ГБ свободного места. Существует около 7 ГБ исходных файлов для загрузки, а компиляция может занять несколько часов.
 
 Поскольку репозиторий является приватным, вы можете [настроить SSH-ключ](https://help.github.com/articles/generating-an-ssh-key/), чтобы ваша учетная запись GitHub использовалась для загрузки источника.
 

@@ -686,6 +686,10 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/) || [aarchup](https://aur.archlinux.org/packages/aarchup/)
 
+*   **Apper** — Gerenciador de aplicativo e pacotes para o KDE usando PackageKit.
+
+	[https://www.kde.org/applications/system/apper/](https://www.kde.org/applications/system/apper/) || [apper](https://www.archlinux.org/packages/?name=apper)
+
 *   **Arch-Update** — Indicador de atualização para o GNOME-Shell.
 
 	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
@@ -698,11 +702,11 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
-*   **GNOME packagekit** — Ferramenta de gerenciamento de pacotes baseada em GTK
+*   **GNOME Packagekit** — Ferramenta de gerenciamento de pacotes baseada em GTK+
 
-	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
+	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME Software** — Aplicativo de softwares do GNOME. (Seleção curada para o GNOME)
+*   **GNOME Software** — Gerenciador de aplicativos do GNOME. (Seleção curada para o GNOME)
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
@@ -710,7 +714,7 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
 
-*   **pcurses** — Gerenciamento de pacotes em um front-end curses
+*   **pcurses** — Gerenciamento de pacotes em um front-end curses.
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
 

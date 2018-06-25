@@ -959,7 +959,7 @@ options acx debug=0
 
 ##### zd1211rw
 
-[`**zd1211rw**`](http://zd1211.wiki.sourceforge.net/) è il driver per il chipset ZyDAS ZD1211 802.11b/g USB WLAN ed è incluso nelle recenti versioni del kernel Linux. Vedere [[4]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) per una lista delle schede supportate. Avrete solo bisogno di installare il firmware appropriato per la scheda, contenuto nel pacchetto [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware).
+[`**zd1211rw**`](http://zd1211.wiki.sourceforge.net/) è il driver per il chipset ZyDAS ZD1211 802.11b/g USB WLAN ed è incluso nelle recenti versioni del kernel Linux. Vedere [[4]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) per una lista delle schede supportate. Avrete solo bisogno di installare il firmware appropriato per la scheda, contenuto nel pacchetto [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/).
 
 ##### carl9170
 

@@ -92,7 +92,7 @@ $ gpg --full-gen-key
 
 ```
 
-**Совет:** Используйте опцию `--expert`, чтобы получить альтернативные шрифты, такие как [ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography").
+**Совет:** Используйте опцию `--expert`, чтобы выбрать другие шифры, такие как [ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography").
 
 Команде потребуются ответы на несколько вопросов. Для общего использования большинство людей захотят:
 

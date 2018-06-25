@@ -145,8 +145,6 @@ Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [
 Quick overview:
 
 *   Create [partition(s)](/index.php/Partitioning "Partitioning") where your PV(s) will reside.
-    *   If you use Master Boot Record partition table, set the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") to `8e` (partition type `Linux LVM` in *fdisk*).
-    *   If you use GUID Partition Table, set the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") to `E6D6D379-F507-44C2-A23C-238F2A3DF928` (partition type `Linux LVM` in *fdisk* and `8e00` in *gdisk*).
 *   Create your physical volumes (PVs). If you have one disk it is best to just create one PV in one large partition. If you have multiple disks you can create partitions on each of them and create a PV on each partition.
 *   Create your volume group (VG) and add all PVs to it.
 *   Create logical volumes (LVs) inside that VG.
@@ -157,9 +155,12 @@ Quick overview:
 
 ### Create partitions
 
-If LVM has to be set on the entire disk, there is no need to create any partitions.
+[Partition](/index.php/Partition "Partition") the device as required before configuring LVM.
 
-Otherwise, [partition](/index.php/Partition "Partition") the device as required before configuring LVM.
+Create the partitions:
+
+*   If you use Master Boot Record partition table, set the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") to `8e` (partition type `Linux LVM` in *fdisk*).
+*   If you use GUID Partition Table, set the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") to `E6D6D379-F507-44C2-A23C-238F2A3DF928` (partition type `Linux LVM` in *fdisk* and `8e00` in *gdisk*).
 
 ### Create physical volumes
 

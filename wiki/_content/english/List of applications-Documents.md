@@ -228,7 +228,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Pantheon Code** — Code editor for elementaryOS. It auto-saves your files, meaning they're always up-to-date. Plus it remembers your tabs so you never lose your spot, even in between sessions.
 
-	[https://github.com/elementary/code](https://github.com/elementary/code) || [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor)
+	[https://github.com/elementary/code](https://github.com/elementary/code) || [pantheon-code](https://www.archlinux.org/packages/?name=pantheon-code)
 
 *   **[Pluma](/index.php/MATE "MATE")** — Powerful text editor for MATE.
 

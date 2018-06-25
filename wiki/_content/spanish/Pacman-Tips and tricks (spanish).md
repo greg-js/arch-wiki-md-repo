@@ -182,7 +182,7 @@ Si su sistema tiene archivos huérfanos que no pertenecen a ningún paquete (un 
 
 En la práctica, este proceso es complicado porque muchos archivos importantes no forman parte de ningún paquete (por ejemplo, archivos generados en tiempo de ejecución, configuraciones personalizadas), por lo que se incluirán en el resultado final, lo que dificulta seleccionar los archivos que pueden eliminarse de manera segura.
 
-**Tip:** El [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script realiza pasos similares, pero también incluye una extensa lista negra para eliminar falsos positivos comunes de la salida. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) también permite rastrear archivos huérfanos usando una secuencia de comandos de configuración.
+**Tip:** El [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) script realiza pasos similares, pero también incluye una extensa lista negra para eliminar falsos positivos comunes de la salida. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) también permite rastrear archivos huérfanos usando una secuencia de comandos de configuración.
 
 ### Eliminación de paquetes no utilizados (huérfanos)
 
@@ -651,7 +651,7 @@ Hay otras aplicaciones de descarga que puede usar con *pacman* . Aquí están, y
 
 *   **Lostfiles** — Script que identifica archivos que no son propiedad de ningún paquete.
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **Pacmatic** — Envoltura de *Pacman* para comprobar notícias de Arch antes de la actualización, evitar actualizaciones parciales y advertir sobre cambios en el archivo de configuración.
 

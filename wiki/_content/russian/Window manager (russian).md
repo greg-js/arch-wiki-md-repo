@@ -158,7 +158,7 @@
 
 *   **WindowLab** — Компактный и простой оконный менеджер. Имеет свои отличительные особенности.
 
-	[http://nickgravgaard.com/windowlab/](http://nickgravgaard.com/windowlab/) || [windowlab](https://www.archlinux.org/packages/?name=windowlab)
+	[http://nickgravgaard.com/windowlab/](http://nickgravgaard.com/windowlab/) || [windowlab](https://aur.archlinux.org/packages/windowlab/)
 
 *   **[Window Maker](/index.php/Window_Maker "Window Maker")** — Оконный менеджер для X11, изначально разработанный для поддержки интеграции для GNUstep Desktop Environment. Везде, где возможно, он повторяет элегантный стиль графического интерфейса NEXTSTEP. Он быстрый, обладает широкими возможностями, прост в настройке и использовании. Это свободное ПО, созданное благодаря вкладу разработчиков со всего мира.
 

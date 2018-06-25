@@ -155,7 +155,7 @@ intel_backlight
 
 [PRIME](/index.php/PRIME "PRIME") functionality works by using only [nvidia](https://www.archlinux.org/packages/?name=nvidia) and will work without the intel video driver, instead using modsetting.
 
-The [nouveau](https://www.archlinux.org/packages/?name=nouveau) driver does not work well in PRIME configuration (see [#Known Issues](#Known_Issues)}).
+The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) driver does not work well in PRIME configuration (see [#Known Issues](#Known_Issues)}).
 
 #### Multihead
 

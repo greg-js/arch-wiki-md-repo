@@ -550,7 +550,7 @@ The most basic (and common) mode of operation used in practice is "*cipher-block
           │  ║          ║        ▼         ▼      ┋          ┋         . START
           ┴  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"Hello, W"┋ block  ╱╰────┐
     sector n ║          ║                         ┋          ┋ 1      ╲╭────┘
-   of file or ║          ║──────────────────╮      ┋          ┋         ' 
+  of file or ║          ║──────────────────╮      ┋          ┋         ' 
  blockdevice ╟──────────╢        ╭─key     │      ┠┈┈┈┈┈┈┈┈┈┈┨
           ┬  ║          ║        ▼         ▼      ┋          ┋
           │  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"orld !!!"┋ block

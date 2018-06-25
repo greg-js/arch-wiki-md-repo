@@ -97,7 +97,7 @@ Some distributions provide a pacman package in their official repositories which
 
 ### Creating a chroot
 
-Two methods to setup and enter the chroot are presented below, from the easiest to the most complicated. Select only one of the two methods. Then, continue at [#Using the chroot environment](#Using_the_chroot_environment).
+Two methods to setup and enter the chroot are presented below, from the easiest to the most complicated. Select only one of the two methods. Then, continue at [#Using a chroot environment](#Using_a_chroot_environment).
 
 #### Method A: Using the bootstrap image (recommended)
 

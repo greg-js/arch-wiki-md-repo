@@ -194,6 +194,13 @@ if load ${devtype} ${devnum}:${bootpart} ${kernel_addr_r} /boot/Image; then
 fi
 ```
 
+make image the /mnt/boot/boot.scr to
+
+```
+# mkimage -C none -A arm64 -T script -d /mnt/boot/boot.cmd /mnt/boot/boot.scr
+
+```
+
 ## See also
 
 *   ["Just another Geek's" blog about installing Linux](https://blog.christophersmart.com/2016/10/23/building-and-booting-upstream-linux-and-u-boot-for-orange-pi-one-arm-board/)

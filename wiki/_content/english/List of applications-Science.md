@@ -472,7 +472,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **GTKWave** — Fully featured GTK+ based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
 
-	[http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) || [gtkwave](https://aur.archlinux.org/packages/gtkwave/)
+	[http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) || [gtkwave](https://www.archlinux.org/packages/?name=gtkwave)
 
 *   **Logisim** — Educational digital logic design and simulation software, written in Java, officially its development has stopped.
 
@@ -510,7 +510,11 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[http://www.geda-project.org/](http://www.geda-project.org/) || [geda-gaf](https://www.archlinux.org/packages/?name=geda-gaf)
 
-*   **[KiCAD](https://en.wikipedia.org/wiki/KiCAD "wikipedia:KiCAD")** — Software suite for electronic design automation (EDA) that facilitates the design of schematics for electronic circuits and their conversion to PCB (printed circuit board).
+*   **[gEDA](/index.php/GEDA "GEDA") PCB** — Interactive printed circuit board editor.
+
+	[http://pcb.geda-project.org/](http://pcb.geda-project.org/) || [pcb](https://www.archlinux.org/packages/?name=pcb)
+
+*   **[KiCad](https://en.wikipedia.org/wiki/KiCad "wikipedia:KiCad")** — Software suite for electronic design automation (EDA) that facilitates the design of schematics for electronic circuits and their conversion to PCB (printed circuit board).
 
 	[http://kicad-pcb.org/](http://kicad-pcb.org/) || [kicad](https://www.archlinux.org/packages/?name=kicad)
 

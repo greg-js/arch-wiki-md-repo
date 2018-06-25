@@ -115,7 +115,7 @@ install CD version
 | [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; Thunderbolt 3 (USB-C) | For [video h/w acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") install [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) and ensure to enable acceleration in `about:flags`. Check everything is working in `about:gpu`. |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
-| [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | YesYes | Yes | Yes | NA |
+| [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
 | Lenovo ThinkPad T560 | Yes | Yes | Yes | Yes | Yes | Yes | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
 | [Lenovo ThinkPad T570](/index.php/Lenovo_ThinkPad_T570 "Lenovo ThinkPad T570") | Yes | Yes | Yes | Yes | Yes |  ? | Yes* | NA | not yet fully tested |

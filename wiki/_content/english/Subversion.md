@@ -347,7 +347,19 @@ These repositories should now be all setup.
 
 ## Subversion clients
 
-For a list of subversion clients, see the [Wikipedia article](https://en.wikipedia.org/wiki/Comparison_of_Subversion_clients "wikipedia:Comparison of Subversion clients").
+See also [Wikipedia:Comparison of Subversion clients](https://en.wikipedia.org/wiki/Comparison_of_Subversion_clients "wikipedia:Comparison of Subversion clients").
+
+*   **kdesvn** — Subversion client for KDE.
+
+	[https://cgit.kde.org/kdesvn.git/](https://cgit.kde.org/kdesvn.git/) || [kdesvn](https://www.archlinux.org/packages/?name=kdesvn)
+
+*   **[RabbitVCS](https://en.wikipedia.org/wiki/RabbitVCS "wikipedia:RabbitVCS")** — Set of graphical tools written to provide simple and straightforward access to the version control systems you use.
+
+	[http://rabbitvcs.org/](http://rabbitvcs.org/) || [rabbitvcs](https://aur.archlinux.org/packages/rabbitvcs/)
+
+*   **[RapidSVN](https://en.wikipedia.org/wiki/RapidSVN "wikipedia:RapidSVN")** — GUI front-end for the Subversion revision system written in C++ using the wxWidgets framework.
+
+	[http://rapidsvn.tigris.org/](http://rapidsvn.tigris.org/) || [rapidsvn](https://aur.archlinux.org/packages/rapidsvn/)
 
 ## See also
 

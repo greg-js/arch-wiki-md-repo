@@ -292,6 +292,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 
 *   Default 8x16
 *   [Dina](http://www.dcmembers.com/jibsen/download/61/) ([dina-font](https://www.archlinux.org/packages/?name=dina-font)) – 6pt, 8pt, 9pt, 10pt, monospaced, based on Proggy
+*   [Efont](http://openlab.jp/efont/unicode/) ([efont-unicode-bdf](https://aur.archlinux.org/packages/efont-unicode-bdf/)) – 10px, 12px, 14px, 16px, 24px, normal, bold and italic
 *   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/)) – 11px, 14px, normal and bold
 *   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
 *   [ProFont](http://tobiasjung.name/profont/) ([profont](https://www.archlinux.org/packages/?name=profont)) – 10px, 11px, 12px, 15px, 17px, 22px, 29px, normal

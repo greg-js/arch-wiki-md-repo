@@ -20,12 +20,7 @@
 
 ## Instalação
 
-[Instale](/index.php/Instale "Instale") o pacote [clamav](https://www.archlinux.org/packages/?name=clamav). Também, você pode instalar:
-
-*   [clamtk](https://www.archlinux.org/packages/?name=clamtk) , um front-end gráfico para o clamav.
-*   complementos
-    *   [clamtk-gnome](https://aur.archlinux.org/packages/clamtk-gnome/) , um plug-ins simples para ClamTk para permitir um scan por meio de item de menu de contexto, clicando com botão direito do mouse sobre arquivos ou pastas no gerenciador de arquivos no Nautilus.
-    *   [thunar-sendto-clamtk](https://aur.archlinux.org/packages/thunar-sendto-clamtk/) , um plug-ins simples para permitir um scan por meio de item de menu de contexto, clicando com botão direito do mouse sobre arquivos ou pastas no gerenciador de arquivos no Thunar.
+[Instale](/index.php/Instale "Instale") o pacote [clamav](https://www.archlinux.org/packages/?name=clamav).
 
 ## Atualizando o banco de dados
 

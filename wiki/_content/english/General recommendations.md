@@ -155,7 +155,7 @@ Num Lock is a toggle key found in most keyboards. For activating Num Lock's numb
 
 ## Graphical user interface
 
-This section provides orientation for users wishing to run graphical applications on their system. See [Category:X server](/index.php/Category:X_server "Category:X server") for additional resources.
+This section provides orientation for users wishing to run graphical applications on their system. See [Category:Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") for additional resources.
 
 ### Display server
 

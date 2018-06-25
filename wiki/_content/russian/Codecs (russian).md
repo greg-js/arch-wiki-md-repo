@@ -81,7 +81,7 @@
 
 *   **libde265** — Открытая реализация видеокодека h.265.
 
-	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://aur.archlinux.org/packages/libde265/) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
+	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://www.archlinux.org/packages/?name=libde265) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
 
 *   **[libdv](https://en.wikipedia.org/wiki/ru:DV "wikipedia:ru:DV")** — Программный кодек для DV видео.
 

@@ -14,6 +14,7 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Graphical front-ends](#Graphical_front-ends)
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
     *   [3.1 Getting a Git repository](#Getting_a_Git_repository)
@@ -56,7 +57,51 @@ Related articles
 
 [Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git) package. For the development version, install the [git-git](https://aur.archlinux.org/packages/git-git/) package. Check the optional dependencies when using tools such as *git svn*, *git gui* and *gitk*.
 
+### Graphical front-ends
+
+See also [git GUI Clients](https://git-scm.com/download/gui/linux).
+
+*   **Giggle** — GTK+ frontend for git.
+
+	[https://wiki.gnome.org/Apps/giggle/](https://wiki.gnome.org/Apps/giggle/) || [giggle](https://www.archlinux.org/packages/?name=giggle)
+
+*   **Git Cola** — Sleek and powerful graphical user interface for Git written in Python.
+
+	[https://git-cola.github.io/](https://git-cola.github.io/) || [git-cola](https://aur.archlinux.org/packages/git-cola/)
+
+*   **Git Extensions** — Graphical user interface for Git that allows you to control Git without using the commandline.
+
+	[https://gitextensions.github.io/](https://gitextensions.github.io/) || [gitextensions](https://aur.archlinux.org/packages/gitextensions/)
+
+*   **gitg** — GNOME GUI client to view git repositories.
+
+	[https://wiki.gnome.org/Apps/Gitg](https://wiki.gnome.org/Apps/Gitg) || [gitg](https://www.archlinux.org/packages/?name=gitg)
+
+*   **git-gui** — Tcl/Tk based portable graphical interface to Git.
+
+	[https://git-scm.com/docs/git-gui](https://git-scm.com/docs/git-gui) || [git](https://www.archlinux.org/packages/?name=git) + [tk](https://www.archlinux.org/packages/?name=tk)
+
 **Note:** To enable spell checking in *git-gui*, [aspell](https://www.archlinux.org/packages/?name=aspell) is required, along with the dictionary corresponding to the `LC_MESSAGES` [environment variable](/index.php/Environment_variable "Environment variable"). See [FS#28181](https://bugs.archlinux.org/task/28181) and the [aspell](/index.php/Aspell "Aspell") article.
+
+*   **gitk** — Tcl/Tk based Git repository browser.
+
+	[https://git-scm.com/docs/gitk](https://git-scm.com/docs/gitk) || [git](https://www.archlinux.org/packages/?name=git) + [tk](https://www.archlinux.org/packages/?name=tk)
+
+*   **QGit** — Git GUI viewer to browse revisions history, view patch content and changed files, graphically following different development branches.
+
+	[https://github.com/tibirna/qgit](https://github.com/tibirna/qgit) || [qgit](https://www.archlinux.org/packages/?name=qgit)
+
+*   **[RabbitVCS](https://en.wikipedia.org/wiki/RabbitVCS "wikipedia:RabbitVCS")** — Set of graphical tools written to provide simple and straightforward access to the version control systems you use.
+
+	[http://rabbitvcs.org/](http://rabbitvcs.org/) || [rabbitvcs](https://aur.archlinux.org/packages/rabbitvcs/)
+
+*   **Tig** — ncurses-based text-mode interface for git.
+
+	[https://jonas.github.io/tig/](https://jonas.github.io/tig/) || [tig](https://www.archlinux.org/packages/?name=tig)
+
+*   **ungit** — Brings user friendliness to git without sacrificing the versatility of git.
+
+	[https://github.com/FredrikNoren/ungit](https://github.com/FredrikNoren/ungit) || [nodejs-ungit](https://aur.archlinux.org/packages/nodejs-ungit/)
 
 ## Configuration
 

@@ -29,10 +29,14 @@
         *   [1.2.7 Finders](#Finders)
     *   [1.3 Development](#Development)
         *   [1.3.1 Integrated development environments](#Integrated_development_environments)
-        *   [1.3.2 Hex editors](#Hex_editors)
-        *   [1.3.3 Build automation](#Build_automation)
-        *   [1.3.4 Version control systems](#Version_control_systems)
-        *   [1.3.5 Game development](#Game_development)
+        *   [1.3.2 GUI builders](#GUI_builders)
+        *   [1.3.3 Hex editors](#Hex_editors)
+        *   [1.3.4 Debuggers](#Debuggers)
+        *   [1.3.5 UML modelers](#UML_modelers)
+        *   [1.3.6 API documentation browsers](#API_documentation_browsers)
+        *   [1.3.7 Build automation](#Build_automation)
+        *   [1.3.8 Version control systems](#Version_control_systems)
+        *   [1.3.9 Game development](#Game_development)
     *   [1.4 Text input](#Text_input)
         *   [1.4.1 Character selectors](#Character_selectors)
         *   [1.4.2 Virtual keyboards](#Virtual_keyboards)
@@ -684,13 +688,13 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Anjuta](https://en.wikipedia.org/wiki/Anjuta "wikipedia:Anjuta")** — Versatile IDE with project management, an application wizard, an interactive debugger, a source editor, version control support and many more tools.
 
-	[http://www.anjuta.org/](http://www.anjuta.org/) || [anjuta](https://www.archlinux.org/packages/?name=anjuta)
+	[http://anjuta.org/](http://anjuta.org/) || [anjuta](https://www.archlinux.org/packages/?name=anjuta)
 
 *   **[Aptana Studio](https://en.wikipedia.org/wiki/Aptana#Aptana_Studio "wikipedia:Aptana")** — IDE based on Eclipse, but geared towards web development, with support for HTML, CSS, Javascript, Ruby on Rails, PHP, Adobe AIR and others.
 
 	[http://www.aptana.com/](http://www.aptana.com/) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
 
-*   **[Bluefish](https://en.wikipedia.org/wiki/Bluefish_(text_editor) "wikipedia:Bluefish (text editor)")** — GTK+ editor/IDE with an MDI interface, syntax highlighting and support for Python plugins.
+*   **[Bluefish](https://en.wikipedia.org/wiki/Bluefish_(software) "wikipedia:Bluefish (software)")** — Powerful editor targeted towards programmers and webdevelopers, with many options to write websites, scripts and programming code. It supports many programming and markup languages.
 
 	[http://bluefish.openoffice.nl/](http://bluefish.openoffice.nl/) || [bluefish](https://www.archlinux.org/packages/?name=bluefish)
 
@@ -698,9 +702,9 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
 
-*   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — Open source and cross-platform C/C++ IDE.
+*   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — C, C++ and Fortran IDE built to meet the most demanding needs of its users. It is designed to be very extensible and fully configurable.
 
-	[http://www.codeblocks.org/](http://www.codeblocks.org/) || [codeblocks](https://www.archlinux.org/packages/?name=codeblocks)
+	[http://codeblocks.org/](http://codeblocks.org/) || [codeblocks](https://www.archlinux.org/packages/?name=codeblocks)
 
 *   **[CLion](https://en.wikipedia.org/wiki/JetBrains#CLion "wikipedia:JetBrains")** — A cross-platform IDE for C and C++.
 
@@ -714,23 +718,23 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://c9.io/](https://c9.io/) || [c9.core](https://aur.archlinux.org/packages/c9.core/)
 
-*   **[Eclipse](/index.php/Eclipse "Eclipse")** — Open source community project, which aims to provide a universal development platform.
+*   **[Eclipse](/index.php/Eclipse "Eclipse")** — IDE for Java, C/C++, PHP, Perl and Python with subversion support and task management.
 
-	[https://eclipse.org/](https://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
+	[https://www.eclipse.org/](https://www.eclipse.org/) || Java EE: [eclipse-jee](https://www.archlinux.org/packages/?name=eclipse-jee), Java: [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), C/C++: [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), PHP: [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php), JavaScript and Web: [eclipse-javascript](https://www.archlinux.org/packages/?name=eclipse-javascript)
 
-*   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python and Ruby IDE in PyQt5.
+*   **[Eric](https://en.wikipedia.org/wiki/Eric_(software) "wikipedia:Eric (software)")** — Full-featured Python and Ruby IDE written in PyQt5.
 
 	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
 
-*   **[Gambas](/index.php/Gambas "Gambas")** — Free development environment based on a Basic interpreter with object extensions.
+*   **[Gambas](/index.php/Gambas "Gambas")** — IDE based on a Basic interpreter with object extensions.
 
 	[http://gambas.sourceforge.net/en/main.html](http://gambas.sourceforge.net/en/main.html) || [gambas3-ide](https://www.archlinux.org/packages/?name=gambas3-ide)
 
-*   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — Text editor using the GTK+ toolkit with basic features of an integrated development environment.
+*   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — Small and lightweight IDE with many supported many programming and markup languages including C, Java, PHP, HTML, Python, Perl, Pascal.
 
-	[https://geany.org](https://geany.org) || [geany](https://www.archlinux.org/packages/?name=geany)
+	[https://geany.org/](https://geany.org/) || [geany](https://www.archlinux.org/packages/?name=geany)
 
-*   **[GNOME Builder](https://en.wikipedia.org/wiki/GNOME_Builder "wikipedia:GNOME Builder")** — General purpose IDE for GNOME.
+*   **[GNOME Builder](https://en.wikipedia.org/wiki/GNOME_Builder "wikipedia:GNOME Builder")** — Tool to write and contribute to great GNOME-based applications.
 
 	[https://wiki.gnome.org/Apps/Builder](https://wiki.gnome.org/Apps/Builder) || [gnome-builder](https://www.archlinux.org/packages/?name=gnome-builder)
 
@@ -740,17 +744,17 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[KDevelop](https://en.wikipedia.org/wiki/KDevelop "wikipedia:KDevelop")** — Feature-full, plugin extensible IDE for C/C++ and other programming languages.
 
-	[http://kdevelop.org/](http://kdevelop.org/) || [kdevelop](https://www.archlinux.org/packages/?name=kdevelop)
+	[https://www.kdevelop.org/](https://www.kdevelop.org/) || [kdevelop](https://www.archlinux.org/packages/?name=kdevelop)
 
 *   **[Komodo Edit](https://en.wikipedia.org/wiki/Komodo_Edit "wikipedia:Komodo Edit")** — A free, multi-language editor.
 
 	[http://www.activestate.com/komodo-edit](http://www.activestate.com/komodo-edit) || [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
 
-*   **[Lazarus](https://en.wikipedia.org/wiki/Lazarus_(IDE) "wikipedia:Lazarus (IDE)")** — Cross-platform IDE for Object Pascal.
+*   **[Lazarus](https://en.wikipedia.org/wiki/Lazarus_(IDE) "wikipedia:Lazarus (IDE)")** — Delphi (Object Pascal) compatible IDE for Rapid Application Development. It has variety of components ready for use and a graphical form designer to easily create complex graphical user interfaces.
 
-	[http://lazarus.freepascal.org/](http://lazarus.freepascal.org/) || [lazarus](https://www.archlinux.org/packages/?name=lazarus)
+	[https://www.lazarus-ide.org/](https://www.lazarus-ide.org/) || [lazarus](https://www.archlinux.org/packages/?name=lazarus)
 
-*   **LiteIDE** — A simple, open source, cross-platform Go IDE.
+*   **LiteIDE** — Simple Go IDE.
 
 	[https://github.com/visualfc/liteide](https://github.com/visualfc/liteide) || [liteide](https://www.archlinux.org/packages/?name=liteide)
 
@@ -762,11 +766,11 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://www.microchip.com/mplabx](http://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)
 
-*   **[Netbeans](/index.php/Netbeans "Netbeans")** — Integrated development environment (IDE) for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
+*   **[NetBeans](/index.php/Netbeans "Netbeans")** — IDE for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
 
-	[http://netbeans.org/](http://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
+	[https://netbeans.org/](https://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
 
-*   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — from the recursive acronym: "Ninja-IDE Is Not Just Another IDE", is a cross-platform integrated development environment (IDE); runs on Linux/X11, Mac OS X and Windows OSs. Used, for example, for Python development
+*   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — IDE for Python development.
 
 	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
 
@@ -782,9 +786,9 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://www.qt.io/ide/](https://www.qt.io/ide/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). *Scratch* is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
+*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — Programming system and content development tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming").
 
-	[http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch) [scratch2](https://aur.archlinux.org/packages/scratch2/)
+	[https://scratch.mit.edu/](https://scratch.mit.edu/) || [scratch](https://www.archlinux.org/packages/?name=scratch)
 
 *   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
 
@@ -793,6 +797,24 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **Thonny** — Python IDE for beginners.
 
 	[http://thonny.cs.ut.ee/](http://thonny.cs.ut.ee/) || [thonny](https://aur.archlinux.org/packages/thonny/)
+
+#### GUI builders
+
+*   **[FLUID](https://en.wikipedia.org/wiki/FLUID "wikipedia:FLUID")** — FLTK GUI designer.
+
+	[http://www.fltk.org/](http://www.fltk.org/) || [fltk](https://www.archlinux.org/packages/?name=fltk)
+
+*   **[Glade](https://en.wikipedia.org/wiki/Glade_Interface_Designer "wikipedia:Glade Interface Designer")** — Create or open user interface designs for GTK+ applications.
+
+	[https://glade.gnome.org/](https://glade.gnome.org/) || [glade](https://www.archlinux.org/packages/?name=glade)
+
+*   **KUIViewer** — Quick viewer for Qt Designer UI File.
+
+	[https://userbase.kde.org/KUIViewer](https://userbase.kde.org/KUIViewer) || [kde-dev-utils](https://www.archlinux.org/packages/?name=kde-dev-utils)
+
+*   **Qt Designer** — Tool for designing and building graphical user interfaces (GUIs) with Qt Widgets.
+
+	[http://doc.qt.io/qt-5/qtdesigner-manual.html](http://doc.qt.io/qt-5/qtdesigner-manual.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
 
 #### Hex editors
 
@@ -813,6 +835,122 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 *   **Okteta** — KDE hex editor for viewing and editing the raw data of files.
 
 	[https://www.kde.org/applications/utilities/okteta/](https://www.kde.org/applications/utilities/okteta/) || [okteta](https://www.archlinux.org/packages/?name=okteta)
+
+#### Debuggers
+
+*   **Accerciser** — Interactive Python accessibility explorer. It uses the AT-SPI library to inspect, examine, and interact with widgets, allowing you to check if an application is providing correct information to assistive technologies and automated testing frameworks.
+
+	[https://wiki.gnome.org/Apps/Accerciser](https://wiki.gnome.org/Apps/Accerciser) || [accerciser](https://www.archlinux.org/packages/?name=accerciser)
+
+*   **Alleyoop** — Find memory-management problems in your programs using the valgrind tool.
+
+	[http://alleyoop.sourceforge.net/](http://alleyoop.sourceforge.net/) || [alleyoop](https://www.archlinux.org/packages/?name=alleyoop)
+
+*   **[Data Display Debugger](https://en.wikipedia.org/wiki/Data_Display_Debugger "wikipedia:Data Display Debugger")** — Graphical front-end for command-line debuggers such as GDB.
+
+	[https://www.gnu.org/software/ddd/](https://www.gnu.org/software/ddd/) || [ddd](https://aur.archlinux.org/packages/ddd/)
+
+*   **GammaRay** — Qt-application inspection and manipulation tool.
+
+	[https://www.kdab.com/development-resources/qt-tools/gammaray/](https://www.kdab.com/development-resources/qt-tools/gammaray/) || [gammaray](https://www.archlinux.org/packages/?name=gammaray)
+
+*   **D-Feet** — Easy to use D-Bus debugger to inspect D-Bus interfaces of running programs and invoke methods on those interfaces.
+
+	[https://wiki.gnome.org/Apps/DFeet](https://wiki.gnome.org/Apps/DFeet) || [d-feet](https://www.archlinux.org/packages/?name=d-feet)
+
+*   **KCachegrind** — Profile data visualization tool, used to determine the most time consuming execution parts of program.
+
+	[https://www.kde.org/applications/development/kcachegrind/](https://www.kde.org/applications/development/kcachegrind/) || KDE: [kcachegrind](https://www.archlinux.org/packages/?name=kcachegrind), Qt: [qcachegrind](https://www.archlinux.org/packages/?name=qcachegrind)
+
+*   **[KDbg](https://en.wikipedia.org/wiki/KDbg "wikipedia:KDbg")** — Graphical user interface to GDB, the GNU debugger. It provides an intuitive interface for setting breakpoints, inspecting variables, and stepping through code.
+
+	[http://kdbg.org/](http://kdbg.org/) || [kdbg](https://www.archlinux.org/packages/?name=kdbg)
+
+*   **Massif-Visualizer** — Visualizer for Valgrind Massif data files.
+
+	[https://phabricator.kde.org/source/massif-visualizer/](https://phabricator.kde.org/source/massif-visualizer/) || [massif-visualizer](https://www.archlinux.org/packages/?name=massif-visualizer)
+
+*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — Easy to use standalone C/C++ debugger (GDB front-end) that integrates well in the GNOME environment.
+
+	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
+
+*   **Qt QDbusViewer** — Tool to introspect D-Bus objects and messages.
+
+	[http://doc.qt.io/qt-5/qdbusviewer.html](http://doc.qt.io/qt-5/qdbusviewer.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+
+*   **scanmem** — Debugging utility designed to isolate the address of an arbitrary variable in an executing process.
+
+	[https://github.com/scanmem/scanmem](https://github.com/scanmem/scanmem) || CLI: [scanmem](https://www.archlinux.org/packages/?name=scanmem), GUI: [gameconqueror](https://www.archlinux.org/packages/?name=gameconqueror)
+
+*   **Sysprof** — Profiling tool that helps in finding the functions in which a program uses most of its time.
+
+	[https://wiki.gnome.org/Apps/Sysprof](https://wiki.gnome.org/Apps/Sysprof) || [sysprof](https://www.archlinux.org/packages/?name=sysprof)
+
+#### UML modelers
+
+See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedia.org/wiki/List_of_Unified_Modeling_Language_tools "wikipedia:List of Unified Modeling Language tools").
+
+*   **[ArgoUML](https://en.wikipedia.org/wiki/ArgoUML "wikipedia:ArgoUML")** — UML modeling tool with support for all standard UML 1.4 diagrams.
+
+	[http://argouml.tigris.org/](http://argouml.tigris.org/) || [argouml](https://aur.archlinux.org/packages/argouml/)
+
+*   **[Eclipse](/index.php/Eclipse "Eclipse") Modeling Tools** — Tools and runtimes for building model-based applications.
+
+	[https://www.eclipse.org/](https://www.eclipse.org/) || [eclipse-modeling-tools](https://aur.archlinux.org/packages/eclipse-modeling-tools/)
+
+*   **[Modelio](https://en.wikipedia.org/wiki/Modelio "wikipedia:Modelio")** — Modeling environment supporting the main standards: UML, BPMN, MDA, SysML.
+
+	[https://www.modelio.org/](https://www.modelio.org/) || [modelio-bin](https://aur.archlinux.org/packages/modelio-bin/)
+
+*   **[Papyrus](https://en.wikipedia.org/wiki/Papyrus_(software) "wikipedia:Papyrus (software)")** — Model-based engineering tool based on Eclipse.
+
+	[https://www.eclipse.org/papyrus/](https://www.eclipse.org/papyrus/) || [papyrus](https://aur.archlinux.org/packages/papyrus/)
+
+*   **[PlantUML](https://en.wikipedia.org/wiki/PlantUML "wikipedia:PlantUML")** — Tool to create UML diagrams from a plain text language.
+
+	[http://plantuml.com/](http://plantuml.com/) || [plantuml](https://aur.archlinux.org/packages/plantuml/)
+
+*   **PlantUML QEditor** — PlantUML editor written in Qt.
+
+	[https://github.com/borco/plantumlqeditor](https://github.com/borco/plantumlqeditor) || [plantumlqeditor-git](https://aur.archlinux.org/packages/plantumlqeditor-git/)
+
+*   **[Umbrello](https://en.wikipedia.org/wiki/Umbrello_UML_Modeller "wikipedia:Umbrello UML Modeller")** — Unified Modelling Language (UML) diagram program based on KDE Technology.
+
+	[https://umbrello.kde.org/](https://umbrello.kde.org/) || [umbrello](https://www.archlinux.org/packages/?name=umbrello)
+
+*   **[UML Designer](https://en.wikipedia.org/wiki/UML_Designer "wikipedia:UML Designer")** — Graphical tool based on Eclipse to edit and visualize UML models.
+
+	[http://www.umldesigner.org/](http://www.umldesigner.org/) || [umldesigner](https://aur.archlinux.org/packages/umldesigner/)
+
+*   **[UMLet](https://en.wikipedia.org/wiki/UMLet "wikipedia:UMLet")** — UML tool with a simple user interface: draw UML diagrams fast, build sequence and activity diagrams from plain text, export diagrams to eps, pdf, jpg, svg, and clipboard, share diagrams using Eclipse, and create new, custom UML elements.
+
+	[http://umlet.com/](http://umlet.com/) || [umlet](https://aur.archlinux.org/packages/umlet/)
+
+*   **UML/INTERLIS-editor** — Facilitate the application of the model driven approach to a greater number of users.
+
+	[http://www.umleditor.org/](http://www.umleditor.org/) || [umleditor](https://aur.archlinux.org/packages/umleditor/)
+
+*   **Violet** — Very easy to learn and use UML editor that draws nice-looking diagrams.
+
+	[https://sourceforge.net/projects/violet/](https://sourceforge.net/projects/violet/) || [violetumleditor](https://aur.archlinux.org/packages/violetumleditor/)
+
+#### API documentation browsers
+
+*   **[Devhelp](https://en.wikipedia.org/wiki/GNOME_Devhelp "wikipedia:GNOME Devhelp")** — Developer tool for browsing and searching API documentation.
+
+	[https://wiki.gnome.org/Apps/Devhelp](https://wiki.gnome.org/Apps/Devhelp) || [devhelp](https://www.archlinux.org/packages/?name=devhelp)
+
+*   **Doc Browser** — API documentation browser with support for DevDocs and Hoogle.
+
+	[https://github.com/qwfy/doc-browser](https://github.com/qwfy/doc-browser) || [doc-browser-git](https://aur.archlinux.org/packages/doc-browser-git/)
+
+*   **Qt Assistant** — Tool for viewing on-line documentation in Qt help file format.
+
+	[http://doc.qt.io/qt-5/qtassistant-index.html](http://doc.qt.io/qt-5/qtassistant-index.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+
+*   **Zeal** — Offline API documentation browser for software developers.
+
+	[https://zealdocs.org/](https://zealdocs.org/) || [zeal](https://www.archlinux.org/packages/?name=zeal)
 
 #### Build automation
 

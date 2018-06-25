@@ -145,7 +145,7 @@
 
 *   **WindowLab** — WindowLab مدير نوافد صغير و بسيط من مصممي novel . يمكنه نقر-تركيز بدون رفع-تركيز, آلية تغيير حجم النافذة تسمح للتغيير واحد أو لعديد من حواف النوافذ في وقت واحد، يحتوي على قوائم مبتكرة تشترك في نفس الجزء من الشاشة مثل شريط المهام. يتم منع إطار أشرطة العناوين من الخروج من حافة الشاشة من خلال تقييد مؤشر الماوس، وعند الاقتضاء يتم تقييد المؤشر أيضا إلى شريط المهام / القوائم من أجل جعل عناصر القائمة سهل الوصول .
 
-	[http://nickgravgaard.com/windowlab/](http://nickgravgaard.com/windowlab/) || [windowlab](https://www.archlinux.org/packages/?name=windowlab)
+	[http://nickgravgaard.com/windowlab/](http://nickgravgaard.com/windowlab/) || [windowlab](https://aur.archlinux.org/packages/windowlab/)
 
 *   **[Window Maker](/index.php/Window_Maker "Window Maker")** — Window Maker مدير نوافذ صمم خصيصا ليتوافق و يندمج مع سطح مكتب GNUstep . يستنسخ خواصه و النظرة الأنيقة من NEXTSTEP . سريع, غني بالمميزات, سهل الاعداد, وسهل الاستخدام. كما انه تطبيق حر, مع المساهمة في صنعه مبرمجين من جميع أنحاء العالم.
 

@@ -14,7 +14,7 @@ Running `resolvconf -u` will generate `/etc/resolv.conf`.
 
 Stand-alone DHCP clients:
 
-*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") has a hook which uses resolvconf if it is installed.
+*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") has a hook which uses *resolvconf* if it is installed.
 
 [Network managers](/index.php/Network_manager "Network manager"):
 

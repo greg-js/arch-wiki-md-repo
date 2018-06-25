@@ -564,7 +564,7 @@ XferCommand = /usr/bin/wget -c --passive-ftp -c %u
 
 *   **Lostfiles** — Script that identifies files not owned by any package.
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **Pacmatic** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 

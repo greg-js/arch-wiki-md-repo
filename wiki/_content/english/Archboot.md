@@ -1,5 +1,3 @@
-**Warning:** Due to [FS#54817](https://bugs.archlinux.org/task/54817), [archboot](https://www.archlinux.org/packages/?name=archboot) can not be installed due to unfulfilled dependencies as of July 2017\. See also [[1]](https://bugs.archlinux.org/task/54817#comment164735).
-
 Archboot is an unofficial set of scripts to generate bootable media for CD/USB/PXE, designed for installation or rescue operation.
 
 It only runs in RAM, without any special filesystems like squashfs, thus it is limited to the RAM which is installed in your system.
@@ -43,20 +41,20 @@ It only runs in RAM, without any special filesystems like squashfs, thus it is l
 
 ## Archboot ISO Releases
 
-*   Hybrid image files and torrents are provided, which include i686/x86_64 and [core] repository,
+*   Hybrid image files and torrents are provided, which include x86_64 and [core] repository,
 
 	network labeled images don't include [core] repository.
 
 *   Please check md5sum before using it.
-*   [Download 2016.12 „2k16-R3“](https://downloads.archlinux.de/iso/archboot/2016.12) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2016.12-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
+*   [Download 2018.06 „2k18-R1“](https://downloads.archlinux.de/iso/archboot/2018.06) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2018.06-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
-	kernel: 4.8.13-1
+	kernel: 4.17.2-1
 
-	pacman: 5.0.1-4
+	pacman: 5.1.0-2
 
-	systemd: 232-6
+	systemd: 238.133-1
 
-	RAM recommendations: 800 MB
+	RAM recommendations: 1500 MB
 
 ### Burning Release
 
@@ -69,11 +67,10 @@ Hybrid image file is a standard CD-burnable image and also a raw disk image.
 
 ### PXE booting / Rescue system
 
-[Download 2016.12 „2k16-R3“](https://downloads.archlinux.de/iso/archboot/2016.12/boot) needed files from the directory.
+[Download 2018.12 „2k18-R1“](https://downloads.archlinux.de/iso/archboot/2018.06/boot) needed files from the directory.
 
-*   vmlinuz_i686 + initramfs_i686.img (i686)
 *   vmlinuz_x86_64 + initramfs_x86_64.img(x86_64)
-*   intel-ucode.img (x86_64/i686)
+*   intel-ucode.img (x86_64)
 *   For PXE booting add the kernel and initrd to your tftp setup and you will get a running installation/rescue system.
 *   For Rescue booting add an entry to your bootloader pointing to the kernel and initrd.
 
@@ -204,14 +201,6 @@ History of old releases can be found [here](ftp://ftp.archlinux.org/iso/archboot
 
 ```
 
-*   For i686 containers:
-
-```
-# mkdir -p *i686_chroot*/var/lib/pacman
-# linux32 pacman --root "*i686_chroot*" -Sy base --noconfirm --noprogressbar
-
-```
-
 *   Enter archboot x86_64 container:
 
 ```
@@ -219,16 +208,9 @@ History of old releases can be found [here](ftp://ftp.archlinux.org/iso/archboot
 
 ```
 
-*   Enter archboot i686 container:
-
-```
-# linux32 systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D *i686_chroot*
-
-```
-
 ### Install archboot and update to latest packages
 
-Install [archboot](https://www.archlinux.org/packages/?name=archboot) in both chroots and [update](/index.php/Pacman#Upgrading_packages "Pacman") to latest available packages.
+Install [archboot](https://www.archlinux.org/packages/?name=archboot) in chroot and [update](/index.php/Pacman#Upgrading_packages "Pacman") to latest available packages.
 
 ### Generate images
 

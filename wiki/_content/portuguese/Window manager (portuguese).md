@@ -137,7 +137,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 *   **[Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")** — Window and compositing manager for GNOME, based on Clutter, uses OpenGL. Also serves a Wayland compositor.
 
-	[https://git.gnome.org/browse/mutter/](https://git.gnome.org/browse/mutter/) || [mutter](https://www.archlinux.org/packages/?name=mutter)
+	[https://gitlab.gnome.org/GNOME/mutter/](https://gitlab.gnome.org/GNOME/mutter/) || [mutter](https://www.archlinux.org/packages/?name=mutter)
 
 *   **[MWM](https://en.wikipedia.org/wiki/Motif_Window_Manager "wikipedia:Motif Window Manager")** — The Motif Window Manager (MWM) is an X window manager based on the Motif toolkit.
 

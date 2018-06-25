@@ -223,7 +223,7 @@ For specific [Desktop environments](/index.php/Desktop_environments "Desktop env
 
 *   **Thermal Monitor (Plasma 5 applet)** — [KDE](/index.php/KDE "KDE") Plasma applet for monitoring CPU, GPU and other available temperature sensors.
 
-	[https://github.com/kotelnik/plasma-applet-thermal-monitor](https://github.com/kotelnik/plasma-applet-thermal-monitor) || [plasma5-applets-thermal-monitor-git](https://www.archlinux.org/packages/?name=plasma5-applets-thermal-monitor-git)
+	[https://github.com/kotelnik/plasma-applet-thermal-monitor](https://github.com/kotelnik/plasma-applet-thermal-monitor) || [plasma5-applets-thermal-monitor-git](https://aur.archlinux.org/packages/plasma5-applets-thermal-monitor-git/)
 
 ### sensord
 

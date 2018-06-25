@@ -545,8 +545,6 @@ Gateway=192.168.1.254
 
 *   When *networkd* is configured with [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), both *wpa_cli* and *wpa_gui* offer the ability to associate and configure WLAN interfaces dynamically.
 
-*   Also to be used with *wpa_supplicant*, [wpa_tui](https://www.archlinux.org/packages/?name=wpa_tui) is an interactive command line tool to connect to wireless networks.
-
 *   [networkd-notify-git](https://aur.archlinux.org/packages/networkd-notify-git/) can generate simple notifications in response to network interface state changes (such as connection/disconnection and re-association).
 
 *   The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to *NetworkManager-dispatcher*.

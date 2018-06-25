@@ -25,18 +25,19 @@ Se o sistema hospedeiro funciona no Arch Linux, isso pode ser conseguido simples
 *   [1 Backup e preparação](#Backup_e_prepara.C3.A7.C3.A3o)
 *   [2 De um host executando o Arch Linux](#De_um_host_executando_o_Arch_Linux)
 *   [3 De um host executando outra distribuição Linux](#De_um_host_executando_outra_distribui.C3.A7.C3.A3o_Linux)
-    *   [3.1 Criando o chroot](#Criando_o_chroot)
-        *   [3.1.1 Método A: Usando a imagem do bootstrap (recomendado)](#M.C3.A9todo_A:_Usando_a_imagem_do_bootstrap_.28recomendado.29)
-        *   [3.1.2 Método B: Usando a imagem LiveCD](#M.C3.A9todo_B:_Usando_a_imagem_LiveCD)
-    *   [3.2 Usando o ambiente chroot](#Usando_o_ambiente_chroot)
-        *   [3.2.1 Inicializando o chaveiro do pacman](#Inicializando_o_chaveiro_do_pacman)
-        *   [3.2.2 Selecionando um espelho e baixando ferramentas básicas](#Selecionando_um_espelho_e_baixando_ferramentas_b.C3.A1sicas)
-    *   [3.3 Dicas de instalação](#Dicas_de_instala.C3.A7.C3.A3o)
-        *   [3.3.1 Host baseado no debian](#Host_baseado_no_debian)
-            *   [3.3.1.1 /dev/shm](#.2Fdev.2Fshm)
-            *   [3.3.1.2 /dev/pts](#.2Fdev.2Fpts)
-            *   [3.3.1.3 lvmetad](#lvmetad)
-        *   [3.3.2 Host baseado no Fedora](#Host_baseado_no_Fedora)
+    *   [3.1 Usando pacman do sistema hospedeiro](#Usando_pacman_do_sistema_hospedeiro)
+    *   [3.2 Criando um chroot](#Criando_um_chroot)
+        *   [3.2.1 Método A: Usando a imagem do bootstrap (recomendado)](#M.C3.A9todo_A:_Usando_a_imagem_do_bootstrap_.28recomendado.29)
+        *   [3.2.2 Método B: Usando a imagem LiveCD](#M.C3.A9todo_B:_Usando_a_imagem_LiveCD)
+    *   [3.3 Usando um ambiente chroot](#Usando_um_ambiente_chroot)
+        *   [3.3.1 Inicializando o chaveiro do pacman](#Inicializando_o_chaveiro_do_pacman)
+        *   [3.3.2 Selecionando um espelho e baixando ferramentas básicas](#Selecionando_um_espelho_e_baixando_ferramentas_b.C3.A1sicas)
+    *   [3.4 Dicas de instalação](#Dicas_de_instala.C3.A7.C3.A3o)
+        *   [3.4.1 Host baseado no debian](#Host_baseado_no_debian)
+            *   [3.4.1.1 /dev/shm](#.2Fdev.2Fshm)
+            *   [3.4.1.2 /dev/pts](#.2Fdev.2Fpts)
+            *   [3.4.1.3 lvmetad](#lvmetad)
+        *   [3.4.2 Host baseado no Fedora](#Host_baseado_no_Fedora)
 *   [4 Coisas para verificar antes de reiniciar](#Coisas_para_verificar_antes_de_reiniciar)
 *   [5 Substituindo o sistema existente sem um LiveCD](#Substituindo_o_sistema_existente_sem_um_LiveCD)
     *   [5.1 Defina a partição antiga de swap como nova partição raiz](#Defina_a_parti.C3.A7.C3.A3o_antiga_de_swap_como_nova_parti.C3.A7.C3.A3o_raiz)
@@ -86,11 +87,17 @@ Existem várias ferramentas que automatizam uma grande parte das etapas descrita
 *   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
 *   [vps2arch](https://gitlab.com/drizzt/vps2arch) (Bash)
 
-A maneira manual é apresentada nas seguintes subseções. A ideia é executar um sistema Arch dentro do sistema host, com a instalação real sendo executada a partir do sistema Arch. O sistema aninhado está contido dentro de um chroot.
+A maneira manual é apresentada nas seguintes subseções. A ideia é fazer o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") funcionar diretamente no sistema hospedeiro ou executar um sistema Arch dentro do sistema host, com a instalação real sendo executada a partir do sistema Arch. O sistema aninhado está contido dentro de um chroot.
 
-### Criando o chroot
+### Usando pacman do sistema hospedeiro
 
-Dois métodos para configurar e entrar no chroot são apresentados abaixo, do mais fácil ao mais complicado. Selecione apenas um dos dois métodos. Então, continue em [#Usando o ambiente chroot](#Usando_o_ambiente_chroot).
+O [Pacman](https://git.archlinux.org/arch-install-scripts.git/) pode ser compilado na maioria das distribuições Linux e usado diretamente no sistema hospedeiro para inicializar o Arch Linux. O [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) deve ser executado sem problemas diretamente dos fontes baixados em qualquer distribuição recente.
+
+Algumas distribuições fornecem um pacote pacman em seus repositórios oficiais, que podem ser usados para essa finalidade. No momento atual, o Gentoo e o Fedora são conhecidos por fazer isso. O Fedora também fornece o arch-install-scripts.
+
+### Criando um chroot
+
+Dois métodos para configurar e entrar no chroot são apresentados abaixo, do mais fácil ao mais complicado. Selecione apenas um dos dois métodos. Então, continue em [#Usando um ambiente chroot](#Usando_um_ambiente_chroot).
 
 #### Método A: Usando a imagem do bootstrap (recomendado)
 
@@ -158,7 +165,7 @@ Entre no *chroot*
 
  `# chroot squashfs-root bash` 
 
-### Usando o ambiente chroot
+### Usando um ambiente chroot
 
 O ambiente *bootstrap* é realmente minimalista (sem `nano`, sem `ping`, sem `cryptsetup`, sem `lvm`). Portanto, precisamos configurar o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para baixar o resto da `base` e, se necessário, `base-devel`.
 

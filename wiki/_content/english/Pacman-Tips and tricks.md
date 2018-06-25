@@ -683,6 +683,10 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/) || [aarchup](https://aur.archlinux.org/packages/aarchup/)
 
+*   **Apper** — Application and package manager for KDE using PackageKit.
+
+	[https://www.kde.org/applications/system/apper/](https://www.kde.org/applications/system/apper/) || [apper](https://www.archlinux.org/packages/?name=apper)
+
 *   **Arch-Update** — Update indicator for Gnome-Shell.
 
 	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
@@ -691,23 +695,23 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
 
-*   **Discover** — A collection of package management tools for KDE, using PackageKit.
+*   **Discover** — Collection of package management tools for KDE, using PackageKit.
 
 	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
-*   **GNOME packagekit** — GTK based package management tool
+*   **GNOME Packagekit** — GTK+ based package management tool.
 
-	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
+	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
+*   **GNOME Software** — Application manager for GNOME.
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-*   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
+*   **kalu** — Small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
 
 	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
 
-*   **pcurses** — Package management in a curses frontend
+*   **pcurses** — Package management in a curses frontend.
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
 

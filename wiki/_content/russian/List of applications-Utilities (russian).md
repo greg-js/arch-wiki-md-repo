@@ -866,7 +866,7 @@
 
 *   **[Lostfiles](/index.php/Lostfiles "Lostfiles")** — Скрипт для обнаружения файлов, не принадлежащих ни одному пакету
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **[Pacmatic](/index.php/Enhancing_Arch_Linux_Stability_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D1.81.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_pacmatic "Enhancing Arch Linux Stability (Русский)")** — Обертка для Pacman, которая проверяет новости Arch перед обновлением, избегает частичных обновлений и предупреждает об изменениях в конфигурационных файлах
 

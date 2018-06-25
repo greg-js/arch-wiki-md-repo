@@ -154,7 +154,7 @@ If you have Google Authenticator configured with other systems, then losing your
 
 ### Command line
 
-The easiest way to generate codes is with `oath-tool`. It is available in the `oath-toolkit` package, and can be used as follows:
+The easiest way to generate codes is with `oath-tool`. It is available in the [oath-toolkit](https://www.archlinux.org/packages/?name=oath-toolkit) package, and can be used as follows:
 
 ```
 oathtool --totp -b ABC123

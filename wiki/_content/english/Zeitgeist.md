@@ -12,11 +12,11 @@ To monitor and inspect Zeitgeist's log at a low level, install [zeitgeist-explor
 
 The following applications are just some of the apps which are able to send metadata to Zeitgeist. In some cases this functionality must be enabled manually.
 
-*   [midori](https://www.archlinux.org/packages/?name=midori)
+*   [Midori](/index.php/Midori "Midori")
+*   [pantheon-code](https://www.archlinux.org/packages/?name=pantheon-code)
 *   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files)
 *   [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music)
-*   [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor)
-*   [zim](https://www.archlinux.org/packages/?name=zim)
+*   [Zim](/index.php/Zim "Zim")
 
 ### Applications
 

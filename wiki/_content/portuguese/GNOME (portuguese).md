@@ -205,17 +205,13 @@ $ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 #### Aplicativos padrões
 
-Ao instalar o GNOME pela primeira vez, você pode descobrir que os aplicativos errados estão lidando com certos protocolos. Por exemplo, *totem* abre vídeos em vez de o previamente usado [VLC](/index.php/VLC "VLC"). Algumas das associações podem ser definidas pelas configurações do sistema via: *Sistema* > *Detalhes* > *Aplicativos padrões*.
+Ao instalar o GNOME pela primeira vez, você pode descobrir que os aplicativos errados estão lidando com certos protocolos. Por exemplo, *totem* abre vídeos em vez de o previamente usado [VLC](/index.php/VLC "VLC"). Algumas das associações podem ser definidas pelas configurações do sistema via: *Detalhes* > *Aplicativos padrões*.
 
 Para outros protocolos e métodos, veja [Default applications](/index.php/Default_applications "Default applications") para configuração.
 
 #### Mouse e touchpad
 
-Para ajudar a reduzir interferência do touchpad, você pode preferir implementar as configurações abaixo via *gnome-control-center*:
-
-*   Desabilitar touchpad enquanto digita
-*   Desabilitar rolagem
-*   Desabilitar toque para clicar
+A maioria das configurações de touchpad podem ser definidos nas configurações do sistema por: *Dipositivos* > *Mouse & touchpad*.
 
 Dependendo de seu dispositivo, outras configurações podem estar disponíveis, mas não expostas via GUI padrão. Por exemplo, um `click-method` diferente de touchpad
 
@@ -369,8 +365,6 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 ```
 
 #### Área de trabalho
-
-Várias configurações de área de trabalho podem ser aplicadas.
 
 ##### Ícones na área de trabalho
 

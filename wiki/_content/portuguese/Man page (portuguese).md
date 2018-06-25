@@ -15,12 +15,13 @@ Apesar de seu escopo, páginas man são projetadas para serem documentos autocon
 *   [3 Pesquisando por manuais](#Pesquisando_por_manuais)
 *   [4 Largura de página](#Largura_de_p.C3.A1gina)
 *   [5 Lendo páginas man locais](#Lendo_p.C3.A1ginas_man_locais)
-    *   [5.1 Conversão para HTML](#Convers.C3.A3o_para_HTML)
-        *   [5.1.1 mandoc](#mandoc)
-        *   [5.1.2 man2html](#man2html)
-        *   [5.1.3 man -H](#man_-H)
-        *   [5.1.4 roffit](#roffit)
-    *   [5.2 Conversão para PDF](#Convers.C3.A3o_para_PDF)
+    *   [5.1 Aplicativos de visualização](#Aplicativos_de_visualiza.C3.A7.C3.A3o)
+    *   [5.2 Conversão para HTML](#Convers.C3.A3o_para_HTML)
+        *   [5.2.1 mandoc](#mandoc)
+        *   [5.2.2 man2html](#man2html)
+        *   [5.2.3 man -H](#man_-H)
+        *   [5.2.4 roffit](#roffit)
+    *   [5.3 Conversão para PDF](#Convers.C3.A3o_para_PDF)
 *   [6 Páginas man online](#P.C3.A1ginas_man_online)
 *   [7 Páginas man notáveis](#P.C3.A1ginas_man_not.C3.A1veis)
 *   [8 Veja também](#Veja_tamb.C3.A9m)
@@ -122,11 +123,23 @@ man() {
 
 Em vez da interface padrão, o uso de navegadores como [lynx](https://www.archlinux.org/packages/?name=lynx) e [Firefox](/index.php/Firefox "Firefox") para visualizar páginas man permite que os usuários colham o principal benefício de texto hiperlink das páginas info. As alternativas incluem o seguinte:
 
-*   Usuários do [KDE](/index.php/KDE "KDE") podem ler páginas man com
-    *   Konqueror usando `man:<nome>`.
-    *   KHelpCenter ([khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)) em "UNIX manual pages" ou executando `khelpcenter man:<nome>`.
-*   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) fornece uma visão categorizada em páginas man no [X](/index.php/X "X").
-*   [yelp](https://www.archlinux.org/packages/?name=yelp), o navegador de ajuda do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), pode ser usado via `yelp man:<nome>`.
+### Aplicativos de visualização
+
+*   **GNOME Help** — Visualização de ajuda para o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"). Ele pode mostrar páginas man via `yelp man:<nome>`.
+
+	[https://wiki.gnome.org/Apps/Yelp](https://wiki.gnome.org/Apps/Yelp) || [yelp](https://www.archlinux.org/packages/?name=yelp)
+
+*   **KHelpCenter** — Aplicativo para mostrar documentação dos aplicativos do [KDE](/index.php/KDE "KDE"). Páginas man estão em *Páginas de manual do UNIX* ou executando `khelpcenter man:<nome>`.
+
+	[https://userbase.kde.org/KHelpCenter](https://userbase.kde.org/KHelpCenter) || [khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)
+
+*   **[Konqueror](https://en.wikipedia.org/wiki/pt:Konqueror "wikipedia:pt:Konqueror")** — Gerenciador de arquivos e navegador web do KDE. Ele pode mostrar páginas man via `man:<nome>`.
+
+	[https://konqueror.org/](https://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
+
+*   **xman** — Fornece um visual categorizado em páginas man.
+
+	[https://xorg.freedesktop.org/](https://xorg.freedesktop.org/) || [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman)
 
 ### Conversão para HTML
 

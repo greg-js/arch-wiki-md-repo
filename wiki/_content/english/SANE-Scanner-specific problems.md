@@ -234,7 +234,7 @@ The latter comes with 3 tools:
 *   *hp-plugin* is the 'HPLIP Plugin Download and Install Utility'.
 *   *hp-scan* is the 'HPLIP Scan Utility'. If you need that tool, you will need to install [python-pillow](https://www.archlinux.org/packages/?name=python-pillow).
 
-*hp-setup* requires Python Qt4 when run using the GUI (which is the default). To avoid installing the old Qt4 toolchain, you can run the CLI interface of hp-setup using `-i` as argument.
+*hp-setup* requires Python Qt5 when run using the GUI (which is the default). As an alternative, you can run the CLI interface of hp-setup using `-i` as argument.
 
 If the device is connected by USB, run *hp-setup* as root and follow the on screen instructions.
 

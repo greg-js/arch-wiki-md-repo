@@ -11,12 +11,11 @@ This guide will give you an overview for the most common server options in exist
     *   [1.2 Arch Linux as a server OS](#Arch_Linux_as_a_server_OS)
 *   [2 Requirements](#Requirements)
 *   [3 Services](#Services)
-*   [4 Local network services](#Local_network_services)
-    *   [4.1 Zeroconf](#Zeroconf)
-*   [5 Security](#Security)
-*   [6 Administration and maintenance](#Administration_and_maintenance)
-    *   [6.1 Remote administration](#Remote_administration)
-    *   [6.2 Local Package Repositories](#Local_Package_Repositories)
+    *   [3.1 Zeroconf](#Zeroconf)
+*   [4 Security](#Security)
+*   [5 Administration and maintenance](#Administration_and_maintenance)
+    *   [5.1 Remote administration](#Remote_administration)
+    *   [5.2 Local Package Repositories](#Local_Package_Repositories)
 
 ## Preface
 
@@ -37,21 +36,11 @@ In most GNU/Linux server operating systems, you have two options:
 
 For the installation of Arch Linux, please refer to the [Installation guide](/index.php/Installation_guide "Installation guide") and [General recommendations](/index.php/General_recommendations "General recommendations") articles, but do not go any further than [General recommendations#Graphical user interface](/index.php/General_recommendations#Graphical_user_interface "General recommendations") unless you require a GUI.
 
-If the server has a dynamic IP address but you still want to be able to reliably address it you can use a [dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") from a provider like [DuckDNS](https://duckdns.org), [No-Ip](http://www.noip.com) or [FreeDNS](http://freedns.afraid.org).
+If the server has a dynamic IP address but you still want to be able to reliably address it you can use a [dynamic DNS](/index.php/Dynamic_DNS "Dynamic DNS").
 
 ## Services
 
-*   [SSH](/index.php/SSH "SSH")
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
-*   [Category:WebDAV](/index.php/Category:WebDAV "Category:WebDAV")
-*   [Category:Streaming](/index.php/Category:Streaming "Category:Streaming")
-*   [Category:Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
-
-## Local network services
-
-*   [CUPS](/index.php/CUPS "CUPS")
-*   [NFS](/index.php/NFS "NFS")
-*   [Samba](/index.php/Samba "Samba")
 
 ### Zeroconf
 

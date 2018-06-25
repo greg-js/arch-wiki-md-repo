@@ -92,7 +92,7 @@ Chicony EasyCamera (USB)
 
 ### Wireless
 
-The [rtl8821ce-linux-dkms](https://aur.archlinux.org/packages/rtl8821ce-linux-dkms/) wireless driver is required in order for WiFi and Bluetooth to work.
+The [rtl8821ce-dkms-git](https://aur.archlinux.org/packages/rtl8821ce-dkms-git/) wireless driver is required in order for WiFi and Bluetooth to work.
 
 Active bluetooth may lock up the PC on lid close/suspend, then `rfkill block bluetooth`.
 

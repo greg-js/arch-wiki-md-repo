@@ -89,7 +89,7 @@
 
 *   **Lostfiles** — Скрипт для обнаружения файлов, не принадлежащих ни одному пакету.
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Оболочка для Pacman, проверяющая новости Arch перед обновлением, во избежание частичных обновлений, и предупреждающая об изменении файлов настроек.
 
@@ -229,7 +229,7 @@ $ pacman -Qlq *package* | grep -v '/$' | xargs du -h | sort -h
 
 На практике применение этого приёмы осложняется тем, что многие важные файлы не принадлежат какому-либо пакету (к примеру, файлы, сгенерированные в процессе выполнения каких-либо приложений, пользовательские конфигурационные файлы, и т. д.) и будут включены в список "беспризорных", поэтому не стоит слепо полагаться исключительно на автоматику и пренебрегать ручной очисткой системы.
 
-**Совет:** Скрипт [lostfiles](https://aur.archlinux.org/packages/lostfiles/) совершает схожие действия, но дополнительно сверяется с встроенным обширным перечнем файлов, необходимых системе, но не принадлежащих ни одному пакету. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) также позволяет отслеживать беспризорные файлы.
+**Совет:** Скрипт [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) совершает схожие действия, но дополнительно сверяется с встроенным обширным перечнем файлов, необходимых системе, но не принадлежащих ни одному пакету. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) также позволяет отслеживать беспризорные файлы.
 
 ### Удаление неиспользуемых пакетов
 

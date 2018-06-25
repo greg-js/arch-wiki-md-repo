@@ -86,7 +86,7 @@ No siempre es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instal
 
 *   **libde265** — Implementación de código abierto del codec de vídeo h.265.
 
-	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://aur.archlinux.org/packages/libde265/) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
+	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://www.archlinux.org/packages/?name=libde265) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
 
 *   **[libdv](https://en.wikipedia.org/wiki/DV "wikipedia:DV")** — El códec Quasar DV (libd ) es un códec de software para vídeo DV.
 

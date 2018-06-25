@@ -38,10 +38,7 @@ Related articles
 
 ## Setup
 
-**Note:**
-
-*   To use Archiso you must be running on a x86_64 platform. [[1]](https://projects.archlinux.org/archiso.git/tree/docs/README.build#n67)
-*   It is recommended to act as root in all the following steps. If not, it is very likely to have problems with false permissions later.
+**Note:** It is recommended to act as root in all the following steps. If not, it is very likely to have problems with false permissions later.
 
 Before you begin, [install](/index.php/Install "Install") the [archiso](https://www.archlinux.org/packages/?name=archiso) or [archiso-git](https://aur.archlinux.org/packages/archiso-git/) package.
 
@@ -66,14 +63,14 @@ This section details configuring the image you will be creating, allowing you to
 
 Inside the `*archlive*` directory created in [#Setup](#Setup) there are a number of files and directories; we are only concerned with a few of these, mainly:
 
-*   `packages.*` - this is where you list, line by line, the packages you want to have installed, and
+*   `packages.x86_64` - this is where you list, line by line, the packages you want to have installed, and
 *   the `airootfs` directory - this directory acts as an overlay and it is where you make all the customizations.
 
 Generally, every administrative task that you would normally do after a fresh install except for package installation can be scripted into `*archlive*/airootfs/root/customize_airootfs.sh`. It has to be written from the perspective of the new environment, so `/` in the script means the root of the live-iso which is to be created.
 
 ### Installing packages
 
-[Edit](/index.php/Edit "Edit") the lists of packages in `packages.i686`, `packages.x86_64`, or `packages.both` to indicate which packages are to be installed on the live medium. The suffix here indicates which architecture the packages are available.
+[Edit](/index.php/Edit "Edit") the lists of packages in `packages.x86_64` to indicate which packages are to be installed on the live medium.
 
 **Note:** If you want to use a [window manager](/index.php/Window_manager "Window manager") in the Live CD then you must add the necessary and correct [video drivers](/index.php/Video_drivers "Video drivers"), or the WM may freeze on loading.
 
@@ -128,67 +125,14 @@ When blacklisting base group packages by adding them to the `IgnorePkg` line in 
 
 #### Installing packages from multilib
 
-To install packages from the [multilib](/index.php/Multilib "Multilib") repository you have to create two pacman configuration files: one for x86_64 and one for i686\. Copy `pacman.conf` to `pacmanx86_64.conf` and `pacmani686.conf`. Uncomment the following lines to enable *multilib* in `pacmanx86_64.conf`:
+To install packages from the [multilib](/index.php/Multilib "Multilib") repository simply uncomment the repository in `~/archlive/pacman.conf`:
 
- `pacmanx86_64.conf` 
+ `pacman.conf` 
 ```
 [multilib]
 SigLevel = PackageRequired
 Include = /etc/pacman.d/mirrorlist
 ```
-
-Then edit `build.sh` with an editor. Replace the following lines:
-
- `build.sh` 
-```
-run_once make_pacman_conf
-
-# Do all stuff for each airootfs
-for arch in i686 x86_64; do
-    run_once make_basefs
-    run_once make_packages
-done
-
-run_once make_packages_efi
-
-for arch in i686 x86_64; do
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-```
-
-with:
-
- `build.sh` 
-```
-cp -v releng/pacmanx86_64.conf releng/pacman.conf
-run_once make_pacman_conf
-
-# Do all stuff for each airootfs
-for arch in x86_64; do
-    run_once make_basefs
-    run_once make_packages
-    run_once make_packages_efi
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-echo make_pacman_conf i686
-cp -v releng/pacmani686.conf releng/pacman.conf
-cp -v releng/pacmani686.conf ${work_dir}/pacman.conf
-
-for arch in i686; do
-    run_once make_basefs
-    run_once make_packages
-    run_once make_packages_efi
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-```
-
-In this way packages for x86_64 and i686 will be installed with their own pacman configuration file.
 
 ### Adding files to image
 
@@ -307,7 +251,7 @@ Rebuilding the iso after modifications is not officially supported. However, it 
 
 ```
 
-Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an `id` command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [[2]](https://bugs.archlinux.org/task/41865).
+Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an `id` command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [[1]](https://bugs.archlinux.org/task/41865).
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch

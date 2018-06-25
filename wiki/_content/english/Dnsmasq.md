@@ -175,7 +175,6 @@ And then edit `/etc/dnsmasq.conf` to use your new resolv file:
 ...
 resolv-file=/etc/resolv.dnsmasq.conf
 ...
-
 ```
 
 ##### dhcpcd

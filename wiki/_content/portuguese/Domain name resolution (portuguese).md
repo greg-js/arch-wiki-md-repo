@@ -3,7 +3,7 @@ Artigos relacionados
 *   [Serviços DNS alternativos](/index.php/Alternative_DNS_services "Alternative DNS services")
 *   [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
 
-Esse artigo explica como para configurar resolução de [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "wikipedia:pt:Domínio") e resolver nomes de domínio.
+Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "wikipedia:pt:Domínio") representa um endereço IP e está associado a ele no [Sistema de Nomes de Domínio](https://en.wikipedia.org/wiki/pt:Sistema_de_Nomes_de_Dom%C3%ADnio "wikipedia:pt:Sistema de Nomes de Domínio"), ou *Domain Name System* (DNS). Esse artigo explica como para configurar resolução de nome de domínio e resolver nomes de domínio.
 
 ## Contents
 
@@ -16,8 +16,9 @@ Esse artigo explica como para configurar resolução de [nome de domínio](https
     *   [2.4 Nomes de domínio local](#Nomes_de_dom.C3.ADnio_local)
 *   [3 Systemd-resolved](#Systemd-resolved)
 *   [4 Desempenho](#Desempenho)
-*   [5 Utilitários de lookup](#Utilit.C3.A1rios_de_lookup)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+*   [5 Privacidade](#Privacidade)
+*   [6 Utilitários de lookup](#Utilit.C3.A1rios_de_lookup)
+*   [7 Veja também](#Veja_tamb.C3.A9m)
 
 ## Name Service Switch
 
@@ -47,7 +48,9 @@ $ getent hosts *nome_domínio*
 
 ## Resolvedor do glibc
 
-O resolvedor de [DNS](https://en.wikipedia.org/wiki/pt:Sistema_de_Nomes_de_Dom%C3%ADnio "wikipedia:pt:Sistema de Nomes de Domínio") do glibc lê `/etc/resolv.conf` ([resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)) para toda resolução para determinar os servidores de nome e opções para usar.
+O resolvedor do glibc lê `/etc/resolv.conf` para toda resolução para determinar os servidores de nome e opções para usar.
+
+[resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5) lista servidores de nomes juntos com algumas opções de configuração.
 
 Servidores de nome *(nameservers)* listados primeiros são tentados primeiro, até os três servidores podem ser listados. Linhas iniciando com um cerquilha, `#`, são ignoradas.
 
@@ -145,6 +148,10 @@ O [#Resolvedor do glibc](#Resolvedor_do_glibc) não armazena em cache as consult
 **Dica:** Os [#Utilitários de lookup](#Utilit.C3.A1rios_de_lookup) *dig* e *drill* relatam o tempo de consulta.
 
 Provedores de serviços de Internet geralmente fornecem servidores DNS em funcionamento. Um roteador também pode adicionar um servidor DNS extra, caso tenha seu próprio servidor de cache. A alternância entre servidores DNS é transparente para usuários do Windows, porque se um servidor DNS estiver lento ou não funcionar, ele mudará imediatamente para um servidor melhor. No entanto, o Linux geralmente leva mais tempo para o tempo limite, o que poderia causar atrasos.
+
+## Privacidade
+
+A maioria dos servidores DNS mantém um registro de endereços IP e sites visitados em uma base mais ou menos temporária. Os dados coletados podem ser usados para realizar vários estudos estatísticos. Informações de identificação pessoal têm valor e também podem ser alugadas ou vendidas a terceiros. O artigo [Serviços DNS alternativos](/index.php/Alternative_DNS_services "Alternative DNS services") fornece uma lista de serviços populares, verifique sua política de privacidade para obter informações sobre como os dados do usuário são manipulados.
 
 ## Utilitários de lookup
 

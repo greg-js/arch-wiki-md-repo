@@ -107,10 +107,6 @@ These applications support time, task and contacts management.
 
 	[http://lightandmatter.com/when/when.html](http://lightandmatter.com/when/when.html) || [when](https://www.archlinux.org/packages/?name=when)
 
-*   **Wyrd** — Text-based front-end to Remind, a calendar and alarm program used on UNIX and Linux computers.
-
-	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://aur.archlinux.org/packages/wyrd/)
-
 ##### Graphical
 
 *   **chinese-calendar** — Chinese traditional calendar for Ubuntu Kylin.

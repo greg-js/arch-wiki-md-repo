@@ -393,7 +393,9 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 ### Booting 64-bit kernel on 32-bit UEFI
 
-Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso do not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since they use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot a 64-bit kernel with 32-bit UEFI you have to use a boot loader that does not rely on EFI boot stub for launching kernels.
+Official ISO ([Archiso](/index.php/Archiso "Archiso")) does not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since it uses EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot a 64-bit kernel with 32-bit UEFI you have to use a boot loader that does not rely on EFI boot stub for launching kernels.
+
+**Tip:** [Archboot](/index.php/Archboot "Archboot") iso supports booting on 32-bit (IA32) UEFI systems.
 
 #### Using GRUB
 
@@ -443,36 +445,6 @@ menuentry "Arch Linux archiso x86_64 UEFI USB" {
     search --no-floppy --set=root --label *ARCH_YYYYMM*
     linux /arch/boot/x86_64/vmlinuz archisobasedir=arch archisolabel=*ARCH_YYYYMM* add_efi_memmap
     initrd /arch/boot/intel_ucode.img /arch/boot/x86_64/archiso.img
-}
-```
-
-For Archboot:
-
- `*/mnt/usb*/EFI/boot/grub.cfg` 
-```
-insmod part_gpt
-insmod part_msdos
-insmod fat
-
-insmod efi_gop
-insmod efi_uga
-insmod video_bochs
-insmod video_cirrus
-
-insmod font
-
-if loadfont "${prefix}/fonts/unicode.pf2" ; then
-    insmod gfxterm
-    set gfxmode="1024x768x32;auto"
-    terminal_input console
-    terminal_output gfxterm
-fi
-
-menuentry "Arch Linux x86_64 Archboot" {
-    set gfxpayload=keep
-    search --no-floppy --set=root --file /boot/vmlinuz_x86_64
-    linux /boot/vmlinuz_x86_64 cgroup_disable=memory loglevel=7 add_efi_memmap
-    initrd /boot/initramfs_x86_64.img
 }
 ```
 

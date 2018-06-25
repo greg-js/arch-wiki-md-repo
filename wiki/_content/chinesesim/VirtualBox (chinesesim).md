@@ -84,7 +84,7 @@
 
 [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件包 [virtualbox](https://www.archlinux.org/packages/?name=virtualbox)。内核模块的安装方式要从下面二选一：
 
-*   如果在用默认的 [linux](https://www.archlinux.org/packages/?name=linux) 内核，建议安装[virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
+*   如果在用默认的 [linux](https://www.archlinux.org/packages/?name=linux) 内核，建议安装 [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
 *   如果用了其它的内核，需要安装 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
 
 为了能基于 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 编译内核模块，你还要安装与内核对应的内核头文件（例如[linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 内核的头文件是 [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)）。[[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) 当 VirtualBox 或内核更新的时候，DKMS 的 Pacman 钩子会自动编译内核模块。
@@ -307,7 +307,7 @@ $ ln -s /media/sf_*共享目录的名字* ~/*my_documents*
 
 *   `*sharedFolderName*`: 在虚拟机设置界面 *Settings > SharedFolders > Edit > FolderName* 里所设置的值。这个值和宿主机里实际的目录名可以不相同。要查看虚拟机的设置，在宿主机的 VirtualBox GUI 管理界面选中虚拟机，然后点击工具栏的 *Settings* 按钮，再从弹出的对话框里选择 *Shared Folders*。
 *   `*/path/to/mntPtOnGuestMachine*`: 如果这个路径在虚拟机里还不存在，那么需要在挂载之前手动创建（用 [mkdir](/index.php/Core_utilities#mkdir "Core utilities") 就可以）。
-*   `dmode`/`fmode` 分别用来指定挂载共享目录之后，下面的子目录与文件的属性。}}
+*   `dmode`/`fmode` 分别用来指定挂载共享目录之后，下面的子目录与文件的属性。
 
 `mount.vboxsf` 尚不支持 `nofail` 挂载参数：
 
@@ -661,7 +661,7 @@ VirtualBox 的 GUI 是基于 Qt 实现的。为了修改这类应用的外观，
 
 在宿主系统里使用虚拟机的用户需要加入到 `vboxusers` 用户组。如果想要支持 USB 2 设备，还要安装 [扩展包](#.E6.89.A9.E5.B1.95.E5.8C.85)。此后在虚拟机的设置里即可开启 USB 2 支持，并且通过过滤规则来允许客体系统访问指定的 USB 设备。
 
-如果用 root 身份运行 `VBoxManage list usbhost` 命令也没有列出任何 USB 设备，需要确认一下 */etc/udev/rules.d/* 目录里没有遗留的 VirtualBox 4.x 的 udev 规则。VirtualBox 5.0 起会把 udev 规则文件安装到 */usr/lib/udev/rules.d/* 目录。用 `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` 命令可以查看这些 udev 文件是否已经过期。
+如果用 root 身份运行 `VBoxManage list usbhost` 命令也没有列出任何 USB 设备，需要确认一下 `/etc/udev/rules.d/` 目录里没有遗留的 VirtualBox 4.x 的 udev 规则。VirtualBox 5.0 起会把 udev 规则文件安装到 `/usr/lib/udev/rules.d/` 目录。用 `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` 命令可以查看这些 udev 文件是否已经过期。
 
 有时某些旧 Linux 宿主系统无法自动检测到 USB 子系统，就会出现这个错误：`Could not load the Host USB Proxy service: VERR_NOT_FOUND`。或者可能让宿主机也识别不了 USB 磁盘，[哪怕用户已经加入了 `vboxusers` 用户组](https://bbs.archlinux.org/viewtopic.php?id=121377)。出现这类问题的原因是 VirtualBox 从 3.0.8 版本开始，从 *usbfs* 转向使用 *sysfs*。如果宿主系统不支持这一改动，你可以在 shell 的启动脚本（举例：如果在用 *bash* 的话，就修改 `~/.bashrc` 文件）里声明这一环境变量，让 VirtualBox 回退到旧的行为：
 
@@ -755,7 +755,7 @@ Failed to insert 'vboxdrv': Required key not available
 
 ```
 
-将[#模块签名](#.E6.A8.A1.E5.9D.97.E7.AD.BE.E5.90.8D)，或者在内核配置中禁用 `CONFIG_MODULE_SIG_FORCE`。
+将[模块签名](#.E6.A8.A1.E5.9D.97.E7.AD.BE.E5.90.8D)，或者在内核配置中禁用 `CONFIG_MODULE_SIG_FORCE`。
 
 ### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
 

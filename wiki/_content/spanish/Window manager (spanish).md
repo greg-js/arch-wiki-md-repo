@@ -153,7 +153,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 *   **WindowLab** — WindowLab es un gestor de ventanas pequeño y simple de diseño novedoso. Características orientadas del puntero del ratón para hacer clic para centrarse, pero no para levantar el centro, un mecanismo para redimensionar el tamaño de las ventanas, lo que le permite cambiar uno o más bordes de las ventanas en una sola acción, y una innovadora barra de menú que comparte la misma parte de la pantalla con la barra de tareas. Las barras de título de las ventanas no pueden ir por encima del borde de la pantalla, lo que limita el puntero del ratón, que puede llegar a hacer que incluso coincidir la barra de tareas y menús, para que sean más fáciles de seleccionar..
 
-	[http://nickgravgaard.com/windowlab/](http://nickgravgaard.com/windowlab/) || [windowlab](https://www.archlinux.org/packages/?name=windowlab)
+	[http://nickgravgaard.com/windowlab/](http://nickgravgaard.com/windowlab/) || [windowlab](https://aur.archlinux.org/packages/windowlab/)
 
 *   **[Window Maker](/index.php/Window_Maker "Window Maker")** — Window Maker es un gestor de ventanas X11 originalmente diseñado para proporcionar apoyo para la integración del entorno de escritorio GNUstep. Reproduce lo más posible el aspecto elegante y la interfaz de usuario de NEXTSTEP. Es rápido, rico en características, fácil de configurar y de usar. También es software libre, con aportes realizados por programadores de todo el mundo.
 

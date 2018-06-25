@@ -516,7 +516,7 @@ See also: [AUR helpers](/index.php/AUR_helpers "AUR helpers") and [Pacman GUI Fr
 
 *   **[Lostfiles](/index.php/Lostfiles "Lostfiles")** — Script for detecting orphaned files.
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 

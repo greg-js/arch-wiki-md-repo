@@ -24,7 +24,7 @@ Gstreamer是一个基于管道的多媒体框架。Gstreamer使用C语言编写�
 *   [gst-plugins-base](https://www.archlinux.org/packages/?name=gst-plugins-base) - 基本的Gstreamer组件。
 *   [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) - 发布于LGPL许可证下，质量较高的插件。
 *   [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) - 质量较高，但是可能造成分发问题的插件。
-*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/) - [libde265](https://aur.archlinux.org/packages/libde265/) 插件 (开源的h.265视频解码实现)。
+*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/) - [libde265](https://www.archlinux.org/packages/?name=libde265) 插件 (开源的h.265视频解码实现)。
 
 ## 整合
 

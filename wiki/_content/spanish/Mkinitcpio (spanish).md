@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
+*   [Kernel modules (Español)](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)")
+
 **mkinitcpio** es un creador de [initramfs](https://en.wikipedia.org/wiki/es:initrd "wikipedia:es:initrd") de última generación.
 
 ## Contents

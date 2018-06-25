@@ -24,7 +24,7 @@ To make GStreamer useful, install the plugins packages you require. See [officia
 *   [gst-plugins-base](https://www.archlinux.org/packages/?name=gst-plugins-base) - Essential exemplary set of elements.
 *   [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) - Good-quality plugins under LGPL license.
 *   [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) - Good-quality plugins that might pose distribution problems.
-*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/) - [libde265](https://aur.archlinux.org/packages/libde265/) plugin (an open h.265 video codec implementation) for gstreamer.
+*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/) - [libde265](https://www.archlinux.org/packages/?name=libde265) plugin (an open h.265 video codec implementation) for gstreamer.
 
 ## Integration
 

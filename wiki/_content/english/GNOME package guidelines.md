@@ -43,7 +43,7 @@ See a template below:
 ```
 makedepends=(git)
 commit=*hash_of_a_commit* 
-source=("git+https://git.gnome.org/browse/$pkgname#commit=$_commit")
+source=("git+https://gitlab.gnome.org/GNOME/$pkgname.git#commit=$_commit")
 md5sums=('SKIP')
 
 pkgver() {
@@ -56,7 +56,7 @@ Replace *hash_of_a_commit* with the Git commit hash desired.
 
 Please notice that since the source is downloaded with *git*, then [git](https://www.archlinux.org/packages/?name=git) must be in makedepends and checksums must be set to 'SKIP', just like it would happen with any other VCS package. Using `pkgver()` function is highly recommended, so it sets `pkgver` accordingly for the commit hash provided.
 
-**Note:** GNOME is migrating from [https://git.gnome.org](https://git.gnome.org) to [https://gitlab.gnome.org](https://gitlab.gnome.org). A automatic redirection between the old and the new Git server avoids hitting a 404 Error (page not found error), but, if you need, change the source URL to gitlab.gnome.org in order to fix the source URL.
+**Note:** GNOME previously used [https://git.gnome.org](https://git.gnome.org) instead of [https://gitlab.gnome.org](https://gitlab.gnome.org) . Old links should automatically redirect to the new gitlab.gnome.org domain, but it might be wise to manually update your source URL.
 
 ## GConf schemas
 

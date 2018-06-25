@@ -2,44 +2,34 @@ Every first day of April, the Arch Linux website traditionally features an [Apri
 
 ## Contents
 
-*   [1 2016](#2016)
-*   [2 2015](#2015)
-*   [3 2014](#2014)
-*   [4 2013: Pacman depends on systemd](#2013:_Pacman_depends_on_systemd)
-*   [5 2012](#2012)
-*   [6 2011: Canterbury](#2011:_Canterbury)
-    *   [6.1 History](#History)
-    *   [6.2 Goal](#Goal)
-    *   [6.3 Features](#Features)
-*   [7 2010: April Fools Challenge](#2010:_April_Fools_Challenge)
-    *   [7.1 About the april fools challenge joke](#About_the_april_fools_challenge_joke)
-*   [8 2009: Dropping i686 Support](#2009:_Dropping_i686_Support)
-    *   [8.1 About the dropping i686 support joke](#About_the_dropping_i686_support_joke)
-    *   [8.2 After-action Report](#After-action_Report)
-    *   [8.3 Actual end of support](#Actual_end_of_support)
-*   [9 2008: Arch in German](#2008:_Arch_in_German)
-    *   [9.1 About the German Arch joke](#About_the_German_Arch_joke)
-*   [10 2007: Arch Ark](#2007:_Arch_Ark)
-    *   [10.1 Ark Linux](#Ark_Linux)
-*   [11 2006: Judd goes to Google](#2006:_Judd_goes_to_Google)
-    *   [11.1 Judd's actual goodbye to Arch project](#Judd.27s_actual_goodbye_to_Arch_project)
-    *   [11.2 Arch Linux and its release system](#Arch_Linux_and_its_release_system)
-*   [12 2005: Arch against Wombats](#2005:_Arch_against_Wombats)
-    *   [12.1 Wombats](#Wombats)
-*   [13 2004: GNOME 2.6](#2004:_GNOME_2.6)
-    *   [13.1 GNOME version history](#GNOME_version_history)
+*   [1 2014 - 2018](#2014_-_2018)
+*   [2 2013: Pacman depends on systemd](#2013:_Pacman_depends_on_systemd)
+*   [3 2012](#2012)
+*   [4 2011: Canterbury](#2011:_Canterbury)
+    *   [4.1 History](#History)
+    *   [4.2 Goal](#Goal)
+    *   [4.3 Features](#Features)
+*   [5 2010: April Fools Challenge](#2010:_April_Fools_Challenge)
+    *   [5.1 About the april fools challenge joke](#About_the_april_fools_challenge_joke)
+*   [6 2009: Dropping i686 Support](#2009:_Dropping_i686_Support)
+    *   [6.1 About the dropping i686 support joke](#About_the_dropping_i686_support_joke)
+    *   [6.2 After-action Report](#After-action_Report)
+    *   [6.3 Actual end of support](#Actual_end_of_support)
+*   [7 2008: Arch in German](#2008:_Arch_in_German)
+    *   [7.1 About the German Arch joke](#About_the_German_Arch_joke)
+*   [8 2007: Arch Ark](#2007:_Arch_Ark)
+    *   [8.1 Ark Linux](#Ark_Linux)
+*   [9 2006: Judd goes to Google](#2006:_Judd_goes_to_Google)
+    *   [9.1 Judd's actual goodbye to Arch project](#Judd.27s_actual_goodbye_to_Arch_project)
+    *   [9.2 Arch Linux and its release system](#Arch_Linux_and_its_release_system)
+*   [10 2005: Arch against Wombats](#2005:_Arch_against_Wombats)
+    *   [10.1 Wombats](#Wombats)
+*   [11 2004: GNOME 2.6](#2004:_GNOME_2.6)
+    *   [11.1 GNOME version history](#GNOME_version_history)
 
-## 2016
+## 2014 - 2018
 
-There does not seem to have been an April Fools' Day joke for 2016.
-
-## 2015
-
-There does not seem to have been an April Fools' Day joke for 2015.
-
-## 2014
-
-There does not seem to have been an April Fools' Day joke for 2014\. [[1]](https://bbs.archlinux.org/viewtopic.php?id=179466)
+There does not seem to have been an April Fools' Day joke for those years. Check out [2014](https://bbs.archlinux.org/viewtopic.php?id=179466), [2016](https://bbs.archlinux.org/viewtopic.php?id=210784) and [2018](https://bbs.archlinux.org/viewtopic.php?id=235878) forum posts.
 
 ## 2013: Pacman depends on systemd
 
@@ -157,7 +147,7 @@ Long Live Ark Linux!
 
 ### Ark Linux
 
-Ark Linux was an actual Linux distribution (since discontinued [[2]](http://distrowatch.com/table.php?distribution=ark)). The above joke is especially funny to those Archers who started using Arch after mistakingly typing "www.archlinux.org" instead of "www.arklinux.org". The "Arch Linux" name is considered to be pronounced as /a-ch/ (rhymes with larch, starch, as in "archer"). However, there does not seem to exist a consensus on how it is really pronounced.[[3]](https://bbs.archlinux.org/viewtopic.php?id=4901&p=2)
+Ark Linux was an actual Linux distribution (since discontinued [[1]](http://distrowatch.com/table.php?distribution=ark)). The above joke is especially funny to those Archers who started using Arch after mistakingly typing "www.archlinux.org" instead of "www.arklinux.org". The "Arch Linux" name is considered to be pronounced as /a-ch/ (rhymes with larch, starch, as in "archer"). However, there does not seem to exist a consensus on how it is really pronounced.[[2]](https://bbs.archlinux.org/viewtopic.php?id=4901&p=2)
 
 The same joke was also posted on Ark Linux to make it even more convincing (at the first glance, at least; sadly, there does not seem to be an archive of Ark Linux news).
 
@@ -179,7 +169,7 @@ Thanks, Aaron
 
 ### Judd's actual goodbye to Arch project
 
-Judd Vinet, the founder of Arch Linux, has actually left the project on the 1st of October, 2007, and became the "Arch's Number One Cheerleader".[[4]](https://www.archlinux.org/news/350/) Since then, Aaron Griffin is the project leader.
+Judd Vinet, the founder of Arch Linux, has actually left the project on the 1st of October, 2007, and became the "Arch's Number One Cheerleader".[[3]](https://www.archlinux.org/news/350/) Since then, Aaron Griffin is the project leader.
 
 ### Arch Linux and its release system
 
@@ -221,4 +211,4 @@ Some GTK 2.x related packages were also upgraded to suit the requirements of gno
 
 ### GNOME version history
 
-Before the above *news* was posted, the GNOME project had released 2.0 in 2002, and latest release before the 1st of April 2004 was GNOME 2.2.[[5]](http://www.greaterbostonrubyandrails.com/Release.html)
+Before the above *news* was posted, the GNOME project had released 2.0 in 2002, and latest release before the 1st of April 2004 was GNOME 2.2.[[4]](https://web.archive.org/web/20081007092046/http://www.greaterbostonrubyandrails.com/Release.html)
