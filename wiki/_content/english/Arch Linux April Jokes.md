@@ -29,7 +29,7 @@ Every first day of April, the Arch Linux website traditionally features an [Apri
 
 ## 2014 - 2018
 
-There does not seem to have been an April Fools' Day joke for those years. Check out [2014](https://bbs.archlinux.org/viewtopic.php?id=179466), [2016](https://bbs.archlinux.org/viewtopic.php?id=210784) and [2018](https://bbs.archlinux.org/viewtopic.php?id=235878) forum posts.
+The April Fools' Day jokes for those years were so subtle and sharp that they have not been understood yet, but we certify that they have been published somewhere. Check out the failed attempts to discover them in the [2014](https://bbs.archlinux.org/viewtopic.php?id=179466), [2016](https://bbs.archlinux.org/viewtopic.php?id=210784) and [2018](https://bbs.archlinux.org/viewtopic.php?id=235878) forum posts.
 
 ## 2013: Pacman depends on systemd
 

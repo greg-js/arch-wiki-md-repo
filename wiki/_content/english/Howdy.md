@@ -1,4 +1,4 @@
-[Howdy](https://github.com/boltgolt/howdy) is a program that initates Windows Hello on Linux. It uses a computer's IR sensors and camera to verify a user's face.
+[Howdy](https://github.com/boltgolt/howdy) is a program that imitates Windows Hello on Linux. It uses a computer's IR sensors and camera to verify a user's face.
 
 ## Contents
 
@@ -19,7 +19,7 @@
 
 ### Setup Howdy to start when needed
 
-In order for Howdy to authenticate a user, a small change must be added to any PAM configuration file where Howdy might want to be used. The following line must be added to any configuration file:
+In order for Howdy to authenticate a user, a small change must be added to any [PAM](/index.php/PAM "PAM") configuration file where Howdy might want to be used. The following line must be added to any configuration file:
 
 ```
 auth sufficient pam_python.so /lib/security/howdy/pam.py
@@ -51,4 +51,4 @@ In order to add a face model to Howdy, run `sudo howdy add`.
 
 ### Howdy doesn't seem to work
 
-Verify that Howdy is properly working by running `sudo howdy test`. If that seems to work, check any PAM configuration files and verify they are working. Some programs, such as SDDM [[1](https://github.com/sddm/sddm/issues/284)], do not work properly with PAM, which may result in unexpected results.
+Verify that Howdy is properly working by running `howdy test` as root. If that seems to work, check any PAM configuration files and verify they are working. Some programs, such as SDDM [[1]](https://github.com/sddm/sddm/issues/284), do not work properly with PAM, which may result in unexpected results.

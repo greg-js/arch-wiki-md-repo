@@ -70,7 +70,7 @@ To enable PIN 1 authentication in [Google Chrome](/index.php/Google_Chrome "Goog
 
 #### Firefox
 
-To enable PIN 1 authentication in [Firefox](/index.php/Firefox "Firefox") 58+ you should install [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and after restarting the browser make sure that "Firefox PKCS11 loader" extension is enabled. You can also follow manual instructions at [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards"). For [firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) 52 and other other Firefox forks you can use [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
+To enable PIN 1 authentication in [Firefox](/index.php/Firefox "Firefox") 58+ you should install [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and after restarting the browser make sure that "Firefox PKCS11 loader" extension is enabled. You can also follow manual instructions at [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards"). For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other other Firefox forks you can use [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
 
 [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains "Token signing" extension that needs to be enabled for document signing in Firefox 58+.
 

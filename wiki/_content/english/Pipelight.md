@@ -1,7 +1,7 @@
 Related articles
 
 *   [Wine](/index.php/Wine "Wine")
-*   [Firefox](/index.php/Firefox "Firefox")
+*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 
 Pipelight is a special browser plugin which allows one to use Windows-only plugins inside Linux browsers. The main focus of the project is on Silverlight and its features, such as watching DRM protected videos. It works by creating a bridge between a Windows application, which handles the Windows-only plugin (e.g. Silverlight), and a native Linux browser plugin. The Windows application is run using a patched version of Wine, therefore requiring Pipelight users to move to this version. Pipelight can be used in browsers that support NPAPI plugins. It does not work with Chrome/Chromium, Firefox or Opera.
 
@@ -80,7 +80,7 @@ $ pipelight-plugin --enable *plugin*
 
 ### Plug-in(s) not visible in Mozilla Firefox
 
-**Note:** Pipelight is a NPAPI-only plugin and doesn't work in the regular Firefox. It still works in [Firefox ESR 52](/index.php/Firefox#Installing "Firefox"), which is supported until August 2018.
+**Note:** Pipelight is a NPAPI-only plugin and doesn't work in the regular Firefox. It still works in [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/), which is supported until August 2018.
 
 If upon starting [Firefox](/index.php/Firefox "Firefox") the enabled plugin doesn't appear under `about:plugins`, try running the following command before starting Mozilla Firefox:
 
@@ -185,7 +185,7 @@ $ pulseaudio -k
 
 ### GNOME 3/Firefox fullscreen issues
 
-In GNOME 3, fullscreen pipelight windows do not focus properly in firefox. This can be fixed using [devilspie](https://en.wikipedia.org/wiki/Devil%27s_Pie_(software) "wikipedia:Devil's Pie (software)"):
+In GNOME 3, fullscreen pipelight windows do not focus properly in Firefox. This can be fixed using [devilspie](https://en.wikipedia.org/wiki/Devil%27s_Pie_(software) "wikipedia:Devil's Pie (software)"):
 
 First, install [devilspie](https://www.archlinux.org/packages/?name=devilspie) from the official repositories,
 

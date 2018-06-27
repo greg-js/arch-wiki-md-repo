@@ -9,6 +9,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 ## Contents
 
 *   [1 List of shells](#List_of_shells)
+    *   [1.1 POSIX compliant](#POSIX_compliant)
+    *   [1.2 Alternative shells](#Alternative_shells)
 *   [2 Changing your default shell](#Changing_your_default_shell)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
@@ -16,26 +18,35 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 ## List of shells
 
-| Shell | completion & history | [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") compliant |
-| [Bash](/index.php/Bash "Bash") | Yes | Yes (`--posix`) |
-| [C shell](https://en.wikipedia.org/wiki/C_shell "wikipedia:C shell") | Yes | No |
-| [DASH](/index.php/Dash "Dash") | No | Yes |
-| [fish](/index.php/Fish "Fish") | Yes | No |
-| [mksh](/index.php/Korn_shell "Korn shell") | Yes | Yes (`-o posix`) |
-| [rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc") | No | No |
-| [zsh](/index.php/Zsh "Zsh") | Yes | Yes (`--emulate sh`) |
+Shells that are more or less [POSIX compliant](http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html) are listed under [#POSIX compliant](#POSIX_compliant), while shells that have a different syntax are under [#Alternative shells](#Alternative_shells).
 
-*   **[Bash](/index.php/Bash "Bash")** — Bash is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh). It is intended to conform to the IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers functional improvements over sh for both programming and interactive use. In addition, most sh scripts can be run by Bash without modification.
+### POSIX compliant
+
+These shells can all be linked from `/usr/bin/sh`. When [Bash](/index.php/Bash "Bash"), [mksh](https://www.archlinux.org/packages/?name=mksh) and [zsh](/index.php/Zsh "Zsh") are invoked with the `sh` name, they automatically become more POSIX compliant.
+
+*   **[Bash](/index.php/Bash "Bash")** — Bash extends the Bourne shell with command-line history and completion, indexed and associative arrays, integer arithmetic, process substitution, here strings, regular expression matching and brace expansion.
 
 	[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/) || [bash](https://www.archlinux.org/packages/?name=bash)
 
-*   **[C shell](https://en.wikipedia.org/wiki/C_shell "wikipedia:C shell")** — Command language interpreter usable both as an interactive login shell and a shell script command processor. It includes a command-line editor, programmable word completion, spelling correction, a history mechanism, job control and a C-like syntax.
-
-	[http://www.tcsh.org](http://www.tcsh.org) || [tcsh](https://www.archlinux.org/packages/?name=tcsh)
-
-*   **[DASH](/index.php/Dash "Dash")** — POSIX-compliant implementation of `/bin/sh` that aims to be as small as possible. It does this without sacrificing speed where possible. In fact, it is significantly faster than Bash (the GNU Bourne-Again SHell) for most tasks.
+*   **[DASH](/index.php/Dash "Dash")** — Descendant of the NetBSD version of the Almquist SHell (ash). A fast POSIX-compliant shell that aims to be as small as possible.
 
 	[http://gondor.apana.org.au/~herbert/dash/](http://gondor.apana.org.au/~herbert/dash/) || [dash](https://www.archlinux.org/packages/?name=dash)
+
+*   **[KornShell](/index.php/KornShell "KornShell") (ksh)** — The KornShell language is a complete, powerful, high-level programming language for writing applications, often more easily and quickly than with other high-level languages. This makes it especially suitable for prototyping. ksh has the best features of the Bourne shell and the C shell, plus many new features of its own. Thus ksh can do much to enhance your productivity and the quality of your work, both in interacting with the system, and in programming. ksh programs are easier to write, and are more concise and readable than programs written in a lower level language such as C.
+
+	[http://www.kornshell.com](http://www.kornshell.com) || See the [article](/index.php/Ksh#Installation "Ksh").
+
+*   **[Zsh](/index.php/Zsh "Zsh")** — Shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of Bash, ksh, and tcsh were incorporated into Zsh; many original features were added. The [introductory document](http://zsh.sourceforge.net/Intro/intro_toc.html) details some of the unique features of Zsh.
+
+	[https://www.zsh.org/](https://www.zsh.org/) || [zsh](https://www.archlinux.org/packages/?name=zsh)
+
+**Tip:** POSIX and Bash scripts can be linted with [shellcheck](https://www.archlinux.org/packages/?name=shellcheck).
+
+### Alternative shells
+
+*   **[C shell](https://en.wikipedia.org/wiki/C_shell "wikipedia:C shell") (tcsh)** — Command language interpreter usable both as an interactive login shell and a shell script command processor. It includes a command-line editor, programmable word completion, spelling correction, a history mechanism, job control and a C-like syntax.
+
+	[http://www.tcsh.org](http://www.tcsh.org) || [tcsh](https://www.archlinux.org/packages/?name=tcsh)
 
 *   **Elvish** — Elvish is a modern and expressive shell, that can carry internal structured values through pipelines. This feature makes possible avoiding a lot of complex text processing code. It features an expressive programming language, with features like exceptions, namespacing and anonymous functions. It also has a powerful readline which checks the syntax while typing, and syntax highlighting by default.
 
@@ -44,10 +55,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 *   **[fish](/index.php/Fish "Fish")** — Smart and user-friendly command line shell. Fish performs full-color command line syntax highlighting, as well as highlighting and completion for commands and their arguments, file existence, and history. It supports complete-as-you-type for history and commands. Fish is able to parse the system's man pages in order to determine valid arguments for commands, allowing it to highlight and complete commands. Easy last-command revision can be done using Alt-Up. The fish daemon (fishd) facilitates synchronized history across all instances of fish, as well as universal and persistent environment variables.
 
 	[http://fishshell.com/](http://fishshell.com/) || [fish](https://www.archlinux.org/packages/?name=fish)
-
-*   **[Korn shell](/index.php/Korn_shell "Korn shell")** — The KornShell language is a complete, powerful, high-level programming language for writing applications, often more easily and quickly than with other high-level languages. This makes it especially suitable for prototyping. ksh has the best features of the Bourne shell and the C shell, plus many new features of its own. Thus ksh can do much to enhance your productivity and the quality of your work, both in interacting with the system, and in programming. ksh programs are easier to write, and are more concise and readable than programs written in a lower level language such as C.
-
-	[http://www.kornshell.com](http://www.kornshell.com) || See [article](/index.php/Ksh#Installation "Ksh")
 
 *   **[Nash](/index.php/Nash "Nash")** — Nash is a system shell, inspired by plan9 rc, that makes it easy to create reliable and safe scripts taking advantages of operating systems namespaces (on linux and plan9) in an idiomatic way.
 
@@ -63,15 +70,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 *   **[rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc")** — Command interpreter for Plan 9 that provides similar facilities to UNIX’s Bourne shell, with some small additions and less idiosyncratic syntax.
 
-	[http://plan9.bell-labs.com/sys/doc/rc.html](http://plan9.bell-labs.com/sys/doc/rc.html) || [9base](https://www.archlinux.org/packages/?name=9base)
+	[http://doc.cat-v.org/plan_9/4th_edition/papers/rc](http://doc.cat-v.org/plan_9/4th_edition/papers/rc) || [9base](https://www.archlinux.org/packages/?name=9base)
 
 *   **xonsh** — A retrocompatible shell based on the python interpreter.
 
 	[http://xon.sh/](http://xon.sh/) || [xonsh](https://aur.archlinux.org/packages/xonsh/)
-
-*   **[Zsh](/index.php/Zsh "Zsh")** — Shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of Bash, ksh, and tcsh were incorporated into Zsh; many original features were added. The [introductory document](http://zsh.sourceforge.net/Intro/intro_toc.html) details some of the unique features of Zsh.
-
-	[http://www.zsh.org/](http://www.zsh.org/) || [zsh](https://www.archlinux.org/packages/?name=zsh)
 
 ## Changing your default shell
 

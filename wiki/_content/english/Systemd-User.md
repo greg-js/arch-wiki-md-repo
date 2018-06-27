@@ -4,7 +4,9 @@ Related articles
 *   [Automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")
 *   [Start X at login](/index.php/Start_X_at_login "Start X at login")
 
-[systemd](/index.php/Systemd "Systemd") offers users the ability to manage services under the user's control with a per-user systemd instance, enabling users to start, stop, enable, and disable their own units. This is convenient for daemons and other services that are commonly run for a single user, such as [mpd](/index.php/Mpd "Mpd"), or to perform automated tasks like fetching mail. With some caveats it is even possible to run xorg and the entire window manager from user services.
+This method is convenient for auto-starting services commonly run for a single user, such as [mpd](/index.php/Mpd "Mpd"). Or to perform automated tasks like fetching mail.
+
+Compared with [XDG_Autostart](/index.php/XDG_Autostart "XDG Autostart"), [systemd](/index.php/Systemd "Systemd") makes services simpler to supervise, glue, and error proof. Like automatically recovering them in case of failure.
 
 ## Contents
 
@@ -51,7 +53,9 @@ When systemd user instance starts, it brings up the target `default.target`. Oth
 
 ## Basic setup
 
-All the user services will be placed in `~/.config/systemd/user/`. If you want to run services on first login, execute `systemctl --user enable *service*` for any service you want to be autostarted.
+For making a service to auto-start during login, execute `sudo systemctl --user --global enable *service*`.
+
+For doing so for the current user only, execute instead `systemctl --user enable *service*`.
 
 ### Environment variables
 
@@ -128,6 +132,7 @@ Description=Music Player Daemon
 
 [Service]
 ExecStart=/usr/bin/mpd --no-daemon
+Restart=always
 
 [Install]
 WantedBy=default.target
@@ -145,6 +150,7 @@ Description=SickBeard Daemon
 
 [Service]
 ExecStart=/usr/bin/env python2 /opt/sickbeard/SickBeard.py --config %h/.sickbeard/config.ini --datadir %h/.sickbeard
+Restart=always
 
 [Install]
 WantedBy=default.target

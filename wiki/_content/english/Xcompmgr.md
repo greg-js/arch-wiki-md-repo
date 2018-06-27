@@ -165,7 +165,7 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 ### Background turns light gray briefly after logging in (e.g. in Openbox)
 
-This is fixed by [installing](/index.php/Installing "Installing") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of *#000000*) before `xcompmgr`.
+This is fixed by [installing](/index.php/Installing "Installing") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of *#000000*) before `xcompmgr`. Alternatively, if `xcompmgr` is called prior to `exec` in `~/.xinitrc`, you can change `xcompmgr &` to `(sleep 1 && xcompmgr) &` which will fork a subshell and allow `xcompmgr` to execute after your window manager has already started.
 
 ### BadPicture request in awesome
 

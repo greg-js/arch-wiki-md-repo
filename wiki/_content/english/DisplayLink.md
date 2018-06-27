@@ -25,6 +25,7 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
     *   [3.8 DisplayLink driver does not work with Intel GPUs after recent X upgrades](#DisplayLink_driver_does_not_work_with_Intel_GPUs_after_recent_X_upgrades)
         *   [3.8.1 Workaround 1: Use older intel driver as a fallback](#Workaround_1:_Use_older_intel_driver_as_a_fallback)
         *   [3.8.2 Workaround 2: Temporarily disable PageFlip for modesetting](#Workaround_2:_Temporarily_disable_PageFlip_for_modesetting)
+    *   [3.9 Displays disconnect at random intervals when using the Dell D6000 docking station](#Displays_disconnect_at_random_intervals_when_using_the_Dell_D6000_docking_station)
 *   [4 See Also](#See_Also)
 
 ## Installation
@@ -294,6 +295,21 @@ Section "Device"
   Driver "modesetting"
   Option "PageFlip" "false"
 EndSection 
+
+```
+
+### Displays disconnect at random intervals when using the Dell D6000 docking station
+
+When using the Dell D6000 docking station, the displays may randomly disconnect during usage. These disconnects appear to be random, and will force you to disconnect the dock and reconnect it to reinitialise the displays.
+
+This issue appears to be caused by the Pulse audio driver suspending on idle, which causes the Dell D6000 to disconnect and reconnect.
+
+Commenting out the 'suspend-on-idle' module solves this issue. As reported on the [DisplayLink forums](https://www.displaylink.org/forum/showthread.php?t=65476)
+
+ `/etc/pulse/default.pa` 
+```
+### Automatically suspend sinks/sources that become idle for too long
+# load-module module-suspend-on-idle
 
 ```
 

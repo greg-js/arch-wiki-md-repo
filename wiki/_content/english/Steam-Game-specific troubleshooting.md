@@ -52,6 +52,7 @@
         *   [4.22.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
         *   [4.22.2 Game crashes seconds after loading a map](#Game_crashes_seconds_after_loading_a_map)
         *   [4.22.3 Game crashes after intro video with "Unable to load texture (LoadingBaseGame.dds)"](#Game_crashes_after_intro_video_with_.22Unable_to_load_texture_.28LoadingBaseGame.dds.29.22)
+        *   [4.22.4 Game crashes on startup with an error in libpulsecommon-12.0.so"](#Game_crashes_on_startup_with_an_error_in_libpulsecommon-12.0.so.22)
     *   [4.23 Civilization: Beyond earth](#Civilization:_Beyond_earth)
         *   [4.23.1 Segfault after a few minutes](#Segfault_after_a_few_minutes)
     *   [4.24 Civilization VI](#Civilization_VI)
@@ -618,6 +619,10 @@ If you have a CPU with more than 8 threads (such as AMD Ryzen), set `MaxSimultan
 The issue is a result of the game calling some file in a case-insensitive manner.
 
 The solution is either to install the game on a case-insensitive file system like VFAT, or on a mount point for [ciopfs](https://aur.archlinux.org/packages/ciopfs/).
+
+#### Game crashes on startup with an error in libpulsecommon-12.0.so"
+
+Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`
 
 ### Civilization: Beyond earth
 
@@ -1669,12 +1674,7 @@ Requires [libxtst](https://www.archlinux.org/packages/?name=libxtst) and [lib32-
 
 ### Risk of Rain
 
-Requires [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat). Then symlink it with this command :
-
-```
-$ ln -s /usr/lib32/libcurl.so.3 *GAME*/lib/libcurl.so.4
-
-```
+Requires [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat). Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found).
 
 ### Rock Boshers DX: Directors Cut
 

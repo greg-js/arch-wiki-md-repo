@@ -242,14 +242,18 @@ To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), ins
 
 #### fusuma
 
-An alternative to libinput-gestures, you can
+[Fusama](https://github.com/iberianpig/fusuma) is a multitouch gesture recognizer, written in [Ruby](/index.php/Ruby "Ruby"), which can be used as an alternative to libinput-gestures.
+
+Install the `fusuma` [Ruby gem](/index.php/Ruby#RubyGems "Ruby"):
 
 ```
 $ gem install fusuma
 
 ```
 
-then in *~/.config/fusuma/config.yml* you can set something like:
+Alternatively an outdated version is available in the AUR: [ruby-fusuma](https://aur.archlinux.org/packages/ruby-fusuma/).
+
+then in `~/.config/fusuma/config.yml` you can set something like:
 
  `~/.config/fusuma/config.yml` 
 ```
@@ -282,8 +286,6 @@ interval:
 The swipe threshold is important for not swiping back too many pages.
 
 Notice that the config is for three fingers swipe.
-
-See [https://github.com/iberianpig/fusuma](https://github.com/iberianpig/fusuma)
 
 #### GnomeExtendedGestures
 

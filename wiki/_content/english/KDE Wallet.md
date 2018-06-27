@@ -89,7 +89,7 @@ and append the key to the list of keys in `~/.config/autostart-scripts/ssh-add.s
 
 ## KDE Wallet for Firefox
 
-**Note:** As of Firefox 57 this addon is not supported anymore. Use Firefox ESR if wanting to use this addon.
+**Note:** As of Firefox 57 this addon is not supported anymore. Use [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) (supported until August 2018) if wanting to use this addon.
 
 There is an unofficial [Firefox](/index.php/Firefox "Firefox") addon for [KDE5 Wallet](https://addons.mozilla.org/addon/kde5-wallet-password-integrati/) integration.
 

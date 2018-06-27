@@ -31,12 +31,13 @@
         *   [1.3.1 Integrated development environments](#Integrated_development_environments)
         *   [1.3.2 GUI builders](#GUI_builders)
         *   [1.3.3 Hex editors](#Hex_editors)
-        *   [1.3.4 Debuggers](#Debuggers)
-        *   [1.3.5 UML modelers](#UML_modelers)
-        *   [1.3.6 API documentation browsers](#API_documentation_browsers)
-        *   [1.3.7 Build automation](#Build_automation)
-        *   [1.3.8 Version control systems](#Version_control_systems)
-        *   [1.3.9 Game development](#Game_development)
+        *   [1.3.4 JSON tools](#JSON_tools)
+        *   [1.3.5 Debuggers](#Debuggers)
+        *   [1.3.6 UML modelers](#UML_modelers)
+        *   [1.3.7 API documentation browsers](#API_documentation_browsers)
+        *   [1.3.8 Build automation](#Build_automation)
+        *   [1.3.9 Version control systems](#Version_control_systems)
+        *   [1.3.10 Game development](#Game_development)
     *   [1.4 Text input](#Text_input)
         *   [1.4.1 Character selectors](#Character_selectors)
         *   [1.4.2 Virtual keyboards](#Virtual_keyboards)
@@ -835,6 +836,34 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 *   **Okteta** — KDE hex editor for viewing and editing the raw data of files.
 
 	[https://www.kde.org/applications/utilities/okteta/](https://www.kde.org/applications/utilities/okteta/) || [okteta](https://www.archlinux.org/packages/?name=okteta)
+
+#### JSON tools
+
+*   **gron** — gron transforms JSON into discrete assignments to make it easier to grep.
+
+	[https://github.com/tomnomnom/gron](https://github.com/tomnomnom/gron) || [gron-bin](https://aur.archlinux.org/packages/gron-bin/)
+
+*   **jid** — JSON incremental digger
+
+	[https://github.com/simeji/jid](https://github.com/simeji/jid) || [jid](https://aur.archlinux.org/packages/jid/)
+
+*   **jo** — A command to create JSON.
+
+	[https://github.com/jpmens/jo](https://github.com/jpmens/jo) || [jo-git](https://aur.archlinux.org/packages/jo-git/)
+
+*   **jq** — Command-line JSON processor
+
+	[https://stedolan.github.io/jq/](https://stedolan.github.io/jq/) || [jq](https://www.archlinux.org/packages/?name=jq)
+
+*   **jsawk** — Like awk, but for JSON.
+
+	[https://github.com/micha/jsawk](https://github.com/micha/jsawk) || [jsawk-git](https://aur.archlinux.org/packages/jsawk-git/)
+
+*   **jshon** — A JSON parser for the shell.
+
+	[http://kmkeen.com/jshon/](http://kmkeen.com/jshon/) || [jshon](https://www.archlinux.org/packages/?name=jshon)
+
+*   the Elvish [shell](/index.php/Shell "Shell") ([elvish](https://aur.archlinux.org/packages/elvish/)) has built-in support for JSON
 
 #### Debuggers
 

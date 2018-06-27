@@ -887,6 +887,7 @@ Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkMan
 Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
 
  `/etc/NetworkManager/dnsmasq.d/cache.conf`  `cache-size=1000` 
+**Tip:** Check the configuration file syntax with `dnsmasq --test --conf-file=/dev/null --conf-dir=/etc/NetworkManager/dnsmasq.d`.
 
 See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for all available options.
 

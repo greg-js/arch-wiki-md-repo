@@ -138,9 +138,10 @@ You can virtually add any search engine you want. Make a search on the website y
  `~/.config/luakit/userconf.lua` 
 ```
 local engines = settings.window.search_engines
-engines.aur          = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go",
-engines.aw           = "https://wiki.archlinux.org/index.php/Special:Search?fulltext=Search&search=%s",
-engines.googleseceng = "https://www.google.com/search?name=f&hl=en&q=%s",
+engines.aur          = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go"
+engines.aw           = "https://wiki.archlinux.org/index.php/Special:Search?fulltext=Search&search=%s"
+engines.googleseceng = "https://www.google.com/search?name=f&hl=en&q=%s"
+
 ```
 
 The variable is used as a keyword for the `:open` command in Luakit.

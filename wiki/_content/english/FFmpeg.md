@@ -15,32 +15,28 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [2.6 Single-pass MPEG-2 (near lossless)](#Single-pass_MPEG-2_.28near_lossless.29)
     *   [2.7 x264: constant rate factor](#x264:_constant_rate_factor)
     *   [2.8 Two-pass x264 (very high-quality)](#Two-pass_x264_.28very_high-quality.29)
-    *   [2.9 Two-pass MPEG-4 (very high-quality)](#Two-pass_MPEG-4_.28very_high-quality.29)
-        *   [2.9.1 Determining bitrates with fixed output file sizes](#Determining_bitrates_with_fixed_output_file_sizes)
-    *   [2.10 x264 video stabilization](#x264_video_stabilization)
-        *   [2.10.1 First pass](#First_pass)
-        *   [2.10.2 Second pass](#Second_pass)
-    *   [2.11 Subtitles](#Subtitles)
-        *   [2.11.1 Extracting](#Extracting)
-        *   [2.11.2 Hardsubbing](#Hardsubbing)
-    *   [2.12 Volume gain](#Volume_gain)
-    *   [2.13 Extracting audio](#Extracting_audio)
-    *   [2.14 Stripping audio](#Stripping_audio)
-    *   [2.15 Splitting files](#Splitting_files)
-    *   [2.16 Hardware acceleration](#Hardware_acceleration)
-        *   [2.16.1 VA-API](#VA-API)
-        *   [2.16.2 Nvidia NVENC](#Nvidia_NVENC)
-        *   [2.16.3 Nvidia NVDEC](#Nvidia_NVDEC)
+    *   [2.9 x264 video stabilization](#x264_video_stabilization)
+        *   [2.9.1 First pass](#First_pass)
+        *   [2.9.2 Second pass](#Second_pass)
+    *   [2.10 Subtitles](#Subtitles)
+        *   [2.10.1 Extracting](#Extracting)
+        *   [2.10.2 Hardsubbing](#Hardsubbing)
+    *   [2.11 Volume gain](#Volume_gain)
+    *   [2.12 Extracting audio](#Extracting_audio)
+    *   [2.13 Stripping audio](#Stripping_audio)
+    *   [2.14 Splitting files](#Splitting_files)
+    *   [2.15 Hardware acceleration](#Hardware_acceleration)
+        *   [2.15.1 VA-API](#VA-API)
+        *   [2.15.2 Nvidia NVENC](#Nvidia_NVENC)
+        *   [2.15.3 Nvidia NVDEC](#Nvidia_NVDEC)
 *   [3 Preset files](#Preset_files)
     *   [3.1 Using preset files](#Using_preset_files)
         *   [3.1.1 libavcodec-vhq.ffpreset](#libavcodec-vhq.ffpreset)
-            *   [3.1.1.1 Two-pass MPEG-4 (very high quality)](#Two-pass_MPEG-4_.28very_high_quality.29)
-*   [4 FFserver](#FFserver)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Output the duration of a video](#Output_the_duration_of_a_video)
-    *   [5.2 Output stream information as JSON](#Output_stream_information_as_JSON)
-    *   [5.3 Create a screen of the video every X frames](#Create_a_screen_of_the_video_every_X_frames)
-*   [6 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Output the duration of a video](#Output_the_duration_of_a_video)
+    *   [4.2 Output stream information as JSON](#Output_stream_information_as_JSON)
+    *   [4.3 Create a screen of the video every X frames](#Create_a_screen_of_the_video_every_X_frames)
+*   [5 See also](#See_also)
 
 ## Package installation
 
@@ -207,49 +203,18 @@ $ ffmpeg -i *video* -c:v libx264 -tune film -preset slow -crf 22 -x264opts fast_
 Audio deactivated as only video statistics are recorded during the first of multiple pass runs:
 
 ```
-$ ffmpeg -i *video*.VOB -an -vcodec libx264 -pass 1  -preset veryslow \
--threads 0 -b 3000k -x264opts frameref=15:fast_pskip=0 -f rawvideo -y /dev/null
+$ ffmpeg -i *video*.VOB -an -vcodec libx264 -pass 1 -preset veryslow \
+-threads 0 -b:v 3000k -x264opts frameref=15:fast_pskip=0 -f rawvideo -y /dev/null
 
 ```
 
 Container format is automatically detected and muxed into from the output file extenstion (`.mkv`):
 
 ```
-$ ffmpeg -i *video*.VOB -acodec libvo-aacenc -ab 256k -ar 96000 -vcodec libx264 \
--pass 2 -preset veryslow -threads 0 -b 3000k -x264opts frameref=15:fast_pskip=0 *video*.mkv
+$ ffmpeg -i *video*.VOB -acodec aac -b:a 256k -ar 96000 -vcodec libx264 \
+-pass 2 -preset veryslow -threads 0 -b:v 3000k -x264opts frameref=15:fast_pskip=0 *video*.mkv
 
 ```
-
-**Tip:** If you receive `Unknown encoder 'libvo-aacenc'` error (given the fact that your ffmpeg is compiled with libvo-aacenc enabled), you may want to try `-acodec libvo_aacenc`, an underscore instead of hyphen.
-
-### Two-pass MPEG-4 (very high-quality)
-
-Audio deactivated as only video statistics are logged during the first of multiple pass runs:
-
-```
-$ ffmpeg -i *video*.VOB -an -vcodec mpeg4 -pass 1 -mbd 2 -trellis 2 -flags +cbp+mv0 \
--pre_dia_size 4 -dia_size 4 -precmp 4 -cmp 4 -subcmp 4 -preme 2 -qns 2 -b 3000k \
--f rawvideo -y /dev/null
-
-```
-
-Container format is automatically detected and muxed into from the output file extenstion (`.avi`):
-
-```
-$ ffmpeg -i *video*.VOB -acodec copy -vcodec mpeg4 -vtag DX50 -pass 2 -mbd 2 -trellis 2 \
--flags +cbp+mv0 -pre_dia_size 4 -dia_size 4 -precmp 4 -cmp 4 -subcmp 4 -preme 2 -qns 2 \
--b 3000k *video*.avi
-
-```
-
-*   Introducing `threads`=`n`>`1` for `-vcodec mpeg4` may skew the effects of [motion estimation](https://en.wikipedia.org/wiki/Motion_estimation "wikipedia:Motion estimation") and lead to [reduced video quality](http://ffmpeg.org/faq.html#Why-do-I-see-a-slight-quality-degradation-with-multithreaded-MPEG_002a-encoding_003f) and compression efficiency.
-*   The two-pass MPEG-4 example above also supports output to the [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") container (replace `.avi` with `.mp4`).
-
-#### Determining bitrates with fixed output file sizes
-
-*   (Desired File Size in MB - Audio File Size in MB) **x** 8192 kb/MB **/** Length of Media in Seconds (s) **=** [Bitrate](https://en.wikipedia.org/wiki/Bitrate "wikipedia:Bitrate") in kb/s
-
-*   (3900 MB - 275 MB) = 3625 MB **x** 8192 kb/MB **/** 8830 s = 3363 kb/s required to achieve an approximate total output file size of 3900 MB
 
 ### x264 video stabilization
 
@@ -328,14 +293,14 @@ $ ffmpeg -i foo.mkv -map 0:2 foo.ssa
 
 #### Hardsubbing
 
-(instructions based on an [FFmpeg wiki article](http://trac.ffmpeg.org/wiki/How%20to%20burn%20subtitles%20into%20the%20video))
+(instructions based on [HowToBurnSubtitlesIntoVideo](http://trac.ffmpeg.org/wiki/HowToBurnSubtitlesIntoVideo) at the FFmpeg wiki)
 
 [Hardsubbing](https://en.wikipedia.org/wiki/Hardsub "wikipedia:Hardsub") entails merging subtitles with the video. Hardsubs can't be disabled, nor language switched.
 
 *   Overlay `foo.mpg` with the subtitles in `foo.ssa`:
 
 ```
-$ ffmpeg -i foo.mpg -c copy -vf subtitles=foo.ssa out.mpg
+$ ffmpeg -i foo.mpg -vf subtitles=foo.ssa out.mpg
 
 ```
 
@@ -393,7 +358,7 @@ $ ffmpeg -i *video*.mpg -map 0:1 -acodec copy -vn *video*.ac3
 Convert the third (`-map 0:3`) [DTS](https://en.wikipedia.org/wiki/DTS_(sound_system) audio stream to an [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding") file with a bitrate of 192 kb/s and a [sampling rate](https://en.wikipedia.org/wiki/Sampling_rate "wikipedia:Sampling rate") of 96000 Hz:
 
 ```
-$ ffmpeg -i *video*.mpg -map 0:3 -acodec libvo-aacenc -ab 192k -ar 96000 -vn *output*.aac
+$ ffmpeg -i *video*.mpg -map 0:3 -acodec aac -b:a 192k -ar 96000 -vn *output*.aac
 
 ```
 
@@ -415,7 +380,7 @@ $ ffmpeg -ss 00:01:25 -t 00:00:05 -i *video*.mpg -map 0:1 -acodec copy -vn *outp
 
 ```
 $ ffmpeg -i *video*.mpg -map 0:0 -map 0:2 -vcodec copy -acodec libmp3lame \
--ab 128k -ar 48000 -ac 2 *video*.mkv
+-b:a 128k -ar 48000 -ac 2 *video*.mkv
 
 ```
  `$ ffmpeg -i *video*.mkv` 
@@ -516,91 +481,6 @@ Enable the `-vpre` option after declaring the desired `-vcodec`
 *   `vhq` **=** Name of specific preset to be called out
 *   `ffpreset` **=** FFmpeg preset filetype suffix
 
-##### Two-pass MPEG-4 (very high quality)
-
-First pass of a multipass (bitrate) ratecontrol transcode:
-
-```
-$ ffmpeg -i *video*.mpg -an -vcodec mpeg4 -pass 1 -vpre vhq -f rawvideo -y /dev/null
-
-```
-
-Ratecontrol based on the video statistics logged from the first pass:
-
-```
-$ ffmpeg -i *video*.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
--pass 2 -vpre vhq -b 3000k *output*.mp4
-
-```
-
-*   **libvorbis quality settings (VBR)**
-
-*   `-aq 4` = 128 kb/s
-*   `-aq 5` = 160 kb/s
-*   `-aq 6` = 192 kb/s
-*   `-aq 7` = 224 kb/s
-*   `-aq 8` = 256 kb/s
-
-*   [aoTuV](http://www.geocities.jp/aoyoume/aotuv/) is generally preferred over [libvorbis](http://vorbis.com/) provided by [Xiph.Org](http://www.xiph.org/) and is provided by [libvorbis-aotuv](https://aur.archlinux.org/packages/libvorbis-aotuv/).
-
-## FFserver
-
-The FFmpeg package includes FFserver, which can be used to stream media over a network. To use it, you first need to create the config file `/etc/ffserver.conf` to define your *feeds* and *streams*. Each feed specifies how the media will be sent to ffserver and each stream specifies how a particular feed will be transcoded for streaming over the network. You can start with the [sample configuration file](https://www.ffmpeg.org/sample.html) or check [ffserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ffserver.1) for feed and stream examples. Here is a simple configuration file for streaming flash video:
-
- `/etc/ffserver.conf` 
-```
-HTTPPort 8090
-HTTPBindAddress 0.0.0.0
-MaxHTTPConnections 2000
-MaxClients 1000
-MaxBandwidth 10000
-CustomLog -
-
-<Feed av_feed.ffm>
-        File /tmp/av_feed.ffm
-        FileMaxSize 1G
-        ACL allow 127.0.0.1
-</Feed>
-
-<Stream av_stream.flv>
-        Feed av_feed.ffm
-        Format flv
-
-        VideoCodec libx264
-        VideoFrameRate 25
-        VideoSize hd1080
-        VideoBitRate 400
-        AVOptionVideo qmin 10
-        AVOptionVideo qmax 42
-        AVOptionVideo flags +global_header
-
-        AudioCodec libmp3lame
-        AVOptionAudio flags +global_header
-
-        Preroll 15
-</Stream>
-
-<Stream stat.html>
-        Format status
-        ACL allow localhost
-        ACL allow 192.168.0.0 192.168.255.255
-</Stream>
-
-<Redirect index.html>
-        URL http://www.ffmpeg.org/
-</Redirect>
-```
-
-Once you have created your config file, you can start the server and send media to your feeds. For the previous config example, this would look like
-
-```
-$ ffserver &
-$ ffmpeg -i myvideo.mkv http://localhost:8090/av_feed.ffm
-
-```
-
-You can then stream your media using the URL `http://yourserver.net:8090/av_stream.flv`.
-
 ## Tips and tricks
 
 ### Output the duration of a video
@@ -626,8 +506,7 @@ $ ffmpeg -i file.ext -an -s 319x180 -vf fps=1/**100** -qscale:v 75 %03d.jpg
 
 ## See also
 
-*   [x264 Settings](http://mewiki.project357.com/wiki/X264_Settings) - MeWiki documentation
-*   [FFmpeg documentation](http://ffmpeg.org/ffmpeg-doc.html) - official documentation
+*   [FFmpeg documentation](http://ffmpeg.org/ffmpeg.html) - official documentation
 *   [Encoding with the x264 codec](http://www.mplayerhq.hu/DOCS/HTML/en/menc-feat-x264.html) - MEncoder documentation
 *   [H.264 encoding guide](http://avidemux.org/admWiki/doku.php?id=tutorial:h.264) - Avidemux wiki
 *   [Using FFmpeg](http://howto-pages.org/ffmpeg/) - Linux how to pages

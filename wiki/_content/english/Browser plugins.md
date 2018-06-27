@@ -159,7 +159,7 @@ Restart and it should work like a charm!
 
 ## UnionPay Online Pay
 
-**Note:** This plugin is NPAPI only. It should work in the [palemoon](https://aur.archlinux.org/packages/palemoon/) browser.
+**Note:** This plugin is NPAPI-only and thus does **not work** in Chromium, Opera and Firefox.
 
 [Install](/index.php/Install "Install") [upeditor](https://aur.archlinux.org/packages/upeditor/) package for the "security plugin" used by UnionPay Online Pay (银联在线支付).
 
@@ -169,15 +169,13 @@ See [Citrix](/index.php/Citrix "Citrix").
 
 ## Java (IcedTea)
 
-**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium, Opera and Firefox. They work in [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/), which is supported until August 2018.
+**Note:** Both Java plugins are NPAPI-only and thus do **not work** in Chromium, Opera and Firefox.
 
 To enable [Java](/index.php/Java "Java") support in your browser, you have two options: the open-source [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK "wikipedia:OpenJDK") (recommended) or Oracle's proprietary version. For details about why OpenJDK is recommended see [[1]](https://mailman.archlinux.org/pipermail/arch-general/2011-August/021671.html).
 
 To use OpenJDK, you have to install the [IcedTea](http://icedtea.classpath.org/wiki/Main_Page) browser plugin, [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web).
 
 If you want to use Oracle's JRE, install the [jre](https://aur.archlinux.org/packages/jre/) package.
-
-**Note:** If you experience any problems with the Java plugin (e.g. it is not recognized by the browser), you can try [#Firefox: plugins are installed but not working](#Firefox:_plugins_are_installed_but_not_working).
 
 ## Pipelight
 
@@ -189,11 +187,11 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 For media formats that are not natively supported by your browser (e.g. most browsers don't play `.mkv` files), the following plugins are available:
 
-*   **Rosa Media Player Plugin** — Qt-based browser plugin also based on MPlayer.
+*   **Rosa Media Player Plugin** — Qt-based NPAPI plugin that uses MPlayer as backend.
 
 	[https://abf.rosalinux.ru/uxteam/ROSA_Media_Player](https://abf.rosalinux.ru/uxteam/ROSA_Media_Player) || [rosa-media-player-plugin](https://aur.archlinux.org/packages/rosa-media-player-plugin/)
 
-*   **VLC Plugin** — NPAPI-based plugin that uses VLC technologies.
+*   **VLC Plugin** — NPAPI plugin that uses VLC as backend.
 
 	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://aur.archlinux.org/packages/npapi-vlc/)
 

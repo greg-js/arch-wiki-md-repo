@@ -17,10 +17,11 @@ The HP Envy X360 15-bq102ng was released in 2017\. It has a Ryzen Mobile 5 2500u
 *   [2 Battery and Power Management](#Battery_and_Power_Management)
 *   [3 Display, Video Card](#Display.2C_Video_Card)
 *   [4 Touchscreen and Stylus](#Touchscreen_and_Stylus)
-*   [5 Wireless Networking](#Wireless_Networking)
-*   [6 Bluetooth](#Bluetooth)
-*   [7 Hard Drive](#Hard_Drive)
-*   [8 Dual Boot](#Dual_Boot)
+*   [5 Orientation Sensor](#Orientation_Sensor)
+*   [6 Wireless Networking](#Wireless_Networking)
+*   [7 Bluetooth](#Bluetooth)
+*   [8 Hard Drive](#Hard_Drive)
+*   [9 Dual Boot](#Dual_Boot)
 
 ## Installing Arch
 
@@ -38,13 +39,17 @@ The integrated Vega GPU works with the AMDGPU drivers. Apparently the display pa
 
 At the moment (10.06.2017) you need to build a Kernel with custom patches to get the touchscreen working. [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=198715) Also the touchsreen multihead mapping must be hard mapped to the internal screen, or it will be mapped on all screens. [Touchscreen](/index.php/Touchscreen "Touchscreen")
 
+## Orientation Sensor
+
+You currently need to install [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) and reboot to make the orientation sensor work. This will disable the keyboard and touchpad, and invert the side volume buttons when the screen is held at the right orientation or is folded. To make the screen rotate automatically according to its physical orientation, you could compile and use this daemon [[2]](https://github.com/mrquincle/yoga-900-auto-rotate) written in C.
+
 ## Wireless Networking
 
 Works out of the box.
 
 ## Bluetooth
 
-Works, but to use an BT audio device with GNOME you have to install [pulseaudio-bluetooth-a2dp-gdm-fix](https://aur.archlinux.org/packages/pulseaudio-bluetooth-a2dp-gdm-fix/)
+Works, but to use an BT audio device with GNOME you have to install [pulseaudio-bluetooth-a2dp-gdm-fix](https://aur.archlinux.org/packages/pulseaudio-bluetooth-a2dp-gdm-fix/).
 
 ## Hard Drive
 
@@ -52,4 +57,4 @@ Built-in NVME drive works with advertised speed. Blockdevices are loacated at /d
 
 ## Dual Boot
 
-Not tested, but there shouldn't any difficulties
+Not tested, but there shouldn't any difficulties.

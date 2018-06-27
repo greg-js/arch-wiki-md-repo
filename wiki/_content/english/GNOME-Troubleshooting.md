@@ -46,68 +46,55 @@ If this fails, the [Xorg](/index.php/Xorg "Xorg") server will need to be restart
 
 If you experience gnome-shell disappearing and reappearing, it means that it has segfaulted (probably because of an extension). Gnome-shell extensions use javascript; to enable debugging of extensions, it is necessary to
 
-1) rebuild [gjs](https://www.archlinux.org/packages/?name=gjs) with the following additions:
+1) rebuild [gjs](https://www.archlinux.org/packages/?name=gjs) with the following changes to the PKGBUILD:
 
 ```
-packages/gjs/trunk$ svn diff
- Index: PKGBUILD
- ===================================================================
- --- PKGBUILD	(révision 300688)
- +++ PKGBUILD	(copie de travail)
- @@ -11,8 +11,8 @@
-depends=(cairo gobject-introspection-runtime js38 gtk3)
-makedepends=(gobject-introspection git gnome-common)
-_commit=43c5d7839630dd166372f2c404a9a72c87fd102a  # tags/1.48.5^0
-source=("git+[https://git.gnome.org/browse/gjs#commit=$_commit](https://git.gnome.org/browse/gjs#commit=$_commit)")
-sha256sums=('SKIP')
-
-pkgver() {
-  cd $pkgname
- @@ -21,12 +21,15 @@
-
-prepare() {
-  cd $pkgname
-  NOCONFIGURE=1 ./autogen.sh
-}
-
-build() {
-  cd $pkgname
- -  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib
- +  export CXXFLAGS='-g -O0'
- +  export CPPFLAGS='-D_FORITFY_SOURCE=0'
- +  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib --enable-debug-symbols=-gdwarf-2
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-  make
-}
-
+--- PKGBUILD (old)
++++ PKGBUILD (new)
+@@ -29,10 +29,13 @@
+ build() {
+   cd $pkgname
++  export CXXFLAGS='-g -O0'
++  export CPPFLAGS='-D_FORITFY_SOURCE=0'
+   ./configure \
++    --enable-debug-symbols=-gdwarf-2 \
+     --prefix=/usr \
+     --libexecdir=/usr/lib \
+     --disable-static \
+     --enable-compile-warnings=yes \
+     --with-xvfb-tests
+   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+   make
+ }
 ```
 
-2) rebuild [js38](https://www.archlinux.org/packages/?name=js38) with debug enabled:
+2) rebuild [js52](https://www.archlinux.org/packages/?name=js52) with the following changes to the PKGBUILD:
 
 ```
-packages/js38/trunk$ svn diff PKGBUILD 
-Index: PKGBUILD
-===================================================================
---- PKGBUILD	(révision 300681)
-+++ PKGBUILD	(copie de travail)
-@@ -10,7 +10,7 @@
- license=(MPL)
- depends=(nspr gcc-libs readline zlib icu libffi)
- makedepends=(python2 libffi zip)
--options=(!staticlibs)
-+options=(!staticlibs debug)
- source=([https://ftp.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.bz2](https://ftp.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.bz2)
-        mozjs38-fix-tracelogger.patch
-        mozjs38-shell-version.patch
+--- PKGBUILD (old)
++++ PKGBUILD (new)
+@@ -24,0 +25 @@
++options=(debug)
+@@ -36,11 +37,9 @@
+ build() {
+   unset CPPFLAGS
+   CFLAGS+=' -fno-delete-null-pointer-checks -fno-strict-aliasing -fno-tree-vrp -flto=3'
+   CXXFLAGS+=' -fno-delete-null-pointer-checks -fno-strict-aliasing -fno-tree-vrp -flto=3'
+   export CC=gcc CXX=g++ PYTHON=/usr/bin/python2
 
+   cd mozilla-unified/js/src
+   sh configure \
+     --prefix=/usr \
+-    --disable-debug \
+-    --disable-debug-symbols \
 ```
 
-Once the gjs and js38-debug packages are installed and gnome-shell restarted (`Alt`+ `F2` + `r`), whenever gnome-shell crashes the debug symbols will be available.
+Once the gjs and js52 packages are installed and gnome-shell restarted (`Alt`+ `F2` + `r`), whenever gnome-shell crashes the debug symbols will be available.
 
 After the crash:
 
+ `$ coredumpctl -1` 
 ```
-$ coredumpctl -1
 TIME                            PID   UID   GID SIG COREFILE  EXE
 Mon 2017-07-17 15:34:49 CEST  27368  1000  1000  11 present   /usr/bin/gnome-shell
 $ coredumpctl gdb 27368

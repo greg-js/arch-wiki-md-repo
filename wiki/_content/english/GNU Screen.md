@@ -229,6 +229,18 @@ hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%
 
 ```
 
+As of Screen v5 ([master branch](git://git.savannah.gnu.org/screen.git) currently) the escape codes have changed, you could use this instead:
+
+ `~/.screenrc` 
+```
+truecolors on
+hardstatus off
+backtick 0 5 5 "/bin/date" '+%Y-%m-%d'
+backtick 1 5 5 "/bin/date" '+%H:%M'
+hardstatus alwayslastline '%{#00ff00}[ %H ][%{#ffffff}%= %{7}%?%-Lw%?%{1;0}%{1}(%{15}%n%f%t%?(%u)%?%{1;0}%{1})%{7}%?%+Lw%?%? %=%{#00ff00}][ %{#00a5ff}%{6}%0` %{#ffffff}%{7}%1`%{#00ff00} ]'
+
+```
+
 statusbar at top:
 
  `~/.screenrc` 

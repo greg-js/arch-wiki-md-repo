@@ -27,7 +27,7 @@ Esse tópico contém as URLs fonte mais comumente usadas pelos pacotes GNOME nos
 Ao baixar um tarball de lançamento, você pode obtê-lo de [https://download.gnome.org](https://download.gnome.org) usando o seguinte vetor fonte:
 
 ```
-source=(https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz)
+source=("https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz")
 
 ```
 

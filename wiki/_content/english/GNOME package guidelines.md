@@ -27,7 +27,7 @@ This topic contains the most commonly used source URL used by GNOME packages in 
 When downloading a released tarball, you can get it from [https://download.gnome.org](https://download.gnome.org) using the following source array:
 
 ```
-source=(https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz)
+source=("https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz")
 
 ```
 

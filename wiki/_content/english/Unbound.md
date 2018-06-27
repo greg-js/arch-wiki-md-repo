@@ -73,7 +73,7 @@ You will also need to setup *unbound* such that it is [#Forwarding queries](#For
 
 ### Root hints
 
-For querying a host that is not cached as an address the resolver needs to start at the top of the server tree and query the root servers to know where to go for the top level domain for the address being queried. Unbound comes with default builtin hints, but it is good practice to use a root-hints file since the builtin hints may become outdated.
+For querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default builtin hints, but it is good practice to use a root-hints file since the builtin hints may become outdated.
 
 First point *unbound* to the `root.hints` file:
 

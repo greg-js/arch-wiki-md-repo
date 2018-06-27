@@ -244,7 +244,7 @@ And reloading the keymapping database:
 
 ```
 
-There is a pull request [[3]](https://github.com/systemd/systemd/pull/9390) to have this fixed and merged in upstream systemd.
+The commit [[3]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
 
 ##### Unmapped Buttons
 

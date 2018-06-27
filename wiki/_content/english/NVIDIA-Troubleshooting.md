@@ -159,25 +159,20 @@ At the moment there are two workarounds to try. Do **not** apply both workaround
 
 #### 1\. GL threads
 
-Set GL threads to sleep by exporting `__GL_YIELD="USLEEP"` to `kwin_x11`.
+Set GL threads to sleep by exporting `__GL_YIELD="USLEEP"` to just `kwin_x11`. This should be a better solution than changing the triple buffer options, as they e.g. introduce stutter when scrolling in Firefox.
 
-To apply the workaround on boot:
-
- `/etc/profile.d/kwin.sh` 
+ `~/.config/autostart/kwin.desktop` 
 ```
-export __GL_YIELD="USLEEP"
-
-```
-
-An another approach is not to export this as global variable, but only export to *KWin* on [startup](/index.php/Autostart "Autostart"):
-
- `~/.config/autostart/kwin.sh` 
-```
-(sleep 2s && export __GL_YIELD="USLEEP" && kwin_x11 --replace)
+[Desktop Entry]
+Name=KWin restart
+Exec=/bin/bash ~/kwin.sh
 
 ```
+ `~/kwin.sh` 
+```
+(sleep 2s && __GL_YIELD="USLEEP" kwin_x11 --replace)
 
-Mark the script as [executable](/index.php/Executable "Executable").
+```
 
 The `sleep` argument helps to prevent issues when KWin is restarted/hanging after logging in, you might need to adjust this time.
 
