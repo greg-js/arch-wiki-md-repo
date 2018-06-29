@@ -7,48 +7,41 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Basic package](#Basic_package)
-    *   [1.2 Initial configuration](#Initial_configuration)
-    *   [1.3 Variables](#Variables)
-        *   [1.3.1 R_ENVIRON](#R_ENVIRON)
-        *   [1.3.2 R_PROFILE](#R_PROFILE)
-*   [2 Managing R packages](#Managing_R_packages)
-    *   [2.1 With pacman](#With_pacman)
-    *   [2.2 With R](#With_R)
-        *   [2.2.1 Upgrading R packages](#Upgrading_R_packages)
-            *   [2.2.1.1 Within a R session](#Within_a_R_session)
-            *   [2.2.1.2 Within a shell](#Within_a_shell)
-*   [3 Configuration files](#Configuration_files)
-    *   [3.1 .Renviron](#.Renviron)
-    *   [3.2 Rprofile](#Rprofile)
-    *   [3.3 Makevars](#Makevars)
-*   [4 Adding a graphical frontend to R](#Adding_a_graphical_frontend_to_R)
-    *   [4.1 R Commander frontend](#R_Commander_frontend)
-    *   [4.2 RKWard frontend](#RKWard_frontend)
-*   [5 Editors IDEs and notebooks with R support](#Editors_IDEs_and_notebooks_with_R_support)
-    *   [5.1 Rstudio IDE](#Rstudio_IDE)
-    *   [5.2 Rstudio server](#Rstudio_server)
-    *   [5.3 Emacs Speaks Statistics](#Emacs_Speaks_Statistics)
-    *   [5.4 Nvim-R](#Nvim-R)
-    *   [5.5 Cantor](#Cantor)
-    *   [5.6 Jupyter notebook](#Jupyter_notebook)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Optimized packages](#Optimized_packages)
-        *   [6.1.1 OpenBLAS](#OpenBLAS)
-        *   [6.1.2 Intel MKL](#Intel_MKL)
-        *   [6.1.3 intel-advisor-xe](#intel-advisor-xe)
-    *   [6.2 Set CRAN mirror across R sessions](#Set_CRAN_mirror_across_R_sessions)
-*   [7 See also](#See_also)
+*   [2 Usage](#Usage)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Environment](#Environment)
+    *   [3.2 Profile](#Profile)
+    *   [3.3 Locale](#Locale)
+*   [4 Managing R packages](#Managing_R_packages)
+    *   [4.1 With pacman](#With_pacman)
+    *   [4.2 With R](#With_R)
+        *   [4.2.1 Upgrading R packages](#Upgrading_R_packages)
+            *   [4.2.1.1 Within a R session](#Within_a_R_session)
+            *   [4.2.1.2 Within a shell](#Within_a_shell)
+    *   [4.3 Makevars](#Makevars)
+*   [5 Adding a graphical frontend to R](#Adding_a_graphical_frontend_to_R)
+    *   [5.1 R Commander frontend](#R_Commander_frontend)
+    *   [5.2 RKWard frontend](#RKWard_frontend)
+*   [6 Editors IDEs and notebooks with R support](#Editors_IDEs_and_notebooks_with_R_support)
+    *   [6.1 Rstudio IDE](#Rstudio_IDE)
+    *   [6.2 Rstudio server](#Rstudio_server)
+    *   [6.3 Emacs Speaks Statistics](#Emacs_Speaks_Statistics)
+    *   [6.4 Nvim-R](#Nvim-R)
+    *   [6.5 Cantor](#Cantor)
+    *   [6.6 Jupyter notebook](#Jupyter_notebook)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Optimized packages](#Optimized_packages)
+        *   [7.1.1 OpenBLAS](#OpenBLAS)
+        *   [7.1.2 Intel MKL](#Intel_MKL)
+        *   [7.1.3 intel-advisor-xe](#intel-advisor-xe)
+    *   [7.2 Set CRAN mirror across R sessions](#Set_CRAN_mirror_across_R_sessions)
+*   [8 See also](#See_also)
 
 ## Installation
 
-### Basic package
-
 [Install](/index.php/Install "Install") the [r](https://www.archlinux.org/packages/?name=r) package. The installation of external packages within the R environment may require [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran).
 
-### Initial configuration
-
-Please refer to [Initialization at Start of an R Session](http://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html) to get a detailed understanding of startup process. The home directory of the `R` installation is `/usr/lib/R`. Base packages are found in `/usr/lib/R/library/base` and **site** configuration files in `/etc/R/`. Aspects of the [Locale](/index.php/Locale "Locale") are accessed by the functions `Sys.getlocale` and `Sys.localeconv` within the `R` session. Locales will be the one defined in your system.
+## Usage
 
 To start a `R` session, open your terminal and type this command:
 
@@ -68,42 +61,64 @@ When closing the session, you will be prompted : `Save workspace Image ?[y/n/c
 
 **Tip:**
 
-*   Tired of R's verbose startup message ? Then start `R` with the `--quiet` command-line option (`$ R --quiet`). You can `alias R="R --quiet"` in one of your [Startup files](/index.php/Startup_files "Startup files").
+*   Tired of R's verbose startup message ? Then start `R` with the `--quiet` command-line option (`$ R --quiet`). You can add `alias R="R --quiet"` in one of your [Startup files](/index.php/Startup_files "Startup files").
 *   Running `R` from the command line will set R's working directory to the current directory. Opening the R GUI will set R's working directory to $HOME, unless explicitly defined in your configuration files (`.Renviron` or `.Rprofile`).
-*   To colorize R output, first install the `colorout` package (first do `install.packages("devtools")` if `devtools` package is not installed)...
 
-```
-> devtools::install_github('jalvesaq/colorout')
+## Configuration
 
-```
+Whenever R starts, its configuration is controlled by several files. Please refer to [Initialization at Start of an R Session](http://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html) to get a detailed understanding of startup process.
 
-...and then add the following to your `.Rprofile` (by default, located in `$HOME/.Rprofile`; create it if it does not exist).
+### Environment
 
-```
-# $HOME/.Rprofile 
-
-if (interactive()) {
-  # Everything in here is only run if R is in "interactive" (as opposed to batch/script) mode
-  library(colorout)
-}
-
-```
-
-### Variables
-
-`R` can be confusing when it comes to [environment variables](/index.php/Environment_variables "Environment variables"), as they are large and duplicated following the **site** or **user** sides. There are two sorts of files used in startup: *environment files*, defined by `$R_ENVIRON` and *profile files*, defined by `$R_PROFILE`.
+R first loads **site** and **user** environment variable files. The name of the site file is controlled by the [Environment variables](/index.php/Environment_variables "Environment variables") `R_ENVIRON` if it exists, and defaults to `/etc/R/.Renviron`. The name of the user file is specified by `R_ENVIRON_USER`. If that is unset, it defaults to `.Renviron` in the curent working directory or if it exists, and `~/.Renviron` otherwise.
 
 Most important variables can be found on [Environment Variables R Documentation](http://stat.ethz.ch/R-manual/R-devel/library/base/html/EnvVar.html).
 
-#### R_ENVIRON
+You may disable loading environment files with `--no-environ`
 
-At startup, `R` search at early stage for **site** and **user** `.Renviron` files to process for setting [environment variables](/index.php/Environment_variables "Environment variables"). The **site** file is located in `/etc/R`, and generated by configure.
+Lines in `Renviron` file should be either comment lines starting with **#** or lines of the form *name=value*. Here is a very basic `.Renviron`:
 
-The name of the user file can be specified by the `R_ENVIRON_USER` environment variable. If you do not specify any file, `R` will automatically read `.Renviron` in your home directory if there is one. In case you want to use another emplacement for this file, append this line `export R_ENVIRON_USER ="path/to/.Renviron"` in one of your [startup files](/index.php/Startup_files "Startup files"). This is the place to set all kind of environment variables using the **R syntax**.
+ `.Renviron` 
+```
+R_HOME_USER = /path/to/your/r/directory
+R_PROFILE_USER = ${HOME}/.config/r/.Rprofile
+R_LIBS_USER = /path/to/your/r/library
+R_HISTFILE = /path/to/your/filename.Rhistory                                             # Do not forget to append the **.Rhistory**
+MYSQL_HOME = /var/lib/mysql
+```
 
-#### R_PROFILE
+### Profile
 
-Then `R` searches for the **site-wilde** `Rprofile.site` defined by the `R_PROFILE` environment variable. This file does not exist after a fresh installation. Finally, `R` searches for **user** `R_PROFILE_USER`. If unset, a file called `.Rprofile` is searched for in the current directory, returned by the `R` command `> getwd()` or in the user's home directory. This is the place to put all your custom `R` code.
+R then loads an Rprofile, which contains R code that is executed. These files are read in the following order of preference (only one file is loaded):
+
+1\. A file specified by the environment variable `R_PROFILE_USER`.
+
+2\. `.Rprofile` in the current working directory.
+
+3\. `$HOME/.Rprofile`.
+
+An `.Rprofile` can contain arbitrary R code, though best practice suggests that one should not load packages at startup, as this hinders package upgrades and reproducibility.
+
+ `~/.Rprofile` 
+```
+# The .First function is called after everything else in .Rprofile is executed
+.First <- function() {
+  # Print a welcome message
+  message("Welcome back ", Sys.getenv("USER"),"!
+","working directory is:", getwd())
+}
+
+options(digits = 12)                                          # number of digits to print. Default is 7, max is 15
+options(stringsAsFactors = FALSE)                             # Disable default conversion of character strings to factors
+options(show.signif.stars = FALSE)                            # Don't show stars indicating statistical significance in model outputs
+error <- quote(dump.frames("${R_HOME_USER}/testdump", TRUE))  # post-mortem debugging facilities
+```
+
+You can add more [global options](http://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html) to customize your `R` environment. See this [post](http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile) for more examples of user configurations.
+
+### Locale
+
+Aspects of the [Locale](/index.php/Locale "Locale") are accessed by the functions `Sys.getlocale` and `Sys.localeconv` within the `R` session. Locales will be the one defined in your system.
 
 ## Managing R packages
 
@@ -164,57 +179,6 @@ You can use `Rscript`, which comes with [r](https://www.archlinux.org/packages/?
 
  `$ Rscript -e "update.packages()"` 
 
-## Configuration files
-
-The two user configuration files you want in your home folder are `.Renviron` and `Rprofile.r`. If you want to keep your `$HOME` directory as clean as possible, a good practice will be to make the `~/.config/r` directory, put the `Rprofile.r` file at the root of the directory and append all your `R` code in this file.
-
-### .Renviron
-
-Lines in `Renviron` file should be either comment lines starting with **#** or lines of the form *name=value*.Here is a very basic `.Renviron` you can start with:
-
- `.Renviron` 
-```
-
-R_HOME_USER = /path/to/your/r/directory
-R_PROFILE_USER = ${HOME}/.config/r/Rprofile.r
-R_LIBS_USER = /path/to/your/r/library
-R_HISTFILE = /path/to/your/filename.Rhistory                                             # Do not forget to append the **.Rhistory**
-R_DEFAULT_PACKAGES = 'datasets,utils,grDevices,graphics,stats,methods,rJava,colorout'    # load some default packages at start up
-MYSQL_HOME = /var/lib/mysql                  
-
-```
-
-### Rprofile
-
-The file `.Rprofile` contains R code that is run automatically at the beginning of each R session. These files are read in the following order of preference (only one file is loaded):
-
-1\. `.Rprofile` in the current working directory.
-
-2\. User `.Rprofile`, typically in `$HOME/.Rprofile`.
-
-3\. Site `.Rprofile`, typically in `/etc/.Rprofile`.
-
-An `.Rprofile` can contain arbitrary R code, though best practice suggests that one should not load packages at startup, as this hinders package upgrades and reproducibility.
-
- `~/.Rprofile` 
-```
-# The .First function is called after everything else in .Rprofile is executed
-.First <- function() {
-  # Print a welcome message
-  message("Welcome back ", Sys.getenv("USER"),"!
-","working directory is:", getwd())
-}
-
-options(prompt = paste(paste(Sys.info()[c("user", "nodename")], collapse = "@"),"[R] "))            # customize your R prompt with username and hostname in this format: user@hostname [R]
-options(digits = 12)                                                                                # number of digits to print. Default is 7, max is 15
-options(stringsAsFactors = FALSE)                                                                   # Disable default conversion of character strings to factors
-options(show.signif.stars = FALSE)                                                                  # Don't show stars indicating statistical significance in model outputs
-error <- quote(dump.frames("${R_HOME_USER}/testdump", TRUE))                                        # post-mortem debugging facilities
-
-```
-
-You can add more [global options](http://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html) to customize your `R` environment. See this [post](http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile) for more examples of user configurations.
-
 ### Makevars
 
 The Makevars file can be used to set the default make options when installing packages. An example optimized Makevars file is as follow:
@@ -273,7 +237,7 @@ To start the server, please [enable and start](/index.php/Systemd#Using_units "S
 
 ### Emacs Speaks Statistics
 
-[emacs](https://www.archlinux.org/packages/?name=emacs) users can interact with R via the [emacs-ess](https://aur.archlinux.org/packages/emacs-ess/) package.
+[Emacs](/index.php/Emacs "Emacs") users can interact with R via the [emacs-ess](https://aur.archlinux.org/packages/emacs-ess/) package.
 
 ### Nvim-R
 
@@ -291,15 +255,20 @@ The [nvim-r](https://aur.archlinux.org/packages/nvim-r/) package allows [vim](ht
 
 ### Optimized packages
 
-The numerical libraries that comes with the R (generic [blas](https://www.archlinux.org/packages/?name=blas), LAPACK) do not have multithreading capabilities. Replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) package with an optimized BLAS can produce dramatic speed increases for many common computations in R. However the available optimized BLAS packages all have drawbacks such as requiring a commercial license or [potentially interfering with the standard R functionality for parallel processing](http://blog.revolutionanalytics.com/2015/10/edge-cases-in-using-the-intel-mkl-and-parallel-programming.html). If you really need faster linear algebra in R you may consider the following options.
+The numerical libraries that comes with the R (generic [blas](https://www.archlinux.org/packages/?name=blas), LAPACK) do not have multithreading capabilities. Replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) package with an optimized BLAS can produce dramatic speed increases for many common computations in R. See these threads for an overview of the potential speed increases:
+
+*   [https://github.com/tmolteno/necpp/issues/18](https://github.com/tmolteno/necpp/issues/18)
+*   [http://blog.nguyenvq.com/blog/2014/11/10/optimized-r-and-python-standard-blas-vs-atlas-vs-openblas-vs-mkl/](http://blog.nguyenvq.com/blog/2014/11/10/optimized-r-and-python-standard-blas-vs-atlas-vs-openblas-vs-mkl/)
+*   [https://freddie.witherden.org/pages/blas-gemm-bench/](https://freddie.witherden.org/pages/blas-gemm-bench/)
+*   [http://nghiaho.com/?p=1726](http://nghiaho.com/?p=1726)
 
 #### OpenBLAS
 
-[openblas](https://www.archlinux.org/packages/?name=openblas) can replace the reference [blas](https://www.archlinux.org/packages/?name=blas). If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from extra no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
+[openblas](https://www.archlinux.org/packages/?name=openblas) can replace the reference [blas](https://www.archlinux.org/packages/?name=blas). If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from [extra] no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
 
 #### Intel MKL
 
-**If your processors are Intel**, you can use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors.
+**If your processors are Intel**, you can use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors. Keep in mind that they can [potentially interfere with the standard R functionality for parallel processing](http://blog.revolutionanalytics.com/2015/10/edge-cases-in-using-the-intel-mkl-and-parallel-programming.html).
 
 Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur.archlinux.org/packages/intel-mkl/) package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/) package.
 

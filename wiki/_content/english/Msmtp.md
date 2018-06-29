@@ -222,7 +222,7 @@ Adding `/usr/local/bin` to your PATH can save you some keystrokes if you're doin
 
 ### Vim syntax highlighting
 
-The msmtp source distribution includes an `msmtprc` syntax-highlighting script for [Vim](/index.php/Vim "Vim"), which is available at `/usr/share/vim/vimfiles/syntax/msmtp.vim`. The filetype is not detected automatically. The easiest way to enable it is by adding a [modeline](http://vimdoc.sourceforge.net/htmldoc/options.html#modeline) at the top of the file(s) e.g.:
+The msmtp source distribution includes an `msmtprc` syntax-highlighting script for [Vim](/index.php/Vim "Vim"), which is available at `/usr/share/vim/vimfiles/syntax/msmtp.vim`. The filetype is not detected automatically. The easiest way to enable it is by adding a [modeline](http://vimdoc.sourceforge.net/htmldoc/options.html#modeline) at the top or bottom of the file(s), i.e.:
 
 ```
    # vim:filetype=msmtp

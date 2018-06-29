@@ -454,16 +454,11 @@ GDK_BACKEND=x11 some_qt_program
 
 When using [KDE](/index.php/KDE "KDE") and/or any other Qt [desktop environment](/index.php/Desktop_environment "Desktop environment") debug info may be frequently be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
 
-Set `QT_LOGGING_RULES` as [environment variable](/index.php/Environment_variable "Environment variable") to change this behaviour:
+Set `QT_LOGGING_RULES` as [environment variable](/index.php/Environment_variable "Environment variable") to change this behaviour, e.g. to completely disable logging:
 
- `/etc/environment` 
-```
-// Completely disable any logging
-QT_LOGGING_RULES='*=false'
+ `/etc/environment`  `QT_LOGGING_RULES='*=false'` 
 
-// Allow debug info to pass
-QT_LOGGING_RULES="*.debug=false"
-```
+To allow only debug logging, use `QT_LOGGING_RULES="*.debug=false"`.
 
 ### Icon theme is not applied
 

@@ -2,18 +2,12 @@
 
 [OpenSSL](http://www.openssl.org) is an open-source implementation of the SSL and TLS protocols, dual-licensed under the OpenSSL (Apache License 1.0) and the SSLeay (4-clause BSD) licenses. It is supported on a variety of platforms, including BSD, Linux, OpenVMS, Solaris and Windows. It is designed to be as flexible as possible, and is free to use for both personal and commercial uses. It is based on the earlier SSLeay library. Version 1.0.0 of OpenSSL was released on March 29, 2010.
 
+[openssl](https://www.archlinux.org/packages/?name=openssl) is installed by default on Arch Linux.
+
 ## Contents
 
 *   [1 SSL introduction](#SSL_introduction)
-    *   [1.1 Certificate authority (CA)](#Certificate_authority_.28CA.29)
-        *   [1.1.1 CA private key](#CA_private_key)
-        *   [1.1.2 CA certificate and public key](#CA_certificate_and_public_key)
-    *   [1.2 End-users](#End-users)
-        *   [1.2.1 End-user generated key](#End-user_generated_key)
-        *   [1.2.2 Certificate requests](#Certificate_requests)
-        *   [1.2.3 End-user certificate](#End-user_certificate)
-        *   [1.2.4 Certificate revocation list (CRL)](#Certificate_revocation_list_.28CRL.29)
-*   [2 Configuring](#Configuring)
+*   [2 Configuration](#Configuration)
     *   [2.1 Global variables](#Global_variables)
     *   [2.2 ca section](#ca_section)
     *   [2.3 req section](#req_section)
@@ -21,7 +15,7 @@
         *   [2.3.2 End-user req settings](#End-user_req_settings)
     *   [2.4 GOST engine support](#GOST_engine_support)
 *   [3 Generating keys](#Generating_keys)
-*   [4 Making requests](#Making_requests)
+*   [4 Creating certificate signing requests](#Creating_certificate_signing_requests)
 *   [5 Signing certificates](#Signing_certificates)
     *   [5.1 Self-signed certificate](#Self-signed_certificate)
     *   [5.2 Certificate authority](#Certificate_authority)
@@ -36,41 +30,41 @@ In order to focus on setting up a SSL/TLS solution, rather than explaining the b
 
 Consult both [Wikipedia:Certificate authority](https://en.wikipedia.org/wiki/Certificate_authority "wikipedia:Certificate authority") and [Wikipedia:Public key infrastructure](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") for more information.
 
-### Certificate authority (CA)
+	Certificate authority (CA)
 
-Certificate authorities return certificates from end-user requests. In order to do this, the returned end-user certificate is signed with the CA private key and CA certificate, which in turn contains the CA public key. CA also distribute certificate revocation lists (CRL) which tell the end-user what certificates are no longer valid, and when the next CRL is due.
+	Certificate authorities return certificates from end-user requests. In order to do this, the returned end-user certificate is signed with the CA private key and CA certificate, which in turn contains the CA public key. CA also distribute certificate revocation lists (CRL) which tell the end-user what certificates are no longer valid, and when the next CRL is due.
 
-#### CA private key
+	CA private key
 
-The CA private key is the crucial part of the trifecta. Exposing it would defeat the purpose of designating a central authority that validates and revokes permissions, and at the same time, it is the signed counter part to the CA public key used to certify against the CA certificate. An exposed CA private key could allow an attacker to replicate the CA certificate since the CA private key signature is embedded in the CA certificate itself.
+	The CA private key is the crucial part of the trifecta. Exposing it would defeat the purpose of designating a central authority that validates and revokes permissions, and at the same time, it is the signed counter part to the CA public key used to certify against the CA certificate. An exposed CA private key could allow an attacker to replicate the CA certificate since the CA private key signature is embedded in the CA certificate itself.
 
-#### CA certificate and public key
+	CA certificate and public key
 
-These are distributed in a single file to all end-users. They are used to certify other end-user certificates that claimed to be signed by the matching CA, such as mail servers or websites.
+	These are distributed in a single file to all end-users. They are used to certify other end-user certificates that claimed to be signed by the matching CA, such as mail servers or websites.
 
-### End-users
+	End-users
 
-End-users submit certificate requests to the CA which contain a distinguished name (DN). Normally, CA do not allow more than one valid certificate with the same DN without revoking the previous one. End-user certificates may be revoked if they are not renewed when due, among other reasons.
+	End-users submit certificate requests to the CA which contain a distinguished name (DN). Normally, CA do not allow more than one valid certificate with the same DN without revoking the previous one. End-user certificates may be revoked if they are not renewed when due, among other reasons.
 
-#### End-user generated key
+	End-user generated key
 
-End-users generate keys in order to sign certificate requests that are submitted to the CA. As with the CA private key, an exposed user-key could facilitate impersonating the user to the point where an attacker could submit a request under the user's name, resulting in the CA revoking the former, legitimate, user certificate.
+	End-users generate keys in order to sign certificate requests that are submitted to the CA. As with the CA private key, an exposed user-key could facilitate impersonating the user to the point where an attacker could submit a request under the user's name, resulting in the CA revoking the former, legitimate, user certificate.
 
-#### Certificate requests
+	Certificate requests
 
-These contain the user's DN and public key. As their name implies, they fully represent the initial part of the process of acquiring certification from a CA.
+	These contain the user's DN and public key. As their name implies, they fully represent the initial part of the process of acquiring certification from a CA.
 
-#### End-user certificate
+	End-user certificate
 
-The main distinction between an end-user certificate and CA certificate is that end-user ones cannot sign certificates themselves; they merely provide means of identification in exchanges of information.
+	The main distinction between an end-user certificate and CA certificate is that end-user ones cannot sign certificates themselves; they merely provide means of identification in exchanges of information.
 
-#### Certificate revocation list (CRL)
+	Certificate revocation list (CRL)
 
-CRLs are also signed with the CA key, but they only dictate information regarding end-user certificates. Usually, a 30 day span is given between new CRL submissions.
+	CRLs are also signed with the CA key, but they only dictate information regarding end-user certificates. Usually, a 30 day span is given between new CRL submissions.
 
-## Configuring
+## Configuration
 
-The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This is not remedied by the fact that there is no *include* directive to split configuration into a modal setup. Nevertheless, this section covers the essential settings.
+The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This section covers the essential settings.
 
 Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see [config(5ssl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/config.5ssl). In some operating systems, this [man page](/index.php/Man_page "Man page") is named config(5) or openssl-config(5). Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
 
@@ -248,6 +242,8 @@ The official [README.gost](http://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/c
 
 ## Generating keys
 
+**Warning:** The [openssl](https://www.archlinux.org/packages/?name=openssl) package doesn't properly safeguard the `/etc/ssl/private/` directory like most other distributions do, see [FS#43059](https://bugs.archlinux.org/task/43059).
+
 Before generating the key, make a secure directory to host it:
 
 ```
@@ -284,9 +280,9 @@ $ openssl genpkey -aes-256-cbc -algorithm RSA -out private/key.pem -pkeyopt rsa_
 
 ```
 
-## Making requests
+## Creating certificate signing requests
 
-To obtain a certificate from a CA, whether a public one such as [CAcert.org](http://www.cacert.org) or a locally managed solution, a request file must be submitted which is known as a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") or CSR.
+To obtain a certificate from a CA, whether a public one such as [CAcert.org](http://www.cacert.org) ([ca-certificates-cacert](https://www.archlinux.org/packages/?name=ca-certificates-cacert)) or a locally managed solution, a request file must be submitted which is known as a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") or CSR.
 
 Make a new request and sign it with a previously [generated key](#Generating_keys):
 
@@ -323,7 +319,7 @@ $ openssl req -nodes -newkey rsa:2048 -keyout newkey.pem -x509 -days 3650 -out s
 
 The method shown in this section is mostly meant to show how signing works; it is not suited for large deployments that need to automate signing a large number of certificates. Consider installing an SSL server for that purpose.
 
-Before using the Makefile, make a configuration file according to [#Configuring](#Configuring). Be sure to follow instructions relevant to CA administration; not request generation.
+Before using the Makefile, make a configuration file according to [#Configuration](#Configuration). Be sure to follow instructions relevant to CA administration; not request generation.
 
 #### Makefile
 

@@ -1,8 +1,6 @@
-Sendmail is the classic SMTP server from the unix world. Arch Linux provides the alternative [Postfix](/index.php/Postfix "Postfix") in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Sendmail](https://en.wikipedia.org/wiki/Sendmail "wikipedia:Sendmail") is the classic SMTP server from the Unix world.
 
 The goal of this article is to setup Sendmail for local user accounts, without using mysql or other database, and allowing also the creation of *mail-only accounts*.
-
-This article only explains the required steps configuring Sendmail; after that, you probably want to add IMAP and POP3 access, so you could follow the [Dovecot](/index.php/Dovecot "Dovecot") article.
 
 ## Contents
 

@@ -10,7 +10,7 @@ Related articles
 *   [fstab](/index.php/Fstab "Fstab")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
-To run Arch Linux various software is run which is called "booting". When switching on hardware its firmware is run. It executes a boot loader which then executes the linux kernel. The kernel starts an init process which runs userspace programs depending on how the system is configured. Two main types of firmware exist, [Unified Extensible Firmware Interface (UEFI)](/index.php/UEFI "UEFI") and [Basic Input/Output Systeme (BIOS)](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS").
+To run Arch Linux various software is run which is called "booting". When switching on hardware its firmware is run. It executes a boot loader which then executes the linux kernel. The kernel starts an init process which runs userspace programs depending on how the system is configured. Two main types of firmware exist, [Unified Extensible Firmware Interface (UEFI)](/index.php/UEFI "UEFI") and [Basic Input/Output System (BIOS)](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS").
 
 ## Contents
 

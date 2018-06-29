@@ -51,6 +51,8 @@ You may find hints for troubleshooting in the [official documentation (Dutch)](h
 
 Install [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) and [qdigidoc4](https://aur.archlinux.org/packages/qdigidoc4/) packages, with dependencies on [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/). DigiDoc4 contains merged features of older DigiDoc3 and ID-Card Utility. It can be started from your graphical desktop menu by searching for DigiDoc4 Client or from commandline with <tt>qdigidoc4</tt>.
 
+Once DigiDoc is installed, it is necessary to enable the service <tt>pcscd</tt>.
+
 DigiDoc4 has [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") right click menu integration. Install [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus) and restart Gnome Files using command <tt>pkill nautilus</tt>.
 
 In case of bugs in DigiDoc4 you can install the older DigiDoc3 and ID-Card Utility programs using AUR packages [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/).

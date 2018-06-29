@@ -79,4 +79,4 @@ For systemd service configuration, see [OpenVPN#systemd service configuration](/
 
 ## Use ProtonVPN-cli
 
-ProtonVPN supplies an utility to access the VPN. Details can be found on [their website](https://protonvpn.com/support/linux-vpn-tool/) and the GitHub repository can be found [here](https://github.com/ProtonVPN/protonvpn-cli). This package can be installed directly from [AUR](https://aur.archlinux.org/packages/protonvpn-cli/).
+ProtonVPN supplies a utility to access the VPN. Details can be found on [their website](https://protonvpn.com/support/linux-vpn-tool/) and the GitHub repository can be found [here](https://github.com/ProtonVPN/protonvpn-cli). This package can be installed directly from [AUR](https://aur.archlinux.org/packages/protonvpn-cli/).

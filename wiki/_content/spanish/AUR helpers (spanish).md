@@ -24,14 +24,14 @@ Los ayudantes de AUR están creados para automatizar ciertas tareas para el [Arc
 Las columnas tienen el siguiente significado:
 
 *   *Seguro* : no [Recarga](https://wiki.archlinux.org/index.php/Help:Reading_(Espa%C3%B1ol)#Recarga) el PKGBUILD de forma predeterminada; o bien, alerta al usuario y le ofrece la oportunidad de inspeccionar el PKGBUILD manualmente antes de que se obtenga. Se sabe que algunos ayudantes crean PKGBUILDs antes de que el usuario pueda inspeccionarlos, **permitiendo que se ejecute código malicioso**. *Opcional* significa que hay un indicador de línea de comandos o una opción de configuración para evitar el abastecimiento automático antes de la visualización.
-*   *Compilación limpia* : no exporta nuevas variables que pueden evitar un proceso de compilación con exito.
+*   *Compilación limpia* : no exporta nuevas variables que pueden impedir un proceso de compilación con exito.
 *   *Pacman nativo*: cuando se utiliza como sustituto de [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) como por ejemplo `pacman -Syu`, los siguientes son obedecidos *por defecto* :[[2]](https://wiki.archlinux.org/index.php?title=Talk:AUR_helpers&oldid=515160#Add_.22pacman_wrap.22_column)
 
 	-no separar comandos, por ejemplo `pacman -Syu` no se divide en `pacman -Sy` y `pacman -S *packages*`;
 
 	- use *pacman* directamente en lugar de la manipulación manual de la base de datos o el uso de [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3).
 
-	Además,potencialmente [Evite ciertos comandos de pacman](/index.php/System_maintenance_(Espa%C3%B1ol)#Evite_ciertos_comandos_de_pacman "System maintenance (Español)") como `pacman -Ud`, `pacman -Rdd`, `pacman --ask` o `pacman --force` **no** se utilizan.
+	Además [Evite ciertos comandos de pacman](/index.php/System_maintenance_(Espa%C3%B1ol)#Evite_ciertos_comandos_de_pacman "System maintenance (Español)") como `pacman -Ud`, `pacman -Rdd`, `pacman --ask` o `pacman --force` **no** se utilizan.
 
 *   *Analizador fiable*: capacitado para manejar paquetes complejos utilizando los metadatos proporcionados (RPC/.SRCINFO) en vez de PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), como [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Solucionador fiable*:capacitado para resolver correctamente y construir cadenas de dependencia complejas, como [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
@@ -53,7 +53,7 @@ Las columnas tienen el siguiente significado:
 
 	Un asterisco denota funcionalidad habilitada específicamente por el usuario.
 
-*   *Finalización de shell*: [tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") está disponible para los [shells](/index.php/Shell "Shell") listados.
+*   *Completado de shell*: [tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") está disponible para los [shells](/index.php/Shell "Shell") listados.
 
 **Nota:**
 
@@ -62,7 +62,7 @@ Las columnas tienen el siguiente significado:
 
 ### Activo
 
-| Nombre | Escrito en | Seguro | Construcción limpia | Nativo de pacman | Analizador fiable | Solucionador fiable | Paquetes divididos | Clon de Git | Vista de diferencias | Interacción por lotes | Finalización de shell | Especificación |
+| Nombre | Escrito en | Seguro | Compilación limpia | Nativo de pacman | Analizador fiable | Solucionador fiable | Paquetes divididos | Clonado en Git | Vista de diferencias | Interacción por lotes | Completado de shell | Especificación |
 | [aurman](https://aur.archlinux.org/packages/aurman/) | Python | Si | Si | Si | Si | [Si](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Si | Si | Si | 1, [2*, 3*](https://github.com/polygamma/aurman#question-5) | bash, fish | obtiene claves pgp, ordena por popularidad |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Si | Si | N/A | Si | Si | Si | Si | Si | 1 | zsh | [vifm](/index.php/Vifm "Vifm"), [Repositorio local personalizado](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol)#Repositorio_local_personalizado), [Package signing](https://wiki.archlinux.org/index.php/Pacman/Package_signing_(Espa%C3%B1ol)), soporta [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") , ordena por votos / popularidad |
 | [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Si | [Si](https://github.com/kitsunyan/pakku/commit/864cc0373fd6095295f68cc44d1657bd17269732) | [Parcial](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | Si | Si | Si | Si | [Si](https://github.com/kitsunyan/pakku/commit/396e9f44c4f5a79c7b9238835599387f6ff418fe) | 1 | bash, zsh | soporta [ABS](https://wiki.archlinux.org/index.php/Arch_Build_System_(Espa%C3%B1ol)) , comentarios AUR, obtiene claves PGP |
@@ -76,6 +76,14 @@ Las columnas tienen el siguiente significado:
 | [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | Opcional | Si | N/A | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | No | [No](https://github.com/pbrisbin/aurget/issues/41) | - | bash, zsh | ordenar por votos |
 
 ### Sólo búsqueda
+
+| Nombre | Escrito en | Seguro | Analizador fiable | Solucionador fiable | Clonado en Git | Completado de shell | Especificación |
+| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Si | Si | N/A | Si | - | - |
+| [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Si | Si | N/A | Opcional | bash | - |
+| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Si | Si | Si | No | - | muestra ordenes de compilación |
+| [cower](https://aur.archlinux.org/packages/cower/) | C | Si | Si | N/A | No | bash/zsh | soporta regex , ordenada por votos / popularidad |
+| [package-query](https://aur.archlinux.org/packages/package-query/) | C | Si | No [[3]](https://github.com/archlinuxfr/package-query/issues/135) | N/A | N/A | - | - |
+| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Si | Si [[4]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | No | zsh | soporta repositorio local |
 
 ### Descontinuado o problemático
 

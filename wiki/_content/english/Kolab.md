@@ -1,3 +1,8 @@
+Related articles
+
+*   [Citadel groupware](/index.php/Citadel_groupware "Citadel groupware")
+*   [Open-xchange](/index.php/Open-xchange "Open-xchange")
+
 [Kolab](http://kolab.org) is an unified communication and collaboration system, composed of a server-side daemon which offers storage and synchronization capabilities for contact, calendar, mail and file data. Clients can use several well defined formats like vCard, iCal, XML, IMAP and LDAP to communicate with the Kolab server.
 
 ## Contents

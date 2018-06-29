@@ -1,3 +1,7 @@
+Related articles
+
+*   [Archiso_offline](/index.php/Archiso_offline "Archiso offline")
+
 ## Contents
 
 *   [1 Normal Method: Pacman](#Normal_Method:_Pacman)

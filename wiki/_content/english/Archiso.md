@@ -35,6 +35,7 @@ Related articles
 *   [6 See also](#See_also)
     *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
     *   [6.2 Example customization template](#Example_customization_template)
+    *   [6.3 Creating a offline installation ISO](#Creating_a_offline_installation_ISO)
 
 ## Setup
 
@@ -398,3 +399,7 @@ If using a display manager like GDM, you may want to change the systemd default 
 ### Example customization template
 
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://easy.open.and.free.fr/didjix/)
+
+### Creating a offline installation ISO
+
+*   [Archiso Offline](https://wiki.archlinux.org/index.php/Archiso_offline)

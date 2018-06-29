@@ -1,3 +1,5 @@
+**Note:** DansGuardian is no longer maintained. An actively developed fork is [e2guardian](https://aur.archlinux.org/packages/e2guardian/).
+
 From the project [home page](http://dansguardian.org):
 
 	DansGuardian is an award winning Open Source web content filter which currently runs on Linux, FreeBSD, OpenBSD, NetBSD, Mac OS X, HP-UX, and Solaris. It filters the actual content of pages based on many methods including phrase matching, PICS filtering and URL filtering. It does not purely filter based on a banned list of sites like lesser totally commercial filters.

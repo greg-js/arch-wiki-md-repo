@@ -462,7 +462,7 @@ To enable it, add the following to your `~/rtorrent.rc`:
  `~/rtorrent.rc` 
 ```
   # Preallocate files; reduces defragmentation on filesystems.
-  system.file_allocate.set = yes
+  system.file.allocate = 1
 
 ```
 

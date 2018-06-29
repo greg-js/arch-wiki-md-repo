@@ -55,6 +55,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.18 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
     *   [6.19 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
     *   [6.20 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
+    *   [6.21 Optirun works but primusrun segfaults](#Optirun_works_but_primusrun_segfaults)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -257,6 +258,8 @@ The default behavior of bbswitch is to leave the card power state unchanged. `bu
 Set `load_state` and `unload_state` module options according to your needs (see [bbswitch documentation](https://github.com/Bumblebee-Project/bbswitch)).
 
  `/etc/modprobe.d/bbswitch.conf`  `options bbswitch load_state=0 unload_state=1` 
+
+To run bbswitch without bumblebeed on system startup, do not forget to add `bbswitch` to `/etc/modules-load.d`.
 
 #### Enable NVIDIA card during shutdown
 
@@ -791,6 +794,69 @@ If Bumblebee starts/works in a random manner, check that you have set your [Netw
 ### Discrete card always on and nvidia driver cannot be unloaded
 
 Make sure `nvidia-persistenced.service` is disabled and not currently active. It is intended to keep the `nvidia` driver running at all times [[5]](https://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/README/nvidia-persistenced.html), which prevents the card being turned off.
+
+### Optirun works but primusrun segfaults
+
+If `primusrun` segaults on startup it could be a problem with [mesa](https://www.archlinux.org/packages/?name=mesa) 18.1.X.
+
+Check and compare the systemlog to the example to make sure this is the case.
+
+ `journalctl -b0` 
+```
+Jun 28 18:00:19 archlinux systemd-coredump[10986]: Process 10962 (glxspheres64) of user 1000 dumped core.
+
+                                                   Stack trace of thread 10982:
+                                                   #0  0x00007f23fc934081 n/a (i965_dri.so)
+                                                   #1  0x00007f23fcb41c5d n/a (i965_dri.so)
+                                                   #2  0x00007f2403917425 n/a (libGL.so.1)
+                                                   #3  0x00007f24029ca075 start_thread (libpthread.so.0)
+                                                   #4  0x00007f2402cd953f __clone (libc.so.6)
+
+                                                   Stack trace of thread 10962:
+                                                   #0  0x00007f24029d2856 do_futex_wait.constprop.1 (libpthread.so.0)
+                                                   #1  0x00007f24029d2958 __new_sem_wait_slow.constprop.0 (libpthread.so.0)
+                                                   #2  0x00007f24039184ac glXSwapBuffers (libGL.so.1)
+                                                   #3  0x000055d84991d302 display (glxspheres64)
+                                                   #4  0x000055d84991dbba eventLoop (glxspheres64)
+                                                   #5  0x000055d84991b566 main (glxspheres64)
+                                                   #6  0x00007f2402c0406b __libc_start_main (libc.so.6)
+                                                   #7  0x000055d84991b7ea _start (glxspheres64)
+
+                                                   Stack trace of thread 10981:
+                                                   #0  0x00007f24029cfffc pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0)
+                                                   #1  0x00007f23fc9b2124 n/a (i965_dri.so)
+                                                   #2  0x00007f23fc9b1e18 n/a (i965_dri.so)
+                                                   #3  0x00007f24029ca075 start_thread (libpthread.so.0)
+                                                   #4  0x00007f2402cd953f __clone (libc.so.6)
+
+                                                   Stack trace of thread 10983:
+                                                   #0  0x00007f24029d2856 do_futex_wait.constprop.1 (libpthread.so.0)
+                                                   #1  0x00007f24029d2958 __new_sem_wait_slow.constprop.0 (libpthread.so.0)
+                                                   #2  0x00007f2403918a7c n/a (libGL.so.1)
+                                                   #3  0x00007f24029ca075 start_thread (libpthread.so.0)
+                                                   #4  0x00007f2402cd953f __clone (libc.so.6)
+
+                                                   Stack trace of thread 10984:
+                                                   #0  0x00007f24029cfffc pthread_cond_wait@@GLIBC_2.3.2 (libpthread.so.0)
+                                                   #1  0x00007f23fc9b2124 n/a (i965_dri.so)
+                                                   #2  0x00007f23fc9b1e18 n/a (i965_dri.so)
+                                                   #3  0x00007f24029ca075 start_thread (libpthread.so.0)
+                                                   #4  0x00007f2402cd953f __clone (libc.so.6)
+
+```
+
+You can also check your installed [mesa](https://www.archlinux.org/packages/?name=mesa) version with `pacman -Qi mesa`
+
+If this is the case, use the [Arch Linux Archive](https://archive.archlinux.org/) to install mesa 18.0.4
+
+```
+$ pacman -U [https://archive.archlinux.org/packages/m/mesa/mesa-18.0.4-1-x86_64.pkg.tar.xz](https://archive.archlinux.org/packages/m/mesa/mesa-18.0.4-1-x86_64.pkg.tar.xz)
+
+```
+
+In order to automatically skip mesa when doing a system upgrade with `pacman -Syu` add the following line to `/etc/pacman.conf` in the `[options]` section
+
+ `/etc/pacman.conf`  `IgnorePkg = mesa` 
 
 ## See also
 

@@ -48,8 +48,8 @@ To **execute** programs that use OpenCL, a compatible hardware runtime needs to 
 
 #### Intel
 
-*   [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/) or [compute-runtime-bin](https://aur.archlinux.org/packages/compute-runtime-bin/): a.k.a the Neo OpenCL runtime, the open-source implementation for Gen8 (Broadwell) and beyond.
-*   [beignet](https://www.archlinux.org/packages/?name=beignet): the open-source implementation for Intel IvyBridge+ iGPUs, deprecated by Intel.
+*   [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/) or [compute-runtime-bin](https://aur.archlinux.org/packages/compute-runtime-bin/): a.k.a. the Neo OpenCL runtime, the open-source implementation for Gen8 (Broadwell) and beyond.
+*   [beignet](https://www.archlinux.org/packages/?name=beignet): the open-source implementation for Gen7 (Ivy Bridge) and beyond, deprecated by Intel in favor of NEO OpenCL driver, remains recommended solution for legacy HW platforms (e.g. Ivy Bridge, Sandy Bridge, Haswell).
 *   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): the implementation for Intel Core and Xeon processors. It also supports non-Intel CPUs.
 
 #### Others

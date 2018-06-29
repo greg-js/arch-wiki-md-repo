@@ -223,7 +223,7 @@ To change the pressure at which the touchpad is registered, follow [this article
 
 To disable the touchpad, first get its name with `xinput list` and then disable it with `xinput disable *name*`.
 
-**Tip:**
+**Note:**
 
 *   It is more robust to disable it by name than by ID number. The devices may be renumbered.
 *   It will be necessary to quote the name if it contains spaces.

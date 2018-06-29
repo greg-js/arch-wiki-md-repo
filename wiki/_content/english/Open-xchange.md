@@ -1,3 +1,8 @@
+Related articles
+
+*   [Citadel groupware](/index.php/Citadel_groupware "Citadel groupware")
+*   [Kolab](/index.php/Kolab "Kolab")
+
 [Open-Xchange](http://ox.io) is a groupware solution providing mail facilities, calendaring, shared contacts and Google-Docs-like text editing.
 
 ## Contents

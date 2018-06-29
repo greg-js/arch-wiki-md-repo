@@ -1,4 +1,4 @@
-**Note:** This page refers to the 9560 revision of the XPS 15\. Most of it also applies to the Precision 5520
+**Note:** This page refers to the 9560 revision of the XPS 15\. Most of it also applies to the Precision 5520 and the XPS 15 9570
 
 | **Device/Functionality** | **Status** |
 | [Suspend](#Suspend_and_Hibernate) | Buggy |

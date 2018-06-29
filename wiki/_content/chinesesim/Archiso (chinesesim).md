@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=527132)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-27，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=527427)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -40,10 +40,7 @@
 
 ## 安装和配置
 
-**注意:**
-
-*   您必须在 x86_64 上运行 Archiso。 [[1]](https://projects.archlinux.org/archiso.git/tree/docs/README.build#n67)
-*   以下操作请在ROOT权限下使用，在错误的权限下操作会造成一下问题。
+**注意:** 以下操作请在ROOT权限下使用，在错误的权限下操作会造成问题。
 
 当你开始之前, [安装](/index.php/Install "Install") [archiso](https://www.archlinux.org/packages/?name=archiso) 或 [archiso-git](https://aur.archlinux.org/packages/archiso-git/)。
 
@@ -309,7 +306,7 @@ ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 ```
 
-此外，需要编辑脚本 `airootfs/root/customize_airootfs.sh`，并在 `useradd` 行的开头添加 `id` 命令，如下所示。否则，重建将在此处停止，因为要添加的用户已经存在 [[2]](https://bugs.archlinux.org/task/41865)。
+此外，需要编辑脚本 `airootfs/root/customize_airootfs.sh`，并在 `useradd` 行的开头添加 `id` 命令，如下所示。否则，重建将在此处停止，因为要添加的用户已经存在 [[1]](https://bugs.archlinux.org/task/41865)。
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch

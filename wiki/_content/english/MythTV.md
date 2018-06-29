@@ -5,25 +5,24 @@
 *   [1 Structure](#Structure)
     *   [1.1 mythbackend](#mythbackend)
     *   [1.2 mythfrontend](#mythfrontend)
-*   [2 Requirements](#Requirements)
-*   [3 Getting Started](#Getting_Started)
-*   [4 Make a "mythtv" User](#Make_a_.22mythtv.22_User)
-*   [5 Installing MythTV](#Installing_MythTV)
-    *   [5.1 Backend setup](#Backend_setup)
-        *   [5.1.1 Setting up the database](#Setting_up_the_database)
-        *   [5.1.2 Setting up the master backend](#Setting_up_the_master_backend)
-        *   [5.1.3 Enable the mythbackend daemon](#Enable_the_mythbackend_daemon)
-    *   [5.2 Troubleshooting](#Troubleshooting)
-        *   [5.2.1 PVR150](#PVR150)
-        *   [5.2.2 Opening DVB frontend device failed](#Opening_DVB_frontend_device_failed)
-*   [6 Frontend setup](#Frontend_setup)
-*   [7 MythTV Plugins](#MythTV_Plugins)
-    *   [7.1 MythWeb](#MythWeb)
-*   [8 Hints to a Happy Myth System](#Hints_to_a_Happy_Myth_System)
-    *   [8.1 Using GDM to autologin your Mythfrontend](#Using_GDM_to_autologin_your_Mythfrontend)
-    *   [8.2 Using XDM to Automically Login to your MythFrontend](#Using_XDM_to_Automically_Login_to_your_MythFrontend)
-    *   [8.3 Optmize your system](#Optmize_your_system)
-*   [9 References](#References)
+*   [2 Hardware requirements](#Hardware_requirements)
+*   [3 Software requirements](#Software_requirements)
+*   [4 Installation](#Installation)
+    *   [4.1 Backend setup](#Backend_setup)
+        *   [4.1.1 Setting up the database](#Setting_up_the_database)
+        *   [4.1.2 Setting up the master backend](#Setting_up_the_master_backend)
+        *   [4.1.3 Enable the mythbackend daemon](#Enable_the_mythbackend_daemon)
+    *   [4.2 Troubleshooting](#Troubleshooting)
+        *   [4.2.1 PVR150](#PVR150)
+        *   [4.2.2 Opening DVB frontend device failed](#Opening_DVB_frontend_device_failed)
+*   [5 Frontend setup](#Frontend_setup)
+*   [6 MythTV plugins](#MythTV_plugins)
+    *   [6.1 MythWeb](#MythWeb)
+*   [7 Hints to a Happy Myth System](#Hints_to_a_Happy_Myth_System)
+    *   [7.1 Using GDM to autologin your Mythfrontend](#Using_GDM_to_autologin_your_Mythfrontend)
+    *   [7.2 Using XDM to automically login to your MythFrontend](#Using_XDM_to_automically_login_to_your_MythFrontend)
+    *   [7.3 Optmize your system](#Optmize_your_system)
+*   [8 References](#References)
 
 ## Structure
 
@@ -44,32 +43,19 @@ The MythTV system is split into a backend and a frontend. Each component has its
 
 The frontend and backend may be on separate computers on a network, and there may also be multiple frontends. This architecture allows for a central media distribution system that can reach anywhere a network can. This is a remarkably flexible system, and it even allows very low power machines to act as perfectly usable frontends.
 
-## Requirements
+## Hardware requirements
 
 All systems are going to need a tuner card. The Hauppauge PVR series of cards (150, 250, 350, and 500) are very popular for use with MythTV due to fairly decent Linux support and low CPU usage. Other cards, like those based on the BT878 chipset, are also used. Unlike the PVR series, BT878 based cards require significant amounts of CPU power to save the video, as these cards output raw frames and not compressed streams.
 
-## Getting Started
-
-In order to install MythTV on your system(s), you must have a working Linux installation. Since this is the Arch Linux website, this article will be geared towards Arch. A simple base system [Installation](/index.php/Installation "Installation") with no extras is a suggested starting point.
+## Software requirements
 
 For the backend, it is also good to have [LAMP](/index.php/LAMP "LAMP") working properly so that anybody can use a web browser to schedule programming through MythWeb. While it is not necessary, it is a very handy feature.
 
 A working [Xorg](/index.php/Xorg "Xorg") (graphical) environment is necessary. For setting MythTV up, a remote access via X11-forwarding mechanism is sufficient.
 
-## Make a "mythtv" User
+## Installation
 
-**Note:** mythtv package installation creates mythtv user.
-
-If the purpose of the box is a stand-alone system, consider making a dedicated user for this purpose. For the rest of the guide, this username is "mythtv."
-
-```
-# passwd mythtv <<set the password of your choosing>>
-
-```
-
-## Installing MythTV
-
-[Install](/index.php/Install "Install") the [mythtv](https://aur.archlinux.org/packages/mythtv/) package and [any desired plugins](https://www.archlinux.org/packages/?q=mythplugins-).
+[Install](/index.php/Install "Install") the [mythtv](https://aur.archlinux.org/packages/mythtv/) package and [any desired plugins](https://aur.archlinux.org/packages/?K=mythplugins-). The package creates the *mythtv* user.
 
 At this point a generic MythTV installation is present that must be refined into a backend, a frontend, or both.
 
@@ -108,9 +94,7 @@ Update your database
 
 ```
 
-**Note:** With the 0.26 release of mythtv, time zone tables are required to be in MySQL!
-
-To add them, simply execute the following:
+MythTV requires time zone tables are required to be in MySQL, add them:
 
 ```
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p<yourpassword> mysql
@@ -149,7 +133,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 Load up your WM (lxde is a good choice for light-weight builds, but anything will work.)
 
-**Note:** Users wishing to just demo the software and those without capture card/hardware may follow [this](http://motorscript.com/mythtv-without-tv-tuner-card) guide.
+**Note:** Users wishing to just demo the software and those without capture card/hardware may follow [this](https://motorscript.com/mythtv-without-tv-tuner-card) guide.
 
 Now run the mythtv-setup program
 
@@ -167,28 +151,37 @@ $ ssh -X user@backend '. /etc/profile.d/perlbin.sh && LANG=C mythtv-setup'
 
 *   **General menu**
 
-If this is your master backend, put its IP address in the first and fourth fields, identifying this computer as your master and giving its network IP address.
-On the next page, enter the paths where recordings and the live TV buffer will be stored. LVM or RAID solutions provide easily accessible large scale storage. But again, those are outside the scope of this article. Set the live TV buffer to a size you can handle and leave everything else alone.
-On the next page, set the settings to your locale. NTSC is mostly used in North America, and be sure to set whether using cable or broadcast.
-On the next two pages, leave everything as is unless you know for sure you want to change it. On the next page, if you have a fast backend that can handle recordings and flagging jobs simultaneously, it is recommended to set CPU usage to \"High\", maximum simultaneous jobs to 2, and to check the commercial flagging option.
-On the next page, set these options to taste. Automatic commercial flagging is highly recommended. Ignore the next page and finish.
+	If this is your master backend, put its IP address in the first and fourth fields, identifying this computer as your master and giving its network IP address.
+
+	On the next page, enter the paths where recordings and the live TV buffer will be stored. LVM or RAID solutions provide easily accessible large scale storage. But again, those are outside the scope of this article. Set the live TV buffer to a size you can handle and leave everything else alone.
+
+	On the next page, set the settings to your locale. NTSC is mostly used in North America, and be sure to set whether using cable or broadcast.
+
+	On the next two pages, leave everything as is unless you know for sure you want to change it.
+
+	On the next page, if you have a fast backend that can handle recordings and flagging jobs simultaneously, it is recommended to set CPU usage to "High", maximum simultaneous jobs to 2, and to check the commercial flagging option.
+
+	On the next page, set these options to taste. Automatic commercial flagging is highly recommended.
+
+	Ignore the next page and finish.
 
 *   **Capture card menu**
 
-Select your card type from the drop down list. Hauppauge PVR users will select the MPEG-2 encoder card option.
-Point mythtv-setup to the proper location, usually /dev/v4l/video0
+	Select your card type from the drop down list. Hauppauge PVR users will select the MPEG-2 encoder card option.
+
+	Point mythtv-setup to the proper location, usually `/dev/v4l/video0`
 
 *   **Video sources menu**
 
-This is where it gets important to have a source for TV listings. Schedules Direct users should create a new video source, name it, select the North America (Schedules Direct) option, and fill in their logon information. In order to verify that it is correct, go ahead and retrieve the listings.
+	This is where it gets important to have a source for TV listings. Schedules Direct users should create a new video source, name it, select the North America (Schedules Direct) option, and fill in their logon information. In order to verify that it is correct, go ahead and retrieve the listings.
 
 *   **Input connections menu**
 
-This menu is rather self-explanatory. All you need to do is pick an input on the capture card and tell myth which video source it connects to. Most users will select their tuner and leave all the other inputs alone. Satellite users will select a video input, and on the next page provide the command to change channels on their STB using an external channel change program. This is also outside the scope of this article.
+	This menu is rather self-explanatory. All you need to do is pick an input on the capture card and tell myth which video source it connects to. Most users will select their tuner and leave all the other inputs alone. Satellite users will select a video input, and on the next page provide the command to change channels on their STB using an external channel change program. This is also outside the scope of this article.
 
 *   **Channel editor menu**
 
-This menu is safe to ignore
+	This menu is safe to ignore
 
 *   Exit the program (Esc)
 
@@ -209,7 +202,7 @@ This should populate your mysql database with TV listings for the next two weeks
 
 #### PVR150
 
-If you cannot open /dev/video0 of your PVR150, install the firmware, located in the [ivtv-utils](https://aur.archlinux.org/packages/ivtv-utils/) package.
+If you cannot open `/dev/video0` of your PVR150, install the firmware, located in the [ivtv-utils](https://aur.archlinux.org/packages/ivtv-utils/) package.
 
 #### Opening DVB frontend device failed
 
@@ -255,7 +248,7 @@ Compared to the backend, getting a frontend running is trivially simple. The fro
 
 On the other hand, the frontend has more options than a luxury car. All of those are an article on their own. There are a few notable options that should be set to ensure a good working setup. If you do not have an interlaced monitor (and almost nobody does), you will need to deinterlace your television output. Go into the TV playback menu and select kernel deinterlacing or bob2x deinterlacing. Try both and see which you like better. Also, in the general settings page, it is good to set up your [Alsa setup] settings, but those vary so greatly it is not worth suggesting values here.
 
-## MythTV Plugins
+## MythTV plugins
 
 There are a number of plugins available for MythTV in the AUR. They range from RSS readers to DVD players. Take a look at them. Simply installing the package on the frontend computer should impart the intended functionality. There is rarely any additional setup, and when there is, the install file will mention it.
 
@@ -276,9 +269,7 @@ But not full articles (yet)
 
 ### Using GDM to autologin your Mythfrontend
 
-[Display manager](/index.php/Display_manager "Display manager")
-
-In your /etc/gdm/custom.conf add the following statements under the [daemon] heading:
+In `/etc/gdm/custom.conf`, add the following statements under the [daemon] heading:
 
 ```
 AutomaticLoginEnable=true
@@ -287,34 +278,44 @@ AutomaticLogin=mythtv (assuming your frontend user is mythtv)
 
 FYI - GDM will not autologin as root
 
-### Using XDM to Automically Login to your MythFrontend
+### Using XDM to automically login to your MythFrontend
 
 Find in your /etc/inittab file the following line:
 
- `id:3:initdefault:` 
+```
+id:3:initdefault:
+
+```
 
 Change to:
 
- `id:5:initdefault:` 
+```
+id:5:initdefault:
+
+```
 
 Then add the following below it (or anywhere in the file):
 
- `x:5:respawn:su - MYTHUSER -c startx` 
+```
+x:5:respawn:su - MYTHUSER -c startx
+
+```
+
 **Note:** Remember to change "MYTHUSER" to the username that you want to autologin under.
 
 If you'd like to start mythfrontend on booting into Xorg, edit (or create if none exists) your MYTHUSER's .xinitrc file and add the following line:
 
- `mythfrontend` 
+```
+mythfrontend
+
+```
 
 ### Optmize your system
 
-Be sure to have a look at MythTV's extensive wiki documentation on how to keep your data stores happy, as well as optimize your system in various other ways to get the most out of your Myth box.
-
-[MythTV Wiki: Optimizing Performance](http://www.mythtv.org/wiki/Optimizing_Performance)
+Be sure to have a look at [Optimizing Performance](https://www.mythtv.org/wiki/Optimizing_Performance) at the MythTV Wiki for how to keep your data stores happy, as well as optimize your system in various other ways to get the most out of your Myth box.
 
 ## References
 
-*   [http://www.mythtv.org](http://www.mythtv.org)
-*   [http://mythtv.info](http://mythtv.info)
-*   [http://wilsonet.com/mythtv/fcmyth.php](http://wilsonet.com/mythtv/fcmyth.php)
-*   [http://www.linhes.org](http://www.linhes.org) [A user friendly MythTV and Linux install that uses Arch Linux]
+*   [https://www.mythtv.org/](https://www.mythtv.org/)
+*   [https://www.mythtv.org/wiki/](https://www.mythtv.org/wiki/)
+*   [http://www.linhes.org](http://www.linhes.org) A user friendly MythTV and Linux install that uses Arch Linux

@@ -99,6 +99,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.10 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
     *   [6.11 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
     *   [6.12 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
+    *   [6.13 Discover does not show any applications](#Discover_does_not_show_any_applications)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -788,6 +789,10 @@ It is not recommended to turn off the [KWallet](/index.php/KWallet "KWallet") pa
 If you get a weird "q" symbols in programs such as vim[[8]](https://github.com/vim/vim/issues/2008) or neovim[[9]](https://github.com/neovim/neovim/issues/7002), it is because they use cursor shape changing escape sequences (DECSCUSR) which konsole does not support. See [KDE Bug 347323](https://bugs.kde.org/show_bug.cgi?id=347323).
 
 You will need to disable these escape sequences in the programs that use them. See [neovim FAQ](https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes) for a workaround for neovim.
+
+### Discover does not show any applications
+
+This can be solved by installing [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5).
 
 ## See also
 

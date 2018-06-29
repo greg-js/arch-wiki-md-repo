@@ -4,7 +4,7 @@ Related articles
 *   [Postfix](/index.php/Postfix "Postfix")
 *   [Exim](/index.php/Exim "Exim")
 
-This article explains how to install and configure a simple [OpenSMTPD](https://www.opensmtpd.org/) server.
+[OpenSMTPD](https://www.opensmtpd.org/) is a free SMTP server, developed as part of the OpenBSD project.
 
 ## Contents
 
@@ -25,7 +25,6 @@ This article explains how to install and configure a simple [OpenSMTPD](https://
     *   [3.2 Subsystem tracing](#Subsystem_tracing)
     *   [3.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
     *   [3.4 "Helo command rejected: need fully-qualified hostname"](#.22Helo_command_rejected:_need_fully-qualified_hostname.22)
-    *   [3.5 Resources](#Resources)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -250,19 +249,9 @@ dXNlcm5hbWUAdXNlcm5hbWUAcGFzc3dvcmQ=
 
 When sending email, if you get this kind of messages, set your FQDN in the file `/etc/smtpd/mailname`. Otherwise, the server name is derived from the local hostname returned by gethostname(3), either directly if it is a fully qualified domain name, or by retreiving the associated canonical name through getaddrinfo(3).
 
-### Resources
-
-There are also several handy web sites that can help you test DNS records, deliverability, and encryption support
-
-*   [MXToolBox](http://mxtoolbox.com/)
-*   [IsMyEmailWorking.com](http://ismyemailworking.com/)
-*   [MailTester](http://www.mail-tester.com/)
-*   [TLS tests and tools](https://checktls.com/)
-*   [STARTTLS.info](https://starttls.info/)
-*   [Pingability Quick DNS Check](https://pingability.com/zoneinfo.jsp)
-
 ## See also
 
+*   [Wikipedia:OpenSMTPD](https://en.wikipedia.org/wiki/OpenSMTPD "wikipedia:OpenSMTPD")
 *   OpenSMTPD pairs well with [Dovecot](/index.php/Dovecot "Dovecot"). Combine the two for a nice minimalist mailserver
 *   [OpenSMTPD project page](http://opensmtpd.org/)
 *   [Simple SMTP server with OpenSMTPD](https://coderwall.com/p/eejzja)

@@ -31,6 +31,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
         *   [5.1.2 Webkit2 greeter](#Webkit2_greeter)
         *   [5.1.3 Unity greeter](#Unity_greeter)
         *   [5.1.4 KDE greeter](#KDE_greeter)
+        *   [5.1.5 Slick Greeter](#Slick_Greeter)
     *   [5.2 Changing your avatar](#Changing_your_avatar)
     *   [5.3 Sources of Arch-centric 64x64 icons](#Sources_of_Arch-centric_64x64_icons)
     *   [5.4 Enabling autologin](#Enabling_autologin)
@@ -73,6 +74,7 @@ The official repositories contain the following greeters:
 
 Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 
+*   [lightdm-slick-greeter](https://aur.archlinux.org/packages/lightdm-slick-greeter/): A GTK+ Based greeter that is preferred over the [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) by distro creators
 *   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
@@ -215,6 +217,10 @@ Background=/usr/share/archlinux/wallpaper/archlinux-underground.jpg
 BackgroundKeepAspectRatio=true
 GreetMessage=Welcome to %hostname%
 ```
+
+#### Slick Greeter
+
+Use the [lightdm-settings](https://aur.archlinux.org/packages/lightdm-settings/) GUI
 
 ### Changing your avatar
 

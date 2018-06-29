@@ -3,7 +3,7 @@
 *   [Compiz (Русский)](/index.php/Compiz_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compiz (Русский)")
 *   [Compton (Русский)](/index.php/Compton_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compton (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"). Дата последней синхронизации: 9 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xcompmgr&diff=0&oldid=509577).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"). Дата последней синхронизации: 9 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xcompmgr&diff=0&oldid=527757).
 
 [Xcompmgr](http://cgit.freedesktop.org/xorg/app/xcompmgr/) - это простой [композитный менеджер окон](https://en.wikipedia.org/wiki/ru:%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80_%D0%BE%D0%BA%D0%BE%D0%BD "wikipedia:ru:Композитный менеджер окон"), умеющий рендерить тени, создавать примитивную прозрачность окон посредством **transset**. Разработан исключительно как доказательство концепции, Xcompmgr - легковесная альтернатива Compiz и ему подобных композитных менеджеров.
 
@@ -12,7 +12,6 @@
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Форки и обновленные версии](#.D0.A4.D0.BE.D1.80.D0.BA.D0.B8_.D0.B8_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B8)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.1 Прозрачность окон](#.D0.9F.D1.80.D0.BE.D0.B7.D1.80.D0.B0.D1.87.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.BE.D0.BA.D0.BE.D0.BD)
 *   [3 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
@@ -39,26 +38,18 @@ Section "Extensions"
 EndSection
 ```
 
-Xcompmgr может быть [установлен](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD "Установлен") пакетом [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). Для прозрачности [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [transset-df](https://www.archlinux.org/packages/?name=transset-df). Для примера смотрите [Xterm#Automatic transparency](/index.php/Xterm#Automatic_transparency "Xterm").
-
-### Форки и обновленные версии
-
-Существуют форки, в которые внесены различные исправления:
-
-*   **[Compton](/index.php/Compton_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compton (Русский)")** — Форк Xcompmgr, содержащий большинство предыдущих исправлений и многие другие.
-
-	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://www.archlinux.org/packages/?name=compton) [compton-git](https://aur.archlinux.org/packages/compton-git/)
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). Для прозрачности [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [transset-df](https://www.archlinux.org/packages/?name=transset-df). Для примера смотрите [Xterm#Automatic transparency](/index.php/Xterm#Automatic_transparency "Xterm").
 
 ## Настройка
 
-Для запуска `xcompmgr` выполните:
+Запуск `xcompmgr`:
 
 ```
 $ xcompmgr -c
 
 ```
 
-Чтобы запускать Xcompmgr в начале сессии, добавьте в [xprofile](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)"):
+Чтобы запускать `xcompmgr` при старте сессии, добавьте в [xprofile](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)"):
 
 ```
 xcompmgr -c &
@@ -72,7 +63,7 @@ xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
 
 ```
 
-Для получения полного списка опций выполните:
+Получение полного списка опций:
 
 ```
 $ xcompmgr --help
@@ -81,7 +72,7 @@ $ xcompmgr --help
 
 ### Прозрачность окон
 
-Хотя практическое применение ограничено из-за низкой производительности, `transset-df` может быть использована для установки прозрачности отдельных окон.
+Практическое применение ограничено из-за низкой производительности, но можно использовать `transset-df` для установки прозрачности отдельных окон.
 
 Чтобы установить прозрачность окна программы, убедитесь в том, что она запущена, затем выполните:
 
@@ -176,7 +167,7 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 ### Фон становится светло-серым после входа в систему (например, в Openbox)
 
-Эта ошибка исправляется [установкой](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) и настройки цвета фона посредством `hsetroot -solid "#000000"` (просто введите код цвета, который вы хотите вместо *#000000*) перед `xcompmgr`.
+Эта ошибка исправляется [установкой](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) и настройки цвета фона посредством `hsetroot -solid "#000000"` (просто введите код цвета, который вы хотите вместо *#000000*) перед `xcompmgr`. Если `xcompmgr` запускается до `exec` в `~/.xinitrc`, то вы можете заменить `xcompmgr &` на `(sleep 1 && xcompmgr) &`; это позволит `xcompmgr` запускаться после старта оконного менеджера.
 
 ### BadPicture request в awesome
 

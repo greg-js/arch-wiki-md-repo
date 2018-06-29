@@ -1186,7 +1186,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[TagSpaces](https://en.wikipedia.org/wiki/TagSpaces "wikipedia:TagSpaces")** — Offline personal data manager for managing of your local files. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://www.tagspaces.org/](https://www.tagspaces.org/) || [tagspaces](https://aur.archlinux.org/packages/tagspaces/)
+	[https://www.tagspaces.org/](https://www.tagspaces.org/) || [tagspaces](https://aur.archlinux.org/packages/tagspaces/) [tagspaces-bin](https://aur.archlinux.org/packages/tagspaces-bin/)
 
 *   **[TiddlyWiki](https://en.wikipedia.org/wiki/TiddlyWiki "wikipedia:TiddlyWiki")** — Unique non-linear notebook for capturing, organizing and sharing complex information.
 

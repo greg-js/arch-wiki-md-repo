@@ -14,16 +14,15 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
         *   [1.1.1 Redshift-GTK](#Redshift-GTK)
             *   [1.1.1.1 Alternatives](#Alternatives)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Autostart](#Autostart)
-    *   [2.2 Quick start](#Quick_start)
-    *   [2.3 Automatic location based on GPS](#Automatic_location_based_on_GPS)
-    *   [2.4 Manual setup](#Manual_setup)
+    *   [2.1 Quick start](#Quick_start)
+    *   [2.2 Autostart](#Autostart)
+    *   [2.3 Automatic location based on GeoClue2](#Automatic_location_based_on_GeoClue2)
+    *   [2.4 Automatic location based on GPS](#Automatic_location_based_on_GPS)
     *   [2.5 Use real screen brightness](#Use_real_screen_brightness)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
-    *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
-    *   [3.4 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
+    *   [3.3 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -42,24 +41,13 @@ Another GTK application is [redshiftgui-bin](https://aur.archlinux.org/packages/
 
 ## Configuration
 
-Redshift will at least need your location to start, meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually: For most places/cities an easy way is to look up the wikipedia page of that place and get the location from there (search the page for "coordinates").
+Redshift will at least need your location to start, meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually.
 
-### Autostart
+Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 
-There are several options to have redshift automatically started:
-
-*   By adding a shell script with the contents `redshift &> /dev/null &` in `/etc/X11/xinit/xinitrc.d/`, and then make it executable with `chmod +x script_name.sh`.
-*   By adding `pgrep redshift &> /dev/null || redshift &> /dev/null &` to `~/.xinitrc` if you are using `startx`
-*   By using the provided [systemd service unit files](/index.php/Systemd#Using_units "Systemd"). Be careful: the service can only be started in user mode, see [systemd/User#Basic setup](/index.php/Systemd/User#Basic_setup "Systemd/User"). Two service files are provided: `/usr/lib/systemd/user/redshift.service` and `/usr/lib/systemd/user/redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon. The `DISPLAY` environment variable needs to be configured. See [systemd/User#DISPLAY and XAUTHORITY](/index.php/Systemd/User#DISPLAY_and_XAUTHORITY "Systemd/User").
-*   By right-clicking the system tray icon when redshift-gtk or plasma5-applets-redshift-control is already launched and selecting 'Autostart'.
-
-**Note:** The redshift services files contains `Restart=always` so the service will restart infinitely (see [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5))
-
-*   By using your preferred window manager or desktop environment's autostart methods. For example in i3, the following line could be added to the config file: `exec --no-startup-id redshift-gtk`. On other desktop environments, [Desktop entries](/index.php/Desktop_entries "Desktop entries") inside `~/.config/autostart` can be used.
+**Note:** There seems to be a bug in Redshift that causes the transition option in the configuration file to not work as described: Instead of handling the transition between day and night it **only** changes the transition between application start-up and shutdown (and delay the latter as a consequence). See the [talk page](/index.php/Talk:Redshift#Day_and_night_transition "Talk:Redshift") and the [issue on the Redshift project page](https://github.com/jonls/redshift/issues/270) for more information.
 
 ### Quick start
-
-**Tip:** You can get the coordinates of a place with [GeoNames.org](http://www.geonames.org/).
 
 To just get it up and running with a basic setup, issue:
 
@@ -68,11 +56,52 @@ To just get it up and running with a basic setup, issue:
 
 ```
 
-where LAT is the latitude and LON is the longitude of your location.
+where *LAT* is the latitude and *LON* is the longitude of your location.
+
+**Tip:** You can get the coordinates of a place with [GeoNames.org](http://www.geonames.org/).
+
+To instantly adjusts the color temperature of your screen use:
+
+```
+$ redshift -O TEMP
+
+```
+
+where *TEMP* is the desired color temperature (between 1000 and 25000).
+
+### Autostart
+
+There are several options to have redshift automatically started:
+
+*   By using a [systemd](/index.php/Systemd "Systemd") [user unit](/index.php/Systemd#Using_units "Systemd"). Two services are provided: `redshift.service` or `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
+*   By adding a shell script with the contents `redshift &> /dev/null &` in `/etc/X11/xinit/xinitrc.d/`, and then make it executable with `chmod +x script_name.sh`.
+*   By adding `pgrep redshift &> /dev/null || redshift &> /dev/null &` to `~/.xinitrc` if you are using `startx`
+*   By right-clicking the system tray icon when Redshift-GTK or plasma5-applets-redshift-control is already launched and selecting 'Autostart'.
+*   By using your preferred window manager or desktop environment's autostart methods. For example in i3, the following line could be added to the config file: `exec --no-startup-id redshift-gtk`. On other desktop environments, [Desktop entries](/index.php/Desktop_entries "Desktop entries") inside `~/.config/autostart` can be used.
+
+**Note:** The Redshift services files contains `Restart=always` so the service will restart infinitely (see [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)).
+
+### Automatic location based on GeoClue2
+
+[Install](/index.php/Install "Install") [geoclue2](https://www.archlinux.org/packages/?name=geoclue2).
+
+In order to allow access Redshift to use GeoClue, add the following lines to `/etc/geoclue/geoclue.conf`:
+
+ `/etc/geoclue/geoclue.conf` 
+```
+[redshift]
+allowed=true
+system=false
+users=
+```
+
+[Restart](/index.php/Restart "Restart") `redshift.service` and/or any other Redshift instance to apply the chances.
+
+**Note:** If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in "Settings -> Privacy"
 
 ### Automatic location based on GPS
 
-You can also use [gpsd](https://www.archlinux.org/packages/?name=gpsd) to automatically determine your GPS location and use it as an input for Redshift. Create the following script and pass `$lat` and `$lon` to `redshift -l $lat;$lon`:
+You can also use [gpsd](https://www.archlinux.org/packages/?name=gpsd) to automatically determine your [GPS](/index.php/GPS "GPS") location and use it as an input for Redshift. Create the following script and pass `$lat` and `$lon` to `redshift -l $lat;$lon`:
 
 ```
 #!/bin/bash
@@ -89,12 +118,6 @@ echo "You are here: $lat, $lon at $alt"
 ```
 
 For more information, see [this](https://bbs.archlinux.org/viewtopic.php?pid=1389735#p1389735) forums thread.
-
-### Manual setup
-
-Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
-
-**Note:** There seems to be a bug in Redshift that causes the transition option in the configuration file to not work as described: Instead of handling the transition between day and night it **only** changes the transition between application start-up and shutdown (and delay the latter as a consequence). See the [talk page](/index.php/Talk:Redshift#Day_and_night_transition "Talk:Redshift") and the [issue on the Redshift project page](https://github.com/jonls/redshift/issues/270) for more information.
 
 ### Use real screen brightness
 
@@ -149,7 +172,7 @@ $ chmod +x ~/.config/redshift/hooks/brightness.sh
 
 ```
 
-[Restart](/index.php/Restart "Restart") the `redshift.service` [user](/index.php/User "User") to apply changes.
+[Restart](/index.php/Restart "Restart") the `redshift.service` to apply changes.
 
 Check the service status as it should **not** contain the following message:
 
@@ -167,22 +190,6 @@ Locate configuration-file "redshift.conf" in your distribution and change "scree
 ### Left/right clicking the tray icon doesn't work
 
 Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[3]](https://github.com/jonls/redshift/issues/363) and [[4]](https://bugs.archlinux.org/task/49971)
-
-### Failed to run Redshift due to geoclue2
-
-**Note:** Prior to apply the method below, close redshift-gtk and restart the geoclue service. Sometimes the location service fails due to e.g. connection established after the location service.
-
-If using [GNOME](/index.php/GNOME "GNOME"), you can also toggle Location Services to "On" in "Settings -> Privacy"
-
-By default, the geoclue2 configuration files does not allow Redshift access. In order to allow access, add the following lines to `/etc/geoclue/geoclue.conf`
-
- `/etc/geoclue/geoclue.conf` 
-```
-[redshift]
-allowed=true
-system=false
-users=
-```
 
 ### Redshift temporarily resets using some wine apps that reset gamma values
 

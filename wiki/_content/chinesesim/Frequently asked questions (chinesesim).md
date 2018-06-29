@@ -11,7 +11,7 @@
     *   [1.4 Arch 遵循 FHS 吗?](#Arch_.E9.81.B5.E5.BE.AA_FHS_.E5.90.97.3F)
     *   [1.5 Arch Linux 支持 ARM 处理器吗?](#Arch_Linux_.E6.94.AF.E6.8C.81_ARM_.E5.A4.84.E7.90.86.E5.99.A8.E5.90.97.3F)
     *   [1.6 我是一个彻头彻尾的Linux新手，我应该用Arch吗？](#.E6.88.91.E6.98.AF.E4.B8.80.E4.B8.AA.E5.BD.BB.E5.A4.B4.E5.BD.BB.E5.B0.BE.E7.9A.84Linux.E6.96.B0.E6.89.8B.EF.BC.8C.E6.88.91.E5.BA.94.E8.AF.A5.E7.94.A8Arch.E5.90.97.EF.BC.9F)
-    *   [1.7 Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些TMD死长死长的手册。](#Q.29_Arch.E7.9A.84.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE.E5.8D.81.E5.88.86.E9.BA.BB.E7.83.A6.EF.BC.8C.E7.A4.BE.E5.8C.BA.E7.9A.84.E4.BA.BA.E6.80.BB.E6.98.AF.E8.AE.A9.E6.88.91.E5.8E.BB.E8.AF.BB.E9.82.A3.E4.BA.9BTMD.E6.AD.BB.E9.95.BF.E6.AD.BB.E9.95.BF.E7.9A.84.E6.89.8B.E5.86.8C.E3.80.82)
+    *   [1.7 Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些死长死长的手册。](#Q.29_Arch.E7.9A.84.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE.E5.8D.81.E5.88.86.E9.BA.BB.E7.83.A6.EF.BC.8C.E7.A4.BE.E5.8C.BA.E7.9A.84.E4.BA.BA.E6.80.BB.E6.98.AF.E8.AE.A9.E6.88.91.E5.8E.BB.E8.AF.BB.E9.82.A3.E4.BA.9B.E6.AD.BB.E9.95.BF.E6.AD.BB.E9.95.BF.E7.9A.84.E6.89.8B.E5.86.8C.E3.80.82)
     *   [1.8 Q) Arch是为服务器、桌面还是工作站设计的？](#Q.29_Arch.E6.98.AF.E4.B8.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E3.80.81.E6.A1.8C.E9.9D.A2.E8.BF.98.E6.98.AF.E5.B7.A5.E4.BD.9C.E7.AB.99.E8.AE.BE.E8.AE.A1.E7.9A.84.EF.BC.9F)
     *   [1.9 我太喜欢Arch了，希望开发团队实现一个新功能](#.E6.88.91.E5.A4.AA.E5.96.9C.E6.AC.A2Arch.E4.BA.86.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.BC.80.E5.8F.91.E5.9B.A2.E9.98.9F.E5.AE.9E.E7.8E.B0.E4.B8.80.E4.B8.AA.E6.96.B0.E5.8A.9F.E8.83.BD)
     *   [1.10 Q) 什么时候发布新版本？](#Q.29_.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E5.8F.91.E5.B8.83.E6.96.B0.E7.89.88.E6.9C.AC.EF.BC.9F)
@@ -87,7 +87,7 @@ Arch Linux 遵循适用于 [systemd](/index.php/Systemd "Systemd") 服务管理�
 
 推荐阅读: [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") 。
 
-### Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些TMD死长死长的手册。
+### Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些死长死长的手册。
 
 **A)** Arch是针对一部分特定用户群设计的，也许不适合你。
 

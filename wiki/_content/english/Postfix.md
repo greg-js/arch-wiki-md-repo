@@ -272,6 +272,8 @@ If they are not there, go ahead and add them (replace the other listing for port
 
 ### PostfixAdmin
 
+[PostfixAdmin](http://postfixadmin.sourceforge.net/) is a web interface for Postfix used to manage mailboxes, virtual domains and aliases.
+
 To use PostfixAdmin, you need a working Apache/MySQL/PHP setup as described in [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server").
 
 For IMAP functionality, you will need to install [php-imap](https://www.archlinux.org/packages/?name=php-imap) and uncomment `extension=imap` in `/etc/php/php.ini`.

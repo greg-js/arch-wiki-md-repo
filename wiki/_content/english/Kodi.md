@@ -50,7 +50,7 @@ All of the official addons in the [kodi-addons](https://www.archlinux.org/groups
 
 The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two binaries for two different use cases:
 
-1.  `/usr/bin/kodi` is meant to be run by any user on a on-demand basis. Use it like any other program on the system.
+1.  `/usr/bin/kodi` is meant to be run by any user on an on-demand basis. Use it like any other program on the system.
 2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC "wikipedia:Home theater PC"). See [#Running standalone](#Running_standalone) for more information.
 
 ## Running standalone
@@ -95,7 +95,7 @@ user-session=kodi
 
 Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening by [starting](/index.php/Starting "Starting") `kodi@*user*.socket` (replace *user* with the user running Kodi to be started as).
 
-There are no packaged `kodi@.socket` and `kodi@.socket` files, you must create them manually. Depending on the setup, you may want to change the port in `kodi@.socket`.
+There are no packaged `kodi@.socket` and `kodi@.socket` files, one must create them manually. Depending on the setup, one can optionally change the port in `kodi@.socket`.
 
  `/etc/systemd/system/kodi@.service` 
 ```
@@ -211,7 +211,7 @@ Install [libcec](https://www.archlinux.org/packages/?name=libcec).
 When connected, the USB-CEC's `/dev` entry (usually `/dev/ttyACM*`) will default to being owned by the `uucp` group, so in order to use the device the user running Kodi needs to belong to that group. The user also needs to belong to the `lock` group, otherwise Kodi will be unable to connect to the device. See [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups") for instructions on how to add users to groups.
 
 *   Add all users that will use Kodi to the `uucp` and `lock` [groups](/index.php/Groups "Groups").
-*   If you are [running kodi-standalone](#Running_standalone), add the user `kodi` to the `uucp` and `lock` [groups](/index.php/Groups "Groups").
+*   If [running kodi-standalone](#Running_standalone), add the user `kodi` to the `uucp` and `lock` [groups](/index.php/Groups "Groups").
 
 **Note:** Trying to use the USB-CEC without belonging to above groups may lead to problems, including Kodi crashes, so make sure the correct user belongs to both groups.
 
@@ -250,33 +250,23 @@ This section provides an example using exports, see [NFS](/index.php/NFS "NFS") 
 
 **Note:** Users only need one box on the LAN to serve the content, therefore, do not repeat this for each node. The following example assumes the user is running Arch Linux, but any NFS server will work, be it Linux or BSD, etc.
 
-Setup [exports](/index.php/NFS#Configuration "NFS"):
+Create an empty directory in NFS root for each media directory to be shared. E.g.:
 
 ```
 # mkdir -p /srv/nfs/{shows,movies,music}
-# mount --bind /mnt/shows /srv/nfs/shows
-# mount --bind /mnt/movies /srv/nfs/movies
-# mount --bind /mnt/music /srv/nfs/music
 
 ```
 
-Add the corresponding entries for these bind mounts to `/etc/fstab`:
+[Bind mount](/index.php/NFS#Server "NFS") your media directories to the empty directories in `/srv/nfs/`.
 
-```
-/mnt/shows    /srv/nfs/shows    none bind 0 0
-/mnt/movies   /srv/nfs/movies   none bind 0 0
-/mnt/music    /srv/nfs/music    none bind 0 0
+Setup [exports](/index.php/NFS#Server "NFS"):
 
-```
-
-Share the content in `/etc/exports`:
-
+ `/etc/exports.d/kodi.exports` 
 ```
 /srv/nfs          192.168.0.0/24(ro,fsid=0,no_subtree_check)
 /srv/nfs/shows    192.168.0.0/24(ro,no_subtree_check,insecure)
 /srv/nfs/movies   192.168.0.0/24(ro,no_subtree_check,insecure)
 /srv/nfs/music    192.168.0.0/24(ro,no_subtree_check,insecure)
-
 ```
 
 ### Install and setup the MySQL server
@@ -407,11 +397,11 @@ APP="${bindir}/pasuspender -- env AE_SINK=ALSA ${bindir}/${bin_name} --standalon
 
 ### Audio Passthrough
 
-To allow your receiver to decode the audio you can enable passthrough. This is useful for files encoded in TrueHD or Atmos. If using PulseAudio, follow the instructions at [https://kodi.wiki/view/PulseAudio](https://kodi.wiki/view/PulseAudio) to first enable passthrough in PulseAudio. Then the passthrough options will appear in Kodi. If using ALSA, the passthrough options will appear in Kodi without modifications.
+To allow the receiver to decode the audio by enabling passthrough. This is useful for files encoded in TrueHD or Atmos. If using PulseAudio, follow the instructions at [https://kodi.wiki/view/PulseAudio](https://kodi.wiki/view/PulseAudio) to first enable passthrough in PulseAudio. Then the passthrough options will appear in Kodi. If using ALSA, the passthrough options will appear in Kodi without modifications.
 
 **Warning:** PulseAudio requires the output in Kodi to be set to 2 channel. Audio encoded in formats not passed through will only be sent as stereo audio. Use ALSA to support passthrough and passing decoded surround audio signals
 
-**Note:** PulseAudio does not support TrueHD, DTS-MA, or Atmos passthrough. Use ALSA if you want to pass these to your receiver
+**Note:** PulseAudio does not support TrueHD, DTS-MA, or Atmos passthrough. Use ALSA to pass these to through the receiver.
 
 #### Fix for delayed startup on wifi
 

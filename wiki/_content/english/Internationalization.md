@@ -43,10 +43,6 @@ Most input methods are part of an **IM framework**, which lets the user easily s
 
 The available IM frameworks are:
 
-*   **[Dasom](/index.php/Dasom "Dasom")** — Multilingual input method framework.
-
-	[https://dasom-im.github.io/](https://dasom-im.github.io/) || [dasom-git](https://aur.archlinux.org/packages/dasom-git/)
-
 *   **[Fcitx](/index.php/Fcitx "Fcitx")** — Input method framework with extension support.
 
 	[https://fcitx-im.org/](https://fcitx-im.org/) || [fcitx](https://www.archlinux.org/packages/?name=fcitx)
@@ -63,6 +59,10 @@ The available IM frameworks are:
 
 	[https://github.com/ibus/ibus/wiki](https://github.com/ibus/ibus/wiki) || [ibus](https://www.archlinux.org/packages/?name=ibus)
 
+*   **[Nimf](/index.php/Nimf "Nimf")** — A multilingual input method framework which inherits [Dasom](/index.php/Dasom "Dasom").
+
+	[https://gitlab.com/hodong/nimf](https://gitlab.com/hodong/nimf) || [nimf-git](https://aur.archlinux.org/packages/nimf-git/)
+
 *   **[SCIM](/index.php/SCIM "SCIM")** — The Smart Common Input Method platform.
 
 	[https://github.com/scim-im/scim](https://github.com/scim-im/scim) || [scim](https://www.archlinux.org/packages/?name=scim)
@@ -70,6 +70,12 @@ The available IM frameworks are:
 *   **[uim](/index.php/Uim "Uim")** — Multilingual input method framework to provide simple, easily extensible and high code-quality input method development platform, and useful input method environment for users of desktop and embedded platforms.
 
 	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
+
+Unmaintained:
+
+*   **[Dasom](/index.php/Dasom "Dasom")** — Multilingual input method framework.
+
+	[https://dasom-im.github.io/](https://dasom-im.github.io/) || [dasom-git](https://aur.archlinux.org/packages/dasom-git/)
 
 See also [Wikipedia:List of input methods for Unix platforms](https://en.wikipedia.org/wiki/List_of_input_methods_for_Unix_platforms "wikipedia:List of input methods for Unix platforms").
 

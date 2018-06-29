@@ -5,9 +5,7 @@ Related articles
 *   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
 
-This article gives a quick overview on the configuration of an exim mail server.
-
-[Exim](http://exim.org/) is a versatile [SMTP](https://en.wikipedia.org/wiki/SMTP "wikipedia:SMTP") server for Linux/UNIX-like systems. While the [exim wiki](https://github.com/Exim/exim/wiki/) provides some helpful how-to's on certain specific use cases, a [detailed description](https://exim.org/exim-html-current/doc/html/spec_html/index.html) of all configuration options is available as well.
+[Exim](http://exim.org/) is a versatile [SMTP](https://en.wikipedia.org/wiki/SMTP "wikipedia:SMTP") server. While the [Exim wiki](https://github.com/Exim/exim/wiki/) provides some helpful how-tos on certain specific use cases, a [detailed description](https://exim.org/exim-html-current/doc/html/spec_html/index.html) of all configuration options is available as well.
 
 ## Contents
 
@@ -22,21 +20,19 @@ This article gives a quick overview on the configuration of an exim mail server.
     *   [2.6 Startup](#Startup)
 *   [3 Advanced ACL configuration](#Advanced_ACL_configuration)
 *   [4 Dovecot LMTP delivery & SASL authentication](#Dovecot_LMTP_delivery_.26_SASL_authentication)
-*   [5 DKIM & DNSSEC](#DKIM_.26_DNSSEC)
-*   [6 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
-*   [7 Hardening](#Hardening)
-    *   [7.1 Rate limits](#Rate_limits)
-    *   [7.2 fail2ban](#fail2ban)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 451 Temporary local problem](#451_Temporary_local_problem)
+*   [5 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
+*   [6 Hardening](#Hardening)
+    *   [6.1 Rate limits](#Rate_limits)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 451 Temporary local problem](#451_Temporary_local_problem)
 
 ## Installation
 
-Install the [exim](https://www.archlinux.org/packages/?name=exim) package.
+[Install](/index.php/Install "Install") the [exim](https://www.archlinux.org/packages/?name=exim) package.
 
 ## Basic configuration
 
-Exim comes with a bulky default configuration file which is located in `/etc/mail/exim.conf`. Many options in there aren't necessary in a regular use case. By default configuration is done in a single file containing several chapters. Below is a very basic configuration, which provides: local delivers to system users (Maildir format) and authorized relaying to MX hosts. The description is based on a domain "mydomain.tld" served on a host "hostname.mydomain.tld". It is highly recommended to consult the official documentation before using the given documentation below.
+Exim comes with a bulky default configuration file which is located in `/etc/mail/exim.conf`. Many options in there are not necessary in a regular use case. By default configuration is done in a single file containing several chapters. Below is a very basic configuration, which provides: local delivers to system users (Maildir format) and authorized relaying to MX hosts. The description is based on a domain "mydomain.tld" served on a host "hostname.mydomain.tld". It is highly recommended to consult the official documentation before using the given documentation below.
 
 ### Main parameters
 
@@ -69,9 +65,9 @@ timeout_frozen_after = 7d
 
 ### TLS, security & authentication
 
-The first part of the following options are still part of the first configuration section in exim. Starting with "begin authenticators" the first special section in exim configuration begins. There will be more such sections later. Below some very basic security related options are defined, TLS is set up & a plain text authenticator using a user password lookup is introduced.
+The first part of the following options are still part of the first configuration section in Exim. Starting with "begin authenticators" the first special section in Exim configuration begins. There will be more such sections later. Below some very basic security related options are defined, TLS is set up & a plain text authenticator using a user password lookup is introduced.
 
-**Warning:** This example of an authenticator should not be used in production enviroment!
+**Warning:** This example of an authenticator should not be used in production environment!
 
 ```
 # actually not required: it's hard coded - anyway: no mail delivery to root
@@ -114,7 +110,7 @@ begin authenticators
 
 ### Routing, transport & retry
 
-For each receipient of a message routing is performed as follows: routers are tested in their order given in the routing section. For each router, conditions may apply (e.g. `domains = ! +local_domains`). Only if all conditions apply, the message will be handed over to the defined transport (e.g. `transport = smtp`). If transport fails or not all conditions of a router are fulfilled, the next router is tested.
+For each recipient of a message routing is performed as follows: routers are tested in their order given in the routing section. For each router, conditions may apply (e.g. `domains = ! +local_domains`). Only if all conditions apply, the message will be handed over to the defined transport (e.g. `transport = smtp`). If transport fails or not all conditions of a router are fulfilled, the next router is tested.
 
 ```
 begin routers
@@ -191,13 +187,19 @@ smarthost:
 
 ### ACL: Access Control Lists
 
-Access Control Lists are at the heart of exim. They are required for basic checks and may be used for sophisticated message processing. In general the overal message processing in exim is:
+Access Control Lists are at the heart of Exim. They are required for basic checks and may be used for sophisticated message processing. In general the overall message processing in Exim is:
 
- `connection > (authentication >) ACL > routing > transport` 
+```
+connection > (authentication >) ACL > routing > transport
+
+```
 
 With this it is important to note that messages coming from authenticated clients are treated (by default) by the same ACL as messages coming from other mail servers. Exim know a full set of [different ACL](https://www.exim.org/exim-html-current/doc/html/spec_html/ch-access_control_lists.html). Good knowledge of the SMTP protocol is required to choose the correct set of ACL.
 
- `acl_smtp_connect > acl_smtp_helo > ... > acl_smtp_rcpt > ... > acl_smtp_data > ...` 
+```
+acl_smtp_connect > acl_smtp_helo > ... > acl_smtp_rcpt > ... > acl_smtp_data > ...
+
+```
 
 For a basic setup two ACL are mandatory: acl_smtp_rcpt and acl_smtp_data. These are default to deny while all other default to accept. The example below just prevents being an open relay. This setup has multiple security flaws (e.g. all authenticated users may use any mail address). If added to an existing configuration, it must be added before any other special section (i.e. before any existing "begin").
 
@@ -276,7 +278,7 @@ service lmtp {
 
 ```
 
-To use the dovecot SASL in a TLS protected enviroment, add the following authenticator to exim.
+To use the dovecot SASL in a TLS protected environment, add the following authenticator to Exim.
 
  `/etc/mail/exim.conf - authenticators section` 
 ```
@@ -300,7 +302,7 @@ The existing router for local delivery can be reused. You may want to consider a
 
 ```
 
-**Note:** As of exim 4.88 there is a limitation with the lmtp driver: in an ACL `verify = recipient/callout=no_cache` won't work as expected, i.e. non-existent user accounts won't throw a failure. To accomplish a receipient check against Dovecot you must replace the driver above by a
+**Note:** As of Exim 4.88 there is a limitation with the lmtp driver: in an ACL `verify = recipient/callout=no_cache` won't work as expected, i.e. non-existent user accounts won't throw a failure. To accomplish a receipient check against Dovecot you must replace the driver above by a
 ```
 driver = smtp
 protocol = lmtp
@@ -318,17 +320,21 @@ Since Dovecot is configured to provide a unix socket for the exim user, you may 
 deliver_drop_privilege = true
 ```
 
-## DKIM & DNSSEC
-
 ## Using Gmail as smarthost
 
 In the beginning of the exim conf file, you must enable TLS using
 
- `tls_advertise_hosts = +local_network : *.gmail.com` 
+```
+tls_advertise_hosts = +local_network : *.gmail.com
+
+```
 
 or to advertise tls to all hosts
 
- `tls_advertise_hosts = *` 
+```
+tls_advertise_hosts = *
+
+```
 
 More information about TLS can be found in the [exim documentation](http://www.exim.org/exim-html-current/doc/html/spec_html/ch-encrypted_smtp_connections_using_tlsssl.html).
 
@@ -415,8 +421,6 @@ In local submission is required, consider imposing a rate limit to it. Do so by 
 		accept
 
 ```
-
-### fail2ban
 
 ## Troubleshooting
 

@@ -515,6 +515,7 @@ Guides to get you started with using & customizing Mutt :
 *   [The Woodnotes Guide to the Mutt Email Client](http://www.therandymon.com/woodnotes/mutt/using-mutt.html) (maintained by Randall Wood)
 *   [The Homely Mutt](http://stevelosh.com/blog/2012/10/the-homely-mutt) (by Steve Losh)
 *   [Everything You Need To Know To Start Using GnuPG with Mutt](http://codesorcery.net/old/mutt/mutt-gnupg-howto) (by Justin R. Miller)
+*   [A List of useful programs that often are used in combination with neomutt](https://neomutt.org/contrib/useful-programs)
 
 If you have any Mutt specific questions, feel free to ask in [the irc channel](/index.php/ArchChannel "ArchChannel").
 

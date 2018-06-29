@@ -3,7 +3,7 @@
 | [Wireless](/index.php/Wireless "Wireless") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
-| Fingerprint Reader | No |
+| Fingerprint Reader | Yes |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T470 laptop.
 
@@ -13,10 +13,11 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 *   [1 Firmware (e.g. bios and peripherals)](#Firmware_.28e.g._bios_and_peripherals.29)
 *   [2 Kernel and hardware support](#Kernel_and_hardware_support)
-    *   [2.1 Screen backlight](#Screen_backlight)
-    *   [2.2 Thunderbolt 3](#Thunderbolt_3)
-    *   [2.3 UEFI boot](#UEFI_boot)
-    *   [2.4 Special buttons](#Special_buttons)
+    *   [2.1 Fingerprint reader](#Fingerprint_reader)
+    *   [2.2 Screen backlight](#Screen_backlight)
+    *   [2.3 Thunderbolt 3](#Thunderbolt_3)
+    *   [2.4 UEFI boot](#UEFI_boot)
+    *   [2.5 Special buttons](#Special_buttons)
 *   [3 PCI and USB devices](#PCI_and_USB_devices)
     *   [3.1 T470 model 20HD](#T470_model_20HD)
         *   [3.1.1 lspci](#lspci)
@@ -31,7 +32,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.48\. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
+As of writing, the current BIOS version is 1.51\. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
 
 ## Kernel and hardware support
 
@@ -41,7 +42,31 @@ As noted in [Intel graphics](/index.php/Intel_graphics "Intel graphics"), the [x
 
 suspend-resume results in the fan holding at 100% without ever spinning down. This is being tracked on the [kernel bugtracker](https://bugzilla.kernel.org/show_bug.cgi?id=196975). The issue [seems to be resolved](https://bugzilla.kernel.org/show_bug.cgi?id=196975#c54) by BIOS 1.43.
 
-138a:0097 will hopefully be supported as part of [Validity90](https://github.com/nmikhailov/Validity90).
+### Fingerprint reader
+
+As of writing this, the fingerprint reader is still under [prototype development](https://github.com/nmikhailov/Validity90), but looks like working fine on the T470.
+
+To get the sensor working, it first must be initialized with data. This currently only works with Windows. So if you had used the reader before installing Arch, this should work fine. Otherwise install a Windows version in a virtualbox, connect the Validity Sensor over USB(USB 2.0), install the drivers and use it a few times.
+
+As soon as this step is completed, the sensor can be used under Linux. Check out [Validity90 prototype](https://github.com/nmikhailov/Validity90/tree/master/prototype), build it and check if the sensor is working. Install [fprintd](https://www.archlinux.org/packages/?name=fprintd), [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/) and for testing [fprint_demo](https://aur.archlinux.org/packages/fprint_demo/). You can now enroll your fingers. fprintd and fprint_demo might have be started with superuser privileges.
+
+After setting up the fingerprint sensor is complete, one can use it to login or authenticate for `sudo` or `su`(To use this, launch fprintd_enroll prior as root).
+
+For login edit `/etc/pam.d/login`
+
+Add the following and comment out the other entrys
+
+```
+ auth required pam_env.so
+ auth sufficient pam_fprintd.so
+ auth sufficient pam_unix.so try_first_pass likeauth nullok
+ auth required pam_deny.so
+
+```
+
+Do the same for sudo with `/etc/pam.d/sudo` or su with `/etc/pam.d/su`
+
+For more information visit [libfprint](https://github.com/3v1n0/libfprint) and adapt for the vfs0097 package.
 
 ### Screen backlight
 
@@ -83,7 +108,7 @@ Update hwdb after editing the rule.
 
 ```
 # udevadm hwdb --update
-# udevadm trigger --sysname-match="event*" 
+# udevadm trigger --sysname-match="event*"
 
 ```
 

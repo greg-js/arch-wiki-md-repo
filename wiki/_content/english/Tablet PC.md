@@ -190,6 +190,18 @@ It works for devices with an accelerometer communicating through the industrial 
 
 See [rotate.py](https://gist.githubusercontent.com/ei-grad/4d9d23b1463a99d24a8d/raw/rotate.py) and for scripts the Surface in the github [Surface Tools](https://github.com/Surface-Pro-3/surface-tools) repository.
 
+Here's a C version of the script that aims to reduce some system overhead: [2in1screen.c](https://github.com/aleozlx/2in1screen/blob/master/2in1screen.c) You will need to replace your actual touch device name and recompile. Instruction to recompile is located at the 1st line. You can put this in .xinitrc like so before the exec line:
+
+ `.xinitrc` 
+```
+#!/bin/sh
+# xrandr --dpi 180
+xrdb -merge ~/.Xresources
+~/bin/2in1screen &   # <<< invoke the binary around here will be fine
+exec i3
+
+```
+
 Note that there are many other surface pro 3 rotate scripts on github, including:
 
 *   [https://github.com/freundTech/surface-tools/tree/master/autorotate](https://github.com/freundTech/surface-tools/tree/master/autorotate)

@@ -129,6 +129,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 
 ### Video codecs
 
+*   **[AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1")** — AOMedia Video 1 (AV1) is successor codec to Google's VP9, Mozilla's Daala, Cisco's Thor.
+
+	[https://aomediacodec.github.io/av1-spec/](https://aomediacodec.github.io/av1-spec/) || [aom](https://www.archlinux.org/packages/?name=aom)
+
 *   **[Daala](https://en.wikipedia.org/wiki/Daala "wikipedia:Daala")** — New video compression technology. The effort is a collaboration between Mozilla Foundation, Xiph.Org Foundation and other contributors. The goal of the project is to provide a free to implement, use and distribute digital media format and reference implementation with technical performance superior to h.265.
 
 	[https://www.xiph.org/daala/](https://www.xiph.org/daala/) || [daala-git](https://aur.archlinux.org/packages/daala-git/)

@@ -41,14 +41,14 @@ Related articles
     *   [5.13 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
     *   [5.14 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
     *   [5.15 youtube-dl audio with search](#youtube-dl_audio_with_search)
-    *   [5.16 Use mpv with a compositor](#Use_mpv_with_a_compositor)
-    *   [5.17 Creating a single screenshot](#Creating_a_single_screenshot)
-    *   [5.18 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
+    *   [5.16 Creating a single screenshot](#Creating_a_single_screenshot)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 General debugging](#General_debugging)
     *   [6.2 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
     *   [6.3 Problems with window compositors](#Problems_with_window_compositors)
     *   [6.4 No volume bar, cannot change volume](#No_volume_bar.2C_cannot_change_volume)
+    *   [6.5 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
+    *   [6.6 Use mpv with a compositor](#Use_mpv_with_a_compositor)
 
 ## Installation
 
@@ -386,10 +386,6 @@ function mm() {
 
 ```
 
-### Use mpv with a compositor
-
-If you are using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when *mpv* is playing a video, try `x11-bypass-compositor=no`
-
 ### Creating a single screenshot
 
 An example of creating a single screenshot, by using a start time (`HH:MM:SS`):
@@ -400,10 +396,6 @@ $ mpv --no-audio --start=00:01:30 --frames=1 /path/to/video/file --o=/path/to/sc
 ```
 
 Screenshots will be saved in /path/to/screenshot.png.
-
-### GNOME Blank screen (Wayland)
-
-*mpv* may not suspend GNOME's Power Saving Settings if using Wayland (resulting in screen saver turning off the monitor while video is playing for example). A workaround is to add `gnome-session-inhibit` to the beginning of the `Exec=` line in `mpv.desktop`.
 
 ## Troubleshooting
 
@@ -450,3 +442,11 @@ With KWin compositing and hardware decoding, you may also want to set `x11-bypas
 ### No volume bar, cannot change volume
 
 Spin the mouse wheel over the volume icon.
+
+### GNOME Blank screen (Wayland)
+
+*mpv* may not suspend GNOME's Power Saving Settings if using Wayland resulting in screen saver turning off the monitor during video playback. A workaround is to add `gnome-session-inhibit` to the beginning of the `Exec=` line in `mpv.desktop`.
+
+### Use mpv with a compositor
+
+If you are using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when *mpv* is playing a video, try `x11-bypass-compositor=no`

@@ -1,4 +1,4 @@
-This document describes how to install the APC UPS daemon. The main advantage of using an APC UPS (for me) is that it can communicate with your Linux box through either a RS-232 or USB serial connection. In the event of a prolonged power outage, should the APC UPS lose most of its battery capacity, it can tell the Linux box to perform a safe shutdown.
+This document describes how to install the APC UPS daemon. The APC UPS can communicate with the Linux system through either a RS-232 or USB serial connection. In the event of a prolonged power outage, should the APC UPS lose most of its battery capacity, it can tell the Linux box to perform a safe shutdown.
 
 ## Contents
 
@@ -235,4 +235,4 @@ If you are using a [systemd-based initramfs](/index.php/Mkinitcpio#Common_hooks 
 
 *   [Apcupsd home page](http://www.apcupsd.org/)
 *   [Forcing hibernate](https://ubuntuforums.org/showthread.php?p=4302102)
-*   [apcupsd manual](http://www.apcupsd.com/manual/manual.html#the-shutdown-sequence-and-its-discontents)
+*   [apcupsd manual](http://www.apcupsd.com/manual/manual.html)

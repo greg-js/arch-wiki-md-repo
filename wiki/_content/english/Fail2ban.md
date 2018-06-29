@@ -24,7 +24,7 @@ Related articles
 
 [Install](/index.php/Install "Install") [fail2ban](https://www.archlinux.org/packages/?name=fail2ban).
 
-If you want Fail2ban to send an email when someone has been banned, you have to configure [SSMTP](/index.php/SSMTP "SSMTP") (for example).
+If you want Fail2ban to send an email when someone has been banned, you have to configure an SMTP client ([msmtp](/index.php/Msmtp "Msmtp") (for example).
 
 ## Usage
 

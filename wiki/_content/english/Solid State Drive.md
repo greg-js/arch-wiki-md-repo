@@ -115,6 +115,10 @@ Using the default mount options instead of an entry in `/etc/fstab` is useful fo
 
 **Note:** The default mount options are not listed in `/proc/mounts`.
 
+**Note:** The discard mount option does not work on XFS on / because it gets remounted on boot.
+
+According to [this thread](https://bbs.archlinux.org/viewtopic.php?id=143254) it has to be set as the following kernel parameter:`rootflags=discard`
+
 #### Trim an entire device
 
 If you want to trim your entire SSD at once, e.g. for a new install, or you want to sell your SSD, you can use the blkdiscard command, which will instantly discard all blocks on a device.

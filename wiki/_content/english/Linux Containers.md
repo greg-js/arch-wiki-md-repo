@@ -39,6 +39,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [5.1 Root login fails](#Root_login_fails)
     *   [5.2 No network-connection with veth in container config](#No_network-connection_with_veth_in_container_config)
     *   [5.3 Error: unknown command](#Error:_unknown_command)
+    *   [5.4 Error: Failed at step KEYRING spawning...](#Error:_Failed_at_step_KEYRING_spawning...)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -474,6 +475,34 @@ The error may happen when you type a basic command (*ls*, *cat*, etc.) on an att
 
 ```
 # lxc-attach -n *container_name* --clear-env
+
+```
+
+### Error: Failed at step KEYRING spawning...
+
+Services in an unprivileged container may fail with the following message
+
+```
+some.service: Failed to change ownership of session keyring: Permission denied
+some.service: Failed to set up kernel keyring: Permission denied
+some.service: Failed at step KEYRING spawning ....: Permission denied
+
+```
+
+Create a file **/etc/lxc/unpriv.seccomp** containing
+
+ `/etc/lxc/unpriv.seccomp` 
+```
+2
+blacklist
+[all]
+keyctl errno 38
+```
+
+... then add the following line to the container configuration **after** lxc.idmap
+
+```
+lxc.seccomp.profile = /etc/lxc/unpriv.seccomp
 
 ```
 

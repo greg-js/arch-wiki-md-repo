@@ -16,6 +16,7 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
     *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_.28SI.29_and_Sea_Islands_.28CIK.29_support)
+        *   [2.1.1 Set required module parameters](#Set_required_module_parameters)
     *   [2.2 AMD DC](#AMD_DC)
     *   [2.3 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
@@ -53,18 +54,28 @@ The [linux](https://www.archlinux.org/packages/?name=linux) package enables AMDG
 
 Even when AMDGPU support for SI/CIK has been enabled by the kernel, the [radeon](/index.php/Radeon "Radeon") driver may be used instead of the AMDGPU driver.
 
-The following workarounds are available:
+To make sure the `amdgpu` is loaded first use the following [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES=(amdgpu radeon)`.
 
-*   Set `amdgpu` as first to load in the [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES=(amdgpu radeon)`.
-*   [Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
+#### Set required module parameters
 
-Also, since kernel 4.13, adding the `amdgpu.si_support=1 radeon.si_support=0` or `amdgpu.cik_support=1 radeon.cik_support=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") is [required](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1). Otherwise, AMDGPU will not start and you will end up with either radeon being used instead or the display being frozen during the boot.
+To enable full support for SI/CIK when using the `amdgpu`, set the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent the `radeon` module from being used [[1]](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1):
+
+ `$ dmesg` 
+```
+[..] amdgpu 0000:01:00.0: CIK support provided by radeon.
+[..] amdgpu 0000:01:00.0: Use radeon.cik_support=0 amdgpu.cik_support=1 to override.
+```
+
+The flags depend on the cards GCN version:
+
+*   Southern Islands (SI): `radeon.si_support=0 amdgpu.si_support=1`
+*   Sea Islands (CIK): `radeon.cik_support=0 amdgpu.cik_support=1`
 
 ### AMD DC
 
 AMD DC (display code), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15-4.17, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
 
-It is enabled by default for GCN2/CIK cards and newer. The GCN1/SI chipset is not supported.
+If you are on GCN 1.1 or newer with AMDGPU and want to use DC, set `amdgpu.dc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 ### AMDGPU PRO
 
@@ -87,9 +98,10 @@ The `amdgpu` kernel module should load fine automatically on system boot.
 
 If it does not happen, then:
 
+*   Make sure to [#Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_.28SI.29_and_Sea_Islands_.28CIK.29_support) when needed.
 *   Make sure you have the latest [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package installed. This driver requires the latest firmware for each model to successfully boot.
 *   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since `amdgpu` requires [KMS](/index.php/KMS "KMS").
-*   Also, check that you have not disabled `amdgpu` by using any [kernel module blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
+*   Check that you have not disabled `amdgpu` by using any [kernel module blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
 
 ### Enable early KMS
 
@@ -100,7 +112,7 @@ If it does not happen, then:
 KMS is typically initialized after the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process"). It is possible, however, to enable KMS during the initramfs stage. To do this, add the `amdgpu` module to the `MODULES` line in `/etc/mkinitcpio.conf`:
 
 ```
-MODULES=(amdgpu)
+MODULES=(amdgpu radeon)
 
 ```
 
@@ -204,14 +216,14 @@ EndSection
 
 If you have screen artifacts when setting your screen frequency up to 120+Hz your "Memory Clock" and "GPU Clock" are certainly too low to handle the screen request.
 
-A workaround [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
+A workaround [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
 
-There is a GUI solution [[2]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
+There is a GUI solution [[3]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
 
 ### Screen flickering
 
-If you experience flickering [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=199101) add `amdgpu.dc=0` to your kernel parameters.
+If you experience flickering [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=199101) add `amdgpu.dc=0` to your kernel parameters.
 
 ### R9 390 series Poor Performance and/or Instability
 
-If you experience issues [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, add `amdgpu.dpm=1` to your kernel parameters.
+If you experience issues [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `amdgpu.dc=1 amdgpu.dpm=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force DPM support.

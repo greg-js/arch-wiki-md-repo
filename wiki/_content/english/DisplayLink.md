@@ -300,11 +300,11 @@ EndSection
 
 ### Displays disconnect at random intervals when using the Dell D6000 docking station
 
-When using the Dell D6000 docking station, the displays may randomly disconnect during usage. These disconnects appear to be random, and will force you to disconnect the dock and reconnect it to reinitialise the displays.
+User's have [reported](https://www.displaylink.org/forum/showthread.php?t=65476) that when using the Dell D6000 docking station, their display(s) may disconnect at random intervals during usage. This will require physically reconnecting the dock in order to reinitialise the displays.
 
-This issue appears to be caused by the Pulse audio driver suspending on idle, which causes the Dell D6000 to disconnect and reconnect.
+This issue appears to be caused by [PulseAudio](/index.php/PulseAudio "PulseAudio")'s `module-suspend-on-idle` module, which automatically suspends sinks/sources on idle.
 
-Commenting out the 'suspend-on-idle' module solves this issue. As reported on the [DisplayLink forums](https://www.displaylink.org/forum/showthread.php?t=65476)
+To disable loading of the `module-suspend-on-idle` module, comment out the following line in the configuration file in use (`~/.config/pulse/default.pa` or `/etc/pulse/default.pa`):
 
  `/etc/pulse/default.pa` 
 ```

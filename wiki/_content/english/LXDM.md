@@ -21,11 +21,11 @@ LXDM does not support the [XDMCP](/index.php/XDMCP "XDMCP") protocol. An alterna
     *   [3.2 Simultaneous users and switching users](#Simultaneous_users_and_switching_users)
     *   [3.3 Themes](#Themes)
     *   [3.4 Advanced Session Configuration](#Advanced_Session_Configuration)
-    *   [3.5 Flash fix for dark backgrounds](#Flash_fix_for_dark_backgrounds)
+    *   [3.5 White flash](#White_flash)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lxdm](https://www.archlinux.org/packages/?name=lxdm) package. The development package is [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/).
+[Install](/index.php/Install "Install") the [lxdm](https://www.archlinux.org/packages/?name=lxdm) package, or [lxdm-gtk3](https://www.archlinux.org/packages/?name=lxdm-gtk3) for the GTK3 version. The development package is [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/).
 
 [Enable](/index.php/Enable "Enable") the provided `lxdm.service` [systemd](/index.php/Systemd "Systemd") unit to start LXDM at boot.
 
@@ -190,6 +190,6 @@ source ~/.xinitrc
 
 LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), and .[Xmodmap](/index.php/Xmodmap "Xmodmap"). See `/etc/lxdm/Xsession` for details on how LXDM uses system-wide and per-user configuration files to configure the session.[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
 
-### Flash fix for dark backgrounds
+### White flash
 
-When using the default LXDM **theme=Industrial** and a custom dark or even black background image **bg=/usr/share/backgrounds/img.png** there may be a short bright flash before LXDM starts. This is caused by the **bg_color:** property of the selected theme. To avoid this change **gtk_theme=Adwaita** to Adwaita-dark or to another dark theme for a no flash smooth dark transition to and from LXDM.
+When using the default LXDM `theme=Industrial` and a custom dark or even black background image (e.g. `bg=/usr/share/backgrounds/img.png`) there may be a short bright flash before LXDM starts. This is caused by the `bg_color:` property of the selected [GTK](/index.php/GTK "GTK") theme. To avoid this change `gtk_theme=Adwaita` to `Adwaita-dark` or to another dark theme for a no flash smooth dark transition to and from LXDM.

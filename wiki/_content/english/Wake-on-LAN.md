@@ -325,6 +325,8 @@ For the `r8168` module you might need to set the `s5wol=1` [module option](/inde
 
 For some newer Atheros-based NICs (such as Atheros AR8161 and Killer E2500), WOL support has been disabled in the mainline `alx` module due to a bug causing unintentional wake-up (see [this patch discussion](http://www.spinics.net/lists/netdev/msg242477.html)). A patch can be applied (or installed as a [dkms](/index.php/Dkms "Dkms") module) which both restores WOL support and fixes the underlying bug, as outlined in [this thread](https://bugzilla.kernel.org/show_bug.cgi?id=61651).
 
+A TL;DR version of the issue can be found here: [https://github.com/Snugface/alx](https://github.com/Snugface/alx) "get into the directory with your alx sources" refers to the files from the aforementioned repo.
+
 ## See also
 
 *   [Wake-On-Lan](http://www.depicus.com/wake-on-lan/woli.aspx)

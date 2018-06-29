@@ -1,6 +1,8 @@
-Procmail is a program for filtering, sorting and storing email. It can be used both on mail clients and mail servers. It can be used to filter out spam, checking for viruses, to send automatic replies, etc.
+**Note:** Procmail is unmaintained (last update 2001), the author recommends to use something else.[[1]](https://marc.info/?l=openbsd-ports&m=141634350915839&w=2)
 
-The goal of this article is to teach the configuration of procmail. This article assumes you already have either a email client ([mutt](/index.php/Mutt "Mutt"), [nmh](/index.php/Nmh "Nmh"), etc) or a mail server ([sendmail](/index.php/Sendmail "Sendmail"), [postfix](/index.php/Postfix "Postfix"), etc) working, that can use (or requires) procmail. It also assumes you have at least basic knowledge on regular expressions. This article will give only a minimal explanation, for a complete manual, check the [procmailrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/procmailrc.5)
+[Procmail](https://en.wikipedia.org/wiki/procmail "wikipedia:procmail") is a program for filtering, sorting and storing email. It can be used both on mail clients and mail servers. It can be used to filter out spam, checking for viruses, to send automatic replies, etc.
+
+The goal of this article is to teach the configuration of procmail. This article assumes you already have either a email client ([mutt](/index.php/Mutt "Mutt"), [nmh](/index.php/Nmh "Nmh"), etc) or a mail server ([sendmail](/index.php/Sendmail "Sendmail"), [postfix](/index.php/Postfix "Postfix"), etc) working, that can use (or requires) procmail. It also assumes you have at least basic knowledge on regular expressions. This article will give only a minimal explanation, for a complete manual, check the [procmailrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/procmailrc.5)
 
 ## Contents
 
@@ -27,7 +29,7 @@ The goal of this article is to teach the configuration of procmail. This article
 
 The configuration is going to be saved on `~/.procmailrc` if this is the configuration for an email client, or on `/etc/procmailrc` if is going to be used by an email server.
 
-**Note:** Be careful when testing your procmail configuration on sample messages you have received, as messages can be automatically bounced back to sender if there is an error in your configuration file. To avoid this potentially embarrassing situation, turn off bounces by passing `-t` to `procmail`, or setting the `DELIVERED` environment variable ([procmailrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/procmailrc.5)).
+**Note:** Be careful when testing your procmail configuration on sample messages you have received, as messages can be automatically bounced back to sender if there is an error in your configuration file. To avoid this potentially embarrassing situation, turn off bounces by passing `-t` to `procmail`, or setting the `DELIVERED` environment variable ([procmailrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/procmailrc.5)).
 
 The configuration is composed of two sections; **assignments** and **recipes**.
 
@@ -205,3 +207,4 @@ Further information can be found here [http://wiki2.dovecot.org/procmail](http:/
 ## See also
 
 *   [Procmail Homepage](http://www.procmail.org/)
+*   [Last working version of the Procmail Homepage from the Web Archive](https://web.archive.org/web/20151013184044/http://www.procmail.org/)

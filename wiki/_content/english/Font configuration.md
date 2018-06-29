@@ -241,21 +241,13 @@ The `lcddefault` filter will work for most users. Other filters are available th
 
 #### Advanced LCD filter specification
 
-If the available built-in LCD filters are not satisfactory, it is possible to tweak the font rendering very specifically by building a custom freetype2 package and modifying the hardcoded filters. The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be used to build and install packages from source.
+If the available built-in LCD filters are not satisfactory, it is possible to tweak the font rendering very specifically by building a custom freetype2 package and modifying the hardcoded filters. The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be used to build and install packages from source. This requires installation of the [asp](https://www.archlinux.org/packages/?name=asp) package.
 
-First, refresh the freetype2 PKGBUILD as root:
-
-```
-# abs extra/freetype2
+Checkout the [freetype2](https://www.archlinux.org/packages/?name=freetype2) PKGBUILD and download/extract the build files:
 
 ```
-
-This example uses `/var/abs/build` as the build directory, substitute it according to your personal ABS setup. Download and extract the freetype2 package as a regular user:
-
-```
-$ cd /var/abs/build
-$ cp -r ../extra/freetype2 .
-$ cd freetype2
+$ asp checkout freetype2
+$ cd freetype2/trunk
 $ makepkg -o
 
 ```

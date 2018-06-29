@@ -1,3 +1,15 @@
+Related articles
+
+*   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
+*   [Dovecot](/index.php/Dovecot "Dovecot")
+*   [MySQL](/index.php/MySQL "MySQL")
+*   [Nginx](/index.php/Nginx "Nginx")
+*   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
+*   [Postfix](/index.php/Postfix "Postfix")
+*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+*   [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller")
+*   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
+
 [SOGo](http://www.sogo.nu/) provides a rich AJAX-based Web interface and supports multiple native clients through the use of standard protocols such as CalDAV, CardDAV and GroupDAV, as well as Microsoft ActiveSync. This article explains how to setup a groupware server using SOGo.
 
 ## Contents
@@ -71,7 +83,11 @@ Finally, there are currently two versions of SOGo that are being actively mainta
 
 ### Prerequisites
 
-[Install](/index.php/Install "Install") the needed prerequisite packages [dovecot](https://www.archlinux.org/packages/?name=dovecot), [mariadb](https://www.archlinux.org/packages/?name=mariadb), [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole), [postfix](https://www.archlinux.org/packages/?name=postfix), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [mysql-python](https://www.archlinux.org/packages/?name=mysql-python) and either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx](https://www.archlinux.org/packages/?name=nginx) from the [official repositories](/index.php/Official_repositories "Official repositories"), and [libwbxml](https://aur.archlinux.org/packages/libwbxml/), [python2-sievelib](https://aur.archlinux.org/packages/python2-sievelib/), [sogo](https://aur.archlinux.org/packages/sogo/) (or [sogo2](https://aur.archlinux.org/packages/sogo2/)), and [sope](https://aur.archlinux.org/packages/sope/) (or [sope2](https://aur.archlinux.org/packages/sope2/)) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [sogo](https://aur.archlinux.org/packages/sogo/) or [sogo2](https://aur.archlinux.org/packages/sogo2/).
+
+*   For a local database install [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+*   For a local mail server install [Dovecot](/index.php/Dovecot "Dovecot") and [Postfix](/index.php/Postfix "Postfix").
+*   For a local web server install [Apache](/index.php/Apache "Apache") or [nginx](/index.php/Nginx "Nginx").
 
 ## Initial web server configuration
 

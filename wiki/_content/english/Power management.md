@@ -205,7 +205,7 @@ Before=sleep.target
 User=%I
 Type=forking
 Environment=DISPLAY=:0
-ExecStartPre= -/usr/bin/pkill -u %u unison ; /usr/local/bin/music.sh stop ; /usr/bin/mysql -e 'slave stop'
+ExecStartPre= -/usr/bin/pkill -u %u unison ; /usr/local/bin/music.sh stop
 ExecStart=/usr/bin/sflock
 ExecStartPost=/usr/bin/sleep 1
 
@@ -221,8 +221,7 @@ After=suspend.target
 [Service]
 User=%I
 Type=simple
-ExecStartPre=/usr/local/bin/ssh-connect.sh
-ExecStart=/usr/bin/mysql -e 'slave start'
+ExecStart=/usr/local/bin/ssh-connect.sh
 
 [Install]
 WantedBy=suspend.target

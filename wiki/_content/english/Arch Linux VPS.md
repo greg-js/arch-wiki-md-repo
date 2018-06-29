@@ -10,8 +10,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 **Warning:**
 
-*   Linux 2.6.32 is not supported by systemd since version 205 (and will not work with systemd-212 or higher). Since many container-based virtualization environments rely on older kernels, it may be impossible to keep an Arch Linux install up-to-date in such an environment. However, OpenVZ, as of [kernel build 042stab094.7](http://openvz.org/Download/kernel/rhel6/042stab094.7), has backported the CLOCK_BOOTTIME feature, making it work with later versions of systemd.
-*   Systemd since version 220 doesn't work on OpenVZ containers. [[1]](https://github.com/systemd/systemd/issues/421) This issue has been fixed in OpenVZ kernel 042stab111.1 [[2]](https://bugzilla.openvz.org/show_bug.cgi?id=3280#c11)
+*   Since many container-based virtualization environments rely on older kernels, it may be impossible to keep an Arch Linux install up-to-date in such an environment. Linux 2.6.32, used by OpenVZ 6, is not supported by systemd since version 205 (and will not work with systemd-212 or higher). OpenVZ does sometimes backport newer kernel features into its kernel, but as of 2018-06-27, a fresh installation of Arch does not work on OpenVZ 6 kernel version 2.6.32-042stab131.1 . Arch can be installed on OpenVZ 7, with [a minor workaround](#Preparing_the_Arch_build_for_use_on_an_OpenVZ_7_container), as of OpenVZ 7 kernel version 3.10.0-693-21.1.vz7.48.2 .
 
 ## Contents
 
@@ -19,9 +18,10 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 *   [2 Installation](#Installation)
     *   [2.1 KVM](#KVM)
     *   [2.2 OpenVZ](#OpenVZ)
-        *   [2.2.1 Installing the latest Arch Linux on any OpenVZ provider](#Installing_the_latest_Arch_Linux_on_any_OpenVZ_provider)
+        *   [2.2.1 Installing the latest Arch Linux on any OpenVZ container provider](#Installing_the_latest_Arch_Linux_on_any_OpenVZ_container_provider)
             *   [2.2.1.1 Prerequisites](#Prerequisites)
             *   [2.2.1.2 Building a clean Arch Linux installation](#Building_a_clean_Arch_Linux_installation)
+                *   [2.2.1.2.1 Preparing the Arch build for use on an OpenVZ 7 container](#Preparing_the_Arch_build_for_use_on_an_OpenVZ_7_container)
             *   [2.2.1.3 Replacing everything on the VPS with the Arch build](#Replacing_everything_on_the_VPS_with_the_Arch_build)
             *   [2.2.1.4 Configuration](#Configuration)
     *   [2.3 Xen](#Xen)
@@ -34,7 +34,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 *   Loading custom disc images (requires hardware virtualization such as in Xen or KVM),
 *   [Installing under chroot](/index.php/Installation_guide "Installation guide"), for example with the help of the [vps2arch](https://gitlab.com/drizzt/vps2arch/) script (it will download the latest iso; be particularly aware of the systemd 220/221 [bug](https://github.com/systemd/systemd/issues/421)), or
-*   Following [#Installing the latest Arch Linux on any OpenVZ provider](#Installing_the_latest_Arch_Linux_on_any_OpenVZ_provider) instructions, using rsync to synchronize Arch over the top of another distribution.
+*   Following [#Installing the latest Arch Linux on any OpenVZ container provider](#Installing_the_latest_Arch_Linux_on_any_OpenVZ_container_provider) instructions, using rsync to synchronize Arch over the top of another distribution.
 
 | Provider | Arch Release | Virtualization | Locations | Notes |
 | [4smart.cz](http://4smart.cz/) | 2013.08 | OpenVZ | Prague, CZ | (Czech language site only) when updating system make sure you use [tredaelli-systemd] in pacman.conf (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") |
@@ -60,7 +60,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Proplay](https://www.proplay.de/) | Latest | OpenVZ, KVM | Germany (DE) | (German language site only) |
 | [Rackspace Cloud](https://www.rackspace.com/cloud/servers) | 2013.6 | Xen | [Multiple international locations](https://www.rackspace.com/whyrackspace/network/datacenters/) | Billed per hour. Use their "next gen" VPSes (using the mycloud.rackspace.com panel); the Arch image on the first gen Rackspace VPSes is out of date. |
 | [RamHost.us](http://www.ramhost.us/) | [2013.05.01](http://www.ramhost.us/?page=news) | OpenVZ, KVM | Los Angeles, US-CA; Great Britain (GB); Atlanta, US-GA; Germany (DE) | You can request a newer ISO on RamHost's IRC network. |
-| [RamNode](http://www.ramnode.com/) | [2016.01.01](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=48) | [SSD and SSD Cached:](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=39) [KVM](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=52) | [Alblasserdam, NL; Atlanta, GA-US; Los Angeles, CA-US; New York, NY-US; Seattle, WA-US](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=50) | You can request Host/CPU passthrough with KVM service.[[3]](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=66) Frequent use of discount promotions.[[4]](https://twitter.com/search?q=ramnode%20code&src=typd), Must install Arch manually from an ISO using VNC viewer. |
+| [RamNode](http://www.ramnode.com/) | [2016.01.01](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=48) | [SSD and SSD Cached:](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=39) [KVM](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=52) | [Alblasserdam, NL; Atlanta, GA-US; Los Angeles, CA-US; New York, NY-US; Seattle, WA-US](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=50) | You can request Host/CPU passthrough with KVM service.[[1]](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=66) Frequent use of discount promotions.[[2]](https://twitter.com/search?q=ramnode%20code&src=typd), Must install Arch manually from an ISO using VNC viewer. |
 | [RoseHosting](https://www.rosehosting.com/) | Latest | OpenVZ, KVM | St. Louis, Missouri, USA | SSD powered hosting plans with free fully-managed 24/7 support. No unmanaged VPS offerings. |
 | [SeedVPS](https://www.seedvps.com/) | Latest | OpenVZ, KVM | Amsterdam, Netherlands | Linux VPS and Windows VPS Hosting in The Netherlands (NL). Newer ISO can be requested by opening a support ticket. |
 | [Tilaa](https://www.tilaa.com/) | 2016.03.01 | [KVM](https://www.tilaa.com/pages/vps/technology) | Amsterdam, NL |
@@ -84,13 +84,13 @@ See [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_.28Arch.
 
 ### OpenVZ
 
-#### Installing the latest Arch Linux on any OpenVZ provider
+#### Installing the latest Arch Linux on any OpenVZ container provider
 
-**Warning:** See the [above warning](#top) about older kernel builds and systemd.
+**Warning:** See the [above warning](#top) about older kernel versions and systemd, and note the [workaround for OpenVZ 7 below](#Preparing_the_Arch_build_for_use_on_an_OpenVZ_7_container).
 
 It is possible to directly copy an installation of Arch Linux over the top of a working OpenVZ VPS. This tutorial explains how to create a basic installation of Arch Linux with `pacstrap` (as used in a standard install) and then replace the contents of a target VPS with it using [rsync](/index.php/Rsync "Rsync").
 
-This process (with minor modification) also works to migrate existing Arch installations between various environments and has been confirmed to work in migrating from OpenVZ to Xen and from Xen to OpenVZ. For an install to Xen, other hardware-virtualized platforms, or probably even to physical hardware (unconfirmed), extra steps (basically running `mkinitcpio` and [installing a bootloader](/index.php/Boot_loaders "Boot loaders")) are needed.
+This process (with minor modification) also works to migrate existing Arch installations between various environments and has been confirmed to work in migrating from OpenVZ to Xen and from Xen to OpenVZ. For an install to Xen, other hardware-virtualized platforms, or even to physical hardware, extra steps (basically running `mkinitcpio` and [installing a bootloader](/index.php/Boot_loaders "Boot loaders")) are needed.
 
 ##### Prerequisites
 
@@ -120,6 +120,21 @@ Other tweaks for the `pacstrap` command:
 *   `-G` - Prevent `pacstrap` from copying your system's pacman keyring to the new build. If you use this option, you will need to run `pacman-key --init` and `pacman-key --populate archlinux` in the [Configuration](#Configuration) step to set up the keyring.
 *   `-M` - Prevent `pacstrap` from copying your system's pacman mirror list to the new build.
 *   You can pass a list of packages to `pacstrap` to add them to your install, instead of the default `base` group. For example: `pacstrap -cd build base openssh dnsutils gnu-netcat traceroute vim`
+
+###### Preparing the Arch build for use on an OpenVZ 7 container
+
+OpenVZ 7 will fail to start a container if some expected network configuration files don't exist. The easiest way to get around this is as follows:
+
+1.  Create the OpenVZ 7 container as Debian 8 (Debian 9 would probably work as well).
+2.  Create the required blank network configuration files inside the Arch build, as follows:
+
+```
+# mkdir build/etc/network
+# touch build/etc/network/interfaces
+# mkdir -p build/etc/resolvconf/resolv.conf.d
+# touch build/etc/resolvconf/resolv.conf.d/base
+
+```
 
 ##### Replacing everything on the VPS with the Arch build
 

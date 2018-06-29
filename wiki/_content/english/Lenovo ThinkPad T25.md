@@ -23,6 +23,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.2 Thunderbolt 3](#Thunderbolt_3)
     *   [2.3 UEFI boot](#UEFI_boot)
     *   [2.4 Special buttons](#Special_buttons)
+    *   [2.5 Touchpad and trackpoint](#Touchpad_and_trackpoint)
 *   [3 PCI and USB devices](#PCI_and_USB_devices)
     *   [3.1 T25 model 20K7](#T25_model_20K7)
         *   [3.1.1 lspci](#lspci)
@@ -31,7 +32,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.48\. By visiting the downloads section (T25) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](https://pcsupport.lenovo.com/de/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t25-type-20k7/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
+As of writing, the current BIOS version is 1.51\. By visiting the downloads section (T25) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](https://pcsupport.lenovo.com/de/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t25-type-20k7/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
 
 ## Kernel and hardware support
 
@@ -39,7 +40,7 @@ As of writing, the current BIOS version is 1.48\. By visiting the downloads sect
 
 As noted in [Intel graphics](/index.php/Intel_graphics "Intel graphics"), the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver seems to cause more issue than the builtin `modesetting` Xorg driver. Works fine without the intel driver (on a Skylake configuration).
 
-138a:0097 will hopefully be supported as part of [Validity90](https://github.com/nmikhailov/Validity90).
+138a:0097 will hopefully be supported as part of [Validity90](https://github.com/nmikhailov/Validity90). Since the hardware is the same as in the T470 model, the [fingerprint reader guide](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T470#Fingerprint_reader) probably will work.
 
 ### Screen backlight
 
@@ -83,6 +84,12 @@ Update hwdb after editing the rule.
 # udevadm hwdb --update
 
 ```
+
+### Touchpad and trackpoint
+
+Touchpad and trackpoint share bandwidth, so using them at the same time makes trackpoint slow, jumpy, and abrupt. Disabling the touchpad either in BIOS or via xinput doesn't fix the problem, so the trackpoint becomes unusable each time the touchpad is occasionally touched.
+
+The touchpad is also accessible over secondary bus (SMBUS/RMI), allowing to leave the full bandwidth for the trackpoint. The kernel source code contains the whitelist of supported devices, which doesn't include LEN008e (T25 touchpad). You can enforce this feature setting `synaptics_intertouch` parameter of `psmouse` module to `1`. For instance, using kernel cmdline: `psmouse.synaptics_intertouch=1`.
 
 ## PCI and USB devices
 

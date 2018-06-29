@@ -111,12 +111,7 @@ dund --nodetach --listen --persist --msdun call dun
 
 ```
 
-Click the 'Connect' button under Preferences->Networking for your Palm. In the terminal, some text should start scrolling, indicating a new connection, channels being used, and the sending and receiving of various packets. At this point, your connectivity is working fine, and you can add the following line to /etc/rc.local so dund starts at every login:-
-
-```
-dund --listen --persist --msdun call dun
-
-```
+Click the 'Connect' button under Preferences->Networking for your Palm. In the terminal, some text should start scrolling, indicating a new connection, channels being used, and the sending and receiving of various packets. At this point, your connectivity is working fine.
 
 For the Hotsync specific setup, navigate to 'Hotsync' on your palm, select 'Modem' instead of local. Go to the menu, and change the following preferences:-
 
@@ -136,16 +131,7 @@ In addition to usb and bluetooth, the Palm T|X model includes ethernet connectiv
 
 ## Palm Centro
 
-The `visor` module does not currently work with the Palm Centro. It is not needed, as newer software accesses the Centro through libusb. To make the Palm work under Arch, take the following steps:
-
-Edit `/etc/rc.conf` and blacklist the visor module:
-
-```
-MODULES=(!visor)
-
-```
-
-You may have to reboot for this change to take effect.
+The `visor` module does not currently work with the Palm Centro. It is not needed, as newer software accesses the Centro through libusb. To make the Palm work under Arch, [blacklist](/index.php/Blacklist "Blacklist") the *visor* module. You may have to reboot for this change to take effect.
 
 When udev creates a device node for the Centro, it by default assigns it owner and group to root. You need to create a non-root group for udev to use for this device and make sure you're a member:
 

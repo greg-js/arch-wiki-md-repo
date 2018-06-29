@@ -45,26 +45,28 @@
             *   [1.6.1.1 Console](#Console_4)
             *   [1.6.1.2 Graphical](#Graphical_4)
         *   [1.6.2 Mail servers](#Mail_servers)
-        *   [1.6.3 Instant messaging clients](#Instant_messaging_clients)
-            *   [1.6.3.1 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.6.3.1.1 Console](#Console_5)
-                *   [1.6.3.1.2 Graphical](#Graphical_5)
-            *   [1.6.3.2 IRC clients](#IRC_clients)
-                *   [1.6.3.2.1 Console](#Console_6)
-                *   [1.6.3.2.2 Graphical](#Graphical_6)
-            *   [1.6.3.3 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
-                *   [1.6.3.3.1 Console](#Console_7)
-                *   [1.6.3.3.2 Graphical](#Graphical_7)
-            *   [1.6.3.4 SIP clients](#SIP_clients)
-            *   [1.6.3.5 Matrix clients](#Matrix_clients)
-            *   [1.6.3.6 Tox clients](#Tox_clients)
-            *   [1.6.3.7 Serverless (decentralized) clients](#Serverless_.28decentralized.29_clients)
-            *   [1.6.3.8 Other](#Other_2)
-        *   [1.6.4 Instant messaging servers](#Instant_messaging_servers)
-            *   [1.6.4.1 IRC servers](#IRC_servers)
-            *   [1.6.4.2 XMPP servers](#XMPP_servers)
-            *   [1.6.4.3 SIP servers](#SIP_servers)
-            *   [1.6.4.4 Other](#Other_3)
+        *   [1.6.3 Mail retrieval agents](#Mail_retrieval_agents)
+        *   [1.6.4 Instant messaging clients](#Instant_messaging_clients)
+            *   [1.6.4.1 Multi-protocol clients](#Multi-protocol_clients)
+                *   [1.6.4.1.1 Console](#Console_5)
+                *   [1.6.4.1.2 Graphical](#Graphical_5)
+            *   [1.6.4.2 IRC clients](#IRC_clients)
+                *   [1.6.4.2.1 Console](#Console_6)
+                *   [1.6.4.2.2 Graphical](#Graphical_6)
+            *   [1.6.4.3 XMPP clients](#XMPP_clients)
+                *   [1.6.4.3.1 Console](#Console_7)
+                *   [1.6.4.3.2 Graphical](#Graphical_7)
+            *   [1.6.4.4 SIP clients](#SIP_clients)
+            *   [1.6.4.5 Matrix clients](#Matrix_clients)
+            *   [1.6.4.6 Tox clients](#Tox_clients)
+            *   [1.6.4.7 Serverless (decentralized) clients](#Serverless_.28decentralized.29_clients)
+            *   [1.6.4.8 Other](#Other_2)
+        *   [1.6.5 Instant messaging servers](#Instant_messaging_servers)
+            *   [1.6.5.1 IRC servers](#IRC_servers)
+            *   [1.6.5.2 XMPP servers](#XMPP_servers)
+            *   [1.6.5.3 SIP servers](#SIP_servers)
+            *   [1.6.5.4 Other](#Other_3)
+        *   [1.6.6 Collaborative software](#Collaborative_software)
     *   [1.7 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.7.1 News aggregators](#News_aggregators)
             *   [1.7.1.1 Console](#Console_8)
@@ -447,7 +449,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ### Web servers
 
-See also [Web server](/index.php/Web_server "Web server").
+See also [Category:Web server](/index.php/Category:Web_server "Category:Web server").
 
 *   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
 
@@ -1136,27 +1138,43 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 #### Mail servers
 
-See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
+See [Mail server](/index.php/Mail_server "Mail server").
 
-*   **[Dovecot](/index.php/Dovecot "Dovecot")** — An IMAP and POP3 server written with security primarily in mind.
+*   **Modoboa** — A modular mail hosting and management platform, written in Python.
 
-	[https://dovecot.org/](https://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
+	[https://modoboa.org/](https://modoboa.org/) || [modoboa](https://aur.archlinux.org/packages/modoboa/)
 
-*   **[Exim](/index.php/Exim "Exim")** — Message Transfer Agent.
+#### Mail retrieval agents
 
-	[https://exim.org/](https://exim.org/) || [exim](https://www.archlinux.org/packages/?name=exim)
+See also [Wikipedia:Mail retrieval agent](https://en.wikipedia.org/wiki/Mail_retrieval_agent "wikipedia:Mail retrieval agent").
 
-*   **[OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")** — Free implementation of the server-side SMTP protocol.
+*   **[fdm](/index.php/Fdm "Fdm")** — Program to fetch and deliver mail.
 
-	[https://opensmtpd.org/](https://opensmtpd.org/) || [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd)
+	[https://github.com/nicm/fdm](https://github.com/nicm/fdm) || [fdm](https://www.archlinux.org/packages/?name=fdm)
 
-*   **[Postfix](/index.php/Postfix "Postfix")** — Fast, easy to administer, secure mail server.
+*   **[Fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail")** — A remote-mail retrieval utility.
 
-	[http://www.postfix.org/](http://www.postfix.org/) || [postfix](https://www.archlinux.org/packages/?name=postfix)
+	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://www.archlinux.org/packages/?name=fetchmail)
 
-*   **[UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP")** — An IMAP/POP server.
+*   **[getmail](/index.php/Getmail "Getmail")** — A POP3 mail retriever with reliable Maildir and command delivery.
 
-	[https://www.washington.edu/imap/](https://www.washington.edu/imap/) || [imap](https://www.archlinux.org/packages/?name=imap)
+	[http://pyropus.ca/software/getmail/](http://pyropus.ca/software/getmail/) || [getmail](https://www.archlinux.org/packages/?name=getmail)
+
+*   **imapsync** — IMAP synchronisation, sync, copy or migration tool
+
+	[http://imapsync.lamiral.info/](http://imapsync.lamiral.info/) || [imapsync](https://aur.archlinux.org/packages/imapsync/)
+
+*   **[isync](/index.php/Isync "Isync")** — IMAP and MailDir mailbox synchronizer
+
+	[http://isync.sourceforge.net/](http://isync.sourceforge.net/) || [isync](https://www.archlinux.org/packages/?name=isync)
+
+*   **mpop** — A small, fast POP3 client suitable as a fetchmail replacement
+
+	[https://marlam.de/mpop/](https://marlam.de/mpop/) || [mpop](https://www.archlinux.org/packages/?name=mpop)
+
+*   **[OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")** — Synchronizes emails between two repositories.
+
+	[http://www.offlineimap.org/](http://www.offlineimap.org/) || [offlineimap](https://www.archlinux.org/packages/?name=offlineimap)
 
 #### Instant messaging clients
 
@@ -1306,7 +1324,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[https://srain.im/](https://srain.im/) || [srain](https://aur.archlinux.org/packages/srain/)
 
-##### XMPP (Jabber) clients
+##### XMPP clients
 
 See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") and [Wikipedia:Comparison of instant messaging clients#XMPP-related features](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#XMPP-related_features "wikipedia:Comparison of instant messaging clients").
 
@@ -1697,6 +1715,26 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 *   **uMurmur** — Minimalistic Mumble server.
 
 	[http://umurmur.net/](http://umurmur.net/) || [umurmur](https://www.archlinux.org/packages/?name=umurmur)
+
+#### Collaborative software
+
+See also [Wikipedia:Collaborative software](https://en.wikipedia.org/wiki/Collaborative_software "wikipedia:Collaborative software").
+
+*   **[Citadel/UX](https://en.wikipedia.org/wiki/Citadel/UX "wikipedia:Citadel/UX")** — Includes an email & mailing list server, instant messaging, address books, calendar/scheduling, bulletin boards, and wiki and blog engines.
+
+	[http://www.citadel.org/](http://www.citadel.org/) || [webcit](https://aur.archlinux.org/packages/webcit/)
+
+*   **[Kolab](/index.php/Kolab "Kolab")** — Kolab Groupware solution consisting of a server and various clients.
+
+	[https://kolab.org/](https://kolab.org/) || [kolab](https://aur.archlinux.org/packages/kolab/)
+
+*   **[Open-xchange](/index.php/Open-xchange "Open-xchange")** — A groupware solution providing mail facilities, calendaring, shared contacts and Google-Docs-like text editing
+
+	[http://www.ox.io/](http://www.ox.io/) || [open-xchange](https://aur.archlinux.org/packages/open-xchange/)
+
+*   **[SOGo](/index.php/SOGo "SOGo")** — Groupware server built around OpenGroupware.org (OGo) and the SOPE application server.
+
+	[https://sogo.nu/](https://sogo.nu/) || [sogo](https://aur.archlinux.org/packages/sogo/)
 
 ### News, RSS, and blogs
 
