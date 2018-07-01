@@ -2,6 +2,8 @@
 
 *   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
 
+**翻译状态：** 本文是英文页面 [Cron](/index.php/Cron "Cron") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-30，点击[这里](https://wiki.archlinux.org/index.php?title=Cron&diff=0&oldid=517790)可以查看翻译后英文页面的改动。
+
 摘自 [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
 	*cron* 是一个在 Unix 及类似操作系统上执行计划任务的程序。用户可以在指定的时间段周期性地运行命令或 shell 脚本，通常用于系统的自动化维护或者管理。
@@ -10,25 +12,29 @@
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 激活及开机启动](#.E6.BF.80.E6.B4.BB.E5.8F.8A.E5.BC.80.E6.9C.BA.E5.90.AF.E5.8A.A8)
-    *   [3.1 处理任务中的错误](#.E5.A4.84.E7.90.86.E4.BB.BB.E5.8A.A1.E4.B8.AD.E7.9A.84.E9.94.99.E8.AF.AF)
-        *   [3.1.1 使用 ssmtp](#.E4.BD.BF.E7.94.A8_ssmtp)
-        *   [3.1.2 Example with msmtp](#Example_with_msmtp)
-        *   [3.1.3 Example with esmtp](#Example_with_esmtp)
-        *   [3.1.4 Example with opensmtpd](#Example_with_opensmtpd)
-        *   [3.1.5 Long cron job](#Long_cron_job)
-*   [4 Crontab 格式](#Crontab_.E6.A0.BC.E5.BC.8F)
-*   [5 基本命令](#.E5.9F.BA.E6.9C.AC.E5.91.BD.E4.BB.A4)
-*   [6 范例](#.E8.8C.83.E4.BE.8B)
-*   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
-*   [8 run-parts issue](#run-parts_issue)
-*   [9 运行 X 程序](#.E8.BF.90.E8.A1.8C_X_.E7.A8.8B.E5.BA.8F)
-*   [10 Asynchronous job processing](#Asynchronous_job_processing)
-    *   [10.1 Dcron](#Dcron)
-    *   [10.2 Cronwhip](#Cronwhip)
-    *   [10.3 Anacron](#Anacron)
-    *   [10.4 Fcron](#Fcron)
-*   [11 参见](#.E5.8F.82.E8.A7.81)
+    *   [2.1 激活及开机启动](#.E6.BF.80.E6.B4.BB.E5.8F.8A.E5.BC.80.E6.9C.BA.E5.90.AF.E5.8A.A8)
+    *   [2.2 处理任务中的错误](#.E5.A4.84.E7.90.86.E4.BB.BB.E5.8A.A1.E4.B8.AD.E7.9A.84.E9.94.99.E8.AF.AF)
+        *   [2.2.1 使用 ssmtp](#.E4.BD.BF.E7.94.A8_ssmtp)
+        *   [2.2.2 Example with msmtp](#Example_with_msmtp)
+        *   [2.2.3 Example with esmtp](#Example_with_esmtp)
+        *   [2.2.4 Example with opensmtpd](#Example_with_opensmtpd)
+        *   [2.2.5 Long cron job](#Long_cron_job)
+*   [3 Crontab 格式](#Crontab_.E6.A0.BC.E5.BC.8F)
+*   [4 基本命令](#.E5.9F.BA.E6.9C.AC.E5.91.BD.E4.BB.A4)
+*   [5 范例](#.E8.8C.83.E4.BE.8B)
+*   [6 Examples](#Examples)
+*   [7 Default editor](#Default_editor)
+*   [8 Running X.org server-based applications](#Running_X.org_server-based_applications)
+*   [9 Asynchronous job processing](#Asynchronous_job_processing)
+    *   [9.1 Cronie](#Cronie)
+    *   [9.2 Dcron](#Dcron)
+    *   [9.3 Cronwhip](#Cronwhip)
+    *   [9.4 Anacron](#Anacron)
+    *   [9.5 Fcron](#Fcron)
+*   [10 Ensuring exclusivity](#Ensuring_exclusivity)
+*   [11 Cronie](#Cronie_2)
+*   [12 Dcron](#Dcron_2)
+*   [13 See also](#See_also)
 
 ## 安装
 
@@ -42,7 +48,7 @@ cron 有多个实现程序，但是基础系统默认使用 [systemd/Timers](/in
 
 ## 配置
 
-## 激活及开机启动
+### 激活及开机启动
 
 安装后，默认的守护进程不会启动。安装的软件包都提供了可以用 [systemctl](/index.php/Systemd#Using_units "Systemd") 控制的服务文件。例如 *cronie* 使用 `cronie.service`.
 
@@ -232,7 +238,15 @@ crontab 的基本格式是：
 *   *月* 值从 1 到 12.
 *   *星期* 值从 0 到 6, 0 代表星期日.
 
-多个时间可以用逗号隔开，范围可以用连字符给出，星号可以作为通配符。空格用来分开字段。例如，下面一行：
+空格用来分开字段，可以用下面特殊字符设定范围:
+
+| 符号 | 描述 |
+| ***** | 通配符，表示所有支持的时间值 |
+| **,** | 用逗号分隔多个时间 |
+| **-** | 连接两个数值，给出一个范围 |
+| **/** | 智鼎一个周期或频率 |
+
+例如，下面一行：
 
 ```
 *0,*5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
@@ -240,6 +254,31 @@ crontab 的基本格式是：
 ```
 
 会在夏天(六、七、八月)之外的每周周一到周五的上午9点到下午4点之间每5分钟执行一次 `i_love_cron.sh`。更多范例和高级配置方法见下文。
+
+Besides, crontab has some special keywords:
+
+```
+@reboot at startup 
+@yearly once a year
+@annually ( == @yearly)
+@monthly once a month
+@weekly once a week
+@daily once a day
+@midnight ( == @daily)
+@hourly once an hour
+
+```
+
+For example:
+
+```
+@reboot ~/bin/i_love_cron.sh
+
+```
+
+Will execute the script `i_love_cron.sh` at startup.
+
+See more at: [http://www.adminschoice.com/crontab-quick-reference](http://www.adminschoice.com/crontab-quick-reference)
 
 ## 基本命令
 
@@ -327,11 +366,214 @@ As noted in the *Crontab Format* section, the line:
 
 Will execute the script `i_love_cron.sh` at five minute intervals from 9 AM to 5 PM (excluding 5 PM itself) every weekday (Mon-Fri) of every month except during the summer (June, July, and August).
 
-## 更多信息
+## Examples
 
-The cron daemon parses a configuration file known as *crontab*. Each user on the system can maintain a separate crontab file to schedule commands individually. The root user's crontab is used to schedule system-wide tasks (though users may opt to use `/etc/crontab` or the `/etc/cron.d` directory, depending on which cron implementation they choose).
+The entry:
 
-There are slight differences between the crontab formats of the different cron daemons. The default root crontab for dcron looks like this:
+```
+01 * * * * /bin/echo Hello, world!
+
+```
+
+runs the command `/bin/echo Hello, world!` on the first minute of every hour of every day of every month (i.e. at 12:01, 1:01, 2:01, etc.).
+
+Similarly:
+
+```
+*/5 * * jan mon-fri /bin/echo Hello, world!
+
+```
+
+runs the same job every five minutes on weekdays during the month of January (i.e. at 12:00, 12:05, 12:10, etc.).
+
+The line (as noted in "man 5 crontab"):
+
+```
+*0,*5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
+
+```
+
+will execute the script `i_love_cron.sh` at five minute intervals from 9 AM to 5 PM (excluding 5 PM itself) every weekday (Mon-Fri) of every month except during the summer (June, July, and August).
+
+Periodical settings can also be entered as in this crontab template:
+
+```
+# Chronological table of program loadings                                       
+# Edit with "crontab" for proper functionality, "man 5 crontab" for formatting
+# User: johndoe
+
+# mm  hh  DD  MM  W /path/progam [--option]...  ( W = weekday: 0-6 [Sun=0] )
+  21  01  *   *   * /usr/bin/systemctl hibernate
+  @weekly           $HOME/.local/bin/trash-empty
+
+```
+
+Here are some self-explanatory crontab syntax examples:
+
+```
+30 4 echo "It is now 4:30 am."
+0 22 echo "It is now 10 pm."
+30 15 25 12 echo "It is 3:30pm on Christmas Day."
+30 3 * * * echo "Remind me that it's 3:30am every day."
+0 * * * * echo "It is the start of a new hour."
+0 6 1,15 * * echo "At 6am on the 1st and 15th of every month."
+0 6 * * 2,3,5 echo "At 6am on Tuesday, Wednesday and Thursdays."
+59 23 * * 1-5 echo "Just before midnight on weekdays."
+0 */2 * * * echo "Every two hours."
+0 20 * * 4 echo "8pm on a Thursday."
+0 20 * * Thu echo "8pm on a Thursday."
+*/15 9-17 * * 2-5 echo "Every 15 minutes from 9am-5pm on weekdays."
+@yearly echo "Happy New Year!"
+
+```
+
+## Default editor
+
+To use an alternate default editor, define the `EDITOR` environment variable in a shell initialization script as described in [Environment variables](/index.php/Environment_variables "Environment variables").
+
+As a regular user, `su` will need to be used instead of `sudo` for the environment variable to be pulled correctly:
+
+```
+$ su -c "crontab -e"
+
+```
+
+To have an alias to this `printf` is required to carry the arbitrary string because `su` launches in a new shell:
+
+```
+alias scron="su -c $(printf "%q " "crontab -e")"
+
+```
+
+## Running X.org server-based applications
+
+Cron does not run under the X.org server therefore it cannot know the environmental variable necessary to be able to start an X.org server application so they will have to be defined. One can use a program like [xuserrun-git](https://aur.archlinux.org/packages/xuserrun-git/) to do it:
+
+```
+17 02 * ... /usr/bin/xuserrun /usr/bin/xclock
+
+```
+
+Or they can be defined manually (`echo $DISPLAY` will give the current DISPLAY value):
+
+```
+17 02 * ... env DISPLAY=:0 /usr/bin/xclock
+
+```
+
+If running notify-send for desktop notifications in cron, notify-send is sending values to dbus. So it needs to tell dbus to connect to the right bus. The address can be found by examining DBUS_SESSION_BUS_ADDRESS environment variable and setting it to the same value. Therefore:
+
+```
+17 02 * ... env DBUS_SESSION_BUS_ADDRESS=your-address notify-send 'Foo bar'
+
+```
+
+If done through say SSH, permission will need be given:
+
+```
+# xhost +si:localuser:$(whoami)
+
+```
+
+## Asynchronous job processing
+
+If you regularly turn off your computer but do not want to miss jobs, there are some solutions available (easiest to hardest):
+
+### Cronie
+
+[cronie](https://www.archlinux.org/packages/?name=cronie) comes with anacron included. The project homepage says:
+
+Cronie contains the standard UNIX daemon crond that runs specified programs at scheduled times and related tools. It is based on the original cron and has security and configuration enhancements like the ability to use pam and SELinux.
+
+### Dcron
+
+Vanilla [dcron](https://aur.archlinux.org/packages/dcron/) supports asynchronous job processing. Just put it with @hourly, @daily, @weekly or @monthly with a jobname, like this:
+
+```
+@hourly         ID=greatest_ever_job      echo This job is very useful.
+
+```
+
+### Cronwhip
+
+[cronwhip](https://aur.archlinux.org/packages/cronwhip/) is a script to automatically run missed cron jobs; it works with the former default cron implementation, *dcron*. See also the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=57973).
+
+### Anacron
+
+Anacron is a full replacement for *dcron* which processes jobs asynchronously.
+
+It is provided by [cronie](https://www.archlinux.org/packages/?name=cronie). The configuration file is `/etc/anacrontab`. Information on the format can be found in the `anacrontab(5)` [man page](/index.php/Man_page "Man page"). Running `anacron -T` will test `/etc/anacrontab` for validity.
+
+### Fcron
+
+Like *anacron*, [fcron](https://www.archlinux.org/packages/?name=fcron) assumes the computer is not always running and, unlike *anacron*, it can schedule events at intervals shorter than a single day which may be useful for systems which suspend/hibernate regularly (such as a laptop). Like cronwhip, fcron can run jobs that should have been run during the computer's downtime.
+
+When replacing [cronie](https://www.archlinux.org/packages/?name=cronie) with fcron be aware the spool directory is `/var/spool/fcron` and the `fcrontab` command is used instead of *crontab* to edit the user crontabs. These crontabs are stored in a binary format with the text version next to them as *foo*.orig in the spool directory. Any scripts which manually edit user crontabs may need to be adjusted due to this difference in behavior.
+
+A quick scriptlet which may aide in converting traditional user crontabs to fcron format:
+
+```
+cd /var/spool/cron && (
+ for ctab in *; do
+  fcrontab ${ctab} -u ${ctab}
+ done
+)
+
+```
+
+See also the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=140497).
+
+## Ensuring exclusivity
+
+If you run potentially long-running jobs (e.g., a backup might all of a sudden run for a long time, because of many changes or a particular slow network connection), then `flock` ([util-linux](https://www.archlinux.org/packages/?name=util-linux)) can ensure that the cron job won't start a second time.
+
+```
+  5,35 * * * * /usr/bin/flock -n /tmp/lock.backup /root/make-backup.sh
+
+```
+
+## Cronie
+
+The relevant file hierarchy for cronie is the following:
+
+```
+   /etc/
+     |----- cron.d/
+              | ----- 0hourly
+     |----- cron.minutely/
+     |----- cron.hourly/
+              | ----- 0anacron
+     |----- anacrontab
+     |----- cron.daily/
+     |----- cron.monthly/
+     |----- cron.weekly/
+     |----- crontab
+     |----- cron.deny
+
+```
+
+Cronie provides both *cron* and *anacron* functionalities: *cron* runs jobs at regular time intervals (down to a granularity of one minute) as long as the system is available at the specified time, while *anacron* executes commands at intervals specified in days. Unlike cron, it does not assume that the system is running continuously. Whenever the system is up, *anacron* checks if there are any jobs that should have been run and handles them accordingly.
+
+A *cron* job can be defined in a crontab-like file in the `/etc/cron.d` directory or added within the `/etc/crontab` file. Note the latter is not present by default but is used if it exists. As instructed by `/etc/cron.d/0hourly`, any executable file in `/etc/cron.hourly` will be run every hour (by default at minute 1 of the hour). Files in `/etc/cron.minutely` are executed every minute if instructed accordingly in `/etc/cron.d/0hourly`. The executables are typically shell scripts, symlinks to executable files can also be used. The `/etc/cron.deny` file includes the list of users not allowed to use crontab, without this file, only users listed in `/etc/cron.allow` can use it.
+
+*Anacron* works similarly, by executing the files in the `/etc/cron.daily`, `/etc/cron.weekly` and `/etc/cron.monthly` directories, placed there depending on the desired job frequency. The cron job `/etc/cron.hourly/0anacron` makes sure that *anacron* is run once daily to perform its pending tasks.
+
+**Note:**
+
+*   Cronie uses `run-parts` to carry out scripts in the different directories. The filenames should not include any dot (.) since `run-parts` in its default mode will silently ignore them (see [run-parts(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)). The names must consist only of upper and lower-case letters, digits, underscores and minus-hyphens.
+*   The output of `systemctl status cronie` might show a message such as `CAN'T OPEN (/etc/crontab): No such file or directory`. However, this can be ignored since cronie does not require one.
+*   Cronie is particular about the permissions for `/etc/cron.d/0hourly`. None of the tasks in `/etc/cron.d/{hourly,weekly,daily} ... etc` will be run (including the anacron launcher) if `/etc/cron.d/0hourly` is damaged or has improper permissions. `pacman -Qkk cronie` can show if you have any such issues.
+
+**Tip:** To prevent the sending of output and stop email alert, add `>/dev/null 2>&1` at the end of the line for each cron job to redirect output to /dev/null.
+```
+0 1 5 10 * /path/to/script.sh >/dev/null 2>&1
+
+```
+You can also set `MAILTO=””` variable in your crontab file to disable email alerts.
+
+## Dcron
+
+The cron daemon parses a configuration file known as `crontab`. Each user on the system can maintain a separate crontab file to schedule commands individually. The root user's crontab is used to schedule system-wide tasks (though users may opt to use `/etc/crontab` or the `/etc/cron.d` directory, depending on which cron implementation they choose).
 
 ```
 /var/spool/cron/root
@@ -339,18 +581,17 @@ There are slight differences between the crontab formats of the different cron d
 ```
 
 ```
-# root crontab
-# DO NOT EDIT THIS FILE MANUALLY! USE crontab -e INSTEAD
+# Run command at a scheduled time
+# Edit this 'crontab -e' for error checking, man 1 crontab for acceptable format
 
-# man 1 crontab for acceptable formats:
-#    <minute> <hour> <day> <month> <dow> <tags and command>
-#    <@freq> <tags and command>
-
-# SYSTEM DAILY/WEEKLY/... FOLDERS
+# <@freq>                       <tags and command>
 @hourly         ID=sys-hourly   /usr/sbin/run-cron /etc/cron.hourly
 @daily          ID=sys-daily    /usr/sbin/run-cron /etc/cron.daily
 @weekly         ID=sys-weekly   /usr/sbin/run-cron /etc/cron.weekly
 @monthly        ID=sys-monthly  /usr/sbin/run-cron /etc/cron.monthly
+
+# mm  hh  DD  MM  W /path/command (or tags) # W = week: 0-6, Sun=0
+  21  01  *   *   * /usr/bin/systemctl suspend
 
 ```
 
@@ -373,60 +614,7 @@ The crontab files themselves are usually stored as `/var/spool/cron/username`. F
 
 See the crontab [man page](/index.php/Man_page "Man page") for further information and configuration examples.
 
-## run-parts issue
+## See also
 
-cronie使用run-parts来执行在cron.hourly/cron.daily/cron.weekly/cron.monthly里的脚本。 请注意这些文件夹里的脚本名字中不应该含有'.'，因为不含有任何参数的run-parts将会忽略他们。例如backup.sh这个脚本是不会被执行的，请将其改名为backup或者其他不含有'.'的名字以定时执行该脚本。 要获取更详细的信息请 man run-parts
-
-## 运行 X 程序
-
-If you find that you cannot run X apps from cron jobs then put this before the command:
-
-```
-export DISPLAY=:0.0 ;
-
-```
-
-That sets the DISPLAY variable to the first display; which is usually right unless you like to run multiple xservers on your machine.
-
-If it still does not work then you need to use xhost to give your user control over X11:
-
-```
-# xhost +si:localuser:$(whoami)
-
-```
-
-I put it in my gnome `Startup Applications' like this:
-
-```
-bash -c "xhost +si:localuser:$(whoami)"
-
-```
-
-## Asynchronous job processing
-
-If you regularly turn off your computer but do not want to miss jobs, there are some solutions available (easiest to hardest):
-
-### Dcron
-
-Vanilla dcron supports asynchronous job processing. Just put it with @hourly, @daily, @weekly or @monthly with a jobname, like this:
-
-```
-@hourly         ID=greatest_ever_job      echo This job is very useful.
-
-```
-
-### Cronwhip
-
-([AUR](https://aur.archlinux.org/packages.php?ID=21079), [forum thread](https://bbs.archlinux.org/viewtopic.php?id=57973)): Script to automatically run missed cron jobs; works with the default cron implementation, dcron.
-
-### Anacron
-
-([AUR](https://aur.archlinux.org/packages.php?ID=5196)): Full replacement for dcron, processes jobs asynchronously.
-
-### Fcron
-
-([Community](https://www.archlinux.org/packages/community/i686/fcron/), [forum thread](https://bbs.archlinux.org/viewtopic.php?id=140497)): Like anacron, fcron assumes the computer is not always running and, unlike anacron, it can schedule events at intervals shorter than a single day. Like cronwhip, it can run jobs that should have been run during the computer's downtime.
-
-## 参见
-
-*   [Gentoo Linux Cron 指南](http://www.gentoo.org/doc/en/cron-guide.xml)
+*   [Gentoo Linux Cron Guide](http://www.gentoo.org/doc/en/cron-guide.xml)
+*   [crontab.guru](https://crontab.guru/) - online editor for cronjob expressions

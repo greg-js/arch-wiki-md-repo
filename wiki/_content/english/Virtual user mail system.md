@@ -5,11 +5,11 @@ Related articles
 *   [Postfix](/index.php/Postfix "Postfix")
 *   [SOGo](/index.php/SOGo "SOGo")
 
-This article describes how to set up a complete virtual user mail system on an Arch Linux system in the simplest manner possible. However, since a mail system consists of many complex components, quite a bit of configuration will still be necessary.
+This article describes how to set up a virtual user mail system, i.e. where the senders and recipients do not correspond to the Linux system users.
 
-Roughly, the components used in this article are Postfix as the mail server, Dovecot as the IMAP server, Roundcube as the webmail interface and PostfixAdmin as the administration interface to manage it all.
+Roughly, the components used in this article are [Postfix](/index.php/Postfix "Postfix") as the mail server, [Dovecot](/index.php/Dovecot "Dovecot") as the IMAP server, [Roundcube](/index.php/Roundcube "Roundcube") as the webmail interface and PostfixAdmin as the administration interface to manage it all.
 
-In the end, the provided solution will allow you to use the best currently available security mechanisms, you will be able to send mails using SMTP and SMTPS and receive mails using POP3, POP3S, IMAP and IMAPS. Additionally, configuration will be easy thanks to PostfixAdmin and users will be able to login using Roundcube. What a deal!
+In the end, the provided solution will allow you to use the best currently available security mechanisms, you will be able to send mails using SMTP and SMTPS and receive mails using POP3, POP3S, IMAP and IMAPS. Additionally, configuration will be easy thanks to PostfixAdmin and users will be able to login using Roundcube.
 
 ## Contents
 

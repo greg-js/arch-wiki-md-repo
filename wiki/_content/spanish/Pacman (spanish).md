@@ -32,7 +32,8 @@ El [gestor de paquetes](https://en.wikipedia.org/wiki/Package_management_system 
     *   [1.2 Desinstalar paquetes](#Desinstalar_paquetes)
     *   [1.3 Actualizar paquetes](#Actualizar_paquetes)
     *   [1.4 Consultar la base de datos de los paquetes](#Consultar_la_base_de_datos_de_los_paquetes)
-        *   [1.4.1 Estructura de la base de datos](#Estructura_de_la_base_de_datos)
+        *   [1.4.1 Pactree](#Pactree)
+        *   [1.4.2 Estructura de la base de datos](#Estructura_de_la_base_de_datos)
     *   [1.5 Limpiar la memoria caché de los paquetes](#Limpiar_la_memoria_cach.C3.A9_de_los_paquetes)
     *   [1.6 Órdenes adicionales](#.C3.93rdenes_adicionales)
     *   [1.7 Motivo de la instalación](#Motivo_de_la_instalaci.C3.B3n)
@@ -335,6 +336,17 @@ $ pactree -r *nombre_paquete*
 ```
 
 Véase [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") para conocer más ejemplos.
+
+#### Pactree
+
+Para ver el árbol de dependencias de un paquete:
+
+```
+$ pactree *package_name*
+
+```
+
+Para ver el árbol dependiente de un paquete, pase la bandera inversa `-r` a *pactree*, o use *whoneeds* desde [pkgtools](https://aur.archlinux.org/packages/pkgtools/).
 
 #### Estructura de la base de datos
 

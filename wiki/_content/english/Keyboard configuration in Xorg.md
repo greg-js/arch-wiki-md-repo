@@ -4,47 +4,42 @@ Related articles
 *   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
 *   [Xorg](/index.php/Xorg "Xorg")
+*   [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts")
 
-This article describes the basics of [Xorg](/index.php/Xorg "Xorg") keyboard configuration. For additional key mappings, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
+This article describes the basics of [Xorg](/index.php/Xorg "Xorg") keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") or [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") respectively.
+
+The Xorg server uses the [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") (XKB) to define keyboard layouts. Optionally, [xmodmap](/index.php/Xmodmap "Xmodmap") can be used to access the internal keymap table directly, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s *localectl* can be used to define the keyboard layout for both the Xorg server and the virtual console.
+
+**Note:** XKB options can be overridden by the tools provided by some desktop environments such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE").
 
 ## Contents
 
-*   [1 Keyboard layouts](#Keyboard_layouts)
-*   [2 Viewing keyboard settings](#Viewing_keyboard_settings)
-    *   [2.1 Third party utilities](#Third_party_utilities)
-*   [3 Setting keyboard layout](#Setting_keyboard_layout)
-    *   [3.1 Using setxkbmap](#Using_setxkbmap)
-    *   [3.2 Using X configuration files](#Using_X_configuration_files)
-        *   [3.2.1 Using localectl](#Using_localectl)
-*   [4 Frequently used XKB options](#Frequently_used_XKB_options)
-    *   [4.1 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
-    *   [4.2 Terminating Xorg with Ctrl+Alt+Backspace](#Terminating_Xorg_with_Ctrl.2BAlt.2BBackspace)
-    *   [4.3 Swapping Caps Lock with Left Control](#Swapping_Caps_Lock_with_Left_Control)
-    *   [4.4 Enabling mouse keys](#Enabling_mouse_keys)
-    *   [4.5 Configuring compose key](#Configuring_compose_key)
-        *   [4.5.1 Key combinations](#Key_combinations)
-    *   [4.6 Currency sign on other key](#Currency_sign_on_other_key)
-    *   [4.7 Switching state immediately when Caps Lock is pressed](#Switching_state_immediately_when_Caps_Lock_is_pressed)
-        *   [4.7.1 Workaround](#Workaround)
-*   [5 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
-    *   [5.1 Using xset](#Using_xset)
-    *   [5.2 Using XServer startup options](#Using_XServer_startup_options)
-    *   [5.3 Using XServer options](#Using_XServer_options)
-*   [6 Identifying keycodes](#Identifying_keycodes)
-*   [7 Keybinding](#Keybinding)
-    *   [7.1 Third-party tools](#Third-party_tools)
-        *   [7.1.1 sxhkd](#sxhkd)
-        *   [7.1.2 actkbd](#actkbd)
-        *   [7.1.3 xbindkeys](#xbindkeys)
-*   [8 See also](#See_also)
-
-## Keyboard layouts
-
-In Xorg keyboard layouts are defined using [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") (XKB).
-
-You can set the XKB keyboard layout with [setxkbmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1).
-
-[xmodmap](/index.php/Xmodmap "Xmodmap") can be used to directly access the internal keymap table, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) can be used to define the keyboard layout for both the Xorg server and the virtual console.
+*   [1 Viewing keyboard settings](#Viewing_keyboard_settings)
+    *   [1.1 Third party utilities](#Third_party_utilities)
+*   [2 Setting keyboard layout](#Setting_keyboard_layout)
+    *   [2.1 Using setxkbmap](#Using_setxkbmap)
+    *   [2.2 Using X configuration files](#Using_X_configuration_files)
+        *   [2.2.1 Using localectl](#Using_localectl)
+*   [3 Frequently used XKB options](#Frequently_used_XKB_options)
+    *   [3.1 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
+    *   [3.2 Terminating Xorg with Ctrl+Alt+Backspace](#Terminating_Xorg_with_Ctrl.2BAlt.2BBackspace)
+    *   [3.3 Swapping Caps Lock with Left Control](#Swapping_Caps_Lock_with_Left_Control)
+    *   [3.4 Enabling mouse keys](#Enabling_mouse_keys)
+    *   [3.5 Configuring compose key](#Configuring_compose_key)
+        *   [3.5.1 Key combinations](#Key_combinations)
+    *   [3.6 Currency sign on other key](#Currency_sign_on_other_key)
+    *   [3.7 Switching state immediately when Caps Lock is pressed](#Switching_state_immediately_when_Caps_Lock_is_pressed)
+        *   [3.7.1 Workaround](#Workaround)
+*   [4 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
+    *   [4.1 Using xset](#Using_xset)
+    *   [4.2 Using XServer startup options](#Using_XServer_startup_options)
+    *   [4.3 Using XServer options](#Using_XServer_options)
+*   [5 Keybinding](#Keybinding)
+    *   [5.1 Third-party tools](#Third-party_tools)
+        *   [5.1.1 sxhkd](#sxhkd)
+        *   [5.1.2 actkbd](#actkbd)
+        *   [5.1.3 xbindkeys](#xbindkeys)
+*   [6 See also](#See_also)
 
 ## Viewing keyboard settings
 
@@ -327,48 +322,13 @@ Option "AutoRepeat" "*delay* *rate*"
 
 ```
 
-## Identifying keycodes
-
-**Note:** The Xorg [keycodes](/index.php/Extra_keyboard_keys "Extra keyboard keys") are 8 larger than the Linux keycodes.[[4]](https://cgit.freedesktop.org/xorg/driver/xf86-input-evdev/tree/src/evdev.c)
-
-The *keycodes* used by [Xorg](/index.php/Xorg "Xorg") are reported by a utility called [xev(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xev.1), which is provided by the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package. Of course to execute *xev*, you need to be in a graphical environment, not in the console.
-
-With the following command you can start *xev* and show only the relevant parts:
-
-```
- $ xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s
-", $5, $8 }'
-
-```
-
-Here is an example output:
-
-```
-38  a
-55  v
-54  c
-50  Shift_L
-133 Super_L
-135 Menu
-
-```
-
-[Xbindkeys#Identifying keycodes](/index.php/Xbindkeys#Identifying_keycodes "Xbindkeys") is another wrapper to "xev" that reports keycodes.
-
-If you press a key and nothing appears in the terminal, it means that either the key does not have a *scancode*, the *scancode* is not mapped to a *keycode*, or some other process is capturing the keypress. If you suspect that a process listening to X server is capturing the keypress, you can try running xev from a clean X session:
-
-```
-$ xinit /usr/bin/xterm -- :1
-
-```
-
 ## Keybinding
 
-When we are in a graphical environment we may want to execute a command when certain key combination is pressed (i.e. bind a command to a keysym). There are multiple ways to do that:
+When we are in a graphical environment we may want to execute a command when certain key combination is pressed (i.e. bind a command to a *keysym*). There are multiple ways to do that:
 
 *   The most portable way using low level tools, such as [acpid](/index.php/Acpid "Acpid"). Not all keys are supported, but configuration in uniform way is possible for keyboard keys, power adapter connection and even headphone jack (un)plugging events. It is also difficult to run programs inside X session correctly.
 *   The universal way using [Xorg](/index.php/Xorg "Xorg") utilities (e.g. [xbindkeys](/index.php/Xbindkeys "Xbindkeys")) and eventually your desktop environment or window manager tools.
-*   The quicker way using a third-party program to do everything in GUI, such as the Gnome Control Center or [Keytouch](/index.php/Keytouch "Keytouch").
+*   The quicker way using a third-party program to do everything in GUI, such as the Gnome Control Center.
 
 ### Third-party tools
 

@@ -252,7 +252,7 @@ Rebuilding the iso after modifications is not officially supported. However, it 
 
 ```
 
-Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an `id` command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [[1]](https://bugs.archlinux.org/task/41865).
+Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an `id` command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [FS#41865](https://bugs.archlinux.org/task/41865).
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch
@@ -277,7 +277,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ```
 
-This increases the speed of the initial bootstrap, since it doesn't have to download and install any of the base packages that are already installed.
+This increases the speed of the initial bootstrap, since it does not have to download and install any of the base packages that are already installed.
 
 ## Using the ISO
 
@@ -402,4 +402,4 @@ If using a display manager like GDM, you may want to change the systemd default 
 
 ### Creating a offline installation ISO
 
-*   [Archiso Offline](https://wiki.archlinux.org/index.php/Archiso_offline)
+*   [Archiso offline](/index.php/Archiso_offline "Archiso offline")

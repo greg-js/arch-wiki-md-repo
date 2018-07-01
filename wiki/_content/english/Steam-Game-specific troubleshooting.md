@@ -570,6 +570,8 @@ LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
 
 ```
 
+Possible solution 2: Launch steam as `steam-native` as described in [#Steam native runtime](/index.php/Steam/Troubleshooting#Steam_native_runtime "Steam/Troubleshooting"). If the game still fails to launch even after installing the [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) meta package, then you might be missing some libraries. You can find those missing libraries as described in [#Debugging shared libraries](/index.php/Steam/Troubleshooting#Debugging_shared_libraries "Steam/Troubleshooting").
+
 ### Borderlands: The Pre-Sequel
 
 See [#Borderlands 2](#Borderlands_2).

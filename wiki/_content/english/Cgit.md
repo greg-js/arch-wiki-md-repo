@@ -101,25 +101,22 @@ and restart lighttpd.
 This alternative lighttpd configuration will serve Cgit on a sub-domain like git.example.com with optional SSL support, and rewrites creating nice permalinks:
 
 ```
-   # GIT repository browser
+server.modules += ( "mod_cgi", "mod_rewrite" )
 
-   server.modules += ( "mod_cgi", "mod_rewrite" )
+#$SERVER["socket"] == ":443" {
+$SERVER["socket"] == ":80" {
+    #ssl.engine                    = "enable"
+    #ssl.pemfile                   = "/etc/lighttpd/ssl/git.example.com.pem"
 
-   #$SERVER["socket"] == ":443" {
-   $SERVER["socket"] == ":80" {
-     #ssl.engine                    = "enable"
-     #ssl.pemfile                   = "/etc/lighttpd/ssl/git.example.com.pem"
+    server.name          = "git.example.com"
+    server.document-root = "/usr/share/webapps/cgit/"
 
-     server.name          = "git.example.com"
-     server.document-root = "/usr/share/webapps/cgit/"
-
-     index-file.names     = ( "cgit.cgi" )
-     cgi.assign           = ( "cgit.cgi" => "" )
-     url.rewrite-once     = (
-       "^/([^?/]+/[^?]*)?(?:\?(.*))?$"   => "/cgit.cgi?url=$1&$2",
-     )
-   }
-
+    index-file.names     = ( "cgit.cgi" )
+    cgi.assign           = ( "cgit.cgi" => "" )
+    url.rewrite-once     = (
+        "^/([^?/]+/[^?]*)?(?:\?(.*))?$"   => "/cgit.cgi?url=$1&$2",
+    )
+}
 ```
 
 ### Nginx
@@ -235,6 +232,8 @@ git.example.com {
 
 ## Configuration of cgit
 
+See [cgitrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgitrc.5) for the list of all config options.
+
 ### Basic configuration
 
 Before you can start adding repositories you will first have to create the basic cgit configuration file at `/etc/cgitrc`.
@@ -246,7 +245,6 @@ Before you can start adding repositories you will first have to create the basic
 
 css=/cgit.css
 logo=/cgit.png
-favicon=/favicon.ico
 
 # Following lines work with the above Apache config
 #css=/cgit-css/cgit.css
@@ -261,12 +259,6 @@ favicon=/favicon.ico
 
 # if you do not want that webcrawler (like google) index your site
 robots=noindex, nofollow
-
-# Allow download of tar.gz, tar.bz2 and zip-files
-snapshots=tar.gz tar.bz2 zip
-
-# Enable adhoc downloads of this repo
-repo.snapshots=1
 
 # if cgit messes up links, use a virtual-root. For example has cgit.example.org/ this value:
 virtual-root=/

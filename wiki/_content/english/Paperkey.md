@@ -10,6 +10,7 @@ Related articles
 *   [2 Usage](#Usage)
     *   [2.1 Backup](#Backup)
     *   [2.2 Restore secret key](#Restore_secret_key)
+        *   [2.2.1 Error: unable to parse OpenPGP packets (is this armored data?)](#Error:_unable_to_parse_OpenPGP_packets_.28is_this_armored_data.3F.29)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Print secret key directly](#Print_secret_key_directly)
 
@@ -43,6 +44,15 @@ Alternatively, restore the private key to a file:
 
 ```
 $ paperkey --pubring *public-key.asc* --secrets *secret-key-paper.asc* --output *secret-key.asc*
+
+```
+
+#### Error: unable to parse OpenPGP packets (is this armored data?)
+
+If you receive this error while restoring your key, you need to dearmor your public key first:
+
+```
+$ gpg --dearmor *public-key.asc*
 
 ```
 

@@ -57,16 +57,6 @@ exec openbox-session
 
 **Note:** At the very least, ensure that the last if block in `/etc/X11/xinit/xinitrc` is present in your `.xinitrc` file to ensure that the scripts in `/etc/X11/xinit/xinitrc.d` are sourced.
 
-Another way to make a customized xinitrc available to all users with no modifiation to `/etc/X11/xinit/xinitrc` (which sources the scripts in `/etc/X11/xinit/xinitrc.d/` in sequence):
-
- `/etc/X11/xinit/xinitrc.d/99-startlxde.sh` 
-```
-xscreensaver -no-splash &
-xrandr --dpi 144 &
-exec /usr/bin/startlxde
-
-```
-
 Long-running programs started before the window manager, such as a screensaver and wallpaper application, must either fork themselves or be run in the background by appending an `&` sign. Otherwise, the script would halt and wait for each program to exit before executing the window manager or desktop environment. Note that some programs should instead not be forked, to avoid race bugs, as is the case of [xrdb](/index.php/Xrdb "Xrdb"). Prepending `exec` will replace the script process with the window manager process, so that X does not exit even if this process forks to the background.
 
 ### xserverrc
@@ -131,7 +121,9 @@ Make sure that *startx* is properly [configured](#Configuration).
 For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`. For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
 
 ```
-[[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
 
 ```
 

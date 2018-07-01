@@ -7,10 +7,10 @@ This article provides a list of (not commonly known) default keyboard shortcuts 
     *   [1.2 Terminal](#Terminal)
         *   [1.2.1 Virtual console](#Virtual_console)
         *   [1.2.2 Readline](#Readline)
-    *   [1.3 X11 & Wayland](#X11_.26_Wayland)
+    *   [1.3 Xorg and Wayland](#Xorg_and_Wayland)
 *   [2 User customization](#User_customization)
     *   [2.1 Readline](#Readline_2)
-    *   [2.2 X11](#X11)
+    *   [2.2 Xorg](#Xorg)
     *   [2.3 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 See also](#See_also)
@@ -62,7 +62,7 @@ See [Wikipedia:Virtual console](https://en.wikipedia.org/wiki/Virtual_console "w
 
 #### Readline
 
-GNU readline is a commonly used library for line-editing; it is used for example by Bash, FTP, and many more (see the details of [readline](https://www.archlinux.org/packages/?name=readline) package under "Required By" for more examples). readline is also customizable (see man page for details).
+[Readline](/index.php/Readline "Readline") is a commonly used library for line-editing; it is used for example by Bash, FTP, and many more (see the details of [readline](https://www.archlinux.org/packages/?name=readline) package under "Required By" for more examples). Readline is also customizable, see examples on the [readline](/index.php/Readline "Readline") page.
 
 | Keyboard Shortcut | Description |
 | `Ctrl+l` | Clear the screen |
@@ -95,7 +95,7 @@ GNU readline is a commonly used library for line-editing; it is used for example
 | `Alt+?` | List all possible completions |
 | `Alt+*` | Insert all possible completions |
 
-### X11 & Wayland
+### Xorg and Wayland
 
 | Keyboard Shortcut | Description | Notes |
 | `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console | If it does not work, try `Ctrl+Fn+Alt+F…`. |
@@ -106,18 +106,9 @@ GNU readline is a commonly used library for line-editing; it is used for example
 
 ### Readline
 
-This example adds keys that allow (in *vi-mode*) to search backward through the history for the string of characters between the start of the current line and the point. This is a non-incremental search.
+[Readline](/index.php/Readline "Readline") has [Emacs](/index.php/Emacs "Emacs")-like and [vi](/index.php/Vi "Vi")-like editing modes which can be customized with escape sequences.
 
- `.inputrc` 
-```
-set editing-mode vi
-set keymap vi-insert
-"\C-r": history-search-backward
-"\C-e": history-search-forward
-
-```
-
-### X11
+### Xorg
 
 See [Keyboard configuration in Xorg#Frequently used XKB options](/index.php/Keyboard_configuration_in_Xorg#Frequently_used_XKB_options "Keyboard configuration in Xorg") for some common shortcuts, that are disabled by default.
 
@@ -169,14 +160,6 @@ import XMonad.Util.Paste
   , ((0,                     xK_Insert), pasteSelection) ]
 
 ```
-
-**Using xdotool** - command-line X11 automation tool
-
-With the [xdotool](https://www.archlinux.org/packages/?name=xdotool) it is possible to create a short cut which actually pastes the content of the X-Selection buffer via triggering the middle mouse button. Instead of hit the text as separate key strokes. The command for the short cut is:
-
-`xdotool getwindowfocus key --window %1 click 2`
-
-The command get the window which has focus from the xserver and triggers a click of button 2 which is the middle mouse button.
 
 ## Tips and tricks
 

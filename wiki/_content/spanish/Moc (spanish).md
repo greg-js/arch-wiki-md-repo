@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [mpd](/index.php/Mpd "Mpd")
+
 **M**usic **O**n **C**onsole (moc) es un reproductor de música para ncurses liviano y poderoso. Similar a [mpd](/index.php/Mpd "Mpd"), presenta un servidor (moc) y a la vez un cliente (mocp). Tiene una estructura análoga la del administrador de archivos [Midnight Commander](http://www.midnight-commander.org), donde prodrá navegar su disco duro en un panel, y su lista de reproducción en el otro.
 
 Soporta ALSA, OSS y JACK, es altamente configurable, permite reproducir formatos como mp3, Ogg, Vorbis, FLAC, Musepack, Speex, WAVE, AIFF, AU, y otros menos conocidos. También soporta listas de reproducción (como `m3u`). Otras características de moc es que nos brinda la posibilidad de elegir de esquemas de colores, personalizar todos los atajos del teclado, crear listas reproducción y más. Para mayor información puede ver la [página oficial](http://moc.daper.net/about).

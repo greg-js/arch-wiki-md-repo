@@ -23,6 +23,8 @@ Related articles
         *   [2.4.1 Allow local network to use DNS](#Allow_local_network_to_use_DNS)
         *   [2.4.2 Include local DNS server](#Include_local_DNS_server)
         *   [2.4.3 Forward all remaining requests](#Forward_all_remaining_requests)
+            *   [2.4.3.1 Using openresolv](#Using_openresolv)
+            *   [2.4.3.2 Manually specifying DNS servers](#Manually_specifying_DNS_servers)
     *   [2.5 Access control](#Access_control)
 *   [3 Usage](#Usage)
     *   [3.1 Starting Unbound](#Starting_Unbound)
@@ -61,13 +63,13 @@ server:
 
 ### Local DNS server
 
-If you want to use *unbound* as your local DNS server, set your nameserver to `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf").
+If you want to use *unbound* as your local DNS server, set your nameserver to the loopback addresses `::1` and `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Domain_name_resolution#Overwriting_of_resolv.conf "Domain name resolution").
 
-**Tip:** A simple way to do this is to install [openresolv](/index.php/Openresolv "Openresolv") and uncomment the line containing `name_servers=127.0.0.1` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
+**Tip:** A simple way to do this is to install [openresolv](/index.php/Openresolv "Openresolv") and uncomment the line containing `name_servers="::1 127.0.0.1"` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
 
-See [Resolv.conf#Testing](/index.php/Resolv.conf#Testing "Resolv.conf") on how to test your settings.
+See [Domain name resolution#Lookup utilities](/index.php/Domain_name_resolution#Lookup_utilities "Domain name resolution") on how to test your settings.
 
-Check specifically that the server being used is `127.0.0.1` after making permanent changes to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+Check specifically that the server being used is `::1` or `127.0.0.1` after making permanent changes to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
 You will also need to setup *unbound* such that it is [#Forwarding queries](#Forwarding_queries) to the DNS servers of your choice.
 
@@ -192,6 +194,28 @@ local-data: "1.0.0.127.in-addr.arpa. 10800 IN PTR localhost."
 ```
 
 #### Forward all remaining requests
+
+##### Using openresolv
+
+If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide upstream DNS servers to Unbound. [[1]](https://roy.marples.name/projects/openresolv/config)
+
+ `/etc/resolvconf.conf` 
+```
+...
+# Write out unbound configuration file
+unbound_conf=/etc/unbound-resolvconf.conf
+```
+
+Run `resolvconf -u` to generate the file.
+
+Finally configure Unbound to read the openresolv's generated file:
+
+```
+include: "/etc/unbound-resolvconf.conf"
+
+```
+
+##### Manually specifying DNS servers
 
 To use specific servers for default forward zones that are outside of the local machine and outside of the local network add a forward zone with the name `.` to the configuration file. In this example, all requests are forwarded to Google's DNS servers:
 

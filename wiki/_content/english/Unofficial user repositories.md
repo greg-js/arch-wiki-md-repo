@@ -65,23 +65,24 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.5 archlinuxfr](#archlinuxfr)
     *   [3.6 archlinuxgr](#archlinuxgr)
     *   [3.7 archlinuxgr-kde4](#archlinuxgr-kde4)
-    *   [3.8 fusion809](#fusion809)
-    *   [3.9 heftig](#heftig)
-    *   [3.10 home-thaodan](#home-thaodan)
-    *   [3.11 jkanetwork](#jkanetwork)
-    *   [3.12 mesa-git](#mesa-git)
-    *   [3.13 Minerva W Science](#Minerva_W_Science)
-    *   [3.14 mingw-w64](#mingw-w64)
-    *   [3.15 ownstuff](#ownstuff)
-    *   [3.16 pantheon](#pantheon)
-    *   [3.17 pietma](#pietma)
-    *   [3.18 Pival81 arch xapps](#Pival81_arch_xapps)
-    *   [3.19 pnsft-pur](#pnsft-pur)
-    *   [3.20 post-factum kernels](#post-factum_kernels)
-    *   [3.21 QOwnNotes](#QOwnNotes)
-    *   [3.22 rakudo](#rakudo)
-    *   [3.23 rust-git](#rust-git)
-    *   [3.24 zrootfs](#zrootfs)
+    *   [3.8 dx37essentials](#dx37essentials)
+    *   [3.9 fusion809](#fusion809)
+    *   [3.10 heftig](#heftig)
+    *   [3.11 home-thaodan](#home-thaodan)
+    *   [3.12 jkanetwork](#jkanetwork)
+    *   [3.13 mesa-git](#mesa-git)
+    *   [3.14 Minerva W Science](#Minerva_W_Science)
+    *   [3.15 mingw-w64](#mingw-w64)
+    *   [3.16 ownstuff](#ownstuff)
+    *   [3.17 pantheon](#pantheon)
+    *   [3.18 pietma](#pietma)
+    *   [3.19 Pival81 arch xapps](#Pival81_arch_xapps)
+    *   [3.20 pnsft-pur](#pnsft-pur)
+    *   [3.21 post-factum kernels](#post-factum_kernels)
+    *   [3.22 QOwnNotes](#QOwnNotes)
+    *   [3.23 rakudo](#rakudo)
+    *   [3.24 rust-git](#rust-git)
+    *   [3.25 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -715,6 +716,19 @@ Server = http://archlinuxgr.tiven.org/archlinux/$arch
 ```
 [archlinuxgr-kde4]
 Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
+
+```
+
+### dx37essentials
+
+*   **Maintainer:** [DragonX256](https://aur.archlinux.org/account/DragonX256)
+*   **Description:** Personal repository. Contains packages from AUR, which I using every day.
+*   **Git repo:** [https://gitlab.com/DX37/dx37essentials](https://gitlab.com/DX37/dx37essentials)
+*   **Upstream page:** [https://dx37.gitlab.io/dx37essentials](https://dx37.gitlab.io/dx37essentials)
+
+```
+[dx37essentials]
+Server = https://dx37.gitlab.io/$repo/$arch
 
 ```
 

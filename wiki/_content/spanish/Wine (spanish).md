@@ -64,7 +64,7 @@ Si tienes problemas para ejecutar una aplicación DirectX correctamente, intenta
 
 ## Fuentes
 
-*   Si las aplicaciones Wine muestran fuentes ilegibles, puede que no tengas instaladas las fuentes Truetype de Microsoft. Puede instalar el paquete ttf-ms-fonts con yaourt o desde [AUR](/index.php/AUR "AUR").
+*   Si las aplicaciones Wine muestran fuentes ilegibles, puede que no tengas instaladas las fuentes Truetype de Microsoft. Puede instalar el paquete ttf-ms-fonts desde [AUR](/index.php/AUR "AUR").
 
 Luego mate todos los servidores wine y ejecute winecfg; las fuentes deben ser legibles ahora.
 

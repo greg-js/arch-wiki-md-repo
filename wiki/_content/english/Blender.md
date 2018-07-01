@@ -34,7 +34,7 @@ Blender is becoming increasingly well known in the professional industry. As suc
 
 ### LuxRender
 
-[LuxRender](http://www.luxrender.net/en_GB/index) is an open source rendering method that can also make use of OpenCL to render. To make use of it, simple install the package [luxblend25](https://www.archlinux.org/packages/?name=luxblend25) from the offical arch community repo, Then enable the LuxRender addon in the User Preferences box in Blender.
+[LuxRender](https://luxcorerender.org/) is an open source rendering method that can also make use of OpenCL to render. To make use of it, simple install the package [luxblend25](https://www.archlinux.org/packages/?name=luxblend25) from the offical arch community repo, Then enable the LuxRender addon in the User Preferences box in Blender.
 
 ### RenderMan
 

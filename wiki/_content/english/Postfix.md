@@ -180,13 +180,7 @@ See [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user
 
 ### DNS records
 
-An MX record should point to the mail host. Usually this is done from configuration interface of your domain provider.
-
-A mail exchanger record (MX record) is a type of resource record in the Domain Name System that specifies a mail server responsible for accepting email messages on behalf of a recipient's domain.
-
-When an e-mail message is sent through the Internet, the sending mail transfer agent queries the Domain Name System for MX records of each recipient's domain name. This query returns a list of host names of mail exchange servers accepting incoming mail for that domain and their preferences. The sending agent then attempts to establish an SMTP connection to one of these servers, starting with the one with the smallest preference number, delivering the message to the first server with which a connection can be made.
-
-**Note:** Some mail servers will not deliver mail to you if your MX record points to a CNAME. For best results, always point an MX record to an A record definition. For more information, see e.g. [Wikipedia's List of DNS Record Types](https://en.wikipedia.org/wiki/List_of_DNS_record_types "wikipedia:List of DNS record types").
+See [Mail server#MX record](/index.php/Mail_server#MX_record "Mail server").
 
 ### Check configuration
 

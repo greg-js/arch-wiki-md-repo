@@ -32,7 +32,6 @@ A good number of new packages that enter the official repositories start in the 
         *   [5.1.3 Creating a new package](#Creating_a_new_package)
         *   [5.1.4 Uploading packages](#Uploading_packages)
     *   [5.2 Maintaining packages](#Maintaining_packages)
-        *   [5.2.1 Creating and sending a patch](#Creating_and_sending_a_patch)
     *   [5.3 Other requests](#Other_requests)
 *   [6 Web interface translation](#Web_interface_translation)
 *   [7 Comment syntax](#Comment_syntax)
@@ -284,13 +283,6 @@ $ git push
 *   Please do not leave a comment containing the version number every time you update the package. This keeps the comment section usable for valuable content mentioned above. [AUR helpers](/index.php/AUR_helpers "AUR helpers") are suited better to check for updates.
 *   Please do not just submit and forget about packages! It is the maintainer's job to maintain the package by checking for updates and improving the PKGBUILD.
 *   If you do not want to continue to maintain the package for some reason, `disown` the package using the AUR web interface and/or post a message to the AUR Mailing List. If all maintainers of an AUR package disown it, it will become an ["orphaned"](https://aur.archlinux.org/packages/?SB=n&do_Orphans=Orphans) package.
-
-#### Creating and sending a patch
-
-*   Edit the files. If you are using `pacaur`, you can find them in `~/.cache/pacaur/<packagename>`.
-*   Commit the changed files locally using `git add <CHANGEDFILE>`, followed by `git commit`
-*   Create a patch file using `git format-patch -1 master`, where `-1` is the number of commits you made (usually 1)
-*   Send the created patch(es) to the maintainer via E-Mail.
 
 ### Other requests
 

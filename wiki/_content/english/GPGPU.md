@@ -158,6 +158,7 @@ To find whether the installation was successful and if cuda is up and running, y
 *   [LibreOffice](/index.php/LibreOffice "LibreOffice") Calc – more information [here](https://help.libreoffice.org/Calc/OpenCL_Options).
 *   [opencv](https://www.archlinux.org/packages/?name=opencv)
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
+*   [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/) - a non-linear video editor. Can use both OpenCL and CUDA.
 
 ## Links and references
 

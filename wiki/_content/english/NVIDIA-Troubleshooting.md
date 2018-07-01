@@ -188,20 +188,6 @@ Use **OpenGL 2.0 or later** as rendering backend under *System Settings > Displa
 
 ## Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8
 
-May be you have installed driver which doesn't support your GPU:
-
- `$ dmesg ` 
-```
-NVRM: The NVIDIA GeForce GT 635M GPU installed in this system is
-NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
-NVRM:  visit http://www.nvidia.com/object/unix.html for more
-NVRM:  information.  The 396.24 NVIDIA driver will ignore
-NVRM:  this GPU.  Continuing probe...
-
-```
-
-Check what driver version supports your GPU at [Nvidia download page](http://www.nvidia.ru/Download/index.aspx).
-
 With linux 4.8, one can get the following errors when trying to use the discrete card:
 
  `$ modprobe nvidia -vv` 

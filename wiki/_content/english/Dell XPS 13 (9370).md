@@ -26,6 +26,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [6 Keyboard](#Keyboard)
 *   [7 Power Management](#Power_Management)
 *   [8 Firmware Updates](#Firmware_Updates)
+*   [9 Thermal Throttling](#Thermal_Throttling)
 
 ## Booting
 
@@ -64,3 +65,14 @@ If the laptop seems to have an high drain when in sleep mode, it is almost certa
 ## Firmware Updates
 
 Dell provides firmware updates via Linux Vendor Firmware Service (LVFS). Refer to [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux") for additional information. A package is readily available at [fwupd](https://www.archlinux.org/packages/?name=fwupd).
+
+## Thermal Throttling
+
+By default thermal throttling activates around 80C resulting in maximum sustained CPU frequency around 2.4Ghz, much lower than in Dell's standard Windows installation.
+
+```
+Package temperature above threshold, cpu clock throttled (total events = 971)
+
+```
+
+This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). Despite originally conceived to resolve the same issue with Lenovo laptops, it works with the XPS 9370.

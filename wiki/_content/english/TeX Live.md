@@ -81,7 +81,7 @@ You will probably want a [TeX editor](/index.php/List_of_applications/Documents#
 
 ### Paper size
 
-It is currently impossible to set the default page size, because the Arch package [removes the tool necessary for this](https://bugs.archlinux.org/task/59094).
+It is currently impossible to set the default page size, because the Arch package removes the tool necessary for this, see [FS#59094](https://bugs.archlinux.org/task/59094).
 
 Usually, you would run the `texconfig` command, which is also capable of changing other useful settings.
 

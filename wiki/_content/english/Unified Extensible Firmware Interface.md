@@ -1,10 +1,10 @@
 Related articles
 
+*   [UEFI hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
+*   [EFI system partition](/index.php/Unified_Extensible_Firmware_Interface/System_partition "Unified Extensible Firmware Interface/System partition")
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
-*   [UEFI/Hardware](/index.php/UEFI/Hardware "UEFI/Hardware")
 
 **Warning:** While the choice to install in UEFI mode is forward looking, early vendor UEFI implementations *may* carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular motherboard model before proceeding.
 

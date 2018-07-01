@@ -38,7 +38,7 @@ To draw a circle in GIMP follow these steps:
 
 GIMP requires the [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib) library to open PDF files. Without this library GIMP will say that a PDF file is "unrecognized" when an attempt to open a PDF is made.
 
-Since GIMP rasterizes the PDF files right from the start, it doesn't exploit intrinsic PDF capabilities. One might want to use other programs to better edit PDF files. [LibreOffice Draw](/index.php/LibreOffice "LibreOffice") being one example of such a program.
+Since GIMP rasterizes PDF files right from the start, it will not exploit intrinsic PDF capabilities while editing them. One might want to use other programs to better edit PDF files. [LibreOffice Draw](/index.php/LibreOffice "LibreOffice") being one example of such a program.
 
 ### Green text
 

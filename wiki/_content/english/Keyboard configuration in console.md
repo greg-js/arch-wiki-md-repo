@@ -14,10 +14,9 @@ Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/
     *   [2.2 Loadkeys](#Loadkeys)
     *   [2.3 Persistent configuration](#Persistent_configuration)
     *   [2.4 Creating a custom keymap](#Creating_a_custom_keymap)
-        *   [2.4.1 Identifying keycodes](#Identifying_keycodes)
-        *   [2.4.2 Adding directives](#Adding_directives)
-        *   [2.4.3 Other examples](#Other_examples)
-        *   [2.4.4 Saving changes](#Saving_changes)
+        *   [2.4.1 Adding directives](#Adding_directives)
+        *   [2.4.2 Other examples](#Other_examples)
+        *   [2.4.3 Saving changes](#Saving_changes)
 *   [3 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
     *   [3.1 Systemd service](#Systemd_service)
 
@@ -93,9 +92,9 @@ The `--no-convert` option can be used to prevent `localectl` from automatically 
 
 ### Creating a custom keymap
 
-When using the console, you can use hotkeys to print a specific character. Moreover we can also print a sequence of characters and some escape sequences. Thus, if we print the sequence of characters constituting a command and afterwards an escape character for a new line, that command will be executed!
+When using the console, you can use hotkeys to print a specific character. Moreover we can also print a sequence of characters and some escape sequences. Thus, if we print the sequence of characters constituting a command and afterwards an escape character for a new line, that command will be executed.
 
-One method of doing this is editing the [keymap](/index.php/Console_keyboard_configuration "Console keyboard configuration"). However, the keymap is a sensitive file, and since it will be rewritten anytime the package it belongs to is updated, editing this file is discouraged. It is better to integrate the existing keymap with a personal keymap. The `loadkeys` utility can do this.
+One method of doing this is editing the keymap file. However, since it will be rewritten anytime the package it belongs to is updated, editing this file is discouraged. It is better to integrate the existing keymap with a personal keymap. The `loadkeys` utility can do this.
 
 First, create a keymap file. This keymap file can be anywhere, but one method is to mimic the directory hierarchy in `/usr/local`:
 
@@ -109,22 +108,9 @@ As a side note, it is worth noting that such a personal keymap is useful also to
 
 **Tip:** You can also edit an existing keymap located in the `/usr/share/kbd/keymaps/` directory tree. Keymaps have an *.map.gz* extension, for example `us.map.gz` is an American keymap. Just copy the keymap to `/usr/local/share/kbd/keymaps/personal.map.gz` and *gunzip* it.
 
-#### Identifying keycodes
-
-The [keycodes](/index.php/Extra_keyboard_keys "Extra keyboard keys") for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") are reported by the *showkey* utility. *showkey* waits for a key to be pressed and if none is during 10 seconds it quits. To execute *showkey* you need to be in a virtual console, not in a graphical environment. Run the following command
-
-```
-# showkey --keycodes
-
-```
-
-and try to push keyboard keys, you should see *keycodes* being printed to the output.
-
-**Note:** If showkey does not recognize a key, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
-
 #### Adding directives
 
-Two kinds of directives are required in this personal keymap. First of all, the keycode directives, which matches the format seen in the default keymaps. These directives associate a keycode with a keysym. Keysyms represent keyboard actions. The actions available include outputting character codes or character sequences, switching consoles or keymaps, booting the machine, and many other actions. A complete list can be obtained with
+Two kinds of directives are required in this personal keymap. First of all, the [keycode](/index.php/Extra_keyboard_keys "Extra keyboard keys") directives, which matches the format seen in the default keymaps. These directives associate a keycode with a keysym. Keysyms represent keyboard actions. The actions available include outputting character codes or character sequences, switching consoles or keymaps, booting the machine, and many other actions. The full currently active keymap can be obtained with
 
 ```
 # dumpkeys -l

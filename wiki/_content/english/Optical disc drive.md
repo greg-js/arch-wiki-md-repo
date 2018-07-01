@@ -381,7 +381,7 @@ $ mkisofs -V "ARCHIVE_2013_07_27" -J -r ./for_iso | \
 
 Option `-waiti` is not really needed here. It prevents *cdrecord* from writing to the medium before *mkisofs* starts its output. This would allow *mkisofs* to read the medium without disturbing an already started burn run. See next section about multi-session.
 
-On DVD and BD, you may let *growisofs* operate *mkisofs* for you and burn its output on-the-fly
+On DVD and BD, you may let *growisofs* operate *mkisofs* for you and burn its output on-the-fly:
 
 ```
 $ growisofs -Z */dev/sr0* -V "*ARCHIVE_2013_07_27*" -r -J *./for_iso*
@@ -636,7 +636,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[https://abcde.einval.com/](https://abcde.einval.com/) || [abcde](https://www.archlinux.org/packages/?name=abcde)
 
-*   **cdda2wav** — The most evolved CD-audio extraction program with paranoia support.
+*   **cdda2wav** — CD-audio extraction program with paranoia support.
 
 	[http://www.cdda2wav.de/](http://www.cdda2wav.de/) || [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
 

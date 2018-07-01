@@ -28,15 +28,20 @@ Related articles
     *   [4.4 Proxy settings](#Proxy_settings)
     *   [4.5 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
     *   [4.6 Checking connectivity](#Checking_connectivity)
-    *   [4.7 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
-        *   [4.7.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
-        *   [4.7.2 Dispatcher examples](#Dispatcher_examples)
-            *   [4.7.2.1 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
-            *   [4.7.2.2 Mounting of SMB shares](#Mounting_of_SMB_shares)
-            *   [4.7.2.3 Mounting of NFS shares](#Mounting_of_NFS_shares)
-            *   [4.7.2.4 Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_wireless_depending_on_LAN_cable_being_plugged_in)
-            *   [4.7.2.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
-            *   [4.7.2.6 OpenNTPD](#OpenNTPD)
+    *   [4.7 Enable DNS caching](#Enable_DNS_caching)
+        *   [4.7.1 dnsmasq](#dnsmasq)
+            *   [4.7.1.1 Custom configuration](#Custom_configuration)
+            *   [4.7.1.2 IPv6](#IPv6)
+        *   [4.7.2 Other methods](#Other_methods)
+    *   [4.8 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
+        *   [4.8.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
+        *   [4.8.2 Dispatcher examples](#Dispatcher_examples)
+            *   [4.8.2.1 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
+            *   [4.8.2.2 Mounting of SMB shares](#Mounting_of_SMB_shares)
+            *   [4.8.2.3 Mounting of NFS shares](#Mounting_of_NFS_shares)
+            *   [4.8.2.4 Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_wireless_depending_on_LAN_cable_being_plugged_in)
+            *   [4.8.2.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
+            *   [4.8.2.6 OpenNTPD](#OpenNTPD)
 *   [5 Testing](#Testing)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
@@ -70,15 +75,11 @@ Related articles
         *   [7.6.2 SLiM login manager](#SLiM_login_manager)
         *   [7.6.3 Troubleshooting](#Troubleshooting_2)
     *   [7.7 Ignore specific devices](#Ignore_specific_devices)
-    *   [7.8 Enable DNS caching](#Enable_DNS_caching)
-        *   [7.8.1 Custom configuration](#Custom_configuration)
-        *   [7.8.2 IPv6](#IPv6)
-        *   [7.8.3 Other methods](#Other_methods)
-    *   [7.9 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
-    *   [7.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
-    *   [7.11 Working with wired connections](#Working_with_wired_connections)
-    *   [7.12 resolv.conf](#resolv.conf)
-        *   [7.12.1 Use openresolv](#Use_openresolv)
+    *   [7.8 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
+    *   [7.9 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+    *   [7.10 Working with wired connections](#Working_with_wired_connections)
+    *   [7.11 resolv.conf](#resolv.conf)
+        *   [7.11.1 Use openresolv](#Use_openresolv)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -301,6 +302,43 @@ It might not be obvious, but the service automatically starts through *dbus*. To
 NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking create `/etc/NetworkManager/conf.d/20-connectivity.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
+
+### Enable DNS caching
+
+#### dnsmasq
+
+NetworkManager has a plugin to enable DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers (especially useful if you are connected to more than one VPN).
+
+Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed. Then, create `/etc/NetworkManager/conf.d/dns.conf` and add the following to it:
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=dnsmasq
+```
+
+Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
+
+##### Custom configuration
+
+Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
+
+ `/etc/NetworkManager/dnsmasq.d/cache.conf`  `cache-size=1000` 
+**Tip:** Check the configuration file syntax with `dnsmasq --test --conf-file=/dev/null --conf-dir=/etc/NetworkManager/dnsmasq.d`.
+
+See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for all available options.
+
+##### IPv6
+
+Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `drill -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
+
+ `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
+
+In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately NetworkManager does not do this ([Ubuntu Bug](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). A workaround would be to disable IPv4 DNS in the NetworkManager config, assuming one exists
+
+#### Other methods
+
+With an already working caching DNS server, the DNS server address can be specified it in NetworkManagers' settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as 'Automatic (specify addresses).' The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
 ### Network services with NetworkManager dispatcher
 
@@ -868,41 +906,6 @@ unmanaged-devices=mac:00:22:68:1c:59:b1;mac:00:1E:65:30:D1:C4;interface-name:eth
 
 After you have put this in, [restart](/index.php/Daemon "Daemon") NetworkManager, and you should be able to configure interfaces without NetworkManager altering what you have set.
 
-### Enable DNS caching
-
-NetworkManager has a plugin to enable DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers (especially useful if you are connected to more than one VPN).
-
-Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed. Then, create `/etc/NetworkManager/conf.d/dns.conf` and add the following to it:
-
- `/etc/NetworkManager/conf.d/dns.conf` 
-```
-[main]
-dns=dnsmasq
-```
-
-Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
-
-#### Custom configuration
-
-Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
-
- `/etc/NetworkManager/dnsmasq.d/cache.conf`  `cache-size=1000` 
-**Tip:** Check the configuration file syntax with `dnsmasq --test --conf-file=/dev/null --conf-dir=/etc/NetworkManager/dnsmasq.d`.
-
-See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for all available options.
-
-#### IPv6
-
-Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `drill -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
-
- `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
-
-In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately NetworkManager does not do this ([Ubuntu Bug](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). A workaround would be to disable IPv4 DNS in the NetworkManager config, assuming one exists
-
-#### Other methods
-
-Another option is in NetworkManagers' settings (usually by right-clicking the applet) and entering settings manually. Setting up will depending on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as 'Automatic (specify addresses).' The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, DNS-server-one, ...`.
-
 ### Configuring MAC address randomization
 
 **Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
@@ -957,8 +960,6 @@ This can be stopped by adding `dns=none` to the `[main]` section in `/etc/Networ
 After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
 
 *NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
-
-If you use [dhclient](https://www.archlinux.org/packages/?name=dhclient), you may try the [networkmanager-dispatch-resolv](https://aur.archlinux.org/packages/networkmanager-dispatch-resolv/) package.
 
 #### Use openresolv
 

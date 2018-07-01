@@ -1,7 +1,7 @@
 Related articles
 
-*   [Advanced Linux Sound Architecture/Example Configurations](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations "Advanced Linux Sound Architecture/Example Configurations")
-*   [Advanced Linux Sound Architecture/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting")
+*   [ALSA configuration examples](/index.php/Advanced_Linux_Sound_Architecture/Configuration_examples "Advanced Linux Sound Architecture/Configuration examples")
+*   [ALSA troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting")
 *   [Sound system](/index.php/Sound_system "Sound system")
 *   [PC speaker](/index.php/PC_speaker "PC speaker")
 *   [PulseAudio](/index.php/PulseAudio "PulseAudio")

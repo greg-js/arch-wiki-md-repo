@@ -263,3 +263,4 @@ For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) pac
 *   [vukextract](https://github.com/m4tthi4s/vukextract) - Open source software that uses proprietary DVDFab to extract VUKs
 *   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").
+*   [Aiseesoft Blu-ray Player](https://www.aiseesoft.com/blu-ray-player/) - Commercial software player for Windows, but works fine using [Wine](/index.php/Wine "Wine").

@@ -63,7 +63,7 @@ You may want to get the list of installed packages with their version, which is 
 
 *   List all explicitly installed packages: `pacman -Qe`.
 *   List all explicitly installed native packages (i.e. present in the sync database) that are not direct or optional dependencies: `pacman -Qent`.
-*   List all foreign packages (typically manually downloaded and installed): `pacman -Qm`.
+*   List all foreign packages (typically manually downloaded and installed or packages removed from the repositories): `pacman -Qm`.
 *   List all native packages (installed from the sync database(s)): `pacman -Qn`.
 *   List packages by regex: `pacman -Qs *regex*`.
 *   List packages by regex with custom output format: `expac -s "%-30n %v" *regex*` (needs [expac](https://www.archlinux.org/packages/?name=expac)).

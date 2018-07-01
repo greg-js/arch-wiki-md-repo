@@ -12,10 +12,8 @@
 *   [2 桌面环境列表](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83.E5.88.97.E8.A1.A8)
     *   [2.1 官方支持](#.E5.AE.98.E6.96.B9.E6.94.AF.E6.8C.81)
     *   [2.2 非官方支持](#.E9.9D.9E.E5.AE.98.E6.96.B9.E6.94.AF.E6.8C.81)
-*   [3 桌面环境比较](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83.E6.AF.94.E8.BE.83)
-    *   [3.1 资源占用](#.E8.B5.84.E6.BA.90.E5.8D.A0.E7.94.A8)
-    *   [3.2 相似之处](#.E7.9B.B8.E4.BC.BC.E4.B9.8B.E5.A4.84)
-*   [4 自己打造桌面环境](#.E8.87.AA.E5.B7.B1.E6.89.93.E9.80.A0.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
+*   [3 自己打造桌面环境](#.E8.87.AA.E5.B7.B1.E6.89.93.E9.80.A0.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
+    *   [3.1 使用其它窗口管理器](#.E4.BD.BF.E7.94.A8.E5.85.B6.E5.AE.83.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
 
 ## 概况
 
@@ -113,232 +111,6 @@
 
 	[http://www.trinitydesktop.org/](http://www.trinitydesktop.org/) || See [Trinity](/index.php/Trinity "Trinity")
 
-## 桌面环境比较
-
-这一部分对几种流行的桌面环境进行比较，仅供用户参考。
-
-参阅 [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
-
-<caption>Overview of desktop environments</caption>
-| Desktop environment | Widget toolkit | Window manager | Taskbar | Terminal emulator | File manager | Calculator | Text editor | Image viewer | Media player | Web browser | Display manager |
-| [Budgie](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | budgie-wm
-[budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | budgie-panel
-[budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
-[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
-[gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [Cinnamon](/index.php/Cinnamon "Cinnamon") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Muffin
-[muffin](https://www.archlinux.org/packages/?name=muffin) | Cinnamon
-[cinnamon](https://www.archlinux.org/packages/?name=cinnamon) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [Nemo](/index.php/Nemo "Nemo")
-[nemo](https://www.archlinux.org/packages/?name=nemo) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Deepin](/index.php/Deepin "Deepin") | [GTK+](/index.php/GTK%2B "GTK+") 2/3, [Qt](/index.php/Qt "Qt") 5
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Deepin Window Manager
-[deepin-wm](https://www.archlinux.org/packages/?name=deepin-wm) | Deepin Dock
-[deepin-dock](https://www.archlinux.org/packages/?name=deepin-dock) | Deepin Terminal
-[deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | Deepin File Manager
-[deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | Deepin Image Viewer
-[deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer) | Deepin Movie
-[deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie) | [Chromium](/index.php/Chromium "Chromium")
-[chromium](https://www.archlinux.org/packages/?name=chromium) | [LightDM](/index.php/LightDM "LightDM") Deepin Greeter
-[deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui) |
-| [EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment") | [FLTK](http://www.fltk.org/)
-[fltk](https://www.archlinux.org/packages/?name=fltk) | [PekWM](/index.php/PekWM "PekWM")
-[ede](https://aur.archlinux.org/packages/ede/) | EDE Panel
-[ede](https://aur.archlinux.org/packages/ede/) | [XTerm](/index.php/Xterm "Xterm")
-[xterm](https://www.archlinux.org/packages/?name=xterm) | Fluff
-[fluff](https://aur.archlinux.org/packages/fluff/) | Calculator
-[ede](https://aur.archlinux.org/packages/ede/) | Editor
-[fltk-editor](https://aur.archlinux.org/packages/fltk-editor/) | Image Viewer
-[ede](https://aur.archlinux.org/packages/ede/) | flmusic
-[flmusic](https://aur.archlinux.org/packages/flmusic/) | [Dillo](/index.php/Dillo "Dillo")
-[dillo](https://www.archlinux.org/packages/?name=dillo) | [XDM](/index.php/XDM "XDM")
-[xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [Enlightenment](/index.php/Enlightenment "Enlightenment") | [EFL](https://www.enlightenment.org/about-efl)
-[efl](https://www.archlinux.org/packages/?name=efl) | [Enlightenment](https://www.enlightenment.org/about-enlightenment)
-[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Enlightenment](https://www.enlightenment.org/about-enlightenment)
-[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Terminology](https://www.enlightenment.org/about-terminology)
-[terminology](https://www.archlinux.org/packages/?name=terminology) | [Enlightenment](https://www.enlightenment.org/about-enlightenment)
-[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Equate
-[equate-git](https://aur.archlinux.org/packages/equate-git/) | Ecrire
-[ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) | [Ephoto](https://www.enlightenment.org/about-ephoto)
-[ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) | [Rage](https://www.enlightenment.org/about-rage)
-[rage](https://aur.archlinux.org/packages/rage/) | [Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")
-[links](https://www.archlinux.org/packages/?name=links) | [XDM](/index.php/XDM "XDM")
-[xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [GNOME](/index.php/GNOME "GNOME") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")
-[mutter](https://www.archlinux.org/packages/?name=mutter) | [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell "wikipedia:GNOME Shell")
-[gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
-[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
-[gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
-[metacity](https://www.archlinux.org/packages/?name=metacity) | [GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")
-[gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
-[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
-[gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
-[kwin](https://www.archlinux.org/packages/?name=kwin) | [Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_5#Desktop "wikipedia:KDE Plasma 5")
-[plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) | [Konsole](http://konsole.kde.org/)
-[konsole](https://www.archlinux.org/packages/?name=konsole) | [Dolphin](http://dolphin.kde.org/)
-[dolphin](https://www.archlinux.org/packages/?name=dolphin) | [KCalc](http://www.kde.org/applications/utilities/kcalc/)
-[kcalc](https://www.archlinux.org/packages/?name=kcalc) | [KWrite/Kate](http://kate-editor.org/)
-[kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
-[gwenview](https://www.archlinux.org/packages/?name=gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
-[dragon](https://www.archlinux.org/packages/?name=dragon) | [Konqueror](http://www.konqueror.org/)
-[konqueror](https://www.archlinux.org/packages/?name=konqueror) | [SDDM](/index.php/SDDM "SDDM")
-[sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [Liri](/index.php/Liri "Liri") | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
-[greenisland](https://aur.archlinux.org/packages/greenisland/) | Liri Shell
-[liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/) | Liri Terminal
-[liri-terminal-git](https://aur.archlinux.org/packages/liri-terminal-git/) | Liri Files
-[liri-files-git](https://aur.archlinux.org/packages/liri-files-git/) | Liri Calculator
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-calculator-git)</small> | Liri Text
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text-git)</small> | EyeSight
-[eyesight](https://aur.archlinux.org/packages/eyesight/) | Liri Player
-[liri-player-git](https://aur.archlinux.org/packages/liri-player-git/) | Liri Browser
-[liri-browser-git](https://aur.archlinux.org/packages/liri-browser-git/) | SDDM
-[sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [LXDE](/index.php/LXDE "LXDE") (GTK+ 2) | [GTK+](/index.php/GTK%2B "GTK+") 2
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
-[openbox](https://www.archlinux.org/packages/?name=openbox) | [LXPanel](http://wiki.lxde.org/en/LXPanel)
-[lxpanel](https://www.archlinux.org/packages/?name=lxpanel) | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
-[lxterminal](https://www.archlinux.org/packages/?name=lxterminal) | [PCManFM](/index.php/PCManFM "PCManFM")
-[pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) | [Galculator](http://galculator.sourceforge.net/)
-[galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | [Leafpad](http://tarot.freeshell.org/leafpad/)
-[leafpad](https://www.archlinux.org/packages/?name=leafpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
-[gpicview](https://www.archlinux.org/packages/?name=gpicview) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
-[lxmusic](https://www.archlinux.org/packages/?name=lxmusic) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LXDM](/index.php/LXDM "LXDM")
-[lxdm](https://www.archlinux.org/packages/?name=lxdm) |
-| [LXDE](/index.php/LXDE "LXDE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Openbox](/index.php/Openbox "Openbox")
-[openbox](https://www.archlinux.org/packages/?name=openbox) | [LXPanel](http://wiki.lxde.org/en/LXPanel)
-[lxpanel-gtk3](https://www.archlinux.org/packages/?name=lxpanel-gtk3) | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
-[lxterminal-gtk3](https://www.archlinux.org/packages/?name=lxterminal-gtk3) | [PCManFM](/index.php/PCManFM "PCManFM")
-[pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3) | [Galculator](http://galculator.sourceforge.net/)
-[galculator](https://www.archlinux.org/packages/?name=galculator) | L3afpad
-[l3afpad](https://www.archlinux.org/packages/?name=l3afpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
-[gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
-[lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LXDM](/index.php/LXDM "LXDM")
-[lxdm-gtk3](https://www.archlinux.org/packages/?name=lxdm-gtk3) |
-| [LXQt](/index.php/LXQt "LXQt") | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [Openbox](/index.php/Openbox "Openbox")
-[openbox](https://www.archlinux.org/packages/?name=openbox) | LXQt Panel
-[lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) | QTerminal
-[qterminal](https://www.archlinux.org/packages/?name=qterminal) | PCManFM-Qt
-[pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch](https://www.archlinux.org/packages/?name=speedcrunch) | Notepadqq
-[notepadqq](https://www.archlinux.org/packages/?name=notepadqq) | LxImage-Qt
-[lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt) | SMPlayer
-[smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
-[qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
-[sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [MATE](/index.php/MATE "MATE") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
-[marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
-[mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
-[mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
-[caja](https://www.archlinux.org/packages/?name=caja) | MATE Calc
-[mate-calc](https://www.archlinux.org/packages/?name=mate-calc) | pluma
-[pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
-[eom](https://www.archlinux.org/packages/?name=eom) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
-[gala-git](https://aur.archlinux.org/packages/gala-git/) | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
-[plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/) | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
-[pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | [Pantheon Files](https://launchpad.net/pantheon-files)
-[pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) | [Pantheon Calculator](https://launchpad.net/pantheon-calculator)
-[pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) | [Scratch](https://launchpad.net/scratch)
-[scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [Pantheon Photos](https://launchpad.net/pantheon-photos)
-[pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) | [Audience](https://launchpad.net/audience)
-[audience](https://www.archlinux.org/packages/?name=audience) | [Epiphany](/index.php/Epiphany "Epiphany")
-[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
-[lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
-| [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
-[metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar
-[sugar](https://www.archlinux.org/packages/?name=sugar) | Terminal
-[sugar-activity-terminal](https://www.archlinux.org/packages/?name=sugar-activity-terminal) | Sugar Journal
-[sugar](https://www.archlinux.org/packages/?name=sugar) | Calculate
-[sugar-activity-calculate](https://www.archlinux.org/packages/?name=sugar-activity-calculate) | Write
-[sugar-activity-write](https://www.archlinux.org/packages/?name=sugar-activity-write) | ImageViewer
-[sugar-activity-imageviewer](https://www.archlinux.org/packages/?name=sugar-activity-imageviewer) | Jukebox
-[sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox) | Browse
-[sugar-activity-browse](https://www.archlinux.org/packages/?name=sugar-activity-browse) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| theShell | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
-[kwin](https://www.archlinux.org/packages/?name=kwin) | theShell
-[theshell](https://aur.archlinux.org/packages/theshell/) | theTerminal
-[theterminal](https://aur.archlinux.org/packages/theterminal/) | theFile
-[thefile](https://aur.archlinux.org/packages/thefile/) | theCalculator
-[thecalculator](https://aur.archlinux.org/packages/thecalculator/) | [KWrite/Kate](http://kate-editor.org/)
-[kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
-[gwenview](https://www.archlinux.org/packages/?name=gwenview) | theMedia
-[themedia](https://aur.archlinux.org/packages/themedia/) | theWeb
-[theweb](https://aur.archlinux.org/packages/theweb/) | [LightDM](/index.php/LightDM "LightDM") Contemporary Greeter
-[lightdm-webkit-theme-contemporary](https://aur.archlinux.org/packages/lightdm-webkit-theme-contemporary/) |
-| [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
-| [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 2/3
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Xfwm4](http://docs.xfce.org/xfce/xfwm4/start)
-[xfwm4](https://www.archlinux.org/packages/?name=xfwm4) | [Xfce Panel](http://docs.xfce.org/xfce/xfce4-panel/start)
-[xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) | [Terminal](http://www.xfce.org/projects/terminal)
-[xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal) | [Thunar](/index.php/Thunar "Thunar")
-[thunar](https://www.archlinux.org/packages/?name=thunar) | [Galculator](http://galculator.sourceforge.net/)
-[galculator](https://www.archlinux.org/packages/?name=galculator) | Mousepad
-[mousepad](https://www.archlinux.org/packages/?name=mousepad) | [Ristretto](http://goodies.xfce.org/projects/applications/ristretto)
-[ristretto](https://www.archlinux.org/packages/?name=ristretto) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-
-### 资源占用
-
-此处在资源占用（CPU、内存、磁盘空间）上比较各种桌面环境。
-
-*   GNOME和KDE：属于**高资源占用**桌面环境。相对来讲，它们**功能更为丰富**，是最完整的桌面环境。
-
-*   E17、LXDE和Xfce：属于**轻量**桌面环境。它们通常是为低能耗设备或是旧机器设计的，占用更少资源。
-
-### 相似之处
-
-许多人说，KDE像Windows，GNOME像Mac。这样的评价不怎么客观，毕竟它们并不能模拟Windows或是Mac。参见：[KDE比GNOME更像Windows吗](http://www.psychocats.net/ubuntucat/is-kde-more-windows-like-than-gnome/)（[中文版](http://fyyz.me/is-kde-more-windows-like-than-gnome/)），[KDE vs GNOME](http://www.jeffwu.net/?p=71)，[经典文章：Linux不是Windows](http://linux.oneandoneis2.org/LNW.htm)。
-
 ## 自己打造桌面环境
 
 桌面环境是安装完整图形环境的最简单的方法。但是，如果主流桌面环境并不能满足用户的需求，那么用户也可以通过多种方法来构建和定制他们自己的图形环境。通常，构建一个自定义的环境包括选择一个合适的[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")，一个[任务栏](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications")以及一些应用程序(一个极简的应用程序选择方案至少包括一个终端模拟器([terminal emulator](/index.php/Terminal_emulator "Terminal emulator"))，文件管理器([file manager](/index.php/File_manager "File manager"))和文本编辑器([text editor](/index.php/Text_editor "Text editor")))。
@@ -357,3 +129,14 @@
 *   Polkit authentication agent: [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
+
+### 使用其它窗口管理器
+
+*   [Budgie#Use a different window manager](/index.php/Budgie#Use_a_different_window_manager "Budgie")
+*   [Cinnamon#Use a different window manager](/index.php/Cinnamon#Use_a_different_window_manager "Cinnamon")
+*   [GNOME#Use a different window manager](/index.php/GNOME#Use_a_different_window_manager "GNOME")
+*   [KDE#Use a different window manager](/index.php/KDE#Use_a_different_window_manager "KDE")
+*   [LXDE#Use a different window manager](/index.php/LXDE#Use_a_different_window_manager "LXDE")
+*   [LXQt#Use a different window manager](/index.php/LXQt#Use_a_different_window_manager "LXQt")
+*   [MATE#Use a different window manager](/index.php/MATE#Use_a_different_window_manager "MATE")
+*   [Xfce#Use a different window manager](/index.php/Xfce#Use_a_different_window_manager "Xfce")

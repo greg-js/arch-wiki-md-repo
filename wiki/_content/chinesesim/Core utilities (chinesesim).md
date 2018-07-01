@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Core_Utilities](/index.php/Core_Utilities "Core Utilities") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-15，点击[这里](https://wiki.archlinux.org/index.php?title=Core_Utilities&diff=0&oldid=516773)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Core_Utilities](/index.php/Core_Utilities "Core Utilities") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-30，点击[这里](https://wiki.archlinux.org/index.php?title=Core_Utilities&diff=0&oldid=526249)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -18,34 +18,35 @@
 ## Contents
 
 *   [1 基本命令](#.E5.9F.BA.E6.9C.AC.E5.91.BD.E4.BB.A4)
-*   [2 cat](#cat)
-*   [3 chmod](#chmod)
-*   [4 chown](#chown)
-*   [5 dd](#dd)
-*   [6 find](#find)
-*   [7 grep](#grep)
-*   [8 iconv](#iconv)
-    *   [8.1 在原文件上转换](#.E5.9C.A8.E5.8E.9F.E6.96.87.E4.BB.B6.E4.B8.8A.E8.BD.AC.E6.8D.A2)
-*   [9 ip](#ip)
-*   [10 less](#less)
-*   [11 locate](#locate)
+*   [2 awk](#awk)
+*   [3 cat](#cat)
+*   [4 chmod](#chmod)
+*   [5 chown](#chown)
+*   [6 dd](#dd)
+*   [7 find](#find)
+*   [8 grep](#grep)
+*   [9 iconv](#iconv)
+    *   [9.1 在原文件上转换](#.E5.9C.A8.E5.8E.9F.E6.96.87.E4.BB.B6.E4.B8.8A.E8.BD.AC.E6.8D.A2)
+*   [10 ip](#ip)
+*   [11 less](#less)
     *   [11.1 用 Vim 代替 less 来分页](#.E7.94.A8_Vim_.E4.BB.A3.E6.9B.BF_less_.E6.9D.A5.E5.88.86.E9.A1.B5)
-*   [12 ls](#ls)
-    *   [12.1 “长格式”输出](#.E2.80.9C.E9.95.BF.E6.A0.BC.E5.BC.8F.E2.80.9D.E8.BE.93.E5.87.BA)
-    *   [12.2 带空格的文件名被引号引起](#.E5.B8.A6.E7.A9.BA.E6.A0.BC.E7.9A.84.E6.96.87.E4.BB.B6.E5.90.8D.E8.A2.AB.E5.BC.95.E5.8F.B7.E5.BC.95.E8.B5.B7)
-*   [13 lsblk](#lsblk)
-*   [14 mkdir](#mkdir)
-*   [15 mv](#mv)
-*   [16 od](#od)
-*   [17 pv](#pv)
-*   [18 rm](#rm)
-*   [19 sed](#sed)
-*   [20 seq](#seq)
-*   [21 ss](#ss)
-*   [22 tar](#tar)
-*   [23 which](#which)
-*   [24 wipefs](#wipefs)
-*   [25 参阅](#.E5.8F.82.E9.98.85)
+*   [12 locate](#locate)
+*   [13 ls](#ls)
+    *   [13.1 “长格式”输出](#.E2.80.9C.E9.95.BF.E6.A0.BC.E5.BC.8F.E2.80.9D.E8.BE.93.E5.87.BA)
+    *   [13.2 带空格的文件名被引号引起](#.E5.B8.A6.E7.A9.BA.E6.A0.BC.E7.9A.84.E6.96.87.E4.BB.B6.E5.90.8D.E8.A2.AB.E5.BC.95.E5.8F.B7.E5.BC.95.E8.B5.B7)
+*   [14 lsblk](#lsblk)
+*   [15 mkdir](#mkdir)
+*   [16 mv](#mv)
+*   [17 od](#od)
+*   [18 pv](#pv)
+*   [19 rm](#rm)
+*   [20 sed](#sed)
+*   [21 seq](#seq)
+*   [22 ss](#ss)
+*   [23 tar](#tar)
+*   [24 which](#which)
+*   [25 wipefs](#wipefs)
+*   [26 参阅](#.E5.8F.82.E9.98.85)
 
 ## 基本命令
 
@@ -72,6 +73,24 @@
 | ps -A | 显示所有正在运行的进程 | [ps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) |
 | killall | 杀死所有运行中的进程 | [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
 | ss -at | 显示开放的 TCP 连接列表 | [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
+
+## awk
+
+[AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") 是一种模式扫描和处理语言，存在多个实现：
+
+*   **gawk** — GNU 版本的 awk, 参考 [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1).
+
+	[https://www.gnu.org/software/gawk/](https://www.gnu.org/software/gawk/) || [gawk](https://www.archlinux.org/packages/?name=gawk) (已经包含在[base](https://www.archlinux.org/groups/x86_64/base/)中)
+
+*   **nawk** — 真正的 AWK 实现，参考 [nawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nawk.1).
+
+	[https://www.cs.princeton.edu/~bwk/btl.mirror/](https://www.cs.princeton.edu/~bwk/btl.mirror/) || [nawk](https://www.archlinux.org/packages/?name=nawk)
+
+*   **mawk** — 非常快的 AWK 实现.
+
+	[http://invisible-island.net/mawk/](http://invisible-island.net/mawk/) || [mawk](https://aur.archlinux.org/packages/mawk/)
+
+*   [BusyBox](/index.php/BusyBox "BusyBox") 也包含了一个 AWK 实现。
 
 ## cat
 
@@ -118,6 +137,8 @@ $ printf '%s
 
 更多信息参考 [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) 或 [完整文档](https://www.gnu.org/software/coreutils/dd)。
 
+**警告:** 使用 *dd* 时请务必非常小心，这类命令会损坏数据，而且不可恢复。
+
 ## find
 
 *find* 是 [findutils](https://www.archlinux.org/packages/?name=findutils) 软件包的一部分, 它属于 [base](https://www.archlinux.org/groups/x86_64/base/) 软件包组。
@@ -135,6 +156,7 @@ $ printf '%s
 *   记住，*grep* 能直接处理文件，所以用 `grep *pattern* *file*` 代替 `cat *file* | grep *pattern*` 即可。
 *   若要 grep 版本控制系统（VCS）的源代码，请使用专门的工具 [ripgrep](https://www.archlinux.org/packages/?name=ripgrep)、[the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) 和 [ack](https://www.archlinux.org/packages/?name=ack)。
 *   要在输出结果中显示行数，加上 `-n` 选项。
+*   *grep* 可以在二进制文件中查找十六进制数值，例如要查找文件中的 `A1 F2`: `$ LANG=C grep --text --perl-regexp "\xA1\xF2" */path/to/file*` 
 
 **注意:** 一些命令把错误输出到 [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3)，grep 就无法处理。这时，用 `*command* 2>&1 | grep *args*` 或 (对于 Bash 4) `*command* |& grep *args*` 将 *stderr* 重定向到 *stdout*。参阅 [I/O 重定向](http://www.tldp.org/LDP/abs/html/io-redirection.html)。
 
@@ -203,16 +225,6 @@ $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
 
 参阅 [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") 查找更多替代方案。
 
-## locate
-
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mlocate](https://www.archlinux.org/packages/?name=mlocate)。包里包括了一个 `updatedb.timer` 单元，用于每天更新数据库。这个 systemd 定时器在安装后就会 enable，如果不想重启系统，请手动 [start](/index.php/Start "Start")。以 root 手动运行 *updatedb* 也可以更新数据库。默认会忽略 `/media` 和 `/mnt` 等路径，所以 *locate* 不会查找外置设备里的文件。详情请参考 [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8)。
-
-*locate* 命令是一个快速查找文件系统的常用 Unix 工具。因为是从数据库查找而不是直接访问文件系统，所以速度比 [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") 快很多。而缺点是在数据库更新后创建的新文件不会被搜索到。
-
-使用 *locate* 前需建立数据库，请先以 root 权限执行 `updatedb`。
-
-详情参考 [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/)。
-
 ### 用 Vim 代替 less 来分页
 
 [Vim](/index.php/Vim "Vim") 内置了脚本，可直接查看文本文件、压缩包或目录的内容。在你的 shell 配置文件添加以下内容：
@@ -228,6 +240,16 @@ alias less=$PAGER
 ```
 
 这样，所有使用 `PAGER` 环境变量的程序, 如 [git](/index.php/Git "Git"), 将使用 *vim* 作为分页程序。
+
+## locate
+
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mlocate](https://www.archlinux.org/packages/?name=mlocate)。包里包括了一个 `updatedb.timer` 单元，用于每天更新数据库。这个 systemd 定时器在安装后就会 enable，如果不想重启系统，请手动 [start](/index.php/Start "Start")。以 root 手动运行 *updatedb* 也可以更新数据库。默认会忽略 `/media` 和 `/mnt` 等路径，所以 *locate* 不会查找外置设备里的文件。详情请参考 [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8)。
+
+*locate* 命令是一个快速查找文件系统的常用 Unix 工具。因为是从数据库查找而不是直接访问文件系统，所以速度比 [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") 快很多。而缺点是在数据库更新后创建的新文件不会被搜索到。
+
+使用 *locate* 前需建立数据库，请先以 root 权限执行 `updatedb`。
+
+详情参考 [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/)。
 
 ## ls
 

@@ -323,7 +323,7 @@ So you can either:
 
 ### Function and Application of Challenge-Response
 
-This technic can be used to authenticate.
+This technique can be used to authenticate.
 
 A challenge is sent to the YubiKey and a response is (auto-magically) calculated and send back. This calcucation needs a secret (e.g. an AES key in case of the Yubico OTP mode) The same challenge always results in the same response. Without the secret this calculation is not meant to be feasable. Even if in the possesion of many (TODO:reference!?) challenge-response pairs.
 

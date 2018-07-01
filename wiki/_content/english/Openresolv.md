@@ -1,4 +1,4 @@
-[Openresolv](https://roy.marples.name/projects/openresolv) is a [resolv.conf](/index.php/Resolv.conf "Resolv.conf") management framework.
+[Openresolv](https://roy.marples.name/projects/openresolv) is a [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf") implementation, i.e. a [resolv.conf](/index.php/Resolv.conf "Resolv.conf") management framework.
 
 ## Installation
 
@@ -9,6 +9,8 @@
 Openresolv provides [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) and is configured in `/etc/resolvconf.conf`. See [resolvconf.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) for supported options.
 
 Running `resolvconf -u` will generate `/etc/resolv.conf`.
+
+Openresolv can additionally be configured to pass DNS server addresses to [unbound](/index.php/Unbound "Unbound"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [BIND](/index.php/BIND "BIND") and [pdnsd](/index.php/Pdnsd "Pdnsd") resolvers. See the [official documentation](https://roy.marples.name/projects/openresolv/config) for instructions.
 
 ## Users
 
@@ -24,3 +26,5 @@ Stand-alone DHCP clients:
 [VPN](/index.php/VPN "VPN") clients:
 
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")
+*   [strongSwan](/index.php/StrongSwan "StrongSwan")
+*   [WireGuard](/index.php/WireGuard "WireGuard")

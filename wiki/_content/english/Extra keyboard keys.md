@@ -10,12 +10,12 @@ Many keyboards include some *special keys* (also called *hotkeys* or *multimedia
 Prerequisite for modifying the key mapping is knowing how a key press results in a symbol:
 
 1.  The keyboard sends a [scancode](https://en.wikipedia.org/wiki/Scancode "wikipedia:Scancode") to the computer.
-2.  The Linux kernel maps the scancode to a **keycode**, see [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes").
-3.  The keyboard layout maps the keycode to a symbol or **keysym**, depending on what [modifier keys](https://en.wikipedia.org/wiki/Modifier_key "wikipedia:Modifier key") are pressed, see [Console keyboard configuration](/index.php/Console_keyboard_configuration "Console keyboard configuration") or [XKB](/index.php/XKB "XKB")/[xmodmap](/index.php/Xmodmap "Xmodmap").
+2.  The Linux kernel maps the scancode to a **keycode**, see [#Mapping scancodes to keycodes](#Mapping_scancodes_to_keycodes).
+3.  The keyboard layout maps the keycode to a symbol or **keysym**, depending on what [modifier keys](https://en.wikipedia.org/wiki/Modifier_key "wikipedia:Modifier key") are pressed, see [#Mapping keycodes to keysyms](#Mapping_keycodes_to_keysyms).
 
-Most of your keys should already have a *keycode*, or at least a *scancode*. Keys without a *scancode* are not recognized by the kernel; these can include additional keys from 'gaming' keyboards, etc.
+Most of your keys should already have a *keycode*, or at least a *scancode*. Keys without a *scancode* are not recognized by the kernel; these can include additional keys from "gaming" keyboards, etc.
 
-In Xorg, some *keysyms* (e.g. `XF86AudioPlay`, `XF86AudioRaiseVolume` etc.) can be mapped to actions (i.e. launching an external application). See [Xorg keyboard configuration#Mapping keysyms to actions](/index.php/Xorg_keyboard_configuration#Mapping_keysyms_to_actions "Xorg keyboard configuration") for details.
+In Xorg, some *keysyms* (e.g. `XF86AudioPlay`, `XF86AudioRaiseVolume` etc.) can be mapped to actions (i.e. launching an external application). See [Xorg keyboard configuration#Keybinding](/index.php/Xorg_keyboard_configuration#Keybinding "Xorg keyboard configuration") for details.
 
 In Linux console, some *keysyms* (e.g. `F1` to `F246`) can be mapped to certain actions (e.g. switch to other console or print some sequence of characters). See [Console keyboard configuration#Creating a custom keymap](/index.php/Console_keyboard_configuration#Creating_a_custom_keymap "Console keyboard configuration") for details.
 
@@ -25,19 +25,23 @@ In Linux console, some *keysyms* (e.g. `F1` to `F246`) can be mapped to certain 
     *   [1.1 Using showkey](#Using_showkey)
     *   [1.2 Using evtest](#Using_evtest)
     *   [1.3 Using dmesg](#Using_dmesg)
-*   [2 Mapping scancodes to keycodes](#Mapping_scancodes_to_keycodes)
-*   [3 Mapping keycodes to keysyms](#Mapping_keycodes_to_keysyms)
-    *   [3.1 In Xorg](#In_Xorg)
-*   [4 Laptops](#Laptops)
-    *   [4.1 Apple MacBooks](#Apple_MacBooks)
-    *   [4.2 Asus M series](#Asus_M_series)
-    *   [4.3 Asus N56VJ (or possibly others)](#Asus_N56VJ_.28or_possibly_others.29)
-    *   [4.4 Lenovo T460p (or possibly others)](#Lenovo_T460p_.28or_possibly_others.29)
-*   [5 Gaming Keyboards](#Gaming_Keyboards)
-    *   [5.1 Cooler Master CM Storm QuickFire TK](#Cooler_Master_CM_Storm_QuickFire_TK)
-    *   [5.2 Corsair K series keyboards](#Corsair_K_series_keyboards)
-    *   [5.3 Logitech G series G710 and 710+](#Logitech_G_series_G710_and_710.2B)
-*   [6 See also](#See_also)
+*   [2 Identifying keycodes](#Identifying_keycodes)
+    *   [2.1 In console](#In_console)
+    *   [2.2 In Xorg](#In_Xorg)
+*   [3 Mapping scancodes to keycodes](#Mapping_scancodes_to_keycodes)
+*   [4 Mapping keycodes to keysyms](#Mapping_keycodes_to_keysyms)
+    *   [4.1 In console](#In_console_2)
+    *   [4.2 In Xorg](#In_Xorg_2)
+*   [5 Laptops](#Laptops)
+    *   [5.1 Apple MacBooks](#Apple_MacBooks)
+    *   [5.2 Asus M series](#Asus_M_series)
+    *   [5.3 Asus N56VJ (or possibly others)](#Asus_N56VJ_.28or_possibly_others.29)
+    *   [5.4 Lenovo T460p (or possibly others)](#Lenovo_T460p_.28or_possibly_others.29)
+*   [6 Gaming Keyboards](#Gaming_Keyboards)
+    *   [6.1 Cooler Master CM Storm QuickFire TK](#Cooler_Master_CM_Storm_QuickFire_TK)
+    *   [6.2 Corsair K series keyboards](#Corsair_K_series_keyboards)
+    *   [6.3 Logitech G series G710 and 710+](#Logitech_G_series_G710_and_710.2B)
+*   [7 See also](#See_also)
 
 ## Identifying scancodes
 
@@ -54,7 +58,7 @@ and try to push keyboard keys; you should see *scancodes* being printed to the o
 
 ### Using evtest
 
-For USB keyboards, it is apparently necessary to use *evtest* from the [evtest](https://www.archlinux.org/packages/?name=evtest) package instead of *showkey*:[[1]](https://ask.fedoraproject.org/en/question/46201/how-to-map-scancodes-to-keycodes/)
+For USB keyboards, it is apparently necessary to use *evtest* from the [evtest](https://www.archlinux.org/packages/?name=evtest) package instead of *showkey* [[1]](https://ask.fedoraproject.org/en/question/46201/how-to-map-scancodes-to-keycodes/):
 
 ```
 # evtest /dev/input/event12
@@ -80,15 +84,67 @@ Unknown key pressed (translated set 2, code 0xa0 on isa0060/serio0
 
 then the *scancode* you need is `0xa0`.
 
+## Identifying keycodes
+
+**Note:** The Xorg *keycodes* are larger than the Linux *keycodes* by 8\. [[2]](https://cgit.freedesktop.org/xorg/driver/xf86-input-evdev/tree/src/evdev.c)
+
+### In console
+
+The *keycodes* for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") are reported by the *showkey* utility. *showkey* waits for a key to be pressed and if none is during 10 seconds it quits. To execute *showkey* you need to be in a virtual console, not in a graphical environment. Run the following command:
+
+```
+# showkey --keycodes
+
+```
+
+and try to push keyboard keys; you should see *keycodes* being printed to the output.
+
+### In Xorg
+
+The *keycodes* used by [Xorg](/index.php/Xorg "Xorg") are reported by a utility called [xev(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xev.1), which is provided by the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package. Of course to execute *xev*, you need to be in a graphical environment, not in the console.
+
+With the following command you can start *xev* and show only the relevant parts:
+
+```
+ $ xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s
+", $5, $8 }'
+
+```
+
+Here is an example output:
+
+```
+38  a
+55  v
+54  c
+50  Shift_L
+133 Super_L
+135 Menu
+
+```
+
+[Xbindkeys](/index.php/Xbindkeys#Identifying_keycodes "Xbindkeys") is another wrapper to *xev* that reports *keycodes*.
+
+If you press a key and nothing appears in the terminal, it means that either the key does not have a *scancode*, the *scancode* is not mapped to a *keycode*, or some other process is capturing the keypress. If you suspect that a process listening to X server is capturing the keypress, you can try running *xev* from a clean X session:
+
+```
+$ xinit /usr/bin/xterm -- :1
+
+```
+
 ## Mapping scancodes to keycodes
 
 See the main article: [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes").
 
 ## Mapping keycodes to keysyms
 
+### In console
+
+See [Keyboard configuration in console#Creating a custom keymap](/index.php/Keyboard_configuration_in_console#Creating_a_custom_keymap "Keyboard configuration in console").
+
 ### In Xorg
 
-See the main article: [xmodmap](/index.php/Xmodmap "Xmodmap").
+See [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") and [xmodmap](/index.php/Xmodmap "Xmodmap").
 
 ## Laptops
 

@@ -18,13 +18,12 @@ Related articles
     *   [2.4 ACL: Access Control Lists](#ACL:_Access_Control_Lists)
     *   [2.5 Hide machine name](#Hide_machine_name)
     *   [2.6 Startup](#Startup)
-*   [3 Advanced ACL configuration](#Advanced_ACL_configuration)
-*   [4 Dovecot LMTP delivery & SASL authentication](#Dovecot_LMTP_delivery_.26_SASL_authentication)
-*   [5 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
-*   [6 Hardening](#Hardening)
-    *   [6.1 Rate limits](#Rate_limits)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 451 Temporary local problem](#451_Temporary_local_problem)
+*   [3 Dovecot LMTP delivery & SASL authentication](#Dovecot_LMTP_delivery_.26_SASL_authentication)
+*   [4 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
+*   [5 Hardening](#Hardening)
+    *   [5.1 Rate limits](#Rate_limits)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 451 Temporary local problem](#451_Temporary_local_problem)
 
 ## Installation
 
@@ -248,8 +247,6 @@ where `*machine*` is the hostname of your laptop or PC and `*mydomain*` is the d
 ### Startup
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `exim.service`.
-
-## Advanced ACL configuration
 
 ## Dovecot LMTP delivery & SASL authentication
 

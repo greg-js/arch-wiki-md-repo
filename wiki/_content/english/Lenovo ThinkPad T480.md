@@ -87,14 +87,31 @@ See
 
 ## UEFI
 
-Lenovo T480 is tied in with Microsoft and will only boot to windows efi file.
+Lenovo T480 is tied in with Microsoft and will only boot to windows efi file or default EFI fallback file. Verified on bios version 1.14
 
 Sollution is to rename the .efi to that specific file.
 
 ```
  mount /dev/sdXY /mnt # replace XY with the letter & number of the Arch EFI system partition
+
+ # Windows .efi file
+
+```
+
+```
  mkdir -p /mnt/EFI/Microsoft/Boot
  cp /mnt/EFI/grub/grubx64.efi /mnt/EFI/Microsoft/Boot/bootmgfw.efi
+
+```
+
+```
+ # EFI fallback .efi file (As defined in the EFI standard.)
+
+```
+
+```
+ mkdir -p /mnt/EFI/BOOT
+ cp /mnt/EFI/grub/grub64.efi /mnt/EFI/BOOT/bootx64.efi
 
 ```
 

@@ -118,10 +118,6 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/shimmerproject/Blackbird](https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
 
-*   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
-
-	[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)
-
 *   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
 
 	[https://github.com/shimmerproject/Greybird](https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)

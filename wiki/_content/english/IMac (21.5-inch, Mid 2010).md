@@ -18,7 +18,6 @@ During the initial installation process, it is simplest to add `modprobe.blackli
  `/usr/local/bin/fix_display` 
 ```
 #!/usr/bin/bash
-/usr/bin/sleep 2
 /usr/bin/xrandr -d :0 --output eDP-1 --crtc 1
 
 ```

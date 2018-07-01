@@ -110,11 +110,11 @@ The first line represents a command. The second contains the state (0x8) and key
 
 **Tip:** Use `xbindkeys -mk` to keep the key prompt open for multiple keypresses. Press `q` to quit.
 
-To identify mouse buttons, you can use xev, see [here](https://blog.hanschen.org/2009/10/13/mouse-shortcuts-with-xbindkeys/)
+To identify mouse buttons, you can use xev, see [[1]](https://blog.hanschen.org/2009/10/13/mouse-shortcuts-with-xbindkeys/).
 
 ## Making changes permanent
 
-Once you're done configuring your keys, edit your [xprofile](/index.php/Xprofile "Xprofile") or [xinitrc](/index.php/Xinitrc "Xinitrc") file (depending on your window manager) and place
+Once you are done configuring your keys, edit your [xprofile](/index.php/Xprofile "Xprofile") or [xinitrc](/index.php/Xinitrc "Xinitrc") file (depending on your window manager) and place
 
 ```
 xbindkeys
@@ -125,7 +125,7 @@ before the line that starts your window manager or DE.
 
 ## Simulating multimedia keys
 
-The XF86Audio* and other multimedia keys [[1]](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols) are pretty-much well-recognized by the major DEs. For keyboards without such keys, you can simulate their effect with other keys
+The XF86Audio* and other multimedia keys [[2]](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols) are pretty-much well-recognized by the major DEs. For keyboards without such keys, you can simulate their effect with other keys
 
 ```
 # Decrease volume on pressing Super-minus
@@ -135,7 +135,7 @@ The XF86Audio* and other multimedia keys [[1]](http://wiki.linuxquestions.org/wi
 
 ```
 
-However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which won't do anything useful. Here's a script based on *xmacro* and *xmodmap* from the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package for doing this[[2]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
+However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you would already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which will not do anything useful. Here is a script based on *xmacro* and *xmodmap* from the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package for doing this[[3]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
 
 ```
 #!/bin/sh
@@ -155,7 +155,7 @@ These instructions are valid for pretty much any one of the XF86 multimedia keys
 
 ## Troubleshooting
 
-If, for any reason, a hotkey you *already* set in `~/.xbindkeysrc` doesn't work, open up a terminal and type the following:
+If, for any reason, a hotkey you *already* set in `~/.xbindkeysrc` does not work, open up a terminal and type the following:
 
 ```
 $ xbindkeys -n

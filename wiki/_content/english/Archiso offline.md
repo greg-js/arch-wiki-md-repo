@@ -1,5 +1,3 @@
-[se:Archiso utan internet](/index.php?title=Se:Archiso_utan_internet&action=edit&redlink=1 "Se:Archiso utan internet (page does not exist)")
-
 Related articles
 
 *   [Archiso](/index.php/Archiso "Archiso")

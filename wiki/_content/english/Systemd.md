@@ -216,7 +216,7 @@ $ systemctl help *unit*
 
 ```
 
-Reload *systemd* manager configuration, scanning for **new or changed units**:
+**Reload *systemd*** manager configuration, scanning for **new or changed units**:
 
 **Note:** This does not ask the changed units to reload their own configurations. See `reload` example above.
 
@@ -808,7 +808,7 @@ If the shutdown process takes a very long time (or seems to freeze) most likely 
 
 ### Short lived processes do not seem to log any output
 
-If `journalctl -u foounit` does not show any output for a short lived service, look at the PID instead. For example, if `systemd-modules-load.service` fails, and `systemctl status systemd-modules-load` shows that it ran as PID 123, then you might be able to see output in the journal for that PID, i.e. `journalctl -b _PID=123`. Metadata fields for the journal such as `_SYSTEMD_UNIT` and `_COMM` are collected asynchronously and rely on the `/proc` directory for the process existing. Fixing this requires fixing the kernel to provide this data via a socket connection, similar to `SCM_CREDENTIALS`. In short, it's a [bug](https://github.com/systemd/systemd/issues/2913). As today 06/2018, two years after reporting it's not fixed. Keep in mind immediately failed services, might not print anything to the journal as per design of systemd.
+If `journalctl -u foounit` does not show any output for a short lived service, look at the PID instead. For example, if `systemd-modules-load.service` fails, and `systemctl status systemd-modules-load` shows that it ran as PID 123, then you might be able to see output in the journal for that PID, i.e. `journalctl -b _PID=123`. Metadata fields for the journal such as `_SYSTEMD_UNIT` and `_COMM` are collected asynchronously and rely on the `/proc` directory for the process existing. Fixing this requires fixing the kernel to provide this data via a socket connection, similar to `SCM_CREDENTIALS`. In short, it is a [bug](https://github.com/systemd/systemd/issues/2913). Keep in mind that immediately failed services might not print anything to the journal as per design of systemd.
 
 ### Boot time increasing over time
 

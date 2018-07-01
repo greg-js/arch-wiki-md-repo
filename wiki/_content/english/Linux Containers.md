@@ -489,7 +489,7 @@ some.service: Failed at step KEYRING spawning ....: Permission denied
 
 ```
 
-Create a file **/etc/lxc/unpriv.seccomp** containing
+Create a file `/etc/lxc/unpriv.seccomp` containing
 
  `/etc/lxc/unpriv.seccomp` 
 ```
@@ -499,7 +499,7 @@ blacklist
 keyctl errno 38
 ```
 
-... then add the following line to the container configuration **after** lxc.idmap
+Then add the following line to the container configuration **after** lxc.idmap
 
 ```
 lxc.seccomp.profile = /etc/lxc/unpriv.seccomp

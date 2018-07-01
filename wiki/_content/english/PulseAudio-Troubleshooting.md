@@ -57,6 +57,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [4.8 Simultaneous output to multiple sound cards / devices](#Simultaneous_output_to_multiple_sound_cards_.2F_devices)
     *   [4.9 Simultaneous output to multiple sinks on the same sound card not working](#Simultaneous_output_to_multiple_sinks_on_the_same_sound_card_not_working)
     *   [4.10 Some profiles like SPDIF are not enabled by default on the card](#Some_profiles_like_SPDIF_are_not_enabled_by_default_on_the_card)
+    *   [4.11 Only S/PDIF output available](#Only_S.2FPDIF_output_available)
 *   [5 Bluetooth](#Bluetooth)
     *   [5.1 Disable Bluetooth support](#Disable_Bluetooth_support)
     *   [5.2 Bluetooth headset replay problems](#Bluetooth_headset_replay_problems)
@@ -1000,6 +1001,54 @@ set-card-profile alsa_card.pci-0000_00_1b.0 output:iec958-stereo+input:analog-st
 ```
 
 Pulse audio will add this profile the pool of available profiles
+
+### Only S/PDIF output available
+
+This might happen if PulseAudio use the wrong output device. Firstly, set up proper card profile:
+
+```
+$ pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo
+
+```
+
+or
+
+```
+$ pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
+
+```
+
+Replace `alsa_card.pci-0000_00_1f.3` with your card, and `output:analog-stereo` or `output:analog-stereo+input:analog-stereo` with your profile, remember to choose the profile with analog. Using shell auto completion could help you a lot. One could also use check available cards and profiles with:
+
+```
+$ pacmd list-cards
+
+```
+
+One might also need to set sink port by:
+
+```
+$ pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones
+
+```
+
+Check available sink ports with:
+
+```
+$ pacmd list-sinks
+
+```
+
+To keep these setting, add them to PulseAudio's configuration file `default.pa`.
+
+ `~/.config/pulse/default.pa` 
+```
+.include /etc/pulse/default.pa
+
+set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
+set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones
+
+```
 
 ## Bluetooth
 

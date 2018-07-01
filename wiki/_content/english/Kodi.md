@@ -230,6 +230,8 @@ Several things are needed for this to work:
 *   Network exposed media (via protocols that Kodi can read, e.g. NFS or Samba).
 *   A [MySQL](/index.php/MySQL "MySQL") server.
 
+**Warning:** When sharing a database, ALL clients need to be on the same major version of Kodi due to versioned requirements of the database schema. Refer to [this](https://kodi.wiki/view/Databases#Database_Versions) table for a list of database versions.
+
 **Note:** The following guide is only an example of one configuration and is not meant to be limiting but illustrative. Key steps are shown but a detailed discussion is not offered.
 
 These assumptions are used for the guide, substitute to reflect your setup:

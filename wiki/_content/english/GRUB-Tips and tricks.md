@@ -497,7 +497,7 @@ The command `grub-reboot` is very helpful to boot another entry than the default
 
 ## Play a tune
 
-You can play a tune through the PC-speaker while booting by modifying the variable `GRUB_INIT_TUNE`. For example, to play Berlioz's extract from Sabbath Night of Symphonie Fantastique you can add the following: (bassoon part):
+You can play a tune through the PC-speaker while booting by modifying the variable `GRUB_INIT_TUNE`. For example, to play Berlioz's extract from Sabbath Night of Symphonie Fantastique (bassoon part) you can add the following:
 
 `GRUB_INIT_TUNE="312 262 3 247 3 262 3 220 3 247 3 196 3 220 3 220 3 262 3 262 3 294 3 262 3 247 3 220 3 196 3 247 3 262 3 247 5 220 1 220 5"`
 
