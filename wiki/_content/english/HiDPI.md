@@ -404,6 +404,7 @@ There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 #### Official HiDPI support
 
 *   Starting on 25 of January 2018 in the beta program there is actual support for HiDPI and it should be automatically detected.
+*   Steam -> Settings -> Interface -> check "Enlarge text and icons based on monitor size" (restart required)
 *   If it not automatically detected use `GDK_SCALE=2` to set the desired scale factor.
 
 #### Unofficial

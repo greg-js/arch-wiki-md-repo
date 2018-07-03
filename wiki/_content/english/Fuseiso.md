@@ -1,4 +1,4 @@
-The *fuseiso* command line program is a simple tool that uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") and helps for a regular user to mount [ISO](https://en.wikipedia.org/wiki/ISO_9660 "wikipedia:ISO 9660") disk images. The *fuseiso* tool does not create an automatically generated destination by a pattern and is specialized on mounting of the optical disk image formats as `.iso`, `.nrg`, `.bin`, `.mdf` and `.img`.
+The *fuseiso* command line program is a simple tool that uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") so an unprivileged user can mount [ISO](https://en.wikipedia.org/wiki/ISO_9660 "wikipedia:ISO 9660") disk images. The *fuseiso* tool does not create an automatically generated destination by a pattern and is specialized on mounting of the optical disk image formats as `.iso`, `.nrg`, `.bin`, `.mdf` and `.img`.
 
 ## Contents
 

@@ -226,4 +226,4 @@ If you experience flickering [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=1
 
 ### R9 390 series Poor Performance and/or Instability
 
-If you experience issues [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `amdgpu.dc=1 amdgpu.dpm=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force DPM support.
+If you experience issues [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 amdgpu.cik_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force DPM support.

@@ -366,7 +366,7 @@ Some users recognised ~2W more power consumption after waking up from standby. G
 
 Power saving being enabled on the audio chip will cause the hissing and popping to appear.
 
-Have a look at [ALSA/Troubleshooting#Pops when starting and stopping playback](/index.php/ALSA/Troubleshooting#Pops_when_starting_and_stopping_playback "ALSA/Troubleshooting") and [ALSA/Troubleshooting#Popping sound after resuming from suspension](/index.php/ALSA/Troubleshooting#Popping_sound_after_resuming_from_suspension "ALSA/Troubleshooting").
+Have a look at [ALSA troubleshooting#Pops when starting and stopping playback](/index.php/ALSA_troubleshooting#Pops_when_starting_and_stopping_playback "ALSA troubleshooting") and [ALSA troubleshooting#Popping sound after resuming from suspension](/index.php/ALSA_troubleshooting#Popping_sound_after_resuming_from_suspension "ALSA troubleshooting").
 
 If you are using [tlp](https://www.archlinux.org/packages/?name=tlp), it will activate power saving by default when on battery. Edit `/etc/default/tlp` and disable it.
 

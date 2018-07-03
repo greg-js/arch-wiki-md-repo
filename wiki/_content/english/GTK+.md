@@ -28,6 +28,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [4.7 Legacy scrolling behavior](#Legacy_scrolling_behavior)
     *   [4.8 Disable overlay scrollbars](#Disable_overlay_scrollbars)
         *   [4.8.1 Remove overlay scroll indicators](#Remove_overlay_scroll_indicators)
+    *   [4.9 Hide CSD buttons](#Hide_CSD_buttons)
 *   [5 GDK backends](#GDK_backends)
     *   [5.1 Broadway backend](#Broadway_backend)
     *   [5.2 Wayland backend](#Wayland_backend)
@@ -381,13 +382,17 @@ undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { backgroun
 
 ```
 
+### Hide CSD buttons
+
+Add `gtk-decoration-layout=menu:close` to `~/.config/gtk-3.0/settings.ini` to remove minimize and maximize buttons. See [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
+
 ## GDK backends
 
 GDK (the underlying abstraction layer of GTK+) supports multiple backends to display GTK+ applications. The default backend is *x11*.
 
 ### Broadway backend
 
-The GDK Broadway backend provides support for displaying GTK+ applications in a web browser, using HTML5 and web sockets. [[3]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
+The GDK Broadway backend provides support for displaying GTK+ applications in a web browser, using HTML5 and web sockets. [[4]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
 
 When using broadwayd, specify the display number to use, prefixed with a colon, similar to X. The default display number is 1.
 
@@ -502,13 +507,13 @@ GtkLabel.title {
 
 ```
 
-To adjust the buttons in the header bar, use the `gtk-decoration-layout` setting. [[4]](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings--gtk-decoration-layout) The below examples removes all buttons:
+To adjust the buttons in the header bar, use the `gtk-decoration-layout` setting. [[5]](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings--gtk-decoration-layout) The below examples removes all buttons:
 
  `~/.config/gtk-3.0/settings.ini`  `gtk-decoration-layout=menu:` 
 
 ### cedilla ç/Ç instead of ć/Ć
 
-See [[5]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056), and [[6]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056/comments/37) for a workaround using Xcompose (US international layout).
+See [[6]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056), and [[7]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056/comments/37) for a workaround using Xcompose (US international layout).
 
 ### Suppress warning about accessibility bus
 
@@ -550,9 +555,9 @@ NautilusWindow {
 
 ### Wrong focus events with tiling window managers
 
-**Note:** This disables touchscreen support for GTK3 applications. [[7]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
+**Note:** This disables touchscreen support for GTK3 applications. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
 
-[Define](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
+[Define](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
 
 ### Thumbnail support for GTK+ 2 file dialog
 

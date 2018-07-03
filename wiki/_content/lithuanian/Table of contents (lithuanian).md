@@ -1,4 +1,4 @@
-| [Lietuviškai](/index.php/Category:Lietuvi%C5%A1kai "Category:Lietuviškai") <small>(10)</small> |
+| [Lietuviškai](/index.php/Category:Lietuvi%C5%A1kai "Category:Lietuviškai") <small>(9)</small> |
 | <small>1.</small> [Apie Arch](/index.php/Category:About_Arch_(Lietuvi%C5%A1kai) "Category:About Arch (Lietuviškai)") <small>(4)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(Lietuvi%C5%A1kai) "Category:ArchWiki (Lietuviškai)") <small>(1)</small> |
 | <small>1.2.</small> [Arch parsisiuntimas ir įdiegimas](/index.php/Category:Getting_and_installing_Arch_(Lietuvi%C5%A1kai) "Category:Getting and installing Arch (Lietuviškai)") <small>(1)</small> |

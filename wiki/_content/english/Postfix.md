@@ -53,6 +53,8 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [5.9 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
         *   [5.9.1 Resource Record](#Resource_Record)
         *   [5.9.2 Configuration](#Configuration_3)
+    *   [5.10 Sender Policy Framework](#Sender_Policy_Framework)
+    *   [5.11 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -803,6 +805,68 @@ example.com dane-only
 **Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes postfix tempfail on all delivieres that do not use DANE at all!
 
 Full documentation is found [here](http://www.postfix.org/TLS_README.html#client_tls_dane).
+
+### Sender Policy Framework
+
+To use the [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") with Postfix, [install](/index.php/Install "Install") [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/).
+
+Edit `/etc/python-policyd-spf/policyd-spf.conf` to your needs. An extensively commented version can be found at `/etc/python-policyd-spf/policyd-spf.conf.commented`. Pay some extra attention to the HELO check policy, as standard settings strictly reject HELO failures.
+
+In the main.cf add a timeout for the policyd:
+
+ `/etc/postfix/main.cf`  `policy-spf_time_limit = 3600s` 
+
+Then add a transport
+
+ `/etc/postfix/master.cf` 
+```
+policy-spf  unix  -       n       n       -       0       spawn
+     user=nobody argv=/usr/bin/policyd-spf
+```
+
+Lastly you need to add the policyd to the `smtpd_recipient_restrictions`. To minimize load put it to the end of the restrictions:
+
+ `/etc/postfix/main.cf` 
+```
+smtpd_recipient_restrictions=
+     ...
+     permit_sasl_authenticated
+     permit_mynetworks
+     reject_unauth_destination
+     check_policy_service unix:private/policy-spf
+```
+
+You can test your Setup with the following:
+
+ `/etc/python-policyd-spf/policyd-spf.conf`  `defaultSeedOnly = 0` 
+
+### Sender Rewriting Scheme
+
+To use the [Sender Rewriting Scheme](/index.php/Sender_Rewriting_Scheme "Sender Rewriting Scheme") with Postfix, [install](/index.php/Install "Install") [postsrsd](https://aur.archlinux.org/packages/postsrsd/) and adjust the settings:
+
+ `/etc/postsrsd/postsrsd` 
+```
+SRS_DOMAIN=yourdomain.tld
+SRS_EXCLUDE_DOMAINS=yourotherdomain.tld,yet.anotherdomain.tld
+SRS_SEPARATOR==
+SRS_SECRET=/etc/postsrsd/postsrsd.secret
+SRS_FORWARD_PORT=10001
+SRS_REVERSE_PORT=10002
+RUN_AS=postsrsd
+CHROOT=/usr/lib/postsrsd
+```
+
+Enable and start the daemon, making sure it runs after reboot as well. Then configure postfix accordingly by tweaking the following lines:
+
+ `/etc/postfix/main.cf` 
+```
+sender_canonical_maps = tcp:localhost:10001
+sender_canonical_classes = envelope_sender
+recipient_canonical_maps = tcp:localhost:10002
+recipient_canonical_classes= envelope_recipient,header_recipient
+```
+
+Restart postfix and start forwarding mail.
 
 ## See also
 

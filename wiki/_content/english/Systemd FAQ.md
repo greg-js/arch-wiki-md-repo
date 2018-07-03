@@ -104,8 +104,9 @@ Be sure you use:
 
 ### How can I make a script start during the boot process?
 
-Create a new file in `/etc/systemd/system` (e.g. *myscript*.service) and add the following contents:
+Create a new file as `/etc/systemd/system/*myscript*.service` and add the following contents:
 
+ `/etc/systemd/system/*myscript*.service` 
 ```
 [Unit]
 Description=My script
@@ -114,18 +115,12 @@ Description=My script
 ExecStart=/usr/bin/my-script
 
 [Install]
-WantedBy=multi-user.target 
-
+WantedBy=multi-user.target
 ```
 
-Then:
+This example assumes you want your script to start up when the target multi-user is launched. Make sure the script is [executable](/index.php/Executable "Executable").
 
-```
-# systemctl enable *myscript*.service
-
-```
-
-This example assumes you want your script to start up when the target multi-user is launched. Also do `chmod 755` to your script to enable execute permissions if you haven't done so already.
+[Enable](/index.php/Enable "Enable") *myscript*.service to start the service at boot.
 
 **Note:** In case you want to start a shell script, make sure you have `#!/bin/sh` in the first line of the script. Do **not** write something like `ExecStart=/bin/sh /path/to/script.sh` because that will not work.
 

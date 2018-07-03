@@ -55,7 +55,7 @@ The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two b
 
 ## Running standalone
 
-Setting up the system and running the standalone binary is advantageous for several reasons:
+Using standalone mode is advantageous for several reasons:
 
 1.  The default `kodi` user is unprivileged and cannot access a shell.
 2.  When paired with a systemd unit (or equivalent, see below), this setup makes the box on which kodi is running more like an appliance.
@@ -71,7 +71,7 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 **Note:**
 
 *   If `kodi.service` fails to start, see [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
-*   The home directory for the created `kodi` user is `/var/lib/kodi`.
+*   The home directory for the created `kodi` user is `/var/lib/kodi/`.
 
 ### Xsession with LightDM
 
@@ -154,18 +154,13 @@ end
 
 Adopt `button` to whatever button on the remote is to start Kodi. One can use *irw* (see [LIRC#Usage](/index.php/LIRC#Usage "LIRC")) to find out the correct values for `remote` and `button`.
 
-Next [edit](/index.php/Edit "Edit") `kodi.service` and change the line
+Create a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") for `kodi.service`:
 
+ `/etc/systemd/system/kodi.d/lirc.conf` 
 ```
-ExecStart = /usr/bin/kodi-standalone -l /run/lirc/lircd
-
-```
-
-to
-
-```
+[Service]
+ExecStart =
 ExecStart = /usr/bin/irexec
-
 ```
 
 [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
@@ -184,7 +179,7 @@ Any PC with a supported IR receiver/remote, can use [LIRC](/index.php/LIRC "LIRC
 
 To work properly with Kodi, a file that maps the lirc events to Kodi keypresses is needed. Create an [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file at `~/.kodi/userdata/Lircmap.xml` (note the capital 'L').
 
-**Note:** Users running Kodi started with [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) will find the `kodi` user's home (`~`) under `/var/lib/kodi` and should substitute this in for the shortcut above. Also make sure that if creating this file as the root user, it gets proper [ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") as `kodi:kodi` when finished.
+**Note:** Users running Kodi started with [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) will find the `kodi` user's home (`~`) under `/var/lib/kodi/` and should substitute this in for the shortcut above. Also make sure that if creating this file as the root user, it gets proper [ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") as `kodi:kodi` when finished.
 
 `Lircmap.xml` format is as follows:
 

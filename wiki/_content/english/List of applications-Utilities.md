@@ -467,6 +467,10 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 	[https://git-annex.branchable.com/](https://git-annex.branchable.com/) || [git-annex](https://www.archlinux.org/packages/?name=git-annex)
 
+*   **hsync** — Command line program to sync only those files that have been renamed/moved but otherwise unchanged. It works by issuing simple move operations at the destination without actually transferring the files, and is meant to be used in conjunction with other synchronization programs that lack this capability.
+
+	[https://ambrevar.bitbucket.io/hsync/](https://ambrevar.bitbucket.io/hsync/) || [hsync](https://aur.archlinux.org/packages/hsync/)
+
 *   **rclone** — Command line program to sync files and directories to and from Amazon S3, Dropbox, Google Drive, Microsoft OneDrive, Yandex Disk and many other cloud storage services as well as between local paths.
 
 	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)

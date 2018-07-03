@@ -462,7 +462,7 @@ remotepasseval = get_pw_from_attrs("repo", "Work")
 
 #### python2-keyring
 
-There is a general solution that should work for any keyring. Install [python2-keyring](https://www.archlinux.org/packages/?name=python2-keyring) and then change your ~/.offlineimaprc to say something like:
+There is a general solution that should work for any keyring. Install [python2-keyring](https://aur.archlinux.org/packages/python2-keyring/) and then change your ~/.offlineimaprc to say something like:
 
 ```
 [general]

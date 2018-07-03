@@ -10,8 +10,8 @@
 | <small>2.2.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(%C4%8Cesky) "Category:Data compression and archiving (Česky)") <small>(1)</small> |
 | <small>2.3.</small> [Emulátory](/index.php/Category:Emulators_(%C4%8Cesky) "Category:Emulators (Česky)") <small>(3)</small> |
 | <small>2.4.</small> [Správci souborů](/index.php/Category:File_managers_(%C4%8Cesky) "Category:File managers (Česky)") <small>(2)</small> |
-| <small>2.5.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(7) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small> |
-| <small>2.6.</small> [Multimedia](/index.php/Category:Multimedia_(%C4%8Cesky) "Category:Multimedia (Česky)") <small>(2)</small> |
+| <small>2.5.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(6) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small> |
+| <small>2.6.</small> [Multimedia](/index.php/Category:Multimedia_(%C4%8Cesky) "Category:Multimedia (Česky)") <small>(1)</small> |
 | <small>2.6.1.</small> [Přehrávače](/index.php/Category:Multimedia_players_(%C4%8Cesky) "Category:Multimedia players (Česky)") <small>(2)</small> |
 | <small>2.7.</small> [Kancelář](/index.php/Category:Office_(%C4%8Cesky) "Category:Office (Česky)") <small>(2)</small> |
 | <small>3.</small> [Vývojové nástroje](/index.php/Category:Development_(%C4%8Cesky) "Category:Development (Česky)") <small>(0)</small> |
@@ -24,7 +24,7 @@
 | <small>4.5.</small> [Tiskárny](/index.php/Category:Printers_(%C4%8Cesky) "Category:Printers (Česky)") <small>(1)</small> |
 | <small>4.6.</small> [Zvuk](/index.php/Category:Sound_(%C4%8Cesky) "Category:Sound (Česky)") <small>(3)</small> |
 | <small>5.</small> [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)") <small>(9)</small> |
-| <small>5.1.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(7) (také v [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)"))</small> |
+| <small>5.1.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(6) (také v [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)"))</small> |
 | <small>5.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(2) (také v [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)"))</small> |
 | <small>5.3.</small> [Web server](/index.php/Category:Web_server_(%C4%8Cesky) "Category:Web server (Česky)") <small>(5)</small> |
 | <small>6.</small> [Administrace systému](/index.php/Category:System_administration_(%C4%8Cesky) "Category:System administration (Česky)") <small>(2)</small> |

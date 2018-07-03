@@ -231,4 +231,4 @@ Source: [[1]](https://triplescomputers.com/blog/uncategorized/solution-switch-wi
 
 ## HDMI/Mini-DP audio
 
-The HDMI and the mini-DP are connected to the nvidia card, which means that in order for them to play audio you need to route it through the sound card attached to the nvidia device. However by default the GPU has its audio disabled for whatever reason. To enable it follow [NVIDIA/Troubleshooting#No_audio_over_HDMI](/index.php/NVIDIA/Troubleshooting#No_audio_over_HDMI "NVIDIA/Troubleshooting")
+The HDMI and the mini-DP are connected to the nvidia card, which means that in order for them to play audio you need to route it through the sound card attached to the nvidia device. However by default the GPU has its audio disabled for whatever reason. To enable it follow [NVIDIA/Troubleshooting#No audio over HDMI](/index.php/NVIDIA/Troubleshooting#No_audio_over_HDMI "NVIDIA/Troubleshooting")

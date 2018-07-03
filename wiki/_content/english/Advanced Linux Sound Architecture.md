@@ -1,7 +1,7 @@
 Related articles
 
-*   [ALSA configuration examples](/index.php/Advanced_Linux_Sound_Architecture/Configuration_examples "Advanced Linux Sound Architecture/Configuration examples")
-*   [ALSA troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting")
+*   [ALSA configuration examples](/index.php/ALSA_configuration_examples "ALSA configuration examples")
+*   [ALSA troubleshooting](/index.php/ALSA_troubleshooting "ALSA troubleshooting")
 *   [Sound system](/index.php/Sound_system "Sound system")
 *   [PC speaker](/index.php/PC_speaker "PC speaker")
 *   [PulseAudio](/index.php/PulseAudio "PulseAudio")
@@ -143,7 +143,7 @@ To get full 5.1 or 7.1 surround sound you will likely need to unmute other chann
 
 ### Enable the microphone
 
-To enable your microphone, switch to the Capture tab with `F4` and enable a channel with `Space`. See [ALSA/Troubleshooting#Microphone](/index.php/ALSA/Troubleshooting#Microphone "ALSA/Troubleshooting") if microphone does not work.
+To enable your microphone, switch to the Capture tab with `F4` and enable a channel with `Space`. See [/Troubleshooting#Microphone](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting") if microphone does not work.
 
 ### Test your changes
 
@@ -183,7 +183,7 @@ surround51:CARD=PCH,DEV=0
 surround71:CARD=PCH,DEV=0
 ```
 
-If that does not work, consult the [#Configuration](#Configuration) section or the [ALSA/Troubleshooting](/index.php/ALSA/Troubleshooting "ALSA/Troubleshooting") page.
+If that does not work, consult the [#Configuration](#Configuration) section or the [/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting") page.
 
 ### Additional notes
 
@@ -862,7 +862,7 @@ $ amixer sset "Auto-Mute" unmute
 
 and then unmuting other required items, such as **Headphones**, **Speaker**, **Bass Speaker**...
 
-**Note:** If you have a crackling sound through headphones connector (mini-jack) after, see [here](/index.php/ALSA/Troubleshooting#Crackling_sound_through_mini-jack_.28headphones_connector.29 "ALSA/Troubleshooting").
+**Note:** If you have a crackling sound through headphones connector (mini-jack) after, see [here](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Crackling_sound_through_mini-jack_.28headphones_connector.29 "Advanced Linux Sound Architecture/Troubleshooting").
 
 ### Keyboard volume control
 

@@ -483,13 +483,13 @@ directory = /home/user/torrents/incomplete
 # 2) triggers at 10 second intervals thereafter
 # 3) Upon trigger, attempt to load (and start) new *.torrent files found in /home/user/torrents/watch/
 # 4) set a variable named 'custom1' with the value "/home/user/torrents/complete"
-# NOTE: if you do not want it to automatically start the torrent, change 'load.start' to 'load'
-schedule = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.set_custom1=/home/user/torrents/complete"
+# NOTE: if you do not want it to automatically start the torrent, change 'load.start' to 'load.normal'
+schedule2 = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.custom1.set=/home/user/torrents/complete"
 
 # upon completion, move content to path specified above via custom1
-method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
-method.insert = d.move_to_complete, simple, "execute=mkdir,-p,$argument.1=; execute=cp,-rp,$argument.0=,$argument.1=; d.stop=; d.directory.set=$argument.1=; d.start=;d.save_full_session=; execute=rm, -r, $argument.0="
-method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.get_data_full_path=,$d.custom1="
+method.insert = d.data_path, simple, "if=(d.is_multi_file), (cat,(d.directory),/), (cat,(d.directory),/,(d.name))"
+method.insert = d.move_to_complete, simple, "d.directory.set=$argument.1=; execute=mkdir,-p,$argument.1=; execute=mv,-u,$argument.0=,$argument.1=; d.save_full_session="
+method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.data_path=,$d.custom1="
 ```
 
 You can add additional watch directories and corresponding completion directories like so:
@@ -497,13 +497,13 @@ You can add additional watch directories and corresponding completion directorie
 ```
 directory = /home/user/torrents/incomplete
 
-schedule = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.set_custom1=/home/user/torrents/complete"
-schedule = watch_directory_2,10,10,"load.start=/home/user/torrents/watch/iso/*.torrent,d.set_custom1=/home/user/torrents/complete/iso"
-schedule = watch_directory_3,10,10,"load.start=/home/user/torrents/watch/music/*.torrent,d.set_custom1=/home/user/torrents/complete/music"
+schedule2 = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.custom1.set=/home/user/torrents/complete"
+schedule2 = watch_directory_2,10,10,"load.start=/home/user/torrents/watch/iso/*.torrent,d.custom1.set=/home/user/torrents/complete/iso"
+schedule2 = watch_directory_3,10,10,"load.start=/home/user/torrents/watch/music/*.torrent,d.custom1.set=/home/user/torrents/complete/music"
 
-method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
-method.insert = d.move_to_complete, simple, "execute=mkdir,-p,$argument.1=; execute=cp,-rp,$argument.0=,$argument.1=; d.stop=; d.directory.set=$argument.1=; d.start=;d.save_full_session=; execute=rm, -r, $argument.0="
-method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.get_data_full_path=,$d.custom1="
+method.insert = d.data_path, simple, "if=(d.is_multi_file), (cat,(d.directory),/), (cat,(d.directory),/,(d.name))"
+method.insert = d.move_to_complete, simple, "d.directory.set=$argument.1=; execute=mkdir,-p,$argument.1=; execute=mv,-u,$argument.0=,$argument.1=; d.save_full_session="
+method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.data_path=,$d.custom1="
 ```
 
 You can also specify incomplete directories per watch directory:
@@ -511,13 +511,13 @@ You can also specify incomplete directories per watch directory:
 ```
 directory = /home/user/torrents/incomplete
 
-schedule = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.directory.set=/home/user/torrents/incomplete,d.set_custom1=/home/user/torrents/complete"
-schedule = watch_directory_2,10,10,"load.start=/home/user/torrents/watch/iso/*.torrent,d.directory.set=/home/user/torrents/incomplete/iso,d.set_custom1=/home/user/torrents/complete/iso"
-schedule = watch_directory_3,10,10,"load.start=/home/user/torrents/watch/music/*.torrent,d.directory.set=/home/user/torrents/incomplete/music,d.set_custom1=/home/user/torrents/complete/music"
+schedule2 = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.directory.set=/home/user/torrents/incomplete,d.custom1.set=/home/user/torrents/complete"
+schedule2 = watch_directory_2,10,10,"load.start=/home/user/torrents/watch/iso/*.torrent,d.directory.set=/home/user/torrents/incomplete/iso,d.custom1.set=/home/user/torrents/complete/iso"
+schedule2 = watch_directory_3,10,10,"load.start=/home/user/torrents/watch/music/*.torrent,d.directory.set=/home/user/torrents/incomplete/music,d.custom1.set=/home/user/torrents/complete/music"
 
-method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
-method.insert = d.move_to_complete, simple, "execute=mkdir,-p,$argument.1=; execute=cp,-rp,$argument.0=,$argument.1=; d.stop=; d.directory.set=$argument.1=; d.start=;d.save_full_session=; execute=rm, -r, $argument.0="
-method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.get_data_full_path=,$d.custom1="
+method.insert = d.data_path, simple, "if=(d.is_multi_file), (cat,(d.directory),/), (cat,(d.directory),/,(d.name))"
+method.insert = d.move_to_complete, simple, "d.directory.set=$argument.1=; execute=mkdir,-p,$argument.1=; execute=mv,-u,$argument.0=,$argument.1=; d.save_full_session="
+method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.data_path=,$d.custom1="
 ```
 
 Also see [completion moving via a bash script](https://rtorrent-docs.readthedocs.io/en/latest/use-cases.html#versatile-move-on-completion), and via [pyrocore's rtcontrol](https://pyrocore.readthedocs.io/en/latest/howto.html#moving-all-data-for-selected-items-to-a-new-location) (there is an AUR package).
@@ -608,7 +608,7 @@ All Live Nudibranches: Done
 rTorrent does not list the active tab properly by default, add this line to your `.rtorrent.rc` to show only active torrents
 
 ```
-schedule2 = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
+schedule2 = filter_active,30,30,"view.filter = active,\"or={d.up.rate=,d.down.rate=}\""
 
 ```
 
@@ -618,9 +618,9 @@ To sort the seeding view by the upload rate and only show torrents with peers:
 
 ```
 # Sort the seeding view by the upload rate and only show torrents with peers
-view.sort_current = seeding,greater=d.get_up_rate=
-view.filter = seeding,"and=d.get_complete=,d.get_peers_connected="
-view.sort_new = seeding,less=d.get_up_rate=
+view.sort_current = seeding,greater=d.up.rate=
+view.filter = seeding,"and=d.complete=,d.peers_connected="
+view.sort_new = seeding,less=d.up.rate=
 view.sort = seeding
 
 ```
@@ -629,9 +629,9 @@ To sort the complete view by the upload rate:
 
 ```
 # Sort the complete view by the upload rate
-view.sort_current = complete,greater=d.get_up_rate=
-view.filter = seeding,"and=d.get_complete="
-view.sort_new = seeding,less=d.get_up_rate=
+view.sort_current = complete,greater=d.up.rate=
+view.filter = seeding,"and=d.complete="
+view.sort_new = seeding,less=d.up.rate=
 view.sort = seeding
 
 ```

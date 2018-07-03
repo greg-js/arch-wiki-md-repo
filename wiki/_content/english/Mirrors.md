@@ -212,6 +212,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 **Cernet**
 
+*   [http://mirror.hust.edu.cn/archlinux/](http://mirror.hust.edu.cn/archlinux/) - *Huazhong University of Science and Technology Mirror (HUSTMirror)*
 *   [http://mirrors.geekpie.org/archlinux/](http://mirrors.geekpie.org/archlinux/) - *Geek Pie Association @ ShanghaiTech University*
 *   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University(Legacy)*
 *   [https://mirrors.sjtug.sjtu.edu.cn/archlinux/](https://mirrors.sjtug.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University Linux User Group*

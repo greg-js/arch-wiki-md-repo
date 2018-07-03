@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Category:Hypervisors (Español)](/index.php/Category:Hypervisors_(Espa%C3%B1ol) "Category:Hypervisors (Español)")
+*   [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")
+*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
+
 [VirtualBox](https://www.virtualbox.org) es un [hipervisor](https://en.wikipedia.org/wiki/es:Hypervisor "wikipedia:es:Hypervisor") que se utiliza para ejecutar sistemas operativos en un entorno especial, llamado máquina virtual, corriendo sobre un sistema operativo ya existente. VirtualBox está en constante desarrollo y las nuevas características se implementan continuamente. Viene con una interfaz gráfica basada en [Qt](/index.php/Qt "Qt"), así como herramientas de línea de órdenes [SDL](https://en.wikipedia.org/wiki/Simple_DirectMedia_Layer "wikipedia:Simple DirectMedia Layer") y *headless* para la gestión y ejecución de máquinas virtuales.
 
 Con el fin de integrar las funciones del sistema anfitrión en los sistemas huéspedes, incluyendo carpetas compartidas y portapapeles, aceleración de vídeo y un modo de integración de ventanas fluido, se proporcionan complementos huéspedes (*guest additions*) para algunos sistemas operativos invitados.

@@ -30,6 +30,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [16 Redirect certain URLs to specific web browsers](#Redirect_certain_URLs_to_specific_web_browsers)
 *   [17 Removing film holes/film strip from video thumbnails in Nautilus](#Removing_film_holes.2Ffilm_strip_from_video_thumbnails_in_Nautilus)
 *   [18 Prevent GNOME software from downloading updates](#Prevent_GNOME_software_from_downloading_updates)
+*   [19 Increase volume above and beyond 100%](#Increase_volume_above_and_beyond_100.25)
 
 ## Keyboard
 
@@ -422,3 +423,7 @@ By default GNOME Software will download updated packages from the Arch Linux rep
 $ gsettings set org.gnome.software download-updates false
 
 ```
+
+## Increase volume above and beyond 100%
+
+Install the extension [volume mixer](https://extensions.gnome.org/extension/858/volume-mixer/). Then use the mouse to scroll above the volume icon in the top panel to increase the volume above and beyond 100%.

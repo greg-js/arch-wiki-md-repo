@@ -35,7 +35,7 @@
     *   对于有相同包基础的多个软件包，不重复编译和安装包基础，例如[clion](https://aur.archlinux.org/packages/clion/)。
     *   Split packages which depend on a package from the same package base, such as [libc++](https://aur.archlinux.org/packages/libc%2B%2B/) and [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/).
     *   独立地拆分包，例如[python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/)和[python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/)。
-*   **Git clone**：默认使用[git clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git+clone.1)从AUR获取相关文件。
+*   **Git clone**：默认使用[git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1)从AUR获取相关文件。
 *   **差异比较**：有检查包差异的能力。除了PKGBUILD，还包括对`.install`或`.patch`文件更改的检查。
 *   **批量交互**：在编译过程开始前完成交互，特别是：
     *   检查PKGBUILD；

@@ -670,7 +670,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Ktikz** — Small application helping you to create [PGF/TikZ](https://en.wikipedia.org/wiki/PGF/TikZ "wikipedia:PGF/TikZ") diagrams for your publications.
 
-	[http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/](http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/) || [ktikz](https://aur.archlinux.org/packages/ktikz/)
+	[http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/](http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/) || [ktikz](https://www.archlinux.org/packages/?name=ktikz)
 
 *   **[LyX](https://en.wikipedia.org/wiki/LyX "wikipedia:LyX")** — Document processor that encourages an approach to writing based on the structure of your documents (WYSIWYM) and not simply their appearance (WYSIWYG).
 
@@ -1182,7 +1182,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Standard Notes** — Simple and private notes application which focuses on simplicity, and encrypts data locally before it ever touches a cloud. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://standardnotes.org/](https://standardnotes.org/) || [standardnotes-desktop](https://aur.archlinux.org/packages/standardnotes-desktop/)
+	[https://standardnotes.org/](https://standardnotes.org/) || [standardnotes-desktop](https://aur.archlinux.org/packages/standardnotes-desktop/) [sn-bin](https://aur.archlinux.org/packages/sn-bin/)
 
 *   **[TagSpaces](https://en.wikipedia.org/wiki/TagSpaces "wikipedia:TagSpaces")** — Offline personal data manager for managing of your local files. Based on the [Electron](https://electronjs.org/) platform.
 

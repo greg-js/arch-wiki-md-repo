@@ -32,6 +32,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
         *   [2.5.7 If using a USB microphone](#If_using_a_USB_microphone)
     *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_.3D_no)
     *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
+    *   [2.8 Microphone crackling with Realtek ALC892](#Microphone_crackling_with_Realtek_ALC892)
 *   [3 Audio quality](#Audio_quality)
     *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo.2FNoise-Cancellation)
     *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
@@ -539,6 +540,23 @@ Then restart PulseAudio:
 # pulseaudio -k
 
 ```
+
+### Microphone crackling with Realtek ALC892
+
+Sometimes ALC892 chips have crackling sound while recording using a microphone. Some Pulseaudio config changes may help:
+
+ `/etc/pulse/daemon.conf` 
+```
+resample-method = src-sinc-best-quality
+default-sample-format = s16le
+default-sample-rate = 48000
+```
+
+and add the `use_ucm` option to
+
+ `/etc/pulse/default.conf`  `load-module module-udev-detect use_ucm=0 tsched=0` 
+
+then restart pulseaudio.
 
 ## Audio quality
 

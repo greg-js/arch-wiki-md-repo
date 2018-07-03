@@ -181,6 +181,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[https://tinyproxy.github.io/](https://tinyproxy.github.io/) || [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy)
 
+*   **[Trojan](/index.php/Trojan "Trojan")** — An unidentifiable mechanism that helps you bypass GFW.
+
+	[https://trojan-gfw.github.io/trojan/](https://trojan-gfw.github.io/trojan/) || [trojan](https://www.archlinux.org/packages/?name=trojan)
+
 *   **[Varnish](/index.php/Varnish "Varnish")** — High-performance HTTP accelerator.
 
 	[https://varnish-cache.org/](https://varnish-cache.org/) || [varnish](https://www.archlinux.org/packages/?name=varnish)

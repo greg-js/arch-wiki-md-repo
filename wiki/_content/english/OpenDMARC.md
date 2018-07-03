@@ -1,4 +1,4 @@
-[OpenDMARC](http://www.trusteddomain.org/opendmarc/) is an open source implementation of the [DMARC](https://en.wikipedia.org/wiki/DMARC "wikipedia:DMARC") specification.
+[OpenDMARC](http://www.trusteddomain.org/opendmarc/) is an open source implementation of the [Domain-based Message Authentication, Reporting and Conformance](https://en.wikipedia.org/wiki/DMARC "wikipedia:DMARC") (DMARC) specification.
 
 DMARC is a policy for mail transfer, which is already supported by some common mail providers. It depends on [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") and [DKIM](/index.php/OpenDKIM "OpenDKIM"). DMARC provides a policy for outgoing mail and checks incoming mails for compliance with that policy. The policy is published via a DNS TXT record. It is explained in [#DMARC Record](#DMARC_Record). Validation is done in a daemon. For more info see [RFC 7489](https://datatracker.ietf.org/doc/rfc7489/).
 

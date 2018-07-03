@@ -216,7 +216,7 @@ Source: [akendo.eu](https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-w
 
 ### NetworkManager
 
-See [NetworkManager#Configuring MAC Address Randomization](/index.php/NetworkManager#Configuring_MAC_Address_Randomization "NetworkManager").
+See [NetworkManager#Configuring MAC address randomization](/index.php/NetworkManager#Configuring_MAC_address_randomization "NetworkManager").
 
 ## Troubleshooting
 

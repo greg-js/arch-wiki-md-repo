@@ -27,7 +27,7 @@ Most modern desktop environments ship with an extensive set of features, among w
 
 ## Independent to specific desktop environments
 
-The [Xorg](/index.php/Xorg "Xorg") server has features (accessx) for physical assistance by setting parameters via the [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension"). This section covers examples.
+The [Xorg](/index.php/Xorg "Xorg") server has features (accessx) for physical assistance by setting parameters via the [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension"). This section covers examples.
 
 For speech recognition, see also [Text to speech](/index.php/Text_to_speech "Text to speech").
 
@@ -194,7 +194,7 @@ Option "XkbOptions" "keypad:pointerkeys"
 
 to the keyboard configuration file. This will make the `Shift+NumLock` shortcut toggle mouse keys.
 
-For more see [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg") and [X KeyBoard extension#Mouse control](/index.php/X_KeyBoard_extension#Mouse_control "X KeyBoard extension") for advanced configuration.
+For more see [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg") and [X keyboard extension#Mouse control](/index.php/X_keyboard_extension#Mouse_control "X keyboard extension") for advanced configuration.
 
 ### Visual assistance
 

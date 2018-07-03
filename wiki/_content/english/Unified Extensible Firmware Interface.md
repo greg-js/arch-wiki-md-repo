@@ -1,7 +1,7 @@
 Related articles
 
-*   [UEFI hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
-*   [EFI system partition](/index.php/Unified_Extensible_Firmware_Interface/System_partition "Unified Extensible Firmware Interface/System partition")
+*   [UEFI hardware](/index.php/UEFI_hardware "UEFI hardware")
+*   [EFI system partition](/index.php/EFI_system_partition "EFI system partition")
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")

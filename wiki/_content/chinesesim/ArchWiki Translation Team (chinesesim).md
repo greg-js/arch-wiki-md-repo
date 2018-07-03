@@ -16,7 +16,7 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 
 ## 创建翻译
 
-**Warning:** 如果不准备翻译页面的大部分内容，请尽量不要新建简体中文页面。检查英文页面的更新需要花费不少精力，没有翻译的页面会增加维护负担。
+**警告:** 如果不准备翻译页面的大部分内容，请尽量不要新建简体中文页面。检查英文页面的更新需要花费不少精力，没有翻译的页面会增加维护负担。
 
 1.  如果还不知道如何编辑 wiki，请阅读 [编辑帮助](/index.php/Help:Editing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Editing (简体中文)")。
 2.  阅读 [i18n帮助](/index.php/Help:I18n_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:I18n (简体中文)")，文章给出了 ArchWiki 国际化和本地化的指南。
@@ -165,6 +165,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") | 完成 | Arisaka | 无 |
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
 | [Systemd-timesyncd (简体中文)‎‎](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | 无 | 无 |
+| [TLP (简体中文)](/index.php/TLP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "TLP (简体中文)") | 完成 | Skywet | 持续更新中 |
 | [Tomcat (简体中文)](/index.php/Tomcat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tomcat (简体中文)") | 完成 | Starwing117 | 持续更新中 |
 | [Vim (简体中文)](/index.php/Vim_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Vim (简体中文)") | 完成 | 无 | 无 |
 | [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") | 翻译至 2017-10-15 | [User:5long](/index.php?title=User:5long&action=edit&redlink=1 "User:5long (page does not exist)") |

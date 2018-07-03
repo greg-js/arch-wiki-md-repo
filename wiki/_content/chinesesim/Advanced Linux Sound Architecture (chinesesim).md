@@ -199,7 +199,7 @@ surround51:CARD=PCH,DEV=0
 surround71:CARD=PCH,DEV=0
 ```
 
-如果没有正常工作，请继续阅读 [#配置](#.E9.85.8D.E7.BD.AE) 以及 [#疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94) 部分。和 [ALSA/Troubleshooting](/index.php/ALSA/Troubleshooting "ALSA/Troubleshooting") 页面。
+如果没有正常工作，请继续阅读 [#配置](#.E9.85.8D.E7.BD.AE) 以及 [#疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94) 部分。和 [Advanced Linux Sound Architecture/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting") 页面。
 
 ### 附加注释
 
@@ -930,7 +930,7 @@ $ amixer sset "Auto-Mute" unmute
 
 然后解静音其他需要的项目, 比如 **Headphones**, **Speaker**, **Bass Speaker**...
 
-**注意:** 如果之后你在耳机连接器(mini-jack)中听到劈里啪啦的声音，参见 [这里](/index.php/ALSA/Troubleshooting#Crackling_sound_through_mini-jack_.28headphones_connector.29 "ALSA/Troubleshooting").
+**注意:** 如果之后你在耳机连接器(mini-jack)中听到劈里啪啦的声音，参见 [这里](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Crackling_sound_through_mini-jack_.28headphones_connector.29 "Advanced Linux Sound Architecture/Troubleshooting").
 
 ### 键盘控制声音
 

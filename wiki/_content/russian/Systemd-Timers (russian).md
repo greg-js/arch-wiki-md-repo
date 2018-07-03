@@ -5,7 +5,7 @@
 *   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
 *   [cron (Русский)](/index.php/Cron_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cron (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Дата последней синхронизации: 9 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=509259).
+**Состояние перевода:** На этой странице представлен перевод статьи [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Дата последней синхронизации: 9 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=523878).
 
 Таймеры - файлы служб [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), имя которых оканчивается на `.service`, а также они контролируют файлы `.service` или события. И могут выступать альтернативой [cron](/index.php/Cron_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cron (Русский)") (смотрите [#В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)). Помимо этого имеют встроенную поддержку событий календаря, монотонных временных событий и могут быть запущены в асинхронном режиме.
 
@@ -113,6 +113,13 @@ OnCalendar=Mon,Tue *-*-01..04 12:00:00
 
 ```
  OnCalendar=Sat *-*-1..7 18:00:00
+
+```
+
+По крайней мере один день должен быть указан при использовании `ДеньНедели`. Таймер, который будет запускаться каждый день в 4 утра:
+
+```
+ OnCalendar=*-*-* 4:00:00
 
 ```
 

@@ -1,24 +1,28 @@
 A **mail server** or [mail transfer agent](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") (MTA) receives and sends emails via [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol "wikipedia:Simple Mail Transfer Protocol"). Received and accepted emails are then passed to a [mail delivery agent](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), which stores the mail in a mailbox (usually in [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") or [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format). If you want users to be able to remotely access their mail using [email clients](/index.php/Email_client "Email client") or [mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents"), you need to run a [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") and/or [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") server.
 
-| Software | Package | [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") | [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") | [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") | [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") |
-| [Sendmail](/index.php/Sendmail "Sendmail") | [sendmail](https://aur.archlinux.org/packages/sendmail/) | Yes | No | No | No |
-| [Exim](/index.php/Exim "Exim") | [exim](https://www.archlinux.org/packages/?name=exim) | Yes | Yes | No | No |
-| [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") | [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) | Yes | Yes | No | No |
-| [Postfix](/index.php/Postfix "Postfix") | [postfix](https://www.archlinux.org/packages/?name=postfix) | Yes | Yes | No | No |
-| [Courier](/index.php/Courier_Mail_Server "Courier Mail Server") | [courier-mta](https://aur.archlinux.org/packages/courier-mta/) | Yes | Yes | Yes | Yes |
-| [Cyrus IMAP](https://en.wikipedia.org/wiki/Cyrus_IMAP_server "wikipedia:Cyrus IMAP server") | [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/) | Yes | Yes | Yes | Yes |
+| Software | Package | [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") | [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") | [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") | [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") | [SPF](#Sender_Policy_Framework) |
+| [Sendmail](/index.php/Sendmail "Sendmail") | [sendmail](https://aur.archlinux.org/packages/sendmail/) | Yes | No | No | No | through [Milter](https://en.wikipedia.org/wiki/Milter "wikipedia:Milter") |
+| [Exim](/index.php/Exim "Exim") | [exim](https://www.archlinux.org/packages/?name=exim) | Yes | Yes | No | No | experimental[[1]](https://github.com/Exim/exim/wiki/SPF) |
+| [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") | [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) | Yes | Yes | No | No | No |
+| [Postfix](/index.php/Postfix "Postfix") | [postfix](https://www.archlinux.org/packages/?name=postfix) | Yes | Yes | No | No | Yes |
+| [Courier](/index.php/Courier_Mail_Server "Courier Mail Server") | [courier-mta](https://aur.archlinux.org/packages/courier-mta/) | Yes | Yes | Yes | Yes | Yes |
+| [Cyrus IMAP](https://en.wikipedia.org/wiki/Cyrus_IMAP_server "wikipedia:Cyrus IMAP server") | [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/) | Yes | Yes | Yes | Yes |  ? |
 | [Dovecot](/index.php/Dovecot "Dovecot") | [dovecot](https://www.archlinux.org/packages/?name=dovecot) | No | Yes | Yes | Yes |
 | [UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP") | [imap](https://www.archlinux.org/packages/?name=imap) | No | Yes | Yes | Yes |
 | [fdm](/index.php/Fdm "Fdm") | [fdm](https://www.archlinux.org/packages/?name=fdm) | No | Yes | No | No |
 | [Procmail](/index.php/Procmail "Procmail") | [procmail](https://www.archlinux.org/packages/?name=procmail) | No | Yes | No | No |
 
+See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
+
 ## Contents
 
 *   [1 MX record](#MX_record)
-*   [2 DKIM](#DKIM)
+*   [2 Authentication](#Authentication)
+    *   [2.1 Sender Policy Framework](#Sender_Policy_Framework)
+    *   [2.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
+    *   [2.3 DKIM](#DKIM)
 *   [3 Testing websites](#Testing_websites)
 *   [4 Tips and tricks](#Tips_and_tricks)
-*   [5 See also](#See_also)
 
 ## MX record
 
@@ -30,7 +34,36 @@ When an e-mail message is sent through the Internet, the sending mail transfer a
 
 **Note:** Some mail servers will not deliver mail to you if your MX record points to a CNAME. For best results, always point an MX record to an A record definition. For more information, see e.g. [Wikipedia's List of DNS Record Types](https://en.wikipedia.org/wiki/List_of_DNS_record_types "wikipedia:List of DNS record types").
 
-## DKIM
+## Authentication
+
+There are various [email authentication](https://en.wikipedia.org/wiki/Email_authentication "wikipedia:Email authentication") techniques.
+
+### Sender Policy Framework
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Sender_Policy_Framework "wikipedia:Sender Policy Framework"):
+
+	**Sender Policy Framework** (**SPF**) is an email validation protocol designed to detect and block email spoofing by providing a mechanism to allow receiving mail exchangers to verify that incoming mail from a domain comes from an IP Address authorized by that domain's administrators.
+
+To allow other mail exchangers to validate mails apparently sent from your domain, you need to set a DNS TXT record as explained in the [Wikipedia article](https://en.wikipedia.org/wiki/Sender_Policy_Framework "wikipedia:Sender Policy Framework"). To validate incoming mail using SPF you need to configure your mail server to use a SPF implementation. There are several [SPF implementations](http://www.openspf.org/Implementations) available, [perl-mail-spf](https://www.archlinux.org/packages/?name=perl-mail-spf) and [perl-mail-spf-query](https://www.archlinux.org/packages/?name=perl-mail-spf-query) can be found in the official repositories.
+
+*   For [Sendmail](/index.php/Sendmail "Sendmail") [spfmilter-acme](https://aur.archlinux.org/packages/spfmilter-acme/) can be used.
+*   For [Postfix](/index.php/Postfix "Postfix"), see [Postfix#Sender Policy Framework](/index.php/Postfix#Sender_Policy_Framework "Postfix").
+*   [Courier Mail Server](/index.php/Courier_Mail_Server "Courier Mail Server") natively supports SPF.
+
+The following websites let you validate your SPF record:
+
+*   [SPF Record Checker](http://www.kitterman.com/spf/validate.html)
+*   [SPF Email test](http://www.appmaildev.com/en/spf)
+
+**Tip:** SPF can even be helpful for domains not used to send email. Publishing a policy like `v=spf1 -all` makes any mail server enforcing SPF reject emails from your domain name, thus preventing misuse.
+
+### Sender Rewriting Scheme
+
+The [Sender Rewriting Scheme](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme "wikipedia:Sender Rewriting Scheme") (SRS) is a secure scheme to allow forwardable bounces for server-side forwarded emails without breaking the [Sender Policy Framework](#Sender_Policy_Framework).
+
+For [Postfix](/index.php/Postfix "Postfix"), see [Postfix#Sender Rewriting Scheme](/index.php/Postfix#Sender_Rewriting_Scheme "Postfix").
+
+### DKIM
 
 [DomainKeys Identified Mail](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail "wikipedia:DomainKeys Identified Mail") (DKIM) is a domain-level email authentication method designed to detect email spoofing.
 
@@ -56,7 +89,3 @@ Available extras that can usually be integrated are:
 *   [spamassasin](https://www.archlinux.org/packages/?name=spamassasin) to identify and filter spam
 *   [Sieve](https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language) – a mail filtering programming language
 *   [webmail](https://en.wikipedia.org/wiki/Webmail "wikipedia:Webmail") like [Roundcube](/index.php/Roundcube "Roundcube") or [Squirrelmail](/index.php/Squirrelmail "Squirrelmail")
-
-## See also
-
-*   [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers")

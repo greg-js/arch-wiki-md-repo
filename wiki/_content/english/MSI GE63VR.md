@@ -1,4 +1,4 @@
-Not to be confused with [MSI GS63VR](https://en.wikipedia.org/wiki/Arch_Linux "wikipedia:Arch Linux")
+Not to be confused with [MSI GS63VR](https://wiki.archlinux.org/index.php/MSI_GS63VR)
 
 ## Contents
 
@@ -12,7 +12,7 @@ Not to be confused with [MSI GS63VR](https://en.wikipedia.org/wiki/Arch_Linux "w
 
 ## Introduction
 
-The GE63VR series of laptops was revealed mid-2017 by MSI. Their main features are a relatively thin (for a gaming laptop) metal-alloy chassis, 7th generation Intel processors (Kaby lake), a 120Hz/3 ms built-in screen, and a per-key RGB keyboard backlighting.
+The GE63VR series of laptops was revealed mid-2017 by MSI. They feature a relatively thin (for gaming laptops) metal-alloy chassis, 7th generation Intel processors (Kaby lake), a 120Hz/3 ms built-in screen, and a per-key RGB keyboard backlighting.
 
 Only the variant GE63VR-7RE (or GE63VR Raider-215) was tested. Its specifications are :
 
@@ -41,7 +41,7 @@ Not tested : plugging an external microphone, audio through HDMI.
 | DisplayPort | Not tested |
 | USB-C | Not tested |
 | Dedicated GPU | Yes |
-| GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU off causes the system to hang. See below for fix. **bumblebee** has not been tested. |
+| GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU turned off causes the system to hang. See below for fix. **bumblebee** has not been tested. |
 | Screen backlighting control | Yes |
 | Keyboard backlighting control | Partially | Function keys can control the brightness but not the color or the pattern of the backlighting.
 

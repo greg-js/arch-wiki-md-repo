@@ -1,33 +1,38 @@
-**翻译状态：** 本文是英文页面 [Desktop_entries](/index.php/Desktop_entries "Desktop entries") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-07，点击[这里](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=440288)可以查看翻译后英文页面的改动。
+Related articles
 
-自由桌面社区的[桌面配置项规范](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html)为应用程序和[桌面环境](/index.php/Desktop_environment "Desktop environment")的整合提供了一个标准方法。桌面配置项是描述如何启动程序，如何处理数据的配置文件，它们还会和[菜单规范](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html)同步作用，定义一个程序在菜单中的显示图标。
+**翻译状态：** 本文是英文页面 [Desktop_entries](/index.php/Desktop_entries "Desktop entries") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=519256)可以查看翻译后英文页面的改动。
 
-大部分桌面配置项是 `.desktop` 和 `.directory` 文件。本文将概述如何创建一个合规可用的桌面配置项，主要面向软件包发布者和维护者，但对软件开发者及其他人也会是有用的。
+[XDG 桌面配置项规范](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html)为应用程序和[桌面环境](/index.php/Desktop_environment "Desktop environment")的菜单整合提供了一个标准方法。只要桌面环境遵守[菜单规范](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html)，应用程序图标就可以显示在系统菜单中。
+
+每个桌面项必须包含 `Type` 和 `Name`，还可以选择定义自己在程序菜单中的显示方式。
 
 桌面配置项大致分为三类：
 
 	应用程序 
 
-	指向某个应用程序的快捷方式
+	文件后缀是 *.desktop*，定义如何启动程序，支持哪些 MIME。
 
 	链接 
 
-	指向某个网址的链接
+	文件后缀是 *.desktop*，定义指向某个 `URL` 的链接。
 
 	目录 
 
-	某个菜单项元数据的容器
+	文件后缀是 *.directory*，定义应用程序菜单中的子菜单。
 
 下列章节概述如何创建它们并使其生效。
 
 `.desktop` 文件中还定义了数据文件的 MIME 类型关联。[Default applications (简体中文)](/index.php/Default_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Default applications (简体中文)") 介绍了它们的配置方法。
+
+[XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") 会使用应用程序项的 `MimeType` 字段。
+
+将 [XDG 自动启动程序](/index.php/XDG_Autostart "XDG Autostart")项放到特定位置，可以[自动启动](/index.php/Autostarting "Autostarting")应用程序。
 
 ## Contents
 
 *   [1 应用程序配置项](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E9.85.8D.E7.BD.AE.E9.A1.B9)
     *   [1.1 范例文件](#.E8.8C.83.E4.BE.8B.E6.96.87.E4.BB.B6)
     *   [1.2 关键字定义](#.E5.85.B3.E9.94.AE.E5.AD.97.E5.AE.9A.E4.B9.89)
-        *   [1.2.1 过时的内容](#.E8.BF.87.E6.97.B6.E7.9A.84.E5.86.85.E5.AE.B9)
 *   [2 图标](#.E5.9B.BE.E6.A0.87)
     *   [2.1 通用图像格式](#.E9.80.9A.E7.94.A8.E5.9B.BE.E5.83.8F.E6.A0.BC.E5.BC.8F)
     *   [2.2 图标格式转换](#.E5.9B.BE.E6.A0.87.E6.A0.BC.E5.BC.8F.E8.BD.AC.E6.8D.A2)
@@ -35,17 +40,17 @@
 *   [3 工具](#.E5.B7.A5.E5.85.B7)
     *   [3.1 gendesk](#gendesk)
         *   [3.1.1 用法](#.E7.94.A8.E6.B3.95)
-    *   [3.2 在*.desktop文件目錄或搜索](#.E5.9C.A8.2A.desktop.E6.96.87.E4.BB.B6.E7.9B.AE.E9.8C.84.E6.88.96.E6.90.9C.E7.B4.A2)
+    *   [3.2 lsdesktopf](#lsdesktopf)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 隐藏桌面配置项](#.E9.9A.90.E8.97.8F.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
-    *   [4.2 自动启动](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8)
+    *   [4.1 从终端启动程序](#.E4.BB.8E.E7.BB.88.E7.AB.AF.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
+    *   [4.2 隐藏桌面配置项](#.E9.9A.90.E8.97.8F.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
     *   [4.3 修改环境变量](#.E4.BF.AE.E6.94.B9.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
 *   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 应用程序配置项
 
-应用程序配置项，即 `.desktop` 文件是原信息资源和应用程序快捷图标的集合。系统程序的配置项通常位于 `/usr/share/applications` 或 `/usr/local/share/applications`目录，单用户安装的程序位于 `~/.local/share/applications` 目录，优先使用用户的配置项。
+应用程序配置项，即 `.desktop` 文件是元信息资源和应用程序快捷图标的集合。系统程序的配置项通常位于 `/usr/share/applications` 或 `/usr/local/share/applications`目录，单用户安装的程序位于 `~/.local/share/applications` 目录，桌面环境会优先使用用户的配置项。
 
 ### 范例文件
 
@@ -69,7 +74,7 @@ Comment=Flash card based learning tool
 # The path to the folder in which the executable is run
 Path=/opt/jmemorise
 
-# The executable of the application.
+# The executable of the application, possibly with arguments.
 Exec=jmemorize
 
 # The name of the icon that will be used to display this entry
@@ -109,17 +114,6 @@ This should be avoided, as it will only be confusing to users. The `Name` key sh
 
 *   `GenericName` should state what you would generally call an application that does what this specific application offers (i.e. Firefox is a "Web Browser").
 *   `Comment` is intended to contain any usefull additional information.
-
-#### 过时的内容
-
-There are quite some keys that have become deprecated over time as the standard has matured. The best/simplest way is to use the tool `desktop-file-validate` which is part of the package [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils). To validate, run
-
-```
-$ desktop-file-validate <your desktop file>
-
-```
-
-This will give you very verbose and useful warnings and error messages.
 
 ## 图标
 
@@ -178,14 +172,14 @@ $ icns2png -x <icon name>.icns
 
 ### Obtaining icons
 
-Although packages that already ship with a .desktop-file most certainly contain an icon or a set of icons, there is sometimes the case when a developer has not created a .desktop-file, but may ship icons, nonetheless. So a good start is to look for icons in the source package. You can i.e. first filter for the extension with **find** and then use **grep** to filter further for certain buzzwords like the package name, "icon", "logo", etc, if there are quite a lot of images in the source package.
+Although packages that already ship with a *.desktop* file most certainly contain an icon or a set of icons, there is sometimes the case when a developer has not created a *.desktop* file, but may ship icons, nonetheless. So a good start is to look for icons in the source package. You can i.e. first filter for the extension with **find** and then use **grep** to filter further for certain buzzwords like the package name, "icon", "logo", etc, if there are quite a lot of images in the source package.
 
 ```
 $ find /path/to/source/package -regex ".*\.\(svg\|png\|xpm\|gif\|ico\)$"
 
 ```
 
-If the developers of an application do not include icons in their source packages, the next step would be to search on their web sites. Some projects, like i.e. *tvbrowser* have an [artwork/logo page](http://enwiki.tvbrowser.org/index.php/Banners,_Logos_and_other_Promotion_Material) where additional icons may be found. If a project is multi-platform, there may be the case that even if the linux/unix package does not come with an icon, the Windows package might provide one. If the project uses a [Version control system](https://en.wikipedia.org/wiki/Version_control_system "wikipedia:Version control system") like CVS/SVN/etc. and you have some experience with it, you also might consider browsing it for icons. If everything fails, the project might simple have no icon/logo yet.
+If the developers of an application do not include icons in their source packages, the next step would be to search on their web sites. Some projects, like i.e. *tvbrowser* have an [artwork/logo page](http://enwiki.tvbrowser.org/index.php/Banners,_Logos_and_other_Promotion_Material) where additional icons may be found. If a project is multi-platform, there may be the case that even if the linux/unix package does not come with an icon, the Windows package might provide one. If the project uses a [Version control system](https://en.wikipedia.org/wiki/Version_control_system "wikipedia:Version control system") like CVS/SVN/etc. and you have some experience with it, you also might consider browsing it for icons. If everything fails, the project might simply have no icon/logo yet.
 
 ## 工具
 
@@ -217,47 +211,41 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 *   Use `--name='Program Name'` for choosing a name for the menu entry.
 
-*   Use `--exec='/opt/some_app/elf --with-ponies'` for setting the exec field.
+*   Use `--exec='/opt/some_app/elf --some-arg --other-arg'` for setting the exec field.
 
 *   See the [gendesk project](https://github.com/xyproto/gendesk) for more information.
 
-### 在*.desktop文件目錄或搜索
+### lsdesktopf
 
-該[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/)腳本列出可用*.desktop文件或在自己的搜索內容。它的主要目的是讓在可用程序控制台的簡要概述他們的命令行，並在`*.desktop`文件設置的類別。
-
-例子
+[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) can list available *.desktop* files or search their contents.
 
 ```
-# lsdesktopf
-# lsdesktopf --less
-# lsdesktopf --less gtk zh_TW,zh_CN,en_GB
+$ lsdesktopf
+$ lsdesktopf --list
+$ lsdesktopf --list gtk zh_TW,zh_CN,en_GB
 
 ```
 
-List MIME-types or parts of MIME-types found in *.desktop*, and which desktop files shares same MIME-type, output is equal as in [mimeapps.list](/index.php/Default_applications#Configuration_of_the_mimeapps.list_file "Default applications") for section `[Added Associations]`.
-
-```
-# lsdesktopf --gm
-# lsdesktopf --gm [options]
-
-```
-
-欲了解更多的選擇使用 `lsdesktopf --help`.
+It can also perform MIME-type-related searches. See [XDG MIME Applications#lsdesktopf](/index.php/XDG_MIME_Applications#lsdesktopf "XDG MIME Applications").
 
 ### fbrokendesktop
 
-The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command "which" to detect broken Exec that points to not existing path. Without any parameters it uses preset folders in "DskPath" array. It shows only broken *.desktop with full path and filename that is missing.
+The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) Bash script detects broken `Exec` values pointing to non-existent paths. Without any arguments it uses preset directories in the `DskPath` array. It shows only broken *.desktop* with full path and filename that is missing.
 
 Examples
 
 ```
-# fbrokendesktop
-# fbrokendesktop /usr
-# fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
+$ fbrokendesktop
+$ fbrokendesktop /usr
+$ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 ```
 
 ## 提示与技巧
+
+### 从终端启动程序
+
+安装软件包 [dex](https://www.archlinux.org/packages/?name=dex)，并运行 `dex */path/to/application.desktop*`.
 
 ### 隐藏桌面配置项
 
@@ -266,22 +254,6 @@ Examples
 要在所有环境隐藏，在桌面配置项中加入 `NoDisplay=true`. 要在某个环境中隐藏，在桌面配置项中加入 `NotShowIn=*desktop-name*`
 
 *desktop-name* 可以是 *GNOME*, *Xfce*, *KDE* 等，指定多个桌面时用分号隔开。
-
-### 自动启动
-
-兼容 XDG 的桌面环境例如s GNOME 或 KDE 会自动, 启动如下位置的 [*.desktop](/index.php/Desktop_entries "Desktop entries") 文件:
-
-*   系统目录: `$XDG_CONFIG_DIRS/autostart/` (默认是`/etc/xdg/autostart/`)
-
-*   GNOME 会启动 `/usr/share/gnome/autostart/` 中的程序
-
-*   用户目录 `$XDG_CONFIG_HOME/autostart/` (默认是`~/.config/autostart/`)
-
-将 `*.desktop` 文件复制到用户的 `~/.config/autostart/` 目录可以覆盖系统设置。
-
-参考[桌面程序自启动规范](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
-
-**Note:** 此方法仅适用于兼容 XDG 标准的桌面，如果桌面环境不支持此标准，可以使用 [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex) 或 [fbautostart](https://aur.archlinux.org/packages/fbautostart/) 实现 XDG 自启动。先用桌面已有的方式自启动它们，这些工具启动后会安装 xdg 方式启动其它程序。
 
 ### 修改环境变量
 

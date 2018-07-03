@@ -52,9 +52,9 @@
                 *   [6.2.1.2.2 标题栏按钮重新排序](#.E6.A0.87.E9.A2.98.E6.A0.8F.E6.8C.89.E9.92.AE.E9.87.8D.E6.96.B0.E6.8E.92.E5.BA.8F)
                 *   [6.2.1.2.3 最大化时隐藏标题栏](#.E6.9C.80.E5.A4.A7.E5.8C.96.E6.97.B6.E9.9A.90.E8.97.8F.E6.A0.87.E9.A2.98.E6.A0.8F)
             *   [6.2.1.3 GNOME Shell主题](#GNOME_Shell.E4.B8.BB.E9.A2.98)
-            *   [6.2.1.4 Icons on menu](#Icons_on_menu)
+            *   [6.2.1.4 菜单图标](#.E8.8F.9C.E5.8D.95.E5.9B.BE.E6.A0.87)
         *   [6.2.2 桌面](#.E6.A1.8C.E9.9D.A2)
-            *   [6.2.2.1 桌面上的图标](#.E6.A1.8C.E9.9D.A2.E4.B8.8A.E7.9A.84.E5.9B.BE.E6.A0.87)
+            *   [6.2.2.1 桌面图标](#.E6.A1.8C.E9.9D.A2.E5.9B.BE.E6.A0.87)
             *   [6.2.2.2 锁屏和背景](#.E9.94.81.E5.B1.8F.E5.92.8C.E8.83.8C.E6.99.AF)
         *   [6.2.3 扩展](#.E6.89.A9.E5.B1.95)
         *   [6.2.4 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95)
@@ -248,13 +248,13 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 #### 在线帐户
 
-Backends for the GNOME messaging application [empathy](https://www.archlinux.org/packages/?name=empathy) as well as the GNOME Online Accounts section of the System Settings panel are provided in a separate group: [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/). See [#Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts). Some online accounts, such as [ownCloud](/index.php/OwnCloud "OwnCloud"), require [gvfs-goa](https://www.archlinux.org/packages/?name=gvfs-goa) to be installed for full functionality in GNOME applications such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") and GNOME Documents [[2]](https://wiki.gnome.org/ThreePointSeven/Features/Owncloud).
+GNOME聊天程序[empathy](https://www.archlinux.org/packages/?name=empathy)的后端以及GNOME系统设置面板中的在线账户部分由另一个软件包组[telepathy提供](https://www.archlinux.org/groups/x86_64/telepathy%E6%8F%90%E4%BE%9B/)。相关请看[Unable to add accounts in Empathy and GNOME Online Accounts](/index.php/GNOME/Troubleshooting#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts "GNOME/Troubleshooting")部分提供的帮助。部分在线账户，比如[ownCloud](/index.php/OwnCloud "OwnCloud")，需要安装[gvfs-gos](https://www.archlinux.org/packages/?name=gvfs-gos)以在GNOME应用比如[GNOME Files](/index.php/GNOME_Files "GNOME Files")以及GNOME文档中发挥全部功能。相关链接：[[2]](https://wiki.gnome.org/ThreePointSeven/Features/Owncloud).
 
 #### 搜索
 
-The GNOME shell has a search that can be quickly accessed by pressing the `Super` key and starting to type. The [tracker](https://www.archlinux.org/packages/?name=tracker) package is installed by default as a part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group and provides an indexing application and metadata database. It can be configured with the *Search and Indexing* menu item; monitor status with *tracker-control*. It is started automatically by *gnome-session* when the user logs in. Indexing can be started manually with `tracker-control -s`. Search settings can also be configured in the *System Settings* panel.
+GNOME shell在按下`Super`键并开始输入时会启动搜索。[tracker](https://www.archlinux.org/packages/?name=tracker)软件包默认作为[gnome](https://www.archlinux.org/groups/x86_64/gnome/)组的一部分被安装。它提供一个应用和数据的索引数据库。它可以被“搜索及索引”菜单项配置，通过"tracker-control"监视状态。它在用户登录时自动被"gnome-session"启动。索引可以被`tracker-control -s`手动启动。搜索设置也可以在“系统设置面板”配置。
 
-The Tracker database can be queried using the *tracker-sparql* command. View its manual page [tracker-sparql(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1) for more information.
+Tracker数据库可以通过"tracker-sparql“命令查询。更多信息请访问它的手册页[tracker-sparql(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1)
 
 ### 高级设置
 
@@ -301,16 +301,11 @@ $ gsettings set org.gnome.desktop.interface icon-theme *theme-name*
 
 ###### 全局暗色主题
 
-GNOME will use the Adwaita light theme by default however a dark variant of this theme (called the Global Dark Theme) also exists and can be selected using the Tweak Tool or by editing the GTK+ 3 settings file - see [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Some applications such as Image Viewer (*eog*) use the dark theme by default. It should be noted that the Global Dark Theme only works with GTK+ 3 applications; some GTK+ 3 applications may only have partial support for the Global Dark theme. Qt and GTK+ 2 support for the Global Dark Theme may be added in the future.
+GNOME默认使用Adwaita light主题，不过暗色主题(称之为全局黑色主题)也存在并可通过the Tweaks或者是编辑GTK+ 3设置文件 - 详细访问 [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+")。一些应用比如图像查看器（“eog”）默认使用暗色主题。值得注意的是，全局黑色主题只对GTK+ 3应用有效；部分GTK+ 3应用也许只有对全局主题的部分支持。未来也许将添加对全局暗色主题对Qt及GTK+ 2的支持。
 
 ##### 窗口管理器主题
 
-The window manager theme (the style of the window titlebars) can be set using the GNOME Tweak Tool or the following GSettings command:
-
-```
-$ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
-
-```
+窗口管理器的主题跟随GTK+ 主题。不赞成使用`org.gnome.desktop.wm.preferences theme`设置主题，并且这样也会被GNOME忽视。
 
 ###### 标题栏的高度
 
@@ -346,23 +341,23 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 ###### 最大化时隐藏标题栏
 
-*   [Install](/index.php/Install "Install") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) or [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Maximized windows get the title bar merged into the activity bar, saving precious pixels.
+*   [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/)或[gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/)。最大化的窗口的标题栏将与活动栏整合以节省空间。
 
-*   [Install](/index.php/Install "Install") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). It changes a default setting in the window manager, so as to automatically hide the titlebar on legacy (non-headerbar) apps when they are maximized or tiled to the side.
+*   [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/)。它改变窗口管理器的默认设置以在应用最大化或平铺至一边时自动在传统（无顶栏）的应用中隐藏标题栏。
 
-*   [Install](/index.php/Install "Install") [maximus](https://aur.archlinux.org/packages/maximus/). To start the application, execute *maximus* from a terminal. When running, the daemon will automatically maximize windows. It will undecorate maximized windows and redecorate them when they are unmaximized. If you do not want all windows to start maximized, run `maximus -m` instead. Note that this will only work with windows decorated by the window manager; applications that use client-side decoration such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") will not be undecorated when maximized.
+*   [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [maximus](https://aur.archlinux.org/packages/maximus/)。启动该应用，在终端中输入"maximus"。运行时，守护进程将自动最大化窗口。它将关闭最大化窗口的装饰并在其取消最大化时重启装饰。如果您不想要所有窗口启动时最大化，那么运行`maximus - m`。注意，该应用只对窗口管理器装饰的应用有效； 使用自己装饰的应用比如[GNOME Files](/index.php/GNOME_Files "GNOME Files")最大化时不会被关闭装饰。
 
 ##### GNOME Shell主题
 
-The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly ensure that you have the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package installed. Then enable the *User Themes* extension, either through GNOME Tweak Tool or through the [GNOME Shell Extensions](https://extensions.gnome.org) webpage. Shell themes can then be loaded and selected using the GNOME Tweak Tool.
+GNOME Shell本身的主题是可配置的。首先确认您已安装[gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions)软件包以应用Shell主题。然后通过GNOME Tweaks或通过[GNOME Shell Extensions](https://extensions.gnome.org) 网站启用“User Themes”扩展。Shel主题可以通过使用GNOME Tweaks软件加载并选用。
 
-There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
+[AUR中](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d)中有大量可用的GNOME Shell主题。
 
-Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+Shell主题也可在[gnome-look.org](http://gnome-look.org/)下载。
 
-##### Icons on menu
+##### 菜单图标
 
-The default GNOME schema doesn't display any icon on menus. To display icons on menus, issue the following command.
+默认的GNOME设置不在菜单上显示图标。要在菜单上显示图标，运行以下命令：
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
@@ -373,9 +368,9 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 
 各种桌面设置可以应用。
 
-##### 桌面上的图标
+##### 桌面图标
 
-参阅 [GNOME Files#Desktop Icons](/index.php/GNOME_Files#Desktop_Icons "GNOME Files").
+GNOME 3.28之前，桌面图标通过[Files](/index.php/Files "Files")在桌面上绘制一个透明的带图标的窗口实现。在GNOME 3.28中，该功能被移除，桌面图标不再在GNOME上可用。可能的方案包括使用[Nemo](/index.php/Nemo "Nemo")（GNOME File的一个分支，目前仍支持桌面图标）或安装[gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/)插件以部分复刻GNOME 3.26以下支持的桌面图标功能。更多信息请访问[Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633)。
 
 ##### 锁屏和背景
 

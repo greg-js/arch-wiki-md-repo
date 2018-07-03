@@ -56,7 +56,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 You can either install using VMware bundle or package [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). The latter is preferred if using *VMware Workstation* on x86_64.
 
-**Note:** VMware version 14 drops support for a number of CPUs including early Intel Core i7 CPUs. Check the [Processor Requirements for Host Systems](https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-BBD199AA-C346-4334-9F56-5A42F7328594.html). If version 14 does not support your cpu then you can use [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/).
+**Note:** VMware version 14 drops support for a number of CPUs including early Intel Core i7 CPUs. Check the [Processor Requirements for Host Systems](https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-BBD199AA-C346-4334-9F56-5A42F7328594.html). If version 14 does not support your CPU then you can use [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/).
 
 ### VMware bundle
 
@@ -425,7 +425,13 @@ This can be fixed by either installing the [ncurses5-compat-libs](https://aur.ar
 
 #### Module CPUIDEarly power on failed
 
-Version 14 has stricter cpu requirements than version 12\. If you have an affected cpu then, if you try to start a virtual machine, a dialog will appear with messages like "This host does not support virtualizing real mode." and "The Intel "VMX Unrestricted Guest" feature is necessary to run this virtual machine on an Intel processor."
+Version 14 has stricter CPU requirements than version 12\. If you try to start a virtual machine with an affected CPU, the following message will appear:
+
+```
+ This host does not support virtualizing real mode.
+ The Intel "VMX Unrestricted Guest" feature is necessary to run this virtual machine on an Intel processor.
+
+```
 
 The solution is to uninstall version 14 and install version 12 ([vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/)).
 

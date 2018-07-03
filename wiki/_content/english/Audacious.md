@@ -6,6 +6,8 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Interfaces](#Interfaces)
         *   [2.1.1 Adding Winamp skins](#Adding_Winamp_skins)
+    *   [2.2 Plugin configuration](#Plugin_configuration)
+        *   [2.2.1 AMIDI-Plug (MIDI Player)](#AMIDI-Plug_.28MIDI_Player.29)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Audtool](#Audtool)
     *   [3.2 MP3 problems](#MP3_problems)
@@ -36,6 +38,14 @@ For Qt5 interface, install [audacious-qt5](https://aur.archlinux.org/packages/au
 #### Adding Winamp skins
 
 Adding Winamp skins to Audacious is very simple. Just copy your skin file (.zip, .wsz, .tgz, .tar.gz, or .tar.bz2 file) to either `~/.local/share/audacious/Skins` (affect your user only) or `/usr/share/audacious/Skins` (affects every user), and then you can browse and select it from *Skinned Interface* tab in *Preferences*. Another way is dragging the skin file directly into the list view of available skins.
+
+### Plugin configuration
+
+#### AMIDI-Plug (MIDI Player)
+
+To play MIDI and RMI files, it is required to install the [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) package, and also install the sound font files, both [timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats) and [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid). No further configuration is required on the fluidsynth package, but for additional functionality check the [FluidSynth](/index.php/FluidSynth "FluidSynth") instructions.
+
+Afterwards, the plugin will be enabled, and in the plugin configuration panel (File, Settings ..., Plugins pane, Input tab, select AMIDI-Plug (MIDI Player)) add the installed sound font files one at a time (Extension `.sf2`) to the SoundFont dialog, they are located at `/usr/share/soundfonts/`.
 
 ## Tips and tricks
 

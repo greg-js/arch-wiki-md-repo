@@ -497,17 +497,23 @@ table inet filter {
 	chain input {
 		type filter hook input priority 0; policy drop;
 
-		# no ping floods:
-		ip6 nexthdr icmpv6 icmpv6 type echo-request limit rate 10/second accept
-		ip protocol icmp icmp type echo-request limit rate 10/second accept
-
-		ct state established,related accept
 		ct state invalid drop
 
 		iif lo accept
 
+		# no ping floods:
+		ip protocol icmp icmp type echo-request limit rate over 10/second burst 4 packets  drop
+		ip6 nexthdr icmpv6 icmpv6 type echo-request limit rate over 10/second burst 4 packets drop
+
+		ct state established,related accept
+
+		# ICMP & IGMP
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
+		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
+		ip protocol igmp accept
+
 		# avoid brute force on ssh:
-		tcp dport ssh limit rate 15/minute accept
+		tcp dport ssh ct state new limit rate 15/minute accept
 
 	}
 

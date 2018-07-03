@@ -125,7 +125,7 @@ Continue to [#Partitions](#Partitions)
 
 Partitioning of the storage drive is no different from any other PC or laptop. However, if you plan on keeping OS X for dual booting, you should consider that, by default, a MacBook's drive is formatted using GPT and contains at least 3 partitions:
 
-*   **EFI**: the ~200 MB [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   **EFI**: the ~200 MB [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 *   **OS X**: the main partition containing your OS X installation. It is formatted using [HFS+](/index.php/File_systems "File systems").
 *   **Recovery**: A recovery partition present in almost all MacBooks running OS X 10.7 or newer. It is usually hidden from OS X but can be viewed with partitioning tools.
 
@@ -283,7 +283,7 @@ cd /efi/refit
 
 ### Using the native Apple bootloader with systemd-boot (Recommended)
 
-Apple's native EFI bootloader reads `.efi` files located inside the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") at `/EFI/BOOT/BOOTX64.EFI`. Luckily, this is also the default install location for the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") binary. This means that booting linux using *systemd-boot* is very simple.
+Apple's native EFI bootloader reads `.efi` files located inside the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") at `/EFI/BOOT/BOOTX64.EFI`. Luckily, this is also the default install location for the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") binary. This means that booting linux using *systemd-boot* is very simple.
 
 *   First, make sure you mounted the EFI System Partition at `/boot`
 *   Proceed with [#Installation](#Installation) normally

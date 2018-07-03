@@ -283,14 +283,14 @@ Current fan control daemons available in the [AUR](/index.php/AUR "AUR") are [si
 
 ### Installation
 
-Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/). Optionally but recommended, install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors). Then have a look at the files:
+Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/) or [thinkfan-git](https://aur.archlinux.org/packages/thinkfan-git/). Optionally, but recommended, install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors). Then have a look at the files:
 
 ```
 # pacman -Ql thinkfan
 
 ```
 
-Note that the thinkfan package installs /usr/lib/modprobe.d/thinkpad_acpi.conf, which contains
+Note that the thinkfan package installs `/usr/lib/modprobe.d/thinkpad_acpi.conf`, which contains
 
 ```
 options thinkpad_acpi fan_control=1
@@ -329,7 +329,7 @@ $ systemctl enable thinkfan
 
 ```
 
-To configure the temperature thresholds, you will need to copy one of the example config files (e.g. /usr/share/doc/thinkfan/examples/thinkfan.conf.simple) to /etc/thinkfan.conf, and modify to taste. This file specifies which sensors to read, and which interface to use to control the fan. Some systems have /proc/acpi/ibm/fan available; on others, you will need to specify something like
+To configure the temperature thresholds, you will need to copy one of the example config files (e.g. `/usr/share/doc/thinkfan/thinkfan.conf.simple`) to `/etc/thinkfan.conf`, and modify to taste. This file specifies which sensors to read, and which interface to use to control the fan. Some systems have `/proc/acpi/ibm/fan` available; on others, you will need to specify something like:
 
 ```
 hwmon /sys/devices/virtual/thermal/thermal_zone0/temp

@@ -49,7 +49,7 @@ See also:
 *   **Encrypted transfer**: data is encrypted by default when transferred over the network.
 *   **FS metadata**: file system permissions and attributes are synchronized.
 *   **Resumable**: the synchronization can be resumed if interrupted.
-*   **Handles renames**: moved/renamed files are detected and not stored or transferred twice. It typically means that a checksum of files or its chunks is computed.
+*   **Handles renames**: moved/renamed files are detected and not stored or transferred twice. It typically means that a checksum of files or its chunks is computed. Applications missing this functionality can be supplemented by combining with [hsync](https://aur.archlinux.org/packages/hsync/), which *only* synchronizes renames.
 *   **Version control**: the old version of files are backed up (**reverse incremental backup**).
 *   **Change propagation**: specifies in how many directions changes can be propagated.
     *   *unidirectional* means one-way synchronization of two locations,

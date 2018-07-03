@@ -674,7 +674,7 @@ pcm.dsp {
 
 ```
 
-**Nota:** Este archivo `/etc/asound.conf` fue creado y utilizado con éxito para una configuración global de [MPD](/index.php/MPD "MPD"). Consulte [esta sección](/index.php/ALSA/Troubleshooting#Problems_with_availability_to_only_one_user_at_a_time "ALSA/Troubleshooting") sobre múltiples usuarios
+**Nota:** Este archivo `/etc/asound.conf` fue creado y utilizado con éxito para una configuración global de [MPD](/index.php/MPD "MPD"). Consulte [esta sección](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Problems_with_availability_to_only_one_user_at_a_time "Advanced Linux Sound Architecture/Troubleshooting") sobre múltiples usuarios
 
 ### Ausencia de sonido al azar en el inicio
 

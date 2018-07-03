@@ -21,7 +21,8 @@ LXDM does not support the [XDMCP](/index.php/XDMCP "XDMCP") protocol. An alterna
     *   [3.2 Simultaneous users and switching users](#Simultaneous_users_and_switching_users)
     *   [3.3 Themes](#Themes)
     *   [3.4 Advanced Session Configuration](#Advanced_Session_Configuration)
-    *   [3.5 White flash](#White_flash)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 White flash](#White_flash)
 
 ## Installation
 
@@ -189,6 +190,8 @@ source ~/.xinitrc
 ```
 
 LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), and .[Xmodmap](/index.php/Xmodmap "Xmodmap"). See `/etc/lxdm/Xsession` for details on how LXDM uses system-wide and per-user configuration files to configure the session.[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
+
+## Troubleshooting
 
 ### White flash
 

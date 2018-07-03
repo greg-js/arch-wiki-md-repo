@@ -42,7 +42,7 @@ Since GIMP rasterizes PDF files right from the start, it will not exploit intrin
 
 ### Green text
 
-Add the following to `~/.gimp-2.8/fonts.conf` if you see green tint around letters with antialiasing enabled:
+Add the following to `~/.config/GIMP/2.10/fonts.conf` if you see green tint around letters with antialiasing enabled:
 
 ```
 <?xml version='1.0'?>

@@ -36,7 +36,7 @@ See [Installation guide](/index.php/Installation_guide "Installation guide").
 
 If your machine comes with RAID 0 then add `mdadm_udev` to your HOOKS in `mkinitcpio.conf` and rerun `mkinitcpio -p linux`.
 
-When you install [GRUB](/index.php/GRUB "GRUB"), follow the instructions for UEFI Systems. Your ESP ([EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")) should be the first partition in your scheme.
+When you install [GRUB](/index.php/GRUB "GRUB"), follow the instructions for UEFI Systems. Your ESP ([EFI system partition](/index.php/EFI_system_partition "EFI system partition")) should be the first partition in your scheme.
 
 ## Function Keys
 

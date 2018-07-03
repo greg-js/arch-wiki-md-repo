@@ -126,7 +126,7 @@ If [btrfs](/index.php/Btrfs "Btrfs") is in use for the root filesystem, there is
 
 You can also remove API filesystems from `/etc/fstab`, as systemd will mount them itself (see `pacman -Ql systemd | grep '\.mount$'` for a list). It is not uncommon for users to have a /tmp entry carried over from sysvinit, but you may have noticed from the command above that systemd already takes care of this. Ergo, it may be safely removed.
 
-Other filesystems like `/home` or [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") can be mounted with custom mount units. Adding `noauto,x-systemd.automount` to mount options will buffer all access to that partition, and will fsck and mount it on first access, reducing the number of filesystems it must fsck/mount during the boot process.
+Other filesystems like `/home` or [EFI system partition](/index.php/EFI_system_partition "EFI system partition") can be mounted with custom mount units. Adding `noauto,x-systemd.automount` to mount options will buffer all access to that partition, and will fsck and mount it on first access, reducing the number of filesystems it must fsck/mount during the boot process.
 
 **Note:**
 
