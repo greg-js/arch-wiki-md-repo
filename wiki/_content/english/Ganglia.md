@@ -16,7 +16,7 @@ The [Ganglia Wiki](http://sourceforge.net/apps/trac/ganglia) contains all the in
 
 The ganglia web frontend is available as the [ganglia-web](https://aur.archlinux.org/packages/ganglia-web/) package on the AUR.
 
-You will also need a [web server](/index.php/Category:Web_server "Category:Web server") with a working [PHP](/index.php/PHP "PHP") setup. The following sections include some example setups.
+You will also need a [web server](/index.php/Web_server "Web server") with a working [PHP](/index.php/PHP "PHP") setup. The following sections include some example setups.
 
 Make sure that the `open_basedir` setting in your `/etc/php/php.ini` includes `/tmp`, `/usr/share/webapps` and `/var/lib/ganglia`.
 

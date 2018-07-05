@@ -11,8 +11,8 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
     *   [2.4 Digilent USB-JTAG Drivers](#Digilent_USB-JTAG_Drivers)
 *   [3 Launching programs](#Launching_programs)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 libncurses.so.5 not found](#libncurses.so.5_not_found)
-    *   [4.2 Synthesis segfaults](#Synthesis_segfaults)
+    *   [4.1 Synthesis segfaults](#Synthesis_segfaults)
+    *   [4.2 xsct segfault](#xsct_segfault)
     *   [4.3 Vivado HLS testbench error with GCC](#Vivado_HLS_testbench_error_with_GCC)
 
 ## Prerequisites
@@ -136,26 +136,30 @@ Comment=Xilinx Documentation Navigator
 
 ## Troubleshooting
 
-### libncurses.so.5 not found
-
-Xilinx Vivado requires version 5 of ncurses while ArchLinux has already updated to a newer version.
-
-To obtain this library, you can either search in your pacman cache to see if you already have a local copy:
-
-```
-$ ls /var/cache/pacman/pkg/ | grep ncurses
-
-```
-
-or download it from the [Arch Linux Archive](https://archive.archlinux.org/packages/n/ncurses/)
-
-After obtaining the package, simply extract `/usr/lib/libncurses.*` to `/opt/Xilinx/Vivado/<version>/lib/lnx64.o/`
-
 ### Synthesis segfaults
 
 See [https://forums.xilinx.com/t5/Synthesis/Vivado-crashes-on-Arch-Linux-when-performing-synthesis/td-p/706847](https://forums.xilinx.com/t5/Synthesis/Vivado-crashes-on-Arch-Linux-when-performing-synthesis/td-p/706847)
 
 You'll need to recompile glibc (just take the PKGBUILD from the abs) with `--disable-lock-elision`. Instead of patching the system libc in /usr/lib, copy the newly compiled `libpthread-2.25.so` and `libc-2.25.so` to `/opt/Xilinx/Vivado/2016.4/ids_lite/ISE/lib/lin64` Don't forget to repeat this when glibc gets upgraded.
+
+### xsct segfault
+
+xsct might crash with message:
+
+```
+ Xilinx/SDK/2018.1/bin/xsct: line 141:  5611 Segmentation fault      (core dumped) "$RDI_BINROOT"/unwrapped/"$RDI_PLATFORM$RDI_OPT_EXT"/rlwrap -rc -f "$RDI_APPROOT"/scripts/xsdb/xsdb/cmdlist -H "$HOME"/.xsctcmdhistory "$RDI_BINROOT"/loader -exec rdi_xsct "${RDI_ARGS[@]}"
+
+```
+
+This is a problem with the rlwrap version bundled with vivado, probably due the lack of legacy vsyscall emulation in Archlinux. To fix this issue either drop rlwrap altogether (losing history and autocompletion in xsct) or install [rlwrap](https://www.archlinux.org/packages/?name=rlwrap) from the official repo, and edit the corresponding line in the xsct startup script:
+
+ `../Xilinx/SDK/2018.1/bin/xsct` 
+```
+# Use rlwrap to invoke XSCT
+/usr/bin/rlwrap -rc -f "$RDI_APPROOT"/scripts/xsdb/xsdb/cmdlist -H "$HOME"/.xsctcmdhistory "$RDI_BINROOT"/loader -exec rdi_xsct "${RDI_ARGS[@]}"
+# OR run xsct without rlwrap
+#"$RDI_BINROOT"/loader -exec rdi_xsct "${RDI_ARGS[@]}"
+```
 
 ### Vivado HLS testbench error with GCC
 

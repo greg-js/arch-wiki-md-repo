@@ -137,7 +137,7 @@ O pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2) fornece o
 
 Por padrão, o [udev](/index.php/Udev "Udev") atribui nomes para suas interfaces de rede usando [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), que prefixam nomes de interfaces com `en` (cabeada/[Ethernet](https://en.wikipedia.org/wiki/pt:Ethernet "wikipedia:pt:Ethernet")), `wl` (sem fio/wireless/WLAN) ou `ww` ([WWAN](https://en.wikipedia.org/wiki/pt:Rede_de_longa_dist%C3%A2ncia_sem_fio "wikipedia:pt:Rede de longa distância sem fio")).
 
-**Dica:** Para alterar os nomes de dispositivos, veja [#Alterando o nome da interface](#Alterando_o_nome_da_interface) e [#Revertendo para nomes tradicionais de dispositivos](#Revertendo_para_nomes_tradicionais_de_dispositivos).
+**Dica:** Para alterar os nomes de dispositivos, veja [#Alterando o nome da interface](#Alterando_o_nome_da_interface) e [#Revertendo para nomes tradicionais de interfaces](#Revertendo_para_nomes_tradicionais_de_interfaces).
 
 #### Listando interfaces de rede
 

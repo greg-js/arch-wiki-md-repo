@@ -13,10 +13,11 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
     *   [1.1 ThinkPads only](#ThinkPads_only)
     *   [1.2 Graphical interface](#Graphical_interface)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Btrfs](#Btrfs)
-    *   [2.2 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
-    *   [2.3 Radio Device Wizard](#Radio_Device_Wizard)
-    *   [2.4 Command line](#Command_line)
+    *   [2.1 Force battery (BAT) configuration](#Force_battery_.28BAT.29_configuration)
+    *   [2.2 Btrfs](#Btrfs)
+    *   [2.3 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
+    *   [2.4 Radio Device Wizard](#Radio_Device_Wizard)
+    *   [2.5 Command line](#Command_line)
 *   [3 Debugging](#Debugging)
 *   [4 Features intentionally excluded](#Features_intentionally_excluded)
 *   [5 See also](#See_also)
@@ -27,7 +28,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 To complete TLP's install, you must [enable](/index.php/Enable "Enable") the systemd services `tlp.service` and `tlp-sleep.service`. You should also [mask](/index.php/Mask "Mask") the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 
-**Note:** `tlp.service` starts `NetworkManager.service` if it is available: [FS#43733](https://bugs.archlinux.org/task/43733). If you use a different [network manager](/index.php/List_of_applications#Network_managers "List of applications"), [edit](/index.php/Edit "Edit") `tlp.service`in order to remove the service (line `Wants=`) or [mask](/index.php/Mask "Mask") it.
+**Note:** `tlp.service` starts `NetworkManager.service` if it is available: [FS#43733](https://bugs.archlinux.org/task/43733). If you use a different [network manager](/index.php/List_of_applications#Network_managers "List of applications"), [mask](/index.php/Mask "Mask") `NetworkManager.service` or [edit](/index.php/Edit "Edit") `tlp.service` and remove the service out of line `Wants=`.
 
 ### ThinkPads only
 
@@ -47,6 +48,21 @@ Controlling the charge thresholds using D-Bus without root privileges is possibl
 ## Configuration
 
 The configuration file is located at `/etc/default/tlp` and provides a "largely" optimized power saving by default. For a full explanation of options see: [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html).
+
+### Force battery (BAT) configuration
+
+When no power supply can be detected, the setting for AC will be used (e.g. on desktops and embedded hardware).
+
+You may want to force the battery (BAT) settings when using TLP on these devices to enable more power saving:
+
+ `/etc/default/tlp` 
+```
+# Operation mode when no power supply can be detected: AC, BAT.
+TLP_DEFAULT_MODE=BAT
+
+# Operation mode select: 0=depend on power source, 1=always use TLP_DEFAULT_MODE
+TLP_PERSISTENT_DEFAULT=1
+```
 
 ### Btrfs
 

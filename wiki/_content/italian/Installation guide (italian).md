@@ -89,7 +89,7 @@ Quando riconosciuti dal disco di installazione, ai dischi viene associato un *bl
 Le seguenti *partizioni* (mostrate con un suffisso numerico) sono fondamentali:
 
 *   Una partizione per la directory root `/`.
-*   Se [UEFI](/index.php/UEFI "UEFI") e` abilitato, una [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   Se [UEFI](/index.php/UEFI "UEFI") e` abilitato, una [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 Opzionalmente una partizione di [Swap](/index.php/Swap_(Italiano) "Swap (Italiano)") puo` essere impostata.
 

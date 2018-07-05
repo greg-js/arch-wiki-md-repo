@@ -740,7 +740,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.moddb.com/mods/brutal-doom](http://www.moddb.com/mods/brutal-doom) || [brutal-doom](https://aur.archlinux.org/packages/brutal-doom/)
 
-**Note:** Instructions at [Brutal_Doom#Installation](/index.php/Brutal_Doom#Installation "Brutal Doom") show how to modify [gzdoom-git](https://aur.archlinux.org/packages/gzdoom-git/) directly without [brutal-doom](https://aur.archlinux.org/packages/brutal-doom/). [openal](https://www.archlinux.org/packages/?name=openal) is required for in-game audio.
+**Note:** Instructions at [Brutal Doom#Installation](/index.php/Brutal_Doom#Installation "Brutal Doom") show how to modify [gzdoom-git](https://aur.archlinux.org/packages/gzdoom-git/) directly without [brutal-doom](https://aur.archlinux.org/packages/brutal-doom/). [openal](https://www.archlinux.org/packages/?name=openal) is required for in-game audio.
 
 *   **Freedoom** — Project aimed at creation of free Doom data files.
 

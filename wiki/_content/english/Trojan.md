@@ -20,20 +20,13 @@ Trojan can be [installed](/index.php/Install "Install") with the [trojan](https:
 
 ## Configuration
 
-Trojan cannot run without proper configuration. It uses [JSON](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON") as its config format. All configuration work is done in `/etc/trojan.json`. Detailed explanations of each field of the config file can be found [here](https://trojan-gfw.github.io/trojan/config). A convenient config generator is right [here](https://trojan-gfw.github.io/trojan-config-gen/).
+Trojan cannot run without proper configuration. It uses [JSON](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON") as its config format. All configuration work is done in `/etc/trojan/`. Detailed explanations of each field of the config file can be found [here](https://trojan-gfw.github.io/trojan/config). A convenient config generator is right [here](https://trojan-gfw.github.io/trojan-config-gen/).
 
 ### Client
 
-By default, a server example config is installed to `/etc/trojan.json`, so you'll need to manually copy the client example config to `/etc/trojan.json` to edit it:
+An example of client config:
 
-```
-# cp /usr/share/trojan/client.json-example /etc/trojan.json
-
-```
-
-An example client config:
-
- `/etc/trojan.json` 
+ `/etc/trojan/config.json` 
 ```
 {
     "run_type": "client",
@@ -70,9 +63,9 @@ An example client config:
 
 ### Server
 
-An example server config:
+An example of server config:
 
- `/etc/trojan.json` 
+ `/etc/trojan/config.json` 
 ```
 {
     "run_type": "server",
@@ -131,7 +124,15 @@ Trojan servers can be disguised as other services over TLS to prevent active pro
 
 ### Systemd Service
 
-Trojan can be controlled with `/usr/lib/systemd/system/trojan.service`. For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") trojan, you can run:
+Trojan can be controlled with `trojan.service` and `trojan@.service`. For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") trojan with config file `/etc/trojan/xxx.json`, you can run:
+
+```
+# systemctl start trojan@xxx
+# systemctl enable trojan@xxx
+
+```
+
+Running
 
 ```
 # systemctl start trojan
@@ -139,16 +140,18 @@ Trojan can be controlled with `/usr/lib/systemd/system/trojan.service`. For exam
 
 ```
 
+will [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") trojan with `/etc/trojan/config.json`.
+
 ### Manually
 
 Trojan can also start in a shell, by running:
 
 ```
-$ trojan /etc/trojan.json
+$ trojan /etc/trojan/config.json
 
 ```
 
-You can replace `/etc/trojan.json` with any other config files. Note that trojan outputs its log to [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams"), so you'll have to redirect it to a file if you want to keep the log.
+You can replace `/etc/trojan/config.json` with any other config files. Note that trojan outputs its log to [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams"), so you'll have to redirect it to a file if you want to keep the log.
 
 ## See also
 

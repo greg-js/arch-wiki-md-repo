@@ -640,7 +640,7 @@ Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certez
 
 Pode ser também que aquele repositório contendo o pacote não está habilidade no seu sistema. Por exemplo, o pacote pode estar no repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)"), mas o *multilib* não está habilitado em seu `pacman.conf`.
 
-Veja também [FAQ (Português)#Por que há alguma uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](/index.php/FAQ_(Portugu%C3%AAs)#Por_que_h.C3.A1_alguma_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F "FAQ (Português)").
+Veja também [FAQ (Português)#Por que há uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](/index.php/FAQ_(Portugu%C3%AAs)#Por_que_h.C3.A1_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F "FAQ (Português)").
 
 ### Reinstalação manual do pacman
 

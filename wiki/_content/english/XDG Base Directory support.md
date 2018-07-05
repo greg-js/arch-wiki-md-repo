@@ -151,6 +151,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [mypaint](http://mypaint.intilinux.com/) | `~/.mypaint` | [cf723b74cd](https://github.com/mypaint/mypaint/commit/cf723b74cd) |
 | [nano](/index.php/Nano "Nano") | `~/.nano/` `~/.nanorc` | [036fc403](http://git.savannah.gnu.org/cgit/nano.git/commit/?id=c16e79b612eb8e061a4bd0b5f187c37a036fc403) | [[29]](https://savannah.gnu.org/patch/?8523) |
 | [ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp") | `~/.ncmpcpp` | [38d9f811](https://github.com/arybczak/ncmpcpp/commit/38d9f811de888e512b0115f551a9679eab4607f9) [27cd86e0](https://github.com/arybczak/ncmpcpp/commit/27cd86e0638bba3a7a78e44ac40dc98a58d1d90d) | [[30]](https://github.com/arybczak/ncmpcpp/issues/79) [[31]](https://github.com/arybczak/ncmpcpp/issues/110) | `ncmpcpp_directory` should be set to avoid an `error.log` file in `~/.ncmpcpp`. |
+| [NP2kai](http://domisan.sakura.ne.jp/article/np2kai/np2kai.html) | `~/.config/np2kai` `~/.config/xnp2kai` | [56a1cc2](https://github.com/AZO234/NP2kai/commit/56a1cc2f41e26e41c4dc341f33a0aff590cba0fa) | [Pull Request #50](https://github.com/AZO234/NP2kai/pull/50) |
 | [neovim](/index.php/Neovim "Neovim") | `~/.nvim`
 
 `~/.nvimlog`
@@ -367,7 +368,7 @@ Make sure `XDG_CACHE_HOME` is set beforehand to directory user running [Xorg](/i
  |
 | [Mathematica](/index.php/Mathematica "Mathematica") | `~/.Mathematica` | `$ export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME"/mathematica` |
 | [mednafen](http://mednafen.sourceforge.net/) | `~/.mednafen` | `$ export MEDNAFEN_HOME="$XDG_CONFIG_HOME"/mednafen` |
-| [moc](/index.php/Moc "Moc") | `~/.moc` | `$ mocp -M "$XDG_CONFIG_HOME"/moc`
+| [MOC](/index.php/MOC "MOC") | `~/.moc` | `$ mocp -M "$XDG_CONFIG_HOME"/moc`
 
 `$ mocp -O MOCDir="$XDG_CONFIG_HOME"/moc`
 

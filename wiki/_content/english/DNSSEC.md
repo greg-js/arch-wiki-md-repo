@@ -69,7 +69,7 @@ The result should end with the following lines, indicating the signature is trus
 
 ## Install a DNSSEC-aware validating recursive server
 
-To use DNSSEC system-wide, you can use a validating recursive resolver that is DNSSEC-aware, so that all DNS lookups go through the recursive resolver. [BIND](/index.php/BIND "BIND"), [unbound](/index.php/Unbound "Unbound"), and [dnscrypt](/index.php/Dnscrypt "Dnscrypt") are a few options that you can setup. Note that each requires specific options to enable their DNSSEC validation feature.
+To use DNSSEC system-wide, you can use a validating recursive resolver that is DNSSEC-aware, so that all DNS lookups go through the recursive resolver. [BIND](/index.php/BIND "BIND"), [unbound](/index.php/Unbound "Unbound"), and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") are a few options that you can setup. Note that each requires specific options to enable their DNSSEC validation feature.
 
 If you attempt to visit a site with a bogus (spoofed) IP address, the validing resolver (i.e., BIND or unbound) will prevent you from receiving the invalid DNS data and your browser (or other application) will be told there is no such host. Since all DNS lookups go through the validing resolver, you do not need software that has DNSSEC support built-in when using this option.
 

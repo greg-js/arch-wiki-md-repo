@@ -233,7 +233,7 @@ Select the partition's type id. The default, `Linux filesystem`, should be fine 
 **Tip:**
 
 *   When partitioning it is always a good idea to follow the default values for first and last partition sectors. Additionally, specify partition sizes with the *+<size>{M,G,...}* notation. Such partitions are always aligned according to the device properties.
-*   [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") requires code `ef00` with *gdisk* and `EFI System` with *fdisk*.
+*   [EFI system partition](/index.php/EFI_system_partition "EFI system partition") requires code `ef00` with *gdisk* and `EFI System` with *fdisk*.
 *   [GRUB](/index.php/GRUB "GRUB") requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with code `ef02` with *gdisk* and `BIOS boot` with *fdisk* when installing GRUB to a disk.
 *   It is recommended to use `8200` with *gdisk* and `Linux swap` with *fdisk* for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
 

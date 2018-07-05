@@ -7,7 +7,7 @@ Artículos relacionados
 
 **Nota:** Este artículo trata únicamente sobre la configuración básica, sin modificar los diseños, asignación de teclas extras, etc. Véase [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") para conocer más sobre estos temas avanzados.
 
-Xorg utiliza [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) para gestionar la distribución del teclado. Por otra parte, [xmodmap](/index.php/Xmodmap "Xmodmap") se puede utilizar para acceder al mapa del teclado interno directamente. Por lo general, no se recomienda el uso de *xmodmap*, excepto, tal vez, para tareas simples.
+Xorg utiliza [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") (XKB) para gestionar la distribución del teclado. Por otra parte, [xmodmap](/index.php/Xmodmap "Xmodmap") se puede utilizar para acceder al mapa del teclado interno directamente. Por lo general, no se recomienda el uso de *xmodmap*, excepto, tal vez, para tareas simples.
 
 En este artículo se describe la configuración de bajo nivel usando XKB, que es eficaz en la mayoría de los casos, aunque algunos entornos de escritorios como [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") la sobrescriben con su propia configuración.
 

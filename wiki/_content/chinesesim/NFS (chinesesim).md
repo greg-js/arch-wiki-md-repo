@@ -79,7 +79,7 @@ NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表
 
 ```
 
-不必要对整个子网都开放共享，也可以仅指定单一 IP 地址或主机名。 更多信息及可用选项请查阅 [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5)。
+不必要对整个子网都开放共享，也可以仅指定单一 IP 地址或主机名。 更多信息及可用选项请查阅 [exports(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5)。
 
 如果服务运行时修改了 `/etc/exports` 文件， 你需要重新导出使其生效。
 

@@ -930,7 +930,7 @@ Prior to creating any partitions, you should inform yourself about the importanc
 
 For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with size of 1 MiB for GRUB to store the second stage of BIOS bootloader. Do not mount the partition.
 
-For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size, it will later be mounted at `/boot/efi`.
+For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size, it will later be mounted at `/boot/efi`.
 
 Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
 
@@ -1011,7 +1011,7 @@ Mount the partition to `/mnt/boot`:
 
 ```
 
-Create a mountpoint for the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") at `/boot/efi` for compatibility with `grub-install` and mount it:
+Create a mountpoint for the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") at `/boot/efi` for compatibility with `grub-install` and mount it:
 
 ```
 # mkdir /mnt/boot/efi
@@ -1129,7 +1129,7 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 
 The following example creates a full system encryption with LUKS using [Btrfs](/index.php/Btrfs "Btrfs") subvolumes to [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
-If using UEFI, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda3` and is mounted at `/boot/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
+If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda3` and is mounted at `/boot/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
 
 Since `/boot` resides on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
 
@@ -1152,7 +1152,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 
 **Note:** It is not possible to use btrfs partitioning as described in [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") when using LUKS. Traditional partitioning must be used, even if it is just to create one partition.
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
 
 Create the needed partitions, at least one for `/` (e.g. `/dev/sda2`). See the [Partitioning](/index.php/Partitioning "Partitioning") article.
 

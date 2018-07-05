@@ -302,7 +302,7 @@ This guide sets up Munin to generate static HTML and graph images and write them
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
 *   [Nginx](/index.php/Nginx "Nginx")
 
-Or one of the other servers found in the [web server](/index.php/Category:Web_server "Category:Web server") category.
+Or one of the other servers found in the [web server](/index.php/Web_server "Web server") category.
 
 ### Apache
 

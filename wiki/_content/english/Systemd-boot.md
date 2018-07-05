@@ -36,7 +36,7 @@ It is simple to configure but it can only start EFI executables such as the Linu
 
 To install the *systemd-boot* EFI boot manager, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list`.
 
-It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`. If the ESP is **not** mounted to `/boot`, the kernel and initramfs files must be copied onto that ESP. See [EFI System Partition#Alternative mount points](/index.php/EFI_System_Partition#Alternative_mount_points "EFI System Partition") for details.
+It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`. If the ESP is **not** mounted to `/boot`, the kernel and initramfs files must be copied onto that ESP. See [EFI system partition#Alternative mount points](/index.php/EFI_system_partition#Alternative_mount_points "EFI system partition") for details.
 
 `*esp*` will be used throughout this page to denote the ESP mountpoint, i.e. `/boot`.
 
@@ -260,7 +260,7 @@ If the `bootctl install` command failed, you can create a EFI boot entry manuall
 
 ```
 
-where `/dev/sdXY` is the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+where `/dev/sdXY` is the [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 **Note:** The path to the EFI image must use the backslash (`\`) as the separator
 

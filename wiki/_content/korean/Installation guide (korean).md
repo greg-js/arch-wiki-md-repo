@@ -89,7 +89,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 다음의 *파티션*(숫자가 뒤에 붙어 있음)은 해당 장치에 필요합니다.
 
 *   루트 디렉토리`/`용 파티션.
-*   [UEFI](/index.php/UEFI "UEFI")가 활성화되었다면 [EFI 시스템 파티션](/index.php/EFI_System_Partition "EFI System Partition").
+*   [UEFI](/index.php/UEFI "UEFI")가 활성화되었다면 [EFI 시스템 파티션](/index.php/EFI_system_partition "EFI system partition").
 
 [스왑 공간](/index.php/Swap_space "Swap space")을 위한 독립된 파티션이나 [스왑 파일](/index.php/Swap_file "Swap file").
 

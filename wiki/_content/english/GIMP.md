@@ -9,7 +9,8 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Create a circle](#Create_a_circle)
+    *   [2.1 Captions](#Captions)
+    *   [2.2 Create a circle](#Create_a_circle)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 GIMP and PDF files](#GIMP_and_PDF_files)
     *   [3.2 Green text](#Green_text)
@@ -22,6 +23,15 @@ Related articles
 **Tip:** The GIMP implements a plug-in system and the repositories ([official](https://www.archlinux.org/packages/?sort=&q=gimp&maintainer=&flagged=), [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=gimp&outdated=off&SB=n&SO=a&PP=50&do_Search=Go)) contain more plug-ins than listed in the package's optional depends.
 
 ## Tips and tricks
+
+### Captions
+
+To caption an image follow these steps after inputting the desired text:
+
+1.  Click Layer and Text to Path
+2.  Click Select and From Path
+3.  Click Select and Invert
+4.  Click Edit and Stroke Path
 
 ### Create a circle
 

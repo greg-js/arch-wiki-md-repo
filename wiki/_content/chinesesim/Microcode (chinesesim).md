@@ -68,7 +68,7 @@ options ...
 
 ```
 
-如果 ESP 没有挂载到 `/boot`, 请将 `/boot/intel-ucode.img` 复制到 [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+如果 ESP 没有挂载到 `/boot`, 请将 `/boot/intel-ucode.img` 复制到 [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 ### EFI boot stub / EFI handover
 

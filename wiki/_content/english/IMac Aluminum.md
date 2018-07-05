@@ -1,3 +1,7 @@
+Related articles
+
+*   [Mac](/index.php/Mac "Mac")
+
 **I have written the following in the hope that it may help those investigating the installation of Arch on their iMac. Parts of this guide are specifically written for the Alu' 20" & 24" iMac.**
 
 I have an aluminium 24" iMac, on which I have just (at the time of writing) installed Arch 64bit, twice! I had a serious problem logging into Gnome & anything that required the root password failed. I worked around these problems but was never happy with the setup. I think that the iMac aluminium keyboard ***may*** have caused the problem, due to it not having a num-lock key, or an LED to indicate num-lock on/off; my passwords were numerical. Of course I may be wrong. My second install was done with an MS Digital Media keyboard & I do not have the above problem, also my ctrl-alt-Fkeys work now.

@@ -27,7 +27,7 @@
 
 ## Installation
 
-Install the [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) package. Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")) and a [web server](/index.php/Category:Web_server "Category:Web server") with [PHP](/index.php/PHP "PHP")-support (this guide will assume the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")).
+Install the [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) package. Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")) and a [web server](/index.php/Web_server "Web server") with [PHP](/index.php/PHP "PHP")-support (this guide will assume the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")).
 
 ## Configuration
 

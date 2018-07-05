@@ -211,7 +211,7 @@ Install the MBR:
 **Note:**
 
 *   `efi64` denotes x86_64 UEFI systems, for IA32 (32-bit) EFI replace `efi64` with `efi32` in the below commands.
-*   For Syslinux, the kernel and initramfs files need to be in the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (aka ESP), as Syslinux does not (currently) have the ability to access files outside its own partition (i.e. outside ESP in this case). For this reason, it is recommended to mount ESP at `/boot`.
+*   For Syslinux, the kernel and initramfs files need to be in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (aka ESP), as Syslinux does not (currently) have the ability to access files outside its own partition (i.e. outside ESP in this case). For this reason, it is recommended to mount ESP at `/boot`.
 *   The automatic install script `/usr/bin/syslinux-install_update` does not support UEFI install.
 *   The configuration syntax of `syslinux.cfg` for UEFI is same as that of BIOS.
 
@@ -225,7 +225,7 @@ Install the MBR:
 
 ### Installation on UEFI
 
-**Note:** In the commands related to UEFI, `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
+**Note:** In the commands related to UEFI, `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 
 *   Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). Then setup Syslinux in the ESP as follows:
 *   Copy Syslinux files to ESP:

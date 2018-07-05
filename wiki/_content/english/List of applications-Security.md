@@ -15,7 +15,9 @@
     *   [1.6 Screen lockers](#Screen_lockers)
     *   [1.7 Hash checkers](#Hash_checkers)
     *   [1.8 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
-    *   [1.9 Password management](#Password_management)
+    *   [1.9 Password managers](#Password_managers)
+        *   [1.9.1 Console](#Console)
+        *   [1.9.2 Graphical](#Graphical)
     *   [1.10 Firewall management](#Firewall_management)
 
 ## Security
@@ -412,7 +414,39 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
 
-#### Password management
+#### Password managers
+
+##### Console
+
+*   **gopass** — Advanced console based password manager, supporting GnuPG and other backends.
+
+	[https://github.com/justwatchcom/gopass](https://github.com/justwatchcom/gopass) || [gopass](https://www.archlinux.org/packages/?name=gopass)
+
+*   **KeePassC** — Curses-based password manager compatible to KeePass v.1.x.
+
+	[https://k3research.outerhaven.de/keepassc/](https://k3research.outerhaven.de/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
+
+*   **[pass](/index.php/Pass "Pass")** — Simple console based password manager, using GnuPG encryption.
+
+	[https://www.passwordstore.org/](https://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
+
+*   **pwsafe** — Unix command-line program that manages encrypted password databases.
+
+	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://aur.archlinux.org/packages/pwsafe/)
+
+*   **spm** — Simple Password Manager written entirely in POSIX shell using PGP. Fast, lightweight and easily scriptable.
+
+	[https://notabug.org/kl3/spm/](https://notabug.org/kl3/spm/) || [spm](https://aur.archlinux.org/packages/spm/)
+
+*   **Titan** — Command-line password manager, written in C, uses OpenSSL.
+
+	[https://www.titanpasswordmanager.org/](https://www.titanpasswordmanager.org/) || [titan](https://aur.archlinux.org/packages/titan/)
+
+*   **tpm** — tiny password manager, inspired by pass, written entirely in POSIX shell.
+
+	[https://github.com/nmeum/tpm](https://github.com/nmeum/tpm) || [tpm](https://aur.archlinux.org/packages/tpm/)
+
+##### Graphical
 
 *   **Bitwarden** — Open source password manager with desktop, mobile, browser, and CLI versions. Cloud or self-hosted.
 
@@ -430,14 +464,6 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://als.regnet.cz/fpm2/](https://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)
 
-*   **gopass** — Advanced console based password manager, supporting GnuPG and other backends.
-
-	[https://github.com/justwatchcom/gopass](https://github.com/justwatchcom/gopass) || [gopass](https://www.archlinux.org/packages/?name=gopass)
-
-*   **GPass** — Password manegement software for GNOME2 desktop.
-
-	[https://github.com/raffael-sfm/gpass](https://github.com/raffael-sfm/gpass) || [gpass](https://aur.archlinux.org/packages/gpass/)
-
 *   **Ked Password Manager** — A password manager that helps to manage large numbers of passwords.
 
 	[http://kedpm.sourceforge.net](http://kedpm.sourceforge.net) || [kedpm](https://aur.archlinux.org/packages/kedpm/)
@@ -445,10 +471,6 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **[KeePass Password Safe](/index.php/KeePass "KeePass")** — Mono-based password manager, which helps you to manage your passwords in a secure way.
 
 	[https://keepass.info/](https://keepass.info/) || [keepass](https://www.archlinux.org/packages/?name=keepass)
-
-*   **KeePassC** — Curses-based password manager compatible to KeePass v.1.x.
-
-	[https://k3research.outerhaven.de/keepassc/](https://k3research.outerhaven.de/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
 
 *   **KeePassX** — Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
 
@@ -466,17 +488,9 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://www.lastpass.com/](https://www.lastpass.com/) || [lastpass-cli](https://www.archlinux.org/packages/?name=lastpass-cli)
 
-*   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
-
-	[https://sourceforge.net/projects/mypasswords7/](https://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
 *   **OTPClient** — Highly secure and easy to use GTK+ software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
 
 	[https://github.com/paolostivanin/OTPClient](https://github.com/paolostivanin/OTPClient) || [otpclient](https://aur.archlinux.org/packages/otpclient/)
-
-*   **[pass](/index.php/Pass "Pass")** — Simple console based password manager, using GnuPG encryption.
-
-	[https://www.passwordstore.org/](https://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
 
 *   **Password Gorilla** — A cross-platform password manager.
 
@@ -485,10 +499,6 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **Password Safe** — Simple and secure password manager.
 
 	[https://pwsafe.org/](https://pwsafe.org/) || [passwordsafe](https://aur.archlinux.org/packages/passwordsafe/)
-
-*   **pwsafe** — Unix commandline program that manages encrypted password databases.
-
-	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://aur.archlinux.org/packages/pwsafe/)
 
 *   **QPass** — Easy to use password manager with built-in password generator.
 
@@ -501,10 +511,6 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **Revelation** — Password manager for the GNOME desktop.
 
 	[https://revelation.olasagasti.info/](https://revelation.olasagasti.info/) || [revelation](https://aur.archlinux.org/packages/revelation/)
-
-*   **spm** — Simple Password Manager written entirely in POSIX shell using PGP. Fast, lightweight and easily scriptable.
-
-	[https://notabug.org/kl3/spm/](https://notabug.org/kl3/spm/) || [spm](https://aur.archlinux.org/packages/spm/)
 
 *   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GNOME Keyring.
 

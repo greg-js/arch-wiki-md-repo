@@ -94,7 +94,7 @@ Gdy rozpoznane przez system live, dyski są przypisane do *urządzeń blokowych 
 Następujące *partycje* (zakończone liczbą) są wymagane dla wybranego urządzenia:
 
 *   Jedna partycja jako katalog główny (filesystem root) `/`.
-*   Jeśli [UEFI](/index.php/UEFI "UEFI") jest włączone, [partycja systemowa EFI](/index.php/EFI_System_Partition "EFI System Partition").
+*   Jeśli [UEFI](/index.php/UEFI "UEFI") jest włączone, [partycja systemowa EFI](/index.php/EFI_system_partition "EFI system partition").
 
 [Przestrzeń wymiany](/index.php/Swap_space "Swap space") może być ustawiona na oddzielnej partycji lub [pliku wymiany](/index.php/Swap_file "Swap file").
 

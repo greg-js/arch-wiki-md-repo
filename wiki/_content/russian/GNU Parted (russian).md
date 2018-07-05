@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [fdisk (Русский)](/index.php/Fdisk_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fdisk (Русский)")
+*   [Разметка дисков](/index.php/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2 "Разметка дисков")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [GNU Parted](/index.php/GNU_Parted "GNU Parted"). Дата последней синхронизации: 22 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNU_Parted&diff=0&oldid=482660).
 
 GNU Parted is a program for creating and manipulating partition tables. GParted is a GUI frontend.
@@ -127,7 +132,7 @@ To create a new GPT partition table for UEFI systems instead, use:
 You can decide the number and size of the partitions the devices should be split into, and which directories will be used to mount the partitions in the installed system (also known as *mount points*). The mapping from partitions to directories is the [partition scheme](/index.php/Partition_scheme "Partition scheme"), which must comply with the following requirements:
 
 *   At least a partition for the `/` (*root*) directory **must** be created.
-*   When using a UEFI motherboard, one [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") **must** be created
+*   When using a UEFI motherboard, one [EFI system partition](/index.php/EFI_system_partition "EFI system partition") **must** be created
 
 In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories: see also [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories; if separate partitions for directories like `/boot` or `/home` are not created, these will simply be contained in the `/` partition. Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
 
@@ -174,7 +179,7 @@ The following command will be used to flag the partition that contains the `/boo
 
 #### UEFI/GPT examples
 
-In every instance, a special bootable [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is required.
+In every instance, a special bootable [EFI system partition](/index.php/EFI_system_partition "EFI system partition") is required.
 
 If creating a new EFI System Partition, use the following commands (the recommended size is 512MiB):
 

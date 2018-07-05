@@ -244,7 +244,7 @@ After editing, reload the udev rules with this command:
 
 ```
 
-Each system may vary, so consult [udev#List attributes of a device](/index.php/Udev#List_attributes_of_a_device "Udev") wiki page.
+Each system may vary, so consult [udev#List the attributes of a device](/index.php/Udev#List_the_attributes_of_a_device "Udev") wiki page.
 
 ## HP issues
 

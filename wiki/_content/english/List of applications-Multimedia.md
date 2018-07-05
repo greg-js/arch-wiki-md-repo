@@ -42,7 +42,7 @@
         *   [1.3.8 Audio analyzers](#Audio_analyzers)
         *   [1.3.9 Scorewriters](#Scorewriters)
         *   [1.3.10 Audio synthesis environments](#Audio_synthesis_environments)
-        *   [1.3.11 Synthesizers](#Synthesizers)
+        *   [1.3.11 Sound generators](#Sound_generators)
         *   [1.3.12 Music trackers](#Music_trackers)
         *   [1.3.13 DJ](#DJ)
         *   [1.3.14 Audio effects](#Audio_effects)
@@ -642,7 +642,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://github.com/EdSchouten/herrie](https://github.com/EdSchouten/herrie) || [herrie](https://aur.archlinux.org/packages/herrie/)
 
-*   **[MOC](/index.php/Moc "Moc")** — Ncurses console audio player with support for the MP3, OGG, and WAV formats.
+*   **[MOC](/index.php/MOC "MOC")** — Ncurses console audio player with support for the MP3, OGG, and WAV formats.
 
 	[https://moc.daper.net/](https://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
 
@@ -1180,7 +1180,9 @@ See also [Wikipedia:Comparison of audio synthesis environments](https://en.wikip
 
 	[https://supercollider.github.io/](https://supercollider.github.io/) || [supercollider](https://www.archlinux.org/packages/?name=supercollider)
 
-#### Synthesizers
+#### Sound generators
+
+This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine "wikipedia:Drum machine"), [software samplers](https://en.wikipedia.org/wiki/Software_sampler "wikipedia:Software sampler") and [software synthesizers](https://en.wikipedia.org/wiki/Software_synthesizer "wikipedia:Software synthesizer").
 
 *   **ams** — Alsa Modular Synth. Realtime modular synthesizer and effect processor.
 
@@ -1538,7 +1540,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
-*   **[KMPlayer](https://en.wikipedia.org/wiki/KMPlayer "wikipedia:KMPlayer")** — Simple KDE frontend for [MPlayer](/index.php/MPlayer "MPlayer") and video player plugin for Konqueror. It can use [Phonon](/index.php/KDE#Phonon "KDE") as alternative backend.
+*   **[KMPlayer](https://en.wikipedia.org/wiki/KMPlayer "wikipedia:KMPlayer")** — Simple KDE frontend for [MPlayer](/index.php/MPlayer "MPlayer") and video player plugin for Konqueror. It can use [Phonon](/index.php/Phonon "Phonon") as alternative backend.
 
 	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
@@ -1548,7 +1550,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 ###### Other
 
-*   **[Dragon Player](https://en.wikipedia.org/wiki/Dragon_Player "wikipedia:Dragon Player")** — Simple video player for KDE based on [Phonon](/index.php/KDE#Phonon "KDE"). Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
+*   **[Dragon Player](https://en.wikipedia.org/wiki/Dragon_Player "wikipedia:Dragon Player")** — Simple video player for KDE based on [Phonon](/index.php/Phonon "Phonon"). Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
 
 	[https://www.kde.org/applications/multimedia/dragonplayer/](https://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
 
@@ -1564,7 +1566,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
 
-*   **Minitube** — YouTube desktop application written in C++ using [Phonon](/index.php/KDE#Phonon "KDE") and Qt.
+*   **Minitube** — YouTube desktop application written in C++ using [Phonon](/index.php/Phonon "Phonon") and Qt.
 
 	[https://flavio.tordini.org/minitube](https://flavio.tordini.org/minitube) || [minitube](https://www.archlinux.org/packages/?name=minitube)
 

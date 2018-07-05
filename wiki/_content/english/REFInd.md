@@ -7,7 +7,7 @@ Related articles
 
 [rEFInd](http://www.rodsbooks.com/refind/) is a [UEFI](/index.php/UEFI "UEFI") boot manager capable of launching [EFISTUB](/index.php/EFISTUB "EFISTUB") kernels. It is a fork of the no-longer-maintained rEFIt and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
-**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
+**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 
 ## Contents
 
@@ -388,7 +388,7 @@ showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#Key_managemen
 
 See [Unified Extensible Firmware Interface#UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").
 
-Copy `shellx64.efi` to the root of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+Copy `shellx64.efi` to the root of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 ### Memtest86
 

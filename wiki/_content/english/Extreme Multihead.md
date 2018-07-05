@@ -157,7 +157,7 @@ At present either Xdmx itself or the current state of window managers do not wor
 
 ### VNC
 
-Using [X11vnc](/index.php/X11vnc "X11vnc"), [tigervnc](/index.php/Tigervnc "Tigervnc") and [Xrandr](/index.php/Xrandr "Xrandr") it is possible to create and share virtual monitors for display on the local network.
+Using [X11vnc](/index.php/X11vnc "X11vnc"), [TigerVNC](/index.php/TigerVNC "TigerVNC") and [Xrandr](/index.php/Xrandr "Xrandr") it is possible to create and share virtual monitors for display on the local network.
 
 First, create at-least one virtual display in xorg
 

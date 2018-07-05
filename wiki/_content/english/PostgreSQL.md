@@ -69,7 +69,7 @@ Before PostgreSQL can function correctly, the database cluster must be initializ
 
 ```
 
-Where `-D` is the default location where the database cluster must be stored (see [PostgreSQL#Change default data directory](/index.php/PostgreSQL#Change_default_data_directory "PostgreSQL") if you want to use a different one).
+Where `-D` is the default location where the database cluster must be stored (see [#Change default data directory](#Change_default_data_directory) if you want to use a different one).
 
 Note that by default, the locale and the encoding for the database cluster are derived from your current environment (using [$LANG](/index.php/Locale#LANG:_default_locale "Locale") value). [[1]](https://www.postgresql.org/docs/current/static/locale.html) However, depending on your settings and use cases this might not be what you want, and you can override the defaults using:
 
@@ -112,7 +112,7 @@ Success. You can now start the database server using:
 
 If these are the kind of lines you see, then the process succeeded. Return to the regular user using `exit`.
 
-**Note:** To read more about this `WARNING`, see [local users configuration](/index.php/PostgreSQL#Restricts_access_rights_to_the_database_superuser_by_default "PostgreSQL").
+**Note:** To read more about this `WARNING`, see [local users configuration](#Restricts_access_rights_to_the_database_superuser_by_default).
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to [edit](/index.php/Edit "Edit") the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
@@ -198,7 +198,7 @@ There are of course many more meta-commands, but these should help you get start
 
 ## Optional configuration
 
-The PostgreSQL database server configuration file is `postgresql.conf`. This file is located in the data directory of the server, typically `/var/lib/postgres/data`. This folder also houses the other main configuration files, including the `pg_hba.conf` which defines authentication settings, for both [local users](/index.php/PostgreSQL#Restricts_access_rights_to_the_database_superuser_by_default "PostgreSQL") and [other hosts ones](/index.php/PostgreSQL#Configure_PostgreSQL_to_be_accessible_from_remote_hosts "PostgreSQL").
+The PostgreSQL database server configuration file is `postgresql.conf`. This file is located in the data directory of the server, typically `/var/lib/postgres/data`. This folder also houses the other main configuration files, including the `pg_hba.conf` which defines authentication settings, for both [local users](#Restricts_access_rights_to_the_database_superuser_by_default) and [other hosts ones](#Configure_PostgreSQL_to_be_accessible_from_remote_hosts).
 
 **Note:** By default, this folder will not be browsable or searchable by a regular user. This is why `find` and `locate` are not finding the configuration files.
 

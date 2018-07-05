@@ -100,7 +100,7 @@ Results ending in `rom`, `loop` or `airoot` may be ignored.
 The following *partitions* are **required** for a chosen device:
 
 *   One partition for the root directory `/`.
-*   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 **Note:** [Swap](/index.php/Swap "Swap") space can be set on a separate partition or a [swap file](/index.php/Swap_file "Swap file").
 

@@ -63,7 +63,7 @@ For more information on configuring Syslinux, see the [Syslinux](/index.php/Sysl
 
 **Note:** If you can't edit the parameters from the boot menu, you may need to edit `/boot/loader/loader.conf` and add "editor 1" to enable editing.
 
-*   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")) and add them to the `options` line:
+*   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI system partition](/index.php/EFI_system_partition "EFI system partition")) and add them to the `options` line:
 
 	 `options root=/dev/sda2 *quiet splash*` 
 

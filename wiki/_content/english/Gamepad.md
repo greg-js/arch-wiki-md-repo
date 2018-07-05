@@ -43,11 +43,13 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [7.11 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
     *   [7.12 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
     *   [7.13 PlayStation 4 controller](#PlayStation_4_controller)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Joystick moving mouse](#Joystick_moving_mouse)
-    *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
-    *   [8.3 Joystick not recognized by all programs](#Joystick_not_recognized_by_all_programs)
-    *   [8.4 Steam Controller not pairing](#Steam_Controller_not_pairing)
+*   [8 Button mapping](#Button_mapping)
+*   [9 Fix Motion control conflict (gamepad won't work on somes apps)](#Fix_Motion_control_conflict_.28gamepad_won.27t_work_on_somes_apps.29)
+*   [10 Troubleshooting](#Troubleshooting)
+    *   [10.1 Joystick moving mouse](#Joystick_moving_mouse)
+    *   [10.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
+    *   [10.3 Joystick not recognized by all programs](#Joystick_not_recognized_by_all_programs)
+    *   [10.4 Steam Controller not pairing](#Steam_Controller_not_pairing)
 
 ## Joystick input systems
 
@@ -654,6 +656,8 @@ $ xboxdrv --evdev /dev/input/dualshock3 --mimic-xpad
 
 ### PlayStation 4 controller
 
+## Button mapping
+
 To fix the button mapping of PS4 controller you can use the following command with xboxdrv (or try with the [ds4drv](https://github.com/chrippa/ds4drv) program):
 
 ```
@@ -674,6 +678,20 @@ To fix the button mapping of PS4 controller you can use the following command wi
    --silent
 
 ```
+
+## Fix Motion control conflict (gamepad won't work on somes apps)
+
+Dualshock 4 V1 and V2 are both like 3 devices, touchpad, motion control, and joypad.
+
+With somes softwares like Parsec and Shadow cloud gaming streaming apps, motion control is in conflict with joypad, you can disable touchpad and motion control with :
+
+`sudo nano /etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules`
+
+Then copy/paste and register :
+
+`SUBSYSTEM=="input", ATTRS{name}=="*Controller Motion Sensors", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}="" SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""`
+
+This should work in USB and Bluetooth mode. (If you want use bluetooth mode, press "home" button and "share" button together, white led of gamepad should blink very quickly, then add wireless controller with your bluetooth manager (bluez, gnome-bluetooth...)
 
 ## Troubleshooting
 

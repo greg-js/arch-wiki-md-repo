@@ -27,7 +27,7 @@ Related articles
 
 ## Usage
 
-[Configure](/index.php/Fail2ban#Configuration "Fail2ban") fail2ban and [enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `fail2ban.service`.
+[Configure](#Configuration) fail2ban and [enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `fail2ban.service`.
 
 ### fail2ban-client
 
@@ -86,7 +86,7 @@ By default all jails are disabled. [Append](/index.php/Append "Append") `enabled
 enabled = true
 ```
 
-See [Fail2ban#Custom SSH jail](/index.php/Fail2ban#Custom_SSH_jail "Fail2ban").
+See [#Custom SSH jail](#Custom_SSH_jail).
 
 ### Receive an alert e-mail
 

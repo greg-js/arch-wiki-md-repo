@@ -947,7 +947,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **pybgsetter** — Multi-backend (hsetroot, Esetroot, habak, feh) to set desktop wallpaper.
 
-	[http://bbs.archlinux.org/viewtopic.php?id=88997](http://bbs.archlinux.org/viewtopic.php?id=88997) || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
+	[https://bbs.archlinux.org/viewtopic.php?id=88997](https://bbs.archlinux.org/viewtopic.php?id=88997) || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
 
 *   **pywal** — Changes the wallpaper and creates matching colorschemes for various applications (rofi, i3, termials)
 

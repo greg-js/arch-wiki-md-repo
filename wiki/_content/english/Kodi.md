@@ -156,7 +156,7 @@ Adopt `button` to whatever button on the remote is to start Kodi. One can use *i
 
 Create a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") for `kodi.service`:
 
- `/etc/systemd/system/kodi.d/lirc.conf` 
+ `/etc/systemd/system/kodi.service.d/lirc.conf` 
 ```
 [Service]
 ExecStart =

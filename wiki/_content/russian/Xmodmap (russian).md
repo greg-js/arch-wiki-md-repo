@@ -1,6 +1,14 @@
+Ссылки по теме
+
+*   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
+*   [Extra keyboard keys (Русский)](/index.php/Extra_keyboard_keys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Extra keyboard keys (Русский)")
+*   [Extra Keyboard Keys in Xorg (Русский)](/index.php/Extra_Keyboard_Keys_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Extra Keyboard Keys in Xorg (Русский)")
+*   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
+*   [Xbindkeys (Русский)](/index.php/Xbindkeys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xbindkeys (Русский)")
+
 *xmodmap* - это утилита для изменения раскладки клавиш клавиатуры и мыши в [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
-*xmodmap* не относится к [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB), так как использует другие (pre-XKB) идеи на то, как *коды клавиш* обрабатываются в X. В целом, он рекомендуется только для простых задач. Смотрите [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") для продвинутой настройки раскладки.
+*xmodmap* не относится к [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") (XKB), так как использует другие (pre-XKB) идеи на то, как *коды клавиш* обрабатываются в X. В целом, он рекомендуется только для простых задач. Смотрите [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") для продвинутой настройки раскладки.
 
 ## Contents
 

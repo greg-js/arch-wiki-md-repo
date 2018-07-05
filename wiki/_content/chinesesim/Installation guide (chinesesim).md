@@ -103,7 +103,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 对于一个选定的设备，以下的*分区*是必须要有的:
 
 *   一个根分区（挂载在根目录） `/`.
-*   如果 [UEFI](/index.php/UEFI "UEFI") 模式被启用,你还需要一个 [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition").
+*   如果 [UEFI](/index.php/UEFI "UEFI") 模式被启用,你还需要一个 [EFI 系统分区](/index.php/EFI_system_partition "EFI system partition").
 
 **注意:** [Swap](/index.php/Swap_space "Swap space") 可以在一个独立的分区上设置，也可以直接建立 [交换文件](/index.php/Swap#Swap_file "Swap").
 

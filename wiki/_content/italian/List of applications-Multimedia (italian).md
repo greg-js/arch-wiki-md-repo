@@ -364,7 +364,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 	[http://herrie.info/](http://herrie.info/) || [herrie](https://aur.archlinux.org/packages/herrie/)
 
-*   **[Moc](/index.php/Moc "Moc")** — Lettore audio da console in ncurses con supporto per formati MP3, Ogg, e WAV.
+*   **[MOC](/index.php/MOC "MOC")** — Lettore audio da console in ncurses con supporto per formati MP3, Ogg, e WAV.
 
 	[http://moc.daper.net/](http://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
 

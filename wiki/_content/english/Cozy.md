@@ -80,7 +80,7 @@ $ curl [http://localhost:8080/version](http://localhost:8080/version)
 To add an instance (you will be prompted for your Cozy admin password, you might also pass it using COZY_ADMIN_PASSWORD env var):
 
 ```
-$ cozy-stack instances add <instance>.example.tld --apps onboarding,settings,drive,photos,collect
+$ cozy-stack instances add <instance>.example.tld --apps onboarding,settings,store
 
 ```
 

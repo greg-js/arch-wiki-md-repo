@@ -1,4 +1,4 @@
-[Luakit](https://luakit.github.io/luakit/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts. It uses GTK+ 3 and WebKit2GTK+.
+[Luakit](https://luakit.github.io/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts. It uses GTK+ 3 and WebKit2GTK+.
 
 **Warning:** This page has been updated, but Luakit is in rapid development nowadays, and discrepancies may occur. Also, there is much more to document than found here.
 
@@ -26,7 +26,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [luakit-git](https://aur.archlinux.org/packages/luakit-git/) from the [AUR](/index.php/AUR "AUR"). Only this development version is available for the moment.
+[Install](/index.php/Install "Install") [luakit-git](https://aur.archlinux.org/packages/luakit-git/) from the [AUR](/index.php/AUR "AUR"). Only this development version
+
+is available for the moment.
 
 With the Unix philosophy in mind, Luakit is entirely customizable through its configuration files. Those files are written in the Lua scripting language, thus allowing virtually unlimited features.
 

@@ -72,7 +72,7 @@ initrd  /initramfs-linux.img
 ...
 ```
 
-The latest microcode `intel-ucode.img` must be available at boot time in your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/intel-ucode.img` to your ESP at every update of *intel-ucode*.
+The latest microcode `intel-ucode.img` must be available at boot time in your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/intel-ucode.img` to your ESP at every update of *intel-ucode*.
 
 ### EFI boot stub / EFI handover
 

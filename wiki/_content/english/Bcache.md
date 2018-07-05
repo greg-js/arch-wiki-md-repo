@@ -181,7 +181,7 @@ If `blocks` complains complains about *overlapping metadata* when running `block
 
 **Note:** While it may be true that Grub2 does not offer support for bcache as noted below, it does, however, fully support UEFI. It follows then, that so long as the necessary modules for the linux kernel to properly handle your boot device are either compiled into the kernel or are included in an initramfs, and you can include these files on it, the separate boot partition described below may be omitted in favor of the FAT EFI system partition. See [GRUB](/index.php/GRUB "GRUB") and/or [UEFI](/index.php/UEFI "UEFI") for more.
 
-grub cannot handle bcache, so you will need at least 2 partitions (boot and one for the bcache backing device). If you are doing UEFI, you will need an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) as well. E.g.:
+grub cannot handle bcache, so you will need at least 2 partitions (boot and one for the bcache backing device). If you are doing UEFI, you will need an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) as well. E.g.:
 
 ```
      1            2048           22527   10.0 MiB    EF00  EFI System

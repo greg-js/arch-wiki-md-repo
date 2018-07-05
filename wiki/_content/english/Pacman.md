@@ -683,9 +683,9 @@ In the case that *pacman* crashes with a "database write" error while removing p
 1.  Boot using the Arch installation media. Preferably use a recent media so that the *pacman* version matches/is newer than the system.
 2.  Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root, and check the mount has sufficient space with `df -h`
 3.  Mount the proc, sys and dev filesystems as well: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
-4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` as root.
+4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --sysroot /mnt -Syyu` as root.
 5.  After the upgrade, one way to double-check for not upgraded but still broken packages: `find /mnt/usr/lib -size 0`
-6.  Followed by a re-install of any still broken package via `pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *package*`.
+6.  Followed by a re-install of any still broken package via `pacman --sysroot /mnt -S *package*`.
 
 ### "Unable to find root device" error after rebooting
 
@@ -712,7 +712,7 @@ If that does not work, from a current Arch release (CD/DVD or USB stick), [mount
 
 *   If you do not have a current release or if you only have some other "live" Linux distribution laying around, you can [chroot](/index.php/Chroot "Chroot") using the old fashioned way. Obviously, there will be more typing than simply running the `arch-chroot` script.
 *   If *pacman* fails with `Could not resolve host`, please [check your internet connection](/index.php/Network_configuration#Check_the_connection "Network configuration").
-*   If you cannot enter the arch-chroot or chroot environment but need to re-install packages you can use the command `pacman -r /mnt -Syu foo bar` to use *pacman* on your root partition.
+*   If you cannot enter the arch-chroot or chroot environment but need to re-install packages you can use the command `pacman --sysroot /mnt -Syu foo bar` to use *pacman* on your root partition.
 
 Reinstalling the kernel (the [linux](https://www.archlinux.org/packages/?name=linux) package) will automatically re-generate the initramfs image with `mkinitcpio -p linux`. There is no need to do this separately.
 

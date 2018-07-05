@@ -91,7 +91,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 На выбранном накопителе должны присутствовать следующие *разделы* (показываются с цифрой на конце):
 
 *   Раздел для корневого каталога `/`
-*   Если включен режим [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)"), необходим [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
+*   Если включен режим [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)"), необходим [EFI system partition](/index.php/EFI_system_partition "EFI system partition")
 
 [Пространство подкачки](/index.php/Swap "Swap") можно расположить на отдельном разделе или в [файле](/index.php/Swap#Swap_file "Swap").
 

@@ -71,7 +71,7 @@ It is advisable to keep OS X installed, because MacBook firmware updates can onl
 
 By default, the MacBook's drive is formatted using GPT and contains at least 3 partitions:
 
-*   **EFI**: the ~200 MB [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   **EFI**: the ~200 MB [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 *   **OS X**: the main partition containing your OS X installation. It is formatted using [HFS+](/index.php/File_systems "File systems").
 *   **Recovery**: A recovery partition used for special purposes.
 

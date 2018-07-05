@@ -340,7 +340,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 	[https://www.libreoffice.org/](https://www.libreoffice.org/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
-*   **[OpenOffice](/index.php/Apache_OpenOffice "Apache OpenOffice")** — Open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more, under the Apache Licence.
+*   **[OpenOffice](/index.php/OpenOffice "OpenOffice")** — Open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more, under the Apache Licence.
 
 	[https://www.openoffice.org/](https://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
@@ -652,7 +652,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
 
-*   **[gedit](/index.php/GNOME/Gedit "GNOME/Gedit") LaTeX Plugin** — Add code-completion to gedit and allows for compiling LaTeX documents and managing BibTeX bibliographies.
+*   **[gedit](/index.php/Gedit "Gedit") LaTeX Plugin** — Add code-completion to gedit and allows for compiling LaTeX documents and managing BibTeX bibliographies.
 
 	[https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin](https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin) || [gedit-latex](https://aur.archlinux.org/packages/gedit-latex/)
 

@@ -108,7 +108,7 @@ Chcete-li zkontrolovat stav služby, použijte `timedatectl status`.
 
 Pro úpravu a vytvoření [partition table](/index.php/Partition_table "Partition table") (tabulka oddílů) použijte [fdisk](/index.php/Fdisk "Fdisk"), [cfdisk](/index.php/Cfdisk "Cfdisk") nebo [parted](/index.php/Parted "Parted") pro [MBR](/index.php/MBR "MBR") a [GPT](/index.php/GPT "GPT"), nebo [gdisk](/index.php/Gdisk "Gdisk") (pouze GPT).
 
-Alespoň jeden oddíl musí být dostupný pro kořenový adresář `/`. Pokud používáte UEFI, budete potřebovat další oddíl pro hostování [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Také mohou být zapotřebí další oddíly, např. [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") na BIOS/GPT konfiguraci.
+Alespoň jeden oddíl musí být dostupný pro kořenový adresář `/`. Pokud používáte UEFI, budete potřebovat další oddíl pro hostování [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Také mohou být zapotřebí další oddíly, např. [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") na BIOS/GPT konfiguraci.
 
 Nezapomeňte vytvořit jakákoliv vrstvená bloková zařízení typu [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") nebo [RAID](/index.php/RAID "RAID"), pokud je požadujete.
 

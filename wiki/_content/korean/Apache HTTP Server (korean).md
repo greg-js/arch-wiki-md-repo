@@ -87,7 +87,7 @@ DocumentRoot "/srv/http"
 
 두 개의 디렉토리(DocumentRoot, DocumentRoot의 부모 디렉토리)는 반드시 다른 사용자들에게도 실행권한이 부여되어야 한다. (`chmod o+x /path/to/DocumentRoot`를 통해 설정할 수 있다)
 
-위에서 언급된 권한관련 해결방법에는 몇 가지 논란이 있다. 반드시 모든 사용자들에게 실행 권한을 줄 필요가 없고 ACL을 통해 웹서버에만 실행 권한을 줄 수 있는 방법이 있기 때문이다. 자세한 내용은 다음 링크를 살펴보자. [Access Control Lists#Granting execution permissions for private files to a Web Server](/index.php/Access_Control_Lists#Granting_execution_permissions_for_private_files_to_a_Web_Server "Access Control Lists"), [Talk:Apache HTTP Server](/index.php/Talk:Apache_HTTP_Server "Talk:Apache HTTP Server")
+위에서 언급된 권한관련 해결방법에는 몇 가지 논란이 있다. 반드시 모든 사용자들에게 실행 권한을 줄 필요가 없고 ACL을 통해 웹서버에만 실행 권한을 줄 수 있는 방법이 있기 때문이다. 자세한 내용은 다음 링크를 살펴보자. [Access Control Lists#Granting execution permissions for private files to a web server](/index.php/Access_Control_Lists#Granting_execution_permissions_for_private_files_to_a_web_server "Access Control Lists"), [Talk:Apache HTTP Server](/index.php/Talk:Apache_HTTP_Server "Talk:Apache HTTP Server")
 
 ```
 AllowOverride None

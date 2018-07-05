@@ -17,7 +17,7 @@
 
 [Install](/index.php/Install "Install") the [mantisbt](https://aur.archlinux.org/packages/mantisbt/) package.
 
-Choose your favorite [web server](/index.php/Category:Web_server "Category:Web server") and/or application server (such as [UWSGI](/index.php/UWSGI "UWSGI")) for making the application available.
+Choose your favorite [web server](/index.php/Web_server "Web server") and/or application server (such as [UWSGI](/index.php/UWSGI "UWSGI")) for making the application available.
 
 ## Configuration
 

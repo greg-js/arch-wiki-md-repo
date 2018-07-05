@@ -40,7 +40,7 @@ As of writing, the current BIOS version is 1.51\. By visiting the downloads sect
 
 As noted in [Intel graphics](/index.php/Intel_graphics "Intel graphics"), the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver seems to cause more issue than the builtin `modesetting` Xorg driver. Works fine without the intel driver (on a Skylake configuration).
 
-138a:0097 will hopefully be supported as part of [Validity90](https://github.com/nmikhailov/Validity90). Since the hardware is the same as in the T470 model, the [fingerprint reader guide](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T470#Fingerprint_reader) probably will work.
+138a:0097 will hopefully be supported as part of [Validity90](https://github.com/nmikhailov/Validity90). Since the hardware is the same as in the T470 model, the [fingerprint reader guide](/index.php/Lenovo_ThinkPad_T470#Fingerprint_reader "Lenovo ThinkPad T470") probably will work.
 
 ### Screen backlight
 

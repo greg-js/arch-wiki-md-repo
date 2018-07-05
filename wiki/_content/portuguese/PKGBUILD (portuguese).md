@@ -222,7 +222,7 @@ Um vetor de pacotes adicionais dos quais o software fornece as funcionalidades (
 
 Um vetor de pacotes que conflitam com, ou causa problemas com o pacote, se instalado. Todos esses pacotes e pacotes fornecendo este item precisarão ser removidos. As propriedades da versão dos pacotes conflitantes também podem ser especificados no mesmo formato que o vetor `depends`.
 
-Isso significa que quando você escreve um pacote para o qual uma versão alternativa está disponível (esteja ela nos pacotes oficias ou no [AUR (Português](/index.php?title=AUR_(Portugu%C3%AAs&action=edit&redlink=1 "AUR (Português (page does not exist)")) e seu pacote conflita com aquela versão, você também precisa colocar as outras versões em seu vetor `conflicts`.
+Isso significa que quando você escreve um pacote para o qual uma versão alternativa está disponível (esteja ela nos pacotes oficias ou no [AUR (Português)](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") e seu pacote conflita com aquela versão, você também precisa colocar as outras versões em seu vetor `conflicts`.
 
 No entanto, há uma exceção a essa regra. Definir pacotes conflitantes em todas as direções nem sempre é aplicável, especialmente se todos esses pacotes forem mantidos por pessoas diferentes. De fato, ter que entrar em contato com todos os mantenedores de pacotes de pacotes em conflito com sua própria versão e pedir que eles incluam o nome do seu pacote em seu vetor `conflicts` é um processo complicado.
 

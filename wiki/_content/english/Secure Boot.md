@@ -102,7 +102,7 @@ Finally, create a new NVRAM entry to boot `PreLoader.efi`:
 
 ```
 
-Replace `*X*` with the drive letter and replace `*Y*` with the partition number of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+Replace `*X*` with the drive letter and replace `*Y*` with the partition number of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 This entry should be added to the list as the first to boot; check with the `efibootmgr` command and adjust the boot-order if necessary.
 
@@ -251,7 +251,7 @@ Exec = /usr/bin/sbsign --key MOK.key --cert MOK.crt --output /boot/vmlinuz-linux
 Depends = sbsigntools
 ```
 
-Copy `MOK.cer` to a [FAT](/index.php/FAT "FAT") formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
+Copy `MOK.cer` to a [FAT](/index.php/FAT "FAT") formatted file system (you can use [EFI system partition](/index.php/EFI_system_partition "EFI system partition")).
 
 Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MokList it will launch MokManager (`mmx64.efi`).
 
@@ -439,7 +439,7 @@ Secure Boot is in Setup Mode when the Platform Key is removed. To put firmware i
 
 ### Enroll keys in firmware
 
-Copy all `*.cer`, `*.esl`, `*.auth` to a [FAT](/index.php/FAT "FAT") formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
+Copy all `*.cer`, `*.esl`, `*.auth` to a [FAT](/index.php/FAT "FAT") formatted file system (you can use [EFI system partition](/index.php/EFI_system_partition "EFI system partition")).
 
 Launch firmware setup utility or KeyTool and enroll **db**, **KEK** and **PK** certificates.
 

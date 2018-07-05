@@ -398,7 +398,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://herrie.info/](http://herrie.info/) || [herrie](https://aur.archlinux.org/packages/herrie/)
 
-*   **[MOC](/index.php/Moc "Moc")** — Reproductor de audio de consola basado en ncurses con soporte para formatos MP3, OGG y WAV.
+*   **[MOC](/index.php/MOC "MOC")** — Reproductor de audio de consola basado en ncurses con soporte para formatos MP3, OGG y WAV.
 
 	[http://moc.daper.net/](http://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
 

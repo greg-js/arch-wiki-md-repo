@@ -1,3 +1,9 @@
+Related articles
+
+*   [Arch boot process (简体中文)](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch boot process (简体中文)")
+*   [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")
+*   [Unified Extensible Firmware Interface (简体中文)](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")
+
 **翻译状态：** 本文是英文页面 [rEFInd](/index.php/REFInd "REFInd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-06-01，点击[这里](https://wiki.archlinux.org/index.php?title=rEFInd&diff=0&oldid=315512)可以查看翻译后英文页面的改动。
 
 rEFInd 是一个 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") 启动管理器。它是 [rEFIt](http://refit.sourceforge.net/) （不再维护）的一个分支并且针对非 Mac 硬件修复了若干问题。它被设计为平台无关，可启动多个操作系统。
@@ -23,7 +29,7 @@ rEFInd 是一个 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE
 
 ```
 
-此操作会检测您的内核和 [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") 分区，复制需要的文件，创建默认配置文件并将 rEFInd 设置为默认的 UEFI 启动项
+此操作会检测您的内核和 [EFI system partition](/index.php/EFI_system_partition "EFI system partition") 分区，复制需要的文件，创建默认配置文件并将 rEFInd 设置为默认的 UEFI 启动项
 
 ## 手动安装
 

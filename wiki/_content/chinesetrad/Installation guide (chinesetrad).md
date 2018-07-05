@@ -83,7 +83,7 @@ As instructions differ for [UEFI](/index.php/UEFI "UEFI") systems，檢查 [efiv
 
 使用 [fdisk](/index.php/Fdisk "Fdisk") 和 [parted](/index.php/Parted "Parted") 製作 [MBR](/index.php/MBR "MBR") 或 [GPT](/index.php/GPT "GPT") 磁碟分割表(partition table)，或使用 [gdisk](/index.php/Gdisk "Gdisk") 製作 [GPT](/index.php/GPT "GPT") 磁碟分割表。
 
-至建立一個 `/` 分割區。[UEFI](/index.php/UEFI "UEFI") 系統另外需要一個 EPS分割區([EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"))。Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+至建立一個 `/` 分割區。[UEFI](/index.php/UEFI "UEFI") 系統另外需要一個 EPS分割區([EFI system partition](/index.php/EFI_system_partition "EFI system partition"))。Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 

@@ -893,7 +893,7 @@ Make sure any applications using the pcm or dsp files are shut down before resta
 
 ### Starting an application interrupts other app's sound
 
-If you have trouble with some applications (eg. Teamspeak, Mumble) interrupting sound output of already running applications (eg. Deadbeaf), you can solve this by commenting out the line `load-module module-role-cork` in `/etc/pulse/default.pa` like shown below:
+If you have trouble with some applications (such as TeamSpeak or Mumble) interrupting sound output of already running applications (such as Deadbeaf), you can solve this by commenting out the line `load-module module-role-cork` in `/etc/pulse/default.pa` like shown below:
 
  `/etc/pulse/default.pa` 
 ```

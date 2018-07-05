@@ -7,7 +7,10 @@
         *   [1.1.1 Zabbix-server installation](#Zabbix-server_installation)
         *   [1.1.2 Zabbix-frontend installation](#Zabbix-frontend_installation)
     *   [1.2 Configuration](#Configuration)
-    *   [1.3 Starting](#Starting)
+    *   [1.3 ICMP/ping discovery](#ICMP.2Fping_discovery)
+        *   [1.3.1 Installation fping](#Installation_fping)
+        *   [1.3.2 Set fping capabilities](#Set_fping_capabilities)
+    *   [1.4 Starting](#Starting)
 *   [2 Agent setup](#Agent_setup)
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Configuration](#Configuration_2)
@@ -24,11 +27,13 @@
 
 #### Zabbix-server installation
 
+**Note:** Zabbix uses [fping](https://www.archlinux.org/packages/?name=fping) to do ICMP/Ping discovery, wich is broken. [fping-git](https://aur.archlinux.org/packages/fping-git/) is the latest development version, wich does work, albeit fping needs extra capabilities to run as non-root user. See [#ICMP/ping discovery](#ICMP.2Fping_discovery) for further details.
+
+Install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package.
+
 Install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). This will include the necessary scripts in order to use MariaDB or postgresql. This wiki assumes you will be using MariaDB
 
 #### Zabbix-frontend installation
-
-Install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package.
 
 You also have to choose a web server with PHP support if you want to use *zabbix-frontend*, e.g.:
 
@@ -72,6 +77,35 @@ $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/images.sql
 $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/data.sql
 
 ```
+
+### ICMP/ping discovery
+
+When you want to use ICMP discovery (e.g. ping) in Zabbix,you need to do the following two things:
+
+#### Installation fping
+
+Install [fping](https://www.archlinux.org/packages/?name=fping)
+
+**Note:** If [fping](https://www.archlinux.org/packages/?name=fping) fails, try installing [fping-git](https://aur.archlinux.org/packages/fping-git/). As of version 4.0 there is a bug, that is resolved in the latest developement version, [fping-git](https://aur.archlinux.org/packages/fping-git/).
+
+#### Set fping capabilities
+
+The zabbix user needs special network capabilities to utilize [fping](https://www.archlinux.org/packages/?name=fping).
+
+To achieve that, to the following:
+
+Edit the `zabbix-server-mysql`:
+
+ `# systemctl edit zabbix-server-mysql.service` 
+
+And add the following lines:
+
+```
+[Service]
+ExecStartPre=+/usr/bin/setcap cap_net_raw+ep /usr/bin/fping
+```
+
+Save & Close, and you're done.
 
 ### Starting
 

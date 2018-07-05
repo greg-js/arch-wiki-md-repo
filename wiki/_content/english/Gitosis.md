@@ -294,4 +294,4 @@ keydir is simply a directory that contains public keys of the users. Some of the
 *   [Gitolite](/index.php/Gitolite "Gitolite") – an alternative to Gitosis which provides many similar features
 *   [Girocco](http://repo.or.cz/w/girocco.git) – Git hosting code used on repo.or.cz
 *   [Gitorious](http://gitorious.org/gitorious/pages/Home) – open-source Git hosting
-*   [Gitlab](/index.php/Gitlab "Gitlab") – a free git repository management application based on Ruby on Rails and Gitolite.
+*   [GitLab](/index.php/GitLab "GitLab") – a free git repository management application based on Ruby on Rails and Gitolite.

@@ -29,7 +29,7 @@
 
 **警告:** 我们无法为提供商的质量与诚信做担保. 请在下订单前自行进行调查.
 
-**注意:** 这个列表只列出了那些提供便捷的Arch Linux模板的提供商. 在其他提供商的环境中试用Arch Linux仍然是可行的, 只是相比之下需要更多的工作. 比如我们可以加载自定义的光盘映像 (这需要硬件层面的虚拟化, 比如Xen or KVM), [installing under chroot](/index.php/Installation_guide "Installation guide"), 或者 [using rsync to synchronize Arch over the top of another distribution](/index.php/Virtual_Private_Server#Installing_the_latest_Arch_Linux_on_any_OpenVZ_provider "Virtual Private Server").
+**注意:** 这个列表只列出了那些提供便捷的Arch Linux模板的提供商. 在其他提供商的环境中试用Arch Linux仍然是可行的, 只是相比之下需要更多的工作. 比如我们可以加载自定义的光盘映像 (这需要硬件层面的虚拟化, 比如Xen or KVM), [installing under chroot](/index.php/Installation_guide "Installation guide"), 或者 [using rsync to synchronize Arch over the top of another distribution](/index.php/Virtual_Private_Server#Installing_the_latest_Arch_Linux_on_any_OpenVZ_container_provider "Virtual Private Server").
 
 | 提供商名 | Arch 版本 | 虚拟化环境 | 地理地点 | 注意事项 |
 | [A MilesWeb VPS](http://www.milesweb.com/vps-hosting.php) | 2013.10.14 | OpenVZ | 欧洲, 印度, 美利坚 | Latest Arch Linux available on OpenVZ platform. Quick setup, 24/7 support via Live Chat, Email and Phone. VPS starts from $20 / mo |

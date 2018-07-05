@@ -492,7 +492,7 @@ In some cases, it is useful to be able to [dual boot with Windows](/index.php/Du
 
 **Warning:** Some of the commands used here can corrupt either the Windows partition, the Arch Linux partition, or both. Use extreme caution when executing commands, and double check that they are being run in the correct shell. It would be a good idea to have a backup of the entire drive ready before beginning this process.
 
-**Tip:** It will be useful to have the [Arch install ISO](https://www.archlinux.org/download/) readily available, as it will be used the configure the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") in the VM. It is also worth having access to Windows installation media (such as the [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO)) in case the Windows partition is corrupted.
+**Tip:** It will be useful to have the [Arch install ISO](https://www.archlinux.org/download/) readily available, as it will be used the configure the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") in the VM. It is also worth having access to Windows installation media (such as the [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO)) in case the Windows partition is corrupted.
 
 ### Configure udev to give VirtualBox raw access to Windows partitions
 
@@ -557,7 +557,7 @@ To access the Windows partitions, create a [raw VMDK file](https://www.virtualbo
 
 After creating the image, change the ownership so that the desired user/group has access:
 
-In order to boot the virtual machine in UEFI mode, a dedicated virtual disk for the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must be created:
+In order to boot the virtual machine in UEFI mode, a dedicated virtual disk for the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") must be created:
 
  `$ vboxmanage createmedium disk --filename */path/to/vm/folder/esp.vmdk* --size 512 --format VMDK` 
 

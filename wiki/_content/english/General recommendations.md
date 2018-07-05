@@ -131,7 +131,7 @@ Every package in the repositories along with those present in the AUR are subjec
 
 ### Arch User Repository
 
-While the Arch Build System allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or through [AurJson](/index.php/AurJson "AurJson").
+While the Arch Build System allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or through the [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
 
 ## Booting
 

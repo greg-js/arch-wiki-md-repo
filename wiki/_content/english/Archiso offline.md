@@ -30,17 +30,17 @@ The build process enables this by by sourcing the `packages.x86_64` and running 
 AUR packages are also sourced, but cached a little bit differently. But AUR packages are sourced from `packages.aur`.
 The full list of packages sourced by default are `base base-devel` and any packages listed in `packages.x86_64` from the official *releng* config.
 
-Additional packages can be added as described in [Archiso#Configure_the_live_medium](/index.php/Archiso#Configure_the_live_medium "Archiso")
+Additional packages can be added as described in [Archiso#Configure the live medium](/index.php/Archiso#Configure_the_live_medium "Archiso")
 
 ### Installing packages
 
-Follow the same procedure as described in [Archiso#Installing_packages](/index.php/Archiso#Installing_packages "Archiso"), the only difference being `packages.aur` which is a additional feature in the build process, enabling the possibility to include [AUR Packages](https://aur.archlinux.org) into the offline medium.
+Follow the same procedure as described in [Archiso#Installing packages](/index.php/Archiso#Installing_packages "Archiso"), the only difference being `packages.aur` which is a additional feature in the build process, enabling the possibility to include [AUR Packages](https://aur.archlinux.org) into the offline medium.
 
 **Note:** If AUR packages are found by the build process, a build-user will be automatically created with `"%wheel ALL=(ALL) NO"` sudoers permission. It's a known issue and a long term bad solution. Make sure your sudoers file looks correct after building your offline ISO for now.
 
 ## Build the ISO
 
-Again, assuming you've followed the [Archiso](/index.php/Archiso "Archiso") documentation, more specifically the [Archiso#Build_the_ISO](/index.php/Archiso#Build_the_ISO "Archiso") steps, you should have a ISO under:
+Again, assuming you've followed the [Archiso](/index.php/Archiso "Archiso") documentation, more specifically the [Archiso#Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso") steps, you should have a ISO under:
 
 ```
 # ~/archlive/out/

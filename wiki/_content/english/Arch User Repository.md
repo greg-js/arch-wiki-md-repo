@@ -4,7 +4,7 @@ Related articles
 *   [pacman](/index.php/Pacman "Pacman")
 *   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
 *   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
-*   [AurJson](/index.php/AurJson "AurJson")
+*   [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface")
 *   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
 *   [Official repositories](/index.php/Official_repositories "Official repositories")
 *   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")

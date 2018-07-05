@@ -1,5 +1,15 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [RAID](/index.php/RAID "RAID"). Дата последней синхронизации: 9 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=RAID&diff=0&oldid=481568).
 
+Ссылки по теме
+
+*   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
+*   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
+*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
+*   [ZFS](/index.php/ZFS "ZFS")
+*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
+*   [Swap#Striping](/index.php/Swap#Striping "Swap")
+*   [Btrfs#RAID](/index.php/Btrfs#RAID "Btrfs")
+
 This article explains what RAID is and how to create/manage a software RAID array using mdadm.
 
 ## Contents
@@ -390,7 +400,7 @@ If your RAID 1 that's missing a disk array was wrongly auto-detected as RAID 1 (
 
 **Note:** The following section is applicable only if the root filesystem resides on the array. Users may skip this section if the array holds a data partition(s).
 
-You should create the RAID array between the [Partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Format_a_device "File systems") steps of the Installation Procedure. Instead of directly formatting a partition to be your root file system, it will be created on a RAID array. Follow the section [#Setup](#Setup) to create the RAID array. Then continue with the installation procedure until the pacstrap step is completed. When using [UEFI boot](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), also read [ESP on RAID](/index.php/EFI_System_Partition#ESP_on_RAID "EFI System Partition").
+You should create the RAID array between the [Partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Format_a_device "File systems") steps of the Installation Procedure. Instead of directly formatting a partition to be your root file system, it will be created on a RAID array. Follow the section [#Setup](#Setup) to create the RAID array. Then continue with the installation procedure until the pacstrap step is completed. When using [UEFI boot](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), also read [ESP on RAID](/index.php/EFI_system_partition#ESP_on_RAID "EFI system partition").
 
 ### Update configuration file
 

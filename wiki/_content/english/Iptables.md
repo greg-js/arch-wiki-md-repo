@@ -6,7 +6,7 @@ Related articles
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
 
-*iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [frontends](#Console_frontends) and [GUIs](#Graphic_frontends). *iptables* is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6"). Both *iptables* and *ip6tables* have the same syntax, but some options are specific to either IPv4 or IPv6.
+*iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [console](#Console) and [graphical](#Graphical) font-ends. *iptables* is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6"). Both *iptables* and *ip6tables* have the same syntax, but some options are specific to either IPv4 or IPv6.
 
 [nftables](/index.php/Nftables "Nftables") was released in [release with Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), and will one day replace iptables as the main Linux firewall utility.
 
@@ -67,7 +67,7 @@ The stock Arch Linux kernel is compiled with iptables support. You will only nee
 
 	[http://www.shorewall.net/](http://www.shorewall.net/) || [shorewall](https://www.archlinux.org/packages/?name=shorewall)
 
-*   **[Uncomplicated Firewall](/index.php/Ufw "Ufw")** — Simple front-end for iptables.
+*   **[Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")** — Simple front-end for iptables.
 
 	[https://launchpad.net/ufw](https://launchpad.net/ufw) || [ufw](https://www.archlinux.org/packages/?name=ufw)
 
@@ -151,7 +151,7 @@ iptables contains five tables:
 2.  `filter` is the default table, and is where all the actions typically associated with a firewall take place.
 3.  `nat` is used for [network address translation](https://en.wikipedia.org/wiki/Network_address_translation "wikipedia:Network address translation") (e.g. port forwarding).
 4.  `mangle` is used for specialized packet alterations.
-5.  `security` is used for [Mandatory Access Control](/index.php/Security#Mandatory_access_control "Security") networking rules (e.g. SELinux -- see [this article](http://lwn.net/Articles/267140/) for more details).
+5.  `security` is used for [Mandatory Access Control](/index.php/Mandatory_Access_Control "Mandatory Access Control") networking rules (e.g. SELinux -- see [this article](http://lwn.net/Articles/267140/) for more details).
 
 In most common use cases you will only use two of these: **filter** and **nat**. The other tables are aimed at complex configurations involving multiple routers and routing decisions and are in any case beyond the scope of these introductory remarks.
 

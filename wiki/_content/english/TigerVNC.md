@@ -81,7 +81,7 @@ $ vncserver -kill :1
 
 The `~/.vnc/xstartup` script is sourced by *vncserver* for creating the virtual X session and it must be adapted to one's needs. It functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. In this script, users are expected to start a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
 
-For example, starting [XFCE](/index.php/XFCE "XFCE"):
+For example, starting [Xfce](/index.php/Xfce "Xfce"):
 
  `~/.vnc/xstartup` 
 ```
@@ -191,7 +191,7 @@ vncconfig -nowin &
 
 ## Running vncserver to directly control the local display
 
-As mentioned in [TigerVNC#Installation](/index.php/TigerVNC#Installation "TigerVNC"), the *tigervnc* package also provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
+As mentioned in [#Installation](#Installation), the *tigervnc* package also provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
 
 ```
 $ x0vncserver -display :0 -passwordfile ~/.vnc/passwd

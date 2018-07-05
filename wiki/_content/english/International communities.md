@@ -156,8 +156,8 @@ This list is by no means complete. If you know of a community that is not listed
 ### Turkey
 
 *   Homepage : [http://archtr.org/](http://archtr.org/)
-*   Forum  : [http://archtr.org/forum/](http://archtr.org/forum/)
-*   Wiki  : [http://archtr.org/wiki/](http://archtr.org/wiki/)
+*   Forum  : [https://forum.archtr.org/](https://forum.archtr.org/)
+*   Wiki  : [Arch Linux Official Wiki](https://wiki.archlinux.org/index.php/Ana_sayfa_(T%C3%BCrk%C3%A7e))
 
 ### Vietnam
 

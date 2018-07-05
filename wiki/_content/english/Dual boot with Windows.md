@@ -224,3 +224,4 @@ Then, write the new boot sector (boot record):
 
 *   [Booting Windows from a desktop shortcut](https://bbs.archlinux.org/viewtopic.php?id=140049)
 *   [One-time boot into Windows partition from desktop shortcut](https://github.com/kaipee/grub-reboot2win)
+*   [Windows 7/8/8.1/10 ISO to Flash Drive burning utility for Linux (MBR/GPT, BIOS/UEFI, FAT32/NTFS)](https://github.com/ValdikSS/windows2usb)

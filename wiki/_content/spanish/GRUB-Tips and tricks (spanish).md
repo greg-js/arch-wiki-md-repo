@@ -587,7 +587,7 @@ Para ello, primero cree el directorio necesario y, a continuación, copie la par
 
 ### Crear una entrada GRUB en el gestor de arranque del firmware
 
-`grub-install` intenta crear automáticamente una entrada de menú en el gestor de arranque. Si no lo hace, vea [efibootmgr](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#efibootmgr) para instrucciones de uso y `efibootmgr` para crear una entrada de menú. Sin embargo, es probable que el problema sea que no haya arrancado su CD/USB en modo UEFI, vea también como [Crear un USB arrancable con UEFI desde la ISO](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO).
+`grub-install` intenta crear automáticamente una entrada de menú en el gestor de arranque. Si no lo hace, vea [efibootmgr](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#efibootmgr "Unified Extensible Firmware Interface (Español)") para instrucciones de uso y `efibootmgr` para crear una entrada de menú. Sin embargo, es probable que el problema sea que no haya arrancado su CD/USB en modo UEFI, vea también como [Crear un USB arrancable con UEFI desde la ISO](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO "Unified Extensible Firmware Interface (Español)").
 
 ### GRUB independiente
 

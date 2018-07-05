@@ -100,7 +100,7 @@ Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
 As seguintes *partições* são **exigidos** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
-*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition").
+*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_system_partition "EFI system partition").
 
 **Nota:** Espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
 

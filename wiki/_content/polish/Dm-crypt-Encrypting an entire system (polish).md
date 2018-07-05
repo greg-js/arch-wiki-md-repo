@@ -962,7 +962,7 @@ Zamontuj partycję na `/mnt/boot`:
 
 ```
 
-Utwórz punkt montowania dla [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") w `/boot/efi` w celu zapewnienia zgodności z `grub-install` i zamontuj:
+Utwórz punkt montowania dla [EFI system partition](/index.php/EFI_system_partition "EFI system partition") w `/boot/efi` w celu zapewnienia zgodności z `grub-install` i zamontuj:
 
 ```
 # mkdir /mnt/boot/efi
@@ -1050,7 +1050,7 @@ Jeśli z jakiegoś powodu plik klucza nie odblokuje partycji rozruchowej, system
 
 Poniższy przykład tworzy pełne szyfrowanie systemowe za pomocą LUKS przy użyciu subwoluminów [Btrfs](/index.php/Btrfs "Btrfs") do [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
-Jeśli używasz UEFI, to [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) jest wymagane. `/boot` może znajdować się na `/` i być zaszyfrowane; jednak samo ESP nie może być zaszyfrowane. W tym przykładowym układzie ESP jest `/dev/sda*Y*` i jest zamontowany w `/boot/efi`. `/boot` sama znajduje się na partycji systemowej, `/dev/sda*X*`.
+Jeśli używasz UEFI, to [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) jest wymagane. `/boot` może znajdować się na `/` i być zaszyfrowane; jednak samo ESP nie może być zaszyfrowane. W tym przykładowym układzie ESP jest `/dev/sda*Y*` i jest zamontowany w `/boot/efi`. `/boot` sama znajduje się na partycji systemowej, `/dev/sda*X*`.
 
 Ponieważ `/boot` znajduje się na zaszyfrowanej `/`, [GRUB](/index.php/GRUB "GRUB") musi być użyty jako bootloader, ponieważ tylko GRUB może załadować moduły niezbędne do odszyfrowania `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
 
@@ -1073,7 +1073,7 @@ Dodatkowo wyświetlana jest opcjonalna zwykła, zaszyfrowana partycja [swap](/in
 
 **Note:** Nie można używać partycji btrfs, jak opisano w [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") podczas korzystania z LUKS. Należy użyć tradycyjnego partycjonowania, nawet jeśli jest to po prostu utworzenie jednej partycji.
 
-Przed utworzeniem jakichkolwiek partycji powinieneś wiedzieć o znaczeniu i metodach bezpiecznego usuwania dysku, opisanych w [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). Jeśli używasz [UEFI](/index.php/UEFI "UEFI") stworzyć [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") o odpowiednim rozmiarze. Zostanie on później zamontowany w `/boot/efi`. Jeśli masz zamiar utworzyć zaszyfrowaną partycję wymiany, utwórz dla niej partycję, ale nie oznaczaj jej jako "swap", ponieważ z partycją będzie używana zwykły "dm-crypt".
+Przed utworzeniem jakichkolwiek partycji powinieneś wiedzieć o znaczeniu i metodach bezpiecznego usuwania dysku, opisanych w [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). Jeśli używasz [UEFI](/index.php/UEFI "UEFI") stworzyć [EFI system partition](/index.php/EFI_system_partition "EFI system partition") o odpowiednim rozmiarze. Zostanie on później zamontowany w `/boot/efi`. Jeśli masz zamiar utworzyć zaszyfrowaną partycję wymiany, utwórz dla niej partycję, ale nie oznaczaj jej jako "swap", ponieważ z partycją będzie używana zwykły "dm-crypt".
 
 Utwórz potrzebne partycje, przynajmniej jedną dla `/` (e.g. `/dev/sda*X*`). zobacz [Partitioning](/index.php/Partitioning "Partitioning") article.
 

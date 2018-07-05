@@ -14,7 +14,7 @@ Related articles
 
 A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that runs when a computer starts. It is responsible for selecting, loading and transferring control to an operating system kernel. The kernel, in turn, initializes the rest of the operating system.
 
-**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
+**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 
 ## Contents
 
@@ -83,7 +83,7 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](htt
 
 *   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [GUID partition tables](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
-*   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 Create a mebibyte partition (`+1M` with *fdisk* or *gdisk*) on the disk with no file system and with partition type GUID `21686148-6449-6E6F-744E-656564454649`.
 
@@ -126,7 +126,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 
 ### Check for an EFI System Partition
 
-To boot from a disk using EFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an EFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
+To boot from a disk using EFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an EFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
 
 To find out the disk partition scheme and the system partition, use `parted` as root on the disk you want to boot from:
 
@@ -140,7 +140,7 @@ The command returns:
 *   The disk partition layout: if the disk is GPT, it indicates `Partition Table: gpt`.
 *   The list of partitions on the disk: Look for the ESP in the list, it is a small (about 550 MiB) partition with a `fat32` file system and with the flag `esp` enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
-Once it is found, **take note of the ESP partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") article.
+Once it is found, **take note of the ESP partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") article.
 
 ### Installation
 
@@ -153,7 +153,7 @@ First, [install](/index.php/Install "Install") the packages [grub](https://www.a
 
 Then follow the below steps to install GRUB:
 
-1.  [Mount the EFI System Partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") to either `/boot` or `/boot/efi` and in the remainder of this section, substitute `*esp*` with that mount point.
+1.  [Mount the EFI System Partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") to either `/boot` or `/boot/efi` and in the remainder of this section, substitute `*esp*` with that mount point.
 2.  Choose a bootloader identifier, here named `***GRUB***`. A directory of that name will be created to store the EFI binary bootloader in the ESP and this is the name that will appear in the EFI boot menu to identify the GRUB boot entry.
 3.  Execute the following command to install the GRUB UEFI application `grubx64.efi` to `*esp*/EFI/***GRUB***/` and install its modules to `/boot/grub/x86_64-efi/`.
 

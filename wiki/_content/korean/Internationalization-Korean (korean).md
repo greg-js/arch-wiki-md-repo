@@ -28,7 +28,7 @@
 
 ## 한글 입력기 고르기
 
-입력기 프레임워크들은 여러가지 입력기와 입력 라이브러리를 포함하여 사용중인 입력기를 쉽게 전환할 수 있도록 해줍니다. [IBus](/index.php/IBus "IBus"), [uim](/index.php/UIM "UIM"), [fcitx](/index.php/Fcitx "Fcitx"), [scim](/index.php/Scim "Scim") 등의 입력기 프레임워크들이 한국어 입력을 지원합니다. 덧붙여, [nabi](https://aur.archlinux.org/packages/nabi/)는 독립적인 한글 입력기로서, 다른 프레임워크를 사용하지 않습니다. 이 항목에서는 한글 입력기 선택을 돕기 위한 정보를 제공합니다.
+입력기 프레임워크들은 여러가지 입력기와 입력 라이브러리를 포함하여 사용중인 입력기를 쉽게 전환할 수 있도록 해줍니다. [IBus](/index.php/IBus "IBus"), [uim](/index.php/Uim "Uim"), [fcitx](/index.php/Fcitx "Fcitx"), [scim](/index.php/Scim "Scim") 등의 입력기 프레임워크들이 한국어 입력을 지원합니다. 덧붙여, [nabi](https://aur.archlinux.org/packages/nabi/)는 독립적인 한글 입력기로서, 다른 프레임워크를 사용하지 않습니다. 이 항목에서는 한글 입력기 선택을 돕기 위한 정보를 제공합니다.
 
 **참고:** 각 입력기나 입력기 프레임워크에서 나타나는 문제들을 반드시 확인한 후에 입력기를 고르십시오.
 
@@ -40,7 +40,7 @@
 
 	uim
 
-	[uim](/index.php/UIM "UIM")은 여러 언어를 지원하는 크로스 플랫폼 입력기입니다. 아치리눅스 공식 저장소의 [uim](https://www.archlinux.org/packages/?name=uim) 패키지에는 한국어 입력기인 uim-byeoru가 포함되어 있습니다. uim-byeoru는 구글 크롬과 크로미움을 포함한 대부분의 어플리케이션에서 문제 없이 한글 입력을 할 수 있습니다. 하지만 [opera](https://www.archlinux.org/packages/?name=opera) 사용자라면 opera에서 uim-byeoru를 사용하려고 할 때 opera가 충돌하는 현상이 나타날 수 있습니다.
+	[uim](/index.php/Uim "Uim")은 여러 언어를 지원하는 크로스 플랫폼 입력기입니다. 아치리눅스 공식 저장소의 [uim](https://www.archlinux.org/packages/?name=uim) 패키지에는 한국어 입력기인 uim-byeoru가 포함되어 있습니다. uim-byeoru는 구글 크롬과 크로미움을 포함한 대부분의 어플리케이션에서 문제 없이 한글 입력을 할 수 있습니다. 하지만 [opera](https://www.archlinux.org/packages/?name=opera) 사용자라면 opera에서 uim-byeoru를 사용하려고 할 때 opera가 충돌하는 현상이 나타날 수 있습니다.
 
 	scim
 

@@ -7,7 +7,7 @@ Related articles
 
 *xmodmap* is a utility for modifying keymaps and pointer button mappings in [Xorg](/index.php/Xorg "Xorg").
 
-*xmodmap* is not directly related to [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB), as it uses different (pre-XKB) ideas on how *keycodes* are processed within X. Generally, it is only recommended for the simplest tasks. See [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") for advanced layout configuration.
+*xmodmap* is not directly related to [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") (XKB), as it uses different (pre-XKB) ideas on how *keycodes* are processed within X. Generally, it is only recommended for the simplest tasks. See [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") for advanced layout configuration.
 
 **Note:** *xmodmap* settings are reset by *setxkbmap*, which not only alters the alphanumeric keys to the values given in the map, but also resets all other keys to the startup default. [[1]](http://wiki.linuxquestions.org/wiki/Configuring_keyboards)
 
@@ -149,7 +149,7 @@ mod5        ISO_Level3_Shift (0x5c),  ISO_Level3_Shift (0x6c),  Mode_switch (0x8
 
 	The Mode_switch modifier may be mapped by default to a key that is not on your keyboard.
 
-**Note:** The usage of the modifier names `ISO_Level3_Shift` and `Mode_switch` is different between xmodmap and [X Keyboard Extension](/index.php/X_KeyBoard_extension#xmodmap "X KeyBoard extension"). See also [[2]](https://unix.stackexchange.com/questions/55076/what-is-the-mode-switch-modifier-for).
+**Note:** The usage of the modifier names `ISO_Level3_Shift` and `Mode_switch` is different between xmodmap and [X Keyboard Extension](/index.php/X_keyboard_extension#xmodmap "X keyboard extension"). See also [[2]](https://unix.stackexchange.com/questions/55076/what-is-the-mode-switch-modifier-for).
 
 ### Reassigning modifiers to keys on your keyboard
 

@@ -381,7 +381,7 @@
 
 	[http://herrie.info/](http://herrie.info/) || [herrie](https://aur.archlinux.org/packages/herrie/)
 
-*   **[MOC](/index.php/Moc "Moc")** — Консольный аудио проигрыватель Ncurses с поддержкой форматов MP3, OGG и WAV
+*   **[MOC](/index.php/MOC "MOC")** — Консольный аудио проигрыватель Ncurses с поддержкой форматов MP3, OGG и WAV
 
 	[http://moc.daper.net/](http://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
 

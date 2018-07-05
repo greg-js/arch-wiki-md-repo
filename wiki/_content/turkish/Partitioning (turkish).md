@@ -138,7 +138,7 @@ There are no strict rules for partitioning a hard drive, although one may follow
 
 **Note:**
 
-*   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 *   BIOS systems that are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
 
 **Tip:** If using [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes can be used to imitate partitions. See the [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") section.
@@ -169,9 +169,9 @@ The `/boot` directory contains the kernel and ramdisk images as well as the boot
 
 A separate `/boot` partition is needed if installing a software RAID0 (stripe) system.
 
-**Note:** If booting using UEFI [boot loaders](/index.php/Boot_loaders "Boot loaders") that do not have drivers for other file systems it is recommended to mount [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") to `/boot`. See [EFI System Partition#Mount the partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") for more information.
+**Note:** If booting using UEFI [boot loaders](/index.php/Boot_loaders "Boot loaders") that do not have drivers for other file systems it is recommended to mount [EFI system partition](/index.php/EFI_system_partition "EFI system partition") to `/boot`. See [EFI system partition#Mount the partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") for more information.
 
-A suggested size for `/boot` is 200 MiB unless you are using [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") as `/boot`, in which case at least 550 MiB is recommended.
+A suggested size for `/boot` is 200 MiB unless you are using [EFI system partition](/index.php/EFI_system_partition "EFI system partition") as `/boot`, in which case at least 550 MiB is recommended.
 
 #### /home
 
@@ -205,12 +205,12 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 
 ### Example layouts
 
-**Note:** UEFI/GPT does not have a "boot" flag, booting relies on files in [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI System Partition.
+**Note:** UEFI/GPT does not have a "boot" flag, booting relies on files in [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI System Partition.
 
 #### UEFI/GPT example layout
 
 | Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
-| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | 550 MiB |
+| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 550 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |

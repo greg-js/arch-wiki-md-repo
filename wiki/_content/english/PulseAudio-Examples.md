@@ -207,7 +207,7 @@ sample output:
 
 ```
 
-In case your HDMI port is wired to the NVIDIA card, but aplay does not detect an NVIDIA audio card, follow [NVIDIA/Troubleshooting#No_audio_over_HDMI](/index.php/NVIDIA/Troubleshooting#No_audio_over_HDMI "NVIDIA/Troubleshooting").
+In case your HDMI port is wired to the NVIDIA card, but aplay does not detect an NVIDIA audio card, follow [NVIDIA/Troubleshooting#No audio over HDMI](/index.php/NVIDIA/Troubleshooting#No_audio_over_HDMI "NVIDIA/Troubleshooting").
 
 ### Testing for the correct card
 

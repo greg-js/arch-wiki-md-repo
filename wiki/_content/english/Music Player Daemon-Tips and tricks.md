@@ -23,7 +23,10 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
 *   [9 MPRIS2 Support](#MPRIS2_Support)
     *   [9.1 mpDris2](#mpDris2)
     *   [9.2 mpd-mpris](#mpd-mpris)
-*   [10 Adding a separate volume control (ALSA)](#Adding_a_separate_volume_control_.28ALSA.29)
+*   [10 Notifications](#Notifications)
+    *   [10.1 musnify-mpd](#musnify-mpd)
+    *   [10.2 mpd-notification](#mpd-notification)
+*   [11 Adding a separate volume control (ALSA)](#Adding_a_separate_volume_control_.28ALSA.29)
 
 ## Organizing library
 
@@ -402,6 +405,59 @@ Install the [mpd-mpris](https://aur.archlinux.org/packages/mpd-mpris/) package.
 After installation, you can start or enable the `mpd-mpris.service` user service through [systemd](/index.php/Systemd "Systemd").
 
 By default mpd-mpris listens on `localhost:6600` (which is the default host/port of [mpd](/index.php/Mpd "Mpd")). To change this settings copy `/usr/lib/systemd/user/mpd-mpris.service` to `~/.config/systemd/user/` then edit run parameters as needed.
+
+## Notifications
+
+The [mpDris2](https://aur.archlinux.org/packages/mpDris2/) package optionaly support displaying graphical notifications. If you not want the whole [mpris](https://specifications.freedesktop.org/mpris-spec/latest/) support and is looking for a more *lightweight* or *specific* options, here are some options:
+
+### musnify-mpd
+
+[musnify-mpd](https://github.com/felipemarinho97/musnify-mpd) is a simple script written in [python](https://www.archlinux.org/packages/?name=python) that provides notification support for [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") using [libnotify](https://www.archlinux.org/packages/?name=libnotify). It can also display the album covers loaded from *last fm* or load it from the user local music library.
+
+[musnify-mpd](https://aur.archlinux.org/packages/musnify-mpd/) is available from [AUR](/index.php/AUR "AUR").
+
+After installation you may want to configure your mpd **host** and **port**, to do this copy the ".example" file into `~/.config/musnify-mpd`
+
+```
+$ mkdir ~/.config/musnify-mpd 
+$ cp /usr/share/doc/musnify-mpd/musnify-mpdconfig.example ~/.config/musnify-mpd/musnify-mpd.config
+
+```
+
+Example configuration:
+
+ `~/.config/musnify-mpd/musnify-mpd.config` 
+```
+[mpd]
+host = localhost
+port = 6600
+
+# This is where musnify-mpd will look for searching the local album covers.
+musiclibrary = ~/Music
+#
+
+[apiKey]
+# If you want to fetch the album covers from LastFm,
+# enable this option and provide a apiKey.
+# You can get your apiKey here: [https://www.last.fm/api/account/create](https://www.last.fm/api/account/create)
+#
+# lastfm = YOUR_LASTFM_API_KEY
+```
+
+To enable artworks from last.fm, you will need to edit `~/.config/musnify-mpd` and provide a apiKey. You can create your apiKey [here](https://www.last.fm/api/account/create)
+
+### mpd-notification
+
+Notify about tracks played by [mpd](https://www.archlinux.org/packages/?name=mpd). This runs in background and produces notifications whenever mpd produces an event, that is new track is played or playback is paused or stopped. This also supports local or `.mp3` album artworks.
+
+[mpd-notification](https://aur.archlinux.org/packages/mpd-notification/) is available from [AUR](/index.php/AUR "AUR").
+
+After installation, just run `mpd-notification` to run it once. A [systemd](/index.php/Systemd "Systemd") user service can be enabled with
+
+```
+$ systemctl --user enable mpd-notification
+
+```
 
 ## Adding a separate volume control (ALSA)
 

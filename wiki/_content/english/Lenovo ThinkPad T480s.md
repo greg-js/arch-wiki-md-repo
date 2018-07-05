@@ -8,7 +8,7 @@
 | Fingerprint Sensor | No |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") |
-| Smartcard Reader |
+| Smartcard Reader | Yes |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T480s laptop. Everything seems to work pretty much out the box.
 

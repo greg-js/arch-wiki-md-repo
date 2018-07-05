@@ -240,7 +240,7 @@ File systems are usually created on a [partition](/index.php/Partition "Partitio
 **Warning:**
 
 *   After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
-*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a [FAT32](/index.php/FAT32 "FAT32") (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Boot_loader "Boot loader").
+*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") must contain a [FAT32](/index.php/FAT32 "FAT32") (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Boot_loader "Boot loader").
 
 Before continuing, [identify the device](/index.php/Lsblk "Lsblk") where the file system will be created and whether or not it is mounted. For example:
 

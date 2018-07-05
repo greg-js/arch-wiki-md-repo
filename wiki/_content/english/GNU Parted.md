@@ -163,7 +163,7 @@ The following command will be used to flag the partition that contains the `/boo
 
 #### UEFI/GPT examples
 
-In every instance, a special bootable [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is required.
+In every instance, a special bootable [EFI system partition](/index.php/EFI_system_partition "EFI system partition") is required.
 
 If creating a new EFI System Partition, use the following commands (the recommended size is 550 MiB):
 

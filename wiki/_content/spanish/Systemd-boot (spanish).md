@@ -40,7 +40,7 @@ Es fácil de configurar, pero solo puede iniciar ejecutables EFI, tales como [EF
 
 1.  Asegúrese de que ha arrancado en modo UEFI.
 2.  Verifique que [las variables EFI son accesibles](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Monte la [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) correctamente. En este artículo se utiliza `*esp*` para indicar su punto de montaje.
+3.  Monte la [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) correctamente. En este artículo se utiliza `*esp*` para indicar su punto de montaje.
     **Nota:** *systemd-boot* no puede cargar archivos binarios de EFI desde otras particiones. Por ello se recomienda montar la ESP en `/boot`. Vea [#Actualizar](#Actualizar) para obtener más información y trabajar sobre ello, en el caso de que desee separar `/boot` de ESP.
 
 4.  Si la partición ESP **no** utiliza la partición /boot deberá copiar el kernel e initramfs a aquella en la que esté la ESP.
@@ -262,7 +262,7 @@ Si la orden `bootctl install` cfalla, puede crear una entrada de arranque EFI ma
 
 ```
 
-Donde `/dev/sdXY` es la [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+Donde `/dev/sdXY` es la [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 ### El menú no aparece después de actualizar Windows
 

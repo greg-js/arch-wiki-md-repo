@@ -216,7 +216,7 @@ chmod +x /etc/netctl/interfaces/*interface*
 
 ### NetworkManager
 
-参见 [NetworkManager#Configuring MAC Address Randomization](/index.php/NetworkManager#Configuring_MAC_Address_Randomization "NetworkManager").
+参见 [NetworkManager#Configuring MAC address randomization](/index.php/NetworkManager#Configuring_MAC_address_randomization "NetworkManager").
 
 ## 故障排除
 

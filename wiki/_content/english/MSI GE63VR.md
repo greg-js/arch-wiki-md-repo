@@ -1,4 +1,4 @@
-Not to be confused with [MSI GS63VR](https://wiki.archlinux.org/index.php/MSI_GS63VR)
+Not to be confused with [MSI GS63VR](/index.php/MSI_GS63VR "MSI GS63VR")
 
 ## Contents
 
@@ -37,7 +37,7 @@ Not tested : plugging an external microphone, audio through HDMI.
  |
 | WiFi | Yes |
 | Bluetooth | Yes |
-| HDMI display | Partially | Only works if the dedicated GPU is powered on. You either have to run the whole X session on the NVidia card with proprietary drivers, or use [Reverse PRIME](https://wiki.archlinux.org/index.php/PRIME#Reverse_PRIME) with the **nouveau** driver, or use [intel-virtual-output](https://wiki.archlinux.org/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip). The last two solutions have not been tested. |
+| HDMI display | Partially | Only works if the dedicated GPU is powered on. You either have to run the whole X session on the NVidia card with proprietary drivers, or use [Reverse PRIME](/index.php/PRIME#Reverse_PRIME "PRIME") with the **nouveau** driver, or use [intel-virtual-output](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee"). The last two solutions have not been tested. |
 | DisplayPort | Not tested |
 | USB-C | Not tested |
 | Dedicated GPU | Yes |
@@ -84,9 +84,9 @@ volume = merge
 
 The system will hang if you try to start the X server while the NVidia GPU is turned off via **bbswitch**. To fix it, add `acpi_osi=! acpi_osi="Windows 2009"` to your kernel parameters. Beware of the quotes `"` : for instance, if you use [rEFInd](https://en.wikipedia.org/wiki/Arch_Linux "wikipedia:Arch Linux") as you bootloader, you will have to escape the quotes as `""` since rEFInd already uses quotes in its configuration file.
 
-To run the whole X session on the NVidia card, follow the guide in [https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Using_nvidia](https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Using_nvidia).
+To run the whole X session on the NVidia card, follow the guide in [NVIDIA Optimus#Using nvidia](/index.php/NVIDIA_Optimus#Using_nvidia "NVIDIA Optimus").
 
-To enable PRIME synchronisation for the built-in monitor, [enable DRM kernel mode setting for the NVidia driver](https://wiki.archlinux.org/index.php/NVIDIA#DRM_kernel_mode_setting).
+To enable PRIME synchronisation for the built-in monitor, [enable DRM kernel mode setting for the NVidia driver](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA").
 
 ## Miscellaneous
 

@@ -73,7 +73,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 *   Se requieren las siguientes *particiones* (se muestran con un sufijo numérico) para el dispositivo elegido:
 
 *   Una partición para el directorio raíz`/`.
-*   Si [UEFI](/index.php/UEFI "UEFI") está activado, una [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   Si [UEFI](/index.php/UEFI "UEFI") está activado, una [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 *   El [espacio de intercambio (swap)](/index.php/Swap_space "Swap space") puede establecerse en una partición separada o en un [archivo swap](/index.php/Swap#Swap_file "Swap").
 

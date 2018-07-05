@@ -641,7 +641,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 
 Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") and [Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") first to select your desired settings.
 
-[Prepare the boot partition](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_boot_partition_5 "Dm-crypt/Encrypting an entire system") but don't `mount` any partition yet and [Format the EFI System Partition](/index.php/EFI_System_Partition#Format_the_partition "EFI System Partition").
+[Prepare the boot partition](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_boot_partition_5 "Dm-crypt/Encrypting an entire system") but don't `mount` any partition yet and [Format the EFI System Partition](/index.php/EFI_system_partition#Format_the_partition "EFI system partition").
 
 ```
 # mount /dev/mapper/cryptboot /mnt

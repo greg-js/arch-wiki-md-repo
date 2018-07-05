@@ -77,7 +77,7 @@ Servis durumunu kontrol etmek için, `timedatectl status` komutunu kullanın.
 
 ### Diskleri bölümlendir
 
-Diskler, canlı bir sistem tarafından tanındığında, `/dev/sda` ya da `/dev/nvme0n1` gibi [blok cihazlara](https://en.wikipedia.org/wiki/Device_file#Naming_conventions) atanmış olurlar. Bu cihazları görüntülemek için, [lsblk](/index.php/Lsblk "Lsblk") komutunu ya da *fdisk* komutunu kullanın.
+Diskler, canlı bir sistem tarafından tanındığında, `/dev/sda` ya da `/dev/nvme0n1` gibi [blok cihazlara](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "wikipedia:Device file") atanmış olurlar. Bu cihazları görüntülemek için, [lsblk](/index.php/Lsblk "Lsblk") komutunu ya da *fdisk* komutunu kullanın.
 
 ```
 # fdisk -l
@@ -89,7 +89,7 @@ Diskler, canlı bir sistem tarafından tanındığında, `/dev/sda` ya da `/dev/
 Aşağıdaki *Bölümler*, seçilen cihazlar için **gereklidir**:
 
 *   Bir bölüm root dizini için. `/`.
-*   [UEFI](/index.php/UEFI "UEFI") aktif ise, bir [EFI Sistem Bölümü](/index.php/EFI_System_Partition "EFI System Partition")(EFI System Partition).
+*   [UEFI](/index.php/UEFI "UEFI") aktif ise, bir [EFI Sistem Bölümü](/index.php/EFI_system_partition "EFI system partition")(EFI System Partition).
 
 **Note:** [Swap alanı](/index.php/Swap_space "Swap space"), ayrı bölümlere veya bir [swap dosyasına](/index.php/Swap_file "Swap file") kurulabilir.
 

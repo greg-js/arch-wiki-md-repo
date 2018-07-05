@@ -377,7 +377,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Lariza](/index.php/Lariza "Lariza")** — A simple, experimental web browser using GTK+ 3, GLib and WebKit2GTK+.
 
-	[https://www.uninformativ.de/projects/lariza/](https://www.uninformativ.de/projects/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
+	[https://www.uninformativ.de/git/lariza/](https://www.uninformativ.de/git/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
 
@@ -387,15 +387,15 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
 
-*   **Poseidon** — Fast, minimal and lightweight browser.
+*   **Poseidon** — Fast, minimal and lightweight browser, written in Python.
 
 	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon](https://aur.archlinux.org/packages/poseidon/)
 
-*   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](https://suckless.org/philosophy) (basically, the browser itself is a single C source file).
+*   **[surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](https://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
 	[https://surf.suckless.org/](https://surf.suckless.org/) || [surf](https://www.archlinux.org/packages/?name=surf)
 
-*   **Surfer** — Simple keyboard based web browser.
+*   **Surfer** — Simple keyboard based web browser, written in C.
 
 	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer](https://aur.archlinux.org/packages/surfer/)
 

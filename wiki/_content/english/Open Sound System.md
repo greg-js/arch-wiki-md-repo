@@ -274,7 +274,7 @@ By default, [Gajim](http://gajim.org/) uses `aplay -q` to play a sound. For OSS 
 
 ### MOC
 
-To use [MOC](/index.php/Moc "Moc") with OSS v4.1 you must change `OSSMixerDevice` to `/dev/ossmix` in your configuration file (located in `~/.moc`). For issues with the interface try changing the `OSSMixerChannel` by pressing `w` in `mocp` (to change to the sofware mixer).
+To use [MOC](/index.php/MOC "MOC") with OSS v4.1 you must change `OSSMixerDevice` to `/dev/ossmix` in your configuration file (located in `~/.moc`). For issues with the interface try changing the `OSSMixerChannel` by pressing `w` in `mocp` (to change to the sofware mixer).
 
 ### MPD
 

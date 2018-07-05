@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Default_Applications](/index.php/Default_Applications "Default Applications") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Default_Applications&diff=0&oldid=444827)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Default applications](/index.php/Default_applications "Default applications") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=Default+applications&diff=0&oldid=525282)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -6,419 +6,132 @@
 *   [桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")
 *   [窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")
 
-Setting default applications per file type involves detection of the file type as the first step. Since the application launcher cannot fully understand all file types, the detection is based on reading only a small part of the file. There are two common ways to determine the file type:
+Programs sometimes need to open a file or a [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier") in the user's preferred application. To open a file in the user's preferred application the filetype needs to be detected (usually using filename extensions or [magic numbers](https://en.wikipedia.org/wiki/List_of_file_signatures "wikipedia:List of file signatures") mapped to [MIME types](https://en.wikipedia.org/wiki/Media_type "wikipedia:Media type")) and there needs to be an application associated with the filetype.
 
-*   using the file name extension, for example *.html* or *.jpeg*
-*   using the so-called "magic bytes" at the start of the file
+*   Some programs (particularly command-line programs) detect default programs using [environment variables](/index.php/Environment_variables "Environment variables"), see [Environment variables#Default programs](/index.php/Environment_variables#Default_programs "Environment variables").
+*   Some programs (particularly heirloom UNIX programs) use [mime.types](https://en.wikipedia.org/wiki/Media_type#mime.types "wikipedia:Media type") for MIME type detection and [mailcap](https://en.wikipedia.org/wiki/Media_type#Mailcap "wikipedia:Media type") for application association.
+*   Many programs outsource the task completely to a [#Resource opener](#Resource_openers).
 
-The first method is very simple and fast, but inaccurate if the file is not named "correctly". The second is more accurate, but slower.
+Freedesktop.org has standardized filetype detection with the [Shared MIME database](/index.php/Shared_MIME_database "Shared MIME database") specification and application association with the [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") specification.
 
-Since files are not required to have an extension and multiple file name extensions can be used for the same file type, [MIME types](https://en.wikipedia.org/wiki/MIME_type "w:MIME type") are commonly used instead to uniquely represent the type of a file. In Arch, tools from the [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) package are used to maintain the MIME type database, which is used by other packages to register new MIME types. Each package can also use the [Desktop entries](/index.php/Desktop_entries "Desktop entries") to provide information about the MIME types that can be handled by the packaged software. There is frequently more than one application able to handle data of a certain MIME type, so users and even some packages (e.g. [desktop environments](/index.php/Desktop_environments "Desktop environments")) assemble lists of default applications for each MIME type.
-
-Note that while Arch Linux does not provide custom presets for default applications, the [desktop environment](/index.php/Desktop_environment "Desktop environment") you install may do so. Some desktop environments also provide a GUI or a file-manager which enables to interactively configure default applications for certain file extensions. If this suffices for your system usage, you may not need to configure anything further.
-
-The scope of this article are the freedesktop [Association between MIME types and applications](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) specification and related parts of the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176) specification.
+Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
 
 ## Contents
 
-*   [1 MIME 类型与桌面配置项](#MIME_.E7.B1.BB.E5.9E.8B.E4.B8.8E.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
-*   [2 设置默认应用程序](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [2.1 默认 mimeapps.list 文件](#.E9.BB.98.E8.AE.A4_mimeapps.list_.E6.96.87.E4.BB.B6)
-    *   [2.2 mimeapps.list 文件的配置内容](#mimeapps.list_.E6.96.87.E4.BB.B6.E7.9A.84.E9.85.8D.E7.BD.AE.E5.86.85.E5.AE.B9)
-    *   [2.3 共享的 MIME 信息数据库](#.E5.85.B1.E4.BA.AB.E7.9A.84_MIME_.E4.BF.A1.E6.81.AF.E6.95.B0.E6.8D.AE.E5.BA.93)
-        *   [2.3.1 范例：.xml 与关联的桌面配置项](#.E8.8C.83.E4.BE.8B.EF.BC.9A.xml_.E4.B8.8E.E5.85.B3.E8.81.94.E7.9A.84.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
-*   [3 MIME 类型的管理工具](#MIME_.E7.B1.BB.E5.9E.8B.E7.9A.84.E7.AE.A1.E7.90.86.E5.B7.A5.E5.85.B7)
-    *   [3.1 用例](#.E7.94.A8.E4.BE.8B)
-        *   [3.1.1 侦测 MIME 类型](#.E4.BE.A6.E6.B5.8B_MIME_.E7.B1.BB.E5.9E.8B)
-        *   [3.1.2 Set use of MIME-type by default](#Set_use_of_MIME-type_by_default)
-    *   [3.2 应用程序加载器](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.8A.A0.E8.BD.BD.E5.99.A8)
-        *   [3.2.1 xdg-open](#xdg-open)
-        *   [3.2.2 mimeopen](#mimeopen)
-        *   [3.2.3 mailcap](#mailcap)
-    *   [3.3 扩展练习实例](#.E6.89.A9.E5.B1.95.E7.BB.83.E4.B9.A0.E5.AE.9E.E4.BE.8B)
-        *   [3.3.1 xdg-open](#xdg-open_2)
-            *   [3.3.1.1 设置默认浏览器](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E6.B5.8F.E8.A7.88.E5.99.A8)
-*   [4 排错](#.E6.8E.92.E9.94.99)
-    *   [4.1 桌面配置项文件中影响应用程序加载的变量](#.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9.E6.96.87.E4.BB.B6.E4.B8.AD.E5.BD.B1.E5.93.8D.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.8A.A0.E8.BD.BD.E7.9A.84.E5.8F.98.E9.87.8F)
+*   [1 Resource openers](#Resource_openers)
+    *   [1.1 xdg-open](#xdg-open)
+    *   [1.2 perl-file-mimeinfo](#perl-file-mimeinfo)
+    *   [1.3 mimeo](#mimeo)
+    *   [1.4 whippet](#whippet)
+    *   [1.5 Minimalist replacements](#Minimalist_replacements)
+        *   [1.5.1 run-mailcap](#run-mailcap)
 
-## MIME 类型与桌面配置项
+## Resource openers
 
-MIME-types are specified by two slash (`/`) parts: *Type/Extension*, for example `video/x-ms-wmv`. The second part of the MIME-type is expanding faster, for example with new applications or data encoding standards.
+*   **XDG MIME Apps**: implements the [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") specification
+*   **RegEx rules**: allows MIME types to be associated with applications using regular expressions
+*   **URI support**: allows arbitrary URI schemes to be associated with applications
 
-The default applications to open a MIME-type are usually stored in [mimeapps.list](#Default_mimeapps.list_files) files, but some programs store MIME-type associations in their own custom configuration files. If a MIME-type association is not found in the default configuration, the program should look for the first match of the MIME-type in *.desktop* files.
+| Name | Package | XDG MIME Apps | RegEx rules | URI support |
+| [xdg-open](/index.php/Xdg-open "Xdg-open") | [xdg-utils](/index.php/Xdg-utils "Xdg-utils") | Yes | No | Yes |
+| [mimeopen(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mimeopen.1p) | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | Yes | No | No |
+| mimeo | [mimeo](https://aur.archlinux.org/packages/mimeo/) | Yes | Yes | Yes |
+| whippet | [whippet](https://aur.archlinux.org/packages/whippet/) | Yes | No | Yes |
+| linopen | [linopen](https://aur.archlinux.org/packages/linopen/) | No | Yes | Yes |
+| mimi | [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | No | No | partly |
+| busking | [busking-git](https://aur.archlinux.org/packages/busking-git/) | No | Yes | Yes |
+| sx-open | [sx-open](https://aur.archlinux.org/packages/sx-open/) | No | Yes | Yes |
+| [rifle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rifle.1) | [ranger](/index.php/Ranger "Ranger") | No | Yes | No |
 
-Description of some MIME-type first part and examples of second parts:
+### xdg-open
 
-| Type of MIME (1st part) | Description | Examples of extension (2nd part) |
-| application | Files with binary content such, e.g.: documents,archives,... | epub+zip, ereader, excel, gbr, gzip |
-| audio | Audio files that that can be played by a music player or audio editor | flac, m4a, midi |
-| chemical | Chemical information, molecular and other chemical data | x-cif, x-cml, x-daylight-smiles, x-gamess-input, x-gamess-output, x-gaussian-checkpoint, x-gaussian-cube, x-gaussian-log, x-mopac-out, x-pdb, x-qchem-output, x-xyz |
-| image | Image files that can be opened by image editor or image viewer | bmp, crw, g3fax, gif, jp2, jpeg, jpeg2000, jpg |
-| inode | Can be opened by a file manager | blockdevice, chardevice, directory, fifo, mount-point, socket, symlink |
-| message | Message protocols | delivery-status, disposition-notification, external-body, news, partial, rfc822, x-gnu-rmail |
-| misc | Streaming meta data | ultravox |
-| text | Text documents that can be viewed (e.g. with command *less*) or opened with a text editor | html, javascript, mathml, mml, plain |
-| video | Video files that can be played or edited with a video editor | flv, mp2t, mp4 |
-| x-content | Content on disks such as e.g. Audio,Video,Image or blank disk | audio-cdda, audio-player, blank-bd, blank-cd, blank-dvd, blank-hddvd, image-picturecd, video-dvd, video-svcd, video-vcd |
-| x-scheme-handler | Internet protocol | ftp, geo, ghelp, help, http, https, hwplay, icy, icyx, info, irc, magnet, mailto, man, mms, mmsh, net, pnm, rtmp, rtp, rtsp, skype, uvox, vnc, xmpp |
-| x-epoc | SISX package | x-sisx-app |
-| multipart | Multi-part mime messages | alternative, appledouble, digest, encrypted, mixed, related, report, signed, x-mixed-replace |
-| model | such as 3D model | x-kpovmodeler, vrml, x-modelica |
+[xdg-open](/index.php/Xdg-open "Xdg-open") (part of [xdg-utils](/index.php/Xdg-utils "Xdg-utils")) implements [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") and is used by many programs.
 
-For the description of MIME-types you can search in XDG database:
+Because of the complexity of the [xdg-utils](/index.php/Xdg-utils "Xdg-utils") version of [xdg-open](/index.php/Xdg-open "Xdg-open"), it can be difficult to debug when the wrong default application is being opened. Because of this, there are many alternatives that attempt to improve upon it. Several of these alternatives replace the `/usr/bin/xdg-open` executable, thus changing the default application behavior of most applications. Others simply provide an alternative method of choosing default applications.
+
+### perl-file-mimeinfo
+
+[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) provides the tools [mimeopen(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mimeopen.1p) and [mimetype(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mimetype.1p). These have a slightly nicer interface than their [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) equivalents:
 
 ```
-$ grep -e 'mime-type type=' -e '<comment>'  /usr/share/mime/packages/freedesktop.org.xml
+# determine a file's MIME type
+$ mimetype photo.jpeg
+photo.jpeg: image/jpeg
 
-```
+# choose the default application for this file
+$ mimeopen -d photo.jpeg
+Please choose an application
 
-**Tip:** To see all MIME extensions in the system's *.desktop* files that belongs to a MIME-type you can use [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/), for example `lsdesktopf --gm -gx video`, to search available in *.xml* configuration/database files use `lsdesktopf --gdx -gx video`.
+    1) Feh (feh)
+    2) GNU Image Manipulation Program (gimp)
+    3) Pinta (pinta)
 
-If you ever require to create a custom association of a new file extension to a MIME-type, see the the short [#Example: .xml and related .desktop configuration](#Example:_.xml_and_related_.desktop_configuration) and the [Association between MIME types and applications](http://standards.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) standard.
+use application #
 
-## 设置默认应用程序
-
-In order to set a default application, you need to
-
-*   decide which of the [#Default mimeapps.list files](#Default_mimeapps.list_files) is applicable for your case and,
-*   change the [#Configuration of the mimeapps.list file](#Configuration_of_the_mimeapps.list_file) accordingly.
-
-Any manual configuration of the [#Shared MIME-info database](#Shared_MIME-info_database) is only required, if the application is not setup correctly or desktop does not comply to the standard yet.
-
-### 默认 mimeapps.list 文件
-
-The `mimeapps.list` file stores the configuration for the default application to open a MIME-type. There are different locations for it:
-
-*   system-wide,
-*   per-user,
-*   custom locations used by some programs.
-
-The `*$desktop*` in the following list denotes the name of the related desktop environment or window manager. The search order of paths is:
-
-| Path | Usage |
-| `$HOME/.config/*$desktop*-mimeapps.list` | user overrides, desktop-specific |
-| `$HOME/.config/mimeapps.list` | user overrides |
-| `/etc/xdg/*$desktop*-mimeapps.list` | sysadmin and vendor overrides, desktop-specific |
-| `/etc/xdg/mimeapps.list` | sysadmin and vendor overrides |
-| `$HOME/.local/share/applications/*$desktop*-mimeapps.list` | for compatibility but now deprecated, desktop-specific |
-| `$HOME/.local/share/applications/mimeapps.list` | for compatibility but now deprecated |
-| `/usr/local/share/applications/*$desktop*-mimeapps.list`
-`/usr/share/applications/$desktop-mimeapps.list` | distribution-provided defaults, desktop-specific |
-| `/usr/local/share/applications/mimeapps.list`
-`/usr/share/applications/mimeapps.list` | distribution-provided defaults |
-
-### mimeapps.list 文件的配置内容
-
-The file contains two main sections for default and additional alternatives to open files of a MIME-type. The second and the third section (`[Removed Associations]`) are optional.
-
-If the application installed a correct [desktop entry](/index.php/Desktop_entry "Desktop entry") file (examples used below `default1.desktop`, `foo1.desktop`, etc.), it contains the registered MIME-types it can handle. To **set a default application**, all you need to do is adjust the associations in the respective `mimeapps.list` (see also the freedesktop [specification](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html#associations)).
-
-For example, the following sets `default1.desktop` to open `mimetype1`:
-
-```
-[Default Applications]
-mimetype1=default1.desktop
+# open a file with its default application
+$ mimeopen -n photo.jpeg
 
 ```
 
-Defined additional associations of applications to MIME-types (these might appear in file manager *Open with* GUI, for example):
+Most importantly, [xdg-utils](/index.php/Xdg-utils "Xdg-utils") programs will actually call `mimetype` instead of `file` for MIME type detection, if it does not detect your [desktop environment](/index.php/Desktop_environment "Desktop environment"). This is important because `file` does not follow the XDG standard.
+
+**Note:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 does not *entirely* follow the XDG standard. For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
+
+### mimeo
+
+[mimeo](https://aur.archlinux.org/packages/mimeo/) provides the tool `mimeo`, which unifies the functionality of `xdg-open` and `xdg-mime`.
 
 ```
-[Added Associations]
-mimetype1=foo1.desktop;foo2.desktop;foo3.desktop;
-mimetype2=foo4.desktop;
+# determine a file's MIME type
+$ mimeo -m photo.jpeg
+photo.jpeg
+  image/jpeg
 
-```
+# choose the default application for this MIME type
+$ mimeo --add image/jpeg feh.desktop
 
-Removed associations of applications with MIME-types (blacklisting a MIME-type association of an application in its *.desktop* file):
-
-```
-[Removed Associations]
-mimetype1=foo5.desktop
-
-```
-
-Multiple *.desktop* files for a single MIME-type must be semicolon-separated. Not supported entries are ignored in `mimeapps.list`. The DE/WM then searches for the first match to the needed MIME-type them in the default path for *.desktop* files.
-
-**提示：** To get a quick overview of how many and which *.desktop* files can be associated with a certain MIME-type, you can use the [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) utility, e.g. `lsdesktopf --gen-mimeapps`.
-
-**注意:** Arch Linux itself does not provide system-wide presets for associations, but other distributions and specific desktop environments may do so via packaged `mimeapps.list` files, or the older and deprecated `defaults.list` files.
-
-Your choice of desktop environment, or none, will affect how your default applications are associated. Further, note that some packages use additional work-around presets, for example Mozilla's packages install a `/etc/mime.types` file.
-
-### 共享的 MIME 信息数据库
-
-In background to the `mimeapps.list` files, the system holds a database of MIME-type information registered via the installed applications' *.desktop* files, the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). It is created automatically as soon as an application depending on it is installed, via the following [pacman#Hooks](/index.php/Pacman#Hooks "Pacman"):
-
-*   `/usr/share/libalpm/hooks/update-mime-database.hook` from [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info)
-
-	updates the MIME-info database in `/usr/share/mime`, in particular also the *.xml* specification in `/usr/share/mime/packages/freedesktop.org.xml` for the MIME-types standards
-
-*   `/usr/share/libalpm/hooks/update-desktop-database.hook` from [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)
-
-	updates the `mimeinfo.cache` located (per default) in `/usr/share/applications`
-
-These files keep track of which MIME-types are associated with which *.desktop* files overall. When an application is installed, updated or removed, the pacman hooks keep the database updated accordingly.
-
-**警告:** The database files are not meant to be edited directly.
-
-Application specific configuration is stored in *.xml* files and further files of the database (see [.xml source files](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176)) are stored in *.keys* and *.mime* files that are located in `/usr/share/mime-info/`.
-
-Global directories for the *.xml* files are:
-
-```
-/usr/share/mimelnk/application/
-/usr/share/mime/packages/ 
+# open a file with its default application
+$ mimeo photo.jpeg
 
 ```
 
-**Warning:** Above should not be modified, for user-specific configuration see below.
-
-Any user-specific *.xml* configuration may be stored in:
+However a big difference with *xdg-utils* is that mimeo also supports custom "association files" that allow for more complex associations. For example, passing specific command line arguments based on a regular expression match:
 
 ```
-~/.local/share/mime/packages/
-
-```
-
-#### 范例：.xml 与关联的桌面配置项
-
-The following is a short example to *create* files to associate an application with a MIME-type. It only needs to be followed, if the application has **not** setup and registered its configuration sufficiently.
-
-User-specific paths are used to override system defaults, while keeping the integrity of the rest of the system-wide configuration.
-
-Create and edit `~/.local/share/mime/packages/application-x-foobar.xml`:
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
-    **<mime-type type="application/x-foobar">**
-        <comment>foo file</comment>
-        <icon name="application-x-foobar"/>
-        <glob-deleteall/>
-        **<glob pattern="*.foo"/>**
-    </mime-type>
-</mime-info>
-```
-
-**提示：** To see all file name extensions in *.xml* configuration or database files, that available in *glob pattern*, with their description in *comment* use [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/): `lsdesktopf --gdx -gfx`.
-
-Create a related [desktop entry](/index.php/Desktop_entry "Desktop entry") file:
-
- `~/.local/share/applications/foobar.desktop` 
-```
-[Desktop Entry]
-Name=Foobar
-Exec=/usr/bin/foobar
-**MimeType=application/x-foobar**
-Icon=foobar
-Terminal=false
-Type=Application
-Categories=AudioVideo;Player;Video;
-Comment=
-```
-
-Now update the application and mime database with:
-
-```
-$ update-desktop-database ~/.local/share/applications
-$ update-mime-database    ~/.local/share/mime
+# open youtube links in VLC without opening a new instance
+vlc --one-instance --playlist-enqueue %U
+  ^https?://(www.)?youtube.com/watch\?.*v=
 
 ```
 
-Programs that use MIME-types, such as file managers, should now open `*.foo` files with foobar (you may need to restart your file manager to see the change.)
+[xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) patches *xdg-utils* so that `xdg-open` falls back to mimeo if no desktop environment is detected.
 
-See also [Environment variables#Examples](/index.php/Environment_variables#Examples "Environment variables") about global variables that can be used in start-up scripts to set default applications for specific actions.
+### whippet
 
-## MIME 类型的管理工具
+[whippet](https://aur.archlinux.org/packages/whippet/) provides the tool `whippet`, which is similar to `xdg-open`. It has X11 integration by using [libnotify](https://www.archlinux.org/packages/?name=libnotify) to display errors and [dmenu](https://www.archlinux.org/packages/?name=dmenu) to display choices between applications to open.
 
-Many of the file managers has options to set up and configure associations of mime types with programs.
-
-It can be done by using:
-
-*   Preferences for selected file
-*   File manager configuration menu
-*   External program for a specific file manager
-
-Other utilities to manage MIME-types are:
-
-| Name/Package | Method | Based on | xdg-utils replacement | Configuration file |
-| [mime-editor](https://aur.archlinux.org/packages/mime-editor/) | MIME-type | Utility for [ROX](http://rox.sourceforge.net/desktop/home.html) applications |
-| [busking-git](https://aur.archlinux.org/packages/busking-git/) | regex | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | yes | custom |
-| [linopen](https://aur.archlinux.org/packages/linopen/) | [file](https://www.archlinux.org/packages/?name=file) | custom |
-| [mimeo](https://aur.archlinux.org/packages/mimeo/) | MIME-type
-regex | [file](https://www.archlinux.org/packages/?name=file) | [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) | `mimeapps.list`
-`defaults.list`
-custom is optional |
-| [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | [file](https://www.archlinux.org/packages/?name=file) | yes | custom |
-| `rifle`
-part of [ranger](https://www.archlinux.org/packages/?name=ranger) | MIME-type
-name
-regex | [file](https://www.archlinux.org/packages/?name=file) | custom |
-| [sx-open](https://aur.archlinux.org/packages/sx-open/) | regex | [file](https://www.archlinux.org/packages/?name=file)
-bash regex | yes | custom |
-| [whippet](https://aur.archlinux.org/packages/whippet/) | MIME-type
-name
-regex | SQLite database
-[file](https://www.archlinux.org/packages/?name=file)
-[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | xdg-open | custom SQLite database
-`mimeapps.list` |
-| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | [file](https://www.archlinux.org/packages/?name=file)
-[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) |
-
-### 用例
-
-Here is a short description about how to use command line tools to show MIME-type of a file or set preferred program as default to open MIME-type.
-
-#### 侦测 MIME 类型
-
-Tools detecting MIME-type by reading meta-data from header of the file or detecting by magic number that is in two bytes identifier in the begin of the file. See [File header](https://en.wikipedia.org/wiki/File_format#File_header "wikipedia:File format").
-
-Many programs are using command *file* to detect correct MIME-type. For detection it uses compiled database that is stored in the `/usr/share/misc/magic/` directory. It has many options to determinate correct MIME-type and for showing output.
-
-In Linux it is two standards to detect MIME-type that can affect which program will start and open the file, e.g. extension is associated with one program but content is associated with another MIME-type. The simplest way to see what is your system prioritizes is by renaming file extension and check again with tools that can use custom [*.xml](#Associate_file_extensions_with_applications_MIME-type) configuration files.
-
-Here is examples of utility *xdg-mime* that first checking association of extension in [*.xml](#Associate_file_extensions_with_applications_MIME-type) configuration files.
-
-| Without extension | With extension |
-| xdg-mime query filetype *foo-file* | xdg-mime query filetype *foo-file*.*jpg* |
-| application/vnd.oasis.opendocument.text | image/jpeg |
-
-Comparison functionality of the tools
-
-Here is shown options only for simple or multiple checks of a file, for more options read their own documentation.
-
-| Tool | Option | Detection order | Functionality | Type | Interface |
-| file | *(has many)* | Magic(Byte/Pattern) | Show only | binary | terminal |
-| xdg-mime | query filetype | *.xml -> Magic | Show / Set | script | terminal |
-| mimetype | -i *(*.xml)* -M *(Magic)* | *.xml -> Magic | Show only | script | terminal |
-| mimeo | -m | *.xml -> Magic | Show / Set / Launch | script | terminal |
-
-#### Set use of MIME-type by default
-
-Comparison functionality of the tools
-
-Here is shown options only for single file associations, for more options read their own documentation.
-
-| Tool | Option | Functionality | Type | Interface |
-| xdg-mime | default **.desktop* Type1/Extension1 Type2/Extension2 | Show / Set | script | terminal |
-| mimeo | --prefer 'regex:^Type/(Extension**1** |Extension?**2**)$' **.desktop* | Show / Set / Launch | script | terminal |
-| mimeopen | --ask-default *(interactive)* | Set / Launch | script | terminal |
-
-### 应用程序加载器
-
-#### xdg-open
-
-*xdg-open* (from the [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) package) uses [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) as a fallback ("generic") method if no [desktop environment](/index.php/Desktop_environment "Desktop environment") is detected. It is a desktop-independent tool. Many applications invoke the `xdg-open` command internally. Inside a [desktop environment](/index.php/Desktop_environment "Desktop environment") it passes the arguments to desktop supported environment's file-opener applications (e.g. *gvfs-open*, *kde-open*, or *exo-open*). When no desktop environment is detected the *xdg-open* will use its own configuration files.
-
-#### mimeopen
-
-*mimeopen* (from the [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) package) can launch applications from command line. It can use custom database and prompt user to chose default application from a list of detected relevant and offers to chose own alternative.
-
-Example of the prompt:
-
- `$ mimeopen -d /path/to/foo-file` 
 ```
- Please choose a default application for files of type *Type*/*Extension*
-        1) notepad  (wine-extension-txt)
-        2) Leafpad  (leafpad)
-        3) OpenOffice.org Writer  (writer)
-        4) gVim  (gvim)
-        5) Other...
+# open a file with its default application
+$ whippet -M photo.jpeg
+
+# choose from all possible applications for opening a file (without setting a default)
+$ whippet -m photo.jpeg
 
 ```
 
-Your answer becomes the default handler for that type of file. Mimeopen is installed as `/usr/bin/vendor_perl/mimeopen`.
+In addition to implementing [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications"), *whippet* can also use a SQlite database of weighted application/MIME type/regex associations to determine which app to use.
 
-If you run *xdg-open* without a desktop environment, you should also install [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), or [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) and [mimeo](https://aur.archlinux.org/packages/mimeo/) from the [AUR](/index.php/AUR "AUR") for a faster alternative.
+### Minimalist replacements
 
-#### mailcap
+The following packages conflict with and provide [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) because they provide their own `/usr/bin/xdg-open` script.
 
-The [mailcap](http://linux.die.net/man/4/mailcap) file.
+If you want to use one of these resource openers while still being able to use [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), install them manually in a PATH directory before `/usr/bin`.
 
-The *.mailcap* file format is used by mail programs such as [mutt](https://www.archlinux.org/packages/?name=mutt) and [sylpheed](https://www.archlinux.org/packages/?name=sylpheed). To have those programs use *xdg-open*, edit `~/.mailcap`:
+*   [linopen](https://aur.archlinux.org/packages/linopen/) - 170-line Bash script, supports regex rules
+*   [mimi-git](https://aur.archlinux.org/packages/mimi-git/) - 130-line Bash script, can change command arguments for each MIME type
+*   [busking-git](https://aur.archlinux.org/packages/busking-git/) - 80-line Perl script similar to *mimi* but also supports regex rules
+*   [sx-open](https://aur.archlinux.org/packages/sx-open/) - 60-line Bash script, uses a simple shell-based config file
 
- `~/.mailcap` 
-```
-*/*; xdg-open "%s"
+#### run-mailcap
 
-```
-
-### 扩展练习实例
-
-#### xdg-open
-
-*xdg-mime* modifies the local file `~/.local/share/applications/mimeapps.list` (deprecated).
-
-To **query** the mime type used by an existing file, use
-
-```
-$ xdg-mime query filetype *file.ext*
-
-```
-
-To change an associated desktop entry by setting [Thunar](/index.php/Thunar "Thunar") as the default file browser:
-
-```
-$ xdg-mime default Thunar.desktop inode/directory
-
-```
-
-Note that you should not specify the complete path, but only the name of the *.desktop* file.
-
-This command can take multiple mime-types, allowing related files to be handled by the same program. The example below associates [Emacs](/index.php/Emacs "Emacs") to all known source files:
-
-```
-$ xdg-mime default emacs.desktop $(grep '^text/x-*' /usr/share/mime/types)
-
-```
-
-##### 设置默认浏览器
-
-To set the default application for `http(s)://` internet protocols:
-
-```
-$ xdg-mime default midori.desktop x-scheme-handler/http
-$ xdg-mime default midori.desktop x-scheme-handler/https
-
-```
-
-As an alternative try:
-
-```
-$ xdg-settings set default-web-browser netsurf.desktop
-
-```
-
-To verify if the URLs opens correctly:
-
-```
-$ xdg-open https://archlinux.org
-
-```
-
-To associate *.html* files with the [netsurf](https://www.archlinux.org/packages/?name=netsurf) web-browser:
-
-```
-$ xdg-mime default netsurf.desktop text/html
-
-```
-
-## 排错
-
-### 桌面配置项文件中影响应用程序加载的变量
-
-Desktop environments and file managers supporting the specifications launch programs according to definition in the *.desktop* files. See [Desktop entries#Application entry](/index.php/Desktop_entries#Application_entry "Desktop entries").
-
-Usually, configuration of the packaged *.desktop* files is not required, but it may not be bug-free. Even if an application containing necessary MIME-type description in the *.desktop* file `MimeType` variable that is used for association, it can fail to start correctly, not start at all or start without opening a file.
-
-This may happen, for example, if the `Exec` variable is missing internal options needed for how to open a file, or how the application is shown in the menu. The `Exec` variable usually begins with `%`; for its currently supported options, see [exec-variables](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables).
-
-The following table lists the main variable entries of *.desktop* files that affect how an application starts, if it has a MIME-type associated with it.
-
-| Variable names | Example 1 content | Example 2 content | Description |
-| DBusActivatable | DBusActivatable=true | DBusActivatable=false | Application interact with [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/).
-See also configuration: [D-Bus](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#dbus). |
-| MimeType | MimeType=application/vnd.oasis.opendocument.text | MimeType=application/vnd.sun.xml.math | List of MIME types supported by application |
-| StartupWMClass | StartupWMClass=google-chrome | StartupWMClass=xpad | Associate windows with the owning application |
-| Terminal | Terminal=true | Terminal=false | Start in default terminal |
+**Warning:** If you use [run-mailcap](https://aur.archlinux.org/packages/run-mailcap/), it is possible for `xdg-open` to delegate to it. This will cause an infinite loop if you are using the `/etc/mailcap` from [mailcap](https://www.archlinux.org/packages/?name=mailcap), because it also delegates to `xdg-open`.

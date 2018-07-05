@@ -39,6 +39,7 @@ From project [home page](http://lxde.org/):
     *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
     *   [4.2 LXPanel crashes with some themes or browsing particular web pages](#LXPanel_crashes_with_some_themes_or_browsing_particular_web_pages)
     *   [4.3 LXPanel uses a smaller icon size for the Task Bar](#LXPanel_uses_a_smaller_icon_size_for_the_Task_Bar)
+    *   [4.4 Fake transparency in LXTerminal](#Fake_transparency_in_LXTerminal)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -255,6 +256,10 @@ If lxpanel crashes when browsing particular unicode web pages, try install [ttf-
 ### LXPanel uses a smaller icon size for the Task Bar
 
 The icons of running applications do not match the set Icon size in Panel Settings > Geometry - they are 4px smaller which is making some of them blurry. To have clear looking 32px icons in the Task Bar the set Icon size has to be 36px which would blur the icons of the rest of your active Panel Applets. To get around this create additional panel(s) and have them collectively constitute a single continuous looking panel by adjusting the Alignment and Margin in Panel Settings > Geometry.
+
+### Fake transparency in LXTerminal
+
+The latest version of [VTE terminal widget library](https://wiki.gnome.org/Apps/Terminal/VTE) requires a compositing window manager for background transparency. The unmaintained, legacy GTK+ 2 version of VTE has fake transparency, where the desktop background image will show through the terminal. It you prefer fake transparency, the GTK+ 2 version of LXTerminal can be installed with the [lxterminal-gtk2](https://aur.archlinux.org/packages/lxterminal-gtk2/) package.
 
 ## See also
 

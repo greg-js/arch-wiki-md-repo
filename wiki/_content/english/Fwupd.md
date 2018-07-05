@@ -1,6 +1,5 @@
 Related articles
 
-*   [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
@@ -63,7 +62,7 @@ $ fwupdmgr update
 
 1.  Make sure you are booted in UEFI mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Mount your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
+3.  Mount your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
 
 ### Verifying leftovers from previous installations
 

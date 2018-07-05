@@ -22,7 +22,7 @@ The default configuration monitors the `prometheus` process itself, but not much
 
 ## Configuration
 
-The Prometheus configuration is done through [YAML](https://en.wikipedia.org/wiki/YAML) files, the main one being located at `/etc/prometheus/prometheus.yml`.
+The Prometheus configuration is done through [YAML](https://en.wikipedia.org/wiki/YAML "wikipedia:YAML") files, the main one being located at `/etc/prometheus/prometheus.yml`.
 
 ### Adding metric
 

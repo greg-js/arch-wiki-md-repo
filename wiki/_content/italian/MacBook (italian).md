@@ -66,7 +66,7 @@ Continuare a [#Partizionamento](#Partizionamento)
 
 Il partizionamento del disco di un Mac non è diverso da altri PC o laptop. Tuttavia, se si vuole mantenere OS X per il dual boot, si deve considerare che il disco di un Mac, per impostazione predefinita,è formattato usando GPT e contiene almeno 3 partizioni:
 
-*   **EFI**: ~200 MB [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   **EFI**: ~200 MB [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 *   **OS X**: la partizione principale contenente l'installazione di OS X. È formattata in [HFS+](/index.php/File_systems_(Italiano) "File systems (Italiano)").
 *   **Recovery**: una partizione di ripristino presente in quasi tutti i Mac con OS X 10.7 o successivi. Di solito è nascosta, ma può essere visualizzata con strumenti di partizionamento.
 

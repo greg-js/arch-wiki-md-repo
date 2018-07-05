@@ -7,7 +7,7 @@
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lifebook T902 | 2017.08.01 | mesa works great (Intel) | Works (Intel) | Works (Intel) | Works (wifi-menu and networkmanager) (Intel) | Works | [TLP](/index.php/TLP "TLP") works | untested | Touchscreen / pen works with [xf86-input-wacom](https://www.archlinux.org/packages/extra/x86_64/xf86-input-wacom/), but the [driver needs to be manually removed and readded after suspend](https://github.com/link07/Arch-Makepkgs-not-in-AUR/tree/master/wacom-touchscreen-fix).
+| Lifebook T902 | 2017.08.01 | mesa works great (Intel) | Works (Intel) | Works (Intel) | Works (wifi-menu and networkmanager) (Intel) | Works | [TLP](/index.php/TLP "TLP") works | untested | Touchscreen / pen works with [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom), but the [driver needs to be manually removed and readded after suspend](https://github.com/link07/Arch-Makepkgs-not-in-AUR/tree/master/wacom-touchscreen-fix).
 
 Fingerprint scanner works with [fprint](/index.php/Fprint "Fprint").
 

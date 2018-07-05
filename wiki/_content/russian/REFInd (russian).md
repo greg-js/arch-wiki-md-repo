@@ -1,8 +1,15 @@
+Ссылки по теме
+
+*   [Процесс загрузки Arch](/index.php/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_Arch "Процесс загрузки Arch")
+*   [Загрузчики](/index.php/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8 "Загрузчики")
+*   [Unified Extensible Firmware Interface (Русский)](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)")
+*   [EFISTUB (Русский)](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [REFInd](/index.php/REFInd "REFInd"). Дата последней синхронизации: 2015-07-29\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=REFInd&diff=0&oldid=384524).
 
 rEFInd - это менеджер загрузки для [UEFI](/index.php/UEFI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "UEFI (Русский)"). Является форком более неподдерживаемого [rEFIt](http://refit.sourceforge.net/) и исправляет многие проблемы, связанные с UEFI загрузкой на не-Mac системах. Он является платформонезависимым и облегчает загрузку нескольких ОС.
 
-**Примечание:** В этой статье под `$esp` будем подразумевать точку монтирования [системного раздела EFI](/index.php/EFI_System_Partition "EFI System Partition") также называемого ESP.
+**Примечание:** В этой статье под `$esp` будем подразумевать точку монтирования [системного раздела EFI](/index.php/EFI_system_partition "EFI system partition") также называемого ESP.
 
 ## Contents
 
@@ -39,7 +46,7 @@ rEFInd - это менеджер загрузки для [UEFI](/index.php/UEFI_
 
 ```
 
-Он попытается найти и смонтировать ваш [ESP раздел](/index.php/EFI_System_Partition "EFI System Partition"), скопировать файлы rEFInd'а в `/EFI/refind/` на ESP и добавить rEFInd как загрузочную EFI запись по умолчанию с помощью [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
+Он попытается найти и смонтировать ваш [ESP раздел](/index.php/EFI_system_partition "EFI system partition"), скопировать файлы rEFInd'а в `/EFI/refind/` на ESP и добавить rEFInd как загрузочную EFI запись по умолчанию с помощью [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
 
 **Примечание:** По умолчанию `refind-install` устанавливает только драйвер для вашей корневой файловой системы, если вы хотите установить дополнительные драйвера, перейдите к разделу [#Драйвера файловых систем](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC).
 

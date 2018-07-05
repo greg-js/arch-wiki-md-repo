@@ -119,7 +119,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 **警告:** 请别忘记为boot-loader预留空间。这对于 MBR 和 GRUB-Legacy 来说不是问题，但是许多新方案可能要求占用一个特殊的小分区。
 
-*   [UEFI](/index.php/UEFI "UEFI")系统需要有 [ESP](/index.php/EFI_System_Partition "EFI System Partition") 分区
+*   [UEFI](/index.php/UEFI "UEFI")系统需要有 [ESP](/index.php/EFI_system_partition "EFI system partition") 分区
 *   在 [BIOS](/index.php?title=BIOS&action=edit&redlink=1 "BIOS (page does not exist)") 系统上使用 [GPT](/index.php/GPT "GPT") 进行分区后，安装 GRUB 时会需要一个额外的 BIOS 启动分区。
 *   如果使用的是 [Btrfs](/index.php/Btrfs "Btrfs"), 可以将子卷视为分区，请参考 [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
@@ -194,7 +194,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 #### UEFI/GPT 示例
 
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | 260–512 MiB |
+| /boot | /dev/sd**x**1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | Yes | 260–512 MiB |
 | [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
 | / | /dev/sd**x**3 | Linux | No | Remainder of the device |
 
@@ -207,7 +207,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 #### UEFI 带单独的 /home
 
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | More than 512 MiB |
+| /boot | /dev/sd**x**1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | Yes | More than 512 MiB |
 | / | /dev/sd**x**2 | Linux | No | 15 - 20 GiB |
 | [SWAP] | /dev/sd**x**3 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
 | /home | /dev/sd**x**4 | Linux | No | Remainder of the device |

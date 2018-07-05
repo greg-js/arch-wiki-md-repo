@@ -36,6 +36,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 Lockup Issue (lspci and poweroff hang)](#Lockup_Issue_.28lspci_and_poweroff_hang.29)
     *   [4.2 Cheese Hangs While Opening Camera](#Cheese_Hangs_While_Opening_Camera)
+    *   [4.3 Wifi is hardblocked (airplane mode) after waking up from suspend](#Wifi_is_hardblocked_.28airplane_mode.29_after_waking_up_from_suspend)
 *   [5 More Information](#More_Information)
     *   [5.1 MS-16Q2](#MS-16Q2)
         *   [5.1.1 Microarchitecture, Processor and Platform](#Microarchitecture.2C_Processor_and_Platform)
@@ -58,11 +59,11 @@ There is no option to disable the discrete intel GPU.
 
 #### Wireless
 
-Support for the Killer 1550 is not there yet but is coming. [[1]](https://www.spinics.net/lists/linux-wireless/msg172978.html)
+Support for the Killer 1550 is not there yet but is coming. [[1]](https://www.spinics.net/lists/linux-wireless/msg172978.html)[[2]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c?id=998ce0330c94eca4b13b8f062b3f0ca9ef9ad6d8#n622)[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/commit/?id=a3ef483ec5002b7af5a2ad04cb7a77366cd23b9f)
 
-It should be possible to add support by patching the kernel [[2]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
+It should be possible to add support by patching the kernel [[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
 
-Using the [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.2
+Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.3
 
  `0001-Add-patch-for-MSI-GS65-wifi.patch` 
 ```
@@ -191,7 +192,7 @@ Device Descriptor:
 
 Battery indicator works out of the box.
 
-Sleep and wake also work with the proper configuration (see [Power Management](/index.php/Power_Management "Power Management")).
+Sleep and wake also work with the proper configuration (see [Power management](/index.php/Power_management "Power management")).
 
 An issue when sleeping is that the networking will be disabled when waking and set to airplane mode. This issue does not affect hibernation.
 
@@ -244,14 +245,14 @@ And reloading the keymapping database:
 
 ```
 
-The commit [[3]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
+The commit [[5]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
 
 ##### Unmapped Buttons
 
 The following buttons don't have any function or keycodes.
 
 *   FN + F7
-*   FN + F10
+*   FN + F10 (airplane mode)
 *   FN + Home
 
 ### Touchpad
@@ -271,7 +272,7 @@ Single tap and double finger scrolling work. Multi gestures do not work out the 
 *   lspci hangs
 *   poweroff hangs
 
-**Applies to**: Arch boot ISO and systems with nouveau or without nvidia driver installed. See [NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus").
+**Applies to**: Arch boot ISO and systems with nouveau or without nvidia driver installed. See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus").
 
 **Solutions**:
 
@@ -288,6 +289,32 @@ $ vlc v4l:// :v4l-vdev="/dev/video0"
 ```
 
 Following this, cheese should work correctly.
+
+### Wifi is hardblocked (airplane mode) after waking up from suspend
+
+Waking from suspend will have wifi in airplane mode. [[6]](https://askubuntu.com/questions/1043547/wifi-hard-blocked-after-suspend-in-ubuntu-on-gs65)
+
+ `# rfkill list` 
+```
+1: phy0: Wireless LAN
+	Soft blocked: no
+	Hard blocked: yes
+
+```
+
+Wifi can be reactivated in a few ways:
+
+```
+   # rfkill unblock all
+
+```
+
+```
+   # modprobe iwlwifi
+
+```
+
+Or by hibernating and rebooting.
 
 ## More Information
 
