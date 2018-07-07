@@ -65,6 +65,8 @@ $ encfs ~/.*name* ~/*name*
 
 Note that absolute paths must be used. This will be followed by a prompt about whether you want to go with the default options, expert configuration or a paranoid preset. The first is a fairly secure default setup. The second allows specifying algorithms and other options. After entering a key for the encryption, the encoded file-system will be created and mounted. The encoded files are stored, in this example, at `~/.*name*`, and their unencrypted versions in `~/*name*`.
 
+**Tip:** Using EncFS on exFAT formatted partitions might end up with slow performance as exFAT is also fuse-mounted by default. Use another way to mount the exFAT partition, or change the partition format if possible.
+
 To unmount the file-system, type:
 
 ```

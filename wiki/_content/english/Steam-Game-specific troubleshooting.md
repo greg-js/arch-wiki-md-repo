@@ -1119,11 +1119,21 @@ This game has 32-bit and 64-bit binaries. For some reason, Steam will launch the
 
 ### For the King
 
+For steam-native --
+
 Starts with black page. Requires to be told to use the libSDL2 shipping with Steam
 
 Add to Steam launch options for game.
 
 LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command%
+
+Note however, that this disables the Steam overlay as a side effect.
+
+For steam-runtime --
+
+It works out of the box.
+
+For the full experience, run FTK via steam-runtime instead of steam-native.
 
 ### FTL: Faster than Light
 

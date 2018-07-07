@@ -59,11 +59,11 @@
         *   [6.2.3 扩展](#.E6.89.A9.E5.B1.95)
         *   [6.2.4 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95)
         *   [6.2.5 字体](#.E5.AD.97.E4.BD.93)
-        *   [6.2.6 启动应用程序](#.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+        *   [6.2.6 自启动应用程序](#.E8.87.AA.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
         *   [6.2.7 电源](#.E7.94.B5.E6.BA.90)
             *   [6.2.7.1 配置合上盖子时的行为](#.E9.85.8D.E7.BD.AE.E5.90.88.E4.B8.8A.E7.9B.96.E5.AD.90.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
             *   [6.2.7.2 修改电池电量严重不足时的行为](#.E4.BF.AE.E6.94.B9.E7.94.B5.E6.B1.A0.E7.94.B5.E9.87.8F.E4.B8.A5.E9.87.8D.E4.B8.8D.E8.B6.B3.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
-        *   [6.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
+        *   [6.2.8 通过应用文件夹整理应用](#.E9.80.9A.E8.BF.87.E5.BA.94.E7.94.A8.E6.96.87.E4.BB.B6.E5.A4.B9.E6.95.B4.E7.90.86.E5.BA.94.E7.94.A8)
 *   [7 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -374,7 +374,7 @@ GNOME 3.28之前，桌面图标通过[Files](/index.php/Files "Files")在桌面�
 
 ##### 锁屏和背景
 
-When setting the Desktop or Lock screen background, it is important to note that the Pictures tab will only display pictures located in `/home/*username*/Pictures` folder. If you wish to use a picture not located in this folder, use the commands indicated below.
+在设置桌面及锁屏背景的时候，注意Picture标签下只显示`~/Pictures`文件夹下的图片。如果您想使用不在该文件夹下的图片，请使用下列命令：
 
 对于桌面背景：
 
@@ -423,19 +423,19 @@ GNOME集成了的通过[IBus](/index.php/IBus "IBus")的输入法, 只有[ibus](
 
 #### 字体
 
-**Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
+**提示：** 如果您把"Scaling factor"调至1.00以上的某值，辅助功能菜单将自动启用
 
-Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweak Tool for the relevant options.
+GNOME可以设置窗体标题，界面（应用），文档及等宽字体。查看Tweaks下的字体选项卡以获得相关选项。
 
-For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
+对于字体渲染来说，RGBA可能适合更多的显示器类型，如果字体看起来过分拥挤，可以将字体渲染调至“Slight”或“None”。
 
-#### 启动应用程序
+#### 自启动应用程序
 
-要启动登录某些应用程序, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`. [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) 支持管理 autostart-entries。
+要登录自启某些应用程序, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`. [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) 支持管理 autostart-entries。
 
-**Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+**提示：** 如果Tweaks中自启动应用选项下加号按钮为灰色不可用，尝试在终端下通过 `gnome-tweak-tool`命令启动Tweaks。详情访问 [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 
-**Note:** The *gnome-session-properties* dialog was removed as of GNOME 3.12\. It can be added back by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
+**注意:** "gnome-session-properties"对话框可以通过[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) 添加
 
 #### 电源
 
@@ -458,6 +458,17 @@ $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup 
 
 ```
 
+GNOME 3.24中不建议使用以下设置：
+
+```
+org.gnome.settings-daemon.plugins.power button-hibernate
+org.gnome.settings-daemon.plugins.power button-power
+org.gnome.settings-daemon.plugins.power button-sleep
+org.gnome.settings-daemon.plugins.power button-suspend
+org.gnome.settings-daemon.plugins.power critical-battery-action
+
+```
+
 ##### 配置合上盖子时的行为
 
 GNOME TWEAK Tool 自 3.17.1 开始，可以**阻止** *systemd* 在“合上盖子”这一 ACPI 事件发生后采取默认行动。[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) 若想要**阻止** *systemd* 的默认行为，打开 Tweak Tool，在“电源”标签页下选择“合上盖子后不待机”的选项。此选项意味着在盖子合上后，系统将不会默认待机，而是不采取任何措施。如果选择了此选项，一个自启动项目`~/.config/autostart/ignore-lid-switch-tweak.desktop`将会被创建，用于阻止*systemd*的默认行为。
@@ -466,7 +477,7 @@ GNOME TWEAK Tool 自 3.17.1 开始，可以**阻止** *systemd* 在“合上盖�
 
 ##### 修改电池电量严重不足时的行为
 
-The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+设置面板不提供对电池电量严重不足行为的设置。这些设置也从dconf中移除。不过它们现在由uppower管理。按需编辑`/etc/UPower/Upower.conf`中upower设置。
 
  `/etc/UPower/UPower.conf` 
 ```
@@ -476,48 +487,48 @@ PercentageAction=2
 CriticalPowerAction=HybridSleep
 ```
 
-#### Sort applications into application (app) folders
+#### 通过应用文件夹整理应用
 
-**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you'd like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
+{{提示| [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) 脚本允许您通过创建`~/.local/share/applications-categories`}下与分类同名的文件并在文件中包含您想包括在内的应用。或者，您可以使其在没有文件夹的情况下遍历各个应用直到您摁下ctrl-c或遍历完应用，然后输入想要的文件夹名称}
 
-In the **dconf-editor** navigate to `org.gnome.desktop.app-folders` and set the value of `folder-children` to an array of comma separated folder names:
+在**dconf-editor**中导航至 `org.gnome.desktop.app-folders` 并设置`folder-children`的值为一个由逗号分隔的文件夹的序列:
 
 ```
 ['Utilities', 'Sundry']
 
 ```
 
-Add applications using `gsettings`:
+使用`gsettings`加入应用:
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
 
 ```
 
-This adds the applications `alacarte.desktop` and `dconf-editor.desktop` to the Sundry folder. This will also create the folder `org.gnome.desktop.app-folders.folders.Sundry`.
+上述命令将`alacarte.desktop`及`dconf-editor.desktop`加入到Sundry文件夹。 该命令也创建`org.gnome.desktop.app-folders.folders.Sundry`。
 
-To name the folder (if it has no name that appears at the top of the applications):
+要显示文件夹名称（如果其在应用上部没有显示名称）：
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
 
 ```
 
-Applications can also be sorted by their category (specified in their *.desktop* file):
+应用也可以通过它们的分类整理 (在它们的*.desktop*文件中):
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
 
 ```
 
-If certain applications matching a category are not wanted in a certain folder, exclusions can be set:
+如果某一个应用不想被加入某一文件夹，运行下列命令以设置例外:
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
 
 ```
 
-For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in.in).
+详情参考[app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in.in).
 
 ## 参见
 

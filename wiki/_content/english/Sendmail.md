@@ -8,7 +8,7 @@ The goal of this article is to setup Sendmail for local user accounts, without u
 *   [2 DNS Records](#DNS_Records)
 *   [3 Adding users](#Adding_users)
 *   [4 Configuration](#Configuration)
-    *   [4.1 Create SSL certs](#Create_SSL_certs)
+    *   [4.1 Create TLS certs](#Create_TLS_certs)
     *   [4.2 sendmail.cf](#sendmail.cf)
     *   [4.3 local-host-names](#local-host-names)
     *   [4.4 access.db](#access.db)
@@ -38,11 +38,11 @@ Create a [Linux user](/index.php/Users_and_groups "Users and groups") for each u
 
 ## Configuration
 
-### Create SSL certs
+### Create TLS certs
 
-**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to Sendmail, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) and [disable SSLv3](http://disablessl3.com/) to prevent vulnerabilities. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-Generate a key and obtain a certificate. See [OpenSSL#Self-signed certificate](/index.php/OpenSSL#Self-signed_certificate "OpenSSL") for private use or [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") for a free publicly-trusted certificate.
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
 
 ### sendmail.cf
 

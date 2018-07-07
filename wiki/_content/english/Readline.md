@@ -232,7 +232,7 @@ As a last example, quickly send a command in the background with `Ctrl+Alt+B`, d
 
 ## Disabling control echo
 
-*readline* causes the terminal to echoe `^C` after `Ctrl+C` is pressed. For users who wish to disable this, simply add the following to `~/.inputrc`:
+*readline* causes the terminal to echo `^C` after `Ctrl+C` is pressed. For users who wish to disable this, simply add the following to `~/.inputrc`:
 
 ```
 set echo-control-characters off

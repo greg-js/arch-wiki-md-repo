@@ -6,16 +6,17 @@
     *   [1.3 Bash alternative](#Bash_alternative)
 *   [2 X.org](#X.org)
     *   [2.1 startx](#startx)
-    *   [2.2 KDE Plasma Users](#KDE_Plasma_Users)
-    *   [2.3 GDM](#GDM)
-    *   [2.4 GNOME](#GNOME)
-    *   [2.5 Xfce](#Xfce)
-    *   [2.6 SDDM](#SDDM)
-    *   [2.7 SLiM](#SLiM)
-    *   [2.8 OpenBox](#OpenBox)
-    *   [2.9 LightDM](#LightDM)
-    *   [2.10 LXDM](#LXDM)
-    *   [2.11 LXQt](#LXQt)
+    *   [2.2 MATE](#MATE)
+    *   [2.3 KDE Plasma Users](#KDE_Plasma_Users)
+    *   [2.4 GDM](#GDM)
+    *   [2.5 GNOME](#GNOME)
+    *   [2.6 Xfce](#Xfce)
+    *   [2.7 SDDM](#SDDM)
+    *   [2.8 SLiM](#SLiM)
+    *   [2.9 OpenBox](#OpenBox)
+    *   [2.10 LightDM](#LightDM)
+    *   [2.11 LXDM](#LXDM)
+    *   [2.12 LXQt](#LXQt)
 
 ## Console
 
@@ -98,6 +99,16 @@ Install the [numlockx](https://www.archlinux.org/packages/?name=numlockx) packag
 numlockx &
 
 exec window_manager
+
+```
+
+### MATE
+
+By default, MATE saves the last state on logout and restores it during the next login. To enable Numlock on every login, you must change the following DCONF-Values:
+
+```
+dconf write org.mate.peripherals-keyboard remember-numlock-state false
+dconf write org.mate.peripherals-keyboard numlock-state 'on'
 
 ```
 

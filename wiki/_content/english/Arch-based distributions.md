@@ -13,19 +13,20 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 
 *   [1 Active](#Active)
 *   [2 Inactive](#Inactive)
-    *   [2.1 2017](#2017)
-    *   [2.2 2016](#2016)
-    *   [2.3 2015](#2015)
-    *   [2.4 2014](#2014)
-    *   [2.5 2013](#2013)
-    *   [2.6 2012](#2012)
-    *   [2.7 2011](#2011)
-    *   [2.8 2010](#2010)
-    *   [2.9 2009](#2009)
-    *   [2.10 2008](#2008)
-    *   [2.11 2007](#2007)
-    *   [2.12 2006](#2006)
-    *   [2.13 2004](#2004)
+    *   [2.1 2018](#2018)
+    *   [2.2 2017](#2017)
+    *   [2.3 2016](#2016)
+    *   [2.4 2015](#2015)
+    *   [2.5 2014](#2014)
+    *   [2.6 2013](#2013)
+    *   [2.7 2012](#2012)
+    *   [2.8 2011](#2011)
+    *   [2.9 2010](#2010)
+    *   [2.10 2009](#2009)
+    *   [2.11 2008](#2008)
+    *   [2.12 2007](#2007)
+    *   [2.13 2006](#2006)
+    *   [2.14 2004](#2004)
 *   [3 See also](#See_also)
 
 ## Active
@@ -64,9 +65,8 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 *   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/)
 *   [RaspArch](https://sourceforge.net/projects/rasparch/)
 *   [Revenge OS](https://sourceforge.net/projects/obrevenge/)
-*   [Sekhmet](https://sourceforge.net/projects/sekhmet/)
 *   [Sonar](https://sourceforge.net/projects/sonargnulinux/)
-*   [SwagArch](https://swagarch.github.io/)
+*   [SwagArch](https://swagarch.gitlab.io/)
 *   [TalkingArch](https://talkingarch.tk/)
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/)
 *   [UBOS](http://ubos.net/)
@@ -74,6 +74,10 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 ## Inactive
 
 These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
+
+### 2018
+
+*   [Sekhmet](https://webcache.googleusercontent.com/search?q=cache:kNELdjVNaywJ:https://sekhmet.sourceforge.io/)
 
 ### 2017
 
@@ -94,7 +98,7 @@ These distributions are no longer developed, but show some of the history surrou
 *   [Architect](https://sourceforge.net/projects/architect-linux)
 *   [archodi](https://sourceforge.net/projects/archodi/)
 *   [arkOS](https://github.com/arkOScloud)
-*   [Arquetype CRT](https://twitter.com/ArquetypeLinux)
+*   [Arquetype CRT](https://github.com/arquetype/pacman-source)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Miraclx OS](https://sourceforge.net/projects/miraclx-os/)
 *   [niixarch](https://sourceforge.net/projects/niixarch/)

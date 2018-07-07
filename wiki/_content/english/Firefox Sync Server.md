@@ -20,7 +20,7 @@ This page details on how to setup an own Firefox Sync Server and how to configur
 
 ### Configuration
 
-One file is available to configure a firefox sync server: `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini`. Most options are explained clearly in the [official documentation](http://docs.services.mozilla.com/howtos/run-sync-1.5.html). You might want to change to variables, the accepted domain name (`public_url`) and the database backend (`sqluri`):
+One file is available to configure a firefox sync server: `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini`. Most options are explained clearly in the [official documentation](http://docs.services.mozilla.com/howtos/run-sync-1.5.html). You might want to change two variables, the accepted domain name (`public_url`) and the database backend (`sqluri`):
 
  `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
 ```

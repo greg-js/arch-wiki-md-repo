@@ -248,9 +248,9 @@ Another approach, using ALSA loopback device (more complex but probably more rob
 
 ### GStreamer
 
-GStreamer requires the [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) package to work with JACK. It contains the plugin that adds JACK support.
+GStreamer requires the [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) package to work with JACK, which contains the jackaudiosink plugin that adds JACK playback support.
 
-Further information: [http://jackaudio.org/faq/gstreamer_via_jack.html](http://jackaudio.org/faq/gstreamer_via_jack.html)
+Further information (outdated): [http://jackaudio.org/faq/gstreamer_via_jack.html](http://jackaudio.org/faq/gstreamer_via_jack.html)
 
 ### PulseAudio
 

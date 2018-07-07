@@ -20,6 +20,7 @@ Related articles
     *   [5.2 Transparency](#Transparency)
         *   [5.2.1 Pseudo-transparency](#Pseudo-transparency)
         *   [5.2.2 Enable real transparency](#Enable_real_transparency)
+        *   [5.2.3 Semi-transparency](#Semi-transparency)
     *   [5.3 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
     *   [5.4 Integrate with GNOME Shell](#Integrate_with_GNOME_Shell)
     *   [5.5 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
@@ -176,7 +177,7 @@ Conky supports two different types of transparency. Pseudo-transparency and real
 
 #### Pseudo-transparency
 
-Pseudo-transparency is enabled by default in conky. Pseudo-transparency works by copying the background image from the root window and using the relevant section as the background for conky. Some window managers set the background wallpaper to a level above the root window which can cause conky to have a grey background. To fix this issue you need to set it manually with feh.
+Pseudo-transparency is enabled by default in conky. Pseudo-transparency works by copying the background image from the root window and using the relevant section as the background for conky. Some window managers set the background wallpaper to a level above the root window which can cause conky to have a grey background. To fix this issue you need to set it manually with *feh*.
 
 In `~/.xinitrc`:
 
@@ -202,6 +203,23 @@ To enable real transparency, you must have a [composite manager](/index.php/Comp
 If window type "desktop" does not work try changing it to `normal`. If that does not work try the other options: `dock`, `panel`, or `override` instead.
 
 **Note:** [Xfce](/index.php/Xfce "Xfce") requires enabled compositing, see [[1]](https://forum.xfce.org/viewtopic.php?pid=25939).
+
+#### Semi-transparency
+
+To achieve semi-transparency in real transparency mode, the following setup must be used in the conky configuration file:
+
+```
+ conky.config = {
+    own_window = true,
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 90,
+    own_window_type = desktop,
+ }
+
+```
+
+To reduce the transparency of the conky window, one can increase the value of `own_window_argb_value` towards 100.
 
 ### Do not minimize on Show Desktop
 

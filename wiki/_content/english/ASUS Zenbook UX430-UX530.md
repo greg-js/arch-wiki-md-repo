@@ -148,6 +148,8 @@ As advertised by ASUS, both laptops are capable to last up to 9 hours on battery
 
 *   [SSD](/index.php/SSD "SSD") - Tips and tricks for Solid State Drives. Both laptops ship M.2 SSD by default.
 
+*   [Undervolting_CPU](/index.php/Undervolting_CPU "Undervolting CPU") - Decrease voltage for Intel CPU (reduce battery drain, reduce heat and therefore - reduce fan speed)
+
 ## Extract Windows 10 license key
 
 The laptop comes with Windows 10 preinstalled and the activation key is hardcoded into the firmware. If you replace Windows with Linux, then hardcoded activation key is useless. You might want to extract it and use somewhere else (e.g. virtualized Windows 10):

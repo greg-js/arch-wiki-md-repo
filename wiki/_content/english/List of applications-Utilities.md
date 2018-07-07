@@ -49,8 +49,10 @@
         *   [1.5.3 Cloning tools](#Cloning_tools)
         *   [1.5.4 Mount tools](#Mount_tools)
         *   [1.5.5 Disk usage display](#Disk_usage_display)
-        *   [1.5.6 Disk cleaning](#Disk_cleaning)
-        *   [1.5.7 Disk image writing](#Disk_image_writing)
+        *   [1.5.6 Disk health status](#Disk_health_status)
+        *   [1.5.7 File recovery tools](#File_recovery_tools)
+        *   [1.5.8 Disk cleaning](#Disk_cleaning)
+        *   [1.5.9 Disk image writing](#Disk_image_writing)
     *   [1.6 System](#System)
         *   [1.6.1 System monitoring](#System_monitoring)
         *   [1.6.2 Hardware sensor monitoring](#Hardware_sensor_monitoring)
@@ -879,6 +881,10 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 
 	[http://alleyoop.sourceforge.net/](http://alleyoop.sourceforge.net/) || [alleyoop](https://www.archlinux.org/packages/?name=alleyoop)
 
+*   **Bustle** — Draws sequence diagrams of D-Bus activity. It shows signal emissions, method calls and their corresponding returns, with time stamps for each individual event and the duration of each method call.
+
+	[https://www.freedesktop.org/wiki/Software/Bustle/](https://www.freedesktop.org/wiki/Software/Bustle/) || [bustle-git](https://aur.archlinux.org/packages/bustle-git/)
+
 *   **[Data Display Debugger](https://en.wikipedia.org/wiki/Data_Display_Debugger "wikipedia:Data Display Debugger")** — Graphical front-end for command-line debuggers such as GDB.
 
 	[https://www.gnu.org/software/ddd/](https://www.gnu.org/software/ddd/) || [ddd](https://aur.archlinux.org/packages/ddd/)
@@ -981,6 +987,10 @@ See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedi
 
 	[http://doc.qt.io/qt-5/qtassistant-index.html](http://doc.qt.io/qt-5/qtassistant-index.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
 
+*   **quickDocs** — Fast developer docs reader for reading Valadoc and DevDocs.
+
+	[https://github.com/mdh34/quickDocs](https://github.com/mdh34/quickDocs) || [quickdocs](https://aur.archlinux.org/packages/quickdocs/)
+
 *   **Zeal** — Offline API documentation browser for software developers.
 
 	[https://zealdocs.org/](https://zealdocs.org/) || [zeal](https://www.archlinux.org/packages/?name=zeal)
@@ -996,6 +1006,10 @@ See also [Wikipedia:List of build automation software](https://en.wikipedia.org/
 *   **[Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven "wikipedia:Apache Maven")** — Build automation tool used primarily for Java.
 
 	[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
+
+*   **[CMake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake")** — Family of tools designed to build, test and package software.
+
+	[https://cmake.org/](https://cmake.org/) || [cmake](https://www.archlinux.org/packages/?name=cmake)
 
 *   **[Gradle](https://en.wikipedia.org/wiki/Gradle "wikipedia:Gradle")** — Powerful build system for the JVM.
 
@@ -1040,6 +1054,10 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 *   **[Godot](/index.php/Godot_Engine "Godot Engine")** — Advanced, feature-packed, multi-platform 2D and 3D game engine. Create games with ease, using Godot's unique approach to game development.
 
 	[https://godotengine.org/](https://godotengine.org/) || [godot](https://aur.archlinux.org/packages/godot/)
+
+*   **LibreSprite** — Animated sprite editor and pixel art tool lets you create 2D animations for videogames.
+
+	[https://github.com/LibreSprite/LibreSprite](https://github.com/LibreSprite/LibreSprite) || [libresprite](https://aur.archlinux.org/packages/libresprite/)
 
 *   **Tiled** — General purpose 2D level editor with powerful tile map editing features. It’s built to be easy to use and is suitable for many type of games.
 
@@ -1204,6 +1222,14 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 *   **qdirstat** — Qt-based directory statistics (KDirStat/K4DirStat without any KDE - from the original KDirStat author).
 
 	[https://github.com/shundhammer/qdirstat](https://github.com/shundhammer/qdirstat) || [qdirstat](https://aur.archlinux.org/packages/qdirstat/)
+
+#### Disk health status
+
+See [S.M.A.R.T.#GUI Applications](/index.php/S.M.A.R.T.#GUI_Applications "S.M.A.R.T.").
+
+#### File recovery tools
+
+See [File recovery#List of utilities](/index.php/File_recovery#List_of_utilities "File recovery").
 
 #### Disk cleaning
 

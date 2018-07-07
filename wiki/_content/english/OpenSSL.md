@@ -2,27 +2,24 @@
 
 [OpenSSL](http://www.openssl.org) is an open-source implementation of the SSL and TLS protocols, dual-licensed under the OpenSSL (Apache License 1.0) and the SSLeay (4-clause BSD) licenses. It is supported on a variety of platforms, including BSD, Linux, OpenVMS, Solaris and Windows. It is designed to be as flexible as possible, and is free to use for both personal and commercial uses. It is based on the earlier SSLeay library. Version 1.0.0 of OpenSSL was released on March 29, 2010.
 
-[openssl](https://www.archlinux.org/packages/?name=openssl) is installed by default on Arch Linux.
+[openssl](https://www.archlinux.org/packages/?name=openssl) is installed by default on Arch Linux (as a dependency of [coreutils](https://www.archlinux.org/packages/?name=coreutils)).
 
 ## Contents
 
 *   [1 SSL introduction](#SSL_introduction)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Global variables](#Global_variables)
-    *   [2.2 ca section](#ca_section)
-    *   [2.3 req section](#req_section)
-        *   [2.3.1 CA req settings](#CA_req_settings)
-        *   [2.3.2 End-user req settings](#End-user_req_settings)
-    *   [2.4 GOST engine support](#GOST_engine_support)
-*   [3 Generating keys](#Generating_keys)
-*   [4 Creating certificate signing requests](#Creating_certificate_signing_requests)
-*   [5 Signing certificates](#Signing_certificates)
-    *   [5.1 Self-signed certificate](#Self-signed_certificate)
-    *   [5.2 Certificate authority](#Certificate_authority)
-        *   [5.2.1 Makefile](#Makefile)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 "bad decrypt" while decrypting](#.22bad_decrypt.22_while_decrypting)
-*   [7 See also](#See_also)
+    *   [2.1 req section](#req_section)
+        *   [2.1.1 End-user req settings](#End-user_req_settings)
+    *   [2.2 GOST engine support](#GOST_engine_support)
+*   [3 Generating private keys](#Generating_private_keys)
+*   [4 Certificates](#Certificates)
+    *   [4.1 Creating certificate signing requests](#Creating_certificate_signing_requests)
+    *   [4.2 Self-signed certificate](#Self-signed_certificate)
+    *   [4.3 Certificate authority](#Certificate_authority)
+        *   [4.3.1 Makefile](#Makefile)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 "bad decrypt" while decrypting](#.22bad_decrypt.22_while_decrypting)
+*   [6 See also](#See_also)
 
 ## SSL introduction
 
@@ -64,75 +61,7 @@ Consult both [Wikipedia:Certificate authority](https://en.wikipedia.org/wiki/Cer
 
 ## Configuration
 
-The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This section covers the essential settings.
-
-Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see [config(5ssl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/config.5ssl). In some operating systems, this [man page](/index.php/Man_page "Man page") is named config(5) or openssl-config(5). Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
-
-### Global variables
-
-These settings are relevant in all sections. For that to happen, they can not be specified under a section header:
-
-```
-DIR=		.			# Useful macro for populating real vars.
-RANDFILE=	${DIR}/private/.rnd	# Entropy source.
-default_md=	sha1			# Default message digest.
-```
-
-### ca section
-
-These settings are used when signing CRLs, and signing and revoking certificates. Users that only want to generate requests can safely skip to the [#req section](#req_section).
-
-```
-[ ca ]
-default_ca=	dft_ca	# Configuration files may have more than one CA
-			# section for different scenarios.
-
-[ dft_ca ]
-certificate=	${DIR}/cacert.pem	# The CA certificate.
-database=	${DIR}/index.txt	# Keeps tracks of valid/revoked certs.
-new_certs_dir=	${DIR}/newcerts		# Copies of signed certificates, for
-					# administrative purposes.
-private_key=	${DIR}/private/cakey.pem # The CA key.
-serial=		${DIR}/serial		# Should be populated with the next
-					# cert hex serial.
-
-# These govern the way certificates are displayed while confirming
-# the signing process.
-name_opt=	ca_default
-cert_opt=	ca_default
-
-default_days=	365	# How long to sign certificates for.
-default_crl_days=30	# The same, but for CRL.
-
-policy=		dft_policy	# The default policy should be lenient.
-x509_extensions=cert_v3		# For v3 certificates.
-
-[ dft_policy ]
-# A value of 'supplied' means the field must be present in the certificate,
-# whereas 'match' means the field must be populated with the same contents as
-# the CA certificate. 'optional' dictates that the field is entirely optional.
-
-C=	supplied	# Country
-ST=	supplied	# State or province
-L=	optional	# Locality
-O=	supplied	# Organization
-OU=	optional	# Organizational unit
-CN=	supplied	# Common name
-
-[ cert_v3 ]
-# With the exception of 'CA:FALSE', there are PKIX recommendations for end-user
-# certificates that should not be able to sign other certificates.
-# 'CA:FALSE' is explicitely set because some software will malfunction without.
-
-subjectKeyIdentifier=	hash
-basicConstraints=	CA:FALSE
-keyUsage=		nonRepudiation, digitalSignature, keyEncipherment
-
-nsCertType=		client, email
-nsComment=		"OpenSSL Generated Certificate"
-
-authorityKeyIdentifier=keyid:always,issuer:always
-```
+The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. Remember that variables may be expanded in assignments, much like how shell scripts work. For a thorough explanation of the configuration file format, see [config(5ssl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/config.5ssl). In some operating systems, this [man page](/index.php/Man_page "Man page") is named config(5) or openssl-config(5). Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
 
 ### req section
 
@@ -154,35 +83,6 @@ default_keyfile=private/cakey.pem
 
 string_mask=	utf8only	# Only allow utf8 strings in request/ca fields.
 prompt=		no		# Do not prompt for field value confirmation.
-```
-
-#### CA req settings
-
-The settings should produce a standard CA capable of only singing other certificates:
-
-```
-distinguished_name=ca_dn	# Distinguished name contents.
-x509_extensions=ca_v3		# For generating ca certificates.
-
-[ ca_dn ]
-# CN is not needed for CA certificates
-C=	US
-ST=	New Jersey
-O=	localdomain
-
-[ ca_v3 ]
-subjectKeyIdentifier=	hash
-
-# PKIX says this should also contain the 'crucial' value, yet some programs
-# have trouble handling it.
-basicConstraints=	CA:TRUE
-
-keyUsage=	cRLSign, keyCertSign
-
-nsCertType=	sslCA
-nsComment=	"OpenSSL Generated CA Certificate"
-
-authorityKeyIdentifier=keyid:always,issuer:always
 ```
 
 #### End-user req settings
@@ -240,7 +140,7 @@ CRYPT_PARAMS = id-Gost28147-89-CryptoPro-A-ParamSet
 
 The official [README.gost](http://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/crypto/external/bsd/openssl/dist/engines/ccgost/README.gost) should contain more examples on this.
 
-## Generating keys
+## Generating private keys
 
 **Warning:** The [openssl](https://www.archlinux.org/packages/?name=openssl) package doesn't properly safeguard the `/etc/ssl/private/` directory like most other distributions do, see [FS#43059](https://bugs.archlinux.org/task/43059).
 
@@ -280,36 +180,29 @@ $ openssl genpkey -aes-256-cbc -algorithm RSA -out private/key.pem -pkeyopt rsa_
 
 ```
 
-## Creating certificate signing requests
+## Certificates
 
-To obtain a certificate from a CA, whether a public one such as [CAcert.org](http://www.cacert.org) ([ca-certificates-cacert](https://www.archlinux.org/packages/?name=ca-certificates-cacert)) or a locally managed solution, a request file must be submitted which is known as a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") or CSR.
+If you want to communicate securely with a server for the first time, you need to trust an unknown public key. [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS") solves this using the [Public Key Infrastructrue](https://en.wikipedia.org/wiki/Public_Key_Infrastructrue "wikipedia:Public Key Infrastructrue"). Basically clients trust a set of [certificate authorities](https://en.wikipedia.org/wiki/Certificate_authority "wikipedia:Certificate authority") (CAs) (on Arch Linux the [ca-certificates packages](https://www.archlinux.org/packages/?q=ca-certificates)). When a certificate is received from a server, your client (mostly [gnutls](https://www.archlinux.org/packages/?name=gnutls)) verifies that it is signed by a certificate authority you trust.
 
-Make a new request and sign it with a previously [generated key](#Generating_keys):
+### Creating certificate signing requests
+
+To obtain a certificate from a certificate authority, you need to create a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") (CSR) and sign it with a previously [generated private key](#Generating_private_keys):
 
 ```
 $ openssl req -new -sha256 -key private/key.pem -out req.csr
 
 ```
 
-## Signing certificates
-
-Covers the process of local CA signing: directly self-signed certificates or through a local CA.
+**Tip:** You can get free certificates from the [Let's Encrypt](https://letsencrypt.org/) certificate authority using an [ACME client](/index.php/ACME_client#ACME_clients "ACME client").
 
 ### Self-signed certificate
 
-A significant amount of programs will not work with self-signed certificates, and maintaining more than one system with self-signed certificates is more trouble than investing the initial effort in setting up a [certificate authority](#Certificate_authority).
+Clients reject [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate "wikipedia:Self-signed certificate") by default, requiring you to manually configure every client to trust your self-signed certificate. Maintaining more than one self-signed certificate is more trouble than investing the initial effort in setting up a [certificate authority](#Certificate_authority).
 
-If a key was already generated as [explained before](#Generating_keys), use this command to sign the new certificate with the aforementioned key:
+To create a self-signed certificate with a previously [generated private key](#Generating_private_keys):
 
 ```
 $ openssl req -key private/key.pem -x509 -new -days 3650 -out selfcert.pem
-
-```
-
-If a key was not previously generated, to create a new private key and sign the certificate with this new key, use the following:
-
-```
-$ openssl req -nodes -newkey rsa:2048 -keyout newkey.pem -x509 -days 3650 -out selfcert.pem
 
 ```
 

@@ -29,7 +29,7 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [2.6 DNS records](#DNS_records)
     *   [2.7 Check configuration](#Check_configuration)
 *   [3 Start Postfix](#Start_Postfix)
-*   [4 Securing incoming and outgoing mail](#Securing_incoming_and_outgoing_mail)
+*   [4 TLS](#TLS)
     *   [4.1 Secure SMTP (sending)](#Secure_SMTP_.28sending.29)
     *   [4.2 Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29)
         *   [4.2.1 SMTPS (port 465)](#SMTPS_.28port_465.29)
@@ -196,7 +196,11 @@ To see all of your configs, type `postconf`. To see how you differ from the defa
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `postfix.service`.
 
-## Securing incoming and outgoing mail
+## TLS
+
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent FREAK/Logjam. Since mid-2015, the default settings have been safe against [POODLE](https://en.wikipedia.org/wiki/POODLE "wikipedia:POODLE"). For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
+
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
 
 For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_README.html).
 
@@ -211,14 +215,6 @@ To *enforce* TLS (and fail when the remote server does not support it), change `
 ### Secure SMTP (receiving)
 
 By default, Postfix will not accept secure mail.
-
-**Warning:** If you plan on implementing SSL/TLS, please respond safely to [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration: `smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK, aECDH, EDH-DSS-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, KRB5-DES, CBC3-SHA` 
-
-Then, generate a [dhparam file](https://www.openssl.org/docs/man1.0.2/apps/dhparam.html) by following [these instructions](https://weakdh.org/sysadmin.html) and then adding the following to your configuration:
-
- `smtpd_tls_dh1024_param_file = ${config_directory}/dhparams.pem` 
-
-Since mid-2015, the default settings have been safe against [POODLE](http://disablessl3.com/).
 
 To enable STARTTLS over SMTP (port 587, the proper way of securing SMTP), add the following lines to `main.cf`
 

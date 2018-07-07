@@ -12,8 +12,8 @@ Related articles
     *   [2.1 Captions](#Captions)
     *   [2.2 Create a circle](#Create_a_circle)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 GIMP and PDF files](#GIMP_and_PDF_files)
-    *   [3.2 Green text](#Green_text)
+    *   [3.1 Green text](#Green_text)
+    *   [3.2 PDF files](#PDF_files)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -44,12 +44,6 @@ To draw a circle in GIMP follow these steps:
 
 ## Troubleshooting
 
-### GIMP and PDF files
-
-GIMP requires the [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib) library to open PDF files. Without this library GIMP will say that a PDF file is "unrecognized" when an attempt to open a PDF is made.
-
-Since GIMP rasterizes PDF files right from the start, it will not exploit intrinsic PDF capabilities while editing them. One might want to use other programs to better edit PDF files. [LibreOffice Draw](/index.php/LibreOffice "LibreOffice") being one example of such a program.
-
 ### Green text
 
 Add the following to `~/.config/GIMP/2.10/fonts.conf` if you see green tint around letters with antialiasing enabled:
@@ -66,6 +60,12 @@ Add the following to `~/.config/GIMP/2.10/fonts.conf` if you see green tint arou
 </fontconfig>
 
 ```
+
+### PDF files
+
+GIMP requires the [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib) library to open PDF files. Without this library GIMP will say that a PDF file is "unrecognized" when an attempt to open a PDF is made.
+
+Since GIMP rasterizes PDF files right from the start, it will not exploit intrinsic PDF capabilities while editing them. Other programs (like [LibreOffice Draw](/index.php/LibreOffice "LibreOffice")) can be used to better edit PDF files.
 
 ## See also
 

@@ -72,12 +72,29 @@ For network connectivity, install:
 
 The client is the user interface that will be used to manage and access the virtual machines.
 
-*   *virsh* is a command line program for managing and configuring domains; it is included in the [libvirt](https://www.archlinux.org/packages/?name=libvirt) package.
-*   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) is a graphical user interface for managing virtual machines.
-*   [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) is a lightweight interface for interacting with the graphical display of virtualized guest OS.
-*   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes) is a simple GNOME 3 application to access remote or virtual systems.
-*   [qt-virt-manager](https://aur.archlinux.org/packages/qt-virt-manager/)
-*   [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/) is an application sandbox toolkit.
+*   **virsh** — Command line program for managing and configuring domains.
+
+	[https://libvirt.org/](https://libvirt.org/) || [libvirt](https://www.archlinux.org/packages/?name=libvirt)
+
+*   **[GNOME Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — Simple GNOME 3 application to access remote or virtual systems.
+
+	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
+
+*   **Libvirt Sandbox** — Application sandbox toolkit.
+
+	[https://sandbox.libvirt.org/](https://sandbox.libvirt.org/) || [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/)
+
+*   **Remote Viewer** — Simple remote display client.
+
+	[https://virt-manager.org/](https://virt-manager.org/) || [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
+
+*   **Qt VirtManager** — Qt application for managing virtual machines.
+
+	[https://github.com/F1ash/qt-virt-manager](https://github.com/F1ash/qt-virt-manager) || [qt-virt-manager](https://aur.archlinux.org/packages/qt-virt-manager/)
+
+*   **[Virtual Machine Manager](https://en.wikipedia.org/wiki/Virtual_Machine_Manager "wikipedia:Virtual Machine Manager")** — Graphically manage KVM, Xen, or LXC via libvirt.
+
+	[https://virt-manager.org/](https://virt-manager.org/) || [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)
 
 A list of libvirt-compatible software can be found [here](http://libvirt.org/apps.html).
 

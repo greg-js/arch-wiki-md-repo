@@ -183,6 +183,10 @@ These applications support time, task and contacts management.
 
 	[http://projecthamster.org/](http://projecthamster.org/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
 
+*   **Kapow** — Punch clock to track time spent on projects.
+
+	[https://gottcode.org/kapow/](https://gottcode.org/kapow/) || [kapow](https://aur.archlinux.org/packages/kapow/)
+
 *   **Kronometer** — Stopwatch application for KDE.
 
 	[https://www.kde.org/applications/utilities/kronometer/](https://www.kde.org/applications/utilities/kronometer/) || [kronometer](https://www.archlinux.org/packages/?name=kronometer)

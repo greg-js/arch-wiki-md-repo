@@ -52,6 +52,8 @@ Configuration differs for virtual versus serial consoles. In most cases, you wan
 
 ### Virtual console
 
+**Warning:** [It has been reported](https://bbs.archlinux.org/viewtopic.php?id=238576) that this method may interfere with the hibernating process.
+
 [Edit the provided unit](/index.php/Systemd#Editing_provided_units "Systemd") either manually by creating the following drop-in snippet, or by running `systemctl edit getty@tty1` and pasting its content:
 
  `/etc/systemd/system/getty@tty1.service.d/override.conf` 

@@ -183,6 +183,10 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
 
 	[http://clonezilla.org/](http://clonezilla.org/) || [clonezilla](https://www.archlinux.org/packages/?name=clonezilla)
 
+*   **Deepin Clone** — Tool by Deepin to backup and restore. It supports to clone, backup and restore disk or partition.
+
+	[https://www.deepin.org/en/original/deepin-clone/](https://www.deepin.org/en/original/deepin-clone/) || [deepin-clone](https://www.archlinux.org/packages/?name=deepin-clone)
+
 *   **FSArchiver** — A safe and flexible file-system backup and deployment tool
     *   Support for basic file attributes (permissions, owner, ...).
     *   Support for multiple file-systems per archive.

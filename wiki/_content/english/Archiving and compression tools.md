@@ -57,6 +57,10 @@ These compression programs implement their own file format.
 | [RAR](https://en.wikipedia.org/wiki/RAR_(file_format) | [rar](https://aur.archlinux.org/packages/rar/), [unrar](https://www.archlinux.org/packages/?name=unrar) | .rar | Popular Windows tool available for Linux. See [RAR](/index.php/RAR "RAR"). |
 | [ZIP](https://en.wikipedia.org/wiki/Zip_(file_format) | [zip](https://www.archlinux.org/packages/?name=zip), [unzip](https://www.archlinux.org/packages/?name=unzip) | .zip | Widely used outside of the Linux-world. |
 
+*   **The Unarchiver** — Command-line tool of a Mac application, supports over 40 archive formats (popular, old and unusual).
+
+	[https://theunarchiver.com/](https://theunarchiver.com/) || [unarchiver](https://www.archlinux.org/packages/?name=unarchiver)
+
 ### Esoteric, rare or deprecated tools
 
 | Name | Packages | Ext | Description |

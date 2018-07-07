@@ -3,27 +3,22 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Enabling DBus remote control Support](#Enabling_DBus_remote_control_Support)
-*   [3 Enabling OpenPGP](#Enabling_OpenPGP)
-*   [4 Show/hide roster](#Show.2Fhide_roster)
-*   [5 Auto logout on suspend](#Auto_logout_on_suspend)
-*   [6 Off-the-Record Messaging](#Off-the-Record_Messaging)
-    *   [6.1 Installation / Configuration](#Installation_.2F_Configuration)
-    *   [6.2 gajim-otr version confusions](#gajim-otr_version_confusions)
-*   [7 OMEMO Support](#OMEMO_Support)
-    *   [7.1 Configuration](#Configuration)
+*   [2 D-Bus remote control](#D-Bus_remote_control)
+*   [3 Show/hide roster](#Show.2Fhide_roster)
+*   [4 Auto logout on suspend](#Auto_logout_on_suspend)
+*   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
+    *   [5.1 Installation / Configuration](#Installation_.2F_Configuration)
+    *   [5.2 gajim-otr version confusions](#gajim-otr_version_confusions)
+*   [6 OMEMO Support](#OMEMO_Support)
+    *   [6.1 Configuration](#Configuration)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [gajim](https://www.archlinux.org/packages/?name=gajim) package.
 
-## Enabling DBus remote control Support
+## D-Bus remote control
 
-As of version 0.16.6, DBus support is disabled, in order to activate it, enable *remote_control* in the 'Advanced Configuration Editor' *Preferences > Advanced > Advanced Configuration Editor*), then restart Gajim.
-
-## Enabling OpenPGP
-
-Needs the packages python2-gnupg python2-gnupginterface. The python3 packages won’t suffice as of 0.16.7-1.
+To enable D-Bus remote control support, go to *Preferences > Advanced > Advanced Configuration Editor*, open the 'Advanced Configuration Editor', enable *remote_control*, and then restart Gajim.
 
 ## Show/hide roster
 

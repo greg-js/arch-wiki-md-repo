@@ -79,7 +79,7 @@ Because the patch for alsa-lib is an optional dependency, it must be installed m
 
 #### WiFi
 
-Copy `brcmfmac4356-pcie.txt` from [here](https://raw.githubusercontent.com/njkli/gpd-pocket/master/gpd-pocket-support/brcmfmac4356-pcie.txt) to `/usr/lib/firmware/brcm/` then reload the WiFi kernel module:
+Install the AUR package [https://aur.archlinux.org/packages/gpd-pocket-support-bcm4356-git/](https://aur.archlinux.org/packages/gpd-pocket-support-bcm4356-git/) OR copy `brcmfmac4356-pcie.txt` from [here](https://raw.githubusercontent.com/njkli/gpd-pocket/master/gpd-pocket-support/brcmfmac4356-pcie.txt) to `/usr/lib/firmware/brcm/` then reload the WiFi kernel module:
 
 ```
 # modprobe -r brcmfmac
@@ -110,9 +110,12 @@ MODULES=(pwm_lpss pwm_lpss_platform i915)
 
 ##### Basic Configuration
 
-Create `/etc/udev/rules.d/99-goodix-touch.rules` to rotate the touchscreen:
+Create `/etc/udev/rules.d/99-goodix-touch.rules` to rotate the touchscreen, and fill it with:
 
- `/etc/udev/rules.d/99-goodix-touch.rules`  `ACTION=="add` 
+```
+ACTION=="add|change", KERNEL=="event[0-9]*", ATTRS{name}=="Goodix Capacitive TouchScreen", ENV{LIBINPUT_CALIBRATION_MATRIX}="0 1 0 -1 0 1"
+
+```
 
 ##### Right Click Emulation
 

@@ -75,7 +75,7 @@ If you attempt to visit a site with a bogus (spoofed) IP address, the validing r
 
 ## Enable DNSSEC in specific software
 
-If not you choose not to [#Install a DNSSEC-aware validating recursive server](#Install_a_DNSSEC-aware_validating_recursive_server), you need to use software that has DNSSEC support builtin in order to use its features. Often this means you must patch the software yourself. A list of several patched applications is found [here](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Additionally some web browsers have extensions or add-ons that can be installed to implement DNSSEC without patching the program.
+If you choose not to [#Install a DNSSEC-aware validating recursive server](#Install_a_DNSSEC-aware_validating_recursive_server), you need to use software that has DNSSEC support builtin in order to use its features. Often this means you must patch the software yourself. A list of several patched applications is found [here](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Additionally some web browsers have extensions or add-ons that can be installed to implement DNSSEC without patching the program.
 
 ## DNSSEC Hardware
 

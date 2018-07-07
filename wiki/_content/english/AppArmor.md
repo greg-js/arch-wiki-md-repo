@@ -18,6 +18,7 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 
 *   [1 Installation](#Installation)
     *   [1.1 Kernel](#Kernel)
+        *   [1.1.1 Custom kernel](#Custom_kernel)
     *   [1.2 Userspace Tools](#Userspace_Tools)
     *   [1.3 Testing](#Testing)
 *   [2 Disabling](#Disabling)
@@ -36,21 +37,29 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 
 ### Kernel
 
-[Install](/index.php/Install "Install") either [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/) or [linux-hardened-apparmor](https://aur.archlinux.org/packages/linux-hardened-apparmor/). As a third option you may as well compile the kernel yourself.
+[Install](/index.php/Install "Install") either [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) (4.17.4 or later) or [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/). A third option is to compile a [#Custom kernel](#Custom_kernel).
 
-When [compiling the kernel](/index.php/Kernels#Compilation "Kernels"), it is required to at least set the following options:
+To enable AppArmor as default security model on every boot, set the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"): `apparmor=1 security=apparmor`
+
+**Note:** [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/) should already use AppArmor as default security model (`CONFIG_DEFAULT_SECURITY_APPARMOR=y`).
+
+#### Custom kernel
+
+When [compiling the kernel](/index.php/Kernels#Compilation "Kernels"), it is required to set at least the following options:
 
 ```
 CONFIG_SECURITY_APPARMOR=y
-CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=1
-CONFIG_DEFAULT_SECURITY_APPARMOR=y
 CONFIG_AUDIT=y
 
 ```
 
-In order to ensure that those new or altered variables do not get overridden, place them at the bottom of the config file or adjust the previous invocations accordingly.
+To use AppArmor as the default Linux security model and omitting the need of setting kernel parameters, also set the following options:
 
-Instead of setting `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE` and `CONFIG_DEFAULT_SECURITY_APPARMOR`, you can also set [kernel boot parameters](/index.php/Kernel_parameters "Kernel parameters"): `apparmor=1 security=apparmor`.
+```
+CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=1
+CONFIG_DEFAULT_SECURITY_APPARMOR=y
+
+```
 
 ### Userspace Tools
 
@@ -70,7 +79,7 @@ To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `
 
 ### Testing
 
-After a reboot you can test if AppArmor is really enabled using this command as root:
+To test if AppArmor has been enabled:
 
  `# cat /sys/module/apparmor/parameters/enabled` 
 ```
@@ -79,6 +88,22 @@ Y
 ```
 
 (Y=enabled, N=disabled, no such file = module not in kernel)
+
+To display the current loaded status use `apparmor_status`:
+
+ `# apparmor_status` 
+```
+apparmor module is loaded.
+44 profiles are loaded.
+44 profiles are in enforce mode.
+ ...
+0 profiles are in complain mode.
+0 processes have profiles defined.
+0 processes are in enforce mode.
+0 processes are in complain mode.
+0 processes are unconfined but have a profile defined.
+
+```
 
 ## Disabling
 
@@ -90,14 +115,16 @@ Alternatively you may choose to disable the kernel modules required by AppArmor 
 
 ### Auditing and generating profiles
 
-To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8) will suffice:
+To create new profiles the [Audit framework](/index.php/Audit_framework "Audit framework") should be running. This is because Arch Linux adopted [systemd](/index.php/Systemd "Systemd") and doesn't do kernel logging to file by default. AppArmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile.
+
+To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8) will suffice:
 
 ```
 # auditctl -a exit,always -F arch=b64 -S all -F path=/usr/bin/chromium -F key=MonitorChromium
 
 ```
 
-but be sure to read [Audit framework#Adding rules](/index.php/Audit_framework#Adding_rules "Audit framework") if this is unfamiliar to you.
+Be sure to read [Audit framework#Adding rules](/index.php/Audit_framework#Adding_rules "Audit framework") if this is unfamiliar to you.
 
 **Note:** Remember to stop the service afterwards (and maybe clear `/var/log/audit/audit.log`) because it may cause overhead depending on your rules.
 
@@ -144,7 +171,7 @@ To load (enforce or complain), unload, reload, cache and stat profiles use `appa
 
 ### Preventing circumvention of path-based MAC via links
 
-This section refers back to outdated kernels and should be considered obsolete. Previously AppArmor can be circumvented via hardlinks in the standard POSIX security model. However, the kernel [included](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=800179c9b8a1e796e441674776d11cd4c05d61d7) the ability to prevent this vulnerability via the following settings:
+Previously AppArmor can be circumvented via hardlinks in the standard POSIX security model. However, the kernel [included](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=800179c9b8a1e796e441674776d11cd4c05d61d7) the ability to prevent this vulnerability via the following settings:
 
  `/usr/lib/sysctl.d/50-default.conf` 
 ```

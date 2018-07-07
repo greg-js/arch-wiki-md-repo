@@ -265,7 +265,7 @@ A network manager lets you manage network connection settings in so called netwo
 
 **Note:** There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously.
 
-| Network manager | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | CLI tools | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
+| Network manager | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | CLI tools | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
 (e.g. 3G modem) | [#DHCP](#DHCP) client | Systemd units |
 | [ConnMan](/index.php/ConnMan "ConnMan") | 8 unofficial | No | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Yes | internal | `connman.service` |
 | [netctl](/index.php/Netctl "Netctl") | 2 unofficial | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Yes | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |

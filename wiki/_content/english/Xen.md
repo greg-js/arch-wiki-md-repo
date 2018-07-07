@@ -34,7 +34,11 @@ From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
     *   [9.2 "xl create" fails](#.22xl_create.22_fails)
     *   [9.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
     *   [9.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
-*   [10 Resources](#Resources)
+*   [10 Known Install Problems](#Known_Install_Problems)
+    *   [10.1 One or more PGP signatures could not be verified!](#One_or_more_PGP_signatures_could_not_be_verified.21)
+        *   [10.1.1 Add the key](#Add_the_key)
+        *   [10.1.2 Don't verify the key](#Don.27t_verify_the_key)
+*   [11 Resources](#Resources)
 
 ## Introduction
 
@@ -406,6 +410,46 @@ Press `ctrl-d` until you get back to a prompt, rebuild its initramfs described
 ### Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"
 
 This is caused by `/etc/udev/rules.d/xend.rules`. Xend is deprecated and not used, so it is safe to remove that file.
+
+## Known Install Problems
+
+### One or more PGP signatures could not be verified!
+
+When you install from the [xen](https://aur.archlinux.org/packages/xen/) package, if you run `makepkg -sri` and you get this message:
+
+```
+==> xen-4.10.1.tar.gz ... FAILED (unknown public key 83FE14C957E82BD9)
+
+```
+
+Then the Xen Project tree code signing OpenPGP key is not in your gpg keyring.
+
+You have two choices:
+
+#### Add the key
+
+add it directly with the command:
+
+```
+$ gpg --recv-keys 83FE14C957E82BD9
+
+```
+
+and then make the package with:
+
+```
+$ makepkg -si
+
+```
+
+#### Don't verify the key
+
+Or you tell `makepkg` to not verify the key:
+
+```
+$ makepkg -si --skippgpcheck
+
+```
 
 ## Resources
 

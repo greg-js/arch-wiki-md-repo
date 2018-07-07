@@ -25,16 +25,16 @@ The audit framework works by listening to the event reported by the kernel and l
 
 ## Installation
 
-Install a custom kernel with `CONFIG_AUDIT` enabled. You can also install [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package and add `audit=1` to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") instead.
+Install a (custom) [kernel](/index.php/Kernel "Kernel") with `CONFIG_AUDIT` enabled, as in [Linux-hardened](/index.php/Linux-hardened "Linux-hardened").
 
 Install [audit](https://www.archlinux.org/packages/?name=audit) and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `auditd.service`.
 
-**Note:** The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package by default sets `audit=0` in [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") which conflicts with `ConditionKernelCommandLine=!audit=0` set in `/usr/lib/systemd/system/auditd.service`. To overcome this you may override `auditd.service` settings with:
-```
-# systemctl edit auditd.service
+**Note:**
 
-```
- `/etc/systemd/system/auditd.service.d/override.conf` 
+*   [Linux-hardened](/index.php/Linux-hardened "Linux-hardened") audit support can be enabled by setting `audit=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+*   [Linux-hardened](/index.php/Linux-hardened "Linux-hardened") by default uses `audit=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") which conflicts with `ConditionKernelCommandLine=!audit=0` used in `/usr/lib/systemd/system/auditd.service`. To overcome this you may want to create a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") for `overrule.service`:
+
+ `/etc/systemd/system/auditd.service.d/audit.conf` 
 ```
 [Unit]
 ConditionKernelCommandLine=

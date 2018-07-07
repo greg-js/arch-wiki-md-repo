@@ -64,6 +64,10 @@ timeout_frozen_after = 7d
 
 ### TLS, security & authentication
 
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS") to prevent vulnerabilities.
+
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+
 The first part of the following options are still part of the first configuration section in Exim. Starting with "begin authenticators" the first special section in Exim configuration begins. There will be more such sections later. Below some very basic security related options are defined, TLS is set up & a plain text authenticator using a user password lookup is introduced.
 
 **Warning:** This example of an authenticator should not be used in production environment!

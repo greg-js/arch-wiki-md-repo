@@ -351,7 +351,7 @@ and change the "dpi" setting found in the "Graphics" tab. This only affects the 
 
 ### Skype
 
-Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GTK+ 2](#GTK.2B_2).
+Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29).
 
 ### Spotify
 

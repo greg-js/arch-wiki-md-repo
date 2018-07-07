@@ -19,27 +19,19 @@ The advantages of Courier-MTA are:
 
 *   [1 Preamble](#Preamble)
 *   [2 Installing](#Installing)
-*   [3 Authuserdb authentication](#Authuserdb_authentication)
-*   [4 Creating the vmail user](#Creating_the_vmail_user)
-*   [5 Creating the email accounts](#Creating_the_email_accounts)
-*   [6 Setting up Maildirs](#Setting_up_Maildirs)
-*   [7 Creating the user database](#Creating_the_user_database)
-*   [8 Configuring courier](#Configuring_courier)
-    *   [8.1 Setting localdomain and hosteddomains](#Setting_localdomain_and_hosteddomains)
-*   [9 Testing your setup](#Testing_your_setup)
-*   [10 Configuring IMAP and POP3](#Configuring_IMAP_and_POP3)
-*   [11 Remarks](#Remarks)
+*   [3 TLS](#TLS)
+*   [4 Authuserdb authentication](#Authuserdb_authentication)
+*   [5 Creating the vmail user](#Creating_the_vmail_user)
+*   [6 Creating the email accounts](#Creating_the_email_accounts)
+*   [7 Setting up Maildirs](#Setting_up_Maildirs)
+*   [8 Creating the user database](#Creating_the_user_database)
+*   [9 Configuring courier](#Configuring_courier)
+    *   [9.1 Setting localdomain and hosteddomains](#Setting_localdomain_and_hosteddomains)
+*   [10 Testing your setup](#Testing_your_setup)
+*   [11 Configuring IMAP and POP3](#Configuring_IMAP_and_POP3)
+*   [12 Remarks](#Remarks)
 
 ## Preamble
-
-**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to Courier MTA, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
-
-This is a "little" text which will help you to configure the courier mail server. It doesn't explicitly cover the configuration of the popular and widely used Courier-IMAP server. Instead it focuses on the big Courier-MTA mail-server suite, which integrates an MTA and the POP3/IMAP mail fetching methods.
-
-While there are many methods how authorization of users for MTA and POP can be integrated in one database, there is really no such integrated solution which comes out of the box. There are a couple of mail-servers on Windows which support that, but we're working with Unix/Linux here, right? Also, some admins might argue that the integration of authentication via external databases or LDAP repositories are absolutely sufficient and even desirable since the POP3 server and the MTA are hosted on separated machines anyway. Well, how about the enthusiastic user who rents one dedicated server or the home user who just wants to serve his or her home network? Mostly the enterprise solutions are copied and narrowed down to personal needs.
-**Note:** This creates potential security risks since it is tricky to coordinate all these different pieces of software appropriately.
-
-Courier-MTA is not really simple, but it might be easier than the constructs mentioned above.
 
 The following text describes a setup for two local domains on one physical machine, which is not so uncommon for single users or small companies. We authenticate against a BerkeleyDB-based ".dat" file which is created from a text or multiple textfiles automatically by tools that come with courier. This method is described in the Courier documentation as *authuserdb*, so do not get confused about names. The authentication against other providers happens in an adequate way and is covered in courier-authlibs documentation. There are differences in the handling of SASL methods (such as PLAIN or CRAM-MD5) depending on which authentication backend (*authuserd*, *authpam*, *authmysql* ...) you like to use. Just do not expect that this setup can be painlessly converted from the described *authuserdb* to *authmysql*.
 
@@ -50,6 +42,12 @@ The following text describes a setup for two local domains on one physical machi
 [Install](/index.php/Install "Install") the [courier-mta](https://aur.archlinux.org/packages/courier-mta/) package.
 
 Any other mail transfer agents (like cyrus) or smtp servers (sendmail, postfix, etc) must be uninstalled for this, so answer 'yes' when prompted to do so.
+
+## TLS
+
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to [disable SSLv3](https://disablessl3.com/) to prevent the POODLE vulnerability and follow [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
+
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
 
 ## Authuserdb authentication
 

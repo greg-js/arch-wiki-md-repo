@@ -236,7 +236,7 @@ Then update the database and force downgrade:
 
 ## Historical Archive
 
-Maintaining the Arch Linux Archive consumes significant amount of ressources, so old packages are cleaned up from time to time.
+Maintaining the Arch Linux Archive consumes significant amount of resources, so old packages are cleaned up from time to time.
 
 Before removing them, old packages are uploaded to a [dedicated collection "Arch Linux Historical Archive" on archive.org](https://archive.org/details/archlinuxarchive).
 

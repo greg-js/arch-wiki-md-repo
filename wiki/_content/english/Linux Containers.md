@@ -48,7 +48,7 @@ LXCs can be setup to run in either *privileged* or *unprivileged* configurations
 
 In general, running an *unprivileged* container is [considered safer](https://www.stgraber.org/2014/01/17/lxc-1-0-unprivileged-containers) than running a *privileged* container since *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID in the container to a non-root UID on the host which makes it more difficult for a hack within the container to lead to consequences on host system. In other words, if an attacker manages to escape the container, he or she should find themselves with no rights on the host.
 
-The Arch packages currently provide out-of-the-box support for *privileged* containers. *Unprivileged* containers are only available for the system administrator without additional kernel configuration. This is due to the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel shipping with user namespaces disabled for normal users. This article contains information for users to run either type of container, but additional setup is required to use *unprivileged* containers.
+The Arch packages currently provide out-of-the-box support for *privileged* containers. *Unprivileged* containers are only available for the system administrator with additional kernel configuration. This is due to the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel shipping with user namespaces disabled for normal users. This article contains information for users to run either type of container, but additional setup is required to use *unprivileged* containers.
 
 ### An example to illustrate unprivileged containers
 

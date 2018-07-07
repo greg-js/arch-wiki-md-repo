@@ -16,7 +16,7 @@ This article describes how to set up a mail server suitable for personal or smal
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Assumptions](#Assumptions)
-    *   [2.2 Create the SSL certificate](#Create_the_SSL_certificate)
+    *   [2.2 Create the TLS certificate](#Create_the_TLS_certificate)
     *   [2.3 Generate DH parameters](#Generate_DH_parameters)
     *   [2.4 Dovecot configuration](#Dovecot_configuration)
     *   [2.5 PAM Authentication](#PAM_Authentication)
@@ -42,25 +42,21 @@ This article describes how to set up a mail server suitable for personal or smal
 *   The common [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format is used to store the mail in the user's home directory.
 *   A [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") has already been set up to deliver mail to the local users.
 
-### Create the SSL certificate
+### Create the TLS certificate
 
-The [dovecot](https://www.archlinux.org/packages/?name=dovecot) package contains a script to generate the server SSL certificate.
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent vulnerabilities. `ssl_min_protocol` defaults to TLSv1\. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-*   Copy the example configuration: `# cp /usr/share/doc/dovecot/dovecot-openssl.cnf /etc/ssl/dovecot-openssl.cnf`.
-*   Edit `/etc/ssl/dovecot-openssl.cnf` to configure the certificate.
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
 
-*   Execute `# /usr/lib/dovecot/mkcert.sh` to generate the certificate.
+Alternatively you can generate the certificate using a script that comes with the [dovecot](https://www.archlinux.org/packages/?name=dovecot) package:
+
+1.  Copy the example configuration: `# cp /usr/share/doc/dovecot/dovecot-openssl.cnf /etc/ssl/dovecot-openssl.cnf`.
+2.  Edit `/etc/ssl/dovecot-openssl.cnf` to configure the certificate.
+3.  Execute `# /usr/lib/dovecot/mkcert.sh` to generate the certificate.
 
 The certificate/key pair is created as `/etc/ssl/certs/dovecot.pem` and `/etc/ssl/private/dovecot.pem`.
 
 Run `cp /etc/ssl/certs/dovecot.pem /etc/ca-certificates/trust-source/anchors/dovecot.crt` and then `# trust extract-compat` whenever you have changed your certificate.
-
-**Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your [configuration](#Dovecot_configuration) in `/etc/dovecot/conf.d/10-ssl.conf`:
-```
-ssl_min_protocol = TLSv1
-ssl_cipher_list = ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
-ssl_prefer_server_ciphers = yes
-```
 
 ### Generate DH parameters
 

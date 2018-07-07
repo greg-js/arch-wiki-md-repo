@@ -123,15 +123,19 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 
 ## Graphical front-ends for QEMU
 
-Unlike other virtualization programs such as [VirtualBox](/index.php/VirtualBox "VirtualBox") and [VMware](/index.php/VMware "VMware"), QEMU does not provide a GUI to manage virtual machines (other than the window that appears when running a virtual machine), nor does it provide a way to create persistent virtual machines with saved settings. All parameters to run a virtual machine must be specified on the command line at every launch, unless you have created a custom script to start your virtual machine(s). However, there are several GUI front-ends for QEMU:
+Unlike other virtualization programs such as [VirtualBox](/index.php/VirtualBox "VirtualBox") and [VMware](/index.php/VMware "VMware"), QEMU does not provide a GUI to manage virtual machines (other than the window that appears when running a virtual machine), nor does it provide a way to create persistent virtual machines with saved settings. All parameters to run a virtual machine must be specified on the command line at every launch, unless you have created a custom script to start your virtual machine(s).
 
-*   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)
-*   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
-*   [qemu-launcher](https://aur.archlinux.org/packages/qemu-launcher/)
-*   [qtemu](https://aur.archlinux.org/packages/qtemu/)
-*   [aqemu](https://aur.archlinux.org/packages/aqemu/)
+[Libvirt](/index.php/Libvirt "Libvirt") provides a convenient way to manage QEMU virtual machines. See [list of libvirt clients](/index.php/Libvirt#Client "Libvirt") for available front-ends.
 
-Additional front-ends with QEMU support are available for [libvirt](/index.php/Libvirt "Libvirt").
+Other GUI front-ends for QEMU:
+
+*   **AQEMU** — QEMU GUI written in Qt5.
+
+	[https://github.com/tobimensch/aqemu](https://github.com/tobimensch/aqemu) || [aqemu](https://aur.archlinux.org/packages/aqemu/)
+
+*   **QtEmu** — Graphical user interface for QEMU written in Qt4.
+
+	[https://qtemu.org/](https://qtemu.org/) || [qtemu](https://aur.archlinux.org/packages/qtemu/)
 
 ## Creating new virtualized system
 

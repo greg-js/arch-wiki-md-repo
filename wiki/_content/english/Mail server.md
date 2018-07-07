@@ -17,12 +17,13 @@ See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/
 ## Contents
 
 *   [1 MX record](#MX_record)
-*   [2 Authentication](#Authentication)
-    *   [2.1 Sender Policy Framework](#Sender_Policy_Framework)
-    *   [2.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
-    *   [2.3 DKIM](#DKIM)
-*   [3 Testing websites](#Testing_websites)
-*   [4 Tips and tricks](#Tips_and_tricks)
+*   [2 TLS](#TLS)
+*   [3 Authentication](#Authentication)
+    *   [3.1 Sender Policy Framework](#Sender_Policy_Framework)
+    *   [3.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
+    *   [3.3 DKIM](#DKIM)
+*   [4 Testing websites](#Testing_websites)
+*   [5 Tips and tricks](#Tips_and_tricks)
 
 ## MX record
 
@@ -33,6 +34,12 @@ A mail exchanger record (MX record) is a type of resource record in the Domain N
 When an e-mail message is sent through the Internet, the sending mail transfer agent queries the Domain Name System for MX records of each recipient's domain name. This query returns a list of host names of mail exchange servers accepting incoming mail for that domain and their preferences. The sending agent then attempts to establish an SMTP connection to one of these servers, starting with the one with the smallest preference number, delivering the message to the first server with which a connection can be made.
 
 **Note:** Some mail servers will not deliver mail to you if your MX record points to a CNAME. For best results, always point an MX record to an A record definition. For more information, see e.g. [Wikipedia's List of DNS Record Types](https://en.wikipedia.org/wiki/List_of_DNS_record_types "wikipedia:List of DNS record types").
+
+## TLS
+
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS") to prevent vulnerabilities.
+
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
 
 ## Authentication
 
@@ -86,6 +93,6 @@ Most mail servers can be configured to strip users' IP addresses and [user agent
 Available extras that can usually be integrated are:
 
 *   [ClamAV](/index.php/ClamAV "ClamAV") for virus checking emails
-*   [spamassasin](https://www.archlinux.org/packages/?name=spamassasin) to identify and filter spam
+*   [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) to identify and filter spam
 *   [Sieve](https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language) – a mail filtering programming language
 *   [webmail](https://en.wikipedia.org/wiki/Webmail "wikipedia:Webmail") like [Roundcube](/index.php/Roundcube "Roundcube") or [Squirrelmail](/index.php/Squirrelmail "Squirrelmail")

@@ -236,9 +236,13 @@ Putting together all of the above gives the following example configuration:
 
 ## GUI Applications
 
-*   **Gsmartcontrol** — A GNOME frontend for the smartctl hard disk drive health inspection tool
+*   **DisKMonitor** — KDE tools to monitor SMART devices and MDRaid health status.
 
-	[http://gsmartcontrol.sourceforge.net](http://gsmartcontrol.sourceforge.net) || [gsmartcontrol](https://www.archlinux.org/packages/?name=gsmartcontrol) or [gsmartcontrol-svn](https://aur.archlinux.org/packages/gsmartcontrol-svn/)
+	[https://github.com/papylhomme/diskmonitor](https://github.com/papylhomme/diskmonitor) || [diskmonitor](https://aur.archlinux.org/packages/diskmonitor/)
+
+*   **GSmartControl** — GNOME frontend for the smartctl hard disk drive health inspection tool.
+
+	[https://gsmartcontrol.sourceforge.io/](https://gsmartcontrol.sourceforge.io/) || [gsmartcontrol](https://www.archlinux.org/packages/?name=gsmartcontrol)
 
 ## See also
 

@@ -15,7 +15,7 @@ Related articles
         *   [2.1.2 Hybrid : local mail and relay](#Hybrid_:_local_mail_and_relay)
         *   [2.1.3 Relay only](#Relay_only)
     *   [2.2 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
-        *   [2.2.1 Create encryption keys](#Create_encryption_keys)
+        *   [2.2.1 TLS](#TLS)
         *   [2.2.2 Create user accounts](#Create_user_accounts)
         *   [2.2.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
         *   [2.2.4 Create tables](#Create_tables)
@@ -91,18 +91,11 @@ The aliases option is used for the local user mapping, for a simplified mapping 
 
 ### Simple OpenSMTPD/mbox configuration
 
-#### Create encryption keys
+#### TLS
 
-[openssl](https://www.archlinux.org/packages/?name=openssl) provides TLS support and is installed by default on Arch installations.
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
 
-Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"):
-
-```
-# mkdir -m 700 /etc/smtpd/tls; cd /etc/smtpd/tls
-# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout smtpd.key -out smtpd.crt -days 1095
-# chmod 400 smtpd.key; chmod 444 smtpd.crt
-
-```
+**Note:** OpenSMTPD has solid defaults, SSLv3 is always disabled and the default `ciphers` are not known to be insecure. You might still want to test the server as described in [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
 #### Create user accounts
 

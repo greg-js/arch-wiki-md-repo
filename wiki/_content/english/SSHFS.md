@@ -23,8 +23,7 @@ Related articles
     *   [5.1 Checklist](#Checklist)
     *   [5.2 Connection reset by peer](#Connection_reset_by_peer)
     *   [5.3 Remote host has disconnected](#Remote_host_has_disconnected)
-    *   [5.4 Freezing apps (e.g. Gnome Files, Gedit)](#Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29)
-    *   [5.5 fstab mounting issues](#fstab_mounting_issues)
+    *   [5.4 fstab mounting issues](#fstab_mounting_issues)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -242,19 +241,6 @@ If you receive this message directly after attempting to use *sshfs*:
 
 *   First make sure that the **remote** machine has *sftp* installed! It will not work, if not.
 *   Then, check that the path of the `Subsystem sftp` in `/etc/ssh/sshd_config` on the remote machine is valid.
-
-### Freezing apps (e.g. Gnome Files, Gedit)
-
-**Warning:** This prevents the recently used file list from being populated and may lead to possible write errors.
-
-If you experience freezing/hanging (stopped responding) applications, you may need to disable write-access to the `~/recently-used.xbel` file.
-
-```
-# chattr +i /home/USERNAME/.local/share/recently-used.xbel
-
-```
-
-See the following [bug report](https://bugs.archlinux.org/task/40260) for more details and/or solutions.
 
 ### fstab mounting issues
 

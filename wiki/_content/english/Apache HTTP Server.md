@@ -13,7 +13,7 @@ This article describes how to set up Apache and how to optionally integrate it w
 *   [2 Configuration](#Configuration)
     *   [2.1 Advanced options](#Advanced_options)
     *   [2.2 User directories](#User_directories)
-    *   [2.3 TLS/SSL](#TLS.2FSSL)
+    *   [2.3 TLS](#TLS)
         *   [2.3.1 Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate)
     *   [2.4 Virtual hosts](#Virtual_hosts)
         *   [2.4.1 Managing many virtual hosts](#Managing_many_virtual_hosts)
@@ -132,11 +132,11 @@ $ chmod -R o+r ~/public_html
 
 Restart `httpd.service` to apply any changes. See also [Umask#Set the mask value](/index.php/Umask#Set_the_mask_value "Umask").
 
-### TLS/SSL
+### TLS
 
-**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to the web server, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent vulnerabilities. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-[OpenSSL](/index.php/OpenSSL "OpenSSL") provides TLS/SSL support and is installed by default on Arch installations.
+To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
 
 In `/etc/httpd/conf/httpd.conf`, uncomment the following three lines:
 
@@ -154,7 +154,7 @@ LoadModule rewrite_module modules/mod_rewrite.so
 
 ```
 
-For TLS/SSL, you will need a key and certificate. If you own a public domain, you can use [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") to obtain a certificate for free, otherwise follow [#Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate).
+For TLS, you will need a key and certificate. If you own a public domain, you can use [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") to obtain a certificate for free, otherwise follow [#Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate).
 
 After obtaining a key and certificate, make sure the `SSLCertificateFile` and `SSLCertificateKeyFile` lines in `/etc/httpd/conf/extra/httpd-ssl.conf` point to the key and certificate. If a concatenated chain of CA certificates was also generated, add that filename against `SSLCertificateChainFile`.
 

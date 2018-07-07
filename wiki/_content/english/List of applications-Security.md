@@ -19,6 +19,7 @@
         *   [1.9.1 Console](#Console)
         *   [1.9.2 Graphical](#Graphical)
     *   [1.10 Firewall management](#Firewall_management)
+    *   [1.11 Disk encryption](#Disk_encryption)
 
 ## Security
 
@@ -523,3 +524,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 #### Firewall management
 
 See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
+
+#### Disk encryption
+
+See [Disk encryption](/index.php/Disk_encryption "Disk encryption").

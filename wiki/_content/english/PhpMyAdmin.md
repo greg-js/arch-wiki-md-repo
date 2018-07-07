@@ -243,7 +243,7 @@ Re-login to ensure the new features are activated.
 Edit `/etc/webapps/phpmyadmin/config.inc.php` to add the line:
 
 ```
- $cfg['TempDir'] = '/tmp/phpmyadmin'
+ $cfg['TempDir'] = '/tmp/phpmyadmin';
 
 ```
 

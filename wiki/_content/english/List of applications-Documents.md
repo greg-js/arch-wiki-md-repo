@@ -920,6 +920,10 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
 
+*   **PDF Mix Tool** — Application to split, merge, rotate and mix PDF files.
+
+	[https://scarpetta.eu/pdfmixtool/](https://scarpetta.eu/pdfmixtool/) || [pdfmixtool](https://aur.archlinux.org/packages/pdfmixtool/)
+
 *   **PDF Mod** — Reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
@@ -1339,6 +1343,10 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 *   **Manuskript** — Provides a rich environment to help writers create their first draft and then further refine and edit their masterpiece.
 
 	[http://www.theologeek.ch/manuskript/](http://www.theologeek.ch/manuskript/) || [manuskript-git](https://aur.archlinux.org/packages/manuskript-git/)
+
+*   **NovProg** — Tool to graph your progress in writing a NaNoWriMo style novel.
+
+	[https://gottcode.org/novprog/](https://gottcode.org/novprog/) || [novprog](https://aur.archlinux.org/packages/novprog/)
 
 *   **oStorybook** — Tool for writers, essayists, authors from the draft to the final work.
 

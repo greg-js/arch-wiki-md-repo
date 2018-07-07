@@ -7,46 +7,42 @@
 ## Contents
 
 *   [1 Science](#Science)
-    *   [1.1 Scientific documents](#Scientific_documents)
-    *   [1.2 Mathematics](#Mathematics)
-        *   [1.2.1 Calculator](#Calculator)
-        *   [1.2.2 Computer algebra system](#Computer_algebra_system)
-        *   [1.2.3 Scientific or technical computing](#Scientific_or_technical_computing)
-        *   [1.2.4 Statistics](#Statistics)
-        *   [1.2.5 Data evaluation](#Data_evaluation)
-    *   [1.3 Chemistry and biology](#Chemistry_and_biology)
-        *   [1.3.1 Computational biology and bioinformatics](#Computational_biology_and_bioinformatics)
-        *   [1.3.2 Molecules](#Molecules)
-            *   [1.3.2.1 Viewers](#Viewers)
-            *   [1.3.2.2 Drawing](#Drawing)
-            *   [1.3.2.3 Modeling](#Modeling)
-        *   [1.3.3 Periodic table](#Periodic_table)
-        *   [1.3.4 Biochemistry](#Biochemistry)
-        *   [1.3.5 Image manipulation](#Image_manipulation)
-    *   [1.4 Meteorology](#Meteorology)
-    *   [1.5 Astronomy](#Astronomy)
-    *   [1.6 Engineering](#Engineering)
-        *   [1.6.1 Computer-aided design](#Computer-aided_design)
-    *   [1.7 Physics](#Physics)
-        *   [1.7.1 Electronics](#Electronics)
-            *   [1.7.1.1 Digital logic](#Digital_logic)
-            *   [1.7.1.2 HDL](#HDL)
-            *   [1.7.1.3 MCU IDE](#MCU_IDE)
-            *   [1.7.1.4 Schematic capture editor](#Schematic_capture_editor)
-        *   [1.7.2 Physics simulation](#Physics_simulation)
-        *   [1.7.3 Unit conversion](#Unit_conversion)
-    *   [1.8 Geography](#Geography)
-    *   [1.9 Communication systems](#Communication_systems)
-        *   [1.9.1 Amateur radio](#Amateur_radio)
-    *   [1.10 Simulation modeling](#Simulation_modeling)
+    *   [1.1 Mathematics](#Mathematics)
+        *   [1.1.1 Calculator](#Calculator)
+        *   [1.1.2 Computer algebra system](#Computer_algebra_system)
+        *   [1.1.3 Scientific or technical computing](#Scientific_or_technical_computing)
+        *   [1.1.4 Statistics](#Statistics)
+        *   [1.1.5 Data evaluation](#Data_evaluation)
+        *   [1.1.6 Proof assistants](#Proof_assistants)
+    *   [1.2 Chemistry and biology](#Chemistry_and_biology)
+        *   [1.2.1 Computational biology and bioinformatics](#Computational_biology_and_bioinformatics)
+        *   [1.2.2 Molecules](#Molecules)
+            *   [1.2.2.1 Viewers](#Viewers)
+            *   [1.2.2.2 Drawing](#Drawing)
+            *   [1.2.2.3 Modeling](#Modeling)
+        *   [1.2.3 Periodic table](#Periodic_table)
+        *   [1.2.4 Biochemistry](#Biochemistry)
+        *   [1.2.5 Image manipulation](#Image_manipulation)
+    *   [1.3 Meteorology](#Meteorology)
+    *   [1.4 Astronomy](#Astronomy)
+    *   [1.5 Engineering](#Engineering)
+        *   [1.5.1 Computer-aided design](#Computer-aided_design)
+    *   [1.6 Physics](#Physics)
+        *   [1.6.1 Electronics](#Electronics)
+            *   [1.6.1.1 Digital logic](#Digital_logic)
+            *   [1.6.1.2 HDL](#HDL)
+            *   [1.6.1.3 MCU IDE](#MCU_IDE)
+            *   [1.6.1.4 Schematic capture editor](#Schematic_capture_editor)
+        *   [1.6.2 Physics simulation](#Physics_simulation)
+        *   [1.6.3 Unit conversion](#Unit_conversion)
+    *   [1.7 Geography](#Geography)
+    *   [1.8 Communication systems](#Communication_systems)
+        *   [1.8.1 Amateur radio](#Amateur_radio)
+    *   [1.9 Simulation modeling](#Simulation_modeling)
 
 ## Science
 
 **Note:** For possibly more up to date selection of scientific applications, try checking the [AUR 'science' category](https://aur.archlinux.org/packages.php?O=0&do_Search=Go&detail=1&C=15&SeB=nd&SB=v&SO=d&PP=50)
-
-### Scientific documents
-
-See the main article: [List of applications/Documents#Scientific documents](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents").
 
 ### Mathematics
 
@@ -194,6 +190,10 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 	[http://mcmc-jags.sourceforge.net/](http://mcmc-jags.sourceforge.net/) || [jags](https://aur.archlinux.org/packages/jags/)
 
+*   **jamovi** — Statistics package, which is easy to use, and designed to be familiar to users of SPSS. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://www.jamovi.org/](https://www.jamovi.org/) || [jamovi-git](https://aur.archlinux.org/packages/jamovi-git/)
+
 *   **[Python Data Analysis Library (pandas)](https://en.wikipedia.org/wiki/Pandas_(software) "wikipedia:Pandas (software)")** — Providing high-performance, easy-to-use data structures and data analysis tools with Python programming language.
 
 	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python2-pandas](https://www.archlinux.org/packages/?name=python2-pandas) [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
@@ -247,6 +247,22 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
 See also [List of applications/Documents#Spreadsheets](/index.php/List_of_applications/Documents#Spreadsheets "List of applications/Documents")
+
+#### Proof assistants
+
+See also [Wikipedia:Proof assistant](https://en.wikipedia.org/wiki/Proof_assistant "wikipedia:Proof assistant").
+
+*   **[Agda](https://en.wikipedia.org/wiki/Agda_(programming_language) "wikipedia:Agda (programming language)")** — Dependently typed functional programming language and proof assistant. It is an interactive system for writing and checking proofs.
+
+	[http://wiki.portal.chalmers.se/agda/](http://wiki.portal.chalmers.se/agda/) || [agda](https://www.archlinux.org/packages/?name=agda)
+
+*   **[Coq](https://en.wikipedia.org/wiki/Coq "wikipedia:Coq")** — Formal proof management system. It provides a formal language to write mathematical definitions, executable algorithms and theorems together with an environment for semi-interactive development of machine-checked proofs.
+
+	[https://coq.inria.fr/](https://coq.inria.fr/) || CLI: [coq](https://www.archlinux.org/packages/?name=coq), GUI: [coqide](https://www.archlinux.org/packages/?name=coqide)
+
+*   **[Isabelle](https://en.wikipedia.org/wiki/Isabelle_(proof_assistant) "wikipedia:Isabelle (proof assistant)")** — Generic proof assistant that allows mathematical formulas to be expressed in a formal language and provides tools for proving those formulas in a logical calculus.
+
+	[https://www.cl.cam.ac.uk/research/hvg/Isabelle/](https://www.cl.cam.ac.uk/research/hvg/Isabelle/) || [isabelle](https://aur.archlinux.org/packages/isabelle/)
 
 ### Chemistry and biology
 
@@ -482,6 +498,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://github.com/reds-heig/logisim-evolution](https://github.com/reds-heig/logisim-evolution) || [logisim-evolution-git](https://aur.archlinux.org/packages/logisim-evolution-git/)
 
+*   **PulseView** — Logic analyzer, oscilloscope and MSO GUI.
+
+	[http://sigrok.org/wiki/PulseView](http://sigrok.org/wiki/PulseView) || [pulseview](https://www.archlinux.org/packages/?name=pulseview)
+
 *   **SmartSim** — Simple and beautiful digital logic circuit design and simulation software, mainly target teachers and students, very lightweight and cross platform, GPL licensed, written in Vala.
 
 	[http://smartsim.org.uk](http://smartsim.org.uk) || [smartsim-git](https://aur.archlinux.org/packages/smartsim-git/)
@@ -591,6 +611,10 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 *   **GottenGeography** — Easy to use photo geotagging application for the GNOME desktop.
 
 	[https://launchpad.net/gottengeography](https://launchpad.net/gottengeography) || [gottengeography](https://www.archlinux.org/packages/?name=gottengeography)
+
+*   **Gpredict** — Real-time satellite tracking and orbit prediction application.
+
+	[http://gpredict.oz9aec.net/](http://gpredict.oz9aec.net/) || [gpredict](https://aur.archlinux.org/packages/gpredict/)
 
 *   **GPSBabel** — Reads, writes, and manipulates GPS waypoints in a variety of formats.
 

@@ -27,6 +27,7 @@ The following sections will roughly explain how these are created and validated.
     *   [2.1 Common image formats](#Common_image_formats)
     *   [2.2 Converting icons](#Converting_icons)
     *   [2.3 Obtaining icons](#Obtaining_icons)
+    *   [2.4 Icon path](#Icon_path)
 *   [3 Tools](#Tools)
     *   [3.1 gendesk](#gendesk)
         *   [3.1.1 How to use](#How_to_use)
@@ -181,6 +182,14 @@ $ find /path/to/source/package -regex ".*\.\(svg\|png\|xpm\|gif\|ico\)$"
 ```
 
 If the developers of an application do not include icons in their source packages, the next step would be to search on their web sites. Some projects, like i.e. *tvbrowser* have an [artwork/logo page](http://enwiki.tvbrowser.org/index.php/Banners,_Logos_and_other_Promotion_Material) where additional icons may be found. If a project is multi-platform, there may be the case that even if the linux/unix package does not come with an icon, the Windows package might provide one. If the project uses a [Version control system](https://en.wikipedia.org/wiki/Version_control_system "wikipedia:Version control system") like CVS/SVN/etc. and you have some experience with it, you also might consider browsing it for icons. If everything fails, the project might simply have no icon/logo yet.
+
+### Icon path
+
+The [freedesktop](http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html) specifies in which order and directories programs should look for icons
+
+1.  `$HOME/.icons` (for backwards compatibility)
+2.  `$XDG_DATA_DIRS/icons`
+3.  `/usr/share/pixmaps`
 
 ## Tools
 
