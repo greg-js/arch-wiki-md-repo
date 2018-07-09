@@ -5,44 +5,37 @@ Related articles
 
 From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 
-	*Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source. Xen is used as the basis for a number of different commercial and open source applications, such as: server virtualization, Infrastructure as a Service (IaaS), desktop virtualization, security applications, embedded and hardware appliances.*
+	*Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source.*
+
+The Xen hypervisor is a thin layer of software which emulates a computer architecture allowing multiple operating systems to run simultaneously. The hypervisor is started by the boot loader of the computer it is installed on. Once the hypervisor is loaded, it starts the [dom0](http://wiki.xen.org/wiki/Dom0) (short for "domain 0", sometimes called the host or privileged domain) which in our case runs Arch Linux. Once the *dom0* has started, one or more [domU](http://wiki.xen.org/wiki/DomU) (short for user domains, sometimes called VMs or guests) can be started and controlled from the *dom0*. Xen supports both paravirtualized (PV) and hardware virtualized (HVM) *domU*. See [Xen.org](http://wiki.xen.org/wiki/Xen_Overview) for a full overview.
 
 **Warning:** Do not run other virtualization software such as [VirtualBox](/index.php/VirtualBox "VirtualBox") when running Xen hypervisor, it might hang your system. See this [bug report (wontfix)](https://www.virtualbox.org/ticket/12146).
 
 ## Contents
 
-*   [1 Introduction](#Introduction)
-*   [2 System requirements](#System_requirements)
-*   [3 Configuring dom0](#Configuring_dom0)
-    *   [3.1 Installation of the Xen hypervisor](#Installation_of_the_Xen_hypervisor)
-    *   [3.2 Modification of the bootloader](#Modification_of_the_bootloader)
-        *   [3.2.1 UEFI](#UEFI)
-        *   [3.2.2 GRUB](#GRUB)
-        *   [3.2.3 Syslinux](#Syslinux)
-    *   [3.3 Creation of a network bridge](#Creation_of_a_network_bridge)
-    *   [3.4 Creating bridge with Network Manager](#Creating_bridge_with_Network_Manager)
-*   [4 Installation of Xen systemd services](#Installation_of_Xen_systemd_services)
-*   [5 Confirming successful installation](#Confirming_successful_installation)
-*   [6 Using Xen](#Using_Xen)
-    *   [6.1 Create a domU "hard disk"](#Create_a_domU_.22hard_disk.22)
-    *   [6.2 Create a domU configuration](#Create_a_domU_configuration)
-    *   [6.3 Managing a domU](#Managing_a_domU)
-*   [7 Configuring a hardware virtualized (HVM) Arch domU](#Configuring_a_hardware_virtualized_.28HVM.29_Arch_domU)
-*   [8 Configuring a paravirtualized (PV) Arch domU](#Configuring_a_paravirtualized_.28PV.29_Arch_domU)
-*   [9 Common Errors](#Common_Errors)
-    *   [9.1 "xl list" complains about libxl](#.22xl_list.22_complains_about_libxl)
-    *   [9.2 "xl create" fails](#.22xl_create.22_fails)
-    *   [9.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
-    *   [9.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
-*   [10 Known Install Problems](#Known_Install_Problems)
-    *   [10.1 One or more PGP signatures could not be verified!](#One_or_more_PGP_signatures_could_not_be_verified.21)
-        *   [10.1.1 Add the key](#Add_the_key)
-        *   [10.1.2 Don't verify the key](#Don.27t_verify_the_key)
-*   [11 Resources](#Resources)
-
-## Introduction
-
-The Xen hypervisor is a thin layer of software which emulates a computer architecture allowing multiple operating systems to run simultaneously. The hypervisor is started by the boot loader of the computer it is installed on. Once the hypervisor is loaded, it starts the [dom0](http://wiki.xen.org/wiki/Dom0) (short for "domain 0", sometimes called the host or privileged domain) which in our case runs Arch Linux. Once the *dom0* has started, one or more [domU](http://wiki.xen.org/wiki/DomU) (short for user domains, sometimes called VMs or guests) can be started and controlled from the *dom0*. Xen supports both paravirtualized (PV) and hardware virtualized (HVM) *domU*. See [Xen.org](http://wiki.xen.org/wiki/Xen_Overview) for a full overview.
+*   [1 System requirements](#System_requirements)
+*   [2 Configuring dom0](#Configuring_dom0)
+    *   [2.1 Installation of the Xen hypervisor](#Installation_of_the_Xen_hypervisor)
+    *   [2.2 Modification of the bootloader](#Modification_of_the_bootloader)
+        *   [2.2.1 UEFI](#UEFI)
+        *   [2.2.2 GRUB](#GRUB)
+        *   [2.2.3 Syslinux](#Syslinux)
+    *   [2.3 Creation of a network bridge](#Creation_of_a_network_bridge)
+    *   [2.4 Creating bridge with Network Manager](#Creating_bridge_with_Network_Manager)
+*   [3 Installation of Xen systemd services](#Installation_of_Xen_systemd_services)
+*   [4 Confirming successful installation](#Confirming_successful_installation)
+*   [5 Using Xen](#Using_Xen)
+    *   [5.1 Create a domU "hard disk"](#Create_a_domU_.22hard_disk.22)
+    *   [5.2 Create a domU configuration](#Create_a_domU_configuration)
+    *   [5.3 Managing a domU](#Managing_a_domU)
+*   [6 Configuring a hardware virtualized (HVM) Arch domU](#Configuring_a_hardware_virtualized_.28HVM.29_Arch_domU)
+*   [7 Configuring a paravirtualized (PV) Arch domU](#Configuring_a_paravirtualized_.28PV.29_Arch_domU)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 "xl list" complains about libxl](#.22xl_list.22_complains_about_libxl)
+    *   [8.2 "xl create" fails](#.22xl_create.22_fails)
+    *   [8.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
+    *   [8.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
+*   [9 See also](#See_also)
 
 ## System requirements
 
@@ -79,8 +72,6 @@ The boot loader must be modified to load a special Xen kernel (`xen.gz` or in th
 #### UEFI
 
 There are several ways UEFI can be involved in booting Xen but this section will cover the most simple way to get Xen to boot with help of EFI-stub.
-
-Make sure that you have compiled Xen with UEFI support enabled according to [#With UEFI support](#With_UEFI_support).
 
 It is possible to boot a kernel from UEFI just by placing it on the EFI partition, but since Xen at least needs to know what kernel should be booted as dom0, a minimum configuration file is required. Create or edit a `/boot/xen.cfg` file according to system requirements, for example:
 
@@ -204,7 +195,7 @@ Reboot. If everything works properly after a reboot (ie. bridge starts automatic
 
 ## Installation of Xen systemd services
 
-The Xen *dom0* requires the `xenstored`, `xenconsoled`, `xendomains` and `xen-init-dom0` [services](/index.php/Systemd#Using_units "Systemd") to be started and possibly enabled.
+The Xen *dom0* requires the `xenstored.service`, `xenconsoled.service`, `xendomains.service` and `xen-init-dom0.service` to be [started](/index.php/Started "Started") and possibly [enabled](/index.php/Enabled "Enabled").
 
 ## Confirming successful installation
 
@@ -214,6 +205,7 @@ Reboot your *dom0* host and ensure that the Xen kernel boots correctly and that 
 ```
 Name                                        ID   Mem VCPUs	State	Time(s)
 Domain-0                                     0   511     2     r-----   41652.9
+
 ```
 
 Of course, the Mem, VCPUs and Time columns will be different depending on machine configuration and uptime. The important thing is that *dom0* is listed.
@@ -354,6 +346,7 @@ menuentry 'Arch GNU/Linux, with Linux core repo kernel' --class arch --class gnu
         echo    'Loading initial ramdisk ...'
         initrd  /boot/initramfs-linux.img
 }
+
 ```
 
 This file must be edited to match the UUID of the root partition. From within the *domU*, run the following command:
@@ -393,7 +386,7 @@ The Arch *domU* is now set up. It may be started with the same line as before:
 
 ```
 
-## Common Errors
+## Troubleshooting
 
 ### "xl list" complains about libxl
 
@@ -411,47 +404,7 @@ Press `ctrl-d` until you get back to a prompt, rebuild its initramfs described
 
 This is caused by `/etc/udev/rules.d/xend.rules`. Xend is deprecated and not used, so it is safe to remove that file.
 
-## Known Install Problems
-
-### One or more PGP signatures could not be verified!
-
-When you install from the [xen](https://aur.archlinux.org/packages/xen/) package, if you run `makepkg -sri` and you get this message:
-
-```
-==> xen-4.10.1.tar.gz ... FAILED (unknown public key 83FE14C957E82BD9)
-
-```
-
-Then the Xen Project tree code signing OpenPGP key is not in your gpg keyring.
-
-You have two choices:
-
-#### Add the key
-
-add it directly with the command:
-
-```
-$ gpg --recv-keys 83FE14C957E82BD9
-
-```
-
-and then make the package with:
-
-```
-$ makepkg -si
-
-```
-
-#### Don't verify the key
-
-Or you tell `makepkg` to not verify the key:
-
-```
-$ makepkg -si --skippgpcheck
-
-```
-
-## Resources
+## See also
 
 *   [The homepage at xen.org](http://www.xen.org/)
 *   [The wiki at xen.org](http://wiki.xen.org/wiki/Main_Page)

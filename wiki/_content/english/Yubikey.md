@@ -1,6 +1,6 @@
-This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, how you can use it. And there is plenty of usage. Enjoy.
+This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.wikipedia.org/wiki/YubiKey "wikipedia:YubiKey") works and how you can use it.
 
-**Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#Initial configuration](#Initial_configuration).
+**Note:** Before you overwrite the initial configuration of slot 1, please be aware of the warning under [#Initial configuration](#Initial_configuration).
 
 ## Contents
 
@@ -20,6 +20,7 @@ This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, h
         *   [1.4.5 Set the enabled modes](#Set_the_enabled_modes)
     *   [1.5 Two Slots](#Two_Slots)
         *   [1.5.1 Configuration of the slots](#Configuration_of_the_slots)
+        *   [1.5.2 Configuration Protection](#Configuration_Protection)
     *   [1.6 The LED](#The_LED)
     *   [1.7 Initial configuration](#Initial_configuration)
     *   [1.8 Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"](#Limitations_of_the_passwords_typed_by_YubiKey_via_USB-keyboard_--_or_.22Why_do_my_password_look_so_weak_.3F.22)
@@ -47,7 +48,7 @@ This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, h
     *   [7.1 YubiKey and cryptsetup encrypted partition/disk](#YubiKey_and_cryptsetup_encrypted_partition.2Fdisk)
     *   [7.2 Yubikey and KeePass](#Yubikey_and_KeePass)
         *   [7.2.1 keepassx2](#keepassx2)
-        *   [7.2.2 keepassxC](#keepassxC)
+        *   [7.2.2 KeePassXC](#KeePassXC)
     *   [7.3 Two-factor authentication with SSH](#Two-factor_authentication_with_SSH)
         *   [7.3.1 Prerequisites](#Prerequisites)
         *   [7.3.2 Configuration](#Configuration)
@@ -235,6 +236,22 @@ There are several flags that can be set during the configuration of the slots. T
 
 **Note:** Actually most of (all of??) the parameters and details you use during configuration of the slots, cannot be read back, once written to the YubiKey.
 
+#### Configuration Protection
+
+For security reasons and for avoiding accidental reprogramming, YubiKeys can be protected using configuration protection access code.
+
+If the configuration protection access code is set, no one can reprogram the YubiKey unless the correct access code is provided during reprogramming.
+
+The following operations are supported:
+
+*   YubiKey(s) unprotected - Keep it that way: Use this option if the YubiKey is currently unprotected and you want to keep it that way
+*   YubiKey(s) unprotected - Enable protection: Use this option if the YubiKey is currently unprotected and you want to enable the protection. You are required to provide the New Access Code if you select this option.
+*   YubiKey(s) protected - Disable protection: Use this option if the YubiKey is currently protected and you want to disable the protection. You are required to provide your Current Access Code if you select this option.
+*   YubiKey(s) protected - Keep it that way: Use this option if the YubiKey is currently protected and you want to keep it that way. You are required to provide your Current Access Code if you select this option.
+*   YubiKey(s) protected - Change access code: Use this option if the YubiKey is currently protected and you want to chagne the access code. You are required to provide your Current Access Code and New Access Code if you select this option.
+
+**Warning:** It is not possible to retrieve the access code from the YubiKey. Yubico highly recommends users to record the access code for each YubiKey programmed. This can be achieved easily by ensuring that logging is enabled and archiving the relevant log records.
+
 ### The LED
 
 The YubiKey has a small green LED able to communicate with you. Its message to you actually depends on the currently used [USB connection mode](#The_.28USB_Connection.2FTransport.29_Modes_of_the_YubiKey) of your YubiKey.
@@ -325,7 +342,7 @@ So you can either:
 
 This technique can be used to authenticate.
 
-A challenge is sent to the YubiKey and a response is (auto-magically) calculated and send back. This calcucation needs a secret (e.g. an AES key in case of the Yubico OTP mode) The same challenge always results in the same response. Without the secret this calculation is not meant to be feasable. Even if in the possesion of many (TODO:reference!?) challenge-response pairs.
+A challenge is sent to the YubiKey and a response is (auto-magically) calculated and send back. This calcucation needs a secret (e.g. an AES key in case of the Yubico OTP mode) The same challenge always results in the same response. Without the secret this calculation is not meant to be feasable. Even if in the possesion of many challenge-response pairs.
 
 This can be used for:
 
@@ -410,10 +427,14 @@ For a native open-source implementation of KeePass have a look at:
 
 [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) ([see keepassx.org](https://keepassx.org/)) a keepass QT FOSS reimplementation, extremely stable and available for Windows, MacOSX and Linux.
 
-#### keepassxC
+#### KeePassXC
 
-[keepassxc](https://www.archlinux.org/packages/?name=keepassxc) ([see keepassxc.org](https://keepassxc.org/)) a keepassx fork that integrated YubiKey into keepassx v2.
+[keepassxc](https://www.archlinux.org/packages/?name=keepassxc) ([see keepassxc.org](https://keepassxc.org/)) a KeePassX fork that integrated YubiKey into KeePassX v2.
 The integration covers Challenge-Response as security factor to open the database, but also the generation of OTP using the YubiKey.
+
+In order to have a KeePassXC database work on Android (using the [Keepass2Android app](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)), you need to use version 1.06 ([currently in beta](https://play.google.com/apps/testing/keepass2android.keepass2android); 1.06b) of the app. You also need to save the database file in the KDBX 4 format, since Keepass2Android do not support the KDBX 3 format.
+
+YubiKey support in Keepass2Android (which is compatible with KeePassXC) is tracked [on GitHub](https://github.com/PhilippC/keepass2android/issues/4).
 
 ### Two-factor authentication with SSH
 

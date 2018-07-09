@@ -52,11 +52,12 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.35 seiichiro](#seiichiro)
     *   [2.36 sergej-repo](#sergej-repo)
     *   [2.37 siosm-aur](#siosm-aur)
-    *   [2.38 subtitlecomposer](#subtitlecomposer)
-    *   [2.39 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.40 trinity](#trinity)
-    *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.42 xyne-x86_64](#xyne-x86_64)
+    *   [2.38 sublime-text](#sublime-text)
+    *   [2.39 subtitlecomposer](#subtitlecomposer)
+    *   [2.40 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.41 trinity](#trinity)
+    *   [2.42 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.43 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -567,6 +568,19 @@ Server = http://repo.p5n.pp.ru/$repo/os/$arch
 ```
 [siosm-aur]
 Server = http://siosm.fr/repo/$repo/
+
+```
+
+### sublime-text
+
+*   **Maintainer:** Sublime Text developer
+*   **Description:** Sublime Text editor packages from developer's repository
+*   **Upstream page:** [https://www.sublimetext.com/docs/3/linux_repositories.html#pacman](https://www.sublimetext.com/docs/3/linux_repositories.html#pacman)
+*   **Key-ID:** 8A8F901A
+
+```
+[sublime-text]
+Server = https://download.sublimetext.com/arch/stable/x86_64
 
 ```
 

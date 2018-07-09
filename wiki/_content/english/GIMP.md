@@ -42,6 +42,8 @@ To draw a circle in GIMP follow these steps:
 3.  Click Select and Shrink
 4.  Press Delete
 
+**Tip:** Grow and Border give the same result.
+
 ## Troubleshooting
 
 ### Green text

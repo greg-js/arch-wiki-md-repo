@@ -74,6 +74,7 @@
 | <small>7.8.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(3)</small> |
 | <small>7.8.1.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(0)</small> |
 | <small>7.8.1.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(2)</small> |
+| <small>7.8.1.2.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(Portugu%C3%AAs) "Category:Tiling WMs (Português)") <small>(1)</small> |
 | <small>7.9.</small> [Internationalization](/index.php/Category:Internationalization_(Portugu%C3%AAs) "Category:Internationalization (Português)") <small>(1)</small> |
 | <small>7.10.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(1)</small> |
 | <small>7.11.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(20)</small> |

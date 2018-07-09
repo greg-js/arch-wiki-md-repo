@@ -21,6 +21,7 @@ In Arch Linux, IPv6 is enabled by default.
     *   [6.1 With dibbler](#With_dibbler)
     *   [6.2 With dhcpcd](#With_dhcpcd)
     *   [6.3 With WIDE-DHCPv6](#With_WIDE-DHCPv6)
+    *   [6.4 Other clients](#Other_clients)
 *   [7 Disable IPv6](#Disable_IPv6)
     *   [7.1 Disable functionality](#Disable_functionality)
     *   [7.2 Other programs](#Other_programs)
@@ -309,6 +310,12 @@ To enable/start wide-dhcpv6 client use the following command. Change `WAN` with 
 ```
 
 **Tip:** Read dhcp6c(8) and dhcp6c.conf(5) for more information.
+
+### Other clients
+
+[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") claims to be capable of DHCPv6-PD but is lacking documentation on how to do it.
+
+[dhclient](/index.php/Dhclient "Dhclient") can also request a prefix, but assigning that prefix, or parts of that prefix to interfaces must be done using a dhclient exit script. For example: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
 
 ## Disable IPv6
 

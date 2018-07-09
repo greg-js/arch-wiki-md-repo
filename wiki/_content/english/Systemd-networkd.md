@@ -349,14 +349,13 @@ See [systemd-resolved.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sys
 
 #### Bridge interface
 
-Create a virtual bridge interface
+First, create a virtual bridge interface. We tell systemd to create a device named *br0* that functions as an ethernet bridge.
 
  `/etc/systemd/network/*MyBridge*.netdev` 
 ```
 [NetDev]
 Name=br0
 Kind=bridge
-
 ```
 
 [Restart](/index.php/Restart "Restart") `systemd-networkd.service` to have systemd create the bridge.
@@ -370,34 +369,34 @@ On host and container:
 
 ```
 
-Note that the interface br0 is listed but is DOWN.
+Note that the interface *br0* is listed but is still DOWN at this stage.
 
 #### Bind ethernet to bridge
 
-Modify the `/etc/systemd/network/*MyDhcp*.network` to remove the DHCP, as the bridge requires an interface to bind to with no IP, and add a key to bind this device to br0\. Let us change its name to a more relevant one.
+The next step is to add to the newly created bridge a network interface. In the example below, we add any interface that matches the name *en** into the bridge *br0*.
 
- `/etc/systemd/network/*MyEth*.network` 
+ `/etc/systemd/network/*bind*.network` 
 ```
 [Match]
 Name=en*
 
 [Network]
 Bridge=br0
-
 ```
+
+The ethernet interface must not have DHCP or an IP address associated as the bridge requires an interface to bind to with no IP: modify the corresponding `/etc/systemd/network/*MyEth*.network` accordingly to remove the addressing.
 
 #### Bridge network
 
-Create a network profile for the Bridge
+Now that the bridge has been created and has been bound to an existing network interface, the IP configuration of the bridge interface must be specified. This is defined in a third *.network* file, the example below uses DHCP.
 
- `/etc/systemd/network/*MyBridge*.network` 
+ `/etc/systemd/network/*mybridge*.network` 
 ```
 [Match]
 Name=br0
 
 [Network]
 DHCP=ipv4
-
 ```
 
 #### Add option to boot the container

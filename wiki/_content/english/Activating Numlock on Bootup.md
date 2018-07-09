@@ -55,24 +55,22 @@ WantedBy=multi-user.target
 
 ### Extending getty@.service
 
-This is simpler than using a separate service (especially since systemd-198) and does not hardcode the number of VTs in a script. Create a drop-in snippet for `getty@.service` which are applied on top of the original unit:
+This is simpler than using a separate service and does not hardcode the number of VTs in a script. Create a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for `getty@.service` which are applied on top of the original unit:
 
- `# systemctl edit getty\@.service` 
+ `/etc/systemd/system/getty@.service.d/activate-numlock.conf` 
 ```
 [Service]
 ExecStartPre=/bin/sh -c 'setleds -D +num < /dev/%I'
-
 ```
 
-**Note:** If you experience any problems, try replacing "ExecStartPre" with "ExecStartPost", and/or disabling the hint as described below.
+**Note:** If you experience any problems, try replacing `ExecStartPre` with `ExecStartPost`, and/or disabling the hint as described below.
 
-To disable the num-lock activation hint displaying on the login screen, edit `getty@tty1.service` and add `--nohints` to *agetty* options:
+To disable the num-lock activation hint displaying on the login screen, [edit](/index.php/Edit "Edit") `getty@tty1.service` and add `--nohints` to *agetty* options:
 
- `# systemctl edit getty@tty1.service` 
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --nohints --noclear %I $TERM
+ExecStart=-/sbin/agetty --nohints --noclear %I $TERM
 
 ```
 

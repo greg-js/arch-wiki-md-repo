@@ -78,7 +78,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 ### Unofficially supported
 
-*   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — The "Equinox Desktop Environment" is a DE designed to be simple, extremely light-weight and fast.
+*   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — The "Equinox Desktop Environment" is a desktop environment designed to be simple, extremely light-weight and fast.
 
 	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)
 

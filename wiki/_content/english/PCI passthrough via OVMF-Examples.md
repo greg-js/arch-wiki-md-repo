@@ -17,6 +17,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.10 hkk's Windows gaming machine (6700K, 1070, 16GB)](#hkk.27s_Windows_gaming_machine_.286700K.2C_1070.2C_16GB.29)
     *   [1.11 sitilge's treachery](#sitilge.27s_treachery)
     *   [1.12 chestm007's hackery](#chestm007.27s_hackery)
+    *   [1.13 Eduxstad's Infidelity](#Eduxstad.27s_Infidelity)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -346,6 +347,24 @@ Notes:
 
 *   using ic6 audio - works fine for me.
 *   have a working looking-glass setup, however cant get spice to pass through keyboard and mouse, currently using a mixture of synergy and a dedicated screen as a workaround
+
+### Eduxstad's Infidelity
+
+Hardware:
+
+*   **CPU**: Ryzen 2600X @ 3.7 GHZ
+*   **Motherboard**: ASUS PRIME B350-PLUS(BIOS/UEFI Version: 4011)
+*   **GPU1 (Guest)**: MSI 390 8GB @ Stock
+*   **GPU2 (Host)**: XFX 550 4GB @ Stock
+*   **RAM**: 2 x 8GB (16GB) @ 3000 HZ
+*   **Guest OS**: Windows 8.1 Embedded Pro
+
+Configuration:
+
+*   **Kernel**: 4.17.3-1-ARCH (vanilla).
+*   Using **libvirt/QEMU**: libvirt/virt-manager ([https://github.com/eduxstad/vfio-config](https://github.com/eduxstad/vfio-config)).
+*   Look in the repository for complete documentation of extra steps taken
+*   Overview: VM managed using virt-manager, using looking glass for primary io and built in spice display server as backup. Passing vm audio back to pulseaudio. Using hugepages for RAM. SCSI Drivers installed for hardware drive support.
 
 ## Adding your own setup
 

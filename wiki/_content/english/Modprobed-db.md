@@ -1,3 +1,8 @@
+Related articles
+
+*   [Kernels](/index.php/Kernels "Kernels")
+*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
+
 [modprobed-db](https://aur.archlinux.org/packages/modprobed-db/) keeps a running list of ALL modules ever probed on a system and allow for easy recall. This is very useful for users wishing to build a minimal kernel via a `make localmodconfig` which simply takes every module currently probed and switches everything BUT them off in the `.config` for a kernel resulting in smaller kernel packages and reduced compilation times.
 
 ## Contents
@@ -49,8 +54,7 @@ $ crontab -e
 Systemd users not wishing to use cron may use the included user service: `modprobed-db.service`. It will run modprobed-db in store mode once per hour, and at boot and on shutdown.
 
 ```
-$ systemctl --user enable modprobed-db.service
-$ systemctl --user start modprobed-db.service
+$ systemctl --user enable --now modprobed-db.service
 
 ```
 

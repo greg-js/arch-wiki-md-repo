@@ -55,7 +55,7 @@ Version: ThinkPad X1 Carbon 5th
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes* |
 | Camera | Yes |
-| Fingerprint Reader | No |
+| Fingerprint Reader | Yes |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | microSD card reader | Yes |
@@ -64,9 +64,7 @@ Version: ThinkPad X1 Carbon 5th
 
 ### Fingerprint Reader
 
-The fingerprint reader included with this model `138a:0097 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
-
-Open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+The fingerprint reader included with this model is `138a:0097 Validity Sensors, Inc`. There's a patched libfprint which adds support for 138a:0097\. [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/)
 
 ### Bug: Fans blowing at max speed after resuming
 
@@ -192,7 +190,7 @@ Setting the acpi_brightness=vendor kernel parameter helped but gave issues with 
 
 TrackPoint Scrolling is working out of the box in GNOME and MATE. In some WindowManagers, the TrackPoint middle-button scrolling can be enabled by [installing](/index.php/Installing "Installing") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories") and appending the following line to your [.xinitrc](/index.php/.xinitrc ".xinitrc"):
 
- `xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Scroll Method Enabled" 0 0 1` 
+ `xinput set-prop "TPPS/2 ALPS TrackPoint" "libinput Scroll Method Enabled" 0 0 1` 
 
 ### Lenovo ThinkPad Thunderbolt 3 Dockingstation
 

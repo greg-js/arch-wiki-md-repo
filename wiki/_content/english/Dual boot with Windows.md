@@ -177,7 +177,7 @@ Computers that come with newer versions of Windows often have [Secure Boot](/ind
 
 #### Couldn't create a new partition or locate an existing one
 
-The usb-stick for installing Windows 8.1 seems to need a MBR partition table (not GPT), otherwise the installation gets confused and prints something like "Couldn't create a new partition or locate an existing one", although the partitions were created.
+See [#Windows_UEFI_vs_BIOS_limitations](#Windows_UEFI_vs_BIOS_limitations)
 
 #### Cannot boot Linux after installing Windows
 

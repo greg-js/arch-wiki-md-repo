@@ -23,7 +23,7 @@
 | <small>2.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(15)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(37)</small> |
-| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(23)</small> |
+| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(22)</small> |
 | <small>2.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(3)</small> |
 | <small>2.10.2.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(6)</small> |
 | <small>2.10.3.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4)</small> |
@@ -74,7 +74,7 @@
 | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(3)</small> |
 | <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
-| <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |
+| <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
 | <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
 | <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(32)</small> |
 | <small>4.6.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(8)</small> |
@@ -111,7 +111,7 @@
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(17)</small> |
 | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
-| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(55)</small> |
+| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(56)</small> |
 | <small>5.1.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
 | <small>5.2.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
 | <small>5.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(18)</small> |
@@ -130,7 +130,7 @@
 | <small>5.11.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(12)</small> |
 | <small>5.12.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4)</small> |
 | <small>5.13.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.14.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(5)</small> |
+| <small>5.14.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(6)</small> |
 | <small>5.14.1.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
 | <small>5.14.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(19) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
 | <small>5.14.3.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
@@ -191,8 +191,8 @@
 | <small>6.11.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(9) (also in [Keyboards](/index.php/Category:Keyboards "Category:Keyboards"))</small> |
 | <small>6.12.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(3)</small> |
 | <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
-| <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(18)</small> |
-| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
+| <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
+| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(73)</small> |
 | <small>6.15.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(15)</small> |
 | <small>6.15.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(14) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
 | <small>6.15.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

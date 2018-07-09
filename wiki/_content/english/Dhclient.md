@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Network configuration#dhclient](/index.php?title=Network_configuration&redirect=no#dhclient "Network configuration")
+*   [Network configuration#DHCP](/index.php/Network_configuration#DHCP "Network configuration")

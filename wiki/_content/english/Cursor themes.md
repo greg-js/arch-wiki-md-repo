@@ -294,7 +294,7 @@ $ xsetroot -cursor_name left_ptr
 
 ```
 
-For more information see [Awesome wiki](http://awesome.naquadah.org/wiki/FAQ#How_to_change_the_cursor_theme.3F).
+The list of cursor styles is in [appendix B](https://tronche.com/gui/x/xlib/appendix/b/) of the X protocol.
 
 ### .Xdefaults
 

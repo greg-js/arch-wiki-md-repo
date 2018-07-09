@@ -1,7 +1,4 @@
-**Warning:**
-
-*   AUR helpers are **not** [supported](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
-*   AUR helpers can replicate [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) usage for the [official repositories](/index.php/Official_repositories "Official repositories"), such as `pacman -Syu`. This usage may deviate from *pacman* in various ways; it is thus **not** supported or recommended.
+**Warning:** AUR helpers are **not** [supported](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
 
 AUR helpers are written to automate certain tasks for the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
@@ -30,6 +27,8 @@ The columns have the following meaning:
 	– use *pacman* directly instead of manual database manipulation or usage of [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3).
 
 	In addition, potentially [harmful commands](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance") such as `pacman -Ud`, `pacman -Rdd`, `pacman --ask` or `pacman --force` are **not** used.
+
+**Warning:** Notwithstanding these criteria, AUR helpers may deviate from [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) in various ways, in particular for installation of packages in the [official repositories](/index.php/Official_repositories "Official repositories"). Such usage is therefore **not** supported or recommended.
 
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
@@ -99,7 +98,7 @@ This table describes projects which either are discontinued by their authors, or
 
 ## Libraries
 
-*   **haskell-archlinux** — Library to access the AUR and package metadata from the Haskell programming language
+*   **haskell-archlinux** — Library to access the AUR and package metadata from the Haskell programming language.
 
 	[http://hackage.haskell.org/package/archlinux](http://hackage.haskell.org/package/archlinux) || [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)
 
@@ -109,11 +108,11 @@ This table describes projects which either are discontinued by their authors, or
 
 ## Maintenance
 
-*   **aur-out-of-date** — Uses hoster APIs to check AUR packages for upstream changes
+*   **aur-out-of-date** — Uses hoster APIs to check AUR packages for upstream changes.
 
 	[https://github.com/simon04/aur-out-of-date](https://github.com/simon04/aur-out-of-date) || [aur-out-of-date](https://aur.archlinux.org/packages/aur-out-of-date/)
 
-*   **pkgbuild-watch** — Looks for changes on the upstream web pages
+*   **pkgbuild-watch** — Looks for changes on the upstream web pages.
 
 	[http://kmkeen.com/pkgbuild-watch](http://kmkeen.com/pkgbuild-watch) || [pkgbuild-watch](https://aur.archlinux.org/packages/pkgbuild-watch/)
 
@@ -121,11 +120,12 @@ This table describes projects which either are discontinued by their authors, or
 
 	[https://github.com/fasheng/pkgbuildup](https://github.com/fasheng/pkgbuildup) || [pkgbuildup-git](https://aur.archlinux.org/packages/pkgbuildup-git/)
 
-*   **pkgoutofdate** — Parses the source URL from PKGBUILDs and tries to find new versions of packages by incrementing the version number and sending requests to the web server
+*   **pkgoutofdate** — Parses the source URL from PKGBUILDs and tries to find new versions of packages by incrementing the version number and sending requests to the web server.
 
 	[https://github.com/anatol/pkgoutofdate](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
 
 ## Uploading
 
-*   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — Splits a package from a git repository with multiple packages, adding/updating `.SRCINFO` for every commit.
-*   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — Replaces a package in a bigger git repository with an AUR 4 submodule, including `.SRCINFO`.
+*   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — Splits a package from a git repository with multiple packages, adding/updating `.SRCINFO` for every commit
+*   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — Replaces a package in a bigger git repository with an AUR 4 submodule, including `.SRCINFO`
+*   [aurpublish](https://github.com/eli-schwartz/aurpublish) — PKGBUILD management framework for AUR

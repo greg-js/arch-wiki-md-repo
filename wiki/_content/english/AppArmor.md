@@ -41,7 +41,7 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 
 To enable AppArmor as default security model on every boot, set the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"): `apparmor=1 security=apparmor`
 
-**Note:** [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/) should already use AppArmor as default security model (`CONFIG_DEFAULT_SECURITY_APPARMOR=y`).
+**Tip:** [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/) should already use AppArmor as default security model (`CONFIG_DEFAULT_SECURITY_APPARMOR=y` and `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=1`).
 
 #### Custom kernel
 
@@ -87,7 +87,7 @@ Y
 
 ```
 
-(Y=enabled, N=disabled, no such file = module not in kernel)
+`Y` — enabled, `N` — disabled, `no such file` — module not in kernel.
 
 To display the current loaded status use `apparmor_status`:
 
@@ -150,22 +150,22 @@ profile test /usr/lib/test/test_binary {
 
 ```
 
-Strings preceded by a '@' symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`), tunables (`/etc/apparmor.d/tunables/`) or by the profile itself. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax).
+Strings preceded by a `@` symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`), tunables (`/etc/apparmor.d/tunables/`) or by the profile itself. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference#file-access-rules). Pattern matching is done using [AppArmor's globbing syntax](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference#apparmor-globbing-syntax).
 
 Most common use cases are covered by the following statements:
 
 *   `r` — read: read data
 *   `w` — write: create, delete, write to a file and extend it
 *   `m` — memory map executable: memory map a file executable
-*   `x` — execute: execute file; needs to be preceded by a [qualifier](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#Execute_rules)
+*   `x` — execute: execute file; needs to be preceded by a [qualifier](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference#execute-rules)
 
 Remember that those permission do not allow binaries to exceed the permission dictated by the Discretionary Access Control (DAC).
 
-This is merely a short overview, for a more detailed guide be sure to have a look at the [documentation](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference).
+This is merely a short overview, for a more detailed guide be sure to have a look at the [documentation](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference).
 
 ### Parsing profiles
 
-To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](http://man.cx/apparmor_parser(8)) man page for more information.
+To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](https://man.cx/apparmor_parser(8)) man page for more information.
 
 ## Security considerations
 
@@ -203,15 +203,16 @@ To circumvent some of those problems AppArmor can cache profiles in `/etc/apparm
 
 ## See also
 
-*   [AppArmor wiki](http://wiki.apparmor.net/)
-*   [AppArmor Core Policy Reference](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference) — Detailed description of available options in a profile
-*   [Ubuntu Tutorial](http://ubuntuforums.org/showthread.php?t=1008906) — General overview of available utilities and profile creation
+*   [AppArmor wiki](https://gitlab.com/apparmor/apparmor/wikis/home)
+*   [AppArmor Core Policy Reference](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference) — Detailed description of available options in a profile
+*   [Ubuntu Tutorial](https://ubuntuforums.org/showthread.php?t=1008906) — General overview of available utilities and profile creation
 *   [Ubuntu Wiki](https://help.ubuntu.com/community/AppArmor) — Basic command overview
-*   [AppArmor Versions](http://wiki.apparmor.net/index.php/AppArmor_versions) — Version overview and links to the respective release notes
-*   [apparmor.d(5)](http://manpages.ubuntu.com/manpages/artful/man5/apparmor.d.5.html) — Structure of the AppArmor configuration directory
-*   [apparmor_parse(8)](http://manpages.ubuntu.com/manpages/artful/man8/apparmor_parser.8.html) — The most fundamental AppArmor utility to load, unload, cache and stat profiles
-*   [Kernel Interfaces](http://wiki.apparmor.net/index.php/Kernel_interfaces) — Low level interfaces to the AppArmor kernel module
+*   [AppArmor Versions](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_versions) — Version overview and links to the respective release notes
+*   [apparmor.d(5)](http://manpages.ubuntu.com/manpages/bionic/man5/apparmor.d.5.html) — Structure of the AppArmor configuration directory
+*   [apparmor_parser(8)](http://manpages.ubuntu.com/manpages/bionic/man8/apparmor_parser.8.html) — The most fundamental AppArmor utility to load, unload, cache and stat profiles
+*   [Kernel Interfaces](https://gitlab.com/apparmor/apparmor/wikis/Kernel_interfaces) — Low level interfaces to the AppArmor kernel module
 *   [Apparmor Profile Migration](https://wiki.ubuntu.com/ApparmorProfileMigration) — Emergence of profiles
 *   [wikipedia:Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") — Linux kernel module on which basis AppArmor is build upon
 *   [Launchpad Project Page](https://launchpad.net/apparmor)
+*   [AppArmor GitLab project page](https://gitlab.com/apparmor)
 *   [FS#21406](https://bugs.archlinux.org/task/21406) — Initial discussion about the introduction of AppArmor

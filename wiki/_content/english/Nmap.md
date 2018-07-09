@@ -114,7 +114,7 @@ Nmap will do the following:
 Ping scanning (host discovery) is a technique for determining whether the specified computers are up and running. Nmap performs ping scan by default before port scan to avoid wasting time on hosts that are not even connected. To instruct Nmap to **only** perform ping scan:
 
 ```
-$ nmap -sP 10.1.1.1/8
+$ nmap -sn 10.1.1.1/8
 
 ```
 

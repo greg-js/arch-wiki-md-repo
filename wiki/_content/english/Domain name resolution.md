@@ -143,7 +143,7 @@ $ systemd-resolve --status
 
 The [#Glibc resolver](#Glibc_resolver) does not cache queries. If you want local caching use [#Systemd-resolved](#Systemd-resolved) or set up a local caching [DNS server](/index.php/DNS_server "DNS server") and use `127.0.0.1`.
 
-**Tip:** The *dig* and *drill* [#Lookup utilities](#Lookup_utilities) report the query time.
+**Tip:** The *drill* or *dig* [#Lookup utilities](#Lookup_utilities) report the query time.
 
 Internet service providers usually provide working DNS servers. A router may also add an extra DNS server in case it has its own cache server. Switching between DNS servers is transparent for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could cause delays.
 
@@ -155,17 +155,18 @@ Most DNS servers keep a log of IP addresses and sites visited on a more or less 
 
 To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](#Name_Service_Switch).
 
-*   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
-*   [ldns](https://www.archlinux.org/packages/?name=ldns) provides [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), which is similar to *dig*
+*   [ldns](https://www.archlinux.org/packages/?name=ldns) provides [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), which is a tool designed to retrieve information out of the DNS.
 
-For example, to query a specific nameserver with drill for the TXT records of a domain:
+For example, to query a specific nameserver with *drill* for the TXT records of a domain:
 
 ```
 $ drill @*nameserver* TXT *domain*
 
 ```
 
-If you do not specify a DNS server *dig* and *drill* use the nameservers defined in `/etc/resolv.conf`.
+If you do not specify a DNS server *drill* uses the nameservers defined in `/etc/resolv.conf`.
+
+*   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
 
 ## See also
 

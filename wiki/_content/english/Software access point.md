@@ -5,7 +5,7 @@ Related articles
 *   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
 *   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
 
-A software access point is used when you want your computer to act as a Wi-Fi access point for the local network. It saves you the trouble of getting a separate wireless router.
+A software access point, also called virtual router or virtual Wi-Fi, enables a computer to turn its wireless interface into a Wi-Fi access point. It saves the trouble of getting a separate wireless router.
 
 ## Contents
 
@@ -78,8 +78,8 @@ Random MAC address can be generated using [macchanger](/index.php/Macchanger "Ma
 
 Setting up an access point comprises two main parts:
 
-*   Setting up the **Wi-Fi link layer**, so that wireless clients can associate to your computer's "software access point" and send/receive IP packets from/to your computer; this is what the hostapd package will do for you.
-*   Setting up the **network configuration** on you computer, so that your computer will properly relay IP packets from/to its own Internet connection from/to wireless clients.
+1.  Setting up the **Wi-Fi link layer**, so that wireless clients can associate to your computer's *software access point* and exchange IP packets with it.
+2.  Setting up the **network configuration** on your computer, so that it properly relays IP packets between its own internet connection and the wireless clients.
 
 ### Wi-Fi link layer
 
@@ -125,9 +125,7 @@ logger_stdout_level=2
 
 **Tip:** You can set up the SSID with UTF-8 characters, so international characters will show properly. The option to enable it is `utf8_ssid=1`. Some clients may have problems with recognizing the correct encoding (e.g. [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") or Windows 7).
 
-When starting hostapd, make sure the wireless [network interface](/index.php/Network_interface "Network interface") is brought up first.
-
-Otherwise, it will fail with a nondescript error: "could not configure driver mode".
+When starting hostapd, make sure the wireless [network interface](/index.php/Network_interface "Network interface") is brought up first, otherwise it will fail with the message "could not configure driver mode".
 
 For automatically starting hostapd, [enable](/index.php/Daemon "Daemon") the `hostapd.service`.
 
@@ -139,14 +137,14 @@ For automatically starting hostapd, [enable](/index.php/Daemon "Daemon") the `ho
 
 There are two basic ways for implementing this:
 
-1.  **bridge**: create a network *bridge* on your computer (wireless clients will appear to access the same network interface and the same subnet that's used by your computer)
-2.  **NAT**: with IP forwarding/masquerading and DHCP service (wireless clients will use a dedicated subnet, data from/to that subnet is NAT-ted -- similar to a normal Wi-Fi router that's connected to your DSL or cable modem)
+1.  **bridge**: creates a network *bridge* on your computer, wireless clients will appear to access the same network interface and the same subnet that's used by your computer.
+2.  **NAT**: with IP forwarding/masquerading and DHCP service, wireless clients will use a dedicated subnet, data from/to that subnet is NAT-ted. This is similar to a normal Wi-Fi router which is connected to the internet.
 
-The bridge approach is simpler, but it requires that any service that's needed by your wireless clients (like, DHCP) is available on your computers external interface. That means it will not work if you have a dial-up connection (e.g., via PPPoE or a 3G modem) or if you're using a cable modem that will supply exactly one IP address to you via DHCP.
+The bridge approach is simpler, but it requires that any service that is needed by the wireless clients, in particular DHCP, is available on the computer's external interface. This means it will not work if the external modem which assigns IP addresses, supplies the same one to different clients.
 
-The NAT approach is more versatile, as it clearly separates Wi-Fi clients from your computer and it's completely transparent to the outside world. It will work with any kind of network connection, and (if needed) you can introduce traffic policies using the usual iptables approach.
+The NAT approach is more versatile, as it clearly separates Wi-Fi clients from your computer and it is completely transparent to the outside world. It will work with any kind of network connection, and (if needed) traffic policies can be introduced using the usual iptables approach.
 
-Of course, it is possible to *combine both things*. For that, studying both articles would be necessary. Example: Like having a bridge that contains both an ethernet device and the wireless device with an static ip, offering DHCP and setting NAT configured to relay the traffic to an additional network device - that can be ppp or eth.
+It is possible to combine these two approaches: for example having a bridge that contains both an ethernet device and the wireless device with a static ip, offering DHCP and setting NAT configured to relay the traffic to an additional network device connected to the WAN.
 
 #### Bridge setup
 
@@ -166,12 +164,25 @@ In that article, the device connected to the LAN is `net0`. That device would be
 
 ### create_ap
 
-The [create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) script combines [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [iptables](/index.php/Iptables "Iptables") to create a Bridged/NATed Access Point (available in [create_ap](https://www.archlinux.org/packages/?name=create_ap) or [create_ap-git](https://aur.archlinux.org/packages/create_ap-git/)).
+The [create_ap](https://www.archlinux.org/packages/?name=create_ap) package provides a script that can create either a bridged or a NATed access point for internet sharing. It combines *hostapd*, [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [iptables](/index.php/Iptables "Iptables") for the good functioning of the access point. The basic syntax to create a NATed virtual network is the following:
 
 ```
-# create_ap wlan0 internet0 MyAccessPoint MyPassPhrase
+# create_ap *wlan0* *eth0* *MyAccessPoint* *MyPassPhrase*
 
 ```
+
+Alternatively, the template configuration provided in `/etc/create_ap.conf` can be adapted to ones need and the script run with:
+
+```
+# create_ap --config /etc/create_ap.conf
+
+```
+
+[enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") the `create_ap.service` to run the script at boot time with the configuration specified in `/etc/create_ap.conf` .
+
+For more information see [create_ap on GitHub](https://github.com/oblique/create_ap).
+
+**Note:** In bridge mode, *create_ap* may conflict at boot time with the current network configuration. In this case, do not configure the IP address of the ethernet interface, neither DHCP nor a statip IP address, in order to facilitate the binding to the bridge.
 
 ### RADIUS
 

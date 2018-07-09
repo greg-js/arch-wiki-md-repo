@@ -54,7 +54,7 @@ Open-source tools such as [MSIKLM](https://github.com/Gibtnix/MSIKLM) do not wor
 
 ## Installation
 
-You have to disable **Fast Boot** and **Intel CPU P-States** in the BIOS. Then follow the [Installation guide](https://en.wikipedia.org/wiki/Arch_Linux "wikipedia:Arch Linux") to install in UEFI mode.
+You have to disable **Fast Boot** in the BIOS, then follow the [Installation guide](https://en.wikipedia.org/wiki/Arch_Linux "wikipedia:Arch Linux") to install in UEFI mode. If you run into CPU lockup errors, also disable **C-States**.
 
 ## Workarounds and fixes
 
@@ -79,6 +79,8 @@ switch = off
 volume = merge
 
 ```
+
+Note : This change may get overwritten when PulseAudio is updated.
 
 ### GPU Switching
 

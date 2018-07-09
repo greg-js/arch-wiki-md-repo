@@ -63,7 +63,7 @@ Support for the Killer 1550 is not there yet but is coming. [[1]](https://www.sp
 
 It should be possible to add support by patching the kernel [[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
 
-Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.3
+Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.4
 
  `0001-Add-patch-for-MSI-GS65-wifi.patch` 
 ```

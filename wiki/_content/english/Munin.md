@@ -339,7 +339,7 @@ Install [perl-cgi-fast](https://www.archlinux.org/packages/?name=perl-cgi-fast).
 You must enable one of these:
 
 *   `mod_cgid` (or `mod_cgi` if using mpm_prefork_module) by uncommenting the line in `httpd.conf`.
-*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add `LoadModule mod_fcgid modules/mod_fcgid.so` in `httpd.conf`.
+*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add `LoadModule fcgid_module modules/mod_fcgid.so` in `httpd.conf`.
 
 ```
 <VirtualHost *:80>

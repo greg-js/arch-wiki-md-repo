@@ -4,9 +4,10 @@ Linux audit helps make your system more secure by providing you with a means to 
 
 The audit framework works by listening to the event reported by the kernel and logging them to a log file.
 
-**Note:** As of linux 3.12, the audit framework is not yet compatible with the namespace implementation. If you use namespaces, do not use the audit framework.
+**Note:**
 
-**Note:** Depending on your configuration, it may affect the performance of the system.
+*   As of linux 3.12, the audit framework is not yet compatible with the namespace implementation. If you use namespaces, do not use the audit framework.
+*   Depending on your configuration, it may affect the performance of the system.
 
 ## Contents
 
@@ -15,10 +16,10 @@ The audit framework works by listening to the event reported by the kernel and l
     *   [2.1 Audit files and directories access](#Audit_files_and_directories_access)
     *   [2.2 Audit syscalls](#Audit_syscalls)
 *   [3 Search the logs](#Search_the_logs)
-    *   [3.1 using pid](#using_pid)
-    *   [3.2 using keys](#using_keys)
+    *   [3.1 Using pid](#Using_pid)
+    *   [3.2 Using keys](#Using_keys)
     *   [3.3 Look for abnormalies](#Look_for_abnormalies)
-*   [4 Which files or syscalls are worth-auditing ?](#Which_files_or_syscalls_are_worth-auditing_.3F)
+*   [4 Which files or syscalls are worth-auditing?](#Which_files_or_syscalls_are_worth-auditing.3F)
 *   [5 Gather logs from different hosts](#Gather_logs_from_different_hosts)
     *   [5.1 Send logfiles](#Send_logfiles)
     *   [5.2 Receive logfiles](#Receive_logfiles)
@@ -31,10 +32,10 @@ Install [audit](https://www.archlinux.org/packages/?name=audit) and [start](/ind
 
 **Note:**
 
-*   [Linux-hardened](/index.php/Linux-hardened "Linux-hardened") audit support can be enabled by setting `audit=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
-*   [Linux-hardened](/index.php/Linux-hardened "Linux-hardened") by default uses `audit=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") which conflicts with `ConditionKernelCommandLine=!audit=0` used in `/usr/lib/systemd/system/auditd.service`. To overcome this you may want to create a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") for `overrule.service`:
+*   [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) audit support can be enabled by setting `audit=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+*   [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) by default uses `audit=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") which conflicts with `ConditionKernelCommandLine=!audit=0` used in `/usr/lib/systemd/system/auditd.service`. To overcome this you may want to create a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for `auditd.service`:
 
- `/etc/systemd/system/auditd.service.d/audit.conf` 
+ `/etc/systemd/system/auditd.service.d/kernelcommandline.conf` 
 ```
 [Unit]
 ConditionKernelCommandLine=
@@ -104,7 +105,7 @@ The audit framework allows you to audit the syscalls performed with the `-a` opt
 A security related rule is to track the `chmod syscall`, to detect file ownership changes :
 
 ```
-auditctl -a entry,always -S chmod
+# auditctl -a entry,always -S chmod
 
 ```
 
@@ -116,7 +117,7 @@ A lot of rules and posibilities are available, see [auditctl(8)](https://jlk.fjf
 
 The audit framework provides some tools to ease the use and the research of events happening on a system.
 
-### using pid
+### Using pid
 
 You can search events related to a particular pid using `ausearch`:
 
@@ -127,7 +128,7 @@ You can search events related to a particular pid using `ausearch`:
 
 This command will show you all the events logged according to your rules related to PID 1 (i.e. systemd).
 
-### using keys
+### Using keys
 
 One of the great features of the audit framework is its hability to use `keys` to manage events, such a usage is recommended.
 
@@ -158,7 +159,7 @@ The easiest way to use `aureport` is :
 
 aureport can be used to generate custom reports, see [aureport(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aureport.8).
 
-## Which files or syscalls are worth-auditing ?
+## Which files or syscalls are worth-auditing?
 
 Keep in mind that each audit rule added will generate logs, so you must be ready to treat this amount of information. Basically, each security-related event/file must be monitored, like ids, ips, anti-rootkits etc. On the other side, it's totally useless to track every write syscall, the smallest compilation will fill your logs with this event.
 

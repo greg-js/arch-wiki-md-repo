@@ -55,7 +55,7 @@ The network will also need to be restarted so the DHCP client can create a new `
 
 To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options. For all available options see [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
 
-**Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `/etc/dnsmasq.conf`  `port=0` 
+**Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `port=0` 
 
 **Tip:** To check configuration file(s) syntax, execute:
 ```
@@ -65,7 +65,7 @@ $ dnsmasq --test
 
 ### Caching DNS server
 
-To set up dnsmasq as a DNS caching daemon on a single computer edit `/etc/dnsmasq.conf` and uncomment the `listen-address` directive, adding in the localhost IP address:
+To set up dnsmasq as a DNS caching daemon on a single computer specify a `listen-address` directive, adding in the localhost IP address:
 
 ```
 listen-address=::1,127.0.0.1
@@ -168,13 +168,11 @@ nameserver 8.8.4.4
 
 ```
 
-And then edit `/etc/dnsmasq.conf` to use your new resolv file:
+And then edit dnsmasq's configuration to use your new resolv file:
 
- `/etc/dnsmasq.conf` 
 ```
-...
 resolv-file=/etc/resolv.dnsmasq.conf
-...
+
 ```
 
 ##### dhcpcd
@@ -221,7 +219,7 @@ To test if DNSSEC validation is working see [DNSSEC#Testing](/index.php/DNSSEC#T
 
 ### DHCP server
 
-By default dnsmasq has the DHCP functionality turned off, if you want to use it you must turn it on in (`/etc/dnsmasq.conf`). Here are the important settings:
+By default dnsmasq has the DHCP functionality turned off, if you want to use it you must turn it on. Here are the important settings:
 
 ```
 # Only listen to routers' LAN NIC.  Doing so opens up tcp/udp port 53 to
@@ -270,13 +268,13 @@ To use it, create a directory for TFTP root (e.g. `/srv/tftp`) to put transferab
 
 For increased security it is advised to use dnsmasq's TFTP secure mode. In secure mode only files owned by the `dnsmasq` user will be served over TFTP. You will need to [chown](/index.php/Chown "Chown") TFTP root and all files in it to `dnsmasq` user to use this feature.
 
-Enable TFTP in `dnsmasq.conf`:
+Enable TFTP:
 
- `/etc/dnsmasq.conf` 
 ```
 enable-tftp
 tftp-root=/srv/tftp
 tftp-secure
+
 ```
 
 See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
@@ -285,7 +283,7 @@ See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more 
 
 PXE requires DHCP and TFTP servers, both functions can be provided by dnsmasq.
 
-**Tip:** dnsmasq can add PXE booting options to a network with an already running DHCP server: `/etc/dnsmasq.conf` 
+**Tip:** dnsmasq can run in "proxy-DHCP" mode and add PXE booting options to a network with an already running DHCP server:
 ```
 interface=*enp0s0*
 bind-dynamic

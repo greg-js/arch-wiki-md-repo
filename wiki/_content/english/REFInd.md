@@ -503,7 +503,7 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 ### Apple Macs
 
-[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) is an experimental "bless" utility for Linux. If that does not work, use "bless" from within OSX to set rEFInd as the default boot entry:
+[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) is an experimental *bless* utility for Linux. If that does not work, use *bless* from within OSX to set rEFInd as the default boot entry:
 
 ```
 # bless --setBoot --folder *esp*/EFI/refind --file *esp*/EFI/refind/refind_x64.efi

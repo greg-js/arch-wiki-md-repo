@@ -24,6 +24,7 @@
     *   [4.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
     *   [4.11 Tabbed windows](#Tabbed_windows)
     *   [4.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [4.13 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -325,6 +326,10 @@ $ hsetroot -solid '#000000'
 ```
 
 See [[6]](https://github.com/chjj/compton/issues/162) for more information.
+
+### Lag with Nvidia proprietary drivers and FullCompositionPipeline
+
+See [Screen artifacts/screenshot issues when using AMD's Catalyst driver](https://wiki.archlinux.org/index.php/Compton#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver).
 
 ## See also
 

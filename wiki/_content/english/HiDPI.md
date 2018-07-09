@@ -355,7 +355,15 @@ Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/s
 
 ### Spotify
 
-Spotify can be launched with a custom scaling factor, for example
+You can change scale factor by simple `Ctrl++` for zoom in, `Ctrl+-` for zoom out and `Ctrl+0` for default scale. Scaling setting will be saved in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`:
+
+ `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs` 
+```
+app.browser.zoom-level=100
+
+```
+
+Also Spotify can be launched with a custom scaling factor which will be multiplied with setting specified in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`, for example
 
 ```
 $ spotify --force-device-scale-factor=1.5

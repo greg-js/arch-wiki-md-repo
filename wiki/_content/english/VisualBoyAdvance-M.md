@@ -16,7 +16,9 @@ VBA-M is available in three different versions: [vbam-gtk](https://www.archlinux
 
 ## Usage
 
-For VBA-M, execute `gvbam ~/path/to/foo.*` or `gvbam` to load the ROM from the interface.
+For VBA-M with [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx), execute `visualboyadvance-m ~/path/to/foo.*` or `visualboyadvance-m` to load the ROM from the interface.
+
+For VBA-M with [vbam-sdl](https://www.archlinux.org/packages/?name=vbam-sdl), execute `vbam ~/path/to/foo.*` or `vbam` to load the ROM from the interface.
 
 **Tip:** File extensions differ between emulated platforms. VBA-M also supports compressed ROMs.
 
