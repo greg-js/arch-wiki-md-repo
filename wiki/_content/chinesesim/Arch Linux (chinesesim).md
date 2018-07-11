@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-17，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=470538)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-10，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=507441)可以查看翻译后英文页面的改动。
 
 Arch Linux 是通用 x86-64 GNU/Linux 发行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
 
@@ -17,7 +17,7 @@ Arch Linux 是通用 x86-64 GNU/Linux 发行版。Arch采用滚动升级模式�
     *   [3.4 A. Griffin 时代](#A._Griffin_.E6.97.B6.E4.BB.A3)
     *   [3.5 Arch 安装脚本](#Arch_.E5.AE.89.E8.A3.85.E8.84.9A.E6.9C.AC)
     *   [3.6 Systemd 时代](#Systemd_.E6.97.B6.E4.BB.A3)
-    *   [3.7 逐步抛弃 i686 支持](#.E9.80.90.E6.AD.A5.E6.8A.9B.E5.BC.83_i686_.E6.94.AF.E6.8C.81)
+    *   [3.7 抛弃 i686 支持](#.E6.8A.9B.E5.BC.83_i686_.E6.94.AF.E6.8C.81)
 
 ## 原则
 
@@ -60,6 +60,10 @@ Arch有一个易用的[包管理系统](https://en.wikipedia.org/wiki/Package_ma
 
 ## 历史
 
+这些年来，Arch 社区不断成长，最近也收到大量的 [关注和评论](/index.php/Arch_Linux_Press_Review "Arch Linux Press Review")。
+
+Arch 开发者都是不收工资的志愿者，目前也没有通过 Arch Linux 赚钱的计划。Arch 开发的详细历史可以浏览 [Wayback Machine 的 Arch 部分](http://web.archive.org/web/*/archlinux.org) 和 [Arch Linux 新闻存档](https://www.archlinux.org/news/)。
+
 ### 早期
 
 加拿大程序员和吉他师 Judd Vinet 从 2001 年早期开始开发 Arch Linux，并在2002年3月11日正式发行0.1版。它受到[Slackware](http://www.slackware.com/), [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"), [PLD Linux](http://www.pld-linux.org/) 和 [CRUX](http://crux.nu/) 的启发，但是那时候这些发行版缺少软件包管理工具。所以 Vinet 以同样的简洁原则建立发行版，并编写了 [pacman](/index.php/Pacman "Pacman") 软件包，自动处理软件包的安装、删除和更新。
@@ -76,23 +80,14 @@ Arch有一个易用的[包管理系统](https://en.wikipedia.org/wiki/Package_ma
 
 2007下半年，Judd Vinet 退出了Arch的开发，并[把统治权交给美国程序员 Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), 也就是 Phrakture，目前他依然是 Arch 开发者。
 
-这些年来，Arch 社区不断成长，最近也收到大量的 [关注和评论](/index.php/Arch_Linux_Press_Review "Arch Linux Press Review")。
-
-Arch 开发者都是不收工资的志愿者，目前也没有通过 Arch Linux 赚钱的计划。Arch 开发的详细历史可以浏览 [Wayback Machine 的 Arch 部分](http://web.archive.org/web/*/archlinux.org) 和 [Arch Linux 新闻存档](https://www.archlinux.org/news/)。
-
 ### Arch 安装脚本
 
 2012 年 7 月的 Arch Linux 安装介质中 [弃用了](https://www.archlinux.org/news/install-media-20120715-released/) 基于菜单的 Arch 安装框架。并编写了几个便于安装过程中使用的脚本。
 
 ### Systemd 时代
 
-2012 到 2013 年间 Arch 用 Systemd 替换了 System V init ：
+2012 到 2013 年间 Arch 用 Systemd 替换了 System V init ：[[1]](https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/)[[2]](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)[[3]](https://www.archlinux.org/news/end-of-initscripts-support/)[[4]](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/)
 
-*   [https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/](https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/)
-*   [https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)
-*   [https://www.archlinux.org/news/end-of-initscripts-support/](https://www.archlinux.org/news/end-of-initscripts-support/)
-*   [https://www.archlinux.org/news/final-sysvinit-deprecation-warning/](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/)
+### 抛弃 i686 支持
 
-### 逐步抛弃 i686 支持
-
-鉴于在开发者和社区中 i686 架构的使用程度逐渐式微，我们决定从2017年11月底[抛弃对这一架构的支持](https://www.archlinux.org/news/the-end-of-i686-support/) 。
+鉴于在开发者和社区中 i686 架构的使用程度逐渐式微，[i686支持已经于2017年11月底被抛弃](https://www.archlinux.org/news/the-end-of-i686-support/) 。

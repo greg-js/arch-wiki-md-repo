@@ -1,6 +1,9 @@
 Related articles
 
 *   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
+*   [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU")
+*   [PHC](/index.php/PHC "PHC")
+*   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")
 
 Fan control can bring various benefits to your system, such as quieter working system and power saving by completely stopping fans on low CPU load.
 

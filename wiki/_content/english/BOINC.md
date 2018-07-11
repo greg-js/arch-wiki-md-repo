@@ -26,7 +26,9 @@ From [Wikipedia:BOINC](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC"):
 
 [Install](/index.php/Install "Install") either the [boinc](https://www.archlinux.org/packages/?name=boinc) or the [boinc-nox](https://www.archlinux.org/packages/?name=boinc-nox) package. The latter omits [Xorg](/index.php/Xorg "Xorg") dependencies, and is therefore suited for use on headless servers.
 
-Both packages install a [unit](/index.php/Systemd#Using_units "Systemd") file named `boinc.service`.
+Both packages install a [unit](/index.php/Systemd#Using_units "Systemd") file named `boinc-client.service`.
+
+**Note:** In [boinc](https://www.archlinux.org/packages/?name=boinc) 7.10.3-1, the unit was renamed from `boinc.service` to `boinc-client.service`.
 
 You will also need to add yourself to the `boinc` group in order for the manager to connect:
 
@@ -35,7 +37,7 @@ You will also need to add yourself to the `boinc` group in order for the manager
 
 ```
 
-To generate the necessary files referenced in the next section, make sure to [start](/index.php/Start "Start") `boinc.service`.
+To generate the necessary files referenced in the next section, make sure to [start](/index.php/Start "Start") `boinc-client.service`.
 
 ## Using BOINC
 
@@ -92,7 +94,7 @@ Install [boinc-nox](https://www.archlinux.org/packages/?name=boinc-nox) to use B
 1.  Start the BOINC service.
 2.  Provide `boinccmd` with a password for communicating with the service's RPC API.
 
-To start the BOINC service, use the provided `boinc.service` unit file. (For more information, see [Systemd#Using units](/index.php/Systemd#Using_units "Systemd").) The first time BOINC starts, it will generate a password and save it to `/var/lib/boinc/gui_rpc_auth.cfg`. To provide `boinccmd` with this password, consider one of the following:
+To start the BOINC service, use the provided `boinc-client.service` unit file. (For more information, see [Systemd#Using units](/index.php/Systemd#Using_units "Systemd").) The first time BOINC starts, it will generate a password and save it to `/var/lib/boinc/gui_rpc_auth.cfg`. To provide `boinccmd` with this password, consider one of the following:
 
 *   Provide the password as a command-line flag, e.g. `boinccmd --passwd abc123 --get_host_info`.
 *   Ensure a file named `gui_rpc_auth.cfg` is present in the current directory.
@@ -147,7 +149,7 @@ If you get this error :
 
  `GPU Missing` 
 
-and the Work Unit does not start, you should [restart](/index.php/Daemons "Daemons") the `boinc.service` daemon.
+and the Work Unit does not start, you should [restart](/index.php/Daemons "Daemons") the `boinc-client.service` daemon.
 
 This will happen if the BOINC daemon starts before the an X session is fully initialized.
 
@@ -163,7 +165,7 @@ To do this on boot, create the following tmpfiles.d config:
 
 ### Unable to download with World Community Grid
 
-If you are unable to download new work units for the World Community Grid project, [makepkg](/index.php?title=Rebuild&action=edit&redlink=1 "Rebuild (page does not exist)") [openssl](https://www.archlinux.org/packages/?name=openssl) using a [modified PKGBUILD](http://pastebin.com/pYcYf4dr). Then [restart](/index.php/Restart "Restart") `boinc.service`.
+If you are unable to download new work units for the World Community Grid project, [makepkg](/index.php?title=Rebuild&action=edit&redlink=1 "Rebuild (page does not exist)") [openssl](https://www.archlinux.org/packages/?name=openssl) using a [modified PKGBUILD](http://pastebin.com/pYcYf4dr). Then [restart](/index.php/Restart "Restart") `boinc-client.service`.
 
 Your new work units should now be able to download. If you have any trouble, the original thread on the forum can be seen [here](https://bbs.archlinux.org/viewtopic.php?pid=1160393#p1160393).
 

@@ -129,7 +129,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Advanced Linux Sound Architecture (简体中文)](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Advanced Linux Sound Architecture (简体中文)") | 翻译中 | ihonliu | 无 |
 | [Arch based distributions (active) (简体中文)](/index.php/Arch_based_distributions_(active)_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch based distributions (active) (简体中文)") | 完成 | Joshua | 勘误中 |
 | [ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)") | 完成 | skysailing | 无 |
-| [AUR helpers (简体中文)](/index.php/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helpers (简体中文)") | 进行中 | Stonex | 无 |
+| [AUR helpers (简体中文)](/index.php/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helpers (简体中文)") | 完成 | Kurobac | 部分用词可能需要修改 |
 | [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") | 进行中 | Cael | 无 |
 | [BIND (简体中文)](/index.php/BIND_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "BIND (简体中文)") | 完成 | Dargasia |
 | [Bumblebee (简体中文)](/index.php/Bumblebee_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bumblebee (简体中文)") | 完成 | Peter | 无 |
@@ -151,6 +151,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") | 过期 |
 | [LAMP (简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") | 完成 | Liuzhengyi | 勘误中 |
 | [LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)") | 完成 | qqbzg | 勘误中 |
+| [Libvirt (简体中文)](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Libvirt (简体中文)") | 完成 | Kurobac | 需要格式改进 |
 | [Local Mirror (简体中文)](/index.php/Local_Mirror_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Local Mirror (简体中文)") | 完成 | Jason Zhang | 完善中 |
 | [Matlab (简体中文)](/index.php/Matlab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Matlab (简体中文)") | 部分翻译 | Liu Qinyang |
 | [NetworkManager (简体中文)](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") | 翻译中 | Jack-lijing, leeking | 请优先翻译 |

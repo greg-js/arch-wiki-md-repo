@@ -52,7 +52,7 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 
 ## Partition table
 
-**Note:** To print/list existing tables (of a specific device), run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
+**Tip:** To print/list existing tables (of a specific device), run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
 
 There are two main types of partition table available: Master Boot Record (MBR), and GUID Partition Table (GPT). These are described below along with a discussion on how to choose between the two. A third, less common alternative is using a partitionless disk, which is also discussed.
 

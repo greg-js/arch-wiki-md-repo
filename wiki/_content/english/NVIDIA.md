@@ -104,19 +104,26 @@ To avoid the possibility of forgetting to update [initramfs](/index.php/Initramf
  `/etc/pacman.d/hooks/nvidia.hook` 
 ```
 [Trigger]
+[Trigger]
 Operation=Install
 Operation=Upgrade
 Operation=Remove
 Type=Package
 Target=nvidia
+Target=linux
+# Change the linux part above and in the Exec line if a different kernel is used
 
 [Action]
+Description=Update Nvidia module in initcpio
 Depends=mkinitcpio
 When=PostTransaction
-Exec=/usr/bin/mkinitcpio -P
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -P'
 ```
 
 Make sure the `Target` package set in this hook is the one you've installed in steps above (e.g. `nvidia`, `nvidia-dkms`, `nvidia-lts` or `nvidia-ck-something`).
+
+**Note:** The complication in the `Exec` line above is in order to avoid running `mkinitcpio` multiple times if both `nvidia` and `linux` get updated. In case this doesn't bother you, the `Target=linux` and `NeedsTargets` lines may be dropped, and the `Exec` line may be reduced to simply `Exec=/usr/bin/mkinitcpio -P`.
 
 ### Hardware accelerated video decoding
 

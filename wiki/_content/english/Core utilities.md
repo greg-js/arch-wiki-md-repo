@@ -116,7 +116,7 @@ $ printf '%s
 
 ```
 
-*   If you need to list file lines in reverse order, there is a coreutil called [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
+*   If you need to list file lines in reverse order, there is a coreutil command called [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
 
 ## chmod
 
@@ -228,7 +228,7 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) and [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
+[less](https://en.wikipedia.org/wiki/less_(Unix) is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) and the [deprecated](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/tree/Documentation/deprecated.txt) [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
 
 See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
 
@@ -326,14 +326,7 @@ Other common block device types include for example `mmcblk` for memory cards an
 
 [mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") makes directories.
 
-To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
-
-```
-alias mkdir='mkdir -p -v'
-
-```
-
-The `-v` switch make it verbose.
+To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed.
 
 Changing mode of a just created directory using *chmod* is not necessary as the `-m` option lets you define the access permissions.
 
@@ -343,14 +336,16 @@ Changing mode of a just created directory using *chmod* is not necessary as the 
 
 [mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") moves and renames files and directories.
 
+**Note:** "Security aliases" are dangerous because you get used to them, resulting in potential data loss when you use another system / user that doesn't have these aliases.
+
 To limit potential damage caused by the command, use an alias:
 
 ```
-alias mv='timeout 8 mv -iv'
+alias mv='mv -iv'
 
 ```
 
-This alias suspends *mv* after eight seconds, asks for confirmation before overwriting any existing files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
+This alias asks for confirmation before overwriting any existing files and lists the operations in progress.
 
 ## od
 
@@ -371,16 +366,18 @@ In most cases `pv` functions as a drop-in replacement for `cat`.
 
 [rm](https://en.wikipedia.org/wiki/rm_(Unix) removes files or directories.
 
+**Note:** "Security aliases" are dangerous because you get used to them, resulting in potential data loss when you use another system / user that doesn't have these aliases.
+
 To limit potential damage caused by the command, use an alias:
 
 ```
-alias rm='timeout 3 rm -Iv --one-file-system'
+alias rm='rm -Iv --one-file-system'
 
 ```
 
-This alias suspends *rm* after three seconds, asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems and does not store itself in the shell history file if the shell is configured to ignore space starting commands. Substitute `-I` with `-i` if you prefer to confirm even for one file.
+This alias asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems. Substitute `-I` with `-i` if you prefer to confirm even for one file.
 
-Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
+Zsh users may want to prefix `noglob` to avoid implicit expansions.
 
 To remove directories believed to be empty, use *rmdir* as it fails if there are files inside the target.
 

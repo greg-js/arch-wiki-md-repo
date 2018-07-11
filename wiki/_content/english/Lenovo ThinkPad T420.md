@@ -16,6 +16,7 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
     *   [3.5 Laptop Mode Tools](#Laptop_Mode_Tools)
     *   [3.6 NVIDIA Optimus](#NVIDIA_Optimus)
     *   [3.7 Optional kernel boot arguments](#Optional_kernel_boot_arguments)
+    *   [3.8 VT-Switching hangs](#VT-Switching_hangs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Media Keys](#Media_Keys)
     *   [4.2 Rebind Forward and Back keys](#Rebind_Forward_and_Back_keys)
@@ -163,6 +164,24 @@ i915.lvds_downclock=1
 i915.semaphores=1
 
 ```
+
+### VT-Switching hangs
+
+If your system hangs for some 10 seconds occasionally when switching virtual terminals with Ctrl+Alt+Fx with the following dmesg line
+
+```
+[drm:drm_atomic_helper_commit_cleanup_done [drm_kms_helper]] *ERROR* [CRTC:36:pipe A] flip_done timed out
+
+```
+
+it is often suggested to add
+
+```
+video=SVIDEO-1:d
+
+```
+
+to kernel boot parameters, if that doesn't work, uninstall the `xf86-video-intel` package.
 
 ## Troubleshooting
 

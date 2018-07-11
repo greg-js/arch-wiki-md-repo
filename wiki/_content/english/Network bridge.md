@@ -111,7 +111,7 @@ $ brctl show
 Set the bridge device up:
 
 ```
-# ip link set up dev *bridge_name*
+# ip link set dev *bridge_name* up
 
 ```
 

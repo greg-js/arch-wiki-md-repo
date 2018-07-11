@@ -5,12 +5,11 @@
 *   [1 Installation](#Installation)
     *   [1.1 Gnome Installations](#Gnome_Installations)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Video playback](#Video_playback)
-    *   [2.2 Unreadable tool tips](#Unreadable_tool_tips)
+    *   [2.1 Unreadable tool tips](#Unreadable_tool_tips)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [digikam](https://www.archlinux.org/packages/?name=digikam). Optionally, install [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) to generate thumbnails for video files.
+[Install](/index.php/Install "Install") [digikam](https://www.archlinux.org/packages/?name=digikam).
 
 ### Gnome Installations
 
@@ -33,13 +32,9 @@ After this you can run digikam as normal and the icons will be correct.
 
 ## Troubleshooting
 
-### Video playback
-
-A [Phonon backend](/index.php/KDE#Phonon "KDE") is installed as a dependency of Digikam, but matching multimedia codecs may be missing. When using the [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) backend, install one or more of its plugins with {{ic|pacman -S gstreamer0.10-{good,bad,ugly,ffmpeg} }}.
-
 ### Unreadable tool tips
 
-If tooltips within the user interface are either blank (empty rectangles), or unreadable due to a poor foreground and background combination, choose a different widget style:
+DigiKam has its own widget style setting. If tooltips are either blank (empty rectangles), or unreadable due to a poor foreground and background combination, choose a different widget style:
 
 1.  Navigate to *Settings* > *Configure digiKam* > *Miscellaneous*
 2.  Now in *Widget Style*, choose *"Cleanlooks"*

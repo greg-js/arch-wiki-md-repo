@@ -346,7 +346,12 @@ Phonon is being widely used within KDE, for both audio (e.g., the System notific
 
 You can choose between backends based on [GStreamer](/index.php/GStreamer "GStreamer") and [VLC](/index.php/VLC "VLC") – each available in versions for Qt4 applications and Qt5 applications ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
 
-[Upstream prefers VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM) but prominent Linux distributions (Kubuntu and Fedora-KDE for example) prefer GStreamer because that allows them to easily leave out patented MPEG codecs from the default installation. Both backends have a slightly different [features set](https://community.kde.org/Phonon/FeatureMatrix).
+[Upstream prefers VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM) but prominent Linux distributions (Kubuntu and Fedora-KDE for example) prefer GStreamer because that allows them to easily leave out patented MPEG codecs from the default installation. Both backends have a slightly different [features set](https://community.kde.org/Phonon/FeatureMatrix). The Gstreamer backend has some optional codec dependency, install them as needed:
+
+*   [gst-libav](https://www.archlinux.org/packages/?name=gst-libav) - libav codec
+*   [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) - PulseAudio support and good codecs
+*   [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) - additional codecs
+*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) - additional codecs
 
 In the past other backends were developed as well but are no longer maintained and their AUR packages have been deleted.
 

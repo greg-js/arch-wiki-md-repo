@@ -7,6 +7,7 @@
     *   [2.1 Webclient](#Webclient)
 *   [3 Service](#Service)
 *   [4 User management](#User_management)
+*   [5 Spider Webcrawler](#Spider_Webcrawler)
 
 ## Installation
 
@@ -47,3 +48,11 @@ You need at least one user on your fresh synapse server. You may create one as y
  `$ register_new_matrix_user -c /etc/synapse/homeserver.yaml [https://localhost:8448](https://localhost:8448)` 
 
 or using one of the [matrix clients](https://matrix.org/docs/projects/try-matrix-now.html)
+
+## Spider Webcrawler
+
+To enable the webcrawler, for server generated link previews, the additional packages [python2-lxml](https://www.archlinux.org/packages/?name=python2-lxml) and [python2-netaddr](https://www.archlinux.org/packages/?name=python2-netaddr) have to be installed. After that the config option `url_preview_enabled: True` can be set in your `homeserver.yaml`. To prevent the synapse server from issuing arbitrary GET requests to internal hosts the `url_preview_ip_range_blacklist:` has to be set.
+
+**Warning:** There are no defaults! By default the synapse server can crawl all your internal hosts.
+
+There are some examples that can be uncommented. Add your local IP ranges to that list to prevent the synapse server from trying to crawl them. After changing the `homeserver.yaml` the service has to be restarted.

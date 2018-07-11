@@ -20,7 +20,7 @@ This article describes how to set up a Korean language environment. It does not 
 
 ## Fonts
 
-To use any Korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) or the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. Alternatively, if you use the [Infinality](/index.php/Infinality "Infinality") patches and have the [Infinality-bundle-fonts repository](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") enabled, you can install `ttf-nanum-fonts-ibx`, `ttf-nanumgothic-coding-ibx`, and `ttf-unfonts-core-ibx` from the `infinality-bundle-fonts` repository. If you want to view and use Yethangul(옛한글), install the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) and/or the [ttf-hamchorom-lvt](https://aur.archlinux.org/packages/ttf-hamchorom-lvt/) fonts.
+To use any Korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. If you want to view and use Yethangul(옛한글), install [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) font.
 
 See also [Fonts#Korean](/index.php/Fonts#Korean "Fonts").
 

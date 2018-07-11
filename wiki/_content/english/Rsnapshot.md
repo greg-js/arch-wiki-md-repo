@@ -225,7 +225,7 @@ This tells *rsnapshot* to simulate an "hourly" backup. It should print out the c
 
 **Note:** Please note that the test output might be slightly different than the real execution, but only because the test doesn't actually do things that may be checked for later in the program. For example, if the program will create a directory and then later test to see if that directory exists, the test run might claim that it would create the directory twice, since it didn't actually get created during the test. This should be the only type of difference you will see while running a test.
 
-# Automation
+## Automation
 
 Now that you have your config file set up, it's time to set up *rsnapshot* to be run automatically.
 
@@ -243,7 +243,24 @@ IOSchedulingClass=idle
 ExecStart=/usr/bin/rsnapshot %I
 ```
 
-Then create a timer unit for daily:
+Then create a timer unit for hourly:
+
+ `/etc/systemd/system/rsnapshot-hourly.timer` 
+```
+[Unit]
+Description=rsnapshot hourly backup
+
+[Timer]
+# Run hourly
+OnCalendar=*-*-* *:00:00
+Persistent=true
+Unit=rsnapshot@hourly.service
+
+[Install]
+WantedBy=timers.target
+```
+
+A timer unit for daily:
 
  `/etc/systemd/system/rsnapshot-daily.timer` 
 ```
@@ -294,16 +311,17 @@ Unit=rsnapshot@monthly.service
 WantedBy=timers.target
 ```
 
-Then finally, enable then:
+Then finally, enable and start them:
 
 ```
-# systemctl enable rsnapshot-daily.timer
-# systemctl enable rsnapshot-weekly.timer
-# systemctl enable rsnapshot-monthly.timer
+# systemctl enable --now rsnapshot-hourly.timer
+# systemctl enable --now rsnapshot-daily.timer
+# systemctl enable --now rsnapshot-weekly.timer
+# systemctl enable --now rsnapshot-monthly.timer
 
 ```
 
-To manually run the service, you can simply execute:
+Alternatively, to manually run the service, you can simply execute:
 
 ```
 # systemctl start rsnapshot@hourly # or rsnapshot@daily, rsnapshot@weekly, ...
@@ -312,7 +330,7 @@ To manually run the service, you can simply execute:
 
 **Note:** It is usually a good idea to schedule the larger intervals to run a bit before the lower ones. This helps prevent race conditions where the daily would try to run before the hourly job had finished. This same strategy should be extended so that a weekly entry would run before the daily and so on.
 
-# How it works
+## How it works
 
 We have a snapshot root under which all backups are stored. In this example, this is the directory `/mnt/backups/`. Within this directory, other directories are created for the various intervals that have been defined. In the beginning it will be empty, but once *rsnapshot* has been running for a week, it should look something like this:
 

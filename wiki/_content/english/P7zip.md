@@ -20,21 +20,28 @@ $ 7z
 
 ## Examples
 
-To extract all files from an archive to the current directory without using directory names, run:
+*   List the content of an archive:
+
+```
+$ 7z l <archive name>
+
+```
+
+*   Extract all files from an archive to the current directory without using directory names:
 
 ```
 $ 7z e <archive name>
 
 ```
 
-To extract with full paths, run:
+*   Extract with full paths:
 
 ```
 $ 7z x <archive name>
 
 ```
 
-To extract into a new directory, run:
+*   Extract into a new directory:
 
 ```
 $ 7z x -o<folder name> <archive name>
@@ -46,8 +53,8 @@ $ 7z x -o<folder name> <archive name>
 The package includes three binaries, `/usr/bin/7z`, `/usr/bin/7za`, and `/usr/bin/7zr`. Their manual pages explain the differences:
 
 *   [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) uses plugins to handle archives.
-*   [7za(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7za.1) is a stand-alone executable. 7za handles fewer archive formats than 7z, but does not need any others.
-*   [7zr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7zr.1) is a stand-alone executable. 7zr handles fewer archive formats than 7z, but does not need any others. 7zr is a "light-version" of 7za that only handles 7z archives.
+*   [7za(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7za.1) is a stand-alone executable that handles fewer archive formats than 7z.
+*   [7zr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7zr.1) is a stand-alone executable. It is a "light-version" of 7za that only handles 7z archives. In contrast to 7za, it cannot handle encrypted archives.
 
 ## See also
 

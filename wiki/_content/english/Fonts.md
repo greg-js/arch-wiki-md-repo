@@ -459,6 +459,8 @@ Relevant websites:
 *   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/) - D2Coding fixed width TrueType font made by Naver
 *   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - Nanum series TrueType fonts
 *   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - Nanum series fixed width TrueType fonts
+*   [ttf-kopub](https://aur.archlinux.org/packages/ttf-kopub/)/[otf-kopub](https://aur.archlinux.org/packages/otf-kopub/) - Korean TrueType/OpenType fonts by Korea Publisher Society
+*   [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) - A collection of Korean TrueType fonts by KLDP
 
 ##### Vietnamese
 

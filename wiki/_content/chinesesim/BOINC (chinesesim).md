@@ -24,7 +24,9 @@
 
 [官方仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 提供了 [boinc](https://www.archlinux.org/packages/?name=boinc) 和 [boinc-nox](https://www.archlinux.org/packages/?name=boinc-nox) 软件包，使用 [安装](/index.php/Pacman "Pacman") 其一即可。后者不依赖 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")，适用于没有物理控制台的服务器。
 
-两个软件包都提供了系统服务 `boinc.service`，可以使用 `systemctl` 管理。详情参见 [Systemd (简体中文)#使用单元](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。
+两个软件包都提供了系统服务 `boinc-client.service`，可以使用 `systemctl` 管理。详情参见 [Systemd (简体中文)#使用单元](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。
+
+注意从 7.10.3 新版本开始，原先的服务名称由 `boinc.service` 更改为新的 `boinc-client.service`。
 
 ## 使用
 
@@ -127,7 +129,7 @@ BOINC 的日志文件存放在 `/var/lib/boinc/` 中：
 
  `GPU Missing` 
 
-且 GPU 计算任务无法启动，则应尝试 [重启](/index.php/Daemons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.87.8D.E5.90.AF.E6.9C.8D.E5.8A.A1 "Daemons (简体中文)") `boinc.service` 服务。
+且 GPU 计算任务无法启动，则应尝试 [重启](/index.php/Daemons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.87.8D.E5.90.AF.E6.9C.8D.E5.8A.A1 "Daemons (简体中文)") `boinc-client.service` 服务。
 
 这样的错误通常是因为 BOINC 服务先于 X 启动。
 

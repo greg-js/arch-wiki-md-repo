@@ -24,7 +24,9 @@
 
 ## 글꼴
 
-한글 입력을 사용하기 위해서는 한글 글꼴이 설치되어 있어야 합니다. [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/)이나 [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) 패키지를 [AUR](/index.php/AUR "AUR")에서 설치하십시오. 터미널 등에서 사용할 수 있는 고정폭 글꼴이 필요하다면 AUR에서 [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) 패키지를 설치하십시오. 만약 향상된 글꼴 렌더링을 제공하는 [Infinality](/index.php/Infinality "Infinality") 패치를 사용하며, [Infinality 글꼴 저장소(Infinality-bundle-fonts)](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories")를 추가했다면, `ttf-nanum-fonts-ibx`, `ttf-nanumgothic-coding-ibx`, `ttf-unfonts-core-ibx` 등을 대신 설치하십시오. 옛한글을 읽고 입력하기 원한다면, 은 글꼴이나 [ttf-hamchorom-lvt](https://aur.archlinux.org/packages/ttf-hamchorom-lvt/) 패키지를 사용하십시오.
+한글 입력을 사용하기 위해서는 한글 글꼴이 설치되어 있어야 합니다. [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) 패키지를 [AUR](/index.php/AUR "AUR")에서 설치하십시오. 터미널 등에서 사용할 수 있는 고정폭 글꼴이 필요하다면 AUR에서 [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) 패키지를 설치하십시오. 옛한글을 읽고 입력하기 원한다면, [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) 패키지를 사용하십시오.
+
+다른 한글 폰트는 [Fonts#Korean](/index.php/Fonts#Korean "Fonts")에서 확인할 수 있습니다.
 
 ## 한글 입력기 고르기
 

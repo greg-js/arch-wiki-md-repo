@@ -3,6 +3,7 @@ Related articles
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")
 *   [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU")
+*   [Fan speed control](/index.php/Fan_speed_control "Fan speed control")
 
 PHC is an acpi-cpufreq patch built with the purpose of enabling undervolting on your processor. This can potentially divide the power consumption of your processor by two or more, and in turn increase battery life and reduce fan noise noticiably. PHC works only if your processor's architecture supports undervolting.
 

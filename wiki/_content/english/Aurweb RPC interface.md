@@ -4,7 +4,7 @@ Related articles
 
 The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call "w:Remote procedure call") interface for the [AUR](/index.php/AUR "AUR"). Queries are send as HTTP GET requests and the server responds with [JSON](http://www.json.org/).
 
-**Note:** This article describes v5 of the RPC Interface API, as released with AUR v4.2.0 on February 15, 2016.
+**Note:** This article describes v5 of the RPC Interface API, as updated with AUR v4.7.0 on July 7, 2018.
 
 ## Contents
 
@@ -44,6 +44,10 @@ where `*keywords*` is the search argument and `*field*` is one of the following 
 *   `name` (search by package name only)
 *   `name-desc` (search by package name and description)
 *   `maintainer` (search by package maintainer)
+*   `depends` (search for packages that depend on keywords)
+*   `makedepends` (search for packages that makedepend on keywords)
+*   `optdepends` (search for packages that optdepend on keywords)
+*   `checkdepends` (search for packages that checkdepend on keywords)
 
 The `by` parameter can be skipped and defaults to `name-desc`. Possible return types are `search` and `error`.
 
@@ -62,6 +66,13 @@ Search for packages maintained by `john`:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&by=maintainer&arg=john
+
+```
+
+Search for packages that have `foobar` as `makedepends`:
+
+```
+https://aur.archlinux.org/rpc/?v=5&type=search&by=makedepends&arg=foobar
 
 ```
 

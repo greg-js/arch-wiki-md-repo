@@ -137,9 +137,11 @@ for_window [class="Main.py"] floating enable
 
 If you are using Wayland, the Guake visibility toggle hotkey may not work under some applications. This is because Guake uses a global hotkey library made for X environments and there is no equivalent global hotkey interface for Wayland. Many applications (e.g. Firefox) run on Wayland through XWayland where the Guake toggle will work but others that natively run Wayland (e.g. GNOME apps) disable Guake toggle functionality.
 
-If you do not wish to switch over to an X environment, a simple workaround requires configuring a shortcut with your window manager/desktop environment for the command `guake -t`.The edit summary is the little text box that is found below the main editing area and just above the "Save page" button. It is very important to always write, in a succinct way, what has been done and why. Note that internal wiki links do work in edit summaries, so use them to link to any related discussions or articles; similarly, paste any urls to relevant edit diffs or external resources, such as forum threads or mailing lists.
+If you do not wish to switch over to an X environment, a simple workaround requires configuring a shortcut with your window manager/desktop environment for the command `guake-toggle`.
 
 See [github issue](https://github.com/Guake/guake/issues/994) for more details.
+
+**Note:** Using `guake-toggle` is [recommended](https://github.com/Guake/guake/blob/master/docs/source/user/faq.rst#manual-keybinding) over `guake -t`. It is much faster since it goes directly over D-Bus without fully initializing Guake.
 
 ## See also
 

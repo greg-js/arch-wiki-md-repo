@@ -52,29 +52,28 @@ These compression programs implement their own file format.
 
 ### Archiving and compression
 
-| Name | Packages | Ext | Description |
-| [7z](https://en.wikipedia.org/wiki/7z "wikipedia:7z") | [p7zip](https://www.archlinux.org/packages/?name=p7zip) | .7z | Popular OpenSource tool on non-Linux machines. See [p7zip](/index.php/P7zip "P7zip"). |
-| [RAR](https://en.wikipedia.org/wiki/RAR_(file_format) | [rar](https://aur.archlinux.org/packages/rar/), [unrar](https://www.archlinux.org/packages/?name=unrar) | .rar | Popular Windows tool available for Linux. See [RAR](/index.php/RAR "RAR"). |
-| [ZIP](https://en.wikipedia.org/wiki/Zip_(file_format) | [zip](https://www.archlinux.org/packages/?name=zip), [unzip](https://www.archlinux.org/packages/?name=unzip) | .zip | Widely used outside of the Linux-world. |
-
-*   **The Unarchiver** — Command-line tool of a Mac application, supports over 40 archive formats (popular, old and unusual).
-
-	[https://theunarchiver.com/](https://theunarchiver.com/) || [unarchiver](https://www.archlinux.org/packages/?name=unarchiver)
+| Name | Packages | Manual | Ext | Description |
+| [7z](https://en.wikipedia.org/wiki/7z "wikipedia:7z") | [p7zip](https://www.archlinux.org/packages/?name=p7zip) | [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) | .7z | Popular OpenSource tool on non-Linux machines. See [p7zip](/index.php/P7zip "P7zip"). |
+| [RAR](https://en.wikipedia.org/wiki/RAR_(file_format) | [rar](https://aur.archlinux.org/packages/rar/), [unrar](https://www.archlinux.org/packages/?name=unrar) | rar(1) | .rar | Popular Windows tool available for Linux. See [RAR](/index.php/RAR "RAR"). |
+| [ZIP](https://en.wikipedia.org/wiki/Zip_(file_format) | [zip](https://www.archlinux.org/packages/?name=zip), [unzip](https://www.archlinux.org/packages/?name=unzip) | [zip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zip.1), [unzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unzip.1) | .zip | Widely used outside of the Linux-world. |
+| [Unarchiver](https://theunarchiver.com/) | [unarchiver](https://www.archlinux.org/packages/?name=unarchiver) | [unar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unar.1), [lsar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsar.1) | *many* | Command-line tool of a Mac application, supports over 40 archive formats. |
 
 ### Esoteric, rare or deprecated tools
 
 | Name | Packages | Ext | Description |
 | [ARC](https://en.wikipedia.org/wiki/ARC_(file_format) | [arc](https://aur.archlinux.org/packages/arc/) | .arc, .ark | Was very popular during the early days of the dial-up BBS. Superseded by ZIP. |
 | [ARJ](https://en.wikipedia.org/wiki/ARJ "wikipedia:ARJ") | [arj](https://www.archlinux.org/packages/?name=arj) | .arj | An archiver used on DOS/Windows in mid-1990s. This is an open source clone. |
+| [compress](https://en.wikipedia.org/wiki/compress "wikipedia:compress") | [ncompress](https://aur.archlinux.org/packages/ncompress/) | .Z | The classic unix compression utility which can handle the ancient .Z archive. |
 | [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
 
 ### Feature charts
 
 #### Decompress
 
-| Name | gzip | bzip2 | zip | compress | pack | cab | arj |
+| Name | gzip | bzip2 | ZIP | compress | pack | CAB | ARJ |
 | [gzip](https://www.archlinux.org/packages/?name=gzip) | Yes | No | Yes | Yes | Yes | No | No |
 | [p7zip](https://www.archlinux.org/packages/?name=p7zip) | Yes | Yes | Yes | No | Yes | Yes | Yes |
+| [unarchiver](https://www.archlinux.org/packages/?name=unarchiver) | Yes | Yes | Yes | Yes | No | Yes | partial |
 
 ## Usage comparison
 

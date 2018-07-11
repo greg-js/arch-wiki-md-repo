@@ -1,9 +1,6 @@
-**翻译状态：** 本文是英文页面 [AUR helpers](/index.php/AUR_helpers "AUR helpers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-05，点击[这里](https://wiki.archlinux.org/index.php?title=AUR+helpers&diff=0&oldid=524717)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [AUR helpers](/index.php/AUR_helpers "AUR helpers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-10，点击[这里](https://wiki.archlinux.org/index.php?title=AUR+helpers&diff=0&oldid=529152)可以查看翻译后英文页面的改动。
 
-**警告:**
-
-*   这些工具都不是官方支持的,参见 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254)。我们建议用户熟悉[手动编译过程](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Arch User Repository (简体中文)")，以便自行解决问题。
-*   这些工具对于[软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")可能和[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)有相同的使用方法，比如`pacman -Syu` 。这些用法可能在各个方面和pacman的行为不同，因此这些用法并不被支持或推荐。
+**警告:** 这些工具都不是官方支持的,参见 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254)。我们建议用户熟悉[手动编译过程](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Arch User Repository (简体中文)")，以便自行解决问题。
 
 在用户使用[Arch用户软件仓库](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")时，AUR工具可以帮用户自动完成某些任务。
 
@@ -28,63 +25,71 @@
 *   **原生pacman**：在代替[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)执行pacman的命令（如`pacman-Syu`）时，默认情况遵守如下规则：
     *   不分割命令，例如`pacman -Syu`不会分为`pacman -Sy`和`pacman -S packages`来执行；
     *   直接使用`pacman`，而不是直接操作数据库或是使用`libalpm`；
-    *   不使用不被支持的命令，例如`pacman -Ud`，`pacman -Rdd`。
+    *   另外，不使用[可能有害的命令](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance")，例如`pacman -Ud`，`pacman -Rdd`，`pacman --ask`或`pacman --force`。
+
+**警告:** 尽管有这些标准，但AUR helpers仍可能在某些方面与[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)行为不同,特别对于[官方软件仓库](/index.php/Official_repositories "Official repositories")中的软件包。所以这些用法并不被支持或推荐。
+
 *   **可靠的语法分析器**：有能力通过使用所提供的元数据（PRC/.SRCINFO）代替解析PKGBUILD以处理复杂包，例如[aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/)。
 *   **可靠的求解器**：有能力正确处理复杂的依赖关系，例如[ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/)。
 *   **包拆分**：有能力正确地编译和安装：
     *   对于有相同包基础的多个软件包，不重复编译和安装包基础，例如[clion](https://aur.archlinux.org/packages/clion/)。
-    *   Split packages which depend on a package from the same package base, such as [libc++](https://aur.archlinux.org/packages/libc%2B%2B/) and [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/).
+    *   拆分依赖相同包基础的包（Split packages which depend on a package from the same package base）， 例如[libc++](https://aur.archlinux.org/packages/libc%2B%2B/) and [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/)。
     *   独立地拆分包，例如[python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/)和[python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/)。
 *   **Git clone**：默认使用[git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1)从AUR获取相关文件。
 *   **差异比较**：有检查包差异的能力。除了PKGBUILD，还包括对`.install`或`.patch`文件更改的检查。
-*   **批量交互**：在编译过程开始前完成交互，特别是：
-    *   检查PKGBUILD；
-    *   通过[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)或[pacinstall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacinstall.1)解决包冲突。
+*   **批量交互**：批量完成交互过程，特别是：
+
+1.  检查PKGBUILD；
+2.  显示要升级的包；
+3.  解决包冲突和安装问题。
+
+	星号表示功能需要手动启用。
+
 *   **命令补全**：在列出的shell中支持命令补全。
 
 **提示：**
 
 *   表格按列的值排序。其中**是**或**不适用**优先于**部分**、**可选** 以及**否**，如果值相同，则按字母顺序排序。
-*   **可选**意味着功能可用，但需要通过命令行选项或配置文件启用。**部分**意味着功能尚未完全实现，或者与标准不符。
+*   **可选**意味着功能可用，但需要通过命令行选项或配置文件启用。**部分**意味着功能尚未完全实现，或者与标准有一些差别。
 
 ### 开发中
 
-| 名称 | 编程语言 | 安全 | 干净编译 | 原生pacman | 可靠的语法分析器 | 可靠的求解器 | 包拆分 | Git clone | 差异比较 | 批量交互 | 命令补全 | 特性 |
-| [aurman](https://aur.archlinux.org/packages/aurman/) | Python | 是 | 是 | 是 | 是 | [是](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | 是 | 是 | 是 | [是](https://github.com/polygamma/aurman/commit/9f4cf1388e558f50e8ed435ad2487147bcb088be) | bash, fish | 获取PGP密钥，按受欢迎度排序 |
-| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | 是 | 是 | 不适用 | 是 | 是 | 是 | 是 | 是 | 部分 | zsh | 支持[vifm](/index.php/Vifm "Vifm")、[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)")、[软件包签名](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Package signing (简体中文)")、[clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")，按票数或受欢迎度排序 |
-| [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | 是 | 是 | [部分](https://github.com/actionless/pikaur/commit/2c417628729474d58fc6556d14139bf4c42755bb) | 是 | 是 | [是](https://github.com/actionless/pikaur/commit/d409b958b4ff403d4fda06681231061854d32b3c) | 是 | 是 | [是](https://github.com/actionless/pikaur/commit/cc401f66687e3d744a728205cc86c3b1446dda92) | bash, fish, zsh | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html)，[多语言](https://github.com/actionless/pikaur/tree/master/locale)，按票数或受欢迎度排序，[显示Arch新闻](https://github.com/actionless/pikaur/pull/191) |
-| [yay](https://aur.archlinux.org/packages/yay/) | Go | 是 | 是 | [部分](https://github.com/Jguer/yay/commit/98ea801004fc63b5a294f46392910e85286ffd98) | 是 | 是 | 是 | [是](https://github.com/Jguer/yay/pull/297) | [是](https://github.com/Jguer/yay/pull/447) | [是](https://github.com/Jguer/yay/commit/e88bf0f5b7f3ba3ffba01926bc3274b2f47e1efc) | bash, fish, zsh | 按票数排序, 获取PGP密钥, [提示架构](https://github.com/Jguer/yay/commit/4bcd3a6297052714e91e3f886602ce5c12d15786) |
-| [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | 是 | [是](https://github.com/kitsunyan/pakku/commit/864cc0373fd6095295f68cc44d1657bd17269732) | [部分](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | 是 | 是 | 是 | 是 | [是](https://github.com/kitsunyan/pakku/commit/396e9f44c4f5a79c7b9238835599387f6ff418fe) | 部分 | bash, zsh | [ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，AUR评论，获取PGP密钥 |
-| [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | 是 | 是 | 是 | 是 | 是 | 是 | 是 | 否 | 部分 | bash, zsh | 信任管理，[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，扩展Powerpill |
-| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | 可选 | 是 | [是](https://github.com/Kwpolska/pkgbuilder/blob/master/docs/wrapper.rst) | 是 | 是 | [部分](https://github.com/Kwpolska/pkgbuilder/issues/39) | 是 | 否 | 部分 | 无 | 默认自动编译，使用`-F`以禁用，多语言 |
-| [naaman](https://aur.archlinux.org/packages/naaman/) | Python | 可选 | 是 | 不适用 | 是 | [部分](https://github.com/enckse/naaman/issues/19) | [部分](https://github.com/enckse/naaman/issues/20) | 是 | 否 | 部分 | bash | 默认自动编译，使用`--fetch`以禁用，使用`-d`启用求解器 |
-| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | 可选 | 是 | [是](https://github.com/aurapm/aura/blob/master/aura/src/Aura/Pacman.hs) | [是](https://github.com/aurapm/aura/commit/7848e9830cd880215f1d12a1c0294992428ea778) | 否 | [否](https://github.com/aurapm/aura/issues/353) | [否](https://github.com/aurapm/aura/pull/346) | [部分](https://github.com/aurapm/aura/blob/89bf702bd0539fa757265c4c54ea2192155f85ed/aura/src/Aura/Pkgbuild/Records.hs) | 部分 | bash, zsh | 默认自动编译，使用`--dryrun` 以禁用，[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")支持，多语言 |
-| [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | 可选 | 是 | 不适用 | 否 | 否 | 否 | 是 | 是 | 部分 | 不适用 | 默认自动编译，使用`check`或`update` 以禁用，支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)") |
-| [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | 是 | 是 | 是 | 否 | 否 | 否 | 是 | 否 | 否 | 无 | 更新源列表，显示Arch新闻和AUR评论 |
-| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | 可选 | 是 | 不适用 | 否 | 否 | [否](https://github.com/pbrisbin/aurget/issues/40) | 否 | [否](https://github.com/pbrisbin/aurget/issues/41) | 否 | bash, zsh | 按票数排序 |
+| 名称 | 语言 | 安全 | 干净编译 | 原生Pacman | 可靠的语法分析器 | 可靠的求解器 | 包拆分 | Git clone | 差异比较 | 批量交互 | 命令补全 | 特性 |
+| [aurman](https://aur.archlinux.org/packages/aurman/) | Python | 是 | 是 | 是 | 是 | [是](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | 是 | 是 | 是 | 1, [2*, 3*](https://github.com/polygamma/aurman#question-5) | bash, fish | 获取PGP密钥，按受欢迎度排序 |
+| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | 是 | 是 | 不适用 | 是 | 是 | 是 | 是 | 是 | 1 | zsh | 支持[vifm](/index.php/Vifm "Vifm")、[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)")、[软件包签名](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Package signing (简体中文)")、[clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")，按票数或受欢迎度排序 |
+| [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | 是 | [是](https://github.com/kitsunyan/pakku/commit/864cc0373fd6095295f68cc44d1657bd17269732) | [部分](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | 是 | 是 | 是 | 是 | [是](https://github.com/kitsunyan/pakku/commit/396e9f44c4f5a79c7b9238835599387f6ff418fe) | 1 | bash, zsh | [ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，AUR评论，获取PGP密钥 |
+| [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | 是 | 是 | [部分](https://github.com/actionless/pikaur#pikaur) | 是 | 是 | [是](https://github.com/actionless/pikaur/commit/d409b958b4ff403d4fda06681231061854d32b3c) | 是 | 是 | 1, 2, 3 | bash, fish, zsh | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html)，[多语言](https://github.com/actionless/pikaur/tree/master/locale)，按票数或受欢迎度排序，[显示Arch新闻](https://github.com/actionless/pikaur/pull/191) |
+| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | 是 | 是 | [是](https://github.com/trizen/trizen/commit/9e7b40e110175ea5bc7a0fa002ffadbf1106704b) | [是](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | 是 | [部分](https://github.com/trizen/trizen/issues/46) | [是](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | 是 | 1* | bash, zsh, fish | 默认自动编译，使用`-G`以禁用，AUR评论 |
+| [yay](https://aur.archlinux.org/packages/yay/) | Go | 是 | 是 | [部分](https://github.com/Jguer/yay/issues/464) | 是 | 是 | 是 | [是](https://github.com/Jguer/yay/pull/297) | [是](https://github.com/Jguer/yay/pull/447) | 1, 2, 3 | bash, fish, zsh | 按票数排序, 获取PGP密钥, [提示架构](https://github.com/Jguer/yay/commit/4bcd3a6297052714e91e3f886602ce5c12d15786) |
+| [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | 是 | 是 | 是 | 是 | 是 | 是 | 是 | 否 | 1 | bash, zsh | 信任管理，[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，扩展Powerpill |
+| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | 可选 | 是 | [是](https://github.com/Kwpolska/pkgbuilder/blob/master/docs/wrapper.rst) | 是 | 是 | [部分](https://github.com/Kwpolska/pkgbuilder/issues/39) | 是 | [否](https://github.com/Kwpolska/pkgbuilder/issues/36) | 1* | - | 默认自动编译，使用`-F`以禁用，多语言 |
+| [naaman](https://aur.archlinux.org/packages/naaman/) | Python | 可选 | 是 | 不适用 | 是 | [部分](https://github.com/enckse/naaman/issues/19) | [部分](https://github.com/enckse/naaman/issues/20) | 是 | 否 | 1* | bash | 默认自动编译，使用`--fetch`以禁用，使用`-d`启用求解器 |
+| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | 可选 | 是 | [是](https://github.com/aurapm/aura/blob/master/aura/src/Aura/Pacman.hs) | [是](https://github.com/aurapm/aura/commit/7848e9830cd880215f1d12a1c0294992428ea778) | 否 | [否](https://github.com/aurapm/aura/issues/353) | [否](https://github.com/aurapm/aura/pull/346) | [部分](https://github.com/aurapm/aura/blob/89bf702bd0539fa757265c4c54ea2192155f85ed/aura/src/Aura/Pkgbuild/Records.hs) | 1* | bash, zsh | 默认自动编译，使用`--dryrun` 以禁用，[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")支持，多语言 |
+| [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | 可选 | 是 | 不适用 | 否 | 否 | 否 | 是 | 是 | 1* | - | 默认自动编译，使用`check`或`update` 以禁用，支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)") |
+| [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | 是 | 是 | 是 | 否 | 否 | 否 | 是 | 否 | - | - | 更新源列表，显示Arch新闻和AUR评论 |
+| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | 可选 | 是 | 不适用 | 否 | 否 | [否](https://github.com/pbrisbin/aurget/issues/40) | 否 | [否](https://github.com/pbrisbin/aurget/issues/41) | - | bash, zsh | 按票数排序 |
 
 ### 仅搜索
 
-| 名称 | 编程语言 | 安全 | 可靠的语法分析器 | 可靠的求解器 | Git clone | 命令补全 | 特性 |
-| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | 是 | 是 | 不适用 | 是 | 无 | - |
+| 名称 | 语言 | 安全 | 可靠的语法分析器 | 可靠的求解器 | Git clone | 命令补全 | 特性 |
+| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | 是 | 是 | 不适用 | 是 | - | - |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | 是 | 是 | 不适用 | 可选 | bash | - |
-| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | 是 | 是 | 是 | 否 | 不适用 | 显示编译顺序 |
+| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | 是 | 是 | 是 | 否 | - | 显示编译顺序 |
 | [cower](https://aur.archlinux.org/packages/cower/) | C | 是 | 是 | 不适用 | 否 | bash/zsh | 支持正则表达式，按票数受欢迎度排序 |
-| [package-query](https://aur.archlinux.org/packages/package-query/) | C | 是 | 否 [[2]](https://github.com/archlinuxfr/package-query/issues/135) | 不适用 | 不适用 | 无 | - |
-| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | 是 | 是 [[3]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | 不适用 | 否 | zsh | 支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)") |
+| [package-query](https://aur.archlinux.org/packages/package-query/) | C | 是 | 否 [[3]](https://github.com/archlinuxfr/package-query/issues/135) | 不适用 | 不适用 | - | - |
+| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | 是 | 是 [[4]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | 不适用 | 否 | zsh | 支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)") |
 
 ### 开发停止或有问题
 
 此表中的是已经停止开发的，或是在过去6个月内有未处理的**安全**，**干净编译**或是**原生pacman**的问题（查看[#开发中](#.E5.BC.80.E5.8F.91.E4.B8.AD))的项目。
 
-| 名称 | 编程语言 | 安全 | 干净编译 | 原生pacman | 可靠的语法分析器 | 可靠的求解器 | 包拆分 | Git clone | 差异比较 | 批量交互 | 命令补全 | 特性 |
-| [aurel](https://aur.archlinux.org/packages/aurel/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | 是 | 不适用 | 不适用 | 不适用 | 不适用 | 不适用 | 否 | 不适用 | 不适用 | 不适用 | Emacs集成，不自动编译 |
-| [pacaur](https://aur.archlinux.org/packages/pacaur/) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | 是 | 是 | [否](https://github.com/rmarquis/pacaur/commit/d8f49188452785fb28afc017baadd01d9e24ba21) | 是 | 是 | 是 | 是 | 是 | 是 | bash, zsh | 多语言，按票数或受欢迎程度排序 |
-| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | 是 | 是 | [否](https://github.com/trizen/trizen/commit/ba687bc3c3e306e6f3942e95f825ed6a55d3ad69) | [是](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | 是 | [是](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | [是](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | 是 | [部分](https://github.com/trizen/trizen/issues/8) | bash, zsh, fish | 默认自动编译，使用`-G`以禁用，AUR评论 |
-| [spinach](https://aur.archlinux.org/packages/spinach/) [[6]](https://github.com/floft/spinach) | Bash | [是](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | 是 | 不适用 | 否 | 否 | 否 | 否 | 否 | 否 | 无 | - |
-| [burgaur](https://aur.archlinux.org/packages/burgaur/) [[7]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | 可选 | 是 | 不适用 | 否 | 否 | 否 | 否 | 否 | 否 | 无 | cover的包装(Wrapper for cower) |
-| [packer](https://aur.archlinux.org/packages/packer/) | Bash | 否 | 是 | 是 | 否 | 否 | 否 | 否 | 否 | 否 | 无 | - |
-| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | 否 [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [否](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | 否 | 否 | [否](https://github.com/archlinuxfr/yaourt/issues/186) | [否](https://github.com/archlinuxfr/yaourt/issues/85) | 可选 | 可选 | 否 | bash, zsh, fish | 备份，[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，AUR评论，多语言 |
+| 名称 | 语言 | 安全 | 干净编译 | 原生Pacman | 可靠的语法分析器 | 可靠的求解器 | 包拆分 | Git clone | 差异比较 | 批量交互 | 命令补全 | 特性 |
+| [aurel](https://aur.archlinux.org/packages/aurel/) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | 是 | 不适用 | 不适用 | 不适用 | 不适用 | 不适用 | 否 | 不适用 | 不适用 | 不适用 | Emacs集成，不自动编译 |
+| [pacaur](https://aur.archlinux.org/packages/pacaur/) [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | 是 | 是 | [否](https://github.com/rmarquis/pacaur/commit/d8f49188452785fb28afc017baadd01d9e24ba21) | 是 | 是 | 是 | 是 | 是 | 1, 3 | bash, zsh | 多语言，按票数或受欢迎程度排序 |
+| [spinach](https://aur.archlinux.org/packages/spinach/) [[7]](https://github.com/floft/spinach) | Bash | [是](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | 是 | 不适用 | 否 | 否 | 否 | 否 | 否 | - | - | - |
+| [burgaur](https://aur.archlinux.org/packages/burgaur/) [[8]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | 可选 | 是 | 不适用 | 否 | 否 | 否 | 否 | 否 | - | - | cover的包装(Wrapper for cower) |
+| [packer](https://aur.archlinux.org/packages/packer/) | Bash | 否 | 是 | 是 | 否 | 否 | 否 | 否 | 否 | - | - | - |
+| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | 否 [[9]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[10]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [否](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | 否 | 否 | [否](https://github.com/archlinuxfr/yaourt/issues/186) | [否](https://github.com/archlinuxfr/yaourt/issues/85) | 可选 | 可选 | 2 | bash, zsh, fish | 备份，[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")支持，AUR评论，多语言 |
 
 ## 库
 
@@ -118,4 +123,4 @@
 
 *   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — 从包含多个包的git仓库拆分包，为每个提交添加更新`.SRCINFO`。
 *   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — 使用aur4的子模块来替换较大的git仓库的包，包括`.SRCINFO`.
-*   [aurpublish](https://github.com/Edenhofer/abs/blob/master/aurpublish) — 通过[git subtrees](https://raw.githubusercontent.com/git/git/master/contrib/subtree/git-subtree.txt)管理AUR包，在同一个[仓库](https://github.com/Edenhofer/abs/blob/master/README.md)中用git钩子完成[`.SRCINFO`的生成，`PKGBUILD`的检查](https://github.com/Edenhofer/abs/blob/master/pre-commit.hook)以及[创建每个包提交消息的模板](https://github.com/Edenhofer/abs/blob/master/prepare-commit-msg.hook)。
+*   [aurpublish](https://github.com/eli-schwartz/aurpublish) — 对AUR的PKGBUILD管理框架。

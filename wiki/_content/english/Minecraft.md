@@ -24,9 +24,13 @@
 
 ### Installation
 
-Simply install the [minecraft](https://aur.archlinux.org/packages/minecraft/) package to get the official game launcher, a script to launch it and a proper `.desktop` file.
+Simply install the [minecraft-launcher](https://aur.archlinux.org/packages/minecraft-launcher/) package to get the official game launcher, a script to launch it and a proper `.desktop` file.
 
-Though using a proper package should always be preferred, there is still the options to use the plain minecraft launcher which can be found at the [official download page](https://minecraft.net/download). If you use the manual, official installer, keep in mind you must use Java 8 (such as [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), see [Java](/index.php/Java "Java")), as the other versions currently cause a crash.
+Though using a proper package should always be preferred, there is still the options to use the plain minecraft launcher which can be found at the [official download page](https://minecraft.net/download).
+
+If you use the manual, official installer, keep in mind you must use Java 8 (such as [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), see [Java](/index.php/Java "Java")), as the other versions currently cause a crash.
+
+In addition, Wayland and other window managers are currently not supported with Minecraft, as Minecraft has the prerequisite of [xorg-xrandr](https://aur.archlinux.org/packages/xorg-xrandr/) and should be opened with xorg.
 
 ### Running
 

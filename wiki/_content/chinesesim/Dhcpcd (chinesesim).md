@@ -4,78 +4,80 @@
 *   [无线网络配置](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "无线网络配置")
 *   [dhcpd](/index.php/Dhcpd "Dhcpd")
 
-**翻译状态：** 本文是英文页面 [Dhcpcd](/index.php/Dhcpcd "Dhcpcd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-12-26，点击[这里](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=460097)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Dhcpcd](/index.php/Dhcpcd "Dhcpcd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-11，点击[这里](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=460097)可以查看翻译后英文页面的改动。
 
-*dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](http://roy.marples.name/projects/dhcpcd/) for the full list of features.
+*dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](https://roy.marples.name/projects/dhcpcd) for the full list of features.
 
-**提示：** *dhcpcd* (DHCP **client** daemon) is not the same as [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
+**Note:** *dhcpcd* (DHCP **client** daemon) is not the same as [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 运行](#.E8.BF.90.E8.A1.8C)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 DHCP 静态路由](#DHCP_.E9.9D.99.E6.80.81.E8.B7.AF.E7.94.B1)
-    *   [3.2 DHCP 客户端标识](#DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.A0.87.E8.AF.86)
-    *   [3.3 禁用 ARP 检测以加速 DHCP](#.E7.A6.81.E7.94.A8_ARP_.E6.A3.80.E6.B5.8B.E4.BB.A5.E5.8A.A0.E9.80.9F_DHCP)
-    *   [3.4 静态配置文件](#.E9.9D.99.E6.80.81.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-        *   [3.4.1 Fallback 配置文件](#Fallback_.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-*   [4 钩子](#.E9.92.A9.E5.AD.90)
+*   [1 Installation](#Installation)
+*   [2 Running](#Running)
+*   [3 Configuration](#Configuration)
+    *   [3.1 DHCP static route(s)](#DHCP_static_route.28s.29)
+    *   [3.2 DHCP Client Identifier](#DHCP_Client_Identifier)
+    *   [3.3 Static profile](#Static_profile)
+        *   [3.3.1 Fallback profile](#Fallback_profile)
+*   [4 Hooks](#Hooks)
     *   [4.1 10-wpa_supplicant](#10-wpa_supplicant)
-*   [5 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [5.1 移除旧的 DHCP 租约](#.E7.A7.BB.E9.99.A4.E6.97.A7.E7.9A.84_DHCP_.E7.A7.9F.E7.BA.A6)
-    *   [5.2 多重时引导使用不同 IP](#.E5.A4.9A.E9.87.8D.E6.97.B6.E5.BC.95.E5.AF.BC.E4.BD.BF.E7.94.A8.E4.B8.8D.E5.90.8C_IP)
-*   [6 排错](#.E6.8E.92.E9.94.99)
-    *   [6.1 客户端 ID](#.E5.AE.A2.E6.88.B7.E7.AB.AF_ID)
-    *   [6.2 检查 DHCP 问题时首先释放 IP](#.E6.A3.80.E6.9F.A5_DHCP_.E9.97.AE.E9.A2.98.E6.97.B6.E9.A6.96.E5.85.88.E9.87.8A.E6.94.BE_IP)
-    *   [6.3 不匹配的路由](#.E4.B8.8D.E5.8C.B9.E9.85.8D.E7.9A.84.E8.B7.AF.E7.94.B1)
-    *   [6.4 dhcpcd 和 systemd 网络接口](#dhcpcd_.E5.92.8C_systemd_.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3)
-    *   [6.5 超时延迟](#.E8.B6.85.E6.97.B6.E5.BB.B6.E8.BF.9F)
-*   [7 参阅](#.E5.8F.82.E9.98.85)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Speed up DHCP by disabling ARP probing](#Speed_up_DHCP_by_disabling_ARP_probing)
+    *   [5.2 Remove old DHCP lease](#Remove_old_DHCP_lease)
+    *   [5.3 Different IPs when multi-booting](#Different_IPs_when_multi-booting)
+    *   [5.4 resolv.conf](#resolv.conf)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Client ID](#Client_ID)
+    *   [6.2 Check DHCP problem by releasing IP first](#Check_DHCP_problem_by_releasing_IP_first)
+    *   [6.3 Problems with noncompliant routers](#Problems_with_noncompliant_routers)
+    *   [6.4 dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces)
+    *   [6.5 Timeout delay](#Timeout_delay)
+*   [7 Known issues](#Known_issues)
+    *   [7.1 dhcpcd@.service causes slow startup](#dhcpcd.40.service_causes_slow_startup)
+*   [8 See also](#See_also)
 
-## 安装
+## Installation
 
-The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is available to be [installed](/index.php/Install "Install"). It is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already installed on your system.
+The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already installed on your system.
 
-You might be interested in [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/), which is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the *dhcpcd* daemon (and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
+[dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the *dhcpcd* daemon, and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
 
-## 运行
+[dhcpcd-ui-patched](https://aur.archlinux.org/packages/dhcpcd-ui-patched/) is a patched version of the [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) package. It uses AppIndicator instead of GtkStatusIcon and compiles with gtk3\. Has a sharp tray icon when used with [KDE](/index.php/KDE "KDE").
 
-*dhcpcd* includes two unit files which can be used to [control](/index.php/Enable "Enable") the daemon:
+## Running
 
-*   `dhcpcd.service` starts the daemon for *all* [network interfaces](/index.php/Network_interfaces "Network interfaces");
-*   the template unit `dhcpcd@.service` binds it to a particular interface, for example `dhcpcd@*interface*.service` where *interface* is an interface shown with `ip link`.
+To start the daemon for *all* network interfaces, [start/enable](/index.php/Start/enable "Start/enable") `dhcpcd.service`.
+
+To start the daemon for a specific interface alone, [start/enable](/index.php/Start/enable "Start/enable") the template unit `dhcpcd@*interface*.service`, where *interface* can be found with [Network configuration#Listing network interfaces](/index.php/Network_configuration#Listing_network_interfaces "Network configuration").
 
 Using the template unit is recommended; see [#dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces) for details.
 
-To start *dhcpcd* manually, run the following command:
+Alternatively, to start *dhcpcd* manually, run the following command:
 
- `# dhcpcd *eth0*` 
 ```
-dhcpcd: version 5.1.1 starting
-dhcpcd: *eth0*: broadcasting for a lease
-...
-dhcpcd: *eth0*: leased 192.168.1.70 for 86400 seconds
+# dhcpcd *interface*
 
 ```
 
-## 配置
+In all of the above, you will be assigned a dynamic IP address. To assign a static IP address, see [#Static profile](#Static_profile).
 
-The main configuration is done in `/etc/dhcpcd.conf`, see [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details. Some of the frequently used options are highlighted below.
+## Configuration
 
-### DHCP 静态路由
+The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) for details. Some of the frequently used options are highlighted below.
 
-If you need to add a static route client-side, create a new dhcpcd hook-script in `/usr/lib/dhcpcd/dhcpcd-hooks`. The example shows a new hook-script which adds a static route to a VPN subnet on `10.11.12.0/24` via a gateway machine at `192.168.192.5`:
+### DHCP static route(s)
 
- `/usr/lib/dhcpcd/dhcpcd-hooks/40-vpnroute` 
+If you need to add a static route client-side, add it to `/etc/dhcpcd.exit-hook`. The example shows a new hook-script which adds a static route to a VPN subnet on `10.11.12.0/24` via a gateway machine at `192.168.192.5`:
+
+ `/etc/dhcpcd.exit-hook` 
 ```
 ip route add 10.11.12.0/24 via 192.168.192.5
 
 ```
 
-The `40` prefix means that it is the final hook-script to run when dhcpcd starts.
+You can add multiple routes to this file.
 
-### DHCP 客户端标识
+### DHCP Client Identifier
 
 The DHCP client may be uniquely identified in different ways by the server:
 
@@ -88,7 +90,7 @@ For a further description, see [RFC 3315](https://tools.ietf.org/html/rfc3315#se
 
 It depends on the DHCP-server configuration which options are optional or required to request a DHCP IP lease.
 
-**提示：** The *dhcpcd* default configuration should be sufficient usually. The listed identifiers are determined automatically and manual configuration changes only be required in case of problems.
+**Note:** The *dhcpcd* default configuration should be sufficient usually. The listed identifiers are determined automatically and manual configuration changes only be required in case of problems.
 
 If the *dhcpcd* default configuration fails to obtain an IP, the following options are available to use in `dhcpcd.conf`:
 
@@ -97,24 +99,13 @@ If the *dhcpcd* default configuration fails to obtain an IP, the following optio
 *   `iaid <interface>` derives the IAID to use for DHCP discovery. It has to be used in an interface block (started by `interface <interface>`, see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1388376#p1388376)), but more frequently the next option is used:
 *   `duid` triggers using a combination of DUID and IAID as identifier.
 
-The DUID value is set in `/etc/dhcpcd.duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](http://tools.ietf.org/html/rfc4361#section-6.1)).
+The DUID value is set in `/var/lib/dhcpcd/duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](https://tools.ietf.org/html/rfc4361#section-6.1)).
 
 Care must be taken on a network running [Dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") to ensure that all three IDs are unique. If duplicate DUID values are presented to the DNS server, e.g. in the case where a virtual machine has been cloned and the hostname and MAC have been made unique but the DUID has not been changed, then the result will be that as each client with the duplicated DUID requests a lease the server will remove the predecessor from the DNS record.
 
-### 禁用 ARP 检测以加速 DHCP
+### Static profile
 
-*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](http://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
-
-```
-noarp
-
-```
-
-This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described ARP probing, speeding up connections to networks with DHCP.
-
-### 静态配置文件
-
-Required settings are explained in [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"). These typically include the [device name](/index.php/Network_configuration#Device_names "Network configuration"), *IP address*, *router address*, and *name server*.
+Required settings are explained in [Network configuration](/index.php/Network_configuration "Network configuration"). These typically include the [network interface](/index.php/Network_interface "Network interface") name, *IP address*, *router address*, and *name server*.
 
 Configure a static profile for *dhcpcd* in `/etc/dhcpcd.conf`, for example:
 
@@ -126,11 +117,11 @@ static routers=192.168.0.1
 static domain_name_servers=192.168.0.1 8.8.8.8
 ```
 
-More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details.
+More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) for details.
 
-#### Fallback 配置文件
+#### Fallback profile
 
-It is possible to configure a static profile within *dhcpcd* and fall back to it when DHCP lease fails. This is useful particularly for [headless machines](https://en.wikipedia.org/wiki/Headless_computer "wikipedia:Headless computer") such as [Raspberry Pi](/index.php/Raspberry_Pi "Raspberry Pi"), where the static profile can be used as "recovery" profile to ensure that it is always possible to connect to the machine.
+It is possible to configure a static profile within *dhcpcd* and fall back to it when DHCP lease fails. This is useful particularly for [headless machines](https://en.wikipedia.org/wiki/Headless_computer "wikipedia:Headless computer"), where the static profile can be used as "recovery" profile to ensure that it is always possible to connect to the machine.
 
 The following example configures a `static_eth0` profile with `192.168.1.23` as IP address, `192.168.1.1` as gateway and name server, and makes this profile fallback for interface `eth0`.
 
@@ -147,30 +138,28 @@ interface *eth0*
 fallback static_eth0
 ```
 
-## 钩子
+## Hooks
 
-*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)for details.
+*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) and [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8) for details.
 
-**提示：**
+**Note:**
 
 *   Each script can be disabled using the `nohook` option in `dhcpcd.conf`.
 *   The `env` option can be used to set an environment variable for **all** hooks. For example, you can force the hostname hook to always set the hostname with `env force_hostname=YES`.
 
 ### 10-wpa_supplicant
 
-创建一个符号链接以激活这个钩子（即便包已更新也应先确认在用版本为最新版）：
+Enable this hook by creating a symbolic link (to ensure that always the current version is used, even after package updates):
 
 ```
 # ln -s /usr/share/dhcpcd/hooks/10-wpa_supplicant /usr/lib/dhcpcd/dhcpcd-hooks/
 
 ```
 
-**提示：** 从 [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)-6.10.0-1 版开始，钩子默认不再自动激活，参阅 [[2]](http://roy.marples.name/projects/dhcpcd/info/5d7b3cbea2808602), [[3]](http://roy.marples.name/projects/dhcpcd/info/28fd82a29a6d54ad), [[4]](http://roy.marples.name/projects/dhcpcd/info/9b0662ecd9a8b839).
+The `10-wpa_supplicant` hook, if enabled, automatically launches [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if:
 
-`10-wpa_supplicant` 这个钩子一旦激活，它将在满足下列条件时自动加载相应无线网络接口的 [WPA supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)")：
-
-*   当前没有 *wpa_supplicant* 进程侦听该接口；
-*   存在某个 *wpa_supplicant* 配置文件。*dhcpcd* 将检查下列文件：
+*   no *wpa_supplicant* process is already listening on that interface.
+*   a *wpa_supplicant* configuration file exists. *dhcpcd* checks
 
 ```
 /etc/wpa_supplicant/wpa_supplicant-*interface*.conf
@@ -180,25 +169,36 @@ fallback static_eth0
 
 ```
 
-上列为默认检查顺序，但可以向 `/etc/dhcpcd.conf` 中添加 `env wpa_supplicant_conf=*<配置文件路径>*` 配置项以自定义搜索路径。
+by default, in that order, but a custom path can be set by adding `env wpa_supplicant_conf=*configuration_file_path*` into `/etc/dhcpcd.conf`.
 
-**提示：** 钩子在找到第一个配置文件后将停止搜索，因此当存在多个*wpa_supplicant* 配置文件时应做出适当安排，否则 *dhcpcd* 可能使用非预期的错误文件。
+**Note:** The hook stops at the first configuration file found, thus you should take this into consideration if you have several *wpa_supplicant* configuration files, otherwise *dhcpcd* might end up using the wrong file.
 
-如果同时还用 *wpa_supplicant* 自身管理无线网络连接，钩子会创建非预期的连接。例如，如果你停用了 *wpa_supplicant* ，钩子会再次启动接口。还有，如果使用[自动切换配置](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.8A.A8.E5.88.87.E6.8D.A2.E9.85.8D.E7.BD.AE "Netctl (简体中文)")，*wpa_supplicant* 将使用 `/run/network/wpa_supplicant_*interface*.conf` 配置文件自动启动，因此不仅没必要用钩子再次启动它，而且会导致引导时解析 `/etc/wpa_supplicant/wpa_supplicant.conf` 文件错误，因其只包含默认包版本的范例配置。
+If you manage wireless connections with *wpa_supplicant* itself, the hook may create unwanted connection events. For example, if you stop *wpa_supplicant* the hook may bring the interface up again. Also, if you use [netctl-auto](/index.php/Netctl#Special_systemd_units "Netctl"), *wpa_supplicant* is started automatically with `/run/network/wpa_supplicant_*interface*.conf` for config, so starting it again from the hook is unnecessary and may result in boot-time parse errors of the `/etc/wpa_supplicant/wpa_supplicant.conf` file, which only contains dummy values in the default packaged version.
 
-在 `dhcpcd.conf` 中添加 `nohook wpa_supplicant` 可禁用钩子。
+To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
 
-## 提示与技巧
+## Tips and tricks
 
-### 移除旧的 DHCP 租约
+### Speed up DHCP by disabling ARP probing
 
-The file `/var/lib/dhcpcd/dhcpcd-*interface*.lease`, where `*interface*` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
+*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](https://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
 
-If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping *dhcpcd* and removing or renaming `/etc/dhcpcd.duid`. *dhcpcd* will generate a new one on next run.
+```
+noarp
+
+```
+
+This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described ARP probing, speeding up connections to networks with DHCP.
+
+### Remove old DHCP lease
+
+The file `/var/lib/dhcpcd/*interface*.lease`, where `*interface*` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. For a wireless interface, the filename is `/var/lib/dhcpcd/*interface*-*ssid*.lease`, where `*ssid*` is the name of the wireless network. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
+
+If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping *dhcpcd* and removing or renaming `/var/lib/dhcpcd/duid`. *dhcpcd* will generate a new one on next run.
 
 Keep in mind that the DUID is intended as persistent machine identifier across reboots and interfaces. If you are transferring the system to new computer, preserving this file should make it appear as old one.
 
-### 多重时引导使用不同 IP
+### Different IPs when multi-booting
 
 If you are dualbooting Arch and OS X or Windows and want each to receive different IP addresses, you can exert control about the IPs leased by specifying a different DUID in each operating system installation.
 
@@ -215,9 +215,36 @@ On OS X it is directly accessible in `Network\adapter\dhcp preferences panel`.
 
 If you are using a [dnsmasq](/index.php/Dnsmasq "Dnsmasq") DHCP server, the different DUIDs can be used in appropriate `dhcp-host=` rules in its configuration.
 
-## 排错
+### resolv.conf
 
-### 客户端 ID
+*dhcpcd'* by default overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+
+This can be stopped by adding the following to the last section of `/etc/dhcpcd.conf`:
+
+```
+nohook resolv.conf
+
+```
+
+Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. *dhcpcd* will prepend this file to the beginning of `/etc/resolv.conf`.
+
+Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`, where `*dns-server-ip-addressses*` is a space separated list of DNS IP addresses.
+
+```
+static domain_name_servers=*dns-server-ip-addresses*
+
+```
+
+For example, to set it to Google's DNS servers:
+
+```
+static domain_name_servers=8.8.8.8 8.8.4.4
+
+```
+
+## Troubleshooting
+
+### Client ID
 
 If you are on a network with DHCPv4 that filters Client IDs based on MAC addresses, you may need to change the following line:
 
@@ -237,9 +264,9 @@ clientid
 
 ```
 
-Else, you may not obtain a lease since the DHCP server may not read your [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID correctly. See [RFC 4361](http://tools.ietf.org/html/rfc4361) for more information.
+Else, you may not obtain a lease since the DHCP server may not read your [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID correctly. See [RFC 4361](https://tools.ietf.org/html/rfc4361) for more information.
 
-### 检查 DHCP 问题时首先释放 IP
+### Check DHCP problem by releasing IP first
 
 A problem may occur when DHCP gets a wrong IP assignment, such as when two routers are tied together through a VPN. The router that is connected through the VPN may be assigning IP address. To fix it, as root, release the IP address:
 
@@ -257,7 +284,7 @@ Then request a new one:
 
 You may have to run those two commands many times.
 
-### 不匹配的路由
+### Problems with noncompliant routers
 
 For some (noncompliant) routers, you will not be able to connect properly unless you comment the line
 
@@ -266,9 +293,9 @@ require dhcp_server_identifier
 
 ```
 
-in `/etc/dhcpcd.conf`. This should not cause issues unless you have multiple DHCP servers on your network (not typical); see [this page](http://technet.microsoft.com/en-us/library/cc977442.aspx) for more information.
+in `/etc/dhcpcd.conf`. This should not cause issues unless you have multiple DHCP servers on your network (not typical); see [this page](https://technet.microsoft.com/en-us/library/cc977442.aspx) for more information.
 
-### dhcpcd 和 systemd 网络接口
+### dhcpcd and systemd network interfaces
 
 `dhcpcd.service` can be [enabled](/index.php/Enabled "Enabled") without specifying an interface. This may, however, create a race condition at boot with *systemd-udevd* trying to apply a predictable network interface name:
 
@@ -279,7 +306,7 @@ error changing net interface name wlan0 to wlp4s0: Device or resource busy"
 
 To avoid it, enable *dhcpcd* per interface it should bind to as described in [#Running](#Running). The downside of the template unit is, however, that it does not support hot-plugging of a wired connection and will fail if the network cable is not connected. To work-around the failure, see [#Timeout delay](#Timeout_delay).
 
-### 超时延迟
+### Timeout delay
 
 If *dhcpcd* operates on a single interface and fails to obtain a lease after 30 seconds (for example when the server is not ready or the cable not plugged), it will exit with an error.
 
@@ -292,7 +319,7 @@ ExecStart=
 ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
 ```
 
-To have it wait indefinetely, let the unit restart after it exited:
+To have it wait indefinitely, let the unit restart after it exited:
 
  `/etc/systemd/system/dhcpcd@.service.d/dhcpcdrestart.conf` 
 ```
@@ -302,6 +329,22 @@ Restart=always
 
 After making changes, [reload the configuration](/index.php/Systemd#Editing_provided_units "Systemd").
 
-## 参阅
+## Known issues
 
-*   [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)* [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)
+### dhcpcd@.service causes slow startup
+
+By default the `dhcpcd@.service` waits to get an IP address before forking into the background via the `-w` flag for *dhcpcd*. If the unit is enabled, this may cause the boot to wait for an IP address before continuing. To fix this, create a [drop-in file](/index.php/Systemd#Drop-in_files "Systemd") for the unit with the following:
+
+ `/etc/systemd/system/dhcpcd@.service.d/no-wait.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dhcpcd -b -q %I
+```
+
+See also [FS#49685](https://bugs.archlinux.org/task/49685).
+
+## See also
+
+*   [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)
+*   [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)

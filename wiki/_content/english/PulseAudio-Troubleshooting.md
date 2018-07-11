@@ -554,7 +554,7 @@ default-sample-rate = 48000
 
 and add the `use_ucm` option to
 
- `/etc/pulse/default.conf`  `load-module module-udev-detect use_ucm=0 tsched=0` 
+ `/etc/pulse/default.pa`  `load-module module-udev-detect use_ucm=0 tsched=0` 
 
 then restart pulseaudio.
 

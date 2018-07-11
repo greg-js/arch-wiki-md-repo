@@ -95,7 +95,6 @@ The main benefit of continuous TRIM is speed; an SSD can perform more efficient 
 
 **Note:**
 
-*   Unfortunately, there are wide quality gaps of SSD's bios' to perform continuous TRIM, which is also why using the `discard` mount flag is [recommended against](https://forums.freebsd.org/threads/56951/#post-328912) generally by ext filesystem developer Theodore Ts'o. If in doubt about your hardware, apply [#Periodic TRIM](#Periodic_TRIM) instead.
 *   Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 for details.
 
 Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM in device operations:

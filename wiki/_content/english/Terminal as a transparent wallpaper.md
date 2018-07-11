@@ -86,7 +86,7 @@ For a complete list of options with devilspie configuration options check out, t
 
 #### Step 3
 
-Open a gnome-terminal window go to Edit –> Profile –> New. Name it DesktopConsole_1.
+Open a gnome-terminal window go to *Edit* > *Profile* > *New*. Name it DesktopConsole_1.
 
 Edit the Profile, to achieve our desired look we will need to edit the default configurations:
 

@@ -18,7 +18,7 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [4.1 PowerEdge T30](#PowerEdge_T30)
 *   [5 MSI](#MSI)
     *   [5.1 B250M PRO-VH](#B250M_PRO-VH)
-    *   [5.2 B250 PC MATE](#B250_PC_MATE)
+    *   [5.2 B250 PC MATE / H110I PRO](#B250_PC_MATE_.2F_H110I_PRO)
 *   [6 HP](#HP)
     *   [6.1 EliteBook 840 G1](#EliteBook_840_G1)
 *   [7 Intel](#Intel)
@@ -239,7 +239,7 @@ These MSI motherboards seem to want the EFI program to exist in a different loca
 
 ```
 
-### B250 PC MATE
+### B250 PC MATE / H110I PRO
 
 ```
 # mkdir *esp*/EFI/Boot

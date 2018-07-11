@@ -5,7 +5,7 @@ Related articles
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [EFISTUB](/index.php/EFISTUB "EFISTUB")
 
-[rEFInd](http://www.rodsbooks.com/refind/) is a [UEFI](/index.php/UEFI "UEFI") boot manager capable of launching [EFISTUB](/index.php/EFISTUB "EFISTUB") kernels. It is a fork of the no-longer-maintained rEFIt and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
+[rEFInd](https://www.rodsbooks.com/refind/) is a [UEFI](/index.php/UEFI "UEFI") boot manager capable of launching [EFISTUB](/index.php/EFISTUB "EFISTUB") kernels. It is a fork of the no-longer-maintained rEFIt and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
 **Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 
@@ -57,7 +57,7 @@ rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+
 
 **Note:** Your kernel and initramfs must reside on a file system that rEFInd can read.
 
-To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](http://www.rodsbooks.com/refind/drivers.html#finding).
+To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](https://www.rodsbooks.com/refind/drivers.html#finding).
 
 ### Installation with refind-install script
 
@@ -97,7 +97,7 @@ By default, rEFInd will scan all of your drives (that it has drivers for) and ad
 
 #### Secure Boot
 
-See [Managing Secure Boot](http://www.rodsbooks.com/refind/secureboot.html) for [Secure Boot](/index.php/Secure_Boot "Secure Boot") support in rEFInd.
+See [Managing Secure Boot](https://www.rodsbooks.com/refind/secureboot.html) for [Secure Boot](/index.php/Secure_Boot "Secure Boot") support in rEFInd.
 
 ##### Using PreLoader
 
@@ -187,7 +187,7 @@ rEFInd EFI binaries will be signed with the supplied key and certificate.
 
 ### Manual installation
 
-**Tip:** rEFInd can boot Linux in many ways. See [The rEFInd Boot Manager: Methods of Booting Linux](http://www.rodsbooks.com/refind/linux.html) for coverage of the various approaches.
+**Tip:** rEFInd can boot Linux in many ways. See [The rEFInd Boot Manager: Methods of Booting Linux](https://www.rodsbooks.com/refind/linux.html) for coverage of the various approaches.
 
 If the `refind-install` script does not work for you, rEFInd can be set up manually.
 
@@ -276,7 +276,7 @@ Where the `Exec=` may need to be changed to the correct update command for your 
 
 ## Configuration
 
-The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default configuration file contains extensive comments explaining all its options, see [Configuring the Boot Manager](http://www.rodsbooks.com/refind/configfile.html) for more detailed explanations.
+The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default configuration file contains extensive comments explaining all its options, see [Configuring the Boot Manager](https://www.rodsbooks.com/refind/configfile.html) for more detailed explanations.
 
 ### Passing kernel parameters
 
@@ -284,9 +284,9 @@ There are two methods for setting the [kernel parameters](/index.php/Kernel_para
 
 #### For kernels automatically detected by rEFInd
 
-For automatically detected kernels you can either specify the kernel parameters explicitly in `/boot/refind_linux.conf` or rely on rEFInd's ability to identify the root partition and kernel parameters. See [Methods of Booting Linux: For Those With Foresight or Luck: The Easiest Method](http://www.rodsbooks.com/refind/linux.html#easiest) for more information.
+For automatically detected kernels you can either specify the kernel parameters explicitly in `/boot/refind_linux.conf` or rely on rEFInd's ability to identify the root partition and kernel parameters. See [Methods of Booting Linux: For Those With Foresight or Luck: The Easiest Method](https://www.rodsbooks.com/refind/linux.html#easiest) for more information.
 
-**Tip:** rEFInd will automatically choose the Arch Linux icon (`os_arch.png`) for the boot entry when `/etc/os-release` is on the same partition as the kernel. If your `/boot` is a separate partition see [Configuring the Boot Manager: Setting OS Icons](http://www.rodsbooks.com/refind/configfile.html#icons).
+**Tip:** rEFInd will automatically choose the Arch Linux icon (`os_arch.png`) for the boot entry when `/etc/os-release` is on the same partition as the kernel. If your `/boot` is a separate partition see [Configuring the Boot Manager: Setting OS Icons](https://www.rodsbooks.com/refind/configfile.html#icons).
 
 For rEFInd to properly match multiple kernels with their respective initramfs you must uncomment and edit `extra_kernel_version_strings` option in `refind.conf`. E.g.:
 
@@ -339,7 +339,7 @@ As a fallback mechanism rEFInd can:
 
 If your kernel is not autodetected, or if you simply want more control over the options for a menu entry, you can manually create boot entries using stanzas in `refind.conf`. Ensure that `scanfor` includes `manual` or these entries will not appear in rEFInd's menu. Kernel parameters are set with the `options` keyword. rEFInd will append the `initrd=` parameter using the file specified by the `initrd` keyword in the stanza. If you need additional initrds (e.g. for [Microcode](/index.php/Microcode "Microcode")), you can specify them in `options` (and the one specified by the `initrd` keyword will be added to the end).
 
-Manual boot stanzas are explained in [Creating Manual Boot Stanzas](http://www.rodsbooks.com/refind/configfile.html#stanzas).
+Manual boot stanzas are explained in [Creating Manual Boot Stanzas](https://www.rodsbooks.com/refind/configfile.html#stanzas).
 
  `*esp*/EFI/refind/refind.conf` 
 ```
@@ -374,7 +374,7 @@ rEFInd is compatible with the EFI system partition created by a UEFI Windows ins
 
 ## Tools
 
-rEFInd supports running various [3rd-party tools](http://www.rodsbooks.com/refind/installing.html#addons). Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
+rEFInd supports running various [3rd-party tools](https://www.rodsbooks.com/refind/installing.html#addons). Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
 
  `*esp*/EFI/refind/refind.conf` 
 ```
@@ -423,7 +423,7 @@ See [Secure Boot#Using KeyTool](/index.php/Secure_Boot#Using_KeyTool "Secure Boo
 
 There is no package for the EFI version of *gdisk*, but you can download a binary from *gdisk'*s author.
 
-Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `*esp*/EFI/tools/`.
+Download `gdisk-efi-*.zip` from [SourceForge](https://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `*esp*/EFI/tools/`.
 
 ### iPXE
 
@@ -516,6 +516,6 @@ Currently, VirtualBox will only boot the default `*esp*/EFI/BOOT/bootx64.efi` pa
 
 ## See also
 
-*   [The rEFInd Boot Manager](http://www.rodsbooks.com/refind/) by Roderick W. Smith.
+*   [The rEFInd Boot Manager](https://www.rodsbooks.com/refind/) by Roderick W. Smith.
 *   `/usr/share/refind/docs/README.txt`
 *   [rEFInd discussion forum on Sourceforge](https://sourceforge.net/p/refind/discussion/)

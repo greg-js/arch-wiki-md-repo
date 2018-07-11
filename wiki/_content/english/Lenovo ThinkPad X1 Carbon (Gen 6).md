@@ -12,15 +12,18 @@ Related articles
 
 *   [1 Model description](#Model_description)
     *   [1.1 Support](#Support)
-*   [2 Suspend issues](#Suspend_issues)
-    *   [2.1 Suspend-to-RAM (S3) not supported by default](#Suspend-to-RAM_.28S3.29_not_supported_by_default)
-    *   [2.2 S0i3 sleep support](#S0i3_sleep_support)
-    *   [2.3 BIOS configurations](#BIOS_configurations)
-*   [3 Power management/Throttling issues](#Power_management.2FThrottling_issues)
-    *   [3.1 Temporary fix](#Temporary_fix)
-*   [4 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [5 References](#References)
-*   [6 Additional resources](#Additional_resources)
+*   [2 Boot issues](#Boot_issues)
+    *   [2.1 Install](#Install)
+    *   [2.2 LUKS + GRUB](#LUKS_.2B_GRUB)
+*   [3 Suspend issues](#Suspend_issues)
+    *   [3.1 Suspend-to-RAM (S3) not supported by default](#Suspend-to-RAM_.28S3.29_not_supported_by_default)
+    *   [3.2 S0i3 sleep support](#S0i3_sleep_support)
+    *   [3.3 BIOS configurations](#BIOS_configurations)
+*   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
+    *   [4.1 Temporary fix](#Temporary_fix)
+*   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+*   [6 References](#References)
+*   [7 Additional resources](#Additional_resources)
 
 ## Model description
 
@@ -57,7 +60,36 @@ Version: ThinkPad X1 Carbon 6th
 
 ** [progress being made](https://github.com/nmikhailov/Validity90) on driver
 
-*** no working linux pcie driver for Fibocom L850-GL [forum link](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413)
+*** no working linux pcie driver for Fibocom L850-GL [forum link](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) - also see [this forum](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more progress.
+
+## Boot issues
+
+### Install
+
+Disable secure boot in the bios in order to boot the Arch Linux Live ISO and install Arch Linux.
+
+```
+`Security -> Secure Boot - Set to "Disabled"`
+
+```
+
+### LUKS + GRUB
+
+When using LUKS with grub the system appears to hang "Loading initial ramdisk" without adding the i915 module to `/etc/mkinticpio.conf`
+
+```
+MODULES=(i915)
+
+```
+
+Using UUID's for the cryptroot is also problematic and will hang on the encrypt hook. Simply specify the device name of the encrypted partition directly (/dev/nveme0n1px) instead of using a UUID when configuring GRUB.
+
+For example, in /etc/default/grub if your encrypted partition is /dev/nvme0n1p2:
+
+```
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/nvme0n1p2:cryptroot"
+
+```
 
 ## Suspend issues
 
