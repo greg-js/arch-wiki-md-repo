@@ -119,7 +119,7 @@ These applications support time, task and contacts management.
 
 *   **Deepin Calendar** — Calendar application for Deepin.
 
-	[https://github.com/linuxdeepin/dde-calendar](https://github.com/linuxdeepin/dde-calendar) || [deepin-calendar](https://www.archlinux.org/packages/?name=deepin-calendar)
+	[https://www.deepin.org/en/original/dde-calendar/](https://www.deepin.org/en/original/dde-calendar/) || [deepin-calendar](https://www.archlinux.org/packages/?name=deepin-calendar)
 
 *   **etmtk (Event and Task Manager)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects.
 

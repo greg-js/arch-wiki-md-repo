@@ -192,7 +192,7 @@ A low entropy pool can cause long SDDM load time. See [Random number generation]
 
 ### Hangs after login
 
-Try removing `~/.Xauthority`.
+Try removing `~/.Xauthority` and logging in again without rebooting. Rebooting without logging in creates the file again and the problem will persist.
 
 ### SDDM starts on tty1 instead of tty7
 

@@ -60,7 +60,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **Deepin Calculator** — Easy to use calculator for Deepin desktop.
 
-	[https://github.com/linuxdeepin/deepin-calculator](https://github.com/linuxdeepin/deepin-calculator) || [deepin-calculator](https://www.archlinux.org/packages/?name=deepin-calculator)
+	[https://www.deepin.org/en/original/deepin-calculator/](https://www.deepin.org/en/original/deepin-calculator/) || [deepin-calculator](https://www.archlinux.org/packages/?name=deepin-calculator)
 
 *   **Extcalc** — Qt-based scientific graphical calculator.
 

@@ -38,7 +38,7 @@
 
 	ibus
 
-	[IBus](/index.php/IBus "IBus")는 [GNOME](/index.php/GNOME "GNOME")과 우분투의 기본 입력기 프레임워크입니다. 가장 널리 지원을 받으며, 대부분의 어플리케이션에서 문제 없이 한글 입력을 할 수 있습니다.
+	[IBus](/index.php/IBus "IBus")는 [GNOME](/index.php/GNOME "GNOME")과 우분투의 기본 입력기 프레임워크입니다. 가장 널리 지원을 받으며, 대부분의 어플리케이션에서 문제 없이 한글 입력을 할 수 있습니다. 2018년 7월 현재 JetBrains사에서 제공하는 대부분의 소프트웨어(IntelliJ, PyCharm 등)와 충돌을 일으킵니다. 예를 들어, "한글 입력에 문제가 있습니다."라고 입력하면 "한 글입력 에문제 가있습니다."로 표시됩니다.
 
 	uim
 

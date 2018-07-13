@@ -359,7 +359,7 @@ $ rvm use <ruby_version>@<gemset_name> --default
 Tip: remove gems that reside in system prior to the RVM installation with:
 
 ```
-$ gem  list --local | awk '{print "gem uninstall " $1}' | bash
+$ gem  list --local --no-version | awk '{print "gem uninstall " $1}' | bash
 
 ```
 

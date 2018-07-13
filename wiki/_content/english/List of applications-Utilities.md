@@ -167,7 +167,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **Deepin Terminal** — Terminal emulation application for Deepin desktop.
 
-	[https://github.com/linuxdeepin/deepin-terminal](https://github.com/linuxdeepin/deepin-terminal) || [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal)
+	[https://www.deepin.org/en/original/deepin-terminal/](https://www.deepin.org/en/original/deepin-terminal/) || [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal)
 
 *   **evilvte** — Very lightweight and highly customizable terminal emulator with support for tabs, auto-hiding and different encodings.
 
@@ -357,7 +357,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Deepin File Manager** — File manager developed for [Deepin](/index.php/Deepin "Deepin").
 
-	[https://github.com/linuxdeepin/dde-file-manager](https://github.com/linuxdeepin/dde-file-manager) || [deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager)
+	[https://www.deepin.org/en/original/dde-file-manager/](https://www.deepin.org/en/original/dde-file-manager/) || [deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager)
 
 *   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE desktop.
 
@@ -1263,7 +1263,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 *   **Deepin Boot Maker** — Tool to make boot disk for Deepin OS.
 
-	[https://github.com/linuxdeepin/deepin-boot-maker](https://github.com/linuxdeepin/deepin-boot-maker) || [deepin-boot-maker](https://www.archlinux.org/packages/?name=deepin-boot-maker)
+	[https://www.deepin.org/en/original/deepin-boot-maker/](https://www.deepin.org/en/original/deepin-boot-maker/) || [deepin-boot-maker](https://www.archlinux.org/packages/?name=deepin-boot-maker)
 
 *   **Etcher** — Flash OS images to SD cards & USB drives, safely and easily. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -1325,7 +1325,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **Deepin System Monitor** — Monitor system process status for Deepin desktop.
 
-	[https://github.com/linuxdeepin/deepin-system-monitor](https://github.com/linuxdeepin/deepin-system-monitor) || [deepin-system-monitor](https://www.archlinux.org/packages/?name=deepin-system-monitor)
+	[https://www.deepin.org/en/original/deepin-system-monitor/](https://www.deepin.org/en/original/deepin-system-monitor/) || [deepin-system-monitor](https://www.archlinux.org/packages/?name=deepin-system-monitor)
 
 *   **dstat** — Versatile resource statistics tool.
 

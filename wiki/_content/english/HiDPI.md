@@ -48,7 +48,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.13 Mono applications](#Mono_applications)
     *   [6.14 MATLAB](#MATLAB)
     *   [6.15 VirtualBox](#VirtualBox)
-    *   [6.16 Unsupported applications](#Unsupported_applications)
+    *   [6.16 Zoom](#Zoom)
+    *   [6.17 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Multiple external monitors](#Multiple_external_monitors)
@@ -460,6 +461,15 @@ This can be worked around by calculating the inverse of your scaling factor and 
 
 ```
 $ QT_SCALE_FACTOR=0.5 VirtualBox --startvm vm-name
+
+```
+
+### Zoom
+
+Zoom can be started with a proper scaling by overriding the `QT_SCALE_FACTOR` environment variable.
+
+```
+$ QT_SCALE_FACTOR=2 zoom
 
 ```
 

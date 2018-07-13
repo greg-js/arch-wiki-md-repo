@@ -255,6 +255,8 @@ Once you have completed these steps and the fan is working properly - you should
 
 ```
 
+**Note:** By default fan is always spinning when on AC [[1]](https://github.com/stockmind/gpd-pocket-ubuntu-respin#gpd-fan-always-spinning-on-ac). To override this behavior add `gpd-pocket-fan.speed_on_ac=0` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
 #### Power Saving
 
 Install [tlp](https://www.archlinux.org/packages/?name=tlp) and then edit following lines in `/etc/default/tlp`:

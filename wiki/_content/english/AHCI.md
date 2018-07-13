@@ -1,4 +1,4 @@
-**AHCI**, abbreviation for *a*dvanced *h*ost *c*ontroller *i*nterface, is the native work mode for SATA drives. AHCI has two main benefits: support for hot pluggable SATA drives (mimicking USB drives' behavior) and NCQ, or *n*ative *c*ommand *q*ueuing. It has been present in the Linux kernel since version 2.6.19 and will be loaded automatically in current Arch kernel.
+[AHCI](https://en.wikipedia.org/wiki/AHCI "wikipedia:AHCI") (Advanced Host Controller Interface) is the native work mode for SATA drives. AHCI has two main benefits: support for hot pluggable SATA drives (mimicking USB drives' behavior) and [Native Command Queuing](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing") (NCQ). It has been present in the Linux kernel since version 2.6.19 and will be loaded automatically in current Arch kernel.
 
 ## Configure from BIOS
 
@@ -52,8 +52,3 @@ ata2.00: 625142448 sectors, multi 16: LBA48 NCQ (depth 31/32)
 It is possible that the AHCI module is not loaded automatically, if SATA configuration is switched from IDE to AHCI after installing Arch. In such case, an error message appear at early boot indicating that the root partition was not found.
 
 If that happens, the `failsafe` boot option should still work fine. Once started in failsafe mode, you have to run [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to re-generate a correct initramfs images.
-
-## See also
-
-*   [AHCI on Wikipedia](https://en.wikipedia.org/wiki/AHCI "wikipedia:AHCI")
-*   [NCQ on Wikipedia](https://en.wikipedia.org/wiki/NCQ "wikipedia:NCQ")

@@ -1,7 +1,5 @@
 相关文章
 
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Window manager](/index.php/Window_manager "Window manager")
 *   [Start X at login](/index.php/Start_X_at_login "Start X at login")
 
 **翻译状态：** 本文是英文页面 [Display_manager](/index.php/Display_manager "Display manager") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-12-28，点击[这里](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=413644)可以查看翻译后英文页面的改动。
@@ -21,8 +19,6 @@
 *   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
     *   [4.1 自动启动](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8)
     *   [4.2 设置语言](#.E8.AE.BE.E7.BD.AE.E8.AF.AD.E8.A8.80)
-*   [5 已知问题](#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98)
-    *   [5.1 与systemd 不兼容](#.E4.B8.8Esystemd_.E4.B8.8D.E5.85.BC.E5.AE.B9)
 
 ## 显示管理器列表
 
@@ -36,31 +32,26 @@
 
 *   **[Console TDM](/index.php/Console_TDM "Console TDM")** — 扩展自xinit，由纯粹的Bash脚本编写的
 
-	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)
+	[https://github.com/dopsi/console-tdm](https://github.com/dopsi/console-tdm) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)
 
 *   **[nodm](/index.php/Nodm "Nodm")** — 支持自动登录的简单显示管理器。
 
-	[http://enricozini.org/sw/nodm/](http://enricozini.org/sw/nodm/) || [nodm](https://www.archlinux.org/packages/?name=nodm)
+	[https://github.com/spanezz/nodm](https://github.com/spanezz/nodm) || [nodm](https://www.archlinux.org/packages/?name=nodm)
+
+*   **[Ly](/index.php/Ly "Ly")** — 实验阶段的 ncurses 显示管理器。
+
+	[https://github.com/cylgom/ly](https://github.com/cylgom/ly) || [ly-git](https://aur.archlinux.org/packages/ly-git/)
 
 ### 图形界面
 
-*   **[Entrance](/index.php/Enlightenment "Enlightenment")** — 一个基于EFL的窗口管理器， 高度不稳定
-
-	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)
-
 *   [GDM](/index.php/GDM "GDM"): [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 显示管理器 。[http://projects.gnome.org/gdm/](http://projects.gnome.org/gdm/)[gdm](https://www.archlinux.org/packages/?name=gdm)
-*   KDM: [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")4 显示管理器 ([kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/))(已经停止开发，请使用[SDDM](/index.php/SDDM "SDDM")).
 *   [LightDM](/index.php/LightDM "LightDM"):跨桌面的显示管理器，可以使用各种前端写的任何工具。[http://www.freedesktop.org/wiki/Software/LightDM](http://www.freedesktop.org/wiki/Software/LightDM)[lightdm](https://www.archlinux.org/packages/?name=lightdm)||[lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/)
 *   [LXDM](/index.php/LXDM "LXDM"): [LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)") 显示管理器 (独立于桌面环境) ([lxdm](https://www.archlinux.org/packages/?name=lxdm))
 *   **MDM** — 使用在Linux Mint中的显示管理器,GDM2的分支项目。
 
 	[https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)
 
-*   [SDDM](/index.php/SDDM "SDDM")：基于QML的显示管理器，替代KDE4的KDM，推荐搭配Plamsa5或LXQt使用。[https://github.com/sddm/sddm](https://github.com/sddm/sddm)[sddm](https://www.archlinux.org/packages/?name=sddm)
-*   [SLiM](/index.php/SLiM "SLiM"): 简单登录管理器 ([slim](https://www.archlinux.org/packages/?name=slim))
-    **Warning:** slim登录管理器已经停止开发，不推荐使用
-
-*   [wdm](/index.php/Wdm "Wdm"): WINGs 显示管理器 ([wdm](https://aur.archlinux.org/packages/wdm/))
+*   [SDDM](/index.php/SDDM "SDDM")：基于QML的显示管理器，替代 KDE4 的 KDM，推荐搭配 Plamsa5 或 LXQt 使用。[https://github.com/sddm/sddm](https://github.com/sddm/sddm)[sddm](https://www.archlinux.org/packages/?name=sddm)
 *   **[XDM](/index.php/XDM "XDM")** — X 显示管理器支持XDMCP（适合服务器的宿主机）.
 
 	[http://www.x.org/archive/X11R7.5/doc/man/man1/xdm.1.html](http://www.x.org/archive/X11R7.5/doc/man/man1/xdm.1.html) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
@@ -78,7 +69,11 @@
 
 启用 [SDDM](/index.php/SDDM "SDDM") 后， `/etc/systemd/system/` 应该创建 `display-manager.service` 软链接，可以用 `--force` 覆盖已有链接。
 
- `$ ls -l /etc/systemd/system/display-manager.service`  `[...] /etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/sddm.service` 
+ `$ file /etc/systemd/system/display-manager.service` 
+```
+/etc/systemd/system/display-manager.service: symbolic link to /usr/lib/systemd/system/sddm.service
+
+```
 
 ### 使用 systemd-logind
 
@@ -97,19 +92,18 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ```
 [Desktop Entry]
-Encoding=UTF-8
 Name=Openbox
 Comment=Log in using the Openbox window manager (without a session manager)
 Exec=/usr/bin/openbox-session
 TryExec=/usr/bin/openbox-session
 Icon=openbox.png
-Type=XSession
+Type=Application
 
 ```
 
 ### 运行 ~/.xinitrc 会话
 
-安装 [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/) 后会在显示管理器中提供一个运行 .xinitrc 会话的选项。
+安装 [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/) 后会在显示管理器中提供一个运行 .xinitrc 会话的选项。在显示管理器中选择 `xinitrc` 作为会话，请确保 `~/.xinitrc` 具有执行权限。
 
 ### 没有窗口管理启动应用程序
 
@@ -117,12 +111,12 @@ Type=XSession
 
 ```
 [Desktop Entry]
-Encoding=UTF-8
 Name=Web Browser
 Comment=Use a web browser as your session
 Exec=/usr/bin/google-chrome --auto-launch-at-startup
 TryExec=/usr/bin/google-chrome --auto-launch-at-startup
 Icon=google-chrome
+Type=Application
 
 ```
 
@@ -138,7 +132,7 @@ Icon=google-chrome
 
 ### 设置语言
 
-显示管理器使用[AccountsService](http://freedesktop.org/wiki/Software/AccountsService/)设置 [locale](/index.php/Locale "Locale") ，设置位置是 `/var/lib/AccountsService/users/$USER`:
+使用[AccountsService](http://freedesktop.org/wiki/Software/AccountsService/)的显示管理器可以设置用户会话的 [locale](/index.php/Locale "Locale")，设置位置是 `/var/lib/AccountsService/users/$USER`:
 
 ```
 [User]
@@ -147,15 +141,3 @@ Language=*your_locale*
 ```
 
 *your_locale* 位置替换为locale变量,例如: `en_GB.UTF-8`. 重启显示管理器使变更生效。
-
-## 已知问题
-
-### 与systemd 不兼容
-
-受影响的有DMs, MDM
-
-一些显示管理器与systemd不兼容，因为它们会重复使用PAM会话进程，这在二次登录时会引起很多问题，例如:
-
-*   网络管理程序不工作，
-*   音量不能调节，
-*   其它用户登录GNOME失败。

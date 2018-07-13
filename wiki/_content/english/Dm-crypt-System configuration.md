@@ -251,6 +251,8 @@ rd.luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
 
 #### rd.luks.key
 
+**Note:** `sd-encrypt` hook only supports keyfiles that are embedded in the initramfs (i.e. specified in the `FILES` array in `/etc/mkinitcpio.conf`). See [systemd issue 9181](https://github.com/systemd/systemd/issues/9181).
+
 ```
 rd.luks.key=UUID=*mykeyfile*
 

@@ -277,9 +277,7 @@ Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowB
 
 ```
 
-This means the append the following line to the file using your prefered editor:
-
- `~/.vmware/preferences`  `mks.gl.allowBlacklistedDrivers = TRUE` 
+The config file where you can set this setting is `~/.vmware/preferences`.
 
 ## Troubleshooting
 

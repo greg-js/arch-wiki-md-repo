@@ -243,8 +243,6 @@ For additional info, refer to the [official Kodi wiki](https://kodi.wiki/view/My
 
 This section provides an example using exports, see [NFS](/index.php/NFS "NFS") for install and usage.
 
-**Warning:** Kodi is using [libnfs](https://www.archlinux.org/packages/?name=libnfs) to access NFS shares which only supports NFSv3 (see [#37](https://github.com/sahlberg/libnfs/issues/37) and [#156](https://github.com/sahlberg/libnfs/issues/156)). Therefore do not setup a NFSv4-only server or Kodi will only be able to list the shares but cannot access them.
-
 **Note:** Users only need one box on the LAN to serve the content, therefore, do not repeat this for each node. The following example assumes the user is running Arch Linux, but any NFS server will work, be it Linux or BSD, etc.
 
 Create an empty directory in NFS root for each media directory to be shared. E.g.:

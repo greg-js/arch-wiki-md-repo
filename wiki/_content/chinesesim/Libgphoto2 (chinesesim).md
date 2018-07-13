@@ -1,21 +1,27 @@
-[Libgphoto2](http://www.gphoto.org/proj/libgphoto2/) is the core library designed to allow access to digital cameras by external (front end) programs, such as Digikam and gphoto2\. The current 'officially' supported cameras are [here](http://www.gphoto.org/proj/libgphoto2/support.php) (though more may work).
+Related articles
 
-This article documents the configuration of `libgphoto2` to access digital cameras. Some digital cameras will mount as normal [USB storage devices](/index.php/USB_storage_devices "USB storage devices") and may not require the use of libgphoto2.
+*   [Jalbum](/index.php/Jalbum "Jalbum")
+
+**翻译状态：** 本文是英文页面 [Libgphoto2](/index.php/Libgphoto2 "Libgphoto2") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-13，点击[这里](https://wiki.archlinux.org/index.php?title=Libgphoto2&diff=0&oldid=529363)可以查看翻译后英文页面的改动。
+
+[Libgphoto2](http://www.gphoto.org/proj/libgphoto2/)是实现访问数码相机的核心库，它为Digikam、gphoto2等应用程序提供接口。当前版本的官方支持列表在[这里](http://www.gphoto.org/proj/libgphoto2/support.php)。这份列表比较保守，某些相机其实也能工作。
+
+本文阐述如何配置`libgphoto2`，以便访问数码相机。某些数码相机可以直接按[U盘模式](/index.php/USB_storage_devices "USB storage devices")挂载，无需libghoto2。
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 Frontend applications](#Frontend_applications)
-*   [2 GPhoto2 usage](#GPhoto2_usage)
-    *   [2.1 Example usage with gvfs](#Example_usage_with_gvfs)
-*   [3 Permission issues](#Permission_issues)
-*   [4 See also](#See_also)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+    *   [1.1 前端程序](#.E5.89.8D.E7.AB.AF.E7.A8.8B.E5.BA.8F)
+*   [2 GPhoto2用法](#GPhoto2.E7.94.A8.E6.B3.95)
+    *   [2.1 使用 gvfs](#.E4.BD.BF.E7.94.A8_gvfs)
+*   [3 权限问题](#.E6.9D.83.E9.99.90.E9.97.AE.E9.A2.98)
+*   [4 参阅](#.E5.8F.82.E9.98.85)
 
-## Installation
+## 安装
 
-[Install](/index.php/Install "Install") the [libgphoto2](https://www.archlinux.org/packages/?name=libgphoto2) package, and optionally [gphoto2](https://www.archlinux.org/packages/?name=gphoto2) to have a command line interface.
+[安装](/index.php/Pacman "Pacman") 软件包 [libgphoto2](https://www.archlinux.org/packages/?name=libgphoto2)。可选的包还有 [gphoto2](https://www.archlinux.org/packages/?name=gphoto2)，提供了命令行界面。
 
-### Frontend applications
+### 前端程序
 
 *   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Utility to organize and develop raw images.
 
@@ -61,28 +67,25 @@ This article documents the configuration of `libgphoto2` to access digital camer
 
 	[http://wiki.gnome.org/Apps/Shotwell](http://wiki.gnome.org/Apps/Shotwell) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 
-## GPhoto2 usage
+## GPhoto2用法
 
-GPhoto2 is a command line client for libgphoto2\. GPhoto2 allows access to the libgphoto2 library from a terminal or from a script shell to perform any camera operation that can be done. This is the main user interface.
+GPhoto2是libgphoto2的命令行版客户端，它可以让用户从终端或者脚本中访问libgphoto2，从而操作数码相机。另外，GPhoto2也为驱动开发者提供了方便的调试功能。
 
-GPhoto2 also provides convenient debugging features for camera driver developers.
-
-**Quick Commands**
+**常用操作**
 
 *   `gphoto2 --list-ports`
 *   `gphoto2 --auto-detect`
 *   `gphoto2 --summary`
 *   `gphoto2 --list-files`
 *   `gphoto2 --get-all-files`
-*   `gphoto2 --set-config datetime=now` - sets the camera to the current time
 
-For advanced file manipulation, use
+更高级的文件操作
 
 *   `gphoto2 --shell`
 
-### Example usage with gvfs
+### 使用 gvfs
 
-Auto detect the connected camera and list the required port:
+用下面命令检测连接的摄像头和端口:
 
 ```
 $ gphoto2 --auto-detect
@@ -92,13 +95,13 @@ Canon Digital IXUS 980 IS      usb:006,011
 
 ```
 
-Now open your favorite file manager and enter the address with the found port detail "gphoto2://[usb:006,011]" - the camera will be mounted with gvfs and can be managed with the file manager.
+在文件管理器中使用下面地址进行访问: "gphoto2://[usb:006,011]" - 摄像头会被 gvfs 挂载并通过文件管理器进行管理。
 
-## Permission issues
+## 权限问题
 
-Users with a local session have permissions granted for cameras using [ACLs](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list"). See [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") if it does not work.
+有本地会话的用户会通过 [ACLs](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list") 获得摄像头权限，有问题请查看 [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")。
 
-## See also
+## 参阅
 
-*   [A list of cameras supported by gPhoto](http://www.gphoto.org/proj/libgphoto2/support.php)
-*   [another more detailed list](http://www.teaser.fr/~hfiguiere/linux/digicam.html)
+*   [gPhoto 支持的摄像头列表](http://www.gphoto.org/proj/libgphoto2/support.php)
+*   [更详细的列表](http://www.teaser.fr/~hfiguiere/linux/digicam.html)

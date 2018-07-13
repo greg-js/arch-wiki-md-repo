@@ -49,6 +49,15 @@ i915.edp_vswing=2
 
 Other fixes (changing xf86-video-intel settings like DRI and AccelMode don't seem to help)
 
+If the above does not work try adding the following kernel param instead:
+
+```
+i915.enable_rc6=0
+
+```
+
+The parameter is not available in the latest kernels (e.g. "4.17.5-1") but the linux-lts kernel does (e.g. "4.14.54-1-lts"). This was the only thing I found that worked on my Razer Blade Stealth 13 with i7-8550U cpu.
+
 ## pcieport PCIe Bus Error
 
 You may see the following errors in dmesg:

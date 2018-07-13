@@ -49,7 +49,7 @@ Unpair the keyboard and then re-pair it. The trick is to hold down the power but
 If your `F<num>` keys do not work, this is probably because the kernel driver for the keyboard has defaulted to using the media keys and requiring you to use the `Fn` key to get to the `F<num>` keys. To change the behavior temporarily, [append](/index.php/Append "Append") `2` to `/sys/module/hid_apple/parameters/fnmode`.
 
 ```
-# echo "2" > /sys/module/hid_apple/parameters/fnmode
+# echo 2 > /sys/module/hid_apple/parameters/fnmode
 
 ```
 

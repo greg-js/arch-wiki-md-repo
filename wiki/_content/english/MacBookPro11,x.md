@@ -170,6 +170,8 @@ Additionally, you might want to have a look at the [Power management](/index.php
 
 ### Kernel parameters
 
+**Warning:** Since Kernel version 4.17.2-1 adding `acpi_osi` parameter with an empty value causes battery to be undetectable. See this [forum thread](https://bbs.archlinux.org/viewtopic.php?id=238194) for more information.
+
 Due to [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=177151), it might be required to add `acpi_osi=` as a kernel boot parameter in order to improve battery life.
 
 Due to [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=117481), it may be necessary to disable GPE06 by adding `acpi_mask_gpe=0x06` as a kernel boot parameter. To verify that this is required, check `cat /sys/firmware/acpi/interrupts/gpe06`. There should be a rapidly increasing number of interrupts registered, and one of your cores should be pegged at 100%.

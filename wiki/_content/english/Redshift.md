@@ -10,9 +10,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Redshift](#Redshift)
-        *   [1.1.1 Redshift-GTK](#Redshift-GTK)
-            *   [1.1.1.1 Alternatives](#Alternatives)
+    *   [1.1 Front ends](#Front_ends)
 *   [2 Configuration](#Configuration)
     *   [2.1 Quick start](#Quick_start)
     *   [2.2 Autostart](#Autostart)
@@ -22,26 +20,24 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
-    *   [3.3 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
+    *   [3.3 Redshift makes the screen quickly flicker between the set color value of the screen and the default color value](#Redshift_makes_the_screen_quickly_flicker_between_the_set_color_value_of_the_screen_and_the_default_color_value)
+    *   [3.4 Redshift works fine when invoked as a command but fails when run as a systemd service](#Redshift_works_fine_when_invoked_as_a_command_but_fails_when_run_as_a_systemd_service)
+    *   [3.5 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
 *   [4 See also](#See_also)
 
 ## Installation
 
-### Redshift
-
 [Install](/index.php/Install "Install") the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Alternatively, install the [redshift-minimal](https://aur.archlinux.org/packages/redshift-minimal/) package, for a version with minimal dependencies.
 
-#### Redshift-GTK
+### Front ends
 
-The `redshift-gtk` command is provided by the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Redshift-GTK provides a system tray icon for controlling Redshift and requires the following packages to be installed: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [gtk3](https://www.archlinux.org/packages/?name=gtk3).
+The *redshift-gtk* command comes with the [redshift](https://www.archlinux.org/packages/?name=redshift) package and provides a system tray icon for controlling Redshift. See optional dependencies.
 
-##### Alternatives
-
-Another GTK application is [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) and alternative Qt solutions available are [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
+Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) (GTK) and [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/) (Qt).
 
 ## Configuration
 
-Redshift will at least need your location to start, meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually.
+Redshift will at least need your location to start (unless used with `-O`), meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually.
 
 Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 
@@ -52,7 +48,7 @@ Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it 
 To just get it up and running with a basic setup, issue:
 
 ```
- $ redshift -l LAT:LON
+$ redshift -l LAT:LON
 
 ```
 
@@ -191,6 +187,25 @@ Locate configuration-file "redshift.conf" in your distribution and change "scree
 
 Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[3]](https://github.com/jonls/redshift/issues/363) and [[4]](https://bugs.archlinux.org/task/49971)
 
+### Redshift makes the screen quickly flicker between the set color value of the screen and the default color value
+
+Make sure there aren't multiple instances of redshift running.
+
+### Redshift works fine when invoked as a command but fails when run as a systemd service
+
+The [systemd](/index.php/Systemd "Systemd") unit has a line in the `redshift.service` file that makes the service wait until the `display-manager.service` unit is started by a [Display Manager](/index.php/Display_Manager "Display Manager") before the unit will invoke `redshift`. In lightweight setups, such as [i3](/index.php/I3 "I3"), one often uses a [Window Manager](/index.php/Window_Manager "Window Manager") or no manager at all and thus the `display-manager.service` is never started. Delete the line:
+
+ `/usr/lib/systemd/user/redshift.service`  `After=display-manager.service` 
+
+from the `redshift.service` file and run:
+
+```
+# systemctl --user daemon-reload
+
+```
+
+and the service should initialize properly.
+
 ### Redshift temporarily resets using some wine apps that reset gamma values
 
 If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[5]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[6]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
@@ -203,7 +218,7 @@ If you notice that using some wine apps, redshift seems to reset temporarily upo
 *   [Redshift on github](http://github.com/jonls/redshift)
 *   **sct** — set color temperature
 
-	[sct](https://aur.archlinux.org/packages/sct/) || [sct](https://aur.archlinux.org/packages/sct/)
+	[http://www.tedunangst.com/flak/post/sct-set-color-temperature](http://www.tedunangst.com/flak/post/sct-set-color-temperature) || [sct](https://aur.archlinux.org/packages/sct/)
 
 *   [xflux-gui-git](https://aur.archlinux.org/packages/xflux-gui-git/)
 *   [Wikipedia:Redshift_(software)](https://en.wikipedia.org/wiki/Redshift_(software) "wikipedia:Redshift (software)")

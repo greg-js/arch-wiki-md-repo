@@ -27,6 +27,8 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 
 **Note:** Google appears to block isync from downloading emails by default. If you have 2-step authentication enabled, you need to [set up an app password](https://myaccount.google.com/apppasswords) and use that with isync, otherwise you need to go to [Google's Security Page](https://myaccount.google.com/security) and toggle "Allow less secure apps" to "on".
 
+**Note:** It might be possible to use XOAUTH2 to authenticate with Google. Some hints are in this [forum thread](https://bbs.archlinux.org/viewtopic.php?id=238727)
+
 **Note:** **Subfolders** setting in MaildirStore now seems to be required to be set: [iSync Config SubFolders](http://isync.sourceforge.net/mbsync.html) **SubFolders Legacy** worked as previous unset - Oct 2017
 
 First create and customize the main configuration file using this example `~/.mbsyncrc`:

@@ -12,7 +12,7 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting Xfce](#Starting_Xfce)
+*   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 Menu](#Menu)
         *   [3.1.1 Whisker menu](#Whisker_menu)
@@ -72,7 +72,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group. You may also wish to install the [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) group which includes extra plugins and a number of useful utilities such as the [mousepad](https://www.archlinux.org/packages/?name=mousepad) editor. Xfce uses the [Xfwm](/index.php/Xfwm "Xfwm") window manager by default.
 
-## Starting Xfce
+## Starting
 
 Choose *Xfce Session* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice, or add `exec startxfce4` to [Xinitrc](/index.php/Xinitrc "Xinitrc").
 

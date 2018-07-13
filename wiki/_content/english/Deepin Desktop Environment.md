@@ -41,7 +41,7 @@ Note that a valid home directory must exist for a user other than root for the g
 
 ### Via xinit
 
-To use Deepin via xinit, you'll need to add the following to your .xinitrc file.
+To use Deepin via [xinit](/index.php/Xinit "Xinit"), you'll need to add the following to your .xinitrc file.
 
  `~/.xinitrc`  `exec startdde` 
 

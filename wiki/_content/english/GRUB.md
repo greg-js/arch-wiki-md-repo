@@ -28,20 +28,20 @@ A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that 
 *   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
 *   [4 Configuration](#Configuration)
     *   [4.1 Additional arguments](#Additional_arguments)
-    *   [4.2 Dual-booting](#Dual-booting)
-        *   [4.2.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
-        *   [4.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
-        *   [4.2.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
-        *   [4.2.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-        *   [4.2.5 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry)
-        *   [4.2.6 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS.2FMBR_mode)
-    *   [4.3 LVM](#LVM)
-    *   [4.4 RAID](#RAID)
+    *   [4.2 LVM](#LVM)
+    *   [4.3 RAID](#RAID)
+    *   [4.4 Encryption](#Encryption)
+        *   [4.4.1 Root partition](#Root_partition)
+        *   [4.4.2 Boot partition](#Boot_partition)
     *   [4.5 Multiple entries](#Multiple_entries)
-    *   [4.6 Encryption](#Encryption)
-        *   [4.6.1 Root partition](#Root_partition)
-        *   [4.6.2 Boot partition](#Boot_partition)
-    *   [4.7 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
+    *   [4.6 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
+    *   [4.7 Dual-booting](#Dual-booting)
+        *   [4.7.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
+        *   [4.7.2 "Restart" menu entry](#.22Restart.22_menu_entry)
+        *   [4.7.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
+        *   [4.7.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
+        *   [4.7.5 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry)
+        *   [4.7.6 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS.2FMBR_mode)
 *   [5 Using the command shell](#Using_the_command_shell)
     *   [5.1 Pager support](#Pager_support)
     *   [5.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
@@ -53,24 +53,24 @@ A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that 
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
     *   [6.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
-        *   [6.2.1 MBR](#MBR)
-        *   [6.2.2 EFI default/fallback boot path](#EFI_default.2Ffallback_boot_path)
-    *   [6.3 Enable debug messages](#Enable_debug_messages)
-    *   [6.4 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
-    *   [6.5 msdos-style error message](#msdos-style_error_message)
-    *   [6.6 UEFI](#UEFI)
-        *   [6.6.1 Common installation errors](#Common_installation_errors)
-        *   [6.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
-        *   [6.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
-    *   [6.7 Invalid signature](#Invalid_signature)
-    *   [6.8 Boot freezes](#Boot_freezes)
-    *   [6.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
-    *   [6.10 Warning when installing in chroot](#Warning_when_installing_in_chroot)
-    *   [6.11 GRUB loads slowly](#GRUB_loads_slowly)
-    *   [6.12 error: unknown filesystem](#error:_unknown_filesystem)
-    *   [6.13 grub-reboot not resetting](#grub-reboot_not_resetting)
-    *   [6.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
-    *   [6.15 Windows 8/10 not found](#Windows_8.2F10_not_found)
+    *   [6.3 EFI default/fallback boot path](#EFI_default.2Ffallback_boot_path)
+    *   [6.4 Enable debug messages](#Enable_debug_messages)
+    *   [6.5 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
+    *   [6.6 msdos-style error message](#msdos-style_error_message)
+    *   [6.7 UEFI](#UEFI)
+        *   [6.7.1 Common installation errors](#Common_installation_errors)
+        *   [6.7.2 Drop to rescue shell](#Drop_to_rescue_shell)
+        *   [6.7.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
+    *   [6.8 Invalid signature](#Invalid_signature)
+    *   [6.9 Boot freezes](#Boot_freezes)
+    *   [6.10 Arch not found from other OS](#Arch_not_found_from_other_OS)
+    *   [6.11 Warning when installing in chroot](#Warning_when_installing_in_chroot)
+    *   [6.12 GRUB loads slowly](#GRUB_loads_slowly)
+    *   [6.13 error: unknown filesystem](#error:_unknown_filesystem)
+    *   [6.14 grub-reboot not resetting](#grub-reboot_not_resetting)
+    *   [6.15 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
+    *   [6.16 Windows 8/10 not found](#Windows_8.2F10_not_found)
+    *   [6.17 VirtualBox EFI mode](#VirtualBox_EFI_mode)
 *   [7 See also](#See_also)
 
 ## BIOS systems
@@ -219,6 +219,108 @@ For generating the GRUB recovery entry you have to ensure that `GRUB_DISABLE_REC
 You can also use `GRUB_CMDLINE_LINUX="resume=UUID=*uuid-of-swap-partition*"`
 
 See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
+
+### LVM
+
+If you use [LVM](/index.php/LVM "LVM") for your `/boot` or `/` root partition, make sure that the `lvm` module is preloaded:
+
+ `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... lvm"` 
+
+### RAID
+
+GRUB provides convenient handling of [RAID](/index.php/RAID "RAID") volumes. You need to load GRUB modules `mdraid09` or `mdraid1x` to allow you to address the volume natively:
+
+ `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... mdraid09 mdraid1x"` 
+
+For example, `/dev/md0` becomes:
+
+```
+set root=(md/0)
+
+```
+
+whereas a partitioned RAID volume (e.g. `/dev/md0p1`) becomes:
+
+```
+set root=(md/0,1)
+
+```
+
+To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on BIOS systems, simply run *grub-install* on both of the drives, such as:
+
+```
+# grub-install --target=i386-pc --debug /dev/sda
+# grub-install --target=i386-pc --debug /dev/sdb
+
+```
+
+Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
+
+**Note:** GRUB supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
+
+### Encryption
+
+#### Root partition
+
+To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
+
+If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=UUID=*device-UUID*:cryptroot"` 
+
+If using the `sd-encrypt` hook, add `rd.luks.name`:
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="rd.luks.name=*device-UUID*=cryptroot"` 
+
+where *device-UUID* is the UUID of the LUKS-encrypted device.
+
+Be sure to [generate the main configuration file](#Generate_the_main_configuration_file) when done.
+
+For further information about bootloader configuration for encrypted devices, see [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+
+**Note:** If you wish to encrypt `/boot` either as a separate partition or part of the `/` partition, further setup is required. See [#Boot partition](#Boot_partition).
+
+**Tip:** If you are upgrading from a working GRUB Legacy configuration, check `/boot/grub/menu.lst.pacsave` for the correct device/label to add. Look for them after the text `kernel /vmlinuz-linux`.
+
+#### Boot partition
+
+GRUB can be set to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"). `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
+
+**Warning:** GRUB does not support LUKS2 headers. Make sure you do not specify `luks2` for the type parameter when creating the encrypted partition using `cryptsetup luksFormat`.
+
+To enable this feature encrypt the partition with `/boot` residing on it using [LUKS](/index.php/LUKS "LUKS") as normal. Then add the following option to `/etc/default/grub`:
+
+ `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
+
+Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) while the partition containing `/boot` is mounted.
+
+Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as described in [#Root partition](#Root_partition). You can use a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") to avoid this.
+
+**Note:**
+
+*   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice.
+*   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
+*   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
+
+ `# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
+
+### Multiple entries
+
+For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
+
+### Chainloading an Arch Linux .efi file
+
+If you have an *.efi* file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, `/etc/grub.d/40_custom` can be edited to add a new menu entry before regenerating `grub.cfg` with `grub-mkconfig`.
+
+ `/etc/grub.d/40_custom` 
+```
+menuentry 'Arch Linux .efi' {
+insmod part_gpt
+insmod chain
+set root='(hdX,gptY)'
+chainloader /EFI/*path*/*file*.efi
+}
+```
 
 ### Dual-booting
 
@@ -369,108 +471,6 @@ Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can u
 `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/*nn*_custom`. Where `*nn*` defines the precedence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
 
 **Note:** `nn` should be greater than 06 to ensure necessary scripts are executed first.
-
-### LVM
-
-If you use [LVM](/index.php/LVM "LVM") for your `/boot` or `/` root partition, make sure that the `lvm` module is preloaded:
-
- `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... lvm"` 
-
-### RAID
-
-GRUB provides convenient handling of [RAID](/index.php/RAID "RAID") volumes. You need to load GRUB modules `mdraid09` or `mdraid1x` to allow you to address the volume natively:
-
- `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... mdraid09 mdraid1x"` 
-
-For example, `/dev/md0` becomes:
-
-```
-set root=(md/0)
-
-```
-
-whereas a partitioned RAID volume (e.g. `/dev/md0p1`) becomes:
-
-```
-set root=(md/0,1)
-
-```
-
-To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on BIOS systems, simply run *grub-install* on both of the drives, such as:
-
-```
-# grub-install --target=i386-pc --debug /dev/sda
-# grub-install --target=i386-pc --debug /dev/sdb
-
-```
-
-Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
-
-**Note:** GRUB supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
-
-### Multiple entries
-
-For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
-
-### Encryption
-
-#### Root partition
-
-To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
-
-If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
-
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=UUID=*device-UUID*:cryptroot"` 
-
-If using the `sd-encrypt` hook, add `rd.luks.name`:
-
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="rd.luks.name=*device-UUID*=cryptroot"` 
-
-where *device-UUID* is the UUID of the LUKS-encrypted device.
-
-Be sure to [generate the main configuration file](#Generate_the_main_configuration_file) when done.
-
-For further information about bootloader configuration for encrypted devices, see [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
-
-**Note:** If you wish to encrypt `/boot` either as a separate partition or part of the `/` partition, further setup is required. See [#Boot partition](#Boot_partition).
-
-**Tip:** If you are upgrading from a working GRUB Legacy configuration, check `/boot/grub/menu.lst.pacsave` for the correct device/label to add. Look for them after the text `kernel /vmlinuz-linux`.
-
-#### Boot partition
-
-GRUB can be set to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"). `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
-
-**Warning:** GRUB does not support LUKS2 headers. Make sure you do not specify `luks2` for the type parameter when creating the encrypted partition using `cryptsetup luksFormat`.
-
-To enable this feature encrypt the partition with `/boot` residing on it using [LUKS](/index.php/LUKS "LUKS") as normal. Then add the following option to `/etc/default/grub`:
-
- `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
-
-Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) while the partition containing `/boot` is mounted.
-
-Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as described in [#Root partition](#Root_partition). You can use a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") to avoid this.
-
-**Note:**
-
-*   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice.
-*   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
-*   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
-
- `# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
-
-### Chainloading an Arch Linux .efi file
-
-If you have an *.efi* file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, `/etc/grub.d/40_custom` can be edited to add a new menu entry before regenerating `grub.cfg` with `grub-mkconfig`.
-
- `/etc/grub.d/40_custom` 
-```
-menuentry 'Arch Linux .efi' {
-insmod part_gpt
-insmod chain
-set root='(hdX,gptY)'
-chainloader /EFI/*path*/*file*.efi
-}
-```
 
 ## Using the command shell
 
@@ -637,8 +637,6 @@ GRUB does not support [F2FS](/index.php/F2FS "F2FS") file system. In case the ro
 
 ### Intel BIOS not booting GPT
 
-#### MBR
-
 Some Intel BIOS's require at least one bootable MBR partition to be present at boot, causing GPT-partitioned boot setups to be unbootable.
 
 This can be circumvented by using (for instance) fdisk to mark one of the GPT partitions (preferably the 1007 KiB partition you have created for GRUB already) bootable in the MBR. This can be achieved, using fdisk, by the following commands: Start fdisk against the disk you are installing, for instance `fdisk /dev/sda`, then press `a` and select the partition you wish to mark as bootable (probably #1) by pressing the corresponding number, finally press `w` to write the changes to the MBR.
@@ -657,7 +655,7 @@ With recent version of parted, you can use `disk_toggle pmbr_boot` option. After
 
 More information is available [here](http://www.rodsbooks.com/gdisk/bios.html)
 
-#### EFI default/fallback boot path
+### EFI default/fallback boot path
 
 Some UEFI firmwares require a bootable file at a known location before they will show UEFI NVRAM boot entries. If this is the case, `grub-install` will claim `efibootmgr` has added an entry to boot GRUB, however the entry will not show up in the VisualBIOS boot order selector. The solution is to install GRUB at the default/fallback boot path:
 
@@ -865,6 +863,12 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 ### Windows 8/10 not found
 
 A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can prevent the Windows partition from being mounted, so `grub-mkconfig` will not find a Windows install. Disabling Hiberboot in Windows will allow it to be added to the GRUB menu.
+
+### VirtualBox EFI mode
+
+Install GRUB to the [default/fallback boot path](#EFI_default.2Ffallback_boot_path).
+
+See also [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
 
 ## See also
 

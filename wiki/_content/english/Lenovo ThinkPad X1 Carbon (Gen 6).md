@@ -12,9 +12,8 @@ Related articles
 
 *   [1 Model description](#Model_description)
     *   [1.1 Support](#Support)
-*   [2 Boot issues](#Boot_issues)
-    *   [2.1 Install](#Install)
-    *   [2.2 LUKS + GRUB](#LUKS_.2B_GRUB)
+*   [2 BIOS](#BIOS)
+    *   [2.1 Updates](#Updates)
 *   [3 Suspend issues](#Suspend_issues)
     *   [3.1 Suspend-to-RAM (S3) not supported by default](#Suspend-to-RAM_.28S3.29_not_supported_by_default)
     *   [3.2 S0i3 sleep support](#S0i3_sleep_support)
@@ -62,34 +61,17 @@ Version: ThinkPad X1 Carbon 6th
 
 *** no working linux pcie driver for Fibocom L850-GL [forum link](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) - also see [this forum](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more progress.
 
-## Boot issues
+## BIOS
 
-### Install
+The most convenient way to install Arch Linux is by disabling "Secure Boot" `Security -> Secure Boot - Set to "Disabled"`. However it is possible to self-sign your kernel and boot with it enabled. For further information have a look at the [Secure Boot](/index.php/Secure_Boot "Secure Boot") article.
 
-Disable secure boot in the bios in order to boot the Arch Linux Live ISO and install Arch Linux.
+In case your `efivars` are not properly set it is most likely due to you not being booted into [UEFI](/index.php/UEFI "UEFI"). Should the problem persist be sure to consult the [UEFI#UEFI variables](/index.php/UEFI#UEFI_variables "UEFI") section.
 
-```
-`Security -> Secure Boot - Set to "Disabled"`
+### Updates
 
-```
+[BIOS update 1.25](https://pcsupport.lenovo.com/de/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-06-28\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `./geteltorito.pl -o bios-update.img n23ur08w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard)) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
 
-### LUKS + GRUB
-
-When using LUKS with grub the system appears to hang "Loading initial ramdisk" without adding the i915 module to `/etc/mkinticpio.conf`
-
-```
-MODULES=(i915)
-
-```
-
-Using UUID's for the cryptroot is also problematic and will hang on the encrypt hook. Simply specify the device name of the encrypted partition directly (/dev/nveme0n1px) instead of using a UUID when configuring GRUB.
-
-For example, in /etc/default/grub if your encrypted partition is /dev/nvme0n1p2:
-
-```
-GRUB_CMDLINE_LINUX="cryptdevice=/dev/nvme0n1p2:cryptroot"
-
-```
+The ThinkPad X1 Carbon supports setting a custom splash image at the earliest boot stage(instead of the red "Lenovo" logo), more information can be found in the `README.TXT` located in the `FLASH` folder of the update image.
 
 ## Suspend issues
 

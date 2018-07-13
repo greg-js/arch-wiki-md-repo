@@ -243,15 +243,4 @@ To make settings permanent, just modify `/etc/X11/xorg.conf.d/10-synaptics.conf`
 
 ### Inverting FN keys
 
-This is to make it so the keys function as normal FN keys. To change the behavior temporarily from a root prompt,
-
-```
-# echo "2" > /sys/module/hid_apple/parameters/fnmode
-
-```
-
-To make the change permanent edit/create the file, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `fnmode` option to 2:
-
- `/etc/modprobe.d/hid_apple.conf`  `options hid_apple fnmode=2` 
-
-See also:[[2]](https://wiki.archlinux.org/index.php/Apple_Keyboard#Function_keys_do_not_work)
+To make the FN keys function as normal FN keys, follow [Apple Keyboard#Function keys do not work](/index.php/Apple_Keyboard#Function_keys_do_not_work "Apple Keyboard").

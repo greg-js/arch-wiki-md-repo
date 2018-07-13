@@ -320,7 +320,7 @@ sda
 
 The beginning of the device name specifies the type of block device. Most modern storage devices (e.g. hard disks, [SSDs](/index.php/SSD "SSD") and USB flash drives) are recognised as SCSI disks (`sd`). The type is followed by a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on each device will be listed with a number starting from `1` for the first partition (`sda1`), `2` for the second (`sda2`), and so on. In the example above, only one device is available (`sda`), and that device has three partitions (`sda1` to `sda3`), each with a different [file system](/index.php/File_system "File system").
 
-Other common block device types include for example `mmcblk` for memory cards and `nvme` for [NVMe](/index.php/NVMe "NVMe") devices. Unknown types can be searched in the [kernel documentation](https://www.kernel.org/doc/Documentation/devices.txt).
+Other common block device types include for example `mmcblk` for memory cards and `nvme` for [NVMe](/index.php/NVMe "NVMe") devices. Unknown types can be searched in the [kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/devices.html).
 
 ## mkdir
 
@@ -395,7 +395,7 @@ Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-lin
 
 ## ss
 
-*ss* is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package in the [base](https://www.archlinux.org/groups/x86_64/base/) group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
+*ss*, for Sockets Statistics, is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package in the [base](https://www.archlinux.org/groups/x86_64/base/) group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
 
 Common usage includes:
 

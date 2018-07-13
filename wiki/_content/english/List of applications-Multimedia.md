@@ -210,7 +210,7 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 *   **Deepin Image Viewer** — Image viewer and organizer for Deepin desktop.
 
-	[https://github.com/linuxdeepin/deepin-image-viewer](https://github.com/linuxdeepin/deepin-image-viewer) || [deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer)
+	[https://www.deepin.org/en/original/deepin-image-viewer/](https://www.deepin.org/en/original/deepin-image-viewer/) || [deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer)
 
 *   **[digiKam](https://en.wikipedia.org/wiki/digiKam "wikipedia:digiKam")** — KDE-based image organizer with built-in editing features via a plugin architecture. digiKam asserts it is more full featured than similar applications with a larger set of image manipulation features including RAW image import and manipulation.
 
@@ -516,7 +516,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **Deepin Picker** — Color picker tool for Deepin desktop.
 
-	[https://github.com/linuxdeepin/deepin-picker](https://github.com/linuxdeepin/deepin-picker) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
+	[https://www.deepin.org/en/original/deepin-picker/](https://www.deepin.org/en/original/deepin-picker/) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
 
 *   **gcolor2** — Simple GTK+ 2 color selector.
 
@@ -548,7 +548,7 @@ See also [Screen capture](/index.php/Screen_capture "Screen capture").
 
 *   **Deepin Screenshot** — Quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
 
-	[https://www.deepin.org/](https://www.deepin.org/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
+	[https://www.deepin.org/en/original/deepin-screenshot/](https://www.deepin.org/en/original/deepin-screenshot/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
 
 *   **Escrotum** — Screen capture using pygtk, inspired by scrot.
 
@@ -780,7 +780,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **Deepin Music** — Awesome music player with brilliant and tweakful UI Deepin-UI based.
 
-	[https://github.com/linuxdeepin/deepin-music](https://github.com/linuxdeepin/deepin-music) || [deepin-music](https://www.archlinux.org/packages/?name=deepin-music)
+	[https://www.deepin.org/en/original/deepin-music/](https://www.deepin.org/en/original/deepin-music/) || [deepin-music](https://www.archlinux.org/packages/?name=deepin-music)
 
 *   **Elisa** — Simple music player by the KDE community aiming to provide a nice experience for its users.
 
@@ -996,7 +996,7 @@ See also [Wikipedia:Comparison of digital audio editors](https://en.wikipedia.or
 
 *   **Deepin Voice Recorder** — Voice recorder application for Deepin desktop.
 
-	[https://github.com/linuxdeepin/deepin-voice-recorder](https://github.com/linuxdeepin/deepin-voice-recorder) || [deepin-voice-recorder](https://www.archlinux.org/packages/?name=deepin-voice-recorder)
+	[https://www.deepin.org/en/original/deepin-voice-recorder/](https://www.deepin.org/en/original/deepin-voice-recorder/) || [deepin-voice-recorder](https://www.archlinux.org/packages/?name=deepin-voice-recorder)
 
 *   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
 
@@ -1512,7 +1512,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **Deepin Movie** — Movie player for Deepin desktop based on [mpv](/index.php/Mpv "Mpv").
 
-	[https://github.com/linuxdeepin/deepin-movie-reborn](https://github.com/linuxdeepin/deepin-movie-reborn) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
+	[https://www.deepin.org/en/original/deepin-movie/](https://www.deepin.org/en/original/deepin-movie/) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
 
 *   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK+ 3).
 
@@ -1774,7 +1774,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **Deepin Screen Recorder** — Screen recorder application for Deepin desktop.
 
-	[https://github.com/linuxdeepin/deepin-screen-recorder](https://github.com/linuxdeepin/deepin-screen-recorder) || [deepin-screen-recorder](https://www.archlinux.org/packages/?name=deepin-screen-recorder)
+	[https://www.deepin.org/en/original/deepin-screen-recorder/](https://www.deepin.org/en/original/deepin-screen-recorder/) || [deepin-screen-recorder](https://www.archlinux.org/packages/?name=deepin-screen-recorder)
 
 *   **FFcast** — FFmpeg-based screencast tool written in Bash.
 
