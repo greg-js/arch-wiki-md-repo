@@ -155,7 +155,7 @@ http {
       fastcgi_param       PATH_INFO       $uri;
       fastcgi_param       QUERY_STRING    $args;
       fastcgi_param       HTTP_HOST       $server_name;
-      fastcgi_pass        unix:/run/fcgiwrap.sock;
+      fastcgi_pass        unix:/run/fcgiwrap.socket;
     }
   }
 }
@@ -260,7 +260,7 @@ logo=/cgit.png
 # if you do not want that webcrawler (like google) index your site
 robots=noindex, nofollow
 
-# if cgit messes up links, use a virtual-root. For example has cgit.example.org/ this value:
+# if cgit messes up links, use a virtual-root. For example, cgit.example.org/ has this value:
 virtual-root=/
 
 ```

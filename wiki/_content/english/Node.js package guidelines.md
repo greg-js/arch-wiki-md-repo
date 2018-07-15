@@ -23,8 +23,8 @@ This is a minimal `package` function:
 
 ```
 package() {
-    cd $srcdir/$pkgname-$pkgver
-    npm install -g --user root --prefix "$pkgdir"/usr
+    npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/source-tarball.tar.gz
+
     # Non-deterministic race in npm gives 777 permissions to random directories.
     # See https://github.com/npm/npm/issues/9359 for details.
     find "${pkgdir}"/usr -type d -exec chmod 755 {} +

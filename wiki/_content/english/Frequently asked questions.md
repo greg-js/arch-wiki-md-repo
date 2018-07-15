@@ -222,7 +222,7 @@ See [Arch compared to other distributions](/index.php/Arch_compared_to_other_dis
 
 ### How do I determine if my processor is x86_64 compatible?
 
-If your processor is [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") compatible, you will have the `lm` flag in `/proc/cpuinfo`. For example,
+If your processor is [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") compatible, you will have the `lm` ([long mode](https://en.wikipedia.org/wiki/Long_mode "wikipedia:Long mode")) flag in `/proc/cpuinfo`. For example,
 
 ```
 $ grep -w lm /proc/cpuinfo

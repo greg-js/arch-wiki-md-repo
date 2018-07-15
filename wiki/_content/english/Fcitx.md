@@ -12,7 +12,7 @@
 *   [2 Usage](#Usage)
     *   [2.1 Desktop Environment](#Desktop_Environment)
     *   [2.2 Non desktop environment](#Non_desktop_environment)
-    *   [2.3 Xim](#Xim)
+    *   [2.3 XIM](#XIM)
 *   [3 Configuration](#Configuration)
     *   [3.1 GUI configuration tools](#GUI_configuration_tools)
     *   [3.2 Input methods configuration](#Input_methods_configuration)
@@ -120,9 +120,9 @@ If *fcitx* process does not start automatically, you might need to add `fcitx &`
 *   Avoid `.bashrc` for this, see [GregsWiki:DotFiles](https://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles").
 *   If all Qt apps have problem with fcitx, run *qtconfig* (*qtconfig-qt4*), and go to the third tab, make sure *fcitx* is in the *Default Input Method* combo-box.
 
-### Xim
+### XIM
 
-Optionally, you can use xim in your GTK+ and/or Qt programs without installing the above modules in which case you need to change the corresponding lines above as following:
+Optionally, you can use the [X Input Method](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") (XIM) in your GTK+ and/or Qt programs without installing the above modules in which case you need to change the corresponding lines above as following:
 
 ```
 GTK_IM_MODULE=xim
@@ -130,7 +130,7 @@ QT_IM_MODULE=xim
 
 ```
 
-**Warning:** Using xim can sometimes cause problems including not being able to input, no cursor following, word selection window issue, application freeze on input method restart. For these xim related problems, Fcitx cannot provide any fix or support. This is the same with any other input method framework, so please use the GTK+ and Qt input method modules instead of xim whenever possible
+**Warning:** Using XIM can sometimes cause problems including not being able to input, no cursor following, word selection window issue, application freeze on input method restart. For these XIM related problems, Fcitx cannot provide any fix or support. This is the same with any other input method framework, so please use the GTK+ and Qt input method modules instead of xim whenever possible
 
 **Note:** Gtk2 uses `/usr/lib/gtk-2.0/2.10.0/immodules.cache` as immodule cache file since 2.24.20\. If you have set `GTM_IM_MODULE_FILE` environment variable or do not use install script of official packages to update the cache, please change/clear the environment variable and use `/usr/bin/gtk-query-immodules-2.0 --update-cache` to update immodule cache.
 

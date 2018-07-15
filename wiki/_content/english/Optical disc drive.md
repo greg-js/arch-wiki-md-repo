@@ -79,18 +79,18 @@ You need at least one program for creation of file system images and one program
 
 Available programs for ISO 9660 image creation are:
 
-*   *mkisofs* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
-*   *xorriso* and *xorrisofs* from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   [mkisofs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkisofs.8) from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
+*   [xorriso(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorriso.1) and [xorrisofs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorrisofs.1) from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
 
 The traditional choice is *mkisofs*.
 
 Available programs for burning to media are:
 
-*   *cdrdao* from [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) (CD only, TOC/CUE/BIN only)
-*   *cdrecord* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
-*   *cdrskin* from [libburn](https://www.archlinux.org/packages/?name=libburn)
-*   *growisofs* from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (DVD and BD only)
-*   *xorriso* and *xorrecord* from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   [cdrdao(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cdrdao.1) from [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) (CD only, TOC/CUE/BIN only)
+*   [cdrecord(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cdrecord.1) from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
+*   [cdrskin(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cdrskin.1) from [libburn](https://www.archlinux.org/packages/?name=libburn)
+*   [growisofs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1) from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (DVD and BD only)
+*   [xorriso(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorriso.1) and [xorrecord(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorrecord.1) from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
 
 The traditional choices are *cdrecord* for CD and *growisofs* for DVD and Blu-ray Disk. For writing TOC/CUE/BIN files to CD, install [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
 

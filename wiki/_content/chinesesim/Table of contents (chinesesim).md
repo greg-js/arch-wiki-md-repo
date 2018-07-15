@@ -99,7 +99,7 @@
 | <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(6)</small> |
 | <small>7.3.</small> [系统服务和守护进程](/index.php/Category:Daemons_and_system_services_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Daemons and system services (简体中文)") <small>(16)</small> |
 | <small>7.4.</small> [桌面环境](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)") <small>(19)</small> |
-| <small>7.4.1.</small> [登录管理器](/index.php/Category:Display_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Display managers (简体中文)") <small>(8)</small> |
+| <small>7.4.1.</small> [登录管理器](/index.php/Category:Display_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Display managers (简体中文)") <small>(7)</small> |
 | <small>7.4.2.</small> [动态窗口管理器](/index.php/Category:Dynamic_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dynamic WMs (简体中文)") <small>(3)</small> |
 | <small>7.4.3.</small> [KDE](/index.php/Category:KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:KDE (简体中文)") <small>(3)</small> |
 | <small>7.4.4.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(6)</small> |
@@ -117,16 +117,17 @@
 | <small>8.3.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(13)</small> |
 | <small>8.3.1.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)"))</small> |
 | <small>8.3.2.</small> [字体](/index.php/Category:Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Fonts (简体中文)") <small>(4)</small> |
-| <small>8.4.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(4)</small> |
-| <small>8.4.1.</small> [中文化](/index.php/Category:Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Localization (简体中文)") <small>(2)</small> |
-| <small>8.5.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(16)</small> |
-| <small>8.6.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
-| <small>8.7.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(17)</small> |
-| <small>8.7.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(2)</small> |
-| <small>8.7.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.7.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.7.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.8.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(15)</small> |
-| <small>8.9.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(7)</small> |
-| <small>8.9.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(2)</small> |
+| <small>8.4.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphical user interfaces (简体中文)") <small>(1)</small> |
+| <small>8.5.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(4)</small> |
+| <small>8.5.1.</small> [中文化](/index.php/Category:Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Localization (简体中文)") <small>(2)</small> |
+| <small>8.6.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(16)</small> |
+| <small>8.7.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
+| <small>8.8.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(17)</small> |
+| <small>8.8.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(2)</small> |
+| <small>8.8.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>8.8.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>8.8.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>8.9.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(15)</small> |
+| <small>8.10.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(7)</small> |
+| <small>8.10.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(2)</small> |
 | <small>9.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |

@@ -3,32 +3,27 @@ There are two popular ways of configuring a Linux terminal to work transparently
 ## Contents
 
 *   [1 Using Tilda](#Using_Tilda)
-*   [2 The Professional Way](#The_Professional_Way)
+*   [2 Setup by desktop environment](#Setup_by_desktop_environment)
     *   [2.1 Openbox, Compiz and alike](#Openbox.2C_Compiz_and_alike)
     *   [2.2 Gnome](#Gnome)
-        *   [2.2.1 Step 1](#Step_1)
-        *   [2.2.2 Step 2](#Step_2)
-        *   [2.2.3 Step 3](#Step_3)
-        *   [2.2.4 Step 4](#Step_4)
-        *   [2.2.5 Step 5](#Step_5)
     *   [2.3 Xfce4](#Xfce4)
 
 ## Using Tilda
 
-[Tilda](/index.php/Tilda "Tilda") is a highly customizable terminal emulator. The author is inspired by classical terminals featured in first person shooter games, Quake, Doom and Half-Life to name a few, where the terminal has no border and is hidden from the desktop till a key or keys are pressed. To achieve the desired look, edit the configurations as follows:
+[Tilda](/index.php/Tilda "Tilda") is a highly customizable GTK based drop-down terminal emulator, inspired by terminals featured in games like Quake, Doom and Half-Life, where the terminal has no border and is hidden from the desktop till a keyboard shortcut is pressed. To achieve the desired look, edit the configuration as follows:
 
-1.  Under *General* tab, **uncheck** "Always on Top".
-2.  Under *Appearance* you can edit the **height** and **width** to your liking, but make sure you **check** "Enable Transparency" and make the "Level of Transparency" **100%**.
-3.  Under *Colors* tab, **chose** "Green on Black" or "Personalize".
-4.  Under *Scrolling* you must **select** "Disabled".
+1.  Under the *General* tab, uncheck *Always on Top*.
+2.  Under *Appearance* you can edit the height and width to your liking, but make sure you check *Enable Transparency* and make the *Level of Transparency* 100%.
+3.  Under *Colors* tab, chose *Green on Black* or *Personalize*.
+4.  Under *Scrolling* you select *Disabled*.
 
-## The Professional Way
+## Setup by desktop environment
 
 ### Openbox, Compiz and alike
 
-With versatile window managers like [Openbox](/index.php/Openbox "Openbox") it's easy to create a terminal on your Desktop. Since Tilda brings lot's of easy configuration per GUI, it might be your terminal of choice, if you don't know how to create a transparent terminal otherwise. Right-click on tilda and configure the size to your needs, then set transparency to 100%, uncheck the option to start Tilda hidden.
+With versatile window managers like [Openbox](/index.php/Openbox "Openbox") it is easy to create a terminal on the desktop. *Tilda* is highly configurable and might be your terminal of choice. Right-click on *Tilda* and configure the size to your needs, then set transparency to 100%, uncheck the option to start *Tilda* hidden.
 
-Now you only have to set tilda as "below" according to your window manager. For Compiz, this is done by the "Rules for Windows"-plugin, for Openbox, you'll have to add to the "applications"-section of your a `rc.xml` the following code.
+Now you only have to set *Tilda* as "below" according to your window manager. For Compiz, this is done with the "Rules for Windows"-plugin, for Openbox, add to the "applications"-section of `rc.xml` the following lines:
 
 ```
 <application name="tilda">
@@ -37,34 +32,17 @@ Now you only have to set tilda as "below" according to your window manager. For 
 
 ```
 
-Et voila, you got a transparent terminal the size of your choice on your Desktop, that won't appear in your tasklist and is permanently below.
+Et voila, you have a transparent terminal the size of your choice on your desktop, that will not appear in the tasklist and is permanently below.
 
 ### Gnome
 
-With the use of devilspie we will have more control over the placement and the behavior over the terminal window. What is Devilspie? *Devil's Pie can be configured to detect windows as they are created, and match the window to a set of rules. If the window matches the rules, it can perform a series of actions on that window. For example, I can make all windows created by X-Chat appear on all workspaces, and the main Gkrellm1 window does not appear in the pager or task list.*
+It is proposed here to install the [devilspie](https://www.archlinux.org/packages/?name=devilspie) package which provides control over the placement and the behavior of the terminal window. It can be configured to detect windows as they are created, and match the window to a set of rules. If the window matches the rules, it can perform a series of actions on that window.
 
-#### Step 1
+Follow the steps below to configure *devilspie* to catch the terminal emulator on the fly and setup its style as desired:
 
-Install the [devilspie](https://www.archlinux.org/packages/?name=devilspie) package.
+	1\. Create a *devilspie* configuration file: it has the extension *.ds* and is within the `~/.devilspie` folder. This is the default location for configuration.
 
-#### Step 2
-
-Make a hidden directory on your home folder:
-
-```
-$ mkdir ~/.devilspie
-
-```
-
-Make a configuration file with the extension *.ds*, inside devilspie folder. This is where devilspie looks for config file by default when it starts up. Edit the config file with your favorite editor, to dress up the terminal window the way you want it to look like.
-
-```
-$ nano ~/.devilspie/DesktopConsole.ds
-
-```
-
-My config file looks like this:
-
+ `~/.devilspie/DesktopConsole.ds` 
 ```
 (if
 (matches (window_name) "DesktopConsole_1")
@@ -82,15 +60,12 @@ My config file looks like this:
 
 ```
 
-For a complete list of options with devilspie configuration options check out, the comprehensive [list of options](http://foosel.org/linux/devilspie)
+For a complete list of options check the [list of options](http://foosel.org/linux/devilspie).
 
-#### Step 3
-
-Open a gnome-terminal window go to *Edit* > *Profile* > *New*. Name it DesktopConsole_1.
+	2\. Open a gnome-terminal window go to *Edit > Profile > New*. Name it DesktopConsole_1.
 
 Edit the Profile, to achieve our desired look we will need to edit the default configurations:
 
-```
 Under *General* tab, **uncheck** "Show menubar by default in new terminals".
 
 Under *Colors* tab, **choose** "Green on Black" (choose whatever you like, i like this).
@@ -99,23 +74,13 @@ Under *Effects* tab, **choose** "Transparent background". Make sure the scroll i
 
 Under *Scrolling* tab, **select** "Disabled".
 
-```
+	3\. In this step we will setup devilspie and our custom terminal profile to load on bootup.
 
-#### Step 4
-
-In this step we will setup devilspie and our custom terminal profile to load on bootup.
-
-Go to *Systems > Preferences > Sessions*.
-
-Add a new session by using the `+` sign. The first one we will put, "devilspie", in both name and command.
-
-The second session we will put "gnome-terminal", under name and "gnome-terminal --window-with-profile=DesktopConsole_1 --title=DesktopConsole_1", under command. Here we are basically calling gnome-terminal with the custom profile we created earlier.
+Go to *Systems > Preferences > Sessions*. Add a new session by using the `+` sign. The first one we will put, "devilspie", in both name and command. The second session we will put "gnome-terminal", under name and "gnome-terminal --window-with-profile=DesktopConsole_1 --title=DesktopConsole_1", under command. Here we are basically calling gnome-terminal with the custom profile we created earlier.
 
 **Note:** if you have trouble with the window position you can specify the geometry in the command options here.
 
-#### Step 5
-
-Logout/login and you should have your desired look.
+	4\. Logout/login and you should have your desired look.
 
 You can customize more to fit your needs and style, have more than one terminal; I will leave it to your imagination.
 

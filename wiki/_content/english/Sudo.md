@@ -3,7 +3,7 @@ Related articles
 *   [Users and groups](/index.php/Users_and_groups "Users and groups")
 *   [su](/index.php/Su "Su")
 
-[sudo](https://www.sudo.ws/sudo/) allows a system administrator to delegate authority to give certain users—or groups of users—the ability to run commands as root or another user while providing an audit trail of the commands and their arguments.
+[Sudo](https://www.sudo.ws/sudo/) allows a system administrator to delegate authority to give certain users—or groups of users—the ability to run commands as root or another user while providing an audit trail of the commands and their arguments.
 
 Sudo is an alternative to [su](/index.php/Su "Su") for running commands as root. Unlike [su](/index.php/Su "Su"), which launches a root shell that allows all further commands root access, sudo instead grants temporary privilege escalation to a single command. By enabling root privileges only when needed, sudo usage reduces the likelihood that a typo or a bug in an invoked command will ruin the system.
 

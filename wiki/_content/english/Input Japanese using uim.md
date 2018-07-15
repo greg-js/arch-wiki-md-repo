@@ -1,7 +1,7 @@
 Related articles
 
-*   [Internationalization](/index.php/Internationalization "Internationalization")
-*   [Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")
+*   [Localization](/index.php/Localization "Localization")
+*   [Localization/Japanese](/index.php/Localization/Japanese "Localization/Japanese")
 
 This page explains how to get the Japanese input to work using [uim](http://code.google.com/p/uim/).
 

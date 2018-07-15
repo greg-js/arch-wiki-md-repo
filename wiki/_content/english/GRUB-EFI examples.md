@@ -28,7 +28,7 @@ It is well known that different motherboard manufactures implement UEFI differen
 
 ## Apple Macs
 
-Use bless command from within macOS to set `grubx64.efi` as the default boot option. You can also boot from the macOS install disc and launch a Terminal there if you only have Linux installed. In the Terminal, create a directory and mount the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"):
+Use bless command from within macOS to set `grubx64.efi` as the default boot option. You can also boot from the macOS install disc and launch a Terminal there if you only have Linux installed. In the Terminal, create a directory and mount the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"):
 
 ```
 # cd /Volumes
@@ -138,7 +138,7 @@ Shell> bcfg boot add 3 FS0:\EFI\GRUB\grubx64.efi "GRUB"
 
 ```
 
-where `FS0:` is the mapping corresponding to the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") and `3` is the zero based boot entry index.
+where `FS0:` is the mapping corresponding to the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") and `3` is the zero based boot entry index.
 
 **Tip:** UEFI Shell commands usually support `-b` option which makes output pause after each page. `map` lists recognized filesystems (`fs0`, ...) and data storage devices (`blk0`, ...). Run `help -b` to list available commands. See [Unified Extensible Firmware Interface#Important UEFI Shell commands](/index.php/Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_commands "Unified Extensible Firmware Interface") for more information.
 
@@ -187,7 +187,7 @@ These MSI motherboards seem to want the EFI program to exist in a different loca
 
 ### B250 PC MATE / H110I PRO
 
-Install GRUB to the [default/fallback boot path](/index.php/GRUB#EFI_default.2Ffallback_boot_path "GRUB").
+Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default.2Ffallback_boot_path "GRUB").
 
 **Note:** The procedures above probably also work for other MSI motherboards.
 
@@ -203,19 +203,19 @@ See [HP EliteBook 840 G1#UEFI Setup](/index.php/HP_EliteBook_840_G1#UEFI_Setup "
 
 ### S5400 Family
 
-This board can run in BIOS or in EFI mode. BIOS mode requires an MBR partitioned hard drive, EFI a GPT hard drive. Please note that this board operates on the Intel EFI v1.10 specification, and is IA32 (32-bit) only. The normal procedure for UEFI installation can be followed, with the exception of the following changes.
+This board can run in BIOS or in EFI mode. BIOS mode requires an MBR partitioned hard drive, EFI - a GPT hard drive. Please note that this board operates on the Intel EFI v1.10 specification, and is IA32 (32-bit) only. The normal procedure for UEFI installation can be followed, with the exception of the following changes.
 
 *   Instead of using the `grub-efi-x86_64` target, `grub-efi-i386` has to be used
-*   The `bcfg` command is not available for pre-UEFI (v2.0) firmware. A `startup.nsh` file can be used on the root of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") containing the path to the bootloader. For example: `FS0:\EFI\GRUB\grubia32.efi` has to be placed in the `startup.nsh` file on the root of the EFI system partition partition.
+*   The `bcfg` command is not available for pre-UEFI (v2.0) firmware. A `startup.nsh` file can be used on the root of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") containing the path to the bootloader. For example: `FS0:\EFI\GRUB\grubia32.efi` has to be placed in the `startup.nsh` file on the root of the EFI system partition.
 *   The `grub.cfg` file has to be placed in the same directory as the grub EFI binary, otherwise GRUB will not find it and enter the interactive shell.
 
 ## Lenovo
 
 ### K450 IdeaCentre
 
-The "EFI System" partition requires the file `\EFI\BOOT\BOOTx64.efi` to be present in order to boot, otherwise you will receive "Error 1962: No operating system found. Boot sequence will automatically repeat."
+The EFI system partition requires the file `\EFI\BOOT\BOOTx64.efi` to be present in order to boot, otherwise you will receive "Error 1962: No operating system found. Boot sequence will automatically repeat."
 
-Install GRUB to the [default/fallback boot path](/index.php/GRUB#EFI_default.2Ffallback_boot_path "GRUB").
+Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default.2Ffallback_boot_path "GRUB").
 
 This is a workaround for what is likely a bug in the UEFI implementation.
 
@@ -230,4 +230,4 @@ This system whitelists UEFI boot entries. It will only boot from a entry called 
 
 ### X270 Thinkpad
 
-Install GRUB to the [default/fallback boot path](/index.php/GRUB#EFI_default.2Ffallback_boot_path "GRUB").
+Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default.2Ffallback_boot_path "GRUB").

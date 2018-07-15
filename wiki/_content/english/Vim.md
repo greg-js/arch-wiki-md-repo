@@ -70,7 +70,7 @@ To change the default register, you can `:set clipboard=unnamedplus` to use the 
 
 For more information, see `:help 'clipboard'`.
 
-**Tip:** Custom shortcuts for copy and paste operations can be created. See e.g. [[2]](http://superuser.com/a/189198) for binding `ctrl+c`, `ctrl+v` and `ctrl+x`.
+**Tip:** Custom shortcuts for copy and paste operations can be created. See e.g. [[2]](http://superuser.com/a/189198) for binding `Ctrl+c`, `Ctrl+v` and `Ctrl+x`.
 
 ### Syntax highlighting
 

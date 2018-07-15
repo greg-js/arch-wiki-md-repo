@@ -113,7 +113,7 @@ Source: [https://www.malwarepatrol.net/clamav-configuration-guide/](https://www.
 
 ```
 $ clamscan myfile
-$ clamscan --recursive --infected /home # or -r -i
+$ clamscan --recursive --infected /home
 $ clamscan --recursive --infected --exclude-dir='^/sys|^/dev' /
 
 ```

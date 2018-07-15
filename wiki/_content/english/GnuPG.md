@@ -16,7 +16,7 @@ According to the [official website](https://www.gnupg.org/):
     *   [2.2 Configuration files](#Configuration_files)
     *   [2.3 Default options for new users](#Default_options_for_new_users)
 *   [3 Usage](#Usage)
-    *   [3.1 Create key pair](#Create_key_pair)
+    *   [3.1 Create a key pair](#Create_a_key_pair)
     *   [3.2 List keys](#List_keys)
     *   [3.3 Export your public key](#Export_your_public_key)
     *   [3.4 Import a public key](#Import_a_public_key)
@@ -114,7 +114,7 @@ This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and c
 
 **Note:** Whenever a *`user-id`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
 
-### Create key pair
+### Create a key pair
 
 Generate a key pair by typing in a terminal:
 
@@ -223,7 +223,7 @@ $ gpg --recv-keys *key-id*
 
 #### Asymmetric
 
-You need to [#Import a public key](#Import_a_public_key) of a user before encrypting (options `--encrypt` or `-e`) a file or message to that recipient (options `--recipient` or `-r`). Additionally you need to [#Create key pair](#Create_key_pair) if you have not already done so.
+You need to [#Import a public key](#Import_a_public_key) of a user before encrypting (options `--encrypt` or `-e`) a file or message to that recipient (options `--recipient` or `-r`). Additionally you need to [#Create a key pair](#Create_a_key_pair) if you have not already done so.
 
 To encrypt a file with the name *doc*, use:
 
@@ -368,7 +368,7 @@ $ gpg --edit-key *<user-id>*
 
 ```
 
-And answer the following questions it asks (see [#Create key pair](#Create_key_pair) for suggested settings).
+And answer the following questions it asks (see [#Create a key pair](#Create_a_key_pair) for suggested settings).
 
 Save changes
 

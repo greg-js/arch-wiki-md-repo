@@ -45,9 +45,8 @@ Currently the only simple way to completely disable pasting with the middle mous
 
 #### Firefox
 
-To stop firefox from acting on middle mouse clicks, set the following options in `about:config`.
+To stop [Firefox](/index.php/Firefox "Firefox") from acting on middle mouse clicks, set the following options in `about:config`.
 
- `about:config` 
 ```
 middlemouse.contentLoadURL false
 middlemouse.paste false
@@ -56,11 +55,7 @@ middlemouse.paste false
 
 #### GTK
 
- `.config/gtk-3.0` 
-```
-gtk-enable-primary-paste=false
-
-```
+ `~/.config/gtk-3.0`  `gtk-enable-primary-paste=false` 
 
 ## List of clipboard managers
 
@@ -76,7 +71,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Clipboard Indicator** — Clipboard manager extension for GNOME Shell. Adds a clipboard indicator to the top panel, and caches clipboard history.
 
-	[https://extensions.gnome.org/extension/779/clipboard-indicator/](https://extensions.gnome.org/extension/779/clipboard-indicator/) || [https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator](https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator)
+	[https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator](https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator) || [gnome-shell-extension-clipboard-indicator-git](https://aur.archlinux.org/packages/gnome-shell-extension-clipboard-indicator-git/)
 
 *   **ClipIt** — Fork of Parcellite.It has both a command line and GUI mode available.
 
@@ -113,10 +108,6 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 *   **[Greenclip](/index.php/Greenclip "Greenclip")** — Simple clipboard manager to be integrated with rofi
 
 	[https://github.com/erebe/greenclip](https://github.com/erebe/greenclip) || [rofi-greenclip](https://aur.archlinux.org/packages/rofi-greenclip/)
-
-*   **Keepboard** — Cross-platform clipboard manager. Saves text, image and file clipboard items.
-
-	[https://sourceforge.net/projects/keepboard/](https://sourceforge.net/projects/keepboard/) ||
 
 *   **[Klipper](https://en.wikipedia.org/wiki/Klipper "wikipedia:Klipper")** — Full featured clipboard manager for the KDE desktop.
 

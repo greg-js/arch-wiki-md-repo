@@ -53,24 +53,24 @@ A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that 
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
     *   [6.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
-    *   [6.3 EFI default/fallback boot path](#EFI_default.2Ffallback_boot_path)
-    *   [6.4 Enable debug messages](#Enable_debug_messages)
-    *   [6.5 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
-    *   [6.6 msdos-style error message](#msdos-style_error_message)
-    *   [6.7 UEFI](#UEFI)
-        *   [6.7.1 Common installation errors](#Common_installation_errors)
-        *   [6.7.2 Drop to rescue shell](#Drop_to_rescue_shell)
-        *   [6.7.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
-    *   [6.8 Invalid signature](#Invalid_signature)
-    *   [6.9 Boot freezes](#Boot_freezes)
-    *   [6.10 Arch not found from other OS](#Arch_not_found_from_other_OS)
-    *   [6.11 Warning when installing in chroot](#Warning_when_installing_in_chroot)
-    *   [6.12 GRUB loads slowly](#GRUB_loads_slowly)
-    *   [6.13 error: unknown filesystem](#error:_unknown_filesystem)
-    *   [6.14 grub-reboot not resetting](#grub-reboot_not_resetting)
-    *   [6.15 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
-    *   [6.16 Windows 8/10 not found](#Windows_8.2F10_not_found)
-    *   [6.17 VirtualBox EFI mode](#VirtualBox_EFI_mode)
+    *   [6.3 Enable debug messages](#Enable_debug_messages)
+    *   [6.4 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
+    *   [6.5 msdos-style error message](#msdos-style_error_message)
+    *   [6.6 UEFI](#UEFI)
+        *   [6.6.1 Common installation errors](#Common_installation_errors)
+        *   [6.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
+        *   [6.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
+        *   [6.6.4 Default/fallback boot path](#Default.2Ffallback_boot_path)
+    *   [6.7 Invalid signature](#Invalid_signature)
+    *   [6.8 Boot freezes](#Boot_freezes)
+    *   [6.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
+    *   [6.10 Warning when installing in chroot](#Warning_when_installing_in_chroot)
+    *   [6.11 GRUB loads slowly](#GRUB_loads_slowly)
+    *   [6.12 error: unknown filesystem](#error:_unknown_filesystem)
+    *   [6.13 grub-reboot not resetting](#grub-reboot_not_resetting)
+    *   [6.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
+    *   [6.15 Windows 8/10 not found](#Windows_8.2F10_not_found)
+    *   [6.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
 *   [7 See also](#See_also)
 
 ## BIOS systems
@@ -107,7 +107,7 @@ Usually the post-[MBR](/index.php/MBR "MBR") gap (after the 512 byte MBR region 
 
 ```
 
-where `/dev/sd**X**` is the [partitioned](/index.php/Partition "Partition") disk where grub is to be installed (for example, disk `/dev/sda` and **not** partition `/dev/sda1`).
+where `/dev/sd**X**` is the disk where grub is to be installed (for example, disk `/dev/sda` and **not** partition `/dev/sda1`).
 
 Now you must [#Generate the main configuration file](#Generate_the_main_configuration_file).
 
@@ -121,12 +121,12 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 
 **Note:**
 
-*   It is recommended to read and understand the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages.
+*   It is recommended to read and understand the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Under UEFI](/index.php/Arch_boot_process#Under_UEFI "Arch boot process") pages.
 *   When installing to use UEFI it is important to start the install with your machine in UEFI mode. The Arch Linux install media must be UEFI bootable.
 
 ### Check for an EFI System Partition
 
-To boot from a disk using EFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an EFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
+To boot from a disk using UEFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an UEFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
 
 To find out the disk partition scheme and the system partition, use `parted` as root on the disk you want to boot from:
 
@@ -138,24 +138,24 @@ To find out the disk partition scheme and the system partition, use `parted` as 
 The command returns:
 
 *   The disk partition layout: if the disk is GPT, it indicates `Partition Table: gpt`.
-*   The list of partitions on the disk: Look for the ESP in the list, it is a small (about 550 MiB) partition with a `fat32` file system and with the flag `esp` enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100-550 MiB) partition with a `fat32` file system and with the flag `esp` enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
-Once it is found, **take note of the ESP partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") article.
+Once it is found, **take note of the partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") article.
 
 ### Installation
 
 **Note:**
 
-*   UEFI firmware are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the turnarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
+*   UEFI firmwares are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the turnarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
 *   The section assumes you are installing GRUB for x86_64 systems. For IA32 (32-bit) EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
-First, [install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr): *GRUB* is the bootloader while *efibootmgr* creates bootable *.efi* stub entries used by the GRUB installation script.
+First, [install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr): *GRUB* is the bootloader while *efibootmgr* is used by the GRUB installation script to write boot entries to NVRAM.
 
 Then follow the below steps to install GRUB:
 
-1.  [Mount the EFI System Partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") to either `/boot` or `/boot/efi` and in the remainder of this section, substitute `*esp*` with that mount point.
-2.  Choose a bootloader identifier, here named `***GRUB***`. A directory of that name will be created to store the EFI binary bootloader in the ESP and this is the name that will appear in the EFI boot menu to identify the GRUB boot entry.
-3.  Execute the following command to install the GRUB UEFI application `grubx64.efi` to `*esp*/EFI/***GRUB***/` and install its modules to `/boot/grub/x86_64-efi/`.
+1.  [Mount the EFI System Partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") and in the remainder of this section, substitute `*esp*` with its mount point.
+2.  Choose a bootloader identifier, here named `***GRUB***`. A directory of that name will be created to store the EFI binary in the ESP and this is the name that will appear in the UEFI boot menu to identify the GRUB boot entry.
+3.  Execute the following command to install the GRUB EFI application `grubx64.efi` to `*esp*/EFI/***GRUB***/` and install its modules to `/boot/grub/x86_64-efi/`.
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=***GRUB***
@@ -166,13 +166,13 @@ After the above install completed the main GRUB directory is located at `/boot/g
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
-**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a `BOOT` folder inside the `EFI` folder of the EFI partition, but its only purpose is to recreate the EFI boot option for Windows.
+**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` (or `*esp*/EFI/BOOT/BOOTIA32.EFI` for the `i386-efi` target) and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a `BOOT` folder inside the `EFI` folder of the EFI system partition, but its only purpose is to recreate the UEFI boot entry for Windows.
 
 **Note:**
 
 *   While some distributions require a `/boot/efi` or `/boot/EFI` directory, Arch does not.
 *   `--efi-directory` and `--bootloader-id` are specific to GRUB UEFI, `--efi-directory` replaces `--root-directory` which is deprecated.
-*   You might note the absence of a *device_path* option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any *device_path* provided will be ignored by the GRUB UEFI install script. Indeed, UEFI bootloaders do not use a MBR or partition boot sector at all.
+*   You might note the absence of a *device_path* option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any *device_path* provided will be ignored by the GRUB UEFI install script. Indeed, UEFI bootloaders do not use a MBR bootcode or partition boot sector at all.
 
 See [UEFI troubleshooting](#UEFI) in case of problems. Additionally see [GRUB/Tips and tricks#UEFI further reading](/index.php/GRUB/Tips_and_tricks#UEFI_further_reading "GRUB/Tips and tricks").
 
@@ -264,7 +264,7 @@ Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
 
 To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
 
-If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
+If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`.
 
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=UUID=*device-UUID*:cryptroot"` 
 
@@ -386,7 +386,7 @@ menuentry "Other Linux" {
 
 This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI partition and running the bootloader from it.
 
-**Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It will not work in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more info.
+**Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It will not work in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more information.
 
 ```
 if [ "${grub_platform}" == "efi" ]; then
@@ -407,9 +407,9 @@ The `$fs_uuid` command determines the UUID of the EFI partition:
 
  `# grub-probe --target=fs_uuid *esp*/EFI/Microsoft/Boot/bootmgfw.efi`  `1ce5-7f28` 
 
-Alternatively one can run `blkid` (as root) and read the UUID of the EFI partition from there.
+Alternatively one can run `blkid` (as root) and read the UUID of the EFI system partition from there.
 
-The `$hints_string` command will determine the location of the EFI partition, in this case harddrive 0:
+The `$hints_string` command will determine the location of the EFI system partition, in this case harddrive 0:
 
  `# grub-probe --target=hints_string *esp*/EFI/Microsoft/Boot/bootmgfw.efi`  `--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1` 
 
@@ -423,7 +423,7 @@ These two commands assume the ESP Windows uses is mounted at `*esp*`. There migh
 
 Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of hd0,msdos1\. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS/MBR mode:
 
-**Note:** These menuentries will work only in Legacy BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
+**Note:** These menu entries will work only in BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
 In both examples `*XXXXXXXXXXXXXXXX*` is the filesystem UUID which can be found with command `lsblk --fs`.
 
@@ -519,7 +519,7 @@ The GRUB's command shell environment can be used to boot operating systems. A co
 
 *Chainloading* means to load another boot-loader from the current one, ie, chain-loading.
 
-The other bootloader may be embedded at the starting of the disk(MBR) or at the starting of a partition or as an EFI file in the ESP in the case of UEFI.
+The other bootloader may be embedded at the starting of the disk (MBR) or at the starting of a partition or as an EFI binary in the ESP in the case of UEFI.
 
 #### Chainloading a partition
 
@@ -562,7 +562,7 @@ boot
 
 ```
 
-`insmod ntfs` is used for loading the ntfs file system module for loading Windows. (hd0,gpt4) or /dev/sda4 is my EFI System Partition (ESP). The entry in the *chainloader* line specifies the path of the *.efi* file to be chain-loaded.
+`insmod ntfs` is used for loading the ntfs file system module for loading Windows. (hd0,gpt4) or /dev/sda4 is my EFI system partition (ESP). The entry in the *chainloader* line specifies the path of the *.efi* file to be chain-loaded.
 
 #### Normal loading
 
@@ -611,7 +611,7 @@ boot
 
 ```
 
-With a separate boot partition (e.g. when using EFI), again change the lines accordingly:
+With a separate boot partition (e.g. when using UEFI), again change the lines accordingly:
 
 **Note:** Since boot is a separate partition and not part of your root partition, you must address the boot partition manually, in the same way as for the prefix variable.
 
@@ -654,23 +654,6 @@ With recent version of parted, you can use `disk_toggle pmbr_boot` option. After
 ```
 
 More information is available [here](http://www.rodsbooks.com/gdisk/bios.html)
-
-### EFI default/fallback boot path
-
-Some UEFI firmwares require a bootable file at a known location before they will show UEFI NVRAM boot entries. If this is the case, `grub-install` will claim `efibootmgr` has added an entry to boot GRUB, however the entry will not show up in the VisualBIOS boot order selector. The solution is to install GRUB at the default/fallback boot path:
-
-```
-# grub-install --target=x86_64-efi --efi-directory=*esp* **--removable**
-
-```
-
-Alternatively you can move an already installed GRUB EFI executable to the default/fallback path:
-
-```
-# mv *esp*/EFI/grub *esp*/EFI/BOOT
-# mv *esp*/EFI/BOOT/grubx64.efi *esp*/EFI/BOOT/BOOTX64.EFI
-
-```
 
 ### Enable debug messages
 
@@ -798,6 +781,23 @@ Boot0000* Grub HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\grub.ef
 
 ```
 
+#### Default/fallback boot path
+
+Some UEFI firmwares require a bootable file at a known location before they will show UEFI NVRAM boot entries. If this is the case, `grub-install` will claim `efibootmgr` has added an entry to boot GRUB, however the entry will not show up in the VisualBIOS boot order selector. The solution is to install GRUB at the default/fallback boot path:
+
+```
+# grub-install --target=x86_64-efi --efi-directory=*esp* **--removable**
+
+```
+
+Alternatively you can move an already installed GRUB EFI executable to the default/fallback path:
+
+```
+# mv *esp*/EFI/grub *esp*/EFI/BOOT
+# mv *esp*/EFI/BOOT/grubx64.efi *esp*/EFI/BOOT/BOOTX64.EFI
+
+```
+
 ### Invalid signature
 
 If trying to boot Windows results in an "invalid signature" error, e.g. after reconfiguring partitions or adding additional hard drives, (re)move GRUB's device configuration and let it reconfigure:
@@ -816,7 +816,7 @@ If booting gets stuck without any error message after GRUB loading the kernel an
 
 ### Arch not found from other OS
 
-Some have reported that other distributions may have trouble finding Arch Linux automatically with `os-prober`. If this problem arises, it has been reported that detection can be improved with the presence of `/etc/lsb-release`. This file and updating tool is available with the package [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) in the [official repositories](/index.php/Official_repositories "Official repositories").
+Some have reported that other distributions may have trouble finding Arch Linux automatically with `os-prober`. If this problem arises, it has been reported that detection can be improved with the presence of `/etc/lsb-release`. This file and updating tool is available with the package [lsb-release](https://www.archlinux.org/packages/?name=lsb-release).
 
 ### Warning when installing in chroot
 
@@ -866,7 +866,7 @@ A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can p
 
 ### VirtualBox EFI mode
 
-Install GRUB to the [default/fallback boot path](#EFI_default.2Ffallback_boot_path).
+Install GRUB to the [default/fallback boot path](#Default.2Ffallback_boot_path).
 
 See also [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
 

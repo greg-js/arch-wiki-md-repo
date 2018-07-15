@@ -4,7 +4,7 @@ Related articles
 *   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
 *   [Hddtemp](/index.php/Hddtemp "Hddtemp")
 
-*Conky* is a system monitor software for the X Window System. It is available for GNU/Linux and FreeBSD. It is free software released under the terms of the GPL license. Conky is able to monitor many system variables including CPU, memory, swap, disk space, temperature, top, upload, download, system messages, and much more. It is extremely configurable, however, the configuration can be a little hard to understand. *Conky* is a fork of torsmo.
+[Conky](https://en.wikipedia.org/wiki/Conky_(software) is a system monitor software for the X Window System. It is available for GNU/Linux and FreeBSD. It is free software released under the terms of the GPL license. Conky is able to monitor many system variables including CPU, memory, swap, disk space, temperature, top, upload, download, system messages, and much more. It is extremely configurable, however, the configuration can be a little hard to understand. *Conky* is a fork of torsmo.
 
 ## Contents
 

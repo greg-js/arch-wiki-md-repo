@@ -10,7 +10,7 @@ On occasion, users may wish to completely reset an SSD's cells to the same virgi
 *   Back up ALL data of importance prior to continuing! Using this procedure will destroy ALL data on the SSD and render it unrecoverable by even data recovery services! Users will have to repartition the device and restore the data after completing this procedure!
 *   Do **not** proceed with this if the target drive isn't connected directly to a SATA interface. Issuing the Secure Erase command on a drive connected via USB or a SAS/RAID card could potentially brick the drive!
 
-**Note:** Following information has been taken from the official ATA wiki page[[1]](https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase).
+**Note:** The following information has been taken from the [official ATA wiki page](https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase).
 
 ## Contents
 
@@ -49,7 +49,7 @@ If the command output shows "frozen", you may be able to work around it by:
 
 **Note:** When the user password is set the drive will be locked after next power cycle denying normal access until unlocked with the correct password.
 
-**Warning:** If you have a Lenovo laptop, do **not** reboot it after this step. Certain variants of Lenovo's BIOS are susceptible to use a deviating algorithm for calculating the encryption key. After startup the machine will not be able to connect the SSD drive.[[2]](https://jbeekman.nl/blog/2015/03/lenovo-thinkpad-hdd-password/)
+**Warning:** If you have a Lenovo laptop, do **not** reboot it after this step. Certain variants of Lenovo's BIOS are susceptible to use a deviating algorithm for calculating the encryption key. After startup the machine will not be able to connect the SSD drive.[[1]](https://jbeekman.nl/blog/2015/03/lenovo-thinkpad-hdd-password/)
 
 Any password will do, as this should only be temporary. After the secure erase the password will be set back to NULL. In this example, the password is "PasSWorD" as shown:
 
@@ -85,14 +85,14 @@ Security:
 
 ## Step 3 - Issue the ATA Secure Erase command
 
-The final step is to issue the secure erase command, instructing the device's bios to erase its contents. Note for the device used in this example, earlier output states:
+The final step is to issue the secure erase command, instructing the device's BIOS to erase its contents. Note for the device used in this example, earlier output states:
 
 ```
 2min for SECURITY ERASE UNIT. 2min for ENHANCED SECURITY ERASE UNIT.
 
 ```
 
-As per ATA specification the *enhanced* security erase (`--security-erase-enhanced`) performs a more elaborate wipe. If the estimated completion time for both commands is equal, it indicates the drive manufacturer shortcut the specification and uses the same erase function for both. A short time (like 2 minutes) in turn indicates the device is self-encrypting and its bios function will wipe the internal encryption key instead of overwriting all data cells.[[3]](http://security.stackexchange.com/questions/62253/what-is-the-difference-between-ata-secure-erase-and-security-erase-how-can-i-en)
+As per ATA specification the *enhanced* security erase (`--security-erase-enhanced`) performs a more elaborate wipe. If the estimated completion time for both commands is equal, it indicates the drive manufacturer shortcut the specification and uses the same erase function for both. A short time (like 2 minutes) in turn indicates the device is self-encrypting and its BIOS function will wipe the internal encryption key instead of overwriting all data cells.[[2]](http://security.stackexchange.com/questions/62253/what-is-the-difference-between-ata-secure-erase-and-security-erase-how-can-i-en)
 
 **Warning:** Triple check that the correct drive designation is used. There is **no turning back** once the command is confirmed. You have been warned.
 

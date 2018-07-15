@@ -322,7 +322,7 @@ This will list every share available to a certain Windows username on the local 
 What is needed here is first part of the last line, the resource matching the printer description. So to print to the EPSON Stylus printer, one would enter:
 
 ```
-smb://username.password@REGULATOR-PC/EPSON Stylus CX8400 Series
+smb://username:password@REGULATOR-PC/EPSON%20Stylus%20CX8400%20Series
 
 ```
 

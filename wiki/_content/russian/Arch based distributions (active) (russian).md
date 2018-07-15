@@ -14,13 +14,14 @@
     *   [1.7 Chakra](#Chakra)
     *   [1.8 ConnochaetOS](#ConnochaetOS)
     *   [1.9 CTKarchLive](#CTKarchLive)
-    *   [1.10 Elegance](#Elegance)
-    *   [1.11 Kahel OS](#Kahel_OS)
-    *   [1.12 LinHES](#LinHES)
-    *   [1.13 live.linuX-gamers.net](#live.linuX-gamers.net)
-    *   [1.14 Mesk Linux](#Mesk_Linux)
-    *   [1.15 Plugbox Linux](#Plugbox_Linux)
-    *   [1.16 Uzume Linux](#Uzume_Linux)
+    *   [1.10 Ctlos Linux](#Ctlos_Linux)
+    *   [1.11 Elegance](#Elegance)
+    *   [1.12 Kahel OS](#Kahel_OS)
+    *   [1.13 LinHES](#LinHES)
+    *   [1.14 live.linuX-gamers.net](#live.linuX-gamers.net)
+    *   [1.15 Mesk Linux](#Mesk_Linux)
+    *   [1.16 Plugbox Linux](#Plugbox_Linux)
+    *   [1.17 Uzume Linux](#Uzume_Linux)
 *   [2 Мета-дистрибутивы](#.D0.9C.D0.B5.D1.82.D0.B0-.D0.B4.D0.B8.D1.81.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.B8.D0.B2.D1.8B)
     *   [2.1 archiso](#archiso)
     *   [2.2 Archiso-live](#Archiso-live)
@@ -123,6 +124,12 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 *   Домашняя страница: [http://calimeroteknik.free.fr/](http://calimeroteknik.free.fr/)
 *   Документация: [http://calimeroteknik.free.fr/arch-guide/](http://calimeroteknik.free.fr/arch-guide/)
+
+### Ctlos Linux
+
+Легковесный дистрибутив, использующий [Openbox](https://ru.wikipedia.org/wiki/Openbox) и [XFCE](https://xfce.org). Полностью на русском.
+
+*   Домашняя страница: [ctlos.github.io](https://ctlos.github.io)
 
 ### Elegance
 

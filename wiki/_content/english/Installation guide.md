@@ -21,7 +21,7 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wiki
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Time zone](#Time_zone)
-    *   [3.4 Locale](#Locale)
+    *   [3.4 Localization](#Localization)
     *   [3.5 Network configuration](#Network_configuration)
     *   [3.6 Initramfs](#Initramfs)
     *   [3.7 Root password](#Root_password)
@@ -216,9 +216,9 @@ Run [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) to genera
 
 This command assumes the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). See [Time#Time standard](/index.php/Time#Time_standard "Time") for details.
 
-### Locale
+### Localization
 
-Uncomment `en_US.UTF-8 UTF-8` and other needed [localizations](/index.php/Localization "Localization") in `/etc/locale.gen`, and generate them with:
+Uncomment `en_US.UTF-8 UTF-8` and other needed [locales](/index.php/Locale "Locale") in `/etc/locale.gen`, and generate them with:
 
 ```
 # locale-gen

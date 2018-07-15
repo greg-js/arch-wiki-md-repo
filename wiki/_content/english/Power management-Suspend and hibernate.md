@@ -142,11 +142,13 @@ Add acpi_sleep=nonvs kernel flag to your loader, and you are done!
 
 There have been many reports about the screen going black without easily viewable errors or the ability to do anything when going into and coming back from suspend and/or hibernate. These problems have been seen on both laptops and desktops. This is not an official solution, but switching to an older kernel, especially the LTS-kernel, will probably fix this.
 
+Also problem may rise when using hardware watchdog timer (disabled by default, see [[1]](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html#RuntimeWatchdogSec=)). When bugged watchdog timer may reset computer before system able to finish creating the hibernation image.
+
 Sometimes the screen goes black due to device initialization from within the initramfs. Removing any modules you might have in [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") and rebuilding the initramfs, can possibly solve this issue, specially graphics drivers for [early KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"). Initializing such devices before resuming can cause inconsistencies that prevents the system resuming from hibernation. This does not affect resuming from RAM. Also, check this [article](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues) for the best practices to debug suspend/hibernate issues.
 
 For Intel graphics drivers, enabling early KMS may help to solve the blank screen issue. Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for details.
 
-After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[1]](https://bbs.archlinux.org/viewtopic.php?id=234646)
+After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[2]](https://bbs.archlinux.org/viewtopic.php?id=234646)
 
 ### Wake-on-LAN
 
@@ -154,9 +156,9 @@ If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network in
 
 ### Instantaneous wakeups from suspend
 
-For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
+For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[3]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
 
-Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[3]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
+Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
 
 To view the current configuration:
 

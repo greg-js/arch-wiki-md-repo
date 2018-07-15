@@ -1,44 +1,42 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 22 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=497914).
+**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 3 июля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=528667).
 
 Ссылки по теме
 
+*   [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension")
 *   [Конфигурация клавиатуры в консоли](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8 "Конфигурация клавиатуры в консоли")
 *   [Дополнительные клавиши](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8 "Дополнительные клавиши")
 *   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
-*   [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension")
+*   [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts")
 
-Цель этой статьи описать основные настройки клавиатуры в Xorg. Для расширенных тем, таких как изменение раскладки клавиатуры или дополнительные сопоставления клавиш, смотрите статьи [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") или [Дополнительные клавиши](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8 "Дополнительные клавиши") соответственно.
+Эта статья описывает основные настройки клавиатуры в Xorg. Для расширенных тем, таких как изменение раскладки клавиатуры или дополнительные сопоставления клавиш, смотрите статьи [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") или [дополнительные клавиши](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8 "Дополнительные клавиши") соответственно.
+
+Сервер Xorg использует [клавиатурное расширение X](/index.php/X_keyboard_extension "X keyboard extension") (XKB) для определения раскладок клавиатуры. Опционально, [xmodmap](/index.php/Xmodmap_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xmodmap (Русский)") можно использовать для прямого доступа к внутренней раскладки клавиатуры, хотя это не рекомендуется для сложных задач. Также можно использовать *localectl* [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") для определения раскладки клавиатуры в сервере Xorg и виртуальной консоли.
+
+**Note:** Параметры XKB могут быть переопределены инструментами, представленными некоторыми окружениями рабочего стола, такими как [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") и [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)").
 
 ## Contents
 
-*   [1 Обзор](#.D0.9E.D0.B1.D0.B7.D0.BE.D1.80)
-*   [2 Просмотр настроек клавиатуры](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [2.1 Сторонние утилиты](#.D0.A1.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
-*   [3 Настройка раскладки клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [3.1 Через setxkbmap](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_setxkbmap)
-    *   [3.2 Через конфигурационные файлы X](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_X)
-        *   [3.2.1 С помощью localectl](#.D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_localectl)
-*   [4 Часто используемые опции XKB](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B8_XKB)
-    *   [4.1 Переключение раскладок клавиатуры](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [4.2 Завершение Xorg по сочетанию клавиш Ctrl+Alt+Backspace](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_Xorg_.D0.BF.D0.BE_.D1.81.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8E_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88_Ctrl.2BAlt.2BBackspace)
-    *   [4.3 Блокировка клавиши Caps Lock нажатием левого Control](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Caps_Lock_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D0.B5.D0.BC_.D0.BB.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_Control)
-    *   [4.4 Включение кнопок мышки](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.BC.D1.8B.D1.88.D0.BA.D0.B8)
-    *   [4.5 Configuring compose key](#Configuring_compose_key)
-        *   [4.5.1 Сочетания клавиш](#.D0.A1.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
-    *   [4.6 Значки валют на других кнопках](#.D0.97.D0.BD.D0.B0.D1.87.D0.BA.D0.B8_.D0.B2.D0.B0.D0.BB.D1.8E.D1.82_.D0.BD.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0.D1.85)
-    *   [4.7 Переключение состояния сразу после нажатия клавиши Caps Lock](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_.D1.81.D1.80.D0.B0.D0.B7.D1.83_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Caps_Lock)
-        *   [4.7.1 Временное решение](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5)
-*   [5 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
-    *   [5.1 Using xset](#Using_xset)
-    *   [5.2 Using XServer startup options](#Using_XServer_startup_options)
-    *   [5.3 Using XServer options](#Using_XServer_options)
-*   [6 See also](#See_also)
-
-## Обзор
-
-The Xorg server uses the [X keyboard extension](/index.php/X_keyboard_extension "X keyboard extension") (XKB) to define keyboard layouts. Optionally, [xmodmap](/index.php/Xmodmap "Xmodmap") can be used to access the internal keymap table directly, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s *localectl* can be used to define the keyboard layout for both the Xorg server and the virtual console.
-
-**Примечание:** XKB options can be overridden by the tools provided by some desktop environments such as [GNOME (XkbOptions)](/index.php/GNOME#XkbOptions_keyboard_options "GNOME") and [KDE (set keyboard)](/index.php/KDE#Set_keyboard "KDE").
+*   [1 Просмотр настроек клавиатуры](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [1.1 Сторонние утилиты](#.D0.A1.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
+*   [2 Настройка раскладки клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [2.1 Через setxkbmap](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_setxkbmap)
+    *   [2.2 Через конфигурационные файлы X](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_X)
+        *   [2.2.1 С помощью localectl](#.D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_localectl)
+*   [3 Часто используемые опции XKB](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B8_XKB)
+    *   [3.1 Переключение раскладок клавиатуры](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [3.2 Завершение Xorg по сочетанию клавиш Ctrl+Alt+Backspace](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_Xorg_.D0.BF.D0.BE_.D1.81.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8E_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88_Ctrl.2BAlt.2BBackspace)
+    *   [3.3 Перестановка Caps Lock и Левого Control](#.D0.9F.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Caps_Lock_.D0.B8_.D0.9B.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_Control)
+    *   [3.4 Включение кнопок мышки](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.BC.D1.8B.D1.88.D0.BA.D0.B8)
+    *   [3.5 Настройка клавиши Compose](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Compose)
+        *   [3.5.1 Сочетания клавиш](#.D0.A1.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
+    *   [3.6 Значки валют на других кнопках](#.D0.97.D0.BD.D0.B0.D1.87.D0.BA.D0.B8_.D0.B2.D0.B0.D0.BB.D1.8E.D1.82_.D0.BD.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0.D1.85)
+    *   [3.7 Переключение состояния сразу после нажатия клавиши Caps Lock](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_.D1.81.D1.80.D0.B0.D0.B7.D1.83_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Caps_Lock)
+        *   [3.7.1 Временное решение](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5)
+*   [4 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
+    *   [4.1 Using xset](#Using_xset)
+    *   [4.2 Using XServer startup options](#Using_XServer_startup_options)
+    *   [4.3 Using XServer options](#Using_XServer_options)
+*   [5 See also](#See_also)
 
 ## Просмотр настроек клавиатуры
 
@@ -170,9 +168,9 @@ $ localectl --no-convert set-x11-keymap us,ru pc105 dvorak, grp:alt_shift_toggle
 
 ### Переключение раскладок клавиатуры
 
-To be able to easily switch keyboard layouts, first specify multiple layouts between which you want to switch (the first one is the default). Then specify a key (or key combination), which will be used for switching. For example, to switch between a US and a Swedish layout using the `CapsLock` key, use `us,se` as an argument of `XkbLayout` and `grp:caps_toggle` as an argument of `XkbOptions`.
+Чтобы иметь возможность легко переключать раскладки клавиатуры, сначала укажите несколько раскладок, между которыми вы хотите переключиться (первая из них будет по умолчанию). Затем укажите клавишу (или комбинацию клавиш), которую будете использовать для переключения. Например, чтобы переключиться между US и Swedish раскладками с помощью клавиши `CapsLock`, используйте `us,se` как аргумент `XkbLayout` и `grp:caps_toggle` как аргумент `XkbOptions`.
 
-You can use other key combinations than `CapsLock`, they are listed in `/usr/share/X11/xkb/rules/base.lst`, start with `grp:` and end with `toggle`. To get the full list of available options, run the following command:
+Вы можете использовать другие комбинации клавиш, кроме `CapsLock`, они перечислены в `/usr/share/X11/xkb/rules/base.lst`, начинаясь с `grp:` и заканчиваясь на `toggle`. Чтобы получить весь список доступных параметров, запустите следующую команду:
 
 ```
 $ grep "grp:.*toggle" /usr/share/X11/xkb/rules/base.lst
@@ -181,11 +179,11 @@ $ grep "grp:.*toggle" /usr/share/X11/xkb/rules/base.lst
 
 ### Завершение Xorg по сочетанию клавиш Ctrl+Alt+Backspace
 
-By default, the key combination `Ctrl+Alt+Backspace` is disabled. You can enable it by passing `terminate:ctrl_alt_bksp` to `XkbOptions`. This can also be done by binding a key to `Terminate_Server` in `xmodmap` (which undoes any existing `XkbOptions` setting). In order for either method to work, one also needs to have `DontZap` set to "off" in `ServerFlags`; however, from at least version R6.8.0 (year 2004) [[1]](https://www.x.org/archive/X11R6.8.0/doc/xorg.conf.5.html) this is the default.
+По умолчанию комбинация клавиш `Ctrl+Alt+Backspace` отключена. Вы можете включить ее установив `terminate:ctrl_alt_bksp` для `XkbOptions`. Это также можно сделать, привязав клавишу к `Terminate_Server` в `xmodmap` (который отменяет любую существующую настройку `XkbOptions`). Для того, чтобы любой из этих методов работал, необходимо также установить `DontZap` в "off" в `ServerFlags`; однако, по крайней мере, с версии R6.8.0 (2004 год) [[1]](https://www.x.org/archive/X11R6.8.0/doc/xorg.conf.5.html) это значение по умолчанию.
 
-### Блокировка клавиши Caps Lock нажатием левого Control
+### Перестановка Caps Lock и Левого Control
 
-To swap Caps Lock with Left Control key, add `ctrl:swapcaps` to `XkbOptions`. Run the following command to see similar options along with their descriptions:
+Чтобы поменять местами Caps Lock и Левый Control, добавьте `ctrl:swapcaps` в `XkbOptions`. Запустите следующую команду для просмотра похожих параметров вместе с их описанием:
 
 ```
 $ grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
@@ -194,42 +192,42 @@ $ grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
 
 ### Включение кнопок мышки
 
-[Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is disabled by default and has to be manually enabled by passing `keypad:pointerkeys` to `XkbOptions`. This will make the `Shift+NumLock` shortcut toggle mouse keys.
+[Кнопки мыши](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") отключены по умолчанию и должны быть включены вручную добавлением `keypad:pointerkeys` в `XkbOptions`. Это создаст комбинацию клавиш `Shift+NumLock` для включения/выключения кнопок мыши.
 
-See also [X keyboard extension#Mouse control](/index.php/X_keyboard_extension#Mouse_control "X keyboard extension") for advanced configuration.
+Смотрите также [X keyboard extension#Mouse control](/index.php/X_keyboard_extension#Mouse_control "X keyboard extension") для расширенной настройки.
 
-### Configuring compose key
+### Настройка клавиши Compose
 
-Though typically not on traditional keyboards, a [Compose key](https://en.wikipedia.org/wiki/Compose_key "wikipedia:Compose key") can be configured to an existent key.
+Хотя обычно ее нет на традиционных клавиатурах, однако [клавишу Compose](https://en.wikipedia.org/wiki/ru:Compose "wikipedia:ru:Compose") можно настроить на существующую.
 
-The `Compose` key begins a keypress sequence that involves (usually two) additional keypresses. Usage is typically either for entering characters in a language that the keyboard was not designed for, or for other less-used characters that are not covered with the `AltGr` modifier. For example, pressing `Compose` `'` `e` produces `é`, or `Compose` `-` `-` will produce an "em dash": `—`.
+Клавиша `Compose` начинает последовательность нажатия клавиш, которая включает (обычно два) дополнительных нажатия клавиш. Обычно используется либо для ввода символов на языке, для которого не была предназначена клавиатура, либо для других менее используемых символов, которые не покрываются модификатором `AltGr`. Например, нажатие `Compose` `'` `e` производит é, или `Compose` `-` `-` создает "em dash": `—`.
 
-Though a few more eccentric keyboards feature a `Compose` key, its availability is usually through substituting an already existing key to it. For example, to make the `Menu` key a `Compose` key use the [Desktop environment](/index.php/Desktop_environment "Desktop environment") configuration, or pass `compose:menu` to `XkbOptions` (or [setxkbmap](#Using_setxkbmap): `setxkbmap -option compose:menu`). Allowed key substitutions are defined in `/usr/share/X11/xkb/rules/base.lst`:
+Хотя еще несколько эксцентричных клавиатур имеют клавишу `Compose`, ее работоспособность обычно заключается в замене уже существующей клавиши на нее. Например, чтобы сделать клавишу `Menu` клавишей `Compose`, используйте конфигурацию [окружения рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола") или пропишите `compose:menu` в `XkbOptions` (или используйте [setxkbmap](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_setxkbmap): `setxkbmap -option compose:menu`). Разрешенные клавиши для подстановки определены в `/usr/share/X11/xkb/rules/base.lst`:
 
 ```
 $ grep "compose:" /usr/share/X11/xkb/rules/base.lst
 
 ```
 
-If the desired mapping is not found in that file, an alternative is to use [xmodmap](/index.php/Xmodmap "Xmodmap") to map the desired key to the `Multi_key` keysym, which acts as a compose key by default (note that *xmodmap* settings are reset by *setxkbmap*).
+Если желаемое соответствие не найдено в этом файле, альтернативой является использование [xmodmap](/index.php/Xmodmap_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xmodmap (Русский)") для сопоставления нужной клавиши с keysym `Multi_key`, которая работает как клавиша compose по умолчанию (обратите внимание, что настройки xmodmap сбрасываются setxkbmap).
 
 #### Сочетания клавиш
 
-The default combinations for the compose keys depend on the [locale](/index.php/Locale "Locale") configured for the session and are stored in `/usr/share/X11/locale/*used_locale*/Compose`, where `*used_locale*` is for example `en_US.UTF-8`.
+Комбинация по умолчанию для клавиши compose зависит от [локали](/index.php/%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8 "Локали"), установленной для этого сеанса и находящейся в `/usr/share/X11/locale/*используемая_локаль*/Compose`, где `*используемая_локаль*` для примера `en_US.UTF-8`.
 
-You can define your own compose key combinations by copying the default file to `~/.XCompose` and editing it. The compose key works with any of the thousands of valid Unicode characters, including those outside the Basic Multilingual Plane.
+Вы можете определить собственную комбинацию клавиш compose, скопировав стандартный файл в `~/.XCompose` и отредактировав его. Клавиша compose работает с любыми из тысяц действительных символов Unicode, включая те, которые находятся за основной многоязычной плоскостью (Basic Multilingual Plane). Взгляните на справочную страницу (man) [Compose(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Compose.5), в которой объясняется формат файлов XCompose.
 
-However, GTK does not use [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") by default and therefore does not follow `~/.XCompose` keys. This can be fixed by forcing GTK to use XIM by adding `export GTK_IM_MODULE=xim` and/or `export XMODIFIERS="@im=none"` to `~/.xprofile`.
+Однако GTK не использует [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") по умолчанию и поэтому не следует за клавишами `~/.XCompose`. Это можно устранить, заставив GTK использовать XIM, добавлением `export GTK_IM_MODULE=xim` и/или `export XMODIFIERS="@im=none"` в `~/.xprofile`.
 
-**Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](/index.php/SCIM "SCIM"), [UIM](/index.php/UIM "UIM"), [IBus](/index.php/IBus "IBus"), etc. See [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization") for details.
+**Совет:** XIM очень старый, вам может повезти с другими методами ввода: [SCIM](/index.php/SCIM "SCIM"), [UIM](/index.php/UIM "UIM"), [IBus](/index.php/IBus "IBus") и т.д. Для получения дополнительной информации смотрите [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
 
-**Note:** XIM will prevent insertion of Unicode characters with the `Ctrl+Shift+u` combination.
+**Примечание:** XIM предотвратит вставку символов Unicode с комбинацией `Ctrl+Shift+u`.
 
 ### Значки валют на других кнопках
 
-Most European keyboards have a Euro sign (€) printed on on the `5` key. For example, to access it with `Alt+5`, use the `lv3:lalt_switch` and `eurosign:5` options.
+Большинство европейских клавиатур имеют знак Euro (€), напечатанный на клавише `5`. Например, чтобы получить доступ к нему с помощью `Alt+5`, используйте параметры `lv3:lalt_switch` и `eurosign:5`.
 
-The Rupee sign (₹) can be used the same way with `rupeesign:4`.
+Знак рупии (₹) можно использовать также с `rupeesign:4`.
 
 ### Переключение состояния сразу после нажатия клавиши Caps Lock
 

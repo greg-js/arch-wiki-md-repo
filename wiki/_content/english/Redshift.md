@@ -1,6 +1,6 @@
 From the [Redshift project web page](http://jonls.dk/redshift/):
 
-	Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com).
+	[Redshift](https://en.wikipedia.org/wiki/Redshift_(software) adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com).
 
 **Note:**
 
@@ -37,7 +37,7 @@ Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgu
 
 ## Configuration
 
-Redshift will at least need your location to start (unless used with `-O`), meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually.
+Redshift will at least need your location to start (unless `-O` is used), meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually.
 
 Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 

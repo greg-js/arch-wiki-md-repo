@@ -60,6 +60,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.8 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
     *   [10.9 virt-manager has permission issues](#virt-manager_has_permission_issues)
     *   [10.10 Host Lockup After VM Shutdown](#Host_Lockup_After_VM_Shutdown)
+    *   [10.11 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -1162,6 +1163,40 @@ If that does not work make sure your user account is added to the kvm and libvir
 ### Host Lockup After VM Shutdown
 
 This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: the host will experience multiple CPU core lockups (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found in [[3]](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/).
+
+### Host lockup if guest is left running during sleep
+
+VFIO-enabled virtual machines tend to become unstable if left running through a sleep/wakeup cycle and have been known to cause the host machine to lockup when an attempt is then made to shut them down. In order to avoid this, one can simply prevent the host from going into sleep while the guest is running using the following libvirt hook script and systemd unit.
+
+ `/etc/libvirt/hooks/qemu` 
+```
+#!/bin/bash
+
+OBJECT="$1"
+OPERATION="$2"
+SUBOPERATION="$3"
+EXTRA_ARG="$4"
+
+case "$OPERATION" in
+        "prepare")
+                systemctl start libvirt-nosleep@"$OBJECT"
+                ;;
+        "release")
+                systemctl stop libvirt-nosleep@"$OBJECT"
+                ;;
+esac
+
+```
+ `/etc/systemd/system/libvirt-nosleep@.service` 
+```
+[Unit]
+Description=Preventing sleep while libvirt domain "%i" is running
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemd-inhibit --what=sleep --why="Libvirt domain \"%i\" is running" --who=%U --mode=block sleep infinity
+
+```
 
 ## See also
 

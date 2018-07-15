@@ -52,7 +52,7 @@ Version: ThinkPad X1 Carbon 6th
 | [Power management](/index.php/Power_management "Power management") | Yes |  ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | microSD card reader | Yes | scsi_mod |
-| Keyboard Backlight | Yes |  ? |
+| Keyboard Backlight | Yes | thinkpad_acpi |
 | Function/Multimedia Keys | Yes |  ? |
 
 * via [workaround](#TrackPoint_and_Touchpad_issues)

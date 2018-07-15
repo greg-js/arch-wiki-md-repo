@@ -31,7 +31,7 @@ Zobacz [Dm-crypt/Encrypting an entire system (Polski)](/index.php/Dm-crypt/Encry
 
 ## Szyfrowanie urządzenia
 
-[Dm-crypt/Device encryption (Polski)](/index.php/Dm-crypt/Device_encryption_(Polski) "Dm-crypt/Device encryption (Polski)") obejmuje sposób ręcznego wykorzystania dm-crypt do szyfrowania systemu za pomocą komendy [cryptsetup](/index.php/Dm-crypt/Device_encryption#Cryptsetup_usage "Dm-crypt/Device encryption"). Obejmuje przykłady [opcji szyfrowania z dm-crypt,](/index.php/Dm-crypt/Device_encryption#Encryption_options_with_dm-crypt "Dm-crypt/Device encryption") zajmuje się tworzeniem [plików kluczy](/index.php/Dm-crypt/Device_encryption#Key_management "Dm-crypt/Device encryption"), poleceń LUKS dotyczących zarządzania kluczami oraz tworzenia [kopii zapasowych i przywracania](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
+[Dm-crypt/Device encryption (Polski)](/index.php/Dm-crypt/Device_encryption_(Polski) "Dm-crypt/Device encryption (Polski)") obejmuje sposób ręcznego wykorzystania dm-crypt do szyfrowania systemu za pomocą komendy [cryptsetup](/index.php/Dm-crypt/Device_encryption_(Polski)#Wykorzystanie_Cryptsetup "Dm-crypt/Device encryption (Polski)"). Obejmuje przykłady [opcji szyfrowania z dm-crypt,](/index.php/Dm-crypt/Device_encryption_(Polski)#Opcje_szyfrowania_z_dm-crypt "Dm-crypt/Device encryption (Polski)") zajmuje się tworzeniem [plików kluczy](/index.php/Dm-crypt/Device_encryption_(Polski)#Zarz.C4.85dzanie_kluczami "Dm-crypt/Device encryption (Polski)"), poleceń LUKS dotyczących zarządzania kluczami oraz tworzenia [kopii zapasowych i przywracania](/index.php/Dm-crypt/Device_encryption_(Polski)#Kopia_zapasowa_i_przywracanie "Dm-crypt/Device encryption (Polski)").
 
 ## Konfiguracja systemu
 

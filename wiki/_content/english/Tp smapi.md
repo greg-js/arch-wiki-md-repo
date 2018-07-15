@@ -161,8 +161,7 @@ if [ $CURRENTCHARGE -gt 80 ]; then
 fi
 if [ $CURRENTCHARGE -lt 60 ]; then
     cp /etc/acpi/handler.sh.start /etc/acpi/handler.sh    
-    echo 99 > /sys/devices/platform/smapi/BAT0/start_charge_thresh
-    echo 0 > /sys/devices/platform/smapi/BAT0/start_charge_thresh
+      echo 0 > /sys/devices/platform/smapi/BAT0/start_charge_thresh
     exit 0 
 fi
 

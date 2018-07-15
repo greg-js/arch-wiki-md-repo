@@ -45,7 +45,6 @@ If you already know *what* you want to protect and *how* you want to encrypt, yo
     *   [5.3 Cryptographic metadata](#Cryptographic_metadata)
     *   [5.4 Ciphers and modes of operation](#Ciphers_and_modes_of_operation)
     *   [5.5 Plausible deniability](#Plausible_deniability)
-*   [6 See also](#See_also)
 
 ## Why use encryption?
 
@@ -166,11 +165,11 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 
 ##### Summary
 
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+ | Loop-AES | [dm-crypt](/index.php/Dm-crypt "Dm-crypt") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") |
 | Type | block device encryption | block device encryption | block device encryption | block device encryption | stacked filesystem encryption | stacked filesystem encryption |
 | Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | fork of TrueCrypt | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
 | Availability in Arch Linux | must manually compile custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) [extra] (discontinued) or the backwards-compatible [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) [community] | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) [community] | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
-| License | GPL | GPL | TrueCrypt License 3.1[[1]](#See_also) | Apache License 2.0, parts subject to TrueCrypt License v3.0[[1]](#See_also) | GPL | GPL |
+| License | GPL | GPL | TrueCrypt License 3.1 | Apache License 2.0, parts subject to TrueCrypt License v3.0 | GPL | GPL |
 | 
 
 ##### Basic classification
@@ -198,7 +197,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 | Can be used to encrypt swap space | ✔ | ✔ | ✔ | ✔ | ✖ | ✖ |
 | Can be used without pre-allocating a fixed amount of space for the encrypted data container | ✖ | ✖ | ✖ | ✖ | ✔ | ✔ |
 | Can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc. | ✖
-[[2]](#See_also) | ✖ | ✖ | ✖ | ✔ | ✔ |
+[](#cite_note-1) | ✖ | ✖ | ✖ | ✔ | ✔ |
 | Allows offline file-based backups of encrypted files | ✖ | ✖ | ✖ | ✖ | ✔ | ✔ |
 | 
 
@@ -250,9 +249,9 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Multithreading support |  ? | ✔
-[[8]](#See_also) | ✔ | ✔ |  ? |  ? |
+[[5]](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c) | ✔ | ✔ |  ? |  ? |
 | Hardware-accelerated encryption support | ✔ | ✔ | ✔ | ✔ | ✔ | ✔
-[[13]](#See_also) |
+[[6]](https://github.com/vgough/encfs/issues/118) |
 | 
 
 ##### Block device encryption specific
@@ -266,7 +265,7 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
  | eCryptfs | EncFs |
 | Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... | ext3, ext4, xfs (with caveats), jfs, nfs, cifs...
 
-[[5]](https://github.com/vgough/encfs)
+[[7]](https://github.com/vgough/encfs)
 
  |
 | Ability to encrypt filenames | ✔ | ✔ |
@@ -279,21 +278,23 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? |  ? | 2.4 or newer |
 | Encrypted data can also be accessed from Windows | ✔
-(with [[3]](#See_also), [[14]](#See_also)) | ?
-(with [[4]](#See_also), [[14]](#See_also)) | ✔ | ✔ |  ? |  ?
-[[9]](#See_also) |
+(with [CrossCrypt](https://en.wikipedia.org/wiki/CrossCrypt "wikipedia:CrossCrypt"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ?
+(with [FreeOTFE](https://en.wikipedia.org/wiki/FreeOTFE "wikipedia:FreeOTFE"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ✔ | ✔ |  ? |  ?
+[[8]](http://members.ferrara.linux.it/freddy77/encfs.html) |
 | Encrypted data can also be accessed from Mac OS X |  ? |  ? | ✔ | ✔ |  ? | ✔
-[[5]](#See_also) |
+[[9]](https://sites.google.com/a/arg0.net/www/encfs-mac-build) |
 | Encrypted data can also be accessed from FreeBSD |  ? |  ? | ✔
 
 (with VeraCrypt)
 
  | ✔
  |  ? | ✔
-[[6]](#See_also) |
+[[10]](http://www.freshports.org/sysutils/fusefs-encfs/) |
 | Used by |  ? | Debian/Ubuntu installer (system encryption)
 Fedora installer |  ? |  ? | Ubuntu installer (home dir encryption)
-Chromium OS (encryption of cached user data [[7]](#See_also)) |  ? |
+Chromium OS (encryption of cached user data [[11]](https://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)) |  ? |
+
+1.  [^](#Practical_implications) well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one would not actually be using the filesystem (and the features it provides) anymore
 
 ## Preparation
 
@@ -533,7 +534,7 @@ Disk encryption employs "block ciphers", which operate on fixed-length blocks of
 | [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 or 256 bits | *approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits)* |
 | [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) | 64 bits | 32–448 bits | *one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux* |
 | [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 or 256 bits | *developed as successor of Blowfish, but has not attained as much widespread usage* |
-| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bits | 128, 192 or 256 bits | Considered the most secure of the five AES-competition finalists[[10]](#See_also)[[11]](#See_also)[[12]](#See_also). |
+| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bits | 128, 192 or 256 bits | Considered the most secure of the five AES-competition finalists[[12]](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)[[13]](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)[[14]](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf). |
 
 Encrypting/decrypting a sector ([see above](#Basic_principle)) is achieved by dividing it into small blocks matching the cipher's block-size, and following a certain rule-set (a so-called "**mode of operation**") for how to consecutively apply the cipher to the individual blocks.
 
@@ -580,20 +581,3 @@ See also:
 ### Plausible deniability
 
 See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_deniability "wikipedia:Plausible deniability").
-
-## See also
-
-1.  [^](#Summary) see [http://www.truecrypt.org/legal/license](http://www.truecrypt.org/legal/license)
-2.  [^](#Practical_implications) well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one would not actually be using the filesystem (and the features it provides) anymore
-3.  [^](#Compatibility_.26_prevalence) [CrossCrypt](http://www.scherrer.cc/crypt)  - Open Source AES and TwoFish Linux compatible on the fly encryption for Windows XP and Windows 2000
-4.  [^](#Compatibility_.26_prevalence) (1) [FreeOTFE (on sf.net)](http://sourceforge.net/projects/freeotfe.mirror/) (2) [FreeOTFE (archived)](http://web.archive.org/web/20130531062457/http://freeotfe.org/) - supports Windows 2000 and later (for PC), and Windows Mobile 2003 and later (for PDA)
-5.  [^](#Compatibility_.26_prevalence) see [EncFs build instructions for Mac](http://www.arg0.net/encfs-mac-build)
-6.  [^](#Compatibility_.26_prevalence) see [http://www.freshports.org/sysutils/fusefs-encfs/](http://www.freshports.org/sysutils/fusefs-encfs/)
-7.  [^](#Compatibility_.26_prevalence) see [http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)
-8.  [^](#Compatibility_.26_prevalence) [http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c)
-9.  [^](#Compatibility_.26_prevalence) [http://members.ferrara.linux.it/freddy77/encfs.html](http://members.ferrara.linux.it/freddy77/encfs.html)
-10.  [^](#Compatibility_.26_prevalence) [http://csrc.nist.gov/archive/aes/round2/r2report.pdf](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)
-11.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)
-12.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf)
-13.  [^](#Performance_features) [https://github.com/vgough/encfs/issues/118](https://github.com/vgough/encfs/issues/118)
-14.  [^](#Compatibility_.26_prevalence) ~~[DOXBOX](https://github.com/t-d-k/doxbox)~~ renamed into [LibreCrypt](https://github.com/t-d-k/LibreCrypt) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE). Project seems to be abandoned by developer, with multiple open issues.

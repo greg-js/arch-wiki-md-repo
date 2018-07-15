@@ -123,6 +123,10 @@
 
 	[http://wifi-radar.tuxfamily.org/](http://wifi-radar.tuxfamily.org/) || [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar)
 
+*   **wpa-cute** — Is a graphical Qt [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") front end to manage your wireless profiles *only*. It offer to change and add profiles or scan for networks and connect to them by [WPS](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Setup "wikipedia:Wi-Fi Protected Setup").
+
+	[https://github.com/loh-tar/wpa-cute](https://github.com/loh-tar/wpa-cute) || [wpa-cute](https://aur.archlinux.org/packages/wpa-cute/)
+
 See also [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
 
 #### VPN clients

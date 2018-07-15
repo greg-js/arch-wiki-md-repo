@@ -27,7 +27,7 @@ Related articles
     *   [5.2 Fixing the extra topbar that does not disappear when changing resolution/monitors](#Fixing_the_extra_topbar_that_does_not_disappear_when_changing_resolution.2Fmonitors)
     *   [5.3 Fixing gaps around terminal windows](#Fixing_gaps_around_terminal_windows)
 *   [6 Known issues](#Known_issues)
-    *   [6.1 Crashes due to emoji's in some fonts](#Crashes_due_to_emoji.27s_in_some_fonts)
+    *   [6.1 Crashes due to Emojis in some fonts](#Crashes_due_to_Emojis_in_some_fonts)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -230,9 +230,9 @@ This will cause dwm to ignore resize requests from all client windows, not just 
 
 ## Known issues
 
-### Crashes due to emoji's in some fonts
+### Crashes due to Emojis in some fonts
 
-Emoji's in title bars may cause dwm to crash with an error similar to the following:
+Emojis in title bars may cause dwm to crash with an error similar to the following:
 
 ```
 dwm: fatal error: request code=140, error code=16

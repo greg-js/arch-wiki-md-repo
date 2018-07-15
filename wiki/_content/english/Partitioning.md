@@ -291,7 +291,7 @@ For certain drives [Advanced Format](/index.php/Advanced_Format "Advanced Format
 
 ### Converting MBR to GPT
 
-See [fdisk#Convert between MBR and GPT](/index.php/Fdisk#Convert_between_MBR_and_GPT "Fdisk").
+See [gdisk#Convert between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk").
 
 ### GPT Kernel Support
 
