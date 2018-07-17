@@ -53,4 +53,4 @@ Veja [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#Th
 
 **pkgfile** vem com um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") e [timer](/index.php/Systemd/Timers "Systemd/Timers") para sincronização automática da base de dados do pkgfile. Para ativar atualizações automáticas [habilite](/index.php/Habilite "Habilite") `pkgfile-update.timer`.
 
-Por padrão, pkgfile será atualizado diariamente. Para alterar esse agendamento, [edite o arquivo unit](/index.php/Systemd_(Portugu%C3%AAs)#Edi.C3.A7.C3.A3o_de_arquivos_units_referidos "Systemd (Português)").
+Por padrão, pkgfile será atualizado diariamente. Para alterar esse agendamento, [edite o arquivo unit](/index.php/Systemd_(Portugu%C3%AAs)#Editando_units_fornecidas "Systemd (Português)").

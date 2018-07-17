@@ -49,7 +49,7 @@ $ export PATH="/usr/lib/ccache/bin/:$PATH"
 
 ```
 
-Você pode querer adicionar essa linha ao seu arquivo `~/.bashrc` para uso regular.
+Você pode querer definir essa linha como [variável de ambiente](/index.php/Environment_variable "Environment variable") para uso regular.
 
 **Nota:** Isso inevitavelmente habilitará ccache para makepkg assim como se fosse chamado com esse PATH.
 

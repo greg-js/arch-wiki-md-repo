@@ -1,51 +1,45 @@
+Related articles
+
+*   [Help:i18n](/index.php/Help:I18n "Help:I18n")
+*   [IRC channel](/index.php/IRC_channel "IRC channel")
+
 [https://archlinux.org](https://archlinux.org) is the home of the official Arch Linux website, forums, and wiki. However, several unofficial community-run sites are available for international users who would rather communicate in their own language. You can find a list of these communities below.
 
 Please note that our official wiki also supports internationalized content. In addition, we have an international forum where you can post in your native language. These tools can be used in addition to, in parallel with, or as a part of the international communities listed below.
 
+This list is by no means complete. If you know of a community that is not listed, please feel free to add it. If you are looking for a community that doesn't have an existing community, start one or visit the [Other Languages forum](https://bbs.archlinux.org/viewforum.php?id=30).
+
 ## Contents
 
-*   [1 International Communities](#International_Communities)
-    *   [1.1 Brazil](#Brazil)
-    *   [1.2 Chile](#Chile)
-    *   [1.3 China](#China)
-    *   [1.4 Denmark](#Denmark)
-    *   [1.5 France](#France)
-    *   [1.6 Germany](#Germany)
-    *   [1.7 Greece](#Greece)
-    *   [1.8 Hungary](#Hungary)
-    *   [1.9 Iran](#Iran)
-    *   [1.10 Italy](#Italy)
-    *   [1.11 Japan](#Japan)
-    *   [1.12 Lithuania](#Lithuania)
-    *   [1.13 Poland](#Poland)
-    *   [1.14 Romania](#Romania)
-    *   [1.15 Russia](#Russia)
-    *   [1.16 Serbia](#Serbia)
-    *   [1.17 Spain and Latin America (España y América Latina)](#Spain_and_Latin_America_.28Espa.C3.B1a_y_Am.C3.A9rica_Latina.29)
-    *   [1.18 Sweden](#Sweden)
-    *   [1.19 Taiwan](#Taiwan)
-    *   [1.20 Turkey](#Turkey)
-    *   [1.21 Vietnam](#Vietnam)
-*   [2 Related Pages](#Related_Pages)
+*   [1 Brazil](#Brazil)
+*   [2 China](#China)
+*   [3 Denmark](#Denmark)
+*   [4 France](#France)
+*   [5 Germany](#Germany)
+*   [6 Greece](#Greece)
+*   [7 Hungary](#Hungary)
+*   [8 Iran](#Iran)
+*   [9 Italy](#Italy)
+*   [10 Japan](#Japan)
+*   [11 Lithuania](#Lithuania)
+*   [12 Poland](#Poland)
+*   [13 Romania](#Romania)
+*   [14 Russia](#Russia)
+*   [15 Serbia](#Serbia)
+*   [16 Spain and Latin America (España y América Latina)](#Spain_and_Latin_America_.28Espa.C3.B1a_y_Am.C3.A9rica_Latina.29)
+*   [17 Sweden](#Sweden)
+*   [18 Taiwan](#Taiwan)
+*   [19 Turkey](#Turkey)
+*   [20 Ukraine](#Ukraine)
+*   [21 Vietnam](#Vietnam)
 
-## International Communities
-
-This list is by no means complete. If you know of a community that is not listed, please feel free to add it. If you are looking for a community that doesn't have an existing community, start one or visit the [Other Languages forum](https://bbs.archlinux.org/viewforum.php?id=30)
-
-### Brazil
+## Brazil
 
 *   Homepage: [http://archlinux-br.org/](http://archlinux-br.org/)
 *   Forum: [http://forum.archlinux-br.org/](http://forum.archlinux-br.org/)
 *   Wiki: [Main page (Português)](/index.php/Main_page_(Portugu%C3%AAs) "Main page (Português)")
 
-### Chile
-
-*   Homepage (Chilean): [http://archlinux.cl/](http://archlinux.cl/)
-*   Homepage (Hispana): [http://archlinux-es.org](http://archlinux-es.org)
-*   Forum: [http://foro.archlinux.cl/](http://foro.archlinux.cl/)
-*   Wiki: [http://wiki.archlinux.cl/](http://wiki.archlinux.cl/)
-
-### China
+## China
 
 *   Homepage: [https://www.archlinuxcn.org/](https://www.archlinuxcn.org/)
 *   Forum: [https://bbs.archlinuxcn.org/](https://bbs.archlinuxcn.org/)
@@ -53,19 +47,19 @@ This list is by no means complete. If you know of a community that is not listed
 *   Forum: [http://tieba.baidu.com/f?kw=archlinux](http://tieba.baidu.com/f?kw=archlinux)
 *   Wiki: [Main page (简体中文)](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")
 
-### Denmark
+## Denmark
 
 *   Homepage: [http://www.archlinux.dk/](http://www.archlinux.dk/)
 *   Forum: [http://forum.archlinux.dk/](http://forum.archlinux.dk/)
 *   Wiki: [Main page (Dansk)](/index.php/Main_page_(Dansk) "Main page (Dansk)")
 
-### France
+## France
 
 *   Homepage: [http://archlinux.fr/](http://archlinux.fr/)
 *   Forum: [http://forums.archlinux.fr/](http://forums.archlinux.fr/)
 *   Wiki: [http://wiki.archlinux.fr/](http://wiki.archlinux.fr/)
 
-### Germany
+## Germany
 
 *   Homepage: [https://www.archlinux.de/](https://www.archlinux.de/)
 *   Forum: [https://bbs.archlinux.de/](https://bbs.archlinux.de/)
@@ -73,29 +67,29 @@ This list is by no means complete. If you know of a community that is not listed
 *   Arch Linux User Group Berlin: [https://archlinux.berlin/](https://archlinux.berlin/)
 *   Arch Linux User Group Luxembourg: [https://wiki.c3l.lu/doku.php?id=events:alugl](https://wiki.c3l.lu/doku.php?id=events:alugl)
 
-### Greece
+## Greece
 
 *   Homepage: [http://archlinux.gr](http://archlinux.gr)
 *   Wiki: [Main page (Ελληνικά)](/index.php/Main_page_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Main page (Ελληνικά)")
 
-### Hungary
+## Hungary
 
 *   Homepage: [http://archlinux.hu/](http://archlinux.hu/)
 *   Forum: [http://archlinux.hu/forum](http://archlinux.hu/forum)
 
-### Iran
+## Iran
 
 *   Homepage: [http://www.archusers.ir/](http://www.archusers.ir/)
 *   Forums: [http://bbs.archusers.ir/](http://bbs.archusers.ir/)
 *   Wiki: [http://wiki.archusers.ir/](http://wiki.archusers.ir/)
 
-### Italy
+## Italy
 
 *   Homepage: [http://www.archlinux.it/](http://www.archlinux.it/)
 *   Forum: [http://www.archlinux.it/forum](http://www.archlinux.it/forum)
 *   Wiki: [Main page (Italiano)](/index.php/Main_page_(Italiano) "Main page (Italiano)")
 
-### Japan
+## Japan
 
 *   Homepage: [https://www.archlinux.jp/](https://www.archlinux.jp/)
 *   Forum: [https://bbs.archlinux.jp/](https://bbs.archlinux.jp/)
@@ -104,36 +98,36 @@ This list is by no means complete. If you know of a community that is not listed
 *   Planet: [https://planet.archlinux.jp/](https://planet.archlinux.jp/)
 *   Projects: [https://github.com/ArchLinuxJP](https://github.com/ArchLinuxJP)
 
-### Lithuania
+## Lithuania
 
 *   Homepage: [http://www.archlinux.lt/](http://www.archlinux.lt/)
 *   Forum: [http://sls.archlinux.lt/](http://sls.archlinux.lt/)
 *   Wiki: [Main page (Lietuviškai)](/index.php/Main_page_(Lietuvi%C5%A1kai) "Main page (Lietuviškai)")
 
-### Poland
+## Poland
 
 *   Forum: [http://forum.archlinux.org.pl/](http://forum.archlinux.org.pl/)
 *   Wiki: [Main page (Polski)](/index.php/Main_page_(Polski) "Main page (Polski)")
 
-### Romania
+## Romania
 
 *   Homepage: [http://archlinux.ro/](http://archlinux.ro/)
 *   Forum: [http://bbs.archlinux.ro/](http://bbs.archlinux.ro/)
 *   Wiki: [http://wiki.archlinux.ro/](http://wiki.archlinux.ro/)
 
-### Russia
+## Russia
 
 *   Homepage: [http://archlinux.org.ru/](http://archlinux.org.ru/)
 *   Forum: [http://archlinux.org.ru/forum](http://archlinux.org.ru/forum)
 *   Wiki: [Main page (Русский)](/index.php/Main_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Main page (Русский)")
 
-### Serbia
+## Serbia
 
 *   Homepage: [http://archlinux.rs/](http://archlinux.rs/)
 *   Forum: [http://bbs.archlinux.rs/](http://bbs.archlinux.rs/)
 *   Wiki: [http://wiki.archlinux.rs/](http://wiki.archlinux.rs/)
 
-### Spain and Latin America (España y América Latina)
+## Spain and Latin America (España y América Latina)
 
 *   Homepage: [http://www.archlinux-es.org/](http://www.archlinux-es.org/)
 *   Forum: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/)
@@ -141,32 +135,31 @@ This list is by no means complete. If you know of a community that is not listed
 *   Planet: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org)
 *   ArchlinuxLatinoamerica: [https://ArchlinuxLatinoamerica.wordpress.com](https://ArchlinuxLatinoamerica.wordpress.com)
 
-### Sweden
+## Sweden
 
 *   Homepage: [http://archlinux.se/](http://archlinux.se/)
-*   Forum: [http://forum.archlinux.se/](http://forum.archlinux.se/) 
-*   Wiki: [http://wiki.archlinux.se/](http://wiki.archlinux.se/) 
 
-### Taiwan
+## Taiwan
 
 *   Homepage: [https://archlinux.tw/](https://archlinux.tw/)
 *   Forum: [https://groups.google.com/forum/#!forum/archlinux-tw-general](https://groups.google.com/forum/#!forum/archlinux-tw-general)
 *   Wiki: [Main page (正體中文)](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")
 
-### Turkey
+## Turkey
 
-*   Homepage : [http://archtr.org/](http://archtr.org/)
-*   Forum  : [https://forum.archtr.org/](https://forum.archtr.org/)
-*   Wiki  : [Arch Linux Official Wiki](https://wiki.archlinux.org/index.php/Ana_sayfa_(T%C3%BCrk%C3%A7e))
+*   Homepage: [https://archtr.org/](https://archtr.org/)
+*   Forum: [https://forum.archtr.org/](https://forum.archtr.org/)
+*   Wiki: [Ana sayfa (Türkçe)](/index.php/Ana_sayfa_(T%C3%BCrk%C3%A7e) "Ana sayfa (Türkçe)")
 
-### Vietnam
+## Ukraine
 
-*   Homepage: [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/) (vietnamese only)
+*   Forum thread: [https://bbs.archlinux.org/viewtopic.php?id=27189](https://bbs.archlinux.org/viewtopic.php?id=27189)
+*   Telegram chat: [https://t.me/archlinux_ukraine](https://t.me/archlinux_ukraine)
+*   Ukrainian Linux community forum: [https://linux.org.ua/](https://linux.org.ua/)
+
+## Vietnam
+
+*   Homepage: [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/) (Vietnamese only)
 *   Wiki: [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/)
 *   Projects: [http://github.com/archlinuxvn/](http://github.com/archlinuxvn/)
 *   Mailing list: [http://groups.google.com/group/archlinuxvn/](http://groups.google.com/group/archlinuxvn/)
-
-## Related Pages
-
-*   [IRC channels](/index.php/IRC_channels "IRC channels")
-*   [Help:i18n#Languages](/index.php/Help:I18n#Languages "Help:I18n")

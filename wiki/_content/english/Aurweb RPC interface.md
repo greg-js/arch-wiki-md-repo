@@ -2,7 +2,7 @@ Related articles
 
 *   [Official repositories web interface](/index.php/Official_repositories_web_interface "Official repositories web interface")
 
-The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call "w:Remote procedure call") interface for the [AUR](/index.php/AUR "AUR"). Queries are send as HTTP GET requests and the server responds with [JSON](http://www.json.org/).
+The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call "wikipedia:Remote procedure call") interface for the [AUR](/index.php/AUR "AUR"). Queries are send as HTTP GET requests and the server responds with [JSON](http://www.json.org/).
 
 **Note:** This article describes v5 of the RPC Interface API, as updated with AUR v4.7.0 on July 7, 2018.
 

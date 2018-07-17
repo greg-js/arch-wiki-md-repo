@@ -198,7 +198,7 @@ However this keymap is only active for the current session. In order to load the
 
 ## Adjusting typematic delay and rate
 
-The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed and held in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. These values can be changed using the *kbdrate* command. Note that these settings are configured seperately for the virtual console and [for Xorg](/index.php/Keyboard_configuration_in_Xorg#Adjusting_typematic_delay_and_rate "Keyboard configuration in Xorg").
+The *typematic delay* indicates the amount of time (typically in milliseconds) a key needs to be pressed and held in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. These values can be changed using the *kbdrate* command. Note that these settings are configured separately for the virtual console and [for Xorg](/index.php/Keyboard_configuration_in_Xorg#Adjusting_typematic_delay_and_rate "Keyboard configuration in Xorg").
 
 ```
 # kbdrate [-d *delay*] [-r *rate*]

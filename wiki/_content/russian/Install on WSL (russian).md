@@ -1,73 +1,35 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Install on WSL](/index.php/Install_on_WSL "Install on WSL"). Дата последней синхронизации: 29 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Install_on_WSL&diff=0&oldid=483162).
 
-В Windows 10 есть подсистема, которая эмулирует интерфейс ядра Linux, позволяя запускать обычные приложения Linux. Это похоже на противоположность [Wine](/index.php/Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wine (Русский)"), но на более низком уровне. По умолчанию она поставляется с пользовательским пространством Ubuntu, но ее можно заменить на Arch. Чтобы она работала исправно, для создания некоторых пакетов вам потребуется доступ к существующей установке Arch. Эти инструкции основаны на [этом руководстве](https://www.reddit.com/r/bashonubuntuonwindows/comments/5vnne8/howto_installing_arch_on_wsl_manually/).
+В Windows 10 есть подсистема, которая эмулирует интерфейс ядра Linux, позволяя запускать обычные приложения Linux. Это похоже на противоположность [Wine](/index.php/Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wine (Русский)"), но на более низком уровне. Из Microsoft Store можно установить Ubuntu, Debian, Fedora, OpenSUSE, SLES и Kali Linux, но также есть способ установить Arch. Эти инструкции основаны на [этом руководстве](https://github.com/yuk7/ArchWSL).
 
 ## Подготовка
 
-Вы должны запустить Windows 10 creator's update. Если вы еще не используюте подсистему Linux в Windows, следуйте инструкциям [здесь](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide), чтобы включить ее. В основном она включается так:
+Вы должны запустить Windows 10 Fall Creators Update. Если вы еще не используете подсистему Linux в Windows, следуйте инструкциям [здесь](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide), чтобы включить её. В основном она включается так:
 
 *   Режим разработчика в *Настройки > Обновление и безопасность > Для разработчиков* и
 *   Подсистема Linux в Windows в разделе *"Включить или отключить функции Windows"*.
 
-Если вы уже установили ее, используйте:
+Если вы уже установили её, введите в командной строке, чтобы полностью удалить существующую установку (сначала вы можете сохранить некоторые данные):
 
 ```
 > lxrun /uninstall /full /y
 
 ```
 
-чтобы полностью удалить существующую установку (сначала вы можете сохранить некоторые данные).
-
 ## Установка
 
-**Примечание:** Вы также можете установить Ubuntu из [Windows Store](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6), хотя вам необходимо иметь Windows Insider (или запустите предстоящее обновление Fall Creators Update). Смотрите для получения [дополнительной информации](https://blogs.msdn.microsoft.com/commandline/2017/07/10/ubuntu-now-available-from-the-windows-store/).
+Скачайте [архив с установочным файлом](https://github.com/yuk7/ArchWSL/releases/latest) и разархивируйте его в папку, в которую вы хотите установить Arch (иначе при переносе файлов возникнет ошибка).
 
-Откройте командную строку и установите официальную версию Ubuntu:
+Запустите `Arch.exe` с правами администратора, чтобы извлечь `rootfs` и зарегистрировать дистрибутив в WSL.
 
-```
-> lxrun /install /y
+**Примечание:** Имя файла *.exe используется для названия устанавливаемого дистрибутива Linux. При желании его можно поменять.
 
-```
+Теперь вы можете запускать Arch из командной строки, введя `bash ~` или создав ярлык на `Arch.exe`.
 
-Запустите bash:
-
-```
-> bash ~
+Установите необходимые пакеты Arch:
 
 ```
-
-Скачайте Arch bootstrap .tar.gz с [Arch Linux загрузок](https://www.archlinux.org/download/) и распакуйте его:
-
-```
-$ tar -zxvf /mnt/c/Users/*имя пользователя*/Downloads/archlinux-bootstrap-2017.06.01-x86_64.tar.gz
-
-```
-
-Раскомментируйте сервер в `~/root.x86_64/etc/pacman.d/mirrorlist`.
-
-Сделайте WSL autogenerate `/etc/resolv.conf`:
-
-```
-$ echo "# Этот файл автоматически генерируется WSL. Чтобы остановить автоматическое создание этого файла, удалите эту строку." > ~/root.x86_64/etc/resolv.conf
-
-```
-
-Выйдите из всех приглашений bash, которые вы открыли.
-
-В проводнике Windows перейдите к `C:\Users\*имя пользователя*\AppData\Local\lxss\rootfs` и удалите `bin`, `etc`, `lib`, `lib64`, `sbin`, `usr` и `var`.
-
-Теперь переместите (не копируйте) те же папки из `C:\Users\*имя пользователя*\AppData\Local\lxss\root\root.x86_64` в `C:\Users\*имя пользователя*\AppData\Local\lxss\rootfs`
-
-Используя компьютерную сборку Linux [fakeroot-tcp](https://aur.archlinux.org/packages/fakeroot-tcp/) и [glibc-wsl](https://aur.archlinux.org/packages/glibc-wsl/) скопируйте пакеты на ваш ПК с ОС Windows. *glibc-wsl* имеет обходное решение для [этой ошибки](https://github.com/Microsoft/BashOnWindows/issues/1878), а *fakeroot-tcp* необходим, пока не будет полностью реализована System V IPC [(смотрите здесь)](https://github.com/Microsoft/BashOnWindows/issues/1016). Этот шаг будет лишним, если эти ошибки будут исправлены.
-
-Откройте снова bash и установите Arch:
-
-```
-# pacman-key --init
-# pacman-key --populate archlinux
-# pacman -U /mnt/c/Users/*имя пользователя*/Downloads/glibc-wsl-2.25-2-x86_64.pkg.tar.xz
-# pacman -U /mnt/c/Users/*имя пользователя*/Downloads/fakeroot-tcp-1.21-2-x86_64.pkg.tar.xz
-# pacman -Syyu base base-devel
+# pacman -Syyu base base-devel --needed
 
 ```
 
@@ -80,9 +42,17 @@ $ echo "# Этот файл автоматически генерируется 
 
 ```
 
-Задайте пользователю по умолчанию, выполнив следующее в командной строке Windows:
+Задайте пользователя по умолчанию, выполнив следующее в командной строке Windows:
 
 ```
 > lxrun /setdefaultuser *имя пользователя*
+
+```
+
+Прежде, чем использовать pacman, пожалуйста, инициализируйте связку ключей:
+
+```
+# pacman-key --init
+# pacman-key --populate
 
 ```

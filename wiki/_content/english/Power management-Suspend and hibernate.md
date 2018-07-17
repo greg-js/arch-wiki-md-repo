@@ -28,10 +28,11 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [3.3 Configure the initramfs](#Configure_the_initramfs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 ACPI_OS_NAME](#ACPI_OS_NAME)
-    *   [4.2 VAIO Users](#VAIO_Users)
+    *   [4.2 VAIO users](#VAIO_users)
     *   [4.3 Suspend/hibernate doesn't work, or not consistently](#Suspend.2Fhibernate_doesn.27t_work.2C_or_not_consistently)
     *   [4.4 Wake-on-LAN](#Wake-on-LAN)
     *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
+    *   [4.6 System does not power off when hibernating](#System_does_not_power_off_when_hibernating)
 
 ## Low level interfaces
 
@@ -134,21 +135,21 @@ The value of `*swap_file_offset*` can also be obtained by running `swap-offset *
 
 You might want to tweak your **DSDT table** to make it work. See [DSDT](/index.php/DSDT "DSDT") article
 
-### VAIO Users
+### VAIO users
 
-Add acpi_sleep=nonvs kernel flag to your loader, and you are done!
+Add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_sleep=nonvs` to your bootloader.
 
 ### Suspend/hibernate doesn't work, or not consistently
 
 There have been many reports about the screen going black without easily viewable errors or the ability to do anything when going into and coming back from suspend and/or hibernate. These problems have been seen on both laptops and desktops. This is not an official solution, but switching to an older kernel, especially the LTS-kernel, will probably fix this.
 
-Also problem may rise when using hardware watchdog timer (disabled by default, see [[1]](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html#RuntimeWatchdogSec=)). When bugged watchdog timer may reset computer before system able to finish creating the hibernation image.
+Also problem may rise when using hardware watchdog timer (disabled by default, see `RuntimeWatchdogSec=` in [systemd-system.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-system.conf.5#OPTIONS)). When bugged watchdog timer may reset computer before system able to finish creating the hibernation image.
 
 Sometimes the screen goes black due to device initialization from within the initramfs. Removing any modules you might have in [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") and rebuilding the initramfs, can possibly solve this issue, specially graphics drivers for [early KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"). Initializing such devices before resuming can cause inconsistencies that prevents the system resuming from hibernation. This does not affect resuming from RAM. Also, check this [article](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues) for the best practices to debug suspend/hibernate issues.
 
 For Intel graphics drivers, enabling early KMS may help to solve the blank screen issue. Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for details.
 
-After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[2]](https://bbs.archlinux.org/viewtopic.php?id=234646)
+After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[1]](https://bbs.archlinux.org/viewtopic.php?id=234646)
 
 ### Wake-on-LAN
 
@@ -156,9 +157,9 @@ If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network in
 
 ### Instantaneous wakeups from suspend
 
-For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[3]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
+For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
 
-Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
+Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[3]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
 
 To view the current configuration:
 
@@ -183,3 +184,15 @@ The relevant devices are `EHC1`, `EHC2` and `XHC` (for USB 3.0). To toggle their
 ```
 
 This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [BBS thread](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.
+
+### System does not power off when hibernating
+
+When you hibernate your system, the system should power off (after saving the state on the disk). Sometimes, you might see the power LED is still glowing. If that happens, it might be instructive to set the `HibernateMode` to `shutdown` in [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5):
+
+ `/etc/systemd/sleep.conf.d/hibernatemode.conf` 
+```
+[Sleep]
+HibernateMode=shutdown
+```
+
+With the above configuration, if every thing else is setup correctly, on invocation of a `systemctl hibernate` the machine will shutdown saving state to disk as it does so.

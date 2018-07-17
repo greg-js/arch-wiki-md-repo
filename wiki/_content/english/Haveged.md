@@ -1,3 +1,7 @@
+Related articles
+
+*   [Rng-tools](/index.php/Rng-tools "Rng-tools")
+
 The [haveged project](http://www.issihosts.com/haveged/) is an attempt to provide an easy-to-use, unpredictable [random number generator](/index.php/Random_number_generator "Random number generator") based upon an adaptation of the HAVEGE algorithm. Haveged was created to remedy low-entropy conditions in the Linux random device that can occur under some workloads, especially on headless servers.
 
 **Warning:** The quality of the generated entropy is not guaranteed and sometimes contested (see [LCE: Do not play dice with random numbers](https://lwn.net/Articles/525459/) and [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines)). Use it at your own risk or use it with a hardware based random number generator with the [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) (see [#Alternative](#Alternative) section)

@@ -6,7 +6,7 @@
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
     *   [3.1 Rules](#Rules)
-*   [4 Weblinks](#Weblinks)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -26,7 +26,13 @@ For an in-depth documentation of configuration see the very well commented confi
 
 ## Usage
 
-USBGuard has a core deamon, a CLI, a QT GUI, a DBUS interface and an API via libusbguard. If you want to use the QT GUI or another program communicating via DBUS, enable and start `usbguard-dbus.service`. If you only want to communicate via API (with the CLI tool or another software using libusbguard) enable and start `usbguard.service`.
+USBGuard has a core daemon, a CLI, a QT GUI, a DBUS interface and an API via libusbguard.
+
+If you want to use the QT GUI or another program communicating via DBUS, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `usbguard-dbus.service`.
+
+If you only want to communicate via API (with the CLI tool or another software using libusbguard) [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `usbguard.service`.
+
+**Warning:** Make sure to actually configure the daemon before starting/enabling it or all USB devices will immediately be blocked!
 
 The CLI is available via `usbguard`.
 
@@ -36,11 +42,14 @@ A QT applet can be started with `usbguard-applet-qt` and provides an interactive
 
 ### Rules
 
-To configure usbguard to your needs, you can edit `/etc/usbguard/rules.conf`. However manual editing of the rules is normally not necessary.
+To configure usbguard to your needs, you can edit `/etc/usbguard/rules.conf`. However manual editing of the rules is normally not necessary. You can generate a ruleset based on your currently attached USB devices by executing `usbguard generate-policy > /etc/usbguard/rules.conf` as root.
 
 The rules syntax is formally explained [here](https://github.com/dkopecek/usbguard#rule-language). An example for a hp printer connected via USB can look like this:
 
-`allow id 03f0:0c17 serial "00CNFD234631" name "hp LaserJet 2020" hash "a0ef07fceb6fb77698f79a44a450121m" parent-hash "69d19c1a5733a31e7e6d9530e6k434a6" with-interface { 07:01:03 07:01:02 07:01:01 }`
+```
+allow id 03f0:0c17 serial "00CNFD234631" name "hp LaserJet 2020" hash "a0ef07fceb6fb77698f79a44a450121m" parent-hash "69d19c1a5733a31e7e6d9530e6k434a6" with-interface { 07:01:03 07:01:02 07:01:01 }
+
+```
 
 A rule begins with a policy. `allow` whitelists a device, `block` stops the device from being processed now and `reject` removes the device from the system. Then follows a set of attributes with their options, as detailed below.
 
@@ -60,7 +69,7 @@ A rule begins with a policy. `allow` whitelists a device, `block` stops the devi
 | with-interface interface-type | Match an interface type that the USB device provides. |
 | with-interface [operator] { interface-type interface-type ... } | Match a set of interface types against the set of interfaces that the USB device provides. |
 
-## Weblinks
+## See also
 
 *   [USBGuard Website](https://github.com/dkopecek/usbguard/)
 *   [USBGuard component diagram](https://raw.githubusercontent.com/dkopecek/usbguard/master/doc/usbguard-component-diagram.png)

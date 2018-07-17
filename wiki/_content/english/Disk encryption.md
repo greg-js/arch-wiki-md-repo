@@ -10,16 +10,14 @@ Related articles
 *   [GnuPG](/index.php/GnuPG "GnuPG")
 *   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
 
-This article discusses common techniques available in Arch Linux for cryptographically protecting a logical part of a storage disk (folder, partition, whole disk, ...), so that all data that is written to it is automatically encrypted, and decrypted on-the-fly when read again.
+This article discusses [disk encryption](https://en.wikipedia.org/wiki/Disk_encryption "wikipedia:Disk encryption") software, which on-the-fly encrypts / decrypts data written to / read from a [block device](https://en.wikipedia.org/wiki/Block_device "wikipedia:Block device"), [disk partition](/index.php/Disk_partition "Disk partition") or directory. Examples for block devices are hard drives, flash drives and DVDs.
 
-"Storage disks" in this context can be your computer's hard drive(s), external devices like USB flash drives or DVD's, as well as *virtual* storage disks like loop-back devices or cloud storage *(as long as Arch Linux can address it as a block device or filesystem)*.
-
-If you already know *what* you want to protect and *how* you want to encrypt, you are encouraged to directly browse the *related* how-to articles listed on the right.
+Disk encryption should only be viewed as an adjunct to the existing security mechanisms of the operating system - focused on securing physical access, while relying on *other* parts of the system to provide things like network security and user-based access control.
 
 ## Contents
 
 *   [1 Why use encryption?](#Why_use_encryption.3F)
-*   [2 Data encryption vs system encryption](#Data_encryption_vs_system_encryption)
+*   [2 System data encryption](#System_data_encryption)
 *   [3 Available methods](#Available_methods)
     *   [3.1 Stacked filesystem encryption](#Stacked_filesystem_encryption)
         *   [3.1.1 Cloud-storage optimized](#Cloud-storage_optimized)
@@ -67,44 +65,21 @@ You will still be vulnerable to:
 *   Attackers who are able to gain physical access to the computer while it is running (even if you use a screenlocker), or very shortly *after* it was running, if they have the resources to perform a [cold boot attack](https://en.wikipedia.org/wiki/Cold_boot_attack "wikipedia:Cold boot attack").
 *   A government entity, which not only has the resources to easily pull off the above attacks, but also may simply force you to give up your keys/passphrases using various techniques of [coercion](https://en.wikipedia.org/wiki/Coercion "wikipedia:Coercion"). In most non-democratic countries around the world, as well as in the USA and UK, it may be legal for law enforcement agencies to do so if they have suspicions that you might be hiding something of interest.
 
-A very strong disk encryption setup (e.g. full system encryption with authenticity checking and no plaintext boot partition) is required to stand a chance against professional attackers who are able to tamper with your system *before* you use it. And even then it is doubtful whether it can really prevent all types of tampering (e.g. hardware keyloggers). The best remedy might be [hardware-based full disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") and [Trusted Computing](https://en.wikipedia.org/wiki/Trusted_Computing "wikipedia:Trusted Computing").
+A very strong disk encryption setup (e.g. full system encryption with authenticity checking and no plaintext boot partition) is required to stand a chance against professional attackers who are able to tamper with your system *before* you use it. And even then it cannot prevent all types of tampering (e.g. hardware keyloggers). The best remedy might be [hardware-based full disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") and [Trusted Computing](https://en.wikipedia.org/wiki/Trusted_Computing "wikipedia:Trusted Computing").
 
 **Warning:** Disk encryption also will not protect you against someone simply [wiping your disk](/index.php/Securely_wipe_disk "Securely wipe disk"). [Regular backups](/index.php/Backup_programs "Backup programs") are recommended to keep your data safe.
 
-## Data encryption vs system encryption
+## System data encryption
 
-	Data encryption
-
-	Defined as encrypting only the user's data itself (often located within the `/home` directory, or on removable media like a data DVD), data encryption is the simplest and least intrusive use of disk encryption, but has some significant drawbacks.
-
-	In modern computing systems, there are many background processes that may cache/store information about user data or parts of the data itself in non-encrypted areas of the hard drive, like:
+While encrypting only the user data itself (often located within the home directory, or on removable media like a data DVD), is the simplest and least intrusive method, it has some significant drawbacks. In modern computer systems, there are many background processes that may cache and store information about user data or parts of the data itself in non-encrypted areas of the hard drive, like:
 
 *   swap partitions
     *   (potential remedies: disable swapping, or use [encrypted swap](/index.php/Encrypted_swap "Encrypted swap") as well)
 *   `/tmp` (temporary files created by user applications)
     *   (potential remedies: avoid such applications; mount `/tmp` inside a [ramdisk](/index.php/Ramdisk "Ramdisk"))
-*   `/var` (log files and databases and such; for example, mlocate stores an index of all file names in `/var/lib/mlocate/mlocate.db`)
+*   `/var` (log files and databases and such; for example, [mlocate](/index.php/Mlocate "Mlocate") stores an index of all file names in `/var/lib/mlocate/mlocate.db`)
 
-	In addition, mere data encryption will leave you vulnerable to offline system tampering attacks (e.g. someone installing a hidden program that [records](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") the passphrase you use to unlock the encrypted data, or waits for you to unlock it and then secretly copies/sends some of the data to a location where the attacker can retrieve it).
-
-	System encryption
-
-	Defined as the encryption of the operating system *and* user data, system encryption helps to address some of the inadequacies of data encryption.
-
-	Benefits:
-
-*   prevents unauthorized physical access to (and tampering with) operating system files *(but see warning above)*
-*   prevents unauthorized physical access to private data that may be cached by the system
-
-	Disadvantages:
-
-*   unlocking of the encrypted parts of the disk can no longer happen during or after user login; it must now happen at boot time
-
-In practice, there is not always a clear line between data encryption and system encryption, and many different compromises and customized setups are possible.
-
-In any case, disk encryption should only be viewed as an adjunct to the existing security mechanisms of the operating system - focused on securing offline physical access, while relying on *other* parts of the system to provide things like network security and user-based access control.
-
-See also [Wikipedia:Disk encryption](https://en.wikipedia.org/wiki/Disk_encryption "wikipedia:Disk encryption").
+The solution is to encrypt both system and user data, preventing unauthorized physical access to private data that may be cached by the system. This however comes with the disadvantage that unlocking of the encrypted parts of the disk has to happen at boot time. Another benefit of system data encryption is that complicates install malware like [keyloggers](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") or rootkits for someone with physical access.
 
 ## Available methods
 
@@ -136,7 +111,7 @@ Note that some cloud-storage services offer zero-knowledge encryption directly t
 
 ### Block device encryption
 
-Block device encryption methods, on the other hand, operate *below* the filesystem layer and make sure that everything written to a certain block device (i.e. a whole disk, or a partition, or a file acting as a virtual loop-back device) is encrypted. This means that while the block device is offline, its whole content looks like a large blob of random data, with no way of determining what kind of filesystem and data it contains. Accessing the data happens, again, by mounting the protected container (in this case the block device) to an arbitrary location in a special way.
+Block device encryption methods, on the other hand, operate *below* the filesystem layer and make sure that everything written to a certain block device (i.e. a whole disk, or a partition, or a file acting as a [loop device](https://en.wikipedia.org/wiki/loop_device "wikipedia:loop device")) is encrypted. This means that while the block device is offline, its whole content looks like a large blob of random data, with no way of determining what kind of filesystem and data it contains. Accessing the data happens, again, by mounting the protected container (in this case the block device) to an arbitrary location in a special way.
 
 The following "block device encryption" solutions are available in Arch Linux:
 
@@ -166,9 +141,9 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 ##### Summary
 
  | Loop-AES | [dm-crypt](/index.php/Dm-crypt "Dm-crypt") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") |
-| Type | block device encryption | block device encryption | block device encryption | block device encryption | stacked filesystem encryption | stacked filesystem encryption |
-| Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | fork of TrueCrypt | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
-| Availability in Arch Linux | must manually compile custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) [extra] (discontinued) or the backwards-compatible [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) [community] | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) [community] | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
+| Encryption type | block device | block device | block device | block device | stacked filesystem | stacked filesystem |
+| Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | maintained fork of TrueCrypt | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
+| Availability in Arch Linux | must manually compile custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) (discontinued) or the backwards-compatible [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) | [encfs](https://www.archlinux.org/packages/?name=encfs) |
 | License | GPL | GPL | TrueCrypt License 3.1 | Apache License 2.0, parts subject to TrueCrypt License v3.0 | GPL | GPL |
 | 
 
@@ -310,11 +285,11 @@ Among other things, you will need to answer the following questions:
 *   Professional cryptanalyst who can get repeated read/write access to your system before and after you use it
 *   Anything in between
 
-	What encryption strategy shall be employed?
+	What do you want to encrypt?
 
-*   Data encryption
-*   System encryption
-*   Something in between
+*   only user data
+*   user data and system data
+*   something in between
 
 	How should swap, `/tmp`, etc. be taken care of?
 
@@ -356,30 +331,34 @@ In practice, it could turn out something like:
 
 	Example 1
 
-	Simple data encryption (internal hard drive) using a virtual folder called `~/Private` in the user's home directory encrypted with [EncFS](/index.php/EncFS "EncFS")
-└──> encrypted versions of the files stored on-disk in `~/.Private`
-└──> unlocked on demand with dedicated passphrase
+	Simple user data encryption (internal hard drive) using a virtual folder called `~/Private` in the user's home directory encrypted with [EncFS](/index.php/EncFS "EncFS")
+
+*   encrypted versions of the files stored on-disk in `~/.Private`
+*   unlocked on demand with dedicated passphrase
 
 	Example 2
 
 	Partial system encryption with each user's home directory encrypted with [ECryptfs](/index.php/ECryptfs "ECryptfs")
-└──> unlocked on respective user login, using login passphrase
-└──> `swap` and `/tmp` partitions encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), using an automatically generated per-session throwaway key
-└──> indexing/caching of contents of `/home` by *slocate* (and similar apps) disabled.
+
+*   unlocked on respective user login, using login passphrase
+*   `swap` and `/tmp` partitions encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), using an automatically generated per-session throwaway key
+*   indexing/caching of contents of `/home` by *slocate* (and similar apps) disabled.
 
 	Example 3
 
 	System encryption - whole hard drive except `/boot` partition (however, `/boot` can be encrypted with [GRUB](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29 "Dm-crypt/Encrypting an entire system")) encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS")
-└──> unlocked during boot, using passphrases or USB stick with keyfiles
-└──> Maybe different passphrases/keys per user - independently revocable
-└──> Maybe encryption spanning multiple drives or partition layout flexibility with [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system")
+
+*   unlocked during boot, using passphrases or USB stick with keyfiles
+*   Maybe different passphrases/keys per user - independently revocable
+*   Maybe encryption spanning multiple drives or partition layout flexibility with [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system")
 
 	Example 4
 
 	Hidden/plain system encryption - whole hard drive encrypted with [plain dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-└──> USB-boot, using dedicated passphrase plus USB stick with keyfile
-└──> data integrity checked before mounting
-└──> `/boot` partition located on aforementioned USB stick
+
+*   USB-boot, using dedicated passphrase plus USB stick with keyfile
+*   data integrity checked before mounting
+*   `/boot` partition located on aforementioned USB stick
 
 Many other combinations are of course possible. You should carefully plan what kind of setup will be appropriate for your system.
 

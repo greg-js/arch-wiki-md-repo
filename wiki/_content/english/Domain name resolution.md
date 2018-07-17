@@ -102,35 +102,27 @@ That way you can refer to local hosts such as `mainmachine1.example.com` as simp
 *systemd-resolved* has four different modes for handling the [glibc resolver](#Glibc_resolver)'s *resolv.conf* (described in [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#.2FETC.2FRESOLV.CONF)). We will focus here on the two most relevant modes.
 
 1.  The mode in which *systemd-resolved* is a client of the `/etc/resolv.conf`. This mode preserves `/etc/resolv.conf` and is **compatible** with the procedures described in this page.
-2.  The *systemd-resolved'*s **recommended** mode of operation: the DNS stub file as indicated below contains both the local stub `127.0.0.53` as the only DNS servers and a list of search domains.
+2.  The *systemd-resolved'*s **recommended** mode of operation: the DNS stub file `/run/systemd/resolve/stub-resolv.conf` contains both the local stub `127.0.0.53` as the only DNS servers and a list of search domains.
 
- `/run/systemd/resolve/stub-resolv.conf` 
-```
-nameserver 127.0.0.53
-search lan
+The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by replacing `/etc/resolv.conf` with a symbolic link to the systemd stub:
 
 ```
-
-The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by deleting or renaming the existing `/etc/resolv.conf` and replacing it by a symbolic link to the systemd stub:
-
-```
-# ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+# ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 ```
 
 In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
 
- `/etc/systemd/resolved.conf` 
+ `/etc/systemd/resolved.conf.d/dns_servers.conf` 
 ```
 [Resolve]
 **DNS=91.239.100.100 89.233.43.71**
-...
 ```
 
 In order to check the DNS actually used by *systemd-resolved*, the command to use is:
 
 ```
-$ systemd-resolve --status
+$ resolvectl status
 
 ```
 
@@ -167,6 +159,7 @@ $ drill @*nameserver* TXT *domain*
 If you do not specify a DNS server *drill* uses the nameservers defined in `/etc/resolv.conf`.
 
 *   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
+*   [knot](https://www.archlinux.org/packages/?name=knot) provides [kdig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/kdig.1) and [khost(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/khost.1).
 
 ## See also
 

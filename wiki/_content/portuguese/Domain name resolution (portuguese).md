@@ -62,7 +62,7 @@ Servidores de nome *(nameservers)* listados primeiros são tentados primeiro, at
 
 *   [dhcpcd#resolv.conf](/index.php/Dhcpcd#resolv.conf "Dhcpcd")
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
-*   [NetworkManager (Português)#resolv.conf](/index.php/NetworkManager_(Portugu%C3%AAs)#resolv.conf "NetworkManager (Português)")
+*   [NetworkManager#resolv.conf](/index.php/NetworkManager#resolv.conf "NetworkManager")
 
 Para evitar que programas sobrescrevam `resolv.conf`, você também pode protegê-lo contra gravação definindo o [atributo de arquivo](/index.php/File_attribute "File attribute") imutável.
 

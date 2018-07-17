@@ -167,7 +167,7 @@ There should be no need to unset a Java environment as packages providing them s
 
 ### Fixing the default Java environment
 
-If an invalid Java environment link is set, calling the `archlinux-java fix` command tries to fix it. Also note that if no default Java environment is set, this will look for valid ones and try to set it for you. Officially supported packages "OpenJDK 7" and "OpenJDK 8" will be considered first in this order, then un-official packages from [AUR](/index.php/AUR "AUR").
+If an invalid Java environment link is set, calling the `archlinux-java fix` command tries to fix it. Also note that if no default Java environment is set, this will look for valid ones and try to set it for you. Officially supported package "OpenJDK 8" will be considered first in this order, then other installed environments.
 
 ```
 # archlinux-java fix

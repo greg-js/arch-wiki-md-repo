@@ -61,7 +61,7 @@ Esse documento é um índice anotado de artigos populares e informações import
     *   [11.1 Fontes](#Fontes)
     *   [11.2 Temas GTK+ e Qt](#Temas_GTK.2B_e_Qt)
 *   [12 Melhorias no console](#Melhorias_no_console)
-    *   [12.1 Tab-completion enhancements](#Tab-completion_enhancements)
+    *   [12.1 Melhorias na completação por Tab](#Melhorias_na_completa.C3.A7.C3.A3o_por_Tab)
     *   [12.2 Aliases](#Aliases)
     *   [12.3 Shells alternativos](#Shells_alternativos)
     *   [12.4 Adições ao Bash](#Adi.C3.A7.C3.B5es_ao_Bash)
@@ -99,7 +99,7 @@ Arch é um sistema *rolling release* e tem uma mudança rápida de pacote, entã
 
 Essa seção contém informações úteis relacionadas ao gerenciamento de pacote. Para mais, por favor veja [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)") e [Category:Package management (Português)](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)").
 
-**Nota:** É imprescindível se manter atualizado com as alterações no Arch Linux que exigem intervenção manual *antes* de atualizar seu sistema. Inscreva-se na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou confira a página inicial pelas [últimas notícias do Arch](https://www.archlinux.org/) toda vez antes de atualizar. Alternativamente, você pode achar útil se inscrever [neste feed RSS](https://www.archlinux.org/feeds/news/) ou seguir [@archlinux](https://twitter.com/archlinux) no Twitter.
+**Nota:** É imprescindível se manter atualizado com as alterações no Arch Linux que exigem intervenção manual *antes* de atualizar seu sistema. Inscreva-se na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou confira a página inicial pelas [últimas notícias do Arch](https://www.archlinux.org/) toda vez antes de atualizar. Alternativamente, você pode achar útil se inscrever [neste feed RSS](https://www.archlinux.org/feeds/news/).
 
 ### pacman
 
@@ -131,7 +131,7 @@ Todo pacote nos repositórios junto com aqueles presentes no AUR estão sujeitos
 
 ### Arch User Repository
 
-Enquanto o Arch Build System permite a capacidade de compilar softwares disponíveis nos repositórios oficiais, o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é o equivalente a pacotes enviados por usuários. É um repositório sem suporte de scripts de compilação acessíveis por meio da [interface web](https://aur.archlinux.org/) ou pelo [AurJson](/index.php/AurJson_(Portugu%C3%AAs) "AurJson (Português)").
+Enquanto o Arch Build System permite a capacidade de compilar softwares disponíveis nos repositórios oficiais, o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é o equivalente a pacotes enviados por usuários. É um repositório sem suporte de scripts de compilação acessíveis por meio da [interface web](https://aur.archlinux.org/) ou pela [interface RPC do Aurweb](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb").
 
 ## Inicialização
 
@@ -155,7 +155,7 @@ Num Lock é uma tecla de ativar/desativar localizada na maioria dos teclados. Pa
 
 ## Interface gráfica de usuário
 
-Essa seção fornece orientação para usuários interessados em usar aplicativos gráficos em seu sistema. Veja [Category:X server](/index.php/Category:X_server "Category:X server") para recursos adicionais.
+Essa seção fornece orientação para usuários interessados em usar aplicativos gráficos em seu sistema. Veja [Category:Graphical user interfaces (Português)](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") para recursos adicionais.
 
 ### Servidor de exibição
 
@@ -253,7 +253,7 @@ Esse seção contém dicas de configuração de dispositivo de entrada popular. 
 
 ### Layouts de teclado
 
-Teclados não-americanos ou fora de padrão podem não funcionar como esperado por padrão. Os passos necessários para configurar o mapa de teclas sãos diferentes para console virtual e [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), eles são descritos [Configuração de teclado no console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") e [Configuração de teclado no Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"), respectivamente.
+Teclados não-americanos ou fora de padrão podem não funcionar como esperado por padrão. Os passos necessários para configurar o mapa de teclas sãos diferentes para console virtual e [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), eles são descritos em [Configuração de teclado no console](/index.php/Configura%C3%A7%C3%A3o_de_teclado_no_console "Configuração de teclado no console") e [Configuração de teclado no Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"), respectivamente.
 
 ### Botões de mouse
 
@@ -321,7 +321,7 @@ Uma grande parte dos aplicativos com uma interface gráfica para sistemas Linux 
 
 Essa seção se aplica a pequenas modificações que melhoram a praticidade de programas de console. Para mais, por favor veja [Category:Command shells (Português)](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)").
 
-### Tab-completion enhancements
+### Melhorias na completação por Tab
 
 É recomendado configurar adequadamente [completação por tab](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") estendida imediatamente, conforme instruído no artigo de seu shell escolhido.
 
@@ -331,7 +331,7 @@ Fazer um *alias* de um comando, ou um grupo deles, é uma forma de economizar te
 
 ### Shells alternativos
 
-[Bash](/index.php/Bash "Bash") é o shell que está instalado por padrão em um sistema Arch. A mídia de instalação *live*, porém, usa [zsh](/index.php/Zsh "Zsh") com o pacote complementar [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Veja [Command-line shell (Português)#Lista de shells](/index.php/Command-line_shell_(Portugu%C3%AAs)#Lista_de_shells "Command-line shell (Português)") para mais alternativas.
+[Bash](/index.php/Bash "Bash") é o shell que está instalado por padrão em um sistema Arch. A mídia de instalação *live*, porém, usa [zsh](/index.php/Zsh "Zsh") com o pacote complementar [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Veja [Shell de linha de comando#Lista de shells](/index.php/Shell_de_linha_de_comando#Lista_de_shells "Shell de linha de comando") para mais alternativas.
 
 ### Adições ao Bash
 

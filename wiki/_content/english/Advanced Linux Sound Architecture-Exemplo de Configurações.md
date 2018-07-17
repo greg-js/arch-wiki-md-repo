@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Advanced Linux Sound Architecture/Example Configurations (Português)](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations_(Portugu%C3%AAs) "Advanced Linux Sound Architecture/Example Configurations (Português)")
+*   [Advanced Linux Sound Architecture/Configuration examples (Português)](/index.php/Advanced_Linux_Sound_Architecture/Configuration_examples_(Portugu%C3%AAs) "Advanced Linux Sound Architecture/Configuration examples (Português)")

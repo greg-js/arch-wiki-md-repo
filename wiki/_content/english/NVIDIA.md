@@ -104,7 +104,6 @@ To avoid the possibility of forgetting to update [initramfs](/index.php/Initramf
  `/etc/pacman.d/hooks/nvidia.hook` 
 ```
 [Trigger]
-[Trigger]
 Operation=Install
 Operation=Upgrade
 Operation=Remove

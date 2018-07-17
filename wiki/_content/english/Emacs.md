@@ -468,7 +468,6 @@ Alternatively, you can simply tell emacs to colour systemd files (services, time
  (add-to-list 'auto-mode-alist '("\\.netdev\\'" . conf-unix-mode))
  (add-to-list 'auto-mode-alist '("\\.network\\'" . conf-unix-mode))
  (add-to-list 'auto-mode-alist '("\\.link\\'" . conf-unix-mode))
- (add-to-list 'auto-mode-alist '("\\.automount\\'" . conf-unix-mode))
 
 ```
 

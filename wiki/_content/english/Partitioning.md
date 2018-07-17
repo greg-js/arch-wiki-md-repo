@@ -41,6 +41,7 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [2.3 Example layouts](#Example_layouts)
         *   [2.3.1 UEFI/GPT example layout](#UEFI.2FGPT_example_layout)
         *   [2.3.2 BIOS/MBR example layout](#BIOS.2FMBR_example_layout)
+        *   [2.3.3 BIOS/GPT example layout](#BIOS.2FGPT_example_layout)
 *   [3 Partitioning tools](#Partitioning_tools)
     *   [3.1 fdisk/gdisk](#fdisk.2Fgdisk)
     *   [3.2 GNU Parted](#GNU_Parted)
@@ -205,12 +206,12 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 
 ### Example layouts
 
-**Note:** UEFI/GPT does not have a "boot" flag, booting relies on files in [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI System Partition.
+**Note:** UEFI/GPT does not have a "boot" flag, booting relies on boot entries in NVRAM and files in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI system partition.
 
 #### UEFI/GPT example layout
 
 | Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
-| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 550 MiB |
+| `/boot` or `/boot/efi` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 550 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |
@@ -221,6 +222,14 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 | `/` | `/dev/sda1` | `83`: Linux | Yes | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda2` | `82`: Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
 | `/home` | `/dev/sda3` | `83`: Linux | No | Remainder of the device |
+
+#### BIOS/GPT example layout
+
+| Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
+| None | `/dev/sda1` | `21686148-6449-6E6F-744E-656564454649`: [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
+| `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | `2`: Legacy BIOS bootable | 23 - 32 GiB |
+| `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |
 
 ## Partitioning tools
 

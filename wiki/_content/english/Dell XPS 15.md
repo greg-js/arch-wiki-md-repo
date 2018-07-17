@@ -38,15 +38,14 @@ This page is a work in progress! More info coming soon.
     *   [4.7 Bluetooth](#Bluetooth)
     *   [4.8 BIOS](#BIOS)
     *   [4.9 Webcam](#Webcam)
-    *   [4.10 Power management](#Power_management_2)
-    *   [4.11 Special Touch Keys](#Special_Touch_Keys)
-        *   [4.11.1 Alternative method](#Alternative_method)
-    *   [4.12 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
-    *   [4.13 Touchpad Gestures](#Touchpad_Gestures)
-        *   [4.13.1 libinput](#libinput)
-            *   [4.13.1.1 XPS 9550](#XPS_9550)
-        *   [4.13.2 Synaptics](#Synaptics)
-    *   [4.14 Notes](#Notes)
+    *   [4.10 Special Touch Keys](#Special_Touch_Keys)
+        *   [4.10.1 Alternative method](#Alternative_method)
+    *   [4.11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+    *   [4.12 Touchpad Gestures](#Touchpad_Gestures)
+        *   [4.12.1 libinput](#libinput)
+            *   [4.12.1.1 XPS 9550](#XPS_9550)
+        *   [4.12.2 Synaptics](#Synaptics)
+    *   [4.13 Notes](#Notes)
 *   [5 Howtos & Helpful Info](#Howtos_.26_Helpful_Info)
 
 ## System Settings
@@ -240,6 +239,20 @@ There is [a dedicated page](/index.php/Dell_XPS_15_9560 "Dell XPS 15 9560") for 
 ### Power Management
 
 For the Sandy Bridge model (L502X): Suspend works; hibernation does not (it gets hung on a flashing cursor in text mode and does not even switch video modes).
+
+If hibernation/resume fails, or does not consistently work, try each of the following:
+
+*   [Enable early KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for `intel_agp` and `i915`.
+
+*   Create the following configuration file ([Source](https://bbs.archlinux.org/viewtopic.php?id=204739)):
+
+ `/etc/systemd/sleep.conf` 
+```
+[Sleep]
+HibernateState=disk
+HibernateMode=shutdown
+
+```
 
 ### Sound
 
@@ -575,19 +588,6 @@ Many users have recommend the 01.02.00 BIOS, as it proves to be the most balance
 ### Webcam
 
 If the camera seems that it does not work (black image), try to enable/disable auto-exposure (for example in Skype, the option is in the Video Settings and in guc). In reality, the camera tries to record at 0.5 fps and this is why it seems not to work, even if everything seems normal.
-
-### Power management
-
-Closing the lid causes the system to shutdown. This can be fixed by writing this into `/etc/systemd/sleep.conf`:
-
-```
- [Sleep]
- HibernateState=disk
- HibernateMode=shutdown
-
-```
-
-[Source](https://bbs.archlinux.org/viewtopic.php?id=204739)
 
 ### Special Touch Keys
 

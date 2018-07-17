@@ -8,11 +8,11 @@ Related articles
 
 Consider using [VeraCrypt](https://veracrypt.fr/), a TrueCrypt fork in active development installable with the [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) package; VeraCrypt storage format is compatible with TrueCrypt storage format since version 1.0f.
 
-**Warning:** On 2015/09/26 two critical security issues has been found in **Windows** version of TrueCrypt: CVE-2015-7358 and CVE-2015-7359\. Take this into account if you're planning to use this software to share encrypted volumes between Windows and ArchLinux. More information: [1](https://veracrypt.codeplex.com/SourceControl/changeset/cf4794372e5dea753b6310f1ca6912c6bfa86d45)[2](http://www.theregister.co.uk/2015/09/29/google_flaks_find_admin_elevation_holes_that_gave_truecrypt_audit_the_slip/)
+**Warning:** On 2015/09/26 two critical vulnerabilities were published for the **Windows** version of TrueCrypt: CVE-2015-7358 and CVE-2015-7359\. Take this into account if you're planning to use this software to share encrypted volumes between Windows and Arch Linux. More information: [[2]](http://www.theregister.co.uk/2015/09/29/google_flaks_find_admin_elevation_holes_that_gave_truecrypt_audit_the_slip/),[[3]](https://veracrypt.codeplex.com/SourceControl/changeset/cf4794372e5dea753b6310f1ca6912c6bfa86d45)
 
-**Note:** [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-3 and [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) 1.16-5 cannot mount volumes since the [C++ ABI change](https://www.archlinux.org/news/c-abi-change/) on 2015-12-10, see [FS#47325](https://bugs.archlinux.org/task/47325) and the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=206047). [Downgrading](/index.php/Downgrading "Downgrading") to *truecrypt* 1:7.1a-2 works around the problem. Furthermore, the problem appears to be fixed in 1:7.1a-4.
+**Note:** [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-3 and [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) 1.16-5 cannot mount volumes since the [C++ ABI change](https://www.archlinux.org/news/c-abi-change/) on 2015-12-10, see [FS#47325](https://bugs.archlinux.org/task/47325) and the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=206047). [Downgrading](/index.php/Downgrading "Downgrading") to *truecrypt* 1:7.1a-2 works around the problem. Furthermore, the problem appears to be fixed in [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-4.
 
-TrueCrypt is a free open source on-the-fly encryption (OTFE) program. Some of its features are:
+[TrueCrypt](https://en.wikipedia.org/wiki/Truecrypt "wikipedia:Truecrypt") is a free open source on-the-fly encryption (OTFE) program. Some of its features are:
 
 *   Virtual encrypted disks within files that can be mounted as real disks.
 *   Encryption of an entire hard disk partition or a storage device/medium.
@@ -633,12 +633,7 @@ Alternatively, when mounting volumes locally use:
 
 ```
 
-Since [linux-4.14.4](https://bugs.archlinux.org/task/56781), UTF8 charset is enabled by default. So in order to mount volumes using ISO 8859-1 encoding, you need to set the following option:
-
-```
---fs-options=utf8=no
-
-```
+Since linux-4.14.4, UTF8 charset is enabled by default. So in order to mount volumes using ISO 8859-1 encoding, you need to use `--fs-options=utf8=no`, see [FS#56781](https://bugs.archlinux.org/task/56781).
 
 ### Unmount error (device mapper)
 
@@ -722,4 +717,4 @@ If you cannot modify the filesystem, although permissions seem to be correct, th
 *   [TrueCrypt homepage](http://www.truecrypt.org/)
 *   [HOWTO: Truecrypt Gentoo wiki](http://www.gentoo-wiki.info/HOWTO_Truecrypt)
 *   [Truecrypt tutorial on HowToForge](http://www.howtoforge.com/truecrypt_data_encryption)
-*   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [wp](https://secure.wikimedia.org/wikipedia/en/wiki/Truecrypt))
+*   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [Wikipedia](https://en.wikipedia.org/wiki/Truecrypt "wikipedia:Truecrypt"))

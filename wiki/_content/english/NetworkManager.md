@@ -971,6 +971,8 @@ To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresol
 rc-manager=resolvconf
 ```
 
+**Note:** Do not set `rc-manager=resolvconf` when using [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf). *systemd-resolved* provides limited support for the *resolvconf* interface and NetworkManager supports communicating with systemd-resolved trough D-Bus without using *resolvconf*.
+
 Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 ## See also

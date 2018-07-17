@@ -1,4 +1,4 @@
-[Openresolv](https://roy.marples.name/projects/openresolv) é um framework de gerenciamento de [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)").
+[Openresolv](https://roy.marples.name/projects/openresolv) é uma implementação de [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf"), isto é, framework de gerenciamento de [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)").
 
 ## Instalação
 
@@ -10,11 +10,13 @@ Openresolv fornece [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/re
 
 A execução de `resolvconf -u` vai gerar `/etc/resolv.conf`.
 
+Openresolv também pode ser configurado para passar endereços de servidores DNS para resolvedores [unbound](/index.php/Unbound "Unbound"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [BIND](/index.php/BIND "BIND") e [pdnsd](/index.php/Pdnsd "Pdnsd"). Veja a [documentação oficial](https://roy.marples.name/projects/openresolv/config) para instruções.
+
 ## Usuários
 
 Clientes DHCP autônomos:
 
-*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") tem um *hook* que usa resolvconf se ele estiver instalado.
+*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") tem um *hook* que usa *resolvconf* se ele estiver instalado.
 
 [Gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede"):
 
@@ -24,3 +26,5 @@ Clientes DHCP autônomos:
 Clientes [VPN](/index.php/VPN "VPN"):
 
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")
+*   [strongSwan](/index.php/StrongSwan "StrongSwan")
+*   [WireGuard](/index.php/WireGuard "WireGuard")

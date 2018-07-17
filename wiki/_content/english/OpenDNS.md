@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
+*   [Alternative DNS services#Cisco Umbrella (formerly OpenDNS)](/index.php/Alternative_DNS_services#Cisco_Umbrella_.28formerly_OpenDNS.29 "Alternative DNS services")

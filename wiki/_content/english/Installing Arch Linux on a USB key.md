@@ -45,9 +45,9 @@ There are various ways of installing Arch on a USB stick, depending on the opera
 
 ## Configuration
 
-*   Make sure that `/etc/fstab` includes the correct partition information for `/`, and for any other partitions on the USB key. If the usb key is to be booted on several machines, it is quite likely that devices and number of available hard disks vary. So it is advised to use UUID or label:
+*   Make sure that `/etc/fstab` includes the correct partition information for `/`, and for any other partitions on the USB key. If the usb key is to be booted on several machines, it is quite likely that devices and number of available hard disks vary. So it is advised to use UUID or label.
 
-To get the proper UUIDs for your partitions issue **blkid**
+To get the proper UUIDs for your partitions issue **blkid**.
 
 **Note:**
 
@@ -56,7 +56,9 @@ To get the proper UUIDs for your partitions issue **blkid**
 
 ### GRUB legacy
 
-`menu.lst`, the GRUB legacy configuration file, should be edited to (loosely) match the following: With the static `/dev/sda*X*`:
+`menu.lst`, the GRUB legacy configuration file, should be edited to (loosely) match the following.
+
+With the static `/dev/sda*X*`:
 
 ```
 root (hd0,0)
@@ -85,7 +87,7 @@ initrd /boot/initramfs-linux.img
 
 ### GRUB
 
-On GPT with UEFI installations, make sure you follow the instructions on [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") and include the --removable option as doing otherwise may break existing GRUB installations, as in the below command:
+On GPT with UEFI installations, make sure you follow the instructions on [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") and include the `--removable` option as doing otherwise may break existing GRUB installations, as in the below command:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--removable** --recheck

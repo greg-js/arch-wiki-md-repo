@@ -91,7 +91,7 @@ The manual way is presented in the following subsections. The idea is to either 
 
 ### Using pacman from the host system
 
-[Pacman](https://git.archlinux.org/arch-install-scripts.git/) can be compiled on most Linux distributions, and used directly on the host system to bootstrap Arch Linux. The [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) should run without issues directly from the downloaded sources on any recent distribution.
+[Pacman](https://git.archlinux.org/pacman.git/) can be compiled on most Linux distributions, and used directly on the host system to bootstrap Arch Linux. The [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) should run without issues directly from the downloaded sources on any recent distribution.
 
 Some distributions provide a pacman package in their official repositories which can be used for this purpose. As of June 2018, Gentoo and Fedora are both known to do so. Fedora also provides the *arch-install-scripts*.
 

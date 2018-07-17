@@ -18,9 +18,9 @@
 
 ## Preparation
 
-Plymouth primarily uses [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) to display graphics. If you can't use KMS (e.g. because you are using a proprietary driver) you will need to use [framebuffer](/index.php/Framebuffer#Framebuffer_Resolution "Framebuffer") instead. In EFI/UEFI systems, plymouth can utilize the EFI framebuffer, otherwise [Uvesafb](/index.php/Uvesafb "Uvesafb") is recommended as it can function with widescreen resolutions.
+*Plymouth* primarily uses [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) to display graphics. In EFI/UEFI systems, *plymouth* can utilize the EFI framebuffer. If you can't use KMS in e.g. because you are using a proprietary driver, or if you don't want to use EFI framebuffer, consider using [Uvesafb](/index.php/Uvesafb "Uvesafb") as it works with widescreen resolutions.
 
-If you have neither KMS nor a framebuffer, Plymouth will fall back to text-mode.
+If you have neither KMS nor a framebuffer, *Plymouth* will fall back to text-mode.
 
 ## Installation
 
@@ -28,17 +28,17 @@ Plymouth is available from the [AUR](/index.php/AUR "AUR"): the stable package i
 
 If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/), which compiles gdm with plymouth support.
 
-If you don't see Plymouth Splash Screen or it does not work after setting everything up. Uninstall [plymouth](https://aur.archlinux.org/packages/plymouth/) and install [plymouth-legacy](https://aur.archlinux.org/packages/plymouth-legacy/) to get Plymouth to work.
+If you don't see Plymouth Splash Screen or it does not work after setting everything up, uninstall [plymouth](https://aur.archlinux.org/packages/plymouth/) and install [plymouth-legacy](https://aur.archlinux.org/packages/plymouth-legacy/) to get Plymouth to work.
 
 ### The plymouth hook
 
-Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). It **must** be added **after** `base` and `udev` for it to work:
+Add `plymouth` to the `HOOKS` array in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). It **must** be added **after** `base` and `udev` for it to work:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth [...] "` 
 **Warning:**
 
 *   If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` in order to get to the TTY password prompts.
-*   Using PARTUUID or PARTLABEL in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
+*   Using `PARTUUID` or `PARTLABEL` in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
 *   For a [ZFS encrypted root](/index.php/Installing_Arch_Linux_on_ZFS#Native_encryption "Installing Arch Linux on ZFS"), you **must** install [plymouth-zfs](https://aur.archlinux.org/packages/plymouth-zfs/) and replace `zfs` hook with `plymouth-zfs`
 
 After adding the `plymouth-encrypt` hook, if input goes to the background in plaintext instead of into the password prompt you need to add your (kernel) graphics driver to your initramfs. For example, if using intel:
@@ -70,8 +70,8 @@ Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 
 
 To enable *smooth transition* (if supported) you have to:
 
-1.  Disable your [Display manager](/index.php/Display_manager "Display manager") Unit, e.g. `systemctl disable gdm.service`
-2.  Enable the respective DM-plymouth Unit (GDM, LXDM, SLiM, LightDM, SDDM units provided), e.g. `systemctl enable gdm-plymouth.service`
+1.  [Disable](/index.php/Disable "Disable") your [display manager](/index.php/Display_manager "Display manager") unit, e.g. `gdm.service`
+2.  [Enable](/index.php/Enable "Enable") the respective DM-plymouth unit (GDM, LXDM, SLiM, LightDM, SDDM units provided), e.g. `gdm-plymouth.service`
 
 ### Show Delay
 
@@ -84,7 +84,7 @@ Theme=spinner
 ShowDelay=5
 ```
 
-On systems that boot quickly, you may only see a flicker of your splash theme before your DM or login prompt is ready. You can set ShowDelay to an interval (in seconds) longer than your boot time to prevent this flicker and only show a blank screen. The default is 5 seconds, but you may wish to change this to a lower value to see your splash earlier during boot.
+On systems that boot quickly, you may only see a flicker of your splash theme before your DM or login prompt is ready. You can set `ShowDelay` to an interval (in seconds) longer than your boot time to prevent this flicker and only show a blank screen. The default is 5 seconds, but you may wish to change this to a lower value to see your splash earlier during boot.
 
 ### Changing the Theme
 

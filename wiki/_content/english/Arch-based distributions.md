@@ -31,45 +31,43 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 
 ## Active
 
-*   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/)
-*   [Anarchy Linux](https://anarchy-linux.org/)
-*   [Antergos](https://sourceforge.net/projects/antergos/)
-*   [ArchEX](https://sourceforge.net/projects/archex/)
-*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/)
-*   [Arch Linux 32](https://archlinux32.org/)
-*   [Arch Linux ARM](https://archlinuxarm.org/)
-*   [Archman OS](https://sourceforge.net/projects/archman-os/)
-*   [Archphile](https://sourceforge.net/projects/archphile/)
-*   [ArchStrike](https://archstrike.org/)
-*   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/)
-*   [ArcoLinux](https://sourceforge.net/projects/arcolinux/)
-*   [Artix Linux](https://sourceforge.net/projects/artix-linux/)
-*   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
-*   [BlackArch Linux](https://blackarch.org/)
-*   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)
-*   [Chakra](https://sourceforge.net/projects/chakra/)
-*   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/)
-*   [Ctlos Linux](https://ctlos.github.io/)
-*   [Hyperbola](http://hyperbola.info/)
-*   [KaOS](https://sourceforge.net/projects/kaosx/)
-*   [LinHES](http://linhes.org/)
-*   [MagpieOS](https://sourceforge.net/projects/magpieos/)
-*   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
-*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
-*   [MSYS2](https://sourceforge.net/projects/msys2/)
-*   [Namib](https://sourceforge.net/projects/namib-gnu-linux/)
-*   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/)
-*   [Obarun](https://web.obarun.org/)
-*   [PacBSD](https://www.pacbsd.org/)
-*   [Parabola](https://www.parabola.nu/)
-*   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/)
-*   [RaspArch](https://sourceforge.net/projects/rasparch/)
-*   [Revenge OS](https://sourceforge.net/projects/obrevenge/)
-*   [Sonar](https://sourceforge.net/projects/sonargnulinux/)
-*   [SwagArch](https://swagarch.gitlab.io/)
-*   [TalkingArch](https://talkingarch.tk/)
-*   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/)
-*   [UBOS](http://ubos.net/)
+*   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
+*   [Anarchy Linux](https://anarchy-linux.org/) 
+*   [Antergos](https://sourceforge.net/projects/antergos/) 
+*   [ArchEX](https://sourceforge.net/projects/archex/) 
+*   [Arch Hurd](https://archhurd.org/) 
+*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
+*   [Arch Linux 32](https://archlinux32.org/) 
+*   [Arch Linux ARM](https://archlinuxarm.org/) 
+*   [Archman OS](https://sourceforge.net/projects/archman-os/) 
+*   [Archphile](https://sourceforge.net/projects/archphile/) 
+*   [ArchStrike](https://archstrike.org/) 
+*   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/) 
+*   [ArcoLinux](https://sourceforge.net/projects/arcolinux/) 
+*   [Artix Linux](https://sourceforge.net/projects/artix-linux/) 
+*   [BBQLinux](https://sourceforge.net/projects/bbqlinux/) 
+*   [BlackArch Linux](https://blackarch.org/) 
+*   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/) 
+*   [Chakra](https://sourceforge.net/projects/chakra/) 
+*   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/) 
+*   [Ctlos Linux](https://ctlos.github.io/) 
+*   [Hyperbola](https://www.hyperbola.info/) 
+*   [KaOS](https://sourceforge.net/projects/kaosx/) 
+*   [LinHES](http://linhes.org/) 
+*   [MagpieOS](https://sourceforge.net/projects/magpieos/) 
+*   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/) 
+*   [MSYS2](https://sourceforge.net/projects/msys2/) 
+*   [Namib](https://sourceforge.net/projects/namib-gnu-linux/) 
+*   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/) 
+*   [Obarun](https://web.obarun.org/) 
+*   [PacBSD](https://www.pacbsd.org/) 
+*   [Parabola](https://www.parabola.nu/) 
+*   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/) 
+*   [RaspArch](https://sourceforge.net/projects/rasparch/) 
+*   [SwagArch](https://swagarch.gitlab.io/) 
+*   [TalkingArch](https://talkingarch.tk/) 
+*   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 
+*   [UBOS](http://ubos.net/) 
 
 ## Inactive
 
@@ -85,10 +83,12 @@ These distributions are no longer developed, but show some of the history surrou
 *   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [Arch Linux WSL Edition](https://github.com/alwsl/alwsl)
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
-*   [Audiophile Linux](http://www.ap-linux.com/)
+*   [Audiophile Linux](http://www.ap-linux.com/) 
 *   [Feliz](https://sourceforge.net/projects/feliz/)
+*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](http://nurunner.mkxt.net/index2.html)
+*   [Sonar](https://distrowatch.com/table.php?distribution=sonar) 
 
 ### 2016
 
@@ -108,7 +108,6 @@ These distributions are no longer developed, but show some of the history surrou
 ### 2015
 
 *   [ArBer Linux](https://sourceforge.net/projects/arber/)
-*   [ArchAssault](https://sourceforge.net/projects/archassault/)
 *   [Bridge Linux](https://sourceforge.net/projects/bridgelinux/)
 *   [justbrowsing](https://sourceforge.net/projects/justbrowsing/)
 *   [Kademar](https://kademar.org/productos/version-de-escritorio/)
@@ -144,7 +143,6 @@ These distributions are no longer developed, but show some of the history surrou
 
 ### 2011
 
-*   [Arch Hurd](https://web.archive.org/web/20170930220802/https://www.archhurd.org/)
 *   [Archlive](https://code.google.com/archive/p/archlive/)
 *   [CTKArch](https://web.archive.org/web/20151001195223/http://ctkarch.org/)
 *   [LinuX-gamers](http://live.linux-gamers.net/)
@@ -170,14 +168,14 @@ These distributions are no longer developed, but show some of the history surrou
 
 *   [Arch Linux Modified](https://web.archive.org/web/20081224231003/http://rusher.webhop.org/wordpress/?page_id=143)
 *   [FaunOS](https://web.archive.org/web/20100918204659/http://www.faunos.com/)
-*   [Shift Linux](http://distrowatch.com/table.php?distribution=shift)
+*   [Shift Linux](http://distrowatch.com/table.php?distribution=shift) 
 *   [uArch](https://web.archive.org/web/20100125175854/http://code.google.com/p/uarch/)
 
 ### 2007
 
-*   [Archie](https://web.archive.org/web/20090726221110/http://archie.dotsrc.org/)
+*   [Archie](https://web.archive.org/web/20090726221110/http://archie.dotsrc.org/) 
 *   [March Linux](http://marchlinux.wikidot.com/)
-*   [Underground Desktop](https://web.archive.org/web/20070506214626/http://underground.geekcode.info/portal/posts/)
+*   [Underground Desktop](https://distrowatch.com/table.php?distribution=underground) 
 
 ### 2006
 

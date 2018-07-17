@@ -800,7 +800,7 @@ Or equivalently, set the environment variable manually:
 
 ```
 
-then [restart](/index.php/Restart "Restart") *systemd-networkd* and watch the journal for the service with the `--follow` option.
+then [restart](/index.php/Restart "Restart") *systemd-networkd* and watch the journal for the service with the `-f`/`--follow` option.
 
 ### Shutdown/reboot takes terribly long
 

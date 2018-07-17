@@ -334,7 +334,16 @@ Once inside the chrooted enviroment, don’t forget to install the [hfsprogs](ht
 
 ```
 
-*   Once inside the chrooted enviroment, install the [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages. The following steps install the GRUB UEFI application to `/boot/EFI/arch/System/Library/CoreServices/boot.efi` and install its modules to `/boot/grub/x86_64-efi`.
+*   Once inside the chrooted enviroment, install the [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages.
+*   Also, create a dummy `mach_kernel` file
+
+```
+ # touch /boot/mach_kernel
+ # mkdir -p /boot/EFI/arch && touch /boot/EFI/arch/mach_kernel
+
+```
+
+*   The following steps install the GRUB UEFI application to `/boot/EFI/arch/System/Library/CoreServices/boot.efi` and install its modules to `/boot/grub/x86_64-efi`.
 
 ```
  # grub-install --target=x86_64-efi --efi-directory=/boot
@@ -353,13 +362,6 @@ As you can see, the directory structure of the `boot.efi` is not correct, as the
 ```
  # mv /boot/EFI/arch/System/ /boot/
  # rm -r /boot/EFI/
-
-```
-
-Also, create a dummy `mach_kernel` file
-
-```
- # touch /boot/mach_kernel
 
 ```
 

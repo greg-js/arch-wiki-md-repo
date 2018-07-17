@@ -4,9 +4,8 @@
 
 *   [1 Client](#Client)
     *   [1.1 Installation](#Installation)
-    *   [1.2 Running](#Running)
-    *   [1.3 Firewall configuration for LAN worlds](#Firewall_configuration_for_LAN_worlds)
-    *   [1.4 Extras](#Extras)
+    *   [1.2 Firewall configuration for LAN worlds](#Firewall_configuration_for_LAN_worlds)
+    *   [1.3 Extras](#Extras)
 *   [2 Server](#Server)
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Setup](#Setup)
@@ -14,39 +13,24 @@
         *   [2.2.2 Starting the server](#Starting_the_server)
         *   [2.2.3 Server management script](#Server_management_script)
         *   [2.2.4 Tweaking](#Tweaking)
-    *   [2.3 Spigot (respectively Craftbukkit)](#Spigot_.28respectively_Craftbukkit.29)
-    *   [2.4 Cuberite](#Cuberite)
-    *   [2.5 Additional notes](#Additional_notes)
+    *   [2.3 Alternative servers](#Alternative_servers)
+        *   [2.3.1 Spigot (respectively Craftbukkit)](#Spigot_.28respectively_Craftbukkit.29)
+        *   [2.3.2 Cuberite](#Cuberite)
+    *   [2.4 Additional notes](#Additional_notes)
 *   [3 Minecraft Mod Launchers](#Minecraft_Mod_Launchers)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Minecraft server on ARM devices](#Minecraft_server_on_ARM_devices)
+    *   [4.2 Minecraft client and Wayland support](#Minecraft_client_and_Wayland_support)
+    *   [4.3 Minecraft client or server does not start](#Minecraft_client_or_server_does_not_start)
+*   [5 See also](#See_also)
 
 ## Client
 
 ### Installation
 
-Simply install the [minecraft-launcher](https://aur.archlinux.org/packages/minecraft-launcher/) package to get the official game launcher, a script to launch it and a proper `.desktop` file.
+Minecraft client can be installed as a [minecraft-launcher](https://aur.archlinux.org/packages/minecraft-launcher/) package. It provides the official game launcher, a script to launch it and a proper `.desktop` file.
 
-Though using a proper package should always be preferred, there is still the options to use the plain minecraft launcher which can be found at the [official download page](https://minecraft.net/download).
-
-If you use the manual, official installer, keep in mind you must use Java 8 (such as [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), see [Java](/index.php/Java "Java")), as the other versions currently cause a crash.
-
-In addition, Wayland and other window managers are currently not supported with Minecraft, as Minecraft has the prerequisite of [xorg-xrandr](https://aur.archlinux.org/packages/xorg-xrandr/) and should be opened with xorg.
-
-### Running
-
-If you installed Minecraft from the AUR, you can use the included script:
-
-```
-$ minecraft
-
-```
-
-Otherwise, you will need to manually launch Minecraft:
-
-```
-$ java -jar Minecraft.jar
-
-```
+Alternatively, it can also be installed as a [minecraft](https://aur.archlinux.org/packages/minecraft/) package.
 
 ### Firewall configuration for LAN worlds
 
@@ -69,9 +53,9 @@ There are several [programs and editors](http://www.minecraftwiki.net/wiki/Progr
 
 ### Installation
 
-The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional [systemd](/index.php/Systemd "Systemd") unit files and includes a small control script. Almost all Minecraft servers will require [Java](/index.php/Java "Java") in order to run ([Cuberite](#Cuberite), being written in C++ and Lua, as a prominent exception).
+Minecraft server can be installed as a [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional [systemd](/index.php/Systemd "Systemd") unit files and includes a small control script.
 
-**Note:** Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
+Also see [#Alternative_servers](#Alternative_servers) for alternative servers.
 
 ### Setup
 
@@ -104,17 +88,21 @@ To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edi
 
 For example, more advanced users may wish enable `IDLE_SERVER` by setting it to `true`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using [ncat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ncat.1) (also called netcat or simply nc for short) and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time after suspension, it significantly decreases the CPU and memory usage leading to a more reasonably resource and power consumption.
 
-### Spigot (respectively Craftbukkit)
+### Alternative servers
 
-Spigot is the most widely-used **modded** Minecraft server in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/) package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/spigot`.
+#### Spigot (respectively Craftbukkit)
+
+[Spigot](https://www.spigotmc.org/) is the most widely-used **modded** Minecraft server in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/) package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/spigot`.
 
 Be sure to read [#Setup](#Setup) and replace `minecraftd` with `spigot` wherever you encounter it.
 
 It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in popularity since Bukkit's demise.
 
-### Cuberite
+#### Cuberite
 
-[Cuberite](http://cuberite.org/) is a highly efficient Minecraft compatible server written in C++ and Lua. It achieves better performances than the vanilla Minecraft server plus it is extensively moddable. The [cuberite](https://aur.archlinux.org/packages/cuberite/) package is available in the [AUR](/index.php/AUR "AUR"). The program provides a simple web interface by default at port `8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD as well builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and the corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/cuberite`.
+[Cuberite](https://cuberite.org/) is a highly efficient and extensively moddable Minecraft server, written in C++ and Lua. It achieves much better performances than the vanilla Minecraft server, but is not fully compatible with the latest Minecraft client (some game aspects might be missing or not working).
+
+Cuberite minecraft server can be installed as a [cuberite](https://aur.archlinux.org/packages/cuberite/) package, which also provides a simple web interface by default at port `8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD as well builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and the corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/cuberite`.
 
 Be sure to read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherever you encounter it.
 
@@ -139,6 +127,22 @@ You can launch Minecraft from different so called *Launchers* that often include
 *   **Technic Launcher** — Modpack installer with a focus on mod discovery via popularity rankings.
 
 	[http://www.technicpack.net/](http://www.technicpack.net/) || [minecraft-technic-launcher](https://aur.archlinux.org/packages/minecraft-technic-launcher/)
+
+## Troubleshooting
+
+### Minecraft server on ARM devices
+
+If Minecraft server does not run well on [ARM](https://archlinuxarm.org/) devices under [Java](/index.php/Java "Java"), try using [jdk-arm](https://aur.archlinux.org/packages/jdk-arm/) instead. Also consider using [#Cuberite](#Cuberite) as an alternative.
+
+### Minecraft client and Wayland support
+
+Wayland and other window managers are currently not supported with Minecraft, as Minecraft has the prerequisite of [xorg-xrandr](https://aur.archlinux.org/packages/xorg-xrandr/) and should be opened with xorg.
+
+### Minecraft client or server does not start
+
+It might be the problem with [Java](/index.php/Java "Java") version. Java version 8 is guaranteed to work well in all cases.
+
+Both Minecraft server and client work perfectly fine with the latest version of [Java](/index.php/Java "Java"), but the actual Minecraft client launcher (and possibly all other mods) might only work with the [Java](/index.php/Java "Java") version 8.
 
 ## See also
 

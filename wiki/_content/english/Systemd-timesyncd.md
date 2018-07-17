@@ -27,6 +27,27 @@ Time zone: Europe/Amsterdam (CEST, +0200)
 Network time on: yes
 NTP synchronized: yes
 RTC in local TZ: no
+
+```
+
+To see verbose service information, use `timedatectl timesync-status`:
+
+ `$ timedatectl timesync-status` 
+```
+       Server: 103.47.76.177 (0.arch.pool.ntp.org)
+Poll interval: 2min 8s (min: 32s; max 34min 8s)
+         Leap: normal
+      Version: 4
+      Stratum: 2
+    Reference: C342F10A
+    Precision: 1us (-21)
+Root distance: 231.856ms (max: 5s)
+       Offset: -19.428ms
+        Delay: 36.717ms
+       Jitter: 7.343ms
+ Packet count: 2
+    Frequency: +267.747ppm
+
 ```
 
 ## Configuration
@@ -50,6 +71,23 @@ To add [time servers](/index.php/Network_Time_Protocol_daemon#Connection_to_NTP_
 [Time]
 NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
+```
+
+To verify your configuration, use `timedatectl show-timesync --all`:
+
+ `$ timedatectl show-timesync --all` 
+```
+LinkNTPServers=
+SystemNTPServers=
+FallbackNTPServers=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+ServerName=0.arch.pool.ntp.org
+ServerAddress=103.47.76.177
+RootDistanceMaxUSec=5s
+PollIntervalMinUSec=32s
+PollIntervalMaxUSec=34min 8s
+PollIntervalUSec=1min 4s
+NTPMessage={ Leap=0, Version=4, Mode=4, Stratum=2, Precision=-21, RootDelay=177.398ms, RootDispersion=142.196ms, Reference=C342F10A, OriginateTimestamp=Mon 2018-07-16 13:53:43 +08, ReceiveTimestamp=Mon 2018-07-16 13:53:43 +08, TransmitTimestamp=Mon 2018-07-16 13:53:43 +08, DestinationTimestamp=Mon 2018-07-16 13:53:43 +08, Ignored=no PacketCount=1, Jitter=0 }
+Frequency=22520548
 ```
 
 Further to the daemon configuration, NTP servers may also be provided via a [systemd-networkd](/index.php/Systemd-networkd#.5BNetDev.5D_section "Systemd-networkd") configuration with a `NTP=` option or, dynamically, via a DHCP server.

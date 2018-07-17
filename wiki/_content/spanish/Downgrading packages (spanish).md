@@ -28,6 +28,17 @@ Antes de desactualizar uno o varios paquetes, considere por qué desea hacerlo. 
 
 ### Usando la caché de pacman
 
+Si un paquete se instaló anteriormente, y la [caché de pacman](/index.php/Pacman_(Espa%C3%B1ol)#Limpiar_la_memoria_cach.C3.A9_de_los_paquetes "Pacman (Español)") no se ha limpiado, instale una versión anterior de `/var/cache/pacman/pkg/`.
+
+Este proceso eliminará el paquete actual e instalará la versión anterior. Los cambios de dependencia serán gestionados, pero [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") no gestionará conflictos de versión. Si una librería u otro paquete necesita ser desactualizado con los paquetes, por favor tenga en cuenta que usted también tendrá que desactualizarlo.
+
+```
+# pacman -U /var/cache/pacman/pkg/*package*-*old_version*.pkg.tar.xz
+
+```
+
+Una vez revertido el paquete, añádalo temporalmente al archivo [IgnorePkg section](/index.php/Pacman_(Espa%C3%B1ol)#Evitar_la_actualizaci.C3.B3n_de_un_paquete "Pacman (Español)") de `pacman.conf`, hasta que se resuelva el problema con el paquete actualizado.
+
 ### Desactualizando el kernel
 
 ### Archivo Arch Linux

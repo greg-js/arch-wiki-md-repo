@@ -23,8 +23,7 @@ Essa é uma função `package` mínima:
 
 ```
 package() {
-    cd $srcdir/$pkgname-$pkgver
-    npm install -g --user root --prefix "$pkgdir"/usr
+    npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/source-tarball.tar.gz
     # Disputa não determinística no npm fornece permissões 777 para diretórios aleatórios.
     # Veja https://github.com/npm/npm/issues/9359 para detalhes.
     find "${pkgdir}"/usr -type d -exec chmod 755 {} +

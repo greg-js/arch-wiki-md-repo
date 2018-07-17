@@ -23,11 +23,11 @@
 | <small>2.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(15)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(37)</small> |
-| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(22)</small> |
+| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(21)</small> |
 | <small>2.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(3)</small> |
 | <small>2.10.2.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(6)</small> |
 | <small>2.10.3.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4)</small> |
-| <small>2.10.4.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(5)</small> |
+| <small>2.10.4.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6)</small> |
 | <small>2.10.5.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(11) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
 | <small>2.10.6.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(4)</small> |
 | <small>2.10.7.</small> [Groupware](/index.php/Category:Groupware "Category:Groupware") <small>(3)</small> |
@@ -109,7 +109,7 @@
 | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
 | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(17)</small> |
-| <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
+| <small>4.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
 | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(56)</small> |
 | <small>5.1.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
@@ -170,7 +170,7 @@
 | <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
 | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(48)</small> |
-| <small>6.6.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(14) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
+| <small>6.6.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(15) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
 | <small>6.6.2.</small> [FUSE](/index.php/Category:FUSE "Category:FUSE") <small>(8)</small> |
 | <small>6.6.3.</small> [Storage virtualization](/index.php/Category:Storage_virtualization "Category:Storage virtualization") <small>(7)</small> |
 | <small>6.7.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org "Category:Freedesktop.org") <small>(7)</small> |
@@ -192,9 +192,10 @@
 | <small>6.12.</small> [Localization](/index.php/Category:Localization "Category:Localization") <small>(17)</small> |
 | <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
-| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(73)</small> |
-| <small>6.15.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(15)</small> |
-| <small>6.15.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(14) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
+| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
+| <small>6.15.1.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(5)</small> |
+| <small>6.15.1.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(9)</small> |
+| <small>6.15.1.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(15) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
 | <small>6.15.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.15.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(7) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.15.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

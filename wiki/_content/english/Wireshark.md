@@ -26,11 +26,11 @@ The [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [ins
 Therefore to use Wireshark as a normal user you just have to add your user to the `wireshark` [group](/index.php/Group "Group"):
 
 ```
-sudo gpasswd -a $USER wireshark
+# gpasswd -a *username* wireshark
 
 ```
 
-Re-login to apply the change or use `newgrp wireshark` to open a shell with the new group and start Wireshark from there.
+Re-login to apply the change. You can use `newgrp wireshark` to open a shell with the new group applied, but it will only work when Wireshark is launched from there until you re-login.
 
 ## A few capturing techniques
 

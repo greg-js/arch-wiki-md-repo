@@ -225,9 +225,25 @@ smtpd_tls_cert_file = **/path/to/cert.pem**
 smtpd_tls_key_file = **/path/to/key.pem**
 ```
 
-In `master.cf`, find and remove the comment from the following line to enable the service on that port:
+In `master.cf`, find and uncomment the following lines to enable the service on that port with the correct settings:
 
- `/etc/postfix/master.cf`  `submission inet n       -       n       -       -       smtpd` 
+ `/etc/postfix/master.cf` 
+```
+submission inet n       -       n       -       -       smtpd
+  -o syslog_name=postfix/submission
+  -o smtpd_tls_security_level=encrypt
+  -o smtpd_sasl_auth_enable=yes
+  -o smtpd_tls_auth_only=yes
+  -o smtpd_reject_unlisted_recipient=no
+#  -o smtpd_client_restrictions=$mua_client_restrictions
+#  -o smtpd_helo_restrictions=$mua_helo_restrictions
+#  -o smtpd_sender_restrictions=$mua_sender_restrictions
+  -o smtpd_recipient_restrictions=
+  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
+  -o milter_macro_daemon_name=ORIGINATING
+```
+
+The `smtpd_*_restrictions` options remain commented because `$mua_*_restrictions` are not defined in main.cf by default. If you do decide to set any of `$mua_*_restrictions`, uncomment those lines too.
 
 If you need support for the deprecated SMTPS port 465, also follow the next section.
 
@@ -235,17 +251,27 @@ If you need support for the deprecated SMTPS port 465, also follow the next sect
 
 The deprecated method of securing SMTP is using the **wrapper mode** which uses the system service **smtps** as a non-standard service and runs on port 465.
 
-To enable it uncomment the following lines in
+To enable it, uncomment the following lines in `master.cf`:
 
  `/etc/postfix/master.cf` 
 ```
 smtps     inet  n       -       n       -       -       smtpd
+  -o syslog_name=postfix/smtps
   -o smtpd_tls_wrappermode=yes
   -o smtpd_sasl_auth_enable=yes
+  -o smtpd_reject_unlisted_recipient=no
+#  -o smtpd_client_restrictions=$mua_client_restrictions
+#  -o smtpd_helo_restrictions=$mua_helo_restrictions
+#  -o smtpd_sender_restrictions=$mua_sender_restrictions
+  -o smtpd_recipient_restrictions=
+  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
+  -o milter_macro_daemon_name=ORIGINATING
 
 ```
 
-And verify that these lines are in `/etc/services`:
+The rationale surrounding the `$smtpd_*_restrictions` lines is the same as above.
+
+After this, verify that these lines are in `/etc/services`:
 
 ```
 smtps 465/tcp # Secure SMTP

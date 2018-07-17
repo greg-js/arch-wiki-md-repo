@@ -143,7 +143,7 @@ rsync -a --delete --quiet /folder/to/backup /location/of/backup
 
 	means files deleted on the source are to be deleted on the backup as well
 
-Here, `/folder/to/backup` should be changed to what needs to be backed-up (`/home`, for example) and `/location/to/backup` is where the backup should be saved (`/media/disk`, for instance).
+Here, `/folder/to/backup` should be changed to what needs to be backed-up (`/home`, for example) and `/location/of/backup` is where the backup should be saved (`/media/disk`, for instance).
 
 Finally, the script must be executable:
 

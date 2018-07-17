@@ -63,7 +63,7 @@ Você pode querer obter a lista de pacotes instalados com sua versão, o que é 
 
 *   Listar todos os pacotes instalados explicitamente: `pacman -Qe`.
 *   Listar todos pacotes nativos (ou seja, presente na base de dados de sincronização) instalados explicitamente que não são dependências diretas ou opcional: `pacman -Qent`.
-*   Listar todos os pacotes externos (geralmente baixados e instalados manualmente): `pacman -Qm`.
+*   Listar todos os pacotes externos (geralmente baixados e instalados manualmente ou removidos do repositório): `pacman -Qm`.
 *   Listar todos os pacotes nativos (instalados a partir de base(s) de dados de sincronização): `pacman -Qn`.
 *   Listar pacotes por expressão regular: `pacman -Qs *regex*`.
 *   Listar pacotes por expressão regular com formato de saída personalizada: `expac -s "%-30n %v" *regex*` (precisa de [expac](https://www.archlinux.org/packages/?name=expac)).

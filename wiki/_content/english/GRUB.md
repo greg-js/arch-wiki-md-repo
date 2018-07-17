@@ -10,9 +10,7 @@ Related articles
 *   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
 *   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
 
-[GRUB](https://www.gnu.org/software/grub/) (GRand Unified Bootloader) is a multi-boot loader. It is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of what is now known as [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). The latter had become too difficult to maintain and GRUB was rewritten from scratch with the aim to provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). The current GRUB is also referred to as GRUB 2 while GRUB Legacy corresponds to versions 0.9x.
-
-A [boot loader](/index.php/Boot_loader "Boot loader") is the first program that runs when a computer starts. It is responsible for selecting, loading and transferring control to an operating system kernel. The kernel, in turn, initializes the rest of the operating system.
+[GRUB](https://www.gnu.org/software/grub/) (GRand Unified Bootloader) is a [multi-boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders"). It is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of what is now known as [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). The latter had become too difficult to maintain and GRUB was rewritten from scratch with the aim to provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). The current GRUB is also referred to as GRUB 2 while GRUB Legacy corresponds to versions 0.9x.
 
 **Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 
@@ -82,7 +80,7 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](htt
 **Note:**
 
 *   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [GUID partition tables](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
-*   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
+*   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). On GPT, however, there is no guaranteed unused space before the first partition.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 Create a mebibyte partition (`+1M` with *fdisk* or *gdisk*) on the disk with no file system and with partition type GUID `21686148-6449-6E6F-744E-656564454649`.
@@ -92,7 +90,7 @@ Create a mebibyte partition (`+1M` with *fdisk* or *gdisk*) on the disk with no 
 
 This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
 
-The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded, though some disk utilities will display a warning about it. In *fdisk* or *gdisk* create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
+The space before the first partition can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded, though some disk utilities will display a warning about it. In *fdisk* or *gdisk* create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 
 ### Master Boot Record (MBR) specific instructions
 

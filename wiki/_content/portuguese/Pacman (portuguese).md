@@ -677,9 +677,9 @@ No caso do *pacman* travar com um erro de "escrita da base de dados" enquanto re
 1.  Inicialize usando a mídia de instalação do Arch. Preferivelmente use uma mídia recente, para que a versão do *pacman* seja igual ou mais nova do que a do sistema.
 2.  Monte o sistema de arquivos raiz do sistema (ex.: `mount /dev/sdaX /mnt`) como root e verifique se a montagem tem espaço suficiente com `df -h`
 3.  Monte os sistemas de arquivos proc e sysfs também: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
-4.  Se o sistema usa locais padrão de base de dados e diretório, você pode agora atualizar a base de dados do *pacman* do sistema e atualizá-lo via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` como root.
+4.  Se o sistema usa locais padrão de base de dados e diretório, você pode agora atualizar a base de dados do *pacman* do sistema e atualizá-lo via `pacman --sysroot /mnt -Syyu` como root.
 5.  Após a atualização, uma forma de verificar se pacotes não atualizados, mas ainda quebrados: `find /mnt/usr/lib -size 0`
-6.  Seguido pela reinstalação de qualquer pacote ainda quebrado via `pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *pacote*`.
+6.  Seguido pela reinstalação de qualquer pacote ainda quebrado via `pacman --sysroot /mnt -S *pacote*`.
 
 ### Erro "Unable to find root device" após a reinicialização
 
@@ -706,7 +706,7 @@ Se isso não funcionar, de uma versão atual do Arch (CD/DVD ou pendrive USB), [
 
 *   Se você não tem uma versão atual ou se tem apenas alguma outra distribuição Linux "live", você pode fazer [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") usando o jeito antigo. Obviamente, terá que digitar mais do que simplesmente executar o script `arch-chroot`.
 *   Se *pacman* falhar com `não foi possível resolver máquina`, por favor [verifique sua conexão com a Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificar_a_conex.C3.A3o "Configuração de rede").
-*   Se você não conseguir entrar no ambiente do arch-chroot ou chroot, mas precisa reinstalar os pacotes, você pode usar o comando `pacman -r /mnt -Syu foo bar` para usar o *pacman* em sua partição raiz.
+*   Se você não conseguir entrar no ambiente do arch-chroot ou chroot, mas precisa reinstalar os pacotes, você pode usar o comando `pacman --sysroot /mnt -Syu foo bar` para usar o *pacman* em sua partição raiz.
 
 A reinstalação do kernel (o pacote [linux](https://www.archlinux.org/packages/?name=linux)) vai gerar automaticamente a imagem com `mkinitcpio -p linux`. Não precisa fazer separadamente.
 

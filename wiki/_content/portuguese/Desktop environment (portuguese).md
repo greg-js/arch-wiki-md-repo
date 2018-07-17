@@ -34,7 +34,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — O Cinnamon se esforça para fornecer uma experiência de usuário tradicional. Cinnamon é um fork do GNOME 3\.
 
-	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
+	[http://developer.linuxmint.com/projects/cinnamon-projects.html](http://developer.linuxmint.com/projects/cinnamon-projects.html) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
 
 *   **[Deepin](/index.php/Deepin "Deepin")** — A interface e os aplicativos de desktop do Deepin apresentam um design intuitivo e elegante. Movimentar-se, compartilhar e pesquisar etc. tornou-se simplesmente uma experiência divertida.
 
@@ -58,7 +58,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — O Lightweight X11 Desktop Environment (ambiente de desktop X11 leve) é um ambiente de desktop rápido e que economiza energia. Ele vem com uma interface moderna, suporte a vários idiomas, atalhos de teclado padrão e recursos adicionais, como a navegação por arquivos com guias. Fundamentalmente projetado para ser leve, o LXDE se esforça para ter menos CPU e RAM do que outros ambientes.
 
-	[http://lxde.org/](http://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
+	[https://lxde.org/](https://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
 
 *   **[LXQt](/index.php/LXQt "LXQt")** — O LXQt é o *port* do Qt e a próxima versão do LXDE, o Lightweight Desktop Environment. É o produto da fusão entre os projetos LXDE-Qt e Razor-qt: Um ambiente de desktop leve, modular, extremamente rápido e fácil de usar.
 
@@ -66,7 +66,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[MATE](/index.php/MATE "MATE")** — O Mate fornece um ambiente de desktop intuitivo e atraente para usuários de Linux que usam metáforas tradicionais. O MATE começou como um fork do GNOME 2, mas agora usa o GTK+ 3\.
 
-	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
+	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 
 *   **[Sugar](/index.php/Sugar "Sugar")** — A Sugar Learning Platform (plataforma de aprendizagem Sugar) é um ambiente computacional composto por Atividades projetadas para ajudar crianças de 5 a 12 anos de idade a aprenderem juntas por meio de expressão de mídia rica. O Sugar é o principal componente de um esforço mundial para oferecer a todas as crianças a oportunidade de uma educação de qualidade – atualmente é usado por quase um milhão de crianças em todo o mundo, falando 25 idiomas em mais de 40 países. Sugar fornece os meios para ajudar as pessoas a levarem vidas completas através do acesso a uma educação de qualidade que atualmente é desperdiçada por muitos.
 
@@ -74,13 +74,13 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[Xfce](/index.php/Xfce "Xfce")** — O Xfce incorpora a tradicional [filosofia Unix](https://en.wikipedia.org/wiki/pt:Filosofia_Unix "wikipedia:pt:Filosofia Unix") de modularidade e reutilização. Ele consiste em vários componentes que fornecem a funcionalidade completa que se pode esperar de um ambiente de desktop moderno, mantendo-se relativamente leve. Eles são empacotados separadamente e você pode escolher entre os pacotes disponíveis para criar o melhor ambiente de trabalho pessoal.
 
-	[http://www.xfce.org/](http://www.xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
+	[https://xfce.org/](https://xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
 
 ### Sem suporte oficial
 
-*   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — O "Equinox Desktop Environment" é um DE projetado para ser simples, extremamente leve e rápido.
+*   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — O "Equinox Desktop Environment" é um ambiente de desktop projetado para ser simples, extremamente leve e rápido.
 
-	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)
+	[https://edeproject.org/](https://edeproject.org/) || [ede](https://aur.archlinux.org/packages/ede/)
 
 *   **[Liri](/index.php/Liri "Liri")** — O Liri é um ambiente de desktop com design e recursos modernos. Liri é a fusão entre [Hawaii](http://hawaiios.org/), [Papyros](http://papyros.io/) e o [Projeto Liri](https://github.com/liri-project). Altamente experimental.
 
@@ -100,7 +100,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **theShell** — theShell é um ambiente de desktop que tenta ser o mais transparente possível. Ele usa o Qt 5 como seu kit de ferramentas de widgets e o KWin como seu gerenciador de janelas. Também incorpora um assistente pessoal. Ele também incorpora um assistente pessoal.
 
-	[https://vicr123.github.io/theshell](https://vicr123.github.io/theshell) || [theshell](https://aur.archlinux.org/packages/theshell/)
+	[https://vicr123.com/theshell](https://vicr123.com/theshell) || [theshell](https://aur.archlinux.org/packages/theshell/)
 
 *   **[Trinity](/index.php/Trinity "Trinity")** — O projeto Trinity Desktop Environment (TDE) é um ambiente de desktop do computador para sistemas operacionais tipo Unix com o objetivo principal de manter o estilo de computação geral do KDE 3.5\.
 

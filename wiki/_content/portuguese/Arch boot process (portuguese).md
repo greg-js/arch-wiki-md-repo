@@ -6,7 +6,7 @@ Artigos relacionados
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
 *   [init](/index.php/Init "Init")
-*   [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")
+*   [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")
 *   [fstab](/index.php/Fstab "Fstab")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
@@ -105,24 +105,24 @@ Um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Ger
 
 ## Login
 
-The *login* program begins a session for the user by setting environment variables and starting the user's shell, based on `/etc/passwd`.
+O programa *login* começa uma sessão para o usuário definindo as variáveis de ambiente e iniciando o shell do usuário, com base no `/etc/passwd`.
 
-The *login* program displays the contents of [/etc/motd](https://en.wikipedia.org/wiki/motd_(Unix) (*m*essage *o*f *t*he *d*ay) after a successful login, just before it executes the login shell. It is a good place to display your Terms of Service to remind users of your local policies or anything you wish to tell them.
+O programa *login* exibe o conteúdo de [/etc/motd](https://en.wikipedia.org/wiki/pt:motd_(Unix) (*m*essage *o*f *t*he *d*ay ou, em português, mensagem do dia) após um login bem sucedido, logo antes dele executar o sehll de login. É um bom lugar para exibir seus *Terms of Service* (Termos de Serviços) para lembrar seus usuários de suas políticas locais ou qualquer outra coisa que você deseje falar para eles.
 
 ## Shell
 
-Once the user's [shell](/index.php/Shell "Shell") is started, it will typically run a runtime configuration file, such as [bashrc](/index.php/Bashrc "Bashrc"), before presenting a prompt to the user. If the account is configured to [Start X at login](/index.php/Start_X_at_login "Start X at login"), the runtime configuration file will call [startx](/index.php/Startx "Startx") or [xinit](/index.php/Xinit "Xinit").
+Uma vez iniciado o [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") do usuário, ele normalmente executará um arquivo de configuração de tempo de execução, como o [bashrc](/index.php/Bashrc "Bashrc"), antes de apresentar um prompt ao usuário. Se a conta estiver configurada para [Iniciar X no login](/index.php/Start_X_at_login "Start X at login"), o arquivo de configuração de tempo de execução chamará [startx](/index.php/Startx "Startx") ou [xinit](/index.php/Xinit "Xinit").
 
 ## GUI, xinit ou wayland
 
-[xinit](/index.php/Xinit "Xinit") runs the user's [xinitrc](/index.php/Xinitrc "Xinitrc") runtime configuration file, which normally starts a [window manager](/index.php/Window_manager "Window manager"). When the user is finished and exits the window manager, xinit, startx, the shell, and login will terminate in that order, returning to getty.
+[xinit](/index.php/Xinit "Xinit") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc "Xinitrc") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, xinit, startx, o shell e o login serão encerrados nessa ordem, retornando ao getty.
 
 ## Veja também
 
 *   [Early Userspace in Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)
 *   [Inside the Linux boot process](http://www.ibm.com/developerworks/linux/library/l-linuxboot/)
 *   [Wikipedia:Linux startup process](https://en.wikipedia.org/wiki/Linux_startup_process "wikipedia:Linux startup process")
-*   [Wikipedia:initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
+*   [Wikipedia:pt:initrd](https://en.wikipedia.org/wiki/pt:initrd "wikipedia:pt:initrd")
 *   [Boot Linux Grub Into Single User Mode](http://www.cyberciti.biz/faq/grub-boot-into-single-user-mode/)
 *   [NeoSmart: The BIOS/MBR Boot Process](https://neosmart.net/wiki/mbr-boot-process/)
 *   [Kernel Newbie Corner: initrd and initramfs](https://www.linux.com/learn/kernel-newbie-corner-initrd-and-initramfs-whats)

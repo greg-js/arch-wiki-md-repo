@@ -27,11 +27,10 @@ Prior to the installation, certain actions must be taken to grant bios reading p
 
 Enabling Developer Mode:
 
-1.  Power off your machine.
-2.  Enter recovery mode by holding down `Esc+F3` (Refresh) during boot.
-3.  Once greeted in recovery mode (large yellow exclamation mark) press `Ctrl+d`.
-4.  You will be prompted for confirmation, press enter to confirm developer mode.
-5.  The device will reset and greet the user with a warning screen on every boot, that can be skipped by pressing `Ctrl+d`.
+1.  Enter recovery mode by pressing the power button while holding down `Esc+F3` (Refresh).
+2.  Once greeted in recovery mode (large yellow exclamation mark) press `Ctrl+d`.
+3.  You will be prompted for confirmation, press enter to confirm developer mode.
+4.  The device will reset and greet the user with a warning screen on every boot, that can be skipped by pressing `Ctrl+d`.
 
 ## Flashing a custom SeaBios
 

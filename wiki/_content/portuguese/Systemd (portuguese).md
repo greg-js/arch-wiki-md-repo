@@ -216,7 +216,9 @@ $ systemctl help *unit*
 
 ```
 
-Recarrega o *systemd*, procurando por **units novas e modificadas**:
+**Recarrega gerenciador de configuração do *systemd*** , procurando por **units novas e modificadas**:
+
+**Nota:** Isso não solicita que as units alteradas recarreguem suas próprias configurações. Veja o exemplo de `reload` acima.
 
 ```
 # systemctl daemon-reload
@@ -806,7 +808,7 @@ Se o processo de desligamento leva um tempo muito longo (ou parece estar congela
 
 ### Processos de curta duração não parecem registrar qualquer saída
 
-Se `journalctl -u foounit` não mostra nenhuma saída para um serviço de curta duração, veja o PID em vez disso. Por exemplo, se `systemd-modules-load.service` falha, e `systemctl status systemd-modules-load` mostra que executou com PID 123, então você talvez possa ver uma saída no journal por esse PID, ou seja, `journalctl -b _PID=123`. Campos de metadados para o journal como `_SYSTEMD_UNIT` e `_COMM` são coletados de forma assíncrona e invocam o diretório `/proc` para o processo existente. A solução deste problema requer fixar o kernel para fornecer esses dados através de uma conexão de socket, semelhante ao `SCM_CREDENTIALS`.
+Se `journalctl -u foounit` não mostra nenhuma saída para um serviço de curta duração, veja o PID em vez disso. Por exemplo, se `systemd-modules-load.service` falha, e `systemctl status systemd-modules-load` mostra que executou com PID 123, então você talvez possa ver uma saída no journal por esse PID, ou seja, `journalctl -b _PID=123`. Campos de metadados para o journal como `_SYSTEMD_UNIT` e `_COMM` são coletados de forma assíncrona e invocam o diretório `/proc` para o processo existente. A solução deste problema requer fixar o kernel para fornecer esses dados através de uma conexão de socket, semelhante ao `SCM_CREDENTIALS`. Em resumo, é um [erro](https://github.com/systemd/systemd/issues/2913). Tenha em mente que os serviços imediatamente falhos podem não imprimir nada para o journal conforme o design do systemd.
 
 ### Tempo de inicialização aumentando com o tempo
 

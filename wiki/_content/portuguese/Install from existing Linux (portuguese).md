@@ -93,7 +93,7 @@ A maneira manual é apresentada nas seguintes subseções. A ideia é fazer o [p
 
 O [Pacman](https://git.archlinux.org/arch-install-scripts.git/) pode ser compilado na maioria das distribuições Linux e usado diretamente no sistema hospedeiro para inicializar o Arch Linux. O [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) deve ser executado sem problemas diretamente dos fontes baixados em qualquer distribuição recente.
 
-Algumas distribuições fornecem um pacote pacman em seus repositórios oficiais, que podem ser usados para essa finalidade. No momento atual, o Gentoo e o Fedora são conhecidos por fazer isso. O Fedora também fornece o arch-install-scripts.
+Algumas distribuições fornecem um pacote pacman em seus repositórios oficiais, que podem ser usados para essa finalidade. Em junho de 2018, o Gentoo e o Fedora são conhecidos por fazer isso. O Fedora também fornece o *arch-install-scripts*.
 
 ### Criando um chroot
 

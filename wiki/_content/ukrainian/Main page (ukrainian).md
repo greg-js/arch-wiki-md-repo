@@ -5,3 +5,9 @@
 Оскільки встановлення і повсякденне користування Arch Linux саме по собі є цікавою пригодою, яку треба пережити, та оперуючи тим фактом, що в більшості українських шкіл викладається англійська - ми рекомендуємо вам перебороти невеликий мовний бар'єр та скористатися цим багатим ресурсом - ArchWiki універсальною технічною мовою.
 
 [Гайда вперед!](/index.php/Main_page "Main page")
+
+## Україномовні ресурси
+
+*   Гілка форуму: [https://bbs.archlinux.org/viewtopic.php?id=27189](https://bbs.archlinux.org/viewtopic.php?id=27189)
+*   Telegram-чат: [https://t.me/archlinux_ukraine](https://t.me/archlinux_ukraine)
+*   Форум української Лінукс-спільноти: [https://linux.org.ua/](https://linux.org.ua/)

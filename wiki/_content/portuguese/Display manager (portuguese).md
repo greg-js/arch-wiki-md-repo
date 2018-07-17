@@ -38,6 +38,10 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 	[https://github.com/cylgom/ly](https://github.com/cylgom/ly) || [ly-git](https://aur.archlinux.org/packages/ly-git/)
 
+*   **tbsm** — Uma sessão bash ou lançador de aplicativos
+
+	[https://loh-tar.github.io/tbsm/](https://loh-tar.github.io/tbsm/) || [tbsm](https://aur.archlinux.org/packages/tbsm/)
+
 ### Gráficos
 
 *   **[GDM](/index.php/GDM "GDM")** — Gerenciador de exibição do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
@@ -58,7 +62,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 *   **[XDM](/index.php/XDM_(Portugu%C3%AAs) "XDM (Português)")** — Gerenciador de exibição X com suporte a XDMCP, seletor de host.
 
-	[xdm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdm.1) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
+	[xdm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdm.8) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
 
 ## Carregando o gerenciador de exibição
 

@@ -8,18 +8,19 @@
 
 *   [1 Security](#Security)
     *   [1.1 Network security](#Network_security)
-    *   [1.2 Threat and vulnerability detection](#Threat_and_vulnerability_detection)
-    *   [1.3 File security](#File_security)
-    *   [1.4 Anti malware](#Anti_malware)
-    *   [1.5 Backup programs](#Backup_programs)
-    *   [1.6 Screen lockers](#Screen_lockers)
-    *   [1.7 Hash checkers](#Hash_checkers)
-    *   [1.8 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
-    *   [1.9 Password managers](#Password_managers)
-        *   [1.9.1 Console](#Console)
-        *   [1.9.2 Graphical](#Graphical)
-    *   [1.10 Firewall management](#Firewall_management)
-    *   [1.11 Disk encryption](#Disk_encryption)
+    *   [1.2 Firewall management](#Firewall_management)
+    *   [1.3 Threat and vulnerability detection](#Threat_and_vulnerability_detection)
+    *   [1.4 File security](#File_security)
+    *   [1.5 Anti malware](#Anti_malware)
+    *   [1.6 Backup programs](#Backup_programs)
+    *   [1.7 Screen lockers](#Screen_lockers)
+    *   [1.8 Password managers](#Password_managers)
+        *   [1.8.1 Console](#Console)
+        *   [1.8.2 Graphical](#Graphical)
+    *   [1.9 Cryptography](#Cryptography)
+        *   [1.9.1 Hash checkers](#Hash_checkers)
+        *   [1.9.2 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
+        *   [1.9.3 Disk encryption](#Disk_encryption)
 
 ## Security
 
@@ -156,6 +157,10 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 *   **[Xplico](https://en.wikipedia.org/wiki/Xplico "wikipedia:Xplico")** — Network forensics analysis tool (NFAT), which is a software that reconstructs the contents of acquisitions performed with a packet sniffer.
 
 	[https://www.xplico.org/](https://www.xplico.org/) || [xplico](https://aur.archlinux.org/packages/xplico/)
+
+#### Firewall management
+
+See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 #### Threat and vulnerability detection
 
@@ -331,90 +336,6 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://packages.debian.org/sid/xtrlock](https://packages.debian.org/sid/xtrlock) || [xtrlock](https://www.archlinux.org/packages/?name=xtrlock)
 
-#### Hash checkers
-
-*   **cfv** — Tiny utility to both test and create checksum files, support `.sfv`, `.csv`, `.crc`, `.md5`, `md5sum`, `sha1sum`, `.torrent`, `par`, and `.par2` files.
-
-	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
-
-*   **GtkHash** — A GTK+ utility for computing message digests or checksums
-
-	[http://gtkhash.sourceforge.net/](http://gtkhash.sourceforge.net/) || [gtkhash](https://aur.archlinux.org/packages/gtkhash/)
-
-*   **hashdeep** — A cross-platform tools to computer hashes, or message digests, for any number of files
-
-	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://www.archlinux.org/packages/?name=hashdeep)
-
-*   **Parano** — A GNOME frontend for creating/editing/checking MD5 and SFV files
-
-	[http://parano.berlios.de/](http://parano.berlios.de/) || [parano](https://aur.archlinux.org/packages/parano/)
-
-*   **Quick Hash GUI** — A GUI to enable the rapid selection and subsequent hashing of files (individually or recursively throughout a folder structure) text and (on Linux) disks.
-
-	[https://sourceforge.net/projects/quickhash/](https://sourceforge.net/projects/quickhash/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **RHash** — Utility for verifying hash sums (SFV, CRC, etc). Supports lots of algorithms.
-
-	[http://rhash.anz.ru/](http://rhash.anz.ru/) || [rhash](https://www.archlinux.org/packages/?name=rhash)
-
-*   **MassHash** — A set of file hashing tools (both CLI and GTK+ GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
-
-	[http://jdleicher.github.io/MassHash/](http://jdleicher.github.io/MassHash/) || [masshash](https://aur.archlinux.org/packages/masshash/)
-
-*   **Parchive** — Utility which creates and uses PAR2 files to detect damage in data files and repair them if necessary.
-
-	[https://github.com/Parchive/par2cmdline](https://github.com/Parchive/par2cmdline) || [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline)
-
-#### Encryption, signing, steganography
-
-*   **ccrypt** — A command-line utility for encrypting and decrypting files and streams.
-
-	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
-
-*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — A security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard.
-
-	[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)
-
-*   **GNOME Keysign** — GTK/GNOME application to use GnuPG for signing other people's keys. Quickly, easily, and securely.
-
-	[https://wiki.gnome.org/Apps/Keysign](https://wiki.gnome.org/Apps/Keysign) || [gnome-keysign](https://aur.archlinux.org/packages/gnome-keysign/)
-
-*   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
-
-	[https://gnupg.org/](https://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
-
-*   **GPG-Crypter** — Graphical front-end to GnuPG(GPG) using the GTK3 toolkit and GPGME library.
-
-	[https://sourceforge.net/projects/gpg-crypter/](https://sourceforge.net/projects/gpg-crypter/) || [gpg-crypter](https://www.archlinux.org/packages/?name=gpg-crypter)
-
-*   **gzsteg** — Utility that can hide data in gzip compressed files
-
-	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[Keybase](/index.php/Keybase "Keybase")** — Key directory mapping social media identities, with cross platform encrypted chat, cloud storage, and git repositories.
-
-	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase)
-
-*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — Simple interface for GnuPG, for KDE.
-
-	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
-
-*   **Kleopatra** — Certificate Manager and Unified Crypto GUI for KDE. It supports managing X.509 and OpenPGP certificates in the GpgSM keybox and retrieving certificates from LDAP servers.
-
-	[https://www.kde.org/applications/utilities/kleopatra/](https://www.kde.org/applications/utilities/kleopatra/) || [kleopatra](https://www.archlinux.org/packages/?name=kleopatra)
-
-*   **minisign** — Simple program that only inplements key signing
-
-	[https://github.com/jedisct1/minisign](https://github.com/jedisct1/minisign) || [minisign](https://www.archlinux.org/packages/?name=minisign)
-
-*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GNOME Keyring.
-
-	[https://wiki.gnome.org/Apps/Seahorse](https://wiki.gnome.org/Apps/Seahorse) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
-
-*   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
-
-	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
-
 #### Password managers
 
 ##### Console
@@ -521,10 +442,92 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[http://upm.sourceforge.net/](http://upm.sourceforge.net/) || [upm](https://aur.archlinux.org/packages/upm/)
 
-#### Firewall management
+#### Cryptography
 
-See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
+##### Hash checkers
 
-#### Disk encryption
+*   **cfv** — Tiny utility to both test and create checksum files, support `.sfv`, `.csv`, `.crc`, `.md5`, `md5sum`, `sha1sum`, `.torrent`, `par`, and `.par2` files.
+
+	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
+
+*   **GtkHash** — A GTK+ utility for computing message digests or checksums
+
+	[http://gtkhash.sourceforge.net/](http://gtkhash.sourceforge.net/) || [gtkhash](https://aur.archlinux.org/packages/gtkhash/)
+
+*   **hashdeep** — A cross-platform tools to computer hashes, or message digests, for any number of files
+
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://www.archlinux.org/packages/?name=hashdeep)
+
+*   **Parano** — A GNOME frontend for creating/editing/checking MD5 and SFV files
+
+	[http://parano.berlios.de/](http://parano.berlios.de/) || [parano](https://aur.archlinux.org/packages/parano/)
+
+*   **Quick Hash GUI** — A GUI to enable the rapid selection and subsequent hashing of files (individually or recursively throughout a folder structure) text and (on Linux) disks.
+
+	[https://sourceforge.net/projects/quickhash/](https://sourceforge.net/projects/quickhash/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **RHash** — Utility for verifying hash sums (SFV, CRC, etc). Supports lots of algorithms.
+
+	[http://rhash.anz.ru/](http://rhash.anz.ru/) || [rhash](https://www.archlinux.org/packages/?name=rhash)
+
+*   **MassHash** — A set of file hashing tools (both CLI and GTK+ GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
+
+	[http://jdleicher.github.io/MassHash/](http://jdleicher.github.io/MassHash/) || [masshash](https://aur.archlinux.org/packages/masshash/)
+
+*   **Parchive** — Utility which creates and uses PAR2 files to detect damage in data files and repair them if necessary.
+
+	[https://github.com/Parchive/par2cmdline](https://github.com/Parchive/par2cmdline) || [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline)
+
+##### Encryption, signing, steganography
+
+*   **ccrypt** — A command-line utility for encrypting and decrypting files and streams.
+
+	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
+
+*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — A security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard.
+
+	[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)
+
+*   **GNOME Keysign** — GTK/GNOME application to use GnuPG for signing other people's keys. Quickly, easily, and securely.
+
+	[https://wiki.gnome.org/Apps/Keysign](https://wiki.gnome.org/Apps/Keysign) || [gnome-keysign](https://aur.archlinux.org/packages/gnome-keysign/)
+
+*   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
+
+	[https://gnupg.org/](https://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
+
+*   **GPG-Crypter** — Graphical front-end to GnuPG(GPG) using the GTK3 toolkit and GPGME library.
+
+	[https://sourceforge.net/projects/gpg-crypter/](https://sourceforge.net/projects/gpg-crypter/) || [gpg-crypter](https://www.archlinux.org/packages/?name=gpg-crypter)
+
+*   **gzsteg** — Utility that can hide data in gzip compressed files
+
+	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Keybase](/index.php/Keybase "Keybase")** — Key directory mapping social media identities, with cross platform encrypted chat, cloud storage, and git repositories.
+
+	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase)
+
+*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — Simple interface for GnuPG, for KDE.
+
+	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
+
+*   **Kleopatra** — Certificate Manager and Unified Crypto GUI for KDE. It supports managing X.509 and OpenPGP certificates in the GpgSM keybox and retrieving certificates from LDAP servers.
+
+	[https://www.kde.org/applications/utilities/kleopatra/](https://www.kde.org/applications/utilities/kleopatra/) || [kleopatra](https://www.archlinux.org/packages/?name=kleopatra)
+
+*   **minisign** — Simple program that only inplements key signing
+
+	[https://github.com/jedisct1/minisign](https://github.com/jedisct1/minisign) || [minisign](https://www.archlinux.org/packages/?name=minisign)
+
+*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GNOME Keyring.
+
+	[https://wiki.gnome.org/Apps/Seahorse](https://wiki.gnome.org/Apps/Seahorse) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
+
+*   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
+
+	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
+
+##### Disk encryption
 
 See [Disk encryption](/index.php/Disk_encryption "Disk encryption").

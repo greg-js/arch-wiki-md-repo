@@ -178,12 +178,21 @@ Make sure to run bluetoothctl (with sudo/as root) and connect the device manuall
 
 #### Pairing fails with AuthenticationFailed
 
-If pairing fails, you can try [disabling SSPMode](https://stackoverflow.com/questions/12888589/linux-command-line-howto-accept-pairing-for-bluetooth-device-without-pin) with:
+If pairing fails, you can try enabling or [disabling SSPMode](https://stackoverflow.com/questions/12888589/linux-command-line-howto-accept-pairing-for-bluetooth-device-without-pin) with:
 
 ```
-# hciconfig hci0 sspmode 0
+# btmgmt ssp off
 
 ```
+
+or
+
+```
+# btmgmt ssp on
+
+```
+
+You may need to turn off BlueTooth while you run this command.
 
 #### Pairing works, but connecting does not
 

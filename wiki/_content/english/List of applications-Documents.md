@@ -1312,7 +1312,7 @@ See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikip
 
 *   **qtPad** — Modern and customizable sticky note application written in PyQt5.
 
-	[https://github.com/willbelr/qtpad](https://github.com/willbelr/qtpad) || [qtpad-git](https://aur.archlinux.org/packages/qtpad-git/)
+	[https://gitlab.com/william.belanger/qtpad](https://gitlab.com/william.belanger/qtpad) || [qtpad-git](https://aur.archlinux.org/packages/qtpad-git/)
 
 *   **xNots** — Desktop post-it/sticky note system for the Unix geek.
 

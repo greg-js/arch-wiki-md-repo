@@ -152,5 +152,5 @@ $ for i in {0..256}; do setterm -powerdown 0 >> /dev/tty$i; done; unset i;
 
 ## See also
 
-*   [PC Monitor DPMS specification explanation](http://webpages.charter.net/dperr/dpms.htm)
+*   [PC Monitor DPMS specification explanation](https://web.archive.org/web/20180129095655/http://webpages.charter.net/dperr/dpms.htm)
 *   [DPMS control in X](http://ptspts.blogspot.be/2009/10/screen-blanking-dpms-screen-saver.html)

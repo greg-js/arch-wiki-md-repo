@@ -18,6 +18,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.11 sitilge's treachery](#sitilge.27s_treachery)
     *   [1.12 chestm007's hackery](#chestm007.27s_hackery)
     *   [1.13 Eduxstad's Infidelity](#Eduxstad.27s_Infidelity)
+    *   [1.14 Pi's vr-vm](#Pi.27s_vr-vm)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -365,6 +366,32 @@ Configuration:
 *   Using **libvirt/QEMU**: libvirt/virt-manager ([https://github.com/eduxstad/vfio-config](https://github.com/eduxstad/vfio-config)).
 *   Look in the repository for complete documentation of extra steps taken
 *   Overview: VM managed using virt-manager, using looking glass for primary io and built in spice display server as backup. Passing vm audio back to pulseaudio. Using hugepages for RAM. SCSI Drivers installed for hardware drive support.
+
+### Pi's vr-vm
+
+Hardware:
+
+*   **CPU**: i7-8700k @ 4.9 GHz
+*   **Motherboard**: MSI Gaming Pro Carbon (BIOS/UEFI Version: A.40/5.12)
+*   **GPU**: Gigabyte AORUS GTX 1080 Ti
+*   **RAM**: 2x8GB G.Skill DDR4 @ 3066 MHz
+
+Configuration:
+
+*   **Kernel**: 4.17.6-2-ck
+    *   Pretty much stock linux-ck, but with 1000 Hz tickrate enabled
+*   Using **QEMU/libvirt**: libvirt 4.4.0/QEMU with MSI patch ([https://aur.archlinux.org/packages/qemu-patched-vfiomsitest](https://aur.archlinux.org/packages/qemu-patched-vfiomsitest))
+    *   Scripts/additional info: [https://github.com/PiMaker/Win10-VFIO](https://github.com/PiMaker/Win10-VFIO)
+*   Issues encountered:
+    *   PUBG wouldn't launch at all
+        *   Solution: Enable the HyperV clock with <timer name='hypervclock' present='yes'/> and disable hpet with <timer name='hpet' present='no'/>
+    *   VR would start to stutter badly after about 20-30 minutes of playtime (this one took me about 2 weeks to finally figure out)
+        *   Solution:
+            *   Enable invariant tsc passthrough with <feature policy='require' name='invtsc'/> (required even if using host-passthrough!)
+            *   Enable tsc in Windows VM with "bcdedit /set useplatformclock true" (in cmd.exe, doesn't work in PowerShell)
+            *   **Disable** MSI for the GPU itself (you can leave it on for the Audio controller if you need it, didn't make a difference for me anyway)
+            *   Install and start *irqbalance* (Not sure if needed, but can't hurt to try)
+*   Overview: SteamVR-capable gaming and workstation rig, passing through GPU and onboard USB-controller (leaving an additional ASMedia USB port to the host). 12 GB hugepages memory, 10 of 12 cores (with SMT) passed through. Audio working via Scream ([https://github.com/duncanthrax/scream](https://github.com/duncanthrax/scream)) - with surprisingly low latency and no stutters.
 
 ## Adding your own setup
 

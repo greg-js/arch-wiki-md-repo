@@ -155,9 +155,9 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 
 ### Turquia
 
-*   Site: [http://archtr.org/](http://archtr.org/)
-*   Fórum: [http://archtr.org/forum/](http://archtr.org/forum/)
-*   Wiki: [http://archtr.org/wiki/](http://archtr.org/wiki/)
+*   Site: [https://archtr.org/](https://archtr.org/)
+*   Fórum: [https://forum.archtr.org/](https://forum.archtr.org/)
+*   Wiki: [Ana sayfa (Türkçe)](/index.php/Ana_sayfa_(T%C3%BCrk%C3%A7e) "Ana sayfa (Türkçe)")
 
 ### Vietnã
 

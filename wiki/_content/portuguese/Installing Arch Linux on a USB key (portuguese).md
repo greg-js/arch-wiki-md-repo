@@ -45,18 +45,20 @@ Existem várias maneiras de instalar o Arch em um pendrive, dependendo do sistem
 
 ## Configuração
 
-*   Make sure that `/etc/fstab` includes the correct partition information for `/`, and for any other partitions on the USB key. If the usb key is to be booted on several machines, it is quite likely that devices and number of available hard disks vary. So it is advised to use UUID or label:
+*   Certifique-se de que `/etc/fstab` inclua as informações de partição corretas para `/` e para quaisquer outras partições no pendrive. Se o pendrive for inicializado em várias máquinas, é bem provável que os dispositivos e o número de discos rígidos disponíveis variem. Por isso, é aconselhável usar o UUID ou o rótulo.
 
-To get the proper UUIDs for your partitions issue **blkid**
+Para obter os UUIDs adequados para sua partição, emita **blkid**
 
-**Note:**
+**Nota:**
 
-*   When GRUB is installed on the USB key, the key will always be `hd0,0`.
-*   It seems that current versions of GRUB will automatically default to using uuid. The following directions are for GRUB legacy.
+*   Quando o GRUB é instalado no pendrive, o pendrive sempre será `hd0,0`.
+*   Parece que as versões atuais do GRUB serão automaticamente padronizadas para usar o uuid. As instruções a seguir são para GRUB legado.
 
 ### GRUB legado
 
-`menu.lst`, the GRUB legacy configuration file, should be edited to (loosely) match the following: With the static `/dev/sda*X*`:
+`menu.lst`, o arquivo de configuração do GRUB legado, deve ser editado para (mais ou menos) corresponder às configurações a seguir.
+
+Com o `/dev/sda*X*` estático:
 
 ```
 root (hd0,0)
@@ -65,7 +67,7 @@ initrd /boot/initramfs-linux.img
 
 ```
 
-When using label your menu.lst should look like this:
+Quando estiver usando rótulo, seu menu.lst deve se parecer com isso:
 
 ```
 root (hd0,0)
@@ -74,7 +76,7 @@ initrd /boot/initramfs-linux.img
 
 ```
 
-And for UUID, it should be like this:
+E para UUID, deve se parecer com isso:
 
 ```
 root (hd0,0)
@@ -85,7 +87,7 @@ initrd /boot/initramfs-linux.img
 
 ### GRUB
 
-On GPT with UEFI installations, make sure you follow the instructions on [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") and include the --removable option as doing otherwise may break existing GRUB installations, as in the below command:
+Na GPT com instalações UEFI, certifique-se de seguir as instruções em [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") e incluir a opção `--removable`, pois isso pode interromper as instalações do GRUB existentes, como no comando abaixo:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--removable** --recheck
@@ -94,7 +96,7 @@ On GPT with UEFI installations, make sure you follow the instructions on [GRUB#U
 
 ### Syslinux
 
-With the static `/dev/sda*X*`:
+Com o `/dev/sda*X*` estático:
 
 ```
 LABEL Arch
@@ -105,7 +107,7 @@ LABEL Arch
 
 ```
 
-Using your UUID:
+Usando seu UUID:
 
 ```
 LABEL Arch
@@ -122,39 +124,39 @@ LABEL Arch
 
 #### Drivers de entrada
 
-For laptop use (or use with a tactile screen) you will need the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package for the touchpad/touchscreen to work.
+Para o uso de laptop (ou use com uma tela tátil) você precisará do pacote [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) para o touchpad/touchscreen funcionar.
 
-For instructions on fine tuning or troubleshooting touchpad issues, see the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") article.
+Para obter instruções sobre ajuste fino ou solução de problemas do touchpad, consulte o artigo [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 #### Drivers de vídeo
 
-**Note:** The use of proprietary video drivers is **not** recommended for this type of installation.
+**Nota:** O uso de drivers de vídeo proprietários **não** é recomendado para este tipo de instalação.
 
-To support most common GPUs, install [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu), and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau).
+Para obter suporte às GPUs mais comuns, instale [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) e [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau).
 
 #### Nomenclatura de dispositivos de bloco persistentes
 
-It is recommended to use [UUID](/index.php/UUID "UUID") in both [fstab](/index.php/Fstab "Fstab") and bootloader configuration. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+Recomenda-se usar o [UUID](/index.php/UUID "UUID") tanto na configuração do [fstab](/index.php/Fstab "Fstab") quanto na do gerenciador de inicialização. Veja [Nomenclatura de dispositivo de bloco persistente](/index.php/Persistent_block_device_naming "Persistent block device naming") para detalhes.
 
-Alternatively, you may create udev rule to create custom symlink for your usb key. Then use this symlink in fstab and bootloader configuration. See [udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev") for details.
+Alternativamente, você pode criar a regra do udev para criar um link simbólico personalizado para seu pendrive. Em seguida, use este link simbólico na configuração do fstab e do gerenciador de inicialização. Veja [udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev") para detalhes.
 
 #### Parâmetros do kernel
 
-You may want to disable KMS for various reasons, such as getting a blank screen or a "no signal" error from the display, when using some Intel video cards, etc. To disable KMS, add `nomodeset` as a kernel parameter. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
+Você pode desabilitar KMS por vários motivos, como obter uma tela em branco ou um erro de "sem sinal" no visor, ao usar algumas placas de vídeo Intel, etc. Para desabilitar o KMS, adicione `nomodeset` como um parâmetro do kernel. Veja [Parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") para mais informações.
 
-**Warning:** Some [Xorg](/index.php/Xorg "Xorg") drivers will not work with KMS disabled. See the wiki page on your specific driver for details. Nouveau in particular needs KMS to determine the correct display resolution. If you add `nomodeset` as a kernel parameter as a preemptive measure you may have to adjust the display resolution manually when using machines with Nvidia video cards. See [Xrandr](/index.php/Xrandr "Xrandr") for more info.
+**Atenção:** Alguns drivers [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") não funcionam com o KMS desabilitado. Veja a página wiki em seu driver específico para detalhes. O Nouveau, em particular, precisa do KMS para determinar a resolução de exibição correta. Se você adicionar `nomodeset` como um parâmetro do kernel como uma medida preventiva, pode ser necessário ajustar a resolução de exibição manualmente ao usar máquinas com placas de vídeo Nvidia. Veja [Xrandr](/index.php/Xrandr "Xrandr") para mais informações.
 
 #### Inicializando de mídia USB 3.0
 
-See [[1]](http://www.wyae.de/docs/boot-usb3/).
+Veja [[1]](http://www.wyae.de/docs/boot-usb3/).
 
 ### Compatibilidade
 
-The fallback image should be used for maximum compatibility.
+A imagem alternativa deve ser usada para compatibilidade máxima.
 
 ### Minimizando o acesso a disco
 
-*   You may want to configure [journald](/index.php/Systemd#Journal "Systemd") to store its journals in RAM, e.g. by creating a custom configuration file:
+*   Você pode querer configurar [journald](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)") para armazenar seus journals na RAM, por exemplo, criando um arquivo de configuração personalizado:
 
  `/etc/systemd/journald.conf.d/usbstick.conf` 
 ```
@@ -163,7 +165,7 @@ Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   To disable `fsync` and related system calls in web browsers and other applications that do not write essential data, use the *eatmydata* command from [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) to avoid such system calls:
+*   Para desabilitar `fsync` e chamadas de sistema relacionadas em navegadores web e outros aplicativos que não escrevem dados essenciais, use o comando *eatmydata* do [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) para evitar tais chamadas de sistema:
 
 ```
 $ eatmydata firefox

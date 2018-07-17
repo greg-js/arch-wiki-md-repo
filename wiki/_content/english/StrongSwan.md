@@ -233,15 +233,12 @@ The [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/I
 
 ## Secrets
 
-strongSwan needs to know which clients are allowed to connect to the VPN. This is configured in the `/etc/ipsec.secrets` file, like the following example:
+The server's private key needs to be configured in `/etc/ipsec.secrets`, like the following example:
 
  `/etc/ipsec.secrets` 
 ```
 # RSA private key for this host
 : RSA vpnHostKey.pem
-
-# RSA private key for clients
-: RSA ClientKey.pem
 
 ```
 

@@ -50,17 +50,17 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 *   [9 Complete setups and examples](#Complete_setups_and_examples)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-        *   [10.1.1 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_cannot_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
-    *   [10.2 UEFI (OVMF) Compatibility in VBIOS](#UEFI_.28OVMF.29_Compatibility_in_VBIOS)
-    *   [10.3 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
-    *   [10.4 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-    *   [10.5 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
-    *   [10.6 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
-    *   [10.7 VM only uses one core](#VM_only_uses_one_core)
-    *   [10.8 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
-    *   [10.9 virt-manager has permission issues](#virt-manager_has_permission_issues)
-    *   [10.10 Host Lockup After VM Shutdown](#Host_Lockup_After_VM_Shutdown)
-    *   [10.11 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
+    *   [10.2 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_cannot_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
+    *   [10.3 UEFI (OVMF) Compatibility in VBIOS](#UEFI_.28OVMF.29_Compatibility_in_VBIOS)
+    *   [10.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+    *   [10.5 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+    *   [10.6 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
+    *   [10.7 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
+    *   [10.8 VM only uses one core](#VM_only_uses_one_core)
+    *   [10.9 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
+    *   [10.10 virt-manager has permission issues](#virt-manager_has_permission_issues)
+    *   [10.11 Host Lockup After VM Shutdown](#Host_Lockup_After_VM_Shutdown)
+    *   [10.12 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -953,7 +953,7 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 
 ```
 
-#### "BAR 3: cannot reserve [mem]" error in dmesg after starting VM
+### "BAR 3: cannot reserve [mem]" error in dmesg after starting VM
 
 With respect to [this article](https://www.linuxquestions.org/questions/linux-kernel-70/kernel-fails-to-assign-memory-to-pcie-device-4175487043/):
 

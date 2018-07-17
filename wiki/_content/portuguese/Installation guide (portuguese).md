@@ -21,7 +21,7 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Fuso horário](#Fuso_hor.C3.A1rio)
-    *   [3.4 Locale](#Locale)
+    *   [3.4 Localização](#Localiza.C3.A7.C3.A3o)
     *   [3.5 Configuração de rede](#Configura.C3.A7.C3.A3o_de_rede)
     *   [3.6 Initramfs](#Initramfs)
     *   [3.7 Senha do root](#Senha_do_root)
@@ -100,7 +100,7 @@ Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
 As seguintes *partições* são **exigidos** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
-*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_system_partition "EFI system partition").
+*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition").
 
 **Nota:** Espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
 
@@ -172,7 +172,7 @@ Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/
 
 ```
 
-Esse grupo não inclui todas as ferramentas da instalação *live*, tal como [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ou firmware de rede sem fio específico; veja [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) para comparação.
+Esse grupo não inclui todas as ferramentas da instalação *live*, tal como [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ou firmware de rede sem fio específico; veja [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para comparação.
 
 Para [instalar](/index.php/Instalar "Instalar") pacotes e outros grupos, tal como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), anexe os nomes ao *pacstrap* (separados por espaço) ou a comandos [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa do [#Chroot](#Chroot).
 
@@ -223,9 +223,9 @@ Execute [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) para 
 
 Esse comando presume que o relógio de hardware está definido para [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Veja [Time#Time standard](/index.php/Time#Time_standard "Time") para mais detalhes.
 
-### Locale
+### Localização
 
-Descomente `pt_BR.UTF-8 UTF-8` e qualquer outra [localização](/index.php/Localiza%C3%A7%C3%A3o "Localização") em `/etc/locale.gen`, e gere-as com:
+Descomente `pt_BR.UTF-8 UTF-8` e qualquer outro [locale](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)") em `/etc/locale.gen`, e gere-as com:
 
 ```
 # locale-gen

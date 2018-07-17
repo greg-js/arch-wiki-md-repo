@@ -10,8 +10,8 @@ tp_smapi is a set of kernel modules that retrieves information from and conveys 
         *   [3.1.2 Check whether settings were accepted](#Check_whether_settings_were_accepted)
     *   [3.2 Protect the hard disk from drops](#Protect_the_hard_disk_from_drops)
 *   [4 Workaround for partially supported laptops](#Workaround_for_partially_supported_laptops)
-    *   [4.1 1st option](#1st_option)
-    *   [4.2 2nd option](#2nd_option)
+    *   [4.1 1st option, custom script](#1st_option.2C_custom_script)
+    *   [4.2 2nd option, tpacpi-bat](#2nd_option.2C_tpacpi-bat)
 *   [5 See also](#See_also)
 
 ## Supported laptops
@@ -141,7 +141,7 @@ If start-charge_thresh is supported but not stop_charge_thresh but you still wan
 
 Note: None of the two options works on T42p.
 
-### 1st option
+### 1st option, custom script
 
 *   create the script `/usr/sbin/set_battery_thresholds` as above
 *   copy the original `/etc/acpi/handler.sh` to `/etc/acpi/handler.sh.start`
@@ -169,7 +169,7 @@ exit 0
 
 ```
 
-### 2nd option
+### 2nd option, tpacpi-bat
 
 To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) or [tpacpi-bat-git](https://aur.archlinux.org/packages/tpacpi-bat-git/) from the AUR.
 

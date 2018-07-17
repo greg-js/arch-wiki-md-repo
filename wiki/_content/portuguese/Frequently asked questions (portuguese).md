@@ -222,7 +222,7 @@ Veja [Arch em comparação com outras distribuições](/index.php/Arch_em_compar
 
 ### Como eu determino se meu processador é compatível com x86_64?
 
-Se seu processador é compatível com [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64"), você terá a flag `lm` no `/proc/cpuinfo`. Por exemplo,
+Se seu processador é compatível com [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64"), você terá a flag `lm` ([*l*ong *m*ode](https://en.wikipedia.org/wiki/Long_mode "wikipedia:Long mode")) no `/proc/cpuinfo`. Por exemplo,
 
 ```
 $ grep -w lm /proc/cpuinfo
