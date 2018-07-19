@@ -63,26 +63,26 @@ Support for the Killer 1550 is not there yet but is coming. [[1]](https://www.sp
 
 It should be possible to add support by patching the kernel [[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
 
-Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.4
+Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.6
 
  `0001-Add-patch-for-MSI-GS65-wifi.patch` 
 ```
-From c15cb8df385c8fe6d98eda2098c688bc20ffca1c Mon Sep 17 00:00:00 2001
+From d4156c9f4dfb872da1e512cfdf6aa0648c839210 Mon Sep 17 00:00:00 2001
 From: Sandy Carter <bwrsandman@gmail.com>
 Date: Tue, 19 Jun 2018 09:38:08 -0700
 Subject: [PATCH] Add patch for MSI GS65 wifi
 
 ---
- repos/core-x86_64/0004-Add-wifi-support.patch | 10 ++++++++++
- repos/core-x86_64/PKGBUILD                    |  6 +++++-
- 2 files changed, 15 insertions(+), 1 deletion(-)
- create mode 100644 repos/core-x86_64/0004-Add-wifi-support.patch
+ repos/core-x86_64/0005-Add-wifi-support.patch | 10 ++++++++++
+ repos/core-x86_64/PKGBUILD                    |  7 ++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 repos/core-x86_64/0005-Add-wifi-support.patch
 
-diff --git a/repos/core-x86_64/0004-Add-wifi-support.patch b/repos/core-x86_64/0004-Add-wifi-support.patch
+diff --git a/repos/core-x86_64/0005-Add-wifi-support.patch b/repos/core-x86_64/0005-Add-wifi-support.patch
 new file mode 100644
 index 0000000..b7e62ef
 --- /dev/null
-+++ b/repos/core-x86_64/0004-Add-wifi-support.patch
++++ b/repos/core-x86_64/0005-Add-wifi-support.patch
 @@ -0,0 +1,10 @@
 +--- a/drivers/net/wireless/intel/iwlwifi/pcie/drv.c
 ++++ b/drivers/net/wireless/intel/iwlwifi/pcie/drv.c
@@ -95,38 +95,39 @@ index 0000000..b7e62ef
 + 	{IWL_PCI_DEVICE(0xA370, 0x2034, iwl9560_2ac_cfg_soc)},
 + 	{IWL_PCI_DEVICE(0xA370, 0x4030, iwl9560_2ac_cfg_soc)},
 diff --git a/repos/core-x86_64/PKGBUILD b/repos/core-x86_64/PKGBUILD
-index cba8dca..436cd76 100644
+index b19eea1..1747bd8 100644
 --- a/repos/core-x86_64/PKGBUILD
 +++ b/repos/core-x86_64/PKGBUILD
-@@ -22,6 +22,7 @@ source=(
-   0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
+@@ -23,6 +23,7 @@ source=(
    0002-Revert-drm-i915-edp-Allow-alternate-fixed-mode-for-e.patch
    0003-ACPI-watchdog-Prefer-iTCO_wdt-always-when-WDAT-table.patch
-+  0004-Add-wifi-support.patch
+   0004-mac80211-disable-BHs-preemption-in-ieee80211_tx_cont.patch
++  0005-Add-wifi-support.patch
  )
  validpgpkeys=(
    'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
-@@ -37,7 +38,8 @@ sha256sums=('9faa1dd896eaea961dc6e886697c0b3301277102e5bc976b2758f9a62d3ccd13'
-             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
-             'e3c08f9b91611186e5ec579187ecea2a0143e5c2dc7ffc30ac6ea6e2b6d130fd'
-             '5403dead9161344b2c01027526146a250147680f4a2d32a54d40c55fc1becc8a'
--            'd55e7de60b12bca26ded4c1bb8eb5860a9092374914a201a0f6a0ed2849d099f')
-+            'd55e7de60b12bca26ded4c1bb8eb5860a9092374914a201a0f6a0ed2849d099f'
+@@ -39,7 +40,8 @@ sha256sums=('9faa1dd896eaea961dc6e886697c0b3301277102e5bc976b2758f9a62d3ccd13'
+             '92f848d0e21fbb2400e50d1c1021514893423641e5450896d7b1d88aa880b2b9'
+             'fc3c50ae6bd905608e0533a883ab569fcf54038fb9d6569b391107d9fd00abbc'
+             'bc50c605bd0e1fa7437c21ddef728b83b6de3322b988e14713032993dfa1fc69'
+-            '66284102261c4ed53db050e9045c8672ba0e5171884b46e58f6cd417774d8578')
++            '66284102261c4ed53db050e9045c8672ba0e5171884b46e58f6cd417774d8578'
 +            '54b32090a6ac96e95da8cfd54634310adbff6fbebb8dbbef176d1d3facf4d1a5')
 
  _kernelname=${pkgbase#linux}
  : ${_kernelname:=-ARCH}
-@@ -60,6 +62,8 @@ prepare() {
-   # https://bugs.archlinux.org/task/56780
-   patch -Np1 -i ../0003-ACPI-watchdog-Prefer-iTCO_wdt-always-when-WDAT-table.patch
+@@ -65,6 +67,9 @@ prepare() {
+   # Fix iwd provoking a BUG
+   patch -Np1 -i ../0004-mac80211-disable-BHs-preemption-in-ieee80211_tx_cont.patch
 
-+  patch -Np1 -i ../0004-Add-wifi-support.patch
++  # GS65 Wifi support
++  patch -Np1 -i ../0005-Add-wifi-support.patch
 +
    cat ../config - >.config <<END
  CONFIG_LOCALVERSION="${_kernelname}"
  CONFIG_LOCALVERSION_AUTO=n
 -- 
-2.17.1
+2.18.0
 
 ```
 

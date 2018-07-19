@@ -8,6 +8,8 @@ Related articles
 
 To join [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channels, you need an [IRC client](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet"). The [Irssi](/index.php/Irssi "Irssi") client is included on the official [installation](/index.php/Installation "Installation") media.
 
+You are expected to familiarize yourself with our [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct") before joining any of the official channels. For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://www.ircbeginner.com/ircinfo/abbreviations.html).
+
 ## Contents
 
 *   [1 Main channels](#Main_channels)
@@ -25,7 +27,7 @@ To join [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Inter
 
 This section is about [#archlinux](ircs://chat.freenode.net/archlinux), the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and [#archlinux-offtopic](ircs://chat.freenode.net/archlinux-offtopic), the main Arch Linux social channel, both available on the [Freenode](https://freenode.net/) network.
 
-The central topic for **#archlinux** is support and general discussion about Arch Linux. For a list of rules refer to the [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct"). For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://www.ircbeginner.com/ircinfo/abbreviations.html).
+The central topic for **#archlinux** is support and general discussion about Arch Linux.
 
 ### Registration
 

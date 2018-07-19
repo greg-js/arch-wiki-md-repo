@@ -223,6 +223,8 @@ Há vários bancos de dado online de páginas man, incluindo:
 *   [Repositório de páginas man do UNIX and Linux Forums](https://www.unix.com/man-page/OpenSolaris/1/man/)
 *   [Repositório de páginas man do Ubuntu](http://manpages.ubuntu.com/)
 
+**Dica:** Você pode usar o [!Bang](https://duckduckgo.com/bang.html) **!archman** do DuckDuckGo para pesquisar pelas [páginas man do Arch Linux](https://jlk.fjfi.cvut.cz/arch/manpages/) diretamente
+
 **Atenção:** Algumas distribuições fornecem páginas man alteradas ou desatualizadas que se diferem daquelas fornecidas pelo Arch. Exercite o cuidado ao usar páginas man online.
 
 ## Páginas man notáveis

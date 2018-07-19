@@ -113,13 +113,13 @@ Once you know the IPs, you can replace the `pdnsd.conf`’s already-existant `re
 
 You should now have a working `pdnsd` daemon. Start it.
 
-[Test](/index.php/Resolv.conf#Testing "Resolv.conf") that it is now working.
+[Test](/index.php/Domain_name_resolution#Lookup_utilities "Domain name resolution") that it is now working.
 
 For the second time you look up any address using `127.0.0.1`, query time should be under 1 ms.
 
 ### System setup
 
-Make sure to [enable](/index.php/Enable "Enable") the `pdnsd` service.
+Make sure to [enable](/index.php/Enable "Enable") `pdnsd.service`.
 
 It starts right after `network.target`, as services that use the network rely on a working DNS, i.e. `network-online.target` (see: [Upstream Wiki](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/)).
 

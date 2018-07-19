@@ -125,6 +125,13 @@ NetworkManager comes with [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/
 
 ### nmcli examples
 
+List nearby wifi networks:
+
+```
+nmcli dev wifi list
+
+```
+
 Connect to a wifi network:
 
 ```

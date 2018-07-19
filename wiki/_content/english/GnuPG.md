@@ -44,7 +44,7 @@ According to the [official website](https://www.gnupg.org/):
         *   [6.5.1 Set SSH_AUTH_SOCK](#Set_SSH_AUTH_SOCK)
         *   [6.5.2 Configure pinentry to use the correct TTY](#Configure_pinentry_to_use_the_correct_TTY)
         *   [6.5.3 Add SSH keys](#Add_SSH_keys)
-        *   [6.5.4 Use GPG key as SSH key](#Use_GPG_key_as_SSH_key)
+        *   [6.5.4 Using a PGP key for SSH authentication](#Using_a_PGP_key_for_SSH_authentication)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
     *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_.28PCSC_Lite.29)
@@ -596,18 +596,23 @@ max-cache-ttl-ssh 10800
 
 ```
 
-#### Use GPG key as SSH key
+#### Using a PGP key for SSH authentication
 
-If you use *gpg-agent* as an SSH agent, you can use your GnuPG key as an SSH key. This reduces key maintenance and you can store your SSH key on a keycard. You have to create a key with the authentication capability (see [#Custom capabilities](#Custom_capabilities)). GnuPG will automatically use this key, if necessary. To check whether the key is added run:
+If the `enable-ssh-agent` option is enabled for `gpg-agent`, you can use your PGP key as an SSH key. This requires a key with the `Authentication` capability (see [#Custom capabilities](#Custom_capabilities)). There are various benefits gained by using a PGP key for SSH authentication, including:
+
+*   Reduced key maintenance, as you will no longer need to maintain an SSH key
+*   The ability to store the authentication key on a smartcard. GnuPG will automatically detect the key when the card is available, and add it to the agent (check with `ssh-add -l` or `ssh-add -L`). The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`. Note that your key may not be added to `$HOME/.gnupg/sshcontrol`, which is where normal SSH keys are listed.
+
+To add your key to the agent for the first time, you need to add the keygrip for your key with the Authentication capability to `$HOME/.gnupg/sshcontrol`. You can get the keygrip of your key by executing `gpg --list-keys --with-keygrip`, like so:
 
 ```
-$ ssh-add -l
+$ gpg --list-keys --with-keygrip
+  sub   rsa4096/1234ABCD1234ABCD 2001-01-01 [A] [expires: 2002-01-01]
+        Keygrip = < put this value on its own line in $HOME/.gnupg/sshcontrol >
 
 ```
 
-The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`*.*
-
-**Note:** GnuPG might not add your GnuPG key to `$GNUPGHOME/sshcontrol`, where "normal" SSH keys are listed.
+Adding the keygrip to `$HOME/.gnupg/sshcontrol` is a one-time action; you will not need to edit the file again, unless you are adding additional keygrips. You can retrieve the public key for your Authentication key by executing `ssh-add -L`.
 
 ## Smartcards
 
@@ -856,7 +861,7 @@ Your user might not have the permission to access the smartcard which results in
 
 One possible solution is to add a new group `scard` including the users who need access to the smartcard.
 
-Then use an [udev](/index.php/Udev#Writing_udev_rules "Udev") rule, similar to the following:
+Then use [udev rules](/index.php/Udev_rules "Udev rules"), similar to the following:
 
  `/etc/udev/rules.d/71-gnupg-ccid.rules` 
 ```

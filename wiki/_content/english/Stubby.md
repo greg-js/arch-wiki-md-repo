@@ -63,7 +63,7 @@ After selecting a resolver, modify the [resolv.conf](/index.php/Resolv.conf "Res
 
  `/etc/resolv.conf`  `nameserver 127.0.0.1` 
 
-Other programs may overwrite this setting; see [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") for details.
+Other programs may overwrite this setting; see [resolv.conf#Overwriting of resolv.conf](/index.php/Resolv.conf#Overwriting_of_resolv.conf "Resolv.conf") for details.
 
 ### Start systemd service
 

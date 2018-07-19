@@ -85,7 +85,7 @@ options edns0 single-request-reopen
 
 ```
 
-Other programs may overwrite this setting; see [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") for details.
+Other programs may overwrite this setting; see [resolv.conf#Overwriting of resolv.conf](/index.php/Resolv.conf#Overwriting_of_resolv.conf "Resolv.conf") for details.
 
 ### Start systemd service
 
@@ -151,7 +151,7 @@ forward-zone:
 
 ##### dnsmasq
 
-Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#DNS_cache_setup "Dnsmasq"). The basic configuration to work with DNSCrypt:
+Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#Caching_DNS_server "Dnsmasq"). The basic configuration to work with DNSCrypt:
 
  `/etc/dnsmasq.conf` 
 ```

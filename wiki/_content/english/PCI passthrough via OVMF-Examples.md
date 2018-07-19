@@ -93,7 +93,7 @@ Configuration:
 *   **Guest OS**: Windows 8.1 Pro.
 *   The entire HDD is passed to the VM as a raw device (formatted as a single NTFS partition).
 *   USB keyboard and mouse are passed to the guest VM and shared with the host with Synergy.
-*   Virtualized audio is working: PulseAudio on the host is configured to accept TCP connections, and the envvars required for QEMU to use PA are pointed at the PA server running on 127.0.0.1\. This way it's not required to change the QEMU user, everything works flawlessly. (Exact details in the repo.)
+*   Virtualized audio is working: PulseAudio on the host is configured to accept TCP connections, and the envvars required for QEMU to use PA are pointed at the PA server running on 127.0.0.1\. This way it is not required to change the QEMU user, everything works flawlessly. (Exact details in the repo.)
 *   Bridged networking (with NetworkManager's and [this tutorial's](https://www.happyassassin.net/2014/07/23/bridged-networking-for-libvirt-with-networkmanager-2014-fedora-21/) help) is used. `bridge0` is created, `eth0` interface is bound to it. STP disabled, VirtIO NIC is configured in the VM and that VM is seen in the network just as any other computer (and is being assigned an IP address from the router itself, can communicate freely with other computers).
 
 ### Manbearpig3130's Virtual Gaming Machine
@@ -288,7 +288,7 @@ Configuration:
 *   Windows boots on second screen with simple script which shutting down display with xrandr.
 *   Using Synergy to share mouse and keyboard between systems.
 *   **Quirks**:
-*   Synergy isn't perfect and won't entirely work in some games.
+*   Synergy is not perfect and will not entirely work in some games.
 *   No boot screen. Display is turning on only when Windows is up and ready to go.
 
 ### sitilge's treachery
@@ -380,17 +380,18 @@ Configuration:
 
 *   **Kernel**: 4.17.6-2-ck
     *   Pretty much stock linux-ck, but with 1000 Hz tickrate enabled
-*   Using **QEMU/libvirt**: libvirt 4.4.0/QEMU with MSI patch ([https://aur.archlinux.org/packages/qemu-patched-vfiomsitest](https://aur.archlinux.org/packages/qemu-patched-vfiomsitest))
+*   Using **QEMU/libvirt**: libvirt 4.4.0/QEMU with MSI patch ([qemu-patched-vfiomsitest)](https://aur.archlinux.org/packages/qemu-patched-vfiomsitest%29/)
     *   Scripts/additional info: [https://github.com/PiMaker/Win10-VFIO](https://github.com/PiMaker/Win10-VFIO)
 *   Issues encountered:
-    *   PUBG wouldn't launch at all
+    *   PUBG would not launch at all
         *   Solution: Enable the HyperV clock with <timer name='hypervclock' present='yes'/> and disable hpet with <timer name='hpet' present='no'/>
     *   VR would start to stutter badly after about 20-30 minutes of playtime (this one took me about 2 weeks to finally figure out)
         *   Solution:
             *   Enable invariant tsc passthrough with <feature policy='require' name='invtsc'/> (required even if using host-passthrough!)
-            *   Enable tsc in Windows VM with "bcdedit /set useplatformclock true" (in cmd.exe, doesn't work in PowerShell)
-            *   **Disable** MSI for the GPU itself (you can leave it on for the Audio controller if you need it, didn't make a difference for me anyway)
-            *   Install and start *irqbalance* (Not sure if needed, but can't hurt to try)
+            *   Enable tsc in Windows VM with "bcdedit /set useplatformclock true" (in cmd.exe, does not work in PowerShell)
+            *   **Disable** MSI for the GPU itself (you can leave it on for the Audio controller if you need it, did not make a difference for me anyway)
+            *   **Disable** vAPIC and synic in the HyperV configuration
+            *   Install and start *irqbalance* (Not sure if needed, but cannot hurt to try)
 *   Overview: SteamVR-capable gaming and workstation rig, passing through GPU and onboard USB-controller (leaving an additional ASMedia USB port to the host). 12 GB hugepages memory, 10 of 12 cores (with SMT) passed through. Audio working via Scream ([https://github.com/duncanthrax/scream](https://github.com/duncanthrax/scream)) - with surprisingly low latency and no stutters.
 
 ## Adding your own setup

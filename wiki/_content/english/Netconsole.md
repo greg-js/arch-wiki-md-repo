@@ -74,7 +74,7 @@ echo 192.168.0.17 > remote_ip
 # set local network device name (find it trough ifconfig, examples: eth0, eno1, wlan0)
 echo eno1 > dev_name
 # find destination MAC address
-arping $(cat remote_ip) -f | grep -o ..:..:..:..:..:.. > remote_mac
+arping -I $(cat dev_name) $(cat remote_ip) -f | grep -o ..:..:..:..:..:.. > remote_mac
 
 echo 1 > enabled
 
@@ -123,7 +123,7 @@ One may need to switch off PC and router firewall, and setup proper router port 
 
 ## Usage
 
-**netconsole** is a kernel module which sends kernel logs over the network, which is useful for debugging slower computers. The setup process is:
+<a class="mw-selflink selflink">netconsole</a> is a kernel module which sends kernel logs over the network, which is useful for debugging slower computers. The setup process is:
 
 1.  Set up another computer (running Arch) to accept syslog requests on a remote port using `syslog.conf`
 2.  View the logs using your `/var/log/everything.log` file

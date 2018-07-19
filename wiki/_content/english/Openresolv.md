@@ -1,5 +1,13 @@
 [Openresolv](https://roy.marples.name/projects/openresolv) is a [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf") implementation, i.e. a [resolv.conf](/index.php/Resolv.conf "Resolv.conf") management framework.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+*   [3 Users](#Users)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Defining multiple values for options](#Defining_multiple_values_for_options)
+
 ## Installation
 
 [Install](/index.php/Install "Install") the [openresolv](https://www.archlinux.org/packages/?name=openresolv) package.
@@ -28,3 +36,15 @@ Stand-alone DHCP clients:
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")
 *   [strongSwan](/index.php/StrongSwan "StrongSwan")
 *   [WireGuard](/index.php/WireGuard "WireGuard")
+
+## Tips and tricks
+
+### Defining multiple values for options
+
+The man page does not mention it, but to define multiple values, for options that support it (e.g. `name-servers`, `resolv_conf_options` etc.) in `/etc/resolvconf.conf`, you need to write them space separated inside quotes. E.g.:
+
+ `/etc/resolvconf.conf` 
+```
+resolv_conf_options="edns0 single-request"
+name_servers="dns1.example.com dns2.example.com dns3.example.com"
+```

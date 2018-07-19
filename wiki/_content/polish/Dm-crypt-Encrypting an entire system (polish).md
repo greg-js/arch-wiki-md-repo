@@ -794,8 +794,6 @@ Formatujemy i montujemy je oraz aktywujemy partycję swap zobacz [File systems#C
 
 ### Przygotowanie partycji rozruchowej
 
-The `/boot` partition can be installed on the standard vfat partition of a USB stick, if required. But if manual partitioning is needed, then a small 200MB partition is all that is required. Create the partition using a [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning") of your choice.
-
 Partycję `/boot` można zainstalować na standardowej partycji vfat USB-Stick, jeśli jest taka potrzeba. Ale jeśli potrzebne jest ręczne partycjonowanie, wystarczy mała partycja 200 MB. Utwórz partycję za pomocą wybranego [narzędzia do partycjonowania.](/index.php/Partitioning#Partitioning_tools "Partitioning")
 
 Wybieramy system plików, który nie jest zapisywany w dzienniku, aby zachować pamięć flash partycji `/boot`, jeśli nie została jeszcze sformatowana jako vfat:

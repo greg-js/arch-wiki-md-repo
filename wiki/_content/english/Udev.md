@@ -247,7 +247,7 @@ Because *udev* loads all modules asynchronously, they are initialized in a diffe
 
 For setting up the webcam in the first place, refer to [Webcam setup](/index.php/Webcam_setup "Webcam setup").
 
-Using multiple webcams will assign video devices as `/dev/video*` randomly on boot. The recommended solution is to create symlinks using an *udev* rule as in the example above [#Writing udev rules](#Writing_udev_rules):
+Using multiple webcams will assign video devices as `/dev/video*` randomly on boot. The recommended solution is to create symlinks using an *udev* rule as in the [#udev rule example](#udev_rule_example):
 
  `/etc/udev/rules.d/83-webcam.rules` 
 ```

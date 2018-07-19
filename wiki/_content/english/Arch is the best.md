@@ -1371,6 +1371,20 @@ Arch onena da!
 
 ```
 
+	Brezhoneg
+
+```
+Arch emañ ar gwellañ!
+
+```
+
+	or
+
+```
+Arch emañ ar matañ!
+
+```
+
 	British
 
 ```

@@ -11,7 +11,7 @@ Antes de desactualizar uno o varios paquetes, considere por qué desea hacerlo. 
 **Advertencia:**
 
 *   La desactualización de un paquete puede requerir que sus dependencias también sean desactualizadas. Cuando el número de paquetes a desactualizar es grande, considere usar una instantánea. Ver [Cómo restaurar todos los paquetes a una fecha específica.](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
-*   Tenga cuidado con los cambios en los archivos de configuración y scripts. Por ahora, pacman se encargará de esto por nosotros, siempre y cuando no eludamos sus medidas de seguridad.
+*   Tenga cuidado con los cambios en los archivos de configuración y scripts. Por ahora, *pacman* se encargará de esto por nosotros, siempre y cuando no eludamos sus medidas de seguridad.
 *   Si la desactualización implica un cambio de nombre, toda dependencia puede necesitar ser desactualizada o también [reconstruida](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#.C2.BFQu.C3.A9_pasa_si_ejecuto_una_actualizaci.C3.B3n_completa_del_sistema_y_hay_una_actualizaci.C3.B3n_de_una_biblioteca_compartida.2C_pero_no_para_las_aplicaciones_que_dependen_de_ella.3F "Frequently asked questions (Español)") .
 
 ## Contents
@@ -40,6 +40,15 @@ Este proceso eliminará el paquete actual e instalará la versión anterior. Los
 Una vez revertido el paquete, añádalo temporalmente al archivo [IgnorePkg section](/index.php/Pacman_(Espa%C3%B1ol)#Evitar_la_actualizaci.C3.B3n_de_un_paquete "Pacman (Español)") de `pacman.conf`, hasta que se resuelva el problema con el paquete actualizado.
 
 ### Desactualizando el kernel
+
+En caso de problemas con un nuevo kernel, los paquetes de Linux pueden ser desactualizados a los últimos que funcionen [#Usando la caché de pacman](#Usando_la_cach.C3.A9_de_pacman). Vaya al directorio `/var/cache/pacman/pkg` y desactualice al menos [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) y cualquier módulo del núcleo. Por ejemplo:
+
+```
+# pacman -U linux-4.15.8-1-x86_64.pkg.tar.xz linux-headers-4.15.8-1-x86_64.pkg.tar.xz virtualbox-host-modules-arch-5.2.8-4-x86_64.pkg.tar.xz
+
+```
+
+**Sugerencia:** Si no puede arrancar después de una actualización del núcleo, puede desactualizarlo haciendo un [chrooting](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") al sistema.Arranque usando un Arch Linux [USB flash installation media](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)") y monte la partición donde está instalado su sistema en `/mnt`. Si tiene `/boot` o `/var` en particiones separadas, móntelas también en `/mnt`. (por ejemplo, `mount /dev/sdc3 /mnt/boot`). Luego haga *chroot* en el sistema usando: `# arch-chroot /mnt /bin/bash` Ahora puede ir al directorio de caché de *pacman* y desactualizar los paquetes de Linux usando el comando indicado arriba. Una vez hecho esto, salga del chroot (con `exit`) y reinicie.
 
 ### Archivo Arch Linux
 

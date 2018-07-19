@@ -167,7 +167,7 @@ Media served could be based on lightweight and cheap system like development boa
 
 ### Automount external drives
 
-This is very useful if you want to automate the server. See [udev#Automounting udisks wrappers](/index.php/Udev#Automounting_udisks_wrappers "Udev") for more information.
+This is very useful if you want to automate the server. See [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks") for more information.
 
 ### Issues
 

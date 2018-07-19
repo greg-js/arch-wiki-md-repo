@@ -1,13 +1,12 @@
-**翻译状态：** 本文是英文页面 [Eclipse](/index.php/Eclipse "Eclipse") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-03-12，点击[这里](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=355460)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Eclipse](/index.php/Eclipse "Eclipse") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-18，点击[这里](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=527415)可以查看翻译后英文页面的改动。
 
-[Eclipse](http://eclipse.org) 是一个开源的社区项目，它致力于提供一个通用的开发平台。Eclipse 项目最广为人知的是它的跨平台集成开发环境(IDE). Arch Linux 软件包 (以及本文) 只针对于此 IDE。
+[Eclipse](https://eclipse.org) 是一个开源的社区项目，它致力于提供一个通用的开发平台。Eclipse 项目最广为人知的是它的跨平台集成开发环境(IDE). Arch Linux 软件包 (以及本文) 只针对于此 IDE。
 
 Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发应用程序，包括 Java, C/C++, PHP 和 Perl. 此 IDE 也可以提供 subversion 支持(见下文) 以及任务管理。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 Eclipse for Java](#Eclipse_for_Java)
 *   [2 插件](#.E6.8F.92.E4.BB.B6)
     *   [2.1 添加默认更新站点](#.E6.B7.BB.E5.8A.A0.E9.BB.98.E8.AE.A4.E6.9B.B4.E6.96.B0.E7.AB.99.E7.82.B9)
     *   [2.2 Eclipse Marketplace](#Eclipse_Marketplace)
@@ -18,25 +17,24 @@ Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发�
     *   [3.1 在线版本](#.E5.9C.A8.E7.BA.BF.E7.89.88.E6.9C.AC)
     *   [3.2 离线版本](#.E7.A6.BB.E7.BA.BF.E7.89.88.E6.9C.AC)
 *   [4 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [4.1 第一次启动或*帮助 > 欢迎*时崩溃](#.E7.AC.AC.E4.B8.80.E6.AC.A1.E5.90.AF.E5.8A.A8.E6.88.96.E5.B8.AE.E5.8A.A9_.3E_.E6.AC.A2.E8.BF.8E.E6.97.B6.E5.B4.A9.E6.BA.83)
-    *   [4.2 Ctrl+X 关闭了 Eclipse](#Ctrl.2BX_.E5.85.B3.E9.97.AD.E4.BA.86_Eclipse)
-    *   [4.3 Eclipse 4 不遵守暗色/自定义 gtk 主题导致背景白屏](#Eclipse_4_.E4.B8.8D.E9.81.B5.E5.AE.88.E6.9A.97.E8.89.B2.2F.E8.87.AA.E5.AE.9A.E4.B9.89_gtk_.E4.B8.BB.E9.A2.98.E5.AF.BC.E8.87.B4.E8.83.8C.E6.99.AF.E7.99.BD.E5.B1.8F)
-        *   [4.3.1 4.2.0 以及 4.3.0](#4.2.0_.E4.BB.A5.E5.8F.8A_4.3.0)
-        *   [4.3.2 4.4.0 (Luna)](#4.4.0_.28Luna.29)
-    *   [4.4 使用 Gnome 3.6 Adwaita 主题时"提示"显示为深色背景色](#.E4.BD.BF.E7.94.A8_Gnome_3.6_Adwaita_.E4.B8.BB.E9.A2.98.E6.97.B6.22.E6.8F.90.E7.A4.BA.22.E6.98.BE.E7.A4.BA.E4.B8.BA.E6.B7.B1.E8.89.B2.E8.83.8C.E6.99.AF.E8.89.B2)
-    *   [4.5 切换按钮的选择/未选择状态是一样的](#.E5.88.87.E6.8D.A2.E6.8C.89.E9.92.AE.E7.9A.84.E9.80.89.E6.8B.A9.2F.E6.9C.AA.E9.80.89.E6.8B.A9.E7.8A.B6.E6.80.81.E6.98.AF.E4.B8.80.E6.A0.B7.E7.9A.84)
-    *   [4.6 改变默认窗口标题字号](#.E6.94.B9.E5.8F.98.E9.BB.98.E8.AE.A4.E7.AA.97.E5.8F.A3.E6.A0.87.E9.A2.98.E5.AD.97.E5.8F.B7)
-*   [5 另见](#.E5.8F.A6.E8.A7.81)
+    *   [4.1 Ctrl+X 关闭了 Eclipse](#Ctrl.2BX_.E5.85.B3.E9.97.AD.E4.BA.86_Eclipse)
+    *   [4.2 暗色主题](#.E6.9A.97.E8.89.B2.E4.B8.BB.E9.A2.98)
+    *   [4.3 使用 Gnome 3.6 Adwaita 主题时"提示"显示为深色背景色](#.E4.BD.BF.E7.94.A8_Gnome_3.6_Adwaita_.E4.B8.BB.E9.A2.98.E6.97.B6.22.E6.8F.90.E7.A4.BA.22.E6.98.BE.E7.A4.BA.E4.B8.BA.E6.B7.B1.E8.89.B2.E8.83.8C.E6.99.AF.E8.89.B2)
+    *   [4.4 切换按钮的选择/未选择状态是一样的](#.E5.88.87.E6.8D.A2.E6.8C.89.E9.92.AE.E7.9A.84.E9.80.89.E6.8B.A9.2F.E6.9C.AA.E9.80.89.E6.8B.A9.E7.8A.B6.E6.80.81.E6.98.AF.E4.B8.80.E6.A0.B7.E7.9A.84)
+    *   [4.5 改变默认窗口标题字号](#.E6.94.B9.E5.8F.98.E9.BB.98.E8.AE.A4.E7.AA.97.E5.8F.A3.E6.A0.87.E9.A2.98.E5.AD.97.E5.8F.B7)
+*   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方软件仓库](/index.php/Official_repositories "Official repositories")的软件包[eclipse](https://www.archlinux.org/packages/?name=eclipse)。
+从下面列表中选择一个进行[安装](/index.php/Install "Install"):
 
-这个基础包内建了 Java 开发支持。
+*   [eclipse-jee](https://www.archlinux.org/packages/?name=eclipse-jee) - Java EE 开发
+*   [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java) - Java 开发
+*   [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp) - C/C++ 开发
+*   [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php) - PHP 开发
+*   [eclipse-javascript](https://www.archlinux.org/packages/?name=eclipse-javascript) - JavaScript 和网页开发
 
-### Eclipse for Java
-
-针对 Java 开发者的 Eclipse IDE 可以安装 AUR 的 [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java) 软件包。
+目前不支持同时安装多个版本 [FS#45577](https://bugs.archlinux.org/task/45577): 请选择最接近您需求的软件包，其它功能可以通过[插件](#Plugins)进行安装。
 
 ## 插件
 
@@ -60,17 +58,17 @@ Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发�
 
 **注意:**
 
-*   如果你使用 Eclipse 的插件管理器，建议您以 root 身份运行 Eclipse: 这种方法插件会安装到 `/usr/share/eclipse/plugins/`; 如果你以普通用户安装，它们会被存储在 `~/.eclipse/` 下的一个和版本号相关的文件夹里，并且升级 Eclipse 之后插件再也无法被识别。
+*   如果你使用 Eclipse 的插件管理器，建议您以 root 身份运行 Eclipse: 这种方法插件会安装到 `/usr/lib/eclipse/plugins/`; 如果你以普通用户安装，它们会被存储在 `~/.eclipse/` 下的一个和版本号相关的文件夹里，并且升级 Eclipse 之后插件再也无法被识别。
 *   日常工作时不要以 root 身份运行 Eclipse.
 
 #### 通过插件管理器升级
 
 运行 Eclipse 并执行 *帮助 > 检查更新*。如果你如上以 root 身份安装，那么需要以 root 身份来升级。
 
-对于准备更新的插件，你应该确保已经启用它们的更新源 *窗口 > 首选项 > 安装/升级 > 可用软件站点*: 你可在各自的网站上找到插件的更新源。要添加/编辑/移除... 源只需使用*可用软件站点*面板右部的按钮。对于 Eclipse 4.4 (Luna), 检查你是否启用了:
+对于准备更新的插件，你应该确保已经启用它们的更新源 *窗口 > 首选项 > 安装/升级 > 可用软件站点*: 你可在各自的网站上找到插件的更新源。要添加/编辑/移除... 源只需使用*可用软件站点*面板右部的按钮。对于 Eclipse 4.5 (Mars), 检查你是否启用了:
 
 ```
-[http://download.eclipse.org/releases/luna](http://download.eclipse.org/releases/luna)
+[http://download.eclipse.org/releases/mars](http://download.eclipse.org/releases/mars)
 
 ```
 
@@ -82,29 +80,9 @@ Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发�
 
 	[http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin](http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin) || [eclipse-avr](https://aur.archlinux.org/packages/eclipse-avr/)
 
-*   **Aptana** — HTML5/CSS3/JavaScript/Ruby/Rails/PHP/Pydev/Django 支持，也可作为独立程序下载。
+*   **Aptana** — HTML5/CSS3/JavaScript/Ruby/Rails/PHP/Pydev/Django support. Also available as standalone application.
 
-	[http://www.aptana.com/](http://www.aptana.com/) || [eclipse-aptana](https://aur.archlinux.org/packages/eclipse-aptana/) [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
-
-*   **Eclipse CDT** — C/C++ 支持。
-
-	[http://www.eclipse.org/cdt/](http://www.eclipse.org/cdt/) || [eclipse-cdt](https://www.archlinux.org/packages/?name=eclipse-cdt)
-
-*   **Eclipse PDT** — [PHP](/index.php/PHP "PHP") 支持。
-
-	[http://www.eclipse.org/pdt/](http://www.eclipse.org/pdt/) || [eclipse-pdt](https://aur.archlinux.org/packages/eclipse-pdt/)
-
-*   **EclipseFP** — [Haskell](/index.php/Haskell "Haskell") 支持。
-
-	[http://eclipsefp.github.io/](http://eclipsefp.github.io/) || [eclipse-eclipsefp](https://aur.archlinux.org/packages/eclipse-eclipsefp/)
-
-*   **EGit** — [Git](/index.php/Git "Git") 支持。
-
-	[http://www.eclipse.org/egit](http://www.eclipse.org/egit) || [eclipse-egit](https://aur.archlinux.org/packages/eclipse-egit/)
-
-*   **EPIC** — Perl 支持。
-
-	[http://www.epic-ide.org/](http://www.epic-ide.org/) || [eclipse-epic](https://aur.archlinux.org/packages/eclipse-epic/)
+	[http://www.aptana.com/](http://www.aptana.com/) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
 
 *   **IvyDE** — IvyDE 依赖管理器
 
@@ -114,25 +92,13 @@ Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发�
 
 	[http://www.winterwell.com/software/markdown-editor.php](http://www.winterwell.com/software/markdown-editor.php) || [eclipse-markdown](https://aur.archlinux.org/packages/eclipse-markdown/)
 
-*   **MercurialEclipse** — [Mercurial](/index.php/Mercurial "Mercurial") 支持。
-
-	[https://bitbucket.org/mercurialeclipse/main/wiki/Home](https://bitbucket.org/mercurialeclipse/main/wiki/Home) || [eclipse-mercurial](https://aur.archlinux.org/packages/eclipse-mercurial/)
-
-*   **Mylyn** — 任务列表支持。
-
-	[http://www.eclipse.org/mylyn/](http://www.eclipse.org/mylyn/) || [eclipse-mylyn](https://aur.archlinux.org/packages/eclipse-mylyn/)
-
-*   **PHPEclipse** — 另一 PHP 支持。
-
-	[http://www.phpeclipse.com/](http://www.phpeclipse.com/) || [eclipse-phpeclipse](https://aur.archlinux.org/packages/eclipse-phpeclipse/)
-
 *   **PyDev** — [Python](/index.php/Python "Python") 支持。
 
 	[http://pydev.org/](http://pydev.org/) || [eclipse-pydev](https://aur.archlinux.org/packages/eclipse-pydev/)
 
 *   **Subclipse** — [Subversion](/index.php/Subversion "Subversion") 支持。
 
-	[http://subclipse.tigris.org/](http://subclipse.tigris.org/) || [eclipse-subclipse](https://aur.archlinux.org/packages/eclipse-subclipse/)
+	[https://github.com/subclipse/subclipse](https://github.com/subclipse/subclipse) || [eclipse-subclipse](https://aur.archlinux.org/packages/eclipse-subclipse/)
 
 *   **Subversive** — 另一 Subversion 支持。
 
@@ -146,9 +112,9 @@ Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发�
 
 	[http://texlipse.sourceforge.net/](http://texlipse.sourceforge.net/) || [texlipse](https://aur.archlinux.org/packages/texlipse/)
 
-*   **Eclipse PTP** — 并行编程 C/C++ 支持。
+*   **Checkstyle** — Eclipse Checkstyle support.
 
-	[http://www.eclipse.org/ptp/](http://www.eclipse.org/ptp/) || [eclipse-ptp](https://aur.archlinux.org/packages/eclipse-ptp/)
+	[http://eclipse-cs.sourceforge.net/](http://eclipse-cs.sourceforge.net/) || [eclipse-checkstyle](https://aur.archlinux.org/packages/eclipse-checkstyle/)
 
 ## 启用 javadoc 集成
 
@@ -169,37 +135,11 @@ Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发�
 
 ## 疑难问题
 
-### 第一次启动或*帮助 > 欢迎*时崩溃
-
-添加如下内容到 `/usr/share/eclipse/eclipse.ini`:
-
-```
--Dorg.eclipse.swt.browser.UseWebKitGTK=true
-
-```
-
-如果安装了 FireFox 也可试试:
-
-```
--Dorg.eclipse.swt.browser.DefaultType=mozilla
-
-```
-
 ### Ctrl+X 关闭了 Eclipse
 
 是[这个](https://bugs.eclipse.org/bugs/show_bug.cgi?id=318177) bug 的一部分。只要看看 `~/workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi` 并删除错误的 `Ctrl+X` 组合。通常它是第一个。
 
-### Eclipse 4 不遵守暗色/自定义 gtk 主题导致背景白屏
-
-#### 4.2.0 以及 4.3.0
-
-从此处删除或移动所有 .css 文件到备份子文件夹: /usr/share/eclipse/plugins/org.eclipse.platform_4.2.0.v201206081400/css/
-
-解决方案: [http://www.eclipse.org/forums/index.php/m/872214/](http://www.eclipse.org/forums/index.php/m/872214/)
-
-从 /usr/share/eclipse/plugins/org.eclipse.platform_4.3.xxx/css/ 备份 css 文件夹对版本 4.3.x (Kepler) 也有用。
-
-#### 4.4.0 (Luna)
+### 暗色主题
 
 Luna 提供了暗色主题，可在 首选项 > 外观 再选择 'Dark' 主题启用。
 
@@ -254,6 +194,6 @@ Open the appropriate file with your text editor, ie e4_default_gtk.css if you ar
 
 ```
 
-## 另见
+## 参阅
 
-*   [How to use Subversion with Eclipse](http://www-128.ibm.com/developerworks/opensource/library/os-ecl-subversion/)
+*   [How to use Subversion with Eclipse](https://www.ibm.com/developerworks/library/os-ecl-subversion/)

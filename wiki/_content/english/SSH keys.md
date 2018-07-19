@@ -39,6 +39,7 @@ This article assumes you already have a basic understanding of the [Secure Shell
     *   [4.6 GNOME Keyring](#GNOME_Keyring)
     *   [4.7 Store SSH keys with Kwallet](#Store_SSH_keys_with_Kwallet)
     *   [4.8 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
+    *   [4.9 KeePassXC](#KeePassXC)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Key ignored by the server](#Key_ignored_by_the_server)
 *   [6 See also](#See_also)
@@ -581,6 +582,10 @@ For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#U
 See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://www.archlinux.org/packages/?name=keepass-plugin-keeagent) package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/).
 
 This agent can be used directly, by matching KeeAgent socket: `KeePass -> Tools -> Options -> KeeAgent -> Agent mode socket file -> %XDG_RUNTIME_DIR%/keeagent.socket`- and environment variable: `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"'/keeagent.socket'`.
+
+### KeePassXC
+
+The KeePassXC fork of KeePass [supports being used as an SSH agent by default](https://keepassxc.org/docs/#faq-ssh-agent-how). It is also compatible with KeeAgent's database format.
 
 ## Troubleshooting
 

@@ -364,7 +364,7 @@ While the power saving features above should handle fan speeds quite well, some 
 *   Keep in mind that the following method sets the fan speed to a fixed value, hence it will not adjust with the stress of the GPU, which can lead to overheating under heavy load.
 *   Check GPU temperature when applying lower than standard values.
 
-To control the GPU fan, see [Fan speed control#amdgpu sysfs fan control](/index.php/Fan_speed_control#amdgpu_sysfs_fan_control "Fan speed control") (amdgpu and radeon share the same controls for this).
+To control the GPU fan, see [Fan speed control#AMDGPU sysfs fan control](/index.php/Fan_speed_control#AMDGPU_sysfs_fan_control "Fan speed control") (amdgpu and radeon share the same controls for this).
 
 For persistence, see the example in [#Persistent configuration](#Persistent_configuration).
 

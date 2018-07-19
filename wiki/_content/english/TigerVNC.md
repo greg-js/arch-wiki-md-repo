@@ -124,7 +124,7 @@ alwaysshared
 
 #### System mode
 
-Create `/etc/systemd/system/vncserver@*:1*.service`, where `:1` is the `$DISPLAY` [environment variable](/index.php/Environment_variable "Environment variable"). Edit the service unit by defining the user (`User=`) to run the server, and the desired [Vncserver](/index.php/Vncserver "Vncserver") options.
+Create `/etc/systemd/system/vncserver@*:1*.service`, where `:1` is the 5900 port increment (5900 + 1) to which the VNC server will be listening for connections (e.g `vncserver@:5.service` means the server will be listening to port 5905). Edit the service unit by defining the user (`User=`) to run the server, and the desired [Vncserver](/index.php/Vncserver "Vncserver") options.
 
  `/etc/systemd/system/vncserver@*:1*.service` 
 ```

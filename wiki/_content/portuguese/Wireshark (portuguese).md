@@ -26,11 +26,11 @@ O [script de instalação](/index.php/PKGBUILD_(Portugu%C3%AAs)#install "PKGBUIL
 Então, para usar Wireshark como um usuário normal, você só precisa adicionar seu usuário ao [grupo](/index.php/Grupo "Grupo") `wireshark`:
 
 ```
-sudo gpasswd -a $USER wireshark
+ # gpasswd -a *nome-de-usuário* wireshark
 
 ```
 
-Faça login novamente para aplicar a alteração e usar `newgrp wireshark` para abrir um shell com o novo grupo e iniciar o Wireshark ali.
+Faça login novamente para aplicar a alteração. Você pode usar `newgrp wireshark` para abrir um shell com o novo grupo aplicado, mas ele só vai funcionar quando o Wireshark é lançado lá de dentro, até que você faça login novamente.
 
 ## Algumas técnicas de captura
 

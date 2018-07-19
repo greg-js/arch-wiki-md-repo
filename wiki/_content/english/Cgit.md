@@ -155,7 +155,7 @@ http {
       fastcgi_param       PATH_INFO       $uri;
       fastcgi_param       QUERY_STRING    $args;
       fastcgi_param       HTTP_HOST       $server_name;
-      fastcgi_pass        unix:/run/fcgiwrap.socket;
+      fastcgi_pass        unix:/run/fcgiwrap.sock;
     }
   }
 }

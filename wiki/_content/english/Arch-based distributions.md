@@ -7,7 +7,7 @@ Related articles
 
 **Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
 
-This is a listing of OS distributions which are [derived](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") from Arch Linux **either in whole or in part**. Although it intends to be as comprehensive as possible, it is not an exhaustive list.
+This page lists OS distributions which are derived from Arch Linux **either in whole or in part**, to help enforce the [Arch Linux trademark policy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Although it intends to be as comprehensive as possible, it is not an exhaustive list. SourceForge project links are preferred to simplify maintenance.
 
 ## Contents
 
@@ -31,9 +31,12 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 
 ## Active
 
+Asterisk indicates the year of first public release based on Arch Linux.
+
 *   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
 *   [Anarchy Linux](https://anarchy-linux.org/) 
 *   [Antergos](https://sourceforge.net/projects/antergos/) 
+*   [ArchBang](https://sourceforge.net/projects/archbang/) 
 *   [ArchEX](https://sourceforge.net/projects/archex/) 
 *   [Arch Hurd](https://archhurd.org/) 
 *   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 

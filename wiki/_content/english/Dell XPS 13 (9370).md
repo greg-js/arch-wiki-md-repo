@@ -4,7 +4,7 @@
 | Bluetooth | Working | btusb |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | hid_multitouch |
-| Webcam | Working (with 1.0 firmware) ¹ | uvcvideo |
+| Webcam | Working ¹ | uvcvideo |
 | USB-C / Thunderbolt 3 | Working |  ? |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
@@ -14,7 +14,7 @@ The Dell XPS 13 Early 2018 (9370) is the fifth-generation model of the XPS 13 li
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
-¹ Some users have experienced webcam firmware issues with recent models and there are [many reports of non-functional webcams on new laptops](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049). User reports indicate Dell support is responsive to replacing screens to install a webcam that uses linux-compatible UVC 1.0 rather than 1.5 firmware drivers.
+¹ The webcam works with kernel 4.17.4 or later. For earlier kernels this applies: Some users have experienced webcam firmware issues with recent models and there are [many reports of non-functional webcams on new laptops](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049). User reports indicate Dell support is responsive to replacing screens to install a webcam that uses linux-compatible UVC 1.0 rather than 1.5 firmware drivers.
 
 ## Contents
 
@@ -44,7 +44,7 @@ If you have the 4K (3840x2160) model, also check out [HiDPI](/index.php/HiDPI "H
 
 Note that the 'enable_psr=1' option appears not to work properly, at least on the touchscreen model.
 
-[Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which is not supported. The issue should be fixed in kernel v4.18 (commit [f620d1d7afc7db57ab59f35000752840c91f67e7](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f620d1d7afc7db57ab59f35000752840c91f67e7)).
+[Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which was not supported [prior to kernel 4.17.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/diff/drivers/media/usb/uvc/uvc_video.c?id=v4.17.4&id2=v4.17.3).
 
 ## Wifi
 

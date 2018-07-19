@@ -48,12 +48,7 @@ The default configuration file for SDDM can be found at `/usr/lib/sddm/sddm.conf
 
 The [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package (included in the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) provides a GUI to configure SDDM in Plasma's system settings. There is also a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) available in the [AUR](/index.php/AUR "AUR").
 
-Everything should work out of the box, since Arch Linux uses [systemd](/index.php/Systemd "Systemd") and SDDM defaults to using `systemd-logind` for session management. The configuration file will therefore not be created at package installation time. SDDM offers a command for generating a sample configuration file with the default settings if you really want one:
-
-```
-# sddm --example-config > /etc/sddm.conf.d/sddm.conf
-
-```
+Everything should work out of the box, since Arch Linux uses [systemd](/index.php/Systemd "Systemd") and SDDM defaults to using `systemd-logind` for session management.
 
 ### Autologin
 
@@ -174,13 +169,14 @@ ServerArguments=-nolisten tcp -dpi 94
 
 ### Enable HiDPI
 
-**Note:** HiDPI support seems to be broken since version 0.15.[[3]](https://github.com/sddm/sddm/issues/894)
-
 Create the following file:
 
  `/etc/sddm.conf.d/hidpi.conf` 
 ```
-[General]
+[Wayland]
+EnableHiDPI=true
+
+[X11]
 EnableHiDPI=true
 ```
 
@@ -228,11 +224,11 @@ MinimumUid=500 #My UID is 501
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
-SDDM may also incorrectly display the layout as US but will immediately change to the correct layout after you start typing your password [[4]](https://github.com/sddm/sddm/issues/202#issuecomment-76001543). This seems to not be a bug in SDDM but in [libxcb](https://www.archlinux.org/packages/?name=libxcb) (version 1.13-1 as of 2018) [[5]](https://github.com/sddm/sddm/issues/202#issuecomment-133628462).
+SDDM may also incorrectly display the layout as US but will immediately change to the correct layout after you start typing your password [[3]](https://github.com/sddm/sddm/issues/202#issuecomment-76001543). This seems to not be a bug in SDDM but in [libxcb](https://www.archlinux.org/packages/?name=libxcb) (version 1.13-1 as of 2018) [[4]](https://github.com/sddm/sddm/issues/202#issuecomment-133628462).
 
 ### Screen resolution is too low
 
-Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[6]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
+Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[5]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
 
 If even the above fails, you can try setting your screen size in a Xorg conf file:
 

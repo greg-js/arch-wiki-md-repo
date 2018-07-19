@@ -38,6 +38,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [3.10 Can't play local files](#Can.27t_play_local_files)
     *   [3.11 Not respecting window manager rules](#Not_respecting_window_manager_rules)
     *   [3.12 GUI hangs while the music plays](#GUI_hangs_while_the_music_plays)
+    *   [3.13 Can't open settings in Wayland](#Can.27t_open_settings_in_Wayland)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -556,6 +557,10 @@ Window manager that try to apply specific rules like starting it on a determined
 Also the previous and next track buttons act with a delay of 10-40 seconds. Spotify by default tries to send notification about next track, if you don't have a notification-daemon installed, Spotify's GUI hangs.
 
 The solution is to either disable notifications in the settings or to install a notification daemon from [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications").
+
+### Can't open settings in Wayland
+
+When using Wayland, clicking on the 'Settings' button does nothing. Using the keyboard instead will work (arrows and enter). See [[5]](https://community.spotify.com/t5/Desktop-Linux/Settings-don-t-open-on-Linux/td-p/1478736)
 
 ## See also
 

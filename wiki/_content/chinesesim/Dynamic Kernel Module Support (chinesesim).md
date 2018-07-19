@@ -1,8 +1,8 @@
-**翻译状态：** 本文是英文页面 [Dynamic_Kernel_Module_Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-24，点击[这里](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=472594)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Dynamic_Kernel_Module_Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-17，点击[这里](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=512538)可以查看翻译后英文页面的改动。
 
 来自 [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wikipedia:Dynamic Kernel Module Support"):
 
-	**动态内核模块支持** (**DKMS**) 是一个程序框架，可以编译内核代码树之外的模块。升级内核时，通过 DKMS 管理的内核模块可以被自动重新构建以适应新的内核版本。
+	动态内核模块支持(DKMS) 是一个程序框架，可以编译内核代码树之外的模块。升级内核时，通过 DKMS 管理的内核模块可以被自动重新构建以适应新的内核版本。
 
 这意味这你不再需要等待某个公司，项目组或者包维护者释出新版本的内核模块。自从 Pacman 支持 [钩子](/index.php/Pacman#Hooks "Pacman") 之后，内核更新时就会自动生成和安装新的软件包。
 
@@ -31,23 +31,11 @@
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [dkms](https://www.archlinux.org/packages/?name=dkms) 包和内核的头文件，标准内核的头文件可以用软件包 [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) 安装。
 
-有许多位于内核源码树之外的内核模块都有DKMS变体;有一些位于[官方软件仓库](https://www.archlinux.org/packages/?&q=dkms)，大多数可以在[AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms)找到。下面列出的是一小部分有DKMS变体的软件包
-
-*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA"):
-    *   [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)
-    *   [nvidia-304xx-dkms](https://www.archlinux.org/packages/?name=nvidia-304xx-dkms)
-    *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
-    *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
-    *   [nvidia-grsec-dkms](https://aur.archlinux.org/packages/nvidia-grsec-dkms/)
-*   [VirtualBox](/index.php/VirtualBox "VirtualBox"):
-    *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
-    *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
-*   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
-
-*   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
+有许多位于内核源码树之外的内核模块都有DKMS变体;有一些位于[官方软件仓库](https://www.archlinux.org/packages/?&q=dkms)，大多数可以在[AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms)找到。
 
 ## 升级
+
+**Note:** [Pacman](/index.php/Pacman "Pacman") 在重新编译 DKMS 模块时不会自动重新编译依赖，所以如果出现 dkms 模块之间的依赖，有可能出现编译错误，例如 [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) [FS#52901](https://bugs.archlinux.org/task/52901). [dkms-sorted](https://aur.archlinux.org/packages/dkms-sorted/) 软件包试图解决这个问题，此软件包可以直接替换 `dkms`，为了处理方便，请在安装任何 DKMS 模块前安装此软件包。
 
 虽然在内核升级是，DKMS 的编译自动执行，但是依然有可能编译报错。所以需要特别注意 pacman 的输出。当系统需要这些模块才能启动，或者使用不在 [官方软件仓库](/index.php/Official_repositories "Official repositories") 中的内核时，需要额外注意。
 
@@ -162,6 +150,8 @@ DKMS的包的命名方式是：原始包名加"*-dkms*"后缀。
 
 模块的加载和卸载必须由用户自己来执行，设想一下，某个模块可能在加载的时候崩溃。
 
+现在已经不需要单独执行 `depmod` 更新内核模块的依赖。Pacman 现在会自动执行 `dkms install` 和 `dkms remove` 钩子。`dkms install` 会确保过程结束时执行 `depmod`。`dkms install` 依赖 `dkms build` (针对当前内核编译源码)，build 依赖 `dkms add` (添加从 `/var/lib/dkms/<package>/<version>/source` 到 `/usr/src/<package>` 的链接)。
+
 ### namcap 输出
 
 [namcap](/index.php/Namcap "Namcap") （它会试图检查一个包中的一般性错误和不符合标准的设定）在任何包中最好至少使用一次。然而，[namcap](/index.php/Namcap "Namcap")至今仍然没有针对DKMS的特殊方针做更新。
@@ -200,13 +190,6 @@ build() {
 
   # Patch
   patch -p1 -i "${srcdir}"/linux-3.14.patch
-
-  # Build
-  msg2 "Starting ./configure..."
-  ./configure
-
-  msg2 "Starting make..."
-  make
 }
 
 package() {
@@ -242,32 +225,7 @@ AUTOINSTALL="yes"
 
 #### .install
 
-此时可以使用`dkms install`而不是`depmod`来安装内核模块（`dkms install`依赖`dkms build`，而`dkms build`依赖`dkms add`）：
-
- `amazing-dkms.install` 
-```
-# old version (without -$pkgrel): ${1%%-*}
-# new version (without -$pkgrel): ${2%%-*}
-
-post_install() {
-    dkms install *amazing*/${1%%-*}
-}
-
-pre_upgrade() {
-    pre_remove ${2%%-*}
-}
-
-post_upgrade() {
-    post_install ${1%%-*}
-}
-
-pre_remove() {
-    dkms remove *amazing*/${1%%-*} --all
-}
-
-```
-
-**Tip:** 为了让软件包和非 DKMS 软件包尽量一致，请避免用使用 DKMS 特有的内容，比如版本号等。
+pacman 已经支持 DKMS 钩子，不需要在 .install 文件中指定 DKMS 额外配置，pacman 会自动执行 `dkms install` 和 `dkms remove`。
 
 ## 相关链接
 

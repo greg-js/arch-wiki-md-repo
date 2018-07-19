@@ -347,7 +347,7 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 #### wpa_supplicant
 
-[Suplicante de WPA](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") pode ser configurado diretamente e usado em combinação com um cliente DHCP ou com systemd. Veja os exemplos em `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` para configurar os detalhes de conexão.
+[Suplicante de WPA](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") pode ser configurado diretamente por meio de seu arquivo de configuração ou pelo uso de seus frontends CLI/GUI e usado em combinação com um cliente DHCP ou com systemd. Veja os exemplos em `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` para configurar os detalhes de conexão.
 
 #### NetworkManager
 

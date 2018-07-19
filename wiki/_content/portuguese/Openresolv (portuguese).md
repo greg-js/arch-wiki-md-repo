@@ -1,5 +1,13 @@
 [Openresolv](https://roy.marples.name/projects/openresolv) é uma implementação de [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf"), isto é, framework de gerenciamento de [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)").
 
+## Contents
+
+*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [2 Uso](#Uso)
+*   [3 Usuários](#Usu.C3.A1rios)
+*   [4 Dicas e truques](#Dicas_e_truques)
+    *   [4.1 Definindo vários servidores de nome](#Definindo_v.C3.A1rios_servidores_de_nome)
+
 ## Instalação
 
 [Instale](/index.php/Instale "Instale") o pacote [openresolv](https://www.archlinux.org/packages/?name=openresolv).
@@ -28,3 +36,11 @@ Clientes [VPN](/index.php/VPN "VPN"):
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")
 *   [strongSwan](/index.php/StrongSwan "StrongSwan")
 *   [WireGuard](/index.php/WireGuard "WireGuard")
+
+## Dicas e truques
+
+### Definindo vários servidores de nome
+
+A página man não menciona isso, mas para definir vários servidores de nome no `/etc/resolvconf.conf` você precisa escrevê-los separados por espaço entre aspas. Por exemplo:
+
+ `/etc/resolvconf.conf`  `name_servers="dns1.example.com dns2.example.com dns3.example.com"`

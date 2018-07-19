@@ -284,7 +284,7 @@ Wed Nov  2 01:34:51 FJT 2016
 
 This is different than just setting the time, as for example it allows to test the behaviour of a program with positive or negative UTC offset values, or the effects of DST changes when developing on systems in a non-DST time zone.
 
-Another use case is having different time zones set for different users of the same system: this can be accomplished by setting the `TZ` variable in the shell's configuration file, see [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables") and [Autostarting#Shells](/index.php/Autostarting#Shells "Autostarting").
+Another use case is having different time zones set for different users of the same system: this can be accomplished by setting the `TZ` variable in the shell's configuration file, see [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables").
 
 ## Troubleshooting
 

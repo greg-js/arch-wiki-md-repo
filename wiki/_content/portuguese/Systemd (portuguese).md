@@ -800,7 +800,7 @@ Ou, de forma equivalente, defina a variável de ambiente manualmente:
 
 ```
 
-então, [reinicie](/index.php/Reinicie "Reinicie") *systemd-networkd* e monitore o journal para o serviço com a opção `--follow`.
+então, [reinicie](/index.php/Reinicie "Reinicie") *systemd-networkd* e monitore o journal para o serviço com a opção `-f`/`--follow`.
 
 ### Desligamento/reinicialização demora demais
 

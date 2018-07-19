@@ -18,28 +18,28 @@ Dyski do przechowywania "w tym kontekście mogą być dyskami twardymi komputera
 *   [1 Po co używać szyfrowania?](#Po_co_u.C5.BCywa.C4.87_szyfrowania.3F)
 *   [2 Szyfrowanie danych vs szyfrowanie systemu](#Szyfrowanie_danych_vs_szyfrowanie_systemu)
 *   [3 Dostępne metody](#Dost.C4.99pne_metody)
-*   [4 Ułożone szyfrowania systemu plików](#U.C5.82o.C5.BCone_szyfrowania_systemu_plik.C3.B3w)
-    *   [4.1 blokowe szyfrowanie dysków](#blokowe_szyfrowanie_dysk.C3.B3w)
-    *   [4.2 Tabela porównawcza](#Tabela_por.C3.B3wnawcza)
-        *   [4.2.1 Podsumowanie](#Podsumowanie)
-        *   [4.2.2 Podstawowa klasyfikacja](#Podstawowa_klasyfikacja)
-        *   [4.2.3 praktyczne implikacje](#praktyczne_implikacje)
-        *   [4.2.4 Usability features](#Usability_features)
-        *   [4.2.5 Funkcje zabezpieczeń](#Funkcje_zabezpiecze.C5.84)
-        *   [4.2.6 Funkcje wydajności](#Funkcje_wydajno.C5.9Bci)
-        *   [4.2.7 Block device encryption specific](#Block_device_encryption_specific)
-        *   [4.2.8 Skumulowane szyfrowanie systemu plików](#Skumulowane_szyfrowanie_systemu_plik.C3.B3w)
-        *   [4.2.9 Zgodność i rozpowszechnienie](#Zgodno.C5.9B.C4.87_i_rozpowszechnienie)
-*   [5 Przygotowanie](#Przygotowanie)
-    *   [5.1 Wybór konfiguracji](#Wyb.C3.B3r_konfiguracji)
-    *   [5.2 Przykłady](#Przyk.C5.82ady)
-    *   [5.3 Wybieranie silnego hasła](#Wybieranie_silnego_has.C5.82a)
-    *   [5.4 Przygotowanie dysku](#Przygotowanie_dysku)
-*   [6 Jak działa szyfrowanie](#Jak_dzia.C5.82a_szyfrowanie)
-    *   [6.1 Podstawowa zasada](#Podstawowa_zasada)
-    *   [6.2 Klucze, pliki kluczy i hasła](#Klucze.2C_pliki_kluczy_i_has.C5.82a)
-    *   [6.3 Kryptograficzne metadane](#Kryptograficzne_metadane)
-    *   [6.4 Szyfry i tryby działania](#Szyfry_i_tryby_dzia.C5.82ania)
+    *   [3.1 Ułożone szyfrowania systemu plików](#U.C5.82o.C5.BCone_szyfrowania_systemu_plik.C3.B3w)
+    *   [3.2 blokowe szyfrowanie dysków](#blokowe_szyfrowanie_dysk.C3.B3w)
+    *   [3.3 Tabela porównawcza](#Tabela_por.C3.B3wnawcza)
+        *   [3.3.1 Podsumowanie](#Podsumowanie)
+        *   [3.3.2 Podstawowa klasyfikacja](#Podstawowa_klasyfikacja)
+        *   [3.3.3 praktyczne implikacje](#praktyczne_implikacje)
+        *   [3.3.4 Usability features](#Usability_features)
+        *   [3.3.5 Funkcje zabezpieczeń](#Funkcje_zabezpiecze.C5.84)
+        *   [3.3.6 Funkcje wydajności](#Funkcje_wydajno.C5.9Bci)
+        *   [3.3.7 Block device encryption specific](#Block_device_encryption_specific)
+        *   [3.3.8 Skumulowane szyfrowanie systemu plików](#Skumulowane_szyfrowanie_systemu_plik.C3.B3w)
+        *   [3.3.9 Zgodność i rozpowszechnienie](#Zgodno.C5.9B.C4.87_i_rozpowszechnienie)
+*   [4 Przygotowanie](#Przygotowanie)
+    *   [4.1 Wybór konfiguracji](#Wyb.C3.B3r_konfiguracji)
+    *   [4.2 Przykłady](#Przyk.C5.82ady)
+    *   [4.3 Wybieranie silnego hasła](#Wybieranie_silnego_has.C5.82a)
+    *   [4.4 Przygotowanie dysku](#Przygotowanie_dysku)
+*   [5 Jak działa szyfrowanie](#Jak_dzia.C5.82a_szyfrowanie)
+    *   [5.1 Podstawowa zasada](#Podstawowa_zasada)
+    *   [5.2 Klucze, pliki kluczy i hasła](#Klucze.2C_pliki_kluczy_i_has.C5.82a)
+    *   [5.3 Kryptograficzne metadane](#Kryptograficzne_metadane)
+    *   [5.4 Szyfry i tryby działania](#Szyfry_i_tryby_dzia.C5.82ania)
 
 ## Po co używać szyfrowania?
 
@@ -113,7 +113,7 @@ Jeśli nie jesteś całkowicie obeznany z tego rodzaju operacją, przeczytaj ró
 
 Dostępne metody szyfrowania dysków można rozdzielić na dwa typy:
 
-## Ułożone szyfrowania systemu plików
+### Ułożone szyfrowania systemu plików
 
 Ujednolicone rozwiązania szyfrowania plików są implementowane jako warstwa, która układa się na wierzchu istniejącego systemu plików, powodując, że wszystkie pliki zapisane w folderze z włączoną szyfrowaniem mają być szyfrowane w locie przed podstawowym systemem plików zapisywanym na dysku i odszyfrowywane w każdym przypadku, gdy system plików odczytuje je z dysku. W ten sposób pliki są przechowywane w systemie plików hostów w zaszyfrowanej formie (co oznacza, że ich zawartość, a zwykle również ich nazwy plików / folderów, zastępuje się losowo wyglądającymi danymi o przybliżonej długości), ale inne niż to, które wciąż istnieją w tym systemie plików, bez szyfrowania, jako zwykłe pliki / symlink / hardlinks / etc.
 

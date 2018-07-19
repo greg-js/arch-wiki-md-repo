@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Locale (Português)](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)")
+*   [Localization (Português)](/index.php/Localization_(Portugu%C3%AAs) "Localization (Português)")

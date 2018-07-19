@@ -149,8 +149,8 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 The `tcsd.service` service may not start correctly due to permission issues.[[2]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3). It is possible to fix this using:
 
 ```
-$ chown tss:tss /dev/tpm*
-$ chown -R tss:tss /var/lib/tpm
+# chown tss:tss /dev/tpm*
+# chown -R tss:tss /var/lib/tpm
 
 ```
 

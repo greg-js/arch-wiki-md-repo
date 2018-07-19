@@ -53,7 +53,7 @@ The Nouveau kernel module should load automatically on system boot. If it does n
 
 It is also possible to start the KMS as early as possible in the boot process, when the [initramfs](/index.php/Initramfs "Initramfs") is loaded.
 
-To do this, add `nouveau` to the `MODULES` array in `/etc/mkinitcpio.conf`:
+To do this, add `nouveau` to the `MODULES` array in `/etc/mkinitcpio.conf` (module names are separated by spaces):
 
 ```
 MODULES="... nouveau ..."
