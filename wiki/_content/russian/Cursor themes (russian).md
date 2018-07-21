@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Cursor themes](/index.php/Cursor_themes "Cursor themes"). Дата последней синхронизации: 18 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Cursor_themes&diff=0&oldid=516172).
+**Состояние перевода:** На этой странице представлен перевод статьи [Cursor themes](/index.php/Cursor_themes "Cursor themes"). Дата последней синхронизации: 18 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Cursor_themes&diff=0&oldid=529067).
 
 Дисплейный сервер сопровождается *темой курсора*, которая помогает в различных аспектах навигации и манипуляции GUI. Тема курсора уже включена в сервер, но другие также могут быть установлены.
 
@@ -298,7 +298,7 @@ $ xsetroot -cursor_name left_ptr
 
 ```
 
-Для получения дополнительной информации смотрите [Awesome wiki](http://awesome.naquadah.org/wiki/FAQ/ru#.D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D1.82.D0.B5.D0.BC.D1.83_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D0.B0_.D0.B2_Awesome.3F).
+Список стилей курсора протокола X: [appendix B](https://tronche.com/gui/x/xlib/appendix/b/)
 
 ### .Xdefaults
 

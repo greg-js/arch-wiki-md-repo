@@ -7,124 +7,94 @@
 *   [LightDM](/index.php/LightDM "LightDM")
 *   [LXDM](/index.php/LXDM "LXDM")
 
-**翻译状态：** 本文是英文页面 [GDM](/index.php/GDM "GDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-14，点击[这里](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=399844)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GDM](/index.php/GDM "GDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-09，点击[这里](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=525308)可以查看翻译后英文页面的改动。
 
-来自 [GDM - GNOME显示管理器](http://projects.gnome.org/gdm/about.html):
+来自[GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM)：“The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins."
 
-	*GDM是一种GNOME显示环境的管理器, 它是一个运行在后台的小程序（脚本）, runs your X sessions,显示一个登录界面并在你忘记密码的时候告诉你无法登录.GDM比xdm在任何方面都做的更好,也没有xdm那么多的漏洞. 它没有使用任何来自xdm的代码. 它支持 XDMCP, and in fact extends XDMCP a little bit in places where I thought xdm was lacking (but is still compatible with xdm's XDMCP).*
-
-[显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器")为[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")用户们提供了图形化登录提示。
+[Display managers](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") provide [X Window System](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") and [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") users with a graphical login prompt.
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 GDM as the default greeter](#GDM_as_the_default_greeter)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 Log-in screen background image](#Log-in_screen_background_image)
-    *   [2.2 Log-in screen logo](#Log-in_screen_logo)
-    *   [2.3 Changing the GDM cursor theme](#Changing_the_GDM_cursor_theme)
-    *   [2.4 Larger font for log-in screen](#Larger_font_for_log-in_screen)
-    *   [2.5 Turning off the sound](#Turning_off_the_sound)
-    *   [2.6 Make the power button interactive](#Make_the_power_button_interactive)
-    *   [2.7 GDM keyboard layout](#GDM_keyboard_layout)
-        *   [2.7.1 GNOME Control Center](#GNOME_Control_Center)
-        *   [2.7.2 GDM 2.x layout](#GDM_2.x_layout)
-    *   [2.8 Change the language](#Change_the_language)
-    *   [2.9 自动登录](#.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95)
-    *   [2.10 无密码登录](#.E6.97.A0.E5.AF.86.E7.A0.81.E7.99.BB.E5.BD.95)
-    *   [2.11 Passwordless shutdown for multiple sessions](#Passwordless_shutdown_for_multiple_sessions)
-    *   [2.12 Add or edit GDM sessions](#Add_or_edit_GDM_sessions)
-    *   [2.13 GDM root 登录](#GDM_root_.E7.99.BB.E5.BD.95)
-    *   [2.14 Hide user from login list](#Hide_user_from_login_list)
-    *   [2.15 Rotate login screen](#Rotate_login_screen)
-    *   [2.16 xrandr at login](#xrandr_at_login)
-    *   [2.17 Configure X server access permission](#Configure_X_server_access_permission)
-    *   [2.18 Enabling tap-to-click](#Enabling_tap-to-click)
-*   [3 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [3.1 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
-    *   [3.2 GDM注销失败](#GDM.E6.B3.A8.E9.94.80.E5.A4.B1.E8.B4.A5)
-    *   [3.3 Xorg 1.16](#Xorg_1.16)
-    *   [3.4 Use Xorg backend](#Use_Xorg_backend)
-    *   [3.5 Xorg 1.16](#Xorg_1.16_2)
-    *   [3.6 Use Xorg backend](#Use_Xorg_backend_2)
-    *   [3.7 gconf-sanity-check-2 exited with status 256](#gconf-sanity-check-2_exited_with_status_256)
-    *   [3.8 GDM总是使用默认US-键盘布局](#GDM.E6.80.BB.E6.98.AF.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4US-.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
-        *   [3.8.1 GDM 2.x](#GDM_2.x)
-        *   [3.8.2 GDM 3.x](#GDM_3.x)
-        *   [3.8.3 GDM在设置自动登录后无法启动](#GDM.E5.9C.A8.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95.E5.90.8E.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+*   [2 开始](#.E5.BC.80.E5.A7.8B)
+    *   [2.1 自动启动软件](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8.E8.BD.AF.E4.BB.B6)
+*   [3 配置](#.E9.85.8D.E7.BD.AE)
+    *   [3.1 登录页面背景图片](#.E7.99.BB.E5.BD.95.E9.A1.B5.E9.9D.A2.E8.83.8C.E6.99.AF.E5.9B.BE.E7.89.87)
+    *   [3.2 DConf configuration](#DConf_configuration)
+        *   [3.2.1 登录页面的logo](#.E7.99.BB.E5.BD.95.E9.A1.B5.E9.9D.A2.E7.9A.84logo)
+        *   [3.2.2 更改光标主题](#.E6.9B.B4.E6.94.B9.E5.85.89.E6.A0.87.E4.B8.BB.E9.A2.98)
+        *   [3.2.3 在登录页面显示大字体](#.E5.9C.A8.E7.99.BB.E5.BD.95.E9.A1.B5.E9.9D.A2.E6.98.BE.E7.A4.BA.E5.A4.A7.E5.AD.97.E4.BD.93)
+        *   [3.2.4 关闭声音](#.E5.85.B3.E9.97.AD.E5.A3.B0.E9.9F.B3)
+        *   [3.2.5 更改电源按钮行为](#.E6.9B.B4.E6.94.B9.E7.94.B5.E6.BA.90.E6.8C.89.E9.92.AE.E8.A1.8C.E4.B8.BA)
+        *   [3.2.6 开启轻触以点击](#.E5.BC.80.E5.90.AF.E8.BD.BB.E8.A7.A6.E4.BB.A5.E7.82.B9.E5.87.BB)
+        *   [3.2.7 开启或关闭无障碍菜单](#.E5.BC.80.E5.90.AF.E6.88.96.E5.85.B3.E9.97.AD.E6.97.A0.E9.9A.9C.E7.A2.8D.E8.8F.9C.E5.8D.95)
+    *   [3.3 键盘布局](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
+    *   [3.4 更改语言](#.E6.9B.B4.E6.94.B9.E8.AF.AD.E8.A8.80)
+    *   [3.5 用户与登录](#.E7.94.A8.E6.88.B7.E4.B8.8E.E7.99.BB.E5.BD.95)
+        *   [3.5.1 自动登录](#.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95)
+        *   [3.5.2 免密登录](#.E5.85.8D.E5.AF.86.E7.99.BB.E5.BD.95)
+        *   [3.5.3 Passwordless shutdown for multiple sessions](#Passwordless_shutdown_for_multiple_sessions)
+        *   [3.5.4 在GDM中开启root登录](#.E5.9C.A8GDM.E4.B8.AD.E5.BC.80.E5.90.AFroot.E7.99.BB.E5.BD.95)
+        *   [3.5.5 在登录列表中隐藏用户](#.E5.9C.A8.E7.99.BB.E5.BD.95.E5.88.97.E8.A1.A8.E4.B8.AD.E9.9A.90.E8.97.8F.E7.94.A8.E6.88.B7)
+    *   [3.6 Setup default monitor settings](#Setup_default_monitor_settings)
+    *   [3.7 Configure X server access permission](#Configure_X_server_access_permission)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Failure to use proprietary NVIDIA driver](#Failure_to_use_proprietary_NVIDIA_driver)
+    *   [4.2 注销失败](#.E6.B3.A8.E9.94.80.E5.A4.B1.E8.B4.A5)
+    *   [4.3 Rootless Xorg](#Rootless_Xorg)
+    *   [4.4 使用Xorg作为后端](#.E4.BD.BF.E7.94.A8Xorg.E4.BD.9C.E4.B8.BA.E5.90.8E.E7.AB.AF)
+    *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
+    *   [4.6 GDM自动挂起（GNOME 3.28）](#GDM.E8.87.AA.E5.8A.A8.E6.8C.82.E8.B5.B7.EF.BC.88GNOME_3.28.EF.BC.89)
+*   [5 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-GDM (是[gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/)的一部分)，可以通过[官方软件仓库](/index.php/Official_repositories "Official repositories")中的[gdm](https://www.archlinux.org/packages/?name=gdm)软件包进行单独[安装](/index.php/Pacman "Pacman").
+GDM can be [installed](/index.php/Installed "Installed") with the [gdm](https://www.archlinux.org/packages/?name=gdm) package, and it is installed as part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group.
 
-### GDM as the default greeter
+If you would prefer to use legacy GDM which was used in GNOME 2 and has its own configuration utility, install the [gdm-old](https://aur.archlinux.org/packages/gdm-old/) package. Note that the rest of this article discusses current GDM, not legacy GDM, unless indicated otherwise.
 
-GDM 软件包提供了`gdm.service`。开机自动启动：
+You might also wish to install the following:
 
-```
-# systemctl enable gdm
+*   **gdm3setup** — An interface to configure GDM3, autologin options and change Shell theme
 
-```
+	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup-utils](https://aur.archlinux.org/packages/gdm3setup-utils/)
+
+## 开始
+
+To start GDM at boot time [enable](/index.php/Enable "Enable") `gdm.service`.
+
+### 自动启动软件
+
+One might want to autostart certain commands, such as *xrandr* for instance, on login. This can be achieved by adding a command or script to a location that is sourced by the display manager. See [Display manager#Autostarting](/index.php/Display_manager#Autostarting "Display manager") for a list of supported locations.
+
+**Note:** The `/etc/gdm/Init` directory is no longer a supported location, see [[1]](https://bugzilla.gnome.org/show_bug.cgi?id=751602#c2).
 
 ## 配置
 
-你再也不能使用gdmsetup命令来配置2.28版本以上的GDM。这个命令已经被移除，而且GDM已经被标准化，成为GNOME的一部分。
+### 登录页面背景图片
 
-你可以从AUR获取并安装[gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)从而配置GDM，也可以使用以下介绍的方法。
+**Note:**
 
-配置X服务访问权限
-
- `# xhost +SI:localuser:gdm` 
-
-要配置GDM主题，使用以下命令：
-
- `$ sudo -u gdm gnome-appearance-properties` 
-
-实用此命令查看更多配置选项
-
- `$ sudo -u gdm gconf-editor` 
-
-并修改以下层次（hierarchies）：
-
-```
-/apps/gdm/simple-greeter
-/desktop/gnome/interface
-/desktop/gnome/background
-
-```
-
-如果这些命令失败，并返回诸如 ”cannot open display"之类的错误，你可以通过将它们添加到GDM的自动启动从而在GDM启动时带起这两个窗口。要做到这一点需先创建这些项目（entry）(以 root 身份运行）
-
- `# cp -t /usr/share/gdm/autostart/LoginWindow/ /usr/share/applications/gnome-appearance-properties.desktop /usr/share/applications/gconf-editor.desktop` 
-
-然后注销你的用户回到GDM。在登录窗口出现后这两个窗口也应该出现。将GDM配置成你想要的样子，然后关闭窗口并重新登录。当你做完了，并想停止这个窗口随着GDM打开，运行这个（以 root 身份）：
-
- `# rm /usr/share/gdm/autostart/LoginWindow/gnome-appearance-properties.desktop /usr/share/gdm/autostart/LoginWindow/gconf-editor.desktop` 
-**注意:** 通过注销/配置的方式，你可以在你配置的时候看到变化。
-
-对于更多信息和高级设置，请阅读[这个](http://library.gnome.org/admin/gdm/2.28/configuration.html.en).
-
-请注意，在xorg-server的1.6.1版本中，`Ctrl`+`Alt`+`Backspace`将再也不会重启GDM。对于重新启用这种行为的介绍，参见[Ctrl-Alt-Backspace无法退出X](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Ctrl-Alt-Backspace.E6.97.A0.E6.B3.95.E9.80.80.E5.87.BAX "Xorg (简体中文)").
-
-### Log-in screen background image
-
-**Note:** Since GNOME 3.16, GNOME Shell themes are now stored binary files (gresource).
+*   Since GNOME 3.16, GNOME Shell themes are now stored as binary files (gresource).
+*   This change will be overwritten on subsequent updates of [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell).
 
 Firstly, you need to extract the existing GNOME Shell theme to a folder in your home directory. You can do this using the following script:
 
  `extractgst.sh` 
 ```
 #!/bin/sh
-
-workdir=${HOME}/shell-theme
-if [ ! -d ${workdir}/theme ]; then
-  mkdir -p ${workdir}/theme
-fi
 gst=/usr/share/gnome-shell/gnome-shell-theme.gresource
+workdir=${HOME}/shell-theme
 
 for r in `gresource list $gst`; do
-        gresource extract $gst $r >$workdir${r/#\/org\/gnome\/shell/}
+	r=${r#\/org\/gnome\/shell/}
+	if [ ! -d $workdir/${r%/*} ]; then
+	  mkdir -p $workdir/${r%/*}
+	fi
+done
+
+for r in `gresource list $gst`; do
+        gresource extract $gst $r >$workdir/${r#\/org\/gnome\/shell/}
 done
 ```
 
@@ -144,35 +114,45 @@ Next, you need to create a file in the directory with the following content:
     <file>checkbox-off-focused.svg</file>
     <file>checkbox-off.svg</file>
     <file>checkbox.svg</file>
-    <file>close-window.svg</file>
     <file>close.svg</file>
+    <file>close-window-active.svg</file>
+    <file>close-window-hover.svg</file>
+    <file>close-window.svg</file>    		
     <file>corner-ripple-ltr.png</file>
     <file>corner-ripple-rtl.png</file>
     <file>dash-placeholder.svg</file>
     <file>filter-selected-ltr.svg</file>
     <file>filter-selected-rtl.svg</file>
-    <file>gnome-shell.css</file>
+    <file>gnome-shell.css</file>	
     <file>gnome-shell-high-contrast.css</file>
+    <file>icons/message-indicator-symbolic.svg</file>
+    <file>key-enter.svg</file>
+    <file>key-hide.svg</file>
+    <file>key-layout.svg</file>
+    <file>key-shift-latched-uppercase.svg</file>
+    <file>key-shift.svg</file>
+    <file>key-shift-uppercase.svg</file>
     <file>logged-in-indicator.svg</file>
-    <file>**filename**</file>
-    <file>more-results.svg</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
-    <file>noise-texture.png</file>
-    <file>page-indicator-active.svg</file>
-    <file>page-indicator-inactive.svg</file>
+    <file>**filename**</file>
+    <file>pad-osd.css</file>
+    <file>page-indicator-active.svg</file>		
     <file>page-indicator-checked.svg</file>
     <file>page-indicator-hover.svg</file>
+    <file>page-indicator-inactive.svg</file>
     <file>process-working.svg</file>
     <file>running-indicator.svg</file>
     <file>source-button-border.svg</file>
     <file>summary-counter.svg</file>
-    <file>toggle-off-us.svg</file>
+    <file>toggle-off-hc.svg</file>
     <file>toggle-off-intl.svg</file>
-    <file>toggle-on-us.svg</file>
+    <file>toggle-off-us.svg</file>		
+    <file>toggle-on-hc.svg</file>		
     <file>toggle-on-intl.svg</file>
-    <file>ws-switch-arrow-up.png</file>
+    <file>toggle-on-us.svg</file>		
     <file>ws-switch-arrow-down.png</file>
+    <file>ws-switch-arrow-up.png</file>
   </gresource>
 </gresources>
 ```
@@ -201,159 +181,171 @@ $ glib-compile-resources gnome-shell-theme.gresource.xml
 
 Then copy the resulting `gnome-shell-theme.gresource` file to the `/usr/share/gnome-shell` directory.
 
-Restart GDM - you should find that it is using your preferred background image.
+Then restart `gdm.service` (note that simply logging out is not enough) and you should find that it is using your preferred background image.
 
 For more information, please see the following [forum thread](https://bbs.archlinux.org/viewtopic.php?id=197036).
 
-### Log-in screen logo
+### DConf configuration
 
-To display a logo on your log-in screen, follow the instructions below.
+Some GDM settings are stored in a DConf database. They can be configured either by adding *keyfiles* to the `/etc/dconf/db/gdm.d` directory and then recompiling the GDM database by running `dconf update` as root or by logging into the GDM user on the system and changing the setting directly using the *gsettings* command line tool. Note that for the former approach, a GDM profile file is required - this must be created manually as it is no longer shipped upstream, see below:
 
-Create the directory to store the logo:
-
+ `/etc/dconf/profile/gdm` 
 ```
-# mkdir /opt/login
-
-```
-
-Create the necessary configuration file:
-
-```
-# touch /etc/dconf/db/gdm.d/02-logo
-
+user-db:user
+system-db:gdm
+file-db:/usr/share/gdm/greeter-dconf-defaults
 ```
 
-Copy this text into the file:
+For the latter approach, you can log into the GDM user with the command below:
 
+```
+# machinectl shell gdm@
+
+```
+
+#### 登录页面的logo
+
+Either create the following keyfile
+
+ `/etc/dconf/db/gdm.d/02-logo` 
 ```
 [org/gnome/login-screen]
-logo='/opt/login/logo.png'
+logo='*/path/to/logo.png*'
+```
+
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+
+```
+$ gsettings set org.gnome.login-screen logo '*/path/to/logo.png*'
 
 ```
 
-Copy your logo of choice into the directory:
+#### 更改光标主题
 
-```
-# cp [YOUR FILE] /opt/login/logo.png
+GDM disregards [GNOME](/index.php/GNOME "GNOME") cursor theme settings and it also ignores the cursor theme set according to the [XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes"). To change the cursor theme used in GDM, either create the following keyfile
 
-```
-
-where [YOUR FILE] needs to be a path to a PNG image.
-
-Update dconf:
-
-```
-# dconf update
-
-```
-
-### Changing the GDM cursor theme
-
-See [Cursor themes#GDM](/index.php/Cursor_themes#GDM "Cursor themes").
-
-### Larger font for log-in screen
-
-Click on the accessibility icon at the top right of the screen (a white circle with the silhouette of a person in the centre) and check the 'Large Text' option.
-
-Alternatively, follow the instructions below:
-
-Create the necessary configuration file:
-
-```
-# touch /etc/dconf/db/gdm.d/03-scaling
-
-```
-
-Copy this text into the file:
-
+ `/etc/dconf/db/gdm.d/10-cursor-settings` 
 ```
 [org/gnome/desktop/interface]
-text-scaling-factor='1.25'
+cursor-theme='*theme-name'*
 
 ```
 
-Update dconf:
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
 
 ```
-# dconf update
+$ gsettings set org.gnome.desktop.interface cursor-theme '*theme-name*'
 
 ```
 
-### Turning off the sound
+#### 在登录页面显示大字体
+
+Click on the accessibility icon at the top right of the screen (a white circle with the silhouette of a person in the centre) and check the *Large Text* option.
+
+To set a specific scaling factor, you can create the following keyfile:
+
+ `/etc/dconf/db/gdm.d/03-scaling` 
+```
+[org/gnome/desktop/interface]
+text-scaling-factor='*1.25*'
+```
+
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+
+```
+$ gsettings set org.gnome.desktop.interface text-scaling-factor '*1.25*'
+
+```
+
+#### 关闭声音
 
 This tweak disables the audible feedback heard when the system volume is adjusted (via keyboard) on the login screen.
 
-Create the necessary configuration file:
+Either create the following keyfile:
 
-```
-# touch /etc/dconf/db/gdm.d/04-sound
-
-```
-
-Copy this text into the file:
-
+ `/etc/dconf/db/gdm.d/04-sound` 
 ```
 [org/gnome/desktop/sound]
 event-sounds='false'
+```
+
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+
+```
+$ gsettings set org.gnome.desktop.sound event-sounds 'false'
 
 ```
 
-Update dconf:
+#### 更改电源按钮行为
 
-```
-# dconf update
+**Note:**
 
-```
-
-### Make the power button interactive
-
-The default installation sets the power button to suspend the system. ***Power off*** or ***Show dialog*** is a better choice.
-
-Create the necessary configuration file:
-
-```
-# touch /etc/dconf/db/gdm.d/05-power
-
-```
-
-Copy this text into the file:
-
-```
-[org/gnome/settings-daemon/plugins/power button]
-power='interactive'
-hibernate='interactive'
-
-```
-
-Update dconf:
-
-```
-# dconf update
-
-```
+*   The [logind settings](/index.php/Power_management#ACPI_events "Power management") for the power button are overriden by GNOME Settings Daemon. [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c4)
+*   As of GDM 3.18, the power button cannot be set to *interactive*. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=753713#c6)
+*   In some cases, this setting will be ignored and hardcoded defaults will be used. [[4]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c17)
 
 **Warning:** Please note that the [acpid](/index.php/Acpid "Acpid") daemon also handles the "power button" and "hibernate button" events. Running both systems at the same time may lead to unexpected behaviour.
 
-### GDM keyboard layout
+Either create the following keyfile:
 
-See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
+ `/etc/dconf/db/gdm.d/05-power` 
+```
+[org/gnome/settings-daemon/plugins/power]
+power-button-action='*action*'
+```
+
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action '*action*'
+
+```
+
+where *action* can be one of `nothing`, `suspend` or `hibernate`.
+
+#### 开启轻触以点击
+
+Tap-to-click is disabled in GDM (and GNOME) by default, but you can easily enable it with a dconf setting.
+
+**Note:** If you want to do this under X, you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
+
+To directly enable tap-to-click, use:
+
+ `# sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
+
+If you prefer to do this with a GUI, use:
+
+ `# sudo -u gdm dconf-editor` 
+
+To check the if it was set correctly, use:
+
+ `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
+
+If you get the error `dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`, make sure dbus is running:
+
+ `$ sudo -u gdm dbus-launch gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
+
+#### 开启或关闭无障碍菜单
+
+To disable or enable the Accessibility Menu, set the following key in dconf editor:
+
+```
+# machinectl shell gdm@
+# gsettings set org.gnome.desktop.interface toolkit-accessibility false
+# exit
+```
+
+The menu is disabled when the key is false, enabled when it is true.
+
+### 键盘布局
+
+The system keyboard layout will be applied to GDM. See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
 
 **Tip:** See [Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 "wikipedia:ISO 3166-1") for a list of keymaps.
 
-#### GNOME Control Center
+If a system has multiple users, it is possible to specify a keyboard layout for GDM to use which is different from the system keyboard layout. Firstly, ensure the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. In the header bar, hit the *Login Screen* toggle button and then choose a keyboard layout from the list. Note that the *Login Screen* button will not be visible in the header bar unless multiple users are present on the system [[5]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
 
-If the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a grapical frontend:
-
-```
-Settings > Keyboard > Input Sources > Login Screen
-
-```
-
-#### GDM 2.x layout
-
-Users of legacy GDM may need to follow the instructions below:
-
-Edit `~/.dmrc`:
+Users of GDM 2.x (legacy GDM) may need to edit `~/.dmrc` as shown below:
 
  `~/.dmrc` 
 ```
@@ -362,67 +354,62 @@ Language=de_DE.UTF-8   # change to your default lang
 Layout=de   nodeadkeys # change to your keyboard layout
 ```
 
-### Change the language
+### 更改语言
 
-To change the GDM language, edit the file `/var/lib/AccountsService/users/gdm` and change the language line using the correct UTF-8 value for your language. You should see something similar to the text below:
+The system language will be applied to GDM. If a system has multiple users, it is possible to set a language for GDM different to the system language. In this case, firstly ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start *gnome-control-center* and choose *Region & Language*. In the header bar, check the *Login Screen* toggle button. Finally, click on *Language* and choose your language from the list. You will be prompted for your root password. Note that the *Login Screen* button will not be visible in the header bar unless multiple users are present on the system [[6]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
 
- `/var/lib/AccountsService/users/gdm` 
-```
-[User]
-Language=fr_FR.UTF-8
-XSession=
-SystemAccount=true
-```
+**Tip:** By adding 2 different input languages, logging out then selecting your default language GDM will remember your choice once the second option is removed.
 
-Now just reboot your computer.
+### 用户与登录
 
-Once you have rebooted, if you look at the `/var/lib/AccountsService/users/gdm` file again, you will see that the language line is cleared — do not worry, the language change has been preserved.
+#### 自动登录
 
-### 自动登录
-
-想要以GDM自动登录，将以下添加到`/etc/gdm/custom.conf`（将username替换成你想要自动登录的用户):
+To enable automatic login with GDM, add the following to `/etc/gdm/custom.conf` (replace *username* with your own):
 
  `/etc/gdm/custom.conf` 
 ```
 # Enable automatic login for user
 [daemon]
-AutomaticLogin=username
+AutomaticLogin=*username*
 AutomaticLoginEnable=True
-
 ```
 
-或以delay自动登录：
+**Tip:** If GDM fails after adding these lines, comment them out from a TTY.
+
+or for an automatic login with a delay:
 
  `/etc/gdm/custom.conf` 
 ```
 [daemon]
-# for login with delay
-TimedLoginEnable=true
-TimedLogin=username
-TimedLoginDelay=1
 
+TimedLoginEnable=true
+TimedLogin=*username*
+TimedLoginDelay=1
 ```
 
-### 无密码登录
+You can set the session used for automatic login (replace `gnome-xorg` with desired session):
 
-如果你想省略GDM的密码提示，只要简单地将以下行添加到`/etc/pam.d/gdm`:
+ `/var/lib/AccountsService/users/*username*`  `XSession=gnome-xorg` 
+
+#### 免密登录
+
+If you want to bypass the password prompt in GDM then simply add the following line on the first line of `/etc/pam.d/gdm-password`:
 
 ```
 auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 ```
 
-**确保**此行正确地在包含"pam_unix.so"的第一行前。
+Then, add the group `nopasswdlogin` to your system. See [Groups](/index.php/Groups "Groups") for group descriptions and group management commands.
 
-然后，添加用户组**nopasswdlogin**到你的系统中。你可以通过 系统>管理>用户和用户组（System > Administration > Users and Groups） 进行图形化操作。参见[Groups](/index.php/Groups "Groups")中关于用户组的描述和管理命令。
+Now, add your user to the `nopasswdlogin` group and you will only have to click on your username to login.
 
-现在，当你使用 系统>管理>用户和用户组（命令：users-admin）并将你的用户设成”密码：不在登陆时询问“（检查”在登陆时不询问密码“选项），你的用户将会被自动添加到”nopasswdlogin“用户组 and viola，你只要简单地仅仅点击你的用户民就可以正确登录，密码完全被省略了！
+**Warning:**
 
-**注意:** 在GNOME 3中，users-admin和系统菜单似乎已被移除
+*   Do **not** do this for a **root** account.
+*   You won't be able to change your session type at login with GDM anymore. If you want to change your default session type, you will first need to remove your user from the `nopasswdlogin` group.
 
-**警告:** <u>不要</u>对***ROOT***账户这样做!
-
-### Passwordless shutdown for multiple sessions
+#### Passwordless shutdown for multiple sessions
 
 GDM uses polkit and logind to gain permissions for shutdown. You can shutdown the system when multiple users are logged in by setting:
 
@@ -449,41 +436,20 @@ GDM uses polkit and logind to gain permissions for shutdown. You can shutdown th
 
 You can find all available logind options (e.g. reboot-multiple-sessions) [here](http://www.freedesktop.org/wiki/Software/systemd/logind#Security).
 
-### Add or edit GDM sessions
+#### 在GDM中开启root登录
 
-Each session is a `.desktop` file located at `/usr/share/xsessions/`.
+It is not advised to login as root, but if necessary you can edit `/etc/pam.d/gdm-password` and add the following line before the line `auth required pam_deny.so`:
 
-**To add a new session:**
-
-1\. Copy an existing `.desktop` file to use as a template for a new session:
-
-```
-$ cd /usr/share/xsessions
-# cp gnome.desktop other.desktop
-
-```
-
-2\. Modify the template `.desktop` file to open the required window manager:
-
-```
-# nano other.desktop
-
-```
-
-If you happen to have KDM installed in parallel, you can alternatively open the new session in KDM which will create the new `.desktop` file. Then return to using GDM and the new session will be available.
-
-See also [Display manager#Session list](/index.php/Display_manager#Session_list "Display manager").
-
-### GDM root 登录
-
-不建议以root登录，但如果需要，你可以编辑`/etc/pam.d/gdm-password`并添加以下一行在 `auth required pam_deny.so`之前:
+`/etc/pam.d/gdm-password`
 
 ```
 auth            sufficient      pam_succeed_if.so uid eq 0 quiet
 
 ```
 
-这时文件应该看起来像这样:
+The file should look something like this:
+
+`/etc/pam.d/gdm-password`
 
 ```
 ...
@@ -494,11 +460,11 @@ auth            required        pam_deny.so
 
 ```
 
-你应该就能在重启GDM后以 root 登录了。
+You should be able to login as root after restarting GDM.
 
-### Hide user from login list
+#### 在登录列表中隐藏用户
 
-The users for the gdm user list are gathered by accountsservice. It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
+The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
 
  `/var/lib/AccountsService/users/<username>` 
 ```
@@ -506,7 +472,9 @@ The users for the gdm user list are gathered by accountsservice. It will automat
 SystemAccount=true
 ```
 
-### Rotate login screen
+### Setup default monitor settings
+
+Some [desktop environments](/index.php/Desktop_environments "Desktop environments") store display settings in `~/.config/monitors.xml`. *xrandr* commands are then generated on the base of the file content. GDM has a similar file stored in `/var/lib/gdm/.config/monitors.xml`.
 
 If you have your monitors setup as you like (orientation, primary and so on) in `~/.config/monitors.xml` and want GDM to honor those settings:
 
@@ -517,23 +485,7 @@ If you have your monitors setup as you like (orientation, primary and so on) in 
 
 Changes will take effect on logout. This is necessary because GDM does not respect `xorg.conf`.
 
-### xrandr at login
-
-If you want to run a script using xrandr that affects the login screen you must add a script in `/etc/X11/xinit/xinitrc.d` since GDM is not respecting or launching the scripts in `/etc/gdm/Init`.
-
-For example, to select automatically a external screen connected through HDMI:
-
-```
-#!/bin/sh
-EXTERNAL_OUTPUT="HDMI1"
-INTERNAL_OUTPUT="eDP1"
-if (xrandr | grep $EXTERNAL_OUTPUT | grep " connected "); then
-    xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
-else
-    xrandr --output $INTERNAL_OUTPUT --auto
-fi
-
-```
+**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#Use Xorg backend](#Use_Xorg_backend), and use a `monitors.xml` that was created under Xorg.
 
 ### Configure X server access permission
 
@@ -543,129 +495,70 @@ For instance, to grant GDM the right to access the X server, use the following c
 
  `# xhost +SI:localuser:gdm` 
 
-### Enabling tap-to-click
+## Troubleshooting
 
-Tap-to-click is disabled in GDM (and GNOME) by default, but you can easily enable it with a dconf setting.
+### Failure to use proprietary NVIDIA driver
 
-**Note:** If you want to do this under X, you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
+GDM uses the [Wayland](/index.php/Wayland "Wayland") backend by default which conflicts with NVIDIA driver. Turning off the Wayland backend could enable proprietary NVIDIA driver.
 
-To directly enable tap-to-click, use:
+### 注销失败
 
- `# sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
-
-If you prefer to do this with a GUI, use:
-
- `# sudo -u gdm dconf-editor` 
-
-To check the if it was set correctly, use:
-
- `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
-
-## 疑难解答
-
-### Failure to start with AMD Catalyst driver
-
-Downgrade the [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) package or try to use another [display manager](/index.php/Display_manager "Display manager") like [LightDM](/index.php/LightDM "LightDM").
-
-### GDM注销失败
-
-如果GDM在引导时正确启动，但在重复尝试注销后失败，尝试将此行添加到`/etc/gdm/custom.conf`的daemon区段:
+If GDM starts up properly on boot, but fails after repeated attempts on logout, try adding this line to the daemon section of `/etc/gdm/custom.conf`:
 
 ```
 GdmXserverTimeout=60
 
 ```
 
-### Xorg 1.16
+### Rootless Xorg
 
-See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+参见[Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg")。
 
-### Use Xorg backend
+### 使用Xorg作为后端
 
-As of GDM version 3.16, the [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [Xorg](/index.php/Xorg "Xorg") backend is used only if the Wayland backend cannot be started. As the Wayland backend has been [reported](https://bugzilla.redhat.com/show_bug.cgi?id=1199890) to cause problems for some users, use of the Xorg backend may be necessary. To use the Xorg backend by default, edit the `/etc/gdm/custom.conf` file and uncomment the following line:
-
-```
-#WaylandEnable=false
-
-```
-
-### Xorg 1.16
-
-See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
-
-### Use Xorg backend
-
-As of GDM version 3.16, the [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [Xorg](/index.php/Xorg "Xorg") backend is used only if the Wayland backend cannot be started. As the Wayland backend has been [reported](https://bugzilla.redhat.com/show_bug.cgi?id=1199890) to cause problems for some users, use of the Xorg backend may be necessary. To use the Xorg backend by default, edit the `/etc/gdm/custom.conf` file and uncomment the following line:
+The [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [Xorg](/index.php/Xorg "Xorg") backend is used only if the Wayland backend cannot be started. As the Wayland backend has been [reported](https://bugzilla.redhat.com/show_bug.cgi?id=1199890) to cause problems for some users, use of the Xorg backend may be necessary. To use the Xorg backend by default, edit the `/etc/gdm/custom.conf` file and uncomment the following line:
 
 ```
 #WaylandEnable=false
 
 ```
 
-### gconf-sanity-check-2 exited with status 256
+### Incomplete removal of gdm
 
-如果GDM弹出一个关于gconf-sanity-check-2的错误，你可能需要检查在/home 和 /etc/gconf/gconf.xml.system (the latter should be 755)中的权限。 如果GDM依然显示这个错误信息，尝试清空GDM的目录（GDM home）。以 Root 身份运行：
-
-```
-rm -rf /var/lib/gdm/.*
+After removing [gdm](https://www.archlinux.org/packages/?name=gdm), [systemd](/index.php/Systemd "Systemd") may report the following:
 
 ```
-
-如果还是不行，尝试将/tmp的所有者和权限设为：
-
-```
-# chown -R root:root /tmp
-# chmod 777 /tmp
+user 'gdm': directory '/var/lib/gdm' does not exist
 
 ```
 
-### GDM总是使用默认US-键盘布局
-
-问题：键盘布局总被切换成us；键盘布局总是在一个信键盘插上后被重置。解决方法：
-
-#### GDM 2.x
-
-编辑 ~/.dmrc
+To remove this warning, login as root and delete the primary user "gdm" and then delete the group "gdm":
 
 ```
-[Desktop]
-Language=de_DE.UTF-8   # change to your default lang
-Layout=de   nodeadkeys # change to your keyboard layout
+# userdel gdm
+# groupdel gdm
 
 ```
 
-#### GDM 3.x
+Verify that gdm is successfully removed via `pwck` and `grpck`. To round it off, you may want to double-check no [unowned files](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks") for gdm remain.
 
-将下面内容加入`/etc/X11/xorg.conf.d/10-evdev.conf`,将 fr 替换为您要使用的键盘
+### GDM自动挂起（GNOME 3.28）
 
- `/etc/X11/xorg.conf.d/10-evdev.conf` 
-```
-Section "InputClass"
-        Identifier "evdev keyboard catchall"
-        MatchIsKeyboard "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "evdev"
-        **Option "XkbLayout" "fr"**
-EndSection
-```
-
-**警告:** 加入`**keyboard** InputClass` 段，而不是 pointer 段。
-
-#### GDM在设置自动登录后无法启动
-
-编辑 `/etc/gdm/custom.conf`，注释掉"AutomaticLoginEnable" 和 "AutomaticLogin".
+GDM uses a separate dconf database to control power management. You can make GDM behave the same way as user sessions by copying the user settings to GDM's dconf database.
 
 ```
-# GDM configuration storage
+$ IFS=$'
+'; for x in $(sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
 
-[daemon]
-
-#AutomaticLoginEnable=True
-#AutomaticLogin=user
-...
-EndSection
 ```
 
-## 参阅
+Or to simply disable auto-suspend (also run the command with `ac` replaced with `battery` to also disable it while running on battery):
+
+```
+$ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+
+```
+
+## 参见
 
 *   [GDM Reference Manual](https://help.gnome.org/admin/gdm/stable/index.html.en)

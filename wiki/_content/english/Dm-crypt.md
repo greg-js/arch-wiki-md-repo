@@ -3,9 +3,9 @@ Related articles
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
 *   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
 
-From the cryptsetup project's [wiki](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt):
+dm-crypt is the Linux kernel's [device mapper](https://en.wikipedia.org/wiki/device_mapper "wikipedia:device mapper") crypto target. From [Wikipedia:dm-crypt](https://en.wikipedia.org/wiki/dm-crypt "wikipedia:dm-crypt"), it is a:
 
-	Device-mapper is infrastructure in the Linux 2.6 and 3.x kernel that provides a generic way to create virtual layers of block devices. Device-mapper crypt target provides transparent encryption of block devices using the kernel crypto API. The user can basically specify one of the symmetric ciphers, an encryption mode, a key (of any allowed size), an iv generation mode and then the user can create a new block device in /dev. Writes to this device will be encrypted and reads decrypted. You can mount your filesystem on it as usual or stack dm-crypt device with another device like RAID or LVM volume. Basic documentation of dm-crypt mapping table comes with kernel source and the latest version is available in git repository.
+	a transparent disk encryption subsystem in [the] Linux kernel.... [It is] implemented as a device mapper target and may be stacked on top of other device mapper transformations. It can thus encrypt whole disks (including removable media), partitions, software RAID volumes, logical volumes, as well as files. It appears as a block device, which can be used to back file systems, swap or as an LVM physical volume.
 
 ## Contents
 
@@ -19,7 +19,7 @@ From the cryptsetup project's [wiki](https://gitlab.com/cryptsetup/cryptsetup/wi
 
 ## Common scenarios
 
-This part introduces common scenarios to employ *dm-crypt* to encrypt a system or individual filesystem mount points. It is meant as starting point to familiarize with different practical encryption procedures. The scenarios cross-link to the other subpages where needed.
+This part introduces common scenarios to employ *dm-crypt* to encrypt a system or individual filesystem mount points. It is meant as a starting point to get familiarized with different practical encryption procedures. The scenarios cross-link to the other subpages where needed.
 
 See [dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system") if you need to encrypt a device that is not used for booting a system, like a [partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") or a [loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system").
 

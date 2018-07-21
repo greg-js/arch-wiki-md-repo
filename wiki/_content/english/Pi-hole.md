@@ -107,7 +107,7 @@ Copy the package provided default config for Pi-hole:
 
 ```
 
-[Enable](/index.php/Enable "Enable") `lighttpd.service` and re/start it:
+[Enable](/index.php/Enable "Enable") `lighttpd.service` and re/start it.
 
 ##### Nginx
 

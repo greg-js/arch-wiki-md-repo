@@ -19,7 +19,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 *Pacman* is written in the C programming language and uses the [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
 
-**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as *pactree* and [checkupdates](/index.php/Checkupdates "Checkupdates") can be found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman) instead. Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
+**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as *pactree* and [checkupdates](/index.php/Checkupdates "Checkupdates") are found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman). Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
 
 ## Contents
 
@@ -77,15 +77,16 @@ What follows is just a small sample of the operations that *pacman* can perform.
 
 ### Installing packages
 
-**Note:** Packages often have a series of [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") which are packages that provide additional functionality to the application, albeit not strictly required for running it. When installing a package, *pacman* will list its optional dependencies among the output messages, but they will not be found in `pacman.log`: use the [pacman -Si](#Querying_package_databases) command to view the optional dependencies of a package, together with short descriptions of their functionality.
+**Note:**
 
-**Note:** When installing a package which you require only as (optional) dependency of some other package (i.e. not required by you explicitly otherwise), it is recommended to use `--asdeps` option. For details see [Installation reason](#Installation_reason).
+*   Packages often have [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") which are packages that provide additional functionality to the application but not strictly required for running it. When installing a package, *pacman* will list a package's optional dependencies, but they will not be found in `pacman.log`. Use the [#Querying package databases](#Querying_package_databases) command to view the optional dependencies of a package.
+*   When installing a package which you require only as (optional) dependency of some other package (i.e. not required by you explicitly otherwise), it is recommended to use `--asdeps` option. For details see the [#Installation reason](#Installation_reason) section.
 
 **Warning:** When installing packages in Arch, avoid refreshing the package list without [upgrading the system](#Upgrading_packages) (for example, when a [package is no longer found](#Packages_cannot_be_retrieved_on_installation) in the official repositories). In practice, do **not** run `pacman -Sy *package_name*` instead of `pacman -Sy**u** *package_name*`, as this could lead to dependency issues. See [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") and [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### Installing specific packages
 
-To install a single package or list of packages (including dependencies), issue the following command:
+To install a single package or list of packages, including dependencies, issue the following command:
 
 ```
 # pacman -S *package_name1* *package_name2* ...
@@ -99,21 +100,21 @@ To install a list of packages with regex (see [this forum thread](https://bbs.ar
 
 ```
 
-Sometimes there are multiple versions of a package in different repositories, e.g. *extra* and *testing*. To install the former version, the repository needs to be defined in front:
+Sometimes there are multiple versions of a package in different repositories (e.g. *extra* and *testing*). To install the version from the *extra* repository in this example, the repository needs to be defined in front of the package name:
 
 ```
 # pacman -S extra/*package_name*
 
 ```
 
-To install a number of packages sharing similar patterns in their names -- not the entire group nor all matching packages; eg. [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
+To install a number of packages sharing similar patterns in their names one can use curly brace expansion. For example:
 
 ```
 # pacman -S plasma-{desktop,mediacenter,nm}
 
 ```
 
-Of course, that is not limited and can be expanded to however many levels needed:
+This can be expanded to however many levels needed:
 
 ```
 # pacman -S plasma-{workspace{,-wallpapers},pa}

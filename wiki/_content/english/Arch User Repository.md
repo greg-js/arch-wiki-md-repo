@@ -15,6 +15,8 @@ The Arch User Repository (AUR) is a community-driven repository for Arch users. 
 
 A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the *community* repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
 
+**Warning:** AUR packages are user produced content. Any use of the provided files is at your own risk.
+
 ## Contents
 
 *   [1 Getting started](#Getting_started)

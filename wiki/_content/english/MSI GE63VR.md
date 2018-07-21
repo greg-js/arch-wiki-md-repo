@@ -22,7 +22,7 @@ Only the variant GE63VR-7RE (or GE63VR Raider-215) was tested. Its specification
 *   Storage : Samsung NVMe SSD 512 GB
 *   Built-in screen : Full HD 3 ms 120 Hz
 
-The laptop was last tested with official kernel 4.17.2-1.
+The laptop was last tested with official kernel 4.17.6.
 
 ## Compatibility
 
@@ -49,8 +49,8 @@ Open-source tools such as [MSIKLM](https://github.com/Gibtnix/MSIKLM) do not wor
 
  |
 | SD card reader | Not tested | A "wrong version" warning is thrown at boot about the SD controller. |
-| Sleep/Resume | Partially | When running the X server from the dedicated GPU, resuming from sleep causes garbled rendering in opened applications. The kernel also throws errors about the NVidia card. |
-| Hibernation to disk | Not tested |
+| Sleep/Resume | Yes |
+| Hibernation to disk | Yes |
 
 ## Installation
 

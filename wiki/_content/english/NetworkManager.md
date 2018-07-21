@@ -28,11 +28,12 @@ Related articles
     *   [4.4 Proxy settings](#Proxy_settings)
     *   [4.5 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
     *   [4.6 Checking connectivity](#Checking_connectivity)
-    *   [4.7 Enable DNS caching](#Enable_DNS_caching)
+    *   [4.7 DNS caching and split DNS](#DNS_caching_and_split_DNS)
         *   [4.7.1 dnsmasq](#dnsmasq)
             *   [4.7.1.1 Custom configuration](#Custom_configuration)
             *   [4.7.1.2 IPv6](#IPv6)
-        *   [4.7.2 Other methods](#Other_methods)
+        *   [4.7.2 systemd-resolved](#systemd-resolved)
+        *   [4.7.3 Other methods](#Other_methods)
     *   [4.8 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
         *   [4.8.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
         *   [4.8.2 Dispatcher examples](#Dispatcher_examples)
@@ -43,43 +44,44 @@ Related articles
             *   [4.8.2.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
             *   [4.8.2.6 OpenNTPD](#OpenNTPD)
 *   [5 Testing](#Testing)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
-    *   [6.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
-    *   [6.3 Network management disabled](#Network_management_disabled)
-    *   [6.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
-    *   [6.5 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
-    *   [6.6 Missing default route](#Missing_default_route)
-    *   [6.7 3G modem not detected](#3G_modem_not_detected)
-    *   [6.8 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
-    *   [6.9 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
-    *   [6.10 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
-    *   [6.11 Forget hidden wireless network](#Forget_hidden_wireless_network)
-    *   [6.12 VPN not working in GNOME](#VPN_not_working_in_GNOME)
-    *   [6.13 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [6.14 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
-    *   [6.15 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [6.16 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
-    *   [6.17 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
-    *   [6.18 Turn off hostname sending](#Turn_off_hostname_sending)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
-        *   [7.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
-        *   [7.1.2 Using KDE Wallet](#Using_KDE_Wallet)
-    *   [7.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
-    *   [7.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
-    *   [7.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
-    *   [7.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
-    *   [7.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
-        *   [7.6.1 GNOME](#GNOME_2)
-        *   [7.6.2 SLiM login manager](#SLiM_login_manager)
-        *   [7.6.3 Troubleshooting](#Troubleshooting_2)
-    *   [7.7 Ignore specific devices](#Ignore_specific_devices)
-    *   [7.8 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
-    *   [7.9 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
-    *   [7.10 Working with wired connections](#Working_with_wired_connections)
-    *   [7.11 resolv.conf](#resolv.conf)
-        *   [7.11.1 Use openresolv](#Use_openresolv)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
+        *   [6.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
+        *   [6.1.2 Using KDE Wallet](#Using_KDE_Wallet)
+    *   [6.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
+    *   [6.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
+    *   [6.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
+    *   [6.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
+    *   [6.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
+        *   [6.6.1 GNOME](#GNOME_2)
+        *   [6.6.2 SLiM login manager](#SLiM_login_manager)
+        *   [6.6.3 Troubleshooting](#Troubleshooting)
+    *   [6.7 Ignore specific devices](#Ignore_specific_devices)
+    *   [6.8 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
+    *   [6.9 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+    *   [6.10 Working with wired connections](#Working_with_wired_connections)
+    *   [6.11 resolv.conf](#resolv.conf)
+        *   [6.11.1 Use openresolv](#Use_openresolv)
+*   [7 Troubleshooting](#Troubleshooting_2)
+    *   [7.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
+    *   [7.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
+    *   [7.3 Network management disabled](#Network_management_disabled)
+    *   [7.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
+    *   [7.5 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
+    *   [7.6 Missing default route](#Missing_default_route)
+    *   [7.7 3G modem not detected](#3G_modem_not_detected)
+    *   [7.8 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
+    *   [7.9 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
+    *   [7.10 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
+    *   [7.11 Forget hidden wireless network](#Forget_hidden_wireless_network)
+    *   [7.12 VPN not working in GNOME](#VPN_not_working_in_GNOME)
+    *   [7.13 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [7.14 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
+    *   [7.15 Systemd Bottleneck](#Systemd_Bottleneck)
+    *   [7.16 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
+    *   [7.17 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [7.18 Turn off hostname sending](#Turn_off_hostname_sending)
+    *   [7.19 nm-applet disappears in i3wm](#nm-applet_disappears_in_i3wm)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -128,63 +130,63 @@ NetworkManager comes with [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/
 List nearby wifi networks:
 
 ```
-nmcli dev wifi list
+$ nmcli device wifi list
 
 ```
 
 Connect to a wifi network:
 
 ```
-nmcli dev wifi connect <SSID> password <password>
+$ nmcli device wifi connect *SSID* password *password*
 
 ```
 
 Connect to a hidden network:
 
 ```
-nmcli dev wifi connect <SSID> password <password> hidden yes
+$ nmcli device wifi connect *SSID* password *password* hidden yes
 
 ```
 
 Connect to a wifi on the `wlan1` wifi interface:
 
 ```
-nmcli dev wifi connect <SSID> password <password> ifname wlan1 [profile name]
+$ nmcli device wifi connect *SSID* password *password* ifname wlan1 *profile_name*
 
 ```
 
 Disconnect an interface:
 
 ```
-nmcli dev disconnect ifname eth0
+$ nmcli device disconnect ifname eth0
 
 ```
 
 Reconnect an interface marked as disconnected:
 
 ```
-nmcli con up uuid <uuid>
+$ nmcli connection up uuid *UUID*
 
 ```
 
 Get a list of UUIDs:
 
 ```
-nmcli con show
+$ nmcli connection show
 
 ```
 
 See a list of network devices and their state:
 
 ```
-nmcli dev
+$ nmcli device
 
 ```
 
 Turn off wifi:
 
 ```
-nmcli r wifi off
+$ nmcli radio wifi off
 
 ```
 
@@ -310,7 +312,7 @@ NetworkManager can try to reach a page on Internet when connecting to a network.
 
 For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
 
-### Enable DNS caching
+### DNS caching and split DNS
 
 #### dnsmasq
 
@@ -325,6 +327,8 @@ dns=dnsmasq
 ```
 
 Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
+
+**Note:** The dnsmasq instance started by NetworkManager will not validate [DNSSEC](/index.php/DNSSEC "DNSSEC") since it is started with the `--proxy-dnssec` option. It will trust whatever DNSSEC information it gets from the upstream DNS server.
 
 ##### Custom configuration
 
@@ -343,7 +347,23 @@ Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dril
 
 In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately NetworkManager does not do this ([Ubuntu Bug](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). A workaround would be to disable IPv4 DNS in the NetworkManager config, assuming one exists
 
+#### systemd-resolved
+
+NetworkManager can use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") as a DNS resolver and cache. Make sure that *systemd-resolved* is properly configured and that `systemd-resolved.service` is [started](/index.php/Started "Started") before using it.
+
+systemd-resolved will be used automatically if `/etc/resolv.conf` is a symlink to `/run/systemd/resolve/stub-resolv.conf`, `/run/systemd/resolve/resolv.conf` or `/usr/lib/systemd/resolv.conf`.
+
+If `/etc/resolv.conf` is not a symlink to any of those files, enable it explicitly by setting the `dns=` option in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5):
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=systemd-resolved
+```
+
 #### Other methods
+
+**Tip:** Set the local DNS server address in `/etc/resolvconf.conf` and [configure NetworkManager to use openresolv](#Use_openresolv).
 
 With an already working caching DNS server, the DNS server address can be specified it in NetworkManagers' settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as 'Automatic (specify addresses).' The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
@@ -588,179 +608,6 @@ nm-applet --sm-disable &
 
 For static IP addresses, you will have to configure NetworkManager to understand them. The process usually involves right-clicking the applet and selecting something like 'Edit Connections'.
 
-## Troubleshooting
-
-### No prompt for password of secured Wi-Fi networks
-
-When trying to connect to a secured Wi-Fi network, no prompt for a password is shown and no connection is established. This happens when no keyring package is installed. An easy solution is to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). If you want the passwords to be stored in encrypted form, follow [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") to set up the *gnome-keyring-daemon*.
-
-### No traffic via PPTP tunnel
-
-PPTP connection logins successfully; you see a ppp0 interface with the correct VPN IP address, but you cannot even ping the remote IP address. It is due to lack of MPPE (Microsoft Point-to-Point Encryption) support in stock Arch pppd. It is recommended to first try with the stock Arch [ppp](https://www.archlinux.org/packages/?name=ppp) as it may work as intended.
-
-To solve the problem it should be sufficient to install the [ppp-mppe](https://aur.archlinux.org/packages/ppp-mppe/) package.
-
-See also [WPA2 Enterprise#MS-CHAPv2](/index.php/WPA2_Enterprise#MS-CHAPv2 "WPA2 Enterprise").
-
-### Network management disabled
-
-When NetworkManager shuts down but the pid (state) file is not removed, you will see a `Network management disabled` message. If this happens, remove the file manually:
-
-```
-# rm /var/lib/NetworkManager/NetworkManager.state
-
-```
-
-### Problems with internal DHCP client
-
-If you have problems with getting an IP address using the internal DHCP client, consider [dhclient](https://www.archlinux.org/packages/?name=dhclient) as DHCP client.
-
-After installation, update the NetworkManager config file:
-
- `/etc/NetworkManager/conf.d/dhcp-client.conf` 
-```
-[main]
-dhcp=dhclient
-```
-
-This workaround might solve problems in big wireless networks like eduroam.
-
-### DHCP problems with dhclient
-
-If you have problems with getting an IP address via DHCP, try to add the following to your `/etc/dhclient.conf`:
-
-```
- interface "eth0" {
-   send dhcp-client-identifier 01:aa:bb:cc:dd:ee:ff;
- }
-
-```
-
-Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
-
-### Missing default route
-
-On at least one KDE4 system, no default route was created when establishing wireless connections with NetworkManager. Changing the route settings of the wireless connection to remove the default selection "Use only for resources on this connection" solved the issue.
-
-### 3G modem not detected
-
-See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
-
-### Switching off WLAN on laptops
-
-Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with *rfkill*. To check if the driver notifies *rfkill* about the wireless adapter's status, use:
-
-```
-$ watch -n1 rfkill list all
-
-```
-
-If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
-
-```
-# rfkill event unblock X
-
-```
-
-### Static IP address settings revert to DHCP
-
-Due to an unresolved bug, when changing default connections to a static IP address, `nm-applet` may not properly store the configuration change, and will revert to automatic DHCP.
-
-To work around this issue you have to edit the default connection (e.g. "Auto eth0") in `nm-applet`, change the connection name (e.g. "my eth0"), uncheck the "Available to all users" checkbox, change your static IP address settings as desired, and click **Apply**. This will save a new connection with the given name.
-
-Next, you will want to make the default connection not connect automatically. To do so, run `nm-connection-editor` (**not** as root). In the connection editor, edit the default connection (e.g. "Auto eth0") and uncheck "Connect automatically". Click **Apply** and close the connection editor.
-
-### Cannot edit connections as normal user
-
-See [#Set up PolicyKit permissions](#Set_up_PolicyKit_permissions).
-
-### Forget hidden wireless network
-
-Since hidden networks are not displayed in the selection list of the Wireless view, they cannot be forgotten (removed) with the GUI. You can delete one with the following command:
-
-```
-# rm /etc/NetworkManager/system-connections/*SSID*
-
-```
-
-This works for any other connection.
-
-### VPN not working in GNOME
-
-When setting up OpenConnect or vpnc connections in NetworkManager while using GNOME, you will sometimes never see the dialog box pop up and the following error appears in `/var/log/errors.log`:
-
-```
-localhost NetworkManager[399]: <error> [1361719690.10506] [nm-vpn-connection.c:1405] get_secrets_cb(): Failed to request VPN secrets #3: (6) No agents were available for this request.
-
-```
-
-This is caused by the GNOME NM Applet expecting dialog scripts to be at `/usr/lib/gnome-shell`, when NetworkManager's packages put them in `/usr/lib/networkmanager`. As a "temporary" fix (this bug has been around for a while now), make the following symlink(s):
-
-*   For OpenConnect: `ln -s /usr/lib/networkmanager/nm-openconnect-auth-dialog /usr/lib/gnome-shell/`
-*   For VPNC (i.e. Cisco VPN): `ln -s /usr/lib/networkmanager/nm-vpnc-auth-dialog /usr/lib/gnome-shell/`
-
-This may need to be done for any other NM VPN plugins as well, but these are the two most common.
-
-### Unable to connect to visible European wireless networks
-
-WLAN chips are shipped with a default [regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration"). If your access point does not operate within these limitations, you will not be able to connect to the network. Fixing this is easy:
-
-1.  [Install](/index.php/Install "Install") [crda](https://www.archlinux.org/packages/?name=crda)
-2.  Uncomment the correct Country Code in `/etc/conf.d/wireless-regdom`
-3.  Reboot the system, because the setting is only read on boot
-
-### Automatic connect to VPN on boot is not working
-
-The problem occurs when the system (i.e. NetworkManager running as the root user) tries to establish a VPN connection, but the password is not accessible because it is stored in the Gnome keyring of a particular user.
-
-A solution is to keep the password to your VPN in plaintext, as described in step (2.) of [#Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established).
-
-You do not need to use the dispatcher described in step (1.) to auto-connect anymore, if you use the new "auto-connect VPN" option from the `nm-applet` GUI.
-
-### Systemd Bottleneck
-
-Over time the log files (`/var/log/journal`) can become very large. This can have a big impact on boot performance when using NetworkManager, see: [Systemd#Boot time increasing over time](/index.php/Systemd#Boot_time_increasing_over_time "Systemd").
-
-### Regular network disconnects, latency and lost packets (WiFi)
-
-NetworkManager does a scan every 2 minutes.
-
-Some WiFi drivers have issues when scanning for base stations whilst connected/associated. Symptoms include VPN disconnects/reconnects and lost packets, web pages failing to load and then refresh fine.
-
-Running `journalctl -f` will indicate that this is taking place, messages like the following will be contained in the logs at regular intervals.
-
-```
-NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-wifi-name) to (none) ((none))
-
-```
-
-There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
-
-Alternatively, if roaming is not important, the periodic scanning behavior can be disabled by locking the BSSID of the access point in the WiFi connection profile.
-
-### Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)
-
-There is an issue with the `ideapad_laptop` module on some Lenovo models due to the wi-fi driver incorrectly reporting a soft block. The card can still be manipulated with `netctl`, but managers like NetworkManager break. You can verify that this is the problem by checking the output of `rfkill list` after toggling your hardware switch and seeing that the soft block persists.
-
-[Unloading](/index.php/Modprobe "Modprobe") the `ideapad_laptop` module should fix this. (**warning**: this may disable the laptop keyboard and touchpad also!).
-
-### Turn off hostname sending
-
-NetworkManager by default sends the hostname to the DHCP server. Hostname sending can only be disabled per connection not globally ([GNOME Bug 768076](https://bugzilla.gnome.org/show_bug.cgi?id=768076)).
-
-To disable sending your hostname to the DHCP server for a specific connection, add the following to your network connection file:
-
- `/etc/NetworkManager/system-connections/*your_connection_file*` 
-```
-...
-[ipv4]
-dhcp-send-hostname=false
-...
-[ipv6]
-dhcp-send-hostname=false
-...
-```
-
 ## Tips and tricks
 
 ### Encrypted Wi-Fi passwords
@@ -792,16 +639,7 @@ If the option was selected previously and you un-tick it, you may have to use th
 
 You can share your internet connection (e.g. 3G or wired) with a few clicks. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
 
-*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection and edit your Network Manager configuration to use [dnsmasq](/index.php/Dnsmasq "Dnsmasq"):
-
- `/etc/NetworkManager/conf.d/dns.conf` 
-```
-[main]
-dns=dnsmasq
-
-```
-
-[Restart](/index.php/Restart "Restart") `NetworkManager.service` afterwards.
+*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
 
 Create the shared connection:
 
@@ -978,9 +816,192 @@ To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresol
 rc-manager=resolvconf
 ```
 
-**Note:** Do not set `rc-manager=resolvconf` when using [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf). *systemd-resolved* provides limited support for the *resolvconf* interface and NetworkManager supports communicating with systemd-resolved trough D-Bus without using *resolvconf*.
-
 Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+
+## Troubleshooting
+
+### No prompt for password of secured Wi-Fi networks
+
+When trying to connect to a secured Wi-Fi network, no prompt for a password is shown and no connection is established. This happens when no keyring package is installed. An easy solution is to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). If you want the passwords to be stored in encrypted form, follow [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") to set up the *gnome-keyring-daemon*.
+
+### No traffic via PPTP tunnel
+
+PPTP connection logins successfully; you see a ppp0 interface with the correct VPN IP address, but you cannot even ping the remote IP address. It is due to lack of MPPE (Microsoft Point-to-Point Encryption) support in stock Arch pppd. It is recommended to first try with the stock Arch [ppp](https://www.archlinux.org/packages/?name=ppp) as it may work as intended.
+
+To solve the problem it should be sufficient to install the [ppp-mppe](https://aur.archlinux.org/packages/ppp-mppe/) package.
+
+See also [WPA2 Enterprise#MS-CHAPv2](/index.php/WPA2_Enterprise#MS-CHAPv2 "WPA2 Enterprise").
+
+### Network management disabled
+
+When NetworkManager shuts down but the pid (state) file is not removed, you will see a `Network management disabled` message. If this happens, remove the file manually:
+
+```
+# rm /var/lib/NetworkManager/NetworkManager.state
+
+```
+
+### Problems with internal DHCP client
+
+If you have problems with getting an IP address using the internal DHCP client, consider [dhclient](https://www.archlinux.org/packages/?name=dhclient) as DHCP client.
+
+After installation, update the NetworkManager config file:
+
+ `/etc/NetworkManager/conf.d/dhcp-client.conf` 
+```
+[main]
+dhcp=dhclient
+```
+
+This workaround might solve problems in big wireless networks like eduroam.
+
+### DHCP problems with dhclient
+
+If you have problems with getting an IP address via DHCP, try to add the following to your `/etc/dhclient.conf`:
+
+```
+ interface "eth0" {
+   send dhcp-client-identifier 01:aa:bb:cc:dd:ee:ff;
+ }
+
+```
+
+Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+
+### Missing default route
+
+On at least one KDE4 system, no default route was created when establishing wireless connections with NetworkManager. Changing the route settings of the wireless connection to remove the default selection "Use only for resources on this connection" solved the issue.
+
+### 3G modem not detected
+
+See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
+
+### Switching off WLAN on laptops
+
+Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with *rfkill*. To check if the driver notifies *rfkill* about the wireless adapter's status, use:
+
+```
+$ watch -n1 rfkill list all
+
+```
+
+If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
+
+```
+# rfkill event unblock X
+
+```
+
+### Static IP address settings revert to DHCP
+
+Due to an unresolved bug, when changing default connections to a static IP address, `nm-applet` may not properly store the configuration change, and will revert to automatic DHCP.
+
+To work around this issue you have to edit the default connection (e.g. "Auto eth0") in `nm-applet`, change the connection name (e.g. "my eth0"), uncheck the "Available to all users" checkbox, change your static IP address settings as desired, and click **Apply**. This will save a new connection with the given name.
+
+Next, you will want to make the default connection not connect automatically. To do so, run `nm-connection-editor` (**not** as root). In the connection editor, edit the default connection (e.g. "Auto eth0") and uncheck "Connect automatically". Click **Apply** and close the connection editor.
+
+### Cannot edit connections as normal user
+
+See [#Set up PolicyKit permissions](#Set_up_PolicyKit_permissions).
+
+### Forget hidden wireless network
+
+Since hidden networks are not displayed in the selection list of the Wireless view, they cannot be forgotten (removed) with the GUI. You can delete one with the following command:
+
+```
+# rm /etc/NetworkManager/system-connections/*SSID*
+
+```
+
+This works for any other connection.
+
+### VPN not working in GNOME
+
+When setting up OpenConnect or vpnc connections in NetworkManager while using GNOME, you will sometimes never see the dialog box pop up and the following error appears in `/var/log/errors.log`:
+
+```
+localhost NetworkManager[399]: <error> [1361719690.10506] [nm-vpn-connection.c:1405] get_secrets_cb(): Failed to request VPN secrets #3: (6) No agents were available for this request.
+
+```
+
+This is caused by the GNOME NM Applet expecting dialog scripts to be at `/usr/lib/gnome-shell`, when NetworkManager's packages put them in `/usr/lib/networkmanager`. As a "temporary" fix (this bug has been around for a while now), make the following symlink(s):
+
+*   For OpenConnect: `ln -s /usr/lib/networkmanager/nm-openconnect-auth-dialog /usr/lib/gnome-shell/`
+*   For VPNC (i.e. Cisco VPN): `ln -s /usr/lib/networkmanager/nm-vpnc-auth-dialog /usr/lib/gnome-shell/`
+
+This may need to be done for any other NM VPN plugins as well, but these are the two most common.
+
+### Unable to connect to visible European wireless networks
+
+WLAN chips are shipped with a default [regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration"). If your access point does not operate within these limitations, you will not be able to connect to the network. Fixing this is easy:
+
+1.  [Install](/index.php/Install "Install") [crda](https://www.archlinux.org/packages/?name=crda)
+2.  Uncomment the correct Country Code in `/etc/conf.d/wireless-regdom`
+3.  Reboot the system, because the setting is only read on boot
+
+### Automatic connect to VPN on boot is not working
+
+The problem occurs when the system (i.e. NetworkManager running as the root user) tries to establish a VPN connection, but the password is not accessible because it is stored in the Gnome keyring of a particular user.
+
+A solution is to keep the password to your VPN in plaintext, as described in step (2.) of [#Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established).
+
+You do not need to use the dispatcher described in step (1.) to auto-connect anymore, if you use the new "auto-connect VPN" option from the `nm-applet` GUI.
+
+### Systemd Bottleneck
+
+Over time the log files (`/var/log/journal`) can become very large. This can have a big impact on boot performance when using NetworkManager, see: [Systemd#Boot time increasing over time](/index.php/Systemd#Boot_time_increasing_over_time "Systemd").
+
+### Regular network disconnects, latency and lost packets (WiFi)
+
+NetworkManager does a scan every 2 minutes.
+
+Some WiFi drivers have issues when scanning for base stations whilst connected/associated. Symptoms include VPN disconnects/reconnects and lost packets, web pages failing to load and then refresh fine.
+
+Running `journalctl -f` will indicate that this is taking place, messages like the following will be contained in the logs at regular intervals.
+
+```
+NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-wifi-name) to (none) ((none))
+
+```
+
+There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
+
+Alternatively, if roaming is not important, the periodic scanning behavior can be disabled by locking the BSSID of the access point in the WiFi connection profile.
+
+### Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)
+
+There is an issue with the `ideapad_laptop` module on some Lenovo models due to the wi-fi driver incorrectly reporting a soft block. The card can still be manipulated with `netctl`, but managers like NetworkManager break. You can verify that this is the problem by checking the output of `rfkill list` after toggling your hardware switch and seeing that the soft block persists.
+
+[Unloading](/index.php/Modprobe "Modprobe") the `ideapad_laptop` module should fix this. (**warning**: this may disable the laptop keyboard and touchpad also!).
+
+### Turn off hostname sending
+
+NetworkManager by default sends the hostname to the DHCP server. Hostname sending can only be disabled per connection not globally ([GNOME Bug 768076](https://bugzilla.gnome.org/show_bug.cgi?id=768076)).
+
+To disable sending your hostname to the DHCP server for a specific connection, add the following to your network connection file:
+
+ `/etc/NetworkManager/system-connections/*your_connection_file*` 
+```
+...
+[ipv4]
+dhcp-send-hostname=false
+...
+[ipv6]
+dhcp-send-hostname=false
+...
+```
+
+### nm-applet disappears in i3wm
+
+If you use the `xfce4-notifyd.service` for notifications you must [edit](/index.php/Edit "Edit") the unit and add the following:
+
+ `/etc/systemd/user/xfce4-notifyd.service.d/display_env.conf` 
+```
+[Service]
+Environment="DISPLAY=:0.0"
+```
+
+After reloading the daemons [restart](/index.php/Restart "Restart") `xfce4-notifyd.service`. Exit i3 and start it back up again and the applet should show on the tray.
 
 ## See also
 

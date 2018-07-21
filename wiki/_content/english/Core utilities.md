@@ -240,7 +240,7 @@ See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/201
 
 ### grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/Ed_(text_editor) "wikipedia:Ed (text editor)")'s *g/re/p*, *global/regular expression/print*) is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to standard output.
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to standard output.
 
 *   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
 *   There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack).
@@ -281,7 +281,7 @@ Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-lin
 
 ### pv
 
-You can use [pv](https://www.archlinux.org/packages/?name=pv) (*pipe viewer*) to monitor the progress of data through a pipeline, for example:
+You can use [pv](https://www.archlinux.org/packages/?name=pv) to monitor the progress of data through a pipeline, for example:
 
 ```
 # dd if=*/source/filestream* | pv -*monitor_options* -s *size_of_file* | dd of=*/destination/filestream*
@@ -359,11 +359,11 @@ The `help` command is available for all objects. For example, typing `ip addr he
 
 The [Network configuration](/index.php/Network_configuration "Network configuration") article shows how the *ip* command is used in practice for various common tasks.
 
-**Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which was used in older versions of Linux for interface configuration. It is now deprecated in Arch Linux; you should use *ip* instead.
+**Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which is deprecated in Arch Linux; use *ip* instead.
 
 ### ss
 
-*ss*, for Sockets Statistics, is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package in the [base](https://www.archlinux.org/groups/x86_64/base/) group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
+*ss* is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package in the [base](https://www.archlinux.org/groups/x86_64/base/) group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
 
 Common usage includes:
 

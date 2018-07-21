@@ -22,9 +22,11 @@
         *   [1.1.8 Project management](#Project_management)
     *   [1.2 Education](#Education)
         *   [1.2.1 Flashcards](#Flashcards)
-        *   [1.2.2 Education management engines](#Education_management_engines)
-        *   [1.2.3 Touch typing](#Touch_typing)
-        *   [1.2.4 Recipe management](#Recipe_management)
+        *   [1.2.2 Touch typing](#Touch_typing)
+            *   [1.2.2.1 Console](#Console_3)
+            *   [1.2.2.2 Graphical](#Graphical_3)
+        *   [1.2.3 Recipe management](#Recipe_management)
+        *   [1.2.4 Education management engines](#Education_management_engines)
     *   [1.3 Accessibility](#Accessibility)
         *   [1.3.1 Speech synthesizers](#Speech_synthesizers)
         *   [1.3.2 Speech recognition](#Speech_recognition)
@@ -33,8 +35,8 @@
     *   [1.4 Display managers](#Display_managers)
     *   [1.5 Desktop environments](#Desktop_environments)
         *   [1.5.1 Window managers](#Window_managers)
-            *   [1.5.1.1 Console](#Console_3)
-            *   [1.5.1.2 Graphical](#Graphical_3)
+            *   [1.5.1.1 Console](#Console_4)
+            *   [1.5.1.2 Graphical](#Graphical_4)
             *   [1.5.1.3 Composite managers](#Composite_managers)
         *   [1.5.2 Window tilers](#Window_tilers)
         *   [1.5.3 Taskbars](#Taskbars)
@@ -431,79 +433,87 @@ See also [Wikipedia:Comparison of project management software](https://en.wikipe
 
 ### Education
 
+See also [List of games#Education](/index.php/List_of_games#Education "List of games").
+
 #### Flashcards
 
-See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/List_of_flashcard_software "wikipedia:List of flashcard software").
+See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/List_of_flashcard_software "wikipedia:List of flashcard software").
 
-*   **[Anki](/index.php/Anki "Anki")** — Anki is a program which makes remembering things easy.
+*   **[Anki](/index.php/Anki "Anki")** — Intelligent spaced-repetition memory training program.
 
-	[http://ankisrs.net/](http://ankisrs.net/) || [anki12](https://aur.archlinux.org/packages/anki12/) [anki20-bin](https://aur.archlinux.org/packages/anki20-bin/)
+	[https://apps.ankiweb.net/](https://apps.ankiweb.net/) || [anki](https://www.archlinux.org/packages/?name=anki)
 
-*   **iGNUit** — Memorization aid based on the Leitner flashcard system.
+*   **iGNUit** — Memorization aid based on the [Leitner flashcard system](https://en.wikipedia.org/wiki/Leitner_system "wikipedia:Leitner system").
 
 	[http://homepages.ihug.co.nz/~trmusson/programs.html#ignuit](http://homepages.ihug.co.nz/~trmusson/programs.html#ignuit) || [ignuit](https://aur.archlinux.org/packages/ignuit/)
 
-*   **[Mnemosyne](/index.php/Mnemosyne "Mnemosyne")** — Free flash-card tool which optimizes your learning process.
+*   **jVLT** — Vocabulary learning tool.
 
-	[http://mnemosyne-proj.org/](http://mnemosyne-proj.org/) || [mnemosyne](https://aur.archlinux.org/packages/mnemosyne/)
+	[https://www.linuxlinks.com/jVLT/](https://www.linuxlinks.com/jVLT/) || [jvlt](https://aur.archlinux.org/packages/jvlt/)
 
-#### Education management engines
+*   **KWordQuiz** — Tool that gives you a powerful way to master new vocabularies. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-*   **[Moodle](/index.php/Moodle "Moodle")** — Moodle is a open-source software learning management system.
+	[https://www.kde.org/applications/education/kwordquiz/](https://www.kde.org/applications/education/kwordquiz/) || [kwordquiz](https://www.archlinux.org/packages/?name=kwordquiz)
 
-	[https://moodle.org/](https://moodle.org/) || [moodle](https://aur.archlinux.org/packages/moodle/)
+*   **[Mnemosyne](/index.php/Mnemosyne "Mnemosyne")** — Flash-card tool which optimizes your learning process.
+
+	[https://mnemosyne-proj.org/](https://mnemosyne-proj.org/) || [mnemosyne](https://aur.archlinux.org/packages/mnemosyne/)
+
+*   **Parley** — Program to help you memorize things. It uses the spaced repetition learning method, also known as flash cards. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/parley/](https://www.kde.org/applications/education/parley/) || [parley](https://www.archlinux.org/packages/?name=parley)
+
+*   **Pauker** — Flash card based learning tool using shortterm and longterm memory training.
+
+	[http://pauker.sourceforge.net/](http://pauker.sourceforge.net/) || [pauker](https://aur.archlinux.org/packages/pauker/)
 
 #### Touch typing
 
-*   **KTouch** — Touch Typing Tutor. It's a part of Plasma workspace.
+##### Console
 
-	[https://www.kde.org/applications/education/ktouch](https://www.kde.org/applications/education/ktouch) || [ktouch](https://www.archlinux.org/packages/?name=ktouch), [kdeedu-ktouch-patched](https://aur.archlinux.org/packages/kdeedu-ktouch-patched/)
+*   **Dvorak 7min** — Simple ncurses-based typing tutor for those trying to become fluent with the Dvorak keyboard layout.
 
-*   **GNU Typist** — GNU Typist (also called gtypist) is a universal typing tutor.
+	[https://github.com/yaychris/dvorak7min](https://github.com/yaychris/dvorak7min) || [dvorak7min](https://aur.archlinux.org/packages/dvorak7min/)
 
-	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://www.archlinux.org/packages/?name=gtypist), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
-
-*   **Klavaro** — Klavaro is libre software for teaching touch typing that intends to be keyboard and language independent.
-
-	[http://klavaro.sourceforge.net/](http://klavaro.sourceforge.net/) || [klavaro](https://www.archlinux.org/packages/?name=klavaro)
-
-*   **tipp10** — Intelligent typing tutor.
-
-	[http://www.tipp10.com/](http://www.tipp10.com/) || [tipp10](https://www.archlinux.org/packages/?name=tipp10)
-
-*   **typespeed** — Test your typing speed, and get your fingers' CPS.
-
-	[http://typespeed.sourceforge.net](http://typespeed.sourceforge.net) || [typespeed](https://www.archlinux.org/packages/?name=typespeed)
-
-*   **amphetype-svn** — A layout-agnostic typing program aimed at people who don't need an on-screen keyboard.
-
-	[http://code.google.com/p/amphetype/](http://code.google.com/p/amphetype/) || [amphetype-svn](https://aur.archlinux.org/packages/amphetype-svn/)
-
-*   **dvorak7min** — dvorak7min is a simple ncurses-based typing tutor for those trying to become fluent with the Dvorak keyboard layout.
-
-	[http://packages.debian.org/unstable/games/dvorak7min](http://packages.debian.org/unstable/games/dvorak7min) || [dvorak7min](https://aur.archlinux.org/packages/dvorak7min/)
-
-*   **dvorakng** — A Dvorak typing tutor. It's heavily based on Dvorak7min, but adds many improvements.
+*   **DvorakNG** — Dvorak typing tutor. It's heavily based on Dvorak7min, but adds many improvements.
 
 	[https://gitlab.com/atsb/dvorakng](https://gitlab.com/atsb/dvorakng) || [dvorakng](https://aur.archlinux.org/packages/dvorakng/)
 
-*   **psani-profi** — Program that will teach you touchtyping (czech).
+*   **GNU Typist** — Universal typing tutor.
 
-	[http://www.sallyx.org/sally/psani-vsemi-deseti/](http://www.sallyx.org/sally/psani-vsemi-deseti/) || [psani-profi](https://aur.archlinux.org/packages/psani-profi/)
+	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://www.archlinux.org/packages/?name=gtypist)
 
-*   **touchtyper** — typing trainer - an application suite for training and exercising touchtyping.
+*   **psani-profi** — Program that will teach you touchtyping (Czech).
 
-	[http://typingtrainer.sourceforge.net/](http://typingtrainer.sourceforge.net/) || [touchtyper](https://aur.archlinux.org/packages/touchtyper/)
+	[https://www.sallyx.org/sally/psani-vsemi-deseti/](https://www.sallyx.org/sally/psani-vsemi-deseti/) || [psani-profi](https://aur.archlinux.org/packages/psani-profi/)
 
-*   **tpgt** — A ncurses-based typing trainer program.
+*   **Typing Trainer** — ncurses-based typing trainer program that knows the English and Hungarian languages.
 
-	[http://szit.hu/tpgt/](http://szit.hu/tpgt/) || [tpgt](https://aur.archlinux.org/packages/tpgt/)
+	[https://szit.hu/tpgt/](https://szit.hu/tpgt/) || [tpgt](https://aur.archlinux.org/packages/tpgt/)
 
-*   **tuxtype** — An educational typing tutorial game starring Tux.
+*   **Typespeed** — Test your typing speed, and get your fingers' CPS.
 
-	[http://tux4kids.alioth.debian.org/](http://tux4kids.alioth.debian.org/) || [tuxtype](https://aur.archlinux.org/packages/tuxtype/)
+	[http://typespeed.sourceforge.net/](http://typespeed.sourceforge.net/) || [typespeed](https://www.archlinux.org/packages/?name=typespeed)
 
-*   **typingtest-git** — A typing test program desktop program with customizability.
+##### Graphical
+
+*   **Amphetype** — Layout-agnostic typing program aimed at people who don't need an on-screen keyboard, but would still like to improve their speed and accuracy.
+
+	[https://code.google.com/p/amphetype/](https://code.google.com/p/amphetype/) || [amphetype-svn](https://aur.archlinux.org/packages/amphetype-svn/)
+
+*   **Klavaro** — Teaching touch typing that intends to be keyboard and language independent.
+
+	[http://klavaro.sourceforge.net/](http://klavaro.sourceforge.net/) || [klavaro](https://www.archlinux.org/packages/?name=klavaro)
+
+*   **[KTouch](https://en.wikipedia.org/wiki/KTouch "wikipedia:KTouch")** — Program to learn and practice touch typing. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/ktouch/](https://www.kde.org/applications/education/ktouch/) || [ktouch](https://www.archlinux.org/packages/?name=ktouch)
+
+*   **TIPP10** — Intelligent touch typing tutor.
+
+	[https://www.tipp10.com/](https://www.tipp10.com/) || [tipp10](https://www.archlinux.org/packages/?name=tipp10)
+
+*   **TypingTest** — Typing test desktop program with a large amount of customization.
 
 	[https://github.com/laelath/typingtest](https://github.com/laelath/typingtest) || [typingtest-git](https://aur.archlinux.org/packages/typingtest-git/)
 
@@ -520,6 +530,12 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 *   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
 
 	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://www.archlinux.org/packages/?name=krecipes)
+
+#### Education management engines
+
+*   **[Moodle](/index.php/Moodle "Moodle")** — Moodle is a open-source software learning management system.
+
+	[https://moodle.org/](https://moodle.org/) || [moodle](https://aur.archlinux.org/packages/moodle/)
 
 ### Accessibility
 

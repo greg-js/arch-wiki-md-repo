@@ -103,10 +103,11 @@
 | <small>7.4.</small> [桌面环境](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)") <small>(19)</small> |
 | <small>7.4.1.</small> [登录管理器](/index.php/Category:Display_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Display managers (简体中文)") <small>(7)</small> |
 | <small>7.4.2.</small> [动态窗口管理器](/index.php/Category:Dynamic_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dynamic WMs (简体中文)") <small>(3)</small> |
-| <small>7.4.3.</small> [KDE](/index.php/Category:KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:KDE (简体中文)") <small>(3)</small> |
-| <small>7.4.4.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(6)</small> |
-| <small>7.4.5.</small> [平铺窗口管理器](/index.php/Category:Tiling_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Tiling WMs (简体中文)") <small>(5)</small> |
-| <small>7.4.6.</small> [Xfce](/index.php/Category:Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xfce (简体中文)") <small>(1)</small> |
+| <small>7.4.3.</small> [GNOME](/index.php/Category:GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:GNOME (简体中文)") <small>(1)</small> |
+| <small>7.4.4.</small> [KDE](/index.php/Category:KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:KDE (简体中文)") <small>(3)</small> |
+| <small>7.4.5.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(6)</small> |
+| <small>7.4.6.</small> [平铺窗口管理器](/index.php/Category:Tiling_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Tiling WMs (简体中文)") <small>(5)</small> |
+| <small>7.4.7.</small> [Xfce](/index.php/Category:Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xfce (简体中文)") <small>(1)</small> |
 | <small>7.5.</small> [Dotfiles](/index.php/Category:Dotfiles_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dotfiles (简体中文)") <small>(1)</small> |
 | <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(26)</small> |
 | <small>7.6.1.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage virtualization (简体中文)") <small>(1)</small> |

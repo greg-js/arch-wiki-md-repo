@@ -19,6 +19,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.12 chestm007's hackery](#chestm007.27s_hackery)
     *   [1.13 Eduxstad's Infidelity](#Eduxstad.27s_Infidelity)
     *   [1.14 Pi's vr-vm](#Pi.27s_vr-vm)
+    *   [1.15 coghex's gaming box](#coghex.27s_gaming_box)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -393,6 +394,31 @@ Configuration:
             *   **Disable** vAPIC and synic in the HyperV configuration
             *   Install and start *irqbalance* (Not sure if needed, but cannot hurt to try)
 *   Overview: SteamVR-capable gaming and workstation rig, passing through GPU and onboard USB-controller (leaving an additional ASMedia USB port to the host). 12 GB hugepages memory, 10 of 12 cores (with SMT) passed through. Audio working via Scream ([https://github.com/duncanthrax/scream](https://github.com/duncanthrax/scream)) - with surprisingly low latency and no stutters.
+
+### coghex's gaming box
+
+Hardware:
+
+*   **CPU**: i7-8700k @ 4.8 GHZ
+*   **Motherboard**: GIGABYTE Z370 AORUS Gaming 7 rev1.0 (BIOS/UEFI Version: F7)
+*   **GPU1**: GIGABYTE GV-N108TAORUSX WB-11GD AORUS GeForce GTX 1080 Ti Waterforce WB Xtreme Edition 11G @ ~2Ghz
+*   **GPU2**: ZOTAC GeForce GT 710 1G @ stock
+*   **RAM**: 4 x 8GB (32GB) Corsair Dominator Platinum @ 3600 HZ (XMP)
+
+Configuration:
+
+*   **Kernel**: linux 4.17.6-2-vfio-ck
+*   vfio aur mixed PKGBUILD with ck aur, the only ck patch that would not mix was the 8th gen quirks patch, so i left it out
+*   options: intel_iommu=on iommu=pt rd.driver.pre=vfio-pci pcie_acs_override=downstream nowatchdog
+*   im running the clock at 100Hz, the people running it at 1000 with the ck kernel should know that the MuQSS scheduler works the same regardless of this speed and 1000 will just add more useless interrupts.
+*   Using **libvirt/QEMU**: [https://github.com/coghex/hoest](https://github.com/coghex/hoest)
+*   There were no issues until i added a usb card to passthrough to the windows guest, now my kernel throws a usb-hid error or two sometimes when i boot.
+*   The whole system runs off of two M2 nvme drives in software RAID0 with mdadm to try and make it as fast as possible, this works great in my linux host, rsync and dd taking no time at all, but in windows 10 these drives are not running at the same native speeds, they have the same fast sequential rw speeds, but the random read writes across the disk are much slower. for video games this meant long load times. i solved this by getting an 480G intel optane drive and passing it though to the VM. installing games on this drive makes the textures load faster, and removes QEMU overhead. I highly recommend.
+*   the ACS patch is needed on this motherboard if you want to use two graphics cards at once in seperate IOMMU groups. GPU2 is for a chrome OS VM that I use as the system's browser.
+*   none of the proprietary gigabyte software works, in fact, it blue screens my windows and installs itself as a startup program, forever locking me out. avoid at all costs, MSI Afterburner can control the overclocking, the LEDs, however, will stay in an RGB cycle.
+*   if anyone else uses this exact motherboard, there are two internal USB IOMMU groups, even with the ACS patch. one will include the usb labeled "USB 3.1", and the other will include all the other USBs. this means if you want more than just a keyboard and mouse, you will need either a usb hub to plug into the 3.1 slot and passthrough, or a PCIE USB bus, i went with the latter. this works great with the oculus rift.
+*   my CPU performance was enhanced most when i switched from linux-zen with CPU pinning to the custom kernel with 100Hz clock and installed irqbalance and ananicy. letting the MuQSS scheduler bounce around the virtual cpus as threads seems to increase my responsiveness drastically but decrease my overall performance slightly. this may be because i am running 4-5 VMs at once, i imagine on a machine designed to just run windows, CPU pinning would be unquestionably faster.
+*   one last thing is the audio, i spent far too much time trying to figure out the stuttering choppy sound that i see around the web in relation to vfio. for me, the solution was using pulseaudio with pulseeffects from the aur. pulseeffects is an effects program that will handle the correct levels and create an audio buffer, mixing everything how i like. then, go into advance speaker properties in windows 10 and set the format to 44100Hz. this solved it for me
 
 ## Adding your own setup
 

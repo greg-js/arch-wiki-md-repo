@@ -36,7 +36,7 @@ Related articles
 
 ## Installation
 
-The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already installed on your system.
+The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already [installed](/index.php/Install "Install") on your system.
 
 [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the *dhcpcd* daemon, and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
 

@@ -1,5 +1,3 @@
-**Nota:** En proceso de traducción
-
 Artículos relacionados
 
 *   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
@@ -52,8 +50,26 @@ En caso de problemas con un nuevo kernel, los paquetes de Linux pueden ser desac
 
 ### Archivo Arch Linux
 
+El [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") es una instantánea diaria de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Puede usarse para [instalar una versión anterior de un paquete](/index.php/Arch_Linux_Archive#How_to_downgrade_one_package "Arch Linux Archive"), o [restaurar el sistema a una fecha anterior](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
+
 ### Reconstrucción del paquete
+
+Si el paquete no está disponible, busque el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") correcto y reconstrúyalo con [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)").
+
+Para los paquetes de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), recupere el *PKGBUILD* con [ABS](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") y cambie la versión del software. Alternativamente, busque el paquete en el sitio web [Paquetes](https://www.archlinux.org/packages), haga clic en "Ver cambios" y navegue hasta la versión deseada. Los archivos están disponibles a través de una instantánea `.tar.gz` y a través de la vista *Árbol*.
+
+Consulte también [Arch Build System (Español)#Revisión de un paquete antiguo](/index.php/Arch_Build_System_(Espa%C3%B1ol)#Revisi.C3.B3n_de_un_paquete_antiguo "Arch Build System (Español)").
+
+Los paquetes antiguos de AUR pueden construirse revisando un compromiso antiguo en el repositorio de GIT del paquete AUR. Para los PKGBUILD anteriores a 2015 AUR3 PKGBUILDs, consulte los [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository").
 
 ### Automatización
 
+[downgrader](https://aur.archlinux.org/packages/downgrader/) es una herramienta que funciona con libalpm, admite el registro de pacman y desactualiza los paquetes usando la caché local [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") y [ARM](http://repo-arm.archlinuxcn.org).
+
+El paquete [downgrade](https://aur.archlinux.org/packages/downgrade/) es un script Bash para desactualizar uno (o varios) paquetes, utilizando el caché pacman o el [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine").Vea `man downgrade` para más detalles.
+
+[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) lista rápidamente / obtiene / instala paquetes desde [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive").
+
 ## Volver de [testing]
+
+Ver [Official repositories#Disabling testing repositories](/index.php/Official_repositories#Disabling_testing_repositories "Official repositories").

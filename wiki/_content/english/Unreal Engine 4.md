@@ -11,7 +11,6 @@ The content of this article was originally written on [Unreal Engine wiki](https
 *   [1 Prerequisites](#Prerequisites)
     *   [1.1 Minimum hardware requirements](#Minimum_hardware_requirements)
     *   [1.2 Gain access to the source code](#Gain_access_to_the_source_code)
-    *   [1.3 Clang compatibility](#Clang_compatibility)
 *   [2 Compilation](#Compilation)
     *   [2.1 Compile manually from source code](#Compile_manually_from_source_code)
     *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
@@ -23,6 +22,7 @@ The content of this article was originally written on [Unreal Engine wiki](https
     *   [3.4 Disable Tooltips](#Disable_Tooltips)
     *   [3.5 Random freeze under KDE](#Random_freeze_under_KDE)
     *   [3.6 Slow rendered tooltips in KDE](#Slow_rendered_tooltips_in_KDE)
+    *   [3.7 Blank window in Blueprint with multi-monitor configuration](#Blank_window_in_Blueprint_with_multi-monitor_configuration)
 *   [4 Additional Content](#Additional_Content)
     *   [4.1 Starter Content](#Starter_Content)
     *   [4.2 Marketplace Apps](#Marketplace_Apps)
@@ -41,28 +41,20 @@ The Unreal Engine source code is in a [private Github repository](https://github
 
 To gain access, login or register at [Epic Games Accounts](https://accounts.epicgames.com/login) and provide an accessible GitHub username at the bottom of the Epic Games ['Connected Accounts Dashboard'](https://www.unrealengine.com/dashboard/connected) page. You will then receive an invite to access the private Github repository.
 
-### Clang compatibility
-
-Unreal Engine might not support the latest versions of Clang. Clang 4 and Clang 5 is confirmed to compile Unreal 4.19.2 successfully.
-
-Install [downgrade](https://aur.archlinux.org/packages/downgrade/) to use an old version of Clang and LLVM.
-
 ## Compilation
 
 You can compile manually from a downloaded GitHub release or install from AUR.
 
 ### Compile manually from source code
 
-You can get [the most recent releases](https://github.com/EpicGames/UnrealEngine/releases) on GitHub as zips (~230MiB for the 4.18.3)
+You can get [the most recent releases](https://github.com/EpicGames/UnrealEngine/releases) on GitHub as zips.
 
-This will download about ~4.5 GiB of dependencies:
+Setup:
 
 ```
 $ ./Setup.sh
 
 ```
-
-Patch the file `Engine/Source/Programs/UnrealBuildTool/Platform/Linux/LinuxToolChain.cs` according to [this patch on AUR](https://aur.archlinux.org/cgit/aur.git/tree/disable-pie.patch?h=unreal-engine) for turning off PIE.
 
 Generate project files:
 
@@ -79,8 +71,6 @@ $ make -j1
 ```
 
 This will compile the Unreal Engine and the Unreal Editor.
-
-For detailed info, refer to [the official build instructions](https://wiki.unrealengine.com/Building_On_Linux#Building).
 
 ### Installing from the AUR
 
@@ -137,6 +127,10 @@ Disable index file content in the KDE file search options.
 ### Slow rendered tooltips in KDE
 
 Epic suggest to allow compositing for the Unreal Editor, which is stopped by default. Source: [https://wiki.unrealengine.com/Linux_Known_Issues#KDE](https://wiki.unrealengine.com/Linux_Known_Issues#KDE)
+
+### Blank window in Blueprint with multi-monitor configuration
+
+For fix big blank window go to Edit Preferences -> User interface -> Enable Window Animation and activate the checkbox
 
 ## Additional Content
 

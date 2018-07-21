@@ -225,7 +225,7 @@ ERROR: ld.so: object 'librrfaker.so' from LD_PRELOAD cannot be preloaded: ignore
 
 ```
 
-...in the shell output, then the dynamic linker is correctly receiving instructions to preload the VirtualGL libraries into the application, but something prevents it from successfully performing this task. Two possible causes are:
+...in the shell output, then the dynamic linker is correctly receiving instructions to preload the VirtualGL libraries into the application, but something prevents it from successfully performing this task. Three possible causes are:
 
 *   **The VirtualGL libraries for the correct architecture are not installed**
 
@@ -242,6 +242,15 @@ $ chmod u+s /usr/lib32/lib{rr,dl}faker.so  # for the multilib versions provided 
 ```
 
 	However, make sure you fully understand the security implications of [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") before deciding to do this in a server environment where security is critical.
+
+*   **You might need to specify the full path of the VirtualGL libraries**
+
+	Open /usr/bin/vglrun and specify the libraries' full path in the LD_PRELOAD variable. Example:
+
+```
+libvglfaker$SUFFIX.so  ->  /usr/lib/libvglfaker$SUFFIX.so
+
+```
 
 ### Problem: vglrun fails with ERROR: Could not connect to VGL client.
 

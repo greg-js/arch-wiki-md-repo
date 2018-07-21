@@ -772,6 +772,10 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 	[https://userbase.kde.org/KBibTeX](https://userbase.kde.org/KBibTeX) || [kbibtex](https://www.archlinux.org/packages/?name=kbibtex)
 
+*   **[Mendeley Desktop](https://en.wikipedia.org/wiki/Mendeley "wikipedia:Mendeley")** — Proprietary reference manager and academic social network.
+
+	[https://www.mendeley.com/](https://www.mendeley.com/) || [mendeleydesktop](https://aur.archlinux.org/packages/mendeleydesktop/)
+
 *   **[Pybliographer](https://en.wikipedia.org/wiki/Pybliographer "wikipedia:Pybliographer")** — Tool for managing bibliographic databases.
 
 	[https://pybliographer.org/](https://pybliographer.org/) || [pybliographer](https://aur.archlinux.org/packages/pybliographer/)
@@ -999,6 +1003,10 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 *   **MComix** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
 
 	[https://sourceforge.net/projects/mcomix/](https://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
+
+*   **Peruse** — Comic book reader by KDE.
+
+	[https://peruse.kde.org/](https://peruse.kde.org/) || [peruse-git](https://aur.archlinux.org/packages/peruse-git/)
 
 *   **QComicBook** — Viewer for comic book archives that aims at convenience and simplicity.
 
@@ -1380,6 +1388,10 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 
 	[http://artha.sourceforge.net/](http://artha.sourceforge.net/) || [artha](https://aur.archlinux.org/packages/artha/)
 
+*   **Gjiten Kai** — Rewrite of Gjiten, a GTK+ Japanese dictionary.
+
+	[http://odrevet.github.io/gjitenkai/](http://odrevet.github.io/gjitenkai/) || [gjitenkai-git](https://aur.archlinux.org/packages/gjitenkai-git/)
+
 *   **GNOME Dictionary** — GNOME application to check word definitions and spellings in an online dictionary.
 
 	[https://wiki.gnome.org/Apps/Dictionary](https://wiki.gnome.org/Apps/Dictionary) || [gnome-dictionary](https://www.archlinux.org/packages/?name=gnome-dictionary)
@@ -1387,6 +1399,10 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 *   **GoldenDict** — Feature-rich dictionary lookup program.
 
 	[https://wiki.gnome.org/Dictionary](https://wiki.gnome.org/Dictionary) || [goldendict](https://www.archlinux.org/packages/?name=goldendict)
+
+*   **Kiten** — Japanese reference and study tool. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kiten/](https://www.kde.org/applications/education/kiten/) || [kiten](https://www.archlinux.org/packages/?name=kiten)
 
 *   **MATE Dictionary** — MATE application to look up words in dictionary sources.
 

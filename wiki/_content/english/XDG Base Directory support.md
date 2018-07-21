@@ -327,6 +327,12 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 `$ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter`
 
  |
+| [irb](https://ruby-doc.org/stdlib/libdoc/irb/rdoc/IRB.html) | `~/.irbrc` |  `~/.profile`  `$ export IRBRC="$XDG_CONFIG_HOME"/irb/irbrc`  `"$XDG_CONFIG_HOME"/irb/irbrc` 
+```
+IRB.conf[:SAVE_HISTORY] ||= 1000
+IRB.conf[:HISTORY_FILE] ||= File.join(ENV["XDG_DATA_HOME"], "irb", "history")
+```
+ |
 | [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[80]](https://github.com/irssi/irssi/pull/511) | `$ irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi` |
 | [isync](/index.php/Isync "Isync") | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
 | [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/.userPrefs` | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |

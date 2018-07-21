@@ -82,7 +82,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[https://wiki.gnome.org/Apps/Calculator](https://wiki.gnome.org/Apps/Calculator) || [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator)
 
-*   **KAlgebra** — Calculator and 3D plotter included in KDE EDU.
+*   **[KAlgebra](https://en.wikipedia.org/wiki/KAlgebra "wikipedia:KAlgebra")** — Calculator and 3D plotter. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
 	[https://www.kde.org/applications/education/kalgebra/](https://www.kde.org/applications/education/kalgebra/) || [kalgebra](https://www.archlinux.org/packages/?name=kalgebra)
 
@@ -134,13 +134,21 @@ See also [Wikipedia:Comparison of computer algebra systems](https://en.wikipedia
 
 	[http://www.mathomatic.org/](http://www.mathomatic.org/) || [mathomatic](https://www.archlinux.org/packages/?name=mathomatic)
 
-*   **[Maxima](https://en.wikipedia.org/wiki/Maxima_(software) "wikipedia:Maxima (software)")** — [Maple](https://en.wikipedia.org/wiki/Maple_(software) "wikipedia:Maple (software)")/[Mathematica](https://en.wikipedia.org/wiki/Wolfram_Mathematica "wikipedia:Wolfram Mathematica")-like program with a wxWidgets based frontend.
+*   **[Maxima](https://en.wikipedia.org/wiki/Maxima_(software) "wikipedia:Maxima (software)")** — [Maple](https://en.wikipedia.org/wiki/Maple_(software) "wikipedia:Maple (software)")/[Mathematica](https://en.wikipedia.org/wiki/Wolfram_Mathematica "wikipedia:Wolfram Mathematica")-like computer algebra system.
 
-	[http://maxima.sourceforge.net/](http://maxima.sourceforge.net/) || [maxima](https://www.archlinux.org/packages/?name=maxima) [wxmaxima](https://www.archlinux.org/packages/?name=wxmaxima)
+	[http://maxima.sourceforge.net/](http://maxima.sourceforge.net/) || [maxima](https://www.archlinux.org/packages/?name=maxima)
 
 *   **[PARI/GP](https://en.wikipedia.org/wiki/PARI/GP "wikipedia:PARI/GP")** — Computer algebra system designed for fast computations in number theory.
 
 	[http://pari.math.u-bordeaux.fr/](http://pari.math.u-bordeaux.fr/) || [pari](https://www.archlinux.org/packages/?name=pari)
+
+*   **[Singular](https://en.wikipedia.org/wiki/Singular_(software) "wikipedia:Singular (software)")** — Computer algebra system for polynomial computations, with special emphasis on commutative and non-commutative algebra, algebraic geometry, and singularity theory.
+
+	[https://www.singular.uni-kl.de/](https://www.singular.uni-kl.de/) || [singular](https://www.archlinux.org/packages/?name=singular)
+
+*   **wxMaxima** — Graphical user interface for Maxima being a powerful computer algebra system.
+
+	[http://andrejv.github.io/wxmaxima/](http://andrejv.github.io/wxmaxima/) || [wxmaxima](https://www.archlinux.org/packages/?name=wxmaxima)
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — User interface to Giac, a free, basic computer algebra system.
 
@@ -149,6 +157,10 @@ See also [Wikipedia:Comparison of computer algebra systems](https://en.wikipedia
 #### Scientific or technical computing
 
 See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipedia.org/wiki/Comparison_of_numerical_analysis_software "wikipedia:Comparison of numerical analysis software").
+
+*   **[Cantor](https://en.wikipedia.org/wiki/Cantor_(software) "wikipedia:Cantor (software)")** — Application that lets you use your favorite mathematical applications from within a nice KDE-integrated Worksheet Interface. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/cantor/](https://www.kde.org/applications/education/cantor/) || [cantor](https://www.archlinux.org/packages/?name=cantor)
 
 *   **EngLab** — Cross-compile mathematical platform with a C like syntax.
 
@@ -162,9 +174,17 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
 
-*   **GeoGebra** — Dynamic mathematics software with interactive graphics, algebra and spreadsheet
+*   **[GeoGebra](https://en.wikipedia.org/wiki/GeoGebra "wikipedia:GeoGebra")** — Dynamic mathematics software with interactive graphics, algebra and spreadsheet
 
 	[https://www.geogebra.org/](https://www.geogebra.org/) || [geogebra](https://www.archlinux.org/packages/?name=geogebra)
+
+*   **[Julia](https://en.wikipedia.org/wiki/Julia_(programming_language) "wikipedia:Julia (programming language)")** — High-level, high-performance dynamic language for technical computing.
+
+	[https://julialang.org/](https://julialang.org/) || [julia](https://www.archlinux.org/packages/?name=julia)
+
+*   **[Kig](https://en.wikipedia.org/wiki/Kig_(software) "wikipedia:Kig (software)")** — Application for Interactive Geometry. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kig/](https://www.kde.org/applications/education/kig/) || [kig](https://www.archlinux.org/packages/?name=kig)
 
 *   **[matplotlib (PyLab)](https://en.wikipedia.org/wiki/matplotlib "wikipedia:matplotlib")** — Collection of Python modules (pyplot, numpy, etc.) used for scientific calculations.
 
@@ -174,7 +194,7 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[https://www.gnu.org/software/octave/](https://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 
-*   **[Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")** — Mathematics software system, that combines many existing open-source packages into a common Python interface. Alternative to Magma, Maple, Mathematica and Matlab.
+*   **[SageMath](/index.php/SageMath "SageMath")** — Mathematics software system, that combines many existing open-source packages into a common Python interface. Alternative to Magma, Maple, Mathematica and Matlab.
 
 	[http://www.sagemath.org](http://www.sagemath.org) || [sagemath](https://www.archlinux.org/packages/?name=sagemath)
 
@@ -218,6 +238,10 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 See also [Wikipedia:List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
 
+*   **Engauge Digitizer** — Extracts data points from images of graphs.
+
+	[https://markummitchell.github.io/engauge-digitizer/](https://markummitchell.github.io/engauge-digitizer/) || [engauge](https://aur.archlinux.org/packages/engauge/)
+
 *   **[Fityk](https://en.wikipedia.org/wiki/Fityk "wikipedia:Fityk")** — Curve fitting and data analysis application, predominantly used to fit analytical, bell-shaped functions to experimental data.
 
 	[http://fityk.nieto.pl/](http://fityk.nieto.pl/) || [fityk](https://aur.archlinux.org/packages/fityk/)
@@ -230,6 +254,10 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://aur.archlinux.org/packages/grace/) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
 
+*   **[KmPlot](https://en.wikipedia.org/wiki/KmPlot "wikipedia:KmPlot")** — Program to draw graphs, their integrals or derivatives. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kmplot/](https://www.kde.org/applications/education/kmplot/) || [kmplot](https://www.archlinux.org/packages/?name=kmplot)
+
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Free software data analysis and visualization application, similar to SciDAVis.
 
 	[https://labplot.kde.org/](https://labplot.kde.org/) || [labplot-kf5](https://aur.archlinux.org/packages/labplot-kf5/)
@@ -237,6 +265,10 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 *   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
 	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
+
+*   **Rocs** — Graph Theory IDE for everybody interested in designing and analyzing graph algorithms (e.g., lecturers, students, researchers). Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/rocs/](https://www.kde.org/applications/education/rocs/) || [rocs](https://www.archlinux.org/packages/?name=rocs)
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — Data analysis program and library (originally for particle physics) developed by CERN.
 
@@ -358,9 +390,9 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://freecode.com/projects/gelemental](http://freecode.com/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
 
-*   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Periodic table of the elements with molecule editor and equation solver from the [KDE](/index.php/KDE "KDE") desktop.
+*   **Kalzium** — Periodic table of the elements with molecule editor and equation solver. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-	[https://edu.kde.org/kalzium/](https://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
+	[https://www.kde.org/applications/education/kalzium/](https://www.kde.org/applications/education/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
 
 #### Biochemistry
 
@@ -564,9 +596,9 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[https://www.epa.gov/](https://www.epa.gov/) || [epanet2-git](https://aur.archlinux.org/packages/epanet2-git/)
 
-*   **[Step](https://en.wikipedia.org/wiki/Step_(software) "wikipedia:Step (software)")** — Two-dimensional physics simulation engine that is included in the KDE desktop as part of KDE Edu.
+*   **[Step](https://en.wikipedia.org/wiki/Step_(software) "wikipedia:Step (software)")** — Two-dimensional physics simulation engine. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-	[https://edu.kde.org/step/](https://edu.kde.org/step/) || [step](https://www.archlinux.org/packages/?name=step)
+	[https://www.kde.org/applications/education/step/](https://www.kde.org/applications/education/step/) || [step](https://www.archlinux.org/packages/?name=step)
 
 *   **[SWMM](https://en.wikipedia.org/wiki/SWMM "wikipedia:SWMM")** — Storm Water Management Model is a dynamic rainfall-runoff-subsurface runoff simulation model used for simulation of the surface/subsurface hydrology quantity and quality.
 

@@ -12,9 +12,9 @@
 1\. Добавьте репозиторий пакетов, отредактировав файл */etc/pacman.conf*:
 
 ```
-[home_AsamK_RetroShare_Arch_Extra]
+[home_Arch_Community_standard]
 SigLevel = Never
-Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Extra/$arch](http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Extra/$arch)
+Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Community_standard/x86_64](http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Community_standard/x86_64)
 
 ```
 
@@ -22,7 +22,7 @@ Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch
 
 ```
 # pacman -Syu
-# pacman -S home_AsamK_RetroShare_Arch_Extra/retroshare06
+# pacman -S home_Arch_Community_standard/retroshare06
 
 ```
 
@@ -43,5 +43,5 @@ Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch
 
 ## Ссылки
 
-*   [Русскоязычный сайт](http://ru.retroshare.net/)
+*   [Русскоязычный сайт](https://retrosharenews.wordpress.com/)
 *   [Группа ВКонтакте](https://vk.com/retroshare)

@@ -554,7 +554,6 @@ See also:
 
 *   [#Using X resources](#Using_X_resources) for how to color bold and underlined text automatically.
 *   [Color Themes](https://web.archive.org/web/20090130061234/http://phraktured.net/terminal-colors/) - Extensive list of terminal color themes by Phraktured.
-*   [Xcolors.net](http://xcolors.net/) List of user-contributed terminal color themes.
 *   [Xcolors by dkeg](http://beta.andrewrcraig.us/index.php?page=xcolors)
 
 *   [base16 color schemes](https://github.com/chriskempson/base16)

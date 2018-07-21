@@ -14,9 +14,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
-	In computing, a file system (or filesystem) is used to control how data is stored and retrieved. Without a file system, information placed in a storage medium would be one large body of data with no way to tell where one piece of information stops and the next begins. By separating the data into pieces and giving each piece a name, the information is easily isolated and identified.
-
-	Taking its name from the way paper-based information systems are named, each group of data is called a "file". The structure and logic rules used to manage the groups of information and their names is called a "file system".
+	In computing, a file system or filesystem controls how data is stored and retrieved. Without a file system, information placed in a storage medium would be one large body of data with no way to tell where one piece of information stops and the next begins. By separating the data into pieces and giving each piece a name, the information is easily isolated and identified. Taking its name from the way paper-based information systems are named, each group of data is called a "file". The structure and logic rules used to manage the groups of information and their names is called a "file system".
 
 Individual drive partitions can be setup using one of the many different available filesystems. Each has its own advantages, disadvantages, and unique idiosyncrasies. A brief overview of supported filesystems follows; the links are to Wikipedia pages that provide much more information.
 
@@ -37,7 +35,7 @@ Individual drive partitions can be setup using one of the many different availab
 
 ## Types of file systems
 
-See [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5) for a general overview, and [Wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
+See [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5) for a general overview and [Wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
 
 | File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
 | [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |

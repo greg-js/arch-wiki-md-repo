@@ -757,6 +757,10 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://www.activestate.com/komodo-edit](http://www.activestate.com/komodo-edit) || [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
 
+*   **[KTurtle](https://en.wikipedia.org/wiki/KTurtle "wikipedia:KTurtle")** — Educational programming environment that aims to make learning how to program as easily as possible. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kturtle/](https://www.kde.org/applications/education/kturtle/) || [kturtle](https://www.archlinux.org/packages/?name=kturtle)
+
 *   **[Lazarus](https://en.wikipedia.org/wiki/Lazarus_(IDE) "wikipedia:Lazarus (IDE)")** — Delphi (Object Pascal) compatible IDE for Rapid Application Development. It has variety of components ready for use and a graphical form designer to easily create complex graphical user interfaces.
 
 	[https://www.lazarus-ide.org/](https://www.lazarus-ide.org/) || [lazarus](https://www.archlinux.org/packages/?name=lazarus)
@@ -803,7 +807,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **Thonny** — Python IDE for beginners.
 
-	[http://thonny.cs.ut.ee/](http://thonny.cs.ut.ee/) || [thonny](https://aur.archlinux.org/packages/thonny/)
+	[http://thonny.org/](http://thonny.org/) || [thonny](https://aur.archlinux.org/packages/thonny/)
 
 #### GUI builders
 

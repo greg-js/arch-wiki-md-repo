@@ -44,7 +44,7 @@ Follow [Display manager#Loading the display manager](/index.php/Display_manager#
 
 ## Configuration
 
-The default configuration file for SDDM can be found at `/usr/lib/sddm/sddm.conf.d/sddm.conf`. For any changes, create configuration file(s) in `/etc/sddm.conf.d/`. See [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
+The default configuration file for SDDM can be found at `/usr/lib/sddm/sddm.conf.d/default.conf`. For any changes, create configuration file(s) in `/etc/sddm.conf.d/`. See [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
 
 The [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package (included in the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) provides a GUI to configure SDDM in Plasma's system settings. There is also a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) available in the [AUR](/index.php/AUR "AUR").
 

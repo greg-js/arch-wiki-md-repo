@@ -1,5 +1,12 @@
 [PHPUnit](https://phpunit.de/) is a programmer-oriented testing framework for PHP.
 
+## Contents
+
+*   [1 Installing](#Installing)
+    *   [1.1 DbUnit](#DbUnit)
+*   [2 Example](#Example)
+*   [3 References](#References)
+
 ## Installing
 
 By far the easiest way to install is using the PHP Archive ([PHAR](http://php.net/phar)) package provided by the project. The PHAR package contains all dependencies as well as some of the optional dependencies for PHPUnit. The latest version can be retrieved from the project's site:
@@ -12,6 +19,17 @@ wget [https://phar.phpunit.de/phpunit.phar](https://phar.phpunit.de/phpunit.phar
 **Note:** PHPUnit is also avalible from the [AUR](/index.php/AUR "AUR") as [phpunit](https://aur.archlinux.org/packages/phpunit/).
 
 You can then run PHPUnit using `php phpunit.phar`. You can also make the PHP Archive executable (`chmod +x phpunit.phar`) and move it to /usr/local/bin or ~/bin or somewhere else you have in your `$PATH`.
+
+### DbUnit
+
+Since version 7, the DbUnit extension for database interaction testing is no longer supplied as part of the base PHAR, and needs to be installed separately. Download it from the project site:
+
+```
+wget [https://phar.phpunit.de/dbunit.phar](https://phar.phpunit.de/dbunit.phar)
+
+```
+
+Place it in a suitable directory, and then configure PHPUnit to load extensions in that directory as described in the [DbUnit readme](https://github.com/sebastianbergmann/dbunit/blob/master/README.md).
 
 ## Example
 

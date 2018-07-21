@@ -330,8 +330,6 @@ See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for mor
 
 	[https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) || [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/)
 
-**Note:** For themes to work you may need to set `setopt NO_GLOBAL_RCS` in the `~/.zshenv` file, otherwise changes to some variables (such as `$PROMPT`) may be overwritten.
-
 *   **Prezto** — A configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
 
 	[https://github.com/sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto) || [prezto-git](https://aur.archlinux.org/packages/prezto-git/)

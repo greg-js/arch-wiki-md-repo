@@ -90,11 +90,14 @@ Example configuration:
  `~/.mpdscribble/mpdscribble.conf` 
 ```
 [mpdscribble]
-host = *your mpd host* # optional, defaults to $MPD_HOST or localhost
-port = *your mpd port* # optional, defaults to $MPD_PORT or 6600
+host = *your mpd host*
+#host is optional, defaults to $MPD_HOST or localhost
+port = *your mpd port*
+#port is optional, defaults to $MPD_PORT or 6600
 log = /home/*YOUR_USERNAME*/.mpdscribble/mpdscribble.log
 verbose = 2
-proxy = *your proxy* # optional, e. g. [http://your.proxy:8080](http://your.proxy:8080), defaults to none
+proxy = *your proxy*
+# proxy is optional, e. g. [http://your.proxy:8080](http://your.proxy:8080), defaults to none
 
 [last.fm]
 # last.fm section, comment if you do not use last.fm
@@ -110,6 +113,8 @@ username = *your libre.fm username*
 password = *your libre.fm password*
 journal = /home/*YOUR_USERNAME*/.mpdscribble/librefm.journal
 ```
+
+**Note:** Trailing comments are not supported by its parser. Write them in their own lines.
 
 Your password can also be in the form of an md5hash.
 

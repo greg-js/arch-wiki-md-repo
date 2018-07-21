@@ -249,10 +249,6 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[https://www.kde.org/applications/games/kajongg/](https://www.kde.org/applications/games/kajongg/) || [kajongg](https://www.archlinux.org/packages/?name=kajongg)
 
-*   **KHangMan** — [Hangman](https://en.wikipedia.org/wiki/Hangman_(game) "wikipedia:Hangman (game)"). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
-
-	[https://www.kde.org/applications/education/khangman/](https://www.kde.org/applications/education/khangman/) || [khangman](https://www.archlinux.org/packages/?name=khangman)
-
 *   **KPatience** — A set of solitarire card games. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kpatience/](https://www.kde.org/applications/games/kpatience/) || [kpatience](https://www.archlinux.org/packages/?name=kpatience)
@@ -313,29 +309,57 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 ## Education
 
-*   **Blinken** — A sequence-remembering game for training memory. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+*   **Artikulate** — Pronunciation trainer that helps improving and perfecting a learner's pronunciation skills for a foreign language. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/artikulate/](https://www.kde.org/applications/education/artikulate/) || [artikulate](https://www.archlinux.org/packages/?name=artikulate)
+
+*   **Blinken** — Sequence-remembering game for training memory. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
 	[https://www.kde.org/applications/education/blinken/](https://www.kde.org/applications/education/blinken/) || [blinken](https://www.archlinux.org/packages/?name=blinken)
 
-*   **GCompris** — Educational software suite comprising of numerous activities for children aged 2 to 10.
+*   **[GCompris](https://en.wikipedia.org/wiki/GCompris "wikipedia:GCompris")** — Educational software suite comprising of numerous activities for children aged 2 to 10.
 
 	[https://gcompris.net/](https://gcompris.net/) || [gcompris-qt](https://www.archlinux.org/packages/?name=gcompris-qt)
 
-*   **katomic** — Slide elements so they resemble a chemical molecule. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **[Kanagram](https://en.wikipedia.org/wiki/Kanagram "wikipedia:Kanagram")** — Letter order game. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-	[https://www.kde.org/applications/games/katomic/](https://www.kde.org/applications/games/katomic/) || [katomic](https://www.archlinux.org/packages/?name=katomic)
+	[https://www.kde.org/applications/education/kanagram/](https://www.kde.org/applications/education/kanagram/) || [kanagram](https://www.archlinux.org/packages/?name=kanagram)
 
-*   **Tux Paint** — Free drawing program designed for young children.
+*   **KBruch** — Small program to practice calculating with fractions and percentages. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kbruch/](https://www.kde.org/applications/education/kbruch/) || [kbruch](https://www.archlinux.org/packages/?name=kbruch)
+
+*   **[KGeography](https://en.wikipedia.org/wiki/KGeography "wikipedia:KGeography")** — Geography learning tool, which allows you to learn about the political divisions of some countries (divisions, capitals of those divisions and their associated flags if there are some). Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kgeography/](https://www.kde.org/applications/education/kgeography/) || [kgeography](https://www.archlinux.org/packages/?name=kgeography)
+
+*   **[KHangMan](https://en.wikipedia.org/wiki/KHangMan game. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/khangman/](https://www.kde.org/applications/education/khangman/) || [khangman](https://www.archlinux.org/packages/?name=khangman)
+
+*   **[KLettres](https://en.wikipedia.org/wiki/KLettres "wikipedia:KLettres")** — Application specially designed to help the user to learn alphabet in a new language and then to learn to read simple syllables. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/klettres/](https://www.kde.org/applications/education/klettres/) || [klettres](https://www.archlinux.org/packages/?name=klettres)
+
+*   **Minuet** — Software for music education. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://minuet.kde.org/](https://minuet.kde.org/) || [minuet](https://www.archlinux.org/packages/?name=minuet)
+
+*   **Nootka** — Application to learn classical score notation.
+
+	[https://nootka.sourceforge.io/](https://nootka.sourceforge.io/) || [nootka](https://aur.archlinux.org/packages/nootka/)
+
+*   **[Tux Math](https://en.wikipedia.org/wiki/Tux,_of_Math_Command "wikipedia:Tux, of Math Command")** — Arcade game that helps kids practice their math facts.
+
+	[https://github.com/tux4kids/tuxmath](https://github.com/tux4kids/tuxmath) || [tuxmath](https://aur.archlinux.org/packages/tuxmath/)
+
+*   **[Tux Paint](https://en.wikipedia.org/wiki/Tux_Paint "wikipedia:Tux Paint")** — Drawing program designed for young children.
 
 	[http://tuxpaint.org/](http://tuxpaint.org/) || [tuxpaint](https://www.archlinux.org/packages/?name=tuxpaint)
 
-*   **Tux Type** — Educational typing tutor for kids starring Tux.
+*   **[Tux Typing](https://en.wikipedia.org/wiki/Tux_Typing "wikipedia:Tux Typing")** — Educational typing tutor for kids starring Tux.
 
-	[https://tux4kids.alioth.debian.org/tuxtype/](https://tux4kids.alioth.debian.org/tuxtype/) || [tuxtype](https://aur.archlinux.org/packages/tuxtype/)
-
-*   **TuxMath** — Arcade game that helps kids practice their math facts.
-
-	[https://tux4kids.alioth.debian.org/tuxmath/](https://tux4kids.alioth.debian.org/tuxmath/) || [tuxmath](https://aur.archlinux.org/packages/tuxmath/)
+	[https://github.com/tux4kids/tuxtype](https://github.com/tux4kids/tuxtype) || [tuxtype](https://aur.archlinux.org/packages/tuxtype/)
 
 ## Interactive fiction
 
@@ -421,6 +445,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 ## Puzzle
 
+*   **Atomix** — Build molecules out of single atoms.
+
+	[https://wiki.gnome.org/Apps/Atomix](https://wiki.gnome.org/Apps/Atomix) || [atomix](https://www.archlinux.org/packages/?name=atomix)
+
 *   **Blockout II** — 3D tetris, free adaptation of the original BlockOut DOS game edited by California Dreams in 1989
 
 	[http://www.blockout.net/blockout2/](http://www.blockout.net/blockout2/) || [blockout2](https://aur.archlinux.org/packages/blockout2/)
@@ -441,6 +469,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[http://www.aluminumangel.org/attack/](http://www.aluminumangel.org/attack/) || [crack-attack](https://aur.archlinux.org/packages/crack-attack/)
 
+*   **GNOME Sudoku** — Test your logic skills in this number grid puzzle.
+
+	[https://wiki.gnome.org/Apps/Sudoku](https://wiki.gnome.org/Apps/Sudoku) || [gnome-sudoku](https://www.archlinux.org/packages/?name=gnome-sudoku)
+
 *   **Gnu Go** — A terminal-based implementation of Go from GNU.
 
 	[https://www.gnu.org/software/gnugo/](https://www.gnu.org/software/gnugo/) || [gnugo](https://www.archlinux.org/packages/?name=gnugo)
@@ -457,11 +489,15 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://wiki.gnome.org/Apps/Hitori](https://wiki.gnome.org/Apps/Hitori) || [hitori](https://www.archlinux.org/packages/?name=hitori)
 
-*   **kblackbox** — Finding positions of hidden balls by using hints. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KAtomic** — Slide elements so they resemble a chemical molecule. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/katomic/](https://www.kde.org/applications/games/katomic/) || [katomic](https://www.archlinux.org/packages/?name=katomic)
+
+*   **KBlackbox** — Finding positions of hidden balls by using hints. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kblackbox/](https://www.kde.org/applications/games/kblackbox/) || [kblackbox](https://www.archlinux.org/packages/?name=kblackbox)
 
-*   **kblocks** — *Tetris* clone. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KBlocks** — *Tetris* clone. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kblocks/](https://www.kde.org/applications/games/kblocks/) || [kblocks](https://www.archlinux.org/packages/?name=kblocks)
 
@@ -509,9 +545,9 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://www.kde.org/applications/games/kshisen/](https://www.kde.org/applications/games/kshisen/) || [kshisen](https://www.archlinux.org/packages/?name=kshisen)
 
-*   **Ksudoku** — Sudoku game and more for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KSudoku** — Sudoku game and more for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[http://ksudoku.sourceforge.net/](http://ksudoku.sourceforge.net/) || [ksudoku](https://www.archlinux.org/packages/?name=ksudoku)
+	[https://www.kde.org/applications/games/ksudoku/](https://www.kde.org/applications/games/ksudoku/) || [ksudoku](https://www.archlinux.org/packages/?name=ksudoku)
 
 *   **Kubrick** — A Rubik’s cube solving game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 

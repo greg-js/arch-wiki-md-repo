@@ -4,13 +4,13 @@ Related articles
 *   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
-The Linux Kernel ([linux](https://www.archlinux.org/packages/?name=linux)>=3.3) supports EFISTUB (EFI BOOT STUB) booting. This feature allows EFI firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels or can be activated by setting `CONFIG_EFI_STUB=y` in the Kernel configuration (see [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) for more information).
+The Linux kernel supports EFISTUB booting which allows [EFI](/index.php/EFI "EFI") firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels, or if compiling a the kernel one can activate it by setting `CONFIG_EFI_STUB=y` in the Kernel configuration. See [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) for more information.
 
-An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly using a [boot loader](/index.php/Boot_loader "Boot loader"). The latter is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
+With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly using a [boot loader](/index.php/Boot_loader "Boot loader"). Using a boot loader is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
 
 ## Contents
 
-*   [1 Setting up EFISTUB](#Setting_up_EFISTUB)
+*   [1 Preparing for EFISTUB](#Preparing_for_EFISTUB)
 *   [2 Booting EFISTUB](#Booting_EFISTUB)
     *   [2.1 Using a boot manager](#Using_a_boot_manager)
     *   [2.2 Using UEFI Shell](#Using_UEFI_Shell)
@@ -20,15 +20,18 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
         *   [2.3.3 UEFI Shell](#UEFI_Shell)
         *   [2.3.4 Using a startup.nsh script](#Using_a_startup.nsh_script)
 
-## Setting up EFISTUB
+## Preparing for EFISTUB
 
-After creating the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"), you must choose how it will be mounted. The simplest option is to mount it at `/boot` since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB). See [EFI system partition#Mount the partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") for all available ESP mounting options.
+First, you must create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") and choose how it is mounted. See [EFI system partition#Mount the partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") for all available ESP mounting options.
 
-**Tip:** You can keep kernel and initramfs out of ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. [rEFInd](/index.php/REFInd "REFInd").
+**Tip:**
+
+*   [pacman](/index.php/Pacman "Pacman") will directly update the kernel that the EFI firmware will read if you mount the ESP to `/boot`.
+*   You can keep the kernel and initramfs off of the ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. [rEFInd](/index.php/REFInd "REFInd").
 
 ## Booting EFISTUB
 
-**Note:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root and use backslashes (in accordance with EFI standards). For example, if the initramfs is located in `*esp*/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is in `*esp*/`.
+**Note:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root and use backslashes (in accordance with EFI standards). For example, if the initramfs is located in `*esp*/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is under `*esp*/`.
 
 ### Using a boot manager
 

@@ -55,8 +55,8 @@ Here're some examples of use:
 
 ## Unofficial clients
 
-*   [ydcmd](https://aur.archlinux.org/packages/ydcmd/) - console client written with [python](/index.php/Python "Python").
-*   [ekstertera](https://aur.archlinux.org/packages/ekstertera/) - gui client written based on [qt5](/index.php/Qt "Qt").
+*   [ydcmd](https://aur.archlinux.org/packages/ydcmd/) - console client in [python](/index.php/Python "Python").
+*   [ekstertera](https://aur.archlinux.org/packages/ekstertera/) - gui client based on [qt5](/index.php/Qt "Qt").
 
 ## See also
 
